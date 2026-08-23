@@ -1,11 +1,11 @@
 ---
 # qou-b3nk
-title: 'Q_beta channel UNREGISTERED in the trace-convention registry — the ladder is convention-C end-to-end; settle its convention'
-status: in-progress
+title: Q_beta channel UNREGISTERED in the trace-convention registry — the ladder is convention-C end-to-end; settle its convention
+status: completed
 type: task
 priority: high
 created_at: 2026-08-15T13:30:00Z
-updated_at: 2026-08-15T13:30:00Z
+updated_at: 2026-08-23T13:17:34Z
 ---
 
 Found by the 2026-08-15 owner-redirect validity audit
@@ -101,3 +101,58 @@ bar-compatible nor a fibre trace, and even then z_C itself is underived
 docs/audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md.
 
 Status stays in-progress; closing is a human action.
+
+
+---
+
+## CLOSED 2026-08-23 — C is excluded; D is not thereby derived
+
+Branch `claude/b3nk-decay-convention-c-excluded-2026-08-23`.
+
+**The bean's question — "settle its convention" — is answered twice over, and
+the registry had absorbed neither answer consistently.**
+
+**1. Status: settled by owner ruling 2026-08-15** ("convention D is convention.
+excise convention C"). The JSON registry absorbed this; its **authoritative
+markdown twin did not** — the `.md` still carried `definitional: null
+(contradictory)` / `status: disputed (bean qou-b3nk)`, i.e. the registry
+disagreed with itself about the one disputed channel. Fixed here.
+
+**2. Convention C is now a scope-(b) STRUCTURAL EXCLUSION, identically in q.**
+Not "not derived", and not "would exclude it IF demanded" — excluded, by a
+named invariant:
+
+  z_r = q^(2r-1)(1-q^2)/(1-q^(2r)) = q^r/[r]_q  lies in Q(q) for EVERY r.
+  z_C = sqrt(q)/(q+1) does NOT: x^2 - q is Eisenstein at the prime q of Q[q],
+  hence irreducible over Q(q), so sqrt(q) is not in Q(q); and z_C in Q(q)
+  would give sqrt(q) = z_C*(q+1) in Q(q).
+
+For non-integer real r the same follows from non-constancy of the formal level
+(r_C(1.05) = 2.2267 vs r_C(1.15) = 2.9553). Evidence: `wenzl_level_family.py`
+W4/W9, 10/10, sympy-exact over Q(q), no float64 (this work re-ran it green).
+
+This **subsumes** one of the two conditions the registry listed and shows they
+were never independent: W3 proves N_eff and the Wenzl level are the SAME MAP,
+so the registry's "N_eff(z_C) = 2.5995 pointwise, q-dependent" was a pointwise
+shadow of a q-identical structural fact. The full-bar condition remains a
+genuinely separate, still-premised route.
+
+**What is NOT settled — do not read this as deriving D.**
+- Excluding C says z_C is NO level. It does not say WHICH level the decay
+  channel occupies. r = 2 here still needs the decay fibre's RANK — that is
+  `qou-cds1`, and it is OPEN.
+- The unconditional part is the mathematics: `z_C != z_r for all r`. The
+  inference "therefore C is inadmissible for this channel" is conditional on
+  the channel's z being a fibre-level parameter at all — the categorical-fibre
+  premise, which is the framework's own and is not proved here.
+- W10 (every channel in the family sits at r = 2, none at r >= 3) is
+  suggestive, not a derivation.
+
+**Role change for the mutual-exclusivity theorem.**
+`decayLadder_zC_threeRow_ne_zero` (sorry-free) blocked the mass channel's
+two-row forcing from transferring *while the ladder keeps z_C*. That antecedent
+is now itself excluded, so the theorem no longer stands as an obstruction to D
+— it is an argument for abandoning z_C.
+
+Successor: `qou-cds1` (re-derive the ladder under D; a z-swap is NOT a
+migration — measured c_3 -> ~-974, rung convergence collapses).
