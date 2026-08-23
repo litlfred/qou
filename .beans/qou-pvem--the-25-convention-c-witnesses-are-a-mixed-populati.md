@@ -1,3 +1,19 @@
+---
+# qou-pvem
+title: 'DEAD_TOL is a global constant, but noise depends on the witness''s own precision'
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-23T00:00:00Z
+---
+
+<!-- front-matter added 2026-08-23. This file had none, so it carried no id, no
+     status and no title, and was invisible to the tracker despite being an open,
+     measured, actionable item. Body preserved verbatim below. Re-verified today:
+     DEAD_TOL = 1e-30 is still live in BOTH scripts/convention-c-witness-audit.py:85
+     and computations/live_channels.py:91, and the named witness
+     computations/alpha/alpha-k-jones-markov-h12.witness.json still exists. -->
 
 ## Sub-class: float64 noise below DEAD_TOL — real, but it moves one file
 
