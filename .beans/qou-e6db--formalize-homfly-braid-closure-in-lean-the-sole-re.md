@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T01:57:13Z
+updated_at: 2026-08-23T03:35:02Z
 ---
 
 ## Why this bean exists
@@ -371,3 +371,37 @@ the well-founded reduction on top.
 
 Nothing landed so far shrinks that. The atoms (`stepOver`, `closurePerm`) and
 now the lap are in place; the ordering is not.
+
+
+## Walking a component — the termination worry is avoidable
+
+A lap is one trip through the word; a component is walked by taking laps until
+the strand returns. Rather than loop-until-return, which would need its own
+termination argument, **the lap count is supplied explicitly as the cycle
+length** and closing up becomes a theorem:
+
+- `cycleLen f p = orderOf (f.cycleOf p)` — and `orderOf f` would be **wrong**
+  here, not merely suboptimal: it is the lcm over all cycles, so it walks short
+  components round and round instead of once.
+- `pow_cycleLen_apply` — **the walk closes up**, via
+  `Equiv.Perm.cycleOf_pow_apply_self` + `pow_orderOf_eq_one`.
+- `walk` / `walk_length` / `walk_zero` — the positions visited.
+- `walk_sameCycle` — the walk stays inside its component, which is what makes it
+  a *component* walk rather than an arbitrary itinerary.
+- `walkVerdicts` / `walkVerdicts_length` — `k` laps of `m` crossings each; the
+  encounter count is exactly `k * m`, the arithmetic the global ordering rests
+  on.
+
+49 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## What is left
+
+Concatenating the component walks in the engine's order (components taken in
+increasing order of least start position), then reading off, per crossing, which
+of its **two** encounters comes first — that is the descending predicate. Then
+the well-founded reduction.
+
+The per-component termination worry is now **gone** (the count is explicit and
+`pow_cycleLen_apply` closes it). What remains is the cross-component ordering
+and the reduction's own well-foundedness — genuinely smaller than the piece
+described two entries ago, but not small.
