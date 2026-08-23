@@ -1,11 +1,11 @@
 ---
 # qou-bm4i
 title: 12 blocks claimed computation.status verified while their witness FAILED — status corrected, the mathematics is not
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T19:43:05Z
+updated_at: 2026-08-23T20:40:05Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -431,3 +431,72 @@ with **no assertions**. `prop:markov-trace-antipode-polynomial-symmetry` is
 `verified` against exactly that, while its witness carries a q-sweep of C-frame
 values and a recorded `max_relative_diff_across_q` of 7.89. Nothing can fail
 there, so nothing does. Tracked in qou-zf9n.
+
+
+---
+
+# CLOSED 2026-08-23 — 12 of 12 dispositioned, 0 disagreements corpus-wide
+
+`scripts/check-computation-status.py` over the whole corpus: **398 block/witness
+pairs carry a top-level `allPassed`, 0 disagreements.**
+
+## The twelve, by cause — and there are five, not one
+
+| # | block | cause | ends at |
+|---|---|---|---|
+| 1-3 | (earlier session) | mixed | verified |
+| 4 | `rem:hadron-level-knot-table` | producer DEAD since the mpf migration (crash) | failed + perf decision open |
+| 5 | `prop:gram-matrix-h3-symbolic` | convention mislabel; D is a determinant ROOT | verified |
+| 6 | `prop:markov-trace-axiomatic-closed-form` | convention mislabel; C numbers under a D label | verified |
+| 7 | `prop:deuteron-fusion-frame` | stale witness; deliberate tripwire nobody re-ran | verified |
+| 8 | `prop:y-lambda-cyclotomic-factorization` | producer left behind by its own block | verified |
+| 9 | `conj:binding-qbeta-complex-volume` | **failing correctly** — records a refutation | failed (terminal) |
+| 10 | `conj:h2s-angle-s3-braid-holonomy` | parity PREMISE fails under D, not just numbers | failed (terminal) |
+| 11 | `prop:mirror-baseline-cancellation` | true refutation bundled with a false conjunct | failed (terminal) |
+
+**Four of the twelve end at `failed`, and that is the correct answer for all
+four.** "Disposition" was never "make it green": three of them record genuine
+negatives, and one has a dead producer. Any sweep that treated this bean as a
+red-to-green exercise would have destroyed three recorded refutations.
+
+## What the gate is good at, and its one blind spot
+
+Every convention casualty here (5, 6, 10) was invisible to the convention
+detectors, which key on how `z` is **spelled**. This gate keys on whether the
+witness **passes** — the "test the ANSWER, not the source" counter-move, reached
+from the status side. A mislabelled block still has to emit a number, and the
+number disagrees.
+
+**The blind spot is a witness with no assertions.** It has no `allPassed`, so
+there is nothing to disagree with, and `verified` against it costs nothing to
+claim. `prop:markov-trace-antipode-polynomial-symmetry` sits there right now
+with a `max_relative_diff_across_q` of 7.89 recorded inside it. That class is
+`qou-vfy1`'s, and this gate cannot see it. Tracked in qou-zf9n.
+
+## Recurring shapes worth naming
+
+1. **A producer's prose contradicting its own assertion** — four times (blocks
+   6, 10, 11, and the block-9 probe). Descriptions are written once and asserted
+   independently of the result; they should be printed from the run.
+2. **Frozen tables rot; structural claims do not.** Block 8's probe compared
+   against a hardcoded C-frame list. Rewritten to assert what the proposition
+   actually says — the denominator IS a cyclotomic product — it survives
+   convention changes by construction, and coverage went 3 -> 10 cases.
+3. **A finding filed under the wrong criterion is close to unfiled.** Block 6's
+   convention mislabel was diagnosed completely and correctly a day earlier —
+   under `trap-superlative`, a prose check. Nobody triaging prose acts on it.
+4. **Numeric coincidence is not identification.** Block 9's witness matched a
+   named constant to fifteen digits; a re-run moved it 6.8%, because the
+   extraction amplifies input error ~7e5.
+5. **A raw-float64 count is not a score to minimise** (my own error, block 11).
+   Lifting float64 through mpmath zeroes the count by inventing digits. The
+   padding ratchet caught 26 new fake-precision values.
+
+## Left open, deliberately
+
+- Block 4's perf decision (`check_frobenius` precision vs speed) — an owner
+  judgement about the pipeline's physics, three options recorded, none picked.
+- The convention-D migration of the H_3 Gram Lean file and
+  `prop:spectrahedral-phase-collapse`, whose claim does not survive D (qou-zf9n).
+- The untraced Δ_λ residual drift and the A=3 mirror pair that fails to cancel
+  (qou-zf9n).
