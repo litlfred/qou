@@ -208,10 +208,81 @@ def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
     return paper, py_counts, health
 
 
-def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]") -> bool:
-    """A witness has a reader if the paper cites it or a non-producer `.py`
-    mentions it (>1 `.py` mention ⇒ something beyond the producer reads it)."""
-    return name in paper or py_counts.get(name, 0) > 1
+# A witness name built by an f-string, e.g. `chi-{atom}-h{n}-at-q0-50dps.witness.json`.
+_DYNAMIC_NAME_RX = (r'[a-z0-9][a-zA-Z0-9._{}-]*\{[a-zA-Z0-9_]+\}'
+                    r'[a-zA-Z0-9._{}-]*\.witness\.json')
+# Minimum literal (non-placeholder) characters, excluding the `.witness.json`
+# suffix, before a pattern is trusted to identify a family. Measured: at 12 the
+# six weak patterns are rejected and 42 witnesses gain a reader with none
+# spurious; at 0, `chi-{atom_label}.witness.json` compiles to `chi-[^.]+` and
+# claims every chi-* witness in the corpus, including `chi-convention-audit`.
+_MIN_LITERAL_ANCHOR = 12
+
+
+def build_dynamic_readers(repo: Path) -> tuple[list, list[str], list[str]]:
+    """Compile f-string-built witness names into family matchers.
+
+    `has_reader` matches literal filenames, so a consumer that builds its input
+    path — `f"chi-{atom}-h{n}-at-q0-50dps.witness.json"` — is invisible to it and
+    every witness in that family looks reader-less. Returns
+    `(matchers, used_patterns, rejected_patterns)`; the rejected list is returned
+    rather than dropped so the report can say which families remain unreachable.
+    """
+    import re as _re
+    import subprocess as _sp
+    try:
+        out = _sp.run(["git", "-C", str(repo), "grep", "-hoE", _DYNAMIC_NAME_RX,
+                       "--", "computations/"],
+                      capture_output=True, text=True, timeout=120)
+        pats = sorted(set(out.stdout.split())) if out.returncode in (0, 1) else []
+    except Exception:  # noqa: BLE001
+        return [], [], []
+    suffix = ".witness.json"
+    used, rejected, matchers = [], [], []
+    for pat in pats:
+        parts = _re.split(r"\{[^{}]*\}", pat[: -len(suffix)])
+        if sum(len(x) for x in parts) < _MIN_LITERAL_ANCHOR:
+            rejected.append(pat)
+            continue
+        full = _re.split(r"\{[^{}]*\}", pat)
+        matchers.append(_re.compile(r"[^.]+".join(_re.escape(x) for x in full) + r"$"))
+        used.append(pat)
+    return matchers, used, rejected
+
+
+def _sidecar_only_citations(repo: Path, paper: set[str]) -> list[str]:
+    """Witness names the paper index only sees inside a machine `*.qa.json`.
+
+    `qou-0uqm` item (3): a QA sidecar is generated from a block, not authored,
+    so a name appearing only there is not really "the paper cites this". This is
+    MEASURED and reported, not enforced -- excluding them would move witnesses
+    INTO the exempt class, i.e. reduce what the audit evaluates, and this bean's
+    whole thesis is that unevaluated is the thing to avoid. The number belongs in
+    front of whoever decides.
+    """
+    import subprocess as _sp
+    try:
+        out = _sp.run(
+            ["git", "-C", str(repo), "grep", "-hoE",
+             r"[a-z0-9][a-z0-9._-]*\.witness\.json", "--", "content/",
+             ":(exclude)content/**/*.qa.json", ":(exclude)content/*.qa.json"],
+            capture_output=True, text=True, timeout=120)
+        if out.returncode not in (0, 1):
+            return []
+        authored = set(out.stdout.split())
+    except Exception:  # noqa: BLE001
+        return []
+    return sorted(paper - authored)
+
+
+def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]",
+               dynamic: list | None = None) -> bool:
+    """A witness has a reader if the paper cites it, a non-producer `.py`
+    mentions it (>1 `.py` mention ⇒ something beyond the producer reads it),
+    or a consumer builds its name by f-string (see `build_dynamic_readers`)."""
+    if name in paper or py_counts.get(name, 0) > 1:
+        return True
+    return any(rx.fullmatch(name) for rx in (dynamic or ()))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -225,6 +296,8 @@ def main(argv: list[str] | None = None) -> int:
     legacy_removed = load_legacy_removed_set()
     acknowledged_floor = load_acknowledged_floor()
     paper_refs, py_counts, index_health = build_reference_index()
+    dyn_matchers, dyn_used, dyn_rejected = build_dynamic_readers(HERE.parent.parent)
+    sidecar_only = _sidecar_only_citations(HERE.parent.parent, paper_refs)
     by_verdict: dict[str, list[dict]] = {
         "PROV_OK": [], "PROV_MISSING": [],
         "PROV_AUDIT_EXEMPT": [], "PROV_EXEMPT_NO_READER": [],
@@ -239,7 +312,8 @@ def main(argv: list[str] | None = None) -> int:
         verdict, missing = classify(wp)
         # A missing triple on a witness nothing consumes is not a real gap
         # (owner directive 2026-07-18): exempt no-reader witnesses.
-        if verdict == "PROV_MISSING" and not has_reader(wp.name, paper_refs, py_counts):
+        if verdict == "PROV_MISSING" and not has_reader(
+                wp.name, paper_refs, py_counts, dyn_matchers):
             verdict, missing = "PROV_EXEMPT_NO_READER", missing
         # Investigated, documented floor: load-bearing but no attributable
         # producer (hand-authored / legacy orphan). On the record, not a gap.
@@ -297,6 +371,16 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
     print(f"  reader index           : paper={index_health.get('paper_names', 0)} "
           f"name(s), py={index_health.get('py_names', 0)} name(s)")
+    print(f"  dynamic name patterns  : {len(dyn_used)} used, "
+          f"{len(dyn_rejected)} rejected as too weakly anchored")
+    if dyn_rejected:
+        print("    rejected (a family here can still look reader-less):")
+        for pat in dyn_rejected:
+            print(f"      {pat}")
+    if sidecar_only:
+        print(f"  paper citations that come ONLY from a machine `*.qa.json`")
+        print(f"  sidecar, not from a block: {len(sidecar_only)} name(s). These")
+        print(f"  count as readers today; a sidecar is generated, not authored.")
     if not index_health.get("ok"):
         print("  *** READER INDEX DID NOT BUILD ***")
         for _k in ("paper_index", "py_index"):
@@ -349,6 +433,12 @@ def main(argv: list[str] | None = None) -> int:
         })
         .add_data("by_verdict", by_verdict)
         .add_data("reader_index_health", index_health)
+        .add_data("dynamic_readers", {
+            "patterns_used": dyn_used,
+            "patterns_rejected_weak_anchor": dyn_rejected,
+            "min_literal_anchor": _MIN_LITERAL_ANCHOR,
+        })
+        .add_data("paper_citations_only_from_machine_sidecar", sidecar_only)
         .add_assertion(
             "no_missing_provenance",
             computed=n_missing,

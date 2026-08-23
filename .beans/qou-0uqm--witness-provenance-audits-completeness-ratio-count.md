@@ -4,7 +4,7 @@ title: witness_provenance_audit's completeness ratio counts 320 never-checked wi
 status: todo
 type: task
 created_at: 2026-08-22T21:14:23Z
-updated_at: 2026-08-23T16:20:00Z
+updated_at: 2026-08-23T20:00:00Z
 ---
 
 
@@ -251,3 +251,85 @@ folded into either neighbour"* — and its headline names its own denominator:
 of 2719 claim-less witnesses, but that population is disclosed in the headline,
 so by this campaign's criterion it is not a defect. Recorded because I nearly
 filed it as one.
+
+---
+
+## Items (2) and (3) ADDRESSED 2026-08-23 — differently, and on purpose
+
+### (2) Dynamic reads — FIXED
+
+`has_reader` matched literal filenames only, so a consumer building its path with
+an f-string was invisible and its whole family looked reader-less. **33 distinct
+f-string witness names** exist under `computations/`:
+
+```
+chi-{atom}-h{n}-at-q0-50dps.witness.json          (20 sites)
+chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json
+habiro-coefficients-{slug}.witness.json
+atom-chi-rust-{iso}.witness.json                  … 33 total
+```
+
+`build_dynamic_readers` compiles them to family matchers, placeholders → `[^.]+`.
+
+**The interesting part is what had to be rejected.** Compiled naively,
+`chi-{atom_label}.witness.json` becomes `chi-[^.]+\.witness\.json` and claims
+**every** `chi-*` witness in the corpus — `chi-convention-audit`,
+`chi-content-eigenbasis`, `chi-convention-trM-ratio-probe`. A matcher that
+over-claims manufactures readers, which un-exempts witnesses and produces
+provenance accusations against caches the owner directive says not to chase.
+
+So a pattern is trusted only with **≥ 12 characters of literal anchoring**
+(placeholders excluded, `.witness.json` suffix excluded). Measured across
+thresholds:
+
+| min literal | patterns kept | exempt witnesses reached | spurious |
+|---|---|---|---|
+| 0 | 33/33 | 59 | **4** |
+| 8 | 28/33 | 42 | 0 |
+| **12** | **27/33** | **42** | **0** |
+| 16 | 22/33 | 42 | 0 |
+
+12 is the smallest threshold that is clean and keeps the most patterns. The
+**6 rejected patterns are printed**, not dropped silently — a family behind one
+of them can still look reader-less, and that is exactly the kind of residual
+this bean exists to make legible.
+
+### Effect, and a correction to my own estimate
+
+| | after the `git grep` fix | + dynamic readers |
+|---|---|---|
+| `PROV_EXEMPT_NO_READER` | 229 | **217** |
+| `PROV_MISSING` | 57 | **70** |
+| corpus evaluated | 0.886 | **0.891** |
+| completeness ratio | 0.9790 | **0.974** |
+
+**12 witnesses moved, not the 42 I measured first.** `has_reader` is consulted
+only for witnesses already sitting at `PROV_MISSING` (`:242`), so the other 30
+were never in a state the exemption could apply to. Coverage up, score down —
+both the honest direction, again.
+
+### (3) Machine inventories — MEASURED and reported, deliberately NOT enforced
+
+113 of the 114 `.json` files under `content/` that cite a witness name are
+`*.qa.json` **QA sidecars** — generated from a block, not authored, and named by
+`AGENTS.md` itself as bulk machine output. So a name appearing only there is not
+really "the paper cites this."
+
+Measured: **8** names reach the paper index only via a `*.qa.json` sidecar; a
+further **3** only via `content/pipeline/` tooling; 11 together, which is the
+figure I first quoted before separating the two scopes. The audit reports the 8
+it can attribute to sidecars.
+
+**Not enforced, and the reason matters.** Excluding them would move witnesses
+*into* the exempt class — reducing what the audit evaluates. This bean's entire
+thesis is that unevaluated is the thing to avoid, so silently shrinking the
+evaluated set to be more "correct" would be the wrong trade for me to make
+unilaterally. The count is printed and stored in the witness
+(`paper_citations_only_from_machine_sidecar`) so whoever owns the rule can decide
+with the number in front of them.
+
+### Witness refresh checked for provenance downgrade
+
+`python 3.11.15 / numpy 2.4.6 / scipy 1.17.1` before **and** after, and the run
+emitted no environment warning — so this refresh does not weaken the record, the
+way the `guarded-off-audit` refresh would have. Checked, not assumed.

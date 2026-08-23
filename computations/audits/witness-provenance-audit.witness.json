@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T13:09:41.682329+00:00",
-  "commitSha": "b70489d9b2eef4491b8c85a10e3d2c93c41ae27a",
+  "computedAt": "2026-08-23T16:37:00.582251+00:00",
+  "commitSha": "399079c72a3c2c0cc9edd14f0f935f7f9cb703f6",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 57,
+      "computed": 70,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
-  "scriptHash": "bed7fbf59485",
-  "scriptCommitSha": "679f01602766bd3c29413322b76328fc6a2e807d",
+  "scriptHash": "b847563e710f",
+  "scriptCommitSha": "6c852daf115f441c9797d2be1a4b9a86f60d8fd6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,17 +57,17 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2719,
-      "prov_ok": 2353,
+      "total_scanned": 2721,
+      "prov_ok": 2354,
       "prov_audit_exempt": 77,
-      "prov_exempt_no_reader": 229,
+      "prov_exempt_no_reader": 217,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 57,
+      "prov_missing": 70,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.9790364104450165,
-      "excluded_not_evaluated": 309,
-      "completeness_ratio_evaluated": 0.9763485477178423,
-      "evaluated_coverage": 0.8863552776756161
+      "completeness_ratio": 0.9742741639103271,
+      "excluded_not_evaluated": 297,
+      "completeness_ratio_evaluated": 0.9711221122112211,
+      "evaluated_coverage": 0.8908489525909592
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3273,11 +3273,6 @@
         },
         {
           "witness": "r11b-interior-max-monotone-cone-certificate.witness.json",
-          "missing_fields": [],
-          "evaluated": true
-        },
-        {
-          "witness": "saturating-shared-channel.witness.json",
           "missing_fields": [],
           "evaluated": true
         },
@@ -8957,6 +8952,16 @@
           "evaluated": true
         },
         {
+          "witness": "fbor-normalisation-barsymmetry.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
           "witness": "gram-convention-d-singularity-structural.witness.json",
           "missing_fields": [],
           "evaluated": true
@@ -11927,9 +11932,77 @@
           "evaluated": true
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-3-free-h9-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
           "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
           ],
           "evaluated": true
         },
@@ -11955,6 +12028,15 @@
           "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-helium-4-h12-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
           ],
           "evaluated": true
         },
@@ -11991,6 +12073,24 @@
           "evaluated": true
         },
         {
+          "witness": "chi-tritium-free-h9-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
           "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
           "missing_fields": [
             "engine",
@@ -12003,6 +12103,15 @@
           "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
           ],
           "evaluated": true
         },
@@ -12064,6 +12173,14 @@
           "witness": "s5so3-geometric-wlambda-a4-helium.witness.json",
           "missing_fields": [
             "engine",
+            "scriptFile",
+            "commitSha"
+          ],
+          "evaluated": true
+        },
+        {
+          "witness": "saturating-shared-channel.witness.json",
+          "missing_fields": [
             "scriptFile",
             "commitSha"
           ],
@@ -12765,111 +12882,7 @@
           "evaluated": false
         },
         {
-          "witness": "chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "scriptFile"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "scriptFile"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-3-free-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-helium-4-h12-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
           "witness": "chi-helium-4-h12.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-tritium-free-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": false
-        },
-        {
-          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -14772,6 +14785,56 @@
       "paper_names": 588,
       "py_names": 2005,
       "ok": true
-    }
+    },
+    "dynamic_readers": {
+      "patterns_used": [
+        "atom-chi-rust-h{3A}.witness.json",
+        "atom-chi-rust-{atom}.witness.json",
+        "atom-chi-rust-{iso}.witness.json",
+        "chi-{atom_name}-h{n_strands}-at-q0-{args.dps}dps-matrix-m.witness.json",
+        "chi-{atom_name}-h{n}-at-q0-50dps.witness.json",
+        "chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m.witness.json",
+        "chi-{atom}-h3-at-q0-50dps.witness.json",
+        "chi-{atom}-h{3A}-at-q0-50dps.witness.json",
+        "chi-{atom}-h{n_strands}-at-q0-50dps.witness.json",
+        "chi-{atom}-h{n}-...-matrix-m.witness.json",
+        "chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json",
+        "chi-{atom}-h{n}-at-q0-50dps.witness.json",
+        "chi-{atom}-h{n}-at-qinv-50dps.witness.json",
+        "chi-{atom}-h{n}-at-{q_tag}-50dps.witness.json",
+        "chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json",
+        "chi-{name}-at-q0-50dps.witness.json",
+        "chi-{name}-h3-at-q0-50dps.witness.json",
+        "habiro-coefficients-{slug}.witness.json",
+        "h{3A}-at-q0-50dps.witness.json",
+        "jones-markov-h-{3A}-{sym}.witness.json",
+        "nucleus-real-sdp-{atom}.witness.json",
+        "nuclide-braid-{sym}.witness.json",
+        "operator-extract-h{n}-{iface}.witness.json",
+        "operator-extract-h{n}-{interface}.witness.json",
+        "per-irrep-pole-{atom}-h{n}.witness.json",
+        "sublemma-2-1-A-operator-extract-h12-{iface}.witness.json",
+        "wenzl-y-lambda-h{n}.witness.json"
+      ],
+      "patterns_rejected_weak_anchor": [
+        "chi-{atom_label}-h{n}.witness.json",
+        "chi-{atom_label}.witness.json",
+        "chi-{atom_name}-h{n}.witness.json",
+        "chi-{atom}-h{n}.witness.json",
+        "chi-{label}-h{n}.witness.json",
+        "h{n}-at-{q_tag}-50dps.witness.json"
+      ],
+      "min_literal_anchor": 12
+    },
+    "paper_citations_only_from_machine_sidecar": [
+      "atomic-tr-m-mpfr-50dps-proton.witness.json",
+      "crystal-keystone-selector.witness.json",
+      "escape1-geometric-holonomy-section.witness.json",
+      "frobenius-partition-sum.witness.json",
+      "i1-no-probe-audit.witness.json",
+      "meson-3x4-structural-origin.witness.json",
+      "schur-weyl-mn.witness.json",
+      "y-lambda-at-q0.witness.json"
+    ]
   }
 }
