@@ -4,7 +4,7 @@ title: witness_provenance_audit's completeness ratio counts 320 never-checked wi
 status: todo
 type: task
 created_at: 2026-08-22T21:14:23Z
-updated_at: 2026-08-23T20:10:00Z
+updated_at: 2026-08-24T00:05:00Z
 ---
 
 
@@ -368,3 +368,45 @@ about.
 Also unchanged by design: `--strict` still fails on `PROV_MISSING` only, and this
 file remains **not** gate-wired (`scripts/precision-gates.sh:267` wires the
 similarly-named `computations/witness_provenance_audit.py`, a different audit).
+
+---
+
+## Merge note 2026-08-23 — the witness regenerated from MERGED code, not picked from a side
+
+Merging `origin/main` conflicted on `witness-provenance-audit.witness.json`. The
+producer `.py` auto-merged cleanly — my `build_dynamic_readers` /
+`_sidecar_only_citations` alongside a sibling's `_is_prose` from `077de4548` —
+but **neither side's witness had been produced by the merged code**, so taking
+either would have committed a number no version of the script actually emits.
+Resolved by completing the merge and **re-running the audit**.
+
+### The sibling's fix is the same defect class, and worth reading
+
+`077de4548` — *"a prose `scriptFile` is missing provenance, not provenance"*.
+Six witnesses carry `scriptFile` values like
+`"(legacy — no matching producer found; provenance pending manual triage)"`. That
+string is truthy, so the emptiness test scored them `PROV_OK`. Their own commit
+message states the consequence plainly:
+
+> the I14 campaign (`f893cc92`, 2026-05-19) reached `prov_missing: 0` /
+> `completeness_ratio: 1.00` **partly by WRITING THIS MARKER**, and the gate that
+> should have noticed went green.
+
+A perfect-score gate reached by writing the excuse into the field it checks.
+
+### Combined effect
+
+| | index empty (bean filed) | + my two fixes | + sibling `_is_prose` (merged) |
+|---|---|---|---|
+| `PROV_MISSING` | 45 | 70 | **89** |
+| `PROV_EXEMPT_NO_READER` | 242 | 217 | **209** |
+| `completeness ratio` | 0.9838 | 0.974 | **0.967** |
+| corpus evaluated | 0.882 | 0.891 | **0.893** |
+
+Three independent fixes, all pushing the headline **down** and coverage **up**.
+The 0.9838 this bean opened against was the product of an empty index *and* six
+self-written exemption markers.
+
+Environment identical before and after (`python 3.11.15 / numpy 2.4.6 / scipy
+1.17.1 / mpmath 1.4.1`), no environment warning — checked before committing, as
+for every witness refresh in this campaign.
