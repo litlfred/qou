@@ -50,9 +50,72 @@ import sympy as sp
 warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0 as _MASS3A_Q0
 
 Q_SYM = sp.Symbol("q")
+
+# The q actually baked into the rep matrices. Read from `mass_at_3A_proper`
+# rather than re-derived from `q_parameter`, because it must be the value
+# `_cached_seminormal` used — including its disk cache key `q{Q0:.10f}`. If
+# that module ever re-pins, this follows it instead of silently disagreeing.
+_BAKED_Q = float(_MASS3A_Q0)
+
+# Relative tolerance for the q-pinning guard below. Chosen against the two
+# things real call sites actually pass, not picked round:
+#
+#   * `float(q_parameter.Q)`      — bit-identical to the baked value, 0 apart
+#   * `mp.mpf(Q_50_DIGIT_STR)`    — 2.3e-16 relative from it (float64 epsilon)
+#
+# 1e-12 clears the second by four orders while sitting far below any genuine
+# q-sweep: a sensitivity probe steps q by 1e-8 at the finest, and a
+# convention/anchor change moves it by 1e-8 or more (the muon/proton pins are
+# 1.15e-08 apart). So this admits every legitimate caller and rejects every
+# caller that thinks it is varying q.
+_Q_PIN_RTOL = 1e-12
+
+
+def _pin_to_baked_q(fn, baked_q: float, shape: tuple, idx: int):
+    """Wrap a lambdified σ_i so passing a DIFFERENT q fails loudly.
+
+    `_compiled_sigmas` returns things that look like functions of q and are
+    not. `_cached_seminormal(shape)` takes only a shape and returns float64
+    matrices with q ALREADY SUBSTITUTED at the module-level `Q0` — its disk
+    cache is even keyed `q{Q0:.10f}` — so the `lambdify(Q_SYM, ...)` wrapper
+    closes over constants. Measured: `sigma(q=0.5) == sigma(q=2.0) ==
+    sigma(q=7.0) == sigma(q=q0)`, all four bit-identical.
+
+    That is currently harmless only because every caller in the repo passes
+    q0. It is a trap for the next one: a q-sweep through this path would
+    return the q0 answer at every point, silently, with no error and no
+    warning — and the `"mpmath50"` label would make the result look like it
+    carried 50 digits while being float64 data widened.
+
+    This does NOT make the rep symbolic in q. That is the real fix and it is
+    a `pyhecke` change — `syt_prefix_cache.BlockCache(q: float, h: float)`
+    stores the Hoefsmit blocks as float64 by signature, across 17 consumers,
+    with an on-disk cache format to migrate. Bean `qou-v6vp`. What this does
+    is stop the function LYING about its signature, so that work is triggered
+    by an exception rather than by someone noticing a flat sweep.
+    """
+    def guarded(q_val=None):
+        if q_val is not None:
+            qf = float(q_val)
+            if abs(qf - baked_q) > _Q_PIN_RTOL * max(abs(baked_q), 1.0):
+                raise ValueError(
+                    f"_compiled_sigmas{shape}[{idx}] is PINNED at q="
+                    f"{baked_q!r} and ignores its argument; you passed "
+                    f"q={qf!r}.\n"
+                    "  The seminormal rep is built numerically at the module "
+                    "q0 by _cached_seminormal(shape), which takes no q, so "
+                    "this 'function of q' is a constant. Evaluating it "
+                    "off-anchor would have silently returned the q0 answer.\n"
+                    "  To vary q you need a rep that is symbolic in q — see "
+                    "bean qou-v6vp (pyhecke syt_prefix_cache.BlockCache)."
+                )
+        return fn(baked_q)
+    guarded.baked_q = baked_q          # introspectable, so a caller can ask
+    guarded.is_q_pinned = True         # rather than discover by exception
+    return guarded
 
 
 @lru_cache(maxsize=1024)
@@ -61,6 +124,10 @@ def _compiled_sigmas(shape: tuple, precision: str = "double"):
 
     Returns a tuple of compiled functions σ_i(q) → numpy/mpmath matrix.
     Cached per (shape, precision).
+
+    The returned callables are PINNED to the module q0 and raise on any other
+    q — they are constants wearing a function signature. See
+    `_pin_to_baked_q`.
     """
     sigmas, dim, _ = _cached_seminormal(shape)
     if dim == 0:
@@ -87,7 +154,7 @@ def _compiled_sigmas(shape: tuple, precision: str = "double"):
             fn = sp.lambdify(Q_SYM, S_sym, modules=["mpmath"])
         else:
             fn = sp.lambdify(Q_SYM, S_sym, modules=["numpy"])
-        compiled.append(fn)
+        compiled.append(_pin_to_baked_q(fn, _BAKED_Q, shape, len(compiled)))
     return tuple(compiled), dim
 
 

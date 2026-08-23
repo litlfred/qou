@@ -75,6 +75,31 @@ SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
     ".beans", "build", "dist", ".pytest_cache", "_deprecated",
+    # `.claude/worktrees/` holds gitignored agent worktrees — whole extra
+    # copies of the repo. Scanning them reports the SAME literal once per
+    # worktree and turns this gate RED on findings that are not in the branch,
+    # not on main, and would not reproduce in a clean checkout. Measured
+    # 2026-08-22: 83 of 83 hits came from there, and the same commit scanned
+    # 50272 files with a worktree present vs 25145 without — the gate's verdict
+    # depended on local checkout state.
+    #
+    # Skipped by directory NAME rather than by excluding all of `.claude`:
+    # `.claude/skills/` is TRACKED source and DOES carry CODATA literals — e.g.
+    # `local/compute-audit.md` quotes "0.51099895" (the electron mass in MeV)
+    # among others. None is flagged today because they match the table exactly
+    # and exact matches are silent by design, but a skill doc quoting a STALE
+    # value is precisely what this gate is for, so those 150 files stay in
+    # scope. Keeping them costs 3 counted sites and no findings.
+    #
+    # This narrower scope is #5440's, adopted in preference to my own. I had
+    # excluded `.claude` wholesale, on a measurement that said those files
+    # contained zero literals. That measurement was WRONG: the command was
+    # `grep -ohE -P …`, which is invalid ("conflicting matchers specified"),
+    # and its stderr went to /dev/null — so a broken grep produced an empty
+    # result and the zero count read as a finding. Silence from a suppressed
+    # error is not evidence. The wholesale exclusion would have dropped a real
+    # CODATA literal out of the gate's reach.
+    "worktrees",
 }
 
 # A literal needs enough digits to identify a constant. Below ~7 significant

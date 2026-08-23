@@ -1,11 +1,11 @@
 ---
 # qou-akb4
 title: 'check-sidecars §7c detector: two false-positive classes'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T11:40:05Z
-updated_at: 2026-08-16T11:40:05Z
+updated_at: 2026-08-23T00:00:00Z
 ---
 
 Worked instance: `qou-7cmk` (a §7c mixed-file advisory judged cosmetic and
@@ -90,3 +90,82 @@ the point; but recall that is never trusted is not recall.
 Filed 2026-08-16 from an agent that could not reach the `beans` CLI. Regex
 quoted from `scripts/check-sidecars.sh:35` at merge `36080a4e21`; PR #5187
 disposition quoted from its merged body.
+
+---
+
+## RESOLVED 2026-08-23 — and the bean's own prediction was wrong
+
+All four steps done, but the headline finding is a **third class the bean did
+not name**, which turned out to be the dominant one — and it runs in the
+*opposite* direction to what step 3 predicted.
+
+### Class 1 (`norm_num`) — the regex was already dead
+
+`ARCH` had **one** occurrence in the whole script: its own definition. No
+`eval`, no indirect expansion, nothing read it. The live §7c checks use `JUST`,
+which already omits `norm_num`. So class 1 was producing zero advisories and the
+three hand-adjudications it was blamed for came from elsewhere. Removed rather
+than repaired (with a comment saying why), so it cannot be wired back in and
+silently reintroduce the false positive.
+
+### Class 2 (`foo` beside `foo_real`) — real, and small
+
+Implemented as step 2 asks: extract declaration names from the file, and if any
+`foo_real` has a `foo` sibling, downgrade MIXED to informational. Corpus-wide it
+moves **4 files**.
+
+### Class 3 (NEW) — the comment stripper was deleting code
+
+`body=$(sed '\#/-#,\#-/#d' …)` is a **range** delete. Given a complete one-line
+docstring `/-- Archimedean shim of markovZ. -/` it opens the range on that line
+and then looks for `-/` on *subsequent* lines — the closer on the same line does
+not end it. Everything from a one-line docstring to the next block-comment
+terminator was deleted as if it were comment.
+
+Measured over the 3037 `.lean` files under `content/`:
+
+| | |
+|---|---|
+| files losing ≥1 declaration | **1578** (52%) |
+| declarations deleted | **5723** |
+| code lines deleted | **54213** |
+
+This is also why class 2 could not be tested at first: on
+`BraidKnot/HoefsmitV21CosSymmetrization.lean` (329 lines → 161) the stripper ate
+`noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q)` itself, so the file read
+as archimedean-only and flagged MIXED while in fact carrying the exact prescribed
+pattern. The `_real` fix looked broken; the input was.
+
+Fixed with a pass-1 `sed -E 's@/-([^-]|-+[^-/])*-+/@@g'` that removes complete
+one-line blocks before the range delete sees them.
+
+### Step 3 measurement — the count did NOT drop
+
+The bean says *"if the count drops sharply, that is the measure of the noise"*.
+It rose. Over all 3037 files:
+
+| verdict | before | after |
+|---|---|---|
+| ⚠ MIXED | 242 | **255** |
+| ⚠ base-ring-minimal | 177 | **171** |
+| generic + `_real`, informational | 0 | **4** |
+| total ⚠ | 419 | 426 |
+
+60 file verdicts changed, in **both** directions:
+
+- **33 false advisories removed** — 29 files ⚠ → clean (the stripper had hidden
+  the archimedean construct that justifies their `ℝ`), plus the 4 `_real`
+  downgrades.
+- **27 previously-invisible real ones surfaced** — files that read clean only
+  because the declarations that would have flagged them had been deleted.
+
+So the detector's dominant problem was **false negatives**, not the noise the
+bean was filed about. A near-flat total conceals that 60 of 3037 verdicts were
+simply wrong. Step 4 (don't silence the MIXED branch) is respected — the branch
+is unchanged apart from the `_real` discrimination.
+
+### Not done
+
+The 27 newly-surfaced MIXED files are **not** adjudicated here; they are real
+detector output that nobody has read yet, because until now nobody could. They
+are ordinary §7c backlog, not a regression from this change.
