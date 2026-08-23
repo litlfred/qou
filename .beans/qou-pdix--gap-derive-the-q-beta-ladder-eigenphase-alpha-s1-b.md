@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T22:30:01Z
+updated_at: 2026-08-23T00:21:11Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -441,3 +441,44 @@ eps(Delta) - tr_M(Delta), not an arbitrary connection.
 Entries 1-8 otherwise unaffected: the rationality invariant, the carrier
 vacuity, the -1/4 crux, the two refuted candidates, and the detector were each
 checked against these landings.
+
+
+## 2026-08-23 (10) — branch 3 DEFLATED: the gap is abelian, so the target is a PERIOD
+
+Followed the sibling identity to its consequence, which neither PR draws.
+
+93d211598f proves 2*alpha = eps(Delta) - tr_M(Delta) via
+CrossingWeightAffine.evalMap h w = h^2/2 - h*w. Verified: E(1) - E(z) = h(z-1)
+= 2*alpha exactly.
+
+**The map is AFFINE in the crossing weight (degree exactly 1):**
+    E(w0) - E(w0 + d) = d*h        d^2 coefficient EXACTLY 0
+
+A genuine non-abelian holonomy carries a second-order Magnus/BCH term in the
+departure. This gap has NONE. So the phase is an **abelian period of an affine
+map**, not a curvature integral — much smaller than the 'non-abelian Stokes'
+holonomy the canonical chain invokes at step 2.
+
+TWO READINGS, not chosen between:
+  (a) the non-abelian Stokes framing is not what produces THIS phase — it may be
+      right elsewhere in the chain and simply not here;
+  (b) evalMap's affineness is itself a truncation, higher-order weight structure
+      dropped upstream. Its docstring reads definitional, but a docstring is not
+      a proof; settling this means chasing evalMap's provenance.
+
+**ACCEPTANCE TEST for branch 3, now three-part and sharper:**
+  1. reproduce alpha through t^2 in q (requires z'(1) = 0)
+  2. account for alpha = -1/4 of Re(log-gap) AND the discarded i*pi
+  3. be EXACTLY FIRST-ORDER IN THE CROSSING WEIGHT — any d^2 term contradicts
+     evalMap_affine. This is the constraint an honest non-abelian construction is
+     most likely to violate, so it is the discriminating one.
+  (plus: deliver a value BELOW 1, entry 8)
+
+This does not derive alpha. It says what KIND of object alpha is, and deflates
+the holonomy framing for this channel from non-abelian to abelian.
+
+NEXT: resolve reading (a) vs (b) by chasing evalMap's provenance — is the affine
+form definitional or a truncation? That is now the bottleneck, and it is a
+corpus-archaeology question rather than a derivation.
+
+PROBE: qbeta_eigenphase_holonomy_consistency_probe.py, now 13/13.
