@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T12:22:58Z
+updated_at: 2026-08-23T13:11:22Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -65,3 +65,52 @@ script ran and its own assertions passed — not that the script tested the
 proposition the block states. Worked instance in `qou-lrnd`:
 `habiro-frobenius-probe` asserts the Galois norm is an integer, while the block's
 Lean assumes a constant collapse to a value that appears nowhere in the witness.
+
+
+---
+
+## ⁴He CLOSED (`a107525051`) — 11 of 12 remain
+
+`prop:he4-two-row-dominance` is fixed end to end: block prose, producer
+constants, witness, and status.
+
+**The diagnosis, since it generalises.** Installing the missing scientific
+stack and re-running the producer reproduced the committed witness
+**byte-for-byte** — so the witness was current and the block stale, not the
+other way round. Then, per assertion:
+
+* Hoefsmit characters `χ^λ` **agree** with the old table to 3+ digits;
+* only `y_λ` differs, by a **non-uniform** factor of 2.66–4.04.
+
+Non-uniform rules out a normalisation — it is a **different formula**. This is
+the `y_λ` / `w_λ` / `w̃_λ` conflation AGENTS.md warns about, caught in the wild.
+The q₀ re-pin was also ruled out by arithmetic: 11.5 ppb cannot move a smooth
+function of q by 190 %.
+
+**The proposition got stronger, not weaker.** The two-row ratio is not 86.6 %
+but **exactly 1** — all 70 partitions with more than two rows contribute 0. The
+≥ 80 % claim holds and λ* = (9,3) is unchanged. Only the table was wrong.
+
+**Method worth reusing on the other 11**, in this order:
+
+1. Install what the witness's `environment` block records, then re-run. If the
+   producer reproduces the committed witness, the *block* is stale — which
+   settles the direction before any editing.
+2. Compare assertion by assertion. Which quantities agree pins the fault: here
+   χ agreeing and only `y_λ` moving localised it to the weight family in one
+   step.
+3. Check whether the ratio is uniform. Uniform ⇒ normalisation; non-uniform ⇒
+   different formula. Different fixes.
+4. Regenerate tables **from the witness**, never by hand.
+5. Restore provenance before committing a witness. The first re-run here would
+   have dropped `clarabel` and `pyhecke_native` and downgraded mpmath. Building
+   `pyhecke-native` from source gave `pyhecke_native_build =
+   30fd920c241a54fa`, **matching** the original — so the build is identical and
+   nothing was lost.
+
+**On CITED_* constants.** Correcting them is not the banned "widen a baseline to
+make a red run green": they are the producer's snapshot of the block's *prose*,
+and the check is "does the block still match the computation". Tolerances were
+untouched (5e-07 on tr_M, 0.15 on the percentages) and the mismatch was fixed at
+its source. If a future case tempts you to move a *tolerance* instead, that is
+the banned move.
