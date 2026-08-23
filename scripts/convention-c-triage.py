@@ -56,6 +56,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import re
 import importlib.util
 import json
 import pathlib
@@ -106,6 +107,50 @@ def _importer_emits_witness(module_stem: str) -> list[str]:
         except Exception:
             continue
     return out
+
+
+# ---------------------------------------------------------------------------
+# Structural pre-check (--structural).
+#
+# A site can pass every blocking signal above and STILL be unsafe, because the
+# code AROUND it relies on a property that only convention C has. Measured
+# instance: `convergence_safe_vhat_tower.py:198` reads
+#
+#     z_bar = mp.mpf(1) / (mp.sqrt(qi) + mp.sqrt(q))   # = z (bar-symmetric)
+#
+# and that comment holds only under C --  bar(z_C) = z_C, while
+# bar(z_D) = 1/(q^3+q) = q^-4 * z_D. The line is the BAR IMAGE, not a stale
+# spelling of z; substituting z_D asserts something false.
+#
+# So this scan reads a +-20 line window around each site and flags C-specific
+# structure. It found the z_bar case independently after that case was found by
+# hand, which is the only validation it has -- treat it as a prompt to read the
+# site, not a verdict.
+
+STRUCTURAL_PATTERNS = [
+    ("bar-symmetry",
+     re.compile(r"bar[- ]symmetric|bar\s*\(|(^|_)bar(_|\b)|z_bar", re.I)),
+    ("half-integer power of q",
+     re.compile(r"\*\*\s*\(?\s*1\s*/\s*2|\*\*\s*0?\.5|sqrt\(\s*[qQ]")),
+    ("explicit (q+1) denominator",
+     re.compile(r"\(\s*[qQ]\w*\s*\+\s*1\s*\)")),
+    ("substrate s = sqrt(q)",
+     re.compile(r"\bs\s*=\s*.*sqrt|substrate variable", re.I)),
+]
+
+
+def structural_flags(path: pathlib.Path, line: int) -> list:
+    """C-specific structure within +-20 lines of the site."""
+    try:
+        lines = path.read_text().splitlines()
+    except Exception:
+        return []
+    ctx = "\n".join(lines[max(0, line - 20):min(len(lines), line + 20)])
+    hits = [nm for nm, rx in STRUCTURAL_PATTERNS if rx.search(ctx)]
+    # The C spelling itself contains sqrt(q); that alone is not structure.
+    if hits == ["half-integer power of q"]:
+        return []
+    return hits
 
 
 def _load(name: str, fname: str):
@@ -159,6 +204,8 @@ def triage(recs, migrate):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--json")
+    ap.add_argument("--structural", action="store_true",
+                    help="partition convertible sites by C-specific structure")
     args = ap.parse_args()
 
     tmp = REPO / ".tmp-c-sites.json"
@@ -201,6 +248,21 @@ def main() -> int:
     mech = sum(1 for r in rows if r["klass"] == "MECHANICAL")
     print(f"\n  machine-migratable now : {mech}")
     print(f"  needs a human          : {len(rows) - mech}")
+
+    if args.structural:
+        conv = [r for r in rows if r["klass"] in ("MECHANICAL", "B4", "B4t")]
+        flagged, clean = [], []
+        for r in conv:
+            f = structural_flags(REPO / r["path"], r["line"])
+            (flagged if f else clean).append((r, f))
+        print(f"\n{'=' * 74}\nSTRUCTURAL PRE-CHECK on convertible sites\n{'=' * 74}")
+        print(f"\nNEEDS A MATHS DECISION ({len(flagged)}) — C-specific structure nearby:")
+        for r, f in flagged:
+            print(f"  {r['path']}:{r['line']}  {r['target']}")
+            print(f"      {', '.join(f)}")
+        print(f"\nPLAIN SUBSTITUTION CANDIDATES ({len(clean)}):")
+        for r, _ in clean:
+            print(f"  {r['path']}:{r['line']}  {r['target']}")
 
     if args.json:
         pathlib.Path(args.json).write_text(json.dumps(
