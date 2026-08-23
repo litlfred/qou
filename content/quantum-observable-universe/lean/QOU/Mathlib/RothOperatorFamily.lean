@@ -62,21 +62,24 @@
   complementary by construction, so no such condition is needed; and in the recursion's regime
   it reads `Φ_m·r_m ≤ 1`, which is false.
 
-  One constant question remains, and it is the sixth correction in its final form:
+  One constant question remains, and it is the sixth correction in its final form: the row
+  cost `t`.  Half of it is now settled.
 
-  * the row cost is `t = r/D₁` — representation length over degree floor.  The source *chooses*
-    `t` with `0 < t ≤ 1`; this arc *derives* it.  The two pieces that would settle it:
+  * `exists_index_le_of_separated_le_degreeOf` makes `t = (d+1)/D₁` — the split-off variable's
+    degree over the degree floor of the *other* variables.  It no longer depends on how long a
+    representation happens to be, because `SeparatedRepresentation` now bounds the minimum
+    length by `d + 1` (Mahler's `n ≤ r_m + 1`).
 
-      1. a bound `r ≤ d(split-off variable) + 1` on the **minimum representation length** —
-         true (expand `P` in powers of the split-off variable) but **not proved here**:
-         `exists_separated_representation_fin` splits on the `σ`-monomials, giving
-         `r = #{σ-monomials}`, and `exists_indep_representation` only shortens without
-         recording by how much;
-      2. `RothGrowth`, which makes the split-off variable's degree the *smallest*, so that
-         `D₁ ≥ ω · d(split-off)` and hence `t ≲ 1/ω`.
+    ⚠ That bound is entirely about **which side the representation is grouped on**.  Grouping
+    on the `x`-side gives one term per `x`-monomial — a *product* of degrees — and no growth
+    condition can rescue a row cost of that size.  Grouping on the `y`-side gives one term per
+    `y`-monomial, which for a single split-off variable is `d + 1`.
 
-    Together those would give `t ≲ 1/ω` and so determine `ω(m, ε)` — which is the one entry
-    `RothLemmaStatement`'s audit came back empty on.
+  * ⚠ **What is left**: turning the *ratio of degrees* `(d+1)/D₁` into `1/ω`.  `RothGrowth`
+    orders the degrees so that the split-off variable's is the smallest, which should give
+    `D₁ ≥ ω·d` and hence `t ≲ 1/ω`; choosing `ω ≥ 2/ε` would then give `t ≤ ε/2` and determine
+    `ω(m, ε)`.  **Not proved**, and the reading it rests on (§11's property `Γ_m`) is in the
+    illegible region of the source.
 -/
 import QOU.Mathlib.RothInductionStep
 import QOU.Mathlib.BoundedOrderWronskian
@@ -397,22 +400,104 @@ theorem exists_index_le_of_separated {τ : Type*} {K : Type*} [Field K] [CharZer
   rw [hPeq, ← sepW]
   exact hS
 
+/-! ### Mahler's `n ≤ r_m + 1`, carried through
+
+The length of the minimum representation is what the row cost `t = r/D₁` is made of, so a
+bound on it is a bound on `t`.  `SeparatedRepresentation` supplies `r ≤ d + 1` when the
+split-off group is a single variable of degree at most `d`; the two results below carry that
+through the non-vanishing argument and into §13's conclusion.
+
+⚠ Which side the representation is grouped on decides this completely: grouping on the
+`x`-side gives `r = #{x\text{-monomials}}`, a *product* of degrees, and the row cost is then
+hopeless.  See `exists_separated_representation_monomial_right`. -/
+
+/-- `exists_sepW_ne_zero` with the length bound attached. -/
+theorem exists_sepW_ne_zero_le_degreeOf {K : Type*} [Field K] [CharZero K] [DecidableEq σ]
+    (P : MvPolynomial (σ ⊕ Unit) K) (hP : P ≠ 0) {d : ℕ}
+    (hd : degreeOf (Sum.inr ()) P ≤ d) :
+    ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial Unit K)
+      (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
+      0 < r ∧ r ≤ d + 1 ∧ (∀ i, (Dx i).length ≤ (i : ℕ)) ∧ (∀ j, (Dy j).length ≤ (j : ℕ)) ∧
+      P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) ∧
+      sepW Dx Dy φ ψ ≠ 0 := by
+  classical
+  obtain ⟨r, φ, ψ, hcard, hφ, hψ, hPeq⟩ :=
+    exists_separated_representation_indep_le_degreeOf P hd
+  have hr : 0 < r := by
+    rcases Nat.eq_zero_or_pos r with rfl | h
+    · exact absurd (hPeq.trans (by simp)) hP
+    · exact h
+  obtain ⟨Dx, hDx, hWx⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr φ hφ
+  obtain ⟨Dy, hDy, hWy⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr ψ hψ
+  refine ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, ?_⟩
+  rw [sepW_eq]
+  refine mul_ne_zero ?_ ?_
+  · intro h
+    have h0 : (rename Sum.inl (mvGenWronskian Dx φ) : MvPolynomial (σ ⊕ Unit) K)
+        = rename Sum.inl 0 := by rw [h, map_zero]
+    exact hWx (rename_injective _ Sum.inl_injective h0)
+  · intro h
+    have h0 : (rename Sum.inr (mvGenWronskian Dy ψ) : MvPolynomial (σ ⊕ Unit) K)
+        = rename Sum.inr 0 := by rw [h, map_zero]
+    exact hWy (rename_injective _ Sum.inr_injective h0)
+
+/-- **§13 with the row cost made explicit.**
+
+The `t` slot is now `(d+1)/D₁` — the split-off variable's degree over the degree floor of the
+*other* variables — rather than the existentially-produced representation length.  That is the
+form the growth condition can act on: `RothGrowth` makes the split-off degree the smallest, so
+`D₁ ≥ ω·d` and `t ≲ 1/ω`.
+
+⚠ That last step is **not proved here**.  This theorem makes `t` a ratio of *degrees*; turning
+that ratio into `1/ω` needs `RothGrowth` and is the remaining piece.  What is settled is that
+`t` no longer depends on how long a representation happens to be. -/
+theorem exists_index_le_of_separated_le_degreeOf {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] {D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : Unit → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : Unit → K) (P : MvPolynomial (σ ⊕ Unit) K) (hP : P ≠ 0)
+    {d : ℕ} (hdeg : degreeOf (Sum.inr ()) P ≤ d) :
+    ∃ (r : ℕ) (S : ℚ), 0 < r ∧ r ≤ d + 1 ∧ ∀ θ q : ℚ,
+      ((d : ℚ) + 1) / (D₁ : ℚ) ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) →
+      ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
+      θ ≤ ((d : ℚ) + 1) / (D₁ : ℚ) + 2 * max (S / (r : ℚ)) q := by
+  classical
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, hne⟩ :=
+    exists_sepW_ne_zero_le_degreeOf P hP hdeg
+  obtain ⟨S, hS⟩ := exists_index_le_of_ne_zero (Sum.elim d₁ d₂) (Sum.elim α β) hne
+  have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁
+  have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
+  have hrle : (r : ℚ) / (D₁ : ℚ) ≤ ((d : ℚ) + 1) / (D₁ : ℚ) := by
+    refine div_le_div_of_nonneg_right ?_ hD₁Q.le
+    have : (r : ℚ) ≤ ((d + 1 : ℕ) : ℚ) := by exact_mod_cast hcard
+    push_cast at this
+    linarith
+  refine ⟨r, S, hr, hcard, fun θ q hθt hq0 hq hθ => ?_⟩
+  refine index_le_two_mul_max_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
+    (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P θ (((d : ℚ) + 1) / (D₁ : ℚ))
+    (D₂ : ℚ) S q hr hD₂Q hθt hq0 hq hθ
+    (fun i j => le_trans (cost_sepW_le hD₁ hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hDx hDy i j)
+      (by linarith)) ?_
+  rw [hPeq, ← sepW]
+  exact hS
+
 /-! ### Next
 
-§13 is closed.  What is left is the constant bookkeeping, and it now has a shape:
+§13 is closed, and the row cost is now a ratio of **degrees** rather than of a representation
+length.  Two things remain:
 
-1. **Bound the minimum representation length.**  `r ≤ d(split-off variable) + 1`, which is
-   Mahler's `n ≤ r_m + 1`.  Needs the representation split on the *`τ`*-monomials (the arc
-   splits on `σ`) and a length bound threaded through `exists_indep_representation`, which
-   currently only shortens without saying by how much.
-2. **Feed that to `RothGrowth`.**  With the split-off variable's degree smallest,
-   `D₁ ≥ ω·d(split-off)`, so `t = r/D₁ ≲ 1/ω`.  Choosing `ω ≥ 2/ε` then gives `t ≤ ε/2`.
-3. **The recursion** (§14): `ω(m, ε)` follows from 2, and `c_m = 2^m − 3` from iterating.
+1. **`RothGrowth` ⟹ `t ≲ 1/ω`.**  The growth condition makes the split-off variable's degree
+   the smallest, so `D₁ ≥ ω·d` and `(d+1)/D₁ ≲ 1/ω`.  This is a statement entirely inside the
+   arc — `RothGrowth` is defined in `QOU/Mathlib/RothLemmaStatement.lean` — so it can be
+   proved without reading anything further.  It determines **`ω(m, ε)`**, the one entry that
+   module's audit came back empty on.
+2. **The recursion** (§14): `c_m = 2^m − 3`, and feeding `rothLemmaUniform_one` and the `m−1`
+   case back into the `m` case.
 
-⚠ Provenance: §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14 are
-in the illegible region and have **not** been read; steps 2 and 3 above are the arc's own
-reconstruction of what the growth condition must be doing, not a transcription.  They should
-be checked against a clean copy before `ω(m, ε)` or `c_m = 2^m − 3` is asserted. -/
+⚠ Provenance: §5, §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14
+are in the illegible region and have **not** been read.  Step 1 above is the arc's own
+reconstruction of what the growth condition must be doing; the fact that it is provable inside
+the arc does not make it the source's argument, and `c_m = 2^m − 3` stays unasserted. -/
+
 
 
 

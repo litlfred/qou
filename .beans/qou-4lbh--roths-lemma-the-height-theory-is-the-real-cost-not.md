@@ -1949,3 +1949,72 @@ reconstruction of what the growth condition must be doing, not a transcription.
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Five new declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — Mahler's `n ≤ r_m + 1`: the length bound is a question of which side you group on
+
+Open item 1 from the previous entry. The row cost `t = r/D₁` is made of the minimum
+representation length, so bounding it bounds `t`.
+
+### The finding
+
+The arc had `exists_separated_representation_monomial`, which groups the monomials of `P` by
+their **`x`**-part. That gives one term per `x`-monomial — a count of size `∏_{h<m}(r_h+1)`.
+Mahler's bound is one term per **`y`**-monomial, which for a single split-off variable is
+`d + 1`.
+
+Those are not close, and no growth condition rescues the first. The two derivations are the
+same proof with `.1` and `.2` exchanged; the arc simply had the one that does not help. Worth
+recording as its own kind of gap: not a missing theorem, and not a wrong one — a theorem
+proved on the wrong side of a symmetry, where the mirror image is the useful one.
+
+### What landed
+
+`SeparatedRepresentation`:
+
+```
+exists_separated_representation_monomial_right   group by the y-part; index set EXPLICIT
+exists_separated_representation_fin_right        Fin-indexed, r = #{y-monomials}
+card_image_snd_le_of_degreeOf                    τ = Unit: #{y-monomials} ≤ d + 1
+exists_indep_representation                      now carries r' ≤ r
+exists_separated_representation_indep_card_le    minimum representation, length bounded
+exists_separated_representation_indep_le_degreeOf   Mahler's n ≤ r_m + 1
+```
+
+The index sets are stated **explicitly** rather than existentially, because the whole point is
+to count them — an existential `∃ t : Finset _, …` cannot be bounded by the caller.
+
+`RothOperatorFamily`: `exists_sepW_ne_zero_le_degreeOf` and
+`exists_index_le_of_separated_le_degreeOf`, which carry the bound through the non-vanishing
+argument and into §13's conclusion. **The `t` slot is now `(d+1)/D₁`** — a ratio of degrees,
+not of a representation length.
+
+### ⚠ Where the last constant question stands
+
+`t = (d+1)/D₁` is the split-off variable's degree over the degree floor of the others. Turning
+that into `1/ω` needs `RothGrowth` to order the degrees so the split-off one is smallest, which
+would give `D₁ ≥ ω·d`. **Not proved.**
+
+But note what changed about its character: `RothGrowth` is defined *in this arc*
+(`RothLemmaStatement`), so step 2 is a statement entirely inside the formalisation — it can be
+proved without reading anything further. That is the first time in this arc that the next
+constant step has not been gated on the source.
+
+⚠ It being provable inside the arc does **not** make it the source's argument. §11 (property
+`Γ_m`) is in the illegible region and unread; if the source's growth condition differs from
+`RothGrowth`, proving the implication proves something about the arc's statement, not about
+Roth's lemma. Say which, when it lands.
+
+### Notes from the build worth keeping
+
+- The index-set-explicit statements need `[DecidableEq τ]` in the **statement** — `classical`
+  in the proof cannot supply an instance the statement already required. And once it is a
+  hypothesis, leaving `classical` in the proof introduces a *second* instance and the
+  `Equiv.sum_comp` step fails on an instance mismatch. Removing `classical` fixed it.
+- `rw [hP]` rewrote `P` inside `P.support.image …` in the goal's own index set, replacing it
+  with the sum. `conv_lhs => rw [hP]` is the fix. The original proof was immune only because
+  its index set was existentially bound.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Eight declarations `#print axioms`-clean.
