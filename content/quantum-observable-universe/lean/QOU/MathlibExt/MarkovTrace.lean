@@ -225,4 +225,20 @@ theorem weightedCharacterTrace_append_comm {ι : Type*} (s : Finset ι)
   refine Finset.sum_congr rfl (fun i _ => ?_)
   rw [character_append_comm (ρ i) v w]
 
+/-- **The weighted trace at the identity is the `y`-weighted dimension sum.**
+    `tr_M(1) = Σ_λ y_λ · d_λ`, since each block character at the empty word is
+    the block dimension (`χ^λ(1) = tr(𝟙_{d_λ}) = d_λ`).  Hence the Markov
+    normalisation (M1) `tr_M(1) = 1` is exactly the weight condition
+    `Σ_λ y_λ · d_λ = 1` — the relation that pins the `y_λ` once the block
+    dimensions are known.  Bean `qou-xq3f` (T2). -/
+theorem weightedCharacterTrace_nil {ι : Type*} (s : Finset ι)
+    (dim : ι → ℕ) (ρ : (i : ι) → HeckeRep n (dim i)) (y : ι → R_t) :
+    weightedCharacterTrace s dim ρ y [] = ∑ i ∈ s, y i * (dim i : R_t) := by
+  unfold weightedCharacterTrace
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  have hc : (ρ i).character [] = (dim i : R_t) := by
+    unfold HeckeRep.character
+    rw [eval_nil (ρ i), Matrix.trace_one, Fintype.card_fin]
+  rw [hc]
+
 end QOU.MathlibExt.MarkovTrace
