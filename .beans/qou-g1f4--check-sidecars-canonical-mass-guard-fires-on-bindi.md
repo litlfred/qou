@@ -1,11 +1,11 @@
 ---
 # qou-g1f4
 title: check-sidecars canonical-mass guard fires on binding_hbarq_rung_forward_test.py (pre-existing on main)
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T19:53:43Z
-updated_at: 2026-08-23T19:54:40Z
+updated_at: 2026-08-23T21:56:44Z
 ---
 
 scripts/check-sidecars.sh reports:
