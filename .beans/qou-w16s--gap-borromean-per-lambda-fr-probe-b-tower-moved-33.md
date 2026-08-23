@@ -1,11 +1,11 @@
 ---
 # qou-w16s
 title: 'GAP: borromean_per_lambda_fr_probe B_tower moved 3.3x on re-run — cause unidentified, witness held back'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T19:37:18Z
-updated_at: 2026-08-23T19:38:11Z
+updated_at: 2026-08-23T19:44:03Z
 ---
 
 Found refreshing witnesses for the C->D excision (`qou-cds1`, PR #5565).
@@ -61,3 +61,48 @@ commit the refreshed witness citing the D ruling. If it is not, the residual is
 a defect and this bean becomes its tracker.
 
 Do NOT commit the refreshed witness before that is resolved.
+
+
+---
+
+## RESOLVED 2026-08-23 — it is the C->D ruling propagating, and the new number is correct
+
+Bisected as planned. Lead (1) confirmed causally and quantitatively; the witness
+is now committed.
+
+**Timing.** The probe's committed witness is dated **2026-07-02**. Its input
+`computations/y-lambda-at-q0.witness.json` was regenerated to convention D on
+**2026-08-10** (`7665e0e4bf` "regen: 54 witnesses to convention D",
+`506ac91350` "convention-D cascade"). The probe witness predates the cascade by
+five weeks, so its `y_lambda` inputs were still convention C.
+
+**Mechanism, from the y_lambda witness across that commit:**
+
+    n=3, partition (3)       C 0.41539578633  ->  D 0.50540422650   x1.2167
+    n=3, partition (2,1)     C 0.28092963398  ->  D 0.24729788675   x0.8803
+    n=3, partition (1,1,1)   C 0.02274494571  ->  D 0.0             EXACTLY ZERO
+
+The third row is the tell. Under convention D `y_(1^3) = 0` exactly -- the
+two-row forcing, `ell(lambda) <= 2`, the same fact
+`markovWeights_eq_jones_of_threeRow_eq_zero` encodes and that the mass chapter's
+own decomposition writes into its index set.
+
+The probe computes `contrib = {lam: ys[lam] * chi[lam]}` over a `chi` dict that
+includes `(1,1,1)` (line 108-110). Annihilating that block and re-weighting the
+surviving two is exactly what moves `B_tower`.
+
+**Verdict: the refreshed value is the CORRECT one.** The committed 0.0487849 was
+a convention-C number that the 2026-08-15 ruling excised. The new 0.1621985 is
+its convention-D replacement. Citation is the ruling itself, not mpmath -- and
+NOT the CODATA correction, which at 1.4 ppb could never produce 3.3x.
+
+**Nothing was wrong with the probe.** This is a stale-input artifact of the
+kind the excision exists to clear, and finding it is the excision working: a
+convention-C value was still live in a committed witness five weeks after the
+cascade that was meant to remove it.
+
+Worth noting for the wider sweep: this witness was NOT in the 58 convention-C
+witnesses `qou-z11r` triaged, because it carries no `z` spelling of its own --
+it inherits C purely through `y_lambda`. Any C-surface measurement keyed on
+source spellings or on `z` values will miss this whole class. That is a
+detector-blindness note for `docs/audits/2026-08-15-detector-blindness-taxonomy.md`.
