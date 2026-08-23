@@ -43,8 +43,13 @@ theorem perpetual_obstruction_from_trace
     Derivation: at q = ζ_{2p}, the prime ideal 𝔭 = (1-ζ_p) satisfies
     q ≡ -1 (mod 𝔭), and (q;q)_m ≡ 0 (mod 𝔭) for m ≥ 2. Therefore
     Frob_p ≡ a₀(-1) + a₁(-1)·(1-(-1)) = 4 + 0 = 4 (mod 𝔭).
-    The Galois norm N(Frob_p) ≡ 4^{p-1} (mod p), which is never ±1
-    for p ≥ 3 (and N(Frob_2) = 160 by direct computation).
+    CORRECTION (2026-08-23, bean `qou-lrnd`): this paragraph previously
+    continued "The Galois norm N(Frob_p) ≡ 4^{p-1} (mod p), which is never ±1
+    for p ≥ 3". That is wrong twice: by Fermat 4^{p-1} ≡ 1 (mod p) whenever
+    p ∤ 4, and 1 ≡ +1, so the congruence is *satisfied* by a unit rather than
+    excluded by one. The claim is removed rather than repaired -- see
+    `HabiroCollapse.lean`, where the inference it was standing in for is shown
+    not to hold at all.
 
     This proof uses only the STRUCTURE of the Habiro expansion, not
     numerical approximation. The value C=4 is an exact algebraic
@@ -93,11 +98,28 @@ theorem not_isUnit_of_image {R : Type*} [CommRing R]
     collapses to `a₀(-1) + 2·a₁(-1) = C`.
 
     Unlike `qou_proton_perpetual_obstruction`, the conclusion here is about
-    `frob p` rather than about a constant, so `p` is not decoration. The
-    collapse identity is an explicit hypothesis rather than an axiom — it is
-    derived symbolically in
-    `computations/probes/habiro_frobenius_probe.py`, not in Lean, and stating
-    it as a hypothesis is what keeps that boundary visible. -/
+    `frob p` rather than about a constant, so `p` is not decoration.
+
+    🛑 **The hypotheses have no instantiation at the ring the paragraph above
+    describes** (2026-08-23, bean `qou-lrnd`). The theorem is true and
+    sorry-free for an arbitrary family `R` carrying a hom to `ℤ` — that is not
+    in question — but it does not reach the QOU Frobenius, for two independent
+    reasons, both checked exactly in
+    `computations/probes/cyclotomic_residue_four_unit_probe.py`:
+
+    * `reduce p : R p →+* ℤ` cannot be reduction mod `𝔭`. That map lands in
+      `O/𝔭 ≅ 𝔽_p`. And no hom `ℤ[ζ_2p] →+* ℤ` sends `ζ ↦ -1` — it would force
+      `Φ_2p(-1) = 0`, whereas `Φ_2p(-1) = p`. (None exists at all.)
+    * With the correct target `𝔽_p`, the residue `C` is a **unit** for every
+      `p ∤ C`, so `not_isUnit_of_image` — which needs the *residue* to be a
+      non-unit — runs the wrong way. This is not a gap awaiting a proof: the
+      cyclotomic unit `u₄ = 1 + ζ + ζ² + ζ³` is a unit of `ℤ[ζ_p]` with
+      residue exactly `4 (mod 𝔭)`, so `Frob_p ≡ 4 (mod 𝔭)` is *compatible
+      with `Frob_p` being a unit*.
+
+    The collapse half is fine and is now proved in general, with no cyclotomic
+    input: `QOU.LiftingDescent.map_habiro_expansion`. What is missing is a
+    different obstruction argument entirely, not a discharge of `h_collapse`. -/
 theorem habiro_frobenius_not_unit
     {R : Nat.Primes → Type*} [∀ p, CommRing (R p)]
     (frob : ∀ p, R p) (reduce : ∀ p, R p →+* ℤ)
