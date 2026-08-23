@@ -412,7 +412,12 @@ def compute_tr_m_via_branching(
         # default include_inter=True, pn_convention="bring_color_weighted")
         # and same y_λ Jones–Markov weights, so the value is identical:
         # transfer ≡ char_fast (full Hoefsmit) to 4.7e-15, and
-        # tr_M_atom(D)=0.388357 matches this combiner's own A=2 value.
+        # The A=2 cross-check figure once quoted here was tr_M_atom(D) =
+        # 0.388357; BOTH sides of that comparison have since moved. The live
+        # value is 0.5751722439177719, agreed by the transfer, the Hoefsmit /
+        # markov-peel arbiter, the chi-cache combiner, and -- since qou-zck8
+        # regenerated this file's own A-operator extract off float64 -- by this
+        # combiner too, to the float64 floor its NumPy rho factor permits.
         # ~5000× the markov_peel symbolic path (⁶Li 0.16 s vs ~17 min).
         #
         # Honours the no-truncation precision ruling — ALL partitions kept
@@ -432,15 +437,19 @@ def compute_tr_m_via_branching(
             tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(
                 Z, N, dps=mp.mp.dps, q=q_arg)
         except ValueError as e:
-            # The canonical color-weighted atom word is q0-baked (its
-            # interface d carries flavor_split_subleading(q0)), so the
-            # transfer can only re-lift it at q0. A true q≠q0 sweep needs a
-            # q-parameterised word builder (not yet wired) — fail with a
-            # clean err rather than the old native path's silent q0/q_val
-            # hybrid. (Production always uses q0, so this never fires there.)
+            # CORRECTED 2026-08-23 (bean `qou-e58e`): this comment used to
+            # say the word is "q0-baked" and can only re-lift at q0. That is
+            # WRONG and was believed on the strength of a stale docstring --
+            # the word re-lifts fine at q≠q0 (12 of the deuteron's 23 letters
+            # change at 1/q0), and tr_m_atom_zn threads q through. The guard
+            # below is kept because a ValueError from the transfer must not be
+            # silently swallowed, but it is a real error path, not a statement
+            # about q0-baking. NOTE this is the A>=3 branch; the A=2 branching
+            # path below has its own, unrelated q defect -- see
+            # branching_q_threading_probe.py (bean `qou-8chw`).
             return None, time.time() - t0, (
-                f"transfer path supports q=q0 only (q0-baked color-weighted "
-                f"word); custom q_val={q_val} unsupported: {e}"
+                f"transfer raised at q_val={q_val}; not a q0-baking limit "
+                f"(the word re-lifts off q0) — see the note above: {e}"
             )
         return abs(tr_atom_mp), time.time() - t0, None
 
