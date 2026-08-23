@@ -1,0 +1,79 @@
+{
+  "target": "bar-fold symmetry-reduced bounded operator-selection LP per nucleus (primal + dual + strong-duality gap)",
+  "target_value": "on the positive-norm fold representatives: primal_obj = Σ_i t_i x_i*, dual_obj = n_target·y0*, duality_gap = |primal_obj − dual_obj| ≈ 0, with active_set = { i : y*_i > 0 }",
+  "target_tolerance": 0.0,
+  "content_block": "prop:operator-selection-lp",
+  "description": "Derivation chain for the per-nucleus bar-fold symmetry-reduced operator-selection program (nucleus-real-sdp-<atom>, atoms deuteron/he3/he4). The deuteron finding generalised: at q₀ the Frobenius Gram diag(tr_M(P_λ)) is INDEFINITE, and every negative-norm block is the conjugate λ↦λ′ of a positive block with the q-trace sign flipped — the bar-involution (q↦q⁻¹) / Type-B folding signature of AGENTS §7b. Folding conjugate pairs and solving only on the positive-norm representative subspace is what pushes the (3A)! compute wall higher. Emits the full LP dual set required by AGENTS §LP/SDP duals (y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) via the canonical pyhecke dual entry point. HONEST SCOPE, carried from the witness's own note: this is the symmetry-reduced BOUNDED BASELINE, not the full real SDP — that needs the Phase-B colour-flavour constraints (LR branching H_{3A} ⊃ (H_3)^Z × (H_3)^N) — and where only a PARTIAL character table exists the fold cannot be closed (conjugates absent), which each witness reports in `conjugates_all_present`. Trust profile {axiom: 1, derived: 2, script-cited: 2}.",
+  "steps": [
+    {
+      "name": "q-integer and the balanced Hecke scale",
+      "operation": "Define [k]_q := (q^k − q^{-k})/(q − q^{-1}); the (q − q^{-1}) denominator is the per-crossing Hecke energy, fixing the ring the traces live in.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "q_integer",
+      "output_value": "[k]_q := (q^k − q^{-k}) / (q − q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Per-partition character data for the atom's Hecke algebra",
+      "operation": "Load the per-partition Markov weights y_λ and characters χ^λ at q₀ for the atom's Hecke algebra H_{3A}: deuteron H_6 (11 blocks), he3 H_9 (30 blocks), he4 H_12 (partial). The witness records `n_strands`, `n_blocks` and `partial_character_table`, so a partial table is declared rather than silently completed.",
+      "inputs": [
+        "q_integer",
+        "Wedderburn",
+        "Schur"
+      ],
+      "output_name": "character_data",
+      "output_value": "{ y_λ, χ^λ } per block λ of H_{3A} at q₀",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/nucleus_real_sdp.py — reads the per-atom character witnesses (iterative-lp-dual-h6-deuteron, chi-helium-3-h9-at-q0-50dps, chi-helium-4-h12-at-q0-50dps). Availability of a FULL character table is the binding constraint on which atoms can be folded at all."
+    },
+    {
+      "name": "Cost vector and Frobenius Gram diagonal",
+      "operation": "Assemble the LP cost t_λ = y_λ·χ^λ and the Frobenius Gram diagonal g_λ = tr_M(P_λ) = y_λ·dim V_λ. Pure algebra on the character data.",
+      "inputs": [
+        "character_data"
+      ],
+      "output_name": "cost_and_gram",
+      "output_value": "t_λ = y_λ·χ^λ,  g_λ = tr_M(P_λ) = y_λ·dim V_λ",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "At q₀ the Gram diagonal is INDEFINITE — that indefiniteness is the fact the fold exploits, not a defect. The witness records tr_M and negative_norm_blocks."
+    },
+    {
+      "name": "Bar-fold reduction to the positive-norm representative subspace",
+      "operation": "Pair each block with its conjugate λ↦λ′ and check the q-trace sign flip; the negative-norm blocks are exactly the conjugates of positive ones (the bar-involution q↦q⁻¹ / Type-B folding signature, AGENTS §7b). Keep one representative per conjugate pair plus the self-conjugate blocks, giving the positive-norm subspace and the reduction ratio |representatives| / |all blocks| (deuteron: 0.727).",
+      "inputs": [
+        "cost_and_gram"
+      ],
+      "output_name": "barfold_subspace",
+      "output_value": "positive-norm representatives + barfold_reduction_ratio",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "The fold is only closable when every conjugate is present; with a partial character table it is not, and the witness says so in `conjugates_all_present` rather than folding on an incomplete set."
+    },
+    {
+      "name": "Bounded operator-selection LP on the representatives (primal + dual)",
+      "operation": "Solve the bounded operator-selection program on the fold representatives through the canonical dual entry point, emitting primal_obj = Σ_i t_i x_i*, the shadow prices y0_star (net constraint) and y_star (Frobenius positivity, ≥ 0), the active set { i : y*_i > 0 }, dual_obj = n_target·y0_star, and duality_gap — with strong_duality_holds recorded.",
+      "inputs": [
+        "barfold_subspace"
+      ],
+      "output_name": "lp_primal_dual",
+      "output_value": "{ y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap, strong_duality_holds }",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/nucleus_real_sdp.py — the producer, and the step that claims this family for the trust audit (basename match). The dual is emitted in full per AGENTS §LP/SDP duals: the active set IS the structural content (which Wedderburn blocks the bound state saturates), which is why solving only the primal would lose it. SCOPE: bounded symmetry-reduced BASELINE, not the full real SDP — the Phase-B colour-flavour constraints (LR branching H_{3A} ⊃ (H_3)^Z × (H_3)^N) are not imposed here."
+    }
+  ]
+}

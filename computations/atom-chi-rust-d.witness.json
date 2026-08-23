@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T01:07:39.776523+00:00",
-  "commitSha": "3bff0ddf2f67967afcf43b766101b45615ea0d0c",
+  "computedAt": "2026-08-19T19:44:11.498117+00:00",
+  "commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
   "assertions": [
     {
       "name": "rust_kernel_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 134,
   "computation": "atom-chi-rust-d",
   "scriptFile": "compute_atom_chi_rust.py",
   "scriptHash": "45d51b9cc954",
-  "scriptCommitSha": "e13a68f98b0431ccfa5b467dfcddc0cb3e07c233",
+  "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
   "description": "Full H_6 chi^λ(β_K) for D (Z=1, N=1), both atom (include_inter=True) and free (include_inter=False) configs. precision=mpfr: MPFR (default) routes through chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr at 50 dps (canonical tier; the color-weighted p-n crossing is expanded by linearity); --f64 is the preview tier only (owner ruling 2026-06-09: no f64 on the canonical path). Consumed by binding_depth_stratified_rust.py.",
@@ -44,7 +43,7 @@
             6
           ],
           "dim": -1,
-          "chi_lambda": "1.5598703080609409913058145864526269267024379996524"
+          "chi_lambda": "1.5598701995641515927061666224371716599524918200175"
         },
         {
           "partition": [
@@ -52,7 +51,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "3.2163177570587526830034215533037323610044459090779"
+          "chi_lambda": "3.2163173422358811759338955425246731048947002364697"
         },
         {
           "partition": [
@@ -60,7 +59,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "1.6743958918986114112136931009266538688173330988097"
+          "chi_lambda": "1.6743952620342553431694835773557238376181954233470"
         },
         {
           "partition": [
@@ -69,7 +68,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.46980551108548455721220442435717764506792442084891"
+          "chi_lambda": "-0.46980588637769473837308852856415666290149919651623"
         },
         {
           "partition": [
@@ -77,7 +76,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": "4.2494023464559307263003226079707389245459515367447"
+          "chi_lambda": "4.2494020229176567667259911311634128827066133542552"
         },
         {
           "partition": [
@@ -86,7 +85,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-1.9722719128260298322341940562090853776795909075029"
+          "chi_lambda": "-1.9722724461515496890482348780048965054549544863176"
         },
         {
           "partition": [
@@ -96,7 +95,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.49012578644043403758252054439386332574320046403088"
+          "chi_lambda": "-0.49012565232303073666832235128570394245375582685736"
         },
         {
           "partition": [
@@ -105,7 +104,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "-3.4972941443845690332436067565085001983960466148883"
+          "chi_lambda": "-3.4972944065129530521750530203693434855047547494649"
         },
         {
           "partition": [
@@ -115,7 +114,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.81965488945963111653399100681803750206436919601135"
+          "chi_lambda": "-0.81965494850448376186023302012734637740985741072036"
         },
         {
           "partition": [
@@ -126,7 +125,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "2.1552551814520887258441481064870211814248078826299"
+          "chi_lambda": "2.1552553374487206414925896059695830811687116707754"
         },
         {
           "partition": [
@@ -138,10 +137,10 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.67687663634603852090573893268231734806789858879920"
+          "chi_lambda": "-0.67687668343293797886250168375128986008721472052128"
         }
       ],
-      "compute_time_sec": 0.0027968883514404297,
+      "compute_time_sec": 0.01132059097290039,
       "Z": 1,
       "N": 1,
       "A": 2,
@@ -256,7 +255,7 @@
           "chi_lambda": "0.67325689637021355145356370093896784636070092139872"
         }
       ],
-      "compute_time_sec": 0.0009829998016357422,
+      "compute_time_sec": 0.003881216049194336,
       "Z": 1,
       "N": 1,
       "A": 2,

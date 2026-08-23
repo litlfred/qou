@@ -1,0 +1,102 @@
+{
+  "target": "per-partition Hecke character chi^lambda(beta_atomic(Z,N); q_0) in the sign-only (Geck-Pfeiffer) crossing convention",
+  "target_value": "chi^lambda(beta; q) = tr rho^lambda_Hoefsmit(beta), for every lambda |- n, n = 3A; evaluated at the substrate anchor q_0",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the per-lambda Hecke character caches at q_0 in the CANONICAL sign-only crossing convention (convention A, chi_q_via_gp / matrix-M), covering the deuteron / tritium / helium-3 / helium-4 / lithium-5 / lithium-6 caches and the rust-lossless general producer -- 7 witnesses, two interchangeable backends. Trust profile: one AXIOM entrypoint (the per-crossing Hecke energy), one MATHLIB_CITED step (Hoefsmit seminormal reps), three DERIVED steps, one SCRIPT_CITED frontier (the numerical evaluation). Symbolic chain -- the target is the character identity, not a single number, so there is no COMPUTATIONAL leaf.\n\nSCOPE (read before extending this chain): this is the sign-only convention ONLY. The averaged / colour-weighted convention (compute_atom_chi_rust.py, chi_at_q0_via_hoefsmit_mpfr.py) is a DIFFERENT object and is NOT covered here -- see step 5, which measures the gap on the deuteron. The mu_p / mu_n Littlewood-Richardson catalogue factorisation (derived_chi_catalogue_matrix_m_mpfr.py) is a different construction again and needs its own chain.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0. The eigenvalues q and -q^{-1} are the symmetric and antisymmetric crossing channels; their separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint of every Hecke-side chain.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1;  [k]_q := (q^k - q^{-k}) / (q - q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995",
+      "notes": "AGENTS.md section 7a fixes the generator symbol as sigma_i for both the braid generator and its image in H_n(q)."
+    },
+    {
+      "name": "Hoefsmit seminormal representation rho^lambda of H_n(q)",
+      "operation": "Wedderburn-decompose H_n(q) over the partitions lambda |- n and realise each block by the Hoefsmit seminormal form: an explicit dim V_lambda x dim V_lambda matrix for each generator sigma_i, with entries rational in q determined by the axial distances of the standard Young tableaux. Semisimplicity holds because q_0 is not a root of unity.",
+      "inputs": [
+        "hecke_relation",
+        "Wedderburn",
+        "Schur"
+      ],
+      "output_name": "rho_lambda",
+      "output_value": "rho^lambda : H_n(q) -> End(V_lambda),  one block per lambda |- n",
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitSeminormal",
+      "citation": "kassel1995",
+      "notes": "The Rust kernel realises this as pyhecke_native.chi_q_via_gp (Geck-Pfeiffer class-polynomial route); the pure-Python backend realises the same block by an explicit matrix-M product. Both are implementations of THIS step, which is why they are interchangeable at step 6."
+    },
+    {
+      "name": "Canonical atomic braid word beta_atomic(Z,N) as sign-only crossings",
+      "operation": "Take the canonical nucleus braid word on n = 3A strands (three colour strands per nucleon) and read every crossing as a bare sign in {+1, -1}, discarding any per-colour weight. This is convention A: the word is a list of (sign, generator) pairs, so rho^lambda(beta) is an ordered product of the generator matrices and their inverses.",
+      "inputs": [
+        "rho_lambda",
+        "Cat.Action"
+      ],
+      "output_name": "beta_sign_only",
+      "output_value": "beta_atomic(Z,N) = prod_j sigma_{g_j}^{e_j},  e_j in {+1,-1},  n = 3(Z+N)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.BraidKnot.writhe",
+      "citation": "manuscript:atomic-braid-recipe",
+      "notes": "The words themselves are already derivation-backed: atomic-braid-recipe-p / -n / -d / -4he.derivation.json. The canonical convention is fixed corpus-side as sign-only-crossings (chi-convention-audit.witness.json, canonical_reconciliation.canonical_basis; docs/audits/2026-06-09-binding-trace-convention-split.md, bean b0vf)."
+    },
+    {
+      "name": "Block character chi^lambda(beta) := tr rho^lambda(beta)",
+      "operation": "Define the per-block character as the matrix trace of the represented braid word. Cyclicity of the trace makes it a class function on B_n, hence a function of the braid's conjugacy class rather than of the chosen word; it is a Laurent polynomial in q with integer coefficients.",
+      "inputs": [
+        "beta_sign_only",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "chi_lambda",
+      "output_value": "chi^lambda(beta; q) = tr rho^lambda(beta) in Z[q, q^{-1}]",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "This is the chi_lambda that the Frobenius pairing tr_M = sum_lambda y_lambda chi_lambda consumes; the y_lambda leg is carried by the schur-weyl-weight-* chains."
+    },
+    {
+      "name": "One-row closed form chi^(n) = q^{writhe}, and the convention gap it exposes",
+      "operation": "On the one-row partition lambda = (n) every generator acts by the scalar q (the symmetric channel), so rho^(n)(beta) = q^{w(beta)} with w the writhe (signed crossing count). This gives a closed-form value that needs no matrix product and pins the convention: it is q^{w} ONLY when the crossings are bare signs.",
+      "inputs": [
+        "chi_lambda"
+      ],
+      "output_name": "one_row_closed_form",
+      "output_value": "chi^(n)(beta; q) = q^{w(beta)}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.BraidKnot.writhe",
+      "citation": "kassel1995",
+      "notes": "Verified against the corpus on the deuteron: chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json carries chi^(6) = 11.021374980910484719107315248792671733072336906450553566 and q_0^23 agrees to better than 1e-40, where 23 is the deuteron crossing count independently recorded in atomic-braid-recipe-d.derivation.json. The SAME deuteron under the averaged / colour-weighted convention (atom-chi-rust-d.witness.json) gives chi^(6) = 1.5598703080609409913058, i.e. NOT q_0^k for any k -- which is what makes this step a convention test rather than a formality. Scope-(a): this measures the gap between the two conventions, it does not exclude the averaged one; the averaged convention is a different object with its own consumers, not an error."
+    },
+    {
+      "name": "Numerical evaluation of the per-lambda caches at q_0",
+      "operation": "Evaluate chi^lambda(beta_atomic(Z,N); q) at the substrate anchor q_0 for every lambda |- 3A, by either backend: the pure-Python matrix-M mpfr product (feasible to H_12) or the Rust class-polynomial kernel (flat in dim V_lambda, so H_15 and H_18 are seconds). Emit one cache per nuclide.",
+      "inputs": [
+        "chi_lambda",
+        "one_row_closed_form"
+      ],
+      "output_name": "chi_caches_at_q0",
+      "output_value": "chi-{atom}-h{n}-at-q0-{dps}dps-matrix-m caches for D, T, 3He, 4He, 5Li, 6Li",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "script: computations/chi_at_q0_via_matrix_m_mpfr.py -- matrix-M mpfr backend (D, T, 3He, 4He). script: computations/chi_via_rust_lossless.py -- Rust chi_q_via_gp backend (5Li, 6Li, general). The two were cross-checked to the 50-dps floor on 18/18 partitions over D/T/3He/4He (PR #2062 section 8); their coverage does not overlap in the CURRENT witnesses, so that agreement is a recorded historical cross-check, not something re-derivable from the committed caches alone. Anchor: the lithium caches carry the proton pin inline; the four matrix-M witnesses carry q_0 only in their cache_path sidecar (the deuteron sidecar is the proton pin at 90 dps), so the pin is one indirection away from the witness -- recorded here so a later reader does not have to guess. NO f64 on this path (owner ruling 2026-06-09)."
+    }
+  ]
+}

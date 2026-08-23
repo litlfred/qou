@@ -170,7 +170,14 @@ UNGATED_DIRS = {"scratch"}
 def scan_repo(root: Path) -> list[dict]:
     out: list[dict] = []
     for f in sorted(root.rglob("*.py")):
-        if "_deprecated" in f.parts or "node_modules" in f.parts:
+        # `.claude/worktrees/<agent>/` holds checkouts of OTHER branches, so
+        # every hit under it is a duplicate of some sibling branch's source at
+        # a revision this checkout is not on: not fixable from here, and gone
+        # the moment the worktree is pruned.  Left in, they held this gate
+        # permanently RED for reasons unrelated to any diff -- and a gate that
+        # is always red is a gate agents learn to skip.  `.claude/` carries no
+        # tracked `.py` at all, so excluding the whole directory loses nothing.
+        if set(f.parts) & {"_deprecated", "node_modules", ".claude"}:
             continue
         try:
             src = f.read_text(encoding="utf-8")
