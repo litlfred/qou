@@ -689,3 +689,45 @@ argument feeding the `m = 1` case (`RothHeightBound.lean`) and the `m−1` case 
 ⚠ None of that is index or height machinery. **Last turn I predicted exactly this, and this
 time the prediction held** — which is one data point against three failures, not a reason to
 start trusting predictions from this arc.
+
+### Addendum — index of a determinant, and a lesson about scratchpad verification
+
+Four more declarations in `RothIndex.lean` (the generic index lemmas belong beside `index`,
+not in the separated module):
+
+```
+index_sum_ge      inf over summands ≤ index (∑)
+index_prod_ge     ∑ of indices        ≤ index (∏)
+index_smul_units  index (u • P) = index P   for u : ℤˣ
+index_det_ge      inf over permutations of ∑ᵢ index (M (p i) i) ≤ index (det M)
+```
+
+`index_det_ge` is the index counterpart of `abs_coeff_det_le`. **Note the direction:** heights
+are bounded from *above* by their parts, indices from *below* — vanishing to high order is
+preserved by sums and *added* by products — so every statement here is a lower bound. Getting
+that backwards would produce plausible-looking but useless lemmas.
+
+⚠ It says nothing about the entries. Relating `index (pderivList D (f j))` back to
+`index (f j)` is `index_le_index_iterate_pderiv_add`, already in the file, and that is where
+the differentiation cost enters.
+
+#### ⚠ Lesson: a scratchpad proof is not verified until it builds *in the module*
+
+All four went through first try in the scratchpad and then **two of them failed on landing**:
+
+* `index_det_ge` — `Matrix.det` needs `CommRing (MvPolynomial σ R)`, whose *instance* lives in
+  `Mathlib/Algebra/MvPolynomial/CommRing.lean`. `RothIndex.lean` never imported it, because
+  everything else in the file only ever needs `CommSemiring`. `[CommRing R]` being in scope is
+  not the same as the instance being importable.
+* `index_smul_units` — `simp [index, translate]` closed the `u = -1` case in the scratchpad and
+  not in the module, because the scratchpad's import closure was wider and supplied
+  `support_neg`. Now spelled out explicitly so it does not depend on what happens to be
+  imported.
+
+This is the same family as the earlier `funext`-resolves-to-`Polynomial.funext` trap: the
+scratchpad's *context* differs from the module's, so a scratchpad pass is evidence, not proof.
+Both fixes are recorded at the site rather than silently patched.
+
+Verification: all **thirteen** arc modules rebuilt with their `.olean`s deleted — exit 0, no
+linter output. `RothIndex`'s import closure changed, so every downstream module was rebuilt
+rather than trusted.

@@ -51,6 +51,9 @@ import Mathlib.Algebra.MvPolynomial.Equiv
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.Order.Ring.Rat
 import Mathlib.Algebra.MvPolynomial.Division
+import Mathlib.Algebra.MvPolynomial.CommRing
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.Algebra.Ring.Int.Units
 
 namespace MvPolynomial
 
@@ -433,6 +436,74 @@ theorem le_index_of_X_pow_dvd_translate (d : σ → ℕ) (α : σ → R) (P : Mv
     (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) ≤ index d α P := by
   rw [X_pow_dvd_iff_support] at h
   exact le_index_of_forall_le_support d α P j k h
+
+/-! ### Sums, products and determinants
+
+The index counterparts of the height bounds in `QOU/Mathlib/MvPolynomialHeight.lean`, and
+what the generalized-Wronskian estimate needs.  Note the direction: heights are bounded from
+**above** by their parts, indices from **below** — vanishing to high order is preserved by
+sums and *added* by products, so every statement here is a lower bound. -/
+
+/-- **The index of a finite sum is at least the least index of a summand.**  The `Finset`
+form of `index_add_ge`; the empty sum is `0`, whose index is `⊤`, matching `Finset.inf_empty`
+with no side condition. -/
+theorem index_sum_ge {ι : Type*} (d : σ → ℕ) (α : σ → R) (s : Finset ι)
+    (F : ι → MvPolynomial σ R) :
+    s.inf (fun i => index d α (F i)) ≤ index d α (∑ i ∈ s, F i) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp
+  | insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.inf_insert]
+      exact le_trans (min_le_min le_rfl ih) (index_add_ge d α _ _)
+
+/-- **The index of a finite product is at least the sum of the indices.**  The `Finset` form
+of `index_mul_ge`; the empty product is `1`, and `0 ≤ index d α 1` is `index_nonneg`. -/
+theorem index_prod_ge {ι : Type*} (d : σ → ℕ) (α : σ → R) (s : Finset ι)
+    (F : ι → MvPolynomial σ R) :
+    ∑ i ∈ s, index d α (F i) ≤ index d α (∏ i ∈ s, F i) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simpa using index_nonneg d α (1 : MvPolynomial σ R)
+  | insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.prod_insert ha]
+      exact le_trans (add_le_add le_rfl ih) (index_mul_ge d α _ _)
+
+/-- Scaling by a unit of `ℤ` — the only scalars the Leibniz expansion produces — leaves the
+index alone. -/
+theorem index_smul_units (d : σ → ℕ) (α : σ → R) (u : ℤˣ) (P : MvPolynomial σ R) :
+    index d α (u • P) = index d α P := by
+  rcases Int.units_eq_one_or u with h | h
+  · rw [h, one_smul]
+  · -- ⚠ `simp [index, translate]` closes this only with a wider import closure than this
+    -- file has; spelled out so it does not depend on what happens to be imported.
+    rw [h, Units.smul_def, Units.val_neg, Units.val_one, neg_smul, one_smul]
+    unfold index translate
+    rw [map_neg, support_neg]
+
+/-- **The index of a determinant is at least the least permutation-sum of entry indices.**
+
+Leibniz plus the two lemmas above: the determinant is a sum over permutations, so
+`index_sum_ge` takes the least term; each term is a unit times a product, so `index_smul_units`
+discards the sign and `index_prod_ge` adds the entries' indices.
+
+This is what bounds the index of a generalized Wronskian from below in terms of the indices
+of the differentiated entries — the estimate Roth's lemma runs on.  ⚠ It says nothing about
+the *entries* themselves; relating `index (pderivList D (f j))` back to `index (f j)` is
+`index_le_index_iterate_pderiv_add` above, and that is where the differentiation cost enters. -/
+theorem index_det_ge {ι : Type*} [Fintype ι] [DecidableEq ι] (d : σ → ℕ) (α : σ → R)
+    (M : Matrix ι ι (MvPolynomial σ R)) :
+    (Finset.univ : Finset (Equiv.Perm ι)).inf
+        (fun p => ∑ i : ι, index d α (M (p i) i))
+      ≤ index d α M.det := by
+  classical
+  rw [Matrix.det_apply]
+  refine le_trans ?_ (index_sum_ge d α Finset.univ _)
+  refine Finset.le_inf ?_
+  intro p _
+  refine le_trans (Finset.inf_le (Finset.mem_univ p)) ?_
+  rw [index_smul_units]
+  exact index_prod_ge d α Finset.univ _
 
 /-! ### Next, in order
 
