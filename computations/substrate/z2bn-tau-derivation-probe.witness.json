@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T15:52:43.548988+00:00",
-  "commitSha": "ba5b1110482f77d0dda78b8a9a9b27576720a091",
+  "computedAt": "2026-08-23T08:57:58.479567+00:00",
+  "commitSha": "b873966b952b062bfeb5afe255654242cf6f1cf5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 726,
+  "durationMs": 634,
   "computation": "z2bn-tau-derivation-probe",
   "scriptFile": "z2bn_tau_derivation_probe.py",
-  "scriptHash": "9be2a886b743",
-  "scriptCommitSha": "9ea6a4922444f9328a7516c661e01d5e85787141",
+  "scriptHash": "4195af4e2c44",
+  "scriptCommitSha": "b3440cbcebfad9716b80219a51ed9c37f5e5186f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -33,16 +34,16 @@
   },
   "description": "z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe. Establishes the clean anchors (τ closed form; curve j confirmation; color-cubic power-sum structure) and tests principled λ_SW-holonomy candidates ONCE (no tuning). Owner-authorized 2026-06-25.",
   "dps": 50,
-  "q0": "1.1099785955573347199",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
   "tau_closed_form_exact_match": true,
   "tau_closed_form": "3(3q^4+8q^2+3)/(4q(q+1)^2) = (a_D^2+a_D^4)/a_D^3",
-  "tau_at_q0": "2.6423863133014861339",
-  "theta_binding_at_q0": "0.78145394601720069493",
-  "lambda_eig_at_q0": "2.184646315299638687",
+  "tau_at_q0": "2.6423863094488463948",
+  "theta_binding_at_q0": "0.78145394378625179686",
+  "lambda_eig_at_q0": "2.1846463104258044026",
   "curve": {
-    "p_q0": "0.7087272693500517",
-    "r_q0": "0.8056305239501066",
-    "j_q0_via_periods_kleinj": "129.860347",
+    "p_q0": "0.7087272638911421",
+    "r_q0": "0.8056305159121434",
+    "j_q0_via_periods_kleinj": "129.8603466",
     "j_q0_corpus": 129.86,
     "j_1": 128,
     "note_j_invariant_lean_def_bug": "descartes-elliptic-curve.lean j_invariant omits the −16 of Δ=−16(4p^3+27r^2) → returns −16·j (j(1)=−2048 not 128). Curve itself correct; def is 'not part of formal proof chain'."
@@ -58,11 +59,12 @@
   },
   "holonomy_candidates_at_q0": {
     "tau_mod_E_q_real": "-0.5",
-    "tau_mod_E_q_imag": "0.734007052399",
-    "Im_tau_mod_vs_theta": "0.73400705 vs θ=0.78145395 (~6% off, NOT a match)",
-    "2cosh_abs_z_q0": "2.01090676786"
+    "tau_mod_E_q_imag": "0.734007052521",
+    "Im_tau_mod_vs_theta": "0.73400705 vs θ=0.78145394 (~6% off, NOT a match)",
+    "2cosh_abs_z_q0": "2.01090676544"
   },
   "verdict": "(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: j(q0)=129.86 via period/kleinj. Color-cubic power sums p_n=-(z^n+1) (n<=3). (a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; q0 never tuned.",
-  "q0Anchor": "independent",
-  "q0AnchorReason": "Reads no substrate value. PROVED by running this producerunder QOU_Q0_ANCHOR=muon and =proton and diffing the emittedwitness: the only non-ephemeral leaves that differ areq0Anchor and q0Value THEMSELVES -- every substantive field isbyte-identical, so the pin changes the label and nothing else.Its previous `muon` label was therefore a false claim thatthis producer computed at that anchor. `independent` is thehonest disposition; a q0_anchor_manifest entry would be theWRONG fix, promoting a false claim into a declared one. Beanqou-o922, class (ii)."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Consumes q0 (read from q_parameter.Q_MP, the canonical proton pin) in the tau closed form, the period pair p/r, and z = sqrt(q)-1/sqrt(q). RETRACTS the prior `independent` label. That label rested on a valid experiment with an INVERTED inference: running under QOU_Q0_ANCHOR=muon and =proton gave byte-identical substantive output, and that was read as \"reads no substrate value\". The real cause was that q0 was HARDCODED, so the producer ignored the env var entirely -- anchor-insensitivity in a producer that manifestly consumes q0 is the SYMPTOM of hardcoding, not evidence of independence. The hardcoded literal was additionally the MUON value under a comment claiming proton. Now that q0 is read rather than typed, the anchor is real and is declared. Bean qou-bdkx; supersedes the qou-o922 class-(ii) disposition for this producer."
 }

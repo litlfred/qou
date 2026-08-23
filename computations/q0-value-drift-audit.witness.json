@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 305,
-      "proton-pin": 1233,
+      "proton-pin": 1235,
       "unknown": 25,
-      "canonical": 210
+      "canonical": 209
     },
     "stale_total": 305,
     "new_stale": 0,
@@ -11775,9 +11775,16 @@
       {
         "file": "computations/substrate/z2bn-tau-derivation-probe.witness.json",
         "field": "q0",
-        "value": "1.1099785955573347199",
-        "class": "canonical",
-        "ppb_vs_canonical": 2.133189934676923e-13
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/substrate/z2bn-tau-derivation-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json",
