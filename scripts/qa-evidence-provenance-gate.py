@@ -27,9 +27,19 @@ Three signatures, each of which is definitionally not evidence about this repo:
   ``missing-olean``  ``object file '...' does not exist`` -- the dependency cone
                      was not built. This is the reviewer's environment.
   ``extractor-parse`` ``unexpected token 'section'; expected 'lemma'`` and kin --
-                     a *statement-extractor* parse error, not a compile of the
-                     file. The extractor expected a ``lemma`` and met something
-                     else; the file itself was never elaborated.
+                     usually a *statement-extractor* parse error: the extractor
+                     expected a ``lemma`` and met something else, and the file
+                     itself was never elaborated.
+
+**The third signature is the weak one, and it is weak in a way that matters.**
+The same message is what Lean itself emits for a genuine authoring defect --
+a docstring attached to ``noncomputable section`` instead of to a declaration,
+which really does fail the file. `local-q-zeta-function.lean` was exactly that
+case. So an ``extractor-parse`` hit is a *question*, not a verdict, and must be
+settled by compiling the file. The companion drain
+(``scripts/reaudit-da-compile-claims.py``) only acts on a hit when the sibling
+actually compiles, which is what keeps this signature from clearing a real
+failure.
 
 A hit is not proof the verdict is wrong -- the block may well be defective for
 other reasons. It is proof the *stated ground* is unusable, which is what makes
