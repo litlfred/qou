@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:34:56.797764+00:00",
-  "commitSha": "3fbeb03197bd70debf4af1fb094fab14229a4976",
+  "computedAt": "2026-08-23T17:40:43.928363+00:00",
+  "commitSha": "b7f8a26324bb376c3d8ee18ddcfe3ce2f8dcd73a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -623,7 +623,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "df4baa7af374",
-  "scriptCommitSha": "03b1fafd0e182ca4271bef6ac0341a9f6c615b26",
+  "scriptCommitSha": "90f58b2c7045e7dfdb83fc41f0604ac44d8e1b71",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2517,6 +2517,7 @@
         "aomega-qzero-dt-count.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "atom-braid-active-partitions.witness.json",
+        "atom-dual-q0-mpfr-demo.witness.json",
         "atom-nf-symbolic-D.witness.json",
         "atomic-braid-alpha-shift-l6.witness.json",
         "atomic-mass-via-rho-k.witness.json",
@@ -3509,6 +3510,7 @@
         "connected-magnitude-charge-symmetric.witness.json",
         "constit-factor-and-volhyp.witness.json",
         "constit-factor-residual-phase5k.witness.json",
+        "convention-frame-staleness-audit.witness.json",
         "convergence-safe-vhat-tower.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crossing-energy-channel-basis.witness.json",
@@ -3598,6 +3600,7 @@
         "r11a-three-factor-separability.witness.json",
         "r11b-interior-max-monotone-cone-certificate.witness.json",
         "radial-volrho-mirror-test.witness.json",
+        "rho-k-h3a-residual-decomposition.witness.json",
         "s5so3-geometric-wlambda-a4-helium.witness.json",
         "s5so3-geometric-wlambda-borromean-lift.witness.json",
         "s5so3-wlambda-borromean-lift.witness.json",
@@ -3901,6 +3904,7 @@
         "low-isotope-sign-flip-diagnostic.witness.json",
         "low-isotopes-binding-sweep.witness.json",
         "lp-confinement-nf-forcing.witness.json",
+        "lp-dual-kkt-residual-50dps.witness.json",
         "lr-fusion-self-conj-test.witness.json",
         "lr-modulus-bare-amplitude-exact.witness.json",
         "lr-modulus-identification-sigma235.witness.json",
