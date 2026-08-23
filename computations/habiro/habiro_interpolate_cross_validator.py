@@ -99,7 +99,25 @@ def parse_polynomial_in_u(s: str, u_value: mp.mpf) -> mp.mpf:
     # Caller-provided string is from a trusted in-repo witness, so
     # eval is acceptable here (same pattern as numpy.evaluate use
     # elsewhere in the pipeline).
-    return mp.mpf(eval(s, {"__builtins__": {}}, {"check_q": u_value, "mp": mp}))
+    # BOTH names, per the precedent in `term6_full_pole_sum.py` (~line 321):
+    # `to_u_polynomial` renders its strings with whatever SYMBOL the caller
+    # passed, so habiro witnesses carry either -- the older ones say
+    # "check_q", newer ones say "u".  Binding only ONE name is why this
+    # producer has been dead: its own docstring and data say `u`, the locals
+    # bound `check_q` alone, and every evaluation raised
+    # `NameError: name 'u' is not defined`.  term6_full_pole_sum was killed by
+    # the same class of mismatch and fixed the same way; two further consumers
+    # (`markov_substrate_realizer`, `probe_direct_cyclotomic_map`) also handle
+    # both spellings.  Live witnesses still use `check_q`
+    # (`probes/qbeta-habiro-recursion`, `probes/qbeta-habiro-p8-identification`),
+    # so this binds both rather than renaming to `u`.
+    #
+    # `u_value` is coerced rather than trusted: the expressions carry exact
+    # integer coefficients, so an mpf `u` keeps the whole evaluation exact,
+    # while a float `u` would silently resolve the result to float64.
+    u_mp = mp.mpf(u_value)
+    return mp.mpf(eval(s, {"__builtins__": {}},
+                       {"u": u_mp, "check_q": u_mp, "mp": mp}))
 
 
 def main() -> int:
