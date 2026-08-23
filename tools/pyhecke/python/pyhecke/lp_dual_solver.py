@@ -76,6 +76,10 @@ class LpDualResult:
     #: Present so a witness records that the raw solve was rejected rather
     #: than the rescue happening silently.
     rescaled_by_pow2: Optional[int] = None
+    #: Set when the Rust tolerance ladder had to loosen to converge; carries
+    #: the full ladder so a witness records the tolerance its numbers actually
+    #: meet rather than the one that was requested.
+    loosened_status: Optional[str] = None
     # WHICH SOLVER PRODUCED THIS, and at what width.
     #
     # `backend="auto"` picks clarabel-MPFR when the Rust binary is on disk and
@@ -124,6 +128,8 @@ class LpDualResult:
             d["precision_bits"] = int(self.precision_bits)
         if self.rescaled_by_pow2 is not None:
             d["rescaled_by_pow2"] = int(self.rescaled_by_pow2)
+        if self.loosened_status is not None:
+            d["loosened_status"] = str(self.loosened_status)
         for key, val in (
             ("x_star_str", self.x_star_str),
             ("y0_star_str", self.y0_star_str),
@@ -183,6 +189,9 @@ def provenance(res) -> dict:
     resc = _get("rescaled_by_pow2")
     if resc is not None:
         out["rescaled_by_pow2"] = int(resc)
+    loose = _get("loosened_status")
+    if loose is not None:
+        out["loosened_status"] = str(loose)
     for key in PROVENANCE_STR_FIELDS:
         val = _get(key)
         if val is not None:
@@ -375,6 +384,64 @@ def _str_fields_if_decimal(out: dict) -> dict:
     return {f"{k}_str": v for k in _STR_KEYS if (v := _pick(k)) is not None}
 
 
+def _certifies_optimality(t_str, G_str, n_str, m_str, res) -> tuple[bool, str]:
+    """Check `(x*, y*)` against the ORIGINAL data, for a loosened solve.
+
+    A rescaled or tolerance-loosened solve answers a problem that is NOT
+    quite the one asked about, and it answers it *well* — so its own reported
+    `duality_gap` is small and cannot detect the substitution. Measured
+    2026-08-23 (bean `qou/ftuv`) on two solves the rescue accepted:
+
+        uniform 1e6 costs   primal 104901.11715303971  rel gap 3.3e-41  CORRECT
+        rho_k 1e15 range    primal      1.4571747644   rel gap 1.2e-30  WRONG
+                                        (scipy: 1.2745481388661641)
+
+    Both gaps are tiny; only one answer is right. What separates them is DUAL
+    FEASIBILITY in the original `t`: the LP dual requires `y0·1 + Gᵀy ≤ t`
+    with `y ≥ 0`, and a `y` optimal for a rescaled `t` violates it. Measured
+    on the same pair, normalised by the objective the duality theorem ties it
+    to:
+
+        max(y0·1 + Gᵀy − t) / max(|primal_obj|, 1)   =  1.4e-16   vs   1.1e-01
+
+    Eight orders apart, so this is a discriminating test rather than a
+    threshold fitted to two points. Returns `(ok, reason)`.
+    """
+    import numpy as _np
+
+    try:
+        t = _np.array([float(x) for x in t_str], dtype=float)
+        G = _np.array([[float(v) for v in row] for row in G_str], dtype=float)
+        n_target = float(n_str)
+        m_bound = float(m_str)
+        x = _np.asarray(res.x_star, dtype=float)
+        y = _np.asarray(res.y_star, dtype=float)
+        y0 = float(res.y0_star)
+    except (TypeError, ValueError):
+        return False, "certificate unreadable"
+    if not (_np.all(_np.isfinite(x)) and _np.all(_np.isfinite(y))
+            and _np.isfinite(y0)):
+        return False, "certificate non-finite"
+
+    d = len(t)
+    scale = max(abs(float(res.primal_obj)), 1.0)
+    tol = 1e-9 * scale
+
+    dual_viol = float(_np.max(y0 * _np.ones(d) + G.T @ y - t))
+    if dual_viol > tol:
+        return False, (f"dual infeasible in the original t: "
+                       f"max(y0·1 + Gᵀy − t) = {dual_viol:.3e} > {tol:.3e}")
+    if float(_np.min(y)) < -tol:
+        return False, f"dual sign violated: min(y) = {float(_np.min(y)):.3e}"
+    if abs(float(x.sum()) - n_target) > tol:
+        return False, "primal net constraint violated"
+    if float(_np.min(G @ x)) < -tol:
+        return False, "primal Frobenius positivity violated"
+    if float(_np.min(x)) < -m_bound - tol:
+        return False, "primal bound violated"
+    return True, "ok"
+
+
 def _solve_operator_selection_lp_clarabel(
     t: np.ndarray,
     G: np.ndarray,
@@ -471,7 +538,17 @@ def _solve_operator_selection_lp_clarabel(
 
     out = _solve(t_str)
     if out.get("feasible", False):
-        return _lp_result_from_dict(out, d)
+        res = _lp_result_from_dict(out, d)
+        # A solve the Rust tolerance ladder had to loosen answers a slightly
+        # different question than the one asked. Verify it like a rescued one.
+        if "after [" in str(out.get("status", "")):
+            ok, why = _certifies_optimality(t_str, G_str, n_str, m_str, res)
+            if not ok:
+                return _lp_result_from_dict(
+                    {"feasible": False,
+                     "error": f"loosened solve failed certification: {why}"}, d)
+            res.loosened_status = str(out.get("status"))
+        return res
 
     # ── False-infeasible rescue ───────────────────────────────────────
     # `t` appears ONLY in the objective: the feasible set is
@@ -529,6 +606,21 @@ def _solve_operator_selection_lp_clarabel(
                                   for v in out2["y_star_str"]]
 
     res = _lp_result_from_dict(out2, d)
+
+    # CERTIFY BEFORE ACCEPTING. Scaling `t` cannot change the feasible set,
+    # but it can change which vertex a finite-precision solver lands on: on a
+    # cost vector spanning 1.1 … 1e15, scaling the max to 1 pushes the small
+    # entries to ~1e-15, where the solver treats them as zero and optimises a
+    # DIFFERENT objective — returning 1.4572 where the true optimum is
+    # 1.2745, with a reported duality gap of 1.2e-30 because it solved that
+    # other problem well. The gap cannot catch this; dual feasibility in the
+    # original `t` can, and does, by eight orders.
+    ok, why = _certifies_optimality(t_str, G_str, n_str, m_str, res)
+    if not ok:
+        return _lp_result_from_dict(
+            {"feasible": False,
+             "error": f"rescaled solve failed certification: {why}"}, d)
+
     # Say so. A silent rescue is an absent check indistinguishable from a
     # passing one; the witness should record that the raw solve was rejected.
     res.rescaled_by_pow2 = _k

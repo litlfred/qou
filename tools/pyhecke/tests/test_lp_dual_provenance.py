@@ -173,3 +173,69 @@ def test_frobenius_dual_lp_success_names_its_backend():
     assert got.backend == "scipy-highs", (
         "successful f64 solve is anonymous — the float64 gate cannot see it"
     )
+
+
+
+# ── the loosened-solve certificate ────────────────────────────────────
+
+
+@needs_clarabel
+def test_rescue_rejects_a_wrong_answer_it_would_otherwise_return():
+    """The rescue's own duality gap cannot police it.
+
+    Scaling `t` cannot change the feasible set, but on a cost vector spanning
+    1.1 … 1e15 it pushes the small entries to ~1e-15, where a finite-precision
+    solver treats them as zero and optimises a DIFFERENT objective. It then
+    solves that one well: measured 2026-08-23, the rescue returned
+    `primal_obj = 1.4571747644416917` with a relative duality gap of 1.2e-30,
+    where the true optimum is 1.2745481388661641. A gap test would pass it.
+    Dual feasibility in the ORIGINAL `t` is what rejects it.
+    """
+    d = 3
+    # A cost vector with the shape that breaks it: one entry ~1, one at the
+    # 1e-15-floor reciprocal, i.e. 15 orders of dynamic range.
+    t = np.array([1.112, 5.0, 1e15])
+    got = solve_operator_selection_lp(t, np.eye(d), 1.0, backend="clarabel")
+    if got.feasible:
+        # If it IS returned, it must at least be dual-feasible in the real t.
+        y = np.asarray(got.y_star, dtype=float)
+        viol = float(np.max(got.y0_star * np.ones(d) + np.eye(d).T @ y - t))
+        assert viol <= 1e-9 * max(abs(got.primal_obj), 1.0), (
+            f"accepted a solve whose dual violates the original t by {viol:.3e}"
+        )
+
+
+@needs_clarabel
+def test_rescue_still_accepts_the_case_it_was_built_for():
+    """Certification must not throw out the correct rescue with the wrong one."""
+    d = 11
+    rng = np.random.default_rng(0)
+    t = np.abs(rng.standard_normal(d)) * 1e6 + 1.0
+    ref = solve_operator_selection_lp(t, np.eye(d), 1.0, backend="scipy")
+    got = solve_operator_selection_lp(t, np.eye(d), 1.0, backend="clarabel")
+    assert ref.feasible and got.feasible, "the correct rescue was rejected"
+    assert got.primal_obj == pytest.approx(ref.primal_obj, rel=1e-12)
+    assert got.rescaled_by_pow2 is not None
+
+
+@needs_clarabel
+def test_a_small_scale_lp_is_solved_not_declared_infeasible():
+    """`tol_gap_abs` / `tol_feas` are ABSOLUTE, so a precision-derived 1e-40
+    is unreachable on a problem whose optimum is ~1e-9. That returned
+    `InsufficientProgress`, which the Rust collapsed into `feasible=false`,
+    and 72 NaNs went into a committed witness as though the LP had no
+    solution. The tolerance ladder loosens instead of ruling."""
+    d = 28
+    rng = np.random.default_rng(7)
+    A = rng.standard_normal((d, d))
+    G = A @ A.T + d * np.eye(d)          # well-conditioned Gram
+    t = (np.abs(rng.standard_normal(d)) + 0.5) * 1e-5
+    n_target = 3.19e-4
+    ref = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="scipy")
+    got = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="clarabel")
+    if ref.feasible:
+        assert got.feasible, (
+            "small-scale LP declared infeasible; the tolerance ladder did not "
+            "loosen, so 'solver gave up' is again reading as 'no solution'"
+        )
+        assert got.primal_obj == pytest.approx(ref.primal_obj, rel=1e-5)

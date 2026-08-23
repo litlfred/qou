@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+cvxpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T12:50:47.220601+00:00",
-  "commitSha": "25c627e0a615afb5abdfe36ea7c4168ff6904b45",
+  "computedAt": "2026-08-23T13:55:33.942066+00:00",
+  "commitSha": "6bc4d1d54ac09041e6bc10b8b1898670a5be8e5f",
   "assertions": [
     {
       "name": "option_g_closure_p",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 388,
+  "durationMs": 387,
   "computation": "rho-k-h3a-gg-trajectory",
   "scriptFile": "rho_k_h3a_gg_trajectory.py",
   "scriptHash": "7cf3a113eee9",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

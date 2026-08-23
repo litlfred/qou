@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T12:56:11.431775+00:00",
-  "commitSha": "25c627e0a615afb5abdfe36ea7c4168ff6904b45",
+  "computedAt": "2026-08-23T13:56:25.577449+00:00",
+  "commitSha": "6bc4d1d54ac09041e6bc10b8b1898670a5be8e5f",
   "assertions": [
     {
       "name": "operator-selection LP strong duality (gap ~ 0)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
   "scriptHash": "1d4117f59182",
-  "scriptCommitSha": "2216604b7176952ff1aae8f1f337f73c13626756",
+  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

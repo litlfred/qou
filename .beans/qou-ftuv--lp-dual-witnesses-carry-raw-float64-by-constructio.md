@@ -1091,3 +1091,185 @@ Carve-out across the whole arc: **4,052 → 2,561**, all of it discharged by the
       the dead channels would express the same intent without a 1e15 cost, and
       would let that site join the MPFR backend. Changes the model, so not
       this arc's call.
+
+
+---
+
+## A regression I shipped, and the three defects behind it (2026-08-23)
+
+**`wedderburn-lp-ew-wiring` went from a real answer to 72 NaNs in my own
+commit, and every gate stayed green.** At the pre-arc baseline it had
+`y0_star = 5.237018636555333e-06`; pinning it to clarabel turned the whole
+dual vector into NaN. The ratchet counts raw f64 fields and **NaN is a
+float**, so the count never moved. `--strict-wired` passed because the witness
+is not content-wired. The audit self-test passed because it tests the audit.
+Nothing in the suite asks *"did a number become NaN?"*
+
+Found it only by reading `y_star` while chasing something else. Added the
+missing check as a sweep of every touched witness against the pre-arc base,
+comparing NaN counts and `feasible` tallies; it now reports **0 regressed**
+and two improvements. That sweep is what should have existed before the first
+pin landed.
+
+### Defect 1 — "the solver gave up" was reported as "the LP has no solution"
+
+`operator_selection_lp.rs` had
+
+```rust
+let feasible = matches!(status, SolverStatus::Solved | SolverStatus::AlmostSolved);
+```
+
+which collapses eight distinct Clarabel statuses into one bool. Measured on
+wedderburn (d = 28, |t| ~ 1e-5, n_target ~ 3e-4, optimum 1.67e-9, Gram
+well-conditioned at cond 53):
+
+```
+prec_bits=113   AlmostSolved            feasible
+prec_bits=167   InsufficientProgress    "infeasible"  → 72 NaNs
+```
+
+`InsufficientProgress` is a statement about the **solver**; only
+`PrimalInfeasible` / `DualInfeasible` are statements about the **problem**.
+
+And the cause of the non-convergence was *my own earlier fix*: `tol_gap_abs`
+and `tol_feas` are **absolute**, and deriving them from the arithmetic width
+alone asked for a 1e-40 residual on a problem whose optimum is 1e-9. Higher
+precision made a solve fail that lower precision completed.
+
+Fixed with a **tolerance ladder**: try tight, and on a non-convergence status
+loosen 8 decades and retry, down to `1e-8` — the constant this code used
+before the precision-derived pair replaced it, so the ladder can never be
+worse than what it replaced. The floor is deliberately not `e_red`, which
+scales with precision and would bottom out at 1e-50 at 333 bits. A genuine
+infeasibility certificate stops the ladder immediately; loosening on one would
+turn a correct "no solution" into a fabricated one. The achieved tolerance and
+every rung tried go into the status string:
+
+```
+AlmostSolved@1e-25 after [InsufficientProgress@1e-40, InsufficientProgress@1e-32]
+```
+
+wedderburn now returns `1.670447353422837e-09` against scipy's
+`1.6704473534228322e-09`, and carries 50-digit companions.
+
+### Defect 2 — the rescue returned a wrong answer, confidently
+
+The false-infeasible rescue from earlier in this arc **corrupted `rho_k`**.
+Scaling `t` cannot change the feasible set — but on a cost vector spanning
+1.1 … 1e15 it pushes the small entries to ~1e-15, where the solver treats them
+as zero and optimises a *different* objective. It then solves that one well:
+
+```
+rescued primal_obj   1.4571747644416917     relative duality gap 1.2e-30
+true optimum         1.2745481388661641     (scipy)
+```
+
+14 % wrong, with a gap of 1e-30 vouching for it. **The gap cannot police
+this** — it is small because the solver solved the substituted problem
+correctly. I had verified the rescue as "exact" on a case where the scaling
+was benign, which is the same absent-check shape: the test could not fail.
+
+Fixed by certifying the answer **against the original data** before accepting
+it. LP duality requires `y0·1 + Gᵀy ≤ t` with `y ≥ 0`; a `y` optimal for a
+rescaled `t` violates it. Normalised by the objective the duality theorem ties
+it to:
+
+```
+max(y0·1 + Gᵀy − t) / max(|primal_obj|, 1)     1.4e-16   vs   1.1e-01
+                                              (correct)      (wrong)
+```
+
+Eight orders apart — a discriminating test, not a threshold fitted to two
+points. A solve that fails certification is reported infeasible with the
+reason, never returned. The same check gates a laddered solve, which answers a
+slightly different question by construction.
+
+### Defect 3 — a false `DualInfeasible`
+
+Clarabel emits `DualInfeasible` on uniform ~1e6 costs where scipy solves the
+problem at 104901.11715303971. So even a "genuine certificate" status can be
+wrong on badly-scaled data, which is why the rescue still exists and is now
+certified rather than trusted.
+
+### `rho_k` stays on scipy, and the reason is now stronger
+
+Not "clarabel says infeasible" but "clarabel's answer fails certification
+against the original cost vector". `F64_BACKEND_EXEMPT` stands.
+
+### On the dense PSD lift — the blocker is not `Copy`
+
+This bean and `qou/f7af` both frame it as *"the bound is `Copy` on a marker
+trait … a scoping question, not an impossibility."* Having read the fork:
+
+```rust
+pub trait MaybeBlasFloatT: BlasFloatT + Copy + NumCast + ToPrimitive {}
+```
+
+`Copy` is the third bound and the least of them. **`BlasFloatT` is sealed**
+(`private::BlasFloatSealed`, impl'd only for f32/f64) and requires eleven
+LAPACK/BLAS scalar traits — `xsyevr`, `xpotrf`, `xpotrs`, `xgesdd`, `xgesvd`,
+`xgemm`, `xgemv`, `xsymv`, `xsyrk`, `xsyr2k`, `xgesv` — each an `unsafe` FFI
+call into compiled FORTRAN that exists only for machine floats. Relaxing
+`Copy` is necessary and nowhere near sufficient; the actual task is
+**implementing LAPACK at arbitrary precision**. That is not a scoping
+question. Anyone picking this up should either write an MPFR eigensolver for
+the specific decompositions the PSD cone needs, or use f64 to *find* the
+solution and MPFR to *certify* it — the shape `compound_shift_nf.py` already
+uses on the LP side, and the shape `_certifies_optimality` now uses here.
+
+Worth stating plainly because the dense lift is **not** where the remaining
+f64 is. Ranked, the top sources are LP witnesses, not SDP ones.
+
+### Carve-out
+
+```
+4,052  start of arc
+2,561  previous commit
+1,843  companions carried into per-partition slices and row-level mirrors
+1,774  after the ladder + certification re-runs
+```
+
+`a-K-via-lp-dual-full` and `pn-alpha-lp-dual` were the two largest and were
+**pure plumbing**: 308 fields in `per_partition[]` re-slicing `x_star`/`y_star`
+without their companions, and 164 in row-level mirrors copied up from a
+`lp_dual` sub-dict that had them. The digits existed; the producer dropped
+them. `pn-alpha`'s row-level `primal_obj` additionally came from an inline
+scipy solve with a `[-10, 10]` box: measured across all 41 rows, that LP and
+the canonical one agree on the optimum to 3.55e-15 and differ only in which
+argmin they land on (the optimum is 0, the optimal face is large, and the box
+binds in all 41 rows). The inline number was f64 noise around a true zero;
+the canonical solve of the same objective was already in the row at 50 digits.
+
+### Verification
+
+```
+NaN / feasibility sweep vs pre-arc base   0 regressed, 1 improved
+witness_raw_float64_audit                 NEW 0, REGRESSED 0, excused 1,774/39
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+pytest tools/pyhecke                      205 passed, 44 skipped   (was 202)
+cargo test --lib (clarabel-mpfr)          208 passed, 0 failed
+clarabel_lp_crosscheck                    all cases agree
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+Rust doctests fail on unicode in doc comments (`⊗`, `·`, `×`) — pre-existing,
+confirmed against a clean tree.
+
+## Next
+
+- [ ] **`solve_frobenius_dual_lp` has no MPFR path at all** — no `backend`
+      parameter, `scipy.optimize.linprog` hardcoded. It is the single largest
+      remaining f64 source (`frobenius-repose` 278 fields,
+      `all-nuclides-sdp-admissibility` 144). The Rust change is small: the
+      Frobenius block becomes a `ZeroConeT(d)` with `b = u_demand` instead of
+      a `NonnegativeConeT(d)` with `b = 0`; the A matrix is unchanged.
+      Worth knowing first: for invertible `G` the equality system
+      over-determines `x`, and the dual optimum is then a **line** rather than
+      a point, so `y0_star` is not uniquely determined and whatever the solver
+      returns is one arbitrary point on it. `frobenius_repose_probe` runs at
+      `rank(G) = 5, d = 6`, i.e. singular, where its `np.linalg.inv(G)` is not
+      meaningful either.
+- [ ] **1,282 of the remaining carved fields sit in witnesses that record no
+      backend at all** — untouched producers. That is where the f64 is, not in
+      the dense PSD lift.

@@ -5,9 +5,9 @@
   "data": {
     "dirty_witnesses": 1539,
     "total_fields": 531757,
-    "lp_dual_carved_out_fields": 2561,
+    "lp_dual_carved_out_fields": 1774,
     "lp_dual_carved_out_by_file": {
-      "computations/a-K-via-lp-dual-full.witness.json": 481,
+      "computations/a-K-via-lp-dual-full.witness.json": 173,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 43,
       "computations/a-K-via-lp-dual.witness.json": 1,
       "computations/all-nuclides-sdp-admissibility.witness.json": 144,
@@ -34,7 +34,6 @@
       "computations/nucleus-real-sdp-tritium.witness.json": 24,
       "computations/onepb-status-dashboard.witness.json": 48,
       "computations/option-b-proton-mass-full-chain.witness.json": 12,
-      "computations/pn-alpha-lp-dual.witness.json": 410,
       "computations/probes/borromean-angle-structure-lp-probe.witness.json": 1,
       "computations/probes/frobenius-repose.witness.json": 278,
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 11,
@@ -44,7 +43,7 @@
       "computations/rho-k-h3a-lp-dual.witness.json": 67,
       "computations/three-quark-borromean-lp-sweep.witness.json": 104,
       "computations/two-quark-active-set-mahler-sweep.witness.json": 56,
-      "computations/wedderburn-lp-ew-wiring.witness.json": 72,
+      "computations/wedderburn-lp-ew-wiring.witness.json": 3,
       "computations/wedderburn-pair-volumes.witness.json": 16,
       "computations/whitehead-saddle.witness.json": 1
     },

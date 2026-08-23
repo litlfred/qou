@@ -415,6 +415,33 @@ def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
         out["active_set"] = canon["active_set"]
         out["dual_obj"] = canon["dual_obj"]
         out["duality_gap"] = canon["duality_gap"]
+
+        # `primal_obj` above came from the INLINE scipy solve, whose box is
+        # x ∈ [-10, 10] rather than the canonical x ≥ -M_bound. Measured
+        # 2026-08-23 across all 41 rows: the two LPs agree on the OPTIMUM
+        # (max absolute difference 3.55e-15) and disagree only on which
+        # argmin they land on — the optimum here is 0 and the optimal face
+        # is large, so the box picks a vertex without moving the value. The
+        # box is active in all 41 rows for exactly that reason.
+        #
+        # So the inline number was f64 noise around a true zero (3.55e-15)
+        # while the canonical solve of the same objective, already in this
+        # same row under `lp_dual`, carries it as 3.78e-44 to 50 digits.
+        # Take the canonical one: nothing is lost but the noise, and the
+        # standardized field now means what `lp_dual_witness_validator`
+        # reads it as. `x_opt` keeps the box-constrained argmin, which is a
+        # genuinely different and still-recorded quantity.
+        out["primal_obj"] = canon["primal_obj"]
+
+        # Mirror the full-precision companions alongside every value lifted
+        # from `canon`. Copying the numbers up without them is what left 164
+        # of this witness's carved f64s bare while the digits sat one level
+        # down in `lp_dual`.
+        for _k in ("y0_star", "y_star", "dual_obj", "duality_gap",
+                   "primal_obj"):
+            _sk = _k + "_str"
+            if canon.get(_sk) is not None:
+                out[_sk] = canon[_sk]
     return out
 
 

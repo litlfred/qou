@@ -159,6 +159,16 @@ def solve_atom_lp(atom: str) -> dict:
             "contribution": contribs[i],
             "x_star": result.x_star[i],
             "u_lambda_star": result.y_star[i],
+            # The per-partition SLICE needs its own companion. The row-level
+            # `x_star`/`y_star` are shadowed by `provenance()` above, but
+            # re-slicing them per partition drops the digits again — the same
+            # truncation one level deeper, and 308 of this witness's carved
+            # f64s were exactly this. `x_star_str`/`y_star_str` hold the
+            # solver's 50-dps decimals, so the slice is free.
+            **({"x_star_str": result.x_star_str[i]}
+               if result.x_star_str is not None else {}),
+            **({"u_lambda_star_str": result.y_star_str[i]}
+               if result.y_star_str is not None else {}),
             "is_active": (i in result.active_set),
         })
 

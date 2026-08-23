@@ -197,23 +197,92 @@ pub fn solve_operator_selection_lp<F: FloatT>(
     // A tighter tolerance needs more interior-point steps. 200 was tuned for
     // the f64 tolerance; hold that at f64 and allow more as precision rises.
     let max_iter = 200u32 + 10 * ((dps - 16.0).max(0.0) as u32);
-    let settings = DefaultSettingsBuilder::default()
-        .verbose(false)
-        .max_iter(max_iter)
-        .tol_gap_abs(eps.clone())
-        .tol_gap_rel(eps.clone())
-        .tol_feas(eps.clone())
-        .reduced_tol_gap_abs(eps_red.clone())
-        .reduced_tol_gap_rel(eps_red.clone())
-        .reduced_tol_feas(eps_red)
-        .build()
-        .unwrap();
+    // TOLERANCE LADDER — "the solver gave up" is not "the LP has no solution".
+    //
+    // `e_tight` above is derived from the arithmetic width alone, and
+    // `tol_gap_abs` / `tol_feas` are ABSOLUTE. On a problem whose natural
+    // scale is small that asks for the impossible: measured 2026-08-23 on
+    // `wedderburn_lp_ew_wiring` (d = 28, |t| ~ 1e-5, n_target ~ 3e-4,
+    // optimum 1.67e-9, Gram well-conditioned at cond 53), the solver returned
+    //
+    //     prec_bits=113  ->  AlmostSolved            feasible
+    //     prec_bits=167  ->  InsufficientProgress    "infeasible"
+    //
+    // and the caller wrote 72 NaNs into a committed witness as though the LP
+    // had no solution. It has one; scipy finds it. The demand for an absolute
+    // 1e-40 residual on a 1e-9 optimum is what could not be met.
+    //
+    // `InsufficientProgress` and `MaxIterations` are statements about the
+    // SOLVER; only `PrimalInfeasible` / `DualInfeasible` are statements about
+    // the PROBLEM. Collapsing all of them into one bool made the two
+    // indistinguishable. So: try the tight tolerance, and on a
+    // non-convergence status loosen and retry rather than reporting a
+    // mathematical verdict the solver never reached. The achieved exponent is
+    // returned so a witness records the tolerance its numbers actually meet
+    // instead of the one that was requested.
+    let mut e_used = e_tight;
+    let mut solver;
+    let mut ladder = Vec::new();
+    loop {
+        let eps_i = F::from_f64(10f64.powi(-e_used)).unwrap();
+        let eps_red_i =
+            F::from_f64(10f64.powi(-((e_used as f64 * 0.625).floor() as i32))).unwrap();
+        let settings = DefaultSettingsBuilder::default()
+            .verbose(false)
+            .max_iter(max_iter)
+            .tol_gap_abs(eps_i.clone())
+            .tol_gap_rel(eps_i.clone())
+            .tol_feas(eps_i)
+            .reduced_tol_gap_abs(eps_red_i.clone())
+            .reduced_tol_gap_rel(eps_red_i.clone())
+            .reduced_tol_feas(eps_red_i)
+            .build()
+            .unwrap();
+        solver =
+            DefaultSolver::new(&p_zero, &q_vec, &a_csc, &b_vec, &cones, settings).unwrap();
+        solver.solve();
 
-    let mut solver =
-        DefaultSolver::new(&p_zero, &q_vec, &a_csc, &b_vec, &cones, settings).unwrap();
-    solver.solve();
+        let converged = matches!(
+            solver.solution.status,
+            SolverStatus::Solved | SolverStatus::AlmostSolved
+        );
+        // A genuine infeasibility certificate is an ANSWER — stop, do not
+        // loosen. Loosening on these would turn a correct "no solution"
+        // into a fabricated one.
+        let decided = matches!(
+            solver.solution.status,
+            SolverStatus::PrimalInfeasible
+                | SolverStatus::DualInfeasible
+                | SolverStatus::AlmostPrimalInfeasible
+                | SolverStatus::AlmostDualInfeasible
+        );
+        if converged || decided {
+            break;
+        }
+        ladder.push(format!("{:?}@1e-{}", solver.solution.status, e_used));
+        // Back off 8 decades a step, down to the tolerance this code used
+        // BEFORE the precision-derived pair replaced it (`eps_red = 1e-8`).
+        // The floor is deliberately NOT `e_red`: that scales with precision,
+        // so at 333 bits it is 1e-50 and the ladder would bottom out tighter
+        // than the f64 path ever demanded — asking for more precision would
+        // make a solve fail that 167 bits completes. Flooring at the old
+        // constant guarantees the ladder is never worse than the behaviour
+        // it replaced.
+        const E_FLOOR: i32 = 8;
+        if e_used <= E_FLOOR {
+            break;
+        }
+        e_used = (e_used - 8).max(E_FLOOR);
+    }
+    let _ = &eps;
+    let _ = &eps_red;
 
-    let status = format!("{:?}", solver.solution.status);
+    let mut status = format!("{:?}", solver.solution.status);
+    if !ladder.is_empty() {
+        // Say what was tried. A retry that leaves no trace is the same
+        // absent-check shape this ladder exists to fix.
+        status = format!("{status}@1e-{e_used} after [{}]", ladder.join(", "));
+    }
     let feasible = matches!(
         solver.solution.status,
         SolverStatus::Solved | SolverStatus::AlmostSolved
