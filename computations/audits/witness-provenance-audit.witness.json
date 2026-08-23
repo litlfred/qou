@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T18:55:20.236238+00:00",
-  "commitSha": "d6cdf58ef5cd50185bde0a5a19bf0db9f2379658",
+  "computedAt": "2026-08-23T19:53:07.629638+00:00",
+  "commitSha": "76d923f492124b22b8062c8121fe5d3c6e3b4c31",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 89,
+      "computed": 86,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -17,8 +17,8 @@
   "durationMs": 6,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
-  "scriptHash": "8c36ab9fed1b",
-  "scriptCommitSha": "d6cdf58ef5cd50185bde0a5a19bf0db9f2379658",
+  "scriptHash": "b065e1139158",
+  "scriptCommitSha": "76d923f492124b22b8062c8121fe5d3c6e3b4c31",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,17 +57,17 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2717,
-      "prov_ok": 2338,
+      "total_scanned": 2722,
+      "prov_ok": 2346,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 209,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 89,
+      "prov_missing": 86,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.9672432830327568,
+      "completeness_ratio": "0.968405584129316678912564290962527553269654665686994856722998",
       "excluded_not_evaluated": 290,
-      "completeness_ratio_evaluated": 0.9633292130201896,
-      "evaluated_coverage": 0.8932646301067354
+      "completeness_ratio_evaluated": "0.964638157894736842105263157894736842105263157894736842105263",
+      "evaluated_coverage": "0.893460690668626010286554004408523144746509919177075679647318"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4052,11 +4052,6 @@
           "evaluated": true
         },
         {
-          "witness": "habiro-coefficients-extended.witness.json",
-          "missing_fields": [],
-          "evaluated": true
-        },
-        {
           "witness": "habiro-coefficients-interpolate.witness.json",
           "missing_fields": [],
           "evaluated": true
@@ -4432,6 +4427,16 @@
           "evaluated": true
         },
         {
+          "witness": "hecke-agtb-corner-shape.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "hecke-agtb-lineage-schedule.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
           "witness": "hecke-block-transport-shape.witness.json",
           "missing_fields": [],
           "evaluated": true
@@ -4443,6 +4448,11 @@
         },
         {
           "witness": "hecke-channel-binding.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "hecke-closing-from-topen.witness.json",
           "missing_fields": [],
           "evaluated": true
         },
@@ -4463,6 +4473,16 @@
         },
         {
           "witness": "hecke-gs-confluence-range.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "hecke-opening-coverage.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "hecke-opening-trio-shape.witness.json",
           "missing_fields": [],
           "evaluated": true
         },
@@ -4488,6 +4508,11 @@
         },
         {
           "witness": "hecke-quad-pair-shape.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "hecke-small-a-decomposition.witness.json",
           "missing_fields": [],
           "evaluated": true
         },
@@ -8387,6 +8412,16 @@
           "evaluated": true
         },
         {
+          "witness": "qlift_ggm_diagonal_gauge_prune_probe.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "qlift_kernel_candidate_crosscheck_probe.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
           "witness": "qm-channel-contribution-probe.witness.json",
           "missing_fields": [],
           "evaluated": true
@@ -8548,6 +8583,11 @@
         },
         {
           "witness": "theta-poisson-mass-resummation-prune.witness.json",
+          "missing_fields": [],
+          "evaluated": true
+        },
+        {
+          "witness": "theta_jet_gb_grading_probe.witness.json",
           "missing_fields": [],
           "evaluated": true
         },
@@ -12345,33 +12385,6 @@
           "evaluated": true
         },
         {
-          "witness": "qlift_ggm_diagonal_gauge_prune_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": true
-        },
-        {
-          "witness": "qlift_kernel_candidate_crosscheck_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": true
-        },
-        {
-          "witness": "theta_jet_gb_grading_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ],
-          "evaluated": true
-        },
-        {
           "witness": "qbeta-5two-enhanced-dilog.witness.json",
           "missing_fields": [
             "engine",
@@ -14771,7 +14784,7 @@
       "py_index_ok": true,
       "py_index_returncode": 0,
       "paper_names": 589,
-      "py_names": 2007,
+      "py_names": 2013,
       "ok": true
     },
     "dynamic_readers": {
