@@ -23,7 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V̂_i Hecke recursion, Φ_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the +1.84% m_p/m_e residual is f64 vs structural.",
+  "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V\u0302_i Hecke recursion, \u03a6_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the +1.84% m_p/m_e residual is f64 vs structural.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
@@ -89,7 +89,7 @@
     }
   },
   "caveats": [
-    "Quantum dilogarithm Φ_q is still evaluated as a series (adaptive truncation to precision floor). The fully-Habiro form would use the cyclotomic expansion Φ_q(z) = Σ_m a_m·(q;q)_m, but that's a separate refactor. For numerical evaluation at q_0 just outside |q|=1, series truncation at ~10⁻⁵⁰ is essentially exact.",
+    "Quantum dilogarithm \u03a6_q is still evaluated as a series (adaptive truncation to precision floor). The fully-Habiro form would use the cyclotomic expansion \u03a6_q(z) = \u03a3_m a_m\u00b7(q;q)_m, but that's a separate refactor. For numerical evaluation at q_0 just outside |q|=1, series truncation at ~10\u207b\u2075\u2070 is essentially exact.",
     "If the diff stays at +1.84%, the residual is STRUCTURAL (mass formula incomplete), not numerical (f64). If it shifts, f64 was contributing some of the gap."
   ]
 }

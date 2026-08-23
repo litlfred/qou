@@ -19,12 +19,12 @@
   "scriptFile": "qbeta_operator_identification_probe.py",
   "scriptHash": "400e18c155e4",
   "scriptCommitSha": "unknown",
-  "description": "Path 1 (operator-identification on V_(2,1) at H_3) for the Q_β precision-ladder. NEGATIVE RESULT: no candidate operator on V_(2,1) matches the empirical c_3..c_7 via Markov trace. Suggests the c_k come from multi-level Hecke embeddings or spectral-sequence stratification, not from V_(2,1) alone.",
+  "description": "Path 1 (operator-identification on V_(2,1) at H_3) for the Q_\u03b2 precision-ladder. NEGATIVE RESULT: no candidate operator on V_(2,1) matches the empirical c_3..c_7 via Markov trace. Suggests the c_k come from multi-level Hecke embeddings or spectral-sequence stratification, not from V_(2,1) alone.",
   "parameters": {
     "q_0": "1.1099785955541805753"
   },
   "data": {
-    "path_1_outcome": "negative — operator not identified on V_(2,1)",
+    "path_1_outcome": "negative \u2014 operator not identified on V_(2,1)",
     "next_paths": [
       "Path 1-extended: search at higher Hecke levels H_n, n > 3",
       "Path 2: Khovanov-Rozansky bigraded polynomial at finite q",

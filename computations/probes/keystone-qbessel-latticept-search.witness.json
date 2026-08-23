@@ -44,7 +44,7 @@
     },
     "maps": {
       "A_abs_content_sum": {
-        "why_structural": "|Σ(j−i)|; transpose-invariant (content negates → abs fixed); no free param",
+        "why_structural": "|\u03a3(j\u2212i)|; transpose-invariant (content negates \u2192 abs fixed); no free param",
         "transpose_invariant": true,
         "index_per_class": {
           "(5)~(1^5)": 10,
@@ -56,7 +56,7 @@
         "collisions": []
       },
       "B_content_sq_sum": {
-        "why_structural": "Σ(j−i)² = quadratic-Casimir magnitude; transpose-invariant; no free param",
+        "why_structural": "\u03a3(j\u2212i)\u00b2 = quadratic-Casimir magnitude; transpose-invariant; no free param",
         "transpose_invariant": true,
         "index_per_class": {
           "(5)~(1^5)": 30,
@@ -102,7 +102,7 @@
         ]
       },
       "D_n_plus_nconj": {
-        "why_structural": "n(λ)+n(λ′), transpose-symmetric coarea; no free param",
+        "why_structural": "n(\u03bb)+n(\u03bb\u2032), transpose-symmetric coarea; no free param",
         "transpose_invariant": true,
         "index_per_class": {
           "(5)~(1^5)": 10,
@@ -156,7 +156,7 @@
         ]
       },
       "F_hook_sum": {
-        "why_structural": "Σ hook lengths; transpose-invariant (hook multiset invariant); no free param",
+        "why_structural": "\u03a3 hook lengths; transpose-invariant (hook multiset invariant); no free param",
         "transpose_invariant": true,
         "index_per_class": {
           "(5)~(1^5)": 15,

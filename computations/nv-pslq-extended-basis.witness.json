@@ -62,7 +62,7 @@
     {
       "tol_dps": 7,
       "kind": "BASIS_COINCIDENCE",
-      "note": "log(N_v) coefficient is zero — relation lives entirely in the q-basis and does NOT pin N_v",
+      "note": "log(N_v) coefficient is zero \u2014 relation lives entirely in the q-basis and does NOT pin N_v",
       "log_N_v_coef": 0,
       "relation": [
         [
@@ -120,7 +120,7 @@
     "n_basis_coincidences": 1,
     "n_deep_genuine_relations": 0,
     "conclusion": "INCONCLUSIVE",
-    "verdict": "Extended basis does NOT close NV-1: no log(N_v) relation at any tested tolerance.  Consistent with the conjectured form iff N_sym(q) is transcendental in the basis — N_sym must be authored explicitly before PSLQ can verify."
+    "verdict": "Extended basis does NOT close NV-1: no log(N_v) relation at any tested tolerance.  Consistent with the conjectured form iff N_sym(q) is transcendental in the basis \u2014 N_sym must be authored explicitly before PSLQ can verify."
   },
   "engine": "python",
   "scriptFile": "nv_pslq_extended_basis.py",

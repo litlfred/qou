@@ -9,7 +9,7 @@
       "computed": false,
       "expected": false,
       "passed": true,
-      "source": "Whether the real-q 3-rung [3]_q/25 formula reproduces empirical c_3 at BOTH the proton and muon anchors (genuine fibre rigidity) vs. matching only at the proton anchor (near-match). Expected False — a smooth real-q form cannot track the ~4.6e6 dc_3/dq of the hyper-sensitive extracted c_3."
+      "source": "Whether the real-q 3-rung [3]_q/25 formula reproduces empirical c_3 at BOTH the proton and muon anchors (genuine fibre rigidity) vs. matching only at the proton anchor (near-match). Expected False \u2014 a smooth real-q form cannot track the ~4.6e6 dc_3/dq of the hyper-sensitive extracted c_3."
     }
   ],
   "allPassed": true,
@@ -45,6 +45,9 @@
     "swing_ratio_formula_over_empirical": 5.2882822819558767e-11,
     "mismatch_factor_empirical_over_formula": 18909731869.119305,
     "tracks_across_anchors": false,
-    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings -1.52e-10% across the two anchors while empirical c_3 swings -2.88% (ratio 5.29e-11). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element — consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
-  }
+    "interpretation": "The real-q 3-rung [3]_q/25 c_3 closure swings -1.52e-10% across the two anchors while empirical c_3 swings -2.88% (ratio 5.29e-11). The formula is RIGID; it reproduces empirical c_3 only at the proton anchor (miss -2.97% at muon). This CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre element \u2014 consistent with the known impossibility of a real-q c_3=f(q) matching multiple anchors (AGENTS.md). The genuine Habiro element, if it exists, is complex-analytic / root-of-unity. Falsification test; no fit, no production change."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_muon, data.q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

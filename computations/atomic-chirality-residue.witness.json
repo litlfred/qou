@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "count",
-      "source": "prop:confinement-categorical claims confinement = collapse onto chirality cells. Every isotope must have ≥ 1 chirality cell in its Wedderburn decomposition."
+      "source": "prop:confinement-categorical claims confinement = collapse onto chirality cells. Every isotope must have \u2265 1 chirality cell in its Wedderburn decomposition."
     },
     {
       "name": "chirality_fraction_bounded",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": 2.0,
       "unit": "|fraction|",
-      "source": "|α · Φ_chir(K) / B_nucl(K)| ≤ 2 across all isotopes — well-formedness check on the chirality-channel contribution. Per-isotope: [('D', -1.806), ('T', 0.008), ('3He', 0.008), ('4He', 0.03)]"
+      "source": "|\u03b1 \u00b7 \u03a6_chir(K) / B_nucl(K)| \u2264 2 across all isotopes \u2014 well-formedness check on the chirality-channel contribution. Per-isotope: [('D', -1.806), ('T', 0.008), ('3He', 0.008), ('4He', 0.03)]"
     }
   ],
   "allPassed": true,
@@ -29,7 +29,7 @@
   "scriptFile": "atomic_chirality_residue.py",
   "scriptHash": "94184bd90523",
   "scriptCommitSha": "unknown",
-  "description": "Plancherel-weighted log-character contribution from the chirality cells (D_q² = 0 ⇔ signed_content(λ) = 0) in the atomic braid character decomposition. Provides the gauge-invariant background (\"gluon condensate\") contribution per curvature-rank stratum. Wired to prop:confinement-categorical — the spectral-sequence-collapse reading of confinement predicts that only Wedderburn-central (D_q² = 0) observables survive, i.e. the chirality channel.",
+  "description": "Plancherel-weighted log-character contribution from the chirality cells (D_q\u00b2 = 0 \u21d4 signed_content(\u03bb) = 0) in the atomic braid character decomposition. Provides the gauge-invariant background (\"gluon condensate\") contribution per curvature-rank stratum. Wired to prop:confinement-categorical \u2014 the spectral-sequence-collapse reading of confinement predicts that only Wedderburn-central (D_q\u00b2 = 0) observables survive, i.e. the chirality channel.",
   "contentBlock": "prop:confinement-categorical",
   "parameters": {
     "q0": "1.1099785955541805",

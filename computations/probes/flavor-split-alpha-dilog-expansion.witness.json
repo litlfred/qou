@@ -9,7 +9,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "geometric self-energy α≈1; q-deformation moves α by < 1e-3 (too small for the 7.8% gap to experimental 0.929)"
+      "source": "geometric self-energy \u03b1\u22481; q-deformation moves \u03b1 by < 1e-3 (too small for the 7.8% gap to experimental 0.929)"
     }
   ],
   "allPassed": true,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/probes/flavor_split_alpha_dilog_expansion_probe.py"
   },
-  "description": "α (second-order flavor-split coefficient) via archimedean Li_2^q convergent expansions, both anchors. Geometric/q-dilog self-energy gives α=1 (0.0097%, parameter-free, convergent); the q-deformation at the small argument leading≈0.00138 is ~0.1% and CANNOT soften α=1 to the experimental α_true=0.929 (needs 7.8%). α=1 is the derivable prediction; the residual is a separate O(1) ingredient, NOT fitted.",
+  "description": "\u03b1 (second-order flavor-split coefficient) via archimedean Li_2^q convergent expansions, both anchors. Geometric/q-dilog self-energy gives \u03b1=1 (0.0097%, parameter-free, convergent); the q-deformation at the small argument leading\u22480.00138 is ~0.1% and CANNOT soften \u03b1=1 to the experimental \u03b1_true=0.929 (needs 7.8%). \u03b1=1 is the derivable prediction; the residual is a separate O(1) ingredient, NOT fitted.",
   "data": {
     "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
     "proton_anchor": {
@@ -112,5 +112,8 @@
       }
     },
     "alpha_true_anchor_drift": "0.000236208569053470911052685717753969340720397929127679908706059214214002"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.proton_anchor.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,5 +1,5 @@
 {
-  "description": "Two-quark binding LP at strand count n=2.  Closed-form Markov-trace cost t(q) and Frobenius Gram G(q) over basis {γ, σ_0} of H_2(q).  Sweep q across metallic intervals [q_0, φ, δ_silver, δ_bronze].  At each q: solve LP, record active set 𝒜 = {i : y_i^* > 0} and Mahler-height proxy for the Markov traces.  Tests sharpened conjecture (M2).",
+  "description": "Two-quark binding LP at strand count n=2.  Closed-form Markov-trace cost t(q) and Frobenius Gram G(q) over basis {\u03b3, \u03c3_0} of H_2(q).  Sweep q across metallic intervals [q_0, \u03c6, \u03b4_silver, \u03b4_bronze].  At each q: solve LP, record active set \ud835\udc9c = {i : y_i^* > 0} and Mahler-height proxy for the Markov traces.  Tests sharpened conjecture (M2).",
   "computed_at": "2026-06-09T05:19:15.820447+00:00",
   "anchors": {
     "q_0": "1.1099785955541805",
@@ -34,11 +34,11 @@
     }
   ],
   "n_transitions": 2,
-  "verdict": "If active_set_transitions is empty across the sweep, the active set is q-CONSTANT — metallic structure does not reach the LP combinatorial output at n=2.  If transitions exist AT metallic ratios, sharpened (M2) is confirmed at this level.  If transitions exist elsewhere, the LP-vertex structure is driven by character zeros (same pattern as the Jones / n=4 probes), not by metallic ratios.",
+  "verdict": "If active_set_transitions is empty across the sweep, the active set is q-CONSTANT \u2014 metallic structure does not reach the LP combinatorial output at n=2.  If transitions exist AT metallic ratios, sharpened (M2) is confirmed at this level.  If transitions exist elsewhere, the LP-vertex structure is driven by character zeros (same pattern as the Jones / n=4 probes), not by metallic ratios.",
   "limitations": [
-    "n=2 has only 2 LP variables and 2 Frobenius constraints — the smallest non-trivial case.  Higher-n LPs (n=3 Borromean d=6) have richer active-set structure but require explicit Markov-trace + Gram tabulation.",
-    "Mahler-height proxy uses `Fraction.limit_denominator(10^6)`. At metallic q the value (q - q⁻¹) IS an integer to machine precision so the proxy hits 0 floor; at generic q the proxy grows with denominator complexity.  Not a true Mahler measure, but tracks the right structural distinction.",
-    "scipy.linprog uses HIGHS solver in double precision; for a true algebraic-integer LP at q = δ_n we'd need a symbolic solver (sympy or QSOpt-Ex).  This probe shows the floating-point shadow."
+    "n=2 has only 2 LP variables and 2 Frobenius constraints \u2014 the smallest non-trivial case.  Higher-n LPs (n=3 Borromean d=6) have richer active-set structure but require explicit Markov-trace + Gram tabulation.",
+    "Mahler-height proxy uses `Fraction.limit_denominator(10^6)`. At metallic q the value (q - q\u207b\u00b9) IS an integer to machine precision so the proxy hits 0 floor; at generic q the proxy grows with denominator complexity.  Not a true Mahler measure, but tracks the right structural distinction.",
+    "scipy.linprog uses HIGHS solver in double precision; for a true algebraic-integer LP at q = \u03b4_n we'd need a symbolic solver (sympy or QSOpt-Ex).  This probe shows the floating-point shadow."
   ],
   "scriptHash": "fe894f31392d",
   "scriptCommitSha": "unknown",

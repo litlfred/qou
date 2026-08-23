@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "sl_2 q-Schur centralizer: [2]_q^n = Σ_{λ 2-row} dim_q(V_λ^{sl_2}) · dim(S^λ) where dim(S^λ) is the classical integer S_n-irrep dimension (H_n(q)-side of the centralizer carries classical dims). n=5: 1·[6]_q + 4·[4]_q + 5·[2]_q = [2]_q^5."
+      "source": "sl_2 q-Schur centralizer: [2]_q^n = \u03a3_{\u03bb 2-row} dim_q(V_\u03bb^{sl_2}) \u00b7 dim(S^\u03bb) where dim(S^\u03bb) is the classical integer S_n-irrep dimension (H_n(q)-side of the centralizer carries classical dims). n=5: 1\u00b7[6]_q + 4\u00b7[4]_q + 5\u00b7[2]_q = [2]_q^5."
     },
     {
       "name": "V_2_absent_from_sl2_at_n_equals_5",
@@ -18,7 +18,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "source": "Classical SU(2) Clebsch-Gordan on V_{1/2}^⊗5 yields V_{5/2} ⊕ 4·V_{3/2} ⊕ 5·V_{1/2}; V_2 has multiplicity 0. The icosahedral H (dim 5) is NOT reachable via sl_2 q-Schur."
+      "source": "Classical SU(2) Clebsch-Gordan on V_{1/2}^\u22975 yields V_{5/2} \u2295 4\u00b7V_{3/2} \u2295 5\u00b7V_{1/2}; V_2 has multiplicity 0. The icosahedral H (dim 5) is NOT reachable via sl_2 q-Schur."
     }
   ],
   "allPassed": true,
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gap_a4_T8_rt_q_schur_probe.py"
   },
-  "description": "GAP-A-4 T8 — Reshetikhin-Turaev / q-Schur duality candidate functor.  Tests whether the icosahedral H-sector (3,2)+(2,2,1) corresponds to a single RT-quantum-dim-5 isotypic component (j=2 of SU(2) / a single sl_3 irrep).  Verdict: REFUTED at sl_2 (H absent from V_{1/2}^⊗5) and at sl_3 (H splits into two different irreps with HW (1,2) and (0,1)).",
+  "description": "GAP-A-4 T8 \u2014 Reshetikhin-Turaev / q-Schur duality candidate functor.  Tests whether the icosahedral H-sector (3,2)+(2,2,1) corresponds to a single RT-quantum-dim-5 isotypic component (j=2 of SU(2) / a single sl_3 irrep).  Verdict: REFUTED at sl_2 (H absent from V_{1/2}^\u22975) and at sl_3 (H splits into two different irreps with HW (1,2) and (0,1)).",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
@@ -172,14 +172,17 @@
           ]
         }
       ],
-      "verdict_sl3": "Icosahedral H splits into TWO different sl_3 irreps with highest weights (1,2) and (0,1) — NOT a single RT/q-Schur isotypic component."
+      "verdict_sl3": "Icosahedral H splits into TWO different sl_3 irreps with highest weights (1,2) and (0,1) \u2014 NOT a single RT/q-Schur isotypic component."
     },
     "su2_clebsch_gordan": {
-      "V_half_5_decomp": "V_{5/2} ⊕ 4·V_{3/2} ⊕ 5·V_{1/2}",
+      "V_half_5_decomp": "V_{5/2} \u2295 4\u00b7V_{3/2} \u2295 5\u00b7V_{1/2}",
       "dim_check": 32,
       "V_2_multiplicity": 0,
-      "verdict_classical": "V_2 (dim 5) multiplicity = 0 in V_{1/2}^⊗5; Icosahedral H NOT reachable via SU(2) Schur-Weyl on 5 strands."
+      "verdict_classical": "V_2 (dim 5) multiplicity = 0 in V_{1/2}^\u22975; Icosahedral H NOT reachable via SU(2) Schur-Weyl on 5 strands."
     },
-    "synthesis_verdict": "RT / q-Schur duality candidate functor REFUTED at two ranks: (sl_2 m=2) V_2 multiplicity = 0 in V_{1/2}^⊗5 (Clebsch-Gordan verified V_{1/2}^⊗5 = V_{5/2} ⊕ 4V_{3/2} ⊕ 5V_{1/2}, total dim 32 = 2^5 ✓), so the dim-5 icosahedral H simply does NOT appear as a single sl_2 q-Schur isotypic component; (sl_3 m=3) both (3,2) and (2,2,1) are present but as TWO different sl_3 irreps with highest weights (1,2) and (0,1) — the icosahedral H = V_(3,2)+V_(2,2,1) is a sum of TWO DISTINCT sl_3 components, NOT a single 'spin j=2 / dim 5' RT-invariant. Both verdicts agree: the icosahedral H is fundamentally a NON-SCHUR-WEYL object — it lives at the LEVEL OF A_5 fiber action on V^⊗5, not in any standard q-Schur isotypic component. This is the 5th candidate functor REFUTED (after T5 F1/F2/F3, T7 Bratteli), and it is the **structurally most informative negative**: the icosahedral H simply DOES NOT FIT the standard q-Schur / RT framework, period.  The cross-algebra functor must live OUTSIDE the q-Schur picture — likely involving the icosahedral subgroup structure of SO(3) ⊂ PSL(2,ℂ) directly (Möbius / Bring / McKay E_8), not via a quantum group rep tower."
-  }
+    "synthesis_verdict": "RT / q-Schur duality candidate functor REFUTED at two ranks: (sl_2 m=2) V_2 multiplicity = 0 in V_{1/2}^\u22975 (Clebsch-Gordan verified V_{1/2}^\u22975 = V_{5/2} \u2295 4V_{3/2} \u2295 5V_{1/2}, total dim 32 = 2^5 \u2713), so the dim-5 icosahedral H simply does NOT appear as a single sl_2 q-Schur isotypic component; (sl_3 m=3) both (3,2) and (2,2,1) are present but as TWO different sl_3 irreps with highest weights (1,2) and (0,1) \u2014 the icosahedral H = V_(3,2)+V_(2,2,1) is a sum of TWO DISTINCT sl_3 components, NOT a single 'spin j=2 / dim 5' RT-invariant. Both verdicts agree: the icosahedral H is fundamentally a NON-SCHUR-WEYL object \u2014 it lives at the LEVEL OF A_5 fiber action on V^\u22975, not in any standard q-Schur isotypic component. This is the 5th candidate functor REFUTED (after T5 F1/F2/F3, T7 Bratteli), and it is the **structurally most informative negative**: the icosahedral H simply DOES NOT FIT the standard q-Schur / RT framework, period.  The cross-algebra functor must live OUTSIDE the q-Schur picture \u2014 likely involving the icosahedral subgroup structure of SO(3) \u2282 PSL(2,\u2102) directly (M\u00f6bius / Bring / McKay E_8), not via a quantum group rep tower."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

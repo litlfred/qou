@@ -48,12 +48,12 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Chiral residual of GAP-A-2 in derivation-audit-report.md. Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / (Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose the structural-but-non-zero values that the chiral case takes.  Companion to chirality-avg-content.witness.json (amphichiral case, plus the minimal-level trefoil at H_2).  The writhe is computed from each braid word, and each row records the verified topology of its closure (component count, determinant, braid index) — three rows carried wrong knot names and one a wrong hardcoded writhe until 2026-08-10 (qou-okxx).",
+  "description": "Chiral residual of GAP-A-2 in derivation-audit-report.md. Computes \u27e8c\u27e9_\u03b2 = (\u03a3 w_\u03bb \u03c7^\u03bb(\u03b2) c(\u03bb)) / (\u03a3 w_\u03bb \u03c7^\u03bb(\u03b2)) for chiral 3-braids at q_0 to expose the structural-but-non-zero values that the chiral case takes.  Companion to chirality-avg-content.witness.json (amphichiral case, plus the minimal-level trefoil at H_2).  The writhe is computed from each braid word, and each row records the verified topology of its closure (component count, determinant, braid index) \u2014 three rows carried wrong knot names and one a wrong hardcoded writhe until 2026-08-10 (qou-okxx).",
   "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-2 chiral residual)",
   "parameters": {
     "q_0": 1.1099785827513808,
     "q0_anchor": "proton",
-    "q0_anchor_note": "EXPERIMENTAL / Physical-Observations pin (m_p/m_e). `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem; `chirality_avg_content_chiral` is in NEITHER list, so it takes the proton default — which is also what the 2026-08-07 owner directive prescribes for touched compute.  The PREVIOUSLY COMMITTED witness was built in the muon era (q_0 = 1.1099785955541805), so every ⟨c⟩ here moved by ~1e-7 relative on the 2026-08-10 re-run purely from the anchor, independently of the writhe and label corrections.  The one number that moved for a substantive reason is the fourth row's a_K (1.089679 -> 1.044839), from the hardcoded writhe 4 being replaced by the computed +2.  NOTE the companion `chirality_avg_content.py` is manifest-tagged `ideal_muon`, so ⟨c⟩ values must not be compared across the two witnesses below the 1e-7 level.",
+    "q0_anchor_note": "EXPERIMENTAL / Physical-Observations pin (m_p/m_e). `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem; `chirality_avg_content_chiral` is in NEITHER list, so it takes the proton default \u2014 which is also what the 2026-08-07 owner directive prescribes for touched compute.  The PREVIOUSLY COMMITTED witness was built in the muon era (q_0 = 1.1099785955541805), so every \u27e8c\u27e9 here moved by ~1e-7 relative on the 2026-08-10 re-run purely from the anchor, independently of the writhe and label corrections.  The one number that moved for a substantive reason is the fourth row's a_K (1.089679 -> 1.044839), from the hardcoded writhe 4 being replaced by the computed +2.  NOTE the companion `chirality_avg_content.py` is manifest-tagged `ideal_muon`, so \u27e8c\u27e9 values must not be compared across the two witnesses below the 1e-7 level.",
     "n": 3,
     "partitions": [
       [
@@ -76,8 +76,8 @@
   "data": {
     "cases": [
       {
-        "name": "σ_1^3 in B_3  (3_1 ⊔ 0_1, split)",
-        "closure": "3_1 ⊔ 0_1 (split link, 2 components, det 0)",
+        "name": "\u03c3_1^3 in B_3  (3_1 \u2294 0_1, split)",
+        "closure": "3_1 \u2294 0_1 (split link, 2 components, det 0)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -142,8 +142,8 @@
         "note": ""
       },
       {
-        "name": "σ_1^-3 in B_3  (3_1* ⊔ 0_1, split)",
-        "closure": "3_1* ⊔ 0_1 (split link, 2 components, det 0)",
+        "name": "\u03c3_1^-3 in B_3  (3_1* \u2294 0_1, split)",
+        "closure": "3_1* \u2294 0_1 (split link, 2 components, det 0)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -208,7 +208,7 @@
         "note": ""
       },
       {
-        "name": "(σ_1 σ_2)^3 in B_3  (T(3,3) torus link)",
+        "name": "(\u03c3_1 \u03c3_2)^3 in B_3  (T(3,3) torus link)",
         "closure": "T(3,3) torus link (3 components, det 4)",
         "amphichiral": false,
         "braid_word": [
@@ -286,8 +286,8 @@
         "note": ""
       },
       {
-        "name": "σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 in B_3  (3-component link)",
-        "closure": "unnamed 3-component link (det 12) — NOT 5_2 (det 7)",
+        "name": "\u03c3_1^2 \u03c3_2^-1 \u03c3_1^2 \u03c3_2^-1 in B_3  (3-component link)",
+        "closure": "unnamed 3-component link (det 12) \u2014 NOT 5_2 (det 7)",
         "amphichiral": false,
         "braid_word": [
           [
@@ -365,13 +365,13 @@
       }
     ],
     "summary_observations": [
-      "CORRECTION (2026-08-10, qou-okxx): the writhe is now computed from the braid word.  The fourth row previously carried a hardcoded writhe of 4 for a word whose writhe is +2, which made its a_K = 1 + w·⟨c⟩·h twice too large.",
-      "CORRECTION (2026-08-10, qou-okxx): three rows were mislabelled. σ_1^3 in B_3 closes to the SPLIT LINK 3_1 ⊔ 0_1 (2 components, Alexander ≡ 0, det 0), not the trefoil — the trefoil is a knot and sits at braid index 2.  (σ_1 σ_2)^3 closes to the TORUS LINK T(3,3) (3 components, det 4), not a 'toral form of 3_1'. σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 closes to a 3-component link of determinant 12, so it is neither 5_2 (a knot, det 7) nor any knot.  Component counts are computed from the underlying permutation; determinants are |Δ(−1)| via the reduced Burau representation.",
-      "LEVEL (2026-08-10): the writhe is Markov-I invariant but shifts by ±1 under Markov II, so every row records its n_strands and whether it sits at the braid index of its own closure.  Only the T(3,3) row does (braid index 3).  Per the owner ruling in docs/audits/2026-08-10-writhe-level-of-definition.md the observable is evaluated at the lowest level of the tower, so the two σ_1^{±3} rows are OFF-LEVEL diagnostics: the minimal-level trefoil datum is the H_2 row of the companion chirality_avg_content.py.",
-      "The two σ_1^{±3} rows give ⟨c⟩_β = ±1.815, antisymmetric under the braid mirror as required.  This is a statement about the braid words, not about the trefoil.",
-      "⟨c⟩_β is a function of the BRAID WORD, not of the closure: the four words here present four different links, so this table on its own does not exhibit two representatives of one knot type. (The earlier note claiming σ_1^3 and (σ_1 σ_2)^3 were two representatives of 3_1 was wrong on the topology — they are a split link and a 3-component torus link.)  The level ruling is what makes the datum well-defined: evaluate at the braid index.",
-      "None of the values match the ⟨c⟩ = 1 universal ansatz from the conjecture; the chiral case has word-specific structural values that are NOT given by the simple writhe-content formula.",
-      "Combined with the deuteron empirical falsification (chirality-writhe-ribbon-derivation.md:122-126), this demarcates the chiral residual of GAP-A-2: a structural formula relating ⟨c⟩_β to the braid topology is the open piece."
+      "CORRECTION (2026-08-10, qou-okxx): the writhe is now computed from the braid word.  The fourth row previously carried a hardcoded writhe of 4 for a word whose writhe is +2, which made its a_K = 1 + w\u00b7\u27e8c\u27e9\u00b7h twice too large.",
+      "CORRECTION (2026-08-10, qou-okxx): three rows were mislabelled. \u03c3_1^3 in B_3 closes to the SPLIT LINK 3_1 \u2294 0_1 (2 components, Alexander \u2261 0, det 0), not the trefoil \u2014 the trefoil is a knot and sits at braid index 2.  (\u03c3_1 \u03c3_2)^3 closes to the TORUS LINK T(3,3) (3 components, det 4), not a 'toral form of 3_1'. \u03c3_1^2 \u03c3_2^-1 \u03c3_1^2 \u03c3_2^-1 closes to a 3-component link of determinant 12, so it is neither 5_2 (a knot, det 7) nor any knot.  Component counts are computed from the underlying permutation; determinants are |\u0394(\u22121)| via the reduced Burau representation.",
+      "LEVEL (2026-08-10): the writhe is Markov-I invariant but shifts by \u00b11 under Markov II, so every row records its n_strands and whether it sits at the braid index of its own closure.  Only the T(3,3) row does (braid index 3).  Per the owner ruling in docs/audits/2026-08-10-writhe-level-of-definition.md the observable is evaluated at the lowest level of the tower, so the two \u03c3_1^{\u00b13} rows are OFF-LEVEL diagnostics: the minimal-level trefoil datum is the H_2 row of the companion chirality_avg_content.py.",
+      "The two \u03c3_1^{\u00b13} rows give \u27e8c\u27e9_\u03b2 = \u00b11.815, antisymmetric under the braid mirror as required.  This is a statement about the braid words, not about the trefoil.",
+      "\u27e8c\u27e9_\u03b2 is a function of the BRAID WORD, not of the closure: the four words here present four different links, so this table on its own does not exhibit two representatives of one knot type. (The earlier note claiming \u03c3_1^3 and (\u03c3_1 \u03c3_2)^3 were two representatives of 3_1 was wrong on the topology \u2014 they are a split link and a 3-component torus link.)  The level ruling is what makes the datum well-defined: evaluate at the braid index.",
+      "None of the values match the \u27e8c\u27e9 = 1 universal ansatz from the conjecture; the chiral case has word-specific structural values that are NOT given by the simple writhe-content formula.",
+      "Combined with the deuteron empirical falsification (chirality-writhe-ribbon-derivation.md:122-126), this demarcates the chiral residual of GAP-A-2: a structural formula relating \u27e8c\u27e9_\u03b2 to the braid topology is the open piece."
     ]
   }
 }

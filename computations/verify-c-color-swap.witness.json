@@ -39,7 +39,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open — open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
+  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open \u2014 open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
   "data": {
     "q0": "1.1099785827513808",
     "pairs_checked": 16,
@@ -50,5 +50,8 @@
       "diag": "0.0",
       "conjugated": "0.0"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

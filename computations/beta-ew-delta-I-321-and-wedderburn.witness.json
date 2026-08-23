@@ -1,7 +1,7 @@
 {
   "computation": "beta-ew-delta-I-321-and-wedderburn",
   "computedAt": "2026-05-06T01:40:52.732207+00:00",
-  "description": "Deep-dive of β_EW(Δ_I^minimal) on H_6(q): (b) (3,2,1) 16-dim partition spectrum + structural pairing analysis; (c) Wedderburn-weighted Markov trace tr_M = Σ w_λ · χ^λ with w_λ = dim_q(λ)²/[6]_q! and re-tested Weinberg-angle candidate readings.",
+  "description": "Deep-dive of \u03b2_EW(\u0394_I^minimal) on H_6(q): (b) (3,2,1) 16-dim partition spectrum + structural pairing analysis; (c) Wedderburn-weighted Markov trace tr_M = \u03a3 w_\u03bb \u00b7 \u03c7^\u03bb with w_\u03bb = dim_q(\u03bb)\u00b2/[6]_q! and re-tested Weinberg-angle candidate readings.",
   "reference_blocks": [
     "def:ew-interface-knot",
     "conj:hoefsmit-ew-cell-content",
@@ -9,7 +9,7 @@
   ],
   "audit": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
   "n_strands": 6,
-  "delta_I": "σ_2 · σ_4 · σ_2",
+  "delta_I": "\u03c3_2 \u00b7 \u03c3_4 \u00b7 \u03c3_2",
   "q_0": "1.1099785955541805169583001889887986763787613849839",
   "part_b_321_eigenvalues": [
     5.240325308166744,
@@ -278,38 +278,38 @@
   "part_c_tr_M_total": 5.725979842832429,
   "part_c_candidates": [
     {
-      "form": "|Σ_{wχ>0} / Σ_{wχ<0}|",
+      "form": "|\u03a3_{w\u03c7>0} / \u03a3_{w\u03c7<0}|",
       "value": 28.144816516975002,
       "rel_err": 14.438161663606236
     },
     {
-      "form": "tr_M / max|w·χ|",
+      "form": "tr_M / max|w\u00b7\u03c7|",
       "value": 2.8742212704846257,
       "rel_err": 0.5765848963326808
     },
     {
-      "form": "tr_M / (2·w_(6)·χ^(6))",
+      "form": "tr_M / (2\u00b7w_(6)\u00b7\u03c7^(6))",
       "value": 143.55037190973272,
       "rel_err": 77.7411012992969
     },
     {
-      "form": "sqrt(|Σ_pos / Σ_neg|)",
+      "form": "sqrt(|\u03a3_pos / \u03a3_neg|)",
       "value": 5.305168849054194,
       "rel_err": 1.9100226784221115
     },
     {
-      "form": "|tr_M| / Σ |w·χ|",
+      "form": "|tr_M| / \u03a3 |w\u00b7\u03c7|",
       "value": 0.9313771627680298,
       "rel_err": 0.4891154753156242
     },
     {
-      "form": "Σ_pos w·χ / tr_M",
+      "form": "\u03a3_pos w\u00b7\u03c7 / tr_M",
       "value": 1.0368394459168533,
       "rel_err": 0.43126667833794385
     }
   ],
   "part_c_best": {
-    "form": "Σ_pos w·χ / tr_M",
+    "form": "\u03a3_pos w\u00b7\u03c7 / tr_M",
     "value": 1.0368394459168533,
     "rel_err": 0.43126667833794385
   },
