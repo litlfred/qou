@@ -81,8 +81,12 @@ theorem toYoungDiagram_eq {n : ℕ} (Λ : Partition n) :
 
 Composes bridge (1) (`dimIrrep_eq_numSYT`, axiom-clean), the shape glue above, bridge (2)
 (`sum_map_eq_sum_partitionIndex`, axiom-clean), and the Wedderburn dimension sum
-(`OVTopAssembly.sum_numSYT_sq_eq_factorial`, which carries the residual `sorryAx` — see the
-module docstring). -/
+(`OVTopAssembly.sum_numSYT_sq_eq_factorial`).
+
+**Corrected 2026-08-23.** That last citation read *"which carries the residual `sorryAx` — see the
+module docstring"*. It does not: it carries a class hypothesis, `SnIsotypicSpechtSplit`, which is
+now inhabited by `SnIsotypicSpechtSplitInstance`, and `#print axioms` on it reports
+`[propext, Classical.choice, Quot.sound]`. -/
 theorem burnside_proved (n : ℕ) (partitions : List (Partition n)) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]
     (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
     (hnodup : (partitions.map Partition.parts).Nodup) :
