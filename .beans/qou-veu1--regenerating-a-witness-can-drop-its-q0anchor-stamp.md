@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T13:45:29Z
+updated_at: 2026-08-23T14:05:30Z
 ---
 
 ## The measurement
@@ -61,3 +61,36 @@ run in progress. Wait for it rather than estimating it.
 For each producer that does drop the stamp, the fix is at the producer or its
 manifest entry — restore the stamp **before** regenerating, so the regenerated
 witness stays inside the audit rather than leaving it.
+
+## Cross-link: `qou-khmj` on main found the same mechanism from the other side
+
+Filed independently at 13:14Z (`df9e1f3a95`), while this sweep was running:
+
+> `gen_q0_anchor_manifest.py` does not detect three proton-pinned producers …
+> All three import `Q_MP`/`Q_50_DIGIT_STR` from `q_parameter` (so NOT
+> independent), but the generator omits them, so their witnesses ship with no
+> `q0Anchor` and land in `Q0_ANCHOR_MISSING`. **Fix the generator's detection,
+> not the manifest by hand.**
+
+That supplies the cause this bean declined to assert: the omission is a
+**detection gap in the manifest generator**, not a deliberate exclusion. And
+its closing instruction is the right fix here too — hand-adding entries would
+paper over a generator that will keep omitting the next producer.
+
+## The two are NOT the same symptom, and the difference is the severity
+
+| | `qou-khmj` | this bean |
+|---|---|---|
+| committed witness | **never had** `q0Anchor` | **has** `q0Anchor: "muon"` |
+| audit state today | `Q0_ANCHOR_MISSING` — already visible as a gap | counted as muon-anchored, in scope |
+| effect of regenerating | none; still missing | **loses a stamp it currently has** |
+
+khmj's three are *already* outside the anchored population and are counted as
+such. Mine is inside it and would silently leave — the audit's denominator
+shrinks, and a `Q0_FLIP` disappears without being fixed. A gap you can see is
+a smaller problem than one that closes itself while you watch.
+
+This also settles why the committed witness has a stamp at all: it was written
+when detection covered that producer, or with an anchor passed explicitly.
+Either way the record and the current generator now disagree, which is the
+thing to fix before #5500 regenerates anything.
