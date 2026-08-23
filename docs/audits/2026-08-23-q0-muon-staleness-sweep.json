@@ -8,20 +8,6 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/binding_via_interface_knot.py",
-      "witness": "computations/binding-via-interface-knot.witness.json",
-      "verdict": "TIMEOUT",
-      "siblings_moved": [],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/block_swap_binding.py",
-      "witness": "computations/block-swap-binding.witness.json",
-      "verdict": "TIMEOUT",
-      "siblings_moved": [],
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/a_operator/cyclic_intertwiner_verify.py",
       "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",
       "verdict": "SUBSTANTIVE/ASSERT-FAIL",
@@ -40,15 +26,6 @@
         "scriptHash"
       ],
       "stderr_tail": "",
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/binding_canonical.py",
-      "witness": "computations/ame-2020-binding-energies.witness.json",
-      "verdict": "UNCHANGED",
-      "siblings_moved": [
-        "computations/binding-canonical.witness.json"
-      ],
       "anchor_defining": false
     },
     {
@@ -84,13 +61,6 @@
       "changed_fields": [
         "engineVersion"
       ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/audits/q0_anchor_consistency_audit.py",
-      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
-      "verdict": "UNCHANGED",
-      "siblings_moved": [],
       "anchor_defining": false
     },
     {
@@ -199,66 +169,6 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/deltalambda/wlambda_nuclear_braid_connected_probe.py",
-      "witness": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "assertions.1.detail",
-        "assertions.2.detail",
-        "generated",
-        "q0Anchor",
-        "q0Value",
-        "result.nuclei.12C.std_fact",
-        "result.nuclei.2H.V_std",
-        "result.nuclei.2H.std_fact",
-        "result.nuclei.3H.C_std",
-        "result.nuclei.3H.V_std",
-        "result.nuclei.3H.per_bond",
-        "result.nuclei.3H.std_fact",
-        "result.nuclei.3He.C_std",
-        "result.nuclei.3He.V_std",
-        "result.nuclei.3He.per_bond",
-        "result.nuclei.3He.std_fact",
-        "result.nuclei.4He.C_std",
-        "result.nuclei.4He.per_bond",
-        "result.nuclei.4He.std_fact",
-        "result.nuclei.6Li.C_std",
-        "result.nuclei.6Li.V_std",
-        "result.nuclei.6Li.per_bond",
-        "result.nuclei.6Li.std_fact",
-        "result.per_bond_C_std.3H",
-        "result.per_bond_C_std.3He",
-        "result.per_bond_C_std.4He",
-        "result.per_bond_C_std.6Li",
-        "scriptHash"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/deltalambda/wlambda_transfer_matrix_connected_probe.py",
-      "witness": "computations/deltalambda/wlambda-transfer-matrix-connected.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "assertions.3.detail",
-        "generated",
-        "q0Anchor",
-        "q0Value",
-        "result.braided_connected",
-        "scriptHash"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/derivation_chain_validator.py",
-      "witness": "computations/derivation-chain-audit.witness.json",
-      "verdict": "CRASH",
-      "siblings_moved": [],
-      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 498, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in main\n    results = [validate_chain(p) for p in chain_files]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in <listcomp>\n    results = [validate_chain(p) for p in chain_files]\n               ^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 254, in validate_chain\n    f\"c_q algebra re-eval at q_0={Q_0} gives {recomputed} \"\nTypeError: unsupported format string passed to mpf.__format__\n",
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/derived_chi_catalogue_matrix_m_mpfr.py",
       "witness": "computations/derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json",
       "verdict": "UNCHANGED",
@@ -268,61 +178,10 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/probes/deuteron_fpn_wlambda_wiring.py",
-      "witness": "computations/deuteron-fpn-wlambda-wiring.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "q0Anchor",
-        "q0Value"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/habiro/habiro_interpolate_cross_validator.py",
-      "witness": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
-      "verdict": "CRASH",
-      "siblings_moved": [],
-      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 204, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 158, in main\n    p_at_u0 = parse_polynomial_in_u(record.p_in_u, u_0)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 102, in parse_polynomial_in_u\n    return mp.mpf(eval(s, {\"__builtins__\": {}}, {\"check_q\": u_value, \"mp\": mp}))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'u' is not defined\n",
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/habiro/qbeta_h4_stagec_markov_infra.py",
-      "witness": "computations/habiro/qbeta-h4-stagec-markov-infra.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.trM_H4_generator",
-        "data.worst_dev.C",
-        "q0Anchor",
-        "q0Value"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/hadron_knot_table.py",
-      "witness": "computations/hadron-knot-table.witness.json",
-      "verdict": "CRASH",
-      "siblings_moved": [],
-      "stderr_tail": "hon3.11/dist-packages/scipy/sparse/_base.py\", line 815, in _matmul_dispatch\n    return self._matmul_multivector(other)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py\", line 404, in _matmul_multivector\n    dtype=upcast_char(self.dtype.char, other.dtype.char))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 64, in upcast_char\n    t = upcast(*map(np.dtype, args))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 56, in upcast\n    raise TypeError(f'no supported conversion for types: {args!r}')\nTypeError: no supported conversion for types: (dtype('float64'), dtype('O'))\n",
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
       "witness": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
       "verdict": "TIMEOUT",
       "siblings_moved": [],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/probes/hecke_channel_binding_probe.py",
-      "witness": "computations/hecke-channel-binding.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "q0Anchor",
-        "q0Value"
-      ],
       "anchor_defining": false
     },
     {
@@ -400,192 +259,6 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-      "witness": "computations/probes/binding-qgaussian-ell1-ceiling-measurement.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.inflation_anchor_drift",
-        "data.max_q_inflation_proton",
-        "data.muon_anchor.q0",
-        "data.muon_anchor.rows.0.classical_ceiling_over_target",
-        "data.muon_anchor.rows.0.l1_ceiling_classical",
-        "data.muon_anchor.rows.0.l1_ceiling_qgauss",
-        "data.muon_anchor.rows.0.q_inflation_factor",
-        "data.muon_anchor.rows.0.qgauss_ceiling_over_target",
-        "data.muon_anchor.rows.0.qgauss_signed_net_over_target",
-        "data.muon_anchor.rows.1.classical_ceiling_over_target",
-        "data.muon_anchor.rows.1.l1_ceiling_classical",
-        "data.muon_anchor.rows.1.l1_ceiling_qgauss",
-        "data.muon_anchor.rows.1.q_inflation_factor",
-        "data.muon_anchor.rows.1.qgauss_ceiling_over_target",
-        "data.muon_anchor.rows.1.qgauss_signed_net_over_target",
-        "data.muon_anchor.rows.2.classical_ceiling_over_target",
-        "data.muon_anchor.rows.2.l1_ceiling_classical",
-        "data.muon_anchor.rows.2.l1_ceiling_qgauss",
-        "data.muon_anchor.rows.2.q_inflation_factor",
-        "data.muon_anchor.rows.2.qgauss_ceiling_over_target",
-        "data.muon_anchor.rows.2.qgauss_signed_net_over_target",
-        "data.muon_anchor.rows.3.classical_ceiling_over_target",
-        "data.muon_anchor.rows.3.l1_ceiling_classical",
-        "data.muon_anchor.rows.3.l1_ceiling_qgauss",
-        "data.muon_anchor.rows.3.q_inflation_factor",
-        "data.muon_anchor.rows.3.qgauss_ceiling_over_target",
-        "data.muon_anchor.rows.3.qgauss_signed_net_over_target",
-        "data.proton_anchor.q0",
-        "data.proton_anchor.rows.0.classical_ceiling_over_target",
-        "data.proton_anchor.rows.0.l1_ceiling_classical",
-        "data.proton_anchor.rows.0.l1_ceiling_qgauss",
-        "data.proton_anchor.rows.0.q_inflation_factor",
-        "data.proton_anchor.rows.0.qgauss_ceiling_over_target",
-        "data.proton_anchor.rows.0.qgauss_signed_net_over_target",
-        "data.proton_anchor.rows.1.classical_ceiling_over_target",
-        "data.proton_anchor.rows.1.l1_ceiling_classical",
-        "data.proton_anchor.rows.1.l1_ceiling_qgauss",
-        "data.proton_anchor.rows.1.q_inflation_factor",
-        "data.proton_anchor.rows.1.qgauss_ceiling_over_target",
-        "data.proton_anchor.rows.1.qgauss_signed_net_over_target"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/probes/casimir_macdonald_probe.py",
-      "witness": "computations/probes/casimir-macdonald-probe.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.cherednik_candidates.6.geom_mult_value",
-        "data.cherednik_candidates.6.raw_value",
-        "data.cherednik_candidates.6.rel_residue_direct",
-        "data.cherednik_candidates.6.rel_residue_geom_mult",
-        "data.cherednik_candidates.7.geom_mult_value",
-        "data.cherednik_candidates.7.raw_value",
-        "data.cherednik_candidates.7.rel_residue_direct",
-        "data.cherednik_candidates.7.rel_residue_geom_mult",
-        "data.cherednik_candidates.8.geom_mult_value",
-        "data.cherednik_candidates.8.raw_value",
-        "data.cherednik_candidates.8.rel_residue_direct",
-        "data.cherednik_candidates.8.rel_residue_geom_mult",
-        "data.cherednik_candidates.9.geom_mult_value",
-        "data.cherednik_candidates.9.raw_value",
-        "data.cherednik_candidates.9.rel_residue_direct",
-        "data.cherednik_candidates.9.rel_residue_geom_mult",
-        "data.cherednik_candidates.10.geom_mult_value",
-        "data.cherednik_candidates.10.raw_value",
-        "data.cherednik_candidates.10.rel_residue_direct",
-        "data.cherednik_candidates.10.rel_residue_geom_mult",
-        "data.cherednik_candidates.11.geom_mult_value",
-        "data.cherednik_candidates.11.raw_value",
-        "data.cherednik_candidates.11.rel_residue_direct",
-        "data.cherednik_candidates.11.rel_residue_geom_mult",
-        "data.cherednik_candidates.12.geom_mult_value",
-        "data.cherednik_candidates.12.raw_value",
-        "data.cherednik_candidates.12.rel_residue_direct",
-        "data.cherednik_candidates.12.rel_residue_geom_mult",
-        "data.cherednik_candidates.13.geom_mult_value",
-        "data.cherednik_candidates.13.raw_value",
-        "data.cherednik_candidates.13.rel_residue_direct",
-        "data.cherednik_candidates.13.rel_residue_geom_mult",
-        "data.cherednik_candidates.14.geom_mult_value",
-        "data.cherednik_candidates.14.raw_value",
-        "data.cherednik_candidates.14.rel_residue_direct",
-        "data.cherednik_candidates.14.rel_residue_geom_mult",
-        "data.cherednik_candidates.15.geom_mult_value",
-        "data.cherednik_candidates.15.raw_value",
-        "data.cherednik_candidates.15.rel_residue_direct",
-        "data.cherednik_candidates.15.rel_residue_geom_mult"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
-      "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.alpha_true_anchor_drift",
-        "data.muon_anchor.A_bond_sensitivity",
-        "data.muon_anchor.alpha_true",
-        "data.muon_anchor.forms.bond_li2q_O1_arg.alpha",
-        "data.muon_anchor.forms.bond_li2q_O1_arg.rel_err_vs_true_pct",
-        "data.muon_anchor.forms.bond_log_O1_arg.alpha",
-        "data.muon_anchor.forms.bond_log_O1_arg.rel_err_vs_true_pct",
-        "data.muon_anchor.forms.geometric_full_resummation.alpha",
-        "data.muon_anchor.forms.geometric_full_resummation.rel_err_vs_true_pct",
-        "data.muon_anchor.forms.li2q_leading_arg.alpha",
-        "data.muon_anchor.forms.li2q_leading_arg.rel_err_vs_true_pct",
-        "data.muon_anchor.forms.single_log.alpha",
-        "data.muon_anchor.forms.single_log.rel_err_vs_true_pct",
-        "data.muon_anchor.q0",
-        "data.proton_anchor.A_bond_sensitivity",
-        "data.proton_anchor.alpha_true",
-        "data.proton_anchor.forms.bond_li2q_O1_arg.alpha",
-        "data.proton_anchor.forms.bond_li2q_O1_arg.rel_err_vs_true_pct",
-        "data.proton_anchor.forms.bond_log_O1_arg.alpha",
-        "data.proton_anchor.forms.bond_log_O1_arg.rel_err_vs_true_pct",
-        "data.proton_anchor.forms.geometric_full_resummation.alpha",
-        "data.proton_anchor.forms.geometric_full_resummation.rel_err_vs_true_pct",
-        "data.proton_anchor.forms.li2q_leading_arg.alpha",
-        "data.proton_anchor.forms.li2q_leading_arg.rel_err_vs_true_pct",
-        "data.proton_anchor.forms.single_log.alpha",
-        "data.proton_anchor.forms.single_log.rel_err_vs_true_pct",
-        "data.proton_anchor.q0",
-        "q0Anchor (removed)",
-        "q0Value (removed)",
-        "scriptHash"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
-      "witness": "computations/probes/flavor-split-alpha-dilog-expansion.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.alpha_true_anchor_drift",
-        "data.muon_anchor.C_true",
-        "data.muon_anchor.alpha_true",
-        "data.muon_anchor.candidates.exp_lead.alpha",
-        "data.muon_anchor.candidates.exp_lead.alpha_rel_err_vs_true_pct",
-        "data.muon_anchor.candidates.exp_lead.full_split_rel_err_vs_codata_pct",
-        "data.muon_anchor.candidates.geometric_1_over_1_minus_lead.alpha",
-        "data.muon_anchor.candidates.geometric_1_over_1_minus_lead.alpha_rel_err_vs_true_pct",
-        "data.muon_anchor.candidates.geometric_1_over_1_minus_lead.full_split_rel_err_vs_codata_pct",
-        "data.muon_anchor.candidates.li2q_lead_over_lead.alpha",
-        "data.muon_anchor.candidates.li2q_lead_over_lead.alpha_rel_err_vs_true_pct",
-        "data.muon_anchor.candidates.li2q_lead_over_lead.full_split_rel_err_vs_codata_pct",
-        "data.muon_anchor.candidates.neg_log_1_minus_lead_over_lead.alpha",
-        "data.muon_anchor.candidates.neg_log_1_minus_lead_over_lead.alpha_rel_err_vs_true_pct",
-        "data.muon_anchor.candidates.neg_log_1_minus_lead_over_lead.full_split_rel_err_vs_codata_pct",
-        "data.muon_anchor.candidates.q_geom_sum_lead_n_over_qint_n.alpha",
-        "data.muon_anchor.candidates.q_geom_sum_lead_n_over_qint_n.alpha_rel_err_vs_true_pct",
-        "data.muon_anchor.candidates.q_geom_sum_lead_n_over_qint_n.full_split_rel_err_vs_codata_pct",
-        "data.muon_anchor.leading",
-        "data.muon_anchor.q0",
-        "data.proton_anchor.C_true",
-        "data.proton_anchor.alpha_true",
-        "data.proton_anchor.candidates.exp_lead.alpha",
-        "data.proton_anchor.candidates.exp_lead.alpha_rel_err_vs_true_pct",
-        "data.proton_anchor.candidates.exp_lead.full_split_rel_err_vs_codata_pct",
-        "data.proton_anchor.candidates.geometric_1_over_1_minus_lead.alpha",
-        "data.proton_anchor.candidates.geometric_1_over_1_minus_lead.alpha_rel_err_vs_true_pct",
-        "data.proton_anchor.candidates.geometric_1_over_1_minus_lead.full_split_rel_err_vs_codata_pct",
-        "data.proton_anchor.candidates.li2q_lead_over_lead.alpha",
-        "data.proton_anchor.candidates.li2q_lead_over_lead.alpha_rel_err_vs_true_pct",
-        "data.proton_anchor.candidates.li2q_lead_over_lead.full_split_rel_err_vs_codata_pct",
-        "data.proton_anchor.candidates.neg_log_1_minus_lead_over_lead.alpha",
-        "data.proton_anchor.candidates.neg_log_1_minus_lead_over_lead.alpha_rel_err_vs_true_pct",
-        "data.proton_anchor.candidates.neg_log_1_minus_lead_over_lead.full_split_rel_err_vs_codata_pct",
-        "data.proton_anchor.candidates.q_geom_sum_lead_n_over_qint_n.alpha",
-        "data.proton_anchor.candidates.q_geom_sum_lead_n_over_qint_n.alpha_rel_err_vs_true_pct",
-        "data.proton_anchor.candidates.q_geom_sum_lead_n_over_qint_n.full_split_rel_err_vs_codata_pct",
-        "data.proton_anchor.leading",
-        "data.proton_anchor.q0",
-        "q0Anchor (removed)"
-      ],
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/probes/su4_occupancy_binding_probe.py",
       "witness": "computations/probes/su4-occupancy-binding-sweep-probe.witness.json",
       "verdict": "UNCHANGED",
@@ -638,20 +311,6 @@
         "data.anchors.1.u",
         "scriptHash"
       ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
-      "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
-      "verdict": "TIMEOUT",
-      "siblings_moved": [],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
-      "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
-      "verdict": "TIMEOUT",
-      "siblings_moved": [],
       "anchor_defining": false
     },
     {
@@ -752,32 +411,6 @@
         "data.upstream_witness_hashes.0.size_bytes",
         "engineVersion"
       ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/qbeta/qbeta_jacobi_anger_tower_general.py",
-      "witness": "computations/qbeta/qbeta-jacobi-anger-tower-general.witness.json",
-      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
-      "siblings_moved": [],
-      "changed_fields": [
-        "allPassed",
-        "assertions.1.computed",
-        "assertions.1.passed",
-        "data.n3.cross_anchor_x_swing_rel",
-        "data.n3.muon.W1",
-        "data.n3.muon.W5",
-        "data.n3.muon.matches_physical_weight_6_8pct",
-        "data.n3.muon.overdet_rel_residual",
-        "data.n3.muon.q",
-        "data.n3.muon.single_x",
-        "data.n3.proton.W1",
-        "data.n3.proton.W5",
-        "data.n3.proton.matches_physical_weight_6_8pct",
-        "data.n3.proton.overdet_rel_residual",
-        "data.n3.proton.q",
-        "data.n3.proton.single_x"
-      ],
-      "stderr_tail": "",
       "anchor_defining": false
     },
     {
@@ -946,34 +579,6 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/probes/signed_crossing_feasibility_probe.py",
-      "witness": "computations/signed-crossing-feasibility.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "_provenance.kernel",
-        "q0Anchor (removed)",
-        "q0Value (removed)",
-        "scriptFile (removed)",
-        "scriptHash (removed)"
-      ],
-      "anchor_defining": false
-    },
-    {
-      "producer": "computations/substrate/lever1_binding_core_characterization.py",
-      "witness": "computations/substrate/lever1-binding-core-characterization.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "computationDetail (added)",
-        "data.upstream_witness_hashes.0.sha256",
-        "data.upstream_witness_hashes.0.size_bytes",
-        "q0Anchor (removed)",
-        "q0Value (removed)"
-      ],
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/substrate/lever1_binding_habiro_single_element_test.py",
       "witness": "computations/substrate/lever1-binding-habiro-single-element-test.witness.json",
       "verdict": "SUBSTANTIVE",
@@ -1019,18 +624,158 @@
         "scriptHash (removed)"
       ],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/binding_canonical.py",
+      "witness": "computations/ame-2020-binding-energies.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [
+        "computations/binding-canonical.witness.json"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/audits/q0_anchor_consistency_audit.py",
+      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.by_verdict.Q0_AMBIGUOUS (len 18 -> 17)",
+        "data.by_verdict.Q0_ANCHOR_MISSING (len 1919 -> 1897)",
+        "data.by_verdict.Q0_OK (len 669 -> 695)",
+        "data.counts.Q0_AMBIGUOUS",
+        "data.counts.Q0_ANCHOR_MISSING",
+        "data.counts.Q0_OK"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/binding_via_interface_knot.py",
+      "witness": "computations/binding-via-interface-knot.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/block_swap_binding.py",
+      "witness": "computations/block-swap-binding.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+      "witness": "computations/deltalambda/he4-binding-k-presentation-correction.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion"
+      ],
+      "stderr_tail": "",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/derivation_chain_validator.py",
+      "witness": "computations/derivation-chain-audit.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "allPassed",
+        "assertions.23.computed",
+        "assertions.23.passed",
+        "data.chain_results.14.issues (len 0 -> 1)",
+        "data.witness_trust.audit-only-exempt (len 772 -> 774)",
+        "data.witness_trust.computational-only (len 1789 -> 1796)",
+        "scriptHash"
+      ],
+      "stderr_tail": "\u26a0 environment: derivation-chain-audit.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0; pyhecke_native_build 30fd920c241a54fa -> fe19077ea17b978d. If this container is simply missing a library, install it and re-run rather than committing the weaker record; the numbers can be identical while the provenance silently degrades. If the producer genuinely stopped using it, say so in the commit.\n",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/habiro/habiro_interpolate_cross_validator.py",
+      "witness": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "assertions (len 2 -> 3)",
+        "data.atoms_only_in_interpolate (len 1 -> 0)",
+        "data.checks (len 2 -> 3)",
+        "parameters.q_0",
+        "q0Anchor (removed)",
+        "q0Value (removed)",
+        "scriptHash"
+      ],
+      "stderr_tail": "\u26a0 raw-float64: habiro-interpolate-cross-validation.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].computed, .assertions[1].expected, .assertions[1].tolerance, .assertions[2].computed, .assertions[2].expected \u2026. Carry mpmath.mpf from the source and serialize with _precision.fmt; do NOT stringify the float.\n",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/hadron_knot_table.py",
+      "witness": "computations/hadron-knot-table.witness.json",
+      "verdict": "CRASH",
+      "siblings_moved": [],
+      "stderr_tail": "hon3.11/dist-packages/scipy/sparse/_base.py\", line 815, in _matmul_dispatch\n    return self._matmul_multivector(other)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py\", line 404, in _matmul_multivector\n    dtype=upcast_char(self.dtype.char, other.dtype.char))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 64, in upcast_char\n    t = upcast(*map(np.dtype, args))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 56, in upcast\n    raise TypeError(f'no supported conversion for types: {args!r}')\nTypeError: no supported conversion for types: (dtype('float64'), dtype('O'))\n",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/probes/casimir_macdonald_probe.py",
+      "witness": "computations/probes/casimir-macdonald-probe.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.cherednik_candidates.6.geom_mult_value",
+        "data.cherednik_candidates.6.raw_value",
+        "data.cherednik_candidates.6.rel_residue_direct",
+        "data.cherednik_candidates.6.rel_residue_geom_mult",
+        "data.cherednik_candidates.7.geom_mult_value",
+        "data.cherednik_candidates.7.raw_value",
+        "data.cherednik_candidates.7.rel_residue_direct",
+        "data.cherednik_candidates.7.rel_residue_geom_mult",
+        "data.cherednik_candidates.8.geom_mult_value",
+        "data.cherednik_candidates.8.raw_value",
+        "data.cherednik_candidates.8.rel_residue_direct",
+        "data.cherednik_candidates.8.rel_residue_geom_mult",
+        "data.cherednik_candidates.9.geom_mult_value",
+        "data.cherednik_candidates.9.raw_value",
+        "data.cherednik_candidates.9.rel_residue_direct",
+        "data.cherednik_candidates.9.rel_residue_geom_mult",
+        "data.cherednik_candidates.10.geom_mult_value",
+        "data.cherednik_candidates.10.raw_value",
+        "data.cherednik_candidates.10.rel_residue_direct",
+        "data.cherednik_candidates.10.rel_residue_geom_mult",
+        "data.cherednik_candidates.11.geom_mult_value",
+        "data.cherednik_candidates.11.raw_value",
+        "data.cherednik_candidates.11.rel_residue_direct",
+        "data.cherednik_candidates.11.rel_residue_geom_mult",
+        "data.cherednik_candidates.12.geom_mult_value",
+        "data.cherednik_candidates.12.raw_value",
+        "data.cherednik_candidates.12.rel_residue_direct",
+        "data.cherednik_candidates.12.rel_residue_geom_mult",
+        "data.cherednik_candidates.13.geom_mult_value",
+        "data.cherednik_candidates.13.raw_value",
+        "data.cherednik_candidates.13.rel_residue_direct",
+        "data.cherednik_candidates.13.rel_residue_geom_mult",
+        "data.cherednik_candidates.14.geom_mult_value",
+        "data.cherednik_candidates.14.raw_value",
+        "data.cherednik_candidates.14.rel_residue_direct",
+        "data.cherednik_candidates.14.rel_residue_geom_mult",
+        "data.cherednik_candidates.15.geom_mult_value",
+        "data.cherednik_candidates.15.raw_value",
+        "data.cherednik_candidates.15.rel_residue_direct",
+        "data.cherednik_candidates.15.rel_residue_geom_mult"
+      ],
+      "anchor_defining": false
     }
   ],
   "tally": {
-    "TIMEOUT": 6,
-    "SUBSTANTIVE/ASSERT-FAIL": 3,
-    "UNCHANGED": 7,
-    "SUBSTANTIVE": 34,
-    "CRASH": 5
+    "TIMEOUT": 4,
+    "SUBSTANTIVE/ASSERT-FAIL": 5,
+    "SUBSTANTIVE": 25,
+    "UNCHANGED": 6,
+    "CRASH": 3
   },
-  "partial": false,
-  "measured": 55,
-  "total": 55,
+  "partial": true,
+  "measured": 43,
+  "total": 47,
   "environment": {
     "python": "3.11.15",
     "modules": {
@@ -1040,7 +785,7 @@
       "scipy": "1.17.1",
       "pyhecke_native": "0.9.0"
     },
-    "tree_commit": "59978486ade2882983245f44578da3292adc3871"
+    "tree_commit": "0b062da6794fbe7bc7a07f33d9b05f50e8f746a5"
   },
   "skipped": [
     {
