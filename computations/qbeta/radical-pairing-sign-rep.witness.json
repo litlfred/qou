@@ -1,0 +1,163 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T12:13:54.482076+00:00",
+  "commitSha": "8219243396917bc1516361878eb2ab5fd097f28a",
+  "assertions": [
+    {
+      "name": "radical_pairing_equals_sign_rep_value_on_every_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max over 13 braid words (writhe -3..+3) of |<v,nf> - (-1/q)^writhe| = 1.33638e-51 at 50 dps. The words include both SDP anchors, a pure-positive tower, a pure-negative one, and a writhe-0 commutator that is not the identity word — so the match is not an artefact of vanishing writhe."
+    },
+    {
+      "name": "pairing_never_vanishes_so_Gx_eq_nf_is_unsatisfiable_for_every_braid",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "min |<v,nf>| over the 13 words = 0.731234, and structurally it is a zpow of -1/q, which is nonzero for q != 0 at every integer exponent (QOU.QBeta.signRepValue_ne_zero). Since G is symmetric with kernel span(v), its range is v-perp, so G x = nf is solvable iff the pairing vanishes — it never does. The obstruction is universal, not anchor-specific."
+    },
+    {
+      "name": "writhe_grading_is_what_makes_it_a_framing_quantity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the pairing depends on the braid word ONLY through its writhe (7 distinct writhes among the 13 words; e.g. `s1 s2` and `s1^2` both have writhe 2 and pair identically). Writhe is exactly the grading the Ocneanu trace does not carry — invariance needs a writhe prefactor outside the trace — so the unreachable component is a framing quantity, which is why no re-solve inside the trace can recover it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "radical-pairing-sign-rep",
+  "scriptFile": "radical_pairing_sign_rep_probe.py",
+  "scriptHash": "d9b0dd22e099",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "The convention-D Gram radical (the q-antisymmetriser) pairs with any braid's H_3(q) normal form to give exactly that braid's value in the one-dimensional SIGN representation: <v, nf(beta)> = (-1/q)^writhe(beta), measured over 13 braid words spanning writhe -3..+3, exact to 1.3e-51 at 50 dps. `-1/q` is the antisymmetric eigenvalue of the Hecke relation and the q-antisymmetriser is its projector, so this is what the radical IS rather than a basis artefact. CONSEQUENCE: G is symmetric with kernel spanned by v, so G x = nf is solvable iff <v,nf> = 0, and a zpow of a nonzero base never vanishes — therefore G x = nf is UNSATISFIABLE FOR EVERY BRAID, not merely for the two anchors of qbeta_braid_nf_sdp_offset_probe whose premise ('G is invertible (rank 6)') this refutes. No other knot escapes it. Lean, sorry-free, generic Field: signRepValue_append (multiplicative, from writhe_append), signRepValue_inv (mirror inverts it, from writhe_inv, and needs no q != 0), signRepValue_ne_zero, and radical_pairing_ne_zero_of_sign_rep. The unreachable component is graded by WRITHE — precisely what the Ocneanu trace does not see (invariance needs a writhe prefactor outside the trace, Jones 1987 Sec. 5) and what convention D's pin kills outright (conventionD_kills_antisymmetriser). SCOPE: does NOT re-pose the SDP on the quotient and reports no offset angle; that would answer a question with no solution in the form asked. No value wired, no tier moved, D stays canonical.",
+  "data": {
+    "identity": "<v, nf(beta)> = (-1/q)^writhe(beta)",
+    "radical": "q-antisymmetriser v_i = (-1/q)^len(w_i)",
+    "rows": [
+      {
+        "word": "identity",
+        "writhe": 0,
+        "radical_pairing": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sign_rep_value": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "(s1 s2^-1)^2 [4_1]",
+        "writhe": 0,
+        "radical_pairing": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sign_rep_value": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "(s1 s2^-1)^3 [B_3]",
+        "writhe": 0,
+        "radical_pairing": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sign_rep_value": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1",
+        "writhe": 1,
+        "radical_pairing": "-0.900918283955741492160822882481093936014741626610537207153029",
+        "sign_rep_value": "-0.900918283955741492160822882481093936014741626610537207153029",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1^2",
+        "writhe": 2,
+        "radical_pairing": "0.811653754365758058132214822141752124918532537796475184630024",
+        "sign_rep_value": "0.811653754365758058132214822141752124918532537796475184630024",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1^3",
+        "writhe": 3,
+        "radical_pairing": "-0.731233707549433674041352781095106426763989809329439865457120",
+        "sign_rep_value": "-0.731233707549433674041352781095106426763989809329441201839475",
+        "abs_diff": "1.33638235504609782307026823357574093940759844005252434898097e-51"
+      },
+      {
+        "word": "s1^-1",
+        "writhe": -1,
+        "radical_pairing": "-1.10997858275138080759166909561076887987449912187359901817440",
+        "sign_rep_value": "-1.10997858275138080759166909561076887987449912187359901817440",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s2^-3",
+        "writhe": -3,
+        "radical_pairing": "-1.36755183695138518796672402990936100071109752077284628226145",
+        "sign_rep_value": "-1.36755183695138518796672402990936100071109752077284628226145",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1 s2",
+        "writhe": 2,
+        "radical_pairing": "0.811653754365758058132214822141752124918532537796475184630024",
+        "sign_rep_value": "0.811653754365758058132214822141752124918532537796475184630024",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1 s2 s1",
+        "writhe": 3,
+        "radical_pairing": "-0.731233707549433674041352781095106426763989809329441201839475",
+        "sign_rep_value": "-0.731233707549433674041352781095106426763989809329441201839475",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1^2 s2^-1",
+        "writhe": 1,
+        "radical_pairing": "-0.900918283955741492160822882481093936014741626610537207153029",
+        "sign_rep_value": "-0.900918283955741492160822882481093936014741626610537207153029",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "s1^-1 s2^-1",
+        "writhe": -2,
+        "radical_pairing": "1.23205245416676393126980451353563618484968142291704595545282",
+        "sign_rep_value": "1.23205245416676393126980451353563618484968142291704595545282",
+        "abs_diff": "0.0"
+      },
+      {
+        "word": "[s1,s2^-1] comm",
+        "writhe": 0,
+        "radical_pairing": "1.00000000000000000000000000000000000000000000000000000000000",
+        "sign_rep_value": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_diff": "0.0"
+      }
+    ],
+    "worst_abs_diff": "1.33638235504609782307026823357574093940759844005252434898097e-51",
+    "min_abs_pairing": "0.731233707549433674041352781095106426763989809329439865457120",
+    "lean_declarations": [
+      "QOU.QBeta.signRepValue_append",
+      "QOU.QBeta.signRepValue_inv",
+      "QOU.QBeta.signRepValue_ne_zero",
+      "QOU.QBeta.radical_pairing_ne_zero_of_sign_rep"
+    ],
+    "reposes_sdp_on_quotient": false,
+    "closes_cds2": false
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

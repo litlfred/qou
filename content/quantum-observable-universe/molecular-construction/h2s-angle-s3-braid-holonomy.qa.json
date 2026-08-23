@@ -1825,6 +1825,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.090Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No assertion-by-denial; positive claims are stated positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1844,6 +1860,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.131Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -1863,6 +1895,23 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 420 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.173Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "The conjecture statement (lines 3-4) carries FOUR spaced-dash clauses in a single sentence: '- the opening dtheta ~ +2.1 deg ... -' , '- the monodromy phase around the singular fibre zeta_l -', '- the signed-content-zero standard Wedderburn block V_(2,1) ...'. The dashes carry the whole definitional load; there is no main-clause skeleton left to parse.",
+        "notes": "STRUCTURAL - not fixed. Proposed: split into three sentences - (1) name the residual dtheta_H2S = +2.1 deg above theta_0 = 90 deg; (2) state the equality to the q-deformed Chern-Simons holonomy of beta_3pz; (3) identify the chirality cell V_(2,1) as the signed-content-zero block in a following sentence. Math-adjacent, so left for the author."
       }
     ],
     "trap-triples": [
@@ -1882,6 +1931,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 420 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.217Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1901,6 +1966,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.259Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Block ends 'Evaluating the exact analytic Picard-Lefschetz monodromy ... to formally return precisely 1/sqrt5 and the +2.1 deg phase remains open.' - a temporal scope statement, not a manufactured closer. (The terminal 'Archimedean specialisation' banner is the corpus-wide template and is not counted.)"
       }
     ],
     "trap-meta-commentary": [
@@ -1920,6 +2001,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.304Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'We distinguish the global Bring curve ... from the hyperelliptic quintic X_5' in the NOTE callout narrates the author's own distinction, but it is load-bearing disambiguation between two genuinely different curves (genus 4 vs genus 2) that share the name 'quintic'. False-positive class per the skill."
       }
     ],
     "trap-thesis-restatement": [
@@ -1939,6 +2036,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.347Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1958,6 +2071,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.390Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -1977,6 +2106,22 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.433Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Maximum-strength claims checked against what the block establishes; none unqualified."
       }
     ],
     "trap-nonspeakable": [
@@ -1996,6 +2141,23 @@
         "reviewed_at": "2026-08-15T10:31:01.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fde3620e01d9",
+          "ts": "2d5575042d83"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:51.477Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Same sentence: 'the chiral 3p_z lone-pair braid beta_3pz on the chirality cell - the signed-content-zero standard Wedderburn block V_(2,1) (the q-Dirac kernel D_q^2(lambda)=0)' is a five-deep noun chain with two nested appositives; it parses on the page and stalls aloud.",
+        "notes": "STRUCTURAL - same proposed split as trap-em-dash."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2019,5 +2181,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:00:51.477Z"
 }

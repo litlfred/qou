@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.544Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Remark read in full; the exclusion claim is stated positively ('must therefore be entirely sourced by the Coulomb term'), no not-X-but-Y."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.605Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.659Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.697Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'trace tower, co-Casimir, chirality, and shell-correction functionals' is a four-item enumeration of real functionals, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.735Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Final line is a claim, not a quotable closer; it fails under thesis-restatement instead."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.771Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.811Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "major",
+        "evidence": "Three-sentence body whose final sentence, 'The categorical separation forces the mass splitting entirely into the electromagnetic sector', restates the italic statement's 'It must therefore be entirely sourced by the Coulomb term' in synonyms (Coulomb term -> electromagnetic sector). Sentences 1-2 already carry the whole argument (everything else respects the involutions; the Coulomb charge breaks them).",
+        "notes": "Proposed (not applied - the claim itself is disputed, see the trap-superlative note and the batch findings): delete the final sentence, letting the italic statement carry the conclusion. If a closer is wanted it should name the mechanism rather than repeat the claim."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.846Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1700,23 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.889Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "'entirely' twice ('entirely sourced by the Coulomb term', 'entirely into the electromagnetic sector') plus 'all respect' and 'explicitly breaks' in a three-sentence body. The unqualified 'entirely' is not merely stylistic here: recomputed, the A=3 mirror split is (m_n-m_p) - Delta_E_Coulomb = 1.29333 - 0.7637 = 0.5296 MeV, so the Coulomb term ALONE has the opposite sign (-0.76 MeV).",
+        "notes": "Proposed: replace 'entirely sourced by the Coulomb term' with a scope-(a) phrasing per AGENTS.md, e.g. 'cannot be sourced by the involution-respecting functionals'. The parent prop:crystal-isospin-degeneracy already writes the correct disjunction ('strictly outside the crystal limit OR via an asymmetric interface protocol'); this remark drops the second branch. See batch findings."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9ed1a1a413c0",
+          "ts": "7641562aab8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.933Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'mirror-isobar mass split' and 'Hopf-antipode invariance' are terms of art; sentences are short and read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:37:07.933Z"
 }

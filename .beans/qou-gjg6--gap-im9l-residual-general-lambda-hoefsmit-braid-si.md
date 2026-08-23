@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T01:05:26Z
-updated_at: 2026-08-19T13:39:28Z
+updated_at: 2026-08-19T21:04:24Z
 parent: qou-59vq
 ---
 
@@ -1680,3 +1680,58 @@ one of them was superseded:
   sound but overshot.
 - A defect this bean did NOT catch: the same statement was **false at N = 0**.
   See qou-t8qh / #5290, `barSymJMSum_block_eigenvalue_zero_false`.
+
+
+## Arc review 2026-08-19 — step 4 was built AFTER the arc closed, and is dropped
+
+I resumed this branch 627 commits behind main and wrote connectivity **step 4**
+(single-row/column shapes have one tableau; `exists_admissible_of_ne`) before
+re-baselining. It compiled, was sorry-free and axiom-clean — and was
+**entirely superseded**. The commit is dropped, not pushed. A copy of the
+130 lines is in this session's scratchpad only.
+
+**What had already landed:**
+
+* `exists_swapAdmissible_of_one_lt_card` (#5266, `SytAdmissible.lean`) closes
+  the same gap by an **anti-diagonal** argument: an inadmissible step keeps
+  the cells adjacent, so `i + j` rises by exactly one, forcing
+  `entry i j = i + j + 1`. No shape classification, no tableau constructed.
+  That author explicitly considered and rejected my route — *"needs a proof
+  that a single row/column has exactly one SYT ... both real work, and neither
+  is needed."*
+* `hoefsmit_seminormal_rep` is **PROVED** (#5279/#5282, moved to
+  `HoefsmitRepGeneral.lean`). The sorry is gone, not relocated.
+* **SchurWeyl now has ZERO code-level sorries.**
+
+**Mine was the third copy, and the second to be rejected as one.** #5282 had
+already shipped a `SytRigidity.lean` with a lemma of the *same name*
+(`exists_admissible_of_ne`); the consolidation commit (45817bf516) dropped it
+as duplicating #5266 by ~30 minutes. I reproduced that outcome a day later.
+
+**Correcting my own note in this bean.** I recorded, at step 3: *"DO NOT try
+to get this from the hook-length formula — `dimHLF_single` gives the right
+NUMBER on the wrong SIDE of an open theorem; citing it would be
+circular-by-omission."* **That is now false.** `numSYTenum_eq_dimHLF`
+(`SYTHookGNW.lean`, GNW corner recursion) and
+`numSYTenum_eq_numStandardYoungTableaux` (`SYTEnumerationFintype.lean`) are
+both on main sorry-free for **all n** — the bridge I called open is closed, so
+the single-row count is a corollary rather than 130 lines. It was true when
+written and is stale now; anyone reading that note should stop at this one.
+
+Verified the sorry-freeness by reading the declarations, **not** by compiling:
+the 17 `sorry` tokens in `SYTHookGNW.lean` are all inside docstrings, and
+`numSYTenum_eq_dimHLF` is a plain term delegating to `..._gnw`. I did not
+build that olean cone.
+
+**The process lesson, which is the only durable output here.** The failure was
+not the Lean — it was starting work from a 4-day-old branch state. Both the
+supersession *and* the stale HLF note would have been caught by one
+`git log origin/main -- <dir>` before the first edit. On resuming any branch,
+re-baseline against main **before** coding, not before pushing.
+
+**Where the arc actually stands:** `qou-gjg6`, `qou-im9l`, `qou-t8qh` all
+completed. The one live item is **`qou-jfr8`** (irreducibility + pairwise
+inequivalence via `AlgHom.range = top`), claimed and actively moving — its
+last commit was ~1.4 h ago. Mechanical, single-owner; not an overlap
+candidate. Its remaining piece is pairwise inequivalence
+`rho_lambda !=~ rho_mu`.

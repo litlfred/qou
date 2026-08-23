@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "Department of Physics"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-005-5-information-retention-time
 section_title: "Information Retention Time"
 section_number: 5
 pages: 16-19
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
-doc_brief: "Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
 ---
 observer will have to conduct experiments on the outgoing Ha wking radiation for a period
 τ ∼ M 3 before information can be recovered. During this time the ma ss of an evaporating

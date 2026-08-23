@@ -1,13 +1,13 @@
 ---
 # qou-q407
 title: 'GAP: 8 self-assuming projections — ''theorem (h : P) : P := h'' asserts nothing'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - lean
 created_at: 2026-08-07T18:24:34Z
-updated_at: 2026-08-07T18:24:34Z
+updated_at: 2026-08-21T15:10:31Z
 ---
 
 Eight provable declarations have the shape 'theorem name ... (h : P) : P := h' — hypothesis identical to conclusion, proof term the identity. They assert nothing about the objects named, and stay true if every definition is swapped.
@@ -31,3 +31,16 @@ NOT fixed in the detector PR — rewriting a theorem statement changes what the 
 Scope-(a): the Lean carries no content. NOT a claim the underlying math is wrong — Fomin's identity is a true theorem of the literature.
 
 Follow-ups: wire as a proof-self-assuming criterion in content/pipeline/lean-vacuity-axiom-audit.ts; run the triviality probe corpus-wide to reach the ':= by exact h' variants the static pass cannot see.
+
+
+
+## Re-verified 2026-08-19 (current main @ 5b158ef0)
+Re-ran scripts/lean-self-assuming-audit.py: **all 8 still live** — none fixed in the 5-week gap. Same 8 decls, same lines (defect_legendrian_knot, topological_charge_quantization, fomin_identity, fomin_identity_n3, length_bound_necessary, universal_ilp_selects_minimum, variational_transport, ordering_extends). Ready to work; still the most concrete item in the vacuity arc.
+
+
+
+## DONE 2026-08-21 — all 8 self-assuming projections eliminated
+Vacuity audit over all 8 files → 0 defects; static lean-self-assuming-audit.py → 0 of the 8 remain.
+- Library cluster (fomin_identity ×2 → def:Prop; length_bound_necessary → def withinLengthBound; ordering_extends → embedding-explicit derived theorem). lean-direct exit 0.
+- Content-block cluster (defect_legendrian_knot, topological_charge_quantization, variational_transport, universal_ilp_selects_minimum → def:Prop; universal_ilp gains a real optimality predicate). lean-direct exit 0.
+Follow-up: demote the 2 provable-kind blocks (proposition/theorem) to conjecture — filed. PR #5356.

@@ -1366,6 +1366,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.248Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1385,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.350Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1405,6 +1435,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 175 words (3.43/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.436Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Five spaced dashes: three are the conventional bold step-label separator ('Step 1 - maximal crossings.'), one is a true bracketing pair ('no q-Gaussian state - hence no representing probability measure - exists'), and one appends an appositive gloss ('outgrows c^n for every constant c - super-exponential divergence'). Only the last is the afterthought form, and one instance is not density."
       }
     ],
     "trap-triples": [
@@ -1424,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.500Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three steps are a genuine proof decomposition (max-crossing bound, lower bound, positivity obstruction), each doing distinct work; not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1443,6 +1503,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.556Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1462,6 +1537,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.603Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1481,6 +1571,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.648Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1500,6 +1605,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.711Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1519,6 +1639,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.757Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1538,6 +1673,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.813Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-step proof. RECOMPUTED the Touchard-Riordan moments by exhaustive enumeration of perfect matchings of [2n] with crossing count, at the proton pin q0=1.1099785827513808: T_2..T_7 = 3.10998, 16.7236, 130.717, 1364.99, 18116.9, 295770 - every quoted value (3.11, 16.7, 131, 1365, 1.81e4, 2.96e5) is correct, and the ratios 5.38, 7.82, 10.44, 13.27, 16.33 do grow as claimed. Max crossings C(n,2) and the interleaving argument for M*={(i,n+i)} both check out; Bozejko-Speicher positivity iff -1<=q<=1 is stated correctly. Values are identical at the muon pin to 6 s.f., so the block is pin-agnostic. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1560,5 +1710,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:13:25.813Z"
 }

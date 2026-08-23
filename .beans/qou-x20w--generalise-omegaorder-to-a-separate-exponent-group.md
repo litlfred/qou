@@ -1,11 +1,11 @@
 ---
 # qou-x20w
 title: Generalise OmegaOrder to a separate exponent group, and populate it from Mathlib HahnSeries
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T13:47:01Z
-updated_at: 2026-08-16T14:00:54Z
+updated_at: 2026-08-21T17:00:42Z
 ---
 
 
@@ -88,3 +88,40 @@ leading-exponent valuation) rather than two, and its header says so.
 registering it would let resolution silently pick the Hahn valuation for an
 unrelated `K`, which is the same shape of accident as the fabricated instances
 `qou-ffwk` is about.
+
+## Summary of Changes — closed 2026-08-21 (owner instruction)
+
+Closed on explicit owner instruction; AGENTS.md §4a reserves closure for a human
+and this records that it was one.
+
+**Delivered** (PR #5255, merged):
+
+- `OmegaOrder` generalised twice over — exponents moved to their own parameter
+  `Γ`, and the base weakened from `[SurrealField K]` to `[CommRing K]` plus an
+  algebra over an abstract scalar ring `S`. Taking `Γ := K` and `S := ℝ`
+  recovers the original surreal reading, so no caller lost anything.
+- `HahnOmegaOrder.lean` (new) — the model, `Ow := HahnSeries.orderTop` over a
+  domain. `orderTop_mul` proved from `HahnSeries.order_mul` plus the two zero
+  cases, because Mathlib only ships the inequality.
+- `SpectralNormalForm` updated to the new signature.
+
+**The point:** the class had **no instance anywhere**, so every
+`[OmegaOrder]`-conditional result rested on something never shown consistent.
+It now has a model over a carrier with genuine non-archimedean content.
+
+**Verified:** whole umbrella `lean-direct-cone -k QOU` → **1097 modules,
+err = 0**; sorry-free; base-ring and wall-side PASS on all three files; siblings,
+orphan and validate gates clean.
+
+**Left open, deliberately, and now the only remaining piece:**
+`SpectralNormalForm` is still unwitnessed. It additionally needs
+`IsInfinitesimal`/`IsFinite`, hence `[SurrealField K]`, and `SurrealField`
+demands `omegaSurreal` exceeding every natural — so the Hahn model cannot serve
+and no archimedean carrier can. That gap is **one** construction (a
+non-archimedean ordered field carrying both a birthday function and a
+leading-exponent valuation) rather than the two it was before, and
+`Asymptotics.lean`'s history note records the build order for it.
+
+`hahnOmegaOrder` is a `def`, **not** a global `instance` — registering it would
+let resolution silently pick the Hahn valuation for an unrelated `K`, the same
+shape of accident `qou-ffwk` exists to remove.

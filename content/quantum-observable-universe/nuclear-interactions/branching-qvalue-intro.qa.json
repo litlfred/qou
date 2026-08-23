@@ -1190,6 +1190,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:55.996Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1226,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.037Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1262,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 158 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.081Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1298,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 158 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.122Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "'incorporate the positron branch correction, compute the closed-form tritium Q-value, and impose a Frobenius positivity filter' names three blocks that actually exist in this section; the parenthetical (mass, Q-value, decay rate, and density) is a four-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1334,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.163Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1370,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.203Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1406,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.246Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1442,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.286Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1478,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.326Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1514,23 @@
         "reviewed_at": "2026-08-15T10:31:01.304Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cad367d40058",
+          "ts": "6e68bae5c17e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.371Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:branching-qvalue-intro (2-para section roadmap). Cross-checked every roadmap item against the section 9 block list in nuclear-interactions.ts (253-272): positron-correction, tritium-qvalue-symbolic, frobenius-positivity-filter, categorical-quantity-map, b3-local-minimum, parity-regime-selection all exist as named. The '§8' citation for the Wedderburn mass formula checks out under sequential rendering: the manifest comment calls it §7 but a separate §3b sits above it, so it renders as the eighth section - NOT a stale cross-reference.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1553,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:01:56.371Z"
 }

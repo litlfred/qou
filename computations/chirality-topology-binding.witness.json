@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:54:23.888183+00:00",
-  "commitSha": "c8f3e7a1151e324a81300c29a014a987995f9c10",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-22T15:52:21.882467+00:00",
+  "commitSha": "ba5b1110482f77d0dda78b8a9a9b27576720a091",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 65,
+  "durationMs": 120,
   "computation": "chirality-topology-binding",
   "scriptFile": "chirality_topology_binding_probe.py",
-  "scriptHash": "b2f6c371680a",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptHash": "395f4cfd5824",
+  "scriptCommitSha": "61c8887b0d4891318c21259817baa18a78c05676",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chirality_topology_binding_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chirality_topology_binding_probe.py"
   },
   "description": "Chirality (Hecke channel) × bond-count topology binding probe. Crosses the Pauli-channel assignment (pp/nn→alt unbound, pn→std) with chain vs complete-graph topology. Exploratory, no fit, no rewire.",
   "dps": 50,
@@ -109,6 +119,6 @@
   },
   "he4_alpha_cluster_residual_MeV": 12.733856229958173,
   "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. PROVED by running this producerunder QOU_Q0_ANCHOR=muon and =proton and diffing the emittedwitness: the only non-ephemeral leaves that differ areq0Anchor and q0Value THEMSELVES -- every substantive field isbyte-identical, so the pin changes the label and nothing else.Its previous `muon` label was therefore a false claim thatthis producer computed at that anchor. `independent` is thehonest disposition; a q0_anchor_manifest entry would be theWRONG fix, promoting a false claim into a declared one. Beanqou-o922, class (ii)."
 }

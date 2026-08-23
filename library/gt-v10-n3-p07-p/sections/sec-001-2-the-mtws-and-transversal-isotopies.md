@@ -7,7 +7,7 @@ section_number: 2
 pages: 4-4
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
 duplicate_of: "0310280v4"
 ---
 The goal of this section is to prove Theorem 2, a special and limited version of Theorem

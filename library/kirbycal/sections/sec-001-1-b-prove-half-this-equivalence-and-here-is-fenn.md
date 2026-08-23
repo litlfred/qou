@@ -1,6 +1,6 @@
 ---
 doc_id: kirbycal
-doc_title: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby*"
+doc_title: "A Calculus for Framed Links in S^3"
 section_id: sec-001-1-b-prove-half-this-equivalence-and-here-is-fenn
 section_title: "B prove half this equivalence and here is Fenn and Rourke's argument for the"
 section_number: 1

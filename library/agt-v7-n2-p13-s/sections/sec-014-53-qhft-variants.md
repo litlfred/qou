@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v7-n2-p13-s
-doc_title: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI"
+doc_title: "Quantum hyperbolic geometry"
 section_id: sec-014-53-qhft-variants
 section_title: "QHFT variants"
 section_number: 5.3
 pages: 46-47
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 ---
 By varying the bordism category we can vary the corresponding QFT.
 QHFT0 Consider the bordism category supported by triples .Y; L;/ , where L is

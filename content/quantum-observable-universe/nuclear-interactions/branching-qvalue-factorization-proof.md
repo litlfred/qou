@@ -17,4 +17,4 @@ $$
   = a^Z \cdot b^{N-1} \cdot (a - b)
 $$
 
-The factorization is exact — no approximation is involved. The only inputs are the eight per-nucleon channel values $G_P(c)$ and $G_N(c)$, which are rational functions of $q$.
+The factorization is exact. The only inputs are the eight per-nucleon channel values $G_P(c)$ and $G_N(c)$, which are rational functions of $q$.

@@ -3,9 +3,9 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1539,
-    "total_fields": 532306,
-    "lp_dual_carved_out_fields": 3583,
+    "dirty_witnesses": 1410,
+    "total_fields": 487638,
+    "lp_dual_carved_out_fields": 3507,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 812,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 75,
@@ -19,13 +19,12 @@
       "computations/deuteron-real-sdp.witness.json": 126,
       "computations/e-0-lp-dual-h3.witness.json": 120,
       "computations/gap-a1-binding-k-sdp-feasibility.witness.json": 15,
-      "computations/h2-integer-lp.witness.json": 32,
+      "computations/h2-integer-lp.witness.json": 12,
       "computations/habiro/habiro-correction-shadow-price-test.witness.json": 34,
       "computations/hbond-vdw-sdp.witness.json": 8,
       "computations/he3-pairknot-composite-lp.witness.json": 17,
       "computations/he4-sdp-compositional-probe.witness.json": 20,
       "computations/lp-confinement-nf-forcing.witness.json": 48,
-      "computations/molecular-frobenius-lp.witness.json": 16,
       "computations/nucleus-real-sdp-deuteron.witness.json": 12,
       "computations/nucleus-real-sdp-he3.witness.json": 24,
       "computations/nucleus-real-sdp-he4.witness.json": 45,
@@ -42,7 +41,6 @@
       "computations/probes/qbk2-reeb-vs-lp-dual-active-channel.witness.json": 11,
       "computations/qbeta/qbeta-c3-barodd-binding-sdp-dual.witness.json": 10,
       "computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json": 16,
-      "computations/r5-full-canonical-knot-solver.witness.json": 40,
       "computations/rho-k-h3a-gg-trajectory.witness.json": 34,
       "computations/rho-k-h3a-lp-dual.witness.json": 67,
       "computations/wedderburn-lp-ew-wiring.witness.json": 80,
@@ -69,10 +67,10 @@
       "computations/qns-tail-pileup-probe.witness.json": 17
     },
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1572,
-    "baseline_fields": 536570,
+    "baseline_files": 1410,
+    "baseline_fields": 487638,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 48
+    "drained_files": 0
   }
 }

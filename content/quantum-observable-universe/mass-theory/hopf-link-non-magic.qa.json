@@ -1481,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.978Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "\"(Seifert-fibered, not hyperbolic)\", \"operators NOT Hopf-decomposable\" and \"none of which is Hopf-decomposable\" are all substantive mathematical facts; the magic/non-magic split IS the remark content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1500,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.014Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1520,6 +1550,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 267 words (2.62/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.051Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "Seven spaced em-dashes in ~330 words and NONE is a parenthetical pair: every one appends a gloss to a finished clause (\"simeq T^2 -- cohomology rank <= 2\"; \"the *by definition-non-trivial* link -- its Alexander structure\"; \"Z + Z -- abelian\"; \"spectral sequence (...) -- the *descended Markov-trace* piece\"; \"is **Hopf-decomposable** -- expressible as\"; \"torus knots {...} -- none of which is Hopf-decomposable\"). The construction is doing the work punctuation and sentence structure should do.",
+        "notes": "PARTIALLY FIXED inline (the two in running prose, comma swaps only): \"is **Hopf-decomposable** -- expressible as\" -> \"is **Hopf-decomposable**, expressible as\"; \"{T_23,...,T_35} -- none of which\" -> \"{T_23,...,T_35}, none of which\". Count 7 -> 5. The remaining five sit inside bullet items where a dash-gloss is more idiomatic; proposed fix is parentheses (\"Z + Z (abelian)\") but left for the author since it touches four bullets. $$ delimiters re-verified balanced."
       }
     ],
     "trap-triples": [
@@ -1539,6 +1586,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 267 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.105Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No reflex triple; the torus-knot set has six members and the bullet list has five."
       }
     ],
     "trap-closing-aphorism": [
@@ -1558,6 +1620,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.141Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Closes on a quantitative claim (descended tr_M contributes at most about 0.5% of magic-shell binding)."
       }
     ],
     "trap-meta-commentary": [
@@ -1577,6 +1654,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.177Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1596,6 +1688,22 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.228Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "Not block-final, but noted: \"It lives entirely in E_infty^{0,*} (the descended Markov-trace piece per conj:mass-endomorphism)\" duplicates, two paragraphs later, \"The Hopf link lives entirely in the E_infty^{0,*} slot ... -- the descended Markov-trace piece\", citing the same conjecture both times."
       }
     ],
     "trap-performed-warmth": [
@@ -1615,6 +1723,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.267Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1634,6 +1757,21 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.324Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "\"the simplest non-trivial 2-component link\" and \"minimum for any non-trivial link\" are both true of the Hopf link, and \"entirely\" is a genuine exclusivity claim about the E_infty grading."
       }
     ],
     "trap-nonspeakable": [
@@ -1653,6 +1791,23 @@
         "reviewed_at": "2026-08-15T10:31:00.366Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.358Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "\"its E^{0,*}-only cohomological location\" is a compressed noun chain, but the rest reads aloud.",
+        "notes": "VERIFIED: the topological facts are all CORRECT: Hopf link = T(2,2), crossing number 2, Seifert-fibered with volume 0, complement homotopy equivalent to T^2 with cohomology ranks 1,2,1, pi_1 = Z + Z, multivariable Alexander polynomial 1 while the one-variable Alexander polynomial is 0, and all six listed torus knots are genuine knots (gcd(p,q) = 1 in every case). Separate (non-trap) findings: (1) SWEEP GARBLE of the documented \"non-by definition\" class: \"the Hopf link is the *by definition-non-trivial* link -- its Alexander structure carries no signed information\". The sentence contradicts itself as written (an Alexander structure carrying no signed information is the TRIVIAL case), so the intended wording cannot be recovered from context; not fixed. (2) NOTATION COLLISION inside one table row: \"non-Hopf Bring torus knot (T_{p,q} with q >= 3, p in {2,3})\" sits in the column immediately left of \"E_infty^{p >= 1, q >= 1}\", so p and q carry two different meanings in adjacent cells, and q is also the substrate parameter elsewhere in the block (\"at substrate q_0\"). (3) The prose says magic shells need \"E_infty^{p, q >= 1}\" while the table row says \"E_infty^{p >= 1, q >= 1}\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1675,5 +1830,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:33:41.358Z"
 }

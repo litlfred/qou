@@ -1,13 +1,13 @@
 ---
 doc_id: 04010141
-doc_title: "Advanced Studies in Pure Mathematics 40, 2004"
+doc_title: "Cellular algebras and diagram algebras in representation theory"
 section_id: sec-005-52-standard-modules-for-q
 section_title: "Standard modules for ~(q)"
 section_number: 5.2
 pages: 20-21
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
-doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
+doc_brief: "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to"
 ---
 We assume henceforth that the ground ring R is C, although many 
 of our results apply more generally (see [18]). The standard modules for 

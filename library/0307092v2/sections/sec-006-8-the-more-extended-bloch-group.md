@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "Published: 14 February 2004"
+doc_title: "Extended Bloch group and the Cheeger-Chern-Simons class"
 section_id: sec-006-8-the-more-extended-bloch-group
 section_title: "The more extended Bloch group"
 section_number: 8
 pages: 30-49
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 This section is a digression. We describe a slightly more nat ural looking variant
 of the extended Bloch group, based on the universal abelian c over X00 of C −

@@ -17,6 +17,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 from q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
+from codata_constants import (  # noqa: E402  (drain qou-7ot6-a)
+    M_E_MEV,
+    M_N_MEV_VALIDATION,
+    M_DEUTERON_MEV_VALIDATION,
+    M_HE3_MEV_VALIDATION,
+    M_HE4_MEV_VALIDATION,
+)
 
 # ── Substrate parameter (from muon-electron mass ratio) ──────────────
 q = Q
@@ -43,14 +50,14 @@ VOL_TREFOIL = 0.0            # trefoil (torus knot, zero volume)
 
 # ── CODATA 2022 / PDG 2024 / AME2020 reference values (MeV/c²) ──────
 CODATA = {
-    "electron":    0.51099895000,
+    "electron":    float(M_E_MEV),
     "muon":      105.6583755,
     "tau":      1776.86,
     "proton":    float(M_P_MEV_VALIDATION),
-    "neutron":   939.56542052,
-    "deuteron": 1875.61294257,
-    "He-3":     2808.39160743,
-    "He-4":     3727.37940824,
+    "neutron":   float(M_N_MEV_VALIDATION),
+    "deuteron": float(M_DEUTERON_MEV_VALIDATION),
+    "He-3":     float(M_HE3_MEV_VALIDATION),
+    "He-4":     float(M_HE4_MEV_VALIDATION),
     "Li-6":     5601.518,
     "Li-7":     6533.833,
     "Be-9":     8392.750,

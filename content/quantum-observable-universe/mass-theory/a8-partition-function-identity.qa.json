@@ -1756,6 +1756,22 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.058Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two contrasts: 'it is a property of the combinatorial counting at the m=8 shell, not of the algebraic-expansion shape' and 'an observation rather than a new deductive argument'.",
+        "notes": "Both are substantive mathematical/epistemic contrasts (the first is the convention-robustness argument itself; the second is an epistemic-status scope statement). False-positive classes 'substantive mathematical contrast' and 'temporal/scope status'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1775,6 +1791,21 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.109Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, a_8 = sum p(n) X^{5-n}); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1794,6 +1825,22 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 225 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.166Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two spaced dashes ('= 1/(q;q)_inf - the Euler / Habiro generating series'; 'partitions of n=1..5 - i.e., a_8(X) is the dimension-generating function'). Both true appositives; density 2 in ~2.3 kB.",
+        "notes": "No structural load; sentence structure survives their removal."
       }
     ],
     "trap-triples": [
@@ -1813,6 +1860,22 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 225 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.289Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three-bullet list (Young-diagram count / generating function / RSK dimensions).",
+        "notes": "Substantive enumeration: three genuinely distinct appearances of p(n) in Habiro-Hecke theory, each with its own formula."
       }
     ],
     "trap-closing-aphorism": [
@@ -1832,6 +1895,21 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.420Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, a_8 = sum p(n) X^{5-n}); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1851,6 +1929,21 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.534Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, a_8 = sum p(n) X^{5-n}); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1870,6 +1963,23 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:21:11.114Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Block-final line restated the proposition's own content ('the $a_8$ coefficients (1,2,3,5,7) match the partition numbers p(1..5)') before the genuine scope claim.",
+        "notes": "fix applied: 'This result records the canonical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$: a categorical Habiro-shell observation rather than a new deductive argument.' -> 'The coincidence recorded here is a categorical Habiro-shell observation rather than a new deductive argument.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1889,6 +1999,21 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.719Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, a_8 = sum p(n) X^{5-n}); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1908,6 +2033,22 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.781Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'strongly suggests', 'much more convention-robust', 'expected to survive a change of convention'.",
+        "notes": "Hedged rather than maximum-strength; 'strongly suggests' is an explicit non-claim. Recorded so a later reader sees the intensifiers were weighed."
       }
     ],
     "trap-nonspeakable": [
@@ -1927,6 +2068,21 @@
         "reviewed_at": "2026-08-15T10:31:00.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0a5d80c6babd",
+          "ts": "bd37ef54d0ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.861Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, a_8 = sum p(n) X^{5-n}); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1950,5 +2106,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:22:21.861Z"
 }

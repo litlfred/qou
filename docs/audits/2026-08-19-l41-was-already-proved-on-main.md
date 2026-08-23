@@ -1,4 +1,4 @@
-# L4-1 was already proved on `main`, in full, and stronger — since 2026-08-10
+# L4-1 was already proved on `main`, in full, and stronger — since 2026-08-08
 
 **Date**: 2026-08-19 · **Beans**: `qou-me9q`, `qou-itg0`, `qou-q8lc`,
 `qou-ph2s`, `qou-shrp` (epic `qou-u1b5`) · **Verdict**: the entire L4-1 brick
@@ -65,7 +65,7 @@ stopped one order short of where the corpus already was.
 
 ## Timeline
 
-`KashaevAsymptotic.lean` has been on `main` since **2026-08-10 19:24 UTC**. The
+`KashaevAsymptotic.lean` has been on `main` since **2026-08-08 22:33 UTC**. The
 L4-1 feasibility pass that opened these beans is dated **2026-08-11** — the day
 after. Every L4-1 brick was opened, worked and merged against a corpus that
 already contained a stronger statement of the brick's own target.

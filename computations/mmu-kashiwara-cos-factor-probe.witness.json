@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:19:47.974842+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:56:42.594454+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "kashiwara_cos_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "mmu-kashiwara-cos-factor-probe",
   "scriptFile": "mmu_kashiwara_cos_factor_probe.py",
-  "scriptHash": "ed8c9efc26b8",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "b66f38990861",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,12 +27,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "data": {
     "target_delta": "0.0000002098",
-    "q_substrate": "1.10997859555733471989976322048",
+    "q_substrate": "1.10997858275138080759166909561",
     "candidates_tested": [
       "H1.  alpha * hbar_q",
       "H2.  alpha * hbar_q^2",
@@ -47,70 +49,70 @@
     ],
     "per_candidate_results": {
       "H1.  alpha * hbar_q": {
-        "computed_eta": "-0.00518555372826545751607237953188",
-        "computed_delta_from_cos": "0.0000134449536064596282759443674284",
-        "err_ppm_vs_target_delta": 63084621.57511739,
+        "computed_eta": "-0.00401140029429664178495000627661",
+        "computed_delta_from_cos": "0.00000804565537175671787959050525989",
+        "err_ppm_vs_target_delta": 37349167.644216955,
         "passed": false
       },
       "H2.  alpha * hbar_q^2": {
-        "computed_eta": "-0.000513793615934891896086043324236",
-        "computed_delta_from_cos": "0.000000131991936984080259524288124926",
-        "err_ppm_vs_target_delta": 370867.79321220086,
+        "computed_eta": "-0.000397456424899354872461354912795",
+        "computed_delta_from_cos": "0.0000000789858038070953708433582008679",
+        "err_ppm_vs_target_delta": 623518.5709861993,
         "passed": false
       },
       "H3.  alpha * hbar_q^3": {
-        "computed_eta": "-0.0000509075584997848479902715070362",
-        "computed_delta_from_cos": "0.00000000129578975592466307945512886245",
-        "err_ppm_vs_target_delta": 993823.6903912076,
+        "computed_eta": "-0.0000393806646318440363535715973495",
+        "computed_delta_from_cos": "7.75418373322673620022112823013e-10",
+        "err_ppm_vs_target_delta": 996304.0115666222,
         "passed": false
       },
       "H4.  (alpha - b*hbar^2/2) * hbar_q  (Q_β-N1 scaled)": {
-        "computed_eta": "-0.00560750496881441992911244428474",
-        "computed_delta_from_cos": "0.0000157220147905083048281570051726",
-        "err_ppm_vs_target_delta": 73938106.72310917,
+        "computed_eta": "-0.0044333514018871011490288236788",
+        "computed_delta_from_cos": "0.00000982728623033920574850512886257",
+        "err_ppm_vs_target_delta": 45841211.774734065,
         "passed": false
       },
       "H5.  (alpha - b*hbar^2/2) * hbar_q^2": {
-        "computed_eta": "-0.000555601273321248190945566653192",
-        "computed_delta_from_cos": "0.00000015434638348762832235093784032",
-        "err_ppm_vs_target_delta": 264316.57060234353,
+        "computed_eta": "-0.000439264064726193137885594713355",
+        "computed_delta_from_cos": "0.0000000964764577286040747070457330668",
+        "err_ppm_vs_target_delta": 540150.3444775783,
         "passed": false
       },
       "H6.  hbar_q^3 * b": {
-        "computed_eta": "0.000843902481097924826080129505715",
-        "computed_delta_from_cos": "0.000000356085677668779704019436929995",
-        "err_ppm_vs_target_delta": 697262.5246367003,
+        "computed_eta": "0.000843902215180918728157634804389",
+        "computed_delta_from_cos": "0.000000356085453260820483926515968702",
+        "err_ppm_vs_target_delta": 697261.4550086772,
         "passed": false
       },
       "H7.  hbar_q^4 * sqrt(b^2 + 1)": {
-        "computed_eta": "0.000127593431172420554582868003175",
-        "computed_delta_from_cos": "0.00000000814004182813223046441998828764",
-        "err_ppm_vs_target_delta": 961200.9445751562,
+        "computed_eta": "0.000127593377610945751481284233335",
+        "computed_delta_from_cos": "0.00000000814003499404133464058601804098",
+        "err_ppm_vs_target_delta": 961200.9771494693,
         "passed": false
       },
       "H8.  alpha * b * hbar_q^2": {
-        "computed_eta": "-0.000445759155069237316287957350287",
-        "computed_delta_from_cos": "0.0000000993506105189295014405098452518",
-        "err_ppm_vs_target_delta": 526450.8554865133,
+        "computed_eta": "-0.000344826861555651214482015647407",
+        "computed_delta_from_cos": "0.0000000594527816360545747045903228405",
+        "err_ppm_vs_target_delta": 716621.6318586532,
         "passed": false
       },
       "H9.  h * hbar_q^2  (h = q - q^-1)": {
-        "computed_eta": "0.00205238459182535371674705976986",
-        "computed_delta_from_cos": "0.00000210614051707600039155004121234",
-        "err_ppm_vs_target_delta": 9038801.320667304,
+        "computed_eta": "0.00205238393346324981474595879917",
+        "computed_delta_from_cos": "0.00000210613916586492783564753941141",
+        "err_ppm_vs_target_delta": 9038794.880195081,
         "passed": false
       },
       "H10. h * hbar_q^3": {
-        "computed_eta": "0.000203353808673337471665332793492",
-        "computed_delta_from_cos": "0.0000000206763856797240166366165951836",
-        "err_ppm_vs_target_delta": 901447.160725815,
+        "computed_eta": "0.000203353722109204064989896111381",
+        "computed_delta_from_cos": "0.0000000206763680765816618799449508632",
+        "err_ppm_vs_target_delta": 901447.2446302113,
         "passed": false
       }
     },
     "best_candidate_name": "H5.  (alpha - b*hbar^2/2) * hbar_q^2",
-    "best_candidate_err_ppm": 264316.57060234353,
+    "best_candidate_err_ppm": 540150.3444775783,
     "any_candidate_passes_10_ppm": false
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

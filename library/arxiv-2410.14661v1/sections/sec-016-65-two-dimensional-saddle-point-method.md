@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "(r is odd). Contents 1. Introduction 2 2. Preliminaries 4 2.1. Defintion of the Reshetikhin-Turaev invariants 4 2.2. Dilogarithm and Lobachevsky functions 6 2.3. Quantum dilogrithm"
+doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
 section_id: sec-016-65-two-dimensional-saddle-point-method
 section_title: "Two-dimensional saddle point method"
 section_number: 6.5
 pages: 52-55
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
+doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
 ---
 ˆV (p,q ;θ1,θ 2,θ 3;m1,m 2,m 3)
 (6.82)

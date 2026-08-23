@@ -1669,6 +1669,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a macroscopic mass scalar.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:36.983Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. 'is a graded Euler characteristic, not a macroscopic mass scalar' is the remark's substantive claim, and the closing sentence spells out what the conflation costs rather than merely denying it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1688,6 +1703,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.036Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1707,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.088Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1726,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.140Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The exponent d measures ... The coefficient c_d counts ... The full polynomial constitutes ...' walks the three structural parts of a Laurent polynomial; substantive, not reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -1745,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.200Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closer states a consequence (what data is lost) rather than a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1764,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.256Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1783,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.316Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing sentence restates the opening contrast in cost terms, but it adds the specific losses (branching ratios, resonance widths), so it is not empty restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1802,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.372Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1821,6 +1941,21 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.431Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1840,6 +1975,22 @@
         "reviewed_at": "2026-08-15T10:31:00.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "431bda2f0fce",
+          "ts": "2781cbd6139f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:43:37.481Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Convention checks clean: the mass evaluation is written with approx (m_K ~ m_0 |P_K(q_0)|) per the AGENTS.md section 7ab derived-value rule, not with equality; P_K(q) in Z[q^{+-1/2}] carries half-integer powers, which is standard for the Jones/HOMFLYPT normalisation and is not the excised convention-C z. No numeric literals to recompute."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1862,5 +2013,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:43:37.481Z"
 }

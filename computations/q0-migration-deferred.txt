@@ -1,0 +1,32 @@
+# q0 proton migration — deferred producers, with OWNERSHIP determined
+#
+# "Pre-existing" is not an assumption: each break below was re-run under
+# QOU_Q0_ANCHOR=muon as well as at the proton pin. Failing under BOTH means
+# the migration did not cause it. That test is the whole point of this column
+# — without it every crash a sweep surfaces looks like the sweep's fault.
+#
+# stem | error | ownership / disposition
+
+## FIXED on this branch
+mass_per_knot_density|ImportError: per_knot_density_borromean|FIXED — Geom_full purge rename (2026-06-06); now vol_density_borromean, exit 0
+per_knot_density_per_block_wiring|ImportError: per_knot_density_*|FIXED — same rename, exit 0
+mn_delta_pn_qbeta_habiro_cascade_probe|NameError: c3_habiro|FIXED — import added; both candidate fns measured identical to 18 digits, exit 0
+option_e_phase1_h3_cross_check|cross-check FAIL 1.6e-8|FIXED — MINE: migration straddle (q0 read from the muon anchor witness vs pyhecke.gram at proton). Now PASS at 1 ppQ
+
+## PRE-EXISTING — fails under muon AND proton, migration not implicated
+hadron_knot_table|TypeError: scipy sparse, dtype('O')|pre-existing (mpf object array into scipy); verified FAIL under muon
+vhat_per_crossing_chain|UFuncInputCastingError: lstsq dtype('O')|pre-existing (mpf object array into numpy.lstsq); verified FAIL under muon
+parabolic_cylinder_channel_mixing_probe|findroot: try another starting point|pre-existing numerical non-convergence; verified FAIL under muon
+per_irrep_pole_proton_h3|assertion: u-pole 18 != predicted 19|pre-existing — committed witness already allPassed=false; a producer reporting a failed check, not a break
+
+## BEANED — needs a decision that is not mine
+borromean-axial-coupling|KeyError: gram_inverse|qou-cnbm — NOT a rename: the Gram matrix is singular, so the substitute is the quotient inverse, a different object
+
+## SLOW — running standalone, no error
+binding_via_interface_knot|>1200s|standalone
+block_swap_binding|>100s|standalone
+delta_lambda_imme_triplet|>100s|standalone
+he3_tritium_cosh_asymmetry_diagnosis|>90s|standalone
+mass_table_comprehensive|>90s|standalone
+probe_9b_laurent_degree_10a5|>90s|standalone
+wedderburn_lp_ew_wiring|>90s|standalone

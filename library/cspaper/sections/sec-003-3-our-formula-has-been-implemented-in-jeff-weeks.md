@@ -1,13 +1,13 @@
 ---
 doc_id: cspaper
-doc_title: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of "
+doc_title: "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds"
 section_id: sec-003-3-our-formula-has-been-implemented-in-jeff-weeks
 section_title: "Our formula has been implemented in Jeff Weeks’program “snap pea” by R. Mey-"
 section_number: 3
 pages: 3-3
 source_pdf: cspaper.pdf
 source_sha256: 1910c380cf79bf42
-doc_brief: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds Walter D. Neumann 1. Introduction In this paper we prove some results on combinatorics of triangulations of 3"
+doc_brief: "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds — 18 sections: Introduction; Q2n:; Denote Sol0 = fc 2 Z2n : U c = dg"
 ---
 erhoff and C. Hodgson, using c in Sol0 rather than Sol (see [HMW] for a brief
 description of this program). There is therefore now a large accumulation of experimen-

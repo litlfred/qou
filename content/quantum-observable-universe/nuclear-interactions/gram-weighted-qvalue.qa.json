@@ -1461,6 +1461,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd",
+          "lean": "eead49d9246d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'gram-weighted-qvalue.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1526,6 +1541,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd",
+          "lean": "eead49d9246d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'gram-weighted-qvalue.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1635,7 +1665,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 — content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd",
+          "lean": "eead49d9246d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'gram-weighted-qvalue.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1659,6 +1704,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean for 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' fails compilation with error: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd",
+          "lean": "eead49d9246d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'gram-weighted-qvalue.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1918,6 +1978,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.638Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1937,6 +2013,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.677Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -1956,6 +2048,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 289 words)"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.716Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1975,6 +2083,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 289 words)"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.756Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "The Structure section's bullets enumerate the formula's own factors; see the note about the count."
       }
     ],
     "trap-closing-aphorism": [
@@ -1994,6 +2118,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.798Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Ends on a technical characterisation of G as an averaging operator."
       }
     ],
     "trap-meta-commentary": [
@@ -2013,6 +2153,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.841Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2032,6 +2188,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.884Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic. Considered the closer 'It suppresses interior conversion channels and enhances boundary ones' under category 7: it explicates the new 'averaging operator' characterisation introduced in the sentence before it, rather than restating an already-established conclusion.",
+        "notes": "Kept."
       }
     ],
     "trap-performed-warmth": [
@@ -2051,6 +2223,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.924Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2070,6 +2258,22 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:19.964Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2089,6 +2293,38 @@
         "reviewed_at": "2026-08-15T10:31:01.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:20.003Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the statement, the three fenced equation blocks, the Inputs line, and the two prose sections. The tex fences carry outer 'equation' environments, which is the correct fencing per the render-QA rule. Ten trap categories: no em-dashes, no aphorism, no meta-narration, no warmth, no superlative, headers noun-phrase academic.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "082deff5c654",
+          "ts": "4069c18b35dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:20.055Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Mathematical read of the formula and its stated mechanism, beyond the ten categories.",
+        "notes": "MATH FINDINGS (report, not fixed), three items. (1) THE SUPPRESSION MECHANISM IS STATED BACKWARDS, TWICE. The block defines ||delta_k||_F = sqrt(|delta_k . G . delta_k|) = sqrt(|sum_alpha lambda_alpha c_{k alpha}^2|), an ABSOLUTE value over an indefinite form. It then says interior neutrons have delta_k 'dominated by the negative eigenspace', and that 'This suppresses their Frobenius norm'. Domination by the negative eigenspace makes the signed sum large in MAGNITUDE, so the absolute value - and hence the norm - is LARGE, not suppressed. Conversely 'Boundary neutrons have more balanced projections, yielding larger ||delta_k||_F': balanced positive and negative projections CANCEL in the signed sum, giving a SMALLER absolute value. Under the block's own definition both sentences invert the mechanism they assert. The empirical ordering (boundary > interior) may still be right; the explanation offered for it is not. The same inverted mechanism appears in the interpreting sibling rem:gram-weight-eigenstructure. (2) IT IS NOT A NORM. The block calls ||.||_F 'the Frobenius norm induced by the Gram matrix' while stating two sections later that G 'is symmetric but not positive definite'. An indefinite form induces no norm; the absolute value patches positivity but destroys the parallelogram/Cauchy-Schwarz structure and makes ||delta||_F^2 differ from the displayed delta . G . delta whenever that quantity is negative. Rename it (a signed Frobenius pairing, magnitude taken separately) or state the absolute value where the object is introduced. (3) COUNTING AND LABELLING SLIPS. 'The Q-value contains three factors' precedes a list of Delta_k, w_k^G and N, but the displayed equation has four - m_e is in the formula and in the Inputs line, and is omitted from the list. And N is glossed as 'the coherent sum over all conversion channels', which it is not: the sum over channels is sum_k w_k^G Delta_k, and since the weights are normalised to 1 that sum is a weighted AVERAGE; the separate factor N is a multiplicity, so Q = N m_e times the w-average of Delta."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2112,5 +2348,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:19:20.055Z"
 }

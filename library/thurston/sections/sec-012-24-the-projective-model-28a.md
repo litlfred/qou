@@ -1,13 +1,13 @@
 ---
 doc_id: thurston
-doc_title: "William P. Thurston"
+doc_title: "The Geometry and Topology of Three-Manifolds"
 section_id: sec-012-24-the-projective-model-28a
 section_title: "THE PROJECTIVE MODEL. 2.8a"
 section_number: 2.4
 pages: 24-24
 source_pdf: Thurston.pdf
 source_sha256: 6010919ed83edd81
-doc_brief: "William P. Thurston — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
+doc_brief: "The Geometry and Topology of Three-Manifolds — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
 ---
 Evenly spaced lines. The region inside the circle is a plane, with a base line and a family of
 its perpendiculars, spaced at a distance of .051 fundamental units, as measured along the base

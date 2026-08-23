@@ -1229,6 +1229,23 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.600Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "severity": "major",
+        "evidence": "Para 6 ('Symmetries are not imposed by hand. The uncertainty principle is not postulated; it appears as... The state space is not freely chosen; the axioms rigidly force...') is a triple negation-contrast anaphora; also 'not as a mystery, but as a principle' (para 2). Photon 'not as a knot but as the algebraic superposition' (list) and 'No seventh operation is topologically possible' are substantive mathematical contrasts and are NOT counted.",
+        "notes": "proposed (structural, 3 sentences): restate positively — 'Viewpoint-independence, the consistency between multiple observers, forces an internal rotation group. The uncertainty principle appears as the geometric signature of unresolved degrees of freedom. The axioms force the state space to be a surface of fixed genus.' Content (derived-vs-postulated) is preserved; only the repeated negation scaffold is removed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1248,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.644Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'Following Heisenberg, we do not ask what the universe is, but rather how...' is an attributed methodological contrast, not a setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1267,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 492 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.684Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Two em-dash uses ('viewpoint-independence—the consistency between multiple observers—', 'measuring frame—a strict limit...'); both parenthetical/appositive, low density."
       }
     ],
     "trap-triples": [
@@ -1286,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 492 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.724Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Knot-particle list has 5 items (substantive); the 3-fold anaphora in para 6 is recorded under trap-negation-contrast, not a content-free triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1305,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.765Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Opening Descartes epigraph is attributed and deliberate; final line after fix is a plain content statement, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1324,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.811Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'We term a structure...' and 'We formalise these observations' are standard mathematical usage; no narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1343,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.855Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Final sentence fixed this audit; 'The central thesis is that...' (para 3) states the thesis once, not a restatement.",
+        "notes": "fix applied: 'The framework precisely unifies these diverse phenomena as instances of topological incompleteness at the computational horizon.' -> 'These diverse phenomena are instances of topological incompleteness at the computational horizon.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1362,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.895Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1381,6 +1504,23 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.935Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "severity": "minor",
+        "evidence": "~8 decorative intensifiers: 'strictly single out', 'rigidly force(s)' x2, 'models them rigidly', 'strictly closes at exactly six', 'natively recovers', 'emerges uniquely', 'structurally forces' — maximum-strength adverbs doing emphasis work the claims already carry.",
+        "notes": "proposed (structural, spread over 6 paragraphs): strip decorative adverbs, keep mathematically load-bearing qualifiers ('exactly six', 'uniquely' where uniqueness is the claim). E.g. 'these physical requirements single out one algebraic structure'; 'this basis closes at exactly six fundamental operations'."
       }
     ],
     "trap-nonspeakable": [
@@ -1400,6 +1540,21 @@
         "reviewed_at": "2026-08-15T10:30:59.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "66e89b8f4f4d",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:06.977Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Short declarative sentences; parses aloud."
       }
     ],
     "wall-base-ring-minimal": [

@@ -1360,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.441Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no adjoint structure is required', 'not fixed by the bar-involution', 'does not need it', and the convention-C parenthetical are technical scope statements about the hypotheses actually used."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.512Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Standard proof structure: setup, odd case, even case, induction, conclusion."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.589Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One em-dash appending a clause after a parenthetical; 499 words."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.655Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.729Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the moment formula and its match to Blitvic eq. (1.2), closed with a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.804Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'We reduce an arbitrary joint moment ... by induction on word length' is a standard proof roadmap; '(Note that ...)' is standard mathematical prose, explicitly a pass per the protocol."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.889Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The closing sentence identifies the derived formula with Blitvic's, which is the proof obligation."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:37.021Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:37.088Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No unqualified maxima."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:30:58.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c77e0e57724b",
+          "ts": "dad1603bf061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:37.156Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Reads as spoken mathematics."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:37.156Z"
 }

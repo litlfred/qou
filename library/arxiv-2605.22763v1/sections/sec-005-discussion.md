@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2605.22763v1
-doc_title: "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely"
+doc_title: "Advancing mathematics research with AI-driven formal proof search"
 section_id: sec-005-discussion
 section_title: "Discussion"
 section_number: null
 pages: 10-18
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-doc_brief: "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely — 14 sections: Intro"
+doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
 ---
 We have provided a large-scale demonstration of the value of formal proof search agents on
 research-level mathematical problems. Recently, some natural-language reasoning systems

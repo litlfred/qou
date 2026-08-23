@@ -1202,6 +1202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.866Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "\"without involving sections of the base algebra A_0\" and \"No operation requires data from outside the blow-up\" are the localisation and completeness conclusions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1221,6 +1236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.907Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1240,6 +1270,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.949Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1259,6 +1304,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.992Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Three parts mirroring the three clauses."
       }
     ],
     "trap-closing-aphorism": [
@@ -1278,6 +1338,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.035Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Ends on the completeness conclusion."
       }
     ],
     "trap-meta-commentary": [
@@ -1297,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.076Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1316,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.121Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Each part argues rather than repeats."
       }
     ],
     "trap-performed-warmth": [
@@ -1335,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.163Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1354,6 +1474,23 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.207Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "Conventions are correct where AGENTS is STRICT about them: the Skein relation is written L_+ - L_- = (q - q^-1) L_0 and the Hecke relation (sigma_i - q)(sigma_i + q^-1) = 0, both exactly as section 7a requires, and the generator is sigma_i throughout rather than T. NOTATION DEFECT (reported, not edited): tau carries two meanings inside one paragraph of part (1) - \"the Hecke generator is sigma_i = tau_i o R_{i,i+1}, where tau_i is the transposition\" and, three lines later, \"Under the fibre functor tau\". AGENTS section 7 is STRICT that the fibre functor is always tau, so the transposition is the symbol that has to move.",
+        "notes": "Route: rename the transposition (s_i is the usual choice, and is free here since the Hecke generator is sigma_i) and leave tau to the fibre functor."
       }
     ],
     "trap-nonspeakable": [
@@ -1373,6 +1510,21 @@
         "reviewed_at": "2026-08-15T10:31:00.591Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "65f233f40910",
+          "ts": "24b8360044cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:54.249Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1395,5 +1547,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:30:54.249Z"
 }

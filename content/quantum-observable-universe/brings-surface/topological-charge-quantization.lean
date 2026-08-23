@@ -36,16 +36,21 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     non-degeneracy of the Frobenius pairing and periodicity of the
     Reeb derivation ξ_q force the total charge to be integral. -/
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
-/-- The Reeb residue operator applied to the canonical form yields
-    the observer trace: Res_ξ(ω) acts as the identity under Φ.
-    Equivalently, the algebraic residue Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1
-    (where 1 denotes id_{𝟙} in the monoidal unit). -/
-theorem topological_charge_quantization
+/-- The quantized-topological-charge condition, as a **predicate** on the
+    categorical data: the Reeb residue operator `Res_ξ`, post-composed with
+    the observer trace `Φ`, leaves `Φ` unchanged — `Res_ξ ≫ Φ = Φ`.
+    Equivalently the algebraic residue `Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1`
+    (with `1 = id_{𝟙}` in the monoidal unit).
+
+    Named (§3b), not asserted: the previous `(h_reeb_residue : P) : P := h`
+    was self-assuming and stated nothing. Integrality of the total charge is
+    forced by non-degeneracy of the Frobenius pairing and periodicity of the
+    Reeb derivation `ξ_q` — the algebraic Gauss–Bonnet content — which lives
+    in the substrate, not at this abstraction, so this names the condition. -/
+def topological_charge_quantization
     (A : C)
     (Φ : A ⟶ (𝟙_ C))
-    (Res_xi : A ⟶ A)
-    (h_reeb_residue : Res_xi ≫ Φ = Φ) :
-    Res_xi ≫ Φ = Φ :=
-  h_reeb_residue
+    (Res_xi : A ⟶ A) : Prop :=
+  Res_xi ≫ Φ = Φ
 
 end QOU.AlgebraicSubstrate

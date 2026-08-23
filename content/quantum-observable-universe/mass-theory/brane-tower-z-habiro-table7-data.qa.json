@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.644Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.678Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.713Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.749Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.788Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.823Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.859Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.895Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.930Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ee890d47a4a1",
+          "ts": "61f62b1065ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:08.970Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 7 data rows of per-generator z-volumes for D/T/3He/4He); read in full. No trap construction of this category present. Bold and the arrow glyph mark changed cells, not rhetorical emphasis. NUMERIC (reported separately, not a trap): recomputed Phi_q(z)=prod_{n>=1}(1-z q^{-n})^{-1} at proton q0=1.1099785827513808 reproducing the parent's 6.7e5 and 9e5 checks exactly (671094, 901389), which confirms these cells are z-values on the same scale; the inter-nucleon entries 0.264, 0.369, 0.160 then fall outside the parent block's stated range z_i in [0.85,1.0] for exactly the isotopes it names."
+      }
     ]
   },
   "source_hashes": {
     "md": "ee890d47a4a1",
     "ts": "61f62b1065ad"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:08.970Z"
 }

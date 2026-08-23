@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1301.4504v4
-doc_title: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center "
+doc_title: "Quantum Computation vs. Firewalls"
 section_id: sec-014-51-schwarzschild-in-a-box
 section_title: "Schwarzschild in a Box"
 section_number: 5.1
 pages: 41-43
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princ"
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 In order for Alice to have any chance of doing the AMPS experiment given our claim
 of exponential decoding time, she will clearly need some way of slowing down the

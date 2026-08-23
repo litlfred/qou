@@ -2348,6 +2348,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not tail-packs.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.005Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Every denial here is the result: 'does not minimise', 'It is not the ground state', 'head-packs, not tail-packs', 'sorted does not beat interleaving'. This is a negative proposition and the denials are its content.",
+        "notes": "Header register: 'Two readouts, not one' is the one place the not-X-but-Y shape is doing rhetorical rather than mathematical work; 'The two readouts' would serve."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2367,6 +2383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.109Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The eigenvalue relation lambda_+ lambda_- = -1 survives; the ordering claim does not' is a precise scope split, not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -2386,6 +2417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 520 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.165Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Six em-dashes in 657 words, each carrying a qualification the sentence needs ('a consequence of the transfer factors commuting, so that the readout sees the crossing coefficients only as a multiset')."
       }
     ],
     "trap-triples": [
@@ -2405,6 +2451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 520 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.205Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'the three rules' are the three claims the earlier version asserted, each adjudicated separately with its own verdict."
       }
     ],
     "trap-closing-aphorism": [
@@ -2424,6 +2485,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.249Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The block ends on a Scope section that narrows its own claim and explicitly declines to settle the downstream question — the opposite of a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2443,6 +2519,22 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.285Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The proposition previously asserted three rules' is necessary to make the negative result legible.",
+        "notes": "Light authorNotes candidate (AGENTS.md 4d) for that one sentence, but unlike the corrections in the frobenius blocks it is load-bearing for the statement itself, so prose is defensible."
       }
     ],
     "trap-thesis-restatement": [
@@ -2462,6 +2554,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.330Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No restatement; the three-rule section, the two-readout section and the two-parameter derivation are all distinct."
       }
     ],
     "trap-performed-warmth": [
@@ -2481,6 +2588,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.365Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2500,6 +2622,21 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.430Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Counts are exact and unrounded (17 of 62, 10 of 62, 12, 8), the interval claim is hedged, and the Scope section refuses to generalise past A = 16. No inflation anywhere."
       }
     ],
     "trap-nonspeakable": [
@@ -2519,6 +2656,22 @@
         "reviewed_at": "2026-08-15T10:31:00.508Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1e2685d31b3c",
+          "ts": "a209959f41c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:24.473Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Long but consistently readable; each section is short and each display is set out.",
+        "notes": "THIS IS THE BEST-SCOPED BLOCK IN THE BATCH and the checks bear it out. VERIFIED: lambda_+ lambda_- = q(-1/q) = -1 exactly, consistent with det S = -1 and tr S = q - q^{-1}, and with S^2 = (q - q^{-1})S + 1. The 0-indexing is self-consistent: ordering[k] = proton for k odd and k < 2Z gives 'n p n n n' at A = 5, Z = 1, matching the stated counterexample, and 'proton position A - 5 leaves exactly four neutrons after it' is right in that same 0-indexed convention. SCOPE DISCIPLINE: the Scope section classifies the A >= 4 result as a structural exclusion and licenses it correctly — an explicit arrangement with strictly smaller Phi_q, proved on an interval — while labelling the minimising family 'empirical, covering A <= 16 only'. That is exactly the (a)/(b) discipline AGENTS.md asks for. ONE UNDER-CLAIM worth noting: if the gap really factors as (t - 1) times a degree-20 polynomial with all coefficients positive, then it is positive for every t > 1, i.e. for every q > 1 — stronger than 'an interval containing the substrate anchor'. The block could claim the half-line; it claims less."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2542,5 +2695,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:28:24.473Z"
 }

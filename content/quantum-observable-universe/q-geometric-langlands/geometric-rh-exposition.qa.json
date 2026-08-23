@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.488Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.528Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,23 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 466 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.573Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'with |alpha| = q^{1/2} by construction --- the critical-line property is visibly forced by the compactness of the gauge group.' The dash appends an editorial afterthought rather than joining two clauses.",
+        "notes": "fix applied: '--- the critical-line property is visibly forced by' -> '. The critical-line property is forced by'"
       }
     ],
     "trap-triples": [
@@ -1457,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 466 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.613Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1541,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.654Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1576,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.693Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1611,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.735Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1646,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.778Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1681,23 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.816Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'visibly forced'; 'wild, unconstrained error terms'; 'a critical phase of exact balance between order and disorder'. Chased per the brief: the superlative sits on an over-claim - a flat SU(2) connection's holonomy is the image of a pi_1 representation and need NOT lie in U(1) (any non-abelian representation is a counterexample), so 'visibly forced by compactness' is false as stated.",
+        "notes": "'visibly' removed with the em-dash fix. Remaining superlatives left in place (structural). Math over-claim reported as ANOMALY 9; the s = 1/2 - i*phi/ln q sign slip as ANOMALY 17."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1717,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "421db0728242",
+          "ts": "1142007ff5c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.857Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting thm:hasse-weil-bound; SU(2) example + 3 steps + physical picture); all ten judged. Step-3 exponent algebra recomputed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1755,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:39.857Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut †"
+doc_title: "Gröbner-Shirshov bases and PBW theorems"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-doc_brief: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
+doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
 ---
 Combinatorial algebra seminar at South China Normal University was organized by the
 authors in March 2006. Since then, there were some 30 Master The ses and 4 PhD Theses,

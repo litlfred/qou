@@ -3,8 +3,9 @@
 title: 3 live probes import probe_staircase_ew_k3_categorical from _deprecated/
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-10T14:15:16Z
-updated_at: 2026-08-10T14:15:16Z
+updated_at: 2026-08-19T18:24:13Z
 ---
 
 
@@ -66,3 +67,52 @@ history of the move is the place to start.
 
 The three probes either import from a live module or are themselves retired.
 Not closed by making the import resolve to `_deprecated/`.
+
+
+## Re-measured 2026-08-19 — it is 11 producers, not 3, and a second module
+
+Measured with `computations/audits/producer_importability_audit.py` (imports
+every witness-emitting producer in a subprocess) after draining the
+sys.path class of failures around it. The count in the title understates it:
+
+| missing module | live producers |
+|---|---|
+| `probe_staircase_ew_k3_categorical` | **10** |
+| `lambda_scale_alt_g_skein_polynomial_direct` | **1** |
+
+The ten:
+
+```
+computations/probes/hecke_1d_irrep_closed_form_character_probe.py
+computations/probes/hecke_branching_trace_decomposition_probe.py
+computations/probes/hecke_markov_transition_probe.py
+computations/probes/hoefsmit_seminormal_form_probe.py
+computations/probes/knot_factor_amphicheiral_BD_probe.py
+computations/probes/knot_factor_borromean_composite_probe.py
+computations/probes/pauli_factor_wedderburn_probe.py
+computations/probes/q_hecke_seminormal_character_closure_probe.py
+computations/probes/symbolic_character_table_probe.py
+computations/probes/three_parameters_wedderburn_probe.py
+```
+
+The eleventh is `computations/probes/lambda_scale_homflypt_skein_recursion_probe.py`,
+importing `lambda_scale_alt_g_skein_polynomial_direct` — same shape, same
+cause: `_deprecated/strategy-spikes/lambda_scale_alt_g_skein_polynomial_direct.py`,
+untracked by the same commit `0763606e4`.
+
+Both modules are confirmed gone from the working tree, and
+`git log --diff-filter=D` names `0763606e4 chore: untrack the five root-level
+agent-scratch dirs (2,344 files)` as the deletion for each.
+
+**These 11 are now the entire residual `in-repo-wiring` backlog.** The rest of
+that class — 72 producers when first measured — was sys.path wiring and is
+drained on `claude/convention-d-tranche-2026-08-18` (`a6e5c4496`, `b048328fe`,
+`e9324f29f`): 72 -> 40 by wiring `tools/pyhecke` into `_path_bridge`, 40 -> 15
+by bootstrapping 25 producers, 15 -> 11 by four targeted fixes. Nothing left in
+the class is reachable by a path entry, so this bean is the whole remainder and
+needs the real decision: restore the two modules to a live location, or retire
+the 11 producers and their witnesses.
+
+Note the audit itself excludes `_deprecated/`, so it can see the broken
+importers but never the modules they want — the dependency crosses a boundary
+the tooling deliberately does not.

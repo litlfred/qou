@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.401Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.440Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.480Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.518Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.557Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.598Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.635Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.672Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.713Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "85411b882d3a",
+          "ts": "97abeda3e4f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.753Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (7-row scale table). Two entries verified, one refuted, one unreproducible. Verified: '6 embeddable torus knots' at genus 4 (matches the genus-filtration table); '[A-1]_q! > [2]_q^{A-1} at A = 5' recomputed at q_0 - [4]_q! = 25.154 > [2]_q^4 = 16.350, and A = 5 is indeed the first crossover ([3]_q! = 6.121 < [2]_q^3 = 8.131). REFUTED: the P_{7,6} golden-ratio zero - reported as ANOMALY 35. Unreproducible: the '153.6 deg' phase - reported as ANOMALY 36. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:00.753Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1911.04486v4
-doc_title: ""
+doc_title: "Knots and the Maxwell Equations"
 section_id: sec-001-22-maxwell-equations-in-covariant-formulation
 section_title: "Maxwell equations in covariant formulation"
 section_number: 2.2
 pages: 7-19
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
-doc_brief: "Knots and the Maxwell Equations Ion V. Vancea Grupo de F´ ısica Teórica e Matemática F´ ısica Departamento de F´ ısica Universidade Federal Rural do Rio de Janeiro — In this chapter, we review the"
+doc_brief: "Knots and the Maxwell Equations — In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld"
 ---
 The geometric properties of the electromagnetic ﬁeld are highlighted in the
 formulation of Maxwell’s equations in terms of diﬀerential forms onR3. How-

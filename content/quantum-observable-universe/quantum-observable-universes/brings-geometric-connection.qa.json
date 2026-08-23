@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.320Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Three-sentence remark; all claims positive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.356Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No reframe."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.392Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes ('fermion--boson' is an en-dash compound)."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,23 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.436Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Two parallel three-item lists in the first two of three sentences: 'the q-Laplacian, fermion--boson decomposition, and contact affine chart' then 'The contact structure Theta, Reeb vector field xi, and substrate parameter q'. Both lists are substantive individually, but back-to-back parallel triples are rhythm rather than structure, and sentence 3 then re-covers two of sentence 1's three items (Delta_q alpha = 0 for the q-Laplacian, the boson--fermion split for the decomposition).",
+        "notes": "Proposed (two sentences, so borderline; left to the author because it merges content): 'On the Bring surface the contact structure Theta, the Reeb field xi and the substrate parameter q all reduce to explicit formulas on a genus-4 Riemann surface with S_5 symmetry: the abstract equilibrium Delta_q alpha = 0 becomes a computable eigenvalue problem, and the boson--fermion split becomes a Hodge decomposition of the harmonic space.' Also note the list order flips between 'fermion--boson' (s1) and 'boson--fermion' (s3)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.540Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the Hodge decomposition, i.e. content."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.652Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narrated emphasis; the block is tagged pedagogy and reads as such."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.694Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Sentence 3 elaborates rather than restates, though it overlaps sentence 1 (see the triples entry)."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.734Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.774Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'manifest concretely' and 'explicit formulas' are claims about computability, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:59.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6df66bac3e16",
+          "ts": "4c6955559b3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.894Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Sentences are list-heavy but read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1576,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:56:21.894Z"
 }

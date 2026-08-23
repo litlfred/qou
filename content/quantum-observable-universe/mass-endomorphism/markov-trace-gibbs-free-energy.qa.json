@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.675Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Several negations, all load-bearing and in the declared false-positive classes: \"It is a reading, not a second definition of the functional, and the two are not interchangeable\"; \"The functional is the trace ratio; the channel entropy describes what the reweighting costs, not how much\"; \"A quantity bounded by log A cannot be an extensive binding energy\". Each marks a distinction the block exists to draw, and each is backed by an argument rather than by tone.",
+        "notes": "No change. This block is the most carefully hedged in the batch - \"The thermodynamic form is a formal analogy, and is used here as one\" - and the negations are doing that hedging work."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.719Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"reading E_0 as a finite temperature therefore requires naming the dynamics whose equilibrium state this is, which the framework does not supply. The scale match beta ~ ln q identifies a parameter, not that dynamics.\" reads like a pivot but is a genuine scope limitation the block imposes on its own analogy.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.762Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "One spaced pair, \"at the minimal idempotents - the hat-y_lambda below - are computed in [orellana1998]\" - a true parenthetical identifying the weights.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.805Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No reflex list; the \"Two limiting statements\" paragraph is explicitly two.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.849Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Closes on \"a braid's information content ... grows at most linearly in its crossing number\", a bound.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.891Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"What the sources supply is that the Markov trace is a tracial state ...\" attributes a fact to the literature rather than narrating emphasis.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.933Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Each paragraph closes on new content.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:55.976Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1706,23 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.019Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "No superlative wording. One quoted figure I could NOT reproduce and am reporting as unverified rather than wrong: \"at 56-Fe the bound sits a factor of 26 below the measured binding\". From the block's own ingredients - level-2 Wenzl restriction, at-most-two-row partitions of 3A - I get 3A = 168 and 168//2 + 1 = 85 such partitions, so the entropy bound is ln 85 = 4.4427 nats, log2 85 = 6.4094 bits, log10 85 = 1.9294. Against A = 56 those give 12.61 / 8.74 / 29.02; against A - 1 = 55 bonds, 12.38 / 8.58 / 28.51; against 3A = 168, 37.81 / 26.21 / 87.07. The only combination reaching 26 is 3A over the bound in BITS (26.21), which requires counting the extensive side per strand rather than per bond and measuring entropy in bits - neither of which the block states, and the per-bond reading is what the preceding sentence sets up. Worth ruling out a coincidence: 26 is also exactly Z for iron.",
+        "notes": "Not edited (numeric). Proposed: state the normalisation explicitly - which extensive count (A, A-1 bonds, or 3A) and which logarithm base - so the factor is reproducible, or replace \"a factor of 26\" with the inequality itself, which is the part the argument actually needs and which is correct as stated (A grows linearly, the bound like log A, so the deficit does widen without limit). VERIFIED AND CORRECT, no need to re-flag: the partition count (at-most-two-row partitions of n = floor(n/2)+1 = 85 at n = 168), the log A growth claim, and the KMS statement (\"A faithful normal tracial state has trivial modular dynamics, so it satisfies the KMS condition at beta = 0\") are each right as written."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1742,22 @@
         "reviewed_at": "2026-08-15T10:31:00.977Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "220a30b9cb9b",
+          "ts": "fd124a783e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.062Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"the Markov trace occupies the partition function slot and E_0 occupies the temperature slot\" is the densest construction and reads aloud fine.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T17:27:52.549Z"
+  "updated_at": "2026-08-22T03:28:56.062Z"
 }

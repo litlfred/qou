@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-006-2-the-ﬁrst
 section_title: "The ﬁrst"
 section_number: 2

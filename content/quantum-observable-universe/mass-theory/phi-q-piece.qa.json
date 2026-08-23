@@ -1854,6 +1854,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:52.738Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial; the one negative ('every crossing not in S') is set notation in prose."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1873,6 +1888,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:52.801Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Definition, numbered properties, carrier paragraph, motivic section; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1892,6 +1922,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:52.855Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1911,6 +1956,23 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:52.929Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This construction satisfies three properties:' introduces a list whose third item is not a property. Items 1 and 2 are checkable statements about K_S (boundary values; subset compatibility); item 3, 'Categorical interpretation: The pieces K_S constitute the geometric shadow of the Wedderburn-block stratification', is an interpretation, and the block's own later section repeats it under the heading 'Motivic interpretation'. So the count is padded to three by promoting a gloss to a property. Item 1's label is also wrong on its own terms: 'Functoriality' names two boundary values (K_empty is the unlink, K_full is the original closure), which is not functoriality in any sense.",
+        "notes": "Proposed (structural — it changes the block's claim about what is proved): say 'satisfies two properties', keep items 1 and 2, relabel item 1 'Boundary cases', and move item 3 into the existing Motivic interpretation section where the same statement already lives."
       }
     ],
     "trap-closing-aphorism": [
@@ -1930,6 +1992,23 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.004Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final clause 'solidifying the bridge to hyperbolic volume as a strict regulator statement' hangs a grand consequence off a participle at the very end of a definition block, and 'solidifying' asserts a strengthening that nothing in the block performs.",
+        "notes": "Proposed: state what the family gives ('the family {K_S} is the stratification along which the regulator decomposes') and drop the trailing participle, or cite the block that makes the regulator statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1949,6 +2028,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.099Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1968,6 +2062,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.182Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The Motivic interpretation section adds the Bloch-group reading."
       }
     ],
     "trap-performed-warmth": [
@@ -1987,6 +2096,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.234Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2006,6 +2130,21 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.282Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'strict regulator statement' and 'solidifying' are the two strength words; both recorded under trap-closing-aphorism where they sit."
       }
     ],
     "trap-nonspeakable": [
@@ -2025,6 +2164,22 @@
         "reviewed_at": "2026-08-15T10:31:00.724Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fc326cb9eba8",
+          "ts": "fc9d2ec8289f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:02:53.331Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short declaratives.",
+        "notes": "RIGOR. VERIFIED CORRECT: the index set S subset {0, ..., n-2} has the right cardinality for B_n, whose generators number n-1 (0-indexed sigma_0 ... sigma_{n-2}); and K_empty, obtained by L_0-smoothing every crossing of a closed braid on n strands, is indeed the n-component unlink. ONE CONVENTION ITEM (reported): 'The quantum dilogarithm Phi_q is a q-deformation of the Bloch-Wigner dilogarithm.' AGENTS.md's canonical cheat sheet keeps Phi_q (Faddeev) and Li_2^q (Rogers) explicitly context-sorted, and the object Phi_q q-deforms is the Rogers/Euler dilogarithm; the Bloch-Wigner function D(z) is the single-valued real-analytic combination that computes hyperbolic volume, a different object reached only after the archimedean realisation. The block's own next sentences go on to the quantum Bloch group and 'the bridge to hyperbolic volume', which is presumably why Bloch-Wigner was reached for, but the sentence as written asserts the identification rather than the bridge. Proposed: 'Phi_q is the q-deformation of the Rogers dilogarithm; under the archimedean realisation its regulator is the Bloch-Wigner function.' SECONDARY: the .ts tags this block 'archimedean' and the prose invokes hyperbolic volume, yet the block carries none of the 'Archimedean specialisation' wall notice that its batch siblings prop:nuclear-knot-classification and prop:pauli-factor-wedderburn both carry."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2048,5 +2203,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:02:53.331Z"
 }

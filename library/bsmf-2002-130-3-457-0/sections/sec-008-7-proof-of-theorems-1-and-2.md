@@ -1,13 +1,13 @@
 ---
 doc_id: bsmf-2002-130-3-457-0
-doc_title: "3 .W e c l a s s i f y h y p e r i d e a l p o l y h e d r a , u p t o i s o m e t r i e s o f 3 ,i nt e r m so ft h e i r combinatorial type and of their dihedral angles. R´esum´e"
+doc_title: "Hyperideal polyhedra in hyperbolic 3-space"
 section_id: sec-008-7-proof-of-theorems-1-and-2
 section_title: "Proof of Theorems 1 and 2"
 section_number: 7
 pages: 34-34
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
-doc_brief: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t"
+doc_brief: "Hyperideal polyhedra in hyperbolic 3-space — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t p o l y h e d r o n i n t h e h y p e r b o l i c 3-space 3 which, in the"
 ---
 We are now ready to complete the pro of of Theorems 1 and 2, by considering
 again the map Θ : PΓ → KΓ ⊂ RE ,w h i c ht oah y p e r i d e a lp o l y h e d r o na s s o c i a t e s

@@ -3,8 +3,9 @@
 title: Cite 0012035v3.pdf at rem:lattice-qcd-from-qou
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:26Z
-updated_at: 2026-08-08T23:36:26Z
+updated_at: 2026-08-21T17:04:50Z
 ---
 
 rem:lattice-qcd-from-qou opens with the surface-ordered holonomy formula and cites nothing; the knotted-loop caveat of sec. 2.3.1 is directly relevant since the corpus's spanning surface is a Seifert surface of a knot.
@@ -19,3 +20,10 @@ Source: `library/arxiv-math-ph-0012035v3/0012035v3.pdf` — no `references.ts` e
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-ph-0012035v3/  ->  [broda2002]
+  Non-Abelian Stokes theorem in action
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [broda2002] as the citation key when you do it.

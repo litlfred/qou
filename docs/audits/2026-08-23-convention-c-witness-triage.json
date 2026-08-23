@@ -1,0 +1,727 @@
+[
+ {
+  "witness": "computations/alpha-k-jones-markov-h4.witness.json",
+  "producer": "computations/alpha/alpha_k_jones_markov_h4.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".substrate.markov_z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/audits/producer-importability-audit.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".description"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/binding-block-multiplicative.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov_50dps"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/binding-via-interface-knot.witness.json",
+  "producer": "computations/binding_block_multiplicative.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov_50dps"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/borromean-axial-coupling.witness.json",
+  "producer": "computations/probes/borromean_angle_structure_lp_probe.py",
+  "n_fields": 4,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.gram_matrix[0][1]",
+   ".data.gram_matrix[0][2]",
+   ".data.gram_matrix[1][0]"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/canonical-lepton-braid-words.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/chirality-topology-binding.witness.json",
+  "producer": "computations/probes/chirality_topology_binding_probe.py",
+  "n_fields": 1,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".channel_values_at_q0.pp.std"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/closed-form-tau-M-verification-phase5q.witness.json",
+  "producer": "computations/closed_form_tau_M_verification_phase5q.py",
+  "n_fields": 1,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.per_atom_results[0].interface_ratio"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/confinement-operator-selection.witness.json",
+  "producer": "computations/confinement-operator-selection.py",
+  "n_fields": 5,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".parameters.z",
+   ".gram_matrix[0][1]",
+   ".gram_matrix[0][2]"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/convergence-safe-vhat-tower.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/b4-slater-antisymmetrizer-exchange-sign.witness.json",
+  "producer": null,
+  "n_fields": 3,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".result.part2_exchange_sign_and_ceiling.rows.z_naive.magnitude",
+   ".result.part2_exchange_sign_and_ceiling.rows.z_naive.eigs[1]",
+   ".result.part2_exchange_sign_and_ceiling.rows.z_naive.eigs[2]"
+  ],
+  "pins": [
+   "other",
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/deltalambda-bareven-b4-magnitude.witness.json",
+  "producer": null,
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".result.bar_parity_of_parameter_free_magnitude.z_naive",
+   ".result.forward_test_parameter_free.z_naive.m"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/deltalambda-perpair-bond-magnitude-derive.witness.json",
+  "producer": "computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py",
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".result.constants.z_naive_1/[2]_v",
+   ".result.forward_test_per_candidate.z_naive.magnitude"
+  ],
+  "pins": [
+   "other",
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/deltalambda-saturation-det-ceiling.witness.json",
+  "producer": null,
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".result.constants.z_naive_1/[2]_v",
+   ".result.part4_forward_test.per_magnitude.z_naive.m"
+  ],
+  "pins": [
+   "other"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/deuteron-naive-z-physical-but-does-not-close.witness.json",
+  "producer": "computations/deltalambda/deuteron_naive_z_physical_probe.py",
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".results.derived_inputs_0fit.z_naive_eq_1_over_[2]_v",
+   ".results.per_magnitude.z_naive.magnitude"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form.witness.json",
+  "producer": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".inputs.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/deuteron-fpn-wlambda-wiring.witness.json",
+  "producer": "computations/probes/deuteron_fpn_wlambda_wiring.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".bring_coordinate_crosscheck.z_markov_bond_factor"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/e-0-lp-dual-h3.witness.json",
+  "producer": "computations/derive_e_0_lp_dual_h3.py",
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.t_markov_traces[1]",
+   ".parameters.t_markov_traces[2]"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/electron-m_e-derivation.witness.json",
+  "producer": "computations/derive_m_e_hecke_path_a.py",
+  "n_fields": 1,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.electron.t1_descended.value_50dps"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/f-ell-derivation-via-per-braid-mass-tower.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z_markov"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/free-neutron-decay.witness.json",
+  "producer": "computations/derived_masses.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants_at_q0.z_markov"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/garside-irrep-qvalues.witness.json",
+  "producer": "computations/garside-irrep-qvalues.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/h4-markov-weights-closed-form.witness.json",
+  "producer": "computations/h4_markov_weights_closed_form.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".cross_check_alpha_k_jones_markov_h4.markov_z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/habiro/qbeta-h4-stagec-markov-infra.witness.json",
+  "producer": "computations/habiro/qbeta_h4_stagec_markov_infra.py",
+  "n_fields": 1,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.trM_H4_generator"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/hadron-knot-table.witness.json",
+  "producer": "computations/hadron_knot_table.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/hecke-channel-binding.witness.json",
+  "producer": "computations/probes/hecke_channel_binding_probe.py",
+  "n_fields": 2,
+  "kind": "LIVE-C-PRODUCER",
+  "paths": [
+   ".channels_by_bond.pp.std",
+   ".rows[1].f"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/inter-knot-decoupling.witness.json",
+  "producer": null,
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.z_markov_norm",
+   ".data.tau_M_K1"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json",
+  "producer": "computations/lepton_tower_probe_1_cinquefoil_muon.py",
+  "n_fields": 5,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".constants.z_markov",
+   ".tower_table[0].tr_M_conv_A",
+   ".tower_table[0].tr_M_conv_B"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/mass-from-q-symbolic.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/pentagon-reduction-li2q.witness.json",
+  "producer": "computations/pentagon_reduction_li2q.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/per-generator-V-hat-general.witness.json",
+  "producer": "computations/per_generator_V_hat_general.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/probe-9b-alphak-structure.witness.json",
+  "producer": null,
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.part_2a_numeric.trM_by_word.T1",
+   ".data.part_2a_numeric.trM_by_word.T2"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/probes/casimir-phi-q-markov-probe.witness.json",
+  "producer": "computations/probes/casimir_phi_q_markov_probe.py",
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.markov_parameters.z_M_v1",
+   ".data.geom_multiplied_candidates[2].raw_value"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/probes/flavor-split-partial-derivation-probe.witness.json",
+  "producer": "computations/probes/flavor_split_partial_derivation_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".anchors[1].part1c_corpus_interface_product.markov_z"
+  ],
+  "pins": [
+   "other"
+  ]
+ },
+ {
+  "witness": "computations/probes/frobenius-gram-matrix-probe.witness.json",
+  "producer": "computations/probes/frobenius_gram_matrix_probe.py",
+  "n_fields": 5,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".parameters.z_at_q0",
+   ".data.single_element_traces[1].expected_at_q0",
+   ".data.single_element_traces[1].computed_at_q0"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/probes/markov-stab-trace-axis-probe.witness.json",
+  "producer": "computations/probes/markov_stab_trace_axis_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.z_markov_at_q0"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
+  "producer": "computations/probes/q_hecke_seminormal_character_closure_probe.py",
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.per_test_results[1].lhs_partition_sum",
+   ".data.per_test_results[1].rhs_recursive_reducer"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/probes/reeb-g-structural-identity.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".result.constants.z=1/[2]_v"
+  ],
+  "pins": [
+   "other"
+  ]
+ },
+ {
+  "witness": "computations/probes/t6-tau-h5-embedding-probe.witness.json",
+  "producer": "computations/probes/t6_tau_h5_embedding_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/probes/trefoil-complex-volume-probe.witness.json",
+  "producer": "computations/probes/trefoil_complex_volume_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/q-beta-spectral-bridge.witness.json",
+  "producer": "computations/q_beta_spectral_bridge_witness.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.z_markov_jones"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/q-pinning-50-digit.witness.json",
+  "producer": "computations/q_pinning_50_digit.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".derived_50_digit.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
+  "producer": "computations/qbeta/qbeta_ck_wedderburn_decomposition_scope_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
+  "producer": "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.gate_failing_candidate.z_q0"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json",
+  "producer": "computations/qbeta/qbeta_klr_composite4_preflight_run.py",
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.anchors[0].tr_M_p2_JW_sym",
+   ".data.anchors[1].tr_M_p2_JW_sym"
+  ],
+  "pins": [
+   "muon",
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-ladder-required-phase.witness.json",
+  "producer": "computations/audits/muon_pin_three_values_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.anchors[1].conventions[0].z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-route-alpha-lift-prediction.witness.json",
+  "producer": "computations/qbeta/qbeta_route_alpha_lift_prediction.py",
+  "n_fields": 2,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".data.zeta_at_anchors.proton",
+   ".data.zeta_at_anchors.muon"
+  ],
+  "pins": [
+   "muon",
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json",
+  "producer": null,
+  "n_fields": 2,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".data.t_at_q0[1]",
+   ".data.t_at_q0[2]"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/signed-crossing-feasibility.witness.json",
+  "producer": "computations/probes/signed_crossing_feasibility_probe.py",
+  "n_fields": 1,
+  "kind": "LIVE-C-PRODUCER",
+  "paths": [
+   ".constants.f_pp"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/t35-weak-vertex.witness.json",
+  "producer": "computations/t35-weak-vertex.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".parameters.z_markov"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/t6-lepton-h3-3channel-convention.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/t6-tau-h5-embedding-probe.witness.json",
+  "producer": "computations/probes/t6_tau_h5_embedding_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/t6-three-halves-factor-probes.witness.json",
+  "producer": "computations/t6_three_halves_factor_probes.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/toffoli-lp-stability.witness.json",
+  "producer": "computations/toffoli-lp-stability.py",
+  "n_fields": 4,
+  "kind": "payload-or-mixed",
+  "paths": [
+   ".gram_matrix_at_q0[0][1]",
+   ".gram_matrix_at_q0[0][2]",
+   ".gram_matrix_at_q0[1][0]"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "computations/vhat-per-crossing-chain.witness.json",
+  "producer": "computations/vhat_per_crossing_chain.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/vhat-tower-im-cancellation.witness.json",
+  "producer": null,
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ },
+ {
+  "witness": "computations/xi-ell-phi-q-probe.witness.json",
+  "producer": "computations/xi_ell_phi_q_probe.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".constants.z"
+  ],
+  "pins": [
+   "muon"
+  ]
+ },
+ {
+  "witness": "qou-mass/src/qou_mass/q-pinning-50-digit.witness.json",
+  "producer": "computations/q_pinning_50_digit.py",
+  "n_fields": 1,
+  "kind": "z-parameter-echo",
+  "paths": [
+   ".derived_50_digit.z_markov"
+  ],
+  "pins": [
+   "p50"
+  ]
+ }
+]

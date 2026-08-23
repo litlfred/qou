@@ -1,6 +1,6 @@
 ---
 doc_id: 1-s20-s009731651830061x-main
-doc_title: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Consta"
+doc_title: "Constant term formulas for refined enumerations of Gog and Magog trapezoids"
 section_id: sec-005-2-preliminaries-monotone-triangles-and-truncated
 section_title: "Preliminaries: monotone triangles and truncated monotone triangles"
 section_number: 2

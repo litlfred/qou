@@ -33,15 +33,19 @@ hook-length formula did in `QOU.BraidKnot.HookProductHLF`.
 
 ## Honest axiom status
 
-`burnside_proved` is **not** sorry-free: `OVTopAssembly.sum_numSYT_sq_eq_factorial`
-carries `sorryAx`, sourced from two named, honest sorries —
-`SnWedderburnPartitionBridge:234` (`sn_rational_specht_split`) and
-`JucysMurphy:840` (`centralC2_acts_by_contentSqSum`).
+**Correction (2026-08-23).** The paragraph that stood here said `burnside_proved` is *not*
+sorry-free, because `OVTopAssembly.sum_numSYT_sq_eq_factorial` carried `sorryAx` from two named
+sorries. That is no longer the state of the world, and neither half of it is:
+`centralC2_acts_by_contentSqSum` is proved, and `sn_rational_specht_split`'s `sorry` was replaced
+by the class `SnIsotypicSpechtSplit`, which is now **inhabited**
+(`SnIsotypicSpechtSplitInstance`, from the RSK correspondence rather than from any assumption).
+Measured: `#print axioms` on `burnside_proved` reports `[propext, Classical.choice, Quot.sound]`.
+A hypothesis-free restatement is checked in `WedderburnUnconditional`.
 
-That is still a strict improvement over the projection it replaces. Before, the
-burnside claim was *assumed wholesale* through an instance nobody could provide.
-Now it is *derived*, and its remaining debt is two specific, located obligations in
-the Oka–Vershik assembly. Bridges (1) and (2) themselves are fully axiom-clean.
+Before, the burnside claim was *assumed wholesale* through an instance nobody
+could provide. Then it became *derived* with two located obligations in the
+Oka–Vershik assembly. Both of those are now discharged, so it is derived outright.
+Bridges (1) and (2) were always axiom-clean.
 
 -- Ref: [sagan2001] Sagan, The Symmetric Group §1.10–§3.10 (RSK; Σ (f^λ)² = n!)
 -- Ref: [manuscript] docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (axiom (i))
@@ -79,7 +83,7 @@ Composes bridge (1) (`dimIrrep_eq_numSYT`, axiom-clean), the shape glue above, b
 (`sum_map_eq_sum_partitionIndex`, axiom-clean), and the Wedderburn dimension sum
 (`OVTopAssembly.sum_numSYT_sq_eq_factorial`, which carries the residual `sorryAx` — see the
 module docstring). -/
-theorem burnside_proved (n : ℕ) (partitions : List (Partition n))
+theorem burnside_proved (n : ℕ) (partitions : List (Partition n)) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]
     (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
     (hnodup : (partitions.map Partition.parts).Nodup) :
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
@@ -98,7 +102,7 @@ With this in scope, `DeltaLambdaSignRule.burnside` is no longer conditional in p
 its class argument resolves to a derivation. The class itself is left in place upstream
 (removing it is an upstream edit and would churn every `[BurnsideContext]` signature);
 what changes is that it is now *inhabited by a proof*. -/
-instance instBurnsideContext : DeltaLambdaSignRule.BurnsideContext where
-  burnside_claim := burnside_proved
+instance instBurnsideContext [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] : DeltaLambdaSignRule.BurnsideContext where
+  burnside_claim n partitions hcomp hnodup := burnside_proved n partitions hcomp hnodup
 
 end QOU.BraidKnot.BurnsideDischarge

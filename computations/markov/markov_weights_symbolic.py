@@ -274,8 +274,8 @@ def main() -> int:
         print(f"  y_{shape} = {y}")
         # Cross-check: at q_0 the value should match the alpha_k_jones_markov_h3
         # numerical solution.
-        val_q0 = float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
-        print(f"           ≈ {val_q0:+.10f}  at q_0")
+        val_q0 = sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
+        print(f"           ≈ {float(val_q0):+.10f}  at q_0")  # display only
 
     # Sanity: Σ y_λ · dim_C(λ) = 1  (since tr_M(1) = 1 and χ^λ(1) = f^λ = dim)
     print()
@@ -297,7 +297,7 @@ def main() -> int:
     print(f"  [{time.time() - t0:.2f}s]")
     print()
     print(f"  closed form: {trM_p}")
-    val_q0 = float(sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+    val_q0 = sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
     print(f"  markov_peel ref : 1.0653062286131670")
 
@@ -308,7 +308,7 @@ def main() -> int:
     print("Neutron internal braid:")
     trM_n, _ = tr_M_canonical(neutron, n)
     print(f"  closed form: {trM_n}")
-    val_n = float(sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+    val_n = sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
     print(f"  markov_peel ref : 0.9232332971861535")
 
@@ -326,16 +326,25 @@ def main() -> int:
         ),
         "n": n,
         "y_lambda": {str(sh): str(y) for sh, y in y_lam.items()},
+        # str(), not float(). This evaluates a CLOSED FORM at a 50-digit q0
+        # to 30 digits and then used to cast the result to a double, throwing
+        # away 14 of them on the way out — the same defect as the isotope
+        # producer, in a script whose whole point is that the value comes from
+        # the Markov axioms rather than a fit.
         "y_lambda_at_q0": {
-            str(sh): float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+            str(sh): str(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
             for sh, y in y_lam.items()
         },
         "tr_M_proton_closed_form": str(trM_p),
-        "tr_M_proton_at_q0": val_q0,
-        "tr_M_proton_markov_peel_reference": 1.0653062286131670,
+        "tr_M_proton_at_q0": str(val_q0),
+        # The reference stays at the precision it was recorded with: it comes
+        # from markov_peel, which returns a double. Serializing it through a
+        # 50-digit formatter would pad 17 real digits with 33 invented ones —
+        # exactly the fake precision the padding ratchet exists to catch.
+        "tr_M_proton_markov_peel_reference": "1.0653062286131670",
         "tr_M_neutron_closed_form": str(trM_n),
-        "tr_M_neutron_at_q0": val_n,
-        "tr_M_neutron_markov_peel_reference": 0.9232332971861535,
+        "tr_M_neutron_at_q0": str(val_n),
+        "tr_M_neutron_markov_peel_reference": "0.9232332971861535",
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)

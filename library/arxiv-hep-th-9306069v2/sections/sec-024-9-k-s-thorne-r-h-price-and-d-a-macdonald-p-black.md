@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-024-9-k-s-thorne-r-h-price-and-d-a-macdonald-p-black
 section_title: "K. S. Thorne, R. H. Price, and D. A. MacDonald, P Black Holes: The Membrane"
 section_number: 9
 pages: 47-48
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 Paradigm, Yale University Press, 1986, and references therein.
 10. G. ’t Hooft, private communication.

@@ -1,13 +1,13 @@
 ---
 doc_id: descendants-colored-jones
-doc_title: "Pure and Applied Mathematics Quarterly"
+doc_title: "The descendant colored Jones polynomials"
 section_id: sec-012-references
 section_title: "References"
 section_number: null
 pages: 24-28
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
-doc_brief: "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the"
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 [ADO92] Yasuhiro Akutsu, Tetsuo Deguchi ,a n dTomotada Oht-
 suki, Invariants of colored links, J. Knot Theory Ramiﬁcations 1

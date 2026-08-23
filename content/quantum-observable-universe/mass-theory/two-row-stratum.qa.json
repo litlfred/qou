@@ -1734,6 +1734,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a dominance but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.059Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "\"the restriction is not a dominance but an identity\" and \"not as a measurement but as an identity\" are the block's central correction and are load-bearing."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1753,6 +1768,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.098Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1773,6 +1803,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 468 words (1.28/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.137Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Four spaced em-dashes in 4.4k, two parenthetical and two appositive."
       }
     ],
     "trap-triples": [
@@ -1792,6 +1837,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 468 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.176Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "The \"Distinguished partitions\" list has three entries because it names three genuinely distinct cells."
       }
     ],
     "trap-closing-aphorism": [
@@ -1811,6 +1871,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.216Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Ends on a factual statement about the isotope series."
       }
     ],
     "trap-meta-commentary": [
@@ -1830,6 +1905,22 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.257Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "No emphasis narration. NOTE: the \"**Withdrawn (2026-08-09).**\" paragraph is dated author-tracking prose that AGENTS.md 4d puts in authorNotes kind:\"status\", not in the block body - recorded on the one-voice axis rather than here.",
+        "notes": "Flagged for the one-voice axis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1849,6 +1940,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.296Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "The Empirical-use section adds the 100% / 70-partition figures rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1868,6 +1974,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.334Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1887,6 +2008,23 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.374Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "severity": "major",
+        "evidence": "The counting claims are all correct but the self-conjugacy claim is false. VERIFIED CORRECT: ",
+        "notes": "Lambda^2(n)| = floor(n/2) + 1, so 7 for n = 12, and the listed set {(12),(11,1),(10,2),(9,3),(8,4),(7,5),(6,6)} has exactly those 7 members; p(12) = 77 and 77 - 7 = 70, matching \"the 70 partitions of 12 with ell(lambda) > 2\"; (n-1,1) has dimension n-1; partitions with more than two rows die under Schur-Weyl for V = C^2. FALSE: \"Self-conjugate lambda in Lambda^2(n): this is only (n/2, n/2) for even n. For n = 12, this is (6,6).\" I transposed it - (6,6)' = (2,2,2,2,2,2), which is not (6,6). More generally (n/2, n/2)' = (2,2,...,2) with n/2 parts, self-conjugate only at n = 4. The only self-conjugate partitions with at most two rows are (1) and (2,1), so for n = 12 the stratum contains none, and the bolded \"balanced two-row\" partition (6,6) is not the self-conjugate cell. This propagates into the next paragraph, which first says the non-self-conjugate (n-k,k) \"form mirror pairs under the bar involution\" and then says \"each (n-k,k) pairs with itself under the involution\" - two incompatible statements about the same set, and both use the transpose involution while naming the bar involution q -> q^-1.|Reported, not edited (mathematical). Route: replace the self-conjugacy bullet with the correct statement - Lambda^2(n) contains a self-conjugate partition only for n = 1 and n = 3 - and decide what role (6,6) was meant to play, since \"balanced\" is a real property of it but self-conjugacy is not; then rewrite the mirror-pair paragraph to say which involution is meant. Separately: the final sentence still says \"The dominant block for each atom always lies in Lambda^2(3A)\", which is the dominance reading the block withdraws two paragraphs earlier."
       }
     ],
     "trap-nonspeakable": [
@@ -1906,6 +2044,21 @@
         "reviewed_at": "2026-08-15T10:31:00.420Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ac5a3bd89394",
+          "ts": "0ed6cf6d210d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:26.416Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1928,5 +2081,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:15:26.416Z"
 }

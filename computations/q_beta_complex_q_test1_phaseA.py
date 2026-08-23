@@ -44,7 +44,9 @@ def main() -> int:
     mp.mp.dps = 50
 
     # Constants (CODATA 2022 + hyperbolic volume of figure-eight)
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)  # Vol(4_1) EXACT = 2*Cl_2(pi/3).
+    # The literal here printed 53 digits and was correct to 20; dps is
+    # raised above, so the closed form is exact (bean qou-ckbv).
     cal2_target = M_MU_OVER_M_E           # m_μ / m_e
     cal3_target = mp.mpf("0.78233341")            # Q_β(n) MeV
     m_e = mp.mpf("0.51099895000")                 # m_e MeV

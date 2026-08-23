@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-025-62-the-sewing-procedure-we-will-brieﬂy-sketch-th
 section_title: "The sewing procedure. We will brieﬂy sketch the construction of the sewing homomor-"
 section_number: 6.2
 pages: 10-11
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 phism and give some of its properties (for the details see [TUY] or [U]).
 We consider two versal families ~F and FR parameterized by the base varieties B and BR as in

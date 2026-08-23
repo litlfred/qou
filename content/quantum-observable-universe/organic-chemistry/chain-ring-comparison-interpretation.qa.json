@@ -1233,6 +1233,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.390Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No assertion-by-denial; positive claims are stated positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1268,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.431Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1303,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.473Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Spaced/unspaced dashes counted across the block; none load-bearing, density within normal parenthetical use."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1338,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.515Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1373,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.556Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1408,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.598Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1443,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.637Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1478,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.676Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1513,23 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.715Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "Four unqualified claims in 13 lines, and they contradict the block's own siblings: 'The threading-link picture halves it exactly, with no free parameters'; 'Every quantity is determined by the Bring's surface geometry'; 'The Alexander polynomial requires no input beyond q'; 'the threading efficiency ratio is constant for all even N'. Recomputed: Delta_T(2,6)(q_0)/6 = 3.043706/6 = 0.507284, not exactly 1/2 - the identity is exact only in the q -> 1 limit, where Delta = N/2. And carbon-chains-benzene-intro.md, describing the same estimate, says the opposite: 'the molecular energy scale |.|_mol is an input here, not derived from the substrate calibration' and calls it 'an order-of-magnitude check, not a sharp parameter-free prediction'.",
+        "notes": "STRUCTURAL - not fixed. Proposed: adopt the sibling intro's hedging verbatim; replace 'halves it exactly' with 'halves it at q = 1 (0.5073 at q_0)' and drop 'with no free parameters', which the sibling block explicitly disclaims."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1549,22 @@
         "reviewed_at": "2026-08-15T10:31:00.143Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bd6421271243",
+          "ts": "2d774df8a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.754Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1587,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:04.754Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-006-12-schur-functions
 section_title: "Schur Functions"
 section_number: 1.2
 pages: 4-6
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 For details and proofs on the results mentioned in this subsection we refer the reader to [M]
 Ch.I, sec. 3. Suppose x1, x2, . . . xr is a ﬁnite set of variables. For some partition α we set

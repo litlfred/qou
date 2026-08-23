@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.290Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No assert-by-denying constructions in the two sentences."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.332Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Two declaratives; nothing to pivot."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.369Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.415Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.458Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "The second sentence is the remark's substantive claim, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.496Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "FIX APPLIED: 'This remark formalizes the refinement of the particle-topology mapping by shifting from torus knots to ...' -> 'The particle-topology mapping is refined by shifting from torus knots to ...'. The original narrated what the remark does instead of doing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.537Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Two sentences, no echo."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.577Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,23 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.617Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "'the q-deformed Skein relation provides a RIGOROUS Mass Sum Rule for composite hadronic states' — an unearned strength word on a two-sentence remark that derives nothing and cites nothing; 'Mass Sum Rule' is also capitalised as a named result without being defined here or linked to a block that defines it.",
+        "notes": "PROPOSED: drop 'rigorous' and link 'Mass Sum Rule' to lem:skein-mass-from-linking, which is the formula it appears to name."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.751Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "51f28850116f",
+          "ts": "dab51d87c737"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:37.660Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "FIX APPLIED: 'By treating mass as the geometric resistance of the 1-jet bundle prolongation, the q-deformed Skein relation provides ...' -> 'When mass is treated as ..., the q-deformed Skein relation provides ...'. The original dangled — the Skein relation is not what does the treating — and the sentence stalled on the mismatch. Both sentences now parse aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1771,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:52:37.660Z"
 }

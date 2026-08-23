@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-025-54-proof-of-theorem-51-uniqueness-off-follows-fr
 section_title: "Proof of Theorem 5.1. Uniqueness ofF follows from Lemma 5.2. Indeed, the"
 section_number: 5.4
 pages: 15-16
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 values off on ~v, ~v, Cv, w, F(f ~1, q') are given in (iii, iv); the values off on ~v, 
 ~v are computable from the relations Rell-Rel 4 (cf. the remark in Sect. 5.1); 

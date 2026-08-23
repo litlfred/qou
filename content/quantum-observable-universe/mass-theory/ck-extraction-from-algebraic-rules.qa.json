@@ -1802,6 +1802,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not phenomenological identifications.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.714Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'are **derivable outputs** of four algebraic reduction rules, not phenomenological identifications' is the corpus's derived-vs-fitted discipline, which is the block's actual subject matter (false-positive class: substantive contrast)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1821,6 +1836,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.749Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1840,6 +1870,23 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 365 words)"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.782Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Three dashes, each appending an independent clause rather than setting off a parenthetical: '... determine the unique normal form** --- which is checkable rule by rule', 'Rule 4 (GB/jet reduction) is the novel conjectural ingredient --- it is what closes off phenomenological choice', 'Extend the extraction to $k \\geq 5$ --- the simple alternating ... pattern breaks at $c_5, c_6$'.",
+        "notes": "proposed: colon for the first, full stop for the second, comma+'where' for the third. Not applied: three separate edits in a technical list is past the two-sentence inline bar."
       }
     ],
     "trap-triples": [
@@ -1859,6 +1906,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 365 words)"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.816Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1878,6 +1940,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.850Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1897,6 +1974,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.883Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1916,6 +2008,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.918Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1935,6 +2042,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.951Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1954,6 +2076,21 @@
         "reviewed_at": "2026-08-15T10:31:00.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.984Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1974,6 +2111,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "59ec1905a264",
+          "ts": "6441a5a28103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.018Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 78-line remark (c_k extraction from four algebraic reduction rules), including the ladder display, the four sections and the open-items list. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1997,5 +2149,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:48.018Z"
 }

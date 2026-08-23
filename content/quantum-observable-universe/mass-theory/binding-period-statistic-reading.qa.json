@@ -974,6 +974,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a finite M -difference operator.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.873Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'an insertion recursion, not a finite q-difference operator' is the finding itself; substantive contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -993,6 +1009,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.906Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-em-dash": [
@@ -1012,6 +1044,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 221 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.942Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-triples": [
@@ -1031,6 +1079,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 221 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.977Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Two numbered consequences, not three; no reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1050,6 +1114,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.014Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-meta-commentary": [
@@ -1069,6 +1149,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.049Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1088,6 +1184,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.084Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-performed-warmth": [
@@ -1107,6 +1219,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.118Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-superlative": [
@@ -1126,6 +1254,22 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.188Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 230-word remark (statistic reading, insertion recursion vs q-difference operator, descent-set transfer operator)."
       }
     ],
     "trap-nonspeakable": [
@@ -1145,6 +1289,23 @@
         "reviewed_at": "2026-08-15T10:31:00.368Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0d4ab5e445bf",
+          "ts": "d991991629df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:30.224Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "The transfer-operator paragraph is dense but parses aloud.",
+        "notes": "RIGOR (not a trap): both structural consequences are attributed to named witness JSONs; no free numerics to recheck."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1167,5 +1328,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:30.224Z"
 }

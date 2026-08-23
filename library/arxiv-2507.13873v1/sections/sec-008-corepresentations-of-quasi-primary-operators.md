@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2507.13873v1
-doc_title: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+doc_title: "Probing the singularity at the holographic screen via q-holography"
 section_id: sec-008-corepresentations-of-quasi-primary-operators
 section_title: "Corepresentations of (quasi)-primary operators"
 section_number: null
 pages: 24-28
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 Holomorphic primary operatorsO(z) with weight∆ in a 2d CFT are defined to transform
 under the conformal transformationz→f(z) as

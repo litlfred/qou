@@ -3,8 +3,9 @@
 title: Remark interpreting 1202.4698.pdf at rem:q-dilogarithm-pentagon-associator
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-08-09T00:10:51Z
+updated_at: 2026-08-21T17:05:05Z
 ---
 
 rem:q-dilogarithm-pentagon-associator asserts the dilogarithm-associator-6j identification without a semiclassical anchor. A remark can record that in the modular double the b -> 0 limit of the 6j symbol is a hyperbolic tetrahedron volume, and must state the applicability check: the tetrahedra are non-ideal (six free dihedral angles), so this does not by itself supply Vol(4_1) or any ideal-triangulation volume the corpus uses -- what would need checking is the ideal limit of eq (3.3).
@@ -17,3 +18,10 @@ Source: `library/arxiv-1202.4698v3/1202.4698.pdf` — no `references.ts` entry y
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1202.4698v3/  ->  [terashima-yamazaki2013]
+  6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [terashima-yamazaki2013] as the citation key when you do it.

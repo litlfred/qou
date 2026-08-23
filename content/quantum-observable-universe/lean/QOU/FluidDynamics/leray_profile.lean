@@ -55,7 +55,9 @@ class LerayProfileContext (R : Type*) [CommRing R] where
 
     `V(0) = Σ_n V_coeff n` — *derived* by evaluating the finite ansatz
     `profile_expansion` at `0` and applying the basis normalisation
-    (`mul_one` per component). -/
+    (`mul_one` per component).
+
+    LaTeX: `\label{prop:leray-profile}` -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
 theorem leray_profile {R : Type*} [CommRing R] [ctx : LerayProfileContext R] :
     ctx.V 0 = ∑ n : Fin (ctx.j_max + 1), ctx.V_coeff n := by

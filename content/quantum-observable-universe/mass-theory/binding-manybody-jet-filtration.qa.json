@@ -1733,6 +1733,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not a fitted constant.\"; \", not the same element.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.827Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Four contrasts ('not a fitted constant', 'not reducible to pairwise sums', 'not excluded', 'not a sum to A') are each the substantive claim being made; false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1752,6 +1768,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.860Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1772,6 +1804,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "10 stylistic spaced dashes in 496 words (2.02/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.894Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-triples": [
@@ -1791,6 +1839,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 496 words)"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.928Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'(fixed small n_max, a 2-3-body cluster count x A-multiplicity, matching nuclear 2-/3-body force dominance)' is a substantive three-part gloss, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1810,6 +1874,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.962Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1829,6 +1909,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.997Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1848,6 +1944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.031Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1867,6 +1979,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.065Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-superlative": [
@@ -1886,6 +2014,22 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.099Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 510-word conjecture incl. the w_n(K) scope note and the A>=5 refutation paragraph; numerics recomputed."
       }
     ],
     "trap-nonspeakable": [
@@ -1905,6 +2049,23 @@
         "reviewed_at": "2026-08-15T10:31:00.445Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "683309a7dacc",
+          "ts": "dea66f6a2fe5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.132Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "FIX APPLIED -- one headless noun phrase repaired.",
+        "notes": "fix applied: 'A derive-or-refute of the weight kernel establishes what does *not* close.' -> 'A derive-or-refute probe of the weight kernel establishes ...' (missing head noun; grammar only, no meaning change). RIGOR (not a trap): recomputed and CONFIRMED -- B(4He)=2*m_e*A*Vol(L6a4)=29.9557 MeV vs AME 28.29566 => +5.867% (quoted +5.87%); 3H/3He split 8.4818-7.7180=0.7638 MeV = 9.90% (quoted 0.76 MeV, 9.9%). A in the magic-shell formula is the nucleon count (=4), not Catalan's G -- no symbol collision."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1928,5 +2089,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:29.132Z"
 }

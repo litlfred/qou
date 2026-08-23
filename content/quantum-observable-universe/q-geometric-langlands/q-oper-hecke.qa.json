@@ -1806,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.770Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1825,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.808Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1844,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.845Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1863,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.884Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1882,6 +1946,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.924Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1901,6 +1981,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:53.978Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1920,6 +2016,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:54.018Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1939,6 +2051,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:54.076Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1958,6 +2086,23 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:54.127Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Opens 'We **explicitly construct** q-Hecke eigensheaves from q-opers.' The construction is M = L_q^{-1}(delta), i.e. it routes through the inverse of an equivalence that conj:q-geometric-langlands only conjectures to exist; the sibling proof-sketch block hedges correctly ('Under the conjectured equivalence L_q'), this one does not.",
+        "notes": "proposed (NOT applied - math claim): 'Assuming the q-Geometric Langlands equivalence, every q-oper determines a q-Hecke eigensheaf.' Reported as ANOMALY 26."
       }
     ],
     "trap-nonspeakable": [
@@ -1977,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.924Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0ab793fa2f87",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:54.167Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 2 displays + irreducibility claim); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2000,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:54.167Z"
 }

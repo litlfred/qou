@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-07T09:01:57Z
+updated_at: 2026-08-22T20:20:42Z
 ---
 
 
@@ -182,3 +182,355 @@ did, and that was an overclaim.
    actual bulk, and it is a producer-side question, not a witness-rewrite.
 3. Only then consider the 709 labelled-muon files, and only where a producer
    re-run is genuinely wanted — not as a string substitution.
+
+## 2026-08-19 — the gate is now satisfied, and the sweep is not a re-run
+
+**Authorisation.** The owner's 2026-08-15 directive ("otherwise pin proton";
+"fix all, even if not visible") is now recorded in AGENTS.md §q₀ anchor
+convention rule 4, which is where the gate asked for it. PR #5049 held the
+bulk reclassification back on exactly that ground and was right to — a chat
+transcript does not satisfy a durable gate.
+
+**What the first attempt cost, and what it bought.** It broke `main` for 208
+producers (`qou-m9xp`). The four constraints now recorded with the
+authorisation come out of that, and the second is the one an agent is most
+likely to skip:
+
+1. never re-pin an anchor-DEFINING witness (`q-pinning-50-digit`) — that
+   redefines what "muon" *means* rather than migrating a consumer;
+2. the muon anchor keeps a definition — "proton everywhere" governs what new
+   compute pins to, not whether the ideal layer is statable;
+3. a comparison producer needs BOTH pins, so the manifest cannot serve it —
+   it reads `q_at()`/`q_muon_at()` by name and lives under `physical_proton`;
+4. manifest and witnesses are ONE change — #5049 split them and the half that
+   landed is the half that broke main.
+
+**Sequencing that follows from those.** This is not "run the sweep". It is:
+
+- confirm `q0_repin_sweep.py` still carries `ANCHOR_DEFINING` /
+  `ANCHOR_DEFINITIONS` (added by the `qou-m9xp` fix — do not remove);
+- flip the manifest and run the sweep in ONE branch, so the two never separate
+  again;
+- expect the sweep to resurrect long-broken producers: three did last time
+  (missing scipy; `float(mpc)`; `'.6f'` on an mpf), and each crash was a real
+  finding, not noise — the `float(mpc)` one was the probe correctly reporting
+  that ²H and ³H have negative bar ratios;
+- classify every float64-carrying producer it surfaces with
+  `classify_production_reach.py`; production → mpmath, otherwise
+  `precision_tier: "float64"` + `deprecated` per the owner's ruling.
+
+**Measured, so the next agent does not re-measure.** Triaging the 257 down is
+not available: by precision, 255/255 carry ≥9 sig figs somewhere; by reader
+count, 44 have a reader and 211 are leaves — and skipping leaves is how the
+μ–p tension audit understated its own subject 155× unnoticed.
+
+---
+
+## 2026-08-19 — the sweep RAN, the predicted failure fired, and the triage was never used
+
+Reviewed against `origin/main` at `5b158ef06c`, 1163 commits after the triage
+landed. Three things to record, in descending order of how much they should
+change what happens next.
+
+### 1. The circularity hazard this bean documented is no longer hypothetical
+
+The §"1. RETRACTED" section above says, in its own words:
+
+> **The real defect ... the muon 50-dps constant is CIRCULAR** — its producer
+> reads, via `q_at`, the witness it writes. ... Breaking that loop must move
+> the LABEL and the COMPUTED VALUE together, or it reintroduces the
+> disagreement above.
+
+The `tnjb` sweep (`9a9c6b31c`, "first 25 witnesses regenerated at the proton
+pin") moved the VALUE without the accessor. `q-pinning-50-digit.witness.json`
+is what `qou_substrate/witness.py::_q0_value_for_anchor` reads *as the
+definition of the muon pin*, so regenerating it at proton left both anchors
+resolving to the same value and **the muon pin with no definition in the tree
+at the path its own accessor points to**. Measured consequence: 262 Q0_FLIPs
+against `--strict`.
+
+Fixed by `2e4745448d` ("restore the muon anchor — the repin sweep overwrote its
+own definition"); bean `qou-cezp` is completed and `qou-m9xp` carries the full
+trace. Verified in this tree: the file is back at `q0Anchor: muon`, `computedAt
+2026-07-18`, and the two anchors now resolve 11.54 ppb apart as they should.
+
+**The lesson is not "be careful".** It is that this file is a *definition*, not
+a datum, and a sweep that treats it as a datum breaks the layer it is sweeping.
+Any future batch must exclude `q_pinning_50_digit` explicitly, or move the
+accessor off it first.
+
+### 2. The tolerance triage merged and has never been run by anything
+
+`computations/q0_migration_tolerance_triage.py` (`8b0dee25ea`) exists to order
+exactly this sweep — step 2 item 2 of the sequencing above. Measured today:
+the only file in the corpus that references it is **its own test**. The sweep
+ran without it.
+
+That is not a complaint about the sweep; it is a defect in how the tool was
+delivered. A triage nothing calls is a triage that does not run. Wiring it into
+the batch entry point is the actionable item, not writing more of it.
+
+### 3. A dated DELTA — not a census, and not a number to quote
+
+§2 above says "do not quote a count from this bean", and that rule stands: the
+canonical census is whatever `--json` prints today. What follows is a different
+object — a *dated before/after* whose only job is to answer "is the migration
+moving?", which a single census cannot answer. Reproduce with:
+
+    python3 computations/q0_migration_tolerance_triage.py
+    python3 computations/q0_provenance_audit.py --json
+
+If you need a count for anything else, run those and use that.
+
+    q0_migration_tolerance_triage.py        q0_provenance_audit.py --json
+      muon-anchored witnesses  576             scanned          3222
+      PINNED-TO-ANCHOR           0  (was 1)    muon              940  (was 981)
+      AT-RISK                   55  (was 61)   proton            637  (was 553)
+      producers to order        25  (was 28)   neither          2487
+                                               known-stale       380  (was 421)
+
+The migration IS moving: proton +84, muon −41, known-stale −41, and the single
+`PINNED-TO-ANCHOR` assertion (`lambda_plus_eq_q`, 1e-18 tolerance against a
+quantity shifting 1.15e-8) is gone. Both audits still run clean across a corpus
+that gained 84 witnesses, which is the useful robustness signal.
+
+### Next step, concretely
+
+1. **Wire the triage into the batch driver** so a sweep cannot start without an
+   ordering. Until then it is decoration.
+2. **Exclude `q_pinning_50_digit` from every batch**, per §1, or repoint
+   `_q0_value_for_anchor` at a definition that is not itself a sweep target.
+   The second is the real fix; the first is the safe stopgap.
+3. Then the 25 producers, AT-RISK first, one at a time.
+
+## 2026-08-19 (b) — ~~the migration is 357, the ideal layer is comparison~~ RETRACTED
+
+> **The conclusion of this section is WRONG and is retracted 2026-08-21.**
+> Struck rather than deleted, because the *measurement* stands and only the
+> inference from it was bad — and because this is the second time in this bean
+> that a correct measurement carried a wrong conclusion.
+>
+> **What was wrong.** I read "declared `ideal_muon` in the manifest" as
+> "explicitly justified as a comparison, therefore keep". It is not. It is
+> simply where `q_parameter`'s argv-stem auto-selector happens to route a
+> producer. The owner's actual carve-out, recorded verbatim in AGENTS.md rule 4
+> on 2026-08-19, is narrower:
+>
+> > *"we want proton unless for an explicit reason (like comparison on proton
+> > vs muon results). otherwise pin proton"* / *"fix all, even if not visible."*
+>
+> A manifest entry is not an explicit reason. The 219 are the sweep's
+> **target list**, not a keep-list, and `q0_repin_sweep.py` on main is built
+> to flip exactly them.
+>
+> **What survives.** Only two things stay muon, and neither is the manifest:
+> 1. `q-pinning-50-digit` — the anchor DEFINITION. "Proton everywhere" governs
+>    what compute pins *to*, not whether the ideal layer is *statable*; delete
+>    it and the μ–p tension cannot be expressed at all. Guarded on the live
+>    driver as `ANCHOR_DEFINING`.
+> 2. Genuine comparison producers, which read `q_at()` / `q_muon_at()` **by
+>    name** and live under `physical_proton`. The manifest cannot serve them —
+>    it selects one anchor, and a comparison needs both.
+>
+> That design is better than the one I proposed and it was already on main
+> while I was proposing mine.
+>
+> **The measurement that stands:** 219 muon witnesses from a declared producer,
+> 357 not. Both sets are in scope. "Fix all, even if not visible" explicitly
+> rejects triaging either by visibility.
+
+### Original section follows (measurement good, conclusion retracted)
+
+
+Owner question, and the right one: *"why muon pinned? is it comparison? if so
+ok, otherwise proton pin."* Measured rather than reasoned about.
+
+`computations/q0_anchor_manifest.json` declares which producers run at the
+ideal anchor. Cross-tabbing that against the muon-anchored witnesses:
+
+    muon witnesses from a DECLARED ideal_muon producer : 219
+    muon witnesses NOT declared (unmigrated)           : 357
+
+So the answer splits cleanly, and it is exactly the owner's rule:
+
+* **219 — comparison, leave them.** The declared ideal layer is the canonical
+  3-CAL chain: CAL-2 is `𝔇_β` with proxy `m_μ/m_e`, so muon is correct there
+  **by definition**, not by inertia. The μ–p tension (11.54 ppb; 9.5 σ on
+  m_μ) is only *measurable because both pins exist*. Collapsing the ideal
+  layer into the experimental one does not tidy the corpus — it deletes the
+  comparison that the framework's own cross-check depends on.
+* **357 — not comparison, migrate them.** No manifest entry, no declared
+  reason, just unswept. These are the migration, and the target is proton per
+  the 2026-08-07 directive.
+
+**Caveat on the split.** "Declared" is intent *as recorded*, not proof. A
+producer could be undeclared and legitimately need muon (nobody declared it),
+or declared and wrongly so. The manifest is the repo's own statement of intent
+and so the right first cut, but a producer moving between the two sets is a
+judgement call, not a sweep step.
+
+### The driver did not read the manifest at all
+
+Measured before the fix: of the 23 producers in the driver's plan, **16 were
+declared `ideal_muon`**. Sweeping them would have migrated canonical-chain
+artifacts off their declared layer — the same class of error as the pin-file
+overwrite in §1 above, distributed across sixteen files instead of
+concentrated in one, and correspondingly harder to notice.
+
+Fixed: the driver now loads the manifest and excludes declared ideal-layer
+producers by default (`--include-declared-ideal` to override, which is an
+owner call since it re-declares a layer). Effect on the live plan:
+
+    before:  333 producers considered
+    after :  132 candidates
+             215 excluded — declared ideal_muon
+               1 blocked  — NEVER_SWEEP (the pin definition)
+               3 deferred — at-risk assertions
+             110 actually sweepable
+
+### Correction to my own previous "next" item
+
+The 2026-08-19 (a) entry ended by pointing at `alpha_k_jones_markov_h12` as
+the remaining live straddle. **It is not** — it was repinned to
+`q_parameter.Q_50_DIGIT_STR` (proton) earlier in this arc; its `Q_PIN` line is
+a `record_upstream` provenance call, not a value read. I carried that item
+forward from `qou-m9xp`'s older "To close" list without reading its own later
+correction four sections down. The corpus is the source of truth, not the
+status note — including when the status note is in the same file as its
+retraction.
+
+
+## 2026-08-21 — two more corrections to my own work on this bean
+
+**1. I patched the wrong driver.** `q0_repin_regen_batch.py` (216 lines, last
+touched 2026-08-10) is superseded by `q0_repin_sweep.py` (397 lines, touched
+2026-08-19), which already had the `ANCHOR_DEFINING` guard I "added", plus
+topological ordering and a resume journal that mine lacks. I checked whether
+the guard existed *on the file I was editing* and not whether a better driver
+existed. The stale one now refuses to run and says why.
+
+**2. Deferring at-risk producers is against the directive.** My gate deferred
+them by default. "Fix all, even if not visible" rejects exactly that: the live
+sweep's docstring records that bucketing by significant digits (255/255 carry
+≥9 sig figs) and by reader count (44 readers, 211 leaves) were both tried and
+both rejected, because they leave a stale number on the theory nobody is
+looking. The tolerance triage is still useful — but as **ordering and
+annotation**, never as a skip. Offering it to `q0_repin_sweep.py` in that form
+is the remaining actionable item.
+
+
+---
+
+## 2026-08-22 — this bean's headline count is stale, and the shortfall is not what it looks like
+
+Measured on `main` today, over all 3030 `computations/**/*.witness.json`:
+
+| measure | count |
+|---|---|
+| muon **fingerprint** anywhere in the file (the method behind the "~840") | **624** |
+| muon **stamp** — `q0Anchor: muon` or a muon `q0Value` | **65** |
+| fingerprint present but no muon stamp | **559** |
+
+The title says *"~840 muon-q0 witnesses"*; AGENTS.md §q₀ rule 4 has carried 870. By the comparable fingerprint method it is now **624**.
+
+**The 559 are not a migration backlog, and counting them as one repeats a mistake this arc already made twice.** A fingerprint hit means the muon digit string appears *somewhere* in the file — which a deliberate two-pin comparison, a recorded pin-gap diagnostic, or a stale data field all produce without the witness claiming muon anywhere. Reading a raw grep count as a defect count is exactly what produced the retracted `qou-0hnz` claim (254/78 → measured 0) and the `qou-sccd` opening framing (11 candidates → measured 2). The stamp count, **65**, is the only figure tied to a claim the corpus actually makes.
+
+**And 65 is not automatically a work-list either.** Three of them are now *legitimately* muon by design — `q_pinning_50_digit` (the anchor definer, which must never move), `atomic_tr_m_mpfr_50dps` and `cross_check_trM_1ppb` (two-pin comparison producers restored under `qou-ibbr` / `qou-wn6d` precisely because moving them to proton broke them). Any re-baseline has to separate that class before proposing a sweep.
+
+### Suggested re-baseline, before any bulk work
+
+1. Partition the **65** stamped-muon witnesses into: (a) anchor-defining, (b) deliberate comparison producers, (c) genuine migration remainder.
+2. Sample the **559** fingerprint-only witnesses to establish what the fingerprint is actually hitting — comparison values, pin-gap diagnostics, or stale fields. Do not assume.
+3. Only then size the sweep. The four constraints recorded in AGENTS.md rule 4 still bind, and the first attempt at this migration broke `main` for 208 producers (`qou-m9xp`).
+
+Recording the numbers rather than acting on them: the sweep is the step that has gone wrong before, and it should start from a measured work-list, not from a count nobody has re-derived since the migration ran.
+
+
+## Re-baseline #2 (2026-08-22) — my first re-baseline was wrong the same way the original was
+
+Both the original `~840` and my `624 fingerprint / 65 stamped` came from
+grepping a **12-digit prefix** of the muon pin. That prefix does not
+identify the muon pin. The corpus carries **two** muon values agreeing to
+11 digits:
+
+    current     1.10997859555733471...   live ideal / CAL-2 pin
+    superseded  1.10997859555418057...   the "old muon value"
+
+Prefix sensitivity: `642 / 624 / 236 / 206` as the prefix lengthens. The
+624 -> 236 drop is 388 witnesses carrying a **different number**.
+
+Measured over 3030 tracked witnesses:
+
+| population | count |
+|---|---:|
+| current muon | 212 |
+| **superseded muon** | **375** |
+| both (comparison) | 24 |
+| rounded / low-precision | 31 |
+
+The superseded class is the **largest** and is a **different defect**:
+wrong under either convention, stale on its own terms, not "awaiting the
+proton migration". Already documented as a pin-currency defect in
+`local/language-trap-agent-audit`; what is new is its size.
+
+### The confirmed, actionable class — 5
+
+`q-pinning-50-digit.witness.json` is muon-anchored. Of live producers:
+136 reference it, 69 read the JSON directly without importing
+`q_parameter`, and **56 bind q0 from `derived_50_digit["q"]`** — so they
+inherit its anchor rather than choosing one.
+
+- **51 UNDECLARED** in `q0_anchor_manifest.json`
+- **5 declared `physical_proton`** — flat contradiction, confirmed in
+  both directions (manifest says proton, code pins muon, emitted witness
+  is stamped `proton` while recording the muon value):
+  `aK_via_lp_dual_hecke_basis`, `b_over_m_order_probe`,
+  `path4_rho_K_at_h3A`, `q1_mass_gap_probe`, `q_beta_form_a_n1_extension`.
+  `q1_mass_gap_probe.py:170` comments "(proton anchor)" directly above
+  the muon read.
+
+This is the **direct-read sibling** of the `y_lambda_at` cached-accessor
+trap this bean already names — same failure one layer down, bypassing
+every guard on the accessor path.
+
+### Scope
+
+Does **not** authorise the bulk sweep (constraints 1-4 stand; qou-m9xp
+broke main for 208 producers). Does **not** make the 51 undeclared
+producers defects — a genuine ideal-layer producer *should* read the muon
+pin. The finding is 56 pinning muon against 3 declared `ideal_muon`.
+Classifying the 51 is the next step; the 5 are actionable now.
+
+Re-runnable: `python3 computations/audits/q0_muon_population_partition.py`
+(`--list-contradictions` exits 1 while any remain). Audit:
+`docs/audits/2026-08-22-q0-migration-worklist-partition.md`.
+
+
+## Coordination with qou-o922 (measured 2026-08-22) — opposite failure modes
+
+Sibling bean `qou-o922` measures a closely-related population
+(`undeclared_muon_pin_flip_risk_audit.py`, ratcheted 49 -> 40). Intersection
+against my 56 direct muon-pinners: **4 overlap, 45 sibling-only, 52 mine-only.**
+
+Nearly disjoint, because the two behave **oppositely on re-run**:
+
+- **qou-o922**: muon-stamped witness + producer undeclared. On re-run
+  `q_parameter` falls through to the **proton default** and `WitnessBuilder`
+  drops the label in the same step -> **the pin flips and the evidence
+  disappears together.**
+- **mine**: the producer reads `q-pinning-50-digit.witness.json` **directly**,
+  never importing `q_parameter`. Manifest state is irrelevant -> **re-running
+  flips nothing**; it stays muon indefinitely.
+
+**Consequence for qou-o922's stated fix.** Its next step is *"add a manifest
+entry ... THEN re-run"*. Correct for its own 45; **a no-op for my 52** — a
+producer that never consults `q_parameter` cannot observe its manifest entry.
+Declaring it and re-running leaves it on muon while the declaration says
+proton, which is exactly how the 5 contradictions arose.
+
+The 4 in both need the **read** fixed before the manifest entry, or the entry
+will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
+`qbeta_fsc_g_pattern_comparison`, `qbeta_symbolic_sdp_strict_complementarity`,
+`qbeta_trm_crosscheck_convention_pin_split_probe`.
+
+Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.

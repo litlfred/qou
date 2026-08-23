@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0411647v2
-doc_title: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS"
+doc_title: "Asymptotics of characters of symmetric groups, genus expansion and free probability"
 section_id: sec-016-63-connection-with-orthogonal-polynomials-and-wi
 section_title: "Connection with orthogonal polynomials and Wick product"
 section_number: 6.3
 pages: 57-58
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
-doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many"
+doc_brief: "Asymptotics of characters of symmetric groups, genus expansion and free probability — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear"
 ---
 pose that a probability measure µ on the real line is given. We consider a
 sequence P0, P 1, . . . of orthogonal polynomials with respect to the measure

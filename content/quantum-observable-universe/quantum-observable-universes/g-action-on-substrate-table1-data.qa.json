@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.153Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.199Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.245Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.291Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.338Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.384Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.430Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.475Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.520Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3d80fdb172a4",
+          "ts": "6ced32248598"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:14.567Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row markdown table only (component / G-irrep / post-EWSB role); no connected prose, so no trap construction is possible. Checked the G-irrep column against parent conj:g-action-on-substrate constraint (G-1) decomposition A = A^(gamma)+A^(W+)+A^(W-)+A^(Z)+A^(H)+A^(matter): all six components present and in the same order.",
+        "notes": "No trap. Row set matches the parent block's (G-1) direct sum exactly."
+      }
     ]
   },
   "source_hashes": {
     "md": "3d80fdb172a4",
     "ts": "6ced32248598"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:29:14.567Z"
 }

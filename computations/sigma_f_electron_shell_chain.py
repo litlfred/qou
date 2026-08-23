@@ -39,6 +39,12 @@ stated mechanism (critical-distance license, AGENTS.md).
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import math
 from pathlib import Path
 
@@ -370,6 +376,9 @@ def _emit_witness(records, qclt, obs, findings):
             "data": data,
             "witness_builder_note": f"WitnessBuilder unavailable: {e}",
         }
+        # Fallback path bypasses WitnessBuilder -- stamp the pin here.
+        from q0_stamp import stamp_q0_anchor  # noqa: PLC0415
+        stamp_q0_anchor(witness, __file__)
         out = Path(__file__).with_name("sigma-f-electron-shell-chain.witness.json")
         out.write_text(json.dumps(witness, indent=2, default=str))
         print(f"\nWitness (plain): {out}")

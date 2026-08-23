@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.450Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Pure-data table, read in full."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.518Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.563Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.611Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Twenty data rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.654Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.714Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.786Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.848Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.915Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No prose. The '+0.003%' to '+0.167%' error column is the inflation risk, but it is a number, not a rhetorical construction — see notes."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c7fcac401562",
+          "ts": "e08bb342b5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:10.970Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only.",
+        "notes": "RECOMPUTED ALL 20 ROWS (25 dps). Internal arithmetic is CLEAN: Delta = pred - obs and Delta/m = 100 Delta/obs reproduce on every row to the tabulated precision; zero rows fail. The observed column is atomic (H at 938.783 = m_p + m_e - 13.6 eV, He4 at 3728.401), which is the right convention. THE CONSEQUENTIAL FINDING is the excision issue: these are ABSOLUTE atomic masses in MeV, which under the 2026-08-11 owner ruling are never a framework prediction, and the Delta/m column measures the error against a total that is ~99.9% free-nucleon rest mass supplied by CODATA. Recomputing the error against the quantity the framework actually supplies — the nuclear binding energy B = Z m_H + N m_n - M_atom — inverts the impression completely: He4 B = 28.296 MeV, err +22.0% (tabulated +0.167%); Be9 B = 58.165, err -27.7% (tabulated -0.192%); B11 -23.4%; N14 -13.2%; C12 -9.8%; Ar40 +14.3%; Ca40 +9.9%; O16 -6.6%; median |err/B| about 8%, range 0.4% to 28%. So the table's sub-0.2% column overstates the accuracy of the framework-supplied part by two to three orders of magnitude. The parent remark rem:mass-table-z1-20 already says the rows are not reproducible from a committed witness and that the live pipelines give much larger errors, but it does not make this point, and the table block carries no caveat at all."
+      }
     ]
   },
   "source_hashes": {
     "md": "c7fcac401562",
     "ts": "e08bb342b5c2"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:45:10.970Z"
 }

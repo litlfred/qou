@@ -8,4 +8,4 @@ amphicheiral corollary
 $(1 - h^2)^k$.  $\square$
 
 **Application.** ${}^4\mathrm{He}$ is a Borromean-$2$ configuration;
-its knot factor is $(1 - h^2)^2$ — derived, not fit.
+its knot factor is $(1 - h^2)^2$, a derived value.

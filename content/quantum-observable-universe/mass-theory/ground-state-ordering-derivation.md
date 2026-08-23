@@ -32,8 +32,7 @@ contributions were expected to average to zero over many chain
 steps, making the mixed crossings neutral spacers between the
 binding $T_{nn}$ and anti-binding $T_{pp}$ contributions.
 
-**This heuristic does not survive contact with the actual
-$\Phi_q$.**
+**The exhaustive sweep below refutes this heuristic.**
 
 ## What the exhaustive sweep found
 

@@ -104,7 +104,10 @@ axiom Partition (n : ℕ) : Type
 axiom hookLengths {n : ℕ} (lam : Partition n) : List ℕ
 
 /-- The transpose involution (Dynkin fold; cf.
-    cpt-orbit-closure-density.lean). -/
+    cpt-orbit-closure-density.lean). Opaque accessor on the `Partition` carrier;
+    the concrete map is `YoungDiagram.transpose` once `Partition` is wired to
+    Mathlib's `YoungDiagram`. -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (partition transpose λ ↦ λᵀ)
 axiom partitionTranspose {n : ℕ} : Partition n → Partition n
 
 /-- Hook lengths are preserved by transpose (Mathlib
@@ -166,15 +169,21 @@ conditional on conj:symmetric-crystal-pair-production.  We
 axiomatise that conjecture as a class (per AGENTS.md §3b-cond)
 and the theorem below has no `sorry` in its proof body. -/
 
-/-- The Hecke normal form carrier (from `hecke-normal-form.lean`). -/
+/-- The Hecke normal form carrier (opaque; full structure in
+    `hecke-normal-form.lean`). -/
+-- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (normal forms in H_n)
 axiom HeckeNormalForm (n : ℕ) : Type
 
 /-- The bar-involution acting on a Hecke normal form (`q ↦ q⁻¹`,
-    crossings reversed). -/
+    crossings reversed). Opaque accessor; the involution is the standard Hecke
+    bar-involution. -/
+-- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (bar-involution q ↦ q⁻¹ on H_n)
 axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n
 
 /-- A predicate isolating those normal forms emitted by the
-    pair-production engine. -/
+    pair-production engine (opaque; its content is the conjectural
+    symmetric-crystal pair-production engine, not a provable proposition). -/
+-- Ref: [manuscript] conj:symmetric-crystal-pair-production
 axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop
 
 /-- Class-form axiomatisation of conj:symmetric-crystal-pair-production.

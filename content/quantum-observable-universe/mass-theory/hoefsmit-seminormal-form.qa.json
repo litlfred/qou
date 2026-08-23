@@ -1762,6 +1762,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.158Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Full read; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1781,6 +1796,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.213Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1800,6 +1830,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.294Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1819,6 +1864,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.367Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The three-case matrix display is an exhaustive definition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1838,6 +1898,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.413Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on the Hecke/braid relations and the R-matrix identification — content."
       }
     ],
     "trap-meta-commentary": [
@@ -1857,6 +1932,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.451Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1876,6 +1966,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.493Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1895,6 +2000,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.553Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1914,6 +2034,21 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.592Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1933,6 +2068,22 @@
         "reviewed_at": "2026-08-15T10:31:00.658Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0f335be63dbc",
+          "ts": "9ed2147358a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.634Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Definition-style prose, reads aloud.",
+        "notes": "VERIFIED, and correct: with a_rho = h/(1-q^{-2 rho}) I confirmed symbolically that a_rho + a_{-rho} = h identically and a_rho a_{-rho} - b^2 = -1 for b^2 = a_rho a_{-rho} + 1, so each 2x2 block has char poly x^2 - hx - 1 with roots q and -q^{-1} exactly as the sibling proof asserts. Minor notes: (1) the codomain is written M_{d_lambda}(C) while the source is H_n(R,q) — a base-ring straddle under AGENTS.md 7c; (2) the hypothesis \"q > 1\" is an archimedean ordering, needed only for the real square root in b, and could be stated as such; (3) uses[] is empty."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1956,5 +2107,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:28:17.634Z"
 }

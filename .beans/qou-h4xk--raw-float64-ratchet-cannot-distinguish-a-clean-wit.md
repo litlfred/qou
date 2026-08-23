@@ -1,10 +1,11 @@
 ---
 # qou-h4xk
 title: raw-float64 ratchet cannot distinguish a clean witness from an empty one
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T10:32:31Z
-updated_at: 2026-08-15T10:32:31Z
+updated_at: 2026-08-19T21:04:09Z
 ---
 
 
@@ -69,3 +70,17 @@ against. The cheap reference already in the repo is the committed copy:
 This is a **pre-commit** guard, which is the right place: the damage is done
 when a gutted witness is committed, and CI here is dispatch-only
 (2026-06-30 Actions-billing directive), so CI cannot be the backstop.
+
+## CLOSED — the guard is a BLOCKING gate on main (verified 2026-08-19)
+
+`computations/witness_shape_guard.py` is registered in
+`scripts/precision-gates.sh` as blocking, and its self-test passes on current
+main. The gate list carries the reasoning inline: the ratchet counts raw
+floats, so a gutted witness scores zero and reads as a perfect drain; this one
+asks the orthogonal question by diffing shape against HEAD. Neither subsumes
+the other.
+
+Worth recording: the guard fired for real during its own arc, on a mid-write
+`rho-k-co-casimir-extended` — the ratchet reported 0 raw floats ("clean") on
+the same file the guard reported COLLAPSED (1,863 -> 899 leaves, durationMs
+2,552,837 -> 12,262). That is the exact false-green the bean was filed for.

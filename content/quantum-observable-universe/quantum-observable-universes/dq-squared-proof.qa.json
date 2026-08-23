@@ -1205,6 +1205,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.576Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1224,6 +1240,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.694Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-em-dash": [
@@ -1243,6 +1275,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 55 words)"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.737Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-triples": [
@@ -1262,6 +1310,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 55 words)"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.825Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-closing-aphorism": [
@@ -1281,6 +1345,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.872Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-meta-commentary": [
@@ -1300,6 +1380,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.973Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-thesis-restatement": [
@@ -1319,6 +1415,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.086Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-performed-warmth": [
@@ -1338,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.164Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-superlative": [
@@ -1357,6 +1485,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.202Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "trap-nonspeakable": [
@@ -1376,6 +1520,22 @@
         "reviewed_at": "2026-08-15T10:31:00.029Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.307Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1398,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:58:23.307Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1909.06744v1
-doc_title: "Springer correspondence for symmetric spaces Toshiaki Shoji"
+doc_title: "Springer correspondence for symmetric spaces"
 section_id: sec-002-165-we-give-here-some-example-of-cuspidal-pairs
 section_title: "We give here some example of cuspidal pairs. It would be interesting t o"
 section_number: 16.5
 pages: 19-19
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
-doc_brief: "Springer correspondence for symmetric spaces Toshiaki Shoji — This is a survey on the Springer correspondence for symmetric spa ces."
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces."
 ---
 compare this with the case of reductive groups (Remark 5.2).
 (i) For λ = (2a, 1N −2a), the pair ( Oλ, E ) is always cuspidal, for any local system

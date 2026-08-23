@@ -65,6 +65,8 @@ changed files; any hit is a likely failure.
 | `aligned`/`align` inside `$$` | `awk '/^\$\$/{m=!m} m && /\\begin\{align/' file.md` | Align-family environments belong in a fenced ` ```tex ` block (AGENTS.md §"TeX authoring patterns" item 5), not inline `$$…$$` — the unified-latex AST validator and KaTeX both choke on some forms. |
 | **Inner math env with no envelope** (BUILD-FATAL) | `bun run content/pipeline/qa-sweep.ts <block> --only render-math-mode-envelope` | See §2b — moving an align-family env into a ` ```tex ` fence per the row above is only half the job; it still needs a math envelope. |
 | **Unicode with no LaTeX setup** (BUILD-FATAL) | see §2b | A char with no `\newunicodechar` mapping *and* no `utf8.def` declaration aborts pdflatex in prose, `\texttt` and math alike. |
+| **Glued control sequence** (SILENT) | `bun run content/pipeline/glued-macro-scan.ts <file>` | `\pi c_s` written without the space is one macro named `pic`. Undefined, it stops the build — harmless. *Defined*, the page compiles and prints something else: `\pic` expanded to `\pi` and deleted a sound speed from a Hawking-temperature denominator. Fix the space; **never define the glued name.** |
+| **Fence that cannot close its block** (BUILD-FATAL) | `bun run content/pipeline/fence-close-check.ts <file>` | Under CommonMark a **closing** fence carries no info string, so a second ` ```tex ` does **not** close the first — the block stays open and the rest of the file is raw passthrough. **Parity misses this**: the broken file had an even fence count, and a parity scan over the whole corpus reported zero while two files were unbuildable. |
 
 ### 2b. The two build-fatal classes (run the criterion, don't eyeball)
 

@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-005-14-classiﬁcation-of-pure-modules-over-ˆk-and-k
 section_title: "Classiﬁcation of pure modules over ˆK and K"
 section_number: 1.4

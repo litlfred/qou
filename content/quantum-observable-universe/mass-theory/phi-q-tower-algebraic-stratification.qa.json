@@ -2144,6 +2144,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:56:54.415Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Read full block (proposition, superseded banner + display formula + one closing paragraph). No assert-by-denial construction; 'without invoking any hyperbolic or continuous geometry' is a factual pre-tau scope statement, not manufactured contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2163,6 +2178,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.375Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe. The two prose sentences after the display both make direct positive claims about where the stratification sits (pre-tau, discrete data only)."
       }
     ],
     "trap-em-dash": [
@@ -2182,6 +2212,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.446Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero spaced em-dashes in the block; only hyphenated compounds (Grobner-Shirshov, leading-order, operator-valued)."
       }
     ],
     "trap-triples": [
@@ -2201,6 +2246,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.504Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list. The three summands (|S|=0,1,2) are the mathematical content of the stratification, not a rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2220,6 +2280,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.576Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Final sentence is a scope statement about what the decomposition uses (discrete categorical data, no hyperbolic geometry), not a quotable flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -2239,6 +2314,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.636Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis; no 'note the framing' / 'we emphasize' constructions."
       }
     ],
     "trap-thesis-restatement": [
@@ -2258,6 +2348,22 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.709Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Closing sentence partly re-states the title's 'no 3-manifold language', but adds the pre-tau placement and 'isolating the structural descent', so it carries new placement information rather than merely restating the proposition."
       }
     ],
     "trap-performed-warmth": [
@@ -2277,6 +2383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.777Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register throughout; no personal or affective vocabulary."
       }
     ],
     "trap-superlative": [
@@ -2296,6 +2417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.837Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'entirely', 'exactly', 'strictly', 'unconditional' are all technical qualifiers with definite mathematical referents (ground-ring containment, identification with the J^|S|/J^{|S|+1} grading, pre-tau placement), not maximum-strength rhetoric."
       }
     ],
     "trap-nonspeakable": [
@@ -2315,6 +2451,22 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5d87d077d45e",
+          "ts": "f02e1210c1da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:13.903Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the J^{|S|}/J^{|S|+1} grading of the GS confinement filtration' is a long nominal chain but is standard algebraic naming; the rest of the prose reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2338,5 +2490,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:57:13.903Z"
 }

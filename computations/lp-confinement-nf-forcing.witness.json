@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:43:39.591910+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T14:51:19.489216+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "all_compounds_feasible",
@@ -18,18 +18,18 @@
     },
     {
       "name": "lp_duality_gap_small_all",
-      "computed": 0.0,
+      "computed": 1.405142580397065e-12,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.0001
     }
   ],
   "allPassed": true,
-  "durationMs": 2745,
+  "durationMs": 2467,
   "computation": "lp-confinement-nf-forcing",
   "scriptFile": "lp_confinement_nf_forcing.py",
   "scriptHash": "31d1ae777afe",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,7 +74,7 @@
           1
         ],
         "delta_observed": 0,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.0000000739998795e-06,
         "active_set_partitions": [
           [
             2,
@@ -92,23 +92,23 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          2.0,
-          -0.0,
-          -0.0
+          1.9999999999999205,
+          1.4569221042079576e-14,
+          6.496148582646752e-14
         ],
-        "lp_y0_star": -1.2320524825954227,
+        "lp_y0_star": -1.2320524541667692,
         "lp_y_star": [
-          0.0,
-          1.1160262412977113,
-          0.42039874695794766
+          7.143202931234327e-15,
+          1.1160262270833847,
+          0.4203986998010099
         ],
         "lp_active_set_indices": [
           1,
           2
         ],
-        "lp_primal_obj": -2.4641049651908453,
-        "lp_dual_obj": -2.4641049651908453,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -2.4641049083334643,
+        "lp_dual_obj": -2.4641049083335385,
+        "lp_duality_gap": 7.399987959600139e-14,
         "lp_feasible": true
       },
       {
@@ -143,7 +143,7 @@
           1
         ],
         "delta_observed": 2,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.0000001218024984e-06,
         "active_set_partitions": [
           [
             2,
@@ -161,23 +161,23 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          2.0,
-          -0.0,
-          -0.0
+          1.999999999999974,
+          9.1070933958212e-15,
+          1.6872295359950543e-14
         ],
-        "lp_y0_star": -1.5179533198695445,
+        "lp_y0_star": -1.5179532498183836,
         "lp_y_star": [
-          0.0,
-          1.2589766599347723,
-          0.8591715332952764
+          4.2274481812103304e-14,
+          1.2589766249091918,
+          0.8591714328423515
         ],
         "lp_active_set_indices": [
           1,
           2
         ],
-        "lp_primal_obj": -3.035906639739089,
-        "lp_dual_obj": -3.035906639739089,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -3.0359064996366456,
+        "lp_dual_obj": -3.0359064996367673,
+        "lp_duality_gap": 1.218024983646582e-13,
         "lp_feasible": true
       },
       {
@@ -216,7 +216,7 @@
           1
         ],
         "delta_observed": 2,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.0000014051425803e-06,
         "active_set_partitions": [
           [
             3
@@ -233,23 +233,23 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          -0.0,
-          2.0,
-          -0.0
+          9.545051600304078e-13,
+          1.999999999999022,
+          2.3546557589999045e-14
         ],
-        "lp_y0_star": -2.0,
+        "lp_y0_star": -2.0000000000006235,
         "lp_y_star": [
-          0.12980184379076376,
-          0.0,
-          1.4652973019570656
+          0.12980197325152476,
+          3.1268695082344826e-13,
+          1.4652972649441316
         ],
         "lp_active_set_indices": [
           0,
           2
         ],
-        "lp_primal_obj": -4.0,
-        "lp_dual_obj": -4.0,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -3.9999999999998415,
+        "lp_dual_obj": -4.000000000001247,
+        "lp_duality_gap": 1.405142580397065e-12,
         "lp_feasible": true
       },
       {
@@ -282,7 +282,7 @@
           1
         ],
         "delta_observed": 0,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.000000595631665e-06,
         "active_set_partitions": [
           [
             3,
@@ -310,19 +310,19 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          5.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0
+          4.999999999999335,
+          1.503545908616725e-14,
+          1.3366070958361073e-13,
+          4.956124771036962e-13,
+          2.056326693311223e-14
         ],
-        "lp_y0_star": -1.3675518842841892,
+        "lp_y0_star": -1.3675518369514024,
         "lp_y_star": [
-          0.0,
-          0.8258434932805064,
-          0.6837759421420946,
-          0.1555445369074814,
-          2.098785566524644
+          2.0450173463783968e-14,
+          0.825843473234261,
+          0.6837759184757014,
+          0.15554451766522032,
+          2.098785544500838
         ],
         "lp_active_set_indices": [
           1,
@@ -330,9 +330,9 @@
           3,
           4
         ],
-        "lp_primal_obj": -6.837759421420946,
-        "lp_dual_obj": -6.837759421420946,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -6.8377591847564165,
+        "lp_dual_obj": -6.8377591847570125,
+        "lp_duality_gap": 5.956316650588276e-13,
         "lp_feasible": true
       },
       {
@@ -371,7 +371,7 @@
           1
         ],
         "delta_observed": 2,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.0000007195136422e-06,
         "active_set_partitions": [
           [
             3,
@@ -399,19 +399,19 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          5.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0
+          4.999999999999078,
+          7.881346856732236e-13,
+          7.749782897158154e-14,
+          2.826458123133407e-14,
+          2.7874842772951056e-14
         ],
-        "lp_y0_star": -1.6848956941103834,
+        "lp_y0_star": -1.6848955969162525,
         "lp_y_star": [
-          0.0,
-          0.10578126994206476,
-          0.9469780080529843,
-          0.8053764587836127,
-          2.278404243924795
+          3.842659554921184e-14,
+          0.10578125332162362,
+          0.9469779478559454,
+          0.8053764348218961,
+          2.2784041809675455
         ],
         "lp_active_set_indices": [
           1,
@@ -419,9 +419,9 @@
           3,
           4
         ],
-        "lp_primal_obj": -8.424478470551918,
-        "lp_dual_obj": -8.424478470551918,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -8.424477984580543,
+        "lp_dual_obj": -8.424477984581262,
+        "lp_duality_gap": 7.195136421828627e-13,
         "lp_feasible": true
       },
       {
@@ -462,7 +462,7 @@
           1
         ],
         "delta_observed": 3,
-        "delta_bound_heuristic": 1e-06,
+        "delta_bound_heuristic": 1.0000002787114432e-06,
         "active_set_partitions": [
           [
             3,
@@ -490,19 +490,19 @@
         "maximizer_in_active_set": true,
         "delta_within_bound": true,
         "lp_x_star": [
-          5.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0
+          4.999999999999885,
+          4.025396531139855e-14,
+          5.468609916385534e-15,
+          2.140014520166616e-14,
+          4.726681326229133e-14
         ],
-        "lp_y0_star": -1.8701981562092362,
+        "lp_y0_star": -1.8701980267491185,
         "lp_y_star": [
-          0.0,
-          0.5280991063117049,
-          1.456952187221067,
-          0.674356701757481,
-          1.3354954581663017
+          1.8604579172199576e-14,
+          0.528099077032513,
+          1.45695211764082,
+          0.6743566547129486,
+          1.3354952916926255
         ],
         "lp_active_set_indices": [
           1,
@@ -510,72 +510,72 @@
           3,
           4
         ],
-        "lp_primal_obj": -9.350990781046182,
-        "lp_dual_obj": -9.350990781046182,
-        "lp_duality_gap": 0.0,
+        "lp_primal_obj": -9.350990133745313,
+        "lp_dual_obj": -9.350990133745592,
+        "lp_duality_gap": 2.787114432191897e-13,
         "lp_feasible": true
       }
     ],
-    "q0": "1.10997859555733",
+    "q0": "1.10997858275138",
     "lp_dual_emitted": true,
     "lp_dual_summary": [
       {
         "label": "n3_id_cyc1_id",
-        "y0_star": -1.2320524825954227,
+        "y0_star": -1.2320524541667692,
         "y_star": [
-          0.0,
-          1.1160262412977113,
-          0.42039874695794766
+          7.143202931234327e-15,
+          1.1160262270833847,
+          0.4203986998010099
         ],
         "active_set": [
           1,
           2
         ],
-        "primal_obj": -2.4641049651908453,
-        "dual_obj": -2.4641049651908453,
-        "duality_gap": 0.0
+        "primal_obj": -2.4641049083334643,
+        "dual_obj": -2.4641049083335385,
+        "duality_gap": 7.399987959600139e-14
       },
       {
         "label": "n3_s1_cyc1_s1",
-        "y0_star": -1.5179533198695445,
+        "y0_star": -1.5179532498183836,
         "y_star": [
-          0.0,
-          1.2589766599347723,
-          0.8591715332952764
+          4.2274481812103304e-14,
+          1.2589766249091918,
+          0.8591714328423515
         ],
         "active_set": [
           1,
           2
         ],
-        "primal_obj": -3.035906639739089,
-        "dual_obj": -3.035906639739089,
-        "duality_gap": 0.0
+        "primal_obj": -3.0359064996366456,
+        "dual_obj": -3.0359064996367673,
+        "duality_gap": 1.218024983646582e-13
       },
       {
         "label": "n3_s2_cyc2_s1",
-        "y0_star": -2.0,
+        "y0_star": -2.0000000000006235,
         "y_star": [
-          0.12980184379076376,
-          0.0,
-          1.4652973019570656
+          0.12980197325152476,
+          3.1268695082344826e-13,
+          1.4652972649441316
         ],
         "active_set": [
           0,
           2
         ],
-        "primal_obj": -4.0,
-        "dual_obj": -4.0,
-        "duality_gap": 0.0
+        "primal_obj": -3.9999999999998415,
+        "dual_obj": -4.000000000001247,
+        "duality_gap": 1.405142580397065e-12
       },
       {
         "label": "n4_id_cyc1_id",
-        "y0_star": -1.3675518842841892,
+        "y0_star": -1.3675518369514024,
         "y_star": [
-          0.0,
-          0.8258434932805064,
-          0.6837759421420946,
-          0.1555445369074814,
-          2.098785566524644
+          2.0450173463783968e-14,
+          0.825843473234261,
+          0.6837759184757014,
+          0.15554451766522032,
+          2.098785544500838
         ],
         "active_set": [
           1,
@@ -583,19 +583,19 @@
           3,
           4
         ],
-        "primal_obj": -6.837759421420946,
-        "dual_obj": -6.837759421420946,
-        "duality_gap": 0.0
+        "primal_obj": -6.8377591847564165,
+        "dual_obj": -6.8377591847570125,
+        "duality_gap": 5.956316650588276e-13
       },
       {
         "label": "n4_s1_cyc1_s2",
-        "y0_star": -1.6848956941103834,
+        "y0_star": -1.6848955969162525,
         "y_star": [
-          0.0,
-          0.10578126994206476,
-          0.9469780080529843,
-          0.8053764587836127,
-          2.278404243924795
+          3.842659554921184e-14,
+          0.10578125332162362,
+          0.9469779478559454,
+          0.8053764348218961,
+          2.2784041809675455
         ],
         "active_set": [
           1,
@@ -603,19 +603,19 @@
           3,
           4
         ],
-        "primal_obj": -8.424478470551918,
-        "dual_obj": -8.424478470551918,
-        "duality_gap": 0.0
+        "primal_obj": -8.424477984580543,
+        "dual_obj": -8.424477984581262,
+        "duality_gap": 7.195136421828627e-13
       },
       {
         "label": "n4_s1s2_cyc1_s3",
-        "y0_star": -1.8701981562092362,
+        "y0_star": -1.8701980267491185,
         "y_star": [
-          0.0,
-          0.5280991063117049,
-          1.456952187221067,
-          0.674356701757481,
-          1.3354954581663017
+          1.8604579172199576e-14,
+          0.528099077032513,
+          1.45695211764082,
+          0.6743566547129486,
+          1.3354952916926255
         ],
         "active_set": [
           1,
@@ -623,9 +623,9 @@
           3,
           4
         ],
-        "primal_obj": -9.350990781046182,
-        "dual_obj": -9.350990781046182,
-        "duality_gap": 0.0
+        "primal_obj": -9.350990133745313,
+        "dual_obj": -9.350990133745592,
+        "duality_gap": 2.787114432191897e-13
       }
     ],
     "n_compounds_total": 6,
@@ -634,6 +634,6 @@
   "caveats": [
     "Conjectural — no Lean proof attempted at this step. The witness compares predicted vs observed NF support across a small bench of compound braids. The Frobenius Gram is taken diagonal (G_{λμ} = δ_{λμ} dim V_λ), reflecting the orthogonality of irreducible Markov channels — a simplification of the full non-diagonal G that would arise from a non-trivial inner product."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

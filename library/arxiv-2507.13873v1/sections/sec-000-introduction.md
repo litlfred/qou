@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2507.13873v1
-doc_title: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+doc_title: "Probing the singularity at the holographic screen via q-holography"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 2-4
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 2 Correlation functions on the quantum disk 3
 2.1 q-Correlation functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4

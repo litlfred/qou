@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.912Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.952Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.992Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.031Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.071Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.110Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.148Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.187Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.228Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c89247224dc8",
+          "ts": "5e5f992d7192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.268Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row candidate/value/ratio table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. RECOMPUTED every candidate at q_0 = 1.1099785827513808 with [n]_q = (q^n - q^-n)/(q - q^-1): 1/6 = 0.1666667 (stated 0.16667), 1/[6]_q = 0.1565414 (0.15654), 1/(2[3]_q) = 0.1642734 (0.16427), 1/([2]_q[3]_q) = 0.1633832 (0.16338), 1/(q[5]_q) = 0.1725751 (0.17258), 1/[5]_q = 0.1915547 (0.19155) -- all six exact to the printed digits. Back-solving the unlabelled 'Ratio to target' column gives a single consistent target of 0.1699 across all six rows, matching the parent block's stated E_bind/E_Hartree ~ 0.170. STALE-TARGET DEFECT reported separately: that 0.170 is the pre-proton-pin value; the current witness gives 0.8645365/27.2114676 = 0.03177, so every ratio in this column is ~5.35x off the witness it is measured against."
+      }
     ]
   },
   "source_hashes": {
     "md": "c89247224dc8",
     "ts": "5e5f992d7192"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:06.268Z"
 }

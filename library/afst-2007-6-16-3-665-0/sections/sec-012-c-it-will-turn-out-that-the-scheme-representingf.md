@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-012-c-it-will-turn-out-that-the-scheme-representingf
 section_title: "It will turn out that the scheme representingF is in factAN"
 section_number: C

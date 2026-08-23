@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-525-553-let-us-show-conversely-that-if-e0e-1e-appear
 section_title: "Let us show, conversely, that if ∆( e0,e 1,e∞) appears in Takeuchi’s"
 section_number: 5.5.3
 pages: 189-189
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 list, and if B/E is ramiﬁed at the place v|p, then ∆ p(e0,e 1,e∞) exists and
 is an arithmetic p-adic triangle group; more precisely, it is commensurable

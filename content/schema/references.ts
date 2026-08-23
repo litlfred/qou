@@ -32,6 +32,52 @@ import type { Data as CSLData, Person as CSLPerson, Date as CSLDate, ItemType } 
 // ── Re-exports for consumer convenience ─────────────────────────
 export type { CSLData, CSLPerson, CSLDate, ItemType };
 
+/**
+ * Where our copy of a source is, and how far it has been processed.
+ *
+ * Written onto each entry by `scripts/sync-references-library.py` and
+ * derived entirely from the library tree plus the source ledger — never
+ * authored, never hand-edited. The field order here matches that script's
+ * `render()` so a regenerated block diffs cleanly.
+ *
+ * Declared because `CSLData` from the `csl-json` package does not have it,
+ * and 351 entries carry it. The Zod schema is `.passthrough()`, so this was
+ * valid at runtime and rejected by the compiler — 712 `TS2353` errors,
+ * invisible because nothing type-checks this file: qou has no `tsc` gate on
+ * it, and the platform's `tsc` only sees it through the bridge symlink that
+ * `setup-folio-assistant.sh` creates in a working clone and CI does not have.
+ */
+export interface LibraryRef {
+  /** Directory name under `library/`, and the join key to the source ledger. */
+  docId: string;
+  dir: string;
+  pdf?: string;
+  /** A path the ledger claims we hold that is not in the repo. */
+  claimedPath?: string;
+  /** How far ingestion got: held < structure < sections < candidates, or `missing`. */
+  stage: "held" | "structure" | "sections" | "candidates" | "missing";
+  pages?: number;
+  sections?: number;
+  arxiv?: string;
+  /** Other copies of the same work, when the join landed on a duplicate. */
+  alternates?: string[];
+  duplicateOf?: string;
+}
+
+/**
+ * A CSL-JSON entry plus the derived record of the copy we hold.
+ *
+ * `series` is here because the `csl-json` package's `Data` omits it while
+ * entries use it for a journal's series designation — `rogers1907` is
+ * Proc. LMS **series 2**, vol. 4 — and dropping it to satisfy the compiler
+ * would lose the only thing distinguishing that volume from the first
+ * series' volume 4.
+ */
+export type Reference = CSLData & {
+  library?: LibraryRef;
+  series?: string;
+};
+
 // ── Zod schema for CSL-JSON validation ──────────────────────────
 
 const CSLPersonSchema = z.object({
@@ -115,14 +161,14 @@ export const CSLEntrySchema = z.object({
 // ── Builder ─────────────────────────────────────────────────────
 
 /** Validates a CSL-JSON entry at construction time. */
-export function ref(data: CSLData): CSLData {
+export function ref(data: Reference): Reference {
   CSLEntrySchema.parse(data);
   return data;
 }
 
 // ── Bibliography database ───────────────────────────────────────
 
-export const references: CSLData[] = [
+export const references: Reference[] = [
 
   // ── Garoufalidis 2004 — AJ conjecture / q-holonomic colored Jones ──
   ref({
@@ -843,6 +889,14 @@ export const references: CSLData[] = [
   // ── CODATA 2022 ───────────────────────────────────────────────
   ref({
     id: "codata2022",
+    library: {
+      docId: "revmodphys97025002pdf",
+      dir: "library/revmodphys97025002pdf",
+      pdf: "library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf",
+      stage: "candidates",
+      pages: 62,
+      sections: 73,
+    },
     type: "dataset",
     title: "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
     author: [
@@ -852,7 +906,7 @@ export const references: CSLData[] = [
     URL: "https://physics.nist.gov/cgi-bin/cuu/Value?mmusme",
     publisher: "NIST Standard Reference Database",
     DOI: "10.1103/RevModPhys.97.025002",
-    note: "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$. "
+    note: "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$. PDF library/revmodphys97025002pdf/ — the Rev. Mod. Phys. version. This entry supplies CAL-1 (m_e) and the CODATA comparison values used throughout, and had no copy recorded."
       + "DOI added 2026-08-15, read off the held copy: the library holds this "
       + "as its Rev. Mod. Phys. 97, 025002 publication (Mohr, Newell, Taylor). "
       + "`type` is left as `dataset` deliberately — the blocks citing this key "
@@ -2369,7 +2423,6 @@ export const references: CSLData[] = [
     DOI: "10.2140/agt.2006.6.1113",
     URL: "https://arxiv.org/abs/math/0505219",
     note: "Algebr. Geom. Topol. 6 (2006), no. 3, 1113-1214; arXiv:math/0505219. DOI corrected 2026-06-07 from the spurious 10.2140/gt.2008.12.2091 to the authoritative AGT DOI 10.2140/agt.2006.6.1113 (verified via Project Euclid / msp.org). This entry is the 'Bottom tangles and universal invariants' paper; QOU citers that intend the Habiro RING Ẑ[q] (q-Pochhammer / cyclotomic completion) were re-keyed to habiro2004cyclotomic, and colored-Jones citers to habiro2000, on 2026-06-07.",
-    URL: "https://arxiv.org/abs/math/0505219",
   }),
 
   ref({
@@ -3474,13 +3527,21 @@ export const references: CSLData[] = [
       "the regular ideal simplex is the unique volume maximiser. The " +
       "analytic half of the latter is formalized in " +
       "`QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; " +
-      "the volume identification itself is bean qou-5gai H4 (open).",
-    note: "PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. ",
+      "the volume identification itself is bean qou-5gai H4 (open)." +
+      "PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. ",
   }),
 
   // ── Thurston 1978 ──────────────────────────────────────────────
   ref({
     id: "thurston1978",
+    library: {
+      docId: "thurston",
+      dir: "library/thurston",
+      pdf: "library/thurston/Thurston.pdf",
+      stage: "sections",
+      pages: 33,
+      sections: 22,
+    },
     type: "book",
     title: "The Geometry and Topology of Three-Manifolds",
     author: [{ family: "Thurston", given: "William P." }],
@@ -3488,7 +3549,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1978]] },
     URL: "https://www.msri.org/publications/books/gt3m/",
     note:
-      "Original lecture notes establishing the ideal-tetrahedron " +
+      "Original lecture notes establishing the ideal-tetrahedron PDF library/thurston/ — the extractor had taken the byline as the title, so a title match could not find this entry." +
       "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
       "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
       "expansion of the categorical mass endomorphism.",
@@ -4219,6 +4280,14 @@ export const references: CSLData[] = [
   // ── AME2020 (Atomic Mass Evaluation 2020) ─────────────────────
   ref({
     id: "ame2020",
+    library: {
+      docId: "huang-2021-chinese-phys-c-45-030002",
+      dir: "library/huang-2021-chinese-phys-c-45-030002",
+      pdf: "library/huang-2021-chinese-phys-c-45-030002/Huang_2021_Chinese_Phys._C_45_030002.pdf",
+      stage: "sections",
+      pages: 343,
+      sections: 1,
+    },
     type: "article-journal",
     title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
     author: [
@@ -4235,7 +4304,7 @@ export const references: CSLData[] = [
     page: "030002",
     DOI: "10.1088/1674-1137/abddb0",
     URL: "https://doi.org/10.1088/1674-1137/abddb0",
-    note: "Author order CORRECTED 2026-08-15 (bean qou-wy51): the entry carried the title, page and DOI of paper (I) but the author order of paper (II) — Wang first instead of Huang. The header of library/mass_1.mas20.txt states it directly: paper (I) at Chin. Phys. C45 030002 is 'by W.J.Huang, M.Wang, F.G.Kondev, G.Audi and S.Naimi', paper (II) at 030003 'by M.Wang, W.J.Huang, ...'. Corroborated by qou-mass/src/qou_mass/data/ame2020.json's _metadata, which records Huang-first for 030002. This is the paper covering mass.mas20 — the file computations/deltalambda/tjon_external_cross_check_probe.py parses for B(2H), B(3H), B(4He); see ame2020tables for the companion (II).",
+    note: "Author order CORRECTED 2026-08-15 (bean qou-wy51): the entry carried the title, page and DOI of paper (I) but the author order of paper (II) — Wang first instead of Huang. The header of library/mass_1.mas20.txt states it directly: paper (I) at Chin. Phys. C45 030002 is 'by W.J.Huang, M.Wang, F.G.Kondev, G.Audi and S.Naimi', paper (II) at 030003 'by M.Wang, W.J.Huang, ...'. Corroborated by qou-mass/src/qou_mass/data/ame2020.json's _metadata, which records Huang-first for 030002. This is the paper covering mass.mas20 — the file computations/deltalambda/tjon_external_cross_check_probe.py parses for B(2H), B(3H), B(4He); see ame2020tables for the companion (II). PDF library/huang-2021-chinese-phys-c-45-030002/ — the paper. This entry's ledger source.file names library/mass_1.mas20.txt, which is the AME 2020 mass TABLE the compute reads; both are held, and the ledger keeps pointing at the table.",
   }),
 
   ref({
@@ -4260,6 +4329,15 @@ export const references: CSLData[] = [
   // ── NUBASE 2020 (companion to AME 2020) ───────────────────────
   ref({
     id: "nubase2020",
+    library: {
+      docId: "kondev-2021-chinese-phys-c-45-030001",
+      dir: "library/kondev-2021-chinese-phys-c-45-030001",
+      pdf: "library/kondev-2021-chinese-phys-c-45-030001/Kondev_2021_Chinese_Phys._C_45_030001.pdf",
+      stage: "sections",
+      pages: 181,
+      sections: 31,
+    },
+    note: "PDF library/kondev-2021-chinese-phys-c-45-030001/ — this entry had no ledger row at all, so nothing could join it.",
     type: "article-journal",
     title: "The NUBASE2020 evaluation of nuclear physics properties",
     author: [
@@ -4378,6 +4456,15 @@ export const references: CSLData[] = [
   // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
   ref({
     id: "mathas1999",
+    library: {
+      docId: "hecke-alg",
+      dir: "library/hecke-alg",
+      pdf: "library/hecke-alg/hecke_alg.pdf",
+      stage: "sections",
+      pages: 78,
+      sections: 1,
+    },
+    note: "PDF library/hecke-alg/ — the copy's own title page drops the 'Iwahori-' prefix this entry carries ('Hecke algebras and Schur algebras of the symmetric group'), which is why a title match does not join them.",
     type: "book",
     title: "Iwahori\u2013Hecke Algebras and Schur Algebras of the Symmetric Group",
     author: [
@@ -4788,8 +4875,8 @@ export const references: CSLData[] = [
       "formalized sorry-free in `QOU.Optimization.lp_weak_duality` / " +
       "`lp_duality_gap_nonneg`, which is the proved backing for the " +
       "`duality_gap ≥ 0` assertion carried by every QOU LP/SDP-dual witness. " +
-      "Cited bibliographically for the abstract duality statement.",
-    note: "PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. ",
+      "Cited bibliographically for the abstract duality statement." +
+      "PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. ",
   }),
 
   // ── Young 1901 (quantitative substitutional analysis) ─────────
@@ -5077,6 +5164,15 @@ export const references: CSLData[] = [
   // ── Féray-Méliot 2012 (q-Plancherel CLT) ──────────────────────
   ref({
     id: "feray-meliot2012",
+    library: {
+      docId: "arxiv-1001.2180v2",
+      dir: "library/arxiv-1001.2180v2",
+      pdf: "library/arxiv-1001.2180v2/1001.2180v2.pdf",
+      stage: "sections",
+      pages: 27,
+      sections: 27,
+      arxiv: "1001.2180v2",
+    },
     type: "article-journal",
     title:
       "Asymptotics of $q$-Plancherel measures",
@@ -5090,7 +5186,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2012]] },
     DOI: "10.1007/s00440-010-0331-6",
     note:
-      "Central limit theorem for the q-Plancherel measure on Young " +
+      "Central limit theorem for the q-Plancherel measure on Young PDF library/arxiv-1001.2180v2/ — the entry writes the title with TeX math delimiters ($q$-Plancherel) and the copy's title page does not, so a title match does not join them." +
       "diagrams, with convergence rate $O(1/\\sqrt{k})$. Provides the " +
       "asymptotic theory for iterative q-hook walk accumulation.",
   }),
@@ -5397,8 +5493,8 @@ export const references: CSLData[] = [
       "of the Kashaev volume conjecture carried by the class " +
       "\\texttt{VolumeConjecture41} (whose instance is, since " +
       "2026-07-26, machine-proved sorry-free in-repo by an " +
-      "elementary Riemann-sum squeeze).",
-    note: "PDF library/arxiv-math-0506456v1/ — joined 2026-08-16. The library copy was unlinked because its extracted title was the World Scientific masthead; OCR recovered the real title, which matched this entry. A batch-7 entry drafted from that OCR (id andersen2005, first author only — the byline runs into the affiliations in the transcription) was dropped in favour of this one. ",
+      "elementary Riemann-sum squeeze)." +
+      "PDF library/arxiv-math-0506456v1/ — joined 2026-08-16. The library copy was unlinked because its extracted title was the World Scientific masthead; OCR recovered the real title, which matched this entry. A batch-7 entry drafted from that OCR (id andersen2005, first author only — the byline runs into the affiliations in the transcription) was dropped in favour of this one. ",
   }),
 
   // ── Costin–Ehrlich–Friedman 2015 (integration on the surreals) ──
@@ -11599,6 +11695,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Spectral networks",
+    author: [{ family: "Gaiotto", given: "Davide" }, { family: "Moore", given: "Gregory W." }, { family: "Neitzke", given: "Andrew" }],
     URL: "https://arxiv.org/abs/1204.4824",
     note: "PDF library/arxiv-1204.4824v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -11631,6 +11728,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Tying knots in light fields",
+    author: [{ family: "Kedia", given: "Hridesh" }, { family: "Bialynicki-Birula", given: "Iwo" }, { family: "Peralta-Salas", given: "Daniel" }, { family: "Irvine", given: "William T. M." }],
     URL: "https://arxiv.org/abs/1302.0342",
     note: "PDF library/arxiv-1302.0342v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -11732,6 +11830,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Knotty inflation and the dimensionality of spacetime",
+    author: [{ family: "Berera", given: "Arjun" }, { family: "Buniy", given: "Roman V." }, { family: "Kephart", given: "Thomas W." }, { family: "Päs", given: "Heinrich" }, { family: "Rosa", given: "João G." }],
     URL: "https://arxiv.org/abs/1508.01458",
     note: "PDF library/arxiv-1508.01458v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -11765,6 +11864,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Complexity, action, and black holes",
+    author: [{ family: "Brown", given: "Adam R." }, { family: "Roberts", given: "Daniel A." }, { family: "Susskind", given: "Leonard" }],
     URL: "https://arxiv.org/abs/1512.04993",
     note: "PDF library/arxiv-1512.04993v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -11832,6 +11932,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Symmetry enhancement and closing of knots in 3d/3d correspondence",
+    author: [{ family: "Gang", given: "Dongmin" }, { family: "Yonekura", given: "Kazuya" }],
     URL: "https://arxiv.org/abs/1803.04009",
     note: "PDF library/arxiv-1803.04009v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -11887,7 +11988,7 @@ export const references: CSLData[] = [
     note: "PDF library/arxiv-1810.11563v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "arxiv-1908.07065v3",
+    id: "grassi-gu-marino2019qsw",
     library: {
       docId: "arxiv-1908.07065v3",
       dir: "library/arxiv-1908.07065v3",
@@ -11899,8 +12000,9 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Non-perturbative approaches to the quantum Seiberg–Witten curve",
+    author: [{ family: "Grassi", given: "Alba" }, { family: "Gu", given: "Jie" }, { family: "Mariño", given: "Marcos" }],
     URL: "https://arxiv.org/abs/1908.07065",
-    note: "PDF library/arxiv-1908.07065v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+    note: "PDF library/arxiv-1908.07065v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Id was the doc-id `arxiv-1908.07065v3`, a machine fallback from the batch that registered it when no author line parsed (JHEP welds the affiliation letter to each surname: 'Alba Grassia, Jie Gu b and Marcos Mari\u00f1ob'). Nothing cited that id; a Lean proof cited `grassi-gu-marino2019qsw`, which resolved to nothing. Renamed to the key in use and authors filled from the byline.",
   }),
   ref({
     id: "shoji2019",
@@ -11932,6 +12034,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
+    author: [{ family: "Asselmeyer-Maluga", given: "T." }],
     URL: "https://arxiv.org/abs/1910.09966",
     note: "PDF library/arxiv-1910.09966v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -12168,6 +12271,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "On the structure of trans-series in quantum field theory",
+    author: [{ family: "Mariño", given: "Marcos" }, { family: "Miravitllas", given: "Ramon" }, { family: "Reis", given: "Tomás" }],
     URL: "https://arxiv.org/abs/2302.08363",
     note: "PDF library/arxiv-2302.08363v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -12410,7 +12514,7 @@ export const references: CSLData[] = [
     note: "PDF library/arxiv-2607.29018v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "arxiv-hep-ph-0103325v4",
+    id: "gavrilik2001",
     library: {
       docId: "arxiv-hep-ph-0103325v4",
       dir: "library/arxiv-hep-ph-0103325v4",
@@ -12422,8 +12526,9 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Quantum algebras in phenomenological description of particle properties",
+    author: [{ family: "Gavrilik", given: "A. M." }],
     URL: "https://arxiv.org/abs/hep-ph/0103325",
-    note: "PDF library/arxiv-hep-ph-0103325v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+    note: "PDF library/arxiv-hep-ph-0103325v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Id was the doc-id `arxiv-hep-ph-0103325v4`, a machine fallback: the byline is 'A.M. Gavrilik a' with the Elsevier affiliation letter welded to the surname, so no author parsed and the entry captured abstract prose instead. Nothing cited that id; a Lean proof cited `gavrilik2001`, which resolved to nothing. Renamed to the key in use and the author filled from page 1. Year 2001 is the arXiv submission (hep-ph/0103325, March 2001); the v4 stamp reads 2002.",
   }),
   ref({
     id: "kleinkreisler1996",
@@ -12455,6 +12560,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
+    author: [{ family: "Broadhurst", given: "D. J." }, { family: "Kreimer", given: "D." }],
     URL: "https://arxiv.org/abs/hep-th/0001202",
     note: "PDF library/arxiv-hep-th-0001202v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -12505,6 +12611,7 @@ export const references: CSLData[] = [
     },
     type: "article",
     title: "Black Hole Complementarity vs. Locality",
+    author: [{ family: "Lowe", given: "David A." }, { family: "Polchinski", given: "Joseph" }, { family: "Susskind", given: "Leonard" }],
     URL: "https://arxiv.org/abs/hep-th/9506138",
     note: "PDF library/arxiv-hep-th-9506138v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
@@ -13379,6 +13486,461 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/0905.1873",
     note: "PDF library/arxiv-0905.1873v2/ — joined 2026-08-16. This branch had drafted a separate entry [jurgenson-navratil-roth2009] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:0905.1873v2; from library/arxiv-0905.1873v2/0905.1873v2.pdf. Registered 2026-08-15 to give a bib key to the four-nucleon-force magnitude scale that QOU.MassTheory.TjonSimplexForm's mu4_target_exceeds_n3lo_bound and computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py certify against; both had cited it by bare arXiv number. The abstract's own wording is that ⁴He shows 'a small net contribution of the induced four-body force' — the ~50 keV SRG-induced figure at λ = 2 fm⁻¹ and the 'few hundred keV' N³LO long-range estimate are the scale the corpus target μ₄ = −4.591 (in units of B(D) = 2.224566 MeV, i.e. 10.2 MeV) exceeds by 34×. Note the two figures are different objects: the SRG-induced 4N force is an artifact of the unitary evolution, not a chiral-EFT 4N interaction. Cite for the magnitude scale only.",
   }),
+  // ── Library intake 2026-08-21 — 27 works registered from the library ──
+  //
+  // Titles and authors are EXTRACTED FROM THE PDF and not verified against
+  // the publisher record: arxiv.org returns 403 from this environment. The
+  // arXiv id in each URL is the reliable identifier. Where extraction looked
+  // damaged the reading was corrected by hand and recorded, with the reason,
+  // in docs/audits/library-title-overrides.json — the id is built from the
+  // first surname, so a split surname aims the key at the wrong author
+  // (Bruguières -> 'res2008', Künzer -> 'nzer2003', both caught here).
+  ref({
+    id: "graham-lehrer2004",
+    library: {
+      docId: "04010141",
+      dir: "library/04010141",
+      pdf: "library/04010141/04010141.pdf",
+      stage: "sections",
+      pages: 33,
+      sections: 8,
+    },
+    type: "article",
+    title: "Cellular algebras and diagram algebras in representation theory",
+    author: [{ family: "Graham", given: "J. J." }, { family: "Lehrer", given: "G. I." }],
+    note: "PDF library/04010141/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "owr-2018-52",
+    library: {
+      docId: "104171-owr-2018-52",
+      dir: "library/104171-owr-2018-52",
+      pdf: "library/104171-owr-2018-52/10.4171-owr-2018-52.pdf",
+      stage: "sections",
+      pages: 66,
+      sections: 29,
+    },
+    type: "article",
+    title: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)",
+    DOI: "10.4171/OWR/2018/52",
+    note: "PDF library/104171-owr-2018-52/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "dazagarcia-elduque-sayin2024",
+    library: {
+      docId: "104171-rmi-1408",
+      dir: "library/104171-rmi-1408",
+      pdf: "library/104171-rmi-1408/10.4171-rmi-1408.pdf",
+      stage: "sections",
+      pages: 24,
+      sections: 6,
+    },
+    type: "article",
+    title: "From octonions to composition superalgebras via tensor categories",
+    author: [{ family: "Daza-García", given: "Alberto" }, { family: "Elduque", given: "Alberto" }, { family: "Sayin", given: "Umut" }],
+    DOI: "10.4171/RMI/1408",
+    note: "PDF library/104171-rmi-1408/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "buffenoir-roche1999",
+    library: {
+      docId: "9710022v2",
+      dir: "library/9710022v2",
+      pdf: "library/9710022v2/9710022v2.pdf",
+      stage: "sections",
+      pages: 60,
+      sections: 2,
+    },
+    type: "article",
+    title: "Harmonic Analysis on the quantum Lorentz group",
+    author: [{ family: "Buffenoir", given: "E." }, { family: "Roche", given: "Ph." }],
+    note: "PDF library/9710022v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "bruguieres-virelizier2008",
+    library: {
+      docId: "arxiv-0812.2426v1",
+      dir: "library/arxiv-0812.2426v1",
+      pdf: "library/arxiv-0812.2426v1/0812.2426v1.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 44,
+      arxiv: "0812.2426v1",
+    },
+    type: "article",
+    title: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
+    author: [{ family: "Bruguières", given: "Alain" }, { family: "Virelizier", given: "Alexis" }],
+    URL: "https://arxiv.org/abs/0812.2426",
+    note: "PDF library/arxiv-0812.2426v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "comes2009",
+    library: {
+      docId: "arxiv-0910.5695v2",
+      dir: "library/arxiv-0910.5695v2",
+      pdf: "library/arxiv-0910.5695v2/0910.5695v2.pdf",
+      stage: "sections",
+      pages: 43,
+      sections: 19,
+      arxiv: "0910.5695v2",
+    },
+    type: "article",
+    title: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)",
+    author: [{ family: "COMES", given: "JONATHAN" }, { family: "OSTRIK", given: "VICTOR" }],
+    URL: "https://arxiv.org/abs/0910.5695",
+    note: "PDF library/arxiv-0910.5695v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "balsam2010",
+    library: {
+      docId: "arxiv-1004.1533v3",
+      dir: "library/arxiv-1004.1533v3",
+      pdf: "library/arxiv-1004.1533v3/1004.1533v3.pdf",
+      stage: "sections",
+      pages: 39,
+      sections: 17,
+      arxiv: "1004.1533v3",
+    },
+    type: "article",
+    title: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
+    author: [{ family: "BALSAM", given: "BENJAMIN" }, { family: "KIRILLOV", given: "ALEXANDER" }],
+    URL: "https://arxiv.org/abs/1004.1533",
+    note: "PDF library/arxiv-1004.1533v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "comes2011",
+    library: {
+      docId: "arxiv-1103.2082v1",
+      dir: "library/arxiv-1103.2082v1",
+      pdf: "library/arxiv-1103.2082v1/1103.2082v1.pdf",
+      stage: "sections",
+      pages: 17,
+      sections: 20,
+      arxiv: "1103.2082v1",
+    },
+    type: "article",
+    title: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)",
+    author: [{ family: "COMES", given: "JONATHAN" }, { family: "KUJAWA", given: "JONATHAN R." }],
+    URL: "https://arxiv.org/abs/1103.2082",
+    note: "PDF library/arxiv-1103.2082v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "machleidt-entem2011",
+    library: {
+      docId: "arxiv-1105.2919v1",
+      dir: "library/arxiv-1105.2919v1",
+      pdf: "library/arxiv-1105.2919v1/1105.2919v1.pdf",
+      stage: "sections",
+      pages: 93,
+      sections: 36,
+      arxiv: "1105.2919v1",
+    },
+    type: "article",
+    title: "Chiral effective field theory and nuclear forces",
+    author: [{ family: "Machleidt", given: "R." }, { family: "Entem", given: "D. R." }],
+    URL: "https://arxiv.org/abs/1105.2919",
+    note: "PDF library/arxiv-1105.2919v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "ip2012",
+    library: {
+      docId: "arxiv-1108.5365v2",
+      dir: "library/arxiv-1108.5365v2",
+      pdf: "library/arxiv-1108.5365v2/1108.5365v2.pdf",
+      stage: "sections",
+      pages: 92,
+      sections: 34,
+      arxiv: "1108.5365v2",
+    },
+    type: "article",
+    title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)",
+    author: [{ family: "Ip", given: "Ivan C. H." }],
+    URL: "https://arxiv.org/abs/1108.5365",
+    note: "PDF library/arxiv-1108.5365v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "andersen2014",
+    library: {
+      docId: "arxiv-1409.2799v2",
+      dir: "library/arxiv-1409.2799v2",
+      pdf: "library/arxiv-1409.2799v2/1409.2799v2.pdf",
+      stage: "sections",
+      pages: 50,
+      sections: 11,
+      arxiv: "1409.2799v2",
+    },
+    type: "article",
+    title: "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES",
+    author: [{ family: "ANDERSEN", given: "HENNING HAAHR" }, { family: "TUBBENHAUER", given: "DANIEL" }],
+    URL: "https://arxiv.org/abs/1409.2799",
+    note: "PDF library/arxiv-1409.2799v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "etingof-ostrik2018",
+    library: {
+      docId: "arxiv-1801.04409v4",
+      dir: "library/arxiv-1801.04409v4",
+      pdf: "library/arxiv-1801.04409v4/1801.04409v4.pdf",
+      stage: "sections",
+      pages: 35,
+      sections: 21,
+      arxiv: "1801.04409v4",
+    },
+    type: "article",
+    title: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES",
+    author: [{ family: "Etingof", given: "Pavel" }, { family: "Ostrik", given: "Victor" }],
+    URL: "https://arxiv.org/abs/1801.04409",
+    note: "PDF library/arxiv-1801.04409v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "heidersdorf2019",
+    library: {
+      docId: "arxiv-1912.09457v3",
+      dir: "library/arxiv-1912.09457v3",
+      pdf: "library/arxiv-1912.09457v3/1912.09457v3.pdf",
+      stage: "sections",
+      pages: 37,
+      sections: 12,
+      arxiv: "1912.09457v3",
+    },
+    type: "article",
+    title: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS",
+    author: [{ family: "HEIDERSDORF", given: "THORSTEN" }, { family: "WENZL", given: "HANS" }],
+    URL: "https://arxiv.org/abs/1912.09457",
+    note: "PDF library/arxiv-1912.09457v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "blanchet2020",
+    library: {
+      docId: "arxiv-2011.12932v2",
+      dir: "library/arxiv-2011.12932v2",
+      pdf: "library/arxiv-2011.12932v2/2011.12932v2.pdf",
+      stage: "sections",
+      pages: 26,
+      sections: 5,
+      arxiv: "2011.12932v2",
+    },
+    type: "article",
+    title: "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+    author: [{ family: "BLANCHET", given: "CHRISTIAN" }, { family: "DERENZI", given: "MARCO" }],
+    URL: "https://arxiv.org/abs/2011.12932",
+    note: "PDF library/arxiv-2011.12932v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "lachowska2024",
+    library: {
+      docId: "arxiv-2404.03933v2",
+      dir: "library/arxiv-2404.03933v2",
+      pdf: "library/arxiv-2404.03933v2/2404.03933v2.pdf",
+      stage: "sections",
+      pages: 44,
+      sections: 15,
+      arxiv: "2404.03933v2",
+    },
+    type: "article",
+    title: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2)",
+    author: [{ family: "LACHOWSKA", given: "ANNA" }, { family: "POSTNOVA", given: "OLGA" }, { family: "RESHETIKHIN", given: "NICOLAI" }, { family: "SOLOVYEV", given: "DMITRY" }],
+    URL: "https://arxiv.org/abs/2404.03933",
+    note: "PDF library/arxiv-2404.03933v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "hoyer2024",
+    library: {
+      docId: "arxiv-2411.04021v1",
+      dir: "library/arxiv-2411.04021v1",
+      pdf: "library/arxiv-2411.04021v1/2411.04021v1.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 3,
+      arxiv: "2411.04021v1",
+    },
+    type: "article",
+    title: "On the Gram determinants of the Specht modules",
+    author: [{ family: "Hoyer", given: "Linda" }],
+    URL: "https://arxiv.org/abs/2411.04021",
+    note: "PDF library/arxiv-2411.04021v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "carvalho2026",
+    library: {
+      docId: "arxiv-2607.03827v1",
+      dir: "library/arxiv-2607.03827v1",
+      pdf: "library/arxiv-2607.03827v1/2607.03827v1.pdf",
+      stage: "sections",
+      pages: 32,
+      sections: 9,
+      arxiv: "2607.03827v1",
+    },
+    type: "article",
+    title: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS",
+    author: [{ family: "CARVALHO", given: "PAULA A.A.B." }, { family: "KOENIG", given: "STEFFEN" }, { family: "LOMP", given: "CHRISTIAN" }],
+    URL: "https://arxiv.org/abs/2607.03827",
+    note: "PDF library/arxiv-2607.03827v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "barrett1993",
+    library: {
+      docId: "arxiv-hep-th-9310164v2",
+      dir: "library/arxiv-hep-th-9310164v2",
+      pdf: "library/arxiv-hep-th-9310164v2/9310164v2.pdf",
+      stage: "sections",
+      pages: 16,
+      sections: 13,
+      arxiv: "hep-th/9310164v2",
+    },
+    type: "article",
+    title: "SPHERICAL CATEGORIES",
+    author: [{ family: "Barrett", given: "John W." }, { family: "Westbury", given: "Bruce W." }],
+    URL: "https://arxiv.org/abs/hep-th/9310164",
+    note: "PDF library/arxiv-hep-th-9310164v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "andre-kahn2002",
+    library: {
+      docId: "arxiv-math-0203273v3",
+      dir: "library/arxiv-math-0203273v3",
+      pdf: "library/arxiv-math-0203273v3/0203273v3.pdf",
+      stage: "sections",
+      pages: 146,
+      sections: 302,
+      arxiv: "math/0203273v3",
+    },
+    type: "article",
+    title: "Nilpotence, radicaux et structures monoïdales",
+    author: [{ family: "André", given: "Yves" }, { family: "Kahn", given: "Bruno" }],
+    URL: "https://arxiv.org/abs/math/0203273",
+    note: "PDF library/arxiv-math-0203273v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "kuenzer-mathas2003",
+    library: {
+      docId: "arxiv-math-0309426v2",
+      dir: "library/arxiv-math-0309426v2",
+      pdf: "library/arxiv-math-0309426v2/0309426v2.pdf",
+      stage: "sections",
+      pages: 20,
+      sections: 46,
+      arxiv: "math/0309426v2",
+    },
+    type: "article",
+    title: "ELEMENTARY DIVISORS OF SPECHT MODULES",
+    author: [{ family: "Künzer", given: "Matthias" }, { family: "Mathas", given: "Andrew" }],
+    URL: "https://arxiv.org/abs/math/0309426",
+    note: "PDF library/arxiv-math-0309426v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "onn2006",
+    library: {
+      docId: "arxiv-math-0606222v2",
+      dir: "library/arxiv-math-0606222v2",
+      pdf: "library/arxiv-math-0606222v2/0606222v2.pdf",
+      stage: "sections",
+      pages: 41,
+      sections: 19,
+      arxiv: "math/0606222v2",
+    },
+    type: "article",
+    title: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+    author: [{ family: "ONN", given: "URI" }, { family: "STOKMAN", given: "JASPER V." }],
+    URL: "https://arxiv.org/abs/math/0606222",
+    note: "PDF library/arxiv-math-0606222v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "geck2006",
+    library: {
+      docId: "arxiv-math-0611941v3",
+      dir: "library/arxiv-math-0611941v3",
+      pdf: "library/arxiv-math-0611941v3/0611941v3.pdf",
+      stage: "sections",
+      pages: 16,
+      sections: 8,
+      arxiv: "math/0611941v3",
+    },
+    type: "article",
+    title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+    author: [{ family: "GECK", given: "MEINOLF" }],
+    URL: "https://arxiv.org/abs/math/0611941",
+    note: "PDF library/arxiv-math-0611941v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "ahmedov1998",
+    library: {
+      docId: "arxiv-math-9808030v1",
+      dir: "library/arxiv-math-9808030v1",
+      pdf: "library/arxiv-math-9808030v1/9808030v1.pdf",
+      stage: "sections",
+      pages: 17,
+      sections: 13,
+      arxiv: "math/9808030v1",
+    },
+    type: "article",
+    title: "Planscherel Measure on Eq(2)",
+    author: [{ family: "Ahmedov", given: "H." }, { family: "Duru", given: "I. H." }],
+    URL: "https://arxiv.org/abs/math/9808030",
+    note: "PDF library/arxiv-math-9808030v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "machleidt2001",
+    library: {
+      docId: "arxiv-nucl-th-0006014v1",
+      dir: "library/arxiv-nucl-th-0006014v1",
+      pdf: "library/arxiv-nucl-th-0006014v1/0006014v1.pdf",
+      stage: "sections",
+      pages: 69,
+      sections: 35,
+      arxiv: "nucl-th/0006014v1",
+    },
+    type: "article",
+    title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
+    author: [{ family: "Machleidt", given: "R." }],
+    URL: "https://arxiv.org/abs/nucl-th/0006014",
+    note: "PDF library/arxiv-nucl-th-0006014v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "kraemer-dissertation",
+    library: {
+      docId: "disssubmission",
+      dir: "library/disssubmission",
+      pdf: "library/disssubmission/DissSubmission.pdf",
+      stage: "sections",
+      pages: 181,
+      sections: 121,
+    },
+    type: "article",
+    title: "Tannakian categories of perverse sheaves on abelian varieties",
+    author: [{ family: "Krämer", given: "Thomas" }],
+    note: "PDF library/disssubmission/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "springer1976",
+    library: {
+      docId: "ppn356556735-0036",
+      dir: "library/ppn356556735-0036",
+      pdf: "library/ppn356556735-0036/PPN356556735_0036.pdf",
+      stage: "candidates",
+      pages: 38,
+      sections: 1,
+    },
+    type: "article",
+    title: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups",
+    author: [{ family: "Springer", given: "T. A." }],
+    note: "PDF library/ppn356556735-0036/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "xi2005",
+    library: {
+      docId: "xi",
+      dir: "library/xi",
+      pdf: "library/xi/xi.pdf",
+      stage: "sections",
+      pages: 1,
+      sections: 1,
+    },
+    type: "article",
+    title: "Cellular algebras",
+    author: [{ family: "Xi", given: "Changchang" }],
+    note: "PDF library/xi/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
@@ -13387,7 +13949,7 @@ export const references: CSLData[] = [
 export const referenceMap = new Map(references.map((r) => [r.id, r]));
 
 /** Get a reference by id. Throws if not found. */
-export function getRef(id: string): CSLData {
+export function getRef(id: string): Reference {
   const entry = referenceMap.get(id);
   if (!entry) throw new Error(`Unknown reference: "${id}". Check content/schema/references.ts`);
   return entry;

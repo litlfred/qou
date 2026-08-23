@@ -1,13 +1,13 @@
 ---
 doc_id: malkin-2021-galois-action-on-motivic-fundamental-groups-thes
-doc_title: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0)"
+doc_title: "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves"
 section_id: sec-029-the-weight-4-case-euler-complexes
 section_title: "The weight 4 case: Euler complexes"
 section_number: null
 pages: 109-112
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
-doc_brief: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a finite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) — On the"
+doc_brief: "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves — On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay"
 ---
 Let us show how the map in Theorem 3.13 generalizes those constructed by [GL, G8]. To be consistent with
 those sources, we use the motivic language in this section, but the same results hold in the Hodge realization

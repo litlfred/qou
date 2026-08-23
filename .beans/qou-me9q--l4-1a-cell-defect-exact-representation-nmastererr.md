@@ -11,7 +11,7 @@ updated_at: 2026-08-11T10:00:00Z
 DONE: LogSineCellDefect.lean cell_defect_repr sorry-free — (pi/N)S(n) - F(n pi/N) = sum of per-cell integrals of f(x_j) - f(u), EXACT, no range restriction on n. Built on sum_integral_adjacent_intervals + integral_log_two_sin + intervalIntegrable_log_two_sin. Next: qou-itg0 (Stirling half-log).
 
 REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
-since 2026-08-10 19:24 UTC, one day BEFORE the L4-1 feasibility pass that
+since 2026-08-08 22:33 UTC, THREE DAYS BEFORE the L4-1 feasibility pass that
 opened this bean.
 
   QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic

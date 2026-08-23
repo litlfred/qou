@@ -1141,12 +1141,28 @@ ask whether a **formalizable structural claim prunes the class first**:
 This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
-family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+family this session: `dc_3/dq ≈ 3.84e6` impossible for smooth real `f`
 (kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
 the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
 12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
 A is ~4 sig figs from `c_2..c_10` (no high-precision identification
 possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+
+> **Figure corrected 2026-08-22 — the conclusion is untouched.** This read
+> `≈ 4.6e6` here and in five other places. That value is the **stale-c₃
+> twin** of the "≈ 3 %" swing this document already corrects two sections
+> up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
+> 2.88 % swing, and both should have been re-derived at the same time.
+> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
+> **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
+> and `3838404.458` recorded in `rem-qstar`'s own witness as
+> `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
+> 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
+> **prune stands and the real-q c₃ family stays killed** — only the
+> quoted magnitude was wrong. The five other sites are audit docs and
+> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
 wide/expensive searches, not every one-off check. Full protocol +
@@ -1213,7 +1229,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1290,7 +1306,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1328,6 +1344,21 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
+- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
+  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+  **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
+  legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
+  observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
+  own; the sub-100× result is manufactured by an EM correction
+  `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the untruncated
+  series** (chosen against the data — the same fit signature the `c_k` red-team
+  caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
+  (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
+  arithmetic metric; the count of **unconditional, parameter-free** sub-100×
+  predictions is **0**. State it as "1/5 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  analysis:
+  [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1576,7 +1607,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
@@ -1639,7 +1670,52 @@ muon; muon-anchor → ~4000σ on proton).
    (R2) does not change this.** R2 restates the end state; it does not
    scope the sweep, so the sign-off requirement stands. If the owner
    intends R2 to authorise the bulk migration, that has to be said here
-   explicitly — do not infer it from R2's wording. Concretely:
+   explicitly — do not infer it from R2's wording.
+
+   > **🟧 OWNER AUTHORISATION, RECORDED 2026-08-19 (the gate above is now
+   > SATISFIED — read the four constraints before running anything).**
+   > The owner gave the directive in session on 2026-08-15, in these words:
+   >
+   > > *"we want proton unless for an explicit reason (like comparison on
+   > > proton vs muon results). otherwise pin proton"*
+   > > *"fix all, even if not visible."*
+   >
+   > It is recorded **here** because the gate above asks for exactly that
+   > and a chat transcript does not satisfy it. PR #5049 held the bulk
+   > reclassification back on precisely this ground, and it was right to:
+   > the branch could not show the directive, only infer it.
+   >
+   > **The authorisation is real, and it is not a blank cheque.** The first
+   > attempt at this migration broke `main` for **208 producers**
+   > (`qou-m9xp`), so it carries four constraints, each one bought:
+   >
+   > 1. **NEVER re-pin an anchor-DEFINING witness.**
+   >    `q-pinning-50-digit.witness.json` is what
+   >    `qou_substrate.witness._q0_value_for_anchor("muon")` READS. Re-pinning
+   >    it does not migrate a consumer — it redefines what "muon" *means*, so
+   >    every muon-stamped witness in the corpus then disagrees with its own
+   >    anchor (262 `Q0_FLIP`s) and `q_parameter`'s anti-corruption guard
+   >    hard-fails every `ideal_muon` producer, including the one that would
+   >    regenerate the anchor. `q0_repin_sweep.py` now excludes it by name
+   >    (`ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS`); do not remove that.
+   > 2. **The muon anchor keeps its definition.** "Proton everywhere"
+   >    governs what new compute *pins to*, not whether the muon layer still
+   >    has a value. Something in the tree must continue to hold the muon
+   >    50-digit string or the ideal/CAL-2 layer becomes unstatable.
+   > 3. **A comparison producer needs BOTH pins and the manifest cannot
+   >    serve it.** A per-process override supplies one. Such a producer
+   >    reads `q_at()` / `q_muon_at()` by name and belongs under
+   >    `physical_proton` — see `mu_substrate_tension_audit_100dps`, which
+   >    understated its own subject **155×** while listed `ideal_muon`.
+   > 4. **Do not split the change.** The manifest reclassification and the
+   >    witnesses it re-pins are one change. #5049 merged the witnesses and
+   >    held the manifest, and the half that landed is the half that broke
+   >    `main`. Land them together or not at all.
+   >
+   > Scope: `qou-1c4y`. Rules 1–4 immediately below still apply to
+   > everything the sweep does not cover.
+
+   Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the

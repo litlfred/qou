@@ -353,13 +353,75 @@ def slug_id(md: dict, doc: str, authors: list[dict]) -> str:
     return re.sub(r"[^a-z0-9.-]", "", doc.lower())[:44]
 
 
+def strip_comments(src: str) -> str:
+    """Blank out `//` and `/* */` comments, leaving string literals alone.
+
+    references.ts documents its own history in comments, and one of them
+    quotes the code it is describing:
+
+        // S1/PR #5187 added a second `ref({ id: "orellana1998" })`
+        // block at this position — a duplicate key — and it was removed
+
+    A scan for `id: "..."` matches inside that comment, and the block it
+    then reads runs to the end of the NEXT entry — so the title of
+    Kazhdan-Wenzl was being indexed under the id `orellana1998`, and a
+    document with that title would have been reported as already
+    registered under the wrong entry.
+
+    Both comment forms have to be handled, and `//` alone is not enough:
+    the file opens with a JSDoc block containing "Each entry's `id`", and
+    that apostrophe opens a string literal that swallows the next 240
+    lines — including a live `URL:` field, which then vanishes from the
+    scan. Quotes are tracked so that the `//` in every entry's URL is not
+    mistaken for a comment.
+    """
+    out: list[str] = []
+    i, n = 0, len(src)
+    quote: str | None = None
+    while i < n:
+        c = src[i]
+        if quote:
+            out.append(c)
+            if c == "\\" and i + 1 < n:
+                out.append(src[i + 1])
+                i += 2
+                continue
+            if c == quote:
+                quote = None
+            i += 1
+            continue
+        if c in "\"'`":
+            quote = c
+            out.append(c)
+            i += 1
+            continue
+        if c == "/" and i + 1 < n and src[i + 1] == "/":
+            j = src.find("\n", i)
+            if j == -1:
+                break
+            out.append("\n")
+            i = j + 1
+            continue
+        if c == "/" and i + 1 < n and src[i + 1] == "*":
+            j = src.find("*/", i + 2)
+            if j == -1:
+                break
+            # Keep the newlines so line numbers in any later message survive.
+            out.append("\n" * src.count("\n", i, j + 2))
+            i = j + 2
+            continue
+        out.append(c)
+        i += 1
+    return "".join(out)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Draft references.ts entries for unregistered library documents")
     ap.add_argument("--band", choices=["high", "medium", "low", "registered"])
     ap.add_argument("--emit", action="store_true", help="print TypeScript for the selected band")
     args = ap.parse_args()
 
-    refs = open(REFS, encoding="utf-8").read()
+    refs = strip_comments(open(REFS, encoding="utf-8").read())
     overrides = (json.load(open(OVERRIDES, encoding="utf-8")).get("overrides", {})
                  if os.path.exists(OVERRIDES) else {})
     # Titles already in the bibliography. A document can be unregistered in

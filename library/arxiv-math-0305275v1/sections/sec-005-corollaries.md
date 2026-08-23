@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0305275v1
-doc_title: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12"
+doc_title: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds"
 section_id: sec-005-corollaries
 section_title: "Corollaries"
 section_number: null
 pages: 34-38
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
-doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12 — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2"
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
 ---
 In this section we prove some corollaries that can be useful for stu dying
 hyperbolic 3-manifolds.

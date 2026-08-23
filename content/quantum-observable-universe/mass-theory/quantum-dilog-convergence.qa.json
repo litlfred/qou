@@ -2111,6 +2111,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.583Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2130,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.624Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-em-dash": [
@@ -2149,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 25 words)"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.662Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-triples": [
@@ -2168,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 25 words)"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.703Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-closing-aphorism": [
@@ -2187,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.743Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-meta-commentary": [
@@ -2206,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.784Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-thesis-restatement": [
@@ -2225,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.823Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-performed-warmth": [
@@ -2244,6 +2356,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.862Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-superlative": [
@@ -2263,6 +2391,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.902Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "trap-nonspeakable": [
@@ -2282,6 +2426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.771Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.943Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2305,5 +2465,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:44:27.943Z"
 }

@@ -1426,6 +1426,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an elliptic-curve or skein-module problem.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.005Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'excluded by that failure, not by a degeneracy', 'not a consequence of this squeeze', 'classically a field theory, not an elliptic-curve or skein-module problem' are all scope corrections stating what the argument does and does not establish — the (a)/(b) discipline, substantive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.063Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the QOU provides it by categorical construction. What remains is the regularity programme: ...' names the residual obligation rather than reframing the claim."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,22 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 432 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.120Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "2 em-dashes in 623 words; one matched parenthetical pair.",
+        "notes": "Formatting note: 'millennium statement—analogous to how' uses an unspaced em-dash where the rest of the corpus spaces them."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 432 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.167Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'holds for every standard-real delta > 0 ..., is marginal at delta = epsilon^2, and fails at delta = 0' is a genuine three-case analysis of one inequality."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.226Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Final sentence is a technical identification with a scope qualifier ('a re-expression ... in the categorical register'), not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.289Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'We make this identification explicit' and 'Two things do not follow ... and are recorded here rather than assumed' are scope statements; the second is the (a)/(b) bookkeeping the corpus requires."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.357Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The mass-gap identification is stated three times (opening, 'literally true ... as a surreal-order inequality', and the closing 're-expression'), but the final instance adds the epistemic qualifier that it is a re-expression rather than a proof.",
+        "notes": "Optional consolidation: the middle statement is the redundant one."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.414Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1700,23 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.470Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'The Yang--Mills mass-gap theorem is literally true in the QOU framework as a surreal-order inequality' applies maximum-strength phrasing to a Millennium-problem claim that the same block then qualifies twice (the squeeze 'fails at delta = 0' and gives a threshold epsilon^2 larger than Delta_q by epsilon^{-1}; 'What remains is the regularity programme').",
+        "notes": "Claim-adjacent, so proposed rather than applied: 'holds in the QOU framework as a surreal-order inequality' — the qualifier 'as a surreal-order inequality' already carries the distinction 'literally' is reaching for."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:30:59.528Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fb1278a76c67",
+          "ts": "4f174083ece1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:31:13.516Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Sentences parse aloud; the one hard passage is the epsilon^3_phys formula, flagged separately as a rigor anomaly rather than a register defect."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:31:13.516Z"
 }

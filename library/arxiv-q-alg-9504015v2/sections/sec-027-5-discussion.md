@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9504015v2
-doc_title: "Witten’s Invariants of Rational Homology Spheres at Prime"
+doc_title: "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution"
 section_id: sec-027-5-discussion
 section_title: "Discussion"
 section_number: 5
 pages: 29-30
 source_pdf: 9504015v2.pdf
 source_sha256: ea5588225a393477
-doc_brief: "Witten’s Invariants of Rational Homology Spheres at Prime — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial connection contribution to Witten’s invariant of"
+doc_brief: "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution — We establish a relation between the coeﬃcients of asymptotic expan sion of the trivial"
 ---
 As we have already mentioned in the Introduction, all results of this paper follow rigorously
 from the “physical” input: Propositions 1.2 and 1.3. The Proposition 1 .3 might be harder

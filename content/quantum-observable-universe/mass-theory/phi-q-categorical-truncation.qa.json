@@ -2102,6 +2102,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.079Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2121,6 +2136,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.166Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, display, two-sentence gloss."
       }
     ],
     "trap-em-dash": [
@@ -2140,6 +2170,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.247Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2159,6 +2204,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.342Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2178,6 +2238,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.485Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the truncation-invariance clause, which is half the proposition's content."
       }
     ],
     "trap-meta-commentary": [
@@ -2197,6 +2272,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.592Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2216,6 +2306,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.650Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The two closing sentences state the depth's characterisation and the invariance — both new relative to the display."
       }
     ],
     "trap-performed-warmth": [
@@ -2235,6 +2340,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.747Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2254,6 +2374,21 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.881Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exactly' and 'identical' are precise mathematical predicates here."
       }
     ],
     "trap-nonspeakable": [
@@ -2273,6 +2408,22 @@
         "reviewed_at": "2026-08-15T10:31:00.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "567f8254a0ca",
+          "ts": "6c5e24e7e7ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:54.942Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short sentences.",
+        "notes": "RIGOR (reported, epistemic mismatch between statement and proof). This block states the truncation identity and the invariance UNCONDITIONALLY, with no caveat of any kind. Its own sibling prf: block, in contrast, is scrupulous: Step 3 says the partition-depth grading of the centre is 'not stated there and ASSUMED here' and cites docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md; Step 4 says the cor:quantum-dilogarithm identity it starts from is 'unstratified'; and a section headed 'Remaining gap' says the uniform bound needed for the real-valued evaluation 'is the open part', conjectural under conj:brane-tower-z-habiro. The .ts records lean validation 'not_checked'. Per AGENTS.md's 'conditional-proved != premise-established', a reader of the .md alone learns none of this. Proposed: add the one-line conditional banner naming the assumed word-depth-to-partition-depth bridge, the way the corpus's §3b-cond blocks do — the proof already contains the wording. SECOND ITEM, a real gap in the algebra rather than the framing: the coefficients alpha_k appear in this display and in Step 3 of the proof but are never defined, and Step 4's telescope Sum_k alpha_k [Phi^{[<=k]} - Phi^{[<=k-1]}] = Phi^{[<=k_star]} is valid ONLY if alpha_k = 1 for every k (and Phi^{[<=-1]} := 0). Either fix alpha_k = 1 and drop them, or state what they are and why the telescope survives them."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2296,5 +2447,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:59:54.942Z"
 }

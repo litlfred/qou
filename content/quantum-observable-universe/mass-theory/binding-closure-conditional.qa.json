@@ -2036,6 +2036,21 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.289Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2055,6 +2070,21 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.375Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -2075,6 +2105,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 271 words (1.48/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.446Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -2094,6 +2139,21 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 271 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.508Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -2113,6 +2173,23 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.550Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "'While the formal proof utilizes a standard conditional factor-out strategy over a finite set, packaging the multi-body sum structure through this specific closure mechanism to capture the Seiberg-Witten periods establishes a mathematically novel structural abstraction within the Quantum Observable Universe.' This is the SAME concessive-then-elevate template found in alpha-k-derivation-procedure-proof.md ('Although the derivation mechanism utilizes the standard ..., employing this machinery ... constitutes a mathematically novel physical framework unique to the Quantum Observable Universe') - two instances of one construction in one 45-block batch.",
+        "notes": "NOT fixed - the sentence asserts novelty, an authorial claim, so removal is a meaning change. proposed: delete from the .md and, if the claim is to be retained, move it to the .ts as authorNotes [{kind:'note'}] per AGENTS.md section 4d. The block's argument is already complete at 'When (B) is derived, this theorem promotes the many-body conjecture to an unconditional identity.' Because the same template appears twice, recommend a chapter-wide grep for 'mathematically novel' / 'unique to the Quantum Observable Universe' / 'within the Quantum Observable Universe' before the batch is committed."
       }
     ],
     "trap-meta-commentary": [
@@ -2132,6 +2209,22 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.595Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'This is a **rigorous-conditional** result: it is fully verified by Lean modulo the single named input (B) ... Obligation (C) ... and the residue form (D) are discharged outright'.",
+        "notes": "Mandated epistemic labelling (AGENTS.md section 3b-cond item 3 and the conditional-proved-is-not-premise-established rule), not narrated emphasis. Kept. NOTE: label '(D)' appears with no prior introduction - only (B) and (C) are defined; recorded in the batch anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -2151,6 +2244,21 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.654Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -2170,6 +2278,21 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.710Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on conj:binding-manybody-eq-jet-filtration), binding closed form); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -2189,6 +2312,23 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.769Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Same sentence: 'establishes a mathematically novel structural abstraction within the Quantum Observable Universe' - 'mathematically novel' asserted of the authors' own packaging, immediately after conceding the technique is standard.",
+        "notes": "NOT fixed - same sentence as the trap-closing-aphorism finding; the proposed deletion resolves both."
       }
     ],
     "trap-nonspeakable": [
@@ -2208,6 +2348,23 @@
         "reviewed_at": "2026-08-15T10:31:00.336Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9235c32e7147",
+          "ts": "85e75c9b1c9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.822Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Same sentence: a 42-word single clause whose subject is a 20-word gerund phrase ('packaging the multi-body sum structure through this specific closure mechanism to capture the Seiberg-Witten periods') before the verb 'establishes' ever arrives.",
+        "notes": "NOT fixed - resolved by the deletion proposed under trap-closing-aphorism."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2231,5 +2388,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:35.822Z"
 }

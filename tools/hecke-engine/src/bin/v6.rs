@@ -479,9 +479,12 @@ fn nucleus_name(z: usize, n: usize) -> String {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    // Substrate parameter q₀ — derived from Vol(4_1)/m_μ/m_e.
-    // Single source of truth: q_parameter.py. This must match.
-    const Q0: f64 = 1.10998;
+    // Substrate parameter q₀ — single source of truth is `gram::Q_0`, the
+    // PROTON/experimental pin matching `q_parameter.Q` (owner directive
+    // 2026-08-07). The literal `1.10998` this replaced was a truncated
+    // 5-digit MUON value, 1277 ppb away — it violated the very
+    // "this must match" invariant the old comment asserted.
+    const Q0: f64 = hecke_engine::gram::Q_0;
     let engine = Engine::new(Q0);
 
     if args.len() < 2 {

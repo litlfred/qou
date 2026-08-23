@@ -1386,6 +1386,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not an extra postulate but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.546Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'Aromaticity here is not an extra postulate but a forced output of the LP minimum' - derived-vs-postulated is the framework's actual claim, so this falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Passes, but recording the DENSITY for the chapter: the same derived-not-postulated contrast appears in at least four blocks of this batch - here; benzene-assembly-spine ('a consequence of the construction, not an assumption'); benzene-bond-equalization ('not an axiom of molecular orbital theory but a theorem of the LP dual'); benzene-molecular-braid ('rather than being postulated'). Each is individually defensible; the concentration is worth an author's eye. Also 'a genuinely new structural feature' is a mild opening flourish, judged pass."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1405,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.587Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1424,6 +1456,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.625Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1443,6 +1491,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.665Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1462,6 +1526,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.706Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: final prose sentence is: \"Aromaticity here is not an extra postulate but a forced output of the LP minimum on an $n$-membered ring.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1481,6 +1561,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.746Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1500,6 +1596,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.789Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: final sentence checked against the body: \"Aromaticity here is not an extra postulate but a forced output of the LP minimum on an $n$-membered ring.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1519,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.831Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1538,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.873Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: no unqualified maximum-strength claim; comparative and bounding claims carry their conditions.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-nonspeakable": [
@@ -1557,6 +1701,22 @@
         "reviewed_at": "2026-08-15T10:31:01.536Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a0cbc63757e",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.913Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (chapter-closing intro for the benzene section; T(2,6) vs Kekule; D_6 read as equal bond lengths). Judged on the whole text: read aloud end to end (5 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1579,5 +1739,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:08.913Z"
 }

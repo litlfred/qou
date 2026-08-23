@@ -27,4 +27,4 @@
 4. *Close the ring: apply C$_6$--H$_6$ and C$_6$--C$_1$ $\sigma$ bond to form the cyclic structure, reduce in $H_{120}(q)$.*
 5. *Add $\pi$ electrons: 6 electrons form a [threading link](#prop:benzene-threading-emergence) $T(2, 6)$ around the ring.*
 
-*Step 5 is critical. The threading link emerges from the LP dual as the optimal configuration for the remaining 6 electrons, rather than being postulated.*
+*The threading link of step 5 emerges from the LP dual as the optimal configuration for the remaining 6 electrons, rather than being postulated.*

@@ -1,10 +1,11 @@
 ---
 # qou-nrex
 title: 'EPIC: RSK inverse — reverse bumping to the Robinson-Schensted bijection (taken over from the Schensted programme)'
-status: todo
+status: in-progress
 type: milestone
+priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-16T02:46:29Z
+updated_at: 2026-08-22T19:52:50Z
 ---
 
 
@@ -243,3 +244,885 @@ one that can.
 condition** on `i` (row `i+1` strictly shorter than row `i`): removing the last cell of a
 non-corner row breaks column-strictness, so the statement is false without it. That hypothesis is
 the thing to get right before writing the proof.
+
+## Brick 10 — cascade right inverse, non-deleting branch (PR #5374, 2026-08-21)
+
+`insert (uninsert T i).1 z = T` under `2 ≤ (T.getD i []).length`. lean-direct exit 0;
+`#print axioms insert_uninsert` = [propext, Classical.choice, Quot.sound], no sorryAx.
+
+**The predicted hypothesis was wrong and is corrected in-file.** Brick 9's PR body predicted a
+corner condition (row i+1 strictly shorter than row i). It is not that: the row-kept branch works
+for *any* sorted row, corner or not, and the row-deleted branch fails on a genuine counterexample
+(#eval-checked): uninsert [[1],[2,4]] 0 = ([[2,4]], some 1) but insert [[2,4]] 1 = [[1,4],[2]].
+That T has row lengths (1,2) — a non-Young shape. So the deleting branch needs a **shape**
+hypothesis (weakly decreasing row lengths), which is the next brick, not a corner one.
+
+### Remaining
+- brick 11: the deleting branch, under a Young-shape hypothesis on T.
+- word-level surjectivity (iterate brick 10+11 the way brick 3 iterates brick 2).
+- RSKBurnsideHolds for general n → feeds spechtEquiv_of_sum_sq for the general Wedderburn split.
+
+
+### Brick 10 generalized (same PR #5374, 2026-08-21)
+
+The `2 ≤ length` side condition is GONE. `insert_uninsert` now holds at every row of a
+row-sorted, column-strict tableau with no empty rows — the full cascade right inverse.
+
+**Correction to the note above:** I wrote that the deleting branch 'needs a shape hypothesis
+(weakly decreasing row lengths), which is the next brick'. It did not need a new brick.
+`ColStrict` / `StrictBelow` were already in SchenstedInsertion.lean, and `StrictBelow` bundles
+BOTH halves — `lower.length ≤ upper.length` (the Young-shape half I was about to invent) and
+`upper[j] < lower[j]` — with the bumping lemma `insert_colStrict` already proved. One corpus grep
+for ColStrict before writing that note would have saved the round trip. Recorded in the file
+docstring and the PR body, not quietly dropped.
+
+axioms: insert_uninsert = [propext, Quot.sound] (Classical.choice dropped with the length omega).
+
+### Remaining after brick 10
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2.
+
+### Brick 11 — uninsert invariants (PR #5383, 2026-08-21, branch claude/schensted-uninsert-invariants-2026-08-21)
+
+uninsert_rowsSorted + uninsert_noEmptyRows, unconditional at every row index. Both needed to
+ITERATE brick 10 (the IH re-applies insert_uninsert at each intermediate tableau).
+
+**The corner condition finally located.** I looked for it in the wrong place across two bricks.
+StrictBelow bundles a LENGTH half; the keeping branch at row 0 turns 'row1.length <= r.length' into
+'row1.length <= r.length - 1', which fails exactly when row 1 is as long as row 0 — i.e. when the
+removed cell is not a corner. So:
+  - right-inverse identity (brick 10): needs NO corner condition
+  - ColStrict preservation: CANNOT hold without one
+Machine-checked on T = [[1,3],[2,4]]: cornerWitness_colStrict / cornerWitness_not_colStrict, plus
+cornerWitness_{rowsSorted,noEmptyRows}_survives showing the split is real on that same witness.
+
+Not a gap: the cascade is always run at the largest recording-tableau entry, which IS a corner.
+The condition is supplied by Q one level up and belongs in the statement that consumes it.
+
+### Remaining after brick 11
+- ColStrict preservation under an explicit corner hypothesis (needs the corner predicate defined,
+  and the i+1 case is the reverse bumping lemma proper).
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2, consuming the
+  three preservation lemmas.
+- RSKBurnsideHolds for general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
+
+### Brick 12a — rowUninsert index characterization (PR #5390, branch claude/schensted-rowuninsert-index-2026-08-21)
+
+rowUninsert_spec: the reverse mirror of the corpus's rowInsert_bump_eq_set. Existential form
+(k < length, getD k = z, .1 = r.set k y, z < y, and nothing right of k eligible). The maximality
+clause is the content.
+
+Two findings:
+- lt_of_index_lt needs NO sortedness. I expected weak-sorted + rightmost chaining; the maximality
+  clause gives y <= r[m] directly and z < y chains through. One line.
+- THIRD duplication caught this arc: getD_set_self / getD_set_ne / getD_eq_getElem_mem already
+  exist at SchenstedInsertion.lean:551,556,561. Pattern: that file is 1300+ lines and carries far
+  more than its section headings advertise. GREP IT BEFORE ADDING ANY List/getD/index helper.
+
+Machine-checked rightmost witness: rowUninsert [1,2,4] 3 = ([1,3,4], some 2) — two eligible
+entries, takes the right-hand one; leftmost would give [3,2,4], not weakly increasing.
+
+### Three PRs open simultaneously on this epic, no file overlap
+- #5374 brick 10  SchenstedCascadeRightInverse.lean
+- #5383 brick 11  SchenstedUninsertInvariants.lean
+- #5390 brick 12a SchenstedReverseRowIndex.lean
+All three add one import line to QOU.lean in the same region; 2nd and 3rd to land need a one-line
+rebase there.
+
+- brick 12b: reverse bump monotonicity (write index weakly INCREASES going up, mirror of
+  bump_findIdx_mono). May need a named uninsertIdx; rowUninsert_spec is the bridge.
+- brick 12c: uninsert preserves ColStrict, under the corner hypothesis located in #5383.
+- word-level surjectivity; RSKBurnsideHolds for general n.
+
+
+## MERGED 2026-08-21 — bricks 10-15 all on main
+
+All six landed via /prepare-merge-auto, rebase-merge, branches preserved:
+  #5374 b10 bd39e875e0 | #5383 b11 fce013fecc | #5390 b12 715db19cfc
+  #5398 b13 53286a5b6c | #5400 b14 3cd8bed694 | #5410 b15 87252c0d20
+
+Verified ON MAIN (not just per-branch): all six lean-direct exit 0 together; six imports registered
+in QOU.lean; zero sorryAx across every declaration. The one 'sorry' grep hit is the phrase
+'sorry-free' in a docstring.
+
+### Merge-mechanics lesson worth keeping
+The stacked branches could NOT be plain-rebased once their parents landed: rebase replays the
+parent's commits, which are already on main, giving 'both added' conflicts — and worse, the
+REBASE_HEAD version was the SUPERSEDED intermediate (pre-correction docstring) while main had the
+final one. Blindly resolving would have REVERTED the brick-12 correction.
+Fix: rebuild each stacked branch on fresh origin/main and cherry-pick ONLY its unique commits
+(git log --oneline origin/main..BR, drop the ones already landed). Also: a stacked PR's BASE must be
+retargeted to main (#5398 failed to merge with '405 merge conflicts' until its base was changed off
+the parent branch).
+
+### What the epic now has on main
+P side complete at the word level. insert/uninsert mutually inverse on column-strict tableaux
+(both composites); all three invariants preserved (two unconditionally, ColStrict at a corner);
+the run-level statement foldl_insert_uninsertSteps + insertWord_uninsertSteps; and brick 15 showing
+their hypotheses are inhabited.
+
+### Next: the Q-side, which is the actual gate on surjectivity
+CornersAlong P is for an ARBITRARY standard pair (P,Q) with positions read off Q — NOT off an
+insertion history. Different argument: the cell carrying the largest remaining entry of a standard
+tableau is a corner, because a cell below it would carry a larger entry. Brick 15 does NOT cover
+this and its docstring says so.
+
+
+### Brick 16 — Q-side keystone (PR #5426, based on main)
+
+isCorner_of_max_in_row : ColStrict T -> NoEmptyRows T -> i < T.length ->
+  (last cell of row i >= every entry of T) -> IsCorner T i
+
+Classical one-line contradiction: not-a-corner + ColStrict's length half pins rows i and i+1 EQUAL
+in length, putting a cell directly below the maximum, which column-strictness makes strictly larger.
+
+**It needs LESS than standardness.** I had this queued as 'needs a standardness predicate on
+List (List N)' and the corpus has none, so the obvious move was to write one. Checking what the
+argument actually consumes: no strict-row hypothesis, no standardness predicate — ColStrict plus the
+position of the maximum is the whole input. Writing that predicate would have been a fifth
+unnecessary addition on an arc that already caught four duplications.
+
+Also le_getD_last_of_sorted (+ isCorner_of_max_in_row_sorted) so a caller who knows the max is
+SOMEWHERE in row i can reach the keystone, which is stated about the last cell.
+
+### Remaining
+- brick 17: wire the keystone along a run — read positions off Q, show each step removes the largest
+  REMAINING entry, assemble CornersAlong for an arbitrary standard (P,Q).
+- rskPair bijective.
+- RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
+
+
+### Brick 17 — the cascade IS shape-level corner removal (same PR #5426)
+
+tableauShape_uninsert : ColStrict T -> NoEmptyRows T -> IsCorner T i ->
+  tableauShape (uninsert T i).1 = SYTEnum.removeCorner (tableauShape T) i
+
+uninsert changes exactly ONE row length (rows above the target are rewritten by rowUninsert, which
+preserves length), so on shapes it decrements entry i and drops the row if that empties it — exactly
+removeCorner.
+
+**This is how the arbitrary-(P,Q) argument crosses from Q to P.** IsCorner is determined by the
+shape (isCorner_iff_shape, brick 13), so once the shape is tracked, a corner of Q's shape is a
+corner of P's.
+
+Connects to EXISTING infra rather than duplicating: SYTEnum.removeCorner is the GNW corner-removal
+op in SYTListCorner.lean, and its sz_removeCorner / sorted_removeCorner / removeCorner_pos now apply
+to the reverse cascade for free. (Fifth potential duplication avoided — I checked before writing a
+parallel shape operation.)
+
+### Remaining for surjectivity — now assembly, not new mathematics
+- read the positions off Q (bricks 4-6 machinery: qRowOf / qAppendSteps);
+- show each step removes the largest REMAINING entry of Q;
+- induct with the shape carried alongside, using brick 16 + brick 17 at each step
+  -> CornersAlong P is for arbitrary standard (P,Q).
+Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+Wedderburn split (currently n <= 12 only, via the unrelated rskBurnsideHolds_le12).
+
+
+### Brick 18 — CornersAlong reduces to SHAPES ALONE (same PR #5426)
+
+uninsertSteps_shape_and_corners : ShapeCornersAlong (tableauShape T) is ->
+  CornersAlong T is  AND  tableauShape (uninsertSteps T is).1 = removeCornerSteps (tableauShape T) is
+
+**The decoupling is the result.** CornersAlong T is mentions the tableau at EVERY step, so
+discharging it looked like it needed P and Q reasoned about together. It does not: IsCorner is
+determined by the shape (isCorner_iff_shape, brick 13) and brick 17 makes the cascade act on shapes
+as removeCorner, so the run-level corner condition FACTORS THROUGH tableauShape T.
+
+Headline consequence — insertWord_uninsertSteps_of_shape: every hypothesis is about T's SHAPE and
+the position list; P appears only in the conclusion.
+
+Four conclusions in one induction because they are mutually dependent: the shape at step k needs the
+corner condition at every LATER step (else the cascade may not have succeeded), and the corner at
+step k needs the shape at step k. Brick 14's uninsertSteps_invariants does NOT break the circle — it
+TAKES CornersAlong as a hypothesis, which is what we are producing.
+
+### Epic status
+P side: DONE, and now reduced to shapes. Bricks 10-15 on main; 16-18 open in #5426.
+Remaining for surjectivity is ONE statement about Q's shape alone:
+  produce ShapeCornersAlong (tableauShape P) is + removeCornerSteps ... = []
+  from Q standard, by reading positions off Q (bricks 4-6: qRowOf / qAppendSteps) and showing each
+  step peels the corner carrying the largest REMAINING entry (brick 16 supplies that corner).
+Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+Wedderburn split.
+
+
+### Brick 19 — the two run conditions COINCIDE (same PR #5426)
+
+cornersAlong_iff_shape : CornersAlong T is <-> ShapeCornersAlong (tableauShape T) is
+(under RowsSorted + ColStrict + NoEmptyRows)
+
+Brick 18 gave shape -> tableau; this adds the converse. No circularity: the induction's own
+hypothesis supplies ShapeCornersAlong for the LATER steps, and tableauShape_uninsertSteps turns that
+into the shape at that point, so the shape is in hand before the current step's corner is checked.
+
+Immediately buys: brick 15's insertion-built CornersAlong now reads at shape level, so BOTH
+hypotheses of insertWord_uninsertSteps_of_shape are inhabited (shapeCornersAlong_insertWord,
+removeCornerSteps_insertWord). Same anti-vacuity check brick 15 made, one level up — a reduction to
+a condition nothing satisfies is no reduction.
+
+### #5426 now carries bricks 16-19, all sorry-free and axiom-clean
+16 isCorner_of_max_in_row | 17 tableauShape_uninsert | 18 the reduction | 19 the iff + inhabitation
+
+
+### Brick 20 — addable-cell sequences peel back as corners (same PR #5426)
+
+shapeCornersAlong_addCellSteps : YoungShape l -> AddableAlong l is ->
+  ShapeCornersAlong (addCellSteps l is) is  AND  removeCornerSteps (addCellSteps l is) is = l
+
+A standard tableau IS a sequence of addable cells. This proves such a sequence, peeled in reverse,
+is exactly a corner sequence — and lands back on the starting shape.
+
+Purely shape-level: no tableau, no Q, no insertion. Isolates the combinatorial content so brick 21
+only has to supply the bridge 'standard Q -> addable sequence'.
+
+Three single-step facts: youngShape_addCell, isCorner_addCell (shape mirror of brick 15's
+insert_isCorner, same reason), removeCorner_addCell (the exact-inverse half — why
+removeCornerSteps ... = l falls out of the same induction).
+
+Slip worth recording: I first routed sortedness through an invented List.sorted_ge_iff_getD_le.
+Replaced with sorted_of_getD_step, proved here — a shape is weakly decreasing as soon as each
+adjacent step is, which is the form the addCell case analysis actually produces.
+
+### The chain is now complete except one bridge
+  addable sequence --brick 20--> ShapeCornersAlong --brick 18/19--> CornersAlong
+    --brick 14--> insertWord (uninsertSteps P is).2 = P
+Brick 21 = the only gap: standard Q gives an AddableAlong sequence whose addCellSteps [] is the
+shape of P. Everything downstream of that is proved.
+
+
+### Brick 21 — insertion acts on shapes as addCell (same PR #5426)
+
+tableauShape_insert : tableauShape (insert T x) = addCell (tableauShape T) (newRowIndex T x)
+
+The MIRROR of brick 17 (tableauShape_uninsert = removeCorner). Corpus had neither this nor any
+newRowIndex lemma.
+
+isAddable_newRowIndex — NOT from the bumping-column argument. Read off insert_colStrict (already in
+corpus): the inserted tableau is column-strict, so its shape is weakly decreasing, and spelling that
+out at the added index IS addability. I expected to need bump_findIdx_mono; I did not.
+
+addableAlong_rowIndices closes the insertion-built case by a route INDEPENDENT of brick 19's iff —
+brick 20's machinery reaches the same conclusion brick 15 + 19 did. The forward and reverse shape
+pictures AGREE, not merely compose.
+
+### #5426 now carries bricks 16-21, four files, all sorry-free and axiom-clean
+16 isCorner_of_max_in_row | 17 tableauShape_uninsert | 18 the reduction | 19 the iff
+20 addable sequences peel as corners | 21 the forward shape law
+
+### The ONE remaining gap for surjectivity
+An ARBITRARY standard Q gives an AddableAlong sequence. Everything else is proved:
+  Q standard --GAP--> AddableAlong --20--> ShapeCornersAlong --18/19--> CornersAlong
+    --14--> insertWord (uninsertSteps P is).2 = P
+The gap needs a standardness predicate on List (List N) (corpus has none) plus the fact that reading
+positions off Q in timestamp order yields addable cells. Brick 16 already supplies the corner half.
+
+
+### Brick 22 — the built shape is the COUNT shape (same PR #5426)
+
+getD_addCellSteps : AddableAlong l is -> (addCellSteps l is).getD i 0 = l.getD i 0 + is.count i
+
+addCell increments one entry, so row i of the built shape holds exactly the cells whose position was
+i. No tableau appears. This is the tool the Q-bridge needs: it identifies addCellSteps [] is with
+tableauShape Q by COUNTING entries per row, rather than by constructing a truncation of Q.
+
+**A design attempt that failed, recorded so it is not retried.** I tried to state the remaining gap
+as a self-contained counting condition on the position list —
+  forall k, is[k] = 0 or (is.take k).count is[k] < (is.take k).count (is[k] - 1)
+— hoping to prove AddableAlong from it and drop AddableAlong entirely. Circular: the count
+characterisation itself needs each step's index to be within the CURRENT shape, which is part of
+what AddableAlong asserts. AddableAlong stays the primitive; the count form is its consequence, and
+that is the direction that composes.
+
+This also means the Q-bridge will NOT need a qTrunc construction — counting per row is enough.
+
+
+### Brick 23 — the counting bridge (same PR #5426)
+
+countLt_above : ColStrict Q -> rows strictly increasing -> entry at column c of row r+1 =>
+  countLt (row r+1) k < countLt (row r) k
+
+Brick 22 made the built shape a COUNT shape, so IsAddable reduces to a count comparison. This is it,
+from column-strictness alone: the entry directly above is smaller, and StrictBelow's LENGTH half
+guarantees that cell exists — so row r has its first c+1 entries below the threshold against exactly
+c in row r+1.
+
+**Two constructions avoided, both of which I had queued:**
+1. qTrunc (restrict Q to entries < s, prove ColStrict survives the filter, show emptied rows form a
+   suffix) — estimated 250+ lines. Counting per row replaces it entirely.
+2. A standardness predicate on List (List N). Corpus has none; I queued writing one twice. The
+   hypotheses actually consumed are 'rows strictly increasing' + ColStrict, written inline.
+
+Third time on this arc that checking what the argument consumes shrank the machinery.
+
+### Remaining gap is now narrow
+Assemble: read rows off Q in timestamp order (qRowOf, brick 5) into a position list, and combine
+brick 23's count comparison with brick 22's count shape to get AddableAlong. Everything downstream
+is proved.
+
+
+### Brick 23b — the bridge fact keyed on MEMBERSHIP (same PR #5426)
+
+countLt_above_mem : ColStrict Q -> rows strictly increasing -> k in row r+1 =>
+  countLt (row r+1) k < countLt (row r) k
+
+**Answers the open question from last turn.** I flagged not knowing whether qRowOf's lemmas give the
+COLUMN as well as the row. Checked: qRowOf returns only the row, and nothing in bricks 4-6 records a
+column — so brick 23's column-indexed form was not reachable by the assembly.
+
+The fix is recovery, not a new qRowOf lemma: in a strictly increasing row the column of an entry IS
+its countLt.
+  countLt_lt_length_and_getD : k in row -> countLt row k < row.length
+                                        AND row.getD (countLt row k) 0 = k
+Both halves in one induction (shared case analysis). countLt_above then restates on membership.
+
+### #5426 carries bricks 16-23b, five files, all sorry-free and axiom-clean
+### Remaining: pure plumbing
+Build the position list from qRowOf over the timestamp range, match (is.take k).count i against
+countLt (row i) k, apply 23b. Everything else proved.
+
+
+### Brick 24 — qRowOf correctness (same PR #5426)
+
+mem_of_qRowOf    : qRowOf Q t = some r -> t in Q.getD r []
+qRowOf_lt_length : qRowOf Q t = some r -> r < Q.length
+countLt_above_qRowOf : qRowOf Q k = some (r+1) -> countLt (row r+1) k < countLt (row r) k
+
+**Answers the question I flagged last turn, and it was a real gap.** Every existing qRowOf lemma is
+about how qAppend / qAppendSteps MOVE things (qRowOf_qAppend_self, qRowOf_qAppend_of_ne,
+qRowOf_qAppendSteps). None says the located row is correct on its own terms. For a Q that is simply
+GIVEN rather than built by appending, there was nothing to appeal to. Two short inductions.
+
+That is now three flagged-then-confirmed gaps in a row (qRowOf gives no column; no standardness
+predicate needed; no qRowOf correctness lemma). Checking the input before building on it has been
+worth the minutes each time.
+
+### #5426 carries bricks 16-24, five files, all sorry-free and axiom-clean
+
+### The ONE remaining step, and it is a counting bijection not plumbing
+  (is.take k).count i  =  countLt (Q.getD i []) k
+LHS counts timestamps t < k whose qRowOf row is i; RHS counts entries of row i below k. Equal when
+Q's entries are exactly 0..n-1 with no repeats. That needs a 'Q holds exactly the range' hypothesis
+(corpus has insertWordRec_snd_content / _nodup for the built case) plus the counting argument.
+Everything else in the chain is proved.
+
+
+### Brick 25 — qRowOf total and exact (same PR #5426)
+
+qRowOf_isSome_of_mem_flatten : t in Q.flatten -> exists r, qRowOf Q t = some r
+qRowOf_eq_some_iff_mem : Q.flatten.Nodup -> i < Q.length -> (qRowOf Q t = some i <-> t in row i)
+
+Brick 24 gave one direction; this is the converse, and it is where cross-row DISTINCTNESS finally
+matters — qRowOf returns the FIRST row containing t, so a repeated entry would be located in the
+wrong row. Nodup on the flattened tableau is the weakest hypothesis ruling that out, and the corpus
+already tracks it for the built case (insertWordRec_snd_content_nodup).
+
+**Totality is separate and needs no distinctness — and it is a trap-blocker.** qRowOf returns an
+Option; a counting argument reading it with .getD 0 would silently score every ABSENT timestamp as
+row 0. Stating totality makes that visible instead of latent. Worth having found before writing the
+count, not after.
+
+### #5426 carries bricks 16-25, five files, all sorry-free and axiom-clean
+### Remaining: the count equality itself
+  (is.take k).count i = countLt (Q.getD i []) k
+Both sides now have their ingredients: exactness turns 'row of t is i' into 't in row i', totality
+rules out the none-trap, and the two sides then count the same set. Needs a 'Q holds exactly
+0..n-1' hypothesis to know every t < k is present.
+
+
+### Brick 26 — THE COUNT EQUALITY (same PR #5426)
+
+count_qPositions : Q.flatten.Nodup -> i < Q.length -> (all t below k are in Q) ->
+  (qPositions Q k).count i = countLt (Q.getD i []) k
+
+The step the whole Q-side reduces to. Brick 22 phrased the built shape as a count over the POSITION
+LIST; countLt counts over the ROWS of Q. Same number.
+
+Genuinely a bijection, not a rewrite — timestamps on the left, entries on the right. Both filtered
+lists are duplicate-free with the same members; proof goes through toFinset rather than building the
+bijection by hand.
+
+Each hypothesis does distinct work:
+- Nodup -> exactness (brick 25); without it qRowOf locates a repeated entry in the WRONG row, and
+  rows are not duplicate-free either.
+- i < Q.length -> the row exists.
+- all t below k present -> totality (brick 25). qPositions reads qRowOf with .getD 0, so an ABSENT
+  timestamp reads as row 0 and is counted there. This is exactly the none-trap totality was stated
+  to block. Predicting it one brick early is what made this one compile first try.
+
+### #5426 carries bricks 16-26, five files, all sorry-free and axiom-clean
+### Remaining: assemble AddableAlong from the pieces
+All ingredients now proved. IsAddable at step k = (count comparison), which is brick 23b via
+countLt_above_qRowOf, transported across brick 26 to the position-list side, with brick 22 supplying
+the shape. What is left is threading them through the AddableAlong recursion.
+
+
+### Brick 27 — THE CHAIN CLOSES (same PR #5426)
+
+addableAlong_qPositions : Q column-strict + rows strictly increasing + flatten Nodup +
+  all t below n present  ->  AddableAlong [] (qPositions Q n)
+
+insertWord_uninsertSteps_of_standard : P row-sorted/col-strict/no-empty-rows, Q standard, SAME SHAPE
+  ->  insertWord (uninsertSteps P (qPositions Q n)).2 = P
+
+**The gap named back at brick 15 is closed.**
+  Q standard --26--> AddableAlong --20--> ShapeCornersAlong --18--> insertWord . uninsertSteps = id
+
+Each ingredient was already proved; brick 27 threads them through the AddableAlong recursion,
+inducting on the HORIZON not the list. That is why the append-at-end forms were needed:
+List.range (n+1) = List.range n ++ [n] grows at the END while the recursion consumes from the FRONT.
+
+Only hypothesis tying P to Q is EQUAL SHAPE — which is what 'a pair of tableaux of the same shape'
+means.
+
+### SCOPE — what this is NOT
+Word-level surjectivity on the P side. NOT bijectivity of rskPair: nothing says the recovered word's
+RECORDING tableau is Q. RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via the
+unrelated rskBurnsideHolds_le12 (no RSK in it).
+
+### #5426 carries bricks 16-27, five files, zero sorries, axiom-clean throughout
+### Next
+- recovered word's recording tableau is Q (the other half of bijectivity);
+- then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+  Wedderburn split.
+
+### Bricks 28-32 — THE Q SIDE CLOSES (same PR #5426)
+
+The gap named in brick 27's SCOPE note is closed. The recovered word's RECORDING tableau is Q.
+
+Brick 28-29 (SchenstedReinsertRow.lean) — the missing link:
+  addCell_removeCorner   : adding a cell back at a corner returns the shape (two-case anatomy of
+                           removeCorner: above length one the zero-filter is inert and it is a
+                           `set`; at length one the corner is the final row and the filter deletes)
+  newRowIndex_uninsert   : newRowIndex (uninsert T i).1 z = i — the re-inserted letter goes back to
+                           the row it was peeled from. Brick 10 proved the tableau is rebuilt; it
+                           never said WHERE. Argued at the level of shapes: addCell moves exactly
+                           one entry, so one index only can land back on the shape you started from.
+  rowIndices_uninsertSteps : along a run, the recovered word's row-index record IS the position
+                           list it was recovered from.
+
+Brick 30-31 (SchenstedRecordingTrunc.lean) — the replay:
+  qTrunc Q n             : the horizon truncation — timestamps below n, emptied rows dropped.
+                           The induction is stated HERE, not at Q. After n steps the replay is not
+                           Q, so the direct statement has nothing to induct on. Same move as
+                           brick 27's induct-on-the-horizon.
+  qAppend_qTrunc         : one replay step. Two facts do it, both from column strictness, NOT from
+                           the appends:
+                             - non-empty rows of a truncation are an INITIAL SEGMENT
+                               (exists_le_head: any entry has a strictly smaller entry in the top
+                               row) => a row index means the same thing in qTrunc Q t as in Q,
+                               nothing has shifted;
+                             - a timestamp joins its row at the END (filter_lt_succ_mem: the row is
+                               strictly increasing and every smaller entry is already there) =>
+                               qAppend, which only writes at a row's end, is the right operation.
+  qAppendSteps_qPositions_self : qAppendSteps [] (qPositions Q n) 0 = Q.
+
+Brick 32 (SchenstedRSKSurjective.lean) — P and Q meet:
+  insertWordRec_uninsertSteps_of_standard :
+    P row-sorted/col-strict/no-empty-rows, Q standard, SAME SHAPE
+      ->  insertWordRec (uninsertSteps P (qPositions Q n)).2 = (P, Q)
+  = brick 27 (insertion tableau is P) + brick 29 (record is the position list) + brick 31 (replay
+    rebuilds Q), tied by brick 4 (recording tableau IS the record of rowIndices).
+  Brick 29 was the load-bearing one: without it "the insertion tableau came out right" constrains
+  nothing about Q.
+
+### SCOPE — what this is NOT
+Surjectivity onto standard pairs **in the List (List ℕ) representation**. NOT rskPair bijectivity.
+rskPair lands in `Σ μ : YoungDiagram, StandardYoungTableau μ × StandardYoungTableau μ` — Mathlib's
+type — so what remains is a REPRESENTATION BRIDGE (List (List ℕ) <-> StandardYoungTableau μ, plus
+the +1 value shift wordOfPerm applies), not more combinatorics on the correspondence itself.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-32, eight files, zero sorries, axiom-clean throughout
+### Next
+- the representation bridge to Mathlib's StandardYoungTableau (check SchenstedCellsBridge first);
+- then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+  Wedderburn split.
+
+### Bricks 33-34 — the representation bridge, other direction (same PR #5426)
+
+listStandardYT (brick 10) already crossed List (List ℕ) -> StandardYoungTableau. These start back.
+
+Brick 33 (SchenstedListOfSYT.lean):
+  toListTableau S        : rows of S read off its cells, (List.range rowLens.length).map ...
+  + tableauShape_toListTableau = μ.rowLens ON THE NOSE
+  + rows_strict / rowsSorted / colStrict / noEmptyRows / nodup_flatten
+
+  Where the two notions differ is SHAPE, not content: StrictBelow BUNDLES the Young-shape length
+  condition with the entry comparison; SemistandardYoungTableau keeps them apart (lengths in the
+  diagram, entries in col_strict). rowLen_anti is the half with no counterpart in the tableau's
+  own data — the bridge has to supply it.
+
+Brick 34 (SchenstedRecordingOfSYT.lean) — the +1 convention, paid:
+  mem_flatten_toListTableau_iff_Icc : entries are exactly 1..|μ| (mapsTo one way, surjOn the other)
+  unshiftT Q := Q.map (·.map (· - 1))  -- inverse of the existing shiftT on positive entries
+  toRecordingTableau S := unshiftT (toListTableau S)
+  + the full bundle brick 32 takes: ColStrict, rows strictly increasing, flatten Nodup,
+    NoEmptyRows, shape = μ.rowLens, content EXACTLY {0..|μ|-1}.
+
+  Brick 32's Q counts from 0 (insertWordRec starts at 0); a StandardYoungTableau counts from 1
+  (bijOn onto Set.Icc 1 |μ|). insertWordSYT already pays this in the other direction via shiftT.
+  Positivity of every entry — the hypothesis the down-shift needs — FALLS OUT of the content fact,
+  so no extra input. Past the end nothing is needed: the default 0 is a fixed point of (· - 1).
+
+### SCOPE — what 33+34 are NOT
+The Q ARGUMENT of brick 32, assembled. NOT brick 32 run on it.
+
+### What is actually left before rskPair surjectivity (measured, not guessed)
+Given a target ⟨μ, S_P, S_Q⟩ one needs a PERMUTATION σ with rskPair σ = it. Brick 32 gives a WORD w
+with insertWordRec w = (P₀, Q₀) in list form. Three gaps remain, all bridge, none combinatorics:
+  1. ROUND TRIP: listStandardYT (toListTableau S) = S — needed to turn the list-level equality into
+     insertWordPSYT … = S_P and insertWordSYT w = S_Q. This is the real remaining work.
+  2. SIGMA/SHAPE COERCION: ofRowLens μ.rowLens _ = μ is ofRowLens_to_rowLens_eq_self (exists), but
+     the Sigma equality still has to be threaded through it.
+  3. w MUST COME FROM A PERMUTATION: wordOfPerm has content {1..n}; brick 32's w is whatever the
+     cascade recovered. Need w's content = {1..n} => ∃ σ, wordOfPerm σ = w.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-34, ten files, zero sorries, axiom-clean throughout
+
+### Bricks 35-37 — two of the three remaining gaps closed (same PR #5426)
+
+Brick 35 (SchenstedSYTRoundTrip.lean) — THE ROUND TRIP, which I had flagged as the one gap whose
+proof shape I did not know:
+  sigma_listStandardYT_toListTableau : ⟨_, listStandardYT (toListTableau S) …⟩ = ⟨μ, S⟩
+
+  The statement MUST be a Sigma: listStandardYT lands on ofRowLens (tableauShape T) _, only
+  PROPOSITIONALLY equal to μ, so the two tableaux do not share a type. Packing the diagram with the
+  tableau is what makes the equation statable — and is the form rskPair's codomain already takes.
+
+  I expected the dependent-type work to be the hard part. It is TWO LEMMAS:
+    ofRowLens_congr  (equal row-length lists -> equal diagrams, by subst; sortedness proofs are
+                      irrelevant)
+    sigma_ext_entry  (subst the diagram, then compare entries)
+  Everything else is entrywise on ℕ with NO cast. getD_getD_toListTableau_all is load-bearing: the
+  list tableau reads back every entry, ON the diagram and OFF it — off it both sides are 0, one
+  because the list runs out, the other by the SSYT's own `zeros`.
+
+  Also added StandardYoungTableau.ext_entry — a genuine gap in that type's API (bijOn is a proof, so
+  entries determine the tableau). content_toListTableau supplies listStandardYT's content argument
+  in the multiset form it wants (both sides nodup, same members).
+
+Brick 36 (SchenstedWordOfPermSurj.lean):
+  exists_wordOfPerm_eq : content w = {1..n}  ->  ∃ σ : Equiv.Perm (Fin n), wordOfPerm σ = w
+  σ i = w[i] - 1; nodup gives injective; injective = bijective on a finite type, which is the only
+  reason no inverse has to be built by hand.
+
+Brick 37 (SchenstedShapeOfPositions.lean):
+  addCellSteps_qPositions : addCellSteps [] (qPositions Q n) = tableauShape Q
+  Brick 32 relates P and Q by "P's shape is what Q's positions BUILD"; what one has about a pair is
+  that they SHARE a shape. This identifies the two. Row i gains one cell per position = i (brick 22)
+  = the count of row-i entries below the horizon (brick 26) = the row's length once the horizon
+  clears everything. eq_of_getD_eq closes it: lists of POSITIVE naturals agreeing at every index are
+  equal — positivity is what supplies the LENGTHS (past the shorter list getD reads 0, which the
+  longer cannot).
+
+### ONE gap left before rskPair surjectivity
+Thread brick 35's Σ-equality through rskPair's DEFINITION:
+  rskPairWord hw = ⟨pShape w, insertWordPSYT hw, recordingShape_eq_pShape w ▸ insertWordSYT w⟩
+The `▸` transport plus the PAIR-valued sigma make this messier than the single-tableau case of
+brick 35 — sigma_ext_entry handles one tableau, not two under a shared diagram cast. Expect a
+pair-valued analogue plus lemmas identifying pShape w and recordingShape w with μ.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-37, thirteen files, zero sorries, axiom-clean throughout
+
+### Brick 38 — rskPair IS SURJECTIVE (same PR #5426). The arc from brick 10 ends here.
+
+exists_rskPair_eq : ∀ (μ : YoungDiagram) (SP SQ : StandardYoungTableau μ),
+                      ∃ σ : Equiv.Perm (Fin μ.cells.card), rskPair σ = ⟨μ, SP, SQ⟩
+
+Every ingredient was already proved. What was left was PLUMBING, and the plumbing is
+dependent-type work: rskPairWord is a Σ whose SECOND component has ALREADY been transported along
+recordingShape_eq_pShape, so comparing it with ⟨μ, SP, SQ⟩ moves three things at once.
+  sigma_pair_ext_entry : subst the diagram equality, then compare entries (the only honest route)
+  entry_cast           : the ▸ transport moves NO entry — this is what makes the second component
+                         comparable at all
+  shiftT_unshiftT      : under the transport the recording tableau is shiftT of the 0-based one, so
+                         brick 34's down-shift has to be undone; the content fact already knows the
+                         entries are positive, which is the whole hypothesis.
+
+Assembly inside exists_rskPair_eq:
+  P := toListTableau SP ; Q := toRecordingTableau SQ ; n := μ.cells.card
+  hrange/hlt  <- mem_flatten_toRecordingTableau (brick 34)
+  hshape      <- addCellSteps_qPositions (brick 37) + both shapes = μ.rowLens
+  hpair       <- insertWordRec_uninsertSteps_of_standard (brick 32)
+  word content<- insertWord_content + content_toListTableau (brick 35)
+  σ           <- exists_wordOfPerm_eq (brick 36)
+
+### SCOPE — SURJECTIVITY, NOT BIJECTIVITY
+Injectivity is SchenstedRSKInjective, stated FOR WORDS. Combining the two into an Equiv
+Perm (Fin n) ≃ Σ_{|μ|=n} SYT(μ)² is NOT done, and it is what RSKBurnsideHolds needs.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+Then SpechtWedderburnCriterion.spechtEquiv_of_sum_sq converts it to the general Wedderburn split.
+
+### #5426 now carries bricks 16-38, fourteen files, zero sorries, axiom-clean throughout
+### Next
+- assemble the Equiv from injectivity (words) + surjectivity (this): the mismatch to bridge is that
+  injectivity is stated for words and surjectivity for permutations;
+- then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general Wedderburn split.
+
+### Bricks 39-40 — THE CORRESPONDENCE IS AN EQUIV (same PR #5426)
+
+Brick 39 (SchenstedRSKPairInjective.lean) — rskPair_injective.
+  SchenstedRSKInjective proved injectivity ON WORDS, for LIST tableaux. rskPair is on PERMUTATIONS
+  and valued in a Σ of Mathlib SYTs. That mismatch was the entire distance.
+
+  KEY TRICK, worth remembering: NO HEq, NO subst needed. Extracting the second component of a
+  Σ-equality normally needs a transport because its type depends on the first — BUT
+      fun X => X.2.1.entry i j
+  is a perfectly good NON-DEPENDENT function on the Σ type (dependent projection, ℕ-valued field),
+  so congrArg hands over entry equalities directly. Everything after that is ordinary list work:
+    eq_of_shape_and_entries  (same shape + same entries -> same list tableau)
+    shiftT_injective         (strip the 0->1 relabel; map of an injective map)
+    word_eq_of_insertWordRec_eq (existing, word level)
+    wordOfPerm_injective     (back to permutations)
+
+Brick 40 (SchenstedRSKEquiv.lean):
+  rskEquiv n : Equiv.Perm (Fin n) ≃ {X : Σ μ, SYT μ × SYT μ // X.1.cells.card = n}
+
+  The SUBTYPE IS FORCED: rskPair lands in the Σ over ALL diagrams, image is exactly those with n
+  cells (rskPair_card, via recordingCells_card ∘ recordingShape_eq_pShape). Cutting the codomain is
+  what makes it a bijection and not merely injective.
+  exists_rskPair_eq_of_card substitutes |μ| = n — legitimate because n IS A VARIABLE. Contrast
+  brick 35, where the diagram equality had NO variable side and ofRowLens_congr had to be proved.
+
+### SCOPE — NOT RSKBurnsideHolds
+RSKBurnsideHolds n := ∑ p : Nat.Partition n, (dimSYT p)^2 = n! — indexed by Nat.Partition, NOT by
+YoungDiagram. Getting there from rskEquiv additionally needs:
+  Nat.card (Perm (Fin n)) = n!                                    (Fintype.card_perm, easy)
+  Nat.card {X // X.1.cells.card = n} = ∑ p, (dimSYT p)^2          (THE WORK)
+and the second needs partitionShape : Nat.Partition n -> YoungDiagram to be a BIJECTION onto the
+diagrams with n cells, plus a Σ-card decomposition over that index. None of it is done.
+RSKBurnsideHolds general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK in it).
+
+### #5426 now carries bricks 16-40, sixteen files, zero sorries, axiom-clean throughout
+### Next
+- partitionShape bijective onto {μ // μ.cells.card = n}  (the remaining obstacle)
+- then the Σ-card decomposition -> RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general
+  Wedderburn split.
+
+### Brick 41 — the INDEX bridge (same PR #5426)
+
+partitionShapeEquiv n : Nat.Partition n ≃ {μ : YoungDiagram // μ.cells.card = n}
+
+Needed because RSKBurnsideHolds is indexed by Nat.Partition while rskEquiv's codomain is indexed by
+YoungDiagram. Until the index is identified the two statements do not meet.
+
+card_cells_ofRowLens : (ofRowLens L hsort).cells.card = L.sum
+  A lemma NEITHER the corpus NOR Mathlib had (checked: YoungDiagram.card_cells_ofRowLens unknown).
+  Proved from pieces SchenstedCellsBridge already built for the CONTENT bridge — cells are the
+  disjoint union of rows (cells_biUnion + rows_pairwiseDisjoint), a row is a singleton times a range
+  (row_eq_prod). The content bridge itself is stated only for a tableauShape; the pieces are
+  general, and this is the general consequence. Worth remembering: the reusable content of that file
+  is its LEMMAS, not its headline theorem.
+
+Sorted-list round trip: a partition's shape remembers its parts (rowLens_ofRowLens_eq_self returns
+the SORTED list, and sorting is injective on multisets); a diagram is a partition's shape (its own
+rowLens is already sorted, and sorting a sorted list returns it — sort_coe_of_sorted via
+List.eq_of_perm_of_sorted).
+
+LEAN FRICTION worth recording: `(· ≥ ·)` in a goal DISPLAYS as `fun x1 x2 => x2 ≤ x1` after GE.ge
+unfolds, and `rw` matching against a hypothesis written with `(· ≥ ·)` can fail on that difference.
+Also `Multiset.sort_eq` is a SIMP lemma, so `simpa` normalises `Multiset.sum ↑(sort r s)` all the
+way to `s.sum` — past the form you wanted. Both cost a round trip; the fix in each case was to
+introduce the coercion explicitly with a `rfl`-proved `have` and `rw` with it.
+
+### ONE STEP LEFT to RSKBurnsideHolds general n
+  Nat.card (Perm (Fin n)) = n!                                (Fintype.card_perm, easy)
+  Nat.card {X // X.1.cells.card = n} = ∑ p, (dimSYT p)^2      (the Σ-card decomposition — NOT done)
+The second is now a decomposition over a KNOWN index (brick 41), so what remains is the card algebra
+itself: pull the Σ apart over the subtype of diagrams, recognise each fibre as SYT(μ)², and rewrite
+along partitionShapeEquiv. Needs finiteness instances on the Σ-subtype.
+
+### #5426 now carries bricks 16-41, seventeen files, zero sorries, axiom-clean throughout
+
+### Brick 42 — RSKBurnsideHolds FOR GENERAL n. THE EPIC'S TARGET IS PROVED. (PR #5426)
+
+  QOU.Mathlib.rskBurnsideHolds (n : ℕ) : RSKBurnsideHolds n
+      i.e.  ∑ p : Nat.Partition n, (dimSYT p)^2 = n!
+
+  #print axioms  ->  [propext, Classical.choice, Quot.sound].  NO sorryAx anywhere in the cone.
+  RSKBurnsideTarget said "General n still awaits RSK". It no longer does. Previously proved only
+  for n <= 12 via rskBurnsideHolds_le12 (decide-verified enumeration, no RSK in it).
+
+  Three steps of card algebra over the mathematics:
+    Nat.card (Perm (Fin n)) = n!                              (Fintype.card_perm ∘ card_eq_fintype_card)
+    rskEquiv (brick 40)                                       (the correspondence)
+    card_pairs_eq_sum : Equiv.subtypeSigmaEquiv (subtype of a Σ -> Σ over a subtype)
+                        ∘ brick 41 reindex ∘ Nat.card_sigma   (each fibre SYT × SYT = dimSYT^2)
+  Finiteness was already in place: Nat.Partition n is a Fintype; StandardYoungTableau μ has the
+  Finite instance its own file proves by encoding entries on cells.
+
+  BUILD NOTE: Mathlib.GroupTheory.Perm.Fintype is NOT in the restored olean cache;
+  Fintype.card_perm lives in Mathlib.Data.Fintype.Perm, which IS. Import that.
+
+### THE WEDDERBURN SPLIT, UNCONDITIONALLY, FOR EVERY n (new file, same PR)
+
+  QOU.BraidKnot.SpechtWedderburnGeneral.spechtEquiv (n : ℕ) :
+      MonoidAlgebra k (Perm (Fin n)) ≃ₐ[k] (∀ i : PartitionIndex n, End k (SpechtSubmodule i.diagram))
+  + spechtProduct_bijective.  Axioms: [propext, Classical.choice, Quot.sound]. Sorry-free.
+
+  SpechtWedderburnLe12 named its own limit exactly ("The general case is exactly RSKBurnsideHolds n
+  for general n") and brick 42 discharges it. ONE ARGUMENT SUBSTITUTED — the reduction, the
+  reindexing, both SYT-encoding bridges and the criterion are untouched. That the substitution is
+  the whole of it is the point: the split was never waiting on representation theory, only on the
+  count.
+
+### THE KEYSTONE IS *NOT* CLOSED — measured, so the next agent need not re-derive this
+
+SnWedderburnPartitionBridge.sn_isotypic_specht_split (still `sorry`) is STRONGER than the split:
+  (i)  it lands in MATRIX algebras, not End — needs algEquivMatrix + a Fin (finrank)-indexed basis;
+  (ii) it asserts e (RegularRepTrace.centralC2 n) i = (contentSqSum i.diagram : R) • 1.
+For (ii) the ingredients exist but do NOT compose yet:
+  - JucysMurphy.centralC2 = RegularRepTrace.centralC2 by `rfl` (centralC2_eq_sum_jucysMurphy_sq) —
+    the overloaded-symbol hazard is already cleared in the corpus, do not re-litigate it;
+  - centralC2_acts_by_contentSqSum IS proved, but for (Specht.Mtab.rep μ).asAlgebraHom on the
+    AMBIENT Mtab, at index Specht.nOf μ;
+  - spechtProduct uses (spechtRepAt i.property).asAlgebraHom
+      = (spechtRep μ).comp (transportPermHom h.symm)  — the RESTRICTED rep, at index n.
+  So two bridges are missing: (a) transporting centralC2 along the Fin n ≃ Fin (nOf μ) index equiv
+  (centralC2 is central and its image ought to be centralC2, but the proof needs the class-sum
+  characterisation — the naive index-relabel argument does NOT go through termwise, since the
+  `i < k` structure is not preserved by an arbitrary bijection), and (b) ambient-vs-restricted.
+Estimate: 3-5 bricks, not a one-liner. NOT attempted.
+
+### #5426 now carries bricks 16-42 + the general split, nineteen files, zero sorries
+
+### REBASE ONTO MAIN (+544 commits) — clean, and it changed the picture
+
+git rebase origin/main: 49 commits replayed, ZERO conflicts. All 14 new Lean files still compile
+lean-direct exit 0 after the rebase. My cone's imports (SYTEncodingBridgeTwo, SpechtActionInjective,
+SpechtStandardBasis, SpechtWedderburnCriterion, PartitionsOfBridge, StandardYoungTableau) are all
+UNCHANGED on main, which is why nothing broke.
+
+### WHAT MAIN DID WHILE THIS BRANCH RAN — read this before touching the keystone
+
+sn_isotypic_specht_split is NO LONGER a `sorry`. It was restructured into the §3b-cond pattern:
+
+    class SnIsotypicSpechtSplit (R) [Field R] [CharZero R] : Prop where
+      exists_split (n) : ∃ e : MonoidAlgebra R (Perm (Fin n)) ≃ₐ[R] (∀ i, Matrix (Fin d_i) (Fin d_i) R),
+        e (RegularRepTrace.centralC2 n) = fun i => (contentSqSum i.diagram : R) • 1
+
+and a LARGE cone is now conditional on it — measured, every hit is a CONSUMER, there is NO INSTANCE
+anywhere in the corpus:
+  OVTopAssembly.{snSpectralData, sn_spectralData_exists, identityB_general, sum_numSYT_sq_eq_factorial}
+  RSKBurnsideDischarge.{rskBurnsideHolds, substrate_witness}
+  BurnsideDischarge.{burnside_proved, instBurnsideContext}
+  PieceASpechtCharacter.trace_centralC2_regular_rep
+  PlancherelNormalisation.{sum_sytDim_sq_eq_factorial, sum_map_sytDim_sq_eq_factorial,
+                           tiltNorm_zero_eq_factorial, nuV_top_closed_form_unconditional}
+  SnWedderburnPartitionBridge.{sn_isotypic_specht_split, sn_rational_specht_split, snBridge,
+                               snBlocks_c2_aligned}
+
+NOTE THE DIRECTION. main's RSKBurnsideDischarge.rskBurnsideHolds derives Burnside FROM the class,
+i.e. from the Wedderburn split. THIS BRANCH derives Burnside from RSK with NO hypothesis, and then
+gives the split. So the two are not duplicates and mine is not redundant — mine breaks a circle the
+other route cannot. (Also: that file's docstring says "It is now a theorem". Conditional-proved ≠
+premise-established; the phrasing overclaims. Not edited here — separate concern, flag to owner.)
+
+### CORRECTION to my own keystone estimate two entries above
+
+I wrote that transporting centralC2 along the index equiv "needs the class-sum characterisation"
+because "an arbitrary bijection does not preserve the i < k structure". THAT WAS WRONG, and it was
+pessimism from not reading the definition:
+
+    transportPermHom (h : a = b) := (Equiv.permCongrHom (finCongr h)).toMonoidHom
+
+finCongr is the CANONICAL ORDER-PRESERVING cast from an equality of naturals. So `i < k` IS
+preserved and centralC2 transports TERMWISE. Likewise the ambient-vs-restricted gap is small:
+spechtRep μ σ = (Mtab.rep μ σ).restrict …, literally the restriction, so it is a
+LinearMap.ext + Subtype.ext step against centralC2_acts_by_contentSqSum as stated.
+
+### THE INSTANCE IS THE PRIZE — route, measured
+  B1  mapDomain (transportPermHom h.symm) (centralC2 n) = centralC2 (nOf μ)
+        ring hom => commutes with the sum and the square; single (swap i k) 1 ↦ single (swap (e i) (e k)) 1
+        by permCongr-of-swap; index sum reindexes along finCongr, order preserved.
+  B2  (rep.comp φ).asAlgebraHom a = rep.asAlgebraHom (mapDomain φ a)   [check if it already exists]
+  B3  restricted-vs-ambient at centralC2 -> spechtProduct n (centralC2 n) i = contentSqSum • 1 in End
+  B4  End k M ≃ₐ[k] Matrix (Fin (finrank k M)) … via algEquivMatrix (Module.finBasis k M);
+        an algebra hom sends c • 1 to c • 1
+  B5  assemble  instance : SnIsotypicSpechtSplit ℚ  from SpechtWedderburnGeneral.spechtEquiv
+Landing B5 turns the ENTIRE cone above unconditional in one commit. 5 bricks, not attempted.
+
+### THE KEYSTONE IS CLOSED — SnIsotypicSpechtSplit ℚ IS INHABITED (PR #5426)
+
+  QOU.BraidKnot.SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplitRat
+      : SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ
+  axioms [propext, Classical.choice, Quot.sound]. Sorry-free.
+
+VERIFIED, not asserted — two independent checks:
+  sn_isotypic_specht_split n   (the class's own consumer, stated for all n) now elaborates with NO
+      hypothesis; #print axioms -> the same three. The `sorry` this file carried is gone as a
+      practical matter: the class it was replaced by is now inhabited.
+  OVTopAssembly.sum_numSYT_sq_eq_factorial n  -> #print axioms clean. A downstream consumer,
+      checked directly rather than inferred from the instance existing.
+
+The five bricks, all landed this session:
+  B1 CentralC2Transport.mapDomain_centralC2   — C₂ survives the index cast (finCongr is
+       ORDER-PRESERVING, so termwise; my earlier "needs the class-sum characterisation" was wrong)
+  B2 SpechtCentralC2Scalar.asAlgebraHom_comp  — precomposition acts through mapDomain
+       (MonoidAlgebra.algHom_ext)
+  B3 SpechtCentralC2Scalar.spechtRep_asAlgebraHom_coe + spechtProduct_centralC2
+       — restriction commutes with the algebra hom (MonoidAlgebra.induction_on), so
+         centralC2_acts_by_contentSqSum applies on the nose
+  B4 blockMatrix / matrixSplit — algEquivMatrix (Module.finBasis …) blockwise
+  B5 the instance
+
+DIRECTION MATTERS AND IT IS NOW REVERSED FROM THE CORPUS'S:
+  main:  RSKBurnsideDischarge.rskBurnsideHolds  derives Burnside  FROM  the class.
+  here:  QOU.Mathlib.rskBurnsideHolds  is proved FROM RSK with NO hypothesis, then gives the split,
+         then the class. Nothing in this chain assumes the identity it proves.
+
+### BUILD HAZARD worth remembering (cost one wrong diagnosis)
+lean-direct against the RESTORED olean cache sees the OLD version of any file main has since
+changed. SnWedderburnPartitionBridge's olean predated main's class-ification, so
+`SnIsotypicSpechtSplit` read as "unknown identifier" — which looks like a namespace error and is
+not. Rebuild the one olean (`lean --o=… file.lean`, ~8 s) before believing an identifier is missing.
+
+### #5426 now carries: RSK bricks 16-42, the general Wedderburn split, and the keystone instance
+
+### POST-MERGE FOLLOW-UP (#5426 merged 2026-08-23; #5530 open)
+
+#5530 = the sweep for what the keystone closure falsified or unlocked. TWO SUBSTANTIVE WINS, both
+found by following stale PROSE to code that had quietly become improvable:
+
+  1. RSKBridge.RSK_substrate_axiom  WAS A LIVE LEAN AXIOM  ->  now RSK_substrate_proved, a theorem.
+     Its own docstring named the exit condition ("pending the in-repo RSK proof … it becomes a
+     derived consequence"); that proof landed, so the condition was met. RSKBridge now declares NO
+     axioms. Only ONE real use site existed corpus-wide (one line in the same file) — everything
+     else was docstring mentions — so churn was nil.
+  2. RSKBijection n  for EVERY n (instRSKBijection). Was hand-registered at n = 3, 5, 7, 12 only.
+     The four are REMOVED, not kept: the class carries DATA (`dim`), so two instances at one n is an
+     ambiguity even when both supply dimSYT. Verified resolution at 3/5/7/12 AND 13/100.
+  3. PartitionsOfBridge.sum_map_dimHLF_sq — the list-model dimension identity for every n.
+     rskBurnsideHolds_le12 run BACKWARDS (that one lifts the decide-verified list identity UP to
+     Nat.Partition; this pushes RSK DOWN to the list index, same two bridges).
+  4. 17 files of stale claims corrected — incl. THIRTEEN OF MY OWN Schensted files from #5426.
+
+### MEASURED NEGATIVE + THE EXACT BLOCKER (do not re-derive this)
+
+PlancherelSnData n instances stop at n = 12. It does NOT generalise the way RSKBijection did.
+It needs TWO identities:
+  (i)  the dimension sum        — NOW AVAILABLE at every n (item 3 above);
+  (ii) the JM content-square mean — OVTopAssembly.identityB_general IS this for general n, and is
+       axiom-clean (measured: identityB_general, sum_numSYT_sq_eq_factorial and snSpectralData all
+       report [propext, Classical.choice, Quot.sound] — the docstring claiming "residual sorries"
+       was stale and is corrected).
+
+snSpectralData's fields are exactly the right shape:  Idx := PartitionIndex n,
+d := numSYT ∘ diagram,  ω := ((contentSqSum ∘ diagram : ℤ) : R).  So the reindex needs:
+  a) PartitionIndex n <-> partitionsOf n     — EXISTS (PartitionReindex.sum_map_eq_sum_partitionIndex,
+                                                already used by BurnsideDischarge.burnside_proved)
+  b) numSYT i.diagram = dimHLF l             — EXISTS (dimIrrep_eq_numSYT / dimSYT_eq_dimHLF)
+  c) contentSqSum i.diagram = sumSqContents l — ***DOES NOT EXIST. THIS IS THE BLOCKER.***
+  d) 2 * (n! * C(n,2)) arithmetic vs n(n-1)n!, plus ℚ/ℤ casts — trivial
+
+(c) in detail — the two are the same quantity through different indices, with NO bridge in the corpus:
+    JucysMurphy.contentSqSum (μ : YoungDiagram) := ∑ c ∈ μ.cells, (cellContent c)^2
+    IdentityIContentDecomposition.sumSqContents (l : List ℕ) :=
+        ((range l.length).map fun i => ((range (l.getD i 0)).map fun j => ((j:ℤ)-(i:ℤ))^2).sum).sum
+The proof shape is KNOWN: it is the weighted analogue of card_cells_ofRowLens (brick 41) —
+cells_biUnion + rows_pairwiseDisjoint + row_eq_prod, from SchenstedCellsBridge, whose LEMMAS are
+general even though its headline theorem is stated only for a tableauShape. Estimate: 1 brick for
+(c), then (a)+(b)+(d) assemble PlancherelSnData for every n, which would lift the keystone's
+twoM = Identity-I bridge off its n = 3..12 cap.

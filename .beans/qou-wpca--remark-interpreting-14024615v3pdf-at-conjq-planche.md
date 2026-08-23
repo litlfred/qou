@@ -3,8 +3,9 @@
 title: Remark interpreting 1402.4615v3.pdf at conj:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:10Z
-updated_at: 2026-08-08T16:13:10Z
+updated_at: 2026-08-21T17:05:07Z
 ---
 
 Not aid-proof: the Jack alpha-deformation is a different deformation from the folio's q-deformed Wedderburn weight and none of its hypotheses have been checked in that setting. The honest artifact is a remark at the q-Plancherel skeleton recording the Jack precedent and naming what would have to be checked (polynomiality of the q-character structure constants).
@@ -19,3 +20,10 @@ Source: `library/arxiv-1402.4615v3/1402.4615v3.pdf` — no `references.ts` entry
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1402.4615v3/  ->  [dolega-feray2014]
+  Gaussian fluctuations of Young diagrams and structure constants of Jack characters
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dolega-feray2014] as the citation key when you do it.

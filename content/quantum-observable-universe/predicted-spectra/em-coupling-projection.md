@@ -1,5 +1,5 @@
 **Setup.**
-The categorical structure defines over the commutative ring
+The categorical structure is defined over the commutative ring
 
 $$
   R \;=\; \mathbb{Z}\bigl[q^{\pm 1/2},\, (q - q^{-1})^{-1}\bigr].

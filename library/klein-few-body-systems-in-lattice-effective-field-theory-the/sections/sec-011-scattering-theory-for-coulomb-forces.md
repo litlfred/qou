@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Bonn, November 2018"
+doc_title: "Few-body systems in lattice effective field theory"
 section_id: sec-011-scattering-theory-for-coulomb-forces
 section_title: "Scattering theory for Coulomb forces"
 section_number: null
 pages: 24-25
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
+doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 Beside the strong interaction between particles, we also have the electromagnetic interaction, which must
 be treated separately. The beforementioned considerations concerning the solution of the free system

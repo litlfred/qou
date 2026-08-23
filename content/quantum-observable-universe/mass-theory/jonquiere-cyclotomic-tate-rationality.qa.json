@@ -2535,6 +2535,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.551Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2554,6 +2569,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.642Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-em-dash": [
@@ -2573,6 +2603,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.687Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "One matched unspaced pair: 'The wrong-parity part-the imaginary part for odd n and real part for even n-evaluates as Tate-rational'. A true parenthetical gloss, correctly paired."
       }
     ],
     "trap-triples": [
@@ -2592,6 +2637,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.762Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-closing-aphorism": [
@@ -2611,6 +2671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.831Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -2630,6 +2705,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.935Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -2649,6 +2739,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.022Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-performed-warmth": [
@@ -2668,6 +2773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.095Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
       }
     ],
     "trap-superlative": [
@@ -2687,6 +2807,23 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.162Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "severity": "minor",
+        "evidence": "Four de-hedged tokens in two consecutive sentences: 'The GENUINELY new period content isolates PRECISELY to the right-parity part. This DICTATES why the depth-2 imaginary Im Li_2 and the depth-3 real Re Li_3 carry the TRUE periods.' 'Dictates' asserts an explanatory necessity the block only exhibits, and 'true periods' is doing rhetorical rather than technical work (the technical statement is 'the right-parity part is the part not killed by the Beilinson regulator').",
+        "notes": "proposed: 'The new period content is confined to the right-parity part. This is why the depth-2 imaginary part Im Li_2 and the depth-3 real part Re Li_3 carry the period content.'"
       }
     ],
     "trap-nonspeakable": [
@@ -2706,6 +2843,22 @@
         "reviewed_at": "2026-08-15T10:31:00.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.240Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Prose reads aloud.",
+        "notes": "RECOMPUTED (all correct): the stated identity Li_n(zeta_K) - (-1)^(n-1) Li_n(zeta_K^-1) = -(2 pi i)^n/n! B_n(1/K) verifies numerically at 40 dps for (n,K) = (2,2), (2,5), (4,3), (4,5), (5,5), (5,7) with residuals 0 to 2.6e-41. The parity assignment in the prose is also self-consistent: odd n -> imaginary part Tate-rational, even n -> real part Tate-rational, hence depth-2 IMAGINARY and depth-3 REAL carry the periods, exactly as written."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2729,5 +2882,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:21:04.240Z"
 }

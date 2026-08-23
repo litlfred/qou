@@ -936,6 +936,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.035Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'The confinement mechanism is not that quarks are unstable, but that the binding operator requires a topologically complete structure to be stable.'",
+        "notes": "Load-bearing disambiguation -- it forestalls a real misreading of the preceding sentence, and the positive half carries the content. False-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -955,6 +972,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.078Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -974,6 +1008,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.122Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -993,6 +1044,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.173Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1012,6 +1080,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.235Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1031,6 +1116,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.277Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1050,6 +1152,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.328Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1069,6 +1188,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.377Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 paragraphs) + .ts. Recomputed the Gram spectrum from the cited witness (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1088,6 +1224,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.417Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'This is the precise algebraic statement of confinement.' resting on 'Individual quarks are LP-stable, but the $B_3$ sub-unit is not'; and 'The negative eigenvalue $\\lambda_{\\min} \\approx -0.956$'.",
+        "notes": "BOTH NUMBERS FAIL against the cited witness. (1) lambda_min recomputed from the witness Gram matrix = -0.855067, not -0.956 -- a 12% error, and neither value appears anywhere in the witness file (no 'lambda', 'kappa' or 'cond' key exists in it). (2) The premise 'the B_3 sub-unit is not [LP-stable]' is refuted: G*(sigma_0 sigma_1^{-1}) is strictly positive, min +0.1449 (full recomputation in the lp-dual-stability-table-data entry). So 'the precise algebraic statement of confinement' rests on a sign that does not survive recomputation from the block's own source."
       }
     ],
     "trap-nonspeakable": [
@@ -1107,6 +1260,23 @@
         "reviewed_at": "2026-08-15T10:31:01.381Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bbc9cf20ab91",
+          "ts": "8203c1e38024"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.462Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The negative eigenvalue $\\lambda_{\\min} \\approx -0.956$ is the reason the LP has a global minimum at $\\mathrm{tr}_M = 0$. The braid group realizability constraint prevents this.'",
+        "notes": "BROKEN ANTECEDENT -- 'this' has no referent that makes the pair coherent: the preceding sentence asserts the global minimum exists, and the next says a constraint prevents it. The two sentences cannot both be read as stated; a connecting clause looks to have been dropped. PROPOSED: restore the missing step, e.g. '...the unconstrained LP has a global minimum at tr_M = 0; braid-group realizability excludes that point from the feasible set.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1129,5 +1299,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:53.462Z"
 }

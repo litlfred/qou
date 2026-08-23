@@ -1360,6 +1360,22 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:17.799Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'alpha_EM admits a scalar Habiro element because its kernel is bar-even; Q_beta does not' is the block's substantive comparison and is carried by the contrast table above it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:17.867Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Proof then contrast table then one interpretive paragraph; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:17.928Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three em-dashes: one parenthetical inside the Taylor computation, two as table-cell glosses ('**yes** -- [2]_q = q + q^{-1} ... are manifest q-symmetric'). All carry content."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:17.986Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.055Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends by naming what remains open (the operator-level grading), not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1532,22 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.112Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The bar-even discriminant explains the asymmetry structurally' asserts the explanatory content rather than announcing it; borderline but on the right side."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.176Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph draws the consequence for c_k >= 3 rather than restating the identity."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.247Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.314Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exactly' in 'b^2(q^{-1}) = b^2(q) exactly' is earned - I verified it symbolically: b^2 = (q^4+q^2+1)/(q^2+1)^2, and substituting q -> 1/q multiplies numerator and denominator by the same q^{-4}, so the equality is exact, not leading-order. The Taylor claims also check: hbar_q = t/(1+t) = t - t^2 + O(t^3), hbar_q^2 = t^2 - 2t^3 + O(t^4), hbar_q^4 = t^4 - 4t^5 + O(t^6), so the odd-in-t content does first appear at t^5 as stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1669,23 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8ddb1dcdb601",
+          "ts": "ecfcedc5b0d1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:18.365Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Sweep damage inside the proof's one citation: 'b^2(q) is a manifest q-rational that satisfies b^2(q^{-1}) = b^2(q) exactly (verified in the canonical formalism chain)'. 'the canonical formalism' is this chapter's token substitution for a script or block name (86 occurrences across 54 mass-theory .md files), so the parenthesis names nothing and the sentence does not parse as English.",
+        "notes": "PROPOSED (not applied - restoring the erased reference is a sweep-repair task and I will not guess the name): restore the object. The claim itself needs no citation to stand - it is exact and one line to check - so an acceptable alternative is to delete the parenthesis and give the substitution instead."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1708,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:17:18.365Z"
 }

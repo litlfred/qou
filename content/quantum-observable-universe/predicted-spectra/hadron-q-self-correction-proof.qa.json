@@ -890,6 +890,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.601Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -909,6 +924,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.649Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-em-dash": [
@@ -928,6 +958,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.697Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-triples": [
@@ -947,6 +992,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.744Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-closing-aphorism": [
@@ -966,6 +1026,22 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.971Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "The block ends on a quantitative bound rather than a flourish. Whether that bound is TRUE is a separate matter - it is not, as stated; see notes.",
+        "notes": "TWO CONTENT DEFECTS, both concrete. (1) *** THE CLOSING BOUND IS FALSE AS STATED. *** 'The self-deformation is small: $|\\delta q / q_0| < 0.1\\%$ for all nuclei.' Computing delta q = [C(Z,2)-C(N,2)]/A^2 . hbar_q^2 at q_0: the bound holds along the valley of stability (Fe-56 0.031%, Pb-208 0.093%, U-238 0.0999% - right at the edge) but FAILS for neutron-rich nuclides that exist and are produced: Mg-40 (Z=12, N=28) gives 0.172%, Ca-60 gives 0.145%, O-24 at the neutron drip line gives 0.141%, Sn-137 gives 0.119%. The correct scope is 'for nuclei near the valley of stability', and the true supremum of the formula is 0.44% (the pure-proton limit C(A,2)/A^2 -> 1/2). This matters because the sibling rem:hadron-q-self-correction-interpretation quotes a 0.1-0.4% range for a DIFFERENT quantity (the differential shift), so the two blocks' numbers are easy to conflate. (2) THE A^2 EXPONENT IS NOT WHAT THE STATED REASON GIVES: 'The $A^2$ normalization reflects linking density: crossings occupy a volume proportional to $A$, making the crossing density per unit volume $\\ell_{\\mathrm{net}}/A^2$.' A quantity divided by a volume proportional to A is proportional to $\\ell_{\\mathrm{net}}/A$, not $/A^2$. Either the volume scales as A^2, or the normalisation is by something other than volume (pair count C(A,2) ~ A^2/2 would give A^2 directly and is the likelier intent). As written the justification contradicts the exponent it justifies."
       }
     ],
     "trap-meta-commentary": [
@@ -985,6 +1061,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.791Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-thesis-restatement": [
@@ -1004,6 +1095,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.838Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-performed-warmth": [
@@ -1023,6 +1129,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.883Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "trap-superlative": [
@@ -1042,6 +1163,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:14.015Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "'The self-deformation is small' is quantified rather than asserted; no unqualified maximum-strength claims. The quantification itself is wrong for neutron-rich nuclides - recorded under trap-closing-aphorism."
       }
     ],
     "trap-nonspeakable": [
@@ -1061,6 +1197,21 @@
         "reviewed_at": "2026-08-15T10:31:01.133Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a22b9b4e4e1e",
+          "ts": "21a506e0a556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:04:13.925Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a three-bullet weight assignment, a normalisation paragraph, and a magnitude section). No negation-contrast ('produce no shift in q' is a substantive symmetry claim about the neutral p-n crossings), no pivot, no spaced em-dash, no reflex triple (the three bullets exhaust the crossing types p-p, n-n, p-n), no narrated emphasis, no restatement closer, no warm register, no noun-pile. hbar_q VERIFIED: (q-1)/q = 0.0990817 at q_0 and its square is 0.0098172, matching the quoted 0.0991 and 0.00982 exactly. The weight pattern is consistent with the d-values in rem:groebner-nf-computation, where the p-n crossing carries half the n-n value."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1087,5 +1238,5 @@
     "md": "a22b9b4e4e1e",
     "ts": "21a506e0a556"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:04:14.015Z"
 }

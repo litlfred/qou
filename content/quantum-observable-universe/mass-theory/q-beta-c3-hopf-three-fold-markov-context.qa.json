@@ -945,6 +945,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not an empirical fit.\"; \", not a Taylor-exact coefficient.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.363Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'as a structural prediction, not an empirical fit' and 'a classical-limit near-match, not a Taylor-exact coefficient' are both the corpus's required epistemic labelling. The second is AGENTS.md-current wording and is the correct one; see trap-superlative for the tension with the first."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.423Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four numbered Facts, then confirmation, then the near-match caveat. No reframe."
       }
     ],
     "trap-em-dash": [
@@ -984,6 +1015,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 308 words (1.62/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.481Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three em-dashes: two are section headers ('### Fact 1 -- Hecke quadratic at each crossing'), one an appositive ('cyclic permutations of k crossings -- equivalently, k-fold cyclic substructures'). All structural or content-bearing."
       }
     ],
     "trap-triples": [
@@ -1003,6 +1050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 308 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.564Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four Facts, not three; no reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1022,6 +1084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.630Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the residual that measures the near-match gap - a number, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1041,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.767Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Combining Facts 1-4' is proof bookkeeping."
       }
     ],
     "trap-thesis-restatement": [
@@ -1060,6 +1152,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:20.908Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph narrows the claim rather than restating it."
       }
     ],
     "trap-performed-warmth": [
@@ -1079,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:21.200Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1098,6 +1220,23 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:21.004Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The 'Empirical confirmation' section's two headline numbers do not reconcile with the chapter's own witness, and one of them contradicts a sibling block outright. 'The N=2 step (Kashiwara b^2 alone) gives a residual of +1.25 ppm ... The N=3 step (structural c_3 = -2) yields +0.011 ppm ... a 112x tightening.' The internal ratio is fine (1.25/0.011 = 114, quoted as 112). But prop:q-beta-c-2-eq-neg-one-structural states the N=2 residual as 5.6 ppm, and its witness (qbeta-symbolic-chain-alpha-b.witness.json) records eps_N0 = 1681.9, eps_N1 = 78.156, eps_N2 = 5.60699 ppm - I reproduced all three independently at 40 dps. No step of the canonical chain gives 1.25 ppm, and 5.6 vs 1.25 is a factor of 4.5 on the same quantity. The N=3 figure is also stale in the same direction: 0.011 ppm = 11 ppb belongs to the pre-2026-05-28 muon-anchored era (compare AGENTS.md, which records the current Q_beta miss as 1279 ppb and the Habiro-exact 5.7 ppb result as explicitly not refreshed since the proton re-pin).",
+        "notes": "PROPOSED (not applied - all numeric): re-run the N=2/N=3 residuals at the current pin and quote them with the pin named, or cite the witness values directly (5.607 ppm at N=2). Recompute the tightening factor from whatever pair survives. NOTE also that the c_3 identification is convention-C framed throughout: the same witness computes z = 1/(sqrt(q)+1/sqrt(q)) = 0.49932, and AGENTS.md rules convention D canonical with the whole c_k ladder awaiting re-derivation (bean qou-cds1)."
       }
     ],
     "trap-nonspeakable": [
@@ -1117,6 +1256,23 @@
         "reviewed_at": "2026-08-15T10:31:00.823Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "93f71a61dcc2",
+          "ts": "1236d38baa90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:21.300Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Sweep damage erases the producer at the one place the section needs it: 'Per the canonical formalism, the prediction is empirically observable:' - 'the canonical formalism' is this chapter's token substitution for a script name (86 occurrences across 54 mass-theory .md files), so the sentence introducing the empirical numbers cites nothing.",
+        "notes": "PROPOSED (not applied - restoring an erased script name is sweep repair and I will not guess it): restore the producer. The block's .ts names computations/probe_q_beta_operator_valued_N3.py, which is the plausible candidate, but it should be confirmed against the pre-sweep text rather than assumed. SEPARATE, reported not fixed: this block's J_Hopf(q) = -q^2(1+q^2) collides with markov-pair-z2.md, which gives J_Hopf(q) = -(q^{1/2}+q^{-1/2}) z^2. Both are legitimate objects - the first is the normalised Jones in t = q up to the unit q^{3/2}, the second the Markov-trace form - but they take different values at q = 1: -2 versus -2z^2, which is -0.751 at the canonical convention-D z = 0.612688. Since the entire identification is 'c_3 = J_Hopf(q=1) = -2', the block must say which normalisation it means."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1143,5 +1299,5 @@
     "md": "b121297d2903",
     "ts": "1236d38baa90"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:23:21.300Z"
 }

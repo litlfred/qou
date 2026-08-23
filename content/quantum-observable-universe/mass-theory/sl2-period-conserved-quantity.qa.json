@@ -2307,6 +2307,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not the period recurrence.\"; \", not a M Cayley--Hamilton relation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:39.939Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "'A factorial sequence conserves no first integral, hence satisfies NO depth-2 recurrence' and 'not the period recurrence' / 'not a 2x2 Cayley-Hamilton relation' ARE the block's content — it exists to fork a proved identity from a false extrapolation, and each negation names a specific excluded object. Substantive-contrast class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2326,6 +2341,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:39.983Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "The Fork-consequence paragraph is a genuine argument (conserved H forces bounded ratio; the true period grows factorially; therefore no such recurrence), not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -2345,6 +2375,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.027Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "One dash, appositive: 'a conserved first integral - the discrete energy of the Lucas/Chebyshev orbit'."
       }
     ],
     "trap-triples": [
@@ -2364,6 +2409,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.072Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -2383,6 +2443,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.117Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Ends by naming the operator class that DOES apply, a forward pointer rather than a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -2402,6 +2477,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.160Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2421,6 +2511,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.202Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "The fork paragraph adds the refutation; it does not echo the statement."
       }
     ],
     "trap-performed-warmth": [
@@ -2440,6 +2545,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.290Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2459,6 +2579,21 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.244Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "'The EXACT prolongation kernel is the q-Bessel-class q-difference operator' is the one unqualified word, and it points at a named block rather than standing alone."
       }
     ],
     "trap-nonspeakable": [
@@ -2478,6 +2613,22 @@
         "reviewed_at": "2026-08-15T10:31:00.661Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a3aebbac6e8a",
+          "ts": "22ae8ded8568"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:40.332Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Dense but well-punctuated; each long sentence has a clear main clause.",
+        "notes": "RECOMPUTED AND CORRECT THROUGHOUT — this is one of the two strongest blocks in the batch. sympy simplifies H_{n+1} - H_n to exactly 0 under a_{n+2} = tau a_{n+1} - a_n. The hyperbolic ratio is right: x^2 - tau x + 1 = 0 at tau = 2 cosh theta has roots cosh theta +- sinh theta = e^{+-theta}, so lambda_+ = e^theta. The fitted tau = (a^(2) + a^(4))/a^(3) is the correct inversion of a_4 = tau a_3 - a_2. Sp(2) = SL_2 is right and the companion matrix [[0,1],[-1,tau]] of the stated map has determinant 1. The fork argument is logically sound AND correctly scoped: it excludes a CONSTANT-tau, det = 1 depth-2 recurrence only (a_{n+1}/a_n unbounded forces H_n ~ a_{n+1}^2 -> infinity), which is exactly what the block claims and no more — it does not over-reach into a structural exclusion. ONE LOOSE POINT: 'a_D^{(n)} = sum_lambda dim_q' does not say what is being summed or over which n-dependent index set."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2501,5 +2652,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:56:40.332Z"
 }

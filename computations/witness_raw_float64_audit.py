@@ -72,6 +72,33 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 BASELINE = HERE / "raw-float64-baseline.json"
 
+
+def _baseline_path(scan_root: "Path | None") -> "Path":
+    """Baseline file for a run — DERIVED from the scan root, never shared.
+
+    Exactly the `_output_name` defect (qou-pgdw) one step removed, and it is
+    why the audits-tree gate could not be made blocking. The OUTPUT name was
+    scoped when that bug was fixed; the BASELINE was left global, so the
+    advisory `--scan-root docs/audits/scripts` run reads a baseline whose 1572
+    entries are all `computations/` paths and therefore contains none of its
+    own. Every witness under that tree is reported NEW on every run, forever —
+    not because anything regressed, but because the ratchet has no memory for
+    that tree.
+
+    A ratchet with no memory cannot be blocking: it is red on arrival, and a
+    gate that is red on arrival gets skipped, which is how a checker goes quiet
+    (the rule this file's own header states). Giving each scan root its own
+    baseline is what makes "no NEW dirty here" a question the gate can answer.
+
+    This does NOT grow `raw-float64-baseline.json`. It is a separate file for a
+    tree that was previously outside the discipline altogether; the corpus
+    baseline is untouched and still drains-only.
+    """
+    if scan_root is None:
+        return BASELINE
+    slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
+    return HERE / f"raw-float64-baseline--{slug}.json"
+
 # These audits embed findings — including float values — in their own
 # witnesses, so scanning them re-detects the audit's own output every run.
 # Same exclusion the padding audit makes, for the same reason.
@@ -460,13 +487,15 @@ def main() -> int:
     ap.add_argument(
         "--scan-root", default=None, metavar="DIR",
         help="directory to scan instead of computations/ (repo-relative). "
-             "The baseline is keyed on computations/ paths, so any OTHER root "
-             "reports every dirty file as NEW — that is honest for a "
-             "previously-unscanned tree, but it means such a run belongs in "
-             "precision-gates.sh as ADVISORY, never blocking, until the files "
-             "are drained. Do NOT rebaseline against a different root: it "
-             "would grow the baseline, which the discipline forbids "
-             "(bean qou-irzg).")
+             "Each root gets its OWN baseline file (see _baseline_path), so a "
+             "root with no baseline yet reports every dirty file as NEW and "
+             "such a run is ADVISORY until coverage is established. "
+             "--rebaseline against a non-default root is PERMITTED and is how "
+             "you establish that coverage: it writes that root's own file and "
+             "cannot reach the corpus baseline. Once established the root can "
+             "go blocking. Establishing coverage over an unscanned tree is a "
+             "different act from silencing a regression in a covered one; "
+             "only the latter is forbidden (bean qou-irzg).")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on a NEW dirty witness or an INCREASED count")
     ap.add_argument("--rebaseline", action="store_true",
@@ -480,20 +509,26 @@ def main() -> int:
         if not scan_root.is_dir():
             print(f"--scan-root: not a directory: {scan_root}")
             return 2
-        if args.rebaseline:
-            # Rebaselining against a foreign root would write that root's
-            # dirty files into a baseline keyed on computations/ paths —
-            # growing it. Baselines drain, never grow.
-            print("--rebaseline is refused with --scan-root (bean qou-irzg).")
-            return 2
-        print(f"  scan root                      : {args.scan_root}  "
-              f"[non-default — baseline does not cover it, so every dirty\n"
-              f"                                   file below is reported as "
-              f"NEW; treat this run as ADVISORY]")
+        # --rebaseline WITH --scan-root used to be refused outright: the write
+        # would have put that root's dirty files into a baseline keyed on
+        # computations/ paths, growing it, and baselines drain-never-grow.
+        #
+        # It is now permitted, because `_baseline_path` sends it to that root's
+        # OWN file. The corpus baseline is unreachable from a non-default root,
+        # so the thing the refusal protected cannot happen. What this enables is
+        # ESTABLISHING coverage over a tree that had none — which is a different
+        # act from silencing a regression in a tree that already has it, and is
+        # the only way the ratchet can hold a line here at all.
+        _bp = _baseline_path(scan_root)
+        _cov = "own baseline: " + _bp.name if _bp.exists() else (
+            "NO baseline yet — every dirty file below reads as NEW; "
+            "--rebaseline to establish coverage")
+        print(f"  scan root                      : {args.scan_root}  [{_cov}]")
     found = scan(scan_root)
+    baseline_path = _baseline_path(scan_root)
     prior: dict[str, int] = {}
-    if BASELINE.exists():
-        prior = json.loads(BASELINE.read_text())["files"]
+    if baseline_path.exists():
+        prior = json.loads(baseline_path.read_text())["files"]
 
     new_files = {f: n for f, n in found.items() if f not in prior}
     grew = {f: (prior[f], n) for f, n in found.items()
@@ -556,13 +591,27 @@ def main() -> int:
             print(f"    {was:6d} -> {now:<6d}  {f}")
 
     if args.rebaseline:
-        BASELINE.write_text(json.dumps(
+        baseline_path.write_text(json.dumps(
             {"note": "Witnesses known to carry raw float64, by count. The "
                      "backlog is tolerated; it must only SHRINK. Regenerate "
                      "ONLY when draining. Adding a file here to silence a "
                      "failure defeats the gate — fix at the producer instead.",
              "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
-             "drain_owner": "PR #4677 (float64 residual, producer-side)",
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it,
+             # and stamping every root with #4677 would send the next agent to
+             # an arc that never touched these files.
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it.
+             # Do NOT name a bean here — this string is written for EVERY
+             # root, so a hardcoded id sends the next agent to the wrong arc
+             # (it said qou-irzg, the audits-tree bean, while writing the
+             # qou-mass baseline). The owning bean is recorded beside the
+             # gate entry in scripts/precision-gates.sh, which is per-root.
+             "drain_owner": ("PR #4677 (float64 residual, producer-side)"
+                             if scan_root is None else
+                             f"whoever gated {args.scan_root} — see the gate "
+                             f"entry in scripts/precision-gates.sh"),
              "files_count": len(found),
              "fields_count": total,
              "files": dict(sorted(found.items()))}, indent=2) + "\n")

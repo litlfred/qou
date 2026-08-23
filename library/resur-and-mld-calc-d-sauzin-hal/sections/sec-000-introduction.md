@@ -1,13 +1,13 @@
 ---
 doc_id: resur-and-mld-calc-d-sauzin-hal
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Resurgence and Mould Calculus"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 2-4
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
-doc_brief: "HAL Id: hal-04253203 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction"
+doc_brief: "Resurgence and Mould Calculus — 9 sections: Introduction; Alien operators. Alien derivations; Borel-Laplace summation"
 ---
 2 “Simple” version of Resurgence Theory . . 1
 2.1 Simple Ω-resurgent series . . . . . . 2

@@ -1,0 +1,47 @@
+{
+  "engine": "python (mpf 50 dps)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T14:41:10.047513+00:00",
+  "commitSha": "79fc0a590133db0e0b9f66b08d0acc7ad67a0a75",
+  "assertions": [
+    {
+      "name": "rho_over_hbarsq_is_M_need_and_binding_is_M_hbarsq_not_universal_hbarsq",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "ρ_implied/ℏ_q² = M_need identically (definitional); multi-bond M_need > 1.5 (³H 2.00, ⁴He 7.56) while single α–α bond M_need ≈ 1 — so ρ_binding = M·ℏ_q², not a universal ℏ_q² (corrects Lane 2). Non-circular survivor: mass multiplier m_p/(m_e·Vol) > 100 (O(1/ℏ_q²)) vs binding O(1) — mass classical, binding O(ℏ_q²) quantum. No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "binding-hbarq-rung-forward-test",
+  "scriptFile": "binding_hbarq_rung_forward_test.py",
+  "scriptHash": "1f543ba30174",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Forward test + critical-distance re-scope of the Lane 2 b_αα result. Test 1: ρ_implied/ℏ_q² = M_need = B/(m_e·Vol) is a DEFINITIONAL identity, so 'ρ_αα≈ℏ_q²' is just M_need(single α–α bond)≈1, NOT a universal binding law — multi-bond M_need = 2.00 (³H), 2.06 (³He), 7.56 (⁴He). Corrects Lane 2's 'binding is ℏ_q²-suppressed' over-claim to ρ_binding = M·ℏ_q². Test 2 (non-circular survivor): the mass multiplier m_p/(m_e·Vol)=ρ_p/ℏ_q²≈258 is O(1/ℏ_q²) with ρ_p=linking_weight≈2.53 finite/O(1) as ℏ_q→0 (classical), while the binding multiplier M_need is O(1) so ρ_binding=M·ℏ_q²→0 (quantum) — a two-scale separation ~1/ℏ_q² that is a SCALING statement, not a magnitude coincidence. Test 3: M_need=z=A−1 in the linear-chain regime (Lane 1 tie) ⇒ ρ_binding=(A−1)·ℏ_q². Lane 2 Result 1 (259× overshoot) stands. Open: why mass carries linking_weight/ℏ_q² and binding the bare coordination count M. No fit; no wiring; q₀ proton-anchored.",
+  "parameters": {
+    "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
+  },
+  "data": {
+    "M_need_3H": "2.00312273682",
+    "M_need_3He": "2.06118951756",
+    "M_need_4He": "7.55667748346",
+    "M_need_alpha_alpha": "0.995471959393",
+    "mass_multiplier_mp_over_meVol": "250.57609732",
+    "proton_density_linking_weight": "2.5327796564",
+    "linking_weight_q_to_1_limit": "2.5",
+    "hbar_q_sq": "0.009817186454275073810569057"
+  }
+}

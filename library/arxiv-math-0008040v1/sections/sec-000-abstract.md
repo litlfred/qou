@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-000-abstract
 section_title: "Abstract"
 section_number: null
 pages: 1-1
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 Let U be the quantum group associated to a Lie algebra g of type An. The
 negative part U − of U has a canonical basis B deﬁned by Lusztig and Kashi-

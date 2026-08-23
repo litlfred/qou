@@ -1772,6 +1772,22 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.985Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "We bound the difference RATHER THAN the individual masses to isolate the substrate-derivable quantity from the CODATA-anchored mean - substantive and, in this corpus, required: it is exactly the absolute-mass excision of 2026-08-11 applied correctly (a splitting is reportable, an absolute mass is not), and it names what each side depends on.",
+        "notes": "RIGOR: VERIFIED. hbar_q = (q-1)/q agrees with hbar_q = 1 - q^{-1} used elsewhere; h_q = q - q^{-1} and [2]_q = q + q^{-1} are the SS7a forms. Numerically the bound is M_N hbar_q^2 h_q [2]_q = 3.875042037 MeV at the proton pin (M_N = 938.918756 MeV), against a realised splitting of 1.2864 MeV, so the two-sided bound holds with the slack quantified in the proof sibling. Minor: trailing whitespace after the final sentence."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.663Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.698Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.735Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.770Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.805Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.841Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.877Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.913Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c20436e26481",
+          "ts": "474ed63d4556"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:19.950Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (two-sided bound display, symbol glosses, one scope sentence). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:19.985Z"
 }

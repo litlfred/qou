@@ -1,13 +1,13 @@
 ---
 doc_id: invariant-eigendistributions-2
-doc_title: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMAN"
+doc_title: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups"
 section_id: sec-021-93-addendum-to-theorem-82-the-polynomials-cγ-and
 section_title: "Addendum to theorem 8.2. The polynomials cΓ and pO are given by"
 section_number: 9.3
 pages: 23-26
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
-doc_brief: "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: Intr"
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 25 sections: Introduction; Construction of Weyl group represe"
 ---
 cΓ(λ)= kO
 ∑

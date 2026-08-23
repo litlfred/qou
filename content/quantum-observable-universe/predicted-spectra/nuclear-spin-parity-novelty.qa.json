@@ -1413,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.244Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.283Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.323Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1470,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.362Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1553,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.402Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1588,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.440Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1623,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.478Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1658,22 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.518Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast, no pivot, no em-dash, no triple, no closing aphorism proper, no meta-commentary, no performed warmth.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1693,23 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.560Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "severity": "minor",
+        "evidence": "'This reproduces standard spin-statistics without external postulates.' The claim is maximum-strength, unqualified — and contradicted by the proof it interprets. prf:nuclear-spin-parity's argument turns on the posited dictionary 'Knots carry half-integral spin; links carry integral spin', which is an external postulate: component count does not determine spin as a matter of topology, and nothing in the block derives it. The adverbs in the first sentence ('strictly', 'algebraically') pull the same way.",
+        "notes": "flagged, not fixed — the sentence's truth depends on whether the knot/link spin dictionary is derived or assumed, which is an open question in the parent proof (and is entangled with the Borromean component-count finding recorded there). Proposed: 'The SU_q(2) tensor-product rules reproduce standard spin-statistics from the knot/link spin assignment.' — which states the dependency instead of denying it."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1729,23 @@
         "reviewed_at": "2026-08-15T10:31:01.202Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5091bf672f97",
+          "ts": "db44d9d781ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.600Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "severity": "minor",
+        "evidence": "'Formulating parity strictly via SU_q(2) tensor-product rules algebraically embeds empirical parity constraints within the theory.' A gerund subject carrying a prepositional phrase and an adverb, then a second adverb, before the verb finally arrives at 'embeds' — twelve words in. Read aloud the listener has lost the thread by 'algebraically'. With the block only two sentences long and the second one headed by a bare 'This', the whole block is eye-syntax.",
+        "notes": "flagged, not fixed (same rewrite as the superlative entry resolves both). Proposed: 'The SU_q(2) tensor-product rules fix the spin parity algebraically: J is integral exactly when A is even.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1768,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:31:29.600Z"
 }

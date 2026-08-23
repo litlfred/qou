@@ -1371,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.718Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.762Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.807Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-triples": [
@@ -1428,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.673Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read: proof of prop:q-dilogarithm-exists. The list 'Over F_p, Q_p, C_p' names three genuinely distinct arithmetic settings and matches rem:q-dilog-three-contexts; the count is set by the content.",
+        "notes": "Pass by the substantive-enumeration carve-out."
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.851Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.895Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1581,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.938Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1616,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.982Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1651,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:54.027Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1686,22 @@
         "reviewed_at": "2026-08-15T10:30:59.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:54.071Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1724,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:48:54.071Z"
 }

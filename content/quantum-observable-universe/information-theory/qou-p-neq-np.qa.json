@@ -1816,6 +1816,22 @@
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "dense but load-bearing: 'analogy, not a theorem', 'cited fact, not a QOU derivation', 'counting, not decision', 'not the Clay separation'",
         "notes": "anti-laundering disambiguation class; each prevents a real overclaim misreading; kept"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:29.862Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "22 denial constructions in 1844 words, and each is anti-laundering scope discipline the corpus mandates: 'not a claim about P versus NP in the abstract', 'an analogy, not a theorem', 'carried in the type, never instantiated', 'the derived result, not the Clay separation', 'part of the conjecture, not a consequence of it'. Removing any of them would widen a claim.",
+        "notes": "Density is extreme but every instance is load-bearing; this is the substantive-contrast false-positive class at scale."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1850,6 +1866,21 @@
         "reviewed_at": "2026-08-15T12:03:25.368Z",
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "full-text read; no rhetorical pivot (setup-then-reframe) construction found"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:29.943Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "'Where the conjectured P != NP needs the open counting-to-decision transfer, a weaker but genuinely derived statement needs none of it' is a contrastive topic sentence introducing new material, not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -1887,6 +1918,23 @@
         "severity": "minor",
         "evidence": "~15 spaced em-dashes; several append afterthoughts ('-- the weaker separation', '-- and no step of that chain refers to computational complexity')",
         "notes": "proposed: structural pass converting afterthought dashes to sentences/parentheses; keep load-bearing parentheticals (Lean decl names, epistemic guards) and the bolded anti-laundering closer; no math edits"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.032Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "severity": "minor",
+        "evidence": "25 em-dashes in 1844 words (1.4 per 100 words, the highest density in this batch). Most are matched parenthetical pairs, but several append a qualification where a sentence break would do: 'proves — sorry-free, on the concrete Schur element ... — that in the regime Q > 1, X <= 0 every Schur element is nonzero'; 'the Bekenstein bandwidth bound forces any bandwidth-limited device to run super-polynomially — no bandwidth-limited device decides the boundary problem in polynomial time'.",
+        "notes": "STRUCTURAL (spread over ~8 paragraphs). Proposed: in the Schur-element paragraph and the physical-intractability paragraph, convert the appended dashes to sentence breaks; keep the matched pairs."
       }
     ],
     "trap-triples": [
@@ -1921,6 +1969,21 @@
         "reviewed_at": "2026-08-15T12:03:25.454Z",
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "full-text read; no compulsive triple construction found"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.146Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "'three facts are machine-checked', 'Two things are unproven', 'three predicates on one shared object' are all counted enumerations that match their lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1955,6 +2018,21 @@
         "reviewed_at": "2026-08-15T12:03:25.492Z",
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "full-text read; no closing aphorism construction found"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.246Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "Ends on Lean identifiers and a cross-reference to prop:p-vs-np-boundary."
       }
     ],
     "trap-meta-commentary": [
@@ -1989,6 +2067,23 @@
         "reviewed_at": "2026-08-15T12:03:25.531Z",
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "full-text read; no meta-commentary (narrated emphasis) construction found"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.326Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "severity": "major",
+        "evidence": "Edit history narrated in the scholarly prose: the heading 'The G_m-torsion stratification (corrected).' plus 'Earlier drafts stated the torsion dichotomy backwards.', and the section heading 'It does not advance the open pair, and should not be cited as if it did.' which instructs the reader on citation practice rather than stating the mathematics. Also 'Crucially, ...' announces importance.",
+        "notes": "STRUCTURAL, and do not delete the provenance: AGENTS.md 4d puts correction notes in the .ts authorNotes (kind 'refined-framing'). Proposed: heading -> 'The G_m-torsion stratification'; move 'Earlier drafts stated the torsion dichotomy backwards' to authorNotes; recast the citation-practice heading as its content ('The Temperley--Lieb stratification does not bear on the open pair'); drop 'Crucially'."
       }
     ],
     "trap-thesis-restatement": [
@@ -2024,6 +2119,22 @@
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "bolded closer 'That existence statement -- not the Clay separation -- is what the QOU stands behind' restates the paragraph",
         "notes": "load-bearing epistemic boundary against overclaiming; kept"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.395Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "'the open item is faithfulness' is stated four times (items 1-2; 'entire open content therefore lives in items 1-2'; 'The single irreducible open item'; 'What remains open beyond all citation is unchanged'), but each instance closes a paragraph that added new machine-checked material and says what that material did NOT change — which is the anti-over-claim bookkeeping the corpus asks for.",
+        "notes": "Optional consolidation if the block is ever restructured."
       }
     ],
     "trap-performed-warmth": [
@@ -2058,6 +2169,21 @@
         "reviewed_at": "2026-08-15T12:03:25.612Z",
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "full-text read; no performed warmth construction found"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.469Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2093,6 +2219,22 @@
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "'Crucially', 'the framework's strongest honest claim'",
         "notes": "qualified and load-bearing; kept"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.542Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "evidence": "Strong phrasings are individually backed: 'provably never lands on the Temperley--Lieb locus' cites substrate_avoids_tl_locus; 'the framework's strongest honest claim' is immediately scoped as strictly weaker than abstract P != NP.",
+        "notes": "Minor: 'Crucially' (recorded under meta-commentary) is the one unearned intensifier."
       }
     ],
     "trap-nonspeakable": [
@@ -2129,6 +2271,23 @@
         "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
         "evidence": "counting-decision-gap paragraph is a single very long dense wall",
         "notes": "grammatical, content-dense technical prose rather than noun-chain padding; paragraph splits would help in a structural pass"
+      },
+      {
+        "field_hash": {
+          "md": "8b067c8e03f9",
+          "ts": "4a3653213e88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:43:30.634Z",
+        "reviewed_sha": "d1947c60c436c1e54b81a8a23bd680f45a306f6f",
+        "severity": "minor",
+        "evidence": "The Schur-element paragraph is a single ~450-word block of nested clauses and Lean identifiers that cannot be read aloud in one pass; e.g. 'and schurElement_ne_zero proves — sorry-free, on the concrete Schur element s_{lambda,X}(Q) = Q^{n(lambda)} prod_x (1 - X Q^{c(x)})/(1 - Q^{h(x)}) — that in the regime Q > 1, X <= 0 every Schur element is nonzero (positive hook lengths make every denominator strictly negative; nonpositive X makes every numerator positive).'",
+        "notes": "STRUCTURAL — proposed: split that paragraph at 'Stage 2 advances this on the Schur-element side' and again at 'For physical Markov specialisations'. The mathematics in it checks out: with Q > 1 and h(x) >= 1 every denominator 1 - Q^{h} < 0, with X <= 0 every numerator 1 - X Q^{c} >= 1 > 0, and at X = Q^{-N} the numerator vanishes iff some cell has content N, i.e. iff lambda_1 >= N+1, so survivors are exactly lambda_1 <= N as stated."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2152,5 +2311,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T23:47:50.646Z"
+  "updated_at": "2026-08-19T21:43:30.634Z"
 }

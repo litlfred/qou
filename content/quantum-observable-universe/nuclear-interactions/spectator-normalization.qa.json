@@ -1865,6 +1865,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.766Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1884,6 +1899,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.808Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1903,6 +1933,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.849Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1922,6 +1967,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.891Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1941,6 +2001,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.938Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1960,6 +2035,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:47.980Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1979,6 +2069,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.024Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -1998,6 +2103,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.071Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -2017,6 +2137,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.114Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -2036,6 +2171,21 @@
         "reviewed_at": "2026-08-15T10:31:01.491Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9086e2451c5f",
+          "ts": "0acba1f366a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.154Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (definition, ~0.7kB). Verified both claims: a = -h/2 < 0 and b = -3(q^2-1)(q^2+1)^2/(4q^3) < 0 for all q > 1 (every factor positive there); and sign(S) = sign(a^Z b^(N-1)) = (-1)^(Z+N-1) = (-1)^(A-1) since A = Z+N - the stated parity is correct. Denominator shape q^3 with an explicit (q^2+1)^2 factor carries no convention-C signature. lean.ref QOU.ParticleInteractions.SpectatorNormalization resolves in the library tree. All ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2059,5 +2209,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:48.154Z"
 }

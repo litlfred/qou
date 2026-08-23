@@ -679,7 +679,9 @@ fn main() {
     let ms = t_start.elapsed().as_millis();
 
     // Evaluate at q₀
-    const Q0: f64 = 1.10998;
+    // Substrate anchor from the crate constant (PROTON pin); the previous
+    // truncated 5-digit muon `1.10998` was 1277 ppb off.
+    const Q0: f64 = hecke_engine::gram::Q_0;
     let t0_val = Q0.sqrt();
     let denom = 2.0_f64.powi(elem.pn_count as i32);
     let tr_alt_val = tr_alt.eval(t0_val) / denom;
@@ -744,8 +746,14 @@ fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
     use std::io::Write;
     let lsym = sym.to_lowercase();
     let filename = format!("witness-{}{}.lean", a, lsym);
+    // TRUNCATE, do not append (bean qou-qwsj). The filename is per-nucleus and
+    // every declaration written below is NAME-KEYED to that nucleus
+    // (`tr_alt_4he`, `net_4he`, ...), so appending on a re-run emits a SECOND
+    // copy of the same names into the same file -- duplicate definitions, and a
+    // witness that no longer compiles. It failed silently: the process still
+    // exits 0, and nothing here reads the file back.
     let mut file = std::fs::OpenOptions::new()
-        .create(true).append(true).open(&filename).unwrap();
+        .create(true).write(true).truncate(true).open(&filename).unwrap();
 
     writeln!(file, "/-- F_Pauli for {}{} (Z={}, N={}, A={}), exact in t = q^{{1/2}}.", a, sym, z, n, a).ok();
     if dm { writeln!(file, "    ★★ DOUBLY MAGIC.").ok(); }

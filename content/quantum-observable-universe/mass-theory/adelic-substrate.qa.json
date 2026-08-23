@@ -981,7 +981,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — Lean file exists"
+        "evidence": "adelic-substrate.lean:1 \u2014 Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60",
+          "lean": "910a10f03d8f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'adelic-substrate.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1386,7 +1401,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "evidence": "adelic-substrate.lean:1 \u2014 content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",
@@ -1872,6 +1887,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.502Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1891,6 +1921,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.555Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1910,6 +1955,22 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.615Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One spaced dash pair: 'The archimedean place inf - the R component - is the laboratory continuum'.",
+        "notes": "True parenthetical gloss of the symbol; not a structural substitute."
       }
     ],
     "trap-triples": [
@@ -1929,6 +1990,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.729Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1948,6 +2024,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.788Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1967,6 +2058,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.841Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1986,6 +2092,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.908Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -2005,6 +2126,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.960Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -2024,6 +2160,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:24.004Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -2043,6 +2194,21 @@
         "reviewed_at": "2026-08-15T10:31:00.703Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:24.067Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2066,5 +2232,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:22:24.067Z"
 }

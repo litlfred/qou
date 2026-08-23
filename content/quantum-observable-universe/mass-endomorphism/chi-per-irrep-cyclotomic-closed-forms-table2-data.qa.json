@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.076Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Lean-theorem index table; no assertion-by-denial.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.118Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No connective prose.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.161Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.204Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Grouped rows list the three H_3 irreps; a complete enumeration.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.245Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Ends on the cyclotomic re-expression row.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.287Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "None.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.330Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No prose sentences.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.377Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "None.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.419Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "\"all vanish at q = 1 (isospin invariance)\" is a quantified claim, checked and true: every numerator in table1 carries the factor (q^2-1). The conjugate-partition row was also checked: V_(3) has denominator 4q and V_(1,1,1) has 4q^5 over the same numerator, so V_(1,1,1) = V_(3)/q^4 exactly as stated.",
+        "notes": "No change."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bfa9e0f60621",
+          "ts": "7cd9fe61739d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.460Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Backticked Lean identifiers are unavoidable in a theorem index; the statement column is readable.",
+        "notes": "No change."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:13:34.460Z"
 }

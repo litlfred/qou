@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-030-63-theorem-an-extension-of-theorem-51-let-arv-be
 section_title: "Theorem. (An extension of Theorem 5.1). Let (A,R,v) be a ribbon I-Iopf"
 section_number: 6.3
 pages: 18-18
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 algebra. Assume that for each A-module V we have fixed two invertible A-linear 
 operators 0~, 0 v : V--,V. There exists a unique eovariant functor Fo:CDR(A) 

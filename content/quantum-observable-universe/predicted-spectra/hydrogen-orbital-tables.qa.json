@@ -1230,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.040Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1249,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.075Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-em-dash": [
@@ -1268,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 214 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.109Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-triples": [
@@ -1287,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 214 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.147Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-closing-aphorism": [
@@ -1306,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.185Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-meta-commentary": [
@@ -1325,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.223Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-thesis-restatement": [
@@ -1344,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.260Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "'This recovers the Rydberg formula directly from the R-I crossing energy on the Hopf link Seifert surface.' closes the 1/n^2 subsection, not the block, and it names what was recovered rather than repeating it -- the cross-reference-closer false-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1363,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.298Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "trap-superlative": [
@@ -1382,6 +1510,23 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.338Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "severity": "minor",
+        "evidence": "Block-final sentence read 'The photon energy precisely equals the R-I crossing energy difference.' 'Precisely' is an unearned de-hedging intensifier: the block asserts the identity, it does not check it, and the surrounding energies are quoted to three significant figures.",
+        "notes": "FIX APPLIED: 'The photon energy precisely equals the R-I crossing energy difference.' -> 'The photon energy equals the R-I crossing energy difference.' Math delimiters re-checked after the edit (4 occurrences of $$, balanced)."
       }
     ],
     "trap-nonspeakable": [
@@ -1401,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:31:01.221Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0773f36a38b1",
+          "ts": "ac33f45352ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.378Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (three tables plus four bolded prose sections). Judged all ten categories; one de-hedging intensifier found and fixed inline.",
+        "notes": "EVERY NUMBER IN THIS BLOCK CHECKS OUT -- recomputed independently. Writhe w = 2n+1 gives 3,5,7,9 (stated); orbitals n^2 give 1,4,9,16 (stated); states 2n^2 give 2,8,18,32 (stated); 2 sum_{l<n}(2l+1) = 2n^2 (stated identity, correct). Spectral series from E_n = -13.6/n^2 and lambda = 1239.84/DeltaE nm: n=1->2 DeltaE = 10.20 eV, 121.6 nm (Lyman-alpha, true 121.567); n=1->3 12.09 eV, 102.6 nm (Lyman-beta, true 102.57); n=2->3 1.889 eV, 656.3 nm (Balmer-alpha, true 656.28); n=3->4 0.6611 eV, 1875.4 nm (Paschen-alpha, true 1875.1). All four rows correct. The 'R-I moves' column (+2, +4, +2, +2) equals Delta w under w = 2n+1 in every row. E_ion = 13.6 eV matches the physical 13.606 eV."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1423,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:04.378Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "RESEARCH ARTICLE"
+doc_title: "Bring's curve: old and new"
 section_id: sec-018-53-even-characteristics
 section_title: "Even characteristics"
 section_number: 5.3
 pages: 40-43
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 In the previous subsection, we were able to fully characterise the odd theta character-
 istics on Bring’s curve without too much difﬁculty through the use of existing work

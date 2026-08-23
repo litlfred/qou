@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1002.0126v1
-doc_title: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+doc_title: "An introduction to the volume conjecture"
 section_id: sec-004-22-yangbaxter-operator
 section_title: "Yang–Baxter operator"
 section_number: 2.2
 pages: 5-10
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 dimensional vector space V .
 Deﬁnition 2.6. For an n-braid β, we deﬁne T(R,µ,a,b)(β)∈ C by the following

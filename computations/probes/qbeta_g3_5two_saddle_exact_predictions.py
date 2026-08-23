@@ -58,7 +58,8 @@ from qou_substrate.constants import q_at  # noqa: E402
 
 mp.mp.dps = 50
 
-VOL52 = mp.mpf("2.8281220883307827")     # printed (75) reference value scale
+# Vol(5_2) SnapPy census; the literal printed 17 digits, correct to 15 (qou-ckbv)
+VOL52 = mp.mpf("2.82812208833078316276389880928")
 PRINTED_XI1 = mp.mpc("0.78492", "1.30714")   # printed (73) root (5 digits)
 
 

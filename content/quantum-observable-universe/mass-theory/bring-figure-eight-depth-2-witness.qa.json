@@ -1735,6 +1735,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.152Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1754,6 +1770,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.189Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1774,6 +1806,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 331 words (1.81/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.223Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Four spaced dashes, all appositive."
       }
     ],
     "trap-triples": [
@@ -1793,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 331 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.258Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1812,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.298Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1831,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.338Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1850,6 +1946,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.374Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1869,6 +1981,22 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.408Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 458-word conjecture; the 50-digit Clausen value, the 2/(3pi) zero-mode factor and the quoted braid word were all recomputed."
       }
     ],
     "trap-superlative": [
@@ -1888,6 +2016,23 @@
         "reviewed_at": "2026-08-15T10:31:00.547Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.444Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'*All* hyperbolic 3-manifold volumes ... are depth-2 periods' is an italicised universal with no qualification, and 'the unique archimedean shadow of pentagon-coherent substrate data on Bring's surface' asserts uniqueness for a claim the block labels as merely 'consistent with' the depth-2 reading.",
+        "notes": "proposed (structural): qualify to 'every hyperbolic 3-manifold volume arising from a Bloch-Wigner formula is a depth-2 period' and drop 'unique' or cite what forces it."
       }
     ],
     "trap-nonspeakable": [
@@ -1908,6 +2053,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "0613669fa05d",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.481Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism the canonical formalism, witness [...])' does not parse as English at all -- 'formalism the canonical formalism' is a stranded fragment.",
+        "notes": "proposed (structural, NOT applied -- the true tokens are lost): this is a compound token substitution -- 'exact algebraic structures.polylog' is almost certainly `mpmath.polylog`, and '(formalism the canonical formalism,' was a '(script <name>,' clause. The section heading '### canonical witness (50-digit precision)' and the block title '50-digit canonical witness' are very likely 'numerical' in both places. I did NOT patch these because the .ts title would then disagree with the .md heading and because the script name cannot be recovered (the file entered git already damaged, single commit 230cdd113). RIGOR (not a trap). VERIFIED EXACTLY: 2*Cl_2(pi/3) = 2.0298832128193072500424051085490405718833... matches all 50 quoted digits; 2g/(4pi(g-1)) at g=4 = 2/(3pi) as stated; Borromean = 8G correct. BRAID DEFECT: 'Its 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}' -- that word uses two generators, so it is a 3-STRAND braid; read in B_3 its closure has 1 component (the figure-eight knot, correct), but read in B_4 as the text says it has 2 components and is not a knot at all. Proposed: '3-strand braid word'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1931,5 +2093,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:37.481Z"
 }

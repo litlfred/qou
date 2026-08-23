@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: ""
+doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
 section_id: sec-005-1-fusion
 section_title: "Fusion"
 section_number: 1
 pages: 21-21
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "quant-ph Towards Topological Quantum Computation? - — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 Similar to regular quantum ﬁeld theory of the collision of two particles in three dimensions,
 the fusion of two particles can lead to multiple possible outcomes. The fusion rules are the

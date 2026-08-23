@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0911.4494v2
-doc_title: "The geometry of Markov traces Ben Webster Geordie Williamson"
+doc_title: "The geometry of Markov traces"
 section_id: sec-002-acknowledgments
 section_title: "Acknowledgments"
 section_number: null
 pages: 3-4
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
-doc_brief: "The geometry of Markov traces Ben Webster Geordie Williamson — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on"
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn."
 ---
 us and asking if there is a relation with the Hochschild homology of Soergel bimodules.
 We would also like to thank Roman Bezrukavnikov , Victor Ginzburg, Hailong Dao and

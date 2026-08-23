@@ -10,6 +10,15 @@ Formalises the manuscript **CMB functor** as the composition
 `CMB = colim(A₁/A₀ ⊕ A₂/A₀) ∘ ∂`: each aeon `𝒜` is sent, via the horizon
 functor `∂` to its boundary, then to the colimit of the degree-`≥1` jet
 quotients over that boundary, landing in `Mod_R`.
+
+**Naming note (functor vs. object-map).** As encoded here, `CMBFunctor` is
+an **object-level assignment** `CMB : Aeon → M` (a single fixed abelian
+group `M`), pinned to `jetColimit ∘ boundary` — *not* a
+`CategoryTheory.Functor`. There is no morphism-map and no functor law; the
+target `M` is one module, not the category `Mod_R`. "Functor" is retained
+as the manuscript label; the genuine functoriality (a colimit-of-jets
+functor `π₀(Bun°) ⥤ Mod_R`) is not constructed here. The two theorems below
+concern equal *values* (`CMB_def`), not naturality.
 -/
 
 namespace QOU

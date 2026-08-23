@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.433Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.472Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.512Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.552Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.590Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.631Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.669Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.706Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.746Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "562ffc9a2702",
+          "ts": "fe57c212c591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.783Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (8 nuclide rows); no prose. Recomputed every row against the parent's rule Z*p + N*n + Z*T(2,3) with N=A-Z: H(1,1), D(2,1), He-3(3,2), He-4(4,2), Li-7(7,3), C-12(12,6), O-16(16,8), Fe-56(56,26 -> 26p+30n+26T) — all 8 correct.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "562ffc9a2702",
     "ts": "fe57c212c591"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:58:39.783Z"
 }

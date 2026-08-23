@@ -1,1 +1,1 @@
-The extra denominator $n$ forces tighter convergence constraints. Over $\mathbb{F}_p$, the series truncates to $\mathrm{Li}_2^{q,(p)}(x) = \sum_{n=1}^{p-1} x^n / (n [n]_q)$. Over $\mathbb{Q}_p$ and $\mathbb{C}_p$, it converges securely within $v_p(x) > 1/(p-1)$.
+The extra denominator $n$ forces tighter convergence constraints. Over $\mathbb{F}_p$, the series truncates to $\mathrm{Li}_2^{q,(p)}(x) = \sum_{n=1}^{p-1} x^n / (n [n]_q)$. Over $\mathbb{Q}_p$ and $\mathbb{C}_p$, it converges within $v_p(x) > 1/(p-1)$.

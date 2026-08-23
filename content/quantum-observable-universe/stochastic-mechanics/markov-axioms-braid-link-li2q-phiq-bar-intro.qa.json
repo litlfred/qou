@@ -1451,6 +1451,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.567Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1470,6 +1485,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.608Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-em-dash": [
@@ -1489,6 +1519,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 15 words)"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.649Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-triples": [
@@ -1508,6 +1553,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 15 words)"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.692Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-closing-aphorism": [
@@ -1527,6 +1587,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.733Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-meta-commentary": [
@@ -1546,6 +1621,22 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.775Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "'Continuation of the preceding sub-section.'",
+        "notes": "Structural signposting in a preamble, which is the conventional job of the block, not narration of the author's own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1565,6 +1656,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.817Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-performed-warmth": [
@@ -1584,6 +1690,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.859Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "trap-superlative": [
@@ -1603,6 +1724,23 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.900Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "severity": "minor",
+        "evidence": "'This property is required for consistency across the theoretical framework.'",
+        "notes": "Two defects in one sentence, both visible on the page. (a) A framework-wide necessity claim ('required for consistency across the theoretical framework') asserted in a section preamble with no supporting reference. (b) DANGLING DEICTIC: 'This property' has no antecedent - the only preceding text in the block is the boilerplate 'Continuation of the preceding sub-section.', so the sentence refers to nothing. NOT fixed inline because the intended referent cannot be recovered from the block; inventing one would be worse than reporting it. Compare the sibling preamble markov-axioms-braid-link-markov-closure-map-intro.md, which uses the same 'Continuation of the preceding sub-section.' opener and then says what the sub-section actually contains - that is the shape this block should take. Also file hygiene: the second line begins with a stray leading space and the file has no trailing newline."
       }
     ],
     "trap-nonspeakable": [
@@ -1622,6 +1760,21 @@
         "reviewed_at": "2026-08-15T10:30:59.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "edf27e20cb60",
+          "ts": "7924c5823f20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.940Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read - the block is 15 words: 'Continuation of the preceding sub-section.' plus one sentence. Zero em-dashes, no triple, no warmth, no pivot."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1644,5 +1797,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:38:26.940Z"
 }

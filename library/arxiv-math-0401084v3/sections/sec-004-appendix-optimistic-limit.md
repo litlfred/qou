@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0401084v3
-doc_title: "THE COLORED JONES POL YNOMIALS OF THE"
+doc_title: "Some limits of the colored Jones polynomials of the figure-eight knot"
 section_id: sec-004-appendix-optimistic-limit
 section_title: "Appendix. Optimistic limit"
 section_number: null
 pages: 15-16
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
 In this appendix, we will consider integral surgeries along the ﬁgure -eight knot.
 Let Ep, 1 be the p-surgery along the ﬁgure-eight knot with p ∈ Z. Then our

@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p01
-doc_title: "p-adic Asai L-functions of Bianchi modular forms David Loeﬄerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the"
+doc_title: "p-adic Asai L-functions of Bianchi modular forms"
 section_id: sec-001-2-preliminaries-and-notation
 section_title: "Preliminaries and notation"
 section_number: 2
 pages: 4-14
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
-doc_brief: "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction"
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms — 13 sections: Introduction; Preliminaries and notation; Siegel units and weight 2 Asai–Eis"
 ---
 2A. Basic notation. We ﬁx notation for a general number ﬁeld K, which will either be Q or an imaginary
 quadratic ﬁeld. (We’ll generally denote this imaginary quadratic ﬁeld by F to distinguish it from the

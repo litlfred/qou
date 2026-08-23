@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2509.02354v2
-doc_title: "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS"
+doc_title: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
-doc_brief: "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
+doc_brief: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
 ---
 2. Quantum sl2 and Weyl algebras 3
 2.1. The braiding for quantum sl2 3

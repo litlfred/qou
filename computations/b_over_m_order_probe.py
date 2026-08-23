@@ -31,28 +31,50 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _pb  # noqa: F401, E402 — substrate module bridge
-import json  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — experimental/proton pin, 50 dps
 from q1_mass_gap_probe import plancherel_weight  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
+    M_DEUTERON_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
-# Empirical binding energies / masses (MeV) — AME2020-class values,
-# exploratory comparison targets only (not substrate inputs):
+# Empirical binding energies / masses (MeV), exploratory comparison targets
+# only (not substrate inputs). Both columns are now READ from the registry.
+#
+# The masses were hand-typed and each was wrong: d -17.0 eV (-9.1 ppb),
+# He3 -4.1 eV (-1.5 ppb), He4 -33.8 eV (-9.1 ppb) against the validation
+# witness. Same defect class as bean qou-r8zo, where a sibling dashboard
+# carried four hand-typed nuclear masses and two were ~250 sigma out --
+# and the B column here was already read from the registry while the m
+# column beside it was not.
+#
+# They are also no longer round-tripped through float64. The old shape was
+#     "B": float(AME_B_..._VALIDATION)      then    mp.mpf(repr(v["B"]))
+# which takes an exact mpf, truncates it to a float, and rebuilds an mpf
+# from the float's digits -- so the registry's precision was discarded at
+# the door and the `mp.mpf` on the way back in bought nothing. A probe is
+# a computations/ script and is covered by the NO-FLOAT64 family.
 EMPIRICAL = {
-    "d":    {"B": float(AME_B_DEUTERON_MEV_VALIDATION),  "m": 1875.612928},
-    "He3":  {"B": float(AME_B_HE3_MEV_VALIDATION),  "m": 2808.391607},
-    "He4":  {"B": float(AME_B_HE4_MEV_VALIDATION), "m": 3727.379378},
+    "d":   {"B": AME_B_DEUTERON_MEV_VALIDATION, "m": M_DEUTERON_MEV_VALIDATION},
+    "He3": {"B": AME_B_HE3_MEV_VALIDATION,      "m": M_HE3_MEV_VALIDATION},
+    "He4": {"B": AME_B_HE4_MEV_VALIDATION,      "m": M_HE4_MEV_VALIDATION},
 }
 
 
 def main() -> int:
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open(encoding="utf-8") as fh:
-        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+    # Experimental/proton pin per the 2026-08-07 owner directive, matching this
+    # probe's own docstring ("Computed at the proton-pinned q₀") and its
+    # `physical_proton` entry in q0_anchor_manifest.json.  Was a direct read of
+    # q-pinning-50-digit.witness.json, which is MUON-anchored -- so the probe
+    # silently computed at the ideal pin while declaring the experimental one.
+    # Q_MP is the proton pin at the same 50 dps, so this is not a downgrade.
+    q0 = Q_MP
     h = q0 - 1
 
     split_q0 = plancherel_weight((3, 3), q0) - plancherel_weight((5, 1), q0)
@@ -70,7 +92,7 @@ def main() -> int:
     rows = {}
     print(f"\n  {'nucleus':>8} {'B/m':>12} {'(B/m)/h':>10} {'(B/m)/h²':>10}")
     for name, v in EMPIRICAL.items():
-        bm = mp.mpf(repr(v["B"])) / mp.mpf(repr(v["m"]))
+        bm = v["B"] / v["m"]
         rows[name] = {
             "B_over_m": str(bm),
             "ratio_to_h": str(bm / h),
@@ -106,11 +128,17 @@ def main() -> int:
             "exploratory": True,
             "data": {
                 "q0_50dps": str(q0),
+                "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
                 "h": str(h),
                 "h_squared": str(h ** 2),
                 "five_over_18_h2": str(five18_h2),
                 "n6_family_splitting_at_q0": str(split_q0),
-                "empirical_inputs_MeV": EMPIRICAL,
+                # Serialised as strings: a bare mpf is not JSON, and a bare
+                # float64 would trip the raw-float64 ratchet.
+                "empirical_inputs_MeV": {
+                    k: {kk: str(vv) for kk, vv in v.items()}
+                    for k, v in EMPIRICAL.items()
+                },
                 "ratios": rows,
                 "verdict": verdict,
             },

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1604.01247v2
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics"
 section_id: sec-005-34-exceptional-almost-classical-quantum-spacetim
 section_title: "Exceptional almost classical quantum spacetime"
 section_number: 3.4
 pages: 16-18
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
+doc_brief: "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3"
 ---
 As in §2.4 these algebras J 8
 3 over each spacetime point are the ﬁber of a bundle

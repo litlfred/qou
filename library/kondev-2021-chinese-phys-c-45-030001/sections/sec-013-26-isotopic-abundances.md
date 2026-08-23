@@ -1,13 +1,13 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-013-26-isotopic-abundances
 section_title: "Isotopic abundances"
 section_number: 2.6
 pages: 13-13
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
-doc_brief: "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001 — 31 sections: Physics Division"
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 31 sections: Physics Division, Argonne National; Institute of Modern Physics, Chine; Advanced Energy Science and Techno"
 ---
 Isotopic abundances are given in the decay ﬁeld of Table I
 with the symbol IS and the values were taken from the most-

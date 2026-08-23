@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v12-n2-p04-s
-doc_title: "The twisted Alexander polynomial for ﬁnite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of ﬁnite"
+doc_title: "The twisted Alexander polynomial for finite abelian covers over three manifolds"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: agt-v12-n2-p04-s.pdf
 source_sha256: bcbb460bc75f5612
-doc_brief: "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of finite abelian covers ov"
+doc_brief: "The twisted Alexander polynomial for finite abelian covers over three manifolds — 5 sections: Introduction; The Reidemeister torsion; Preliminaries"
 ---
 The classical Alexander polynomial is deﬁned for null–homologous knots in rational
 homology spheres, where null–homologous means that the homology class of a knot is

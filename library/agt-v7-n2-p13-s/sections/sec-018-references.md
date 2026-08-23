@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v7-n2-p13-s
-doc_title: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI"
+doc_title: "Quantum hyperbolic geometry"
 section_id: sec-018-references
 section_title: "References"
 section_number: null
 pages: 71-73
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 ---
 [1] W Abikoff, The real analytic theory of Teichm¨uller space, Lecture Notes in Mathemat-
 ics 820, Springer, Berlin (1980) MR590044

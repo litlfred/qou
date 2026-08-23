@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-072-523-permettons-a-nouveau-a-n-dˆ-etre-un-quelconq
 section_title: "Permettons ` a nouveau ` a N d’ˆ etre un quelconque entier ≥ 1. Puisque dch( σ) est"
 section_number: 5.23
 pages: 66-67
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 un ´ el´ ement groupal deC ≪ e0, (eα)α∈µN ≫, le produit de deux coeﬃcients de dch( σ)
 est combinaison lin´ eaire ` a coeﬃcients rationnels de coeﬃ cients, de sorte que conna ˆ ıtre les

@@ -1377,6 +1377,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:27.674Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No assert-by-denial in the block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1396,6 +1411,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:27.777Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Linear proof: Gram entries, classical limit, projection, substitute."
       }
     ],
     "trap-em-dash": [
@@ -1415,6 +1445,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:27.891Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1434,6 +1479,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:27.961Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1453,6 +1513,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.126Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Ends on 'Substituting and taking the ratio yields the displayed formula' plus a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1472,6 +1547,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.169Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1491,6 +1581,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.225Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No restatement; the QED line is exempt."
       }
     ],
     "trap-performed-warmth": [
@@ -1510,6 +1615,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.277Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1529,6 +1649,21 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.313Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1548,6 +1683,22 @@
         "reviewed_at": "2026-08-15T10:31:00.831Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:28.348Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "One short paragraph plus a display.",
+        "notes": "THREE RIGOR FLAGS. (1) The per-block ratio does check out: with G^q diagonal entries dim_q(V) dim(V)/[n]_q! and the classical limit dim(V)^2/n!, the ratio per block is (dim/dim_q)([n]_q!/n!), exactly the bracket in the parent's boxed formula. So the arithmetic of the formula is internally consistent. (2) INCONSISTENT WEDDERBURN WEIGHT within this chapter: this proof uses dim_q(V) dim(V)/[n]_q!, while the proof of prop:full-pole-structure-mass-trace uses w_lambda(q) = dim_q(lambda)^2/[n]_q!. The two agree at q = 1 and differ everywhere else; at most one is the Markov-trace Gram weight. (3) THE PROJECTION STEP IS ASSERTED: 'the relevant determinant projects onto the rank-2 sublattice spanned by beta_s, beta_w, factoring over the Wedderburn blocks weighted by character coefficients' is the only step that produces the exponent c^(s) c^(w), and it is stated without argument. A rank-2 determinant becoming a product over all partitions with those exponents is exactly the step a reader cannot reconstruct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1570,5 +1721,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:24:28.348Z"
 }

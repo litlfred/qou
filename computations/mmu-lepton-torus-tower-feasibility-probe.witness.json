@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:48.200971+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:56:43.156389+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "q0_does_not_cancel_in_lepton_ratio",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "m_μ/m_e ratio residual equals the mass residual because m_e is the q_0-independent CAL-1 anchor; the q_0 lever survives."
     }
   ],
-  "allPassed": false,
-  "durationMs": 16,
+  "allPassed": true,
+  "durationMs": 12,
   "computation": "mmu-lepton-torus-tower-feasibility-probe",
   "scriptFile": "mmu_lepton_torus_tower_feasibility_probe.py",
-  "scriptHash": "5e9ffac860f4",
-  "scriptCommitSha": "653d66e543fe6ba62d93eb249fcd7c0794fee2c7",
+  "scriptHash": "c0b53dcdc894",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,12 +28,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY feasibility probe (PR #1753): bare-categorical m_μ residual, q_0 non-cancellation in m_μ/m_e, sensitivity lever, and one torus-tower candidate level. NO CODATA fit; audit-only.",
   "parameters": {
-    "q_canonical_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_canonical_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_CODATA_MeV": "0.51099895069",
     "m_mu_CODATA_MeV": "105.6583755",
     "m_mu_over_m_e_CODATA": "206.7682830",
@@ -41,19 +43,19 @@
     "label": "EXPLORATORY (audit-only; no production wiring)"
   },
   "data": {
-    "m_mu_pred_MeV": "105.6583756435129638724802",
-    "residual_ppb": "1.35827342786",
-    "ratio_pred": "206.7682829893150438173168",
-    "ratio_residual_ppb": "-0.0516759922153",
-    "q0_does_not_cancel_in_mmu_over_me": false,
-    "sensitivity_dlnmmu_dq": "-16.3835202477",
-    "amplification_dlnmmu_dlnq": "18.185357",
+    "m_mu_pred_MeV": "105.6583978113418139261707",
+    "residual_ppb": "211.16491436",
+    "ratio_pred": "206.7683263706738902896096",
+    "ratio_residual_ppb": "209.754964645",
+    "q0_does_not_cancel_in_mmu_over_me": true,
+    "sensitivity_dlnmmu_dq": "-16.3835223444",
+    "amplification_dlnmmu_dlnq": "18.185359",
     "dq0_ppb_from_repin": "-11.6118085259",
     "vol_4_1": "2.029883212819307250042405",
     "torus_knots_have_zero_volume": true,
     "structural_note": "Muon canonical knot 4_1 is hyperbolic, NOT a torus knot. T(2,k) torus knots (3_1,5_1,7_1) have Vol=0, so a literal torus tower cannot reuse the Vol(4_1)/ℏ_q² lever. Reducing the 209.8 ppb requires a NON-Vol invariant or accepting the q_0-driven floor (211 ppb tracks the q_0 re-pin shift, H1).",
     "feasibility_verdict": "The 209.8 ppb bare-categorical residual is H1-confirmed as the q_0 re-pin shift (-11.6 ppb) amplified ~18x by the Vol(4_1)/ℏ_q² lever. m_e (CAL-1) is q_0-independent, so q_0 does NOT cancel in m_μ/m_e. The single-term S=0 formula has no shell to add a PROVED categorical correction to without a new invariant. Reducing below ~211 ppb is therefore q_0-limited (Subgoal-2, owner-declined) UNLESS a new lepton-tower categorical term (non-Vol) is derived that shifts the prediction toward CODATA WITHOUT being a fit."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -195,9 +195,11 @@ theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
   · -- (A)/(A+1)² < (A-1)/A²
     -- Equivalently: A³ < (A-1)(A+1)² = (A²-1)(A+1) = A³ + A² - A - 1
     -- So need: 0 < A² - A - 1, which holds for A ≥ 2.
-    rw [div_lt_div_iff (by positivity : (0:ℝ) < ((A:ℝ)+1)^2) (by positivity : (0:ℝ) < (A:ℝ)^2)]
+    have hA2 : (2:ℝ) ≤ (A:ℝ) := by exact_mod_cast hA
     push_cast
-    nlinarith [show (2:ℤ) ≤ (A:ℤ) from Int.ofNat_le.mpr hA]
+    rw [div_lt_div_iff₀ (by nlinarith : (0:ℝ) < ((A:ℝ)+1)^2)
+                        (by nlinarith : (0:ℝ) < (A:ℝ)^2)]
+    nlinarith
   · positivity
 
 /-- Q_q-value for tritium: total log-ratio = -0.1021.

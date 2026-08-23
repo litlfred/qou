@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-044-1-rh1q2-q3r1q3-q2r1-withr-qh
 section_title: "Rh,1−Q2 =Q3R,1−Q3 =Q2R−1 withR =(Qh"
 section_number: 1
 pages: 46-48
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 1Q2/Q3)α.
 The last two give (1−Q2)(1−Q3)= Q2Q3 or Q2 +Q3 = 1, which implies

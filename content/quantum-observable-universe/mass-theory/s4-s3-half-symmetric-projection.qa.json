@@ -2140,6 +2140,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:42.725Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2159,6 +2174,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:42.810Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Two declarative sentences plus a scope caveat; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2178,6 +2208,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:42.905Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2197,6 +2242,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:42.985Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -2216,6 +2276,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.074Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Closes on 'determining the exact per-cell curvature value remains an open refinement', an honest scope statement."
       }
     ],
     "trap-meta-commentary": [
@@ -2235,6 +2310,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.148Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2254,6 +2344,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.252Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The second paragraph interprets rather than echoes the statement."
       }
     ],
     "trap-performed-warmth": [
@@ -2273,6 +2378,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.321Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2292,6 +2412,23 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.405Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "major",
+        "evidence": "'It PROVES that the half-symmetric projection extracts the curvature contribution of PRECISELY ONE of the eight ideal octahedra' — an unqualified proof claim on a statement that the block's own witness reports failing, plus 'This combinatorial BIJECTION' naming a bijection that is never exhibited (the argument is a dimension count).",
+        "notes": "PROPOSED: 'It indicates', drop 'bijection' for 'dimension count', and fix the cell count (see below). THREE NON-TRAP FINDINGS, all structural. (1) THE CITED WITNESS REFUTES THE BLOCK. .ts sets computation.status = verified against computations/lambda-scale-rd-h4-half-symmetric.witness.json, which records pi_HS_at_q1 = 0 (the projection is ZERO at q=1, not one), h_coefficients h0 = h2 = h4 = h6 = 0, conjecture_validation.h0_equals_5_over_2 = FALSE, h2_equals_minus_G_within_1pct = FALSE, and pi_HS_at_q0_numeric = 0.2584333074 against lambda_p_target_numeric = 2.4599522717, a factor 9.5 apart. Its allPassed = true is vacuous: the assertions array is empty. I re-derived pi_HS_at_q1 from the witness own symbolic characters at q=1 as (1 + 1 + 0 - 1 - 1)/4 = 0, confirming it. The h0 = 5/2 the witness reports FALSE is exactly the 5/2 the sibling proof block uses to reach its answer. (2) PURGED CONCEPT: the producer is computations/lambda_scale_rd_h4_half_symmetric.py and tests the ansatz lambda_scale = 5/2 - h^2 G - h^4 c_4; lambda_scale was purged on 2026-05-23 (absorbed, commit ffdd84409) and AGENTS.md forbids reintroducing it. (3) SS3b PROPAGATION VIOLATION: kind is proposition, uses[] contains conj:borromean-baryon-mass-formula, and there is no conditional banner in the .md. (4) The eight-octahedra count is wrong; see the verdict recorded on the proof sibling."
       }
     ],
     "trap-nonspeakable": [
@@ -2311,6 +2448,21 @@
         "reviewed_at": "2026-08-15T10:31:00.767Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6797d5f2d5da",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:33:43.501Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'This combinatorial bijection structurally constrains the volume-density evaluation at higher orders' is a noun-chain with a vague verb but parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2334,5 +2486,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:33:43.501Z"
 }

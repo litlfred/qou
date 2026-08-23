@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.762Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.801Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.839Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.878Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.916Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.954Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.993Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.031Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.068Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:01.027Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6eb259713d8d",
+          "ts": "f64a3e311b6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.106Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~1.76kB). Independent instance of the same product-to-sum step: it splits the multiplicative integral as a PRODUCT over disjoint discs, then asserts 'the norm of the product equals the sum of the norms' on the strength of the discs being disjoint and the group elements commuting modulo the central band. Commuting does not turn a product of norms into a sum. Reported under anomaly 1."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1701,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:47.106Z"
 }

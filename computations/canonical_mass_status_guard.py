@@ -71,7 +71,7 @@ ALLOWLIST_SUBSTR = (
 # Deprecated absolute-mass magnitude tokens (the Vol(B3)*lambda_A / naive tr_M wrong forms).
 DEPRECATED_MAGNITUDE = re.compile(
     r"(2\.89\s*%|2\.96\s*%|\+?\s*2\.9\d\s*%|-?\s*57\s*%|−57\s*%|"
-    r"\b966\b|\b406\b|vol_density_borromean|Vol\(\U0001d4d1₃\)|lambda_scale|λ_scale)"
+    r"\b966\b|\b406\b|per_knot_density_borromean|Vol\(\U0001d4d1₃\)|lambda_scale|λ_scale)"
 )
 # Context that makes it a *status* claim about absolute nucleon mass.
 # `m_p-pin` / `m_p pin` is EXCLUDED: there it names the q₀ anchor (the

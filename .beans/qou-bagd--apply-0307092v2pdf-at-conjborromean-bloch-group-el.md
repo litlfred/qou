@@ -3,8 +3,9 @@
 title: Apply 0307092v2.pdf at conj:borromean-bloch-group-element
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:45Z
-updated_at: 2026-08-08T23:36:45Z
+updated_at: 2026-08-21T17:04:49Z
 ---
 
 Hypotheses checked: the theorem requires a complete, finite-volume hyperbolic 3-manifold; the Borromean rings complement satisfies all three. The existence and regulator clause of the conjecture is therefore a corollary, and the block should be re-scoped so that only the h^4 = -3/4 shadow claim remains conjectural. Scope note: this discharges clause 1 only and asserts nothing about clause 2.
@@ -17,3 +18,10 @@ Source: `library/0307092v2/0307092v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/0307092v2/  ->  [neumann2004]
+  Extended Bloch group and the Cheeger-Chern-Simons class
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [neumann2004] as the citation key when you do it.

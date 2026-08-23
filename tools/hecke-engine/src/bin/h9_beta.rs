@@ -373,7 +373,9 @@ fn print_nf_sorted(label: &str, terms: &FxHashMap<Word, f64>) {
 // ════════════════════════════════════════════════════════════════
 
 fn main() {
-    let q: f64 = 1.10998;
+    // Substrate anchor from the crate constant (PROTON pin); the previous
+    // truncated 5-digit muon `1.10998` was 1277 ppb off.
+    let q: f64 = hecke_engine::gram::Q_0;
     let engine = HeckeEngine::new(q);
 
     let q_neutron_mev = 0.78233341_f64;  // Q(n→p e⁻ ν̄) CODATA 2022
@@ -384,7 +386,10 @@ fn main() {
     println!();
     println!("  q₀ = {:.10}", q);
     println!("  HA = q − q⁻¹ = {:.10}", engine.ha);
-    println!("  z  = 1/(q^½ + q^−½) = {:.10}", engine.z);
+    // Label was convention C's formula `1/(q^½ + q^−½)` while `engine.z`
+    // has computed convention D since the 2026-08-09 excision — a reader
+    // trusting the label would be off by 23%.
+    println!("  z  = q³/(q² + 1) = {:.10}", engine.z);
     println!("  9 strands = 3 nucleons × 3 quarks");
     println!();
 

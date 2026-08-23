@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:03.375342+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:33.679282+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "S3_order",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "escape1-geometric-holonomy-section",
   "scriptFile": "escape1_geometric_holonomy_section.py",
   "scriptHash": "a0432a919af0",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -110,13 +110,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Escape 1 (geometric/icosahedral-holonomy section) of the Young-lattice synthesis keystone: does the icosahedral A5 / Bring cross-ratio GEOMETRY FORCE a canonical section (1-dim line) of the mult-2 Hom-space V = Hom_{S3}((2,1), Res^{A5}_{S3}(H)) ~= C^2, or does selecting a line still require a free parameter (fit)? Tests, RAW: (1) realize the dim-5 ell=2 irrep H of A5 explicitly (pair-perm rep, H-isotypic projector), restrict to the color-sheet S3<A5, project onto the (2,1)-isotypic, pin dim V=2; (2) compute the centralizer C_{A5}(S3) and normalizer N_{A5}(S3) -- the ONLY sources of a FORCED (basis-independent) operator on V; (3) THE TEST: simple spectrum / unique invariant line vs free selection; (4) icosahedral special cross-ratios (golden-ratio rigidity) -- forced selector or free modulus; (5) h^4=-3/4 falsification reference only. NO fit, NO tuning. Environment: exact permutation-group combinatorics (Python stdlib), numpy for the explicit C^2 rep matrices, mpmath @ compute_dps for RAW substrate/cross-ratio values; engine=python+mpmath.",
   "auditOnly": "docs/audits/2026-06-02-escape1-geometric-holonomy-section.md",
   "parameters": {
-    "q0_falsification_ref": "1.10997859555733471989976322048322502665620840878015405145269053872699",
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "q0_source": "q_parameter.Q_MP (proton-pinned)",
     "dps": 70,
     "h4_borromean_falsification_ref": "-3/4",
@@ -195,6 +197,6 @@
   "caveats": [
     "All A5/S3 group-theoretic facts (centralizer trivial, normalizer = S3, Res^{A5}_{S3}(H) = triv (+) 2.(2,1), dim V = 2) are EXACT permutation-group results, q-INDEPENDENT. The icosahedral cross-ratios are RAW golden-ratio special values @ compute_dps. h^4 = -3/4 is the Borromean (2,1)-block invariant used ONLY as a falsification reference; no operator, line, cross-ratio, or normalization is chosen to reproduce it. The Bring color-tube cross-ratio path (closed_form_tau_M, touched by sibling branch claude/vol-density-bz3-refinement) is referenced for context only; this probe changes no production value and emits no LP/SDP solve (no dual required)."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

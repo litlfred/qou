@@ -1436,6 +1436,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.701Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no assertion-by-denial; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1455,6 +1471,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.740Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no setup-then-reframe construction; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1474,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 19 words)"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.779Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). em-dash count 0 in the block; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1493,6 +1541,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 19 words)"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.827Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no reflex three-item list; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1512,6 +1576,23 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.869Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "same byte-identical filler closer as qou-exists-axiom-1: 'This property is required for consistency across the theoretical framework.'",
+        "notes": "FIXED. before: 'The realization over $\\mathrm{SU}(2)$ natively implements the QOU conditions.\\n This property is required...' after: 'The realization over $\\mathrm{SU}(2)$ satisfies the QOU conditions.' (filler deleted; 'natively implements' -> 'satisfies', a copula restoration)."
       }
     ],
     "trap-meta-commentary": [
@@ -1531,6 +1612,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.914Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no narration of the author's own emphasis; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1550,6 +1647,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.956Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no block-final restatement of what the text established; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1569,6 +1682,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.999Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no personal or institutional-warmth register; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1588,6 +1717,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.040Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). no unqualified maximum-strength claim; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1607,6 +1752,22 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "229fcb29b6b8",
+          "ts": "9f742e223ced"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.079Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (example, one sentence (after fix)). reads aloud without stalling; example, one sentence (after fix).",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1630,5 +1791,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:35.079Z"
 }

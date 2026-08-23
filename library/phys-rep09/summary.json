@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "phys-rep09",
  "source_sha256": "cd345d3df9358efc",
- "brief": "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeVale",
- "extended": "**PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain**\n\n88 pp, 8 sections.\n\n**Outline.** Introduction; Introduction; Stochastic differential equations; Electromagnetism; Optics; Conclusions; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: LetA(t)beaknownfunctionof t(ingeneral,inanassociativering),andletY (t)beanunknown\n- Theorem 4: ThesolutionofthedifferentialequationY ′=A(t)YwithinitialconditionY (0)=Y0canbewrittenasY (t)=\n- Theorem 5: TheequationA (t)=dexpΩ(Ω′)canbesolvedby Ω′=dexp−1\n- Theorem 6: Thefunction ϕ(ε)=logY(t;ε)isananalyticfunctionof εinthesetB π,with\n- Theorem 9: LetusconsiderthedifferentialequationY ′=A(t)YdefinedinaHilbertspace HwithY (0)=I,andletA (t)bea\n- Theorem 9: providessufficientconditionsfortheconvergenceoftheMagnusseriesbasedonanestimatebythenorm",
+ "brief": "The Magnus expansion and some of its applications — 8 sections: Introduction; Introduction; Stochastic differential equations",
+ "extended": "**The Magnus expansion and some of its applications**\n\n88 pp, 8 sections.\n\n**Outline.** Introduction; Introduction; Stochastic differential equations; Electromagnetism; Optics; Conclusions; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: LetA(t)beaknownfunctionof t(ingeneral,inanassociativering),andletY (t)beanunknown\n- Theorem 4: ThesolutionofthedifferentialequationY ′=A(t)YwithinitialconditionY (0)=Y0canbewrittenasY (t)=\n- Theorem 5: TheequationA (t)=dexpΩ(Ω′)canbesolvedby Ω′=dexp−1\n- Theorem 6: Thefunction ϕ(ε)=logY(t;ε)isananalyticfunctionof εinthesetB π,with\n- Theorem 9: LetusconsiderthedifferentialequationY ′=A(t)YdefinedinaHilbertspace HwithY (0)=I,andletA (t)bea\n- Theorem 9: providessufficientconditionsfortheconvergenceoftheMagnusseriesbasedonanestimatebythenorm",
  "tokens": {
-  "brief": 50,
-  "extended": 249
+  "brief": 31,
+  "extended": 205
  },
  "sections": [
   {

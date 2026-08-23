@@ -1853,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.149Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1872,6 +1887,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.182Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1891,6 +1921,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.215Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1910,6 +1955,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.248Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'It does not depend on the specific braid representative, the decomposition of $\\mathfrak{H}$ into constituents, or the path of braiding operations' is a substantive three-fold independence claim, one clause per genuine degree of freedom, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1929,6 +1989,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.282Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1948,6 +2023,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.315Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1967,6 +2057,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.349Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1986,6 +2091,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.384Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -2005,6 +2125,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.419Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2024,6 +2159,21 @@
         "reviewed_at": "2026-08-15T10:31:00.814Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0677da2307eb",
+          "ts": "e79d19110e09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.454Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the definition (categorical transfer matrix as an equivalence class), two displays plus the well-definedness paragraph. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2047,5 +2197,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:44.454Z"
 }

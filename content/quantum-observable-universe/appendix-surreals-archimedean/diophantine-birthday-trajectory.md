@@ -12,18 +12,18 @@ Two numbers with equal birthday are indistinguishable to every predicate of the 
 
 The conjecture's own wording already said where to look. *Trajectory* is load-bearing: Liouville and Roth are about how fast rationals approximate $\alpha$, which in surreal terms is the shape of the **sign expansion** — the path — not the ordinal at which it terminates.
 
-## The obstruction does not transfer, and it nearly did
+## The obstruction does not transfer
 
 Moving to trajectories invites the same collapse a second time. Two reals whose sign expansions share a tail differ by a dyadic rational, so any criterion that is a function of the *trajectory* must be invariant under adding a rational. That is exactly the kind of blanket invariance which flattened the birthday version.
 
-It survives, for a reason that is a theorem rather than a hope:
+It survives, and for a reason that is a theorem:
 
 | criterion | invariant under the ambiguity | constant on the irrationals |
 |---|---|---|
 | $\mathrm{birthday} \circ \iota$ | — | **yes** — separates nothing |
 | $\mathrm{LiouvilleWith}\ p$ | yes | **no** — separates |
 
-Approximability to order $p$ is invariant under a rational shift *and* takes both truth values. So the redirection is not a change of wording; it moves to a criterion that survives the invariance its own encoding forces.
+Approximability to order $p$ is invariant under a rational shift *and* takes both truth values. So the redirection moves to a criterion that survives the invariance its own encoding forces.
 
 ## ⚠ Two things the conjecture's framing gets wrong
 
@@ -39,7 +39,7 @@ $$
   \bigl\lvert \alpha - v_{n+k} \bigr\rvert \;\le\; \frac{\mathrm{gap}_n}{2^{k}} .
 $$
 
-**That rate alone certifies nothing.** The error falls as $2^{-k}$ but the denominator grows as $2^{k}$ too, so it is approximation of exponent $1$ — and *every* real is approximable to order $1$ for free. The bracket rate is the denominator, not the discriminator.
+**That rate alone certifies nothing.** The error falls as $2^{-k}$ but the denominator grows as $2^{k}$ too, so it is approximation of exponent $1$ — and *every* real is approximable to order $1$ for free.
 
 The exponent lives in the **run structure**. A $+$ keeps the upper bound and raises the lower; a $-$ does the reverse. So a run of $k$ identical signs **freezes one endpoint** while the bracket keeps halving, leaving a rational fixed *before the run began* that approximates $\alpha$ to accuracy $2^{-k}$ better:
 
@@ -59,7 +59,7 @@ $$
   \mathrm{LiouvilleWith}\ t\ \alpha .
 $$
 
-So the trajectory picture's central assertion — that run structure in the sign expansion controls the Diophantine exponent — is a proved implication, not a slogan. Irrationality is not a technicality here: a rational $\alpha$ eventually *is* one of its own dyadic approximants, and the standard predicate excludes that case by definition.
+So the trajectory picture's central assertion — that run structure in the sign expansion controls the Diophantine exponent — is a proved implication. Irrationality is not a technicality here: a rational $\alpha$ eventually *is* one of its own dyadic approximants, and the standard predicate excludes that case by definition.
 
 ## ⚠ The remaining input is a theorem, not a conjecture
 
@@ -75,7 +75,7 @@ $$
 
 The second conjunct is unconditional; the first is exactly Roth.
 
-**So this should not be recorded as an open conjecture.** Roth proved it in 1955. What is missing is a *formalisation*, not a proof — and the distinction matters more than usual here, because this conjecture has already carried three separate epistemic mislabelings: an "honest open state" that encoded nothing, a separation impossible as stated, and a direction already proved elsewhere.
+**So this should not be recorded as an open conjecture.** Roth proved it in 1955. What is missing is a *formalisation*, not a proof — and the distinction matters here, because this conjecture has already carried three separate epistemic mislabelings: an "honest open state" that encoded nothing, a separation impossible as stated, and a direction already proved elsewhere.
 
 ⚠ A name collision makes the opposite error easy too. Searching a formal library for "Roth's theorem" *succeeds* — and returns the **additive-combinatorics** result on three-term arithmetic progressions, an unrelated theorem sharing the name. Thue–Siegel–Roth is absent, and a search by name says otherwise.
 

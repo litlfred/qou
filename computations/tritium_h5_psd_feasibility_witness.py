@@ -45,6 +45,12 @@ Ref: tools/hecke-engine/src/seminormal_mn.rs (H_5 Hoefsmit seminormal)
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import subprocess
 import sys
 from pathlib import Path

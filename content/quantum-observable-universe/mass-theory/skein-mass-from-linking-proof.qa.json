@@ -1202,6 +1202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.134Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1221,6 +1236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.175Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Formula, symbol glosses, specialisation; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1240,6 +1270,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.216Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1259,6 +1304,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.256Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1278,6 +1338,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.295Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Ends on the specialised formula and a QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1297,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.336Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1316,6 +1406,23 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.382Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "The block is a restatement of the lemma it claims to prove. lem:skein-mass-from-linking says 'Evaluating the mass functional m on the terminal Skein resolution of a hadron H gives [formula]'; this proof opens 'Evaluating the mass functional m on the Skein resolution of H gives: [the same formula, with underbraces added]' and re-glosses the same two symbol definitions verbatim.",
+        "notes": "PROPOSED (structural): supply the actual derivation — how the mass functional distributes over a terminal Skein resolution, and why the linking factor enters as the Skein polynomial Q(q) — or demote the block, since as written nothing is derived. The only content beyond the restatement is the Vol(K_i) = 0 specialisation, and THAT is itself duplicated verbatim in skein-generation-proof.md, so the same three lines appear in three of the five skein blocks in this batch. The QED box sits on an assertion."
       }
     ],
     "trap-performed-warmth": [
@@ -1335,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.422Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1354,6 +1476,21 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.463Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "No unqualified maxima; 'the entire inertial mass arises from the linking topology' is exact given Vol = 0."
       }
     ],
     "trap-nonspeakable": [
@@ -1373,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:00.523Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0ffa1183da6e",
+          "ts": "df34fc65d84e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:53:28.508Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "evidence": "Short and readable.",
+        "notes": "hbar_q = 1 - q^{-1} is CORRECT. Same dimensional note as on the lemma: Vol(K_i)/hbar_q^2 lacks the m_e scale and the per-block density rho(K) of the canonical mass form, and m(H) read as an absolute hadron mass is excised (2026-08-11)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1395,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:53:28.508Z"
 }

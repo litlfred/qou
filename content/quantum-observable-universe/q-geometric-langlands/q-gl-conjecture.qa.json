@@ -1823,6 +1823,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.376Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'what makes L_q a Langlands correspondence rather than an arbitrary equivalence of categories' is a substantive mathematical distinction - that contrast IS the content of property 1."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1842,6 +1858,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.414Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-em-dash": [
@@ -1861,6 +1893,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.452Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-triples": [
@@ -1880,6 +1928,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.490Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Five properties, each with its own display and gloss; not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1899,6 +1963,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.529Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-meta-commentary": [
@@ -1918,6 +1998,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.567Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1937,6 +2033,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.608Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-performed-warmth": [
@@ -1956,6 +2068,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.646Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-superlative": [
@@ -1975,6 +2103,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.683Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "trap-nonspeakable": [
@@ -1994,6 +2138,22 @@
         "reviewed_at": "2026-08-15T10:31:00.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "476c98df12de",
+          "ts": "d746cd8827fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:46.722Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 numbered properties with displays); all ten judged. [n]_q = 0 at primitive n-th roots of unity verified. Two content mismatches reported as ANOMALIES 18 and 19 (property 4 calls [n]_q 'the quantum dimension' where the section's own intro calls it 'the quantum integer'; property 3 says 'bijection' while its own display and the Lean field oper_injective give only injectivity)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2017,5 +2177,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:46.722Z"
 }

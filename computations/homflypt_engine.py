@@ -266,6 +266,43 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
 
     For 2-strand braids, all crossings use generator σ₁. The
     braid word is just a sequence of ±1s.
+
+    .. note::
+
+       **Fixed 2026-08-21 (bean qou-7ue5). The `k = +-2` and `k = +-3` entries
+       were wrong and are corrected here**; `k = 0, +-1` were always right.
+
+       The table had been carrying the HOMFLY *mirror*: the `k = +2` and
+       `k = +3` slots held the polynomials of the NEGATIVE Hopf link and the
+       LEFT trefoil, under the labels "Hopf link (positive)" and "Right-hand
+       trefoil". This module's own reference,
+       `homflypt_reference_qa._torus_homfly`, derives `closure(sigma_1^k)` from
+       the skein relation by hand and gives `P(sigma_1^3) = 2v^2 - v^4 +
+       v^2z^2`; the two had never been compared, because that QA's docstring
+       says the path under test is `_homflypt_nstrand_numerical`.
+
+       `k = -2` was wrong a second way. It had been derived from the (already
+       mirrored) `k = +2` by plain `v -> v^-1`, but the HOMFLY mirror is
+       `(v, z) -> (v^-1, -z)`. At `k = 2`, `z` appears to ODD powers, so
+       dropping the `z` sign flips the whole polynomial; the old entry was the
+       negative of a correct value. At `k = 3` the same omission is invisible
+       because `z` occurs only as `z^2` -- which is exactly why this survived.
+
+       Both facts are proved in `QOU/Knot/HomflySkeinReference.lean`
+       (sorry-free): `engine_k2_is_mirror`, `engine_k3_is_mirror`, and the pair
+       `plain_inversion_ne_mirror` / `plain_inversion_eq_mirror_at_three` that
+       records the k=3 coincidence next to the k=2 refutation so it is not
+       mistaken for a rule. Every entry below is independently ground-truthed
+       against `computations/homfly_skein_braid.homfly`, an exact-integer skein
+       engine, and `_self_test`'s expected values were corrected to match.
+
+       Blast radius of the old values was zero: `homflypt_2strand` and
+       `homflypt_from_braid` have no consumers anywhere in the corpus. A
+       `v`-spread is mirror-invariant in any case, so no MFW reading was
+       affected.
+
+       Also note this is a hardcoded lookup table over `k = sum(signs)`, not
+       the formula the docstring above states, and it raises for `|k| > 3`.
     """
     # Compute total exponent k = Σ signs
     k = sum(1 if g > 0 else -1 for g in braid_word)
@@ -287,24 +324,23 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
         return LaurentPoly2.one()
 
     if k == 2:
-        # Hopf link (positive): P = -v⁻¹z + (v⁻³ - v⁻¹)/z
-        # = v⁻³z⁻¹ - v⁻¹z⁻¹ - v⁻¹z
-        return LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
+        # Hopf link (positive): P = vz + (v - v³)/z = vz + vz⁻¹ - v³z⁻¹
+        return LaurentPoly2({(1, 1): 1, (1, -1): 1, (3, -1): -1})
 
     if k == -2:
-        # Hopf link (negative): mirror of positive
-        return LaurentPoly2({(3, -1): 1, (1, -1): -1, (1, 1): -1})
+        # Hopf link (negative) = the positive one at the mirror
+        # (v, z) -> (v⁻¹, -z):  v⁻³z⁻¹ - v⁻¹z⁻¹ - v⁻¹z
+        return LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
 
     if k == 3:
-        # Right-hand trefoil: P = -v⁻⁴ + v⁻²z² + 2v⁻²
-        # Wait, let me use the correct Lickorish convention.
-        # Under v⁻¹P(L+) − vP(L-) = zP(L0):
-        # P(3₁⁺; v, z) = −v⁻⁴ + v⁻²z² + 2v⁻²
-        return LaurentPoly2({(-4, 0): -1, (-2, 2): 1, (-2, 0): 2})
+        # Right-hand trefoil, Lickorish v⁻¹P(L+) - vP(L-) = zP(L0):
+        # P(3₁⁺; v, z) = 2v² - v⁴ + v²z²
+        return LaurentPoly2({(2, 0): 2, (4, 0): -1, (2, 2): 1})
 
     if k == -3:
-        # Left-hand trefoil: mirror (v → v⁻¹)
-        return LaurentPoly2({(4, 0): -1, (2, 2): 1, (2, 0): 2})
+        # Left-hand trefoil = the right one at the mirror (v, z) -> (v⁻¹, -z).
+        # Here z appears only as z², so this one coincides with plain v⁻¹.
+        return LaurentPoly2({(-4, 0): -1, (-2, 0): 2, (-2, 2): 1})
 
     # General T(2, k) via Skein recurrence on 2-strand braids.
     # Resolving one crossing of σ₁^k:
@@ -355,87 +391,32 @@ def homflypt_from_braid(braid_word: list[int], n_strands: int) -> LaurentPoly2:
     if n_strands == 2:
         return homflypt_2strand(braid_word)
 
-    # For n ≥ 3: use Hecke character decomposition via chi_lambda_braid.
+    # For n >= 3 this function has no symbolic implementation.
     #
-    # HOMFLYPT via Ocneanu trace (Jones 1987):
-    #   P(β̂; v, z) = δ^{n-1} · v^{-w(β)} · Σ_λ⊢n ω_λ(v,z) · χ_λ(β)
+    # It previously evaluated the Ocneanu trace NUMERICALLY at the substrate
+    # q_0 and returned `LaurentPoly2({(0, 0): <float>})` -- a degree-zero
+    # constant wearing the type of a polynomial, in a function whose docstring
+    # (and the module docstring) promise "LaurentPoly2 objects in (v, z)".
     #
-    # where:
-    #   δ = (v⁻¹ − v) / z  (HOMFLYPT unknot normalisation)
-    #   w(β) = writhe = Σ signs of crossings
-    #   ω_λ(v,z) = quantum Schur weight for partition λ
-    #   χ_λ(β) = Hecke character (via Hoefsmit seminormal representation)
+    # Reading a v-degree off that returns min = max = 0, i.e. spread 0, with no
+    # error raised. For a Morton-Franks-Williams bound that is worse than a
+    # crash: `braid index >= spread/2 + 1` becomes the vacuous `>= 1`, which is
+    # consistent with every hypothesis and so silently "confirms" whatever the
+    # caller believed. It also stored a `float` in a dict typed
+    # `dict[tuple[int, int], int]`.
     #
-    # The Schur weights ω_λ are the Ocneanu trace eigenvalues:
-    #   ω_λ = Π_{box (i,j)∈λ} (v · q^{c(i,j)} − v⁻¹ · q^{-c(i,j)}) / z
-    # where c(i,j) = j - i (content of box).
-    #
-    # For SU(N) specialisation v = q^{(N-1)/2}, this becomes the
-    # quantum dimension dim_q V_λ (up to normalisation).
-
-    import sys as _sys
-    _sys.path.insert(0, str(Path(__file__).parent))
-    from hecke_characters import chi_lambda_braid
-
-    # Convert braid word [±gen] → [(sign, gen_1based)] for chi_lambda_braid
-    word_for_chi = [
-        (+1, abs(g)) if g > 0 else (-1, abs(g))
-        for g in braid_word
-    ]
-
-    # Compute writhe
-    writhe = sum(1 if g > 0 else -1 for g in braid_word)
-
-    # Enumerate partitions of n_strands
-    from sympy.combinatorics.partitions import IntegerPartition
-    from sympy.utilities.iterables import partitions as _sympy_partitions
-
-    parts_of_n = []
-    for p_dict in _sympy_partitions(n_strands):
-        part = []
-        for k in sorted(p_dict.keys(), reverse=True):
-            part.extend([k] * p_dict[k])
-        parts_of_n.append(tuple(part))
-
-    # Compute χ_λ(β) for each partition at q = generic (f64 for now)
-    # and build the HOMFLYPT as a numerical value at specific (v, z)
-    # For the polynomial form, we'd need symbolic q — deferred.
-    # For now, return numerical HOMFLYPT at substrate q_0.
-
-    from q_parameter import Q as q0_val
-    import mpmath as mp
-    mp.mp.dps = 50
-
-    q = mp.mpf(q0_val)
-    qi = mp.mpf(1) / q
-
-    # Compute δ, v at q_0 (using SU(2) specialisation: v = q^{1/2})
-    v = mp.sqrt(q)
-    vi = mp.mpf(1) / v
-    z_val = v - vi  # z = v - v⁻¹ = q^{1/2} - q^{-1/2}
-    delta = (vi - v) / z_val  # δ = (v⁻¹ − v) / z = -1
-
-    result = mp.mpf(0)
-    for lam in parts_of_n:
-        # χ_λ(β) from Hecke characters
-        chi = chi_lambda_braid(list(lam), word_for_chi, q_value=float(q))
-
-        # ω_λ = Π_{boxes} (v · q^c − v⁻¹ · q^{-c}) / z
-        omega = mp.mpf(1)
-        for i, row_len in enumerate(lam):
-            for j in range(row_len):
-                c = j - i  # content
-                omega *= (v * q**c - vi * q**(-c)) / z_val
-
-        result += omega * mp.mpf(chi)
-
-    result *= delta**(n_strands - 1) * v**(-writhe)
-
-    # Return as a LaurentPoly2 with a single term at (0,0)
-    # (numerical evaluation, not the full polynomial form)
-    p = LaurentPoly2()
-    p.terms[(0, 0)] = float(result.real) if isinstance(result, complex) else float(result)
-    return p
+    # Nothing in the corpus ever called this branch (measured 2026-08-21: zero
+    # importers of `homflypt_from_braid` outside this module and its own
+    # self-test, which only exercises n <= 2). So it is removed rather than
+    # repaired, and callers are pointed at the exact engine.
+    raise NotImplementedError(
+        f"homflypt_from_braid has no symbolic path for n_strands={n_strands} "
+        f"(>= 3). Use computations/homfly_skein_braid.homfly(word, n), which "
+        f"returns an exact integer Laurent polynomial in (v, z) by skein "
+        f"recursion. For a NUMERICAL value at an SU(N) point instead, use "
+        f"homflypt_at_su_n(). This branch previously returned a numerical "
+        f"constant at terms[(0,0)], so any degree read gave spread 0 silently."
+    )
 
 
 # ── Convenience ──────────────────────────────────────────────────
@@ -874,8 +855,8 @@ def _self_test():
     # Hopf link (σ₁²)
     word, n = hopf_link_braid()
     p_hopf = homflypt_from_braid(word, n)
-    # Known: P(Hopf) = v⁻³z⁻¹ − v⁻¹z⁻¹ − v⁻¹z
-    expected_hopf = LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
+    # Known: P(Hopf⁺) = vz + (v − v³)/z   (corrected, bean qou-7ue5)
+    expected_hopf = LaurentPoly2({(1, 1): 1, (1, -1): 1, (3, -1): -1})
     ok = (p_hopf == expected_hopf)
     print(f"  Hopf link:      P = {p_hopf}  {'✓' if ok else '✗ MISMATCH'}")
     if not ok:
@@ -884,8 +865,8 @@ def _self_test():
     # Trefoil (σ₁³)
     word, n = trefoil_braid()
     p_tref = homflypt_from_braid(word, n)
-    # Known: P(3₁⁺) = −v⁻⁴ + v⁻²z² + 2v⁻²
-    expected_tref = LaurentPoly2({(-4, 0): -1, (-2, 2): 1, (-2, 0): 2})
+    # Known: P(3₁⁺) = 2v² − v⁴ + v²z²   (corrected, bean qou-7ue5)
+    expected_tref = LaurentPoly2({(2, 0): 2, (4, 0): -1, (2, 2): 1})
     ok = (p_tref == expected_tref)
     print(f"  trefoil (3₁⁺):  P = {p_tref}  {'✓' if ok else '✗ MISMATCH'}")
     if not ok:
@@ -893,7 +874,7 @@ def _self_test():
 
     # Left trefoil (σ₁⁻³) — mirror
     p_ltref = homflypt_from_braid([-1, -1, -1], 2)
-    expected_ltref = LaurentPoly2({(4, 0): -1, (2, 2): 1, (2, 0): 2})
+    expected_ltref = LaurentPoly2({(-4, 0): -1, (-2, 0): 2, (-2, 2): 1})
     ok = (p_ltref == expected_ltref)
     print(f"  trefoil (3₁⁻):  P = {p_ltref}  {'✓' if ok else '✗ MISMATCH'}")
 

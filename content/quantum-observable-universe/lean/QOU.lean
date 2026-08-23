@@ -166,9 +166,12 @@ import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
+import QOU.Knot.MortonFranksWilliams
+import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
+import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
@@ -200,6 +203,7 @@ import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevAsymptoticBounds
 import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
+import QOU.Knot.WhiteheadLowerRate
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
@@ -332,6 +336,10 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.SeminormalInequivalence
+import QOU.SchurWeyl.OffDiagNonvanishing
+import QOU.SchurWeyl.SeminormalRangeTop
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
 -- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
@@ -466,6 +474,11 @@ import QOU.BraidKnot.SpechtWedderburnCriterion
 -- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
 -- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
 import QOU.BraidKnot.SpechtWedderburnLe12
+import QOU.BraidKnot.SpechtWedderburnGeneral
+import QOU.BraidKnot.CentralC2Transport
+import QOU.BraidKnot.SpechtCentralC2Scalar
+import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
+import QOU.BraidKnot.WedderburnUnconditional
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -690,6 +703,9 @@ import QOU.QBeta.QBesselQuadraticActionTerm
 import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.ZBarParity
+import QOU.QBeta.LadderPhaseMirrorCovariance
+import QOU.QBeta.RadicalPairingIsSignRep
+import QOU.QBeta.LadderRungAmplification
 import QOU.QBeta.QBetaZeta4ResidueRefutation
 import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CuspShapeBarParity
@@ -913,6 +929,39 @@ import QOU.Mathlib.SchenstedReadbackFold
 import QOU.Mathlib.SchenstedRSKInjective
 -- RSK inverse, brick 8: RSK separates permutations.
 import QOU.Mathlib.SchenstedPermInjective
+-- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
+import QOU.Mathlib.SchenstedCascadeRightInverse
+-- RSK inverse, brick 11: what the reverse cascade preserves (and what needs a corner).
+import QOU.Mathlib.SchenstedUninsertInvariants
+-- RSK inverse, brick 12a: where reverse row insertion writes (the reverse of rowInsert_bump_eq_set).
+import QOU.Mathlib.SchenstedReverseRowIndex
+-- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
+import QOU.Mathlib.SchenstedCascadeColStrict
+-- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
+import QOU.Mathlib.SchenstedWordSurjectivity
+-- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
+import QOU.Mathlib.SchenstedCornersAlong
+-- RSK inverse, brick 16: a row holding a maximum entry is a corner (the Q-side keystone).
+import QOU.Mathlib.SchenstedMaxCorner
+-- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
+import QOU.Mathlib.SchenstedShapeRun
+-- RSK inverse, brick 20: addable-cell sequences peel back as corners.
+import QOU.Mathlib.SchenstedAddable
+-- RSK inverse, brick 23: the counting bridge from column-strictness.
+import QOU.Mathlib.SchenstedStandardCount
+import QOU.Mathlib.SchenstedReinsertRow
+import QOU.Mathlib.SchenstedRecordingTrunc
+import QOU.Mathlib.SchenstedRSKSurjective
+import QOU.Mathlib.SchenstedListOfSYT
+import QOU.Mathlib.SchenstedRecordingOfSYT
+import QOU.Mathlib.SchenstedSYTRoundTrip
+import QOU.Mathlib.SchenstedWordOfPermSurj
+import QOU.Mathlib.SchenstedShapeOfPositions
+import QOU.Mathlib.SchenstedRSKPairSurjective
+import QOU.Mathlib.SchenstedRSKPairInjective
+import QOU.Mathlib.SchenstedRSKEquiv
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.Mathlib.SchenstedRSKBurnside
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

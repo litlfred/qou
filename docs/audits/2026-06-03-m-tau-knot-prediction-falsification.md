@@ -15,7 +15,7 @@ $$
 \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 \quad\text{at } q = q_0
 \qquad
-(\mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.02988)
+(\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\Lambda(\pi/3) \approx 2.02988)
 $$
 
 where $\mathrm{Vol}(4_1)$ is a Bloch–Wigner motivic period and

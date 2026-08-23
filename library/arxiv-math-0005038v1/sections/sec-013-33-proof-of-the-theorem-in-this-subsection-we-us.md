@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0005038v1
-doc_title: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW"
+doc_title: "Braid groups are linear"
 section_id: sec-013-33-proof-of-the-theorem-in-this-subsection-we-us
 section_title: "Proof of the Theorem. In this subsection we use the Basic Lemma and the"
 section_number: 3.3
 pages: 9-10
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
-doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
+doc_brief: "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 Key Lemma to prove that the Lawrence-Krammer representation is faithful. The
 following lemma will be useful.

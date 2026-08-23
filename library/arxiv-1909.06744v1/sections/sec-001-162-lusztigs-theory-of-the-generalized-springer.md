@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1909.06744v1
-doc_title: "Springer correspondence for symmetric spaces Toshiaki Shoji"
+doc_title: "Springer correspondence for symmetric spaces"
 section_id: sec-001-162-lusztigs-theory-of-the-generalized-springer
 section_title: "Lusztig’s theory of the generalized Springer correspondence for reductive"
 section_number: 16.2
 pages: 18-19
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
-doc_brief: "Springer correspondence for symmetric spaces Toshiaki Shoji — This is a survey on the Springer correspondence for symmetric spa ces."
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces."
 ---
 groups can be extended to the case of symmetric spaces Gιθ
 uni, namely

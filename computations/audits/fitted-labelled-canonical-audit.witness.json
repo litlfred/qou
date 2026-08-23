@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T07:21:39.295790+00:00",
-  "commitSha": "4e867031980a1ce6b9fac830796126266fa331f8",
+  "computedAt": "2026-08-22T19:40:57.887339+00:00",
+  "commitSha": "f4254e46f3b3afb7a53672d8b3b43344345eb8dc",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
-  "scriptHash": "34338951a64d",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptHash": "d6e7ef2b0adc",
+  "scriptCommitSha": "73d37515df2e5b4a817b91deca7377a403480693",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,15 +29,23 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/fitted_labelled_canonical_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/fitted_labelled_canonical_audit.py"
   },
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 8,
     "flagged_script_count": 6,
-    "scripts_scanned": 2923,
+    "scripts_scanned": 3030,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
@@ -125,6 +133,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. This audit scans SOURCE for fitted-vs-canonical labelling and computes nothing from q0. Provedempirically: run under QOU_Q0_ANCHOR=muon and =proton, the emittedwitness is byte-identical except for the q0Anchor/q0Value pairitself -- i.e. the only thing the pin changes is the label, notthe result. Bean qou-o922 class (ii)."
 }

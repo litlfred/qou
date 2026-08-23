@@ -1,13 +1,13 @@
 ---
 doc_id: invariant-eigendistributions-2
-doc_title: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMAN"
+doc_title: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups"
 section_id: sec-011-12-appendix-comparison-with-the-kazhdan-lusztig
 section_title: "Appendix: comparison with the Kazhdan-Lusztig construction"
 section_number: 12
 pages: 1-1
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
-doc_brief: "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: Intr"
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 25 sections: Introduction; Construction of Weyl group represe"
 ---
 1. Introduction.
 This second part contains applications of the Integral Formula, as promised in the introduction to the

@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: ""
+doc_title: "Monodromy of hypergeometric functions and non-lattice integral monodromy"
 section_id: sec-017-8-extending-s-by-continuity
 section_title: "Extending S^ by continuity"
 section_number: 8
 pages: 38-42
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "Monodromy of hypergeometric functions and non-lattice integral monodromy — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 Let X, Y be complex algebraic varieties which are separated as algebraic varieties,
 i.e. which are Hausdorff in their complex topology.

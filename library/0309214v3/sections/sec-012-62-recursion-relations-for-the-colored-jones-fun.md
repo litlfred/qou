@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "School of Mathematics, Georgia Institute of Technology"
+doc_title: "The colored Jones function is q-holonomic"
 section_id: sec-012-62-recursion-relations-for-the-colored-jones-fun
 section_title: "Recursion relations for the colored Jones function of the figure 8 knot"
 section_number: 6.2
 pages: 22-24
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
+doc_brief: "The colored Jones function is q-holonomic — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear"
 ---
 ﬁgure 8 knot
 The Mathematica package qMultiSum.m can compute recursion relations for

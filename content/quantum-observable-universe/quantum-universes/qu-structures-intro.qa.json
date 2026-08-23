@@ -1190,6 +1190,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.785Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1226,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.826Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1262,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 232 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.866Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1247,6 +1298,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 232 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.905Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1334,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.944Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). final sentence is \"It matches the internal Poisson bracket against the skew-Poisson structure of formal-group integration.\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1370,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:10.982Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1406,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.021Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). final sentence is \"It matches the internal Poisson bracket against the skew-Poisson structure of formal-group integration.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1442,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.060Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1478,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.100Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1514,23 @@
         "reviewed_at": "2026-08-15T10:31:00.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5ee07e93203b",
+          "ts": "26d922cfb61e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.140Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/qu-structures-intro.md (7 lines, kind=prose, title=\"QU structures section intro\"). Opening sentence read 'We now assemble the differential-geometric vocabulary that *Quantum Observable Universes* equips with observability and measurability.' - the relative clause attaches the wrong subject and the sentence stalls aloud (the vocabulary is assembled here and equipped later, by the next chapter).",
+        "notes": "FIX APPLIED: 'We now assemble the differential-geometric vocabulary that *Quantum Observable Universes* equips with observability and measurability.' -> 'We now assemble the differential-geometric vocabulary; *Quantum Observable Universes* later equips it with observability and measurability.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1553,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:11.140Z"
 }
