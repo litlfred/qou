@@ -795,7 +795,7 @@
           "in_degree": 1,
           "cone_size": 44,
           "depth": 20,
-          "pagerank": 0.000098,
+          "pagerank": 9.8e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1265,7 +1265,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Explicitly archimedean appendix block (tags: substrate-evaluation, archimedean; q_0 ≈ 1.10978, MeV units). Correctly on the archimedean side; the categorical F_Bor is consumed from def:f-bor-borromean-observable upstream."
+        "notes": "Explicitly archimedean appendix block (tags: substrate-evaluation, archimedean; q_0 \u2248 1.10978, MeV units). Correctly on the archimedean side; the categorical F_Bor is consumed from def:f-bor-borromean-observable upstream."
       },
       {
         "field_hash": {
@@ -1283,7 +1283,7 @@
         "reviewed_at": "2026-07-07T14:26:55.531025Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "proton-mass-substrate-identity.lean:1 — Lean file exists",
+        "evidence": "proton-mass-substrate-identity.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1320,8 +1320,22 @@
         "reviewed_at": "2026-07-07T14:26:55.531025Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
+        "evidence": "proton-mass-substrate-identity.lean:1 \u2014 content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "54fdb2cdc2f1",
+          "ts": "a359b4062413"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'ProtonBorromeanAssembly.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2015,7 +2029,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 \u2014 content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
       },
       {
         "result": "pass",

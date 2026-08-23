@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T08:46:47.677Z",
+  "generated": "2026-08-23T10:41:11.584Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3042,
-  "files_flagged": 141,
-  "total_defects": 124,
+  "scanned_files": 3061,
+  "files_flagged": 135,
+  "total_defects": 115,
   "total_exempt": 47,
-  "total_promoted_from_exempt": 76,
+  "total_promoted_from_exempt": 69,
   "categories": {
-    "proof-no-self-assuming-projection": 117,
+    "proof-no-self-assuming-projection": 108,
     "proof-docstring-sorry-mismatch": 1,
     "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1
@@ -1326,43 +1326,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.lean": [
-      {
-        "line": 48,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem mi_sw_nonneg (data : MISWAbelianisation) : 0 ≤ data.mi_norm :=",
-        "decl": "mi_sw_nonneg",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `data.mi_nonneg` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      },
-      {
-        "line": 53,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem sw_determines_mi (data : MISWAbelianisation) :",
-        "decl": "sw_determines_mi",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `data.abelianisation` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean": [
-      {
-        "line": 62,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem uncertainty_vanishes (qr : QuaternionicResolvent) :",
-        "decl": "uncertainty_vanishes",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `qr.omega_zero_balanced` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean": [
       {
         "line": 105,
@@ -1376,19 +1339,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/climax-volume-mass/mobius-energy.lean": [
-      {
-        "line": 73,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy) :",
-        "decl": "mobius_energy_nonneg",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `cme.energy_classical_nonneg` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean": [
       {
         "line": 81,
@@ -1399,19 +1349,6 @@
         "severity": "critical",
         "exempt": false,
         "detail": "the projected field `nsi.exclusionRadius_def` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean": [
-      {
-        "line": 67,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem noncocomm_iff_quantum (nsi : NonSelfIntersection) :",
-        "decl": "noncocomm_iff_quantum",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `nsi.noncocomm_pos` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
@@ -1790,7 +1727,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean": [
       {
-        "line": 203,
+        "line": 208,
         "category": "proof-docstring-sorry-mismatch",
         "pattern": "doc-claims-sorry-body-has-none",
         "snippet": "theorem identityB_general (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :",
@@ -2426,35 +2363,6 @@
         "exempt": false,
         "detail": "the projected field `hi.agrees` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean": [
-      {
-        "line": 168,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem trefoil_topological_mass_eq_codata [ctx : TrefoilElectronMassConj] :",
-        "decl": "trefoil_topological_mass_eq_codata",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `ctx.trefoil_mass_eq_m_e` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      },
-      {
-        "line": 193,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem trefoil_strand_count_eq_two [ctx : TrefoilElectronMassConj] :",
-        "decl": "trefoil_strand_count_eq_two",
-        "severity": "critical"
-      },
-      {
-        "line": 203,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem trefoil_crossing_count_eq_three [ctx : TrefoilElectronMassConj] :",
-        "decl": "trefoil_crossing_count_eq_three",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean": [
@@ -3123,19 +3031,6 @@
         "severity": "critical",
         "exempt": false,
         "detail": "the projected field `diag.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/models-of-qous/main-commutative-diagram.lean": [
-      {
-        "line": 78,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "exact-field-projection",
-        "snippet": "theorem diagram_commutes (d : MainCommutativeDiagram) :",
-        "decl": "diagram_commutes",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `d.commutativity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
