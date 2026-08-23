@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T13:38:29Z
+updated_at: 2026-08-23T16:01:28Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -178,3 +178,65 @@ advertised at `rtol = 1e-9` is being run on values serialised at ~1e-16, and the
 witness's own provenance block overstates its precision by 44 digits. That is
 the "carry mpmath.mpf from the source, do NOT stringify the float" rule, and it
 is worth fixing before anyone tries to adjudicate the 7e-8.
+
+
+---
+
+## Precision fix landed (`fb3a4009d4`) — and it UNMASKED the disagreement
+
+The `output_dps: 60` vs stored-float64 mismatch is fixed in both markov
+producers. Three things came out of it that the bean should carry.
+
+### 1. It was worse than float64
+
+    q_0 = float(CANONICAL_Q)                                   50-digit -> f64
+    u_0 = sp.sqrt(sp.Rational(q_0).limit_denominator(10**12))   -> ~12 digits
+    float(sp.N(p_val / d_val, 30))                              30-digit eval
+                                                                of a 12-digit
+                                                                input, then f64
+
+`limit_denominator(10**12)` is the binding loss — it caps the INPUT, so nothing
+downstream can recover it. The witness advertised 60 digits and carried ~12.
+Now mpf end to end (Horner over exact `domain="ZZ"` coefficients, `fmt` out),
+with `set_compute_dps()` in `main` — without that call the conversion is
+cosmetic, since `_precision` leaves `mp.dps` at 15 on import.
+
+### 2. The ratchets caught two of MY attempts
+
+* `mp.mpf(q_parameter.Q)` faithfully lifts a **float64** — `Q` is one — so `fmt`
+  padded its binary expansion to 60 digits. The float64-padding ratchet flagged
+  it as NEW. Fixed with `Q_50_DIGIT_STR`.
+* The mixed-arithmetic audit then caught `AGREEMENT_RTOL = 1e-9` as the last
+  float in the path. It is a string now.
+
+Neither was baselined or annotated away. Worth recording because the obvious
+"lift it with mpf" move is exactly the trap: **`mp.mpf(<float>)` launders a
+float64 into something that reads as high precision.**
+
+### 3. The stale witness was MASKING the disagreement
+
+The precision fix does **not** move the value — mpf agrees with the float64 run
+on every float64 digit. But re-running with current inputs does, and the
+cross-validation goes from an apparent near-agreement to the truth:
+
+    before (Jun realizer vs Aug term6)   7.3e-08 / 7.9e-08
+    after  (both current)                6.53e-02  n
+                                         7.02e-02  p
+                                         3.25e-01  D
+
+The witness was stale on **three independent axes**, which is why:
+
+    q_0 pin     1.1099785955573347 (MUON) -> proton 50-digit. It predates the
+                producer's own switch to canonical Q — the exact staleness the
+                producer's comment describes.
+    precision   ~12 digits -> 60
+    inputs      import-cone drift (deuteron 0.388 -> 0.575, +48.1 %)
+
+So the earlier "they agree to 7e-8" was an artifact of comparing two different
+epochs. **Two pipelines that exist to cross-validate each other disagree by 7 %
+to 32 %.** That is the real state, it is now recorded, and adjudicating it is
+research — not attempted here.
+
+Also newly visible: term6 serialises as `0.3882864240747888000000…`. The
+trailing zeros are its own float64 deficit, exposed by the realizer's full
+width. term6 is the next producer to give this treatment.
