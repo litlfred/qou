@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T17:55:00Z
+updated_at: 2026-08-23T18:20:00Z
 ---
 
 
@@ -934,3 +934,67 @@ string-int form used by `producer_importability_audit`
 (`computed=str(int(...)), expected="1"`). Converting changes the assertion's
 representation for anything reading this witness, so it is recorded rather than
 folded into a coverage fix.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `q0_cross_layer_fallback_scan.py:88`, the universal claim over unread files
+
+Filed as *"drops files that already passed both pre-filters; 123-file candidate
+population never printed."* Both halves confirmed; today's candidate count is
+**124** (the corpus moved by one).
+
+The drop is the worst-placed one in this bean: the `continue` after `ast.parse`
+fires **only** on files that have already matched a muon prefix *and* a proton
+token — that is, precisely the candidate set the scan exists to examine. A
+candidate that does not parse is unexamined, and the scan then printed:
+
+```
+  None. No producer switches q₀ layer on its error path.
+```
+
+### Demonstrated — the same corpus, two answers
+
+Forcing `ast.parse` to fail on every candidate and running the **committed**
+version:
+
+```
+  files with a MUON literal inside an `except` handler
+  AND a proton accessor in the same file : 0
+
+  None. No producer switches q₀ layer on its error path.
+--strict exit code = 0
+```
+
+**The true answer on this corpus today is 27 hits.** A broken parser turns 27
+into a confident "None", at exit 0. Nothing in the old output distinguished the
+two runs.
+
+*After*, same forced failure:
+
+```
+  No hit among the 0 candidate(s) actually scanned — but 124 candidate(s) did
+  NOT parse and were never examined. This is NOT 'no producer switches layer';
+  it is 'none found in what was read':
+    …
+  NOTE: --strict exits 0 here. An unexamined candidate cannot
+        produce a hit, so silence below is not evidence.
+```
+
+### Changes
+
+1. The scan now counts and prints its funnel:
+   `3744 .py walked → 124 CANDIDATES → 124 AST-scanned → 0 UNPARSEABLE`.
+   The candidate population was never on screen before.
+2. Unreadable files (before pre-filtering) are counted separately from
+   unparseable candidates (after) — they are different facts and only the second
+   is a coverage hole in this scan's own terms.
+3. The `None` message now has two forms. With every candidate scanned it states
+   its denominator: *"None, over all 124 candidate(s), every one AST-scanned."*
+   With any unparseable it refuses the universal and lists what was skipped.
+4. The vacuous `--strict` pass is named in the output.
+
+### Verified
+
+Normal run unchanged in substance: 124 candidates, 0 unparseable, **27 hits**
+reported exactly as before, exit 0 without `--strict`. Not gate-wired and writes
+no witness, so this fix carries no CI or artefact risk.
