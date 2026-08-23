@@ -126,11 +126,61 @@ text, since those markers live in comments by design.
   installed at the recorded versions first, so no environment block was
   weakened.
 
+## A fifth site that must NOT be migrated — and a third class the triage lacked
+
+Walking the import cones of the 28 `unresolved` witnesses turned up one
+C-supplying dependency: `computations/qbeta/qbeta_utils.py:173`.
+
+**Do not fix it.** It is the Q_β `c_k` ladder, and it is convention C *on
+purpose*: the registry records `channels.qbeta-decay` as
+`agreed-migration-pending` — convention settled to D, code deliberately not
+moved, because `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C-frame
+ladder and the mass channel's three-row forcing mutually exclusive. Substituting
+`z_D` is not a valid move; the ladder must be **re-derived** (`qou-cds1`), which
+is research, not cleanup.
+
+Two real hazards were sitting there anyway:
+
+**1. The protective docstring did not cover the site.** `markov_parameter` (line
+47) carries the full "deliberately still C / deliberately not migrated" note.
+Line 173 is a **second, independent inline spelling** of the same value inside
+`substrate_ladder_quantities`, with no such note — so a reader arriving at that
+function alone sees a bare C `z` and a standing instruction to migrate C to D.
+The note is now restated at the site.
+
+**2. The obvious tidy-up would have changed the number.** Replacing the inline
+spelling with a call to `markov_parameter(q)` looks like pure hygiene — one
+documented site instead of two. It is not: the two spellings are algebraically
+equal but **not bit-equal**.
+
+```
+1/(√q + 1/√q)  vs  √q/(1+q)      relative difference 1.6e-61 at 60 dps
+```
+
+Tiny, and irrelevant almost anywhere else — but this is the one ladder that must
+not be perturbed by a substitution, so the refactor was **declined** and the
+reason recorded at the site. Verified afterwards that `substrate_ladder_quantities`
+returns the identical `z`.
+
+**The triage detector lacked this class entirely.** It knew "historical" and
+"comparison-only"; it did not know *"settled to D, deliberately not yet moved,
+because moving it needs a re-derivation."* Without that, it reports the ladder as
+a live-C producer and the next agent migrates the one thing that must not be
+z-swapped. `agreed-migration-pending` / `deliberately not migrated` /
+`must be re-derived` are now quarantine markers.
+
 ## Still open
 
-- **28 `unresolved` C witnesses** share one shape — producer byte-identical to
-  when it emitted C, no C spelling in it — i.e. the C came from a **dependency**
-  (import-cone drift). One query, not 28. Not chased here.
+- **28 `unresolved` C witnesses.** The import-cone walk (depth 2, local modules
+  only) found exactly **one** C-supplying dependency across all of them —
+  `qbeta_utils`, the deliberate ladder above — and it accounts for only 1 of the
+  28. So the import-cone hypothesis is **not** the whole explanation, and the
+  other 27 remain genuinely unexplained: byte-identical producer, no C spelling
+  in it, no C-supplying local import within two hops. Candidates not yet
+  eliminated: a deeper cone, a non-local dependency (`pyhecke`, `qou_substrate`),
+  or a committed witness older than a producer edit that left the hash
+  coincidentally unchanged. Stating this as open rather than closing it on the
+  one hit that fit.
 - **15 `stale-output`** witnesses: mechanical re-runs, individually.
 - **The typed `delta`** in `signed_crossing_feasibility_probe`
   (`mp.mpf("0.00137705")`) is still hand-entered rather than derived, and both

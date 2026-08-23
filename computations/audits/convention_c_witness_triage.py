@@ -59,7 +59,16 @@ Z_D = '0.6126880505'
 QUARANTINE = re.compile(
     r'HISTORICAL|convention[_ -]?C[_ -]?(?:only|historical|dead)|'
     r'DEAD FOR PRODUCTION|do not call this|C-vs-D|D-vs-C|'
-    r'excised|comparison only|retained because',
+    r'excised|comparison only|retained because|'
+    # A third class, distinct from "historical" and from "comparison": the
+    # convention is SETTLED to D but the code is deliberately not moved yet,
+    # because moving it requires a re-derivation rather than a substitution.
+    # The Q_beta c_k ladder is the live example (registry
+    # `channels.qbeta-decay: agreed-migration-pending`, bean `qou-cds1`).
+    # Without this, the detector reports it as a live-C producer and the next
+    # agent "migrates" the one thing AGENTS.md says must not be z-swapped.
+    r'agreed-migration-pending|deliberately still C|deliberately not migrated|'
+    r'must be RE-DERIVED|must be re-derived',
     re.IGNORECASE,
 )
 
