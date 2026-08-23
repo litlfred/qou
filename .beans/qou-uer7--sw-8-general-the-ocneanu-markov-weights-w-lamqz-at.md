@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T20:30:59Z
+updated_at: 2026-08-23T20:39:45Z
 parent: qou-59vq
 ---
 
@@ -355,3 +355,40 @@ Corrected state of the arc:
 | assembly: lam-indexed sum with weights | **OPEN** |
 
 Two gaps, not one. Neither has been shown to need new mathematics; both are work.
+
+
+## Update — the inclusion gap is CLOSED; back to one remaining gap
+
+The second gap I named one update ago is shut. `heckeIncl` is an `AlgHom` and
+`adjoin_range_sigma_eq_top` says the sigma generate, so the composite's image lands in the block
+subalgebra:
+
+    seminormalRep_heckeIncl_mem_blockSubalgebra :
+      seminormalRep q _ _ (m+1) hN (heckeIncl R q q^-1 m y) in blockSubalgebra (m+2)
+
+and hence for every y in H_m(q),
+
+    trace_heckeIncl_mul_lastGen :
+      tr(rho(iota y) . rho(sigma_{m+1})) = sum_T rho(iota y)_TT * seminormalParam q (axialDist T (m+1))
+
+That is chi^lam(x . sigma_n) = sum_T x_TT a(c(lam/mu) - c_T(n)) for a single V_lam, with the
+hypothesis **discharged for a genuine Hecke element** rather than assumed of a matrix.
+
+Worth noting for whoever picks this up: everything needed was already in the corpus — `heckeIncl`,
+`heckeIncl_sigma`, `adjoin_range_sigma_eq_top`, `seminormalRep_sigma`, `seminormalGen`. It wanted
+wiring, not new mathematics. The gap looked larger than it was.
+
+| piece | status |
+|---|---|
+| closed-form weight, derived + checked vs proved n=3 | **Lean** |
+| bridge to `schurPrincipal` at convention D | **Lean** |
+| branching (trace-tower consistency) | **Lean** |
+| Markov corner identities (arithmetic core) | **Lean** |
+| block structure + trace identity, one V_lam | **Lean** |
+| `adjoin(earlyGens)` contains the Hecke-inclusion image | **Lean** |
+| assembly: lam-indexed sum with weights | **OPEN — the only gap** |
+
+The assembly needs `heckeWedderburn` (the lam-indexed decomposition) and `ocneanuWeight` (the
+weights) combined with `OcneanuWeightMarkovCorner`'s corner identities. No new mathematics is
+identified as missing there either — but I said that about the inclusion gap too, and it still took
+a session's work, so read "no new mathematics" as a claim about difficulty class, not about effort.
