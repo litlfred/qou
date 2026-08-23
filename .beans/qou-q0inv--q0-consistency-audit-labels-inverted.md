@@ -71,3 +71,67 @@ Two witnesses, two paths, different payloads:
    "migrated" may have been moved off the canonical pin.
 
 Found while draining tier C (bean `dgpc`), PR #5289.
+
+---
+
+## 2026-08-23 — measured. The arithmetic is RIGHT; the naming and the conclusion are wrong.
+
+I said "the labels are inverted." That was too blunt, and the correction matters
+because it changes the fix.
+
+### The audit's empirical claim checks out
+
+It justifies itself with *"only C reproduces m_p/m_e to 10 sig-figs."* Tested at
+50 dps via `m_μ/m_e = Vol(4₁)/ℏ_q²`:
+
+| | q₀ | `m_μ/m_e` |
+|---|---|---|
+| **M** (audit calls this canonical) | 1.10997859555733471… | **206.768282989** |
+| **A** = `q_parameter.Q` (audit calls this stale) | 1.10997858275138080… | 206.768326371 |
+| CODATA | | 206.7682827 |
+
+M matches to ~10 sig figs; A misses in the 8th digit. **The arithmetic is
+correct.** That is not the defect.
+
+### The defect is that M is the MUON pin, not "the proton-anchored value"
+
+M is exactly the value obtained by inverting `m_μ/m_e = Vol(4₁)/ℏ_q²` — it
+reproduces the muon ratio *because it is defined by it*. The audit calls it
+*"the proton-anchored, habiro-refined value (`q_parameter.Q`)"*, and
+`q_parameter.Q` is **A**, not M.
+
+So A's 8th-digit miss on `m_μ/m_e` is not staleness. It is the **μ–p substrate
+tension** — the framework's own documented 9.5σ prediction gap (AGENTS.md,
+§q₀ anchor convention). The audit reads a predicted tension as a bug.
+
+### Why this is now urgent rather than cosmetic
+
+Run on current main: **251 hits, 186 "production-hardcode"**. The flagged sites
+include the canonical constant's **own regression tests**:
+
+```
+tools/qou-substrate/tests/test_codata_table.py:112
+    assert repr(constants.Q) == "1.1099785827513808"
+tools/qou-substrate/tests/test_vol_4_1_exact.py:48
+    assert C.Q == 1.1099785827513808
+tools/qou-substrate/tests/test_q0_anchor.py:248,318
+    b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+```
+
+Acting on those flags means editing the tests that pin `q_parameter.Q` to its
+correct value — i.e. changing them to assert the muon value. The audit is
+telling agents to migrate 186 production sites **off** the pin the 2026-08-07
+owner directive makes canonical for all new compute.
+
+### So the fix is naming + conclusion, not the numbers
+
+1. Rename: M is the **ideal-CAL-2 / muon** pin, not "proton-anchored".
+2. Reverse the verdict: hardcoding **A** is *correct* under the owner directive.
+   What deserves flagging is hardcoding **either** value instead of importing
+   `q_parameter` — a different and much smaller finding.
+3. Re-check what it has flagged historically; anything "migrated" on its advice
+   may have been moved off the canonical pin.
+
+Still not applied here — this is a policy inversion in a tree-wide audit and
+wants owner sign-off, not a drive-by. But the decision no longer needs guessing:
+the numbers are right, the words and the conclusion are not.
