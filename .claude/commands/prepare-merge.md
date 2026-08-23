@@ -433,6 +433,37 @@ the split.
 This lives here rather than in `.github/workflows/` for the reason §4b gives:
 the CI copy does not run.
 
+### Duplicate declarations — run it in the same breath
+
+```sh
+bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 65
+```
+
+Same family of defect — the library disagreeing with itself — and the same kind
+of blind spot. Lean's environment is flat, so two modules declaring the same
+fully-qualified name **cannot both be imported by anything**. Not a shadowing
+warning, not a use-site ambiguity; the import fails:
+
+```
+error: import QOU.CategoricalDqSquared failed, environment already contains
+       'QOU.q_param' from QOU.BraidKnot.CasimirShared
+```
+
+Baseline on `main` at 2026-08-23 (bean `qou-kfcl`): 33 798 declarations,
+**65 duplicated FQNs, 64 mutually un-importable module pairs across 70
+modules**. The worst is `QOU.R_q` — `RatFunc ℚ` in one module and
+`LaurentPolynomial ℤ` in the other, the same name for two different rings.
+
+- **A green Lean build says nothing about this.** `lean-direct-cone.sh --all`
+  compiles each module against its own cone, and no *existing* module imports
+  both halves of any colliding pair — 2029/2040 modules, `err=0`, on the very
+  commit with 64 un-importable pairs. The error is only reachable by writing a
+  new module, which is how it was found: it blocked a `qou-u87j` fix.
+- **Ratchet, like the drift gate.** Lower `--baseline` as pairs are resolved.
+- **Verify before acting** on any individual finding by writing the two-line
+  import. Two earlier counts of this population (38, then 80) were wrong;
+  the compile has never been.
+
 ## 4b. Precision gates (BLOCKING)
 
 - Run [`scripts/precision-gates.sh`](../../scripts/precision-gates.sh). It runs
