@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:34.009462+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:00:52.626238+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "direction_sanity_gate_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 90,
+  "durationMs": 117,
   "computation": "qbeta-direction-sanity-gate-probe",
   "scriptFile": "qbeta_direction_sanity_gate_probe.py",
-  "scriptHash": "26c85c4e2e49",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "71754152ba64",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -28,27 +28,37 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_direction_sanity_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_direction_sanity_gate_probe.py"
   },
   "description": "Verifies the §4(d) direction-sanity gate from prop:q-beta-direction-sanity-gate. Computes the target magnitude at q_0 (Q_β^CODATA / [Q_A · cos(α_eff)] ≈ 0.998), demonstrates ACCEPT on a synthetic-passing candidate (|F(q_0)| = 1.001) and REJECT on a PR #1850-style failing candidate (z < 1 multiplier against target > 1).",
   "contentBlock": "prop:q-beta-direction-sanity-gate",
   "data": {
     "q0": "1.1099785955573347198997632204832250266562084087802",
-    "target_magnitude": "0.99992709402793437680661057498726639192850227348070758495849442801",
+    "target_magnitude": "0.99932634499460823045212291736620511118932559680441219865722077597",
     "target_close_to_unity": "0.998 — ladder corrections ~0.18% of bare Q_A·cos",
     "direction_threshold": "10.0",
     "gate_passing_candidate": {
       "form": "F(q_0) = 1.001 (close to target ~0.998)",
       "magnitude": "1.001",
-      "rel_distance_from_target": "0.0010729841990216639218963043908365245860548376086056771371906284283",
+      "rel_distance_from_target": "0.0016747832314986147924519812789416989190283531052774578971903514537",
       "gate_accepted": true
     },
     "gate_failing_candidate": {
       "form": "F(q_0) = 1/z(q_0)^5 (PR #1850-style wild-scaling pattern)",
-      "z_q0": "0.49932033403356127176896638627573714016117579789989506748278081502",
-      "magnitude": "32.218382866073934914423058171857305710812242788477791303767303578",
-      "rel_distance_from_target": "31.220731949857405151130893494317308639894346395420208738203394346",
+      "z_q0": "0.6126880505488901570445167745818661490059641443423760369611014693",
+      "magnitude": "11.582517067903921590014862012864503095417710860640928428933640937",
+      "rel_distance_from_target": "10.590324948319474106450391813608124188052404049470920711271249497",
       "gate_rejected": true
     }
   },

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:09.249247+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:01:25.553487+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "habiro_cross_anchor_evaluated",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 13,
   "computation": "xq-habiro-element-search-probe",
   "scriptFile": "xq_habiro_element_search_probe.py",
   "scriptHash": "84c10803daa4",
@@ -28,89 +28,101 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/xq_habiro_element_search_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/xq_habiro_element_search_probe.py"
   },
   "description": "X(q) Habiro element search — cross-anchor test of 7 candidate Habiro forms H(q; α) parallel to α_EM's [2]_q·(1-h²α) template. Follow-on to PR #1673 Probe 1's multiplicative-refutation verdict.",
   "auditOnly": "docs/audits/2026-06-01-xq-habiro-he4-9-3-yekutieli-a-workplan.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "q_muon": "1.109978595554180575281594079609509377993282279958686225466751689153746",
-    "required_f_at_q_proton": "1.00127838585638668422883652759166460645260012687547133804415",
-    "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-    "delta_target": "0.00137746993978105416050143701130056481393048959998445627104478",
-    "X_at_q_proton": "0.00137571124997661201352874324363517032190217570831160387850047",
-    "X_at_q_muon": "0.00137571124986751221672508789953717339885368834132852651126007",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "required_f_at_q_proton": "1.00127870689221788033817270624884037036975769718974755109628",
+    "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+    "delta_target": "0.00137746993791774017858385217877606816061293354506613182474065",
+    "X_at_q_proton": "0.00137571080702709600855110927410655062222547601193703942614996",
+    "X_at_q_muon": "0.00137571125293069175063115292687463954062397759116765326879516",
     "candidates": [
       {
         "name": "H1: 1 + α·h²",
         "structural_note": "bar-symmetric perturbation",
-        "alpha_star_from_q_proton": "0.0292495189031096891762392745514436986292181261098721847931823",
-        "H_at_q_muon": "1.00127838585631680032883485229048312961063633504906971576557",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07937407949941858,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.0292568707090295581012797537254320674203400030108838914703272",
+        "H_at_q_muon": "1.00127870717791333602174494804266502362965240779986367415214",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.4112977681559,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H2: 1 + α·h²·[2]_q",
         "structural_note": "bar-symmetric times bar-symmetric",
-        "alpha_star_from_q_proton": "0.0145455091965622189260956587413507235522744945371689471258196",
-        "H_at_q_muon": "1.00127838585631642266032737009877629647516809173400303230798",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07937445668573638,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.0145491651975857815809455722256247063562115281234697575904807",
+        "H_at_q_muon": "1.00127870717945729931943094279557740322727661168259540172728",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.41283976019815,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H3: 1 + α·h·(q-q⁻¹)/(1-q⁻²) [qLambert]",
         "structural_note": "qLambert n=1 single term",
-        "alpha_star_from_q_proton": "0.00550903761980197258834683067179415475384096224348638581164746",
-        "H_at_q_muon": "1.00127838585634810958367794158891397560349752274552842998084",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07934281021878407,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.00551042175705213935385500321704881418073657126914120815373112",
+        "H_at_q_muon": "1.00127870704991658086679534968604529389902727443889440922625",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.28346443288075,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H4: 1 + α·(1-q⁻²)",
         "structural_note": "bare q-Lambert RHS",
-        "alpha_star_from_q_proton": "0.00678742347618865681718335826345876120644108911895772385579462",
-        "H_at_q_muon": "1.00127838585635537497399249355234058287079201662657508177282",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07933555410458387,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.00678912864927001969202770946588918455049426845888875925001344",
+        "H_at_q_muon": "1.00127870702021461970770690306165930708267679775787822202390",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.25380039370583,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H5: 1/(1 - α·h²) [resolvent]",
         "structural_note": "Habiro resolvent form (matches α_EM via Taylor)",
-        "alpha_star_from_q_proton": "0.0292121744724298347264140995091481680161319084539882337853915",
-        "H_at_q_muon": "1.00127838585631671099024550589740262292205649735017809241602",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07937416872394455,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.0292195075233722098492837720133757137067215175340616042218573",
+        "H_at_q_muon": "1.00127870717827865685172912376116244044837349755174005653495",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.41166262256246,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H6: 1 + α·(q - q⁻¹)·q⁻¹",
         "structural_note": "bar-antisymmetric perturbation",
-        "alpha_star_from_q_proton": "0.00678742347618865681718335826345876120644108911895772385579462",
-        "H_at_q_muon": "1.00127838585635537497399249355234058287079201662657508177282",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.07933555410458387,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "0.00678912864927001969202770946588918455049426845888875925001344",
+        "H_at_q_muon": "1.00127870702021461970770690306165930708267679775787822202390",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.25380039370583,
+        "tier": "TIER 2 (near-match)"
       },
       {
         "name": "H7: 1 + α·h² · ℏ_q²",
         "structural_note": "second-order",
-        "alpha_star_from_q_proton": "2.97941909350519043534353577063269470906701748323837405943280",
-        "H_at_q_muon": "1.00127838585625073847127564930372439076630982646165133503409",
-        "required_f_at_q_muon": "1.00127838593579235053515195459582334038228539771449026321007",
-        "residual_ppb_at_q_muon": -0.0794400570122533,
-        "tier": "TIER 1 (cross-anchor proved-candidate)"
+        "alpha_star_from_q_proton": "2.98016858957477754870471028470475475186896597987389674821671",
+        "H_at_q_muon": "1.00127870744798379092244637919378049308807764545233240586006",
+        "required_f_at_q_muon": "1.00127838235189389004404185595697156796918645998965921868213",
+        "residual_ppb_at_q_muon": 324.6810234105555,
+        "tier": "TIER 2 (near-match)"
       }
     ],
-    "tier_1_count": 7,
+    "tier_1_count": 0,
     "tier_15_count": 0,
-    "tier_2_count": 0,
-    "verdict": "CROSS-ANCHOR HIT — 7 Habiro candidate(s) match at BOTH q_proton AND q_muon to < 1 ppb: H1: 1 + α·h², H2: 1 + α·h²·[2]_q, H3: 1 + α·h·(q-q⁻¹)/(1-q⁻²) [qLambert], H4: 1 + α·(1-q⁻²), H5: 1/(1 - α·h²) [resolvent], H6: 1 + α·(q - q⁻¹)·q⁻¹, H7: 1 + α·h² · ℏ_q². Worth structural derivation. (Cross-anchor necessary but not sufficient — still requires categorical justification.)",
+    "tier_2_count": 7,
+    "verdict": "ALL CANDIDATES REFUTED at cross-anchor. The Habiro forms tested do NOT close X(q) at both anchors with a single α. Two interpretations: (a) the X(q) Habiro element has a more complex form (2+ parameters; H7 partially tests this) — expand the candidate basis. (b) the residual is upstream of X(q) entirely (in the Hecke-skein structure itself, not a multiplicative refinement).",
     "template_pr": "Parallel to PR #1511's α_EM Habiro element [2]_q·(1-h²α). Cross-anchor test logic: pick the α that closes at q_proton, then evaluate at q_muon. A real fibre-level Habiro element gives the right f at BOTH anchors with the same α. Failure ⟹ anchor-coincidence.",
     "anti_pattern_guard": "TIER 1 result is necessary but NOT sufficient — still requires structural categorical derivation (e.g. identify the formal Habiro ring element whose archimedean evaluation IS the formula). Do not wire to production without that derivation."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

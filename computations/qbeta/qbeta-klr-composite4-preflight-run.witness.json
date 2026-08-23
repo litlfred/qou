@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:39.139798+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:01:05.905675+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "parity_gate_analytical_pass",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "qbeta-klr-composite4-preflight-run",
   "scriptFile": "qbeta_klr_composite4_preflight_run.py",
   "scriptHash": "9040eba48208",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_klr_composite4_preflight_run.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_klr_composite4_preflight_run.py"
   },
   "description": "KLR tranche 2 preflight RUN — sanity-check the Composite-4 ansatz (Wenzl × q-Pochhammer, cont. 9 master infra scope Option B) against the c_2 = -1 magnitude target with both the bare (q;q)_k form and the Y_k = q^{-k(k+1)/4}·(q;q)_k renormalisation that passes the bar-odd parity gate (PR #1914 §3c). One focused session, no fit, no production wiring. Verdict gates the 5-6 session infra investment.",
   "contentBlock": "conj:qbeta-precision-ladder",
@@ -55,17 +65,17 @@
       },
       {
         "anchor": "muon",
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "q_pochhammer_2_bare": "0.0255208061299366025028155986841074227806587940917252394200220",
-        "Y_2_renormalised": "0.0218234034862046321048649550208162515695300663534101647168902",
-        "tr_M_p2_JW_sym": "-0.499320334033598250020669084676721506369316362634457905011652",
-        "A_2_bare": "-0.0127430574416066461856137548333165559430213564907059519986935",
-        "A_2_with_Y": "-0.0108968691184816894615797369210968495248082560009137669504544",
-        "c2_miss_factor_Y": "0.0108968691184816894615797369210968495248082560009137669504544",
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "q_pochhammer_2_bare": "0.0255208061721081693310097057737933268517604602254823096459694",
+        "Y_2_renormalised": "0.0218234035196547319974159377259028088837511418750145984170930",
+        "tr_M_p2_JW_sym": "-0.499320334032560016888283520491754597884981667929951720485360",
+        "A_2_bare": "-0.0127430574626372704744547751437085419777131622525652841776992",
+        "A_2_with_Y": "-0.0108968691351613467327899972580836194199939528321440002443523",
+        "c2_miss_factor_Y": "0.0108968691351613467327899972580836194199939528321440002443523",
         "c2_passes_magnitude_within_1pct": false,
-        "A_3_with_Y": "-0.00227810296659135596215759054953386075004970985404975360524706",
+        "A_3_with_Y": "-0.00227810297182667458676976051101677957806952748897414350104230",
         "c3_target": "-2.02020023502125517000000000000000000000000000000000000000000",
-        "c3_miss_factor_Y": "0.00112766196493754358730203247461920338231034707353856544098461"
+        "c3_miss_factor_Y": "0.00112766196752902859648830628329451670666003777408047092220430"
       }
     ],
     "parity_gate_pass_analytic": true,

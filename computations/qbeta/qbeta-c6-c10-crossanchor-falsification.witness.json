@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:29.667225+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:00:42.067826+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "c6_c10_closed_forms_exact_at_silver_ratio",
@@ -34,7 +34,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 13,
   "computation": "qbeta-c6-c10-crossanchor-falsification",
   "scriptFile": "qbeta_c6_c10_crossanchor_falsification.py",
   "scriptHash": "de23260f4324",
@@ -48,22 +48,32 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py"
   },
   "data": {
     "q_silver": "2.41421356237309504880168872421",
-    "q_proton": "1.10997859555733471989976322048",
-    "q_muon": "1.10997859555418057528159407961",
-    "b_sq_proton": "0.752702113845204172470784166975",
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997859564273904668179512938",
+    "b_sq_proton": "0.75270211325196540159377935162",
     "pattern_breaks_at_free_rung": 8,
-    "c6_closed_proton": "3.01080845538081668988314",
+    "c6_closed_proton": "3.01080845300786160637512",
     "c6_bias_corrected_q0": "3.01065051430729465457554",
     "c6_raw_q0": "3.4975620618922254409204",
     "c6_silver_exact": "7/2",
-    "c6_match_pct_vs_corrected": 0.005246077974559434,
+    "c6_match_pct_vs_corrected": 0.005245999155876487,
     "c6_role": "applied",
-    "c6_form_swing_pct": 1.9412259085411962e-11,
+    "c6_form_swing_pct": -7.934017132475813e-08,
     "c7_closed_proton": "-8.0",
     "c7_bias_corrected_q0": "-8.02113952765562143907826",
     "c7_raw_q0": "57.1492426742876509794444",
@@ -71,30 +81,32 @@
     "c7_match_pct_vs_corrected": 0.26354768649436516,
     "c7_role": "applied",
     "c7_form_swing_pct": 0.0,
-    "c8_closed_proton": "2.26624188874815481113889",
+    "c8_closed_proton": "2.2662418851758981977142",
     "c8_bias_corrected_q0": "-0.214993066845721326698932",
     "c8_raw_q0": "7649.10589224686295992049",
     "c8_silver_exact": "49/16",
-    "c8_match_pct_vs_corrected": 1154.0999865704537,
+    "c8_match_pct_vs_corrected": 1154.0999849088853,
     "c8_role": "free",
-    "c8_form_swing_pct": 3.8824518170820156e-11,
-    "c9_closed_proton": "-6.02161691076163337976627",
+    "c8_form_swing_pct": -1.586803427124649e-07,
+    "c9_closed_proton": "-6.02161690601572321275023",
     "c9_bias_corrected_q0": "-297.34282701143122259137",
     "c9_raw_q0": "897807.615647148906249671",
     "c9_silver_exact": "-7",
-    "c9_match_pct_vs_corrected": 97.97485718041884,
+    "c9_match_pct_vs_corrected": 97.97485718201494,
     "c9_role": "free",
-    "c9_form_swing_pct": -1.9412259085411962e-11,
-    "c10_closed_proton": "1.70580506014528415139337",
+    "c9_form_swing_pct": 7.934017132475813e-08,
+    "c10_closed_proton": "1.70580505611201649679936",
     "c10_bias_corrected_q0": "105411380.102600978576557",
     "c10_raw_q0": "105411380.102600978576557",
     "c10_silver_exact": "343/128",
-    "c10_match_pct_vs_corrected": 99.99999838176385,
+    "c10_match_pct_vs_corrected": 99.99999838176386,
     "c10_role": "free",
-    "c10_form_swing_pct": 5.823677725622459e-11,
-    "max_form_swing_pct": 5.823677725622459e-11,
+    "c10_form_swing_pct": -2.3802051416312028e-07,
+    "max_form_swing_pct": 2.3802051416312028e-07,
     "form_anchor_stable": true,
     "free_rungs_match_pattern": false,
-    "verdict": "EMPIRICAL — SILVER-ANCHORED. Against PR #1824's bias-corrected q₀ extraction: the c_6/c_7 forms (which the extraction IMPOSES) are recovered (self-consistency, 0.0052%/0.26%), but the Pell-Lucas pattern BREAKS at the first FREE rung c_8 (closed 2.266 vs corrected -0.215). The forms are anchor-stable (swing 5.82e-11% < 1%) and EXACT only at the silver structural anchor; they are not q₀ production coefficients. Stays empirical — silver-anchored, no production wire (§8). Falsification test; no fit, no production change."
-  }
+    "verdict": "EMPIRICAL — SILVER-ANCHORED. Against PR #1824's bias-corrected q₀ extraction: the c_6/c_7 forms (which the extraction IMPOSES) are recovered (self-consistency, 0.0052%/0.26%), but the Pell-Lucas pattern BREAKS at the first FREE rung c_8 (closed 2.266 vs corrected -0.215). The forms are anchor-stable (swing 2.38e-07% < 1%) and EXACT only at the silver structural anchor; they are not q₀ production coefficients. Stays empirical — silver-anchored, no production wire (§8). Falsification test; no fit, no production change."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

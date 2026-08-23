@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:26:48.918210+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:00:34.103085+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "v9_original_factor_is_bar_asymmetric",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 9,
   "computation": "option-e-v9-bar-symmetric-test-probe",
   "scriptFile": "option_e_v9_bar_symmetric_test_probe.py",
   "scriptHash": "c8614926eeb2",
@@ -28,76 +28,88 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/option_e_v9_bar_symmetric_test_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/option_e_v9_bar_symmetric_test_probe.py"
   },
   "description": "Tests bar-symmetric replacements of v9's (1+q)/2 factor against the 0.11% empirical mirror-pair closure. Discipline-driven probe per PR #1643's bar-symmetrization audit.",
   "auditOnly": "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "v8_base_MeV": "0.7232",
     "empirical_target_MeV": "0.7637555",
     "required_correction_factor": "1.056077848451327433628318584070796460176991150442477876106194690265487",
-    "original_v9_factor": "1.054989297778667359949881610241612513328104204390076843303990573072465",
+    "original_v9_factor": "1.054989291375690403795834547805384439937249560936789368036407120090899",
     "original_is_bar_symmetric": false,
     "candidates": [
       {
         "name": "C1: (1+q)/2 [BAR-ASYMMETRIC — v9 original]",
-        "value": "1.05498929777866735994988161024161251332810420439007684330399",
-        "value_at_q_proton": 1.0549892977786675,
-        "err_vs_required_factor_pct": -0.10307485137164515,
-        "predicted_B_diff_MeV": 0.7629682601535323,
-        "err_vs_target_pct": -0.10307485137164515
+        "value": "1.05498929137569040379583454780538443993724956093678936803641",
+        "value_at_q_proton": 1.0549892913756904,
+        "err_vs_required_factor_pct": -0.10307545766946359,
+        "predicted_B_diff_MeV": 0.7629682555228993,
+        "err_vs_target_pct": -0.10307545766946359
       },
       {
         "name": "C2: (2 + [2]_q)/4 [bar-symmetric avg]",
-        "value": "1.00272421727976894020441595112512067576269837897820688660655",
-        "value_at_q_proton": 1.002724217279769,
-        "err_vs_required_factor_pct": -5.052054756171458,
-        "predicted_B_diff_MeV": 0.7251701539367289,
-        "err_vs_target_pct": -5.052054756171458
+        "value": "1.00272421667678057493812299452296570397231018712103322919098",
+        "value_at_q_proton": 1.0027242166767805,
+        "err_vs_required_factor_pct": -5.05205481326842,
+        "predicted_B_diff_MeV": 0.7251701535006477,
+        "err_vs_target_pct": -5.05205481326842
       },
       {
         "name": "C3: √((2+[2]_q)/4) [bar-modulus]",
-        "value": "1.00136118223135099726229085400619422330337193528696059090165",
-        "value_at_q_proton": 1.001361182231351,
-        "err_vs_required_factor_pct": -5.181120530102494,
-        "predicted_B_diff_MeV": 0.7241844069897131,
-        "err_vs_target_pct": -5.181120530102494
+        "value": "1.00136118193026664525391011899581588126705254254534818679824",
+        "value_at_q_proton": 1.0013611819302666,
+        "err_vs_required_factor_pct": -5.181120558612169,
+        "predicted_B_diff_MeV": 0.7241844067719688,
+        "err_vs_target_pct": -5.181120558612169
       },
       {
         "name": "C4: [2]_{q^(1/2)}/2 [bar-symmetric, half-q]",
-        "value": "1.00136118223135099726229085400619422330337193528696059090165",
-        "value_at_q_proton": 1.001361182231351,
-        "err_vs_required_factor_pct": -5.181120530102494,
-        "predicted_B_diff_MeV": 0.7241844069897131,
-        "err_vs_target_pct": -5.181120530102494
+        "value": "1.00136118193026664525391011899581588126705254254534818679824",
+        "value_at_q_proton": 1.0013611819302666,
+        "err_vs_required_factor_pct": -5.181120558612169,
+        "predicted_B_diff_MeV": 0.7241844067719688,
+        "err_vs_target_pct": -5.181120558612169
       },
       {
         "name": "C5: (2 + [2]_q)/2 [bar-symmetric, 2× C2]",
-        "value": "2.00544843455953788040883190225024135152539675795641377321311",
-        "value_at_q_proton": 2.005448434559538,
-        "err_vs_required_factor_pct": 89.89589048765708,
-        "predicted_B_diff_MeV": 1.4503403078734578,
-        "err_vs_target_pct": 89.89589048765708
+        "value": "2.00544843335356114987624598904593140794462037424206645838197",
+        "value_at_q_proton": 2.005448433353561,
+        "err_vs_required_factor_pct": 89.89589037346316,
+        "predicted_B_diff_MeV": 1.4503403070012955,
+        "err_vs_target_pct": 89.89589037346316
       },
       {
         "name": "C6: [2]_{q^(1/2)} [bar-symmetric]",
-        "value": "2.00272236446270199452458170801238844660674387057392118180329",
-        "value_at_q_proton": 2.002722364462702,
-        "err_vs_required_factor_pct": 89.637758939795,
-        "predicted_B_diff_MeV": 1.4483688139794262,
-        "err_vs_target_pct": 89.637758939795
+        "value": "2.00272236386053329050782023799163176253410508509069637359648",
+        "value_at_q_proton": 2.002722363860533,
+        "err_vs_required_factor_pct": 89.63775888277566,
+        "predicted_B_diff_MeV": 1.4483688135439376,
+        "err_vs_target_pct": 89.63775888277566
       }
     ],
     "best_bar_symmetric": {
       "name": "C2: (2 + [2]_q)/4 [bar-symmetric avg]",
-      "value": "1.00272421727976894020441595112512067576269837897820688660655",
-      "value_at_q_proton": 1.002724217279769,
-      "err_vs_required_factor_pct": -5.052054756171458,
-      "predicted_B_diff_MeV": 0.7251701539367289,
-      "err_vs_target_pct": -5.052054756171458
+      "value": "1.00272421667678057493812299452296570397231018712103322919098",
+      "value_at_q_proton": 1.0027242166767805,
+      "err_vs_required_factor_pct": -5.05205481326842,
+      "predicted_B_diff_MeV": 0.7251701535006477,
+      "err_vs_target_pct": -5.05205481326842
     },
     "verdict": "BAR-SYMMETRIC REPLACEMENT FAILS — best candidate is C2: (2 + [2]_q)/4 [bar-symmetric avg] at err -5.05% vs v9 original at -0.1031%. The (1+q)/2 v9 form is INHERENTLY bar-asymmetric near-match — NOT a structural derivation. The 0.11% closure was anchor-coincidental, violating the bar-discipline of prop:li2q-phiq-bar-symmetrization."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

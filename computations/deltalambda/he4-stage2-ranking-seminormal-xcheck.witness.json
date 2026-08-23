@@ -1,136 +1,129 @@
 {
-  "computation": "he4-stage2-ranking-seminormal-xcheck",
-  "description": "Fast seminormal-f64 dominant-channel ranking for the A=4 stage-2 binding operator K(⁴He) = T·cp⁻¹ at H12(q0); companion cross-check to the full he4_binding_k_stage2_probe (both Wedderburn legs). Confirms whether the committed GP-legged λ*(K)=(9,3) survives the seminormal engine (GP kernel bug: docs/audits/2026-07-14-gp-kernel-bug-and-he4-stage2.md).",
-  "audit_only": true,
-  "computedAt": "2026-07-18T19:19:18.613970+00:00",
-  "engine": "pyhecke_native seminormal-f64 (chi_lambda_all_partitions_f64); GP path NOT used. tr_M(K) is f64-precision; 50-dps authoritative value from he4-binding-k-stage2.witness.json.",
-  "q_pin": {
-    "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
-    "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
-  },
-  "dominant_lambda": [
+ "computation": "he4-stage2-ranking-seminormal-xcheck",
+ "description": "Fast seminormal-f64 dominant-channel ranking for the A=4 stage-2 binding operator K(\u2074He) = T\u00b7cp\u207b\u00b9 at H12(q0); companion cross-check to the full he4_binding_k_stage2_probe (both Wedderburn legs). Confirms whether the committed GP-legged \u03bb*(K)=(9,3) survives the seminormal engine (GP kernel bug: docs/audits/2026-07-14-gp-kernel-bug-and-he4-stage2.md).",
+ "audit_only": true,
+ "computedAt": "2026-08-23T19:57:29.253081+00:00",
+ "engine": "pyhecke_native seminormal-f64 (chi_lambda_all_partitions_f64); GP path NOT used. tr_M(K) is f64-precision; 50-dps authoritative value from he4-binding-k-stage2.witness.json.",
+ "q_pin": {
+  "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
+  "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+ },
+ "dominant_lambda": [
+  9,
+  3
+ ],
+ "runner_up_lambda": [
+  8,
+  4
+ ],
+ "dominant_margin_rel": 0.07000559596216305,
+ "tr_M_K_f64": "0.1256841530472061",
+ "per_lambda_top10": [
+  {
+   "lambda": [
     9,
     3
-  ],
-  "runner_up_lambda": [
+   ],
+   "chi_K": 19.247879117243897,
+   "y_lambda": 0.001744141684449673,
+   "y_chi_abs": 0.03357102830563346
+  },
+  {
+   "lambda": [
     8,
     4
-  ],
-  "dominant_margin_rel": 0.0027607849428450933,
-  "tr_M_K_f64": "0.05722843694565425",
-  "per_lambda_top10": [
-    {
-      "lambda": [
-        9,
-        3
-      ],
-      "chi_K": 19.247879117243897,
-      "y_lambda": 0.0005870537935871059,
-      "y_chi_abs": 0.011299540454284067
-    },
-    {
-      "lambda": [
-        8,
-        4
-      ],
-      "chi_K": 26.14660680115613,
-      "y_lambda": 0.0004309677710317102,
-      "y_chi_abs": 0.01126834485313681
-    },
-    {
-      "lambda": [
-        10,
-        2
-      ],
-      "chi_K": 10.701280359903073,
-      "y_lambda": 0.0007121291176787482,
-      "y_chi_abs": 0.0076206933407306915
-    },
-    {
-      "lambda": [
-        7,
-        5
-      ],
-      "chi_K": 22.161487724431193,
-      "y_lambda": 0.0002617832038120468,
-      "y_chi_abs": 0.005801505257742944
-    },
-    {
-      "lambda": [
-        7,
-        4,
-        1
-      ],
-      "chi_K": 29.046501325543694,
-      "y_lambda": 0.00012698792640443934,
-      "y_chi_abs": 0.0036885549726345924
-    },
-    {
-      "lambda": [
-        8,
-        3,
-        1
-      ],
-      "chi_K": 20.902929428480554,
-      "y_lambda": 0.0001755928943500934,
-      "y_chi_abs": 0.0036704058787426445
-    },
-    {
-      "lambda": [
-        11,
-        1
-      ],
-      "chi_K": 4.594652575679922,
-      "y_lambda": 0.0007670122284205061,
-      "y_chi_abs": 0.0035241547108902753
-    },
-    {
-      "lambda": [
-        7,
-        3,
-        2
-      ],
-      "chi_K": 31.689403244787844,
-      "y_lambda": 5.8742374867424734e-05,
-      "y_chi_abs": 0.0018615108047303132
-    },
-    {
-      "lambda": [
-        9,
-        2,
-        1
-      ],
-      "chi_K": 7.803199382381172,
-      "y_lambda": 0.00019785600928200948,
-      "y_chi_abs": 0.00154390988942978
-    },
-    {
-      "lambda": [
-        6,
-        4,
-        2
-      ],
-      "chi_K": 32.26519969496848,
-      "y_lambda": 4.20307505692032e-05,
-      "y_chi_abs": 0.0013561305604447515
-    }
-  ],
-  "elapsed_sec": 50.8,
-  "scope": "(a) — ranking cross-check only; no PSD certificate (see the full probe); no AME input; no fit; nothing wired.",
-  "assertions": [
-    {
-      "label": "dominant channel survives GP→seminormal (== committed (9,3))",
-      "passed": true
-    },
-    {
-      "label": "all 77 blocks ranked",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
-  "scriptHash": "476f056b7b46",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0,
-  "scriptFile": "he4_stage2_ranking_seminormal_xcheck.py"
+   ],
+   "chi_K": 26.14660680115613,
+   "y_lambda": 0.0011940696052634427,
+   "y_chi_abs": 0.031220868462034944
+  },
+  {
+   "lambda": [
+    10,
+    2
+   ],
+   "chi_K": 10.701280359903073,
+   "y_lambda": 0.0023704436007255607,
+   "y_chi_abs": 0.025366781548702363
+  },
+  {
+   "lambda": [
+    7,
+    5
+   ],
+   "chi_K": 22.161487724431193,
+   "y_lambda": 0.0006961857928301307,
+   "y_chi_abs": 0.01542851290172834
+  },
+  {
+   "lambda": [
+    11,
+    1
+   ],
+   "chi_K": 4.594652575679922,
+   "y_lambda": 0.0031003486423235443,
+   "y_chi_abs": 0.014245024874957622
+  },
+  {
+   "lambda": [
+    12
+   ],
+   "chi_K": 1.00552033621878,
+   "y_lambda": 0.003965758198281,
+   "y_chi_abs": 0.003987650516897893
+  },
+  {
+   "lambda": [
+    6,
+    6
+   ],
+   "chi_K": 8.150611920077061,
+   "y_lambda": 0.00022872962858889797,
+   "y_chi_abs": 0.0018642864372514706
+  },
+  {
+   "lambda": [
+    10,
+    1,
+    1
+   ],
+   "chi_K": 3.98879581318425,
+   "y_lambda": 0.0,
+   "y_chi_abs": 0.0
+  },
+  {
+   "lambda": [
+    9,
+    2,
+    1
+   ],
+   "chi_K": 7.803199382381172,
+   "y_lambda": 0.0,
+   "y_chi_abs": 0.0
+  },
+  {
+   "lambda": [
+    9,
+    1,
+    1,
+    1
+   ],
+   "chi_K": -13.840062405650203,
+   "y_lambda": 0.0,
+   "y_chi_abs": 0.0
+  }
+ ],
+ "elapsed_sec": 32.0,
+ "scope": "(a) \u2014 ranking cross-check only; no PSD certificate (see the full probe); no AME input; no fit; nothing wired.",
+ "assertions": [
+  {
+   "label": "dominant channel survives GP\u2192seminormal (== committed (9,3))",
+   "passed": true
+  },
+  {
+   "label": "all 77 blocks ranked",
+   "passed": true
+  }
+ ],
+ "allPassed": true
 }
