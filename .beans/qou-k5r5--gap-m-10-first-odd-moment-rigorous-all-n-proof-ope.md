@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-23T08:18:06Z
+updated_at: 2026-08-23T08:31:54Z
 ---
 
 
@@ -281,3 +281,5 @@ FRONTIER: prove kappa_n>=kappa asymptotically - 2nd-order Plancherel fluctuation
 UNDETERMINED order (bulk and edge both plausible). Open.
 
 2026-08-23 (PR #5518, branch claude/m1-lean-base-k8): Lean finite base of M_1>0 extended k<=7 -> k<=8 (m1_pos_of_le_seven -> m1_pos_of_le_eight; interval_cases k <;> decide; whole-file lean-direct EXIT=0). Also fixed a stale over-claim: the merged #5506 docstring still called the kappa_n->kappa sign 'bulk second-order (edge subleading n^-2/3)'; walked back to 'order UNDETERMINED, edge vs bulk unranked' to match the corrected audit. Asymptotic sign kappa_n>=kappa (n>=13) stays OPEN. scope-(a); no fit; L2 unchanged.
+
+2026-08-23 FRONTIER SHARPENED (PR #5518): the Sniady genus expansion IS applicable to M_1's kappa_n-kappa sign, correcting a scope trap. It was eliminated (route #11, 2026-07-25 A5) only for the DIM-TILT kernel Cov(dim,omega3) because dim notin A. But M_1=Cov(Sigma_h,omega3) has BOTH legs polynomial-on-Young-diagrams (omega3=R4+R2; Sigma_h=1/2(p2+p2')), so the dim-obstruction is absent. Concrete route (NOT executed, no order/sign claimed): genus-0 = IO CLT = kappa*n^5/2 (derived); genus-1 via Sniady math/0411647 sec 4.4 explicit 2nd-order R_k expansion -> order+sign. Blocker: sec 4.4 OCR garbled; needs clean PDF statement composed with the R_k forms of Sigma_h, omega3. Next honest step for the frontier.
