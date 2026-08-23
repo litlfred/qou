@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T18:17:08Z
-updated_at: 2026-08-23T18:18:41Z
+updated_at: 2026-08-23T19:34:55Z
 ---
 
 ## Evidence
@@ -59,3 +59,59 @@ correct weights by a p(n) x p(n) linear solve -- the closed form can replace tha
 outright (cross-checked at n = 2..5 in
 `computations/schurweyl/ocneanu_weight_convention_d_support.py`), so the two paths should
 converge on one implementation rather than three.
+
+
+## CORRECTION to this bean's own title and severity claim (2026-08-23)
+
+I wrote *"wrong and **LIVE** at mass_at_3A_proper.py:592"*, in this bean's title, in a
+commit message and in PR #5575's body. **The mechanism was wrong.** Line 592 is not a call
+site — it is the body of an `elif weight_scheme == "jones_wenzl":` branch. Both entry points
+(`per_generator_V_hat_3A` line 543, `binding_3A_tower` line 739) default to
+`weight_scheme="normalized_plancherel"`, and **every caller in the repo passes
+`normalized_plancherel` or `plancherel` explicitly** — `pyhecke/atom.py:556`,
+`binding_via_interface_knot.py:213,216`, `delta_lambda_v_hat_z_transfer_phase5d_4.py:109,111`.
+Not one selects `jones_wenzl`. So it was a wrong formula on an unselected path, not a wrong
+number in live output. The title overstates it and I am leaving it in place with this
+correction rather than rewriting history.
+
+## The actual consequence is worse, and it is in a sibling bean
+
+`qou-2tuv` **did** exercise it, and built its headline recommendation on it:
+
+> `jones_wenzl` — the Ocneanu weights built on z = q^3/(q^2+1), i.e. **convention D** — is
+> the only scheme that leaves the tower's own precondition intact.
+> **So the default weight scheme is inconsistent with the owner's trace-convention ruling.**
+
+resting on a measured table where `jones_wenzl` gives `max|V_hat| = 0.06979` against ~1.08 for
+every other scheme, and the best deuteron result on record (+37.7% vs production's +97.9%).
+
+Measured in exact rational arithmetic at the live q0 and convention-D z, the old formula's
+**total weight is not 1 and is sometimes negative**:
+
+| n | old `jones_wenzl`  sum d_lam w_lam | derived Ocneanu |
+|---|---|---|
+| 3 | **-1.2053** | 1 |
+| 6 (the deuteron, 3A with A=2) | **0.3772** | 1 |
+| 9 | **-0.0549** | 1 |
+
+A negative total weight means the functional was not a positive trace at all. `V_hat` is linear
+in the weights, so `max|V_hat| = 0.0698` is **not comparable** to the other schemes' ~1.08 — it
+is an unnormalised functional being compared against normalised ones. The "only scheme that
+leaves the precondition intact" reads as a normalisation artifact.
+
+**What I have NOT shown:** that the corrected weights give `max|V_hat| > 1`, or that the +37.7%
+deuteron result disappears. Those need re-measuring, and they are `qou-2tuv`'s to re-run. What is
+established is that the numbers the conclusion rests on came from a formula that is not the
+Ocneanu weight and does not define a normalised trace.
+
+## Fixed
+
+`computations/mass_at_3A_proper.py::jones_wenzl_weight` now carries the derived, Lean-checked
+formula in `mpmath.mpf` end to end, returning `mpf`. Verified `sum_lam d_lam w_lam = 1` exactly at
+n = 2..6 and 9. The vendor mirror was regenerated with `scripts/sync-qou-mass-vendor.py --apply`
+(never hand-edited). Safe to land precisely *because* nothing selects the branch.
+
+Also fixed in the same file: the comment above `Z_MARKOV` claimed *"Matches
+mass_endomorphism.z_mark = 1/(q^1/2 + q^-1/2)"* — convention **C** — while the line below it
+computes `Q0**3/(Q0**2+1)`, convention **D**. Second instance of the `qou-pc7l` class in as many
+files.

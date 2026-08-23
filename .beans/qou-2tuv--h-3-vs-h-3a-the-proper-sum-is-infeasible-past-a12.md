@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T13:44:56Z
+updated_at: 2026-08-23T19:34:55Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -455,3 +455,39 @@ The resolution is one rule per axis, and two of the three are already decided:
      added that caveat.
 
 Axis 2 is the one blocking, and it is one decision.
+
+
+## ⚠ The `jones_wenzl` rows in the deuteron table came from a WRONG formula (2026-08-23, PR #5575)
+
+Flagging rather than editing your conclusions — the re-measurement is yours.
+
+`computations/mass_at_3A_proper.py::jones_wenzl_weight`, the source of every `jones_wenzl` row
+above, **was not the Ocneanu weight**. It never reproduces the Lean-proved n=3 weights
+`markovWeight0/1/2` under any of 160 convention combinations, and it does not define a normalised
+trace. Measured exactly at the live q0 and convention-D z:
+
+| n | old formula, sum d_lam w_lam | correct Ocneanu |
+|---|---|---|
+| 3 | **-1.2053** | 1 |
+| 6 (deuteron = 3A, A=2) | **0.3772** | 1 |
+| 9 | **-0.0549** | 1 |
+
+Negative at two of three — the functional was not even a positive trace.
+
+**The specific claim at risk** is the one this bean calls "the big one":
+
+> `jones_wenzl` ... is the only scheme that leaves the tower's own precondition intact
+> [max|V_hat| = 0.06979 vs ~1.08] ... So the default weight scheme is inconsistent with the
+> owner's trace-convention ruling.
+
+`V_hat` is linear in the weights, so a functional whose weights carry total mass 0.377 (n=6) is
+not comparable to schemes whose weights sum to 1. The 15x gap in `max|V_hat|` is consistent with a
+normalisation artifact.
+
+**I have NOT shown your +37.7% disappears**, nor that the corrected weights push `max|V_hat|` back
+over 1. Both need a re-run. The corrected formula is now in place (derived in exact Q(q,z), Lean-
+proved against the n=3 weights, `mpmath` end to end), so re-running the table should be a
+straight repeat.
+
+Derivation + validation: `computations/schurweyl/ocneanu_weight_general_n.py`. Lean:
+`QOU/SchurWeyl/OcneanuWeightMarkov3.lean`. Bean `qou-bsec`.
