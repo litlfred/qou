@@ -50,6 +50,7 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+from qou_substrate.precision import fmt  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness  # noqa: E402
@@ -190,13 +191,18 @@ def main() -> int:
             "rel_diff": str(rel),
             "agree": bool(rel <= AGREEMENT_RTOL),
         })
-        # Use floats only for the assertion's tolerance check (the
-        # full-precision values stay in `data.checks` above).
+        # STRINGS, not float(): `add_assertion` documents this as the drained
+        # convention (qou-t0rf) -- it keeps the value out of float64, and
+        # `passed` coerces with float() either way, so the check is unchanged.
+        # The float() casts put 3 raw float64 fields into the witness per
+        # assertion; fixing the u/check_q binding added a third atom and took
+        # that 6 -> 9, tripping the raw-float64 ratchet. Fixed at the producer,
+        # per the gate -- never by baselining.
         w.add_assertion(
             f"tr_M_q0_atomic_vs_interpolate[{atom}]",
-            computed=float(atomic_tr),
-            expected=float(interp_tr),
-            tolerance=float(AGREEMENT_RTOL * max(mp.fabs(atomic_tr), mp.fabs(interp_tr))),
+            computed=fmt(atomic_tr),
+            expected=fmt(interp_tr),
+            tolerance=fmt(AGREEMENT_RTOL * max(mp.fabs(atomic_tr), mp.fabs(interp_tr))),
         )
 
     w.add_data("checks", checks)
