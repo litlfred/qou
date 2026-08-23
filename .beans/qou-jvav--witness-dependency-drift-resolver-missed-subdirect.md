@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T17:11:30Z
-updated_at: 2026-08-23T17:21:17Z
+updated_at: 2026-08-23T17:55:25Z
 ---
 
 `staleness-gates.sh` is red on `scriptHash + upstream drift`. Two findings, one
@@ -98,3 +98,40 @@ PASS -> FAIL, 0 witnesses collapsed** across all 120.
 Self-staleness is unchanged at 580 — a separate axis, and the qou-zymu backlog.
 The vendor mirror went red on the regeneration (qou-mass ships 122 package-data
 witnesses, these among them) and was re-synced.
+
+
+
+---
+
+## Drift 92 -> 69: the q-pin consumers
+
+Regenerated 21 of the 23 witnesses recording a superseded hash for
+`q-pinning-50-digit.witness.json` (20 ok, 1 timeout at the 600s cap,
+0 errors). Verified: **0 assertions flipped, 0 witnesses collapsed.**
+
+    drift records   688 -> 330 (resolver) -> 92 (isotopes) -> 69 (q-pin)
+
+This is the first regeneration run **after the pyhecke_native rebuild**, so
+native-backed producers computed against code matching the source rather than the
+two-week-stale wheel.
+
+### Producer lookup by stem is unreliable
+
+Matching witness name to producer by stem found only **8 of 23**. Grepping the
+tree for the witness FILENAME found 14 more. Worth knowing for any future drain:
+the naming convention between a witness and its producer is not dependable, so
+stem-matching silently under-covers.
+
+### One witness has no producer at all
+
+`inter-knot-decoupling.witness.json` is referenced by nothing in the tree — no
+`.py` file writes it or names it. It is in the corpus, it is recorded as an
+upstream by a consumer, and **it cannot be regenerated**, so its drift is
+permanent until someone identifies or rewrites the producer. That is a different
+category from 'stale', and no gate distinguishes them.
+
+### What is left
+
+69 records across a long tail — 7 on `habiro-coefficients-atomic`, 6 on
+`q-beta-operator-valued-N3`, then 3s and 2s. No single dominant cause remains,
+so the rest is per-upstream work rather than one sweep.
