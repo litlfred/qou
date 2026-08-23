@@ -1,10 +1,11 @@
 ---
 # qou-pag7
 title: sublemma_2_1_h12_he4_phase25 builds and lambdifies all 77 H12 reps to read 77 integers — 67 h of work for a hook-length formula
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-23T16:11:29Z
-updated_at: 2026-08-23T16:11:29Z
+updated_at: 2026-08-23T17:10:47Z
 ---
 
 This is why the H12 ⁴He producer is listed "Not run" in PR #5517, and it is
@@ -86,3 +87,16 @@ before any rep is built, and only the selected shapes cost anything.
 
 Only after that is it worth asking whether the producer's real work is
 feasible — this loop is pure overhead and hides the answer.
+
+
+
+## Fixed
+
+Swapped to `pyhecke.wedderburn.partition_dimension` after verifying it equals
+the discarded `d` on all 66 partitions of n <= 8 and six H_12 shapes (zero
+mismatches). The producer now runs end to end in **2 s**.
+
+What that revealed is filed separately as `qou-ag9p`: with the loop out of the
+way, the producer verifies **0 of 0** and writes a passing witness, because its
+Path A cache key has never existed in the file it reads. Fixing the cost did not
+make it verify anything, and the two should not be conflated.
