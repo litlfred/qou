@@ -13270,6 +13270,56 @@ open CornerGeneral
 
 variable {n : ℕ}
 
+/-! ### The block
+
+`hecke_agtb_lineage_schedule.py` measures both lineages as a sequence of
+**blocks**, each one Bokut–Shiao step followed by a run of far-commutations —
+and 69/77 of those runs move a *single* letter past contiguously-descending
+obstacles, so each run is one `farComm_transport_left_sources` call. A block
+therefore costs **two** lemma applications no matter how long its run is, which
+is why the chain is `b² + 3b + 5` steps but only `O(b)` lemma calls.
+
+The eight exceptions are exactly the `a = b + 1` cases, where the last block
+interleaves two moved letters. That is where this general form stops and a
+special case begins — the same shape as `CornerLe`'s `a = 3` and `a = 2`. -/
+
+/-- **One block.** `bsStep` at `(x, x+1, j₁)`, then the `σₓ` it emits transports
+left past `w`.
+
+The two compose with nothing between them because `bsWord₂ x x' j₁` *opens*
+with `σₓ`: the Bokut–Shiao step's output is the transport's input on the nose,
+with the run `w` sitting in the step's own left context. -/
+theorem gtBlock (hn : 0 < n) (hp : HeckeParams) {j₁ x x' : Fin n}
+    (hx : x.val + 1 = x'.val) (hj : j₁.val ≤ x.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A w B : Monomial (HeckeGen n))
+    (hw : ∀ y ∈ w, x.val + 1 < y.index.val)
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ (A ++ w) ++ bsWord₁ x' j₁ ++ B)
+    (hcol : ∀ u v : Monomial (HeckeGen n), u ++ v = w → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (u ++ ((⟨x⟩ : HeckeGen n) ::
+          (v ++ ((⟨x'⟩ : HeckeGen n) :: (descWord x j₁ ++ B)))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        ((A ++ w) ++ bsWord₁ x' j₁ ++ B, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ((⟨x⟩ : HeckeGen n) ::
+          (w ++ ((⟨x'⟩ : HeckeGen n) :: (descWord x j₁ ++ B)))), c) :: L₂)) := by
+  have hbs := bsStep (i' := x) (i := x') (j := j₁) hn hp hx hj L₁ L₂
+    (A ++ w) B
+    ((A ++ w) ++ bsWord₁ x' j₁ ++ B)
+    -- the target is written in the transport's SOURCE shape, so the two
+    -- compose with no rewriting between them
+    (A ++ (w ++ ((⟨x⟩ : HeckeGen n) ::
+      ((⟨x'⟩ : HeckeGen n) :: (descWord x j₁ ++ B)))))
+    c hc rfl
+    (by rw [bsWord₂]; simp only [List.append_assoc, List.cons_append])
+    hne
+  have htr := farComm_transport_left_sources hn hp x c hc L₁ L₂
+    w A ((⟨x'⟩ : HeckeGen n) :: (descWord x j₁ ++ B)) hw hcol
+  exact (MultiStepReduction.refl _).step hbs |>.trans htr
+
 /-! ### `b = 1`: the base case, uniform in `a`
 
 `b = 1` means `j₂ = i₁`, which collapses `descWord i₁ j₂` to the single letter
@@ -13501,56 +13551,34 @@ theorem sPolyChain_gt₁ (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ 
       intro hcon
       exact hne21 (List.cons.inj hcon).1.symm)
   simp only [List.append_nil] at vall
-  have u1 := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
-    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
-    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩]) ([(⟨i⟩ : HeckeGen n)])
-    ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]))
-    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n)])
-    (-1) (by norm_num)
-    (by first
-      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
-          List.cons_append, List.nil_append, List.append_assoc,
-          List.append_nil]
-      | rfl)
-    (by first
-      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
-          List.cons_append, List.nil_append, List.append_assoc,
-          List.append_nil]
-      | rfl)
+  -- the second lineage's first block: `bsStep` at (i₂, i₁, j₁), then the σᵢ₋₂
+  -- it emits transports left past the one-letter run [σᵢ].  `gtBlock`'s real
+  -- call site; at b = 1 the run is a single letter, and for b ≥ 2 the later
+  -- blocks are the same lemma with longer runs.
+  have ublk := gtBlock hn hp h₂ hj₁ (-1) (by norm_num)
+    [(WGt₁ i i₁ i₂ j₁, (1 : ℝ))] []
+    [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    (fun y hy => by
+      simp only [List.mem_singleton] at hy
+      subst hy
+      show i₂.val + 1 < i.val
+      omega)
     (fun q hq => by
-      simp only [List.nil_append, List.append_nil, List.map_cons,
-        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      simp only [List.append_nil, List.map_cons, List.map_nil,
+        List.mem_cons, List.not_mem_nil, or_false] at hq
       subst hq
-      try simp only [hd, List.cons_append, List.nil_append,
-        List.append_assoc]
+      rw [WGt₁]
+      simp only [List.cons_append, List.nil_append]
       intro hcon
       exact hne21 (List.cons.inj hcon).1)
-  have u2 := monicStep hn hp (farCommRelation i i₂)
-    (farCommRelation_mem hn hp (by omega))
-    (BokutShiaoBraid.far_hrel i₂ i)
-    (farCommRelation_lm i i₂ (by omega))
-    (by simp [hne2i])
-    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
-    ([(⟨i₁⟩ : HeckeGen n)]) ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ [(⟨i⟩ : HeckeGen n)]))
-    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n)])
-    ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))) ++ [(⟨i⟩ : HeckeGen n)])
-    (-1) (by norm_num)
-    (by first
-      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
-          List.cons_append, List.nil_append, List.append_assoc,
-          List.append_nil]
-      | rfl)
-    (by first
-      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
-          List.cons_append, List.nil_append, List.append_assoc,
-          List.append_nil]
-      | rfl)
-    (fun q hq => by
-      simp only [List.nil_append, List.append_nil, List.map_cons,
-        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+    -- `A = [σᵢ₋₁]` is non-empty, so the transported word opens `σᵢ₋₁` for
+    -- EVERY split of the run -- no case analysis on `u`, `v` is needed
+    (fun _ _ _ _ q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil,
+        List.mem_cons, List.not_mem_nil, or_false] at hq
       subst hq
-      try simp only [hd, List.cons_append, List.nil_append,
-        List.append_assoc]
+      rw [WGt₁]
+      simp only [List.cons_append, List.nil_append]
       intro hcon
       exact hne21 (List.cons.inj hcon).1)
   have u3 := bsStep (i' := i₁) (i := i) (j := j₁) hn hp h₁ (by omega)
@@ -13603,9 +13631,9 @@ theorem sPolyChain_gt₁ (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ 
       exact hne21 (List.cons.inj hcon).1)
   rw [T0, V0_eq_gt₁ h₁ hj₂i₁, U0_eq_gt₁ hj₂i₁, WGt₁]
   rw [U0_eq_gt₁ hj₂i₁] at vall
-  simp only [hd, List.cons_append, List.nil_append, List.append_assoc]
-    at vall u1 u2 u3 u4 ⊢
-  exact ((((vall.step u1).step u2).step u3).step u4)
+  simp only [hd, hd1, bsWord₁, WGt₁, List.cons_append, List.nil_append,
+    List.append_assoc] at vall ublk u3 u4 ⊢
+  exact ((vall.trans ublk).step u3).step u4
 
 /-- **The `a > b` S-polynomial resolves to zero at `b = 1`.** The two entries
 `sPolyChain_gt₁` lands on are the same word with opposite signs, so they
