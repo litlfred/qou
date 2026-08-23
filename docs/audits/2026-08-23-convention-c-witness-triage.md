@@ -1,104 +1,111 @@
-# The 58 convention-C witnesses, triaged — 1 source migration, not 58
+# Convention-C witness triage (2026-08-23)
 
-**Date:** 2026-08-23
-**Beans:** `qou-9bfp` (this triage), `qou-xram` (the `hadron_knot_table` crash)
-**Script:** [`computations/audits/convention_c_witness_triage.py`](../../computations/audits/convention_c_witness_triage.py)
-**Follows:** [PR #5510](https://github.com/litlfred/qou/pull/5510) §3, which measured the 58 and explicitly declined to treat the number as a work order
+Answers *"any other uses of C convention that need to migrate to D?"*.
+Bean `qou-z11r`; PR #5510.
 
-## Result
+**The source migration is essentially done; the committed outputs are not.**
 
-```
-convention-C witnesses found : 58        (independently reproduces #5510's count)
+| | count |
+|---|---|
+| `scripts/convention-c-producer-audit.py` actionable **source** sites | 1 |
+| witnesses carrying `z_C = 0.4993203340...` | 58 |
+| witnesses carrying `z_D = 0.6126880505...` | 4 |
 
-live-C-producer               1     needs a real source migration
-stale-output                 25     mechanical: re-run the producer
-deliberate-comparison         0     among these 58 — but the class is real, see below
-unresolved                   32     needs an agent to look
-```
+Measured by the method AGENTS.md prescribes for this class — **test the answer,
+not the source**. Thirteen source spellings are detector-blind
+([detector-blindness taxonomy](2026-08-15-detector-blindness-taxonomy.md)); the
+C *value* cannot hide in a committed witness.
 
-#5510 was right that 58 is not a work order. **The actionable source surface is one file.**
+## Classification
 
-## The one live convention-C producer
+| class | n | meaning |
+|---|---|---|
+| `z-parameter-echo` | 40 | C appears **only** in `z`/`markov`-named fields — the witness recording which `z` it used |
+| `payload-or-mixed` | 16 | C appears in a **computed** field (Gram entries, `tr_M`, traces) — convention C is baked into a mathematical result |
+| `LIVE-C-PRODUCER` | 2 | the producer **computes** `√q/(q+1)` in current source |
 
-[`computations/mass-from-q-symbolic.py`](../../computations/mass-from-q-symbolic.py) — two sites, lines 314 and 424:
+Per-witness rows, with the exact JSON paths carrying the C value, are in the
+[JSON twin](2026-08-23-convention-c-witness-triage.json).
 
-```python
-1.0 / (Q0**0.5 + Q_INV0**0.5)      # = 1/(√q + 1/√q) = z_C
-```
+## The two live-C producers
 
-This is a **double** defect, and the second half is the more serious one:
+- `hecke-channel-binding.witness.json`  ←  `computations/probes/hecke_channel_binding_probe.py`
+- `signed-crossing-feasibility.witness.json`  ←  `computations/probes/signed_crossing_feasibility_probe.py`
 
-1. **Convention C**, live, on a path that writes a witness parameter (`w.add_parameter("z_markov", …)` at 424).
-2. **float64.** `1.0 / (Q0**0.5 + Q_INV0**0.5)` is float arithmetic end to end — `**0.5`, not `mp.sqrt`, and a `1.0` literal numerator. Per the 2026-08-18 STRICT directive this is a defect on its own, independent of the convention, and it is being *serialised into a witness*.
+Both hardcode a **muon** `Q0` literal as well, and
+`signed_crossing_feasibility_probe` additionally types `delta = 0.00137705`
+instead of deriving it. So they are off-canon on three axes at once:
+convention C, the muon pin, and a typed colour split.
 
-Fixing the convention without fixing the arithmetic would leave the second defect in place at the same line.
+### A durable refutation rests on this
 
-This count of **1 actionable source site** independently corroborates #5510's `convention-c-producer-audit.py` run, which reported the same number by a different method.
+`signed_crossing_feasibility_probe` emits
+`"verdict": "signed-ILP-pure-chirality-refuted"`. That refutation was computed
+with convention-C `z` at a muon-pinned `Q0`, and **has not been re-derived
+under D**. Treat it as **C-conditional**, exactly as AGENTS.md requires of the
+Q_β `c_k` ladder. It is not re-derived here, because
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` establishes that substituting
+`z_D` into a C-frame result is not a valid move — a re-derivation is required,
+not a swap. That is research, not cleanup.
 
-## The claim that the anchor witness contaminates its readers — no instance found
+## The 16 payload cases
 
-The in-flight framing when this was handed over was:
+These are the ones that carry mathematical weight — a Gram-matrix entry equal
+to `z_C` means the Gram matrix was built in convention C:
 
-> `computations/q-pinning-50-digit.witness.json` — the canonical q₀ pinning
-> witness, the declared source of truth — itself carries
-> `derived_50_digit.z_markov = 0.49932…`, i.e. convention C. **Anything reading
-> that field inherits C regardless of its own source.**
+- `producer-importability-audit.witness.json` — 1 field(s), e.g. `.description`
+- `borromean-axial-coupling.witness.json` — 4 field(s), e.g. `.data.gram_matrix[0][1]`
+- `chirality-topology-binding.witness.json` — 1 field(s), e.g. `.channel_values_at_q0.pp.std`
+- `closed-form-tau-M-verification-phase5q.witness.json` — 1 field(s), e.g. `.data.per_atom_results[0].interface_ratio`
+- `confinement-operator-selection.witness.json` — 5 field(s), e.g. `.parameters.z`
+- `electron-m_e-derivation.witness.json` — 1 field(s), e.g. `.data.electron.t1_descended.value_50dps`
+- `qbeta-h4-stagec-markov-infra.witness.json` — 1 field(s), e.g. `.data.trM_H4_generator`
+- `inter-knot-decoupling.witness.json` — 2 field(s), e.g. `.data.z_markov_norm`
+- `lepton-tower-probe-1-cinquefoil-muon.witness.json` — 5 field(s), e.g. `.constants.z_markov`
+- `probe-9b-alphak-structure.witness.json` — 2 field(s), e.g. `.data.part_2a_numeric.trM_by_word.T1`
+- `casimir-phi-q-markov-probe.witness.json` — 2 field(s), e.g. `.data.markov_parameters.z_M_v1`
+- `frobenius-gram-matrix-probe.witness.json` — 5 field(s), e.g. `.parameters.z_at_q0`
+- `q-hecke-seminormal-character-closure-probe.witness.json` — 2 field(s), e.g. `.data.per_test_results[1].lhs_partition_sum`
+- `qbeta-klr-composite4-preflight-run.witness.json` — 2 field(s), e.g. `.data.anchors[0].tr_M_p2_JW_sym`
+- `qbeta-symbolic-sdp-strict-complementarity.witness.json` — 2 field(s), e.g. `.data.t_at_q0[1]`
+- `toffoli-lp-stability.witness.json` — 4 field(s), e.g. `.gram_matrix_at_q0[0][1]`
 
-The first half is **true and worth recording**: the anchor witness does carry a convention-C `z_markov`.
+One of these, `producer-importability-audit`, is a **false positive**: its only
+hit is in a `.description` string, not a value.
 
-The second half has **no instance in the corpus.** Measured:
+## Pin split
 
-- `grep '\["z_markov"\]' / '.get("z_markov"'` across all live `.py` → **zero reads.**
-- Every reader of that block takes the `q` subfield: `["derived_50_digit"]["q"]`.
-- The one reader that binds the whole dict, `q_parameter.py:111`, uses only `_d["q"]` and says so in a comment: *"Take ONLY q from the witness … NOT from the witness's q_inv/hbar_q strings."*
+The C witnesses are split across **both** q₀ pins, so migrating convention is
+not separable from the pin question:
 
-So the field is **inert** — a stale convention-C value recorded in the anchor witness and read by nothing. That makes it a provenance defect (the anchor advertises a convention it does not supply), **not** a live contamination path, and **not** the root cause of the 58.
+- p50: 28
+- muon: 23
+- other: 3
+- other+p50: 2
+- muon+p50: 2
 
-This matters for sequencing: had the field been live, nothing downstream could be fixed before it, and the work order would invert. It is not, so the 58 decompose independently.
+(`p50` = the 50-digit value `...40335612`; `muon` = `...40335982`.)
 
-**Do not "fix" it by re-pinning the file.** AGENTS.md rule 1 is explicit that `q-pinning-50-digit.witness.json` is anchor-*defining* — it is what `_q0_value_for_anchor("muon")` reads, and re-pinning redefines what "muon" means corpus-wide (262 `Q0_FLIP`s, measured). Removing or relabelling an unread field is a different and much smaller operation than re-pinning, but it still touches the anchor file, so it is flagged here rather than done.
+## What is NOT claimed
 
-## The 32 unresolved are one shape, not thirty-two problems
+- **This is not a work order.** Nothing here is mass-regenerated. Only one
+  witness in the corpus has been confirmed end-to-end as a stale output of an
+  already-migrated producer (`terms-2-3-atom-per-gen-mpfr-50dps`, refreshed in
+  PR #5510 and verified against unmodified `main`).
+- **15 of 58 have no locatable producer** by output-filename
+  reference, so they cannot be re-run to decide anything.
+- **Re-running is the wrong instrument here**, and two of my own sweeps proved
+  it. A file-level substring test cannot tell a flipped field from an untouched
+  one when a witness legitimately holds both values; and a producer that exits 0
+  in 0 s without rewriting its witness reads identically to one that re-emitted
+  C. The classification above is therefore **static** — it reads what the
+  witnesses and sources say, and does not infer from a re-run.
 
-Most carry the same signature: the producer is **byte-identical** to when it emitted the C value, yet contains no convention-C spelling. Both halves cannot be true of a self-contained producer, so the C came from **a dependency, not the file** — the import-cone drift class AGENTS.md documents (a producer's own source is stable while a module it calls changed).
+---
 
-That is a tractable next step, and it is one query rather than 32: resolve each producer's import cone to whichever module supplies its `z`. It is deliberately **not** done here — this triage scopes the work, and guessing the cone would re-commit the error the next section is about.
+**Counts re-verified after rebasing onto `main` (148 commits).** `C = 58` is
+unchanged; `D` moved `5 → 4` during that window, and the table above records
+the post-rebase figure. Re-measure before acting on either number — this is the
+same decay that makes a hand-kept count untrustworthy elsewhere in the corpus:
 
-## The class that is not in these 58, and must never be swept
-
-`deliberate-comparison` scores 0 here, which is a fact about *these witnesses*, not evidence the class is empty. The clearest member emits no witness at all:
-
-[`computations/schur_principal_mpmath.py::_wenzl_constants_convention_C_HISTORICAL`](../../computations/schur_principal_mpmath.py) is live convention-C code, retained on purpose, and its docstring states why:
-
-> **DEAD FOR PRODUCTION** — convention C, excised 2026-08-09. Retained because
-> the excision has to stay **measurable**. … Left unpreserved, that comparison
-> silently degrades to D-vs-D and reports C's `y_(1³)/y_(3)` as 0 with a
-> spurious *integral* `N* = 2` — the exact opposite of the finding it exists to
-> display.
-
-Any future sweep keyed on "find C spellings, replace with D" destroys this and reports success. The triage script therefore checks for quarantine markers before classifying a C spelling as live.
-
-## A detector error in this script, recorded rather than quietly fixed
-
-The first run of this triage reported **3** live-C producers. Two were false positives of my own making: the closed-spelling regex allowed any expression inside `sqrt(...)` and any polynomial in the denominator, so
-
-```python
-sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)      # NOT z_C
-```
-
-matched a pattern meant for `sqrt(q)/(q + 1)`. Two probes — `qbeta_direction_sanity_gate_probe.py` and `qbeta_symbolic_sdp_strict_complementarity.py` — were wrongly flagged as needing migration.
-
-The arguments are now pinned (`sqrt(q)` exactly, denominator exactly `(q + 1)`), and the comment at that regex records the failure so it is not re-loosened. Noting it because a convention detector that over-fires produces exactly the wrong outcome here: it sends an agent to "migrate" correct code, which is how a working file becomes a broken one.
-
-## What this is not
-
-- **Not a verdict per witness.** These are high-recall candidates in the repo's usual sense. Producer drift cannot see import-cone drift; a hash match cannot separate "still computes C" from "computes D now, witness predates a rename". The decisive test is re-running the producer — which is what this triage exists to *scope*, because re-running all 58 is precisely what #5510 measured as the wrong move.
-- **Not a sweep authorisation.** The 25 `stale-output` are mechanical *individually*; nothing here authorises a bulk regeneration, and `qou-1c4y`'s constraints still govern anything touching pins.
-- **Not a check of `hadron_knot_table`.** It crashed twice for #5510 (missing `scipy`, then `dtype=object` into `scipy.sparse`) and is tracked as `qou-xram`. Any "just re-run the producer" plan silently does not apply to producers blocked that way.
-
-## Reproduce
-
-```bash
-python3 -u computations/audits/convention_c_witness_triage.py
-python3 -u computations/audits/convention_c_witness_triage.py --json triage.json
-```
+    grep -rl "0\.4993203340" --include=*.witness.json computations/ qou-mass/ | grep -v _deprecated | wc -l

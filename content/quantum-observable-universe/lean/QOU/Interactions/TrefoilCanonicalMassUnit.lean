@@ -1,6 +1,7 @@
 import QOU.Archimedean.GroundRing
 import QOU.BraidKnot.MassFormulaCategorical
 import QOU.Interactions.TrefoilVanishing
+import QOU.KnotTheory
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -32,14 +33,42 @@ where `m_e_MeV_codata = 0.51099895069 MeV` is the CODATA value.
 The mass identification is a **primary conjecture** (no Lean proof from
 substrate primitives yet — the full derivation chain from the Hecke
 algebra to a specific MeV value awaits the Markov-trace port).  It is
-axiomatised as a content-bearing class `TrefoilElectronMassConj` with
-the content carried explicitly:
+axiomatised as a content-bearing class `TrefoilElectronMassConj`, whose
+single field states the identification for a **given** Hecke element,
+multiplicity and cat-unit scale — the three quantities are class
+*parameters*, not class fields, so no instance can be produced without
+exhibiting an element whose Markov trace actually normalises to one.
 
-  - `trefoil_is_n2_unit`: the trefoil is the n=2 Hecke sector element
-  - `trefoil_mass_eq_m_e`: m_topological(trefoil) = m_e_MeV_codata
-
-Downstream theorems conditioned on `[TrefoilElectronMassConj]` are
+Downstream theorems conditioned on `[TrefoilElectronMassConj …]` are
 fully Lean-proved once the class instance is fixed.
+
+**Restated 2026-08-23 (bean `qou-lo1t`) — the class was inhabited.** Its
+previous form carried the quantities as *fields* beside equations naming
+their values:
+
+    trefoil_strand_count : ℕ ; trefoil_strand_eq : trefoil_strand_count = 2
+    trefoil_crossing_count : ℕ ; trefoil_crossing_eq : … = 3
+    trefoil_topological_mass : ℝ ; trefoil_mass_eq_m_e : … = m_e_MeV_codata
+
+so `⟨2, 3, rfl, rfl, m_e_MeV_codata, rfl⟩` discharged it — verified to
+elaborate.  Every "conditional on `TrefoilElectronMassConj`" theorem in
+this file was therefore unconditional, and the "open physical
+identification `trefoil ↔ electron`" the docstring claimed to encode
+appeared nowhere in the type: `trefoil_strand_count` was a free `ℕ`
+merely *named* for the trefoil, with no braid word behind it.
+
+Two consequences, both applied below.  The strand and crossing counts
+are **not conjectural** — they are computed from the actual braid word
+`QOU.KnotTheory.trefoil` (`strands := 2`, three positive letters), so
+they are now unconditional `rfl` facts rather than assumed fields; this
+is how `QOU.KnotRegistry.trefoil_crossing_count` already states the
+crossing count.  The mass identification is the genuinely open part, and
+is now stated about given data.
+
+This is an improvement, not a closure: see the residual-weakness note on
+the class itself.  The class remains dischargeable by solving for
+`m_e_cat`, because the corpus does not define a cat-unit electron scale
+to pin it against.
 
 ## Already-proved algebraic facts (sorry-free, no class needed)
 
@@ -67,6 +96,7 @@ possible, with archimedean `ℝ` only for the MeV calibration constant.
 namespace QOU.Interactions.TrefoilCanonicalMassUnit
 
 open QOU.BraidKnot.MassFormulaCategorical
+open QOU.HeckeAlgebra
 
 /-! ## §1  Already-proved algebraic facts (no sorry, no class) -/
 
@@ -100,187 +130,154 @@ theorem trefoil_b3_nf_coeff_zero :
 
 /-- **Primary conjecture: the trefoil is the canonical mass unit for the electron.**
 
-    Class fields carry the **content** of the identification:
-    (i)  the trefoil represents the n=2 fundamental sector (the electron generator)
-    (ii) its topological mass equals the CODATA electron mass
+    Stated for **given** data — a Hecke element `T` of the `n = 2` sector, a
+    multiplicity `ρ`, and a cat-unit electron scale `m_e_cat` — all three of
+    which are *parameters*, so an instance must be supplied against a specific
+    element rather than manufactured alongside one.  The single field is the
+    CAL-1 identification: the trefoil's categorical mass in MeV is the CODATA
+    electron mass, i.e. the trefoil is the mass **unit**.
 
-    These fields are the conjectural premises; they encode the open physical
-    identification `trefoil ↔ electron` that is not yet derived from substrate
-    primitives.  A trivial instance (`⟨trivial, sorry⟩`) is FORBIDDEN per
-    AGENTS.md §3b-tax — the class must carry genuine content.
+    This is the open physical identification `trefoil ↔ electron`, not derived
+    from substrate primitives.  A trivial instance is FORBIDDEN per
+    AGENTS.md §3b-tax — and, since `m_e_MeV_codata > 0`, the field is
+    equivalent to `ρ · m_e_cat · |tr_M T| = 1`, a constraint relating the
+    three parameters (see `trefoil_cat_mass_normalised` below).
+
+    **Residual weakness, stated rather than papered over (bean `qou-lo1t`).**
+    Parameterising blocks the discharge the old form admitted — `⟨rfl⟩` no
+    longer typechecks, verified — but it does not close the class. Given any
+    `T` with `tr_M T ≠ 0` one may still take `ρ := 1` and
+    `m_e_cat := 1 / |tr_M T|` and prove the field; this was checked and
+    elaborates. What that costs an author is real (a specific element, and a
+    proof its Markov trace is nonzero) and it is now *visible* — the numbers
+    appear at the instance site — but it is a cheat that remains available.
+    Closing it needs `m_e_cat` fixed by a definition rather than left free;
+    the corpus has no cat-unit electron scale to point at, only the MeV one
+    (`m_e_MeV_codata`), so that is the actual gap.
 
     Status: PRIMARY CONJECTURE (open, no Lean proof from substrate).
     The class is left without an instance until a derivation is available.
     @conjecture: primary -/
 -- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
 --      binding-knots-visual-inventory.md §"Trefoil = electron"
-class TrefoilElectronMassConj where
-  /-- The trefoil braid word `σ₁³ ∈ B₂` has strand count 2 and crossing count 3.
-      These are structural integers identifying the trefoil T(2,3) as the
-      n=2 Hecke-sector canonical element (the electron generator).
-      Content: strand count = 2, crossing count = 3. -/
-  trefoil_strand_count : ℕ
-  trefoil_crossing_count : ℕ
-  trefoil_strand_eq : trefoil_strand_count = 2
-  trefoil_crossing_eq : trefoil_crossing_count = 3
+class TrefoilElectronMassConj
+    (T : HeckeElement 2) (rho : ℕ) (m_e_cat : ℝ) : Prop where
   /-- The topological mass of the trefoil equals the CODATA electron mass.
-      This is the CAL-1 calibration identification: m_e is DEFINED as the trefoil's
+      This is the CAL-1 calibration identification: m_e is the trefoil's
       topological mass in the QOU framework. -/
-  trefoil_topological_mass : ℝ
-  trefoil_mass_eq_m_e : trefoil_topological_mass = m_e_MeV_codata
+  trefoil_mass_eq_m_e : categoricalMassMeV rho m_e_cat T = m_e_MeV_codata
 
-/-! ## §3  Downstream theorem (§3b-cond: conditional on the primary conjecture) -/
+/-! ## §2a  Structural integers of the trefoil — computed, not assumed
+
+    The strand and crossing counts are facts about the braid word
+    `QOU.KnotTheory.trefoil = σ₀³ ∈ B₂`, so they need no hypothesis at all.
+    They were previously free fields of the conjecture class beside equations
+    naming their values, which is why they are stated here instead. -/
+
+/-- The trefoil braid word has 2 strands. -/
+-- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+--      binding-knots-visual-inventory.md §"Trefoil = electron"
+theorem trefoil_strand_count_eq_two :
+    QOU.KnotTheory.trefoil.strands = 2 := rfl
+
+/-- The trefoil braid word has 3 crossings — the three positive letters
+    of `σ₀³`.  Matches `QOU.KnotRegistry.trefoil_crossing_count`. -/
+-- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+--      binding-knots-visual-inventory.md §"Trefoil = electron"
+theorem trefoil_crossing_count_eq_three :
+    QOU.KnotTheory.trefoil.crossingCount = 3 := rfl
+
+/-- The trefoil has a positive crossing count: it is a nontrivial knot. -/
+theorem trefoil_crossing_count_pos :
+    0 < QOU.KnotTheory.trefoil.crossingCount := by
+  rw [trefoil_crossing_count_eq_three]; norm_num
+
+/-- The torus-knot structural identity `p · q = 2 · 3 = 6` for `T(2,3)`. -/
+theorem trefoil_strand_times_crossing_eq_six :
+    QOU.KnotTheory.trefoil.strands * QOU.KnotTheory.trefoil.crossingCount = 6 :=
+  rfl
+
+/-! ## §3  Downstream theorems (§3b-cond: conditional on the primary conjecture)
+
+    Each takes the conjecture's three parameters explicitly and consumes
+    `[ctx]` substantively.  Four theorems that stood here previously are
+    gone: `trefoil_topological_mass_eq_codata` and
+    `m_e_codata_eq_trefoil_mass` were the class field and its `.symm`, and
+    `trefoil_topological_mass_pos_of_conj` and
+    `trefoil_topological_mass_ne_zero` restated positivity in `↔` and `≠`
+    form.  None had a reference outside this file. -/
+
+variable (T : HeckeElement 2) (rho : ℕ) (m_e_cat : ℝ)
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil topological mass is strictly positive.
+    The trefoil's categorical MeV mass is strictly positive.
 
-    Proof: by `[ctx]`, `ctx.trefoil_topological_mass = m_e_MeV_codata`
-    (the mass equality from the conjecture class), and `m_e_MeV_codata > 0`
-    (proved from `norm_num`).  This is a genuine derivation — not a
-    self-assuming projection.  The hypothesis `trefoil_mass_eq_m_e` is
-    used substantively: without it, positivity of `trefoil_topological_mass`
-    would be an additional assumption.
-
-    **Conditional on `[TrefoilElectronMassConj]`** (banner per §3b-cond). -/
+    Proof: the conjecture identifies it with `m_e_MeV_codata`, which is
+    positive by `norm_num`. The hypothesis is used substantively — without
+    it, positivity of an arbitrary `categoricalMassMeV` would need `ρ > 0`,
+    `m_e_cat > 0` and `tr_M T ≠ 0` as separate assumptions. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_topological_mass_pos [ctx : TrefoilElectronMassConj] :
-    0 < ctx.trefoil_topological_mass := by
+theorem trefoil_topological_mass_pos [ctx : TrefoilElectronMassConj T rho m_e_cat] :
+    0 < categoricalMassMeV rho m_e_cat T := by
   rw [ctx.trefoil_mass_eq_m_e]
   exact trefoil_mass_unit_pos
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil topological mass is nonzero.
+    The trefoil's cat-unit mass is normalised to one — this is the precise
+    sense in which the trefoil is the canonical mass *unit*.
 
-    Follows from positivity; the hypothesis is used via
-    `trefoil_topological_mass_pos`. -/
+    Proof: the conjecture says `categoricalMass · m_e_MeV_codata =
+    m_e_MeV_codata`; cancel the nonzero factor. This is a genuine
+    consequence, and it is what makes the conjecture a constraint on `T`
+    rather than a definition of a free quantity. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_topological_mass_ne_zero [ctx : TrefoilElectronMassConj] :
-    ctx.trefoil_topological_mass ≠ 0 :=
-  ne_of_gt trefoil_topological_mass_pos
+theorem trefoil_cat_mass_normalised [ctx : TrefoilElectronMassConj T rho m_e_cat] :
+    categoricalMass rho m_e_cat T = 1 := by
+  have h := ctx.trefoil_mass_eq_m_e
+  unfold categoricalMassMeV at h
+  have hne : m_e_MeV_codata ≠ 0 := m_e_ne_zero
+  field_simp at h
+  exact h
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil topological mass equals the CODATA value.
-    (This is exactly the class field, exposed as a theorem for downstream use.) -/
+    Any positive real multiple of the trefoil mass is positive: every
+    particle mass `n · m_e` (for `n > 0`) is positive. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_topological_mass_eq_codata [ctx : TrefoilElectronMassConj] :
-    ctx.trefoil_topological_mass = m_e_MeV_codata :=
-  ctx.trefoil_mass_eq_m_e
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    Any positive real multiple of the trefoil mass is also positive.
-    This formalizes that the trefoil mass unit is a valid dimensional anchor:
-    every particle mass `n · m_e` (for n : ℝ, n > 0) is positive.
-
-    The hypothesis `ctx.trefoil_mass_eq_m_e` is used to rewrite;
-    the conclusion follows by `mul_pos`. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_mass_multiple_pos [ctx : TrefoilElectronMassConj]
+theorem trefoil_mass_multiple_pos [TrefoilElectronMassConj T rho m_e_cat]
     (n : ℝ) (hn : 0 < n) :
-    0 < n * ctx.trefoil_topological_mass := by
-  rw [ctx.trefoil_mass_eq_m_e]
-  exact mul_pos hn trefoil_mass_unit_pos
+    0 < n * categoricalMassMeV rho m_e_cat T :=
+  mul_pos hn (trefoil_topological_mass_pos T rho m_e_cat)
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil strand count equals 2.
-    This is the structural integer identity from the class field. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
---      binding-knots-visual-inventory.md §"Trefoil = electron"
-theorem trefoil_strand_count_eq_two [ctx : TrefoilElectronMassConj] :
-    ctx.trefoil_strand_count = 2 :=
-  ctx.trefoil_strand_eq
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    The trefoil crossing count equals 3.
-    This is the structural integer identity from the class field. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
---      binding-knots-visual-inventory.md §"Trefoil = electron"
-theorem trefoil_crossing_count_eq_three [ctx : TrefoilElectronMassConj] :
-    ctx.trefoil_crossing_count = 3 :=
-  ctx.trefoil_crossing_eq
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    The trefoil crossing count is strictly positive (it is a nontrivial knot).
-    Follows from `ctx.trefoil_crossing_eq` which gives crossing count = 3. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
---      binding-knots-visual-inventory.md §"Trefoil = electron"
-theorem trefoil_crossing_count_pos [ctx : TrefoilElectronMassConj] :
-    0 < ctx.trefoil_crossing_count := by
-  rw [ctx.trefoil_crossing_eq]
-  norm_num
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    The trefoil mass times its crossing count is positive (compound structural assertion).
-    Uses both `trefoil_topological_mass_pos` and `trefoil_crossing_count_pos`. -/
+    Any ratio of a positive mass `m` to the trefoil mass is positive —
+    the normalisation `m / m_e > 0`. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_mass_times_crossings_pos [ctx : TrefoilElectronMassConj] :
-    0 < ctx.trefoil_topological_mass * ctx.trefoil_crossing_count := by
-  apply mul_pos
-  · exact trefoil_topological_mass_pos
-  · exact_mod_cast trefoil_crossing_count_pos
-
-/-! ## §4  More sorry-free structural consequence theorems -/
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    The trefoil strand count × crossing count = 6.
-    This is the torus knot T(2,3) structural integer identity:
-    T(p,q) has p strands and q crossings, so p·q = 2·3 = 6.
-    Proved purely from `ctx.trefoil_strand_eq` and `ctx.trefoil_crossing_eq`. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
---      binding-knots-visual-inventory.md §"Trefoil = electron"
-theorem trefoil_strand_times_crossing_eq_six [ctx : TrefoilElectronMassConj] :
-    ctx.trefoil_strand_count * ctx.trefoil_crossing_count = 6 := by
-  rw [ctx.trefoil_strand_eq, ctx.trefoil_crossing_eq]
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    The trefoil topological mass is NOT equal to zero (explicit `ne` form).
-    This is the same as `trefoil_topological_mass_ne_zero`, restated
-    as a `≠`-direction inequality for backward compatibility with ring
-    tactics that prefer explicit non-zero conditions. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_topological_mass_pos_of_conj [ctx : TrefoilElectronMassConj] :
-    (0 : ℝ) < m_e_MeV_codata ↔ 0 < ctx.trefoil_topological_mass := by
-  rw [ctx.trefoil_mass_eq_m_e]
-
-/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
-
-    Any ratio of a positive mass `m` to the trefoil topological mass is positive.
-    This is the normalisation theorem: `m / m_e > 0` for any `m > 0`.
-    Uses `div_pos`. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem mass_ratio_pos [ctx : TrefoilElectronMassConj]
+theorem mass_ratio_pos [TrefoilElectronMassConj T rho m_e_cat]
     (m : ℝ) (hm : 0 < m) :
-    0 < m / ctx.trefoil_topological_mass := by
-  apply div_pos hm
-  exact trefoil_topological_mass_pos
+    0 < m / categoricalMassMeV rho m_e_cat T :=
+  div_pos hm (trefoil_topological_mass_pos T rho m_e_cat)
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil topological mass equals the CODATA `m_e` in MeV,
-    stated as a symmetric equality (`=` in both directions).
-    This is the CAL-1 calibration identification in forward direction. -/
+    The square of the trefoil mass is positive. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem m_e_codata_eq_trefoil_mass [ctx : TrefoilElectronMassConj] :
-    m_e_MeV_codata = ctx.trefoil_topological_mass :=
-  ctx.trefoil_mass_eq_m_e.symm
+theorem trefoil_topological_mass_sq_pos [TrefoilElectronMassConj T rho m_e_cat] :
+    0 < categoricalMassMeV rho m_e_cat T ^ 2 :=
+  pow_pos (trefoil_topological_mass_pos T rho m_e_cat) 2
 
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
-    The trefoil topological mass squared is positive.
-    Follows from `trefoil_topological_mass_pos` and `sq_pos_of_pos`. -/
+    The trefoil mass times its crossing count is positive, combining the
+    conditional mass positivity with the unconditional crossing count. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
-theorem trefoil_topological_mass_sq_pos [ctx : TrefoilElectronMassConj] :
-    0 < ctx.trefoil_topological_mass ^ 2 := by
-  apply sq_pos_of_pos
-  exact trefoil_topological_mass_pos
+theorem trefoil_mass_times_crossings_pos [TrefoilElectronMassConj T rho m_e_cat] :
+    0 < categoricalMassMeV rho m_e_cat T
+        * (QOU.KnotTheory.trefoil.crossingCount : ℝ) := by
+  apply mul_pos (trefoil_topological_mass_pos T rho m_e_cat)
+  exact_mod_cast trefoil_crossing_count_pos
 
 end QOU.Interactions.TrefoilCanonicalMassUnit

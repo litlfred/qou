@@ -1016,6 +1016,21 @@
         "notes": "The claim in 'Fibre-compatible hadron embedding' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "73eb366e1903",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'hadron-fibre-embedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-vacuous": [
@@ -1080,6 +1095,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Fibre-compatible hadron embedding' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73eb366e1903",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'hadron-fibre-embedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1145,6 +1175,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "73eb366e1903",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hadron-fibre-embedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1254,7 +1299,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1 — content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "73eb366e1903",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hadron-fibre-embedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1278,6 +1338,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean for 'Fibre-compatible hadron embedding' fails compilation with error: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "73eb366e1903",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hadron-fibre-embedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "proof-narrative-lean-equiv": [

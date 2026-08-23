@@ -1010,8 +1010,23 @@
         "reviewed_at": "2026-07-07T14:26:55.896498Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "quantum-gauge-group.lean:1 — Lean file exists",
+        "evidence": "quantum-gauge-group.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/quantum-gauge-group.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/quantum-gauge-group.md."
+      },
+      {
+        "field_hash": {
+          "md": "976bb07e26b6",
+          "ts": "ecddf9e02428",
+          "lean": "a38127ef2ff5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'quantum-gauge-group.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1415,7 +1430,7 @@
         "reviewed_at": "2026-07-07T14:26:55.896498Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "quantum-gauge-group.lean:1 — content/quantum-observable-universe/quantum-observable-universes/quantum-gauge-group.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "evidence": "quantum-gauge-group.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/quantum-gauge-group.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-gauge-group.lean fails compilation, indicating a reproducibility failure."
       },
       {

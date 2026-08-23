@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-23T08:06:35Z
+updated_at: 2026-08-23T09:33:15Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
@@ -43,3 +43,35 @@ Both removed (0 external refs each); the classes are now honest open carriers.
 **A ledger evidence correction.** `categorical_irreducible`'s recorded
 evidence said 'UNINHABITED carrier … no instance exists'. That was **wrong** —
 the instance existed at line 120. The defect was circularity, not absence.
+
+
+## Batch 3 (PR #5533)
+
+**The A/B triage heuristic failed — recorded so it is not re-derived.**
+Classified the 116 `genuine` entries by binder style (86 instance-binder /
+30 explicit-arg) on the theory that explicit-arg entries were more likely
+legitimate definition-accessors. Read all 30 of bucket B rather than
+sampling: every one has the identical shape as bucket A. Binder style is
+bookkeeping, not adjudication.
+
+What does separate them is whether the **docstring claims more than the
+projection delivers** — `factors_def`, `binding_eq_bond_energy`,
+`knot_eigenbasis_density`, `rho_eq_qdim_via_canonical_knot` all say in
+their own docstrings that they are the field under another name; whereas
+`uncertainty_vanishes` ("so ω₀ = 0"), `mobius_energy_nonneg` (a real
+Freedman–He–Wang theorem, assumed), `noncocomm_iff_quantum` (named "iff",
+no iff), `descartes_universality` ("Full proof: χ = −6 ⟹ … ⟹ Bring's
+surface" written as a comment where a proof belongs) assert derivations
+they do not perform.
+
+**Landed:** `diagram_commutes` (redundant `commutativity` field dropped,
+derived from the three arrows); `prop:mi-sw-abelianisation` rewired to the
+honest library class its own authorNotes described but its `lean.ref`
+never named; `TrefoilElectronMassConj` restated (see `qou-0w42` for the
+residual). Six ledger entries pruned, 133 → 127.
+
+**Next in this arc:** the claim-shaped restatements above.
+`descartes_universality` and `descartes_terminal` share one LaTeX label
+and neither is fixable by derivation — the universality content is not in
+the corpus. `TannakaKreinRigidity` is a self-certifying carrier (default
+field values make `⟨⟩` an instance), which is `qou-ewc4`.

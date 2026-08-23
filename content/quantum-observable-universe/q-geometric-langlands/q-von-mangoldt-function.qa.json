@@ -423,7 +423,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
+        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.md:1 \u2014 detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
       }
     ],
     "canonical-calibration-count": [
@@ -999,8 +999,23 @@
         "reviewed_at": "2026-07-07T14:26:56.171273Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-von-mangoldt-function.lean:1 — Lean file exists",
+        "evidence": "q-von-mangoldt-function.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.md."
+      },
+      {
+        "field_hash": {
+          "md": "1ce817cb444d",
+          "ts": "5457fcd88386",
+          "lean": "79983d129440"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'q-von-mangoldt-function.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1404,7 +1419,7 @@
         "reviewed_at": "2026-07-07T14:26:56.171273Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-von-mangoldt-function.lean:1 — content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean:24:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "q-von-mangoldt-function.lean:1 \u2014 content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean:24:13: error: unexpected token 'section'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean fails compilation, indicating a reproducibility failure."
       },
       {
