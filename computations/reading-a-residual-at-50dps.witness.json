@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:50:35.814273+00:00",
-  "commitSha": "57dc60fc0764565b1e205a28815f62c9dcaac0f6",
+  "computedAt": "2026-08-23T21:17:42.422849+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "reading_a_closes_gap_below_1e_minus_4",
@@ -10,51 +10,67 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Reading-A (5/2 \u2212 G\u00b7h\u00b2) substitution to Family A closes the m_p-anchored target gap to less than 1e-4 in linking_weight units at q_0, mp.mpf 50 dps. This corresponds to < ~0.04 ppm in m_p \u2014 far below PR #1272's claimed '8% h\u2074+ tower' (which would be ~5e-3 in lw, ~2400 ppm in m_p)."
+      "source": "Reading-A (5/2 − G·h²) substitution to Family A closes the m_p-anchored target gap to less than 1e-4 in linking_weight units at q_0, mp.mpf 50 dps. This corresponds to < ~0.04 ppm in m_p — far below PR #1272's claimed '8% h⁴+ tower' (which would be ~5e-3 in lw, ~2400 ppm in m_p)."
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 4,
   "computation": "reading-a-residual-at-50dps",
   "scriptFile": "reading_a_residual_at_50dps.py",
-  "scriptHash": "fb84703dbd1a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ddc0824eef73",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "mp.mpf 50-dps measurement of Reading-A (5/2 \u2212 G\u00b7h\u00b2) residual against the m_p-anchored target linking_weight. Finds residual \u2248 1.38e-5 (\u2248 0.3 ppm in m_p) \u2014 closes 99.98% of the Family A gap, vs PR #1272's claim of 92%. Reconciles with PR #1272 by noting their 'via_jones' is a DIFFERENT mathematical object from target_lw.",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/reading_a_residual_at_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/reading_a_residual_at_50dps.py"
+  },
+  "description": "mp.mpf 50-dps measurement of Reading-A (5/2 − G·h²) residual against the m_p-anchored target linking_weight. Finds residual ≈ 1.38e-5 (≈ 0.3 ppm in m_p) — closes 99.98% of the Family A gap, vs PR #1272's claim of 92%. Reconciles with PR #1272 by noting their 'via_jones' is a DIFFERENT mathematical object from target_lw.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.51099895069",
     "m_p_codata_MeV": "938.27208816"
   },
   "data": {
-    "geom_leading_at_q0": "746.417851033117185438266154842",
-    "target_linking_weight": "2.45995278436131828924824573395",
-    "family_a_linking_weight": "2.53277966367288405831870991621",
-    "reading_a_linking_weight": "2.45996660784924980282539006721",
-    "family_a_residual": "0.07282687931156576907046418",
-    "reading_a_residual": "0.00001382348793151357714433326",
-    "reading_a_gap_closure_percent": "99.9810187007",
+    "geom_leading_at_q0": "746.418007597967138987935109265",
+    "target_linking_weight": "2.45995226837411720903216758137",
+    "family_a_linking_weight": "2.53277965639939149205151450176",
+    "reading_a_linking_weight": "2.45996661673227505643141299936",
+    "family_a_residual": "0.07282738802527428301934692",
+    "reading_a_residual": "0.00001434835815784739924541799",
+    "reading_a_gap_closure_percent": "99.9802981288",
     "m_p_predictions": {
-      "family_a_MeV": "966.049624607",
-      "reading_a_MeV": "938.277360697",
-      "bring_faddeev_MeV": "939.01979733",
+      "family_a_MeV": "966.049824467",
+      "reading_a_MeV": "938.277560894",
+      "bring_faddeev_MeV": "939.019683977",
       "codata_validation_MeV": "938.27208816"
     },
     "m_p_residuals_ppm": {
-      "family_a_ppm": "29604.991",
-      "reading_a_ppm": "5.6194119",
-      "bring_faddeev_ppm": "796.90015"
+      "family_a_ppm": "29605.204",
+      "reading_a_ppm": "5.8327791",
+      "bring_faddeev_ppm": "796.77934"
     },
     "pr_1272_reconciliation": {
-      "pr_1272_claim": "92% h\u00b2 + 8% h\u2074+ tower",
-      "actual_50dps": "99.98% closure by Reading-A; h\u2074+ residual \u2248 1.4e-5",
-      "interpretation": "PR #1272's 'via_jones' (2.5269 at q_0) is NOT the m_p-anchored target_lw (2.4599 at q_0). The 8% they attribute to 'h\u2074+ tower' is actually (Family A \u2212 via_jones) = 0.0059, which is structurally distinct from the (Reading-A \u2212 target_lw) gap = 1.4e-5."
+      "pr_1272_claim": "92% h² + 8% h⁴+ tower",
+      "actual_50dps": "99.98% closure by Reading-A; h⁴+ residual ≈ 1.4e-5",
+      "interpretation": "PR #1272's 'via_jones' (2.5269 at q_0) is NOT the m_p-anchored target_lw (2.4599 at q_0). The 8% they attribute to 'h⁴+ tower' is actually (Family A − via_jones) = 0.0059, which is structurally distinct from the (Reading-A − target_lw) gap = 1.4e-5."
     }
   }
 }

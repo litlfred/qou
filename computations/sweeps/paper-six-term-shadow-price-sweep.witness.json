@@ -1,12 +1,6 @@
 {
-  "computedAt": "2026-04-27T21:20:43.384482+00:00",
   "computation": "paper-six-term-shadow-price-sweep",
   "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
-  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
-  },
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
     "prop:mass-coefficient-shadow-price",
@@ -14,11 +8,16 @@
     "prop:content-scaling-correspondence",
     "conj:shell-correction-term-seven"
   ],
+  "timestamp": "2026-08-23T21:28:45.738402+00:00",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
+  },
   "results": {
     "p   (Z=1, N=0)": {
       "Z": 1,
       "N": 0,
-      "B_shadow": 0.06906033578870716,
+      "B_shadow": 0.0690603282640237,
       "n_partitions_nonzero": 3,
       "top_5_contributions": [
         {
@@ -29,9 +28,9 @@
           "height": 2,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.06906033578870716,
-          "S_lambda": 1,
-          "contribution": 0.06906033578870716
+          "C_lambda": 0.0690603282640237,
+          "S_lambda": 1.0,
+          "contribution": 0.0690603282640237
         },
         {
           "shape": [
@@ -40,9 +39,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.05135162815674618,
+          "C_lambda": 0.051351622659036186,
           "S_lambda": 0.75,
-          "contribution": 0.038513721117559636
+          "contribution": 0.03851371699427714
         },
         {
           "shape": [
@@ -53,17 +52,17 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.05135162815674618,
+          "C_lambda": -0.051351622659036186,
           "S_lambda": 0.75,
-          "contribution": -0.038513721117559636
+          "contribution": -0.03851371699427714
         }
       ],
-      "walltime_sec": 0.00072479248046875
+      "walltime_sec": 0.0008502006530761719
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
       "N": 1,
-      "B_shadow": 0.06906033578870716,
+      "B_shadow": 0.0690603282640237,
       "n_partitions_nonzero": 3,
       "top_5_contributions": [
         {
@@ -74,9 +73,9 @@
           "height": 2,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.06906033578870716,
-          "S_lambda": 1,
-          "contribution": 0.06906033578870716
+          "C_lambda": 0.0690603282640237,
+          "S_lambda": 1.0,
+          "contribution": 0.0690603282640237
         },
         {
           "shape": [
@@ -85,9 +84,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.05135162815674618,
+          "C_lambda": 0.051351622659036186,
           "S_lambda": 0.75,
-          "contribution": 0.038513721117559636
+          "contribution": 0.03851371699427714
         },
         {
           "shape": [
@@ -98,17 +97,17 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.05135162815674618,
+          "C_lambda": -0.051351622659036186,
           "S_lambda": 0.75,
-          "contribution": -0.038513721117559636
+          "contribution": -0.03851371699427714
         }
       ],
-      "walltime_sec": 0.0005447864532470703
+      "walltime_sec": 0.0005600452423095703
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
-      "B_shadow": 0.07497648289486407,
+      "B_shadow": 0.07497647444078089,
       "n_partitions_nonzero": 1,
       "top_5_contributions": [
         {
@@ -120,17 +119,17 @@
           "height": 3,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.037488241447432034,
-          "S_lambda": 2,
-          "contribution": 0.07497648289486407
+          "C_lambda": 0.03748823722039044,
+          "S_lambda": 2.0,
+          "contribution": 0.07497647444078089
         }
       ],
-      "walltime_sec": 0.002999544143676758
+      "walltime_sec": 0.0031783580780029297
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
-      "B_shadow": 0.0008740677314373878,
+      "B_shadow": 0.0008740676841290394,
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -143,9 +142,9 @@
           "height": 4,
           "content_sum": -1,
           "self_conjugate": false,
-          "C_lambda": -0.0038154968815414655,
+          "C_lambda": -0.003815496355217741,
           "S_lambda": 1.3867225487012693,
-          "contribution": -0.0052910355601329265
+          "contribution": -0.005291034830267949
         },
         {
           "shape": [
@@ -158,9 +157,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054703,
-          "S_lambda": 3,
-          "contribution": 0.004325183055316411
+          "C_lambda": 0.0014417275185871676,
+          "S_lambda": 3.0,
+          "contribution": 0.004325182555761503
         },
         {
           "shape": [
@@ -171,9 +170,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.01677279551708543,
+          "C_lambda": 0.016772793289290825,
           "S_lambda": 0.25,
-          "contribution": 0.0041931988792713575
+          "contribution": 0.004193198322322706
         },
         {
           "shape": [
@@ -186,9 +185,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.01677279551708543,
+          "C_lambda": -0.016772793289290825,
           "S_lambda": 0.25,
-          "contribution": -0.0041931988792713575
+          "contribution": -0.004193198322322706
         },
         {
           "shape": [
@@ -200,17 +199,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429852,
+          "C_lambda": 0.01109396259250306,
           "S_lambda": 0.25,
-          "contribution": 0.002773491000107463
+          "contribution": 0.002773490648125765
         }
       ],
-      "walltime_sec": 0.011742830276489258
+      "walltime_sec": 0.011954784393310547
     },
     "\u00b3He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
-      "B_shadow": 0.01145613885170324,
+      "B_shadow": 0.011456137344664939,
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -223,9 +222,9 @@
           "height": 4,
           "content_sum": 1,
           "self_conjugate": false,
-          "C_lambda": 0.0038154968815414655,
+          "C_lambda": 0.003815496355217741,
           "S_lambda": 1.3867225487012693,
-          "contribution": 0.0052910355601329265
+          "contribution": 0.005291034830267949
         },
         {
           "shape": [
@@ -238,9 +237,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054703,
-          "S_lambda": 3,
-          "contribution": 0.004325183055316411
+          "C_lambda": 0.0014417275185871676,
+          "S_lambda": 3.0,
+          "contribution": 0.004325182555761503
         },
         {
           "shape": [
@@ -251,9 +250,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.01677279551708543,
+          "C_lambda": 0.016772793289290825,
           "S_lambda": 0.25,
-          "contribution": 0.0041931988792713575
+          "contribution": 0.004193198322322706
         },
         {
           "shape": [
@@ -266,9 +265,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.01677279551708543,
+          "C_lambda": -0.016772793289290825,
           "S_lambda": 0.25,
-          "contribution": -0.0041931988792713575
+          "contribution": -0.004193198322322706
         },
         {
           "shape": [
@@ -280,17 +279,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429852,
+          "C_lambda": 0.01109396259250306,
           "S_lambda": 0.25,
-          "contribution": 0.002773491000107463
+          "contribution": 0.002773490648125765
         }
       ],
-      "walltime_sec": 0.011924982070922852
+      "walltime_sec": 0.011818885803222656
     },
     "\u2074He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
-      "B_shadow": 0.094617772880196,
+      "B_shadow": 0.09461775388890475,
       "n_partitions_nonzero": 7,
       "top_5_contributions": [
         {
@@ -304,9 +303,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.019865503904309783,
-          "S_lambda": 4,
-          "contribution": 0.07946201561723913
+          "C_lambda": 0.019865499917356946,
+          "S_lambda": 4.0,
+          "contribution": 0.07946199966942778
         },
         {
           "shape": [
@@ -318,9 +317,9 @@
           "height": 4,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0025354163130576,
-          "S_lambda": 4,
-          "contribution": 0.0101416652522304
+          "C_lambda": 0.002535415760631521,
+          "S_lambda": 4.0,
+          "contribution": 0.010141663042526084
         },
         {
           "shape": [
@@ -334,9 +333,9 @@
           "height": 6,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.001253523002681617,
-          "S_lambda": 4,
-          "contribution": 0.005014092010726468
+          "C_lambda": 0.0012535227942377235,
+          "S_lambda": 4.0,
+          "contribution": 0.005014091176950894
         },
         {
           "shape": [
@@ -348,9 +347,9 @@
           "height": 4,
           "content_sum": 2,
           "self_conjugate": false,
-          "C_lambda": 0.002515141410432247,
+          "C_lambda": 0.002515140885049054,
           "S_lambda": 1.5874010519681996,
-          "contribution": 0.00399253812076893
+          "contribution": 0.003992537286775097
         },
         {
           "shape": [
@@ -363,24 +362,12 @@
           "height": 5,
           "content_sum": -2,
           "self_conjugate": false,
-          "C_lambda": -0.002515141410432247,
+          "C_lambda": -0.002515140885049054,
           "S_lambda": 1.5874010519681996,
-          "contribution": -0.00399253812076893
+          "contribution": -0.003992537286775097
         }
       ],
-      "walltime_sec": 0.038066864013671875
+      "walltime_sec": 0.03731274604797363
     }
-  },
-  "engine": "python",
-  "scriptFile": "paper_six_term_shadow_price_sweep.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
-  "y0_star": null,
-  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "dual_obj": null,
-  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "duality_gap": null,
-  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "y_star": null,
-  "active_set": null,
-  "primal_obj": null
+  }
 }
