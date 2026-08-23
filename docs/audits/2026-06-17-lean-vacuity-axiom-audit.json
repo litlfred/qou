@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T10:41:11.584Z",
+  "generated": "2026-08-23T15:41:36.691Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3061,
-  "files_flagged": 135,
-  "total_defects": 115,
+  "scanned_files": 3059,
+  "files_flagged": 131,
+  "total_defects": 110,
   "total_exempt": 47,
-  "total_promoted_from_exempt": 69,
+  "total_promoted_from_exempt": 64,
   "categories": {
-    "proof-no-self-assuming-projection": 108,
+    "proof-no-self-assuming-projection": 103,
     "proof-docstring-sorry-mismatch": 1,
     "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1
@@ -1326,19 +1326,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean": [
-      {
-        "line": 105,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :",
-        "decl": "MobiusEnergy",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `cme.classicalLimit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean": [
       {
         "line": 81,
@@ -2510,19 +2497,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean": [
-      {
-        "line": 148,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :",
-        "decl": "MobiusEnergy",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `cme.classicalLimit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
         "line": 150,
@@ -3021,19 +2995,6 @@
         "detail": "opaque-marker field(s) `: True` (unique) — honestly framed; tracked not counted"
       }
     ],
-    "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean": [
-      {
-        "line": 63,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)",
-        "decl": "main_commutative_diagram",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `diag.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean": [
       {
         "line": 39,
@@ -3153,30 +3114,6 @@
         "severity": "critical",
         "exempt": false,
         "detail": "the projected field `vff.epsilon_epi` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/quantum-universes/categorical-jet.lean": [
-      {
-        "line": 57,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem CategoricalJet.kernelIncl_exact {C : Type u}",
-        "decl": "CategoricalJet.kernelIncl_exact",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      },
-      {
-        "line": 85,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem categorical_jet_prolongation {C : Type u}",
-        "decl": "categorical_jet_prolongation",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `jp.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ]
