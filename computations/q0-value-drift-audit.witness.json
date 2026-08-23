@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 297,
-      "proton-pin": 1249,
+      "STALE": 296,
+      "proton-pin": 1251,
       "unknown": 25,
       "canonical": 201
     },
-    "stale_total": 297,
+    "stale_total": 296,
     "new_stale": 0,
     "rows": [
       {
@@ -4297,6 +4297,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/canonical-isotope-witness-index.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/canonical-lepton-braid-words.witness.json",
         "field": "constants.q_0",
         "value": "1.1099785955541805752806677289528087346650276795181",
@@ -7778,9 +7785,9 @@
       {
         "file": "computations/mass-tower-operator-valued.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785827513808",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117896827304
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/mass-tower-operator-valued.witness.json",
@@ -11558,9 +11565,9 @@
       {
         "file": "computations/sublemma-2-1-deuteron-branching.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955541805",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416943465287684
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/substrate/binding-qbeta-aw-recurrence-probe.witness.json",
