@@ -1,11 +1,11 @@
 ---
 # qou-0h5k
 title: 'SW-7 (=R2c): Wedderburn iso H_n(q) ≅ ⊕_{λ⊢n} M_{d_λ}(K)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-23T15:46:25Z
+updated_at: 2026-08-23T16:35:07Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
@@ -165,3 +165,45 @@ separate the index set'*, which is a different statement.
 3. `HeckeWedderburnData` instance (`QSchurWeyl.lean:62`); the n=3 case is
    `HeckeWedderburnData3`. Also wants the Markov weights, which
    `HeckeMarkov3` has only at n=3.
+
+
+## SW-7 CLOSED 2026-08-23 — `heckeWedderburn`, sorry-free and axiom-clean
+
+    H_{n+1}(q)  ~=a[R]  prod_{lam |- n+1} M_{#SYT lam}(R)
+
+for every n and every real q with q != 0, q^2 != 1. `HeckeWedderburnGeneral.lean`:
+`finiteDimensional_hecke`, `finrank_blocks`, `sum_dLambda_sq`,
+`finrank_blocks_eq_factorial`, `finrank_hecke_eq_factorial`,
+`heckeProduct_bijective`, `heckeWedderburn`. All
+[propext, Classical.choice, Quot.sound] — checked on the TOP theorem, so the RSK
+input is transitively clean too.
+
+## COROLLARY WORTH ITS OWN NAME: `finrank_hecke_eq_factorial`
+
+`Module.finrank R (Hecke R q q^-1 n) = (n+1)!` — the Iwahori-Hecke basis
+theorem, BOTH bounds. The upper one is `HeckeCoset.finrank_le_factorial`. The
+lower one is not proved by hand at all: it is FORCED by the surjection onto a
+space of dimension (n+1)!.
+
+**Consequence for `qou-auq3`** (the Grobner-Shirshov basis, actively owned by a
+sibling): the GS route is no longer on the critical path for
+`dim H_n(q) = n!`. It remains valuable for its own reasons — normal forms, a
+concrete basis, the rewriting engine — but if it was being pursued *in order to*
+get the dimension, that motivation is discharged. Flagging rather than assuming;
+the owner should decide what that changes.
+
+## Why the direction of the count mattered
+
+The q=1 file goes injective + equal finrank. Unavailable here: the corpus has
+`dim H <= (n+1)!` but not the lower bound, and injective with
+`dim source <= dim target` gives nothing. Running through SURJECTIVITY inverts
+the dependency — a surjection forces `dim target <= dim source`, the corpus
+supplies the other side, and SW-3 (now unconditional at every n) pins the target
+at (n+1)!. The two inequalities close.
+
+## Remaining, and NOT part of this bean
+
+`HeckeWedderburnData` (`QSchurWeyl.lean:62`) additionally wants the MARKOV
+WEIGHTS `w_lam` and `markov_eq : tr_M = sum_lam w_lam chi_lam`. Only
+`HeckeMarkov3` has those, at n=3. That is SW-8's general form, not SW-7's
+statement — filed as a distinct item rather than folded in here.
