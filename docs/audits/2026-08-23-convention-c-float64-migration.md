@@ -216,6 +216,108 @@ a live-C producer, but it can be a live *claim*, and this one asserted the
 excised convention was canonical. Blanking docstrings the way comments are
 blanked would have hidden it.
 
+## The typed-literal class — invisible to every algebraic detector
+
+Running one of the six `payload-or-mixed` C witnesses was the decisive test:
+`probe_inter_knot_decoupling.py` **executes cleanly (exit 0) and re-emits
+convention C**. So it is a live-C producer that passes a clean source scan. The
+reason:
+
+```python
+w.add_data("z_markov_norm", "0.49932033403359825002066908467672150636931636263446")
+```
+
+The value is a **hardcoded decimal literal**. Not computed — typed. Every
+pattern in every convention detector in this repo matches an *expression*, so
+all of them are structurally blind to it: there is nothing to match.
+
+It carries **three** defects at once:
+
+1. **Convention C**, against the 2026-08-09 excision.
+2. **Muon-pinned**, against the standing 2026-08-07 proton directive — it
+   matches muon `z_C` to `7.4e-14` and proton `z_C` only to `3.0e-10`.
+3. **Falsely precise.** It is 50 digits long and correct to about **13**. The
+   remaining ~37 are noise presented as precision, and anything consuming the
+   field at high dps inherits them.
+
+The detector now matches the decimal **by value** — the same "test the answer,
+not the source" move AGENTS.md prescribes for witnesses, applied to source text.
+
+### This class was already known, and the audit that documents it flagged itself
+
+`producer_importability_audit.py` describes exactly this defect in prose —
+*"a convention-C `z_markov = 0.49932033403356124` … invisibly through the entire
+C→D campaign"*. Independent rediscovery, and a useful corpus-grep result: the
+class is known, the instance was not.
+
+It also produced an instructive false positive. The new decimal pattern flagged
+that audit and two other files whose only "C" is **prose describing C**. So the
+decimal pass now runs against source with **docstrings blanked as well as
+comments**, while the algebraic patterns still see docstrings — a deliberate
+split:
+
+- A docstring that **spells `z_C` algebraically** can be a live *claim* worth
+  surfacing. One asserted C was canonical (§ above), and blanking docstrings
+  would have hidden it.
+- A docstring that merely **quotes the decimal** is nearly always documentation.
+
+Docstrings are blanked via `ast` (module/class/function docstrings only), not by
+blanking all strings — because `w.add_data("z_markov_norm", "0.4993…")` *is* a
+live value in a string, and that is the case this pattern exists to catch.
+
+One residual remains by design: a string **inside code** at
+`producer_importability_audit.py:202` that quotes the value in a message. Marked
+`comparison only` at the site rather than special-cased in the detector.
+
+**Corpus-wide, five source files carry the typed literal**; after the split and
+the marker, **one** is a genuine live-C producer.
+
+## Why "just re-run the producer" is not a plan for 6 of these
+
+Cross-referencing the 36 C-witness producers against the existing
+[`producer-importability-audit`](../../computations/audits/producer-importability-audit.witness.json)
+(113 of 2132 producers do not import at all):
+
+| producer | class | cause |
+|---|---|---|
+| `borromean-axial-coupling.py` | stale-output | in-repo-wiring: `pyhecke` |
+| `confinement-operator-selection.py` | unresolved | `ImportError` |
+| `hadron_knot_table.py` | stale-output | `TypeError` (this is `qou-q7lf`) |
+| `q_hecke_seminormal_character_closure_probe.py` | stale-output | in-repo-wiring |
+| `qbeta_symbolic_sdp_strict_complementarity.py` | unresolved | in-repo-wiring: `pyhecke` |
+| `toffoli-lp-stability.py` | unresolved | in-repo-wiring: `qou_substrate` |
+
+**6 of 36 cannot run at all**, and three of those are `payload-or-mixed` — the
+cases where C is baked into a computed Gram matrix or trace, not merely
+recorded. Their witnesses are frozen at whatever convention last ran
+successfully. For these the mechanical "re-run the producer" step is not
+available until the producer is repaired, which is the generalisation of the
+warning `qou-q7lf` raised for `hadron_knot_table` alone.
+
+**This explains 6, not 36.** Recording the fraction rather than the story: the
+earlier import-cone hypothesis explained 1, this explains 6, and roughly 29
+remain without a demonstrated cause.
+
+## A mistake I made measuring this, since it is the reusable lesson
+
+To test "does this producer still run?", I wrote a sweep that shelled out to each
+producer, and described it in its own docstring as an *"import-only probe, no
+side effects."* It was nothing of the sort: it **executed** each script, and each
+script wrote its witness. **29 witnesses were rewritten as a side effect of a
+measurement**, and the raw-float64 ratchet went RED on the result.
+
+Reverted — every `*.witness.json` restored, only the intended source and doc
+changes kept, gates green again. Nothing shipped.
+
+The lesson is not "be careful". It is that **in this corpus a producer IS its
+side effect**: there is no read-only way to ask a producer a question by running
+it, because writing the witness is what it does. Anything that wants to know
+whether a producer executes must either sandbox the working tree or check
+importability without `__main__` — which is exactly what the existing
+`producer_importability_audit` already does, and which I should have looked for
+*before* writing a sweep rather than after it timed out and pointed me at its own
+name.
+
 ## Still open
 
 - **28 `unresolved` C witnesses.** The import-cone walk (depth 2, local modules
