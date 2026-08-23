@@ -9,7 +9,10 @@
 #     DOTS KEPT           -> leanprover--lean4---v4.24.0
 #   * lake-cache branch   = the version with dots->hyphens
 #     slug                -> lake-cache/qou-v4-24-0
-ROOT="$(git rev-parse --show-toplevel)"
+# Resolve the repo from THIS script's own location, not from $PWD: the whole
+# point is to run `lean` on files outside the repo (scratch harnesses), and
+# `git rev-parse` fails the moment you cd away.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")/.." && pwd)"
 DESC="$(tr -d '\r' < "$ROOT/lean-toolchain" | tr -d '[:space:]')"        # leanprover/lean4:v4.24.0
 TCDIR="$HOME/.elan/toolchains/$(printf '%s' "$DESC" | sed 's|/|--|g; s|:|---|g')"
 if [ ! -x "$TCDIR/bin/lean" ]; then
