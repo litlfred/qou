@@ -64,3 +64,38 @@ Do not edit rule 10 on the strength of n=2. Either:
 Until then the honest posture is the one already in force: verify by hand,
 state the evidence in the PR, and do not write "waiting on Copilot" as if
 it were a live gate.
+
+## Corroboration 2026-08-22/23 — three more controlled cases (n=2 -> n=5)
+
+Independently observed before this bean was read, in a separate session
+running /prepare-merge three times. Same protocol: Copilot requested via
+`mcp__github__request_copilot_review`, then polled with
+`pull_request_read get_reviews` + `get_check_runs`.
+
+  #5411  requested 2026-08-22 ~12:22Z  polled ~5/~8/~12 min  0 reviews, 0 check runs
+  #5459  requested 2026-08-22 ~19:0xZ  polled to 5+ min      0 reviews, 0 check runs
+  #5482  requested 2026-08-22 ~20:46Z  polled to 5+ min      0 reviews, 0 check runs
+
+All three merged on agent verification alone. Notes that sharpen the
+original measurement:
+
+1. **`get_check_runs` returns `total_count: 0`**, not a queued or
+   in_progress `copilot-pull-request-reviewer` run. So this is not a slow
+   reviewer that could still land — nothing is ever enqueued. The 15-minute
+   wait protocol in prepare-merge-auto Phase 1b polls for a check run that
+   does not get created.
+2. **Re-requesting after a force-push does not help.** #5459 was requested,
+   rebased + force-pushed, then re-requested against the new head per the
+   staleness rule. Still 0.
+3. **File type is not the discriminator.** The three span new Lean
+   (#5459), a 20-file revert (#5411), and a `.beans/`-only change (#5482).
+   prepare-merge-auto's "no check run after 2 minutes -> reviewer did not
+   trigger for this file type" reads as a file-type quirk; across n=5 it
+   looks unconditional.
+
+Consequence for rule 10: with CI dispatch-only and Gemini sunset, the
+Phase-4 gate table now has **zero** live external gates, not one. The
+agent's own verification is not the last gate standing — it is the only
+one. Worth saying plainly in AGENTS.md rather than leaving Copilot listed
+as "the one review to wait on", because the wait is what the protocol
+still prescribes and it always expires.
