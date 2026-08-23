@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T16:44:14Z
+updated_at: 2026-08-23T17:34:29Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -326,3 +326,73 @@ moved) and the *fix* is not.
 **Lead for the remaining 9:** `hadron-knot-table.witness.json` is both a
 `verified`-but-failing block here AND still on convention C (see the sweep in
 `qou-wjw8`). Take that one next — two independent symptoms on one witness.
+
+
+---
+
+## 4th of 12: `rem:hadron-level-knot-table` — the producer was DEAD. Crash fixed; a decision is owed.
+
+The two-symptom lead paid off, but not the way I predicted. I expected the same
+convention story as H₂. It is worse: **this producer has not been able to run at
+all.**
+
+    TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))
+      hecke_core_legacy.unified_iterative_correction
+
+`_PROTON_G1` / `_NEUTRON_G1` carry `d = -h` as an **mpf** — correctly, it is ℏ_q
+— so the first such crossing promotes the running `M` to dtype object, and the
+sparse fast path (`sig_sparse.T.dot(M_run.T)`, a float64 optimisation) cannot
+consume it. The precision migration did the right thing; that branch was never
+updated. Fixed in `da645cf0f3` by branching on dtype and doing object arithmetic
+over σ's COO nonzeros, NOT by coercing `c`/`d` back to float.
+
+### The witness was stale on THREE axes, and this is the reason
+
+    q          1.1099785955573347   MUON pin
+    z_markov   0.49932033403356124  convention C
+    scriptHash 5ef79c35997f         vs current e28a8ee83da5 — producer changed
+
+computedAt **2026-06-17**, two months ago. Nobody could refresh it because the
+script raised on import of the first heavy atom. The `verified` status was
+therefore describing a run that could not be reproduced at all.
+
+### It runs now, and it is still not practical — measured
+
+    dim   float64      object      slowdown
+      8   0.0031 ms     1.4 ms        460x
+     16   0.0024 ms     8.6 ms       3630x
+     32   0.0056 ms    68.2 ms      12200x
+     64   0.0323 ms   565.2 ms     17475x
+
+Three of nineteen atoms in five minutes; ca40 and fe56 are far larger than the
+three that finished. My first fix densified σ (O(dim³)) and did not clear the
+A=2 atom in ten minutes — keeping the sparsity is a big win and still not
+enough. The slowdown is intrinsic to Python-level object arithmetic, so **no
+data structure closes it.**
+
+### The decision I did not make
+
+The mixed-arithmetic audit offers `# float64-intentional: <reason>` for exactly
+this. Taking it would make the producer fast again. But justifying it requires
+knowing what precision `check_frobenius` (`Gx ≥ 0`) actually needs, and that is
+a judgement about the pipeline's physics, not plumbing. **Options, for whoever
+decides:**
+
+1. Annotate the crossing loop `float64-intentional` — fast, and needs an
+   argument that LP stability is not precision-sensitive at ~1e-16.
+2. Move the hot loop to `pyhecke-native` (Rust), which is why that crate exists.
+   Keeps the precision, recovers the speed, costs real work.
+3. Leave it as-is: correct, honest, and effectively unrunnable for A ≥ 4.
+
+Option 3 is the current state, and it is at least no longer a *silent* failure.
+
+### Score, 4 of 12 — four different causes
+
+    ⁴He               block stated a wrong number              FIXED
+    gs-graded-markov  staleness on both sides                  FIXED
+    h2-lp-dual        convention C -> D casualty               split to qou-wjw8
+    hadron-knot-table producer dead since the mpf migration    crash fixed, perf open
+
+Four blocks, four unrelated mechanisms. The "one root cause" hypothesis is dead;
+what generalises is only the *method* — re-run, diff the inputs, see which one
+moved — and that the `verified` label was load-bearing in every case.
