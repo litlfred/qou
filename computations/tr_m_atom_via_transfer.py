@@ -232,8 +232,13 @@ def main() -> int:
     if d_check is not None:
         w.add_assertion(
             "trM_atom_deuteron_matches_canonical_branching",
-            computed=float(d_check), expected=0.388357, tolerance=1e-5,
-            source="canonical_tr_m_via_branching (#2080) D value",
+            computed=str(d_check), expected="0.5751722439177718708265353439861808891524943528928", tolerance="1e-12",
+            source=("three independent methods 2026-08-19 (bean `qou-r9dv`): "
+                    "this transfer, the Hoefsmit atomic_tr_m_mpfr_50dps + "
+                    "markov_peel path (exact to every digit), and "
+                    "canonical_tr_m_via_branching (1.4e-4). REFRESHED from a "
+                    "stale 0.388357 that no live path produced and that this "
+                    "witness recorded as PASSING."),
         )
     w.add_assertion(
         "free_chi_matches_parabolic_lr_50dps",
