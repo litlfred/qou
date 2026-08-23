@@ -1,11 +1,11 @@
 ---
 # qou-ibcv
 title: c-q-q0.derivation.json is muon-pinned but the validator re-evaluates it at the proton pin — a live layer straddle the crash was hiding
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T17:01:46Z
-updated_at: 2026-08-23T17:02:24Z
+updated_at: 2026-08-23T19:06:09Z
 ---
 
 Surfaced by fixing the crash in `qou-n7ue` item 1. The validator detected this
@@ -62,3 +62,56 @@ Only the crash: `mp.nstr` in place of the `.2e` format spec, so the validator
 can report rather than die. The straddle itself is untouched and needs the
 decision above. `_eval_simple_algebra`'s float64 return is left alone too —
 separate defect, same file, and fixing it changes no verdict here.
+
+## RESOLVED — option 1 taken (owner's call, 2026-08-23): re-derived at the proton pin
+
+`53673c01fd`. The chain now evaluates at the experimental/proton anchor, per
+the 2026-08-07 directive that compute defaults to proton:
+
+```
+target_value  9.0926794561502453911039703556573825637151463686661
+              = 1 / (1.1099785827513808075916690956107688798744991218736 - 1)
+```
+
+The prose moved with the number — the step name and `operation` quoted the muon
+value, and leaving them would have reproduced the same straddle one layer down
+in the text. The leaf's `notes` records which pin it is on and why, so the next
+reader does not have to infer the layer from a call site.
+
+**The 50 digits are load-bearing, not decoration.** `validate_chain` loads with
+`json.load(f, parse_float=str)` precisely so the authored digits survive rather
+than being rounded through float64 by `json` before the module sees them. A
+16-digit `target_value` would have thrown away the precision the loader exists
+to protect.
+
+## Also fixed, because this work exposed it
+
+`_eval_simple_algebra` computed `1.0 / (q - 1.0)` in **float64** against a
+target authored to 50 places, so the comparison had a floor of ~1e-16 no matter
+how tight `target_tolerance` was set. A chain tightened past that would have
+failed for arithmetic reasons and been read as a derivation error — the
+`c₃`-normalisation trap in a different costume. It now carries `mpf` and takes
+`q` from `Q_50_DIGIT_STR` rather than the float64 back-compat alias `Q_0`.
+
+Measured read-only at each stage, no witness written:
+
+| state | rel_diff | vs `1e-12` tolerance |
+|---|---|---|
+| straddle (as found) | `1.16e-7` | fails by ~10⁵ |
+| re-derived, float64 re-eval | `2.63e-16` | passes, at the arithmetic floor |
+| re-derived, exact re-eval | **`4.86e-51`** | agrees to all 50 authored digits |
+
+`scripts/precision-gates.sh --changed`: all blocking gates green.
+
+## What was NOT done, and why it still matters
+
+Option 2 — letting a chain **declare** its anchor and having the validator
+honour it — is not implemented. It remains the better fit for a *derivation*
+record: the ideal/CAL-2 framing is untouched by the proton re-pin, which
+governs what code evaluates at, not what the calibration *is*. This fix makes
+one chain consistent with the compute default; it does **not** stop the next
+ideal-layer chain from being checked against an experimental-layer evaluator,
+because nothing in the schema records which layer a chain belongs to.
+
+There is exactly one c_q chain among the 73 scanned, so the blast radius today
+is one file. Worth a schema bean if the corpus grows a second one.
