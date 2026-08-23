@@ -3703,3 +3703,53 @@ so both are length-preserving. No length *formula* is needed anywhere — the sa
 
 **Next:** restate `closingU` with raw hypotheses, then `closingV`, then
 `closingPhase`. Then `a = 3`.
+
+### THE WHOLE `a ≤ b` PREFIX IS PROVED — `prefixChain`, sorry-free
+
+`CornerLe.prefixChain : T0 →* TCancel` covers all `a² + a + 5` steps of the
+corner's `a ≤ b` prefix, from the S-polynomial to the first cancellation.
+`a ≥ 4`, diagonal `b = a` included.
+
+    openingPhase   a² − 3a + 9   s1, s2, uLoop, vLoop, trio, trio
+    closingPhase   4(a − 1)      fRun, closingBs, fRun
+                   -----------
+                   a² + a + 5
+
+Both counts close against the prefix length exactly, 6/6 at `a = 4,5,6`,
+`b ∈ {a, a+1}`.
+
+`TCancel_coeffEq` is the cancellation: the two `WStar` entries carry `h` and
+`−h` and drop out, leaving `[(V1, 1), (U1, −1)]` — the measured 4 → 2 drop.
+
+**All four final declarations went through first try.** That is not luck and is
+worth recording as method: every endpoint had already been *forced* to match, by
+the two bridge lemmas (`trio_out_eq_fRun_source`, `fRun_target_eq`) and by
+stating each half against the same four-term list. `closingV_at_TOpen`'s source
+IS `closingU_at_TOpen`'s target, syntactically — so `closingPhase` is one
+`.trans` and `prefixChain` is another. The cost was paid earlier, in the six
+iterations `closingV_at_TOpen` took.
+
+#### What this arc actually cost, and where
+
+Ten errors, all mine, in two shapes that recurred until they were named:
+
+*A check that cannot fail, or covers less than it reports* — six instances,
+ending with the bystander sweep run over one of two F-runs and written up as
+complete. The tell each time: the probe's own variable names said what the prose
+did not.
+
+*A structural claim not measured is usually wrong* — four instances, including
+`L = jpp − j₁` (right only at `a = 4`), a diagonal-only `T`, and testing
+V-lineage words against the U trio.
+
+Plus two of one Lean-specific trap: a **hypothesis made too strong for its
+intended instance**. `uLoop`'s `j₂ ≤ j₁` broke `uHead`; `closingU`'s packaged
+`hV` was outright unsatisfiable at its call site. The second is the important
+one — **`lean`-direct exit 0 and a clean `#print axioms` say nothing about
+whether a hypothesis is reachable.** The discipline that fixed it, and that
+every later lemma used: *state the lemma and instantiate it at the real call
+site in the same commit.*
+
+**Remaining:** `a = 3` — loop parameter `m = −1`, no loop pass, the opening
+phase's shape does not arise. Its own treatment, sharing nothing with the
+general assembly. Stated in `prefixChain`'s docstring rather than left implicit.
