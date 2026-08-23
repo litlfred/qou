@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-08-23T08:14:21Z
+updated_at: 2026-08-23T08:23:16Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -105,3 +105,37 @@ silently wrong.
 Note the 12x size difference suggests one is a truncated or partial write
 rather than a full second run — worth establishing which is authoritative
 before deleting either.
+
+
+## The second copy is not data at all — it is a PRE-FIX FAILED RUN (2026-08-23)
+
+Sharpens the correction above. `computations/habiro/habiro-coefficients-extended.witness.json`
+does not hold different numbers; it holds **no numbers**. All four isotope
+keys are error records:
+
+    D (deuteron, A=2)  {'error': 'ValueError: LaurentQ.from_sympy: non-Laurent factor ...'}
+    T (triton, A=3)    same
+    3He (helion, A=3)  same
+    4He (alpha, A=4)   same
+
+That is why it is 1892 B against the top-level copy's 23857 B — it is a
+**failed regeneration attempt that got committed**, not a second successful run.
+
+**Dating it: this predates PR #5376.** Per `qou-iayk`, the LaurentQ parser
+fix landed in #5376 and the producer then runs **4/4 clean**. So this file
+captures the failure mode that fix removed. It is stale in the strongest
+sense — not merely out of date, but a record of an error that no longer
+occurs.
+
+**Consequence for the disposition.** The earlier note asked which copy is
+authoritative before deleting either. That question is now answered: the
+top-level copy is the only one carrying data, and the `habiro/` copy has no
+recoverable content to preserve. It still must not be deleted casually — a
+consumer may resolve that path (the `667c9ab3f6` probe did exactly that,
+via `rglob`) and would then read an error record as though it were a
+witness. Fix the resolution, then remove the artifact.
+
+**Not the regeneration blocker.** Do not read this as the reason Habiro
+cannot be regenerated. Per `qou-iayk` the parser error is FIXED; the live
+blocker is that the fresh values contradict a landed D(u) closed-form law
+that the old witness satisfies exactly. Different problem, different bean.
