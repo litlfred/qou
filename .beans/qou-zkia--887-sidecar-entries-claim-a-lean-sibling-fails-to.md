@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T10:39:37Z
-updated_at: 2026-08-23T10:40:20Z
+updated_at: 2026-08-23T12:31:20Z
 ---
 
 ## Measured
@@ -68,3 +68,60 @@ folio-assistant side, so this is not a qou-only change.
 Two of the fourteen genuinely fail (`qou-exists-axiom-2.lean`,
 `neutrino-knot.lean`). The claim is wrong at scale, not always wrong; each
 block still needs checking rather than a blanket clear.
+
+
+## CORRECTION to my own numbers above (2026-08-23)
+
+The "887 entries across 258 blocks" and "241 of 258 present as current" figures
+are **wrong as a statement of impact**, and I am striking them rather than
+leaving them to be quoted.
+
+887 is entries-ever-written. Only **82 are the latest entry for their
+criterion** — the live verdict. 805 were already superseded by a later entry.
+So the live blast radius was **82 entries across 34 blocks**, not 887 across
+258. I measured sidecar lean-hash freshness and read it as "this verdict is in
+force"; those are different questions, and conflating them inflated the finding
+roughly tenfold.
+
+Also not new: the 2026-06-22 batch from the same `qa-agent-drain` procedure did
+this on the `proof-*` axis (~76–86 % FP, drained in PR #2775). This is a
+**recurrence**, which is the part that justified acting.
+
+## Measured
+
+255 siblings compiled `lean`-direct against a built import cone, 3-way parallel:
+**225 clean (88.2 %), 27 genuine failures, 3 inconclusive** (missing olean in my
+environment — the same artifact the batch hit, so neither corrected nor
+confirmed).
+
+## Done (PR #5533)
+
+- [`scripts/reaudit-da-compile-claims.py`](../scripts/reaudit-da-compile-claims.py)
+  — invalidated **95 entries across 46 blocks** to `n/a` pending re-review.
+  Follows #2775's policy: append never rewrite, `n/a` never `pass` (a false
+  ground leaves a judgment verdict unsupported, not disproven), genuine failures
+  untouched (4 kept).
+- [`scripts/qa-evidence-provenance-gate.py`](../scripts/qa-evidence-provenance-gate.py)
+  — deterministic, compiles nothing, flags three signatures that cannot bear on
+  this repo: a path under another machine's checkout, a missing olean, a
+  statement-extractor parse error. Live findings **24 → 2**; both remaining are
+  `frobenius-codim-universal`, which genuinely fails.
+- `local/devils-advocate-watcher` §"The Lean sibling does not compile" is a
+  claim about YOUR MACHINE — the procedure gap that let it recur.
+
+My first drain pass keyed on the prose "fails to compile" and missed twelve
+entries that pasted the raw error instead; the gate caught them, and the drain
+now keys on the gate's signatures rather than on wording.
+
+## Still open
+
+- **95 invalidated verdicts need genuine re-review.** They are `n/a`, not
+  cleared — the blocks may well be defective for reasons the false ground
+  obscured. That is a `qa-sweep` / agent re-audit job.
+- **4 genuine compile failures** need fixing on their merits:
+  `frobenius-codim-universal`, `hadron-half-life`, `q-value-transition`,
+  `local-q-zeta-function`.
+- **1 inconclusive**: `crossing-energy-decomposition.lean` — needs its cone built.
+- The gate is not wired into any workflow. CI is `workflow_dispatch`-only under
+  the Actions-billing directive, so it is a hand-run preflight like
+  `precision-gates.sh`.
