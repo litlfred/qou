@@ -19,9 +19,8 @@ about **2× too small** — so the $+0.17\%$ match is a property of the
 
 ## The two canonical functionals
 
-The $N{=}0$ nucleon normal forms (audit step 5) give the
-neutron$-$proton coefficient difference, in the NF basis
-$[\gamma,\sigma_0,\sigma_1,L_+,L_-,e^-]$:
+The $N{=}0$ nucleon normal forms give the neutron$-$proton coefficient
+difference, in the NF basis $[\gamma,\sigma_0,\sigma_1,L_+,L_-,e^-]$:
 
 $$
 (n-p) \;=\; \big[\tfrac{h^2}{2},\,-\tfrac{h}{2},\,-\tfrac{h}{2},\,0,\,0,\,0\big].
@@ -29,7 +28,35 @@ $$
 
 Note the leading $L_+$ term (coefficient $1$ in both) **cancels** in the
 difference; what survives is carried by $\gamma$ (the identity) and the
-$\sigma_i$. Apply the two canonical functionals on $H_3(q)$, writing
+$\sigma_i$.
+
+> **Which NF this is — citation repaired 2026-08-23.** This paragraph read
+> *"(audit step 5)"*, a bare cross-reference naming no document; it resolves to
+> nothing in the corpus, and no committed script recomputes the vector (the one
+> probe carrying it,
+> [`probe_path_a_net_vs_trm_leading_order.py:137`](../../computations/probes/probe_path_a_net_vs_trm_leading_order.py),
+> comments *"from the .md"* — i.e. back to here). Repaired by naming the object
+> instead of a step number.
+>
+> **This is the SINGLE-WRAP NF, not the typed 6-term NF.** The two are distinct
+> corpus objects and
+> [`2026-05-11-q-beta-residual-decomposition.md` §1](2026-05-11-q-beta-residual-decomposition.md)
+> already names both and the **1.00579** basis-change factor between them
+> (*"typed-crossings 6-term NF picks up nonzero $L_\pm$, $e^-$ contributions
+> that exactly cancel at single wrap"*). The live `pyhecke.atom.PROTON_NF` /
+> `NEUTRON_NF` are the **typed** ones, and their difference has **full support**
+> — $\deg_z E = 3$, nothing cancels, $L_+$ least of all. So the sentence above
+> about $L_+$ cancelling is true of the single-wrap NF **only**.
+>
+> Recomputed from `pyhecke.gram.hm` + `atom.build_nucleon_nf` symbolically over
+> $\mathbb{Q}(h)$ and validated against the live constants to float64 $\epsilon$
+> in
+> [`qbeta_nf_single_wrap_vs_typed_probe.py`](../../computations/qbeta/qbeta_nf_single_wrap_vs_typed_probe.py)
+> (8/8), which reproduces both counits — single-wrap $|\varepsilon| = 0.187207$,
+> typed $|\varepsilon| = 0.188291$ — matching the 2026-05-11 audit's quoted
+> $0.18721$ / $0.18829$ exactly. Which of the two is canonical for this chain is
+> **open** (bean `qou-goc9`); the 0.579 % between them exceeds the 0.160 %
+> $N{=}1$ ladder correction it is used to derive. Apply the two canonical functionals on $H_3(q)$, writing
 $h = q - q^{-1}$ for the Hecke parameter and $z$ for the Markov loop:
 
 | functional | def on basis | value on $(n-p)$ |
