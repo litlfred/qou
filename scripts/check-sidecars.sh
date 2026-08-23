@@ -272,6 +272,31 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
   fi
 fi
 
+# ── Dangling citation keys in the files this commit touches ──────────────
+# AGENTS.md §1: "A `sorry` without `-- Ref:` is always a review failure" and
+# the key "must match an entry in content/schema/references.ts exactly".
+# NOTHING enforced that. `run-validate` prints
+#   "no reference registry configured — cites-resolve did not run"
+# and exits 0 over a corpus that carried 54 dangling sites; the platform's
+# `cites-resolve` constraint is real but qou never calls
+# `configureReferenceRegistry`, so it no-ops. Wiring it as-is is NOT the fix:
+# measured, it flags `[manuscript]` — the sentinel AGENTS.md §1 sanctions — as
+# an unresolved citation on two blocks. check-citation-keys.py knows all four
+# live conventions (manuscript / cross-paper label / same-paper label /
+# `[tag] <in-repo-path>`), so it is the gate.
+# Scoped to CHANGED files on purpose: a standing backlog remains, and a gate
+# that reprints all of it every commit is one that gets learned-ignored.
+if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
+  mapfile -t citefiles < <(printf '%s\n' "${files[@]}" | grep -E '\.(ts|lean)$')
+  if ! cite_out=$(python3 "$ROOT/scripts/check-citation-keys.py" \
+        --files "${citefiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ dangling citation key(s) in files you changed — add the entry to"
+    echo "  content/schema/references.ts, or use a documented convention."
+    printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
+  fi
+fi
+
 echo
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."
