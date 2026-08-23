@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T17:53:02Z
+updated_at: 2026-08-23T19:33:47Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -209,3 +209,67 @@ check downstream of it.
 **And it is an anchor-stamp dropper** (`q0Anchor (removed)`, `q0Value (removed)`),
 so it belongs to `qou-veu1`'s class too. Regenerating it as-is would remove it
 from the audited population.
+
+## `vhat_per_crossing_chain` FIXED — `1c0b2dbd0d`. CRASH -> exit 0, witness written.
+
+numpy refused the run (`Cannot cast ufunc 'lstsq' input 1 from dtype('O') to
+dtype('float64')`) because the chain's `(c, d)` are `mpf`. **numpy was right to
+refuse** — satisfying LAPACK would have meant discarding the exact
+coefficients.
+
+`lstsq` was never needed. The routine's own docstring says the reduced element
+lies in `span{σ, I}` by the Hecke quadratic, *"so the fit is exact"* — a
+determined 2×2 solve dressed as least squares, paying float64 for the costume.
+Replaced with the closed form in `mpf`. Note σ is **diagonal** here, so the
+obvious `a = M01/s01` divides by zero; the code picks an independent row pair
+and raises if σ is a multiple of the identity. The exactness the docstring
+asserts is now **checked** (residual < 1e-30), not assumed.
+
+### Three defects that surfaced only because it could run
+
+1. `mpf.__format__` rejects `.6f` — **third instance of this class** this pass,
+   after `derivation_chain_validator`. `float()` display-only.
+2. `json` cannot encode `mpf`. Serialized via `_precision.fmt` at the **write
+   boundary**, not at insert — `records` is also the computation store, and my
+   first attempt serialized early and handed `max()`/`abs()` downstream a
+   `str`. Witness raw-float64 fields: **0**.
+3. **never-raises-dps ratchet went RED.** `mp.dps` is **15** after the
+   transitive imports and **70** after `set_compute_dps()` — precision was
+   inherited, not declared.
+
+**I got (3) wrong first and the measurement corrected me.** I claimed the
+60-digit witness strings were "padding a 15-digit value". They were not: before
+and after agree to **50–51 significant digits**, so the compute was already
+high-precision by some path. What the fix actually changes is that precision is
+now *declared* before the imports that bind constants, moving the last ~9 of 60
+digits. I have not established which constant moved and am not claiming it.
+
+### SCOPE — this does NOT make the producer exact
+
+σ comes from `_cached_seminormal` as **float64**, and `mpf(str(σ_ij))`
+**launders rather than recovers**: 17 digits in, 17 digits of accuracy out,
+however many are carried. The gate names `mpf(str(<f64>))` as a defect class
+and lists 8 sites; this file is not among them, but I am not leaning on the
+detector's silence — detector blindness is a documented pattern here and this
+is the pattern in substance.
+
+So: the arithmetic no longer *loses* precision downstream of σ, and σ's float64
+origin is now the binding limit. The two routes agree to ~15 digits — the
+float64 floor of the **other** route, which starts `a, b = 0.0, 1.0`. An exact
+seminormal source is separate work.
+
+Also corrected a stale docstring: the header said `z = 1/(q^½+q^−½)`
+(convention C) over a value measuring `0.61268803714646525 = q³/(q²+1)` —
+**convention D**. Right value, wrong name, the exact hazard AGENTS.md flags.
+
+`scripts/precision-gates.sh --changed`: all blocking gates green.
+
+## Still open in this bean
+
+- `hadron_knot_table` — float64 CSR × `mpf` vector. Same class as the one just
+  fixed, and the same reading applies: scipy's refusal is the guardrail, so
+  casting the vector down is the wrong fix.
+- `parabolic_cylinder_channel_mixing_probe` — **different class.** Not a type
+  problem: `mp.findroot` lands at residual `0.023` against a `1e-40` tolerance,
+  ~21 orders off. That is "no root found", not "tolerance too tight", and needs
+  numerical investigation rather than a plumbing fix.
