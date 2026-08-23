@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:34:00.861169+00:00",
-  "commitSha": "0d757116bd4fcf43b442bbde1022907394d89f3d",
+  "computedAt": "2026-08-23T08:52:13.237364+00:00",
+  "commitSha": "ee7898b94d3b5ad1f4b5f40facf0077a6de279aa",
   "assertions": [
     {
       "name": "1_divergent_set_has_not_grown",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 333,
+  "durationMs": 320,
   "computation": "hardcoded-q0-literal-families",
   "scriptFile": "hardcoded_q0_literal_families_audit.py",
-  "scriptHash": "cea037bf5055",
-  "scriptCommitSha": "2f569affa7996a1d5483c09b4707870e38ebad75",
+  "scriptHash": "c21126ec2023",
+  "scriptCommitSha": "eadcb02e08df85f09e15218aa1c522dabf99e0a0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -562,18 +562,23 @@
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.1099785955541805169583001889887986763787613849839",
-          "length": 51
-        },
-        {
-          "file": "computations/test_q0_provenance_audit.py",
           "literal": "1.1099785955541805",
           "length": 18
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.10997859555418057528159407961",
-          "length": 31
+          "literal": "1.1099785955541805169583001889887986763787613849839",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805752815940796095093779667618976181",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
@@ -587,18 +592,13 @@
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.10997859555418057528159407961",
+          "length": 31
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
           "literal": "1.1099785955541805753",
           "length": 21
-        },
-        {
-          "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.1099785955541805752815940796095093779667618976181",
-          "length": 51
-        },
-        {
-          "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
         },
         {
           "file": "computations/three_quark_borromean_lp_sweep.py",

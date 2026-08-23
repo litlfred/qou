@@ -151,7 +151,23 @@ def scan() -> dict:
             src = p.read_text(encoding="utf-8", errors="replace")
         except Exception:  # noqa: BLE001
             continue
-        for lit in set(_LITERAL.findall(src)):
+        # `sorted(set(...))`, not `set(...)`. Iterating a set OF STRINGS is
+        # order-nondeterministic across processes (PYTHONHASHSEED randomisation),
+        # so this producer emitted a DIFFERENT witness on every run: three
+        # back-to-back runs in one container came out identical as a set (72
+        # entries each) and different as a list every time. Confirmed directly —
+        # the same `set(...)` under PYTHONHASHSEED=1 and =2 yields different
+        # orders.
+        #
+        # That is not cosmetic for a witness: byte-identical reproducibility is
+        # impossible, every diff shows churn that means nothing, and a
+        # `scriptHash` staleness can never be cleared by re-running, because the
+        # re-run never reproduces. The rest of this file already sorts
+        # (`sorted(_SCAN_ROOT.rglob(...))`, `sorted(divergent)`); this was the one
+        # unsorted iteration. Found while refreshing this witness for bean
+        # `qou-1brv`; I first mis-attributed the churn to the mpmath version,
+        # which two runs under a FIXED mpmath disproved.
+        for lit in sorted(set(_LITERAL.findall(src))):
             if len(lit) < _MIN_LEN:
                 continue
             # A literal is ACCEPTABLE if it is the canonical pin either
