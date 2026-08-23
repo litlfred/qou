@@ -693,6 +693,52 @@ $z = 1$) — faithful rather than the zero functional, so the axioms do not forc
 degeneracy — but that model is commutative and says nothing about the Hecke
 tower.
 
+## 4i. Scope correction: the bar is p↔n conjugation ON THE RATIO, not on the traces (2026-08-23)
+
+This document's title, and the compressed form "`q ↦ q⁻¹` is proton↔neutron
+conjugation", invite a reading that is **false**, and it is now measured false on
+an independent code path. The naive reading would be
+
+$$
+  \mathrm{tr}_M(\mathfrak{p};\, q^{-1}) \;\overset{?}{=}\; \mathrm{tr}_M(\mathfrak{n};\, q),
+$$
+
+i.e. that the bar exchanges the single-nucleon traces. Measured on the
+χ-cache / Hoefsmit route at the proton pin:
+
+| | at `1/q₀` | compared to | at `q₀` | relative |
+|---|---|---|---|---|
+| `tr(p)` | `−0.2141197402249068` | `tr(n)` | `+0.9877436881158096` | `1.217` |
+| `tr(n)` | `−0.3051189247742041` | `tr(p)` | `+1.1457596924573009` | `1.266` |
+
+Not equal — not even in sign. The traces are not bar-even either (self-departures
+`1.187`, `1.309`, `0.966`), so the bar does something to them; it simply is not
+the exchange.
+
+**What was actually measured, and still holds, is the statement about the
+ratio:**
+
+$$
+  L(Z,N;\,q) \;-\; L(N,Z;\,q^{-1}) \;=\; \delta(q),
+  \qquad L \;=\; \ln\frac{\mathrm{tr}_M^{\text{free}}}{\mathrm{tr}_M^{\text{atom}}},
+$$
+
+with `δ` independent of `(Z,N)` — spread `7.9e-24 … 2.4e-30` over `A = 2…6`.
+The bond-product derivation says *why* the two levels differ: the structure lives
+in the bond letters `z + d`, the free trace factorises over nucleons, and the
+per-nucleon factors together with the overall scale **cancel out of the ratio**.
+A statement about `L` therefore carries no commitment about `tr_M` itself.
+
+This is the arity-conflation class the repository's own discipline warns about —
+an equivalence established at one level read at another. Stating it as "the bar
+exchanges p and n" without naming `L` is the over-claim; **"the bar acts as p↔n
+conjugation on the free/atom log-ratio, up to a nucleus-independent δ"** is what
+was shown.
+
+Found while unblocking the χ-cache path at the bar image (`qou-8chw`), which
+until 2026-08-23 crashed rather than evaluate at `1/q₀` — so this check could not
+previously have been run at all.
+
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
 The conjecture assigns the bar-even channel to binding (`Re 𝔙`) and the bar-odd

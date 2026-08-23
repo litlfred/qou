@@ -82,7 +82,9 @@ def anchor_of_q0(q) -> str | None:
 
 
 def load_y_lambda_for_q0(n: int, q0) -> dict:
-    """y_λ table for H_n at the SAME layer as `q0`. Raises rather than straddle.
+    """y_λ table for H_n at the SAME layer as `q0`, or computed live off-anchor.
+
+    Raises rather than straddle; computes rather than refuse.
 
     The boundary guard AGENTS.md §"q₀ anchor convention" asks for:
 
@@ -100,12 +102,29 @@ def load_y_lambda_for_q0(n: int, q0) -> dict:
     Refusing is the point. Serving the other layer's table "because it is
     close" reproduces the exact defect this is meant to stop, at a margin no
     downstream check is sized to catch.
+
+    OFF-ANCHOR q: COMPUTE, DON'T REFUSE (2026-08-23, bean `qou-8chw`).
+    "No cache exists for this q" and "this q belongs to the other layer" are
+    different situations and only the second is a straddle. Refusing both
+    conflated them, and it cost a live crash: evaluating the cluster probe at
+    the **bar image** `1/q_0 = 0.9009…` — which is neither pin, and is the
+    whole subject of the isospin-conjugation work — died here with "cannot
+    tell which q0 layer it belongs to" rather than computing.
+
+    So an unclassifiable q now falls through to the live closed form at
+    **that exact q**. That is not guessing and not straddling: it is this q's
+    own y_λ, merely slower than a table lookup. Verified same-frame before
+    wiring — the proton cache and the live closed form agree to 2.3e-51 at
+    n = 6 and 1.0e-51 at n = 9, i.e. to the serialisation floor, so both sides
+    of this function are convention D and the fallback cannot introduce a C/D
+    mismatch. Every straddle refusal below is untouched.
     """
     want = anchor_of_q0(q0)
     if want is None:
-        raise ValueError(
-            f"cannot tell which q0 layer {str(q0)[:24]!r} belongs to; "
-            f"refusing to guess a y_lambda cache for it")
+        # Off both anchors — no cache can be right, so compute rather than
+        # refuse. See the docstring: this is the not-a-straddle case.
+        from schur_principal_mpmath import y_lambda_at_q0_mpmath
+        return y_lambda_at_q0_mpmath(n, mp.mpf(str(q0)))
     path = _Y_LAMBDA_BY_ANCHOR[want]
     if not path.exists():
         raise FileNotFoundError(
