@@ -1613,6 +1613,17 @@
    "median_rel_move": 0.0,
    "n_fields": 0,
    "err": "TypeError: unsupported format string passed to mpf.__format__"
+  },
+  "binding_via_interface_knot": {
+   "rc": -9,
+   "sec": 300.1,
+   "witnesses": [
+    "binding-via-interface-knot.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 155,
+   "err": "TIMEOUT >300s"
   }
  }
 }
