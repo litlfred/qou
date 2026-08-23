@@ -20,8 +20,11 @@ import mpmath as mp
 import sympy as sp
 
 from _precision import set_compute_dps  # noqa: E402
-set_compute_dps()
-Q0 = mp.mpf("1.1099785955573347199")  # substrate q₀ (proton-pinned), 50 dps witness
+set_compute_dps()  # q₀ is READ from the canonical source, never typed here. This was
+#     Q0 = mp.mpf("1.1099785955573347199")  # substrate q₀ (proton-pinned)
+# whose comment said proton and whose VALUE was muon — 11.54 ppb apart, the
+# mu-p substrate tension itself. Bean qou-bdkx.
+from q_parameter import Q_MP as Q0  # noqa: E402 — canonical proton-pinned q₀
 
 print("="*78)
 print("z2bn τ-derivation — first non-fitted geometric probe")
@@ -167,17 +170,26 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 wpath = WitnessBuilder.wrap_legacy(
     "z2bn-tau-derivation-probe", witness,
     script_path=__file__, engine="sympy", start_time=_T0,
-).save({"q0Anchor": "independent",
+).save({"q0Anchor": "proton",
+     # Passed EXPLICITLY, not left to the builder. The `wrap_legacy` path does
+     # not auto-fill it the way the lever1 producers' path does, and the
+     # witness contract in qou_substrate/witness.py is that only `independent`
+     # has no q0Value -- so declaring a real anchor without one produced a
+     # Q0_VALUE_MISSING in the anchor-consistency audit (0 -> 1), caught by the
+     # preflight on this very change. Bean qou-bdkx.
+     "q0Value": str(Q0),
      "q0AnchorReason": (
-        'Reads no substrate value. PROVED by running this producer'
-        'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
-        'witness: the only non-ephemeral leaves that differ are'
-        'q0Anchor and q0Value THEMSELVES -- every substantive field is'
-        'byte-identical, so the pin changes the label and nothing else.'
-        'Its previous `muon` label was therefore a false claim that'
-        'this producer computed at that anchor. `independent` is the'
-        'honest disposition; a q0_anchor_manifest entry would be the'
-        'WRONG fix, promoting a false claim into a declared one. Bean'
-        'qou-o922, class (ii).'
+        'Consumes q0 (read from q_parameter.Q_MP, the canonical proton pin) '
+        'in the tau closed form, the period pair p/r, and z = sqrt(q)-1/sqrt(q). '
+        'RETRACTS the prior `independent` label. That label rested on a valid '
+        'experiment with an INVERTED inference: running under QOU_Q0_ANCHOR=muon '
+        'and =proton gave byte-identical substantive output, and that was read as '
+        '"reads no substrate value". The real cause was that q0 was HARDCODED, so '
+        'the producer ignored the env var entirely -- anchor-insensitivity in a '
+        'producer that manifestly consumes q0 is the SYMPTOM of hardcoding, not '
+        'evidence of independence. The hardcoded literal was additionally the MUON '
+        'value under a comment claiming proton. Now that q0 is read rather than '
+        'typed, the anchor is real and is declared. Bean qou-bdkx; supersedes the '
+        'qou-o922 class-(ii) disposition for this producer.'
      )})
 print("witness ->", wpath)

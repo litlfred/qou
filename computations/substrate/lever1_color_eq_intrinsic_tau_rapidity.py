@@ -23,8 +23,14 @@ import os
 import mpmath as mp
 
 from _precision import set_compute_dps  # noqa: E402
-set_compute_dps()
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+set_compute_dps()  # q₀ is READ from the canonical source, never typed here. It was a hardcoded
+# literal "1.1099785955573347198997632204832250266562084087802" -- the MUON
+# value -- while this producer's witness declared `q0Anchor: proton`. Declared
+# anchor and computed value disagreed by 11.54 ppb, which is the mu-p substrate
+# tension itself (AGENTS.md: "Never straddle the two layers inside one
+# quantity", and the 2026-08-07 owner directive that all production code
+# defaults to the experimental/proton anchor). Bean qou-bdkx.
+from q_parameter import Q_MP as Q0  # noqa: E402 — canonical proton-pinned q₀
 
 def pr(q):
     s = mp.sqrt(q)
