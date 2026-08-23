@@ -226,6 +226,7 @@ export default chapter({
             "archimedean-realization-functor",
             "archimedean-realization-functor-interpretation",
             "adelic-substrate-integration",
+            "q-clt-jsj-mass-scaling",
           ],
         }),
       ],
