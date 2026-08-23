@@ -113,6 +113,7 @@ def main():
     # holds for any G by construction and is therefore NOT a drift gate.
     try:
         import numpy as np
+        import mpmath as _mp
         from pyhecke import gram
         hv, zv = gram.h, gram.z
         v = np.array([hv * hv / 2, -hv / 2, -hv / 2, 0.0, 0.0, 0.0])
@@ -176,10 +177,55 @@ def main():
               f"disc(q²−q+1) = {_disc} < 0 ⇒ no real root ⇒ ⟨v,1⟩ ≠ 0 for every "
               f"real q > 1 ⇒ 1 ∉ range(G): G·ω = 1 is inconsistent at every "
               f"substrate value, so neither pinv nor the TL₃ quotient rescues it")
-    except Exception as e:  # pragma: no cover
+        # The two checks above read NF_BASIS word lengths and never touch G, so
+        # they are NOT the G-dependent drift gate the replaced leg was. Restore
+        # that separately: assert the closed-form v really is G's radical. This
+        # one reads the Gram entries, so it moves if z, TR_M or the NF product
+        # drift — which is the property the original assertion had and these
+        # symbolic identities do not.
+        #
+        # At 50-dps mpmath, NOT float64: the quantity is a near-cancellation
+        # (‖G·v‖ ~ 1e-16 against ‖G‖ ~ 4.5 in float64), exactly the regime where
+        # float64 reports its own noise floor rather than the mathematics.
+        # q is supplied at 50 dps, NOT as the module's float64 `q0`. Measured:
+        # with q entering as a float64 the cancellation floors at 7.12e-18 and
+        # a 1e-40 threshold rejects a CORRECT radical; at 50-dps q it reaches
+        # 2.6e-50. The limit is the precision of q, not `dps` — the tolerance
+        # must be justified by the WEAKEST arithmetic on the path, which is the
+        # false-positive mode written up in
+        # docs/audits/2026-08-15-detector-blindness-taxonomy.md.
+        #
+        # The radical is generic in q (gram_radical_exact_probe: rank 5 of 6 at
+        # three independent rational q), so this is tested at a clean rational
+        # rather than at a pin — which also keeps it free of the muon/proton
+        # layer question entirely.
+        with _mp.workdps(50):
+            _qmp = _mp.mpf(11) / 10
+            _Gmp = gram.gram_matrix_mp(50, q=_qmp)
+            _vmp = [_mp.mpf(-1) ** len(w) / _qmp ** len(w) for w in gram.NF_BASIS]
+            _Gv = [_mp.fsum(_mp.mpf(str(_Gmp[i][j])) * _vmp[j] for j in range(6))
+                   for i in range(6)]
+            _nrm = max(abs(x) for x in _Gv)
+            _scale = max(abs(_mp.mpf(str(_Gmp[i][j]))) for i in range(6) for j in range(6))
+            _ratio = _nrm / _scale
+        check("W1_closed_form_v_is_really_the_radical_of_G",
+              _ratio < _mp.mpf("1e-40"),
+              f"‖G·v‖_inf / ‖G‖_max = {_mp.nstr(_ratio, 6)} at q=11/10, 50 dps — "
+              f"the closed-form q-antisymmetriser annihilates the Gram, so the "
+              f"obstruction above is about THIS form (drifts with z / TR_M / NF)")
+    except ImportError as e:  # pragma: no cover
+        # ONLY a genuine missing dependency skips. A broad `except Exception`
+        # here previously reported EVERY failure as "pyhecke/numpy unavailable",
+        # and it swallowed a NameError in this very block, mislabelling a real
+        # defect as an environment problem. Anything that is not an ImportError
+        # is a bug in the leg and must surface.
         skip("W1_trM_pairing_G_dependent",
              f"pyhecke/numpy unavailable ({type(e).__name__}); symbolic W1 stands")
-        skip("W1_cointegral_matches_net_ansatz",
+        skip("W1_cointegral_obstruction_is_exactly_(q-1)(q^2-q+1)/q^3",
+             f"pyhecke/numpy unavailable ({type(e).__name__})")
+        skip("W1_cointegral_obstruction_nonzero_for_every_real_q_gt_1",
+             f"pyhecke/numpy unavailable ({type(e).__name__})")
+        skip("W1_closed_form_v_is_really_the_radical_of_G",
              f"pyhecke/numpy unavailable ({type(e).__name__})")
 
     # ---- W2: does the full GS net match the production cos-ladder? ----
