@@ -101,8 +101,40 @@ def candidates(kind: str = "inline") -> list[Path]:
             if "M_MU_OVER_M_E" in src and INLINE_Q0.search(src):
                 out.append(p)
         else:
-            if (MUON_LITERAL.search(src) and ".witness.json" in src
-                    and any(w in src for w in WRITES_WITNESS)):
+            # The literal must be in CODE, not prose. A docstring or comment
+            # that MENTIONS the muon pin does not give the producer a q of its
+            # own, and without a q of its own the anchor-flip test means
+            # nothing -- such a producer SHOULD move, because the manifest q is
+            # the only q it has.
+            #
+            # Measured: m_p_substrate_identity_50dps was selected on a single
+            # DOCSTRING mention ("At q_0 = 1.1099785955573347... (50 dps,
+            # m_p-pinned re-pin #1422)"), while its only q is
+            # `q = mpf(Q_50_DIGIT_STR)` -- the manifest pin. It was then
+            # reported as a STRADDLE whose assertion moved, which was wrong and
+            # was the headline case of that run.
+            #
+            # Same prose-vs-code defect fixed in q0_producer_pin_classifier
+            # (#5595). Comments never reach the AST, so they are excluded by
+            # construction here; docstrings must be excluded explicitly.
+            if not (".witness.json" in src and any(w in src for w in WRITES_WITNESS)):
+                continue
+            try:
+                tree = ast.parse(src)
+            except SyntaxError:
+                continue
+            docs = set()
+            for n in ast.walk(tree):
+                if isinstance(n, (ast.Module, ast.FunctionDef,
+                                  ast.AsyncFunctionDef, ast.ClassDef)):
+                    d = ast.get_docstring(n, clean=False)
+                    if d:
+                        docs.add(d)
+            in_code = any(
+                isinstance(n, ast.Constant) and isinstance(n.value, str)
+                and MUON_LITERAL.search(n.value) and n.value not in docs
+                for n in ast.walk(tree))
+            if in_code:
                 out.append(p)
     return out
 
