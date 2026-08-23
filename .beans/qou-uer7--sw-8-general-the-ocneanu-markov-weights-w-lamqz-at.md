@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T17:18:15Z
+updated_at: 2026-08-23T18:21:48Z
 parent: qou-59vq
 ---
 
@@ -84,3 +84,52 @@ and only then formalise.
 
 **Separable finding:** the `jones_wenzl_weight` defect is a live bug in a
 production compute path, independent of SW-8.
+
+
+## Status 2026-08-23 — the weights at general n are DERIVED and partly Lean-proved (PR #5575)
+
+Closed form, derived in exact Q(q,z) rather than recalled:
+
+    W_lam(q,z) = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - qz) + q^{2j+1} z ]
+                 / prod_{(i,j) in lam} [ q^{2h(i,j)} - 1 ]
+
+Lean (sorry-free, axiom-clean): `QOU/SchurWeyl/OcneanuWeight.lean` (generic `[Field R]`,
+no R) + `OcneanuWeightMarkov3.lean` (the R comparisons). Reproduces `markovWeight0/1/2`
+exactly; `Sum_lam d_lam W_lam = 1` at n=3 AND n=4 — the n=4 identity being the
+out-of-sample one, since n<=3 cannot constrain the framing monomial at all.
+
+Also proved: at convention D's `z = q^3/(q^2+1)`, every partition with >=3 rows has
+weight ZERO. That z is the k=2 member of the family `z = q^{2k+1}/(1+q^2+...+q^{2k})`
+killing content `-k`; convention C's `sqrt(q)/(q+1)` is not a member at any integer
+content.
+
+### The trap, for whoever picks this up
+
+**Every partition of n <= 3 has distinct cell contents.** The first repeat is the two
+content-0 cells of (2,2). So a weight formula fitted to n<=3 is off by a monomial and
+looks correct — mine was, by q^2 on exactly (2,2), (3,2), (2,2,1). Any future work on
+this must check at n >= 4.
+
+### STILL OPEN — the reason this bean is not closed
+
+The **Markov property at general n**: `tr(xy) = tr(yx)` and `tr(x sigma_n) = z tr(x)`
+for the functional `Sum_lam W_lam chi_lam` built from this closed form. Verified
+numerically (exactly, in Q(q,z)) through n=6, and cross-checked against the corpus's
+independent linear-solve inversion at n=2..5 — but **not proved**.
+
+Until it is proved, `heckeWedderburnDataOfWeights` is deliberately NOT instantiated with
+`ocneanuWeight`. Doing so would let a consumer read the functional as a Markov trace on
+the strength of a numerical check, which is what `HeckeWedderburnDataGeneral`'s own
+docstring warns against. That instantiation is the next real deliverable and it needs the
+theorem, not the probe.
+
+Likely route: the branching identity `W_mu^(n) = Sum_{lam = mu+box} W_lam^(n+1)` is a
+clean statement about the closed form alone (a hook-length/content telescoping) and
+implies trace-consistency across the tower; combined with the q-JM diagonal action
+(`seminormalRep_qJM_diag`, already proved) it should give the Markov condition without
+ever assembling a seminormal matrix.
+
+### Defects surfaced, beaned not fixed
+
+- `qou-bsec` — `jones_wenzl_weight` is wrong and LIVE (mass_at_3A_proper.py:592).
+- `qou-pc7l` — `ocneanu_weights.py` docstring declares convention C, code runs D.
