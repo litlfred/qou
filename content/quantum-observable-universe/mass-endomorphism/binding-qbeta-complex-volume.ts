@@ -26,7 +26,11 @@ export default conjecture({
       "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
     witness:
       "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (c2_gate). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
   tags: [
     "tier:keystone",

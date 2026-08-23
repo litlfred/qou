@@ -56,7 +56,11 @@ export default proposition({
       "computations/markov/markov-trace-atomic-proton-full.witness.json",
       "computations/markov/markov-trace-axiomatic-proton.witness.json",
     ],
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (anti_self_reciprocal). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
     requires: ["sympy"],
   },
   lean: {

@@ -18,7 +18,11 @@ export default conjecture({
     script: "computations/markov/markov_pipeline_cross_validator.py",
     witness:
       "computations/markov/markov-pipeline-cross-validation.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (tr_M_at_q0_archimedean[n (neutron). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
   tags: [
     "tier:keystone",

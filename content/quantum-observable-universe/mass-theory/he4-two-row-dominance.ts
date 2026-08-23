@@ -70,7 +70,11 @@ export default proposition({
     engine: "scipy",
     script: "computations/probe_he4_canonical_tr_m_fingerprint.py",
     witness: "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (tr_M_at_q0). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
     requires: ["numpy", "scipy", "sympy", "mpmath"],
   },
   lean: { ref: "qou:QOU.BraidKnot.He4TwoRowDominance.HasHe4TwoRowDominance" },

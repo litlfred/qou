@@ -13,7 +13,11 @@ export default proposition({
     engine: "python+mpmath",
     script: "computations/delta_lambda_z_coefficient_and_slope.py",
     witness: "computations/delta-lambda-z-coefficient-and-slope.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (slope_10A5_refuted_at_A_ge_5). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
   tags: [
     "mba",

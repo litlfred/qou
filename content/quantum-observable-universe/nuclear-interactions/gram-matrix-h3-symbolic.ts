@@ -66,7 +66,11 @@ export default proposition({
     consumers: [
       "computations/lp_dual_solver.py",
     ],
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (gram_h3_symbolic_matches_pyhecke). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
   tags: [
     "gram-matrix",

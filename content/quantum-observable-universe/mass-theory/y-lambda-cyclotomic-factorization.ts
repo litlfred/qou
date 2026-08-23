@@ -26,6 +26,10 @@ export default proposition({
     engine: "sympy",
     script: "computations/probes/y_lambda_cyclotomic_factorization_probe.py",
     witness: "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (denominator_factors_as_cyclotomic_product). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
 });

@@ -9,7 +9,11 @@ export default conjecture({
   },
   computation: {
     engine: "python",
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (the +2.1° residual is odd-in-h (bar-anti-symmetric)). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
     script:
       "computations/h2s_chirality_residue_s3_holonomy.py",
     witness: [

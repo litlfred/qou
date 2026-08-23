@@ -272,6 +272,22 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
   fi
 fi
 
+# ── computation.status vs. the witness it cites ──────────────────────────
+# `ComputationStatus` is explicit: "verified" = witness matches expected values
+# within tolerance; "failed" = it does not. NOTHING compared the two — no
+# constraint, no sweep, no CI step — and 12 of 166 blocks marked `verified`
+# cited a witness whose own `allPassed` was false, one of them contradicting a
+# number the block states by a factor of three.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.ts$'; then
+  mapfile -t statusfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.ts$')
+  if ! st_out=$(python3 "$ROOT/scripts/check-computation-status.py" \
+        --files "${statusfiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ computation.status disagrees with the cited witness:"
+    printf '%s\n' "$st_out" | grep -E '✗|witness :|failing :' | sed 's/^/    /'
+  fi
+fi
+
 # ── A content .md added without its .ts manifest ─────────────────────────
 # NOTHING detects this. The platform's `orphan QA sidecar` error is a PROXY:
 # it fires only once a file has happened to get QA-swept, so it caught 4 of
