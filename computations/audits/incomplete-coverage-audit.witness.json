@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T20:42:18.675284+00:00",
-  "commitSha": "e298e1239d052967bf2b7eff28ff96ac3a4b94b3",
+  "computedAt": "2026-08-23T13:45:09.735696+00:00",
+  "commitSha": "5eaaff34a43cdf6d3ffa25912cf9f6affa321e64",
   "assertions": [
     {
       "name": "no_error_kind_entries",
@@ -11,15 +11,15 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = every witness covers its enumerated scope)",
-      "source": "Closure gate: when this passes, every production witness has a complete row set for its declared atom / partition / block scope."
+      "source": "Closure gate: when this passes, every production witness READ BY THIS RUN has a complete row set for its declared atom / partition / block scope. It is computed from an empty row set, so it is conditional on the scan having actually read the corpus: 2718 scanned, 2718 clean, 0 UNPARSEABLE. A non-zero unparseable count means this assertion passed over files it never opened."
     }
   ],
   "allPassed": true,
-  "durationMs": 74,
+  "durationMs": 7,
   "computation": "incomplete-coverage-audit",
   "scriptFile": "incomplete_coverage_audit.py",
-  "scriptHash": "8bbbf32c5338",
-  "scriptCommitSha": "54da563cea466a5ef1a9975779719b3255536a70",
+  "scriptHash": "b4c2369a3bc3",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/incomplete_coverage_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/incomplete_coverage_audit.py"
   },
   "description": "I13 audit per local/compute-integration-watcher: every computations/*.witness.json is walked for `error_kind` fields anywhere in the JSON tree.  Each hit records the per-entry failure mode + sibling fields (which typically identify the failing atom/partition/label), giving a follow-up agent the per-entry queue needed to extend the upstream producer's coverage.",
   "contentBlock": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
@@ -41,6 +49,12 @@
     "total_error_entries": 0
   },
   "data": {
+    "scan_coverage": {
+      "scanned": 2718,
+      "clean": 2718,
+      "unparseable": 0,
+      "unparseable_files": []
+    },
     "error_kind_totals": {},
     "rows": []
   }

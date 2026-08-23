@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T17:30:00Z
+updated_at: 2026-08-23T17:55:00Z
 ---
 
 
@@ -855,3 +855,82 @@ exit 0). Type errors identical before and after (8 pre-existing, all from
 missing `@types/node` under a standalone `tsc`, none in the edited region). The
 chapter manifest used to force the failure was restored from a copy and
 `git status` confirmed clean, twice.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `incomplete_coverage_audit.py:89,124`, where the conflation reaches an *assertion*
+
+Filed as *"unparseable and clean both return `None`"*. Confirmed verbatim:
+
+```python
+except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+    return None          # :89  — could not read the file
+...
+if not results:
+    return None          # :94  — read fine, genuinely clean
+```
+
+and `main` does `if result is None: continue`, so the two are the same event.
+
+### Why this instance is the sharpest one in the bean
+
+Every other item here mislabels a *printed* number. This one reaches a
+**committed assertion**:
+
+```python
+.add_assertion(
+    name="no_error_kind_entries",
+    computed=1.0 if not rows else 0.0, expected=1.0,
+    source="Closure gate: when this passes, every production witness has a
+            complete row set for its declared … scope.",
+)
+```
+
+`rows` is empty when nothing has errors **and** when nothing could be read. So a
+corpus that failed to parse end to end would emit a witness asserting **closure
+over the entire production scope**, `allPassed: true`, with a source sentence
+saying exactly that. The gate is strongest precisely where it has read least.
+
+### Changes
+
+1. `_audit_witness` takes an optional `stats` dict and separates the two `None`s
+   — same shape as the `coverage_out` parameter added to
+   `witness_failed_assertion_audit.scan()` earlier in this bean, so the codebase
+   grows one idiom rather than three.
+2. The summary prints `scanned / with entries / clean / UNPARSEABLE`, the last
+   annotated `<- not clean; not read at all`.
+3. A non-zero unparseable count prints an explicit warning that the closure
+   assertion fires on an empty row set and therefore rises with unread files.
+4. **The assertion's `source` now carries its own denominator** — *"every
+   production witness READ BY THIS RUN … 2718 scanned, 2718 clean, 0
+   UNPARSEABLE. A non-zero unparseable count means this assertion passed over
+   files it never opened."* The claim is now checkable from the artefact alone.
+5. `scan_coverage` added to the witness data.
+
+### Measured today — the current pass is genuine
+
+```
+  witnesses scanned:                 2718
+  witnesses with error_kind entries: 0
+  witnesses clean (read, no entries):2718
+  witnesses UNPARSEABLE:             0
+```
+
+Zero unparseable, so the closure assertion is honestly earned right now. That is
+worth stating: the fix does not accuse the current result, it makes the current
+result *provable*. Its witness was last computed **2026-06-16** and is refreshed
+here by a complete plain run of the corrected producer.
+
+### `computed` left as-is, and a pre-existing float64 noted not fixed
+
+The assertion still fires on `rows` only; I did not make unparseable files flip
+it to 0.0. Same visible-not-fatal criterion as the rest of this bean, and the
+`source` now states the caveat the number cannot.
+
+Separately, the raw-float64 guard fires on this witness — `.assertions[0]`
+`computed` / `expected` / `tolerance` are `1.0` / `1.0` / `0.0`. **Pre-existing,
+not introduced here**, and the corpus convention for boolean assertions is the
+string-int form used by `producer_importability_audit`
+(`computed=str(int(...)), expected="1"`). Converting changes the assertion's
+representation for anything reading this witness, so it is recorded rather than
+folded into a coverage fix.
