@@ -872,3 +872,40 @@ factorization.
 ⚠ The next person to claim the remaining work is "just assembly" should write the statement of
 Roth's lemma in Lean and match every hypothesis to a named theorem. That is what found this
 one.
+
+### Addendum — the induction step's interface, composed and checked
+
+Continuing the audit rather than stopping at the fifth correction. Two more claims checked:
+
+**(a) Does `det_separated_wronskian` fit `abs_coeff_le_of_mul_separated`?** I first read the
+`SeparatedWronskian` variable line as `[Field K]` and flagged a mismatch with the ℤ-valued
+height bound. **That was my misreading** — the constraint is `[CommRing K]`, so it applies at
+`ℤ`. Reading is not the audit either.
+
+**(b) Do the pieces actually compose?** New module `QOU/Mathlib/RothInductionStep.lean` writes
+the compositions down and lets the elaborator decide:
+
+```
+sepW                          the separated Wronskian, named
+sepW_eq                       = rename inl (mvGenWronskian Dx φ) * rename inr (mvGenWronskian Dy ψ)
+index_sepW                    index splits EXACTLY across the factorisation
+abs_coeff_le_of_sepW_left     H(x-Wronskian) ≤ H(separated Wronskian)
+abs_coeff_le_of_sepW_right    H(y-Wronskian) ≤ H(separated Wronskian)
+```
+
+`index_sepW` is `rw [sepW, det_separated_wronskian, index_separated]` — one line. **That is the
+point**: if the claimed interface were real the composition would be trivial, and if it were
+not it would not typecheck. Both halves composed unchanged, so the claim survives its first
+actual test.
+
+The audit also cashed a deferred item. `SeparatedHeight.lean` had said of the symmetric bound
+`H(V) ≤ H(U·V)`: *"not written here because nothing yet calls for it. Add it when something
+does, rather than on speculation."* The induction step bounds **both** factors, so it calls
+for it — `abs_coeff_le_of_mul_separated_right` is now written and that note corrected.
+
+⚠ This module is the step's **interface, not its proof.** The recursion — parameter conditions
+and the argument feeding `RothBaseCase` and the `m−1` case back into the `m` case — is
+untouched.
+
+Verification for this addendum: all **sixteen** arc modules rebuilt with `.olean`s deleted —
+exit 0, no linter output; every declaration `[propext, Classical.choice, Quot.sound]`.

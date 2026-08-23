@@ -173,6 +173,29 @@ theorem abs_coeff_le_of_mul_separated {u : MvPolynomial σ ℤ} {v : MvPolynomia
         rw [coeff_sumElim_rename_mul]
     _ ≤ B := hB _
 
+/-- **`H(V) ≤ H(U · V)`** for a non-zero integer `U` in disjoint variables — the mirror of
+`abs_coeff_le_of_mul_separated`.
+
+An earlier version of this module deferred this one, on the grounds that nothing called for
+it.  The induction step of Roth's lemma calls for it: it bounds *both* factors of the
+separated Wronskian, not just the first. -/
+theorem abs_coeff_le_of_mul_separated_right {u : MvPolynomial σ ℤ} {v : MvPolynomial τ ℤ}
+    (hu : u ≠ 0) {B : ℤ}
+    (hB : ∀ n, |coeff n ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| ≤ B)
+    (j : τ →₀ ℕ) : |coeff j v| ≤ B := by
+  classical
+  obtain ⟨i, hi⟩ : u.support.Nonempty :=
+    Finset.nonempty_iff_ne_empty.mpr (fun h => hu (support_eq_empty.mp h))
+  have hui : coeff i u ≠ 0 := mem_support_iff.mp hi
+  have h1 : (1 : ℤ) ≤ |coeff i u| := Int.one_le_abs (by omega)
+  calc |coeff j v| ≤ |coeff i u| * |coeff j v| :=
+        le_mul_of_one_le_left (abs_nonneg _) h1
+    _ = |coeff i u * coeff j v| := (abs_mul _ _).symm
+    _ = |coeff (Finsupp.sumElim i j)
+          ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| := by
+        rw [coeff_sumElim_rename_mul]
+    _ ≤ B := hB _
+
 /-! ### Non-vacuity guards
 
 The identity above would still typecheck with a wrong index convention — it would simply be a
@@ -195,9 +218,9 @@ example :
 
 /-! ### Next
 
-The symmetric statement `H(V) ≤ H(U · V)` for non-zero `U` is the same proof with the roles
-exchanged; it is not written here because nothing yet calls for it.  Add it when something
-does, rather than on speculation.
+The symmetric statement `H(V) ≤ H(U · V)` is now `abs_coeff_le_of_mul_separated_right` above.
+An earlier version of this note deferred it as speculative; the induction step of Roth's lemma
+turned out to need both factors bounded, so it was written.
 
 The next real step is the **height of a generalized Wronskian**, and it is now assembled
 rather than open.  `mvGenWronskian D f` is a determinant whose entries are iterated `pderiv`s

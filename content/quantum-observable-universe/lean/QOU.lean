@@ -1126,3 +1126,8 @@ import QOU.Mathlib.RothBaseCase
 -- The index counterpart of WronskianHeight.  index_det_ge alone does NOT give this —
 -- it bounds a determinant by its entries, not by the f.
 import QOU.Mathlib.WronskianIndex
+-- The interface of Roth's induction step, composed and CHECKED in Lean rather than
+-- asserted in prose: the separated Wronskian's index splits exactly, and each factor's
+-- height is bounded by the whole's.  Both compositions are one-liners — which is the
+-- point: if the claimed interface were wrong they would not typecheck.
+import QOU.Mathlib.RothInductionStep
