@@ -253,14 +253,57 @@ def li_2_q_negative_continuation(
     return -h * total
 
 
-def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:
-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full
-    ``mp.dps`` precision from the canonical pinning witness.
+def load_q_50dps(
+    path: Path | None = None,
+    anchor: str = "proton",
+) -> tuple[mpf, mpf, mpf]:
+    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full ``mp.dps``.
 
     Returns ``(q, q_inv, z)``.  Shared by every script that ingests
     per-generator Wedderburn volumes — centralized per gemini #687.
+
+    Resolution order:
+
+    ``path``    an explicit witness file — wins over ``anchor``, for a
+                caller that must read one particular pinning witness.
+    ``anchor``  ``"proton"`` (default) takes the experimental pin from
+                ``q_parameter.Q_MP``; ``"muon"`` reads the ideal/CAL-2
+                pin from ``q-pinning-50-digit.witness.json``.
+
+    The default was ``None`` -> the muon witness until 2026-08-22.  That
+    made the ideal pin reachable without naming it: a caller writing
+    ``load_q_50dps()`` got muon while the 2026-08-07 owner directive says
+    compute defaults to proton, and with no signal that a layer boundary
+    had been crossed.  Measured at the time: 28 live no-arg call sites in
+    26 files, of which **nine were declared ``physical_proton``** in
+    ``q0_anchor_manifest.json`` and emitting witnesses stamped ``proton``
+    while carrying muon data — and **zero** were declared ``ideal_muon``.
+    So no caller wanted the old default.  Beans ``qou-dkm2`` / ``qou-v90i``.
+
+    A muon-layer caller must now say ``anchor="muon"``, which is the
+    point: the ideal layer stays reachable but has to be asked for.
     """
     if path is None:
+        if anchor == "proton":
+            # `q_parameter` lives in computations/substrate/.  This module
+            # sets up no path bridge of its own, and a caller need not have
+            # one either, so resolve it relative to this file rather than
+            # relying on the caller's sys.path.
+            try:
+                from q_parameter import Q_MP
+            except ModuleNotFoundError:  # pragma: no cover - path setup
+                import sys as _sys
+                _sub = str(Path(__file__).resolve().parent / "substrate")
+                if _sub not in _sys.path:
+                    _sys.path.insert(0, _sub)
+                from q_parameter import Q_MP
+            q = Q_MP
+            qi = mpf(1) / q
+            return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+        if anchor != "muon":
+            raise ValueError(
+                f"load_q_50dps: anchor must be 'proton' or 'muon', got {anchor!r}"
+            )
         path = _Q_WITNESS_DEFAULT
     with path.open() as fh:
         d = _json.load(fh)

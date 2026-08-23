@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T18:40:11.733768+00:00",
-  "commitSha": "c510e2d95436e0328b1b21c3b2ef59dbdebf8ffd",
+  "computedAt": "2026-08-23T07:51:27.753146+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "g_reeb_below_ceiling",
@@ -18,17 +18,17 @@
     },
     {
       "name": "pn_pm1_isospectral_dets_equal",
-      "computed": "0.001740653393",
-      "expected": "0.001740653393",
+      "computed": "0.001740653008",
+      "expected": "0.001740653008",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "b4-1four-reeb-flow-magnitude",
   "scriptFile": "b4_1four_reeb_flow_magnitude.py",
   "scriptHash": "f5054f1face8",
-  "scriptCommitSha": "c510e2d95436e0328b1b21c3b2ef59dbdebf8ffd",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,22 +37,34 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b4_1four_reeb_flow_magnitude.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b4_1four_reeb_flow_magnitude.py"
   },
   "description": "[1⁴] exchange determinant and deuteron det-vs-linear reconciliation at the landed Reeb-flow magnitude g = 1/sqrt(5+(q0-1)^2/q0) (main commits 8275655551 + 17264f2a9c). Audit-only; no fit; no w_pn selection.",
   "tier": "exploratory (consumes one landed constant; enumerates discrete signs)",
   "result": {
     "constants": {
-      "q0": "1.10997859556",
-      "g_reeb": "0.446727067798",
+      "q0": "1.10997858275",
+      "g_reeb": "0.446727067906",
       "g_ceiling_1/sqrt5": "0.4472135955",
-      "headroom_1-sqrt5*g": "0.001087909",
-      "E0_MeV_m_e/(q(q-1))": "4.1859808"
+      "headroom_1-sqrt5*g": "0.0010879088",
+      "E0_MeV_m_e/(q(q-1))": "4.1859814"
     },
     "q1_deuteron_reconciliation": {
-      "g_reeb": "0.446727067798",
-      "det_I_plus_G2_(1-g^2)": "0.8004349269",
-      "B_det_form_MeV_E0*(-ln det)": "0.9317995",
+      "g_reeb": "0.446727067906",
+      "det_I_plus_G2_(1-g^2)": "0.8004349268",
+      "B_det_form_MeV_E0*(-ln det)": "0.93179962",
       "B_linear_5g_MeV_(landed law)": "2.2336353",
       "B_AME_2H_MeV": "2.224566",
       "err_det_form_pct": "-58.113",
@@ -62,9 +74,9 @@
     "q2_1four_enumeration_at_g_reeb": [
       {
         "w_pn": -1,
-        "det_I_plus_G": "0.0017406534",
-        "neg_log_det": "6.3534947",
-        "MeV": "26.595607",
+        "det_I_plus_G": "0.001740653",
+        "neg_log_det": "6.3534949",
+        "MeV": "26.595611",
         "ratio_to_b4_9.2431": "2.87735",
         "ratio_to_full_B4He_28.29566": "0.939918"
       },
@@ -72,27 +84,27 @@
         "w_pn": 0,
         "det_I_plus_G": "0.64069607",
         "neg_log_det": "0.44520008",
-        "MeV": "1.863599",
+        "MeV": "1.8635992",
         "ratio_to_b4_9.2431": "0.201621",
         "ratio_to_full_B4He_28.29566": "0.0658617"
       },
       {
         "w_pn": 1,
-        "det_I_plus_G": "0.0017406534",
-        "neg_log_det": "6.3534947",
-        "MeV": "26.595607",
+        "det_I_plus_G": "0.001740653",
+        "neg_log_det": "6.3534949",
+        "MeV": "26.595611",
         "ratio_to_b4_9.2431": "2.87735",
         "ratio_to_full_B4He_28.29566": "0.939918"
       }
     ],
     "q3_ursell_cumulants_of_det_form": {
-      "b2_det_MeV": "0.9317995",
+      "b2_det_MeV": "0.93179962",
       "b2_AME": "2.224566",
-      "B3_ppn_MeV": "2.2830547",
-      "B3_pnn_MeV": "6.2813661",
-      "b3_det_MeV": "1.4868119",
+      "B3_ppn_MeV": "2.283055",
+      "B3_pnn_MeV": "6.2813669",
+      "b3_det_MeV": "1.4868121",
       "b3_AME": "1.4264",
-      "b4_det_MeV": "15.057563",
+      "b4_det_MeV": "15.057565",
       "b4_AME": "9.2431",
       "finding": "Body-order profile of the det form at g_reeb vs the AME Ursell cumulants — shows whether the det form's binding sits at the right body orders even where totals differ. Scope-(a)."
     },

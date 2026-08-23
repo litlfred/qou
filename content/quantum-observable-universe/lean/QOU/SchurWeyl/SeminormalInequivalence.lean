@@ -351,10 +351,11 @@ used for injectivity of `c ↦ q ^ (2c)`; here it is what makes the evaluation p
 What remains between this and `μ = ν` is the classical fact that a Young diagram is determined by
 its content multiset — stated in the module header as the one open step, and deliberately not
 assumed here. -/
-theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
+theorem contentCount_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
     (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
-    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
+    (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) (d : ℤ) :
     (ν.cells.filter (fun c => cellContent c = d)).card
       = (μ.cells.filter (fun c => cellContent c = d)).card := by
   classical
@@ -371,7 +372,7 @@ theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
           = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
         intro c hc; rw [pow_shiftedContent hμ hq0 hc, mul_pow]
       rw [Finset.sum_congr rfl hν', Finset.sum_congr rfl hμ', ← Finset.sum_mul, ← Finset.sum_mul,
-        contentPowSum_eq_of_matRepEquiv q hq0 hq2 n hμ hν h m]
+        hpow m]
     have hcount := card_filter_eq_of_powSum_eq ht0 hq2 hshift ((d + (n : ℤ)).toNat)
     have hre : ∀ (σ : YoungDiagram), σ.cells.card = n + 1 →
         σ.cells.filter (fun c => shiftedContent n c = (d + (n : ℤ)).toNat)
@@ -390,6 +391,17 @@ theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
       have := neg_le_cellContent hσ hc
       omega
     rw [hempty ν hν, hempty μ hμ]
+
+/-- **An equivalence forces equal content counts.**  The original form of the previous theorem,
+now a corollary of it: `MatRepEquiv` is only ever used to supply the power-sum equality. -/
+theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
+    (ν.cells.filter (fun c => cellContent c = d)).card
+      = (μ.cells.filter (fun c => cellContent c = d)).card :=
+  contentCount_eq_of_contentPowSum_eq q hq0 hq2 n hμ hν
+    (fun m => contentPowSum_eq_of_matRepEquiv q hq0 hq2 n hμ hν h m) d
 
 
 /-! ### Content multiset determines the diagram
@@ -531,6 +543,24 @@ theorem seminormalRep_not_matRepEquiv_of_ne {μ ν : YoungDiagram}
   intro h
   refine hne (youngDiagram_eq_of_contentCount_eq (fun d => ?_))
   have hc := contentCount_eq_of_matRepEquiv q hq0 hq2 n hμ hν h d
+  simpa [diagOf] using hc.symm
+
+/-- **Equal content power sums force equal diagrams.**  The scalar-level form of
+`seminormalRep_not_matRepEquiv_of_ne`, with no representation in the statement at all: if the
+central Murphy power sums take the same value on two shapes of the same size, the shapes coincide.
+
+This is the form a *product-map* argument needs.  `seminormalRep_not_matRepEquiv_of_ne` answers
+"are these two blocks isomorphic"; assembling `⊕_λ ρ_λ` instead needs "do the block scalars
+separate the index set", which is this. -/
+theorem youngDiagram_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) :
+    μ = ν := by
+  classical
+  refine youngDiagram_eq_of_contentCount_eq (fun d => ?_)
+  have hc := contentCount_eq_of_contentPowSum_eq q hq0 hq2 n hμ hν hpow d
   simpa [diagOf] using hc.symm
 
 end QOU.SchurWeyl

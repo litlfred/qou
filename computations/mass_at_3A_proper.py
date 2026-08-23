@@ -235,7 +235,46 @@ def _ensure_block_cache() -> BlockCache:
 _SEMINORMAL_DISK = Path(__file__).parent / ".cache" / "seminormal"
 
 
-def _cached_seminormal(shape: tuple[int, ...]):
+def _q_cache_key(q):
+    """Hashable identity for the q a seminormal build was made at.
+
+    The in-memory cache was keyed `(n, shape)` alone, which was correct only
+    while there was exactly one q in the process. Once `q` is a parameter,
+    that key would serve a build made at one q to a caller asking for another
+    — silently, and with no way to notice. Keys on the TYPE as well as the
+    value so an mpf and the float64 that rounds to it never collide.
+    """
+    if type(q).__module__.startswith("sympy"):
+        return ("sym", str(q))
+    return (type(q).__name__, repr(q))
+
+
+def _cached_seminormal(shape: tuple[int, ...], q=None):
+    """Seminormal (Young orthogonal) matrices for `shape`, built AT `q`.
+
+    `q` defaults to the module-level `Q0` (float64), so every existing
+    positional caller is unchanged. Pass:
+
+      * an `mpmath.mpf`   — high-precision numeric build;
+      * a `sympy.Symbol`  — SYMBOLIC build, matrices are expressions in q.
+
+    Before this parameter existed the matrices were always built at `Q0` and
+    the value was baked in irrecoverably: `char_fast._compiled_sigmas` wrapped
+    them in `lambdify(Q_SYM, ...)`, producing something that LOOKED like a
+    function of q and ignored its argument entirely — `sigma(q=0.5)`,
+    `sigma(q=2.0)` and `sigma(q=7.0)` all returned the q0 matrices, bit for
+    bit. A q-sweep through that path returned the q0 answer at every point
+    with no error and no warning. Bean `qou-v6vp`.
+
+    The disk cache is used for NUMERIC q only. Its filename already carried
+    `q{...:.10f}`, so no cache format changes and no existing archive is
+    invalidated — the q was simply never allowed to vary. A symbolic build is
+    held in memory only: it is cheap (the block values depend on the content
+    distance rho, of which there are only a few per shape) and it has no
+    sensible npz representation.
+    """
+    if q is None:
+        q = Q0
     # P14 fix (2026-05-08, audit F8): replaced pickle (RCE on tampered cache)
     # with numpy.savez_compressed for the dense σ matrices + JSON sidecar
     # for dim and the SYT entry→cell maps. Densify any sparse matrices
@@ -243,22 +282,44 @@ def _cached_seminormal(shape: tuple[int, ...]):
     # the build_seminormal_matrices sparse threshold of 500).
     import json
     n = sum(shape)
-    key = (n, shape)
+    key = (n, shape, _q_cache_key(q))
     if key in _SEMINORMAL_CACHE:
         return _SEMINORMAL_CACHE[key]
+
+    symbolic = type(q).__module__.startswith("sympy")
+    if symbolic:
+        # No disk round-trip: sympy expressions have no npz form, and the
+        # build is cheap because the block values are keyed on the content
+        # distance rho and there are only a few distinct rho per shape.
+        #
+        # `sparse=False` is forced: scipy's csr_matrix requires a numeric
+        # dtype and cannot hold sympy expressions, so the dim > 500 default
+        # would raise. Dense is the only representation available here.
+        data = build_seminormal_matrices_cached(
+            shape, cache=BlockCache(q, q - 1 / q), sparse=False)
+        _SEMINORMAL_CACHE[key] = data
+        return data
+
     _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
     # Bug fix (2026-05-16): Path.with_suffix replaces everything after
     # the FIRST dot in the filename, so `q{Q0:.10f}` (e.g. "1.1099785955")
     # collided every shape at the same n into a single n{n}_q1.npz file
     # that held only the LAST-written shape's data.  Construct the
     # filename by direct string concat to avoid with_suffix.
-    # `_mpf` in the stem: the disk cache is keyed on q to 10 dp, which CANNOT
-    # distinguish an f64 build from an mpf one (they agree to far more than 10
-    # dp). Without this suffix, flipping QOU_H3A_MPF would silently load the
-    # truncated float64 .npz and report it as full precision — the exact class
-    # of error this flag exists to remove.
+    # Two independent fixes to this stem, both kept.
+    #
+    # main: the q here was always the module `Q0`; it is now the q this build is
+    # actually AT. Same format, so every existing archive still resolves — the
+    # field simply becomes meaningful instead of constant.
+    #
+    # this branch: `_mpf` in the stem, because the cache is keyed on q to 10 dp,
+    # which CANNOT distinguish an f64 build from an mpf one (they agree to far
+    # more than 10 dp). Without the suffix, flipping QOU_H3A_MPF would silently
+    # load the truncated float64 .npz and report it as full precision — the exact
+    # class of error that flag exists to remove. The two are orthogonal: one names
+    # WHICH q, the other names AT WHAT PRECISION.
     _prec_tag = "_mpf" if _H3A_MPF else ""
-    stem_name = f"n{n}_q{Q0:.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
+    stem_name = f"n{n}_q{float(q):.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
@@ -300,7 +361,13 @@ def _cached_seminormal(shape: tuple[int, ...]):
     # rebuild path. Composes with the .npz disk cache below; the
     # in-memory BlockCache amortises content-distance arithmetic
     # across shape calls within a single run.
-    cache = _ensure_block_cache()
+    # `_ensure_block_cache()` is the shared float64 cache and is correct only
+    # for the default q. Any other q gets its own cache at that q, so the
+    # shared one is never polluted with values from a different anchor.
+    if _q_cache_key(q) == _q_cache_key(Q0):
+        cache = _ensure_block_cache()
+    else:
+        cache = BlockCache(q, q - 1 / q)
     data = build_seminormal_matrices_cached(shape, cache=cache)
     _SEMINORMAL_CACHE[key] = data
     try:

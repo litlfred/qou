@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T19:52:50Z
+updated_at: 2026-08-23T12:48:09Z
 ---
 
 
@@ -1126,3 +1126,99 @@ cells_biUnion + rows_pairwiseDisjoint + row_eq_prod, from SchenstedCellsBridge, 
 general even though its headline theorem is stated only for a tableauShape. Estimate: 1 brick for
 (c), then (a)+(b)+(d) assemble PlancherelSnData for every n, which would lift the keystone's
 twoM = Identity-I bridge off its n = 3..12 cap.
+
+
+## 2026-08-23 — the blocker is closed, and so is its consumer (PR #5538)
+
+The blocker recorded after #5530 was: `PlancherelSnData` does not generalise the
+way `RSKBijection` did, because identity (ii) is stated with `sumSqContents`
+(row-length list) while the OV/JM layer proves it with `contentSqSum` (diagram
+cells), and nothing in the corpus related the two.
+
+**Both halves landed on `claude/content-sq-sum-bridge-2026-08-23`:**
+
+* `ContentSqSumBridge.contentSqSum_ofRowLens` — the missing identification.
+  Weighted analogue of brick 41's `card_cells_ofRowLens`: `cells_biUnion` +
+  `rows_pairwiseDisjoint` + `row_eq_prod` + `rowLen_getD`.
+* `PlancherelSnDataGeneral.plancherelSnDataGeneral n : PlancherelSnData n` for
+  **every** `n` — (i) from `sum_map_dimHLF_sq` (i.e. from `rskBurnsideHolds`,
+  this epic's own result), (ii) from `identityB_conditional` at
+  `snSpectralData`, reindexed through `numSYT_partitionEquiv` +
+  `contentSqSum_ofRowLens` and cleared by `2·binom(n,2) = n(n−1)`.
+* `two_sum_dim_sq_hooks_general` / `twoM_eq_plancherel_hook_sum_general` — the
+  two Identity I payoffs with **no hypothesis**, where before they held only at
+  `n = 2 … 12`. The keystone's `twoM = Identity I` bridge is off its cap.
+
+Deliberately a `def` rather than an `instance`: the class carries data and eleven
+per-`n` instances are registered; a general instance would make `h.parts` depend
+on resolution order. Cross-checked at `n = 4` against the hand instance (`parts`
+by `decide`, `dim` by `rfl`).
+
+All sorry-free; `#print axioms` `[propext, Classical.choice, Quot.sound]`.
+
+
+### Downstream drain (same branch)
+
+* `WedderburnUnconditional.nuV_top_closed_form` — the (TAIL) first instance with
+  **no** hypothesis. `PlancherelNormalisation`'s "unconditional" version still
+  carried `[SnIsotypicSpechtSplit ℚ]`; the `r + 2 ≤ 20` bound is a *separate*
+  cap of the tail machinery and is NOT discharged by the instance.
+* Nine of my own Schensted brick docstrings got the dated supersession note the
+  other thirteen already had.
+* `BurnsideDischarge`'s "residual `sorryAx`" and three `SYTEncodingBridge`
+  claims corrected, each checked by `#print axioms` first. Notably the
+  custom-`Partition` hook-length gap it calls open is **closed**
+  (`numSYT_mul_hookProduct_partition`), as is its own "remaining half of the
+  bridge" (`numSYT_eq_numStandardYoungTableaux`, in `NumSYTBridge`).
+
+Left alone on purpose: `SchenstedRSKBurnside`, `RSKBurnsideTarget` and
+`SpechtWedderburnLe12` state the old claim in past tense or inside a quoted
+correction — they read correctly.
+
+
+### The cap this actually lifts (same branch)
+
+`SecondMomentKernelVanishes.secondMomentKernel_eq_zero` — `Σ_λ (f^λ)²·ω₃(λ) = 0`
+for **every** `k`. The corpus had it only by `decide`, `3 ≤ k ≤ 20`, and that
+lemma's docstring named the blocker precisely: *"pending the general
+character-orthogonality proof, which needs the JM-eigenvalue ⇒ Plancherel-mean
+bridge (Sₙ representation-theory infrastructure, not yet in the corpus)."*
+
+That bridge is Identity (ii). With `PlancherelSnDataGeneral` stating it over the
+list model, the vanishing is arithmetic: `k!·C(k,2) − C(k,2)·k! = 0`.
+
+Two encoding bridges were needed:
+* `sytDim = dimHLF` on a sorted parts list (composes the two existing routes to
+  `#SYT`);
+* `contentSq = sumSqContents` — written identically in the two files but **not**
+  `rfl`-equal: `contentSq` leaves the coerced inner `List.range` as a monadic
+  bind, so the two elaborate differently.
+
+Downstream: mean-zero was the *only* consumer of `k ≤ 20` in `nuV_top_nonneg`
+and `nuV_top_closed_form`; both are restated uncapped. `k = 25` included as an
+instantiation past the old `decide` frontier.
+
+**Explicitly NOT touched: the kernel conjecture.** `kernelValue k ≤ 0` is the
+`dim³`-weighted total, outside the polynomial-function algebra, and stays open.
+This is the `dim²` total, which was never conjectural — only uncertified past 20.
+
+
+### The keystone defect cubic, uncapped (same branch)
+
+`IdentityIPlancherelInstances` grounds `n144C` in the genuine Plancherel
+squared-hook sum rather than the carried `def twoM` — but only *"at the
+registered `n = 2..12`"*. `KeystoneDefectGeneral` restates both
+(`n144C_eq_twelve_plancherel`, `defect_closedform_plancherel`) with no
+hypothesis and no bound, on `plancherelSnDataGeneral`. `n = 20` included as an
+instantiation past the old registered range.
+
+**Scope, written into the file:** this grounds the defect *coefficient*.
+`n144C_closed_form` is an identity about `n144C`; what these add is that the
+`twoM` inside it is the real Plancherel sum rather than a `def`. Whether the
+keystone's physical claim holds is a separate question and is untouched. The
+`n = 7` sign flip sits inside the old range and is unaffected.
+
+Also corrected `IdentityIPlancherelConditional`'s framing — it calls its class's
+two fields the "only unproved input", axiomatising facts "the pinned Mathlib
+lacks". The corpus has those facts now (the OV tower) and the class is inhabited
+at every `n` by a proof. Signatures and the per-`n` `decide` instances unchanged.

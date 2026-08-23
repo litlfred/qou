@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T15:41:36.691Z",
+  "generated": "2026-08-23T16:25:42.286Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3059,
-  "files_flagged": 131,
-  "total_defects": 110,
+  "scanned_files": 3060,
+  "files_flagged": 130,
+  "total_defects": 109,
   "total_exempt": 47,
-  "total_promoted_from_exempt": 64,
+  "total_promoted_from_exempt": 63,
   "categories": {
-    "proof-no-self-assuming-projection": 103,
+    "proof-no-self-assuming-projection": 102,
     "proof-docstring-sorry-mismatch": 1,
     "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1
@@ -2672,19 +2672,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `jp.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean": [
-      {
-        "line": 71,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)",
-        "decl": "main_commutative_diagram",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `diag.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean": [
