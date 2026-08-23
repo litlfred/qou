@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T07:41:16Z
+updated_at: 2026-08-23T07:47:46Z
 ---
 
 ## Why this bean exists
@@ -571,3 +571,33 @@ not left in place with a citation. The file has 0 occurrences of `sorry`.
 
 Next: the List/Finset bridge → `lapsOf_length` → `(verdictsFor w k).length = 2`
 → the well-founded reduction.
+
+
+## `lapsOf_length` — and the List/Finset "bridge" was `rfl`
+
+Last entry called this bookkeeping and flagged it as a needed transfer lemma.
+**It needed no lemma at all**: for `Fin n`, a `Finset.sum` over a filtered `univ`
+and a `List.sum` over a filtered `finRange` are the *same term*. Found with
+`exact?`, which returned `rfl` — a good argument for reaching for the search
+tactics before writing transfer infrastructure by hand.
+
+- `lapsOf_length` — **the traversal takes exactly `n` laps**, one per strand.
+
+The one wrinkle worth noting: `rw [← sum_cycleLen_leaders]` fails with "motive
+is not type correct", because the rewrite needs a *syntactic* match while the
+two forms agree only up to defeq. `exact sum_cycleLen_leaders _` after the
+`simp only` works, since `exact` checks up to defeq.
+
+67 results, sorry-free, zero warnings, axiom-clean.
+
+## What is left for `(verdictsFor w k).length = 2`
+
+`lapsOf_length` gives the lap **count**. The two-entry lemma additionally needs
+the lap **starting positions** to be exactly `Fin n` — i.e. the concatenated
+walks form a list that is a permutation of `List.finRange n`. That needs:
+walks are `Nodup` within a component (the orbit does not repeat before
+`cycleLen`) and disjoint across components (`leaderOf_eq_iff`), giving a `Nodup`
+list of length `n` over `Fin n`, which is therefore a permutation of `finRange`.
+
+With that, `card_involved` transfers to `verdictsFor` and the two-entry lemma
+follows. Then the well-founded reduction, still the last open piece of step 2.
