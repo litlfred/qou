@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T16:34:16Z
+updated_at: 2026-08-23T16:44:50Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -68,3 +68,19 @@ CARRIED AS A HYPOTHESIS, NEVER DISCHARGED: class BondRule with the single field 
 INDEPENDENT CONFIRMATION AS A SIDE EFFECT: mirrorP_eq being machine-proved means Lean and sympy independently agree that P is the interface Markov weight. That was a single-engine result until now.
 
 STILL OPEN, unchanged: the trace-level rule itself. Mechanism known (gap-multiplicativity + the last-strand Markov property, section 4g), formalising it needs a Markov trace on H_n as a Lean object.
+
+HALF THE HYPOTHESIS DISCHARGED 2026-08-19: QOU/MathlibExt/MarkovBondLinear.lean, lean-direct EXIT 0, sorry-free, axioms [propext, Quot.sound] only (not even Classical.choice).
+
+    tr_mul_add_smul_one       tr(x*(s + d.1)) = tr(x*s) + d*tr(x)   for ANY linear tr on ANY R-algebra
+    bondRule_iff_sigma_case   (forall d, tr(x*(s + d.1)) = (z+d)*tr x)  <->  tr(x*s) = z*tr x
+    tr_bond_of_sigma_case     the forward direction, the one that will be used
+
+So the (z+d) SHAPE IS PURE LINEARITY -- no Hecke machinery, no unused-generator hypothesis, no Markov property. The d-family collapses to ONE equation and the entire mathematical content of BondRule now sits in
+
+    tr(x * sigma_g) = z * tr x    for g unused by x
+
+which is what remains open. Combined with markovZ_sub_h from MarkovBondRule, the p-p bond (d=0 -> z) and n-n bond (d=-h -> z-h = zbar) both follow from that single equation.
+
+SCOPE HONESTY: this is NOT the H_n Markov trace object. Building H_n(q) as a Lean algebra with its Wedderburn decomposition, the y_lambda weights, gap-multiplicativity and the Markov property is a multi-session build. What landed is the piece that is fully provable with a trace, an algebra and linearity -- and it removes a parameter from the open hypothesis rather than restating it.
+
+MarkovLinear is shown inhabited (zero functional) so the abstraction is demonstrably not empty; that witness is labelled in-file as evidence about well-formedness and nothing else -- the zero functional satisfies the rule trivially for every z.
