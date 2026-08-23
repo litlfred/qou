@@ -1624,6 +1624,424 @@
    "median_rel_move": 0.0,
    "n_fields": 155,
    "err": "TIMEOUT >300s"
+  },
+  "block_swap_binding": {
+   "rc": -9,
+   "sec": 300.0,
+   "witnesses": [
+    "block-swap-binding.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": "TIMEOUT >300s"
+  },
+  "borromean-axial-coupling": {
+   "rc": 0,
+   "sec": 5.2,
+   "witnesses": [
+    "borromean-axial-coupling.witness.json"
+   ],
+   "max_rel_move": 14878786519154.035,
+   "median_rel_move": 0.5056370624348889,
+   "n_fields": 125,
+   "err": "\u26a0 raw-float64: borromean-axial-coupling.witness.json: 132 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].comp"
+  },
+  "bwhk_st_matrix_corroboration": {
+   "rc": 0,
+   "sec": 2.0,
+   "witnesses": [
+    "bwhk-st-matrix-corroboration.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 130,
+   "err": "\u26a0 environment: bwhk-st-matrix-corroboration.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library,"
+  },
+  "casimir_carlitz_q_bernoulli_probe": {
+   "rc": 0,
+   "sec": 2.8,
+   "witnesses": [
+    "casimir-carlitz-q-bernoulli-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 44,
+   "err": "\u26a0 raw-float64: casimir-carlitz-q-bernoulli-probe.witness.json: 40 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters"
+  },
+  "casimir_grid_sweep_probe": {
+   "rc": 0,
+   "sec": 2.3,
+   "witnesses": [
+    "casimir-grid-sweep-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 136,
+   "err": "\u26a0 raw-float64: casimir-grid-sweep-probe.witness.json: 107 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.substra"
+  },
+  "casimir_hoefsmit_additivity_probe": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "casimir-hoefsmit-additivity-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": "\u26a0 raw-float64: casimir-hoefsmit-additivity-probe.witness.json: 33 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters"
+  },
+  "casimir_macdonald_probe": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "casimir-macdonald-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 251,
+   "err": "\u26a0 environment: casimir-macdonald-probe.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library, inst"
+  },
+  "casimir_phi_q_markov_probe": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "casimir-phi-q-markov-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 84,
+   "err": "\u26a0 raw-float64: casimir-phi-q-markov-probe.witness.json: 83 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.substr"
+  },
+  "casimir_q_factorial_probe": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "casimir-q-factorial-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 63,
+   "err": "\u26a0 raw-float64: casimir-q-factorial-probe.witness.json: 63 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.substra"
+  },
+  "casimir_q_zeta_probe": {
+   "rc": 0,
+   "sec": 1.5,
+   "witnesses": [
+    "casimir-q-zeta-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 947,
+   "err": "\u26a0 raw-float64: casimir-q-zeta-probe.witness.json: 946 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.substrate_q"
+  },
+  "chi_lambda_he4_full_partition_table": {
+   "rc": 0,
+   "sec": 14.1,
+   "witnesses": [
+    "chi-lambda-he4-full-partition-table.witness.json"
+   ],
+   "max_rel_move": 0.35068665385217695,
+   "median_rel_move": 0.0,
+   "n_fields": 802,
+   "err": "\u26a0 environment: chi-lambda-he4-full-partition-table.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 "
+  },
+  "clambda_shape_invariant_probe": {
+   "rc": 0,
+   "sec": 2.6,
+   "witnesses": [
+    "clambda-shape-invariant-probe.witness.json"
+   ],
+   "max_rel_move": 3.0540369737675805e-16,
+   "median_rel_move": 0.0,
+   "n_fields": 120,
+   "err": "\u26a0 raw-float64: clambda-shape-invariant-probe.witness.json: 58 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.q0, .data"
+  },
+  "commutative_chirality_vanishes_probe": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "commutative-chirality-vanishes-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 62,
+   "err": "\u26a0 raw-float64: commutative-chirality-vanishes-probe.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertio"
+  },
+  "cross_check_trM_1ppb": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "cross-check-trM-1ppb.witness.json"
+   ],
+   "max_rel_move": 2997.7758843166425,
+   "median_rel_move": 0.0,
+   "n_fields": 110,
+   "err": "\u26a0 environment: cross-check-trM-1ppb.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library, install"
+  },
+  "cyclic_intertwiner_verify": {
+   "rc": 1,
+   "sec": 6.1,
+   "witnesses": [
+    "cyclic-intertwiner-verify.witness.json"
+   ],
+   "max_rel_move": 1.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "explicit_central_idempotent_probe": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "explicit-central-idempotent-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": "\u26a0 raw-float64: explicit-central-idempotent-probe.witness.json: 56 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions"
+  },
+  "fivetwo_stokes_matrix_zq": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "fivetwo-stokes-matrix-zq.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 49,
+   "err": ""
+  },
+  "frobenius_gram_matrix_probe": {
+   "rc": 0,
+   "sec": 2.0,
+   "witnesses": [
+    "frobenius-gram-matrix-probe.witness.json"
+   ],
+   "max_rel_move": 1.0,
+   "median_rel_move": 0.21668116124329945,
+   "n_fields": 28,
+   "err": "\u26a0 raw-float64: frobenius-gram-matrix-probe.witness.json: 41 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].co"
+  },
+  "gap_a3_deuteron_p_lambda_channels_probe": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "gap-a3-deuteron-p-lambda-channels-probe.witness.json"
+   ],
+   "max_rel_move": 1.0,
+   "median_rel_move": 0.0,
+   "n_fields": 244,
+   "err": "\u26a0 raw-float64: gap-a3-deuteron-p-lambda-channels-probe.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .asser"
+  },
+  "gap_a3_plambda_bar_even_admissibility_probe": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "gap-a3-plambda-bar-even-admissibility-probe.witness.json"
+   ],
+   "max_rel_move": 1.0,
+   "median_rel_move": 0.0,
+   "n_fields": 202,
+   "err": "\u26a0 raw-float64: gap-a3-plambda-bar-even-admissibility-probe.witness.json: 32 raw float64 field(s) would enter the witness \u2014 .data.content_channel_admissibility.C1_sl2_schur_weyl.violations[0].P_lambda,"
+  },
+  "gap_a3_transpose_invariant_plambda_probe": {
+   "rc": 0,
+   "sec": 1.7,
+   "witnesses": [
+    "gap-a3-transpose-invariant-plambda-probe.witness.json"
+   ],
+   "max_rel_move": 0.7128984029517067,
+   "median_rel_move": 0.324921485379779,
+   "n_fields": 26,
+   "err": "\u26a0 raw-float64: gap-a3-transpose-invariant-plambda-probe.witness.json: 1 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance. Carry mpmath.mpf from the source and serialize with _pr"
+  },
+  "gap_a4_He3_residual_probe": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "gap-a4-He3-residual-probe.witness.json"
+   ],
+   "max_rel_move": 0.9494066441456055,
+   "median_rel_move": 0.0,
+   "n_fields": 48,
+   "err": "\u26a0 environment: gap-a4-He3-residual-probe.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15. If this container is si"
+  },
+  "gap_a4_He3_residual_probe_perknot_rerun": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "gap-a4-He3-residual-probe-perknot-rerun.witness.json"
+   ],
+   "max_rel_move": 1.4305427838045348,
+   "median_rel_move": 3.728282004407965e-08,
+   "n_fields": 34,
+   "err": "\u26a0 raw-float64: gap-a4-He3-residual-probe-perknot-rerun.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .asser"
+  },
+  "gap_a4_L1_light_series_probe": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "gap-a4-L1-light-series-probe.witness.json"
+   ],
+   "max_rel_move": 1.8899830544073377,
+   "median_rel_move": 1.3535519425217832e-09,
+   "n_fields": 72,
+   "err": "\u26a0 environment: gap-a4-L1-light-series-probe.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15. If this container is"
+  },
+  "gap_a4_L1_light_series_probe_perknot_rerun": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "gap-a4-L1-light-series-probe-perknot-rerun.witness.json"
+   ],
+   "max_rel_move": 1.9935279738066023,
+   "median_rel_move": 1.3535519425217832e-09,
+   "n_fields": 119,
+   "err": "\u26a0 raw-float64: gap-a4-L1-light-series-probe-perknot-rerun.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .as"
+  },
+  "gap_a4_S_K_additive_probe": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "gap-a4-S-K-additive-probe.witness.json"
+   ],
+   "max_rel_move": 1.853030091672324,
+   "median_rel_move": 0.04039097580504623,
+   "n_fields": 108,
+   "err": "\u26a0 environment: gap-a4-S-K-additive-probe.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15. If this container is si"
+  },
+  "gap_a4_S_K_additive_probe_perknot_rerun": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "gap-a4-S-K-additive-probe-perknot-rerun.witness.json"
+   ],
+   "max_rel_move": 1.9078526541576621,
+   "median_rel_move": 1.2703180967930586e-08,
+   "n_fields": 187,
+   "err": "\u26a0 raw-float64: gap-a4-S-K-additive-probe-perknot-rerun.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance. Carry "
+  },
+  "gap_a4_T2_per_knot_vol_probe": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "gap-a4-T2-per-knot-vol-probe.witness.json"
+   ],
+   "max_rel_move": 0.6494954594716789,
+   "median_rel_move": 1.3172316739307976e-09,
+   "n_fields": 86,
+   "err": "\u26a0 environment: gap-a4-T2-per-knot-vol-probe.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15. If this container is"
+  },
+  "gap_a4_T2_per_knot_vol_probe_perknot_rerun": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json"
+   ],
+   "max_rel_move": 1.907852630539774,
+   "median_rel_move": 1.51133701044137e-09,
+   "n_fields": 117,
+   "err": "\u26a0 raw-float64: gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .as"
+  },
+  "gap_a4_T3_mass_pochhammer_probe": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "gap-a4-T3-mass-pochhammer-probe.witness.json"
+   ],
+   "max_rel_move": 1.7036677648134477,
+   "median_rel_move": 0.0,
+   "n_fields": 63,
+   "err": "\u26a0 raw-float64: gap-a4-T3-mass-pochhammer-probe.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance. Carry mpmath.m"
+  },
+  "gap_a4_T4_schur_weyl_icosahedral_probe_perknot_rerun": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun.witness.json"
+   ],
+   "max_rel_move": 1.0689524502130323,
+   "median_rel_move": 6.645730494374955e-09,
+   "n_fields": 229,
+   "err": "\u26a0 raw-float64: gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tole"
+  },
+  "gap_a4_cross_isotope_residual_probe": {
+   "rc": 0,
+   "sec": 1.7,
+   "witnesses": [
+    "gap-a4-cross-isotope-residual-probe.witness.json"
+   ],
+   "max_rel_move": 1.8956723673889884e-07,
+   "median_rel_move": 4.439305980637449e-12,
+   "n_fields": 182,
+   "err": "\u26a0 raw-float64: gap-a4-cross-isotope-residual-probe.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance. Carry mpma"
+  },
+  "gauge_coupling_uniqueness_probe": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "gauge-coupling-uniqueness-probe.witness.json"
+   ],
+   "max_rel_move": 0.18564837923005054,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": "\u26a0 raw-float64: gauge-coupling-uniqueness-probe.witness.json: 14 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1"
+  },
+  "gg_production_bond_probe": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "gg-production-bond-probe.witness.json"
+   ],
+   "max_rel_move": 0.662969182118663,
+   "median_rel_move": 0.12576004645560895,
+   "n_fields": 22,
+   "err": "\u26a0 raw-float64: gg-production-bond-probe.witness.json: 25 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.q0, .data.E0_M"
+  },
+  "gram_norm_binding_probe": {
+   "rc": -9,
+   "sec": 300.0,
+   "witnesses": [
+    "gram-norm-binding-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 973,
+   "err": "TIMEOUT >300s"
+  },
+  "h4_categorical_drivers_probe": {
+   "rc": 0,
+   "sec": 47.8,
+   "witnesses": [
+    "h4-categorical-drivers-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 30,
+   "err": ""
+  },
+  "habiro_interpolation_wlambda": {
+   "rc": 0,
+   "sec": 213.4,
+   "witnesses": [
+    "habiro-interpolation-wlambda.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 261,
+   "err": "\u26a0 raw-float64: habiro-interpolation-wlambda.witness.json: 160 raw float64 field(s) would enter the witness \u2014 .data.factorization_ratio_tests.fibre2.1.m1.predicted_char, .data.factorization_ratio_tests"
+  },
+  "hadron_knot_table": {
+   "rc": 1,
+   "sec": 38.6,
+   "witnesses": [
+    "hadron-knot-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 693,
+   "err": "TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))"
   }
  }
 }

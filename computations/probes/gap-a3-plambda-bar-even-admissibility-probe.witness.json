@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:20:31.628497+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-23T19:13:31.605765+00:00",
+  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
   "assertions": [
     {
       "name": "row_count_channels_bar_inadmissible",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 49,
+  "durationMs": 48,
   "computation": "gap-a3-plambda-bar-even-admissibility-probe",
   "scriptFile": "gap_a3_plambda_bar_even_admissibility_probe.py",
-  "scriptHash": "06ef4156d570",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "941ec31276a7",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,15 +36,25 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a3_plambda_bar_even_admissibility_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a3_plambda_bar_even_admissibility_probe.py"
   },
   "description": "GAP-A-3 P_λ bar-even (λ↔λᵀ) admissibility probe. Follow-up to the content-channel probe (C1–C4 all refuted): tests whether those refuted channels are even ADMISSIBLE under the transpose-invariance constraint a real bar-symmetric categorical deviation must satisfy, measures bar-evenness of the flat weight w_λ=y_λχ^λ(β_D), and reports the bar-even orbit budget. Formalize-first narrowing, no fit, no 7th ansatz. EXPLORATORY.",
   "auditOnly": "docs/audits/2026-06-20-gap-a3-plambda-bar-even-admissibility.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "A_D_at_q0": "22.975451134838130420437731942051345881424031339093",
-    "tr_M_beta_D": "0.3882864240747888767115375131293520934425994727551477855525846307100523",
+    "tr_M_beta_D": "0.5751722439177718708265353439861808891524943528928544990873291684113575",
     "target_after_A_factored": "-0.1894734460882181255054591606896381538276463299938177687270753926925065"
   },
   "data": {
@@ -354,10 +364,10 @@
       }
     },
     "flat_weight_bar_decomposition": {
-      "bar_even_l1_mass": "0.4260201720447906225804072555110102546508371619249918157336690389060639",
-      "bar_odd_l1_mass": "0.4166594893159732224062186359972089664566503804948518642601372270909557",
-      "bar_odd_fraction": "0.4944458830810620745337853931998062595251971684653474128533120304031442",
-      "bar_even_reachable_sum": "0.3882864240747888767115375131293520934425994727551477855525846307100523",
+      "bar_even_l1_mass": "0.5751722439177718708265353439861808891524943528928544990873291684113575",
+      "bar_odd_l1_mass": "0.5751722439177718708265353439861808891524943528928544990873291684113575",
+      "bar_odd_fraction": "0.5",
+      "bar_even_reachable_sum": "0.5751722439177718708265353439861808891524943528928544990873291684113575",
       "per_orbit": [
         {
           "orbit": [
@@ -374,10 +384,10 @@
             ]
           ],
           "self": false,
-          "w_a": "0.09231856042608279416236327918789714098694034347894616731037903493193572",
-          "w_b": "0.000008419588525696697148474009497830214450576556590871198304075210918087495",
-          "w_even_pair": "0.0461634900073042454297558765986974856006954600177685192543415550714269",
-          "w_odd_pair": "0.04615507041877854873260740258919965538624488346117764805603747986050881"
+          "w_a": "0.1798908217125670511978532470978343992022165450432055160800535177045287",
+          "w_b": "0.0",
+          "w_even_pair": "0.08994541085628352559892662354891719960110827252160275804002675885226434",
+          "w_odd_pair": "0.08994541085628352559892662354891719960110827252160275804002675885226434"
         },
         {
           "orbit": [
@@ -394,10 +404,10 @@
             ]
           ],
           "self": false,
-          "w_a": "0.1896111244039173887318552330540072315539779039423409802394596514114342",
-          "w_b": "0.0002126007302405836691330228823258302029946961617462262702337545298101052",
-          "w_even_pair": "0.09491186256707898620049412796816653087848630005204360325484670297062217",
-          "w_odd_pair": "0.09469926183683840253136110508584070067549160389029737698461294844081206"
+          "w_a": "0.2539377824322217527809559694594726592910927338273156778395190335164447",
+          "w_b": "0.0",
+          "w_even_pair": "0.1269688912161108763904779847297363296455463669136578389197595167582223",
+          "w_odd_pair": "0.1269688912161108763904779847297363296455463669136578389197595167582223"
         },
         {
           "orbit": [
@@ -413,10 +423,10 @@
             ]
           ],
           "self": false,
-          "w_a": "0.06742590249094544358459646269794381514315268328686251535415057679879022",
-          "w_b": "0.0002803852361906751444006041829090588616872370934292465744826097881446377",
-          "w_even_pair": "0.03385314386356805936449853344042643700241996019014588096431659329346743",
-          "w_odd_pair": "0.03357275862737738422009792925751737814073272309671663438983398350532279"
+          "w_a": "0.07707649054822028891702852106147778401849338193413828790796834700219243",
+          "w_b": "0.0",
+          "w_even_pair": "0.03853824527411014445851426053073889200924669096706914395398417350109622",
+          "w_odd_pair": "0.03853824527411014445851426053073889200924669096706914395398417350109622"
         },
         {
           "orbit": [
@@ -433,10 +443,10 @@
             ]
           ],
           "self": false,
-          "w_a": "-0.004764670071606141849953791397736852314029504039387537262158443828259706",
-          "w_b": "0.0003357930327887850072326235013081369991617656222826689520229319288253163",
-          "w_even_pair": "-0.002214438519408678421360583948214357657433869208552434155067755949717195",
-          "w_odd_pair": "-0.002550231552197463428593207449522494656595634830835103107090687878542511"
+          "w_a": "0.0",
+          "w_b": "0.0",
+          "w_even_pair": "0.0",
+          "w_odd_pair": "0.0"
         },
         {
           "orbit": [
@@ -451,10 +461,10 @@
             ]
           ],
           "self": false,
-          "w_a": "0.06000057481473839611868732776932438791101778337847606644055207992880424",
-          "w_b": "-0.002704269630851228462212019463724120827502906558322272744434947791779106",
-          "w_even_pair": "0.02864815259194358382823765415280013354175743841007689684805856606851257",
-          "w_odd_pair": "0.03135242222279481229044967361652425436926034496839916959249351386029167"
+          "w_a": "0.06426714922476277793069760636739604664069169208819501725978827018819164",
+          "w_b": "0.0",
+          "w_even_pair": "0.03213357461238138896534880318369802332034584604409750862989413509409582",
+          "w_odd_pair": "0.03213357461238138896534880318369802332034584604409750862989413509409582"
         },
         {
           "orbit": [
@@ -465,11 +475,13 @@
             ]
           ],
           "self": true,
-          "w_even": "-0.01443799694618351609171370329440036528925110616781714678040669219857142",
+          "w_even": "0.0",
           "w_odd": "0"
         }
       ]
     },
-    "verdict": "NARROWING. The bar-even (λ↔λᵀ) admissibility constraint rules the row-count content channels INADMISSIBLE independently of their numerical refutation: C1_sl2_schur_weyl, C2_sl3_schur_weyl, C3_sl2_qdim, C4_sl2_indicator all break P_λ = P_{λᵀ} (the `rows(λ) ≤ k` selector is not transpose-invariant — rows(λᵀ) = columns(λ)). The flat substrate weight w_λ = y_λ·χ^λ(β_D) is carrying a substantial bar-odd component (fraction 49.44%); a bar-even P_λ annihilates it, so any deviation living in the bar-odd sector is structurally unreachable. Conclusion: GAP-A-3 P_λ must be a TRANSPOSE-INVARIANT functional (e.g. of {λ,λᵀ}-symmetric statistics: n(λ)+n(λᵀ), symmetric hook/content combinations), NOT a row-count or column-count selector. This is a formalize-first refutation of the content-channel family and a constraint on the admissible family — not a new fitted P_λ (no 7th ansatz)."
-  }
+    "verdict": "NARROWING. The bar-even (λ↔λᵀ) admissibility constraint rules the row-count content channels INADMISSIBLE independently of their numerical refutation: C1_sl2_schur_weyl, C2_sl3_schur_weyl, C3_sl2_qdim, C4_sl2_indicator all break P_λ = P_{λᵀ} (the `rows(λ) ≤ k` selector is not transpose-invariant — rows(λᵀ) = columns(λ)). The flat substrate weight w_λ = y_λ·χ^λ(β_D) is carrying a substantial bar-odd component (fraction 50.00%); a bar-even P_λ annihilates it, so any deviation living in the bar-odd sector is structurally unreachable. Conclusion: GAP-A-3 P_λ must be a TRANSPOSE-INVARIANT functional (e.g. of {λ,λᵀ}-symmetric statistics: n(λ)+n(λᵀ), symmetric hook/content combinations), NOT a row-count or column-count selector. This is a formalize-first refutation of the content-channel family and a constraint on the admissible family — not a new fitted P_λ (no 7th ansatz)."
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }
