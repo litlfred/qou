@@ -427,6 +427,32 @@ def main() -> int:
     # --tree is opt-in rather than the default because scripts/staleness-gates.sh
     # runs this --strict as a BLOCKING gate; flipping the default turns it red
     # with 454 findings in one commit. Bean qou-5op4 carries the flip.
+    #
+    # RE-MEASURED after the precision-aware comparator landed (the counts above
+    # were taken with the fixed-width one, which reported any short
+    # serialization as stale):
+    #
+    #     scanned 55   ->   3 ->   2 q0-stale   (as shipped)
+    #     scanned 2849 -> 454 -> 432 q0-stale   (--tree)
+    #
+    # 22 of the 454 were that artifact. 31 witnesses carried such a value;
+    # 22 leave the flagged set outright and 9 stay flagged because they ALSO
+    # carry a genuine muon literal. Every freed value sits ~1e-12 from the
+    # proton pin and ~1.28e-8 from the muon one — four orders of magnitude
+    # closer to the live pin — so none of them was real staleness. Two are
+    # round-UPS (`1.1099785828`) rather than truncations, which is why the
+    # tolerance is one ulp and not a half.
+    #
+    # By declared anchor the freed 22 are: 18 `none`, 4 `proton`. So four of
+    # the contradictory `proton` class were this artifact, not a straddle.
+    # (The breakdown above says 49 proton; measured here it is 42 before the
+    # fix and 38 after — the difference is b047e4ae8d6's own manifest repairs
+    # landing in between, not a disagreement.)
+    #
+    # The fix cannot ADD findings: `--ndigits` caps the tolerance at 1e-11, so
+    # a long recorded value is never compared more finely than the flag allows.
+    # Measured: 0 witnesses newly flagged. Without that cap the comparison
+    # tightens with recorded length and the tree count goes UP, to 520.
     scan = (REPO_ROOT.rglob("*.witness.json") if args.tree
             else (Path(p) for p in sorted(glob.glob(str(HERE / "*.witness.json")))))
     for wf in sorted(scan):
