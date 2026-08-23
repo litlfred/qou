@@ -8,16 +8,25 @@ created_at: 2026-08-09T12:34:43Z
 updated_at: 2026-08-23T07:59:27Z
 ---
 
-## Cross-link (2026-08-23)
+## Cross-link — and a retraction of my own framing (2026-08-23)
 
-Same failing gate as `qou-3zby`, which carries a **different** root-cause
-hypothesis: a **C/D convention straddle across the four methods**
-(`hoef_vs_chi` improved 7 orders while `hoef_vs_peel` and `hoef_vs_habiro`
-degraded), plus a third candidate — **import-cone drift in the Hoefsmit
-cone** (`hoefsmit_50dps` 0.388 -> 0.575 on a bare re-run, the digits
-AGENTS.md uses as its canonical import-cone example).
+I appended a note here calling this bean's diagnosis one of **three competing
+hypotheses**. That was wrong and never merged; this replaces it.
 
-Three candidate causes for one red: (a) proton/muon pin mismatch [this bean],
-(b) C/D straddle [qou-3zby], (c) import-cone drift [new]. Adjudicate together
-rather than fixing against one hypothesis — the pin-mismatch fix would not
-close (b) or (c), and would look like it had.
+**This bean and `qou-3zby` are both correct.** `667c9ab3f6` on `main`
+(2026-08-21) adjudicated the red and found **two simultaneous causes**: the
+C/D convention straddle (`qou-3zby`) *and* the muon/proton pin mismatch
+(this bean). The four-method classification, the fix path for each, and the
+withdrawal of my spurious third candidate are recorded on `qou-3zby`.
+
+**Relevant to this bean specifically:** the guard gave *false assurance*. It
+refused to start off-muon, which made the run look pin-uniform while a
+committed input (Habiro) sat at the **proton** pin — matching convention C
+there to 2.71e-13, exact rather than near. It survived because the guard
+checked one of its four inputs; Habiro has no `q0Value` to compare
+(`q0Anchor: ambiguous`) and Hoefsmit has no anchor at all. `667c9ab3f6`
+widened the guard to every input that records a q0 and to NAME the ones that
+do not.
+
+Fix for this half: regenerate `habiro-coefficients-extended` under
+`QOU_Q0_ANCHOR=ideal`. Blocked — see `qou-iayk`.
