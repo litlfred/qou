@@ -1,4 +1,5 @@
 import QOU.SchurWeyl.OcneanuWeight
+import QOU.SchurWeyl.OcneanuWeightBranching
 import QOU.SchurWeyl.HeckeMarkov3
 
 /-!
@@ -188,6 +189,26 @@ theorem ocneanuWeight_normalisation_four (q z : ℝ) (hq2 : q ^ 2 ≠ 1) :
     show (ofRowLens [1, 1, 1, 1] (by decide : _)).cells = {(0, 0), (1, 0), (2, 0), (3, 0)}
       from by decide]
   norm_num [a0, a1, a2, a3, b0, b1, b2, b3, c0, c1, c2, c3, d0, d1, d2, d3, e0, e1, e2, e3]
+  field_simp
+  ring
+
+/-! ### Cross-check: the general two-row formula against the proved `n = 3` weight
+
+`OcneanuWeightBranching.schurPrincipal_twoRow` gives the two-row weight at every `(m,k)` by a
+telescoping of the hook-content product.  At `(m,k) = (2,1)` that general formula must reproduce
+`markovWeight2`, which was proved independently against the Markov relations.  The chain below runs
+through both — `markovWeight2 = ocneanuWeight (ofRowLens [2,1])` (the `n = 3` theorem), then the
+bridge, then the general two-row closed form — so an off-by-one anywhere in the telescoping would
+fail here. -/
+theorem markovWeight2_conventionD (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) :
+    markovWeight2 q (q ^ 3 / (q ^ 2 + 1)) = q ^ 2 / (q ^ 2 + 1) ^ 2 := by
+  have hq21 : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  have hdiag : twoRow 2 1 (by omega) = ofRowLens [2, 1] (by decide) := rfl
+  rw [← ocneanuWeight_rowLens_twoOne q (q ^ 3 / (q ^ 2 + 1)) hq2, ← hdiag,
+    ocneanuWeight_conventionD_eq_schurPrincipal q hq hq21,
+    schurPrincipal_twoRow (q ^ 2) hgen (by omega), card_twoRow]
+  norm_num [Finset.sum_range_succ]
   field_simp
   ring
 
