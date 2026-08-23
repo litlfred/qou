@@ -1043,3 +1043,40 @@ LinearMap.ext + Subtype.ext step against centralC2_acts_by_contentSqSum as state
         an algebra hom sends c • 1 to c • 1
   B5  assemble  instance : SnIsotypicSpechtSplit ℚ  from SpechtWedderburnGeneral.spechtEquiv
 Landing B5 turns the ENTIRE cone above unconditional in one commit. 5 bricks, not attempted.
+
+### THE KEYSTONE IS CLOSED — SnIsotypicSpechtSplit ℚ IS INHABITED (PR #5426)
+
+  QOU.BraidKnot.SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplitRat
+      : SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ
+  axioms [propext, Classical.choice, Quot.sound]. Sorry-free.
+
+VERIFIED, not asserted — two independent checks:
+  sn_isotypic_specht_split n   (the class's own consumer, stated for all n) now elaborates with NO
+      hypothesis; #print axioms -> the same three. The `sorry` this file carried is gone as a
+      practical matter: the class it was replaced by is now inhabited.
+  OVTopAssembly.sum_numSYT_sq_eq_factorial n  -> #print axioms clean. A downstream consumer,
+      checked directly rather than inferred from the instance existing.
+
+The five bricks, all landed this session:
+  B1 CentralC2Transport.mapDomain_centralC2   — C₂ survives the index cast (finCongr is
+       ORDER-PRESERVING, so termwise; my earlier "needs the class-sum characterisation" was wrong)
+  B2 SpechtCentralC2Scalar.asAlgebraHom_comp  — precomposition acts through mapDomain
+       (MonoidAlgebra.algHom_ext)
+  B3 SpechtCentralC2Scalar.spechtRep_asAlgebraHom_coe + spechtProduct_centralC2
+       — restriction commutes with the algebra hom (MonoidAlgebra.induction_on), so
+         centralC2_acts_by_contentSqSum applies on the nose
+  B4 blockMatrix / matrixSplit — algEquivMatrix (Module.finBasis …) blockwise
+  B5 the instance
+
+DIRECTION MATTERS AND IT IS NOW REVERSED FROM THE CORPUS'S:
+  main:  RSKBurnsideDischarge.rskBurnsideHolds  derives Burnside  FROM  the class.
+  here:  QOU.Mathlib.rskBurnsideHolds  is proved FROM RSK with NO hypothesis, then gives the split,
+         then the class. Nothing in this chain assumes the identity it proves.
+
+### BUILD HAZARD worth remembering (cost one wrong diagnosis)
+lean-direct against the RESTORED olean cache sees the OLD version of any file main has since
+changed. SnWedderburnPartitionBridge's olean predated main's class-ification, so
+`SnIsotypicSpechtSplit` read as "unknown identifier" — which looks like a namespace error and is
+not. Rebuild the one olean (`lean --o=… file.lean`, ~8 s) before believing an identifier is missing.
+
+### #5426 now carries: RSK bricks 16-42, the general Wedderburn split, and the keystone instance
