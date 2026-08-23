@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T18:42:40Z
+updated_at: 2026-08-23T19:17:32Z
 parent: qou-59vq
 ---
 
@@ -181,3 +181,43 @@ That last point supersedes the "next step" recorded above. Proving branching dir
 rational-function identity over addable corners is the hard road; it is Pieri in disguise, and
 at convention D it collapses further to a 2-term identity over <=2-row partitions, since the
 third addable corner (2,0) contributes zero.
+
+
+## Update — branching at convention D is PROVED (same PR #5575)
+
+`OcneanuWeightBranching.lean`, sorry-free, axiom-clean, generic `[Field R]`:
+
+    ocneanuWeight q z_D (twoRow m k)
+      = ocneanuWeight q z_D (twoRow (m+1) k) + ocneanuWeight q z_D (twoRow m (k+1))
+
+plus the diagonal case k = m (where `twoRow m (m+1)` is not a partition, so only one term
+survives). The third addable corner (2,0) contributes zero by
+`ocneanuWeight_conventionD_eq_zero_of_three_rows`.
+
+The Pieri reframing recorded in the previous update was right and it paid: the general-corner
+route was never needed.
+
+- `schurPrincipal_twoRow` — the hook-content product over a two-row diagram TELESCOPES:
+  `schurPrincipal 2 Q (twoRow m k) = Q^k (1 + Q + ... + Q^{m-k})`. Row-1's numerator and
+  denominator cancel outright (one `prod_range_reflect`); the rest collapses to a single ratio.
+- `qBracket_pieri` — branching then reduces to `[d+1](1+Q) = [d+2] + Q[d]`, which is
+  `s_mu * e_1 = Sum_{lam = mu+box} s_lam` in two variables. d=0 needs no case split in the
+  ARITHMETIC (empty sum kills the term); only at the diagram level.
+- `markovWeight2_conventionD` — a real cross-check, not decoration: it chains the n=3 theorem
+  through the bridge and the new general two-row formula to `q^2/(q^2+1)^2`. Uses both the
+  independently-proved n=3 weight and the new telescoping, so an off-by-one in the latter would
+  fail there.
+
+### This is ONE of the two halves, and the other is still open
+
+Branching is **consistency of the weight family under restriction** `H_{n+1} -> H_n`. It is NOT
+the Markov condition `tr(x sigma_n) = z tr(x)`, and it does not imply it. That remains the open
+item, and it is still the highest-value one on this bean: per `OcneanuWeightWenzl`, proving it
+would discharge the corpus's only external citation (Wenzl) outright.
+
+### Scope note
+
+Everything here is at convention D and on <=2-row diagrams. That is not a limitation of the proof
+technique so much as the whole content of convention D — the >=3-row weights vanish, so <=2 rows
+IS the trace. A general-convention branching identity would need the full corner sum and the
+hook-ratio-in-corner-contents identity; not attempted, and not needed for the canonical convention.
