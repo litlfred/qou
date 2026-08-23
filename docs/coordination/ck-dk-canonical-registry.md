@@ -800,6 +800,46 @@ Neither C nor D is *derived* for the decay channel; the full analysis and the
 two honest settlement routes:
 [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md).
 
+**One branch of the re-derivation is now CLOSED — in every convention, not only
+in C (added 2026-08-23, `qou-cds1`, PR #5536).** `z` reaches the ladder at
+exactly one place, the N=1 eigenphase `α = (z−1)h/2`
+(`QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common`, sorry-free), and
+`QOU.QBeta.EigenphaseCarrier` shows the carrier meant to hold that spectral
+identification is **vacuous** — so `α` is asserted in C and derived in neither
+frame. That file leaves a trichotomy for the transfer matrix: (1) braid image,
+(2) arbitrary — circular, (3) a holonomy of an independently-defined connection
+(KZ / Kohno–Drinfeld). It calls (1) excluded *by transcendence of
+`2cos((z−1)h/2)` over `ℚ(q,z)`* — an **unproved docstring assertion**, scoped
+to C.
+
+Branch (1) is now **proved**, by an elementary boundedness argument instead:
+`QOU.QBeta.BraidImageEigenphase.no_braid_character_C` / `_D`
+([`BraidImageEigenphaseExclusion.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseExclusion.lean),
+sorry-free, axioms `[propext, Classical.choice, Quot.sound]`). A braid word's
+character is a Laurent polynomial and `|2cos α| ≤ 2` always; a Laurent
+polynomial bounded on `(0,∞)` is constant; and `α_C`, `α_D` are both
+non-constant — indeed unbounded, C below (`α_C(s) ≤ −(s−1)/4`) and D above
+(`α_D(s) ≥ s−3`). **The argument never reads `z`'s formula**, so the exclusion
+is a property of the whole class: *re-picking `z` cannot repair the D-frame
+ladder inside the braid picture.* Scope-(b), citing a proved invariant.
+
+Exact companion, 12/12, no float64:
+[`qbeta_braid_image_eigenphase_exclusion_probe.py`](../../computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py)
+— `det ρ(σ_i) = −1` identically in `q`; `tr ρ(w) ∈ ℤ[q,q⁻¹]` over all 1364
+words of length ≤ 5; and the concrete failure: `ρ(σ₁σ₂)` has `det = 1`,
+`tr = −1` **identically in `q`** (eigenphase `2π/3` at every substrate value)
+against `2cos(α_C(q₀)) = 1.99726`. The rational-normalisation escape is closed
+by `det M = 1`, which forces `c = ±1` (`−c² = 1` has no real solution).
+
+**Two limits.** It excludes a *functional* identification on the substrate
+branch, not a numerical coincidence at `q₀`; and the Laurent shape of
+`tr ρ(w)` is imported from Geck–Pfeiffer as the shape of the hypothesis.
+
+**Still open, and unchanged by this:** no D-frame ladder is stated, `α` is
+derived in neither convention, and branch (3) is untouched — it is now the
+**only** place a derivation of `α` can live. `c₃ ≈ −974` remains a sensitivity
+measurement, wired nowhere.
+
 ### 9h. The KC21 parity immunity is VERIFIED — and its stated mechanism was wrong (added 2026-08-15, `qou-kc21im`)
 
 §9g above closed with the sentence *"the structural parity statement
