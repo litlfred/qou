@@ -1,0 +1,112 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T09:17:39.732718+00:00",
+  "commitSha": "30a5c1ffed952e403a9a5ccd227d41674351d6ba",
+  "assertions": [
+    {
+      "name": "1_every_live_site_is_classified",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "0 live divergent site(s) carry no ledger row. A new transcription cannot land silently: it lands here as unclassified."
+    },
+    {
+      "name": "2_no_orphan_ledger_rows",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "0 ledger row(s) no longer match a live site. Expected transiently while a migration lands; drain them in the same commit so the ledger shrinks with the corpus."
+    },
+    {
+      "name": "3_every_row_is_well_formed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "class in ('a', 'b', 'c', 'd'), substate in ('a-migrated', 'a-blocked') iff class a, non-empty reason, unique key. Offenders: 0 class, 0 substate, 0 reason, 0 duplicate."
+    },
+    {
+      "name": "4_declared_counts_match_entries",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "entries give {'c': 2, 'b': 10, 'a': 50, 'd': 10} / {'a-migrated': 7, 'a-blocked': 43}; ledger declares {'a': 50, 'b': 10, 'c': 2, 'd': 10, 'total': 72} / {'a-migrated': 7, 'a-blocked': 43}."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 337,
+  "computation": "q0-literal-classification",
+  "scriptFile": "q0_literal_classification_audit.py",
+  "scriptHash": "3e83ed9c6031",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/q0_literal_classification_audit.py",
+      "--strict"
+    ],
+    "reproduce": "python3 -u computations/audits/q0_literal_classification_audit.py --strict"
+  },
+  "description": "The defect/non-defect split the families audit's own `caveat_not_split_source_vs_doc` asks for. Of its divergent SITES, only class (a) -- the literal feeds arithmetic or is published as a q0 -- are defects. Class (b) constants must NOT be migrated: the code names a superseded or held-fixed value in order to detect or reproduce it, and re-pinning one breaks the detector.",
+  "computation_method": "Reuses hardcoded_q0_literal_families_audit.scan() -- it does NOT re-scan, so the two audits cannot disagree about which sites exist. Joins the live divergent set against the committed ledger q0-literal-classification.json on (file, literal) and checks completeness, orphans, row shape and declared counts. Pure string and set work; no arithmetic, no float64.",
+  "audit_only": true,
+  "tier": "empirical",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value as an input. It joins two string sets and computes nothing from any q0.",
+  "scope": "scope-(a) MEASUREMENT plus a curated ledger. It classifies; it changes no literal and asserts nothing about which value a producer SHOULD carry -- that is the A-vs-C anchor question, an owner matter (ruled 2026-08-22, landing in PR #5500).",
+  "result": {
+    "live_divergent_sites": 72,
+    "ledger_rows": 72,
+    "class_counts": {
+      "c": 2,
+      "b": 10,
+      "a": 50,
+      "d": 10
+    },
+    "substate_counts": {
+      "a-migrated": 7,
+      "a-blocked": 43
+    },
+    "defect_count_class_a": 50,
+    "non_defect_count_bcd": 22,
+    "unclassified": [],
+    "orphans": [],
+    "never_migrate_class_b": [
+      "computations/audits/muon_pin_three_values_probe.py",
+      "computations/audits/q0_muon_population_partition.py",
+      "computations/c_3_categorical_derivation_attempt.py",
+      "computations/mp_dk_decisive_test.py",
+      "computations/per_basis_row_invariants_probe.py",
+      "computations/q0_provenance_audit.py",
+      "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
+      "computations/qbeta_multi_block_eigenphase_probe.py",
+      "computations/regenerate_y_lambda_jones_markov_conventionD.py",
+      "computations/regenerate_y_lambda_orphans_conventionD.py"
+    ],
+    "verdict": "Quoting the families audit's divergent total as a defect count overstates it. The non-(a) classes are not tidiness debt: a class-(b) constant is load-bearing precisely BECAUSE it is a superseded value, and migrating one silently disables the check it powers."
+  },
+  "context": {
+    "parent_audit": "computations/audits/hardcoded_q0_literal_families_audit.py",
+    "ledger": "computations/audits/q0-literal-classification.json",
+    "beans": [
+      "qou-o922",
+      "qou-bred"
+    ],
+    "anchor_ruling": "Owner, 2026-08-22 (PR #5500): 'A --> CODATA 2022'. The families audit measures divergence against A, which that PR replaces with C = q_muon_at(). The char-13 family here is B (CODATA 2018), which #5500 declares out of its own scope. So the DESTINATION of a class-(a) migration is in motion, which is why most class-(a) rows are `a-blocked` rather than fixed here: reading the anchor is right under A and under C, but retyping either is right under neither for long."
+  }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:05:04.189089+00:00",
-  "commitSha": "43b828231e4b20c13d87e0dc6f76fc03fef79529",
+  "computedAt": "2026-08-23T09:19:45.383182+00:00",
+  "commitSha": "30a5c1ffed952e403a9a5ccd227d41674351d6ba",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 11,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
-  "scriptCommitSha": "31d1bdf6e98c398512f7b5fe095471cfb976f600",
+  "scriptCommitSha": "ee7898b94d3b5ad1f4b5f40facf0077a6de279aa",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "counts": {
       "Q0_OK": 664,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 36,
+      "Q0_INDEPENDENT": 37,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -10790,6 +10790,10 @@
       "Q0_INDEPENDENT": [
         {
           "witness": "hardcoded-q0-literal-families.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "q0-literal-classification.witness.json",
           "detail": ""
         },
         {
