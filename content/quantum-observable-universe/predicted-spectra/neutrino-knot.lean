@@ -1,3 +1,4 @@
+import QOU.Archimedean.ParticleKnots
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -24,30 +25,6 @@ numerical evaluation.
 namespace QOU.Archimedean
 
 noncomputable section
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
-
-/-- The neutrino: unknot K_{0₁} with trivial knot invariants.
-    Zero crossings, genus 0, trivial Jones polynomial, zero volume.
-    Neutrino mass arises from vacuum drag, not knot topology. -/
--- Ref: [manuscript] Ch. 5, §neutrino-knot
-structure Neutrino where
-  /-- Crossing number of the unknot. -/
-  crossing_number : ℕ := 0
-  /-- Seifert genus of the unknot. -/
-  genus : ℕ := 0
-  /-- Hyperbolic volume (unknot is non-hyperbolic). -/
-  volume : R_q := 0
-  /-- Jones polynomial J_ν(q) = 1 for all q. -/
-  jones_trivial : ∀ q : R_q, (1 : R_q) = 1 := fun _ => rfl
-  /-- Coulomb charge contribution: zero (no crossings). -/
-  charge : ℤ := 0
-  /-- Orientation: +1 for particle (vs. -1 for antiparticle). -/
-  orientation : ℤ := 1
-
 /-- The neutrino is electrically neutral (zero crossing chirality). -/
 -- Ref: [manuscript] Ch. 5, §neutrino-knot
 theorem neutrino_neutral : ({} : Neutrino).charge = 0 := rfl
