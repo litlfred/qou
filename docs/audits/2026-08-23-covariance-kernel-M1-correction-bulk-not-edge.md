@@ -54,6 +54,38 @@ is **not determined** by the accessible data. The sign is empirically robust (ex
 proof needs the genuine second-order asymptotics; both bulk and edge contribute at close orders and
 neither is ruled out. Open.
 
+### Concrete route — Śniady genus expansion IS applicable to `M₁` (unlike the eliminated dim-tilt kernel)
+
+A corpus-grep sharpens "needs second-order theory" into a specific, cited computation, and corrects a
+scope trap:
+
+- **The genus expansion was eliminated (route #11,
+  [`2026-07-25-...-A5-genus-eliminated-A4-lean.md`](2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md))
+  for a *different* object:** the **dim-tilt** kernel `Cov_Planch(dim λ, ω₃) = Σ_λ (f^λ)³ ω₃`. The
+  elimination mechanism is exact — `dim λ ∉ A`, the algebra of *polynomial functions on Young
+  diagrams* (Ivanov–Olshanski, `math/0304010`; Śniady, `math/0411647`) — so Śniady's genus grading has
+  "no genus-0 leading term whose sign to read" for that object.
+- **`M₁ = Cov_Planch(Σh, ω₃)` is NOT that object.** Both legs are polynomial functions on Young
+  diagrams: `ω₃ = Σ_□ c² − C(n,2) = R₄ + R₂ ∈ A`, and `Σh = ½(p₂(λ) + p₂(λ')) ∈ A` (the VKLS /
+  Chebyshev-mode functional the κ derivation already averaged with IO — which *requires* `Σh ∈ A`).
+  **The `dim ∉ A` obstruction that killed the dim-tilt route is absent for `M₁`.** So the genus route
+  is *not* eliminated for `M₁`'s second-order correction — the lit-assessment's elimination and the
+  (retracted-context) λ*-doc dismissal both concern the dim-tilt object, not this one.
+- **The computation.** Express `Σh` and `ω₃` in the free cumulants `R_k` of the transition measure.
+  The genus-0 (leading) term is the Ivanov–Olshanski Kerov-CLT covariance = `κ n^{5/2}` (already
+  derived). The **genus-1** term — Śniady `math/0411647` §4.4 "higher-order expansion for free
+  cumulants" gives the *explicit* second-order asymptotic expansion of the `R_k` (genus bound
+  `n ≤ 12·genus − 6`, Thm 4.10) — supplies the correction `κ_n − κ` and its **order and sign**. The
+  Dołęga–Śniady / Dołęga–Féray Gaussian-fluctuation papers (`1704.02352`, `1402.4615`) carry the
+  companion second-order machinery.
+
+**Honest scope of THIS note.** This identifies the applicable tool and the concrete computation; it
+does **not** execute it. The explicit genus-1 `R_k` correction must be pulled from the clean Śniady
+§4.4 statement (the ingested OCR of that section is garbled) and composed with the free-cumulant forms
+of `Σh` and `ω₃`; only then is the order/sign *derived*. Until that is done the order stays
+undetermined **as a matter of what has been computed here** — but it is a determinate,
+genus-1 quantity, not a genuinely-unknown one. No order or sign is claimed. Next step, `qou-k5r5`.
+
 ## Lean
 
 `M₁ > 0` for the finite base is now **machine-checked**: `m1_pos_of_le_eight`
