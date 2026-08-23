@@ -1837,3 +1837,127 @@ bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
 - [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
 - [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
       (34, producer currently broken on an mpf format error).
+
+
+---
+
+## he4-binding-k-stage2: profiled, 10.7x faster, and finished (2026-08-23)
+
+Asked what the bottleneck was, whether it could be optimised, and whether
+partial results survive a restart. Measured all three.
+
+### Where the time went
+
+Profiled one block at λ=(4,4,2,2), d=2640:
+
+```
+build seminormal (MPFR)          4.81 s
+COO mpf -> f64                   0.05 s
+K-word loop, 91 factors         54.09 s      <- 90% of the block
+eigvalsh (d³)                    0.73 s
+```
+
+The d³ eigensolve is *negligible*; the O(d²) K-word loop dominated. Across
+blocks the cost was a clean `c·d²` with `c ≈ 9.4 µs` — so the shape was right
+and only the constant was wrong.
+
+### Why it was slow, and it was not inherent
+
+```python
+Mn = b * M
+np.add.at(Mn.T, jj, (a * vv)[:, None] * M.T[ii])
+```
+
+Two independent problems:
+
+1. **`np.add.at` is an unbuffered scatter.** It exists to handle duplicate
+   target indices — and there are none here. Each seminormal generator is
+   diagonal plus off-diagonal entries at a *single fixed band offset*, at most
+   2 nonzeros per column, one of which is the diagonal. Measured directly:
+   generator 0 is purely diagonal (nnz = d, all on-diagonal); generators 1 and
+   2 have d diagonal entries plus 1872 / 1312 off-diagonal ones at |i−j| = 936
+   and 328 respectively, max 2 per column. So every column takes at most ONE
+   off-diagonal contribution and plain fancy indexing is correct. The code now
+   asserts that uniqueness per block rather than assuming it.
+2. **Column-wise updates on a C-contiguous array are strided.** Working on the
+   transpose makes each update a contiguous row operation.
+
+```
+np.add.at (as written)      66.4 s
+scipy.sparse spmm           25.0 s    2.2x   (tried, rejected — see below)
+row-wise on the transpose    6.2 s   10.7x
+```
+
+The sparse-matrix route was the obvious idea and only bought 2.2x; the
+structure is far more special than "sparse", and exploiting *that* is what
+paid. Kept the plain-numpy form — no new dependency, and faster.
+
+### Correctness
+
+Verified two ways rather than asserted. On the 42 λ computed by **both** the
+old and new code, the worst relative difference across `chi_f64`,
+`min_eig_sym` and `max_eig_sym` is **7.7e-15** — f64 accumulation order.
+
+Stated precisely because it is not zero: the new order raises the worst
+leg-A/leg-B trace cross-check from **7.8e-15 to 1.4e-14** on the same blocks,
+a factor 1.8. `TRACE_XCHECK_TOL` is `1e-8`, so both sit six orders inside it,
+and the probe asserts the check itself.
+
+### Do partial results survive? Yes — and that was never the problem
+
+Both legs already checkpoint at block granularity to
+`.he4_stage2_leg{A,B}_progress.jsonl`, appended after every block and
+self-cleaned on a clean finish. Leg A was in fact **already complete** at
+154/154 characters; only Leg B was outstanding.
+
+The real reason it never finished is that **my own background invocations were
+being killed** — `nohup … &` inside a tool call dies when the call returns, so
+a run given `timeout 3500` stopped at 897 s. Not a compute problem, a launch
+problem. Using the harness's tracked background mode instead, it ran to
+completion.
+
+Leg B's 60 old-code blocks were discarded rather than mixed with new-code
+ones — at ~11 min a clean recompute costs little and the witness is then
+internally consistent.
+
+### Result
+
+```
+158 bare -> 0 bare, 158 shadowed, backend clarabel-mpfr
+all 77 Wedderburn blocks, dims 1 .. 7700, no cutoff
+total runtime 1246.8 s   (Leg B alone was projected at ~3600 s)
+allPassed: True
+```
+
+Also corrects an estimate I gave earlier — "multi-hour, ~150 s per character
+over 154 characters and two branches". Leg A was done; Leg B was one hour
+before the optimisation and ~20 minutes after.
+
+### Carve-out
+
+```
+4,052  start of arc
+  881  previous commit
+  723  he4-binding-k-stage2
+```
+
+### Verification
+
+```
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+pytest tools/pyhecke                      240 passed, 13 skipped, 0 failed
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+he4 probe self-check                      worst χ xcheck 1.4e-14 vs tol 1e-8
+```
+
+## Next
+
+- [ ] `alpha-5-lp-dual-crystal` (75) — pinned, hangs in
+      `global_wedderburn_sum_q_hecke_seminormal` for the tritium stratum.
+      Worth profiling the same way: that is a *different* kernel from the one
+      fixed here (Rust rayon rather than numpy), so the answer will differ.
+- [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
+- [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
+      (34, producer broken on an mpf format error).
