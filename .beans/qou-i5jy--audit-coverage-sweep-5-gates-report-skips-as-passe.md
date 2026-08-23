@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T19:05:00Z
+updated_at: 2026-08-23T19:20:00Z
 ---
 
 
@@ -1123,3 +1123,57 @@ Both were produced in an environment **identical** to their predecessors —
 `incomplete-coverage-audit`, and neither run emitted the environment warning. No
 downgrade was committed. Verified rather than assumed, because this failure mode
 is invisible in the numbers.
+
+---
+
+## STATE OF THIS BEAN — 2026-08-23
+
+**All findings and all Tier-2 items are fixed.** Left `todo`, not `completed`,
+for one reason recorded at the bottom.
+
+| item | file | state |
+|---|---|---|
+| #1 | `extraction_wall_gate.py` | fixed — `MISSING` class, sentinel can no longer ratchet |
+| #2 | `producer_importability_audit.py` | **reporting** fixed (`--scope-only`, denominator); **decision** open |
+| #3 | `witness_failed_assertion_audit.py` | fixed — denominator printed; 519 re-measured and confirmed |
+| #4 | `classify_production_reach.py` | fixed — search health, exit 3 when degraded; claim narrowed first |
+| #5 | `scripts/guard_check.py` | fixed — tri-state; a crashed guard skips instead of reverting |
+| #6 | `session-start-coord-sweep.sh` | fixed — **new finding**; refs fetched, 24 h window implemented |
+| T2 | `witness_dependency_coverage_audit.py` | fixed — empty set no longer 100 % |
+| T2 | `block-manifest-audit.ts` | fixed — unchecked blocks reported; CI path |
+| T2 | `incomplete_coverage_audit.py` | fixed — unparseable ≠ clean; assertion carries its denominator |
+| T2 | `q0_cross_layer_fallback_scan.py` | fixed — candidate funnel printed; no universal over unread files |
+| T2 | `silent_self_check_audit.py` | fixed — regression check gains `UNKNOWN` |
+| T2 | `guarded_off_audit.py` | fixed — three facts separated; witness deliberately not refreshed |
+
+**Every fix was demonstrated old-vs-new** under a forced failure, not argued
+from the source.
+
+### One consistent rule, applied twelve times
+
+*Make the exclusion visible; do not make it fatal.* No exit code changed except
+`classify_production_reach` (exit 3, and nothing consumes its status). Every gate
+behaves identically on a healthy run. That was deliberate: turning these into
+failures is a policy call for each gate's owner, and a sweep that reds twelve
+gates at once gets reverted wholesale.
+
+### Why still `todo`
+
+`#2`'s **decision** half is open and is not mine: **359 witnesses** (286 naming
+no producer, 73 naming one that is absent) that no staleness mechanism in the
+corpus can ever check. The options are `qou-cds3`-adjacent — regenerate,
+relocate the producer, or mark provenance-dead — and picking among them is scope,
+not coverage. `qou-0uqm` items (2) dynamic reads and (3) machine inventories are
+likewise open under their own bean.
+
+### Prior art, restated
+
+Four siblings found this shape independently in three days (see the PRIOR /
+PARALLEL ART section and `qou-k3wq`). The corpus also already contained four
+correct instances of the pattern before this bean started —
+`noncanonical_reentry_audit.py`, `witness_hollowness_audit.py`,
+`precision-gates.sh`, `check-sidecars.sh` — plus, found during this work, the
+gate-wired `computations/witness_provenance_audit.py`, whose `UNCONFIRMED`
+verdict is *"asserted as unchecked"*. **This was never a missing idea. It was an
+inconsistently applied one**, and the useful next step is a shared helper rather
+than a thirteenth hand-written coverage block.
