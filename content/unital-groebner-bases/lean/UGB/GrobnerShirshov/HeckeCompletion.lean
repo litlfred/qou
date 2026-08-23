@@ -12562,6 +12562,77 @@ theorem prefixChain₃ (hn : 0 < n) (hp : HeckeParams)
   (openingPhase₃ hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ hjppi).trans
     (closingPhase₃ hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ hjppi)
 
+/-! #### `a = 2`: the quadratic pair is already in `U0`
+
+`hecke_small_a_decomposition.py` measures the two remaining cases. `a = 2` is a
+**partial** transfer: `s1`, `s2` reach `V2` unchanged and the V loop is trivial
+(`jpp = i` empties `descWord i₁ jpp`, so `V2L = V2`), but the U loop never
+reaches `U0L` and the trios do not apply.
+
+The reason is the mirror of `a = 3`'s. There, `jpp = i₁` made the U loop the
+**identity** — it collapsed *into* the general construction. Here `j₁ = i₂`
+makes `descWord i j₁` only three letters, so `U0` **already carries** the braid
+redex `[σ_jp, σ_j₁, σ_jp] ++ (σ_j₁ :: R)` that the `a ≥ 3` loop exists to build.
+`a = 2` falls *out* of the construction because the loop's output pre-exists.
+
+Measured 3/3: the redex sits at `L = [σ_jp, σ_jpp]`, which is exactly `trio`'s
+`L` at `A = []`. -/
+
+/-- **At `a = 2`, `U0` IS `quadPair`'s source.** `j₁ = i₂` forces `jp = i₁` and
+`jpp = i`, and then `U0`'s three runs telescope into the braid redex with
+`L = [σ_jp, σ_jpp]` and `R = descWord jm j₂ ++ [σ_jpp]`. -/
+theorem U0_eq_quadPair_source₂ {n : ℕ} {i i₁ i₂ j₁ j₂ jm jp jpp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hj₁i₂ : j₁ = i₂) :
+    U0 i i₁ j₁ j₂
+      = [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) ::
+              (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]))) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hjpi₁ : jp = i₁ := Fin.ext (by omega)
+  have hjppi : jpp = i := Fin.ext (by omega)
+  -- these `subst`s rewrite i₁ → jp, i → jpp, i₂ → j₁ (that direction, not the
+  -- reverse), so everything below is named in jp/jpp/j₁
+  subst hjpi₁; subst hjppi; subst hj₁i₂
+  rw [U0,
+    -- descWord jpp j₁ = [σ_jpp, σ_jp, σ_j₁]
+    descWord_cons_le (i' := jp) (i := jpp) (j := j₁) hjpp (by omega),
+    descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+    descWord_self,
+    -- descWord jp j₂ = σ_jp :: σ_j₁ :: descWord jm j₂
+    descWord_cons_le (i' := j₁) (i := jp) (j := j₂) hjp (by omega),
+    descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+  simp
+
+/-- **`a = 2`'s U-side opening**: `quadPair` applied directly to `U0`, with no
+loop and no `bsStep` before it. One term in, two out. -/
+theorem uQuad₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hj₁i₂ : j₁ = i₂)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n),
+      r ≠ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (U0 i i₁ j₁ j₂, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) ::
+            (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]))),
+          c * (hp.q - hp.q⁻¹))
+        :: ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)])), c)
+        :: L₂)) := by
+  rw [U0_eq_quadPair_source₂ h₁ h₂ hjm hjp hjpp hj₂ hj₁i₂]
+  exact quadPair (j₁ := j₁) (jp := jp) hn hp hjp c hc L₁ L₂
+    [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]
+    (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]) hpark
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
