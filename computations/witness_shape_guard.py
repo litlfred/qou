@@ -176,7 +176,26 @@ def compare(before: dict, after: dict, tolerance: float) -> list[str]:
     # it. Measured false positive: habiro-coefficients-oxygen-14 flagged
     # COLLAPSED on 1 -> 0 while GAINING content (34 -> 35 coefficients, no key
     # removed), which is the opposite of what the guard reports (qou-0ndb).
-    if isinstance(b, float) and isinstance(a, float) and b > DURATION_FLOOR_MS:
+    #
+    # AND CONTENT MUST NOT HAVE GROWN. The floor above fixed the sub-second
+    # instance of this false positive; it does nothing for the large one, and
+    # the large one is guaranteed to occur on any long sweep. Measured
+    # 2026-08-23: deltalambda/a4-brunnian-deficit-closed-form went
+    # 573,059 ms -> 6,430 ms and halted a drain — an 89x speedup from the
+    # `_cached_seminormal` disk cache warming up (15 MB -> 116 MB across the
+    # sweep), not an interruption. Its content GREW: 109 -> 121 leaves, 2 -> 3
+    # data keys, assertions unchanged at 3.
+    #
+    # A truncated write cannot produce MORE content than the run it truncated.
+    # So growth in any of the three content measures is proof the duration drop
+    # is innocent, and duration alone is not evidence. The two rules are now
+    # conjunctive, which is what the oxygen-14 case above was already telling
+    # us and the floor only partly answered.
+    grew = (after["leaves"] > before["leaves"]
+            or after["assertions"] > before["assertions"]
+            or after["data_keys"] > before["data_keys"])
+    if (isinstance(b, float) and isinstance(a, float)
+            and b > DURATION_FLOOR_MS and not grew):
         if a < b * (1.0 - DURATION_COLLAPSE):
             reasons.append(
                 f"durationMs collapsed: {b:,.0f} -> {a:,.0f} "
@@ -259,6 +278,22 @@ def self_test() -> int:
          {"assertions": [{"a": 1}] * 4, "data": {"k": [1] * 200}},
          {"assertions": [], "data": {"k": [1] * 200}}, True),
         ("growth is NOT flagged", gutted, full, False),
+        # The warm-cache false positive, from the real incident: an 89x
+        # duration drop with content that GREW. Must stay quiet.
+        ("a warm cache is NOT flagged (duration collapses, content grows)",
+         {"witness": {"durationMs": 573059},
+          "assertions": [{"a": 1}] * 3, "data": {"k": [1] * 109}},
+         {"witness": {"durationMs": 6430},
+          "assertions": [{"a": 1}] * 3, "data": {"k": [1] * 121, "u": [1]}},
+         False),
+        # ...and the conjunction must not disarm the rule it guards: same
+        # duration collapse, content SHRANK, still caught.
+        ("duration collapse WITH shrinking content is still caught",
+         {"witness": {"durationMs": 573059},
+          "assertions": [{"a": 1}] * 3, "data": {"k": [1] * 109}},
+         {"witness": {"durationMs": 6430},
+          "assertions": [{"a": 1}] * 3, "data": {"k": [1] * 108}},
+         True),
     ]
 
     failed = 0
