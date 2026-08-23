@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T22:45:00Z
+updated_at: 2026-08-23T23:30:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -606,3 +606,51 @@ flipped 29 assertions: **neither file is named in that bean, and both carry zero
 assertions**, so neither can be among the flips. Both are also clean of the
 convention-C `z` literal on both sides, so `qou-cdh3`'s property survives the
 resolution either way.
+
+---
+
+## 2026-08-23 — THREE MORE COMMITTED, by the settled method. Running total 4 of 21.
+
+Applied the method fixed in the previous section — regenerate into a snapshot,
+diff the payload, decide per witness — to the three of last section's seven whose
+verdicts had held.
+
+| witness | largest non-pin move | verdict |
+|---|---|---|
+| `option-e-v9-bar-symmetric-test-probe` | **5.7e-8 percentage points** on `err_vs_target_pct`; `predicted_B_diff_MeV` 4.4e-10 MeV | `data.verdict` **byte-identical** |
+| `yekutieli-a2-em-gauge-coupling-h2-probe` | 2.2e-7 relative on `u1_ansatz_h2_weight` | held |
+| `yekutieli-per-cell-qlambert-decomposition-probe` | 2.2e-7 relative on `per_cell_hypotheses[5].value` | held |
+
+All three: mislabelled proton-named field **1 → 0**, failed assertions **0 → 0**,
+no environment downgrade.
+
+### A methodological correction, because the first pass over-flagged
+
+I screened on **relative** movement against the 11.5 ppb pin shift, and it flagged
+`option-e-v9` at 5.9e-6 — 500× the pin — which looked like another
+conclusion-mover. It is not. The flagged field is
+`candidates[0].err_vs_required_factor_pct`, a **residual near −0.103**: a
+6.1e-7-percentage-point change on a near-zero quantity reads as a large *relative*
+move and is nothing in absolute terms.
+
+**Relative change is the wrong metric for a field that is itself an error or
+residual.** Screening must look at absolute movement in the field's own units, and
+at the verdict, before calling anything a regression. Recorded because the same
+screen would misfire on every `*_pct`, `*_err*`, `*_residual*` field in the
+remaining queue.
+
+The ~2.2e-7 moves on the two `yekutieli` probes are ~19× the pin shift — expected
+amplification through the formula, not a separate effect, and both verdicts hold.
+Stated rather than rounded to "consistent with the pin".
+
+### Running state of the 21
+
+| | n |
+|---|---|
+| committed, verdict-preserving | **4** — `he4_rho_f_bar`, `option_e_v9`, `yekutieli_a2`, `yekutieli_per_cell` |
+| regenerated, REVERTED — conclusion moves | **4** — `xq_habiro` (TIER 1→2), `binding_qgaussian` (9.7 %), both `flavor_split_alpha_*` (drift 4000×) |
+| not yet regenerated | **12** — 11 `qbeta` + `habiro_interpolation_wlambda` |
+| excluded by design | **1** — `h4_form_AB_cross_anchor_stability` (*"preserved as-is by design"*) |
+
+`habiro_interpolation_wlambda` still goes last: it is the only one carrying muon
+**value B**, and regenerating it destroys the evidence of which muon value it held.
