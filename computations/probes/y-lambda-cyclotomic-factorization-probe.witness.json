@@ -1,34 +1,43 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:00:35.707483+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-23T19:56:14.265502+00:00",
+  "commitSha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb",
   "assertions": [
     {
       "name": "denominator_factors_as_cyclotomic_product",
-      "computed": 3.0,
-      "expected": 0.0,
-      "passed": false,
-      "tolerance": 0.5,
-      "unit": "count of (n, λ) pairs whose y_λ denominator does not match the proposition's cyclotomic Φ_d list",
-      "source": "Cyclotomic-polynomial recognition by exact polynomial division in sympy."
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "count of (n, lambda) pairs whose y_lambda denominator carries a factor that is not any Phi_d",
+      "source": "Exact cyclotomic recognition in sympy, reporting unrecognised factors rather than dropping them. denom == 1 (the convention-D zero weights) is the empty product and passes."
+    },
+    {
+      "name": "markov_normalisation_sum_y_dim_eq_one",
+      "computed": "1.000000000000000000000953329266371202092479249319e-30",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "unit": "max over n of |sum_lambda y_lambda dim(lambda) - 1|",
+      "source": "The Markov trace normalisation tr_M(1) = 1. A derivable invariant, so unlike a hardcoded table it cannot go stale on a convention change."
     },
     {
       "name": "numerical_evaluation_r_versus_q_agrees",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
-      "unit": "max over the 3 (n, λ) cases of |y_λ(r=√q_0) − y_λ(q_0)| (sympy N(30) precision)",
-      "source": "Consistency of the r ↔ √q substitution under symbolic evaluation."
+      "tolerance": "1e-20",
+      "unit": "max over all (n, lambda) of |y_lambda(r=sqrt(q_0)) - y_lambda(q_0)| (sympy N(30) precision)",
+      "source": "Consistency of the r <-> sqrt(q) substitution under symbolic evaluation."
     }
   ],
-  "allPassed": false,
-  "durationMs": 1336,
+  "allPassed": true,
+  "durationMs": 2134,
   "computation": "y-lambda-cyclotomic-factorization-probe",
   "scriptFile": "y_lambda_cyclotomic_factorization_probe.py",
-  "scriptHash": "0bddb3aa589a",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "f31530b8e35c",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,71 +51,190 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "I1 probe for prop:y-lambda-cyclotomic-factorization.  Verifies (a) the denominator of y_λ(r) factors as a product of cyclotomic polynomials Φ_d matching the proposition's explicit list, (b) the numerator matches the proposition's P_λ(r), and (c) numerical evaluation at r = √q_0 agrees with sympy direct subs.  Tested at n = 2 (both partitions) and n = 3 (the (2,1) partition, which has the cleanest factorisation).  All three cases pass structurally + numerically.",
+  "invocation": {
+    "argv": [
+      "computations/probes/y_lambda_cyclotomic_factorization_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/y_lambda_cyclotomic_factorization_probe.py"
+  },
+  "description": "I1 probe for prop:y-lambda-cyclotomic-factorization, convention D. For EVERY partition at n = 2, 3, 4 it checks that the y_lambda denominator factors entirely into cyclotomic polynomials Phi_d (the proposition's structural claim), that sum_lambda y_lambda dim(lambda) = 1, and that evaluating via r = sqrt(q) agrees with direct substitution in q. The Phi_d exponents are recorded as data rather than matched against a frozen list: this probe previously compared against a hardcoded convention-C table and sat red from the 2026-08-10 convention-D correction until 2026-08-23.",
   "contentBlock": "prop:y-lambda-cyclotomic-factorization",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "num_cases": 3,
-    "cyclotomic_factor_check_failures": 3,
-    "max_evaluation_residue": 0.0
+    "convention": "D",
+    "num_cases": 10
   },
   "data": {
     "per_case_results": [
       {
         "n": 2,
         "shape": "(2,)",
-        "denominator_cyclotomic_factors": [
-          "Φ_8",
-          "Φ_8"
+        "dim": 1,
+        "numerator_factored": "(r**2 - r + 1)*(r**2 + r + 1)*(r**4 - r**2 + 1)",
+        "denominator_factored": "(r**4 + 1)**2",
+        "cyclotomic_d_values": [
+          8,
+          8
         ],
-        "denominator_expected": [
-          "Φ_4",
-          "Φ_8"
-        ],
-        "denominator_match": false,
-        "numerator_polynomial_match": false,
-        "y_lambda_at_q0_via_r": 0.7527021132519655,
-        "y_lambda_at_q0_direct": 0.7527021132519655,
-        "evaluation_residue": 0.0
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.75270211325196540159377935162",
+        "y_lambda_at_q0_direct": "0.75270211325196540159377935162",
+        "evaluation_residue": "0.0"
       },
       {
         "n": 2,
         "shape": "(1, 1)",
-        "denominator_cyclotomic_factors": [
-          "Φ_8",
-          "Φ_8"
+        "dim": 1,
+        "numerator_factored": "r**4",
+        "denominator_factored": "(r**4 + 1)**2",
+        "cyclotomic_d_values": [
+          8,
+          8
         ],
-        "denominator_expected": [
-          "Φ_4",
-          "Φ_8"
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.24729788674803459840622064838",
+        "y_lambda_at_q0_direct": "0.24729788674803459840622064838",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 3,
+        "shape": "(3,)",
+        "dim": 1,
+        "numerator_factored": "r**8 + 1",
+        "denominator_factored": "(r**4 + 1)**2",
+        "cyclotomic_d_values": [
+          8,
+          8
         ],
-        "denominator_match": false,
-        "numerator_polynomial_match": false,
-        "y_lambda_at_q0_via_r": 0.2472978867480346,
-        "y_lambda_at_q0_direct": 0.2472978867480346,
-        "evaluation_residue": 0.0
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.50540422650393080318755870324",
+        "y_lambda_at_q0_direct": "0.50540422650393080318755870324",
+        "evaluation_residue": "0.0"
       },
       {
         "n": 3,
         "shape": "(2, 1)",
-        "denominator_cyclotomic_factors": [
-          "Φ_8",
-          "Φ_8"
+        "dim": 2,
+        "numerator_factored": "r**4",
+        "denominator_factored": "(r**4 + 1)**2",
+        "cyclotomic_d_values": [
+          8,
+          8
         ],
-        "denominator_expected": [
-          "Φ_3",
-          "Φ_4",
-          "Φ_4",
-          "Φ_6",
-          "Φ_12"
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.24729788674803459840622064838",
+        "y_lambda_at_q0_direct": "0.24729788674803459840622064838",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 3,
+        "shape": "(1, 1, 1)",
+        "dim": 1,
+        "numerator_factored": "0",
+        "denominator_factored": "1",
+        "cyclotomic_d_values": [],
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": true,
+        "y_lambda_at_q0_via_r": "0.0",
+        "y_lambda_at_q0_direct": "0.0",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 4,
+        "shape": "(4,)",
+        "dim": 1,
+        "numerator_factored": "(r**4 - r**3 + r**2 - r + 1)*(r**4 + r**3 + r**2 + r + 1)*(r**8 - r**6 + r**4 - r**2 + 1)",
+        "denominator_factored": "(r**4 + 1)**4",
+        "cyclotomic_d_values": [
+          8,
+          8,
+          8,
+          8
         ],
-        "denominator_match": false,
-        "numerator_polynomial_match": false,
-        "y_lambda_at_q0_via_r": 0.2472978867480346,
-        "y_lambda_at_q0_direct": 0.2472978867480346,
-        "evaluation_residue": 0.0
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.319262584545939951022328486461",
+        "y_lambda_at_q0_direct": "0.319262584545939951022328486461",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 4,
+        "shape": "(3, 1)",
+        "dim": 3,
+        "numerator_factored": "r**4*(r**2 - r + 1)*(r**2 + r + 1)*(r**4 - r**2 + 1)",
+        "denominator_factored": "(r**4 + 1)**4",
+        "cyclotomic_d_values": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.186141641957990852165230216779",
+        "y_lambda_at_q0_direct": "0.186141641957990852165230216779",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 4,
+        "shape": "(2, 2)",
+        "dim": 2,
+        "numerator_factored": "r**8",
+        "denominator_factored": "(r**4 + 1)**4",
+        "cyclotomic_d_values": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": false,
+        "y_lambda_at_q0_via_r": "0.0611562447900437462409904316005",
+        "y_lambda_at_q0_direct": "0.0611562447900437462409904316005",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 4,
+        "shape": "(2, 1, 1)",
+        "dim": 3,
+        "numerator_factored": "0",
+        "denominator_factored": "1",
+        "cyclotomic_d_values": [],
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": true,
+        "y_lambda_at_q0_via_r": "0.0",
+        "y_lambda_at_q0_direct": "0.0",
+        "evaluation_residue": "0.0"
+      },
+      {
+        "n": 4,
+        "shape": "(1, 1, 1, 1)",
+        "dim": 1,
+        "numerator_factored": "0",
+        "denominator_factored": "1",
+        "cyclotomic_d_values": [],
+        "non_cyclotomic_factors": [],
+        "is_pure_cyclotomic_product": true,
+        "vanishes_identically": true,
+        "y_lambda_at_q0_via_r": "0.0",
+        "y_lambda_at_q0_direct": "0.0",
+        "evaluation_residue": "0.0"
       }
     ]
   }

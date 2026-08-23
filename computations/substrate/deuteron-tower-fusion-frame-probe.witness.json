@@ -4,7 +4,7 @@
   "discipline": "predicted-first gate respected: all identities derived before evaluation; no E_unit candidate, no scan; sympy exact + one live pyhecke cross-check; (a)-scoped.",
   "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
   "results": {
-    "z_live_pyhecke": "0.4993203341836945",
+    "z_live_pyhecke": "mpf('0.6126880371464652')",
     "fusion_frame": "1 + [2]_v^2 = 2 + [3]_v = 4 - tau(v); 5 at v=1",
     "tower_levels": "k=1 unknot -> bond factor; k=2 4_1 -> muon anchor; k=3 B_3 -> nucleon carrier",
     "sharpened_open": [
@@ -17,7 +17,7 @@
     ]
   },
   "assertions": {
-    "z_canonical_equals_pyhecke_gram_z": false,
+    "z_canonical_equals_pyhecke_gram_z": true,
     "two_v_is_q_bracket": true,
     "fusion_identity_[2]^2_eq_[3]+1": true,
     "five_forced_at_classical_point": true,
@@ -25,13 +25,13 @@
     "criticality_g2_times_1+[2]^2_eq_1": true,
     "g_eq_inv_sqrt_4_minus_tau": true
   },
-  "allPassed": false,
+  "allPassed": true,
   "verdict": "THE 5g LAW'S DIMENSIONLESS CONTENT IS CANONICAL-TOWER DATA (exact): the bond factor z IS the corpus Markov-trace parameter (pyhecke.gram z = 1/[2]_v at v = sqrt(q0), checked live); the integer 5 is FORCED by the fusion identity [2]^2 = [3]+1 (1+[2]_v^2 = 2+[3]_v -> 5 at v=1, the total quantum dimension of the two-nucleon channel decomposition); and 1+[2]_v^2 = 4 - tau(v) ties the marginal-stability denominator to the alternating winding trace whose k=1,2,3 levels are unknot/figure-eight/Borromean — bond, lepton anchor, nucleon carrier on one tower. Criticality g^2(1+[2]^2)=1 is identically the normalized channel projection. SHARPENED OPEN (honest): the classical 5 admits >=2 canonical deformations (5g vs sqrt(2+[3]_v)); the frame does not select one, and the unit E_unit remains the genuine open — no candidate proposed, no scan run. SCOPE (a): exact algebra + structural reading; nothing wired.",
-  "scriptHash": "dd5b1cdf819f",
-  "scriptCommitSha": "072ace776c76b95b7809dcfcc9cd422c330e103e",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "scriptHash": "47deeff8165c",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "commitSha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb",
   "engine": "sympy+pyhecke",
-  "computedAt": "2026-08-14T16:38:23.248123+00:00",
+  "computedAt": "2026-08-23T19:50:42.741589+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

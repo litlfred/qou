@@ -78,13 +78,25 @@ def bkt(n, x):
 two_v = v + 1 / v          # [2]_v
 three_v = v**2 + 1 + v**(-2)  # [3]_v
 
-# (1) canonical z — live pyhecke value vs 1/[2]_v at v = sqrt(q0)
+# (1) canonical z — live pyhecke value vs the convention-D closed form
+import mpmath as _mp  # noqa: E402
 import pyhecke.gram as gram  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402  (canonical q0, via substrate path)
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical q0, via substrate path)
 
-z_live = float(gram.z)
-z_formula = Q0**3 / (Q0**2 + 1)
-z_canonical_ok = abs(z_live - z_formula) < 1e-12
+# `gram.z` is a float64 module constant, so this comparison has a float64 side
+# no matter what. Lift it EXACTLY (`repr` round-trips a float64) rather than
+# computing the reference in float64 too: the reference is then honest at 50 dps
+# and the tolerance below is a statement about `gram.z`'s resolution, not a
+# precision claim about the identity. Was `float(gram.z)` differenced against a
+# float64 `Q0**3/(Q0**2+1)` until 2026-08-23 (AGENTS.md "PROBES ARE NOT EXEMPT").
+with _mp.workdps(50):
+    _q0 = _mp.mpf(Q_50_DIGIT_STR)
+    z_live = _mp.mpf(repr(float(gram.z)))
+    z_formula = _q0**3 / (_q0**2 + 1)
+    # 1e-12 is far looser than float64 eps at this magnitude (~1.1e-16); it is
+    # the historical threshold and is kept so the tripwire's sensitivity does
+    # not change silently along with its arithmetic.
+    z_canonical_ok = abs(z_live - z_formula) < _mp.mpf("1e-12")
 
 # symbolic: [2]_v as bracket
 bracket_two_ok = sp.simplify(bkt(2, v) - two_v) == 0
@@ -188,7 +200,12 @@ print(f"\nwitness -> {out}")
 # convention D (0.6126880371464652). Silent success on that check is exactly the
 # failure shape this campaign exists to find, so it is now loud.
 #
-# Expect this to stay red until `qou-w8zz` lands.
+# RESOLVED 2026-08-23. `pyhecke.gram.z` moved to convention D (`q^3/(q^2+1)`),
+# so the tripwire's condition is met: `gram.z` and the closed form now agree to
+# 0.0, and `qou-w8zz` / `qou-5wpk` / `qou-9d6h` are all completed. The witness
+# had been stale since 2026-08-14 — one day before that move — and the only
+# action this check ever needed was a re-run. Left loud on purpose: it is still
+# the live detector for a C/D split reopening.
 if not witness["allPassed"]:
     failed = [k for k, v in assertions.items() if not v]
     print(f"\nFAILED assertions: {', '.join(failed)}")
