@@ -1,11 +1,11 @@
 ---
 # qou-jvav
 title: witness_dependency_drift resolver missed subdirectory upstreams — 357 of 688 drift records were false
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T17:11:30Z
-updated_at: 2026-08-23T21:04:04Z
+updated_at: 2026-08-23T22:14:41Z
 ---
 
 `staleness-gates.sh` is red on `scriptHash + upstream drift`. Two findings, one
@@ -183,3 +183,55 @@ suspicion and put 15 stale passes back for a commit.
 moved are all inside `upstream_witness_hashes[0]` — the recorded upstream hash
 being refreshed, which is the entire point of the drain. The 18x speedup is
 qou-rug0's path fix making `tools/pyhecke/python` actually resolve.
+
+
+---
+
+## RESOLVED — drift 688 -> 11, and the tool no longer audits retired artifacts
+
+Landed across 93e24e23d (resolver) and de80c6b6b (scan scope + a new kind).
+
+**The resolver** (93e24e23d). `load_and_hash_upstream` records a BARE
+FILENAME, and the lookup only tried a sibling directory and the flat
+`computations/` root — the whole layout before the Phase-6 refactor moved
+clusters into subdirectories. Upstreams that landed in `data/`, `alpha/`,
+`sweeps/` matched neither and were reported `upstream_missing` while sitting in
+the repo. `ame2020.json`, `alpha-cluster-recursion.witness.json` and
+`low-isotope-binding-sweep.witness.json` accounted for **357 of 688 records on
+their own, all false**. A third tree-search fallback resolves them;
+`_AMBIGUOUS_UPSTREAMS` records any bare name matching more than one path, so a
+wrong pick is visible rather than silent.
+
+**The scan scope** (de80c6b6b). The walk included `_deprecated/`, though the
+tool already excluded it when resolving an upstream and when locating a
+producer. One of those retired artifacts could never be cleared by any
+regeneration: `computations/_deprecated/qbeta-gb-filtration-residues.witness.json`
+is hand-written and not valid JSON — `"rel_error_pct": +20.27`, and JSON
+forbids a leading `+` — so it sat as a permanent `unreadable` record. Scan now
+skips `_deprecated`: 14 -> 12 records, 2717 witnesses checked, unverifiable
+766 -> 442. `flavor-dressed-mass-from-substrate-split` cleared with it, its
+only downstream being deprecated too.
+
+**New `upstream_deprecated` kind** (de80c6b6b), because one live producer
+depends on a retired anchor ON PURPOSE:
+`probes/he4_sdp_compositional_probe.py` carries its own two-path resolver and
+a comment saying the .md cites the anchor at `computations/` but it "currently
+lives under computations/_deprecated/ (which _path_bridge.witness_path skips by
+convention) — check both explicitly." Calling that `upstream_missing` was
+false; passing it silently would hide a live result resting on a retired
+artifact. It resolves, and the record says which kind it is.
+
+**Also drained:** isotope consumers (122) and q-pin consumers (21).
+
+Final: **235 witnesses declare `upstream_witness_hashes` (8.6% adoption), 11
+drift records** — 10 held by producers under active repair, plus one genuinely
+absent upstream, `probe-wedderburn-weight-scheme.witness.json`. That last one
+was untracked with its producer in `0763606e4` ("untrack the five root-level
+agent-scratch dirs"); recovered from history it carries `"assertions": []` and
+is a diagnostic comparing two weight schemes, and the sweep only ever hashed
+it without reading its data — so the declaration is being dropped with a
+comment recording where it went, not restored.
+
+The 8.6% adoption figure is the real remaining exposure and is a separate
+concern from this bean: the `dependency coverage` gate in `staleness-gates.sh`
+already tracks it (advisory).
