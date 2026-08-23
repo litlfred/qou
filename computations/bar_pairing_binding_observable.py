@@ -126,7 +126,38 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
         # alone does NOT encode q_str + dps.  A future q_0 re-pin or a
         # different precision request would otherwise silently load a
         # stale witness.  Re-run if the on-disk fields disagree.
-        cached_q = w.get("q_str", w.get("q_0_50dps_str", w.get("q_inv_50dps_str")))
+        # The fallback chain MISSED THE FORM THE COMMITTED WITNESSES ACTUALLY
+        # USE. It looked for `q_str`, `q_0_50dps_str`, `q_inv_50dps_str`; the
+        # witnesses in the tree store the value under `q_0_50dps` /
+        # `q_inv_50dps`, with no `_str` suffix. All three lookups returned
+        # None, so `cached_q == q_str` was False for EVERY committed witness
+        # and the cache could never hit.
+        #
+        # Two consequences, and the second is why this looked like two
+        # unrelated problems:
+        #
+        #   1. Every run recomputed the full chi table through
+        #      `pn.chi_lambda_all_partitions_mpfr` and OVERWROTE the committed
+        #      witness with a 12-key cache record — the collapse recorded in
+        #      bean qou-uqht (114 -> 60 leaves for the deuteron, 302 -> 172 for
+        #      tritium and helium-3), losing scriptHash, q0Anchor, N, Z,
+        #      convention, description and tr_M_at_q0.
+        #   2. It did so SILENTLY. Both "cache miss" messages below are guarded
+        #      on `cached_q is not None` / `cached_dps is not None`, so a None
+        #      from this line printed nothing at all.
+        #
+        # Verified rather than inferred: at HEAD,
+        # chi-deuteron-h6-at-q0-50dps.witness.json has q_str=None,
+        # q_0_50dps_str=None, q_inv_50dps_str=None and
+        # q_0_50dps='1.1099785827513808075916690956107688798744991218736' —
+        # which is EXACTLY the value this function requests. The cache was
+        # correct and unusable at the same time.
+        #
+        # The suffixed names are kept ahead of the bare ones so a witness
+        # written by this function (which emits `q_str`) still wins.
+        cached_q = (w.get("q_str")
+                    or w.get("q_0_50dps_str") or w.get("q_inv_50dps_str")
+                    or w.get("q_0_50dps") or w.get("q_inv_50dps"))
         cached_dps = w.get("dps")
         if (not w.get("partial", False)
                 and cached_q == q_str
