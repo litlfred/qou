@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:57:50.564470+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:15:31.234334+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "meson-gen3-eta-phi",
   "scriptFile": "meson_gen3_eta_phi.py",
-  "scriptHash": "658019648c22",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "a2810aaf3e6f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_gen3_eta_phi.py"
+    ],
+    "reproduce": "python3 -u computations/meson_gen3_eta_phi.py"
   },
   "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke χ^(2,1)·Seifert², parallel to the proved kaon; honest comparison to all light gen-3 mesons",
   "audit_only": true,
@@ -33,16 +41,16 @@
     "n_q": 2
   },
   "constants": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "m_pi_MeV": "139.57039",
     "seifert_ratio_T27_T23": "15/7"
   },
   "kaon_crosscheck": {
-    "pred": "3.5360939216823722832586284871341572096790214361279",
-    "pdg": "3.5371184389468281918535872830906326191393461034249",
+    "pred": "3.536093921682372283258628487134157209679021436127227903463169950512101",
+    "pdg": "3.537118438946828191853587283090632619139346103424945649288505964624732",
     "ppm": 289.6474297199268
   },
-  "gen3_prediction_ratio": "7.3201053889371526420511279852189550926718110670996",
+  "gen3_prediction_ratio": "7.320105388937152642051127985218955092671811067098010819486784346261721",
   "comparisons": {
     "K±": {
       "pdg_ratio": 3.537118438946828,
@@ -77,7 +85,7 @@
     "meson": "φ",
     "residual": 0.0021667959589038517
   },
-  "timestamp": "2026-08-21T14:57:50+00:00",
+  "timestamp": "2026-08-23T09:15:31+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

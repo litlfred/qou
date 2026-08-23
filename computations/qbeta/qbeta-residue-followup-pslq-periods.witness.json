@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T03:31:34.051686+00:00",
-  "commitSha": "296c700d13b5131fc8525367f472bb6758395413",
+  "computedAt": "2026-08-23T09:57:21.751803+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "meaningful_period_relation_found",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "qbeta-residue-followup-pslq-periods",
   "scriptFile": "qbeta_residue_followup_pslq_periods.py",
-  "scriptHash": "61b3959a21a1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ee089388d24f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_residue_followup_pslq_periods.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_residue_followup_pslq_periods.py"
   },
   "description": "Direction 3 of the residue-A follow-up: PSLQ integer-relation probe testing whether residue A / prefactor P=A/ℏ_q^15 ≈ 2.0716216 is a period (ℚ-combination of 12 transcendental/volume constants). PRECISION CEILING: A is empirically known to ~12 sig figs (tail_mean limiter), so PSLQ tol=1.0e-11 and a relation is meaningful only if precision exceeds the n_terms·log10(2·height) search-entropy + margin. The full 12-basis relation is SPURIOUS (entropy ≈15 ≫ 11 digits); 0 MEANINGFUL relation(s) (incl. 2-term probes) found. Every relation reported with height + entropy (falsifiable). Diagnostic-only.",
   "data": {
@@ -75,7 +87,7 @@
       },
       "height": 8,
       "n_terms": 12,
-      "residual": "-1.15e-10",
+      "residual": "-1.083e-10",
       "entropy_digits": "14.765",
       "precision_digits": "11.0",
       "meaningful": false,

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T21:10:02.114249+00:00",
-  "commitSha": "09ae685d630f833a9665aba24777fa18afb8ce8a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:01:16.315030+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "hbar_q_times_q_eq_q_minus_1",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-binding-frame-independent",
   "scriptFile": "deuteron_binding_frame_independent_probe.py",
-  "scriptHash": "7a4bfb163d90",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a372551cbc47",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_binding_frame_independent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_binding_frame_independent_probe.py"
   },
   "description": "Frame-independent formulation of B(deuteron), answering the owner steer. The frame-INVARIANT object is the total correction C = B/(μ₀ℏ_q[3]_q[4]_q) = 1.1015 (or B/μ₀ = 1.3652) — no tier split, no g₂, no t. A clean parameter-free closed form is B ≈ μ₀(q−1)[3]_q[4]_q (ℏ_q→q−1), err +0.77%. The HONEST frame-independent accuracy is the spread of motivated single forms, [−0.51%, +0.77%] → ~0.5%, controlled at O(h); the 0.036% figure and g₂=1.0087 are resummation-flattered (competing bar-odd resummations differ at O(t²)=O(h²), Lean-proved FrameAmbiguitySecondOrder), NOT frame-independent precision. So: the framework predicts B(deuteron) parameter-free to ~0.5% (20× over the naive q-Casimir's 9.2%); the real open target is C below ~0.5% by a DERIVED higher-order structure (the Δ_λ closure), not a chosen resummation. scope-(a), audit-only, nothing wired; no fit.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

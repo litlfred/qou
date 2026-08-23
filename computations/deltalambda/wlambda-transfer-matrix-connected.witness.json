@@ -2,12 +2,12 @@
   "schema": "witness/v1",
   "computation": "wlambda-transfer-matrix-connected",
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "wlambda_transfer_matrix_connected_probe.py",
-  "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
-  "scriptHash": "8ee072b99a6c",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "scriptHash": "d7e803740ffc",
   "description": "W_lambda transfer-matrix reformulation of binding: validates the defect-cubic gate (n=7 Z-crossing), the deuteron single-bond bracket (#2528), and the connected-part mechanism (diagonal/disjoint=0, braided!=0). Fit-free; NOT a binding closure.",
-  "generated": "2026-07-18T13:27:04.747051+00:00",
+  "generated": "2026-08-23T09:06:31.879618+00:00",
   "assertions": [
     {
       "name": "defect_cubic_sign_flip_at_n7",
@@ -27,7 +27,7 @@
     {
       "name": "braided_crossings_connected_nonzero",
       "passed": true,
-      "detail": "tr(sigma^2) - tr(sigma)^2 = 0.855067 != 0 (the topological/extensive channel lives in the NON-commuting braid)"
+      "detail": "tr(sigma^2) - tr(sigma)^2 = 0.752702 != 0 (the topological/extensive channel lives in the NON-commuting braid)"
     }
   ],
   "allPassed": true,
@@ -60,7 +60,7 @@
       0.6606737723480263
     ],
     "disjoint_connected": 0.0,
-    "braided_connected": 0.8550672738326165,
+    "braided_connected": 0.7527021138452041,
     "verdict": "MECHANISM PINNED (no closure): the W_lambda transfer matrix's trace carries the Lean-proved defect-cubic (n=7 Z-crossing); the deuteron single-bond W_(2,1) brackets f_pn from above (gap = connected term); and the connected part is ZERO for diagonal/disjoint bonds but NONZERO for braided/repeated crossings -> extensivity must come from the non-commuting braid transfer matrix with W_lambda injected per block, NOT from the scalar weighted trace. Not a binding closure."
   },
   "context": {
@@ -69,9 +69,9 @@
     "walls": "single-trace W_lambda surface EXHAUSTED (#2584); W_lambda != production weight y_lambda",
     "scope": "mechanism validation only; NOT a binding closure; no fit; nothing wired"
   },
-  "scriptCommitSha": "6c6044317eb2f26ff2ddf78442dfc797b1a88ff3",
-  "computedAt": "2026-07-18T13:27:04.985874+00:00",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "computedAt": "2026-08-23T09:06:31.890404+00:00",
   "durationMs": 0,
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

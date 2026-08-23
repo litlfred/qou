@@ -11,7 +11,7 @@
     "rows": [
       {
         "file": "computations/audits/e0_calibration_audit.py",
-        "line": 292,
+        "line": 293,
         "class": "benign",
         "arg": "1000000000.0",
         "source": "Q_BETA_N_REL * mpf(1e9)",
@@ -19,7 +19,7 @@
       },
       {
         "file": "computations/audits/e0_calibration_audit.py",
-        "line": 278,
+        "line": 279,
         "class": "benign",
         "arg": "1000000000.0",
         "source": "\"rel_err_ppb\": str(Q_BETA_N_REL * mpf(1e9)),",
@@ -27,7 +27,7 @@
       },
       {
         "file": "computations/audits/e0_calibration_audit.py",
-        "line": 225,
+        "line": 226,
         "class": "benign",
         "arg": "1000000000.0",
         "source": "f\"({mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb)\")",
@@ -35,7 +35,7 @@
       },
       {
         "file": "computations/audits/e0_calibration_audit.py",
-        "line": 283,
+        "line": 284,
         "class": "benign",
         "arg": "1000000000.0",
         "source": "f\"(~{mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb). 1 ppb is \"",
@@ -43,7 +43,7 @@
       },
       {
         "file": "computations/chi_numpy_dtype_fix_benchmark.py",
-        "line": 83,
+        "line": 84,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "return mp.mpf(float(np.trace(M)))",
@@ -51,7 +51,7 @@
       },
       {
         "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
-        "line": 131,
+        "line": 132,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "delta = mp.mpf(float(_avg_color_delta()))",
@@ -59,7 +59,7 @@
       },
       {
         "file": "computations/deltalambda/he4_binding_k_stage2_probe.py",
-        "line": 136,
+        "line": 137,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "delta = mp.mpf(float(_avg_color_delta()))",
@@ -67,7 +67,7 @@
       },
       {
         "file": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
-        "line": 91,
+        "line": 99,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "delta = mp.mpf(float(_avg_color_delta()))",
@@ -115,7 +115,7 @@
       },
       {
         "file": "computations/hoefsmit_sparse_prototype_probe.py",
-        "line": 151,
+        "line": 152,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "return mp.mpf(float(np.trace(M)))",
@@ -123,7 +123,7 @@
       },
       {
         "file": "computations/nuclide_braid_pipeline.py",
-        "line": 183,
+        "line": 184,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "chi_re = mp.mpf(float(chi_lambda_fast(shape, word, q_val=q0_chi,",
@@ -147,7 +147,7 @@
       },
       {
         "file": "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",
-        "line": 31,
+        "line": 32,
         "class": "benign",
         "arg": "1.5",
         "source": "r = (20*(q - 1)**3/(27*q**mp.mpf(1.5)) + 5*(q - 1)**2/(9*q)",

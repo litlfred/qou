@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:50:17.691529+00:00",
-  "commitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:47.185677+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "dq_conjugation_symmetric",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "keystone-colored-wrt-perblock-vs-dq",
   "scriptFile": "keystone_colored_wrt_perblock_vs_dq.py",
-  "scriptHash": "7dca4a060ffa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2de520c15595",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_colored_wrt_perblock_vs_dq.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_colored_wrt_perblock_vs_dq.py"
   },
   "description": "Keystone vector 2 (colored WRT / Lawrence-Rozansky): does the FULL-Hecke lambda-colored WRT(S^3/2I)=Sigma(2,3,5) per-block weight W^{WRT}_lambda reproduce the Hecke q-hook-length dimension d_q(lambda) for ALL blocks lambda|-n, n=3,4,5, incl. >=3-row (electron (3,1,1), muon (3,2)), with ZERO free parameters? The parameter-free colored weight factorizes as W^{WRT}_lambda = d_q(lambda)*theta_lambda^f (RT/Lawrence-Rozansky/Beasley-Witten): S_{0lambda} = d_q(lambda) on the full-Hecke side, theta_lambda = q^{2c(lambda)} the ribbon twist (c=content sum), f the NONZERO fibre framing forced by Sigma(2,3,5) (orbifold e=-1/30; = -1 surgery on the left trefoil). VERDICT: PARTIAL/FAIL. Proportionality holds ONLY at f=0 (content-free tautology, valid for any manifold, no Sigma(2,3,5) data); for the actual nonzero framing the twist dressing is content-dependent and conjugation-ANTISYMMETRIC (theta_{lambda'}=theta_lambda^{-1}) while d_q is conjugation-SYMMETRIC (d_q(lambda)=d_q(lambda') exactly), so W_lambda/W_{lambda'}=theta_lambda^{2f}!=1 breaks proportionality normalization-independently, for EVERY nonzero framing. (b)-excludes the narrow 'fibre-colored WRT weight = d_q as-is' hypothesis (cites the two proved twist/hook invariants + nonzero framing); the broad geometric W_lambda programme stays (a)-open. Prunes the colored-WRT line. No fit; nothing wired.",
   "data": {

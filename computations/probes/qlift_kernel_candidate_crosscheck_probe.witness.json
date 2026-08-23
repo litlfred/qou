@@ -1,9 +1,9 @@
 {
   "description": "C1 q-Hermite/q-involution vs C2 GGM eq-49: candidate q-lifts of the proved classical kernel (n+2) b_{n+2} = b_{n+1} + b_n -- structural cross-check, workplan step 2",
   "computation": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-gauge quadratic solve + residual scan vs GGM eq-49; T3 bar (q->1/q) covariance checks",
-  "generated": "2026-07-20T03:11:42+00:00",
+  "generated": "2026-08-23T09:39:55+00:00",
   "parameters": {
-    "dps": 50,
+    "dps": 70,
     "tol_exact": "1e-45",
     "tol_gauge": "1e-30",
     "n_max_t1": 20,
@@ -24,32 +24,32 @@
       "rows": [
         {
           "q": "0.9",
-          "max_rel_residual": "1.34e-51",
+          "max_rel_residual": "1.41e-71",
           "pass": true
         },
         {
           "q": "0.99",
-          "max_rel_residual": "3.18e-51",
+          "max_rel_residual": "1.81e-71",
           "pass": true
         },
         {
           "q": "1.01",
-          "max_rel_residual": "1.62e-51",
+          "max_rel_residual": "1.7e-71",
           "pass": true
         },
         {
           "q": "1.05",
-          "max_rel_residual": "1.34e-51",
+          "max_rel_residual": "9.06e-72",
           "pass": true
         },
         {
           "q": "1.10998",
-          "max_rel_residual": "6.68e-52",
+          "max_rel_residual": "1.18e-71",
           "pass": true
         },
         {
           "q": "1 (classical limit)",
-          "max_rel_residual": "2.47e-51",
+          "max_rel_residual": "1.09e-71",
           "pass": true
         }
       ],
@@ -89,7 +89,7 @@
     "t3_bar_symmetry": {
       "c1_coeff_covariance": {
         "identity": "[k]_{1/q} = q^{-(k-1)} [k]_q",
-        "max_rel_err": "9.58e-51",
+        "max_rel_err": "3.57e-71",
         "pass": true
       },
       "c1_solution_bar": {
@@ -128,7 +128,7 @@
       },
       "c2_kernel_bar": {
         "identity": "coeff(1/q, m) = coeff(q, -m); kernel invariant under combined (q->1/q, m->-m), not under q->1/q alone",
-        "max_abs_err": "1.34e-50",
+        "max_abs_err": "9.06e-71",
         "pass": true
       },
       "verdict": "C1 kernel: bar-covariant (leading coeff picks up q^{-(n+1)}), solution bar-NEITHER; C2 kernel: bar-invariant only jointly with m -> -m (its solutions carry the proved (-1)^j parity, GGM Thm 9). Bar behaviors are structurally different -- CONSISTENT with the T2 DISTINCT verdict"

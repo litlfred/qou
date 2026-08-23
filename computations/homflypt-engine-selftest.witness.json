@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:51:15.104377+00:00",
-  "commitSha": "a3d8421866f3aeb49f3d89a8e635d0324198c45a",
+  "computedAt": "2026-08-23T09:09:30.945610+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "unknot_is_1",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "homflypt-engine-selftest",
   "scriptFile": "homflypt_engine.py",
-  "scriptHash": "39c3a8dcca90",
-  "scriptCommitSha": "a82af059b1418c055478cbe370c7b956ac4bc54d",
+  "scriptHash": "cd2091a05ba5",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/homflypt_engine.py"
+    ],
+    "reproduce": "python3 -u computations/homflypt_engine.py"
   },
   "description": "HOMFLYPT engine self-test witness. Validates the Hecke-algebra Ocneanu-trace engine against known polynomial values (unknot, Hopf link, trefoil ±). Records SU(N) family evaluations and Gram-matrix entries for the 2-strand basis. CI gate: any regression in the known polynomial tests fails the assertion.",
   "contentBlock": "rem:archimedean-image-table",

@@ -5,7 +5,7 @@
   "description": "Formalize-first prune of the C_knot attack: the deuteron binding deficit C_knot is NOT a single universal derivable factor. The SAME deuteron gives C_knot=5.85 (interface-inclusive per-\u03bb sum) vs 240 (signed dim_q sum) \u2014 a 41\u00d7 convention spread. Across isotopes the signed dim_q convention gives 240/40717/31475 (D/T/\u00b3He), but the triton naive sum NEARLY CANCELS (0.0002 MeV) so that 170\u00d7 is a convention-specific pathology, not clean A-dependence (honest caveat). ROBUST claim: no single constant fits even the deuteron across conventions, so 'derive C_knot = 5.85' as a one-number shortcut to improve binding is REFUTED \u2014 C_knot \u2261 the full convention-pinned per-partition \u0394_\u03bb, ill-posed until the weighting is pinned. scope-(a) refutation of the SHORTCUT (not a structural exclusion of a \u0394_\u03bb derivation, open, bean qou-3q7t). Connects to the convention-fragility thread of PR #4491. No fit; nothing wired; values read from two committed witnesses; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) formalize-first prune (single-universal-C_knot shortcut refuted); no fit",
-  "scriptHash": "e2a4fa154e0144d8",
+  "scriptHash": "2e916f0fe2485adf",
   "result": {
     "deuteron_C_knot_two_conventions": {
       "interface_inclusive": "5.85209",
@@ -34,5 +34,5 @@
     "bean": "qou-3q7t",
     "no_fit": true
   },
-  "scriptCommitSha": "c7e2b590de05d48ce1878d2ac9b466034dbfd086"
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2"
 }

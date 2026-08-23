@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T10:40:14.885493+00:00",
-  "commitSha": "fb39f0437cfe7a1b502335ae08dd6c144e0e7a0e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:57:01.461691+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "deuteron_full_equals_capped_control",
-      "computed": 9.472e-16,
+      "computed": 0.6335,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-09,
       "source": "deuteron had 0 skipped → full tr_M == cached tr_M"
     }
   ],
-  "allPassed": true,
-  "durationMs": 2739,
+  "allPassed": false,
+  "durationMs": 3354,
   "computation": "cap-free-trm-prototype",
   "scriptFile": "cap_free_trm_prototype.py",
-  "scriptHash": "94757646de73",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "602e5e6c37af",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/cap_free_trm_prototype.py"
+    ],
+    "reproduce": "python3 -u computations/cap_free_trm_prototype.py"
   },
   "description": "Cap-free tr_M over ALL partitions via the matrix-M reduced-block kernel (no max_dim skip) — owner directive: no truncation. Quantifies the cache's max_dim-cap error (the skipped high-dim partitions) and shows the reduced-block computes every λ losslessly.",
   "data": {
@@ -43,9 +52,9 @@
         "n_partitions": 11,
         "n_skipped_in_cache": 0,
         "tr_M_capped": "2.17544681693623666",
-        "tr_M_full_no_cap": "2.1754468169362346",
-        "cap_error_abs": "2.06062e-15",
-        "cap_error_rel": "9.472e-16"
+        "tr_M_full_no_cap": "1.33178217929911155",
+        "cap_error_abs": "0.843665",
+        "cap_error_rel": "0.6335"
       },
       {
         "atom": "tritium",
@@ -54,10 +63,10 @@
         "A": 3,
         "n_partitions": 30,
         "n_skipped_in_cache": 0,
-        "tr_M_capped": "2.51155334090576511",
-        "tr_M_full_no_cap": "2.51155334090576051",
-        "cap_error_abs": "4.60661e-15",
-        "cap_error_rel": "1.834e-15"
+        "tr_M_capped": "1.08602400582184289",
+        "tr_M_full_no_cap": "1.08602400582184097",
+        "cap_error_abs": "1.92601e-15",
+        "cap_error_rel": "1.773e-15"
       }
     ],
     "conclusion": "The max_dim cap drops ~1e-3 of tr_M (the skipped high-dim partitions) — not 1-ppQ. The reduced-block computes all partitions; the cap is unnecessary and must be removed for precise binding. No truncation."

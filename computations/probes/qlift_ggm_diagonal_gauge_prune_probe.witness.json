@@ -1,9 +1,9 @@
 {
   "description": "Diagonal-gauge prune: b_m = g_m*y_m from C1 kernel [m+1]_q b_{m+1} = b_m + c b_{m-1} into GGM eq-49 y_{m+1} - (2-q^m) y_m + y_{m-1} = 0 -- consistency condition derived symbolically, verified numerically",
   "computation": "mpmath dps=50; P1 residual of derived consistency identity; P2 direct (A)-gauge construction + eq-49 residual on the proved C1 solution b_n = I_q(n)/[n]_q!; P3 constant-c(q) and index-shift non-rescue",
-  "generated": "2026-07-20T03:19:29+00:00",
+  "generated": "2026-08-23T09:39:55+00:00",
   "parameters": {
-    "dps": 50,
+    "dps": 70,
     "tol_kill": "1e-40",
     "m_max": 15,
     "q_values": [

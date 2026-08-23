@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T19:19:17.531763+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:22:42.077242+00:00",
   "computation": "em-linking-invariant-scoping",
   "scriptFile": "em_linking_invariant_scoping.py",
-  "scriptHash": "e00749173d16",
+  "scriptHash": "aa43cfb3eac5",
   "contentBlock": "def:coulomb-charge",
   "auditOnly": true,
   "auditDoc": "docs/workplans/2026-06-19-mirror-pair-coulomb-sign-correction.md",
@@ -82,8 +82,5 @@
     "charge-coulomb-tn3he-derived.witness.json (derived per-pair unit)",
     "he3-pairknot-composite-lp.witness.json (LP-dual degeneracy — independent)",
     "AME2020 mirror-pair binding energies (comparison only)"
-  ],
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0
+  ]
 }

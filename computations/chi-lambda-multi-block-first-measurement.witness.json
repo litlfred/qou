@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T01:48:10.282191+00:00",
-  "commitSha": "8cbb97fc3ad6b87ada704ce8ec06556aa9d09bc7",
+  "computedAt": "2026-08-23T08:57:31.818961+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "all_partitions_returned_non_null",
@@ -15,22 +15,38 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 5,
   "computation": "chi-lambda-multi-block-first-measurement",
   "scriptFile": "chi_lambda_multi_block_first_measurement.py",
-  "scriptHash": "37a17c3d707a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "87f17a982f07",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_lambda_multi_block_first_measurement.py"
+    ],
+    "reproduce": "python3 -u computations/chi_lambda_multi_block_first_measurement.py"
   },
   "description": "FIRST concrete multi-block χ_λ measurement using just-wired pyhecke_native.chi_lambda_braid (tier-3 Phase B Python wrapper). Evaluates χ_λ(β_𝓑₃) for all 3 partitions of H_3(q) at q_0 on the standard positive Borromean braid (σ_1 σ_2⁻¹)³. Establishes the multi-block distribution structure that production's single-block ν_SDP projection discards. Foundation for §10.1-§10.2 of the vol-density-derivation-bug-squash audit (PR #1228).",
   "parameters": {
-    "q_0_f64": 1.1099785955541805,
-    "h_f64": 0.20906032198987945,
-    "h_sq_f64": 0.04370621823051208,
+    "q_0_f64": 1.1099785955573347,
+    "h_f64": 0.20906032199559368,
+    "h_sq_f64": 0.04370621823290131,
     "borromean_word": "(σ_1 σ_2^-1)^3 = [(1,1),(2,-1),(1,1),(2,-1),(1,1),(2,-1)]",
     "partitions_of_3_count": 3
   },
@@ -41,9 +57,9 @@
           3
         ],
         "dim_S_lambda": 1.0,
-        "chi_lambda_borromean": 1.0000000000000027,
-        "chi_over_h": 4.783308427356255,
-        "chi_over_h_sq": 22.88003951121731,
+        "chi_lambda_borromean": 1.0000000000000013,
+        "chi_over_h": 4.783308427225507,
+        "chi_over_h_sq": 22.880039509966526,
         "magnitude_class": "h-scale (≈ +4.78 h)"
       },
       {
@@ -52,9 +68,9 @@
           1
         ],
         "dim_S_lambda": 2.0,
-        "chi_lambda_borromean": 1.994185810381214,
-        "chi_over_h": 9.538805792510699,
-        "chi_over_h_sq": 45.62705013423096,
+        "chi_lambda_borromean": 1.9941858103805747,
+        "chi_over_h": 9.538805792246917,
+        "chi_over_h_sq": 45.62705013172211,
         "magnitude_class": "h-scale (≈ +9.54 h)"
       },
       {
@@ -64,12 +80,22 @@
           1
         ],
         "dim_S_lambda": 1.0,
-        "chi_lambda_borromean": 1.0,
-        "chi_over_h": 4.783308427356243,
-        "chi_over_h_sq": 22.880039511217248,
+        "chi_lambda_borromean": 1.0000000000000024,
+        "chi_over_h": 4.783308427225513,
+        "chi_over_h_sq": 22.880039509966554,
         "magnitude_class": "h-scale (≈ +4.78 h)"
       }
     ],
-    "sum_abs_chi": 3.9941858103812167
+    "sum_abs_chi": 3.9941858103805785,
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+      }
+    ]
   }
 }

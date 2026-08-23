@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-08-23T08:35:57Z
+updated_at: 2026-08-23T10:10:08Z
 ---
 
 ## The defect, with evidence
@@ -135,3 +135,70 @@ All five agents were given the same scratch directory and clobbered each other's
 working files; two caught it via dry-run guards and redid their work in private
 subdirectories. Nothing bad landed, but that was their care, not my design. Fan
 out shards with per-agent scratch paths.
+
+
+---
+
+## Witnesses regenerated — staleness drained BELOW its pre-sweep baseline
+
+The bean body scoped witness regeneration out. Doing it anyway, under a disk
+guard, turned out to be feasible: 664 changed producers, batched 40 at a time,
+~8.4s each.
+
+    664 producers: 530 ok, 54 timeout, 40 error
+    563 witnesses regenerated and committed
+
+    self-staleness   744  (before the dps sweep)
+                  -> 1167 (after the sweep — 822 producers changed scriptHash)
+                  ->  686 (after regeneration)
+
+So the sweep's +423 is paid back and the corpus ends **58 witnesses cleaner than
+before this branch started**.
+
+### The regeneration proved the padding was FABRICATED, not truncated
+
+    before: 0.0073087015600556568914203806394122356062676461516769
+    after : 0.00730870156005565689142038063941223560626764615167775333384...
+                                                              ^ diverges at ~digit 51
+
+The values do not merely extend — they **disagree from about digit 51**. A
+producer computing at dps=50 and serializing at 60 was not padding with harmless
+zeros; it emitted digits that were wrong. Anything downstream reading past digit
+50 of those witnesses was reading noise. This is the direct proof the earlier
+trailing-9s evidence only suggested.
+
+### My 45-second timeout corrupted 5 witnesses, and the shape guard caught it
+
+Producers that write incrementally were killed mid-write:
+
+    chi-numpy-dtype-fix-benchmark    durationMs 408,402 -> 32,812
+    habiro-coefficients-helium-3     data_keys 1 -> 0
+    habiro-coefficients-helium-4     data_keys 1 -> 0
+    qbeta-ck-local-taylor-around-u0  63 -> 33 leaves (48% gone)
+    rho-k-full-via-wenzl-lr          306 -> 58 leaves (81% gone)
+
+All five reverted to HEAD. `witness_shape_guard.py` exists for exactly this and
+its warning is worth repeating: *"The raw-float64 ratchet will NOT catch this: a
+gutted witness scores zero raw floats, which reads as a perfect drain."* Had that
+guard not been blocking, my run would have reported a larger drain than it earned.
+Any future regeneration pass needs a per-producer timeout well above the slowest
+producer, or none at all.
+
+### Also removed
+
+Four UNTRACKED witnesses from producers that had never run to completion before
+the import fixes. Three carry raw float64 and would have entered the corpus as new
+dirty witnesses. Their producers need a `_precision.fmt` fix before their output
+is committed — not in scope here.
+
+One witness, `audits/hardcoded-literal-audit.witness.json`, was reverted rather
+than committed: its new content is a **self-referential false positive** — the
+literal audit harvests the float64-padding audit's own test fixture, and the
+padding audit then flags the report. Filed as **qou-tknj**; that witness is
+knowingly stale until it is fixed at the producer.
+
+### Gates
+
+    precision-gates.sh   EXIT 0 — all blocking gates green
+    witness shape guard  563 modified, 0 collapsed
+    raw-float64          0 NEW, 0 REGRESSED

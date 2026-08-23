@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:24:00.279167+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:22:39.151825+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "cl3_full_orbit_sum_closed_form",
-      "computed": 8.018294130276587e-51,
+      "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -15,7 +15,7 @@
     },
     {
       "name": "cl3_half_orbit_sum_closed_form_odd_N",
-      "computed": 2.6727647100921956e-51,
+      "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 146,
+  "durationMs": 203,
   "computation": "cyclotomic-cl3-orbit-sum-general-probe",
   "scriptFile": "cyclotomic_cl3_orbit_sum_general_probe.py",
-  "scriptHash": "d0c27cbddd6f",
-  "scriptCommitSha": "03b5ebbd143745ffafb2421edfde30b56e64a1a4",
+  "scriptHash": "55bd05962b32",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,18 +36,27 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/cyclotomic_cl3_orbit_sum_general_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/cyclotomic_cl3_orbit_sum_general_probe.py"
   },
   "description": "I1 probe for prop:cyclotomic-cl3-orbit-sum-general.  Verifies (a) the full Clausen-3 orbit sum closed form Σ_{k=1..N-1} Cl_3(2πk/N) = −(N²−1)/N² · ζ(3), and (b) the half-sum identity for odd N: Σ_{k=1..(N-1)/2} Cl_3(2πk/N) = −(N²−1)/(2N²) · ζ(3).  Tested at N ∈ {3, 5, 7, 9, 11} via mpmath polylog at 50 dps; both residues at the numerical-precision floor (~1e-49).  Complements the all-depths orbit-sum probe by witnessing the parity-halved odd-N reduction explicitly.",
   "contentBlock": "prop:cyclotomic-cl3-orbit-sum-general",
   "parameters": {
     "N_range_odd_only": "3, 5, 7, 9, 11",
-    "max_full_sum_residue": 8.018294130276587e-51,
-    "max_half_sum_residue": 2.6727647100921956e-51
+    "max_full_sum_residue": 3.622271631530685e-71,
+    "max_half_sum_residue": 1.8111358157653425e-71
   },
   "data": {
     "per_N_results": [
@@ -55,46 +64,46 @@
         "N": 3,
         "full_sum_direct": -1.0684950250307506,
         "full_closed_form": -1.0684950250307506,
-        "full_residue": 0.0,
+        "full_residue": 1.8111358157653425e-71,
         "half_sum_direct": -0.5342475125153753,
         "half_closed_form": -0.5342475125153753,
-        "half_residue": 1.3363823550460978e-51
+        "half_residue": 1.8111358157653425e-71
       },
       {
         "N": 5,
         "full_sum_direct": -1.1539746270332105,
         "full_closed_form": -1.1539746270332105,
-        "full_residue": 5.345529420184391e-51,
+        "full_residue": 0.0,
         "half_sum_direct": -0.5769873135166053,
         "half_closed_form": -0.5769873135166053,
-        "half_residue": 1.3363823550460978e-51
+        "half_residue": 1.8111358157653425e-71
       },
       {
         "N": 7,
         "full_sum_direct": -1.177525129625725,
         "full_closed_form": -1.177525129625725,
-        "full_residue": 8.018294130276587e-51,
+        "full_residue": 1.8111358157653425e-71,
         "half_sum_direct": -0.5887625648128625,
         "half_closed_form": -0.5887625648128625,
-        "half_residue": 1.3363823550460978e-51
+        "half_residue": 9.055679078826712e-72
       },
       {
         "N": 9,
         "full_sum_direct": -1.1872166944786116,
         "full_closed_form": -1.1872166944786116,
-        "full_residue": 2.6727647100921956e-51,
+        "full_residue": 1.8111358157653425e-71,
         "half_sum_direct": -0.5936083472393058,
         "half_closed_form": -0.5936083472393058,
-        "half_residue": 1.3363823550460978e-51
+        "half_residue": 1.8111358157653425e-71
       },
       {
         "N": 11,
         "full_sum_direct": -1.1921225485880274,
         "full_closed_form": -1.1921225485880274,
-        "full_residue": 5.345529420184391e-51,
+        "full_residue": 3.622271631530685e-71,
         "half_sum_direct": -0.5960612742940137,
         "half_closed_form": -0.5960612742940137,
-        "half_residue": 2.6727647100921956e-51
+        "half_residue": 0.0
       }
     ]
   }

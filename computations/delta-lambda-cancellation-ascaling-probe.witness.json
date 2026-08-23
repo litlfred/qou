@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:45:21.551955+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-23T08:58:55.571010+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 167,
+  "durationMs": 272,
   "computation": "delta-lambda-cancellation-ascaling-probe",
   "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
-  "scriptHash": "a510ac5f6174",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "8b58449aa557",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_cancellation_ascaling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_cancellation_ascaling_probe.py"
   },
   "description": "SIGNED net/target = Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ (closure ⇒ +1) for D/T/³He/⁴He under classic + 3 q-dim conventions. As the convention grows the net grows NON-UNIFORMLY in A: heavy isotopes (³He 1.27, ⁴He 1.31 at fake-degree) overshoot while light ones (D 0.28, T 0.91) undershoot. NO single convention lands all four near +1 ⟹ no flat q-dim convention reproduces binding's A-scaling; the closure object must be A-/λ-structured (route (ii)/(iii) or a structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope (a), not a (b) exclusion. Sign on transpose λ' (proven form PR #2416).",
   "scope": "(a) scope-limited — the 3 flat q-dim conventions fail the A-scaling closure test",

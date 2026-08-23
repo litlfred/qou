@@ -1,13 +1,13 @@
 {
   "probe": "qbeta_5two_route26_ift_hypothesis",
   "bean": "qou-trns",
-  "dps": 50,
+  "dps": 70,
   "pairs_with_lean": "QOU/MathlibExt/ImplicitScalar.lean + QOU/QBeta/FiveTwoCurveDeriv.lean",
   "gates": [
     {
       "gate": "G1",
       "claim": "curveDx and curveDy as declared in FiveTwoCurveDeriv.lean really are the partials of the curve -- central differences at step 1e-20 agree",
-      "worst": "3.8448219e-31",
+      "worst": "2.0e-40",
       "pass": true
     },
     {
@@ -23,8 +23,8 @@
       "min_off_branch_point": "1.615770341",
       "phi0_over_pi_solved": "0.76622594937757503001",
       "u0_root_of_Q_in_(-2,-1)": "-1.4844353317658568752",
-      "Q_at_u0": "4.2764235e-50",
-      "min_curveDy_AT_phi0": "1.7964252e-25",
+      "Q_at_u0": "5.7956346e-70",
+      "min_curveDy_AT_phi0": "9.9489896e-36",
       "pass": true
     },
     {
@@ -33,18 +33,18 @@
       "rows": [
         {
           "phi_over_pi": "0.2",
-          "|fd - IFT|": "1.6630427e-31"
+          "|fd - IFT|": "1.6630353e-31"
         },
         {
           "phi_over_pi": "0.45",
-          "|fd - IFT|": "2.398739e-31"
+          "|fd - IFT|": "2.3987476e-31"
         },
         {
           "phi_over_pi": "0.95",
-          "|fd - IFT|": "1.5958925e-31"
+          "|fd - IFT|": "1.5958993e-31"
         }
       ],
-      "worst": "2.398739e-31",
+      "worst": "2.3987476e-31",
       "pass": true
     },
     {
@@ -63,21 +63,21 @@
       "rows": [
         {
           "phi_over_pi": "0.2",
-          "|dV/dphi - dVdx * dx/dphi|": "1.306247e-31"
+          "|dV/dphi - dVdx * dx/dphi|": "1.3062479e-31"
         },
         {
           "phi_over_pi": "0.45",
-          "|dV/dphi - dVdx * dx/dphi|": "3.4696637e-31"
+          "|dV/dphi - dVdx * dx/dphi|": "3.4696936e-31"
         }
       ],
-      "worst": "3.4696637e-31",
+      "worst": "3.4696936e-31",
       "pass": true
     },
     {
       "gate": "G7",
       "claim": "the two Vieta products FiveTwoEnvelopeSum exponentiates to: prod_j (1 - x y_j) = x and prod_j (1 - y_j/x) = 1/x, along the whole arc. These are the hexp inputs the branch-pinning lemma consumes, and they hold from Vieta alone",
       "n_points": 21,
-      "worst": "7.1966392e-51",
+      "worst": "4.5278395e-71",
       "pass": true
     },
     {

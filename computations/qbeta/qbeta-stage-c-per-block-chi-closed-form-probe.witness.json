@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:33.802561+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-23T09:57:25.982638+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "stage_c_per_block_chi_symbolic_matches_pyhecke",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 383,
+  "durationMs": 299,
   "computation": "qbeta-stage-c-per-block-chi-closed-form-probe",
   "scriptFile": "qbeta_stage_c_per_block_chi_closed_form_probe.py",
-  "scriptHash": "de91718e2bc7",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "e1325d835613",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py"
   },
   "description": "Stage C closed form: per-block χ^λ(σ_1σ_2σ_1) at n=3 derived symbolically via the Hoefsmit construction. Yields exact q-monomial closed forms (q^3, 0, -q^(-3)) for (3), (2,1), (1,1,1) respectively. No float64. The (2,1) = 0 is structural (exact cancellation in the 2×2 rep trace). Closes the per-block χ^λ extraction for the operator-level N=k probe.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
