@@ -78,7 +78,7 @@ canonical single-wrap candidate `ρ(σ₁σ₂)` has `det = 1` and `tr = −1`
 ## Method
 
 Exact symbolic ℚ(s) / ℚ(q) via sympy and exact `Fraction` arithmetic; the one
-substrate evaluation (assertion 11) is mpmath at 60 dps from the 50-digit
+substrate evaluation (assertion 12) is mpmath at 60 dps from the 50-digit
 proton-pin string.  No float64 anywhere, per AGENTS.md §"PROBES ARE NOT
 EXEMPT".
 """
@@ -261,7 +261,32 @@ def main() -> int:
         f"alpha_D(10) = {aD10} = {float(aD10):.4f}",
     )
 
-    # ---- 11. The concrete miss at the substrate anchor (60 dps, no float64). --
+    # ---- 11. The rational-normalisation loophole is closed by det M = 1. ------
+    # Objection to the argument above: a *normalised* character (divided by a
+    # q-integer, as Markov normalisations routinely are) is a rational function,
+    # and a bounded rational function need NOT be constant -- e.g. 1/(1+q^2).
+    # So the boundedness kill would not apply.
+    #
+    # It does apply, because the unimodular-spectrum requirement det M = 1 pins
+    # the normalisation. If M = c*rho(w) for a real scalar c, then
+    #     det M = c^2 * det rho(w) = c^2 * (-1)^{e(w)},
+    # so det M = 1 forces e(w) EVEN and c = +-1. No q-dependent normalisation
+    # survives, and tr M = +- tr rho(w) is a Laurent polynomial after all.
+    c = sp.symbols("c", real=True)
+    w_odd = [1, 2, 1]  # exponent sum 3
+    det_odd = sp.simplify((c * word_matrix(w_odd, q)).det())
+    sols_odd = sp.solve(sp.Eq(det_odd, 1), c)
+    w_even = [1, 2]  # exponent sum 2
+    det_even = sp.simplify((c * word_matrix(w_even, q)).det())
+    sols_even = sorted(sp.solve(sp.Eq(det_even, 1), c), key=str)
+    check(
+        "11. det M = 1 pins any scalar normalisation to c = +-1 (no rational escape)",
+        sols_odd == [] and sols_even == [-1, 1],
+        f"det(c*rho(s1 s2 s1)) = {det_odd} = 1 has real solutions {sols_odd}; "
+        f"det(c*rho(s1 s2)) = {det_even} = 1 has {sols_even}",
+    )
+
+    # ---- 12. The concrete miss at the substrate anchor (60 dps, no float64). --
     from mpmath import mp, mpf, cos as mpcos, sqrt as mpsqrt
 
     mp.dps = 60
@@ -277,7 +302,7 @@ def main() -> int:
     twocosC = 2 * mpcos(aC0)
     twocosD = 2 * mpcos(aD0)
     check(
-        "11. neither 2cos(alpha) matches the braid value -1 at the proton pin",
+        "12. neither 2cos(alpha) matches the braid value -1 at the proton pin",
         twocosC != mpf(-1) and twocosD != mpf(-1),
         f"2cos(alpha_C(q0)) = {mp.nstr(twocosC, 20)}, "
         f"2cos(alpha_D(q0)) = {mp.nstr(twocosD, 20)}, braid tr rho(s1 s2) = -1",
@@ -285,9 +310,9 @@ def main() -> int:
 
     print()
     if failures:
-        print(f"FAILED {len(failures)}/11: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/12: {', '.join(failures)}")
         return 1
-    print("11/11 assertions hold.")
+    print("12/12 assertions hold.")
     print()
     print("CONSEQUENCE (scope-(b), structural exclusion):")
     print("  A braid-image transfer matrix has a Laurent-polynomial character and a")
