@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-22T21:33:30Z
+updated_at: 2026-08-22T22:59:28Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -213,6 +213,127 @@ did not notice, and its `lake build` could not have shown either: a law-free
 class compiles, and an unused hypothesis compiles.
 
 
+## Scoping pass 2026-08-22 — the instance is NOT closeable in a session, and the probe backing it has three defects
+
+Corpus-grep run first (all five paths). `QOU.LiftingDescent.QOUInstance` exists
+**nowhere** in the tree — only in the block's own `lean.ref`. A multiline grep for
+any `MotivicGaloisCharacter` instance finds exactly one, the `ℤ` trivial witness
+added on #5462. So the item is genuinely open; nothing has quietly closed it.
+
+(Note on method: my first grep for instances was line-based and found **zero**,
+because the declaration spans two lines. Same instrument-blindness class as the
+`re.MULTILINE` miss earlier today. The multiline re-run is the real number.)
+
+### Why it cannot be closed here
+
+The class now demands two fields, not one (#5462):
+
+    frobenius_at : Nat.Primes → Mhat
+    frobenius_realize_ne_zero : ∀ p, Nontrivial (Target (Place.finite p)) →
+                                  sub.realize (Place.finite p) (frobenius_at p) ≠ 0
+
+A genuine QOU instance therefore needs, in Lean: the **Habiro ring** (inverse
+limit of `ℤ[q]/(q;q)_n` — not in Mathlib), the evaluation ring hom to
+`ℤ[ζ_{2p}]`, the atomic Markov trace as an element of it, and non-vanishing
+**for all p**. Items 1-3 are infrastructure; item 4 is the content the deleted
+axiom was laundering.
+
+**The tempting shortcut is banned and I am recording it so nobody re-derives it.**
+Wrapping the Habiro data in a `HabiroFrobeniusData` structure and projecting the
+instance out of it satisfies §3b-cond items 1-4 and **fails item 5**: the carrier
+would hold the *conclusion* (`frobenius_at` + its non-vanishing) rather than the
+*hypotheses*, making the instance a vacuous self-assuming projection. That is the
+same laundering `73a21ac34a` removed, under a different spelling.
+
+### What the cited probe actually establishes
+
+`computations/probes/habiro_frobenius_probe.py` → 5 atoms × 9 primes
+(p ∈ {2,3,5,7,11,13,17,19,23}).
+
+**Good, and directly relevant to the new Prop field:** `frob_num` is **nonzero at
+45/45**. The non-vanishing `frobenius_realize_ne_zero` demands is empirically
+supported everywhere it has been measured — for 9 primes, not ∀ p.
+
+**Defect 1 — the probe reads a `_deprecated/` witness.** Its input resolves to
+`computations/_deprecated/habiro-coefficients-atomic-fast.witness.json`, while
+live per-atom witnesses exist for exactly those five atoms
+(`habiro-coefficients-{proton,neutron,deuteron,tritium,helium-3}.witness.json`)
+plus a live aggregate at `computations/habiro/habiro-coefficients-atomic.witness.json`.
+The block's `.ts` carries `computation.status: "verified"` on that chain.
+
+**And re-pointing is not a free fix** — the deprecated file is *deeper*, not merely
+older:
+
+| atom | deprecated | live |
+|---|---|---|
+| proton | 10 | 9 |
+| deuteron | 14 | 13 |
+| tritium | 19 | 16 |
+| ³He | 20 | 16 |
+| neutron | 9 | 9 |
+
+Fewer coefficients means the Pochhammer mechanism covers fewer primes. Which
+generation is canonical is an owner/author call, not a mechanical repoint.
+
+**Defect 2 — the witness's headline hides the test that fails.**
+`summary.step2_all_atoms_compatible: true` is the **numerator-only** test
+(`is_exact and num_trace_is_integer`). The same script also computes
+`step2_full_trace_passed` (`is_exact and full_trace_is_integer and denom_unit`),
+which is **False at 45/45** — every atom, every prime — and the top-level
+`summary` does not surface it at all. A reader of `summary` concludes
+compatibility; the stronger test never passes.
+
+The failure is **structured, not noise**. For the proton, `frob_full` is missing
+at p=3 (`denominator vanishes mod Phi_{2p}`); at the other eight primes the full
+Galois trace is a **half-odd-integer**: −4/3, −1/4, then 1/2, −5/2, 3/2, −7/2,
+5/2, −9/2 at p = 7,11,13,17,19,23. So at every prime past the Pochhammer range the
+obstruction is a uniform factor of 2 — `2·Tr(full)` is an odd integer. That looks
+like a normalisation, and is worth a probe of its own before anyone reads
+`step2_full_trace_compatible: false` as a refutation.
+
+**Defect 3 (cosmetic, but it misleads) — the `.md`'s stated finiteness mechanism
+fires at only 3 of 9 primes.** The block says *"(u;u)_m vanishes for m ≥ 2p. This
+forces the sum to terminate"*. With 10 proton coefficients that holds for p ≤ 5
+(2p ≤ 10); at p ≥ 7 the witness records `exact_via:
+habiro_expansion_terminated_cleanly` instead. Both routes are valid — but the
+`.md` presents one as *the* reason and it is not what fires at two-thirds of the
+primes.
+
+### A hazard I raised and then refuted myself
+
+I flagged the probe's disjunction
+
+    terminated_clean = record.get("expansion_terminated_clean")
+                    or record.get("reconstruction_matches")
+
+as laundering a weaker tolerance-based flag under a termination-shaped name —
+sharpened by the fact that the deprecated file carries only the first key and the
+live files carry only the second, so a currency fix would swap which disjunct
+fires. **That concern is wrong.** Reading the producer
+(`_habiro_coefficient_extract.py:220-222`): `recon_matches = (diff == 0)` with
+`diff = sp.expand(reconstruct(coeffs, u) - p_u)` — **exact symbolic** equality with
+zero remainder, not agreement to tolerance. A nonzero `a_m` beyond the listed
+range would break it. So `reconstruction_matches` is at least as strong as
+`expansion_terminated_clean` and the `or` is sound.
+
+Recorded because I reached the wrong conclusion by inferring semantics from a
+field *name* — the precise error class the arity-conflation rule exists for —
+and only caught it by opening the producer.
+
+### Next honest step
+
+Not a repoint and not an instance. Either (a) settle which Habiro generation is
+canonical and refresh the probe, or (b) probe the uniform factor-of-2 in the full
+Galois trace, which is the one lead here with a visible pattern. The Lean
+instance stays open behind the Habiro-ring infrastructure.
+
+
+**Correction to the Defect-3 paragraph above (same session):** the "uniform factor
+of 2 / `2·Tr(full)` is an odd integer" claim is **proton-only and wrong as
+written** — the neutron is uniformly 4 and the composites run 8→128. Corrected
+measurement and the (better) replacement finding — the obstruction is 2-adic at
+every prime except p = 2 — are on `qou-iph3`.
+
 ## Closed 2026-08-22 — the owner picked a third option, then asked for the gap closed too
 
 This bean framed the decision as (a) formalise the instance or (b) accept the
@@ -263,3 +384,19 @@ third face of it.
 **Validate now.** 52 issues / 11 errors on clean `main` -> 32 / 4 on PR #5502.
 The 4 that remain are unrelated `.md`-only blocks from `52c68267f2` that never
 had a `.ts`.
+
+## Merge note 2026-08-23 — the two records above disagree, and both are kept
+
+They were written on different branches and neither author saw the other.
+The scoping pass (22:59Z) concludes the instance is **not closeable in a
+session**; the closure record (21:33Z) reports it **closed** — but closed by
+an *owner decision* the scoping pass did not have in view: the owner picked a
+third option (reclassify the block to `remark`, removing the Lean-sibling
+enforcement rather than satisfying it with a stub) and then asked for the
+underlying gap closed in Lean separately.
+
+So they are not actually in contradiction: *"cannot be closed by formalising
+the instance"* and *"was closed by not needing the instance"* are both true.
+The scoping pass's three probe defects stand on their own and are NOT
+addressed by the reclassification — they remain live.
+

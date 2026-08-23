@@ -1,11 +1,11 @@
 ---
 # qou-3yel
 title: UGB carries a second generation of itself — 13 blocks absent from the paper
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T21:40:32Z
-updated_at: 2026-08-21T15:16:59Z
+updated_at: 2026-08-22T16:26:10Z
 ---
 
 
@@ -124,3 +124,85 @@ is editorial — whether UGB should present as one chapter or three — and
 the corpus holds both drafts of that decision from the same day. I am not
 deleting an imported paper's alternate chapter structure on my own
 judgement, and there is no defect forcing the choice.
+
+
+---
+
+## RESOLVED — owner ruling "as three" (2026-08-22), PR #5463
+
+Wired `introduction` → `unital-groebner-bases-chapter` → `buchberger-and-pbw`.
+`run-validate` on `unital-groebner-bases`: **`✓ Valid — 0 issue(s)`**, unchanged.
+
+| | before | after |
+|---|---:|---:|
+| chapters in paper | 1 / 3 | **3 / 3** |
+| excluded chapters | 2 (8 blocks) | **0** |
+| unlisted blocks inside the wired chapter | 5 | **0** |
+| **unreachable blocks** | **13** | **0** |
+
+### Correct my own framing of this bean — twice
+
+**First:** I recorded that `ch0` / `ch2` carried "a second generation" of the
+monolith. The parked material is not laid out that way. The five unlisted
+blocks sit **inside the monolith chapter's own directory**, and they are
+**load-bearing, not spare**: `thm:ugb-main` and all three chapter-3 statement
+blocks list `def:unital-groebner-basis` in `uses[]`, so wiring the chapters
+*without* also listing those five fails `uses-resolve` with 4 errors. "Wire the
+two missing chapters" was never sufficient on its own.
+
+**Second, and this is the real finding:** wiring the third chapter exposed that
+**chapter 3 had been rendering chapter 2's blocks.** `pbw-corollary` and
+`s-polynomial-decomposition` existed in **both** directories, and three separate
+tools key on the bare root name:
+
+- `build.ts` emitted `\label{cor:pbw}` into `buchberger-and-pbw.tex` — chapter
+  3's own labels never reached the paper at all;
+- `detangler-no-forward-ref` reported a false positive at an impossible
+  "pos 23" in a four-block chapter;
+- the orphan audit deduped 33 blocks to 31.
+
+The only signal was **one `undefined cross-reference` warning** from the build.
+A whole chapter rendering the wrong content, announced by a single line of
+LaTeX noise. Fixed by renaming chapter 3's two blocks to `ugb-`-prefixed roots;
+labels untouched.
+
+The rename then broke three further things that a corpus-wide grep caught and a
+UGB-tree-only grep would not have: both renamed `.qa.json` sidecars recorded
+`paths.{ts,md,lean}` under the old names, and the two `UGB/BuchbergerPBW/`
+library Lean files carried `-- Ref:` pointers to the old `.ts`. Those library
+files were additionally citing the **wrong block** — `cor:pbw-corollary`, which
+exists nowhere, and the monolith's `prop:s-polynomial-decomposition` — the same
+collision one level down. Sidecars: only the three `paths` strings changed;
+**every `criteria` entry is byte-identical**, no verdict of either kind touched.
+
+`\LM` / `\LC` / `\LT` were also undefined in 8 of the newly-wired blocks
+(`macros: {}`) — a `pdflatex` abort, not a warning. Defined as paper macros
+matching what the monolith already writes inline; no `.md` rewritten. Worth a
+follow-up: those three leading-term operators are not in the notation register,
+which AGENTS.md §7aa treats as authoritative.
+
+### What "as three" surfaces rather than settles
+
+Both parallel treatments now render: chapter 2 carries two generations of
+several results, and chapter 3 restates Buchberger/PBW that chapter 2 already
+covers. **Left visible on purpose** — each parked block sits beside the one it
+restates. Which treatment the paper keeps is an editorial call, not a manifest
+repair, and it is now a visible question instead of an invisible one.
+
+Related, same cause: `lean-ref-owns-decl` fails on 4 UGB blocks — two Lean
+declarations each claimed by two blocks. Pre-existing.
+
+### Left for others
+
+- **The tools' name-keying is a class, not an instance.** QOU still has one
+  cross-directory root-name collision (`outro-braids-and-knots`). The fix
+  belongs in the shared `folio-assistant` pipeline.
+- **QA backlog is paper-wide and pre-existing**: `fresh=0` for all 33 UGB
+  blocks, the 20 already-wired ones as partial as the newly-wired. A sweep
+  yields 982 `needs-agent` against 5 script findings.
+- `jet-stratified-reduction` uses a **self-qualified** cross-paper ref
+  (`"unital-groebner-bases:cor:pbw"`) into its own paper, which `uses-resolve`
+  skips — silently unchecked.
+- An open content defect (bean `qou-pwd4`): both copies of the PBW corollary
+  state it with no freeness hypothesis, then prove it by choosing a
+  well-ordered basis.

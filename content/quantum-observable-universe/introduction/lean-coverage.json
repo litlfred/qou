@@ -1,8 +1,8 @@
 {
   "paper": "quantum-observable-universe",
-  "total_blocks": 3088,
+  "total_blocks": 3092,
   "by_kind": {
-    "remark": 980,
+    "remark": 984,
     "prose": 385,
     "proof": 439,
     "proposition": 622,
@@ -17,22 +17,22 @@
   },
   "provable": {
     "total": 742,
-    "with_lean_field": 737,
-    "with_lean_file": 732,
-    "sorry_free": 704,
-    "percent_sorry_free": 94.9
+    "with_lean_field": 739,
+    "with_lean_file": 734,
+    "sorry_free": 726,
+    "percent_sorry_free": 97.8
   },
   "conjectures": {
     "total": 171,
     "external": 15,
     "qou_original": 156,
-    "primary": 79,
-    "dependent": 77,
+    "primary": 78,
+    "dependent": 78,
     "primary_class_axiomatized": 70,
-    "percent_primary_class_axiomatized": 88.6,
-    "class_axiomatized": 157,
-    "percent_class_axiomatized": 91.8,
-    "with_lean_file": 168
+    "percent_primary_class_axiomatized": 89.7,
+    "class_axiomatized": 159,
+    "percent_class_axiomatized": 93,
+    "with_lean_file": 169
   },
   "definitions": {
     "total": 257,

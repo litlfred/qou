@@ -58,6 +58,7 @@ set_q(Q0_STR)
 
 import pyhecke_native
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ATOMS with (Z, N, n_strands, B_AME)
@@ -201,7 +202,7 @@ def compute_B_with_K_k_star(atom_witness: dict, n_strands: int,
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     builder = WitnessBuilder("delta-lambda-full-variance-phase5e-1")
     builder.set_description(
         "Phase 5e.1: variance test of K_k* candidate knots using the "

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T12:57:32.406522+00:00",
-  "commitSha": "3d1395f38568ca391ac43c195766922e9c7c54ae",
+  "computedAt": "2026-08-23T20:10:45.823907+00:00",
+  "commitSha": "d4dafd3b7ad6c4e42184b30dd9aba04104bab1f0",
   "assertions": [
     {
       "name": "two_level_mu_n_chi_matches_one_level_mu_p",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 738,
+  "durationMs": 944,
   "computation": "derived-chi-catalogue-matrix-m-mu-n-mpfr",
   "scriptFile": "derived_chi_catalogue_matrix_m_mpfr.py",
-  "scriptHash": "d208e3614591",
-  "scriptCommitSha": "de78ac9c6dad8b7904bb4c584ddaa19011d7f171",
+  "scriptHash": "713449137e2c",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derived_chi_catalogue_matrix_m_mpfr.py",
+      "--use-mu-n-blocks"
+    ],
+    "reproduce": "python3 -u computations/derived_chi_catalogue_matrix_m_mpfr.py --use-mu-n-blocks"
   },
   "description": "Phase 1.3 wire-in: two-level (μ_p, μ_n) χ via mpfr q-Young symmetrizers vs the one-level μ_p-only mpfr path, at dps=50. Verifies (a) the two χ values agree to absolute tol 1e-40, (b) Σ_{μ_n} e_{μ_n} = I on every μ_p block, and (c) the per-(μ_p, μ_n) image dimensions are bounded (≤ c_LR·dim_μ_p·dim_μ_n) independent of dim V_λ — the structural fact that makes A=8, A=9 tractable. NO f64; NO Rust reference required. The wall-clock sparse-exploitation speedup (cross-sector bridge table) and the A=8/9 sweep run are follow-on PRs.",
   "data": {
@@ -698,6 +709,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

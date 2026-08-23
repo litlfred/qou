@@ -39,8 +39,10 @@ from pathlib import Path
 from mpmath import mp, mpf, fabs
 
 from kazhdan_lusztig import permutations_S_n, kl_polynomial
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 m_e = mpf("0.51099895069")          # CAL-1, matches the canonical producer

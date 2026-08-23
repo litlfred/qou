@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T03:03:15.631668+00:00",
-  "commitSha": "6334f0c7fa4eaf0d6e0135e4efdadcf8fd5fa3e8",
+  "computedAt": "2026-08-23T17:38:55.419213+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "all_77_y_lambda_computed",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 22,
   "computation": "alpha-k-jones-markov-h12",
   "scriptFile": "alpha_k_jones_markov_h12.py",
-  "scriptHash": "660cfc5f2817",
-  "scriptCommitSha": "6334f0c7fa4eaf0d6e0135e4efdadcf8fd5fa3e8",
+  "scriptHash": "629b948b9bab",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_k_jones_markov_h12.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_k_jones_markov_h12.py"
   },
   "description": "Jones-Markov weights y_λ at H_12(q) — full 77-partition atlas. Extends sibling alpha_k_jones_markov_h4.py to the algebra needed for 4He per the H_3-vs-H_{3A} legacy bug audit (commit c70707397). Builds 77 cycle-type representative braids, computes 77×77 q-Hecke character matrix via pyhecke_native.chi_lambda_braid, solves linear system from Markov-axiom RHS tr_M(rep) = z^{n-r}. Cross-checks tr_M(β_⁴He) via Σ y_λ · χ_λ vs the multiplicative formula tr_M(β_𝓑_3)^4 on 4 disjoint Borromean copies.",
   "parameters": {
@@ -49,7 +58,7 @@
     "n_partitions": 77,
     "chi_matrix_condition_number": "7984.908312037897",
     "sum_y_dim_check": "1.0000000000000002",
-    "elapsed_seconds": "303.08",
+    "elapsed_seconds": "330.13",
     "tr_M_he4_via_y_lambda": "0.9942610476982464",
     "tr_M_he4_multiplicative": "0.9942610476982431"
   },
@@ -931,12 +940,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

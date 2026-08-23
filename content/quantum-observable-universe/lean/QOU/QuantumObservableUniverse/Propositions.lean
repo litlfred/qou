@@ -67,15 +67,32 @@ structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
   commutes : ∀ (x : JetBundle),
     substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)
 
+/-- **The main diagram commutes** — as a diagram, not merely pointwise.
+
+    `κ ∘ E[S_q] = ∇^A ∘ j`, which is what the `commutes` field's own
+    docstring claims. The field itself states the *pointwise* version,
+    `∀ x, κ (E[S_q] x) = ∇^A (j x)`; the two are different propositions
+    and the composition form is the one the square asserts.
+
+    Derived from the field by `funext`. This declaration previously read
+    `:= diag.commutes` — the pointwise field returned verbatim, under a
+    docstring promising the composition. Nothing else in
+    `MainCommutativeDiagram` constrains the four maps, so the pointwise
+    form cannot be derived at all: it *is* the axiom.
+
+    What this does NOT show: that any concrete quantum observable
+    universe satisfies `commutes`. That is an assumption of the data
+    bundle and stays one until the four maps are given definitions
+    rather than carried as opaque functions. -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
     (sp : SubstrateParameter cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData)
     (diag : MainCommutativeDiagram cqou sp inst) :
-    ∀ (x : diag.JetBundle),
-      diag.substrate_coupling (diag.euler_lagrange x) =
-      diag.parallel_transport (diag.jet_eval x) :=
-  diag.commutes
+    diag.substrate_coupling ∘ diag.euler_lagrange
+      = diag.parallel_transport ∘ diag.jet_eval := by
+  funext x
+  exact diag.commutes x
 
 /-! ## §7  Classical Limit Properties -/
 

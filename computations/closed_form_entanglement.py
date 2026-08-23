@@ -34,6 +34,7 @@ import mpmath as mp  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 SEQUENCE = [("D", 1, 1), ("3He", 2, 1), ("4He", 2, 2), ("6Li", 3, 3),
             ("7Li", 3, 4), ("12C", 6, 6), ("16O", 8, 8), ("40Ca", 20, 20)]
@@ -58,7 +59,7 @@ def tr_atom_closed_form(Z, N, trp, trn, Lbond):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q0 = mp.mpf(str(Q0)); qi = mp.mpf(1) / q0
     E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
     sub0 = _subtraces(q0); subi = _subtraces(qi)

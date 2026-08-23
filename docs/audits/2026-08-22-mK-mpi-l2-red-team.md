@@ -228,3 +228,105 @@ sub-100× predictions is **0/5**. This is the mirror image of the c_k
 finding — a data-selected ladder truncation dressed as a derived
 closed form — except here it was quietly wired into the headline
 dashboard rather than quarantined.
+
+---
+
+## 8. RESOLUTION — recommendation 3 actioned; §2/§3-knob-3 removed (2026-08-22, PR #5467)
+
+**One of the three knobs is gone. The 0/5 verdict stands on the other two.**
+
+### What was found after this audit was written
+
+The corpus had **already ruled** on the truncation.
+[`docs/precision-goals.md` §L2](../precision-goals.md) records the caveat
+as **RESOLVED 2026-08-09, owner directive** — *"the EM factor is now the
+**full series** `1 + log(1+ℏ_q)`, not the two-term truncation
+`(3q²−1)/(2q²)`"*, with the correct reason (*"a truncation chosen because
+it matches is a fit"*) and the correct cost (*"still MEETS L2 … 51.43 ppb
+— 5.13× margin"*).
+
+**No producer was ever updated.** The ruling lived in one prose file while
+`per_observable_100x_status.py`, `meson_em_sinh_closed_form.py`,
+[`observable-sector-tracker.md`](../observable-sector-tracker.md) and the
+content block all kept shipping the truncation — and the L2 scorecard kept
+crediting 23.45 ppb. This audit, written 13 days later, red-teamed the
+*stale* formula in good faith and independently reached the same verdict
+the owner had already reached. That convergence is worth recording: it is
+the second confirmation, not the discovery.
+
+**The failure mode is worth naming**: a durable ruling recorded in prose
+with no code change and no bean is indistinguishable, to every later
+reader and every later agent, from no ruling at all.
+
+### Sharpening §2 — the fit test, made reproducible
+
+§2's table showed the truncation beating the untruncated series. The
+stronger form is the full stopping-order sweep (70 dps, proton pin), now
+emitted as witness data by `meson_em_sinh_closed_form.py` under
+`em_truncation_order_sweep_ppb`:
+
+| stop at | m_K/m_π err (ppb) |
+|---|---:|
+| ℏ¹ | 479.11 |
+| **ℏ²** | **23.45** ← was shipped |
+| ℏ³ | 53.55 |
+| ℏ⁴ | 51.31 |
+| ℏ⁵ | 51.49 |
+| ℏ⁶ | 51.474 |
+| ℏ⁷ | 51.4755 |
+| ℏ⁸ | 51.4754 |
+| untruncated | **51.4754** ← now shipped |
+
+The series converges to 51.475 ppb, and **order 2 is the only order below
+that limit** — a non-monotonic dip with every further term walking *away*
+from the data. This is stronger than "the truncation beats the full
+series": it shows the chosen order is the unique outlier, which no
+convergence argument can produce and only selection-against-data can.
+
+It also disposes of the producer's own defence — that `(3q²−1)/(2q²)` is
+*"a rational polynomial in q⁻² with coefficients (3, −1) — not a series
+truncation"*. The closed form is exact, but it is exactly *that*
+truncation; the "3 = generations" reading was applied after the order had
+been picked. Re-spelling a truncation does not derive it (AGENTS.md
+§"Defined residual ≠ derived decomposition"). That prose is retained in
+the producer, explicitly marked as a record of the retired argument.
+
+### What changed, and what did not
+
+| | before | after |
+|---|---|---|
+| EM factor | `(3q²−1)/(2q²)` | `1 + log(1+ℏ_q)` |
+| m_K/m_π err | 23.45 ppb | **51.48 ppb** |
+| L2 margin (target 263.6 ppb) | 11.2× | **5.1×** |
+| scorecard | 1/5 scoreable | **1/5 scoreable — unchanged** |
+
+The fit was never load-bearing: removing it costs 2.2× of margin and
+changes no verdict.
+
+**§3's knob table, revised:** knob 3 (truncation order) is **removed**.
+Knobs 1 (the scan-selected `(3,4)` pair) and 2 (`α_em` as a 4th input,
+conditional on the open Witten-κ `sorry`, carrying its own selected
+crossings `(9,10)`) are **untouched**.
+
+**§5 stands, with one clarification.** `meson_EM_closed_form` proves
+`1+ℏ_q−ℏ_q²/2 = (3q²−1)/(2q²)`. That identity is exact and stays proved —
+the producer still verifies it every run. §5's point was never that the
+algebra is wrong; it is that proving two spellings agree is non-probative
+for the physics. That reading is now the operative one: what was wrong was
+the *identification* of that quantity as the physical EM factor.
+
+**The bottom line is unchanged.** `m_K/m_π` remains the framework's best
+number and remains **not a parameter-free prediction**. The strong core
+still misses the target by 385× alone, and the correction that clears it
+is still conditional on an open `sorry`. **0/5 unconditionally
+parameter-free stands.** What this resolution buys is narrower and worth
+having: the number is no longer *additionally* propped up by a knob
+chosen against the data.
+
+### Recommendations status
+
+| # | Recommendation | Status |
+|---|---|---|
+| 1 | Footnote the dashboard row + tracker as conditional, not "the 1/5 win" | **done** — dashboard row description and `observable-sector-tracker.md` now say CONDITIONAL and name both remaining conditions |
+| 2 | If the framing is kept, name both conditions in the same breath | **done** — the truncation condition is now *removed* rather than named; the Witten-κ `sorry` and the scan-selected `(3,4)` are named inline in both artifacts |
+| 3 | Remove the truncation-selected EM correction | **done** — PR #5467 |

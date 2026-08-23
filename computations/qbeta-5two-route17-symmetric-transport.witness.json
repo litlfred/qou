@@ -2,7 +2,7 @@
   "probe": "qbeta_5two_route17_symmetric_transport",
   "bean": "qou-trns",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "gates": [
     {
       "gate": "G1",
@@ -10,19 +10,19 @@
       "rows": [
         {
           "phi_minus_phi0": "-0.02",
-          "residual": "-1.83671e-40"
+          "residual": "-7.24454e-71"
         },
         {
           "phi_minus_phi0": "-0.002",
-          "residual": "-9.18355e-41"
-        },
-        {
-          "phi_minus_phi0": "-1e-5",
           "residual": "0.0"
         },
         {
+          "phi_minus_phi0": "-1e-5",
+          "residual": "7.24454e-71"
+        },
+        {
           "phi_minus_phi0": "0",
-          "residual": "-1.83671e-40"
+          "residual": "-7.24454e-71"
         },
         {
           "phi_minus_phi0": "1e-5",
@@ -30,39 +30,39 @@
         },
         {
           "phi_minus_phi0": "0.002",
-          "residual": "0.0"
+          "residual": "-1.44891e-70"
         },
         {
           "phi_minus_phi0": "0.02",
-          "residual": "-9.18355e-41"
+          "residual": "-7.24454e-71"
         }
       ],
-      "worst": "1.8367099e-40",
+      "worst": "1.4489087e-70",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "the identity holds on the whole arc phi in [0, pi], 201 points",
-      "worst": "4.2716061e-40",
-      "at_phi_deg": "4.5",
+      "worst": "2.7733017e-70",
+      "at_phi_deg": "17.1",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "S(-1) - S(1) = pi^2 exactly at the endpoint",
-      "residual": "0.0",
+      "residual": "1.4489087e-70",
       "pass": true
     },
     {
       "gate": "G4",
       "claim": "S is a SYMMETRIC function of the roots -- permuting them changes nothing, which is why a collision (which only permutes) cannot affect it",
-      "residual_under_permutation": "9.1835496e-41",
+      "residual_under_permutation": "7.2445433e-71",
       "pass": true
     },
     {
       "gate": "G5",
       "claim": "the elementary symmetric functions are RATIONAL in x by Vieta (e1=(x^2+1)/x, e2=(x^2+x+1)/x, e3=1) hence analytic on the whole arc -- these are the objects a repaired derivation should use",
-      "worst": "2.0089552e-41",
+      "worst": "3.6238828e-71",
       "pass": true
     }
   ],

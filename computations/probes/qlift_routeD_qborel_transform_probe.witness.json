@@ -1,9 +1,9 @@
 {
   "description": "Route D: formal q-Borel transform (RSZ Def 2.3.3 theta kernel + (q;q)_n variant, both directions) applied to the C1 kernel [m+1]_q b_{m+1} = b_m + b_{m-1}, compared to GGM eq-49 up to diagonal gauge via the complete invariant I_m = C_m A_{m-1}/(B_m B_{m-1})",
   "computation": "mpmath dps=50; V1 transformed-kernel identities on the proved solution b_n = I_q(n)/[n]_q!; V2 invariance of I_m (= -[m]_q) across all four presentations; V3 mismatch Delta_m vs GGM; V4 residual-operator identity Cm_res * y_{m-1}",
-  "generated": "2026-07-20T03:36:08+00:00",
+  "generated": "2026-08-23T09:40:05+00:00",
   "parameters": {
-    "dps": 50,
+    "dps": 70,
     "tol_kill": "1e-40",
     "tol_identity": "1e-45",
     "m_max": 15,
@@ -26,21 +26,21 @@
       "rows": [
         {
           "q": "0.9",
-          "theta_B": "6.64e-51",
-          "theta_L": "3.42e-51",
-          "qexp_L": "2.1e-51"
+          "theta_B": "2.0e-71",
+          "theta_L": "2.65e-71",
+          "qexp_L": "1.96e-71"
         },
         {
           "q": "1.05",
-          "theta_B": "4.46e-51",
-          "theta_L": "2.97e-51",
-          "qexp_L": "2.97e-51"
+          "theta_B": "2.58e-71",
+          "theta_L": "2.51e-71",
+          "qexp_L": "3.58e-71"
         },
         {
           "q": "1.10998",
-          "theta_B": "4.67e-51",
-          "theta_L": "4.3e-51",
-          "qexp_L": "1.91e-51"
+          "theta_B": "2.44e-71",
+          "theta_L": "2.52e-71",
+          "qexp_L": "2.23e-71"
         }
       ],
       "ok": true
@@ -49,15 +49,15 @@
       "rows": [
         {
           "q": "0.9",
-          "max_rel_dev": "2.28e-51"
+          "max_rel_dev": "1.77e-71"
         },
         {
           "q": "1.05",
-          "max_rel_dev": "2.61e-51"
+          "max_rel_dev": "2.13e-71"
         },
         {
           "q": "1.10998",
-          "max_rel_dev": "2.7e-51"
+          "max_rel_dev": "1.28e-71"
         }
       ],
       "ok": true
@@ -87,17 +87,17 @@
       "rows": [
         {
           "q": "0.9",
-          "identity_rel_dev": "4.87e-51",
+          "identity_rel_dev": "3.93e-71",
           "min_abs_Cm_res": "2.1"
         },
         {
           "q": "1.05",
-          "identity_rel_dev": "4.83e-51",
+          "identity_rel_dev": "3.48e-71",
           "min_abs_Cm_res": "0.9658"
         },
         {
           "q": "1.10998",
-          "identity_rel_dev": "2.57e-51",
+          "identity_rel_dev": "1.83e-71",
           "min_abs_Cm_res": "0.9036"
         }
       ],

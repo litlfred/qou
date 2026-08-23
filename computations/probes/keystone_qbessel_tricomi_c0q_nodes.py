@@ -56,8 +56,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, findroot  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # Categorical substrate q₀ (muon-canonical fibre value, as used by the merged
 # compact-hecke probe); the paper's 0<q<1 convention uses its inverse image.

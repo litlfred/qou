@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T03:47:17.479590+00:00",
-  "commitSha": "71dddb293e44f564d0e69615ce2778b5d2f81b93",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:52:41.666634+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "shift_equation_gate_all_points",
-      "computed": 6.331662303937761e-25,
+      "computed": 7.0823958666850034e-43,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-15,
@@ -22,7 +22,7 @@
     },
     {
       "name": "phi_b_zero_special_value",
-      "computed": 8.411152881937987e-37,
+      "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-15,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2407,
+  "durationMs": 10441,
   "computation": "qbeta-fmap-phi-b-root-of-unity-reference",
   "scriptFile": "qbeta_fmap_phi_b_root_of_unity_reference.py",
-  "scriptHash": "ee20f44a8478",
-  "scriptCommitSha": "71dddb293e44f564d0e69615ce2778b5d2f81b93",
+  "scriptHash": "41552101e2fc",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py"
   },
   "description": "Reference values of the validated Faddeev non-compact quantum dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at rational b² (root-of-unity q, the fibre/decay saddle), for the F_odd construction. Every row gated by a local shift-equation check; unimodularity |Φ_b| = 1 (the pure-phase fact behind prop:phi-b-unitary-bar-odd) and the special value Φ_b(0) = +e^{iπ(b²+b⁻²)/24} asserted at every point. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / any physical constant.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -56,8 +65,8 @@
         "point": "zeta_4  (b^2 = 1/4, q = i)",
         "b_sq": "0.25",
         "b": "0.5",
-        "q": "(-3.69339199970190172451779054451e-37 + 1.0j)",
-        "shift_gate_rel_err": "1.282e-36",
+        "q": "(9.60014317380129143123236016838e-72 + 1.0j)",
+        "shift_gate_rel_err": "2.030e-67",
         "Phi_b_0": "(0.849202181526578887649096937343 + 0.528067850650367995873448820338j)",
         "special_value_sign": "+",
         "special_value_rel_err": "0.000e+00",
@@ -79,10 +88,10 @@
         "b_sq": "0.4",
         "b": "0.632455532033675866399778708887",
         "q": "(-0.809016994374947424102293417183 + 0.587785252292473129168705954639j)",
-        "shift_gate_rel_err": "2.261e-36",
+        "shift_gate_rel_err": "1.690e-61",
         "Phi_b_0": "(0.928809552871924233955547318615 + 0.370557437509836227822658657374j)",
         "special_value_sign": "+",
-        "special_value_rel_err": "8.411e-37",
+        "special_value_rel_err": "4.528e-72",
         "values": [
           {
             "z": "0.1",
@@ -101,10 +110,10 @@
         "b_sq": "0.166666666667",
         "b": "0.408248290463863016366214012451",
         "q": "(0.5 + 0.866025403784438646763723170753j)",
-        "shift_gate_rel_err": "1.880e-37",
+        "shift_gate_rel_err": "4.254e-72",
         "Phi_b_0": "(0.691513055782269377761189253334 + 0.722363962059755580585916472667j)",
         "special_value_sign": "+",
-        "special_value_rel_err": "7.523e-37",
+        "special_value_rel_err": "9.056e-72",
         "values": [
           {
             "z": "0.1",
@@ -122,11 +131,11 @@
         "point": "self-dual (b^2 = 1, q = 1)",
         "b_sq": "1.0",
         "b": "1.0",
-        "q": "(1.0 + 1.4773567998807606898071162178e-36j)",
-        "shift_gate_rel_err": "6.332e-25",
+        "q": "(1.0 - 3.84005726952051657249294406735e-71j)",
+        "shift_gate_rel_err": "7.082e-43",
         "Phi_b_0": "(0.965925826289068286749743199729 + 0.258819045102520762348898837624j)",
         "special_value_sign": "+",
-        "special_value_rel_err": "7.523e-37",
+        "special_value_rel_err": "0.000e+00",
         "values": [
           {
             "z": "0.1",

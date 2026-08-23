@@ -8,7 +8,7 @@ mpmath precision.
 
 Usage:
     import mpmath as mp
-    mp.mp.dps = 30
+    set_compute_dps()
     from q_parameter import Q as Q0_FLOAT
     from q_mpmath import qint, qfac, qpoch, set_q
 
@@ -20,6 +20,7 @@ Usage:
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 # Module-level state.  Call set_q(Q0) before using qint/qfac/qpoch.
 Q: mp.mpf | None = None

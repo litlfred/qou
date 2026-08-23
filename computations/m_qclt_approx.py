@@ -96,6 +96,7 @@ import mpmath as mp  # noqa: E402
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from _li_2_q_util import spectral_correction_borromean  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
@@ -105,7 +106,7 @@ SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 BOND_WITNESS = _pb.witness_path(
     "binding-single-pipeline-comparison.witness.json", HERE)
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def _q0():

@@ -233,3 +233,31 @@ identities, with CGZ's descent explicitly constructed at three of them.
    sharper question than the deflated `c₂ = 0` one: does the `Z/24` class
    vary across fields, or is `8` forced?
 3. `qou-xx9f`'s unprinted normalisation series.
+
+### 2026-08-19 — MERGED (#5296, `3d41ae4832`), and the arc is closed
+
+**ε_m at `p = 5` on the α-line, final:**
+
+| place | `K_v` | `w_F` | Thm 1.2 | invariant |
+|---|---|---|---|---|
+| `v₁` (deg 1) | `Q₅` | 4 | applies | **`8 ∈ Z/24`**, at four levels |
+| `v₂` (deg 2) | `Q₂₅` | 24 | no | none, twice over |
+
+Twelve probes / 180 checks green. CGZ's descent explicitly constructed at
+`m = 8, 12, 24`; validated against four CGZ identities including the
+five-term relation on 400 instances.
+
+**Also landed:** the q₀-anchor breakage fix — `main` had been red four days
+(262 flips, `ideal_muon` producers hard-failing). Verified post-merge:
+`Q0_FLIP 0`, `Q0_OK 654`, producers run.
+
+**Post-merge cleanup:** a sibling (`7ddaeab36c`, bean `qou-cezp`) diagnosed
+the same anchor defect independently and regenerated
+`q0-value-drift-audit.witness.json` from a fuller tree, superseding my
+refresh — dropped rather than landed, since mine would have regressed it.
+Their `ANCHOR_DEFINITIONS` guard and my `ANCHOR_DEFINING` guard now coexist
+at different layers with names one letter apart; cross-referenced in #5334.
+
+**Arc status: CLOSED.** No open ε_m question at `p = 5`. Genuine leftovers,
+none urgent: whether the `Z/24` class varies across the 46 catalogued
+exceptional-unit fields, and `qou-xx9f`'s unprinted normalisation series.

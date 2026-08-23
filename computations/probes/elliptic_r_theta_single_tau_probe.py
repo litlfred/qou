@@ -34,8 +34,9 @@ sys.path.insert(0, str(HERE))
 import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # q₀ muon-canonical (constants.py Q0_STR). The proton re-pin differs by ~11.5 ppb.
 Q0_MUON = mp.mpf("1.1099785955573347198997632204832250266562084087802")

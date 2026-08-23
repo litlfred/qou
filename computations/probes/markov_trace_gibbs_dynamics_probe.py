@@ -88,12 +88,13 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from _precision import set_compute_dps  # noqa: E402
 
 E0_STR = "4.1859813632944758969"
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     with mp.workdps(60):
         q0 = +mp.mpf(str(Q50))
     E0 = mp.mpf(E0_STR)

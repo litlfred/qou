@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:44:24.351168+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:57:03.214624+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 62,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "d8065d2cf27b",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "6299fd8cba8f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_n_unknot_construction.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_n_unknot_construction.py"
   },
   "description": "Sub-problem 1 attempt for conj:casimir-epsilon-vacuum. n-stability selection uniquely picks the bare disjoint-unknot count (no y_λ); the geometric n³ degeneracy + ζ(-3) derives π²/720. Conditional on the free-field ↔ disjoint-unknot identification, ξ_k = 0 at leading order.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
@@ -64,7 +72,7 @@
           "n": 2,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.031143903256988844,
-          "wenzl_unnorm_relh2": 0.0,
+          "wenzl_unnorm_relh2": 6.115297574035459e-50,
           "normalized_trace": 1.0
         },
         {

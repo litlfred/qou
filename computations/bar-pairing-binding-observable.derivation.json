@@ -1,0 +1,97 @@
+{
+  "target": "bar-pairing binding observables B_arch(K) and B_bar(K): the archimedean and Hecke-bar lengths of the free-minus-bound character difference",
+  "target_value": "B_arch(K) = E_0 * sum_lambda y_lambda ( |chi^lambda(W_free)| - |chi^lambda(W_atom)| );  B_bar(K) = E_0 * sum_lambda y_lambda ( ||chi^lambda(W_free)||_bar - ||chi^lambda(W_atom)||_bar ),  ||chi||_bar = sqrt(chi(q_0) chi(q_0^{-1}))",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the bar-pairing binding observable (PR #1742, Rust-engine extension #1748) and the two free-configuration chi caches its producer emits alongside it -- 3 witnesses. The construction contrasts TWO length functions on the same per-partition characters: the archimedean modulus at q_0, and the Hecke/KL bar pairing sqrt(chi(q_0) chi(q_0^{-1})). Trust profile: one AXIOM entrypoint (Hecke energy), one CALIBRATION input (E_0, CAL-1), three DERIVED steps, one SCRIPT_CITED frontier. The result is a scope-(a) NEGATIVE and is recorded as one: the bar length underbinds the deuteron by ~70%.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0; the eigenvalue separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint of every Hecke-side chain. The relation is invariant under the bar involution q <-> q^{-1} up to the sign of that separation, which is what makes the two evaluation points of this chain a matched pair rather than two unrelated anchors.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Per-partition characters at q_0 and at q_0^{-1}",
+      "operation": "Take the per-lambda Hecke characters of the free and bound atomic braid words, chi^lambda(W_free) and chi^lambda(W_atom), evaluated at BOTH the substrate anchor q_0 and its Hecke bar image q_0^{-1}. W_free is the Z+N nucleons each on their own H_3 with no inter-nucleon crossings (include_inter=False); W_atom carries them (include_inter=True). Both are in the averaged / colour-weighted convention.",
+      "inputs": [
+        "hecke_relation",
+        "Wedderburn"
+      ],
+      "output_name": "chi_pairs",
+      "output_value": "{ chi^lambda(W_cfg; q) : cfg in {free, atom}, q in {q_0, q_0^{-1}} }",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "The q_0 side is derivation-backed upstream by chi-at-q0-averaged-atomic.derivation.json, which covers the bound-configuration caches from the same convention. Two of the three witnesses this chain claims ARE the free-configuration half of that same object (chi-{deuteron,helium-4}-free-h{6,12}-at-q0-50dps), emitted by this producer rather than by the hoefsmit one. The q_0^{-1} caches come from chi_at_q_inv_via_native_mpfr.py (PR #1748), which is a separate producer and is NOT claimed here."
+    },
+    {
+      "name": "Bar-symmetrized Wenzl weight y_lambda",
+      "operation": "Take the canonical Wenzl weight and bar-symmetrize it over the anchor and its image: y_lambda := (y_lambda(q_0) + y_lambda(q_0^{-1})) / 2. The average is real by construction, so the weight does not itself introduce a bar-asymmetry into either observable -- the asymmetry being tested lives entirely in the length function of step 4.",
+      "inputs": [
+        "chi_pairs",
+        "Schur"
+      ],
+      "output_name": "y_lambda_bar",
+      "output_value": "y_lambda = ( y_lambda(q_0) + y_lambda(q_0^{-1}) ) / 2,  real",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Energy scale E_0 = m_e / (q_0 (q_0 - 1))",
+      "operation": "Fix the MeV scale by the CAL-1 electron mass: E_0 := m_e / (q_0 (q_0 - 1)). This is a calibration input, not a derived quantity -- it is the single place the dimensional unit enters, exactly as the three-calibration discipline requires.",
+      "inputs": [
+        "y_lambda_bar"
+      ],
+      "output_name": "E_0",
+      "output_value": "E_0 = m_e / (q_0 (q_0 - 1))",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:three-calibration-discipline",
+      "notes": "CAL-1 (m_e) sets the unit by fiat. Per the 2026-08-11 absolute-mass excision, the MeV figures below are m_e-scaled REALIZATIONS of a dimensionless ratio, not absolute-mass predictions."
+    },
+    {
+      "name": "Two length functions on the same characters",
+      "operation": "Define the archimedean length as the modulus at the anchor, |chi^lambda(q_0)| -- at real q_0 the conjugation bar is trivial, so this is the ordinary absolute value. Define the Hecke/KL bar length as the geometric mean across the bar involution, ||chi^lambda||_bar := sqrt( chi^lambda(q_0) * chi^lambda(q_0^{-1}) ). The two coincide only where the character is bar-invariant; the binding observable is their difference of free-minus-bound sums.",
+      "inputs": [
+        "chi_pairs",
+        "y_lambda_bar",
+        "E_0",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "binding_observables",
+      "output_value": "B_arch(K), B_bar(K) as in target_value",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "Free-minus-bound is the sign convention that makes binding positive: entangling the nucleons LOWERS the summed character length, and the deficit is the binding."
+    },
+    {
+      "name": "Numerical evaluation -- and the bar length underbinds",
+      "operation": "Evaluate both observables at the substrate anchor and compare to the AME experimental binding. On the deuteron: B_arch = 2.3043266203187662 MeV against AME 2.224566, an error of +3.59%; B_bar = 0.6596730118309209 MeV, an error of -70.35%.",
+      "inputs": [
+        "binding_observables"
+      ],
+      "output_name": "bar_pairing_result",
+      "output_value": "deuteron: B_arch = 2.3043266203187662 MeV (+3.59%), B_bar = 0.6596730118309209 MeV (-70.35%)",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:three-calibration-discipline",
+      "notes": "script: computations/bar_pairing_binding_observable.py -- the frontier step.\n\nSCOPE-(a) NEGATIVE, stated as one: the Hecke/KL bar pairing, USED ALONE AS THE LENGTH FUNCTION, does not reproduce the deuteron binding -- it underbinds by ~70%. That constrains the magnitude of this particular length function; it does NOT exclude the bar pairing as an ingredient of a multi-term closure, and no proved invariant forbids it. The archimedean modulus at +3.59% is the better of the two but is not at the 100x L2 target either.\n\nCOVERAGE, recorded rather than smoothed: the witness's own description says it extends the observable 'to T, 3He, 4He', but its `results` array carries the DEUTERON ONLY. The cross-series confirmation the description promises has not been run, so the ~70% figure is a single-nuclide result, not a series finding.\n\nThe AME comparison value in the witness (2.224566) predates the 2026-08-19 AME re-derivation; the vendored AME2020 table gives 2.2245662. The 0.2 eV difference does not move the percentages quoted above."
+    }
+  ]
+}

@@ -34,6 +34,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -194,7 +196,7 @@ def compute_involution_quantities(chi_free, chi_atom, y_lambda):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     repo_root = Path(__file__).resolve().parent.parent
 
     print(f"=== Scales ===")

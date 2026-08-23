@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T02:51:30.175983+00:00",
-  "commitSha": "ba4bf9d33e82f5989ef642ffa005781f62fe2bd7",
+  "computedAt": "2026-08-23T09:38:40.549840+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "exact_structure_certified",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-masbaum-barodd-profile",
   "scriptFile": "qbeta_g3_5two_masbaum_barodd_profile.py",
-  "scriptHash": "f562461b18e2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dedceb70df65",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_masbaum_barodd_profile.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_masbaum_barodd_profile.py"
   },
   "description": "Masbaum-face bar-odd extraction at the substrate: exact integer-Laurent C_{5_2,n}, convergent-side Habiro tail at q0, the exact bar-side q-Gevrey growth law (3/2)t n^2, and the per-n bar-odd/even profile rho_n — scope-(a), W3-certified backbone, resummation step posed for the W9 lane.",
   "contentBlock": "conj:im-q-physical-role",

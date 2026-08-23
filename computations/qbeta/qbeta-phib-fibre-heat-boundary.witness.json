@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-13T15:18:00.166977+00:00",
-  "commitSha": "2601b75b6db1fa4d933d3c4567de79c82ef1c7aa",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:57:20.625869+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "H1_boundary_limit_exists",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 5,
   "computation": "qbeta-phib-fibre-heat-boundary",
   "scriptFile": "qbeta_phib_fibre_regime_heat_boundary_probe.py",
-  "scriptHash": "47d9be7f4a4c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "69143aab40ed",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phib_fibre_regime_heat_boundary_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phib_fibre_regime_heat_boundary_probe.py"
   },
   "description": "Existence probe (PR #3768, gap G2): tests whether the fibre-regime Φ_b (|q|=1, real b, bar-odd decay saddle) is the heat-regularized boundary limit θ→0+ of the convergent-branch modular-double product phiBProd at b·e^{iθ} (Im b²>0), matched against the validated contour evaluator. If so, it is a Lean-tractable existence route (limit of convergent products) where the product alone diverges and the contour integral is un-formalizable. Scope-(a); no c_k, no S value, no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

@@ -34,7 +34,17 @@ export default theorem({
   ],
   cites: ["yekutieli2010"],
   lean: {
-    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction",
-    validation: "leanok",
+    // Take main's repoint, not this branch's. Earlier in this PR I set
+    // `leanok` on `motivic_perpetual_obstruction` after `#print axioms` came
+    // back clean — which was true and beside the point. main subsequently
+    // showed that theorem carries a `[MotivicGaloisCharacter …]` binder it
+    // NEVER USES: its `trace` is a free function and its conclusion is about
+    // `trace`, so what it proves holds of any eventually-large integer
+    // function and mentions no motivic structure at all. Sorry-free was never
+    // the question. `_frobenius` supplies the missing link — the trace is the
+    // image of the Frobenius family under a realization, and the conclusion is
+    // about `hχ.frobenius_at p` itself.
+    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
+    validation: "not_checked",
   },
 });

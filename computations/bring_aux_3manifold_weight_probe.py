@@ -68,8 +68,10 @@ from __future__ import annotations
 import sys
 from mpmath import (mp, mpf, mpc, pi, polylog, re, im, log, zeta, sqrt, fabs,
                     nstr)
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 def L3(z):

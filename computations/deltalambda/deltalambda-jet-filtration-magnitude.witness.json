@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T20:13:38.910974+00:00",
-  "commitSha": "f387d531daea9dd764a26e684106bc1708c9d646",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:01:14.878276+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "W_A_is_length_gen_func_not_determinant",
@@ -58,8 +58,8 @@
   "durationMs": 0,
   "computation": "deltalambda-jet-filtration-magnitude",
   "scriptFile": "deltalambda_jet_filtration_magnitude_probe.py",
-  "scriptHash": "f3b38466b1a8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d8343ad0031f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,7 +71,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py"
   },
   "description": "Non-determinant Δ_λ binding-magnitude object: the jet-filtration graded dimension W_A(q)=[A]_q!=Σ_{w∈S_A}q^{ℓ(w)} (coinvariant Poincaré / graded dim of the principal filtration on H_A). Escapes the C(A,2) determinant cap q-independently (A!/2!={3,12}, 12>6) and can reach ρ_4=13.03, but does NOT land both {3.81,13.03} at a single parameter-free q₀ (undershoots A=3, overshoots A=4 growth). Scope-(a) honest negative + escape advance; no fit; nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",

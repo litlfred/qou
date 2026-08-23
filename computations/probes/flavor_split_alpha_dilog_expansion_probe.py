@@ -39,7 +39,9 @@ import _path_bridge  # noqa: F401,E402
 
 from mpmath import mp, mpf, log, e  # noqa: E402
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from _li_2_q_util import flavor_split_leading, li_2_q  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402

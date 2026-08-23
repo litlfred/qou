@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:58:32.275376+00:00",
-  "commitSha": "74e37c130c21cd132b4cabac4b8f0998b5bf899f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:53:41.708438+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "zeta0_rank2_is_minus1",
@@ -30,8 +30,8 @@
   "durationMs": 0,
   "computation": "alpha-em-bring-jacobian-zeta-determinant",
   "scriptFile": "alpha_em_bring_jacobian_zeta_determinant_probe.py",
-  "scriptHash": "4e47afaa1a28",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c504158e7bfb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,8 +40,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_bring_jacobian_zeta_determinant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_bring_jacobian_zeta_determinant_probe.py"
   },
   "description": "Test whether the photon 1-loop ζ-determinant on the flat Bring Jacobian (b₁=8) produces the per-loop measure π·b₁=8π as a bare count: Epstein ζ_Λ(0) at rank 2/4/8 + Gaussian-moduli bookkeeping.",
   "auditOnly": "docs/audits/2026-07-17-alpha-em-bring-jacobian-zeta-determinant.md",

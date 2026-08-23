@@ -351,10 +351,11 @@ used for injectivity of `c ↦ q ^ (2c)`; here it is what makes the evaluation p
 What remains between this and `μ = ν` is the classical fact that a Young diagram is determined by
 its content multiset — stated in the module header as the one open step, and deliberately not
 assumed here. -/
-theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
+theorem contentCount_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
     (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
-    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
+    (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) (d : ℤ) :
     (ν.cells.filter (fun c => cellContent c = d)).card
       = (μ.cells.filter (fun c => cellContent c = d)).card := by
   classical
@@ -371,7 +372,7 @@ theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
           = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
         intro c hc; rw [pow_shiftedContent hμ hq0 hc, mul_pow]
       rw [Finset.sum_congr rfl hν', Finset.sum_congr rfl hμ', ← Finset.sum_mul, ← Finset.sum_mul,
-        contentPowSum_eq_of_matRepEquiv q hq0 hq2 n hμ hν h m]
+        hpow m]
     have hcount := card_filter_eq_of_powSum_eq ht0 hq2 hshift ((d + (n : ℤ)).toNat)
     have hre : ∀ (σ : YoungDiagram), σ.cells.card = n + 1 →
         σ.cells.filter (fun c => shiftedContent n c = (d + (n : ℤ)).toNat)
@@ -390,6 +391,17 @@ theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
       have := neg_le_cellContent hσ hc
       omega
     rw [hempty ν hν, hempty μ hμ]
+
+/-- **An equivalence forces equal content counts.**  The original form of the previous theorem,
+now a corollary of it: `MatRepEquiv` is only ever used to supply the power-sum equality. -/
+theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
+    (ν.cells.filter (fun c => cellContent c = d)).card
+      = (μ.cells.filter (fun c => cellContent c = d)).card :=
+  contentCount_eq_of_contentPowSum_eq q hq0 hq2 n hμ hν
+    (fun m => contentPowSum_eq_of_matRepEquiv q hq0 hq2 n hμ hν h m) d
 
 
 /-! ### Content multiset determines the diagram
@@ -532,5 +544,62 @@ theorem seminormalRep_not_matRepEquiv_of_ne {μ ν : YoungDiagram}
   refine hne (youngDiagram_eq_of_contentCount_eq (fun d => ?_))
   have hc := contentCount_eq_of_matRepEquiv q hq0 hq2 n hμ hν h d
   simpa [diagOf] using hc.symm
+
+/-- **Equal content power sums force equal diagrams.**  The scalar-level form of
+`seminormalRep_not_matRepEquiv_of_ne`, with no representation in the statement at all: if the
+central Murphy power sums take the same value on two shapes of the same size, the shapes coincide.
+
+This is the form a *product-map* argument needs.  `seminormalRep_not_matRepEquiv_of_ne` answers
+"are these two blocks isomorphic"; assembling `⊕_λ ρ_λ` instead needs "do the block scalars
+separate the index set", which is this. -/
+theorem youngDiagram_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) :
+    μ = ν := by
+  classical
+  refine youngDiagram_eq_of_contentCount_eq (fun d => ?_)
+  have hc := contentCount_eq_of_contentPowSum_eq q hq0 hq2 n hμ hν hpow d
+  simpa [diagOf] using hc.symm
+
+
+/-! ## Why the bar-symmetrised sum was never going to be the separating element
+
+`seminormalRep_not_matRepEquiv_of_contentCoshSum_ne` above is a real criterion, but it is strictly
+weaker than the content-count route that closes SW-5, and the reason is worth having as a theorem
+rather than as a note: the bar-even bracket **cannot distinguish a partition from its transpose**,
+at any `q`. -/
+
+/-- **The bar-symmetrised content sum is transpose-invariant.**  Transposing a Young diagram negates
+every content, and `q^{2c} + q^{−2c}` is even in `c`, so the sum is unchanged — at **every** `q`.
+
+Consequence: `barSymJMSum` acts by the *same* scalar on `ρ_λ` and `ρ_{λ'}`, so the cosh criterion is
+vacuous on every transpose pair.  That is why the unconditional argument goes through the whole
+power-sum family and the content *counts* rather than through this single scalar.
+
+Measured in exact rational arithmetic, the collapse is total: at `n = 7` the 15 partitions give only
+8 distinct values of the cosh sum, and every collision is exactly a transpose pair.
+
+This also sharpens what `cellContentCoshSum_eq_bracket` records (that the bar-even brackets are not
+independent spectral degrees of freedom): the invariant is not merely dependent on the others, it is
+strictly *coarser than the partition itself*. -/
+theorem coshSum_transpose (q : ℝ) (μ : YoungDiagram) :
+    ∑ c ∈ μ.transpose.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))) := by
+  classical
+  refine Finset.sum_nbij' Prod.swap Prod.swap (fun c hc => ?_) (fun c hc => ?_)
+    (fun c _ => Prod.swap_swap c) (fun c _ => Prod.swap_swap c) (fun c _ => ?_)
+  · rw [YoungDiagram.mem_cells] at hc ⊢
+    exact YoungDiagram.mem_transpose.mp hc
+  · rw [YoungDiagram.mem_cells] at hc ⊢
+    exact YoungDiagram.mem_transpose.mpr (by rwa [Prod.swap_swap])
+  · have hneg : cellContent (Prod.swap c) = -cellContent c := by
+      unfold cellContent
+      simp only [Prod.fst_swap, Prod.snd_swap]
+      ring
+    rw [hneg, show -(2 * -cellContent c) = 2 * cellContent c by ring,
+      show (2 : ℤ) * -cellContent c = -(2 * cellContent c) by ring]
+    exact add_comm _ _
 
 end QOU.SchurWeyl

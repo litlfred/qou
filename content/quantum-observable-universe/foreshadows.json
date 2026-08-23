@@ -4,10 +4,10 @@
   "generated_from": "block .md narratives (](#kind:label) links + `kind:label` mentions), filtered to labels later in reading order and absent from uses[], unioned with the manifest's declared foreshadows[]",
   "note": "GENERATED — do not hand-edit. Rebuild with `bun run content/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
-    "blocks": 514,
-    "derived": 878,
+    "blocks": 516,
+    "derived": 883,
     "declared": 18,
-    "effective": 888
+    "effective": 893
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -4325,6 +4325,17 @@
         "prop:nuclear-spin-parity"
       ]
     },
+    "rem:q-beta-c3-continuum-geometry": {
+      "derived": [
+        "def:ecalle-borel-resummation",
+        "rem:dilog-saddle-regime"
+      ],
+      "declared": [],
+      "effective": [
+        "def:ecalle-borel-resummation",
+        "rem:dilog-saddle-regime"
+      ]
+    },
     "rem:q-beta-categorical-precision-ladder-context": {
       "derived": [
         "prop:em-coupling-bring-zero-mode",
@@ -4586,6 +4597,19 @@
       ],
       "declared": [],
       "effective": [
+        "tbl:spectral-decomposition-qvalue-table3-data"
+      ]
+    },
+    "rem:spectral-decomposition-qvalue-interpretation": {
+      "derived": [
+        "tbl:spectral-decomposition-qvalue-table1-data",
+        "tbl:spectral-decomposition-qvalue-table2-data",
+        "tbl:spectral-decomposition-qvalue-table3-data"
+      ],
+      "declared": [],
+      "effective": [
+        "tbl:spectral-decomposition-qvalue-table1-data",
+        "tbl:spectral-decomposition-qvalue-table2-data",
         "tbl:spectral-decomposition-qvalue-table3-data"
       ]
     },

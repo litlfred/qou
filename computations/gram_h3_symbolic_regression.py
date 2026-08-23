@@ -47,6 +47,7 @@ import mpmath as mp
 from _precision import set_compute_dps
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 def gram_entry_symbolic_C(u: mp.mpf, i: int, j: int) -> mp.mpf:

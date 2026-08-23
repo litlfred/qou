@@ -3,17 +3,17 @@
   "description": "Bean qou-tq20 tranche 7: modular-family hypothesis (honestly labeled a program inference, not literature) tested under the EXACT nome dictionary tau = i|ln q|/(2pi) \u2014 zero free constants. All three canonical per-factor weight families killed (harmonic const 3; area const 15; det'Delta divergent ~1e45 at the anchor). With #4022/#4027 the parameter-free numerical program is EXHAUSTED: the wall is irreducibly categorical (the dictionary is the archimedean tau-functor itself). Lift stays open. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-modular-family.md",
   "tier": "exact-dictionary adjudication (30-dps eta/theta + exact Markov ratio); scope-(a) kills; program-closing synthesis",
-  "computedAt": "2026-07-18T23:45:56.927782+00:00",
-  "commitSha": "88770e6f28a03809821f6b46d9dc1e506d6f0e9c",
+  "computedAt": "2026-08-23T08:49:17.053107+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy+mpmath",
-  "engineVersion": "1.14.0/1.3.0",
+  "engineVersion": "1.14.0/1.4.1",
   "scriptFile": "alpha_em_modular_family_probe.py",
-  "scriptHash": "e5143ab5dcfb",
+  "scriptHash": "78454db014bd",
   "assertions": [
     {
       "name": "harmonic_family_killed",
       "passed": true,
-      "detail": "R_harm \u2261 3 vs r(0.8) = 5.7635336 \u2014 fails pointwise away from the anchor. KILLED (cannot carry any deformation)"
+      "detail": "R_harm \u2261 3 vs r(0.8) = 3.2025 \u2014 fails pointwise away from the anchor. KILLED (cannot carry any deformation)"
     },
     {
       "name": "area_family_killed",
@@ -23,7 +23,7 @@
     {
       "name": "detdelta_family_killed",
       "passed": true,
-      "detail": "R_det under the EXACT nome dictionary (zero free constants): [('0.95', '0.00816358', '1.10923e+45', '3.44867'), ('0.8', '0.0355144', '5.2699e+10', '5.76353'), ('0.6255624479', '0.0746602', '224034.0', '15.0')] \u2014 diverges at the anchor as 3\u00b7e^{4\u03c0/(15y)} (\u03b7 functional equation); at q=0.95 it is 1.109e+45 vs r = 3.45, a ~45-order-of-magnitude miss. KILLED"
+      "detail": "R_det under the EXACT nome dictionary (zero free constants): [('0.95', '0.00816358', '1.10923e+45', '3.01053'), ('0.8', '0.0355144', '5.2699e+10', '3.2025'), ('0.6255624479', '0.0746602', '224034.0', '3.94673')] \u2014 diverges at the anchor as 3\u00b7e^{4\u03c0/(15y)} (\u03b7 functional equation); at q=0.95 it is 1.109e+45 vs r = 3.45, a ~45-order-of-magnitude miss. KILLED"
     },
     {
       "name": "parameter_free_program_exhausted",

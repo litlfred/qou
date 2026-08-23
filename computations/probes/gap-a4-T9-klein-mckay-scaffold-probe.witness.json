@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T19:50:05.134326+00:00",
-  "commitSha": "7d9304f484035e64d2f1a55e22e14650f50e3a8a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:37.070098+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "two_I_burnside_check",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 6,
   "computation": "gap-a4-T9-klein-mckay-scaffold-probe",
   "scriptFile": "gap_a4_T9_klein_mckay_scaffold_probe.py",
-  "scriptHash": "940bb2cf647a",
-  "scriptCommitSha": "103dbdbfa968ac84785c1f362211d0ef7234d94b",
+  "scriptHash": "82ae18a96ee1",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,17 +46,26 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_T9_klein_mckay_scaffold_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_T9_klein_mckay_scaffold_probe.py"
   },
   "description": "GAP-A-4 T9 — scaffold for Klein-invariant / McKay-E_8 / Bring direction.  After T5–T8 refuted 5 q-Schur / RT candidates, T9 sets up the non-Schur-Weyl alternative: tabulates the 2I/Ê_8 irrep dims + Klein degree triple (12,20,30) + queues 3 concrete open sub-questions (T10 McKay-character / T11 Klein-J / T12 Bring-discriminant).  NO derivation proposed here — formalize-first discipline prohibits a 6th ansatz.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "discipline": "EXPLORATORY-SCAFFOLD",
     "production_wired": false,
-    "q_0_recorded_for_followups": 1.1099785827513808,
+    "q_0_recorded_for_followups": 1.1099785955573347,
     "mckay_e8_2I": {
       "two_i_irrep_dims": [
         1,

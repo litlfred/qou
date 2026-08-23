@@ -1,11 +1,11 @@
 ---
 # qou-v4ht
 title: 'Vacuity audit UNDER-COUNTS: 76 agent-confirmed genuine defects are auto-exempted as ''type-matched projection, triage pending'''
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T12:18:52Z
-updated_at: 2026-08-22T12:19:33Z
+updated_at: 2026-08-22T20:34:09Z
 ---
 
 Found on 2026-08-22 while re-seeding the ledger to pick the next drain tranche (successor to qou-h3ly).
@@ -63,3 +63,35 @@ quoted for backlog size; `total_defects` should not.
 
 Option 1 looks right: it is the smallest change and it makes the artifact
 agree with the ledger by construction.
+
+## FIXED 2026-08-22 — option 1 implemented
+
+A ledger verdict of `genuine` now lifts a `triage pending` exemption, so the
+artifact and the ledger can no longer disagree about the backlog.
+
+**Measured, same tree:** total_defects **53 -> 129**, exempt 123 -> 47, with
+**76 promoted** — exactly the gap this bean recorded.
+
+**Scoped deliberately narrower than the bean's option 1.** Only exemptions
+matching `LEDGER_TRACKED_EXEMPT` (/triage pending/) are liftable, not every
+exemption. Those are the ones that *themselves say a verdict is owed*;
+exemptions that ARE verdicts (shadow stub, `@marker` opt-out, iff-from-
+directions) stay exempt regardless of the ledger. And only `genuine`
+promotes — `legit`/`advisory` say the hit is not a defect, so lifting on
+them would invert the ledger's meaning.
+
+**This is the follow-up the original author asked for**, not a unilateral
+change: the emit site's own comment calls the exemption 'tracked-not-counted
+on landing' and names 'promoting these to hard failures' as 'a deliberate
+follow-up'. The verdicts it was waiting on now exist.
+
+**Not a new CI break.** The workflow gate fails on
+`proof-no-trivial-type-mismatch,lean-import-after-content` — neither is a
+promoted category. `--check-ledger` exits 1 both before and after (verified
+by stashing the patch and re-running): 3 candidates carry stale verdicts on
+current main, pre-existing and unrelated. Filed separately.
+
+**Regression test:** `content/pipeline/lean-vacuity-ledger-promotion.test.ts`
+— synthetic .lean + synthetic ledger, so it asserts the invariant rather than
+a corpus count that legitimately moves. Covers both directions (genuine lifts;
+legit/advisory do not).

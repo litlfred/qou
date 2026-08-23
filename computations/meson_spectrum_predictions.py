@@ -67,7 +67,7 @@ def full_markov_trace(word, q_val):
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 30
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
 
     m_pi = float(M_PI_PM_MEV_VALIDATION)  # MeV, PDG (codata_constants registry)

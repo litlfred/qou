@@ -38,13 +38,15 @@ from pathlib import Path
 
 import sympy as sp
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 for p in (str(HERE / "substrate"), str(HERE)):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-mp.mp.dps = 30
+set_compute_dps()
 q = sp.symbols('q')
 
 

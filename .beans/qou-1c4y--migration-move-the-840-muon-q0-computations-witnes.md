@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-07T09:01:57Z
+updated_at: 2026-08-22T20:20:42Z
 ---
 
 
@@ -417,3 +417,120 @@ both rejected, because they leave a stale number on the theory nobody is
 looking. The tolerance triage is still useful — but as **ordering and
 annotation**, never as a skip. Offering it to `q0_repin_sweep.py` in that form
 is the remaining actionable item.
+
+
+---
+
+## 2026-08-22 — this bean's headline count is stale, and the shortfall is not what it looks like
+
+Measured on `main` today, over all 3030 `computations/**/*.witness.json`:
+
+| measure | count |
+|---|---|
+| muon **fingerprint** anywhere in the file (the method behind the "~840") | **624** |
+| muon **stamp** — `q0Anchor: muon` or a muon `q0Value` | **65** |
+| fingerprint present but no muon stamp | **559** |
+
+The title says *"~840 muon-q0 witnesses"*; AGENTS.md §q₀ rule 4 has carried 870. By the comparable fingerprint method it is now **624**.
+
+**The 559 are not a migration backlog, and counting them as one repeats a mistake this arc already made twice.** A fingerprint hit means the muon digit string appears *somewhere* in the file — which a deliberate two-pin comparison, a recorded pin-gap diagnostic, or a stale data field all produce without the witness claiming muon anywhere. Reading a raw grep count as a defect count is exactly what produced the retracted `qou-0hnz` claim (254/78 → measured 0) and the `qou-sccd` opening framing (11 candidates → measured 2). The stamp count, **65**, is the only figure tied to a claim the corpus actually makes.
+
+**And 65 is not automatically a work-list either.** Three of them are now *legitimately* muon by design — `q_pinning_50_digit` (the anchor definer, which must never move), `atomic_tr_m_mpfr_50dps` and `cross_check_trM_1ppb` (two-pin comparison producers restored under `qou-ibbr` / `qou-wn6d` precisely because moving them to proton broke them). Any re-baseline has to separate that class before proposing a sweep.
+
+### Suggested re-baseline, before any bulk work
+
+1. Partition the **65** stamped-muon witnesses into: (a) anchor-defining, (b) deliberate comparison producers, (c) genuine migration remainder.
+2. Sample the **559** fingerprint-only witnesses to establish what the fingerprint is actually hitting — comparison values, pin-gap diagnostics, or stale fields. Do not assume.
+3. Only then size the sweep. The four constraints recorded in AGENTS.md rule 4 still bind, and the first attempt at this migration broke `main` for 208 producers (`qou-m9xp`).
+
+Recording the numbers rather than acting on them: the sweep is the step that has gone wrong before, and it should start from a measured work-list, not from a count nobody has re-derived since the migration ran.
+
+
+## Re-baseline #2 (2026-08-22) — my first re-baseline was wrong the same way the original was
+
+Both the original `~840` and my `624 fingerprint / 65 stamped` came from
+grepping a **12-digit prefix** of the muon pin. That prefix does not
+identify the muon pin. The corpus carries **two** muon values agreeing to
+11 digits:
+
+    current     1.10997859555733471...   live ideal / CAL-2 pin
+    superseded  1.10997859555418057...   the "old muon value"
+
+Prefix sensitivity: `642 / 624 / 236 / 206` as the prefix lengthens. The
+624 -> 236 drop is 388 witnesses carrying a **different number**.
+
+Measured over 3030 tracked witnesses:
+
+| population | count |
+|---|---:|
+| current muon | 212 |
+| **superseded muon** | **375** |
+| both (comparison) | 24 |
+| rounded / low-precision | 31 |
+
+The superseded class is the **largest** and is a **different defect**:
+wrong under either convention, stale on its own terms, not "awaiting the
+proton migration". Already documented as a pin-currency defect in
+`local/language-trap-agent-audit`; what is new is its size.
+
+### The confirmed, actionable class — 5
+
+`q-pinning-50-digit.witness.json` is muon-anchored. Of live producers:
+136 reference it, 69 read the JSON directly without importing
+`q_parameter`, and **56 bind q0 from `derived_50_digit["q"]`** — so they
+inherit its anchor rather than choosing one.
+
+- **51 UNDECLARED** in `q0_anchor_manifest.json`
+- **5 declared `physical_proton`** — flat contradiction, confirmed in
+  both directions (manifest says proton, code pins muon, emitted witness
+  is stamped `proton` while recording the muon value):
+  `aK_via_lp_dual_hecke_basis`, `b_over_m_order_probe`,
+  `path4_rho_K_at_h3A`, `q1_mass_gap_probe`, `q_beta_form_a_n1_extension`.
+  `q1_mass_gap_probe.py:170` comments "(proton anchor)" directly above
+  the muon read.
+
+This is the **direct-read sibling** of the `y_lambda_at` cached-accessor
+trap this bean already names — same failure one layer down, bypassing
+every guard on the accessor path.
+
+### Scope
+
+Does **not** authorise the bulk sweep (constraints 1-4 stand; qou-m9xp
+broke main for 208 producers). Does **not** make the 51 undeclared
+producers defects — a genuine ideal-layer producer *should* read the muon
+pin. The finding is 56 pinning muon against 3 declared `ideal_muon`.
+Classifying the 51 is the next step; the 5 are actionable now.
+
+Re-runnable: `python3 computations/audits/q0_muon_population_partition.py`
+(`--list-contradictions` exits 1 while any remain). Audit:
+`docs/audits/2026-08-22-q0-migration-worklist-partition.md`.
+
+
+## Coordination with qou-o922 (measured 2026-08-22) — opposite failure modes
+
+Sibling bean `qou-o922` measures a closely-related population
+(`undeclared_muon_pin_flip_risk_audit.py`, ratcheted 49 -> 40). Intersection
+against my 56 direct muon-pinners: **4 overlap, 45 sibling-only, 52 mine-only.**
+
+Nearly disjoint, because the two behave **oppositely on re-run**:
+
+- **qou-o922**: muon-stamped witness + producer undeclared. On re-run
+  `q_parameter` falls through to the **proton default** and `WitnessBuilder`
+  drops the label in the same step -> **the pin flips and the evidence
+  disappears together.**
+- **mine**: the producer reads `q-pinning-50-digit.witness.json` **directly**,
+  never importing `q_parameter`. Manifest state is irrelevant -> **re-running
+  flips nothing**; it stays muon indefinitely.
+
+**Consequence for qou-o922's stated fix.** Its next step is *"add a manifest
+entry ... THEN re-run"*. Correct for its own 45; **a no-op for my 52** — a
+producer that never consults `q_parameter` cannot observe its manifest entry.
+Declaring it and re-running leaves it on muon while the declaration says
+proton, which is exactly how the 5 contradictions arose.
+
+The 4 in both need the **read** fixed before the manifest entry, or the entry
+will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
+`qbeta_fsc_g_pattern_comparison`, `qbeta_symbolic_sdp_strict_complementarity`,
+`qbeta_trm_crosscheck_convention_pin_split_probe`.
+
+Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.

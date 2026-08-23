@@ -49,7 +49,9 @@ sys.path.insert(0, str(HERE.parent / "tools" / "pyhecke" / "python"))
 
 import mpmath as mp  # noqa: E402
 
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 import pyhecke_native as pn  # noqa: E402
 import hecke_core  # noqa: E402

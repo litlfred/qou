@@ -165,8 +165,16 @@ def classify(path: Path) -> tuple[str, list[str]]:
 
 
 def find_producer(script_name: str) -> Path | None:
+    # `_deprecated/` holds 890 retired copies; 37 share a name with a live
+    # file. The tie-break below sorts by (computations-first, fewest parts),
+    # which TIES when the live copy is as deeply nested as the retired one --
+    # `computations/probes/x.py` and `computations/_deprecated/x.py` are both
+    # 3 parts. Measured: 3 of the 7 colliding `.py` names resolved to the
+    # DEPRECATED copy (path_b_habiro_mass_probe, rho_k_markov_multiplicativity_probe,
+    # term5_aK_audit). A retired copy is by definition not the producer.
     hits = [p for p in REPO.rglob(script_name)
-            if ".git" not in p.parts and p.is_file()]
+            if ".git" not in p.parts and "_deprecated" not in p.parts
+            and ".claude" not in p.parts and p.is_file()]
     if not hits:
         return None
     # prefer the computations/ copy over vendored duplicates

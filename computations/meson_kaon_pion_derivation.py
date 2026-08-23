@@ -151,7 +151,13 @@ def main():
         "= (q₀⁵ − q₀⁻⁵) × (9/5)² ≈ 3.536 (vs PDG 3.537, 290 ppm). "
         "The algebraic part is the Hecke character of the strange-quark braid "
         "on the standard (2,1) representation. The squaring reflects the "
-        "2-quark meson structure (one Seifert volume factor per constituent)."
+        "2-quark meson structure (one Seifert volume factor per constituent). "
+        "SUPERSEDED for the accuracy dashboard: this (9/5)² form was formerly "
+        "scored there and was withdrawn from that role. The canonical closure "
+        "is [3]_q[4]_q + (α_em/π)(1 + log(1+ℏ_q)) "
+        "(prop:meson-em-sinh-closed-form), at 51.5 ppb. This form's 290 ppm "
+        "misses the observable's 263.6 ppb target by 1099x, so do NOT quote "
+        "290 ppm as the framework's accuracy on m_K/m_π."
     )
 
     wb.add_data("hecke_characters", {
@@ -191,9 +197,18 @@ def main():
         "power_2_err_ppm": err_ppm,
         "power_3_prediction": str(float(pred_power3)),
         "power_3_err_ppm": err_power3,
-        "conclusion": "Power = 2 (meson qq̄) gives 290 ppm; power = 1 "
-                      f"gives {err_power1:.0f} ppm; power = 3 gives "
-                      f"{err_power3:.0f} ppm. The data selects n_q = 2.",
+        "conclusion": f"Power = 2 (meson qq̄) gives {err_ppm:.0f} ppm; "
+                      f"power = 1 gives {err_power1:.0f} ppm; power = 3 "
+                      f"gives {err_power3:.0f} ppm.",
+        "scope": "This scan is a CONSISTENCY CHECK, not a derivation, and "
+                 "the key name `squaring_proof` overstates it. The two-body "
+                 "rationale names n_q = 2 in advance; the alternatives miss "
+                 "by 44% and 80% rather than marginally, so a scan that "
+                 "selected the exponent against the data would look no "
+                 "different. What it establishes is only that the a-priori "
+                 "exponent is not contradicted. Prior wording read 'The "
+                 "data selects n_q = 2', which is the fitted reading and is "
+                 "withdrawn (2026-08-22).",
     })
     wb.add_data("comparison_to_prior", {
         "prior_formula": "7/8 × [2]_q² (kaon_pion_ratio_7_8_probe.py)",
@@ -230,7 +245,9 @@ def main():
         computed=float(err_ppm < err_power1 and err_ppm < err_power3),
         expected=1,
         tolerance=0,
-        source="n_q = 2 gives smallest error among powers 1, 2, 3",
+        source="n_q = 2 gives the smallest error among powers 1, 2, 3. "
+               "This records a consistency check, NOT evidence for the "
+               "exponent -- see data.squaring_proof.scope.",
     )
 
     wb.save()
@@ -257,11 +274,15 @@ def main():
     print(f"    V_S(T(2,5)) = 3π/5 = {float(v_T25):.10f}")
     print(f"    (9/5)² = 81/25 = {float(seifert_sq):.6f}")
     print()
-    print("SQUARING PROOF (power scan):")
+    print("SQUARING EXPONENT (power scan — a consistency check, NOT a proof):")
     print(f"  (9/5)¹ → {float(pred_power1):.8f}  err = {err_power1:>8.0f} ppm")
     print(f"  (9/5)² → {float(m_K_over_m_pi):.8f}  err = {err_ppm:>8.0f} ppm  ← BEST")
     print(f"  (9/5)³ → {float(pred_power3):.8f}  err = {err_power3:>8.0f} ppm")
-    print(f"  Conclusion: exponent = n_quarks = 2 (meson qq̄)")
+    print("  Consistent with exponent = n_quarks = 2 (meson qq̄), which the")
+    print("  two-body rationale names in advance. The alternatives miss by 44%")
+    print("  and 80%, not marginally, so this check cannot distinguish an")
+    print("  a-priori exponent from one selected against the data — it only")
+    print("  fails to contradict. Not evidence for the exponent.")
     print()
     print(f"COMPARISON: 7/8×[2]_q² = {float(old_formula):.10f} (err {old_err_ppm:.0f} ppm)")
     print(f"  Improvement: {old_err_ppm/err_ppm:.1f}× tighter + categorically derived")

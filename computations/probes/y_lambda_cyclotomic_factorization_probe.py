@@ -69,6 +69,7 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from markov_weights_symbolic import y_lambda_symbolic  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _cyclotomic_decomposition(expr_denom: sp.Expr, r: sp.Symbol):

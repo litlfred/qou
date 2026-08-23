@@ -34,5 +34,11 @@ open QOU.AlgebraicSubstrate
 instance trivial_motivic_galois_character :
     MotivicGaloisCharacter ℤ ℤ trivialTarget (motiveA := 1) where
   frobenius_at := fun p => (p.val : ℤ)
+  frobenius_realize_ne_zero := by
+    -- `trivialTarget v = ℤ` and `realize v = RingHom.id ℤ`, so the goal is
+    -- definitionally `((p : ℕ) : ℤ) ≠ 0`, and a prime is positive.
+    intro p _
+    show ((p : ℕ) : ℤ) ≠ 0
+    exact_mod_cast p.property.pos.ne'
 
 end QOU.LiftingDescent

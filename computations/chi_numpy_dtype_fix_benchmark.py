@@ -53,6 +53,7 @@ from canonical_braid_crossings import (  # noqa: E402
 )
 from hoefsmit_numpy import chi_numpy, hoefsmit_matrices_numpy  # noqa: E402
 from rho_k_h3a_refinement import chi_numeric  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Tritium: n=9, 35 crossings, the atom the regression was measured on. Its
 # first 'averaged_weighted' crossing is at index 11 of 35.
@@ -84,7 +85,7 @@ def chi_numpy_prefix(shape, crossings, q_value):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q_mp = mp.mpf(Q_50_DIGIT_STR)
     q_f64 = float(q_mp)
     crossings = atom_canonical_crossings(ATOM[0], ATOM[1])

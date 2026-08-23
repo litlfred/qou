@@ -2,12 +2,12 @@
   "probe": "qbeta_5two_route8_envelope_deformation_cyclotomic",
   "bean": "qou-8v3k",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "gates": [
     {
       "gate": "G1",
       "claim": "dV/dy = 0  <=>  GGM deformed curve x y^3 -(x^2+1)y^2 +(x^2+x+1)y - x = 0",
-      "worst_abs_error": "1.8367099e-40",
+      "worst_abs_error": "1.4489087e-70",
       "pass": true
     },
     {
@@ -16,31 +16,31 @@
       "per_x": [
         {
           "x": "0.5",
-          "err_prod_1_minus_xy": "5.73972e-42",
+          "err_prod_1_minus_xy": "0.0",
           "err_prod_1_minus_y_over_x": "0.0"
         },
         {
           "x": "0.7",
-          "err_prod_1_minus_xy": "1.14794e-41",
-          "err_prod_1_minus_y_over_x": "4.59177e-41"
+          "err_prod_1_minus_xy": "9.05568e-72",
+          "err_prod_1_minus_y_over_x": "5.43341e-71"
         },
         {
           "x": "1.3",
-          "err_prod_1_minus_xy": "6.88766e-41",
-          "err_prod_1_minus_y_over_x": "0.0"
+          "err_prod_1_minus_xy": "5.43341e-71",
+          "err_prod_1_minus_y_over_x": "1.81114e-71"
         },
         {
           "x": "2.0",
           "err_prod_1_minus_xy": "0.0",
-          "err_prod_1_minus_y_over_x": "5.73972e-42"
+          "err_prod_1_minus_y_over_x": "0.0"
         },
         {
           "x": "3.7",
-          "err_prod_1_minus_xy": "2.75506e-40",
-          "err_prod_1_minus_y_over_x": "0.0"
+          "err_prod_1_minus_xy": "3.62227e-71",
+          "err_prod_1_minus_y_over_x": "4.52784e-72"
         }
       ],
-      "worst": "2.7550649e-40",
+      "worst": "5.4334074e-71",
       "pass": true
     },
     {
@@ -51,28 +51,28 @@
           "x": "0.6",
           "numeric": "1.70275207922",
           "analytic": "1.70275207922",
-          "abs_err": "6.20633e-24"
+          "abs_err": "6.20625e-24"
         },
         {
           "x": "0.9",
           "numeric": "0.23413447923961",
           "analytic": "0.23413447923961",
-          "abs_err": "1.46807e-24"
+          "abs_err": "1.46809e-24"
         },
         {
           "x": "1.4",
           "numeric": "-0.48067462374459",
           "analytic": "-0.48067462374459",
-          "abs_err": "2.82375e-25"
+          "abs_err": "2.82684e-25"
         },
         {
           "x": "2.2",
           "numeric": "-0.71677941851297",
           "analytic": "-0.71677941851297",
-          "abs_err": "4.44968e-26"
+          "abs_err": "4.45494e-26"
         }
       ],
-      "worst": "6.2063278e-24",
+      "worst": "6.2062519e-24",
       "note": "central differences at h=1e-12, so ~1e-20 agreement is the ceiling",
       "pass": true
     },
@@ -83,56 +83,56 @@
         {
           "x": "0.2",
           "S_minus_S1": "-2.5902903939802349452",
-          "abs_err": "4.59177e-41"
+          "abs_err": "1.08668e-70"
         },
         {
           "x": "0.5",
           "S_minus_S1": "-0.48045301391820142467",
-          "abs_err": "2.0089e-40"
+          "abs_err": "9.05568e-72"
         },
         {
           "x": "0.7",
           "S_minus_S1": "-0.12721701563369788536",
-          "abs_err": "2.69767e-40"
+          "abs_err": "1.65266e-70"
         },
         {
           "x": "0.9",
           "S_minus_S1": "-0.011100838259683061188",
-          "abs_err": "2.44297e-40"
+          "abs_err": "6.9757e-71"
         },
         {
           "x": "1.1",
           "S_minus_S1": "-0.0090840303743327344168",
-          "abs_err": "1.6143e-42"
+          "abs_err": "2.43937e-70"
         },
         {
           "x": "1.4",
           "S_minus_S1": "-0.1132135660168815039",
-          "abs_err": "5.73972e-42"
+          "abs_err": "2.20732e-70"
         },
         {
           "x": "2.0",
           "S_minus_S1": "-0.48045301391820142467",
-          "abs_err": "2.0089e-40"
+          "abs_err": "9.05568e-72"
         },
         {
           "x": "3.0",
           "S_minus_S1": "-1.2069489608125819778",
-          "abs_err": "9.18355e-41"
+          "abs_err": "4.16561e-70"
         },
         {
           "x": "5.0",
           "S_minus_S1": "-2.5902903939802349452",
-          "abs_err": "4.59177e-41"
+          "abs_err": "1.08668e-70"
         }
       ],
-      "worst": "2.6976677e-40",
+      "worst": "4.1656124e-70",
       "pass": true
     },
     {
       "gate": "G5",
       "claim": "S(x) = S(1/x)  (GGM eq 306 / curve_palindromic)",
-      "worst": "3.6734198e-40",
+      "worst": "1.4489087e-70",
       "pass": true
     },
     {
@@ -143,19 +143,19 @@
           "phi_over_pi": "0.125",
           "S": "-14.6501940328670167",
           "S1_plus_phi2": "-14.6501940328670167",
-          "implied_k": "0.0"
+          "implied_k": "-5.8722056e-71"
         },
         {
           "phi_over_pi": "0.25",
           "S": "-14.187556326565953",
           "S1_plus_phi2": "-14.187556326565953",
-          "implied_k": "3.7219525e-41"
+          "implied_k": "0.0"
         },
         {
           "phi_over_pi": "0.375",
           "S": "-13.4164934827308469",
           "S1_plus_phi2": "-13.4164934827308469",
-          "implied_k": "2.4813016e-41"
+          "implied_k": "3.9148037e-71"
         },
         {
           "phi_over_pi": "0.5",
@@ -167,7 +167,7 @@
           "phi_over_pi": "0.625",
           "S": "-10.9490923824585072",
           "S1_plus_phi2": "-10.9490923824585072",
-          "implied_k": "1.488781e-41"
+          "implied_k": "-1.1744411e-71"
         },
         {
           "phi_over_pi": "0.75",
@@ -179,23 +179,23 @@
           "phi_over_pi": "0.875",
           "S": "-7.24799073204999774",
           "S1_plus_phi2": "-7.24799073204999774",
-          "implied_k": "5.317075e-42"
+          "implied_k": "0.0"
         },
         {
           "phi_over_pi": "1.0",
           "S": "-4.93480220054467931",
           "S1_plus_phi2": "-4.93480220054467931",
-          "implied_k": "-4.6524406e-42"
+          "implied_k": "-3.6701285e-72"
         }
       ],
-      "worst_implied_k": "3.7219525e-41",
+      "worst_implied_k": "5.8722056e-71",
       "pass": true
     },
     {
       "gate": "G6b",
       "claim": "k = 0 on the whole arc: no root collision (disc bounded away from 0), so the integer k is locally constant hence constant, and k -> 0 as phi -> 0",
       "n_samples": 200,
-      "max_implied_k": "1.8609762e-39",
+      "max_implied_k": "1.4680514e-69",
       "min_abs_discriminant_on_arc": "0.34808803",
       "note": "this upgrades step (4) from 'measured at 8 points' to 'constant by local-constancy on a collision-free arc' -- an argument, not a sample",
       "pass": true
@@ -204,10 +204,10 @@
       "gate": "G7",
       "claim": "x=-1: disc 49 (Q(zeta_7)+), roots = -1-2cos(2 pi k/7), and the reduced identity sum_k Re[Li2(y)+2Li2(-y)+(log(-y))^2] = -pi^2/2",
       "discriminant": "49.0",
-      "root_identification_err": "2.29589e-41",
+      "root_identification_err": "9.05568e-72",
       "reduced_sum": "-4.9348022005446793094172455",
       "target_minus_half_pi_sq": "-4.9348022005446793094172455",
-      "abs_err": "9.18355e-41",
+      "abs_err": "1.44891e-70",
       "pass": true
     }
   ],

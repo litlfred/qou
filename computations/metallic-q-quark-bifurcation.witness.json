@@ -4,8 +4,8 @@
     "metallic-q-wenzl-sign-sweep.witness.json",
     "metallic-q-jones-sign-sweep.witness.json"
   ],
-  "computed_at": "2026-07-18T17:52:35.771889+00:00",
-  "precision_dps": 50,
+  "computed_at": "2026-08-23T09:15:33.538296+00:00",
+  "precision_dps": 70,
   "anchors": {
     "q_0_substrate": "1.10997859555418",
     "golden_phi": "1.618033988749895",
@@ -5912,12 +5912,14 @@
     "Hoefsmit-Wenzl characters used directly; the closed-form expressions for \u03c7^{(2,1)} on 2- and 3-letter words verified at q=1 to reduce to standard S\u2083 characters.  Higher-strand characters would need the recursive Hoefsmit formulas.",
     "'Bifurcation' here means a sign change in a per-block contribution \u2014 necessary but not sufficient for an actual SDP-feasibility-set deformation.  A true parametric-SDP bifurcation analysis (Mehrotra-Monteiro, Goldfarb-Scheinberg) needs the active-set tracking which is not done here."
   ],
-  "scriptHash": "28dbfa0aa421",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "scriptHash": "966428049020",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "computedAt": "2026-07-18T17:52:36.277908+00:00",
+  "computedAt": "2026-08-23T09:15:33.549149+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "metallic_q_quark_bifurcation.py"
 }

@@ -50,6 +50,7 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP as Q0
+from _precision import set_compute_dps  # noqa: E402
 
 PHASE3_WITNESS = _pb.witness_path("delta-lambda-jsj-phase3.witness.json", HERE)
 EMP_WITNESS = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)
@@ -66,7 +67,7 @@ ZN = {
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("delta-lambda-z4N-phase4")
     builder.set_description(
         "Phase 4 of the closed-forms-first-principles workplan: tests "

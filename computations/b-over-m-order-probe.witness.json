@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-22T10:17:27.090026+00:00",
-  "commitSha": "0b0739c427026a4e2eb7961f61ecc3e47bc95853",
+  "computedAt": "2026-08-22T20:35:12.323703+00:00",
+  "commitSha": "237e9a3be5ae5f06f2def54e94b42213353ecd3a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "b-over-m-order-probe",
   "scriptFile": "b_over_m_order_probe.py",
-  "scriptHash": "73070dad4a55",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "1a9fc94f4a51",
+  "scriptCommitSha": "2bf9fa7e94cbf1eabba52d2f51972edd6114603a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,16 +23,24 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/b_over_m_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/b_over_m_order_probe.py"
   },
   "description": "EXPLORATORY order-of-magnitude check of the B/m ~ h² hypothesis from the ε-stratification: empirical binding fractions for d/³He/⁴He compared against h, h², and the (5/18)h² channel-resolution scale at the proton-pinned q₀.  Not a derivation (Δ_λ-gated).",
   "exploratory": true,
   "data": {
-    "q0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h": "0.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h_squared": "0.01209529148076380418921098964858814411965507947440939107133858802107264",
-    "five_over_18_h2": "0.003359803189101056719225274902385595588793077631780386408705163339186844",
-    "n6_family_splitting_at_q0": "0.002901999417537916326477966242237975371592214300626353979551126634208655",
+    "q0_50dps": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
+    "h": "0.1099785827513808075916690956107688798744991218735776360567187925101765",
+    "h_squared": "0.0120952886640023160864663223140984251006831791698420873812360837185613",
+    "five_over_18_h2": "0.003359802406667310024018422865027340305745327547178357605898912144044804",
+    "n6_family_splitting_at_q0": "0.00290199880193182753561580268896767506213123909684448389679536958563208",
     "empirical_inputs_MeV": {
       "d": {
         "B": "2.2245662",
@@ -50,18 +58,18 @@
     "ratios": {
       "d": {
         "B_over_m": "0.001186047582967604224975105404809412850368229890842430712696963178615724",
-        "ratio_to_h": "0.01078434923593188260193525942371748198525588662224183496403495105129421",
-        "ratio_to_h2": "0.09805861932751922740306713983448001194200438101913312403672262539133823"
+        "ratio_to_h": "0.01078435049166618863294082945188746926232696748624304078803533041837836",
+        "ratio_to_h2": "0.0980586421634969515499844863295652847341330815728901226665996672230234"
       },
       "He3": {
         "B_over_m": "0.002748206941453584610862722679845119818803854709899123621478480896025787",
-        "ratio_to_h": "0.02498856188812551633566867876854686344557234172993545053369529469589374",
-        "ratio_to_h2": "0.2272129568621225490771238197151444072171463642888074888506616401561072"
+        "ratio_to_h": "0.02498856479780450899550257292858665558746060280577168147097376248447821",
+        "ratio_to_h2": "0.2272130097756762695387464856278892244982180336681298010084629570916594"
       },
       "He4": {
         "B_over_m": "0.007591301897097633155950781066124039699241867234912004564933300359439411",
-        "ratio_to_h": "0.06902526676784200994647294679900283468219242972436112238050376265746721",
-        "ratio_to_h2": "0.6276245520143720334609524461900204092487695469202362651459621792198766"
+        "ratio_to_h": "0.0690252748051740331458558571639340262909938175815127448822872447647025",
+        "ratio_to_h2": "0.6276246981761310630991490077756619304602429882665909091595568062269517"
       }
     },
     "verdict": "Order-of-magnitude verdict: empirical B/m for d, ³He, ⁴He sits at 0.0012–0.0076, i.e. O(h²) ≈ 0.012 within one decade (ratios to h² of ~0.1–0.6), and one to two decades below O(h) ≈ 0.11.  The h² stratum is the consistent home for binding-type structure, as the ε²-order channel resolution predicts.  This is an order check ONLY: a derivation requires contracting the per-partition Δ_λ against the n = 3A weight tower (Δ_λ gate; six closure ansätze failed — see the gating audit), and the A-dependence of B/m (rising from d to ⁴He) is exactly the structure Δ_λ must supply."

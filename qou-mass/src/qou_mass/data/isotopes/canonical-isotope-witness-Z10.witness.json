@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-11T05:33:03.984994+00:00",
-  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
+  "computedAt": "2026-08-23T17:15:57.418796+00:00",
+  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 37,
   "computation": "canonical-isotope-witness-Z10",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "46eb131fcd57",
-  "scriptCommitSha": "242bd2515ed6eb591bc763c9d09b464a2f18a755",
+  "scriptHash": "e56cabeee1ea",
+  "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +19,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/canonical_isotope_witness.py",
+      "--max-z",
+      "118"
+    ],
+    "reproduce": "python3 -u computations/canonical_isotope_witness.py --max-z 118"
   },
   "description": "Per-Z=10 shard of the recursive atom-knot atlas. Element: Ne. Covers every (Z=10, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
@@ -42,14 +54,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 73.0309275,
+        "reference_MeV_50dps": "73.0309275000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 14012.626929315538,
+          "M_AME_MeV": "14012.6269293155391744400000000000000000000000000000051313403",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -58,9 +70,9 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 73030.9275,
-          "mass_excess_keV": 40215.374,
-          "atomic_mass_u": 15.043172977,
+          "B_AME_keV": "73030.9275000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "40215.3740000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "15.0431729770000000000000000000000000000000000000000000000000",
           "Q_beta_keV": null,
           "estimated": false
         }
@@ -74,14 +86,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 97.3308432,
+        "reference_MeV_50dps": "97.3308432000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 14927.892433775718,
+          "M_AME_MeV": "14927.8924337757191992000000000000000000000000000000054665050",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -90,9 +102,9 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 97330.8432,
-          "mass_excess_keV": 23986.775,
-          "atomic_mass_u": 16.02575086,
+          "B_AME_keV": "97330.8432000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "23986.7750000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "16.0257508600000000000000000000000000000000000000000000000000",
           "Q_beta_keV": null,
           "estimated": false
         }
@@ -106,14 +118,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 112.8884847,
+        "reference_MeV_50dps": "112.888484700000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 15851.900214396523,
+          "M_AME_MeV": "15851.9002143965201386400000000000000000000000000000058048711",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -122,10 +134,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 112888.4847,
-          "mass_excess_keV": 16500.452,
-          "atomic_mass_u": 17.017713962000002,
-          "Q_beta_keV": -18219.1277,
+          "B_AME_keV": "112888.484700000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "16500.4520000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "17.0177139620000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-18219.1277000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -138,14 +150,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 132.1426386,
+        "reference_MeV_50dps": "132.142638600000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 16772.21148362393,
+          "M_AME_MeV": "16772.2114836239299491200000000000000000000000000000061418836",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -154,10 +166,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 132142.6386,
-          "mass_excess_keV": 5317.617,
-          "atomic_mass_u": 18.005708696,
-          "Q_beta_keV": -19720.3745,
+          "B_AME_keV": "132142.638600000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "5317.61700000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "18.0057086960000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-19720.3745000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -170,14 +182,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 143.7795189,
+        "reference_MeV_50dps": "143.779518900000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 17700.140023528653,
+          "M_AME_MeV": "17700.1400235286515703200000000000000000000000000000064816855",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -186,10 +198,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 143779.5189,
-          "mass_excess_keV": 1752.054,
-          "atomic_mass_u": 19.001880906,
-          "Q_beta_keV": -11177.331,
+          "B_AME_keV": "143779.518900000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "1752.05400000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "19.0018809060000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-11177.3310000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -201,27 +213,27 @@
         "prediction_type": "binding_energy",
         "layer": "L2-alpha-cluster",
         "canonical_status": "canonical-recursive",
-        "prediction_MeV_50dps": 174.04828146806454,
-        "reference_MeV_50dps": 160.64482400000003,
-        "err_MeV": 13.403457468064516,
-        "err_pct": 8.343535219077157,
-        "err_ppm": 83435.35219077158,
+        "prediction_MeV_50dps": "174.048281468064533962224175717054843982534694972986989724145",
+        "reference_MeV_50dps": "160.644824000000020000000000000000000000000000000000000000000",
+        "err_MeV": "13.4034574680645139622241757170548439825346949729869897241450",
+        "err_pct": "8.34353521907715638165667379462133660229223199168848992339685",
+        "err_ppm": "83435.3521907715638165667379462133660229223199168848992339685",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": 18609.436829957398,
-          "M_AME_MeV": 18622.84014222022,
-          "err_MeV": -13.403312262820691,
-          "err_ppm": -719.7243900748399,
+          "M_pred_MeV": "18609.4368299574024660377758242829451560174653050270130159303",
+          "M_AME_MeV": "18622.8401422202184769300000000000000000000000000000068195728",
+          "err_MeV": "-13.4033122628160108922241757170548439825346949729938036425054",
+          "err_ppm": "-719.724390074588563969888616917549398192936924214495148543411",
           "canonical_status": "canonical-recursive",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L2-alpha-cluster"
         },
         "ame_reference": {
-          "B_AME_keV": 160644.82400000002,
-          "mass_excess_keV": -7041.93217,
-          "atomic_mass_u": 19.99244017525,
-          "Q_beta_keV": -13892.4207,
+          "B_AME_keV": "160644.824000000020000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-7041.93217000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "19.9924401752500000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-13892.4207000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -233,20 +245,20 @@
         "prediction_type": "binding_energy",
         "layer": "L3-partial-shell:f=0.250 from A=20→24",
         "canonical_status": "heuristic",
-        "prediction_MeV_50dps": 175.85592041733216,
-        "reference_MeV_50dps": 167.4059856,
-        "err_MeV": 8.44993481733215,
-        "err_pct": 5.04757030463799,
-        "err_ppm": 50475.703046379895,
+        "prediction_MeV_50dps": "175.855920417332160000000000000000000000000000000000000000000",
+        "reference_MeV_50dps": "167.405985600000000000000000000000000000000000000000000000000",
+        "err_MeV": "8.44993481733216000000000000000000000000000000000000000000000",
+        "err_pct": "5.04757030463799616971401768085883782162685107718155568745685",
+        "err_ppm": "50475.7030463799616971401768085883782162685107718155568745685",
         "excised": {
           "excised_layer": "L3-partial-shell:f=0.250 from A=20→24",
           "excised_status": "heuristic",
-          "excised_prediction_MeV": 175.85592041733216,
+          "excised_prediction_MeV": "175.855920417332160000000000000000000000000000000000000000000",
           "reason": "non-canonical (heuristic / empirical-assignment)"
         },
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 19555.644401479167,
+          "M_AME_MeV": "19555.6444014791681682000000000000000000000000000000071611601",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -255,10 +267,10 @@
           "B_source": "L3-partial-shell:f=0.250 from A=20→24"
         },
         "ame_reference": {
-          "B_AME_keV": 167405.9856,
-          "mass_excess_keV": -5731.776,
-          "atomic_mass_u": 20.993846684999998,
-          "Q_beta_keV": -3546.919,
+          "B_AME_keV": "167405.985600000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-5731.77600000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "20.9938466850000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-3546.91900000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -270,20 +282,20 @@
         "prediction_type": "binding_energy",
         "layer": "L3-partial-shell:f=0.500 from A=20→24",
         "canonical_status": "heuristic",
-        "prediction_MeV_50dps": 185.96357579703573,
-        "reference_MeV_50dps": 177.7702432,
-        "err_MeV": 8.19333259703572,
-        "err_pct": 4.608944922136282,
-        "err_ppm": 46089.44922136282,
+        "prediction_MeV_50dps": "185.963575797035730000000000000000000000000000000000000000000",
+        "reference_MeV_50dps": "177.770243200000000000000000000000000000000000000000000000000",
+        "err_MeV": "8.19333259703573000000000000000000000000000000000000000000000",
+        "err_pct": "4.60894492213628810516247299593051352702430234398194264269308",
+        "err_ppm": "46089.4492213628810516247299593051352702430234398194264269308",
         "excised": {
           "excised_layer": "L3-partial-shell:f=0.500 from A=20→24",
           "excised_status": "heuristic",
-          "excised_prediction_MeV": 185.96357579703573,
+          "excised_prediction_MeV": "185.963575797035730000000000000000000000000000000000000000000",
           "reason": "non-canonical (heuristic / empirical-assignment)"
         },
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 20484.845565395288,
+          "M_AME_MeV": "20484.8455653952859203600000000000000000000000000000075014281",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -292,10 +304,10 @@
           "B_source": "L3-partial-shell:f=0.500 from A=20→24"
         },
         "ame_reference": {
-          "B_AME_keV": 177770.2432,
-          "mass_excess_keV": -8024.716,
-          "atomic_mass_u": 21.991385113000003,
-          "Q_beta_keV": -2843.3243,
+          "B_AME_keV": "177770.243200000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-8024.71600000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "21.9913851130000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "-2843.32430000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -308,14 +320,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 182.9708903,
+        "reference_MeV_50dps": "182.970890300000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 21419.210340192178,
+          "M_AME_MeV": "21419.2103401921773866000000000000000000000000000000078435869",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -324,10 +336,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 182970.8903,
-          "mass_excess_keV": -5154.045,
-          "atomic_mass_u": 22.994466905,
-          "Q_beta_keV": 4375.8085,
+          "B_AME_keV": "182970.890300000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-5154.04500000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "22.9944669050000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "4375.80850000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -340,14 +352,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 191.83980480000002,
+        "reference_MeV_50dps": "191.839804800000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 22349.906846496902,
+          "M_AME_MeV": "22349.9068464969025142800000000000000000000000000000081844024",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -356,10 +368,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 191839.8048,
-          "mass_excess_keV": -5951.642,
-          "atomic_mass_u": 23.993610649,
-          "Q_beta_keV": 2466.2583,
+          "B_AME_keV": "191839.804800000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-5951.64200000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "23.9936106490000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "2466.25830000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -372,14 +384,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 195.99498499999999,
+        "reference_MeV_50dps": "195.994985000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 23285.317089290067,
+          "M_AME_MeV": "23285.3170892900687448400000000000000000000000000000085269440",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -388,10 +400,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 195994.985,
-          "mass_excess_keV": -2035.503,
-          "atomic_mass_u": 24.997814796999997,
-          "Q_beta_keV": 7322.3107,
+          "B_AME_keV": "195994.985000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "-2035.50300000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "24.9978147970000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "7322.31070000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -404,14 +416,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 201.54968599999998,
+        "reference_MeV_50dps": "201.549686000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 24219.327809698596,
+          "M_AME_MeV": "24219.3278096985949651200000000000000000000000000000088689731",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -420,10 +432,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 201549.686,
-          "mass_excess_keV": 481.114,
-          "atomic_mass_u": 26.000516496,
-          "Q_beta_keV": 7341.894,
+          "B_AME_keV": "201549.686000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "481.114000000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "26.0005164960000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "7341.89400000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -436,14 +448,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 203.0512077,
+        "reference_MeV_50dps": "203.051207700000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 25157.391709661337,
+          "M_AME_MeV": "25157.3917096613325986400000000000000000000000000000092124865",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -452,10 +464,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 203051.2077,
-          "mass_excess_keV": 7050.91,
-          "atomic_mass_u": 27.007569462000003,
-          "Q_beta_keV": 12568.7005,
+          "B_AME_keV": "203051.207700000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "7050.91000000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "27.0075694620000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "12568.7005000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -468,14 +480,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 206.87369640000003,
+        "reference_MeV_50dps": "206.873696400000020000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 26093.134642094104,
+          "M_AME_MeV": "26093.1346420941011532400000000000000000000000000000095551500",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -484,10 +496,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 206873.69640000002,
-          "mass_excess_keV": 11299.738,
-          "atomic_mass_u": 28.012130767000002,
-          "Q_beta_keV": 12288.0534,
+          "B_AME_keV": "206873.696400000020000000000000000000000000000000000000000000",
+          "mass_excess_keV": "11299.7380000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "28.0121307670000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "12288.0534000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -500,14 +512,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 207.8449517,
+        "reference_MeV_50dps": "207.844951700000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 27031.728810910783,
+          "M_AME_MeV": "27031.7288109107811600000000000000000000000000000000098988576",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -516,10 +528,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 207844.9517,
-          "mass_excess_keV": 18399.803,
-          "atomic_mass_u": 29.019753,
-          "Q_beta_keV": 15719.8092,
+          "B_AME_keV": "207844.951700000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "18399.8030000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "29.0197530000000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "15719.8092000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -532,14 +544,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 211.035951,
+        "reference_MeV_50dps": "211.035951000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 27968.103231141286,
+          "M_AME_MeV": "27968.1032311412846142000000000000000000000000000000102417523",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -548,10 +560,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 211035.951,
-          "mass_excess_keV": 23280.12,
-          "atomic_mass_u": 30.024992235,
-          "Q_beta_keV": 14805.4501,
+          "B_AME_keV": "211035.951000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "23280.1200000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "30.0249922350000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "14805.4501000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -564,14 +576,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 211.20579619999998,
+        "reference_MeV_50dps": "211.205796199999980000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 28907.49880904711,
+          "M_AME_MeV": "28907.4988090471119155200000000000000000000000000000105857534",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -580,10 +592,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 211205.79619999998,
-          "mass_excess_keV": 31181.594,
-          "atomic_mass_u": 31.033474816,
-          "Q_beta_keV": 18935.5625,
+          "B_AME_keV": "211205.796199999980000000000000000000000000000000000000000000",
+          "mass_excess_keV": "31181.5940000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "31.0334748160000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "18935.5625000000000000000000000000000000000000000000000000000",
           "estimated": false
         }
       },
@@ -596,14 +608,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 213.472,
+        "reference_MeV_50dps": "213.472000000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 29844.81026483976,
+          "M_AME_MeV": "29844.8102648397584000000000000000000000000000000000109289912",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -612,10 +624,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 213472.0,
-          "mass_excess_keV": 36999.0,
-          "atomic_mass_u": 32.03972,
-          "Q_beta_keV": 18359.0,
+          "B_AME_keV": "213472.000000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "36999.0000000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "32.0397200000000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "18359.0000000000000000000000000000000000000000000000000000000",
           "estimated": true
         }
       },
@@ -628,14 +640,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 212.388,
+        "reference_MeV_50dps": "212.388000000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 30785.435805258527,
+          "M_AME_MeV": "30785.4358052585255600000000000000000000000000000000112734427",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -644,10 +656,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 212388.0,
-          "mass_excess_keV": 46130.0,
-          "atomic_mass_u": 33.049523,
-          "Q_beta_keV": 22350.0,
+          "B_AME_keV": "212388.000000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "46130.0000000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "33.0495230000000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "22350.0000000000000000000000000000000000000000000000000000000",
           "estimated": true
         }
       },
@@ -660,14 +672,14 @@
         "layer": "derivation-pending",
         "canonical_status": "pending",
         "prediction_MeV_50dps": null,
-        "reference_MeV_50dps": 213.758,
+        "reference_MeV_50dps": "213.758000000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppm": null,
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 31723.641323995827,
+          "M_AME_MeV": "31723.6413239958281600000000000000000000000000000000116170079",
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -676,10 +688,10 @@
           "B_source": "derivation-pending"
         },
         "ame_reference": {
-          "B_AME_keV": 213758.0,
-          "mass_excess_keV": 52842.0,
-          "atomic_mass_u": 34.056728,
-          "Q_beta_keV": 21161.0,
+          "B_AME_keV": "213758.000000000000000000000000000000000000000000000000000000",
+          "mass_excess_keV": "52842.0000000000000000000000000000000000000000000000000000000",
+          "atomic_mass_u": "34.0567280000000000000000000000000000000000000000000000000000",
+          "Q_beta_keV": "21161.0000000000000000000000000000000000000000000000000000000",
           "estimated": true
         }
       }
@@ -687,19 +699,19 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "d0e2ec2545d885ee239bc5d6a5d6ef16adc91c78428ae21d8d684dce91fcedb1",
-        "size_bytes": 59040,
-        "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
-        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-        "computedAt": "2026-06-29T17:22:46.103608+00:00"
+        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
+        "size_bytes": 65295,
+        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
+        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+        "computedAt": "2026-08-22T09:49:32.663084+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
-        "sha256": "c7cd6663195d43322c4476db00e2228e636506104e46d3d038c3deedb7ebcd77",
-        "size_bytes": 3747,
-        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+        "sha256": "f33ab6d3406d4de4b8dd2150509358fd204d1d5783c747398275edde943716a7",
+        "size_bytes": 5818,
+        "commitSha": null,
         "scriptCommitSha": null,
-        "computedAt": "2026-05-19T03:17:28.931573+00:00"
+        "computedAt": "2026-08-15T23:34:27.095910+00:00"
       },
       {
         "path": "low-isotope-binding-sweep.witness.json",
@@ -711,15 +723,15 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "6e8536cef754cbbaecbe12f3610837c293eb83979b279f77316c8230093ac7bc",
-        "size_bytes": 10359,
-        "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-02T12:20:49.981050+00:00"
+        "sha256": "8c810f773a83934900498a083263808be90496ee879ef7069e9d98b26b636077",
+        "size_bytes": 11476,
+        "commitSha": "ba28ebdb1dae72fb39af5ef536c9e08bed944835",
+        "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
+        "computedAt": "2026-08-22T21:18:55.791557+00:00"
       },
       {
         "path": "ame2020.json",
-        "sha256": "70f7f2f8cc954a65f265ca2cea62bc45521c8ab0233d195c02f70df3ebeea43d",
+        "sha256": "a74f4204c189aa18e3f857ccf86ad7d49d4fb313dfec036421b506ddaead84a9",
         "size_bytes": 2404329,
         "commitSha": null,
         "scriptCommitSha": null,

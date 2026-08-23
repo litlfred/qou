@@ -3,7 +3,7 @@
   "computation": "whitehead_factor_hi",
   "audit_only": true,
   "precision": "mpmath dps=50 exact-root, weight-block engine",
-  "vol_4G": "3.663862376708876060218414",
+  "vol_4G": "3.663862376708876060218414059729536443096597497126688537065992455245813",
   "figure_eight_calibration_c0": -0.26948094255139365,
   "figure_eight_target": -0.27465307216702745,
   "whitehead_values": {
@@ -24,5 +24,5 @@
   "factor": 2.4874725265232045,
   "nearest_factor": 2,
   "note": "through N=16",
-  "timestamp": "2026-07-26T21:31:20+00:00"
+  "timestamp": "2026-08-23T10:00:02+00:00"
 }

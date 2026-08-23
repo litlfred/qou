@@ -44,12 +44,16 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from math import comb
 from pathlib import Path
 
 from mpmath import mp, mpf, log
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 REPO = Path(__file__).resolve().parents[3]
 OUT = Path(__file__).with_suffix(".witness.json")

@@ -95,6 +95,7 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from _precision import set_compute_dps  # noqa: E402
 
 E0_STR = "4.1859813632944758969"
 DEUTERON = "2.2245662"      # 3S1, MeV, bound
@@ -102,7 +103,7 @@ S0_VIRTUAL = "0.0736"       # 1S0 virtual-state energy hbar^2/(m_N a^2), MeV, UN
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(str(Q50))
     z = q ** 3 / (q ** 2 + 1)
     E0 = mp.mpf(E0_STR)

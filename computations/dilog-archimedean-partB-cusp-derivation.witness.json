@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:19:29.473798+00:00",
-  "commitSha": "27f86c8d5b446a3e8377174b85f4de0ec4e2e482",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:06:45.941882+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "dilog_inversion_constant_is_minus_zeta2",
-      "computed": 2.3665465677525164e-41,
+      "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -30,7 +30,7 @@
     },
     {
       "name": "same_zeta2_is_extended_bloch_pairing",
-      "computed": 2.2958874039497803e-41,
+      "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 49,
+  "durationMs": 55,
   "computation": "dilog-archimedean-partB-cusp-derivation",
   "scriptFile": "dilog_archimedean_partB_cusp_derivation_probe.py",
-  "scriptHash": "aedd410b9d54",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e547d74df556",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,8 +52,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/dilog_archimedean_partB_cusp_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/dilog_archimedean_partB_cusp_derivation_probe.py"
   },
   "description": "DERIVES the Part B cusp regulator ζ(2)=Li₂(1): it is the (quantum-)dilog inversion constant. D1: classical Li₂(z)+Li₂(1/z)+½log²(−z)=−π²/6 (exact); D2: Faddeev inversion constant iπ(b²+b⁻²)/12 → −π²/6 semiclassically (b→0) — the modular anomaly the bare partial product lacks and Φ_b carries; D3: the same ζ(2)=extended-Bloch/Rogers pairing (2R(e^{iπ/3})−π²/6=i·Vol(4₁)). The cusp crossing x=1 inverts x↔1/x, forcing the inversion constant. So the residual is closed at value+origin (a theorem-forced modular anomaly, not a fit); the sign-assembled Lean formalization + x→1⁻ edge remain. Scope-(a) positive; no fit; nothing wired.",
   "data": {

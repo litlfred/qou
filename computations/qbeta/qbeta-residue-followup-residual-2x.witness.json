@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-21T21:49:49.217230+00:00",
-  "commitSha": "b00f813a65559fced8f1b65a910f0a12a7087251",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:57:21.997737+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "canonical_factor_reaches_closure",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "qbeta-residue-followup-residual-2x",
   "scriptFile": "qbeta_residue_followup_residual_2x.py",
-  "scriptHash": "886d08da564b",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "b150d207eb79",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_residue_followup_residual_2x.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_residue_followup_residual_2x.py"
   },
   "description": "Direction 2 of the residue-A follow-up: characterise the recurring '2×1.03' residual. Prefactor A/ℏ_q^15 ≈ 2.0717328; R2 = A/(2·ℏ_q^15) ≈ 1.0358664 (literal doubling), R2q = A/([2]_q·ℏ_q^15) ≈ 1.0302531 (quantum doubling). TIERED-matched against a FIXED canonical basket of small q_0-factors (no free parameters — diagnostic characterisation, not a fit). 8 NEAR-1PCT-or-better. TIERED; cross-anchor; ℏ_q=(q-1)/q; diagnostic-only.",
   "data": {
@@ -141,9 +151,9 @@
     "closure_near_1ppm_count": "0",
     "basket_density_baseline": {
       "N_factors": "18",
-      "band_width": "0.746618",
-      "expected_within_1pct": "0.4822",
-      "expected_within_0p1pct": "0.04822",
+      "band_width": "0.859986",
+      "expected_within_1pct": "0.4186",
+      "expected_within_0p1pct": "0.04186",
       "observed_near_1pct": "8",
       "note": "observed ≈ expected ⇒ NEAR-1PCT cluster is combinatorial density, not structural alignment (the 1+q lesson)."
     },
