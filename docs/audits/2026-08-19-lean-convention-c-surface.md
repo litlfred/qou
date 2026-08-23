@@ -92,6 +92,45 @@ for the second spelling (4 further hits). Code-vs-prose split by presence of
 `:=`, `let `, `def `, `have `, or `: ℝ` on the line. The five sites were then
 read individually — the classification is by inspection, not by pattern.
 
+## Follow-through on one site: the `q*` exclusion is safe, the landmark is not
+
+`QBetaQStarClosedFormExclusion`'s C-frame `α` was the one site that looked like
+it might endanger a live argument. Checked:
+
+**The exclusion argument is convention-independent.** `qstarRootStrictMonoInAnchor`
+and `qstarRootUniqueInAnchor` are stated about an *abstract* `Φ : ℝ → ℝ` with a
+`StrictMonoOn` hypothesis; they never mention `qstarShape`, `z` or `α`. And the
+numerical premise survives: `Φ'(q*) = −3.606` under D against `−3.631` under C —
+nonzero and same sign either way. `qstarShape` is a C-frame `def` that nothing in
+the file consumes.
+
+**The landmark itself moves, a lot.** `α = (z−1)h/2` shifts 23% between
+conventions (`−0.052336` → `−0.040487`), and rooting `Φ(q) = Q_codata/m_e`:
+
+| | `q*` | position |
+|---|---|---|
+| C | 1.10997859340 | **inside** the `[proton, muon]` anchor interval |
+| D | 1.11023370740 | **19,921 anchor-gaps outside** it |
+
+The anchor interval is `1.281e-8` wide; D displaces `q*` by `2.55e-4`.
+
+So [`rem-qstar-decay-sector-q0.md`](../../content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md)'s
+sentence *"It lies ≈ 80.3% of the way from the proton anchor toward the muon
+anchor"* is **convention-C-frame**. Under D, `q*` is not between the anchors at
+all. Tracked as `qou-iax1`.
+
+The block's *skeptical conclusion* is unaffected and arguably strengthened: it
+argues the 80.3% is "a reading of `Vol(4₁)`'s own value" — every constant in a
+window of width `0.0491` places a zero between the anchors — so the position was
+never evidence. Under D it is not even in the window.
+
+**Caveat on my own number.** My `Φ` is a reconstruction from the Lean `def`, not
+the block's producer; under C it lands `3.35e-10` from the block's stated `q*`,
+which is 2.9% of the anchor gap. **So my C-frame percentage is not reliable and
+must not be quoted against the block's 80.3%.** The D result is insensitive to
+that — a 20,000-gap displacement survives any plausible constant-vintage
+difference.
+
 ## What this audit did not do
 
 - It did **not** scan `.ts` manifests or `.md` content blocks; this is the Lean
