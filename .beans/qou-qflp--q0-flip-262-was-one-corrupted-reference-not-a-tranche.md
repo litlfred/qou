@@ -168,3 +168,39 @@ discounting string constants as prose also discounted a filename.
 **Open:** 82 known-false in C (d=41, b=26, f=9); the 326 transcribable
 witnesses (mutation, needs sign-off); the AGENTS.md `y_lambda_at` "muon-built
 cache" description vs the proton file on disk.
+
+## 2026-08-23 (late) — "do all": the remaining items, done
+
+**Verified first**: main's `q-pinning-50-digit.witness.json` holds **muon**
+(so main's own retraction `2b370512b` is consistent with this work), and
+`y-lambda-at-q0.witness.json` still carries proton — the `MUON_ARTIFACTS` fix
+stands. Both branches rebased onto main (+213) and re-verified: `lean`-direct
+exit 0 sorry-free, probe 29/29, all blocking precision gates green.
+
+**Fixed the 7 off-pin fallbacks.** Each carried `Q0 = 1.1099780333553254` in an
+`except` handler — 506 ppb from muon, 495 from proton, ~44× the μ–p tension —
+substituted silently on any import hiccup. Now raise. Verified both ways: scan
+reports 0, and the live accessor returns `1.1099785827513808`, so the removed
+fallback differed from the real value by 495 ppb.
+`hbond_categorical_action.py` had commented its literal "documented substrate
+q₀ (proton-anchor pin)" — false by 495 ppb.
+
+**Extended `q0_hardcoded_pin_audit` with OFF_PIN.** Its population was a grep of
+the two pin literals, so a file carrying only an off-pin value was never in
+scope — **the third audit with that blind spot**. 18 files found (excluding
+`computations/audits/`, since a detector necessarily contains what it hunts).
+
+**Fixed a guard that could never succeed, over a typo'd pin.**
+`phase1c_proton_h3_symbolic_decomposition.py:219`, three defects in one line:
+`dir()` returns LOCALS and the line is inside `main()`; `Q_50_DIGIT_STR` is
+imported *after* `main()`, so the guard was **always False** and the fallback
+**always** taken; and that fallback is a **digit-transposed** muon pin
+(`1.10977…` for `1.10997…`), 0.018 % off ≈ **15,600× the μ–p tension**. Scoped
+honestly — it sits under `if diff != 0`, so it is a rarely-executed path.
+
+**Left as a reported class (not swept):** 17 remaining off-pin literals, mostly
+legacy (`1.1097090249` ×4, `1.10970000000` ×3, `1.10997861` ×2). Each needs a
+judgement on whether it is a deliberate legacy comparison.
+
+**Still owner-gated:** the AGENTS.md `y_lambda_at` "muon-built cache" text vs
+the proton file on disk; the 326 transcribable witnesses (a mutation).
