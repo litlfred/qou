@@ -1,11 +1,11 @@
 ---
 # qou-v6vp
 title: char_fast._compiled_sigmas returns a CONSTANT function of q; "mpmath50" is a label with no high-precision data
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T09:43:02Z
-updated_at: 2026-08-23T08:12:52Z
+updated_at: 2026-08-23T08:16:23Z
 ---
 
 ## What
@@ -123,3 +123,28 @@ tier is review-not-sweep. It should be its own scoped piece of work with
 owner sign-off, not folded into an A-operator PR.
 
 **Not done here** — flagged for the owner's call on PR #5427.
+
+
+## RESOLVED 2026-08-23 — PR #5517
+
+Fixed at the source, not stopgapped. `BlockCache` dispatches its arithmetic
+on the operand type, so `_cached_seminormal(shape, q=sympy.Symbol('q'))`
+returns matrices that are expressions in q; `char_fast._compiled_sigmas`
+lambdifies those. `_pin_to_baked_q` (the #5486 stopgap) is deleted.
+
+Measured: chi now varies across q in {0.5, q0, 2.0, 7.0}; a 1e-30 q
+perturbation moves the mpmath50 result by ~1e-29 where main moved by
+exactly 0.0; chi at q0 matches main to 2.5e-14.
+
+Against a closed form (trivial irrep, sigma_i = q, chi = prod(c*q+d)):
+main was wrong at 5.7e-15, the new path is right to 5.1e-49.
+
+Scope correction: I had said this needed 'a cache-format migration across 17
+consumers'. Wrong — the .npz stem already carried q{...:.10f}. No format
+change, no archive invalidated.
+
+Second defect found en route: math.sqrt truncated the Hoefsmit off-diagonal
+to float64 even with a 50-digit q (1.36e-17 rel). The matrices were
+mixed-precision. Fixed by _sqrt_for.
+
+Faster, not slower: benchmark 7.5s -> 3.6s; (6,6) 6.71s -> 2.48s.

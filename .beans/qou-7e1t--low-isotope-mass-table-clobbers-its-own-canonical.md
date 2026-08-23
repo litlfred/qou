@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-08-22T16:01:05Z
+updated_at: 2026-08-23T08:27:15Z
 ---
 
 ## What
@@ -161,3 +161,67 @@ computed 2026-08-15 (`b6c20f1b6e02`) while the tree holds `dfcd6d57966b`
 from 2026-08-22, and the two disagree on their face (`auto/11dps/5 atoms`
 vs `branching/60dps/7 rows`). The anchor-declaration fix for that witness
 is on PR #5427, landed inert (not regenerated) for the same reason.
+
+
+--------
+
+## 2026-08-23 — MEASUREMENT that reframes option 3 (and unblocks option 1)
+
+I wrote above that option 3 needs to *reconcile* auto vs branching so a
+projection cannot be wider than its source, and treated that as the hard part
+needing an owner decision. **Measured, there is nothing to reconcile.**
+
+`compute_tr_m_canonical(..., method='auto')` dispatches to `branching`
+VERBATIM for A >= 2 (canonical_mass_table_extended.py:190,
+`eff = 'laurent_q_rust' if (Z+N) < 2 else 'branching'`). Run over the full
+DEFAULT_ATOMS set at 60 dps:
+
+  atom   A  auto route       branching route   identical
+  p      1  laurent_q_rust   ERR               auto=ok  branch=ERR
+  n      1  laurent_q_rust   ERR               auto=ok  branch=ERR
+  D      2  branching        branching         YES (==, not 'agrees to')
+  T      3  branching        branching         YES
+  3He    3  branching        branching         YES
+  4He    4  branching        branching         YES
+  5Li    5  branching        branching         YES
+  6Li    6  branching        branching         YES
+  7Li    7  branching        branching         YES
+
+Python `==` on the mpf, not a tolerance. So on this table
+
+    auto  is a STRICT SUPERSET of  branching
+
+with zero numerical disagreement anywhere the two overlap. Option 3 is not a
+reconciliation; it is a one-token default change
+(`--method` default `branching` -> `auto`), after which the canonical table
+is 9 rows and a projection can no longer be wider than its source.
+
+Cost: 4.5 s for all nine atoms (7Li, the worst, is 3.94 s). No pruning change
+— `--target-dps` stays 60.
+
+### Consequence for option 1
+
+The 2026-06-14 audit's objection to flipping `--no-rerun-canonical` to the
+default was that a light reproject *drops the p/n rows*. That objection is
+**caused by** the canonical being `branching`. Do option 3 first and it
+evaporates: reprojecting a 9-row canonical yields the 5-atom paper set
+INCLUDING p and n. So the two are not alternatives — **3 unblocks 1**, and the
+order is 3 then 1.
+
+### The real remaining question is not a compute question
+
+What p/n rows carry is `prediction_MeV`, an ABSOLUTE nucleon mass. Two things
+changed under this bean since I last wrote:
+
+* `qou-7loj` is FIXED (2026-08-08). `lookup_nucleon_mass_canonical` no longer
+  reads the deprecated Vol·rho witness (+2.89 %); it routes through
+  `canonical_mass.nucleon_mass_mev()`. So restoring p/n no longer restores a
+  27 MeV/nucleon error.
+* The owner ruling of 2026-08-11 (`qou-exam`) EXCISED absolute mass as a
+  claim. So the column those rows would restore is precisely the one that is
+  no longer a prediction — while `tr_M(p) = 1.1457596924573008696890` and
+  `tr_M(n) = 0.9877436881158095716340` are dimensionless categorical
+  quantities the table is otherwise entirely about.
+
+That is a labelling decision (`qou-exsw`'s remaining content work), not a
+method decision, and it does not gate option 3.
