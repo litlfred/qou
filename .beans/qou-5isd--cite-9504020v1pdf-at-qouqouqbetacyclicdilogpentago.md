@@ -1,5 +1,5 @@
 ---
-# qou-x4qm
+# qou-5isd
 title: Cite 9504020v1.pdf at qou:QOU.QBeta.CyclicDilogPentagon
 status: todo
 type: task
@@ -17,3 +17,9 @@ Source: `library/arxiv-q-alg-9504020v1/9504020v1.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+<!-- re-issued 2026-08-23: this bean and
+     `qou-x4qm--gap-three-generation-structure-...` both claimed id `qou-x4qm`.
+     Unrelated beans that collided on a random id; the older three-generation
+     bean keeps `qou-x4qm`, this newer citation task takes a fresh id.
+     Flagged in bean `qou-xqno`. -->

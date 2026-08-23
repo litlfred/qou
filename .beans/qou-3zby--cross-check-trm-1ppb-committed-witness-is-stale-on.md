@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-08-21T15:03:49Z
+updated_at: 2026-08-23T07:59:27Z
 ---
 
 Found during /prepare-merge on PR #5199 (provenance triage). NOT that branch's regression -- cross_check_trM_1ppb.py reads none of its files (inputs are atomic-tr-m-mpfr-50dps, canonical-tr-m-via-chi-cache, habiro-coefficients-extended, markov-peel-atomic-tr-m-muon, q-pinning-50-digit). Confirmed inherited: a pristine origin/main worktree (cbb49a1a35) exits 1 on the same gate.
@@ -79,3 +79,64 @@ bean.
 
 Neither is drained here. The gate is still red at 6/6 divergent, correctly:
 this makes the reason legible, it does not make the number green.
+
+
+## RETRACTED — my 2026-08-23 framing was wrong (never merged)
+
+I appended a section here claiming this bean and `qou-dau6` were **competing
+hypotheses with no adjudication between them**, and offered a **third**
+candidate (import-cone drift). Both claims are false. The append was caught
+before its PR (#5514) merged, so it never reached `main`; this replaces it.
+
+### 1. The adjudication EXISTS, and predates my append by two days
+
+`667c9ab3f6` on `main` (2026-08-21) — *"the tr_M cross-check is red for TWO
+reasons; the guard saw one"*. I did not grep for it. That is the corpus-grep
+checklist, skipped.
+
+### 2. The two beans are BOTH RIGHT — the red has two simultaneous causes
+
+Classified from ratios alone, no external reference value needed:
+
+    method       convention   pin      recorded q0
+    Hoefsmit         D        muon         NO
+    chi-cache        D        muon         yes
+    markov_peel      C        muon         yes
+    Habiro           C       PROTON        NO
+
+    Hoefsmit vs chi-cache  3.22e-09   same convention, same pin
+    peel     vs Habiro     1.821e-04  same convention, DIFFERENT pin
+    Hoefsmit / peel        1.4810393  the C->D ratio
+
+So: a **C/D convention straddle** (this bean) AND a **muon/proton pin
+mismatch** (`qou-dau6`). Not either/or. My "pick one" framing was the defect.
+
+### 3. My third hypothesis is WITHDRAWN — it was cause (1) all along
+
+I cited `hoefsmit_50dps` moving `0.388 -> 0.575` on a bare re-run as evidence
+of import-cone drift, because AGENTS.md uses those exact digits as its
+canonical import-cone example. Measured:
+
+    0.575 / 0.388            = 1.48196
+    C->D ratio (above)       = 1.4810393
+    3-sig-fig band of inputs = [1.47876, 1.48516]   contains it
+
+**The move IS the convention change.** I pattern-matched the digits instead
+of dividing them, which took one line. Note the failure mode: the append was
+correctly hedged as "HYPOTHESIS not a finding", and the reviewing agent
+passed it on that hedge. **A well-labelled claim is not a true one**, and the
+label is not a substitute for the check.
+
+### What is actually open (from `667c9ab3f6`, which drained none of it)
+
+The gate stays red at 6/6 **correctly** — that commit made the reason
+legible, not the number green. Two independent fixes, neither done:
+
+1. **Pin straddle** — regenerate `habiro-coefficients-extended` under
+   `QOU_Q0_ANCHOR=ideal`. Blocked: see `qou-iayk`.
+2. **C->D split** — belongs to the convention-D cascade (`qou-cds1`), not
+   here.
+
+`cross-check-trM-1ppb.witness.json` is deliberately NOT regenerated. Do not
+"fix" this red by re-running and committing: until both causes are drained, a
+re-run records the straddle rather than resolving it.

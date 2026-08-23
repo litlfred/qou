@@ -1,0 +1,667 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T07:47:58.314570+00:00",
+  "commitSha": "8d0fd7cc3f6532a347bea9af4003c1b413cc8ef8",
+  "assertions": [
+    {
+      "name": "1_divergent_set_has_not_grown",
+      "computed": "0",
+      "expected": "1",
+      "passed": false,
+      "detail": "72 divergent literals vs baseline 71. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
+    },
+    {
+      "name": "2_more_than_one_family_exists",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "4 distinct divergence points ([13, 18, 19, 52]). More than one means the corpus carries mutually inconsistent hardcoded pins, not a single stale value -- which is the finding."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 335,
+  "computation": "hardcoded-q0-literal-families",
+  "scriptFile": "hardcoded_q0_literal_families_audit.py",
+  "scriptHash": "361fa9700275",
+  "scriptCommitSha": "67d286fbe769af27bbb6101f5e6fd1db07543759",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/hardcoded_q0_literal_families_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/hardcoded_q0_literal_families_audit.py"
+  },
+  "description": "The corpus carries several mutually inconsistent HARDCODED muon-q0 literals, not one. Grouped by first divergence from the canonical pin they fall into distinct families -- including a large one that transcribes the CODATA-stale-edition derivation, and others wrong from the 18th-19th digit. Clean truncated prefixes also vary in precision from 14 to 70 characters. Found while draining the undeclared-muon-pin register, where 19 of 40 members turned out to hardcode q0 and so were never at risk of the flip the register detects.",
+  "computation_method": "Regex-scans computations/**/*.py (excluding _deprecated and agent worktrees) for string literals matching 1.10997859555…, and groups them by the first character index at which they disagree with _q0_value_for_anchor('muon'). Pure string comparison; no float64, no arithmetic.",
+  "audit_only": true,
+  "tier": "empirical",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value as an input. It loads the canonical muon pin as a reference STRING and compares other strings against it character-wise, computing nothing from any of them.",
+  "scope": "scope-(a) MEASUREMENT. Classifies literals; changes none, wires nothing, and asserts nothing about which value a given producer SHOULD use -- that turns on A-vs-C, an owner ruling (bean qou-bred).",
+  "result": {
+    "canonical_pin": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "clean_prefix_count": 222,
+    "clean_prefix_lengths": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      16,
+      16,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      21,
+      21,
+      21,
+      26,
+      26,
+      49,
+      49,
+      49,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      51,
+      52,
+      52,
+      52,
+      52,
+      55,
+      60,
+      60,
+      61,
+      66,
+      66,
+      66,
+      66,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70
+    ],
+    "divergent_count": 72,
+    "baseline_divergent": 71,
+    "families": {
+      "13": [
+        {
+          "file": "computations/audits/hardcoded_q0_literal_families_audit.py",
+          "literal": "1.1099785955541810",
+          "length": 18
+        },
+        {
+          "file": "computations/audits/muon_pin_three_values_probe.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/audits/q0_muon_population_partition.py",
+          "literal": "1.109978595554180",
+          "length": 17
+        },
+        {
+          "file": "computations/c_3_categorical_derivation_attempt.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/gap_a3_cross_atom_overshoot_probe.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/gap_a3_overshoot_robustness_check.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/habiro_interpolation_wlambda.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/metallic_q_jones_sign_sweep.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/metallic_q_n4_character_sweep.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/metallic_q_quark_bifurcation.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/metallic_q_wenzl_sign_sweep.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/mp_dk_decisive_test.py",
+          "literal": "1.10997859555418057528159407960950937799328227995870",
+          "length": 52
+        },
+        {
+          "file": "computations/per_basis_row_invariants_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995870",
+          "length": 52
+        },
+        {
+          "file": "computations/probe_inter_knot_decoupling.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
+          "literal": "1.1099785955541810",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/brane_tower_full_channel_trace_audit.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+          "literal": "1.1099785955541810",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+          "literal": "1.1099785955541810",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/he3_brane_tower_structural_gap.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/probes/keystone_colored_lr_modulus_s013.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_colored_wrt_perblock_vs_dq.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_framing_is_phase.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_mckay_e8_valuemap.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_q0_framing_residual.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_qbessel_latticept_search.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_valuemap_qbessel_gate_s013.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_valuemap_screen_s013.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_valuemap_sigma345_dm6.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/probes/zhabiro_physical_z_pin.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/q0_provenance_audit.py",
+          "literal": "1.10997859555418057528159407960950937799328227995870",
+          "length": 52
+        },
+        {
+          "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+          "literal": "1.10997859555418057528159407961",
+          "length": 31
+        },
+        {
+          "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+          "literal": "1.10997859555418057528159407961",
+          "length": 31
+        },
+        {
+          "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995870",
+          "length": 52
+        },
+        {
+          "file": "computations/qbeta_multi_block_eigenphase_probe.py",
+          "literal": "1.10997859555418057528159407960950937799328227995870",
+          "length": 52
+        },
+        {
+          "file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/regenerate_y_lambda_orphans_conventionD.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/sigma_all_evaluator.py",
+          "literal": "1.1099785955541805752815940796095093779932822799587",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805753",
+          "length": 21
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805752815940796095093779667618976181",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.10997859555418057528159407961",
+          "length": 31
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.109978595554180575281594079609518150067234842238",
+          "length": 50
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805169583001889887986763787613849839",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746",
+          "length": 71
+        },
+        {
+          "file": "computations/three_quark_borromean_lp_sweep.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/two_quark_active_set_mahler_sweep.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        },
+        {
+          "file": "computations/two_quark_hopf_vs_borromean_sdp.py",
+          "literal": "1.1099785955541805",
+          "length": 18
+        }
+      ],
+      "18": [
+        {
+          "file": "computations/probe_qbeta_form.py",
+          "literal": "1.1099785955573347596001309852899479366668383822292",
+          "length": 51
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.109978595557334700000000000000",
+          "length": 32
+        }
+      ],
+      "19": [
+        {
+          "file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
+          "literal": "1.1099785955573347117485528280749490295019743898536",
+          "length": 51
+        },
+        {
+          "file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
+          "literal": "1.1099785955573347117485528280749490295019743898536",
+          "length": 51
+        }
+      ],
+      "52": [
+        {
+          "file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
+          "literal": "1.10997859555733471989976322048322502665620840878015405145269",
+          "length": 61
+        },
+        {
+          "file": "computations/q0_anchor_gate_test.py",
+          "literal": "1.10997859555733471989976322048322502665620840878015405145269",
+          "length": 61
+        }
+      ]
+    },
+    "caveat_not_split_source_vs_doc": "This count is SITES, not defects. It has NOT been split into code that computes with the literal versus documentation, docstrings, test fixtures and audits that quote it on purpose -- this audit's own file and muon_pin_three_values_probe are both in the char-13 group precisely because they DOCUMENT the stale value. The predecessor CODATA sweep made exactly this mistake and had to correct itself: its 'code that computes a wrong number' bullet was 'wrong for 87 % of its own count'. Do not quote 65 as a defect count. The split is the next step.",
+    "verdict": "Transcribed pins defeat the anchor machinery: such a producer cannot be re-pinned, cannot be flipped by QOU_Q0_ANCHOR, and reports a q0Anchor describing its label rather than its computation. This is the CODATA sweep's 'read the authority, do not transcribe it' one layer down -- that sweep fixed the CONSTANTS registry, and these sites transcribe the DERIVED substrate pin, so they are immune to it."
+  },
+  "context": {
+    "beans": [
+      "qou-o922",
+      "qou-bred"
+    ],
+    "predecessor": "docs/audits/2026-08-19-codata-edition-straddle-corpus-sweep.md",
+    "register_premise_defect": "19 of the 40 undeclared-muon-pin register members hardcode q0, so the register's premise -- 'would resolve PROTON on re-run' -- does not hold for them. They are not at risk of that flip."
+  }
+}

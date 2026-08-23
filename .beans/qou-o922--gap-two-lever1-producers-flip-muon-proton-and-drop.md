@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-22T15:59:36Z
+updated_at: 2026-08-22T20:40:40Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -308,3 +308,113 @@ the thing itself rather than a proxy for it. That is the standing lesson for the
 remaining 40: the only trustworthy test touches the real committed state under
 the real default invocation. Budget accordingly -- it is one re-run per producer,
 not a static scan.
+
+
+## 2026-08-22 (cont.) — the drain's CHEAP PHASE IS OVER at 40
+
+Ran the corrected test (bare re-run, baseline from `git show HEAD:`) across all
+40 remaining. Result:
+
+    class (ii) label-only    1     <- and it is an AUDIT, freshness-confounded
+    depends on the pin      19
+    slow (>240s)             2
+    unresolved              14     <- witness not resolvable from emit site
+    error                    4
+
+**Essentially no more cheap wins.** The 19 that depend are genuine: their diffs
+land in `/data/proton_anchor/...` and `/data/muon_anchor/...` — producers that
+compute at both anchors on purpose and whose payload really does vary.
+
+**A SEVENTH confound, in the test I adopted as correct.** Bare-re-run-vs-committed
+cannot separate "depends on the pin" from "depends on anything else that drifted
+since the witness was committed". Corpus SCANNERS (compute_audit_scan,
+q0_anchor_consistency_audit) enumerate tree state, so 200+ commits of main make
+them differ for reasons that have nothing to do with q0. It errs CONSERVATIVE —
+over-reporting `depends`, under-claiming class (ii) — which is the safe
+direction, but it is not a verdict.
+
+So both tests are confounded, in opposite directions:
+
+    both-anchor env diff        isolates the anchor; blind when the producer
+                                gets q0 by a route the env var cannot reach
+    bare re-run vs committed    real before/after; blind to WHY it changed
+
+Neither is sound alone, which is the measured backing for "not automatable".
+
+## The 14 `unresolved` are a TOOLING gap, not producer defects
+
+My AST heuristic looks for a `wrap_legacy`/`WitnessBuilder` call with a literal
+first arg. These 14 build the name some other way. Resolving them needs the
+emit-site mapping, and that is worth building before any further drain — it is
+35 % of what remains and currently invisible to every sweep.
+
+## Recommended next step, and it is NOT more sweeping
+
+Stop trying to classify by re-running. Build the producer -> witness emit-site
+map first (fixes the 14), then read the 19 `depends` individually to separate
+"computes at the pin" (class i, needs a manifest entry) from "reads a muon
+witness for its q0" (label is TRUE, remove from the register entirely). The
+second category is invisible to both tests and may be a large share of the 19.
+
+
+## 2026-08-22 (final) — the drain stalls for a REASON, and it is a bigger finding
+
+Recovered the 14 the AST heuristic lost -- **the register already carried the
+mapping** (`{witness, producer_stem}`) in the data my sweep was reading. I
+rebuilt it badly instead of using it. EIGHTH error, and the most avoidable.
+(Checked: the heuristic never mis-resolved, only ever failed silently, so the
+26 classifications stand.)
+
+Those 14 yielded 5 more "class (ii) label-only" -- so the "cheap phase is over"
+call was premature, taken from a sweep that had silently dropped 35 % of the
+population.
+
+**But all 5 read q0 BY NAME, and none is class (ii).** Two signals disagreeing
+is what exposed the real category:
+
+    qbeta_composite4_fibre_root_of_unity_probe  Q0_STR = "1.10997859555733471989…"
+    trefoil_complex_volume_probe                Q0 = Decimal("1.1099785955573347")
+
+They HARDCODE the pin. So they do not respond to the anchor, their `muon` label
+is TRUE, and dispositioning them `independent` would replace a true label with
+a false one. **19 of the 40 are like this.**
+
+### The register's premise is wrong for ~half its members
+
+It flags producers that would "resolve PROTON on re-run". A producer whose q0
+is a literal never resolves. Those 19 are not at risk of that flip at all --
+they need neither `independent` nor a manifest entry; they need to LEAVE the
+register, and the register needs to stop claiming them.
+
+### The corpus-wide finding (now its own audit + ratchet)
+
+`computations/audits/hardcoded_q0_literal_families_audit.py`:
+
+    clean (truncated or correctly rounded)   221 sites, lengths 14..70
+    DIVERGENT                                 71 sites
+      char 13   65   the `…5541805…` CODATA-stale family
+      char 18/19/20  6
+
+Precision on the CLEAN sites alone spans 56 characters for one constant.
+
+**NINTH error, caught before it shipped:** my first pass called 75 correctly-
+ROUNDED sites divergent -- it would have reported the corpus's largest correct
+family as defective. Rounding is not divergence.
+
+**And the count is SITES, not defects** -- not yet split code-that-computes vs
+documentation. The predecessor CODATA sweep made that exact mistake and had to
+correct itself ("wrong for 87 % of its own count"). Do not quote 65 as defects.
+
+## Where this leaves the drain
+
+Not "40 producers to disposition". Three separate problems:
+
+  1. ~19 hardcode the pin -> the REGISTER's filter is wrong for them; fix the
+     filter, do not relabel the producers.
+  2. ~19 genuinely depend -> real class (i), still need per-producer reads.
+  3. 71 divergent literals corpus-wide -> a migration to READING the pin, which
+     is the CODATA sweep's lesson one layer down and much larger than this bean.
+
+(3) should not ride on this bean. It wants its own arc, and it is gated on
+A-vs-C (bean qou-bred) since you cannot migrate sites to read a pin before
+ruling which pin.

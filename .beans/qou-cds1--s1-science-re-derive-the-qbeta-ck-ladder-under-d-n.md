@@ -6,6 +6,10 @@ type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
 updated_at: 2026-08-22T19:31:51Z
+
+updated_at: 2026-08-22T12:44:58Z
+
+updated_at: 2026-08-22T14:07:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1108,3 +1112,72 @@ the transport a D re-derivation must supply. SCOPE: locates, closes nothing; the
 legs forced+formalized, c2 settled, c3 proven un-forceable (f-map), residual
 closure forbidden as fitting. No legitimate derivation move remains that isn't
 already done or a forbidden fit.
+
+
+## 2026-08-22 — the N=3 rung is frame-invariant, and that REMOVES its evidence (PR #5448)
+
+Formalize-first step for N=3, per this bean's own fence. No extractor run, no c_k proposed.
+
+**Constraint.** `decayLadder_zC_not_jones` already proves C != D for s > 1 (the Jones
+pin z*[2]_q = q^2 IS z_D). The complementary half was never recorded: s = 1 IS a root
+of that locus, so **C and D define the same Markov parameter at q = 1**, and by the
+factorisation (s-1)(s^6+s^5+2s^4+s^3+s^2+s+1) at no other positive point.
+
+**Prunes:** c_2 = -1 (ring identity, z-free) and c_3 = J_Hopf(q=1) = -2 (evaluated at
+the one coincidence point) are UNMOVED by the ruling. The extraction, c_4, c_5 are all
+at q_0 != 1 and still need re-deriving.
+
+**This is a negative.** c_3 = -2 surviving is not evidence for it: its only support was
+the 3.47% C-frame near-match, which does not transfer (under D the same value sits
+~4.7e4% from re-extraction). The ruling does not refute the closed form, it removes its
+support. Scope-(a). -974 stays a sensitivity measurement.
+
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice, Quot.sound] on
+all six) QOU/QBeta/MarkovZClassicalCoincidence.lean: coincidenceLocus_factor (generic
+CommRing), zCsub_one, zDsub_one, zCsub_eq_zDsub_one, coincidenceLocus_cofactor_pos,
+zCsub_eq_zDsub_iff (SHARPER than the existing s>1 result — also rules out 0<s<1).
+
+PROBE: computations/qbeta/qbeta_zcd_classical_coincidence_probe.py, 7/7 exact ℚ, no
+float. The locus is DERIVED from the numerator of z_C - z_D, not asserted (my first
+draft asserted it, with a comment misstating z_C(s^2) as s/(s^4+1); it is s/(s^2+1)).
+
+STILL OPEN: the extraction path, c_4, c_5.
+
+
+## 2026-08-22 (2) — CORRECTION to my own entry above, and the real S1 residual
+
+Correcting the entry I wrote an hour ago. Found while corpus-grepping c_4/c_5
+before working them.
+
+**tail_common is the primary result, not my q=1 coincidence.**
+QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common (already in corpus,
+sorry-free) proves z reaches the ladder ONLY via the N=1 eigenphase, so the
+whole N=2..5 tail is phase-blind. markovZ' is hardcoded to z_C, so alpha is the
+C-frame phase and is the sole entry point.
+
+**My c_4/c_5 claim was WRONG.** I wrote that they 'must be re-derived, being
+evaluated at q_0 != 1'. They must not — they are in the phase-blind tail. The
+error: reasoning about where a coefficient is EVALUATED instead of whether z
+enters its rung at all.
+
+**What my result does cover (narrower, still needed).** tail_common is about the
+WRITTEN FORM; it says nothing about the PROVENANCE of the constants in it.
+c_3 = J_Hopf(q=1) is a Markov trace, and a Markov trace DOES depend on z — so a
+z-free written form does not establish that -2 survives. The q=1 coincidence
+does. Complementary; neither subsumes the other.
+
+**The -974 is NOT mine and is already known.** qbeta_ladder_required_phase_probe.py
+already records that it is the N=1 phase residual magnified by 1/u^3 (a fixed
+magnifier common to both frames), and warns it 'overstates what it measures'. I
+reconstructed it independently before checking — holding the tail fixed and
+pushing cos(alpha_D - u/2)/cos(alpha_C - u/2) into the N=3 rung gives -974.4319
+vs the recorded -974.43, 1.9e-6 relative — and record that as a cross-check of
+theirs, not as a finding.
+
+**THE REAL S1 RESIDUAL: the tail is fine; the PHASE is the job.**
+alpha = (z-1)h/2 is ASSERTED in both frames and derived in neither (a literal at
+probe_q_beta_operator_valued_N3.py:70). There is no C-frame derivation to port
+to D. Deriving alpha is what tranche S1 actually needs — not a tail re-derivation.
+
+PR #5448 body + probe docstring + Lean header all corrected (commit 16847c7f5b).
+Probe now 8/8 (new assertion 7: markovZ' = z_C exactly).

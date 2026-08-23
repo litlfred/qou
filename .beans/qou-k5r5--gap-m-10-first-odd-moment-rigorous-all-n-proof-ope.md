@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T21:06:37Z
+updated_at: 2026-08-23T07:52:07Z
 ---
 
 
@@ -247,3 +247,35 @@ negative. Established results unaffected (kappa>0, M_1=Cov(Sum_h,omega3), n<=60)
 FRONTIER (precise): prove kappa_n>=kappa (n>=13) via EDGE-sensitive 2nd-order
 asymptotics (Tracy-Widom corrections), not bulk Kerov CLT. Audit:
 docs/audits/2026-08-22-covariance-kernel-M1-sign-attempt-wall.md.
+
+
+
+CORRECTION + EXTEND (2026-08-23, PR #5506).
+(1) M_1>0 exact for 60<n<=67 (kappa_n>kappa all 13<=n<=67; crossing n_0=13; gap
+declining, no recrossing).
+(2) CORRECTS the #5489 'edge-sensitive' claim. Scaling: edge enters Sum_h via
+lambda_1^2 (dSum_h~n^{2/3} chi) and omega3 via extreme content ~2sqrt(n)
+(dOmega3~4n*n^{1/6} chi=n^{7/6} chi), same chi => Cov_edge~n^{11/6}, rel order
+n^{-2/3}. Bulk 2nd-order ~n^{-1/2}. -2/3<-1/2 => EDGE SUBLEADING, correction is
+BULK-dominated, NOT Tracy-Widom. Sign proof = bulk 2nd-order Kerov-CLT (more
+tractable). RETRACTS 'edge-sensitive wall'.
+HONEST: kappa_n-kappa>0 exact; 2-term fit a1~0.013-0.015>0 BUT 3-term collapses a1
+to ~0.002 (deeply pre-asymptotic, peak n~32). NO specific a1/exponent claimed.
+FRONTIER (corrected): prove bulk n^{-1/2} coeff of kappa_n >=0 (c_N>c_P), bulk not
+edge. Open. Audit: docs/audits/2026-08-23-covariance-kernel-M1-correction-bulk-not-edge.md
+
+
+
+LEAN + HONEST WALK-BACK (2026-08-23, PR #5506).
+(1) M_1>0 LEAN-PROVED finite base: m1_pos_of_le_seven (0 < scaledCov k Sum_h contentSq,
+    3<=k<=7, decide) in YoungDiagramKernel.lean, verified lean-direct exit 0. Answers
+    'M_1>0 symbolic/Lean?': finite cases YES (now formalized), all-n NO (open).
+(2) WALK BACK my own 'bulk-dominated' claim (and last session's 'edge-sensitive').
+    Measured effective exponent of kappa_n-kappa at high n (past peak ~32): beta~0.25
+    ->0.36 over n=40..64, STILL RISING, not converged; no (kappa_n-kappa)*n^beta flat
+    for beta in {1/2,2/3,1}. Correction ORDER UNDETERMINED at n<=67; edge (n^{-2/3})
+    vs bulk (n^{-1/2}) CANNOT be ranked. Only defensible: edge contributes at n^{-2/3}.
+    Both prior characterizations were over-claims.
+SOLID: M_1>0 exact n<=67; Lean-proved k<=7; kappa>0 derived; kappa_n>kappa emp n<=67.
+FRONTIER: prove kappa_n>=kappa asymptotically - 2nd-order Plancherel fluctuation of
+UNDETERMINED order (bulk and edge both plausible). Open.

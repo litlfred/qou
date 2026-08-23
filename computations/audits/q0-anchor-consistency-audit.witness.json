@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:48:02.429013+00:00",
-  "commitSha": "1b4674aa6b20db83760a0e4e98f59a4b085edefd",
+  "computedAt": "2026-08-23T08:05:04.189089+00:00",
+  "commitSha": "43b828231e4b20c13d87e0dc6f76fc03fef79529",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -46,7 +46,7 @@
     "counts": {
       "Q0_OK": 664,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 35,
+      "Q0_INDEPENDENT": 36,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -10787,13 +10787,11 @@
           "detail": ""
         }
       ],
-      "Q0_COMPARISON": [
-        {
-          "witness": "muon-pin-stored-vs-live.witness.json",
-          "detail": ""
-        }
-      ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "hardcoded-q0-literal-families.witness.json",
+          "detail": ""
+        },
         {
           "witness": "undeclared-muon-pin-flip-risk.witness.json",
           "detail": ""
@@ -10932,6 +10930,12 @@
         },
         {
           "witness": "z2bn-tau-derivation-probe.witness.json",
+          "detail": ""
+        }
+      ],
+      "Q0_COMPARISON": [
+        {
+          "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
         }
       ]

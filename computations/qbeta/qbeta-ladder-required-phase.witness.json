@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T12:24:20.224783+00:00",
-  "commitSha": "dc72de26dd4f66d2fcfc7ec263da3bf5c6c3a6c5",
+  "computedAt": "2026-08-22T15:22:38.765021+00:00",
+  "commitSha": "e36d2af08c752b721d3f55e2568d682155a28db7",
   "assertions": [
     {
       "name": "c3_ratio_equals_cosine_residual_ratio",
@@ -30,19 +30,19 @@
     },
     {
       "name": "cross_anchor_c3_swing_is_the_slope_mismatch",
-      "computed": "0.0492829876998026093518272127880790450683865089327771237738563",
-      "expected": "0.0491423420939126664973927673638660701199703848027522636578830",
+      "computed": "0.0496238839206232935873709900715454296935506103757455722573653",
+      "expected": "0.0494822652411623743864995613731682915482550767508353761256743",
       "passed": true,
       "tolerance": "0.001",
-      "source": "Predicted from the two slopes ALONE — Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no fibre content: 0.049282988 vs measured 0.049142342, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry §9g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c₃(p) − c₃(m)| by definition."
+      "source": "Predicted from the two slopes ALONE — Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no fibre content: 0.049623884 vs measured 0.049482265, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry §9g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c₃(p) − c₃(m)| by definition."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 61,
   "computation": "qbeta-ladder-required-phase",
   "scriptFile": "qbeta_ladder_required_phase_probe.py",
   "scriptHash": "fd7462029b7d",
-  "scriptCommitSha": "0b6a90c5dd3ad36269665ac468ca24baef71ed49",
+  "scriptCommitSha": "03f2cebd35f242460e2ee8addd487bd805ab74bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,10 +53,16 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_required_phase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_required_phase_probe.py"
   },
   "description": "Inverts the Q_β precision ladder for the phase α it requires (α_req = u/2 − arccos(Q_codata/(Q_A(1+c₂u²))), c₂ = −1 hardcoded as in the committed extraction), and reports each Markov convention's distance from it in RADIANS rather than in c₃ units. Shows that the reported c₃ swing −2.07 → −974 under C → D is a phase-error growth from ~4e-4 to ~29% magnified by the fixed 1/u³ factor, not a three-orders-of-magnitude failure. Establishes scope-(a) that the class 'α = (z−1)h/2 with z a convention parameter' cannot yield a D-frame ladder: the required window is ~1e-5 rad and z_D sits ~1e-2 away, so the functional form must change. Does NOT claim C's α is derived — the ladder inverts against CODATA and the eigenphase identification is axiomatised. No fit; nothing wired.",
   "data": {
@@ -91,28 +97,28 @@
       },
       {
         "anchor": "muon (ideal CAL-2 pin)",
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "u": "0.00851723634004395810711354481100800446027960281897626531559873",
-        "Q_A_MeV": "0.783645803903104078377230302042164820371889222242803593607099",
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "Q_A_MeV": "0.783645803740748837458177007581843905419000234584922785266931",
         "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
-        "alpha_required": "-0.0523581536288456681027991078402551668787783609371824727806447",
-        "alpha_window_for_c3_le_1": "0.0000109190042727659332525777657057021566770790567410206102954728",
+        "alpha_required": "-0.0523581499635160434626895776333973382680583331992507089800460",
+        "alpha_window_for_c3_le_1": "0.0000109190050253229102323936350853989865658702781152094102327814",
         "conventions": [
           {
             "convention": "C",
-            "z": "0.499320334033598250020669084676721506369316362634457905011652",
-            "alpha": "-0.0523361260903606214984978719186009478482274064726426866441063",
-            "alpha_minus_required": "0.0000220275384850466043012359216542190305509544645397861365384260",
-            "rel_dev_from_required": "-0.000420708847779364330186795332721358324030750085528804299403171",
-            "c3_implied": "-2.02020023502125517138232674988576251890206061330068660325496"
+            "z": "0.499320334032560016888283520491754597884981667929951720485360",
+            "alpha": "-0.0523361261306329914387156968056517003995486652718903362771579",
+            "alpha_minus_required": "0.0000220238328830520239738808277456378685096679273603727028881475",
+            "rel_dev_from_required": "-0.000420638103110949608527371827067965966119529064043546481836104",
+            "c3_implied": "-2.01986031187400546349321995587646029747377592135260349078716"
           },
           {
             "convention": "D",
-            "z": "0.612688050545589099835762887388501763970911626503900470956967",
-            "alpha": "-0.0404857804317335307291900127654839904527031602782650757509316",
-            "alpha_minus_required": "0.0118723731971121373736090950747711764260752006589173970297131",
-            "rel_dev_from_required": "-0.226753091433905968693727657714579433573877900524187703429076",
-            "c3_implied": "-974.382488777801185312024896009083898234779926137542346873587"
+            "z": "0.612688050638272415220888927646110664831964631360779679271089",
+            "alpha": "-0.0404857804531149677547457030413503104416742328894548552388957",
+            "alpha_minus_required": "0.0118723695104010757079438745920470278263841003097958537411503",
+            "rel_dev_from_required": "-0.226753036894426629869529049977690584006967352726600008968986",
+            "c3_implied": "-974.382147079536184945277477315145234783021511164620054144175"
           }
         ]
       }
@@ -142,10 +148,10 @@
     "cross_anchor_swing": {
       "dc3_dalpha": "-91694.7038579826962696408427586630615026977797393010128404697",
       "slope_mismatch_rad_per_q": "-41.9805208760726034228137860987146136833735372807761577629272",
-      "delta_q_muon_minus_proton": "0.0000000128027997676899249839987404981187831580851074893939374489719",
-      "predicted_swing": "0.0492829876998026093518272127880790450683865089327771237738563",
-      "observed_swing": "0.0491423420939126664973927673638660701199703848027522636578830",
-      "rel_agreement": "0.00286200453411773450088765944288294753986446471684415734925024"
+      "delta_q_muon_minus_proton": "0.0000000128913582390901260337692328728255664391554328209012315298173",
+      "predicted_swing": "0.0496238839206232935873709900715454296935506103757455722573653",
+      "observed_swing": "0.0494822652411623743864995613731682915482550767508353761256743",
+      "rel_agreement": "0.00286200881812322776206246245770439667049248743000103372214306"
     }
   }
 }

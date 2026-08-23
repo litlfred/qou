@@ -295,6 +295,24 @@ theorem m1_eq_cov_rowSq_contentSq_of_le_five (k : ℕ) (hk : k ≤ 5) :
       = scaledCov k rowSqSum contentSq := by
   interval_cases k <;> exact ⟨by decide, by decide⟩
 
+set_option maxRecDepth 1000000 in
+set_option maxHeartbeats 8000000 in
+/-- **`M₁ > 0` — the first odd hook-power moment, Lean-verified base cases `3 ≤ k ≤ 7`** (`decide`).
+The `(k!)²`-scaled Plancherel covariance `scaledCov k (Σ□ h) (Σ□ c²) = (k!)²·Cov_Planch(Σ□ h, Σ□ c²)`
+(same sign as `M₁`, since `(k!)² > 0`) is **strictly positive** for every `3 ≤ k ≤ 7`. Machine-checked
+over the full partition / SYT-dimension / hook / content machinery.
+
+This certifies the **finite base** of the one-sided reduction of the all-`n` conjecture
+`M₁(n) > 0 ⟸ (exact `M₁>0` for small `n`) ∧ (κ_n ≥ κ for `n ≥ 13`)` (bean `qou-k5r5`), where
+`κ_n = M₁/n^{5/2} → κ = 128/(225π²)` (derived). Unlike the **even** moments (`threeM4_pos`, `M6_pos`,
+exact polynomials with manifest-positive factorisations), `M₁` is **non-polynomial**, so its all-`n`
+positivity is **open**: the remaining content is the *sign* `κ_n → κ` from above, a **bulk**
+second-order Kerov–CLT statement (edge/Tracy–Widom is subleading, `n^{-2/3}`), not settled here.
+Exact `Fraction` computation independently verifies `M₁ > 0` for all `n ≤ 67`. -/
+theorem m1_pos_of_le_seven (k : ℕ) (hk3 : 3 ≤ k) (hk : k ≤ 7) :
+    0 < scaledCov k (fun l => (hookSum l : ℤ)) contentSq := by
+  interval_cases k <;> decide
+
 /-! ## Even hook-power moment positivity (proved)
 
 The even hook-power moments of the covariance measure,

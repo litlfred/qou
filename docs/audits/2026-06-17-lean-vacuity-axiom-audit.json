@@ -1,10 +1,10 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T07:53:37.802Z",
+  "generated": "2026-08-23T08:07:04.124Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3038,
-  "files_flagged": 140,
-  "total_defects": 127,
+  "scanned_files": 3041,
+  "files_flagged": 142,
+  "total_defects": 129,
   "total_exempt": 45,
   "total_promoted_from_exempt": 78,
   "categories": {
@@ -12,7 +12,7 @@
     "proof-docstring-sorry-mismatch": 1,
     "proof-no-trivial-true": 2,
     "proof-no-provable-axiom": 1,
-    "proof-claims-unencoded": 3,
+    "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
@@ -2704,6 +2704,17 @@
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean": [
+      {
+        "line": 70,
+        "category": "proof-claims-unencoded",
+        "pattern": "tautological-field",
+        "snippet": "class TransferMatrixEigenphase (q : ℝ) : Prop where",
+        "decl": "TransferMatrixEigenphase",
+        "severity": "major",
+        "detail": "every field is a tautology about the subject (symmetrized_character_in_unit_disc, cos_eigenphase_bar_invariant) — each holds for an arbitrary substitution, so the carrier is equivalent to True and any [TransferMatrixEigenphase]-conditional result is unconditional. Encode the real property, or demote per §3b-tax"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean": [
       {
         "line": 32,
@@ -3180,6 +3191,17 @@
         "exempt": false,
         "detail": "the projected field `inst.cpt_trace_preserved` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
+      }
+    ],
+    "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean": [
+      {
+        "line": 97,
+        "category": "proof-claims-unencoded",
+        "pattern": "tautological-field",
+        "snippet": "class TransferMatrixEigenphase (q : ℝ) : Prop where",
+        "decl": "TransferMatrixEigenphase",
+        "severity": "major",
+        "detail": "every field is a tautology about the subject (symmetrized_character_in_unit_disc, cos_eigenphase_bar_invariant) — each holds for an arbitrary substitution, so the carrier is equivalent to True and any [TransferMatrixEigenphase]-conditional result is unconditional. Encode the real property, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [
