@@ -33,10 +33,14 @@ hook-length formula did in `QOU.BraidKnot.HookProductHLF`.
 
 ## Honest axiom status
 
-`burnside_proved` is **not** sorry-free: `OVTopAssembly.sum_numSYT_sq_eq_factorial`
-carries `sorryAx`, sourced from two named, honest sorries —
-`SnWedderburnPartitionBridge:234` (`sn_rational_specht_split`) and
-`JucysMurphy:840` (`centralC2_acts_by_contentSqSum`).
+**Correction (2026-08-23).** The paragraph that stood here said `burnside_proved` is *not*
+sorry-free, because `OVTopAssembly.sum_numSYT_sq_eq_factorial` carried `sorryAx` from two named
+sorries. That is no longer the state of the world, and neither half of it is:
+`centralC2_acts_by_contentSqSum` is proved, and `sn_rational_specht_split`'s `sorry` was replaced
+by the class `SnIsotypicSpechtSplit`, which is now **inhabited**
+(`SnIsotypicSpechtSplitInstance`, from the RSK correspondence rather than from any assumption).
+Measured: `#print axioms` on `burnside_proved` reports `[propext, Classical.choice, Quot.sound]`.
+A hypothesis-free restatement is checked in `WedderburnUnconditional`.
 
 That is still a strict improvement over the projection it replaces. Before, the
 burnside claim was *assumed wholesale* through an instance nobody could provide.
