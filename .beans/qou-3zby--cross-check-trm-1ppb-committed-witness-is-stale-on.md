@@ -81,32 +81,62 @@ Neither is drained here. The gate is still red at 6/6 divergent, correctly:
 this makes the reason legible, it does not make the number green.
 
 
-## Cross-link + a THIRD hypothesis, from the #5471 merge (2026-08-23)
+## RETRACTED — my 2026-08-23 framing was wrong (never merged)
 
-**Cross-link:** `qou-dau6` is the same failing gate with a DIFFERENT
-root-cause hypothesis — *"peel witness computed at proton q0 but the gate
-expects the muon pin"*. Two beans, two diagnoses, one red. They should be
-adjudicated together; whichever is right changes the fix.
+I appended a section here claiming this bean and `qou-dau6` were **competing
+hypotheses with no adjudication between them**, and offered a **third**
+candidate (import-cone drift). Both claims are false. The append was caught
+before its PR (#5514) merged, so it never reached `main`; this replaces it.
 
-**New datum.** The #5471 prepare-merge agent re-ran the audit witnesses in a
-fresh container and reported `hoefsmit_50dps` moving **0.388 -> 0.575** on a
-bare re-run, alongside `sympy 1.12 -> 1.14.0` and an added
-`pyhecke_native_build` stamp. It correctly declined to commit that.
+### 1. The adjudication EXISTS, and predates my append by two days
 
-**Why this matters here, stated as a HYPOTHESIS not a finding.** AGENTS.md
-documents `0.388 -> 0.575` (48 %) by those exact digits as the canonical
-**import-cone drift** example: source-stable producer, moved number, because
-`tr_m_atom_via_transfer.py` — which computes the quantity — changed
-underneath it. This bean's own tell is `hoef_vs_chi` collapsing **7 orders**
-(0.481 -> 1.45e-07) while peel and habiro stayed put. Both observations point
-at the **Hoefsmit/transfer cone** having moved.
+`667c9ab3f6` on `main` (2026-08-21) — *"the tr_M cross-check is red for TWO
+reasons; the guard saw one"*. I did not grep for it. That is the corpus-grep
+checklist, skipped.
 
-So the C/D straddle recorded above may be a *symptom* of import-cone drift in
-that cone rather than a convention straddle per se. **Not verified** — the
-distinguishing test is whether the Hoefsmit leg moves under
-`witness_import_cone_staleness_audit.py` with the producer source held
-byte-stable. Run that before adopting either diagnosis.
+### 2. The two beans are BOTH RIGHT — the red has two simultaneous causes
 
-**Do not re-run-and-commit to 'fix' this.** Two of the three candidate causes
-here (environment, import cone) produce a moved number that is not a result.
-AGENTS.md: a `substantive` verdict is not a work order — measured, 39 %.
+Classified from ratios alone, no external reference value needed:
+
+    method       convention   pin      recorded q0
+    Hoefsmit         D        muon         NO
+    chi-cache        D        muon         yes
+    markov_peel      C        muon         yes
+    Habiro           C       PROTON        NO
+
+    Hoefsmit vs chi-cache  3.22e-09   same convention, same pin
+    peel     vs Habiro     1.821e-04  same convention, DIFFERENT pin
+    Hoefsmit / peel        1.4810393  the C->D ratio
+
+So: a **C/D convention straddle** (this bean) AND a **muon/proton pin
+mismatch** (`qou-dau6`). Not either/or. My "pick one" framing was the defect.
+
+### 3. My third hypothesis is WITHDRAWN — it was cause (1) all along
+
+I cited `hoefsmit_50dps` moving `0.388 -> 0.575` on a bare re-run as evidence
+of import-cone drift, because AGENTS.md uses those exact digits as its
+canonical import-cone example. Measured:
+
+    0.575 / 0.388            = 1.48196
+    C->D ratio (above)       = 1.4810393
+    3-sig-fig band of inputs = [1.47876, 1.48516]   contains it
+
+**The move IS the convention change.** I pattern-matched the digits instead
+of dividing them, which took one line. Note the failure mode: the append was
+correctly hedged as "HYPOTHESIS not a finding", and the reviewing agent
+passed it on that hedge. **A well-labelled claim is not a true one**, and the
+label is not a substitute for the check.
+
+### What is actually open (from `667c9ab3f6`, which drained none of it)
+
+The gate stays red at 6/6 **correctly** — that commit made the reason
+legible, not the number green. Two independent fixes, neither done:
+
+1. **Pin straddle** — regenerate `habiro-coefficients-extended` under
+   `QOU_Q0_ANCHOR=ideal`. Blocked: see `qou-iayk`.
+2. **C->D split** — belongs to the convention-D cascade (`qou-cds1`), not
+   here.
+
+`cross-check-trM-1ppb.witness.json` is deliberately NOT regenerated. Do not
+"fix" this red by re-running and committing: until both causes are drained, a
+re-run records the straddle rather than resolving it.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-08-21T15:08:16Z
+updated_at: 2026-08-23T08:14:21Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -72,3 +72,36 @@ Which copy a consumer gets depends on how it resolves the name --
 _path_bridge.witness_path vs rglob vs a hardcoded path. That is not a
 theoretical risk: it already produced one wrong reading (qou-3zby probe,
 caught pre-commit).
+
+
+## Correction: the two copies are NOT payload-identical (2026-08-23)
+
+Commit `667c9ab3f6`, which flagged this duplicate, describes the two files
+as having *"identical payload and scriptHash but different q0Anchor"*. The
+scriptHash half is right; **the payload half is wrong**, and it is wrong on
+the field that matters.
+
+Measured on both files:
+
+    same scriptHash   : True   (6fdad0d63cff)
+    payload identical : False
+    file size         : 23857 B  (computations/)  vs  1892 B  (computations/habiro/)
+
+    only in A         : q0Anchor
+    only in B         : engineVersion
+    shared keys DIFFERING: results, commitSha, computedAt, engine, scriptCommitSha
+
+**`results` differs.** So this is not a benign copy that merely disagrees
+about its anchor label — the two files disagree about the numbers, while
+advertising the same producer hash. A consumer resolving the wrong path gets
+different mathematics, not just a different label, and `scriptHash` gives no
+warning because it matches.
+
+That raises the priority of this bean: the duplicate is a correctness hazard,
+not a tidiness issue. It also means whichever copy is regenerated to drain the
+pin straddle (`qou-3zby` / `qou-dau6`), the OTHER copy stays stale and
+silently wrong.
+
+Note the 12x size difference suggests one is a truncated or partial write
+rather than a full second run — worth establishing which is authoritative
+before deleting either.
