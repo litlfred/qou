@@ -12,7 +12,8 @@ import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 conditionally on it — `OVTopAssembly`, `RSKBurnsideDischarge`, `BurnsideDischarge`,
 `PieceASpechtCharacter`, `PlancherelNormalisation` — and until now **nothing inhabited it**.
 
-**`instance : SnIsotypicSpechtSplit ℚ`.** Everything it needs is proved:
+**`instance : SnIsotypicSpechtSplit k`** for any characteristic-zero field `k`. Everything it needs
+is proved:
 
 * the split itself, for every `n`, is `SpechtWedderburnGeneral.spechtEquiv` — which exists because
   `QOU.Mathlib.rskBurnsideHolds` (epic `qou-nrex`, brick 42) discharged the count;
@@ -23,7 +24,7 @@ conditionally on it — `OVTopAssembly`, `RSKBurnsideDischarge`, `BurnsideDischa
 ## What this discharges
 
 Every `[SnIsotypicSpechtSplit ℚ]` hypothesis in the corpus is now satisfiable by instance
-resolution, so the results carrying it are unconditional at `ℚ`.
+resolution, so the results carrying it are unconditional.
 
 Note the direction of the dependency, because it is the reverse of the one the corpus previously
 had: `RSKBurnsideDischarge.rskBurnsideHolds` derives the RSK/Burnside identity *from* this class.
@@ -33,8 +34,9 @@ in this chain.
 
 ## Base ring
 
-`ℚ` only, matching the class's use sites. The construction is generic in a characteristic-zero
-field; only the instance declaration is specialised.
+Any characteristic-zero field. The class's use sites are all at `ℚ`, but the construction is
+generic — the split, the matrix form and the `C₂` alignment never mention `ℚ` — so the instance is
+stated where it actually holds.
 -/
 
 namespace QOU.BraidKnot.SnIsotypicSpechtSplitInstance
@@ -77,9 +79,12 @@ theorem matrixSplit_centralC2 (n : ℕ) :
     SpechtCentralC2Scalar.spechtProduct_centralC2, map_zsmul, map_one,
     Int.cast_smul_eq_zsmul]
 
-/-- **The keystone class is inhabited at `ℚ`.** -/
-instance instSnIsotypicSpechtSplitRat :
-    QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ where
-  exists_split n := ⟨matrixSplit (k := ℚ) n, matrixSplit_centralC2 (k := ℚ) n⟩
+/-- **The keystone class is inhabited**, over any characteristic-zero field.
+
+The class's use sites are all at `ℚ`, but nothing in the construction is: the split, the matrix
+form and the `C₂` alignment are all generic, so the instance is stated where it actually holds. -/
+instance instSnIsotypicSpechtSplit :
+    QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit k where
+  exists_split n := ⟨matrixSplit (k := k) n, matrixSplit_centralC2 (k := k) n⟩
 
 end QOU.BraidKnot.SnIsotypicSpechtSplitInstance
