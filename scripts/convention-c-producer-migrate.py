@@ -146,6 +146,66 @@ def _is_inverse_name(base: str, other: str) -> bool:
     return False
 
 
+# ---------------------------------------------------------------------------
+# File-level guards.  Both were added after MEASURING that `--apply` did the
+# wrong thing; neither is speculative.  See
+# `computations/qbeta/qbeta_convention_c_migration_safety_probe.py`.
+#
+# G1  DELIBERATE C REFERENCE ELSEWHERE IN THE FILE.  The per-site `DELIBERATE`
+#     check reads the TARGET NAME only, so it misses a C value bound to a
+#     neutral name and then compared against a C reference.  Measured:
+#     `qbeta_zcd_classical_coincidence_probe.py:213` binds `markovZ_prime`
+#     (not C-named) purely to assert `markovZ_prime - z_C(q) == 0`.  Rewriting
+#     it took that probe from 8/8 exit 0 to FAILED 1/8 exit 1, printing the
+#     self-refuting line "1/(sqrt q + 1/sqrt q) = q**3/(q**2 + 1) = z_C".
+#
+# G2  THE VALUE FEEDS THE LADDER PHASE `alpha = (z - 1) * h / 2`.  Substituting
+#     z_D there is the one move the corpus PROVES is not a migration
+#     (`QOU.QBeta.decayLadder_zC_threeRow_ne_zero`, sorry-free): the ladder must
+#     be RE-DERIVED, not re-evaluated.  Measured, and this is the dangerous
+#     one because nothing fails: `qbeta_h_frame_rungs_probe.py:73` still exits
+#     0 with all 3 assertions passing, while silently moving 14 mathematical
+#     fields of a COMMITTED witness — including `h^3` from `-sqrt(3)/64` to
+#     `1/16 - sqrt(3)/64` (a sign change), and the h^6 rung from purely
+#     rational to irrational, contradicting that probe's own headline finding.
+
+def _file_has_c_reference(tree: ast.AST) -> bool:
+    """G1: does anything in this file mention a deliberately C-named symbol?"""
+    for node in ast.walk(tree):
+        nm = None
+        if isinstance(node, ast.Name):
+            nm = node.id
+        elif isinstance(node, ast.Attribute):
+            nm = node.attr
+        if nm and DELIBERATE.search(nm):
+            return True
+    return False
+
+
+def _ladder_phase_targets(tree: ast.AST) -> set:
+    """G2: names `N` used as `(N - 1) * <anything> / 2` — the ladder phase."""
+    hits = set()
+    for node in ast.walk(tree):
+        # match  X / 2  where X is a Mult
+        if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+            continue
+        if not (isinstance(node.right, ast.Constant) and node.right.value == 2):
+            continue
+        mult = node.left
+        if not (isinstance(mult, ast.BinOp) and isinstance(mult.op, ast.Mult)):
+            continue
+        for side in (mult.left, mult.right):
+            inner = side
+            while isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Mult):
+                inner = inner.left
+            if (isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Sub)
+                    and isinstance(inner.left, ast.Name)
+                    and isinstance(inner.right, ast.Constant)
+                    and inner.right.value == 1):
+                hits.add(inner.left.id)
+    return hits
+
+
 def migrate_file(path: pathlib.Path, apply: bool):
     """Return (rewritten, skipped) lists of (lineno, target, old, new_or_reason)."""
     try:
@@ -155,6 +215,8 @@ def migrate_file(path: pathlib.Path, apply: bool):
         return [], []
 
     edits, skipped = [], []
+    file_has_c_ref = _file_has_c_reference(tree)
+    phase_targets = _ladder_phase_targets(tree)
     for n in ast.walk(tree):
         if not isinstance(n, (ast.Assign, ast.AnnAssign)):
             continue
@@ -176,6 +238,16 @@ def migrate_file(path: pathlib.Path, apply: bool):
         nm = names[0]
         if DELIBERATE.search(nm):
             skipped.append((n.lineno, nm, old_src, "deliberately C-named"))
+            continue
+        if nm in phase_targets:
+            skipped.append((n.lineno, nm, old_src,
+                            "G2: feeds the ladder phase (z-1)*h/2 — a z-swap "
+                            "here is NOT a migration; re-derivation required"))
+            continue
+        if file_has_c_ref:
+            skipped.append((n.lineno, nm, old_src,
+                            "G1: file also references a deliberately C-named "
+                            "symbol — likely a C-vs-D comparison; needs a human"))
             continue
         base = recover_base(n.value)
         if base is None:
