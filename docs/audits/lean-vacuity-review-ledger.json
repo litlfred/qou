@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-23T17:08:25.710Z",
+  "updated_at": "2026-08-23T18:43:29.000Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -1625,6 +1625,176 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "New candidate, NOT mine -- a sibling's landed work (bean `qou-cds1`) already demonstrates it, in `QOU/QBeta/EigenphaseCarrierVacuity.lean`. The docstring axiomatises a spectral identification (`M_beta` has spectrum {e^{+i.alpha}, e^{-i.alpha}} on the 2-d irrep of H_3(q), alpha = (z-1)h/2); the two fields encode `-2 <= 2cos(theta) <= 2` and `cos(theta) = cos(-theta)`, both true of EVERY real. So the carrier is inhabited for every q by a proof using nothing about the eigenphase, and `[TransferMatrixEigenphase q] -> P` is just `P`. Owned by that bean, not re-derived here.",
       "reviewed_at": "2026-08-23T17:07:13.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean::mobius_frobenius_kernel::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 80,
+      "verdict": "genuine",
+      "file_sha": "5ef9a2738f29",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "The docstring states \"neither of which is yet formalised; the body is a `sorry` carrying the manuscript citation per AGENTS.md §1\". The body is `ctx.classical_limit s t hst` -- a class-field projection. The `sorry` was replaced by an assumption and the prose was left behind. This is the MISLEADING direction of the mismatch: a reader (and the has_sorry status derivation) sees an honestly-open declaration, while the Lean silently discharges it from an assumed field. Contrast `identityB_general`, where the docstring over-claimed a caveat that no longer applied. Not this branch's file; surfaced by regenerating against main.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean::skein_mass_from_linking::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 86,
+      "verdict": "genuine",
+      "file_sha": "1abc1e2c4452",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Body: `ctx.mass_identity`, whose field type is the stated Skein mass identity character-for-character.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean::shell_filling_rule::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 164,
+      "verdict": "advisory",
+      "file_sha": "78d5c87f08ee",
+      "disposition": "clarify-docstring-scope",
+      "evidence": "NOT a defect, and the one of these three that is genuinely different. The docstring is ACCURATE: it says the unproved conjuncts \"carry honest `sorry`s in their named sub-theorems ..., not projected conclusion fields\", and the body is `⟨shell_filling_inner_shells, shell_filling_hund_rule, shell_filling_lp_strong_duality⟩` -- named sub-theorems, no `ctx.` field. Consistent with its absence from the self-assuming-projection list. The detector fires only because this declaration's docstring mentions `sorry` while this declaration's own body has none; the sorries are upstream, which is what the docstring says. Same class as `identityB_general`.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean::bare_is_lp_unstable::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 97,
+      "verdict": "genuine",
+      "file_sha": "495a56be5214",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Body: `ctx.bare_unstable`; the field IS `∃ X, normalised X ∧ bareVolume X = 0`.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean::dressed_is_lp_stable::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 105,
+      "verdict": "genuine",
+      "file_sha": "495a56be5214",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Body: `ctx.dressed_stable`; the field IS the negation. Note the pair asserts BOTH the instability and its negation for the dressed volume as separate assumed fields, so the context supplies the whole content of the proposition.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean::confinement_frobenius_reciprocity::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 104,
+      "verdict": "genuine",
+      "file_sha": "cda55cb655eb",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Tuple projection: the five-conjunct conclusion (reciprocity formula + four LP supporting facts) is assembled from five fields.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 113,
+      "verdict": "genuine",
+      "file_sha": "4a035691e197",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Body: `⟨ctx.proton_net_match, ctx.neutron_net_match⟩`.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 113,
+      "verdict": "genuine",
+      "file_sha": "4a035691e197",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "Same shape as `mobius_frobenius_kernel`, and the sharper of this declaration's two entries. The docstring says \"Honest `sorry`: ... the specific NF net values ~0.999 / 0.811 ... not yet formalised in Lean (it lives in the Hecke / Gröbner-Shirshov compute engine)\". There is no `sorry`: the body is `⟨ctx.proton_net_match, ctx.neutron_net_match⟩`, so those very values are ASSUMED as context fields. The prose names the gap correctly and the Lean assumes past it.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean::lp_dual_stability::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 85,
+      "verdict": "genuine",
+      "file_sha": "8cd262cd7531",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Tuple projection of four fields, one per conjunct of the stated four-part claim -- including `strong_duality`, which is assumed rather than derived from the primal/dual pair.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-23",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean::parity_regime_selection::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 70,
+      "verdict": "genuine",
+      "file_sha": "81eb47e935f7",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Body: `⟨ctx.sign_identity, ctx.odd_regime, ctx.even_regime, ctx.neutron_regime⟩` -- one field per regime, so the case split the theorem appears to perform is assumed.",
+      "reviewed_at": "2026-08-23T18:43:29.000Z",
       "reviewer": {
         "agent_date": "2026-08-23",
         "agent_model": "claude-opus-5",
