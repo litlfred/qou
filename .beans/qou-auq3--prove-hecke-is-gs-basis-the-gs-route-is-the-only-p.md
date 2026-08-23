@@ -3856,3 +3856,40 @@ carry that caveat forward as if it were justified.
 
 **Next:** measure the U-side endpoint at `a = 2` (the only stretch that does not
 transfer), then `a = 1` from scratch.
+
+### `a = 2`'s U side is a different SCRIPT, not a different target word
+
+Last entry guessed the `a = 2` case "may close with one new target word rather
+than a new construction". **Measured, and that is wrong.**
+
+Tracing the U lineage in isolation at `a = 2`, `b ∈ {2,3,4}`:
+
+    a=2 b=2:  Y(j₁,jp)  Q(j₁)  F(i,j₁)  Y(jp,i)  Y(j₁,jp)
+    a=2 b=3:  Y(j₁,jp)  Q(j₁)  F  F  F  Y(jp,i)  B(j₁,jp,j₂)
+    a=2 b=4:  Y(j₁,jp)  Q(j₁)  F  F  F  F  F  Y(jp,i)  B(j₁,jp,j₂)
+
+That is not `loop, trio`. The U side **opens with `quadPair`** — `Y(j₁,jp)` then
+`Q(j₁)` — where the `a ≥ 3` construction opens with a loop and reaches
+`quadPair` only inside the trio. Then a far-commutation transport of growing
+length, then a Yang–Baxter and a Bokut–Shiao step.
+
+Its endpoint is `bsWord₂ i₂ i₁ j₂ ++ [σᵢ, σᵢ₋₁]` (rel `[2,1] ++ descWord i₂ j₂
+++ [0,1]`, uniform in `b`) — **not** `WStar`, which at `a = 2` would be
+`bsWord₂ i₂ i₁ j₁ ++ (σᵢ :: descWord i₁ j₂)`, one letter longer. So neither the
+target nor the route transfers.
+
+**Revised scope for `a = 2`:** two of five stretches transfer unchanged (`s1`,
+`s2`; and the V loop is trivial since `V2L = V2`). The U side and both trios do
+not. It is a smaller job than `a = 1` but it is a construction, not a
+substitution.
+
+Why the U side differs is visible in the indices: at `a = 2`, `descWord i j₁` is
+only three letters (`j₁ = i₂`), so `U0` carries a braid redex `[σ_jp, σ_j₁,
+σ_jp]` from the start — the quadratic pair is *already present* rather than
+being produced by a loop pass. The `a ≥ 3` construction spends its loop building
+exactly that.
+
+**Standing correction to three probes:** the caveat *"a = 2 is excluded
+throughout this arc"* still records no reason, and now has a measured one — the
+U-side script differs. Whoever next edits those probes should replace the bare
+caveat with this.
