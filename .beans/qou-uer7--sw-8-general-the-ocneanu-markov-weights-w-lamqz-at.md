@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T22:59:25Z
+updated_at: 2026-08-23T23:41:05Z
 parent: qou-59vq
 ---
 
@@ -710,3 +710,33 @@ The natural next item is that uniqueness: a Markov trace is determined on `H_n` 
 properties plus cyclicity, by induction on reduced words. #5592's coset recursion
 (`pyhecke.tl.markov_trace_basis`, `w = u·d` with `d` minimal in `S_{n-1}w`) is exactly that
 induction done computationally, and is the obvious thing to formalise against.
+
+
+## Scoping the uniqueness leg — two findings, one of them a trap
+
+Corpus-grepped before starting, and the picture is better than I assumed in the last note.
+
+**1. The spanning family already exists.** `HeckeCoset.span_cosetFam_eq_top (m) : Submodule.span K
+(Set.range (cosetFam m)) = ⊤`, with `cosetFam (m+1) (b, j) = ι(cosetFam m b) · descProd m j` and
+`descProd m j = σ_m σ_{m-1} ⋯ σ_{m-j+1}`. That is exactly the induction skeleton uniqueness needs:
+
+- `j = 0` — `T_{m+1}(ι x) = T_m x` by consistency.
+- `j ≥ 1` — `descProd m j` has the top generator `σ_m` on the left and the rest inside `ι(H_m)`,
+  so cyclicity moves the tail across and the Markov property collapses it to `z · T_m(…)`.
+
+Then extend off the family by `Submodule.span_induction`. So the hard structural half — the coset
+decomposition — is **not** work I would have to do; #5592's `w = u·d` coset recursion is the same
+induction done computationally, and is the obvious cross-check.
+
+**2. `MarkovTraceTower` is NOT the axiomatisation its name suggests — do not build on it.**
+`QOU/Braiding/HnMarkovTrace.lean:45` declares `class MarkovTraceTower (q : ℝ)` carrying **only**
+`z`, `z_pos`, and `trM_sigma1_sq : ℕ → ℝ` with a stabilisation property. It is a statement about
+the trace of the **single element `σ₁²`**, not a trace functional on `H_n` at all. A uniqueness
+theorem needs a real structure — a family of linear maps with cyclicity, normalisation, Markov and
+consistency — which does not exist in the corpus yet. I nearly targeted `MarkovTraceTower` on the
+strength of the name.
+
+**Estimate, stated as an estimate:** the structure plus the induction plus the `descProd`
+manipulation. Not a five-line bridge, but not the multi-session job I implied either, given (1).
+Where it should live is a real question — this PR is already 26 files, so a follow-up branch may
+serve the reviewer better than the combine-into-one-branch default.
