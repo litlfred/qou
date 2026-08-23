@@ -359,13 +359,34 @@ user's last message, not the most recently mentioned file.
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
         and 9 out). Fix the producer to emit provenance first.
 
-      **And a `substantive` verdict is not a work order — measured, 39 %.**
-      Of 72 substantive producers actually re-run under a time budget, only
-      **28 moved a single mathematical field**; 44 were byte-identical, 3
-      crashed, 2 timed out. So "the code changed, therefore the payload can
-      move" over-flags by roughly 61 %, and the genuinely actionable queue is
-      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
-      Re-run to decide; do not treat the class as a to-do list.
+      **A `substantive` verdict over-flags — but by ~27 %, not the 61 % this
+      text used to claim. CORRECTED 2026-08-23.** The old figure (39 % move,
+      28 of 72) was measured PER WITNESS, and the queue was then 268 witnesses
+      over only 146 producers with **119 of them from one producer**. So one
+      "did not move" fact was counted ~119 times and dragged the rate down.
+      **Do not quote 39 %.**
+
+      Re-measured per PRODUCER, and then re-classified on which fields actually
+      moved: of 49 producers run to completion, **36 moved a genuinely
+      mathematical field** (73 %), 10 moved *only* invocation metadata, 3 were
+      identical. The raw rate looks like 94 % until you strip
+      `/invocation/argv/0` and `/invocation/reproduce` — the script path as the
+      sampler invoked it, which differs from whatever produced the committed
+      witness and has nothing to do with the mathematics. Strip
+      `/data/upstream_witness_hashes/*` too: that tracks an upstream file, not
+      this producer's output.
+
+      Two lessons in the measurement itself, both worth more than the number:
+      **mask volatile keys or you measure your own harness** — `timestamp`,
+      `elapsed_seconds`, `measured_at`, `start_time_monotonic` and the
+      `/invocation/*` block all change every run; and **record WHICH fields
+      moved**, so a mask gap is re-classifiable from the checkpoint instead of
+      costing another full sweep. Both errors were made here before being
+      caught, the first one twice.
+
+      So re-run to decide, and expect roughly 1 in 4 to be a false alarm rather
+      than 3 in 5. Sample is 49 of 152 producers; timeouts and crashes are
+      excluded from the rate.
 
       **Producers write SIBLING witnesses.** The isotope producer rewrote 21
       `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
