@@ -3753,3 +3753,54 @@ site in the same commit.*
 **Remaining:** `a = 3` — loop parameter `m = −1`, no loop pass, the opening
 phase's shape does not arise. Its own treatment, sharing nothing with the
 general assembly. Stated in `prefixChain`'s docstring rather than left implicit.
+
+### The small-`a` framing was wrong — `a = 3` is the same construction
+
+Measured before touching Lean, and it revises what three probes have been
+saying in their caveats.
+
+**`a ∈ {1,2,3}` are all valid corners.** `oc` requires only `j₁ ≤ i₁`, i.e.
+`a ≥ 1`. All of `a = 1,2,3` (at `b ∈ {a, a+1, a+2}`) reach **zero**. The caveat
+*"a = 2 is excluded throughout this arc"*, carried verbatim in
+`hecke_opening_coverage.py`, `hecke_opening_trio_shape.py` and
+`hecke_closing_from_topen.py`, **records no reason** — and `a = 2` is a
+perfectly good resolvable corner. Treat that caveat as unexplained, not as a
+justification.
+
+**`a = 3` fits the SAME phase decomposition**, 3/3:
+
+| stretch | steps at `a = 3` |
+|---|---|
+| `s1`, `s2` | 2 |
+| U loop | **0** |
+| V loop | **1** |
+| two trios | 6 |
+| | `= 9 = a²−3a+9` |
+
+plus `4(a−1) = 8` closing, total **17**, matching the measured first
+cancellation at index 16. The U loop is 0 because at `a = 3`, `jpp = i₁`, so
+`descWord i₂ jpp` is empty and **`U0L` and `U0` are the same word** — the loop
+is the identity, not absent.
+
+So `a = 3` is **not** a different construction needing its own treatment. It is
+this one with `uLoop` replaced by `refl`. What blocked it was two hypotheses.
+
+**One of them was never needed.** `vLoop` carried `htop : jppp ≤ i₁`, copied
+from `uLoop`. `uLoop` genuinely needs it (its loop parameter is `m = i₁ − jppp`);
+`vLoop`'s is `m = i − jppp`, so it only ever needed `jppp ≤ i`. Weakened:
+`vLoop` compiled unchanged, and the only breakage was `openingLoops` passing its
+own `htop`, now discharged by `omega`. **At `a = 3`, `jppp = i`** — so the
+weakened form is satisfiable at exactly the case the arc called out of scope.
+
+Third instance of the too-strong-hypothesis trap, and the first with a
+consequence rather than a cosmetic one. The pattern across all three: a
+hypothesis copied from a sibling lemma whose *parameter* differs.
+
+**`a = 1` and `a = 2` are genuinely different.** `a² + a + 5` holds at `a = 2`
+and `a = 3` but **not** at `a = 1` (measured 6 steps to first cancellation, not
+7). Their rule sequences differ visibly from `a ≥ 3` — `a = 1` opens with two
+quadratic steps, `a = 2` with `Y, F, Y, Q`. Separate cases; measure each before
+assuming anything.
+
+**Next:** `openingPhase₃` — the same five stretches with `refl` for the U loop —
+then `prefixChain₃`. Then measure `a = 1` and `a = 2` properly.
