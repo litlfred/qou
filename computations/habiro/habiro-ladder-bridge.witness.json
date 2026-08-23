@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:04:23.242397+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T22:07:51.996428+00:00",
+  "commitSha": "9a5d18462c6eeefd66bed323398e4659affea07b",
   "assertions": [
     {
       "name": "delta_trM_vanishes_at_classical_point",
@@ -22,10 +22,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1092,
+  "durationMs": 1933,
   "computation": "habiro-ladder-bridge",
   "scriptFile": "habiro_ladder_bridge.py",
-  "scriptHash": "88dd9f0eca63",
+  "scriptHash": "88c1ddceafcf",
   "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -40,20 +40,27 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_ladder_bridge.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_ladder_bridge.py"
   },
   "description": "Change-of-variable bridge from the exact Habiro mode decomposition (u = q^{1/2}) to the Q_β ladder variable u_ladder = b·ℏ². Records Δtr_M(q) in closed form, both variable expansions around q=1, and the order-matching that unifies the order audit (#1593: Δtr_M is O(√u_ladder)), eigenphase≠f (#1602: f must lift √u to u² / bar-even), and the mode solve (#1622) into one consistent structural statement: Δtr_M(1)=0 exactly, Δtr_M is O(√u_ladder), so the c_k come from the scaling map f(Δtr_M), not Δtr_M directly. Exact symbolic; no fitted c_k.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "delta_trM_closed_form": {
-      "in_q": "(-2*q**(9/2) + 4*q**(5/2) - 2*sqrt(q) - q**5 - q**4 - 2*q**3 + 2*q**2 + q + 1)/(4*q**2*(q + 1))",
+      "in_q": "(-q**10 - q**8 - q**6 + q**4 + 2)/(4*q*(q**4 + 2*q**2 + 1))",
       "value_at_q_eq_1": "0",
-      "value_at_q0": "-0.142072931427013"
+      "value_at_q0": "-0.158016025600174"
     },
     "variable_expansions": {
       "u_habiro_sqrt_q": "1 + eps/2 - eps**2/8 + eps**3/16 + O(eps**4)",
       "u_ladder_b_hbar2": "sqrt(3)*eps**2/2 - sqrt(3)*eps**3 + O(eps**4)",
-      "delta_trM": "-5*eps/4 - 3*eps**2/8 - eps**3/16 + 5*eps**4/32 + O(eps**5)"
+      "delta_trM": "-5*eps/4 - 11*eps**2/8 - 23*eps**3/8 - eps**4/2 + O(eps**5)"
     },
     "order_matching": {
       "delta_trM_at_q1": "0",
@@ -70,11 +77,11 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "640903ed5f8137e42b5e2581b7bd3a80bc313755b9e923c1ff4b4746d55d468a",
-        "size_bytes": 12671,
-        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:55:54.718701+00:00"
+        "sha256": "f1681ffc8fd5e6db1e068b62c6b830119e0c678cb3c2778e131913c8d4c3aaf2",
+        "size_bytes": 10289,
+        "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
+        "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+        "computedAt": "2026-08-18T16:04:42.256921+00:00"
       }
     ]
   }

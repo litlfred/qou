@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:04:25.818011+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T22:08:04.760408+00:00",
+  "commitSha": "9a5d18462c6eeefd66bed323398e4659affea07b",
   "assertions": [
     {
       "name": "both_candidates_scale_fix_solvable",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1744,
+  "durationMs": 4073,
   "computation": "habiro-mode-to-ladder-bridge",
   "scriptFile": "habiro_mode_to_ladder_bridge.py",
-  "scriptHash": "bcd8161f0ee9",
+  "scriptHash": "666771f286e5",
   "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -32,58 +32,65 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_mode_to_ladder_bridge.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_mode_to_ladder_bridge.py"
   },
   "description": "Executes the PR #1622 open bridge: the change of variable u=√q ↦ u_L=b·ℏ_q² that reads the ladder c_k off the exact Δtr_M mode decomposition. Δtr_M expressed in ℏ_q is an ordinary power series; u_L=b·ℏ² makes even-in-ℏ rungs the integer-u_L ladder (G_k=a_2k/b^k, anchor-independent constants — the only non-C1-refuted path) and odd-in-ℏ rungs the bar-odd half-integer remainder. Peels c_2..c_4 with c_2=−1 fixing the scale; contrasts the anchor-independent formal coefficients against the naive real-q analytic control (predicted C1-refuted). Exact symbolic; tiered; no fit; no wiring.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "delta_trM": {
-      "numerator": "-u**10 - 2*u**9 - u**8 - 2*u**6 + 4*u**5 + 2*u**4 + u**2 - 2*u + 1",
-      "denominator": "4*u**4*(u**2 + 1)"
+      "numerator": "-u**20 - u**16 - u**12 + u**8 + 2",
+      "denominator": "4*u**2*(u**4 + 1)**2"
     },
     "hbar_series": {
       "a_1": "-5/4",
-      "a_2": "-13/8",
-      "a_3": "-33/16",
-      "a_4": "-77/32",
-      "a_5": "-177/64",
-      "a_6": "-25/8",
-      "a_7": "-891/256",
-      "a_8": "-3923/1024",
-      "a_9": "-4277/1024"
+      "a_2": "-21/8",
+      "a_3": "-55/8",
+      "a_4": "-29/2",
+      "a_5": "-431/16",
+      "a_6": "-1473/32",
+      "a_7": "-2365/32",
+      "a_8": "-903/8",
+      "a_9": "-10587/64"
     },
     "bar_split_matches_parity": {
       "even_proj_eq_even_in_hbar": false,
       "odd_proj_eq_odd_in_hbar": false,
       "odd_remainder_a1": "-5/4",
-      "odd_remainder_a3": "-33/16",
+      "odd_remainder_a3": "-55/8",
       "note": "odd-in-ℏ rungs are the bar-odd half-integer-u_L remainder (PR #1602's −√3/12·u¹ class); the ladder is the even part."
     },
     "candidate_a_raw_even": {
       "c_symbolic": {
         "c_2": "-1",
-        "c_3": "-100/(77*b)",
-        "c_4": "-3923/(2464*b**2)"
+        "c_3": "-1473/(464*b)",
+        "c_4": "-903/(116*b**2)"
       },
       "c_numeric": {
         "c_2": "-1.00000000000000000000000000000",
-        "c_3": "-1.49691695322654196968759384677",
-        "c_4": "-2.11521476303977777358830853580"
+        "c_3": "-3.65909090126754317111812148702",
+        "c_4": "-10.3420498249814942630805078317"
       },
-      "scale_N": "32*b**2/77"
+      "scale_N": "2*b**2/29"
     },
     "candidate_b_bareven": {
       "c_symbolic": {
         "c_2": "-1",
-        "c_3": "-175/(144*b)",
-        "c_4": "-539/(384*b**2)"
+        "c_3": "-91/(30*b)",
+        "c_4": "-15/(2*b**2)"
       },
       "c_numeric": {
         "c_2": "-1.00000000000000000000000000000",
-        "c_3": "-1.40076082949497590566252271425",
-        "c_4": "-1.86480920873565929427384589093"
+        "c_3": "-3.49629903179725600491721117148",
+        "c_4": "-9.96410116028117387472872847571"
       },
-      "scale_N": "8*b**2/9"
+      "scale_N": "2*b**2/15"
     },
     "comparison_tiers": {
       "candidate_a_raw_even": {
@@ -94,15 +101,15 @@
           "tier": "derived"
         },
         "c_3": {
-          "bridge": "-1.49691695322654196968759384677",
+          "bridge": "-3.65909090126754317111812148702",
           "stated": "-2.00000000000000000000000000000",
-          "rel_to_stated": "0.251541523386729015156203076613",
+          "rel_to_stated": "0.829545450633771585559060743509",
           "tier": "refuted"
         },
         "c_4": {
-          "bridge": "-2.11521476303977777358830853580",
-          "stated": "-1.13312094437407740556944287932",
-          "rel_to_stated": "0.866715793703908073332767952910",
+          "bridge": "-10.3420498249814942630805078317",
+          "stated": "-1.13312094258794909885709826968",
+          "rel_to_stated": "8.12704852260620765138870581197",
           "tier": "refuted"
         }
       },
@@ -114,15 +121,15 @@
           "tier": "derived"
         },
         "c_3": {
-          "bridge": "-1.40076082949497590566252271425",
+          "bridge": "-3.49629903179725600491721117148",
           "stated": "-2.00000000000000000000000000000",
-          "rel_to_stated": "0.299619585252512047168738642873",
+          "rel_to_stated": "0.748149515898628002458605585742",
           "tier": "refuted"
         },
         "c_4": {
-          "bridge": "-1.86480920873565929427384589093",
-          "stated": "-1.13312094437407740556944287932",
-          "rel_to_stated": "0.645728302873933570556756486312",
+          "bridge": "-9.96410116028117387472872847571",
+          "stated": "-1.13312094258794909885709826968",
+          "rel_to_stated": "7.79350189885647913256719164609",
           "tier": "refuted"
         }
       }
@@ -135,19 +142,19 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "640903ed5f8137e42b5e2581b7bd3a80bc313755b9e923c1ff4b4746d55d468a",
-        "size_bytes": 12671,
-        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:55:54.718701+00:00"
+        "sha256": "f1681ffc8fd5e6db1e068b62c6b830119e0c678cb3c2778e131913c8d4c3aaf2",
+        "size_bytes": 10289,
+        "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
+        "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+        "computedAt": "2026-08-18T16:04:42.256921+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
-        "size_bytes": 5560,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
-        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+        "sha256": "ccc915ce5b98f6c6f827c319097234d025a79efa521e9fdb18206bc8a847001d",
+        "size_bytes": 5678,
+        "commitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "scriptCommitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "computedAt": "2026-08-21T16:24:01.734853+00:00"
       }
     ]
   }

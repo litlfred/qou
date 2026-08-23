@@ -85,12 +85,30 @@ def q_pochhammer(U: sp.Symbol, m: int) -> sp.Expr:
 
 
 def habiro_trM(atom: dict, U: sp.Symbol) -> sp.Expr:
-    D = sp.sympify(atom["denom_in_u"], locals={"check_q": U})
+    # Bean qou-0ndb: `denom_in_u` / `a_m` are serialized in whichever symbol
+    # the atomic producer computed with. Files written before the
+    # `str_in_u` canonicalisation say `check_q`; files written after it —
+    # including the current convention-D atomic witness — say `u`.
+    # Mapping only one of the two names is the SILENT failure that
+    # bean documents: `sympify` mints a fresh free symbol, the later
+    # `.subs(U, sqrt(q))` no-ops, and the expression stays symbolic until
+    # something far downstream tries to make a number of it. Both names must
+    # be bound until every affected witness has been regenerated.
+    loc = {"u": U, "check_q": U}
+    D = sp.sympify(atom["denom_in_u"], locals=loc)
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
-        total += sp.sympify(c["a_m"], locals={"check_q": U}) \
+        total += sp.sympify(c["a_m"], locals=loc) \
             * q_pochhammer(U, int(c["m"]))
-    return sp.cancel(total / D)
+    trM = sp.cancel(total / D)
+    stray = trM.free_symbols - {U}
+    if stray:
+        raise ValueError(
+            f"habiro_trM: unbound symbol(s) {stray} survived the "
+            f"atomic-witness parse — the serialized symbol name is "
+            f"neither `u` nor `check_q` (bean qou-0ndb). Refusing to "
+            f"continue with a non-numeric trace.")
+    return trM
 
 
 def main() -> int:

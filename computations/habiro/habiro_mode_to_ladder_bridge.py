@@ -94,12 +94,35 @@ def q_pochhammer_sym(m: int) -> sp.Expr:
 
 
 def habiro_trM(atom: dict) -> sp.Expr:
-    D = sp.sympify(atom["denom_in_u"], locals={"check_q": u})
+    # Bean qou-0ndb: `denom_in_u` / `a_m` are serialized in whichever
+    # symbol the atomic producer computed with. Files written before the
+    # `str_in_u` canonicalisation say `check_q`; the current convention-D
+    # `habiro-coefficients-atomic.witness.json` says `u`. Binding only
+    # `check_q` made `sympify` mint a SECOND, assumption-free `Symbol('u')`
+    # distinct from this module's `Symbol('u', positive=True)` — the "ARMED"
+    # case in that bean's consumer survey. Nothing raised: the two symbols
+    # print identically, so Δtr_M silently became a BIVARIATE rational
+    # function (451 numerator terms instead of 5), `.subs(u, ...)` reached
+    # only half of it, and the ℏ-series at step 2 then expanded a rational
+    # function of a free symbol — 13.9 GB and an OOM kill. Bind both names
+    # until every affected witness has been regenerated.
+    loc = {"u": u, "check_q": u}
+    D = sp.sympify(atom["denom_in_u"], locals=loc)
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
-        a_m = sp.sympify(c["a_m"], locals={"check_q": u})
+        a_m = sp.sympify(c["a_m"], locals=loc)
         total += a_m * q_pochhammer_sym(int(c["m"]))
-    return sp.cancel(total / D)
+    trM = sp.cancel(total / D)
+    stray = trM.free_symbols - {u}
+    if stray:
+        raise ValueError(
+            f"habiro_trM: unbound symbol(s) {stray} survived the "
+            f"atomic-witness parse — the serialized symbol name is "
+            f"neither `u` nor `check_q` (bean qou-0ndb). Refusing to "
+            f"continue: a free symbol here does not raise, it makes the "
+            f"ℏ-series below expand a bivariate rational function and "
+            f"exhaust memory.")
+    return trM
 
 
 def main() -> int:
