@@ -120,3 +120,90 @@ opt-in muon branch), `audits/q0_anchor_consistency_audit.py:97`,
 re-point `Q_CANONICAL` at the proton pin and re-derive `PROTON_PIN_PPB` — which
 **moves what the gate fails on**, so it is a deliberate change, not a hygiene edit.
 Not attempted here.
+
+---
+
+## ⚠ CORRECTION 2026-08-23 — "inverted" was the wrong diagnosis, and the real defect is sharper
+
+Challenged on why I recorded this as needing an owner call instead of just fixing
+it. Investigating properly shows **both** my framing and my deferral were
+under-argued.
+
+### It is NOT polarity-inverted
+
+`q0_value_drift_audit.py` is **two-layer aware by design**. From its own header
+table:
+
+| class | meaning (verbatim) |
+|---|---|
+| `canonical` | matches the CAL-2 muon pin — **the `computations/` layer convention** |
+| `proton-pin` | ~11.54 ppb below canonical: the documented physical-observations layer. **Legitimate, not drift.** |
+
+It never flags the proton pin as a defect — it has a named class for it that says
+*legitimate*. So this is **not** the `qou-ivhc` failure (a detector calling correct
+code a bug). Comparing the two was wrong, and the word `canonical` for a *layer
+convention* is what misled me.
+
+### The real defect: the class is calibrated to a layer that no longer exists
+
+`computations/q0_anchor_manifest.json`:
+
+```
+ideal_muon      :   3   ['atomic_tr_m_mpfr_50dps', 'cross_check_trM_1ppb', 'q_pinning_50_digit']
+physical_proton : 406
+_migration_2026_08_19: {'moved': 255, 'kept_ideal_muon': ['q_pinning_50_digit'],
+                        'authorisation': 'AGENTS.md q0-anchor-convention rule 4
+                                          (owner 2026-08-15, recorded 2026-08-19)'}
+```
+
+The owner authorised moving **255 producers** out of the muon layer, leaving
+essentially one. The drift audit's `canonical` class still means "the muon layer",
+and `canonical` is the one class that can never be `STALE`.
+
+**Measured** against the audit's own committed witness — of the 165 distinct files
+carrying the 211 `canonical`-classed fields:
+
+| | count |
+|---|---|
+| produced by an `ideal_muon` producer (legitimately muon) | **3** |
+| produced by something no longer in that layer | **162** |
+
+So 162 witnesses sit in a class defined as "the `computations/` layer convention"
+while their producers were moved out of that layer four days ago. That is a real
+blind spot — but it is a **stale layer calibration**, not an inverted polarity, and
+the distinction changes the fix.
+
+### And the fix is NOT re-pointing `Q_CANONICAL`
+
+That was my own suggested repair and it is wrong: re-pointing the zero would
+reclassify all **1232** `proton-pin` entries and destroy the two-layer model the
+audit exists to express. The correct fix is to classify **against the producer's
+declared layer** — a muon value is legitimate iff its producer is in `ideal_muon`,
+stale otherwise. The manifest already exists for exactly this and the audit does
+not consult it.
+
+### Why it still needs an owner call — now with the actual reason
+
+Not the vague "it moves what the gate fails on". Specifically:
+
+`--strict` fails on stale values **not already in the baseline**
+(`:196 return 1 if (args.strict and new_stale) else 0`). Applying the correct
+classification moves ~162 witnesses into `STALE`, none of them in
+`q0-drift-baseline.json`, so the gate — wired blocking at
+`precision-gates.sh:76` and `witness-staleness.yml:320` — **fails immediately**.
+
+The escape hatch is closed by the audit's own rule: `--rebaseline` is documented
+*"use it **only** when draining (the count must go DOWN); it is not a way to
+silence a new failure."* Absorbing 162 new stale keys would raise the count, which
+that rule forbids.
+
+So the choice is: block CI on 162 pre-existing witnesses, or violate the audit's
+stated rebaseline discipline. **Both are owner decisions**, and that is the real
+reason to stop here — not the one I gave first.
+
+### Safe partial available
+
+The same pattern used for `--payload-check` on the anchor audit applies: report
+the producer-layer mismatch as an opt-in, print-only diagnostic that cannot change
+the exit code. That makes the 162 visible and countable without forcing either
+horn. Not implemented in this entry; noted as the obvious next step.
