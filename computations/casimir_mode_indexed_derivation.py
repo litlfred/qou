@@ -81,9 +81,34 @@ sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from mpmath import mpf as mpf_type  # noqa: E402
+
+def _fmt_deep(obj):
+    """Serialize every mpf in a nested structure with `_precision.fmt`.
+
+    The producers here build one dict that serves twice: as the witness payload
+    AND as the thing their own prints/comparisons read. Downcasting with
+    `float()` at construction satisfied the printing but put raw binary64 into
+    the witness. Stringifying the float instead would be laundering — the
+    serializer says so in as many words ("never to stringify the float ...
+    Carry mpmath.mpf from the source and serialize with `_precision.fmt`").
+
+    So the dicts now hold mpf all the way through (mpf supports `:.4e`,
+    `:.10f`, `abs()`, comparisons — everything these files do with them) and
+    this converts at the witness boundary only, at OUTPUT_DPS rather than the
+    compute precision, so guard digits are not published.
+    """
+    if isinstance(obj, dict):
+        return {k: _fmt_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_fmt_deep(v) for v in obj]
+    if isinstance(obj, mpf_type):
+        return fmt(obj)
+    return obj
+
 
 set_compute_dps()
 
@@ -141,7 +166,11 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # Q is a float (16 digits); Q_MP is the 50-digit mpf. mpf(Q) bakes in
+    # binary64 and then expands to fabricated digits at OUTPUT_DPS — the
+    # two diverge at digit 17. Bean qou-fl9i surfaced this via the
+    # float64-padding ratchet once the float() downcast stopped hiding it.
+    q = Q_MP
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     target_120 = mpf(120)  # classical |1/ζ(-3)|
@@ -179,13 +208,13 @@ def main() -> int:
         force_residue = abs(force_prefactor - textbook_force) / textbook_force
         candidates.append({
             "regularization": name,
-            "zeta_q_neg_3_value": float(zeta_value),
-            "energy_prefactor_c_q": float(c_q),
-            "energy_prefactor_target": float(pi_sq_720),
-            "energy_rel_residue": float(rel_res),
-            "force_prefactor_c_q": float(force_prefactor),
-            "force_prefactor_target": float(textbook_force),
-            "force_rel_residue": float(force_residue),
+            "zeta_q_neg_3_value": zeta_value,
+            "energy_prefactor_c_q": c_q,
+            "energy_prefactor_target": pi_sq_720,
+            "energy_rel_residue": rel_res,
+            "force_prefactor_c_q": force_prefactor,
+            "force_prefactor_target": textbook_force,
+            "force_rel_residue": force_residue,
         })
 
     # ─── Disagreement assessment ───
@@ -215,14 +244,14 @@ def main() -> int:
             "derived — only fit by choosing one regularization."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_energy_prefactor", float(pi_sq_720))
-        .add_parameter("target_force_prefactor", float(pi_sq / 240))
-        .add_data("regularization_candidates", candidates)
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_energy_prefactor", fmt(pi_sq_720))
+        .add_parameter("target_force_prefactor", fmt(pi_sq / 240))
+        .add_data("regularization_candidates", _fmt_deep(candidates))
         .add_data(
             "agreement_assessment",
             {
-                "spread_relative_to_target": float(spread),
+                "spread_relative_to_target": spread,
                 "derivation_succeeded": bool(derivation_succeeded),
                 "verdict": (
                     "DERIVED — regularizations agree, prefactor forced"
@@ -233,9 +262,9 @@ def main() -> int:
         )
         .add_assertion(
             name="regularizations_agree_within_one_percent",
-            computed=float(spread),
-            expected=0.0,
-            tolerance=0.01,
+            computed=fmt(spread),
+            expected=fmt(mpf("0")),
+            tolerance=fmt(mpf("0.01")),
             unit="(max c_q - min c_q) / target",
             source=(
                 "If this passes, the mode-indexed-vacuum axiom "

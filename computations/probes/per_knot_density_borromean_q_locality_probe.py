@@ -63,7 +63,7 @@ import mpmath as mp
 from mpmath import mpf
 
 # 50-dps compute discipline (AGENTS.md §Precision goals L1 floor)
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -76,6 +76,31 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # CAL-1 from the registry, not re-typed: the literal here was
 # "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
 from codata_constants import M_E_MEV  # noqa: E402  # CAL-1
+from mpmath import mpf as mpf_type  # noqa: E402
+
+def _fmt_deep(obj):
+    """Serialize every mpf in a nested structure with `_precision.fmt`.
+
+    The producers here build one dict that serves twice: as the witness payload
+    AND as the thing their own prints/comparisons read. Downcasting with
+    `float()` at construction satisfied the printing but put raw binary64 into
+    the witness. Stringifying the float instead would be laundering — the
+    serializer says so in as many words ("never to stringify the float ...
+    Carry mpmath.mpf from the source and serialize with `_precision.fmt`").
+
+    So the dicts now hold mpf all the way through (mpf supports `:.4e`,
+    `:.10f`, `abs()`, comparisons — everything these files do with them) and
+    this converts at the witness boundary only, at OUTPUT_DPS rather than the
+    compute precision, so guard digits are not published.
+    """
+    if isinstance(obj, dict):
+        return {k: _fmt_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_fmt_deep(v) for v in obj]
+    if isinstance(obj, mpf_type):
+        return fmt(obj)
+    return obj
+
 M_P_CODATA_MEV = mpf(M_P_MEV_VALIDATION)
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 
@@ -125,9 +150,9 @@ def run_probe() -> dict:
     for delta in SWEEP_DELTAS:
         slope = slope_ppm_per_q(per_knot_density_linking_weight, Q_0, delta)
         results.append({
-            "delta": float(delta),
-            "slope_ppm_per_q": float(slope),
-            "abs_slope_ppm_per_q": float(abs(slope)),
+            "delta": delta,
+            "slope_ppm_per_q": slope,
+            "abs_slope_ppm_per_q": abs(slope),
             "pass_q_locality": bool(abs(slope) < TOLERANCE_PPM_PER_Q),
         })
 
@@ -155,7 +180,7 @@ def run_probe() -> dict:
 
     verdict = {
         "all_deltas_pass": all(r["pass_q_locality"] for r in results),
-        "max_abs_slope_ppm_per_q": float(max(abs(mpf(r["slope_ppm_per_q"]))
+        "max_abs_slope_ppm_per_q": (max(abs(mpf(r["slope_ppm_per_q"]))
                                               for r in results)),
         "interpretation": (
             "PASS — PerKnotDensity's linking weight tracks λ_p_codata locally"
@@ -186,19 +211,19 @@ def run_probe() -> dict:
             "Q_0": str(Q_0),
             "M_E_MEV": str(M_E_MEV),
             "M_P_CODATA_MEV": str(M_P_CODATA_MEV),
-            "tolerance_ppm_per_q": float(TOLERANCE_PPM_PER_Q),
-            "sweep_deltas": [float(d) for d in SWEEP_DELTAS],
+            "tolerance_ppm_per_q": TOLERANCE_PPM_PER_Q,
+            "sweep_deltas": list(SWEEP_DELTAS),   # already mpf; do not downcast
         },
         "results": {
-            "linking_weight_at_q0": float(lw_q0),
-            "lambda_p_codata_at_q0": float(target_q0),
-            "gap_at_q0": float(gap_at_q0),
-            "gap_ppm_at_q0": float(gap_ppm),
-            "per_knot_density_at_q0": float(gf_q0),
-            "m_p_pred_MeV": float(m_p_pred),
-            "m_p_codata_MeV": float(M_P_CODATA_MEV),
-            "relative_error": float(relative_err),
-            "relative_error_pct": float(relative_err * 100),
+            "linking_weight_at_q0": lw_q0,
+            "lambda_p_codata_at_q0": target_q0,
+            "gap_at_q0": gap_at_q0,
+            "gap_ppm_at_q0": gap_ppm,
+            "per_knot_density_at_q0": gf_q0,
+            "m_p_pred_MeV": m_p_pred,
+            "m_p_codata_MeV": M_P_CODATA_MEV,
+            "relative_error": relative_err,
+            "relative_error_pct": relative_err * 100,
             "slopes_by_delta": results,
         },
         "verdict": verdict,
@@ -241,7 +266,11 @@ def main() -> None:
 
     # Write witness
     out_path = Path(__file__).parent / "per-knot-density-borromean-q-locality-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    # fmt at the write boundary: the `witness` dict carries mpf all the way
+    # through so the prints above keep their format specs, and only the
+    # serialized copy is converted -- at OUTPUT_DPS, not compute precision.
+    out_path.write_text(
+        json.dumps(_fmt_deep(witness), indent=2, sort_keys=True) + "\n")
     print(f"\nWitness written to: {out_path.relative_to(Path.cwd())}")
 
 

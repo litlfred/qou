@@ -59,9 +59,34 @@ sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from mpmath import mpf as mpf_type  # noqa: E402
+
+def _fmt_deep(obj):
+    """Serialize every mpf in a nested structure with `_precision.fmt`.
+
+    The producers here build one dict that serves twice: as the witness payload
+    AND as the thing their own prints/comparisons read. Downcasting with
+    `float()` at construction satisfied the printing but put raw binary64 into
+    the witness. Stringifying the float instead would be laundering — the
+    serializer says so in as many words ("never to stringify the float ...
+    Carry mpmath.mpf from the source and serialize with `_precision.fmt`").
+
+    So the dicts now hold mpf all the way through (mpf supports `:.4e`,
+    `:.10f`, `abs()`, comparisons — everything these files do with them) and
+    this converts at the witness boundary only, at OUTPUT_DPS rather than the
+    compute precision, so guard digits are not published.
+    """
+    if isinstance(obj, dict):
+        return {k: _fmt_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_fmt_deep(v) for v in obj]
+    if isinstance(obj, mpf_type):
+        return fmt(obj)
+    return obj
+
 
 set_compute_dps()
 
@@ -72,7 +97,11 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # Q is a float (16 digits); Q_MP is the 50-digit mpf. mpf(Q) bakes in
+    # binary64 and then expands to fabricated digits at OUTPUT_DPS — the
+    # two diverge at digit 17. Bean qou-fl9i surfaced this via the
+    # float64-padding ratchet once the float() downcast stopped hiding it.
+    q = Q_MP
     h_sub = q - 1 / q                  # skein parameter h at substrate
     hbar_q_sub = 1 - 1 / q             # substrate Planck
     hbar_q_sq_sub = hbar_q_sub ** 2
@@ -109,11 +138,11 @@ def main() -> int:
         geom_calibrated = n * (eps_0 * hbar_q_sq_sub) / hbar_q_sq_sub
         results_naive.append({
             "n": n,
-            "geom_ε(n·⊙)": float(geom_naive),
+            "geom_ε(n·⊙)": geom_naive,
         })
         results_calibrated.append({
             "n": n,
-            "geom_ε(n·⊙)": float(geom_calibrated),
+            "geom_ε(n·⊙)": geom_calibrated,
         })
 
     # The calibrated result is just n·ε₀ — exactly independent of q.
@@ -121,14 +150,14 @@ def main() -> int:
 
     # ─── Conclusion: β_k for the calibrated convention ───
     beta_coefficients = {
-        "β_0": 1.0,             # classical / rank 0
-        "β_1": 0.0,             # bar-duality forbids odd ranks
-        "β_2": 0.0,             # all q-dependence cancels under calibration
-        "β_3": 0.0,             # bar-duality
-        "β_4": 0.0,             # same as β_2
-        "β_5": 0.0,             # bar-duality
-        "β_2k+1 (all)": 0.0,    # bar-duality
-        "β_2k (all k≥1)": 0.0,  # calibration ε ∝ ℏ_q² causes exact cancellation
+        "β_0": mpf("1"),             # classical / rank 0
+        "β_1": mpf("0"),             # bar-duality forbids odd ranks
+        "β_2": mpf("0"),             # all q-dependence cancels under calibration
+        "β_3": mpf("0"),             # bar-duality
+        "β_4": mpf("0"),             # same as β_2
+        "β_5": mpf("0"),             # bar-duality
+        "β_2k+1 (all)": mpf("0"),    # bar-duality
+        "β_2k (all k≥1)": mpf("0"),  # calibration ε ∝ ℏ_q² causes exact cancellation
     }
 
     # ─── 𝓑_q at substrate ───
@@ -161,19 +190,19 @@ def main() -> int:
             "β_k = 0 for all k."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("hbar_q_squared_at_substrate", float(hbar_q_sq_sub))
-        .add_parameter("textbook_force_prefactor", float(pi_sq_240))
-        .add_data("naive_convention_geom_ε", results_naive)
-        .add_data("calibrated_convention_geom_ε", results_calibrated)
-        .add_data("derived_beta_coefficients", beta_coefficients)
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("hbar_q_squared_at_substrate", fmt(hbar_q_sq_sub))
+        .add_parameter("textbook_force_prefactor", fmt(pi_sq_240))
+        .add_data("naive_convention_geom_ε", _fmt_deep(results_naive))
+        .add_data("calibrated_convention_geom_ε", _fmt_deep(results_calibrated))
+        .add_data("derived_beta_coefficients", _fmt_deep(beta_coefficients))
         .add_data(
             "result",
             {
-                "B_q_at_substrate": float(B_q_at_substrate),
-                "casimir_prefactor_qou_calibrated": float(casimir_prefactor_calibrated),
-                "casimir_prefactor_textbook": float(pi_sq_240),
-                "deviation": float(deviation_from_textbook),
+                "B_q_at_substrate": B_q_at_substrate,
+                "casimir_prefactor_qou_calibrated": casimir_prefactor_calibrated,
+                "casimir_prefactor_textbook": pi_sq_240,
+                "deviation": deviation_from_textbook,
                 "interpretation": (
                     "Under calibration ε = ε₀ · ℏ_q² (forced for "
                     "QOU to match observation), all substrate "
@@ -188,9 +217,9 @@ def main() -> int:
         )
         .add_assertion(
             name="casimir_prefactor_equals_textbook_at_substrate",
-            computed=float(deviation_from_textbook),
-            expected=0.0,
-            tolerance=mpf("1e-40"),
+            computed=fmt(deviation_from_textbook),
+            expected=fmt(mpf("0")),
+            tolerance=fmt(mpf("1e-40")),
             unit=(
                 "rel deviation |c_q(q₀) - π²/240| / (π²/240) under "
                 "natural ε ∝ ℏ_q² calibration"
