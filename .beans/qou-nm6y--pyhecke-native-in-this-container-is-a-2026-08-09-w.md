@@ -3,8 +3,9 @@
 title: pyhecke_native in this container is a 2026-08-09 wheel, two weeks behind source — it still exports the deleted gram_inverse
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T16:43:53Z
-updated_at: 2026-08-23T16:43:53Z
+updated_at: 2026-08-23T17:21:17Z
 ---
 
 `pyhecke_native` installed in this container is **version 0.9.0, built 2026-08-09**.
@@ -69,3 +70,24 @@ announces itself.
 Worth a version/commit stamp on the wheel, checked at import, so a producer using
 native code against a mismatched build fails loudly instead of quietly computing
 the wrong thing.
+
+
+
+---
+
+## RESOLVED — wheel rebuilt, and the diagnosis is confirmed exactly
+
+`scripts/build-pyhecke-native.sh` succeeded in this container (~4 min; the script
+is written for this sandbox and handles the Clarabel git-fork rewrite itself).
+
+    before rebuild:  hasattr(pyhecke_native, 'gram_inverse') -> True
+    after  rebuild:  hasattr(pyhecke_native, 'gram_inverse') -> False
+
+The rebuilt wheel no longer exports the function the source deleted on 2026-08-15,
+which is the intended AttributeError behaviour. That confirms the whole chain: the
+old wheel was stale, `delta_lambda_full_variance_phase5e_1` really was calling a
+removed function and receiving a 6x6 'inverse' of a singular form, and the 12
+reverts in 7ce3014c3 were correct.
+
+**Native-backed regeneration is unblocked from here** — anything re-run in this
+container after this point uses native code matching the source.

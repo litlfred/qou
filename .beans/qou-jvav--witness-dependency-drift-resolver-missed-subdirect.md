@@ -3,8 +3,9 @@
 title: witness_dependency_drift resolver missed subdirectory upstreams — 357 of 688 drift records were false
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-23T17:11:30Z
-updated_at: 2026-08-23T17:11:30Z
+updated_at: 2026-08-23T17:21:17Z
 ---
 
 `staleness-gates.sh` is red on `scriptHash + upstream drift`. Two findings, one
@@ -78,3 +79,22 @@ Worth noting the tool's own comment: self-staleness is designed WARN-only
 "because self-staleness is widespread until adoption + regeneration catch up, and
 we don't want to red-wall every PR on day one" — and the gate runs it in the mode
 that red-walls anyway.
+
+
+
+---
+
+## Drift now 688 -> 92
+
+The 122 stale consumers named above are regenerated:
+`canonical_isotope_witness.py --max-z 118` (119 shards + index). It does not touch
+`pyhecke_native`, so it was safe to run even before the wheel rebuild.
+
+    drift records   688 (start)  ->  330 (resolver fix)  ->  92 (this)
+
+Verified with the discipline that earlier cost a commit: **0 assertions flipped
+PASS -> FAIL, 0 witnesses collapsed** across all 120.
+
+Self-staleness is unchanged at 580 — a separate axis, and the qou-zymu backlog.
+The vendor mirror went red on the regeneration (qou-mass ships 122 package-data
+witnesses, these among them) and was re-synced.
