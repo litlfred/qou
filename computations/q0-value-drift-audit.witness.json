@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 305,
+      "STALE": 304,
       "proton-pin": 1232,
       "unknown": 25,
-      "canonical": 211
+      "canonical": 212
     },
-    "stale_total": 305,
+    "stale_total": 304,
     "new_stale": 0,
     "rows": [
       {
@@ -11999,9 +11999,9 @@
       {
         "file": "computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785955541805752815940796095093779932822799587",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416265239649993
+        "value": "1.1099785955573347198997632204832250266562084087802",
+        "class": "canonical",
+        "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
         "file": "computations/three-body-joint-trace-a3.witness.json",
