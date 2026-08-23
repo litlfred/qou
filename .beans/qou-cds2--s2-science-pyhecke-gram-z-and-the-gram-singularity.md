@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T16:50:19Z
+updated_at: 2026-08-23T21:16:30Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -516,3 +516,63 @@ never a threshold, when the result is numerical rather than exact-symbolic.
 Written up as a new section in
 `docs/audits/2026-08-15-detector-blindness-taxonomy.md`, which previously
 catalogued only the false-negative direction.
+
+
+## Worked 2026-08-23 — two stale claims corrected, and one live defect found
+
+Owner directed this bean. Attacked the **consumer-side** hazard rather than the
+quotient build (that is `qou-8iru`, running in parallel).
+
+### 1. The Blast-radius section is STALE — `G_INV` is already gone
+
+This bean says *"G_INV is exported at import, so every consumer of
+pyhecke.gram is affected -- that is the 13 re-exporters + 13 consumers of
+qou-cdh2"*. Measured today: `pyhecke.gram.G_INV` is **ABSENT**, and
+`gram_inverse()` raises a clear `NotImplementedError` naming the
+singularity. The deletion happened; the bean did not record it.
+
+**The singularity itself is unchanged**, exactly as recorded:
+det 3.998e-17, cond 4.94e16, eigenvalues −0.752702, ~0, +0.752702×3, +4.230339.
+
+### 2. The DELETED function has an unguarded general-n successor — the live defect
+
+`computations/pyhecke_n_generic.py::gram_inverse_n` did a bare
+`np.linalg.inv(G)`. Its own docstring said it *"replaces 6×6 hardcoded
+pn.gram_inverse"* — i.e. it is the generalisation of the very function this
+bean had deleted for being unsafe, and **the guard did not come with it**.
+Worse, the module header actively recommended migrating onto it
+("Replace: ... gram_inverse / With: ... gram_inverse_n").
+
+    n=3   dim 3   rank 2   corank 1   cond 2.54e16   max|G^-1| 5.03e16
+    n=4   dim 5   rank 3   corank 2   cond 1.83e16   max|G^-1| 3.27e16
+
+### 3. 🛑 A WARNING WOULD NOT HAVE BEEN ENOUGH — the residual check is deceptive
+
+    n=3   ||G . G^-1 - I|| = 1.11e-16
+    n=4   ||G . G^-1 - I|| = 0          <- EXACTLY zero
+
+numpy raises nothing, and the entries are large enough that the product rounds
+to the identity in float64. **A consumer validating `G @ G_inv ≈ I` is handed
+a clean bill of health on a meaningless inverse.** There is no downstream check
+that would notice, which is why the fix raises rather than warns.
+
+### 4. The rank is the Temperley-Lieb structure, reached independently
+
+rank = the number of partitions of n with **at most two rows** — n=3: 2 of 3
+({(3),(2,1)}); n=4: 3 of 5 ({(4),(3,1),(2,2)}). That is `qou-8iru`'s
+`y_λ = 0 for ≥3 rows` result, arriving here from the numerical rank of a
+Gram rather than from the weights. Two independent routes to the same
+structure.
+
+### Shipped
+
+- `gram_inverse_n` now raises, naming rank/corank/cond and pointing at the
+  TL_n quotient. **No external callers** — verified before changing it, so the
+  guard breaks nothing.
+- The module no longer advertises an inverse that cannot exist; the migration
+  recipe says so explicitly.
+- `computations/qbeta/gram_inverse_n_singular_guard_probe.py`, 8/8, asserting
+  all four facts above including the deceptive residual, so a future
+  un-guarding is caught.
+
+**Not done, deliberately:** the quotient build. That is `qou-8iru`.
