@@ -49,10 +49,15 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
+from mpmath import mp  # noqa: E402
+mp.dps = 50
 
 try:
     from q_parameter import q_at
-    Q0 = float(q_at())
+    Q0 = q_at()
+    # EXCISED: was Q0 = float(q_at()). q_at() ALREADY returns mpf at 50 dps, so
+    # the cast was a pure downgrade to 53 bits -- a NO-FLOAT64 violation with
+    # nothing bought: mpf supports every arithmetic operator this file uses.
 except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
         # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
         # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
@@ -86,21 +91,21 @@ def main() -> None:
     print("=" * 74)
     print("Narrowed vdW probe — the bar-odd sinh / P_skew residual")
     print("=" * 74)
-    print(f"  q₀ = {q:.6f}   λ = ln q₀ = {lam:.6f}  (rapidity)")
-    print(f"  cosh(2λ) = (q²+q⁻²)/2 = {cosh2:.6f}  =? math.cosh = {cosh(2*lam):.6f}")
-    print(f"  sinh(2λ) = (q²−q⁻²)/2 = {sinh2:.6f}  =? math.sinh = {sinh(2*lam):.6f}")
-    print(f"  e₊ = {e_plus:.5f}  e₋ = {e_minus:.5f}  e₊−e₋ = {e_diff:.5f}")
+    print(f"  q₀ = {float(q):.6f}   λ = ln q₀ = {float(lam):.6f}  (rapidity)")
+    print(f"  cosh(2λ) = (q²+q⁻²)/2 = {float(cosh2):.6f}  =? math.cosh = {float(cosh(2*lam)):.6f}")
+    print(f"  sinh(2λ) = (q²−q⁻²)/2 = {float(sinh2):.6f}  =? math.sinh = {float(sinh(2*lam)):.6f}")
+    print(f"  e₊ = {float(e_plus):.5f}  e₋ = {float(e_minus):.5f}  e₊−e₋ = {float(e_diff):.5f}")
     print()
-    print(f"  bar-EVEN (retained P_avg carrier) : cosh(2λ)·𝟙 = {cosh2:.5f}·𝟙")
-    print(f"  bar-ODD  (P_skew / vdW residual)  : sinh(2λ)·(e₊−e₋) = {vdw_bar_odd:.5f}")
-    print(f"  ⇒ van der Waals (fibre) = {vdw_bar_odd:.5f}  — exact, no fit")
+    print(f"  bar-EVEN (retained P_avg carrier) : cosh(2λ)·𝟙 = {float(cosh2):.5f}·𝟙")
+    print(f"  bar-ODD  (P_skew / vdW residual)  : sinh(2λ)·(e₊−e₋) = {float(vdw_bar_odd):.5f}")
+    print(f"  ⇒ van der Waals (fibre) = {float(vdw_bar_odd):.5f}  — exact, no fit")
     print()
     # Im(q) caveat: at real q₀ the residual is real.
     im_part = abs((complex(sinh2) * complex(e_diff)).imag)
-    print(f"  Im(vdW residual) at real q₀ = {im_part:.2e}  (real P_skew, not Im(q))")
+    print(f"  Im(vdW residual) at real q₀ = {float(im_part):.2e}  (real P_skew, not Im(q))")
     # α_EM cross-check: bar-even cosh carrier × sinh² correction
     alpha_carrier = q + 1.0 / q             # [2]_q = 2cosh λ
-    print(f"  α_EM Habiro carrier [2]_q = 2cosh λ = {alpha_carrier:.5f} (bar-EVEN); "
+    print(f"  α_EM Habiro carrier [2]_q = 2cosh λ = {float(alpha_carrier):.5f} (bar-EVEN); "
           f"vdW is bar-ODD (sinh·cosh) — opposite sector, same machinery")
 
     w.set_description(
@@ -147,7 +152,7 @@ def main() -> None:
         "finding",
         f"van der Waals is the bar-odd (sinh / P_skew) residual of the Hopf link: "
         f"2σ₁² = 2cosh(2λ)·𝟙 + 2sinh(2λ)·(e₊−e₋), with the cosh part the retained "
-        f"P_avg carrier and the sinh·(e₊−e₋)={vdw_bar_odd:.4f} part the discarded "
+        f"P_avg carrier and the sinh·(e₊−e₋)={float(vdw_bar_odd):.4f} part the discarded "
         f"Coulomb-EM channel = vdW. This narrows the probe to the EXACT bar-odd "
         f"q-expression (no h^k fit, no cosh-on-covalent factor). The residual is "
         f"real at real q (P_skew ≠ Im(q)). Lean prop:vdw-pskew-isolation proves "

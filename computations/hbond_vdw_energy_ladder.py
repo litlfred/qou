@@ -53,10 +53,15 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
+from mpmath import mp  # noqa: E402
+mp.dps = 50
 
 try:
     from q_parameter import q_at
-    Q0 = float(q_at())
+    Q0 = q_at()
+    # EXCISED: was Q0 = float(q_at()). q_at() ALREADY returns mpf at 50 dps, so
+    # the cast was a pure downgrade to 53 bits -- a NO-FLOAT64 violation with
+    # nothing bought: mpf supports every arithmetic operator this file uses.
 except Exception as _exc:  # pragma: no cover - fail loudly, never substitute
         # Was: Q0 = 1.1099780333553254 — a value that is NEITHER pin, sitting
         # 506 ppb from muon and 495 ppb from proton, i.e. ~44x the ~11.5 ppb
@@ -91,13 +96,13 @@ def main() -> None:
     print("=" * 74)
     print("Even-power h-ladder of interaction energies — where vdW sits")
     print("=" * 74)
-    print(f"  q₀ = {q:.6f}   h = q₀−q₀⁻¹ = {h:.5f}")
+    print(f"  q₀ = {float(q):.6f}   h = q₀−q₀⁻¹ = {float(h):.5f}")
     print(f"  ladder (interaction/covalent):")
     print(f"    covalent (trefoil)      h⁰ = 1")
-    print(f"    hydrogen bond           h² = {h2:.5f}   (verified: H₂O/HF ~1–2%)")
-    print(f"    van der Waals (Hopf)    h⁴ = {h4:.6f}   (per-contact, tested below)")
+    print(f"    hydrogen bond           h² = {float(h2):.5f}   (verified: H₂O/HF ~1–2%)")
+    print(f"    van der Waals (Hopf)    h⁴ = {float(h4):.6f}   (per-contact, tested below)")
     print()
-    print(f"  per-contact vdW test (L_vap/Z)/E_cov vs h⁴ = {h4:.6f}:")
+    print(f"  per-contact vdW test (L_vap/Z)/E_cov vs h⁴ = {float(h4):.6f}:")
     print(f"    {'liquid':6s}{'E_cov':>7s}{'L_vap':>7s}{'Z':>3s}"
           f"{'vdW/contact':>12s}{'/E_cov':>9s}{'ratio/h⁴':>9s}")
     rows = []
@@ -106,17 +111,17 @@ def main() -> None:
         ratio = (per_contact / ecov) if ecov else None
         r_over_h4 = (ratio / h4) if ratio else None
         rows.append((name, ecov, lvap, Z, per_contact, ratio, r_over_h4))
-        ecs = f"{ecov:7.0f}" if ecov else f"{'—':>7s}"
-        rs = f"{ratio:9.5f}" if ratio else f"{'—':>9s}"
-        rh = f"{r_over_h4:9.2f}" if r_over_h4 else f"{'—':>9s}"
-        print(f"    {name:6s}{ecs}{lvap:7.2f}{Z:3d}{per_contact:12.3f}{rs}{rh}")
+        ecs = f"{float(ecov):7.0f}" if ecov else f"{'—':>7s}"
+        rs = f"{float(ratio):9.5f}" if ratio else f"{'—':>9s}"
+        rh = f"{float(r_over_h4):9.2f}" if r_over_h4 else f"{'—':>9s}"
+        print(f"    {name:6s}{ecs}{float(lvap):7.2f}{Z:3d}{float(per_contact):12.3f}{rs}{rh}")
     print()
     # bare e₊ (categorical) vs molecular per-contact vdW (h⁴):
     suppression = h4 / e_plus_qdim
-    print(f"  bare symmetric block e₊ (categorical) q-dim = {e_plus_qdim:.4f} "
-          f"(ℏ_q-scale ≈ {hbar_q:.3f})")
-    print(f"  molecular per-contact vdW ≈ h⁴ = {h4:.6f}")
-    print(f"  ⇒ archimedean suppression bare→molecular ≈ h⁴/e₊ = {suppression:.5f}")
+    print(f"  bare symmetric block e₊ (categorical) q-dim = {float(e_plus_qdim):.4f} "
+          f"(ℏ_q-scale ≈ {float(hbar_q):.3f})")
+    print(f"  molecular per-contact vdW ≈ h⁴ = {float(h4):.6f}")
+    print(f"  ⇒ archimedean suppression bare→molecular ≈ h⁴/e₊ = {float(suppression):.5f}")
     print(f"    (the 1/r⁶ inter-molecular separation; e₊ is the touching limit)")
     print()
     print("  TIER: even-power h-ladder = STRUCTURAL near-match (per-contact vdW is")
