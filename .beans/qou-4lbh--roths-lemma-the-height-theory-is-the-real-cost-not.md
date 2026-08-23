@@ -970,3 +970,44 @@ than read off the index type. That is the real design question and it is **not**
 
 Verification: all sixteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+### ⚠ Correction to the entry immediately above — I overstated the cost of `Fin m`
+
+The design finding I just recorded said an `m`-indexed formulation would need "`Fin 1 ≃ Unit`
+transport, `pUnitAlgEquiv` commuting with `Polynomial.map`, and `Fin (m+1) ≃ Unit ⊕ Fin m`
+transport for both index and height — all provable, all **pure overhead**".
+
+I then measured it instead of leaving the claim standing. `index_rename_equiv`, now in
+`RothIndex.lean`:
+
+```lean
+theorem index_rename_equiv (e : σ ≃ τ) (d : τ → ℕ) (α : τ → R) (P : MvPolynomial τ R) :
+    index d α P = index (d ∘ e) (α ∘ e) (rename e.symm P) := by
+  classical
+  have h := index_rename_of_injective (e : σ → τ) e.injective d α (rename e.symm P)
+  rwa [rename_rename, Equiv.self_comp_symm, rename_id_apply] at h
+```
+
+**Three lines**, given the transport lemma. `Fin (m+1) ≃ Unit ⊕ Fin m` already exists in
+Mathlib as `(finSuccEquiv m).trans (Equiv.optionEquivSumPUnit _) |>.trans (Equiv.sumComm _ _)`
+— checked, it elaborates. And the height side is free: Mathlib's `coeff_rename_mapDomain`
+already matches coefficients across a renaming.
+
+So the honest comparison is:
+
+| | transport cost | ordering condition |
+|---|---|---|
+| `Fin m` | ~3 small lemmas, all cheap | free — the index type carries the order |
+| `Unit ⊕ τ` | none | must be carried as data through the recursion |
+
+**Neither is a landslide, and I called it one.** The decision should turn on which makes the
+`dⱼ/dⱼ₊₁ ≥ ω` bookkeeping cleaner, and I have not determined that. What I can say is that the
+transport objection to `Fin m` is not a real obstacle.
+
+⚠ Worth noting how this one was caught: the overstated claim and its correction are **one
+commit apart**, because I tested my own prediction instead of shipping it. That is the whole
+method — and it is cheap, three lines of Lean against a paragraph of confident prose.
+
+(Also recorded: `finSuccEquiv` inside `namespace MvPolynomial` resolves to
+`MvPolynomial.finSuccEquiv`, not the `Fin` one — `_root_.finSuccEquiv` is required. Same
+namespace-shadowing trap as `funext` → `Polynomial.funext` earlier in this arc.)

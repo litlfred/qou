@@ -481,6 +481,20 @@ theorem index_rename_of_injective {τ : Type*} [DecidableEq τ] (f : σ → τ)
   refine _root_.funext fun i => ?_
   simp only [Function.comp_apply, idxWeight_mapDomain_of_injective f hf d i]
 
+/-- **Transport along an equivalence.**  A corollary of `index_rename_of_injective`, and the
+lemma that makes reindexing the variable *type* cheap.
+
+Three lines.  That matters for a design decision: an `m`-indexed formulation of Roth's lemma
+needs `Fin (m+1) ≃ Unit ⊕ Fin m` transport to meet the `σ ⊕ τ` machinery, and this is that
+transport for the index side.  The height side is free — Mathlib's `coeff_rename_mapDomain`
+already matches coefficients across a renaming. -/
+theorem index_rename_equiv {τ : Type*} [DecidableEq τ] (e : σ ≃ τ) (d : τ → ℕ) (α : τ → R)
+    (P : MvPolynomial τ R) :
+    index d α P = index (d ∘ e) (α ∘ e) (rename e.symm P) := by
+  classical
+  have h := index_rename_of_injective (e : σ → τ) e.injective d α (rename e.symm P)
+  rwa [rename_rename, Equiv.self_comp_symm, rename_id_apply] at h
+
 /-! ### Sums, products and determinants
 
 The index counterparts of the height bounds in `QOU/Mathlib/MvPolynomialHeight.lean`, and
