@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:05:15.400245+00:00",
-  "commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
+  "computedAt": "2026-08-23T17:14:42.592894+00:00",
+  "commitSha": "f4cf6d14b00bbf3861ff6fb92cce10c140303596",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -178,6 +178,12 @@
     },
     {
       "name": "chain_valid[canonical-isotope-witness.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[canonical-tr-m-via-chi-cache.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -613,7 +619,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "df4baa7af374",
@@ -627,7 +633,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "fe19077ea17b978d"
   },
@@ -1298,6 +1305,21 @@
         "trust_summary": {
           "script-cited": 4,
           "derived": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "canonical-tr-m-via-chi-cache.derivation.json",
+        "target": "canonical |tr_M(beta_atomic(Z,N))| at q_0 via the Frobenius pairing tr_M = sum_lambda y_lambda(q_0) chi^lambda(beta; q_0)",
+        "target_value": "proton 1.145759692457300869689081, neutron 0.987743688115809571634020, deuteron 0.575172243917771870826535, tritium 0.229310102104556507332090, helium-3 0.403767036851428170368670, helium-4 0.160974145442407381825873 (proton pin; a muon-pinned twin is emitted alongside)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -2360,6 +2382,8 @@
         "canonical-isotope-witness-Z99.witness.json",
         "canonical-isotope-witness-index.witness.json",
         "canonical-mass-table-extended.witness.json",
+        "canonical-tr-m-via-chi-cache-muon.witness.json",
+        "canonical-tr-m-via-chi-cache.witness.json",
         "chi-at-q0-matrix-m-deuteron.witness.json",
         "chi-at-q0-matrix-m-helium-3.witness.json",
         "chi-at-q0-matrix-m-helium-4.witness.json",
@@ -3416,8 +3440,6 @@
         "canonical-braid-interface-composition.witness.json",
         "canonical-isospin-pyhecke.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
-        "canonical-tr-m-via-chi-cache-muon.witness.json",
-        "canonical-tr-m-via-chi-cache.witness.json",
         "canonical-with-proper-tower.witness.json",
         "cap-free-trm-prototype.witness.json",
         "casimir-d6-qcorrection-structure.witness.json",
