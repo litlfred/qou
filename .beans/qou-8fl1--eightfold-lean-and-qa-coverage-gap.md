@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-23T08:07:10Z
+updated_at: 2026-08-23T08:32:27Z
 ---
 
 ## Context
@@ -190,3 +190,18 @@ remain the genuine SU(3) content (Mathlib gap), unchanged. T1 done.
 Remaining tiers: T2 Sym2Gate SU(3)/FS (hard Mathlib gap), T3 def:octonion-algebra,
 T4 QA sidecars (folio-assistant now set up this session ⇒ item 1 unblocked, can run
 qa-sweep next), research-gated items 6,7.
+
+
+
+## PROGRESS 2026-08-23 (3) — T2 Sym2Gate cleanup DONE (option b), item 3 closed
+
+Removed the content-free axiom su3_sym2_irreducible : True (unused downstream —
+only referenced in comments; color-su3-from-g2.ts refs the REAL sym2_dim_3, not
+the stub). Restated the two gate applications as honest dimension shadows:
+- corpus_T1_fails_sym2_gate : 1+5=6 ∧ 1≥1 (singlet count 1 ≥ fail-threshold ⇒ fails).
+- octonion_3_passes_sym2_gate : 3*(3+1)/2=6 ∧ 0<1 (Sym² dim 6, singlet count 0 < threshold ⇒ passes).
+Both norm_num, no sorryAx; audit 0 defects on the file (was 2 advisory: trivial-true + provable-axiom); check-ledger green. Updated the module docstring + color-su3-from-g2.ts comment.
+
+The SU(3)-irreducibility that makes the octonion singlet count 0 (the actual rep-theoretic core) stays the Mathlib gap — no SU(3) type in Mathlib. That is item-3's genuine remainder (call it T2-hard); NOT stubbed with a vacuous axiom anymore. The real gate-decision content lives in Sym2GateParity (SU(2) parity criterion, sorry-free).
+
+item 3 (Sym2Gate vacuity) is now CLOSED at the honest level: no vacuous decls remain; the residual SU(3) rep infra is a documented Mathlib gap.
