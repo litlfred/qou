@@ -20,7 +20,7 @@ At each generator σ_i the crossing chain reduces (Hecke quadratic) to a
 linear element  a_i·σ_i + b_i.  The Markov trace of this element in the
 2-dim STANDARD (Hoefsmit) representation V_(2,1) of H_3 is
 
-    V̂_i = z·a_i + b_i,    z = 1/(q^{1/2}+q^{-1/2}),
+    V̂_i = z·a_i + b_i,    z = q^3/(q^2+1)  (convention D),
 
 because tr_M(σ_i) = z and tr_M(1) = 1.  So V̂_i is the MARKOV TRACE of
 the per-generator reduced element — a TRACE functional of ρ(σ_i), NOT a
@@ -45,12 +45,22 @@ NO fit. NO tuning. The cached production |V̂_i| are the falsification test.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise BEFORE module constants
+
+# Raise compute precision before anything below binds a constant.
+# Without this mpmath sits at its default 15 dps, so the exact 2x2
+# solve below would carry ~15 significant digits while `_precision.fmt`
+# serialized 60 -- digits that look exact and are padding. Caught by
+# the never-raises-dps ratchet, not by reading the output.
+set_compute_dps()
 import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+from mpmath import mp, mpf
+from qou_substrate.precision import fmt
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -107,6 +117,27 @@ def _std_sigma_matrix():
     return np.asarray(s.toarray() if hasattr(s, "toarray") else s)
 
 
+def _ser(v):
+    """Witness-safe serialization, applied ONCE at the write boundary.
+
+    `json` cannot encode an mpf at all (TypeError), and `float(v)` would
+    silently truncate in the witness exactly the precision the exact 2x2
+    solve exists to preserve -- which is what the raw-float64 gate flags.
+    `_precision.fmt` is the canonical path.
+
+    Recursive, and applied to the finished payload rather than at insert
+    time: the in-memory records stay exact so the arithmetic downstream of
+    them keeps working on numbers rather than strings.
+    """
+    if isinstance(v, type(mpf(0))):
+        return fmt(v)
+    if isinstance(v, dict):
+        return {k: _ser(x) for k, x in v.items()}
+    if isinstance(v, (list, tuple)):
+        return [_ser(x) for x in v]
+    return v
+
+
 def vhat_via_explicit_markov_trace(chain):
     """V̂ from the ACTUAL 2×2 Hoefsmit matrix product, Markov-traced.
 
@@ -117,17 +148,52 @@ def vhat_via_explicit_markov_trace(chain):
     V̂ = z·a + b.  This is an INDEPENDENT route to V̂ (matrix product,
     not the scalar (a,b) recurrence) and must agree to machine precision.
     """
-    sigma = _std_sigma_matrix()
-    I = np.eye(2)
-    M = I.copy()
+    sig = _std_sigma_matrix()
+    s00, s01 = mpf(str(sig[0][0])), mpf(str(sig[0][1]))
+    s10, s11 = mpf(str(sig[1][0])), mpf(str(sig[1][1]))
+
+    # M = Π (c·σ + d·I), carried as mpf.  The chain's (c, d) are mpf, so the
+    # old numpy route promoted M to dtype('O') and `np.linalg.lstsq` refused
+    # it outright -- "Cannot cast ufunc 'lstsq' input 1 from dtype('O') to
+    # dtype('float64')".  numpy was right to refuse: LAPACK is float64-only,
+    # and the way to satisfy it would have been to throw the exact chain
+    # coefficients away.  2×2 needs no LAPACK.
+    m00, m01, m10, m11 = mpf(1), mpf(0), mpf(0), mpf(1)
     for c, d in chain:
-        M = M @ (c * sigma + d * I)
-    # Solve M = a·sigma + b·I in the 2-dim {sigma, I} subspace via least
-    # squares on the four matrix entries (the reduced element is always
-    # in span{sigma, I} by the Hecke quadratic, so the fit is exact).
-    A = np.column_stack([sigma.reshape(-1), I.reshape(-1)])
-    coeffs, *_ = np.linalg.lstsq(A, M.reshape(-1), rcond=None)
-    a, b = float(coeffs[0]), float(coeffs[1])
+        c, d = mpf(str(c)), mpf(str(d))
+        n00, n01 = c * s00 + d, c * s01
+        n10, n11 = c * s10, c * s11 + d
+        m00, m01, m10, m11 = (m00 * n00 + m01 * n10, m00 * n01 + m01 * n11,
+                              m10 * n00 + m11 * n10, m10 * n01 + m11 * n11)
+
+    # Solve M = a·σ + b·I.  This is DETERMINED, not a fit: the docstring's own
+    # claim is that the reduced element lies in span{σ, I} by the Hecke
+    # quadratic, so least squares was solving a closed-form problem -- and
+    # paying float64 to do it.  Pick a row pair that is actually independent:
+    # σ here is DIAGONAL (s01 = s10 = 0), so the obvious `a = M01/s01` divides
+    # by zero.  Rows 00 and 11 give (s00, 1), (s11, 1), independent iff
+    # s00 ≠ s11.
+    if s01 != 0:
+        a = m01 / s01
+    elif s10 != 0:
+        a = m10 / s10
+    elif s00 != s11:
+        a = (m00 - m11) / (s00 - s11)
+    else:                                   # σ = scalar·I — a is not determined
+        raise ValueError(
+            "sigma is a multiple of the identity; M = a·σ + b·I does not "
+            "determine (a, b). This rep cannot support the cross-check.")
+    b = m00 - a * s00
+
+    # The exactness the docstring asserts is now CHECKED rather than assumed.
+    resid = max(abs(m00 - (a * s00 + b)), abs(m01 - a * s01),
+                abs(m10 - a * s10), abs(m11 - (a * s11 + b)))
+    if resid > mpf("1e-30"):
+        raise ValueError(
+            f"M is not in span(sigma, I): residual {mp.nstr(resid, 3)}. The "
+            f"Hecke-quadratic reduction this routine relies on does not hold "
+            f"for this chain.")
+
     return z * a + b, a, b
 
 
@@ -137,7 +203,7 @@ def vhat_via_explicit_markov_trace(chain):
 
 def main() -> int:
     print("=== Substrate ===")
-    print(f"  q_0 = {q0:.12f}  h = {h:.10f}  z = {z:.10f}")
+    print(f"  q_0 = {float(q0):.12f}  h = {float(h):.10f}  z = {float(z):.10f}")
     print(f"  W_sym = {W_SYM:.8f}  W_std = {W_STD:.8f}  W_alt = {W_ALT:.8f}")
     print()
 
@@ -159,17 +225,27 @@ def main() -> int:
         v_matrix, a, b = vhat_via_explicit_markov_trace(chain)
         v_prod = vertex_volume(chain)
         rel = (v_prod - v_genuine) / v_genuine * 100 if v_genuine else float("nan")
-        print(f"{name:28s} {v_genuine:>12.6f} {v_matrix:>15.6f} "
-              f"{v_prod:>12.6f} {rel:>15.3f}%")
+        # float() DISPLAY ONLY (AGENTS.md permits it inside an f-string and
+        # nowhere else): v_matrix is mpf now, and mpf rejects a `.6f` format
+        # spec with TypeError.  Same failure class as
+        # derivation_chain_validator -- third instance this pass.  The values
+        # stored in `records` below stay exact; only the console line rounds.
+        print(f"{name:28s} {float(v_genuine):>12.6f} {float(v_matrix):>15.6f} "
+              f"{float(v_prod):>12.6f} {float(rel):>15.3f}%")
         records[name] = {
             "chain": [list(t) for t in chain],
+            # EXACT mpf here on purpose -- main() computes from `records`
+            # (max_rel, the per-nucleon products, the p/n ratios) after this
+            # loop, so serializing at insert time would hand those reads a
+            # str. Serialization happens once, at the witness-write boundary
+            # below, via `_precision.fmt`.
             "a_transfer": a,
             "b_transfer": b,
             "vhat_genuine_z_a_plus_b": v_genuine,
             "vhat_explicit_matrix_markov": v_matrix,
             "vhat_production_vertex_volume": v_prod,
             "genuine_vs_production_rel_pct": rel,
-            "scalar_vs_matrix_agree": abs(v_genuine - v_matrix) < 1e-9,
+            "scalar_vs_matrix_agree": bool(abs(v_genuine - v_matrix) < mpf("1e-9")),
         }
     print()
 
@@ -185,9 +261,9 @@ def main() -> int:
     max_rel = max(abs(r["genuine_vs_production_rel_pct"]) for r in records.values())
     prod_is_genuine = max_rel < 1e-6
     if prod_is_genuine:
-        print(f"  Production MATCHES genuine seminormal to {max_rel:.2e}% — DERIVED.")
+        print(f"  Production MATCHES genuine seminormal to {float(max_rel):.2e}% — DERIVED.")
     else:
-        print(f"  RED: production DIFFERS from genuine seminormal (max {max_rel:.3f}%).")
+        print(f"  RED: production DIFFERS from genuine seminormal (max {float(max_rel):.3f}%).")
         print(f"  Production = W_sym·λ_sym + W_std·V_std + W_alt·λ_alt (3-channel)")
         print(f"  Genuine    = z·a + b = V_std alone (standard channel only).")
         print(f"  The W-weighted 3-channel sum is NOT thm:markov-trace-product's")
@@ -204,8 +280,8 @@ def main() -> int:
     ng1 = records["neutron σ_1 (udd, gen 1)"]["vhat_genuine_z_a_plus_b"]
     d0 = (pg0 - ng0) / ((pg0 + ng0) / 2) * 100
     d1 = (pg1 - ng1) / ((pg1 + ng1) / 2) * 100
-    print(f"  gen 0 (strong/quark channel): V̂_p = {pg0:.6f}  V̂_n = {ng0:.6f}  Δ = {d0:+.3f}%")
-    print(f"  gen 1 (quark channel):        V̂_p = {pg1:.6f}  V̂_n = {ng1:.6f}  Δ = {d1:+.3f}%")
+    print(f"  gen 0 (strong/quark channel): V̂_p = {float(pg0):.6f}  V̂_n = {float(ng0):.6f}  Δ = {float(d0):+.3f}%")
+    print(f"  gen 1 (quark channel):        V̂_p = {float(pg1):.6f}  V̂_n = {float(ng1):.6f}  Δ = {float(d1):+.3f}%")
     pn_differ = abs(pg0 - ng0) > 1e-9 or abs(pg1 - ng1) > 1e-9
     print(f"  Proton ≠ Neutron per-crossing V̂ ? {'YES' if pn_differ else 'NO'}")
     print(f"  → the p/n split lives in the QUARK-PAIR crossings: uud has one ud")
@@ -223,8 +299,8 @@ def main() -> int:
              * records["neutron σ_1 (udd, gen 1)"]["vhat_production_vertex_volume"])
     p_genuine = (pg0 * pg1)
     n_genuine = (ng0 * ng1)
-    print(f"  proton  ∏V̂ production = {p_trM:.6f}   genuine z·a+b = {p_genuine:.6f}")
-    print(f"  neutron ∏V̂ production = {n_trM:.6f}   genuine z·a+b = {n_genuine:.6f}")
+    print(f"  proton  ∏V̂ production = {float(p_trM):.6f}   genuine z·a+b = {float(p_genuine):.6f}")
+    print(f"  neutron ∏V̂ production = {float(n_trM):.6f}   genuine z·a+b = {float(n_genuine):.6f}")
     print()
 
     witness = {
@@ -287,7 +363,7 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
     witness["scriptFile"] = _os.path.basename(__file__)
-    out.write_text(json.dumps(witness, indent=2))
+    out.write_text(json.dumps(_ser(witness), indent=2))
     print(f"Witness: {out}")
     return 0
 
