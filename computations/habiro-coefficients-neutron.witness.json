@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T16:47:28.796651+00:00",
-  "commitSha": "b838c46c628d8da8be8b3c4d1d0afa309d28764f",
+  "computedAt": "2026-08-23T08:34:41.311977+00:00",
+  "commitSha": "c65facf831eaaa93edf9d31f92caa85808c2f6b9",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-neutron",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "38a8e150e5d2",
-  "scriptCommitSha": "dd6f059cdbd12df2b306a33644593f2972ed0862",
+  "scriptHash": "2313bfea83ad",
+  "scriptCommitSha": "23dd97f9a497891220811c909126d9fcf3a2b9f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +19,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/_habiro_coefficient_extract.py"
+    ],
+    "reproduce": "python3 -u computations/_habiro_coefficient_extract.py"
   },
   "description": "Habiro / cyclotomic expansion tr_M(A=1, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=0, N=1 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
   "data": {

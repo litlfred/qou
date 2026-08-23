@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-23T00:58:09Z
+updated_at: 2026-08-23T08:44:47Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -185,3 +185,82 @@ not the Galois theory.
 of 2", then the `N(q)^{A-1}` resonance) came from reporting a pattern before
 running the cheap control that could kill it. The control was three lines and one
 field of the input witness. Run it first.
+
+
+## RESOLVED (option C run) — and TWO of my own claims here were wrong
+
+Ran the producer end-to-end: `python3 -u _habiro_coefficient_extract.py`,
+**236.4 s, FAILURES: 0**, all 20 canonical atoms + the mass-table summary,
+regenerated uniformly from one `(τ_p, τ_n)`.
+
+### Correction 1 — "the driver is semantic: `include_inter`" was WRONG
+
+`canonical_interface_kinds(1,0)` and `(0,1)` both return **`[]`**, so the
+interface product is `1` and **free ≡ bound at A = 1**. The flag cannot be what
+made the deprecated proton differ from the live one. `include_inter: True` at
+line 288 is a **correct descriptive label** — this producer always multiplies in
+the interface product — not a hardcoded switch suppressing a variant.
+
+**So the "blocker" I reported to the author does not exist.** Nothing had to be
+un-hardcoded. Emitting a genuine *free* variant would mean omitting
+`_interface_product_symbolic`, which is a different change, and at A = 1 it would
+be a no-op anyway.
+
+### Correction 2 — "the committed composites cannot be reproduced" was OVERSTATED
+
+That came from comparing `tr_M_in_q` with `sp.simplify(together(...))`. At the
+coefficient level, measured per atom:
+
+    proton, neutron        reproduce EXACTLY (tr_M string-equal, all a_m equal)
+    deuteron, ³He          coefficients IDENTICAL; only the tr_M SERIALISATION
+                           differs (expanded vs factored — same expression)
+    tritium                genuinely differs (16 -> 15 coefficients, from m=1)
+
+Four of five reproduced. One did not.
+
+### What the full run actually found — 16 of 20, and the split is exact
+
+| | |
+|---|---|
+| coefficients changed | **16** atoms |
+| unchanged | proton, neutron, deuteron, ³He |
+
+**The split is predicted perfectly (20/20) by one property: whether the atom's
+`canonical_interface_kinds` contain `negative`/`averaged`.** Every atom with a
+`negative` interface changed; every all-`positive` atom did not.
+
+Both generations are self-consistent: old **and** new carry
+`reconstruction_matches: True` (exact symbolic `Σ a_m (u;u)_m = p(u)`), and both
+`deg_p_u` and `denom_in_u` changed on all 16. So these are exact expansions of
+**different input polynomials**, not a precision or truncation artefact.
+
+### Attribution — localised, NOT settled
+
+`_markov_z_q` documents its own migration: `z = q³/(q²+1)` (**convention D**),
+"was `1/(q^{1/2}+q^{-1/2})`, convention C, excised by the owner ruling of
+2026-08-09 … the audit keyed off an assignment TARGET and this computes straight
+into its return, so it had no name to match" — the detector-blindness class.
+
+The tempting conclusion is "the 16 were computed under convention C". **I am not
+asserting that, and the data argues against it:** the deuteron's only interface
+factor **is** `z`, and the deuteron is **unchanged**. A C→D change in `z` would
+have moved it. So the difference sits in the `negative`/`averaged` branch —
+`(z − h)` / `(z − h/2)` — not in `z` itself.
+
+Which upstream edit did it is **not established here**. Do not write "the
+mass-table witnesses were convention-C" anywhere on the strength of this bean.
+
+### Verification
+
+- `scripts/precision-gates.sh --changed` → **all blocking gates green, EXIT=0**.
+  (The one `!!` is a pre-existing untraceable literal in
+  `qbeta_t4_stokes3_crux_probe.py:60`, unrelated.)
+- All regenerated files: `reconstruction_matches: True`.
+- Diff is `computations/habiro-coefficients-*` only.
+
+### Not merged, deliberately
+
+The ask was five atoms; the honest run touches **16**, and it rewrites
+mass-table witnesses with downstream consumers. That is 3× the requested blast
+radius with an unresolved attribution, so it goes up as a PR for the author, not
+onto main.
