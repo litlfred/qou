@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-08-23T07:59:27Z
+updated_at: 2026-08-23T08:53:19Z
 ---
 
 Found during /prepare-merge on PR #5199 (provenance triage). NOT that branch's regression -- cross_check_trM_1ppb.py reads none of its files (inputs are atomic-tr-m-mpfr-50dps, canonical-tr-m-via-chi-cache, habiro-coefficients-extended, markov-peel-atomic-tr-m-muon, q-pinning-50-digit). Confirmed inherited: a pristine origin/main worktree (cbb49a1a35) exits 1 on the same gate.
@@ -85,8 +85,15 @@ this makes the reason legible, it does not make the number green.
 
 I appended a section here claiming this bean and `qou-dau6` were **competing
 hypotheses with no adjudication between them**, and offered a **third**
-candidate (import-cone drift). Both claims are false. The append was caught
-before its PR (#5514) merged, so it never reached `main`; this replaces it.
+candidate (import-cone drift). Both claims are false. This replaces it.
+
+**Precision about "never reached main" — my first retraction said that, and
+it is wrong.** The correction was made before #5514 merged, but the merge is
+a REBASE, so the false commit `b9d0c5bfb9` replayed onto `main` and sits in
+its history. No revision of this file on `main` asserts the false claim, and
+the final state is clean — but the commit is there, and `git log -p` will
+show it. Recorded because a retraction that misstates its own blast radius
+is the same defect one level down.
 
 ### 1. The adjudication EXISTS, and predates my append by two days
 
@@ -140,3 +147,28 @@ legible, not the number green. Two independent fixes, neither done:
 `cross-check-trM-1ppb.witness.json` is deliberately NOT regenerated. Do not
 "fix" this red by re-running and committing: until both causes are drained, a
 re-run records the straddle rather than resolving it.
+
+## Independently reproduced 2026-08-23 (prepare-merge, PR #5494)
+
+Reproduced on the #5494 branch rebased onto main (eadcb02e08), container
+sympy 1.14.0 / pyhecke_native 0.9.0. Regenerating cross_check_trM_1ppb
+gives numbers matching this bean's table exactly:
+
+  hoef_vs_peel   0.00018212626385904026 -> 0.324798555527689657
+  hoefsmit_50dps 0.38828647155940888    -> 0.57517233101788385
+  rel_delta_max  0.48130900224209445    -> 0.48103926609393223
+
+--strict exits 1; 6/6 atoms diverge. Confirms inherited: PR #5494 touches
+neither that producer nor its cone, and main's committed witness already
+carries allPassed: false.
+
+Same disposition as #5199 — regenerated witness NOT committed; reverted and
+stated in the PR instead.
+
+Correction to my own first reading: I initially attributed the move to the
+sympy 1.12 -> 1.14 gap between this container and the witness's recorded
+environment. The environment stamp does differ, but this bean's probe already
+diagnosed the mechanism as the convention C/D straddle, and the numbers
+landing on this bean's values to full precision says the straddle is the
+cause, not the sympy bump. An environment difference was the easier
+explanation, not the right one.

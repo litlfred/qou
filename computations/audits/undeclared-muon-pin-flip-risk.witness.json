@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:43:58.855540+00:00",
-  "commitSha": "f272a38b43018462e401d7b4cf82a821c11571c3",
+  "computedAt": "2026-08-23T08:34:00.314875+00:00",
+  "commitSha": "0d757116bd4fcf43b442bbde1022907394d89f3d",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 901,
+  "durationMs": 654,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "68033e5348d3",
-  "scriptCommitSha": "c0768e697d774ffead869557adfffbaa732d1369",
+  "scriptHash": "c97056e5cad0",
+  "scriptCommitSha": "f634ecca3aa86d044cedcd06fe7d7fe22ed6e0ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
   "result": {
     "at_risk_count": 40,
     "baseline": 40,
-    "witnesses_scanned": 3029,
+    "witnesses_scanned": 3032,
     "declared_stems": 410,
     "at_risk": [
       {

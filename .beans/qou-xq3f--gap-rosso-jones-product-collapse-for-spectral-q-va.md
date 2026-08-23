@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-23T07:44:04Z
+updated_at: 2026-08-23T08:56:54Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -103,3 +103,45 @@ Goal: fully derive cor:spectral-decomposition-qvalue's F(τ,N) = |tr_M(e·τ·T_
   prop:cohomological-embedding (Rosso-Jones completeness + self-duality
   τ(r,s)↔τ(s,r)). Guarantees the torus-knot basis is complete ⇒ (v) exactness.
   Depends on T2.
+
+
+
+## PROGRESS 2026-08-23 (4) — T2 keystone: first brick (weighted-trace cyclicity)
+
+Started the T2 keystone (general braid-word tr_M = Σ_λ y_λ χ^λ) in
+QOU/MathlibExt/MarkovTrace.lean §5:
+- weightedCharacterTrace s dim ρ y w = Σ_{i∈s} y i · (ρ i).character w — the
+  Wedderburn-weighted trace shape, per-block dimensions dim i, over a finite
+  index set (the partitions λ⊢n). y_λ are the compute-side input (not fixed).
+- weightedCharacterTrace_append_comm: the weighted sum inherits Markov cyclicity
+  (M2) — tr_M(v++w)=tr_M(w++v) — derived block-by-block from character_append_comm
+  via Finset.sum_congr. Independent of the particular y_λ.
+
+lean-direct exit 0; #print axioms no sorryAx; audit 0 defects.
+
+So the Wedderburn-weighted trace is now KNOWN to be a class function (M2) whatever
+weights are supplied. STILL OPEN for the full tr_M: fixing the y_λ(q) values
+(the deep compute-side closed forms), M1 normalisation (tr_M 1 = 1 ⟹ Σ y_λ d_λ = 1),
+M3 Markov peel, and then the specific numerator tr_M(e_{(1³)}·τ·T_β). Ladder:
+collapse mechanism + inactive branches + numerator idempotent collapse + denominator
++ weighted-trace cyclicity (this). The y_λ-value fix remains the 08a2 keystone core.
+
+
+
+## PROGRESS 2026-08-23 (5) — T2 brick 2: identity value (M1 shadow)
+
+weightedCharacterTrace_nil: tr_M(1) = Σ_λ y_λ·d_λ (χ^λ(1)=tr(𝟙_{d_λ})=d_λ via
+eval_nil+trace_one+card_fin). So M1 normalisation tr_M(1)=1 ⟺ Σ y_λ d_λ = 1 —
+the relation that pins y_λ given the block dims. lean-direct exit 0, no sorryAx.
+
+T2 structural bricks now landed (PR #5528): M2 cyclicity + M1 identity-value, both
+independent of the y_λ values. The Wedderburn-weighted trace has its class-function
+property AND its normalisation-relation established.
+
+HONEST WALL (08a2 keystone core, genuinely large): what remains for the full tr_M
+is (a) the y_λ(q) CLOSED-FORM VALUES — the compute-side schur_principal_mpmath /
+WenzlSchurElement results, which must be transcribed/derived into Lean and shown to
+satisfy Σ y_λ d_λ = 1 + the M3 Markov peel; (b) M3 (Markov peel) as a theorem; (c)
+the concrete e_{(1³)}, τ, T_β braid elements + the numerator value. This is
+multi-session infra, not a single-session brick — the structural scaffolding (M1/M2
+shadows) is now in place for it.

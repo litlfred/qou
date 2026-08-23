@@ -1172,7 +1172,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1191,8 +1191,23 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 — content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:31:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 \u2014 content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:31:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c",
+          "lean": "70af9415e22d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'transfer-matrix-level-independence.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1311,7 +1326,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",
@@ -1736,7 +1751,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 — content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:31:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:1 \u2014 content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:31:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {

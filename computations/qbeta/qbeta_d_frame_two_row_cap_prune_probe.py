@@ -58,12 +58,25 @@ sys.path.insert(0, str(ROOT / "computations"))
 
 import schur_principal_mpmath as S  # noqa: E402
 
+# --- muon anchor: READ, never retyped ---------------------------------------
+# This file used to carry the muon q0 as a string literal. A transcribed pin
+# cannot be re-pinned, cannot be flipped by QOU_Q0_ANCHOR, and reports a
+# q0Anchor describing its label rather than its computation. The literal here
+# was B = Vol(4_1)/206.7682830, the CODATA-2018 derivation -- superseded by the
+# owner ruling of 2026-08-22 (A -> CODATA 2022, PR #5500). Reading the anchor
+# is correct before and after that ruling; retyping either value is not.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2]
+                        / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import _q0_value_for_anchor as _q0_for  # noqa: E402
+
 mp.mp.dps = 50
 
 # Substrate anchors (proton = experimental pin; muon = ideal CAL-2 pin).
 ANCHORS = {
     "proton": mp.mpf("1.10997858275138080759166909561076887987449912187357873607281"),
-    "muon": mp.mpf("1.10997859555418057528159407960950937799328227995868622546675"),
+    "muon": mp.mpf(_q0_for("muon")),
 }
 M_E = mp.mpf("0.51099895069")
 Q_CODATA = mp.mpf("0.78233341")

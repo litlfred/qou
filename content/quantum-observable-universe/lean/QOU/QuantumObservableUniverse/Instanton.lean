@@ -113,19 +113,31 @@ class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
   /-- Vanishing of adjoint-rep observables. -/
   subsingleton : Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
-/-- **Default instance from a `Subsingleton` witness**.  When the
-    Hom-space `(𝟙_ C) ⟶ adjointObj` is already known to be a
-    `Subsingleton` (e.g. zero-object, terminal, or trivially
-    discrete category), the irreducibility witness is automatic. -/
-instance hasCategoricalIrreducibility_of_subsingleton
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    {frobHopf : FrobeniusHopfData C}
-    (adjointObj : C)
-    (inst : CategoricalInstanton frobHopf)
-    [hsub : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
-    HasCategoricalIrreducibility adjointObj inst :=
-  ⟨hsub⟩
+/-! ### `hasCategoricalIrreducibility_of_subsingleton` — REMOVED 2026-08-23
+
+    It read
+
+        instance hasCategoricalIrreducibility_of_subsingleton …
+            [hsub : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
+            HasCategoricalIrreducibility adjointObj inst := ⟨hsub⟩
+
+    and its hypothesis `Subsingleton ((𝟙_ C) ⟶ adjointObj)` is the
+    conclusion of `categorical_irreducible` **verbatim**.  So the class was
+    obtainable only by already holding what it asserts, and the accessor
+    then handed it straight back — a caller who could synthesise the
+    instance never needed the theorem.
+
+    That circularity is what makes the §3b-cond carrier degenerate: the
+    class is supposed to hold the *open* content, so an instance route that
+    starts from the conclusion defeats it.  Removing the instance leaves
+    `HasCategoricalIrreducibility` as an honest open carrier with no
+    inhabitation route, which is the correct state for an unproved claim.
+    Nothing synthesised it (0 references outside this file).
+
+    Vacuity ledger, `proof-no-self-assuming-projection`.  The ledger's
+    earlier evidence recorded this as an "UNINHABITED carrier … no instance
+    exists"; that was wrong — the instance existed, and the defect is its
+    circularity, not its absence. -/
 
 /-- **Categorical irreducibility** (per-instance form).
     Use this lemma — backed by `HasCategoricalIrreducibility` —
@@ -211,21 +223,26 @@ class HasDqSquaredNonvanishing {C : Type u}
   /-- The non-vanishing conclusion. -/
   nonvanishing : cqd.dq ≫ cqd.dq ≠ 0
 
-/-- **Default instance from a `Fact` witness on the non-vanishing**.
-    When `Fact (cqd.dq ≫ cqd.dq ≠ 0)` is in scope (e.g. supplied
-    by the geometric proof at the specific `cqd`), the
-    `HasDqSquaredNonvanishing` instance follows. -/
-instance hasDqSquaredNonvanishing_of_fact {C : Type u}
-    [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
-    (cqd : CategoricalQExtDeriv C)
-    (hq : cqd.q ≠ 1)
-    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
-    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0)
-    [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] :
-    HasDqSquaredNonvanishing cqd hq hd_sq hcross :=
-  ⟨hf.out⟩
+/-! ### `hasDqSquaredNonvanishing_of_fact` — REMOVED 2026-08-23
+
+    It read `… [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] : HasDqSquaredNonvanishing
+    cqd hq hd_sq hcross := ⟨hf.out⟩` — the same circularity as above, since
+    the `Fact` is the conclusion itself.
+
+    It also made the three hypotheses decorative.  `HasDqSquaredNonvanishing`
+    is parameterised by `hq : cqd.q ≠ 1`, `hd_sq : d_classical ≫ d_classical
+    = 0` and `hcross : … ≠ 0`, and `categorical_dq_squared_nonvanishing`
+    binds all three — so the statement reads as a substantive conditional.
+    But this instance **ignored all three** and produced the class from the
+    `Fact`, so on the only available inhabitation route none of them was
+    ever load-bearing.
+
+    Removed (0 references outside this file), leaving the class as an honest
+    open carrier.  Whether `hq`/`hd_sq`/`hcross` actually imply the
+    non-vanishing is the open question the file should answer; until it
+    does, no instance should be derivable from the conclusion.
+
+    Vacuity ledger, `proof-no-self-assuming-projection`. -/
 
 /-- **`d_q²` non-vanishing** (per-instance form). -/
 theorem categorical_dq_squared_nonvanishing {C : Type u}

@@ -990,8 +990,23 @@
         "reviewed_at": "2026-07-07T14:26:55.902433Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "frobenius-hopf-substrate.lean:1 — Lean file exists",
+        "evidence": "frobenius-hopf-substrate.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md."
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496",
+          "lean": "62273e5e872e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'frobenius-hopf-substrate.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1395,7 +1410,7 @@
         "reviewed_at": "2026-07-07T14:26:55.902433Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "frobenius-hopf-substrate.lean:1 — content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
+        "evidence": "frobenius-hopf-substrate.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean:57:4: error: Type mismatch",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.lean fails compilation, indicating a reproducibility failure."
       },
       {
@@ -1753,7 +1768,7 @@
         },
         "reviewed_at": "2026-08-03T19:38:33.669Z",
         "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
-        "evidence": "title is descriptive (5 principal tokens) — principal defined term ambiguous"
+        "evidence": "title is descriptive (5 principal tokens) \u2014 principal defined term ambiguous"
       }
     ],
     "proof-compile-cost": [

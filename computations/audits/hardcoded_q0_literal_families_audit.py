@@ -85,7 +85,47 @@ _T0 = time.monotonic()
 
 #: Ratchet on literals that DIVERGE from the canonical pin (not mere
 #: truncations). Drains as sites are migrated to read the pin; must never grow.
-BASELINE_DIVERGENT = 71
+#:
+#: 72 -> 61 (PR #5535), in two steps.
+#:
+#: 72 -> 69: the char-52 family is gone -- `q0_anchor_gate_test` and
+#: `mu3_anchor_consistency_probe` both transcribed the anchor and both got its
+#: tail wrong from digit 52 -- and `probe_qbeta_form` took char-18 from 2 to 1.
+#: All three now READ `_q0_value_for_anchor("muon")`.
+#:
+#: 69 -> 61: eight PRINT-ONLY sites. A file that emits no witness costs nothing
+#: to migrate, so "defer until #5500" never applied to it; that was established
+#: by scanning for `WitnessBuilder` / `json.dump` / `.save(`, not assumed from
+#: the family label. All eight re-run at exit 0 with their assertions intact.
+#:
+#: The remaining 61 are classified in `q0-literal-classification.json`: only
+#: **37** are class-(a) defects, and each says WHY it is deferred --
+#: 32 cost (emits a witness, so reading the anchor regenerates it twice, B->A
+#: now and A->C at #5500) and 5 correctness (a frozen tr_M or a B-built
+#: y_lambda beside it, so moving q0 alone CREATES a straddle). 24 are class
+#: (b) / (c) / (d): do NOT count this number as a defect backlog, and do NOT
+#: migrate a class-(b) site -- the code names a superseded value in order to
+#: detect it, so re-pinning one disables the check it powers.
+BASELINE_DIVERGENT = 61
+
+
+def ratchet_fires(count: int, baseline: int) -> bool:
+    """The ratchet's ONE predicate. ``main()`` and ``_self_test()`` must both
+    call this -- that shared call is the whole point.
+
+    Previously each spelled the comparison out separately, and the self-test
+    spelled it against literals: ``fires = n > (n - 1)``, ``holds = not (n > n)``.
+    Both are tautologies for every ``int``, so ``--self-test`` returned 0
+    unconditionally and could not report failure. It printed the numbers while
+    never touching the predicate it claimed to test; flipping ``>`` to ``>=``
+    in ``main()`` would not have moved it.
+
+    Routed through here, a flipped operator is caught: ``>=`` breaks the
+    ``holds`` leg (``not (n >= n)`` is False) and ``<`` breaks the ``fires``
+    leg. The test can now fail, which is the only property that made it worth
+    having.
+    """
+    return count > baseline
 
 #: Only literals long enough to be a deliberate transcription rather than a
 #: display rounding. 14 chars still discriminates muon from proton.
@@ -132,7 +172,23 @@ def scan() -> dict:
             src = p.read_text(encoding="utf-8", errors="replace")
         except Exception:  # noqa: BLE001
             continue
-        for lit in set(_LITERAL.findall(src)):
+        # `sorted(set(...))`, not `set(...)`. Iterating a set OF STRINGS is
+        # order-nondeterministic across processes (PYTHONHASHSEED randomisation),
+        # so this producer emitted a DIFFERENT witness on every run: three
+        # back-to-back runs in one container came out identical as a set (72
+        # entries each) and different as a list every time. Confirmed directly —
+        # the same `set(...)` under PYTHONHASHSEED=1 and =2 yields different
+        # orders.
+        #
+        # That is not cosmetic for a witness: byte-identical reproducibility is
+        # impossible, every diff shows churn that means nothing, and a
+        # `scriptHash` staleness can never be cleared by re-running, because the
+        # re-run never reproduces. The rest of this file already sorts
+        # (`sorted(_SCAN_ROOT.rglob(...))`, `sorted(divergent)`); this was the one
+        # unsorted iteration. Found while refreshing this witness for bean
+        # `qou-1brv`; I first mis-attributed the churn to the mpmath version,
+        # which two runs under a FIXED mpmath disproved.
+        for lit in sorted(set(_LITERAL.findall(src))):
             if len(lit) < _MIN_LEN:
                 continue
             # A literal is ACCEPTABLE if it is the canonical pin either
@@ -161,7 +217,8 @@ def _self_test() -> int:
     """
     fams = scan()["families"]
     n = sum(len(v) for k, v in fams.items() if k is not None)
-    fires, holds = n > (n - 1), not (n > n)
+    fires = ratchet_fires(n, n - 1)   # the REAL predicate, at baseline n-1
+    holds = not ratchet_fires(n, n)   # and at baseline n
     print(f"self-test: {n} divergent literals")
     print(f"  ratchet FIRES at baseline {n - 1}: {fires}  (expect True)")
     print(f"  ratchet HOLDS at baseline {n}:     {holds}  (expect True)")
@@ -207,7 +264,7 @@ def main(argv: list[str] | None = None) -> int:
         if len(grp) > 6:
             print(f"      … and {len(grp) - 6} more")
 
-    grew = n_div > BASELINE_DIVERGENT
+    grew = ratchet_fires(n_div, BASELINE_DIVERGENT)
     assertions = [
         {"name": "1_divergent_set_has_not_grown", "passed": not grew,
          "detail": f"{n_div} divergent literals vs baseline {BASELINE_DIVERGENT}. "

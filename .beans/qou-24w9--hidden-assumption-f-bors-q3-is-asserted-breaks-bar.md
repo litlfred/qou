@@ -3,8 +3,9 @@
 title: 'HIDDEN ASSUMPTION: F_Bor''s /q^3 is asserted, breaks bar-symmetry, and carries 37% of m_p'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-18T20:45:53Z
-updated_at: 2026-08-18T20:45:53Z
+updated_at: 2026-08-19T14:03:15Z
 ---
 
 
@@ -238,3 +239,228 @@ observation about the ones I happened to check.
 Still open and unchanged: what DOES derive q^-3, given the numerics require it
 (dropping it moves m_p to +37.0 %). The Garside-element guess (l(w_0) = 3 =
 crossings of the B_3 half-twist Delta) remains recorded, not claimed.
+
+## Which normalisation is DERIVABLE? -- the option table, measured (2026-08-19)
+
+Owner asked which convention QOU can derive. Computed the required N (from
+F_Bor = |tr_M| . N and the m_p target) and tested every structurally-motivated
+candidate. Required N = 4.4755738777400674, |tr_M(b_Bor)| = 0.99856216383679.
+
+  option                              N          m_p (MeV)     vs CODATA   bar-sym  derivable
+  1 writhe rule (w=0), N=1            1.0000     204.88        -78.16 %    YES      YES (corpus rule)
+  2 Markov/TL delta^(n-1) = [2]^2     4.0437     847.14         -9.71 %    YES      YES (standard)
+  3 [3]_q! , no division              6.1206    1285.39        +37.00 %    YES      YES (Poincare/dim)
+  4 [3]_q!/q^3   CURRENT              4.4756     938.272089    -2.9e-10 %  no       NO (proved)
+  5 [3]_q!/q^(3/2) half-centering     5.2338    1098.28        +17.05 %    no       partly
+  6 q.[2]^2      near-miss            4.4884     940.98         +0.29 %    no       NO
+
+### The structural result
+
+Every DERIVABLE option is bar-symmetric, and every bar-symmetric option MISSES.
+The only option that hits is the one proved non-derivable. That is not a gap in
+the search -- it follows from the earlier theorems: tr_M and [3]_q! are both
+bar-symmetric, so any braid-derived N is bar-symmetric, and the required N is
+not (F_Bor(q^-1) = q^6 F_Bor(q)).
+
+Searched bar-symmetric products [2]^b [3]^c [4]^e over b,c,e in [-4,4]x[-4,4]x
+[-2,2] (~400 candidates). Closest is [2]^3[3]^2[4]^-2 at 0.34 %. That is
+NUMEROLOGY, not evidence: three free exponents over ~400 candidates spanning a
+wide range will produce a sub-percent hit by chance, which is the
+search-space-entropy argument AGENTS.md uses against the 12-constant PSLQ basis.
+It is recorded so nobody mistakes it for a find.
+
+### The one principled bar-symmetric candidate
+
+delta^(n-1) = [2]_q^2 -- the standard Markov/Temperley-Lieb strand
+normalisation, the loop value raised to (n-1). It is DERIVABLE, bar-symmetric,
+and misses by 9.71 %. That is the honest best available, and 9.71 % is far too
+large to be a residual.
+
+### What this means
+
+The question "which normalisation is derivable from QOU?" has a definite answer:
+  - DERIVABLE: the writhe rule (gives 1), and the Markov/TL strand
+    normalisation (gives [2]^2). Both bar-symmetric, both miss badly.
+  - NOT DERIVABLE: the one in use.
+
+So this is not a matter of finding the right derivation -- the derivable options
+are enumerated and none reproduces m_p. Either the mass identity needs a factor
+that is genuinely a declared convention (and should be labelled one), or
+something upstream of F_Bor -- the hbar_q convention, the muon anchor, or the
+trace convention -- is absorbing a q-power that belongs elsewhere. The second is
+worth checking: 1/hbar_q^2 is ALSO bar-asymmetric (hbar_q = 1 - 1/q), and the
+two asymmetries combine to a net q^-2 across m_mu . F_Bor.
+
+## The hbar_q repair hypothesis: TESTED and REFUTED (2026-08-19)
+
+`computations/qbeta/fbor_normalisation_barsymmetry_probe.py` +
+`fbor-normalisation-barsymmetry.witness.json` (2 assertions, both pass).
+
+Last note here proposed the remaining repair: since `1/hbar_q^2` is ALSO
+bar-asymmetric (hbar_q = 1 - 1/q) and the two asymmetries combine to a net q^-2
+across m_mu . F_Bor, perhaps the q-power is simply MISPLACED -- use the
+bar-symmetric hbar_sym^2 = (q^{1/2} - q^{-1/2})^2 = q - 2 + 1/q and drop /q^3,
+giving a fully bar-symmetric mass identity.
+
+I proposed it, tested it, and it fails.
+
+### Why it is a real test rather than a reshuffle
+
+q_0 is NOT free -- it is solved from the proton pin. So the alternative was
+re-solved for its own q, and then scored on m_mu/m_e, which was NOT used in the
+solve. That ratio is the corpus's own 9.5-sigma cross-check (proton-pinned =>
+m_mu is a prediction), so it discriminates.
+
+### Result
+
+    CURRENT  hbar = 1 - 1/q, with /q^3      (bar-ASYMMETRIC)
+       q                  = 1.10997858275138
+       m_mu/m_e predicted = 206.768326370674
+       error              = 211.16 ppb          <- the known mu-p tension
+
+    ALTERNATIVE  hbar^2 = q - 2 + 1/q, no /q^3  (bar-SYMMETRIC)
+       q re-solved        = 1.12303052937477
+       m_mu/m_e predicted = 150.604111821442
+       error              = -2.716e8 ppb  (-27.16 %)
+
+    ratio: the symmetric form is 1 286 334x WORSE on the cross-check.
+
+### What this changes -- and it is a real update
+
+The bar-symmetric alternative reproduces the proton pin (it has a q that does),
+but misses the untouched muon ratio by 27 %. So the /q^3 is NOT a misplaced
+q-power that symmetry would repair.
+
+The status of the factor is therefore sharper than "unjustified convention":
+
+  NOT DERIVABLE   -- proved (unreachable by the writhe rule; double Poincare
+                     centering; sole bar-asymmetric step)
+  NOT ARBITRARY   -- it and the hbar_q convention JOINTLY satisfy TWO
+                     independent observables (m_p pin and m_mu ratio) to ~200
+                     ppb, where the natural symmetric alternative misses the
+                     second by six orders of magnitude
+
+A wrong normalisation would generally not survive an independent cross-check.
+This one does. So the honest target is no longer "replace it with a derivable
+one" -- the derivable options are enumerated and all fail (option table above).
+It is "explain why THIS combination is the one that works".
+
+That is a harder and more interesting question, and it is the one I would put to
+the owner: the factor behaves like it encodes something real that the current
+derivation vocabulary cannot express.
+
+
+## WHERE /q^3 COMES FROM — it is the q-Schur Plancherel weight of the trivial block (2026-08-19)
+
+Owner asked what the corpus and the literature say about the options. The
+option table above was INCOMPLETE: it never considered normalising by a single
+Wedderburn BLOCK weight. The corpus does exactly that, and the missing entry is
+the one in use.
+
+`computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py` (8/8, proton
+pin, convention D).
+
+### The provenance, and it is not arbitrary at all
+
+`phase5/phase2b_dim_v21_bridge_derivation.py:29` states
+
+    F_Bor = |tr_M| . [3]_q!/q^3 = |tr_M| / y_(3),   y_lam = q^{c(lam)}/[n]_q!
+
+and that is an EXACT identity: `c((3)) = 0+1+2 = 3` is the CONTENT SUM of the
+trivial partition. Measured: `1/y^Schur_(3) = 4.475573877740067446` = the
+current factor, to the last digit.
+
+This also explains the bar-asymmetry structurally, which nothing before did:
+bar sends `lam -> lam'`, and `c(lam') = -c(lam)`. So the factor is
+bar-asymmetric BECAUSE it is a single-block weight, and the block it picks is
+the chirality-extremal one. That is the first candidate to escape the
+bar-symmetry wall this bean hit — the wall was an artifact of only considering
+normalisers built from tr_M and [3]_q!, both bar-even.
+
+### The catch, measured
+
+`y_lam = q^{c(lam)}/[n]_q!` is the q-SCHUR PLANCHEREL family
+(`QSchurYLambdaClosedForm.lean` — and note the identification with the
+categorical weight there is a CONJECTURE CLASS, not a theorem). The `tr_M` in
+`F_Bor` is the WENZL/MARKOV trace. At the proton pin:
+
+    sum_lam y^Wenzl_lam . chi^lam(beta_Bor) = 0.99856216383678726595
+                                              = the Lean tr_M, residual 1.8e-71
+    sum_lam y^Schur_lam . chi^lam(beta_Bor) = 0.66872287272701215631
+
+    sum_lam dim_lam . y^Wenzl_lam = 1  EXACTLY   (= tr_M(1), the Markov
+                                                  normalisation)
+    sum_lam dim_lam . y^Schur_lam = 0.66967281337086841549
+
+The first line is a THREE-WAY independent check — Lean closed form, the Wenzl
+weight formula, and the Phase-1c character — agreeing to 71 digits. So the
+Wenzl family is unambiguously the one that decomposes this trace, and the
+q-Schur family is not.
+
+So `/q^3` is a CROSS-FAMILY IMPORT: a q-Schur block weight applied to a Markov
+trace. AGENTS.md's notation register forbids exactly this ("three
+partition-weight families y_lam / w_lam / w~_lam are distinct at q != 1 --
+never conflate").
+
+### Two options collapse into one
+
+    1/y^Wenzl_(2,1) = [2]_q^2   EXACTLY (22 digits, both pins)
+
+So "normalise by the standard-rep block weight" and "the Markov/TL strand
+normalisation delta^(n-1)" are the SAME option, not two. It remains the best
+principled bar-symmetric candidate and still misses by 9.71 %.
+
+    1/y^Wenzl_(3)   = 1.9786142409559419401  ->  m_p = 411.38  (-56.2 %)
+    y^Wenzl_(1,1,1) = 0  in convention D — the bar-partner of the trivial block
+                         is not available as a normaliser at all.
+
+### Updated option table (proton pin, convention D)
+
+  option                                        N            m_p (MeV)   family
+  writhe rule (w=0)                             1.0000       204.88      corpus rule
+  1/y^Wenzl_(3)   trivial block                 1.9786       411.38      Wenzl
+  1/y^Wenzl_(2,1) = [2]_q^2 = TL delta^(n-1)    4.0437       847.14      Wenzl
+  [3]_q!  no division                           6.1206      1285.39      Poincare
+  1/y^Schur_(3) = [3]_q!/q^3   CURRENT          4.4756       938.272089  q-SCHUR
+
+Every entry from the Wenzl family — the family that actually decomposes tr_M —
+misses. The only hit is the q-Schur import.
+
+### What the literature says
+
+  * The Wenzl weight is the HOOK-CONTENT formula, and the witness records it as
+    such: `s_{lam,X}(Q) = Q^{n(lam)} prod_x (1 - X Q^{c(x)})/(1 - Q^{h(x)})`.
+    That is Stanley's principal specialisation
+    `s_lam(1,q,...,q^{N-1}) = q^{n(lam)} prod_x [N+c(x)]/[h(x)] = q^{n(lam)}
+    dim_q(lam)` — so a q-power carrying CONTENT is standard in this setting;
+    what the q-Schur closed form drops is the hook/dimension half.
+  * The weights at the minimal idempotents were first computed by Ocneanu (that
+    work is lost) and reproved by Geck; Jones (Ann. Math. 126 (1987) 335-388)
+    is the canonical source for the Markov trace -> HOMFLY construction.
+  * HOMFLY framing: `H(D) = v^{-w(D)} P(D)`, so the framing correction is a
+    WRITHE power and is 1 at w = 0 — which is what the Lean theorem
+    `no_writhe_prefactor_yields_inv_cube` already says for beta_Bor.
+  * The remaining standard normaliser is the `(n-1)`-power of the loop value,
+    i.e. `delta^{n-1} = [2]_q^2` — the option that collapses with the Wenzl
+    standard block above.
+
+  Sources fetched 2026-08-19 via WebSearch (arxiv.org is egress-blocked from
+  this sandbox, so the Ocneanu/Geck and hook-content statements are from search
+  summaries of arXiv math/9806163 "Weights of Markov Traces on Hecke Algebras"
+  and ncatlab's hook-content page, NOT from the full texts).
+
+### What this changes for the open question
+
+"Which normalisation is derivable?" now has a sharper answer than
+"none of them". The factor IS a canonical object — the q-Schur Plancherel
+weight of the trivial block, exponent = content sum — imported across a family
+boundary. So the live question becomes:
+
+    is there a reason the MASS channel should be normalised by the q-Schur
+    Plancherel weight rather than by the Markov weight of its own trace?
+
+That is answerable in principle (the two families differ by the hook/dimension
+half of the hook-content formula), and it is a much better-posed target than
+"what derives 3". Not attempted here.
+
+Scope-(a). Does not refute F_Bor; does not touch the Lean-proved |tr_M|.

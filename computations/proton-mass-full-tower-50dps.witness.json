@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:22:13.857929+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T07:40:56.733316+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
-      "computed": "0.98704593871124911263069442862932477961960663445475",
+      "computed": "0.98711715903783686289006193471625621624132895068395",
       "expected": "0",
       "passed": false,
       "tolerance": 0.01
     },
     {
       "name": "m_p_within_2_percent",
-      "computed": "0.98704593871124911263069442862932477961960663445475",
+      "computed": "0.98711715903783686289006193471625621624132895068395",
       "expected": "0",
       "passed": false,
       "tolerance": 0.02
     }
   ],
   "allPassed": false,
-  "durationMs": 29,
+  "durationMs": 24,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
-  "scriptHash": "b32f4b5c69c7",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "f597b2ee422e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,7 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_m_p_hecke_full_tower_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/derive_m_p_hecke_full_tower_50dps.py"
   },
   "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
@@ -54,13 +63,13 @@
         "N": 0,
         "knot_type": "none",
         "T1_descended_50dps": "0.96039549118815049651215986149723955840572223004978",
-        "T2_single_Li2q_50dps": "3.0197861117652327057249272002817621352529662978757",
-        "T3_pair_Li2q_50dps": "0.36127481884429696564119020386067479383016393538142",
-        "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
-        "T5_chirality_BW_50dps_cat_units": "4.2555548965480031880688760873016925371098187891359",
-        "T6_Habiro_residue_50dps_cat_units": "1.921135702610148536969493791505930264359463199664",
-        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "12.154434135548915810051307539085352415479872612355",
+        "T2_single_Li2q_50dps": "3.0197861226956949690177184962514434358616584923289",
+        "T3_pair_Li2q_50dps": "0.36127482011669798762944100795990428397488191514679",
+        "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160248",
+        "T5_chirality_BW_50dps_cat_units": "4.1887308561594223214016865798174551308989203243785",
+        "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
+        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "m_hecke_50dps": "12.087610107363198228665160131670025800022384321816",
         "wedderburn_vols_full_50dps": [
           "0.9890073159292597737327090873425711234998226354167",
           "0.97107015865274369644467729606208246103317407697938"
@@ -74,13 +83,13 @@
         "N": 1,
         "knot_type": "none",
         "T1_descended_50dps": "0.83329025047951637547090882116805412808114314357792",
-        "T2_single_Li2q_50dps": "2.6773389344601129006370199389604000318829575164597",
-        "T3_pair_Li2q_50dps": "0.28361641237174648328588200596415351097738966568671",
+        "T2_single_Li2q_50dps": "2.677338941109513668366937987436955897064255484275",
+        "T3_pair_Li2q_50dps": "0.2836164128719695006316692095267800756926598689668",
         "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
-        "T5_chirality_BW_50dps_cat_units": "4.1907715517490041804037697203784797581256283767945",
-        "T6_Habiro_residue_50dps_cat_units": "1.921135702610148536969493791505930264359463199664",
-        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "11.542439966263612393901734672615070819948320062431",
+        "T5_chirality_BW_50dps_cat_units": "4.0020362578956189901527841422126845706272788993274",
+        "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
+        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "m_hecke_50dps": "11.353704679559850988726454346488458062346538756059",
         "wedderburn_vols_full_50dps": [
           "0.8542103128258389606769442997911669155688329382913",
           "0.97550947110774594315687948247161058517697160610811"
@@ -91,17 +100,17 @@
       }
     },
     "ratios": {
-      "m_p_over_m_e_50dps": "23.785634234936937126670849170399403928137785609814",
-      "m_n_over_m_e_50dps": "22.587991522639915881001698173203485213497826688524"
+      "m_p_over_m_e_50dps": "23.654862874065284959118044195352212182098139176545",
+      "m_n_over_m_e_50dps": "22.218645780444334377242582643645502673207336162914"
     },
     "predictions_MeV": {
-      "m_p_pred_50dps": "12.154434135548915810051307539085352415479872612355",
-      "m_n_pred_50dps": "11.542439966263612393901734672615070819948320062431"
+      "m_p_pred_50dps": "12.087610107363198228665160131670025800022384321816",
+      "m_n_pred_50dps": "11.353704679559850988726454346488458062346538756059"
     },
     "comparisons": {
-      "m_p_codata_MeV": "938.27208816",
-      "rel_diff_p": "0.98704593871124911263069442862932477961960663445475",
-      "rel_diff_p_ppm": "987045.93871124911263069442862932477961960663445475"
+      "m_p_codata_MeV": "938.27208943",
+      "rel_diff_p": "0.98711715903783686289006193471625621624132895068395",
+      "rel_diff_p_ppm": "987117.15903783686289006193471625621624132895068395"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",

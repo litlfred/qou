@@ -4,14 +4,11 @@
   "kind": "definition",
   "paths": {
     "ts": "content/quantum-observable-universe/quantum-universes/categorical-jet.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/categorical-jet.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/categorical-jet.lean"
+    "md": "content/quantum-observable-universe/quantum-universes/categorical-jet.md"
   },
   "source_hashes": {
     "md": "b52bc195716b",
-    "ts": "9278c2d1435d",
-    "lean": "b42d472860b6",
-    "lean_statement": "311c4865fdbb"
+    "ts": "9278c2d1435d"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1009,7 +1006,7 @@
         "reviewed_at": "2026-07-07T14:26:57.096508Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-jet.lean:1 — Lean file exists",
+        "evidence": "categorical-jet.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file."
       }
     ],
@@ -1451,7 +1448,7 @@
         "reviewed_at": "2026-07-07T14:26:57.096508Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/categorical-jet.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
+        "evidence": "content/quantum-observable-universe/quantum-universes/categorical-jet.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent."
