@@ -935,3 +935,55 @@ itself: pull the Σ apart over the subtype of diagrams, recognise each fibre as 
 along partitionShapeEquiv. Needs finiteness instances on the Σ-subtype.
 
 ### #5426 now carries bricks 16-41, seventeen files, zero sorries, axiom-clean throughout
+
+### Brick 42 — RSKBurnsideHolds FOR GENERAL n. THE EPIC'S TARGET IS PROVED. (PR #5426)
+
+  QOU.Mathlib.rskBurnsideHolds (n : ℕ) : RSKBurnsideHolds n
+      i.e.  ∑ p : Nat.Partition n, (dimSYT p)^2 = n!
+
+  #print axioms  ->  [propext, Classical.choice, Quot.sound].  NO sorryAx anywhere in the cone.
+  RSKBurnsideTarget said "General n still awaits RSK". It no longer does. Previously proved only
+  for n <= 12 via rskBurnsideHolds_le12 (decide-verified enumeration, no RSK in it).
+
+  Three steps of card algebra over the mathematics:
+    Nat.card (Perm (Fin n)) = n!                              (Fintype.card_perm ∘ card_eq_fintype_card)
+    rskEquiv (brick 40)                                       (the correspondence)
+    card_pairs_eq_sum : Equiv.subtypeSigmaEquiv (subtype of a Σ -> Σ over a subtype)
+                        ∘ brick 41 reindex ∘ Nat.card_sigma   (each fibre SYT × SYT = dimSYT^2)
+  Finiteness was already in place: Nat.Partition n is a Fintype; StandardYoungTableau μ has the
+  Finite instance its own file proves by encoding entries on cells.
+
+  BUILD NOTE: Mathlib.GroupTheory.Perm.Fintype is NOT in the restored olean cache;
+  Fintype.card_perm lives in Mathlib.Data.Fintype.Perm, which IS. Import that.
+
+### THE WEDDERBURN SPLIT, UNCONDITIONALLY, FOR EVERY n (new file, same PR)
+
+  QOU.BraidKnot.SpechtWedderburnGeneral.spechtEquiv (n : ℕ) :
+      MonoidAlgebra k (Perm (Fin n)) ≃ₐ[k] (∀ i : PartitionIndex n, End k (SpechtSubmodule i.diagram))
+  + spechtProduct_bijective.  Axioms: [propext, Classical.choice, Quot.sound]. Sorry-free.
+
+  SpechtWedderburnLe12 named its own limit exactly ("The general case is exactly RSKBurnsideHolds n
+  for general n") and brick 42 discharges it. ONE ARGUMENT SUBSTITUTED — the reduction, the
+  reindexing, both SYT-encoding bridges and the criterion are untouched. That the substitution is
+  the whole of it is the point: the split was never waiting on representation theory, only on the
+  count.
+
+### THE KEYSTONE IS *NOT* CLOSED — measured, so the next agent need not re-derive this
+
+SnWedderburnPartitionBridge.sn_isotypic_specht_split (still `sorry`) is STRONGER than the split:
+  (i)  it lands in MATRIX algebras, not End — needs algEquivMatrix + a Fin (finrank)-indexed basis;
+  (ii) it asserts e (RegularRepTrace.centralC2 n) i = (contentSqSum i.diagram : R) • 1.
+For (ii) the ingredients exist but do NOT compose yet:
+  - JucysMurphy.centralC2 = RegularRepTrace.centralC2 by `rfl` (centralC2_eq_sum_jucysMurphy_sq) —
+    the overloaded-symbol hazard is already cleared in the corpus, do not re-litigate it;
+  - centralC2_acts_by_contentSqSum IS proved, but for (Specht.Mtab.rep μ).asAlgebraHom on the
+    AMBIENT Mtab, at index Specht.nOf μ;
+  - spechtProduct uses (spechtRepAt i.property).asAlgebraHom
+      = (spechtRep μ).comp (transportPermHom h.symm)  — the RESTRICTED rep, at index n.
+  So two bridges are missing: (a) transporting centralC2 along the Fin n ≃ Fin (nOf μ) index equiv
+  (centralC2 is central and its image ought to be centralC2, but the proof needs the class-sum
+  characterisation — the naive index-relabel argument does NOT go through termwise, since the
+  `i < k` structure is not preserved by an arbitrary bijection), and (b) ambient-vs-restricted.
+Estimate: 3-5 bricks, not a one-liner. NOT attempted.
+
+### #5426 now carries bricks 16-42 + the general split, nineteen files, zero sorries
