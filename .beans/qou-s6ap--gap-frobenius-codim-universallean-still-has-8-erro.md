@@ -1,11 +1,11 @@
 ---
 # qou-s6ap
 title: 'GAP: frobenius-codim-universal.lean still has 8 errors after the 100->8 repair'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T12:55:42Z
-updated_at: 2026-08-23T12:56:10Z
+updated_at: 2026-08-23T13:20:25Z
 ---
 
 ## State
@@ -60,3 +60,48 @@ Do not "fix" this by weakening a statement, adding `sorry`, or concluding
 `True`. The `codim_block_contribution` / `frobenius_codim_universal` /
 `frobenius_codim_tau_invariant` chain is a real linear-algebra identity and
 should be provable as stated.
+
+
+## CLOSED 2026-08-23 — the file compiles
+
+`LEAN_EXIT=0`, **0 errors, 0 sorries**, 943 lines. Confirmed twice, both reads
+taken after `while pgrep -x lean; do sleep; done`.
+
+All eight listed above are gone:
+
+| listed error | cause | fix |
+|---|---|---|
+| 83, 802, 854 stuck typeclass | `∑ μ,` / `∀ μ,` left `Λ` a metavariable, so `[SemisimpleFrobeniusAlgebra Λ]` could not resolve | annotate `: Λ` |
+| (revealed) `Finset.erase` | `[DecidableEq Λ]` never bound | add to both `gb_filtration_*` |
+| (revealed) 4× type mismatch | `Finset.sum_erase_add` gives `∑ erase + f a`; every `show` wrote `f a + ∑ erase` | `Finset.add_sum_erase` |
+| 93 rewrite failed | `mul_div_assoc` reached with the goal at `b / (a * b)` — product in the DENOMINATOR, nothing to fire on | `field_simp`; `_ha` renamed `ha`, it was never really unused |
+| 222 unsolved | `simp` stopped at `1/1 + 1/1` | `norm_num [heckeH2DimQ]` |
+| 468, 603, 784 unsolved | **not** what I first said — see below | `simp [div_eq_mul_inv]` |
+
+## Retracting my own diagnosis of 468/603/784
+
+I recorded that these needed `field_simp` with nonvanishing side conditions the
+statements lack, and that their unconditional truth was an open mathematical
+question. **Both claims were false**, and they were false because I reasoned
+about the goal rather than printing it.
+
+Printed, the two sides differ only in notation: `simp` normalises the left to
+`a⁻¹ * b⁻¹` while the right still reads `2 / (a * b)`. `div_eq_mul_inv`
+reconciles them, `ring` closes it. Unconditional. One lemma, all three cases.
+
+`mul_inv` alongside it was reported unused at both sites and dropped.
+
+## The n=8 heartbeat
+
+`simp` over 22 branches of degree-7 Laurent expressions exceeds the default
+budget — deterministic timeout, not a proof gap. `set_option maxHeartbeats
+1000000 in`, placed **before** the docstring; after it, the docstring is
+orphaned and the file will not parse. I made that exact mistake twice in this
+one file.
+
+## Method note worth keeping
+
+Two error counts I reported on this branch came from grepping a `lean` log
+while the process was still writing to it. A truncated log contains no error
+text and is indistinguishable from a clean build by grep alone. Guard every
+read with `while pgrep -x lean; do sleep; done`.
