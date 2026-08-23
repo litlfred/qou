@@ -65,7 +65,14 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 DPS = 50
 
-MUON_Q0 = "1.1099785955541805"
+# The canonical ideal-CAL-2 (muon) pin, 50 digits, taken from the package
+# rather than retyped. The literal that stood here, "1.1099785955541805", is
+# 2.84e-12 relative (0.00284 ppb) away from it -- far BELOW the 11.5 ppb mu-p
+# tension, so it was never a layer confusion, but ~2840x ABOVE the 1 ppQ
+# (1e-15) L1 compute-precision target this corpus claims. Bean qou-c1ya.
+_MUON_Q0_FALLBACK = (
+    "1.10997859555733471989976322048322502665620840878015368660798114614493"
+)
 
 TARGETS = [
     "wenzl-y-lambda-h9.witness.json",
@@ -121,7 +128,7 @@ def find_q0(doc) -> tuple[str, str]:
                 stack.append(v)
         elif isinstance(node, list):
             stack.extend(node[:20])
-    return MUON_Q0, "muon default (file states none)"
+    return _MUON_Q0_FALLBACK, "muon default (file states none)"
 
 
 def rewrite(doc, q):
