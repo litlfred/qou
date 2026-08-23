@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T17:06:23Z
+updated_at: 2026-08-23T17:38:35Z
 ---
 
 ## The measurement
@@ -151,3 +151,54 @@ Note `flavor_split_alpha_bond_dilog_probe` is **doubly implicated**: it is also
 one of `qou-6q7q`'s three paths that drifted on main. Its verdict here was
 measured against a pre-migration version *and* it is unlisted. That one needs
 re-measuring before any claim is made about it in either bean.
+
+## OBSERVED ON MAIN — this is no longer a predicted hazard
+
+The rebase onto `main` (+206) dropped the in-scope population **56 → 48**.
+Nine witnesses left the muon-anchored set, and they split into two causes that
+must not be conflated:
+
+**Five re-pinned to proton** — `q0Anchor: "proton"`,
+`q0Value: 1.109978582751380807591669`. Legitimate migration, the authorised
+`qou-1c4y` sweep doing its job. Not a defect.
+
+**Four lost the stamp entirely** — `q0Anchor` and `q0Value` **absent**:
+
+| witness | my sweep predicted the drop |
+|---|---|
+| `probes/flavor-split-alpha-bond-dilog.witness.json` | ✅ |
+| `probes/flavor-split-alpha-dilog-expansion.witness.json` | ✅ |
+| `signed-crossing-feasibility.witness.json` | ✅ |
+| `probes/binding-qgaussian-ell1-ceiling-measurement.witness.json` | ❌ not predicted |
+
+Three of the four are producers this sweep independently flagged as
+anchor-stamp droppers — and they are three of the **four that #5550 did not
+cover**. The prediction and the observation were made from different directions
+and agree.
+
+**The fourth was not predicted**, and that matters: it is one of `qou-6q7q`'s
+main-drift paths (migrated by `bc96793e5d`), so the version that lost its stamp
+is not the version I measured. Do not count it as a confirmation; count it as a
+second, separate route to the same end state.
+
+## Why this is the consequential half
+
+`q0_anchor_consistency_audit` classifies a stamp-less witness as
+**`Q0_ANCHOR_MISSING` — explicitly "not a failure"** (line 29). So a witness
+that was a `Q0_FLIP` becomes a non-failure by losing the field the audit keys
+on. Nothing was fixed. The audit's denominator shrank.
+
+That is the mechanism this bean described, now with an instance: **the count of
+flips can fall without a single anchor being corrected.** It happened on `main`
+while this sweep was measuring it.
+
+## What follows
+
+- A drop in `Q0_FLIP` is **not** evidence of progress on its own. Any report of
+  that count needs the `Q0_ANCHOR_MISSING` count beside it, or it cannot be
+  read.
+- Before #5500 regenerates its 53, the stamp-emission has to be fixed at the
+  producer/generator, or the tranche converts flips into missing-anchors at
+  scale — the audit goes green and the corpus is *less* checkable than before.
+- The 4 above are already in that state and need the stamp restored, not merely
+  re-pinned.
