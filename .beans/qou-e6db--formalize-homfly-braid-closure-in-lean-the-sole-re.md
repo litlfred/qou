@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T05:11:38Z
+updated_at: 2026-08-23T06:43:05Z
 ---
 
 ## Why this bean exists
@@ -506,3 +506,34 @@ discharged, and the file says so rather than leaving it implicit.
 
 Next: the partition fact, then `(verdictsFor w k).length = 2`, then the
 well-founded reduction.
+
+
+## `cycleLen` validated as the component size
+
+`cycleLen` was *defined* as `orderOf (f.cycleOf p)` because that is what makes
+`pow_cycleLen_apply` come out. These confirm it is the **intended** quantity —
+the number of strands in the component — rather than merely a number that
+happens to close the walk:
+
+- `cycleLen_of_fixed` — a strand that closes up alone needs one lap.
+- `cycleLen_eq_card_support` — otherwise `cycleLen` is exactly the size of the
+  component (`Equiv.Perm.isCycle_cycleOf` + `IsCycle.orderOf`). So the walk
+  takes one lap per strand of the component, no more and no fewer.
+
+That distinction matters: a definition chosen to make one lemma work is not
+automatically the right object, and this is the check that it is.
+
+60 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## Toward the partition fact
+
+With `cycleLen` = component size, the partition fact reduces to: the components
+(one leader each, by `exists_leader` + `leader_unique`) have sizes summing to
+`n`. Mathlib ingredients located for the next step:
+`Equiv.Perm.mem_support_cycleOf_iff`, `Equiv.Perm.SameCycle.exists_pow_eq`.
+
+Also worth recording for whoever picks this up: **`exact?` works in this
+container** (verified — it produced `(Equiv.Perm.cycleOf_eq_one_iff f).mpr h`).
+Since the cache carries no Mathlib `.lean` source and the LSP is down,
+`#check` and `exact?` against the oleans are the only name-discovery tools
+available here, and both are worth reaching for before hand-proving anything.

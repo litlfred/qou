@@ -689,6 +689,28 @@ and this is the extreme case. -/
 theorem descending_nil : Descending ([] : BraidWord n) :=
   fun _ hk => absurd hk (by simp)
 
+/-! ### `cycleLen` really is the component size
+
+`cycleLen` was *defined* as `orderOf (f.cycleOf p)` because that is what makes
+`pow_cycleLen_apply` come out. These lemmas confirm it is the intended quantity —
+the number of strands in the component — rather than merely a number that
+happens to close the walk. -/
+
+open scoped Classical in
+/-- A strand that closes up alone needs one lap. -/
+theorem cycleLen_of_fixed (f : Equiv.Perm (Fin n)) {p : Fin n} (hp : f p = p) :
+    cycleLen f p = 1 := by
+  classical
+  have : f.cycleOf p = 1 := (Equiv.Perm.cycleOf_eq_one_iff f).mpr hp
+  simp [cycleLen, this]
+
+open scoped Classical in
+/-- **Otherwise `cycleLen` is exactly the size of the component.** So the walk
+takes one lap per strand of the component — no more, no fewer. -/
+theorem cycleLen_eq_card_support (f : Equiv.Perm (Fin n)) {p : Fin n}
+    (hp : f p ≠ p) : cycleLen f p = (f.cycleOf p).support.card :=
+  (Equiv.Perm.isCycle_cycleOf f hp).orderOf
+
 /-! ### The remaining bridge, stated
 
 `card_involved` counts the **starting positions** involved in crossing `k`:
