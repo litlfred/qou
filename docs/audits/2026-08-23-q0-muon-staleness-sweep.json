@@ -646,17 +646,105 @@
       "verdict": "TIMEOUT",
       "siblings_moved": [],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
+      "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_ck_k_gt_3_habiro_extension_scoping.py",
+      "witness": "computations/qbeta/qbeta-ck-k-gt-3-habiro-extension-scoping.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "precisionMetadata.compute_dps",
+        "precisionMetadata.output_dps",
+        "precisionMetadata.truncation_bound",
+        "scriptHash"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_ck_recursion_kernel_constraint_probe.py",
+      "witness": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.anchors.0.a_1",
+        "data.anchors.0.a_1_via_sqrt2_phi2",
+        "data.anchors.0.c_3",
+        "data.anchors.0.c_4_fitted",
+        "data.anchors.0.c_4_predicted_closed_form_1_minus_c3sq",
+        "data.anchors.0.c_4_predicted_constant_depth2",
+        "data.anchors.0.phi_2",
+        "data.anchors.0.q",
+        "data.anchors.0.rel_miss_to_fit",
+        "data.anchors.1.a_1",
+        "data.anchors.1.a_1_via_sqrt2_phi2",
+        "data.anchors.1.c_3",
+        "data.anchors.1.c_4_fitted",
+        "data.anchors.1.c_4_predicted_closed_form_1_minus_c3sq",
+        "data.anchors.1.c_4_predicted_constant_depth2",
+        "data.anchors.1.phi_2",
+        "data.anchors.1.q",
+        "data.anchors.1.rel_miss_to_fit",
+        "data.c_4_fitted",
+        "data.c_4_floor",
+        "scriptHash"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_ck_wedderburn_decomposition_scope_probe.py",
+      "witness": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.dim_q_verification_anchor.z_squared_target",
+        "data.z_markov",
+        "scriptHash"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py",
+      "witness": "computations/qbeta/qbeta-composite4-fibre-root-of-unity-probe.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "q0Anchor",
+        "q0Value"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
+      "witness": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.gate_failing_candidate.magnitude",
+        "data.gate_failing_candidate.rel_distance_from_target",
+        "data.gate_failing_candidate.z_q0",
+        "data.gate_passing_candidate.rel_distance_from_target",
+        "data.target_magnitude",
+        "scriptHash"
+      ],
+      "anchor_defining": false
     }
   ],
   "tally": {
-    "TIMEOUT": 5,
+    "TIMEOUT": 6,
     "SUBSTANTIVE/ASSERT-FAIL": 1,
     "UNCHANGED": 6,
-    "SUBSTANTIVE": 18,
+    "SUBSTANTIVE": 23,
     "CRASH": 4
   },
   "partial": true,
-  "measured": 34,
+  "measured": 40,
   "total": 55,
   "environment": {
     "python": "3.11.15",
