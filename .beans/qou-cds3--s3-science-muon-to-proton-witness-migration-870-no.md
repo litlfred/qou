@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T22:15:00Z
+updated_at: 2026-08-23T22:45:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -555,3 +555,54 @@ Neither proxy is sound, so the only reliable test is the one used last section:
 and decide per witness.** It costs a producer run each, and that cost is not
 avoidable by inspection — which is the useful thing to have established, since
 both cheap alternatives look convincing until they are checked.
+
+### NARROWING the "nothing hashes what the producer imports" claim (same day)
+
+Two sibling beans landed on `main` while this was being written, and both bear on
+the paragraph above. Checked before leaving the claim standing.
+
+**`qou-jvav`** — *"witness_dependency_drift resolver missed subdirectory upstreams
+— 357 of 688 drift records were false."* So the corpus **does** have an
+upstream-drift mechanism (`witness_dependency_drift.py`, wired into
+`staleness-gates.sh`), and my "nothing hashes what the producer imports" was too
+strong. Narrowed to what is actually true, on three measurements of my own:
+
+1. It tracks **declared upstream witnesses** (`upstream_witness_hashes`), not
+   Python module imports. A probe importing `qou_substrate.constants` declares no
+   upstream witness for it, because there is no witness to declare.
+2. Almost nothing declares them anyway: `witness_dependency_coverage_audit`,
+   run this session, reports **2 of 2643 witnesses (0.1 %)** carrying
+   `upstream_witness_hashes`.
+3. So for `xq-habiro-element-search-probe` specifically — `scriptHash` matched,
+   no upstream declared, output flipped `TIER 1 → TIER 2`. The gap is real for
+   this witness; the general claim was not.
+
+**`qou-a31p`** — *"Witness regeneration flipped 29 assertions PASS→FAIL and every
+blocking gate stayed green."* Independently, on commit `a0ee2ac5e` (the 563-witness
+sweep), a sibling measured exactly the failure mode this section reasoned toward:
+regeneration moves results, and *"assertions all passed"* does not catch it —
+because the failed-assertion ratchet is wired **advisory** in
+`precision-gates.sh:118`, `blocking = no`. Their measurement is stronger than my
+inference: 29 flips, net −27, 136 witnesses / 177 failed assertions against a
+baseline of 111.
+
+**Reattributed accordingly.** My contribution here is the narrower one: that the
+payload diff is the only sound pre-commit test, with `git log --since` and
+`scriptHash` each falsified by a counterexample. The consequence at corpus scale
+is `qou-a31p`'s, measured on a real sweep, not mine.
+
+### Merge note — the two conflicted chi witnesses
+
+Merging `origin/main` conflicted on
+`chi-at-q0-rust-lossless-helium-4.witness.json` and
+`chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json` — the collision `qou-k3wq`
+predicted (item C3). Resolved by taking **main's** side: newer (2026-08-23
+`a0ee2ac5e` vs my 2026-08-21 `dc30f78a0`), a legitimate producer run, and taking
+mine would have reverted a sibling's work. Hand-merging was never an option —
+witness numbers may not be edited.
+
+Checked against `qou-a31p` before accepting, since `a0ee2ac5e` is the commit that
+flipped 29 assertions: **neither file is named in that bean, and both carry zero
+assertions**, so neither can be among the flips. Both are also clean of the
+convention-C `z` literal on both sides, so `qou-cdh3`'s property survives the
+resolution either way.
