@@ -1,40 +1,40 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T03:44:30.686823+00:00",
-  "commitSha": "3926badf24119b33a68b700cbb0949f1ade02d8f",
+  "computedAt": "2026-08-23T17:52:34.746025+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
-      "computed": 264946369.08097494,
-      "expected": 264946369.08097494,
+      "computed": 21688247146661.387,
+      "expected": 21688247146661.387,
       "passed": true,
       "tolerance": 1e-10,
       "source": "c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization"
     },
     {
       "name": "c_9_extracted_finite",
-      "computed": 31107082245.42849,
-      "expected": 31107082245.42849,
+      "computed": 2546395431398100.0,
+      "expected": 2546395431398100.0,
       "passed": true,
       "tolerance": 1e-10,
       "source": "c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization"
     },
     {
       "name": "c_10_extracted_finite",
-      "computed": 3652250682718.0303,
-      "expected": 3652250682718.0303,
+      "computed": 2.989697438062701e+17,
+      "expected": 2.989697438062701e+17,
       "passed": true,
       "tolerance": 1e-10,
       "source": "c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization"
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
   "scriptHash": "305df5e6cc71",
-  "scriptCommitSha": "3926badf24119b33a68b700cbb0949f1ade02d8f",
+  "scriptCommitSha": "6e586861b7c9189f334b6cf81cfabb647f0193bd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,21 +43,32 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_decay_sdp_extended_ck.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_decay_sdp_extended_ck.py"
   },
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "Q_AME_50dps": "0.78233340931000000000000000000000000000000000000003",
-    "hoefsmit_b_50dps": "0.86758406730714238749179779530277068827007617830461",
-    "hbar_q_sq_50dps": "0.0098171885139859843937064868940494814450996405846074"
+    "Q_AME_50dps": "0.78233355931000000000000000000000000000000000000011",
+    "hoefsmit_b_50dps": "0.86758406696525115565116289153605239570497937739431",
+    "hbar_q_sq_50dps": "0.0098171864542750738105690571795642528890492845754014"
   },
   "data": {
-    "R_q0_50dps": "0.99992620768303272023774467933007269270079879350279",
+    "R_q0_50dps": "0.99932562066973194965701979966980334032351628636381",
     "c_k_extracted_50dps": {
-      "c_2": "-1.0172173285667249513240662532242009198014962646275",
-      "c_3": "-2.0216155770600061205300249700296445660947408177192",
+      "c_2": null,
+      "c_3": null,
       "c_4": null,
       "c_5": null,
       "c_6": null,
@@ -67,8 +78,8 @@
       "c_10": null
     },
     "c_k_extracted_float": {
-      "c_2": -1.017217328566725,
-      "c_3": -2.021615577060006,
+      "c_2": null,
+      "c_3": null,
       "c_4": null,
       "c_5": null,
       "c_6": null,
@@ -78,69 +89,71 @@
       "c_10": null
     },
     "c_k_resolution": {
-      "ladder_variable_u": "0.008517236340484921439933112902299396082389042230275",
-      "one_over_u": "117.40897634209195493",
+      "ladder_variable_u": "0.0085172345501561421892555736033092029691942216116301",
+      "one_over_u": "117.40900102154255005",
       "min_residual_drop_threshold": "10.0",
       "expected_drop_if_rung_contributes": "~1/u",
-      "last_resolved_rung": 3,
-      "n_unresolved": 7,
+      "last_resolved_rung": null,
+      "n_unresolved": 9,
       "per_rung": {
         "c_2": {
-          "residual_abs_R_minus_1": "0.000073792316967279762255",
+          "residual_abs_R_minus_1": "0.00067437933026805034298",
           "drop_vs_prev": null,
-          "resolved": true
+          "resolved": false
         },
         "c_3": {
-          "residual_abs_R_minus_1": "1.2490927009279029536e-6",
-          "drop_vs_prev": "59.0767337864",
-          "resolved": true
+          "residual_abs_R_minus_1": "0.00060187970821651397174",
+          "drop_vs_prev": "1.12045533528",
+          "resolved": false
         },
         "c_4": {
-          "residual_abs_R_minus_1": "1.3355601927065391939e-8",
-          "drop_vs_prev": "93.5257510481",
+          "residual_abs_R_minus_1": "0.00060064471411876567468",
+          "drop_vs_prev": "1.00205611415",
           "resolved": false
         },
         "c_5": {
-          "residual_abs_R_minus_1": "7.3925161367259318736e-9",
-          "drop_vs_prev": "1.80663818381",
+          "residual_abs_R_minus_1": "0.00060063875461961186168",
+          "drop_vs_prev": "1.00000992194",
           "resolved": false
         },
         "c_6": {
-          "residual_abs_R_minus_1": "7.3363672306864742311e-9",
-          "drop_vs_prev": "1.00765350265",
+          "residual_abs_R_minus_1": "0.00060063869850448962018",
+          "drop_vs_prev": "1.00000009343",
           "resolved": false
         },
         "c_7": {
-          "residual_abs_R_minus_1": "7.3375166415947472394e-9",
-          "drop_vs_prev": "0.999843351509",
+          "residual_abs_R_minus_1": "0.00060063869965320870653",
+          "drop_vs_prev": "0.999999998088",
           "resolved": false
         },
         "c_8": {
-          "residual_abs_R_minus_1": "7.3374906291678441678e-9",
-          "drop_vs_prev": "1.00000354514",
+          "residual_abs_R_minus_1": "0.00060063869962721194176",
+          "drop_vs_prev": "1.00000000004",
           "resolved": false
         },
         "c_9": {
-          "residual_abs_R_minus_1": "7.3374906919297101175e-9",
-          "drop_vs_prev": "0.999999991446",
+          "residual_abs_R_minus_1": "0.00060063869962727466582",
+          "drop_vs_prev": "1.0",
           "resolved": false
         },
         "c_10": {
-          "residual_abs_R_minus_1": "7.3374906905093403971e-9",
-          "drop_vs_prev": "1.00000000019",
+          "residual_abs_R_minus_1": "0.00060063869962727324631",
+          "drop_vs_prev": "1.0",
           "resolved": false
         }
       },
       "why_unresolved_rungs_are_null": "c_k := (R_k - 1)/u^k is a valid extraction only while R_k - 1 IS the rung-k contribution. Once the residual stops dropping it is the model's accuracy floor; dividing a fixed floor by an ever-smaller u^k manufactures c_k ~ floor/u^k, a geometric blow-up with ratio exactly 1/u and flat |c_k u^k|. Emitting those as numbers is what let them read as data."
     },
     "c_k_unresolved_raw_quotient": {
-      "c_4": "-2.5378659117940255569454500193524358506536471385217",
-      "c_5": "-164.92966962997120315189506117224341793666720626325",
-      "c_6": "-19217.145207925212509908947239063591863338276085142",
-      "c_7": "-2256618.8430159516520727812660641237219777899347218",
-      "c_8": "-264946369.0809749418316620596552190900680213585986",
-      "c_9": "-31107082245.428488701150349050271676018490685326017",
-      "c_10": "-3652250682718.0302448331440574991158032911030226467"
+      "c_2": "-9.2962337728385288116557358515705714783889124964047",
+      "c_3": "-974.12318560543147174718003369957804479651912434316",
+      "c_4": "-114136.1531340050087566247019460162741744728153489",
+      "c_5": "-13400478.761215562920725634919195544244437389266747",
+      "c_6": "-1573336677.5745546190700050746696273349488796934705",
+      "c_7": "-184723887937.86493430937952432348467073630923230597",
+      "c_8": "-21688247146661.387765631144374060061059482171695697",
+      "c_9": "-2546395431398100.0897709047105004692004240733376369",
+      "c_10": "-298969743806270109.287025078036133436715970459529"
     },
     "silver_ratio_test": {
       "method": "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural pattern continuation of the c_k closed form, reduce to a rational a/b in lowest terms, and test the REDUCED numerator |a| via the refined Pell-Lucas-cleanness criterion in ck_sector_classifier.is_pell_lucas_clean (|a| of the form a_n^j · 2^t for some Pell-Lucas a_n > 1, j ∈ {0..4}, t ≥ 0). The `scaled_numerator` field per rung below records |a|·32 for legacy display only — the actual test does not multiply by any common denominator.",
@@ -199,24 +212,26 @@
     "upstream_witness_hashes": [
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
-        "size_bytes": 5560,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
-        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+        "sha256": "ccc915ce5b98f6c6f827c319097234d025a79efa521e9fdb18206bc8a847001d",
+        "size_bytes": 5678,
+        "commitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "scriptCommitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "computedAt": "2026-08-21T16:24:01.734853+00:00"
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   },
   "caveats": [
     "Leverage limit: at k=7 any c_k ∈ [-100, 100] closes the residual to ~10⁻⁴ ppb. At k=8, 9, 10 the leverage is even tighter — the 50dps extracted c_k values are numerically near the (R−1) noise floor relative to the canonical-form ambiguity at the chosen q_0. Pell-Lucas classification therefore reads as STRUCTURAL signal at the silver ratio, not as a precision claim at q_0.",
     "Silver-ratio closed forms at k=8, 9, 10 use natural pattern continuation: c_8 = c_3²·b⁴, c_9 = c_3³·b², c_10 = c_3²·b⁶. These are conjectural — the canonical c_k closed forms beyond k=7 are not yet derived from the SDP-T_β / Hoefsmit-N=3 framework."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

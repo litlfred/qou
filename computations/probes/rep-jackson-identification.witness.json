@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:24:00.060794+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:51:45.429464+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "corpus_formal_strip_exact",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 950,
+  "durationMs": 676,
   "computation": "rep-jackson-identification",
   "scriptFile": "rep_jackson_identification_probe.py",
-  "scriptHash": "7cc3c7311456",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "1920d488d9b8",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,7 +72,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/rep_jackson_identification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/rep_jackson_identification_probe.py"
   },
   "description": "Attack 1 on (REP) — the last substantive hypothesis of conj:schwinger-measure-computational-time (bean qou-u5p0; audit-only, scope-(a), NO FIT, nothing wired). DETERMINATION (audit §1, corpus survey): the corpus performs NO integral resummation of the binding OGF — production binding is the finite Markov-trace evaluation (mass_binding_dashboard.py, canonical_mass.py); the OGF appears only formally (keystone strip, coefficient-level q-Borel, growth diagnostics). Hence (REP) is a canonical-CHOICE claim, not a matching to an existing corpus integral. R1: the corpus formal operation (involution periods B_n = I(n)/n, strip N(n) = (n−1)! forced by n·N(n) = n!, depth-2 recurrence) verified exact. R2 (falsifier, archimedean): the strip IS order-by-order integration against e^(−s)·ds/s — per-order moments AND the finite-order polynomial identity exact (sympy) — MATCH. R3 (falsifier, fibre; q = 1.2 + both q₀ pins): the Jackson⊛theta atomic kernel's ds/s-moments equal N^bal(n) = q^(−(n−1)(n−2)/4)[n−1]_q! (rel < 1e−30) and the q-lift C1 carrier resums through the kernel correctly at finite order; the exact gap to the corpus's proved one-sided strip is the Attack-E bar-covariant weight — MATCH in the balanced convention. R4 (the new content): the u-translate/reflection/symmetrization construction exhibits a u-CONTINUUM of positive, bar-reflection-invariant, ATOMIC kernels sharing all balanced moments (exact reindex mechanism; 60 dps cross-checks) — positivity + moments + bar-symmetry + atomicity do NOT pin the kernel at q ≠ 1 (sharpens Attack B §3.1 from 'two realizations' to 'a continuum inside the symmetric atomic class'); at q = 1 the class is a singleton (Carleman, Attack A, cited). RSZ (Astérisque 355) §1.2.1 states kernel non-canonicity and gives no general explicit integral formula for its ch. 5 summation — no 'RSZ classification' pins the theta kernel as the unique bar-invariant choice. Nothing here proves or refutes the conjecture.",
   "auditOnly": "docs/audits/2026-08-01-rep-jackson-identification.md",
@@ -121,11 +128,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

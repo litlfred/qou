@@ -107,6 +107,61 @@ def load_legacy_removed_set() -> set[str]:
     return out
 
 
+def _is_prose(value: str) -> bool:
+    """True when a provenance field holds an EXPLANATION rather than a value.
+
+    Seven witnesses carry `scriptFile` values like
+    "(legacy - no matching producer found; provenance pending manual triage)".
+    That string is truthy, so the old `not body.get(f)` emptiness test scored
+    them PROV_OK: the I14 campaign (f893cc92, 2026-05-19) reached
+    `prov_missing: 0` / `completeness_ratio: 1.00` partly by WRITING THIS
+    MARKER, and the gate that should have noticed went green. The marker
+    itself is honest -- it says exactly what is wrong, and the 2026-08-19
+    triage found these witnesses by it. The defect is counting it as present.
+
+    A field whose value says "we do not know" is missing provenance, not
+    provenance. Two of the seven now back paper-facing claims
+    (`4he-binding-full-pipeline` -> `content/values/registry.ts`;
+    `hecke-core-symbolic-migration` -> two appendix blocks at
+    `status: "verified"`), which is what this check exists to surface.
+
+    Same predicate shape as `witness_producer_executes_audit.is_prose`, kept
+    in sync deliberately: two different answers to "is this a real producer
+    reference?" is how the wrong one gets acted on.
+
+    A witness that genuinely cannot carry a producer belongs on the
+    acknowledged floor (provenance-acknowledged-floor.json) with an
+    investigated reason -- NOT behind a truthy marker string.
+    """
+    v = value.strip()
+    if v.startswith("("):
+        return True
+    if len(v) > 120:
+        return True
+    return "/" not in v and not Path(v).suffix and " " in v
+
+
+#: Provenance fields that are supposed to hold a FILE REFERENCE. The prose
+#: check applies to these only. `engine` is free text by design -- values like
+#: "sympy + pyhecke_native" or "mpmath (witness-fed; no new tr_M compute)" are
+#: informative, not evasive -- and running the predicate over it flagged 49 of
+#: them, which would have manufactured false PROV_MISSING and dropped the
+#: completeness ratio on noise. Measured before shipping: of the 50 values the
+#: unrestricted check caught, 49 were `engine` descriptions and 7 were the real
+#: `scriptFile` markers. `commitSha` wants a sha-shaped check, not this one.
+PATH_VALUED_FIELDS = ("scriptFile",)
+
+
+def _has_provenance(body: dict, field: str) -> bool:
+    """A provenance field counts as present only if it carries a real value."""
+    v = body.get(field)
+    if not v:
+        return False
+    if field in PATH_VALUED_FIELDS and isinstance(v, str) and _is_prose(v):
+        return False
+    return True
+
+
 def classify(path: Path) -> tuple[str, list[str]]:
     """Return (verdict, missing_fields) for a single witness file."""
     if any(path.name.endswith(suf) for suf in AUDIT_SUFFIXES):
@@ -117,7 +172,7 @@ def classify(path: Path) -> tuple[str, list[str]]:
         return "PROV_PARSE_ERROR", [str(exc)]
     if not isinstance(body, dict):
         return "PROV_PARSE_ERROR", ["root is not an object"]
-    missing = [f for f in REQUIRED_FIELDS if not body.get(f)]
+    missing = [f for f in REQUIRED_FIELDS if not _has_provenance(body, f)]
     return ("PROV_MISSING" if missing else "PROV_OK"), missing
 
 

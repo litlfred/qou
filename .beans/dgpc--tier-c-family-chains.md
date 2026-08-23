@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T21:00:00Z
+updated_at: 2026-08-19T13:52:52Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -41,3 +41,125 @@ chain shapes (composition vs extraction), so shape must be read per family, neve
 
 REMAINING families are small (6, 4, 4, 3, 3, then 2s) -- diminishing yield per chain authored.
 After these, tier D (per-compute authoring) is where the bulk sits.
+
+
+## 2026-08-19 — batch 2 (PR #5289)
+
+Drained: `nucleus_real_sdp.py` (6) + the sign-only chi family (7).
+**1723 -> 1710** computational-only; derivation-backed 161 -> 168.
+
+**The categorizer's families are not always one derivation.** Four
+producers group as "chi" by basename; only two share a derivation.
+Measured, not read off docstrings (which are stale on precision):
+
+| producer | deuteron chi^(6) | convention | in chain? |
+|---|---|---|---|
+| `chi_at_q0_via_matrix_m_mpfr` | 11.02137498091048471910 = q_0^23 | sign-only | yes |
+| `chi_via_rust_lossless` | (5Li/6Li; same convention, declared) | sign-only | yes |
+| `compute_atom_chi_rust` | 1.55987030806094099130 | averaged | **no** |
+| `derived_chi_catalogue_matrix_m_mpfr` | (mu_p/mu_n LR factorisation) | different construction; its 2 witnesses sit on DIFFERENT q0 pins | **no** |
+
+The `q_0^23` identity cross-checks against the crossing count already in
+`atomic-braid-recipe-d.derivation.json` — an independent confirmation the
+chain now records as its step 5.
+
+**Rule for the rest of the queue:** before authoring a family chain,
+check that the family shares a *derivation*, not just a producer prefix.
+Merging on the prefix is the arity conflation AGENTS.md warns about.
+
+### Two tool defects found while running the preflights (both fixed in #5289)
+
+1. `derivation_chain_validator.py` re-evaluated `c-q-q0` against the
+   module-level (proton) `Q_0` while the chain declares the muon pin —
+   a layer straddle. `c_q` amplifies ~10x, so the 11.5 ppb mu-p tension
+   read as `rel_diff 1.16e-07` and the chain had been **FAILING on main**.
+   Now validates at the pin the chain declares.
+2. `mpf_context_dps_audit.py` walked `.claude/worktrees/`, so
+   `precision-gates.sh` was **RED for every agent in this container** on
+   findings from a sibling branch's checkout. Excluded.
+
+### Remaining tier C (~21 witnesses, all families <= 4)
+
+`compute_atom_chi_rust` (4, averaged convention — own chain),
+`derived_chi_catalogue_matrix_m_mpfr` (2, own chain),
+`bar_pairing_binding_observable` (3), `chi_via_rust_lossless` [drained],
+then 2s. **Yield has flattened**: batch 1 was 26/chain, batch 2 was 6-7,
+the rest are 2-4. Worth asking whether the tier-D boundary (1233
+singletons) or the tier-E provenance triage (186 orphans) is the better
+next spend before grinding 2-witness chains.
+
+
+## 2026-08-19 — tier-E orphan triage (owner: "move those without provenance into _deprecated/")
+
+**1711 -> 1698** computational-only; **E-orphan 186 -> 169**.
+
+- **13 deprecated** (`git mv`, never `git rm`): scriptFile null, no producer
+  under any name/suffix, zero refs outside the six inventory witnesses.
+- **4 recovered** as false orphans — the categorizer had three
+  over-reporting defects (scanned only `computations/`, only `*.py`,
+  and guessed `.py` unconditionally so `substrate/*.sage` producers
+  sitting beside their own witness did not match). Fixed.
+- **6 rescued from the move** by checking f-string templates, not just
+  literal basenames: `chi-{atom}(-free)-h{n}-at-qinv-50dps` is written AND
+  read by `bar_pairing_binding_observable.py`. **A witness whose name is
+  built by an f-string is invisible to basename analysis** — general lesson.
+- **1 frozen**: `binding-lp-delta-audit` scores dead but is named in an
+  OPEN devil's-advocate objection (wave4, `null-dual`).
+
+### The finding that needs its own bean
+
+**147 of the 186 orphans are read by live code** — `aK_via_lp_dual.py`,
+`low_isotopes_binding_sweep.py`, `binding_depth_stratified_lr.py`, a content
+block (`mba-step09b-per-isotope-binding.ts`), a Lean file, and
+`content/values/registry.ts` (the witnessed-values registry). A value flows
+into the paper from a file **nobody can regenerate**. Worse than either dead
+or healthy; not a retirement job. Needs: reconstruct the producer, or freeze
+the witness explicitly as a declared constant input.
+
+Audit: `docs/audits/2026-08-19-tier-e-orphan-triage.md`
+
+
+## 2026-08-19 — Parts 2-4: provenance trace + the gate that let it through
+
+**One real paper defect.** `content/values/registry.ts` pins
+`B_4He_AME_MeV = 28.295674` from a producerless artifact; the corpus's own
+AME2020 source says `28.295673`, and all five compute consumers use the AME
+value. **The paper prints a different last digit than the compute layer.**
+Which digit is right needs the actual AME table — a back-of-envelope from mass
+excesses gave a third value (~28.29566). This is the `fvxq` UNSAFE class.
+
+Source: commit `e52487a2` (2026-04-20) records that run as a FAILURE
+("blows up to 1.98M MeV"); the registry pins its experimental **by-product**
+field. Producer never committed.
+
+**The gate.** `witness_provenance_audit.classify` scored by emptiness, and a
+prose marker is a non-empty string — so the I14 campaign reached
+`completeness_ratio: 1.00` partly by *writing* the marker. Fixed: a prose
+`scriptFile` now counts as missing. `PROV_MISSING 49 -> 54`, completeness
+`0.981 -> 0.979`. Five surface, including both paper-facing ones and three not
+previously known.
+
+**Caught my own over-fire before shipping:** the first version ran the prose
+predicate over all of `REQUIRED_FIELDS` and flagged 49 `engine` descriptions
+(`"sympy + pyhecke_native"`). Restricted to `PATH_VALUED_FIELDS`.
+
+**Retracted:** the `rho-k-markov-multiplicativity` "PROVED" flag. Live witness,
+live producer, and the content correctly cites Wenzl 1988 Thm 5 as the proof
+with the witness as corroboration. It only *looked* producerless because a
+`_deprecated/` twin made the resolver's uniqueness test ambiguous.
+
+### The pattern worth carrying forward
+
+Four instances, two directories that must never appear in an audit's repo-wide
+`rglob`: **`.claude/`** (checkouts of other branches) and **`_deprecated/`**
+(retired copies). Both are invisible in review and both fail *toward* the
+dangerous verdict — a phantom red that trains agents to skip a gate, or a false
+orphan whose recommended disposition is deletion.
+
+### Tier-E accounting, Parts 1-4
+
+`186 -> 134`. **28% tool error, 7% genuinely dead, 65% load-bearing.**
+
+Open owner decisions: re-point `B_4He_AME_MeV` (gated on `fvxq`); downgrade or
+reconstruct the two `mba-step02` blocks at `status: "verified"`; which of the
+five prose witnesses belong on the acknowledged floor.
