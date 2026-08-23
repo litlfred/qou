@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T12:16:55.235367+00:00",
-  "commitSha": "2b0245801817fa8b9f0db4555dc571baf613b9d1",
+  "computedAt": "2026-08-23T12:21:38.107112+00:00",
+  "commitSha": "a70de711fd0fae53141f91882595391c1984d1c5",
   "assertions": [
     {
       "name": "cases_whose_total_step_count_does_NOT_match_b2_plus_3b_plus_5",
@@ -41,6 +41,12 @@
       "passed": true
     },
     {
+      "name": "y_labelled_steps_that_are_NOT_bsStep_at_a_degenerate_bottom",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
       "name": "cases_that_do_NOT_reduce_to_zero",
       "computed": "0",
       "expected": "0",
@@ -48,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 74,
+  "durationMs": 117,
   "computation": "hecke-agtb-lineage-schedule",
   "scriptFile": "hecke_agtb_lineage_schedule.py",
-  "scriptHash": "8c74cfa0d11e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5faa75b28990",
+  "scriptCommitSha": "a70de711fd0fae53141f91882595391c1984d1c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -250,6 +256,9 @@
             2
           ]
         ],
+        "y_labelled_steps": 4,
+        "y_steps_matching_bsStep_leading_word": 4,
+        "y_steps_giving_identical_element": 4,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -453,6 +462,9 @@
             3
           ]
         ],
+        "y_labelled_steps": 1,
+        "y_steps_matching_bsStep_leading_word": 1,
+        "y_steps_giving_identical_element": 1,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -761,6 +773,9 @@
             3
           ]
         ],
+        "y_labelled_steps": 2,
+        "y_steps_matching_bsStep_leading_word": 2,
+        "y_steps_giving_identical_element": 2,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -979,6 +994,9 @@
             4
           ]
         ],
+        "y_labelled_steps": 1,
+        "y_steps_matching_bsStep_leading_word": 1,
+        "y_steps_giving_identical_element": 1,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -1309,6 +1327,9 @@
             4
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -1795,6 +1816,9 @@
             4
           ]
         ],
+        "y_labelled_steps": 2,
+        "y_steps_matching_bsStep_leading_word": 2,
+        "y_steps_giving_identical_element": 2,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -2028,6 +2052,9 @@
             5
           ]
         ],
+        "y_labelled_steps": 1,
+        "y_steps_matching_bsStep_leading_word": 1,
+        "y_steps_giving_identical_element": 1,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -2378,6 +2405,9 @@
             5
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -2894,6 +2924,9 @@
             5
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -3628,6 +3661,9 @@
             5
           ]
         ],
+        "y_labelled_steps": 2,
+        "y_steps_matching_bsStep_leading_word": 2,
+        "y_steps_giving_identical_element": 2,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -3876,6 +3912,9 @@
             6
           ]
         ],
+        "y_labelled_steps": 1,
+        "y_steps_matching_bsStep_leading_word": 1,
+        "y_steps_giving_identical_element": 1,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -4246,6 +4285,9 @@
             6
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -4790,6 +4832,9 @@
             6
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -5564,6 +5609,9 @@
             6
           ]
         ],
+        "y_labelled_steps": 0,
+        "y_steps_matching_bsStep_leading_word": 0,
+        "y_steps_giving_identical_element": 0,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
@@ -6628,6 +6676,9 @@
             6
           ]
         ],
+        "y_labelled_steps": 2,
+        "y_steps_matching_bsStep_leading_word": 2,
+        "y_steps_giving_identical_element": 2,
         "quadratic_steps": 0,
         "steps_with_more_than_one_image": 0,
         "steps_not_source_only": 0,
