@@ -92,16 +92,36 @@ def load_y_lambda_for_q0(n: int, q0) -> dict:
       > ideal-layer input with an experimental-layer input in a single computed
       > number is a defect regardless of its size.
 
-    It exists because the documented trap is *silent*.
-    `wedderburn_jones_markov.y_lambda_at(n, q)` serves the muon-built cache
-    whenever `|q − q_parameter.Q| < 1e-12` — satisfied trivially by a caller
-    passing `q_parameter.Q` itself — so the ideal-layer cache reaches an
-    experimental-layer caller with no signal that a boundary was crossed. The
-    measured cost is ~1e-7 relative: the 11.54 ppb μ–p substrate tension.
+    CORRECTED 2026-08-23: THE CITED MECHANISM IS DEAD, THE GUARD IS NOT.
+    This docstring used to justify the guard by pointing at
+    `wedderburn_jones_markov.y_lambda_at(n, q)`, which "serves the muon-built
+    cache whenever `|q − q_parameter.Q| < 1e-12`". **That path no longer
+    exists.** `y_lambda_at`'s live body is nine executable lines and reads no
+    file at all — it delegates to `y_lambda_su_n`. The `1e-12` cache gate
+    survives only inside `_y_lambda_at_convention_C_HISTORICAL`, which is
+    marked "DEAD — convention C, excised 2026-08-09". Verified by reading both
+    bodies, not inferred. (Flagged on #5324, which is auditing the same stale
+    claim where it also appears in AGENTS.md.)
 
-    Refusing is the point. Serving the other layer's table "because it is
-    close" reproduces the exact defect this is meant to stop, at a margin no
-    downstream check is sized to catch.
+    What the guard actually protects is THIS function, which really does
+    choose a FILE by anchor (`_Y_LAMBDA_BY_ANCHOR`) — so serving the wrong
+    one is a live possibility here even though it is no longer one in
+    `y_lambda_at`. The AGENTS.md straddle rule quoted above is the reason;
+    the cost if it were violated is ~1e-7 relative, the 11.54 ppb μ–p
+    substrate tension.
+
+    TWO DIFFERENT CACHES, easily conflated — do not merge these two facts:
+      * `y-lambda-at-q0.witness.json`, which `_convention_C_HISTORICAL` read,
+        holds convention **C** weights (per that module's own docstring) and
+        must not be served.
+      * the tables THIS function reads via `_Y_LAMBDA_BY_ANCHOR` hold
+        convention **D**. Measured, not assumed: the proton table agrees with
+        the live D closed form `schur_principal_mpmath.y_lambda_at_q0_mpmath`
+        to 2.3e-51 at n = 6 and 1.0e-51 at n = 9.
+
+    Refusing to straddle is still the point. Serving the other layer's table
+    "because it is close" reproduces the exact defect this is meant to stop,
+    at a margin no downstream check is sized to catch.
 
     OFF-ANCHOR q: COMPUTE, DON'T REFUSE (2026-08-23, bean `qou-8chw`).
     "No cache exists for this q" and "this q belongs to the other layer" are
