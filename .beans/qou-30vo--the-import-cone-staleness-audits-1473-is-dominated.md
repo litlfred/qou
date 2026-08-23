@@ -3,8 +3,9 @@
 title: The import-cone staleness audit's 1473 is dominated by the witness-WRITING module
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T23:34:15Z
-updated_at: 2026-08-23T23:34:15Z
+updated_at: 2026-08-23T23:35:55Z
 ---
 
 computations/witness_import_cone_staleness_audit.py is well-designed and targets a real class -- the third staleness direction, where a producer stays byte-identical (SELF green) while a module it imports moves. My peel finding today is a CONFIRMED instance of exactly that (qou-3zby): markov-peel-atomic-tr-m-muon, producer not self-stale, numbers move up to 2.9x on re-run.
@@ -53,3 +54,44 @@ re-run rather than by the detector. Deciding which needs the same 're-run to
 decide' discipline AGENTS.md already prescribes for witness_staleness_triage,
 where 72 substantive producers actually re-run yielded only 28 moved fields
 (39%). Do not treat a corrected count as a work order either.
+
+## EXACT BREAKDOWN — the audit's own by-module table, and it is worse than my bound
+
+The audit already prints this; the headline just does not use it.
+
+     count  module (newest change in the cone)
+      1444  tools/qou-substrate/python/qou_substrate/witness.py
+        22  computations/substrate/q_parameter.py
+         3  computations/_path_bridge.py
+         2  computations/substrate/_precision.py
+         1  computations/_habiro_coefficient_extract.py
+         1  computations/q1_mass_gap_probe.py
+
+1444 of 1473 = 98.0 percent name the witness-WRITING module. The residue is 29,
+of which 22 are q_parameter (which CAN move a number -- it serves q0, so those
+are real candidates), 5 are path/precision plumbing, and 2 are mathematical
+modules. Signal is ~29 of 1473, i.e. 2.0 percent.
+
+## THE SHARPER DEFECT: 'newest' MASKS THE REAL CAUSE
+
+I framed this as an inflated count. The by-module table shows something worse.
+The audit reports only the NEWEST cone dependency, so one recent infrastructure
+commit does not merely ADD false positives -- it OVERWRITES the attribution on
+every witness behind it.
+
+markov-peel-atomic-tr-m-muon is the worked example. It is genuinely cone-stale
+(confirmed by re-run: numbers move up to 2.9x, qou-3zby), and its real movers
+are 666e8959b1 (ctype / averaged_weighted repair) plus four
+canonical_braid_crossings commits. NONE of those appear anywhere in this
+output. The witness is counted among the 1444 and attributed to witness.py,
+because witness.py is newer. A reader working this table would re-run it,
+see the numbers move, and credit a JSON serializer.
+
+So the fix is not only 'exclude infra from the count'. It is: report the newest
+NON-INFRASTRUCTURE mover, or the full set of movers, not the single newest
+module. Otherwise the one field the table offers for diagnosis is the one most
+likely to be wrong.
+
+Corrected signal-to-noise for the record: my upper-bound argument said the infra
+module was SUFFICIENT to explain the count. Measured, it explains 98.0 percent
+of it directly.
