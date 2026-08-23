@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T20:52:54Z
+updated_at: 2026-08-23T21:15:42Z
 parent: qou-59vq
 ---
 
@@ -425,3 +425,41 @@ mechanical given the transport lemmas; items 2 and 3 are where the remaining tho
 Note on `check-sidecars.sh`: it labels this file "archimedean construct present, ℝ justified". The
 file contains no ℝ and no ring — the flag comes from `≤` inside `Set.Icc`, the same weak-marker
 false positive measured under `qou-9e7p`.
+
+
+## Update — step 1 done, step 2's first half done
+
+`SeminormalBlockEquality.lean`, sorry-free, axiom-clean.
+
+**Step 1** — `genMat_insertMax`: a generator avoiding the top entry has, on the block of the corner
+`c`, exactly the matrix it has downstairs on `mu \ c`. Case analysis over genMat's three branches,
+each discharged by one of the transport lemmas plus injectivity.
+
+Plus the image characterisation, which turned out nearly free (`insertMax_eraseMax` repackaged):
+`cellOf_insertMax_top` and `exists_insertMax_of_cellOf_top` — the block of `c` is EXACTLY
+insertMax's image.
+
+**Step 2, first half** — `compress_seminormalRep_heckeIncl`:
+
+    compress c hc (rho_mu (iota y)) = rho_{mu\c} y     for EVERY y in H_{m+1}(q)
+
+via `compress_mul` (compression is multiplicative on block-preserving matrices: the sum over SYT mu
+collapses to the block, and the block IS insertMax's image, so it becomes a sum over SYT (mu\c))
+plus an adjoin-induction over `adjoin_range_sigma_eq_top`.
+
+The image characterisation is what makes `compress_mul` work — that is why it was worth landing in
+the same pass.
+
+### Remaining
+
+| step | status |
+|---|---|
+| 1. block equality at a generator | **Lean** |
+| 2a. lift to every Hecke element | **Lean** |
+| 2b. outer reindexing `{(lam, corner)} <-> {(mu, addable corner)}` | **OPEN** |
+| 3. the lam-sum with weights, consuming the corner identities | **OPEN** |
+
+2b is combinatorial bookkeeping over `Nat.Partition`/`YoungDiagram` — `branchInv` gives the inner
+half (lam fixed, corner varying) but not the exchange of the outer index. 3 is where
+`ocneanuWeight` and `OcneanuWeightMarkovCorner` finally meet. Neither is written, and I have not
+attempted either, so I am not going to estimate them.
