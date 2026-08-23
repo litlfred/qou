@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T23:34:15Z
-updated_at: 2026-08-23T23:35:55Z
+updated_at: 2026-08-23T23:48:09Z
 ---
 
 computations/witness_import_cone_staleness_audit.py is well-designed and targets a real class -- the third staleness direction, where a producer stays byte-identical (SELF green) while a module it imports moves. My peel finding today is a CONFIRMED instance of exactly that (qou-3zby): markov-peel-atomic-tr-m-muon, producer not self-stale, numbers move up to 2.9x on re-run.
@@ -95,3 +95,56 @@ likely to be wrong.
 Corrected signal-to-noise for the record: my upper-bound argument said the infra
 module was SUFFICIENT to explain the count. Measured, it explains 98.0 percent
 of it directly.
+
+## 🛑 RETRACTED — my '98% false positive / ~29 real' reading was WRONG
+
+I implemented the exclusion I proposed above, and it refuted the premise.
+
+Excluding the two provenance modules and re-running: **15** of the 1,473 are
+provenance-ONLY. Not 1,444. The count is essentially real; what was wrong was
+the ATTRIBUTION.
+
+    of which PROVENANCE-ONLY :    15
+    of which SUBSTANTIVE     : 1458
+
+The by-module table, peeling one layer at a time:
+
+    attributed to                     count
+    qou_substrate/witness.py           1444   <- as reported before the fix
+    substrate/witness_base.py          1116   <- revealed by excluding the above
+    substrate/q_parameter.py           1171   <- revealed by excluding both
+    mass_at_3A_proper.py                247
+    _li_2_q_util.py                      36
+
+The provenance modules were not standing in for nothing. They were standing in
+FRONT of real movers. I read 'newest_dep = witness.py on 1,444 rows' as
+'1,444 witnesses have no real mover', which does not follow from a field that
+reports only the SINGLE newest module -- the very masking mechanism this bean
+is about. I applied the mechanism to the peel witness and then failed to apply
+it to the population.
+
+WHAT SURVIVES: the masking defect is real and is worse than I described. It did
+not merely misfile one witness; it misfiled essentially the whole class. The fix
+is correct and lands: attribution now names the newest module that could
+actually move a number.
+
+WHAT DOES NOT SURVIVE: 'the count is not distinguishable from computed-before-
+someone-touched-WitnessBuilder', and 'signal is ~29 of 1473, 2.0 percent'. Both
+retracted. The count did not move at all -- 1,473 before and after -- which is
+the correct behaviour for an attribution fix and is how it should have been
+framed from the start.
+
+STILL NOT A WORK ORDER. q_parameter is now the top attribution at 1,171 and is
+imported nearly as universally as WitnessBuilder, so the same 'one recent commit
+to a near-universal module' dynamic applies -- but to a module that genuinely
+CAN change values, which is the difference. Whether those 1,171 actually moved
+is a re-run question this detector does not settle; AGENTS.md's measured rate on
+the sibling triage is 39 percent.
+
+A SECOND ERROR, recorded because it failed silently: my first draft listed
+'computations/witness_base.py'. The file is at
+'computations/substrate/witness_base.py'. The wrong path matched nothing, so
+attribution fell through to the next provenance module and the fix LOOKED like
+it had worked -- the headline moved, the top entry changed, and only the module
+name gave it away. A path-based exclusion list needs its entries verified to
+exist; noted in the code.
