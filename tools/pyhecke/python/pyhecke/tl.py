@@ -105,6 +105,7 @@ __all__ = [
     "markov_weights",
     "tl_gram",
     "tl_gram_exact",
+    "gram_rank_exact",
     "tl_gram_mp",
     "tl_gram_inverse_exact",
     "tl_gram_inverse_mp",
@@ -424,6 +425,49 @@ def _inverse_exact(rows):
                 f = a[r][col]
                 a[r] = [x - f * y for x, y in zip(a[r], a[col])]
     return [row[m:] for row in a]
+
+
+def _rank_exact(rows) -> int:
+    """Rank by Gaussian elimination over an exact field.
+
+    Written out rather than delegated to `sympy.Matrix.rank()` because that
+    call is the only slow step in the whole audit — 1.5 s to *build* the
+    120×120 `n = 5` form, then minutes to rank it.  Over `Fraction` a pivot is
+    zero or it is not, so the elimination needs no tolerance and admits no
+    rank-decision heuristic; that exactness is the entire point of measuring
+    the corank here rather than numerically.
+    """
+    a = [list(r) for r in rows]
+    m = len(a)
+    ncols = len(a[0]) if m else 0
+    zero = a[0][0] * 0 if m else 0
+    rank = 0
+    for col in range(ncols):
+        piv = next((r for r in range(rank, m) if a[r][col] != zero), None)
+        if piv is None:
+            continue
+        a[rank], a[piv] = a[piv], a[rank]
+        pv = a[rank][col]
+        a[rank] = [x / pv for x in a[rank]]
+        for r in range(m):
+            if r != rank and a[r][col] != zero:
+                f = a[r][col]
+                a[r] = [x - f * y for x, y in zip(a[r], a[rank])]
+        rank += 1
+        if rank == m:
+            break
+    return rank
+
+
+def gram_rank_exact(n: int, q=Fraction(111, 100)) -> int:
+    """Exact rank of the *full* `H_n(q)` Markov–Gram form at a rational `q`.
+
+    Equals `Catalan(n)`; the corank `n! − Catalan(n)` is the dimension of the
+    radical.  Because this is exact in ℚ, a rank measured here is a lower
+    bound on the generic rank over ℚ(q) — rank can only drop at special
+    points, never rise.
+    """
+    return _rank_exact(full_hecke_gram_exact(n, q))
 
 
 def tl_gram_inverse_exact(n: int, q=Fraction(111, 100)):
