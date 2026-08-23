@@ -160,6 +160,14 @@ def main() -> int:
 
     witness = {
         "computation": "q0-consistency-audit",
+        # This witness is the OUTPUT OF AN AUDIT -- a scan over the tree -- not
+        # a computed quantity. `derivation_gap_categorize.py` reads `auditOnly`
+        # as a DECLARED flag and cannot infer it, so without this line the file
+        # lands in the production tier and is counted as owing a derivation
+        # chain: the "category error to chain" that tool's own legend warns
+        # about. Bean qou-akdup / dgpc.
+        "auditOnly": True,
+        "scriptFile": "computations/audits/q0_consistency_audit.py",
         "description": (
             "Scans compute scripts for stale pre-habiro q₀ literals "
             "(10997858275 / 858275) and stale-A tr_M leaf values "

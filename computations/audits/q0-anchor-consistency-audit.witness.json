@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:00:40.536671+00:00",
-  "commitSha": "22a70e92fa72c571949b2a846866fee3f9cdc491",
+  "computedAt": "2026-08-23T20:42:51.585116+00:00",
+  "commitSha": "c7f4b41a0f499ec875282d91f896e6d87159be91",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -44,14 +44,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 701,
-      "Q0_AMBIGUOUS": 17,
-      "Q0_INDEPENDENT": 44,
+      "Q0_OK": 703,
+      "Q0_AMBIGUOUS": 16,
+      "Q0_INDEPENDENT": 45,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1881,
+      "Q0_ANCHOR_MISSING": 1879,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -2250,10 +2250,6 @@
         },
         {
           "witness": "du-law-reparametrisation.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-extended.witness.json",
           "detail": ""
         },
         {
@@ -5222,10 +5218,6 @@
         },
         {
           "witness": "theta-poisson-mass-resummation-prune.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "theta_jet_gb_grading_probe.witness.json",
           "detail": ""
         },
         {
@@ -8951,6 +8943,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-coefficients-extended.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-coefficients-helium-3.witness.json",
           "detail": ""
         },
@@ -9771,6 +9767,10 @@
           "detail": ""
         },
         {
+          "witness": "theta_jet_gb_grading_probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "trefoil-complex-volume-probe.witness.json",
           "detail": ""
         },
@@ -10417,10 +10417,6 @@
           "detail": ""
         },
         {
-          "witness": "habiro-coefficients-extended.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "detail": ""
         },
@@ -10798,6 +10794,10 @@
         },
         {
           "witness": "hecke-agtb-corner-shape.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-agtb-lineage-schedule.witness.json",
           "detail": ""
         },
         {

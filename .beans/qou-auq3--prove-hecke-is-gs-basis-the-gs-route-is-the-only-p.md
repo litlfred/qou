@@ -4044,3 +4044,189 @@ shipped.** I first wrote the middle run as `descWord i₂ j₁`. That is right
 exactly when `b = a−1` or `b = 1` — which is every case a quick eyeball lands
 on. Extending the sweep to `a = 6` broke it and the assertion fired. The
 formula is asserted in the probe rather than stated in prose *because* of this.
+
+## The `a > b` corner (2026-08-23, PR #5539, §4ao)
+
+Measured first, then proved. The shape, from `hecke_agtb_corner_shape.py` and
+`hecke_agtb_lineage_schedule.py`:
+
+- the S-polynomial **reduces completely to zero** — no residue, where `a ≤ b`
+  ends its prefix at a *partial* cancellation with two survivors;
+- the element **never exceeds two terms**, because the chain uses **no
+  quadratic step**. `quadStep` is the only rule that splits a term, so
+  `quadPair`, `trio`, `TOpen` and `ofTerms_cancel_split` — the whole four-term
+  apparatus the other corner needed — are unnecessary here;
+- step count `b² + 3b + 5`, with **no `a`-dependence**;
+- meeting word `bsWord₂ i₂ i₁ (j₂ − 1) ++ descWord i j₁`.
+
+**This retracts an unmeasured claim of mine.** I had written that `a > b` was
+"a new construction, not an extension", inferred from `trio`'s `hj₂ : j₂ ≤ j₁`
+not instantiating. The inference is sound; the conclusion about *effort* was
+wrong. `a > b` is the easier half, and the hard half was already done.
+
+### Both lineages are BLOCKS
+
+Each lineage is a sequence of blocks: one Bokut–Shiao step, then a run of
+far-commutations. **69/77 of those runs move a single letter past
+contiguously-descending obstacles**, so the whole run is one
+`farComm_transport_left_sources` call and a block costs **two lemma
+applications** however long its run — `b² + 3b + 5` steps but `O(b)` lemma
+calls. `gtBlock` packages exactly that pair.
+
+Per lineage: `b` blocks with an F-run, and on the second lineage **two**
+trailing B-only steps. (I first wrote `b + 1` blocks in a check-in note; that
+was the index *range* end read back as a count, corrected in the probe.)
+
+The first lineage's opening is **`b`-independent** — `vOpen`, five steps with
+an arbitrary trailing context `S` carried inert, where `b = 1` is `S = []`.
+The second lineage's opening is **not**, which the probe measures rather than
+assumes.
+
+### Proved
+
+| | |
+|---|---|
+| `sPolyChain_gt₁` | `b = 1`, 9 steps → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt₁` | → 0 |
+| `sPolyChain_gt₂` | `b = 2`, 15 steps → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt₂` | → 0 |
+
+`b = 2` is `vOpen` at `S = [σᵢ₋₂]` — its first call with a **non-empty**
+trailing context, which is what the parameter was stated for — then one
+`gtBlock`; and on the second lineage two `gtBlock`s at runs of one and two
+letters, then two bare `bsStep`s. Same two lemmas throughout; only the
+arguments change. Both new lemmas are now instantiated at a second real call
+site, per the rule that a lemma is not established until its hypotheses are
+shown reachable.
+
+All sorry-free; `#print axioms` on each: `propext`, `Classical.choice`,
+`Quot.sound`.
+
+### `a = b + 1` is not an exception for the Lean
+
+The probe records the eight `a = b + 1` cases as exceptions because deg-lex
+interleaves the last block's two moved letters differently there.
+`MultiStepReduction` does not require deg-lex order — only that each step is
+applicable — so `sPolyChain_gt₂`'s hypothesis is `j₁ ≤ i₃`, i.e. `a ≥ 3`
+**with equality allowed**, and it covers `a = 3` as well. The exception is in
+the engine's schedule, not in the mathematics.
+
+### CLOSED — `gtRun`, and the chain at every `b`
+
+The induction landed the same session. `sPolyChain_gt` proves the corner for
+every `b ≥ 2`; with `sPolyChain_gt₁` that is the **whole `a > b` half**, and
+both resolve to zero.
+
+| | |
+|---|---|
+| `gtRun` | the induction — `gtBlock` iterated over a run of any length |
+| `sPolyChain_gt` | `b ≥ 2`, any `a > b` → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt` | → 0 |
+
+The whole chain is **four lemma applications regardless of `b`** — `vOpen` +
+`gtRun` on the first lineage, `gtRun` + two `bsStep`s on the second — where the
+step count is `b² + 3b + 5`. That is the measured block decomposition turned
+into Lean.
+
+Two design points, both bought by proving `b = 1` and `b = 2` concretely first:
+
+- **`z` and `j₂'` are parameters with `+1 =` hypotheses, not constructed.**
+  That is the file's idiom (`descWord_cons_le` takes its `i'` the same way).
+  The one place a `Fin n` predecessor must be *built* is the recursive call's
+  `z − 1`.
+- **The split `w ++ descWord y j₁ = descWord i j₁` is a hypothesis, not a
+  computation.** Stating `w` as `descWord i (y+1)` instead would have forced a
+  `Fin n` **successor** at every level; carrying the split forces none. This
+  was the obstacle identified below, and carrying the split is what dissolved
+  it.
+
+`b = 1` is not covered by the general theorem and cannot be: there the first
+lineage's run `descWord i₂ j₂` is **empty** (`j₂ = i₁ > i₂`), so `vOpen`
+already lands on the meeting word and `gtRun`, whose run has `k + 1 ≥ 1`
+letters, has nothing to do.
+
+### How the induction was found
+
+The block, in `descWord`-relative form, is the induction step:
+
+```
+A ++ (descWord i j₁ ++ (σ_y :: T))   →*   (A ++ [σ_{y−1}]) ++ (descWord i j₁ ++ T)
+```
+
+— each block pulls the leading letter of the trailing run across
+`descWord i j₁`, demoting it by one and depositing it on the left. Both
+lineages are that same move: the whole trailing descending run slides down by
+one and jumps to the left of `descWord i j₁`. Verified against the exact words
+at `b = 2` and `b = 3`.
+
+The obstacle looked like `Fin n` predecessor arithmetic — the deposited
+letters are `y−1, y−2, …`. It was not: passing the predecessors as parameters
+with `+1 =` hypotheses, and carrying the split rather than computing `w`,
+removes every construction but one. `b = 2` was proved concretely first,
+deliberately, to check that `gtBlock` composes at a longer run before
+committing to a design for the induction — and that is what made the right
+statement visible.
+
+## The `a ≤ b` prefix and tail are JOINED (2026-08-23, PR #5586, §4ap)
+
+`sPoly_le_resolves` (`a ≥ 4`) and `sPoly_le_resolves₃` (`a = 3`): the `a ≤ b`
+S-polynomial reduces to an element that is coefficientwise **zero**, for every
+`b ≥ a`, the diagonal included. With `sPoly_gt_resolves` (#5539) that is the
+whole Bokut–Shiao corner except `a = 1, 2`.
+
+Every piece was already on `main`. What was missing was the join, and **the join
+is not a `trans`**:
+
+```
+prefixChain      T0 →* TCancel                 (4 terms, two a cancelling WStar pair)
+TCancel_coeffEq  CoeffEq TCancel (2-term pair)
+tailChain        2-term pair →* sign-pair
+```
+
+The middle arrow is a `CoeffEq`, and `MultiStepReduction` is stated on
+**representations** — `ofTerms` is a representation, never a normal form. So
+`TCancel` and `tailPair` are the same element and different objects.
+`MultiStepReduction.congr_source` is the way through; its conclusion is a
+disjunction, forced by `refl` being a syntactic constructor. Both branches give
+the same thing, so the join costs only naming them. That `Basic.lean` §6
+machinery was written for exactly this and had **no consumer until now**.
+
+**The case split is on the diagonal, not on `a`.** `tailChain` runs off it,
+`tailChainFromTwo` on it; their targets are literally the same expression, so
+only the sources needed reconciling. At `j₂ = j₁`, `descWord jm j₂` is empty
+while `descWord j₁ j₂` is one letter, so `tailChainFromTwo`'s trailing `σ_jp` —
+which sits *after* its run where `tailPair`'s sits *before* — lands in the same
+place. Off the diagonal the two words genuinely differ. That is the recorded
+"neither tail statement subsumes the other", now used rather than noted.
+
+**`a = 3` forced a hypothesis correction.** `tailFromCancel` takes `jpp ≤ i₁`
+**directly**, not `htop : jppp ≤ i₁`. At `a = 3`, `jpp = i₁` so `jppp = i₁ + 1`
+and `htop` is **false**. Stating the tail on `htop` — which reads naturally,
+since it is what `prefixChain` carries — would have made `sPoly_le_resolves₃`
+unprovable for precisely the case it exists to cover. Compiler-caught, along
+with an invented `hleft` hypothesis that is `closingPhase₃`'s parameter, not
+`prefixChain₃`'s.
+
+Also dropped: an `hq : q − q⁻¹ ≠ 0` I had put on `sPoly_le_resolves`. The
+cancellation is `h` against `−h` whatever `h` is, so it was never needed —
+the unused-variable linter caught it. Same failure mode as `closingU`'s
+unsatisfiable packaged hypothesis, one step milder.
+
+### `a = 1` and `a = 2` do NOT transfer — measured, not assumed
+
+Checked concretely rather than left as "unmeasured", since assuming a transfer
+is what this arc has repeatedly paid for:
+
+- **`a = 2`.** `TCancel₂_coeffEq` *does* leave a two-term pair, and its **first**
+  word is exactly `tailPair`'s: at `a = 2`, `jp = i₁` and `jpp = i`, so
+  `trioLeft i i₂ i₁ jpp jppp` collapses to `[σᵢ₋₂]` and the rest lines up. Its
+  **second** does not. `tailPair`'s second word carries a leading `σᵢ₋₁` that
+  `TCancel₂`'s lacks, because the peel `descWord i₁ jpp = σᵢ₋₁ :: descWord i₂ jpp`
+  needs `jpp ≤ i₁` — and at `a = 2`, `jpp = i`. The same bound is `hjppid` in
+  both tail statements, so neither applies as stated.
+- **`a = 1`.** `TCancel₁_coeffEq` leaves **four** terms, with coefficients
+  `h, 1, −h, −1`. It does not reach a two-term pair at all, so there is nothing
+  for a tail stated on a pair to consume.
+
+So both small cases need their own tail argument. Neither is a rewrite of this
+one, and the obstruction in each is a specific index bound rather than effort.
