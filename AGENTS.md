@@ -1623,16 +1623,56 @@ Do not regress either.
 > [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
 > and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
 >
-> **The specific trap that caused it (check your call sites).**
-> `wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
-> **muon-built** `y-lambda-at-q0.witness.json` whenever
-> `|q − q_parameter.Q| < 1e-12` — a gate satisfied **trivially** when the
-> caller passes `q_parameter.Q` itself. So the ideal-layer cache reaches an
-> experimental-layer caller with **no signal that a layer boundary was
-> crossed**. For experimental-anchor compute call
-> `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` (live closed form)
-> instead. Audit any other cached-witness accessor with the same
-> "matches the package constant ⇒ serve the cache" shape.
+> **The shape to check for (the rule; its named instance is now closed).**
+> A cached-witness accessor that serves precomputed data **when the caller's
+> `q` matches the value the cache was built at** is a straddle waiting to
+> happen: that gate is satisfied *trivially* when the caller passes the package
+> constant itself, so an ideal-layer cache reaches an experimental-layer caller
+> with **no signal that a layer boundary was crossed**. Audit any accessor with
+> that shape.
+>
+> **🛑 The instance this rule used to name — `y_lambda_at` — no longer has the
+> shape (corrected 2026-08-23, bean `qou-c1ya`/`qou-vu19`).** This paragraph
+> read *"`wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
+> muon-built `y-lambda-at-q0.witness.json` whenever `|q − q_parameter.Q| <
+> 1e-12`"* and told you to call `y_lambda_at_q0_mpmath` instead. **That
+> describes pre-2026-08-09 behaviour.** Read at the body rather than the
+> docstring — the live function is five statements:
+>
+> ```python
+> if q_val is not None:
+>     return y_lambda_su_n(n, mpf(str(q_val)), 2)   # the CALLER's q
+> return y_lambda_su_n_symbolic(n, Q_SYM, 2)        # symbolic, anchor-free
+> ```
+>
+> No `.witness.json` anywhere in it, and `y_lambda_su_n` is read-only
+> ("writes no witness, runs no producer") — the whole call cone is cache-free.
+> The gate and the cache load moved into
+> `_y_lambda_at_convention_C_HISTORICAL`, which is **dead** (convention C,
+> excised 2026-08-09). So `y_lambda_at` is **anchor-neutral**: calling it says
+> nothing about a producer's layer.
+>
+> **Do not "fix" call sites on the strength of the old wording.** Measured
+> cost of trying: promoting `y_lambda_at` to a muon *identifier* check in
+> `q0_producer_pin_classifier` — which is exactly what the old paragraph
+> invites — reclassified **56 producers** from `proton` to `BOTH`, and `BOTH`
+> shields a producer from triage as a possible deliberate comparison. It would
+> have hidden 56 clean files behind an association the code no longer has.
+> `y_lambda_at` has been removed from that classifier's `MUON_ARTIFACTS`.
+>
+> **The rule above still stands, and has been measured: zero live instances.**
+> [`computations/audits/cached_accessor_shape_audit.py`](computations/audits/cached_accessor_shape_audit.py)
+> keys on **provenance** (a name assigned from a file read, at module level or
+> via `global` in a loader) rather than on a list of constant names, and
+> requires the gate to involve a **caller argument** — without that it returns
+> 34, almost all plain memoisation. Its `--selftest` fails unless the known
+> dead positive is detected, so a future narrowing cannot report a clean tree
+> the way a name-keyed version did. Current result: **2 hits, both the dead
+> historical function and its generated `qou-mass/_internal/` mirror.**
+>
+> **The μ₃ Fréchet incident above is unaffected** — 11.54 ppb, `y_λ` from the
+> muon-built cache against `χ_λ` at the proton `q₀`, is a real measured
+> straddle and the reason the rule exists. Only the *mechanism* has changed.
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
