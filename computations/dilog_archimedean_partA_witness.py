@@ -25,8 +25,10 @@ import sys
 from datetime import datetime, timezone
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 C = mp.mpf(30)  # n = ceil(C/eps); n*eps ~ 30 so tail ~ e^{-30} ~ 1e-13
 XS = [mp.mpf("0.2"), mp.mpf("0.5"), mp.mpf("0.8")]

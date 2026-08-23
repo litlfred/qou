@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:23:16.553892+00:00",
-  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:18:24.450996+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "theta_carry_does_not_close_all_four_zero_or_one_param",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "worst |err| (1 global scale) = 228.0%; μ₀ (0 fit) worst = 100.0%. The per-block phase carry improves on the scalar collapse but does not close all four with ≤1 parameter — full-order θ_λ still open."
+      "source": "worst |err| (1 global scale) = 100.0%; μ₀ (0 fit) worst = 100.0%. The per-block phase carry improves on the scalar collapse but does not close all four with ≤1 parameter — full-order θ_λ still open."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "probe-theta-carry-binding",
   "scriptFile": "probe_theta_carry_binding.py",
-  "scriptHash": "87f0f324ebc5",
-  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
+  "scriptHash": "5701c6b1cdfb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,55 +28,65 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_theta_carry_binding.py"
+    ],
+    "reproduce": "python3 -u computations/probe_theta_carry_binding.py"
   },
   "description": "EXPLORATORY: per-block q-Reeb phase CARRY (preserve info until observation). B(K) = E·Σ_λ y_λ |Δθ_λ| over rotation channels (|χ/d|≤1), collapsed via the y_λ-weighted observation instead of the scalar tr_M. Tested with derived μ₀ (0 fit) + one global scale (1 param) on D/T/³He/⁴He. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {
-    "mu0_derived_MeV": 1.6295103914259104,
-    "global_scale_MeV_per_rad": 511.609320399887
+    "mu0_derived_MeV": 1.6295105722568328,
+    "global_scale_MeV_per_rad": 1695.5660726003478
   },
   "data": {
     "per_atom": {
       "D": {
         "n_rotation": 8,
         "n_growth": 3,
-        "sum_y_absDtheta": "0.014260665",
-        "scalar_dtr_M": "-0.59516882",
-        "B_mu0_MeV": 0.023237901750698474,
-        "err_mu0": -0.9895539625879876
+        "sum_y_absDtheta": "0.00250765",
+        "scalar_dtr_M": "-0.55654458",
+        "B_mu0_MeV": 0.004086242238376574,
+        "err_mu0": -0.9981631285064133
       },
       "T": {
         "n_rotation": 26,
         "n_growth": 4,
-        "sum_y_absDtheta": "0.0067272054",
-        "scalar_dtr_M": "-0.80395284",
-        "B_mu0_MeV": 0.010962051127333625,
-        "err_mu0": -0.9987075790470733
+        "sum_y_absDtheta": "0.0043060386",
+        "scalar_dtr_M": "-0.8885361",
+        "B_mu0_MeV": 0.007016735396944871,
+        "err_mu0": -0.999172730017146
       },
       "3He": {
         "n_rotation": 25,
         "n_growth": 5,
-        "sum_y_absDtheta": "0.0051117899",
-        "scalar_dtr_M": "-0.84117786",
-        "B_mu0_MeV": 0.008329714717689262,
-        "err_mu0": -0.9989207475870718
+        "sum_y_absDtheta": "0.0",
+        "scalar_dtr_M": "-0.89290852",
+        "B_mu0_MeV": 0.0,
+        "err_mu0": -1.0
       },
       "4He": {
         "n_rotation": 68,
         "n_growth": 9,
-        "sum_y_absDtheta": "0.00043925252",
-        "scalar_dtr_M": "-0.91196503",
-        "B_mu0_MeV": 0.0007157665476369405,
-        "err_mu0": -0.9999747040186754
+        "sum_y_absDtheta": "0.0",
+        "scalar_dtr_M": "-1.119809",
+        "B_mu0_MeV": 0.0,
+        "err_mu0": -1.0
       }
     },
-    "worst_err_mu0": 0.9999747040186754,
-    "worst_err_global_scale": 2.2796907152920713,
+    "worst_err_mu0": 1.0,
+    "worst_err_global_scale": 1.0,
     "t_he3_difference": {
-      "pred_MeV": 0.826461646816238,
-      "ame_MeV": 0.7637548800000014,
-      "rel_err": 0.08210326173789755,
+      "pred_MeV": 7.301172930100189,
+      "ame_MeV": 0.76375488,
+      "rel_err": 8.55957614319949,
       "note": "SAME global scale, no isotope-specific fit — the signed phase-carry difference, NOT the fitted (1+q)/2."
     }
   }

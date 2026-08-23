@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:39:32.022155+00:00",
-  "commitSha": "6c5cce0d87c13e7a56c5b7b8ce56062874f460d3",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:49:26.153651+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "zero_mode_pi_is_geometric_area",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 5,
   "computation": "alpha-em-pi-decomposition",
   "scriptFile": "alpha_em_pi_universal_loop_factor_probe.py",
-  "scriptHash": "c39cb29705dd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dd94137a6e1c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em/alpha_em_pi_universal_loop_factor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em/alpha_em_pi_universal_loop_factor_probe.py"
   },
   "description": "π-decomposition of the α_EM per-loop measure 1/(π b₁)=1/(8π), b₁=dim H¹(M_Bring)=8. STRUCTURAL probe (scope-(a), NOT a fit/derivation) deciding whether the π is the UNIVERSAL 1-loop factor or a GEOMETRIC/categorical π, using the ONE proved α_EM π-template — the photon IR zero-mode δ(1/α)_IR=b₁/Area=8/(12π)=2/(3π) (PhotonIRZeroMode, PR #2114), whose π is unambiguously the Gauss–Bonnet Area 4π(g−1). Exact finding: the proved geometric π-home is Area=12π while the self-energy π-home is π·b₁=8π, and they DIFFER by the pure topological ratio Area/(π·b₁)=2(g−1)/g=3/2 (12π/8π). So the self-energy π is NOT the proved geometric Area π — the Area reading D=Area/π=12 is the corpus's 9500σ/−1419 ppb falsification — which EXCLUDES the 'same geometric Area π' reading. Since the n=2 self-energy is a genuine 1-loop diagram, by universality its π is the loop-integration factor; among universal 2D constants only the heat-kernel Gaussian norm (4π)^{d/2}|_{d=2}=4π has the single-π shape, and 8π=2·(4π) (momentum (2π)^2=4π² is π², Schwinger ∫ds/s is π-free). SUPPORTS the universal-loop reading. RESIDUAL OPEN (STRICT): the exact bare-π reciprocal normalization is not derived — 8π is compatible with (4π)·2 [universal×symmetry-2] and (π)·(b₁=8) [loop-π × 8-mode trace], both universal-loop-family; which multiplicity and why the reciprocal form is the open wall. No 8π manufactured; no α_k wired; no fit; 1/(8π) stays a phase-4 identification.",
   "contentBlock": "prop:alpha-em-categorical-trace",

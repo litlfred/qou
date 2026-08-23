@@ -46,6 +46,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 h = q - 1 / q
@@ -102,7 +103,7 @@ def sexp(expr, order=5):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.mp.dps = 50
+    set_compute_dps()
     print("=" * 78)
     print(" RT phase-3b: EXACT singlet-channel vertex moments (fundamental rep)")
     print("=" * 78)

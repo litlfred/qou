@@ -37,6 +37,14 @@ from pathlib import Path
 
 import sympy as sp
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -49,7 +57,7 @@ except Exception:  # pragma: no cover - fallback if path differs
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     X, z, t = sp.symbols("X z t")
     a, b, c = z + 1, z**2 + z + 1, z**3 + z**2 + z + 1
     cubic = X**3 + a * X**2 + b * X + c

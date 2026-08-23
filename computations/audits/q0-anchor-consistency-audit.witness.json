@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:07:40.603187+00:00",
-  "commitSha": "b13416a318ab8e4ccea07f814b7613b76c5d9a47",
+  "computedAt": "2026-08-23T17:17:31.241091+00:00",
+  "commitSha": "fe4561645a91974164bd7db0a39840b66a5d27d1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -37,24 +37,23 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 671,
+      "Q0_OK": 669,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 40,
+      "Q0_INDEPENDENT": 39,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
       "Q0_ANCHOR_MISSING": 1919,
       "Q0_VALUE_MISSING": 0,
-      "Q0_AUDIT_EXEMPT": 78,
+      "Q0_AUDIT_EXEMPT": 77,
       "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 0
     },
@@ -7832,10 +7831,6 @@
           "detail": ""
         },
         {
-          "witness": "atom-dual-q0-mpfr-demo.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "atom-level-wedderburn-tower.witness.json",
           "detail": ""
         },
@@ -8792,10 +8787,6 @@
           "detail": ""
         },
         {
-          "witness": "rho-k-h3a-residual-decomposition.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "t25-cinquefoil-deltalambda-sign.witness.json",
           "detail": ""
         },
@@ -9273,10 +9264,6 @@
         },
         {
           "witness": "lp-confinement-nf-forcing.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lp-dual-kkt-residual-50dps.witness.json",
           "detail": ""
         },
         {
@@ -10268,6 +10255,10 @@
           "detail": ""
         },
         {
+          "witness": "z2bn-tau-derivation-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "zeropoint-unit-candidate-gate-probe.witness.json",
           "detail": ""
         },
@@ -10688,10 +10679,6 @@
           "detail": ""
         },
         {
-          "witness": "convention-frame-staleness-audit.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "delta-S-chain-audit.witness.json",
           "detail": ""
         },
@@ -10967,10 +10954,6 @@
         },
         {
           "witness": "knot-volumes.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "z2bn-tau-derivation-probe.witness.json",
           "detail": ""
         }
       ],

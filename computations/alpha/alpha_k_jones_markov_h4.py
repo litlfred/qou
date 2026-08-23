@@ -58,7 +58,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 import numpy as np
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_characters import dim_q  # noqa: E402

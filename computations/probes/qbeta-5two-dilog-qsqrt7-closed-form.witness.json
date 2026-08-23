@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-18T16:06:33.943485+00:00",
-  "commitSha": "0ae4375720aa50b6c641c3c22fed3cb491b1ce9d",
+  "computedAt": "2026-08-23T09:27:46.912547+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "paper_qsqrt7_example5_verified",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-5two-dilog-qsqrt7-closed-form",
   "scriptFile": "qbeta_5two_dilog_qsqrt7_closed_form_probe.py",
-  "scriptHash": "fcea9f621e5b",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "6e6e6f389627",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,7 +36,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_dilog_qsqrt7_closed_form_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_dilog_qsqrt7_closed_form_probe.py"
   },
   "description": "PREMISE RETRACTED 2026-08-11 (qou-ynff): titled as the 'Q(sqrt-7) home' for the bar-odd c3 action, but 5_2's trace field is the cubic of disc -23 and Q(sqrt-7) cannot embed in it (tower law). Q(sqrt-7) is the Alexander layer. What survives: the paper's Q(sqrt-7) Example 5 verifies (a fact about the PAPER, which never claimed a 5_2 connection), and Vol(5_2)=3|D| holds but is forced by z2=1/(1-z1) and carries no field information. No action VALUE was claimed or is retracted.",
   "auditOnly": "docs/audits/2026-08-11-5two-trace-field-is-disc-minus-23.md",

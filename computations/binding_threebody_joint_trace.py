@@ -1,7 +1,8 @@
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys; sys.path.insert(0,'.')
 from mpmath import mp, mpf, fabs, catalan
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR
 from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
 from hecke_core import _PROTON_G0,_PROTON_G1,_NEUTRON_G0,_NEUTRON_G1, h as H

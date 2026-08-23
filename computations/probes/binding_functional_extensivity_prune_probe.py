@@ -89,6 +89,7 @@ del _Path, _bridge
 import sys
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 E0_STR = "4.1859813632944758969"
 ROWS = [("2H", 2, "1.1123"), ("4He", 4, "7.0739"), ("12C", 12, "7.6801"),
@@ -96,7 +97,7 @@ ROWS = [("2H", 2, "1.1123"), ("4He", 4, "7.0739"), ("12C", 12, "7.6801"),
 
 
 def main() -> int:
-    mp.mp.dps = 25
+    set_compute_dps()
     E0 = mp.mpf(E0_STR)
     print("Extensivity settles qou-y0mc — the channel-measure entropy cannot be it.\n")
     print("  Convention D is Wenzl level 2, so y_lambda = 0 unless l(lambda) <= 2:")

@@ -56,11 +56,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
     # Set mpmath precision before any matrix work.
-    mp.dps = 50
+    set_compute_dps()
 
     # WitnessBuilder is instantiated up front so its internal
     # start-time captures the full computation duration.

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:46:31.752627+00:00",
-  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:56:07.043758+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "frobenius_dual_refuted_scope_a",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 48,
   "computation": "binding-wn-frobenius-dual-refute",
   "scriptFile": "binding_wn_frobenius_dual_probe.py",
-  "scriptHash": "4e82685cd967",
-  "scriptCommitSha": "6bd662454c3c9446a5e4b4657529c10fe32e2d40",
+  "scriptHash": "ab7a3fcb3c43",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_wn_frobenius_dual_probe.py"
+    ],
+    "reproduce": "python3 -u computations/binding_wn_frobenius_dual_probe.py"
   },
   "description": "EXPLORATORY: refutes (scope-a) the Frobenius-dual + na-Stokes construction of the jet-filtration weight kernel w_n(K). Canonical Jones–Markov y_λ give Σ y_λ dim_q = tr_M(1) ≡ 1 (trivial) and constant-ratio self-pairings; no Frobenius-dual reweighting matches the decelerating w_n ratios (2.144,1.706). Structural reason: y_λ normalize tr_M. Weight must be geometric. No fit.",
   "data": {
@@ -50,24 +59,24 @@
     },
     "Σ y_λ dim_q = tr_M(𝟙)": {
       "n2": 1.0,
-      "n3": 1.0030612527755671,
-      "n4": 1.0122783691657207,
-      "ratio_3_2": 1.0030612527755671,
-      "ratio_4_3": 1.0091889865794825
+      "n3": 1.0026947721088464,
+      "n4": 1.0108084530078616,
+      "ratio_3_2": 1.0026947721088464,
+      "ratio_4_3": 1.0080918751395809
     },
     "Σ y_λ dim_q² (Frob self-dual)": {
       "n2": 1.0,
-      "n3": 1.574137637126902,
-      "n4": 2.47581861179428,
-      "ratio_3_2": 1.574137637126902,
-      "ratio_4_3": 1.572809488446713
+      "n3": 1.505404226503931,
+      "n4": 2.2991396407005587,
+      "ratio_3_2": 1.505404226503931,
+      "ratio_4_3": 1.5272573307701918
     },
     "Σ y_λ (total weight)": {
       "n2": 1.0,
-      "n3": 0.7190703660194094,
-      "n4": 0.5076140366804593,
-      "ratio_3_2": 0.7190703660194094,
-      "ratio_4_3": 0.7059309640174459
+      "n3": 0.7527021132519655,
+      "n4": 0.5665604712939746,
+      "ratio_3_2": 0.7527021132519655,
+      "ratio_4_3": 0.7527021132519655
     }
   }
 }

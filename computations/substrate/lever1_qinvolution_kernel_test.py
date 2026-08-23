@@ -117,7 +117,8 @@ W_laurent = {m: bool(is_laurent_poly_in_q(Wm[m])) for m in range(2, MMAX + 1)}
 W_first_nonlaurent = next((m for m in range(2, MMAX + 1) if not W_laurent[m]), None)
 
 # Numeric eval at q0 (proton-pinned package q0) for residual magnitudes
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 
 

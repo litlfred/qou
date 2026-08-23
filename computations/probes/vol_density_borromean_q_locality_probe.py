@@ -63,7 +63,9 @@ import mpmath as mp
 from mpmath import mpf
 
 # 50-dps compute discipline (AGENTS.md §Precision goals L1 floor)
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # Import canonical infrastructure
 sys.path.insert(0, str(Path(__file__).parent))

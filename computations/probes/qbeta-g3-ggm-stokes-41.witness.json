@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T01:18:56.754873+00:00",
-  "commitSha": "69c40ca8bc1b7c1082a8c6dc4c33d1544054bd88",
+  "computedAt": "2026-08-23T09:39:00.450149+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "theorem9_det_and_qdifference_exact",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "qbeta-g3-ggm-stokes-41",
   "scriptFile": "qbeta_g3_ggm_stokes_41.py",
-  "scriptHash": "1e15485adc31",
-  "scriptCommitSha": "196beae94ba94497f6da18f0c657ff1274c9d0bd",
+  "scriptHash": "f87ba89d73ed",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1"
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_ggm_stokes_41.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_ggm_stokes_41.py"
   },
   "description": "A_omega step 2: exact implementation of the GGM 4_1 Stokes data (G/W q-series machinery certified by Theorem-9 identities; the (59a) sandwich derived OCR-free against the printed series). Records the integer Stokes constant 3 on the iota = Vol(4_1)/pi singularity (= the corpus's measured Borel A) with its descendant tower and substrate value, and the proven eq-(21) dictionary making the tower an exact anchor for the step-1 index assembly. No A_omega identification claimed (step 3 decides).",
   "contentBlock": "conj:im-q-physical-role",

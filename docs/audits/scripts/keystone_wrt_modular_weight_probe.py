@@ -29,9 +29,15 @@ normalisation that any WRT identification must satisfy.
 DISCIPLINE: no fit; report the exact normalisation gap; do not claim a
 "WRT(S³/2I) = W_λ" identity that is not type-correct (number vs family).
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, nstr
 
-mp.dps = 40
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 
 

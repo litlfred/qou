@@ -2,43 +2,43 @@
   "probe": "qbeta_5two_route22_deformed_saddle",
   "bean": "qou-trns",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoDeformedSaddle.lean",
   "gates": [
     {
       "gate": "G1",
       "claim": "the deformed saddle condition x*y^2 = (1-y)(1-x*y)(x-y) -- i.e. dV/dy = 0 after exponentiating -- holds at every root of the GGM curve, on the arc and off it",
       "n_points": 8,
-      "worst": "6.4937502e-41",
+      "worst": "7.4675043e-71",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "x*y^2 - (1-y)(1-x*y)(x-y) is IDENTICALLY curve(x,y) as a polynomial -- checked at generic (x,y) OFF the curve, so this is the ring identity Lean proves, not an equivalence that only holds at roots",
       "n_generic_points": 4,
-      "worst": "7.3468397e-40",
+      "worst": "5.7956346e-70",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "at x = 1 the deformed condition collapses to y^2 = (1-y)^3, the corpus's `cubic_iff_sq_eq_cube` -- so the deformation is a genuine generalisation of what FiveTwoSaddleSumRule already proves, not a different statement",
-      "worst": "5.7397185e-42",
+      "worst": "0.0",
       "pass": true
     },
     {
       "gate": "G4",
       "claim": "prod_j (1 - y_j) = 1 -- the third Vieta product, new in this file; joins prod(1 - x*y_j) = x and prod(x - y_j) = x^2 from #4658. Together they are why exp(sum of branchTerms) = 1",
       "n_points": 8,
-      "worst": "2.6492833e-41",
+      "worst": "3.6222766e-71",
       "pass": true
     },
     {
       "gate": "G5",
       "claim": "the base-point branch integers are integers in BOTH conventions, and they differ -- branchTerm uses log(-y) (forced by the log(-y)^2 term in V) while the corpus uses log(y). The corpus records (+1,-1,0) for its own convention; reported here rather than assumed, because an unstated log(-y)-vs-log(y) convention shifts an integer silently",
       "k_branchTerm_log_neg_y": [
-        "-7.3080366e-42",
+        "5.7650244e-72",
         "1.0",
-        "7.3080366e-42"
+        "-5.7650244e-72"
       ],
       "k_corpus_log_y": [
         "-1.0",
@@ -47,14 +47,14 @@
       ],
       "sum_branchTerm": "1.0",
       "sum_corpus": "0.0",
-      "worst_integrality_defect": "2.2958874e-41",
+      "worst_integrality_defect": "9.0556791e-72",
       "pass": true
     },
     {
       "gate": "G6",
       "claim": "exp(sum_j branchTerm) = 1 all along the arc, endpoint included -- the `hexp` hypothesis of BranchIntegerPinning, supplied by exp_branchSum_eq_one from VIETA ALONE (the saddle condition is not needed for the sum, only for the individual terms)",
       "n_points": 21,
-      "worst_|exp(sum) - 1|": "1.1545689e-40",
+      "worst_|exp(sum) - 1|": "1.0408074e-70",
       "pass": true
     },
     {

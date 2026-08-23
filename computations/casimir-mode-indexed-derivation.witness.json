@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T12:59:44.065016+00:00",
+  "commitSha": "cb29ea3319f6b0c51b5ca5ed3221c9c98ed57a21",
+  "assertions": [
+    {
+      "name": "regularizations_agree_within_one_percent",
+      "computed": "0.910969729923243905971774578964367204355306400129824686605198",
+      "expected": "0.0",
+      "passed": false,
+      "tolerance": "0.0100000000000000000000000000000000000000000000000000000000000",
+      "unit": "(max c_q - min c_q) / target",
+      "source": "If this passes, the mode-indexed-vacuum axiom forces a unique answer and we have a derivation.  If it fails, the choice of q-zeta regularization is the actual open content and the prefactor remains undetermined."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 233,
+  "computation": "casimir-mode-indexed-derivation",
+  "scriptFile": "casimir_mode_indexed_derivation.py",
+  "scriptHash": "10ab3b1e9559",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_mode_indexed_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_mode_indexed_derivation.py"
+  },
+  "description": "Derivation attempt under the proposed mode-indexed-vacuum axiom: ε_n = ε · [n]_q.  Derivation chain follows standard Casimir steps with [n]_q substituted for n.  At Step 4 (regularization), three candidate q-zeta values are tested.  If they AGREE within 1%, the derivation is forced and we have a real result.  If they DISAGREE by > 1%, the regularization choice is the actual open question and the prefactor is NOT derived — only fit by choosing one regularization.",
+  "contentBlock": "conj:casimir-epsilon-vacuum",
+  "parameters": {
+    "substrate_q": "1.10997858275138080759166909561076887987449912187357763605672",
+    "target_energy_prefactor": "0.0137077838904018869706034597220502099101579158433899869811297",
+    "target_force_prefactor": "0.0411233516712056609118103791661506297304737475301699609433890"
+  },
+  "data": {
+    "regularization_candidates": [
+      {
+        "regularization": "(a) 1/[5]_q!_sym         template-sub",
+        "zeta_q_neg_3_value": "-0.00761538731027869750228991690606388435959701754054228076286138",
+        "energy_prefactor_c_q": "0.0125268100189211143161807475414426198262589055742267294622410",
+        "energy_prefactor_target": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "energy_rel_residue": "0.0861535227665562997252099712723338768483578951349263084566345",
+        "force_prefactor_c_q": "0.0375804300567633429485422426243278594787767167226801883867230",
+        "force_prefactor_target": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "force_rel_residue": "0.0861535227665562997252099712723338768483578951349263084566345"
+      },
+      {
+        "regularization": "(b) Carlitz -β_4^q/4       template-sub",
+        "zeta_q_neg_3_value": "0.00686153181715256145039947714794077662988668734236224154164258",
+        "energy_prefactor_c_q": "0.0112867674367972641309258818334267758618820338586624743037243",
+        "energy_prefactor_target": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "energy_rel_residue": "0.176616181941692625952062742247106804413597518916531015002890",
+        "force_prefactor_c_q": "0.0338603023103917923927776455002803275856461015759874229111729",
+        "force_prefactor_target": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "force_rel_residue": "0.176616181941692625952062742247106804413597518916531015002890"
+      },
+      {
+        "regularization": "(c) Cesàro at k=3.01      analytic-continuation",
+        "zeta_q_neg_3_value": "-0.0000239728942516649525251287480274909899694642061270750411513943",
+        "energy_prefactor_c_q": "0.0000394338304355137002898768072457372301579352288885267553245313",
+        "energy_prefactor_target": "0.0137077838904018869706034597220502099101579158433899869811297",
+        "energy_rel_residue": "0.997123252689800205696984550236701081203664295264750995061833",
+        "force_prefactor_c_q": "0.000118301491306541100869630421737211690473805686665580265973594",
+        "force_prefactor_target": "0.0411233516712056609118103791661506297304737475301699609433890",
+        "force_rel_residue": "0.997123252689800205696984550236701081203664295264750995061833"
+      }
+    ],
+    "agreement_assessment": {
+      "spread_relative_to_target": "0.91096972992324390597177457896436720435530640012982468660519820218405",
+      "derivation_succeeded": false,
+      "verdict": "NOT DERIVED — regularizations disagree, choice = free parameter"
+    }
+  }
+}

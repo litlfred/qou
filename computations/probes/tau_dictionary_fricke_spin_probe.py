@@ -238,7 +238,7 @@ def main():
         }
         print(f"  [{pin:6s}] q̃ = {mp.nstr(qt, 25)}")
         print(f"           t5(iy) = {mp.nstr(mp.re(t5_direct), 35)}   (rel dev vs cusp form: {mp.nstr(rel, 4)})")
-    mp.dps = 50
+    set_compute_dps()
 
     # ══════════════════════════════════════════════════════════════════════
     # TASK 2 — bar ↔ Fricke candidate class (structure-enumerated, no tuning)

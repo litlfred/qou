@@ -34,6 +34,7 @@ import _path_bridge  # noqa: F401, E402
 from mpmath import mp, mpc, mpf, polylog, exp, pi  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _zeta_n(n: int) -> "mpc":
@@ -51,7 +52,7 @@ def main() -> int:
         "cyclotomic-trilog-imaginary-closed-form-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     results = []
     max_residue = mpf(0)

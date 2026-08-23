@@ -29,7 +29,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf(M_E_MEV)
     m_p = mp.mpf(M_P_MEV_VALIDATION)

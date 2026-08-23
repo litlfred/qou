@@ -35,8 +35,10 @@ VERDICT: super-exponential ⇒ lw/#1765 is the true prolongation; the depth-2 SL
 from __future__ import annotations
 import sympy as sp
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 z, X = sp.symbols('z X')
 P = X**3 + (z + 1) * X**2 + (z**2 + z + 1) * X + (z**3 + z**2 + z + 1)
 

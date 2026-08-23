@@ -1,22 +1,24 @@
 {
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "yekutieli_mi_k3_structural_h6_scaffold",
-  "computedAt": "2026-07-18T17:52:39.913047+00:00",
+  "computedAt": "2026-08-23T10:00:28.304038+00:00",
   "description": "Path B scaffold step 1: extract the structural h\u2076 coefficient of the Borromean Markov trace closed form, and solve for the C_6 required to close each anchor's Higgs residual with the augmented formula m_H = m_anchor \u00b7 (P/P) \u00b7 (6/5) \u00b7 (1 - h\u2074\u00b72G - h\u2076\u00b7C_6). Confirms PR #1167's negative finding that no single C_6 closes both anchors, and identifies the research-grade ~1 month CBH expansion needed for full closure.",
   "durationMs": 0,
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
   "matches_within_0_5": [],
   "next_step": "Full Path B step 2: implement the 64-cell tessellation of the Borromean rings complement via Riemann-product subdivision; compute the per-cell CBH expansion to h\u2076; sum the cross-cell contributions; verify against the Markov trace closed form. References: arXiv:1007.1250v4 (Yekutieli); existing k=1 scaffold in yekutieli_mi_h2_extraction.py.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "required_C_6": {
     "difference": -134.1542951490419,
     "from_W_anchor": -81.63990781203869,
     "from_Z_anchor": 52.5143873370032,
     "single_coefficient_works": false
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "yekutieli_mi_k3_h6_scaffold.py",
-  "scriptHash": "4bb4b700cad8",
+  "scriptHash": "05199c16fa99",
   "status": "exploratory",
   "structural_candidates_tested": [
     {

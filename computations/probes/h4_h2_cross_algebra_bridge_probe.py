@@ -60,8 +60,9 @@ from pathlib import Path
 
 import sympy as sp
 from mpmath import mp, mpf, log as mplog, cosh as mpcosh
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 def partitions_of(n):

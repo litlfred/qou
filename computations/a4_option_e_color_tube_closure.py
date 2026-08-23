@@ -10,11 +10,11 @@ import sys
 from pathlib import Path
 import json
 from mpmath import mp, mpf
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
-def set_compute_dps():
-    mp.dps = 50
 
 def fmt(x):
     return f"{float(x):.6f}"

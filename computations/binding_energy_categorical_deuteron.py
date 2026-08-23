@@ -48,7 +48,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     m_e = mp.mpf(M_E_MEV)
 

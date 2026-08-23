@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:21:05.075284+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:45.588557+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "P_ell_is_central_scalar_on_V_lambda",
-      "computed": 4.276423536147513e-50,
+      "computed": 2.897817305224548e-70,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 31,
   "computation": "jucys-murphy-central-elements-qou-probe",
   "scriptFile": "jucys_murphy_central_elements_qou_probe.py",
-  "scriptHash": "e531734485f1",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "22986710d603",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,16 +38,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/jucys_murphy_central_elements_qou_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/jucys_murphy_central_elements_qou_probe.py"
   },
   "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n ∈ {3, 4, 5} and ℓ ∈ {1, …, n}: (i) the elementary symmetric polynomial P_ℓ = e_ℓ(J_1, …, J_n) acts as a scalar on V_λ (all SYT diagonal entries equal — centrality); (ii) the scalar value matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : □ ∈ λ}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  All residues at ~1e-50 (mpmath 50 dps).",
   "contentBlock": "prop:jucys-murphy-central-elements-qou",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "total_irreps_tested": 15,
     "total_ell_tests": 64,
-    "max_centrality_residue": 4.276423536147513e-50,
+    "max_centrality_residue": 2.897817305224548e-70,
     "max_closed_form_residue": 0.0
   },
   "data": {
@@ -59,22 +69,22 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.7500058024650036,
-            "closed_form_c_ell": 3.7500058024650036,
+            "P_ell_diagonal_first_entry": 3.75000570398511,
+            "closed_form_c_ell": 3.75000570398511,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 4.620203958674288,
-            "closed_form_c_ell": 4.620203958674288,
+            "P_ell_diagonal_first_entry": 4.620203730734218,
+            "closed_form_c_ell": 4.620203730734218,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 1.870198156209284,
-            "closed_form_c_ell": 1.870198156209284,
+            "P_ell_diagonal_first_entry": 1.870198026749108,
+            "closed_form_c_ell": 1.870198026749108,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -87,15 +97,15 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.0437062182329013,
-            "closed_form_c_ell": 3.0437062182329013,
-            "centrality_residue": 5.345529420184391e-51,
+            "P_ell_diagonal_first_entry": 3.043706208532522,
+            "closed_form_c_ell": 3.043706208532522,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 3.0437062182329013,
-            "closed_form_c_ell": 3.0437062182329013,
+            "P_ell_diagonal_first_entry": 3.043706208532522,
+            "closed_form_c_ell": 3.043706208532522,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
@@ -115,22 +125,22 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 2.470435522211725,
-            "closed_form_c_ell": 2.470435522211725,
+            "P_ell_diagonal_first_entry": 2.4704355713417883,
+            "closed_form_c_ell": 2.4704355713417883,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 2.0051382202546457,
-            "closed_form_c_ell": 2.0051382202546457,
+            "P_ell_diagonal_first_entry": 2.0051383063982793,
+            "closed_form_c_ell": 2.0051383063982793,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 0.5347026980429208,
-            "closed_form_c_ell": 0.5347026980429208,
+            "P_ell_diagonal_first_entry": 0.5347027350564907,
+            "closed_form_c_ell": 0.5347027350564907,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -143,29 +153,29 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.620203958674288,
-            "closed_form_c_ell": 5.620203958674288,
+            "P_ell_diagonal_first_entry": 5.620203730734218,
+            "closed_form_c_ell": 5.620203730734218,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 11.633457896218454,
-            "closed_form_c_ell": 11.633457896218454,
+            "P_ell_diagonal_first_entry": 11.63345699862507,
+            "closed_form_c_ell": 11.63345699862507,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 10.510895081032771,
-            "closed_form_c_ell": 10.510895081032771,
+            "P_ell_diagonal_first_entry": 10.510893927147109,
+            "closed_form_c_ell": 10.510893927147109,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 3.497641143488605,
-            "closed_form_c_ell": 3.497641143488605,
+            "P_ell_diagonal_first_entry": 3.4976406592562572,
+            "closed_form_c_ell": 3.4976406592562572,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -178,29 +188,29 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.561659538102472,
-            "closed_form_c_ell": 4.561659538102472,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 4.561659458350868,
+            "closed_form_c_ell": 4.561659458350868,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 7.663910176907189,
-            "closed_form_c_ell": 7.663910176907189,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 7.66390993926674,
+            "closed_form_c_ell": 7.66390993926674,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 5.620203958674288,
-            "closed_form_c_ell": 5.620203958674288,
+            "P_ell_diagonal_first_entry": 5.620203730734218,
+            "closed_form_c_ell": 5.620203730734218,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 1.5179533198695703,
-            "closed_form_c_ell": 1.5179533198695703,
+            "P_ell_diagonal_first_entry": 1.517953249818346,
+            "closed_form_c_ell": 1.517953249818346,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -213,23 +223,23 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.043706218232901,
-            "closed_form_c_ell": 4.043706218232901,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 4.043706208532522,
+            "closed_form_c_ell": 4.043706208532522,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 6.087412436465803,
-            "closed_form_c_ell": 6.087412436465803,
+            "P_ell_diagonal_first_entry": 6.087412417065044,
+            "closed_form_c_ell": 6.087412417065044,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 4.043706218232901,
-            "closed_form_c_ell": 4.043706218232901,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 4.043706208532522,
+            "closed_form_c_ell": 4.043706208532522,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
@@ -248,30 +258,30 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.702488004807158,
-            "closed_form_c_ell": 3.702488004807158,
+            "P_ell_diagonal_first_entry": 3.7024880255085524,
+            "closed_form_c_ell": 3.7024880255085524,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 5.0488444384875475,
-            "closed_form_c_ell": 5.0488444384875475,
+            "P_ell_diagonal_first_entry": 5.048844514930801,
+            "closed_form_c_ell": 5.048844514930801,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 3.0051382202546457,
-            "closed_form_c_ell": 3.0051382202546457,
+            "P_ell_diagonal_first_entry": 3.0051383063982793,
+            "closed_form_c_ell": 3.0051383063982793,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.6587817865742569,
-            "closed_form_c_ell": 0.6587817865742569,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 0.6587818169760303,
+            "closed_form_c_ell": 0.6587818169760303,
+            "centrality_residue": 9.055679078826712e-72,
             "closed_form_residue": 0.0
           }
         ]
@@ -283,29 +293,29 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.0051382202546457,
-            "closed_form_c_ell": 3.0051382202546457,
+            "P_ell_diagonal_first_entry": 3.0051383063982793,
+            "closed_form_c_ell": 3.0051383063982793,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 3.3260867593223273,
-            "closed_form_c_ell": 3.3260867593223273,
+            "P_ell_diagonal_first_entry": 3.3260869631755776,
+            "closed_form_c_ell": 3.3260869631755776,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 1.6068555143620604,
-            "closed_form_c_ell": 1.6068555143620604,
+            "P_ell_diagonal_first_entry": 1.6068556716541902,
+            "closed_form_c_ell": 1.6068556716541902,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.285906975294379,
-            "closed_form_c_ell": 0.285906975294379,
+            "P_ell_diagonal_first_entry": 0.2859070148768917,
+            "closed_form_c_ell": 0.2859070148768917,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -318,36 +328,36 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 7.924386239977338,
-            "closed_form_c_ell": 7.924386239977338,
+            "P_ell_diagonal_first_entry": 7.924385799368296,
+            "closed_form_c_ell": 7.924385799368296,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 24.583432275105007,
-            "closed_form_c_ell": 24.583432275105007,
+            "P_ell_diagonal_first_entry": 24.583429657053202,
+            "closed_form_c_ell": 24.583429657053202,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 37.31650263578439,
-            "closed_form_c_ell": 37.31650263578439,
+            "P_ell_diagonal_first_entry": 37.31649693960461,
+            "closed_form_c_ell": 37.31649693960461,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 27.716659349839702,
-            "closed_form_c_ell": 27.716659349839702,
+            "P_ell_diagonal_first_entry": 27.71665397150345,
+            "closed_form_c_ell": 27.71665397150345,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 8.059202749182983,
-            "closed_form_c_ell": 8.059202749182983,
+            "P_ell_diagonal_first_entry": 8.059200889583742,
+            "closed_form_c_ell": 8.059200889583742,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -360,36 +370,36 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 6.431857694311756,
-            "closed_form_c_ell": 6.431857694311756,
-            "centrality_residue": 2.1382117680737565e-50,
+            "P_ell_diagonal_first_entry": 6.431857485099976,
+            "closed_form_c_ell": 6.431857485099976,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 16.195117434320924,
-            "closed_form_c_ell": 16.195117434320924,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 16.19511645697594,
+            "closed_form_c_ell": 16.19511645697594,
+            "centrality_residue": 2.897817305224548e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 19.95323464087968,
-            "closed_form_c_ell": 19.95323464087968,
-            "centrality_residue": 4.276423536147513e-50,
+            "P_ell_diagonal_first_entry": 19.95323297633375,
+            "closed_form_c_ell": 19.95323297633375,
+            "centrality_residue": 2.897817305224548e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 12.02884840090234,
-            "closed_form_c_ell": 12.02884840090234,
-            "centrality_residue": 2.1382117680737565e-50,
+            "P_ell_diagonal_first_entry": 12.028847176965455,
+            "closed_form_c_ell": 12.028847176965455,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 2.838873500031832,
-            "closed_form_c_ell": 2.838873500031832,
+            "P_ell_diagonal_first_entry": 2.8388731725076664,
+            "closed_form_c_ell": 2.8388731725076664,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -402,36 +412,36 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.561659538102472,
-            "closed_form_c_ell": 5.561659538102472,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 5.561659458350868,
+            "closed_form_c_ell": 5.561659458350868,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 12.22556971500966,
-            "closed_form_c_ell": 12.22556971500966,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 12.225569397617608,
+            "closed_form_c_ell": 12.225569397617608,
+            "centrality_residue": 2.897817305224548e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 13.284114135581476,
-            "closed_form_c_ell": 13.284114135581476,
-            "centrality_residue": 2.1382117680737565e-50,
+            "P_ell_diagonal_first_entry": 13.284113670000957,
+            "closed_form_c_ell": 13.284113670000957,
+            "centrality_residue": 1.448908652612274e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 7.138157278543858,
-            "closed_form_c_ell": 7.138157278543858,
+            "P_ell_diagonal_first_entry": 7.138156980552564,
+            "closed_form_c_ell": 7.138156980552564,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 1.5179533198695703,
-            "closed_form_c_ell": 1.5179533198695703,
+            "P_ell_diagonal_first_entry": 1.517953249818346,
+            "closed_form_c_ell": 1.517953249818346,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }
@@ -444,37 +454,37 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.220441324676728,
-            "closed_form_c_ell": 5.220441324676728,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 5.220441275326898,
+            "closed_form_c_ell": 5.220441275326898,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 10.669048397161834,
-            "closed_form_c_ell": 10.669048397161834,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 10.669048245665019,
+            "closed_form_c_ell": 10.669048245665019,
+            "centrality_residue": 1.448908652612274e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 10.669048397161834,
-            "closed_form_c_ell": 10.669048397161834,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 10.669048245665019,
+            "closed_form_c_ell": 10.669048245665019,
+            "centrality_residue": 1.448908652612274e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 5.220441324676728,
-            "closed_form_c_ell": 5.220441324676728,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 5.220441275326898,
+            "closed_form_c_ell": 5.220441275326898,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
             "P_ell_diagonal_first_entry": 1.0,
             "closed_form_c_ell": 1.0,
-            "centrality_residue": 0.0,
+            "centrality_residue": 1.8111358157653425e-71,
             "closed_form_residue": 0.0
           }
         ]
@@ -486,37 +496,37 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.702488004807158,
-            "closed_form_c_ell": 4.702488004807158,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 4.702488025508552,
+            "closed_form_c_ell": 4.702488025508552,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 8.751332443294705,
-            "closed_form_c_ell": 8.751332443294705,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 8.751332540439353,
+            "closed_form_c_ell": 8.751332540439353,
+            "centrality_residue": 1.448908652612274e-70,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 8.053982658742193,
-            "closed_form_c_ell": 8.053982658742193,
-            "centrality_residue": 2.1382117680737565e-50,
+            "P_ell_diagonal_first_entry": 8.05398282132908,
+            "closed_form_c_ell": 8.05398282132908,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 3.663920006828903,
-            "closed_form_c_ell": 3.663920006828903,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 3.6639201233743095,
+            "closed_form_c_ell": 3.6639201233743095,
+            "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.6587817865742569,
-            "closed_form_c_ell": 0.6587817865742569,
-            "centrality_residue": 0.0,
+            "P_ell_diagonal_first_entry": 0.6587818169760303,
+            "closed_form_c_ell": 0.6587818169760303,
+            "centrality_residue": 9.055679078826712e-72,
             "closed_form_residue": 0.0
           }
         ]
@@ -528,37 +538,37 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.237190702850079,
-            "closed_form_c_ell": 4.237190702850079,
+            "P_ell_diagonal_first_entry": 4.237190760565043,
+            "closed_form_c_ell": 4.237190760565043,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 7.028574764129486,
-            "closed_form_c_ell": 7.028574764129486,
+            "P_ell_diagonal_first_entry": 7.02857498868413,
+            "closed_form_c_ell": 7.02857498868413,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 5.704768963512933,
-            "closed_form_c_ell": 5.704768963512933,
-            "centrality_residue": 1.0691058840368783e-50,
+            "P_ell_diagonal_first_entry": 5.704769277406739,
+            "closed_form_c_ell": 5.704769277406739,
+            "centrality_residue": 7.24454326306137e-71,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 2.265637300936317,
-            "closed_form_c_ell": 2.265637300936317,
+            "P_ell_diagonal_first_entry": 2.2656374886302206,
+            "closed_form_c_ell": 2.2656374886302206,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.3522523987027908,
-            "closed_form_c_ell": 0.3522523987027908,
-            "centrality_residue": 6.681911775230489e-52,
+            "P_ell_diagonal_first_entry": 0.3522524393425679,
+            "closed_form_c_ell": 0.3522524393425679,
+            "centrality_residue": 4.527839539413356e-72,
             "closed_form_residue": 0.0
           }
         ]
@@ -570,36 +580,36 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.4391316625766155,
-            "closed_form_c_ell": 3.4391316625766155,
+            "P_ell_diagonal_first_entry": 3.439131788776519,
+            "closed_form_c_ell": 3.439131788776519,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 4.630297040183959,
-            "closed_form_c_ell": 4.630297040183959,
+            "P_ell_diagonal_first_entry": 4.630297401797613,
+            "closed_form_c_ell": 4.630297401797613,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 3.050355356501882,
-            "closed_form_c_ell": 3.050355356501882,
+            "P_ell_diagonal_first_entry": 3.0503557354956237,
+            "closed_form_c_ell": 3.0503557354956237,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.9832717312864089,
-            "closed_form_c_ell": 0.9832717312864089,
+            "P_ell_diagonal_first_entry": 0.9832719034973193,
+            "closed_form_c_ell": 0.9832719034973193,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.12408175239186989,
-            "closed_form_c_ell": 0.12408175239186989,
+            "P_ell_diagonal_first_entry": 0.12408178102278947,
+            "closed_form_c_ell": 0.12408178102278947,
             "centrality_residue": 0.0,
             "closed_form_residue": 0.0
           }

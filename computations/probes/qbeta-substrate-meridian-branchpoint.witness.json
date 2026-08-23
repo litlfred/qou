@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T10:00:37.011834+00:00",
-  "commitSha": "2a2ada0ef1b5e3152fd0e9f51f822118cef3d226",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:39:55.103472+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "saddle_nondegenerate_at_substrate",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-substrate-meridian-branchpoint",
   "scriptFile": "qbeta_substrate_meridian_branchpoint_probe.py",
-  "scriptHash": "aa335163ef6c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b1ed04090a58",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_substrate_meridian_branchpoint_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_substrate_meridian_branchpoint_probe.py"
   },
   "description": "Is the substrate meridian q₀≈1.10998 anomalously close to a 5₂/4₁ A-polynomial branch point (saddle degeneracy) — the ONE place the c₃ bar-odd swing's 2e6 amplification could be geometric rather than the 1/u³ representational artifact? Computes the nearest branch point: 4₁ via disc_ℓ A_{4₁}, 5₂ via the saddle Jacobian det J=0. The substrate saddle is non-degenerate and O(0.1) from every branch point (~1e7× the anchor gap) ⇒ the amplification is NOT geometric; the swing is representational, and the alien-calculus/resurgence route (D-ladder Écalle) is the lever. No c_k; no fit; scope-(a).",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

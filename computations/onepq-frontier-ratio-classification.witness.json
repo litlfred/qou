@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T23:02:59.941173+00:00",
-  "commitSha": "b7e07e40eeabd6a8e354c885bb50d3188e517570",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:15:35.083036+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "alpha_em_is_1ppq_capable",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 6,
   "computation": "onepq-frontier-ratio-classification",
   "scriptFile": "onepq_frontier_ratio_classification_probe.py",
-  "scriptHash": "450591408998",
-  "scriptCommitSha": "b7e07e40eeabd6a8e354c885bb50d3188e517570",
+  "scriptHash": "82e730a9fdca",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/onepq_frontier_ratio_classification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/onepq_frontier_ratio_classification_probe.py"
   },
   "description": "Classifies observables into 1-ppq-capable (pure-q0 dimensionless, calibration cancels, floor ~0.06 ppb) vs floor-limited (calibration-scaled, floor ~780 ppb CAL-2). Headline: alpha_EM is pure-q0, ~80 ppb off (527x its 0.15 ppb sigma) — a closable DERIVATION gap, the highest-value 1-ppq target, untracked by the L2 mass dashboard. No c_k wired; scope-(a).",
   "contentBlock": "observations:three-calibration-discipline",
@@ -73,7 +83,7 @@
         "pure_q0": true,
         "onepq_capable": true,
         "status": "OPPORTUNITY (derivation gap)",
-        "note": "~79 ppb off (528x sigma)"
+        "note": "~0 ppb off (2x sigma)"
       },
       {
         "observable": "Q_beta",
@@ -112,9 +122,9 @@
       }
     ],
     "alpha_em_opportunity": {
-      "residual_ppb": 79.15106421926589,
+      "residual_ppb": 0.31342795110243077,
       "sigma_ppb": 0.15,
-      "miss_factor": 527.6737614617726,
+      "miss_factor": 2.089519674016205,
       "q0_floor_ppb": 0.06,
       "onepq_capable": true,
       "kind": "derivation gap (RT program), not calibration wall"

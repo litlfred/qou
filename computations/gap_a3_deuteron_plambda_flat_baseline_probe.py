@@ -37,6 +37,8 @@ from wedderburn_jones_markov import y_lambda_at
 from chi_monotone_transfer import chi_all_lambda
 from mass_at_3A_proper import atom_braid_word_3A
 from lr_coefficients import partitions_of
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # --- muon anchor: READ, never retyped ---------------------------------------
 # This file used to carry the muon q0 as a string literal. A transcribed pin
@@ -51,7 +53,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parents[1]
                         / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import _q0_value_for_anchor as _q0_for  # noqa: E402
 
-mp.mp.dps = 20
+set_compute_dps()
 N_STRANDS = 6           # deuteron: 3A = 3·2
 B_D_OVER_ME = mp.mpf("4.353")   # −B(D)/m_e target (gating-context canonical)
 Q0 = mp.mpf(_q0_for("muon"))   # substrate q₀ (matches y-lambda witness hot path)

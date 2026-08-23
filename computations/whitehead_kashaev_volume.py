@@ -41,6 +41,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised HERE, not in main(): the 25-digit constant below is
 # built at import time, and at mpmath's default 15 dps it would be frozen at
@@ -101,7 +103,7 @@ def volume_from_kashaev(kashaev_fn, Ns):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     print("\n  WHITEHEAD link — colored Jones / Kashaev reconstruction")
     print(f"  Vol(Whitehead) target = 4·G = {float(VOL_WHITEHEAD):.10f}  (regular ideal octahedron)\n")
 

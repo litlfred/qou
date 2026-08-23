@@ -86,8 +86,9 @@ sys.path.insert(0, str(COMP))
 import _path_bridge  # noqa: F401,E402 — substrate path bridge
 from mpmath import mp, mpf, fabs, sqrt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 q0 = mpf(Q_50_DIGIT_STR)
 qi = 1 / q0

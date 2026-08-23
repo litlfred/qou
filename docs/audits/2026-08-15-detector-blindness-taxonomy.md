@@ -166,6 +166,85 @@ here keys on how the convention was WRITTEN; the algebraic form of the answer
 keys on what the convention IS.** Where a result is exact and symbolic, prefer
 the second.
 
+## The counter-move has its own failure mode: a tolerance set by the wrong arithmetic
+
+Recorded 2026-08-23, from an instance of my own, because it runs **opposite**
+to all thirteen rows above. Every row here is a false **negative** — the
+detector misses a real violation. This is a false **positive**: the detector
+flags a **correct** value as a violation.
+
+It happened inside the counter-move this document recommends. Checking whether
+`pyhecke.gram.z_mp` had been migrated to convention D, I compared its value
+against `z_D` with an absolute tolerance:
+
+```python
+v = gram.z_mp(50)
+label = "D" if abs(v - zD) < mp.mpf("1e-20") else "C"     # -> printed "C"
+```
+
+`z_mp` **is** convention D. It had been migrated on 2026-08-16 and its own
+docstring says so. The detector said C.
+
+**Why.** `z_mp` computes at 50 dps, but its input `q0` enters as a float64.
+So the strongest agreement obtainable is ~1e-16, and a 1e-20 threshold cannot
+be met by a correct value. The tolerance was set by the *strongest* arithmetic
+in the chain rather than by the *weakest*, and the gap between them became a
+verdict.
+
+The measured numbers, which is how it was caught — the mislabelled value was
+visibly `z_D` in the printout, not flagged by anything:
+
+```
+|z_mp - z_D| / z_D  =  1.29679e-17      <- correct convention
+|z_mp - z_C| / z_C  =  0.227044
+```
+
+**The fix is to make it a comparison, not a threshold.** Ask *which candidate
+is closer*, not *is it within ε of this one*. A relative two-way comparison
+needs no calibration, survives any input precision, and cannot be defeated by a
+mis-scaled ε: here it separates the two conventions by 16 orders of magnitude.
+
+**Why this direction is the more dangerous one in this campaign.** A false
+negative leaves a convention-C site undetected — bad, and the thirteen rows
+above are about closing that. A false positive says *"this correct D value is
+C"*, and the indicated remedy is to **change a correct value to the wrong
+one**. In a campaign whose purpose is excising C, a false positive aims the
+excision at the wrong target, and the resulting commit looks like progress.
+
+**It recurred within the hour, in the same session, two commits after this
+section was written** — which is the strongest argument for the rule and the
+reason it is stated as one. Restoring a genuinely G-reading check to
+`qbeta_crossing_weight_hecke_probe`, I asserted that the closed-form
+q-antisymmetriser annihilates the Gram:
+
+```
+‖G·v‖_inf / ‖G‖_max  <  1e-40        # threshold chosen to match "50 dps"
+```
+
+It **failed at 7.11794e-18** against a *correct* radical. `gram_matrix_mp`
+computes at 50 dps, but `q` was entering as the module's float64 `q0`, so the
+cancellation cannot go below the float64 floor no matter what `dps` says.
+Supplying `q` at 50 dps instead moves the same quantity to **2.64532e-50** and
+the threshold becomes appropriate:
+
+| how `q` enters | ‖G·v‖/‖G‖ |
+|---|---|
+| float64 `gram.q0` | 7.11794e-18 |
+| 50-dps `11/10` | 2.64532e-50 |
+| 50-dps substrate `q₀` | 2.6917e-50 |
+
+The `dps` argument names the arithmetic of the *computation*; it says nothing
+about the precision of the *inputs*. Two of these three rows are the same
+`dps`.
+
+**Practical rule.** When the counter-move is applied to an *exact symbolic*
+result — `(q² + 1)` divides the denominator — it is threshold-free and the
+concern does not arise; that is why the peel test above is strong. When it is
+applied to a *numerical* result, the threshold is part of the detector, and it
+must be justified by the weakest arithmetic on the path from `q0` to the value
+being tested. State that justification, or use a two-way relative comparison
+and avoid needing one.
+
 ## Four that are worth reading in full
 
 ### 3 — returned, not assigned

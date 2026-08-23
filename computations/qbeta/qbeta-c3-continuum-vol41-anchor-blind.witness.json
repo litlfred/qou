@@ -3,12 +3,12 @@
   "description": "Re-scope: c_3 does not converge to -Vol(4_1). -Vol(4_1)=-2.02988 is anchor-blind, misses both anchors, and is ~7x worse at the muon (CAL-2) anchor than the keystone near-match; c_3=-2=J_Hopf(1) is the canonical shadow, not a hallucination. Vol(4_1) geometry kept; identification/tier corrected.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "measurement-exact (high-precision anchor comparison; measures existing claims)",
-  "computedAt": "2026-07-11T04:53:27.408866+00:00",
-  "commitSha": "788c709e169a9f572c93cc15a3c4765c469450ad",
+  "computedAt": "2026-08-23T09:45:00.308971+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_c3_continuum_vol41_anchor_blind_probe.py",
-  "scriptHash": "1237051859d4",
+  "scriptHash": "b078983e66cb",
   "assertions": [
     {
       "name": "vol41_geometry_real",
@@ -18,17 +18,17 @@
     {
       "name": "actual_c3_swings",
       "passed": true,
-      "detail": "c3(proton)=-2.0693426 c3(muon)=-2.0202002 swing=2.433%"
+      "detail": "c3(proton)=-2.0693426 c3(muon)=-2.0198603 swing=2.450%"
     },
     {
       "name": "neg_vol41_misses_both_anchors",
       "passed": true,
-      "detail": "-Vol(4_1)=-2.0298832: muon miss +0.479%, proton miss -1.907%"
+      "detail": "-Vol(4_1)=-2.0298832: muon miss +0.496%, proton miss -1.907%"
     },
     {
       "name": "neg_vol41_worse_at_muon_than_keystone",
       "passed": true,
-      "detail": "muon: -Vol(4_1) +0.479% vs keystone +0.070% (6.9x worse)"
+      "detail": "muon: -Vol(4_1) +0.496% vs keystone +0.087% (5.7x worse)"
     },
     {
       "name": "shadow_neg2_is_canonical_not_hallucination",
@@ -40,12 +40,12 @@
   "result": {
     "neg_Vol_4_1": "-2.02988321282",
     "c3_proton": "-2.06934257712",
-    "c3_muon": "-2.02020023502",
+    "c3_muon": "-2.01986031187",
     "miss_proton_pct": -1.9068550916721656,
-    "miss_muon_pct": 0.4793078245508768,
-    "keystone_muon_miss_pct": 0.0696745280167745,
-    "c3_swing_pct": 2.432548083205011,
-    "verdict": "RE-SCOPE (scope-(a)): c_3 does NOT converge to -Vol(4_1). -Vol(4_1) = -2.0298832 is anchor-blind and misses BOTH anchors (muon +0.479%, proton -1.907%) while the actual c_3 SWINGS 2.43%. At the muon (CAL-2) anchor it is 7x WORSE than the keystone's own -Vol(4_1)+u-(10/3)u^2 near-match (+0.070%). The claim 'the continuum limit is EXACTLY -Vol(4_1) ... rigorously banishing all finite algebraic truncations' is unsupported (it makes the muon fit worse, still anchor-blind, still fails cross-anchor). And c_3 = -2 = J_Hopf(1) is the CANONICAL q=1 shadow (KC10 / KC20 C_Hopf(2)=-2), NOT a 'hallucination'. KEPT (real): the hyperbolic geometry Vol(4_1)=2*Cl_2(pi/3), the Lobachevsky saddle at pi/3. Only the c_3 IDENTIFICATION + the 'rigorous/exact' tier are corrected. Same class as the keystone re-scope (#3501/#3503). No c_k wired; production unchanged."
+    "miss_muon_pct": 0.4962175298153486,
+    "keystone_muon_miss_pct": 0.08651529592030228,
+    "c3_swing_pct": 2.449786500099764,
+    "verdict": "RE-SCOPE (scope-(a)): c_3 does NOT converge to -Vol(4_1). -Vol(4_1) = -2.0298832 is anchor-blind and misses BOTH anchors (muon +0.496%, proton -1.907%) while the actual c_3 SWINGS 2.45%. At the muon (CAL-2) anchor it is 6x WORSE than the keystone's own -Vol(4_1)+u-(10/3)u^2 near-match (+0.087%). The claim 'the continuum limit is EXACTLY -Vol(4_1) ... rigorously banishing all finite algebraic truncations' is unsupported (it makes the muon fit worse, still anchor-blind, still fails cross-anchor). And c_3 = -2 = J_Hopf(1) is the CANONICAL q=1 shadow (KC10 / KC20 C_Hopf(2)=-2), NOT a 'hallucination'. KEPT (real): the hyperbolic geometry Vol(4_1)=2*Cl_2(pi/3), the Lobachevsky saddle at pi/3. Only the c_3 IDENTIFICATION + the 'rigorous/exact' tier are corrected. Same class as the keystone re-scope (#3501/#3503). No c_k wired; production unchanged."
   },
   "context": {
     "corrects": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md (+.lean docstring)",

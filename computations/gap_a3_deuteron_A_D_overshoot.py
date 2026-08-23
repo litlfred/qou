@@ -23,8 +23,10 @@ derivation). The ≈2 overshoot is reported with A(D)'s ≤2.5% uncertainty band
 claiming exactly 2 would be a fit.
 """
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 Q0 = mp.mpf("1.1099785955541805")
 VOL_D = mp.mpf("12.776")            # Vol_hyp(D), PR #787 Phase-3 (Z=1 cluster)
 TRM_BETA_D = mp.mpf("0.38835725751524")  # canonical, GAP-A-3 §4 probe (#2626)

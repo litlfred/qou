@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-19T17:42:08.050481+00:00",
-  "commitSha": "e95e0ad1e959dce6176e975cd83796f22dc838d4",
+  "computedAt": "2026-08-23T09:42:45.191157+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "carrier_is_anchor_blind",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "hd-to-s-bridge-anchor-dependence",
   "scriptFile": "hd_to_s_bridge_anchor_dependence_probe.py",
-  "scriptHash": "20a77abd624f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a2761e031dfe",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/hd_to_s_bridge_anchor_dependence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/hd_to_s_bridge_anchor_dependence_probe.py"
   },
   "description": "Measures where the c_3 anchor-dependence lives. The h*D carrier is anchor-blind (3.53e-7) while S varies by 1.245, so the bridge carries ~3.5e6 times more variation -- essentially all of it -- and changes sign between anchors. B is a defined quotient, not a derived decomposition; two anchors cannot constrain its form and none is proposed.",
   "auditOnly": "docs/audits/2026-08-19-hd-to-s-bridge-carries-the-anchor-dependence.md",

@@ -15,13 +15,13 @@
     "abs_c3_u3": "0.000053545207835928372284",
     "abs_c4_u4": "9.5764444921069879268e-6",
     "shrinks_with_k": true,
-    "qb_c4_incremental_keV": "0.0074885745701"
+    "qb_c4_incremental_keV": "0.0074930763567"
   },
   "measurement_2_odd_channel": {
-    "log_R_exact": "0.0073728649261513054672",
+    "log_R_exact": "0.0067718915431060288177",
     "log_R_even_N4": "-0.00053701297830235566816",
-    "log_odd_factor": "0.0079098779044536611354",
-    "odd_over_even_ratio": "14.7293980296",
+    "log_odd_factor": "0.0073089045214083844858",
+    "odd_over_even_ratio": "13.6102940091",
     "opposite_sign": true,
     "odd_dominates": true
   },
@@ -30,33 +30,33 @@
       "N": 1,
       "R_even": "1.0",
       "dlogR_from_rung": "0.0",
-      "Qb_pred_MeV": "0.7823911437652731"
+      "Qb_pred_MeV": "0.7828614813338303"
     },
     {
       "N": 2,
       "R_even": "0.99941918847405524153",
       "dlogR_from_rung": "-0.00058098026",
-      "Qb_pred_MeV": "0.7819367219711771"
+      "Qb_pred_MeV": "0.7824067863622535"
     },
     {
       "N": 3,
       "R_even": "0.99947270258221729968",
       "dlogR_from_rung": "5.3543774e-5",
-      "Qb_pred_MeV": "0.7819785909354696"
+      "Qb_pred_MeV": "0.7824486804962415"
     },
     {
       "N": 4,
       "R_even": "0.99946313118735964492",
       "dlogR_from_rung": "-9.5764903e-6",
-      "Qb_pred_MeV": "0.7819711023608995"
+      "Qb_pred_MeV": "0.7824411874198848"
     }
   ],
   "accuracy_vs_codata": {
     "Qb_exact_MeV": "0.78818092539937079734",
     "acc_exact_rel": "0.0074744544009322027299",
     "acc_exact_ppb": "7474454.40093",
-    "Qb_even_MeV": "0.78197110236089952806",
-    "acc_even_rel": "0.00046311155125085600436"
+    "Qb_even_MeV": "0.78244118741988476478",
+    "acc_even_rel": "0.00013776405111570625558"
   },
   "assertions": [
     {
@@ -73,12 +73,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "7ff98ca5ee61",
-  "scriptCommitSha": "9e557f4ea850c50ac2eca73509444f1c7984f978",
-  "commitSha": "9e557f4ea850c50ac2eca73509444f1c7984f978",
+  "scriptHash": "ed83ce667fa5",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy",
-  "computedAt": "2026-07-18T13:55:34.890927+00:00",
-  "durationMs": 2579,
+  "computedAt": "2026-08-23T09:47:47.672591+00:00",
+  "durationMs": 3297,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_c4even_ladder_reconstruction_probe.py"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-27T15:04:08.883499+00:00",
-  "commitSha": "790f5827d72f937b9ad3eacf9c9478f98698422c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:57:24.577739+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "crossing_exists",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 6,
   "computation": "qbeta-sp2-diagonal-crossing",
   "scriptFile": "qbeta_sp2_diagonal_crossing_probe.py",
-  "scriptHash": "215e3161993f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8eded373344c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,12 +30,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sp2_diagonal_crossing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sp2_diagonal_crossing_probe.py"
   },
   "description": "T3/SP2 of the Δ_λ magnitude derivation (bean qou-gjs2). Characterizes the Im u(q₀) function (inverted from S = 3·κ·(Re²u−Im²u)) across the anchor region. Finding: Im u crosses the diagonal (Im=Re) at q*, the sign-flip is geometric and locally linear; the hypersensitivity is the large slope, consistent with the 1/u³ ladder amplification. The function is smooth — no resonance or wall-crossing needed. The slope is the surviving open datum: what geometric object has d(Im u)/dq ≈ this value?",
   "contentBlock": "conj:binding-qbeta-complex-volume",
@@ -44,10 +52,10 @@
       "q_star": "1.10997859303152329",
       "ln_q_star": "0.104340729581",
       "im_u_proton": 0.2031325151581721,
-      "im_u_muon": 0.058592051845243284,
+      "im_u_muon": 0.05631479020050803,
       "d_imu_dq_at_qstar": -14159403.300216021,
       "linearity_err_proton": 0.47340872659293487,
-      "linearity_err_muon": 0.21922721750260954,
+      "linearity_err_muon": 0.23013983602137814,
       "is_locally_linear": false,
       "verdict": "Im u(q₀) crosses the diagonal Im=Re at q* — sign flip is geometric; slope d(Im u)/dq = -1.416e+07 — hypersensitivity is large but SMOOTH (linear to 47.3% across the gap)"
     },
@@ -58,54 +66,54 @@
         "im_over_re": 1.9468191760237554
       },
       {
-        "q": 1.1099785840316607,
-        "im_u": 0.19359710120340765,
-        "im_over_re": 1.8554318819196813
+        "q": 1.1099785840405165,
+        "im_u": 0.1935295074937228,
+        "im_over_re": 1.8547840646195053
       },
       {
-        "q": 1.1099785853119408,
-        "im_u": 0.1835670366418993,
-        "im_over_re": 1.7593038654641062
+        "q": 1.1099785853296524,
+        "im_u": 0.18342443212608206,
+        "im_over_re": 1.7579371455461419
       },
       {
-        "q": 1.1099785865922207,
-        "im_u": 0.1729562856789622,
-        "im_over_re": 1.6576105609921208
+        "q": 1.1099785866187883,
+        "im_u": 0.17272919499761263,
+        "im_over_re": 1.6554341267797998
       },
       {
-        "q": 1.1099785878725008,
-        "im_u": 0.16165053986141084,
-        "im_over_re": 1.5492564381247553
+        "q": 1.109978587907924,
+        "im_u": 0.16132646336545556,
+        "im_over_re": 1.5461504931976342
       },
       {
-        "q": 1.1099785891527807,
-        "im_u": 0.149492199750879,
-        "im_over_re": 1.432731066359667
+        "q": 1.10997858919706,
+        "im_u": 0.14905395410126754,
+        "im_over_re": 1.4285309258868626
       },
       {
-        "q": 1.1099785904330606,
-        "im_u": 0.13625321648488203,
-        "im_over_re": 1.3058488290134962
+        "q": 1.1099785904861958,
+        "im_u": 0.13567584589076473,
+        "im_over_re": 1.3003153171084532
       },
       {
-        "q": 1.1099785917133407,
-        "im_u": 0.12158108687556543,
-        "im_over_re": 1.1652313410831463
+        "q": 1.1099785917753315,
+        "im_u": 0.1208254507827756,
+        "im_over_re": 1.157989335309406
       },
       {
-        "q": 1.1099785929936206,
-        "im_u": 0.10487603556799635,
-        "im_over_re": 1.0051303649435854
+        "q": 1.1099785930644674,
+        "im_u": 0.10387321324230744,
+        "im_over_re": 0.995519330081318
       },
       {
-        "q": 1.1099785942739007,
-        "im_u": 0.08494707443063367,
-        "im_over_re": 0.8141314888293559
+        "q": 1.1099785943536031,
+        "im_u": 0.0835493852487098,
+        "im_over_re": 0.8007360560962381
       },
       {
-        "q": 1.1099785955541805,
-        "im_u": 0.058592051845243284,
-        "im_over_re": 0.5615453409637143
+        "q": 1.109978595642739,
+        "im_u": 0.05631479020050803,
+        "im_over_re": 0.5397200993026995
       }
     ]
   }

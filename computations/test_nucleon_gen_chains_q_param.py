@@ -21,10 +21,11 @@ from pyhecke.atom import (  # noqa: E402
     nucleon_gen_chains, _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
 from q_parameter import Q as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     # 1. q=None is byte-identical to the precomputed module constants.
     g0n, g1n = nucleon_gen_chains(['u', 'u', 'd'])
     assert g0n == _PROTON_G0, "q=None proton g0 != _PROTON_G0"

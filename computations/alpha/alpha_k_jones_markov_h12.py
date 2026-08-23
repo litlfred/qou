@@ -73,7 +73,8 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 # PROTON (experimental) pin — AGENTS.md §"q₀ anchor convention", owner
 # directive 2026-08-07: all agents and all production code default to the
 # experimental anchor, and "any probe, producer, or witness you write or
