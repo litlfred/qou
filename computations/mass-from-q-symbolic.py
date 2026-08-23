@@ -70,6 +70,8 @@ from q_parameter import (
     TWO_Q as TWO_Q0, TWO_Q_ERR,
     Q_INV as Q_INV0, Q_INV_ERR,
 )
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from q_parameter import Q_MP as Q0_MP  # noqa: E402 — mpf pin, not the f64 cast
 from experimental_constants import (
     M_E_MEV, M_E_MEV_ERR,
     M_P_MEV_ERR,
@@ -311,7 +313,7 @@ print()
 print(f"    HA(q₀)      ≈ {HA0:.15f} ± {HA_ERR:.2e}")
 print(f"    s(q₀)       ≈ {S_SKEIN0:.15f} ± {S_SKEIN_ERR:.2e}")
 print(f"    E_×(q₀)     ≈ {E_CROSS0:.15f} ± {E_CROSS_ERR:.2e}")
-print(f"    z(q₀)       ≈ {1.0/(Q0**0.5 + Q_INV0**0.5):.15f}")
+print(f"    z(q₀)       ≈ {mp.nstr(markov_z(Q0_MP), 15)}")
 
 # ── Step 3: Per-generator volumes ─────────────────────────────────
 
@@ -363,7 +365,12 @@ print("=" * 72)
 print()
 print(f"  Skein ratio P_n/P_p:")
 print(f"    P_n/P_p        ≈ {skein_ratio_n_p:.10f} ± {skein_ratio_err:.2e}")
-print(f"    m_n/m_p CODATA ≈ {codata_ratio_n_p:.10f}")
+# `mp.nstr`, not a `:.10f` format spec: both CODATA masses are mpmath.mpf,
+# so the ratio is mpf and `mpf.__format__` rejects a float format spec.
+# This raised TypeError and aborted the producer BEFORE it wrote its
+# witness — a pre-existing crash on main, not introduced here, and the
+# reason this witness has been stale.
+print(f"    m_n/m_p CODATA ≈ {mp.nstr(codata_ratio_n_p, 11)}")
 print(f"    Note: P_n/P_p is a combinatorial ratio from the transfer matrix,")
 print(f"    not a mass ratio. The two agree qualitatively (neutron is heavier)")
 print(f"    but differ quantitatively.")
@@ -421,7 +428,12 @@ w.add_parameter("m_μ/m_e", MASS_RATIO_MU_E)
 w.add_parameter("HA", HA0)
 w.add_parameter("E_×", E_CROSS0)
 w.add_parameter("s_skein", S_SKEIN0)
-w.add_parameter("z_markov", 1.0 / (Q0**0.5 + Q_INV0**0.5))
+# Convention D via the canonical helper, carried as mpmath.mpf.
+# Was `1.0 / (Q0**0.5 + Q_INV0**0.5)` — convention C AND float64, written
+# straight into the witness.  Calling `markov_z` rather than re-spelling z
+# inline is deliberate: every convention detector in this repo keys on how z
+# is WRITTEN, so a private inline spelling is how a site goes blind.
+w.add_parameter("z_markov", markov_z(Q0_MP))
 
 # ── Assertions: Fundamental constants ────────────────────────────
 # These are EXACT by construction (definitional), so tolerance is
