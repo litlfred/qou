@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T17:34:29Z
+updated_at: 2026-08-23T19:43:05Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -396,3 +396,38 @@ Option 3 is the current state, and it is at least no longer a *silent* failure.
 Four blocks, four unrelated mechanisms. The "one root cause" hypothesis is dead;
 what generalises is only the *method* — re-run, diff the inputs, see which one
 moved — and that the `verified` label was load-bearing in every case.
+
+
+## 2026-08-23 — blocks 5 and 6 of 12 done; both were convention casualties
+
+**5/12 `prop:gram-matrix-h3-symbolic`** — `verified` (unearned) -> `failed`
+(correct) -> `verified` (guard repaired). The red assertion was never drift:
+the guard compared convention-C Lean entries against a convention-D reference,
+and its 0.17218519049094 is exactly the C-D gap. Deeper: the determinant
+factors as `-(z-q)^5(qz+1)^5((q^2+1)z-q^3)(q^3z+qz+1)/q^8`, so **convention D
+is a ROOT** — the canonical Gram is singular for every q, and the block's
+headline `gramMatrix_det_ne_zero` is FALSE canonically. Added the D frame
+alongside C: 8 new sorry-free declarations incl. `gramMatrixD_det_eq_zero`
+(proved from the explicit radical, not a det_fin_six expansion) and
+`gramMatrixD_not_posDef`. lean-direct exit 0; `#print axioms` clean on all 9.
+
+**6/12 `prop:markov-trace-axiomatic-closed-form`** — `failed` -> `verified`.
+The block declared convention D and printed three C numbers (1.63315, 1124.3,
+`q^{10}(q+1)^3`); corrected to 1.88432, 974.44, `q^7(q^2+1)^2`. The producer
+was separately broken and is rewritten — it asserted two **mutually exclusive**
+properties (both expected=1.0, so it could never have gone green), on the wrong
+braid word, citing two block sections that do not exist, in float64.
+
+### What these two together say about this bean
+
+Both were found by the `computation.status` gate, and **neither** would have
+been found by the convention detectors, which key on how `z` is *spelled*. The
+gate keys on whether the witness *passes*. That is the "test the ANSWER, not
+the source" counter-move AGENTS.md describes, arrived at from the status side:
+a mislabelled block still has to produce a number, and the number disagrees.
+
+Corollary, and it is the uncomfortable half: the gate is blind to a witness
+with **no assertions**. `prop:markov-trace-antipode-polynomial-symmetry` is
+`verified` against exactly that, while its witness carries a q-sweep of C-frame
+values and a recorded `max_relative_diff_across_q` of 7.89. Nothing can fail
+there, so nothing does. Tracked in qou-zf9n.
