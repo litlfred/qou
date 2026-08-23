@@ -541,4 +541,61 @@ theorem lapStep_flipSign_cons (c : BraidCrossing n) (w : BraidWord n) (p : Fin n
     lapStep (flipSign c :: w) p = lapStep (c :: w) p := by
   simp [lapStep, crossingSwap, flipSign]
 
+/-! ### Walking a component
+
+A lap is one trip through the word; a *component* is walked by taking laps until
+the strand returns to where it started. Rather than a loop-until-return — which
+would need its own termination argument — the lap count is supplied explicitly
+as the **cycle length**, and the fact that the walk closes up is then a theorem
+rather than a side condition.
+
+`orderOf (f.cycleOf p)` is the right count: `orderOf f` would also close up, but
+it is the lcm over all cycles and so would walk short components round and round
+instead of once. -/
+
+open scoped Classical in
+/-- The number of laps that returns a strand to its start: the length of its
+cycle. -/
+noncomputable def cycleLen (f : Equiv.Perm (Fin n)) (p : Fin n) : ℕ :=
+  orderOf (f.cycleOf p)
+
+open scoped Classical in
+/-- **The walk closes up.** After `cycleLen` laps the strand is back where it
+started — so the component walk is well posed without a termination argument. -/
+theorem pow_cycleLen_apply (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    (f ^ cycleLen f p) p = p := by
+  rw [← Equiv.Perm.cycleOf_pow_apply_self]
+  simp [cycleLen, pow_orderOf_eq_one]
+
+/-- The positions visited in the first `k` laps from `p`. -/
+def walk (f : Equiv.Perm (Fin n)) (p : Fin n) (k : ℕ) : List (Fin n) :=
+  (List.range k).map (fun i => (f ^ i) p)
+
+@[simp] theorem walk_length (f : Equiv.Perm (Fin n)) (p : Fin n) (k : ℕ) :
+    (walk f p k).length = k := by
+  simp [walk]
+
+@[simp] theorem walk_zero (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    walk f p 0 = [] := by simp [walk]
+
+/-- Every position on the walk lies in the same cycle as the start — the walk
+stays inside its component, which is what makes it a *component* walk. -/
+theorem walk_sameCycle (f : Equiv.Perm (Fin n)) (p q : Fin n) (k : ℕ)
+    (hq : q ∈ walk f p k) : f.SameCycle p q := by
+  simp only [walk, List.mem_map, List.mem_range] at hq
+  obtain ⟨i, _, rfl⟩ := hq
+  exact ⟨i, rfl⟩
+
+/-- The verdicts collected while walking a component: one lap per position
+visited, concatenated in visit order. -/
+def walkVerdicts (w : BraidWord n) (p : Fin n) (k : ℕ) : List (Option Bool) :=
+  (walk (closurePerm w)⁻¹ p k).flatMap (lapVerdicts w)
+
+/-- **`k` laps of `m` crossings each.** The encounter count is exactly what it
+should be, which is the arithmetic the global ordering will rest on. -/
+@[simp] theorem walkVerdicts_length (w : BraidWord n) (p : Fin n) (k : ℕ) :
+    (walkVerdicts w p k).length = k * w.length := by
+  simp [walkVerdicts, List.length_flatMap, walk, lapVerdicts_length,
+        Function.comp_def, List.map_const', List.sum_replicate]
+
 end QOU.Knot.BraidClosure
