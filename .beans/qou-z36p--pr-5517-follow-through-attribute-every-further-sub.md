@@ -38,8 +38,11 @@ dmesg names it precisely — a **memcg** OOM, not the host:
 **Do not read this as "#5517 raises H12 memory."** The two runs shared one
 cgroup budget and the kernel kills the largest RSS, so the kill selects for
 size without establishing that the symbolic path *needs* more. The before-run
-may well reach the same peak later — it is only 4.17 GB at a *later* wall time
-than the point at which the other died, and both grow monotonically so far.
+may well reach the same peak later — it is only ~4.1 GB at a *later* wall time
+than the point at which the other died. I have spot readings, not a growth
+curve, for either run: successive samples of the survivor read 4.17 then 4.09
+GB, so it is not even monotonic, and no shape should be inferred from two
+numbers.
 
 What is worth noting either way: #5517's cost evidence is a **speed** claim at
 n=6 / dim 132 (7.5s -> 3.6s). Memory is unexamined, and at H12 the working set
