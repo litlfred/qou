@@ -547,7 +547,44 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
             raise IndexError(
                 f"word uses generator σ_{g} but only {len(sigmas)} "
                 f"seminormal matrices were provided (partition too small)")
-        M = c * sigmas[g] + d * I
+        # float64-ok: CAST AT THE numpy BOUNDARY. `sigmas` are float64 ndarrays
+        # (or scipy CSR), `product` and `I` are `np.eye`, and this function
+        # returns `float(np.trace(...))` — every path ends in a Python float.
+        # So an mpf `c`/`d` reaching the multiplication buys NOTHING: its extra
+        # digits are discarded at the return either way. What it costs is
+        # measured and enormous.
+        #
+        # efcaf79ed (2026-08-08, "NO FLOAT64: the braid word was f64 at
+        # source") correctly made the inter-nucleon crossing coefficients mpf
+        # AT SOURCE, and says in the same breath that "Consumers needing f64
+        # (the numpy validation paths) cast at their own boundary." This is
+        # that consumer, and it never did.
+        #
+        # An mpf scalar against a float64 array promotes the result to numpy
+        # OBJECT dtype, so `product @ M` stops being a BLAS call and becomes a
+        # pure-Python O(dim^3) loop of mpmath multiplications. Measured on the
+        # same partition, mpf word vs float-cast word, chi identical to 7
+        # digits:
+        #
+        #     D    n=6   dim=5      21.9 ms  vs  0.27 ms      81x
+        #     3He  n=9   dim=70     38,455 ms vs 1.99 ms   19,308x
+        #
+        # 4He has 77 partitions with max dim 7700 and sum dim^3 = 2.11e12 —
+        # about 16 YEARS at the measured rate, and it never gets there: at
+        # partition #8 (dim 891) it crosses the sparse threshold and dies with
+        # `ValueError: scipy.sparse does not support dtype object`. A 420 s
+        # profiling run segfaulted on the same path. This single promotion is
+        # why paper_six_term_isotope_sweep could not complete.
+        #
+        # Not a precision knob either: QOU_COMPUTE_DPS 50 vs 70 gave 39.6 s vs
+        # 38.9 s on one partition. The cost is Python object overhead, not
+        # mantissa width.
+        #
+        # The precision-carrying path is the SEPARATE mpfr entry point
+        # (`chi_lambda_all_partitions_mpfr` / `chi_lambda_braid_mpfr` in
+        # pyhecke_native). Anything needing more than float64 belongs there,
+        # not here.
+        M = float(c) * sigmas[g] + float(d) * I
         product = product @ M
     if is_sparse:
         return float(product.diagonal().sum())
