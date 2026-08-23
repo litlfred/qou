@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T13:22:15Z
-updated_at: 2026-08-23T15:19:12Z
+updated_at: 2026-08-23T16:14:26Z
 ---
 
 Continues the stalled #5517 session (container reclaimed; the diagnostics were
@@ -97,3 +97,24 @@ i.e. climbing toward the 9.86 GB at which the head run was killed. That is
 further reason not to have banked "the symbolic rep costs 2.5x memory" — it
 looks increasingly like both runs reach a similar peak and the kill simply
 selected whichever was ahead.
+
+
+## Tranche complete — all eight writers accounted for
+
+| module | disposition |
+|---|---|
+| `sublemma_2_1_deuteron_branching` | refreshed by #5517 |
+| `sublemma_2_1_h9_tritium_verify` | #5517; independently reproduced |
+| `sublemma_2_1_A_operator_extract` | refreshed here (crash fixed first) |
+| `probes/poly_q_proof_probe` | refreshed here |
+| `sublemma_2_1_alpha_shift_extract` | left alone — q0 re-pin, `qou-b3l8` |
+| `probes/qbeta_operator_identification_probe` | left alone — muon-literal drift |
+| `sublemma_2_1_h12_he4_phase25` | infeasible either side — `qou-pag7` |
+| `nuclide_braid_pipeline` | no tracked artifact; nothing to move |
+
+Spun out along the way: `qou-b3l8`, `qou-pag7`, `qou-n6u5`.
+
+PR #5545 is out of draft. Three claims of mine were retracted in the course of
+this and are recorded where they were made: the "12 writers" scope count, the
+`chi-deuteron-h6-at-q0-50dps` prediction, and the suggestion that the symbolic
+rep costs more memory at H12.
