@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T08:55:15Z
+updated_at: 2026-08-23T09:01:39Z
 ---
 
 ## Why this bean exists
@@ -677,3 +677,47 @@ this file. Local `#check` / `exact?` probes remain the only working
 name-discovery route in this container. Lemma names confirmed this way for the
 next steps: `List.nodup_flatMap`, `List.map_flatMap`,
 `List.perm_of_nodup_nodup_toFinset_eq`, `List.nodup_finRange`.
+
+
+## The instance wall was ROUTED AROUND, not fought — and the code is better for it
+
+Last entry ended blocked on `cycleLen_inv`, needed because the walk ran under
+`(closurePerm w)⁻¹` while the lap count was stated for `closurePerm w`. The fix
+was not to force the bridge but to notice that **the two permutations should
+never have both appeared**:
+
+- `stepPerm w := (closurePerm w)⁻¹` — by `lapStep_eq` this *is* the map one lap
+  applies, so it, not `closurePerm`, is the permutation the traversal walks.
+  `lapsOf` now phrases the leader filter, the lap count and the walk all in
+  `stepPerm w`.
+
+Consequences, all of them simplifications:
+
+- **`cycleLen_inv` is no longer needed at all.** The blocked lemma was an
+  artifact of mixing two permutations; one permutation, no bridge. The
+  diagnosis stays in the file for whoever hits the same `DecidableRel`
+  divergence elsewhere.
+- **`walk_disjoint_of_ne_leader` lost a hypothesis-level step**: restated in a
+  single permutation, it no longer needs `Equiv.Perm.sameCycle_inv` to
+  reconcile `f` with `f⁻¹`.
+- **Step 3 is proved**: `lapStarts`, `lapsOf_eq_map`, and **`lapStarts_nodup`**
+  — no strand is walked twice — combining `walk_nodup` and
+  `walk_disjoint_of_ne_leader` over the concatenation via `List.nodup_flatMap`
+  and `List.Pairwise.imp_of_mem`.
+
+73 results, sorry-free, zero warnings, axiom-clean.
+
+## Remaining chain
+
+1. ✅ disjoint across components
+2. ✅ nodup within a component
+3. ✅ concatenated walks `Nodup` — `lapStarts_nodup`
+4. ⬜ `lapStarts w ~ List.finRange n` — a `Nodup` list of length `n` over
+   `Fin n` is a permutation of `finRange`. Both inputs are now in hand
+   (`lapStarts_nodup`, and `lapsOf_length` gives the length via
+   `lapsOf_eq_map`); the route is `List.perm_of_nodup_nodup_toFinset_eq` plus a
+   `toFinset = univ` card argument.
+5. ⬜ transfer `card_involved` across that permutation ⇒
+   `(verdictsFor w k).length = 2`
+
+Then the well-founded reduction.
