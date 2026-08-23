@@ -1,204 +1,199 @@
 {
-  "computation": "saturating-shared-channel-derive-or-refute",
-  "description": "R9 derive-or-refute of a saturating/sub-additive/sign-changing shared-channel closure for the mixed multi-bond interface, on the t-ladder 7Li/11B/15N/19F (fixed light cluster = triton). Formalize-first interior-maximum invariant prunes the additive cone (P1) and the monotone-saturating 1-prod class (P2). Pre-registered candidates (a) 1-prod idempotent [excluded by P2], (c) resonance at k=A_light [reproduces peak + rising branch out-of-sample, fails the asymmetric fall], (b) parity/bar-graded [indicated missing term]. Closed-six regression: disjoint support, residuals unchanged. Scale V FITTED; b + deficits from committed witnesses; nothing recomputed, nothing wired.",
-  "audit_only": true,
-  "computedAt": "2026-07-18T19:19:22.978717+00:00",
-  "engine": "mpmath (witness-fed; no new tr_M compute)",
-  "inputs": {
-    "model_G_source": "alpha-activation-brunnian.witness.json (committed; misses reproduced)",
-    "R8_source": "mixed-multibond-interface.witness.json (committed; t-ladder misses cross-checked)",
-    "b_linear_MeV_per_nucleon": {
-      "value": 0.7819231499999993,
-      "source": "alpha-activation-brunnian.witness.json inputs (committed R5-a; reused not re-fit)"
-    },
-    "AME2020": "vendored via codata_constants._ame_binding_mev (15N deficit only)",
-    "A_light_triton": 3
+ "computation": "saturating-shared-channel-derive-or-refute",
+ "description": "R9 derive-or-refute of a saturating/sub-additive/sign-changing shared-channel closure for the mixed multi-bond interface, on the t-ladder 7Li/11B/15N/19F (fixed light cluster = triton). Formalize-first interior-maximum invariant prunes the additive cone (P1) and the monotone-saturating 1-prod class (P2). Pre-registered candidates (a) 1-prod idempotent [excluded by P2], (c) resonance at k=A_light [reproduces peak + rising branch out-of-sample, fails the asymmetric fall], (b) parity/bar-graded [indicated missing term]. Closed-six regression: disjoint support, residuals unchanged. Scale V FITTED; b + deficits from committed witnesses; nothing recomputed, nothing wired.",
+ "audit_only": true,
+ "computedAt": "2026-08-19T13:33:44.265609+00:00",
+ "engine": "mpmath (witness-fed; no new tr_M compute)",
+ "inputs": {
+  "model_G_source": "alpha-activation-brunnian.witness.json (committed; misses reproduced)",
+  "R8_source": "mixed-multibond-interface.witness.json (committed; t-ladder misses cross-checked)",
+  "b_linear_MeV_per_nucleon": {
+   "value": 0.7819231499999993,
+   "source": "alpha-activation-brunnian.witness.json inputs (committed R5-a; reused not re-fit)"
   },
-  "t_ladder_miss_MeV": {
-    "7Li": 0.121852650000002,
-    "11B": 6.440395399999994,
-    "15N": 8.048504400000002,
-    "19F": 2.679224500000003
-  },
-  "t_ladder_cross_check_dev_MeV": 1.7763568394002505e-15,
-  "interior_maximum_invariant": {
-    "shape": "0 = M(1) < M(2) < M(3) > M(4)",
-    "values": [
-      0.121852650000002,
-      6.440395399999994,
-      8.048504400000002,
-      2.679224500000003
-    ],
-    "strict_interior_max_at_k": 3,
-    "peak_equals_A_light": true,
-    "P1_additive_cone_excluded": true,
-    "P2_monotone_saturating_excluded": true,
-    "scope": "excludes the additive-non-negative and monotone-saturating CLASSES given the committed AME deficits + all-alpha decompositions; excludes no ingredient (permanence)"
-  },
-  "candidate_a_1prod": {
-    "rows": {
-      "f=0.500": {
-        "V_fit_MeV": 12.880790799999987,
-        "pred": {
-          "7Li": 0.0,
-          "11B": 6.440395399999994,
-          "15N": 11.27069194999999,
-          "19F": 12.679528443749987
-        },
-        "monotone_nondecreasing": true
-      },
-      "f=0.300": {
-        "V_fit_MeV": 21.467984666666645,
-        "pred": {
-          "7Li": 0.0,
-          "11B": 6.440395399999994,
-          "15N": 14.104465925999987,
-          "19F": 18.94229773861798
-        },
-        "monotone_nondecreasing": true
-      },
-      "f=0.333": {
-        "V_fit_MeV": 19.321186199999982,
-        "pred": {
-          "7Li": 0.0,
-          "11B": 6.440395399999994,
-          "15N": 13.596390288888877,
-          "19F": 17.62495037448558
-        },
-        "monotone_nondecreasing": true
-      }
-    },
-    "all_monotone_nondecreasing": true,
-    "all_over_predict_19F": true,
-    "verdict": "EXCLUDED by P2 (monotone saturating cannot turn over; 19F over-predicted for every f)"
-  },
-  "candidate_c_resonance": {
-    "shape": "V*(k-1)*(2*A_light-1-k)  [peak k=A_light=3, zeros k=1,5]",
-    "V_fit_MeV": 2.146798466666665,
-    "pred_MeV": {
-      "7Li": 0.0,
-      "11B": 6.440395399999994,
-      "15N": 8.58719386666666,
-      "19F": 6.440395399999994
-    },
-    "out_of_sample_rel_err": {
-      "15N": 0.06693038108628678,
-      "19F": 1.403828197301117
-    },
-    "peak_at_A_light": true,
-    "verdict": "PARTIAL — peak location + rising branch reproduced parameter-free, 15N out-of-sample +6.7%; 19F over-predicted +140% (symmetric parabola too shallow on the descending side); scale V FITTED"
-  },
-  "candidate_b_parity": {
-    "even_sublattice_MeV": {
-      "11B_k2": 6.440395399999994,
-      "19F_k4": 2.679224500000003
-    },
-    "even_decays": true,
-    "even_ratio_k4_over_k2": 0.4160031075110707,
-    "odd_k3_MeV": 8.048504400000002,
-    "odd_enhancement_over_even_mean_MeV": 3.488694450000004,
-    "odd_peak_above_even": true,
-    "verdict": "INDICATED — even sublattice is a decaying sub-additive channel; odd k=3 enhanced above it; a bar-parity grading supplies the asymmetric fall (c) misses; not closed with one constant"
-  },
-  "closed_six_regression": {
-    "gate": "{A_light >= 2 AND k >= 2} (the R8 trio selector)",
-    "rows": {
-      "6Li": {
-        "A_light": 2,
-        "m_alpha_contacts": 1,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": 0.002815769708128239,
-        "resid_over_B_AME_after_rule": 0.002815769708128239
-      },
-      "7Li": {
-        "A_light": 3,
-        "m_alpha_contacts": 1,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": -0.003104915261392292,
-        "resid_over_B_AME_after_rule": -0.003104915261392292
-      },
-      "8Be": {
-        "A_light": 0,
-        "m_alpha_contacts": 0,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": 0.0016255015479362388,
-        "resid_over_B_AME_after_rule": 0.0016255015479362388
-      },
-      "9Be": {
-        "A_light": 1,
-        "m_alpha_contacts": 2,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": -0.0001522006119394625,
-        "resid_over_B_AME_after_rule": -0.0001522006119394625
-      },
-      "12C": {
-        "A_light": 0,
-        "m_alpha_contacts": 0,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": -0.0025763365835586643,
-        "resid_over_B_AME_after_rule": -0.0025763365835586643
-      },
-      "16O": {
-        "A_light": 0,
-        "m_alpha_contacts": 0,
-        "shared_channel_applies": false,
-        "shared_channel_MeV": 0.0,
-        "resid_over_B_AME_committed": -0.0028369443875531203,
-        "resid_over_B_AME_after_rule": -0.0028369443875531203
-      }
-    },
-    "disjoint_support": true,
-    "all_survive": true
-  },
-  "verdict": "PARTIAL / NEGATIVE (scope-(a)). FORMALIZE-FIRST (stated before the fit): the t-ladder Model-G miss has a strict INTERIOR MAXIMUM at k=3 (0 = M(1) < 6.440 < 8.049 > 2.679), which prunes TWO classes: (P1) the additive non-negative counting cone [R8, re-derived] and (P2, NEW) the entire MONOTONE-SATURATING 1-prod idempotent class 1-(1-f)^P(k) — it is non-decreasing in k for any f and cannot turn over, so task candidate (a) is EXCLUDED for the k=3->k=4 fall, not merely a bad fit. The surviving class is genuinely non-monotone. (c) RESONANCE at k=A_light: the parameter-free symmetric shape V*(k-1)(2*A_light-1-k) [peak at k=A_light=3 = the triton's nucleon count, zeros at k=1 (7Li closed) and k=5], scale V fitted on 11B, reproduces the peak LOCATION and the k=2->k=3 RISE and lands 15N out-of-sample to +6.7%; but it OVER-predicts 19F by +140% because the symmetric parabola is too shallow on the descending side. (b) PARITY: the even sublattice (11B k=2 -> 19F k=4) is itself a DECAYING sub-additive channel (2.679 < 6.440) and the odd k=3 peak sits +3.5 MeV above the even-neighbour mean — a bar-parity grading (even->Vol/mass, odd->decay) is INDICATED as the missing asymmetric term, connecting to the odd-Z pairing physics; it is not closed here with a single constant. CLOSED-SIX REGRESSION: the shared channel is gated on {A_light>=2 AND k>=2}; the closed six all fail the gate, so the term is identically 0 on them (disjoint support) and their committed Model-G residuals are UNCHANGED (all < 0.5% of B) — the strongest possible regression outcome. NO CONSTANT DERIVED: the resonance scale V and the parity split are FITTED / indicated, not derived; b and all deficits reused from committed witnesses; nothing wired.",
-  "scope": "(a) for ingredients (nothing excluded as ingredient); (b/structural) for the additive-cone AND monotone-saturating classes, interior-maximum invariant cited",
-  "assertions": [
-    {
-      "label": "t-ladder Model-G misses reproduce the committed R8 values to < 1e-6 MeV",
-      "passed": true
-    },
-    {
-      "label": "interior-maximum invariant holds: 0 = M(1) < M(2) < M(3) > M(4), peak at k=A_light=3",
-      "passed": true
-    },
-    {
-      "label": "(P2) candidate (a) 1-prod idempotent is monotone non-decreasing and over-predicts 19F for every f (EXCLUDED for the turnover)",
-      "passed": true
-    },
-    {
-      "label": "(c) resonance at k=A_light reproduces 15N out-of-sample to < 10%",
-      "passed": true
-    },
-    {
-      "label": "(c) resonance over-predicts 19F by > 50% (symmetric parabola too shallow on the descending side)",
-      "passed": true
-    },
-    {
-      "label": "(b) even sublattice decays (19F k=4 < 11B k=2) and odd k=3 sits above the even mean (parity grading indicated)",
-      "passed": true
-    },
-    {
-      "label": "closed-six regression: shared channel gated {A_light>=2 AND k>=2} has disjoint support from the closed six",
-      "passed": true
-    },
-    {
-      "label": "closed six survive unchanged (all < 0.5% of B, identical to committed Model G)",
-      "passed": true
-    },
-    {
-      "label": "honest classification: no constant DERIVED (scale V fitted); the non-monotone turnover is only partially reproduced",
-      "passed": true
-    }
+  "AME2020": "vendored via codata_constants._ame_binding_mev (15N deficit only)",
+  "A_light_triton": 3
+ },
+ "t_ladder_miss_MeV": {
+  "7Li": 0.121852650000002,
+  "11B": 6.440395399999994,
+  "15N": 8.048504400000002,
+  "19F": 2.679224500000003
+ },
+ "t_ladder_cross_check_dev_MeV": 1.7763568394002505e-15,
+ "interior_maximum_invariant": {
+  "shape": "0 = M(1) < M(2) < M(3) > M(4)",
+  "values": [
+   0.121852650000002,
+   6.440395399999994,
+   8.048504400000002,
+   2.679224500000003
   ],
-  "allPassed": true,
-  "scriptHash": "de366c1a83e2",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0,
-  "scriptFile": "saturating_shared_channel_probe.py"
+  "strict_interior_max_at_k": 3,
+  "peak_equals_A_light": true,
+  "P1_additive_cone_excluded": true,
+  "P2_monotone_saturating_excluded": true,
+  "scope": "excludes the additive-non-negative and monotone-saturating CLASSES given the committed AME deficits + all-alpha decompositions; excludes no ingredient (permanence)"
+ },
+ "candidate_a_1prod": {
+  "rows": {
+   "f=0.500": {
+    "V_fit_MeV": 12.880790799999987,
+    "pred": {
+     "7Li": 0.0,
+     "11B": 6.440395399999994,
+     "15N": 11.27069194999999,
+     "19F": 12.679528443749987
+    },
+    "monotone_nondecreasing": true
+   },
+   "f=0.300": {
+    "V_fit_MeV": 21.467984666666645,
+    "pred": {
+     "7Li": 0.0,
+     "11B": 6.440395399999994,
+     "15N": 14.104465925999987,
+     "19F": 18.94229773861798
+    },
+    "monotone_nondecreasing": true
+   },
+   "f=0.333": {
+    "V_fit_MeV": 19.321186199999982,
+    "pred": {
+     "7Li": 0.0,
+     "11B": 6.440395399999994,
+     "15N": 13.596390288888877,
+     "19F": 17.62495037448558
+    },
+    "monotone_nondecreasing": true
+   }
+  },
+  "all_monotone_nondecreasing": true,
+  "all_over_predict_19F": true,
+  "verdict": "EXCLUDED by P2 (monotone saturating cannot turn over; 19F over-predicted for every f)"
+ },
+ "candidate_c_resonance": {
+  "shape": "V*(k-1)*(2*A_light-1-k)  [peak k=A_light=3, zeros k=1,5]",
+  "V_fit_MeV": 2.146798466666665,
+  "pred_MeV": {
+   "7Li": 0.0,
+   "11B": 6.440395399999994,
+   "15N": 8.58719386666666,
+   "19F": 6.440395399999994
+  },
+  "out_of_sample_rel_err": {
+   "15N": 0.06693038108628678,
+   "19F": 1.403828197301117
+  },
+  "peak_at_A_light": true,
+  "verdict": "PARTIAL \u2014 peak location + rising branch reproduced parameter-free, 15N out-of-sample +6.7%; 19F over-predicted +140% (symmetric parabola too shallow on the descending side); scale V FITTED"
+ },
+ "candidate_b_parity": {
+  "even_sublattice_MeV": {
+   "11B_k2": 6.440395399999994,
+   "19F_k4": 2.679224500000003
+  },
+  "even_decays": true,
+  "even_ratio_k4_over_k2": 0.4160031075110707,
+  "odd_k3_MeV": 8.048504400000002,
+  "odd_enhancement_over_even_mean_MeV": 3.488694450000004,
+  "odd_peak_above_even": true,
+  "verdict": "INDICATED \u2014 even sublattice is a decaying sub-additive channel; odd k=3 enhanced above it; a bar-parity grading supplies the asymmetric fall (c) misses; not closed with one constant"
+ },
+ "closed_six_regression": {
+  "gate": "{A_light >= 2 AND k >= 2} (the R8 trio selector)",
+  "rows": {
+   "6Li": {
+    "A_light": 2,
+    "m_alpha_contacts": 1,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": 0.002815769708128239,
+    "resid_over_B_AME_after_rule": 0.002815769708128239
+   },
+   "7Li": {
+    "A_light": 3,
+    "m_alpha_contacts": 1,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": -0.003104915261392292,
+    "resid_over_B_AME_after_rule": -0.003104915261392292
+   },
+   "8Be": {
+    "A_light": 0,
+    "m_alpha_contacts": 0,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": 0.0016255015479362388,
+    "resid_over_B_AME_after_rule": 0.0016255015479362388
+   },
+   "9Be": {
+    "A_light": 1,
+    "m_alpha_contacts": 2,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": -0.0001522006119394625,
+    "resid_over_B_AME_after_rule": -0.0001522006119394625
+   },
+   "12C": {
+    "A_light": 0,
+    "m_alpha_contacts": 0,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": -0.0025763365835586643,
+    "resid_over_B_AME_after_rule": -0.0025763365835586643
+   },
+   "16O": {
+    "A_light": 0,
+    "m_alpha_contacts": 0,
+    "shared_channel_applies": false,
+    "shared_channel_MeV": 0.0,
+    "resid_over_B_AME_committed": -0.0028369443875531203,
+    "resid_over_B_AME_after_rule": -0.0028369443875531203
+   }
+  },
+  "disjoint_support": true,
+  "all_survive": true
+ },
+ "verdict": "PARTIAL / NEGATIVE (scope-(a)). FORMALIZE-FIRST (stated before the fit): the t-ladder Model-G miss has a strict INTERIOR MAXIMUM at k=3 (0 = M(1) < 6.440 < 8.049 > 2.679), which prunes TWO classes: (P1) the additive non-negative counting cone [R8, re-derived] and (P2, NEW) the entire MONOTONE-SATURATING 1-prod idempotent class 1-(1-f)^P(k) \u2014 it is non-decreasing in k for any f and cannot turn over, so task candidate (a) is EXCLUDED for the k=3->k=4 fall, not merely a bad fit. The surviving class is genuinely non-monotone. (c) RESONANCE at k=A_light: the parameter-free symmetric shape V*(k-1)(2*A_light-1-k) [peak at k=A_light=3 = the triton's nucleon count, zeros at k=1 (7Li closed) and k=5], scale V fitted on 11B, reproduces the peak LOCATION and the k=2->k=3 RISE and lands 15N out-of-sample to +6.7%; but it OVER-predicts 19F by +140% because the symmetric parabola is too shallow on the descending side. (b) PARITY: the even sublattice (11B k=2 -> 19F k=4) is itself a DECAYING sub-additive channel (2.679 < 6.440) and the odd k=3 peak sits +3.5 MeV above the even-neighbour mean \u2014 a bar-parity grading (even->Vol/mass, odd->decay) is INDICATED as the missing asymmetric term, connecting to the odd-Z pairing physics; it is not closed here with a single constant. CLOSED-SIX REGRESSION: the shared channel is gated on {A_light>=2 AND k>=2}; the closed six all fail the gate, so the term is identically 0 on them (disjoint support) and their committed Model-G residuals are UNCHANGED (all < 0.5% of B) \u2014 the strongest possible regression outcome. NO CONSTANT DERIVED: the resonance scale V and the parity split are FITTED / indicated, not derived; b and all deficits reused from committed witnesses; nothing wired.",
+ "scope": "(a) for ingredients (nothing excluded as ingredient); (b/structural) for the additive-cone AND monotone-saturating classes, interior-maximum invariant cited",
+ "assertions": [
+  {
+   "label": "t-ladder Model-G misses reproduce the committed R8 values to < 1e-6 MeV",
+   "passed": true
+  },
+  {
+   "label": "interior-maximum invariant holds: 0 = M(1) < M(2) < M(3) > M(4), peak at k=A_light=3",
+   "passed": true
+  },
+  {
+   "label": "(P2) candidate (a) 1-prod idempotent is monotone non-decreasing and over-predicts 19F for every f (EXCLUDED for the turnover)",
+   "passed": true
+  },
+  {
+   "label": "(c) resonance at k=A_light reproduces 15N out-of-sample to < 10%",
+   "passed": true
+  },
+  {
+   "label": "(c) resonance over-predicts 19F by > 50% (symmetric parabola too shallow on the descending side)",
+   "passed": true
+  },
+  {
+   "label": "(b) even sublattice decays (19F k=4 < 11B k=2) and odd k=3 sits above the even mean (parity grading indicated)",
+   "passed": true
+  },
+  {
+   "label": "closed-six regression: shared channel gated {A_light>=2 AND k>=2} has disjoint support from the closed six",
+   "passed": true
+  },
+  {
+   "label": "closed six survive unchanged (all < 0.5% of B, identical to committed Model G)",
+   "passed": true
+  },
+  {
+   "label": "honest classification: no constant DERIVED (scale V fitted); the non-monotone turnover is only partially reproduced",
+   "passed": true
+  }
+ ],
+ "allPassed": true
 }

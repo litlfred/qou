@@ -553,8 +553,32 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
 
     The CANONICAL replacement is:
         computations/mass_at_3A_proper.py
-            per_generator_V_hat_3A(Z, N, weight_scheme="normalized_plancherel")
+            per_generator_V_hat_3A(Z, N)
     which sums over all partitions of 3A with proper Wedderburn weights.
+
+    NO WEIGHT SCHEME HERE IS KNOWN-GOOD, and this warning should not be read as
+    endorsing one (bean qou-2tuv):
+      - `normalized_plancherel` (the default) sums to 1 as the Markov identity
+        requires, but puts max|V_hat| at 1.08837 against a phi_q_safe cap of
+        1.087779 — AT the pole — so `binding_3A_tower` returns ~1e7 MeV. It was
+        marked DEPRECATED by docs/audits/2026-05-11-plancherel-usage-audit.md.
+      - `jones_wenzl` keeps V_hat small, but only because its weights DO NOT
+        SUM TO 1: measured -0.8230 at A=1, +0.0547 at A=2, -0.0009 at A=3. It
+        buys a finite tower by driving the volumes toward zero.
+    Migrating for the weights alone therefore trades one defect for another.
+
+    Migration is a PACKAGE swap, not a drop-in function substitution. The
+    H_{3A} volumes come with (a) the jones_wenzl weights, (b) a free-baseline
+    subtraction B ~ (free - atom), and (c) the alpha = m_e * Vol_q(B_3) scale
+    from prop:binding-scale-catalan feeding the Phi_q tower, NOT the
+    `sum ln|V|` proxy. Swapping only the function and keeping the old consumer
+    measures -1650% on the deuteron; the full package measures -30.1% against
+    production's +81.6%.
+
+    Feasibility caveat: the H_{3A} sum runs over p(3A) — 77 at A=4, 17,977 at
+    A=12, 1.8e9 at A=40 — and mass_at_3A_proper's own header says it "fails for
+    3A >~ 35". Callers that scan heavy nuclei CANNOT migrate; they must declare
+    the H_3 approximation instead.
 
     Migration is NOT YET DONE for the 15+ callers (mass_formula_6term.py,
     tower_isotope_absolute.py, paper_six_term_isotope_sweep.py, ...).

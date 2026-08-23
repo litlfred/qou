@@ -113,6 +113,7 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
     ("⁵He (helium-5, A=5)",  "helium-5",    2, 3, 112),
     ("⁶Li (lithium-6, A=6)", "lithium-6",   3, 3, 128),
     ("⁶Be (beryllium-6, A=6)","beryllium-6", 4, 2, 128),
+    ("⁶He (helium-6, A=6)",  "helium-6",    2, 4, 128),
     ("⁷Li (lithium-7, A=7)", "lithium-7",   3, 4, 144),
     ("⁷Be (beryllium-7, A=7)","beryllium-7", 4, 3, 144),
     ("⁸Be (beryllium-8, A=8)","beryllium-8", 4, 4, 160),
@@ -123,6 +124,16 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
     ("¹⁰Be (beryllium-10, A=10)","beryllium-10", 4, 6, 192),
     ("¹⁰B (boron-10, A=10)", "boron-10",    5, 5, 192),
     ("¹⁰C (carbon-10, A=10)","carbon-10",   6, 4, 192),
+    # A=12 / A=14.  These five (with ⁶He above) have committed witnesses
+    # written by THIS producer but had been dropped from the list, so a run
+    # regenerated 20 of the 25 committed atoms and left the rest on whatever
+    # convention they were last built under.  That is how a silently
+    # mixed-convention mass table arises; see
+    # docs/audits/2026-08-23-habiro-mass-table-convention-c-attribution.md.
+    ("¹²B (boron-12, A=12)", "boron-12",    5, 7, 224),
+    ("¹²N (nitrogen-12, A=12)","nitrogen-12", 7, 5, 224),
+    ("¹⁴C (carbon-14, A=14)","carbon-14",   6, 8, 256),
+    ("¹⁴O (oxygen-14, A=14)","oxygen-14",   8, 6, 256),
 ]
 
 
@@ -223,14 +234,16 @@ def analyse_atom(label: str, Z: int, N: int, q,
     print(f"  reconstruction matches Σ a_m·(u;u)_m: {recon_matches}")
 
     # Numerical check at q₀ (50-dps mpmath).
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q0_mp
     u0 = mp.sqrt(q0)
     try:
-        tr_M_at_q0 = float(mp.mpf(str(sp.N(
+        tr_M_at_q0_mp = mp.mpf(str(sp.N(
             tr_M_q.subs(q, sp.Rational(str(q0))), 30
-        ))))
+        )))
+        tr_M_at_q0 = float(tr_M_at_q0_mp)
     except Exception:
+        tr_M_at_q0_mp = mp.mpf('nan')
         tr_M_at_q0 = float('nan')
     check_error = None
     try:
@@ -250,11 +263,17 @@ def analyse_atom(label: str, Z: int, N: int, q,
             denom_expr.subs(u, sp.Rational(str(u0))), 30
         )))
         u0_shift = u0 ** shift if shift else mp.mpf(1)
-        tr_M_via_u = float(p_in_u_at_u0 / (u0_shift * denom_at_u0))
-        if tr_M_at_q0 != 0 and not mp.isnan(tr_M_at_q0):
-            rel_err = abs(tr_M_at_q0 - tr_M_via_u) / abs(tr_M_at_q0)
+        tr_M_via_u_mp = p_in_u_at_u0 / (u0_shift * denom_at_u0)
+        tr_M_via_u = float(tr_M_via_u_mp)
+        # Carry the residual as mpmath.mpf.  Computing it from the two float64
+        # casts instead would floor the diagnostic at ~1e-16 and report the
+        # arithmetic rather than the agreement (AGENTS.md, NO-FLOAT64).
+        if tr_M_at_q0_mp != 0 and not mp.isnan(tr_M_at_q0_mp):
+            rel_err_mp = (abs(tr_M_at_q0_mp - tr_M_via_u_mp)
+                          / abs(tr_M_at_q0_mp))
         else:
-            rel_err = 0.0
+            rel_err_mp = mp.mpf(0)
+        rel_err = float(rel_err_mp)
     except Exception as exc:
         # Record WHY, and as null rather than NaN.
         #
@@ -275,6 +294,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
         print(f"  numerical check FAILED: {exc}")
         tr_M_via_u = None
         rel_err = None
+        rel_err_mp = None
         check_error = f"{type(exc).__name__}: {exc}"
     _fmt = lambda v, f: (f"{v:{f}}" if v is not None else "n/a")   # noqa: E731
     print(f"  tr_M @ q_0 = {_fmt(tr_M_at_q0, '+.6e')}, "
@@ -302,6 +322,10 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "tr_M_at_q0_via_u_poly": tr_M_via_u,
         "tr_M_at_q0_check_error": check_error,
         "tr_M_at_q0_rel_err": rel_err,
+        # The same residual before the float64 cast.  The summary reads THIS
+        # one, so the mass-table summary carries no raw float64 at all.
+        "tr_M_at_q0_rel_err_exact": (
+            mp.nstr(rel_err_mp, 30) if rel_err_mp is not None else None),
     }
 
 
@@ -317,7 +341,10 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         "description": description,
         "reference_blocks": reference_blocks,
         "parameters": {
-            "q_0": q0_float,
+            # The canonical 50-digit string, not the float64 cast: this witness
+            # is the one place the whole table is summarised, so a float64 here
+            # is a float64 in the table's own header.
+            "q_0": _Q_CANONICAL_STR,
             "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
             "generator": "_habiro_coefficient_extract.py",
@@ -617,7 +644,7 @@ def main() -> int:
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": q0_float,
+            "q_0": _Q_CANONICAL_STR,
             "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "generator": "_habiro_coefficient_extract.py",
         },
@@ -645,7 +672,7 @@ def main() -> int:
                     if (Z, N) in results
                     and "error" not in results[(Z, N)] else None),
                 "tr_M_at_q0_rel_err": (
-                    results[(Z, N)].get("tr_M_at_q0_rel_err")
+                    results[(Z, N)].get("tr_M_at_q0_rel_err_exact")
                     if (Z, N) in results
                     and "error" not in results[(Z, N)] else None),
                 "interface_kinds": (results[(Z, N)].get("interface_kinds")

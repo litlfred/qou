@@ -45,12 +45,13 @@ from _li_2_q_util import linking_weight_family_a, per_knot_density_borromean  # 
 from gamma_gamma_pair_production_decomposition import (  # noqa: E402
     linking_weight_via_jones, linking_weight_exact_via_anchor,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 CLASSICAL_LW = mp.mpf("2.5")   # h⁰ term (un-entangled word count, 5/2)
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q = mp.mpf(str(Q0))
     m_e = mp.mpf(str(M_E_MEV))
     vd = per_knot_density_borromean(q)            # Vol(𝓑₃)/ℏ_q²  (dimensionless)

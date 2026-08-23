@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-21T21:50:23.196773+00:00",
-  "commitSha": "b00f813a65559fced8f1b65a910f0a12a7087251",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:47:50.301116+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "self_checks_passed",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara",
   "scriptFile": "qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
-  "scriptHash": "e8e1d0fcdea7",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "2c0652ec00fb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,24 +35,34 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py"
   },
   "description": "Chain 4 mixed chains — products of a Wenzl per-λ-block invariant (f^λ, fake-degree qdim, Markov-normalised z^{n-1}·qdim via closed-form hook specialisation), a Kashaev quantum-dilog evaluation (Rogers Li_2^q, q-Pochhammer / Phi_q at z_λ=q^{-n(λ)} and ℏ_q, base q^{-1}<1 since Faddeev Φ_b needs |q|=1), and a Kashiwara statistic n(λ), for λ ⊢ n, n ∈ {3,4,5}. Target prefactor A/ℏ_q^15 ≈ 2.07173 (proton). 480 candidates. Best: n3_21:f·Li2q_hbar → NEAR-1PCT (ratio 0.9917723). TIERED; cross-anchor emitted; ℏ_q=(q-1)/q; diagnostic-only, no production wiring.",
   "data": {
     "residue_target_A": "0.000000000000001804",
-    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
-    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265",
-    "h_q_proton": "0.099081716044258507839177117518281999748464888241219",
-    "h_q_muon": "0.099081726435698885820014342688412528468474023957784",
+    "prefactor_target_proton": "2.071732777361373830252735915478817822594805357138621776464328795917553",
+    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265082373866003257295223",
+    "h_q_proton": "0.09908171604425850783917711751828199974846488824121838490576573249117677",
+    "h_q_muon": "0.09908172643569888582001434268841252846847402395778363866766501635650879",
     "q_proton": "1.10997858275138080759166909561",
     "q_muon": "1.1099785955541805752815940796095093779932822799587",
     "candidate_count": "480",
     "tier_histogram": {
-      "MISS": "419",
-      "NEAR-CLOSE": "52",
+      "MISS": "411",
+      "NEAR-CLOSE": "58",
       "NEAR-1PCT": "2",
-      "NEAR-FUZZY": "7"
+      "NEAR-FUZZY": "9"
     },
     "top10": {
       "n3_21:f·Li2q_hbar": {
@@ -70,6 +80,11 @@
         "ratio": "1.036687",
         "tier": "NEAR-FUZZY"
       },
+      "n4_31:wmarkov·Phi_hbar": {
+        "value": "2.170727",
+        "ratio": "1.047783",
+        "tier": "NEAR-FUZZY"
+      },
       "n3_21:qdim/Li2q_hbar": {
         "value": "2.172645",
         "ratio": "1.048709",
@@ -85,6 +100,11 @@
         "ratio": "0.9396812",
         "tier": "NEAR-FUZZY"
       },
+      "n5_5:wmarkov·Li2q_zlam": {
+        "value": "1.932185",
+        "ratio": "0.9326419",
+        "tier": "NEAR-FUZZY"
+      },
       "n4_1111:qdim·Li2q_hbar": {
         "value": "1.921336",
         "ratio": "0.9274053",
@@ -94,16 +114,6 @@
         "value": "1.870198",
         "ratio": "0.9027216",
         "tier": "NEAR-FUZZY"
-      },
-      "n4_1111:qdim·qdimT": {
-        "value": "1.870198",
-        "ratio": "0.9027216",
-        "tier": "NEAR-FUZZY"
-      },
-      "n3_21:qdim·Li2q_hbar": {
-        "value": "2.293085",
-        "ratio": "1.106844",
-        "tier": "NEAR-CLOSE"
       }
     },
     "best_match": {

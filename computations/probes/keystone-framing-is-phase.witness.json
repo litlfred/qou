@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T20:48:59.279308+00:00",
-  "commitSha": "cbd5de37baeb54609c1270242406f42bb7b52166",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:47.412367+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "framing_is_pure_phase_fibre_probability_framing_free_all_blocks",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 5,
   "computation": "keystone-framing-is-phase",
   "scriptFile": "keystone_framing_is_phase.py",
-  "scriptHash": "8dea0b6e8ea7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0dab714e0c03",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_framing_is_phase.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_framing_is_phase.py"
   },
   "description": "Geometric W_lambda: the ribbon-twist framing theta_lambda^f is a PURE PHASE on the fibre. d_q(lambda)=[mark]_q (#3685/#3699) is real on the unit circle (= sin(m phi)/sin(phi) SU(2) character), so theta_lambda(zeta)=zeta^{c(lambda)} has |theta|=1 and the fibre probability |S_0lambda*theta^f|^2 = |S_0lambda|^2 = W_lambda(zeta) for EVERY block (framing phase cancels). Thus the observable W_lambda(q0)=d_q0^2/D^2 (the #3681 Habiro/probability ordering) is framing-FREE for all 7 blocks, not only the electron; the q0^{f*c} residual of #3701 is an amplitude-ordering artifact. Seifert framing pinned f=-1 (Sigma(2,3,5)=-1 surgery on the left trefoil; orbifold e=-1/30). Honest refocus: the open object is the modulus identification |S_0lambda^{Sigma(2,3,5)}|=d_zeta/D (the deferred colored Lawrence-Rozansky compute), NOT the framing. No fit.",
   "data": {

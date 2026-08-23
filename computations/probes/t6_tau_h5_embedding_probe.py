@@ -48,10 +48,11 @@ from per_generator_V_hat_general import (
     per_generator_V_hat_general,
     li2q_mpmath,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     Vol_4_1 = mp.mpf("2.0298832128193072500424051085490405718833786150606")
     cal2_target = M_MU_OVER_M_E

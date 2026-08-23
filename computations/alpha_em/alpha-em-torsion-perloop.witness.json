@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:56:48.010474+00:00",
-  "commitSha": "896d91d8b707ea984f1fc34716bdf1c6a719d6f0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:50:32.505303+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "controls_pass",
@@ -14,7 +14,7 @@
     },
     {
       "name": "circle_det_closed_form_reproduced",
-      "computed": 3.944304526105059e-31,
+      "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 5,
   "computation": "alpha-em-torsion-perloop",
   "scriptFile": "alpha_em_torsion_perloop_probe.py",
-  "scriptHash": "d9660b7629e1",
-  "scriptCommitSha": "227b64ae06b2d27fb0a73474fc1826286315eb83",
+  "scriptHash": "d072b8d55010",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em/alpha_em_torsion_perloop_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em/alpha_em_torsion_perloop_probe.py"
   },
   "description": "Redirect of the α_EM per-loop measure search after #3870 ruled out the naive Maxwell partition function on the photon target J(M)=T^{b₁} (b₁=8). Tests the next-obvious normalization objects — Ray–Singer analytic torsion (A) and the graded/per-mode determinant ratios (B) — against the three-axis constraint #3870 sharpened: the object must be (i) area/covolume-free, (ii) π-power EXACTLY −1 (bare π), (iii) reciprocal in b₁ (1/b₁). Target: 1/(π·b₁)=1/(8π). Each candidate is measured independently then COMPARED (never fitted); no CODATA read; no convention tuned to 8π. RESULT — scope-(a) NEGATIVE on all: (A) on the flat parallelizable torus Δq=C(d,q)Δ₀ so log τ_RS = ½ ζ'_Δ₀(0)·Σ_q(−1)^q q C(d,q), and Σ_q(−1)^q q C(d,q)=0 for d≥2 ⇒ τ_RS(T^8)=1 (analytic torsion TRIVIAL; the π in ζ'_Δ₀(0)=log(4π²)+E'_Λ(0) CANCELS in the alternating sum) — π-power 0 (not −1), no reciprocal-b₁; the residual metric-on-cohomology normalization is the covolume √det G (Cheeger–Müller=Reidemeister), shape-dependent, in the 1/Area category data-excluded at −1419 ppb (#3842). (B) the alternating det ratio ∏(det'Δq)^{(−1)^q q/2}=1/τ_RS=1 and the per-mode derivative d(logZ)/db₁=−½log(2π)+const is b₁-INDEPENDENT — no graded/per-mode object on T^{b₁} is reciprocal in b₁. CONTROLS all pass: ζ_Δ₁(0)=−b₁ reproduced; the ζ'(0) machinery reproduces the circle closed form ζ'_S¹(0)=−2logL (det'Δ=L²) for L=1,2,3.7 and E'_ℤ(0)=−2log(2π); the torsion weight Σ_q(−1)^q q C(d,q)=−1 (d=1), 0 (d≥2). SHARPENED REDIRECT (C): every flat-torus spectral invariant is EXTENSIVE in b₁ (ζ(0)=−b₁, ζ'(0)∝b₁, logZ∝b₁) or a covolume (torsion) — never 1/b₁; a reciprocal 1/b₁ is a 1/(total count) democratic-average normalization, the hallmark of the RT/WRT modular S-matrix total quantum dimension D=Σd_i² (S_{00}=1/D) / Verlinde per-handle measure, living OFF the flat-torus determinant on the nonabelian S-matrix (Front 2 / W_λ keystone), NOT any determinant/torsion on the Jacobian. No α_k wired; no fit; 1/(8π) stays a phase-4 identification.",
   "contentBlock": "prop:alpha-em-categorical-trace",
@@ -89,7 +99,7 @@
         "rows": [
           {
             "L": "1.0",
-            "zeta_prime_0": "0.0",
+            "zeta_prime_0": "3.6222716315307e-71",
             "exact_minus_2logL": "0.0",
             "detprime": "1.0",
             "L_squared": "1.0",

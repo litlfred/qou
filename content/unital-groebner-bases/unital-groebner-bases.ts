@@ -20,8 +20,19 @@ export default paper({
     "is free as an $R$-module.  We prove a version of Buchberger's theorem over $R$ " +
     "and, as a corollary, we obtain a Gröbner basis proof of the " +
     "Poincaré--Birkhoff--Witt Theorem over a commutative ground ring.",
-  macros: {},
+  // The three leading-term operators. Both chapter generations use them:
+  // the monolith writes `\mathrm{LT}` inline, the ch0/ch1/ch2 blocks write
+  // `\LT`. Defining them here makes the short form resolve (it was an
+  // undefined control sequence in 8 of the newly-wired blocks) without
+  // rewriting any `.md`, and both spellings then typeset identically.
+  macros: {
+    LM: { tex: "\\mathrm{LM}", unicode: "LM" },
+    LC: { tex: "\\mathrm{LC}", unicode: "LC" },
+    LT: { tex: "\\mathrm{LT}", unicode: "LT" },
+  },
   chapters: [
+    chapterRef({ dir: "introduction" }),
     chapterRef({ dir: "unital-groebner-bases-chapter" }),
+    chapterRef({ dir: "buchberger-and-pbw" }),
   ],
 });

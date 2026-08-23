@@ -126,8 +126,23 @@ states (next section).
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
 | **m_π** | CAL-3 numerical anchor | — | `cal-3-q-beta.witness.json` (cited) | (anchor) | DERIVED (anchor) |
-| **m_K² / m_π²** | `[3]_q · [4]_q + (α_em/π) · (3q² − 1) / (2q²)` | Lean `meson_qCG_3x4`, `meson_EM_closed_form` | (#1451 wires this into dashboard) | **23.44 ppb** (under 264-ppb target) | **DERIVED** (on #1451) |
-| **m_K / m_π** | `√(m_K²/m_π²)` | — | per #1451 wiring | beats 100× via #1451 | DERIVED on #1451 merge |
+| **m_K² / m_π²** | `[3]_q · [4]_q + (α_em/π) · (1 + log(1+ℏ_q))` | Lean `meson_qCG_3x4` (strong core only) | dashboard `per_observable_100x_status.py` | **51.48 ppb** (under 264-ppb target, 5.1× margin) | **CONDITIONAL** — see note below |
+| **m_K / m_π** | `√(m_K²/m_π²)` | — | dashboard (scored) | **51.48 ppb**, beats the 263.6-ppb target | **CONDITIONAL** — see note below |
+
+> **🛑 De-fitted 2026-08-22 — and NOT unconditionally derived (PR #5467).**
+> The EM factor was `(3q²−1)/(2q²)`, which is exactly the two-term
+> truncation `1 + ℏ_q − ℏ_q²/2` of `1 + log(1+ℏ_q)`. Measured stopping-order
+> error is 479.11 / **23.45** / 53.55 / 51.31 / 51.49 / 51.474 / 51.4755 ppb
+> for ℏ¹…ℏ⁷, converging to **51.4754 ppb**: order 2 is the *only* order below
+> the limit, a non-monotonic dip, so the stopping point was chosen against
+> the data. The owner ruled the full series canonical on **2026-08-09**
+> (`docs/precision-goals.md` §L2) but no producer was updated until #5467,
+> so this row read **23.44 ppb / DERIVED** for 13 days.
+>
+> Two knobs remain, so the status is **CONDITIONAL**, not DERIVED:
+> the `(3,4)` pair is **scan-selected**, and `α_em` is **conditional on the
+> open Witten-κ `sorry`**. The strong core alone misses the target by 385×.
+> Red-team: [`2026-08-22-mK-mpi-l2-red-team.md`](audits/2026-08-22-mK-mpi-l2-red-team.md).
 | **m_η, m_φ** | GMOR-class squared ratios | (some structure in #1442/#1396) | `meson_eta_phi_gmor.py` | — | PARTIAL — probes exist, not in dashboard |
 | **m_D, m_B (heavy mesons)** | — | — | — | — | OPEN — no canonical chain |
 

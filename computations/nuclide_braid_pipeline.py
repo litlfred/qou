@@ -57,6 +57,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 import sys
+from _precision import set_compute_dps  # noqa: E402
 
 sys.path.insert(0, str(HERE))
 
@@ -126,7 +127,7 @@ def main() -> int:
 
     # Import the heavy engine lazily so --help stays fast.
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_characters import partitions_of
     from char_fast import chi_lambda_fast

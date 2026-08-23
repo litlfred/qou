@@ -44,8 +44,10 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (50-digit substrate q₀; 
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION)
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 # q₀ from the 50-digit string (not the f64 Q) so the q0_50dps label is honest.
 # workdps + unary `+` force re-rounding at full precision.

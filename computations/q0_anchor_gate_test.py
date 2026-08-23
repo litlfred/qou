@@ -33,11 +33,23 @@ import mpmath as mp  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]
+                       / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
+
+set_compute_dps()
 
 Q_PROTON = mp.mpf(str(Q0))
-Q_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015405145269")
+# READ the muon anchor; do not retype it. This file is a test ABOUT crossing
+# the calibration layers, and it used to name its muon leg with a 61-character
+# literal that tracked the anchor for 51 digits and then diverged --
+# `…878015405145269` against the anchor's `…878015368660798114`. A test that
+# transcribes the thing it is testing cannot follow a re-pin, which is the
+# whole defect it exists to catch. The proton leg already reads (`Q_MP`); this
+# makes the muon leg symmetric with it.
+Q_MUON = mp.mpf(_q0_value_for_anchor("muon"))
 N = 9
 TOL = mp.mpf("1e-20")
 

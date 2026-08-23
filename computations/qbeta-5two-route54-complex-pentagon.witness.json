@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 40,
+  "dps": 70,
   "follows": "Route 53 (the constant pinned)",
   "lean": "QOU/QBeta/FiveTwoComplexPentagon.lean -- pentagonSum_eq_pi_sq_div_two",
   "gates": [
@@ -12,43 +12,43 @@
       "gate": "G1",
       "claim": "the ONE-variable complex five-term identity: for real a in (0,1) and every w off both real cuts, the Rogers pentagon sum is exactly pi^2/2. 30 pairs, including |w| = 40, w straddling both cuts, and w within 1e-8 of the real axis. This is the numerical shadow of the Lean theorem pentagonSum_eq_pi_sq_div_two, which is unconditional and sorry-free",
       "pairs_tested": 30,
-      "max_abs_deviation": "2.0535041e-40",
+      "max_abs_deviation": "1.4517358e-70",
       "sample": [
         {
           "a": "0.05",
           "w": "(1.5 + 0.8j)",
           "w_off_both_cuts": true,
-          "abs_dev": "9.4661863e-41"
+          "abs_dev": "7.2445433e-71"
         },
         {
           "a": "0.05",
           "w": "(-2.0 + 0.5j)",
           "w_off_both_cuts": true,
-          "abs_dev": "2.2958874e-41"
+          "abs_dev": "7.2445433e-71"
         },
         {
           "a": "0.05",
           "w": "(0.2 - 3.0j)",
           "w_off_both_cuts": true,
-          "abs_dev": "4.5917748e-41"
+          "abs_dev": "0.0"
         },
         {
           "a": "0.05",
           "w": "(5.0 + 0.01j)",
           "w_off_both_cuts": true,
-          "abs_dev": "9.1835496e-41"
+          "abs_dev": "3.6222716e-71"
         },
         {
           "a": "0.05",
           "w": "(-40.0 - 0.001j)",
           "w_off_both_cuts": true,
-          "abs_dev": "2.0535041e-40"
+          "abs_dev": "7.2445433e-71"
         },
         {
           "a": "0.05",
           "w": "(0.5 + 1.0e-8j)",
           "w_off_both_cuts": true,
-          "abs_dev": "0.0"
+          "abs_dev": "1.3494013e-79"
         }
       ],
       "pass": true
@@ -56,7 +56,7 @@
     {
       "gate": "G2",
       "claim": "the base region is right: on the positive real square the same sum is pi^2/2, which is where the corpus's already-proved REAL five-term identity (FiveTwoAbelFiveTerm.rogersL_fiveTerm) pins the constant. Three reflections convert Abel's arguments into the pentagon's, at a cost of 3*pi^2/6",
-      "max_abs_deviation": "9.1835496e-41",
+      "max_abs_deviation": "7.2445433e-71",
       "pass": true
     },
     {
@@ -102,7 +102,7 @@
       "y_real": "0.43015970900194673409",
       "y_upper": "(0.78492014549902663296 + 1.3071412786820454805j)",
       "y_real_in_unit_interval": true,
-      "dev_mixed_pair_over_pi_sq": "(0.0 - 2.32622029278e-42j)",
+      "dev_mixed_pair_over_pi_sq": "(7.34025698362e-72 - 1.8350642459e-72j)",
       "dev_conjugate_pair_over_pi_sq": "(-0.327865386529 + 0.134262906747j)",
       "pass": true
     },

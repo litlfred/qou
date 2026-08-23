@@ -192,7 +192,7 @@ def test_h_deformation_open() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T12-bring-discriminant-scaffold-probe",
                        engine="mpmath")
     w.set_audit_only(

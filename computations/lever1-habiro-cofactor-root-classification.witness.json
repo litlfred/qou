@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-12T12:13:30.500311+00:00",
-  "commitSha": "ce3cb2d196752ae59f923f8334cb93d44c4929f2",
+  "computedAt": "2026-08-23T09:12:05.204886+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "habiro_cofactors_not_salem",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 21,
   "computation": "lever1-habiro-cofactor-root-classification",
   "scriptFile": "lever1_habiro_cofactor_root_classification.py",
-  "scriptHash": "c4244d74a0d0",
-  "scriptCommitSha": "ce3cb2d196752ae59f923f8334cb93d44c4929f2",
+  "scriptHash": "2459fd0d56c5",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_habiro_cofactor_root_classification.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_habiro_cofactor_root_classification.py"
   },
   "description": "Classifies the Habiro-tail non-cyclotomic cofactor roots (lever-1/z2bn). REFUTES the Salem/Lehmer hypothesis: each cofactor (n=6..9) has ≥2 off-circle reciprocal pairs (off-pairs 2,2,4,7), not the single pair a Salem number requires — they are generic bar-even non-cyclotomic polynomials with mixed on/off-circle roots. So the n=6 boundary is the onset of non-q-holonomic content, NOT a distinguished number-theoretic class. Magnitudes not interpreted (numerology guard). Structural invariants ((q−1)² double root, bar-evenness, cyclotomic→non-cyclotomic at n=6) unchanged. Binding D(n), not Q_β c_k. Scope-(a), no fit, no wiring.",
   "data": {

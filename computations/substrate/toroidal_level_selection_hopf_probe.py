@@ -49,7 +49,8 @@ import os
 import mpmath as mp
 import sympy as sp
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 half = mp.mpf(1) / 2
 
 # ------------------------------------------------- (1) elementary toroidal

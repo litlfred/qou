@@ -23,7 +23,8 @@ import os
 
 import mpmath as mp
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 HALF = mp.mpf(1) / 2
 
 

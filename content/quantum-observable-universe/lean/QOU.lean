@@ -324,6 +324,10 @@ import QOU.QuantumObservableUniverses.QExpEntire
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.BurnsideSpan
+import QOU.SchurWeyl.PiBlockSeparation
+import QOU.SchurWeyl.HeckeProductSurjective
+import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
@@ -474,6 +478,15 @@ import QOU.BraidKnot.SpechtWedderburnCriterion
 -- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
 -- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
 import QOU.BraidKnot.SpechtWedderburnLe12
+import QOU.BraidKnot.SpechtWedderburnGeneral
+import QOU.BraidKnot.CentralC2Transport
+import QOU.BraidKnot.SpechtCentralC2Scalar
+import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
+import QOU.BraidKnot.WedderburnUnconditional
+import QOU.BraidKnot.ContentSqSumBridge
+import QOU.BraidKnot.PlancherelSnDataGeneral
+import QOU.BraidKnot.KeystoneDefectGeneral
+import QOU.BraidsAndKnots.SecondMomentKernelVanishes
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -936,6 +949,27 @@ import QOU.Mathlib.SchenstedCascadeColStrict
 import QOU.Mathlib.SchenstedWordSurjectivity
 -- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
 import QOU.Mathlib.SchenstedCornersAlong
+-- RSK inverse, brick 16: a row holding a maximum entry is a corner (the Q-side keystone).
+import QOU.Mathlib.SchenstedMaxCorner
+-- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
+import QOU.Mathlib.SchenstedShapeRun
+-- RSK inverse, brick 20: addable-cell sequences peel back as corners.
+import QOU.Mathlib.SchenstedAddable
+-- RSK inverse, brick 23: the counting bridge from column-strictness.
+import QOU.Mathlib.SchenstedStandardCount
+import QOU.Mathlib.SchenstedReinsertRow
+import QOU.Mathlib.SchenstedRecordingTrunc
+import QOU.Mathlib.SchenstedRSKSurjective
+import QOU.Mathlib.SchenstedListOfSYT
+import QOU.Mathlib.SchenstedRecordingOfSYT
+import QOU.Mathlib.SchenstedSYTRoundTrip
+import QOU.Mathlib.SchenstedWordOfPermSurj
+import QOU.Mathlib.SchenstedShapeOfPositions
+import QOU.Mathlib.SchenstedRSKPairSurjective
+import QOU.Mathlib.SchenstedRSKPairInjective
+import QOU.Mathlib.SchenstedRSKEquiv
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.Mathlib.SchenstedRSKBurnside
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

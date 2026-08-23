@@ -32,7 +32,11 @@ import sys
 
 import mpmath as mp
 
-mp.mp.dps = 40
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, os.path.join(ROOT, "computations", "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # --- production sources whose Q_β / binding wiring the audit inspects -------
 # The audit does NOT trust a hardcoded table; it derives `uses_c3` from a live

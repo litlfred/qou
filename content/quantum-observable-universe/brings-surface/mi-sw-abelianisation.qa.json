@@ -4,20 +4,17 @@
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.ts",
-    "md": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.md",
-    "lean": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.lean"
+    "md": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.md"
   },
   "source_hashes": {
     "md": "2e2886ef8f48",
-    "ts": "3760b40fb1d6",
-    "lean": "3b32effef2f7",
-    "lean_statement": "5ce57f7f7bc8"
+    "ts": "3760b40fb1d6"
   },
   "criteria": {
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The boilerplate now reads \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall\", dropping both the \"(§7c)\" tag and \"This block\".",
+        "notes": "The boilerplate now reads \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall\", dropping both the \"(\u00a77c)\" tag and \"This block\".",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1421,7 +1418,7 @@
         "reviewed_at": "2026-07-07T14:26:55.065599Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Proof is completely vacuous, projecting a self-assuming field in the structure.",
-        "evidence": "mi-sw-abelianisation.lean:2093-2100 — theorem sw_determines_mi (data : MISWAbelianisation) : data.mi_norm = data.sw_period := data.abelianisation",
+        "evidence": "mi-sw-abelianisation.lean:2093-2100 \u2014 theorem sw_determines_mi (data : MISWAbelianisation) : data.mi_norm = data.sw_period := data.abelianisation",
         "severity": "major"
       },
       {

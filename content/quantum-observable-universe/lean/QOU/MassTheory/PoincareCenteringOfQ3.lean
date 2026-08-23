@@ -179,4 +179,86 @@ theorem no_writhe_prefactor_yields_inv_cube (a q : K) (hq3 : q ^ 3 ≠ 1) :
   intro h
   exact hq3 (inv_eq_one.mp h.symm)
 
+/-! ### Resolution: `/q³` cannot be a state-dependent categorical factor
+
+The mirror image of a link corresponds to `q ↦ q⁻¹` in the Markov trace, and the
+corpus reads the bar involution as the conjugate (antiparticle) state
+(`strand-twist-datum.md`). So the bar-transform of the categorical factor is what
+distinguishes a state from its conjugate.
+
+Both of `F_Bor`'s honest ingredients are blind to that:
+
+* `trM_bar_invariant` — the Lean-proved closed form `(4+h²−3h⁴−h⁶)/(h²+4)` is
+  **even in `h = q − q⁻¹`**, and `h ↦ −h` under `q ↦ q⁻¹`, so `tr_M` is
+  bar-invariant.
+* `balanced_is_bar_symmetric` (above) — `[3]_q!^bal` is bar-symmetric.
+
+So the **only** bar-asymmetric step is the `/q³`, and it is asymmetric by a
+definite amount:
+
+* `fbor_mirror_ratio` — `F_Bor(q⁻¹) = q⁶ · F_Bor(q)`.
+
+At the substrate `q₀ ≈ 1.11` that is `q₀⁶ ≈ 1.87`. Read as a *state-dependent*
+categorical factor, `/q³` would therefore make a state and its conjugate differ
+by 87 % — which is not a small correction but a gross asymmetry.
+
+**The resolution.** `/q³` cannot be a categorical factor attached to the state.
+It has to be a fixed normalisation applied identically to a state and its
+conjugate — in which case it is, by construction, a **convention**, not
+something the braid determines. That is consistent with every earlier finding
+here: it is unreachable by the writhe rule (`no_writhe_prefactor_yields_inv_cube`),
+it double-counts the Poincaré centering (`code_form_is_doubly_centered`), and it
+breaks the bar-symmetry both ingredients have.
+
+Interpretive caveat, stated: the identification "mirror ↦ `q ↦ q⁻¹`" is the
+standard Markov/HOMFLY behaviour and matches the corpus's reading of `bar`, but
+the physical step from there to a particle/antiparticle mass ratio is
+interpretation, not theorem. The theorems below are the algebra. -/
+
+/-- The Lean-proved Borromean Markov trace as a function of `q`, via
+`h = q − q⁻¹`. -/
+def trMBorromean (q : K) : K :=
+  let h := q - q⁻¹
+  (4 + h ^ 2 - 3 * h ^ 4 - h ^ 6) / (h ^ 2 + 4)
+
+/-- **`tr_M(β_Bor)` is bar-invariant**: the closed form is even in `h`, and
+`h ↦ −h` under `q ↦ q⁻¹`. So the trace does not distinguish a state from its
+conjugate. -/
+theorem trM_bar_invariant (q : K) (hq : q ≠ 0) :
+    trMBorromean q⁻¹ = trMBorromean q := by
+  unfold trMBorromean
+  simp only [inv_inv]
+  field_simp
+  ring
+
+/-- `F_Bor` as the code computes it. -/
+def fBor (q : K) : K := trMBorromean q * qFactThreeBalanced q / q ^ 3
+
+/-- **The whole bar-asymmetry of `F_Bor` is `q⁶`, and it comes only from `/q³`.**
+
+Both ingredients are bar-blind, so the mirror ratio is exactly the square of the
+applied normalisation. -/
+theorem fbor_mirror_ratio (q : K) (hq : q ≠ 0) :
+    fBor q⁻¹ = q ^ 6 * fBor q := by
+  unfold fBor
+  rw [trM_bar_invariant q hq, ← balanced_is_bar_symmetric q hq]
+  field_simp
+
+/-- **`q⁻³` is bar-invariant only in the degenerate case.**  So no reading of it
+as a state-attached factor escapes the asymmetry except at `q⁶ = 1`. -/
+theorem inv_cube_bar_invariant_iff (q : K) (hq : q ≠ 0) :
+    (q⁻¹) ^ (3 : ℕ) = q ^ (3 : ℕ) ↔ q ^ (6 : ℕ) = 1 := by
+  rw [inv_pow]
+  constructor
+  · intro h
+    have hc : q ^ 3 * (q ^ 3)⁻¹ = 1 := mul_inv_cancel₀ (pow_ne_zero 3 hq)
+    rw [h] at hc
+    calc q ^ 6 = q ^ 3 * q ^ 3 := by ring
+      _ = 1 := hc
+  · intro h
+    have hc : q ^ 3 * q ^ 3 = 1 := by
+      calc q ^ 3 * q ^ 3 = q ^ 6 := by ring
+        _ = 1 := h
+    exact inv_eq_of_mul_eq_one_right hc
+
 end QOU.MassTheory.PoincareCentering

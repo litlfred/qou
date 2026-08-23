@@ -72,9 +72,10 @@ from q_parameter import Q_MP as Q0  # noqa: E402
 # so every string here is already right — by luck of the caller's variable
 # name, which is precisely the property that failed four times in this family.
 from habiro_coefficients_atomic import str_in_u  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # 50-dps for q₀ verification
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def log(msg: str) -> None:

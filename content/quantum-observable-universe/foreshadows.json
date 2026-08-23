@@ -266,7 +266,7 @@
         "thm:topological-mass"
       ]
     },
-    "conj:motivic-perpetual-obstruction": {
+    "thm:motivic-perpetual-obstruction": {
       "derived": [
         "ex:archimedean-yekutieli",
         "ex:chi-minus-six-derivation"
@@ -696,11 +696,11 @@
     },
     "def:motivic-galois-character": {
       "derived": [
-        "conj:motivic-perpetual-obstruction"
+        "thm:motivic-perpetual-obstruction"
       ],
       "declared": [],
       "effective": [
-        "conj:motivic-perpetual-obstruction"
+        "thm:motivic-perpetual-obstruction"
       ]
     },
     "def:motivic-substrate": {
@@ -3999,10 +3999,10 @@
         "def:motivic-substrate"
       ],
       "declared": [
-        "conj:motivic-perpetual-obstruction"
+        "thm:motivic-perpetual-obstruction"
       ],
       "effective": [
-        "conj:motivic-perpetual-obstruction",
+        "thm:motivic-perpetual-obstruction",
         "def:motivic-substrate"
       ]
     },

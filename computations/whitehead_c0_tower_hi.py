@@ -32,6 +32,8 @@ from whitehead_fast import closure_norm                       # noqa: E402
 from whitehead_colored_jones import (                         # noqa: E402
     r_check_braiding, closure_invariant, qint as qint_mp,
 )
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 VOL_WHITEHEAD = 3.663862376708876
 WHITEHEAD = [1, -2, 1, -2, 1]
@@ -73,7 +75,7 @@ def fit_c0(Ns, logs, p=1.5, vol=VOL_WHITEHEAD, nterms=2):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     t0 = time.monotonic()
     print("Whitehead c₀ tower (hi) — mpmath exact anchors + float64 extension + error bar")
     print(f"  Vol=4G fixed, p=3/2; prediction factor 2 → c₀=−0.52\n")

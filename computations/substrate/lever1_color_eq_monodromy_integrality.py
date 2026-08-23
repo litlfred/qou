@@ -33,7 +33,8 @@ import mpmath as mp
 import sympy as sp
 from qou_substrate import constants as C
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # ---- symbolic color/descartes E_q Weierstrass data: y^2 = x^3 + p x + r ----
 qs = sp.Symbol("q", positive=True)

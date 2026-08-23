@@ -71,7 +71,7 @@ os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
-mp.mp.dps = 50
+set_compute_dps()
 import sympy as sp  # noqa: E402
 
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402

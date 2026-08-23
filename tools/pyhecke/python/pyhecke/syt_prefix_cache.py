@@ -28,6 +28,37 @@ from __future__ import annotations
 import math
 
 
+def _sqrt_for(x):
+    """Square root in x's OWN arithmetic — never narrower.
+
+    `math.sqrt` returns a Python float whatever it is given. That silently
+    truncated the off-diagonal `b` on the mpf path: with `q = mpf(Q_50_DIGIT_STR)`
+    the diagonal entries `a`, `a'` carried 50 digits while `b` came back a float
+    with relative error 1.36e-17 against `mp.sqrt(a*a' + 1)`. The seminormal
+    matrices were therefore mixed-precision — 50-digit diagonal, 17-digit
+    off-diagonal — which is exactly the shape the NO-FLOAT64 directive forbids,
+    and it survived the earlier dtype fix in this file because that fix
+    addressed the numpy ALLOCATION and not the value being stored.
+
+    Dispatches on the operand rather than on a flag, matching `_value_dtype`
+    below: an f64 `q` still takes the `math.sqrt` branch and is bit-identical.
+    """
+    # sympy first: an Expr is not a numbers.Real, and sympy.sqrt keeps the
+    # radical exact rather than evaluating it.
+    if type(x).__module__.startswith("sympy"):
+        import sympy
+        return sympy.sqrt(x)
+    if type(x).__module__.startswith("mpmath"):
+        import mpmath
+        return mpmath.sqrt(x)
+    return math.sqrt(x)
+
+
+def _is_symbolic(x) -> bool:
+    """True for a sympy expression — no float comparison is meaningful on one."""
+    return type(x).__module__.startswith("sympy")
+
+
 class BlockCache:
     """Cache of Hoefsmit block values keyed by content distance ρ.
 
@@ -51,12 +82,29 @@ class BlockCache:
         self.misses += 1
         q = self.q
         h = self.h
-        denom_a = 1.0 - q ** (-2 * rho)
-        a = h / denom_a if abs(denom_a) > 1e-15 else 0.0
-        denom_ap = 1.0 - q ** (2 * rho)
-        a_prime = h / denom_ap if abs(denom_ap) > 1e-15 else 0.0
-        b_sq = a * a_prime + 1.0
-        b = math.sqrt(abs(b_sq))
+        symbolic = _is_symbolic(q)
+
+        # The `abs(denom) > 1e-15` guard is a NUMERIC degeneracy test and is
+        # meaningless on a sympy expression (`abs(1 - q**-2) > 1e-15` is an
+        # unevaluated Relational, and `bool()` of it raises). Symbolically the
+        # denominator vanishes only at rho == 0, which cannot occur: rho is the
+        # content distance between the cells holding k and k+1, and two distinct
+        # cells of an SYT never share a content along this pairing. So the
+        # symbolic branch divides unguarded and stays exact.
+        denom_a = 1 - q ** (-2 * rho)
+        denom_ap = 1 - q ** (2 * rho)
+        if symbolic:
+            a = h / denom_a
+            a_prime = h / denom_ap
+            b = _sqrt_for(a * a_prime + 1)
+        else:
+            a = h / denom_a if abs(denom_a) > 1e-15 else 0.0
+            a_prime = h / denom_ap if abs(denom_ap) > 1e-15 else 0.0
+            b_sq = a * a_prime + 1
+            # `abs()` before the root is defensive, not cosmetic: b_sq is 0 at
+            # |rho| = 1 and positive beyond, so a negative value here means a
+            # degenerate q, and rounding can put it a hair below zero.
+            b = _sqrt_for(abs(b_sq))
         entry = (a, a_prime, b)
         self._by_rho[rho] = entry
         return entry

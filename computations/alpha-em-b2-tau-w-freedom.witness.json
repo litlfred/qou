@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T00:21:31.797382+00:00",
-  "commitSha": "ac41614653db40f53b4e20c70de0aa699c0d36b1",
+  "computedAt": "2026-08-23T08:53:40.495409+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "c_convention_dependent",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 19,
   "computation": "alpha-em-b2-tau-w-freedom",
   "scriptFile": "alpha_em_b2_tau_w_freedom_probe.py",
-  "scriptHash": "52ef870ae659",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "f510e2b34011",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_b2_tau_w_freedom_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_b2_tau_w_freedom_probe.py"
   },
   "description": "ADVERSARIAL red-team of the B2 τ=W closure: the identification scalar c is convention-DEPENDENT (spread ~357.4 across det/raw/trace/Markov-scaled/Hodge-physical + the sibling ~1.47α_EM). Schur forces the FORM; the MAGNITUDE (1/(8π)) is a free scalar until a physical functor τ bridges the Markov-trace and polarisation scales. #4209 closure = form-consistency, not magnitude derivation. No instance; 1/(8π) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
@@ -40,7 +47,7 @@
     "q0": "1.10997858275138080759166909561"
   },
   "data": {
-    "transport_closes_residual": "2.38772e-39",
+    "transport_closes_residual": "3.44116e-70",
     "c_values": {
       "raw (eigsy-norm G, integer M_S)": "0.715788633",
       "det-normalised (both det=1)": "1.0",
@@ -50,7 +57,7 @@
     },
     "c_spread_max_over_min": "357.44864",
     "sibling_route_c": "0.01072710828",
-    "verdict": "ADVERSARIAL VERDICT: the τ-identification scalar c is CONVENTION-DEPENDENT — NOT a convention-free prediction. The transported Markov Gram is exactly ∝ M_S (Schur, residual 2.39e-39), so the FORM is forced; but the scalar c ranges over {det:1, raw:0.7158, trace:1.0, Markov-scaled:0.09206, vs-Hodge-physical:3.834, sibling:~1.47α_EM} — a max/min spread of 357.4. The two intrinsic scales (Markov trace w_(4,1); polarisation Im(τ₀)) live in different unit systems (algebra-trace vs geometric-period) and NOTHING in the representation theory bridges them. So τ=W FORCES THE FORM but NOT THE MAGNITUDE: the 1/(8π) scale is carried by a free scalar until a physical functor τ supplies the dimensional bridge — which is precisely the unconstructed input. The #4209 end-to-end closure is a FORM-CONSISTENCY result, not a magnitude derivation. STRICT: no instance; 1/(8π) phase-4; nothing wired; this is an interpretation constraint, not a new claim."
+    "verdict": "ADVERSARIAL VERDICT: the τ-identification scalar c is CONVENTION-DEPENDENT — NOT a convention-free prediction. The transported Markov Gram is exactly ∝ M_S (Schur, residual 3.44e-70), so the FORM is forced; but the scalar c ranges over {det:1, raw:0.7158, trace:1.0, Markov-scaled:0.09206, vs-Hodge-physical:3.834, sibling:~1.47α_EM} — a max/min spread of 357.4. The two intrinsic scales (Markov trace w_(4,1); polarisation Im(τ₀)) live in different unit systems (algebra-trace vs geometric-period) and NOTHING in the representation theory bridges them. So τ=W FORCES THE FORM but NOT THE MAGNITUDE: the 1/(8π) scale is carried by a free scalar until a physical functor τ supplies the dimensional bridge — which is precisely the unconstructed input. The #4209 end-to-end closure is a FORM-CONSISTENCY result, not a magnitude derivation. STRICT: no instance; 1/(8π) phase-4; nothing wired; this is an interpretation constraint, not a new claim."
   },
   "caveats": [
     "The FORM identification is forced (Schur, rigorous, #4160/#4199). Only the SCALAR is free. τ=W therefore forces the shape of the loop weight but not its magnitude; the 1/(8π) value is not derived by the rep-theory closure alone — it needs the physical functor τ."

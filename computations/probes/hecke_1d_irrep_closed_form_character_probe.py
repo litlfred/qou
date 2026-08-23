@@ -60,6 +60,7 @@ from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _eval_braid_word_in_rep(sigmas, dim: int, word: list[tuple[int, int]]):
@@ -144,7 +145,7 @@ def main() -> int:
         "hecke-1d-irrep-closed-form-character-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     results: list[dict] = []
     max_residue = mp.mpf(0)

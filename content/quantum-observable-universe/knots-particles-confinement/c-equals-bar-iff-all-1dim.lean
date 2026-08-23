@@ -98,6 +98,57 @@ theorem c_equals_bar_on_one_dim_eigenvalue_q (q h : ℤ) (hdef : h = q - (-q)) :
 
     Tracked as bean `qou-citp`.  The surviving companion
     `c_equals_bar_on_one_dim_eigenvalue_q` is true under this encoding
-    (`q - 2q = -q`) and is retained. -/
+    (`q - 2q = -q`) and is retained — but see the multiplicative section
+    below, which supersedes it as the statement of record. -/
+
+/-! ### Multiplicative restatement (supersedes the additive ℤ toy above)
+
+The additive toy could not express the `-q⁻¹` eigenvalue case as a claim
+distinct from the `q` case, because it encodes `q⁻¹` as `-q` and therefore
+sends both eigenvalues to the same element.  That collapse is what admitted a
+false theorem.  Here the same claims are stated over a genuine commutative ring
+with `q` a **unit**, following `mass-theory/meson-kaon-pion-hecke-seifert.lean`.
+
+Both eigenvalue cases now hold *and* are separately expressible; `eigenvalues_distinct`
+records that they are genuinely different elements exactly when `q² ≠ -1`, which is
+the content the toy destroyed. -/
+
+section Multiplicative
+
+variable {R : Type*} [CommRing R]
+
+/-- The Hecke parameter `h = q - q⁻¹`, with `q` a unit. -/
+def heckeH (q : Rˣ) : R := (q : R) - ((q⁻¹ : Rˣ) : R)
+
+/-- `C` acts on a one-dimensional eigenvalue by `α ↦ α - h`, from `σ⁻¹ = σ - h`. -/
+def cOnEigenvalue (q : Rˣ) (α : R) : R := α - heckeH q
+
+/-- `C = bar` on the eigenvalue `q`: `C(q) = q - h = q⁻¹ = bar(q)`. -/
+theorem cOnEigenvalue_q (q : Rˣ) :
+    cOnEigenvalue q (q : R) = ((q⁻¹ : Rˣ) : R) := by
+  simp [cOnEigenvalue, heckeH]
+
+/-- `C = bar` on the eigenvalue `-q⁻¹`: `C(-q⁻¹) = -q⁻¹ - h = -q = bar(-q⁻¹)`.
+  This is the case the additive toy could not state; it is *false* there and
+  true here. -/
+theorem cOnEigenvalue_neg_q_inv (q : Rˣ) :
+    cOnEigenvalue q (-((q⁻¹ : Rˣ) : R)) = -(q : R) := by
+  simp [cOnEigenvalue, heckeH]
+  ring
+
+/-- The two Hecke eigenvalues are genuinely distinct exactly when `q² ≠ -1`.
+  Under the additive toy both collapsed onto the same element for every `q`,
+  which is precisely why the second case could not be stated there. -/
+theorem eigenvalues_distinct (q : Rˣ) (hq : (q : R) * (q : R) + 1 ≠ 0) :
+    (q : R) ≠ -((q⁻¹ : Rˣ) : R) := by
+  intro hEq
+  apply hq
+  have hinv : (q : R) * ((q⁻¹ : Rˣ) : R) = 1 := q.mul_inv
+  have h1 : ((q⁻¹ : Rˣ) : R) = -(q : R) := by
+    rw [hEq]; ring
+  rw [h1] at hinv
+  linear_combination -hinv
+
+end Multiplicative
 
 end QOU.ParticleInteractions

@@ -52,8 +52,10 @@ from fractions import Fraction
 from pathlib import Path
 
 from mpmath import mp, mpf, log, sqrt
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # --- q_0: experimental (proton) pin, per AGENTS 2026-08-07 owner directive ---
 Q0_PROTON_STR = "1.1099785827513808"

@@ -51,6 +51,14 @@ for _p in (_HERE, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
         sys.path.insert(0, _p)
 from t25_cinquefoil_deltalambda_sign_probe import (  # noqa: E402
     partitions, target_sign)
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 
 def n_lambda(lam):
@@ -87,7 +95,7 @@ def dim_q(lam, q):
 
 
 def main():
-    mp.mp.dps = 30
+    set_compute_dps()
     try:
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(30)))

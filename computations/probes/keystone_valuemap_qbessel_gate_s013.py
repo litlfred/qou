@@ -62,8 +62,9 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, besselj, qp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 with mp.workdps(50):
     Q0 = mpf("1.1099785955541805")
     INV = +(1 / Q0)          # bar image, |q| < 1: where the false theta converges
@@ -331,7 +332,7 @@ def run():
         mp.dps = dps
         passed, nroots, best = gate_row(fn, tg, x_max=xmax, grid=grid)
         gates[name] = {"passed": passed, "n_roots": nroots, "best": best}
-    mp.dps = 50
+    set_compute_dps()
     out["bessel_row_gates"] = gates
     out["any_bessel_row_passed"] = any(g["passed"] for g in gates.values())
     return out

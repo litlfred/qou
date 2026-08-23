@@ -19,9 +19,9 @@
     "ratio_Z_over_H_pred": 0.7029706110709919,
     "total_abs_deviation_pct": 7.143461846173569
   },
-  "commitSha": "b386238661ac83490512ac522aa257d82bd0b7ce",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "rt_w_sqrt_quantum_two_probe",
-  "computedAt": "2026-08-11T01:03:49.526145+00:00",
+  "computedAt": "2026-08-23T09:40:07.074075+00:00",
   "description": "Tests whether \u221a[2]_q at q_0 (quantum dim of SU_q(2) fundamental rep, coupling to W's charge \u00b11) is the structural origin of the empirical W-correction \u2248 1.43 found in rt_route_w_specific_correction_probe.py. Applies this single multiplicative factor to W's |J_N| for N = 2..6 and checks whether ratios match SM within 10%.",
   "durationMs": 0,
   "engine": "mpmath",
@@ -146,9 +146,9 @@
       "total_abs_deviation_pct": 251.89994886596958
     }
   ],
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "rt_w_sqrt_quantum_two_probe.py",
-  "scriptHash": "40cd2152c6ac",
+  "scriptHash": "8fa6b81ce3e0",
   "status": "exploratory",
   "tags": [
     "rt-route",

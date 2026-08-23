@@ -359,13 +359,34 @@ user's last message, not the most recently mentioned file.
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
         and 9 out). Fix the producer to emit provenance first.
 
-      **And a `substantive` verdict is not a work order — measured, 39 %.**
-      Of 72 substantive producers actually re-run under a time budget, only
-      **28 moved a single mathematical field**; 44 were byte-identical, 3
-      crashed, 2 timed out. So "the code changed, therefore the payload can
-      move" over-flags by roughly 61 %, and the genuinely actionable queue is
-      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
-      Re-run to decide; do not treat the class as a to-do list.
+      **A `substantive` verdict over-flags — but by ~27 %, not the 61 % this
+      text used to claim. CORRECTED 2026-08-23.** The old figure (39 % move,
+      28 of 72) was measured PER WITNESS, and the queue was then 268 witnesses
+      over only 146 producers with **119 of them from one producer**. So one
+      "did not move" fact was counted ~119 times and dragged the rate down.
+      **Do not quote 39 %.**
+
+      Re-measured per PRODUCER, and then re-classified on which fields actually
+      moved: of 49 producers run to completion, **36 moved a genuinely
+      mathematical field** (73 %), 10 moved *only* invocation metadata, 3 were
+      identical. The raw rate looks like 94 % until you strip
+      `/invocation/argv/0` and `/invocation/reproduce` — the script path as the
+      sampler invoked it, which differs from whatever produced the committed
+      witness and has nothing to do with the mathematics. Strip
+      `/data/upstream_witness_hashes/*` too: that tracks an upstream file, not
+      this producer's output.
+
+      Two lessons in the measurement itself, both worth more than the number:
+      **mask volatile keys or you measure your own harness** — `timestamp`,
+      `elapsed_seconds`, `measured_at`, `start_time_monotonic` and the
+      `/invocation/*` block all change every run; and **record WHICH fields
+      moved**, so a mask gap is re-classifiable from the checkpoint instead of
+      costing another full sweep. Both errors were made here before being
+      caught, the first one twice.
+
+      So re-run to decide, and expect roughly 1 in 4 to be a false alarm rather
+      than 3 in 5. Sample is 49 of 152 producers; timeouts and crashes are
+      excluded from the rate.
 
       **Producers write SIBLING witnesses.** The isotope producer rewrote 21
       `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
@@ -373,9 +394,16 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
-      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
-      sha the witness was written under. This is the same effect the
+      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing. **This text previously named rebase-merge as the
+      cause; that is confirmed for only 46 of 376.** Agent clones here are
+      **shallow**, so a sha can be missing merely because the history was never
+      fetched. Split on the shallow-boundary date, 46 witnesses were computed
+      after it (sha was in the fetched window ⇒ genuinely rewritten) and 330
+      before it (**cause undetermined**). Do not repeat the stronger claim, and
+      note a direct `git fetch origin <sha>` cannot settle it — GitHub refuses
+      arbitrary-sha fetches regardless of whether the object exists. This is
+      the same effect the
       `scriptCommitSha` ruling above describes, one field over: **"diff the
       producer first" is unrunnable for half the queue**, and hand-patching
       the sha (13 such commits on `main` in one 8-day window) buys only the
@@ -590,7 +618,15 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | Still expected — this is the one review to wait on. |
+    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    >
+    > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
+    > one.** All three original gates are gone. The agent's own verification
+    > is not the last gate standing — it is the *only* gate. Act accordingly:
+    > state the verification you actually ran, and do **not** wait on Copilot.
+    > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
+    > check run that is never created; that wait can only expire, so skip it
+    > and record why (citing `qou-gwe9`) rather than burning the window.
     >
     > **Phase-4 verification gate (replaces "CI green").** Because CI
     > is unavailable, the agent's own verification *is* the gate — this

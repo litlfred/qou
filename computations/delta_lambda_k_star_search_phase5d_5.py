@@ -51,6 +51,7 @@ from witness_base import WitnessBuilder
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_parameter import Q as Q0_FLOAT
 from q_mpmath import set_q, qint, qfac
+from _precision import set_compute_dps  # noqa: E402
 set_q(Q0_FLOAT)
 
 
@@ -95,7 +96,7 @@ def depth_k(partition: tuple) -> int:
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     builder = WitnessBuilder("k-star-search-phase5d-5")
     builder.set_description(
         "Phase 5d.5: empirical search for the depth-stratified "

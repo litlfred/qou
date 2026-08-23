@@ -24,9 +24,10 @@ from threerow_sign_crossing_probe import (  # noqa: E402
     chi_atom, delta_lambda, Q0, Q_LO,
 )
 from schur_principal_mpmath import y_lambda_at_q0_mpmath, partitions_of  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 warnings.filterwarnings("ignore")
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def decomp(Z, N, name):

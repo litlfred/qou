@@ -86,7 +86,15 @@ import sympy as sp                               # noqa: E402
 from eunit_magnus_order2_probe import hecke_rep, mat_log_hecke, commutator  # noqa: E402
 from witness_base import WitnessBuilder          # noqa: E402
 
-mp.mp.dps = 50
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 

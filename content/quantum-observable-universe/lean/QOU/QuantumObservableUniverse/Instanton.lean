@@ -121,46 +121,110 @@ References:
 - [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
 -/
 
-/-- **Categorical irreducibility — typeclass.**
-    Witnesses adjoint-rep vanishing for a specific
-    `(C, frobHopf, adjointObj, inst)` choice rather than asserting
-    it for *every* monoidal category. The conjectural content
-    (encoding `Ad(A) = A ⊗ A^∨` and deriving `Hom(𝟙, Ad(A)) = 0`
-    from self-duality) becomes a per-instance obligation visible
-    at every use site. -/
+/-- **Categorical irreducibility — hypotheses of the manuscript proof.**
+
+    Carries the two *inputs* of the argument in
+    [`prf:categorical-irreducible`], parameterised by the inclusion
+    `ι : Ad(A) ↪ A` of the adjoint object (`A` is self-dual, so
+    `A ⊗ A^∨ ≃ A ⊗ A`; `ι` is the trace-free part sitting inside it):
+
+    * **trace-freeness** — `∫_A` vanishes on `Ad(A)`, so it cannot
+      separate two morphisms `𝟙 → Ad(A)`;
+    * **non-degeneracy** — the observability axiom, stated as
+      `Mono (ι ≫ ∫_A)`.
+
+    Neither field is the conclusion `Subsingleton (𝟙 ⟶ Ad(A))`; the
+    conclusion is *derived* from them in `categorical_irreducible` by
+    cancelling the mono. They are of course jointly **equivalent** to it —
+    that is what it means for the manuscript proof to be correct — but the
+    equivalence runs through the cancellation step, which is the argument.
+    Compare the field this class used to carry, which *was* the conclusion
+    verbatim (see the removal note below).
+
+    Stated in zero-free form (`s ≫ f = t ≫ f` rather than `s ≫ f = 0`)
+    because `C` is not assumed to have zero morphisms. -/
 class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
     (adjointObj : C)
+    (adjointInclusion : adjointObj ⟶ frobHopf.obj)
     (_inst : CategoricalInstanton frobHopf) : Prop where
-  /-- Vanishing of adjoint-rep observables. -/
-  subsingleton : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+  /-- **Trace-freeness of `Ad(A)`.** `Ad(A)` is the trace-free part of
+      `A ⊗ A^∨`, so the Frobenius form `∫_A` restricted along `ι` does not
+      distinguish morphisms out of the unit: `∫_A ∘ ι ∘ s = ∫_A ∘ ι ∘ t`
+      for all `s, t : 𝟙 → Ad(A)`. -/
+  form_indistinguishes :
+    ∀ s t : (𝟙_ C) ⟶ adjointObj,
+      s ≫ adjointInclusion ≫ frobHopf.frobeniusForm
+        = t ≫ adjointInclusion ≫ frobHopf.frobeniusForm
+  /-- **Non-degeneracy of `∫_A` (observability axiom).** The restricted
+      form `ι ≫ ∫_A` is a monomorphism. -/
+  form_mono : CategoryTheory.Mono (adjointInclusion ≫ frobHopf.frobeniusForm)
 
-/-- **Default instance from a `Subsingleton` witness**.  When the
-    Hom-space `(𝟙_ C) ⟶ adjointObj` is already known to be a
-    `Subsingleton` (e.g. zero-object, terminal, or trivially
-    discrete category), the irreducibility witness is automatic. -/
-instance hasCategoricalIrreducibility_of_subsingleton
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    {frobHopf : FrobeniusHopfData C}
-    (adjointObj : C)
-    (inst : CategoricalInstanton frobHopf)
-    [hsub : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
-    HasCategoricalIrreducibility adjointObj inst :=
-  ⟨hsub⟩
+/-! ### `hasCategoricalIrreducibility_of_subsingleton` — REMOVED 2026-08-23
 
-/-- **Categorical irreducibility** (per-instance form).
-    Use this lemma — backed by `HasCategoricalIrreducibility` —
-    instead of the deprecated universal axiom. -/
+    It read
+
+        instance hasCategoricalIrreducibility_of_subsingleton …
+            [hsub : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
+            HasCategoricalIrreducibility adjointObj inst := ⟨hsub⟩
+
+    and its hypothesis `Subsingleton ((𝟙_ C) ⟶ adjointObj)` is the
+    conclusion of `categorical_irreducible` **verbatim**.  So the class was
+    obtainable only by already holding what it asserts, and the accessor
+    then handed it straight back — a caller who could synthesise the
+    instance never needed the theorem.
+
+    That circularity is what makes the §3b-cond carrier degenerate: the
+    class is supposed to hold the *open* content, so an instance route that
+    starts from the conclusion defeats it.  Removing the instance leaves
+    `HasCategoricalIrreducibility` as an honest open carrier with no
+    inhabitation route, which is the correct state for an unproved claim.
+    Nothing synthesised it (0 references outside this file).
+
+    Vacuity ledger, `proof-no-self-assuming-projection`.  The ledger's
+    earlier evidence recorded this as an "UNINHABITED carrier … no instance
+    exists"; that was wrong — the instance existed, and the defect is its
+    circularity, not its absence. -/
+
+/-! ### `HasCategoricalIrreducibility.subsingleton` — REPLACED 2026-08-23
+
+    Removing the circular instance (above) left the class honest about
+    *inhabitation* but not about *content*: its single field read
+
+        subsingleton : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+
+    which is the conclusion of `categorical_irreducible` verbatim, and the
+    theorem was `h.subsingleton`.  That is the §3b-cond item-5 degenerate
+    shape — the class carried the conclusion, so the theorem derived
+    nothing — and it is this file's `proof-no-self-assuming-projection`
+    entry in the vacuity ledger.
+
+    The block's own proof (`prf:categorical-irreducible`) states the
+    argument: *"Since `Ad(A)` is the trace-free part of `A ⊗ A^*`, the
+    Frobenius form `∫_A` vanishes on it … But `∫_A` is non-degenerate by
+    the observability axiom, so `s = 0`."*  Neither of those is the
+    conclusion, so the class now carries **them**, and the theorem
+    performs the step the manuscript performs: cancel the mono. -/
+
+/-- **Categorical irreducibility** (per-instance form,
+    [`lem:categorical-irreducible`]).
+
+    In a quantum observable universe, the adjoint-rep hom-space vanishes:
+    `Hom(𝟙, Ad(A))` is a subsingleton.  Derived from the two hypotheses of
+    `HasCategoricalIrreducibility` — trace-freeness of `Ad(A)` and
+    non-degeneracy of `∫_A` — by cancelling the monomorphism, which is the
+    manuscript proof of `prf:categorical-irreducible`. -/
 theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
     {adjointObj : C}
+    {adjointInclusion : adjointObj ⟶ frobHopf.obj}
     (inst : CategoricalInstanton frobHopf)
-    [h : HasCategoricalIrreducibility adjointObj inst] :
-    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
-  h.subsingleton
+    [h : HasCategoricalIrreducibility adjointObj adjointInclusion inst] :
+    Subsingleton ((𝟙_ C) ⟶ adjointObj) := by
+  haveI := h.form_mono
+  exact ⟨fun s t => (CategoryTheory.cancel_mono _).mp (h.form_indistinguishes s t)⟩
 
 /-- **Proposition (Categorical self-duality).**
     LaTeX: `\label{prop:categorical-self-duality}`
@@ -241,21 +305,26 @@ class HasDqSquaredNonvanishing {C : Type u}
   /-- The non-vanishing conclusion. -/
   nonvanishing : cqd.dq ≫ cqd.dq ≠ 0
 
-/-- **Default instance from a `Fact` witness on the non-vanishing**.
-    When `Fact (cqd.dq ≫ cqd.dq ≠ 0)` is in scope (e.g. supplied
-    by the geometric proof at the specific `cqd`), the
-    `HasDqSquaredNonvanishing` instance follows. -/
-instance hasDqSquaredNonvanishing_of_fact {C : Type u}
-    [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
-    (cqd : CategoricalQExtDeriv C)
-    (hq : cqd.q ≠ 1)
-    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
-    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0)
-    [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] :
-    HasDqSquaredNonvanishing cqd hq hd_sq hcross :=
-  ⟨hf.out⟩
+/-! ### `hasDqSquaredNonvanishing_of_fact` — REMOVED 2026-08-23
+
+    It read `… [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] : HasDqSquaredNonvanishing
+    cqd hq hd_sq hcross := ⟨hf.out⟩` — the same circularity as above, since
+    the `Fact` is the conclusion itself.
+
+    It also made the three hypotheses decorative.  `HasDqSquaredNonvanishing`
+    is parameterised by `hq : cqd.q ≠ 1`, `hd_sq : d_classical ≫ d_classical
+    = 0` and `hcross : … ≠ 0`, and `categorical_dq_squared_nonvanishing`
+    binds all three — so the statement reads as a substantive conditional.
+    But this instance **ignored all three** and produced the class from the
+    `Fact`, so on the only available inhabitation route none of them was
+    ever load-bearing.
+
+    Removed (0 references outside this file), leaving the class as an honest
+    open carrier.  Whether `hq`/`hd_sq`/`hcross` actually imply the
+    non-vanishing is the open question the file should answer; until it
+    does, no instance should be derivable from the conclusion.
+
+    Vacuity ledger, `proof-no-self-assuming-projection`. -/
 
 /-- **`d_q²` non-vanishing** (per-instance form). -/
 theorem categorical_dq_squared_nonvanishing {C : Type u}

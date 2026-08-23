@@ -1,8 +1,8 @@
 {
   "engine": "python-magnus",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T09:09:18.977309+00:00",
-  "commitSha": "e227a2c581856c27f6d3f239656dd0a7ab2d2136",
+  "computedAt": "2026-08-23T09:05:24.003699+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "mubar_idempotent_common_weight_refuted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "mixed-multibond-mubar-integrality",
   "scriptFile": "mixed_multibond_mubar_integrality_probe.py",
-  "scriptHash": "70d4eb855745",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "27281c994f2b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/mixed_multibond_mubar_integrality_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/mixed_multibond_mubar_integrality_probe.py"
   },
   "description": "EXPLORATORY: tests the μ̄-idempotent hypothesis for the mixed-multibond shared channel against Milnor integrality. μ̄_ijk ∈ ℤ (Magnus, verified on Borromean/chain). The t-series shared channel {6.44, 7.84, 2.26} MeV (¹¹B/¹⁵N/¹⁹F) is NOT a common-scale integer-triple multiple (¹⁹F = 0.35 units, nearest int 0 ≠ nonzero channel; robust to ±5% b,g). Refutes the common-scalar-weight × integer Borromean-count form (scope-(a)); the μ̄-idempotent must be q-weighted per triple (the SDP per-block weight). No fit, no wire.",
   "data": {

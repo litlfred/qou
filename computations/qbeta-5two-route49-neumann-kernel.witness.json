@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 45,
+  "dps": 70,
   "source": "library/0307092v2/0307092v2.pdf -- Neumann, Extended Bloch group and the Cheeger-Chern-Simons class, Geometry & Topology 8 (2004) 413-474",
   "overturns": "Route 43's target ('show sum_sigma [y; eps, 0] is torsion in B-hat(C)') -- the element is not in ker nu, and the admissible flattenings give a non-torsion value.",
   "gates": [
@@ -75,8 +75,8 @@
       "claim": "for an admissible flattening the correction is pi^2 * k * eps, which is ZERO in C/pi^2 Z, so R is flattening-independent -- checked by shifting along the admissible direction and comparing mod pi^2. Its value is exactly -(2 pi/3) arg(y_1)",
       "R_at_zero_flattening": "(-2.15726777456656424535470801566 + 0.0j)",
       "minus_two_pi_over_3_arg_y1": "-2.15726777456656424535470801566",
-      "residual": "0.0",
-      "shift_along_admissible_mod_pi_sq": "3.51432093826e-46",
+      "residual": "3.62227163153e-71",
+      "shift_along_admissible_mod_pi_sq": "5.4334074473e-71",
       "pass": true
     },
     {

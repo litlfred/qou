@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T20:24:13.008164+00:00",
-  "commitSha": "ecce2267841c1c79251681c481d5c68ace1f4174",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:38:45.176751+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "heldout_tau_certifies_reading",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-state-integral-split-pin",
   "scriptFile": "qbeta_g3_5two_state_integral_split_pin.py",
-  "scriptHash": "642d279b2920",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "109c45fee1c9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_state_integral_split_pin.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_state_integral_split_pin.py"
   },
   "description": "Analytic 5_2 M-dictionary part 2a: the glyph-decoded (82) u=0 state integral matched against the certified Theorem-22 exact Z_52 solves the (c+, c-) E2-slot split (Theorem-11-invisible, deferred from part 1): a+ = 1/6, b+ = -4 — the printed (1/6)E2/(1/12)E2 split derived, held-out-tau certified.",
   "contentBlock": "conj:im-q-physical-role",
@@ -51,12 +59,12 @@
     },
     "solve": {
       "phase": "1",
-      "a_plus": "(0.1666666666666666666666667 + 4.98357613088073425008829e-41j)",
-      "b_plus": "(-4.0 - 4.939235719888917218367425e-39j)",
-      "heldout_rel_dev": "1.281503353e-40",
+      "a_plus": "(0.1666666666666666666666667 - 1.116709817622402692448083e-51j)",
+      "b_plus": "(-4.0 + 1.892243670798550781386114e-49j)",
+      "heldout_rel_dev": "1.135466841e-51",
       "snap_residuals": [
-        "6.072810763e-41",
-        "5.981170496e-39"
+        "1.137759788e-51",
+        "1.927911552e-49"
       ]
     },
     "exact_side": {
@@ -64,6 +72,6 @@
       "tau=(0.0 + 1.6j)": "(0.3440992374999592216584482 - 0.07637555246478000901857543j)",
       "tau=(0.0 + 0.8j)": "(0.7108068163966441448653924 + 0.2726721791195068943406888j)"
     },
-    "verdict": "SPLIT PINNED — the (82) u=0 state integral, glyph-decoded as -(e^(i pi/4)/2)(q/qt)^(1/8)(tau H0-(qt)H2+(q) - 2H1-(qt)H1+(q) + tau^-1 H2-(qt)H0+(q)) and matched against the independently certified Theorem-22 exact Z_52 (u->0 circle-average), SOLVES the Theorem-11-invisible c-slot split linearly: a+ = 1/6, b+ = -4 to 5.98e-39 (held-out tau rel dev 1.28e-40, phase sigma = 1) — i.e. c+ = (1/6)E2, c- = (1/12)E2 with E2 = 1 - 24*E2hat is now DERIVED, not print-trusted, completing the part-1 deferral. The tower layer is fully pinned and TIED to the #3951 deformed-block exact side through the state integral. NEXT (part 2b): the (94)-(95) M/S sandwiches vs the q->0 targets (96/97), then wall-crossing to deformed x for the derived phi_odd. No fit; no c_k wired; scope-(a)."
+    "verdict": "SPLIT PINNED — the (82) u=0 state integral, glyph-decoded as -(e^(i pi/4)/2)(q/qt)^(1/8)(tau H0-(qt)H2+(q) - 2H1-(qt)H1+(q) + tau^-1 H2-(qt)H0+(q)) and matched against the independently certified Theorem-22 exact Z_52 (u->0 circle-average), SOLVES the Theorem-11-invisible c-slot split linearly: a+ = 1/6, b+ = -4 to 1.93e-49 (held-out tau rel dev 1.14e-51, phase sigma = 1) — i.e. c+ = (1/6)E2, c- = (1/12)E2 with E2 = 1 - 24*E2hat is now DERIVED, not print-trusted, completing the part-1 deferral. The tower layer is fully pinned and TIED to the #3951 deformed-block exact side through the state integral. NEXT (part 2b): the (94)-(95) M/S sandwiches vs the q->0 targets (96/97), then wall-crossing to deformed x for the derived phi_odd. No fit; no c_k wired; scope-(a)."
   }
 }

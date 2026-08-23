@@ -13,7 +13,7 @@ construction.
 
 ## Downstream consumers
 
-Were the instance in hand, theorems that carry [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis could consume it directly, and the [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) would become unconditional for the QOU substrate. That is the intended payoff, not a present fact: the instance is conjectural, so those theorems still carry the hypothesis.
+Were the instance in hand, theorems that carry [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis could consume it directly, and the [motivic perpetual obstruction](#thm:motivic-perpetual-obstruction) would become unconditional for the QOU substrate. That is the intended payoff, not a present fact: the instance is conjectural, so those theorems still carry the hypothesis.
 
 What *is* unconditional is a narrower result on a different route:
 `lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`

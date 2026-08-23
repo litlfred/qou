@@ -67,7 +67,8 @@ def is_palindromic(poly):
 print("[2/5] Palindromy + value at q=1 + sign at q0 ...", flush=True)
 analysis = {}
 mp = __import__("mpmath")
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0f = mp.mpf(Q0)
 for m, poly in R.items():
     pal = is_palindromic(poly)

@@ -56,8 +56,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402 — puts substrate/ (witness_base) on path
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).parent
 
 M_E_MEV = mp.mpf("0.51099895069")

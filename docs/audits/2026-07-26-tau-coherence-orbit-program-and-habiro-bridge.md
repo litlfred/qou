@@ -2403,3 +2403,73 @@ discriminates between the places rather than reporting "vacuous" everywhere.
 | `v₂` (deg 2) | `Q₂₅` | 24 | no | 9 of 9 | none, twice over |
 
 No value changes. This closes the `v₂` question by measurement.
+
+---
+
+## Addenda 45–46 (2026-08-23) — the two leftovers, cleared
+
+Beans `qou-w4gn`, `qou-xx9f`. Probes
+[`gswz_epsm_field_variation_probe.py`](../../computations/probes/gswz_epsm_field_variation_probe.py)
+(8/8) and
+[`gswz_287_normalisation_underdetermined_probe.py`](../../computations/probes/gswz_287_normalisation_underdetermined_probe.py)
+(10/10). Scope-(a); nothing wired.
+
+### 45 — `8 ∈ Z/24` is **not** forced
+
+Asking directly whether `ε` varies across fields needs a Bloch element in
+each, and there is no canonical one — `K`'s came from GSWZ Example 4.3,
+which does not generalise for free. So the cheaper **gating** question:
+does the local data determining the class vary at all?
+
+Everything the class depended on in this arc entered through the `μ₂₄`
+discrete logs of the arguments at the degree-1 place — that is what fixed
+`[L:B]`, which `m`-th roots stay in `B`, and every class computed. Across
+the 46 catalogued exceptional-unit cubics:
+
+| signature `(dlog β, dlog 1−β)` | fields |
+|---|---|
+| `(6, 12)` | 18 — **`K`'s own** |
+| `(12, 6)` | 14 — `K`'s, with `β ↔ 1−β` |
+| `(18, 18)` | 14 — genuinely different |
+
+**Three signatures**, so the class is not forced by local structure and the
+expensive question is live rather than settled. A constant signature would
+have been the stronger result; it is not what the data shows. (All dlogs lie
+in `{0,6,12,18}`, as they must — a `Z₅` unit's Teichmüller part is in `μ₄`.)
+
+*Scope: measures the signature, not `ε`. Two fields sharing a signature could
+still differ through their Bloch elements. A gate, not a theorem.*
+
+### 46 — `qou-xx9f` is not resolvable from the printed source
+
+The queued step was "fit the `h¹` and `h³` coefficients, confirm on `x³`".
+**That test does not exist.** With `h = log(1+x)`, the normalisation
+`exp(A h + B h³)` expands as
+
+| | coefficient | |
+|---|---|---|
+| `x¹` | `A` | **B-free** |
+| `x²` | `A(A−1)/2` | **B-free** |
+| `x³` | `(A³ − 3A² + 2A + 6B)/6` | **linear in `B`**, slope 1 |
+
+`h³` first reaches `x³`. So `A` comes from `x¹`; `x²` is a genuine held-out
+prediction of `A` alone — **and it is the test the earlier narrowing already
+passed**, at ~6 nontrivial digits; and `x³` introduces `B` linearly, so any
+printed value is matchable exactly. Three coefficients, two parameters, one
+genuine test, already spent.
+
+**The control is what makes this a finding.** Under the one-parameter model
+`x³` *is* determined by `A`, so it is a genuine test there — and it is the
+test that **failed**, which is why the `h³` term was proposed. Adding the
+term to repair the failure **consumes the coefficient that detected it**.
+That is the over-fitting boundary, reached exactly here.
+
+**(288) cannot rescue it.** Its `x²⁰⁰` coefficient would be a decisive
+held-out target, but `Φ₁` at (282) is printed only to `h³`, so the quotient
+cannot be computed past roughly `x³` whatever machinery is applied. **The
+limit is the printed input, not the compute.**
+
+**Verdict:** the fibre identification is settled (Addendum 36 — the subscript
+is a typo for `f₁`); the normalisation is **under-determined by what GSWZ
+print**. Stopped rather than fitted, per the standing rule. The arXiv LaTeX
+source or the unprinted `Φ₁` coefficients would reopen it immediately.

@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T21:22:02.891619+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "computedAt": "2026-08-22T09:49:32.663084+00:00",
+  "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5108,
+  "durationMs": 5321,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
   "scriptHash": "dfcd6d57966b",
@@ -21,8 +21,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Extended canonical mass table via operator-valued Wenzl branching combiner (canonical pipeline) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
@@ -198,7 +199,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.575090872290275361250123949688228870620726745440000014188399",
+        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2460,7 +2461,7 @@
         "n_strands": 6,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.575090872290275361250123949688228870620726745440000014188399",
+        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
         "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
         "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",

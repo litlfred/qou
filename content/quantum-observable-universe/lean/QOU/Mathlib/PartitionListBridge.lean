@@ -16,6 +16,11 @@ bridge these two indices — e.g. to push the `RSKBridge`/regular-representation
 `∑_{Λ : Nat.Partition n} dim(Λ)² = n!` (axiom (i)) onto the `List ℕ`-model `dimHLF` the per-`n`
 instances use, and to range an abstract `∑_{Λ}` over the concrete sorted lists.
 
+**P5 landed 2026-08-23.**  Both axioms are now discharged at every `n` by
+`QOU.BraidKnot.PlancherelSnDataGeneral.plancherelSnDataGeneral`, which uses this file's sum
+transport for axiom (i) and `ContentSqSumBridge.contentSqSum_ofRowLens` for axiom (ii).  The
+paragraph above describes what the bridge is *for*; it is no longer a statement of open work.
+
 This file builds that bridge **sorry-free**, over core Mathlib only (no representation theory, no
 hook-length formula — those are the genuinely Mathlib-absent pieces of the program):
 

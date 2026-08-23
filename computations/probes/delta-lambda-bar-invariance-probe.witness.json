@@ -1,23 +1,23 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:18:36.057747+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-23T09:22:40.696616+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "min-norm LP solution satisfies target equation to mp 50-dps reduction precision",
-      "computed": "1.49703701052559559158283766196e-30",
+      "computed": "1.19052360625766808891334750002e-30",
       "expected": "0",
       "passed": true,
       "tolerance": 1e-25
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "delta-lambda-bar-invariance-probe",
   "scriptFile": "delta_lambda_bar_invariance_probe.py",
-  "scriptHash": "2e67342188c2",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "5185f21f25f0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta_lambda_bar_invariance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta_lambda_bar_invariance_probe.py"
   },
   "description": "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md. Imposes structural constraint Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per AGENTS.md §7b) on the deuteron Δ_λ system; reports the min-||ν||_2 LP solution from the 5-dim affine subspace. NOT a 7th-ansatz fit — bar-invariance is derivable from canonical framework primitives. Diagnostic only.",
   "parameters": {
@@ -40,7 +49,7 @@
     "n_self_conjugate": 1,
     "n_effective_unknowns": 6,
     "free_dimensions_after_constraint": 5,
-    "target_signed_str": "-4.3533672818701486568612322980311407684888589301407"
+    "target_signed_str": "-4.3533672759918128590394346744994095870361521974655"
   },
   "data": {
     "pair_structure": [
@@ -56,7 +65,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.092333586114245624000826221481021109105333674563622"
+        "c_sum_str": "0.17989082171256705119785324709783439920221654504321"
       },
       {
         "lambda": [
@@ -70,7 +79,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.18984888671074504193390426654541733814716916568783"
+        "c_sum_str": "0.25393778243222175278095596945947265929109273382731"
       },
       {
         "lambda": [
@@ -83,7 +92,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.067732369048613744895306396464546109861005650976628"
+        "c_sum_str": "0.077076490548220288917028521061477784018493381934138"
       },
       {
         "lambda": [
@@ -97,7 +106,7 @@
           1,
           1
         ],
-        "c_sum_str": "-0.0044248702296176329607092454789028201637030185252466"
+        "c_sum_str": "0.0"
       },
       {
         "lambda": [
@@ -109,7 +118,7 @@
           2,
           2
         ],
-        "c_sum_str": "0.057301222331069504621874317568805707093044318155819"
+        "c_sum_str": "0.064267149224762777930697606367396046640691692088196"
       },
       {
         "lambda": [
@@ -118,39 +127,57 @@
           1
         ],
         "lambda_T": null,
-        "c_sum_str": "-0.014433986615834845852373786899355146094639850203969"
+        "c_sum_str": "0.0"
       }
     ],
     "nu_solution": {
-      "pair::(6,)<->(1, 1, 1, 1, 1, 1)": "-7.63212525506269592381470838578",
-      "pair::(5, 1)<->(2, 1, 1, 1, 1)": "-15.6925615465406854196196570262",
-      "pair::(4, 2)<->(2, 2, 1, 1)": "-5.59863367335838587532374403519",
-      "pair::(4, 1, 1)<->(3, 1, 1, 1)": "0.365751675539324102913296607829",
-      "pair::(3, 3)<->(2, 2, 2)": "-4.73641417498724134365287944727",
-      "self::(3, 2, 1)": "1.19308691905072442989455243859"
+      "pair::(6,)<->(1, 1, 1, 1, 1, 1)": "-7.32471909626968807247375893303",
+      "pair::(5, 1)<->(2, 1, 1, 1, 1)": "-10.3397322138961136629770643876",
+      "pair::(4, 2)<->(2, 2, 1, 1)": "-3.13836824367876704639100303681",
+      "pair::(4, 1, 1)<->(3, 1, 1, 1)": "0.0",
+      "pair::(3, 3)<->(2, 2, 2)": "-2.61680285135163237607899315124",
+      "self::(3, 2, 1)": "0.0"
     },
     "delta_by_lambda": {
-      "[6]": "-7.63212525506269592381470838578",
-      "[1, 1, 1, 1, 1, 1]": "-7.63212525506269592381470838578",
-      "[5, 1]": "-15.6925615465406854196196570262",
-      "[2, 1, 1, 1, 1]": "-15.6925615465406854196196570262",
-      "[4, 2]": "-5.59863367335838587532374403519",
-      "[2, 2, 1, 1]": "-5.59863367335838587532374403519",
-      "[4, 1, 1]": "0.365751675539324102913296607829",
-      "[3, 1, 1, 1]": "0.365751675539324102913296607829",
-      "[3, 3]": "-4.73641417498724134365287944727",
-      "[2, 2, 2]": "-4.73641417498724134365287944727",
-      "[3, 2, 1]": "1.19308691905072442989455243859"
+      "[6]": "-7.32471909626968807247375893303",
+      "[1, 1, 1, 1, 1, 1]": "-7.32471909626968807247375893303",
+      "[5, 1]": "-10.3397322138961136629770643876",
+      "[2, 1, 1, 1, 1]": "-10.3397322138961136629770643876",
+      "[4, 2]": "-3.13836824367876704639100303681",
+      "[2, 2, 1, 1]": "-3.13836824367876704639100303681",
+      "[4, 1, 1]": "0.0",
+      "[3, 1, 1, 1]": "0.0",
+      "[3, 3]": "-2.61680285135163237607899315124",
+      "[2, 2, 2]": "-2.61680285135163237607899315124",
+      "[3, 2, 1]": "0.0"
     },
-    "L2_cost_str": "18.969485304851722998175159658773163709951063073899",
-    "max_abs_delta_str": "15.6925615465406854196196570262",
+    "L2_cost_str": "13.313849349084292770432466861453748838475581059707",
+    "max_abs_delta_str": "10.3397322138961136629770643876",
     "scale_comparison_summary": {
-      "bar_invariance_min_norm_max_abs": "15.6925615465",
+      "bar_invariance_min_norm_max_abs": "10.3397322139",
       "a_single_block_max_abs": "22.959",
       "b_padded_staircase_max_abs": "301.521",
       "c_content_monotonic_norm_2": "31.968",
       "d_isotypic_norm_2": "71.626",
       "diagnostic": "bar-invariance min-||·||_2 gives smaller |Δ_λ| than all 4 prior ansätze"
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "chi-deuteron-h6-at-q0-50dps.witness.json",
+        "sha256": "8def85c0c8ff02872a917db8f2585cc0dac68a1d24ef99b149f9cc10187b02bb",
+        "size_bytes": 4606,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:37.472970+00:00"
+      },
+      {
+        "path": "delta-lambda-empirical-tabulation.witness.json",
+        "sha256": "6293e276ecfe9b05cd10baef5d869adc9640d2ea5ce18a1fe5aaf153ed98d15d",
+        "size_bytes": 32120,
+        "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+        "computedAt": "2026-07-05T11:19:13.300674+00:00"
+      }
+    ]
   }
 }

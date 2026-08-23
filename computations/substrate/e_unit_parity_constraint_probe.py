@@ -59,7 +59,8 @@ import mpmath as mp
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR, E_CROSS_MP  # noqa: E402
 
 q = mp.mpf(Q_50_DIGIT_STR)

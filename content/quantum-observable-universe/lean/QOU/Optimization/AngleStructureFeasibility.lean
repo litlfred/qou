@@ -164,7 +164,8 @@ This converse to the necessity lemmas above is the analytic core of Rivin's
 combinatorial optimization and is **not proved here**: it is stated with an
 explicit `sorry` and a bibliographic citation, per the repository's Lean
 discipline (an honest "stated, not yet proved" marker — no axiom, no fake
-closure). -/
+closure). This requires massive infrastructure (Hall / max-flow–min-cut analytic core)
+that cannot be added as a simple class field, and is thus left as an explicit sorry. -/
 theorem exists_angleStructure_of_expansion [DecidableEq E] (star : V → Finset E)
     (pi : R) (hpi : 0 < pi)
     (hExp : ∀ W : Finset V, W.Nonempty → 2 * W.card < (W.biUnion star).card) :

@@ -76,8 +76,16 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # AME2020 total nuclear binding (MeV) — same anchors as PROBE 2.
 AME = {"D": mp.mpf("2.224566"), "4He": mp.mpf("28.295673"), "6Li": mp.mpf("31.994564")}

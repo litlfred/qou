@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:24:52.522792+00:00",
-  "commitSha": "ab6755ccab209badec982ae65086d53c442140fd",
+  "computedAt": "2026-08-23T09:39:07.019857+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "triality_monomial_relation_all_pairs",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "qbeta-g3-tetrahedron-index-exact",
   "scriptFile": "qbeta_g3_tetrahedron_index_exact.py",
-  "scriptHash": "d2404ef05c23",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fadadeb08702",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_tetrahedron_index_exact.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_tetrahedron_index_exact.py"
   },
   "description": "A_omega route 1 tranche 1: exact-integer DGG tetrahedron index I_Delta(m,e) as Z[[x]] series (x=q^(1/2)), exact triality certificate (monomial-prefactor relation decided as a series identity), cross-implementation validation vs an independent float evaluation, and the substrate evaluation q=e^(-t) (converges at the substrate). The m004 flux-sum assembly is the named pending input (literature blocked; not reconstructed from memory). Duplication with #3805 owner-authorized.",
   "contentBlock": "conj:im-q-physical-role",
@@ -218,13 +226,13 @@
         -1
       ]
     },
-    "cross_implementation_max_dev": "5.34553e-51",
+    "cross_implementation_max_dev": "4.52784e-71",
     "substrate": {
       "q_sub": "0.90091828395574149216",
       "I_delta_00": "0.192278982353070244954842",
       "stable_digits": 12
     },
     "pending_input": "m004 flux-sum gluing rule (DGG sec 4.3 / Garoufalidis arXiv:1208.1663 sec 4) — required for the 4_1 total index; NOT reconstructed from memory (anti-fabrication)",
-    "verdict": "Exact-integer DGG tetrahedron index established: ℤ[[x]] series for 8 (m,e) pairs; EXACT triality certificate (all battery pairs satisfy a ±x^k monomial relation); cross-implementation agreement with an independent float evaluation to 5.3e-51; substrate evaluation I_Δ(0,0)(e^−t) = 0.192278982353 [12d] — the index converges AT the substrate (q = e^−t ≈ 0.90). Honest boundary: the m004 flux-sum gluing rule (DGG §4.3 / Garoufalidis 1208.1663 §4) is the named pending input — literature hosts proxy-blocked, rule NOT reconstructed from memory; the 4₁ total index and any Stokes constant remain unclaimed. Scope-(a); no fit; no c_k wired."
+    "verdict": "Exact-integer DGG tetrahedron index established: ℤ[[x]] series for 8 (m,e) pairs; EXACT triality certificate (all battery pairs satisfy a ±x^k monomial relation); cross-implementation agreement with an independent float evaluation to 4.5e-71; substrate evaluation I_Δ(0,0)(e^−t) = 0.192278982353 [12d] — the index converges AT the substrate (q = e^−t ≈ 0.90). Honest boundary: the m004 flux-sum gluing rule (DGG §4.3 / Garoufalidis 1208.1663 §4) is the named pending input — literature hosts proxy-blocked, rule NOT reconstructed from memory; the 4₁ total index and any Stokes constant remain unclaimed. Scope-(a); no fit; no c_k wired."
   }
 }

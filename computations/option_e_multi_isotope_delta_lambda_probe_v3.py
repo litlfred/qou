@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def young_contents(partition):
@@ -104,7 +106,7 @@ def evaluate_rule_per_atom(atom_name, rows, rule_fn):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     repo_root = Path(__file__).resolve().parent.parent
 
     atom_data = {

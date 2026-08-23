@@ -5,10 +5,10 @@
     "m_H_from_W": 124.38967878640887,
     "m_H_from_Z": 125.71153545228563
   },
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "qm_channel_contribution_probe",
-  "computedAt": "2026-07-18T17:52:27.886954+00:00",
-  "description": "Tests whether augmenting the Higgs categorical mass formula (PR #1159) with a Q_m channel contribution (the bar-anti-symmetric companion of P_m) closes the ~0.5% residual. Tests three structural hypotheses (Pythagorean modulus, linear sum P+Q, geometric mean) at substrate η_0.",
+  "computedAt": "2026-08-23T09:40:06.337576+00:00",
+  "description": "Tests whether augmenting the Higgs categorical mass formula (PR #1159) with a Q_m channel contribution (the bar-anti-symmetric companion of P_m) closes the ~0.5% residual. Tests three structural hypotheses (Pythagorean modulus, linear sum P+Q, geometric mean) at substrate \u03b7_0.",
   "durationMs": 0,
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
@@ -16,26 +16,26 @@
     "H1_pythagorean_modulus": {
       "deviation_W_percent": 11.280752907087503,
       "deviation_Z_percent": 5.826262292515084,
-      "formula": "m_H = m_anchor · sqrt(P_4²+Q_4²) / sqrt(P_anchor²+Q_anchor²) · 6/5 · (1 - h^4·2G)",
+      "formula": "m_H = m_anchor \u00b7 sqrt(P_4\u00b2+Q_4\u00b2) / sqrt(P_anchor\u00b2+Q_anchor\u00b2) \u00b7 6/5 \u00b7 (1 - h^4\u00b72G)",
       "m_H_from_W": 139.21222188676646,
       "m_H_from_Z": 132.38865412793638
     },
     "H2_linear_sum_P_plus_Q": {
       "deviation_W_percent": 16.62790905901684,
       "deviation_Z_percent": 7.390651744720706,
-      "formula": "m_H = m_anchor · (P_4+Q_4) / (P_anchor+Q_anchor) · 6/5 · (1 - h^4·2G)",
+      "formula": "m_H = m_anchor \u00b7 (P_4+Q_4) / (P_anchor+Q_anchor) \u00b7 6/5 \u00b7 (1 - h^4\u00b72G)",
       "m_H_from_W": 145.90151423283007,
       "m_H_from_Z": 134.3457053326456
     },
     "H3_geometric_mean": {
       "deviation_W_percent": 7.687368158464021,
       "deviation_Z_percent": 3.8824418747293814,
-      "formula": "m_H = m_anchor · sqrt(P_4·(P_4+Q_4)) / sqrt(P_anchor·(P_anchor+Q_anchor)) · 6/5 · (1 - h^4·2G)",
+      "formula": "m_H = m_anchor \u00b7 sqrt(P_4\u00b7(P_4+Q_4)) / sqrt(P_anchor\u00b7(P_anchor+Q_anchor)) \u00b7 6/5 \u00b7 (1 - h^4\u00b72G)",
       "m_H_from_W": 134.7168975662385,
       "m_H_from_Z": 129.95693478528645
     }
   },
-  "implication": "If no Q_m augmentation closes the residual, the residual lives elsewhere — most plausibly the W/Z anchor asymmetry (Path A: substrate-derivation of v) or Yekutieli MI k=3 tessellation (Path B). See docs/audits/2026-05-24-higgs-residual-research-path.md.",
+  "implication": "If no Q_m augmentation closes the residual, the residual lives elsewhere \u2014 most plausibly the W/Z anchor asymmetry (Path A: substrate-derivation of v) or Yekutieli MI k=3 tessellation (Path B). See docs/audits/2026-05-24-higgs-residual-research-path.md.",
   "p_q_values": {
     "m=1": {
       "P_m": 0.521853104266261,
@@ -58,14 +58,16 @@
       "Q_m": 0.704595497754079
     }
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "qm_channel_contribution_probe.py",
-  "scriptHash": "1b45165308c8",
+  "scriptHash": "8870146d108a",
   "status": "exploratory",
   "substrate": {
-    "bracket_2_q": "2.0108968667071222997524919780918628158892407484841",
-    "eta_0": "0.104340720319519512315906279973072397053744280829",
-    "h_0": "0.20906029879563931543084621312967494385975749526306",
+    "bracket_2_q": "2.010896866707122299752491978091862815889240748484136921744785303658322",
+    "eta_0": "0.1043407203195195123159062799730723970537442808290034603116526135269631",
+    "h_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "tags": [
@@ -74,7 +76,5 @@
     "pythagorean-augmentation",
     "structural-hypothesis-test"
   ],
-  "verdict": "NONE of H1/H2/H3 improves on the P-only baseline; Path C (Q_m closes residual) FAILS",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "verdict": "NONE of H1/H2/H3 improves on the P-only baseline; Path C (Q_m closes residual) FAILS"
 }

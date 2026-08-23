@@ -52,8 +52,9 @@ from mpmath import mp, mpf, acos  # noqa: E402
 from qou_substrate.constants import (  # noqa: E402
     Q_50_DIGIT_STR, HA, Q_INV)
 from _li_2_q_util import per_knot_density_borromean  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # Q_50_DIGIT_STR, not Q: `Q` is the f64 solve, and mpf(str(Q)) keeps only its
 # 17 digits while looking exact at every later inspection (NO FLOAT64).

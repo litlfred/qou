@@ -37,6 +37,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # atom knots; empirical first-order chirality coefficient (coeff of h in a_K)
 ISO = [("D", 1, 1, 1), ("3H", 1, 2, 0), ("3He", 2, 1, 0), ("4He", 2, 2, 0)]
@@ -96,7 +97,7 @@ def kappa_avg(Z: int, N: int) -> float:
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     kappa_pn = kappa_avg(1, 1)   # the elementary 2-nucleon pn bond (deuteron)
 

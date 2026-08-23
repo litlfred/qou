@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-14T16:19:56.768472+00:00",
-  "commitSha": "f1a4d4044fecaf364e0fbb3e740f4e1d5b90a979",
+  "computedAt": "2026-08-23T17:33:10.476373+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 366,
+  "durationMs": 5047,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
   "scriptHash": "6050395da819",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptCommitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -112,7 +112,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/aK_via_lp_dual_full.py"
+    ],
+    "reproduce": "python3 -u computations/aK_via_lp_dual_full.py"
   },
   "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
@@ -3417,11 +3426,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   },

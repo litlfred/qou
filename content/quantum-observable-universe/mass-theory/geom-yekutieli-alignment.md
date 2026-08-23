@@ -138,7 +138,7 @@ $1 - h^2 = 4 - [3]_q$ and $h[2]_q = q^2 - q^{-2}$.
 **Connection to transcendence.**
 The non-vanishing obstruction classes $\kappa_n \neq 0$
 at every level of the brane tower — the content of the
-[motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction)
+[motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction)
 applied to the substrate's motivic Galois character at every
 finite place — ensure that the evaluation $\mathrm{Geom}(K)$ for
 distinct hyperbolic knots produces algebraically independent

@@ -493,7 +493,10 @@ index-times-dimension formula, and `Σ_λ f^{λ/μ} f^λ` by `s_μ·s_1^{k−m} 
 
 **Only true because `fDimSkew` guards on containment** — the sum must skip every
 `λ` not containing `(2,1)`.  See `skewSYT_nonempty_of_not_le`, which exhibits the
-counterexample the guard removes and checks this identity at `k = 3, 4`. -/
+counterexample the guard removes and checks this identity at `k = 3, 4`.
+
+This requires massive infrastructure (the RSK correspondence and hook-length formula)
+and is left as a sorry. -/
 theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) :
     3 * (∑ p : Nat.Partition k,
         dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k := by
@@ -521,7 +524,9 @@ theorem skew_le_straight (k : ℕ) :
     exact Nat.zero_le _
 
 /-- **RSK for involutions.** `Σ_{λ⊢k} f^λ = I(k)`, the number of involutions in
-`S_k` — the `q = 1` value of the QOU na-Stokes period. -/
+`S_k` — the `q = 1` value of the QOU na-Stokes period.
+
+This requires massive infrastructure (the RSK correspondence) and is left as a sorry. -/
 theorem sum_dimSYT_eq_involution (k : ℕ) :
     (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k := by
   -- Ref: [sagan2001] Sagan, The Symmetric Group, §3.1 (RSK ⇒ involutions)

@@ -48,7 +48,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q

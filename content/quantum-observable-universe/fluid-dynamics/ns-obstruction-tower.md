@@ -44,7 +44,7 @@ $$
   \bigr),
 $$
 
-where $\delta_n$ applies the explicit jet correction at level $n$. Due to the perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3, rigidly strengthened by the [motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction) evaluating the substrate's motivic Galois character place-by-place), $\kappa_0$ and $\delta_n$ strictly occupy complementary subgroups whenever $\kappa_0$ avoids torsion. Consequently, $\kappa_n \neq 0$ unconditionally for all $n$.
+where $\delta_n$ applies the explicit jet correction at level $n$. Due to the perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3, rigidly strengthened by the [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction) evaluating the substrate's motivic Galois character place-by-place), $\kappa_0$ and $\delta_n$ strictly occupy complementary subgroups whenever $\kappa_0$ avoids torsion. Consequently, $\kappa_n \neq 0$ unconditionally for all $n$.
 
 **(b) Restriction to the collision locus.**
 

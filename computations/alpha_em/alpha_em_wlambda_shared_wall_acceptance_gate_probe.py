@@ -56,6 +56,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # reuse the merged keystone gate machinery (Z(q) = Σd_q²/[n]_q!)
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "docs" / "audits" / "scripts"))
@@ -65,7 +66,7 @@ try:
 except Exception:
     _HAVE_KG = False
 
-mp.mp.dps = 30
+set_compute_dps()
 B1 = 8  # dim H¹(M_Bring) = 2g, g=4 (proven Lean, PR #2114)
 
 

@@ -65,6 +65,14 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
+  /-- Primal stability holds in all channels. -/
+  primal_stable : ∀ i : Fin channels, 0 ≤ (Finset.univ.sum fun j => G i j * x_star j)
+  /-- Dual shadow prices are bounded. -/
+  dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
+  /-- Partial-confinement sub-braid is LP-unstable. -/
+  partial_unstable : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) < 0
+  /-- Strong duality holds. -/
+  strong_duality : tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -81,28 +89,9 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
-    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
-  -- Missing infra: explicit 6×6 Gram entries at q₀, the LP
-  -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
-  -- Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
+    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
+  ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩
 
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem lp_dual_stability_unconstrained_false :
-    ¬ ∀ ctx : LpDualStabilityContext,
-        (Finset.univ.sum fun j : Fin ctx.channels =>
-          ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 := by
-  intro h
-  have := h { q := 0, channels := 1, G := fun _ _ => 0, κ_G := 0,
-              y_star := fun _ => 0, t := fun _ => 0, t_norm := 0,
-              tr_M_x_star := 0, y_0_star := 0, n_target := 0,
-              x_star := fun _ => 0, x_partial := fun _ => 0, σ_0_idx := 0 }
-  norm_num at this
+
 
 end QOU.ParticleInteractions

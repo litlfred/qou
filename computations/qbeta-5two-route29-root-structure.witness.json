@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route29_root_structure",
   "bean": "qou-trns",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoRootStructure.lean",
   "gates": [
     {
@@ -9,23 +9,23 @@
       "claim": "THE GATE THAT MATTERS: the deformed curve x y^3 - (x^2+1) y^2 + (x^2+x+1) y - x equals x * (y^3 - 2c y^2 + (2c+1) y - 1) with c = Re x, for every x on the unit circle and every y. Without this, every theorem downstream would be a correct statement about the WRONG polynomial. Lean: `curve_eq_unitCubic`, which rests on 2 Re(x) x = x^2 + 1, i.e. x conj(x) = 1",
       "n_x": 701,
       "n_y_per_x": 7,
-      "worst_residual": "7.404014405e-40",
+      "worst_residual": "5.840737506e-70",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "p(0) = -1 and p(1) = +1 IDENTICALLY IN c -- the 2c terms cancel at Y = 1, which is why the root in (0,1) costs nothing but IVT. Checked over c in [-2,2], wider than the arc's [-1,1]. Lean: `unitCubic_zero`, `unitCubic_one`, `exists_root_mem_Ioo`",
       "worst_p0_residual": "0.0",
-      "worst_p1_residual": "4.591774808e-41",
-      "worst_root_residual": "1.377532442e-40",
+      "worst_p1_residual": "3.622271632e-71",
+      "worst_root_residual": "1.739561732e-60",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "the three relations the proof runs on: 2c t(t-1) = t^3+t-1 (`two_c_rel`), beta * t(1-t) = W with beta = t-2c and W = t^2+t-1 (`beta_rel` -- this is why beta and W share a sign on (0,1)), and t * gamma = 1 with gamma = t^2-2ct+2c+1 (`gamma_rel`)",
-      "worst_two_c_rel": "1.205340887e-40",
-      "worst_beta_rel": "1.147943702e-40",
-      "worst_gamma_rel": "1.262738072e-40",
+      "worst_two_c_rel": "1.739561732e-60",
+      "worst_beta_rel": "1.739561732e-60",
+      "worst_gamma_rel": "1.739561732e-60",
       "pass": true
     },
     {

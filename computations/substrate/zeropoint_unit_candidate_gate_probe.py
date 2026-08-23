@@ -32,7 +32,8 @@ import mpmath as mp
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # 50-dps canonical exports (Copilot review: the f64 Q / E_CROSS exports
 # truncate to ~16 digits; use the high-precision names).

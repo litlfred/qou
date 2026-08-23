@@ -1,11 +1,11 @@
 ---
 # qou-wn6d
 title: 'canonical-tr-m-via-chi-cache needs per-anchor variants: one cache cannot serve a muon L1 cross-check and proton consumers'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T10:27:39Z
-updated_at: 2026-08-22T10:34:03Z
+updated_at: 2026-08-22T19:08:55Z
 ---
 
 ## Scoped by measurement — and the attribution splits in two

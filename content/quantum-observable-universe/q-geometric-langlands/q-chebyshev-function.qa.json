@@ -997,8 +997,23 @@
         "reviewed_at": "2026-07-07T14:26:56.162027Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-chebyshev-function.lean:1 — Lean file exists",
+        "evidence": "q-chebyshev-function.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md."
+      },
+      {
+        "field_hash": {
+          "md": "d9e21ea73671",
+          "ts": "ce999a077cdd",
+          "lean": "e1000fe7e5cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'q-chebyshev-function.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1402,7 +1417,7 @@
         "reviewed_at": "2026-07-07T14:26:56.162027Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-chebyshev-function.lean:1 — content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "q-chebyshev-function.lean:1 \u2014 content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.lean fails compilation, indicating a reproducibility failure."
       },
       {

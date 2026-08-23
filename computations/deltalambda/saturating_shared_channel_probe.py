@@ -213,7 +213,16 @@ def main() -> int:
 
     Vc = miss[2] / Sc(2)
     c_pred = {k: Vc * Sc(k) for k in LADDER}
-    c_err = {k: float(c_pred[k] / miss[k] - 1) if miss[k] != 0 else 0.0
+    # Sentinel is `inf`, not `0.0`.  A zero here would mean "predicted the
+    # deficit exactly" on a rung where the deficit is missing, and the two
+    # checks below read it that way: `abs(c_err[3]) < 0.10` would PASS and
+    # `abs(c_err[4]) > 0.50` would report the 19F over-prediction as absent.
+    # `inf` fails both in the direction that says "no measurement", and still
+    # formats in the report lines.  (Same defect class as the mass-table GAP
+    # rows, bean qou-rjyt; the branch is currently dead -- every `miss[k]` is a
+    # measured nonzero deficit -- so this removes a latent trap, not a live
+    # wrong number.)
+    c_err = {k: float(c_pred[k] / miss[k] - 1) if miss[k] != 0 else float("inf")
              for k in (2, 3, 4)}
     peak_at_Alight = max(range(1, 6), key=lambda k: Sc(k)) == A_LIGHT
     print("\n[3] (c) RESONANCE at k=A_light  V*(k-1)(2*A_light-1-k)  "

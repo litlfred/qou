@@ -33,7 +33,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePath
 from typing import Any, Mapping, Optional, Union
 
 
@@ -806,7 +806,54 @@ def _version_tuple(v: str) -> tuple:
     return tuple(out)
 
 
-def _check_environment_regression(witness: dict, existing, name: str) -> None:
+def _environment_delta(old, new) -> dict:
+    """Compare two `environment` blocks. Returns the four-way delta.
+
+    Split out of `_check_environment_regression` so `save()` can ask the
+    same question on the *preserve* path, where no write happens and the
+    guard therefore never used to run at all.
+
+    `weaker` is deliberately dominant: a block that both drops one library
+    and adds another is treated as a regression, not a repair. Losing a
+    recorded library is provenance damage whatever else came with it.
+    """
+    if not isinstance(old, dict) or not isinstance(new, dict):
+        return {"stripped": [], "downgraded": [], "added": [], "upgraded": []}
+    stripped = [k for k in old if k not in new]
+    downgraded = [
+        f"{k} {old[k]} -> {new[k]}"
+        for k in old
+        if k in new and old[k] != new[k]
+        and _version_tuple(new[k]) < _version_tuple(old[k])
+    ]
+    added = [k for k in new if k not in old]
+    upgraded = [
+        f"{k} {old[k]} -> {new[k]}"
+        for k in old
+        if k in new and old[k] != new[k]
+        and _version_tuple(new[k]) > _version_tuple(old[k])
+    ]
+    return {"stripped": stripped, "downgraded": downgraded,
+            "added": added, "upgraded": upgraded}
+
+
+def _environment_is_repair(old, new) -> bool:
+    """True iff `new` is strictly STRONGER provenance than `old`.
+
+    Strictly stronger = nothing dropped, nothing downgraded, and at least
+    one library added or upgraded. That monotonicity is what makes it safe
+    to write on the otherwise-preserve path: only upward moves write, so
+    two containers alternating cannot ping-pong the file (the weaker one
+    never writes), and a repair write is idempotent once applied.
+    """
+    d = _environment_delta(old, new)
+    if d["stripped"] or d["downgraded"]:
+        return False
+    return bool(d["added"] or d["upgraded"])
+
+
+def _check_environment_regression(witness: dict, existing, name: str,
+                                  preserved: bool = False) -> None:
     """Warn when a re-run RECORDS LESS than the witness already on disk.
 
     The `environment` block is provenance: it says which libraries produced
@@ -840,13 +887,8 @@ def _check_environment_regression(witness: dict, existing, name: str) -> None:
     if not isinstance(old, dict) or not isinstance(new, dict):
         return
 
-    stripped = [k for k in old if k not in new]
-    downgraded = [
-        f"{k} {old[k]} -> {new[k]}"
-        for k in old
-        if k in new and old[k] != new[k]
-        and _version_tuple(new[k]) < _version_tuple(old[k])
-    ]
+    delta = _environment_delta(old, new)
+    stripped, downgraded = delta["stripped"], delta["downgraded"]
     if not stripped and not downgraded:
         return
 
@@ -855,12 +897,23 @@ def _check_environment_regression(witness: dict, existing, name: str) -> None:
         bits.append(f"dropped {', '.join(sorted(stripped))}")
     if downgraded:
         bits.append(f"downgraded {'; '.join(sorted(downgraded))}")
-    msg = (f"{name}: the environment block records LESS than the witness on "
-           f"disk — {'; '.join(bits)}. If this container is simply missing a "
-           f"library, install it and re-run rather than committing the "
-           f"weaker record; the numbers can be identical while the provenance "
-           f"silently degrades. If the producer genuinely stopped using it, "
-           f"say so in the commit.")
+
+    if preserved:
+        # Nothing was written: the payload matched, so the STRONGER on-disk
+        # block was kept. Saying "rather than committing the weaker record"
+        # here would describe a write that did not happen.
+        msg = (f"{name}: this container would record LESS than the witness on "
+               f"disk — {'; '.join(bits)}. The file was NOT modified and its "
+               f"stronger environment block was kept. Nothing to commit; but "
+               f"any OTHER witness you regenerate here will carry the weaker "
+               f"record, so install the missing libraries before a batch run.")
+    else:
+        msg = (f"{name}: the environment block records LESS than the witness on "
+               f"disk — {'; '.join(bits)}. If this container is simply missing a "
+               f"library, install it and re-run rather than committing the "
+               f"weaker record; the numbers can be identical while the provenance "
+               f"silently degrades. If the producer genuinely stopped using it, "
+               f"say so in the commit.")
     if mode in ("warn", "warning", ""):
         print(f"⚠ environment: {msg}", file=sys.stderr)
     else:
@@ -1689,15 +1742,46 @@ class WitnessBuilder:
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops
         # when only commitSha/computedAt/durationMs would change.
+        #
+        # `environment` is one of those masked fields, which used to make
+        # this branch swallow provenance in BOTH directions (bean qou-dc0n):
+        #
+        #   * a degraded block already on disk could not be REPAIRED. Once
+        #     written, re-running with the missing libraries installed took
+        #     this branch (the payload matches), so the fresh, complete block
+        #     was discarded and the weak one kept. Only deleting the witness
+        #     and re-running restored it.
+        #   * and the guard below never ran, because this returns above it.
+        #     So the degraded record went SILENT at exactly the moment it was
+        #     wrong — while `_check_environment_regression` was telling the
+        #     agent to "install it and re-run", which did nothing.
+        #
+        # So ask the environment question here too. Only a strictly STRONGER
+        # block writes; a weaker one still preserves (never degrade a file we
+        # were not otherwise rewriting) but now says so.
         if isinstance(existing, dict) and _witnesses_substantively_equal(
                 existing, witness):
-            # Re-print the assertion summary for the validator runner
-            # without re-writing the file.
-            print(f"✓ Witness: {out_path.name}  "
-                  f"({len(self.assertions)} assertions, "
-                  f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
-                  f"[unchanged — kept on-disk commitSha for staleness]")
-            return out_path
+            _env_repair = _environment_is_repair(
+                existing.get("environment"), witness.get("environment"))
+            if not _env_repair:
+                # Weaker or lateral. Keep the file; warn only if weaker.
+                _check_environment_regression(
+                    witness, existing, out_path.name, preserved=True)
+                # Re-print the assertion summary for the validator runner
+                # without re-writing the file.
+                print(f"✓ Witness: {out_path.name}  "
+                      f"({len(self.assertions)} assertions, "
+                      f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
+                      f"[unchanged — kept on-disk commitSha for staleness]")
+                return out_path
+            # Strictly stronger: fall through and write, so the recovered
+            # provenance lands. The numbers are unchanged by construction —
+            # this branch is only reachable when the payload already matched.
+            print(f"↑ environment: {out_path.name}: recording a STRONGER "
+                  f"environment block than the copy on disk; rewriting "
+                  f"provenance only (payload unchanged).", file=sys.stderr)
+
+        _check_producer_takeover(existing, witness, out_path)
 
         _check_raw_float64(witness, out_path.name)
         _check_nonfinite(witness, out_path.name)
@@ -1761,6 +1845,109 @@ class WitnessBuilder:
 # Sync note: mirrored in `qou-mass/src/qou_mass/_internal/witness_base.py`
 # (PyPI bundle copy). The cross-package sync is asserted by the
 # `test_ephemeral_mask_sync` test in `tools/qou-substrate/tests/`.
+#: Set to a non-empty value to allow a producer takeover that would otherwise
+#: be refused. This is the deliberate-ownership-transfer escape hatch — use it
+#: when a witness is genuinely moving to a new producer AND the field loss is
+#: intended, and say so in the commit.
+_TAKEOVER_OVERRIDE_ENV = "QOU_WITNESS_ALLOW_PRODUCER_TAKEOVER"
+
+
+def _top_level_data_keys(w: object) -> set:
+    """Top-level keys plus `data.*` keys — the shape a consumer reads.
+
+    Nested payload keys are deliberately NOT walked: per-partition tables and
+    result lists legitimately change shape run to run, and comparing them would
+    make the guard fire on ordinary recomputation.
+    """
+    if not isinstance(w, dict):
+        return set()
+    keys = {k for k in w if k not in _EPHEMERAL_META_FIELDS}
+    data = w.get("data")
+    if isinstance(data, dict):
+        keys |= {f"data.{k}" for k in data}
+    return keys
+
+
+def _check_producer_takeover(existing: object, witness: dict,
+                             out_path: "Path") -> None:
+    """Refuse to let a DIFFERENT producer silently overwrite a poorer witness.
+
+    The failure this exists for (bean `qou-okl8`): two producers emitted the
+    same witness name with different schemas —
+    `per_irrep_pole_atom.py` writes `f"per-irrep-pole-{atom}-h{n}"`, which for
+    the deuteron is exactly the literal `per_irrep_pole_deuteron_h6.py` writes.
+    Whichever ran last won. Running the atom-specific one over the committed
+    atom-produced witness deleted `cemetery_class_signed_power_projection`,
+    `net_signed_power`, `is_pure_power_in_cemetery` and the per-`gen_idx`
+    breakdown — 230 deletions against 39 insertions — with no warning of any
+    kind. It was caught by eye in a diff; nothing in the pipeline objected.
+
+    **Why this keys on OWNERSHIP CHANGE and not on field loss.** The obvious
+    guard is "refuse to shrink a witness", and it is the wrong one: ordinary
+    schema evolution drops fields all the time, so a shrink-guard would fire
+    constantly on legitimate work and be silenced. Ownership change is the
+    actual signal — `scriptFile` is already recorded on every witness, so the
+    comparison is free and near-zero-false-positive. Both conditions must hold:
+
+      * a *different* `scriptFile` is writing this name, AND
+      * the incoming payload *lacks* keys the on-disk one has.
+
+    A different producer writing an equal-or-richer witness is a legitimate
+    consolidation and passes with a note. The same producer dropping a field is
+    schema evolution and is not this function's business.
+
+    Scope, measured rather than assumed: a scan of every `WitnessBuilder(...)`
+    name in `computations/` found **zero** literal-vs-literal collisions and
+    exactly **two** template-vs-literal ones, both this same
+    generalised-supersedes-specific shape (`per-irrep-pole-deuteron-h6` and
+    `per-irrep-pole-proton-h3`). So this guard is a backstop for a small,
+    bounded family — not a widespread class — and it is written to stay quiet.
+
+    Raises RuntimeError unless `QOU_WITNESS_ALLOW_PRODUCER_TAKEOVER` is set.
+    """
+    if not isinstance(existing, dict):
+        return
+    old_script = existing.get("scriptFile")
+    new_script = witness.get("scriptFile")
+    if not isinstance(old_script, str) or not isinstance(new_script, str):
+        return
+
+    # Compare BASENAMES. `save()` writes `self._script_path.name`, but 32
+    # committed witnesses carry a path-qualified `scriptFile`
+    # (`computations/foo.py`, `markov/bar.py`) from older producers — and 29 of
+    # those resolve to a file that still exists. Comparing the raw strings
+    # would read every one of them as a producer change on its next run, which
+    # is how a guard like this earns a reputation for crying wolf and gets
+    # switched off. Measured before the first commit, not after a bug report.
+    if PurePath(old_script).name == PurePath(new_script).name:
+        return
+
+    lost = sorted(_top_level_data_keys(existing) - _top_level_data_keys(witness))
+    if not lost:
+        print(f"  note: {out_path.name} changed producer "
+              f"{old_script} -> {new_script}; no fields lost.")
+        return
+
+    if os.environ.get(_TAKEOVER_OVERRIDE_ENV):
+        print(f"  ⚠ {out_path.name}: producer takeover "
+              f"{old_script} -> {new_script} DROPS {len(lost)} field(s): "
+              f"{', '.join(lost)} — allowed by "
+              f"{_TAKEOVER_OVERRIDE_ENV}.")
+        return
+
+    raise RuntimeError(
+        f"REFUSING to overwrite {out_path.name}: it was written by "
+        f"{old_script!r}, this run is {new_script!r}, and the new payload "
+        f"drops {len(lost)} field(s) the committed one carries: "
+        f"{', '.join(lost)}.\n"
+        f"Two producers are writing the same witness name with different "
+        f"schemas (bean qou-okl8). Either run the owning producer "
+        f"({old_script}), or give this one a distinct witness name. If this "
+        f"IS a deliberate ownership transfer and the field loss is intended, "
+        f"re-run with {_TAKEOVER_OVERRIDE_ENV}=1 and say so in the commit."
+    )
+
+
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
     "durationSeconds", "duration_sec",

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-22T19:39:22Z
+updated_at: 2026-08-23T08:36:54Z
 ---
 
 ## Context
@@ -110,3 +110,128 @@ content-free axiom su3_sym2_irreducible and restate octonion_3_passes_sym2_gate
 (6=6∧0=0) to a real dim claim tied to sym2_dim_3. Ref: [fulton-harris1991] §11;
 FS indicator (-1)^{2j}. (Both decls are advisory in the vacuity ledger; the
 file docstring already documents the vacuity honestly.)
+
+
+
+## ═══ TIERED WORKPLAN (2026-08-23) ═══
+
+The 7 open items, ordered by tractability. (Item 4 already discharged, PR #4727.)
+
+**T1 — Lean coverage for the 3 backing-free props [item 2, tractable-first].**
+  prop:meson-octet-decomposition, prop:borromean-decuplet, prop:schur-weyl-eightfold.
+  ASSESS each: if the claim is dimension-count arithmetic (like sym2_dim_3:
+  3·4/2=6), it is a real decidable lemma — author it. If it needs genuine SU(3)
+  rep decomposition (Clebsch-Gordan 3⊗3̄=8⊕1, 3⊗3⊗3=10⊕8⊕8⊕1), that part is a
+  Mathlib gap → state the dimension shadow + bean the rep-level claim. Do NOT
+  fake a decomposition proof.
+
+**T2 — Sym2Gate SU(3)/Frobenius-Schur [item 3, hard Mathlib gap].**
+  su3_sym2_irreducible : True + octonion_3_passes (6=6∧0=0). Needs SU(3)
+  fundamental + FS-indicator (-1)^{2j} / complex-type infra, thin in Mathlib.
+  Options: (a) build minimal SU(3)+FS infra (large); (b) if unused downstream,
+  remove the content-free axiom + restate octonion_3_passes to a real dim claim
+  tied to sym2_dim_3. Ref [fulton-harris1991] §11. Sub-bean candidate.
+
+**T3 — def:octonion-algebra [item 5, definition].**
+  §5 uses 𝕆 and G_2=Aut(𝕆) with no content block. Either author the definition
+  (a genuine algebraic structure — Mathlib has no octonions; sizeable) or keep
+  explicit literature citation. Lower priority; decide author-vs-cite.
+
+**T4 — QA sidecars [item 1, pipeline-gated].**
+  11 empty-criteria .qa.json removed ⇒ chapter has no sidecar coverage. Needs
+  qa-sweep via folio-assistant pipeline (scripts/setup-folio-assistant.sh) —
+  run when the pipeline is available; also the same defect in
+  appendix-standard-model/strand-twist-datum.qa.json + 6 section-title-audit
+  sidecars across 5 papers.
+
+**Research-gated [items 6, 7 — NOT session-closeable].**
+  §1/§5/§6 .ts TODOs (a2-root-system-proof, hexagonal-weight-lattice,
+  color-tube-coords-intro, thurston-relaxation); spin-flavour-colour selection
+  rule; Gell-Mann-Okubo (asserted not derived; ≈6% vs ≈3.3% cross-check). These
+  are open physics/math, not formalization bookkeeping — leave beaned.
+
+
+
+## PROGRESS 2026-08-23 — T1 partially closed (decuplet wired; schur-weyl already backed)
+
+Corpus-grep first (per discipline) found item 2 is PARTIALLY STALE:
+- prop:schur-weyl-eightfold ALREADY has a Lean ref (a sibling landed it):
+  qou:QOU.Eightfold.RowCapObstruction.weyl_dim_alt_eq_zero_iff — backs the
+  obstruction half (alternating channel (1³)=0 iff N<3; decuplet forces N=3;
+  27=10+2·8+1). So item-2's 'schur-weyl-eightfold ref removed' is no longer true.
+- RowCapObstruction.lean ALSO already proves the decuplet DIMENSION shadow
+  (eightfold_channels_at_three: weylDimSym 3 = 10 ∧ weylDimMixed 3 = 8 ∧
+  weylDimAlt 3 = 1 ∧ 3³ = 10+2·8+1, sorry-free via decide).
+
+DONE this session: wired prop:borromean-decuplet → RowCapObstruction.eightfold_channels_at_three (no new Lean — reused the existing sorry-free decl per anti-duplication). Backs the block's stated dimension C(5,3)=10; the topological realisation stays def:borromean-baryon + weight table, and quantum Schur-Weyl duality itself stays open (qou-8pl3).
+
+STILL OPEN in item 2: prop:meson-octet-decomposition — its dimension shadow is 3⊗3̄ = 8⊕1 (9 = 8+1), a DIFFERENT decomposition than V^⊗3 (RowCapObstruction is baryon V^⊗3, not meson qq̄). Needs either a small new 9=8+1 lemma or a note that the octet dim matches weylDimMixed. Deferred.
+Remaining tiers T2 (Sym2Gate SU(3)/FS), T3 (octonion def), T4 (QA sidecars) unchanged.
+
+
+
+## PROGRESS 2026-08-23 (2) — T1 CLOSED (all 3 item-2 props now Lean-backed)
+
+meson-octet: authored content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.lean
+(QOU.Eightfold.MesonOctet) with the genuine dimension shadow — NOT a trivial 9=9:
+- fundAntifundDim N = N*N (dim V⊗V*); adjointDim N = N*N−1 (adjoint/octet dim).
+- meson_nonet_dim (N≥1): N² = (N²−1)+1 (V⊗V* = adjoint ⊕ singlet at dim level).
+- meson_octet_at_three: fundAntifundDim 3 = 9 ∧ adjointDim 3 = 8 ∧ 9 = 8+1.
+Wired prop:meson-octet-decomposition → MesonOctet.meson_octet_at_three.
+lean-direct exit 0; #print axioms [propext, Quot.sound], no sorryAx; vacuity audit 0 defects.
+
+item 2 status: ALL THREE props now backed —
+- prop:schur-weyl-eightfold: RowCapObstruction.weyl_dim_alt_eq_zero_iff (already, sibling).
+- prop:borromean-decuplet: RowCapObstruction.eightfold_channels_at_three (this arc, PR #5508).
+- prop:meson-octet-decomposition: MesonOctet.meson_octet_at_three (this arc).
+All are DIMENSION shadows; the rep-level SU(3) Clebsch-Gordan + weight assignments
+remain the genuine SU(3) content (Mathlib gap), unchanged. T1 done.
+
+Remaining tiers: T2 Sym2Gate SU(3)/FS (hard Mathlib gap), T3 def:octonion-algebra,
+T4 QA sidecars (folio-assistant now set up this session ⇒ item 1 unblocked, can run
+qa-sweep next), research-gated items 6,7.
+
+
+
+## PROGRESS 2026-08-23 (3) — T2 Sym2Gate cleanup DONE (option b), item 3 closed
+
+Removed the content-free axiom su3_sym2_irreducible : True (unused downstream —
+only referenced in comments; color-su3-from-g2.ts refs the REAL sym2_dim_3, not
+the stub). Restated the two gate applications as honest dimension shadows:
+- corpus_T1_fails_sym2_gate : 1+5=6 ∧ 1≥1 (singlet count 1 ≥ fail-threshold ⇒ fails).
+- octonion_3_passes_sym2_gate : 3*(3+1)/2=6 ∧ 0<1 (Sym² dim 6, singlet count 0 < threshold ⇒ passes).
+Both norm_num, no sorryAx; audit 0 defects on the file (was 2 advisory: trivial-true + provable-axiom); check-ledger green. Updated the module docstring + color-su3-from-g2.ts comment.
+
+The SU(3)-irreducibility that makes the octonion singlet count 0 (the actual rep-theoretic core) stays the Mathlib gap — no SU(3) type in Mathlib. That is item-3's genuine remainder (call it T2-hard); NOT stubbed with a vacuous axiom anymore. The real gate-decision content lives in Sym2GateParity (SU(2) parity criterion, sorry-free).
+
+item 3 (Sym2Gate vacuity) is now CLOSED at the honest level: no vacuous decls remain; the residual SU(3) rep infra is a documented Mathlib gap.
+
+
+
+## PROGRESS 2026-08-23 (4) — T4/item-1 DONE; chapter-wide staleness is a separate large drain
+
+item 1 (empty-criteria sidecars): RESOLVED. Measured 2026-08-23 — the eightfold
+chapter now has 15/15 .qa.json sidecars, 0 with empty criteria (53–75 criteria
+each). A sibling restored coverage since this bean was written; the 'no sidecar
+coverage' defect is gone.
+
+SEPARATE finding (not item 1): qa-staleness reports fresh=0/15 — the WHOLE chapter
+is stale/partial (checker-version + source drift across ~40–75 criteria per block,
+many LLM-reviewer criteria). Refreshing it is a large idle-backlog qa-drain
+(hundreds of criteria, well beyond the ≤10-sidecar/pass cap and slow on LLM
+reviewers) — NOT a clean session increment. Route via /integration-audit or a
+dedicated qa-drain pass, not a session-tail sweep. Blocks I touched this arc
+(borromean-decuplet, meson-octet) are stale like all others (chapter-wide, not
+caused by my lean.ref adds specifically).
+
+## ═══ qou-8fl1 STATUS AFTER go-on-all (2026-08-23) ═══
+- item 2 (3 backing-free props): DONE — all Lean-backed at dimension level (T1).
+- item 3 (Sym2Gate vacuity): DONE — vacuous decls removed/restated (T2, PR #5524).
+- item 4: already discharged (PR #4727).
+- item 1 (empty sidecars): DONE — 0 empty (sibling-restored, verified).
+- item 5 (def:octonion-algebra): OPEN — large (author octonion algebra; Mathlib
+  has none) or keep literature citation. Not a clean session increment.
+- items 6,7 (research-gated) + chapter-wide QA staleness refresh: OPEN, large /
+  research; documented above. Not session-closeable.
+The honest formalization-bookkeeping items (1,2,3,4) are closed; what remains is
+genuine research (5,6,7) or large mechanical drains (QA staleness).

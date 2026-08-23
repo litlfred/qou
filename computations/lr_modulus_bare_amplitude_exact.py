@@ -59,8 +59,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import _path_bridge as _bridge  # noqa: E402, F401
 import habiro_interpolation_wlambda as H  # noqa: E402  (reuse Q5, marks, extraction machinery)
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 40
+set_compute_dps()
 
 
 def exact_D2(m):

@@ -35,7 +35,8 @@ import os
 
 import mpmath as mp
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Exact DLMF 14.9.16 (type=3) conventions, matching
 # whipple_rotation_involution_probe.py / whipple_gamma_constant_gridverify.py.

@@ -21,18 +21,55 @@ set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
 
+# Shared changed-file collection. ONE definition, so the fifth gate script
+# cannot repeat the defect the first four shared (bean qou-pt9b).
+. "$ROOT/scripts/lib/changed-files.sh"
+
 # Collect target files.
 if [ "$#" -gt 0 ]; then
   files=("$@")
 else
-  mapfile -t files < <( { git diff --name-only HEAD 2>/dev/null; git diff --cached --name-only 2>/dev/null; } | sort -u )
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL -- same defect as precision-gates.sh
+  # --changed (bean qou-s2gm, defect 1), found here by running this script on
+  # a branch with three commits and being told "no changed files".
+  #
+  # Both `git diff HEAD` and `--cached` see only UNCOMMITTED work, so once a
+  # change is committed this exits 0 having examined nothing. It is worse here
+  # than there: AGENTS.md names this script the pre-commit preflight AND the
+  # merge-time verification gate for content blocks ("Content blocks changed ->
+  # check-sidecars.sh clean"), and at merge time the changes are ALWAYS
+  # committed -- so as the merge gate it has been reading an empty set and
+  # reporting success.
+  #
+  # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
+  mapfile -t files < <(changed_files)
 fi
 mapfile -t files < <(printf '%s\n' "${files[@]:-}" | sort -u | grep -v '^$' || true)
-[ "${#files[@]}" -eq 0 ] && { echo "check-sidecars: no changed files."; exit 0; }
+if [ "${#files[@]}" -eq 0 ]; then
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
+  echo "check-sidecars: 0 changed file(s) — this check examined NOTHING."
+  echo "  scope: $(changed_files_scope)"
+  exit 0
+fi
 
 # Code-level archimedean markers (the §7c wall). Prose in /- -/ docstrings is ignored
 # by stripping comment lines first; we scan the CODE body only.
-ARCH='(\(q : ℝ\)|: ℝ\b|\(ℝ\)|Real\.(sqrt|rpow|log|exp|cos|sin|pi)|\blinarith\b|\bpositivity\b|\bnlinarith\b|\bnorm_num\b|LinearOrderedField|0 < q\b|\bCODATA\b|MeV)'
+# NOTE (bean qou-akb4, class 1): the former `ARCH` marker regex lived here and
+# listed `\bnorm_num\b` as an archimedean marker.  It was wrong — `norm_num`
+# discharges a concrete numeric goal over ANY semiring, and closing `2 + 2 = 4`
+# in ℕ does not cross the substrate→archimedean wall, so it produced §7c
+# advisories that were routinely dispositioned "not a defect".
+#
+# It was ALSO already dead: the §7c checks below use `JUST`, which correctly
+# omits `norm_num`, and `ARCH` was referenced nowhere (verified: one occurrence
+# in the file, its own definition, with no `eval`/indirect expansion).  Removed
+# rather than repaired, so it cannot be wired back in and silently reintroduce
+# the false positive.  `linarith`/`positivity`/`nlinarith` remain defensible
+# markers in `JUST` — they want an order; `norm_num` alone does not.
 
 action=0
 echo "check-sidecars: ${#files[@]} changed file(s)"
@@ -75,7 +112,30 @@ for f in "${files[@]}"; do
         # folio-assistant's q-usage-audit now sweeps orphans content-based). This authoring
         # gate mirrors that with CONTENT-BASED checks (NOT a path heuristic — a path heuristic
         # over-fires on catch-all dirs like BraidKnot/; see the audit). Strip /- -/ + -- first.
-        body=$(sed '\#/-#,\#-/#d' "$f" | sed 's|--.*||')
+        # Comment stripping, in three passes. The FIRST pass is load-bearing and
+        # was missing (bean qou-akb4, class 3 — the dominant defect):
+        #
+        # `sed '\#/-#,\#-/#d'` is a RANGE delete. Given a complete one-line
+        # docstring `/-- Archimedean shim of markovZ. -/` it opens the range on
+        # that line and then searches the FOLLOWING lines for `-/` — the closer
+        # on the same line does not end it. So everything from a one-line
+        # docstring to the next block-comment terminator was deleted AS IF IT
+        # WERE COMMENT, including the declarations in between.
+        #
+        # Measured over the 3037 `.lean` files under `content/`: 1578 of them
+        # (52%) lost at least one declaration, 5723 declarations and 54213 code
+        # lines in total, invisible to every §7c check below. Worked case:
+        # `BraidKnot/HoefsmitV21CosSymmetrization.lean` (329 lines -> 161) lost
+        # `noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q)`, so the file
+        # read as archimedean-only and flagged §7c MIXED while in fact carrying
+        # the prescribed generic + `_real` pair the branch below now recognises.
+        #
+        # Pass 1 removes complete one-line `/- ... -/` blocks; pass 2 is the
+        # range delete, now seeing only genuinely multi-line comments; pass 3
+        # takes `--` line comments. `@` is the delimiter because the pattern
+        # contains `|`.
+        body=$(sed -E 's@/-([^-]|-+[^-/])*-+/@@g' "$f" \
+               | sed '\#/-#,\#-/#d' | sed 's|--.*||')
         GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
         # Genuine archimedean JUSTIFICATION (a statement that actually needs ℝ):
@@ -83,7 +143,27 @@ for f in "${files[@]}"; do
         printf '%s\n' "$body" | grep -qE "$RTYPE" && hasR=1   || hasR=0
         printf '%s\n' "$body" | grep -qE "$JUST"  && hasJ=1   || hasJ=0
         printf '%s\n' "$body" | grep -qE "$GEN"   && hasGen=1 || hasGen=0
-        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
+        # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
+        # declaration `foo` sitting beside its archimedean specialisation
+        # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the
+        # ℝ-instantiation that consumes it — not a file that needs splitting.
+        # Detect the pair and downgrade to informational.  The undiscriminated
+        # MIXED flag stays for every other file: the discrimination is the
+        # useful half, so this narrows the branch rather than silencing it.
+        decls=$(printf '%s\n' "$body" \
+          | grep -oE '^[[:space:]]*(noncomputable[[:space:]]+)?(theorem|lemma|def|abbrev|instance)[[:space:]]+[A-Za-z_][A-Za-z0-9_'"'"'.]*' \
+          | awk '{print $NF}' | sort -u)
+        pairedReal=0
+        for d in $decls; do
+          case "$d" in
+            *_real)
+              if printf '%s\n' "$decls" | grep -qx "${d%_real}"; then pairedReal=1; break; fi
+              ;;
+          esac
+        done
+        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; } && [ "$pairedReal" = 1 ]; then
+          echo "▸ $f  [§7c generic + _real specialisation — prescribed pattern, informational]"
+        elif [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
           echo "▸ $f  [⚠ §7c MIXED generic + archimedean → split into two files per §7c]"
           printf '%s\n' "$body" | grep -nE "$RTYPE|$JUST" | head -6 | sed 's/^/         /'
           action=1

@@ -66,7 +66,9 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # Substrate + physical constants
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin

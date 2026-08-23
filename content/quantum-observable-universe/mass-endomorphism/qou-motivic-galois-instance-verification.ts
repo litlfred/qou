@@ -44,18 +44,15 @@ export default remark({
       kind: "note",
       date: "2026-08-23",
       body:
-        "Not fixed here, and not a defect of this cluster: the anchor " +
-        "`#conj:motivic-perpetual-obstruction` resolves to nothing on this " +
-        "branch, and `run-validate` reports it from ~14 blocks. The cause is " +
-        "branch staleness, not content — `motivic-perpetual-obstruction.ts` " +
-        "declares `theorem({ label: \"conj:...\" })`, a kind/prefix mismatch " +
-        "that makes the block fail schema validation and never register its " +
-        "label. `main` fixed it by renaming the label to " +
-        "`thm:motivic-perpetual-obstruction`; 17 of the 18 files still " +
-        "carrying `conj:` here differ from `main` by that rename and nothing " +
-        "else. Deliberately not replayed by hand — it lands when this branch " +
-        "is brought up to `main`, and hand-replaying it would only " +
-        "manufacture a conflict.",
+        "The anchor here was `#conj:motivic-perpetual-obstruction`, which " +
+        "resolved to nothing: `motivic-perpetual-obstruction.ts` declared " +
+        "`theorem({ label: \"conj:...\" })`, a kind/prefix mismatch that made " +
+        "the block fail schema validation and never register its label, so " +
+        "~14 blocks referenced a label no block owned. Not replayed by hand " +
+        "at the time, because `main` had already renamed it to " +
+        "`thm:motivic-perpetual-obstruction` and 17 of the 18 affected files " +
+        "differed from `main` by that rename alone. It came in with the merge " +
+        "of `main`, and the anchor here now points at `thm:`.",
     },
   ],
 });
