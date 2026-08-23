@@ -399,8 +399,68 @@ identical.
   (`n = 6, 9, 12`), numerically at 16 (`A = 2…10`) to ~1e-31. The bond count and the one-`(q+q⁻¹)`-per-bond factor follow from the
   Cayley–Hamilton reduction in `_alpha_beta`; the isospin exponent `6 + 2(N−Z)`
   is measured, not derived.
-- **`P` remains uninterpreted.** Irreducible over `ℚ`, correct, verified,
-  unexplained.
+- **`P` remains uninterpreted** — see §4e for what it is *not*, and for the
+  narrowed literature question. Irreducible over `ℚ`, no real roots, `P(1) = 12`.
+
+## 4e. The bond factors are Markov parameters; and what `P` is not
+
+### The per-bond factors are `z` and its bar image
+
+Convention D's Markov parameter is `z = q³/(q²+1)`, and its bar image is
+`z̄ = z(1/q) = 1/(q(q²+1))`. Against the product formula of §4d:
+
+| bond | factor in `R = tr^free/tr^atom` | identification |
+|---|---|---|
+| p–p (`d = 0`, plain `σ`) | `(q²+1)/q³` | `1/z` |
+| n–n (`d = −h`, `σ⁻¹`-like) | `q(q²+1)` | `1/z̄` |
+| p–n interface | `q⁵(q²+1)` | `q⁴/z̄` |
+
+and the `Z`, `N` dependence **cancels out of the interface factor** — it is
+`q⁵(q²+1)` for every nucleus, which is what makes it a constant rather than a
+third `A`-dependent term.
+
+This is what makes the isospin reading more than a slogan: **`p ↔ n` under the
+bar involution is exactly `z ↔ z̄`.** The p–p bond carries the Markov parameter,
+the n–n bond carries its bar image, and conjugating `q ↦ q⁻¹` swaps them — which
+is the same statement as §3's mirror-nuclei exchange, now at the level of the
+individual bond rather than the whole trace.
+
+### The interface's eigenvalue sum *is* the p–n mass split
+
+For the single interface letter `σ + d·I` the Cayley–Hamilton data is trivial
+(`α = 1`, `β = d`), but the eigenvalue **sum** is not:
+
+```
+E₁ + E₂  =  (q + d) + (−q⁻¹ + d)  =  h · f / 2
+```
+
+exactly, where `f = flavor_split_leading = (q−1)²(1−q⁻⁴)/3` — the p–n mass split
+itself. So the bar-defect of §4b is `Δ_int = (q²+1)(E₁+E₂)/2`: the quantity that
+breaks bar symmetry is the flavour split, directly, with no intermediate step.
+
+### `P(1) = 12`
+
+The `12` in the numerator of the product formula is not a free constant — it is
+`P(1)`. Hence `R(1) = 1`, i.e. `tr^free = tr^atom` at the classical point, i.e.
+**zero binding at `q = 1`**, which is the right answer and is now a consequence
+rather than an input.
+
+### Why `P` probably has no knot-theoretic name
+
+`P` is irreducible over `ℚ` and has no real roots (all ten come in complex
+conjugate pairs). The natural guess — that it is the HOMFLY or Jones polynomial
+of some link — runs into a structural objection: **the interface letter is
+`σ + d·I`, which is not a braid generator.** The atom word is therefore an
+element of the Hecke *algebra*, not of the braid group, and `tr_M` of it is not a
+link invariant. Markov traces of genuine braids are well covered in the library
+(Orellana on the weights of Markov traces; Geck–Lambropoulou for type B; Birman
+on Markov's theorem; Webster–Williamson on the geometry of the Jones–Ocneanu
+trace) — none of that reaches an inhomogeneous `σ + d·I` word.
+
+So `P` stays open, and the honest form of the literature question is narrower
+than "what is this polynomial": it is *"is there a treatment of Markov traces of
+Hecke-algebra elements with one non-group-like letter?"* — which the library, as
+scanned, does not appear to hold.
 
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
