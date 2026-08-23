@@ -1148,3 +1148,7 @@ import QOU.Mathlib.RothRecursionArith
 -- column — exactly what sum_max_le_index_det's permutation step needs.  This closes the COST
 -- half of the recursion's missing input; the determinant's non-vanishing is still open.
 import QOU.Mathlib.RothOperatorFamily
+-- The variable split σ ≃ Fin n ⊕ Unit induced by an ordering σ ≃ Fin (n+1), and the transport
+-- of index, RothGrowth and degreeOf across it.  Connects Roth's lemma's STATEMENT (one degree
+-- vector, one ordering) to the split form every operator-family result is written for.
+import QOU.Mathlib.RothVariableSplit

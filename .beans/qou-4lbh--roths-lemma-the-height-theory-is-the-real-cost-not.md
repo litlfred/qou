@@ -2221,3 +2221,56 @@ Then `c_m = 2^m − 3` by iterating with `rothLemmaUniform_one` as the base.
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Two declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — the transport, and what it turns out was actually blocking
+
+New module `QOU/Mathlib/RothVariableSplit.lean` (21st in the arc, registered in `QOU.lean`).
+
+```
+splitLast n            Fin (n+1) ≃ Fin n ⊕ Unit, sending Fin.last to the Unit component
+splitOrder o           the variable equivalence σ ≃ Fin n ⊕ Unit an ordering induces
+split_eq               a σ-indexed function becomes a Sum.elim on the split
+index_splitOrder       the index, transported
+rothGrowth_splitOrder  the growth condition, transported
+splitLast_hlast        the split-off variable comes last
+degreeOf_splitOrder    degreeOf, transported
+index_le_of_rothGrowth_split   §13's conclusion, stated entirely in σ, o and d
+```
+
+`index_le_of_rothGrowth_split` is the shape `RothLemmaUniform` uses: the caller states degrees,
+growth and the index bound in terms of `σ` alone, and everything about the `Fin n ⊕ Unit`
+split is internal.
+
+### ⚠ Against correction 7
+
+Correction 7 called `Fin m` transport "pure overhead", on the strength of `index_rename_equiv`
+being three lines. That lemma *is* three lines. What it does not do is produce the split,
+transport the growth condition, or line up `degreeOf` — this module is about 150 lines. The
+correction was right that transport is not deep and **wrong that it is free**. Second time the
+indexing choice has cost real work; recording it so the third time is expected.
+
+### ⚠ What was actually blocking, and it is not indexing
+
+Writing the transport made the real obstacle visible, and it is one I had not named:
+**integrality**.
+
+`RothLemmaUniform` is about polynomials with **integer** coefficients — that is not incidental,
+it is where the whole Diophantine content lives (`RothBaseCase` bounds an index by comparing a
+leading coefficient against a power of a denominator, which needs integrality). But the
+Wronskians `hres` speaks of are rational combinations of a minimum representation's factors,
+and a minimum representation has no reason to be integral.
+
+§6 of the source does exactly this reconciliation — Gauss's lemma gives rationals `μ, ν` with
+`U = μU*` and `V = νV**` integral and `W = UV` — and `RothHeightBound` has the Gauss step. It
+is **not wired in**. So `hres` remains a hypothesis and this module does not discharge it.
+
+That is the last piece before the induction can be written, and naming it is the useful output
+of this step: I had been treating the remaining gap as indexing, and indexing turned out to be
+the cheap half.
+
+Verification: twenty-one arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Seven declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.
+Orphan gate re-run: 2038 modules, 1155 reachable (up one), 883 not built — the new module is
+registered and the inherited red did not grow.
