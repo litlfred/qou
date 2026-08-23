@@ -1,0 +1,61 @@
+{
+ "schema": "regen-mpmath141-ledger/v1",
+ "target": "1.4.1",
+ "runs": {
+  "computations/alpha/alpha_blend_tower.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 5.7,
+   "witnesses": [
+    "computations/alpha/three-term-wedderburn.witness.json"
+   ],
+   "fields_moved": 16,
+   "moved_sample": {
+    "computations/alpha/three-term-wedderburn.witness.json": [
+     "/particles/neutron/V_3term",
+     "/particles/neutron/channel_decomposition_g0/trv",
+     "/particles/neutron/channel_decomposition_g1/alt",
+     "/particles/neutron/channel_decomposition_g1/trv",
+     "/particles/neutron/codata_MeV",
+     "/particles/neutron/err_pct",
+     "/particles/neutron/err_ppb",
+     "/particles/neutron/pred_MeV"
+    ]
+   },
+   "tail": ""
+  },
+  "computations/alpha/alpha_high_precision.py": {
+   "status": "nonzero",
+   "exit": 1,
+   "wall_s": 0.4,
+   "witnesses": [
+    "computations/alpha/alpha-high-precision.witness.json"
+   ],
+   "fields_moved": 0,
+   "moved_sample": {},
+   "tail": "-PRECISION \u03b1* DETERMINATION (dps=50)\n====================================================================================================\n  q_0 = 1.1099785955573347\n  M_p = 938.27208943,  M_n = 939.56542179\n\n  Bracket: err(0.3) = +1.074673%, err(0.32) = +0.649811%\n  ERROR: no sign change in bracket\n"
+  },
+  "computations/delta_lambda_borromean_ascaling.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 1.2,
+   "witnesses": [
+    "computations/delta-lambda-borromean-ascaling.witness.json"
+   ],
+   "fields_moved": 24,
+   "moved_sample": {
+    "computations/delta-lambda-borromean-ascaling.witness.json": [
+     "/edge_set_test/adjacent_spread",
+     "/edge_set_test/all_pairs_spread",
+     "/extensive_bulk/tower_net_over_target_spread",
+     "/rows[0]/B_tower",
+     "/rows[0]/canon_sgn_dim_net_over_target",
+     "/rows[0]/tower_net_over_target",
+     "/rows[1]/B_tower",
+     "/rows[1]/canon_sgn_dim_net_over_target"
+    ]
+   },
+   "tail": ""
+  }
+ }
+}

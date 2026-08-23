@@ -118,6 +118,8 @@ def load_ledger() -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N producers")
+    ap.add_argument("--only", help="file of producer paths, one per line; run "
+                                   "only these (order preserved)")
     ap.add_argument("--timeout", type=int, default=900)
     args = ap.parse_args()
 
@@ -141,11 +143,27 @@ def main() -> int:
             str(p.relative_to(REPO)))
 
     ledger = load_ledger()
-    pending = [k for k in sorted(todo) if k not in ledger["runs"]]
+    want = []
+    if args.only:
+        want = [ln.strip() for ln in open(args.only) if ln.strip()]
+        missing = [w for w in want if w not in todo]
+        if missing:
+            print(f"note: {len(missing)} requested producer(s) have no stale "
+                  f"witness recorded and are skipped: {missing[:3]}")
+        pending = [w for w in want if w in todo and w not in ledger["runs"]]
+    else:
+        pending = [k for k in sorted(todo) if k not in ledger["runs"]]
     print(f"stale witnesses with a resolvable producer : "
           f"{sum(len(v) for v in todo.values())}")
     print(f"unique producers                           : {len(todo)}")
-    print(f"  already in ledger                        : {len(todo) - len(pending)}")
+    # NB: count against the CONSIDERED set, not `todo` -- under --only the
+    # considered set is the requested list, and subtracting `pending` from
+    # `len(todo)` reported "already in ledger: 1546" when the ledger held 3.
+    considered = len(todo) if not args.only else len(
+        [w for w in want if w in todo])
+    print(f"  considered this run                      : {considered}")
+    print(f"  already in ledger                        : "
+          f"{considered - len(pending)}")
     print(f"  pending this run                         : {len(pending)}")
     print(f"witnesses with NO resolvable producer      : {unresolved}")
     print()
