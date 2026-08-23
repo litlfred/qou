@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 295,
-      "proton-pin": 1256,
+      "proton-pin": 1258,
       "unknown": 25,
-      "canonical": 202
+      "canonical": 203
     },
     "stale_total": 295,
     "new_stale": 0,
@@ -1764,6 +1764,13 @@
       },
       {
         "file": "computations/atom-braid-active-partitions.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/atom-dual-q0-mpfr-demo.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -5704,6 +5711,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/deltalambda/rho-k-h3a-residual-decomposition.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785955573347198997632204832250266562084087802",
+        "class": "canonical",
+        "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
         "file": "computations/deltalambda/s5so3-geometric-wlambda-a4-helium.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785955573347198997632204832250266562084087802",
@@ -7504,6 +7518,13 @@
       },
       {
         "file": "computations/lp-confinement-nf-forcing.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/lp-dual-kkt-residual-50dps.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
