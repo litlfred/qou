@@ -72,16 +72,22 @@
       "changed_fields": [
         "engineVersion"
       ]
+    },
+    {
+      "producer": "computations/binding_via_interface_knot.py",
+      "witness": "computations/binding-via-interface-knot.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": []
     }
   ],
   "tally": {
-    "TIMEOUT": 1,
+    "TIMEOUT": 2,
     "UNCHANGED": 2,
     "SUBSTANTIVE/ASSERT-FAIL": 1,
     "SUBSTANTIVE": 2
   },
   "partial": true,
-  "measured": 6,
+  "measured": 7,
   "total": 55,
   "skipped": [
     {
