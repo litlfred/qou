@@ -474,8 +474,12 @@ def tl_gram_inverse_exact(n: int, q=Fraction(111, 100)):
     """The **inverse** — not a pseudoinverse — of the quotient form, in ℚ.
 
     `G · G⁻¹ = I` holds entry-by-entry with exact `1`s and `0`s.  Contrast
-    `pyhecke.gram.G_PINV`, where the corresponding residual on the singular
-    6×6 form is `‖G · G_INV − I‖ = 1.64` (measured, `qou-cds2`).
+    `pyhecke.gram.G_PINV` on the singular 6×6 form: `G · G_PINV` is the
+    projector onto the rank-5 range (eigenvalues `1,1,1,1,1,0`), so
+    `‖G · G_PINV − I‖_F = 1` — correct behaviour for a pseudoinverse, but an
+    identity only on the quotient, never on all of `H₃(q)`.  The `1.64`
+    recorded elsewhere in the corpus is the residual of the **deleted**
+    float64 `G_INV` (`np.linalg.inv`), a different object.
     """
     return _inverse_exact(tl_gram_exact(n, q))
 
