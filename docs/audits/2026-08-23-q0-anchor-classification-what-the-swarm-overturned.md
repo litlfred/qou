@@ -41,10 +41,11 @@ Scored against that, with each fix made this session added in turn:
 | method | proposes independent | **false** | rate | true-indep excluded |
 |---|---|---|---|---|
 | **A** import-cone, as first reported | 720 | 285 | **39.6 %** | 32 |
-| **B** + proton-literal + artifact-resolution fixes | 588 | 159 | **27.0 %** | 38 |
-| **C** + the witness-read data-flow detector | 495 | **82** | **16.6 %** | 52 |
+| **B** + proton-literal + artifact-resolution | 588 | 159 | **27.0 %** | 38 |
+| **C** + witness-read data-flow detector | 495 | 82 | **16.6 %** | 52 |
+| **D** + float-literal + truncated-pin | 462 | **65** | **14.1 %** | 68 |
 
-**71 % of the false `independent` calls removed**, and the false direction is
+**77 % of the false `independent` calls removed**, and the false direction is
 the dangerous one: it lets a migration skip a q₀-dependent witness silently,
 leaving a stale pin presented as pin-agnostic. The cost is 20 more genuinely
 independent producers wrongly excluded (32 → 52) — the safe direction, and the
@@ -52,8 +53,11 @@ trade is worth taking.
 
 Two numbers not to lose:
 
-- **The 722 was wrong and remains wrong.** Do not quote it. Method C's 495 is
-  the current best mechanical proposal, still carrying 82 known-false members.
+- **The 722 was wrong and remains wrong.** Do not quote it. Method D's 462 is
+  the current best mechanical proposal, still carrying 65 known-false members.
+  Its size lands within 2 of the 460 genuine independents, which is a
+  coincidence of composition (65 false in, 68 true out) and not a sign of
+  convergence — do not read the closeness as accuracy.
 - **An earlier report of this said 37 %, extrapolated from a 443-producer
   sample.** The completed measurement is **39.6 %** — the extrapolation held and
   slightly understated. Recorded because the extrapolation *could* have been
@@ -161,3 +165,62 @@ it.
 - The swarm covered 443 of 889; **446 were never adjudicated** (8 of 13 agents
   hit a weekly limit). Re-running them is the obvious next step now the limit
   has reset.
+
+
+## Two more defects, found by following the residual
+
+Method C left 82 false calls, route **d** (a literal in the producer's own
+file) dominating at 41 — which the proton-literal fix should have closed.
+Reading them found two further defects in the same function:
+
+1. **Float literals were invisible.** `visit_Constant` inspected only
+   `isinstance(n.value, str)`, so `q0 = 1.1099785955573347` written as a bare
+   float reached the `none` verdict.
+   `deltalambda_cyclotomic_sign_map_probe.py:168` is exactly this — and the
+   bare float is *also* a NO-FLOAT64 violation in its own right, independently
+   of the classification question.
+2. **A truncated pin did not match.** The test was one-directional
+   (`s.startswith(PIN)`), but the corpus writes the proton value as
+   `1.10997858275` in **12 places** — a prefix *of* the canonical string rather
+   than the other way round. Matching in both directions, with a minimum length
+   of 9 digits after the point (where the two pins first differ), catches those
+   without letting a coarse `1.10998` match either pin.
+
+Together these move the classifier's own reach on the 889 from `proton: 39` to
+`proton: 85`, and the pipeline from 16.6 % to **14.1 %** false.
+
+### What the last 65 are, and why no scan will get them
+
+The surviving route-**d** cases are **not** producers hardcoding a q₀ at all.
+They hardcode a q₀-**derived** constant:
+
+```python
+TR = {"p": mp.mpf("1.0653062"), "n": mp.mpf("0.9232333")}   # tr_M at q0
+H_Q_SUBSTRATE = 0.0922502          # hbar_q at the proton-pinned q0
+delta_tr_D = mpf("0.5952397103674884")   # a frozen H6 Wedderburn trace difference
+b = mp.mpf('0.86758406730705817865833308252393344606969606677438')  # Hoefsmit b at q0
+```
+
+No q₀ appears anywhere, so no detector keyed on q₀ can find them — yet each
+value is pin-specific and goes silently stale when the pin moves. This is the
+source-code twin of the witness limit recorded above (`atom-chi-rust-*` carrying
+50-dps χ at a pin the file never records), and it is the same conclusion: the
+pin has to be **declared**, because it cannot be recovered.
+
+### And a third, fourth and fifth q₀ value are live in the corpus
+
+Scanning for `1.1097…`/`1.1099…` literals that match **neither** pin found 25
+distinct values, including:
+
+| value | sites | what |
+|---|---|---|
+| `1.10998` | 27 | coarse 5-digit proxy; rounds from both pins |
+| `1.10997859303152` | 12 | neither pin |
+| `1.10997803335532` | 9 | neither pin |
+| `1.1097090249` | 8 | legacy |
+| `1.10970000000` | 3 | coarse legacy |
+
+`q0_muon_population_partition.py` on `main` documents two **muon** values that
+agree to 11 digits. These are a different problem: values that are neither
+muon nor proton, sitting in live code where a pin is expected. Not triaged
+here — recorded because a q₀ audit that knows only two values cannot see them.
