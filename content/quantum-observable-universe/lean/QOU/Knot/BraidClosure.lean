@@ -805,6 +805,17 @@ theorem sum_cycleLen_leaders (f : Equiv.Perm (Fin n)) :
   rw [h2]
   exact hcard.symm
 
+open scoped Classical in
+/-- **One lap per strand: the traversal takes exactly `n` laps.**
+
+The List/Finset step is definitional — for `Fin n` a `Finset.sum` over a
+filtered `univ` and a `List.sum` over a filtered `finRange` are the *same term*,
+so no transfer lemma is needed. -/
+theorem lapsOf_length (w : BraidWord n) : (lapsOf w).length = n := by
+  classical
+  simp only [lapsOf, List.length_flatMap, List.length_map, walk_length]
+  exact sum_cycleLen_leaders (closurePerm w)
+
 /-! ### The remaining bridge, stated
 
 `card_involved` counts the **starting positions** involved in crossing `k`:
