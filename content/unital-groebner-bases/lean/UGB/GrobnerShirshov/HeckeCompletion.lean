@@ -11985,12 +11985,16 @@ theorem closingU (hn : 0 < n) (hp : HeckeParams)
   have hDi₁ : (descWord i j₂).length = (descWord i₁ j₂).length + 1 := by
     rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
     simp
+  -- again through `descWord i₁ j₁`: `[σᵢ₋₁] ++ descWord i₂ jpp` IS
+  -- `descWord i₁ jpp`, so the split needs `jpp ≤ i₁`, not `jpp ≤ i₂`
   have hAsplit : descWord i₁ j₁
       = ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ descWord jp j₁ := by
-    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega),
-      descWord_split (k := jpp) (k' := jp) (i := i₂) (j := j₁) hjpp
-        (by omega) (by omega)]
-    simp
+    have hpre : [(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp = descWord i₁ jpp := by
+      rw [descWord_cons_le (i' := i₂) (i := i₁) (j := jpp) h₂ (by omega)]
+      simp
+    rw [hpre]
+    exact descWord_split (k := jpp) (k' := jp) (i := i₁) (j := j₁) hjpp
+      (by omega) (by omega)
   have hjpj₁ : descWord jp j₁ = [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
     rw [descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
       descWord_self]
@@ -12121,17 +12125,22 @@ are needed: `[σᵢ₋₂] ++ descWord i₁ jpp` is `σᵢ₋₂ :: σᵢ₋₁ 
 `descWord i₂ j₁` continues past `jpp` by exactly `[σ_jp, σ_j₁]`. -/
 theorem WStar_split {n : ℕ} {i i₁ i₂ j₁ j₂ jp jpp : Fin n}
     (h₂ : i₂.val + 1 = i₁.val) (hjp : j₁.val + 1 = jp.val)
-    (hjpp : jp.val + 1 = jpp.val) (hjppi : jpp.val ≤ i₂.val) :
+    (hjpp : jp.val + 1 = jpp.val) (hjppi₁ : jpp.val ≤ i₁.val) :
     WStar i i₁ i₂ j₁ j₂
       = ([(⟨i₂⟩ : HeckeGen n)] ++ descWord i₁ jpp) ++
           ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++
             ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)) := by
-  rw [WStar, bsWord₂,
-    descWord_split (k := jpp) (k' := jp) (i := i₂) (j := j₁) hjpp
-      (by omega) hjppi,
-    descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
-    descWord_self,
-    descWord_cons_le (i' := i₂) (i := i₁) (j := jpp) h₂ (by omega)]
+  -- split `descWord i₁ j₁`, NOT `descWord i₂ j₁`: the former asks `jpp ≤ i₁`,
+  -- which holds at `a = 3` (with equality) where `jpp ≤ i₂` does not
+  have hcons : descWord i₁ j₁ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega)
+  have hsplit : descWord i₁ j₁ = descWord i₁ jpp ++ descWord jp j₁ :=
+    descWord_split (k := jpp) (k' := jp) (i := i₁) (j := j₁) hjpp
+      (by omega) hjppi₁
+  have hjpj₁ : descWord jp j₁ = [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+  rw [WStar, bsWord₂, ← hcons, hsplit, hjpj₁]
   simp
 
 /-- **The V lineage's closing run, in place** — `fRun` alone: the V side does not
