@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:44:25Z
-updated_at: 2026-08-23T08:44:25Z
+updated_at: 2026-08-23T08:47:25Z
 ---
 
 MEASURED 2026-08-23 while draining the last validate errors.
@@ -75,3 +75,37 @@ under `*/audit/`" would be ~10 lines and would have caught all nine on the day
 of the import.
 
 validate on this branch: 4 errors -> 2 (30 issues).
+
+
+---
+
+## CORRECTION (same day) — it is EIGHT, not nine, and I found it by testing my own gate
+
+The list above names
+`fluid-dynamics/ns-kummer-specialisation-divisibility.md` as one of the five
+with no sidecar. **That file does not exist.** It was added by the import and
+resolved afterwards: the directory now holds `ns-kummer-specialisation.md` and
+`ns-kummer-specialisation-consequence.md`, both with manifests, both
+registered. My list was built from the import commit's added-files and never
+checked which of those paths are still live.
+
+So: **8 dropped**, 2 restored, 2 needing an authoring call, and **4** — not
+five — that are probably not blocks (`PieceACornerInduction.md`,
+`PieceASpechtCharacter.md`, `bring_tetraplectic.md`, `lean/AUDIT-REPORT.md`).
+
+A corpus scan confirms only **two** unregistered chapter-level `.md` remain,
+and they are exactly the two audit-register files this bean already flags as
+needing a call.
+
+## The gate is written — and its first bug was this same mistake
+
+`scripts/check-sidecars.sh` now flags a changed `content/<paper>/<chapter>/*.md`
+with no `.ts` sibling (skipping `*/audit/`, `*/lean/`, `*.qa.md`), scoped to
+changed files.
+
+Its first version reported the deleted path above. `files` comes from
+`git diff --name-only`, which lists **deletions**, and a removed `.md` has no
+`.ts` either — so every file deletion would have been reported as an
+unregistered block. Guarded with `[ -f "$m" ] || continue`. Verified: the
+deleted path is now passed over, `qbeta-fmap-structural-form.md` is still
+caught, and registered blocks / audit docs / `lean/AUDIT-REPORT.md` are not.

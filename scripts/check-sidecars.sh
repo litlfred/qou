@@ -272,6 +272,36 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
   fi
 fi
 
+# ── A content .md added without its .ts manifest ─────────────────────────
+# NOTHING detects this. The platform's `orphan QA sidecar` error is a PROXY:
+# it fires only once a file has happened to get QA-swept, so it caught 4 of
+# the 9 manifests the 52c68267f2 bulk import dropped and was blind to the
+# other 5 (bean `qou-cauj`). An unregistered .md is invisible to the rendered
+# paper, to every per-block checker, and to validate.
+# Restricted to CHAPTER dirs -- `*/audit/`, `lean/`, and paper-root notes are
+# legitimately not blocks -- and to CHANGED files, so it flags what a commit
+# adds rather than reprinting the standing backlog.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/[^/]+/[^/]+/[^/]+\.md$'; then
+  unreg=()
+  while read -r m; do
+    case "$m" in */audit/*|*/lean/*|*.qa.md) continue;; esac
+    # `files` comes from `git diff --name-only`, which lists DELETIONS too. A
+    # removed .md has no .ts either, so without this guard every deletion is
+    # reported as unregistered. Caught by the gate flagging
+    # ns-kummer-specialisation-divisibility.md, deleted long ago.
+    [ -f "$m" ] || continue
+    [ -f "${m%.md}.ts" ] || unreg+=("$m")
+  done < <(printf '%s\n' "${files[@]}" | grep -E '^content/[^/]+/[^/]+/[^/]+\.md$')
+  if [ ${#unreg[@]} -gt 0 ]; then
+    action=1
+    echo "⚠ content .md with no .ts manifest — unregistered, so absent from the"
+    echo "  rendered paper and from every per-block checker:"
+    printf '    %s\n' "${unreg[@]}"
+    echo "    → add the sibling .ts and list it in the chapter manifest,"
+    echo "      or move the file to docs/audits/ if it is not a block."
+  fi
+fi
+
 # ── Dangling citation keys in the files this commit touches ──────────────
 # AGENTS.md §1: "A `sorry` without `-- Ref:` is always a review failure" and
 # the key "must match an entry in content/schema/references.ts exactly".
