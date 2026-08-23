@@ -130,20 +130,20 @@ Checked the five droppers against `origin/main`'s post-fix manifest:
 
 | producer | now listed |
 |---|---|
-| `cyclic_intertwiner_verify` | ✅ |
-| `probe_9b_gate_interface_algebra` | ✅ |
-| `trefoil_complex_volume_probe` | ✅ |
-| `flavor_split_alpha_bond_dilog_probe` | ❌ |
-| `flavor_split_alpha_dilog_expansion_probe` | ❌ |
+| `cyclic_intertwiner_verify` | yes |
+| `probe_9b_gate_interface_algebra` | yes |
+| `trefoil_complex_volume_probe` | yes |
+| `flavor_split_alpha_bond_dilog_probe` | no |
+| `flavor_split_alpha_dilog_expansion_probe` | no |
 
-**Listed is necessary, not sufficient — do not read the ✅ as fixed.** This
+**Listed is necessary, not sufficient — do not read a "yes" as fixed.** This
 bean already establishes that manifest absence is not sufficient to cause the
 drop (`q0_anchor_consistency_audit` is absent and retains its stamp). So the
-three ✅ rows have had *a candidate cause* removed; whether the stamp actually
+three yes rows have had *a candidate cause* removed; whether the stamp actually
 survives regeneration is a re-measurement, not an inference. That check comes
 free after the rebase — the sweep records `q0Anchor (removed)` directly.
 
-The two ❌ are the `flavor_split_alpha_*` pair, and they may fall under the
+The two "no" rows are the `flavor_split_alpha_*` pair, and they may fall under the
 sibling's own follow-up `qou-5t8y` (650 suffixed producers the manifest cannot
 see) — worth their checking against that scope rather than my guessing at it.
 
@@ -166,10 +166,10 @@ must not be conflated:
 
 | witness | my sweep predicted the drop |
 |---|---|
-| `probes/flavor-split-alpha-bond-dilog.witness.json` | ✅ |
-| `probes/flavor-split-alpha-dilog-expansion.witness.json` | ✅ |
-| `signed-crossing-feasibility.witness.json` | ✅ |
-| `probes/binding-qgaussian-ell1-ceiling-measurement.witness.json` | ❌ not predicted |
+| `probes/flavor-split-alpha-bond-dilog.witness.json` | yes |
+| `probes/flavor-split-alpha-dilog-expansion.witness.json` | yes |
+| `signed-crossing-feasibility.witness.json` | yes |
+| `probes/binding-qgaussian-ell1-ceiling-measurement.witness.json` | no not predicted |
 
 Three of the four are producers this sweep independently flagged as
 anchor-stamp droppers — and they are three of the **four that #5550 did not
