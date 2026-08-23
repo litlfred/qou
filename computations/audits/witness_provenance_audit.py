@@ -66,6 +66,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from mpmath import mpf  # noqa: E402
 
 
 REQUIRED_FIELDS = ("engine", "scriptFile", "commitSha")
@@ -393,17 +395,24 @@ def main(argv: list[str] | None = None) -> int:
     n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
     n_ack = len(by_verdict["PROV_EXEMPT_ACKNOWLEDGED"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
+    # Carry every ratio as mpmath.mpf and serialize with `_precision.fmt`.
+    # A bare Python `/` here produces a float64, which the raw-float64 ratchet
+    # correctly flags on this audit's OWN witness — a provenance auditor
+    # tripping a precision gate on its own output. These are exact rationals
+    # (ratios of counts), so there is nothing to lose by carrying them exactly.
+    set_compute_dps()
     # Kept as-is for continuity with prior runs: it counts every EXEMPT class in
     # the numerator, i.e. it answers "what share is not a known gap?".
-    completeness_ratio = (
-        (n_ok + n_audit + n_no_reader + n_ack) / n_total if n_total > 0 else 0.0
-    )
+    n_clean = n_ok + n_audit + n_no_reader + n_ack
+    completeness_ratio = mpf(n_clean) / mpf(n_total) if n_total > 0 else mpf(0)
     # What the name suggests: of the witnesses actually CHECKED, what share has
     # complete provenance — and what share of the corpus was checked at all.
     n_excluded = n_audit + n_no_reader + n_ack
     n_evaluated = n_ok + n_missing + n_parse_err
-    completeness_ratio_evaluated = (n_ok / n_evaluated) if n_evaluated else 0.0
-    evaluated_coverage = (n_evaluated / n_total) if n_total else 0.0
+    completeness_ratio_evaluated = (
+        mpf(n_ok) / mpf(n_evaluated) if n_evaluated else mpf(0))
+    evaluated_coverage = (
+        mpf(n_evaluated) / mpf(n_total) if n_total else mpf(0))
 
     print("=" * 70)
     print("I14 audit — witness provenance completeness")
@@ -417,11 +426,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  PROV_PARSE_ERROR       : {n_parse_err}")
     print(f"  excluded (NOT evaluated): {n_excluded}"
           f"  = {n_audit} audit + {n_no_reader} no-reader + {n_ack} acknowledged")
-    print(f"  completeness ratio     : {completeness_ratio:.3f}"
+    print(f"  completeness ratio     : {float(completeness_ratio):.3f}"
           f"   (counts all exempt classes as complete)")
-    print(f"  ├─ of those EVALUATED  : {completeness_ratio_evaluated:.3f}"
+    print(f"  ├─ of those EVALUATED  : {float(completeness_ratio_evaluated):.3f}"
           f"   ({n_ok}/{n_evaluated})")
-    print(f"  └─ corpus evaluated    : {evaluated_coverage:.3f}"
+    print(f"  └─ corpus evaluated    : {float(evaluated_coverage):.3f}"
           f"   ({n_evaluated}/{n_total}) — the rest was never checked")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
     print(f"  reader index           : paper={index_health.get('paper_names', 0)} "
@@ -478,13 +487,14 @@ def main(argv: list[str] | None = None) -> int:
             "prov_exempt_acknowledged": n_ack,
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
-            "completeness_ratio": completeness_ratio,
+            "completeness_ratio": fmt(completeness_ratio),
             # Added 2026-08-22 (bean `qou-ivhc`): the ratio above counts every
             # EXEMPT class as complete, so it cannot fall when coverage does.
-            # These two separate "passed" from "never checked".
+            # These two separate "passed" from "never checked". Carried as mpf
+            # and serialized with fmt, same as completeness_ratio above.
             "excluded_not_evaluated": n_excluded,
-            "completeness_ratio_evaluated": completeness_ratio_evaluated,
-            "evaluated_coverage": evaluated_coverage,
+            "completeness_ratio_evaluated": fmt(completeness_ratio_evaluated),
+            "evaluated_coverage": fmt(evaluated_coverage),
         })
         .add_data("by_verdict", by_verdict)
         .add_data("reader_index_health", index_health)
