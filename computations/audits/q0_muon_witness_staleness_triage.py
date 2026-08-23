@@ -103,8 +103,24 @@ def targets():
 
 
 def restore():
-    subprocess.run(["git", "checkout", "--", "computations/"],
-                   cwd=ROOT, capture_output=True)
+    """Restore producer-written artifacts — and NEVER source.
+
+    This originally ran `git checkout -- computations/`, which reverts
+    *everything* under that tree.  This script lives there, so its own
+    end-of-run restore silently reverted its own uncommitted source edits: a
+    fix was written, tested green, and was gone from disk before it could be
+    staged, leaving a commit that carried the message but not the change.
+
+    So: restore only modified NON-`.py` paths.  Producers write witnesses and
+    data artifacts, never source, so nothing legitimate is lost — and leaving a
+    stray artifact behind is a far cheaper failure than silently reverting code.
+    """
+    out = subprocess.run(["git", "diff", "--name-only", "--", "computations/"],
+                         cwd=ROOT, capture_output=True, text=True).stdout.split()
+    targets = [f for f in out if not f.endswith(".py")]
+    if targets:
+        subprocess.run(["git", "checkout", "--"] + targets,
+                       cwd=ROOT, capture_output=True)
 
 
 def main() -> int:
