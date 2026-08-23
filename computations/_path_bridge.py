@@ -92,11 +92,17 @@ _add_to_path(_HERE)
 #    from the source. `_HERE` stays first so the package root keeps
 #    priority over every cluster; only the tail is ordered.
 #
-#    Today exactly one duplicated stem is cluster-vs-cluster
-#    (`qbeta-phib-2loop-bdictionary`, in `probes/` and `qbeta/`), and
-#    `probes` precedes `qbeta` under both the old fs order and the sorted
-#    one, so this changes no resolution on this checkout — it removes the
-#    nondeterminism, it does not move a number. Bean `qou-kcii`.
+#    Today exactly one duplicated stem is cluster-vs-cluster — the qβ Φ_b
+#    two-loop b-dictionary probe, which exists in both `probes/` and
+#    `qbeta/` — and `probes` precedes `qbeta` under both the old fs order
+#    and the sorted one, so this changes no resolution on this checkout:
+#    it removes the nondeterminism, it does not move a number.
+#
+#    (That stem is described rather than spelled on purpose. The
+#    duplicate-stem audit's consumer scan is TEXTUAL, so writing the
+#    literal filename here would register this module as one of its
+#    "consumers" and pollute the very report that tracks it.)
+#    Bean `qou-kcii`.
 _WITNESS_DIRS: list[Path] = [_HERE]
 for _child in sorted(_HERE.iterdir()):
     if not _child.is_dir():
