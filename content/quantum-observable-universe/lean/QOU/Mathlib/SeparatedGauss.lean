@@ -37,6 +37,8 @@ import Mathlib.RingTheory.Localization.FractionRing
 import Mathlib.Data.Rat.Defs
 import Mathlib.RingTheory.Int.Basic
 import Mathlib.Tactic.FieldSimp
+import Mathlib.Data.Rat.Lemmas
+import QOU.Mathlib.SeparatedHeight
 
 namespace MvPolynomial
 
@@ -171,22 +173,92 @@ theorem exists_primitive_scaling (U : MvPolynomial σ ℚ) (hU : U ≠ 0) :
       show ((intContent A : ℤ) : ℚ) * (((b : ℤ) : ℚ) / ((intContent A : ℤ) : ℚ))
           = ((b : ℤ) : ℚ) from by rw [mul_comm, div_mul_cancel₀ _ hcQ]]
 
+/-! ### The disjoint-groups Gauss step
+
+⚠ From here the module is **not** Mathlib-only: it uses `coeff_sumElim_rename_mul` from
+`QOU/Mathlib/SeparatedHeight.lean`, the identity `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` that makes the
+disjoint case elementary. -/
+
+/-- If an integer multiple of a rational is an integer, the rational's denominator divides
+that multiplier. -/
+theorem den_dvd_of_mul_int {n m : ℤ} {x : ℚ} (h : (n : ℚ) * x = (m : ℚ)) :
+    ((x.den : ℤ)) ∣ n := by
+  rcases eq_or_ne n 0 with rfl | hn
+  · exact dvd_zero _
+  · have hnQ : ((n : ℤ) : ℚ) ≠ 0 := Int.cast_ne_zero.mpr hn
+    have hx : x = ((m : ℚ) / (n : ℚ)) := by
+      field_simp
+      linarith [h]
+    rw [hx, ← Rat.divInt_eq_div]
+    exact Rat.den_dvd m n
+
+/-- **Gauss's lemma for disjoint variable groups.**
+
+If `W` has integer coefficients and, over `ℚ`, factors as a product of a polynomial in the
+`x`-variables and one in the `y`-variables, then the two factors can be rescaled by a single
+rational `l` to become integral.
+
+⚠ The proof needs neither unique factorisation nor Bézout, and that is a consequence of the
+groups being **disjoint**: `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` exactly, so once `U` is scaled to be
+primitive and integral, the denominator of each `vⱼ` divides *every* coefficient of `U'`,
+hence divides their gcd, hence is `1`.  In shared variables the coefficients mix and none of
+this is available. -/
+theorem exists_integral_separated_factors {τ : Type*}
+    (U : MvPolynomial σ ℚ) (V : MvPolynomial τ ℚ) (hU : U ≠ 0)
+    (W : MvPolynomial (σ ⊕ τ) ℤ)
+    (hW : map (Int.castRingHom ℚ) W
+        = (rename Sum.inl U : MvPolynomial (σ ⊕ τ) ℚ) * rename Sum.inr V) :
+    ∃ (l : ℚ) (U' : MvPolynomial σ ℤ) (V' : MvPolynomial τ ℤ), l ≠ 0 ∧
+      map (Int.castRingHom ℚ) U' = C l * U ∧
+      map (Int.castRingHom ℚ) V' = C l⁻¹ * V := by
+  classical
+  obtain ⟨l, U', hl, hU', hprim⟩ := exists_primitive_scaling U hU
+  -- every coefficient of `C l⁻¹ * V` is an integer
+  have hden : ∀ j : τ →₀ ℕ, (l⁻¹ * V.coeff j).den = 1 := by
+    intro j
+    have hdvd : ∀ i : σ →₀ ℕ, ((l⁻¹ * V.coeff j).den : ℤ) ∣ U'.coeff i := by
+      intro i
+      refine den_dvd_of_mul_int (m := W.coeff (Finsupp.sumElim i j)) ?_
+      have hcU : ((U'.coeff i : ℤ) : ℚ) = l * U.coeff i := by
+        have := congrArg (coeff i) hU'
+        rwa [coeff_map, coeff_C_mul] at this
+      have hcW : ((W.coeff (Finsupp.sumElim i j) : ℤ) : ℚ) = U.coeff i * V.coeff j := by
+        have := congrArg (coeff (Finsupp.sumElim i j)) hW
+        rwa [coeff_map, coeff_sumElim_rename_mul] at this
+      rw [hcU, hcW, mul_comm l (U.coeff i), mul_assoc, ← mul_assoc l, mul_inv_cancel₀ hl,
+        one_mul]
+    have := hprim ((l⁻¹ * V.coeff j).den : ℤ) hdvd
+    have hpos : 0 < ((l⁻¹ * V.coeff j).den : ℤ) := by
+      exact_mod_cast (l⁻¹ * V.coeff j).pos
+    rcases Int.isUnit_iff.mp this with h1 | h1
+    · exact_mod_cast h1
+    · omega
+  refine ⟨l, U', Finsupp.mapRange (fun q : ℚ => (l⁻¹ * q).num) (by simp) V, hl, hU', ?_⟩
+  ext j
+  rw [coeff_map, coeff_C_mul]
+  show ((((l⁻¹ * V.coeff j).num) : ℤ) : ℚ) = l⁻¹ * V.coeff j
+  have h1 := Rat.num_div_den (l⁻¹ * V.coeff j)
+  rw [hden j] at h1
+  simpa using h1
+
 /-! ### Next
 
-`exists_primitive_scaling` is half of §6's Gauss step.  The other half is the disjoint-groups
-argument itself:
+§6's Gauss step is done: `exists_integral_separated_factors` turns a rational separated
+factorisation of an integral `W` into an integral one.
 
-    W integral, map W = (rename inl U) * (rename inr V)
-      ⟹  ∃ l ≠ 0, both `C l * U` and `C l⁻¹ * V` integral.
+Wiring it into the arc needs one more thing, and it is a commutation, not a new idea:
 
-The proof is short given what is above: scale `U` to a primitive integral `U'`, and then for
-each coefficient `x` of `C l⁻¹ * V`, note that `(coeff i U') * x` is a coefficient of `W` and
-therefore an integer, so `x.den` divides every coefficient of `U'`, hence divides their gcd,
-hence is `1`.  The disjoint-coefficient identity it rests on is `coeff_sumElim_rename_mul` in
-`QOU/Mathlib/SeparatedHeight.lean`.
+1. **`map` commutes with the determinant of derivatives.**  The arc's `sepW` is built over
+   `ℚ`; the `W` this theorem wants is the *same* determinant built over `ℤ` from the integral
+   auxiliary polynomial.  Relating them is `map_det` plus
+   `map (pderivList l P) = pderivList l (map P)`.
+2. Then the induction hypothesis reaches the factors: `index_C_mul` says the rescaling does
+   **not** move the index (so the `l` is invisible on the index side), and
+   `abs_coeff_le_of_mul_separated` bounds the rescaled factors' heights by `W`'s — which is
+   §7's `max(|U|, |V|) ≤ |W|`, and is exactly the step that needed integrality.
 
-⚠ Until that lands, the arc cannot apply the induction hypothesis to the factors of a minimum
-representation, because the hypothesis is about **integer** polynomials and a minimum
-representation lives over `ℚ`. -/
+⚠ That `index_C_mul` makes the scaling invisible on the index side is worth stating plainly:
+the *only* reason integrality is needed is the **height** side.  The index side never cared. -/
+
 
 end MvPolynomial

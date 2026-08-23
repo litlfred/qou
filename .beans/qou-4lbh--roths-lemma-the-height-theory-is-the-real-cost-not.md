@@ -2339,3 +2339,44 @@ module will not be Mathlib-only.
 
 Verification: `lake build` with `.olean` deleted — exit 0, no errors, no linter output. Five
 declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`. Registered in `QOU.lean`.
+
+---
+
+## 2026-08-23 — §6's Gauss step, done
+
+Part 4 from the previous entry. `exists_integral_separated_factors`: if `W` has integer
+coefficients and factors over `ℚ` as a polynomial in the `x`-variables times one in the
+`y`-variables, a single rational `l` rescales both factors to be integral.
+
+The proof is six lines of substance, and needs **neither unique factorisation nor Bézout** —
+both of which general Gauss needs. That is entirely a consequence of the groups being
+disjoint: `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` exactly, so once `U` is scaled to be primitive and
+integral, the denominator of each `vⱼ` divides *every* coefficient of `U'`, hence their gcd,
+hence is `1`. In shared variables the coefficients mix and none of this is available.
+
+Supporting: `den_dvd_of_mul_int` — if an integer multiple of a rational is an integer, the
+rational's denominator divides the multiplier. Via `Rat.den_dvd`, with the `n = 0` case
+handled separately since it makes the division meaningless and the conclusion trivial.
+
+### ⚠ Where integrality is and is not needed — worth stating plainly
+
+`index_C_mul` says rescaling does **not** move the index. So on the **index** side the `l` is
+invisible and integrality was never needed. The *only* reason §6 does Gauss at all is the
+**height** side: §7's `max(|U|, |V|) ≤ |W|` argument turns on "a non-zero integer has absolute
+value at least 1", which is false over `ℚ`.
+
+That is a sharper statement of the same shape as correction 3, which found that height and
+index behave differently across the separated split. Three times now the useful move has been
+to ask which of the two chains a step belongs to.
+
+### Open — one commutation, not a new idea
+
+1. **`map` commutes with the determinant of derivatives.** The arc's `sepW` is built over `ℚ`;
+   the `W` this theorem wants is the *same* determinant built over `ℤ` from the integral
+   auxiliary polynomial. Relating them is `map_det` plus
+   `map (pderivList l P) = pderivList l (map P)`.
+2. Then the induction hypothesis reaches the factors: `index_C_mul` for the index side,
+   `abs_coeff_le_of_mul_separated` (= §7's height step) for the height side.
+
+Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Two declarations `#print axioms`-clean.
