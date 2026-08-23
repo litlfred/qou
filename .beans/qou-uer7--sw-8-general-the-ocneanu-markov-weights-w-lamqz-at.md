@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T18:21:48Z
+updated_at: 2026-08-23T18:42:40Z
 parent: qou-59vq
 ---
 
@@ -133,3 +133,51 @@ ever assembling a seminormal matrix.
 
 - `qou-bsec` — `jones_wenzl_weight` is wrong and LIVE (mass_at_3A_proper.py:592).
 - `qou-pc7l` — `ocneanu_weights.py` docstring declares convention C, code runs D.
+
+
+## Update — the bridge to `schurPrincipal` is proved (same PR #5575)
+
+`OcneanuWeightWenzl.lean`, sorry-free, axiom-clean, generic `[Field R]`:
+
+    ocneanuWeight q (q^3/(q^2+1)) mu = schurPrincipal 2 (q^2) mu / (q^2+1)^|mu|
+
+Why it matters: `QOU/QBeta/WenzlWeightVanishing.lean` names ONE external citation —
+*"Wenzl's theorem, the external input and the only one, is that these ARE the
+Ocneanu/Markov trace weights"* — and `docs/audits/2026-08-16-two-row-cap-proved-and-
+deltalambda-magnitude.md` records that the two-row cap and everything built on it are proved
+ABOUT `schurPrincipal`, so reading them as statements about the mass channel is that citation,
+invisible to `#print axioms`.
+
+The bridge **relocates** that citation (it does not discharge it) onto the single statement
+
+    ocneanuWeight satisfies tr(x sigma_n) = z tr(x) at general n
+
+about a formula that was derived from the Markov conditions and is Lean-proved to reproduce
+the corpus's own proved n=3 weights. **Proving that one statement would discharge the corpus's
+only external input here outright.** That makes it the highest-value open item on this bean,
+not merely the next one.
+
+## Discipline failure to record
+
+I proved `ocneanuWeight_conventionD_eq_zero_of_three_rows` and grepped the corpus
+**afterwards**. `schurPrincipal_eq_zero_iff` had been there since 2026-08-16, sorry-free and
+more general (any level r), together with `wenzlLevel_conventionD`. Wrong order; the
+corpus-grep checklist exists for exactly this. The duplicate is retained only because its
+hypotheses are strictly weaker (no root-of-unity condition), and its docstring says all of
+this. The sharper iff is now the corpus theorem transported along the bridge, not a second
+proof.
+
+## Convention D, restated cleanly
+
+At `z_D`, `W_lam = s_lam(1, q^2) / [2]_{q^2}^n` — the normalised 2-variable principal Schur
+specialisation. Verified against three mutually independent routes through n=8 (hook-content,
+bialternant determinant, SSYT sum over entries in {1,2}); all identical. Consequences that then
+stop being coincidences: the >=3-row vanishing is "s_lam in 2 variables is 0 for l(lam) > 2";
+the normalisation `Sum_lam f^lam W_lam = 1` is the Schur expansion `p_1^n = Sum_lam f^lam
+s_lam` at (1, q^2); and the branching identity is the **Pieri rule** `s_mu * e_1 = Sum_{lam =
+mu + box} s_lam`.
+
+That last point supersedes the "next step" recorded above. Proving branching directly as a
+rational-function identity over addable corners is the hard road; it is Pieri in disguise, and
+at convention D it collapses further to a 2-term identity over <=2-row partitions, since the
+third addable corner (2,0) contributes zero.
