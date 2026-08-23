@@ -13419,6 +13419,228 @@ theorem sPoly_le_resolves₃ (hn : 0 < n) (hp : HeckeParams)
   · exact ⟨_, hpre.trans hrun, hzero⟩
   · exact ⟨_, hpre, fun m => (hstop m).trans (hzero m)⟩
 
+/-! ### The `a = 2` tail
+
+`TCancel₂_coeffEq` leaves a two-term pair, and it is **not** `tailPair`'s: its
+first word matches, its second does not. `tailPair`'s second carries a leading
+`σᵢ₋₁` coming from the peel `descWord i₁ jpp = σᵢ₋₁ :: descWord i₂ jpp`, which
+needs `jpp ≤ i₁` — and at `a = 2`, `jpp = i`. The same bound is `hjppid` in both
+general tail statements, so neither applies here and this case needs its own.
+
+`hecke_a2_tail_schedule.py` measures it: `4m + 4` steps for
+`m = |descWord jm j₂|`, split `2m + 1` on the first term and `2m + 3` on the
+second. Both lineages are the *same* two rightward transports — `σᵢ₋₁` past the
+run, then `σᵢ` past it — separated by one far-commutation `σᵢ σᵢ₋₂ → σᵢ₋₂ σᵢ`;
+the second term then closes with two Bokut–Shiao steps.
+
+**No new machinery.** The engine's trace names both closers `Y`, and both are
+`B(x, x+1, x)` — the coincidence already measured 16/16 for the `a > b` corner,
+where the Bokut–Shiao rule and Yang–Baxter share a leading word and differ by a
+sign that `apply` divides out. So `bsStep` covers them. -/
+
+/-- The word the two `a = 2` tail lineages meet at. -/
+def tailMeet₂ (i i₁ i₂ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  bsWord₂ i₂ i₁ j₂ ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩]
+
+/-- The two words `TCancel₂_coeffEq` leaves. -/
+def tailPair₂ (i i₁ i₂ j₁ j₂ jm : Fin n) : List (Monomial (HeckeGen n) × ℝ) :=
+  [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+      ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ)),
+   ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+
+-- One uniform simp set discharges every word identity below; which of its
+-- rewrites fire varies by call site, so the unused-argument linter is off for
+-- the declaration rather than the set being split per call.
+set_option linter.unusedSimpArgs false in
+/-- **The `a = 2` tail** — `tailPair₂` to a sign-pair at `tailMeet₂`.
+
+Every collision hypothesis is a **head**: the first lineage's words open `σᵢ₋₂`
+throughout and the second's open `σᵢ₋₁`, and the word the first parks on opens
+`σᵢ₋₂`. No length or letter-position argument is needed, unlike the `a ≥ 3`
+prefix, whose three bystanders needed three different separation shapes. -/
+theorem tailFromCancel₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (tailPair₂ i i₁ i₂ j₁ j₂ jm))
+      (AlgElement.ofTerms
+        [(tailMeet₂ i i₁ i₂ j₂, (1 : ℝ)), (tailMeet₂ i i₁ i₂ j₂, -1)]) := by
+  subst hj₁i₂
+  have hne21 : (⟨j₁⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne2i : (⟨j₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- every letter of the run sits at least two below `σᵢ₋₁`, hence below `σᵢ`
+  have hrun : ∀ y ∈ descWord jm j₂, y.index.val + 1 < i₁.val := fun y hy => by
+    have := descWord_index_le hy; omega
+  have hrunI : ∀ y ∈ descWord jm j₂, y.index.val + 1 < i.val := fun y hy => by
+    have := descWord_index_le hy; omega
+  -- the two peels the meeting needs
+  have hd2 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
+    descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂
+  have hd1 : descWord i₁ j₂
+      = (⟨i₁⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := j₁) (i := i₁) (j := j₂) h₂ (by omega), hd2]
+  have hii1 : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  -- ============ the first term: transport, far-commute, transport ============
+  have hP2ne : ∀ q ∈ (([] : List (Monomial (HeckeGen n) × ℝ)) ++
+      [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+        (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]).map Prod.fst,
+      ∀ X : Monomial (HeckeGen n), q ≠ (⟨j₁⟩ : HeckeGen n) :: X := by
+    intro q hq X
+    simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hq
+    subst hq
+    simp only [List.cons_append, List.nil_append]
+    intro hcon
+    exact hne21 (List.cons.inj hcon).1.symm
+  have t1 := farComm_transport_right_sources hn hp i₁ (1 : ℝ) one_ne_zero []
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+    (descWord jm j₂)
+    [(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩, ⟨j₁⟩] []
+    hrun
+    (fun _ _ _ _ q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hP2ne q hq _)
+  have t2 := monicStep hn hp (farCommRelation i j₁)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel j₁ i)
+    (farCommRelation_lm i j₁ (by omega))
+    (by simp [hne2i]) []
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+    [(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n)])
+    ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩, ⟨j₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n)]))
+    ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩, ⟨j₁⟩, ⟨i⟩] ++
+      (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n)]))
+    (1 : ℝ) one_ne_zero
+    (by simp only [List.cons_append, List.nil_append, List.append_assoc])
+    (by simp only [List.cons_append, List.nil_append, List.append_assoc])
+    (fun q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hP2ne q hq _)
+  have t3 := farComm_transport_right_sources hn hp i (1 : ℝ) one_ne_zero []
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+    (descWord jm j₂)
+    [(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩, ⟨j₁⟩] [(⟨i₁⟩ : HeckeGen n)]
+    hrunI
+    (fun _ _ _ _ q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hP2ne q hq _)
+  -- ============ the second term, against the word the first parked on =========
+  have hW2ne : ∀ q ∈ ([(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] ++
+      ([] : List (Monomial (HeckeGen n) × ℝ))).map Prod.fst,
+      ∀ X : Monomial (HeckeGen n), q ≠ (⟨i₁⟩ : HeckeGen n) :: X := by
+    intro q hq X
+    simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hq
+    subst hq
+    rw [tailMeet₂, bsWord₂]
+    simp only [List.cons_append, List.nil_append]
+    intro hcon
+    exact hne21 (List.cons.inj hcon).1
+  have u1 := farComm_transport_right_sources hn hp i₁ (-1 : ℝ) (by norm_num)
+    [(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] []
+    (descWord jm j₂)
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨j₁⟩] [(⟨i⟩ : HeckeGen n)]
+    hrun
+    (fun _ _ _ _ q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hW2ne q hq _)
+  have u2 := monicStep hn hp (farCommRelation i j₁)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel j₁ i)
+    (farCommRelation_lm i j₁ (by omega))
+    (by simp [hne2i]) [(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] []
+    [(⟨i₁⟩ : HeckeGen n)]
+    (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩])
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨j₁⟩] ++
+      (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]))
+    ([(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩, ⟨i⟩] ++
+      (descWord jm j₂ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]))
+    (-1 : ℝ) (by norm_num)
+    (by simp only [List.cons_append, List.nil_append, List.append_assoc])
+    (by simp only [List.cons_append, List.nil_append, List.append_assoc])
+    (fun q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hW2ne q hq _)
+  have u3 := farComm_transport_right_sources hn hp i (-1 : ℝ) (by norm_num)
+    [(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] []
+    (descWord jm j₂)
+    [(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]
+    hrunI
+    (fun _ _ _ _ q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hW2ne q hq _)
+  -- the braid `σᵢ σᵢ₋₁ σᵢ → σᵢ₋₁ σᵢ σᵢ₋₁`, which is `B(i₁, i, i₁)` -- the
+  -- engine names it `Y`, and the two agree for the reason §4al gives
+  have u4 := bsStep (i' := i₁) (i := i) (j := i₁) hn hp h₁ (le_refl _)
+    [(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] []
+    ([(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] ++ descWord jm j₂) []
+    ([(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord jm j₂ ++
+      [(⟨i⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩]))
+    ([(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord jm j₂ ++
+      [(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨i₁⟩]))
+    (-1 : ℝ) (by norm_num)
+    (by simp only [bsWord₁, bsWord₂, hii1, descWord_self, List.cons_append, List.nil_append, List.append_assoc, List.append_nil])
+    (by simp only [bsWord₁, bsWord₂, hii1, descWord_self, List.cons_append, List.nil_append, List.append_assoc, List.append_nil])
+    (fun q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hW2ne q hq _)
+  have u5 := bsStep (i' := j₁) (i := i₁) (j := j₂) hn hp h₂ (by omega)
+    [(tailMeet₂ i i₁ j₁ j₂, (1 : ℝ))] []
+    [] [(⟨i⟩ : HeckeGen n), ⟨i₁⟩]
+    ([(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord jm j₂ ++
+      [(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨i₁⟩]))
+    (tailMeet₂ i i₁ j₁ j₂)
+    (-1 : ℝ) (by norm_num)
+    (by simp only [bsWord₁, bsWord₂, hd1, hd2, tailMeet₂, List.cons_append, List.nil_append, List.append_assoc, List.append_nil])
+    (by simp only [bsWord₁, bsWord₂, hd1, hd2, tailMeet₂, List.cons_append, List.nil_append, List.append_assoc, List.append_nil])
+    (fun q hq => by
+      simp only [List.cons_append, List.nil_append]
+      exact hW2ne q hq _)
+  rw [tailPair₂]
+  simp only [tailMeet₂, bsWord₂, bsWord₁, hd1, hd2, hii1, descWord_self,
+    List.cons_append, List.nil_append, List.append_assoc,
+    List.append_nil] at t1 t2 t3 u1 u2 u3 u4 u5 ⊢
+  exact ((((((t1.step t2).trans t3).trans u1).step u2).trans u3).step u4).step u5
+
+/-- **The `a = 2` S-polynomial resolves.** Same join as `sPoly_le_resolves`:
+`prefixChain₂` to `TCancel₂`, `TCancel₂_coeffEq` to drop the cancelling `WStar`
+pair, then the tail to a sign-pair, absorbed through
+`MultiStepReduction.congr_source`. -/
+theorem sPoly_le_resolves₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    ∃ E : AlgElement (HeckeGen n) ℝ,
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (T0 i i₁ j₁ j₂) E
+      ∧ AlgElement.CoeffEq E
+          (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+  have hpre := prefixChain₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂
+  have htail := tailFromCancel₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂
+  have hzero : AlgElement.CoeffEq
+      (AlgElement.ofTerms
+        [(tailMeet₂ i i₁ i₂ j₂, (1 : ℝ)), (tailMeet₂ i i₁ i₂ j₂, -1)])
+      (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+    have h := ofTerms_cancel_pair (tailMeet₂ i i₁ i₂ j₂) (1 : ℝ) [] []
+    simpa using h
+  have hce : AlgElement.CoeffEq
+      (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms (tailPair₂ i i₁ i₂ j₁ j₂ jm)) := by
+    rw [tailPair₂]
+    exact TCancel₂_coeffEq i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)
+  rcases htail.congr_source hce with hrun | hstop
+  · exact ⟨_, hpre.trans hrun, hzero⟩
+  · exact ⟨_, hpre, fun m => (hstop m).trans (hzero m)⟩
+
 end CornerLe
 
 /-! ## §4ao  The other corner: `a > b`
