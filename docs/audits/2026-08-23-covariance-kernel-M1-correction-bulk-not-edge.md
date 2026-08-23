@@ -41,7 +41,7 @@ is NOT numerically pinned:** a **3-term** fit (n=44,52,60) collapses `a₁` to `
 `a₂ ≈ 0.15`, `a₃ ≈ −0.63` — the series is **deeply pre-asymptotic** at reachable `n` (recall
 `κ_n − κ` only peaks at `n≈32`). So:
 
-- **Defensible:** `M₁>0` exact to n≤67 (**and Lean-proved for `k ≤ 7`**, `m1_pos_of_le_seven`); the
+- **Defensible:** `M₁>0` exact to n≤67 (**and Lean-proved for `k ≤ 8`**, `m1_pos_of_le_eight`); the
   edge contributes at `n^{-2/3}`; `κ_n − κ > 0` empirically throughout.
 - **NOT claimed:** the correction's exponent or coefficient, or which of edge/bulk dominates — all
   numerically unresolved at n≤67.
@@ -56,8 +56,8 @@ neither is ruled out. Open.
 
 ## Lean
 
-`M₁ > 0` for the finite base is now **machine-checked**: `m1_pos_of_le_seven`
-(`0 < scaledCov k (Σ□ h) (Σ□ c²)` for `3 ≤ k ≤ 7`, `interval_cases k <;> decide`) in
+`M₁ > 0` for the finite base is now **machine-checked**: `m1_pos_of_le_eight`
+(`0 < scaledCov k (Σ□ h) (Σ□ c²)` for `3 ≤ k ≤ 8`, `interval_cases k <;> decide`) in
 [`YoungDiagramKernel.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernel.lean),
 verified `lean`-direct exit 0. The all-`n` statement is **not** Lean-provable (it is the open analytic
 problem above); the even moments `threeM4_pos`/`M6_pos` remain the only *general-`n`* proved
