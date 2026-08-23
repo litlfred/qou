@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T07:53:49Z
-updated_at: 2026-08-23T23:43:56Z
+updated_at: 2026-08-23T23:57:53Z
 ---
 
 Split out of qou-p8lx after re-measuring the `q0 constant staleness` gate on
@@ -160,3 +160,35 @@ Guard added: `anchor_flip_straddle_audit.stamp_only()` vetoes a straddle
 verdict when the producer's q reaches only stamps. Vetoes 0 of 8 inline and
 0 of 174 literal candidates — it changes no automated verdict, and fires only
 on the producer I misread by hand. That is its whole value.
+
+
+## mp_yekutieli_sign_block_discrimination — RESOLVED, and it was not a stamp (2026-08-23)
+
+The contradiction (declares proton, carries the muon frozen literal in
+`q_80dps`) was the visible edge of a bigger defect.
+
+Committed: `sign_..._ppb_proton = 4807.83`, `..._ppb_muon = 4806.66`. Two pins
+11.5 ppb apart cannot give residuals agreeing to the 4th digit. The producer
+reads `q_at()`/`q_muon_at()` BY NAME (neither manifest-resolved), so the only
+explanation is that `q_at()` itself was muon when the file was written — the
+witness predates the 2026-05-28 proton re-pin. **Its cross-anchor comparison
+compared one anchor against itself.**
+
+Regenerated: 261.14 (proton) vs 5046.65 (muon) — properly separated.
+
+Survives: the ASSERTION, which tests improvement-vs-bare, not absolute
+residual, and passes at 32262.4 / 32262.6 within ±1 ppb. The code comment
+already explained why that is the right metric (m_μ over-determination is a
+substrate property, PR #1581 Probe A). Scientific claim unchanged.
+
+Does not survive: the VERDICT string — hardcoded, emitted unconditionally,
+claiming '54 ppb residual at both anchors'. 54 matches NEITHER the committed
+values NOR the fresh ones. Stale inherited prose in both versions. A
+`consistent` flag was computed nearby and never wired to it. Now derived.
+
+Manifest: moved `ambiguous` -> `physical_proton` per AGENTS.md constraint 3
+(comparison producers reading both accessors by name). Verified inert — 0
+non-ephemeral fields move, since ambiguous already fell back to proton.
+
+qou-bdkx triage is now complete: 49 flagged -> 5 REAL -> all 5 resolved
+(3 re-bucketed, 1 retracted as stamp-only [aK], 1 regenerated [this]).
