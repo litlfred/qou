@@ -45,7 +45,16 @@ else
   mapfile -t files < <(changed_files)
 fi
 mapfile -t files < <(printf '%s\n' "${files[@]:-}" | sort -u | grep -v '^$' || true)
-[ "${#files[@]}" -eq 0 ] && { echo "check-sidecars: no changed files."; exit 0; }
+if [ "${#files[@]}" -eq 0 ]; then
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
+  echo "check-sidecars: 0 changed file(s) — this check examined NOTHING."
+  echo "  scope: $(changed_files_scope)"
+  exit 0
+fi
 
 # Code-level archimedean markers (the §7c wall). Prose in /- -/ docstrings is ignored
 # by stripping comment lines first; we scan the CODE body only.

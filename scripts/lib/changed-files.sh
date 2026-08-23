@@ -87,6 +87,39 @@ changed_files_base() {
   return 1
 }
 
+# A one-line description of WHAT was compared, for a caller's skip message.
+#
+# Requested on #5495 by the sibling working #5453, who audited their own
+# session transcript for the incidence: across 73 `precision-gates.sh`
+# invocations, 3 were `--changed` used as an actual verification step. Low but
+# non-zero -- and invisible, because
+#
+#     precision-gates: no witness or computations/ script touched — skipped.
+#
+# is printed both when nothing genuinely changed AND when the merge-base half
+# was dropped, which after a commit mean opposite things. A caller cannot tell
+# a real skip from the defect by reading its own output. So callers print this
+# beside the skip, and the two cases read differently.
+#
+# NOT returned through a variable, deliberately: every caller invokes
+# `$(changed_files)`, a subshell, so a variable set inside cannot reach them.
+# That is the same constraint that killed the once-per-shell warning guard
+# (see below), and it is why this is a function the caller calls rather than
+# state the caller reads.
+#
+# Exit status is the base's: 0 when a real base was compared, 1 when it was
+# not, so `changed_files_scope || <treat as unverified>` is available.
+changed_files_scope() {
+  local upstream="${CHANGED_FILES_BASE_REF:-origin/main}" base n
+  if ! base=$(changed_files_base 2>/dev/null); then
+    printf '%s\n' "working tree ONLY — '$upstream' unresolved, so COMMITTED work was NOT examined"
+    return 1
+  fi
+  n=$(git rev-list --count "$base"..HEAD 2>/dev/null || echo "?")
+  printf '%s\n' "working tree + $n commit(s) since $upstream ($(git rev-parse --short "$base" 2>/dev/null))"
+}
+
+
 # One path per line: uncommitted (unstaged + staged + untracked) UNION
 # everything this branch has committed since the base.
 changed_files() {
@@ -150,9 +183,23 @@ dirty.txt" "$(changed_files)"
   n=$(changed_files 2>&1 >/dev/null | grep -c '^WARNING:')
   _cf_chk "warning still fires on a later call" "1" "$n"
 
+  # changed_files_scope: the two cases must READ differently and must carry
+  # different exit statuses, because that difference is the whole point --
+  # "0 files considered" and "the base was dropped" were one message before.
+  case "$(changed_files_scope)" in
+    *"working tree ONLY"*) printf '  [ok  ] scope, no base -> says COMMITTED work was not examined\n' ;;
+    *) printf '  [FAIL] scope, no base -> %s\n' "$(changed_files_scope)"; fail=1 ;;
+  esac
+  changed_files_scope >/dev/null 2>&1 && { printf '  [FAIL] scope, no base -> exit 0, want 1\n'; fail=1; } \
+    || printf '  [ok  ] scope, no base -> exit 1\n'
+
   _cf_mk /tmp/cf-selftest-3 >/dev/null 2>&1
   git branch -q rel; git switch -qc feat3; echo q > f.txt; git add -A; git commit -qm w3
   _cf_chk "explicit base ref honoured" "f.txt" "$(CHANGED_FILES_BASE_REF=rel changed_files)"
+  case "$(CHANGED_FILES_BASE_REF=rel changed_files_scope)" in
+    *"1 commit(s) since rel"*) printf '  [ok  ] scope, base resolved -> names ref and commit count\n' ;;
+    *) printf '  [FAIL] scope, base resolved -> %s\n' "$(CHANGED_FILES_BASE_REF=rel changed_files_scope)"; fail=1 ;;
+  esac
 
   cd /; rm -rf /tmp/cf-selftest-1 /tmp/cf-selftest-2 /tmp/cf-selftest-3
   echo

@@ -116,10 +116,17 @@ if [ "${1:-}" = "--changed" ]; then
   # the natural order.
   #
   # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
-  relevant=$(changed_files \
+  considered=$(changed_files)
+  relevant=$(printf '%s\n' "$considered" \
              | grep -E '(\.witness\.json$|^computations/.*\.py$)' || true)
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
   if [ -z "$relevant" ]; then
-    echo "staleness-gates: no witness or computations/ script touched — skipped."
+    echo "staleness-gates: 0 relevant of $(printf '%s\n' "$considered" | grep -c .) changed file(s) — skipped."
+    echo "  scope: $(changed_files_scope)"
     exit 0
   fi
 fi
