@@ -137,6 +137,53 @@ fits the four recorded exponents and is now corroborated at the deuteron by
 this exact route — but it remains a fit for T, ³He and ⁴He until each is
 computed the same way.
 
+## RESOLVED: the D-frame law, computed on all four atoms
+
+Re-running `markov_peel.tr_M_atomic` per atom and factoring the denominator
+(`markov/d_frame_closed_form_law_probe.py`):
+
+| atom | Z | N | prefactor | u-exp | `(1+u⁴)^k` | C-law pref / exp / k |
+|---|---|---|---|---|---|---|
+| D | 1 | 1 | 192 | 46 | 3 | 32 / 40 / 5 |
+| T | 1 | 2 | 768 | 66 | 4 | 128 / 61 / 8 |
+| ³He | 2 | 1 | 768 | 58 | 6 | 128 / 58 / 8 |
+| ⁴He | 2 | 2 | 3072 | 78 | 7 | 512 / 79 / 11 |
+
+Fitting each factor as `aZ + bN + c` on D/T/³He and testing on ⁴He — **both
+held-out predictions exact**:
+
+```
+C-frame :   2^(2A+1) · u^(18Z+21N+1) · (1+u²)^(3A−1)      [= u^(21A−3Z+1)]
+D-frame : 6·2^(2A+1) · u^(20A−8Z+14) · (1+u⁴)^(A+2Z−1)
+```
+
+### The structurally interesting part
+
+Under C the cyclotomic exponent is `3A−1`: **protons and neutrons contribute
+equally**. Under D it is `A + 2Z − 1` — **a proton contributes 3, a neutron 1**.
+The law becomes p/n asymmetric, where C was blind to the distinction.
+
+This also explains the `qou-iayk` puzzle completely. ³He matched the C
+exponent exactly (58 = 58) while its A=3 partner T was off by 5, which looked
+like incoherence; it is simply where `20A − 8Z + 14` and `21A − 3Z + 1`
+intersect, at (Z,N) = (2,1).
+
+### What is exact and what is fitted
+
+**Exact:** every per-atom denominator. `tr_M_atomic` returns an
+integer-coefficient rational function of `q` with no anchor in it, so its
+denominator *is* `D(u)`.
+
+**Fitted:** the three `(Z,N)` closed forms. Three parameters against four
+atoms is **one degree of validation each**; both passed. That is much stronger
+than the original four-point exponent fit — the inputs are now exact and two
+independent quantities each validate — but it is still not a derivation.
+
+**Open:** *why* the counting gives `A + 2Z − 1` rather than `n − 1 = 3A − 1`
+(the probe's own phrasing is "once per Markov peel"), and why the prefactor
+picks up a uniform 6 when its C derivation — crossing-counting — is
+convention-free. Both are structural questions this does not answer.
+
 ## This is the SECOND instance of a documented pattern, not a new theory
 
 PR #5265 §0 (merged 2026-08-19) reached the same structural conclusion by a
@@ -175,8 +222,8 @@ is wrong. Two for two so far, on independent objects.
 
 ## Not claimed
 
-- No **general** re-derived D-frame law is landed here. The deuteron case is
-  now exact (above); the `(Z,N)` dependence is not, and the cyclotomic
-  exponent's counting rule is open.
+- The `(Z,N)` closed forms are fits over exact per-atom data (one degree of
+  validation each), not derivations. The counting rule behind `A + 2Z − 1`
+  and the uniform 6 in the prefactor are both open.
 - The Habiro regeneration is **not** unblocked by this alone — it should land
   together with the re-derived law, or the same mismatch recurs.
