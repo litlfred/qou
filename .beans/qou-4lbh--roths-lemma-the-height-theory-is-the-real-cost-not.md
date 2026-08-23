@@ -1403,3 +1403,87 @@ that measurement can only *detect*, not *fix*.
 
 Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+---
+
+## ⚠ 2026-08-23 — THE SOURCE ARRIVED (commit `ca1ae1a2eb`), and it diagnoses the sixth correction
+
+Four PDFs uploaded to `uploads/`. **They are not all about the same theorem**, and the
+distinction matters enough to record first.
+
+### ⚠ Two different "Roth's theorems"
+
+| paper | theorem |
+|---|---|
+| `roth_lemma.pdf` — Mahler, *Lectures on Diophantine Approximations*, Ch. 5 | Roth's **lemma** (Diophantine) — **this arc** |
+| `2111.12409v4.pdf` — Dolce–Zucconi, adelic curves | Roth's **approximation** theorem, generalised |
+| `2605.19310v1.pdf` — Lewko, "A Fourier-free density-increment proof" | Roth on **3-term arithmetic progressions** |
+| `noniterativeroth2.pdf` — Croot–Sisask | Roth on **3-term arithmetic progressions** |
+
+The last two are **density Ramsey theory** (1953): every positive-density subset of `[N]`
+contains a 3-AP. This arc is Roth's **approximation** theorem (1955): irrationality measure 2.
+Same author, unrelated results, no shared machinery. Fourier-free proofs of the 3-AP theorem
+do not transfer here.
+
+### Mahler Ch. 5 diagnoses the sixth correction precisely
+
+The blocking item was "consult the source". Doing so:
+
+**What this arc got right.**
+* The cost bound is right. Mahler §13's operators `Λ_μν` have total order `≤ μ−1` in
+  `x₁..x_{m−1}` and exactly `ν−1` in `x_m`; summed over a permutation that is
+  `≈ n²/(2r_{m−1}) + n²/(2r_m)` — matching `cost_bound_of_bounded_order`'s `r²(1/D₁+1/D₂)` up
+  to a factor 2.
+* **The rescaling is exactly right.** §12 sets `p_h = n·r_h` and uses
+  `J(W; r) = n·J(W; p)` — literally `le_index_scale_degree_iff` /
+  `index_scale_degree_le_iff` from the previous entry.
+* Property (C), `J(A_{j}) ≥ max(0, J(A) − ∑ j_h/p_h)`, is `index_le_index_pderivList_add`.
+* Property (A), `J(A±B) ≥ min(J(A),J(B))`, is `index_add_ge`.
+
+**What this arc got wrong — and it is not the constant.**
+`index_le_of_rescaled_factor_bounds` combines the pieces **linearly** and divides through by
+`r`. Mahler does not. §13 introduces `N = ⌊(J(A)−t)·r_m⌋ + 1` and **splits on `n ≤ N` versus
+`n > N`**, yielding
+
+    J(A) ≤ t + 2·max( √(J(W)/n), … )
+
+— a **square root**, with `t` a free parameter (`0 < t ≤ 1`) optimised at the end, and
+`c_m = 2^m − 3` accumulating over the induction. A linear combination cannot produce that, so
+the previous entry's "the error term is of order 1, therefore unusable" was measuring the
+wrong quantity: the argument never divides through.
+
+**A concrete lemma this arc is missing.** Mahler's property (B) is
+`J(AB) = J(A) + J(B)` — an **equality**. This arc has only `index_mul_ge` (`≥`), plus
+`index_separated` (equality, but only for *disjoint* variable groups). §12 uses the equality.
+Over a domain it should hold generally: the index is the order of vanishing in an auxiliary
+variable, and orders add.
+
+**Structure of the split.** `(x₁,…,x_{m−1})` versus `(x_m)` alone — `V` is **univariate**.
+This arc's `σ ⊕ τ` machinery covers it, with `τ = Unit`.
+
+### ⚠ Pre-Archimedean — the answer is in Mahler's own footnote
+
+> "Put `w(A) = e^{−J(A)}` … `w(A)` is a **non-archimedean valuation** on the ring of
+> polynomials."
+
+Properties (A) and (B) are exactly the ultrametric and multiplicativity axioms. So the entire
+Roth's-lemma layer **is already non-Archimedean** — which independently confirms the third
+correction, that the Mahler-measure machinery (`MahlerJensen.lean`, circle averages, `ℂ[X]`)
+is not needed by it. That module remains proved and axiom-clean, and remains unused.
+
+For a genuinely place-uniform treatment, `2111.12409v4` (Chen–Moriwaki adelic curves) is the
+framework: a field plus a measure space of places with a product formula, Archimedean and
+non-Archimedean handled together. That is a different and much larger project than finishing
+Roth's lemma.
+
+### Revised open list
+
+1. **`index_mul_eq`** — upgrade `index_mul_ge` to an equality over a domain. Mahler's (B),
+   used by §12. Concrete and provable.
+2. **Redo the induction step non-linearly** — the `n ≤ N` / `n > N` case split and the
+   square-root bound. This replaces `index_le_of_rescaled_factor_bounds` as the step's
+   conclusion.
+3. `ω(m, ε)` and `c_m = 2^m − 3` then come out of the recursion rather than being guessed.
+
+⚠ The sixth correction is now **explained, not repaired**: the inequality is still linear and
+still too weak. What changed is that the fix is known and local, rather than unknown.
