@@ -1,0 +1,456 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-23T05:32:43.447588+00:00",
+  "commitSha": "d5304ad6d31ba84fbd801e3a7b77b14cd63a0f59",
+  "assertions": [
+    {
+      "name": "a2_cases_where_s1_s2_do_NOT_reach_V2",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a2_cases_where_the_V_loop_is_NOT_trivial",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a2_cases_where_the_U_loop_DOES_reach_U0L",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a2_cases_where_the_U_side_does_NOT_open_with_quadPair",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a2_cases_where_quadPair's_redex_is_NOT_already_in_U0",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a2_cases_where_the_U_endpoint_IS_WStar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "a1_cases_where_s1_s2_DO_reach_V2",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 35,
+  "computation": "hecke-small-a-decomposition",
+  "scriptFile": "hecke_small_a_decomposition.py",
+  "scriptHash": "2d04c1c5812a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_small_a_decomposition.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_small_a_decomposition.py"
+  },
+  "parameters": {
+    "scope": "a in {1,2}, b in {a, a+1, a+2}; a >= 3 is proved",
+    "why": "three probes carry the caveat 'a = 2 is excluded throughout this arc' and none records a reason; this measures what the two cases need so the caveat can be replaced by a fact"
+  },
+  "data": {
+    "cases_checked": 6,
+    "cases": [
+      {
+        "a": 1,
+        "b": 1,
+        "i": 5,
+        "n": 8,
+        "j1_eq_i2": false,
+        "jp_eq_i1": false,
+        "jpp_eq_i": false,
+        "prefix_formula_a2_plus_a_plus_5": 7,
+        "s1_s2_reach_V2": false,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 2,
+        "vLoop_reaches_V2L": false,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": false,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Q",
+            4
+          ],
+          [
+            "Q",
+            5
+          ]
+        ],
+        "U_opens_with_quadPair": false,
+        "quadPair_redex_already_in_U0": false,
+        "quadPair_L_rel_i": null,
+        "quadPair_R_rel_i": null,
+        "quadPair_L_is_sigma_jp_jpp": false,
+        "U_end_rel_i": [
+          1,
+          0
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": false,
+        "descWord_i_j1_len": 2
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "i": 6,
+        "n": 9,
+        "j1_eq_i2": false,
+        "jp_eq_i1": false,
+        "jpp_eq_i": false,
+        "prefix_formula_a2_plus_a_plus_5": 7,
+        "s1_s2_reach_V2": false,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 3,
+        "vLoop_reaches_V2L": false,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": false,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Q",
+            5
+          ],
+          [
+            "F",
+            6,
+            4
+          ],
+          [
+            "Q",
+            6
+          ]
+        ],
+        "U_opens_with_quadPair": false,
+        "quadPair_redex_already_in_U0": false,
+        "quadPair_L_rel_i": null,
+        "quadPair_R_rel_i": null,
+        "quadPair_L_is_sigma_jp_jpp": false,
+        "U_end_rel_i": [
+          1,
+          2,
+          0
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": false,
+        "descWord_i_j1_len": 2
+      },
+      {
+        "a": 1,
+        "b": 3,
+        "i": 7,
+        "n": 10,
+        "j1_eq_i2": false,
+        "jp_eq_i1": false,
+        "jpp_eq_i": false,
+        "prefix_formula_a2_plus_a_plus_5": 7,
+        "s1_s2_reach_V2": false,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 4,
+        "vLoop_reaches_V2L": false,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": false,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Q",
+            6
+          ],
+          [
+            "F",
+            7,
+            5
+          ],
+          [
+            "F",
+            7,
+            4
+          ],
+          [
+            "Q",
+            7
+          ]
+        ],
+        "U_opens_with_quadPair": false,
+        "quadPair_redex_already_in_U0": false,
+        "quadPair_L_rel_i": null,
+        "quadPair_R_rel_i": null,
+        "quadPair_L_is_sigma_jp_jpp": false,
+        "U_end_rel_i": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": false,
+        "descWord_i_j1_len": 2
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "i": 7,
+        "n": 10,
+        "j1_eq_i2": true,
+        "jp_eq_i1": true,
+        "jpp_eq_i": true,
+        "prefix_formula_a2_plus_a_plus_5": 11,
+        "s1_s2_reach_V2": true,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 5,
+        "vLoop_reaches_V2L": true,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": true,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Y",
+            5,
+            6
+          ],
+          [
+            "Q",
+            5
+          ],
+          [
+            "F",
+            7,
+            5
+          ],
+          [
+            "Y",
+            6,
+            7
+          ],
+          [
+            "Y",
+            5,
+            6
+          ]
+        ],
+        "U_opens_with_quadPair": true,
+        "quadPair_redex_already_in_U0": true,
+        "quadPair_L_rel_i": [
+          1,
+          0
+        ],
+        "quadPair_R_rel_i": [
+          0
+        ],
+        "quadPair_L_is_sigma_jp_jpp": true,
+        "U_end_rel_i": [
+          2,
+          1,
+          2,
+          0,
+          1
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": true,
+        "descWord_i_j1_len": 3
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "i": 8,
+        "n": 11,
+        "j1_eq_i2": true,
+        "jp_eq_i1": true,
+        "jpp_eq_i": true,
+        "prefix_formula_a2_plus_a_plus_5": 11,
+        "s1_s2_reach_V2": true,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 7,
+        "vLoop_reaches_V2L": true,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": true,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Y",
+            6,
+            7
+          ],
+          [
+            "Q",
+            6
+          ],
+          [
+            "F",
+            7,
+            5
+          ],
+          [
+            "F",
+            8,
+            6
+          ],
+          [
+            "F",
+            8,
+            5
+          ],
+          [
+            "Y",
+            7,
+            8
+          ],
+          [
+            "B",
+            6,
+            7,
+            5
+          ]
+        ],
+        "U_opens_with_quadPair": true,
+        "quadPair_redex_already_in_U0": true,
+        "quadPair_L_rel_i": [
+          1,
+          0
+        ],
+        "quadPair_R_rel_i": [
+          3,
+          0
+        ],
+        "quadPair_L_is_sigma_jp_jpp": true,
+        "U_end_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          0,
+          1
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": true,
+        "descWord_i_j1_len": 3
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "i": 9,
+        "n": 12,
+        "j1_eq_i2": true,
+        "jp_eq_i1": true,
+        "jpp_eq_i": true,
+        "prefix_formula_a2_plus_a_plus_5": 11,
+        "s1_s2_reach_V2": true,
+        "s1_s2_steps": 2,
+        "uLoop_reaches_U0L": false,
+        "uLoop_steps": 9,
+        "vLoop_reaches_V2L": true,
+        "vLoop_steps": 0,
+        "V2L_equals_V2": true,
+        "U0L_equals_U0": false,
+        "U_script": [
+          [
+            "Y",
+            7,
+            8
+          ],
+          [
+            "Q",
+            7
+          ],
+          [
+            "F",
+            8,
+            6
+          ],
+          [
+            "F",
+            8,
+            5
+          ],
+          [
+            "F",
+            9,
+            7
+          ],
+          [
+            "F",
+            9,
+            6
+          ],
+          [
+            "F",
+            9,
+            5
+          ],
+          [
+            "Y",
+            8,
+            9
+          ],
+          [
+            "B",
+            7,
+            8,
+            5
+          ]
+        ],
+        "U_opens_with_quadPair": true,
+        "quadPair_redex_already_in_U0": true,
+        "quadPair_L_rel_i": [
+          1,
+          0
+        ],
+        "quadPair_R_rel_i": [
+          3,
+          4,
+          0
+        ],
+        "quadPair_L_is_sigma_jp_jpp": true,
+        "U_end_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          4,
+          0,
+          1
+        ],
+        "U_end_is_WStar": false,
+        "U_end_is_bsWord2_i2_i1_j2_plus_si_si1": true,
+        "descWord_i_j1_len": 3
+      }
+    ]
+  },
+  "caveats": [
+    "The U script is followed in isolation, taking the deg-lex-greatest image word as each step's successor. That is a heuristic for 'which word did this term become' and is sound only while the lineage has not split -- which the quadratic step does, so read the script past its Q step as one branch of two.",
+    "Reaching an endpoint is necessary, not sufficient: a stretch that transfers still has to compose on the nose, and this arc's record on 'remaining work is just wiring' is poor."
+  ]
+}
