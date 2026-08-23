@@ -11672,12 +11672,15 @@ entry and V the parked one; after U's quadratic step splits it in two, V is the
 first entry of three. Each trio's collision hypothesis is one letter — `U`'s
 left context opens `σᵢ₋₁` against the parked `V2L`'s `σᵢ₋₂`, and `V`'s the other
 way round against both of U's outputs, which share U's prefix. -/
-theorem openingPhase (hn : 0 < n) (hp : HeckeParams)
+theorem openingPhase_of_loops (hn : 0 < n) (hp : HeckeParams)
     {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
     (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
-    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    (hj₂ : j₂.val ≤ j₁.val) (htopi : jppp.val ≤ i.val)
+    (hloops : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp)) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) := by
   have hj₁ : j₁.val ≤ jpp.val := by omega
@@ -11685,9 +11688,6 @@ theorem openingPhase (hn : 0 < n) (hp : HeckeParams)
   -- every index pinned by name: these are bare `have`s with no expected type,
   -- so an implicit the hypotheses do not determine stays a metavariable and
   -- the `by omega` beside it has nothing to prove about
-  have hloops := openingLoops (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁)
-    (j₂ := j₂) (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjppp hj₁
-    (by omega) htop
   -- both lineage words, rewritten into `trio`'s source shape
   have hUeq := lineage_eq_trio_source (i := i) (x := i₁) (y := i₂) (j₁ := j₁)
     (j₂ := j₂) (jp := jp) (jpp := jpp) (jppp := jppp)
@@ -12321,6 +12321,84 @@ theorem closingV_at_TOpen (hn : 0 < n) (hp : HeckeParams)
   simp only [trio_out_eq_fRun_source, List.nil_append,
     List.append_assoc] at key ⊢
   exact key
+
+/-- **`a ≥ 4`**: the loop stretch is `openingLoops`. -/
+theorem openingPhase (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  openingPhase_of_loops hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+    (openingLoops (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+      (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjppp (by omega) (by omega) htop)
+
+/-! #### `a = 3`: the same construction, with the U loop as the identity
+
+`hecke_closing_from_topen.py`'s small-`a` sweep measures `a = 3` at
+`s1, s2` = 2 steps, U loop = **0**, V loop = **1**, two trios = 6 — the same
+`a² − 3a + 9 = 9` the general case gives, and the same five stretches.
+
+The U loop is zero-length for a structural reason, not by accident: at `a = 3`,
+`jpp = i₁`, so `descWord i₂ jpp` is empty and **`U0L` and `U0` are the same
+word**. `uLoop` is not *absent* here, it is the identity — which is exactly what
+its parameter `m = i₁ − jppp = −1` cannot express.
+
+`vLoop` runs one pass, and needs only `jppp ≤ i`, which at `a = 3` holds with
+equality. That weakening (three commits back) is what makes this case reachable
+at all. -/
+
+/-- `a = 3` collapses the U loop: `jpp = i₁` empties `descWord i₂ jpp`. -/
+theorem U0L_eq_U0 {n : ℕ} {i i₁ i₂ j₁ j₂ jpp : Fin n}
+    (h₂ : i₂.val + 1 = i₁.val) (hjppi : jpp = i₁) :
+    U0L i i₁ i₂ j₁ j₂ jpp = U0 i i₁ j₁ j₂ := by
+  subst hjppi
+  rw [U0L, U0, descWord_of_lt (by omega)]
+  simp
+
+/-- **`a = 3`'s loop stretch**: `s1`, `s2`, then the V loop alone. -/
+theorem openingLoops₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjp : j₁.val + 1 = jp.val) (hjpplow : jp.val + 1 = jpp.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp) := by
+  have hjppv : jpp.val = i₁.val := congrArg Fin.val hjppi
+  have hj₁i₂ : j₁.val ≤ i₂.val := by omega
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂)
+      (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂)).step
+      (s2 hn hp h₁ h₂ hj₁i₂)
+  have hV := vLoop (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjpp hj₁ hj₂ (by omega)
+  have hUU := U0L_eq_U0 (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := jpp) h₂ hjppi
+  -- rewrite `U0L → U0` in `hV` and in the GOAL. Doing it in `hsetup` instead
+  -- hits its SOURCE too, which is `T0` and must stay `U0`.
+  rw [T0, TL, hUU]
+  rw [T2] at hsetup
+  rw [hUU] at hV
+  exact hsetup.trans hV
+
+/-- **`a = 3`**: the loop stretch is `openingLoops₃`. Same `TOpen`, same trios. -/
+theorem openingPhase₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  have hjppv : jpp.val = i₁.val := congrArg Fin.val hjppi
+  openingPhase_of_loops hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+    (openingLoops₃ (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+      (jp := jp) (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjp hjpp hjppp
+      (by omega) (by omega) hjppi)
 
 /-- The chain at the prefix's first cancellation: four terms, two of them the
 same word with opposite coefficients. -/
