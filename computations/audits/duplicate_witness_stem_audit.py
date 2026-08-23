@@ -63,7 +63,16 @@ a weaker finding rather than a pass.
 
 Like the consumer scan, this OVER-reports: most globs resolve names that are
 not duplicated, and are fine. It marks the ones whose target basename IS
-duplicated today as `LIVE`, and the rest as `latent`. Adjudicate at the call
+duplicated today as `LIVE`, and the rest as `latent`.
+
+**`LIVE` is the narrow tier, and it is currently empty on BOTH trees.** It can
+only fire when the glob argument is a string *literal*, since that is the only
+case where the target basename is knowable statically. Every one of the six
+defects fixed under `qou-kcii` computed its target with an f-string, so
+back-testing this detector against the pre-fix `origin/main` sources gives
+**0 LIVE and 9 latent sites across those six files** — the detection is real,
+but it lands in `latent`. Read `LIVE: 0` as "no statically-decidable case",
+never as "clean"; the actionable list is `latent`. Adjudicate at the call
 site — the right fix is usually `_path_bridge.witness_path(name, prefer_dir)`
 with prefer_dir chosen deliberately (for a witness, the PRODUCER's directory,
 because producers emit beside themselves — not the caller's, which is how a
@@ -319,7 +328,15 @@ def main() -> int:
         print(f"  glob sites whose result is decided by ORDER : {len(rows)}")
         print(f"    of those, not wrapped in sorted()         : {len(unordered)}")
         print(f"    of those, resolving a DUPLICATED basename : {len(live)}")
-        for tag, sel in (("LIVE (target basename is duplicated today)", live),
+        if not live:
+            print("      ^ do NOT read 0 here as 'clean'. LIVE requires the glob")
+            print("        argument to be a STRING LITERAL, and every one of the")
+            print("        six defects fixed under qou-kcii built its target with")
+            print("        an f-string, so all six land in the latent tier below.")
+            print("        Back-tested against origin/main: 0 LIVE, 9 latent sites")
+            print("        across those six files. The actionable signal is the")
+            print("        latent list; LIVE is the narrower, currently-empty tier.")
+        for tag, sel in (("LIVE (literal target, duplicated basename today)", live),
                          ("unordered (latent — target not duplicated, or "
                           "not a literal)",
                           [r for r in unordered if not r["live"]])):
