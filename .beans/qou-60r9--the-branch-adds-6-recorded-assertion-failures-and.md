@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T22:19:32Z
-updated_at: 2026-08-23T22:59:31Z
+updated_at: 2026-08-23T23:52:00Z
 ---
 
 `witness_failed_assertion_audit.py` is registered **advisory** in
@@ -321,3 +321,77 @@ lost.
 is the corpus ceasing to lie: a stale witness meeting corrected inputs, a
 convention ruling, or an anchor being applied for the first time. That is worth
 stating plainly, because a ratchet counting 43 reads like 43 regressions.
+
+
+---
+
+## Two RESOLVED, and the C→D count reaches eight downstreams
+
+### `tau_L4_matches_independent_f64_measurement` — RESOLVED (bf3c70c8c)
+
+Reported as a fresh flip during the drain:
+
+    HEAD (computedAt 2026-08-01)  computed 1.000145897598652  expected 1.000145898  PASS
+    broken                        computed 1.0001284313359748 expected 1.000145898  FAIL
+
+Off by 1.75e-5 against a 5e-08 tolerance — 350x — and stable to every digit at
+`QOU_COMPUTE_DPS` 50/60/70, so precision was never in it.
+
+Cause: `a4_brunnian_deficit_closed_form.py:402` held `measured = 1.000145898`,
+a 10-digit copy of `tau_L4` from `a4-h12-brunnian-deficit-measure.witness.json`.
+`36844baad` (2026-08-09) wired the convention-D solver into the pipeline; the
+literal came from the C-era measurement.
+
+**Re-running the measurement probe under D settles it:**
+
+    measured    tau_L4 = 1.0001284313359779421818005266796628820822874564922
+    closed form        = 1.0001284313359748
+
+~14 significant digits, a difference of ~3.1e-15 against a 5e-08 tolerance.
+**The identity was never refuted; only the copy was stale.** Fixed the same way
+as the qbeta constant: the producer now READS the measurement witness instead
+of freezing a copy of it.
+
+Worth recording why the measurement witness had gone two weeks without a
+regeneration: it records its producer under a `producer` key rather than
+`scriptFile`, so it is one of the **22 UNRESOLVABLE** witnesses — nothing can
+map it back to a producer, and it has therefore never appeared as stale. Its
+producer exists and runs in 163 s. That is bean qou-nb4s's cost in miniature.
+
+### `cyclic-intertwiner-verify` — RESOLVED (a819eb1ab), see qou-w701
+
+The one live defect. A sixth p-n interface construction, colour-blind, in the
+verifier rather than in `a_operator_gauge_align`. h6 residual
+0.0011504265 → 6.7076893e-49.
+
+### Also accepted, not flips: three more C→D nucleus atoms (f6f629021)
+
+`nucleus_real_sdp --atom {deuteron,he4,tritium}`, each emptying
+`negative_norm_blocks` and `sign_flip_conjugate_pairs` to `[]` as tr_M moves —
+the same signature as he3. Sixth, seventh and eighth C→D downstreams.
+
+## Ledger
+
+    branch NEW at its peak                     43
+      -1  qbeta-sym-part-hecke-natural-form    (cffc1265f)
+      -1  cyclic-intertwiner-verify            (a819eb1ab — the live defect)
+      -1  tau_L4_matches_independent...        (bf3c70c8c)
+    branch now                                 40
+
+## Causes — final tally of the 17 diagnosed
+
+    convention C -> D                  7   (3 now RESOLVED)
+    stale CODATA/AME input             5
+    q0 anchor correction             2-4
+    frozen expected value              2   (both were C->D literals; counted once above)
+    schema misuse, pre-existing        1
+    genuinely open science             2
+    LIVE DEFECT                        1   (RESOLVED)
+
+**The C→D migration of 2026-08-09 is the single largest cause on this branch,
+and every instance is the same shape: a downstream artifact — a witness, a
+frozen literal, or one leg of a paired computation — that was never
+regenerated after the ruling.** Anything remaining on this list that touches
+`y_lambda_at`, `gram.TR_M`, or a `habiro-coefficients-atomic` descendant
+should be checked against it BEFORE being treated as a defect. `gram.TR_M`
+has ~70 live importers.
