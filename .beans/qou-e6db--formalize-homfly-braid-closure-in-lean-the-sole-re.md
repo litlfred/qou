@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T06:43:05Z
+updated_at: 2026-08-23T07:41:16Z
 ---
 
 ## Why this bean exists
@@ -537,3 +537,37 @@ container** (verified — it produced `(Equiv.Perm.cycleOf_eq_one_iff f).mpr h`)
 Since the cache carries no Mathlib `.lean` source and the LSP is down,
 `#check` and `exact?` against the oleans are the only name-discovery tools
 available here, and both are worth reaching for before hand-proving anything.
+
+
+## The PARTITION FACT is proved
+
+Named as the blocker two entries ago; now discharged.
+
+- `leaderOf` + `leaderOf_isLeader` / `leaderOf_sameCycle` — the leader
+  assignment as a *function*, which is what turns "each cycle has one leader"
+  into something summable.
+- `leaderOf_eq_iff` — two positions share a leader exactly when they share a
+  cycle, so **the fibres of `leaderOf` are precisely the components**.
+- `card_fiber_leader` — a leader's fibre is its component, of size `cycleLen`.
+  Two cases, the two shapes a component can have: a lone fixed strand, or a
+  genuine cycle.
+- **`sum_cycleLen_leaders`** — summing each leader's component size gives `n`.
+  The components cover `Fin n` exactly.
+
+66 results, sorry-free, zero warnings, axiom-clean.
+
+## What is still missing, precisely
+
+`sum_cycleLen_leaders` is the **Finset** statement. `lapsOf` is built from
+`(List.finRange n).filter …`, so converting it into `(lapsOf w).length = n`
+needs a **List/Finset bridge** — relating a `List.sum` over filtered `finRange`
+to a `Finset.sum` over filtered `univ`. That is bookkeeping rather than
+mathematics, but it is not done, and until it is, `(verdictsFor w k).length = 2`
+is still not available.
+
+**I removed a scaffold rather than commit it.** An intermediate version of
+`lapsOf_length` carried a `sorry`; per the zero-sorry discipline it was deleted,
+not left in place with a citation. The file has 0 occurrences of `sorry`.
+
+Next: the List/Finset bridge → `lapsOf_length` → `(verdictsFor w k).length = 2`
+→ the well-founded reduction.
