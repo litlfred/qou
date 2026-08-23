@@ -3,8 +3,9 @@
 title: 'hadron_knot_table crashes: mpmath dtype=object reaches scipy.sparse (qou-5qwb class)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T08:10:16Z
-updated_at: 2026-08-23T08:10:16Z
+updated_at: 2026-08-23T23:08:29Z
 ---
 
 Found while sampling the convention-C witness backlog (`qou-z11r`, PR #5510).
@@ -49,3 +50,20 @@ apply to them.
 
 Not fixed in #5510: out of that PR's scope (its subject is the q0 pin on
 `atom_per_generator_volumes_mpfr` and the per-interface probe naming).
+
+SECOND CRASH SITE, and it is not the one recorded above (measured 2026-08-23, scipy 1.17.1, clean origin/main worktree). This bean names hecke_core_legacy._build_ysn_matrices -> csr_matrix, i.e. sparse CONSTRUCTION. Here construction SUCCEEDS and the failure is one step later, in sparse MULTIPLICATION:
+
+  hadron_knot_table.py:222 -> :179 compute_atom
+  hecke_core_legacy.py:2270 binding_energy
+  hecke_core_legacy.py:1435 unified_iterative_correction
+      Msig = sig_sparse.T.dot(M_run.T).T    # = M_run @ sig_sparse
+  scipy/sparse/_compressed.py:404 _matmul_multivector
+  TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))
+
+So there are at least two independent scipy-sparse boundaries in this path, and fixing the constructor alone will not clear the producer. Whoever takes this should expect the same failure to recur at each sparse op until the whole hecke_core_legacy sparse branch is addressed.
+
+WHY IT IS NOT A ONE-LINE FIX, unlike the two sibling crashes I did fix. vhat_per_crossing_chain's np.linalg.lstsq had an exact closed form hiding behind it (span{sigma,I} by the Hecke quadratic), so the numpy call was removable outright -- PR #5607. There is no equivalent here: the sparse path exists for an O(dim*nnz) vs O(dim^3) speedup across a whole mass table, and there is no scipy.sparse over mpf. The real options are (a) dense mpmath -- correct, possibly far slower, needs measuring before committing to it; (b) route to the canonical surface instead of hecke_core_legacy; (c) declare the producer exploratory-only and stop treating its crash as a defect.
+
+CONTEXT FOR (b)/(c): computations/hecke_core_legacy.py carries a DEPRECATION-CANDIDATE banner ('Phase-5 exploratory surface, kept in place because 9 live importers still depend on its symbols'). Measured today: 10 importers under computations/ excluding _deprecated. So this is not a corner of the tree that can be quietly rewritten, and the choice among (a)/(b)/(c) is a scoping decision rather than a repair. Not picked unilaterally.
+
+CROSS-REF: PR #5510's own body already flags the scoping consequence -- 'any producer whose YSN path goes through hecke_core_legacy is likely blocked the same way, and a just-re-run-the-producer plan silently does not apply to it.' The second crash site above strengthens that: it is not one boundary to patch, it is the sparse branch.
