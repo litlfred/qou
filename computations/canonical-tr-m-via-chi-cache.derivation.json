@@ -1,0 +1,68 @@
+{
+  "target": "canonical |tr_M(beta_atomic(Z,N))| at q_0 via the Frobenius pairing tr_M = sum_lambda y_lambda(q_0) chi^lambda(beta; q_0)",
+  "target_value": "proton 1.145759692457300869689081, neutron 0.987743688115809571634020, deuteron 0.575172243917771870826535, tritium 0.229310102104556507332090, helium-3 0.403767036851428170368670, helium-4 0.160974145442407381825873 (proton pin; a muon-pinned twin is emitted alongside)",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the chi-cache combiner (PR #681, Step 2 of the 2026-05-17 knot-fusion audit) -- the ~50-line assembly that turns the per-irrep chi caches into a canonical |tr_M|. Covers canonical-tr-m-via-chi-cache.witness.json (proton pin) and its muon twin -- 2 witnesses, one per anchor, each declaring its own q0Anchor. Trust profile: one AXIOM entrypoint, two DERIVED steps whose legs are ALREADY derivation-backed upstream, one SCRIPT_CITED frontier.\n\nBoth legs of the pairing are covered by existing chains: the chi^lambda leg by chi-at-q0-averaged-atomic.derivation.json and chi-at-q0-sign-only-atomic.derivation.json, the y_lambda leg by the schur-weyl-weight-* family. This chain is the assembly, not a re-derivation of either.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0; the eigenvalue separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Jones-Markov weights y_lambda(q_0) -- convention D, computed live",
+      "operation": "Take the Jones-Markov weight per Wedderburn block from wedderburn_jones_markov.y_lambda_at(n, q_0). Under the canonical convention D these are the SU(2) quantum dimensions from the hook-content principal specialisation, normalised so that sum_lambda y_lambda f^lambda = 1, with the row cap y_lambda = 0 for l(lambda) > 2.",
+      "inputs": [
+        "hecke_relation",
+        "Schur",
+        "Wedderburn"
+      ],
+      "output_name": "y_lambda_D",
+      "output_value": "y_lambda(3, q_0) = { (3): 0.5054042, (2,1): 0.2472979, (1,1,1): 0 }",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "VERIFIED LIVE, not assumed. AGENTS.md documents a straddle trap in exactly this accessor: y_lambda_at was said to serve the cached MUON-built y-lambda-at-q0.witness.json whenever |q - q_parameter.Q| < 1e-12, a gate satisfied TRIVIALLY when the caller passes q_parameter.Q itself -- which this producer does. That trap is CLOSED as of 2026-08-09: the function returns convention D before any cache path is reached, and its own docstring says the C cache 'must NOT be served'. Called it here at q_0 and got D (0.5054042, 0.2472979, 0), not C (0.4153958, 0.2809296, 0.0227449). The AGENTS.md warning is stale for this function; it is left standing here as the reason the check was run rather than skipped."
+    },
+    {
+      "name": "Frobenius pairing tr_M = sum_lambda y_lambda chi^lambda",
+      "operation": "Pair the weights against the per-irrep characters of the atomic braid word and take the modulus: |tr_M(beta_atomic)| = |sum_{lambda |- 3A} y_lambda(q_0) chi^lambda(beta_atomic; q_0)|. The chi^lambda are loaded from the symbolic per-irrep caches and substituted at q_0 to 50 dps.",
+      "inputs": [
+        "y_lambda_D",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "tr_M_pairing",
+      "output_value": "|tr_M(beta_atomic)| = |sum_lambda y_lambda chi^lambda|",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "This is the Wedderburn route to tr_M, as against the Markov-axiom recursive ascent covered by markov-peel-atomic-tr-m.derivation.json. Finite-Jones uniqueness says the two compute the same functional GIVEN the same conventions; see the frontier note for why that qualifier matters here."
+    },
+    {
+      "name": "Evaluation at both anchors, with every cache complete",
+      "operation": "Evaluate for proton, neutron, deuteron, tritium, helium-3 and helium-4 at the experimental (proton) pin, and again at the ideal-CAL-2 (muon) pin, emitting one witness per anchor.",
+      "inputs": [
+        "tr_M_pairing"
+      ],
+      "output_name": "tr_M_at_q0_six_atoms",
+      "output_value": "proton 1.145759692457300869689081, neutron 0.987743688115809571634020, deuteron 0.575172243917771870826535, tritium 0.229310102104556507332090, helium-3 0.403767036851428170368670, helium-4 0.160974145442407381825873",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "script: computations/canonical_tr_m_via_chi_cache.py -- the frontier step.\n\nCACHE COMPLETENESS CHECKED, because the producer's own docstring warns the caches were once PARTIAL for tritium / 3He / 4He. Every row now reports partial_cache: false and partitions_used == partitions_total -- 3/3, 3/3, 11/11, 30/30, 30/30, 77/77. The 4He row uses all 77 partitions of S_12, so the sum is complete, not truncated.\n\nTWO-PIN PAIR, sanctioned: each witness declares its own q0Anchor and q0Value (proton 1.1099785827513808..., muon 1.1099785955573347...), and no single computed quantity mixes layers.\n\nAN OBSERVATION THE CHAIN DOES NOT RESOLVE. This combiner gives tr_M(proton) = 1.1458 where the Markov-peel path gives 1.0653 -- about 7.5% apart, far too large to be an anchor or precision effect. Finite-Jones uniqueness forces agreement only when the two paths use the SAME conventions, and they may not: this route pairs convention-D y_lambda against the chi caches, while the peel route descends on the Markov parameter z directly. Which chi convention each consumes is NOT established here, and the corpus's documented convention split (bean b0vf) makes it exactly the question that must be answered before either number is called 'the' canonical tr_M. Scope-(a): recorded as an open discrepancy between two routes, not as a defect in either."
+    }
+  ]
+}

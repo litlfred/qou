@@ -74,8 +74,9 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
 )
 from q_parameter import Q_MP as Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def trace_functionals(n: int, q):

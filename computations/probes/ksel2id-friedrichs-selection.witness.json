@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath+fractions",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:14:40.392325+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:41:17.686996+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "f1_exact_qd_favard_depth25",
@@ -70,7 +70,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 83240,
+  "durationMs": 73736,
   "computation": "ksel2id-friedrichs-selection",
   "scriptFile": "ksel2id_friedrichs_selection_probe.py",
   "scriptHash": "5f222659ca10",
@@ -88,7 +88,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ksel2id_friedrichs_selection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ksel2id_friedrichs_selection_probe.py"
   },
   "description": "KSel-2-ID (bean qou-0ms0; audit-only, NO FIT, nothing wired): Friedrichs/Krein identification for the balanced binding Jacobi operator J(q), by exact-Q + certified-mpf qd Jacobi data, truncation eigenvalues (min-max => Friedrichs limit), and Gauss-Radau-at-0 (=> Krein, the canonical solution with 0 in support, [pedersen1995]). Findings: lambda_F > 0 (strict); Krein has an atom at 0 with mass 1/sum p_k(0)^2; the extremal supports are asymptotically q-lattices (spacing qtilde-steps -> 2), F and K occupying complementary q-sublattices whose common qtilde-class Aitken-extrapolates to the u = 1 class (u-half-step discriminator answered toward u = 1); NONE of the three named kernel candidates (u = 1 grid, qtilde^(1/2) grid, a.c. log-normal) is an extension measure — the u-continuum members are interior Nevanlinna solutions (supports accumulate at 0; extension spectra are discrete with compact resolvent, [simon1998]). Bar reflection: sigma fixes the SW factor and the u-classes {1, qtilde^(1/2)} but does NOT act on the extension circle by pushforward (bounded-support vs superexponential-moment obstruction, scope-(b)); it does NOT exchange Friedrichs and Krein. Extension-circle sweep: boundary conditions interpolate F -> K monotonically; beyond Krein the truncation leaves the nonnegative sector. Pin legs verify positivity + machinery; grid classes are read at the strong-deformation point, stated as such. Nothing here proves or refutes any conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md",
@@ -261,11 +268,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

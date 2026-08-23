@@ -78,6 +78,7 @@ from _li_2_q_util import load_q_50dps, li_2_q
 # the Li_2^q series radius) through a recursive identity using
 # convergent sub-arguments.
 from pentagon_reduction_li2q import li_2_q_pentagon
+from _precision import set_compute_dps  # noqa: E402
 
 
 B_AME = {
@@ -162,7 +163,7 @@ def mass_tower_first_order(
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("binding-via-interface-knot")
     builder.set_description(
         "Categorical binding energy via interface-knot Δ_I^K + Hecke-"

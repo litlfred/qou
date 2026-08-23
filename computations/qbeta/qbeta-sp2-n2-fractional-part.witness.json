@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-27T15:05:51.809943+00:00",
-  "commitSha": "b189fe1313844034ec02d7b428e78297528f9676",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:57:24.849011+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "slope_agrees_with_dSdq",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-sp2-n2-fractional-part",
   "scriptFile": "qbeta_sp2_n2_fractional_part_probe.py",
-  "scriptHash": "8a87854db2ab",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1fa211de5135",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,22 +24,30 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sp2_n2_fractional_part_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sp2_n2_fractional_part_probe.py"
   },
   "description": "SP2 follow-up probe (bean qou-gjs2). Finds: (1) the fractional-part mechanism gives a CONSTANT, cannot match both anchors; (2) Im u(q₀) is smooth but highly nonlinear (quadratic characterization: b≈−1.17e7, c≈−3.2e14); (3) the slope from dS/dq agrees with the quadratic fit; (4) φ(q₀) = Im u is the imaginary part of the full NZ deformation parameter on the 4₁ character variety — it is NOT a separate function but is determined by A(m,ℓ)=0 + boundary condition; (5) this boundary condition IS the G3 monodromy datum. GAP: φ(q₀) remains the open DOF.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "quadratic_characterization": {
       "a_intercept": 0.1043407295810878,
-      "b_slope": -16455322.512913618,
-      "c_curvature": -665881805288878.1,
-      "nonlinearity_c_over_b2": -2.4591462121399075,
-      "slope_agreement_with_dSdq_pct": 13.952441290098506
+      "b_slope": -16613290.094975224,
+      "c_curvature": -681248088621669.9,
+      "nonlinearity_c_over_b2": -2.468277586341806,
+      "slope_agreement_with_dSdq_pct": 14.77062508837085
     },
     "gap_identification": {
       "open_dof": "φ(q₀) = Im u(q₀) on the 4₁ character variety",

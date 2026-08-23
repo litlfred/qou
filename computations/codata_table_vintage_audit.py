@@ -26,8 +26,10 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from codata_table import codata  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Two mpf built from the SAME decimal string can differ in the last bit when
 # they are constructed at different working precisions, so `==` on mpf is the

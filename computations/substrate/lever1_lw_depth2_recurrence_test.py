@@ -32,7 +32,8 @@ LW = {c: lw(c) for c in range(1, 7)}                 # lw(1..6)
 tau_seed = sp.cancel((LW[1] + LW[3]) / LW[2])        # solved from n=2,3,4
 tau_cf = sp.cancel(3*(3*q**4 + 8*q**2 + 3) / (4*q*(q+1)**2))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 def ev(e): return mp.mpf(str(sp.N(e.subs(q, q0), 40)))
 

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T03:03:47.765001+00:00",
-  "commitSha": "43661aee73e2fc7700d851db6a23d20c1cac0423",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:22:45.567749+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "sym_M1a_per_crossing_split_theta",
@@ -114,11 +114,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 20,
   "computation": "eunit-g2-derivation",
   "scriptFile": "eunit_g2_derivation_probe.py",
-  "scriptHash": "ea1a31982db1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c8ab7c957f0d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -128,8 +128,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/eunit_g2_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/eunit_g2_derivation_probe.py"
   },
   "description": "g2 derivation attempt (the E_unit bar-even gap coefficient g2 = gap/h^2 = 1.00865, NEAR-MATCH, underived — committed eunit-magnus-order2 witness). Three mechanisms tested exactly, NO FIT. Mechanism 1 (cosh/crossing-count): the counit per-crossing split eps(sigma) = q = cosh(theta) + sinh(theta), theta = ln q, gives bar-even coefficient 1/8 of h^2 per crossing (NOT 1/2 — the counit weight is h/2 per the mu0 = m_e/(3h/2) ladder); sigma_1^3 is single-generator hence coherent: leading coefficient 9/8, exact value cosh(3 theta) => C = 1.1301; incoherent product 3/8 (0.3760); naive weight-h variants 3/2 (1.5387) and 9/2 (4.6495). NO candidate is within h^2-order of g2 (closest 1.1301 overshoots by 0.1215 = 2.78 h^2) => scope-(a): mechanism 1 alone, as-is, does not derive g2. Mechanism 2 (BCH/Bernoulli, phys-rep09 Thm 1 eq 32): every Magnus order >= 2 term is a LIE element with Bernoulli weights (B1 = -1/2 on [A1,A2] giving Omega_2 = (1/2) iint [A1,A2], eq 43; 1/6 nested at order 3, eq 45; 1/12 at order 4; generating function x/(e^x - 1) verified) => assigns EXACTLY 0 scalar quadratic content; for the single-generator deuteron word sigma_1^3 the whole tower vanishes => mechanism 2 predicts C = 0, cannot produce g2 (class-(b), invariants: Lie-element structure + [X,X] = 0). Broda's surface-ordered quadratic term carries the plain Dyson 1/2! weight on the twisted-curvature square — evaluation blocked on the missing Seifert-surface discretization (named wall). Parity puzzle: residual r = g2 - 1 = 0.008652; enumerating Laurent units (v-1/v)^a [2]_v^b (a in [0,6], b in [-6,6]): closest of ANY parity is h^3 (bar-ODD, +5.6%, PARITY-BLOCKED); closest bar-even is h^4 [2]_v^2 (-11.4%); NO bar-even monomial within 10% of r => STRUCTURAL FINDING: the residual is not a next-order ladder unit — it lives in the E+ frame definition (parity-projection prescription) or the crossing-count arithmetic. Nothing closes; nothing wired.",
   "auditOnly": "docs/audits/2026-07-25-eunit-g2-derivation-attempt.md",

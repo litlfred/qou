@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:51:08.202336+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:09:31.269304+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "spike_completed",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 119,
+  "durationMs": 81,
   "computation": "homflypt-su-n-mass-tower",
   "scriptFile": "homflypt_su_n_mass_tower.py",
-  "scriptHash": "a93b3356b048",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "7bb40bbffe56",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/homflypt_su_n_mass_tower.py"
+    ],
+    "reproduce": "python3 -u computations/homflypt_su_n_mass_tower.py"
   },
   "description": "First multi-channel HOMFLYPT evaluation of the mass tower at substrate q₀. Computes P(β̂; SU(N), q₀) for N=2..6 across proton, neutron, figure-eight, and trefoil braids. Records per-N proton/neutron ratios, mirror differences (CPT structure), and Q_β predictor candidates. Per rem:archimedean-image-table row 5: this is the first data from the SU(N>2) channels.",
   "contentBlock": "rem:archimedean-image-table",

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:48:08.219833+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:00:18.133206+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 163,
+  "durationMs": 266,
   "computation": "delta-lambda-qdim-route-probe",
   "scriptFile": "delta_lambda_qdim_route_probe.py",
-  "scriptHash": "7499280970ff",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "a5c3eea06313",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_qdim_route_probe.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_qdim_route_probe.py"
   },
   "description": "Route-(i) probe across 3 q-dimension conventions (balanced / unbalanced / fake-degree). The ℓ¹ ceiling ‖c_q‖₁/|target| is wildly convention-dependent (⁴He spans 0.41→5.62): balanced undershoots all isotopes, unbalanced/fake-degree overshoot the heavy ones. ⟹ route (i) ESCAPES the sign-only prune and is UNDER-CONSTRAINED — the q-dim convention is a hidden DOF (Rule 14), so magnitude-matching via q-dim is not evidence of a derivation. The real discriminators: an independent principle fixing the convention + the sign/cancellation structure (net −82.9% vs fake-degree ℓ¹ +462% on ⁴He). Scope (a), NOT a (b) exclusion (no invariant).",
   "scope": "(a) scope-limited — route (i) is convention-under-determined; q-dim convention is a hidden DOF",

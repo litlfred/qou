@@ -415,7 +415,8 @@ def per_gen_V_hat_canonical(Z: int, N: int, *,
 
 def canonical_tower_mass(V: list[float], *,
                            pair_mode: str = "full",
-                           cap_frac: float = 0.98) -> dict:
+                           cap_frac: float = 0.98,
+                           term: str = "tower_term") -> dict:
     """Φ_q tower mass from canonical V̂_i, with saturation-safe Φ_q.
 
     pair_mode ∈ {"adjacent", "full"}:
@@ -424,23 +425,22 @@ def canonical_tower_mass(V: list[float], *,
 
     Returns {desc, single, cross, total}.
     """
-    from mass_at_3A_proper import phi_q_safe
+    from mass_at_3A_proper import _tower_spec
+    _spec = _tower_spec(term, cap_frac)
     n = len(V)
     desc = 1.0
     for v in V:
         desc *= v
     desc = abs(desc)
-    single = sum(phi_q_safe(abs(v), cap_frac=cap_frac) for v in V)
+    single = sum(_spec(abs(v)) for v in V)
     cross = 0.0
     if pair_mode == "adjacent":
         for i in range(n - 1):
-            cross += z_mark ** 2 * phi_q_safe(
-                abs(V[i] * V[i + 1]), cap_frac=cap_frac)
+            cross += z_mark ** 2 * _spec(abs(V[i] * V[i + 1]))
     elif pair_mode == "full":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += z_mark ** 2 * phi_q_safe(
-                    abs(V[i] * V[j]), cap_frac=cap_frac)
+                cross += z_mark ** 2 * _spec(abs(V[i] * V[j]))
     else:
         raise ValueError(pair_mode)
     return {"desc": desc, "single": single, "cross": cross,
@@ -463,7 +463,10 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     V_p = per_gen_V_hat_canonical(1, 0, include_inter=False)
     if not V_p:
         return 1.0
-    m_p = canonical_tower_mass(V_p, pair_mode=pair_mode)
+    # MASS context (absolute proton mass vs 938.272 MeV), so this one keeps
+    # the historical phi_q per `_li_2_q_util`'s binding/mass rule. The Lean
+    # towerTerm discipline is applied to the binding_* consumers below.
+    m_p = canonical_tower_mass(V_p, pair_mode=pair_mode, term="phi_q")
     if m_p["total"] <= 0 or not math.isfinite(m_p["total"]):
         return 1.0
     # NOTE: alt-calibration (diagnostic). CAL-3 canonical E_0 is
@@ -477,7 +480,8 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
 def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                               E_0: float | None = None,
                               pair_mode: str = "full",
-                              verbose: bool = False) -> dict:
+                              verbose: bool = False,
+                           term: str = "tower_term") -> dict:
     """Canonical-with-proper-tower via per-irrep V̂ + Plancherel sum.
 
     For each λ ⊢ 3A:
@@ -505,8 +509,8 @@ def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                                 m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
         if not V_a or not V_f:
             continue
-        m_a = canonical_tower_mass(V_a, pair_mode=pair_mode)
-        m_f = canonical_tower_mass(V_f, pair_mode=pair_mode)
+        m_a = canonical_tower_mass(V_a, pair_mode=pair_mode, term=term)
+        m_f = canonical_tower_mass(V_f, pair_mode=pair_mode, term=term)
         m_atom_total += w_lam * m_a["total"]
         m_free_total += w_lam * m_f["total"]
     _save_mpm_disk(n_strands)
@@ -531,7 +535,10 @@ def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
     """E_0 via proton tower in per-irrep formulation."""
     if pair_mode in _E0_PI_CACHE:
         return _E0_PI_CACHE[pair_mode]
-    r = binding_per_irrep_tower(1, 0, E_0=1.0, pair_mode=pair_mode)
+    # MASS context (proton absolute vs M_P_MEV) even though it reuses the
+    # binding_* entry point, so it pins term="phi_q" per `_li_2_q_util`'s rule.
+    r = binding_per_irrep_tower(1, 0, E_0=1.0, pair_mode=pair_mode,
+                                 term="phi_q")
     m_p = r["m_free_per_irrep_total"]  # A=1 has no atom (no inter)
     if m_p <= 0 or not math.isfinite(m_p):
         return 1.0
@@ -545,7 +552,8 @@ def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
 def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                               E_0: float | None = None,
                               pair_mode: str = "full",
-                              verbose: bool = False) -> dict:
+                              verbose: bool = False,
+                           term: str = "tower_term") -> dict:
     """Canonical-with-proper-tower binding.
 
     V̂_i canonical (JM eigenvalue averages) fed into prop's Φ_q tower.
@@ -564,8 +572,8 @@ def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     if verbose:
         print(f"  V_atom: {[f'{v:+.4f}' for v in V_atom]}")
         print(f"  V_free: {[f'{v:+.4f}' for v in V_free]}")
-    m_a = canonical_tower_mass(V_atom, pair_mode=pair_mode)
-    m_f = canonical_tower_mass(V_free, pair_mode=pair_mode)
+    m_a = canonical_tower_mass(V_atom, pair_mode=pair_mode, term=term)
+    m_f = canonical_tower_mass(V_free, pair_mode=pair_mode, term=term)
     B = E_0 * (m_f["total"] - m_a["total"])
     return {
         "Z": Z, "N": N, "A": A,

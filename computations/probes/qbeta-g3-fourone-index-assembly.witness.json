@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T03:26:24.189510+00:00",
-  "commitSha": "374eedf6d6738824ef46882b3b6f8f0d1c1522d5",
+  "computedAt": "2026-08-23T09:38:47.584208+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "anchor_420_reproduced_bare_418",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "qbeta-g3-fourone-index-assembly",
   "scriptFile": "qbeta_g3_fourone_index_assembly.py",
-  "scriptHash": "843b06314dcc",
-  "scriptCommitSha": "374eedf6d6738824ef46882b3b6f8f0d1c1522d5",
+  "scriptHash": "5d1b797e4364",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -59,7 +59,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_fourone_index_assembly.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_fourone_index_assembly.py"
   },
   "description": "A_omega route 1 tranche 2 (CERTIFIED): the total 3d-index of the figure-eight knot complement assembled exactly from the in-repo DGG source (1112.5179 eq 4.18, BARE — no prefactor), reproducing the printed anchor (4.20) exactly and satisfying the (4.19) symmetries. Resolves the prior open state (the 'divergence' was a min-degree-rebasing truncation artifact; absolute-degree tetrahedron indices converge). Includes I_41(0,0) (the GGM Stokes-dictionary input) and the substrate evaluation. Stokes dictionary = tranche 3.",
   "contentBlock": "conj:im-q-physical-role",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:39:59.896273+00:00",
-  "commitSha": "cb0e0646ce9f11f8d2a5c3232f28b3a6fcedf935",
+  "computedAt": "2026-08-23T20:33:51.026289+00:00",
+  "commitSha": "d9ae51e30c201d02aafe1ee00819eebb68866388",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -29,6 +29,12 @@
       "expected": "0.3882864715477134",
       "passed": true,
       "tolerance": "0.0000000003882864715477134"
+    },
+    {
+      "name": "chain_valid[a-operator-extract-h9.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[alpha-k-h3-0.derivation]",
@@ -152,6 +158,18 @@
       "tolerance": "0.0"
     },
     {
+      "name": "chain_valid[bar-pairing-binding-observable.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[binding-energy-categorical-deuteron.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[c-q-q0.derivation]",
       "computed": true,
       "expected": true,
@@ -171,6 +189,30 @@
       "passed": true
     },
     {
+      "name": "chain_valid[canonical-tr-m-via-chi-cache.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[chi-at-q0-averaged-atomic.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[chi-at-q0-sign-only-atomic.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[derived-chi-catalogue-matrix-m.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[habiro-coefficients-mass-table.derivation]",
       "computed": true,
       "expected": true,
@@ -184,6 +226,12 @@
     },
     {
       "name": "chain_valid[hoefsmit-rep-21-sigma2.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[markov-peel-atomic-tr-m.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -241,6 +289,12 @@
       "tolerance": "0.0000000009232332971695838"
     },
     {
+      "name": "chain_valid[nucleus-real-sdp.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[p-tr-M-q0.derivation]",
       "computed": true,
       "expected": true,
@@ -252,6 +306,12 @@
       "expected": "1.0653062285923893",
       "passed": true,
       "tolerance": "0.0000000010653062285923893"
+    },
+    {
+      "name": "chain_valid[probe-topological-mass-formula.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[bwhk-st-matrix-corroboration.derivation]",
@@ -574,14 +634,20 @@
       "expected": "-0.99124115660574",
       "passed": true,
       "tolerance": "0.000000000099124115660574"
+    },
+    {
+      "name": "chain_valid[wenzl-y-lambda-orphans-conventionD.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "af669b5b2374",
-  "scriptCommitSha": "1c25a95bbd1ec1ce92f65031f2ae24eb4e9e68aa",
+  "scriptHash": "df4baa7af374",
+  "scriptCommitSha": "ed6454562744867e5a22417d725454f9b59dd1bb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -593,10 +659,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -640,6 +706,21 @@
           "script-cited": 4,
           "derived": 1,
           "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "a-operator-extract-h9.derivation.json",
+        "target": "the Sub-lemma 2.1 interface operator A^lambda_{xi nu}(I) at the H_9 peel level (A = 3), for the pn and pp interfaces",
+        "target_value": "A^lambda_{xi nu}(I) recovered from chi^lambda(W_inner . I . beta_block) by least-squares inversion of a bilinear system on K_inner x K_block = 216 test pairs -- NOT a derivation, and NOT consumed by production; see the frontier step",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 1,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -1209,6 +1290,37 @@
         "has_script_frontier": false
       },
       {
+        "chain": "bar-pairing-binding-observable.derivation.json",
+        "target": "bar-pairing binding observables B_arch(K) and B_bar(K): the archimedean and Hecke-bar lengths of the free-minus-bound character difference",
+        "target_value": "B_arch(K) = E_0 * sum_lambda y_lambda ( |chi^lambda(W_free)| - |chi^lambda(W_atom)| );  B_bar(K) = E_0 * sum_lambda y_lambda ( ||chi^lambda(W_free)||_bar - ||chi^lambda(W_atom)||_bar ),  ||chi||_bar = sqrt(chi(q_0) chi(q_0^{-1}))",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 4,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "binding-energy-categorical-deuteron.derivation.json",
+        "target": "categorical per-partition binding energy B(K) = m_e * |sum_lambda y_lambda chi^lambda(beta_K) sgn(w_0^{S_{lambda'}}) f^lambda|, evaluated on the deuteron",
+        "target_value": "B(D) = 0.380132118905 MeV against AME 2.22456620000 MeV -- a -82.9121% miss",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "mathlib-cited": 2,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "c-q-q0.derivation.json",
         "target": "c_q(q_0)",
         "target_value": "9.092678397394828",
@@ -1234,6 +1346,68 @@
         "trust_summary": {
           "script-cited": 4,
           "derived": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "canonical-tr-m-via-chi-cache.derivation.json",
+        "target": "canonical |tr_M(beta_atomic(Z,N))| at q_0 via the Frobenius pairing tr_M = sum_lambda y_lambda(q_0) chi^lambda(beta; q_0)",
+        "target_value": "proton 1.145759692457300869689081, neutron 0.987743688115809571634020, deuteron 0.575172243917771870826535, tritium 0.229310102104556507332090, helium-3 0.403767036851428170368670, helium-4 0.160974145442407381825873 (proton pin; a muon-pinned twin is emitted alongside)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "chi-at-q0-averaged-atomic.derivation.json",
+        "target": "per-partition Hecke character chi^lambda(beta_atomic(Z,N); q_0) in the AVERAGED (colour-weighted) crossing convention",
+        "target_value": "chi^lambda(beta; q) = tr rho^lambda_Hoefsmit(beta) with each crossing carried as a colour-weighted pair (c, d) rather than a bare sign; evaluated at the substrate anchor q_0",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 1,
+          "derived": 3,
+          "script-cited": 2
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "chi-at-q0-sign-only-atomic.derivation.json",
+        "target": "per-partition Hecke character chi^lambda(beta_atomic(Z,N); q_0) in the sign-only (Geck-Pfeiffer) crossing convention",
+        "target_value": "chi^lambda(beta; q) = tr rho^lambda_Hoefsmit(beta), for every lambda |- n, n = 3A; evaluated at the substrate anchor q_0",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 1,
+          "derived": 3,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "derived-chi-catalogue-matrix-m.derivation.json",
+        "target": "the matrix-M factorisation of the Hecke character chi^lambda at the substrate anchor -- computing chi^lambda(beta_atom; q_0) block-by-block over the per-nucleon H_3 factors instead of over the full dim V_lambda representation",
+        "target_value": "chi^lambda(q_0) = sum over mu_p blocks of the matrix-M product, agreeing with the whole-representation Geck-Pfeiffer character to absolute 1e-45, and with its own two-level (mu_p, mu_n) refinement to absolute 1e-40, on all 18 tested partitions of 2H/3H/3He/4He",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 2,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -1281,6 +1455,21 @@
           "axiom": 1
         },
         "has_script_frontier": false
+      },
+      {
+        "chain": "markov-peel-atomic-tr-m.derivation.json",
+        "target": "production atomic Markov trace tr_M(beta_atom; q_0) for p, n, D, T, 3He, 4He via Markov-axiom recursive ascent on the Groebner-Shirshov normal form",
+        "target_value": "tr_M(beta_atom) computed symbolically in H_{3A}(q) by incremental GS reduction followed by recursive Markov-axiom descent, then evaluated at q_0; emitted at BOTH substrate pins as a deliberate comparison pair",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 2,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
       },
       {
         "chain": "markov-trace-assembly-deuteron.derivation.json",
@@ -1346,6 +1535,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "nucleus-real-sdp.derivation.json",
+        "target": "bar-fold symmetry-reduced bounded operator-selection LP per nucleus (primal + dual + strong-duality gap)",
+        "target_value": "on the positive-norm fold representatives: primal_obj = Σ_i t_i x_i*, dual_obj = n_target·y0*, duality_gap = |primal_obj − dual_obj| ≈ 0, with active_set = { i : y*_i > 0 }",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "script-cited": 2,
+          "derived": 2
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "p-tr-M-q0.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
         "target_value": "1.0653062285923893",
@@ -1359,6 +1563,21 @@
           "script-cited": 4,
           "derived": 1,
           "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "probe-topological-mass-formula.derivation.json",
+        "target": "the Step-3 combine behind prop:topological-mass-formula and its algebraic twin -- that baseline + exceptional reassembles to Vol(K)/hbar_q^2, and that the Q(q)-side restatement mass_alg = Phi_1/hbar_sq is the same identity",
+        "target_value": "Vol(K) + Vol(K)(1/hbar_q^2 - 1) = Vol(K)/hbar_q^2, exact in Q(q) for ALL q and not merely at q_0; verified symbolically and, at the proton pin, numerically to <= 1e-25 across the sample knots",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "script-cited": 1
         },
         "has_script_frontier": true
       },
@@ -2100,13 +2319,36 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "wenzl-y-lambda-orphans-conventionD.derivation.json",
+        "target": "the Jones-Markov weights y_lambda under the canonical convention D, at H_9 and H_12",
+        "target_value": "y_lambda = [n - 2k + 1]_q / [2]_q^n for lambda = (n-k, k) with l(lambda) <= 2, and y_lambda = 0 exactly for l(lambda) >= 3; 30 weights at n = 9 and 77 at n = 12",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "lean-proven": 1,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
       }
     ],
     "witness_trust": {
       "derivation-fully-trusted": [],
       "derivation-backed": [
+        "A-operator-extract-h9-pn.witness.json",
+        "A-operator-extract-h9-pp.witness.json",
         "alpha-cluster-recursion.witness.json",
+        "atom-chi-rust-3he.witness.json",
+        "atom-chi-rust-4he.witness.json",
+        "atom-chi-rust-d.witness.json",
+        "atom-chi-rust-t.witness.json",
         "atomic-braid-gb-filtration-extension.witness.json",
+        "bar-pairing-binding-observable-extension.witness.json",
+        "binding-energy-categorical-deuteron.witness.json",
         "canonical-isotope-witness-Z00.witness.json",
         "canonical-isotope-witness-Z01.witness.json",
         "canonical-isotope-witness-Z02.witness.json",
@@ -2228,6 +2470,26 @@
         "canonical-isotope-witness-Z99.witness.json",
         "canonical-isotope-witness-index.witness.json",
         "canonical-mass-table-extended.witness.json",
+        "canonical-tr-m-via-chi-cache-muon.witness.json",
+        "canonical-tr-m-via-chi-cache.witness.json",
+        "chi-at-q0-matrix-m-deuteron.witness.json",
+        "chi-at-q0-matrix-m-helium-3.witness.json",
+        "chi-at-q0-matrix-m-helium-4.witness.json",
+        "chi-at-q0-matrix-m-tritium.witness.json",
+        "chi-deuteron-free-h6-at-q0-50dps.witness.json",
+        "chi-deuteron-h6-at-q0-50dps.witness.json",
+        "chi-dineutron-h6-at-q0-50dps.witness.json",
+        "chi-diproton-h6-at-q0-50dps.witness.json",
+        "chi-helium-3-h9-at-q0-50dps.witness.json",
+        "chi-helium-4-free-h12-at-q0-50dps.witness.json",
+        "chi-helium-4-h12-at-q0-50dps.witness.json",
+        "chi-neutron-h3-at-q0-50dps.witness.json",
+        "chi-proton-h3-at-q0-50dps.witness.json",
+        "chi-tritium-h9-at-q0-50dps.witness.json",
+        "chi-via-rust-lossless-general.witness.json",
+        "derived-chi-catalogue-matrix-m-mpfr.witness.json",
+        "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json",
+        "deuteron-binding-interface-closure.witness.json",
         "habiro-coefficients-beryllium-10.witness.json",
         "habiro-coefficients-beryllium-6.witness.json",
         "habiro-coefficients-beryllium-7.witness.json",
@@ -2256,10 +2518,22 @@
         "habiro-coefficients-tritium.witness.json",
         "hecke-character-symbolic.witness.json",
         "m-p-substrate-identity-50dps.witness.json",
+        "markov-peel-atomic-tr-m-muon.witness.json",
+        "markov-peel-atomic-tr-m.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
+        "nucleus-real-sdp-deuteron.witness.json",
+        "nucleus-real-sdp-he3.witness.json",
+        "nucleus-real-sdp-he4.witness.json",
+        "nucleus-real-sdp-neutron.witness.json",
+        "nucleus-real-sdp-proton.witness.json",
+        "nucleus-real-sdp-tritium.witness.json",
+        "probe-topological-mass-formula-algebraic.witness.json",
+        "probe-topological-mass-formula.witness.json",
         "bwhk-st-matrix-corroboration.witness.json",
-        "term7-alpha5-crystal-derivation.witness.json"
+        "term7-alpha5-crystal-derivation.witness.json",
+        "wenzl-y-lambda-h12.witness.json",
+        "wenzl-y-lambda-h9.witness.json"
       ],
       "audit-only-exempt": [
         "a5-so3-branching.witness.json",
@@ -2337,6 +2611,7 @@
         "aomega-qzero-dt-count.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "atom-braid-active-partitions.witness.json",
+        "atom-dual-q0-mpfr-demo.witness.json",
         "atom-nf-symbolic-D.witness.json",
         "atomic-braid-alpha-shift-l6.witness.json",
         "atomic-mass-via-rho-k.witness.json",
@@ -2350,6 +2625,8 @@
         "muon-pin-three-values.witness.json",
         "proton-identity-extension-audit.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
+        "q0-consistency-audit.witness.json",
+        "q0-literal-classification.witness.json",
         "undeclared-muon-pin-flip-risk.witness.json",
         "balanced-head-dominance-binding-period-probe.witness.json",
         "beta-decay-from-q.witness.json",
@@ -2843,6 +3120,7 @@
         "q-dirac-linking-weight-h4-50dps.witness.json",
         "q-dirac-vs-empirical-dominant-lambda-50dps.witness.json",
         "ck-qgevrey-slope.witness.json",
+        "fbor-q3-is-qschur-plancherel-weight.witness.json",
         "hd-to-s-bridge-anchor-dependence.witness.json",
         "phi-b-substrate-regime.witness.json",
         "qbeta-aomega-stokes3-tracefield.witness.json",
@@ -3042,8 +3320,6 @@
         "a-K-via-lp-dual.witness.json",
         "a3-magnitude-berezinian-crossterm.witness.json",
         "a3-mirror-residual-reconciliation.witness.json",
-        "A-operator-extract-h9-pn.witness.json",
-        "A-operator-extract-h9-pp.witness.json",
         "cyclic-intertwiner-verify.witness.json",
         "ab-methodology-metrics.witness.json",
         "active-set-lr-scaling-profile.witness.json",
@@ -3110,10 +3386,6 @@
         "alphaem-dilog-bloch-probe.witness.json",
         "ame-2020-binding-energies.witness.json",
         "ame-registry-routing-triage.witness.json",
-        "atom-chi-rust-3he.witness.json",
-        "atom-chi-rust-4he.witness.json",
-        "atom-chi-rust-d.witness.json",
-        "atom-chi-rust-t.witness.json",
         "atom-level-wedderburn-tower.witness.json",
         "atom-mass-derived.witness.json",
         "atom-mass-full-hecke.witness.json",
@@ -3144,7 +3416,6 @@
         "per-knot-density-compute-vs-paper-audit.witness.json",
         "producer-importability-audit.witness.json",
         "q0-anchor-consistency-audit.witness.json",
-        "q0-consistency-audit.witness.json",
         "q0-hardcoded-pin-audit.witness.json",
         "qbeta-multiblock-order-audit.witness.json",
         "rho-k-proton-substrate-audit.witness.json",
@@ -3163,7 +3434,6 @@
         "b-over-a-v5-unified.witness.json",
         "b-over-a.witness.json",
         "b-over-m-order-probe.witness.json",
-        "bar-pairing-binding-observable-extension.witness.json",
         "bar-parity-involution-atlas.witness.json",
         "bar-symmetry-three-candidates.witness.json",
         "basis-knot-tables.witness.json",
@@ -3180,8 +3450,6 @@
         "binding-bstar-bridge.witness.json",
         "binding-color-vs-charge-tn3he.witness.json",
         "binding-combiner-markov-peel-fallback.witness.json",
-        "binding-damping-rate.witness.json",
-        "binding-delta-derivable.witness.json",
         "binding-depth-stratified-knot-weighted.witness.json",
         "binding-depth-stratified-lr.witness.json",
         "binding-depth-stratified-rust.witness.json",
@@ -3189,7 +3457,6 @@
         "binding-depth-stratified.witness.json",
         "binding-edge-set-selection.witness.json",
         "binding-endomorphism-deuteron.witness.json",
-        "binding-energy-categorical-deuteron.witness.json",
         "binding-error-source.witness.json",
         "binding-factor-f-decomposition.witness.json",
         "binding-fewbody-bondcount.witness.json",
@@ -3250,7 +3517,6 @@
         "branching-qvalue-chain.witness.json",
         "brane-tower-full-channel-trace-audit.witness.json",
         "bring-chiral-fibre-figure.witness.json",
-        "bring-coordinate-linking-weight-probe.witness.json",
         "bring-homology-pairing-integration.witness.json",
         "bring-residue-resolvent-probe.witness.json",
         "bring-trefoil-cinquefoil-channel.witness.json",
@@ -3267,12 +3533,12 @@
         "canonical-braid-interface-composition.witness.json",
         "canonical-isospin-pyhecke.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
-        "canonical-tr-m-via-chi-cache-muon.witness.json",
-        "canonical-tr-m-via-chi-cache.witness.json",
         "canonical-with-proper-tower.witness.json",
         "cap-free-trm-prototype.witness.json",
+        "casimir-beta-2-derivation.witness.json",
         "casimir-d6-qcorrection-structure.witness.json",
         "casimir-jet-order-derivation.witness.json",
+        "casimir-mode-indexed-derivation.witness.json",
         "casimir-n-unknot-construction.witness.json",
         "casimir-xi-2-dig-deeper.witness.json",
         "catalan-binding.witness.json",
@@ -3288,46 +3554,31 @@
         "charm-mass-tower.witness.json",
         "chebyshev-pairing-engine.witness.json",
         "chi-at-q0-binding-lossless-helium-4.witness.json",
-        "chi-at-q0-matrix-m-deuteron.witness.json",
-        "chi-at-q0-matrix-m-helium-3.witness.json",
-        "chi-at-q0-matrix-m-helium-4.witness.json",
-        "chi-at-q0-matrix-m-tritium.witness.json",
         "chi-at-q0-rust-lossless-helium-4.witness.json",
         "chi-convention-audit.witness.json",
         "chi-convention-trM-ratio-probe.witness.json",
-        "chi-deuteron-free-h6-at-q0-50dps.witness.json",
         "chi-deuteron-free-h6-at-qinv-50dps.witness.json",
         "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
-        "chi-deuteron-h6-at-q0-50dps.witness.json",
         "chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
         "chi-deuteron-h6-at-qinv-50dps.witness.json",
-        "chi-dineutron-h6-at-q0-50dps.witness.json",
-        "chi-diproton-h6-at-q0-50dps.witness.json",
         "chi-free-via-lr.witness.json",
         "chi-helium-3-free-h9-at-q0-50dps.witness.json",
         "chi-helium-3-free-h9-at-qinv-50dps.witness.json",
         "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
-        "chi-helium-3-h9-at-q0-50dps.witness.json",
         "chi-helium-3-h9-at-qinv-50dps.witness.json",
-        "chi-helium-4-free-h12-at-q0-50dps.witness.json",
         "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
         "chi-helium-4-h12-at-q0-50dps-binding.witness.json",
         "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
-        "chi-helium-4-h12-at-q0-50dps.witness.json",
         "chi-helium-4-h12-at-qinv-50dps.witness.json",
         "chi-lambda-he4-full-partition-table.witness.json",
         "chi-lambda-multi-block-first-measurement.witness.json",
         "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
         "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
-        "chi-neutron-h3-at-q0-50dps.witness.json",
         "chi-numpy-dtype-fix-benchmark.witness.json",
-        "chi-proton-h3-at-q0-50dps.witness.json",
         "chi-tritium-free-h9-at-q0-50dps.witness.json",
         "chi-tritium-free-h9-at-qinv-50dps.witness.json",
         "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
-        "chi-tritium-h9-at-q0-50dps.witness.json",
         "chi-tritium-h9-at-qinv-50dps.witness.json",
-        "chi-via-rust-lossless-general.witness.json",
         "chi-witness-completeness-audit.witness.json",
         "chirality-topology-binding.witness.json",
         "chirality-weighted-3body-cluster.witness.json",
@@ -3344,7 +3595,6 @@
         "color-tube-flavor-isospin-selection.witness.json",
         "color-tube-qdim-ah-mix.witness.json",
         "color-tube-t1-tensor-decomposition.witness.json",
-        "complete-mass-sweep-2026-05-28.witness.json",
         "complex-volume-unification.witness.json",
         "compound-binding-via-differences.witness.json",
         "confined-knot-binding.witness.json",
@@ -3352,6 +3602,7 @@
         "connected-magnitude-charge-symmetric.witness.json",
         "constit-factor-and-volhyp.witness.json",
         "constit-factor-residual-phase5k.witness.json",
+        "convention-frame-staleness-audit.witness.json",
         "convergence-safe-vhat-tower.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crossing-energy-channel-basis.witness.json",
@@ -3441,6 +3692,7 @@
         "r11a-three-factor-separability.witness.json",
         "r11b-interior-max-monotone-cone-certificate.witness.json",
         "radial-volrho-mirror-test.witness.json",
+        "rho-k-h3a-residual-decomposition.witness.json",
         "s5so3-geometric-wlambda-a4-helium.witness.json",
         "s5so3-geometric-wlambda-borromean-lift.witness.json",
         "s5so3-wlambda-borromean-lift.witness.json",
@@ -3497,8 +3749,6 @@
         "derived-chi-catalogue-bridge-factor-omega.witness.json",
         "derived-chi-catalogue-consumer-demo.witness.json",
         "derived-chi-catalogue-consumer-q0.witness.json",
-        "derived-chi-catalogue-matrix-m-mpfr.witness.json",
-        "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json",
         "derived-chi-catalogue-matrix-m-mu-n-prototype.witness.json",
         "derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json",
         "derived-chi-catalogue-matrix-m-numerical.witness.json",
@@ -3507,7 +3757,6 @@
         "derived-chi-catalogue-rust-gp-crosscheck.witness.json",
         "derived-chi-catalogue-sweep.witness.json",
         "derived-chi-catalogue.witness.json",
-        "deuteron-binding-interface-closure.witness.json",
         "deuteron-binding-plancherel-channel.witness.json",
         "deuteron-fpn-wlambda-wiring.witness.json",
         "deuteron-from-scratch-ledger.witness.json",
@@ -3552,7 +3801,6 @@
         "gb-writhe-normalised-readout.witness.json",
         "generation-t29-continuant-divisibility.witness.json",
         "geom-leading-alt-q-locality-probe.witness.json",
-        "geom-linking-weight-h7-probe.witness.json",
         "gmn-extension-table4.witness.json",
         "gram-matrix-dual.witness.json",
         "ground-state-ordering-argmin-sweep.witness.json",
@@ -3576,8 +3824,8 @@
         "h4-markov-character-decomposition.witness.json",
         "h4-markov-weights-closed-form.witness.json",
         "h4-residual-higher-precision-pslq.witness.json",
+        "du-law-reparametrisation.witness.json",
         "habiro-coefficients-atomic.witness.json",
-        "habiro-coefficients-extended.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
         "habiro-exact-qbeta.witness.json",
@@ -3590,8 +3838,6 @@
         "habiro-to-1ppq-chain.witness.json",
         "habiro-to-precision-ladder-verification.witness.json",
         "qbeta-h4-tower-branching-preflight.witness.json",
-        "habiro-a0-universal-law.witness.json",
-        "habiro-binding-linking-weight.witness.json",
         "habiro-coefficients-extended.witness.json",
         "habiro-interpolation-wlambda.witness.json",
         "hadron-knot-table.witness.json",
@@ -3612,19 +3858,25 @@
         "he4-sdp-compositional-probe.witness.json",
         "hecke-crossed-module-q8.witness.json",
         "phi0-normalization-disproof.witness.json",
+        "hecke-agtb-corner-shape.witness.json",
+        "hecke-agtb-lineage-schedule.witness.json",
         "hecke-block-transport-shape.witness.json",
         "hecke-chain-cancellation.witness.json",
         "hecke-channel-binding.witness.json",
+        "hecke-closing-from-topen.witness.json",
         "hecke-conjugation-duality-sign.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hecke-corner-le-regime.witness.json",
         "hecke-gs-confluence-n4.witness.json",
         "hecke-gs-confluence-range.witness.json",
+        "hecke-opening-coverage.witness.json",
+        "hecke-opening-trio-shape.witness.json",
         "hecke-prefix-head-separation.witness.json",
         "hecke-prefix-loop-fit.witness.json",
         "hecke-prefix-phases.witness.json",
         "hecke-prefix-schedule-check.witness.json",
         "hecke-quad-pair-shape.witness.json",
+        "hecke-small-a-decomposition.witness.json",
         "hecke-tail-assembly-fit.witness.json",
         "hecke-tail-collision-check.witness.json",
         "hecke-tail-diagonal-check.witness.json",
@@ -3643,7 +3895,6 @@
         "higgs-categorical-mass-formula-attempt.witness.json",
         "higgs-h6-correction-probe.witness.json",
         "hoefsmit-b-squared-reconciliation.witness.json",
-        "hoefsmit-h3-std-matrices.witness.json",
         "hoefsmit-sparse-prototype.witness.json",
         "homfly-braid-index-mfw.witness.json",
         "homflypt-engine-selftest.witness.json",
@@ -3657,7 +3908,6 @@
         "interface-factor-categorical-derivation.witness.json",
         "interface-factor-enhancing-check.witness.json",
         "interface-quadratic-identity.witness.json",
-        "interface-quadratic-structure.witness.json",
         "intermediate-knot-detection.witness.json",
         "inverse-markov-qvalues.witness.json",
         "isospin-mass-tower-collapse.witness.json",
@@ -3740,7 +3990,6 @@
         "lever1-transfer-operator-spectral-qgevrey.witness.json",
         "li2q-fbor-expansion-probe.witness.json",
         "li2q-phiq-bar-symmetry.witness.json",
-        "linking-weight-h4-correction.witness.json",
         "log-delta-categorical-derivation.witness.json",
         "log-delta-full-mass-subtract.witness.json",
         "log-delta-per-depth-binding.witness.json",
@@ -3750,6 +3999,7 @@
         "low-isotope-sign-flip-diagnostic.witness.json",
         "low-isotopes-binding-sweep.witness.json",
         "lp-confinement-nf-forcing.witness.json",
+        "lp-dual-kkt-residual-50dps.witness.json",
         "lr-fusion-self-conj-test.witness.json",
         "lr-modulus-bare-amplitude-exact.witness.json",
         "lr-modulus-identification-sigma235.witness.json",
@@ -3764,8 +4014,6 @@
         "m-tau-knot-prediction.witness.json",
         "magic-a-truncation-overclaim-correction.witness.json",
         "hecke-regular-nf-h4.witness.json",
-        "markov-peel-atomic-tr-m-muon.witness.json",
-        "markov-peel-atomic-tr-m.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
@@ -3863,12 +4111,6 @@
         "no-free-parameter-certificate.witness.json",
         "nonet-mixing-purity.witness.json",
         "nucleus-operator-selection-sdp.witness.json",
-        "nucleus-real-sdp-deuteron.witness.json",
-        "nucleus-real-sdp-he3.witness.json",
-        "nucleus-real-sdp-he4.witness.json",
-        "nucleus-real-sdp-neutron.witness.json",
-        "nucleus-real-sdp-proton.witness.json",
-        "nucleus-real-sdp-tritium.witness.json",
         "ocneanu-12-alt-knot-geometries.witness.json",
         "ocneanu-12-bring-zero-mode-variants.witness.json",
         "ocneanu-12-em-correction-candidate.witness.json",
@@ -3945,8 +4187,6 @@
         "probe-q6j-jm-spectral-delta-lambda.witness.json",
         "probe-sparse-interface-magnitude-the3-prune.witness.json",
         "probe-theta-carry-binding.witness.json",
-        "probe-topological-mass-formula-algebraic.witness.json",
-        "probe-topological-mass-formula.witness.json",
         "probe-volume-wedderburn-delta-lambda.witness.json",
         "additive-composition-categorical-probe.witness.json",
         "alpha-em-4pi-derived-form-probe.witness.json",
@@ -4023,6 +4263,7 @@
         "gram-restricted-nonsingularity.witness.json",
         "gswz_287_f1_vs_f5_subscript_resolution.witness.json",
         "gswz_287_nahm_efactor.witness.json",
+        "gswz_287_normalisation_underdetermined.witness.json",
         "gswz_52_galois_norm.witness.json",
         "gswz_52_symmetrization.witness.json",
         "gswz_coleman_li2_full_precision.witness.json",
@@ -4036,6 +4277,7 @@
         "gswz_epsm_descent_m3.witness.json",
         "gswz_epsm_descent_m4to24.witness.json",
         "gswz_epsm_field_bracketing.witness.json",
+        "gswz_epsm_field_variation.witness.json",
         "gswz_epsm_five_term_validation.witness.json",
         "gswz_epsm_global_symbols.witness.json",
         "gswz_epsm_h_lift_m12_m24.witness.json",
@@ -4118,6 +4360,7 @@
         "pentagon-multipair-borromean-h4-probe.witness.json",
         "pentagon-to-borromean-h4-probe.witness.json",
         "per-knot-density-borromean-h4-probe.witness.json",
+        "per-knot-density-borromean-q-locality-probe.witness.json",
         "phase2a-flavor-split-higher-order.witness.json",
         "phi-q-spectral-combiner-probe.witness.json",
         "plancherel-weight-boundedness-probe.witness.json",
@@ -4315,6 +4558,7 @@
         "dt-crossknot-connection-count-certified.witness.json",
         "dt-crossknot-sixone-connection-count.witness.json",
         "dt-crossknot-snappy-slope-hardening.witness.json",
+        "fbor-normalisation-barsymmetry.witness.json",
         "gram-convention-d-singularity-structural.witness.json",
         "gram-mp-path-convention-d-migration.witness.json",
         "h3-markov-trace-cyclicity-preflight.witness.json",
@@ -4711,7 +4955,6 @@
         "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-characterization.witness.json",
         "sigma-shell-from-beta-chain.witness.json",
-        "sigma3-eigenvalue-h6.witness.json",
         "signed-crossing-feasibility.witness.json",
         "six-fifths-categorical-proof-attempt.witness.json",
         "six-fifths-deviation-h4-correction-probe.witness.json",
@@ -4719,9 +4962,7 @@
         "snappy-borromean-volume-cross-check.witness.json",
         "snappy-borromean-volume.witness.json",
         "snappy-cusp-seeding.witness.json",
-        "spectral-borromean-figure-eight.witness.json",
         "spectral-coordinates-all-atoms.witness.json",
-        "spectral-phase-ladder-connection.witness.json",
         "spectral-selector-validate.witness.json",
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
@@ -4796,8 +5037,6 @@
         "weak-isospin-t3-grading.witness.json",
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
-        "wenzl-y-lambda-h12.witness.json",
-        "wenzl-y-lambda-h9.witness.json",
         "witness-float64-padding-audit.witness.json",
         "witness-producer-executes-audit.witness.json",
         "witness-raw-float64--docs-audits-audit.witness.json",

@@ -72,7 +72,8 @@ def has_root_at_1(expr):
     return sp.Poly(num, q).eval(1) == 0
 higher_all_vanish_at_q1 = all(has_root_at_1(L[m]) for m in range(3, MMAX + 1))
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 
 

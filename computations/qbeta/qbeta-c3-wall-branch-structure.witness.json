@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T21:57:59.694789+00:00",
-  "commitSha": "827b43e4cf7c76ab8192bfb8589ead8647a02767",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:46:13.771543+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "sign_flip_is_pi_over_2_crossing",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 5,
   "computation": "qbeta-c3-wall-branch-structure",
   "scriptFile": "qbeta_c3_wall_branch_structure_probe.py",
-  "scriptHash": "3babbe23518e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "70cb3aac11c7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_wall_branch_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_wall_branch_structure_probe.py"
   },
   "description": "Analytic structure of the open u(q₀) wall for c₃ bar-odd S. Branch points of the figure-eight 𝔙(u): u=0, u=±2ln φ (M=golden ratio), u=iπ. The u=0 QUADRATIC branch gives Im 𝔙 ≈ (√3/2)|u|²sin(2 arg u) with 4 sign-quadrants; the S sign-flip = arg(u(q₀)) crossing π/2. Non-fitting phase inversion (|u|=HA, √3 fixed) extracts arg u ≈ (muon ~82°, proton ~135°), straddling π/2. Reduces the wall to the single phase arg(u(q₀)) + the q* at π/2. Scope-(a); C14; magnitude/structure derived, only the phase open; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

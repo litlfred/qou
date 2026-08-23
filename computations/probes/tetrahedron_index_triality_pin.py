@@ -39,8 +39,9 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def q_poch(q, n):

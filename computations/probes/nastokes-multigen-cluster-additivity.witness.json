@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T19:39:05.427371+00:00",
-  "commitSha": "270b69705ebaeae90870674a45ae6cb9884a3f1b",
+  "computedAt": "2026-08-23T09:25:57.586350+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "ordering_emitter_matches_corpus_word",
@@ -102,11 +102,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "nastokes-multigen-cluster-additivity",
   "scriptFile": "nastokes_multigen_cluster_additivity_probe.py",
-  "scriptHash": "36795655b0b2",
-  "scriptCommitSha": "06bc52e2e5e46fd9570b1e993cbdb0f92560498c",
+  "scriptHash": "5083aa44bb8c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -118,7 +118,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nastokes_multigen_cluster_additivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nastokes_multigen_cluster_additivity_probe.py"
   },
   "description": "Bean qou-prjo. Runs the multi-generator (A >= 3) case PR #4848 left open for the transverse NA-Stokes surface-curvature pairing, using the conventions #4848 pinned (Yekutieli ordered partial products; Seifert bands<->crossings; the logarithmic q-derivative germ) in the corpus seminormal/Hoefsmit representation. Canonical multi-nucleon braid words already exist in the corpus (mass_at_3A_proper.atom_braid_word_3A); every atom word, including the A=2 deuteron on 6 strands, is multi-generator, so #4848's single-generator scope-(b) does not reach them. The pairing is nonzero and its 3- and 4-body Moebius cluster residuals are nonzero => SUPER-PAIRWISE. Lean (moebius3_eq_zero, moebius4_eq_zero, sorry-free) proves the pairing is an exactly quadratic cluster functional, so that super-pairwise content is attributable ENTIRELY to context-dependence of the transport, not to a 3-body property of the curvature. The VALUE is NOT determined: the relative residual varies with the germ observer pair, with lambda, and with the nucleon ORDERING -- a genuine many-body binding term cannot depend on nucleon relabelling. Readout is the operator itself (Frobenius norms only size it); ||X||_F^2 = tr(X X^H) is quadratic, so listPairing_trace_zero does not apply, and the scalar trace is reported as a control and vanishes as that theorem requires. Nothing wired, no AME input, free_parameters = 0; the >= 3-body magnitude stays open.",
   "auditOnly": true,

@@ -50,7 +50,7 @@ try:
     from _precision import set_compute_dps  # noqa: E402
     set_compute_dps()
 except Exception:
-    mp.mp.dps = 50
+    set_compute_dps()
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True

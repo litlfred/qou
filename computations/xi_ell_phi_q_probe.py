@@ -45,6 +45,7 @@ import mpmath as mp
 
 from per_generator_V_hat_general import per_generator_V_hat_general  # noqa: E402
 from _precision import str_at_true_precision  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def li2q_sym(z_arg: mp.mpf, q: mp.mpf, max_terms: int = 600) -> mp.mpf:
@@ -151,7 +152,7 @@ def tower_log_phi_rescaled(V: list[mp.mpf], q: mp.mpf, z: mp.mpf) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Substrate at q_0 — muon-anchored canonical (same pin as the
     # per-generator-V-hat-general witness this probe extends).

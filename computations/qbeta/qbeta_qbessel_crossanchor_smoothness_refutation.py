@@ -83,7 +83,12 @@ import pathlib
 
 from mpmath import mp, mpf, log, sinh, cosh, coth, findroot
 
-mp.dps = 50
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # ── Anchors + CAL-anchored c_3 (sources cited inline) ────────────────────────
 # q₀ values: qbeta_chain4_kashiwara_step3_cross_anchor.py (Q_PROTON / Q_MUON).

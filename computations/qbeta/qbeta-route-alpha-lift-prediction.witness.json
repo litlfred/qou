@@ -2,9 +2,9 @@
   "description": "Route-alpha prediction test (bean 1jrh / Stage C): the forced basic-construction lift Lambda_a = iota(DeltaT)*e_3 evaluated through the merged H4 Markov-trace infra at BOTH q0 anchors (proton q_at, muon q_muon_at). P1 measures the Markov property on the third strand (zeta_w word-independence); P2 measures the level-4 content tr_M^H4(Lambda_a) - tau(e_3)*tr_M^H3(DeltaT). Zero free parameters; no fit; outcome recorded scope-(a). auditOnly.",
   "audit_only": true,
   "parameters": {
-    "q_proton": "1.1099785955573347198997632204832250266562084087802",
-    "q_muon": "1.1099785955541805752815940796095093779932822799587",
-    "dps": 50,
+    "q_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q_muon": "1.109978595642739046681795129380001752700065561029",
+    "dps": 70,
     "extra_q_points": [
       "1.05",
       "1.2",
@@ -34,18 +34,18 @@
     ]
   },
   "data": {
-    "delta_net_at_proton_q0": "-0.188290620015689313544800645167",
+    "delta_net_at_proton_q0": "-0.188290601471382770441737220126",
     "zeta_at_anchors": {
-      "proton": "0.499320334033561271768966386276",
-      "muon": "0.499320334033598250020669084677",
-      "q=1.05": "0.49985125687607796991322139905",
-      "q=1.2": "0.497929597731969194051790711637",
-      "q=0.93": "0.499671023885645336567877256344"
+      "proton": "0.612688037146465251595829863946",
+      "muon": "0.612688050638272415220888927646",
+      "q=1.05": "0.550594530321046373365041617122",
+      "q=1.2": "0.70819672131147540983606557377",
+      "q=0.93": "0.431313743364255456056625020108"
     },
-    "worst_markov_word_dev": "1.06911e-50",
+    "worst_markov_word_dev": "4.52784e-71",
     "L4_level4_content": {
-      "proton": "8.35238971903811139418917645985e-53",
-      "muon": "-8.35238971903811139418917645985e-53"
+      "proton": "-5.6597994242666952296931995568e-73",
+      "muon": "5.6597994242666952296931995568e-73"
     },
     "anchor_swing": null,
     "markov_transparent": true
@@ -65,12 +65,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "074b72d896c7",
-  "scriptCommitSha": "52c510dba2cbc2fb2546d2f6bda64df66d07bda1",
-  "commitSha": "52c510dba2cbc2fb2546d2f6bda64df66d07bda1",
+  "scriptHash": "ebca8610db3f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "computedAt": "2026-07-03T00:18:11.478511+00:00",
-  "durationMs": 831,
-  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-23T09:57:24.008142+00:00",
+  "durationMs": 915,
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_route_alpha_lift_prediction.py"
 }

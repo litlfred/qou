@@ -38,10 +38,11 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Constants (CODATA 2022 + hyperbolic volume of figure-eight)
     Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)  # Vol(4_1) EXACT = 2*Cl_2(pi/3).

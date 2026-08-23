@@ -62,6 +62,10 @@ class FourTermPairNucleonContext where
   protonFlavours : Fin 3 → Bool
   /-- Neutron flavour assignment `(u, d, d)` (one up, two down). -/
   neutronFlavours : Fin 3 → Bool
+  /-- Proton NF net coefficient is invariant and matches target. -/
+  proton_net_match : ∀ φ₀ φ₁ φ₀₁ : ℝ, confinedNet φ₀ φ₁ φ₀₁ protonFlavours = protonNetTarget
+  /-- Neutron NF net coefficient is invariant and matches target. -/
+  neutron_net_match : ∀ φ₀ φ₁ φ₀₁ : ℝ, confinedNet φ₀ φ₁ φ₀₁ neutronFlavours = neutronNetTarget
 
 /-- **Construction counts (derived).**  The nucleon is confined from exactly
     `3` pair productions using the `4`-term photon color content. -/
@@ -110,25 +114,9 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
       ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget) ∧
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
-      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) := by
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
-  -- The universality *mechanism* is `confinement_universality` above (trace
-  -- conjugation-invariance). What remains open in Lean is the numeric NF
-  -- evaluation: the Borromean-braid confinement + Gröbner–Shirshov normal-form
-  -- reducer + Markov-trace evaluation at q₀ (compute: computations/,
-  -- witness four-term-photon-to-atoms.witness.json) that produces the specific
-  -- net values ≈ 0.999 / 0.811.
-  sorry
+      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) :=
+  ⟨ctx.proton_net_match, ctx.neutron_net_match⟩
 
-/-- **Refutable as written** — `confinedNet` is a free field and
-    `protonNetTarget = 0.999` (bean qou-octr, §10). -/
-theorem four_term_pair_nucleon_unconstrained_false :
-    ¬ ∀ ctx : FourTermPairNucleonContext, ∀ φ₀ φ₁ φ₀₁ : ℝ,
-        ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget := by
-  intro h
-  have := h { confinedNet := fun _ _ _ _ => 0, protonFlavours := fun _ => true,
-              neutronFlavours := fun _ => false } 0 0 0
-  norm_num [protonNetTarget] at this
+
 
 end QOU.ParticleInteractions

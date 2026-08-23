@@ -47,6 +47,7 @@ from collections import defaultdict
 from itertools import product as cart_product
 from pathlib import Path
 from typing import Optional
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -841,7 +842,7 @@ def homflypt_operator_cost_vector(
 
 def _self_test():
     import mpmath as mp
-    mp.mp.dps = 30
+    set_compute_dps()
 
     print("HOMFLYPT engine self-test (Hecke-algebra approach)")
     print("Convention: v⁻¹P(L+) − vP(L-) = zP(L0)")

@@ -58,8 +58,9 @@ sys.path.insert(0, str(HERE / "substrate"))
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # atom → (Z, N, n_strands). Only atoms with BOTH a complete averaged and a
 # complete sign-only cache give a trustworthy ratio; he4's averaged cache is

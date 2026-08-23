@@ -192,7 +192,12 @@ def _write_chi_cache(
                                  key=lambda kv: tuple(-x for x in kv[0]))
         ],
     }
-    cache_path.write_text(json.dumps(cache_payload, indent=2))
+    # ensure_ascii=False to match WitnessBuilder.save(). Without it this
+    # writer escapes the χ/λ/β in its own description to χλβ on
+    # every regeneration, so a cache rebuild shows up as a spurious text diff
+    # against the WitnessBuilder-written files beside it.
+    cache_path.write_text(json.dumps(cache_payload, indent=2,
+                                     ensure_ascii=False))
 
 
 def load_or_build_chi_atom(

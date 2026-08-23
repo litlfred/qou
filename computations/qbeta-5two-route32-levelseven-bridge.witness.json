@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route32_levelseven_bridge",
   "bean": "qou-trns",
-  "dps": 50,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoLevelSevenBridge.lean",
   "gates": [
     {
@@ -17,7 +17,7 @@
       "claim": "S(pi) = -pi^2/2, checked against the EXACT eps-shifted value rather than a rounded one. Note S(0) = 3 * S(pi) exactly -- the 3 in -3 pi^2/2 is the number of saddles, which is the kind of structure the resurgence picture would explain",
       "S_at_pi_minus_eps": "-4.93480220054468559260255",
       "exact_expected": "-4.93480220054468559260255",
-      "residual": "0.0",
+      "residual": "7.244543263e-71",
       "S0_over_Spi": "3.0",
       "pass": true
     },
@@ -58,9 +58,9 @@
       "sum_Re_Rogers": "4.934802200544679309417",
       "gap": "-9.869604401089358618834",
       "minus_pi_sq": "-9.869604401089358618834",
-      "gap_residual": "0.0",
+      "gap_residual": "1.448908653e-70",
       "sum_corr": "-9.869604401089358618834",
-      "corr_matches_gap": "2.138211768e-50",
+      "corr_matches_gap": "0.0",
       "pass": true
     },
     {
@@ -69,21 +69,21 @@
       "per_root": [
         {
           "y": "-2.24697960371746706",
-          "log_log_part": "6.681911775e-52",
+          "log_log_part": "0.0",
           "pi_sq_coefficient": "0.0"
         },
         {
           "y": "-0.554958132087371191",
-          "log_log_part": "-1.336382355e-51",
+          "log_log_part": "4.527839539e-72",
           "pi_sq_coefficient": "0.0"
         },
         {
           "y": "0.801937735804838252",
-          "log_log_part": "-3.340955888e-52",
+          "log_log_part": "4.527839539e-72",
           "pi_sq_coefficient": "-1.0"
         }
       ],
-      "worst_log_log_part": "1.336382355e-51",
+      "worst_log_log_part": "4.527839539e-72",
       "total_pi_sq_coefficient": "-1.0",
       "pass": true
     },
@@ -91,7 +91,7 @@
       "gate": "G7",
       "claim": "y^2 - (1+y)^2 (1-y) = y^3 + 2y^2 - y - 1 IDENTICALLY in y, not just at the roots -- checked at 61 rational points off the roots, so the identity is not being confirmed by the very thing it is used to prove. Lean: `sq_eq_of_root`",
       "n_points": 61,
-      "worst_residual": "1.710569414e-49",
+      "worst_residual": "2.318253844e-69",
       "pass": true
     },
     {
@@ -110,7 +110,7 @@
       "per_argument": [
         {
           "x": "2.24697960371746706",
-          "difference": "5.3455294e-51",
+          "difference": "3.6222716e-71",
           "regime": "x>1 inversion"
         },
         {
@@ -130,7 +130,7 @@
         },
         {
           "x": "-0.554958132087371191",
-          "difference": "1.3363824e-51",
+          "difference": "0.0",
           "regime": "x<0 Landen"
         },
         {
@@ -139,7 +139,7 @@
           "regime": "0<=x<=1 identity"
         }
       ],
-      "worst_difference": "5.34552942e-51",
+      "worst_difference": "3.622271632e-71",
       "pass": true
     },
     {

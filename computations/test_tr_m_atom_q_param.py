@@ -22,10 +22,11 @@ from tr_m_atom_via_transfer import (  # noqa: E402
     tr_m_atom_zn, tr_m_atom_multi_q, tr_m_bar_norm,
 )
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(str(Q0)); qi = mp.mpf(1) / q0
 
     # 1. canonical q₀ value unchanged (q=None default path).

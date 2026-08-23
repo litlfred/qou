@@ -1,0 +1,713 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-23T21:09:37.562064+00:00",
+  "commitSha": "e2870857608d8ce2a895121d9a1b039aee872abc",
+  "assertions": [
+    {
+      "name": "cases_whose_P1_count_is_NOT_2m_plus_1",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_whose_P2_count_is_NOT_2m_plus_3",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_whose_total_is_NOT_4m_plus_4",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "steps_with_more_than_one_image_word",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "steps_whose_source_the_other_lineage_also_carries",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_NOT_reducing_to_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_first_lineage_does_NOT_end_at_the_meeting_word",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "y_labelled_steps_NOT_equal_to_the_bokut_shiao_rule",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "hecke-a2-tail-schedule",
+  "scriptFile": "hecke_a2_tail_schedule.py",
+  "scriptHash": "7a95182c8e98",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_a2_tail_schedule.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_a2_tail_schedule.py"
+  },
+  "parameters": {
+    "scope": "a = 2 (j1 = i2), b in 2..7; the tail only, from the pair TCancel2_coeffEq leaves",
+    "why": "a = 2 was measured NOT to transfer to the general tail: the peel descWord i1 jpp = sigma_{i-1} :: descWord i2 jpp needs jpp <= i1, and at a = 2, jpp = i. This measures the schedule its own tail needs."
+  },
+  "data": {
+    "cases": [
+      {
+        "a": 2,
+        "b": 2,
+        "n": 10,
+        "run_length_m": 0,
+        "P1_steps": 1,
+        "P2_steps": 3,
+        "total_steps": 4,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            0,
+            2
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "Y",
+            2,
+            1
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 2,
+        "y_steps_giving_identical_element": 2
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "n": 11,
+        "run_length_m": 1,
+        "P1_steps": 3,
+        "P2_steps": 5,
+        "total_steps": 8,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "B",
+            2,
+            1,
+            3
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 1,
+        "y_steps_giving_identical_element": 1
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "n": 12,
+        "run_length_m": 2,
+        "P1_steps": 5,
+        "P2_steps": 7,
+        "total_steps": 12,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "B",
+            2,
+            1,
+            4
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          4,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 1,
+        "y_steps_giving_identical_element": 1
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "n": 13,
+        "run_length_m": 3,
+        "P1_steps": 7,
+        "P2_steps": 9,
+        "total_steps": 16,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "B",
+            2,
+            1,
+            5
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 1,
+        "y_steps_giving_identical_element": 1
+      },
+      {
+        "a": 2,
+        "b": 6,
+        "n": 14,
+        "run_length_m": 4,
+        "P1_steps": 9,
+        "P2_steps": 11,
+        "total_steps": 20,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            1,
+            6
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ],
+          [
+            "F",
+            0,
+            6
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            1,
+            6
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ],
+          [
+            "F",
+            0,
+            6
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "B",
+            2,
+            1,
+            6
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 1,
+        "y_steps_giving_identical_element": 1
+      },
+      {
+        "a": 2,
+        "b": 7,
+        "n": 15,
+        "run_length_m": 5,
+        "P1_steps": 11,
+        "P2_steps": 13,
+        "total_steps": 24,
+        "P1_matches_2m_plus_1": true,
+        "P2_matches_2m_plus_3": true,
+        "total_matches_4m_plus_4": true,
+        "P1_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            1,
+            6
+          ],
+          [
+            "F",
+            1,
+            7
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ],
+          [
+            "F",
+            0,
+            6
+          ],
+          [
+            "F",
+            0,
+            7
+          ]
+        ],
+        "P2_schedule": [
+          [
+            "F",
+            1,
+            3
+          ],
+          [
+            "F",
+            1,
+            4
+          ],
+          [
+            "F",
+            1,
+            5
+          ],
+          [
+            "F",
+            1,
+            6
+          ],
+          [
+            "F",
+            1,
+            7
+          ],
+          [
+            "F",
+            0,
+            2
+          ],
+          [
+            "F",
+            0,
+            3
+          ],
+          [
+            "F",
+            0,
+            4
+          ],
+          [
+            "F",
+            0,
+            5
+          ],
+          [
+            "F",
+            0,
+            6
+          ],
+          [
+            "F",
+            0,
+            7
+          ],
+          [
+            "Y",
+            1,
+            0
+          ],
+          [
+            "B",
+            2,
+            1,
+            7
+          ]
+        ],
+        "steps_with_more_than_one_image": 0,
+        "steps_whose_source_the_other_lineage_carries": 0,
+        "reduces_to_zero": true,
+        "meeting_word_rel_i": [
+          2,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "P1_ends_at_meet": true,
+        "y_labelled_steps": 1,
+        "y_steps_giving_identical_element": 1
+      }
+    ]
+  },
+  "caveats": [
+    "The step counts are for THIS order -- the first lineage run to its end, then the second. That order is legal precisely because no step's source is carried by the other lineage (asserted above), and it is NOT deg-lex's. A Lean chain may group the same steps differently; what transfers is the rule sequence per lineage and the meeting word.",
+    "Both lineages are the SAME two rightward transports -- sigma_{i-1} past the run, then sigma_i past it -- separated by one far-commutation sigma_i sigma_{i-2} -> sigma_{i-2} sigma_i. The second lineage then closes with two Bokut-Shiao steps. So the Lean needs `farComm_transport_right_sources`, `monicStep` and `bsStep`, and no lemma this arc does not already have.",
+    "b = 2 is the diagonal and is the m = 0 case: `descWord jm j2` is EMPTY there (jm < j1 = j2), so both transports are no-ops and the tail is four steps. It is not a separate shape, unlike the diagonal in the a >= 3 tail, where the two general tail statements have genuinely different sources."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
+}

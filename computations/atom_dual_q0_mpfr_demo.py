@@ -81,8 +81,22 @@ def solve_atom_dual_q0_mpfr(prec_bits: int = 167) -> dict:
     return out
 
 
-def main():
+def main() -> int:
     res = solve_atom_dual_q0_mpfr()
+
+    # SURFACE THE MISSING BACKEND INSTEAD OF PRINTING OVER IT.
+    # `solve_atom_dual_q0_mpfr` has always returned {"error": ...} with the
+    # exact cargo line when the binary is absent, and main() never looked. So
+    # the run printed a "NO-FLOAT64 path" banner above a table of Nones and
+    # exited 0 — a demo that advertises a precision guarantee it did not
+    # deliver, and reports success either way. Check first, say so, exit
+    # non-zero. Bean qou-cp1w.
+    if res.get("error"):
+        print("H_3(q) atom LP dual — NOT RUN")
+        print(f"  {res['error']}")
+        print("  No witness emitted: there is no result to record.")
+        return 2
+
     print("=" * 70)
     print("H_3(q) atom LP dual — NO-FLOAT64 path (50-dps strings → clarabel-MPFR)")
     print("=" * 70)
@@ -111,8 +125,32 @@ def main():
     # None of it surfaced because the module could not even be imported
     # (`from pyhecke import gram` with no sys.path wiring), so nobody ran it.
     sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
-    from witness_base import WitnessBuilder  # noqa: E402
+    # Narrowed from a bare `except Exception`. That catch-all is why
+    # `wb.write()` survived: WitnessBuilder has only ever had `save()`, so every
+    # run raised AttributeError, printed one line, and continued — for as long
+    # as the file has existed. Only the import is allowed to fail softly now
+    # (qou-substrate genuinely may be absent); anything else is a real bug and
+    # is raised.
+    try:
+        import mpmath as mp  # noqa: F401
+        from _precision import fmt  # noqa: F401
+        from witness_base import WitnessBuilder  # type: ignore
+    except ImportError as e:
+        print(f"\n(witness emission skipped: qou-substrate unavailable: {e})")
+        return 0
 
+    # The `hasattr(wb, ...)` guards that used to wrap each of these are gone.
+    # They are the same silent-skip pattern as the swallow above: had
+    # `wb.write` been guarded too, it would have quietly emitted nothing
+    # instead of raising, and this bug would still be invisible. The
+    # WitnessBuilder API is in-repo and stable; call it directly and let a
+    # genuine breakage surface.
+
+    # Main's guard, adopted (arrived independently on origin/main while this
+    # branch was open). It checks the SYMPTOM — an all-None payload — where
+    # the narrowed `except ImportError` above only covers a missing package.
+    # The two catch different failures and both are wanted: the backend can be
+    # absent with qou-substrate present.
     if res.get("duality_gap") is None:
         print("\n  ⛔ NO WITNESS EMITTED — the clarabel-MPFR binary was not found,")
         print("     so every LP field above is None. Build")
@@ -128,12 +166,43 @@ def main():
         "of gram_matrix_mp (convention D since 2026-08-19). Degenerate "
         "H_3 dual (y0~0); pipeline demo.")
     wb.set_audit_only("docs/audits/2026-06-16-gram-q-approximation-audit.md")
-    wb.add_data("dual", res)
+    # Store the FULL-PRECISION twins only. The clarabel-MPFR binary returns
+    # each numeric twice — `y0_star` as an f64 convenience value and
+    # `y0_star_str` as the 50-digit MPFR decimal — and storing `res` wholesale
+    # dragged 16 raw float64 fields into the witness (.data.dual.dual_obj,
+    # .duality_gap, .primal_obj, x_star[0..], y_star[0..]) in the one script
+    # whose whole point is the no-float64 path. Where a `_str` twin exists the
+    # float is a lossy duplicate of it, so drop the float and keep the string.
+    dual_payload = {k: v for k, v in res.items()
+                    if not (isinstance(v, (float, list))
+                            and f"{k}_str" in res)}
+    wb.add_data("dual", dual_payload)
+    # STRINGS, not floats. `add_assertion` documents this as "the drained
+    # convention (qou-t0rf)" precisely so a value stays out of float64 — and
+    # the old line did `abs(float(res["duality_gap"]))`, truncating an MPFR
+    # decimal to f64 inside the one script whose entire purpose is the
+    # no-float64 path. Measured on a populated run: 3 raw float64 fields would
+    # have entered the witness (.assertions[0].computed / .expected /
+    # .tolerance). The gap crosses the FFI as a decimal string; keep it one.
+    with mp.workdps(50):
+        gap = abs(mp.mpf(str(res.get("duality_gap", 1))))
     wb.add_assertion("strong_duality_gap_small",
-                     computed=abs(float(res["duality_gap"])),
-                     expected=0.0, tolerance=1e-6,
+                     computed=fmt(gap),
+                     expected="0", tolerance="1e-6",
                      source="clarabel-MPFR on 50-dps string Gram")
-    print(f"\nWitness: {wb.save()}")
+    # `save()`, not `write()` — the latter has never existed on WitnessBuilder.
+    # Reached only when `res` is populated, because an all-None payload would
+    # emit a witness asserting `strong_duality_gap_small` about a solve that
+    # never ran.
+    # Stamp the pin. This stem is not in `q0_anchor_manifest.json`, so
+    # `q_parameter` serves the PROTON default, and `pyhecke.gram`'s 50-dps
+    # strings are built at that same value (both read
+    # 1.10997858275138080759166909561076887987...). Recording it keeps this
+    # witness out of Q0_ANCHOR_MISSING and lets a later reader tell which
+    # layer it belongs to without re-deriving it from a call site.
+    out_path = wb.save({"q0Anchor": "proton",
+                        "q0Value": gram._q0_50dps_str()})
+    print(f"\nWitness: {out_path}")
     return 0
 
 

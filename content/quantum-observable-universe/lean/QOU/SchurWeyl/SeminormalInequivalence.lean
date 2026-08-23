@@ -563,4 +563,43 @@ theorem youngDiagram_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
   have hc := contentCount_eq_of_contentPowSum_eq q hq0 hq2 n hμ hν hpow d
   simpa [diagOf] using hc.symm
 
+
+/-! ## Why the bar-symmetrised sum was never going to be the separating element
+
+`seminormalRep_not_matRepEquiv_of_contentCoshSum_ne` above is a real criterion, but it is strictly
+weaker than the content-count route that closes SW-5, and the reason is worth having as a theorem
+rather than as a note: the bar-even bracket **cannot distinguish a partition from its transpose**,
+at any `q`. -/
+
+/-- **The bar-symmetrised content sum is transpose-invariant.**  Transposing a Young diagram negates
+every content, and `q^{2c} + q^{−2c}` is even in `c`, so the sum is unchanged — at **every** `q`.
+
+Consequence: `barSymJMSum` acts by the *same* scalar on `ρ_λ` and `ρ_{λ'}`, so the cosh criterion is
+vacuous on every transpose pair.  That is why the unconditional argument goes through the whole
+power-sum family and the content *counts* rather than through this single scalar.
+
+Measured in exact rational arithmetic, the collapse is total: at `n = 7` the 15 partitions give only
+8 distinct values of the cosh sum, and every collision is exactly a transpose pair.
+
+This also sharpens what `cellContentCoshSum_eq_bracket` records (that the bar-even brackets are not
+independent spectral degrees of freedom): the invariant is not merely dependent on the others, it is
+strictly *coarser than the partition itself*. -/
+theorem coshSum_transpose (q : ℝ) (μ : YoungDiagram) :
+    ∑ c ∈ μ.transpose.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))) := by
+  classical
+  refine Finset.sum_nbij' Prod.swap Prod.swap (fun c hc => ?_) (fun c hc => ?_)
+    (fun c _ => Prod.swap_swap c) (fun c _ => Prod.swap_swap c) (fun c _ => ?_)
+  · rw [YoungDiagram.mem_cells] at hc ⊢
+    exact YoungDiagram.mem_transpose.mp hc
+  · rw [YoungDiagram.mem_cells] at hc ⊢
+    exact YoungDiagram.mem_transpose.mpr (by rwa [Prod.swap_swap])
+  · have hneg : cellContent (Prod.swap c) = -cellContent c := by
+      unfold cellContent
+      simp only [Prod.fst_swap, Prod.snd_swap]
+      ring
+    rw [hneg, show -(2 * -cellContent c) = 2 * cellContent c by ring,
+      show (2 : ℤ) * -cellContent c = -(2 * cellContent c) by ring]
+    exact add_comm _ _
+
 end QOU.SchurWeyl

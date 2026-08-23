@@ -71,7 +71,7 @@ def knot_operator_spectrum(braid_word, n, q_val):
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 30
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     q_f = float(q)
     h = q_f - 1.0/q_f

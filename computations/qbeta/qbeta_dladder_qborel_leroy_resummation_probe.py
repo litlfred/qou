@@ -62,9 +62,10 @@ import qbeta_ck_sseries_exact_rational as core  # noqa: E402
 ORD = 43
 core.ORD = ORD
 import qbeta_dladder_generating_function_structure_probe as dlad  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 dlad.ORD = ORD
 
-mp.mp.dps = 50
+set_compute_dps()
 VOL41_OVER_PI = mp.mpf("0.6461320971509606")
 EVEN_A_3683 = mp.mpf("0.657")
 

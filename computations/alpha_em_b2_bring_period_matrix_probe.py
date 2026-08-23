@@ -62,13 +62,14 @@ sys.path.insert(0, str(_HERE))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "alpha_em_b2_scalar_c_probe", _HERE / "alpha_em_b2_scalar_c_probe.py")
 _sc = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_sc)
 
-mp.mp.dps = 50
+set_compute_dps()
 
 MARKOV_NORM_WITNESS = mp.mpf("0.128620004175246883935741331662")
 J_TAU = -mp.mpf(29) ** 3 * 25 / 2 ** 5        # −29³·25/2⁵ (glyph 4.3)

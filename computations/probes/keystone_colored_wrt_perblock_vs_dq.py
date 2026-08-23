@@ -81,8 +81,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 55  # ≥50 dps compute
+set_compute_dps()  # ≥50 dps compute
 Q0 = mpf("1.1099785955541805")
 
 # Σ(2,3,5) Seifert data — the framing is FIXED by the geometry, not tuned.

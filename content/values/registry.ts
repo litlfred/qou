@@ -595,9 +595,24 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       name: "B_4He_AME_MeV",
       description: "AME experimental binding energy of 4He (helium-4).",
       symbol: "B_{\\mathrm{AME}}({}^4\\mathrm{He})",
+      // Re-pointed 2026-08-19 at the AME source of record.
+      //
+      // This used to read `B_AME_MeV` out of
+      // `4he-binding-full-pipeline.witness.json` — a producerless artifact whose
+      // own run is recorded as a FAILURE in the commit that added it (e52487a2,
+      // 2026-04-20: "blows up to 1.98M MeV ... doesn't extend to 4He without a
+      // Kähler lift"; `err_pct: 52959.6`). It pinned that run's experimental
+      // by-product field, and the value was WRONG: 28.295674 against AME2020's
+      // 28.2956624, i.e. 11.6 eV high where AME's own uncertainty on B is 0.8 eV.
+      // The rendered paper therefore printed a different last digit than every
+      // compute consumer, which all read `B_he4_MeV` from the AME witness.
+      //
+      // That witness is now producer-backed (`ame_2020_binding_energies.py`
+      // reads the vendored AME2020 table) rather than hand-entered, so this pin
+      // tracks the publication instead of a typed literal.
       witnessFile:
-        "computations/4he-binding-full-pipeline.witness.json",
-      witnessPath: "B_AME_MeV",
+        "computations/ame-2020-binding-energies.witness.json",
+      witnessPath: "data.B_he4_MeV",
       defaultPrecision: 6,
       units: "MeV",
     }),

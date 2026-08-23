@@ -42,6 +42,7 @@ import subprocess
 from pathlib import Path
 
 import sympy as sp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main():
@@ -125,7 +126,7 @@ def main():
         print("Numerically at q_0:")
         from mpmath import mpf, mp
         from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-        mp.mp.dps = 30
+        set_compute_dps()
         q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
         bracket_inv = 1 / (q_0 + 1 / q_0) ** 2
         print(f"  1/[2]_q² at q_0 = 1/(q_0 + q_0⁻¹)² = {float(bracket_inv):.10f}")

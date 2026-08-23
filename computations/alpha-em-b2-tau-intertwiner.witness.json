@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T12:11:32.473433+00:00",
-  "commitSha": "67a68e7e8e86adffcf7caec530ec1904ac0a60fa",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:53:39.513867+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "grams_diagonal_schur_unique",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 21,
   "computation": "alpha-em-b2-tau-intertwiner",
   "scriptFile": "alpha_em_b2_tau_intertwiner_probe.py",
-  "scriptHash": "128ba3a7fb15",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "46a0cb8ffece",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_b2_tau_intertwiner_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_b2_tau_intertwiner_probe.py"
   },
   "description": "B2 sub-piece (ii) quantified: the Markov Gram (Hecke q0) and Hodge Gram (S5 q->1), both diagonal + Schur-unique in the seminormal basis, have a NON-CONSTANT diagonal ratio (spread measured, q-deformation origin certified by the q->1 power scaling) — so no single c exists under q->1; the tau-functor is essential. Sharpens the |c| obstacle beyond the #4206 det/tr ambiguity. Nothing wired; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

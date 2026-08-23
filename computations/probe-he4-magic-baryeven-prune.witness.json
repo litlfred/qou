@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-22T15:52:23.542784+00:00",
-  "commitSha": "ba5b1110482f77d0dda78b8a9a9b27576720a091",
+  "computedAt": "2026-08-23T16:24:32.274010+00:00",
+  "commitSha": "1edde3a7b35b87ec23915ed96c120bc8f62f1aba",
   "assertions": [
     {
       "name": "published_near_misses_1plusq_2sqrtq_are_bar_odd_excluded",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "probe-he4-magic-baryeven-prune",
   "scriptFile": "probe_he4_magic_baryeven_prune.py",
-  "scriptHash": "83f4713c26f7",
-  "scriptCommitSha": "2ec9d75063810fefafd82d0eeccf9b74cce2fafb",
+  "scriptHash": "0f3d5379f28f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
   "invocation": {
     "argv": [

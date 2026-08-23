@@ -54,9 +54,11 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # for witness_base
-mp.mp.dps = 30
+set_compute_dps()
 
 # Canonical muon-pinned substrate q₀ (computations/q_parameter.py::Q); the
 # bar-symmetry argument is q-independent, so the exact value is only used for

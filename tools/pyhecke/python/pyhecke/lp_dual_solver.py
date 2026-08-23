@@ -216,6 +216,108 @@ def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     )
 
 
+def _mpf_or_float(x):
+    """Decimal string / mpf / number -> mpmath mpf when available, else float."""
+    try:
+        import mpmath as mp
+    except ImportError:
+        return float(x)
+    return mp.mpf(x) if not isinstance(x, mp.mpf) else x
+
+
+def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
+    """Undo the objective normalisation, and re-derive the active set.
+
+    TWO DISTINCT DEFECTS, both found on the H_9 (triton, 28-pair) LP of
+    `wedderburn_lp_ew_wiring.py` while porting it off float64 (bean qou-q7f1).
+
+    (1) ACCURACY — the objective was normalised before the solve because
+        `operator_selection_lp.rs` hardcodes ABSOLUTE Clarabel tolerances
+        (`tol_gap_abs = tol_feas = 1e-12`). On an LP whose optimum is
+        1.67e-9 that is a *relative* tolerance of 6e-4, so the solver
+        returns `Solved` four significant figures short — measured 1.4e-5
+        relative on the primal, 6.4e-6 on the dual, i.e. WORSE than the f64
+        scipy answer it was supposed to improve on. `prec_bits` never helped
+        (identical results from 167 to 384 bits) because the arithmetic was
+        never the limit; the stopping rule was. Scaling `t -> t*s` leaves
+        the argmin `x` and the active set invariant and scales the objective
+        and every dual by `s`, so it is an exact reformulation. Measured on
+        that LP: 6.4e-6 -> 4.7e-11 relative dual error.
+
+    (2) CORRECTNESS — `active_set` came back as ALL 28 indices where scipy
+        reported none. It is thresholded as `y_i > dual_tol` with an
+        absolute `dual_tol` (default 1e-9), and an interior-point method
+        never drives `y` to exactly zero: the residual centring terms were
+        ~4e-8, above the threshold, so every constraint was labelled
+        binding. Complementary slackness settles it — `min (Gx)_i = 2.4e-9`
+        with `(Gx)_i / sum_j |G_ij x_j| = 0.96..0.997`, i.e. no cancellation
+        at all, so every Frobenius row is genuinely strictly slack and the
+        true `y` is zero. Per AGENTS.md the active set IS the deliverable
+        ("the active demand channels are the most receptive sub-braids"), so
+        shipping 28 false ones as a precision upgrade would have been a
+        substantive wrong claim dressed as a refinement.
+
+        The active set is therefore re-derived from PRIMAL SLACK — a row is
+        active iff `(Gx)_i` is negligible against its own term scale — which
+        is what "tight Frobenius constraint" means, and is scale-free. This
+        corrects an IPM artifact on the clarabel path only; the scipy path
+        is a vertex method whose `y` is exactly zero or genuinely positive,
+        and is left alone.
+    """
+    try:
+        import mpmath as mp
+    except ImportError:
+        return out
+
+    with mp.workdps(50):
+        inv = 1 / _mpf_or_float(s)
+        # (1) unscale every quantity carrying one power of the objective.
+        for key in ("y0_star", "primal_obj", "dual_obj", "duality_gap"):
+            if key in out:
+                out[key] = float(_mpf_or_float(out[key]) * inv)
+            ks = key + "_str"
+            if ks in out and out[ks] is not None:
+                out[ks] = mp.nstr(_mpf_or_float(out[ks]) * inv, 50)
+        if "y_star" in out:
+            out["y_star"] = [float(_mpf_or_float(v) * inv) for v in out["y_star"]]
+        if out.get("y_star_str"):
+            out["y_star_str"] = [mp.nstr(_mpf_or_float(v) * inv, 50)
+                                 for v in out["y_star_str"]]
+
+        # (2) active set from primal slack, not from a magnitude threshold.
+        xs = out.get("x_star_str") or out.get("x_star")
+        if xs is not None and len(xs) == d:
+            x = [_mpf_or_float(v) for v in xs]
+            G = [[_mpf_or_float(v) for v in row] for row in G_str]
+            active = []
+            for i in range(d):
+                terms = [G[i][j] * x[j] for j in range(d)]
+                gx = mp.fsum(terms)
+                scale = mp.fsum(abs(v) for v in terms)
+                # Tight iff the row cancels to (near) nothing against the
+                # magnitude of its own terms.
+                #
+                # THE CONSTANT IS THE SOLVER'S OWN, not a fitted one.
+                # `operator_selection_lp.rs` declares `reduced_tol_feas =
+                # 1e-8` — its own statement of what it will call feasible —
+                # so a row whose relative slack is below that is one the
+                # solver cannot distinguish from tight, and it is not
+                # meaningful to claim otherwise. Trying the *primary*
+                # `tol_feas = 1e-12` instead mislabels genuinely tight rows:
+                # measured on the crosscheck suite, an IPM leaves ~5e-11
+                # relative residual on a row whose exact slack is 1e-16 and
+                # whose shadow price is 0.108 — visibly a real multiplier, not
+                # noise (cases rand-0-d3, rand-6-d3).
+                #
+                # There is no knife edge here in either direction: across all
+                # 14 cases checked the tight rows sit at 1e-11 or below and
+                # the slack rows at 0.49 or above, seven orders clear.
+                if scale == 0 or abs(gx) <= mp.mpf("1e-8") * scale:
+                    active.append(i)
+            out["active_set"] = active
+    return out
+
+
 def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
     """Build an ``LpDualResult`` from the clarabel binding/CLI output dict."""
     if not out or "error" in out or not out.get("feasible", False):
@@ -329,6 +431,38 @@ def _solve_operator_selection_lp_clarabel(
     m_str = repr(float(M_bound))
     dt_str = repr(float(dual_tol))
 
+    # OBJECTIVE NORMALISATION — see `_rescale_mpfr_result` for the measured
+    # failure this exists to prevent. Clarabel's stopping rule here is an
+    # ABSOLUTE 1e-12; an LP whose optimum is ~1e-9 therefore terminates four
+    # significant figures short while reporting `Solved`. Scale `t` to O(1)
+    # so the tolerance means what it says. Exact: the argmin and the active
+    # set are invariant, and every dual scales by the same `s`, which
+    # `_rescale_mpfr_result` undoes.
+    _scale = None
+    try:
+        import mpmath as _mp
+        with _mp.workdps(50):
+            _tmax = max((abs(_mp.mpf(v)) for v in t_str), default=_mp.mpf(0))
+            if _tmax > 0:
+                # Normalise the OBJECTIVE, not `t`. The tolerance is absolute
+                # and applies to the gap, so what has to reach O(1) is
+                # `t . x ~ n_target * t`, not `t` alone. Measured on the H_9
+                # LP: scaling by 1/max|t| leaves the objective at 3e-4 and the
+                # dual 4.5e-9 off; folding in `n_target` puts it at O(1) and
+                # the dual 4.7e-11 off. `n_target` is NOT itself scaled — it
+                # is the equality right-hand side, and moving it would change
+                # the feasible set rather than just the units.
+                _nt = abs(_mp.mpf(n_str))
+                _scale = 1 / (_tmax * _nt) if _nt > 0 else 1 / _tmax
+                t_str = [_mp.nstr(_mp.mpf(v) * _scale, 50) for v in t_str]
+    except ImportError:
+        _scale = None
+
+    def _finish(out: dict) -> LpDualResult:
+        if _scale is not None:
+            out = _rescale_mpfr_result(out, _scale, G_str, d)
+        return _lp_result_from_dict(out, d)
+
     # Prefer the in-process PyO3 binding if the installed wheel carries it.
     try:
         import pyhecke_native
@@ -337,7 +471,7 @@ def _solve_operator_selection_lp_clarabel(
         _binding = None
     if _binding is not None:
         out = _binding(t_str, G_str, n_str, m_str, dt_str, int(prec_bits))
-        return _lp_result_from_dict(dict(out), d)
+        return _finish(dict(out))
 
     # Fall back to the CLI binary.
     import json as _json
@@ -352,7 +486,7 @@ def _solve_operator_selection_lp_clarabel(
         [binp], input=_json.dumps(payload), capture_output=True, text=True,
     )
     out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
-    return _lp_result_from_dict(out, d)
+    return _finish(out)
 
 
 def solve_operator_selection_lp(

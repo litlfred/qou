@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:27:11.038656+00:00",
-  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
+  "computedAt": "2026-08-23T08:53:44.133576+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "additive corrections close bare residual: |resid_corrected| < 5e-5",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "alpha-em-no-pi-correction-probe",
   "scriptFile": "alpha_em_no_pi_correction_probe.py",
-  "scriptHash": "4cae5ca9c10e",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "2661580b6a1d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,27 +41,36 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_no_pi_correction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_no_pi_correction_probe.py"
   },
   "description": "alpha_{basis-knot} step 6 (no-pi correction, research probe).  Makes the owner's thesis concrete: pi is the archimedean image of the Hopf-fibration periods |S^1|=2pi, |S^2|=4pi, so the corrections that close the bare e_- coupling 1/alpha=q[9]_q[10]_q (resid -1.55e-3) decompose as (pre-archimedean numerator)/(Hopf period): alpha/(4pi)=alpha/|S^2| and 2/(3pi)=(4/3)/|S^1|.  The corrected 1/alpha = q[9][10]+2/(3pi)+alpha/(4pi) closes to ~1e-5.  SECTOR/SOURCE map: the leading term is the DERIVED e_- sinh (step 2); alpha/(4pi) is the e_+ cosh Habiro element H=[2]_q(1-h^2 alpha) (prop:alpha-em-habiro-bar-involution, H(1)=2) — already pre-archimedean, pi = |S^2|; the 2/(3pi) numerator 4/3 has NO pre-archimedean source yet and is reported tier=OPEN (structural notes 4/3=H(1)^2/3 and '3'=trefoil index flagged, NOT claimed).  Nothing fitted.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "bare_inv_alpha_e_minus_sinh": "136.82320885358258430804610540444147849492999517976",
-    "residual_bare_rel": "-0.0015528060122549916813082164487812227620256805028112",
-    "correction_2_over_3pi": "0.21220659078919378102517835116335248271261286098728",
-    "correction_alpha_over_4pi": "0.00058070486604883222396035203892135576818869216913455",
-    "corrected_inv_alpha": "137.03599614923782692129524410764375233341079673292",
-    "residual_corrected_rel": "-0.000000022094648057901574093999764492749316827693213835145",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "bare_inv_alpha_e_minus_sinh": "136.8232088535825843080461054044414784949299951797473600635303837071519",
+    "residual_bare_rel": "-0.001552806012254991681308216448781222762025680502931893738744306896250931",
+    "correction_2_over_3pi": "0.2122065907891937810251783511633524827126128609872752649968897920785291",
+    "correction_alpha_over_4pi": "0.0005807048660488322239603520389213557681886921691345477069643483089196055",
+    "corrected_inv_alpha": "137.0359961492378269212952441076437523334107967329037698762342378475394",
+    "residual_corrected_rel": "-0.00000002209464805790157409399976449274931682769333590673531928395186957986713",
     "hopf_periods": {
-      "S1_2pi": "6.2831853071795864769252867665590057683943387987502",
-      "S2_4pi": "12.5663706143591729538505735331180115367886775975",
-      "S3_2pi2": "19.739208802178717237668981999752302270627398814482"
+      "S1_2pi": "6.283185307179586476925286766559005768394338798750211641949889184615633",
+      "S2_4pi": "12.56637061435917295385057353311801153678867759750042328389977836923127",
+      "S3_2pi2": "19.73920880217871723766898199975230227062739881448158125282669875244009"
     },
-    "numerator_alpha_over_4pi_times_S2": "0.0072973525643314250302457952646916832280660213133654",
-    "numerator_2_over_3pi_times_S1": "1.3333333333333333333333333333333333333333333333333",
+    "numerator_alpha_over_4pi_times_S2": "0.007297352564331425030245795264691683228066021313365360495779880381993356",
+    "numerator_2_over_3pi_times_S1": "1.333333333333333333333333333333333333333333333333333333333333333333333",
     "sector_source_map": {
       "leading_q9_q10": "e_- sinh; DERIVED pre-archimedean (step 2)",
       "alpha_over_4pi": "e_+ cosh Habiro H=[2]_q(1-h^2 a); SOURCED (corpus); pi=|S^2|",

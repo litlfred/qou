@@ -3,12 +3,12 @@
   "description": "R2 cross-check 1, adversarially hardened. First draft's 'two ends of one heat trace' claim self-refuted (dim Lambda^1 = 2 component factor; silent /2 removed) and withdrawn. Survives: full shared vocabulary between the accepted n=1 identification and R2 (zero retuned constants; exact ratio 16/3); the component factor explicit \u2014 R2's irreducible content = the per-mode-unit-on-the-pair premise, pinned by the working coefficient's q=1 total; species alignment with the already-canonical n=1 identification. Ruling stays owner's. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-alpha-em-r2-n1-crosscheck.md",
   "tier": "symbolic-exact + 30-dps model numerics; adversarially self-reviewed (overstated claim withdrawn in-probe)",
-  "computedAt": "2026-07-19T04:06:30.251104+00:00",
-  "commitSha": "ba98c69cec2ecb5d4901d6101d8b5dac2ff78677",
+  "computedAt": "2026-08-23T08:50:12.089173+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy+mpmath",
-  "engineVersion": "1.14.0/1.3.0",
+  "engineVersion": "1.14.0/1.4.1",
   "scriptFile": "alpha_em_r2_n1_crosscheck_probe.py",
-  "scriptHash": "775b8539f4f6",
+  "scriptHash": "185cd5b44895",
   "assertions": [
     {
       "name": "canonical_n1_data_reverified",

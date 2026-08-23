@@ -40,10 +40,12 @@ from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     Z, N = 2, 2
     n = 3 * (Z + N)          # 12
     atom = "helium-4"

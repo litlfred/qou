@@ -31,7 +31,15 @@ ROOT = HERE.parent
 for p in (str(ROOT), str(ROOT / "substrate")):
     sys.path.insert(0, p)
 
-mp.mp.dps = 50
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from tr_m_atom_via_transfer import tr_m_atom_zn          # noqa: E402  (PR #2405)
 from wedderburn_jones_markov import y_lambda_at          # noqa: E402

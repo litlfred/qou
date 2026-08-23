@@ -23,7 +23,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]
                        / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(_q0_value_for_anchor("muon"))
 m_e = mp.mpf('0.51099895000')
 Q_beta_codata = mp.mpf('0.78233341000')

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T10:53:05.283706+00:00",
-  "commitSha": "4830911342e1f55ea39a82aecb975c4736eac356",
+  "computedAt": "2026-08-23T09:18:36.570552+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "candidate1_antisym_hecke_gives_negative_det",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "b4-antisym-hecke-exchange-derivation",
   "scriptFile": "b4_antisym_hecke_exchange_derivation.py",
-  "scriptHash": "6fb8652c628e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1267baf3db56",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b4_antisym_hecke_exchange_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b4_antisym_hecke_exchange_derivation.py"
   },
   "description": "Principled antisymmetric-Hecke exchange derivation for the [1^4] value: g=λ_−·z gives det<0 (unphysical); g=−h/2 gives ~0.33 MeV (28× low). Neither naive exchange reproduces b₄=9.243; the correct entries need the 4-nucleon writhe structure. No fit. audit-only.",
   "tier": "structural (one-shot −ln det for two principled exchange factors; no tuning)",

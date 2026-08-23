@@ -48,10 +48,11 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 try:
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     HAVE_MP = True
 except Exception:
     HAVE_MP = False

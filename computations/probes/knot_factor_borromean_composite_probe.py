@@ -49,6 +49,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
 from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
@@ -81,7 +82,7 @@ def main() -> int:
     # The H_6 LR-branching predictions below use this corrected
     # single-component value and match the H_6 Hoefsmit direct
     # trace to ~1e-50 precision.
-    mp.dps = 50
+    set_compute_dps()
 
     chi_3_single = mp.mpf(1)
     chi_alt_single = mp.mpf(1)

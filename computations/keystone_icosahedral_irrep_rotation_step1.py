@@ -34,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # --- A₅ ≅ I conjugacy classes: (label, size, rotation angle) ---------------
 # angle fixed by T₁ (standard rotation rep): χ_{T₁}(θ) = 1 + 2cos θ.
@@ -75,7 +76,7 @@ FIRST_ELL = {"A": 0, "T1": 1, "H": 2, "T2": 3, "G": 3}
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     ct = char_table()
     deg = lambda a: float(a * 180 / mp.pi)
 

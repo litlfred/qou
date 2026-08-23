@@ -1,7 +1,7 @@
 {
-  "commitSha": "82b3317056ad9194d32fb80a2a5ed681c1838604",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "items_1_2_3_mw_strongforce_anchor_asymmetry",
-  "computedAt": "2026-08-11T11:17:38.381133+00:00",
+  "computedAt": "2026-08-23T09:09:31.827334+00:00",
   "description": "Items 1-3 from prior session queue: derive m_W from substrate, apply formula to T(2,9)/T(3,5) strong-force, investigate W/Z anchor asymmetry. Honestly frames each as derivation OR negative finding.",
   "durationMs": 0,
   "engine": "mpmath",
@@ -31,16 +31,16 @@
   },
   "overall_verdict": "All three items face the same structural barrier: the framework's RT trace chain on H_2(q) cannot fully derive SM electroweak masses without a categorical chain for v (Higgs VEV), g/g' mixing, and gauge-invariance projection (for massless gluons). The trace gives the SHAPE of the mass spectrum (within 1% on W/Z ratio) but the absolute scale and the W/Z 1% gap require SM-electroweak structure.",
   "parameters": {
-    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 50,
     "precision": "mpfr"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptCommitSha": "b8b56df8c6a110ac9c57a9b0d2d184192102421f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "items_1_2_3_mw_strongforce_anchor_asymmetry.py",
-  "scriptHash": "3372fa0eca0f",
+  "scriptHash": "a804b9b93139",
   "status": "exploratory",
   "tags": [
     "items-1-2-3",

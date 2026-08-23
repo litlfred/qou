@@ -75,8 +75,8 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
 
     Constructing the witness (the coadjoint-orbit embedding `P(V) ↪ Ad(A)`
     and the antipode-induced `τ_Ad` in a general monoidal category) needs
-    categorical machinery beyond the current `QOU.Basic` API, so the body
-    is an honest `sorry`.
+    massive infrastructure (categorical machinery beyond the current `QOU.Basic` API)
+    that cannot be added as a simple class field, so the body is left as an honest `sorry`.
 
     The conclusion pins `adjointObj = fh.obj`: the adjoint bundle `Ad(A)` is
     carried by the algebra object `A` itself. Without that constraint every

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-21T15:07:13.557378+00:00",
-  "commitSha": "9c6e9834cb17bbb15a3696b70697942a8f6a3ff9",
+  "computedAt": "2026-08-23T09:02:20.400356+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "deuteron_wall_resummation_wrong_transform",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "deuteron-wall-resummation-wrong-transform",
   "scriptFile": "deuteron_wall_wrong_transform_diagnostic.py",
-  "scriptHash": "6aa976c4d46f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de744fda5277",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_wall_wrong_transform_diagnostic.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_wall_wrong_transform_diagnostic.py"
   },
   "description": "The deuteron-wall resummation 'closed negatively' verdict (deuteron_wall_full_transseries_probe) rests on the WRONG transform applied to the WRONG object (qou-hok7). That probe resummed a_D^(n)=I(n)/n — the q=1 CLASSICAL telephone period — with the CLASSICAL level-1/2 Borel divisor Γ(n/2+1). But lever1_transfer_operator_spectral_qgevrey (PR-landed) measured the SUBSTRATE object Z_n(q₀) to be q-Gevrey (log Z_n is Theta(n^2), order ~q0^{n^2/2}), strictly faster than every classical Gevrey-s (the C1 ∞-solution shares the deg_q(c_n)=n² signature). A Borel transform must divide by the growth it tames: for q-Gevrey growth q₀^{n²/2}, the classical Γ-divisor DIVERGES (q₀^{n²/2}/Γ(n/2+1)→∞, shown n≤40) while a q-Borel divisor q₀^{n²/2} tames it (=O(1)). So the classical level-1/2 Borel–Laplace is the resummation of the q=1 shadow, not the substrate object; the ~40× undershoot is a wrong-transform artifact. The deuteron-wall resummation hypothesis is NOT closed — the correct q-Borel–Laplace resummation of Z_n(q₀) (divisor q₀^{n²/2}) has not been done. Does NOT claim q-Borel reaches B_D; only that the negative closure is mis-scoped and must be redone with q-Borel. scope-(a) mis-scope, not exclusion; no fit; nothing wired.",
   "data": {

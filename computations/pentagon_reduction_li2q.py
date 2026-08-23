@@ -81,8 +81,9 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _li_2_q_util import li_2_q, load_q_50dps  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 # ── Pentagon reduction (algebraic identity, numerical evaluation) ─

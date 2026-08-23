@@ -30,7 +30,8 @@ aD3 = sp.cancel((q + 1)**2 / (3*q))                  # lw(2)
 aD4 = sp.cancel((3*q**2 + 4 + 3/q**2) / 4)           # Family-A (wired proton multiplier)
 tau_seed = sp.cancel((aD2 + aD4) / aD3)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 def ev(e): return mp.mpf(str(sp.N(e.subs(q, q0), 40)))
 

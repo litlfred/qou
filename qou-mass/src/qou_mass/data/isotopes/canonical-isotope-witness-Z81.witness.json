@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T16:06:04.296762+00:00",
-  "commitSha": "5b8af174d3f9ce60dec10d1116f83acc70538356",
+  "computedAt": "2026-08-23T17:16:09.227935+00:00",
+  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 40,
   "computation": "canonical-isotope-witness-Z81",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "e56cabeee1ea",
-  "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
+  "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,9 +19,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -1422,11 +1425,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "ed68106158faf521b4f0f8d3a0e3347ab37058edd57d7ea9e4c0b50899e5a946",
-        "size_bytes": 65269,
-        "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
+        "size_bytes": 65295,
+        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
         "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-19T21:22:02.891619+00:00"
+        "computedAt": "2026-08-22T09:49:32.663084+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -1446,11 +1449,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "801f033a07287f27a73581cb0000ed997b17557256380838a755a7b007592d85",
-        "size_bytes": 11146,
-        "commitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
-        "scriptCommitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
-        "computedAt": "2026-08-22T10:40:01.373592+00:00"
+        "sha256": "8c810f773a83934900498a083263808be90496ee879ef7069e9d98b26b636077",
+        "size_bytes": 11476,
+        "commitSha": "ba28ebdb1dae72fb39af5ef536c9e08bed944835",
+        "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
+        "computedAt": "2026-08-22T21:18:55.791557+00:00"
       },
       {
         "path": "ame2020.json",

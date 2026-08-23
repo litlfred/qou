@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T21:56:19Z
+updated_at: 2026-08-23T13:12:14Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -662,3 +662,29 @@ wrong trigger. Correct form:
 Recorded because attributing my own work to an absent sibling corrupts exactly
 the coordination signal the bean discipline exists to protect: a later reader
 would have gone looking for a `qou-tho9` session that never existed.
+
+
+## 2026-08-23 — SW-5 fully CLOSED on main, by a sibling continuing this arc
+
+Returning after 4 days: the arc I left at 'structural half proved, arithmetic
+half declined' is **finished on main**, and the finisher went further than I
+did.
+
+- `seminormalRep_range_eq_top` (5355c42ac) — irreducibility, as I left it.
+- `AxialDistanceBound.lean` (53e7c546b) — the converse trichotomy, split into
+  its own file.
+- `SeminormalInequivalence.lean` (925143dd4, 536 lines) — **pairwise
+  inequivalence is UNCONDITIONAL.** They closed the arithmetic residual I
+  explicitly declined to claim, and by the right route: not the single content
+  SUM at one q, but the whole power-sum family, giving equality of content
+  COUNTS (`contentCount_eq_of_matRepEquiv`) and then
+  `youngDiagram_eq_of_contentCount_eq`. That sidesteps the
+  'integer Laurent polynomial can vanish at a real point' problem entirely
+  rather than trying to defeat it. Bean `qou-tho9`: completed.
+
+**My PR #5331 is superseded and closed.** One result was NOT reproduced and has
+been salvaged onto current main separately: `coshSum_transpose`, the theorem
+that the bar-even content bracket is transpose-blind. Corpus-grepped before
+salvaging — the corpus knows other transpose-invariance facts (hook multisets,
+d_lambda' = d_lambda) but not this one, and it explains *why* the cosh criterion
+in their own file is vacuous on every transpose pair.

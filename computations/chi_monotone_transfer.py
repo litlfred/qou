@@ -53,6 +53,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _TOL = 1e-9
 
@@ -227,7 +228,7 @@ def _self_test() -> int:
     from char_fast import chi_lambda_fast_mp
     from lr_coefficients import partitions_of
     from mass_at_3A_proper import atom_braid_word_3A
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     ok_all = True
 

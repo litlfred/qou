@@ -35,8 +35,10 @@ producer emits provenance at all.
    *can* move a number; it does not say which *did*. That needs the runner
    (`witness_producer_executes_audit.py`, already on `main` via #4960 -- its
    ENV_MISSING / DIFFERS buckets are the run-time complement to this script's
-   static env gate), and it needs a container with `scipy` / `pyhecke_native` /
-   `clarabel` present, which this one does not have.
+   static env gate). NOTE (2026-08-19): the container-provisioning half of this
+   blocker is GONE — `scipy` 1.17.1 and `clarabel` 0.11.1 install from PyPI and
+   `pyhecke_native` 0.9.0 builds from `tools/pyhecke-native/` with maturin.
+   What remains is compute time, not capability.
 
 ## Do not
 
@@ -73,3 +75,40 @@ and a nightly, not an idle pass.
 
 **Do not** re-cite the environment example. Use
 `witness_import_cone_staleness_audit.py` for the import axis.
+
+## 2026-08-19 — item 1 closed by measurement; a broken producer found doing it
+
+**Item 1 (import-cone over-flag) is CLOSED.** I had declined to automate an
+infra-vs-numeric discriminator because it would be an unvalidated heuristic. So
+I measured it: all 8 flagged witnesses re-run, mathematical fields diffed.
+
+    drift confined to witness_base / _precision : 0 moved, 5 unchanged
+    drift touching anything else                : 2 moved, 0 unchanged
+    1 crashed before writing
+
+Perfect separation on 7 decidable cases; infra-only now has its own bucket.
+n=7 is small and `_precision` is only 2/2 — re-measure before leaning on it.
+
+**NEW — a genuinely broken producer (needs an owner call, not a fix from me).**
+`casimir_d6_qcorrection_structure.py` requests the ideal/muon anchor;
+`q_parameter` refuses with the yfvb/tnjb anti-corruption guard because
+`q-pinning-50-digit.witness.json` no longer holds a muon value. Commit
+`9a9c6b31c` ("sweep(tnjb): first 25 witnesses regenerated at the proton pin")
+flipped it muon → proton. The guard is behaving CORRECTLY. The producer is
+simply unrunnable on current main.
+
+Do **not** relax the guard, and do **not** silently re-pin the producer to
+proton — which anchor a d6-Casimir q-correction should use is a substantive
+question, and AGENTS.md keeps the *ideal* CAL-2 definition muon-based even
+though compute defaults to proton. 16 files reference `QOU_Q0_ANCHOR`; this
+sweep may have broken more than one.
+
+**AGENTS.md is stale on this point.** It states `q-pinning-50-digit.witness.json`
+"holds the muon value `1.10997859555733471…`". On main it holds
+`1.1099785827513808075916` — the proton value. Corrected in this branch.
+
+**Self-inflicted lesson worth keeping.** A `git checkout -- computations/`
+cleanup landed mid-run and left the triage witness carrying new-format data
+under provenance hashed from the reverted script — an internally inconsistent
+artifact, the exact corruption class this bean is about. Commit before running,
+and never blanket-revert a tree while a producer is in flight.

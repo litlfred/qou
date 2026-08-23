@@ -1,11 +1,11 @@
 ---
 # qou-lo1t
 title: 'VACUITY drain batch 1: self-assuming-projection bulk (118 genuine remaining)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-23T09:33:15Z
+updated_at: 2026-08-23T17:23:27Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
@@ -118,3 +118,51 @@ not one.
 Found while executing the ledger disposition on `mobius_energy_nonneg` (a
 different declaration, in `mobius-energy.lean`, which `8dd1881a57` deleted
 outright — my PR #5541 was superseded by that and is closed).
+
+
+## Batch 5 (2026-08-23) — the last four shadow pairs, PR #5562
+
+Shadow-pair sweep CLOSED. Four adjudications, four different answers — which is
+why "delete the sibling" was never adoptable as a rule.
+
+- `descended_level_zero` — sibling re-introduced the projection the library had
+  explicitly removed. **Sibling deleted** (0 references); ref now lands on the
+  library's named `Prop`.
+- `core_levi_form` — opposite: the sibling is much stronger (a real case-split
+  derivation) and the library's twin is the five-field projection. Fixed the
+  sibling's own `:= ctx.cond_def` in place, restating it as the two-sided
+  pinning `1 <= cond` and `|cond - max/min| <= C0*hbar^2`.
+- `exclusionRadius_eq` — free field + defining-equation field. Radius made a
+  `def`; added `exclusionRadius_pos` derived from `q_gt_one`.
+- `categorical_irreducible` — **two blocks carrying the IDENTICAL `lean.ref`
+  resolved to DIFFERENT declarations**, because the same fully-qualified name
+  was declared twice. The twin's sibling had been converted to a note-only
+  importer for exactly this reason; the conversion missed this one. Carrier
+  restated to hold the manuscript proof's two hypotheses (trace-freeness,
+  non-degeneracy) with the theorem cancelling the mono.
+
+**Ledger 115 -> 114, genuine 101 -> 98, corpus candidates 109 -> 106.**
+
+### The batch-2 detector-limitation note above got a fifth data point
+
+`HasCategoricalIrreducibility` now trips `proof-claims-unencoded` as a **false
+positive** — the docstring names two properties and both ARE encoded as fields.
+Same shape as the batch-2 finding one criterion over: the detector reads the
+prose, not the fields.
+
+### Staling is not draining — recorded because it inflates a drain
+
+Editing three files staled **five** verdicts (plus a sixth from upstream). All
+six were re-reviewed, not restored. Basis for the three Instanton restorations:
+those decls appear NOWHERE in the diff (0 matching +/- lines). Any future batch
+that reports a drain delta must subtract the entries it staled, or the number
+reads better than the work.
+
+### Not mine, recorded for `qou-cds1`
+
+`TransferMatrixEigenphase` (nuclear-interactions/q-beta-cos-resummation.lean)
+adjudicated `genuine`: the docstring axiomatises a spectral identification while
+its two fields say only `-2 <= 2cos(t) <= 2` and `cos(t) = cos(-t)`, both true
+of every real. That bean's own EigenphaseCarrierVacuity.lean already
+demonstrates it; recorded, not re-derived. Its verbatim reproduction inside that
+demonstration file is `legit`.

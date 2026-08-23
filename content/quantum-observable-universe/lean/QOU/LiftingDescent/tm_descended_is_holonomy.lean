@@ -73,31 +73,39 @@ opaque descendedMIcore : ℝ
     exceptional disc: `MI∫_{D_i} τ̂ₙ(α)`. -/
 opaque descendedMIdisc : ℕ → ℝ
 
+class TmDescendedInputs : Prop where
+  /-- Open input 1 -/
+  factorises : descendedMI = descendedMIcore * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i
+  /-- Open input 2 -/
+  trivial : ∀ i : ℕ, descendedMIdisc i = 1
+  /-- Open input 3 -/
+  stokes : descendedMIcore = unknotHolonomy
+
 /-- **Open input 1 — multiplicativity over the blow-up decomposition.**
     Yekutieli's multiplicative surface integral is multiplicative over
     `Σ = Σ₀ ∪ ⋃ D_i`; not in Mathlib. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-theorem descended_MI_factorises :
+theorem descended_MI_factorises [ctx : TmDescendedInputs] :
     descendedMI
       = descendedMIcore
           * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i :=
-  sorry
+  ctx.factorises
 
 /-- **Open input 2 — the descended term is trivial on exceptional
     discs.**  `τ̂ₙ(α)` is base-level (descended), so it carries no
     contribution over the blow-up discs `D_i`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md
-theorem descended_exceptional_disc_trivial :
+theorem descended_exceptional_disc_trivial [ctx : TmDescendedInputs] :
     ∀ i : ℕ, descendedMIdisc i = 1 :=
-  sorry
+  ctx.trivial
 
 /-- **Open input 3 — non-abelian Stokes on the spanning disc.**
     The multiplicative integral of the descended term over `Σ₀` is the
     boundary holonomy of the unknot core `ϱ₀`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-theorem descended_core_stokes :
+theorem descended_core_stokes [ctx : TmDescendedInputs] :
     descendedMIcore = unknotHolonomy :=
-  sorry
+  ctx.stokes
 
 /-- **Descended term = unknot-core holonomy**
     ([`lem:topological-mass-holonomy`]).
@@ -106,7 +114,7 @@ theorem descended_core_stokes :
 over the blow-up decomposition, collapse the product of trivial
 exceptional-disc contributions, then apply Stokes on the spanning
 disc. -/
-theorem tm_descended_is_holonomy : descendedMI = unknotHolonomy := by
+theorem tm_descended_is_holonomy [TmDescendedInputs] : descendedMI = unknotHolonomy := by
   rw [descended_MI_factorises,
     Finset.prod_eq_one fun i _ => descended_exceptional_disc_trivial i,
     mul_one]
