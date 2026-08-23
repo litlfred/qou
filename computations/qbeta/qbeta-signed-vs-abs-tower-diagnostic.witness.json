@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:41.390022+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T19:00:25.325659+00:00",
+  "commitSha": "5eb7628b913150f39406abed6efd2bb2b51020b7",
   "assertions": [
     {
       "name": "phi_q_signed_differs_from_phi_q_abs_at_delta_scale",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 261,
+  "durationMs": 336,
   "computation": "qbeta-signed-vs-abs-tower-diagnostic",
   "scriptFile": "qbeta_signed_vs_abs_tower_diagnostic.py",
   "scriptHash": "421b94c797b0",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,13 +28,23 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py"
   },
   "description": "Concrete test of user's 2026-06-01 question: does dropping |...| in the mass-tower formula change Q_β at q_proton? Tests with specific synthetic vols lists (single positive, mixed-sign, all negative) to show when signed != abs.",
   "auditOnly": "docs/audits/2026-06-01-qbeta-signed-vs-abs-tower-diagnostic.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "test_cases": {
       "all_positive_small": {
         "vols": [
@@ -42,8 +52,8 @@
           "0.2",
           "0.15"
         ],
-        "abs_total": "15.9475192293872917092032150880692762967282440215978439462366",
-        "signed_total": "15.9475192293872917092032150880692762967282440215978439462366",
+        "abs_total": "15.9475217660676729419603289745330455506437847441128954865417",
+        "signed_total": "15.9475217660676729419603289745330455506437847441128954865417",
         "absolute_diff": "0.0",
         "relative_diff": 0.0
       },
@@ -53,8 +63,8 @@
           "0.4",
           "0.3"
         ],
-        "abs_total": "275.838370510002561843036100651257199873474290049237781831674",
-        "signed_total": "275.838370510002561843036100651257199873474290049237781831674",
+        "abs_total": "275.838522989063588585361436881327829682007638753450575149881",
+        "signed_total": "275.838522989063588585361436881327829682007638753450575149881",
         "absolute_diff": "0.0",
         "relative_diff": 0.0
       },
@@ -64,10 +74,10 @@
           "-0.2",
           "0.1"
         ],
-        "abs_total": "31.3764841610129725812214474407108666773486210240594732808014",
-        "signed_total": "23.2582854659881261708883524729670236350713684788222082446199",
-        "absolute_diff": "-8.11819869502484641033309496774384304227725254523726503618158",
-        "relative_diff": -0.25873512957554884
+        "abs_total": "31.3764926892000061684207715063000002286248454704396252418407",
+        "signed_total": "23.2582922540855378718974993576996993104451218080260592797400",
+        "absolute_diff": "-8.11820043511446829652327214860030091817972366241356596210069",
+        "relative_diff": -0.25873511470926147
       },
       "all_negative": {
         "vols": [
@@ -75,10 +85,10 @@
           "-0.2",
           "-0.15"
         ],
-        "abs_total": "15.9475192293872917092032150880692762967282440215978439462366",
-        "signed_total": "3.37122636519529740680211477056452819848553888694560454440407",
-        "absolute_diff": "-12.5762928641919943024011003175047480982427051346522394018325",
-        "relative_diff": -0.7886049662832216
+        "abs_total": "15.9475217660676729419603289745330455506437847441128954865417",
+        "signed_total": "3.37122631385999779985438827472548663083360087722296479414017",
+        "absolute_diff": "-12.5762954522076751421059406998075589198101838668899306924016",
+        "relative_diff": -0.7886050031276256
       },
       "one_strong_negative": {
         "vols": [
@@ -86,10 +96,10 @@
           "-0.4",
           "0.1"
         ],
-        "abs_total": "124.048360121458387838652695369814297500142115713378166120036",
-        "signed_total": "61.2779850453976203761957209805205054759280605902977914066336",
-        "absolute_diff": "-62.7703750760607674624569743892937920242140551230803747134022",
-        "relative_diff": -0.5060153557419136
+        "abs_total": "124.048416189001421306625480467065151003120082573002051269620",
+        "signed_total": "61.2780127016170789678763805023201578283687165889637461370292",
+        "absolute_diff": "-62.7704034873843423387490999647449931747513659840383051325912",
+        "relative_diff": -0.5060153560666726
       },
       "realistic_subbraid_vols": {
         "vols": [
@@ -97,8 +107,8 @@
           "0.142",
           "0.025"
         ],
-        "abs_total": "58.1463481396287796597034885905928352047742620102200231437944",
-        "signed_total": "58.1463481396287796597034885905928352047742620102200231437944",
+        "abs_total": "58.1463720138149080997033078242470218758858595249871278203746",
+        "signed_total": "58.1463720138149080997033078242470218758858595249871278203746",
         "absolute_diff": "0.0",
         "relative_diff": 0.0
       }
@@ -110,13 +120,15 @@
     },
     "sensitivity_at_delta_tr_M_scale": {
       "v": "0.142",
-      "Phi_q_pos": "3.809199147312690291169412478407423251522031887536587853216785411636851",
-      "Phi_q_neg": "0.2864677922424100243174237513769059650796052041790018281040384601294178",
+      "Phi_q_pos": "3.809199741660374276516160882047832461811134450365353903902483989579023",
+      "Phi_q_neg": "0.2864677506098698365939516109393184495940848828013531310641121245792066",
       "Phi_q_abs_same_as_pos": "True",
-      "ratio_pos_over_neg": "13.29712885869324172115539822806962162285116265055234007950028633562312",
-      "leading_order_signed_minus_abs_pct": -92.47957953459832
+      "ratio_pos_over_neg": "13.29713286591895258160859571530723208355840123749080805584560512565749",
+      "leading_order_signed_minus_abs_pct": -92.47958180095321
     },
     "conclusion": "Φ_q(z) ≠ Φ_q(|z|) for z < 0. At Δtr_M scale (|v|=0.142, q=1.11), Φ_q(-v) differs from Φ_q(+v) by ~-92.48% per term. If the framework's per-braid mass-tower uses Φ_q(|v|) but the categorical 'correct' formula should use Φ_q(v) signed, EACH negative-v term contributes a 92.48% sign-correction. Multiple negative terms compound. For PROTON / NEUTRON mass-tower: at the level of single-nucleon tr_M values (β_p ≈ +1.07, β_n ≈ +0.92), both POSITIVE, so |...| is no-op at level 0. At deeper levels (pair joints, jets) sub-braid traces CAN be negative — the |...| would change those. WHETHER THE FRAMEWORK SHOULD USE SIGNED OR ABS is a categorical question; this probe does not answer it, only quantifies that the difference is structurally meaningful when negative-v terms appear in the tower.",
     "implications_for_ck_saga": "Indirect — c_k saga is in BINDING (Li_2^q), not MASS (Φ_q). Q_β = m_n - m_p - m_e is a mass-DIFFERENCE; both m_n and m_p use Φ_q(|...|) in their per-braid towers. If signed-vs-abs changes m_p and m_n in correlated ways, the difference Q_β could be unchanged. Quantifying this requires the full per-isotope sub-braid V̂ values for proton and neutron — out of scope for this diagnostic. Marked as FOLLOW-UP."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

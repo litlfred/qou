@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T23:30:00Z
+updated_at: 2026-08-24T01:15:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -654,3 +654,147 @@ Stated rather than rounded to "consistent with the pin".
 
 `habiro_interpolation_wlambda` still goes last: it is the only one carrying muon
 **value B**, and regenerating it destroys the evidence of which muon value it held.
+
+---
+
+## 2026-08-23 — four left the queue without me: the sibling sweep committed the changes I declined
+
+Re-scanning after merging `origin/main`, the queue is **13**, not the 17 that
+`21 − 4 committed` predicts. Four are gone, and three of them are **exactly the
+ones I regenerated, measured as conclusion-moving, and reverted**:
+
+| witness | fixed by |
+|---|---|
+| `binding-qgaussian-ell1-ceiling-measurement` | `a0ee2ac5e` |
+| `flavor-split-alpha-bond-dilog` | `a0ee2ac5e` |
+| `flavor-split-alpha-dilog-expansion` | `a0ee2ac5e` |
+| `qbeta-route-alpha-lift-prediction` | `a0ee2ac5e` |
+
+`a0ee2ac5e` is the sibling's **563-witness** sweep (`qou-fl9i`), which reached
+this branch through the merge.
+
+### My measurements were exactly right, and that is checkable
+
+The committed versions carry the values I recorded before reverting:
+
+```
+flavor-split-alpha-*  alpha_true_anchor_drift  0.00023620856905347091…   (I measured 2.4e-4, was 5.8e-8)
+binding-qgaussian     inflation_anchor_drift   0.00000023211456270013…   (I measured 2.3e-7, was 6.9e-11)
+```
+
+Independent regeneration, identical numbers to every digit I had. So the
+movement is real and reproducible, and reverting did not make it go away — it
+landed by another route.
+
+### Was the caution wrong? No, but it was about a different thing
+
+All three still report `allPassed: true, failed: 0`, so **they are not among
+`qou-a31p`'s 29 flips** — their assertions tolerate the movement. On correctness,
+the sibling's commit is fine and arguably better than my revert: the new values
+are computed at the proton pin with current code.
+
+What I was protecting was not correctness but **attribution and visibility** — a
+4000× move in a published drift metric should not ride inside a commit whose
+stated purpose is fixing a mislabelled field. That concern stands independently
+of these three being harmless, and `qou-a31p` exists precisely because the same
+563-witness sweep *did* silently break 29 assertions elsewhere while every
+blocking gate stayed green.
+
+**Recorded rather than quietly dropped**, because "I declined to commit X and
+someone else committed X" is exactly the kind of thing a work-plan should surface
+instead of leaving the next reader to wonder why the queue shrank.
+
+---
+
+## 2026-08-23 — the qbeta batch: 6 committed, 4 held back, and the mislabel turns out to be TWO different defects
+
+Ran all 11 remaining qbeta-channel producers. Results split four ways, and the
+split corrects this bean's earlier conclusion that *"these need regeneration, not
+source repair."* **Two of them need source repair and regeneration cannot touch
+them.**
+
+### THE HEADLINE — the mislabel made every cross-anchor probe compare an anchor with ITSELF
+
+`qbeta-c3-habiro-3rung-crossanchor-rigidity`, before regeneration:
+
+```
+q_muon   = 1.109978595554180575281594   <- value B (CODATA-2018 muon)
+q_proton = 1.109978595557334719899763   <- value A (the FROZEN CANONICAL MUON PIN)
+```
+
+Both legs are muon. The probe was measuring the **B↔A separation (3.15e-12)** and
+reporting it as the muon↔proton cross-anchor swing. After the fix it is a real
+11.5 ppb comparison — and the reported swings grow by three to four orders of
+magnitude across the batch:
+
+| probe | swing before | swing after |
+|---|---|---|
+| `qbeta-c3-habiro-3rung` | −1.52e-10 % | **+6.23e-07 %** |
+| `qbeta-c6-c10-falsification` | 5.82e-11 % | **2.38e-07 %** |
+| `qbeta-li2q-spectral-combiner` | 1.91e-12 % | **7.79e-09 %** |
+
+**Every qualitative verdict survives** — `RIGID`, `EMPIRICAL — SILVER-ANCHORED`,
+`STRUCTURAL REFUTATION CONFIRMED` — because each rests on *swing ≪ empirical*
+(−2.88 %, 1 %), and that inequality still holds by orders of magnitude. But those
+verdicts were previously supported by a **degenerate comparison**: a probe whose
+job is to discriminate two anchors was handed the same anchor twice. The
+conclusions are unchanged; the evidence for them is now real. That is the
+`AGENTS.md` "never straddle the two layers inside one quantity" rule, caught in
+the act.
+
+### The two that regeneration CANNOT fix — a live source defect, not a stale artefact
+
+`qbeta-composite-crossanchor-2factor-sweep` and
+`qbeta-cosh-avatar-crossanchor-multicoeff-probe` came back **still mislabelled
+(1 → 1)** after a clean run.
+
+Traced: `computations/substrate/q_parameter.py:100-108` resolves the anchor from
+`QOU_Q0_ANCHOR`, and **when that is unset it auto-selects by the running
+producer's `sys.argv[0]` stem** against `q0_anchor_manifest.json`. Both producers
+are in the **`ideal_muon`** layer (110 producers), so `q_at()` *correctly* returns
+the muon pin for them — and they write it into a field named **`q_proton`**.
+
+So the defect is the field NAME in the producer source, not the value, and no
+number of regenerations will change it. It also explains why this bean's earlier
+audit — *"all 20 obtain their pin at runtime via `q_at()`; zero hardcode a muon
+literal"* — was true and still missed these: `q_at()` returns a **different value
+depending on how the script is invoked**. A `python3 -c` replication of the same
+two lines returns the proton pin, because `argv[0]` is then `-c` and the manifest
+never matches.
+
+### Committed — 6, mislabel cleared, verdict preserved
+
+`qbeta-c3-habiro-3rung-crossanchor-rigidity`,
+`qbeta-li2q-spectral-combiner-crossanchor`, `qbeta-c6-c10-crossanchor-falsification`,
+`qbeta-cosh-q-sinh-q-candidate-scan`, `qbeta-delta-tau-m-canonical-explicit-instance`,
+`qbeta-signed-vs-abs-tower-diagnostic`. All: mislabelled field 1 → 0, failed
+assertions 0 → 0, no environment downgrade. The only textual changes are embedded
+swing figures and `engineVersion mpmath 1.3.0 → 1.4.1`.
+
+### Held back — 4
+
+| witness | why |
+|---|---|
+| `xq-habiro-element-search-probe` | 6 candidates `TIER 1 → TIER 2` |
+| `qbeta-jacobi-anger-tower-general` | `allPassed true → false`; one assertion flips |
+| `qbeta-composite-crossanchor-2factor-sweep` | ideal-layer naming defect; regeneration is a no-op on it |
+| `qbeta-cosh-avatar-crossanchor-multicoeff-probe` | same |
+
+### Blocked — 1, by an upstream data defect
+
+`qbeta_singularity_cross_anchor_probe.py` crashes before writing:
+
+```
+mp.mpf(str(v))  ->  ValueError: invalid literal for int() with base 10: ''
+```
+
+reading `c_k_extracted_50dps` from `qbeta-decay-sdp-extended-ck.witness.json`
+(`:97-103`). A stored value has a malformed exponent, so the producer cannot run
+at all. **Its witness is untouched** — nothing was half-written.
+
+### Queue state
+
+4 + 6 = **10 of 21 committed**. 4 held back on conclusion movement, 2 reclassified
+as source defects, 1 blocked upstream, 1 excluded by design (`h4_form_AB`),
+`habiro_interpolation_wlambda` still last (only carrier of value B), and 3 were
+fixed by the sibling sweep.
