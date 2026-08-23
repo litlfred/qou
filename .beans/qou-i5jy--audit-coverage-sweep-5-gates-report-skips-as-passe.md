@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T07:54:52Z
+updated_at: 2026-08-23T12:40:00Z
 ---
 
 
@@ -265,3 +265,80 @@ does the thing it warns readers not to do.
 - **#3 `witness_failed_assertion_audit.py`** — not independently re-measured. The
   mechanism (only a non-empty `assertions[]` or explicit `allPassed: False` can be
   counted) is visible in the source; the 519/2715 figure is relayed.
+
+---
+
+## Finding #5 FIXED 2026-08-23 — `scripts/guard_check.py`: a crashed guard is now a third outcome, not a pass
+
+The guard had two verdicts where it needed three. Both content checks sat in bare
+`except: pass` and fell through to `return True`, so a file the guard never
+managed to evaluate was reported as having passed it.
+
+**The obvious fix is worse than the defect.** Returning `False` on a guard error
+routes the file to `:46`, `subprocess.call(['git', 'checkout', '--', filepath])`
+— which discards the working-tree edit. An unevaluated file is not a failed
+file, and must not be destroyed as though it were.
+
+### Verdicts
+
+| verdict | stdout | working tree |
+|---|---|---|
+| `PASS` (`True`) | filename → caller commits | left modified |
+| `BLOCK` (`False`) | `Reverting <path> (<reason>)` | **reverted** (unchanged) |
+| `SKIP` (`None`) | *nothing* | **untouched** — neither committed nor reverted |
+
+`SKIP` diagnostics go to **stderr** on purpose: stdout is a filename list that
+`auto_commit_batches.py:7` feeds straight to `git add`, so a new stdout line
+would become a pathspec.
+
+### The caller had to change too
+
+`if check_file(filepath): … else: git checkout` sends `None` down the **revert**
+branch, because `None` is falsy. The three-way dispatch is now explicit
+(`is PASS` / `is BLOCK` / else skip). Adding the return value without this would
+have converted every guard crash into a deletion.
+
+### Measured, old vs new, under an identical forced failure
+
+Throwaway repo, `git` shimmed to fail on `diff --numstat` only, with one
+tiny edit and one **300-line delta** — the exact thing the guard exists to block.
+
+*Old:*
+
+```
+stdout: content/big.md      ← 300-line delta, committed
+        content/ok.md
+exit=0, no warning
+```
+
+*New:*
+
+```
+stdout: (empty)
+stderr: SKIP content/ok.md: guard could not run `git diff --numstat …`
+        guard_check: 1 file(s) SKIPPED — left uncommitted and unreverted
+exit=0; working tree intact, edit preserved verbatim
+```
+
+So the old failure mode was not merely "unevaluated file passes" — the guard's
+**blocking criterion was silently disabled** and the file it was built to stop
+was handed to the committer. Normal-path behaviour is unchanged: all three
+`BLOCK` reasons still revert, `PASS` still prints the filename.
+
+### Also fixed
+
+- Bare `except:` → `except Exception:`, so Ctrl-C during the guard is no longer
+  swallowed into a pass.
+- `diff_out.split('\t')` unpacked into exactly three fields and called `int()`
+  on them unguarded; unparseable numstat now returns `SKIP` instead of raising
+  into the same swallowed pass. `200` is now `MAX_LINE_DELTA`.
+
+### Deliberately NOT changed
+
+- **Exit status stays 0 when files are skipped.** The caller runs this under
+  `subprocess.check_output`, which raises on non-zero — a fatal skip would abort
+  the batch and commit *nothing*. A skip cannot be mistaken for a pass here
+  anyway: the file is absent from stdout **and** left dirty in the working tree,
+  so the next run retries it.
+- **The `"Reverting"` stdout prefix contract** with `auto_commit_batches.py:7`,
+  left byte-identical. Only one consumer exists (swept: no hook or CI wiring).
