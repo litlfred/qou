@@ -2018,3 +2018,41 @@ Roth's lemma. Say which, when it lands.
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Eight declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — `t ≤ 2/ω`: what the growth condition was for
+
+`RothGrowth` has been in `RothLemmaStatement` since the statement was written and **nothing
+used it**. This is what it is for.
+
+```
+rothGrowth_antitone      ω ≥ 1 ⟹ degrees are non-increasing along the ordering
+rothGrowth_mul_le        every earlier degree is ≥ ω times any later one
+rothGrowth_row_cost_le   (d_last + 1) / d_earlier ≤ 2/ω
+```
+
+The last is the row cost of the induction step. The `+1` costs a factor `2` because
+`d_last ≥ 1`; the `ω` is `rothGrowth_mul_le` directly. **So `ω ≥ 2/ε` forces `t ≤ ε`** — which
+is what `ω(m, ε)` has to be, and the entry `RothLemmaUniform` left unconstrained.
+
+`rothGrowth_mul_le` needs the chained (antitone) form, not just the single-step condition: the
+degree floor `D₁` ranges over *all* the non-split variables, not only the one adjacent to the
+split-off variable.
+
+⚠ **This is the arc's own reconstruction, and it should not be quoted as the source's.**
+Property `Γ_m` (§11) is in the illegible region and has not been read. What is proved is a
+fact about `RothGrowth` **as this arc defines it**. If the source's condition differs, this
+proves something about `RothLemmaUniform`, not about Roth's lemma. Both the module header and
+the docstrings say so.
+
+### Where this leaves things
+
+§13 is derived; the row cost is bounded by `2/ω`; the two are **not yet composed** in Lean.
+Composing them needs the degree floor as a natural number with `ω·d ≤ D₁ ≤ min_k d₁ k`, which
+exists (take `⌈ω·d⌉`) but has not been written. Until it is, "`ω ≥ 2/ε` closes the constant
+question" is a **prose** claim of exactly the kind correction 5 was about — two true theorems
+that look like they fit. Do not repeat it as established until the elaborator has checked it.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Three declarations `#print axioms`-clean.

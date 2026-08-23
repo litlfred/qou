@@ -76,6 +76,79 @@ consecutive degrees drop by at least a factor `ω`. -/
 def RothGrowth {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) : Prop :=
   ∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → ω * (d (o.symm k) : ℚ) ≤ (d (o.symm j) : ℚ)
 
+/-! ### What the growth condition buys: the row cost
+
+`RothGrowth` is the one parameter condition the arc carries, and until now nothing used it.
+Here is what it is for.
+
+The induction step splits off the **last** variable in the ordering and its row cost is
+
+    t = (d_last + 1) / D₁,     D₁ a lower bound on the *other* variables' degrees.
+
+`RothGrowth` makes the degrees decrease along the ordering, so every earlier degree is at
+least `ω` times the last one, and `t ≤ 2/ω`.  Choosing `ω ≥ 2/ε` gives `t ≤ ε`.
+
+⚠ **This is the arc's own reconstruction.**  The source's parameter condition is property
+`Γ_m` (§11), which is in the illegible region and has not been read.  What is proved below is
+a fact about `RothGrowth` as this arc defines it; whether that is the source's condition is
+unchecked.  Say which when quoting it. -/
+
+/-- Under `RothGrowth` with `ω ≥ 1`, degrees are non-increasing along the ordering. -/
+theorem rothGrowth_antitone {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
+    (hω : 1 ≤ ω) (hg : RothGrowth o ω d) :
+    ∀ (n : ℕ) (j k : Fin m), (k : ℕ) = (j : ℕ) + n →
+      (d (o.symm k) : ℚ) ≤ (d (o.symm j) : ℚ) := by
+  intro n
+  induction n with
+  | zero =>
+      intro j k h
+      have hjk : j = k := Fin.ext (by omega)
+      rw [hjk]
+  | succ p ih =>
+      intro j k h
+      have hklt := k.isLt
+      have hlt : (j : ℕ) + 1 < m := by omega
+      have h1 : ω * (d (o.symm ⟨(j : ℕ) + 1, hlt⟩) : ℚ) ≤ (d (o.symm j) : ℚ) :=
+        hg j ⟨(j : ℕ) + 1, hlt⟩ rfl
+      have h2 : (d (o.symm k) : ℚ) ≤ (d (o.symm ⟨(j : ℕ) + 1, hlt⟩) : ℚ) :=
+        ih ⟨(j : ℕ) + 1, hlt⟩ k (by show (k : ℕ) = ((j : ℕ) + 1) + p; omega)
+      nlinarith [Nat.cast_nonneg (α := ℚ) (d (o.symm ⟨(j : ℕ) + 1, hlt⟩))]
+
+/-- **Every earlier degree is at least `ω` times any later one.**
+
+The single-step condition plus antitonicity; this is the form the row cost needs, because the
+degree floor `D₁` ranges over *all* the non-split variables, not just the adjacent one. -/
+theorem rothGrowth_mul_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
+    (hω : 1 ≤ ω) (hg : RothGrowth o ω d) {j k : Fin m} (hjk : (j : ℕ) + 1 ≤ (k : ℕ)) :
+    ω * (d (o.symm k) : ℚ) ≤ (d (o.symm j) : ℚ) := by
+  have hklt := k.isLt
+  have hlt : (j : ℕ) + 1 < m := by omega
+  have h1 : ω * (d (o.symm ⟨(j : ℕ) + 1, hlt⟩) : ℚ) ≤ (d (o.symm j) : ℚ) :=
+    hg j ⟨(j : ℕ) + 1, hlt⟩ rfl
+  have h2 : (d (o.symm k) : ℚ) ≤ (d (o.symm ⟨(j : ℕ) + 1, hlt⟩) : ℚ) :=
+    rothGrowth_antitone hω hg ((k : ℕ) - ((j : ℕ) + 1)) ⟨(j : ℕ) + 1, hlt⟩ k
+      (by show (k : ℕ) = ((j : ℕ) + 1) + ((k : ℕ) - ((j : ℕ) + 1)); omega)
+  nlinarith [le_trans zero_le_one hω]
+
+/-- **`t ≤ 2/ω`** — the row cost of the induction step, bounded by the growth constant alone.
+
+`(d_last + 1)/d_earlier ≤ 2/ω`: the `+1` costs a factor `2` because `d_last ≥ 1`, and `ω` comes
+straight from `rothGrowth_mul_le`.
+
+So `ω ≥ 2/ε` forces `t ≤ ε`.  This is the entry `RothLemmaUniform` leaves unconstrained — the
+statement quantifies over `ω` and nothing said what it had to be. -/
+theorem rothGrowth_row_cost_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
+    (hω : 1 ≤ ω) (hg : RothGrowth o ω d) {j k : Fin m} (hjk : (j : ℕ) + 1 ≤ (k : ℕ))
+    (hdk : d (o.symm k) ≠ 0) :
+    ((d (o.symm k) : ℚ) + 1) / (d (o.symm j) : ℚ) ≤ 2 / ω := by
+  have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
+  have hdk1 : (1 : ℚ) ≤ (d (o.symm k) : ℚ) := by
+    exact_mod_cast Nat.one_le_iff_ne_zero.mpr hdk
+  have hmul := rothGrowth_mul_le hω hg hjk
+  have hdj : (0 : ℚ) < (d (o.symm j) : ℚ) := by nlinarith
+  rw [div_le_div_iff₀ hdj hωpos]
+  nlinarith
+
 /-- **Roth's lemma, uniform-parameter form.**
 
 ⚠ A `def`, not a theorem: only `m = 1` is proved (`rothLemmaUniform_one`).  ⚠ False for small
