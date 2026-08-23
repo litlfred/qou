@@ -12705,9 +12705,9 @@ noncomputable def TOpen₂ (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
   AlgElement.ofTerms
     [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
         ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
-          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [])))), h),
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), h),
      ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
-        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord jm j₂ ++ []))), 1),
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
      ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
         ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
           ((⟨j₁⟩ : HeckeGen n) ::
@@ -12790,6 +12790,246 @@ theorem openingPhase₂ (hn : 0 < n) (hp : HeckeParams)
   simp only [List.cons_append, List.nil_append, List.append_nil,
     one_mul, neg_one_mul] at hU hV ⊢
   exact (hsetup.trans hU).trans hV
+
+/-- **The `a = 2` U lineage's closing run**: `fRun_gen` over an empty run, then
+`closingBs` unchanged — from `TOpen₂`'s `h`-weighted U word to `WStar`, the same
+word `a ≥ 3` lands on.
+
+`closingBs` transfers because its `hj₁ : j₁ ≤ i₂` holds with equality here. Its
+second `bsStep` is the step the engine reports as `Y`: at `j₁ = i₂` the
+Bokut–Shiao rule and Yang–Baxter share a leading word and differ by a sign, and
+the Lean takes the monic one for the reason §4al gives.
+
+The bystanders separate two ways, one fewer than at `a ≥ 3`: the two V words
+open `σᵢ₋₂` against the run's `σᵢ₋₁`, and the plain U word shares that head but
+is one letter shorter than every word the run touches. -/
+theorem closingU₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- the three descending runs, all three letters or fewer at `a = 2`
+  have hd1 : descWord i₁ j₁ = [(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega),
+      ← hj₁i₂, descWord_self]
+  have hii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd1j₂ : descWord i₁ j₂
+      = (⟨i₁⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega),
+      ← hj₁i₂, descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm (by omega)]
+  have hd2 : descWord i j₂
+      = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega), hd1j₂]
+    simp only [List.cons_append, List.nil_append]
+  exact
+    (fRun_gen (i := i) (j₁ := j₁) (jp := i₁) (jpp := i) hn hp (by omega) h₁
+      (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+      [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+       ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1)]
+      [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+      [] ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])) []
+      (by simp)
+      (by rw [hii₁]; simp)
+      (by
+        intro r hr
+        simp only [List.map_cons, List.map_nil, List.cons_append,
+          List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+        rcases hr with hr | hr | hr <;> subst hr
+        · intro hcon; exact hne21 (List.cons.inj hcon).1
+        · intro hcon; exact hne21 (List.cons.inj hcon).1
+        · intro hcon
+          have hlen := congrArg List.length hcon
+          simp only [List.length_append, List.length_cons,
+            List.length_nil] at hlen
+          omega)
+      (by intro u v huv hu; cases u with
+          | nil => exact absurd rfl hu
+          | cons a t => simp at huv)
+      (by intro u v huv hu; cases u with
+          | nil => exact absurd rfl hu
+          | cons a t => simp at huv)).trans
+    (by
+      have hB := closingBs (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+        hn hp h₁ h₂ hj₂ (by omega)
+        (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1)]
+        [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+        (by
+          intro r hr
+          simp only [List.map_cons, List.map_nil, List.cons_append,
+            List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with hr | hr | hr <;> subst hr <;> rw [hd1]
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon
+            have hlen := congrArg List.length hcon
+            simp only [bsWord₁, hd2, List.length_append, List.length_cons,
+              List.length_nil] at hlen
+            omega)
+        (by
+          intro r hr
+          simp only [List.map_cons, List.map_nil, List.cons_append,
+            List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with hr | hr | hr <;> subst hr <;> rw [bsWord₁, hd1]
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon
+            have hlen := congrArg List.length hcon
+            simp only [hd1j₂, List.length_append, List.length_cons,
+              List.length_nil] at hlen
+            omega)
+      -- the goal carries `descWord i i₁` (fRun_gen's target), `hB` carries
+      -- `descWord i₁ j₁ ++ bsWord₁ i j₂`; expand each on its own side
+      rw [WStar, hii₁]
+      rw [hd1, bsWord₁, hd2] at hB
+      simp only [List.cons_append, List.nil_append] at hB ⊢
+      exact hB)
+
+/-- The `a = 2` chain at its first cancellation: `WStar` twice, with `h` and
+`−h`, separated by the plain V word. -/
+noncomputable def TCancel₂ (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(WStar i i₁ i₂ j₁ j₂, h), ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+     (WStar i i₁ i₂ j₁ j₂, -h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+
+/-- **The `a = 2` V lineage's closing run**: one `fRun_gen`, again over an empty
+run, landing on the very word the U lineage just reached. No `closingBs` — the V
+lineage's two `bsStep`s were spent in its trio.
+
+`WStar` opens `σᵢ₋₂ σᵢ₋₁` exactly as this run's source does, so the bystander
+argument here is the **third** letter: the source's is `σᵢ`, `WStar`'s is
+`σ_j₁`, and `j₁ = i₂` is two below `i`. Length does not separate them — both are
+`|descWord jm j₂| + 6`. -/
+theorem closingV₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹), ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)])
+      (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hneij₁ : (⟨i⟩ : HeckeGen n) ≠ ⟨j₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd2j₁ : descWord i₂ j₁ = [(⟨j₁⟩ : HeckeGen n)] := by
+    rw [← hj₁i₂, descWord_self]
+  have hd1j₂ : descWord i₁ j₂
+      = (⟨i₁⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega),
+      ← hj₁i₂, descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm (by omega)]
+  have hF := fRun_gen (i := i) (j₁ := j₁) (jp := i₁) (jpp := i) hn hp
+    (by omega) h₁ (hp.q - hp.q⁻¹) hp.h_ne_zero
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ)), (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+    [(⟨i₂⟩ : HeckeGen n)] ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) []
+    (by simp)
+    (by rw [hii₁]; simp)
+    (by
+      intro r hr
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      rcases hr with hr | hr | hr <;> subst hr
+      -- the plain V word is one letter shorter
+      · intro hcon
+        have hlen := congrArg List.length hcon
+        simp only [List.length_append, List.length_cons,
+          List.length_nil] at hlen
+        omega
+      -- `WStar` shares `σᵢ₋₂ σᵢ₋₁`; it is the third letter that differs
+      · rw [WStar, bsWord₂, hd2j₁]
+        intro hcon
+        simp only [List.cons_append, List.nil_append] at hcon
+        have h3 := (List.cons.inj
+          (List.cons.inj (List.cons.inj hcon).2).2).1
+        exact hneij₁ h3.symm
+      · intro hcon; exact hne21 (List.cons.inj hcon).1.symm)
+    (by intro u v huv hu; cases u with
+        | nil => exact absurd rfl hu
+        | cons a t => simp at huv)
+    (by intro u v huv hu; cases u with
+        | nil => exact absurd rfl hu
+        | cons a t => simp at huv)
+  rw [TCancel₂, WStar, bsWord₂, hd2j₁, hd1j₂]
+  rw [hii₁] at hF
+  simp only [List.cons_append, List.nil_append,
+    WStar, bsWord₂, hd2j₁, hd1j₂] at hF ⊢
+  exact hF
+
+/-- **The `a = 2` closing phase, whole** — `4(a − 1) = 4` steps, `TOpen₂` to the
+cancellation. The same three calls as `a ≥ 3` (`fRun`, `closingBs`, `fRun`),
+with both F-runs one step because the run is empty. -/
+theorem closingPhase₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹))
+      (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) :=
+  (closingU₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂).trans
+    (closingV₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂)
+
+/-- **The whole `a = 2` prefix**, `a² + a + 5 = 11` steps — the same count
+formula as `a ≥ 3`, and the same `WStar` cancellation. -/
+theorem prefixChain₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) :=
+  (openingPhase₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂).trans
+    (closingPhase₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂)
+
+/-- **The `a = 2` cancellation.** Same shape as `TCancel_coeffEq`: the two
+`WStar` entries carry `h` and `−h` and are not adjacent, so this is
+`ofTerms_cancel_split`. -/
+theorem TCancel₂_coeffEq {n : ℕ} (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel₂ i i₁ i₂ j₁ j₂ jm h)
+      (AlgElement.ofTerms [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]) := by
+  have := ofTerms_cancel_split (WStar i i₁ i₂ j₁ j₂) h
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ))] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+  rw [TCancel₂]
+  simpa using this
 
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
