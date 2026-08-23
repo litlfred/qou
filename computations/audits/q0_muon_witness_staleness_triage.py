@@ -197,25 +197,50 @@ def main() -> int:
             print(f"[{i}/{len(runnable)}] {prod}  -- already measured, skipping",
                   flush=True)
             continue
-        before = {p: canon(p) for p in
-                  glob.glob("computations/**/*.witness.json", recursive=True)}
+        # Snapshot content AND mtime.  `produced` must mean "this run wrote
+        # something", which content alone cannot tell you: a producer that
+        # rewrites a byte-identical witness and one that dies before writing
+        # anything both leave the content unchanged.
+        def snap():
+            out = {}
+            for p in glob.glob("computations/**/*.witness.json", recursive=True):
+                try:
+                    out[p] = (canon(p), os.stat(p).st_mtime_ns)
+                except OSError:
+                    out[p] = (None, None)
+            return out
+        before = snap()
         el = time.time() - t0
         print(f"[{i}/{len(runnable)}] {prod}  (elapsed {el/60:.1f}m, "
               f"eta {(el/max(i-1,1))*(len(runnable)-i+1)/60:.0f}m)", flush=True)
+        err = ""
         try:
             r = subprocess.run([sys.executable, prod], cwd=ROOT,
                                capture_output=True, timeout=args.timeout)
             rc = r.returncode
+            # Keep the tail of stderr.  Without it a CRASH verdict says only
+            # THAT the producer died, and diagnosing why means re-running it by
+            # hand -- for a producer that may cost 420s.
+            err = (r.stderr or b"").decode("utf-8", "replace")[-800:]
         except subprocess.TimeoutExpired:
             rc = None
         if rc is None:
             verdict, sib = "TIMEOUT", []
         else:
-            after = {p: canon(p) for p in
-                     glob.glob("computations/**/*.witness.json", recursive=True)}
-            moved = [p for p in after if before.get(p) != after[p]]
+            after = snap()
+            moved = [p for p in after if before.get(p, (None, None))[0] != after[p][0]]
             sib = [p for p in moved if p != wp]
-            produced = bool(moved) or canon(wp) is not None
+            # A file this run actually touched, identical content or not.
+            touched = [p for p in after
+                       if before.get(p, (None, None))[1] != after[p][1]]
+            # This was `bool(moved) or canon(wp) is not None`, and `canon(wp)`
+            # reads the COMMITTED file, which is on disk whether or not the run
+            # wrote anything -- so `produced` was unconditionally True, CRASH
+            # was unreachable, and a producer that died at import was reported
+            # `UNCHANGED/ASSERT-FAIL`: "reproduces its artifact".  Measured: with
+            # mpmath absent, 23 of 23 producers died on the import line and all
+            # 23 came back UNCHANGED.  A crash must never read as agreement.
+            produced = bool(touched)
             if rc != 0 and not produced:
                 verdict = "CRASH"          # genuinely emitted nothing
             else:
@@ -228,8 +253,11 @@ def main() -> int:
                 verdict = "SUBSTANTIVE" if wp in moved else "UNCHANGED"
                 if rc != 0:
                     verdict += "/ASSERT-FAIL"
-        results.append({"producer": prod, "witness": wp, "verdict": verdict,
-                        "siblings_moved": sib})
+        rec = {"producer": prod, "witness": wp, "verdict": verdict,
+               "siblings_moved": sib}
+        if verdict.startswith("CRASH") or "ASSERT-FAIL" in verdict:
+            rec["stderr_tail"] = err
+        results.append(rec)
         extra = f"  (+{len(sib)} sibling(s) moved)" if sib else ""
         print(f"      -> {verdict}{extra}", flush=True)
         dump(results, partial=True)
