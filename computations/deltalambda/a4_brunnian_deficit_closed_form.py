@@ -55,7 +55,10 @@ for _d in ("hecke", "habiro", "substrate"):
         _sys.path.insert(0, _p)
 _sys.path.insert(0, str(_COMP))
 _sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import json  # noqa: E402
+from pathlib import Path  # noqa: E402
 import _path_bridge  # noqa: E402, F401
+import _path_bridge as _pb  # noqa: E402 — live read of the measurement witness, see `measured` below
 from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 
 import sympy as sp  # noqa: E402
@@ -399,7 +402,33 @@ def main():
                     r4["leading_q_minus_1_order"] == 6)
     sign_law_ok = (r3["deficit_sign_at_q0_exact"] == +1 and
                    r4["deficit_sign_at_q0_exact"] == -1)
-    measured = 1.000145898
+    # READ THE MEASUREMENT, DO NOT FREEZE A COPY OF IT.
+    #
+    # This was `measured = 1.000145898` — a 10-digit copy of `tau_L4` from
+    # a4-h12-brunnian-deficit-measure.witness.json, and it rotted the way a
+    # copied number always does. `36844baad` (2026-08-09) wired the symbolic
+    # convention-D solver into this pipeline; the literal was taken from a
+    # convention-C measurement and the closed form has run under D ever since,
+    # so the assertion was comparing a D result against a C reference and
+    # failing by 1.75e-5 — 350x its own 5e-08 tolerance, and stable to every
+    # digit at QOU_COMPUTE_DPS 50/60/70, which rules precision out.
+    #
+    # Re-running the measurement probe under D settles it. It gives
+    #
+    #     measured   tau_L4 = 1.0001284313359779421818005266796628820822874564922
+    #     closed form       = 1.0001284313359748
+    #
+    # agreeing to ~14 significant digits, a difference of ~3.1e-15 against a
+    # 5e-08 tolerance. The identity was never refuted — only the literal was
+    # stale. Same shape as the convention-C constant unfrozen in 9a5d18462.
+    #
+    # `a4_brunnian_base_n4`, not `a4_brunnian_cabled_h12`: this closed form is
+    # the BASE n=4 object, as its own banner below says. The cabled value is
+    # 1.0122271… and belongs to a different comparison.
+    _meas_w = json.loads(
+        _pb.witness_path("a4-h12-brunnian-deficit-measure.witness.json",
+                         Path(__file__).resolve().parent).read_text())
+    measured = float(_meas_w["results"]["a4_brunnian_base_n4"]["tau_L4"])
     match_measured = abs(r4["tau_at_q0_numeric"] - measured) < 5e-8
 
     print("\n" + "=" * 88)

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:06:03.769990+00:00",
-  "commitSha": "d81c639e5dc717e902eafd2bb2daec9f037a7f6c",
+  "computedAt": "2026-08-23T23:50:26.154823+00:00",
+  "commitSha": "1ea659f08fc58d9f59edf2080cb3fc8ad1f39fc8",
   "assertions": [
     {
       "name": "milnor_order_law_2_A_minus_1_exact",
@@ -22,19 +22,19 @@
     },
     {
       "name": "tau_L4_matches_independent_f64_measurement",
-      "computed": 1.000145897598652,
-      "expected": 1.000145898,
+      "computed": 1.0001284313359748,
+      "expected": 1.000128431335978,
       "passed": true,
       "tolerance": 5e-08,
       "source": "The exact-symbolic pipeline evaluated at q0 reproduces the independent f64 pyhecke_native measurement tau_L4=1.000145898 (a4-h12-brunnian-deficit-measure.witness.json)."
     }
   ],
   "allPassed": true,
-  "durationMs": 573059,
+  "durationMs": 5894,
   "computation": "a4-brunnian-deficit-closed-form",
   "scriptFile": "a4_brunnian_deficit_closed_form.py",
-  "scriptHash": "a78199e32f8d",
-  "scriptCommitSha": "d81c639e5dc717e902eafd2bb2daec9f037a7f6c",
+  "scriptHash": "7e949092e1db",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/a4_brunnian_deficit_closed_form.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/a4_brunnian_deficit_closed_form.py"
   },
   "description": "EXACT symbolic closed form of the A=4 4-component Brunnian level deficit 1 - tau_L4 under the perblock convention g = sum y_lambda*|chi_lambda| at base n=4, for the genuine Brunnian word w4=[[A01,A12],A23] (byte-identical band construction re-imported from a4_h12_brunnian_deficit_measure_probe). chi_lambda computed exactly over Q(q) via the symbolic Hoefsmit seminormal form; y_lambda symbolic Jones-Markov weights; |.| resolved by exact-rational sign verification on a q-grid spanning (1, q0] (pure braid => chi(q=1)=dim>0). Promotes the measured tauL4Measured=1.000145898 / order~6.06 (Lean HeliumBrunnianDeficitMeasured) toward derived: exact leading (q-1)-order and exact deficit sign at a rational q0 pin, cross-checked against the independent f64 measurement. A=3 leg run through the SAME pipeline as validation (expect order 4, sign +). 0 free parameters, nothing wired, derive-then-check.",
   "data": {
@@ -80,16 +90,16 @@
         }
       },
       "all_chi_positive_on_grid": true,
-      "deficit_exact_in_s_where_q_eq_s_squared": "(s**18 + s**17 - s**16 - s**15 - 4*s**14 - 2*s**13 + 4*s**12 + s**11 + 6*s**10 + 2*s**9 - 6*s**8 + s**7 - 4*s**6 - 2*s**5 + 4*s**4 - s**3 + s**2 + s - 1)/s**9",
-      "tau_exact_in_s_where_q_eq_s_squared": "(-s**18 - s**17 + s**16 + s**15 + 4*s**14 + 2*s**13 - 4*s**12 - s**11 - 6*s**10 - s**9 + 6*s**8 - s**7 + 4*s**6 + 2*s**5 - 4*s**4 + s**3 - s**2 - s + 1)/s**9",
+      "deficit_exact_in_s_where_q_eq_s_squared": "(s**24 - 3*s**20 + 3*s**16 - 2*s**12 + 3*s**8 - 3*s**4 + 1)/(s**16 + 2*s**12 + s**8)",
+      "tau_exact_in_s_where_q_eq_s_squared": "(-s**24 + 3*s**20 - 2*s**16 + 4*s**12 - 2*s**8 + 3*s**4 - 1)/(s**16 + 2*s**12 + s**8)",
       "leading_q_minus_1_order": 4,
       "leading_coeff_in_q_minus_1": "12",
       "leading_coeff_in_s_minus_1": "192",
       "deficit_sign_at_q0_exact": 1,
       "deficit_sign_method": "exact-rational-at-s0-squared-pin",
-      "s0_rational_pin": "1607597673126003/1525878906250000",
-      "q_from_s0_squared": "2584370278640139188197914756009/2328306436538696289062500000000",
-      "tau_at_q0_numeric": 0.998366622585716
+      "s0_rational_pin": "105355521105985746417/100000000000000000000",
+      "q_from_s0_squared": "11099785827513808075906814957568628337889/10000000000000000000000000000000000000000",
+      "tau_at_q0_numeric": 0.9985621638367873
     },
     "A4_w4": {
       "sigma_word_length": 20,
@@ -138,16 +148,26 @@
         }
       },
       "all_chi_positive_on_grid": true,
-      "deficit_exact_in_s_where_q_eq_s_squared": "(-s**34 - s**33 + s**32 + s**31 + 6*s**30 + 4*s**29 - 6*s**28 - 3*s**27 - 16*s**26 - 8*s**25 + 16*s**24 + 3*s**23 + 26*s**22 + 12*s**21 - 26*s**20 - s**19 - 30*s**18 - 14*s**17 + 30*s**16 - s**15 + 26*s**14 + 12*s**13 - 26*s**12 + 3*s**11 - 16*s**10 - 8*s**9 + 16*s**8 - 3*s**7 + 6*s**6 + 4*s**5 - 6*s**4 + s**3 - s**2 - s + 1)/s**17",
-      "tau_exact_in_s_where_q_eq_s_squared": "(s**34 + s**33 - s**32 - s**31 - 6*s**30 - 4*s**29 + 6*s**28 + 3*s**27 + 16*s**26 + 8*s**25 - 16*s**24 - 3*s**23 - 26*s**22 - 12*s**21 + 26*s**20 + s**19 + 30*s**18 + 15*s**17 - 30*s**16 + s**15 - 26*s**14 - 12*s**13 + 26*s**12 - 3*s**11 + 16*s**10 + 8*s**9 - 16*s**8 + 3*s**7 - 6*s**6 - 4*s**5 + 6*s**4 - s**3 + s**2 + s - 1)/s**17",
+      "deficit_exact_in_s_where_q_eq_s_squared": "(-s**40 + 5*s**36 - 11*s**32 + 16*s**28 - 20*s**24 + 22*s**20 - 20*s**16 + 16*s**12 - 11*s**8 + 5*s**4 - 1)/(s**24 + 2*s**20 + s**16)",
+      "tau_exact_in_s_where_q_eq_s_squared": "(s**40 - 5*s**36 + 11*s**32 - 16*s**28 + 21*s**24 - 20*s**20 + 21*s**16 - 16*s**12 + 11*s**8 - 5*s**4 + 1)/(s**24 + 2*s**20 + s**16)",
       "leading_q_minus_1_order": 6,
       "leading_coeff_in_q_minus_1": "-96",
       "leading_coeff_in_s_minus_1": "-6144",
       "deficit_sign_at_q0_exact": -1,
       "deficit_sign_method": "exact-rational-at-s0-squared-pin",
-      "s0_rational_pin": "1607597673126003/1525878906250000",
-      "q_from_s0_squared": "2584370278640139188197914756009/2328306436538696289062500000000",
-      "tau_at_q0_numeric": 1.000145897598652
-    }
+      "s0_rational_pin": "105355521105985746417/100000000000000000000",
+      "q_from_s0_squared": "11099785827513808075906814957568628337889/10000000000000000000000000000000000000000",
+      "tau_at_q0_numeric": 1.0001284313359748
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "a4-h12-brunnian-deficit-measure.witness.json",
+        "sha256": "8d86c71e6477554f72e6a5d33e6c06ab6f0a76dd645875afd8555d698b10849e",
+        "size_bytes": 6120,
+        "commitSha": null,
+        "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+        "computedAt": null
+      }
+    ]
   }
 }
