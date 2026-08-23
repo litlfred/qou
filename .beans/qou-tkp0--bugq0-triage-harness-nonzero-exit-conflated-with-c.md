@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T08:33:36Z
-updated_at: 2026-08-23T08:37:21Z
+updated_at: 2026-08-23T08:52:37Z
 ---
 
 RESOLVED. Two fixes to computations/audits/q0_muon_witness_staleness_triage.py.
@@ -26,3 +26,16 @@ RESOLVED. Two fixes to computations/audits/q0_muon_witness_staleness_triage.py.
    `python3 <script>` differs from this harness's run on argv ALONE, so without
    the mask such producers read SUBSTANTIVE for a non-staleness reason.
    Deliberately NOT masked: scriptHash and engineVersion — real signal.
+
+
+VALIDATION with a concrete case, from the corrected sweep:
+computations/audits/muon_pin_three_values_probe.py was SUBSTANTIVE in the
+pre-fix sweep and is UNCHANGED in the corrected one. Nothing about the producer
+changed — it was reading as pre-existing staleness on ARGV ALONE, because its
+committed witness was written from a bare `python3 <script>` and the harness runs
+it the same way but the `invocation` field still differed. Without the mask, that
+one would have been added to the drain queue and "fixed" by regenerating a
+witness that was never stale.
+
+So the invocation mask is not cosmetic: it is the difference between a real drain
+list and one padded with false positives.
