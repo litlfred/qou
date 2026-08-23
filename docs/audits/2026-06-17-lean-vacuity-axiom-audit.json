@@ -1,16 +1,16 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T16:37:23.605Z",
+  "generated": "2026-08-23T17:08:25.703Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3063,
-  "files_flagged": 130,
-  "total_defects": 109,
+  "scanned_files": 3062,
+  "files_flagged": 128,
+  "total_defects": 106,
   "total_exempt": 47,
-  "total_promoted_from_exempt": 63,
+  "total_promoted_from_exempt": 59,
   "categories": {
-    "proof-no-self-assuming-projection": 102,
+    "proof-no-self-assuming-projection": 98,
     "proof-docstring-sorry-mismatch": 1,
-    "proof-claims-unencoded": 5,
+    "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
@@ -1326,19 +1326,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean": [
-      {
-        "line": 81,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem NonSelfIntersection.exclusionRadius_eq",
-        "decl": "NonSelfIntersection.exclusionRadius_eq",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `nsi.exclusionRadius_def` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
     "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean": [
       {
         "line": 98,
@@ -1353,18 +1340,7 @@
     ],
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean": [
       {
-        "line": 106,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem core_levi_form",
-        "decl": "core_levi_form",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `ctx.cond_def` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      },
-      {
-        "line": 164,
+        "line": 201,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem core_levi_cond_aspect_bound [ctx : CoreLeviContext] :",
@@ -1375,7 +1351,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 172,
+        "line": 218,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem core_levi_cond_bound",
@@ -2630,18 +2606,16 @@
     ],
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean": [
       {
-        "line": 145,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]",
-        "decl": "categorical_irreducible",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `h.subsingleton` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
+        "line": 123,
+        "category": "proof-claims-unencoded",
+        "pattern": "docstring-claims-gap",
+        "snippet": "class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]",
+        "decl": "HasCategoricalIrreducibility",
+        "severity": "major",
+        "detail": "doc enumerates 2 properties (trace-freeness, non-degeneracy); only 1 encoded as Prop field(s)"
       },
       {
-        "line": 248,
+        "line": 300,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem categorical_dq_squared_nonvanishing {C : Type u}",
@@ -2652,7 +2626,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 276,
+        "line": 328,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem kernelIncl_exact {C : Type u}",
@@ -2663,7 +2637,7 @@
         "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 296,
+        "line": 348,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem categorical_jet_prolongation {C : Type u}",
@@ -2795,19 +2769,6 @@
         "severity": "critical",
         "exempt": false,
         "detail": "the projected field `ctx.reduction_holds_proof` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
-        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/descended-level-zero.lean": [
-      {
-        "line": 20,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "exact-field-projection",
-        "snippet": "theorem descended_level_zero {R : Type u} [Zero R]",
-        "decl": "descended_level_zero",
-        "severity": "critical",
-        "exempt": false,
-        "detail": "the projected field `ctx.desc_contrib_zero` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
