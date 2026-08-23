@@ -131,3 +131,40 @@ mismatch (over-count, mixed `_deprecated`/`AUDIT_SUFFIXES` into a count labelled
 with the audit's population) and a 12-digit muon prefix (under-count — the
 corpus has two muon values agreeing to 11 digits; recoverable muon read 93 when
 it is 179). Final: 326 recoverable / 40 `comparison` / 1558 open, of 1924.
+
+## 2026-08-23 (evening) — swarm complete: 887/889, and each fix is quantified
+
+| method | proposes independent | false | rate |
+|---|---|---|---|
+| A import-cone as first reported | 720 | 285 | **39.6 %** |
+| B + proton-literal + artifact-resolution | 588 | 159 | 27.0 % |
+| C + witness-read data-flow detector | 495 | **82** | **16.6 %** |
+
+Ground truth 460 independent / 420 dependent / 7 undetermined. **71 % of the
+false `independent` calls removed.** The 37 % I extrapolated from 443 held
+(true 39.6 %) — but it could have been wrong, and finishing was the only way
+to know. **The 722 is retired; do not quote it.**
+
+Three defects fixed, all measured:
+1. `classify()` had **no proton branch** — 137 producers carry a live proton
+   literal, 53 read as `none` ("purely symbolic"). Route d: 136 → 41.
+2. `MUON_ARTIFACTS` **asserted a pin that changed underneath it** —
+   `y-lambda-at-q0` went proton in the convention-D cascade; 57 producers name
+   it, 37 verdicts change, incl. `wedderburn_jones_markov` itself. Mirror of
+   (1) and worse: asserts a wrong pin rather than missing one.
+3. New **data-flow detector** for the filesystem route: 542 direct + 239 via an
+   imported module. Route b: 97 → 26.
+
+Plus `Q0_AMBIGUOUS_NO_REASON` (17 of 18 lack a reason; the 1 that has one is
+mislabelled by it) and the straddle split (53 → 29 protected + 24 actionable).
+
+**The recurring lesson, four times over:** every headline number in this arc was
+an artifact first — 400 (`witness.py` stamps the field), 195 (`_precision.py`
+docstring), 1117 (`q_parameter` IS the accessor), 53 (deliberate comparisons).
+A shared module's q₀ knowledge is infrastructure for its importers, not
+evidence about them. And the fix for one artifact CAUSED the route-b blind spot:
+discounting string constants as prose also discounted a filename.
+
+**Open:** 82 known-false in C (d=41, b=26, f=9); the 326 transcribable
+witnesses (mutation, needs sign-off); the AGENTS.md `y_lambda_at` "muon-built
+cache" description vs the proton file on disk.
