@@ -66,11 +66,20 @@ def main() -> int:
     ta_i, _, _, _ = tr_m_atom_zn(1, 1, q=qi)
     # REFRESHED 2026-08-19 (bean `qou-r9dv`). Was `0.0077684`; the value is
     # -0.0014808531711619370338. SINGLE-METHOD, and flagged as such: unlike the
-    # q0 assertion above (three independent methods), nothing corroborates this
-    # one. The obvious arbiter, canonical_tr_m_via_branching, CANNOT serve --
-    # it is BAR-INVARIANT, returning identical values at q and 1/q, so it
-    # differs from the transfer by 387x here while agreeing at q0 (bean
-    # `qou-8chw`).
+    # q0 assertion above, nothing corroborates this one. The obvious arbiter,
+    # canonical_tr_m_via_branching, CANNOT serve -- its A^lambda interface
+    # operator is a JSON file loaded verbatim from disk and FROZEN at the q it
+    # was generated at, so for q != q0 it returns a hybrid (frozen operator at
+    # q0, weights and blocks at q). At 1/q0 it gives +0.0332 against the
+    # transfer's -0.00148 -- it does not even agree in sign.
+    #
+    # CORRECTED 2026-08-23: an earlier version of this comment said the
+    # combiner is BAR-INVARIANT. It was, when measured, and it is not now --
+    # main's qou-zck8 ported the extract off float64 and regenerated it, which
+    # also moved the combiner's q0 value ONTO the transfer value. So the q0
+    # assertion above now has a FOURTH agreeing method, and this one still has
+    # one. Retraction and the surviving defect:
+    # computations/branching_q_threading_probe.py (bean `qou-8chw`).
     #
     # What does support the transfer at the bar image, short of a second
     # implementation: the word demonstrably re-lifts (12 of the deuteron's 23
