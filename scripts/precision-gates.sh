@@ -272,6 +272,40 @@ GATES=(
   # --strict exits 0 and the self-test is 27/27. UNCONFIRMED (31) is not a
   # failure class: it means the audit cannot statically prove the write, which
   # is the honest verdict for a non-Python producer or a dynamic output path.
+  #
+  # SECOND DIMENSION, 2026-08-23 — provenance LOSS, and it closes a hole in the
+  # gate above rather than adding an unrelated check.
+  #
+  # Everything above asks "does the named producer actually write this?", which
+  # only has meaning for a witness that NAMES one. A witness with no
+  # `scriptFile` at all is not a failure here — it is not a ROW here. It leaves
+  # the denominator silently, so a regeneration that strips provenance makes
+  # this gate GREENER. Measured while fixing three such witnesses: the claim
+  # count went 2426 -> 2428 as provenance was RESTORED, with no red in either
+  # direction.
+  #
+  # That is not hypothetical. 29 raw-JSON producers write their witness with a
+  # bare json.dump and stamp no envelope, so re-running one REMOVES
+  # `scriptHash` rather than refreshing it; the witness drops out of the
+  # self-staleness audit and reads as "not stale" forever, and the staleness
+  # count falls because the denominator shrank. A false drain. One sweep
+  # measured 35 genuine drains against 4 false.
+  #
+  # Two numbers, and deliberately only one of them gates:
+  #   REPORTED   259 live witnesses carry neither scriptFile nor scriptHash;
+  #              397 carry no scriptHash and are outside the self-staleness
+  #              audit entirely, so every drain figure is computed over the
+  #              rest. A standing backlog — gating on it would be red on
+  #              arrival, which this file's own preamble says gets skipped.
+  #   BLOCKING   a witness that HAD scriptFile or scriptHash at HEAD and lacks
+  #              it now. Nothing legitimately drops its own provenance, so
+  #              there is no judgement call and no tolerance to tune. Green on
+  #              arrival, which is what earns the flag.
+  #
+  # Verified to FIRE, not merely to pass: run against the working tree that
+  # contained the four real cases, it named all four
+  # (chi-deuteron-h6-at-q0-50dps, chi-helium-3-h9, chi-tritium-h9,
+  # nucleus-real-sdp-he3) and exited 1.
   "witness scriptFile provenance|computations/witness_provenance_audit.py|--strict|yes|yes"
   "no-free-parameter cert|computations/no_free_parameter_certificate.py|--strict|yes|no"
 )

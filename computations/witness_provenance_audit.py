@@ -483,6 +483,90 @@ CASES = [
 ]
 
 
+def _git(*args) -> str | None:
+    """`git` output, or None if the command fails. Same shape as the one in
+    `witness_shape_guard.py`, which does the identical HEAD comparison."""
+    import subprocess
+    try:
+        out = subprocess.run(["git", *args], cwd=ROOT,
+                             capture_output=True, text=True, timeout=60)
+    except Exception:
+        return None
+    return out.stdout if out.returncode == 0 else None
+
+
+def provenance_loss() -> tuple[list[dict], int, int, int]:
+    """Which witnesses have LOST provenance relative to HEAD, and how many lack
+    it outright.
+
+    Everything above asks "does the named producer actually write this?", which
+    only has meaning for a witness that NAMES one. That is the hole: a witness
+    with no `scriptFile` at all is not a failure here, it is not a row here. It
+    silently leaves the denominator.
+
+    That matters because it is not a static property — a regeneration can strip
+    it. 29 raw-JSON producers write their witness with a bare `json.dump` and
+    never stamp an envelope, so re-running one REMOVES `scriptHash` instead of
+    refreshing it. The witness then drops out of the self-staleness audit and
+    reads as "not stale" forever, and the staleness count goes DOWN because the
+    witness left the audit rather than because it got fresh. A false drain.
+    Measured over one sweep: 35 genuine drains, 4 false, 555 still stale.
+
+    Two numbers, and only one of them can be blocking:
+
+    ABSOLUTE, reported.  259 live witnesses carry neither `scriptFile` nor
+      `scriptHash`, and 397 carry no `scriptHash`. Those 397 are outside the
+      self-staleness audit entirely — any drain figure is computed over the
+      rest. This is a standing backlog, so gating on it would be red on
+      arrival, and `precision-gates.sh` is explicit that a gate red on arrival
+      gets skipped.
+
+    REGRESSION, blocking.  A witness that HAD `scriptFile` or `scriptHash` at
+      HEAD and lacks it now. This is never intended: nothing legitimately drops
+      its own provenance, so there is no judgement call and no tolerance to
+      tune. Green on arrival, which is what earns it the blocking flag.
+    """
+    losses: list[dict] = []
+    changed = (_git("diff", "--name-only", "HEAD", "--", "*.witness.json") or "").split()
+    for rel in changed:
+        head_raw = _git("show", f"HEAD:{rel}")
+        if head_raw is None:
+            continue                      # new file: nothing to lose
+        cur = ROOT / rel
+        if not cur.exists():
+            continue                      # deletion is a different audit
+        try:
+            head = json.loads(head_raw)
+            now = json.loads(cur.read_text())
+        except Exception:
+            continue                      # unreadable is the shape guard's beat
+        if not isinstance(head, dict) or not isinstance(now, dict):
+            continue
+        lost = [k for k in ("scriptFile", "scriptHash")
+                if head.get(k) and not now.get(k)]
+        if lost:
+            losses.append({"witness": rel, "lost": lost})
+
+    absent_file = absent_hash = absent_both = 0
+    # `HERE`, not `ROOT`: the absolute counts are over the live computations
+    # corpus, so they are comparable to the staleness figures. ROOT is the repo
+    # root and would sweep in the generated qou-mass mirror and the docs tree.
+    for w in HERE.rglob("*.witness.json"):
+        if "_deprecated" in w.parts:
+            continue
+        try:
+            d = json.loads(w.read_text())
+        except Exception:
+            continue
+        if not isinstance(d, dict):
+            continue
+        sf, sh = d.get("scriptFile"), d.get("scriptHash")
+        absent_file += not sf
+        absent_hash += not sh
+        absent_both += not sf and not sh
+    return losses, absent_file, absent_hash, absent_both
+
+
 def self_test() -> int:
     fails = 0
     for label, src, wf, want in CASES:
@@ -522,7 +606,27 @@ def main() -> int:
     if bad:
         print(f"\n{bad} witness(es) name a script that provably cannot produce them.")
         print("Re-running those regenerates nothing; run_pipeline still treats them as current.")
-    return 1 if (a.strict and bad) else 0
+
+    losses, absent_file, absent_hash, absent_both = provenance_loss()
+    print("\nprovenance coverage (live computations corpus)")
+    print(f"  no scriptFile            {absent_file}")
+    print(f"  no scriptHash            {absent_hash}   "
+          f"<- outside the self-staleness audit entirely")
+    print(f"  neither (unresolvable)   {absent_both}")
+    if losses:
+        print(f"\n  ✗ {len(losses)} witness(es) LOST provenance vs HEAD:")
+        for r in losses:
+            print(f"      {r['witness']}  lost {', '.join(r['lost'])}")
+        print()
+        print("    A regeneration stripped fields the staleness audit keys on.")
+        print("    The witness has left the audit, not been drained by it — the")
+        print("    count goes down because the denominator shrank. Fix at the")
+        print("    producer: WitnessBuilder, or stamp_staleness_metadata for a")
+        print("    raw-JSON writer whose on-disk shape must not change.")
+    else:
+        print("\n  ✓ no witness lost scriptFile or scriptHash vs HEAD")
+
+    return 1 if (a.strict and (bad or losses)) else 0
 
 
 if __name__ == "__main__":
