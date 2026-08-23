@@ -14,8 +14,9 @@ The corpus computes `Σ_{c ∈ λ} c(c)²` twice, over different indices and by 
 
 **`contentSqSum_ofRowLens`** identifies them. Nothing in the corpus did, which is what kept
 `identityB_general` (Identity (ii) for general `n`, stated with `contentSqSum`) from reaching
-`PlancherelSnData` (whose field is stated with `sumSqContents`, and whose instances therefore stop
-at `n = 12`).
+`PlancherelSnData` (whose field is stated with `sumSqContents`, and whose instances therefore
+stopped at `n = 12`).  `PlancherelSnDataGeneral` is the consumer: with this lemma the datum is
+built at every `n`, and Identity I comes off that cap.
 
 The proof is the weighted analogue of `QOU.Mathlib.card_cells_ofRowLens`: the cells are the disjoint
 union of the rows (`cells_biUnion`, `rows_pairwiseDisjoint`) and a row is a singleton times a range
