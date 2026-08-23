@@ -274,3 +274,55 @@ hand-typed source constants. The witness layer carries it at 212 stale-only, 24
 both-values, and now 22 mislabelled-as-proton — and the last group will be
 *hardest to fix after* the sweep, because once a witness is relabelled there is
 nothing left to tell which muon value it came from.
+
+### ANSWERED 2026-08-23 — the mislabelled witnesses are STALE ARTEFACTS, not live producer bugs
+
+The open question on the 22 (20 currently detectable) was whether their producers
+*still* emit a muon value into a `proton`-named field. **They do not.** Checked
+all 20 named producers — every witness carries a `scriptFile`, so none had to be
+guessed:
+
+| how the producer obtains its proton pin | count |
+|---|---|
+| runtime call / import (`q_at()`, `mpf(str(q_at()))`, `Q_50_DIGIT_STR`, `Q_MP`) | **20** |
+| hardcoded muon literal assigned to a proton variable | **0** |
+
+The five that my first pass could not classify resolve the same way on reading —
+e.g. `qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py:102` and
+`qbeta_c6_c10_crossanchor_falsification.py:153` are both `q_p = mpf(str(q_at()))`.
+
+**Consequence for this bean: these need regeneration, not source repair.** Every
+one of them was computed while `q_at()` still returned the muon-anchored value,
+and every one would now emit the proton pin unchanged. That is a materially
+cheaper item than it looked, and it removes them from the "needs a producer fix"
+column entirely.
+
+### But the PROSE did not self-correct, and one file now contradicts itself
+
+`computations/h4_form_AB_cross_anchor_stability.py` is the clearest case. Its code
+is correct — `:98` is `q_proton = q_at(DPS)`, resolved at runtime — and its
+docstring at `:17` says `q_proton = 1.10997858275…`, also correct. But the ANCHOR
+NOTE at the top of the same file (`:1-5`, dated 2026-06-22) says:
+
+> `q0 = 1.10997858275…` occurrences below are the **RETIRED** pre-2026-05-28
+> proton anchor … The **CURRENT canonical proton q0 is `q_at()` ≈
+> 1.1099785955573347…**
+
+That calls the **muon** value the current canonical proton pin, and declares the
+actual canonical value retired — **twelve lines above a docstring that says the
+opposite**. It was true when written (`q_at()` did return that value in June) and
+the 2026-08-15 ruling reversed it.
+
+This is the same shape as `atomic_tr_m_helium4_canonical.py` in `qou-cds4` and as
+`q0_consistency_audit.py` in `qou-ivhc`: **code that resolves a value at runtime
+is self-correcting; the prose describing it is not.** Three instances now, in
+three different files, all from the same ruling.
+
+The practical hazard is specific: a reader who trusts the ANCHOR NOTE over the
+code will "fix" the correct value to the stale one. That is the mechanism by
+which a self-correcting producer acquires a real bug.
+
+**Not edited here** — `h4_form_AB_cross_anchor_stability.py`'s header ends
+*"This probe is preserved as-is by design"*, so rewriting its banner is a call for
+whoever owns that preservation, not a hygiene edit. Recorded with the line numbers
+so it is actionable.
