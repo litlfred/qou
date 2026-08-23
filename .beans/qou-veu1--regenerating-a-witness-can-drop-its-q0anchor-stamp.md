@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T17:38:35Z
+updated_at: 2026-08-23T20:17:17Z
 ---
 
 ## The measurement
@@ -202,3 +202,45 @@ while this sweep was measuring it.
   scale — the audit goes green and the corpus is *less* checkable than before.
 - The 4 above are already in that state and need the stamp restored, not merely
   re-pinned.
+
+## A FOURTH mechanism — and the one no audit can see
+
+Found by re-running `parabolic_cylinder_channel_mixing_probe` for `qou-n7ue`.
+Its regenerated witness moved `constants.q_0` from the muon value to the
+proton value (`ppb_vs_canonical` `-1.79e-08` → `-11.537117889980326`), while
+its top-level stamp still reads `q0Anchor: muon`.
+
+The chain:
+
+1. The probe **copies** `constants.q_0` verbatim out of its input witness,
+   `binding-bar-even-odd-probe.witness.json`.
+2. `main` re-pinned **that input** to proton.
+3. The probe is classified **`ideal_muon`** in `q0_anchor_manifest.json`, so
+   `q_parameter` stamps its witness `muon`.
+
+Result: **stamped muon, computed at proton.** The q-deformed column is
+`gamma_q_gt1(x, q0)` evaluated on the copied proton constant, so this is the
+arithmetic, not a label.
+
+**Why this is worse than the drop this bean already tracks.** The anchor-stamp
+drop at least removes the witness from the audited set, where a shrinking
+denominator is visible to anyone who looks. This one leaves a *fully
+consistent-looking* muon witness: `q0Anchor: muon`, `q0Value: <muon>`, both
+present, both agreeing. `q0_anchor_consistency_audit` checks the stamp against
+itself and reports `Q0_OK`. Nothing in the pipeline compares the stamp against
+the constants the producer actually consumed.
+
+So the four mechanisms by which the muon-anchored population moves under
+regeneration are now:
+
+| # | mechanism | visible to the audit? |
+|---|---|---|
+| 1 | deliberate re-pin to proton (`qou-1c4y`) | yes — reclassified |
+| 2 | anchor-stamp **dropped** entirely | yes — becomes `Q0_ANCHOR_MISSING` |
+| 3 | producer moved on main, verdict stale | yes — via drift measurement |
+| 4 | **upstream input re-pinned, consumer keeps its muon stamp** | **NO** |
+
+Not fixed here — the fix is either to reclassify the consumer or to stop
+copying a constant the producer does not own, and that is a scoping call. But
+it sharpens the #5500 recommendation: an audit that reads `Q0_OK` does not
+establish that a witness was computed at the anchor it claims.
