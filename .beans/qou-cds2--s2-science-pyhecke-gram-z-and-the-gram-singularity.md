@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T08:57:15Z
+updated_at: 2026-08-23T16:50:19Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -479,3 +479,40 @@ does not repeat this.
    hid the site from the convention gate**. That fix took actionable C sites
    **1 -> 31** corpus-wide, which also re-sizes the C-excision tranche
    (`qou-cdx1`).
+
+
+## Currency correction, 2026-08-23: finding 1 ("gram.py is internally
+## CONVENTION-SPLIT") is CLOSED — measured, not assumed
+
+That finding is from the PR #5241 survey (2026-08-16) and is recorded above as
+live. It is not, and an agent reading this bean will chase a fixed defect (I
+did). Measured on `main` today at the proton pin:
+
+    float64 z            0.6126880371464652
+    z_mp(50)             |z_mp - z_D|/z_D = 1.29679e-17
+                         |z_mp - z_C|/z_C = 0.227044        -> convention D
+    gram_matrix_mp(50)   worst relative entry difference vs float64 G
+                         = 1.90062e-16                      -> the SAME form
+
+`z_mp` was migrated on 2026-08-16 under this very bean, and its docstring
+records the fix and the reason (the C justification "in lockstep with the
+module's float64 z" outlived the 2026-08-15 move of that z to D). So the
+50-dps and float64 paths now build the same object; nothing reading
+`gram_matrix_mp` is reading a different form from `G`.
+
+**The singularity is untouched by this** — it is convention-D's own property,
+not an artefact of the split, and remains this bean's subject. Only the
+"internally split" half is stale.
+
+### A methods note, because it nearly went the other way
+
+My first detector reported `z_mp -> C`. It was wrong: I compared against
+`z_D` with an absolute `1e-20` tolerance, while `q0` enters as a float64,
+so agreement caps at ~1e-16 and a **correct** value cannot pass. A false
+positive here is worse than a false negative — the indicated remedy is to
+change a correct value to the wrong one, inside a campaign whose purpose is
+excising C. Use a two-way relative comparison (which candidate is closer),
+never a threshold, when the result is numerical rather than exact-symbolic.
+Written up as a new section in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, which previously
+catalogued only the false-negative direction.
