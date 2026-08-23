@@ -245,7 +245,12 @@ def main() -> int:
     t_pos = t[pos]
     G_pos = np.diag(frob_diag[pos])
     n_target_pos = float(t_pos.sum())
-    lp_pos = solve_operator_selection_lp(t_pos, G_pos, n_target_pos)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    lp_pos = solve_operator_selection_lp(t_pos, G_pos, n_target_pos, backend="clarabel")
     lp_pos_d = lp_pos.to_dict()
     _gap_pos = lp_pos_d.get("duality_gap")
     interim_bounded = (_gap_pos is not None and abs(float(_gap_pos)) < 1e-6

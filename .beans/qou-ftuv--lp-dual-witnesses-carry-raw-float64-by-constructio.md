@@ -955,8 +955,139 @@ count fell 25 → 21 of 27 flagged.
 
 ## Next
 
-- [ ] **21 flagged LP/SDP witnesses still record no backend.** Produced by
-      scripts outside this arc, so the gate still reports rather than fails
-      them. Draining that backlog is what would let the ratchet become a
-      sweep — the point at which "no backend recorded" stops being
-      indistinguishable from "solved at precision".
+- [x] **21 flagged LP/SDP witnesses still record no backend.** Drained to 11;
+      see below.
+
+---
+
+## Draining the unannotated backlog — and what it turned up (2026-08-23)
+
+Of the 21, **17 route through the canonical entry point** and four bypass it
+with a direct `linprog`. None of the 17 pinned a backend: every one was on
+`auto`, which is *worse* than the forced `scipy` this arc started with — a
+forced backend is at least honest and reproducible, while `auto` picks by
+whether the Rust binary happens to be on the box, so the same script yields
+different numbers in different places. Fourteen pinned to `clarabel`, plus
+`lp_confinement_nf_forcing.py`'s multi-line call.
+
+Unannotated: **21 → 11**. `alpha_5_lp_dual_crystal.py` is pinned but its
+witness is unregenerated: the producer does not finish here, hanging in
+`global_wedderburn_sum_q_hecke_seminormal` for the tritium stratum — pure
+representation theory, upstream of any solve, so unrelated to this work. The
+pin is a no-op in this environment anyway (`auto` resolves to `clarabel-mpfr`
+where the binary exists) and protective where it does not.
+
+### One site keeps scipy, and it is the only measured exception
+
+`rho_k_h3a_gg_trajectory.py` **regressed under the pin** — `feasible: true,
+primal_obj: 1.2745` became `NaN, feasible: false` for every nucleon, with
+non-finite values entering the witness. Diagnosed rather than reverted blind:
+
+    t = 1/(dim_q · |y·χ|), floored at 1e-15  ⇒  t spans 1.1 … 1e15
+
+A cost **dynamic range** of 15 orders. Clarabel's interior-point method
+returns a false `infeasible`; HiGHS's simplex solves it. Not precision —
+167 / 333 / 500 bits fail identically. Reverted to `scipy` with that
+measurement written at the call site. Its SDP sibling is deliberately left on
+`auto`: the SDP path takes only `auto`/`cvxpy`/`clarabel`, cvxpy is absent
+here, and pinning it to clarabel would swap an honest "SDP requires cvxpy" for
+the same false infeasible — turning a missing dependency into what reads as a
+mathematical verdict.
+
+The underlying `1e-15` floor ("set to a large finite cost so the LP naturally
+avoids that channel") is a modelling smell — dropping those channels would say
+the same thing without a 1e15 cost — but changing it changes the model, so it
+is the owner's call, not this arc's.
+
+### The gate rewarded laundering; now it does not
+
+Recording that backend honestly made `rho-k-h3a-gg-trajectory` trip the
+float64 gate. That exposed a design flaw in the gate as shipped: a producer
+with a legitimate need for the f64 backend fails, and **the cheapest way to
+make it pass is to stop recording `backend` at all** — dropping into the
+unannotated bucket, which the gate only reports. The gate paid for deleting
+provenance.
+
+Closed with `F64_BACKEND_EXEMPT`: an allowlist keyed by witness basename whose
+value is the *reason*, printed on every run. An exemption you must name and
+justify beats a blind spot that costs nothing to enter.
+
+### A false-infeasible rescue, and its limits
+
+While diagnosing the above, found a *separate* real defect: with the default
+`M_bound=1e6`, cost magnitudes at or above ~1e6 drive clarabel to a spurious
+infeasible even at uniform scale.
+
+`t` appears **only in the objective** — the feasible set is
+`{x : Σx = n_target, G-positivity, x ≥ -M_bound}` and never mentions `t`. So
+rescaling the cost vector cannot change feasibility, and a verdict that flips
+under rescaling was a numerical artifact. The rescue re-solves with `t` scaled
+by a **power of two** (exact in both f64 and MPFR, no rounding either way) and
+scales the t-linear outputs back; `x_star` and `active_set` are
+scale-invariant and pass through. It fires only after an infeasible verdict,
+so it cannot perturb any currently-working solve, and it records
+`rescaled_by_pow2` rather than acting silently.
+
+Verified exact: rescued answer matches scipy to `rel 0.0e+00` with an
+identical active set. **It does not fix `rho_k`** — scaling shifts the
+magnitude of `t` but not the ratio between its entries, and the ratio is what
+conditions that solve. Stated plainly because the rescue was built for `rho_k`
+and does not rescue it.
+
+### Every construction site now names its solver
+
+Six `LpDualResult` constructors; three recorded nothing. The serious one:
+`solve_frobenius_dual_lp`'s **success** branch was anonymous while its
+infeasible branch already set `backend`. So a *successful* f64 solve through
+that entry point was invisible to the float64 gate and only a **failed** one
+was caught — an absent check indistinguishable from a passing one, inside the
+gate this arc built. It is public with live callers (`frobenius_repose_probe`,
+`all_nuclides_sdp_admissibility`). The two infeasible branches were anonymous
+too, which matters because an infeasible verdict is a claim about the LP and
+the backends demonstrably disagree on badly-conditioned costs.
+
+### Tests, shown to fail first
+
+`tools/pyhecke/tests/test_lp_dual_provenance.py`, 9 cases. The first draft of
+the frobenius test **passed with the fix removed** — it called
+`solve_operator_selection_lp`, whose scipy path already named itself, so it
+never touched the hole it claimed to cover. Same defect class as the bug,
+inside its own test. Rewritten against `solve_frobenius_dual_lp` and confirmed
+to fail without the fix (`backend=None` on a successful solve).
+
+### Verification
+
+```
+witness_raw_float64_audit               NEW 0, REGRESSED 0, excused 2,561/40
+witness_raw_float64_audit --self-test   25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0   (unannotated 21 → 11)
+pytest tools/pyhecke                    202 passed, 44 skipped   (was 193)
+clarabel_lp_crosscheck                  all cases agree
+bun run scripts/run-validate.ts         ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+Carve-out across the whole arc: **4,052 → 2,561**, all of it discharged by the
+`*_str` shadow rule rather than by widening the carve-out list.
+
+## Next
+
+- [ ] **11 flagged witnesses still record no backend**, four of them because
+      their producers call `scipy.optimize.linprog` directly and never reach
+      the canonical entry point at all (`benzene_assembly_spine`,
+      `co_bond_order_active_set`, `three_quark_borromean_lp_sweep`,
+      `two_quark_active_set_mahler_sweep`). Those are out of contract with
+      AGENTS.md §LP/SDP first-class infra, not merely unannotated.
+      `compound_shift_nf.py` also calls `linprog` directly but justifiably —
+      as a *discrete oracle* for the active set, with every value then
+      recomputed in mpmath.
+- [ ] **Four producers cannot run at all** and their committed witnesses are
+      therefore unverifiable: `borromean-axial-coupling.py` (KeyError
+      `gram_inverse`), `habiro_correction_shadow_price_test.py` and
+      `wedderburn_pair_volumes.py` (mpf `__format__`), and
+      `r5_full_canonical_knot_solver.py` (no `pyhecke_native`). All four are
+      pre-existing — confirmed against a clean tree — and none is caused by
+      this arc.
+- [ ] **Owner: the `1e-15` floor in `rho_k_h3a_gg_trajectory.py`.** Dropping
+      the dead channels would express the same intent without a 1e15 cost, and
+      would let that site join the MPFR backend. Changes the model, so not
+      this arc's call.

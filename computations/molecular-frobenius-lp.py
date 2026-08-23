@@ -162,7 +162,12 @@ print()
 # their cardinality is the categorical signature of bond order.
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
-_lp = solve_operator_selection_lp(np.asarray(TR_M, dtype=float), G, n_target=1.0)
+# Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+# whether the Rust binary happens to be built, so the same script
+# yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+# makes a missing binary an error rather than a changed answer.
+# Bean `qou/ftuv`.
+_lp = solve_operator_selection_lp(np.asarray(TR_M, dtype=float), G, n_target=1.0, backend="clarabel")
 print("--- Operator-selection LP dual (unit net) ---")
 print(f"  primal_obj  = {_lp.primal_obj:.6f}   dual_obj = {_lp.dual_obj:.6f}")
 print(f"  duality_gap = {_lp.duality_gap:.2e}   (strong duality)")

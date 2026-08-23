@@ -100,7 +100,12 @@ def main():
     G = np.diag([abs(c) for c in contribs])
     n_target = tr_M
 
-    result = solve_operator_selection_lp(t_vec, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    result = solve_operator_selection_lp(t_vec, G, n_target, backend="clarabel")
     rd = result.to_dict()
 
     y_star = rd["y_star"]

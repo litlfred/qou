@@ -1,8 +1,8 @@
 {
   "engine": "numpy+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T12:27:53.234155+00:00",
-  "commitSha": "7226bc9c3308d4ddd3ef7eaf98b2cf855443c4a2",
+  "computedAt": "2026-08-23T12:55:32.950631+00:00",
+  "commitSha": "25c627e0a615afb5abdfe36ea7c4168ff6904b45",
   "assertions": [
     {
       "name": "lp_strong_duality_all_klr_atoms",
@@ -31,7 +31,7 @@
   "computation": "wedderburn-lp-ew-wiring",
   "scriptFile": "wedderburn_lp_ew_wiring.py",
   "scriptHash": "4ce6c33e1b8e",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptCommitSha": "25c627e0a615afb5abdfe36ea7c4168ff6904b45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -101,6 +101,7 @@
         28,
         28
       ],
+      "backend": "clarabel-mpfr",
       "atom_sweep": [
         {
           "atom": "proton",
@@ -175,7 +176,8 @@
           "duality_gap": NaN,
           "y0_star": NaN,
           "n_active": 0,
-          "n_target": 0.006794097209037602
+          "n_target": 0.006794097209037602,
+          "backend": "clarabel-mpfr"
         },
         {
           "atom": "triton",
@@ -192,7 +194,8 @@
           "duality_gap": NaN,
           "y0_star": NaN,
           "n_active": 0,
-          "n_target": 0.0003189691443453741
+          "n_target": 0.0003189691443453741,
+          "backend": "clarabel-mpfr"
         },
         {
           "atom": "helium-4",
@@ -238,6 +241,7 @@
       NaN
     ],
     "active_set": [],
+    "backend": "clarabel-mpfr",
     "deliverable_B_alt_delta_I_weinberg_probe": {
       "codata_cot_theta_W": 1.8230678710486174,
       "candidates": [

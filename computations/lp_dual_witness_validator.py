@@ -191,6 +191,27 @@ F64_BACKENDS = frozenset({
 })
 
 
+# Witnesses that record an f64 solve for a MEASURED reason, keyed by basename
+# with the reason spelled out. Without this list the gate rewards laundering:
+# a producer with a legitimate need for the f64 backend fails, and the cheapest
+# way to make it pass is to stop recording `backend` at all — dropping into the
+# unannotated bucket, which the gate only reports. An exemption that must be
+# named and justified is strictly better than a blind spot that costs nothing
+# to enter.
+#
+# Add an entry only with a measurement behind it, not a preference.
+F64_BACKEND_EXEMPT = {
+    "rho-k-h3a-gg-trajectory.witness.json": (
+        "t = 1/(dim_q · |y·χ|) with a 1e-15 floor spans 1.1 … 1e15, a cost "
+        "dynamic range of 15 orders. Clarabel's interior-point method returns "
+        "a false `infeasible` on it (all nucleons NaN) where HiGHS's simplex "
+        "solves it. Not precision — 167/333/500 bits fail identically — and "
+        "not fixable by rescaling, which shifts magnitude but not the ratio "
+        "between entries. Measured 2026-08-23, bean `qou/ftuv`."
+    ),
+}
+
+
 def _recorded_backends(path: Path) -> tuple[set[str], bool]:
     """`(f64_backends_found, any_backend_recorded)` for one witness."""
     try:
@@ -291,12 +312,22 @@ def main(argv: list[str]) -> int:
     # ── float64-backend gate ──────────────────────────────────────────
     f64_solved: list = []
     unannotated = 0
+    exempted: list = []
     for w, _reason in flagged:
         bad, seen = _recorded_backends(w)
-        if bad:
+        if bad and w.name in F64_BACKEND_EXEMPT:
+            exempted.append((w, sorted(bad)))
+        elif bad:
             f64_solved.append((w, sorted(bad)))
         elif not seen:
             unannotated += 1
+    if exempted:
+        print(f"ℹ {len(exempted)} flagged witness(es) record a float64 solve "
+              "for a measured reason (F64_BACKEND_EXEMPT):")
+        for w, bad in exempted:
+            print(f"  ·  {w.name}   backend={', '.join(bad)}")
+            print(f"     {F64_BACKEND_EXEMPT[w.name]}")
+        print()
     if f64_solved:
         print(f"✗ float64 backend: {len(f64_solved)} flagged witness(es) record "
               "a float64 solve:")

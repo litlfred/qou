@@ -65,7 +65,7 @@ from alpha_shift_torus import (  # noqa: E402
     q_sym,
 )
 from hecke_characters import partitions_of  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 from nh_basis_shift import (  # noqa: E402
     cyclic_coxeter_word,
     hecke_word_matrix,
@@ -185,8 +185,14 @@ def main() -> None:
         # Net target = sum of dimensions / 2 (a representative scale)
         n_target = float(sum(dims_q1)) / 2.0
 
+        # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+        # whether the Rust binary happens to be built, so the same script
+        # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+        # makes a missing binary an error rather than a changed answer.
+        # Bean `qou/ftuv`.
         result = solve_operator_selection_lp(
             t_lp, G_lp, n_target, M_bound=1e3, dual_tol=1e-7,
+            backend="clarabel",
         )
         # active_set indexed against partition list `parts`
         active_lambdas = [list(parts[i]) for i in result.active_set]
@@ -230,6 +236,11 @@ def main() -> None:
             "lp_dual_obj": result.dual_obj,
             "lp_duality_gap": result.duality_gap,
             "lp_feasible": result.feasible,
+            # Solver, precision, and the full-precision decimals behind the
+            # f64 fields above, under both the row's `lp_` prefix and a
+            # nested copy the summary block below re-emits.
+            **{f"lp_{k}": v for k, v in provenance(result).items()},
+            "lp_provenance": provenance(result),
         }
         rows.append(row)
 
@@ -257,6 +268,8 @@ def main() -> None:
                 "primal_obj": r["lp_primal_obj"],
                 "dual_obj": r["lp_dual_obj"],
                 "duality_gap": r["lp_duality_gap"],
+                # Solver, precision, and full-precision decimals for the row.
+                **r.get("lp_provenance", {}),
             }
             for r in rows
         ],

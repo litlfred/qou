@@ -71,6 +71,11 @@ class LpDualResult:
     primal_obj_str: Optional[str] = None
     dual_obj_str: Optional[str] = None
     duality_gap_str: Optional[str] = None
+    #: Set only when the false-infeasible rescue fired: the power of two the
+    #: cost vector was scaled by before re-solving. `None` on a normal solve.
+    #: Present so a witness records that the raw solve was rejected rather
+    #: than the rescue happening silently.
+    rescaled_by_pow2: Optional[int] = None
     # WHICH SOLVER PRODUCED THIS, and at what width.
     #
     # `backend="auto"` picks clarabel-MPFR when the Rust binary is on disk and
@@ -117,6 +122,8 @@ class LpDualResult:
             d["backend"] = self.backend
         if self.precision_bits is not None:
             d["precision_bits"] = int(self.precision_bits)
+        if self.rescaled_by_pow2 is not None:
+            d["rescaled_by_pow2"] = int(self.rescaled_by_pow2)
         for key, val in (
             ("x_star_str", self.x_star_str),
             ("y0_star_str", self.y0_star_str),
@@ -173,6 +180,9 @@ def provenance(res) -> dict:
     bits = _get("precision_bits")
     if bits is not None:
         out["precision_bits"] = int(bits)
+    resc = _get("rescaled_by_pow2")
+    if resc is not None:
+        out["rescaled_by_pow2"] = int(resc)
     for key in PROVENANCE_STR_FIELDS:
         val = _get(key)
         if val is not None:
@@ -258,6 +268,14 @@ def solve_frobenius_dual_lp(
         dual_obj=dual_obj,
         duality_gap=duality_gap,
         feasible=True,
+        # This is the SUCCESS path and it recorded nothing until 2026-08-23,
+        # while the infeasible branch above already set `backend`. So a
+        # successful f64 solve through this entry point was invisible to the
+        # float64 gate and only a FAILED one was caught — an absent check
+        # indistinguishable from a passing one, in the gate itself.
+        # `solve_frobenius_dual_lp` is public and has live callers
+        # (`frobenius_repose_probe.py`, `all_nuclides_sdp_admissibility.py`).
+        backend="scipy-highs",
     )
 
 
@@ -295,6 +313,11 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
             y_star=[float("nan")] * d, active_set=[],
             primal_obj=float("nan"), dual_obj=float("nan"),
             duality_gap=float("nan"), feasible=False,
+            # An infeasible verdict is a claim about the LP, and which solver
+            # made it matters — clarabel returns false infeasibles on
+            # badly-conditioned costs where HiGHS succeeds. Recording the
+            # backend is what let that be diagnosed rather than believed.
+            backend="clarabel-mpfr", precision_bits=None,
         )
     return LpDualResult(
         x_star=[float(v) for v in out["x_star"]],
@@ -422,30 +445,94 @@ def _solve_operator_selection_lp_clarabel(
     m_str = repr(float(M_bound))
     dt_str = repr(float(dual_tol))
 
-    # Prefer the in-process PyO3 binding if the installed wheel carries it.
-    try:
-        import pyhecke_native
-        _binding = getattr(pyhecke_native, "operator_selection_lp", None)
-    except ImportError:
-        _binding = None
-    if _binding is not None:
-        out = _binding(t_str, G_str, n_str, m_str, dt_str, int(prec_bits))
-        return _lp_result_from_dict(dict(out), d)
+    def _solve(t_vals: list) -> dict:
+        """One trip through the binding, else the CLI."""
+        try:
+            import pyhecke_native
+            _binding = getattr(pyhecke_native, "operator_selection_lp", None)
+        except ImportError:
+            _binding = None
+        if _binding is not None:
+            return dict(_binding(t_vals, G_str, n_str, m_str, dt_str,
+                                 int(prec_bits)))
 
-    # Fall back to the CLI binary.
-    import json as _json
-    import subprocess
+        import json as _json
+        import subprocess
 
-    payload = {
-        "t": t_str, "G": G_str, "n_target": n_str,
-        "m_bound": m_str, "dual_tol": dt_str, "prec_bits": int(prec_bits),
-    }
-    binp = _find_clarabel_lp_bin(clarabel_bin)
-    proc = subprocess.run(
-        [binp], input=_json.dumps(payload), capture_output=True, text=True,
-    )
-    out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
-    return _lp_result_from_dict(out, d)
+        payload = {
+            "t": t_vals, "G": G_str, "n_target": n_str,
+            "m_bound": m_str, "dual_tol": dt_str, "prec_bits": int(prec_bits),
+        }
+        binp = _find_clarabel_lp_bin(clarabel_bin)
+        proc = subprocess.run(
+            [binp], input=_json.dumps(payload), capture_output=True, text=True,
+        )
+        return _json.loads(proc.stdout) if proc.stdout.strip() else {}
+
+    out = _solve(t_str)
+    if out.get("feasible", False):
+        return _lp_result_from_dict(out, d)
+
+    # ── False-infeasible rescue ───────────────────────────────────────
+    # `t` appears ONLY in the objective: the feasible set is
+    # {x : Σx = n_target, G-positivity, x ≥ -M_bound} and does not mention
+    # `t` at all. So rescaling the cost vector CANNOT change whether the
+    # problem is feasible. If the unscaled solve says infeasible and a
+    # scaled one says feasible, the unscaled verdict was a numerical
+    # artifact, not a fact about the LP — this rescue corrects that and can
+    # never manufacture a feasible answer for a genuinely infeasible LP.
+    #
+    # Measured 2026-08-23 (bean `qou/ftuv`): with the default M_bound=1e6,
+    # cost magnitudes at or above ~1e6 drive the interior-point method to a
+    # spurious infeasible. `rho_k_h3a_gg_trajectory.py` builds
+    # t = 1/(dim_q · |y·χ|) with a 1e-15 floor, so its costs reach 1e15 and
+    # every nucleon came back NaN under clarabel while scipy solved it.
+    # Raising prec_bits does not help (167/333/500 all fail): it is
+    # conditioning, not precision.
+    #
+    # The scale is a POWER OF TWO so both the f64 and the MPFR scaling are
+    # exact — no rounding is introduced in either direction.
+    _mags = [abs(float(v)) for v in t_str if float(v) != 0.0]
+    if not _mags:
+        return _lp_result_from_dict(out, d)
+    import math as _math
+    _k = -_math.frexp(max(_mags))[1]          # 2**_k · max|t| ∈ [0.5, 1)
+    if _k == 0:
+        return _lp_result_from_dict(out, d)
+
+    from mpmath import mp as _mp_mod, mpf as _mpf
+    _dps = max(60, int(prec_bits * 0.30103) + 10)
+    with _mp_mod.workdps(_dps):
+        _scale = _mpf(2) ** _k
+        t_scaled = [_mp_mod.nstr(_mpf(v) * _scale, _dps) for v in t_str]
+        out2 = _solve(t_scaled)
+        if not out2.get("feasible", False):
+            # Genuinely infeasible (or a failure the rescale cannot reach) —
+            # return the ORIGINAL verdict rather than the rescaled one, so
+            # the reported numbers match the inputs the caller passed.
+            return _lp_result_from_dict(out, d)
+
+        # Undo the scaling on every t-linear quantity. `x_star` and
+        # `active_set` are scale-INVARIANT (the argmin does not move), so
+        # they pass through untouched.
+        _inv = _mpf(2) ** (-_k)
+        for _key in ("y0_star", "primal_obj", "dual_obj", "duality_gap"):
+            if _key in out2:
+                out2[_key] = float(_mpf(str(out2[_key])) * _inv)
+            _sk = _key + "_str"
+            if _sk in out2 and out2[_sk] is not None:
+                out2[_sk] = _mp_mod.nstr(_mpf(str(out2[_sk])) * _inv, _dps)
+        if "y_star" in out2:
+            out2["y_star"] = [float(_mpf(str(v)) * _inv) for v in out2["y_star"]]
+        if out2.get("y_star_str") is not None:
+            out2["y_star_str"] = [_mp_mod.nstr(_mpf(str(v)) * _inv, _dps)
+                                  for v in out2["y_star_str"]]
+
+    res = _lp_result_from_dict(out2, d)
+    # Say so. A silent rescue is an absent check indistinguishable from a
+    # passing one; the witness should record that the raw solve was rejected.
+    res.rescaled_by_pow2 = _k
+    return res
 
 
 def solve_operator_selection_lp(
@@ -554,6 +641,9 @@ def solve_operator_selection_lp(
             dual_obj=float("nan"),
             duality_gap=float("nan"),
             feasible=False,
+            # Which solver returned the infeasible verdict is part of the
+            # verdict: the two backends disagree on badly-conditioned costs.
+            backend="scipy-highs",
         )
 
     x_star = np.asarray(res.x)

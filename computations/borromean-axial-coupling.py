@@ -106,7 +106,12 @@ assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}
 T_NF = TR_M.copy()  # Markov-trace vector on NF basis
 N_TARGET = 1.0       # proton confinement net (normalised categorical mass)
 
-lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET)
+# Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+# whether the Rust binary happens to be built, so the same script
+# yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+# makes a missing binary an error rather than a changed answer.
+# Bean `qou/ftuv`.
+lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET, backend="clarabel")
 if not lp.feasible:
     raise RuntimeError(
         "Operator-selection LP for proton bound state was infeasible. "

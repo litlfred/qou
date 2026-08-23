@@ -1,7 +1,7 @@
 {
   "computation": "pn-alpha-lp-dual",
   "description": "LP-dual stability scan for the pn-mixing \u03b1 in the inter-nucleon crossing (1, \u2212\u03b1\u00b7HA).  Three probes: (a) D tower binding B_pred(\u03b1) on a fine \u03b1 grid; (b) single-block H_3 LP dual (\u03b3, \u03c3\u2080, \u03c3\u2081, L\u208a, L\u208b, e\u207b) shadow prices; (c) TOWER-LEVEL tests: \u2202B/\u2202\u03b1 numerical derivative + adjacent-pair SDP PSD sweep.  Tests whether \u03b1 = \u00bd is picked out by stability (active-set change, degenerate y\u2080, \u2202B/\u2202\u03b1 zero-crossing, tight pair PSD transition, or minimum |B_pred \u2212 B_AME|).",
-  "timestamp": "2026-08-23T12:28:07.106352+00:00",
+  "timestamp": "2026-08-23T12:55:36.586270+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "HA": 0.20906029879563937,

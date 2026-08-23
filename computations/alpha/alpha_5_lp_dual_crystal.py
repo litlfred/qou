@@ -216,7 +216,12 @@ def per_atom_lp(atom_label: str, q_val: float, *,
     if n_target == 0.0:
         return None
 
-    res = solve_operator_selection_lp(t, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     return {
         "atom": atom_label,
         "n": n,
