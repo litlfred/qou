@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "producer": "computations/a_operator/cyclic_intertwiner_verify.py",
+      "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "stderr_tail": ""
+    },
+    {
+      "producer": "computations/alpha/alpha_5_lp_dual_crystal.py",
+      "witness": "computations/alpha/alpha-5-lp-dual-crystal.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": []
+    },
+    {
+      "producer": "computations/binding_canonical.py",
+      "witness": "computations/ame-2020-binding-energies.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [
+        "computations/binding-canonical.witness.json"
+      ]
+    },
+    {
+      "producer": "computations/atomic_tr_m_mpfr_50dps.py",
+      "witness": "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": []
+    },
+    {
+      "producer": "computations/audits/muon_pin_three_values_probe.py",
+      "witness": "computations/audits/muon-pin-three-values.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": []
+    },
+    {
+      "producer": "computations/audits/q0_anchor_consistency_audit.py",
+      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": []
+    }
+  ],
+  "tally": {
+    "SUBSTANTIVE/ASSERT-FAIL": 1,
+    "TIMEOUT": 1,
+    "UNCHANGED": 2,
+    "SUBSTANTIVE": 2
+  },
+  "partial": true,
+  "measured": 6,
+  "total": 55,
+  "skipped": [
+    {
+      "witness": "computations/probes/aoperator_a5_crosscheck.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    }
+  ]
+}
