@@ -1742,3 +1742,98 @@ still running, and its 158 fields are still outstanding.
 - [ ] **Owner: the q_0 migration.** 307 stale witnesses, tracked and gated at
       NEW 0. Nothing here changes that; this entry only records why the
       beta-decay chain cannot be drained independently of it.
+
+
+---
+
+## Two producers off-contract, and a duality gap that could not fail (2026-08-23)
+
+`three_quark_borromean_lp_sweep.py` and `two_quark_active_set_mahler_sweep.py`
+each built their LP by hand with `scipy.optimize.linprog`. Both were building
+**exactly** the canonical operator-selection form — `min t·x` s.t.
+`1ᵀx = n_target`, `Gx ≥ 0`, `x ≥ -M`, with `A_ub` literally `-G` — so each was
+a reimplementation of `solve_operator_selection_lp` with no difference to
+justify it. That put them out of contract with AGENTS.md §"LP / SDP duals —
+first-class infra", and hid their solver from the backend gate: a witness whose
+solver is never named cannot be checked.
+
+Both now route through the canonical entry point. 80 -> 0 and 48 -> 0 bare,
+both recording `clarabel-mpfr`.
+
+### The gap was computed from an assumption, not a measurement
+
+Both files derived the dual side by hand:
+
+```python
+_dual_obj   = 1.0 * _r["y0_star"]
+duality_gap = abs(primal_obj - _dual_obj)
+```
+
+`dual_obj = n_target · y0_star` **is** strong duality. Deriving the dual
+objective from it and then reporting `|primal − dual|` as the duality gap
+measures nothing: it asserts the property and then checks the assertion against
+itself. One anchor in `two-quark` recorded a gap of exactly **`0.0`** — a
+perfect certificate produced by construction.
+
+Taking `dual_obj` and `duality_gap` from the solver instead:
+
+```
+three-quark   duality_gap  3.552713678800501e-15  ->  1.0045686282509346e-40
+two-quark     duality_gap  1.7491153141352104e-17 ->  5.936544153532e-43
+two-quark     duality_gap                     0.0 ->  4.463095491666348e-43
+```
+
+The old figures were f64 noise around a tautology; the new ones are measured,
+and carry 50-digit companions.
+
+### Inputs stopped being truncated on the way in
+
+Both files computed exact mpf inputs and cast them to f64 before the solver saw
+them. They now cross as 50-dps decimal strings, which the MPFR backend takes
+directly.
+
+For `two-quark` this is a real precision gain: `t1`, `t2` and `G_matrix` are
+exact closed forms. For `three-quark` it is worth less and the comment says so
+— its `gram_matrix` is an **admitted proxy** (its own docstring: "the true Gram
+requires the multiplication table of the basis which we don't have closed-form
+here"), so the extra digits describe the proxy more exactly, not the true
+Frobenius Gram. Carried anyway, because `t_vector` is exact and the duals
+depend on it, and because truncating deliberately is worse than not.
+
+`gram_matrix` was split into an mpf `gram_matrix_mp` with the f64 version
+delegating to it — the formula is unchanged, only the point of truncation
+moved.
+
+### Carve-out
+
+```
+4,052  start of arc
+1,009  previous commit
+  881  three-quark + two-quark
+```
+
+Unannotated flagged witnesses: 11 -> **8**.
+
+### Verification
+
+```
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+NaN / feasibility sweep vs pre-arc base   1 flagged — the known frobenius
+                                          false-positive correction
+pytest tools/pyhecke                      240 passed, 13 skipped, 0 failed
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+## Next
+
+- [ ] `he4-binding-k-stage2` (158) — timed out twice at 3500 s. It is a
+      multi-hour compute (~150 s per character, 154 characters over two
+      branches) with a `.he4_stage2_legA_progress.jsonl` resume file, so it
+      advances ~20 characters per run. Resumed again; needs several more.
+- [ ] `alpha-5-lp-dual-crystal` (75) — pinned, but hangs in
+      `global_wedderburn_sum_q_hecke_seminormal` for the tritium stratum.
+- [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
+- [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
+      (34, producer currently broken on an mpf format error).

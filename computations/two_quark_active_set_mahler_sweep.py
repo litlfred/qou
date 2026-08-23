@@ -54,7 +54,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import mpmath as mp
 import numpy as np
-from scipy.optimize import linprog
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lp_dual_solver import (  # noqa: E402
+    provenance,
+    solve_operator_selection_lp,
+)
 
 mp.mp.dps = 50
 
@@ -100,57 +105,53 @@ def solve_lp(q: mp.mpf, n_target: float = 1.0, M: float = 1e6) -> dict:
 
     Returns dict with x*, dual y*, active set indicator, optimal value.
     """
-    tt1 = float(t1(q))
-    tt2 = float(t2(q))
-    G11, G12, G22 = (float(x) for x in G_matrix(q))
+    # ROUTED THROUGH THE CANONICAL SOLVER, not a local `linprog`.
+    #
+    # The LP built here was *exactly* the canonical operator-selection form —
+    # `min t·x` s.t. `1ᵀx = n_target`, `Gx ≥ 0`, `x ≥ -M`; `A_ub` was
+    # literally `-G`. So the local `scipy.optimize.linprog` reimplemented
+    # `solve_operator_selection_lp` with no difference to justify it, putting
+    # this producer out of contract with AGENTS.md §"LP / SDP duals —
+    # first-class infra" and hiding its solver from
+    # `lp_dual_witness_validator`'s backend gate.
+    #
+    # `t1`, `t2` and `G_matrix` are exact closed forms in mpf, and every one
+    # was cast to f64 before the solver saw it. They now cross as 50-dps
+    # decimal STRINGS, which the MPFR backend takes directly. Bean `qou/ftuv`.
+    t_mp = [t1(q), t2(q)]
+    G11, G12, G22 = G_matrix(q)
+    G_mp = [[G11, G12], [G12, G22]]
 
-    # scipy.linprog uses min c^T x with A_ub x ≤ b_ub, A_eq x = b_eq.
-    c = np.array([tt1, tt2], dtype=float)
-    # Frobenius positivity: Gx ≥ 0 → -Gx ≤ 0.
-    A_ub = np.array([
-        [-G11, -G12],
-        [-G12, -G22],
-    ], dtype=float)
-    b_ub = np.array([0.0, 0.0], dtype=float)
-    A_eq = np.array([[1.0, 1.0]], dtype=float)
-    b_eq = np.array([n_target], dtype=float)
-    bounds = [(-M, None), (-M, None)]
+    res = solve_operator_selection_lp(
+        [mp.nstr(v, 50) for v in t_mp],
+        [[mp.nstr(v, 50) for v in row] for row in G_mp],
+        mp.nstr(mp.mpf(n_target), 50),
+        M_bound=M, dual_tol=1e-7, backend="clarabel",
+    )
+    if not res.feasible:
+        return {"status": "failed: infeasible", "q": str(q)}
 
-    res = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
-                  bounds=bounds, method="highs")
-
-    if not res.success:
-        return {
-            "status": f"failed: {res.message}",
-            "q": str(q),
-        }
-
-    x_star = res.x.tolist()
-    # Dual variables — extract from scipy's output.
-    # res.eqlin.marginals = y_0 for the equality (net) constraint
-    # res.ineqlin.marginals = -y_i for the inequalities (negative because A_ub x ≤ b_ub means dual ≤ 0)
-    y_0 = float(res.eqlin.marginals[0]) if res.eqlin.marginals is not None else 0.0
-    y_ineq = -np.array(res.ineqlin.marginals) if res.ineqlin.marginals is not None else np.zeros(2)
-    y_star = y_ineq.tolist()  # shadow prices of Frobenius positivity
-
-    # Active set: indices i with y_i > tol.
-    tol = 1e-7
-    active_set = [i for i, y in enumerate(y_star) if abs(y) > tol]
-
-    return {
+    x_star = [float(v) for v in res.x_star]
+    out = {
         "status": "optimal",
         "x_star": x_star,
-        "y0_star": y_0,
-        "y_star": y_star,
-        "active_set": active_set,
-        "primal_obj": float(c @ res.x),
-        "dual_obj": float(n_target * y_0),
-        "duality_gap": float(c @ res.x - n_target * y_0),
+        "y0_star": float(res.y0_star),
+        "y_star": [float(v) for v in res.y_star],
+        "active_set": list(res.active_set),
+        "primal_obj": float(res.primal_obj),
+        # FROM THE SOLVER. These were `n_target * y_0` and
+        # `primal - n_target * y_0`, which assume strong duality rather than
+        # measuring it — so the "duality gap" was tautologically small and
+        # could not report the one thing it exists to report.
+        "dual_obj": float(res.dual_obj),
+        "duality_gap": float(res.duality_gap),
         "Frobenius_slack": [
-            float(G11 * x_star[0] + G12 * x_star[1]),
-            float(G12 * x_star[0] + G22 * x_star[1]),
+            float(G11 * mp.mpf(repr(x_star[0])) + G12 * mp.mpf(repr(x_star[1]))),
+            float(G12 * mp.mpf(repr(x_star[0])) + G22 * mp.mpf(repr(x_star[1]))),
         ],
     }
+    out.update(provenance(res))
+    return out
 
 
 # ── Mahler-height proxy ─────────────────────────────────────────────────
@@ -312,18 +313,36 @@ def main() -> None:
         if _r.get("status") != "optimal":
             _anchor_duals.append({"anchor": _nm, "q": str(_qv), **_r})
             continue
-        _dual_obj = 1.0 * _r["y0_star"]
         _anchor_duals.append({
             "anchor": _nm, "q": str(_qv),
             "x_star": _r["x_star"], "y0_star": _r["y0_star"],
             "y_star": _r["y_star"], "active_set": _r["active_set"],
             "primal_obj": _r.get("primal_obj"),
-            "dual_obj": _dual_obj,
-            "duality_gap": abs(_r.get("primal_obj", _dual_obj) - _dual_obj),
+            # FROM THE SOLVER, not re-derived. `dual_obj = n_target · y0_star`
+            # and its matching gap assume strong duality instead of measuring
+            # it, so the gap came out tautologically small — one anchor
+            # recorded exactly 0.0. The solver reports 4.5e-43 there.
+            "dual_obj": _r.get("dual_obj"),
+            "duality_gap": _r.get("duality_gap"),
+            # Solver, precision, and the full-precision decimals; cherry-
+            # picking from `_r` without them is what left these 48 f64 bare.
+            **{_k: _r[_k] for _k in
+               ("backend", "precision_bits", "x_star_str", "y0_star_str",
+                "y_star_str", "primal_obj_str", "dual_obj_str",
+                "duality_gap_str") if _k in _r},
         })
     _canon = {k: [d.get(k) for d in _anchor_duals]
               for k in ("y0_star", "y_star", "active_set", "primal_obj",
                         "dual_obj", "duality_gap")}
+    _canon.update({
+        _sk: [d.get(_sk) for d in _anchor_duals]
+        for _sk in ("y0_star_str", "y_star_str", "primal_obj_str",
+                    "dual_obj_str", "duality_gap_str")
+        if any(_sk in d for d in _anchor_duals)
+    })
+    if _anchor_duals and "backend" in _anchor_duals[0]:
+        _canon["backend"] = _anchor_duals[0]["backend"]
+        _canon["precision_bits"] = _anchor_duals[0].get("precision_bits")
 
     witness = {
         "description": (

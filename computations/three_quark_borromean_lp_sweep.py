@@ -28,7 +28,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import mpmath as mp
 import numpy as np
-from scipy.optimize import linprog
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lp_dual_solver import (  # noqa: E402
+    provenance,
+    solve_operator_selection_lp,
+)
 
 mp.mp.dps = 50
 HERE = Path(__file__).parent
@@ -153,58 +158,78 @@ def gram_matrix(q: mp.mpf) -> np.ndarray:
     coupling, which makes the LP solvable and the active-set
     transitions structurally captured.
     """
-    t = [float(x) for x in t_vector(q)]
+    return np.array([[float(v) for v in row] for row in gram_matrix_mp(q)],
+                    dtype=float)
+
+
+def gram_matrix_mp(q: mp.mpf) -> list[list[mp.mpf]]:
+    """The same approximation as `gram_matrix`, kept in mpf.
+
+    `t_vector` is exact, and casting it to f64 before building G threw those
+    digits away before the LP ever saw them. The formula is unchanged — this
+    only stops the truncation happening at the input.
+
+    Note what that does and does not buy: G here is an ADMITTED PROXY (see
+    `gram_matrix`'s docstring — the true Gram needs a multiplication table
+    this file does not have), so the extra digits describe the proxy more
+    exactly, not the true Frobenius Gram. They are worth carrying because
+    truncating deliberately is worse than not, and because the DUAL values
+    depend on `t`, which is exact. Bean `qou/ftuv`.
+    """
+    t = t_vector(q)
     n = len(t)
-    G = np.zeros((n, n), dtype=float)
+    scale = max(mp.mpf(1), sum(abs(x) for x in t))
+    G: list[list[mp.mpf]] = []
     for i in range(n):
+        row = []
         for j in range(n):
-            # Approximation: outer-product Gram (rank-1) + δ_ij·|t_i|.
-            # Exact at the structural level: G_ii captures self-norm of
-            # each basis element under Markov trace, G_ij off-diagonal
-            # captures cross-correlation.  For the active-set transition
-            # detection, the relative sign of t_i drives the structural
-            # answer.
-            G[i, j] = t[i] * t[j] / max(1.0, sum(abs(x) for x in t))
+            v = t[i] * t[j] / scale
             if i == j:
-                G[i, j] += abs(t[i])
+                v += abs(t[i])
+            row.append(v)
+        G.append(row)
     return G
 
 
 def solve_lp_n3(q: mp.mpf, n_target: float = 1.0,
                 M: float = 1e6) -> dict:
     """Solve the n=3 Borromean LP at parameter q."""
-    t = np.array([float(x) for x in t_vector(q)], dtype=float)
-    G = gram_matrix(q)
-    d = 6
+    # ROUTED THROUGH THE CANONICAL SOLVER, not a local `linprog`.
+    #
+    # The LP built here was *exactly* the canonical operator-selection form —
+    # `min t·x` s.t. `1ᵀx = n_target`, `Gx ≥ 0`, `x ≥ -M` — so the local
+    # `scipy.optimize.linprog` was a reimplementation of
+    # `solve_operator_selection_lp` with no difference to justify it. That put
+    # this producer out of contract with AGENTS.md §"LP / SDP duals — first-
+    # class infra", and made it invisible to `lp_dual_witness_validator`'s
+    # backend gate: a witness whose solver is never named cannot be checked.
+    #
+    # Inputs cross as 50-dps decimal STRINGS, which the MPFR backend accepts
+    # directly, so `t_vector`'s exact values are no longer truncated to f64 on
+    # the way in. Bean `qou/ftuv`.
+    t_mp = t_vector(q)
+    t_str = [mp.nstr(v, 50) for v in t_mp]
+    G_str = [[mp.nstr(v, 50) for v in row] for row in gram_matrix_mp(q)]
 
-    c = t
-    A_ub = -G  # G x ≥ 0 ⇔ -G x ≤ 0
-    b_ub = np.zeros(d, dtype=float)
-    A_eq = np.ones((1, d), dtype=float)
-    b_eq = np.array([n_target], dtype=float)
-    bounds = [(-M, None)] * d
+    res = solve_operator_selection_lp(
+        t_str, G_str, mp.nstr(mp.mpf(n_target), 50),
+        M_bound=M, dual_tol=1e-7, backend="clarabel",
+    )
+    if not res.feasible:
+        return {"status": "failed: infeasible", "q": str(q)}
 
-    res = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
-                  bounds=bounds, method="highs")
-
-    if not res.success:
-        return {"status": f"failed: {res.message}", "q": str(q)}
-
-    x_star = res.x.tolist()
-    y_0 = float(res.eqlin.marginals[0])
-    y_ineq = -np.array(res.ineqlin.marginals)
-    y_star = y_ineq.tolist()
-    tol = 1e-7
-    active_set = [i for i, y in enumerate(y_star) if abs(y) > tol]
-
-    return {
-        "x_star": x_star,
-        "y0_star": y_0,
-        "y_star": y_star,
-        "active_set": active_set,
-        "primal_obj": float(c @ res.x),
-        "t_values": t.tolist(),
+    out = {
+        "x_star": [float(v) for v in res.x_star],
+        "y0_star": float(res.y0_star),
+        "y_star": [float(v) for v in res.y_star],
+        "active_set": list(res.active_set),
+        "primal_obj": float(res.primal_obj),
+        "dual_obj": float(res.dual_obj),
+        "duality_gap": float(res.duality_gap),
+        "t_values": [float(v) for v in t_mp],
     }
+    out.update(provenance(res))
+    return out
 
 
 def linspace(a: mp.mpf, b: mp.mpf, k: int) -> list[mp.mpf]:
@@ -303,10 +328,15 @@ def main() -> None:
     # kept none of them — it recorded the transitions and the verdict drawn
     # from them, so the conclusion rested on numbers the witness did not
     # carry. This program IS the operator-selection LP (`min tᵀx s.t.
-    # Gx ≥ 0, 1ᵀx = n_target, x ≥ -M`); `A_ub` is literally `-G`. So the
-    # canonical field names of `prop:operator-selection-lp` apply, and
-    # `dual_obj` / `duality_gap` are derived here because `solve_lp_n3`
-    # returns neither. Bean `qou/augu`.
+    # Gx ≥ 0, 1ᵀx = n_target, x ≥ -M`); `A_ub` was literally `-G`.
+    # Bean `qou/augu`.
+    #
+    # UPDATED 2026-08-23 (bean `qou/ftuv`): `solve_lp_n3` now routes through
+    # the canonical `solve_operator_selection_lp`, so `dual_obj` and
+    # `duality_gap` come FROM THE SOLVER instead of being re-derived here as
+    # `n_target · y0_star`. That re-derivation assumed strong duality rather
+    # than measuring it, which makes a duality gap computed from it
+    # tautologically small — it cannot report the very thing it is for.
     _bracket_duals = []
     for _tr in transitions:
         for _side in ("q_below", "q_above"):
@@ -315,18 +345,34 @@ def main() -> None:
             if "x_star" not in _r:
                 _bracket_duals.append({"bracket": _side, "q": str(_qv), **_r})
                 continue
-            _dual_obj = 1.0 * _r["y0_star"]
             _bracket_duals.append({
                 "bracket": _side, "q": str(_qv),
                 "x_star": _r["x_star"], "y0_star": _r["y0_star"],
                 "y_star": _r["y_star"], "active_set": _r["active_set"],
                 "primal_obj": _r.get("primal_obj"),
-                "dual_obj": _dual_obj,
-                "duality_gap": abs(_r.get("primal_obj", _dual_obj) - _dual_obj),
+                "dual_obj": _r.get("dual_obj"),
+                "duality_gap": _r.get("duality_gap"),
+                # Solver, precision, and the full-precision decimals behind
+                # the f64 fields above — cherry-picking from `_r` without
+                # them is what left this witness's 80 carved f64 bare.
+                **{_k: _r[_k] for _k in
+                   ("backend", "precision_bits", "x_star_str", "y0_star_str",
+                    "y_star_str", "primal_obj_str", "dual_obj_str",
+                    "duality_gap_str") if _k in _r},
             })
     _canon = {k: [d.get(k) for d in _bracket_duals]
               for k in ("y0_star", "y_star", "active_set", "primal_obj",
                         "dual_obj", "duality_gap")}
+    # The top-level canonical mirrors need their companions too.
+    _canon.update({
+        _sk: [d.get(_sk) for d in _bracket_duals]
+        for _sk in ("y0_star_str", "y_star_str", "primal_obj_str",
+                    "dual_obj_str", "duality_gap_str")
+        if any(_sk in d for d in _bracket_duals)
+    })
+    if _bracket_duals and "backend" in _bracket_duals[0]:
+        _canon["backend"] = _bracket_duals[0]["backend"]
+        _canon["precision_bits"] = _bracket_duals[0].get("precision_bits")
 
     witness = {
         "description": (
