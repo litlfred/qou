@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T20:12:20Z
+updated_at: 2026-08-23T20:24:36Z
 parent: qou-59vq
 ---
 
@@ -270,3 +270,53 @@ more tractable-looking one.
 Formalise the reduction: (i) the diagonality of A_mu, (ii) its entry. Then the Markov condition
 follows from the corner identities already proved — and that discharges the corpus's only external
 citation (Wenzl), per `OcneanuWeightWenzl`.
+
+
+## Update — the reduction's STRUCTURAL half is now Lean, and my justification for it was heavier than needed
+
+`SeminormalBlockTrace.lean`, sorry-free, axiom-clean:
+
+- `genMat_eq_zero_of_cellOf_succ_eq` — sigma_k's off-diagonal entries cross blocks.
+- `cellOf_eq_of_genMat_ne_zero` — earlier generators preserve blocks.
+- `trace_mul_genMat` — hence for any block-preserving X,
+      tr(X . sigma_k) = sum_T X_TT * seminormalParam q (axialDist T k).
+
+That third one is exactly the step the corner reduction runs on: it is what turns
+chi^lam(x . sigma_n) into a sum of diagonal entries weighted by Hoefsmit parameters.
+
+### CORRECTION to the justification recorded in this bean
+
+The update above justified the diagonality by *"A_mu commutes with H_{n-1}; branching is
+multiplicity-free, so the commutant is the Gelfand-Tsetlin algebra"* — Okounkov-Vershik. That is
+**correct but far heavier than necessary**, and it is not what the Lean does.
+
+`genMat` is defined with exactly two nonzero entries per column: the diagonal, and the swap partner
+`swapTableau T k`. The swap partner moves `k+1` into the cell that held `k`
+(`cellOf_swapTableau_succ`), and that is a different cell (`cellOf_ne`). Twelve lines, no
+representation theory. Fact 2 is the same argument against `cellOf_swapTableau_of_ne`.
+
+Recording rather than quietly switching: the OV justification is what this bean and
+`OcneanuWeightMarkovCorner`'s docstring claim, so a reader comparing them should be able to see
+which route the Lean actually takes. Both files now carry the note.
+
+### What remains — and it is now a different, smaller thing
+
+`trace_mul_genMat` is about **one** `V_lam`. The Markov condition is about the weighted sum over all
+`lam |- n+1`. What is missing is the **assembly**: the lam-indexed decomposition (`heckeWedderburn`)
+plus the weights (`ocneanuWeight`), combined with the corner identities already proved in
+`OcneanuWeightMarkovCorner`. No new mathematics is identified as missing — the three pieces exist;
+they have not been put together.
+
+State of the arc:
+
+| piece | status |
+|---|---|
+| closed-form weight, derived + checked vs proved n=3 | **Lean** |
+| bridge to `schurPrincipal` at convention D | **Lean** |
+| branching (trace-tower consistency) | **Lean** |
+| Markov corner identities (the arithmetic core) | **Lean** |
+| block structure + trace identity (the structural half of the reduction) | **Lean** |
+| **assembly into the Markov condition** | **OPEN — the only remaining gap** |
+
+Proving that assembly discharges the corpus's only external citation (Wenzl), per
+`OcneanuWeightWenzl`.
