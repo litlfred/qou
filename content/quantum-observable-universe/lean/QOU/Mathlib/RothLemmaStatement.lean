@@ -1,0 +1,174 @@
+/-
+  **The statement of Roth's lemma**, written down so its hypotheses can be checked against
+  named theorems — and the `m = 1` case proved.
+
+  Bean `qou-4lbh`.
+
+  ⚠⚠ `RothLemmaUniform` below is a **`def`, not a theorem.**  Nothing in this repository
+  proves it for `m ≥ 2`.  It is a statement, written so that every hypothesis has to
+  elaborate and so that the base case has something to be an instance *of*.  Do not cite it
+  as though Roth's lemma were formalised.
+
+  ⚠ It is also **not true for every `ω`.**  The growth condition is a genuine hypothesis of
+  Roth's lemma: for `m ≥ 2` and small `ω` the statement is false.  `ω` is left a parameter on
+  purpose — determining `ω(m, ε)` is part of the unfinished work, and baking in a constant I
+  have not verified would hide that.  At `m = 1` the condition is vacuous, which is why
+  `rothLemmaUniform_one` holds for *every* `ω`.
+
+  ═══ THE DESIGN QUESTION THIS SETTLES ═══
+
+  Bean `qou-4lbh` recorded a choice between indexing the variables by `Fin m` (the ordering
+  the growth condition needs comes free) and by `Unit ⊕ τ` (the shape all the separated
+  machinery and the base case are already in).  Each entry argued for one and against the
+  other, and the second overstated its case.
+
+  **Neither is right.**  Keep the variable type `σ` *general* and carry the ordering as an
+  `Equiv σ (Fin m)`.  Then:
+
+  * the growth condition reads off the equiv, so nothing is lost against `Fin m`;
+  * the base case instantiates at `σ = Unit` and `RothBaseCase.lean` applies **with no
+    transport at all** — `rothLemmaUniform_one` below uses none;
+  * the recursion can still split `σ` as `Unit ⊕ τ` for the separated machinery, via
+    `index_rename_equiv`.
+
+  The evidence is that `rothLemmaUniform_one` needed no reindexing lemma.  Under a `Fin m`
+  formulation it would have needed `Fin 1 ≃ Unit` transport for both index and height.
+
+  ═══ ⚠ HOW THIS DIFFERS FROM THE TEXTBOOK STATEMENT ═══
+
+  This is a **uniform-parameter** variant, not verbatim Bombieri–Gubler 6.3.4.  There the
+  conditions are `qⱼ^{dⱼ} ≥ q₁^{d₁}` and `q₁^{ε d₁} ≥ H(P)`, which let the exponent vary with
+  `j`; here a single `E` serves every `j`, via `∀ j, B ≤ qⱼ^E` and `∀ j, E ≤ ε·dⱼ`.  That is a
+  *stronger* hypothesis, so the statement below is *weaker* than the textbook one.  Anyone
+  proving the general case should check whether the uniform form still suffices downstream
+  before adopting it.
+
+  Writing the statement out is also what caught the omission of `degreeOf j P ≤ d j` from an
+  earlier draft — the degree bound is what makes `d` a degree vector rather than an arbitrary
+  weight, and it is easy to forget because the `m = 1` proof does not use it.
+-/
+import QOU.Mathlib.RothBaseCase
+
+namespace MvPolynomial
+
+/-! ### One more piece of the one-variable dictionary -/
+
+/-- `pUnitAlgEquiv` commutes with coefficient maps. -/
+theorem pUnitAlgEquiv_map {R S : Type*} [CommRing R] [CommRing S] (φ : R →+* S)
+    (Q : MvPolynomial Unit R) :
+    pUnitAlgEquiv S (map φ Q) = Polynomial.map φ (pUnitAlgEquiv R Q) := by
+  induction Q using MvPolynomial.induction_on' with
+  | monomial s r => simp
+  | add p q hp hq => simp only [map_add, hp, hq, Polynomial.map_add]
+
+/-- The shape `index_le_of_abs_leadingCoeff_le` expects, recovered from a plain
+`MvPolynomial Unit ℤ`. -/
+theorem symm_map_pUnitAlgEquiv (Q : MvPolynomial Unit ℤ) :
+    (pUnitAlgEquiv ℚ).symm ((pUnitAlgEquiv ℤ Q).map (algebraMap ℤ ℚ))
+      = map (algebraMap ℤ ℚ) Q := by
+  rw [← pUnitAlgEquiv_map (algebraMap ℤ ℚ) Q]
+  exact (pUnitAlgEquiv ℚ).symm_apply_apply _
+
+/-! ### The statement -/
+
+/-- The growth condition on the degree vector, read along a chosen ordering of the variables:
+consecutive degrees drop by at least a factor `ω`. -/
+def RothGrowth {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) : Prop :=
+  ∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → ω * (d (o.symm k) : ℚ) ≤ (d (o.symm j) : ℚ)
+
+/-- **Roth's lemma, uniform-parameter form.**
+
+⚠ A `def`, not a theorem: only `m = 1` is proved (`rothLemmaUniform_one`).  ⚠ False for small
+`ω` when `m ≥ 2`.  ⚠ A uniform-`E` variant of the textbook statement.  See the module header
+for all three.
+
+Read: an integer polynomial of degree at most `dⱼ` in `xⱼ`, of height at most `B`, cannot have
+large index at a rational point `(pⱼ/qⱼ)` whose denominators are large compared to `B`. -/
+def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε : ℚ) : Prop :=
+  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn qd : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
+    (∀ j, d j ≠ 0) →
+    RothGrowth o ω d →
+    P ≠ 0 →
+    (∀ j, degreeOf j P ≤ d j) →
+    (∀ n, |coeff n P| ≤ B) →
+    (∀ j, 2 ≤ qd j) →
+    (∀ j, IsCoprime (pn j) (qd j)) →
+    (∀ j, B ≤ qd j ^ E) →
+    (∀ j, (E : ℚ) ≤ ε * (d j : ℚ)) →
+    index d (fun j => ((pn j : ℚ) / (qd j : ℚ))) (map (algebraMap ℤ ℚ) P)
+      ≤ (((m : ℚ) * ε : ℚ) : WithTop ℚ)
+
+/-- **The `m = 1` case of Roth's lemma**, as an instance of the statement above.
+
+Holds for **every** `ω`, because the growth condition is vacuous when there is only one
+variable — there is no consecutive pair.
+
+⚠ The `degreeOf` hypothesis is not used: at one variable the height bound alone suffices.
+That is why it was easy to omit from a draft of the statement, and why it is worth stating
+that its absence there was an error rather than an economy.
+
+Everything comes from `RothBaseCase.lean`; **no reindexing lemma appears**, which is the
+evidence for the design choice argued in the module header. -/
+theorem rothLemmaUniform_one (ω ε : ℚ) : RothLemmaUniform Unit 1 ω ε := by
+  classical
+  rintro o d pn qd P B E hd - hP - hB hq hco hBq hE
+  have hd0 : d () ≠ 0 := hd ()
+  have hdQ : (0 : ℚ) < (d () : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd0
+  set P' : Polynomial ℤ := pUnitAlgEquiv ℤ P with hP'
+  have hP'0 : P' ≠ 0 := fun h => hP ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
+  have hlead : |P'.leadingCoeff| ≤ qd () ^ E := by
+    have hcoe : P'.leadingCoeff = coeff (Finsupp.single () P'.natDegree) P := by
+      rw [Polynomial.leadingCoeff, hP', coeff_pUnitAlgEquiv]
+    rw [hcoe]
+    exact le_trans (hB _) (hBq ())
+  have hmain := index_le_of_abs_leadingCoeff_le (p := pn ()) (q := qd ()) (hq ()) (hco ())
+    hd0 hP'0 E hlead
+  rw [hP', symm_map_pUnitAlgEquiv] at hmain
+  have hdfun : d = fun _ : Unit => d () := by
+    refine _root_.funext fun u => ?_; cases u; rfl
+  have hafun : (fun j : Unit => ((pn j : ℚ) / (qd j : ℚ)))
+      = fun _ : Unit => ((pn () : ℚ) / (qd () : ℚ)) := by
+    refine _root_.funext fun u => ?_; cases u; rfl
+  rw [hdfun, hafun]
+  refine le_trans hmain ?_
+  rw [WithTop.coe_le_coe, Nat.cast_one, one_mul]
+  have h2 := mul_le_mul_of_nonneg_right (hE ()) (le_of_lt (inv_pos.mpr hdQ))
+  rw [mul_assoc, mul_inv_cancel₀ hdQ.ne', mul_one] at h2
+  rwa [div_eq_mul_inv]
+
+/-! ### The hypotheses are jointly satisfiable
+
+A universally quantified statement can be true because nothing satisfies its hypotheses.  This
+exhibits data that does: one variable, `P = 1`, `d = 1`, `p/q = 1/2`, `B = 1`, `E = 0`, `ε = 1`.
+Every hypothesis holds and the conclusion is a real bound (`index ≤ 1`), not `⊤`. -/
+example :
+    index (fun _ : Unit => 1) (fun _ : Unit => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ))
+        (map (algebraMap ℤ ℚ) (1 : MvPolynomial Unit ℤ))
+      ≤ (((1 : ℕ) : ℚ) * 1 : ℚ) := by
+  refine rothLemmaUniform_one 0 1
+    (⟨fun _ => 0, fun _ => (), fun _ => Subsingleton.elim _ _,
+      fun _ => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
+    (fun _ => 1) (fun _ => 1) (fun _ => 2) 1 1 0 (fun _ => one_ne_zero) ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_ ?_
+  · intro j k hjk; omega
+  · intro j
+    have h : degreeOf j (1 : MvPolynomial Unit ℤ) = 0 := by
+      rw [← C_1]; exact degreeOf_C _ _
+    omega
+  · intro n; rw [coeff_one]; split_ifs <;> simp
+  · intro j; norm_num
+  · intro j; exact isCoprime_one_left
+  · intro j; norm_num
+  · intro j; norm_num
+
+/-! ### Next
+
+⚠ **`m ≥ 2` is entirely open.**  What exists is the machinery the induction step consumes —
+`RothInductionStep` for the separated factorisation, `WronskianHeight` / `WronskianIndex` for
+the Wronskian's height and index, `BoundedOrderWronskian` for non-vanishing, and this module's
+base case to terminate it.  What does not exist is the induction: the choice of `ω(m, ε)`, the
+construction of the separated representation, and the recursion itself.
+
+Now that the statement is written, the audit that has caught five errors in this arc can be
+run against it directly: for each hypothesis, name the theorem that supplies or consumes it. -/
+
+end MvPolynomial

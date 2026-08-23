@@ -1131,3 +1131,7 @@ import QOU.Mathlib.WronskianIndex
 -- height is bounded by the whole's.  Both compositions are one-liners — which is the
 -- point: if the claimed interface were wrong they would not typecheck.
 import QOU.Mathlib.RothInductionStep
+-- The STATEMENT of Roth's lemma (a def, not a theorem — only m = 1 is proved), plus the
+-- m = 1 case.  Settles the indexing question: keep the variable type general and carry
+-- the ordering as an Equiv σ (Fin m), so the base case lands at Unit with no transport.
+import QOU.Mathlib.RothLemmaStatement

@@ -1011,3 +1011,69 @@ method — and it is cheap, three lines of Lean against a paragraph of confident
 (Also recorded: `finSuccEquiv` inside `namespace MvPolynomial` resolves to
 `MvPolynomial.finSuccEquiv`, not the `Fin` one — `_root_.finSuccEquiv` is required. Same
 namespace-shadowing trap as `funext` → `Polynomial.funext` earlier in this arc.)
+
+---
+
+## 2026-08-23 — the statement is written, `m = 1` is proved, and the indexing question is settled
+
+New module `QOU/Mathlib/RothLemmaStatement.lean`. All declarations axiom-clean, seventeen arc
+modules rebuilt with `.olean`s deleted, exit 0, no linter output.
+
+```
+pUnitAlgEquiv_map        pUnitAlgEquiv commutes with coefficient maps
+symm_map_pUnitAlgEquiv   recovers the shape RothBaseCase expects
+RothGrowth               the ω growth condition, read along an ordering equiv
+RothLemmaUniform         ⚠ a def, NOT a theorem
+rothLemmaUniform_one     the m = 1 case — PROVED
+```
+
+### ⚠ Three things that must not be misread
+
+1. **`RothLemmaUniform` is a `def`.** Nothing proves it for `m ≥ 2`. It is a statement, written
+   so every hypothesis has to elaborate and so the base case has something to be an instance
+   *of*. It is not a formalisation of Roth's lemma.
+2. **It is not true for every `ω`.** The growth condition is a real hypothesis: for `m ≥ 2` and
+   small `ω` the statement is false. `ω` is left a parameter deliberately — finding `ω(m, ε)`
+   is part of the unfinished work, and baking in an unverified constant would hide that. At
+   `m = 1` the condition is vacuous, which is why `rothLemmaUniform_one` holds for *every* `ω`.
+3. **It is a uniform-`E` variant**, not verbatim Bombieri–Gubler 6.3.4, where the exponent
+   varies with `j` (`qⱼ^{dⱼ} ≥ q₁^{d₁}`, `q₁^{ε d₁} ≥ H(P)`). A single `E` is a *stronger*
+   hypothesis, so this statement is *weaker*. Whoever proves the general case should check the
+   uniform form still suffices downstream.
+
+### The indexing question, settled
+
+Two earlier entries argued `Fin m` versus `Unit ⊕ τ`, and the second overstated its case
+(corrected the same day). **Neither is right.** Keep the variable type `σ` general and carry
+the ordering as an `Equiv σ (Fin m)`:
+
+* the growth condition reads off the equiv — nothing lost against `Fin m`;
+* the base case instantiates at `σ = Unit`, so `RothBaseCase.lean` applies **with no transport
+  at all**;
+* the recursion can still split `σ` as `Unit ⊕ τ` for the separated machinery, via
+  `index_rename_equiv`.
+
+**The evidence is that `rothLemmaUniform_one` uses no reindexing lemma.** Under `Fin m` it
+would have needed `Fin 1 ≃ Unit` transport for both index and height.
+
+### What writing it down caught
+
+An earlier draft of the statement **omitted `∀ j, degreeOf j P ≤ d j`** — the hypothesis that
+makes `d` a degree vector rather than an arbitrary weight. It was easy to miss because the
+`m = 1` proof does not use it. That is the sixth thing this arc's audit habit has caught, and
+the first caught by writing a statement rather than by checking a claim.
+
+A satisfiability witness is landed with it: one variable, `P = 1`, `d = 1`, `p/q = 1/2`,
+`B = 1`, `E = 0`, `ε = 1`. Every hypothesis holds and the conclusion is a real bound
+(`index ≤ 1`), not `⊤` — so the theorem is not true merely because nothing satisfies it.
+
+### Open
+
+**`m ≥ 2` is entirely open.** What exists is the machinery the step consumes:
+`RothInductionStep` (separated factorisation), `WronskianHeight` / `WronskianIndex`,
+`BoundedOrderWronskian` (non-vanishing), and this module's base case to terminate the
+recursion. What does not exist: the choice of `ω(m, ε)`, the construction of the separated
+representation, and the recursion itself.
+
+With the statement written, the audit that has caught six errors here can now be run against
+it directly — for each hypothesis, name the theorem that supplies or consumes it.
