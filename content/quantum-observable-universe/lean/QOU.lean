@@ -1135,3 +1135,7 @@ import QOU.Mathlib.RothInductionStep
 -- m = 1 case.  Settles the indexing question: keep the variable type general and carry
 -- the ordering as an Equiv σ (Fin m), so the base case lands at Unit with no transport.
 import QOU.Mathlib.RothLemmaStatement
+-- Separated representations: every polynomial in two variable groups is a finite sum
+-- ∑ₖ φₖ(x)·ψₖ(y).  The audit against the statement found this missing — every piece of
+-- the separated machinery TAKES such a representation and nothing produced one.
+import QOU.Mathlib.SeparatedRepresentation

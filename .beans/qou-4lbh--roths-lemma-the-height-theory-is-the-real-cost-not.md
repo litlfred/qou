@@ -1077,3 +1077,65 @@ representation, and the recursion itself.
 
 With the statement written, the audit that has caught six errors here can now be run against
 it directly — for each hypothesis, name the theorem that supplies or consumes it.
+
+---
+
+## 2026-08-23 — the audit against the statement: separated representations were missing
+
+Ran the audit the previous entry called for — matching each hypothesis of `RothLemmaUniform`
+against a named theorem. **Both predicted-empty entries came back empty, and one of them was a
+missing construction rather than a missing constant.**
+
+### The finding
+
+Every piece of the separated machinery — `RothInductionStep`, `SeparatedIndex`,
+`SeparatedHeight`, `det_separated_wronskian` — *takes* a separated representation
+`∑ₖ rename inl (φ k) * rename inr (ψ k)` as **given**. Nothing produced one. Confirmed by grep
+before writing: no `exists_separated…` of any kind in the corpus.
+
+That is easy to miss precisely because the arc kept checking that the pieces *compose*. They
+do — the composition test in `RothInductionStep` passed. But composing lemmas that all take
+the same object as input never reveals that nothing constructs it.
+
+New module `QOU/Mathlib/SeparatedRepresentation.lean`, five declarations, all axiom-clean:
+
+```
+monomial_sumElim_eq / _eq'                a monomial on σ ⊕ τ splits as a product
+exists_separated_representation           crude: one term per monomial of P
+exists_separated_representation_monomial  grouped by x-part: the φ are DISTINCT monomials
+linearIndependent_monomial                distinct monomials are independent
+```
+
+### ⚠ What it does and does not supply
+
+The grouped version gives **linearly independent `φ`** — the half the bounded-order Wronskian
+criterion needs on the `x` side.
+
+⚠ It does **not** give independent `ψ`. Roth's induction wants a *minimal-length*
+representation in which **both** families are independent; extracting one is a rank argument
+and is not here. ⚠ It is also `Finset (σ →₀ ℕ)`-indexed while `det_separated_wronskian` wants
+`Fin r →`; bridging is `Finset.equivFin` and is not written. **This module is not a drop-in
+for the induction step**, and the header says so.
+
+### The other empty entry: `ω(m, ε)`
+
+Nothing supplies or constrains the growth constant, and nothing can until the recursion is
+written — `ω` is whatever the recursion's error terms force it to be. That is the one open
+item that is genuinely mathematical rather than mechanical, and it is why
+`RothLemmaUniform` leaves `ω` a parameter rather than pretending to a value.
+
+### Audit result, in full
+
+| hypothesis of `RothLemmaUniform` | supplied / consumed by |
+|---|---|
+| `d j ≠ 0` | `RothBaseCase.index_le_of_abs_leadingCoeff_le` (needs `d ≠ 0`) |
+| `RothGrowth o ω d` | **nothing** — see above |
+| `P ≠ 0` | base case; and `BoundedOrderWronskian` for non-vanishing |
+| `degreeOf j P ≤ d j` | `MvGenWronskian.degreeOf_mvGenWronskian_le` |
+| `|coeff n P| ≤ B` | `WronskianHeight.abs_coeff_mvGenWronskian_le` |
+| `2 ≤ qd j`, `IsCoprime` | base case |
+| `B ≤ qd j ^ E`, `E ≤ ε·d j` | base case |
+| separated representation | **was nothing** — now this module |
+
+Verification: all **eighteen** arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.
