@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T07:47:46Z
+updated_at: 2026-08-23T08:33:45Z
 ---
 
 ## Why this bean exists
@@ -601,3 +601,42 @@ list of length `n` over `Fin n`, which is therefore a permutation of `finRange`.
 
 With that, `card_involved` transfers to `verdictsFor` and the two-entry lemma
 follows. Then the well-founded reduction, still the last open piece of step 2.
+
+
+## Both halves of the Nodup argument
+
+- `walk_disjoint_of_ne_leader` — **walks from distinct leaders never meet**, so
+  no strand is walked twice. Note the direction wrinkle: the walk runs under
+  `f⁻¹` (a lap applies the first letter first) while leadership is stated for
+  `f`; `Equiv.Perm.sameCycle_inv` reconciles them, a permutation and its inverse
+  having the same cycles.
+- `walk_nodup` — **a component walk does not repeat.** Via
+  `Equiv.Perm.IsCycle.pow_eq_one_iff`: if `s^(b-a)` fixes a point the cycle
+  moves, then `s^(b-a) = 1`, so `orderOf s ∣ (b-a)`, and `b - a < orderOf s`
+  forces `a = b`. Two cases, fixed point and genuine cycle.
+
+69 results, sorry-free, zero warnings, axiom-clean.
+
+## One lemma DROPPED rather than forced
+
+`cycleLen_inv` (`cycleLen f⁻¹ p = cycleLen f p`) is **true and not proved
+here**. `Equiv.Perm.cycleOf_inv` and `orderOf_inv` are exactly the ingredients,
+but every route tried (`rw` both directions, `congr 1`) fails on an instance
+mismatch: `cycleOf` carries a `DecidableRel f.SameCycle` argument, and the
+instance `open scoped Classical` supplies for `f⁻¹.cycleOf p` is not the one
+`cycleOf_inv` produces. Since nothing yet consumes it, it was **removed rather
+than left half-proved or worked around**. It will be needed when the walk (under
+`f⁻¹`) is matched to a lap count stated for `f`; the fix is probably to thread
+one explicit `DecidableRel` instance through this section instead of relying on
+`open scoped Classical` per-declaration.
+
+## Remaining chain to `(verdictsFor w k).length = 2`
+
+1. ✅ disjoint across components — `walk_disjoint_of_ne_leader`
+2. ✅ nodup within a component — `walk_nodup`
+3. ⬜ the concatenated walks are `Nodup` (combine 1 + 2 over `List.flatMap`)
+4. ⬜ a `Nodup` list of length `n` over `Fin n` is a permutation of `finRange n`
+   (`exact?` does not find this in one step; needs a `toFinset`/card route)
+5. ⬜ transfer `card_involved` across that permutation
+
+Then the well-founded reduction.
