@@ -487,3 +487,60 @@ sensible place to learn the pattern before touching q₀.
 They fire on a file that *mixes* regimes; a declaration wholly on the wrong side
 is not mixed. Passing the wall gate means "not mixed", not "on the right side of
 the wall". Recorded at length on `qou-6ome`.
+
+## Drain begun 2026-08-23 — 6 pairs closed, and each needed a different verdict
+
+Six of the §7c pairs are fixed on `claude/n1dj-volume-iso-reading-2026-08-22`.
+Every one was decided by reading the **block's `.md`**, and no two were decided
+the same way — which is the §Option 3 finding demonstrated rather than argued.
+
+| # | pairs | verdict | the tell |
+|---|---|---|---|
+| `QReebFlow` ×2, `QTorsionLeaf` | 3 | **library right**, sibling over-generalised into `R_q` | the sibling's `flow_invariant` docstring said `t ∈ ℝ` while its binder said `t : R_q`; another docstring recorded the divergence with the library outright and left it standing |
+| Möbius energy (`KnotEmbedding`, `ClassicalMobiusEnergy`, `CategoricalMobiusEnergy`) | 3 drifted+crossing | **library right**, and the migration had *deleted content* | four conditions commented out as "(archimedean; not meaningful over `R_q`)" — including Freedman–He–Wang non-negativity, which the structure cites |
+| `CRManifoldData` ×3 | 3 | **neither** — union of both | library had `n_pos`; siblings had `contact_nondeg`, `reeb_preserves_contact`, `C(M, M)` |
+
+Running totals, `main` → this branch:
+
+| | main | branch |
+|---|---|---|
+| drifted | 46 | **42** |
+| across files | 39 | 36 |
+| drifted **and** crossing the wall | 10 | **5** |
+| §7c regime-only | 7 | **4** |
+| faithful mirrors | 94 | 102 |
+
+### The sharpest single piece of evidence
+
+`c-quantum-universe.lean` carried, commented out:
+
+```lean
+  -- n_pos : 0 < n  -- (archimedean; not meaningful over R_q)
+```
+
+`n` is a **natural number** — the CR dimension. `0 < n` says nothing about `R_q`
+in either direction. A §7c sweep deleted an anti-vacuity condition it had
+misread, and left a justification that does not apply to the thing it deleted.
+Quote this one when explaining why the migration cannot be trusted file by file.
+
+### Two method notes for whoever continues
+
+- **Strengthening a library declaration surfaces new mirrors.** Adding
+  `contact_nondeg` and `reeb_preserves_contact` to the library made a *third*
+  `CRManifoldData` mirror (`models-of-qous/instanton.lean`) drift, because it
+  had matched the old weaker version. Fixed in the same change. Expect the count
+  to move both ways during a drain; that is the ratchet working, not a
+  regression.
+- **Check for library consumers before strengthening.** `CRManifoldData` was
+  safe — zero field-access sites, and the one apparent construction
+  (`BraneTower.baseLevel`) is a projection. `SubstrateParameter` is not: 22
+  files, 85 sites, and q₀ downstream. See `qou-6ome`.
+
+### What is left
+
+**42 drifted + 4 regime-only.** The remaining §7c cluster is
+`GBResidueSpectralSum.lean` (2, sibling archimedean / library algebraic —
+the *other* direction), `GaugeTheory.lean` (1), `MotivesArchimedean.lean` (1),
+`Instanton.lean` (1), `BraneTower.lean` (1), and `SubstrateParameter.lean` (2,
+`qou-6ome`, the expensive one). The plain-drift 42 are unclassified beyond the
+§Option 3 breakdown.

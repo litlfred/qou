@@ -379,7 +379,8 @@ the declaration `lake build` just compiled.
 
 Baseline on `main` at 2026-08-23 (bean `qou-u87j`): 147 same-FQN pairs, 94
 faithful mirrors, **46 drifted across 39 files — and all 46 mask a `lean.ref`**.
-PR #5498 takes drift to 44; **lower the baseline to 44 when that lands.**
+PR #5498 takes drift to **42** across 36 files, wall-crossing 10 → 5 and
+regime-only 7 → 4; **lower the baseline to 42 when that lands.**
 
 - **`--baseline 46` fires on growth only** (exit 3). A gate that failed on the
   whole backlog would just teach everyone to pass `--warn-only`; this one stops
