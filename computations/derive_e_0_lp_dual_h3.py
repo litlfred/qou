@@ -96,17 +96,14 @@ GRAM_WITNESS = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
 # it is the same situation the README already documents for
 # `hecke_core_legacy.py`, which was moved BACK OUT for exactly this reason.
 #
-# Until that is resolved, resolve the live path first and fall back to the
-# deprecated copy rather than dying on import. Verified 2026-08-23: the two
-# copies' `nucleon_nf` payloads are identical, so the fallback changes no
-# number — it only lets this script run at all. Without it the producer could
-# not execute, which is why its witness sat frozen at 2026-05-11 carrying a
-# maximally-violated duality certificate for three months. Bean `qou/ftuv`.
+# `_path_bridge.witness_path` now falls back to `_deprecated/` as a LAST
+# resort, so this resolves without a local workaround. Verified 2026-08-23:
+# the live and deprecated copies' `nucleon_nf` payloads are identical, so the
+# fallback changes no number — it only lets this script run at all. Without it
+# the producer could not execute, which is why its witness sat frozen at
+# 2026-05-11 carrying a maximally-violated duality certificate for three
+# months. Bean `qou/ftuv`.
 BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
-if not BETA_DECAY_WITNESS.exists():
-    _dep = HERE / "_deprecated" / "beta-decay-energy-scale.witness.json"
-    if _dep.exists():
-        BETA_DECAY_WITNESS = _dep
 OUT = _pb.witness_path("e-0-lp-dual-h3.witness.json", HERE)
 
 

@@ -1528,3 +1528,114 @@ pytest tools/pyhecke (native installed)   234 passed, 13 skipped, 6 FAILED
       is absent, which is why they have stayed red.
 - [ ] `he4-binding-k-stage2` (158) and `r5-full-canonical-knot-solver` (40)
       are now runnable and unregenerated.
+
+
+---
+
+## Both flagged items fixed (2026-08-23)
+
+### The six native tests: stale pinned constants, not kernel bugs
+
+All six failures traced to literals the tests pinned and then let drift. None
+was a defect in the Rust kernels.
+
+**Five were a stale q_0.** The tests hardcoded `1.1099785955541805`; the
+canonical `pg.q0` is `1.1099785827513808`. They diverge at the 9th significant
+digit (dq ~ 1.3e-8), so the test fed the Rust kernel one q_0 and compared
+against the Python kernel at another, then reported the difference as a
+mismatch:
+
+```
+gram_matrix(stale literal)   max|native - python| = 6.6446e-08   FAIL vs 1e-14
+gram_matrix(canonical q_0)   max|native - python| = 0.0000e+00   exact
+```
+
+The kernels were never wrong. Fixed by sourcing q_0 from `pyhecke.gram`, so a
+test comparing two implementations of a q_0-derived quantity can no longer
+evaluate them at different q_0.
+
+**Two were a stale version pin.** `assert __version__ == "0.4.0"` against a
+crate at `0.9.0` — asserted through five bumps despite the test's own comment
+saying to update it in the same commit. Now read from `Cargo.toml`, which
+checks the *wiring* (`env!("CARGO_PKG_VERSION")` reaching Python) instead of a
+literal, and additionally cross-checks `pyproject.toml`.
+
+**The sixth was the interesting one.** `test_bridge_det_uses_native` pinned
+`det = -0.3608011166161873` to within 1e-10. That is not a drifted value — it
+is **15 orders of magnitude** from the truth. The determinant is *zero*:
+
+```
+numpy.linalg.det(pg.G)             3.998399968397726e-17
+pyhecke_native.gram_determinant    0.0
+bridge.gram_det_from_rust()        3.5985600328525204e-16
+mpmath det of the 50-dps strings  -2.00868433511e-57
+```
+
+**This was the one test in the repo that would have caught the H_3 Gram going
+singular, and it has been failing invisibly** — `test_native.py` skips
+entirely when the `pyhecke_native` wheel is absent, which it usually is. A
+check that cannot run cannot fail, which is this arc's recurring shape, here
+guarding the very fact the arc later had to rediscover from scratch.
+
+Rewritten to assert the property: the bridge must return what the native
+kernel returns (that is what "uses native" means), and that value must be zero
+to f64 resolution, with an explicit "do not re-pin, investigate" if it ever is
+not.
+
+```
+pytest tools/pyhecke   234 passed, 6 FAILED  ->  240 passed, 0 failed
+```
+
+### The deprecated witness with nine live readers
+
+Fixed at the single point that serves all of them rather than per script.
+`_path_bridge.witness_path` builds `_WITNESS_DIRS` by skipping `_`-prefixed
+directories, so a witness moved to `_deprecated/` becomes invisible to the
+resolver and every live reader dies on `FileNotFoundError`. Measured: of the
+nine readers of `beta-decay-energy-scale.witness.json`, `derived_masses.py`
+and `q_beta_predicted.py` failed outright ("Run the beta-decay-energy-scale
+compute first") and `derive_e_0_lp_dual_h3.py` could not run at all.
+
+`witness_path` now falls back to `_deprecated/` as a **last resort**, after
+every live directory. A live copy always wins, so this is not a general
+un-deprecation — it fires only when no live copy exists, which is precisely
+the broken-dependency case. All three scripts run again, and the local
+workaround added to `derive_e_0_lp_dual_h3.py` in the previous commit is
+removed in favour of it.
+
+**Not done, deliberately.** Restoring the witness to the live area would need
+its 57 raw floats drained, and they are drainable — the upstream
+`free-neutron-decay.witness.json` carries `coefficient_symbolic`, an exact
+expression in q, so the NF coefficients can be re-derived at 50 dps rather than
+read from `coefficient_numeric`. But that changes the NF values downstream in
+`derived_masses`, `q_beta_predicted` and others, which is a content change, not
+a plumbing one. The `float64-integrator` tier does not apply either: that
+carve-out is for integrators where "the integrator IS the source", and here
+there is a symbolic source.
+
+Running those scripts as a test also regenerated three unrelated stale
+witnesses (`electron-m_e-derivation`, `meson-mass-from-hecke`,
+`q-beta-predicted` — the last gaining a raw float, 17 -> 18). Reverted: they
+are now runnable after years of not being, but folding three unreviewed
+regenerations into a path-resolver fix is not the same as regenerating them
+deliberately.
+
+### Verification
+
+```
+pytest tools/pyhecke (native installed)   240 passed, 13 skipped, 0 failed
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+## Next
+
+- [ ] **Drain `beta-decay-energy-scale.py` from `coefficient_symbolic`** and
+      restore its witness to the live area. This is the real fix for the
+      deprecation; the resolver fallback only stops the bleeding.
+- [ ] **Three witnesses are stale and now regenerable** —
+      `electron-m_e-derivation`, `meson-mass-from-hecke`, `q-beta-predicted`.
+      Deliberate regeneration + review, not a side effect.
+- [ ] `he4-binding-k-stage2` (158) still computing; `r5-full` (40) runnable.
