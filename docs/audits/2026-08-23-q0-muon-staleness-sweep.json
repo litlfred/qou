@@ -287,17 +287,43 @@
       "verdict": "CRASH",
       "siblings_moved": [],
       "stderr_tail": "hon3.11/dist-packages/scipy/sparse/_base.py\", line 815, in _matmul_dispatch\n    return self._matmul_multivector(other)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py\", line 404, in _matmul_multivector\n    dtype=upcast_char(self.dtype.char, other.dtype.char))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 64, in upcast_char\n    t = upcast(*map(np.dtype, args))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 56, in upcast\n    raise TypeError(f'no supported conversion for types: {args!r}')\nTypeError: no supported conversion for types: (dtype('float64'), dtype('O'))\n"
+    },
+    {
+      "producer": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
+      "witness": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": []
+    },
+    {
+      "producer": "computations/probes/hecke_channel_binding_probe.py",
+      "witness": "computations/hecke-channel-binding.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "q0Anchor",
+        "q0Value"
+      ]
+    },
+    {
+      "producer": "computations/probes/i6_trace_convention_pin.py",
+      "witness": "computations/i6-trace-convention-pin.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "context.facade",
+        "scriptHash"
+      ]
     }
   ],
   "tally": {
-    "TIMEOUT": 3,
+    "TIMEOUT": 4,
     "SUBSTANTIVE/ASSERT-FAIL": 1,
     "UNCHANGED": 4,
-    "SUBSTANTIVE": 8,
+    "SUBSTANTIVE": 10,
     "CRASH": 3
   },
   "partial": true,
-  "measured": 19,
+  "measured": 22,
   "total": 55,
   "environment": {
     "python": "3.11.15",
