@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:39:17.230157+00:00",
-  "commitSha": "f4254e46f3b3afb7a53672d8b3b43344345eb8dc",
+  "computedAt": "2026-08-23T08:39:49.554933+00:00",
+  "commitSha": "cb0e0646ce9f11f8d2a5c3232f28b3a6fcedf935",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "4ef22dbfca2a",
-  "scriptCommitSha": "73d37515df2e5b4a817b91deca7377a403480693",
+  "scriptCommitSha": "fc536436dd02a83baa03f7ef28b405daff5c97c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
       "P15": 291,
       "P16": 643,
       "P21": 25,
-      "P30": 180,
+      "P30": 179,
       "P31": 9
     },
     "top_files": [
@@ -2001,23 +2001,16 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
-        "pattern": "P30",
-        "file": "codata_corpus_literal_scan.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
         "pattern": "P31",
         "file": "codata_corpus_literal_scan.py",
-        "line": 378,
+        "line": 88,
         "snippet": "CODATA literal \"0.51099895\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",
         "file": "codata_corpus_literal_scan.py",
-        "line": 272,
+        "line": 167,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -6875,28 +6868,28 @@
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 127,
+        "line": 132,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 128,
+        "line": 133,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 129,
+        "line": 134,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 142,
+        "line": 147,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },

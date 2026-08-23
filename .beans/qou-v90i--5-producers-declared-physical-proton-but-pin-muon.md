@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T20:50:22Z
+updated_at: 2026-08-22T21:23:24Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -180,3 +180,31 @@ audit keys on `muon`-stamped witnesses, which these are not.
 wrote the sweep; it reported progress toward 254; for the direct-reader class
 that progress was partly fictitious. Recording it as mine, not as a critique of
 someone else's mechanism.
+
+
+## 3 of 5 FIXED (2026-08-22, PR #5494)
+
+`path4_rho_K_at_h3A` and `q_beta_form_a_n1_extension` re-pointed to
+`q_parameter.Q_MP`. **Neither was dual-purpose** — that classification came from
+a substring-matching bug in my own detector (21 -> 3 when measured by dict-key
+use). Both were single-read fixes like `b_over_m_order_probe`.
+
+Full `precision-gates.sh`: all blocking gates green. Contradictions **4 -> 2**;
+census 639 -> 637. float64 at the baselined counts (7 and 12), 3 assertions
+still pass on q_beta_form_a.
+
+**The drift audit only registered 1 of the 2**, and the reason is the finding
+again: `q0_value_drift_audit` scans `q0Value` (the **stamp**) and not
+`q_pinned` (the **data**). A witness stamped proton with muon data counts as
+`proton-pin`, so that audit structurally cannot see a contradiction and its
+`canonical` count understates the muon population.
+
+### Remaining 2 — neither mechanical
+
+- `q1_mass_gap_probe`: genuinely dual-purpose (one of the real 3) — reads
+  `plancherel_weights_n3` + `two_q` as a reference table AND binds q₀.
+- `aK_via_lp_dual_hecke_basis`: registers the pin witness as a **declared
+  upstream** (`record_upstream` -> `add_upstream_records`). Re-pointing to
+  `Q_MP` swaps a file-hash-backed provenance record for a package constant — a
+  provenance-architecture call, on a producer with no stated pin intent. Not
+  mine to make unilaterally.

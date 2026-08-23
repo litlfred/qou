@@ -16,16 +16,18 @@ The hypotheses are left in place upstream on purpose — removing them would chu
 and the class form is what lets instance resolution fill them at use sites downstream of the
 instance. What this file adds is a checked record of *which* results are now unconditional.
 
-## Stale docstrings this exposes (not edited here)
+## Stale docstrings this exposed — both now corrected (2026-08-23)
 
-Two upstream comments describe the state of the world before the instance existed:
+Two upstream comments described the state of the world before the instance existed. This section
+originally flagged them rather than rewriting them, on the grounds that they were someone else's
+files. Both have since been corrected in place:
 
-* `BurnsideDischarge` says `OVTopAssembly.sum_numSYT_sq_eq_factorial` "carries the residual
+* `BurnsideDischarge` said `OVTopAssembly.sum_numSYT_sq_eq_factorial` "carries the residual
   `sorryAx`". It does not — it carries a class hypothesis, and the class is now inhabited.
-* `RSKBurnsideDischarge` says of its class-conditional result "It is now a theorem". That overclaims
-  a conditional proof; the unconditional one is `QOU.Mathlib.rskBurnsideHolds`.
+* `RSKBurnsideDischarge` said of its class-conditional result "It is now a theorem". That
+  overclaimed a conditional proof; the unconditional one is `QOU.Mathlib.rskBurnsideHolds`.
 
-Both are someone else's files and are flagged rather than rewritten.
+The flags are kept as a record of what was wrong and when.
 -/
 
 namespace QOU.BraidKnot.WedderburnUnconditional
@@ -57,6 +59,18 @@ theorem burnside_proved (n : ℕ) (partitions : List (Partition n))
     (hnodup : (partitions.map Partition.parts).Nodup) :
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n :=
   BurnsideDischarge.burnside_proved n partitions hcomplete hnodup
+
+/-- **The (TAIL) first instance, with no hypothesis** — `ν_n = n(n−2)(n−3)·C(2n−4, n−2)/(3·n!)`.
+
+`PlancherelNormalisation.nuV_top_closed_form_unconditional` is "unconditional" in the sense that it
+discharges `nuV_top_closed_form`'s named normalisation premise; it still carries the class. Here
+that is gone too. The `r + 2 ≤ 20` bound is a separate, genuine cap of the tail machinery and is
+**not** discharged by the instance. -/
+theorem nuV_top_closed_form (r : ℕ) (hr : 1 ≤ r) (hk' : r + 2 ≤ 20) :
+    QOU.BraidsAndKnots.YoungDiagramKernelPincer.nuV (r + 2) (r + 2)
+      = ((r : ℝ) + 2) * (r : ℝ) * ((r : ℝ) - 1) * (((2 * r).choose r : ℕ) : ℝ)
+          / (3 * (Nat.factorial (r + 2) : ℝ)) :=
+  QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional r hr hk'
 
 /-- **The Plancherel tilt normalisation at zero, with no hypothesis.** -/
 theorem tiltNorm_zero_eq_factorial (k : ℕ) :
