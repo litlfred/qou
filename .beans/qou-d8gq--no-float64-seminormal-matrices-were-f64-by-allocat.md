@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-16T13:45:22Z
-updated_at: 2026-08-16T13:45:22Z
+updated_at: 2026-08-23T22:45:35Z
 ---
 
 ## The defect
@@ -84,3 +84,64 @@ later receive mpf. `computations/f64_into_mpmath_audit.py` DOES name this shape
 in prose — "`BlockCache(float(Q0), float(HA_VAL))` seeds a cache with doubles"
 — but it is **not wired into `scripts/precision-gates.sh`**, so nothing ran it.
 Two separate gaps, both worth their own item.
+
+
+---
+
+## A category the scan misses entirely, not a sampling gap — measured at ~10⁴×
+
+This bean records that the regexes UNDERCOUNT by ~30% against an AST reference,
+chiefly multi-line allocations. Found 2026-08-23: there is also a shape the
+scan cannot see **at all**, and it is the most expensive instance yet measured.
+
+    computations/mass_at_3A_proper.py:551
+        for (c, d, g) in word:
+            M = c * sigmas[g] + d * I        # c, d are mpf; sigmas[g] is f64
+            product = product @ M            # -> object dtype, no longer BLAS
+
+Two independent reasons it is invisible to the main scan:
+
+1. **`mp_vars` requires a LOCAL ASSIGNMENT from an mpmath expression.** `c` and
+   `d` arrive by TUPLE UNPACKING FROM A FUNCTION PARAMETER (`word`), so they
+   are never assigned from an mpmath call and never enter `mp_vars`. The
+   ADVISORY param-fill section covers a parameter reaching a SUBSCRIPT fill
+   (`M[i, i] = q0`); this is a parameter reaching a MULTIPLICATION.
+2. With `c`/`d` untracked, the `np_tok`/`mp_tok` co-occurrence test has nothing
+   to match on, so the line never reaches the arithmetic check.
+
+### What it cost
+
+`chi_lambda_of_word` is float64 end to end — `sigmas` are f64 ndarrays or
+scipy CSR, `product`/`I` are `np.eye`, and every return is
+`float(np.trace(...))`. The mpf bought nothing and cost:
+
+    3He  shape (5,1,1,1,1)  dim=70   18,859.58 ms  ->  332.45 ms   57x
+    chi identical to the last bit (|delta| = 0.000e+00)
+
+and above the dim-500 sparse threshold it was not slow but FATAL —
+`ValueError: scipy.sparse does not support dtype object`. The 4He partition
+(8,3,1) dim=891 that raised it now returns in 0.03 s. A separate 420 s
+profiling run of the same path segfaulted.
+
+Blast radius: this is why `paper_six_term_isotope_sweep` could not complete. A
+2900 s run exited 124 still inside 4He mode 1 of 8, with 100% of sampled stack
+time on that one line. Extrapolated, 4He alone (77 partitions, max dim 7700,
+sum dim^3 = 2.11e12) was ~16 YEARS.
+
+Fixed at the numpy boundary in `03569d001`, which is what efcaf79ed's own
+comment prescribes: *"Consumers needing f64 (the numpy validation paths) cast
+at their own boundary."*
+
+### Candidate extension, not implemented
+
+A THIRD advisory section, in the same spirit as the existing param-fill one and
+carrying the same "NOT a defect list" caveat: **a scalar of unknown provenance
+multiplying a tracked numpy array.** It cannot distinguish an mpf parameter
+from a plain float parameter, so it must be advisory — but the param-fill
+section already accepts exactly that trade, and the shape it would catch is
+worth four orders of magnitude.
+
+Cheaper and possibly better alternative worth weighing first: a RUNTIME assert.
+Any function whose return is `float(...)` could check `product.dtype != object`
+once per call, which is exact rather than approximate, costs nothing, and needs
+no regex at all.
