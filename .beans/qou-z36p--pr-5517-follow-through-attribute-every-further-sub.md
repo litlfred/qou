@@ -1,11 +1,11 @@
 ---
 # qou-z36p
 title: 'PR #5517 follow-through: attribute every further sublemma-2-1 witness move to the PR or to pre-existing staleness'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T13:22:15Z
-updated_at: 2026-08-23T16:14:26Z
+updated_at: 2026-08-23T16:54:03Z
 ---
 
 Continues the stalled #5517 session (container reclaimed; the diagnostics were
