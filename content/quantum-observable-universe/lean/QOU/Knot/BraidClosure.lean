@@ -598,4 +598,52 @@ should be, which is the arithmetic the global ordering will rest on. -/
   simp [walkVerdicts, List.length_flatMap, walk, lapVerdicts_length,
         Function.comp_def, List.map_const', List.sum_replicate]
 
+/-! ### Ordering the components
+
+The reference engine takes components "in increasing order of their smallest
+starting position", implemented with a mutable `seen_start` set. That set has a
+**stateless** characterisation: a position starts a component exactly when it is
+the least position in its cycle. Modelling it that way removes the state
+entirely — the traversal becomes a filter over `Fin n` in the natural order,
+which is both closer to a specification and far easier to reason about than a
+fold carrying a visited-set. -/
+
+open scoped Classical in
+/-- `p` starts a component: it is the least position in its own cycle. -/
+def IsLeader (f : Equiv.Perm (Fin n)) (p : Fin n) : Prop :=
+  ∀ q, f.SameCycle p q → p ≤ q
+
+open scoped Classical in
+/-- **Every position has a leader in its own cycle** — so every component is
+reached by the traversal, none is skipped. The least element of a nonempty
+finite set. -/
+theorem exists_leader (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    ∃ q, IsLeader f q ∧ f.SameCycle q p := by
+  classical
+  let S : Finset (Fin n) := Finset.univ.filter (fun q => f.SameCycle q p)
+  have hpS : p ∈ S :=
+    Finset.mem_filter.mpr ⟨Finset.mem_univ p, Equiv.Perm.SameCycle.refl f p⟩
+  have hne : S.Nonempty := ⟨p, hpS⟩
+  have hmin_sc : f.SameCycle (S.min' hne) p :=
+    (Finset.mem_filter.mp (S.min'_mem hne)).2
+  refine ⟨S.min' hne, ?_, hmin_sc⟩
+  intro r hr
+  exact S.min'_le r
+    (Finset.mem_filter.mpr ⟨Finset.mem_univ r, hr.symm.trans hmin_sc⟩)
+
+open scoped Classical in
+/-- **Uniqueness**: a cycle has exactly one leader, so no component is walked
+twice. Together with `exists_leader` this is what the mutable `seen_start` set
+was doing. -/
+theorem leader_unique (f : Equiv.Perm (Fin n)) {p q : Fin n}
+    (hp : IsLeader f p) (hq : IsLeader f q) (h : f.SameCycle p q) : p = q :=
+  le_antisymm (hp q h) (hq p h.symm)
+
+open scoped Classical in
+/-- The full traversal: every component, in increasing order of its least
+position, each walked once. -/
+noncomputable def traversalVerdicts (w : BraidWord n) : List (Option Bool) :=
+  ((List.finRange n).filter (fun p => decide (IsLeader (closurePerm w) p))).flatMap
+    (fun p => walkVerdicts w p (cycleLen (closurePerm w) p))
+
 end QOU.Knot.BraidClosure
