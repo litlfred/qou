@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:23:32.324307+00:00",
-  "commitSha": "de48ab178411871a0b6297d5b719aa51ce7a11f8",
+  "computedAt": "2026-08-23T19:46:04.305651+00:00",
+  "commitSha": "de21861068134deceb1da50a10b6451d2890e7a8",
   "assertions": [
     {
       "name": "no_declared_producer_reaches_a_contradicting_pin_literal",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3885,
+  "durationMs": 3782,
   "computation": "q0-hardcoded-pin-audit",
   "scriptFile": "q0_hardcoded_pin_audit.py",
   "scriptHash": "623aa9ef8c2c",
-  "scriptCommitSha": "83a5e50e595fa48b8714371f81feb02b4fe29e83",
+  "scriptCommitSha": "6ab20c1e116635f3d97184d7f5da16da4311d426",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
