@@ -855,12 +855,40 @@ identification on the substrate branch, not a numerical coincidence at `q₀`.
 (iii) The Laurent shape of `tr ρ(w)` is imported from Geck–Pfeiffer as the
 shape of the hypothesis.
 
-**Still open, and unchanged by either pass:** no D-frame ladder is stated, `α`
-is derived in neither convention, and branch (3) — a holonomy of an
-independently-defined KZ / Kohno–Drinfeld connection — is untouched. With
-branch (1) now closed **in full** (character *and* eigenvalue-pair) and branch
-(2) circular, branch (3) is the **only** place a derivation of `α` can live.
-`c₃ ≈ −974` remains a sensitivity measurement, wired nowhere.
+**Still open, and unchanged by either pass:** no D-frame ladder is stated, and
+`α` is derived in neither convention. With branch (1) now closed **in full**
+(character *and* eigenvalue-pair) and branch (2) circular, branch (3) — a
+holonomy of an independently-defined KZ / Kohno–Drinfeld connection — is the
+only branch where a derivation of `α` can still live. `c₃ ≈ −974` remains a
+sensitivity measurement, wired nowhere.
+
+> **🛑 CORRECTION 2026-08-23 — "branch (3) is untouched" is FALSE, and this
+> section said it.** The 2026-08-15 pass wrote *"branch (3) is untouched"* and
+> the 2026-08-23 pass repeated it. Both are wrong, and the first was already
+> wrong when written: `.beans/qou-pdix` and
+> [`qbeta_eigenphase_holonomy_consistency_probe.py`](../../computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py)
+> (16 assertions) landed on `main` at **08:11 UTC**, the claim at **09:56 UTC**.
+> Branch (3) carries ~a dozen dated bean entries and **four refuted sub-routes**:
+> `α = c·ln q` (fails at `t³`); `α` as a quarter of `σ₁`'s half-monodromy
+> log-gap (ratio not constant, `iπ` dominates ~15×); unitary holonomy
+> (structurally blocked — `σ₁`'s phase content is `{0, π}`, `q`-independent);
+> modular/`cosh` resummation (required factor `< 1`, `cosh ≥ 1`).
+>
+> **Un-attempted is narrower than "branch 3":** construct a KZ connection on
+> `Conf_n` whose monodromy is the `H₃(q)` braiding on `V_(2,1)` and compute its
+> holonomy angle. Kohno–Drinfeld fixes `ħ = 2 ln q`, so the scale is not free.
+> A gating question sits ahead of it (`qou-pdix`, unresolved): the
+> single-wrap-vs-typed NF ambiguity is **0.579 %** while the factor branch 3
+> must derive is a **0.160 %** correction — 3.6× smaller than the convention
+> ambiguity in the object it corrects.
+>
+> **A tension worth naming.** `α = (z−1)h/2` at `q = 1+t` has `t¹` coefficient
+> `z(1)−1` and `t²` coefficient `1/4 + z′(1)` (re-verified independently). So
+> `α` is holonomy-shaped through `t²` exactly when `z′(1) = 0` — **true for
+> `z_C` (`1/4`), false for `z_D` (`5/4`)**. An independent structural signal
+> pointing at C, alongside a field-membership argument excluding C. The two are
+> about different things (`q → 1` jet vs membership in `ℚ(q)`) and do not
+> contradict, but branch 3 has to face both.
 
 Exact companion to the 2026-08-23 pass, 4/4, sympy-exact over `ℚ(s)` plus
 mpmath at 60 dps, no float64:
