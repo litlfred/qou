@@ -11459,7 +11459,7 @@ word this loop touches extends `[σᵢ₋₂]`. -/
 theorem vLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
-    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i.val) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms
         [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)])
@@ -11611,7 +11611,9 @@ theorem openingLoops (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp 
     ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂)).step
       (s2 hn hp h₁ h₂ hj₁i₂)
   have hU := uLoop hn hp h₁ h₂ hjpp hj₁ hj₂ htop
-  have hV := vLoop hn hp h₁ h₂ hjpp hj₁ hj₂ htop
+  -- `vLoop` asks only `jppp ≤ i`, which `jppp ≤ i₁ < i` gives. The distinction
+  -- is not cosmetic: at `a = 3` the FIRST holds and the second does not.
+  have hV := vLoop hn hp h₁ h₂ hjpp hj₁ hj₂ (by omega)
   rw [T0, TL] at *
   rw [T2] at hsetup
   exact (hsetup.trans hU).trans hV
