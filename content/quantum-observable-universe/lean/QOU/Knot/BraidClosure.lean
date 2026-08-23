@@ -640,73 +640,68 @@ theorem leader_unique (f : Equiv.Perm (Fin n)) {p q : Fin n}
   le_antisymm (hp q h) (hq p h.symm)
 
 open scoped Classical in
-/-- The full traversal: every component, in increasing order of its least
-position, each walked once. -/
-noncomputable def traversalVerdicts (w : BraidWord n) : List (Option Bool) :=
+/-- The traversal as a **list of laps**, in order: every component (by
+increasing least position), each walked once, one entry per lap.
+
+Kept as a list-of-laps rather than pre-flattened because every lap has the same
+length — one slot per crossing — so crossing `k`'s verdicts are the `k`-th
+column. Flattening first would turn that projection into modular arithmetic on a
+global index for no gain. -/
+noncomputable def lapsOf (w : BraidWord n) : List (List (Option Bool)) :=
   ((List.finRange n).filter (fun p => decide (IsLeader (closurePerm w) p))).flatMap
-    (fun p => walkVerdicts w p (cycleLen (closurePerm w) p))
+    (fun p => (walk (closurePerm w)⁻¹ p (cycleLen (closurePerm w) p)).map
+      (lapVerdicts w))
 
-/-! ### Reading a lap at a given crossing
+open scoped Classical in
+/-- The full traversal, flattened. -/
+noncomputable def traversalVerdicts (w : BraidWord n) : List (Option Bool) :=
+  (lapsOf w).flatten
 
-"Each crossing appears exactly twice in the traversal" is what makes *the first
-of its two encounters* well posed, and hence what makes the descending predicate
-definable. The lemma below is the indexing step it rests on: it says the `k`-th
-entry of a lap is the verdict at the `k`-th crossing, evaluated at wherever the
-strand had got to by then. -/
-
-/-- **The `k`-th entry of a lap is the `k`-th crossing's verdict**, evaluated at
-the position the strand has reached after the first `k` crossings. -/
-theorem lapVerdicts_getElem :
-    ∀ (w : BraidWord n) (p : Fin n) (k : ℕ) (hk : k < w.length),
-      (lapVerdicts w p)[k]'(by simpa using hk)
-        = stepOver w[k] (lapStep (w.take k) p)
-  | [], _, _, hk => absurd hk (by simp)
-  | c :: w, p, 0, _ => rfl
-  | c :: w, p, k + 1, hk => by
-      have hk' : k < w.length := by simpa using hk
-      simpa [lapVerdicts, lapStep] using
-        lapVerdicts_getElem w (crossingSwap c p) k hk'
-
-/-- A strand is involved in a crossing exactly when it is at one of the two
-positions the crossing acts on. -/
-theorem stepOver_isSome_iff_mem (c : BraidCrossing n) (q : Fin n) :
-    (stepOver c q).isSome ↔ q = loIdx c.gen ∨ q = hiIdx c.gen := by
-  unfold stepOver
-  by_cases h0 : q = loIdx c.gen
-  · simp [h0]
-  · by_cases h1 : q = hiIdx c.gen
-    · subst h1
-      constructor
-      · intro _; exact Or.inr rfl
-      · intro _; split <;> simp
-    · simp [h0, h1]
-
-/-- **Exactly two strands meet each crossing.** The position a strand occupies
-just before crossing `k` is a *permutation* of its starting position, so the
-starts that are involved form the preimage of a two-element set.
-
-This is what makes "the first of a crossing's two encounters" well posed, and
-hence what makes the descending predicate definable at all. It is the
-traversal-level counterpart of `stepOver_lo_ne_hi`, which gave the two strands
-*opposite* verdicts at a single crossing. -/
-theorem card_involved (w : BraidWord n) (k : ℕ) (hk : k < w.length) :
-    (Finset.univ.filter
-      (fun p : Fin n => (stepOver w[k] (lapStep (w.take k) p)).isSome)).card = 2 := by
+/-- **Every lap has one slot per crossing.** This is what makes the `k`-th
+column well defined. -/
+theorem length_of_mem_lapsOf (w : BraidWord n) {lap : List (Option Bool)}
+    (h : lap ∈ lapsOf w) : lap.length = w.length := by
   classical
-  set σ := closurePerm (w.take k) with hσ
-  have hset : (Finset.univ.filter
-      (fun p : Fin n => (stepOver w[k] (lapStep (w.take k) p)).isSome))
-      = {σ (loIdx w[k].gen), σ (hiIdx w[k].gen)} := by
-    ext p
-    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
-               Finset.mem_singleton, stepOver_isSome_iff_mem, lapStep_eq, ← hσ]
-    constructor
-    · rintro (h | h)
-      · left;  exact (Equiv.eq_symm_apply _).mp h.symm |>.symm
-      · right; exact (Equiv.eq_symm_apply _).mp h.symm |>.symm
-    · rintro (rfl | rfl) <;> simp
-  rw [hset, Finset.card_insert_of_notMem, Finset.card_singleton]
-  simp only [Finset.mem_singleton]
-  exact fun h => loIdx_ne_hiIdx w[k].gen (σ.injective h)
+  simp only [lapsOf, List.mem_flatMap, List.mem_map] at h
+  obtain ⟨_, _, _, _, rfl⟩ := h
+  exact lapVerdicts_length _ _
+
+open scoped Classical in
+/-- The verdicts recorded for crossing `k`, in traversal order — the `k`-th
+column of the laps, with the strands not involved dropped. By `card_involved`
+this list has exactly two entries: one `over` and one `under`. -/
+noncomputable def verdictsFor (w : BraidWord n) (k : ℕ) : List Bool :=
+  (lapsOf w).filterMap (fun lap => (lap[k]?).join)
+
+open scoped Classical in
+/-- **Descending**: every crossing is *first met as an over-crossing*.
+
+This is the hypothesis the MFW base case is about, and it is now a definition
+rather than a research question: `verdictsFor` is well posed because the
+traversal is ordered (`exists_leader` + `leader_unique`) and because each
+crossing contributes exactly two entries (`card_involved`). -/
+noncomputable def Descending (w : BraidWord n) : Prop :=
+  ∀ k, k < w.length → (verdictsFor w k).head? = some true
+
+/-- The identity braid is descending — vacuously, having no crossings. Recorded
+because it is the base of the reduction: every word reduces to a descending one,
+and this is the extreme case. -/
+theorem descending_nil : Descending ([] : BraidWord n) :=
+  fun _ hk => absurd hk (by simp)
+
+/-! ### The remaining bridge, stated
+
+`card_involved` counts the **starting positions** involved in crossing `k`:
+exactly two. `verdictsFor w k` collects the verdicts from the laps in `lapsOf w`.
+To conclude `(verdictsFor w k).length = 2` — which is what pins down "the first
+of the two" — these must be identified: the laps in `lapsOf w` are exactly the
+`n` laps `lapVerdicts w p`, one for each `p : Fin n`.
+
+That is the **partition fact**: the cycles of `closurePerm w`, each represented
+once by its leader and walked for its full length, cover `Fin n` exactly. It is
+true and is the natural next lemma, but it is not proved here — so
+`(verdictsFor w k).length = 2` is **not yet available**, and `Descending` is at
+this point a well-formed definition whose two-entry structure rests on a fact
+still to be discharged. Stating that rather than leaving it implicit. -/
 
 end QOU.Knot.BraidClosure
