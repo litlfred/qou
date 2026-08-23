@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T16:53:15Z
+updated_at: 2026-08-23T15:45:00Z
 ---
 
 Parent: `qou-cdx1`. Successor to the `qou-eea0` cascade, which drained the bulk.
@@ -440,3 +440,19 @@ convention. (Gate 1's hazard was real for `qou-j6il`'s binary, which supplied a
 
 Nothing hand-edited; every value from a producer run. Snapshotted before each
 run; one producer at a time throughout.
+
+---
+
+## Closure re-verified 2026-08-23 against a different detector (`qou-z11r`)
+
+A sibling census (`qou-z11r`, 58 witnesses carrying the z_C literal
+`0.4993203340…`) raised the question of whether this bean closed at 14
+prematurely. It did not — the two count different things: this bean used
+`scripts/convention-c-witness-audit.py`'s **structural** test (dead-block
+entries), `z11r` greps the **committed z value**.
+
+Checked directly: of the 14 listed here, **11 survive and all 11 are clean of
+the z_C literal**; 3 no longer exist under those names
+(`chi-helium-4-h12-numeric`, `chi-neutron-h3-at-q0-50dps-matrix-m`,
+`chi-proton-h3-at-q0-50dps-matrix-m`). So the regeneration holds on the
+independent metric too. Full reconciliation in `qou-k3wq`.

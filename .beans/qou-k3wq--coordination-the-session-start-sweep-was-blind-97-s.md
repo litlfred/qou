@@ -4,7 +4,7 @@ title: 'Coordination: the session-start sweep was blind to sibling branches — 
 status: todo
 type: task
 created_at: 2026-08-23T14:50:00Z
-updated_at: 2026-08-23T14:50:00Z
+updated_at: 2026-08-23T15:45:00Z
 ---
 
 Consequence of `qou-i5jy` finding #6. `scripts/session-start-coord-sweep.sh` read
@@ -106,3 +106,58 @@ Enumerated with `git for-each-ref … refs/remotes/origin/claude` filtered to
 which is the whole point: the default `+refs/heads/main:refs/remotes/origin/main`
 makes this list empty and the emptiness invisible. Buckets assigned on commit
 subjects and changed paths only. 97 = 31 + 28 + 38 + **0 unevaluated**.
+
+---
+
+## RESOLVED 2026-08-23 — the `qou-cdh3` (14) vs `qou-z11r` (58) discrepancy was not a discrepancy
+
+Item 3 above asked to reconcile before acting. Done, and there is nothing to
+act on: **the two counts measure different things and both are correct.**
+
+| bean | count | what it counts |
+|---|---|---|
+| `qou-cdh3` | **14** | `scripts/convention-c-witness-audit.py` **structural** test — dead-block entries under the two-row cap, plus 1 symbolic |
+| `qou-z11r` | **58** | witnesses whose committed payload carries the **z_C literal** `0.4993203340…` |
+
+Different detectors over different populations. `cdh3` never claimed to be a
+z-literal census, and `z11r` says explicitly it is testing the answer, not the
+source.
+
+### `qou-cdh3`'s completion holds — verified independently
+
+Of its 14 files, 11 survive and **all 11 are clean of the z_C literal today**;
+3 no longer exist under those names. So the bean's `completed` status is sound
+on `z11r`'s metric as well as its own.
+
+### The counts reconcile exactly, to the single file
+
+Same pathspec, `_deprecated/` excluded, z_C literal:
+
+```
+my branch                    58
+z11r's branch                57
+difference                    1  computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json
+```
+
+That one file is **precisely the witness `qou-z11r` records as its single
+end-to-end confirmation** (*"re-running main's unmodified source reproduces the
+same C→D move … Refreshed in #5510"*). They refreshed it on their branch; it has
+not reached main, so my branch still carries the pre-refresh copy. 57 + 1 = the
+58 their bean states. Nothing is missing and nothing has regressed.
+
+`_deprecated/` accounts for the rest of the apparent gap: 93 witnesses carry z_C
+including deprecated, 59 excluding — and excluding is the right frame, which is
+what `z11r` used.
+
+### Correction to my own measurement, made mid-check
+
+I first reported **108 on main vs 93 on my branch** and read it as main having
+gained z_C carriers — a regression. **That was a measurement artifact**, not a
+finding: I passed `qou-mass/` pathspecs that matched inconsistently across the
+two revisions. Re-run with an identical pathspec the figures are **main 90 /
+HEAD 91** — no regression, and my branch's single extra is the file above.
+
+Same class as the `git log -- 'computations/**/*.witness.json'` error recorded
+earlier in this campaign: a git pathspec that silently matches differently than
+intended, producing a difference that looks like a corpus movement. **Compare
+counts only under a pathspec proven identical on both revisions.**
