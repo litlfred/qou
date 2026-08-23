@@ -2,7 +2,7 @@
  "computation": "he4-stage2-ranking-seminormal-xcheck",
  "description": "Fast seminormal-f64 dominant-channel ranking for the A=4 stage-2 binding operator K(\u2074He) = T\u00b7cp\u207b\u00b9 at H12(q0); companion cross-check to the full he4_binding_k_stage2_probe (both Wedderburn legs). Confirms whether the committed GP-legged \u03bb*(K)=(9,3) survives the seminormal engine (GP kernel bug: docs/audits/2026-07-14-gp-kernel-bug-and-he4-stage2.md).",
  "audit_only": true,
- "computedAt": "2026-08-23T21:49:06.277514+00:00",
+ "computedAt": "2026-08-23T22:07:52.305969+00:00",
  "engine": "pyhecke_native seminormal-f64 (chi_lambda_all_partitions_f64); GP path NOT used. tr_M(K) is f64-precision; 50-dps authoritative value from he4-binding-k-stage2.witness.json.",
  "q_pin": {
   "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
@@ -113,7 +113,7 @@
    "y_chi_abs": 0.0
   }
  ],
- "elapsed_sec": 53.4,
+ "elapsed_sec": 143.1,
  "scope": "(a) \u2014 ranking cross-check only; no PSD certificate (see the full probe); no AME input; no fit; nothing wired.",
  "assertions": [
   {
@@ -125,5 +125,12 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptFile": "he4_stage2_ranking_seminormal_xcheck.py",
+ "scriptHash": "225af1376dca",
+ "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+ "commitSha": "9a5d18462c6eeefd66bed323398e4659affea07b",
+ "durationMs": 0,
+ "q0Anchor": "muon",
+ "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

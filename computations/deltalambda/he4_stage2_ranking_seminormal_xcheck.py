@@ -187,6 +187,25 @@ def main() -> int:
         ],
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
+    # Provenance envelope. This producer writes its witness as raw JSON, so
+    # nothing stamps `scriptHash` / `commitSha` / `computedAt` on it. That is
+    # not cosmetic: a witness without `scriptHash` cannot be compared against
+    # its producer, so it DROPS OUT of the self-staleness audit entirely and
+    # reads as "not stale" forever. Regenerating one therefore looks like
+    # progress while removing it from the count — a false drain. Measured
+    # 2026-08-23: four such witnesses across one regeneration sweep, and 29
+    # raw-JSON producers repo-wide that would do the same.
+    #
+    # `stamp_staleness_metadata` rather than `wrap_legacy().save()` on purpose:
+    # it adds the fields in place and leaves the on-disk shape untouched, so no
+    # consumer of this witness's legacy `assertions` records (which key on
+    # `label`, not `name`) has to change. `engine` is passed back from the
+    # payload because the helper overwrites that field, and this producer
+    # writes a descriptive engine string worth keeping.
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        wit, script_path=__file__,
+        engine=wit.get("engine", 'pyhecke_native'))
     out = HERE / "he4-stage2-ranking-seminormal-xcheck.witness.json"
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"],

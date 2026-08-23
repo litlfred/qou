@@ -1374,6 +1374,21 @@ class WitnessBuilder:
         ``_git_file_sha`` helpers from outside this module.
         """
         spath = str(script_path)
+        # `scriptFile` is the PRODUCER-LOOKUP KEY — `witness_provenance_audit`
+        # keys on it, and the drift tool resolves a witness back to its
+        # producer through it (filename grep resolves only about a third,
+        # because the literal filename rarely appears in the source). `build()`
+        # sets it on every WitnessBuilder-written witness (see the `_build`
+        # envelope below); this helper did not, so a raw-JSON producer that
+        # adopted it got `scriptHash` without a way to say WHOSE hash it is,
+        # and stayed unresolvable. Measured 2026-08-23: two witnesses stamped
+        # through this path came out with `scriptFile: None`.
+        #
+        # Set only when absent, so an explicit declaration wins — the same rule
+        # `q0Anchor` follows at the end of this function, and for the same
+        # reason: some committed witnesses carry a PATH-QUALIFIED `scriptFile`
+        # that a bare `.name` would silently downgrade.
+        payload.setdefault("scriptFile", Path(spath).name)
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()

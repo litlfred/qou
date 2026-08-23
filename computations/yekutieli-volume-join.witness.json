@@ -170,5 +170,14 @@
       "m_MeV": "381.4188186586816553999362294040082276529301148819002901461836068196658",
       "rel_err_vs_codata_mavg": "-0.593768024487015883536316396489037813279444984050110523252215799482473"
     }
-  }
+  },
+  "scriptFile": "yekutieli_volume_join.py",
+  "scriptHash": "cca585d1663a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "9a5d18462c6eeefd66bed323398e4659affea07b",
+  "engine": "rust+mpmath",
+  "computedAt": "2026-08-23T22:08:10.418089+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
