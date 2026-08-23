@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-23T08:32:27Z
+updated_at: 2026-08-23T08:36:54Z
 ---
 
 ## Context
@@ -205,3 +205,33 @@ Both norm_num, no sorryAx; audit 0 defects on the file (was 2 advisory: trivial-
 The SU(3)-irreducibility that makes the octonion singlet count 0 (the actual rep-theoretic core) stays the Mathlib gap — no SU(3) type in Mathlib. That is item-3's genuine remainder (call it T2-hard); NOT stubbed with a vacuous axiom anymore. The real gate-decision content lives in Sym2GateParity (SU(2) parity criterion, sorry-free).
 
 item 3 (Sym2Gate vacuity) is now CLOSED at the honest level: no vacuous decls remain; the residual SU(3) rep infra is a documented Mathlib gap.
+
+
+
+## PROGRESS 2026-08-23 (4) — T4/item-1 DONE; chapter-wide staleness is a separate large drain
+
+item 1 (empty-criteria sidecars): RESOLVED. Measured 2026-08-23 — the eightfold
+chapter now has 15/15 .qa.json sidecars, 0 with empty criteria (53–75 criteria
+each). A sibling restored coverage since this bean was written; the 'no sidecar
+coverage' defect is gone.
+
+SEPARATE finding (not item 1): qa-staleness reports fresh=0/15 — the WHOLE chapter
+is stale/partial (checker-version + source drift across ~40–75 criteria per block,
+many LLM-reviewer criteria). Refreshing it is a large idle-backlog qa-drain
+(hundreds of criteria, well beyond the ≤10-sidecar/pass cap and slow on LLM
+reviewers) — NOT a clean session increment. Route via /integration-audit or a
+dedicated qa-drain pass, not a session-tail sweep. Blocks I touched this arc
+(borromean-decuplet, meson-octet) are stale like all others (chapter-wide, not
+caused by my lean.ref adds specifically).
+
+## ═══ qou-8fl1 STATUS AFTER go-on-all (2026-08-23) ═══
+- item 2 (3 backing-free props): DONE — all Lean-backed at dimension level (T1).
+- item 3 (Sym2Gate vacuity): DONE — vacuous decls removed/restated (T2, PR #5524).
+- item 4: already discharged (PR #4727).
+- item 1 (empty sidecars): DONE — 0 empty (sibling-restored, verified).
+- item 5 (def:octonion-algebra): OPEN — large (author octonion algebra; Mathlib
+  has none) or keep literature citation. Not a clean session increment.
+- items 6,7 (research-gated) + chapter-wide QA staleness refresh: OPEN, large /
+  research; documented above. Not session-closeable.
+The honest formalization-bookkeeping items (1,2,3,4) are closed; what remains is
+genuine research (5,6,7) or large mechanical drains (QA staleness).
