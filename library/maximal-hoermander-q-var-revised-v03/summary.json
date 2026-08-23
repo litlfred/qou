@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "maximal-hoermander-q-var-revised-v03",
+ "source_sha256": "135332c04a1b3bb8",
+ "brief": "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates — 10 sections: Introduction; R-boundedness; Preliminaries",
+ "extended": "**q-variational Hormander functional calculus and Schrodinger and wave maximal estimates**\n\n*The documents may come from teaching and research*\n\n43 pp, 10 sections.\n\n**Outline.** Introduction; R-boundedness; Preliminaries; Abstract Hörmander functional calculus; q-variational inequalities; q-variation for spherical and euclidean ball m; Schrödinger and wave maximal estimates; Pointwise continuity of time paths for abstrac; Examples and concluding remarks; Acknowledgments\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Let Y = Y (Ω′) be a UMD lattice, 1 < p <∞and (Ω,µ) a σ-ﬁnite\n- Theorem 1.3: Assume thatA and m satisfy the hypotheses of Theorem\n- Theorem 1.4: Let 1 < p <∞and 2 < q <∞. There exists a minimal\n- Theorem 1.5: below, we need to replace the supremum by the norm ofΛβ= Λβ\n- Theorem 1.5: LetY be a UMD lattice,1<p< ∞and (Ω,µ) a σ-ﬁnite\n- Theorem 1.6: [see Theorem 6.1] LetY be a UMD lattice,1 < p <∞and (Ω,µ) a σ-ﬁnite",
+ "tokens": {
+  "brief": 36,
+  "extended": 238
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-001-r-boundedness",
+   "title": "R-boundedness",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-002-preliminaries",
+   "title": "Preliminaries",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-003-abstract-hörmander-functional-calculus",
+   "title": "Abstract Hörmander functional calculus",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-004-q-variational-inequalities",
+   "title": "q-variational inequalities",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-005-q-variation-for-spherical-and-euclidean-ball-mea",
+   "title": "q-variation for spherical and euclidean ball means in Rd",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-006-schrödinger-and-wave-maximal-estimates",
+   "title": "Schrödinger and wave maximal estimates",
+   "pages": "21-28"
+  },
+  {
+   "id": "sec-007-pointwise-continuity-of-time-paths-for-abstract",
+   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+   "pages": "28-35"
+  },
+  {
+   "id": "sec-008-examples-and-concluding-remarks",
+   "title": "Examples and concluding remarks",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "36-43"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

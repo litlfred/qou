@@ -110,18 +110,33 @@ if str(HERE) not in sys.path:
 from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q_FLOAT  # noqa: E402
+from canonical_braid_crossings import d_for_ctype  # noqa: E402
 
 Q0 = float(Q_FLOAT)
 H = Q0 - 1.0 / Q0   # h = q − q⁻¹ at q_0
 
-# Per the standard atomic-braid convention (mass_at_3A_proper.atom_braid_word_3A):
-#   pp: σ at gen 3k+2 (positive, d=0)
-#   nn: σ + (-h)·I (Hecke negative, d=-h)
-#   pn: σ + (-h/2)·I (averaged, d=-h/2)
+# Interface coefficients, DERIVED from the canonical classifier rather than
+# typed here. The comment above this table used to say it followed "the standard
+# atomic-braid convention (mass_at_3A_proper.atom_braid_word_3A)" while `pn` read
+# `-H/2` — and that had stopped being true: the canonical builder emits
+# `averaged_weighted` at a p-n boundary, `d = -h(1/2 - δ/4)`, which is
+# 7.190163e-05 away from `-h/2`.
+#
+# This was a THIRD private ctype vocabulary, keyed pp/nn/pn. Both existing
+# detectors are structurally blind to it: `test_ctype_consumer_coverage` Part B
+# looks for the {sigma, sigma_inv, averaged, averaged_weighted} vocabulary, and
+# Part F looks for a `pn_convention=` kwarg. This table has neither, while being
+# the thing that actually sets the interface in the mass-table path. Bean
+# `qou-cds4`.
+#
+# The pp and nn rows were already exactly right — verified against
+# `atom_canonical_crossings`, which emits `sigma` at a p-p boundary and
+# `sigma_inv` at n-n, whose `d` values match `0.0` and `-H` to the bit. Only
+# `pn` was wrong, which is why this is a one-row correction and not a rewrite.
+_IFACE_CTYPE = {"pp": "sigma", "nn": "sigma_inv", "pn": "averaged_weighted"}
 INTERFACE_COEFS: dict[str, tuple[float, float]] = {
-    "pp": (1.0, 0.0),
-    "nn": (1.0, -H),
-    "pn": (1.0, -H / 2),
+    iface: (1.0, float(d_for_ctype(ct, H)))
+    for iface, ct in _IFACE_CTYPE.items()
 }
 
 

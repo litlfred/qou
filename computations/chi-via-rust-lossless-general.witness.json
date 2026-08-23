@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:22:56.812419+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-08-15T10:37:19.051320+00:00",
+  "commitSha": "49be20a309f5afaf04cebe964bbbfc9f431cd765",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 68,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
-  "scriptHash": "fa6f74b15644",
-  "scriptCommitSha": "1294c72ccfa3fcbd9e15774278c9c64e88486b71",
+  "scriptHash": "32fda59f59ef",
+  "scriptCommitSha": "03b0160b730cb998ebe151a785218de63233e68e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,38 +19,37 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Lossless per-λ χ(q₀) caches via Rust chi_q_via_gp for arbitrary nuclides (generalizes chi_4he_via_rust_lossless.py). χ_λ is dim-independent (~20 ms/λ) so any H_n is seconds; consumes the closed-form y_λ tower for n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding consumers read. Sign-only convention; matches the matrix-M backend to the 50-dps floor (#2062 §8).",
   "data": {
     "atoms": [
-      "lithium-5",
-      "lithium-6"
+      "proton",
+      "neutron"
     ],
     "results": [
       {
-        "atom": "lithium-5",
-        "n_strands": 15,
-        "Z": 3,
-        "N": 2,
-        "n_partitions": 176,
-        "tr_M_at_q0": "0.72219067572428003906546700725859846608796048795124",
-        "compute_time_sec": 66,
-        "cache_path": "/home/user/qou/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+        "atom": "proton",
+        "n_strands": 3,
+        "Z": 1,
+        "N": 0,
+        "n_partitions": 3,
+        "tr_M_at_q0": "1.8843194672549750250902947231081562634724974417719",
+        "compute_time_sec": 0,
+        "cache_path": "/home/user/qou/computations/chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       },
       {
-        "atom": "lithium-6",
-        "n_strands": 18,
-        "Z": 3,
-        "N": 3,
-        "n_partitions": 385,
-        "tr_M_at_q0": "0.58892244002696787134345006247120330799639569324758",
-        "compute_time_sec": 1381,
-        "cache_path": "/home/user/qou/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+        "atom": "neutron",
+        "n_strands": 3,
+        "Z": 0,
+        "N": 1,
+        "n_partitions": 3,
+        "tr_M_at_q0": "1.8843194672549750250902947231081562634724974417719",
+        "compute_time_sec": 0,
+        "cache_path": "/home/user/qou/computations/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       }
     ],

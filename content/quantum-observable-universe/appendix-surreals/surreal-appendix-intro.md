@@ -49,7 +49,7 @@ Four distinct uses motivate the lift:
 
 A first-pass survey suggests that replacing $\mathbb{R}$ with
 $\mathbf{No}$ must cost us Lebesgue measure, Hilbert-space
-completions, and hyperbolic geometry — a substantial list. But
+completions, and hyperbolic geometry. But
 an honest survey of the QOU development shows most of these
 are *never actually used* in a load-bearing way (see
 [analytic obstructions](#rem:analytic-obstructions)):

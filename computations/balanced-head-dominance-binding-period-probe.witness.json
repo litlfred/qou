@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T19:18:07.429502+00:00",
-  "commitSha": "2d62b1c4f8211c5d2ca5175dfe2266e9fdcebcee",
+  "computedAt": "2026-08-19T21:20:58.657004+00:00",
+  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "balanced-head-dominance-binding-period-probe",
   "scriptFile": "balanced_head_dominance_binding_period_probe.py",
-  "scriptHash": "53659f593de7",
-  "scriptCommitSha": "ca9ed4481c16b35fe958b4ac689372ff1edc8c59",
+  "scriptHash": "1dbc1e0dec5c",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,6 +19,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -28,7 +29,7 @@
   "tier": "decisive measurement (no fit, no wiring)",
   "precision_dps": 50,
   "constants": {
-    "q_0": "1.1099785955573347"
+    "q_0": "1.1099785827513808076"
   },
   "range": {
     "n_min": 4,
@@ -92,11 +93,12 @@
       "K99": 13,
       "K99_over_pn": "0.866667",
       "argmax_shape": [
-        4,
+        3,
         2,
+        1,
         1
       ],
-      "argmax_aspect_rows_x_cols": "3x4"
+      "argmax_aspect_rows_x_cols": "4x3"
     },
     "8": {
       "p_n": 22,
@@ -118,7 +120,7 @@
     "9": {
       "p_n": 30,
       "top_capture": {
-        "1": "0.084143879",
+        "1": "0.084143878",
         "5": "0.37809566",
         "20": "0.92382731"
       },
@@ -135,9 +137,9 @@
     "10": {
       "p_n": 42,
       "top_capture": {
-        "1": "0.083818687",
-        "5": "0.31604495",
-        "20": "0.82486555"
+        "1": "0.083818686",
+        "5": "0.31604494",
+        "20": "0.82486554"
       },
       "K99": 36,
       "K99_over_pn": "0.857143",
@@ -159,13 +161,12 @@
       "K99": 46,
       "K99_over_pn": "0.821429",
       "argmax_shape": [
-        4,
+        5,
         3,
         2,
-        1,
         1
       ],
-      "argmax_aspect_rows_x_cols": "5x4"
+      "argmax_aspect_rows_x_cols": "4x5"
     },
     "12": {
       "p_n": 77,
@@ -188,7 +189,7 @@
     "13": {
       "p_n": 101,
       "top_capture": {
-        "1": "0.039097275",
+        "1": "0.039097274",
         "5": "0.18139201",
         "20": "0.53231945"
       },
@@ -196,9 +197,9 @@
       "K99_over_pn": "0.772277",
       "argmax_shape": [
         5,
-        3,
+        4,
         2,
-        2,
+        1,
         1
       ],
       "argmax_aspect_rows_x_cols": "5x5"
@@ -206,8 +207,8 @@
     "14": {
       "p_n": 135,
       "top_capture": {
-        "1": "0.030263864",
-        "5": "0.14626135",
+        "1": "0.030263863",
+        "5": "0.14626134",
         "20": "0.46243663"
       },
       "K99": 100,
@@ -224,7 +225,7 @@
     "15": {
       "p_n": 176,
       "top_capture": {
-        "1": "0.030593932",
+        "1": "0.030593931",
         "5": "0.12600119",
         "20": "0.38714687"
       },
@@ -243,26 +244,25 @@
       "p_n": 231,
       "top_capture": {
         "1": "0.026569658",
-        "5": "0.1100947",
+        "5": "0.11009469",
         "20": "0.32382236"
       },
       "K99": 167,
       "K99_over_pn": "0.722944",
       "argmax_shape": [
-        5,
+        6,
         4,
         3,
         2,
-        1,
         1
       ],
-      "argmax_aspect_rows_x_cols": "6x5"
+      "argmax_aspect_rows_x_cols": "5x6"
     },
     "17": {
       "p_n": 297,
       "top_capture": {
         "1": "0.024174636",
-        "5": "0.095823602",
+        "5": "0.095823601",
         "20": "0.28515011"
       },
       "K99": 212,
@@ -281,7 +281,7 @@
       "p_n": 385,
       "top_capture": {
         "1": "0.017371422",
-        "5": "0.082163255",
+        "5": "0.082163254",
         "20": "0.24094746"
       },
       "K99": 266,
@@ -300,7 +300,7 @@
       "p_n": 490,
       "top_capture": {
         "1": "0.013935967",
-        "5": "0.066224672",
+        "5": "0.066224671",
         "20": "0.21335796"
       },
       "K99": 331,
@@ -325,21 +325,22 @@
       "K99": 410,
       "K99_over_pn": "0.653907",
       "argmax_shape": [
-        7,
+        6,
         5,
         3,
         2,
         2,
+        1,
         1
       ],
-      "argmax_aspect_rows_x_cols": "6x7"
+      "argmax_aspect_rows_x_cols": "7x6"
     }
   },
   "verdict": {
     "head_concentrated": false,
     "K99_fraction_of_pn_nonincreasing": true
   },
-  "timestamp": "2026-07-03T19:18:07+00:00",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "timestamp": "2026-08-19T21:20:58+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

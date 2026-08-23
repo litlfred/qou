@@ -1,0 +1,70 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "computedAt": "2026-08-22T21:07:49.166847+00:00",
+  "commitSha": "3a9e2790366fea1ca1c78ce4ba7e7ce1cb79b581",
+  "assertions": [
+    {
+      "name": "1_stored_and_live_agree_within_anchor_precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "gap 0.07694 ppb = 0.06289 sigma of the muon anchor's own 1.223 ppb. Below 1 sigma the stored and live values are the same measurement. Above it, something moved that the anchor's precision does not explain -- a new CODATA edition, or an edit to the stored string."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "muon-pin-stored-vs-live",
+  "scriptFile": "muon_pin_stored_vs_live_gate.py",
+  "scriptHash": "b8bb417c4cbb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/muon_pin_stored_vs_live_gate.py"
+    ],
+    "reproduce": "python3 -u computations/audits/muon_pin_stored_vs_live_gate.py"
+  },
+  "description": "Drift detection for the muon pin without the drift. The stored value is a fixed point (stable but unfalsifiable); the live derivation follows CODATA (checkable but silently drifting, which is how a stale-edition muon value reached 65 sites). This reports the gap in units of the muon anchor's OWN uncertainty, so a CODATA adjustment becomes visible instead of silent. It changes no pin and rules nothing -- A-vs-C is an owner decision.",
+  "computation_method": "Compares _q0_value_for_anchor('muon') against q_muon_at(50), and propagates the CODATA m_mu/m_e uncertainty to sigma(q0) by a two-sided difference on the exact closed form. All mpmath at dps=60; no float64 -- a 0.08 ppb gap measured in float64 would be reporting its own arithmetic.",
+  "audit_only": true,
+  "tier": "empirical",
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595557334719899763220483225026656208408780154",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "Reads the muon pin (stored) and the proton pin on purpose -- the comparison IS the subject. Recorded under q0Values so each leg is checkable against its canonical value, per the `comparison` vocabulary.",
+  "scope": "scope-(a) MEASUREMENT + gate. Changes no pin, wires nothing, and does not rule A-vs-C (bean qou-bred, owner decision). It only makes the disagreement observable.",
+  "result": {
+    "stored_A": "1.109978595557334719899763220483225026656208408780154",
+    "live_C": "1.109978595642739046681795129380001752700065561029012",
+    "gap_ppb": "0.076942319",
+    "muon_anchor_sigma_ppb": "1.2233538",
+    "gap_in_sigma": "0.0628946",
+    "threshold_sigma": 1,
+    "verdict": "At 0.063 sigma the stored and live muon pins are the same measurement -- no framework observable distinguishes them, and no prediction depends on the A-vs-C choice. That is why this is a governance ruling and not a physics one."
+  },
+  "context": {
+    "beans": [
+      "qou-bred",
+      "qou-o922"
+    ],
+    "recommendation": "step 3 of the A-vs-C brief on qou-bred"
+  }
+}

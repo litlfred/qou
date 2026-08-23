@@ -80,7 +80,7 @@ The constant emerges from the universal $k \to \infty$ asymptotics.
 
 ## Recommended path
 
-Option B provides the recommended path. It utilises existing infrastructure and clarifies the relationship between the mass and coupling formulas. 
+Option B utilises existing infrastructure and clarifies the relationship between the mass and coupling formulas.
 
 A practical execution follows:
 1. Implement Option B in $H_3$ ([`prop:spectral-sequence-h3-explicit`](#prop:spectral-sequence-h3-explicit)).

@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0205308v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
+  "file": "0205308v2.pdf"
+ },
+ "provenance": {
+  "title": "WDVV Equations as Functional Relations",
+  "authors": "H.W. Braden 1 and A. Marshakov 2",
+  "arxiv": {
+   "id": "hep-th/0205308",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "29 May 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

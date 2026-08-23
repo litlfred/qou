@@ -1,0 +1,236 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0306165v1",
+ "source_sha256": "4f187debec912a24",
+ "brief": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting",
+ "extended": "**Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial**\n\n*Chern-Simons Theory, And*\n\n67 pp, 43 sections.\n\n**Abstract.** We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an inﬁnite-dimensional representation of the gauge group, the classical and quan- tum properties of such theory are described by an algebraic c urve called the A-polynomial of a knot. Using this approach, we ﬁnd some new and rather surp rising relations be- tween the A-polynomial, the colored Jones polynomial, and o ther invariants of hyperbolic 3-manifolds. These relations generalize the volume conjec ture and the Melvin-Morton- Rozansky conjecture, and suggest an intriguing connection between the SL(2,C) partition function and the colored Jones polynomial. June 2003\n\n**Outline.** 1.1 Chern-Simons Theory; Abstract; 1 Introduction and Motivation; 1.2 Three-Dimensional Quantum Gravity; 2 More precisely, Isom +(I H3) = P SL(2,C) = S; 4 Chern-Simons theory with SL(2,C) gauge group; 1.3 The Hartle-Hawking Wave Function in 2 + 1 ; 1.4 Quantum Geometry of Hyperbolic Three-Manif; C From the physical point of view, this is not; 2 Classical Theory; C Like in any constrained; 2.1 The Moduli Space of Classical Solutions; 2.2 SL(2,; 5 One has the following identity: Rijkl = gikR; 2.3 Properties of the A-polynomial; 3 Quantization; 3.1 A-polynomial as a Lagrangian Submanifold; 9 A proper embedding of a connected orientable",
+ "tokens": {
+  "brief": 47,
+  "extended": 411
+ },
+ "sections": [
+  {
+   "id": "sec-000-11-chern-simons-theory",
+   "title": "Chern-Simons Theory",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-1-introduction-and-motivation",
+   "title": "Introduction and Motivation",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-12-three-dimensional-quantum-gravity",
+   "title": "Three-Dimensional Quantum Gravity",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-2-more-precisely-isom-i-h3-p-sl2c-sl2c1-but-acco",
+   "title": "More precisely, Isom +(I H3) = P SL(2,C) = SL(2,C)/{±1}, but according to [5], a repre-",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-4-chern-simons-theory-with-sl2c-gauge-group-and",
+   "title": "Chern-Simons theory with SL(2,C) gauge group and real values of the parameter s is also",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-13-the-hartle-hawking-wave-function-in-2-1-dimen",
+   "title": "The Hartle-Hawking Wave Function in 2 + 1 Dimensions",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-007-14-quantum-geometry-of-hyperbolic-three-manifold",
+   "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-c-from-the-physical-point-of-view-this-is-not-ve",
+   "title": "From the physical point of view, this is not very",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-009-2-classical-theory",
+   "title": "Classical Theory",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-010-c-like-in-any-constrained",
+   "title": "Like in any constrained",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-011-21-the-moduli-space-of-classical-solutions",
+   "title": "The Moduli Space of Classical Solutions",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-012-22-sl2",
+   "title": "SL(2,",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-013-5-one-has-the-following-identity-rijkl-gikrjl-gj",
+   "title": "One has the following identity: Rijkl = gikRjl +gjlRik −gjk Ril−gilRjk − 1",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-014-23-properties-of-the-a-polynomial",
+   "title": "Properties of the A-polynomial",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-015-3-quantization",
+   "title": "Quantization",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-016-31-a-polynomial-as-a-lagrangian-submanifold",
+   "title": "A-polynomial as a Lagrangian Submanifold",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-017-9-a-proper-embedding-of-a-connected-orientable-s",
+   "title": "A proper embedding of a connected orientable surface F → M is called incompressible if",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-018-4-dv-dv-du-du-1",
+   "title": "(dv +dv)∧ (du +du)− 1",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-019-4-dudu-dvdv",
+   "title": "(du−du)∧ (dv−dv) =",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-020-2-dudv-dudv",
+   "title": "(du∧dv +du∧dv)",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-021-2-dudvdudv",
+   "title": "(du∧dv−du∧dv)",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-022-32-semi-classical-approximation",
+   "title": "Semi-Classical Approximation",
+   "pages": "25-30"
+  },
+  {
+   "id": "sec-023-33-perturbation-theory",
+   "title": "Perturbation Theory",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-024-34-non-perturbative-aspects",
+   "title": "Non-perturbative Aspects",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-025-4-t-opological-quantum-field-theory-and-invarian",
+   "title": "T opological Quantum Field Theory and Invariants of Three -Manifolds",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-026-14-it-follows-from-the-axioms-1-and-2-that-a-com",
+   "title": "It follows from the axioms (1) and (2) that a compact oriented 3-manifold M with ∂M =",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-027-5-a-generalization-of-the-v-olume-conjecture",
+   "title": "A Generalization of the V olume Conjecture",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-028-51-a-brief-review-of-the-volume-conjecture",
+   "title": "A Brief Review of the Volume Conjecture",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-029-52-the-a-polynomial-and-the-generalized-volume-c",
+   "title": "The A-Polynomial and the Generalized Volume Conjectur e",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-030-53-proof-of-the-generalized-volume-conjecture-fo",
+   "title": "Proof of the Generalized Volume Conjecture for the Figu re-Eight Knot 41",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-031-54-a-relation-between-the-colored-jones-polynomi",
+   "title": "A Relation Between The Colored Jones Polynomial And The A-Polynomial",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-032-6-non-t-rivial-flat-connections-and-the-melvin-m",
+   "title": "Non-T rivial Flat Connections and the Melvin-Morton-Roz ansky Conjecture",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-033-61-a-brief-review-of-the-melvin-morton-rozansky",
+   "title": "A Brief Review of the Melvin-Morton-Rozansky Conjectu re",
+   "pages": "45-47"
+  },
+  {
+   "id": "sec-034-62-path-integral-interpretation",
+   "title": "Path Integral Interpretation",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-035-4-nph",
+   "title": "Nph",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-036-63-a-contribution-of-the-trivial-connection",
+   "title": "A Contribution of the Trivial Connection",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-037-64-a-contribution-of-the-hyperbolic-flat-connect",
+   "title": "A Contribution of the “Hyperbolic” Flat Connection",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-038-2-s1a-i",
+   "title": "S1(a) + i",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-039-2-s2a",
+   "title": "S2(a)",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-040-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "53-56"
+  },
+  {
+   "id": "sec-041-22-i-am-endebted-to-g-moore-and-a-strominger-for",
+   "title": "I am endebted to G. Moore and A. Strominger for very helpful co mments and suggestions",
+   "pages": "56-62"
+  },
+  {
+   "id": "sec-042-references",
+   "title": "References",
+   "pages": "62-67"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

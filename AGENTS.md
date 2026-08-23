@@ -287,7 +287,7 @@ user's last message, not the most recently mentioned file.
       SHA-256 prefixes) drift from the current file contents;
       refresh by deleting the stale `criteria.<crit>` entry from
       the `.qa.json` and running
-      `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
+      `bun run folio-assistant/content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
       `witness.scriptHash` (SHA-256 prefix of producer file
@@ -328,6 +328,58 @@ user's last message, not the most recently mentioned file.
       §0b-idle-time-backlog-policy-5-minute-trigger`](.claude/skills/local/integration-watcher.md#0b-idle-time-backlog-policy-5-minute-trigger).
       This sits above cross-cutting cleanups because stale
       sidecars mislead all four watcher children's reads.
+
+      **Before spending the witness half of that budget, run
+      [`witness_staleness_triage.py`](computations/witness_staleness_triage.py)
+      — measured, the answer is usually "spend it on sidecars instead."**
+      It normalises both producer versions through `ast.unparse` (comments,
+      docstrings and formatting gone) and reports which drifts can actually
+      move a number. Re-measured three times across 1564 commits of `main`,
+      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      identical is necessary but not sufficient, and the two extra gates are
+      the ones that bite:
+
+      - **Import-cone drift — the one that actually bites.** A producer's own
+        source can be byte-stable while the module it *calls* changed.
+        Measured: `binding_canonical.py` is source-stable across its drift
+        window, yet `tr_M_atom` moved `0.388 -> 0.575` (48 %) because
+        `tr_m_atom_via_transfer.py`, which computes that quantity, changed.
+        A file-local `git diff` cannot see this — use
+        [`witness_import_cone_staleness_audit.py`](computations/witness_import_cone_staleness_audit.py),
+        or the one-hop check the triage script now runs.
+      - **Environment (hazard, not yet measured here).** A producer *may*
+        branch on what is installed. I originally reported the
+        `binding_canonical` 48 % as an instance of this; **that was wrong** —
+        re-run with `pyhecke_native 0.9.0` and every recorded package matched,
+        it reproduces the committed value byte-identically. Still worth
+        checking the witness's `environment` block before re-running, but this
+        corpus has not yet produced a confirmed case.
+      - **Bare producers.** Some producers never emit provenance; the
+        `scriptHash` / `commitSha` on disk was added downstream. Re-running
+        one *deletes the field this audit keys on* (measured: 15 keys in, 7
+        and 9 out). Fix the producer to emit provenance first.
+
+      **And a `substantive` verdict is not a work order — measured, 39 %.**
+      Of 72 substantive producers actually re-run under a time budget, only
+      **28 moved a single mathematical field**; 44 were byte-identical, 3
+      crashed, 2 timed out. So "the code changed, therefore the payload can
+      move" over-flags by roughly 61 %, and the genuinely actionable queue is
+      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
+      Re-run to decide; do not treat the class as a to-do list.
+
+      **Producers write SIBLING witnesses.** The isotope producer rewrote 21
+      `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
+      Anything that re-runs producers to compare must restore the whole
+      `computations/` tree afterwards, not the one file it was looking at, or it
+      leaves a dirty tree that reads as real work.
+
+      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
+      sha the witness was written under. This is the same effect the
+      `scriptCommitSha` ruling above describes, one field over: **"diff the
+      producer first" is unrunnable for half the queue**, and hand-patching
+      the sha (13 such commits on `main` in one 8-day window) buys only the
+      interval until the next merge.
    5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
       `validate-bib` deferred items, glossary backfills, doc
       currency. Lowest priority because they're not gated on any
@@ -538,7 +590,15 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | Still expected — this is the one review to wait on. |
+    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    >
+    > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
+    > one.** All three original gates are gone. The agent's own verification
+    > is not the last gate standing — it is the *only* gate. Act accordingly:
+    > state the verification you actually ran, and do **not** wait on Copilot.
+    > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
+    > check run that is never created; that wait can only expire, so skip it
+    > and record why (citing `qou-gwe9`) rather than burning the window.
     >
     > **Phase-4 verification gate (replaces "CI green").** Because CI
     > is unavailable, the agent's own verification *is* the gate — this
@@ -701,7 +761,7 @@ that creates or edits a `.md` content block containing math (`$…$`,
 Run the full markdown render check
 ([`local/markdown-render-check`](.claude/skills/local/markdown-render-check.md)):
 the pipeline render where available
-(`bun run content/pipeline/render-latex.ts …` after
+(`bun run folio-assistant/content/pipeline/render-latex.ts …` after
 [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
 **and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
 `\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
@@ -819,8 +879,59 @@ corpus — run the **corpus-grep checklist**:
 4. Check the relevant coordination ledger
    `docs/coordination/<theme>.md` — prior agents may have closed
    the item already.
+5. **The library — walk three tiers, cheapest first.** The ingested
+   sources are 24.7 M characters; do not grep straight into them when a
+   line will do.
 
-Only after **all four** grep paths return empty (modulo the
+   ```sh
+   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
+   grep -rln <topic> library/<doc-id>/sections/   # the text itself
+   ```
+
+   `INDEX.md` is one line per document and is the right first read — it
+   costs about as much as a single paper's abstract to scan the entire
+   library. Each section file also carries a `doc_brief` in its
+   front-matter, so a hit found by the third command is interpretable
+   without opening anything else (contextual retrieval: a chunk in
+   isolation otherwise loses what makes it mean anything).
+
+   **One line per *work*, not per file.** The library holds 19 works more
+   than once — a preprint beside its published version, or the same PDF
+   ingested under two names — and Neumann–Zagier three times. The extra
+   copies keep their text on disk, so a full-text grep still lands in
+   them; each carries `duplicate_of` in its section front-matter naming
+   the copy to prefer. **Do not read two hits on one work as two
+   sources.** Adjudicated in
+   [`docs/audits/library-duplicate-ledger.json`](docs/audits/library-duplicate-ledger.json);
+   `scripts/library-find-duplicates.py` proposes, but its same-work and
+   different-work score ranges overlap, so a proposal is not a verdict —
+   a sequel sharing its setup sections outscores four true duplicates.
+
+   Briefs and summaries are **extractive** — assembled from each
+   document's own abstract, section titles and extracted claims, nothing
+   written by a model — so a brief is only as good as the abstract it came
+   from. Regenerate with `scripts/summarize-library.py --apply`; a
+   hand-written summary marked `provenance.kind: "agent"` survives
+   regeneration.
+
+   The full-text grep, for when you want it directly:
+   `grep -rln <topic> library/*/sections/` — the **ingested sources**.
+   An item can be open *in this corpus* and settled in a paper we
+   already hold; that is a citation, not a derivation, but it changes
+   what "open" means and it is the difference between deriving a result
+   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
+   characters are searchable this way.
+
+   This path exists only because the sources were sectioned into text.
+   Before that they were 339 PDFs and grep could not see them, which is
+   why the checklist historically stopped at four. Two practical notes:
+   a hit's YAML front-matter names the document, section and page range,
+   so it is immediately citable; and `library/<doc-id>/candidates.json`
+   lists that document's extracted theorems and definitions if you want
+   the claims rather than the prose.
+
+Only after **all five** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -1038,12 +1149,28 @@ ask whether a **formalizable structural claim prunes the class first**:
 This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
-family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+family this session: `dc_3/dq ≈ 3.84e6` impossible for smooth real `f`
 (kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
 the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
 12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
 A is ~4 sig figs from `c_2..c_10` (no high-precision identification
 possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+
+> **Figure corrected 2026-08-22 — the conclusion is untouched.** This read
+> `≈ 4.6e6` here and in five other places. That value is the **stale-c₃
+> twin** of the "≈ 3 %" swing this document already corrects two sections
+> up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
+> 2.88 % swing, and both should have been re-derived at the same time.
+> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
+> **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
+> and `3838404.458` recorded in `rem-qstar`'s own witness as
+> `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
+> 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
+> **prune stands and the real-q c₃ family stays killed** — only the
+> quoted magnitude was wrong. The five other sites are audit docs and
+> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
 wide/expensive searches, not every one-off check. Full protocol +
@@ -1110,7 +1237,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1187,7 +1314,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1225,6 +1352,21 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
+- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
+  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+  **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
+  legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
+  observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
+  own; the sub-100× result is manufactured by an EM correction
+  `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the untruncated
+  series** (chosen against the data — the same fit signature the `c_k` red-team
+  caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
+  (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
+  arithmetic metric; the count of **unconditional, parameter-free** sub-100×
+  predictions is **0**. State it as "1/5 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  analysis:
+  [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1366,17 +1508,39 @@ Do not regress either.
 >
 >   **A clean detector run is NOT evidence the C surface is clear.**
 >   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
->   reports **0 actionable C producers** (3 blocked-by-design sites in
->   `tools/pyhecke`, 9 labelled comparisons). That count is real but
->   **narrow**: it keys on *assignment targets*, so a convention-C value
->   **returned from a function** is structurally invisible to it. Measured
->   2026-08-16 — **7 files** return `1/(√q + 1/√q)`, which is `√q/(q+1) = z_C`
->   *exactly* (`0.49932…` against D's `0.61268…`). PR #5124 catalogues five
->   such detector-blind spellings and retracts the earlier "0 actionable"
->   reading outright. So: **treat the remaining C surface as UNMEASURED
->   rather than clear — and do not launch a corpus-wide sweep off either
->   number.** R1 settles which convention is canonical; it does not tell you
->   how much code still disagrees.
+>   once reported **0 actionable C producers**. That count was real but
+>   **narrow**: it keyed on *assignment targets*, so a convention-C value
+>   **returned from a function** was structurally invisible to it. Measured on
+>   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
+>   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
+>
+>   **Status 2026-08-16.** The detector now scans return forms, and those seven
+>   are migrated, so *that* spelling is closed: the only return-form C site left
+>   in the tree is `pyhecke/gram.py:634` (`z_mp`), which is registered and
+>   R10-waived. **The posture does not change.** Closing one shape does not
+>   close the class —
+>   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
+>   catalogues **thirteen** distinct detector-blind spellings, four of which were
+>   found *by* detectors written to catch the previous blind spot. So: **treat
+>   the remaining C surface as UNMEASURED rather than clear — and do not launch
+>   a corpus-wide sweep off any of these numbers.** R1 settles which convention
+>   is canonical; it does not tell you how much code still disagrees.
+>
+>   **The counter-move, when the result is exact and symbolic: test the ANSWER,
+>   not the source.** Every detector above keys on how the convention was
+>   *written*; the algebraic form of the result keys on what it *is*. The Markov
+>   peel's deuteron denominator factors as `192·q²³·(q²+1)³` — one `(q²+1)` per
+>   peel, because `z = q³/(q²+1)`. Convention C leaves half-integer powers and
+>   cannot produce it, so *"`(q²+1)` divides the denominator"* is a complete
+>   convention test needing no source, no `z` grep and no anchor
+>   (`computations/markov/peel_anchor_identification_probe.py`, #5190). A value
+>   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
+>   and still factor correctly.
+>
+>   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
+>   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
+>   *declared* site is not a fixed one — the audit's `DECLARED C in
+>   evaluators.z, R10-waived` bucket stays **actionable** by design.
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
@@ -1451,7 +1615,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
@@ -1514,7 +1678,52 @@ muon; muon-anchor → ~4000σ on proton).
    (R2) does not change this.** R2 restates the end state; it does not
    scope the sweep, so the sign-off requirement stands. If the owner
    intends R2 to authorise the bulk migration, that has to be said here
-   explicitly — do not infer it from R2's wording. Concretely:
+   explicitly — do not infer it from R2's wording.
+
+   > **🟧 OWNER AUTHORISATION, RECORDED 2026-08-19 (the gate above is now
+   > SATISFIED — read the four constraints before running anything).**
+   > The owner gave the directive in session on 2026-08-15, in these words:
+   >
+   > > *"we want proton unless for an explicit reason (like comparison on
+   > > proton vs muon results). otherwise pin proton"*
+   > > *"fix all, even if not visible."*
+   >
+   > It is recorded **here** because the gate above asks for exactly that
+   > and a chat transcript does not satisfy it. PR #5049 held the bulk
+   > reclassification back on precisely this ground, and it was right to:
+   > the branch could not show the directive, only infer it.
+   >
+   > **The authorisation is real, and it is not a blank cheque.** The first
+   > attempt at this migration broke `main` for **208 producers**
+   > (`qou-m9xp`), so it carries four constraints, each one bought:
+   >
+   > 1. **NEVER re-pin an anchor-DEFINING witness.**
+   >    `q-pinning-50-digit.witness.json` is what
+   >    `qou_substrate.witness._q0_value_for_anchor("muon")` READS. Re-pinning
+   >    it does not migrate a consumer — it redefines what "muon" *means*, so
+   >    every muon-stamped witness in the corpus then disagrees with its own
+   >    anchor (262 `Q0_FLIP`s) and `q_parameter`'s anti-corruption guard
+   >    hard-fails every `ideal_muon` producer, including the one that would
+   >    regenerate the anchor. `q0_repin_sweep.py` now excludes it by name
+   >    (`ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS`); do not remove that.
+   > 2. **The muon anchor keeps its definition.** "Proton everywhere"
+   >    governs what new compute *pins to*, not whether the muon layer still
+   >    has a value. Something in the tree must continue to hold the muon
+   >    50-digit string or the ideal/CAL-2 layer becomes unstatable.
+   > 3. **A comparison producer needs BOTH pins and the manifest cannot
+   >    serve it.** A per-process override supplies one. Such a producer
+   >    reads `q_at()` / `q_muon_at()` by name and belongs under
+   >    `physical_proton` — see `mu_substrate_tension_audit_100dps`, which
+   >    understated its own subject **155×** while listed `ideal_muon`.
+   > 4. **Do not split the change.** The manifest reclassification and the
+   >    witnesses it re-pins are one change. #5049 merged the witnesses and
+   >    held the manifest, and the half that landed is the half that broke
+   >    `main`. Land them together or not at all.
+   >
+   > Scope: `qou-1c4y`. Rules 1–4 immediately below still apply to
+   > everything the sweep does not cover.
+
+   Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the
@@ -1608,7 +1817,7 @@ When a user request arrives, route to the right skill(s):
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
 | "upload / scan / intake / process document" | `local/document-intake` | collaborator |
 | "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
-| "uploads/ status / what's pending" | `local/document-intake` | collaborator |
+| "library/ status / what's pending" | `local/document-intake` | collaborator |
 | "is this paper relevant / triage the uploads / what can we use from X / which uploads aren't cited / source ledger" | `local/paper-relevance-triage` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
@@ -1654,7 +1863,7 @@ When a user request arrives, route to the right skill(s):
 | "devils advocate / why is this wrong / what will reviewers argue / adversarial review / red team / referee objection / counterexample / break this proof / poke holes" | `local/devils-advocate-watcher` (per-block + Lean adversarial review; 4 lenses + adjudicator; emits `da-*` sidecars) | reader |
 | "/integration-watch devils-advocate / da / adversarial" | `local/integration-watch` (dispatcher → devils-advocate-watcher child) | reader |
 | "bold defined terms / tighten definition / no rambling / no preamble in defn / one definition per block / each thing its own definition / tight theorem/prop/lemma statement / no interpretation in a theorem-prop-lemma-conjecture / statement should be pure / interpretation should be a follow-on remark / graduate-level formal math book style / informal register / contractions / hype / rhetorical header / why-question header / consequence header / academic header register / no Why…? or Consequence. section headers / definition in the wrong block / misplaced definition / definition clarity / setup clarity audit" | `local/definition-clarity-audit` (defn+statement clarity scanner; 8 criteria — `clarity-defterm-bold` / `clarity-defn-single` / `clarity-defn-tight` / `clarity-stmt-tight` / `clarity-stmt-pure` (a theorem/prop/lemma/conjecture must carry only its claim; interpretation moves to a follow-on `remark`) / `clarity-grad-style` (graduate-level formal-math register) / `clarity-rhetorical-header` (section headers must be noun-phrase academic, not "Why…?"/"Consequence." rhetorical/colloquial) + inverse `clarity-defn-misplaced` (a non-`definition` block secretly carrying a definition); emits `clarity-*` sidecars) | reader |
-| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 | "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |
@@ -2072,7 +2281,7 @@ whole-library `lake build QOU` is red on pre-existing failures and is not
 the gate).
 
 **Audit treatment.** The `conjectural-propagation` audit
-(`content/pipeline/conjectural-propagation-audit.ts`) reports such
+(`folio-assistant/content/pipeline/conjectural-propagation-audit.ts`) reports such
 blocks separately as **conditional-on-class** rather than as
 violations. To opt a block into this status, ensure its Lean
 declaration contains a class hypothesis matching one of the
@@ -2811,14 +3020,14 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `content/schema/types.ts` | TypeScript types (discriminated unions) |
 | `content/schema/constraints.ts` | Zod schemas + constraint rules |
 | `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
-| `content/pipeline/validate.ts` | Three-level validation |
-| `content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
-| `content/pipeline/build.ts` | Full document build |
+| `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
+| `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
+| `folio-assistant/content/pipeline/build.ts` | Full document build |
 | `content/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
-| `content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
-| `content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
-| `content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
-| `content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
+| `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
+| `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
+| `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
+| `folio-assistant/content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
 
 ### Bibliography architecture
 
@@ -3133,7 +3342,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
 | `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
-| `content/pipeline/` | Validation, rendering, build pipelines |
+| `content/pipeline/` | qou-side audit scripts only (vacuity/axiom, clarity, orphan, trace-convention, …). Validation / rendering / build moved to `folio-assistant/content/pipeline/` in the miga migration — check which side a script is on before invoking it |
 | `content/<paper>/` | Paper manifest + chapter directories |
 | `content/<paper>/fluid-dynamics/` | Ch 7: Fluid dynamics of the brane (q-NS, NS obstruction) |
 | `folio-assistant/` | **Platform package** — MCP server, auth, UI, blocks, viewer |
@@ -3147,8 +3356,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
 | `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
@@ -3161,11 +3370,23 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 >   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
 > ```
 >
-> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
-> no `dist/`, no tags and no publish workflow. Do not describe either as
-> shipped, and do not reason about external consumers of their data — there
-> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
-> while nothing had ever been uploaded.)
+> **None of `qou-mass`, `qou-substrate`, `pyhecke` or `pyhecke-native` are
+> published.** All four 404 on PyPI, with no `dist/` and no publish step. Do not
+> describe any of them as shipped, and do not reason about external consumers of
+> their data — there are none. (`qou-mass` / `qou-substrate` checked 2026-08-15;
+> the two `pyhecke` rows carried the same wrong claim until 2026-08-19 and were
+> corrected the same way. `pyhecke-native` has a wheel workflow, which is
+> probably how "PyPI wheel" got written, but it is `workflow_dispatch`-only and
+> uploads nothing — building an artifact is not publishing it.)
+>
+> **Consequence for agents.** `pyhecke_native` cannot be `pip install`ed, so a
+> container without it is the *default*, not an anomaly. Build it from
+> `tools/pyhecke-native/` with `maturin build --release` (works: produces
+> `pyhecke_native-0.9.0-cp311-...whl`) when a witness's `environment` block
+> records it. **Do not cite `binding_canonical` as evidence that its absence
+> changes results** — I did, and it was wrong: with the native extension
+> installed the producer reproduces the same `tr_M_atom` byte-identically. That
+> 48 % move was import-cone drift, not environment.
 >
 > **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
 > `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)
@@ -3193,7 +3414,7 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`; renamed from `uploads/` 2026-08-15. |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

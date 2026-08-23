@@ -1,0 +1,255 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2301.02038v1",
+ "source": {
+  "file": "2301.02038v1.pdf",
+  "sha256": "27b303939826ab393daeb77ab186311fc7a7ada9d47f6f830bfeafcf14aedb9a",
+  "bytes": 399958,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2301.02038",
+   "version": "1",
+   "primary_class": "math.DG",
+   "stamp_date": "5 Jan 2023"
+  },
+  "doi": null,
+  "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+  "authors_raw": "Fabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano",
+  "abstract": "Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li near partial dif- ferential equations and it is essentially due to Alexandre M . Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and c onservation laws, variational principles and the coordinate free aspects of t he calculus of vari- ations, recursion operators and Hamiltonian structures, e tc. The building blocks of this language are horizontal cohomologies of diﬃe ties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃci ents. The main paradigm of Secondary Calculus is the principle, due to A. M. Vinogradov, roughly stating that: diﬀerential calculus on the space of s olutions of a PDE is calculus up to homotopy on the horizontal De Rham algebra of t he associated diﬃety. W e will review the fundamentals of Secondary Calcul us including its main motivations. In the last part of the paper, we will try to explain the role of homotopy in the theory.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20230105203007-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations",
+  "title_lines": [
+   "Contemporary Mathematics",
+   "Vinogradov’s Cohomological Geometry",
+   "of Partial Differential Equations"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Geometry of PDEs",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "jet spaces",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "the Cartan distribution",
+   "page": 6,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "diffieties",
+   "page": 8,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Cohomology of PDEs",
+   "page": 10,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "horizontal cohomology",
+   "page": 10,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "interpreting horizontal cohomologies",
+   "page": 12,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "algebraic structures on horizontal cohomologies",
+   "page": 15,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Homotopy of PDEs",
+   "page": 18,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "homotopy algebras",
+   "page": 18,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "the LR-algebra of secondary vector fields",
+   "page": 20,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "the A-algebra of secondary differential operators",
+   "page": 22,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4817,
+   "n_words": 810
+  },
+  {
+   "id": "sec-001-1-geometry-of-pdes",
+   "number": "1",
+   "title": "Geometry of PDEs",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2114,
+   "n_words": 364
+  },
+  {
+   "id": "sec-002-11-jet-spaces",
+   "number": "1.1",
+   "title": "jet spaces",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 6477,
+   "n_words": 1217
+  },
+  {
+   "id": "sec-003-12-the-cartan-distribution",
+   "number": "1.2",
+   "title": "the Cartan distribution",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 11987,
+   "n_words": 2252
+  },
+  {
+   "id": "sec-004-2-cohomology-of-pdes",
+   "number": "2",
+   "title": "Cohomology of PDEs",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-21-horizontal-cohomology",
+   "number": "2.1",
+   "title": "horizontal cohomology",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3826,
+   "n_words": 763
+  },
+  {
+   "id": "sec-006-22-interpreting-horizontal-cohomologies",
+   "number": "2.2",
+   "title": "interpreting horizontal cohomologies",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 6861,
+   "n_words": 1290
+  },
+  {
+   "id": "sec-007-23-algebraic-structures-on-horizontal-cohomologi",
+   "number": "2.3",
+   "title": "algebraic structures on horizontal cohomologies",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 7647,
+   "n_words": 1427
+  },
+  {
+   "id": "sec-008-3-homotopy-of-pdes",
+   "number": "3",
+   "title": "Homotopy of PDEs",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 195,
+   "n_words": 32
+  },
+  {
+   "id": "sec-009-31-homotopy-algebras",
+   "number": "3.1",
+   "title": "homotopy algebras",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 25,
+   "n_chars": 17169,
+   "n_words": 3074
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 5380,
+   "n_words": 785
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 11,
+  "chars_total": 66473
+ }
+}

@@ -1,0 +1,774 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0905.0591v3",
+ "source": {
+  "file": "friedvidu1.pdf",
+  "sha256": "cfeaf61f759a6af80dac1de25d05ca973cc6fcca9ff33939f1da90589ec1f51a",
+  "bytes": 498418,
+  "pages": 42
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0905.0591",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Feb 2010"
+  },
+  "doi": null,
+  "title": "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS",
+  "authors_raw": "STEFAN FRIEDL AND STEFANO VIDUSSI",
+  "abstract": "We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group. We summarize their formal properties and we explain their relationship t o twisted Reidemeister torsion. We then give a survey of the many applications of twisted inva riants to the study of topological problems. We conclude with a short summary of th e theory of higher order Alexander polynomials.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.71",
+   "CreationDate": "D:20100208024914Z00'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS",
+  "title_lines": [
+   "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Definition and basic properties",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Reidemeister torsion",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Computation of twisted Reidemeister torsion",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Torsion invariants",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander invariants",
+   "page": 6,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Computation of twisted Alexander polynomials",
+   "page": 7,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Basic properties of twisted invariants",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Relationship between twisted invariants",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted invariants for conjugate representations",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Change of variables",
+   "page": 8,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Duality for twisted invariants",
+   "page": 9,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Shapiro's lemma for twisted invariants",
+   "page": 10,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Twisted invariants of knots and links",
+   "page": 11,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Distinguishing knots and links",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Alexander polynomials and concordance",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials of zero–surgeries",
+   "page": 13,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials and knot concordance",
+   "page": 14,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Ribbon knots and doubly slice knots",
+   "page": 16,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Twisted invariants and slice links",
+   "page": 17,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials and fibered manifolds",
+   "page": 18,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials and the Thurston norm",
+   "page": 21,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+   "page": 23,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Twisted invariants of knots and special representations",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Parabolic representations",
+   "page": 24,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+   "page": 25,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Twisted invariants of hyperbolic knots and links",
+   "page": 25,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Metabelian representations",
+   "page": 25,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+   "page": 26,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "A Partial order on knots",
+   "page": 26,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Periodic and freely periodic knots",
+   "page": 26,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+   "page": 27,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "Seifert fibered surgeries",
+   "page": 28,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 2,
+   "title": "Homology of cyclic covers",
+   "page": 28,
+   "source": "outline",
+   "number": "8.5"
+  },
+  {
+   "level": 2,
+   "title": "Alexander polynomials for links in R P3",
+   "page": 29,
+   "source": "outline",
+   "number": "8.6"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Alexander polynomials of CW–complexes and groups",
+   "page": 29,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Definitions and basic properties",
+   "page": 29,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted Alexander polynomials of groups",
+   "page": 30,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Plane algebraic curves",
+   "page": 30,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 1,
+   "title": "Alexander polynomials and representations over non–commutative rings",
+   "page": 30,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Non–commutative Alexander polynomials",
+   "page": 31,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Higher order Alexander polynomials",
+   "page": 32,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparing different –compatible maps",
+   "page": 33,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 2,
+   "title": "Miscellaneous applications of higher order Alexander polynomials",
+   "page": 34,
+   "source": "outline",
+   "number": "10.4"
+  },
+  {
+   "level": 1,
+   "title": "Open questions and problems",
+   "page": 34,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2835,
+   "n_words": 485
+  },
+  {
+   "id": "sec-001-21-twisted-reidemeister-torsion",
+   "number": "2.1",
+   "title": "Twisted Reidemeister torsion",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3656,
+   "n_words": 599
+  },
+  {
+   "id": "sec-002-2-definition-and-basic-properties",
+   "number": "2",
+   "title": "Definition and basic properties",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3293,
+   "n_words": 625
+  },
+  {
+   "id": "sec-003-22-computation-of-twisted-reidemeister-torsion",
+   "number": "2.2",
+   "title": "Computation of twisted Reidemeister torsion",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4252,
+   "n_words": 887
+  },
+  {
+   "id": "sec-004-24-twisted-alexander-invariants",
+   "number": "2.4",
+   "title": "Twisted Alexander invariants",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2475,
+   "n_words": 492
+  },
+  {
+   "id": "sec-005-25-computation-of-twisted-alexander-polynomials",
+   "number": "2.5",
+   "title": "Computation of twisted Alexander polynomials",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 771,
+   "n_words": 148
+  },
+  {
+   "id": "sec-006-3-basic-properties-of-twisted-invariants",
+   "number": "3",
+   "title": "Basic properties of twisted invariants",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 131,
+   "n_words": 18
+  },
+  {
+   "id": "sec-007-31-relationship-between-twisted-invariants",
+   "number": "3.1",
+   "title": "Relationship between twisted invariants",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3324,
+   "n_words": 657
+  },
+  {
+   "id": "sec-008-32-twisted-invariants-for-conjugate-representati",
+   "number": "3.2",
+   "title": "Twisted invariants for conjugate representations",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 608,
+   "n_words": 118
+  },
+  {
+   "id": "sec-009-33-change-of-variables",
+   "number": "3.3",
+   "title": "Change of variables",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1345,
+   "n_words": 262
+  },
+  {
+   "id": "sec-010-34-duality-for-twisted-invariants",
+   "number": "3.4",
+   "title": "Duality for twisted invariants",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3637,
+   "n_words": 730
+  },
+  {
+   "id": "sec-011-36-twisted-invariants-of-knots-and-links",
+   "number": "3.6",
+   "title": "Twisted invariants of knots and links",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1361,
+   "n_words": 273
+  },
+  {
+   "id": "sec-012-4-distinguishing-knots-and-links",
+   "number": "4",
+   "title": "Distinguishing knots and links",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4008,
+   "n_words": 704
+  },
+  {
+   "id": "sec-013-5-twisted-alexander-polynomials-and-concordance",
+   "number": "5",
+   "title": "Twisted Alexander polynomials and concordance",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 738,
+   "n_words": 159
+  },
+  {
+   "id": "sec-014-51-twisted-alexander-polynomials-of-zerosurgerie",
+   "number": "5.1",
+   "title": "Twisted Alexander polynomials of zero–surgeries",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1595,
+   "n_words": 312
+  },
+  {
+   "id": "sec-015-52-twisted-alexander-polynomials-and-knot-concor",
+   "number": "5.2",
+   "title": "Twisted Alexander polynomials and knot concordance",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 7999,
+   "n_words": 1495
+  },
+  {
+   "id": "sec-016-53-ribbon-knots-and-doubly-slice-knots",
+   "number": "5.3",
+   "title": "Ribbon knots and doubly slice knots",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2770,
+   "n_words": 528
+  },
+  {
+   "id": "sec-017-54-twisted-invariants-and-slice-links",
+   "number": "5.4",
+   "title": "Twisted invariants and slice links",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2740,
+   "n_words": 508
+  },
+  {
+   "id": "sec-018-6-twisted-alexander-polynomials-the-thurston-nor",
+   "number": "6",
+   "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 8912,
+   "n_words": 1699
+  },
+  {
+   "id": "sec-019-62-twisted-alexander-polynomials-and-the-thursto",
+   "number": "6.2",
+   "title": "Twisted Alexander polynomials and the Thurston norm",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3431,
+   "n_words": 676
+  },
+  {
+   "id": "sec-020-63-normalized-twisted-reidemeister-torsion-and-t",
+   "number": "6.3",
+   "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2440,
+   "n_words": 458
+  },
+  {
+   "id": "sec-021-7-twisted-invariants-of-knots-and-special-repres",
+   "number": "7",
+   "title": "Twisted invariants of knots and special representations",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 280,
+   "n_words": 41
+  },
+  {
+   "id": "sec-022-71-parabolic-representations",
+   "number": "7.1",
+   "title": "Parabolic representations",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2722,
+   "n_words": 501
+  },
+  {
+   "id": "sec-023-72-twisted-alexander-polynomials-and-the-space-o",
+   "number": "7.2",
+   "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1463,
+   "n_words": 241
+  },
+  {
+   "id": "sec-024-73-twisted-invariants-of-hyperbolic-knots-and-li",
+   "number": "7.3",
+   "title": "Twisted invariants of hyperbolic knots and links",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 895,
+   "n_words": 152
+  },
+  {
+   "id": "sec-025-74-metabelian-representations",
+   "number": "7.4",
+   "title": "Metabelian representations",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 971,
+   "n_words": 154
+  },
+  {
+   "id": "sec-026-8-miscellaneous-applications-of-twisted-reidemei",
+   "number": "8",
+   "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 128,
+   "n_words": 21
+  },
+  {
+   "id": "sec-027-81-a-partial-order-on-knots",
+   "number": "8.1",
+   "title": "A Partial order on knots",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 837,
+   "n_words": 162
+  },
+  {
+   "id": "sec-028-82-periodic-and-freely-periodic-knots",
+   "number": "8.2",
+   "title": "Periodic and freely periodic knots",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2646,
+   "n_words": 537
+  },
+  {
+   "id": "sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n",
+   "number": "8.3",
+   "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2105,
+   "n_words": 379
+  },
+  {
+   "id": "sec-030-85-homology-of-cyclic-covers",
+   "number": "8.5",
+   "title": "Homology of cyclic covers",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2592,
+   "n_words": 473
+  },
+  {
+   "id": "sec-031-9-twisted-alexander-polynomials-of-cwcomplexes-a",
+   "number": "9",
+   "title": "Twisted Alexander polynomials of CW–complexes and groups",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1867,
+   "n_words": 353
+  },
+  {
+   "id": "sec-032-92-twisted-alexander-polynomials-of-groups",
+   "number": "9.2",
+   "title": "Twisted Alexander polynomials of groups",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1323,
+   "n_words": 224
+  },
+  {
+   "id": "sec-033-93-plane-algebraic-curves",
+   "number": "9.3",
+   "title": "Plane algebraic curves",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 1005,
+   "n_words": 178
+  },
+  {
+   "id": "sec-034-10-alexander-polynomials-and-representations-ove",
+   "number": "10",
+   "title": "Alexander polynomials and representations over non–commutative rings",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1312,
+   "n_words": 211
+  },
+  {
+   "id": "sec-035-101-noncommutative-alexander-polynomials",
+   "number": "10.1",
+   "title": "Non–commutative Alexander polynomials",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2124,
+   "n_words": 406
+  },
+  {
+   "id": "sec-036-102-higher-order-alexander-polynomials",
+   "number": "10.2",
+   "title": "Higher order Alexander polynomials",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5832,
+   "n_words": 1097
+  },
+  {
+   "id": "sec-037-104-miscellaneous-applications-of-higher-order-a",
+   "number": "10.4",
+   "title": "Miscellaneous applications of higher order Alexander polynomials",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 846,
+   "n_words": 126
+  },
+  {
+   "id": "sec-038-11-open-questions-and-problems",
+   "number": "11",
+   "title": "Open questions and problems",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 3335,
+   "n_words": 630
+  },
+  {
+   "id": "sec-039-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 42,
+   "n_chars": 22772,
+   "n_words": 3592
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 47,
+  "sections": 40,
+  "chars_total": 117376
+ }
+}

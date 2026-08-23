@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1112.0030v2",
+ "source_sha256": "745f143c2df4734b",
+ "brief": "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces.",
+ "extended": "**Homological algebra of knots and BPS states**\n\n*Sergei Gukov and Marko Stoˇ sić*\n\n46 pp, 7 sections.\n\n**Abstract.** It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existen ce of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a li st of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “m irror symmetry” between these triply-graded theories.\n\n**Outline.** 1 Setting the stage; 2 Algebra of BPS states and its representation; 3 B-model and matrix factorizations; 5 Mirror symmetry for knots; Appendix A. Notations; Appendix D. Computation of the unreduced homol; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 290
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-setting-the-stage",
+   "title": "Setting the stage",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-2-algebra-of-bps-states-and-its-representations",
+   "title": "Algebra of BPS states and its representations",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-002-3-b-model-and-matrix-factorizations",
+   "title": "B-model and matrix factorizations",
+   "pages": "10-25"
+  },
+  {
+   "id": "sec-003-5-mirror-symmetry-for-knots",
+   "title": "Mirror symmetry for knots",
+   "pages": "25-36"
+  },
+  {
+   "id": "sec-004-appendix-a-notations",
+   "title": "Appendix A. Notations",
+   "pages": "36-42"
+  },
+  {
+   "id": "sec-005-appendix-d-computation-of-the-unreduced-homology",
+   "title": "Appendix D. Computation of the unreduced homology of the unknot",
+   "pages": "42-44"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "44-46"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

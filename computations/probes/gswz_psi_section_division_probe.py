@@ -363,7 +363,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_psi_section_division_probe",
     "beans": ["qou-9p9y"],
-    "source": "GSWZ arXiv:2412.04241v2 Def 3.9, Thm 10, §4.6 eqns (282)/(287); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 Def 3.9, Thm 10, §4.6 eqns (282)/(287); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, m = 1 fibre",
     "checks": checks,
     "open_reproduction_of_printed_287": open_reproduction,

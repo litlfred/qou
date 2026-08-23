@@ -111,62 +111,36 @@ class SubstrateEWDerivations where
   claim_scalar_gauge : scalar_mass_factor / gauge_mass_factor =
     (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ)
 
-/-- **Hypothesis 1**: the SU(2)_L gauge coupling g equals π · h_0
-    at the substrate.
+/-! ### The three `*_hypothesis` accessors — REMOVED 2026-08-22
 
-    Empirical match: +0.26% (probe `ew_couplings_substrate_derivation_probe.py`).
-    Categorical derivation: open — requires Yekutieli MI connection-1-form
-    integration around a closed loop, showing the integral equals π · h_0.
+    `g_eq_pi_h_substrate_hypothesis`, `v_ratio_eq_log_S3_hypothesis` and
+    `scalar_gauge_ratio_eq_six_fifths_hypothesis` each read
 
-    The `sorry` is the open structural derivation, NOT a missing
-    Lean tactic. Status (§3b-cond): conjectural class hypothesis. -/
--- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-def g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :
-    gauge_coupling_g = Real.pi * h_substrate_value :=
-  -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-  ctx.claim_g_eq_pi_h
+        def <name> [ctx : SubstrateEWDerivations] : <P> := ctx.claim_<P>
 
-/-- **Hypothesis 2**: v_framework / v_SM equals log of |S_3|.
+    where `<P>` is the class field's type **verbatim** (vacuity ledger,
+    `proof-no-self-assuming-projection` / `field-projection`, verdict
+    genuine).  The class axiomatises the conclusion and the `def` projects
+    it, so nothing derives anything — AGENTS.md §3b-cond item 5.
 
-    The framework's effective Higgs VEV is v_framework ≈ 437 GeV
-    (per PR #1137 audit §5 / PR #1128 empirical). The ratio to
-    SM v = 246 GeV is approximately 1.78, matching log(6) = log|S_3|
-    within 0.50%.
+    They were **dropped rather than restated**, because restating is not
+    what they needed.  The three claims are *openly conjectural* — the
+    class deliberately has **no global instance**, and each docstring
+    records the empirical match (+0.26 %, −0.50 %, +0.35 %) alongside the
+    open categorical derivation.  That is the honest §3b-cond shape and
+    `SubstrateEWDerivations` keeps it, with the three hypotheses and their
+    audit references intact as class fields.
 
-    The "6" is the cardinality of the GS-NF knot-operator basis on
-    B_3 (Borromean's 3 strands).
-
-    Categorical derivation: open — requires Chern-Simons partition
-    function evaluation on the S_3 knot-operator group.
-
-    Status (§3b-cond): conjectural class hypothesis. -/
--- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-def v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :
-    ∃ v_framework_GeV : ℝ, v_framework_GeV / vev_v_GeV =
-      Real.log (cardS3 : ℝ) :=
-  -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-  ctx.claim_v_ratio
-
-/-- **Hypothesis 3**: the scalar/gauge mass-factor ratio equals 6/5.
-
-    The empirical 171/143 ≈ 1.196 matches 6/5 = 1.200 within 0.35%.
-    Categorical interpretation:
-      6 = |GS-NF basis on B_3| (knot operators)
-      5 = |partitions of 4| (Wedderburn blocks at H_4)
-    Ratio reflects the structural balance between operator basis
-    and Wedderburn-block normalization.
-
-    Categorical derivation: open — requires explicit categorical
-    formulas for both `scalar_mass_factor` and `gauge_mass_factor`
-    + showing their ratio is exactly 6/5 by block-counting.
-
-    Status (§3b-cond): conjectural class hypothesis. -/
--- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
-    scalar_mass_factor / gauge_mass_factor =
-      (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ) :=
-  -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-  ctx.claim_scalar_gauge
+    What the accessors added was nothing: measured 2026-08-22, all three
+    had **zero** references outside this file, the class fields are never
+    projected anywhere else, and `SubstrateEWDerivations` is not consumed
+    downstream at all — notwithstanding the class docstring above, which
+    says "downstream consumers take `[SubstrateEWDerivations]` as an
+    explicit hypothesis".  There are none.  So the accessors only restated
+    the fields for an audience that does not exist, while reading as
+    results.  A consumer that appears later should project the field
+    directly (`ctx.claim_g_eq_pi_h`), where its status as an assumption is
+    visible at the use site. -/
 
 /-- **Corollary (conditional on all three hypotheses)**: the W/Z mass
     ratio equals cos θ_W exactly (CONDITIONAL, derived from

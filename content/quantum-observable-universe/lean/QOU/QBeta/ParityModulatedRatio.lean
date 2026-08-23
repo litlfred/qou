@@ -55,7 +55,7 @@ shape, branch-dependence of the one-step ratio is forced and carries no
 information about singularity count.
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_parity_artifact.py
--- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
+-- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
 namespace QOU.QBeta.ParityRatio

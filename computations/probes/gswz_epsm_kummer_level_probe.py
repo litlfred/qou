@@ -413,8 +413,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ "
-        "arXiv:2412.04241v2 eqn (275) (uploads/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ "
+        "arXiv:2412.04241v2 eqn (275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
         "base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)"
     ),
     "fields": detail,

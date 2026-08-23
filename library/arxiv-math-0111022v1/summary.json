@@ -1,0 +1,37 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0111022v1",
+ "source_sha256": "fea7f118014838fe",
+ "brief": "Some remarks on q-deformed multiple polylogarithms — We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally",
+ "extended": "**Some remarks on q-deformed multiple polylogarithms**\n\n*A-1090 Vienna, Austria*\n\n11 pp, 3 sections.\n\n**Abstract.** We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally discussed in the literature. The merit of the deformati on as sug- gested, here, is that q-deformed multiple polylogarithms deﬁne an algebra, then (as in the undeformed case). For the special ca se of q- deformed multiple ζ-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure whic h is a de- formation of the commutative Hopf algebra structure which o ne has in the classical case. Finally, we discuss the possible corres pondence be- tween q-deformed multiple polylogarithms and a noncommutative an d noncocommutative self-dual Hopf algebra recently introdu ced by the author as a quantum analog of the Grothendieck-Teichm¨ uller group.\n\n**Outline.** Abstract; 1 Motivation; References\n\n**Extracted claims (proposals, not verified).**\n- Lemma 2: The rational linear span of the Lin1,...,n m (z1,...,z m;q) forms an\n- Lemma 5: For the ordered deﬁnition of the q-deformed multiple polyloga-\n- Lemma 6: There is a q-deformation ∆ q of the coproduct ∆ of Z which turns",
+ "tokens": {
+  "brief": 47,
+  "extended": 317
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-motivation",
+   "title": "Motivation",
+   "pages": "1-10"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "10-11"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

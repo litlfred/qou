@@ -1,0 +1,241 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1704.01735v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3935747ae9291f766e4056d07d8822084272cba3197bbee3d0e32cffe086cee6",
+  "file": "1704.01735v4.pdf"
+ },
+ "provenance": {
+  "title": "Modular curves, invariant theory and E8 Lei Yang",
+  "authors": null,
+  "arxiv": {
+   "id": "1704.01735",
+   "version": "4",
+   "primary_class": "math.NT",
+   "stamp_date": "8 Jun 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 16,
+  "by_kind": {
+   "theorem": 10,
+   "proposition": 5,
+   "example": 1
+  },
+  "formalization_candidates": 15
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "The G-invariant polynomials \u03a6 4, . . ., \u03a6 30 in x1(z), . . .,",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "has many consequences. The \ufb01rst one comes from the theory",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": "A di\ufb00erent construction of the E8-singularity: from X(13",
+   "statement": "to E8). The equation of the E8-singularity can be constructed from the mod-",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.3",
+   "name": "A di\ufb00erent construction of the Barlow surface: from\nX(13",
+   "statement": "to E8). The Barlow surface can be constructed from the modular",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.4",
+   "name": "A di\ufb00erent construction of Bring\u2019s curve and Fricke\u2019s\noctavic curve: from X(13",
+   "statement": "to E8). Both Bring\u2019s curve and Fricke\u2019s octavic",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": ", Theorem 1.3 and Theorem 1.4 show that there exist two",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": ", Theorem 1.3 and Theorem 1.4. In section \ufb01ve, we give an",
+   "section_file": "sections/sec-005-5-an-explicit-construction-of-the-modular-curve.md",
+   "section_title": "An explicit construction of the modular curve X(13)",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
+   "name": "see [2] and [28]",
+   "statement": "Let \u03b1 = (02)(34) \u03c3, \u03b2 = (01234) .",
+   "section_file": "sections/sec-008-22-the-barlow-surface-from-the-icosahedron-to-e8.md",
+   "section_title": "The Barlow surface: from the icosahedron to E8",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "(see [12], p. 236). For each odd integer k \u2265 5, the",
+   "section_file": "sections/sec-010-3-modular-curve-x13-and-invariant-theory-for.md",
+   "section_title": "Modular curve X(13) and invariant theory for",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": "see [35], Proposition 2.5",
+   "statement": "If z \u2208 H, then the following",
+   "section_file": "sections/sec-010-3-modular-curve-x13-and-invariant-theory-for.md",
+   "section_title": "Modular curve X(13) and invariant theory for",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": "A di\ufb00erent construction of the E8-singularity: from X(13",
+   "statement": "to E8). The equation of the E8-singularity can be constructed from the mod-",
+   "section_file": "sections/sec-034-41-e8-singularity-from-x13-to-e8.md",
+   "section_title": "E8-singularity: from X(13) to E8",
+   "pages": "30-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": "see [15]",
+   "statement": "In the family of quintic surfaces S(\u03bb :\u00b5 ) in P4",
+   "section_file": "sections/sec-035-42-the-barlow-surface-from-x13-to-e8.md",
+   "section_title": "The Barlow surface: from X(13) to E8",
+   "pages": "31-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.3",
+   "name": "see [2] and [28]",
+   "statement": "Let \u03b1 = (02)(34) \u03c3, \u03b2 = (01234) .",
+   "section_file": "sections/sec-035-42-the-barlow-surface-from-x13-to-e8.md",
+   "section_title": "The Barlow surface: from X(13) to E8",
+   "pages": "31-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.4",
+   "name": null,
+   "statement": "The Barlow surface can be constructed from the modular",
+   "section_file": "sections/sec-035-42-the-barlow-surface-from-x13-to-e8.md",
+   "section_title": "The Barlow surface: from X(13) to E8",
+   "pages": "31-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": null,
+   "statement": "Both Bring\u2019s curve and Fricke\u2019s octavic curve can be",
+   "section_file": "sections/sec-037-26-\u03b42.md",
+   "section_title": "(\u03b42",
+   "pages": "34-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "5.2",
+   "name": null,
+   "statement": "The equation of the modular curve X(7) of level 7 is",
+   "section_file": "sections/sec-037-26-\u03b42.md",
+   "section_title": "(\u03b42",
+   "pages": "34-37",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

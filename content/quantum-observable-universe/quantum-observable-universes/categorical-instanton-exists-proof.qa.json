@@ -1358,6 +1358,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.498Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:07.985Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1407,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.534Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.022Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1456,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.570Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.059Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1505,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.606Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.097Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1554,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.642Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.132Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1603,40 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.678Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Opens with a templated proof-strategy preamble that narrates the method instead of proving: 'The proof strategy proceeds by direct construction and deformation theory. We exhibit a specific connection and directly compute its curvature, demonstrating that it satisfies the $\\star_q$-self-duality condition required for a categorical instanton.' The narration is also inaccurate: the body computes no curvature (it observes $F_{\\nabla_0}=0$) and invokes no deformation theory (it cites categorical descent of BPST). Same two-sentence template recurs across the exists/unique proof blocks of this chapter.",
+        "notes": "Proposed (structural, paragraph removal, uniform across the chapter's *-proof blocks, so flagged rather than applied): delete the preamble paragraph entirely; the body stands alone as the proof. If a roadmap is wanted, replace with one accurate clause, e.g. 'Existence follows from the trivial connection; non-triviality from descent.' Not fixed inline because removing a whole paragraph removes author content rather than a construction, and the same edit would have to land on ~10 sibling blocks."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:48.739Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Re-recorded AFTER the fix, so this entry certifies the fixed state. The block previously opened with a templated proof-strategy preamble narrating a method the body does not use ('...directly compute its curvature...' when the body observes F=0 and cites categorical descent of BPST). With the preamble removed the block opens on the trivial connection and contains no meta-commentary; the remaining text was not altered.",
+        "notes": "FIX APPLIED (inline, within the small-trap threshold: 2 sentences, pure prose, no display math, no meaning change). Before: 'The proof strategy proceeds by direct construction and deformation theory. We exhibit a specific connection and directly compute its curvature, demonstrating that it satisfies the $\\star_q$-self-duality condition required for a categorical instanton.' followed by a blank line. After: paragraph deleted; block now begins 'The trivial connection $\\nabla_0 = d$ has $F_{\\nabla_0} = 0$ ...'. Math delimiters re-checked ($$ count even). Matches the operation a sibling agent applied to categorical-action-exists-proof.md and categorical-action-unique-proof.md in this same chapter."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1656,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.714Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.168Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1705,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.756Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.206Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1754,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.791Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.244Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1803,36 @@
         "reviewed_at": "2026-08-15T10:30:59.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bb7a4af93589",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:04.827Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 5-line proof body (trivial connection F=0; non-trivial instantons via categorical descent of BPST). Checked all ten categories on the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "979c160c0113",
+          "ts": "0ca3d744d695"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:08.281Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Re-recorded AFTER the trap-meta-commentary fix so the whole ten-criterion set certifies the fixed state (the earlier entries were written against the pre-fix .md hash). Block now reads: trivial connection gives F=0, hence the zero instanton; non-trivial instantons on SU_q(2)-bundles over the CR realisation via categorical descent of the classical BPST instanton. Five lines, no rhetorical construction, no em-dash, no enumeration, no closer beyond the cross-reference to prop:categorical-self-duality."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1855,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:04:08.281Z"
 }

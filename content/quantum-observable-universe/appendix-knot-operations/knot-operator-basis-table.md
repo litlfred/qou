@@ -57,8 +57,7 @@ See [Table 2](#tbl:knot-operator-basis-table-table2-data).
 
 **All 36 pairs produce nonzero $e^-$ coefficient under $T_{2,3}$.**
 
-This is the fundamental result:
-the trefoil operator **unconditionally opens the electron
+The trefoil operator **unconditionally opens the electron
 channel** regardless of the incoming state, confirming
 $T_{2,3}$ as the universal pair-production operator.
 

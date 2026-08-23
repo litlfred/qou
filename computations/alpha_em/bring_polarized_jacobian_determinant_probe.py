@@ -173,7 +173,7 @@ def main():
         },
         "context": {
             "source": "Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12 (τ_B=τ₀M) + Prop 4.6 "
-                      "(Jac≅E_{5τ₀}³×E_{τ₀}, non-symplectic to the product); PDF uploads/2208.13692v1.pdf",
+                      "(Jac≅E_{5τ₀}³×E_{τ₀}, non-symplectic to the product); PDF library/arxiv-2208.13692v1/2208.13692v1.pdf",
             "sharpens": "#3864 — replaces the naive per-factor product with the polarized-Jacobian "
                         "determinant; shows they differ only via the integer-lattice theta-factor",
             "not_interpreted": "8.226≈b₁=8 is a coincidence to resist (Prop 4.6 non-product polarization; "

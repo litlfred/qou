@@ -1,0 +1,1546 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1701.06567v2",
+ "source": {
+  "file": "1701.06567v2.pdf",
+  "sha256": "c1610b50f5a7e22c4d5bc359cd5b8f6a7e8c121b3eae079bd2a1e41a2956c8da",
+  "bytes": 1189704,
+  "pages": 81
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1701.06567",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "24 May 2017"
+  },
+  "doi": null,
+  "title": "BPS spectra and 3-manifold invariants",
+  "authors_raw": "Sergei Gukov 1, Du Pei 1,2, Pavel Putrov 3, Cumrun Vafa 4",
+  "abstract": "We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections. The physical system in question involves a 6d ﬁvebrane theory onM3 times a 2-disk,D2, whose Hilbert space of BPS states plays the role of a basic building block in categoriﬁcation of various partition functions of 3dN = 2 theory T [M3]: D2×S1 half-index, S2×S1 superconformal index, and S2×S1 topologically twisted index. The ﬁrst partition function is labeled by a choice of boundary condition and provides a reﬁnement of Chern-Simons (WRT) invariant. A linear combination of them in the unreﬁned limit gives the analytically continued WRT invariant ofM3. The last two can be factorized into the product of half-indices. We show how this works explicitly for many examples, including Lens spaces, circle ﬁbrations over Riemann surfaces, and plumbed 3-manifolds. CALT-TH-2016-039 arXiv:1701.06567v2 [hep-th] 24 May 2017",
+  "docinfo": {
+   "CreationDate": "D:20170525004610Z",
+   "Creator": "TeX",
+   "Producer": "pdfTeX-1.40.17"
+  },
+  "title_lines": [
+   "BPS spectra and 3-manifold invariants"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Jeﬀerson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Fivebranes on 3-manifolds and categoriﬁcation of WRT invariant",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "D2×S1 partition function of T [M3] and WRT invariant",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Realization in terms of counting solutions of diﬀerential equations",
+   "page": 14,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Surgeries, triangulations, and Atiyah-Floer",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Superconformal index of T [M3] and its factorization",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Further reﬁnement",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Topologically twisted index of T [M3]",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Generalization to U(N)",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.8"
+  },
+  {
+   "level": 2,
+   "title": "Relation to open GW invariants on T∗M3",
+   "page": 22,
+   "source": "inferred",
+   "number": "2.9"
+  },
+  {
+   "level": 2,
+   "title": "Langlands duality and ﬂat connections",
+   "page": 24,
+   "source": "inferred",
+   "number": "2.10"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 27,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "M3 =S3",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Categorifying the index",
+   "page": 29,
+   "source": "inferred",
+   "number": "3.1.1"
+  },
+  {
+   "level": 3,
+   "title": "The t =qβ reduction from BPS spectral sequence",
+   "page": 30,
+   "source": "inferred",
+   "number": "3.1.2"
+  },
+  {
+   "level": 2,
+   "title": "M3 =L(p, 1)",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁned superconformal index",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Topologically twisted index of T [L(p, 1)]",
+   "page": 34,
+   "source": "inferred",
+   "number": "3.2.2"
+  },
+  {
+   "level": 1,
+   "title": "(q)ˆZ(β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(1/q) +ˆZ(β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q)ˆZ(β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(1/q) +ˆZ(β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q)ˆZ(β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1/q) (3.64)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q)· 2ˆZ(−β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q)ˆZ(−β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q)ˆZ(−β)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1/q). (3.65)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1, ˆZ(0)",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q1/5, ˆZ(0)",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1 +q +q2, ˆZ(1)",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q1/5(1 + 2q +q2), ˆZ(1)",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1, ˆZ(−1)",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 0, ˆZ(−1)",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q2/(1−q2),",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q6/5/(1−q2),",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−q1/5(",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
+   "page": 38,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =q11/5(",
+   "page": 38,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) =q14/5(",
+   "page": 38,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Cyclotomic expansion",
+   "page": 39,
+   "source": "inferred",
+   "number": "3.2.4"
+  },
+  {
+   "level": 3,
+   "title": "Positivity of coeﬃcients",
+   "page": 41,
+   "source": "inferred",
+   "number": "3.2.5"
+  },
+  {
+   "level": 1,
+   "title": "Positivity of homological blocks ˆZa. Besides overall signs, all homological blocks are",
+   "page": 43,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
+   "page": 43,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Positivity of “ β-reduced” homological blocks ˆZ(β)",
+   "page": 43,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Comparison with reﬁned CS",
+   "page": 43,
+   "source": "inferred",
+   "number": "3.2.6"
+  },
+  {
+   "level": 1,
+   "title": "(2k + 4β)1/2",
+   "page": 45,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "M3 =O(−p)→ Σg",
+   "page": 46,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Homological blocks and WRT invariant",
+   "page": 47,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Factorization of the superconformal index",
+   "page": 48,
+   "source": "inferred",
+   "number": "3.3.2"
+  },
+  {
+   "level": 1,
+   "title": "(q) =q−2 + 1, ˆZ(−2)",
+   "page": 50,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =q−4/5, ˆZ(−2)",
+   "page": 50,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1",
+   "page": 50,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) =−",
+   "page": 50,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q) = 1",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Comparison with reﬁned CS",
+   "page": 50,
+   "source": "inferred",
+   "number": "3.3.3"
+  },
+  {
+   "level": 2,
+   "title": "M3 = plumbed",
+   "page": 51,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 3,
+   "title": "Homological blocks ˆZa",
+   "page": 52,
+   "source": "inferred",
+   "number": "3.4.1"
+  },
+  {
+   "level": 1,
+   "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
+   "page": 53,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Generically it is well-deﬁned only if M is negative deﬁnite, i.e. M3(Γ) is a link of a",
+   "page": 53,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The formula ( 3.145) deﬁnes homological blocks ˆZa(q) in terms of a plumbing graph",
+   "page": 53,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Even though the formula has the structure of the “index of a quiver theory”, it is not",
+   "page": 53,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Suppose M < 0. Then ˆZa(q) is a well-deﬁned series in q convergent in the unit disk",
+   "page": 53,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "We have",
+   "page": 53,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "Problems on the T [M3] side",
+   "page": 55,
+   "source": "inferred",
+   "number": "3.4.2"
+  },
+  {
+   "level": 1,
+   "title": "Adding knots and links into M3",
+   "page": 55,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Links in M3 and line operators in T [M3]",
+   "page": 56,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Links in S2×S1 and Rozansky’s proposal",
+   "page": 60,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Links in L(p, 1)",
+   "page": 63,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Unreﬁned index of T [L(p, 1)] with Wilson loops",
+   "page": 64,
+   "source": "inferred",
+   "number": "4.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁnement and categoriﬁcation",
+   "page": 65,
+   "source": "inferred",
+   "number": "4.3.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparison with reﬁned CS",
+   "page": 66,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "(q;K,λ )",
+   "page": 67,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q)",
+   "page": 67,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 67,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(2k)L/2",
+   "page": 69,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(2k)L/2 (q 1/2− q −1/2)×",
+   "page": 69,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(A.10)",
+   "page": 69,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Fω(x1,...,x L)|xv=q nv/2 (A.15)",
+   "page": 70,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(2k)L/2 (q 1/2− q −1/2) lim",
+   "page": 71,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Fω(x1,...,x L)|xv=q nv/2 =",
+   "page": 71,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(q 1/2− q −1/2)| detM|1/2",
+   "page": 71,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q 1/2− q −1/2)| detM|1/2×",
+   "page": 71,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Categoriﬁcation of the Turaev-Viro invariants",
+   "page": 74,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 76,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-walter-burke-institute-for-theoretical-physics",
+   "number": "1",
+   "title": "Walter Burke Institute for Theoretical Physics, California Institute of Technology,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 23,
+   "n_words": 4
+  },
+  {
+   "id": "sec-001-2-center-for-quantum-geometry-of-moduli-spaces-d",
+   "number": "2",
+   "title": "Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 27,
+   "n_words": 4
+  },
+  {
+   "id": "sec-002-3-school-of-natural-sciences-institute-for-advan",
+   "number": "3",
+   "title": "School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-jeﬀerson-physical-laboratory-harvard-universit",
+   "number": "4",
+   "title": "Jeﬀerson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 11476,
+   "n_words": 1867
+  },
+  {
+   "id": "sec-004-2-fivebranes-on-3-manifolds-and-categoriﬁcation",
+   "number": "2",
+   "title": "Fivebranes on 3-manifolds and categoriﬁcation of WRT invariant",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 274,
+   "n_words": 51
+  },
+  {
+   "id": "sec-005-21-preliminaries",
+   "number": "2.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1302,
+   "n_words": 224
+  },
+  {
+   "id": "sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar",
+   "number": "2.2",
+   "title": "D2×S1 partition function of T [M3] and WRT invariant",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 14,
+   "n_chars": 16864,
+   "n_words": 2851
+  },
+  {
+   "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
+   "number": "2.3",
+   "title": "Realization in terms of counting solutions of diﬀerential equations",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6958,
+   "n_words": 1139
+  },
+  {
+   "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
+   "number": "2.4",
+   "title": "Surgeries, triangulations, and Atiyah-Floer",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6383,
+   "n_words": 1043
+  },
+  {
+   "id": "sec-009-25-superconformal-index-of-t-m3-and-its-factoriz",
+   "number": "2.5",
+   "title": "Superconformal index of T [M3] and its factorization",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2510,
+   "n_words": 408
+  },
+  {
+   "id": "sec-010-26-further-reﬁnement",
+   "number": "2.6",
+   "title": "Further reﬁnement",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1860,
+   "n_words": 308
+  },
+  {
+   "id": "sec-011-27-topologically-twisted-index-of-t-m3",
+   "number": "2.7",
+   "title": "Topologically twisted index of T [M3]",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1830,
+   "n_words": 299
+  },
+  {
+   "id": "sec-012-28-generalization-to-un",
+   "number": "2.8",
+   "title": "Generalization to U(N)",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1960,
+   "n_words": 309
+  },
+  {
+   "id": "sec-013-29-relation-to-open-gw-invariants-on-tm3",
+   "number": "2.9",
+   "title": "Relation to open GW invariants on T∗M3",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3207,
+   "n_words": 585
+  },
+  {
+   "id": "sec-014-210-langlands-duality-and-ﬂat-connections",
+   "number": "2.10",
+   "title": "Langlands duality and ﬂat connections",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 7944,
+   "n_words": 1374
+  },
+  {
+   "id": "sec-015-31-m3-s3",
+   "number": "3.1",
+   "title": "M3 =S3",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 219,
+   "n_words": 37
+  },
+  {
+   "id": "sec-016-3-examples",
+   "number": "3",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 3078,
+   "n_words": 557
+  },
+  {
+   "id": "sec-017-311-categorifying-the-index",
+   "number": "3.1.1",
+   "title": "Categorifying the index",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2816,
+   "n_words": 525
+  },
+  {
+   "id": "sec-018-312-the-t-qβ-reduction-from-bps-spectral-sequenc",
+   "number": "3.1.2",
+   "title": "The t =qβ reduction from BPS spectral sequence",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 4229,
+   "n_words": 775
+  },
+  {
+   "id": "sec-019-32-m3-lp-1",
+   "number": "3.2",
+   "title": "M3 =L(p, 1)",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-321-reﬁned-superconformal-index",
+   "number": "3.2.1",
+   "title": "Reﬁned superconformal index",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 3012,
+   "n_words": 531
+  },
+  {
+   "id": "sec-021-322-topologically-twisted-index-of-t-lp-1",
+   "number": "3.2.2",
+   "title": "Topologically twisted index of T [L(p, 1)]",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 6959,
+   "n_words": 1231
+  },
+  {
+   "id": "sec-022-0-qˆzβ",
+   "number": "0",
+   "title": "(q)ˆZ(β)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 101,
+   "n_words": 17
+  },
+  {
+   "id": "sec-023-1-qˆzβ",
+   "number": "1",
+   "title": "(q)ˆZ(−β)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 147,
+   "n_words": 30
+  },
+  {
+   "id": "sec-024-0-1q-ˆzβ",
+   "number": "0",
+   "title": "(1/q) +ˆZ(β)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 36,
+   "n_words": 7
+  },
+  {
+   "id": "sec-025-2-1q-364",
+   "number": "2",
+   "title": "(1/q) (3.64)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 23,
+   "n_words": 5
+  },
+  {
+   "id": "sec-026-0-q-2ˆzβ",
+   "number": "0",
+   "title": "(q)· 2ˆZ(−β)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 53,
+   "n_words": 10
+  },
+  {
+   "id": "sec-027-2-1q-365",
+   "number": "2",
+   "title": "(1/q). (3.65)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 92,
+   "n_words": 20
+  },
+  {
+   "id": "sec-028-0-q-1-ˆz0",
+   "number": "0",
+   "title": "(q) = 1, ˆZ(0)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-1-q-q15-ˆz0",
+   "number": "1",
+   "title": "(q) =−q1/5, ˆZ(0)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 65,
+   "n_words": 16
+  },
+  {
+   "id": "sec-030-0-q-1-q-q2-ˆz1",
+   "number": "0",
+   "title": "(q) = 1 +q +q2, ˆZ(1)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-1-q-q151-2q-q2-ˆz1",
+   "number": "1",
+   "title": "(q) =−q1/5(1 + 2q +q2), ˆZ(1)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 20,
+   "n_words": 4
+  },
+  {
+   "id": "sec-032-0-q-1-ˆz1",
+   "number": "0",
+   "title": "(q) = 1, ˆZ(−1)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-033-1-q-0-ˆz1",
+   "number": "1",
+   "title": "(q) = 0, ˆZ(−1)",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 95,
+   "n_words": 28
+  },
+  {
+   "id": "sec-034-0-q-1-q-2q2-2q3-2q4-q5-q6",
+   "number": "0",
+   "title": "(q) = 1 +q + 2q2 + 2q3 + 2q4 +q5 +q6,",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 5,
+   "n_words": 1
+  },
+  {
+   "id": "sec-035-1-q-q151-2q-3q2-3q3-3q4-2q5-q6",
+   "number": "1",
+   "title": "(q) =−q1/5(1 + 2q + 3q2 + 3q3 + 3q4 + 2q5 +q6),",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 41,
+   "n_words": 9
+  },
+  {
+   "id": "sec-036-0-q-q21q2",
+   "number": "0",
+   "title": "(q) =−q2/(1−q2),",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 6,
+   "n_words": 1
+  },
+  {
+   "id": "sec-037-1-q-q651q2",
+   "number": "1",
+   "title": "(q) =−q6/5/(1−q2),",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 178,
+   "n_words": 50
+  },
+  {
+   "id": "sec-038-0-q-q12-q11-2q10-3q9-4q8-4q7-5q6-4q5-4q4-3q3-2q2",
+   "number": "0",
+   "title": "(q) =q12 +q11 + 2q10 + 3q9 + 4q8 + 4q7 + 5q6 + 4q5 + 4q4 + 3q3 + 2q2 +q + 1,",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 179,
+   "n_words": 53
+  },
+  {
+   "id": "sec-039-0-q-q7-q5-q4-q3-q2",
+   "number": "0",
+   "title": "(q) = (q7 +q5 +q4 +q3 +q2)/",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 25,
+   "n_words": 5
+  },
+  {
+   "id": "sec-040-1-q-q115",
+   "number": "1",
+   "title": "(q) =q11/5(",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 47,
+   "n_words": 13
+  },
+  {
+   "id": "sec-041-2-q-q145",
+   "number": "2",
+   "title": "(q) =q14/5(",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1336,
+   "n_words": 230
+  },
+  {
+   "id": "sec-042-324-cyclotomic-expansion",
+   "number": "3.2.4",
+   "title": "Cyclotomic expansion",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3674,
+   "n_words": 753
+  },
+  {
+   "id": "sec-043-325-positivity-of-coeﬃcients",
+   "number": "3.2.5",
+   "title": "Positivity of coeﬃcients",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3271,
+   "n_words": 556
+  },
+  {
+   "id": "sec-044-1-positivity-of-homological-blocks-ˆza-besides-o",
+   "number": "1",
+   "title": "Positivity of homological blocks ˆZa. Besides overall signs, all homological blocks are",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 412,
+   "n_words": 66
+  },
+  {
+   "id": "sec-045-2-positivity-of-the-superconformal-index-i-and-t",
+   "number": "2",
+   "title": "Positivity of the superconformal index I and twisted indexItop. After factorizing out",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 606,
+   "n_words": 102
+  },
+  {
+   "id": "sec-046-3-positivity-of-β-reduced-homological-blocks-ˆzβ",
+   "number": "3",
+   "title": "Positivity of “ β-reduced” homological blocks ˆZ(β)",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 341,
+   "n_words": 56
+  },
+  {
+   "id": "sec-047-326-comparison-with-reﬁned-cs",
+   "number": "3.2.6",
+   "title": "Comparison with reﬁned CS",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 603,
+   "n_words": 114
+  },
+  {
+   "id": "sec-048-4-2k-4β12",
+   "number": "4",
+   "title": "(2k + 4β)1/2",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 2606,
+   "n_words": 469
+  },
+  {
+   "id": "sec-049-33-m3-op-σg",
+   "number": "3.3",
+   "title": "M3 =O(−p)→ Σg",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1809,
+   "n_words": 339
+  },
+  {
+   "id": "sec-050-331-homological-blocks-and-wrt-invariant",
+   "number": "3.3.1",
+   "title": "Homological blocks and WRT invariant",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 2446,
+   "n_words": 424
+  },
+  {
+   "id": "sec-051-332-factorization-of-the-superconformal-index",
+   "number": "3.3.2",
+   "title": "Factorization of the superconformal index",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 2832,
+   "n_words": 499
+  },
+  {
+   "id": "sec-052-0-q-1",
+   "number": "0",
+   "title": "(q) = 1",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 66,
+   "n_words": 16
+  },
+  {
+   "id": "sec-053-0-q-q2-1-ˆz2",
+   "number": "0",
+   "title": "(q) =q−2 + 1, ˆZ(−2)",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-054-1-q-q45-ˆz2",
+   "number": "1",
+   "title": "(q) =q−4/5, ˆZ(−2)",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 105,
+   "n_words": 32
+  },
+  {
+   "id": "sec-055-1-q",
+   "number": "1",
+   "title": "(q) =−",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 971,
+   "n_words": 170
+  },
+  {
+   "id": "sec-056-333-comparison-with-reﬁned-cs",
+   "number": "3.3.3",
+   "title": "Comparison with reﬁned CS",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1317,
+   "n_words": 225
+  },
+  {
+   "id": "sec-057-34-m3-plumbed",
+   "number": "3.4",
+   "title": "M3 = plumbed",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 2024,
+   "n_words": 377
+  },
+  {
+   "id": "sec-058-341-homological-blocks-ˆza",
+   "number": "3.4.1",
+   "title": "Homological blocks ˆZa",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 848,
+   "n_words": 162
+  },
+  {
+   "id": "sec-059-1-in-the-special-case-when-the-plumbing-graph-ha",
+   "number": "1",
+   "title": "In the special case when the plumbing graph has just one vertex, the expression for the",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 48,
+   "n_words": 10
+  },
+  {
+   "id": "sec-060-2-generically-it-is-well-deﬁned-only-if-m-is-neg",
+   "number": "2",
+   "title": "Generically it is well-deﬁned only if M is negative deﬁnite, i.e. M3(Γ) is a link of a",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 71,
+   "n_words": 11
+  },
+  {
+   "id": "sec-061-3-the-formula-3145-deﬁnes-homological-blocks-ˆza",
+   "number": "3",
+   "title": "The formula ( 3.145) deﬁnes homological blocks ˆZa(q) in terms of a plumbing graph",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 376,
+   "n_words": 65
+  },
+  {
+   "id": "sec-062-4-even-though-the-formula-has-the-structure-of-t",
+   "number": "4",
+   "title": "Even though the formula has the structure of the “index of a quiver theory”, it is not",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 110,
+   "n_words": 20
+  },
+  {
+   "id": "sec-063-5-suppose-m-0-then-ˆzaq-is-a-well-deﬁned-series",
+   "number": "5",
+   "title": "Suppose M < 0. Then ˆZa(q) is a well-deﬁned series in q convergent in the unit disk",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 212,
+   "n_words": 36
+  },
+  {
+   "id": "sec-064-6-we-have",
+   "number": "6",
+   "title": "We have",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 1254,
+   "n_words": 292
+  },
+  {
+   "id": "sec-065-342-problems-on-the-t-m3-side",
+   "number": "3.4.2",
+   "title": "Problems on the T [M3] side",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 1588,
+   "n_words": 266
+  },
+  {
+   "id": "sec-066-4-adding-knots-and-links-into-m3",
+   "number": "4",
+   "title": "Adding knots and links into M3",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 3100,
+   "n_words": 522
+  },
+  {
+   "id": "sec-067-41-links-in-m3-and-line-operators-in-t-m3",
+   "number": "4.1",
+   "title": "Links in M3 and line operators in T [M3]",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 60,
+   "n_chars": 10549,
+   "n_words": 1856
+  },
+  {
+   "id": "sec-068-42-links-in-s2s1-and-rozanskys-proposal",
+   "number": "4.2",
+   "title": "Links in S2×S1 and Rozansky’s proposal",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 5794,
+   "n_words": 1060
+  },
+  {
+   "id": "sec-069-43-links-in-lp-1",
+   "number": "4.3",
+   "title": "Links in L(p, 1)",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 64,
+   "n_chars": 656,
+   "n_words": 126
+  },
+  {
+   "id": "sec-070-431-unreﬁned-index-of-t-lp-1-with-wilson-loops",
+   "number": "4.3.1",
+   "title": "Unreﬁned index of T [L(p, 1)] with Wilson loops",
+   "level": 3,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 2013,
+   "n_words": 394
+  },
+  {
+   "id": "sec-071-432-reﬁnement-and-categoriﬁcation",
+   "number": "4.3.2",
+   "title": "Reﬁnement and categoriﬁcation",
+   "level": 3,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 2243,
+   "n_words": 490
+  },
+  {
+   "id": "sec-072-44-comparison-with-reﬁned-cs",
+   "number": "4.4",
+   "title": "Comparison with reﬁned CS",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 1208,
+   "n_words": 211
+  },
+  {
+   "id": "sec-073-0-qkλ",
+   "number": "0",
+   "title": "(q;K,λ )",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1550,
+   "n_words": 272
+  },
+  {
+   "id": "sec-074-0-q",
+   "number": "0",
+   "title": "(q)",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 273,
+   "n_words": 44
+  },
+  {
+   "id": "sec-075-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 69,
+   "n_chars": 2947,
+   "n_words": 510
+  },
+  {
+   "id": "sec-076-4-2kl2",
+   "number": "4",
+   "title": "(2k)L/2",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 371,
+   "n_words": 89
+  },
+  {
+   "id": "sec-077-2-2kl2-q-12-q-12",
+   "number": "2",
+   "title": "(2k)L/2 (q 1/2− q −1/2)×",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 117,
+   "n_words": 24
+  },
+  {
+   "id": "sec-078-2-a10",
+   "number": "2",
+   "title": "(A.10)",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 1242,
+   "n_words": 244
+  },
+  {
+   "id": "sec-079-4-fωx1x-lxvq-nv2-a15",
+   "number": "4",
+   "title": "Fω(x1,...,x L)|xv=q nv/2 (A.15)",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1378,
+   "n_words": 287
+  },
+  {
+   "id": "sec-080-2-2kl2-q-12-q-12-lim",
+   "number": "2",
+   "title": "(2k)L/2 (q 1/2− q −1/2) lim",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 24,
+   "n_words": 5
+  },
+  {
+   "id": "sec-081-4-fωx1x-lxvq-nv2",
+   "number": "4",
+   "title": "Fω(x1,...,x L)|xv=q nv/2 =",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 17,
+   "n_words": 5
+  },
+  {
+   "id": "sec-082-2-q-12-q-12-detm12",
+   "number": "2",
+   "title": "(q 1/2− q −1/2)| detM|1/2",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 392,
+   "n_words": 80
+  },
+  {
+   "id": "sec-083-2-q-12-q-12-detm12",
+   "number": "2",
+   "title": "(q 1/2− q −1/2)| detM|1/2×",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 74,
+   "n_chars": 5516,
+   "n_words": 994
+  },
+  {
+   "id": "sec-084-c-categoriﬁcation-of-the-turaev-viro-invariants",
+   "number": "C",
+   "title": "Categoriﬁcation of the Turaev-Viro invariants",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 76,
+   "n_chars": 5442,
+   "n_words": 916
+  },
+  {
+   "id": "sec-085-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 81,
+   "n_chars": 12039,
+   "n_words": 1869
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 92,
+  "sections": 86,
+  "chars_total": 169841
+ }
+}

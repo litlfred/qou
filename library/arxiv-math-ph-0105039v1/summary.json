@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-ph-0105039v1",
+ "source_sha256": "850e6a00721e38d0",
+ "brief": "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function.",
+ "extended": "**Hyperbolic Structure Arising from a Knot Invariant**\n\n*Department of Physics, Graduate School of Science*\n\n31 pp, 18 sections.\n\n**Abstract.** We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s invarian t, or the colored Jones invariant, and is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.\n\n**Outline.** Abstract; 1 Introduction; 2 Quantum Dilogarithm Function; 2.1 Classical Dilogarithm Function; 2 Li2(z2), (2.3); 2.2 Quantum Dilogarithm Function and the R Ope; 2.3 Representation; 2 (p2−p′; 2 (a−d)2− 1; 2 (b−c)2) (2.28a); 3 Invariant of Knot and Link; 4 Asymptotic Behavior and 3-dimensional Pictur; 5.1 R-Operators as the Braid Operator; 5.2 Hyperbolicity Condition for Surface; 5.3 Gluing Around Ridgeline of Octahedron; 6 Example: Figure-Eight Knot; 7 Concluding Remarks; References",
+ "tokens": {
+  "brief": 30,
+  "extended": 286
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-2-quantum-dilogarithm-function",
+   "title": "Quantum Dilogarithm Function",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-21-classical-dilogarithm-function",
+   "title": "Classical Dilogarithm Function",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-2-li2z2-23",
+   "title": "Li2(z2), (2.3)",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-22-quantum-dilogarithm-function-and-the-r-operat",
+   "title": "Quantum Dilogarithm Function and the R Operator",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-006-23-representation",
+   "title": "Representation",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-2-p2p",
+   "title": "(p2−p′",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-2-ad2-1",
+   "title": "(a−d)2− 1",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-2-bc2-228a",
+   "title": "(b−c)2) (2.28a)",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-010-3-invariant-of-knot-and-link",
+   "title": "Invariant of Knot and Link",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-011-4-asymptotic-behavior-and-3-dimensional-picture",
+   "title": "Asymptotic Behavior and 3-dimensional Picture",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-012-51-r-operators-as-the-braid-operator",
+   "title": "R-Operators as the Braid Operator",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-013-52-hyperbolicity-condition-for-surface",
+   "title": "Hyperbolicity Condition for Surface",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-014-53-gluing-around-ridgeline-of-octahedron",
+   "title": "Gluing Around Ridgeline of Octahedron",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-015-6-example-figure-eight-knot",
+   "title": "Example: Figure-Eight Knot",
+   "pages": "24-28"
+  },
+  {
+   "id": "sec-016-7-concluding-remarks",
+   "title": "Concluding Remarks",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "30-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

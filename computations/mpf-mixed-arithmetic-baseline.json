@@ -1,7 +1,34 @@
 {
-  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. This surface starts NON-ZERO, so the gate is ADVISORY until the rows are adjudicated; --strict fails only ABOVE the baseline, so it can only shrink. Never raise it: a new row is a new regression. 3 of 3 rows adjudicated at the time this was set were TRUE positives on physics-bearing values (rho_k_full_via_wenzl_lr tr_M_q0_mp30dps, qbeta_habiro_taylor_investigation tr_M_*_at_q0, phase1e m_p_MeV). Bean qou-gqt5.",
-  "candidates": 28,
+  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. The gate is now BLOCKING: --strict fails above this number, and the surface is fully verdicted, so a new row is a new regression. NEVER raise it. Drained 28 -> 3 under bean qou-65qv. The residual 3 are all in qbeta_habiro_taylor_investigation.py and are BLOCKED, not unexamined: the float() fix there is correct and written, but re-running that producer regenerates its witness from convention C to convention D, which belongs to bean qou-cds1.",
+  "candidates": 3,
+  "blocking": true,
   "set_at": "2026-08-19",
-  "adjudicated": 3,
-  "adjudicated_true_positive": 3
+  "history": [
+    {"candidates": 28, "note": "as landed by qou-gqt5 in #5264"},
+    {"candidates": 25, "note": "detector: int()/round() clear taint; format-spec sink is display"},
+    {"candidates": 19, "note": "4 rows marked float64-intentional"},
+    {"candidates": 16, "note": "detector: bare .trace()/.sum() no longer imply numpy"},
+    {"candidates": 14, "note": "detector: mpf(str(<=17-digit float literal)) round-trips"},
+    {"candidates": 3,  "note": "6 producers fixed at source; 5 more rows marked"}
+  ],
+  "fixed_at_source": [
+    "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py — 49-digit float literal; delta_q wrong from the 9th significant digit",
+    "rho_k_full_via_wenzl_lr.py — 50-dps q0 discarded 3 lines after being declared; tr_M_q0_mp30dps carried as few as 9 good digits",
+    "atomic_mass_via_rho_k.py — err percentages serialized from their float() display copies",
+    "phase5/phase1a — chi taken at a float64 qi while y was taken at the exact qi: a layer straddle inside one product",
+    "phase5/phase1e — X_at_h0 and F_Bor each constricted twice; m_p/m_n/Delta_pn serialized at 18/14",
+    "proton_residual_rootcause.py — the MPFR branch's inputs were collapsed to doubles before PhiQ_euler_mpfr saw them",
+    "nuclide_braid_pipeline.py — the f64 fallback path printed at 50 digits; width now follows the path taken"
+  ],
+  "marked_deliberate": [
+    "chi_numpy_dtype_fix_benchmark — wall-clock speedup ratio",
+    "aoperator_a6_cost_and_contraction — per-op cost-model timings",
+    "qou_substrate/precision.py — _shortest_repr's float branch IS the representability test",
+    "s5_so3_su2_u1_fiber_action — exponent j(j+1) is an exact quarter-integer",
+    "ak_lp_dual_quotient_probe — LP dual variables from a double-precision solver",
+    "fr_pullback_cosh_h_test — pyhecke_native.chi_lambda_braid takes a double by design"
+  ],
+  "blocked": [
+    "qbeta_habiro_taylor_investigation.py:235-237 — fix written and correct, but re-running regenerates the witness convention C -> D. Belongs to bean qou-cds1."
+  ]
 }

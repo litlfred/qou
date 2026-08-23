@@ -1,0 +1,1844 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ds15v1-2008",
+ "source": {
+  "file": "ds15v1-2008.pdf",
+  "sha256": "aef155a324c6fdf486184dfbc7b575c2ba93d754146a798740c25790a6ba80d5",
+  "bytes": 305601,
+  "pages": 59
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Rogers-Ramanujan-Slater Type Identities",
+  "authors_raw": "Department of Mathematics, 124 Anderson Hall",
+  "abstract": "In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of similar type, which were discovered after the publication of Slater’s papers, and older identities (such as those in Ramanujan’s lost notebook) which were not included in Slater’s papers. We attempt to supply the earliest known reference for each identity. Also in- cluded are identities of false theta functions, along with their relationship to Rogers- Ramanujan type identities. We also describe several ways in which pairs/larger sets of identities may be related, as well as dependence relationships between identities.",
+  "docinfo": {
+   "Producer": "GNU Ghostscript 7.07"
+  },
+  "title_lines": [
+   "Rogers-Ramanujan-Slater Type Identities",
+   "James Mc Laughlin"
+  ],
+  "title_prev": "Rogers-Ramanujan-Slater Type Identities James Mc Laughlin"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Theta Functions",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Bailey Pairs and Bailey’s lemma",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Some More General q-Series Identities",
+   "page": 7,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Rogers-Ramanujan Type Identities",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 2 Identities",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 3 Identities",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Mod 4 Identities",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Mod 5 Identities",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Mod 6 Identities",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "The Rogers-Selberg Mod 7 Identities",
+   "page": 14,
+   "source": "inferred",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Mod 8 Identities",
+   "page": 14,
+   "source": "inferred",
+   "number": "2.8"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 14,
+   "source": "inferred",
+   "number": "2.8.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple products",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.8.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 9 Identities",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.9"
+  },
+  {
+   "level": 2,
+   "title": "Mod 10 Identities",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.10"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.10.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.10.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 12 identities",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.12"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.12.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.12.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 14 Identities",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.14"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.14.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.14.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 15 Identities",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.15"
+  },
+  {
+   "level": 2,
+   "title": "Mod 16 Identities",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.16"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.16.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.16.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 18 Identities",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.18"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.18.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.18.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 20 Identities",
+   "page": 22,
+   "source": "inferred",
+   "number": "2.20"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 22,
+   "source": "inferred",
+   "number": "2.20.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 22,
+   "source": "inferred",
+   "number": "2.20.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 24 Identities",
+   "page": 23,
+   "source": "inferred",
+   "number": "2.24"
+  },
+  {
+   "level": 2,
+   "title": "Dyson’s Mod 27 Identities",
+   "page": 24,
+   "source": "inferred",
+   "number": "2.27"
+  },
+  {
+   "level": 2,
+   "title": "Mod 28 Identities",
+   "page": 25,
+   "source": "inferred",
+   "number": "2.28"
+  },
+  {
+   "level": 2,
+   "title": "Mod 32 Identities",
+   "page": 25,
+   "source": "inferred",
+   "number": "2.32"
+  },
+  {
+   "level": 2,
+   "title": "Mod 36 Identities",
+   "page": 25,
+   "source": "inferred",
+   "number": "2.36"
+  },
+  {
+   "level": 3,
+   "title": "Triple Products",
+   "page": 25,
+   "source": "inferred",
+   "number": "2.36.1"
+  },
+  {
+   "level": 3,
+   "title": "Quintuple Products",
+   "page": 26,
+   "source": "inferred",
+   "number": "2.36.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod 8 Identity",
+   "page": 26,
+   "source": "inferred",
+   "number": "3.8"
+  },
+  {
+   "level": 2,
+   "title": "Mod 10 Identity",
+   "page": 26,
+   "source": "inferred",
+   "number": "3.10"
+  },
+  {
+   "level": 2,
+   "title": "Mod 12 Identities",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.12"
+  },
+  {
+   "level": 2,
+   "title": "Mod 15 Identities",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.15"
+  },
+  {
+   "level": 2,
+   "title": "Mod 16 Identities",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.16"
+  },
+  {
+   "level": 2,
+   "title": "Mod 18 Identities",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.18"
+  },
+  {
+   "level": 2,
+   "title": "Mod 21 Identities",
+   "page": 28,
+   "source": "inferred",
+   "number": "3.21"
+  },
+  {
+   "level": 2,
+   "title": "Mod 24 Identities",
+   "page": 28,
+   "source": "inferred",
+   "number": "3.24"
+  },
+  {
+   "level": 2,
+   "title": "Mod 27 Identities",
+   "page": 28,
+   "source": "inferred",
+   "number": "3.27"
+  },
+  {
+   "level": 2,
+   "title": "Mod 30 Identities",
+   "page": 29,
+   "source": "inferred",
+   "number": "3.30"
+  },
+  {
+   "level": 2,
+   "title": "Mod 32 Identities",
+   "page": 29,
+   "source": "inferred",
+   "number": "3.32"
+  },
+  {
+   "level": 2,
+   "title": "Mod 36 Identities",
+   "page": 30,
+   "source": "inferred",
+   "number": "3.36"
+  },
+  {
+   "level": 2,
+   "title": "Mod 42 Identities",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.42"
+  },
+  {
+   "level": 2,
+   "title": "Mod 48 Identities",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.48"
+  },
+  {
+   "level": 2,
+   "title": "Mod 54 Identities",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.54"
+  },
+  {
+   "level": 2,
+   "title": "Mod 64 Identities",
+   "page": 31,
+   "source": "inferred",
+   "number": "3.64"
+  },
+  {
+   "level": 1,
+   "title": "Equivalent Products in Slater’s List",
+   "page": 33,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "False Theta Series Identities",
+   "page": 35,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 3",
+   "page": 36,
+   "source": "inferred",
+   "number": "5.0"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identity of Order 2",
+   "page": 36,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 5",
+   "page": 36,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 3",
+   "page": 37,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 4",
+   "page": 37,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 5",
+   "page": 37,
+   "source": "inferred",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 15",
+   "page": 38,
+   "source": "inferred",
+   "number": "5.8"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 9",
+   "page": 38,
+   "source": "inferred",
+   "number": "5.9"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 21",
+   "page": 38,
+   "source": "inferred",
+   "number": "5.11"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 16",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.16"
+  },
+  {
+   "level": 2,
+   "title": "False Theta Series Identities of Order 18",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.18"
+  },
+  {
+   "level": 1,
+   "title": "Inter-Dependence Between Identities",
+   "page": 40,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Series-Equivalent Identities",
+   "page": 40,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "C,",
+   "page": 43,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "S.2 0 q",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 3,
+   "title": "S.3 1 q",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 3,
+   "title": "S.4 \u0000q1=2 \u0000q \u0000q1=2 q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S.9 1 \u0000q3 q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 3,
+   "title": "S.10 -1 q q q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S.11 \u0000q q3 q2 q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S.52 1 \u0000q1=2 q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 3,
+   "title": "S.47 -1 q1=2 q !q2",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 2,
+   "title": "Inter-dependence of Identities via the Jacobi Triple Product",
+   "page": 44,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 3,
+   "title": "S6 S29 -1 q\u00001=2 \u0000q\u00001=2 q !q2;q ! \u0000q",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.13"
+  },
+  {
+   "level": 3,
+   "title": "S16 S97 \u0000q q3=2 q !q2,q ! \u0000q",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.11"
+  },
+  {
+   "level": 3,
+   "title": "S96 S14 q3=2 (q !q2) q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.9"
+  },
+  {
+   "level": 3,
+   "title": "S79 S18 q1=2 (q !q2) q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.9"
+  },
+  {
+   "level": 3,
+   "title": "S20 S19 \u0000q q\u00001=2 q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.11"
+  },
+  {
+   "level": 3,
+   "title": "S22 S50 \u0000q q\u00001=2 q1=2 q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.13"
+  },
+  {
+   "level": 3,
+   "title": "S25 S48 \u0000q1=2 \u0000q q1=2 q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S28 (2.6.2) \u0000q q3=2 q q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S50 (2.6.2) q\u00001=2 \u0000q q !q1=2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.16"
+  },
+  {
+   "level": 3,
+   "title": "S94 S16 0 q3=2 q q !q2 (q ! \u0000q)",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S94 S97 q3=2 \u0000q q !q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.11"
+  },
+  {
+   "level": 3,
+   "title": "S99 S20 0 q1=2 q q !q2 (q ! \u0000q)",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "S80 S118 1 \u0000q (n = 2)",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.14"
+  },
+  {
+   "level": 3,
+   "title": "S82 S119 q \u0000q (n = 2)",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.14"
+  },
+  {
+   "level": 3,
+   "title": "S6 S48 \u00001 q q ! \u0000q",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.19"
+  },
+  {
+   "level": 3,
+   "title": "S22 (2.6.2) \u0000q \u0000q2",
+   "page": 45,
+   "source": "inferred",
+   "number": "6.1.19"
+  },
+  {
+   "level": 2,
+   "title": "Inter-dependence Via an Identity of Weierstrass",
+   "page": 48,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Bailey pairs",
+   "page": 50,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The Bailey Pairs of Slater",
+   "page": 50,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Duality of Bailey pairs",
+   "page": 52,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u0000q2n+1)",
+   "page": 54,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1+qn+ 1",
+   "page": 55,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 +qn) (\u00001;q)n",
+   "page": 55,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1+q2n+ 3",
+   "page": 56,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 +q3n) 0 (q3;q3)n\u00001",
+   "page": 56,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 56,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 57,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 57,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 417,
+   "n_words": 64
+  },
+  {
+   "id": "sec-001-11-theta-functions",
+   "number": "1.1",
+   "title": "Theta Functions",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 169,
+   "n_words": 24
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 1972,
+   "n_words": 321
+  },
+  {
+   "id": "sec-003-12-bailey-pairs-and-baileys-lemma",
+   "number": "1.2",
+   "title": "Bailey Pairs and Bailey’s lemma",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 5507,
+   "n_words": 977
+  },
+  {
+   "id": "sec-004-13-some-more-general-q-series-identities",
+   "number": "1.3",
+   "title": "Some More General q-Series Identities",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-2-rogers-ramanujan-type-identities",
+   "number": "2",
+   "title": "Rogers-Ramanujan Type Identities",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3009,
+   "n_words": 485
+  },
+  {
+   "id": "sec-006-22-mod-2-identities",
+   "number": "2.2",
+   "title": "Mod 2 Identities",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 334,
+   "n_words": 58
+  },
+  {
+   "id": "sec-007-23-mod-3-identities",
+   "number": "2.3",
+   "title": "Mod 3 Identities",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 462,
+   "n_words": 79
+  },
+  {
+   "id": "sec-008-24-mod-4-identities",
+   "number": "2.4",
+   "title": "Mod 4 Identities",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1205,
+   "n_words": 211
+  },
+  {
+   "id": "sec-009-25-mod-5-identities",
+   "number": "2.5",
+   "title": "Mod 5 Identities",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1316,
+   "n_words": 218
+  },
+  {
+   "id": "sec-010-26-mod-6-identities",
+   "number": "2.6",
+   "title": "Mod 6 Identities",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 1552,
+   "n_words": 248
+  },
+  {
+   "id": "sec-011-27-the-rogers-selberg-mod-7-identities",
+   "number": "2.7",
+   "title": "The Rogers-Selberg Mod 7 Identities",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 267,
+   "n_words": 46
+  },
+  {
+   "id": "sec-012-28-mod-8-identities",
+   "number": "2.8",
+   "title": "Mod 8 Identities",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-281-triple-products",
+   "number": "2.8.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 1487,
+   "n_words": 228
+  },
+  {
+   "id": "sec-014-282-quintuple-products",
+   "number": "2.8.2",
+   "title": "Quintuple products",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 83,
+   "n_words": 19
+  },
+  {
+   "id": "sec-015-29-mod-9-identities",
+   "number": "2.9",
+   "title": "Mod 9 Identities",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 531,
+   "n_words": 83
+  },
+  {
+   "id": "sec-016-210-mod-10-identities",
+   "number": "2.10",
+   "title": "Mod 10 Identities",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-2101-triple-products",
+   "number": "2.10.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 983,
+   "n_words": 172
+  },
+  {
+   "id": "sec-018-212-mod-12-identities",
+   "number": "2.12",
+   "title": "Mod 12 identities",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 1696,
+   "n_words": 270
+  },
+  {
+   "id": "sec-019-2122-quintuple-products",
+   "number": "2.12.2",
+   "title": "Quintuple Products",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 376,
+   "n_words": 56
+  },
+  {
+   "id": "sec-020-214-mod-14-identities",
+   "number": "2.14",
+   "title": "Mod 14 Identities",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-2141-triple-products",
+   "number": "2.14.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 555,
+   "n_words": 97
+  },
+  {
+   "id": "sec-022-215-mod-15-identities",
+   "number": "2.15",
+   "title": "Mod 15 Identities",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 582,
+   "n_words": 94
+  },
+  {
+   "id": "sec-023-216-mod-16-identities",
+   "number": "2.16",
+   "title": "Mod 16 Identities",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-024-2181-triple-products",
+   "number": "2.18.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 809,
+   "n_words": 122
+  },
+  {
+   "id": "sec-025-2162-quintuple-products",
+   "number": "2.16.2",
+   "title": "Quintuple Products",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 252,
+   "n_words": 47
+  },
+  {
+   "id": "sec-026-218-mod-18-identities",
+   "number": "2.18",
+   "title": "Mod 18 Identities",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-027-2201-triple-products",
+   "number": "2.20.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1135,
+   "n_words": 177
+  },
+  {
+   "id": "sec-028-220-mod-20-identities",
+   "number": "2.20",
+   "title": "Mod 20 Identities",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 920,
+   "n_words": 166
+  },
+  {
+   "id": "sec-029-224-mod-24-identities",
+   "number": "2.24",
+   "title": "Mod 24 Identities",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1716,
+   "n_words": 225
+  },
+  {
+   "id": "sec-030-227-dysons-mod-27-identities",
+   "number": "2.27",
+   "title": "Dyson’s Mod 27 Identities",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 455,
+   "n_words": 76
+  },
+  {
+   "id": "sec-031-228-mod-28-identities",
+   "number": "2.28",
+   "title": "Mod 28 Identities",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 212,
+   "n_words": 34
+  },
+  {
+   "id": "sec-032-232-mod-32-identities",
+   "number": "2.32",
+   "title": "Mod 32 Identities",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 225,
+   "n_words": 40
+  },
+  {
+   "id": "sec-033-236-mod-36-identities",
+   "number": "2.36",
+   "title": "Mod 36 Identities",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-034-2361-triple-products",
+   "number": "2.36.1",
+   "title": "Triple Products",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 518,
+   "n_words": 75
+  },
+  {
+   "id": "sec-035-2362-quintuple-products",
+   "number": "2.36.2",
+   "title": "Quintuple Products",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 511,
+   "n_words": 72
+  },
+  {
+   "id": "sec-036-38-mod-8-identity",
+   "number": "3.8",
+   "title": "Mod 8 Identity",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 111,
+   "n_words": 16
+  },
+  {
+   "id": "sec-037-310-mod-10-identity",
+   "number": "3.10",
+   "title": "Mod 10 Identity",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 214,
+   "n_words": 32
+  },
+  {
+   "id": "sec-038-312-mod-12-identities",
+   "number": "3.12",
+   "title": "Mod 12 Identities",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 156,
+   "n_words": 27
+  },
+  {
+   "id": "sec-039-315-mod-15-identities",
+   "number": "3.15",
+   "title": "Mod 15 Identities",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 238,
+   "n_words": 38
+  },
+  {
+   "id": "sec-040-316-mod-16-identities",
+   "number": "3.16",
+   "title": "Mod 16 Identities",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 365,
+   "n_words": 53
+  },
+  {
+   "id": "sec-041-318-mod-18-identities",
+   "number": "3.18",
+   "title": "Mod 18 Identities",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 375,
+   "n_words": 59
+  },
+  {
+   "id": "sec-042-321-mod-21-identities",
+   "number": "3.21",
+   "title": "Mod 21 Identities",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 307,
+   "n_words": 51
+  },
+  {
+   "id": "sec-043-324-mod-24-identities",
+   "number": "3.24",
+   "title": "Mod 24 Identities",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 339,
+   "n_words": 52
+  },
+  {
+   "id": "sec-044-327-mod-27-identities",
+   "number": "3.27",
+   "title": "Mod 27 Identities",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 658,
+   "n_words": 93
+  },
+  {
+   "id": "sec-045-330-mod-30-identities",
+   "number": "3.30",
+   "title": "Mod 30 Identities",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 541,
+   "n_words": 83
+  },
+  {
+   "id": "sec-046-332-mod-32-identities",
+   "number": "3.32",
+   "title": "Mod 32 Identities",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 746,
+   "n_words": 100
+  },
+  {
+   "id": "sec-047-336-mod-36-identities",
+   "number": "3.36",
+   "title": "Mod 36 Identities",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 724,
+   "n_words": 95
+  },
+  {
+   "id": "sec-048-342-mod-42-identities",
+   "number": "3.42",
+   "title": "Mod 42 Identities",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 250,
+   "n_words": 34
+  },
+  {
+   "id": "sec-049-348-mod-48-identities",
+   "number": "3.48",
+   "title": "Mod 48 Identities",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 431,
+   "n_words": 64
+  },
+  {
+   "id": "sec-050-354-mod-54-identities",
+   "number": "3.54",
+   "title": "Mod 54 Identities",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 287,
+   "n_words": 38
+  },
+  {
+   "id": "sec-051-364-mod-64-identities",
+   "number": "3.64",
+   "title": "Mod 64 Identities",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 1491,
+   "n_words": 197
+  },
+  {
+   "id": "sec-052-4-equivalent-products-in-slaters-list",
+   "number": "4",
+   "title": "Equivalent Products in Slater’s List",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4457,
+   "n_words": 1094
+  },
+  {
+   "id": "sec-053-5-false-theta-series-identities",
+   "number": "5",
+   "title": "False Theta Series Identities",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 894,
+   "n_words": 152
+  },
+  {
+   "id": "sec-054-50-false-theta-series-identities-of-order-3",
+   "number": "5.0",
+   "title": "False Theta Series Identities of Order 3",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 304,
+   "n_words": 55
+  },
+  {
+   "id": "sec-055-51-false-theta-series-identity-of-order-2",
+   "number": "5.1",
+   "title": "False Theta Series Identity of Order 2",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 101,
+   "n_words": 14
+  },
+  {
+   "id": "sec-056-52-false-theta-series-identities-of-order-5",
+   "number": "5.2",
+   "title": "False Theta Series Identities of Order 5",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 609,
+   "n_words": 102
+  },
+  {
+   "id": "sec-057-54-false-theta-series-identities-of-order-4",
+   "number": "5.4",
+   "title": "False Theta Series Identities of Order 4",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 780,
+   "n_words": 118
+  },
+  {
+   "id": "sec-058-58-false-theta-series-identities-of-order-15",
+   "number": "5.8",
+   "title": "False Theta Series Identities of Order 15",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 282,
+   "n_words": 45
+  },
+  {
+   "id": "sec-059-59-false-theta-series-identities-of-order-9",
+   "number": "5.9",
+   "title": "False Theta Series Identities of Order 9",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 504,
+   "n_words": 73
+  },
+  {
+   "id": "sec-060-511-false-theta-series-identities-of-order-21",
+   "number": "5.11",
+   "title": "False Theta Series Identities of Order 21",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 360,
+   "n_words": 58
+  },
+  {
+   "id": "sec-061-516-false-theta-series-identities-of-order-16",
+   "number": "5.16",
+   "title": "False Theta Series Identities of Order 16",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 215,
+   "n_words": 29
+  },
+  {
+   "id": "sec-062-518-false-theta-series-identities-of-order-18",
+   "number": "5.18",
+   "title": "False Theta Series Identities of Order 18",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 732,
+   "n_words": 95
+  },
+  {
+   "id": "sec-063-6-inter-dependence-between-identities",
+   "number": "6",
+   "title": "Inter-Dependence Between Identities",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 653,
+   "n_words": 111
+  },
+  {
+   "id": "sec-064-61-series-equivalent-identities",
+   "number": "6.1",
+   "title": "Series-Equivalent Identities",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 4739,
+   "n_words": 760
+  },
+  {
+   "id": "sec-065-2-c",
+   "number": "2",
+   "title": "C,",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 3387,
+   "n_words": 566
+  },
+  {
+   "id": "sec-066-614-s2-0-q",
+   "number": "6.1.4",
+   "title": "S.2 0 q",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-067-614-s3-1-q",
+   "number": "6.1.4",
+   "title": "S.3 1 q",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-068-613-s4-q12-q-q12-q-q2",
+   "number": "6.1.3",
+   "title": "S.4 \u0000q1=2 \u0000q \u0000q1=2 q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-069-614-s9-1-q3-q-q2",
+   "number": "6.1.4",
+   "title": "S.9 1 \u0000q3 q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-070-613-s10--1-q-q-q-q2",
+   "number": "6.1.3",
+   "title": "S.10 -1 q q q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-071-613-s11-q-q3-q2-q-q2",
+   "number": "6.1.3",
+   "title": "S.11 \u0000q q3 q2 q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-072-614-s52-1-q12-q-q2",
+   "number": "6.1.4",
+   "title": "S.52 1 \u0000q1=2 q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-073-614-s47--1-q12-q-q2",
+   "number": "6.1.4",
+   "title": "S.47 -1 q1=2 q !q2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 67,
+   "n_words": 8
+  },
+  {
+   "id": "sec-074-62-inter-dependence-of-identities-via-the-jacobi",
+   "number": "6.2",
+   "title": "Inter-dependence of Identities via the Jacobi Triple Product",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 718,
+   "n_words": 128
+  },
+  {
+   "id": "sec-075-6113-s6-s29--1-q12-q12-q-q2q-q",
+   "number": "6.1.13",
+   "title": "S6 S29 -1 q\u00001=2 \u0000q\u00001=2 q !q2;q ! \u0000q",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 52,
+   "n_words": 12
+  },
+  {
+   "id": "sec-076-6111-s16-s97-q-q32-q-q2q-q",
+   "number": "6.1.11",
+   "title": "S16 S97 \u0000q q3=2 q !q2,q ! \u0000q",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-077-619-s96-s14-q32-q-q2-q-q2",
+   "number": "6.1.9",
+   "title": "S96 S14 q3=2 (q !q2) q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 50,
+   "n_words": 12
+  },
+  {
+   "id": "sec-078-619-s79-s18-q12-q-q2-q-q2",
+   "number": "6.1.9",
+   "title": "S79 S18 q1=2 (q !q2) q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-079-6111-s20-s19-q-q12-q-q2",
+   "number": "6.1.11",
+   "title": "S20 S19 \u0000q q\u00001=2 q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-080-6113-s22-s50-q-q12-q12-q-q2",
+   "number": "6.1.13",
+   "title": "S22 S50 \u0000q q\u00001=2 q1=2 q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-081-613-s25-s48-q12-q-q12-q-q2",
+   "number": "6.1.3",
+   "title": "S25 S48 \u0000q1=2 \u0000q q1=2 q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 34,
+   "n_words": 8
+  },
+  {
+   "id": "sec-082-613-s28-262-q-q32-q-q-q2",
+   "number": "6.1.3",
+   "title": "S28 (2.6.2) \u0000q q3=2 q q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 31,
+   "n_words": 7
+  },
+  {
+   "id": "sec-083-6116-s50-262-q12-q-q-q12",
+   "number": "6.1.16",
+   "title": "S50 (2.6.2) q\u00001=2 \u0000q q !q1=2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 193,
+   "n_words": 42
+  },
+  {
+   "id": "sec-084-613-s94-s16-0-q32-q-q-q2-q-q",
+   "number": "6.1.3",
+   "title": "S94 S16 0 q3=2 q q !q2 (q ! \u0000q)",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-085-6111-s94-s97-q32-q-q-q2",
+   "number": "6.1.11",
+   "title": "S94 S97 q3=2 \u0000q q !q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 31,
+   "n_words": 7
+  },
+  {
+   "id": "sec-086-613-s99-s20-0-q12-q-q-q2-q-q",
+   "number": "6.1.3",
+   "title": "S99 S20 0 q1=2 q q !q2 (q ! \u0000q)",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 29,
+   "n_words": 7
+  },
+  {
+   "id": "sec-087-6114-s80-s118-1-q-n-2",
+   "number": "6.1.14",
+   "title": "S80 S118 1 \u0000q (n = 2)",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 30,
+   "n_words": 8
+  },
+  {
+   "id": "sec-088-6114-s82-s119-q-q-n-2",
+   "number": "6.1.14",
+   "title": "S82 S119 q \u0000q (n = 2)",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 39,
+   "n_words": 8
+  },
+  {
+   "id": "sec-089-6119-s6-s48-1-q-q-q",
+   "number": "6.1.19",
+   "title": "S6 S48 \u00001 q q ! \u0000q",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-090-6119-s22-262-q-q2",
+   "number": "6.1.19",
+   "title": "S22 (2.6.2) \u0000q \u0000q2",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 4236,
+   "n_words": 675
+  },
+  {
+   "id": "sec-091-63-inter-dependence-via-an-identity-of-weierstra",
+   "number": "6.3",
+   "title": "Inter-dependence Via an Identity of Weierstrass",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 3314,
+   "n_words": 508
+  },
+  {
+   "id": "sec-092-7-bailey-pairs",
+   "number": "7",
+   "title": "Bailey pairs",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-093-71-the-bailey-pairs-of-slater",
+   "number": "7.1",
+   "title": "The Bailey Pairs of Slater",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 1843,
+   "n_words": 345
+  },
+  {
+   "id": "sec-094-72-duality-of-bailey-pairs",
+   "number": "7.2",
+   "title": "Duality of Bailey pairs",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 3603,
+   "n_words": 654
+  },
+  {
+   "id": "sec-095-2-1-q2n1",
+   "number": "2",
+   "title": "(1 \u0000q2n+1)",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 801,
+   "n_words": 155
+  },
+  {
+   "id": "sec-096-2-1qn-1",
+   "number": "2",
+   "title": "(1+qn+ 1",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 61,
+   "n_words": 17
+  },
+  {
+   "id": "sec-097-2-1-qn-1qn",
+   "number": "2",
+   "title": "(1 +qn) (\u00001;q)n",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 682,
+   "n_words": 156
+  },
+  {
+   "id": "sec-098-2-1q2n-3",
+   "number": "2",
+   "title": "(1+q2n+ 3",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 188,
+   "n_words": 44
+  },
+  {
+   "id": "sec-099-2-1-q3n-0-q3q3n1",
+   "number": "2",
+   "title": "(1 +q3n) 0 (q3;q3)n\u00001",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 15,
+   "n_words": 1
+  },
+  {
+   "id": "sec-100-8-conclusion",
+   "number": "8",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 258,
+   "n_words": 45
+  },
+  {
+   "id": "sec-101-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 1403,
+   "n_words": 212
+  },
+  {
+   "id": "sec-102-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 6011,
+   "n_words": 948
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 111,
+  "sections": 103,
+  "chars_total": 78195
+ }
+}

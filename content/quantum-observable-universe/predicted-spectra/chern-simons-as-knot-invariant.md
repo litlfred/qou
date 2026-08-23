@@ -16,4 +16,4 @@ The mechanism proceeds as follows:
 
 4. The determinant ratio $\kappa = \det G_{\mathrm{CS}}^{\mathrm{cl}} / \det G_{\mathrm{CS}}^{q}$ appears in the fine-structure correction $1/\alpha = q \cdot [9]_q [10]_q (1 + \delta_{\mathrm{CS}} + \delta_{\mathrm{CS}}^2 \kappa)$. It exactly measures the classical-vs-$q$-deformed ratio of Chern--Simons pairings \cite{witten2011}.
 
-Classical Chern--Simons is a derived geometric invariant. It is invoked only when the knot complement fails to be hyperbolic. Analytic continuation of Chern--Simons theory supplies its $q$-deformed counterpart $G_{\mathrm{CS}}^{q}$ \cite{witten2011}.
+Classical Chern--Simons is a derived geometric invariant, invoked only when the knot complement fails to be hyperbolic. Analytic continuation of Chern--Simons theory supplies its $q$-deformed counterpart $G_{\mathrm{CS}}^{q}$ \cite{witten2011}.

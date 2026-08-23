@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0403224v1",
+ "source_sha256": "c25ccba77da375ad",
+ "brief": "Difference equation of the colored Jones polynomial for torus knot — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence equation, which reduces",
+ "extended": "**Difference equation of the colored Jones polynomial for torus knot**\n\n7 pp, 9 sections.\n\n**Abstract.** We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence equation, which reduces to the ﬁrst order di ﬀerence equation for a case of T2, 2m+1. We show that the A-polynomial of the torus knot can be derived from the di ﬀerence equation. Also constructed is a q-hypergeometric type expression of the colored Jones polynomial for T2, 2m+1. 1. I ntroduction The N-colored Jones polynomial JK(N) is one of the quantum invariants for knot K. It is associated with the N-dimensional irreducible represen- tation of sl(2), and is powerful to classify knots. Motivated by “volume conjecture” [12, 18] saying that a hyperbolic volume of the k not comple- ment dominates an asymptotic behavior of the colored Jones p olynomial JK(N) at q = e2πi/ N, it receives much interests toward a geometrical and topological interpretation of the quantum invariants.\n\n**Outline.** 2 KAZUHIRO HIKAMI; 1 I ntroduction; 2 C olored Jones Polynomial; 2 (s−1)(t−1)(1−N); 4 KAZUHIRO HIKAMI; 3 A-P olynomial; 6 KAZUHIRO HIKAMI; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The N-colored Jones polynomial for the torus knotTs, t is given\n- Theorem 4: The N-colored Jones polynomial for the torus knot Ts, t fulﬁlls\n- Theorem 6: The N-colored Jones polynomial for the torus knot T2, 2m+1\n- Theorem 7: AJ conjecture (10) proposed in Ref. 5 is true for the torus knots\n- Theorem 8: Let the function H2, 2m+1(x) be deﬁned by\n- Proposition 2: The N-colored Jones polynomial for the torus knot",
+ "tokens": {
+  "brief": 49,
+  "extended": 413
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-kazuhiro-hikami",
+   "title": "KAZUHIRO HIKAMI",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-i-ntroduction",
+   "title": "I ntroduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-c-olored-jones-polynomial",
+   "title": "C olored Jones Polynomial",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-s1t11n",
+   "title": "(s−1)(t−1)(1−N)",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-4-kazuhiro-hikami",
+   "title": "KAZUHIRO HIKAMI",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-3-a-p-olynomial",
+   "title": "A-P olynomial",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-006-6-kazuhiro-hikami",
+   "title": "KAZUHIRO HIKAMI",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-007-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "6-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

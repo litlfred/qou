@@ -1,0 +1,98 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0611181v2",
+ "source": {
+  "file": "0611181v2.pdf",
+  "sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
+  "bytes": 199563,
+  "pages": 13
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0611181",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "30 Jul 2007"
+  },
+  "doi": null,
+  "title": "Proof of the volume conjecture for Whitehead chains",
+  "authors_raw": "November 29, 2021",
+  "abstract": "We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211203101352-05'00'",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Author": ""
+  },
+  "title_lines": [
+   "Proof of the volume conjecture for Whitehead",
+   "chains",
+   "Roland van der Veen"
+  ],
+  "title_prev": "Proof of the volume conjecture for Whitehead chains Roland van der Veen"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorem",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of the lemmas",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4017,
+   "n_words": 784
+  },
+  {
+   "id": "sec-001-proof-of-the-main-theorem",
+   "number": null,
+   "title": "Proof of the main theorem",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4903,
+   "n_words": 1061
+  },
+  {
+   "id": "sec-002-proof-of-the-lemmas",
+   "number": null,
+   "title": "Proof of the lemmas",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 13,
+   "n_chars": 11989,
+   "n_words": 2576
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 3,
+  "chars_total": 20909
+ }
+}

@@ -104,8 +104,7 @@ textbook.  The eightfold-way classification is not "approximately available"
 at $N = 2$ --- it is structurally unavailable.  This is a scope-(b)
 exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 
-One direction is worth naming, because it is not the one the framework
-needs.  `decuplet_forces_three` and `singlet_forces_three` run from an
+`decuplet_forces_three` and `singlet_forces_three` run from an
 *observed* channel dimension to $N = 3$; what the framework requires is
 $N = 3$ *supplied* by a construction.  That is the affirmative half, and it
 remains open.

@@ -218,7 +218,7 @@ def main():
              "combinatorial level rather than by assertion. Lean: ssyt_weights_nodup.")
 
     # ---- T11-T13: the THIRD knot, and the remainder derived from arithmetic ----
-    # Source (glyph-verified): Garoufalidis-Zagier, uploads/2111.06645v3.pdf S2.1.
+    # Source (glyph-verified): Garoufalidis-Zagier, library/arxiv-2111.06645v3/2111.06645v3.pdf S2.1.
     # P_K = boundary-parabolic SL_2(C) reps. Verbatim: 4_1 -> {s0,s1,s2}, trace field
     # Q(sqrt(-3)); 5_2 -> {s0,s1,s2,s3}, cubic of discriminant -23, s3 the root with
     # ZERO imaginary part; (-2,3,7) -> SEVEN elements: s0, three from Q(xi) (the same

@@ -1,11 +1,11 @@
 ---
 # qou-im9l
 title: 'SW-4-gen: general-λ Hoefsmit seminormal rep + braid (Yang-Baxter/axial-distance) — the residual sorry in HoefsmitRep.lean'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T20:13:08Z
-updated_at: 2026-08-18T18:11:08Z
+updated_at: 2026-08-19T07:36:21Z
 parent: qou-59vq
 blocked_by:
     - qou-rsbf
@@ -127,3 +127,63 @@ empty at `N = 0` so the conclusion's `∃ i` is otherwise unprovable.
 claims `hoefsmit_seminormal_rep` is close to discharge — the remaining step is a real missing lemma,
 not plumbing, and calling it mechanical twice is exactly the kind of under-estimate this bean should
 not repeat a third time.
+
+
+## CLOSED 2026-08-19 — merged in #5279 (45817bf516), consolidated with sibling #5282
+
+`hoefsmit_seminormal_rep` is PROVED, sorry-free and axiom-clean
+(`[propext, Classical.choice, Quot.sound]`, no `sorryAx`).
+`HoefsmitRep.lean` is at **0 real sorries** — verified on main, not assumed.
+
+**Two agents solved this independently and collided.** #5282
+(`claude/hoefsmit-finish-2026-08-18`) proved the same theorem; the branches
+conflicted in three files. Owner ruled 'merge the best of both'. What landed:
+
+| kept | dropped | from |
+|---|---|---|
+| the discharge `hoefsmit_seminormal_rep` | — | #5279 |
+| `card_shape` on `SpechtClassification.card_eq_rowLens_sum` | my `YoungDiagramCard.lean` (~100 lines) | **#5282** |
+| `SytAdmissible.lean` (merged #5266) | #5282's `SytRigidity.lean` (291 lines) | #5279 |
+| `QOU.lean` umbrella imports | — | **#5282** |
+
+### 🔻 The error worth keeping: I skipped the corpus-grep
+
+I wrote a standalone Young-diagram cardinality file because I probed **Mathlib**
+and found the bridge genuinely absent —
+`card_ofRowLens` / `ofRowLens_card` / `card_eq_sum` / `rowLens_sum_eq_card` /
+`sum_rowLens_eq_card` / `card_eq_rowLens_sum` / `card_cells_ofRowLens` are all
+unknown constants upstream, and `exact?` cannot close it. **I never grepped the
+repo**, where `QOU.BraidKnot.SpechtClassification.card_eq_rowLens_sum` had been
+all along, its docstring already saying 'Mathlib has no packaged bridge at this
+pin'. Right about Mathlib, wrong about the corpus — the exact failure the
+corpus-grep checklist exists to prevent, committed while being careful about the
+half of the question that was easier to check.
+
+Compounding it: I called gap (i) 'mechanical' twice (in this bean and in #5076's
+body) before measuring, then over-corrected into 'a missing upstream lemma'
+without finishing the search. Both framings were wrong in the same direction —
+asserting the shape of a gap before looking.
+
+### The umbrella finding (theirs), closed clean
+
+The general-λ tree sat outside `QOU.lean`'s import closure, so nothing
+type-checked it. `Orbit3Braid`, `Orbit6Braid` and `HeckeWedderburnData3` are
+NOT in `HoefsmitRepGeneral`'s transitive cone and were named explicitly; all
+three then compiled EXIT=0 with **zero diagnostics** on first check from the
+umbrella. A coverage hole, not a defect.
+
+### Downstream — CLOSED by a sibling while this bean was in flight
+
+`barSymJMSum_block_eigenvalue` (`QJucysMurphy.lean`) needed the per-element JM
+eigenvalue `L_k ↦ q^{2·cellContent}` (Ram Thm 4.1), which this bean did not
+supply. **That has since landed on main** under bean `qou-t8qh`
+(`6a72c896ae`, `83d10c2180`): `QOU/SchurWeyl/QJucysMurphyEigen.lean` proves
+`genMat_conj_jmDiagVal` and `barSymJMSum_block_eigenvalue_of_pos`, and
+`QJucysMurphy.lean` is at **0 real sorries** — the SchurWeyl tree has none left.
+
+The `of_pos` version also weakens the hypothesis to `q ≠ 0 ∧ q² ≠ 1` (admitting
+negative `q`) and records that the old `N`-unrestricted statement was **false at
+`N = 0`**, as `barSymJMSum_block_eigenvalue_zero_false`.
+
+This bean still did not close that item — a sibling did. Recorded here only so
+the paragraph above is not read as current.

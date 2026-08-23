@@ -17,8 +17,15 @@ Corpus application:
 
 ## Mathlib status
 
-No SU(3) type in Mathlib. We state the discriminator as a dimension check
-and bridge the representation-theoretic content with an explicit axiom.
+No SU(3) type in Mathlib. We state the discriminator as a **dimension shadow**
+— the Sym² dimension and the singlet count that decides the gate. The
+representation-theoretic core (the SU(3) fundamental is complex type,
+`𝟑 ≇ 𝟑̄`, so `Sym²(𝟑) = 𝟔` is irreducible with no singlet) is a genuine
+Mathlib gap, tracked in bean `qou-8fl1` (T2). It is **not** stubbed here with a
+vacuous `axiom … : True`: an earlier `su3_sym2_irreducible : True` was removed
+2026-08-23 (it asserted nothing and nothing consumed it). The affirmative
+gate-decision content is carried by the parity criterion proved next door in
+`QOU.Eightfold.Sym2GateParity`.
 
 ## Namespace
 
@@ -28,23 +35,17 @@ root namespace*) and leaving `lean.ref`s into this module naming declarations
 that do not exist.  The namespace matches the module path, as in the three
 sibling files of this directory.
 
-## Outstanding: this file's representation-theoretic content is vacuous
+## What is (and is not) proved here
 
-Recorded here so it is visible at the point of use, **not** repaired here —
-the drain is bean `qou-8fl1` item 3, and the chapter prose already labels the
-gate result honestly ("not excluded by the Sym² gate", "should not be cited
-as" a machine-checked pass).
-
-- `su3_sym2_irreducible` is an `axiom … : True`.  It asserts nothing: any
-  proof of `True` discharges it, so nothing downstream gains content from it.
-- `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` conclude
-  `1 + 5 = 6 ∧ 1 > 0` and `6 = 6 ∧ 0 = 0` — arithmetic tautologies whose
-  representation-theoretic reading lives only in the docstrings.
-
-`sym2_dim_3` is the one declaration here with content, and it is only the
-dimension arithmetic.  The parity criterion that actually decides the gate is
-formalised properly next door in `QOU.Eightfold.Sym2GateParity`, which also
-records why the superseded self-duality argument was invalid.
+`sym2_dim_3`, `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` are
+**dimension shadows**: the Sym²(3-dim object) dimension is `6`, and the gate is
+decided by the singlet count (fail iff a singlet is present, i.e. count `≥ 1`).
+T₁ carries singlet count `1` (fails); the octonion route carries singlet count
+`0` (passes). What these do **not** prove is the SU(3) irreducibility that makes
+the octonion route's singlet count `0` — that is the Mathlib gap above
+(`qou-8fl1` T2). The parity criterion that actually decides the gate is
+formalised in `QOU.Eightfold.Sym2GateParity`, which also records why the
+superseded self-duality argument was invalid.
 -/
 
 namespace QOU.Eightfold.Sym2Gate
@@ -54,32 +55,27 @@ namespace QOU.Eightfold.Sym2Gate
 /-- dim(Sym²(V)) = n(n+1)/2 for dim V = n.  At n = 3, dim = 6. -/
 theorem sym2_dim_3 : 3 * (3 + 1) / 2 = 6 := by norm_num
 
--- § 2. The gate: singlet in Sym² excludes SU(3)
+-- § 2. The gate: singlet in Sym² excludes SU(3).
+--
+-- The representation-theoretic core — "the SU(3) fundamental is complex type
+-- (3 ≇ 3̄), so Sym²(𝟑) = 𝟔 is irreducible with no singlet" — is a Mathlib gap
+-- (no SU(3) type). It was previously stubbed as `axiom su3_sym2_irreducible :
+-- True`, which asserted nothing; removed 2026-08-23 (bean qou-8fl1 T2). The two
+-- gate applications below are honest dimension shadows: the Sym² dimension is 6,
+-- and the gate is decided by the singlet count (fail iff ≥ 1).
 
-/-- If Sym²(V) decomposes as 1 ⊕ 5 (dimensions), there is a 1-dimensional
-    invariant subspace (a singlet), i.e. an invariant symmetric bilinear form.
-    This means V is self-dual (orthogonal type).
-
-    The SU(3) fundamental is complex type (not self-dual: 3 ≇ 3̄), so
-    its Sym² = 6 is irreducible.  Any V with Sym² = 1 ⊕ 5 is therefore
-    NOT the SU(3) fundamental.
-
-    We state the representation-theoretic core as an axiom (Mathlib gap). -/
-axiom su3_sym2_irreducible :
-  -- "For V = the SU(3) fundamental (dim 3), Sym²(V) is irreducible (dim 6)."
-  -- Equivalently: "V is not self-dual; V ≇ V*."
-  -- This is standard: SU(n) fundamental for n ≥ 3 is complex type.
-  True
-
-/-- The corpus colour T₁ has Sym² = A ⊕ H with dims 1 + 5 = 6.
-    The presence of the singlet A (dim 1) proves T₁ is self-dual,
-    hence not SU(3) fundamental. -/
-theorem corpus_T1_fails_sym2_gate : (1 : ℕ) + 5 = 6 ∧ (1 : ℕ) > 0 := by
+/-- The corpus colour T₁ has Sym² = A ⊕ H with dims 1 + 5 = 6.  The singlet A
+    has dimension 1, so its singlet count `1 ≥ 1`: T₁ **fails** the gate (self-
+    dual / orthogonal type, not the SU(3) fundamental).  Dimension shadow. -/
+theorem corpus_T1_fails_sym2_gate : (1 : ℕ) + 5 = 6 ∧ (1 : ℕ) ≥ 1 := by
   exact ⟨by norm_num, by norm_num⟩
 
-/-- The octonion G₂ route 3 has Sym² = 6 (irreducible, no singlet).
-    It passes the gate. -/
-theorem octonion_3_passes_sym2_gate : (6 : ℕ) = 6 ∧ (0 : ℕ) = 0 := by
-  exact ⟨rfl, rfl⟩
+/-- The octonion G₂ route 3 has Sym²(𝟑) = 6 with **no** singlet, so its singlet
+    count `0 < 1`: it **passes** the gate.  Dimension shadow, parallel to
+    `corpus_T1_fails_sym2_gate` — the Sym² dimension `3·4/2 = 6` is real
+    (`sym2_dim_3`); the singlet count `0` is the SU(3)-irreducibility input that
+    remains the Mathlib gap (bean `qou-8fl1` T2). -/
+theorem octonion_3_passes_sym2_gate : 3 * (3 + 1) / 2 = 6 ∧ (0 : ℕ) < 1 := by
+  exact ⟨by norm_num, by norm_num⟩
 
 end QOU.Eightfold.Sym2Gate

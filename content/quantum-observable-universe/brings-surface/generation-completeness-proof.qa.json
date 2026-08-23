@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/brings-surface/generation-completeness-proof.md"
   },
   "source_hashes": {
-    "md": "d14c273951f0",
+    "md": "c585ab9ba9d5",
     "ts": "5ad54a48f58f"
   },
   "criteria": {
@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.399Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Step 2 opener 'Not every knot reachable from T_{1,0} ... has genus <= 4'.",
+        "notes": "pass-with-note: load-bearing mathematical caveat motivating the spectral filter, not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.433Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1427,22 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.467Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Two spaced dashes: definitional parenthetical for u(K); clarification of intermediate-genus caveat.",
+        "notes": "pass-with-note: true parentheticals, low density."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.500Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); no reflex three-item lists; enumerations substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.535Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); final line is technical/factual, not a placed quotable"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.571Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); no narration of own emphasis ('we emphasize'/'note the framing' absent)"
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,22 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.610Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Corollary ended with 'No embeddable knot is excluded from the spectrum.' — pure negative restatement of the preceding sentence.",
+        "notes": "fixed: 'every knot type ... corresponds to a state ... No embeddable knot is excluded from the spectrum.' -> restating closer sentence removed."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.648Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.684Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); no unqualified maximum-strength claims"
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:30:58.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:54.720Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proof); prose parses aloud; noun-chain density normal for technical register"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1549,7 +1702,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "c585ab9ba9d5",
+          "ts": "5ad54a48f58f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:57:53.733Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:57:53.733Z"
 }

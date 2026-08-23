@@ -306,7 +306,9 @@ fn main() {
     }
 
     // Evaluate F_Pauli
-    let q0: f64 = 1.10998;
+    // Substrate anchor: the crate constant (PROTON pin), never a literal.
+    // Was a truncated 5-digit muon `1.10998`, 1277 ppb off this anchor.
+    let q0: f64 = hecke_engine::gram::Q_0;
     let ha_val = q0 - 1.0/q0;
     let div = 2.0_f64.powi(pn_count as i32);
 

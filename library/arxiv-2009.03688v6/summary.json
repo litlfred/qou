@@ -1,0 +1,202 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2009.03688v6",
+ "source_sha256": "8eb9b4cbe2690730",
+ "brief": "E8-singularity, invariant theory and modular forms — As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve",
+ "extended": "**E8-singularity, invariant theory and modular forms**\n\n48 pp, 36 sections.\n\n**Abstract.** As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y ⊂ CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is diﬀerent from the Kleinian singularity C2/Γ, where Γ is the binary icosahedral group. This gives a negative answer to Arnol’d and Brieskorn’s questions about t he mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, t he equa- tion of E8-singularity possesses inﬁnitely many kinds of distinct modular parametrizations, and there are inﬁnitely many kinds of distinct con struc- tions of the E8-singularity.\n\n**Outline.** Abstract; 1 Introduction; 2 Standard construction: E8-singularity as the; 3 Invariant theory and modular forms for SL(2 ; 4 A diﬀerent construction: E8-singularity from; 5 Q 18 and E20-singularities from CY /SL(2, 13; 4 T A(z), A; 2 Standard construction: E8-singularity as the; 30 We see this; 3 Invariant theory and modular forms for SL (2; 4 (1 + O(q)),; 26 (2 + O(q)),; 8 (−1 + O(q)),; 26 (6 + O(q)),; 26 (−3 + O(q)),; 26 (8 + O(q)),; 2 (1 + O(q))5+; 2 (−1 + O(q))+\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: (Main Theorem 1) (A variation of the E8-singularity\n- Theorem 1.2: (Main Theorem 2) (A variation of the E8-singularity\n- Theorem 1.1: and Theorem 1.2 show that there exist inﬁnitely many kind s\n- Theorem 1.3: (Variations of Q18 and E20-singularity structures over\n- Theorem 1.4: (Variations of Q18 and E20-singularity structures over\n- Theorem 1.5: (Main Theorem 3) (A variation of the structure of de-",
+ "tokens": {
+  "brief": 48,
+  "extended": 456
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-2-standard-construction-e8-singularity-as-the-ic",
+   "title": "Standard construction: E8-singularity as the icosahedral singularity",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-3-invariant-theory-and-modular-forms-for-sl2-13",
+   "title": "Invariant theory and modular forms for SL(2 , 13)",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-4-a-diﬀerent-construction-e8-singularity-from-cy",
+   "title": "A diﬀerent construction: E8-singularity from CY /SL(2, 13) over X(13)",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-005-5-q-18-and-e20-singularities-from-cy-sl2-13-over",
+   "title": "Q 18 and E20-singularities from CY /SL(2, 13) over X(13) and",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-006-4-t-az-a",
+   "title": "T A(z), A",
+   "pages": "7-14"
+  },
+  {
+   "id": "sec-007-2-standard-construction-e8-singularity-as-the",
+   "title": "Standard construction: E8-singularity as the",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-008-30-we-see-this",
+   "title": "We see this",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-009-3-invariant-theory-and-modular-forms-for-sl-2-13",
+   "title": "Invariant theory and modular forms for SL (2, 13)",
+   "pages": "16-26"
+  },
+  {
+   "id": "sec-010-4-1-oq",
+   "title": "(1 + O(q)),",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-011-26-2-oq",
+   "title": "(2 + O(q)),",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-012-8-1-oq",
+   "title": "(−1 + O(q)),",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-013-26-6-oq",
+   "title": "(6 + O(q)),",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-014-26-3-oq",
+   "title": "(−3 + O(q)),",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-015-26-8-oq",
+   "title": "(8 + O(q)),",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-016-2-1-oq5",
+   "title": "(1 + O(q))5+",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-017-2-1-oq",
+   "title": "(−1 + O(q))+",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-018-26-3-oq-2ζ-3νq",
+   "title": "(−3 + O(q)) + 2ζ 3νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-019-26-3-oq-2ζ-9νq",
+   "title": "(−3 + O(q)) + 2ζ 9νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-020-26-1-oq",
+   "title": "(1 + O(q))+",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-021-26-1-oq-2ζ-10νq",
+   "title": "(−1 + O(q)) + 2ζ 10νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-022-26-1-oq-2ζ-4νq",
+   "title": "(−1 + O(q)) + 2ζ 4νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-023-26-6-oq-ζ-5νq",
+   "title": "(6 + O(q)) + ζ 5νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-024-26-8-oq-ζ-6νq",
+   "title": "(8 + O(q)) + ζ 6νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-025-26-3-oq-ζ-8νq",
+   "title": "(−3 + O(q)) + ζ 8νq",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-026-26-2-oq-ζ-7νq",
+   "title": "(2 + O(q)) + ζ 7νq",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-027-4-1-oq",
+   "title": "(1 + O(q))+",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-028-2-1-oq2",
+   "title": "(1 + O(q))2+",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-029-4-1-oq5",
+   "title": "(1 + O(q))5+",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-030-4-1-oq2",
+   "title": "(1 + O(q))2+",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-031-26-1-oq",
+   "title": "(1 + O(q))]",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-032-26-1-oq2",
+   "title": "(1 + O(q))]2",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-033-4-a-diﬀerent-construction-e8-singularity-from",
+   "title": "A diﬀerent construction: E8-singularity from",
+   "pages": "39-42"
+  },
+  {
+   "id": "sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over",
+   "title": "Q18 and E20-singularities from CY /SL(2, 13) over",
+   "pages": "42-46"
+  },
+  {
+   "id": "sec-035-references",
+   "title": "References",
+   "pages": "46-48"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

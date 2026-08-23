@@ -1,6 +1,7 @@
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Data.Fintype.Card
 import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.SchenstedRSKBurnside
 
 /-!
 # QOU.Mathlib.RSKBridge — Robinson–Schensted–Knuth bridge to Burnside
@@ -89,26 +90,35 @@ theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
 -- requires the upstream theorem; a constant-zero dim would
 -- give `0 = n.factorial` which fails for every `n : ℕ`.
 
-/-- **Substrate axiom** (S-RSK-bijection).  The RSK bijection's cardinality consequence holds for
-    every `n : ℕ`, stated with the **genuine `#SYT` count** (`QOU.Mathlib.RSKBurnsideHolds n`
-    `:= ∑_{p ⊢ n} (dimSYT p)² = n!`), not a hollow existential.  Pending Mathlib's
-    `Combinatorics.RSK.cardinality_eq` (and the in-repo RSK proof under construction in
-    `SchenstedInsertion.lean`), this is assumed; once either lands it becomes a derived consequence.
+/-- **The substrate identity, PROVED** (S-RSK-bijection).  The RSK bijection's cardinality
+    consequence for every `n : ℕ`, stated with the **genuine `#SYT` count**
+    (`QOU.Mathlib.RSKBurnsideHolds n := ∑_{p ⊢ n} (dimSYT p)² = n!`), not a hollow existential.
 
-    (Earlier this axiom asserted only `∃ dimFn, ∑ dimFn² = n!`, which is satisfiable for trivial
-    reasons and did **not** pin `dimFn` to the SYT count — a vacuity flag from the 2026-06-28 review.
-    It now asserts the genuine identity; `rsk_substrate_exists` recovers the old existential form.) -/
--- Ref: [stanley1999] Enumerative Combinatorics II §7.11 (RSK bijection cardinality Σ_λ (f^λ)² = n!);
---      Mathlib.Combinatorics.RSK (partial; cardinality_eq is the upstream target).
-axiom RSK_substrate_axiom (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n
+    **This was an `axiom` until 2026-08-23.**  Its own docstring recorded the exit condition —
+    *"pending … the in-repo RSK proof under construction in `SchenstedInsertion.lean`, this is
+    assumed; once either lands it becomes a derived consequence"*.  That proof landed
+    (`QOU.Mathlib.rskBurnsideHolds`, epic `qou-nrex`), so the assumption is discharged and this is
+    now a theorem.  Nothing downstream carries `RSK_substrate_axiom` in `#print axioms` any more.
+
+    (Earlier still, it asserted only `∃ dimFn, ∑ dimFn² = n!`, which is satisfiable for trivial
+    reasons and did **not** pin `dimFn` to the SYT count — a vacuity flag from the 2026-06-28
+    review.  `rsk_substrate_exists` recovers that existential form.) -/
+-- Ref: [stanley1999] Enumerative Combinatorics II §7.11 (RSK bijection cardinality Σ_λ (f^λ)² = n!).
+theorem RSK_substrate_proved (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n :=
+  QOU.Mathlib.rskBurnsideHolds n
+
+/-- Compatibility spelling of `RSK_substrate_proved` under the name this was declared with while it
+    was an axiom.  Retained so no call site has to change; **it is a theorem, not an axiom.**  New
+    code should cite `RSK_substrate_proved`. -/
+theorem RSK_substrate_axiom (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n := RSK_substrate_proved n
 
 /-- The old existential form `∃ dimFn, ∑ dimFn² = n!` is now a *derived* consequence of the
     genuine identity (instantiate the witness with the concrete `dimSYT`), not the axiom itself.
-    `RSK_substrate_axiom n : RSKBurnsideHolds n` is by definition `∑ p, (dimSYT p)² = n!`, so
-    `⟨dimSYT, RSK_substrate_axiom n⟩` is exactly the existential. -/
+    `RSK_substrate_proved n : RSKBurnsideHolds n` is by definition `∑ p, (dimSYT p)² = n!`, so
+    `⟨dimSYT, RSK_substrate_proved n⟩` is exactly the existential. -/
 theorem rsk_substrate_exists (n : ℕ) :
     ∃ dimFn : Nat.Partition n → ℕ, ∑ Λ : Nat.Partition n, (dimFn Λ) ^ 2 = n.factorial :=
-  ⟨QOU.Mathlib.dimSYT, RSK_substrate_axiom n⟩
+  ⟨QOU.Mathlib.dimSYT, RSK_substrate_proved n⟩
 
 /-! ### Cohort-based RSKBijection (concrete via explicit cohort lists)
 

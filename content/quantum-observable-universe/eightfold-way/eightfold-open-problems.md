@@ -35,8 +35,7 @@ the list cannot silently break the pointers.
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
 | Three generations | **open**: not addressed here | item *Three generations* |
 
-Two of these deserve emphasis, because the chapter cannot do without
-them.  **$N = 3$** gates every flavour statement below --- the meson
+The chapter cannot do without two of these.  **$N = 3$** gates every flavour statement below --- the meson
 octet, the baryon multiplets, and every quark row of the dictionary are
 conditional on it, and it is not available from a single fibre.
 **Hypercharge** gates the $\mathrm{U}(1)$ factor: without a second

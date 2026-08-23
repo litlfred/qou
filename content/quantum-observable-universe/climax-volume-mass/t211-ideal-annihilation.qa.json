@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean"
   },
   "source_hashes": {
-    "md": "84cc79884840",
+    "md": "d46a76139b75",
     "ts": "8ec22c1d804b",
     "lean": "a1835c8fd701",
     "lean_statement": "b5cdd1f24ad8"
@@ -1324,6 +1324,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.447Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'not S_11 but the dihedral group' corrects a real potential misreading (symmetry group identification); substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1343,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.489Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no rhetorical-pivot construction present in context."
       }
     ],
     "trap-em-dash": [
@@ -1362,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 547 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.531Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no load-bearing em-dash construction present in context."
       }
     ],
     "trap-triples": [
@@ -1381,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 547 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.572Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no compulsive-triple construction present in context."
       }
     ],
     "trap-closing-aphorism": [
@@ -1400,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.614Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Section-4 closer 'It remains the ghost of the fourth generation - algebraically valid but topologically null' is a section flourish, not the block-final line; block ends on a technical skein statement. Register issue tracked under superlative-inflation."
       }
     ],
     "trap-meta-commentary": [
@@ -1419,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.656Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no meta-commentary construction present in context."
       }
     ],
     "trap-thesis-restatement": [
@@ -1438,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.697Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no thesis-restatement construction present in context."
       }
     ],
     "trap-performed-warmth": [
@@ -1457,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.738Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no performed-warmth construction present in context."
       }
     ],
     "trap-superlative": [
@@ -1476,6 +1596,23 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.778Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "severity": "minor",
+        "evidence": "Pervasive dramatic verb/adjective inflation beyond the three instances fixed: 'physical death' (header), 'The bifurcation is severe', 'commands the shell structure', 'proves incompatible', 'attains a representation-theoretic footing', 'multiplicative ghost', 'ghost of the fourth generation'; suspected verb-swap sweep artifacts ('asserts degree 5>4', 'stands at 6', 'validates every structural relation').",
+        "notes": "fixes applied: 'obliterate it' -> 'annihilate it'; 'utterly flat' -> 'flat'; 'entirely bereft of shell action and compatible symmetry' -> 'with no shell action and no compatible symmetry'. proposed (structural, one-voice pass): normalise inflated verbs to plain copulas ('has degree 5>4', 'is 6', 'satisfies every structural relation', 'is incompatible'), retitle section 1 to an academic noun phrase."
       }
     ],
     "trap-nonspeakable": [
@@ -1495,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:36.822Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no non-speakable-syntax construction present in context."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1516,7 +1668,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "d46a76139b75",
+          "ts": "8ec22c1d804b",
+          "lean": "a1835c8fd701",
+          "lean_statement": "b5cdd1f24ad8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:00.491Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:00.491Z"
 }

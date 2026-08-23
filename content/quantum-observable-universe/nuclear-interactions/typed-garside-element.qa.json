@@ -1870,6 +1870,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.662Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1889,6 +1904,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.726Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1908,6 +1938,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.810Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1927,6 +1972,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.874Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1946,6 +2006,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.922Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1965,6 +2040,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.980Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1984,6 +2074,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.045Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -2003,6 +2108,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.119Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -2022,6 +2142,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.174Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -2041,6 +2176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.227Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2064,5 +2214,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:13:09.227Z"
 }

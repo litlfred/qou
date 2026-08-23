@@ -2146,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.210Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Read in full; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2165,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.250Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -2184,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 273 words)"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.291Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -2203,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 273 words)"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.332Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "The References list has three entries because the .ts cites three works; not a reflex triple.",
+        "notes": "Noted, not a trap: the block carries a hand-written \"## References\" section duplicating cites: [wenzl1988, hoefsmit1974, kassel1995] in the .ts. The pipeline aggregates the chapter bibliography from cites, so this section is a second, unvalidated copy."
       }
     ],
     "trap-closing-aphorism": [
@@ -2222,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.374Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Ends on the References list.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -2241,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.416Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "None.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -2260,6 +2356,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.458Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Sections add content rather than restating.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -2279,6 +2391,22 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.500Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -2298,6 +2426,23 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.544Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "severity": "major",
+        "evidence": "The .ts marks computation.status \"verified\" against computations/probes/poly-q-proof.witness.json, and that witness does not support the block's premise - it contradicts it. Its own numerical_verification array compares the claimed closed form p(q)/(12 q^10) against a numerically computed Plancherel-weighted Markov trace at seven q values and reports max_relative_diff_across_q = 7.888. At the substrate pin q0 = 1.1099785827513808 the witness records tr_M_numeric = 1.6331533774490408 against tr_M_pr546_closed_form = 0.43313389325191254, rel_diff = 2.7706 - i.e. the closed form is off by a factor of about 3.8, and the disagreement is worse at every other sampled q (up to 788% at q = 1.05). The ONLY field the witness confirms is anti_self_reciprocal_proved: true, which is the polynomial identity alone. So the proposition's stated identity q^20 p(1/q) = -p(q) is correct (I re-derived it in sympy), but the sentence \"be the numerator of the closed-form Markov trace tr_M(B_p) = p(q)/(12 q^10) derived via the symbolic Hoefsmit-Wenzl seminormal reduction\" is asserted flatly and is refuted by the block's own cited witness. This is the \"marked verified against a witness reporting failure\" class.",
+        "notes": "STRUCTURAL / math-adjacent, not edited. Proposed: demote computation.status from \"verified\" to \"disputed\" or \"experimental\" and re-scope the statement to \"let p(q) = ... be the polynomial proposed in PR #546 as the numerator of tr_M(B_p)\", noting that the independent numerical check in the witness disagrees. Three further items found while reading, all flagged not fixed: (1) SHIFT CONFLICT. \"The shift(K) is the GS-filtration shift exponent. It equals 18Z + 21N + 1 for atomic braids per the integer-LP closure.\" At (Z,N) = (1,0) that is 19, but the block's own denominator is 12 q^10 and its own conjecture requires deg_q p_K = 2 shift(K), i.e. 20 = 2 x 10, so shift = 10 here. 18Z+21N+1 = 19 is the ord_{u=0} pole order in the u-coordinate (recomputed-low-isotope-mass-table.md line 77 states exactly that at (1,0)); the two coordinates are being conflated. (2) HOPF CLAIM. \"The Iwahori-Hecke algebra H_n(q) forms a Hopf algebra with antipode S(sigma_i) = sigma_i^{-1}\" - the type-A Iwahori-Hecke algebra does not carry a natural Hopf structure; that lives on U_q(sl_n). The Frobenius/Nakayama argument that follows does not need a Hopf antipode. (3) STRAND COUNT. \"the proton braid in B_3\" versus prop:atomic-mass-gb-nf, which the block cites and which defines the atomic braid in B_n with n = 3A + Z = 4 for the proton; the compute side (mass_at_3A_proper.atom_braid_word_3A) uses 3A = 3. Two conventions, one citation. VERIFIED AND CORRECT, so a later pass need not re-flag: the Hecke inversion sigma^{-1} = sigma - (q - q^{-1}) follows from sigma^2 = (q-q^{-1})sigma + 1; and the crossing count l(B_p) = 11 is corroborated by categorical-neutron-properties.md (6 from B_3 + 3 quark + 2 gluon = 11 for the proton, against 13 for the neutron), so the sign (-1)^11 = -1 is consistent with the stated identity."
       }
     ],
     "trap-nonspeakable": [
@@ -2317,6 +2462,23 @@
         "reviewed_at": "2026-08-15T10:31:01.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "81920c45739f",
+          "ts": "bf0a056ce150"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.588Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "severity": "minor",
+        "evidence": "One copular substitution: \"Here S(B_p) constructs the reversed word with each sigma replaced by sigma^{-1}.\"",
+        "notes": "Single instance, below the fail threshold. Proposed if touched later: \"Here S(B_p) is the reversed word ...\". Deliberately not edited because the surrounding sentence is inside the flagged Hopf-antipode claim."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2502,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:24:46.588Z"
 }

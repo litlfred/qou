@@ -1360,6 +1360,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.868Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1395,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.914Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-em-dash": [
@@ -1399,6 +1431,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 419 words (1.43/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:03.960Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-triples": [
@@ -1418,6 +1466,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 419 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.003Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1437,6 +1501,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.045Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-meta-commentary": [
@@ -1456,6 +1536,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.118Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1475,6 +1571,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.161Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-performed-warmth": [
@@ -1494,6 +1606,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.209Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-superlative": [
@@ -1513,6 +1641,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.248Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "trap-nonspeakable": [
@@ -1532,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.290Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (three steps). All ten categories clean. 'We establish the two anchor values, then the rejection' is an ordinary roadmap sentence; the negation in Step 3 ('agreement is exact or it is not') is the substantive tolerance claim. Two spaced em-dashes, both appositive. RIGOR PASS, and Step 2 is correct in full: with J_unknot = 1 and the skein J_{L+} - J_{L-} = (q - q^{-1})J_{L0}, the right-hand side vanishes at q = 1, so J(1) is crossing-change invariant; crossing changes unknot any diagram; the split-union loop value -(q^{1/2}+q^{-1/2}) is -2 at q = 1; hence J_L(1) = (-2)^{n-1}, giving -2 for the 2-component Hopf link. The stated consistency check is also right: the positive Hopf link has J = -q^{1/2} - q^{5/2}, which is -2 at q = 1. SS7a compliance is exact -- the skein is written in the mandated form, the generator is sigma_i, and the invariant is J_K(q) rather than V_K(t).",
+        "notes": "THREE NOTES, none an arithmetic error. (1) STEP 1 PRESENTS A RE-READING AS A DERIVATION. It writes '1 + c_2 u^2 = 1 - b(q)^2 hbar_q^4 = 1 - u^2, valid over any commutative ring. Hence c_2(q) = -1 identically in q -- a Taylor-exact constant.' Since u is DEFINED as b*hbar_q^2, the middle equality is a substitution and the conclusion is the ansatz read back; AGENTS.md's 2026-08-16 ruling says exactly this ('the Lean re-reads the N=2 factor rather than deriving it') and asks that the word 'structural' be used. (2) STEP 1 ALSO DROPS THE SERIES NAME. It says 'a Taylor-exact constant' flatly, where the parent proposition correctly qualifies 'Taylor-exact for the explicit-factor product' and records that the normalised series gives -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word, so the proof under-specifies where its own statement does not. (3) CONVENTION NOTE, resolved rather than flagged: Step 2's loop value -(q^{1/2}+q^{-1/2}) is the reciprocal of the excised convention-C Markov parameter z_C = 0.49932033, so the trace-to-Jones chain the ladder uses is C-frame. But the QUANTITY Step 2 establishes, J_Hopf(1) = -2, is a knot invariant and is convention-independent, so this step does not inherit the qou-cds1 scope. I checked rather than guessed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1554,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:40:04.290Z"
 }

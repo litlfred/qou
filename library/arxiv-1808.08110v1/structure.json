@@ -1,0 +1,131 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1808.08110v1",
+ "source": {
+  "file": "1808.08110v1.pdf",
+  "sha256": "4bf98566792d47bdc7c72bce3c3d0e4a82dbc3ec5d8287d112b180e94c7fb443",
+  "bytes": 175984,
+  "pages": 18
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1808.08110",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "24 Aug 2018"
+  },
+  "doi": null,
+  "title": "Exceptional quantum geometry and particle physics II",
+  "authors_raw": "AND PARTICLE PHYSICS II",
+  "abstract": "We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the internal space of the fundamental fermions of the Standard Model with 3 generations. By using the sugges tion of [30] (properly justiﬁed here) that the Jordan algebra J 8 2 of hermitian 2 × 2 octonionic matrices is relevant for the description of the internal space of the fundamental fermions of one generation, we show that, based on the same principles and the same framework as in [13] , there is a way to describe the internal space of the 3 generations wh ich avoids the introduction of new fundamental fermions and whe re there is no problem with respect to the electroweak symmetry. LPT-ORSAY 18-78 1Laboratoire de Physique Th´ eorique, CNRS, Universit´ e Paris-Sud, Universit´ e Paris- Saclay, Bˆ atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr 2INRNE, Bulgarian Academy of Sciences, Tsarigradsko Chaussee 72 , BG-1784 Soﬁa. ivbortodorov@gmail.com",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180826201924-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "EXCEPTIONAL QUANTUM GEOMETRY"
+  ],
+  "title_prev": "EXCEPTIONAL QUANTUM GEOMETRY"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Unimodularity of SU(3)c and the quark-lepton symmetry",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The 3 generations and the triality in J83",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The factor J82=JSpin9 for one generation",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "W2-triality and the 3 generations",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The extended electroweak symmetry SU(3)ew",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The internal symmetry SU(3)cSU(3)ew/Z3",
+   "page": 15,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 15,
+   "source": "outline",
+   "number": "8"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 12,
+   "n_chars": 18043,
+   "n_words": 3588
+  },
+  {
+   "id": "sec-001-5-w2-triality-and-the-3-generations",
+   "number": "5",
+   "title": "W2-triality and the 3 generations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5013,
+   "n_words": 998
+  },
+  {
+   "id": "sec-002-8-discussion",
+   "number": "8",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 6392,
+   "n_words": 1033
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 3,
+  "chars_total": 29448
+ }
+}

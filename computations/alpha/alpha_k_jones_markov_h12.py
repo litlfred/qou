@@ -74,8 +74,28 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 mp.mp.dps = 30
+# PROTON (experimental) pin — AGENTS.md §"q₀ anchor convention", owner
+# directive 2026-08-07: all agents and all production code default to the
+# experimental anchor, and "any probe, producer, or witness you write or
+# modify defaults to the experimental pin. No sign-off needed."
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, which
+# is the MUON value 1.1099785955573347..., and derived q0, h and z_mark from
+# it. The two pins differ by 11.54 ppb — the μ–p substrate tension itself —
+# so this producer was computing at a different anchor from the surface it
+# feeds: `y-lambda-at-q0.witness.json` now records
+# `parameters.q_0 = 1.10997858275138080759...`, i.e. proton. Mixing the two
+# inside one quantity is the straddle AGENTS.md forbids regardless of size.
+#
+# The upstream record is still captured, for provenance and because that
+# witness remains the canonical 3-CAL (muon) pin document — it is simply no
+# longer the source of this computation's q₀. Note that witness contradicts
+# itself about its own anchor (`q0Anchor: muon` vs
+# `calibration_inputs.anchor: m_p/m_e`); tracked as bean `qou-m9xp`.
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
+q0_mpf = mp.mpf(_Q50)
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
 z_mark = q0_mpf**3 / (q0_mpf**2 + 1)
@@ -252,10 +272,34 @@ def main() -> int:
     w.add_parameter("elapsed_seconds", f"{elapsed:.2f}")
     w.add_parameter("tr_M_he4_via_y_lambda", _f(tr_M_he4))
     w.add_parameter("tr_M_he4_multiplicative", _f(tr_M_he4_mult))
+    # Convention D forces y_λ = 0 EXACTLY for ℓ(λ) >= 3 — Schur-Weyl on the
+    # two-dimensional fibre, a theorem, not an approximation. This is a 77×77
+    # linear solve, so those entries come back as solver residue (~1e-18 here,
+    # 15 orders below the smallest live weight y_(12) ≈ 3.97e-3). Emitting the
+    # residue misrepresents a proved zero as a small number, and the
+    # convention-C audit correctly read it as a nonzero weight on a 3+ row
+    # block and flagged this witness as convention C — a false positive whose
+    # cause is here, not in the detector. (Its DEAD_TOL is 1e-30, set for a
+    # float pipeline "delivering 1e-300"; a linear solve delivers 1e-18.)
+    #
+    # Snap to exact 0 and keep the residue as a solver-quality diagnostic, so
+    # no information is lost.
+    _dead_residue = [abs(float(yv)) for sh, yv in zip(shapes, y) if len(sh) >= 3]
     w.add_data("y_lambda_table", [
-        {"partition": sh, "dim_S_lambda": d, "y_lambda": _f(yv)}
+        {"partition": sh, "dim_S_lambda": d,
+         "y_lambda": _f(0.0) if len(sh) >= 3 else _f(yv)}
         for sh, d, yv in zip(shapes, dims, y)
     ])
+    w.add_data("dead_block_solve_residue", {
+        "n_dead_blocks": len(_dead_residue),
+        "max_abs_residue": _f(max(_dead_residue)) if _dead_residue else _f(0.0),
+        "note": (
+            "ell(lambda) >= 3 blocks are exactly 0 under convention D "
+            "(Schur-Weyl, two-dimensional fibre). The table above reports "
+            "that exact 0; this is the numerical residue the 77x77 solve "
+            "left in those entries, kept as a conditioning diagnostic."
+        ),
+    })
     w.add_data("candidate_B_4He_MeV", {n: _f(v) for n, v in candidates.items()})
     w.add_data("B_4He_AME_MeV", repr(B_AME))
     w.add_assertion(

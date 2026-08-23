@@ -104,7 +104,7 @@ Quoted verbatim from the CODATA-2022 report, Table (row ``energy equivalent
 mpc2``): Mohr, Newell, Taylor & Tiesinga, *CODATA recommended values of the
 fundamental physical constants: 2022*, Rev. Mod. Phys. **97**, 025002
 (published 30 April 2025) — vendored at
-``uploads/RevModPhys.97.025002.pdf.pdf``, p. 47.
+``library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf``, p. 47.
 
 **Vintage correction, 2026-08-09 (PR #4860, bean `qou-2an8` → `qou-if87`).**
 This previously held ``938.27208816``, the CODATA-**2018** value, while
@@ -251,6 +251,20 @@ M_MU_OVER_M_E_ERR = _load_mpf("0.0000046")
 
 
 # ── Atomic mass unit → MeV conversion ──────────────────────────────
+
+M_N_MINUS_P_MEV = _load_mpf("1.29333251")
+"""Neutron-proton mass difference, energy equivalent.  CODATA-2022:
+**1.293 332 51(38) MeV**.
+
+Added 2026-08-21 during the CODATA drain (qou-7ot6-a).
+`substrate/experimental_constants.py` carried this as the literal 1.2933321
+described as the "direct CODATA 2022 value" -- it is 320 ppb from the 2022
+table entry, so the label was wrong. Held here so
+`codata_table_vintage_audit.py` checks it against the NIST table like every
+other constant in this module, rather than it sitting unchecked in a
+consumer."""
+
+M_N_MINUS_P_MEV_ERR = _load_mpf("0.00000038")
 
 U_MEV = _load_mpf("931.49410372")
 """Atomic mass constant energy equivalent m_u·c² (MeV).

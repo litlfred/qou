@@ -3,189 +3,23 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 28,
-    "marked": 0,
-    "files": 18,
-    "baseline": 28,
+    "candidates": 3,
+    "marked": 9,
+    "files": 1,
+    "baseline": 3,
     "by_file": {
-      "computations/_habiro_coefficient_extract.py": 1,
-      "computations/atomic_mass_via_rho_k.py": 2,
-      "computations/chi_numpy_dtype_fix_benchmark.py": 1,
-      "computations/fr_pullback_cosh_h_test.py": 1,
-      "computations/jpsi_boundstate_mass_probe.py": 1,
-      "computations/nuclide_braid_pipeline.py": 2,
-      "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py": 1,
-      "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py": 2,
-      "computations/probes/ak_lp_dual_quotient_probe.py": 2,
-      "computations/probes/aoperator_a6_cost_and_contraction.py": 3,
-      "computations/probes/tritium_8_11_jones_markov_probe.py": 2,
-      "computations/proton_residual_rootcause.py": 1,
-      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3,
-      "computations/qbeta/qbeta_habiro_tower_1ppq.py": 1,
-      "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py": 1,
-      "computations/rho_k_full_via_wenzl_lr.py": 2,
-      "computations/s5_so3_su2_u1_fiber_action.py": 1,
-      "tools/qou-substrate/python/qou_substrate/precision.py": 1
+      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3
     },
     "rows": [
-      {
-        "file": "computations/_habiro_coefficient_extract.py",
-        "line": 275,
-        "kind": "serialized",
-        "detail": "_fmt(<float64-tainted>)",
-        "source": "print(f\"  tr_M @ q_0 = {_fmt(tr_M_at_q0, '+.6e')}, \"",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/atomic_mass_via_rho_k.py",
-        "line": 480,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"rho_K_err_pct\": fmt(rho_err_f),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/atomic_mass_via_rho_k.py",
-        "line": 481,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"legacy_E0_err_pct\": fmt(legacy_err_f),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/chi_numpy_dtype_fix_benchmark.py",
-        "line": 124,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"speedup\": fmt(speedup),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/fr_pullback_cosh_h_test.py",
-        "line": 207,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"B_MeV\": fmt(B_MeV), \"B_AME_MeV\": fmt(B_ame),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/jpsi_boundstate_mass_probe.py",
-        "line": 245,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"chern_simons_zero_tolerance\": fmt(cs_zero_tol),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/nuclide_braid_pipeline.py",
-        "line": 190,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 50)",
-        "source": "\"y_lambda\": mp.nstr(y, 50), \"chi_lambda\": mp.nstr(chi_re, 50),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/nuclide_braid_pipeline.py",
-        "line": 191,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 50)",
-        "source": "\"contribution\": mp.nstr(contrib, 50),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py",
-        "line": 215,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 20)",
-        "source": "\"chi_at_q0\": str(mp.nstr(mp.mpf(chi_at_q0), 20)),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
-        "line": 242,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 18)",
-        "source": "\"m_p_MeV\": str(mp.nstr(m_p_pred, 18)),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
-        "line": 243,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 18)",
-        "source": "\"m_n_MeV\": str(mp.nstr(m_n_pred, 18)),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/ak_lp_dual_quotient_probe.py",
-        "line": 226,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"min_live_contrib\": fmt(y0_predicted),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/ak_lp_dual_quotient_probe.py",
-        "line": 227,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"chirality_dual_sum\": fmt(float(chir)),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/aoperator_a6_cost_and_contraction.py",
-        "line": 85,
-        "kind": "serialized",
-        "detail": "_fmt(<float64-tainted>)",
-        "source": "f\" {ops:>10.2e} {_fmt(ops*T_MPMATH):>9} {_fmt(ops*T_RUST):>9}\"",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/aoperator_a6_cost_and_contraction.py",
-        "line": 85,
-        "kind": "serialized",
-        "detail": "_fmt(<float64-tainted>)",
-        "source": "f\" {ops:>10.2e} {_fmt(ops*T_MPMATH):>9} {_fmt(ops*T_RUST):>9}\"",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/aoperator_a6_cost_and_contraction.py",
-        "line": 86,
-        "kind": "serialized",
-        "detail": "_fmt(<float64-tainted>)",
-        "source": "f\" {_fmt(ops*T_FLOAT):>9}\")",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/tritium_8_11_jones_markov_probe.py",
-        "line": 183,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "w.add_data(\"ratio_AME_to_bare_wenzl\", mp.nstr(ratio_wenzl, 25))",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/tritium_8_11_jones_markov_probe.py",
-        "line": 184,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "w.add_data(\"ratio_AME_to_bare_qschur\", mp.nstr(ratio_qschur, 25))",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/proton_residual_rootcause.py",
-        "line": 167,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 30)",
-        "source": "\"m_Hecke_mpf_str\": mp.nstr(m, 30),",
-        "class": "CANDIDATE"
-      },
       {
         "file": "computations/qbeta/qbeta_habiro_taylor_investigation.py",
         "line": 235,
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 18)",
         "source": "\"tr_M_proton_at_q0\": mp.nstr(tr_p_num, 18),",
+        "taint_name": "tr_p_num",
+        "taint_origin_line": 167,
+        "taint_origin_source": "tr_p_num = float(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30))",
         "class": "CANDIDATE"
       },
       {
@@ -194,6 +28,9 @@
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 18)",
         "source": "\"tr_M_neutron_at_q0\": mp.nstr(tr_n_num, 18),",
+        "taint_name": "tr_n_num",
+        "taint_origin_line": 168,
+        "taint_origin_source": "tr_n_num = float(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30))",
         "class": "CANDIDATE"
       },
       {
@@ -202,54 +39,9 @@
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 18)",
         "source": "\"delta_tr_M_at_q0\": mp.nstr(delta_tr_num, 18),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/qbeta/qbeta_habiro_tower_1ppq.py",
-        "line": 152,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 20)",
-        "source": "print(f\"Final Q = {mp.nstr(Q_current, 20)}\")",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-        "line": 171,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "\"chi_at_q_proton_handbuild\": mp.nstr(chi_qp, 25),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/rho_k_full_via_wenzl_lr.py",
-        "line": 280,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 30)",
-        "source": "\"tr_M_q0_mp30dps\": mp.nstr(tr_m_q0, 30),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/rho_k_full_via_wenzl_lr.py",
-        "line": 281,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 30)",
-        "source": "\"abs_tr_M_q0_mp30dps\": mp.nstr(abs(tr_m_q0), 30),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/s5_so3_su2_u1_fiber_action.py",
-        "line": 215,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 30)",
-        "source": "\"twist_q^{j(j+1)}_at_q0\": mp.nstr(theta, 30)}",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "tools/qou-substrate/python/qou_substrate/precision.py",
-        "line": 163,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "return fmt(float(value))   # float branch of fmt == natural repr",
+        "taint_name": "delta_tr_num",
+        "taint_origin_line": 169,
+        "taint_origin_source": "delta_tr_num = tr_n_num - tr_p_num",
         "class": "CANDIDATE"
       }
     ]

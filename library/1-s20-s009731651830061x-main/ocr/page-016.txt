@@ -1,0 +1,53 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 57.
+
+a
+
+8.2. Minima and mazima
+
+In order to involve the number of minima and the number of maxima in the Gog-
+trapezoids, we have to apply the version of Corollary 6 where the requirement on b1, be,
+...,0n is only that it is weakly increasing, and thus we cannot involve the inversion
+numbers at the same time.
+
+An (m,n, k)-Gog trapezoids with p minima can be identified with (s,t)-trees of or-
+der n, where s = (p — 1), t = (0,1,...,n —k—1) and where the bottommost entry of
+the first NE-diagonal is set to 2. In order to see this, delete in the (m,n, k)-Gog trape-
+zoids with p minima the occurrences of 1 except for the topmost which is replaced by 2.
+In order to obtain a formula for the number we have to multiply (3.1) by (—21)?~' and
+set by = 2. We obtain
+
+k n
+(peta +201)0? "TT 2) hart Il (1+ aj)mthtlgontink
+i=2 i=k+1
+x Il (a; —aj)(1+2;+a;x;). (3.2)
+1si<j<n
+
+The case p = 0 is not covered by this formula. In that case, we use (3.1) with the
+appropriate b; > 1.
+
+Now let M C {k +1,...,n} and suppose we require to have a maximum in the i-th
+SE-diagonal precisely if i € M (and possibly in the k-th SE-diagonal, in which case we
+have by =m +k). Then we need to multiply (3.2) by
+
+x, 1
+I > I +2;
+
+144; 1
+ieM GE {R+1k+2,...n}\M
+
+If we sum over all subsets M with cardinality g, we obtain
+
+Il _ €q (Teq1s-++5Un) 5
+i=k+1 we
+where eg denotes the q-th elementary symmetric function. As eg(p41,--.,2n) is the
+
+n
+coefficient of Q? in [|] (1+ Qz;), we obtain the following theorem.
+i=k+1
+
+Theorem 9. The generating function of (m,n,k)-Gog trapezoids with bottom row
+1, bo,...,b% w.r.t. the weight
+
+PiHof minima Q#of maxima not including bx
+
+is the constant term of

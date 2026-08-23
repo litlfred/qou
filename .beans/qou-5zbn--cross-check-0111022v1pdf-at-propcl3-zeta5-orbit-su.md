@@ -3,8 +3,9 @@
 title: Cross-check 0111022v1.pdf at prop:cl3-zeta5-orbit-sum-identity
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:34Z
-updated_at: 2026-08-08T16:12:34Z
+updated_at: 2026-08-21T17:04:43Z
 ---
 
 Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-sum-identity holds for QOU's Li_2^q = sum x^n/(n [n]_q), as Lemma 4 shows it does for Schlesinger's normalisation. This is a falsifiable numeric check, not an adoption of his result.
@@ -13,7 +14,14 @@ Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-
 - Lemma 4 — q-deformed distribution relation: Li_2(x, q^n) = (1/n) sum_{y^n = x} Li_2(y, q), and similarly for Li_{1,1}.
   Use here: The q-analogue of exactly the classical distribution/multiplication identity sum_k Li_3(zeta_N^k) = (N^{1-3} - 1) zeta(3) that prop:cl3-zeta5-orbit-sum-identity and conj:bring-trilog-depth-3-witness rest on. Worth a compute-check: does the orbit-sum identity QOU uses survive in QOU's own q-normalisation, or only in Schlesinger's? A negative answer would be informative about the pre-/post-archimedean 'accident' classification in rem:transcendental-accounting.
 
-Source: `uploads/0111022v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0111022v1/0111022v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0111022v1/  ->  [schlesinger2001]
+  Some remarks on q-deformed multiple polylogarithms
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [schlesinger2001] as the citation key when you do it.

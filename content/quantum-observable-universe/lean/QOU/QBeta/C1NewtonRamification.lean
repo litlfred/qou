@@ -24,7 +24,7 @@ degree parity: `f² = q − 1` would need `2·deg f = 1`.
 
 **Scope — deliberately narrow.** This is about the *characteristic equation of
 the Newton edge*. It is **NOT** the identification of RSZ's `A₁, A₂`. Per RSZ
-§3.3 (Astérisque 355, p. 39, `uploads/0903.0853v3.pdf`), `A₁, A₂` are the leading
+§3.3 (Astérisque 355, p. 39, `library/arxiv-0903.0853v3/0903.0853v3.pdf`), `A₁, A₂` are the leading
 matrices of the **two slope components** `P₁, P₂`, and `B₁, B₂` are *one* `d`-th
 root of each — not two roots of a single object. Identifying `A₁, A₂` for C1
 requires the slope decomposition and is the remaining part of stage S2
@@ -37,7 +37,7 @@ obstructions are indexed by **residues mod `d`**, giving `d` obstructions in
 §7c: `ℚ[X]` — pure algebra over a domain; no ordering, nothing archimedean.
 Sorry-free. No fit; nothing wired; no Stokes multiplier computed.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3 p. 39)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3 p. 39)
 -- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas

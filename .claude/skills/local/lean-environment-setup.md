@@ -292,13 +292,35 @@ elan / cache hosts are network-restricted.
 > base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
 > this addon becomes redundant and can be ignored.)
 
-> **H4 Wedderburn cone addon (2026-08-11).** The base cache does **not** carry
-> the `H₄(q)` Wedderburn cone — `HeckeH4AlgebraLaws`, `HeckeH4BlockMap22/31/211`,
+> **H4 Wedderburn cone addon (2026-08-11).**
+>
+> > **🛑 CORRECTION, same day, by its author.** This addon is **NOT a Lake cache
+> > seed and must not be treated as one.** It came from a `lean`-direct build,
+> > so it carries `.olean` files with **no `.trace` siblings** — checked after
+> > the fact: `HeckeH4BlockMap31`, `HeckeH4Wedderburn`, `HeckeH4AlgebraLaws` are
+> > all `olean:Y trace:N`. Per the rule above, Lake treats untraced oleans as
+> > stale, rebuilds, and **evicts** them (bean `02kc`).
+> >
+> > I never met the guard that would have stopped me:
+> > [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh)'s
+> > 90 % trace check refuses exactly this set, but I wrote my own `tar` +
+> > orphan-commit script and so never ran it. **Use the script.** Its refusal is
+> > the answer, not an obstacle to route around — which is the more general
+> > lesson, since a hand-rolled equivalent skips every guard the real one has.
+> >
+> > **What it IS good for:** the `lean`-direct verification loop this document
+> > recommends. `LEAN_PATH` + `lean file.lean` never consults `.trace`, and
+> > these oleans did compile `QOU/Machinery/HeckeH4RepDecomp.lean` to exit 0.
+> > So restore it to *verify a file*; never before a `lake build`.
+>
+> The base cache does **not** carry the `H₄(q)` Wedderburn cone —
+> `HeckeH4AlgebraLaws`, `HeckeH4BlockMap22/31/211`,
 > `HeckeH4WedderburnCoord/MulA/MulB/MulC/Inv`, `HeckeH4Wedderburn`,
 > `BilinearTraceRepBasis` — plus the 13 Mathlib oleans under
 > `Mathlib.Algebra.Module.LinearMap.Polynomial`. Preserved on the addon orphan
 > branch `lake-cache/qou-v4-24-0-h4-wedderburn-cone` (135 MB, **chunked**:
-> GitHub rejects blobs over 100 MB). Restore **after** the base:
+> GitHub rejects blobs over 100 MB). Restore **after** the base, and only for
+> `lean`-direct work:
 >
 > ```bash
 > ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)

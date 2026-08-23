@@ -166,9 +166,12 @@ import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
+import QOU.Knot.MortonFranksWilliams
+import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
+import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
@@ -200,6 +203,7 @@ import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevAsymptoticBounds
 import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
+import QOU.Knot.WhiteheadLowerRate
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
@@ -331,6 +335,11 @@ import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
+import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.SeminormalInequivalence
+import QOU.SchurWeyl.OffDiagNonvanishing
+import QOU.SchurWeyl.SeminormalRangeTop
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
 -- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
@@ -465,6 +474,15 @@ import QOU.BraidKnot.SpechtWedderburnCriterion
 -- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
 -- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
 import QOU.BraidKnot.SpechtWedderburnLe12
+import QOU.BraidKnot.SpechtWedderburnGeneral
+import QOU.BraidKnot.CentralC2Transport
+import QOU.BraidKnot.SpechtCentralC2Scalar
+import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
+import QOU.BraidKnot.WedderburnUnconditional
+import QOU.BraidKnot.ContentSqSumBridge
+import QOU.BraidKnot.PlancherelSnDataGeneral
+import QOU.BraidKnot.KeystoneDefectGeneral
+import QOU.BraidsAndKnots.SecondMomentKernelVanishes
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -689,6 +707,9 @@ import QOU.QBeta.QBesselQuadraticActionTerm
 import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.ZBarParity
+import QOU.QBeta.LadderPhaseMirrorCovariance
+import QOU.QBeta.RadicalPairingIsSignRep
+import QOU.QBeta.LadderRungAmplification
 import QOU.QBeta.QBetaZeta4ResidueRefutation
 import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CuspShapeBarParity
@@ -912,6 +933,39 @@ import QOU.Mathlib.SchenstedReadbackFold
 import QOU.Mathlib.SchenstedRSKInjective
 -- RSK inverse, brick 8: RSK separates permutations.
 import QOU.Mathlib.SchenstedPermInjective
+-- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
+import QOU.Mathlib.SchenstedCascadeRightInverse
+-- RSK inverse, brick 11: what the reverse cascade preserves (and what needs a corner).
+import QOU.Mathlib.SchenstedUninsertInvariants
+-- RSK inverse, brick 12a: where reverse row insertion writes (the reverse of rowInsert_bump_eq_set).
+import QOU.Mathlib.SchenstedReverseRowIndex
+-- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
+import QOU.Mathlib.SchenstedCascadeColStrict
+-- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
+import QOU.Mathlib.SchenstedWordSurjectivity
+-- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
+import QOU.Mathlib.SchenstedCornersAlong
+-- RSK inverse, brick 16: a row holding a maximum entry is a corner (the Q-side keystone).
+import QOU.Mathlib.SchenstedMaxCorner
+-- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
+import QOU.Mathlib.SchenstedShapeRun
+-- RSK inverse, brick 20: addable-cell sequences peel back as corners.
+import QOU.Mathlib.SchenstedAddable
+-- RSK inverse, brick 23: the counting bridge from column-strictness.
+import QOU.Mathlib.SchenstedStandardCount
+import QOU.Mathlib.SchenstedReinsertRow
+import QOU.Mathlib.SchenstedRecordingTrunc
+import QOU.Mathlib.SchenstedRSKSurjective
+import QOU.Mathlib.SchenstedListOfSYT
+import QOU.Mathlib.SchenstedRecordingOfSYT
+import QOU.Mathlib.SchenstedSYTRoundTrip
+import QOU.Mathlib.SchenstedWordOfPermSurj
+import QOU.Mathlib.SchenstedShapeOfPositions
+import QOU.Mathlib.SchenstedRSKPairSurjective
+import QOU.Mathlib.SchenstedRSKPairInjective
+import QOU.Mathlib.SchenstedRSKEquiv
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.Mathlib.SchenstedRSKBurnside
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
@@ -1010,6 +1064,29 @@ import QOU.MassTheory.GermConnectionGaugeCovariance
 -- here, so nothing built them. Both verify lean-direct exit 0.
 import QOU.MassTheory.GermRootVectorGaugeFixing
 import QOU.MassTheory.TransversePairingClusterDecomposition
+
+-- ═══ qou-glnl / qou-glhi / qou-fr7j — the gluing-equation lane ═══
+-- Every module of this lane was ORPHANED until now: nothing imported them, so
+-- `lake build` (whose default target is `QOU` plus its transitive import closure)
+-- never compiled them and no gate would have noticed them breaking.  Caught by
+-- `lean-orphan-audit.ts --diff`, which exits 1 on all eleven.  Each was verified
+-- per-module by name during development, which is exactly the check that hides
+-- this defect: naming a module builds it whether or not anything imports it.
+import QOU.Knot.GluingBridge
+import QOU.Knot.SixOneCertified
+import QOU.Knot.GeneratedCusp
+import QOU.Knot.GeneratedCertified
+import QOU.Knot.GeneratedGluingHigh
+import QOU.Knot.GeneratedCertifiedHigh
+-- ═══ qou-hypr / qou-bday — the surreal birthday lane ═══
+-- Same defect, same cause.  DiophantineBirthday itself was already in the tree and
+-- also orphaned, so registering it here is a fix to pre-existing state rather than
+-- to this arc's additions.
+import QOU.AppendixSurreals.BirthdayFaithful
+import QOU.AppendixSurreals.DiophantineBirthday
+import QOU.AppendixSurreals.DiophantineBirthdayScope
+import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
+import QOU.AppendixSurreals.GonshorConvergence
 -- qou-oc4v (§7c split, PR #5113): the depth-stratified FR module was split into
 -- an algebraic half ({R : Type*} [Field R]) and an archimedean sibling holding
 -- the empirical decimal variance records. Registering the sibling puts BOTH
@@ -1026,3 +1103,15 @@ import QOU.AlgebraicSubstrate.QChebyshevFunction
 -- (the generic [Field A] theorem split out of it), since the roadmap imports
 -- that module. Both verify lean-direct ok=1.
 import QOU.MassComputationChainRoadmap
+-- qou-br3w — staged for upstream Mathlib: the index of a multivariate polynomial at a
+-- point, the first missing Thue-Siegel-Roth prerequisite.  Depends on nothing from QOU
+-- (Mathlib imports only), so it lifts out verbatim when a Mathlib PR is possible; it is
+-- registered here so the orphan gate covers it in the meantime.
+import QOU.Mathlib.RothIndex
+-- qou-br3w — staged for upstream Mathlib: generalized (m x m) Wronskians.  Mathlib has the
+-- two-polynomial case only; genWronskian_two pins the generalisation to it.
+import QOU.Mathlib.GenWronskian
+-- qou-br3w — staged for upstream Mathlib: the same in SEVERAL variables, which is what
+-- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
+-- family is an explicit parameter because in several variables there is no canonical row.
+import QOU.Mathlib.MvGenWronskian

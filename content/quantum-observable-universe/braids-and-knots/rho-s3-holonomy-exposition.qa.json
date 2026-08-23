@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/rho-s3-holonomy-exposition.md"
   },
   "source_hashes": {
-    "md": "b59ff0ef7863",
+    "md": "ddfe78bc45fb",
     "ts": "6fc4471d1a4a"
   },
   "criteria": {
@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.251Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no assert-by-denial construction present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.298Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 243 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.340Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; em-dashes absent or parenthetical/range only, low density."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 243 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.380Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no reflex three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.419Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no quotable-flourish closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.458Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no narration of the block's own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.497Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Final sentence restated the immediately preceding sentence's claim as a closer.",
+        "notes": "fix applied: deleted block-final restatement 'This rotation-reflection on the chiral sheets is the physical content of the topological symmetry.', folding its one non-redundant phrase into the prior sentence ('...reflecting the space-like axis of the chiral sheets.')."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.537Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no personal register in institutional prose."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1504,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.576Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no unqualified maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1538,21 @@
         "reviewed_at": "2026-08-15T10:30:58.732Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:21.617Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; prose parses aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1422,7 +1573,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ddfe78bc45fb",
+          "ts": "6fc4471d1a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:56:49.768Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:56:49.768Z"
 }

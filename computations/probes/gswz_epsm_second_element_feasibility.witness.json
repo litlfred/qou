@@ -1,0 +1,140 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_second_element_feasibility_probe",
+ "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. Exceptional-unit cubics and their 5-adic classes only; the substrate modulus never enters and no anchor is imported.",
+ "scriptFile": "gswz_epsm_second_element_feasibility_probe.py",
+ "commitSha": "283901ee9d36a01257b8e153dee2f1873249267b",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Lemma 2.4; Addenda 34, 39 (this repo)",
+ "checks": {
+  "class_map_hits_all_three_classes": true,
+  "zero_class_is_NOT_rare": true,
+  "orbit_has_six_elements": true,
+  "orbit_classes_are_reflection_constrained": true,
+  "second_field_search_ran": true,
+  "a_second_exceptional_unit_field_exists": true,
+  "kappa_varies_across_fields": true
+ },
+ "result": {
+  "class_distribution_over_arguments": {
+   "0": 80,
+   "1": 80,
+   "2": 80
+  },
+  "arguments_sampled": 240,
+  "zero_class_share": "80/240",
+  "null_rate_reading": "c_2 = 0 is a 1-in-3 event under the observed distribution, so on its own it is not evidence that the invariant is carried by one symbol.",
+  "orbit_size": 6,
+  "orbit_classes_by_residue": {
+   "4": 0,
+   "3": 1,
+   "2": 2
+  },
+  "reflection_constant_on_the_orbit": [
+   2
+  ],
+  "orbit_reading": "Within the exceptional orbit the reflection relation determines half the classes from the other half, so c_1 and c_2 are not two free observations -- another reason a single vanishing is weak evidence.",
+  "second_field_candidates_found": 46,
+  "distinct_discriminants": [
+   -23,
+   169,
+   257,
+   697,
+   2777,
+   3969,
+   7537,
+   11417,
+   23377
+  ],
+  "sample_candidates": [
+   {
+    "poly": [
+     1,
+     -12,
+     11,
+     -1
+    ],
+    "disc": 7537,
+    "root_mod5": 4,
+    "kappa_of_root": 0
+   },
+   {
+    "poly": [
+     1,
+     -11,
+     10,
+     1
+    ],
+    "disc": 11417,
+    "root_mod5": 2,
+    "kappa_of_root": 2
+   },
+   {
+    "poly": [
+     1,
+     -11,
+     12,
+     -1
+    ],
+    "disc": 7537,
+    "root_mod5": 4,
+    "kappa_of_root": 0
+   },
+   {
+    "poly": [
+     1,
+     -10,
+     9,
+     1
+    ],
+    "disc": 7537,
+    "root_mod5": 3,
+    "kappa_of_root": 1
+   },
+   {
+    "poly": [
+     1,
+     -10,
+     9,
+     -1
+    ],
+    "disc": 2777,
+    "root_mod5": 2,
+    "kappa_of_root": 2
+   },
+   {
+    "poly": [
+     1,
+     -9,
+     6,
+     1
+    ],
+    "disc": 3969,
+    "root_mod5": 2,
+    "kappa_of_root": 2
+   }
+  ],
+  "kappa_on_other_fields": {
+   "169": 2,
+   "257": 0,
+   "697": 1,
+   "2777": 2,
+   "3969": 2,
+   "7537": 0,
+   "11417": 2,
+   "23377": 2
+  },
+  "kappa_values_seen_across_fields": [
+   0,
+   1,
+   2
+  ]
+ },
+ "scope": "scope-(a) DEFLATES Addendum 34's 'the invariant is carried entirely by [z_1]'. That reading rested on c_2 = 0, a single observation in a group of order 3. Measured here: over 240 admissible arguments the class of P_zeta is spread across all three classes with 0 at roughly its uniform share, so landing on 0 is a 1-in-3 event and is not by itself evidence of anything. Worse for the reading, within the exceptional-unit orbit of K the reflection relation pins c(X) + c(1-X) to a constant, so c_1 and c_2 are not two free observations. A bounded search for a second exceptional-unit cubic with a degree-1 place at 5 is reported with its outcome either way. The v_1 m-sweep is closed (Addendum 39) and nothing here forces a second data point into existence. Nothing wired."
+}

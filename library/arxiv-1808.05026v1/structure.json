@@ -1,0 +1,129 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1808.05026v1",
+ "source": {
+  "file": "1808.05026v1.pdf",
+  "sha256": "2781e0b34e7889d6fd306b5c62cade2f9392f1913a1887830dc59069b9ad3188",
+  "bytes": 149953,
+  "pages": 9
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1808.05026",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "15 Aug 2018"
+  },
+  "doi": null,
+  "title": "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+  "authors_raw": "TYPES B AND D",
+  "abstract": "For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210722230502-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+  "title_lines": [
+   "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+   "page": 4,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+   "page": 6,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2500,
+   "n_words": 399
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3294,
+   "n_words": 714
+  },
+  {
+   "id": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb",
+   "number": "3",
+   "title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 9,
+   "n_chars": 11519,
+   "n_words": 2609
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2440,
+   "n_words": 395
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 4,
+  "chars_total": 19753
+ },
+ "duplicate_of": "fd58d8e182edda805fed0946606c5ab82f81",
+ "duplicate_note": "Same work as library/fd58d8e182edda805fed0946606c5ab82f81/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/appendix-surreals/surreal-appendix-intro.md"
   },
   "source_hashes": {
-    "md": "fed7b8866ff0",
+    "md": "522e1c9eeabf",
     "ts": "08defa39e281"
   },
   "criteria": {
@@ -1191,6 +1191,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a limit.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.127Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "'a quotient, not a limit' / 'rather than informal symbols' are substantive mathematical contrasts (the appendix's actual claim)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1210,6 +1225,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.169Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "'A first-pass survey suggests... But an honest survey shows' is a substantive expository correction backed by the itemized survey, not a manufactured reframe"
       }
     ],
     "trap-em-dash": [
@@ -1229,6 +1259,22 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 616 words)"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.210Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "one load-bearing em-dash afterthought found and removed; remaining dashes are true parentheticals",
+        "notes": "fixed: 'hyperbolic geometry — a substantial list. But' -> 'hyperbolic geometry. But' (removed em-dash editorial afterthought)"
       }
     ],
     "trap-triples": [
@@ -1248,6 +1294,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 616 words)"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.251Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "'Lebesgue measure, Hilbert-space completions, hyperbolic geometry' and the remarks/conjectures/definitions triple are substantive enumerations"
       }
     ],
     "trap-closing-aphorism": [
@@ -1267,6 +1328,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.291Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "trap-meta-commentary": [
@@ -1286,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.333Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1305,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.374Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "trap-performed-warmth": [
@@ -1324,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.417Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "trap-superlative": [
@@ -1343,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:30:59.524Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.458Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "trap-nonspeakable": [
@@ -1363,6 +1499,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:51.500Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,7 +1534,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "522e1c9eeabf",
+          "ts": "08defa39e281"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:53:58.916Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:53:58.916Z"
 }

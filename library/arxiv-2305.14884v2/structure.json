@@ -1,0 +1,370 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2305.14884v2",
+ "source": {
+  "file": "2305.14884v2.pdf",
+  "sha256": "ebc8e64d901c9e4f397ece6170c92d5d65045ef7fbb15d251a268327acf7e1fb",
+  "bytes": 544045,
+  "pages": 48
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2305.14884",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "12 Jul 2023"
+  },
+  "doi": null,
+  "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+  "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS STORZER, AND CAMPBELL WHEELER",
+  "abstract": "We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices) is a top ological invariant. This formal power series is conjectured to agree to all orders in pertu rbation theory with two important topological invariants of hyperbolic knots, namely the Ka shaev invariant and the Andersen–Kashaev invariant (also known as the state-integral) o f Teichm¨ uller TQFT.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20230712211737-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+  "title_lines": [
+   "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC",
+   "3-MANIFOLDS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Faddeev quantum dilogarithm",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Neumann–Zagier data",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Geometric aspects",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Formal Gaussian integration",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Basics on formal Gaussian integration",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "q-holonomic aspects of psi",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Fourier transform of psi",
+   "page": 12,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Pentagon identity for psi",
+   "page": 14,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Inversion formula for psi",
+   "page": 17,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Elementary invariance properties",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Invariance under the choice of quad",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Invariance under Pachner moves",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The case of B with full rank",
+   "page": 25,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "The case of B with nullity one",
+   "page": 27,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The case of B with nullity two",
+   "page": 33,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "The series of the simplest hyperbolic 4_1 knot",
+   "page": 39,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Complements on the Fourier transform",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Complements on the pentagon identity",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9880,
+   "n_words": 1735
+  },
+  {
+   "id": "sec-001-21-the-faddeev-quantum-dilogarithm",
+   "number": "2.1",
+   "title": "The Faddeev quantum dilogarithm",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1810,
+   "n_words": 320
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1527,
+   "n_words": 276
+  },
+  {
+   "id": "sec-003-22-neumannzagier-data",
+   "number": "2.2",
+   "title": "Neumann–Zagier data",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5434,
+   "n_words": 1055
+  },
+  {
+   "id": "sec-004-23-geometric-aspects",
+   "number": "2.3",
+   "title": "Geometric aspects",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4866,
+   "n_words": 883
+  },
+  {
+   "id": "sec-005-3-formal-gaussian-integration",
+   "number": "3",
+   "title": "Formal Gaussian integration",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-31-basics-on-formal-gaussian-integration",
+   "number": "3.1",
+   "title": "Basics on formal Gaussian integration",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 18,
+   "n_chars": 19102,
+   "n_words": 3746
+  },
+  {
+   "id": "sec-007-4-elementary-invariance-properties",
+   "number": "4",
+   "title": "Elementary invariance properties",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1695,
+   "n_words": 346
+  },
+  {
+   "id": "sec-008-5-invariance-under-the-choice-of-quad",
+   "number": "5",
+   "title": "Invariance under the choice of quad",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 7696,
+   "n_words": 1821
+  },
+  {
+   "id": "sec-009-6-invariance-under-pachner-moves",
+   "number": "6",
+   "title": "Invariance under Pachner moves",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 4244,
+   "n_words": 937
+  },
+  {
+   "id": "sec-010-61-the-case-of-b-with-full-rank",
+   "number": "6.1",
+   "title": "The case of B with full rank",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3240,
+   "n_words": 782
+  },
+  {
+   "id": "sec-011-62-the-case-of-b-with-nullity-one",
+   "number": "6.2",
+   "title": "The case of B with nullity one",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 7824,
+   "n_words": 2005
+  },
+  {
+   "id": "sec-012-63-the-case-of-b-with-nullity-two",
+   "number": "6.3",
+   "title": "The case of B with nullity two",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 41,
+   "n_chars": 11142,
+   "n_words": 2861
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 254,
+   "n_words": 40
+  },
+  {
+   "id": "sec-014-appendix-a-complements-on-the-fourier-transform",
+   "number": null,
+   "title": "Appendix A. Complements on the Fourier transform",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3778,
+   "n_words": 943
+  },
+  {
+   "id": "sec-015-appendix-b-complements-on-the-pentagon-identity",
+   "number": null,
+   "title": "Appendix B. Complements on the pentagon identity",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 5509,
+   "n_words": 1239
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 6605,
+   "n_words": 910
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 17,
+  "chars_total": 94606
+ }
+}

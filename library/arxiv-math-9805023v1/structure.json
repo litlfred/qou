@@ -1,0 +1,214 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9805023v1",
+ "source": {
+  "file": "9805023v1.pdf",
+  "sha256": "ea8758b2a2bf9d8504d6715dba6f905440e513e5c0e0118ae3a60485457d3411",
+  "bytes": 230934,
+  "pages": 20
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9805023",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "6 May 1998"
+  },
+  "doi": null,
+  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
+  "authors_raw": "FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS",
+  "abstract": "The q-Laguerre polynomials correspond to an indetermined moment probl em. For explicit discrete non-N-extremal measures corresponding to Ramanujan’s1ψ1-summation we complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for the corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel functions, which can be obtained as a rigorous limit of the ortho gonal system of big q-Jacobi polynomials. Interpretations on the SU (1, 1) and E(2) quantum groups are discussed.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180818184546-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9805023v1  [math.CA]  6 May 1998"
+  },
+  "title_prev": "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL",
+  "title_lines": [
+   "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "(k+1)√",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(k− α )(q; q)∞ J (2)",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "It follows from Moak [21, §7] and (2.8) that V t− 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Un(ηp)V t− 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(α +1)(k+l)(−1)k+l",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(k+l)(−1)k+lc− α − 1",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−c, −q/c; q)∞",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(k+l)− 1)",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-k1",
+   "number": "2",
+   "title": "(k+1)√",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4772,
+   "n_words": 1169
+  },
+  {
+   "id": "sec-001-2-k-α-q-q-j-2",
+   "number": "2",
+   "title": "(k− α )(q; q)∞ J (2)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3022,
+   "n_words": 765
+  },
+  {
+   "id": "sec-002-l-it-follows-from-moak-21-7-and-28-that-v-t-1",
+   "number": "L",
+   "title": "It follows from Moak [21, §7] and (2.8) that V t− 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 659,
+   "n_words": 163
+  },
+  {
+   "id": "sec-003-2-unηpv-t-1",
+   "number": "2",
+   "title": "Un(ηp)V t− 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5027,
+   "n_words": 1193
+  },
+  {
+   "id": "sec-004-2-c-qc-q",
+   "number": "2",
+   "title": "(−c, −q/c; q)∞",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1632,
+   "n_words": 368
+  },
+  {
+   "id": "sec-005-2-α-1kl1kl",
+   "number": "2",
+   "title": "(α +1)(k+l)(−1)k+l",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 140,
+   "n_words": 38
+  },
+  {
+   "id": "sec-006-2-kl1klc-α-1",
+   "number": "2",
+   "title": "(k+l)(−1)k+lc− α − 1",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 579,
+   "n_words": 152
+  },
+  {
+   "id": "sec-007-2-kl-1",
+   "number": "2",
+   "title": "(k+l)− 1)",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5831,
+   "n_words": 1221
+  },
+  {
+   "id": "sec-008-43-this-then-gives-together-with-the-analytic-pr",
+   "number": "4.3",
+   "title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 9640,
+   "n_words": 2300
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3600,
+   "n_words": 567
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 34902
+ }
+}

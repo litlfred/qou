@@ -1,0 +1,1126 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "on-the-garoufalidis-kashaev-state-integral-invariant",
+ "source": {
+  "file": "On the Garoufalidis-Kashaev State-Integral Invariant.pdf",
+  "sha256": "eda230da2a59678389765c3278df09072ad4a9fba65241af6fafc19b9a4ca463",
+  "bytes": 507836,
+  "pages": 61
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "On the Garoufalidis-Kashaev state-integral invariant",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Author": "Amelia Palmer Dusenbury",
+   "CreationDate": "D:20260206162723-07'00'",
+   "Creator": "Appligent pdfHarmony 2.0",
+   "Producer": "pdfTeX-1.40.26",
+   "Title": "On the Garoufalidis-Kashaev State-Integral Invariant"
+  },
+  "title_lines": [
+   "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL",
+   "INVARIANT",
+   "Amelia Palmer Dusenbury",
+   "A thesis",
+   "of the requirements for the degree of",
+   "Master of Science in Mathematics",
+   "Boise State University",
+   "August 2025"
+  ],
+  "title_prev": "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ACKNOWLEDGMENTS",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "ABSTRACT",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "LIST OF TABLES",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Motivation and Background",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Overview of the Construction",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Main Results",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Structure of the Thesis",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Connections and Outlook",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Connections to Representation Theory",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Locally Compact Abelian Groups, Pontryagin Duality, and Gaussian Structures HR",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Locally Compact Abelian Groups",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Foundational Definitions",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Examples",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Structure Theorem (Informal)",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Pontryagin Duality",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Character Groups and Duality",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Pontryagin Duality Theorem",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Examples of Dual Pairs",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Gaussian Group",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Pontryagin Characters and Gauss Characters",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Local Fields",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Dilogarithm",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A quantum dilogarithm over a Gaussian group",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A quantum dilogarithm over a Special Gaussian Group",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Fourier transform of the Archimedean quantum dilogarithm",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Pentagon identity in the Archimedean case",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Angled Quantum Dilogarithm",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Angle Space and Structure",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Triangle Angle Condition",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Definition of the Angled Quantum Dilogarithm",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Temperedness and Positivity",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Symmetries of the Angled Quantum Dilogarithm",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Angled Pentagon Identity",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The State-Integral Invariant",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Triangulations and State Variables",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Kinematical Kernel",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Angle Structures and Dynamical Weights",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Balanced Angle Structures",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum Dilogarithmic Weights",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The State-Integral Definition",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Summary of the Construction",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Target of the State-Integral",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Target Statement for the Archimedean State-Integral",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Manifolds with Boundary (M =)",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Manifolds with Torus Boundary (M .5-.5.5-.5.5-.5.5-.5T2)",
+   "page": 47,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Closed Manifolds (M = )",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Angle Structures and Parameter Dependence",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Algebraic Background",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Summary Table",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Remark",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Topological Invariance of the State-Integral",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Pentagon Identity and Pachner Moves",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Combinatorics of the Pachner Move",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Analytic Expression via Pentagon Identity",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "(P1) Pachner Invariance",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Triangulation Equivalence",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Invariance Theorem",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "(P2) Analytic Control and Temperedness",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Tempered Distribution Framework",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Conditions Ensuring Convergence",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "(P3) Angle Gauge Invariance",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Internal Angle Shifts",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Cancellation in the Integral",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Topological Invariance Theorem",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conceptual Summary",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "REFERENCES",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-acknowledgments",
+   "number": null,
+   "title": "ACKNOWLEDGMENTS",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 870,
+   "n_words": 134
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "ABSTRACT",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 7335,
+   "n_words": 2520
+  },
+  {
+   "id": "sec-002-list-of-tables",
+   "number": null,
+   "title": "LIST OF TABLES",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 115,
+   "n_words": 44
+  },
+  {
+   "id": "sec-003-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-motivation-and-background",
+   "number": null,
+   "title": "Motivation and Background",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1357,
+   "n_words": 178
+  },
+  {
+   "id": "sec-005-overview-of-the-construction",
+   "number": null,
+   "title": "Overview of the Construction",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1136,
+   "n_words": 178
+  },
+  {
+   "id": "sec-006-main-results",
+   "number": null,
+   "title": "Main Results",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 761,
+   "n_words": 121
+  },
+  {
+   "id": "sec-007-structure-of-the-thesis",
+   "number": null,
+   "title": "Structure of the Thesis",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 694,
+   "n_words": 103
+  },
+  {
+   "id": "sec-008-connections-and-outlook",
+   "number": null,
+   "title": "Connections and Outlook",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1817,
+   "n_words": 248
+  },
+  {
+   "id": "sec-009-connections-to-representation-theory",
+   "number": null,
+   "title": "Connections to Representation Theory",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 719,
+   "n_words": 101
+  },
+  {
+   "id": "sec-010-locally-compact-abelian-groups",
+   "number": null,
+   "title": "Locally Compact Abelian Groups",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-pontryagin-duality",
+   "number": null,
+   "title": "Pontryagin Duality",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 50,
+   "n_words": 7
+  },
+  {
+   "id": "sec-012-foundational-definitions",
+   "number": null,
+   "title": "Foundational Definitions",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 429,
+   "n_words": 63
+  },
+  {
+   "id": "sec-013-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 473,
+   "n_words": 84
+  },
+  {
+   "id": "sec-014-structure-theorem-informal",
+   "number": null,
+   "title": "Structure Theorem (Informal)",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 248,
+   "n_words": 38
+  },
+  {
+   "id": "sec-015-character-groups-and-duality",
+   "number": null,
+   "title": "Character Groups and Duality",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 885,
+   "n_words": 149
+  },
+  {
+   "id": "sec-016-pontryagin-duality-theorem",
+   "number": null,
+   "title": "Pontryagin Duality Theorem",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 154,
+   "n_words": 23
+  },
+  {
+   "id": "sec-017-examples-of-dual-pairs",
+   "number": null,
+   "title": "Examples of Dual Pairs",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 83,
+   "n_words": 12
+  },
+  {
+   "id": "sec-018-gaussian-group",
+   "number": null,
+   "title": "Gaussian Group",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1074,
+   "n_words": 171
+  },
+  {
+   "id": "sec-019-pontryagin-characters-and-gauss-characters",
+   "number": null,
+   "title": "Pontryagin Characters and Gauss Characters",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 974,
+   "n_words": 165
+  },
+  {
+   "id": "sec-020-local-fields",
+   "number": null,
+   "title": "Local Fields",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 1359,
+   "n_words": 220
+  },
+  {
+   "id": "sec-021-quantum-dilogarithm",
+   "number": null,
+   "title": "Quantum Dilogarithm",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 278,
+   "n_words": 44
+  },
+  {
+   "id": "sec-022-a-quantum-dilogarithm-over-a-gaussian-group",
+   "number": null,
+   "title": "A quantum dilogarithm over a Gaussian group",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 541,
+   "n_words": 90
+  },
+  {
+   "id": "sec-023-a-quantum-dilogarithm-over-a-special-gaussian-gr",
+   "number": null,
+   "title": "A quantum dilogarithm over a Special Gaussian Group",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 257,
+   "n_words": 51
+  },
+  {
+   "id": "sec-024-fourier-transform-of-the-archimedean-quantum-dil",
+   "number": null,
+   "title": "Fourier transform of the Archimedean quantum dilogarithm",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 1565,
+   "n_words": 310
+  },
+  {
+   "id": "sec-025-pentagon-identity-in-the-archimedean-case",
+   "number": null,
+   "title": "Pentagon identity in the Archimedean case",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 1466,
+   "n_words": 270
+  },
+  {
+   "id": "sec-026-angled-quantum-dilogarithm",
+   "number": null,
+   "title": "Angled Quantum Dilogarithm",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 372,
+   "n_words": 50
+  },
+  {
+   "id": "sec-027-angle-space-and-structure",
+   "number": null,
+   "title": "Angle Space and Structure",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 693,
+   "n_words": 124
+  },
+  {
+   "id": "sec-028-triangle-angle-condition",
+   "number": null,
+   "title": "Triangle Angle Condition",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 229,
+   "n_words": 43
+  },
+  {
+   "id": "sec-029-definition-of-the-angled-quantum-dilogarithm",
+   "number": null,
+   "title": "Definition of the Angled Quantum Dilogarithm",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 1773,
+   "n_words": 292
+  },
+  {
+   "id": "sec-030-temperedness-and-positivity",
+   "number": null,
+   "title": "Temperedness and Positivity",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 2669,
+   "n_words": 464
+  },
+  {
+   "id": "sec-031-symmetries-of-the-angled-quantum-dilogarithm",
+   "number": null,
+   "title": "Symmetries of the Angled Quantum Dilogarithm",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 1701,
+   "n_words": 268
+  },
+  {
+   "id": "sec-032-angled-pentagon-identity",
+   "number": null,
+   "title": "Angled Pentagon Identity",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 3755,
+   "n_words": 572
+  },
+  {
+   "id": "sec-033-the-state-integral-invariant",
+   "number": null,
+   "title": "The State-Integral Invariant",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-034-triangulations-and-state-variables",
+   "number": null,
+   "title": "Triangulations and State Variables",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1304,
+   "n_words": 212
+  },
+  {
+   "id": "sec-035-the-kinematical-kernel",
+   "number": null,
+   "title": "The Kinematical Kernel",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 705,
+   "n_words": 118
+  },
+  {
+   "id": "sec-036-angle-structures-and-dynamical-weights",
+   "number": null,
+   "title": "Angle Structures and Dynamical Weights",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-037-balanced-angle-structures",
+   "number": null,
+   "title": "Balanced Angle Structures",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1009,
+   "n_words": 178
+  },
+  {
+   "id": "sec-038-quantum-dilogarithmic-weights",
+   "number": null,
+   "title": "Quantum Dilogarithmic Weights",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 687,
+   "n_words": 124
+  },
+  {
+   "id": "sec-039-the-state-integral-definition",
+   "number": null,
+   "title": "The State-Integral Definition",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 851,
+   "n_words": 134
+  },
+  {
+   "id": "sec-040-target-of-the-state-integral",
+   "number": null,
+   "title": "Target of the State-Integral",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-041-target-statement-for-the-archimedean-state-integ",
+   "number": null,
+   "title": "Target Statement for the Archimedean State-Integral",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 2400,
+   "n_words": 356
+  },
+  {
+   "id": "sec-042-angle-structures-and-parameter-dependence",
+   "number": null,
+   "title": "Angle Structures and Parameter Dependence",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 531,
+   "n_words": 79
+  },
+  {
+   "id": "sec-043-algebraic-background",
+   "number": null,
+   "title": "Algebraic Background",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 51,
+   "n_chars": 1712,
+   "n_words": 312
+  },
+  {
+   "id": "sec-044-summary-table",
+   "number": null,
+   "title": "Summary Table",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 198,
+   "n_words": 29
+  },
+  {
+   "id": "sec-045-remark",
+   "number": null,
+   "title": "Remark",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 53,
+   "n_chars": 1409,
+   "n_words": 196
+  },
+  {
+   "id": "sec-046-the-pentagon-identity-and-pachner-moves",
+   "number": null,
+   "title": "The Pentagon Identity and Pachner Moves",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-047-combinatorics-of-the-pachner-move",
+   "number": null,
+   "title": "Combinatorics of the Pachner Move",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 289,
+   "n_words": 47
+  },
+  {
+   "id": "sec-048-analytic-expression-via-pentagon-identity",
+   "number": null,
+   "title": "Analytic Expression via Pentagon Identity",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 424,
+   "n_words": 68
+  },
+  {
+   "id": "sec-049-p1-pachner-invariance",
+   "number": null,
+   "title": "(P1) Pachner Invariance",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-050-triangulation-equivalence",
+   "number": null,
+   "title": "Triangulation Equivalence",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 191,
+   "n_words": 32
+  },
+  {
+   "id": "sec-051-invariance-theorem",
+   "number": null,
+   "title": "Invariance Theorem",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 541,
+   "n_words": 78
+  },
+  {
+   "id": "sec-052-p2-analytic-control-and-temperedness",
+   "number": null,
+   "title": "(P2) Analytic Control and Temperedness",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-053-tempered-distribution-framework",
+   "number": null,
+   "title": "Tempered Distribution Framework",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 192,
+   "n_words": 30
+  },
+  {
+   "id": "sec-054-conditions-ensuring-convergence",
+   "number": null,
+   "title": "Conditions Ensuring Convergence",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 465,
+   "n_words": 78
+  },
+  {
+   "id": "sec-055-p3-angle-gauge-invariance",
+   "number": null,
+   "title": "(P3) Angle Gauge Invariance",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-056-internal-angle-shifts",
+   "number": null,
+   "title": "Internal Angle Shifts",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 176,
+   "n_words": 28
+  },
+  {
+   "id": "sec-057-cancellation-in-the-integral",
+   "number": null,
+   "title": "Cancellation in the Integral",
+   "level": 3,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 369,
+   "n_words": 57
+  },
+  {
+   "id": "sec-058-topological-invariance-theorem",
+   "number": null,
+   "title": "Topological Invariance Theorem",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 2941,
+   "n_words": 451
+  },
+  {
+   "id": "sec-059-conceptual-summary",
+   "number": null,
+   "title": "Conceptual Summary",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 617,
+   "n_words": 76
+  },
+  {
+   "id": "sec-060-references",
+   "number": null,
+   "title": "REFERENCES",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 2823,
+   "n_words": 391
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 67,
+  "sections": 61,
+  "chars_total": 55666
+ }
+}

@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.324Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.394Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.483Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.566Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.657Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.706Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.760Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.806Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.853Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0f4bb16e8f73",
+          "ts": "04e0a36c28bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.961Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 4 rows, both columns RECOMPUTED FROM SCRATCH and both fully correct. Classical column: summing 1/d_lambda over all partitions with d_lambda from the hook-length formula gives exactly 5/2 (n=3), 19/6 (n=4), 46/15 (n=5) and 473/144 (n=6) -- all four printed fractions and their decimals are right, including the non-obvious 473/144 = 3.284722. q column: summing 1/dim_q(lambda) with dim_q from the q-hook-length formula [n]_q!/prod[h]_q at the proton pin gives 2.4972905, 3.1464008, 3.0305253, 3.2021340 -> printed 2.4973, 3.1464, 3.0305, 3.2021, all four correct to the last printed digit. The n=3 q-value also reproduces the producing witness computations/frobenius-partition-sum.witness.json to 49 digits (2.49729054560491555634944117466425787969880975430573).",
+        "notes": "Provenance is good here: that witness carries parameters.q_0 = 1.1099785827513808, the canonical PROTON pin, and is NOT deprecated -- worth contrasting with the deprecated producers behind sibling tables 4 and 5."
+      }
     ]
   },
   "source_hashes": {
     "md": "0f4bb16e8f73",
     "ts": "04e0a36c28bd"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:05.961Z"
 }

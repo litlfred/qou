@@ -1,0 +1,1192 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9408099v1",
+ "source": {
+  "file": "9408099v1.pdf",
+  "sha256": "b534faddd2e3aa71f6de260867887df3eb8b919f9097c7fcf821040d46618f11",
+  "bytes": 618410,
+  "pages": 88
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9408099",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "17 Aug 1994"
+  },
+  "doi": null,
+  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
+  "authors_raw": "Department of Physics and Astronomy",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126154523-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/9408099v1  17 Aug 1994"
+  },
+  "title_lines": [
+   "Monopoles, Duality and Chiral Symmetry Breaking",
+   "in N=2 Supersymmetric QCD",
+   "N. Seiberg"
+  ],
+  "title_prev": "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A warm-up example: QED with matter",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "QED",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The classical moduli space",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The quantum moduli space",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "BPS-saturated states",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Breaking N = 2 to N = 1",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Classical moduli space of QCD with matter",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A ﬁrst look at the quantum theory",
+   "page": 14,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Symmetries of the quantum theory",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "A ﬁrst look at the quantum moduli space",
+   "page": 15,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "BPS-saturated states",
+   "page": 17,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Duality",
+   "page": 20,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "For large mass this happens at large |u| where semiclassical techniques are",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The singularities for Nf = 1, 2, 3",
+   "page": 24,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The three singularities cannot all combine together, since the fundamental group of the",
+   "page": 25,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "This theory has the three singularities that do",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Low energy theory near the singularities",
+   "page": 28,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Breaking N = 2 to N = 1",
+   "page": 31,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "This",
+   "page": 33,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The singularities for Nf = 4",
+   "page": 34,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "(m1 +m2 +m3 +m4)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m1 +m2 −m3 −m4)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m1 −m2 +m3 −m4)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m1 −m2 −m3 +m4)",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries for determining the metric",
+   "page": 37,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Nf = 0",
+   "page": 38,
+   "source": "inferred",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "Some convenient facts",
+   "page": 39,
+   "source": "inferred",
+   "number": "11.2"
+  },
+  {
+   "level": 1,
+   "title": "(u ±",
+   "page": 40,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Λ 2 ± Λ",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "General structure of the curve",
+   "page": 43,
+   "source": "inferred",
+   "number": "11.3"
+  },
+  {
+   "level": 1,
+   "title": "The curve for Nf = 1",
+   "page": 44,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Massless Nf = 1",
+   "page": 44,
+   "source": "inferred",
+   "number": "12.1"
+  },
+  {
+   "level": 2,
+   "title": "Massive Nf = 1",
+   "page": 45,
+   "source": "inferred",
+   "number": "12.2"
+  },
+  {
+   "level": 1,
+   "title": "The curve for Nf = 2",
+   "page": 47,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 2,
+   "title": "Massless Nf = 2",
+   "page": 47,
+   "source": "inferred",
+   "number": "13.1"
+  },
+  {
+   "level": 2,
+   "title": "Massive Nf = 2",
+   "page": 48,
+   "source": "inferred",
+   "number": "13.2"
+  },
+  {
+   "level": 1,
+   "title": "Then, we should also",
+   "page": 48,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Substituting m2 = 0 and u =m2",
+   "page": 48,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Massive Nf = 3",
+   "page": 50,
+   "source": "inferred",
+   "number": "14.2"
+  },
+  {
+   "level": 1,
+   "title": "Masses, periods and residues",
+   "page": 52,
+   "source": "inferred",
+   "number": "15"
+  },
+  {
+   "level": 1,
+   "title": "The Si are abelian conserved charges",
+   "page": 54,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Structure of the scale invariant theories",
+   "page": 56,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "The massless case",
+   "page": 57,
+   "source": "inferred",
+   "number": "16.1"
+  },
+  {
+   "level": 1,
+   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
+   "page": 57,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(1,τ ) for Nf = 4 and",
+   "page": 59,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1,τ ) for N = 4 and (since",
+   "page": 59,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The curve for N = 4",
+   "page": 60,
+   "source": "inferred",
+   "number": "16.2"
+  },
+  {
+   "level": 1,
+   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
+   "page": 63,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The curve for Nf = 4",
+   "page": 65,
+   "source": "inferred",
+   "number": "16.3"
+  },
+  {
+   "level": 1,
+   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
+   "page": 65,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Theory Of The Residues",
+   "page": 70,
+   "source": "inferred",
+   "number": "17"
+  },
+  {
+   "level": 1,
+   "title": "(with mi",
+   "page": 70,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Meaning Of The Residues",
+   "page": 71,
+   "source": "inferred",
+   "number": "17.1"
+  },
+  {
+   "level": 2,
+   "title": "The Cohomology Of X",
+   "page": 73,
+   "source": "inferred",
+   "number": "17.2"
+  },
+  {
+   "level": 2,
+   "title": "Finding the Curves",
+   "page": 75,
+   "source": "inferred",
+   "number": "17.3"
+  },
+  {
+   "level": 1,
+   "title": "(m1 +m2 +m3 −m4)",
+   "page": 80,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m1 +m2 −m3 +m4)",
+   "page": 80,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m1 −m2 +m3 +m4)",
+   "page": 80,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Determination Of The Equation For Nf = 4",
+   "page": 81,
+   "source": "inferred",
+   "number": "17.4"
+  },
+  {
+   "level": 1,
+   "title": "(α +β)",
+   "page": 85,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(e3 −e2) = 1",
+   "page": 85,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
+   "page": 85,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The N = 4 Theory",
+   "page": 85,
+   "source": "inferred",
+   "number": "17.5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 87,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 88,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 11348,
+   "n_words": 2055
+  },
+  {
+   "id": "sec-001-2-a-warm-up-example-qed-with-matter",
+   "number": "2",
+   "title": "A warm-up example: QED with matter",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1780,
+   "n_words": 344
+  },
+  {
+   "id": "sec-002-22-the-classical-moduli-space",
+   "number": "2.2",
+   "title": "The classical moduli space",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1318,
+   "n_words": 286
+  },
+  {
+   "id": "sec-003-23-the-quantum-moduli-space",
+   "number": "2.3",
+   "title": "The quantum moduli space",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2008,
+   "n_words": 376
+  },
+  {
+   "id": "sec-004-24-bps-saturated-states",
+   "number": "2.4",
+   "title": "BPS-saturated states",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1595,
+   "n_words": 298
+  },
+  {
+   "id": "sec-005-25-breaking-n-2-to-n-1",
+   "number": "2.5",
+   "title": "Breaking N = 2 to N = 1",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 950,
+   "n_words": 231
+  },
+  {
+   "id": "sec-006-3-classical-moduli-space-of-qcd-with-matter",
+   "number": "3",
+   "title": "Classical moduli space of QCD with matter",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5541,
+   "n_words": 1104
+  },
+  {
+   "id": "sec-007-4-a-ﬁrst-look-at-the-quantum-theory",
+   "number": "4",
+   "title": "A ﬁrst look at the quantum theory",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-41-symmetries-of-the-quantum-theory",
+   "number": "4.1",
+   "title": "Symmetries of the quantum theory",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1335,
+   "n_words": 277
+  },
+  {
+   "id": "sec-009-42-a-ﬁrst-look-at-the-quantum-moduli-space",
+   "number": "4.2",
+   "title": "A ﬁrst look at the quantum moduli space",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4764,
+   "n_words": 919
+  },
+  {
+   "id": "sec-010-5-bps-saturated-states",
+   "number": "5",
+   "title": "BPS-saturated states",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 5543,
+   "n_words": 999
+  },
+  {
+   "id": "sec-011-2-nm-2ne-for-nf-4-the-universal-cover-is-spin8-w",
+   "number": "2",
+   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1447,
+   "n_words": 266
+  },
+  {
+   "id": "sec-012-6-duality",
+   "number": "6",
+   "title": "Duality",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2667,
+   "n_words": 527
+  },
+  {
+   "id": "sec-013-2-for-large-mass-this-happens-at-large-u-where-s",
+   "number": "2",
+   "title": "For large mass this happens at large |u| where semiclassical techniques are",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 4742,
+   "n_words": 832
+  },
+  {
+   "id": "sec-014-7-the-singularities-for-nf-1-2-3",
+   "number": "7",
+   "title": "The singularities for Nf = 1, 2, 3",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3855,
+   "n_words": 732
+  },
+  {
+   "id": "sec-015-3-the-three-singularities-cannot-all-combine-tog",
+   "number": "3",
+   "title": "The three singularities cannot all combine together, since the fundamental group of the",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4092,
+   "n_words": 795
+  },
+  {
+   "id": "sec-016-2-this-theory-has-the-three-singularities-that-d",
+   "number": "2",
+   "title": "This theory has the three singularities that do",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2877,
+   "n_words": 544
+  },
+  {
+   "id": "sec-017-8-low-energy-theory-near-the-singularities",
+   "number": "8",
+   "title": "Low energy theory near the singularities",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 5273,
+   "n_words": 980
+  },
+  {
+   "id": "sec-018-9-breaking-n-2-to-n-1",
+   "number": "9",
+   "title": "Breaking N = 2 to N = 1",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2434,
+   "n_words": 488
+  },
+  {
+   "id": "sec-019-2-this",
+   "number": "2",
+   "title": "This",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 4726,
+   "n_words": 945
+  },
+  {
+   "id": "sec-020-10-the-singularities-for-nf-4",
+   "number": "10",
+   "title": "The singularities for Nf = 4",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 6692,
+   "n_words": 1264
+  },
+  {
+   "id": "sec-021-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 +m2 +m3 +m4)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-022-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 +m2 −m3 −m4)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-023-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 −m2 +m3 −m4)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-024-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 −m2 −m3 +m4)",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 681,
+   "n_words": 124
+  },
+  {
+   "id": "sec-025-11-preliminaries-for-determining-the-metric",
+   "number": "11",
+   "title": "Preliminaries for determining the metric",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 347,
+   "n_words": 61
+  },
+  {
+   "id": "sec-026-111-nf-0",
+   "number": "11.1",
+   "title": "Nf = 0",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2900,
+   "n_words": 598
+  },
+  {
+   "id": "sec-027-112-some-convenient-facts",
+   "number": "11.2",
+   "title": "Some convenient facts",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 762,
+   "n_words": 159
+  },
+  {
+   "id": "sec-028-2-u",
+   "number": "2",
+   "title": "(u ±",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2569,
+   "n_words": 534
+  },
+  {
+   "id": "sec-029-2-λ-2-λ",
+   "number": "2",
+   "title": "(Λ 2 ± Λ",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3008,
+   "n_words": 603
+  },
+  {
+   "id": "sec-030-113-general-structure-of-the-curve",
+   "number": "11.3",
+   "title": "General structure of the curve",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 3061,
+   "n_words": 638
+  },
+  {
+   "id": "sec-031-12-the-curve-for-nf-1",
+   "number": "12",
+   "title": "The curve for Nf = 1",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-121-massless-nf-1",
+   "number": "12.1",
+   "title": "Massless Nf = 1",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2253,
+   "n_words": 461
+  },
+  {
+   "id": "sec-033-122-massive-nf-1",
+   "number": "12.2",
+   "title": "Massive Nf = 1",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 2910,
+   "n_words": 592
+  },
+  {
+   "id": "sec-034-13-the-curve-for-nf-2",
+   "number": "13",
+   "title": "The curve for Nf = 2",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-035-131-massless-nf-2",
+   "number": "13.1",
+   "title": "Massless Nf = 2",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1997,
+   "n_words": 404
+  },
+  {
+   "id": "sec-036-132-massive-nf-2",
+   "number": "13.2",
+   "title": "Massive Nf = 2",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 635,
+   "n_words": 137
+  },
+  {
+   "id": "sec-037-2-then-we-should-also",
+   "number": "2",
+   "title": "Then, we should also",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 432,
+   "n_words": 110
+  },
+  {
+   "id": "sec-038-1-substituting-m2-0-and-u-m2",
+   "number": "1",
+   "title": "Substituting m2 = 0 and u =m2",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 3111,
+   "n_words": 658
+  },
+  {
+   "id": "sec-039-142-massive-nf-3",
+   "number": "14.2",
+   "title": "Massive Nf = 3",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 3193,
+   "n_words": 675
+  },
+  {
+   "id": "sec-040-15-masses-periods-and-residues",
+   "number": "15",
+   "title": "Masses, periods and residues",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 3770,
+   "n_words": 765
+  },
+  {
+   "id": "sec-041-2-the-si-are-abelian-conserved-charges",
+   "number": "2",
+   "title": "The Si are abelian conserved charges",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 4948,
+   "n_words": 968
+  },
+  {
+   "id": "sec-042-16-structure-of-the-scale-invariant-theories",
+   "number": "16",
+   "title": "Structure of the scale invariant theories",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 2109,
+   "n_words": 413
+  },
+  {
+   "id": "sec-043-161-the-massless-case",
+   "number": "16.1",
+   "title": "The massless case",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 362,
+   "n_words": 91
+  },
+  {
+   "id": "sec-044-9-holomorphy-of-f-is-needed-in-order-for-the-coe",
+   "number": "9",
+   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 1797,
+   "n_words": 403
+  },
+  {
+   "id": "sec-045-4-1τ-for-nf-4-and",
+   "number": "4",
+   "title": "(1,τ ) for Nf = 4 and",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 5,
+   "n_words": 2
+  },
+  {
+   "id": "sec-046-2-1τ-for-n-4-and-since",
+   "number": "2",
+   "title": "(1,τ ) for N = 4 and (since",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 2741,
+   "n_words": 564
+  },
+  {
+   "id": "sec-047-162-the-curve-for-n-4",
+   "number": "16.2",
+   "title": "The curve for N = 4",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 4345,
+   "n_words": 863
+  },
+  {
+   "id": "sec-048-2-e3-e2-in-this-form-it-is-easy-to-study-the-wea",
+   "number": "2",
+   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 765,
+   "n_words": 174
+  },
+  {
+   "id": "sec-049-2-for-weak-coupling-and-in-the-n-4-normalization",
+   "number": "2",
+   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 3693,
+   "n_words": 713
+  },
+  {
+   "id": "sec-050-163-the-curve-for-nf-4",
+   "number": "16.3",
+   "title": "The curve for Nf = 4",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 1290,
+   "n_words": 267
+  },
+  {
+   "id": "sec-051-2-in-the-nf-4-normalization-this-means-that-it-i",
+   "number": "2",
+   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 70,
+   "n_chars": 6501,
+   "n_words": 1409
+  },
+  {
+   "id": "sec-052-17-the-theory-of-the-residues",
+   "number": "17",
+   "title": "The Theory Of The Residues",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 517,
+   "n_words": 93
+  },
+  {
+   "id": "sec-053-2-with-mi",
+   "number": "2",
+   "title": "(with mi",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1778,
+   "n_words": 344
+  },
+  {
+   "id": "sec-054-171-the-meaning-of-the-residues",
+   "number": "17.1",
+   "title": "The Meaning Of The Residues",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 73,
+   "n_chars": 3484,
+   "n_words": 716
+  },
+  {
+   "id": "sec-055-172-the-cohomology-of-x",
+   "number": "17.2",
+   "title": "The Cohomology Of X",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 75,
+   "n_chars": 4307,
+   "n_words": 843
+  },
+  {
+   "id": "sec-056-173-finding-the-curves",
+   "number": "17.3",
+   "title": "Finding the Curves",
+   "level": 2,
+   "page_start": 75,
+   "page_end": 80,
+   "n_chars": 7660,
+   "n_words": 1575
+  },
+  {
+   "id": "sec-057-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 +m2 +m3 −m4)",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 9,
+   "n_words": 4
+  },
+  {
+   "id": "sec-058-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 +m2 −m3 +m4)",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 9,
+   "n_words": 4
+  },
+  {
+   "id": "sec-059-2-m1-m2-m3-m4",
+   "number": "2",
+   "title": "(m1 −m2 +m3 +m4)",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 2482,
+   "n_words": 478
+  },
+  {
+   "id": "sec-060-174-determination-of-the-equation-for-nf-4",
+   "number": "17.4",
+   "title": "Determination Of The Equation For Nf = 4",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 84,
+   "n_chars": 3904,
+   "n_words": 843
+  },
+  {
+   "id": "sec-061-2-α-β",
+   "number": "2",
+   "title": "(α +β)",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 1284,
+   "n_words": 272
+  },
+  {
+   "id": "sec-062-2-e3-e2-1",
+   "number": "2",
+   "title": "(e3 −e2) = 1",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 85,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-063-2-β-α-to-derive-1758-actually-to-agree-with-sect",
+   "number": "2",
+   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 85,
+   "n_chars": 1004,
+   "n_words": 181
+  },
+  {
+   "id": "sec-064-175-the-n-4-theory",
+   "number": "17.5",
+   "title": "The N = 4 Theory",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 87,
+   "n_chars": 2565,
+   "n_words": 521
+  },
+  {
+   "id": "sec-065-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 305,
+   "n_words": 54
+  },
+  {
+   "id": "sec-066-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 88,
+   "page_end": 88,
+   "n_chars": 2226,
+   "n_words": 379
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 68,
+  "sections": 67,
+  "chars_total": 166724
+ }
+}

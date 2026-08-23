@@ -3,8 +3,9 @@
 title: Remark interpreting 2018SORUS020.pdf at computations/whitehead_c_sigma_torsion.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:26Z
-updated_at: 2026-08-08T23:37:26Z
+updated_at: 2026-08-21T17:04:54Z
 ---
 
 State what would need checking before claiming this settles the open per-cusp normalization item: whether the thesis's torsion normalization on a c-cusped manifold reproduces the factor 2^{(c-1)/2} for general c, rather than only agreeing at c = 1, 2, 3. Deliberately not proposed as aid-proof.
@@ -13,7 +14,14 @@ State what would need checking before claiming this settles the open per-cusp no
 - Ch. 2, Main Theorem 1 (Sec. 2.3.1) + Sec. 2.4 (ideal points) — The adjoint Reidemeister torsion is realized as a form on the character variety whose behaviour at finite points is controlled (singularities interpreted through the Alexander polynomial), with a separate analysis at ideal points.
   Use here: Supplies the variety-level normalization framework in which the corpus's empirically-pinned per-cusp factor 2^{(c-1)/2} in the 1-loop cusp law would have to be derived or refuted.
 
-Source: `uploads/2018SORUS020.pdf` — no `references.ts` entry yet
+Source: `library/2018sorus020/2018SORUS020.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/2018sorus020/  ->  [benard2018]
+  Reidemeister torsion on character varieties
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [benard2018] as the citation key when you do it.

@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9909088v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "52cfb568951f195f96ca14a0048063be4fbe3af24a99164b053a7d5883010f2e",
+  "file": "9909088v1.pdf"
+ },
+ "provenance": {
+  "title": "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES",
+  "authors": "J. Franecki, M. Kapranov",
+  "arxiv": {
+   "id": "math/9909088",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "15 Sep 1999"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "corollary": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.4",
+   "name": null,
+   "statement": "for G = (C\u2217)n was proven by Loeser-Sabbah [12] and given a di\ufb00er-",
+   "section_file": "sections/sec-001-1-introduction-and-statement-of-results.md",
+   "section_title": "Introduction and statement of results",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.3",
+   "name": null,
+   "statement": "reduces to our statement.",
+   "section_file": "sections/sec-004-3-characteristic-cycle-of-an-open-embedding.md",
+   "section_title": "Characteristic cycle of an open embedding",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

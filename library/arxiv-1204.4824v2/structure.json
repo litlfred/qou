@@ -1,0 +1,989 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1204.4824v2",
+ "source": {
+  "file": "1204.4824v2.pdf",
+  "sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
+  "bytes": 2982423,
+  "pages": 87
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1204.4824",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "6 Oct 2013"
+  },
+  "doi": null,
+  "title": "Spectral networks",
+  "authors_raw": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
+  "abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensionalN = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20131008002801Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP Spectral networks",
+  "title_lines": [
+   "Spectral networks"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and summary",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A brief review of theories of class S",
+   "page": 11,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Geometric description of BPS states",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "4d BPS states",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Solitons",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Framed 2d-4d BPS states",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Enhanced degeneracies",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "A problem of signs",
+   "page": 17,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Basics of framed 2d-4d indices",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Generating functions of framed 2d-4d indices",
+   "page": 19,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Formal products and composition",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The spectral network W",
+   "page": 20,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Computing F(,)",
+   "page": 21,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "The spectral network W at fixed",
+   "page": 23,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Walls as trajectories",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Joints and wall-crossing for",
+   "page": 23,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The mass filtration; W[] and [] for small",
+   "page": 25,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "W[] and [] for general",
+   "page": 27,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "W near full defects",
+   "page": 29,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Homotopy invariance",
+   "page": 30,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "K=2 theories and ideal triangulations",
+   "page": 32,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "Varying",
+   "page": 34,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Endpoints crossing S-walls",
+   "page": 34,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "K-walls and the degenerate spectral networks Wc",
+   "page": 34,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The jump of F(, ) at a K-wall",
+   "page": 36,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "4d BPS degeneracies",
+   "page": 38,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "Wall-crossing formula",
+   "page": 38,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the K-wall formula",
+   "page": 40,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 1,
+   "title": "Examples of K-walls",
+   "page": 42,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Saddle connections",
+   "page": 42,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Closed loops",
+   "page": 43,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Three-string webs",
+   "page": 45,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "The setting sun",
+   "page": 46,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Some BPS spectra",
+   "page": 48,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "The pentagon theory revisited",
+   "page": 48,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "The pure SU(3) theory at strong coupling",
+   "page": 51,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "The theory of 9 free hypermultiplets",
+   "page": 52,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 1,
+   "title": "General spectral networks and path lifting",
+   "page": 54,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "General spectral networks",
+   "page": 55,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Canonical examples: the W",
+   "page": 56,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Soliton content",
+   "page": 56,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Path lifting",
+   "page": 59,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 1,
+   "title": "Coordinates for moduli of flat connections",
+   "page": 61,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Nonabelianization",
+   "page": 62,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Singularities and flags",
+   "page": 64,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "The nonabelianization map",
+   "page": 65,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic symplectic structures",
+   "page": 66,
+   "source": "outline",
+   "number": "10.4"
+  },
+  {
+   "level": 2,
+   "title": "Dimension counts",
+   "page": 67,
+   "source": "outline",
+   "number": "10.5"
+  },
+  {
+   "level": 2,
+   "title": "Equivalence of spectral networks",
+   "page": 68,
+   "source": "outline",
+   "number": "10.6"
+  },
+  {
+   "level": 2,
+   "title": "A picture of the set of all spectral networks",
+   "page": 70,
+   "source": "outline",
+   "number": "10.7"
+  },
+  {
+   "level": 2,
+   "title": "Coordinate systems and a cluster conjecture",
+   "page": 71,
+   "source": "outline",
+   "number": "10.8"
+  },
+  {
+   "level": 2,
+   "title": "WKB asymptotics",
+   "page": 72,
+   "source": "outline",
+   "number": "10.9"
+  },
+  {
+   "level": 1,
+   "title": "A Joint rules for two-way streets",
+   "page": 74,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Rules for soliton degeneracies",
+   "page": 74,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 Joint rules for soliton sets",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B A categorical approach",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 The ring of a category",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2 Categories of paths",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.3 The winding ideal",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.4 Formal parallel transport for the path groupoid",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.5 Cocycles",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C Convention convention",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-summary",
+   "number": "1",
+   "title": "Introduction and summary",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 11,
+   "n_chars": 21344,
+   "n_words": 3778
+  },
+  {
+   "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
+   "number": "2",
+   "title": "A brief review of theories of class S",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2579,
+   "n_words": 493
+  },
+  {
+   "id": "sec-002-3-geometric-description-of-bps-states",
+   "number": "3",
+   "title": "Geometric description of BPS states",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-31-4d-bps-states",
+   "number": "3.1",
+   "title": "4d BPS states",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5127,
+   "n_words": 934
+  },
+  {
+   "id": "sec-004-32-solitons",
+   "number": "3.2",
+   "title": "Solitons",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3027,
+   "n_words": 578
+  },
+  {
+   "id": "sec-005-33-framed-2d-4d-bps-states",
+   "number": "3.3",
+   "title": "Framed 2d-4d BPS states",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3297,
+   "n_words": 616
+  },
+  {
+   "id": "sec-006-34-enhanced-degeneracies",
+   "number": "3.4",
+   "title": "Enhanced degeneracies",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1902,
+   "n_words": 360
+  },
+  {
+   "id": "sec-007-35-a-problem-of-signs",
+   "number": "3.5",
+   "title": "A problem of signs",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 5581,
+   "n_words": 1062
+  },
+  {
+   "id": "sec-008-4-basics-of-framed-2d-4d-indices",
+   "number": "4",
+   "title": "Basics of framed 2d-4d indices",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 309,
+   "n_words": 57
+  },
+  {
+   "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
+   "number": "4.1",
+   "title": "Generating functions of framed 2d-4d indices",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 780,
+   "n_words": 148
+  },
+  {
+   "id": "sec-010-42-formal-products-and-composition",
+   "number": "4.2",
+   "title": "Formal products and composition",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1775,
+   "n_words": 338
+  },
+  {
+   "id": "sec-011-43-the-spectral-network-w",
+   "number": "4.3",
+   "title": "The spectral network W",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5855,
+   "n_words": 1100
+  },
+  {
+   "id": "sec-012-51-walls-as-trajectories",
+   "number": "5.1",
+   "title": "Walls as trajectories",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 660,
+   "n_words": 115
+  },
+  {
+   "id": "sec-013-52-joints-and-wall-crossing-for",
+   "number": "5.2",
+   "title": "Joints and wall-crossing for",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 15011,
+   "n_words": 2759
+  },
+  {
+   "id": "sec-014-56-homotopy-invariance",
+   "number": "5.6",
+   "title": "Homotopy invariance",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 6548,
+   "n_words": 1210
+  },
+  {
+   "id": "sec-015-6-varying",
+   "number": "6",
+   "title": "Varying",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 844,
+   "n_words": 173
+  },
+  {
+   "id": "sec-016-61-endpoints-crossing-s-walls",
+   "number": "6.1",
+   "title": "Endpoints crossing S-walls",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 721,
+   "n_words": 140
+  },
+  {
+   "id": "sec-017-62-k-walls-and-the-degenerate-spectral-networks",
+   "number": "6.2",
+   "title": "K-walls and the degenerate spectral networks Wc",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 8540,
+   "n_words": 1588
+  },
+  {
+   "id": "sec-018-64-4d-bps-degeneracies",
+   "number": "6.4",
+   "title": "4d BPS degeneracies",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 914,
+   "n_words": 157
+  },
+  {
+   "id": "sec-019-65-wall-crossing-formula",
+   "number": "6.5",
+   "title": "Wall-crossing formula",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 4764,
+   "n_words": 882
+  },
+  {
+   "id": "sec-020-66-proof-of-the-k-wall-formula",
+   "number": "6.6",
+   "title": "Proof of the K-wall formula",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 5145,
+   "n_words": 989
+  },
+  {
+   "id": "sec-021-7-examples-of-k-walls",
+   "number": "7",
+   "title": "Examples of K-walls",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 78,
+   "n_words": 13
+  },
+  {
+   "id": "sec-022-71-saddle-connections",
+   "number": "7.1",
+   "title": "Saddle connections",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1351,
+   "n_words": 252
+  },
+  {
+   "id": "sec-023-72-closed-loops",
+   "number": "7.2",
+   "title": "Closed loops",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 4333,
+   "n_words": 776
+  },
+  {
+   "id": "sec-024-73-three-string-webs",
+   "number": "7.3",
+   "title": "Three-string webs",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 2285,
+   "n_words": 426
+  },
+  {
+   "id": "sec-025-74-the-setting-sun",
+   "number": "7.4",
+   "title": "The setting sun",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 3261,
+   "n_words": 600
+  },
+  {
+   "id": "sec-026-8-some-bps-spectra",
+   "number": "8",
+   "title": "Some BPS spectra",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 574,
+   "n_words": 100
+  },
+  {
+   "id": "sec-027-81-the-pentagon-theory-revisited",
+   "number": "8.1",
+   "title": "The pentagon theory revisited",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 52,
+   "n_chars": 9030,
+   "n_words": 1738
+  },
+  {
+   "id": "sec-028-83-the-theory-of-9-free-hypermultiplets",
+   "number": "8.3",
+   "title": "The theory of 9 free hypermultiplets",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 3281,
+   "n_words": 602
+  },
+  {
+   "id": "sec-029-9-general-spectral-networks-and-path-lifting",
+   "number": "9",
+   "title": "General spectral networks and path lifting",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 4425,
+   "n_words": 788
+  },
+  {
+   "id": "sec-030-92-canonical-examples-the-w",
+   "number": "9.2",
+   "title": "Canonical examples: the W",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1396,
+   "n_words": 249
+  },
+  {
+   "id": "sec-031-93-soliton-content",
+   "number": "9.3",
+   "title": "Soliton content",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 59,
+   "n_chars": 6774,
+   "n_words": 1207
+  },
+  {
+   "id": "sec-032-94-path-lifting",
+   "number": "9.4",
+   "title": "Path lifting",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 5659,
+   "n_words": 1050
+  },
+  {
+   "id": "sec-033-101-nonabelianization",
+   "number": "10.1",
+   "title": "Nonabelianization",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 65,
+   "n_chars": 8741,
+   "n_words": 1603
+  },
+  {
+   "id": "sec-034-103-the-nonabelianization-map",
+   "number": "10.3",
+   "title": "The nonabelianization map",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 4731,
+   "n_words": 834
+  },
+  {
+   "id": "sec-035-104-holomorphic-symplectic-structures",
+   "number": "10.4",
+   "title": "Holomorphic symplectic structures",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1881,
+   "n_words": 323
+  },
+  {
+   "id": "sec-036-105-dimension-counts",
+   "number": "10.5",
+   "title": "Dimension counts",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 3378,
+   "n_words": 580
+  },
+  {
+   "id": "sec-037-106-equivalence-of-spectral-networks",
+   "number": "10.6",
+   "title": "Equivalence of spectral networks",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 70,
+   "n_chars": 3853,
+   "n_words": 694
+  },
+  {
+   "id": "sec-038-107-a-picture-of-the-set-of-all-spectral-network",
+   "number": "10.7",
+   "title": "A picture of the set of all spectral networks",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 976,
+   "n_words": 160
+  },
+  {
+   "id": "sec-039-108-coordinate-systems-and-a-cluster-conjecture",
+   "number": "10.8",
+   "title": "Coordinate systems and a cluster conjecture",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 3737,
+   "n_words": 653
+  },
+  {
+   "id": "sec-040-109-wkb-asymptotics",
+   "number": "10.9",
+   "title": "WKB asymptotics",
+   "level": 2,
+   "page_start": 72,
+   "page_end": 74,
+   "n_chars": 6478,
+   "n_words": 1168
+  },
+  {
+   "id": "sec-041-a-joint-rules-for-two-way-streets",
+   "number": null,
+   "title": "A Joint rules for two-way streets",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 499,
+   "n_words": 92
+  },
+  {
+   "id": "sec-042-a1-rules-for-soliton-degeneracies",
+   "number": null,
+   "title": "A.1 Rules for soliton degeneracies",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 76,
+   "n_chars": 3289,
+   "n_words": 593
+  },
+  {
+   "id": "sec-043-a2-joint-rules-for-soliton-sets",
+   "number": null,
+   "title": "A.2 Joint rules for soliton sets",
+   "level": 2,
+   "page_start": 76,
+   "page_end": 78,
+   "n_chars": 3787,
+   "n_words": 658
+  },
+  {
+   "id": "sec-044-b-a-categorical-approach",
+   "number": null,
+   "title": "B A categorical approach",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 565,
+   "n_words": 96
+  },
+  {
+   "id": "sec-045-b1-the-ring-of-a-category",
+   "number": null,
+   "title": "B.1 The ring of a category",
+   "level": 2,
+   "page_start": 78,
+   "page_end": 79,
+   "n_chars": 748,
+   "n_words": 143
+  },
+  {
+   "id": "sec-046-b2-categories-of-paths",
+   "number": null,
+   "title": "B.2 Categories of paths",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 1398,
+   "n_words": 253
+  },
+  {
+   "id": "sec-047-b3-the-winding-ideal",
+   "number": null,
+   "title": "B.3 The winding ideal",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 80,
+   "n_chars": 1035,
+   "n_words": 189
+  },
+  {
+   "id": "sec-048-b4-formal-parallel-transport-for-the-path-groupo",
+   "number": null,
+   "title": "B.4 Formal parallel transport for the path groupoid",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 1770,
+   "n_words": 295
+  },
+  {
+   "id": "sec-049-b5-cocycles",
+   "number": null,
+   "title": "B.5 Cocycles",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 82,
+   "n_chars": 3987,
+   "n_words": 705
+  },
+  {
+   "id": "sec-050-c-convention-convention",
+   "number": null,
+   "title": "C Convention convention",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 87,
+   "n_chars": 12821,
+   "n_words": 2116
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 62,
+  "sections": 51,
+  "chars_total": 200844
+ }
+}

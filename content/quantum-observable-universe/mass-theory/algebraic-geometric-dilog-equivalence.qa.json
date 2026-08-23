@@ -1725,6 +1725,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not an established prediction.\"; \", not carried.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.667Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "'the algebraic state sum and the hyperbolic volume are not two competing engines: they are the same regulator ... evaluated through two convergence schemes' - the denial names a reading ('competing engines') that is a rhetorical figure rather than a technical alternative, and the positive half already carries the whole claim.",
+        "notes": "fix applied: 'are not two competing engines: they are the same regulator $\\Phi_n(x; q_0) \\mapsto D(z(x))$ evaluated through two convergence schemes.' -> 'are the same regulator $\\Phi_n(x; q_0) \\mapsto D(z(x))$ evaluated through two convergence schemes.' The block's other seven 'not X but Y' constructions were weighed and KEPT as substantive: 'carried not by the compact $\\Phi_q$ but by the Faddeev non-compact $\\Phi_b$' (names which object carries the leak), 'the class asserts nothing provable-outright; no instance is fabricated', 'a conditional structural statement, not an established prediction', 'discharged from Mathlib, not carried', 'is derived, not assumed' - all epistemic-status or object-identity statements."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1744,6 +1761,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.710Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1764,6 +1796,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "15 stylistic spaced dashes in 1085 words (1.38/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.775Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "15 spaced em-dashes in ~5 kB of prose (measured). Roughly five are genuine paired parentheticals ('the two open inputs - ... - and the statement bundle'; 'whose structural laws - self-duality ... - hold'; 'The definition-to-contour identity - that the real-integral phiB equals the Faddeev contour integral - remains'); the rest append an afterthought where a colon or full stop belongs.",
+        "notes": "NOT fixed - four separate sentences, spread across four sections, so beyond the two-sentence inline budget. proposed: (a) 'necessarily a conjecture - propagation of conjectural backing forbids promotion' -> ': propagation of conjectural backing forbids promotion'; (b) 'the pure phase $e^{iS(q_0)}$ - the leak is the argument of a sigma-unitary' -> new sentence 'The leak is therefore the argument of a sigma-unitary'; (c) 'are all hypothesis-free - the two standard majorant facts ... are discharged from Mathlib' -> ': the two standard majorant facts ... are discharged from Mathlib'; (d) 'is conditional on the complex-volume unification' clause chain in the Binding-channel section -> split at the dash."
       }
     ],
     "trap-triples": [
@@ -1783,6 +1832,22 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1085 words)"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.850Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three-row algebraic/archimedean/geometric table; four-item list of structural laws (self-duality, unitarity, inversion, sigma-unitarity).",
+        "notes": "Table rows are the substantive content (the pole-to-cusp correspondence); the law list is four, not three."
       }
     ],
     "trap-closing-aphorism": [
@@ -1802,6 +1867,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.894Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1821,6 +1901,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.942Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1840,6 +1935,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:58.986Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1859,6 +1969,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.042Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1878,6 +2003,21 @@
         "reviewed_at": "2026-08-15T10:31:00.471Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.114Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, algebraic-geometric dilogarithm equivalence; ~10.5 kB, seven prose sections); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1898,6 +2038,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "89fa6c59c2e0",
+          "ts": "ce4625466c29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.168Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'The open item is the **argument-identification map**: the structural map $q_0 \\mapsto z(q_0)$ - the substrate-to-meridian-holonomy map supplied by the same pole-to-cusp matching as items 1-2 - such that the fibre-branch Faddeev phase at the identified argument reproduces $S$' - a colon, a hyphenated four-noun compound, a dashed apposition and a trailing 'such that' clause in one breath. Same shape in the integrability paragraph (a single sentence carrying three Lean names, two parentheticals and a dash).",
+        "notes": "NOT fixed - math-adjacent (Lean identifiers and the map's definition are inside the sentence). proposed: split at the colon - 'The open item is the argument-identification map $q_0 \\mapsto z(q_0)$, the substrate-to-meridian-holonomy map supplied by the same pole-to-cusp matching as items 1-2. It must satisfy: the fibre-branch Faddeev phase at the identified argument reproduces $S$.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1921,5 +2078,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:25:59.168Z"
 }

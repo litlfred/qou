@@ -1,0 +1,310 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
+ "source_sha256": "7ecafdd08255d5c6",
+ "brief": "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD",
+ "extended": "**Few-body systems in lattice effective field theory**\n\n111 pp, 58 sections.\n\n**Outline.** Introduction and Motivation; The standard model of particle physics and qua; Lattice QCD; Effective Theory; From nucleons to nuclei; Quantum Monte Carlo methods - status and open ; Theory; The effective theory of few-nucleon systems; Scattering Theory; Basic concepts of scattering theory; Extension to systems with internal degrees of ; Scattering theory for Coulomb forces; Correlations in Few-Body physics; Nuclear Lattice Effective Field Theory; Effective theory on the lattice; Bound states on the lattice; Scattering on the lattice; Spherical wall and radial projection",
+ "tokens": {
+  "brief": 35,
+  "extended": 166
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction-and-motivation",
+   "title": "Introduction and Motivation",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-001-the-standard-model-of-particle-physics-and-quant",
+   "title": "The standard model of particle physics and quantum chromodynamics",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-002-lattice-qcd",
+   "title": "Lattice QCD",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-effective-theory",
+   "title": "Effective Theory",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-from-nucleons-to-nuclei",
+   "title": "From nucleons to nuclei",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-quantum-monte-carlo-methods---status-and-open-ch",
+   "title": "Quantum Monte Carlo methods - status and open challenges",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-006-theory",
+   "title": "Theory",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-007-the-effective-theory-of-few-nucleon-systems",
+   "title": "The effective theory of few-nucleon systems",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-008-scattering-theory",
+   "title": "Scattering Theory",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-009-basic-concepts-of-scattering-theory",
+   "title": "Basic concepts of scattering theory",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-010-extension-to-systems-with-internal-degrees-of-fr",
+   "title": "Extension to systems with internal degrees of freedom and coupled channels",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-011-scattering-theory-for-coulomb-forces",
+   "title": "Scattering theory for Coulomb forces",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-012-correlations-in-few-body-physics",
+   "title": "Correlations in Few-Body physics",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-013-nuclear-lattice-effective-field-theory",
+   "title": "Nuclear Lattice Effective Field Theory",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-014-effective-theory-on-the-lattice",
+   "title": "Effective theory on the lattice",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-015-bound-states-on-the-lattice",
+   "title": "Bound states on the lattice",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-016-scattering-on-the-lattice",
+   "title": "Scattering on the lattice",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-017-spherical-wall-and-radial-projection",
+   "title": "Spherical wall and radial projection",
+   "pages": "32-36"
+  },
+  {
+   "id": "sec-018-exact-methods",
+   "title": "Exact methods",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-019-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
+   "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
+   "pages": "39-42"
+  },
+  {
+   "id": "sec-020-the-sign-problem",
+   "title": "The sign problem",
+   "pages": "42-45"
+  },
+  {
+   "id": "sec-021-introduction",
+   "title": "Introduction",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-022-regularization-methods-for-nuclear-lattice-effec",
+   "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-023-the-lattice-hamiltonian",
+   "title": "The lattice Hamiltonian",
+   "pages": "46-49"
+  },
+  {
+   "id": "sec-024-the-pionless-theory",
+   "title": "The pionless theory",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-025-the-pionful-theory",
+   "title": "The pionful theory",
+   "pages": "51-53"
+  },
+  {
+   "id": "sec-026-conclusion-and-outlook",
+   "title": "Conclusion and Outlook",
+   "pages": "53-55"
+  },
+  {
+   "id": "sec-027-the-tjon-band-in-nuclear-lattice-effective-field",
+   "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-028-introduction",
+   "title": "Introduction",
+   "pages": "55-57"
+  },
+  {
+   "id": "sec-029-two-body-sector",
+   "title": "Two-body-sector",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-030-theoretical-framework",
+   "title": "Theoretical framework",
+   "pages": "57-63"
+  },
+  {
+   "id": "sec-031-results",
+   "title": "Results",
+   "pages": "63-65"
+  },
+  {
+   "id": "sec-032-three-body-sector",
+   "title": "Three-body sector",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-033-theoretical-framework",
+   "title": "Theoretical framework",
+   "pages": "65-68"
+  },
+  {
+   "id": "sec-034-results",
+   "title": "Results",
+   "pages": "68-69"
+  },
+  {
+   "id": "sec-035-four-body-sector",
+   "title": "Four-body sector",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-036-theoretical-framework",
+   "title": "Theoretical framework",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-037-the-tjon-band",
+   "title": "The Tjon band",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-038-results",
+   "title": "Results",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-039-theoretical-framework",
+   "title": "Theoretical framework",
+   "pages": "71-73"
+  },
+  {
+   "id": "sec-040-results",
+   "title": "Results",
+   "pages": "73-74"
+  },
+  {
+   "id": "sec-041-conclusion",
+   "title": "Conclusion",
+   "pages": "74-75"
+  },
+  {
+   "id": "sec-042-lattice-improvement-in-lattice-effective-field-t",
+   "title": "Lattice Improvement in Lattice Effective Field Theory",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-043-introduction",
+   "title": "Introduction",
+   "pages": "75-76"
+  },
+  {
+   "id": "sec-044-bosons-in-one-dimension",
+   "title": "Bosons in one dimension",
+   "pages": "76-78"
+  },
+  {
+   "id": "sec-045-lattice-implementation",
+   "title": "Lattice implementation",
+   "pages": "78-79"
+  },
+  {
+   "id": "sec-046-results",
+   "title": "Results",
+   "pages": "79-81"
+  },
+  {
+   "id": "sec-047-summary-and-outlook",
+   "title": "Summary and outlook",
+   "pages": "81-85"
+  },
+  {
+   "id": "sec-048-conclusions-and-perspectives",
+   "title": "Conclusions and Perspectives",
+   "pages": "85-89"
+  },
+  {
+   "id": "sec-049-special-functions-and-algebras",
+   "title": "Special functions and algebras",
+   "pages": "89-89"
+  },
+  {
+   "id": "sec-050-partial-wave-decomposition",
+   "title": "Partial wave decomposition",
+   "pages": "89-90"
+  },
+  {
+   "id": "sec-051-pauli-matrices-and-spin-algebra",
+   "title": "Pauli matrices and spin algebra",
+   "pages": "90-91"
+  },
+  {
+   "id": "sec-052-anticommutator-and-grassmann-algebra",
+   "title": "Anticommutator and Grassmann algebra",
+   "pages": "91-93"
+  },
+  {
+   "id": "sec-053-density-and-current-operators",
+   "title": "Density and current operators",
+   "pages": "93-95"
+  },
+  {
+   "id": "sec-054-uncertainty-analysis",
+   "title": "Uncertainty analysis",
+   "pages": "95-97"
+  },
+  {
+   "id": "sec-055-loop-integrals",
+   "title": "Loop integrals",
+   "pages": "97-99"
+  },
+  {
+   "id": "sec-056-non-perturbative-calculation-of-lattice-artifact",
+   "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
+   "pages": "99-103"
+  },
+  {
+   "id": "sec-057-bibliography",
+   "title": "Bibliography",
+   "pages": "103-111"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

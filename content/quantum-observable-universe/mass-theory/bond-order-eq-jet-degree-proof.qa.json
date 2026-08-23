@@ -1203,6 +1203,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.117Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1238,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.152Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1273,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.186Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "No spaced dashes; the em-dashes present are italic step labels ('*Step 1 -- the cluster sub-braid sits at its jet degree.*'), a structural convention."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1308,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.221Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.259Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.293Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.327Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.364Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.401Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 178-word two-step proof plus conclusion."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:31:00.451Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a93059006b16",
+          "ts": "f2285f6c6bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.437Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Proof prose is direct.",
+        "notes": "RIGOR (not a trap): Step 2 opens 'Because the GS filtration is exhaustive and the spectral sequence collapses at E_2 ...' and then closes 'No contribution escapes a finite cluster degree ..., so the filtration is exhaustive' -- exhaustiveness is assumed as a premise and re-derived as a conclusion within one paragraph. Proposed: state exhaustiveness once, as the hypothesis discharged by the atom_braid_word_3A construction."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1557,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:32.437Z"
 }

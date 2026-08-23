@@ -1,0 +1,432 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s40879-023-00706-0",
+ "source": {
+  "file": "s40879-023-00706-0.pdf",
+  "sha256": "4c5af312d2e5d6a75f1a67146f769bd8b1d959132ed411b7f8be07df6416037e",
+  "bytes": 1159400,
+  "pages": 46
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s40879-023-00706-0",
+  "title": "Bring's curve: old and new",
+  "authors_raw": "Bring’s curve: old and new",
+  "abstract": "Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X 0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Szeg˝o kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
+  "docinfo": {
+   "Author": "Harry W. Braden ",
+   "CreationDate": "D:20231216163914+05'30'",
+   "Creator": "Springer",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Title": "Bring’s curve: old and new"
+  },
+  "title_lines": [
+   "European Journal of Mathematics (2024) 10:3",
+   "RESEARCH ARTICLE"
+  ],
+  "title_prev": "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Bring's curve: old and new",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Defining equations and elementary properties",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Basic properties",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "The period matrix",
+   "page": 11,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "The automorphism group",
+   "page": 14,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Geometric points",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Weierstrass points",
+   "page": 19,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Vertices and face-centres",
+   "page": 22,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Quotients by subgroups",
+   "page": 23,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "Genera of quotients",
+   "page": 24,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Relations between quotients",
+   "page": 25,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "Quotients by a 4- and 2,2-cycle",
+   "page": 26,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Quotients by a 3-cycle",
+   "page": 30,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 3,
+   "title": "Quotients by a transposition",
+   "page": 32,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 3,
+   "title": "Summarising",
+   "page": 35,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Theta characteristics",
+   "page": 38,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "Abel–Jacobi and the Riemann constant vector",
+   "page": 38,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "Tritangent planes and odd characteristics",
+   "page": 39,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 3,
+   "title": "Even characteristics",
+   "page": 40,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "page": 43,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 860,
+   "n_words": 129
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4404,
+   "n_words": 708
+  },
+  {
+   "id": "sec-002-21-basic-properties",
+   "number": "2.1",
+   "title": "Basic properties",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 17106,
+   "n_words": 3687
+  },
+  {
+   "id": "sec-003-22-the-period-matrix",
+   "number": "2.2",
+   "title": "The period matrix",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5000,
+   "n_words": 1075
+  },
+  {
+   "id": "sec-004-23-the-automorphism-group",
+   "number": "2.3",
+   "title": "The automorphism group",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 8090,
+   "n_words": 1694
+  },
+  {
+   "id": "sec-005-3-geometric-points",
+   "number": "3",
+   "title": "Geometric points",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3398,
+   "n_words": 609
+  },
+  {
+   "id": "sec-006-31-weierstrass-points",
+   "number": "3.1",
+   "title": "Weierstrass points",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 9106,
+   "n_words": 1723
+  },
+  {
+   "id": "sec-007-32-vertices-and-face-centres",
+   "number": "3.2",
+   "title": "Vertices and face-centres",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2402,
+   "n_words": 571
+  },
+  {
+   "id": "sec-008-4-quotients-by-subgroups",
+   "number": "4",
+   "title": "Quotients by subgroups",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1075,
+   "n_words": 189
+  },
+  {
+   "id": "sec-009-41-genera-of-quotients",
+   "number": "4.1",
+   "title": "Genera of quotients",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3151,
+   "n_words": 666
+  },
+  {
+   "id": "sec-010-42-relations-between-quotients",
+   "number": "4.2",
+   "title": "Relations between quotients",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2521,
+   "n_words": 462
+  },
+  {
+   "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
+   "number": "4.3",
+   "title": "Quotients by a 4- and 2,2-cycle",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 8519,
+   "n_words": 1762
+  },
+  {
+   "id": "sec-012-44-quotients-by-a-3-cycle",
+   "number": "4.4",
+   "title": "Quotients by a 3-cycle",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 3898,
+   "n_words": 772
+  },
+  {
+   "id": "sec-013-45-quotients-by-a-transposition",
+   "number": "4.5",
+   "title": "Quotients by a transposition",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 5125,
+   "n_words": 1085
+  },
+  {
+   "id": "sec-014-46-summarising",
+   "number": "4.6",
+   "title": "Summarising",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 6923,
+   "n_words": 1286
+  },
+  {
+   "id": "sec-015-5-theta-characteristics",
+   "number": "5",
+   "title": "Theta characteristics",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 1362,
+   "n_words": 237
+  },
+  {
+   "id": "sec-016-51-abeljacobi-and-the-riemann-constant-vector",
+   "number": "5.1",
+   "title": "Abel–Jacobi and the Riemann constant vector",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1074,
+   "n_words": 211
+  },
+  {
+   "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
+   "number": "5.2",
+   "title": "Tritangent planes and odd characteristics",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2683,
+   "n_words": 509
+  },
+  {
+   "id": "sec-018-53-even-characteristics",
+   "number": "5.3",
+   "title": "Even characteristics",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 7400,
+   "n_words": 1395
+  },
+  {
+   "id": "sec-019-6-conclusion",
+   "number": "6",
+   "title": "Conclusion",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2824,
+   "n_words": 457
+  },
+  {
+   "id": "sec-020-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1056,
+   "n_words": 154
+  },
+  {
+   "id": "sec-021-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 9420,
+   "n_words": 1387
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 22,
+  "chars_total": 107397
+ },
+ "duplicate_copies": [
+  "arxiv-2208.13692v1"
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1304.2705v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "cb07e66e418e11f235fe5368f3d882048d43a8a19f0fa53c219db88ce78260cb",
+  "file": "1304.2705v1.pdf"
+ },
+ "provenance": {
+  "title": "FROM STATE INTEGRALS TO q-SERIES",
+  "authors": "STA VROS GAROUF ALIDIS AND RINAT KASHAEV",
+  "arxiv": {
+   "id": "1304.2705",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Apr 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "remark": 4,
+   "corollary": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, this function admits an extension to all values of b with b2 \u2044\u2208R\u22640. \u03a6 b(x) is a",
+   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
+   "section_title": "State-integrals and their q-series",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.3",
+   "name": null,
+   "statement": "The left hand side of Equation (",
+   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
+   "section_title": "State-integrals and their q-series",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.4",
+   "name": null,
+   "statement": "PA,B, as a polynomial in the variables e2, e4, . . . has degree B \u2212 1, where",
+   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
+   "section_title": "State-integrals and their q-series",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.6",
+   "name": null,
+   "statement": "(a) If we de\ufb01ne \u03c9(q, x) = FA,B(q, qx)/FA,B(q, x) and \u03c9(q, x)n =\u220f n",
+   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
+   "section_title": "State-integrals and their q-series",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.9",
+   "name": null,
+   "statement": "A computation gives that P (A, B) = P (B \u2212 A, B) for ( A, B) = (1 , 2) and",
+   "section_file": "sections/sec-003-14-the-case-of-the-52-knot.md",
+   "section_title": "The case of the 52 knot",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.6",
+   "name": null,
+   "statement": "For part (b), we will use the series",
+   "section_file": "sections/sec-006-25-some-auxiliary-power-series.md",
+   "section_title": "Some auxiliary power series",
+   "pages": "10-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

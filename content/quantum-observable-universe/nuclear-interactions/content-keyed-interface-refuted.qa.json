@@ -1181,6 +1181,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a scope-limited negative.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:14.825Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "Kept: this is the mandated refutation-scope language."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1200,6 +1216,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:14.873Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1219,6 +1251,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 415 words)"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:14.914Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "One '---' inside the Archimedean boilerplate, introducing a parenthetical list; legitimate and the only one."
       }
     ],
     "trap-triples": [
@@ -1238,6 +1286,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 415 words)"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:14.954Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "No reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1257,6 +1321,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:14.993Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "Ends on the Archimedean-specialisation boilerplate naming the two experimental inputs."
       }
     ],
     "trap-meta-commentary": [
@@ -1276,6 +1356,23 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:15.036Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "major",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices. The block carried a two-sentence paragraph about its own presentation: 'The order of presentation is deliberate. The working variable is introduced before the refuted one, so that the refutation reads as a statement about what content cannot do rather than as a gap the reader is left holding.' That is narration of the author's own structural choice - it is about the document, not the mathematics - and it is the clearest category-6 instance in this batch.",
+        "notes": "FIX APPLIED as the SS4d migration, which is mechanically authorised under one-voice Category H: the paragraph was removed from the .md and its content preserved verbatim-in-substance as an authorNotes entry of kind 'note' (date 2026-08-22) on content-keyed-interface-refuted.ts. Nothing was lost; the editorial rationale now lives in the metadata field meant for it, and renders only under WITH_AUTHOR_NOTES=1. The .ts transpiles and the authorNotes shape matches the ten other blocks in this directory that already use it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1295,6 +1392,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:15.082Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1314,6 +1427,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:15.122Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1333,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:15.162Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "'No choice ... escapes it' is the proved invariant, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1352,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:01.373Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "743da72e0d36",
+          "ts": "1ecb3d084fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:15.201Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the statement, the experimental input paragraph, the scope section and the replacement section. Verified both experimental numbers: the deuteron binding +2.224566 MeV is the AME value to seven figures, and the np singlet virtual state at -0.066 MeV is the standard 1S0 value; the two channels do share nucleon content (p and n) and differ in boundness, so the fibre argument is sound. Verified the (a)/(b) discipline: the block classifies its own refutation as a structural exclusion AND names the invariant (B is constant on the fibres of the content map, and one fibre contains channels of opposite binding sign), which is exactly what AGENTS.md requires before a scope-(b) claim may be written. 'This is a structural exclusion, not a scope-limited negative' and the 'What is excluded / What is not excluded' pair are that required scoping, not negation-contrast devices.",
+        "notes": "Speakable throughout."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1375,5 +1536,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:15:15.201Z"
 }

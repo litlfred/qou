@@ -1,0 +1,47 @@
+Braiding of the attractor 263
+
+(4) Although Theorem 1.2 implies 1.1, the techniques we use here do not
+yield the rigidity result for algebraic families which underlies the proof of Theo-
+rem 1.1 in [Mc1]. Similarly, the statement of Theorem 1.1 in [Mc1] is formally
+stronger than that given here: the ‘full measure’ condition is dropped from
+the definition of general convergence. Here we need that condition to rule out
+invariant Beltrami differentials supported on the Julia set.
+
+§2. Braiding of the attractor
+
+Since a d-stranded braid is the same as an injective motion of d points on
+the sphere, every braid can be realized as the motion of roots over a loop
+in Poly,;— A. If we follow the attractor of a rational map as we move about
+in a stable family, it too describes a braid, but not every braid can arise (Theo-
+rem 2.1; see Fig. 2.1 for an example). The definition of a tangled subset of Poly,
+insures that the roots are braided too generally to coincide with the braiding
+of the attractor of a rational map.
+
+Definitions. A family of rational maps f,(z) is holomorphic if the coefficients
+of f are holomorphic functions of the parameter 4; it is stable if the maps
+all have the same degree and there is a uniform upper bound on the periods
+of attracting cycles for maps occurring in the family. Stability rules out bifurca-
+tions, and maps in the same component of the parameter space are quasiconfor-
+mally conjugate on their Julia sets [MSS].
+
+Let (X, f) be a stable holomorphic family of rational maps parameterized
+by a connected complex manifold X with basepoint representing the rational
+map f(z). We say f is attractive if there is an open dense set of full measure
+Uc€ and a finite set A such that f(z) tends to A for all z in U. (By stability,
+if this condition is true for f is true for every other map in the family.) We
+call A the attractor of f and (X, f) an attractive family.
+
+Our condition on f is equivalent to the condition: f(z) has no Siegel disks
+or Herman rings and the Julia set of f has zero area.
+
+The attractor A is just the union of the attractive, superattractive and ration-
+ally indifferent periodic cycles for such an f.
+
+|_ 7
+
+PX
+
+7
+
+Fig. 2.1. This braid does not arise for rational maps
+

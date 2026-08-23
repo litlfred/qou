@@ -1,0 +1,166 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0511710v2",
+ "source": {
+  "file": "0511710v2.pdf",
+  "sha256": "f88f50d45908049080d3a545857aca9b09164367dbf73ecc5512c279bfbef159",
+  "bytes": 358853,
+  "pages": 29
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0511710",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "28 Jun 2006"
+  },
+  "doi": null,
+  "title": "Higher gauge theory",
+  "authors_raw": "Riverside, CA 92521, USA",
+  "abstract": "Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional objects (e.g. strings) using 2- connections on 2-bundles. A 2-bundle is a categoriﬁed version of a bundle: t hat is, one where the ﬁber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebr as, higher gauge theory uses their categoriﬁed analogues: Lie 2-group s and Lie 2- algebras. We describe a theory of 2-connections on principa l 2-bundles and explain how this is related to Breen and Messing’s theory of con- nections on nonabelian gerbes. The distinctive feature of o ur theory is that a 2-connection allows parallel transport along paths a nd surfaces in a parametrization-independent way. In terms of Breen and Messing’s framework, this requires that the ‘fake curvature’ must van ish. In this paper we summarize the main results of our theory without pro ofs.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126163552-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0511710v2  [math.DG]  28 Jun 2006"
+  },
+  "title_lines": [
+   "Higher Gauge Theory",
+   "John Baez",
+   "Department of Mathematics",
+   "University of California"
+  ],
+  "title_prev": "Higher Gauge Theory John Baez Department of Mathematics University of California"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Internalization",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1007,
+   "n_words": 166
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 13330,
+   "n_words": 2501
+  },
+  {
+   "id": "sec-002-2-internalization",
+   "number": "2",
+   "title": "Internalization",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3740,
+   "n_words": 657
+  },
+  {
+   "id": "sec-003-1-if-φ-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
+   "number": "1",
+   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 39,
+   "n_words": 11
+  },
+  {
+   "id": "sec-004-2-if-iα-cα-c-is-an-open-cover-of-a-convex-set-c",
+   "number": "2",
+   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 27,
+   "n_chars": 28377,
+   "n_words": 5488
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 491,
+   "n_words": 76
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 5662,
+   "n_words": 869
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 52646
+ }
+}

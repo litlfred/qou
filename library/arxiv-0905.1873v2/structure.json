@@ -1,0 +1,79 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0905.1873v2",
+ "source": {
+  "file": "0905.1873v2.pdf",
+  "sha256": "d4f785469fafdce623d67c1af8806a081307d3b6b20de52642739e9f38aa66d2",
+  "bytes": 142399,
+  "pages": 4
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0905.1873",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "17 Aug 2009"
+  },
+  "doi": null,
+  "title": "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group",
+  "authors_raw": "E.D. Jurgenson, 1 P. Navrátil,2 and R.J. Furnstahl 1",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181004000335-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Evolution of Nuclear Many-Body Forces",
+   "with the Similarity Renormalization Group"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "MeV are compared with SRG at ℏΩ = 20 MeV evolved",
+   "page": 3,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 4,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-28-mev-are-compared-with-srg-at-ℏω-20-mev-evolve",
+   "number": "28",
+   "title": "MeV are compared with SRG at ℏΩ = 20 MeV evolved",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4881,
+   "n_words": 859
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1908,
+   "n_words": 345
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 6789
+ }
+}

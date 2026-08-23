@@ -1234,6 +1234,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not on individual crossings.\"; \", not the M -strand projection.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.975Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Every denial is substantive and, in the important case, PROVED. 'No per-generator transfer matrix can compute it' is a genuine scope-(b) structural exclusion and the block supplies the invariant that licenses it: symmetric and standard irreps share the eigenvalue pair {q, -q^{-1}}, so no per-generator matrix can separate them (verified above). 'The Pauli exclusion principle acts between pairs of fermions, not on individual crossings' is the physical content of that argument. 'No physical data is lost' is a checkable claim about the stripping procedure. This block is the one place in the batch where a durable negative is correctly scoped with a named invariant."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1253,6 +1268,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:12.057Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "'One might expect an enlarged $6\\times6$ transfer matrix ... Symbolic proof shows otherwise.' has the surface shape of a setup-then-reframe but is standard mathematical objection-handling: the expectation is the natural one, and the block then refutes it with an eigenvalue computation rather than with a reframing. Substantive."
       }
     ],
     "trap-em-dash": [
@@ -1272,6 +1302,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 1020 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.564Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Full read of a long eight-section remark. No spaced em-dash (only the Groebner--Shirshov and Iwahori--Hecke name en-dashes), no reflex triple, no aphoristic closer (it ends on 'We compute the A-universal histogram h(l) once from the minimal case N(1,A-1)'), no warm register. The strong-sounding claims are all earned: 'exactly two distinct eigenvalues, each with multiplicity 3' for T_6 is CORRECT and I verified it - the regular representation of H_3(q) decomposes as triv + 2.std + sgn (1+4+1=6), sigma_0 has eigenvalue q in triv and one q in each copy of std, giving multiplicity 3, and likewise 3 for -q^{-1}. Other numerics verified: q - q^{-1} = 0.209060 (quoted 0.209); 6.64/4.96 = 1.3387, quoted as 1.34 and a 34% enhancement (33.87%, rounds correctly); He-6(2,4) is even-even and Li-6(3,3) odd-odd, correctly classified; the alternating trace uses -q^{-1}, the antisymmetric Hecke eigenvalue, per 7a; sigma_4 sigma_6 sigma_7 sigma_8 does skip sigma_5."
       }
     ],
     "trap-triples": [
@@ -1291,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1020 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.652Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Full read of a long eight-section remark. No spaced em-dash (only the Groebner--Shirshov and Iwahori--Hecke name en-dashes), no reflex triple, no aphoristic closer (it ends on 'We compute the A-universal histogram h(l) once from the minimal case N(1,A-1)'), no warm register. The strong-sounding claims are all earned: 'exactly two distinct eigenvalues, each with multiplicity 3' for T_6 is CORRECT and I verified it - the regular representation of H_3(q) decomposes as triv + 2.std + sgn (1+4+1=6), sigma_0 has eigenvalue q in triv and one q in each copy of std, giving multiplicity 3, and likewise 3 for -q^{-1}. Other numerics verified: q - q^{-1} = 0.209060 (quoted 0.209); 6.64/4.96 = 1.3387, quoted as 1.34 and a 34% enhancement (33.87%, rounds correctly); He-6(2,4) is even-even and Li-6(3,3) odd-odd, correctly classified; the alternating trace uses -q^{-1}, the antisymmetric Hecke eigenvalue, per 7a; sigma_4 sigma_6 sigma_7 sigma_8 does skip sigma_5."
       }
     ],
     "trap-closing-aphorism": [
@@ -1310,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.726Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Full read of a long eight-section remark. No spaced em-dash (only the Groebner--Shirshov and Iwahori--Hecke name en-dashes), no reflex triple, no aphoristic closer (it ends on 'We compute the A-universal histogram h(l) once from the minimal case N(1,A-1)'), no warm register. The strong-sounding claims are all earned: 'exactly two distinct eigenvalues, each with multiplicity 3' for T_6 is CORRECT and I verified it - the regular representation of H_3(q) decomposes as triv + 2.std + sgn (1+4+1=6), sigma_0 has eigenvalue q in triv and one q in each copy of std, giving multiplicity 3, and likewise 3 for -q^{-1}. Other numerics verified: q - q^{-1} = 0.209060 (quoted 0.209); 6.64/4.96 = 1.3387, quoted as 1.34 and a 34% enhancement (33.87%, rounds correctly); He-6(2,4) is even-even and Li-6(3,3) odd-odd, correctly classified; the alternating trace uses -q^{-1}, the antisymmetric Hecke eigenvalue, per 7a; sigma_4 sigma_6 sigma_7 sigma_8 does skip sigma_5."
       }
     ],
     "trap-meta-commentary": [
@@ -1329,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:12.141Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "'One might expect' introduces a hypothesis, not the author's emphasis; no narration of what to notice."
       }
     ],
     "trap-thesis-restatement": [
@@ -1348,6 +1438,23 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:12.226Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "severity": "minor",
+        "evidence": "The multi-generator claim is stated four times across three sections: the heading 'The Pauli factor is a multi-generator phenomenon'; then 'Irrep separation demands the multi-generator interaction ... This requires the full Groebner--Shirshov normal form.'; then the heading 'The $6\\times6$ transfer matrix provides no shortcut'; then, as that section's closer, 'The Pauli factor $F_{Pauli}$ is irreducibly multi-generator. No per-generator transfer matrix can compute it.' The final pair is a section-closing restatement of a claim the eigenvalue computation two sentences earlier has just established.",
+        "notes": "Structural, not edited. Proposed fix: delete 'The Pauli factor $F_{Pauli}$ is irreducibly multi-generator.' and keep only 'No per-generator transfer matrix can compute it.', which is the sharper statement and the one the eigenvalue argument actually licenses."
       }
     ],
     "trap-performed-warmth": [
@@ -1367,6 +1474,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.796Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Full read of a long eight-section remark. No spaced em-dash (only the Groebner--Shirshov and Iwahori--Hecke name en-dashes), no reflex triple, no aphoristic closer (it ends on 'We compute the A-universal histogram h(l) once from the minimal case N(1,A-1)'), no warm register. The strong-sounding claims are all earned: 'exactly two distinct eigenvalues, each with multiplicity 3' for T_6 is CORRECT and I verified it - the regular representation of H_3(q) decomposes as triv + 2.std + sgn (1+4+1=6), sigma_0 has eigenvalue q in triv and one q in each copy of std, giving multiplicity 3, and likewise 3 for -q^{-1}. Other numerics verified: q - q^{-1} = 0.209060 (quoted 0.209); 6.64/4.96 = 1.3387, quoted as 1.34 and a 34% enhancement (33.87%, rounds correctly); He-6(2,4) is even-even and Li-6(3,3) odd-odd, correctly classified; the alternating trace uses -q^{-1}, the antisymmetric Hecke eigenvalue, per 7a; sigma_4 sigma_6 sigma_7 sigma_8 does skip sigma_5."
       }
     ],
     "trap-superlative": [
@@ -1386,6 +1508,21 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:11.886Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "evidence": "Full read of a long eight-section remark. No spaced em-dash (only the Groebner--Shirshov and Iwahori--Hecke name en-dashes), no reflex triple, no aphoristic closer (it ends on 'We compute the A-universal histogram h(l) once from the minimal case N(1,A-1)'), no warm register. The strong-sounding claims are all earned: 'exactly two distinct eigenvalues, each with multiplicity 3' for T_6 is CORRECT and I verified it - the regular representation of H_3(q) decomposes as triv + 2.std + sgn (1+4+1=6), sigma_0 has eigenvalue q in triv and one q in each copy of std, giving multiplicity 3, and likewise 3 for -q^{-1}. Other numerics verified: q - q^{-1} = 0.209060 (quoted 0.209); 6.64/4.96 = 1.3387, quoted as 1.34 and a 34% enhancement (33.87%, rounds correctly); He-6(2,4) is even-even and Li-6(3,3) odd-odd, correctly classified; the alternating trace uses -q^{-1}, the antisymmetric Hecke eigenvalue, per 7a; sigma_4 sigma_6 sigma_7 sigma_8 does skip sigma_5."
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1542,23 @@
         "reviewed_at": "2026-08-15T10:31:01.134Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3a6c64c48fe0",
+          "ts": "67a8b103d357"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:57:12.305Z",
+        "reviewed_sha": "a9b119aae64ca7e5db518b7141e039153605e425",
+        "severity": "minor",
+        "evidence": "Three agentless nominalisations in the argumentative sections, where clarity matters most: 'Irrep separation demands the multi-generator interaction, determining how $\\sigma_0$ and $\\sigma_1$ act together.' (nominal subject plus a participle with no clear head), 'This quantity eludes the $2\\times2$ transfer matrix.' ('eludes' for 'cannot be computed by'), and 'Adjacency correlation represents the non-commutative coupling between neighbouring crossings.' ('represents' for 'is').",
+        "notes": "Structural, not edited. Proposed fix for the first: 'Separating the irreps requires knowing how $\\sigma_0$ and $\\sigma_1$ act together, which no single generator determines.' Two content items reported to the batch: (i) 'The weight grows exponentially' sits directly beside 'This scales by $q-q^{-1}\\approx0.209$', a factor below 1, so the two sentences pull opposite ways and the reader cannot tell whether h(l) growth is meant to dominate; (ii) 'For $^{16}O$ at strand 8, $\\sigma_7\\sigma_8$ appears 52,230 times' - a 3-braid indexing convention sigma_0..sigma_{A-2} puts sigma_8 at 10 strands, so the strand-count indexing needs stating."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1427,5 +1581,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:57:12.305Z"
 }

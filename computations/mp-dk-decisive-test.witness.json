@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:50.905469+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:17.922391+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "d4_drifts_with_q0",
@@ -10,15 +10,15 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "d_4 drifts 0.0246% between muon-pin and m_p-pin q₀; a genuine categorical integer would not move with q₀."
+      "source": "d_4 drifts 99.9949% between muon-pin and m_p-pin q₀; a genuine categorical integer would not move with q₀."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "mp-dk-decisive-test",
   "scriptFile": "mp_dk_decisive_test.py",
   "scriptHash": "a6b6419599aa",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,51 +28,53 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Decisive test: are the m_p brane-tower d_k (d_4 = 46, etc.) stable categorical derivations or stale-q₀ near-matches? Recomputes the d_k from the fixed N=0 substrate formula at both the stale muon-pin q₀ (witness value) and the canonical m_p-pin q₀, and reports the drift. Mirrors the item-1 c_k decisive test (qbeta-delta-tr-vs-formA). Zero free parameters.",
   "contentBlock": "prop:proton-brane-tower-correction",
   "data": {
     "pins": {
       "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870",
-      "canonical_mp_pin_q0": "1.1099785955573347198997632204832250266562084087802",
+      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
       "Vol_constant": "2.0298832128",
       "formula": "m_p/m_e (N=0) = 2·Vol/ℏ_q² · F_Bor − 12; d_k = (codata/N0 − 1)/u^k"
     },
     "err_N0_ppb": {
-      "stale_muon_pin": "242.1941601",
-      "canonical_mp_pin": "242.2538257"
+      "stale_muon_pin": "242.1974156",
+      "canonical_mp_pin": "0.01242543944"
     },
     "d_k_at_both_pins": {
       "d_3": {
-        "stale_muon_pin": "0.391983401285",
-        "canonical_mp_pin": "0.39207996804"
+        "stale_muon_pin": "0.391988670216",
+        "canonical_mp_pin": "2.01101789768e-5"
       },
       "d_4": {
-        "stale_muon_pin": "46.0223698903",
-        "canonical_mp_pin": "46.0337076918"
+        "stale_muon_pin": "46.0229885101",
+        "canonical_mp_pin": "0.00236111602403"
       },
       "d_5": {
-        "stale_muon_pin": "5403.43933794",
-        "canonical_mp_pin": "5404.77049732"
+        "stale_muon_pin": "5403.51196946",
+        "canonical_mp_pin": "0.277216273678"
       },
       "d_6": {
-        "stale_muon_pin": "634412.281427",
-        "canonical_mp_pin": "634568.571454"
+        "stale_muon_pin": "634420.809019",
+        "canonical_mp_pin": "32.5476857594"
       },
       "d_7": {
-        "stale_muon_pin": "74485696.5451",
-        "canonical_mp_pin": "74504046.3933"
+        "stale_muon_pin": "74486697.7609",
+        "canonical_mp_pin": "3821.39127058"
       }
     },
     "d4_vs_claim": {
       "claimed_categorical": "46 (= J²·11 + 2)",
-      "d4_stale_muon_pin": "46.022369890334",
-      "d4_canonical_mp_pin": "46.03370769177",
-      "pct_off_46_stale": "0.0486302",
-      "pct_off_46_canonical": "0.0732776",
-      "pct_drift_between_pins": "0.024635414"
+      "d4_stale_muon_pin": "46.022988510146",
+      "d4_canonical_mp_pin": "0.0023611160240344",
+      "pct_off_46_stale": "0.049975",
+      "pct_off_46_canonical": "99.9949",
+      "pct_drift_between_pins": "99.99487"
     },
     "verdict": {
       "d_k_are_stale_q0_near_matches": true,
@@ -81,6 +83,6 @@
       "production_action": "none — d_k not wired as derivations"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

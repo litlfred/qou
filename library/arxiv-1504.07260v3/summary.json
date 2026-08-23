@@ -1,0 +1,171 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1504.07260v3",
+ "source_sha256": "707cb014400a3f05",
+ "brief": "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting",
+ "extended": "**Fricke S-duality in CHL models**\n\n56 pp, 30 sections.\n\n**Abstract.** We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting (possibly) non-geometrically on K3. We show that most of these models (in particular, for geometric symmetries) are self-dual under a weak-strong duality acting on the heterotic axio-dilaton modulusS by a “Fricke involution”S→− 1/NS. This is a novel symmetry of CHL models that lies outside of the standardSL(2, Z)-symmetry of the parent theory, heterotic strings onT 6. For self-dual models this implies that the lattice of purely electric charges isN-modular, i.e. isometric to its dual up to a rescaling of its quadratic form by N. We verify this prediction by determining the lattices of electric and magnetic charges in all relevant examples.\n\n**Outline.** 1 Introduction and Summary; 1.1 Fricke S-duality; 1.2 Black hole microstate counting; 1.3 Connection with moonshine; 1.4 Outline; 2.1 Heterotic-type II duality; 2 Non-geometric CHL models; 2.2 Generalities on CHL models; 2.3 Consistency and level matching; 3.1 String-string duality and Fricke S-duality; 3.2 Self-duality and the Witten index; 3.3 Heterotic T-duality; 3.4 Atkin-Lehner dualities; 4 Lattice of electric-magnetic charges; 4.1 Purely electric charges; 4.2 Purely magnetic charges; 4.3 Fricke S-duality and N-modular lattices; 5 BPS-state counting",
+ "tokens": {
+  "brief": 48,
+  "extended": 363
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-summary",
+   "title": "Introduction and Summary",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-11-fricke-s-duality",
+   "title": "Fricke S-duality",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-002-12-black-hole-microstate-counting",
+   "title": "Black hole microstate counting",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-13-connection-with-moonshine",
+   "title": "Connection with moonshine",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-14-outline",
+   "title": "Outline",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-21-heterotic-type-ii-duality",
+   "title": "Heterotic-type II duality",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-006-2-non-geometric-chl-models",
+   "title": "Non-geometric CHL models",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-007-22-generalities-on-chl-models",
+   "title": "Generalities on CHL models",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-008-23-consistency-and-level-matching",
+   "title": "Consistency and level matching",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-009-31-string-string-duality-and-fricke-s-duality",
+   "title": "String-string duality and Fricke S-duality",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-010-32-self-duality-and-the-witten-index",
+   "title": "Self-duality and the Witten index",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-011-33-heterotic-t-duality",
+   "title": "Heterotic T-duality",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-34-atkin-lehner-dualities",
+   "title": "Atkin-Lehner dualities",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-013-4-lattice-of-electric-magnetic-charges",
+   "title": "Lattice of electric-magnetic charges",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-014-41-purely-electric-charges",
+   "title": "Purely electric charges",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-015-42-purely-magnetic-charges",
+   "title": "Purely magnetic charges",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-016-43-fricke-s-duality-and-n-modular-lattices",
+   "title": "Fricke S-duality and N-modular lattices",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-017-5-bps-state-counting",
+   "title": "BPS-state counting",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-018-51-the-type-ii-helicity-supertrace",
+   "title": "The type II helicity supertrace",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-019-52-helicity-supertrace-for-type-iia-chl-models",
+   "title": "Helicity supertrace for type IIA CHL models",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-020-53-topological-amplitudes-and-fricke-s-duality",
+   "title": "Topological amplitudes and Fricke S-duality",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-021-54-the-heterotic-helicity-supertrace",
+   "title": "The heterotic helicity supertrace",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-022-6-conclusions",
+   "title": "Conclusions",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-023-a-non-geometric-chl-models-general-case",
+   "title": "A Non-geometric CHL models: general case",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-024-a1-lattice-of-purely-electric-charges",
+   "title": "A.1 Lattice of purely electric charges",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-025-a2-heterotic-s-duality-and-t-duality",
+   "title": "A.2 Heterotic S-duality and T-duality",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-026-a3-witten-index-of-the-quantum-symmetry",
+   "title": "A.3 Witten index of the quantum symmetry",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-027-a4-lattice-of-electric-magnetic-charges",
+   "title": "A.4 Lattice of electric-magnetic charges",
+   "pages": "44-47"
+  },
+  {
+   "id": "sec-028-b-heterotic-t-duality",
+   "title": "B Heterotic T-duality",
+   "pages": "47-50"
+  },
+  {
+   "id": "sec-029-c-symmetries-and-lattices",
+   "title": "C Symmetries and lattices",
+   "pages": "50-56"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

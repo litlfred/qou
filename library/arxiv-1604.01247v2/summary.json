@@ -1,0 +1,87 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1604.01247v2",
+ "source_sha256": "5a402405aadf5d54",
+ "brief": "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3",
+ "extended": "**Exceptional quantum geometry and particle physics**\n\n*AND PARTICLE PHYSICS*\n\n37 pp, 13 sections.\n\n**Abstract.** Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an argumentation suggesting th at the “ﬁnite quantum space” corresponding to the exceptional rea l Jordan algebra of dimension 27 (the Euclidean Albert algebra) is re levant for the description of internal spaces in the theory of particle s. In par- ticular, the triality which corresponds to the 3 oﬀ-diagonal octonionic elements of the exceptional algebra is associated to the 3 ge nerations of the Standard Model while the representation of the octoni ons as a complex 4-dimensional space C ⊕ C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the correspon ding quark).\n\n**Outline.** 1 Introduction; 2.3 The quark-lepton symmetry; 2.4 Gauge theoretical aspect; 3.1 the 3-generations; 3.2 Finite quantum spaces; 3.4 Exceptional almost classical quantum space; 4 Modules and fundamental fermions; 4.1 Modules over Jordan algebras; 4.3 Modules for the two families by generation; 4.5 Charge conjugation; 6 Connections on Jordan modules; 6.3 General connections; 7 Tentative conclusion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let J be as above and deﬁne xn ∈ J for x ∈ J and n ∈ N+ by\n- Theorem 2: Any ﬁnite-dimensional Euclidean Jordan algebra is a direct sum\n- Proposition 3: For any ﬁrst order calculus (Ω 1, d ) over J 8\n- Proposition 4: Any homomorphism ϕ of unital Jordan algebra of J 8",
+ "tokens": {
+  "brief": 47,
+  "extended": 406
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-9"
+  },
+  {
+   "id": "sec-001-23-the-quark-lepton-symmetry",
+   "title": "The quark-lepton symmetry",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-002-24-gauge-theoretical-aspect",
+   "title": "Gauge theoretical aspect",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-003-31-the-3-generations",
+   "title": "the 3-generations",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-004-32-finite-quantum-spaces",
+   "title": "Finite quantum spaces",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-005-34-exceptional-almost-classical-quantum-spacetim",
+   "title": "Exceptional almost classical quantum spacetime",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-006-4-modules-and-fundamental-fermions",
+   "title": "Modules and fundamental fermions",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-007-41-modules-over-jordan-algebras",
+   "title": "Modules over Jordan algebras",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-008-43-modules-for-the-two-families-by-generation",
+   "title": "Modules for the two families by generation",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-009-45-charge-conjugation",
+   "title": "Charge conjugation",
+   "pages": "23-30"
+  },
+  {
+   "id": "sec-010-6-connections-on-jordan-modules",
+   "title": "Connections on Jordan modules",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-011-63-general-connections",
+   "title": "General connections",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-012-7-tentative-conclusion",
+   "title": "Tentative conclusion",
+   "pages": "32-37"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

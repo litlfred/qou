@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0911.4494v2",
+ "source_sha256": "1ba1c79686b12d98",
+ "brief": "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn.",
+ "extended": "**The geometry of Markov traces**\n\n*Department of Mathematics, Mathematical Institute*\n\n14 pp, 7 sections.\n\n**Abstract.** We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn. This construction makes sense for all simple algebraic groups, s o we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of ot her types. We give a geometric expansion of this trace in terms of the irreducib le characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple pervers e sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently , that the Hochschild homology of any Soerg el bimodule is free, as the authors had previously conjectured . This construction is closely tied to knot homology .\n\n**Outline.** 1 Introduction; 2 Hecke algebras; Acknowledgments; 3 Hecke algebras and geometry; 5 Character sheaves and character expansions; 6 Character sheaves and Molien series; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: The Jones-Ocneanu trace applied to the Kazhdan-Lusztig bas is element C ′\n- Theorem: The geometrically deﬁned trace TrΓsatisﬁes the following properties:\n- Theorem: Any simple B × B-equivariant perverse sheaf on G is B ∆-equivariantly formal.\n- Theorem 4: The Hecke algebra HΓcan be identiﬁed with KB×B(G)0. Under this\n- Theorem 6: The linear extension of the function TrΓ(C′\n- Theorem: Deﬁnition 7. A simple perverse sheaf in D b",
+ "tokens": {
+  "brief": 42,
+  "extended": 406
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-hecke-algebras",
+   "title": "Hecke algebras",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-3-hecke-algebras-and-geometry",
+   "title": "Hecke algebras and geometry",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-004-5-character-sheaves-and-character-expansions",
+   "title": "Character sheaves and character expansions",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-6-character-sheaves-and-molien-series",
+   "title": "Character sheaves and Molien series",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "13-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

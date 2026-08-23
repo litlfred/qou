@@ -1,0 +1,55 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "aif-2000-50-4-1021-0",
+ "source_sha256": "a7ca398590a266d8",
+ "brief": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie — 7 sections: Cas d'une matrice unipotente. — So; Notation; Cas d'une matrice semi-simple. — P",
+ "extended": "**Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie**\n\n*Annales de l’institut Fourier, tome 50, n o 4 (2000), p. 1021-1071*\n\n52 pp, 7 sections.\n\n**Outline.** 1.1.2.1 Cas d'une matrice unipotente. — Soit U; Notation; 1.1.2.2 Cas d'une matrice semi-simple. — Pour ; 1.1.2.3 Cas général. — Soit A = D + 7V la déco; 1.3 Caractérisation des systèmes singuliers ré; 4 Comportement de la matrice de connexion; 11 Q(^o)",
+ "tokens": {
+  "brief": 48,
+  "extended": 115
+ },
+ "sections": [
+  {
+   "id": "sec-000-1121-cas-dune-matrice-unipotente-soit-u-in-4--n",
+   "title": "Cas d'une matrice unipotente. — Soit U = In 4- N où",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-001-notation",
+   "title": "Notation",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-002-1122-cas-dune-matrice-semi-simple-pour-une-matri",
+   "title": "Cas d'une matrice semi-simple. — Pour une matrice diagonale",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-003-1123-cas-général-soit-a-d-7v-la-décomposition-de",
+   "title": "Cas général. — Soit A = D + 7V la décomposition de Dunford",
+   "pages": "13-18"
+  },
+  {
+   "id": "sec-004-13-caractérisation-des-systèmes-singuliers-régul",
+   "title": "Caractérisation des systèmes singuliers réguliers par la",
+   "pages": "18-33"
+  },
+  {
+   "id": "sec-005-4-comportement-de-la-matrice-de-connexion",
+   "title": "Comportement de la matrice de connexion",
+   "pages": "33-43"
+  },
+  {
+   "id": "sec-006-11-qo",
+   "title": "Q(^o)",
+   "pages": "43-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -2140,6 +2140,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.374Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Section header 'Knots, not links' and 'Links are excluded because the covalent bond is a single topological structure'. This is substantive mathematical contrast - the section's whole content is that the LP dual space is single-component closures - so it falls in the documented false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2159,6 +2175,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.418Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -2178,6 +2210,23 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.467Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Two unspaced em-dashes used where a comma and a colon belong: 'the universal ILP--the same LP that derives' and 'the knot operator space--single-component braid closures'.",
+        "notes": "FIXED: 'the universal ILP--the same LP that derives' -> 'the universal ILP, the same LP that derives'; 'the knot operator space--single-component braid closures.' -> 'the knot operator space: single-component braid closures.'"
       }
     ],
     "trap-triples": [
@@ -2197,6 +2246,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.508Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -2216,6 +2281,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.553Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -2235,6 +2316,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.596Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
       }
     ],
     "trap-thesis-restatement": [
@@ -2254,6 +2351,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.639Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -2273,6 +2386,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.680Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -2292,6 +2421,23 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.722Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'The scale E_mol derives from q_0 alone, requiring no fitted parameters.' An unqualified no-free-parameter claim in a block whose two quoted accuracies (D_0(H2), D_0(C-C)) are measured against the experimental table computations/molecular-experimental-refs.witness.json, and whose sibling carbon-chains-benzene-intro.md explicitly says the molecular energy scale 'is an input here, not derived from the substrate calibration'.",
+        "notes": "STRUCTURAL - not fixed (it is a provenance claim, not a register tic). Proposed: state which quantity is derived from q_0 and which is an input, matching the hedge already used in carbon-chains-benzene-intro.md."
       }
     ],
     "trap-nonspeakable": [
@@ -2311,6 +2457,22 @@
         "reviewed_at": "2026-08-15T10:31:01.531Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.764Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2334,5 +2496,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:00:52.764Z"
 }

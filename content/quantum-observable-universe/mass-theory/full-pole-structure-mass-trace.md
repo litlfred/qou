@@ -13,4 +13,4 @@ $$
   \sum_{m \geq 0} a_m(T_w)\,(q; q)_m.
 $$
 
-The primitive roots of unity populate $S^1$ densely, blocking any complex-analytic continuation across the boundary. The Habiro ring provides the rigorous algebraic substrate. Evaluating the trace truncates cleanly at finite cyclotomic orders, suppressing higher roots unconditionally. The expansion explicitly isolates the algebraic content from analytic convergence artifacts.
+The primitive roots of unity populate $S^1$ densely, blocking any complex-analytic continuation across the boundary. The Habiro ring provides the rigorous algebraic substrate. Evaluating the trace truncates cleanly at finite cyclotomic orders, suppressing higher roots. The expansion isolates the algebraic content from analytic convergence artifacts.

@@ -101,3 +101,24 @@ Mathlib inventory for closing it: `Real.sinc` exists with
 `Real.continuous_sinc` and `Real.sinc_zero`, but **no** differentiability or
 analyticity — those plus the first E–M correction for `C¹` functions are what
 `qou-shrp` must supply.
+
+## CORRECTION (2026-08-19): the §RE-CORRECTION above sent an agent to rebuild
+## infrastructure the corpus already had
+
+§RE-CORRECTION closes with a "Mathlib inventory" for the missing
+Euler–Maclaurin formula. That inventory is correct about **Mathlib** and does
+not mention that **this corpus** has had a composite Euler–Maclaurin rule since
+2026-08-10 —
+[`QOU/MathlibExt/CompositeEulerMaclaurin.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/CompositeEulerMaclaurin.lean),
+already applied to `logSinc` (which is `φ − log 2`) in
+[`QOU/Knot/LogSincNearZero.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/LogSincNearZero.lean).
+
+Acting on this file, PR #5297 rebuilt a weaker first-order version of it. The
+corpus result identifies the `O(h)` coefficient as `(h/12)(g′(b) − g′(a))`
+where #5297 only bounds it, by a factor of exactly 6.
+
+**So: the smooth half of L4-1 is assembled from
+`abs_sum_logSinc_sub_euler_maclaurin`, not from `phi_smooth_defect_sharp`.**
+Full account, including the root cause (the corpus-grep checklist was not run
+before declaring the gap):
+[`2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md`](2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md).

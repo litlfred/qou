@@ -136,7 +136,13 @@ def ocneanu_weights():
     t = sp.symbols("t", positive=True)
     q = t ** 2
     h = q - 1 / q
-    z = q ** 3 / (q ** 2 + 1)   # convention D (was C: 1/(t + 1/t), t = sqrt q)
+    # Convention D (was C: `1/(t + 1/t)`, with t = sqrt q). That C spelling
+    # was invisible to BOTH z-detectors -- no sqrt and no 0.5 for the shape
+    # matcher, and not the t/(t^2+1) form the half-argument matcher looks
+    # for. It is character-for-character 1/[2]_q, the Temperley-Lieb loop
+    # reciprocal, differing only in that the variable is sqrt(q); the file
+    # saying `q = t ** 2` is what makes it decidable at all. Taxonomy row 5.
+    z = q ** 3 / (q ** 2 + 1)
 
     c3 = lambda w: q ** e_sum(w)
     c111 = lambda w: (-1 / q) ** e_sum(w)

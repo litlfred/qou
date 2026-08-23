@@ -159,7 +159,7 @@ noncomputable def bindingFromJSJ
 -- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
 -- Ref: [codata2022] CODATA 2022 electron rest energy
 instance canonical (K : Type*) : MassVolumeFactorization K 0 where
-  density := fun _ => { scaleMe := 0.51099895, populatedBlocks := [] }
+  density := fun _ => { scaleMe := 0.51099895069, populatedBlocks := [] }
   volume := fun _ => 0
   mass := fun _ => 0
   factorization := by

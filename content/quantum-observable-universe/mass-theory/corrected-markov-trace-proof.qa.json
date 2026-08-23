@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.504Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'this holds when ... but fails for ...' is a genuine case split, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.538Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,23 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.572Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Load-bearing spaced dash joining two independent clauses: 'assumes that the Hecke reduction of each generator is independent - this holds when generators are non-adjacent (commuting), but fails for the trefoil ...'. The dash dodges the comma-vs-full-stop choice in a 135-word block.",
+        "notes": "Proposed (NOT applied - block's mathematics is under dispute, see coordinator report): '... is independent. This holds when generators are non-adjacent (commuting) but fails for sigma_0 sigma_1 sigma_0, where the two generators satisfy the braid relation.'"
       }
     ],
     "trap-triples": [
@@ -1415,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.606Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.642Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.678Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.714Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.750Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.783Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.720Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.817Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:55:33.817Z"
 }

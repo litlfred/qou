@@ -154,6 +154,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.769Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (chapter outro, two paragraphs); all ten judged in context against the outro genre."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -173,6 +189,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.810Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (chapter outro, two paragraphs); all ten judged in context against the outro genre."
       }
     ],
     "trap-em-dash": [
@@ -192,6 +224,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.852Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "One paired parenthetical dash enclosing three named sections; a true parenthetical."
       }
     ],
     "trap-triples": [
@@ -211,6 +259,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.894Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "The three items inside the dash pair name three actual sections of the chapter; the second paragraph enumerates four appendices. Both track real content."
       }
     ],
     "trap-closing-aphorism": [
@@ -230,6 +294,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.936Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Closes with a reader directive ('Readers who want the substrate-arithmetic in one piece should re-read...') - practical navigation, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -249,6 +329,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.977Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'The appendices that follow record the supporting material that would have over-burdened the main narrative' narrates an editorial decision, but that is the outro genre's job, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -268,6 +364,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.018Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'This closes the main argument of the paper, packaging the substrate arithmetic ... into that one correspondence' lightly restates the opening sentence, but functions as sectional bookkeeping. Noted, not failed. Separately: 'the atomic-mass appendix lists the per-isotope categorical predictions against CODATA' is stale under the 2026-08-11 absolute-mass excision - reported as ANOMALY 12."
       }
     ],
     "trap-performed-warmth": [
@@ -287,6 +399,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.060Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (chapter outro, two paragraphs); all ten judged in context against the outro genre."
       }
     ],
     "trap-superlative": [
@@ -306,6 +434,22 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.100Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (chapter outro, two paragraphs); all ten judged in context against the outro genre."
       }
     ],
     "trap-nonspeakable": [
@@ -325,8 +469,24 @@
         "reviewed_at": "2026-08-15T10:31:00.940Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fe1729aedd9a",
+          "ts": "e5fa01208fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.140Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (chapter outro, two paragraphs); all ten judged in context against the outro genre."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.940Z"
+  "updated_at": "2026-08-22T06:35:43.140Z"
 }

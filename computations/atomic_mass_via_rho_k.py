@@ -477,8 +477,10 @@ def main() -> int:
                       f"×{improvement:>9.1f}")
                 legacy_compare.append({
                     "atom": atom,
-                    "rho_K_err_pct": fmt(rho_err_f),
-                    "legacy_E0_err_pct": fmt(legacy_err_f),
+                    # NO FLOAT64 (bean qou-65qv): serialize the mpf values.
+                    # The float()s above exist only for the %9.4f print.
+                    "rho_K_err_pct": fmt(r["err_pct"]),
+                    "legacy_E0_err_pct": fmt(legacy_err),
                     "improvement_factor": improvement,
                 })
             except (TypeError, ValueError):

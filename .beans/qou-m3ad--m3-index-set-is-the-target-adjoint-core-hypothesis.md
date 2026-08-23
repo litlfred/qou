@@ -134,7 +134,7 @@ ssyt_meridian_weights_are_twice_adjoint, ssyt_weights_nodup. Probe now 10/10.
 Went looking for third-knot Stokes data. Found something better and worse: the third
 knot is already in the corpus, and it hands the count to the RIVAL.
 
-Garoufalidis-Zagier (uploads/2111.06645v3.pdf S2.1, glyph-verified) tabulate P_K, the
+Garoufalidis-Zagier (library/arxiv-2111.06645v3/2111.06645v3.pdf S2.1, glyph-verified) tabulate P_K, the
 boundary-parabolic SL_2(C) reps, for three knots:
 
   K          reduced trace algebra              real  pairs  |P_K|  core  remainder

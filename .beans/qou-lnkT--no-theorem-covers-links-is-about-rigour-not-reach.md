@@ -50,8 +50,8 @@ existing one.
 ## Also fix while there
 
 `docs/audits/2026-08-07-one-loop-multicusp-derivation.md:157` says "Nothing in
-`uploads/` supplies one" (a multi-cusp reference value). That is now false in a
-specific way worth correcting: `uploads/0611181v2.pdf` (van der Veen) supplies
+`library/` supplies one" (a multi-cusp reference value). That is now false in a
+specific way worth correcting: `library/arxiv-math-0611181v2/0611181v2.pdf` (van der Veen) supplies
 the N-power `D = 3 pi` for both the Whitehead link and the Borromean rings, and
 its Lemma 4 supplies the constant up to a normalisation now computed in
 `computations/probes/one_loop_vdv_constant_closed_form_probe.py`.
@@ -60,6 +60,6 @@ its Lemma 4 supplies the constant up to a normalisation now computed in
 
 Both audits carry the distinction inline; the two Borromean probes' claim is
 either confirmed against the Pandey-Wong scope or narrowed; and the
-"nothing in uploads/" line is corrected.
+"nothing in library/" line is corrected.
 
 Audit: `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`

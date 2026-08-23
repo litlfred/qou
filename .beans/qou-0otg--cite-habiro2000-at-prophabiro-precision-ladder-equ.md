@@ -13,7 +13,7 @@ Four Lean sites cite locators (Theorem 1.1, Corollary 1.2) that do not exist in 
 - Props. 5.1, 6.1, 6.2, 8.2 and eqs. (1)-(2) in Sec. 3 — Explicit colored-Jones formulas for the trefoil (both chiralities) and figure-eight knot, and skein-basis propositions in the solid torus.
   Use here: Correct locators to replace 'Theorem 1.1' / 'Corollary 1.2' wherever those were cited, or evidence that the claim belongs to a different Habiro paper and needs its own key.
 
-Source: `uploads/1172-3.pdf` (`habiro2000`)
+Source: `library/1172-3/1172-3.pdf` (`habiro2000`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

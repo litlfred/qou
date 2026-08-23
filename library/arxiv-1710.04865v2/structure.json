@@ -1,0 +1,150 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1710.04865v2",
+ "source": {
+  "file": "1710.04865v2.pdf",
+  "sha256": "ac8f436173d550e816683457955ed337dd1e59b0ae0dc521b7cbd2be70b1d5fd",
+  "bytes": 457441,
+  "pages": 24
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1710.04865",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "13 Apr 2021"
+  },
+  "doi": null,
+  "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "authors_raw": "JEREMY LOVEJOY AND ROBERT OSBURN",
+  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the ( −m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210414010028Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_prev": "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "title_lines": [
+   "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER",
+   "SERIES FOR DOUBLE TWIST KNOTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of Theorems 1.1 and 1.2",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks and questions",
+   "page": 22,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 8197,
+   "n_words": 1399
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 8649,
+   "n_words": 1775
+  },
+  {
+   "id": "sec-002-3-proofs-of-theorems-11-and-12",
+   "number": "3",
+   "title": "Proofs of Theorems 1.1 and 1.2",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 22,
+   "n_chars": 13511,
+   "n_words": 2401
+  },
+  {
+   "id": "sec-003-4-concluding-remarks-and-questions",
+   "number": "4",
+   "title": "Concluding remarks and questions",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1865,
+   "n_words": 297
+  },
+  {
+   "id": "sec-004-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 339,
+   "n_words": 55
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 4553,
+   "n_words": 717
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 6,
+  "chars_total": 37114
+ },
+ "duplicate_of": "cjdoubletwistfinal",
+ "duplicate_note": "Same work as library/cjdoubletwistfinal/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

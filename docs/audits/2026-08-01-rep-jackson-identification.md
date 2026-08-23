@@ -255,5 +255,5 @@ mechanisms exact, cross-checks $10^{-30}$):
 - The corpus operation being represented: [`2026-07-20-keystone-bridge-c1-binding.md`](2026-07-20-keystone-bridge-c1-binding.md), [`KeystoneBridgeC1Binding.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/KeystoneBridgeC1Binding.lean)
 - The formal-q-Borel closure (why "formal" is not an integral): [`2026-07-20-qlift-routeD-qborel-transform.md`](2026-07-20-qlift-routeD-qborel-transform.md)
 - Kernel-convergence Mathlib gap (Fréchet–Shohat / Carleman): [`2026-07-25-kernel-convergence-mathlib-gap.md`](2026-07-25-kernel-convergence-mathlib-gap.md)
-- RSZ source: `uploads/0903.0853v3.pdf` (§1.2.1 pp. 7–8 — kernel menu, Jackson-style contours, no general explicit integral formula, the "optimal" output-regularity remark; Def 2.3.3; eq. (1.2))
+- RSZ source: `library/arxiv-0903.0853v3/0903.0853v3.pdf` (§1.2.1 pp. 7–8 — kernel menu, Jackson-style contours, no general explicit integral formula, the "optimal" output-regularity remark; Def 2.3.3; eq. (1.2))
 - Probe + witness: [`rep_jackson_identification_probe.py`](../../computations/probes/rep_jackson_identification_probe.py), [`rep-jackson-identification.witness.json`](../../computations/probes/rep-jackson-identification.witness.json)

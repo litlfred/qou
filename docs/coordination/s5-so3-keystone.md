@@ -502,7 +502,7 @@ geometric object). The 2026-06-30 "4↔4" correspondence survives at SUPPORT lev
 Hikami's χ^{(111)}/χ^{(112)} equal the 2026-07-02 sympy-derived colored characters
 exactly (eq. 5.6 = the derived identity) — the two independent validations agree.
 Consequence: the geometric route cannot close on S³/2I itself; redirects = larger-D
-Seifert data / colored Ẑ-blocks (Murakami now in uploads/) / non-geometric
+Seifert data / colored Ẑ-blocks (Murakami now in library/) / non-geometric
 `BWVacuumRowIsHecke`. Audit:
 [`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`](../audits/2026-07-02-keystone-valuemap-genuine-smatrix.md);
 probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the round-2
@@ -577,7 +577,7 @@ Two machine-verified facts consolidate the whole refutation series. **(1)** bwS0
 at n=5 is *exactly* the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced
 q-integers [1],[4],[5] (Laurent polynomials in q₀) + the product [4][3]/[2] = the
 Verlinde ratio S₀λ/S₀₀. **(2)** The owner-uploaded Murakami GPPV paper
-(`uploads/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
+(`library/arxiv-2205.01282v2/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
 Σ(2,3,5) homological block is the undecorated D=2 golden false theta (already refuted).
 
 **Type argument (why every geometric route failed):** the target is compact-algebraic
@@ -599,7 +599,7 @@ probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
 
 ## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
 
-Owner uploaded `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+Owner uploaded `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
 q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
 but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
 Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0
@@ -619,7 +619,7 @@ contained). Audit:
 ## LAST disciplined q-Bessel form REFUTED — E_q(2) q-Hankel vacuum row, fully sourced (2026-07-04, bean s013)
 
 Owner uploaded the decisive source: Koornwinder–Swarttouw 1992 (arXiv:1208.2521 =
-TAMS 333), `uploads/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
+TAMS 333), `library/arxiv-1208.2521v1/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
 + Hansen–Lommel orthogonality (roots μ_j of C_α(q;μ)=0 = the Plancherel nodes).
 This is the one form #3292 named as still-testable. Probe
 `keystone_qhankel_eq2_vacuum_row.py` (α∈{0,½,1,2}, 112-candidate parameter-free

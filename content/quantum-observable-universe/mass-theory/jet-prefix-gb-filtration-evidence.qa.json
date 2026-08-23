@@ -1234,6 +1234,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not combinatorial proxies.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.396Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'must process the true confinement-level filtration J^bullet, not combinatorial proxies' - proxy-vs-real-filtration IS the remark's subject (the three failed truncations were the proxies), so a substantive contrast rather than assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1253,6 +1268,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.447Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1272,6 +1302,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.501Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-triples": [
@@ -1291,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.569Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'Nucleon-cumulative, strand-cumulative, and generator-bounded truncations' names three actually-attempted conventions."
       }
     ],
     "trap-closing-aphorism": [
@@ -1310,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.615Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1329,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.664Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1348,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.719Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-performed-warmth": [
@@ -1367,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.772Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "trap-superlative": [
@@ -1386,6 +1506,23 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.833Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'failed entirely to reproduce AME bindings' and 'The observed structural failure dictates that ...'. Both are de-hedged: 'entirely' is an unqualified maximum, and 'dictates' converts a scope-(a) numerical negative (these three truncations, alone, did not reproduce AME) into a structural necessity with no invariant cited - the exact move AGENTS.md section 'Before declaring refuted / ruled out' forbids in a durable artifact.",
+        "notes": "proposed: 'failed entirely to reproduce' -> 'did not reproduce'; 'The observed structural failure dictates that the jet-level prefix formula must process' -> 'The pattern of failures points to the jet-level prefix formula needing'. Flagged rather than fixed inline because the second edit changes the claim's epistemic strength."
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:31:00.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eea57ddf6e65",
+          "ts": "e2194334ea97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:11:10.883Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the single-paragraph remark (kind remark, interprets prop:jet-prefix-gb-filtration). Category absent."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1427,5 +1579,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:11:10.883Z"
 }

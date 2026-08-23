@@ -9,7 +9,7 @@ Kernels (three-term windows aligned at index m):
   C1 (proved q-lift, c(q)=1):   [m+1]_q b_{m+1} = b_m + b_{m-1}
   GGM eq 49 (arXiv:2012.00062): y_{m+1} - (2 - q^m) y_m + y_{m-1} = 0.
 
-CONVENTION (RSZ, uploads/0903.0853v3.pdf Definition 2.3.3, |q| > 1): the
+CONVENTION (RSZ, library/arxiv-0903.0853v3/0903.0853v3.pdf Definition 2.3.3, |q| > 1): the
 level-1 formal q-Borel transform is the theta-kernel coefficient map
 f_n -> f_n * q^{-n(n-1)/2}.  RSZ 1.2.1 notes kernels are not canonical; the
 q-exponential variant divides by (q;q)_n.  All variants and directions are
@@ -288,8 +288,8 @@ def main():
                            "(diagonal-gauge scope-(b) exclusion; this probe shows the "
                            "formal q-Borel transform lies INSIDE that class and "
                            "re-derives the exclusion via the gauge invariant)",
-            "rsz_source": "uploads/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "rsz_source": "library/arxiv-0903.0853v3/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "formalize-first (all identities derived by hand in the "
                           "audit doc before running); scope-(a)/(b) per AGENTS.md; "
                           "no AME data; anti-fit",

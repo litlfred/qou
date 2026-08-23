@@ -2134,6 +2134,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.199Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2153,6 +2168,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.240Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2172,6 +2202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.280Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -2191,6 +2236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.319Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-closing-aphorism": [
@@ -2210,6 +2270,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.359Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Statement block only."
       }
     ],
     "trap-meta-commentary": [
@@ -2229,6 +2304,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.401Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2248,6 +2338,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.443Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -2267,6 +2372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.484Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2286,6 +2406,23 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.524Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "\"For **any** braid word beta of even length in H_3(q), the eigenvalues of rho_{(2,1)}(beta) lie on the unit circle\" is false, with a two-letter counterexample. Take beta = sigma_1^2, which has even length. On V_{(2,1)} the generator has eigenvalues q and -q^-1, so sigma_1^2 has eigenvalues q^2 and q^-2: at the proton pin those are 1.232052454 and 0.811653754, of modulus 1.232 and 0.812, and the trace is 2.043706209, which exceeds 2. I confirmed this against explicit 2-dimensional H_3(q) matrices satisfying both the braid and Hecke relations. The determinant argument is sound - det = (-1)^n = 1 for even n - but determinant 1 alone gives lambda_1 lambda_2 = 1, which is satisfied by any reciprocal REAL pair; unit modulus needs ",
+        "notes": "tr| <= 2 as an additional hypothesis, and sigma_1^2 is precisely where it fails. The second sentence, that beta_Bor has the degenerate eigenvalue -1, is also wrong - see the finding recorded on the proof block, where the corpus's own closed form gives +1.994.|Reported, not edited (the statement is false as written, and repairing it is a mathematical decision). Route: add the hypothesis that makes it true - e.g. restrict to words whose (2,1) trace satisfies |tr| <= 2, or characterise the class (the Borromean-type words with balanced exponent sum) - since the Lean sibling QOU.BraidsAndKnots.UnitModulusEigenvalue already treats |tr| <= 2 as an input it does not prove, and its docstring says so explicitly: \"|lambda| = 1 is the narrative reading of lambda_1 lambda_2 = 1 with |tr| <= 2, not a Lean hypothesis here\"."
       }
     ],
     "trap-nonspeakable": [
@@ -2305,6 +2442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.820Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3bf80a8117bf",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.564Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2328,5 +2480,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:42.564Z"
 }

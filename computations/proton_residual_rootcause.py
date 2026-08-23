@@ -119,6 +119,31 @@ def _branch_a_legacy_f64(V0: float, V1: float, z: float) -> dict:
     }
 
 
+def _re(x):
+    """Real part of a Phi_q value, with the vanishing imaginary part CHECKED.
+
+    `PhiQ_euler_mpfr` returns an `mpmath.mpc` in EVERY regime — including well
+    inside convergence (v = 0.5 gives `(378.207990286 + 0.0j)`) — so this is
+    not a divergence artifact of the |v| >= 1 product fallback. The imaginary
+    part is exactly 0 at every point measured (v = 0.1 … 1.2, 50 dps).
+
+    That made `float(_re(phi0))` raise `TypeError: float() argument must be … not
+    'mpc'` unconditionally, so Branch C of this probe could never run at all —
+    the failure predates the convention-D work and is unrelated to it
+    (bean qou-cds2, verified against the pre-change baseline).
+
+    This asserts `Im == 0` rather than taking `.real` silently: if the value
+    ever does acquire a genuine imaginary part, that is a real result about
+    the q-exponential and must surface, not be discarded by a cast.
+    """
+    if mp.im(x) != 0:
+        raise ValueError(
+            f"Phi_q value has a nonzero imaginary part ({mp.nstr(mp.im(x), 6)}); "
+            "that is a mathematical fact about the q-exponential in this regime, "
+            "not a type nuisance — do not discard it with .real")
+    return mp.re(x)
+
+
 def _branch_b_legacy_mpfr(V0: float, V1: float, z: float) -> dict:
     """Branch B — Phi_q product but evaluated at 50dps MPFR.
 
@@ -134,12 +159,12 @@ def _branch_b_legacy_mpfr(V0: float, V1: float, z: float) -> dict:
     m = a01 + phi0 + phi1 + z_mp * z_mp * phi01
     return {
         "T1_abs_prod": float(a01),
-        "T2_phi_V0": float(phi0),
-        "T3_phi_V1": float(phi1),
-        "T4_z2_phi_V0V1": float(z_mp * z_mp * phi01),
-        "phi_V0V1": float(phi01),
-        "m_Hecke": float(m),
-        "m_Hecke_mpf_str": mp.nstr(m, 30),
+        "T2_phi_V0": _re(phi0),
+        "T3_phi_V1": _re(phi1),
+        "T4_z2_phi_V0V1": _re(z_mp * z_mp * phi01),
+        "phi_V0V1": _re(phi01),
+        "m_Hecke": _re(m),
+        "m_Hecke_mpf_str": mp.nstr(_re(m), 30),
     }
 
 
@@ -149,9 +174,12 @@ def _branch_c_euler_mpfr(V0: float, V1: float, z: float) -> dict:
     Phi_q(v) = sum v^n / (q^{-1}; q^{-1})_n, truncated at n_max = 50.
     Diverges for |v| >= 1; phi_q_series falls back to product form there.
     """
-    a0 = float(abs(V0))
-    a1 = float(abs(V1))
-    a01 = float(abs(V0 * V1))
+    # NO FLOAT64 (bean qou-65qv): this is the MPFR branch, and its inputs
+    # were being collapsed to doubles before PhiQ_euler_mpfr ever saw them --
+    # so "mpfr" bought nothing but a wider printout. m is serialized at 30.
+    a0 = mp.fabs(mpf(V0))
+    a1 = mp.fabs(mpf(V1))
+    a01 = mp.fabs(mpf(V0) * mpf(V1))
     phi0 = PhiQ_euler_mpfr(a0, n_max=80)
     phi1 = PhiQ_euler_mpfr(a1, n_max=80)
     phi01 = PhiQ_euler_mpfr(a01, n_max=80)
@@ -159,12 +187,12 @@ def _branch_c_euler_mpfr(V0: float, V1: float, z: float) -> dict:
     m = mpf(str(a01)) + phi0 + phi1 + z_mp * z_mp * phi01
     return {
         "T1_abs_prod": a01,
-        "T2_phi_V0": float(phi0),
-        "T3_phi_V1": float(phi1),
-        "T4_z2_phi_V0V1": float(z_mp * z_mp * phi01),
-        "phi_V0V1": float(phi01),
-        "m_Hecke": float(m),
-        "m_Hecke_mpf_str": mp.nstr(m, 30),
+        "T2_phi_V0": _re(phi0),
+        "T3_phi_V1": _re(phi1),
+        "T4_z2_phi_V0V1": _re(z_mp * z_mp * phi01),
+        "phi_V0V1": _re(phi01),
+        "m_Hecke": _re(m),
+        "m_Hecke_mpf_str": mp.nstr(_re(m), 30),
         "fallback_to_product": [a0 >= 1.0, a1 >= 1.0, a01 >= 1.0],
     }
 
@@ -242,7 +270,7 @@ def main() -> int:
     print("PROTON RESIDUAL ROOT-CAUSE DIAGNOSTIC (Phase 1, 1ppb plan)")
     print("=" * 100)
     print(f"  q_0 = {Q0_STR}")
-    print(f"  z   = {float(Z_MARKOV):.10f}")
+    print(f"  z   = {mp.nstr(float(Z_MARKOV), 11)}")
     print(f"  CODATA m_p = {M_P_MEV} MeV, m_e = {M_E_MEV} MeV")
     print(f"  Target ppb error: 1 (current: 544,145)")
     print()
@@ -250,16 +278,16 @@ def main() -> int:
     # Compute V_hat once
     V_e = electron_V_hat()
     Vp0, Vp1 = nucleon_V_hat(_PROTON_G0, _PROTON_G1)
-    print(f"  V_e             = {V_e:+.10f}")
-    print(f"  V_proton_g0     = {Vp0:+.10f}")
-    print(f"  V_proton_g1     = {Vp1:+.10f}")
-    print(f"  |V_p0 * V_p1|   = {abs(Vp0 * Vp1):+.10f}")
+    print(f"  V_e             = {mp.nstr(V_e, 11)}")
+    print(f"  V_proton_g0     = {mp.nstr(Vp0, 11)}")
+    print(f"  V_proton_g1     = {mp.nstr(Vp1, 11)}")
+    print(f"  |V_p0 * V_p1|   = {mp.nstr(abs(Vp0 * Vp1), 11)}")
     print()
 
     # Electron mass via legacy (single common reference for all branches)
     e_data = mass_tower_electron(V_e)
     m_e_Hecke = e_data["m_Hecke_units"]
-    print(f"  m_e (Hecke, legacy f64) = {m_e_Hecke:.10f}")
+    print(f"  m_e (Hecke, legacy f64) = {mp.nstr(m_e_Hecke, 11)}")
     print()
 
     # Four branches for proton
@@ -293,14 +321,14 @@ def main() -> int:
     print("BRANCH                          m_p (Hecke)        m_p (MeV)      ppb error")
     print("-" * 100)
     for name, m_h, m_mev, p in rows:
-        print(f"  {name:30s} {m_h:>17.10f} {m_mev:>17.6f} {p:>+17.0f}")
+        print(f"  {name:30s} {mp.nstr(m_h, 11)} {mp.nstr(m_mev, 7)} {mp.nstr(p, 4)}")
     print()
 
     # Pairwise diffs (Hecke units)
     print("PAIRWISE diffs (m_p_Hecke):")
-    print(f"  B - A (MPFR vs f64, same formula)      = {branch_b['m_Hecke'] - branch_a['m_Hecke']:+.6e}")
-    print(f"  C - B (Euler vs product, same dps)     = {branch_c['m_Hecke'] - branch_b['m_Hecke']:+.6e}")
-    print(f"  D - A (per-block vs aggregate)         = {branch_d['m_Hecke_sum_blocks'] - branch_a['m_Hecke']:+.6e}")
+    print(f"  B - A (MPFR vs f64, same formula)      = {mp.nstr(branch_b['m_Hecke'] - branch_a['m_Hecke'], 7)}")
+    print(f"  C - B (Euler vs product, same dps)     = {mp.nstr(branch_c['m_Hecke'] - branch_b['m_Hecke'], 7)}")
+    print(f"  D - A (per-block vs aggregate)         = {mp.nstr(branch_d['m_Hecke_sum_blocks'] - branch_a['m_Hecke'], 7)}")
     print()
 
     # Truncation telemetry on Branch A
@@ -311,8 +339,8 @@ def main() -> int:
     for label, tr in (("Phi_q(|V0|)", trace_v0),
                        ("Phi_q(|V1|)", trace_v1),
                        ("Phi_q(|V0 V1|)", trace_v01)):
-        print(f"  {label:18s} z={tr['z']:.6f}  iters={tr['iters']:>4d}  "
-              f"last_term={tr['last_term']:.3e}  "
+        print(f"  {label:18s} z={mp.nstr(tr['z'], 7)}  iters={tr['iters']:>4d}  "
+              f"last_term={mp.nstr(tr['last_term'], 4)}  "
               f"converged={tr.get('converged_below_1e-16', False)}")
     print()
 
@@ -325,10 +353,10 @@ def main() -> int:
 
     # B vs A — f64 mantissa floor
     if rel_BA > 1e-12:
-        notes.append(f"FLOAT_MANTISSA_BIAS: rel(B,A)={rel_BA:.2e} > 1e-12; "
+        notes.append(f"FLOAT_MANTISSA_BIAS: rel(B,A)={mp.nstr(rel_BA, 4)} > 1e-12; "
                      "promote f64 -> MPFR for the production chain.")
     else:
-        notes.append(f"f64 mantissa is NOT the bottleneck: rel(B,A)={rel_BA:.2e}")
+        notes.append(f"f64 mantissa is NOT the bottleneck: rel(B,A)={mp.nstr(rel_BA, 4)}")
 
     # C vs B — Euler series equivalence (when convergent)
     # For |v| near 1, n_max=80 is insufficient; this is a known
@@ -336,18 +364,18 @@ def main() -> int:
     near_unit = max(abs(Vp0), abs(Vp1), abs(Vp0 * Vp1)) > 0.85
     if near_unit:
         notes.append(
-            f"EULER_SERIES_INADEQUATE_FOR_PROTON: max |v|={max(abs(Vp0), abs(Vp1), abs(Vp0*Vp1)):.4f} "
+            f"EULER_SERIES_INADEQUATE_FOR_PROTON: max |v|={mp.nstr(max(abs(Vp0), abs(Vp1), abs(Vp0*Vp1)), 5)} "
             ">= 0.85; the Euler-series form converges too slowly here. "
             "Stay with the product form for proton-scale V_hat. "
             "Euler series only useful when |v| is well below 1 (e.g. deuteron level)."
         )
     elif rel_CB > 1e-9:
-        notes.append(f"PRODUCT_VS_SERIES_BIAS: rel(C,B)={rel_CB:.2e}")
+        notes.append(f"PRODUCT_VS_SERIES_BIAS: rel(C,B)={mp.nstr(rel_CB, 4)}")
 
     # D vs A — per-block formula structure is materially different
     if rel_DA > 0.01:
         notes.append(
-            f"PER_BLOCK_FORMULA_DIFFERS: rel(D,A)={rel_DA:.2e}; "
+            f"PER_BLOCK_FORMULA_DIFFERS: rel(D,A)={mp.nstr(rel_DA, 4)}; "
             "per-block reformulation sums three block-masses rather than "
             "applying Phi_q to the aggregate V_hat.  Cannot be calibrated "
             "via the same m_e ratio — needs three E_0 scales (see "
@@ -358,8 +386,8 @@ def main() -> int:
     naive_ppb = ppb(m_p_a_mev)
     if abs(naive_ppb) > 1e6:
         notes.append(
-            f"NAIVE_TOWER_RESIDUAL: Branch A m_p = {m_p_a_mev:.4f} MeV gives "
-            f"{naive_ppb:+.0f} ppb error vs CODATA.  This is the *uncalibrated* "
+            f"NAIVE_TOWER_RESIDUAL: Branch A m_p = {mp.nstr(m_p_a_mev, 5)} MeV gives "
+            f"{mp.nstr(naive_ppb, 1)} ppb error vs CODATA.  This is the *uncalibrated* "
             "mass-endomorphism tower (1.83% admitted in mass_endomorphism.py:26).  "
             "The 544k ppb in proton-mass-50dps.derivation.json is a "
             "DIFFERENT CHAIN that adds Terms 2-6 atop this base; the SCRIPT_CITED "

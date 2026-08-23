@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.507Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'Its role among the four anchors is placement rather than evaluation'; 'determines none of them'; 'No closed form for a rung beyond c_2 follows from the degeneration alone'.",
+        "notes": "All substantive and unusually honest -- the Macdonald section volunteers that the anchor determines nothing, which is the opposite of the trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.548Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Four numbered anchors then a synthesis.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.592Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.635Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "FOUR anchors, matching the title and the synthesis diagram.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.678Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on an ASCII diagram.",
+        "notes": "The diagram's box-drawing characters and tau/hbar are inside a fenced code block, which folio-assistant#129 transliterates, so this is the SAFE unicode class -- recorded so a later pass does not flag it."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.721Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'This construction fixes the data used downstream.'",
+        "notes": "Places the emphasis rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,23 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.765Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "Section '### 2. Jucys-Murphy elements (diagonal eigenphase envelope)' has been REPLACED IN ITS ENTIRETY by a variant of the token-substitution boilerplate: 'We rigorously evaluate the canonical values using formal trace definitions.' The block's title promises 'Four complementary rep-theory anchors', the Synthesis still asserts 'Jucys-Murphy supplies the complementary diagonal eigenphase envelope', and the diagram still has a 'JM eigenphase envelope' node -- all pointing at content that is gone. The parent proposition's .ts authorNotes even discusses the JM anchor's c_1 = 0 in detail, so the deleted material was substantive.",
+        "notes": "PROPOSED (not applied -- content recovery): restore section 2 from git history. NOTE FOR THE SWEEP: this is a PARAPHRASE of the sentence found elsewhere ('We rigorously evaluate the canonical values using formal trace definitions' vs 'The canonical values are rigorously evaluated via formal trace definitions'), so a fixed-string scan for one form will undercount. Measured over content/ with a loose pattern: SIX distinct .md files in this chapter, eight occurrences -- recomputed-low-isotope-mass-table.md (x3), recomputed-low-isotope-mass-table-table4-data.md, rho-k-graded-expansion-table1-data.md, q-hecke-seminormal-character-closure.md, chi-per-irrep-cyclotomic-closed-forms.md, and this block. Three of the six had a whole section or a whole table replaced."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1672,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.809Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1707,23 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.851Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'Thus, c_k^(lambda) **is** the k-th Ohtsuki invariant of F'; 'This **forms the canonical home** of the rungs'; '**We refute** the real-x archimedean closure of c_3'; '1. Kashiwara crystal (**the load-bearing anchor**)'.",
+        "notes": "REPORT ONLY. (1) 'We refute the real-x archimedean closure of c_3' is a durable refutation with NO (a)/(b) scope classification, which AGENTS.md STRICT requires before writing 'refuted / ruled out' in a content block. As it happens the corpus DOES hold a qualifying invariant for this one -- the dc_3/dq ~ 4.6e6 smoothness argument (PR #1821) -- so the fix is to cite it and label the claim scope (b), not to weaken it. (2) TECHNICAL DEFECT in anchor 1: 'For each irreducible representation V_lambda of U_q(sl_n) (and hence H_n(q)), the Kashiwara crystal B(lambda) contains dim V_lambda vertices (one per standard Young tableau)'. These are two different modules with two different dimensions. B(lambda) for U_q(sl_n) has one vertex per SEMIstandard Young tableau -- for lambda = (2,1) over sl_3 that is 8 -- while one vertex per STANDARD tableau is f^lambda = 2, the dimension of the H_3(q)-irrep. The drawing that follows shows 2 vertices, so the block is using the H_n(q)/SYT picture under the U_q(sl_n) crystal's name. Proposed: state it as the standard-tableau basis of the Specht module V_(2,1) of H_3(q), with the f-tilde_1 edge as the crystal-theoretic image. (3) 'This forms the canonical home' is the forms-for-is verb substitution again. EVERYTHING IN SECTION 3 IS EXEMPLARY and should not be re-flagged."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1743,22 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bec0b1727d3a",
+          "ts": "dba478b6bd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.893Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'exhibited as a quantum-modular form on the brane-tower (contraction) limit'.",
+        "notes": "Parses. Minor: 'the rungs stay cal-anchored' uses an unexpanded abbreviation ('cal-' for calibration) that appears nowhere else in the block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:42.893Z"
 }

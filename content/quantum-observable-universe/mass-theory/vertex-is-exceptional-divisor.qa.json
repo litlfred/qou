@@ -2120,6 +2120,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.452Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "\"No interaction requires external data\" is clause 3's actual content (completeness), stated once."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2139,6 +2154,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.494Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2158,6 +2188,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.532Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -2177,6 +2222,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.573Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The three numbered clauses - Localisation, Confinement, Completeness - are three distinct claims, each discharged separately in the proof block."
       }
     ],
     "trap-closing-aphorism": [
@@ -2196,6 +2256,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.612Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Ends on clause 3."
       }
     ],
     "trap-meta-commentary": [
@@ -2215,6 +2290,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.653Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2234,6 +2324,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.694Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -2253,6 +2358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.736Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2272,6 +2392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.778Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The strong quantifiers (\"Every Hecke generator\", \"Every Skein resolution\", \"Every interaction\", \"No interaction requires external data\") are the proposition's claims, and clause 3 is argued from the generation of H_n(R,q) by the sigma_i rather than asserted. Notation checks out against AGENTS section 7: the QOU tuple is the current 4-tuple (C, Theta, G, S), not the deprecated 5-tuple, and S_p = pi^-1(p) is consistent with S = P x_G CP^1(C)."
       }
     ],
     "trap-nonspeakable": [
@@ -2291,6 +2426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.501Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7dab562d3cab",
+          "ts": "b5e8f28052e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:53.820Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2314,5 +2464,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:30:53.820Z"
 }

@@ -1,0 +1,40 @@
+602 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+a b
+c d
+
+1
+
+Fig. 6. Urban renewal.
+
+associated class is a power of 2, where the exponent is just the number of 1’s in the
+ASMs. This can be extended to the “rectangular alternating sign matrices” described
+in the previous paragraph as follows. For a given strictly increasing sequence of positive
+integers b = (b1,...,bn) of length n and m > bn, let AR; denote the graph that
+is obtained from AR” by adding vertical edges incident with the bottom vertices of
+the cells in the bottom row of AR™"” except for the vertices in columns bi,...,b,. For
+instance, the underlying graph in Fig. 5 (right) is ARYS.47- Then the perfect matchings
+of AR," can be partitioned such that the classes are indexed by monotone triangles
+with bottom row b and the number of elements in each class is a power of 2, where the
+exponent is the number of 1’s in the corresponding rectangular alternating sign matrix.
+The perfect matching in Fig. 5 (right) is a perfect matching that lies in the class of the
+following monotone triangle.
+
+The corresponding rectangular alternating sign matrix can be obtained by counting, for
+each cell, the number of edges that are part of the perfect matching and subtract 1,
+see Fig. 5 (right), where we have put the numbers into the appropriate cells. The other
+perfect matchings that are in the class of the given monotone triangle are obtained by
+“rotating” the perfect matching edges of those cells that contain two matching edges
+independently.
+
+Next we introduce edge weights such that the weighted enumeration of the per-
+fect matchings of AR," associated with a fixed monotone triangle M is just
+winx) (1 — yin’): in each cell, we assign the weights 1,1,u,1—u to the edges,
+where we start at the NW edge and go around the cell clockwise, see Fig. 6 right. As a
+side remark note that this shows that the special cases (u,v) = (1,0) and (u,v) = (0, 1)
+in the generating function amounts to compute the number of perfect matchings of a
+hexagonal grid (since (u,v) = (1,0) corresponds to the deletion of the SW edge of each
+cell, while (u,v) = (0,1) corresponds to the deletion of the SE edge of each cell), which
+is no surprise, because counting perfect matchings of hexagonal grids corresponds to
+lozenge tiling enumeration, which in turn is related to the enumeration of semistandard
+tableaux and thus of Gelfand—Tsetlin patterns.

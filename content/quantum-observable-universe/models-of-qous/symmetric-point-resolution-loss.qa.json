@@ -1427,6 +1427,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not an impoverished theory but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.551Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1446,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.594Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-em-dash": [
@@ -1465,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.637Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -1484,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.680Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1503,6 +1563,23 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.938Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "severity": "minor",
+        "evidence": "'The classical point is not an impoverished theory but an unresolved one' has the cadence of a placed closer, but it is not block-final - the last sentence is a witness pointer ('Numerical verification at fifty digits is recorded in q1-mass-gap-probe.witness.json'), which is bookkeeping. Recorded pass on position; the redundancy is recorded under trap-thesis-restatement instead.",
+        "notes": "No fix applied. Note: the cited witness carries an empty assertions array and is flagged exploratory: true, so 'numerical verification' overstates what it contains - reported as an anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -1522,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.724Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1541,6 +1633,23 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.895Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "severity": "minor",
+        "evidence": "'The classical point is not an impoverished theory but an unresolved one' restates the block's opening two sentences ('The specialisation q = 1 deletes no part of the mass tower ... The symmetric point loses resolution in two graded ways') in aphoristic form, after the stratification table has already made the same point quantitatively. Recorded minor rather than the category default because the underlying distinction (loses resolution vs loses content) is genuine and is the block's real thesis - what is redundant is saying it a third time.",
+        "notes": "PROPOSED (not applied - the sentence carries the block's thesis and the author may want the summary): delete it and let the table be the conclusion, or move it to the block's opening where the same claim is currently split across two sentences."
       }
     ],
     "trap-performed-warmth": [
@@ -1560,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.766Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -1579,6 +1703,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.807Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1598,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:01.082Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a5acacf2f2da",
+          "ts": "fc1c63ef87ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.850Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (remark, ~2.2kB). Verified the classical weights: d_(5,1) = d_(2,1^4) = d_(3,3) = d_(2,2,2) = 5, so all four land on 25/720 = 5/144 - correct, and the accidental-coincidence framing is right. The bar-invariance argument for the vanishing linear term is also right, and non-trivially so: w_lambda(q) = w_lambda(1/q) makes the difference even in t = ln q, and t = eps + O(eps^2), so the eps-expansion starts at eps^2. Confirmed symbolically that w_lambda is bar-invariant only under the SYMMETRIC q-integer convention, which is therefore the one this block requires. The eps^1 and eps^3 table rows match prop:physical-units-gap-linear exactly. Eight categories clean; two recorded separately. The eps^2 COEFFICIENT is wrong by a factor of 4 and is reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1620,5 +1774,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:29:46.938Z"
 }

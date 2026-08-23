@@ -3,7 +3,7 @@
 third-knot test, certified from Culler's census data (qou-btvl / qou-rtec).
 
 The owner uploaded Culler's census A-polynomial tarball
-(uploads/A_census.tgz, commit 08c56228c; source
+(library/A_census.tgz, commit 08c56228c; source
 https://homepages.math.uic.edu/~culler/Apolynomials/ — PHCpack+FFT
 numerical computation, published database). SnapPy identifies our knots in
 census naming: 4₁ = K2_1, 5₂ = K3_2, 6₁ = K4_1 (verified via
@@ -48,7 +48,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent.parent
-TARBALL = REPO / "uploads" / "A_census.tgz"
+TARBALL = REPO / "library" / "A_census.tgz"
 KNOTS = {"4_1": "K2_1", "5_2": "K3_2", "6_1": "K4_1"}
 EXPECT_GEOM_LDEG = {"4_1": 2, "5_2": 3, "6_1": 4}
 # Lean-pinned a41Monomials (M-power, L-power), RouteANewtonPolygonDT
@@ -110,7 +110,7 @@ def main() -> int:
     wb = WitnessBuilder("apoly-census-ldegree-certification",
                        engine="culler-census-apoly")
     wb.set_description(
-        "Parses Culler's census A-polynomials (uploads/A_census.tgz, "
+        "Parses Culler's census A-polynomials (library/A_census.tgz, "
         "owner-uploaded from homepages.math.uic.edu/~culler/Apolynomials) "
         "for 4_1=K2_1, 5_2=K3_2, 6_1=K4_1 (SnapPy identify). Certifies "
         "geometric L-degrees 2/3/4 (full 3/4/5 with the abelian (L-1) "
@@ -158,7 +158,7 @@ def main() -> int:
 
     wb.add_data("knots", results)
     wb.add_data("provenance", {
-        "tarball": "uploads/A_census.tgz (owner commit 08c56228c)",
+        "tarball": "library/A_census.tgz (owner commit 08c56228c)",
         "database": "Culler A-polynomial census (PHCpack+FFT), "
                     "homepages.math.uic.edu/~culler/Apolynomials",
         "identification": "snappy identify: 4_1=m004=K2_1, 5_2=m015=K3_2, "

@@ -234,6 +234,31 @@ if __name__ == "__main__":
             "q_0": float(Q0_FLOAT),
             "level_heuristic": "len(λ) - 1 (diagram height - 1)",
         },
+        # Owner ruling 2026-08-15: "mpmath on anything in production; if not
+        # production, deprecate it with precision_tier = float64."
+        #
+        # This producer is NOT production. Walked against the decision tree in
+        # `local/production-vs-exploratory-discipline`: it reaches none of the
+        # named production locations, and it is a LEAF — the only reader of
+        # `atom-level-wedderburn-tower.witness.json` is this file, and its only
+        # importer is `test_ctype_consumer_coverage.py`, a vocabulary guard.
+        #
+        # Its numerical core is float64 by choice, not necessity: numpy matrix
+        # products and a `BlockCache(float(Q0_FLOAT), …)`, while a 50-dps source
+        # for q₀ and h exists in `q_parameter`. That is why it does NOT claim
+        # `float64-integrator` — that tier is for output with no
+        # higher-precision source (an ODE integrator IS the source), and
+        # claiming it here would be the "ordinary f64 sloppiness" that
+        # carve-out's own comment says it must be designed against.
+        "precision_tier": "float64",
+        "deprecated": {
+            "reason": ("exploratory f64 shape-probe; retired rather than "
+                       "rewritten in mpmath, which would be a rewrite of the "
+                       "numpy matrix core for a leaf nobody reads"),
+            "not_production": ("reaches no production location; sole witness "
+                               "reader is itself, sole importer is a test"),
+            "ruling": "owner 2026-08-15",
+        },
         "results": results,
     }
     # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance

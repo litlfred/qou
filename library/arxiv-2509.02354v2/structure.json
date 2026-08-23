@@ -1,0 +1,394 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2509.02354v2",
+ "source": {
+  "file": "2509.02354v2.pdf",
+  "sha256": "14680221e597fe617f4a06b79d8305ba3833dcfc54fb27a0419e629fbee2a4be",
+  "bytes": 889074,
+  "pages": 41
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2509.02354",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "29 Apr 2026"
+  },
+  "doi": null,
+  "title": "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms",
+  "authors_raw": "CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN",
+  "abstract": "We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.",
+  "docinfo": {
+   "Author": "Calvin McPhail-Snyder; Nicolai Reshetikhin",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms"
+  },
+  "title_lines": [
+   "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC",
+   "QUANTUM DILOGARITHMS"
+  ],
+  "title_prev": "THE HOLONOMY BRAIDING FORUξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quantum sl2 and Weyl algebras",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The braiding for quantum sl2",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The braiding for Uq(sl2)",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Representation into the Weyl algebra",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Specialization to a root of unity",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Central subalgebras at roots of unity",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Uξ-modules.",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The braiding on characters",
+   "page": 6,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+   "page": 7,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Braiding of Uξ-modules.",
+   "page": 9,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Wξ-modules",
+   "page": 11,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "The R-matrix in the Fourier dual basis",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Recursions for the R-matrix coefficients",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The normalized R-matrix",
+   "page": 14,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Factorization of the R-matrix",
+   "page": 15,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The holonomy Yang-Baxter equation",
+   "page": 17,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "R-matrix computations",
+   "page": 23,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Log-parameter dependence",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The pinched limit of the R-matrix",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The determinant of the R-matrix",
+   "page": 28,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "The Fourier transform of the R-matrix",
+   "page": 29,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Quantum dilogarithms",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1. Basic definitions",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2. Fusion identities",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3. Fourier transform identities",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4762,
+   "n_words": 732
+  },
+  {
+   "id": "sec-001-2-quantum-sl2-and-weyl-algebras",
+   "number": "2",
+   "title": "Quantum sl2 and Weyl algebras",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2165,
+   "n_words": 349
+  },
+  {
+   "id": "sec-002-23-representation-into-the-weyl-algebra",
+   "number": "2.3",
+   "title": "Representation into the Weyl algebra",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1562,
+   "n_words": 303
+  },
+  {
+   "id": "sec-003-3-specialization-to-a-root-of-unity",
+   "number": "3",
+   "title": "Specialization to a root of unity",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-31-central-subalgebras-at-roots-of-unity",
+   "number": "3.1",
+   "title": "Central subalgebras at roots of unity",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1086,
+   "n_words": 188
+  },
+  {
+   "id": "sec-005-32-uξ-modules",
+   "number": "3.2",
+   "title": "Uξ-modules.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1242,
+   "n_words": 209
+  },
+  {
+   "id": "sec-006-33-the-braiding-on-characters",
+   "number": "3.3",
+   "title": "The braiding on characters",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 7797,
+   "n_words": 1415
+  },
+  {
+   "id": "sec-007-36-wξ-modules",
+   "number": "3.6",
+   "title": "Wξ-modules",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 17,
+   "n_chars": 10803,
+   "n_words": 1885
+  },
+  {
+   "id": "sec-008-44-the-holonomy-yang-baxter-equation",
+   "number": "4.4",
+   "title": "The holonomy Yang-Baxter equation",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 11487,
+   "n_words": 1907
+  },
+  {
+   "id": "sec-009-5-r-matrix-computations",
+   "number": "5",
+   "title": "R-matrix computations",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1157,
+   "n_words": 201
+  },
+  {
+   "id": "sec-010-51-log-parameter-dependence",
+   "number": "5.1",
+   "title": "Log-parameter dependence",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 33,
+   "n_chars": 17663,
+   "n_words": 3277
+  },
+  {
+   "id": "sec-011-appendix-a-quantum-dilogarithms",
+   "number": null,
+   "title": "Appendix A. Quantum dilogarithms",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 461,
+   "n_words": 80
+  },
+  {
+   "id": "sec-012-a1-basic-definitions",
+   "number": null,
+   "title": "A.1. Basic definitions",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 3878,
+   "n_words": 729
+  },
+  {
+   "id": "sec-013-a2-fusion-identities",
+   "number": null,
+   "title": "A.2. Fusion identities",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 840,
+   "n_words": 160
+  },
+  {
+   "id": "sec-014-a3-fourier-transform-identities",
+   "number": null,
+   "title": "A.3. Fourier transform identities",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 2382,
+   "n_words": 450
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 7632,
+   "n_words": 938
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 16,
+  "chars_total": 74917
+ }
+}

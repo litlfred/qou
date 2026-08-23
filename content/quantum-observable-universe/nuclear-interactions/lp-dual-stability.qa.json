@@ -2119,6 +2119,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.919Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'Hence partial confinement is not sufficient. All three units are required.'",
+        "notes": "Substantive contrast, and the positive half is stated immediately -- correct construction. (The claim's numerical basis is flagged under trap-superlative.)"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2138,6 +2155,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.961Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2157,6 +2191,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.005Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2176,6 +2227,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.052Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2195,6 +2263,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.094Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2214,6 +2299,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.157Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2233,6 +2335,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.209Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2252,6 +2371,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.250Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2271,6 +2407,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.298Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Clause 2 'the dual shadow prices are bounded ... where $\\kappa(G) \\approx 7.0$ is the condition number'; clause 3 '$G\\vec{x}$ has a negative $\\sigma_0$ component'; clause 4 'Strong duality holds'. .ts marks computation.status: verified.",
+        "notes": "OPENED THE CITED WITNESS -- three separate failures. (1) EVERY LP-DUAL FIELD IS A STUB: y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap are all null in computations/confinement-operator-selection.witness.json, and three carry the literal string 'STUB -- re-run script through lp_dual_solver.py to populate'. Clause 4's strong-duality equation therefore has no numerical backing whatever, while the .ts says status 'verified'. (2) kappa(G) RECOMPUTED FROM THE WITNESS'S OWN GRAM MATRIX = 34.16, not 7.0 -- the six eigenvalues are [-0.855067, 0.101797, 0.855067, 0.855067, 0.855067, 3.47695], so |lam|max/|lam|min = 3.47695/0.101797. Understating kappa by 4.9x makes the shadow-price bound 4.9x tighter than the Gram matrix justifies. (3) Clause 3 is REFUTED by that same Gram matrix -- see the lp-dual-stability-table-data entry. Also: the witness pins q0 = 1.1099785955541805 (the OLD MUON value) and z = 0.4993203340335982 (excised convention C)."
       }
     ],
     "trap-nonspeakable": [
@@ -2290,6 +2443,23 @@
         "reviewed_at": "2026-08-15T10:31:01.410Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6b4eb7612458",
+          "ts": "314c808137a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.342Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 4-clause proposition + .ts (incl. the Sec.7c base-ring authorNote). Opened computations/confinement-operator-selection.witness.json (see trap-superlative).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2313,5 +2483,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:54.342Z"
 }

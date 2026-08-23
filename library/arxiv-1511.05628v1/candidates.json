@@ -1,0 +1,177 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1511.05628v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
+  "file": "1511.05628v1.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
+  "authors": "TUDOR DIMOFTE AND STAVROS GAROUFALIDIS",
+  "arxiv": {
+   "id": "1511.05628",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "18 Nov 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "conjecture": 5,
+   "remark": 3,
+   "theorem": 1,
+   "lemma": 2
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "[Zag10]. Evidence for this conjecture includes ample numerical computations",
+   "section_file": "sections/sec-001-11-quantum-modular-forms.md",
+   "section_title": "Quantum modular forms",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": ", we refer the reader to [Zag10] and also [GZ] where a proof for the case of the 4 1",
+   "section_file": "sections/sec-001-11-quantum-modular-forms.md",
+   "section_title": "Quantum modular forms",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "It is easy to see that \u03c4 2k",
+   "section_file": "sections/sec-003-22-the-1-loop-invariant-at-level-k.md",
+   "section_title": "The 1-loop invariant at level k",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.4",
+   "name": null,
+   "statement": "After replacing \u03b6 by \u03b6\u22121, We can give an alternative formula for the 1-loop",
+   "section_file": "sections/sec-003-22-the-1-loop-invariant-at-level-k.md",
+   "section_title": "The 1-loop invariant at level k",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.6",
+   "name": null,
+   "statement": "The coe\ufb03cients of the power series \u03c6+",
+   "section_file": "sections/sec-003-22-the-1-loop-invariant-at-level-k.md",
+   "section_title": "The 1-loop invariant at level k",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.7",
+   "name": null,
+   "statement": "Theorems 2.2 and 2.6 remain valid if \u03b6 denotes a \ufb01xed primitive k-th root of",
+   "section_file": "sections/sec-003-22-the-1-loop-invariant-at-level-k.md",
+   "section_title": "The 1-loop invariant at level k",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.8",
+   "name": null,
+   "statement": "For a Z-non-degenerate Neumann-Zagier datum \u03b3, we have",
+   "section_file": "sections/sec-004-24-feynman-diagrams-for-the-n-loop-invariant.md",
+   "section_title": "Feynman diagrams for the n-loop invariant",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.9",
+   "name": null,
+   "statement": "For any knot K, there exists a triangulation with a non-degenerate",
+   "section_file": "sections/sec-008-28-topological-invariance.md",
+   "section_title": "Topological invariance",
+   "pages": "11-12",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "[GZ] The summation in Equation (12) is k-periodic.",
+   "section_file": "sections/sec-010-31-proof-of-theorem-26.md",
+   "section_title": "Proof of Theorem 2.6",
+   "pages": "12-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "4.1",
+   "name": null,
+   "statement": "In the limit ( t, \u02dct)\u2192 (2k, 0), the partition function of complex Chern-",
+   "section_file": "sections/sec-015-42-a-singular-limit.md",
+   "section_title": "A singular limit",
+   "pages": "16-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "(2) at \u03b6 =e2\u03c0i\u03b1 =e2\u03c0i/k is",
+   "section_file": "sections/sec-015-42-a-singular-limit.md",
+   "section_title": "A singular limit",
+   "pages": "16-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

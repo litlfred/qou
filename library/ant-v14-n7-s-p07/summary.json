@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ant-v14-n7-s-p07",
+ "source_sha256": "c5a749ef6be194fd",
+ "brief": "Nonvanishing of hyperelliptic zeta functions over finite fields — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof",
+ "extended": "**Nonvanishing of hyperelliptic zeta functions over finite fields**\n\n*Jordan S. Ellenberg , Wanlin Li and Mark Shusterman*\n\n16 pp, 7 sections.\n\n**Outline.** 1 Introduction; 2 For the similar Theorem 1.7, the 𝓁 is again ; 2 Main theorem and proof; 3 Application to nonvanishing of L-functions; 2 By the; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Fix a prime p, a real number t, and set s= 1\n- Theorem 1.5: Let C be a hyperelliptic curve of genus at least 2 over Fq and S be the set of Weierstrass\n- Theorem 1.7: Let𝓁 be an odd prime and let C be a(Z/𝓁Z)-cover of P1/Fq branched at a set S⊂ P1(Fq).\n- Theorem 1.1: of [Lipnowski and Tsimerman 2019], which is in fact more general, and the arguments used\n- Theorem 8.8: ] computes arbitrary moments of the Cohen–Lenstra distribution, whereas we are only\n- Theorem 8.8: ], we are only considering the case A= Z/𝓁Z. The difference is as follows. In the proof, we",
+ "tokens": {
+  "brief": 37,
+  "extended": 239
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-for-the-similar-theorem-17-the-𝓁-is-again-the",
+   "title": "For the similar Theorem 1.7, the 𝓁 is again the order of the Dirichlet",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-2-main-theorem-and-proof",
+   "title": "Main theorem and proof",
+   "pages": "4-10"
+  },
+  {
+   "id": "sec-003-3-application-to-nonvanishing-of-l-functions",
+   "title": "Application to nonvanishing of L-functions",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-004-2-by-the",
+   "title": "By the",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-005-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "14-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

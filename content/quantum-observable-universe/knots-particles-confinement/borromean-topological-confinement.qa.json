@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/knots-particles-confinement/borromean-topological-confinement.md"
   },
   "source_hashes": {
-    "md": "9922edd659ce",
+    "md": "75f0feb1939a",
     "ts": "2deb95a32e4b"
   },
   "criteria": {
@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.433Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "'topologically inseparable, yet no two are pairwise linked' — this IS the Brunnian property",
+        "notes": "pass-with-note: substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.472Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-rhetorical-pivot construction present"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.512Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-em-dash construction present"
       }
     ],
     "trap-triples": [
@@ -1288,6 +1334,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.549Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-triples construction present"
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1368,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.586Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-closing-aphorism construction present"
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1402,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.624Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-meta-commentary construction present"
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1436,22 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.662Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "Three consecutive near-identical sentences restated the extraction consequence; collapsed to one",
+        "notes": "fixed: 'The move that extracts one strand unlinks the other two. The extraction of a single component dissolves the entire three-component bound state. Pulling on a single constituent produces three unbound unknots.' -> 'The move that extracts one strand unlinks the other two: pulling on a single constituent produces three unbound unknots.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.701Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-performed-warmth construction present"
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.738Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-superlative construction present"
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:59.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:46.773Z",
+        "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
+        "evidence": "full-text agent read; no trap-nonspeakable construction present"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1422,7 +1574,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "75f0feb1939a",
+          "ts": "2deb95a32e4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:07.453Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:07.453Z"
 }

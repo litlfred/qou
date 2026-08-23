@@ -3,7 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 # Wiring FKV eq-22 into the strip-growth comparability shape
 
-Option-1 brick of the FKV programme (owner-uploaded `uploads/0006156v1.pdf`,
+Option-1 brick of the FKV programme (owner-uploaded `library/arxiv-hep-th-0006156v1/0006156v1.pdf`,
 Faddeev–Kashaev–Volkov 2001, [hep-th/0006156](https://arxiv.org/abs/hep-th/0006156)
 §6). The audit `2026-07-31-fkv-phib-strip-growth-...` showed FKV **eq 22** (the
 four-sector asymptotic of `e_b = phiBProd`) supplies the compact fundamental-domain
@@ -35,7 +35,7 @@ same-divisor input, which on the `phiBProd` side is already pinned (eq 21 /
 production; the leg stays *stated*-conditional. Uses only on-`main`
 `FaddeevStripGrowthBoxReduction`. Sorry-free.
 
--- Ref: [faddeev-kashaev-volkov-2001] https://arxiv.org/abs/hep-th/0006156 (§6, eq 22)
+-- Ref: [faddeev-kashaev-volkov2000] https://arxiv.org/abs/hep-th/0006156 (§6, eq 22)
 -/
 import Mathlib.LinearAlgebra.Basis.Defs
 import Mathlib.LinearAlgebra.Basis.Basic

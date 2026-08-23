@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-09T21:36:47.600989+00:00",
-  "commitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
+  "computedAt": "2026-08-22T12:22:45.432755+00:00",
+  "commitSha": "11bc6ae3c63d6831684d27d6f70b99bd99a8e766",
   "assertions": [
     {
       "name": "overdetermined_path_a_eq_path_b_machine_eps",
@@ -10,14 +10,21 @@
       "expected": 30,
       "passed": true,
       "source": "iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3"
+    },
+    {
+      "name": "h6_extract_matches_canonical_weighted_pn_interface",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "reconstruct_chi_h6_via_sublemma vs direct χ^ξ on with_interface(...) — discriminates colour-weighted (5.5e-15) from colour-blind (9.2e-05)"
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 23,
   "computation": "sublemma-2-1-h9-tritium-verify",
   "scriptFile": "sublemma_2_1_h9_tritium_verify.py",
-  "scriptHash": "4ad6ca2b6bfa",
-  "scriptCommitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
+  "scriptHash": "156d4a8574ec",
+  "scriptCommitSha": "17f1219f272b0e2290de62dd91fca4ac7ad71a28",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +34,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Sub-lemma 2.1 multi-interface verification at H_9 for tritium: compares Path A (direct χ^λ via Hoefsmit) against Path B (iterated 2-interface formula with A^λ_{ξν}(I_2) extracted from sublemma-2-1-A-operator-extract-h9-nn.witness.json). All 30/30 λ ⊢ 9 are over-determined and verified at machine ε — the consumed extract uses the full S_6×S_3 permutation basis (see the 2026-06-09 binding audit).",
   "auditOnly": "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md",
   "data": {
     "atom": "tritium",
+    "lean_uniqueness_ref": {
+      "nucleus": "tritium",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    },
     "interface_outer": "nn",
     "interface_inner": "pn",
     "n_generators_h9_braid": 35,
@@ -286,6 +301,7 @@
     "n_overdetermined_total": 30,
     "n_underdetermined": 0,
     "max_relative_residual_overdetermined": 1.2165012426221438e-13,
-    "max_relative_residual_all": 1.2165012426221438e-13
+    "max_relative_residual_all": 1.2165012426221438e-13,
+    "h6_extract_frame_guard_max_rel": "5.5131896097107105e-15"
   }
 }

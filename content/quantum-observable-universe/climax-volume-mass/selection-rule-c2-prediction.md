@@ -11,7 +11,7 @@ $$
 
 The per-component rule states $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$. It is anchored at c=1 (muon, $\mathrm{lw}=1$ exactly $\forall q$) and c=3 (proton, $\mathrm{lw} = 5/2 + (3/4)h^2$ via Family-A). The c=2 case provides the **first testable prediction** of the rule beyond the two known anchors.
 
-This proposition Lean-formalises the closed form for c=2. The prediction shares the same provenance as its anchors (a pure algebraic identity in the q-deformed hook-length formula). Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula unequivocally.
+This proposition Lean-formalises the closed form for c=2. The prediction shares the same provenance as its anchors (a pure algebraic identity in the q-deformed hook-length formula). Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula.
 
 ## Lean proof structure
 

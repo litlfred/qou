@@ -13,9 +13,9 @@ export default conjecture({
     "thm:jones-markov-trace",
   ],
   cites: [
-    "klein1884vorlesungen",
+    "klein1888",
     "kashiwara1991",
-    "khovanov-lauda2009",
+    "khovanovlauda2009",
     "wigner1937",
   ],
   tags: [

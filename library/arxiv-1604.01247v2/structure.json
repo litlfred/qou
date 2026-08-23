@@ -1,0 +1,371 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1604.01247v2",
+ "source": {
+  "file": "1604.01247v2.pdf",
+  "sha256": "5a402405aadf5d54e235ff25aad1c10e6aecfa04b6cc7be348b5b8c8bfa5c3b9",
+  "bytes": 298312,
+  "pages": 37
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1604.01247",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "1 May 2016"
+  },
+  "doi": null,
+  "title": "Exceptional quantum geometry and particle physics",
+  "authors_raw": "AND PARTICLE PHYSICS",
+  "abstract": "Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an argumentation suggesting th at the “ﬁnite quantum space” corresponding to the exceptional rea l Jordan algebra of dimension 27 (the Euclidean Albert algebra) is re levant for the description of internal spaces in the theory of particle s. In par- ticular, the triality which corresponds to the 3 oﬀ-diagonal octonionic elements of the exceptional algebra is associated to the 3 ge nerations of the Standard Model while the representation of the octoni ons as a complex 4-dimensional space C ⊕ C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the correspon ding quark). More generally it is is suggested that the replaceme nt of the algebra of real functions on spacetime by the algebra of func tions on spacetime with values in a ﬁnite-dimensional Euclidean Jor dan alge- bra which plays the role of “the algebra of real functions” on the corresponding almost classical quantum spacetime is relev ant in par- ticle physics. This leads us to study the theory of Jordan mod ules and to develop the diﬀerential calculus over Jordan algebras , (i.e. to introduce the appropriate notion of diﬀerential forms). We f ormulate the corresponding deﬁnition of connections on Jordan modul es. May 3, 2016 1Laboratoire de Physique Th´ eorique, CNRS, Universit´ e Paris-Sud, Universit´ e Paris- Saclay, Bˆ atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20160502203323-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "EXCEPTIONAL QUANTUM GEOMETRY"
+  ],
+  "title_prev": "EXCEPTIONAL QUANTUM GEOMETRY"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Unimodularity of SU(3) and the quark-lepton symmetry",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "SU(3)-spaces",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "SU(3)-algebra version of octonion algebra",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The quark-lepton symmetry",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Gauge theoretical aspect",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "The 3-generations, triality and the exceptional finite quantum space",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "the 3-generations",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Finite quantum spaces",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The exceptional finite quantum space",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Exceptional almost classical quantum spacetime",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Modules and fundamental fermions",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Modules over Jordan algebras",
+   "page": 18,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "J83-modules and SU(3)SU(3)-action",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Modules for the two families by generation",
+   "page": 21,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Problem of the U(1)SU(2)-symmetry",
+   "page": 22,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Charge conjugation",
+   "page": 23,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Differential calculus over Jordan algebras",
+   "page": 24,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "First order differential calculi",
+   "page": 24,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "First order differential calculi over J83",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Differential graded Jordan algebras",
+   "page": 26,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Higher order derivation-based differential calculi",
+   "page": 27,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Differential calculi as A-algebras",
+   "page": 28,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Connections on Jordan modules",
+   "page": 30,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Derivation-based connections. First definition",
+   "page": 30,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Derivation-based connections. Second definition",
+   "page": 30,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "General connections",
+   "page": 32,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Tentative conclusion",
+   "page": 32,
+   "source": "outline",
+   "number": "7"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 13706,
+   "n_words": 2862
+  },
+  {
+   "id": "sec-001-23-the-quark-lepton-symmetry",
+   "number": "2.3",
+   "title": "The quark-lepton symmetry",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 593,
+   "n_words": 108
+  },
+  {
+   "id": "sec-002-24-gauge-theoretical-aspect",
+   "number": "2.4",
+   "title": "Gauge theoretical aspect",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2662,
+   "n_words": 503
+  },
+  {
+   "id": "sec-003-31-the-3-generations",
+   "number": "3.1",
+   "title": "the 3-generations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1238,
+   "n_words": 240
+  },
+  {
+   "id": "sec-004-32-finite-quantum-spaces",
+   "number": "3.2",
+   "title": "Finite quantum spaces",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 8240,
+   "n_words": 1617
+  },
+  {
+   "id": "sec-005-34-exceptional-almost-classical-quantum-spacetim",
+   "number": "3.4",
+   "title": "Exceptional almost classical quantum spacetime",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3371,
+   "n_words": 699
+  },
+  {
+   "id": "sec-006-4-modules-and-fundamental-fermions",
+   "number": "4",
+   "title": "Modules and fundamental fermions",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-41-modules-over-jordan-algebras",
+   "number": "4.1",
+   "title": "Modules over Jordan algebras",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 4177,
+   "n_words": 918
+  },
+  {
+   "id": "sec-008-43-modules-for-the-two-families-by-generation",
+   "number": "4.3",
+   "title": "Modules for the two families by generation",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4270,
+   "n_words": 956
+  },
+  {
+   "id": "sec-009-45-charge-conjugation",
+   "number": "4.5",
+   "title": "Charge conjugation",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 10516,
+   "n_words": 2256
+  },
+  {
+   "id": "sec-010-6-connections-on-jordan-modules",
+   "number": "6",
+   "title": "Connections on Jordan modules",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2819,
+   "n_words": 602
+  },
+  {
+   "id": "sec-011-63-general-connections",
+   "number": "6.3",
+   "title": "General connections",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 783,
+   "n_words": 167
+  },
+  {
+   "id": "sec-012-7-tentative-conclusion",
+   "number": "7",
+   "title": "Tentative conclusion",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 37,
+   "n_chars": 8241,
+   "n_words": 1316
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 13,
+  "chars_total": 60616
+ }
+}

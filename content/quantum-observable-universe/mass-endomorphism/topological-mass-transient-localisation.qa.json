@@ -2116,6 +2116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.362Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2135,6 +2150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.403Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-em-dash": [
@@ -2154,6 +2184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.442Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-triples": [
@@ -2173,6 +2218,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.483Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-closing-aphorism": [
@@ -2192,6 +2252,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.522Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-meta-commentary": [
@@ -2211,6 +2286,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.561Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-thesis-restatement": [
@@ -2230,6 +2320,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.602Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-performed-warmth": [
@@ -2249,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.641Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-superlative": [
@@ -2268,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.680Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "trap-nonspeakable": [
@@ -2287,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:01.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "02b6c6cf8dd0",
+          "ts": "e98665e82ee7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:46.722Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.47kB). Same sum-of-norms shape as the eigenspace lemma. 'operates exclusively on disjoint discs' - 'exclusively' is the lemma's content (support statement), not decoration."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2310,5 +2460,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:46.722Z"
 }

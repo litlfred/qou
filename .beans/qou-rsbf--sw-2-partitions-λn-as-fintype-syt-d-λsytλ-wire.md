@@ -1,11 +1,11 @@
 ---
 # qou-rsbf
 title: 'SW-2: partitions λ⊢n as Fintype + SYT + d_λ=#SYT(λ); wire Mathlib YoungDiagram/Tableau'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:30:46Z
-updated_at: 2026-08-02T19:33:07Z
+updated_at: 2026-08-19T13:38:48Z
 parent: qou-59vq
 ---
 
@@ -28,3 +28,10 @@ upgrade:
 `Σ_{λ⊢n} dimSYT² = n!` for **n ≤ 12** by `decide`; a Schensted stack exists;
 general RSK is the only missing piece. RSK is NOT in Mathlib v4.24.0.
 Updating SW-3 accordingly. Wired into QOU.lean.
+
+
+## VERIFIED CLOSED (2026-08-19 measurement)
+
+`YoungTableaux.lean` sorry-free on main; `dLambda` = Fintype.card (SYT lam) is
+the indexing used by `seminormalRepFin` and by the merged JM block eigenvalue
+(#5290), so it is load-bearing, not shelf-ware. Status was stale at todo.

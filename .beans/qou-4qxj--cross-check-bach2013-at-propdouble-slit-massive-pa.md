@@ -13,7 +13,7 @@ double-slit-intro.md:5 asserts the q-deviation 'matches' this dataset but names 
 - Fig. 3e — The accumulated single-electron double-slit diffraction pattern for the controlled (movable-mask) geometry, from which an intensity profile can be digitised.
   Use here: It is the actual data source behind bach-intensity-profile; the folio's q-corrected sinc^2 envelope is compared against it.
 
-Source: `uploads/1210.6243v1.pdf` (`bach2013`)
+Source: `library/arxiv-1210.6243v1/1210.6243v1.pdf` (`bach2013`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -25,8 +25,8 @@ follows from the hexagons together with naturality. Part 3 is independent of
 both and is the only part whose argument is not classical.
 
 Neither part 1 nor part 2 is derivable from the remaining quantum-universe
-axioms, nor from the observability conditions. The hexagon enters with the
-braiding or not at all.
+axioms, nor from the observability conditions; the hexagon identities enter
+only as part of the braided structure.
 
 ## Lean structure
 

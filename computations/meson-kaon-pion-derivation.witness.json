@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:19:01.311438+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-22T19:52:33.547735+00:00",
+  "commitSha": "f711201aaf98029f41125cde266b860fc93742d2",
   "assertions": [
     {
       "name": "m_K_over_m_pi_within_500ppm",
@@ -34,15 +34,15 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "n_q = 2 gives smallest error among powers 1, 2, 3"
+      "source": "n_q = 2 gives the smallest error among powers 1, 2, 3. This records a consistency check, NOT evidence for the exponent -- see data.squaring_proof.scope."
     }
   ],
   "allPassed": true,
-  "durationMs": 50,
+  "durationMs": 32,
   "computation": "meson-kaon-pion-derivation",
   "scriptFile": "meson_kaon_pion_derivation.py",
-  "scriptHash": "38936c0289d5",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "cb057aa24275",
+  "scriptCommitSha": "230cdd113691715ea8cb58b69686d8438834a60c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,9 +54,17 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "Derive m_K/m_π = χ_{(2,1)}(σ₁⁵) × (V_Seifert(T(2,5))/V_Seifert(T(2,3)))² = (q₀⁵ − q₀⁻⁵) × (9/5)² ≈ 3.536 (vs PDG 3.537, 290 ppm). The algebraic part is the Hecke character of the strange-quark braid on the standard (2,1) representation. The squaring reflects the 2-quark meson structure (one Seifert volume factor per constituent).",
+  "invocation": {
+    "argv": [
+      "computations/meson_kaon_pion_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/meson_kaon_pion_derivation.py"
+  },
+  "description": "Derive m_K/m_π = χ_{(2,1)}(σ₁⁵) × (V_Seifert(T(2,5))/V_Seifert(T(2,3)))² = (q₀⁵ − q₀⁻⁵) × (9/5)² ≈ 3.536 (vs PDG 3.537, 290 ppm). The algebraic part is the Hecke character of the strange-quark braid on the standard (2,1) representation. The squaring reflects the 2-quark meson structure (one Seifert volume factor per constituent). SUPERSEDED for the accuracy dashboard: this (9/5)² form was formerly scored there and was withdrawn from that role. The canonical closure is [3]_q[4]_q + (α_em/π)(1 + log(1+ℏ_q)) (prop:meson-em-sinh-closed-form), at 51.5 ppb. This form's 290 ppm misses the observable's 263.6 ppb target by 1099x, so do NOT quote 290 ppm as the framework's accuracy on m_K/m_π.",
   "data": {
     "hecke_characters": {
       "chi_21_sigma1_5": "1.091387012864929717055132249115480620271302912385176411195036856799313",
@@ -95,7 +103,8 @@
       "power_2_err_ppm": 289.6474297199268,
       "power_3_prediction": "6.36496905902827",
       "power_3_err_ppm": 799478.6346265042,
-      "conclusion": "Power = 2 (meson qq̄) gives 290 ppm; power = 1 gives 444605 ppm; power = 3 gives 799479 ppm. The data selects n_q = 2."
+      "conclusion": "Power = 2 (meson qq̄) gives 290 ppm; power = 1 gives 444605 ppm; power = 3 gives 799479 ppm.",
+      "scope": "This scan is a CONSISTENCY CHECK, not a derivation, and the key name `squaring_proof` overstates it. The two-body rationale names n_q = 2 in advance; the alternatives miss by 44% and 80% rather than marginally, so a scan that selected the exponent against the data would look no different. What it establishes is only that the a-priori exponent is not contradicted. Prior wording read 'The data selects n_q = 2', which is the fitted reading and is withdrawn (2026-08-22)."
     },
     "comparison_to_prior": {
       "prior_formula": "7/8 × [2]_q² (kaon_pion_ratio_7_8_probe.py)",

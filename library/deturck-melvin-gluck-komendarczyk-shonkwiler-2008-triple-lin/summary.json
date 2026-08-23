@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+ "source_sha256": "db149864ce367da2",
+ "brief": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John",
+ "extended": "**Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links**\n\n*AND INTEGRAL FORMULAS FOR*\n\n33 pp, 9 sections.\n\n**Abstract.** Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such linkL we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941.\n\n**Outline.** Statement of results; Background and motivation; Explicit formula for the characteristic map gL; An asymmetric version of the characteristic ma; Sketch of the topological proof of Theorem A; Sketch of the algebraic proof of Theorem A; Sketch of the proof of Theorem B; The fundamental solution of the Laplacian on t; Completing the proof of Theorem B\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. The pairwise linking numbers p, q and r of the link L are\n- Theorem: B. If the pairwise linking numbers p, q and r of the three\n- Theorem: s A and B above give a similar formulation of Milnor’s triple\n- Proposition 1: The fundamental solution of the scalar Laplacian on the",
+ "tokens": {
+  "brief": 48,
+  "extended": 388
+ },
+ "sections": [
+  {
+   "id": "sec-000-statement-of-results",
+   "title": "Statement of results",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-background-and-motivation",
+   "title": "Background and motivation",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-002-explicit-formula-for-the-characteristic-map-gl",
+   "title": "Explicit formula for the characteristic map gL",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-an-asymmetric-version-of-the-characteristic-map",
+   "title": "An asymmetric version of the characteristic map",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-sketch-of-the-topological-proof-of-theorem-a",
+   "title": "Sketch of the topological proof of Theorem A",
+   "pages": "10-17"
+  },
+  {
+   "id": "sec-005-sketch-of-the-algebraic-proof-of-theorem-a",
+   "title": "Sketch of the algebraic proof of Theorem A",
+   "pages": "17-23"
+  },
+  {
+   "id": "sec-006-sketch-of-the-proof-of-theorem-b",
+   "title": "Sketch of the proof of Theorem B",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-007-the-fundamental-solution-of-the-laplacian-on-the",
+   "title": "The fundamental solution of the Laplacian on the 3-torus",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-008-completing-the-proof-of-theorem-b",
+   "title": "Completing the proof of Theorem B",
+   "pages": "26-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,6 +1,5 @@
-To track how defect weight accumulates by norm across the spectral fiber — a
-number-theoretic accountant of matter — one deforms the classical
-prime-counting apparatus. The :defterm[$q$-Chebyshev function]{#q-chebyshev-function} is the partial sum of the $q$-von Mangoldt
+To track how defect weight accumulates by norm across the spectral fiber,
+one deforms the classical prime-counting apparatus. The :defterm[$q$-Chebyshev function]{#q-chebyshev-function} is the partial sum of the $q$-von Mangoldt
 function over the geometry:
 
 $$

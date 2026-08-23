@@ -1088,6 +1088,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.707Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1107,6 +1123,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.747Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-em-dash": [
@@ -1126,6 +1158,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.786Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-triples": [
@@ -1145,6 +1193,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.825Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-closing-aphorism": [
@@ -1164,6 +1228,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.865Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-meta-commentary": [
@@ -1183,6 +1263,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.905Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-thesis-restatement": [
@@ -1202,6 +1298,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.945Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-performed-warmth": [
@@ -1221,6 +1333,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.985Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-superlative": [
@@ -1240,6 +1368,22 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.025Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ],
     "trap-nonspeakable": [
@@ -1259,8 +1403,24 @@
         "reviewed_at": "2026-08-15T10:31:01.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.064Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.654Z"
+  "updated_at": "2026-08-22T04:07:16.064Z"
 }

@@ -30,9 +30,35 @@ Shape-matching, not spelling-matching.
 * **Deliberately C-named** targets (`z_C`, `z_c`, `z_C_expr`, ...) are excluded.
   A variable that says it is convention C is a labelled comparison, not a defect
   — the same principle the content axis uses for `C_LABEL`.
-* **`tools/pyhecke/`** is reported separately: the registry records
-  `pyhecke.gram.z` as convention C **by design** under `blocked_migrations`, and
-  R9 asserts that exception rather than leaving it undetected.
+* **`tools/pyhecke/`** is reported separately, but the excuse comes from the
+  REGISTRY, not from the path. Three buckets, in order of how well accounted
+  the site is, and **only the first is excused from the actionable count**:
+
+  1. **BLOCKED on C by design** — a `blocked_migrations` row names that exact
+     file.
+  2. **DECLARED C in `evaluators.z`, R10-waived** — the symbol is a registered
+     C evaluator whose module is listed in `intra_module_split_waivers`. R9
+     imports it and asserts its value numerically on every run, so this is a
+     *stronger* record than a blocked row, which is only prose. It is still
+     **actionable**: the waiver says in terms that the split is "an open
+     defect, not an approved design". Declaring a thing does not fix it, and a
+     declaration that shrinks the count is a way to make the inventory smaller
+     without making the corpus better.
+  3. **C with NO registry row (unexplained)** — anything else under
+     `tools/pyhecke/`. Actionable.
+
+  The path-prefix version was too generous. One row covered `gram.py::z`, and
+  three *function-local* C definitions sheltered under the same label — two of
+  them inside `gram.py` itself. When `z` migrated to D on 2026-08-15 (bean
+  `qou-w8zz`) and the row was resolved, a prefix classifier would have gone on
+  calling those three "by design" indefinitely.
+
+  Bucket 2 exists because resolving that row correctly — emptying
+  `blocked_migrations` — reclassified four fully-registered sites as
+  "unexplained", so the registry and this detector disagreed about the same
+  four while both worked as designed. Splitting them also stopped the blanket
+  label hiding a real one: `pyhecke/atom.py:691` is a live C `z_mark`, consumed
+  at :713, in a module (`pyhecke.atom`) that **no** waiver covers.
 * `_deprecated/` is skipped entirely.
 
 Results are stratified, because the layers carry very different risk: a probe
@@ -70,6 +96,31 @@ DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
 BLOCKED_BY_DESIGN = "tools/pyhecke/"
 
 
+def _is_unit_numerator(node: ast.AST) -> bool:
+    """Is this a literal one, however the corpus spells it?
+
+    `1`, `1.0` -- and `mpf(1)` / `mp.mpf(1)` / `mpmath.mpf("1")`, which is how
+    the corpus writes it, because the NO-FLOAT64 discipline requires carrying
+    `mpmath.mpf` rather than a bare Python literal.
+
+    That is the whole reason this matters.  The detector accepted only the bare
+    literal, so **complying with the precision discipline made a site invisible
+    to the convention detector** -- one house rule blinding another.  Measured
+    2026-08-23: teaching it `mpf(1)` took the actionable count from 1 to 11,
+    every one of them `1/(sqrt(q) + sqrt(q_inv))` in the Markov role, two of
+    them named outright (`Z_MARK`, `z_mark`).  Beans `qou-324i` / `qou-rh31`.
+    """
+    if isinstance(node, ast.Constant) and node.value in (1, 1.0):
+        return True
+    if isinstance(node, ast.Call):
+        fn = ast.unparse(node.func).split(".")[-1]
+        if fn in ("mpf", "mpmathify", "Integer", "Rational") and node.args:
+            a = node.args[0]
+            if isinstance(a, ast.Constant) and str(a.value).strip('"\'') in ("1", "1.0"):
+                return True
+    return False
+
+
 def is_c_form(node: ast.AST) -> bool:
     """Does this expression have the shape ``1 / (<sqrt-ish> + <anything>)``?
 
@@ -84,7 +135,7 @@ def is_c_form(node: ast.AST) -> bool:
     """
     if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
         return False
-    if not (isinstance(node.left, ast.Constant) and node.left.value in (1, 1.0)):
+    if not _is_unit_numerator(node.left):
         return False
     den = node.right
     if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
@@ -123,6 +174,101 @@ def is_c_form_halfarg(node: ast.AST):
     return num if d in (f"{num}**2+1", f"1+{num}**2") else None
 
 
+def _defines_convention_d(src: str, sym: str) -> bool:
+    """Does `src` bind `sym` to the convention-D Markov parameter?
+
+    Matches `<sym> = <base>**3 / (<base>**2 + 1)` modulo whitespace and the
+    choice of base name -- the same normalisation `is_c_form` uses, since
+    `ast.unparse` spells it `q ** 3`. Assignment only, at module level or not;
+    a comment mentioning D does not count.
+    """
+    try:
+        tree = ast.parse(src)
+    except (SyntaxError, ValueError):
+        return False
+    for n in ast.walk(tree):
+        if not isinstance(n, (ast.Assign, ast.AnnAssign)):
+            continue
+        targets = n.targets if isinstance(n, ast.Assign) else [n.target]
+        if not any(isinstance(t, ast.Name) and t.id == sym for t in targets):
+            continue
+        if n.value is None:
+            continue
+        s = "".join(ast.unparse(n.value).split())
+        base = s.split("**3", 1)[0]
+        if base and s in (f"{base}**3/({base}**2+1)", f"{base}**3/(1+{base}**2)"):
+            return True
+    return False
+
+
+def _module_path_of(file: str) -> str:
+    """`tools/pyhecke/python/pyhecke/gram.py` -> `pyhecke.gram`.
+
+    The LAST occurrence of the package name is the package root; the first is
+    the containing directory, which yields the nonsense
+    `pyhecke.python.pyhecke.gram`. The selftest caught exactly that, which is
+    why this is a named function with its own fixtures rather than four lines
+    inline reading from the live registry.
+    """
+    parts = pathlib.Path(file).with_suffix("").parts
+    pkg = next((c for c in reversed(parts[:-1])
+                if c not in ("python", "src", "tools", "lib")), None)
+    if pkg and pkg in parts:
+        i = len(parts) - 1 - parts[::-1].index(pkg)
+        return ".".join(parts[i:])
+    return parts[-1] if parts else file
+
+
+def declared_c_files(repo: pathlib.Path):
+    """Files whose C is DECLARED in the registry — registered, not unexplained.
+
+    `blocked_migrations` is no longer the only way the registry accounts for a
+    convention-C symbol. A site can also be recorded as a C entry under
+    `evaluators.z`, where R9 imports it and asserts its value numerically, with
+    its module listed in `intra_module_split_waivers`. That is a STRONGER
+    record than a blocked row ever was: a blocked row is prose, an evaluator
+    entry is checked against the running code on every validator run.
+
+    Without this, emptying `blocked_migrations` -- which is what resolving the
+    gram.py row correctly DID -- silently reclassifies four fully-registered
+    sites as "NO registry row (unexplained)". The registry and this detector
+    then disagree about the same four sites while both are working as designed.
+
+    Declared does NOT mean excused. The R10 waiver says in terms that the split
+    is "an open defect, not an approved design", so these stay ACTIONABLE and
+    stay in the count; only the LABEL changes. A positive declaration has to be
+    visible in the count rather than swallowed by it, or the declaration
+    becomes a way to make the inventory smaller without making the corpus
+    better.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        r = json.loads(reg.read_text())
+    except (OSError, json.JSONDecodeError):
+        return {}
+    waived = set(r.get("intra_module_split_waivers", []))
+    out: dict[str, list] = {}
+    for e in r.get("evaluators", {}).get("z", []):
+        if e.get("convention") != "C":
+            continue
+        mod, sym = e.get("module", ""), e.get("symbol", "")
+        if mod not in waived:
+            continue
+        f = e.get("file") or _file_of_module(repo, mod)
+        if f:
+            out.setdefault(f, []).append(sym)
+    return {f: sorted(set(syms)) for f, syms in out.items()}
+
+
+def _file_of_module(repo: pathlib.Path, mod: str):
+    """Best-effort module dotted-path -> repo-relative file."""
+    tail = mod.replace(".", "/") + ".py"
+    for cand in repo.rglob("*/" + tail):
+        if "_deprecated" not in str(cand) and "node_modules" not in str(cand):
+            return str(cand.relative_to(repo))
+    return None
+
+
 def blocked_symbols(repo: pathlib.Path):
     """The (module, symbol) pairs the registry deliberately leaves on C.
 
@@ -139,20 +285,217 @@ def blocked_symbols(repo: pathlib.Path):
         f, sym = r.get("file", ""), r.get("symbol", "")
         if not f or not sym:
             continue
-        # tools/pyhecke/python/pyhecke/gram.py -> pyhecke.gram.
-        # The LAST occurrence of the package name is the package root; the
-        # first is the containing directory, which yields the nonsense
-        # `pyhecke.python.pyhecke.gram`. The selftest caught that.
-        parts = pathlib.Path(f).with_suffix("").parts
-        pkg = next((p for p in reversed(parts[:-1]) if (pathlib.Path(*parts[:parts.index(p) + 1])).name == p
-                    and p not in ("python", "src", "tools")), None)
-        if pkg and pkg in parts:
-            i = len(parts) - 1 - parts[::-1].index(pkg)
-            mod = ".".join(parts[i:])
-        else:
-            mod = parts[-1]
+        # VERIFY THE PREMISE. A blocked row asserts the symbol is still C; if
+        # the file has since moved to D, every "leak" derived from this row is
+        # a false positive, and the row itself is the defect.
+        #
+        # This is not hypothetical. gram.py moved to D on 2026-08-15 (bean
+        # qou-w8zz) and this row was not updated with it, so R9 went red on
+        # main and this detector reported 25 production sites "receiving
+        # convention C" that were receiving D. A detector that trusts a record
+        # inherits the record's staleness -- the same failure the whole
+        # excision has been unpicking, arriving in the tool built to find it.
+        src_path = repo / f
+        try:
+            src = src_path.read_text()
+        except OSError:
+            src = ""
+        if src and _defines_convention_d(src, sym):
+            print(f"  REGISTRY STALE: {f}::{sym} is registered as convention "
+                  f"{r.get('stays', '?')} under blocked_migrations, but the file "
+                  f"defines it as convention D. Every leak derived from this row "
+                  f"is a false positive; fix the registry, not the callers.")
+            continue
+        mod = _module_path_of(f)
         out.append((mod, sym, r.get("reason", ""), r.get("bean", "")))
     return out
+
+
+#: A name that plausibly denotes the substrate parameter.
+_Q_LIKE = re.compile(r"^_?[qQ][A-Za-z0-9_]{0,6}$")
+
+#: A binding that names a Markov trace or a Wedderburn weight -- the
+#: quantities that are rational in q under convention D, so a half-integer
+#: power in one is z_C showing through.
+TRACE_OR_WEIGHT = re.compile(
+    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census",
+    re.I)
+
+
+def _is_q_like(node: ast.AST) -> bool:
+    return isinstance(node, ast.Name) and bool(_Q_LIKE.match(node.id))
+
+
+def _half_integer(node: ast.AST):
+    """If `node` is a half-but-not-whole number, return it; else None.
+
+    Accepts the literal `0.5`/`1.5`, `mp.mpf("1.5")`, `sp.Rational(3, 2)` and
+    `sp.Rational(1, 2)` — the spellings this corpus actually uses for a
+    half-integer exponent.
+    """
+    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+        v = float(node.value)
+        return v if (v * 2) % 2 == 1 else None
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
+        inner = _half_integer(node.operand)
+        return None if inner is None else -inner
+    if isinstance(node, ast.Call):
+        fn = ast.unparse(node.func)
+        if fn.endswith("mpf") and node.args:
+            return _half_integer(node.args[0]) if not isinstance(
+                node.args[0], ast.Constant) or not isinstance(
+                node.args[0].value, str) else (
+                    float(node.args[0].value)
+                    if (float(node.args[0].value) * 2) % 2 == 1 else None)
+        if fn.endswith("Rational") and len(node.args) == 2:
+            try:
+                num, den = node.args[0].value, node.args[1].value
+                return num / den if den == 2 and num % 2 == 1 else None
+            except (AttributeError, TypeError, ZeroDivisionError):
+                return None
+    return None
+
+
+def scan_closed_forms(roots=ROOTS):
+    """Find CONVENTION-C-SPECIALISED CLOSED FORMS -- the third blind spot.
+
+    Migrating `z` is not migrating the file. Quantities DERIVED from `z` get
+    written out in closed form, and a closed form derived under convention C
+    carries `z_C`'s square root where the general identity has none:
+
+        tr_M(sigma_1^2) = h*z + 1        at z_C  ->  1 + (q-1)/q^{1/2}
+        y_(2)  = (q*z + 1)/(q^2 + 1)     at z_C  ->  (q^{3/2}+q+1)/(q^3+q^2+q+1)
+
+    `scan()` cannot see either: it keys on an assignment target containing
+    `z`, and these are named `trM_sigma1_sq`, `W2`, `W11`, `census_hopf`. Four
+    such sites had to be found by hand after the producers they live in were
+    already reported migrated, and one of them (`trM_symbolic`) was missed even
+    then -- caught only because the file cross-checks its symbolic path against
+    its numeric one.
+
+    So the fingerprint is not the name, it is the EXPONENT. Convention D is
+    rational in `q`; a half-integer power of the substrate parameter cannot
+    arise from it. Two shapes are matched:
+
+        sqrt(q) / q**0.5 / q**1.5 / q**mpf("1.5") / q**Rational(3,2)
+        rt = sqrt(q)  ...  rt**3            (indirect, one hop)
+
+    `sqrt` of a COMPOUND expression is not matched — `mp.sqrt(q**4+q**2+1)` is
+    a legitimate polynomial norm, not `q^{1/2}`.
+
+    Reported only for files that ALSO define `z` the convention-D way: in a
+    file still wholly on C a square root is expected and is `scan()`'s
+    business, whereas in a migrated file it is a leftover.
+
+    ## Narrowed to trace/weight bindings, deliberately
+
+    The first version of this matched any half-power of `q` in a D-migrated
+    file and returned 50 sites, most of them legitimate. `q^{1/2}` is not by
+    itself a convention-C marker: `q^{1/2}+q^{-1/2}` is `[2]_{sqrt q}`, the
+    Temperley–Lieb loop parameter at half-argument, and it turns up in Wenzl
+    positivity, in pair-skein formulas, and in the Jones variable change
+    `t = q^{-2}`, `A^2 = -q`. `trace-convention-audit.ts` records the same
+    finding on the content side: 58 files carry the expression and flagging
+    them "would repeat the loose-grep error that once reported 70 producers
+    where the truth was 13".
+
+    So the match is narrowed to a half-power appearing in a binding whose NAME
+    says it is a trace or a Wedderburn weight — `trM`, `tr_m`, `W2`, `W11`,
+    `y_lambda`, `weight`, `hopf`, `census`. That is exactly the claim the
+    detector makes: those quantities are rational in `q` under D, so a square
+    root in one is `z_C` showing through. A half-power anywhere else is
+    somebody's legitimate `sqrt`, and not this detector's business.
+
+    Bindings whose name declares convention C (`..._C`, `census_hopf_C`) are
+    exempt, matching how `scan()` treats deliberately C-named targets: a
+    labelled cross-convention reference is a comparison, not a defect.
+    """
+    out = []
+    for r in roots:
+        base = pathlib.Path(r)
+        if not base.exists():
+            continue
+        for p in sorted(base.rglob("*.py")):
+            sp_ = str(p)
+            if "_deprecated" in sp_ or "/from_scratch/" in sp_:
+                continue
+            try:
+                src = p.read_text()
+                tree = ast.parse(src)
+            except (SyntaxError, UnicodeDecodeError, OSError):
+                continue
+            # Only files that have already moved to D. Elsewhere a square root
+            # is the unmigrated z itself, which `scan` already reports.
+            if "**3" not in "".join(src.split()).replace("* *", "**"):
+                continue
+            if not any(_defines_convention_d(src, t.id)
+                       for n in ast.walk(tree)
+                       if isinstance(n, ast.Assign)
+                       for t in n.targets if isinstance(t, ast.Name)) \
+               and not any(_returns_convention_d(fn) for fn in ast.walk(tree)
+                           if isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef))):
+                continue
+
+            # locals bound to sqrt(q), for the one-hop `rt**3` shape
+            roots_of_q = {
+                t.id for n in ast.walk(tree) if isinstance(n, ast.Assign)
+                for t in n.targets if isinstance(t, ast.Name)
+                if isinstance(n.value, ast.Call)
+                and ast.unparse(n.value.func).endswith("sqrt")
+                and n.value.args and _is_q_like(n.value.args[0])
+            }
+
+            def _half_power_in(node):
+                """First half-power of q inside `node`, or None."""
+                for n in ast.walk(node):
+                    if isinstance(n, ast.Call) and ast.unparse(n.func).endswith("sqrt") \
+                            and n.args and _is_q_like(n.args[0]):
+                        return f"sqrt({ast.unparse(n.args[0])})"
+                    if isinstance(n, ast.BinOp) and isinstance(n.op, ast.Pow):
+                        if _is_q_like(n.left) and _half_integer(n.right) is not None:
+                            return ast.unparse(n)
+                        if (isinstance(n.left, ast.Name) and n.left.id in roots_of_q
+                                and isinstance(n.right, ast.Constant)
+                                and isinstance(n.right.value, int)
+                                and n.right.value % 2 == 1):
+                            return f"{ast.unparse(n)}  (with {n.left.id} = sqrt(q))"
+                return None
+
+            # Only bindings that NAME a trace or a Wedderburn weight. See the
+            # docstring: a half-power elsewhere is somebody's legitimate sqrt.
+            for n in ast.walk(tree):
+                names, value = [], None
+                if isinstance(n, ast.Assign) and n.value is not None:
+                    names = [t.id for t in n.targets if isinstance(t, ast.Name)]
+                    value = n.value
+                elif isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    names, value = [n.name], n
+                if not names or value is None:
+                    continue
+                if not any(TRACE_OR_WEIGHT.search(nm) for nm in names):
+                    continue
+                if any(DELIBERATE.search(nm) for nm in names):
+                    continue
+                hit = _half_power_in(value)
+                if hit:
+                    out.append((sp_, getattr(value, "lineno", n.lineno),
+                                f"{names[0]} <- {hit}"))
+    return out
+
+
+def _returns_convention_d(fn) -> bool:
+    """Does this function return `q**3/(q**2+1)`?"""
+    for r in ast.walk(fn):
+        if not isinstance(r, ast.Return) or r.value is None:
+            continue
+        v = r.value
+        while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
+            v = v.operand
+        s = "".join(ast.unparse(v).split())
+        b = s.split("**3", 1)[0]
+        if b and s in (f"{b}**3/({b}**2+1)", f"{b}**3/(1+{b}**2)"):
+            return True
+    return False
 
 
 def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
@@ -241,9 +584,85 @@ def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
     return out
 
 
-def classify(path: str) -> str:
-    if path.startswith(BLOCKED_BY_DESIGN):
+def _half_argument_vars(tree: ast.AST) -> set:
+    """Names `t` for which the file declares `<q-like> = t ** 2`.
+
+    Such a `t` IS `sqrt(q)`, so `z = 1/(t + 1/t)` is convention C written with
+    no square root anywhere -- no `sqrt` call, no `0.5` exponent, and not the
+    `t/(t**2+1)` shape `is_c_form_halfarg` matches either. It is the third
+    spelling of C and it defeated both z-detectors:
+
+        t = sp.symbols("t", positive=True)
+        q = t ** 2
+        z = 1 / (t + 1 / t)          # <- convention C, invisible
+
+    Shape alone cannot decide this, and that is the point: `1/(q + 1/q)` is
+    `1/[2]_q`, the Temperley-Lieb loop reciprocal, which the selftest requires
+    NOT be flagged. The two are character-for-character identical and differ
+    only in whether the variable is `q` or `sqrt(q)`. So the file has to say
+    so, and here it does -- `q = t ** 2` is the declaration.
+    """
+    out = set()
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Assign) or n.value is None:
+            continue
+        if not any(_is_q_like(t) for t in n.targets):
+            continue
+        v = n.value
+        if (isinstance(v, ast.BinOp) and isinstance(v.op, ast.Pow)
+                and isinstance(v.left, ast.Name)
+                and isinstance(v.right, ast.Constant) and v.right.value == 2):
+            out.add(v.left.id)
+    return out
+
+
+def is_c_form_reciprocal(node: ast.AST, half_vars: set):
+    """`1 / (t + 1/t)` where `t` is a declared half-argument variable."""
+    if not half_vars:
+        return None
+    if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+        return None
+    if not _is_unit_numerator(node.left):
+        return None
+    den = node.right
+    if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
+        return None
+    d = "".join(ast.unparse(den).split())
+    for t in half_vars:
+        if d in (f"{t}+1/{t}", f"1/{t}+{t}"):
+            return t
+    return None
+
+
+def classify(path: str, blocked_files=(), declared_files=()) -> str:
+    """Bucket a site. `blocked_files` comes from the registry, not from here.
+
+    This used to label EVERY site under `tools/pyhecke/` "BLOCKED on C by
+    design", justified by a single `blocked_migrations` row for
+    `gram.py::z`. The blanket was too wide: the row covered the module-level
+    `z` and nothing else, while three function-local C definitions sheltered
+    under the same label -- two of them inside `gram.py` itself.
+
+    When `gram.py::z` moved to D and the row was resolved, those three stopped
+    having any registry basis at all, and a path-prefix classifier would have
+    gone on calling them "by design" forever. Deriving the label from the
+    registry means a site is only excused while a row actually excuses it.
+    """
+    if path in blocked_files:
         return "tools/pyhecke — BLOCKED on C by design (registry)"
+    if path in declared_files:
+        return ("tools/pyhecke — DECLARED C in evaluators.z, R10-waived "
+                "(open defect, still actionable)")
+    if path.startswith(BLOCKED_BY_DESIGN):
+        return "tools/pyhecke — C with NO registry row (unexplained)"
+    # computations/from_scratch/README.md declares the whole directory
+    # DEPRECATED for production (2026-05-29, #1422 decision A') -- kept for
+    # pedagogy, "not re-pursued". Same status as _deprecated/, which is
+    # skipped outright; bucketed rather than skipped so it stays countable.
+    if "/from_scratch/" in path:
+        return "from_scratch — DEPRECATED for production (its own README)"
+    if "/sage-examples/" in path:
+        return "tools/sage-examples — examples, not producers"
     name = pathlib.Path(path).name
     if "/probes/" in path or name.endswith("_probe.py") or "probe" in name:
         return "probes / exploratory"
@@ -254,7 +673,7 @@ def classify(path: str) -> str:
     return "computations — live producers"
 
 
-def scan(roots=ROOTS):
+def scan(roots=ROOTS, blocked_files=(), declared_files=()):
     """Yield (path, lineno, target_name, source, bucket, deliberate)."""
     for r in roots:
         base = pathlib.Path(r)
@@ -268,6 +687,7 @@ def scan(roots=ROOTS):
                 tree = ast.parse(p.read_text())
             except (SyntaxError, UnicodeDecodeError, OSError):
                 continue
+            half_vars = _half_argument_vars(tree)
             for n in ast.walk(tree):
                 if not isinstance(n, (ast.Assign, ast.AnnAssign)):
                     continue
@@ -277,11 +697,64 @@ def scan(roots=ROOTS):
                     continue
                 if n.value is None:
                     continue
-                if not (is_c_form(n.value) or is_c_form_halfarg(n.value)):
+                if not (is_c_form(n.value) or is_c_form_halfarg(n.value)
+                        or is_c_form_reciprocal(n.value, half_vars)):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
-                       classify(sp), bool(DELIBERATE.search(nm)))
+                       classify(sp, blocked_files, declared_files),
+                       bool(DELIBERATE.search(nm)))
+
+            # RETURNED, not assigned. The scan above keys off an assignment
+            # TARGET, so a function that computes the convention straight into
+            # its return statement has no target to match and was invisible:
+            #
+            #     def z_mp(dps=...):
+            #         ...
+            #         return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))
+            #
+            # That is `pyhecke.gram.z_mp`, a public 50-dps entry point, and it
+            # went unreported through every sweep that claimed the surface was
+            # clear. The analogue of "target name contains z" is "function name
+            # contains z", which keeps the same guard against matching
+            # unrelated `1/(sqrt(...)+...)` arithmetic.
+            for fn in ast.walk(tree):
+                if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    continue
+                if "z" not in fn.name.lower():
+                    continue
+                # A function that returns BOTH a C form and the D form is a
+                # convention DISPATCHER, not a defect -- its C branch is the
+                # labelled comparison, by construction.
+                #
+                # qbeta_kc21_parity_convention_immunity_probe.z_of(q, conv)
+                # returns sqrt(q)/(1+q) for "C", q**3/(q**2+1) for "D", and
+                # q/(1+q**2) for "X (control, in no channel; genericity probe
+                # only)". The half-argument matcher fired on the X CONTROL --
+                # `q/(1+q^2)` is exactly the r/(r^2+1) shape -- and a control
+                # deliberately chosen to be in no channel is the opposite of a
+                # convention-C leak.
+                #
+                # The DELIBERATE exemption could not catch it: it keys on the
+                # target NAME, and here the name is `z_of` with the label in a
+                # docstring and a branch guard. Returning D somewhere in the
+                # same function is the machine-checkable signal.
+                dispatcher = _returns_convention_d(fn)
+                for r in ast.walk(fn):
+                    if not isinstance(r, ast.Return) or r.value is None:
+                        continue
+                    val = r.value
+                    # `+expr` is used in this corpus to pin mpmath precision;
+                    # unwrap it or the shape never matches.
+                    while isinstance(val, ast.UnaryOp) and isinstance(val.op, ast.UAdd):
+                        val = val.operand
+                    if not (is_c_form(val) or is_c_form_halfarg(val)):
+                        continue
+                    yield (sp, r.lineno, f"{fn.name}() -> return",
+                           ast.unparse(val),
+                           "convention dispatcher (returns C and D) — labelled comparison"
+                           if dispatcher else classify(sp, blocked_files, declared_files),
+                           bool(DELIBERATE.search(fn.name)) or dispatcher)
 
 
 def selftest() -> int:
@@ -302,6 +775,14 @@ def selftest() -> int:
         "1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))",
         "1 / (q0 ** mpf('0.5') + q0 ** mpf('-0.5'))",
         "1 / (mp.sqrt(q0) + mp.sqrt(qi))",
+        # The mpf(1) numerator. The NO-FLOAT64 discipline requires carrying
+        # mpmath.mpf rather than a bare literal, so this is how the corpus
+        # actually writes it -- and until 2026-08-23 the matcher accepted only
+        # the bare `1`, which meant complying with one house rule made a site
+        # invisible to the other. Teaching it took actionable 1 -> 11.
+        "mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))",
+        "mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))",
+        "_mp.mpf(1) / (_mp.sqrt(_q) + _mp.sqrt(_qi))",
     ]
     half = [
         ("t / (t ** 2 + 1)", True),        # convention C in r = sqrt(q)
@@ -334,19 +815,155 @@ def selftest() -> int:
     # The re-export detector. `is_c_form` is blind to these by construction --
     # there is no arithmetic to shape-match, only an import -- so it needs its
     # own fixtures or it could silently match nothing forever.
-    repo = pathlib.Path(__file__).resolve().parent.parent
-    bl = blocked_symbols(repo)
+    # Fixtures, not the live registry. These used to assert "the registry has
+    # a blocked row", which passed only while one existed -- so resolving
+    # gram.py::z turned two green checks red without any logic changing. A
+    # selftest that fails when the DATA moves is testing the data.
     checks = [
-        ("registry yields at least one blocked (module, symbol)", bool(bl)),
-        ("the blocked file path resolves to an importable module path",
-         any(m == "pyhecke.gram" and s == "z" for m, s, _, _ in bl)),
+        ("package root is the LAST occurrence, not the first",
+         _module_path_of("tools/pyhecke/python/pyhecke/gram.py") == "pyhecke.gram"),
+        ("a plain package path resolves",
+         _module_path_of("src/foo/bar.py") == "foo.bar"),
+        ("a bare file resolves to its stem",
+         _module_path_of("gram.py") == "gram"),
     ]
-    if bl:
-        leaks = scan_reexports(repo=repo)
-        checks.append(("the known hecke_core re-export is detected",
-                       any("hecke_core.py" in l[0] and l[4] == "direct" for l in leaks)))
-        checks.append(("pyhecke's own modules are NOT reported as leaking",
-                       not any(l[0].startswith(BLOCKED_BY_DESIGN) for l in leaks)))
+    # The return-form blind spot. `scan` keyed off an assignment target, so a
+    # function returning the convention directly had nothing to match on --
+    # five live producers and pyhecke.gram.z_mp went unreported through every
+    # sweep that called the surface clear.
+    def _returns_found(src: str) -> int:
+        tree = ast.parse(src)
+        n = 0
+        for fn in ast.walk(tree):
+            if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                continue
+            if "z" not in fn.name.lower():
+                continue
+            for r in ast.walk(fn):
+                if not isinstance(r, ast.Return) or r.value is None:
+                    continue
+                v = r.value
+                while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
+                    v = v.operand
+                n += is_c_form(v) or bool(is_c_form_halfarg(v))
+        return n
+
+    # The closed-form scanner. Its whole risk is over-breadth -- the first
+    # version returned 50 sites in D-migrated files, nearly all legitimate
+    # square roots, which is the loose-grep error this repo has now made
+    # twice. These fixtures pin the narrowing.
+    def _cf(src: str) -> int:
+        import tempfile
+        d = pathlib.Path(tempfile.mkdtemp())
+        (d / "m.py").write_text("z = q ** 3 / (q ** 2 + 1)\n" + src)
+        cwd = pathlib.Path.cwd()
+        try:
+            import os
+            os.chdir(d.parent)
+            return len(scan_closed_forms(roots=(d.name,)))
+        finally:
+            os.chdir(cwd)
+
+    # The reciprocal form `1/(t + 1/t)` with `q = t**2` declared. Decidable
+    # ONLY from that declaration: it is character-for-character `1/[2]_q`, the
+    # Temperley-Lieb loop reciprocal, which must not be flagged. These two
+    # fixtures are the whole justification for reading the declaration.
+    def _hv(src):
+        return _half_argument_vars(ast.parse(src))
+
+    def _recip(src, decl="t = sp.symbols('t')\nq = t ** 2\n"):
+        tree = ast.parse(decl + src)
+        hv = _half_argument_vars(tree)
+        return any(is_c_form_reciprocal(n.value, hv)
+                   for n in ast.walk(tree)
+                   if isinstance(n, ast.Assign) and n.value is not None)
+
+    checks += [
+        ("`q = t ** 2` declares t as the half-argument variable",
+         _hv("t = sp.symbols('t')\nq = t ** 2\n") == {"t"}),
+        ("no such declaration -> no half-argument variables",
+         _hv("q = sp.symbols('q')\nx = q * 2\n") == set()),
+        ("`z = 1/(t + 1/t)` with q = t**2 IS convention C",
+         _recip("z = 1 / (t + 1 / t)\n")),
+        ("the same shape WITHOUT the declaration is 1/[2]_q, not z",
+         not _recip("z = 1 / (q + 1 / q)\n", decl="q = sp.symbols('q')\n")),
+        ("convention D in the half-argument variable is not flagged",
+         not _recip("z = t ** 6 / (t ** 4 + 1)\n")),
+        ("a trace closed form with sqrt(q) is flagged",
+         _cf("def trM_hopf(q):\n    return 1 + (q - 1) / mp.sqrt(q)\n") == 1),
+        ("a Wedderburn weight with q**1.5 is flagged",
+         _cf("def wenzl_weights(q):\n    W2 = (q ** 1.5 + q + 1) / d\n    return W2\n") >= 1),
+        ("`rt = sqrt(q)` then `rt**3` is flagged through the alias",
+         _cf("rt = sp.sqrt(q)\nW2 = (rt ** 3 + q + 1) / d\n") == 1),
+        ("sqrt of a POLYNOMIAL is not a half-power of q",
+         _cf("def trM_x(q):\n    return mp.sqrt(q ** 4 + q ** 2 + 1)\n") == 0),
+        ("a half-power OUTSIDE a trace/weight binding is left alone",
+         _cf("def loop_param(q):\n    return mp.sqrt(q) + 1 / mp.sqrt(q)\n") == 0),
+        ("a deliberately C-named trace form is exempt",
+         _cf("def trM_hopf_census_form_C(q):\n    return 1 + (q - 1) / mp.sqrt(q)\n") == 0),
+        ("a file with no convention-D z is not scanned at all",
+         len(scan_closed_forms(roots=("nonexistent-dir-xyz",))) == 0),
+        ("a bare `return 1/(sqrt(q)+1/sqrt(q))` is found",
+         _returns_found("def z_factor(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 1),
+        ("mpmath's precision-pinning unary + does not hide it",
+         _returns_found("def z_mp(d):\n    return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))\n") == 1),
+        ("a convention-D return is NOT flagged",
+         _returns_found("def z_mp(d):\n    return q ** 3 / (q ** 2 + 1)\n") == 0),
+        ("a function whose name has no z is left alone",
+         _returns_found("def loop(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n") == 0),
+        # The three pyhecke buckets. Only a blocked_migrations row excuses a
+        # site; a registry DECLARATION accounts for it without excusing it,
+        # which is the distinction that stopped four registered sites reading
+        # as "unexplained" when blocked_migrations was correctly emptied.
+        ("a blocked_migrations row excuses a site",
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  blocked_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .startswith("tools/pyhecke — BLOCKED")),
+        ("a DECLARED site is labelled as declared, not unexplained",
+         "DECLARED C in evaluators.z" in
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})),
+        ("declaring a site does NOT excuse it -- it stays actionable",
+         "still actionable" in
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})),
+        ("an undeclared pyhecke site is still unexplained",
+         classify("tools/pyhecke/python/pyhecke/atom.py",
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .endswith("(unexplained)")),
+        ("a blocked row outranks a declaration for the same file",
+         classify("tools/pyhecke/python/pyhecke/gram.py",
+                  blocked_files={"tools/pyhecke/python/pyhecke/gram.py"},
+                  declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
+         .startswith("tools/pyhecke — BLOCKED")),
+        # declared_c_files reads the LIVE registry: a C evaluator whose module
+        # is NOT waived must not be silently treated as declared.
+        ("an unwaived C evaluator does not count as declared",
+         "pyhecke/atom.py" not in
+         " ".join(declared_c_files(pathlib.Path(".")))),
+        # A convention DISPATCHER is a labelled comparison by construction.
+        # qbeta_kc21_parity_convention_immunity_probe.z_of returns C, D and an
+        # X control (q/(1+q^2), "in no channel"); the half-argument matcher
+        # fired on the CONTROL. DELIBERATE could not help -- the label is in a
+        # docstring and a branch guard, not the name.
+        ("a function returning BOTH C and D is a dispatcher, not a defect",
+         _returns_convention_d(ast.parse(
+             "def z_of(q, conv):\n"
+             "    if conv == 'C': return mp.sqrt(q) / (1 + q)\n"
+             "    if conv == 'D': return q ** 3 / (q ** 2 + 1)\n"
+             "    return q / (1 + q ** 2)\n").body[0])),
+        ("a function returning only C is NOT a dispatcher",
+         not _returns_convention_d(ast.parse(
+             "def z_mp(d):\n    return 1 / (mp.sqrt(q) + mp.sqrt(qi))\n").body[0])),
+        ("a file defining z the convention-D way is recognised as D",
+         _defines_convention_d("z = q0 ** 3 / (q0 ** 2 + 1)", "z")),
+        ("the reversed-denominator spelling is recognised as D",
+         _defines_convention_d("z = q ** 3 / (1 + q ** 2)", "z")),
+        ("a convention-C definition is NOT mistaken for D",
+         not _defines_convention_d("z = 1 / (q ** 0.5 + q ** (-0.5))", "z")),
+        ("a mere comment mentioning D does not count as a definition",
+         not _defines_convention_d("# convention D: q**3/(q**2+1)\nz = 0.4993", "z")),
+    ]
     for name, ok in checks:
         print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
         bad += not ok
@@ -367,7 +984,13 @@ def main() -> int:
     if args.selftest:
         return 1 if selftest() else 0
 
-    rows = list(scan())
+    blocked_files = {r.get("file", "") for r in
+                     __import__("json").loads(
+                         pathlib.Path("docs/coordination/trace-convention-registry.json")
+                         .read_text()).get("blocked_migrations", [])}
+    declared_files = declared_c_files(pathlib.Path("."))
+    rows = list(scan(blocked_files=blocked_files,
+                     declared_files=set(declared_files)))
     live = [r for r in rows if not r[5]]
     deliberate = [r for r in rows if r[5]]
 
@@ -381,8 +1004,26 @@ def main() -> int:
         print(f"  {v:4d} sites / {len(files[k]):3d} files   {k}")
     print(f"\n  {len(deliberate):4d} sites               deliberately C-named — labelled comparisons, not defects")
 
-    actionable = sum(v for k, v in buckets.items() if not k.startswith("tools/pyhecke"))
+    # Only a site with a live registry row is excused. "unexplained"
+    # pyhecke sites count as actionable -- that is the whole point of
+    # deriving the label from the registry instead of the path.
+    # Excused: a live registry row, or a directory whose own README declares
+    # itself out of production. tools/sage-examples is NOT excused -- nothing
+    # declares it dead, and an example teaching convention C is arguably worse
+    # than a producer using it, because examples get copied.
+    _EXCUSED = ("BLOCKED on C by design", "DEPRECATED for production")
+    actionable = sum(v for k, v in buckets.items()
+                     if not any(e in k for e in _EXCUSED))
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
+
+    closed = scan_closed_forms()
+    if closed:
+        print(f"\n  C-SPECIALISED CLOSED FORMS: {len(closed)} trace/weight binding(s) in "
+              f"convention-D files still carry a half-integer power of q.")
+        print("  Migrating z is not migrating the file: h*z+1 and (q*z+1)/(q^2+1) are")
+        print("  rational under D, so a square root in one is z_C showing through.")
+        for path, line, what in closed:
+            print(f"    {path}:{line}   {what}")
 
     leaks = scan_reexports(repo=pathlib.Path("."))
     if leaks:

@@ -25,7 +25,7 @@ $$
 
 1. **Linearity (proved):** $\mathrm{Lk}_R^{(k)}$ is $R$-bilinear.
 2. **Reduction at $k = 0$ (proved):** $\mathrm{Lk}_R^{(0)}(a, b) = \tau_R(b) \cdot a^*$, recovering the rank-1 dual endomorphism.
-3. **Multiplicativity (proved):** Additional linkings map strictly to pre-composition with $c_{A, A}$.
+3. **Multiplicativity (proved):** Additional linkings map to pre-composition with $c_{A, A}$.
 4. **Trace-cut symmetry (conditional):** Cutting the left component produces the $\iota$-conjugate operation $\mathrm{Lk}_R^{(-k)}(b, a)$.
 5. **Bar-involution compatibility (conditional):** $\iota(\mathrm{Lk}_R^{(k)}(a, b)) = \mathrm{Lk}_R^{(-k)}(\iota(a), \iota(b))$.
 

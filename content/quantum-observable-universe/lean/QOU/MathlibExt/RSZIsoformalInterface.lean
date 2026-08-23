@@ -4,7 +4,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 # Typed interface to the cited RSZ isoformal-classification statements
 
 Ramis–Sauloy–Zhang, *Local analytic classification of q-difference equations*
-(Astérisque 355, `uploads/0903.0853v3.pdf`), §3.3.
+(Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`), §3.3.
 
 **Why this file exists.** Prose citations do not typecheck. The corpus carried,
 from 2026-08-01, the chain
@@ -38,7 +38,7 @@ This file does **not** re-prove RSZ and claims no Stokes multiplier. It fixes th
 §7c: `ℤ`-valued slopes and ranks; pure arithmetic, nothing archimedean.
 Sorry-free.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
 -- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

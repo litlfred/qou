@@ -1,0 +1,276 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "descendants-colored-jones",
+ "source": {
+  "file": "descendants_colored_jones.pdf",
+  "sha256": "f00693a5926c074ffad7e37e63032d6f2a20c55598d1b37497760948cb6992fc",
+  "bytes": 295439,
+  "pages": 28
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "The descendant colored Jones polynomials",
+  "authors_raw": "Stavros Garoufalidis and Rinat Kashaev",
+  "abstract": "We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240129143409+02'00'",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "Acrobat Distiller 23.0 (Windows)",
+   "Title": ""
+  },
+  "title_lines": [
+   "Pure and Applied Mathematics Quarterly",
+   "The descendant colored Jones polynomials"
+  ],
+  "title_prev": "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The descendant colored Jones polynomials of a knot",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definition of the descendants",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Properties of the descendants",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A conjecture",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The colored Jones polynomials at roots of unity",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "R-matrices with a spectral parameter",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Proof of the gauge symmetry equations",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Knot invariants",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "An example",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A conjecture",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3665,
+   "n_words": 602
+  },
+  {
+   "id": "sec-001-the-descendant-colored-jones-polynomials-of-a-kn",
+   "number": null,
+   "title": "The descendant colored Jones polynomials of a knot",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4892,
+   "n_words": 876
+  },
+  {
+   "id": "sec-002-properties-of-the-descendants",
+   "number": null,
+   "title": "Properties of the descendants",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5937,
+   "n_words": 1055
+  },
+  {
+   "id": "sec-003-a-conjecture",
+   "number": null,
+   "title": "A conjecture",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 274,
+   "n_words": 55
+  },
+  {
+   "id": "sec-004-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 8034,
+   "n_words": 1524
+  },
+  {
+   "id": "sec-005-the-colored-jones-polynomials-at-roots-of-unity",
+   "number": null,
+   "title": "The colored Jones polynomials at roots of unity",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2298,
+   "n_words": 399
+  },
+  {
+   "id": "sec-006-r-matrices-with-a-spectral-parameter",
+   "number": null,
+   "title": "R-matrices with a spectral parameter",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3887,
+   "n_words": 736
+  },
+  {
+   "id": "sec-007-proof-of-the-gauge-symmetry-equations",
+   "number": null,
+   "title": "Proof of the gauge symmetry equations",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 4862,
+   "n_words": 821
+  },
+  {
+   "id": "sec-008-knot-invariants",
+   "number": null,
+   "title": "Knot invariants",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 4585,
+   "n_words": 877
+  },
+  {
+   "id": "sec-009-an-example",
+   "number": null,
+   "title": "An example",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1241,
+   "n_words": 154
+  },
+  {
+   "id": "sec-010-a-conjecture",
+   "number": null,
+   "title": "A conjecture",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 601,
+   "n_words": 110
+  },
+  {
+   "id": "sec-011-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 744,
+   "n_words": 111
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 28,
+   "n_chars": 7329,
+   "n_words": 1170
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 13,
+  "chars_total": 48349
+ }
+}

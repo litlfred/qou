@@ -23,4 +23,4 @@ Unifying the four bounds provides three concrete consequences. First, we replace
 
 We relate this to graded Titchmarsh. Mikusiński passes from $C[0,\infty)$ to its field of fractions via Titchmarsh's no-zero-divisor theorem. The graded analog asks at which iterated-integral depth the $*_q$-product on $\mathcal{H}_q$ first acquires zero divisors. Each surreal-bound remark is an obstruction to inverting a depth-$n$ element, representing exactly the obstruction Mikusiński removes by passing to fractions. The four bounds are instances of graded Titchmarsh failure, each occurring at its characteristic depth.
 
-This reframes existing content under a single rubric. The novel mathematical content resides in [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) and its discharge targets.
+The novel mathematical content resides in [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) and its discharge targets.

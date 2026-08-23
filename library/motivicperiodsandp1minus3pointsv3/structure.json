@@ -1,0 +1,1288 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "motivicperiodsandp1minus3pointsv3",
+ "source": {
+  "file": "MotivicPeriodsandP1minus3pointsv3.pdf",
+  "sha256": "7870572b8cc316d012008b2d4d371b02f4adc48a674f1e226de96050d4ffe8e0",
+  "bytes": 310629,
+  "pages": 25
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Motivic periods and P^1 minus 3 points",
+  "authors_raw": null,
+  "abstract": "This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 8.57",
+   "CreationDate": "D:20140719090749Z",
+   "Creator": "dvips(k) 5.96 Copyright 2005 Radical Eye Software",
+   "Title": "MotivicPeriodsandP1minus3pointsv3.dvi"
+  },
+  "title_lines": [
+   "Motivic periods and P1\\{ 0, 1, ∞}",
+   "Francis Brown∗"
+  ],
+  "title_prev": "Motivic periods and P1\\{ 0, 1, ∞} Francis Brown∗"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Unipotent completion. Deligne showed [10] that the pro-unipotent",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "There exists an abstract Tannakian category MT (Z) of mixed Tate motives",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The pro-unipotent completion πun",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(X,",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Motivic periods. Let T be a neutral Tannakian category over Q with",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "Motivic MZV’s. Let T = MT (Z). The Betti and de Rham realisations",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3.1"
+  },
+  {
+   "level": 2,
+   "title": "Transcendence of motivic periods. With hindsight, theorem 1.5",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "A ﬁnite-dimensional Q-vector space MB equipped with an increasing ﬁltra-",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A ﬁnite-dimensional Q-vector space MdR equipped with an increasing ﬁltra-",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An isomorphism comp B,dR : MdR ⊗ C",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "Multiple modular values. Therefore, in the ﬁnal part of this talk I want",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.4.1"
+  },
+  {
+   "level": 2,
+   "title": "Contents. In §2, I review the motivic fundamental group of X from its",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "The motivic fundamental group of P1\\{ 0, 1, ∞}",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Betti). A collection of schemes πB",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y) which are deﬁned over Q, and",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y) × πB",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, y, z) − →πB",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, z)",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y) − →πB",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y)(Q) (2.1)",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(de Rham). An aﬃne group scheme 4 over Q denoted by πdR",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Comparison). A canonical isomorphism of schemes over C",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y) ×Q C",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X) ×Q C . (2.2)",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y ) but does not depend on the choice of base points. The",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x, y ) = π dR",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X) is equivalent to saying that",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(M, x, y)]/I n+1 if k = n",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(M, x)]; see",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(Betti). The Betti fundamental groupoid is deﬁned to be th e pro-unipotent",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X(C), x)] − →Q − →0",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x)) = lim",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, x)]/I N +1",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X(C), x, y)] is",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(de Rham). When X = P1\\{0, 1, ∞}, one veriﬁes that",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(X)) ∼",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, ∞}",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Motivic multiple zeta values. By the previous paragraph, the",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Action of the motivic Galois group. The category MT (Z) is",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "(Gm,",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Ihara action. Let A denote the group of automorphisms of the groupoid",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Dual formula. The coaction on motivic iterated integrals is dual to",
+   "page": 13,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "The main theorem and consequences",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{0, 1, ∞},",
+   "page": 14,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Canonical generators. Recall that the unipotent zeta values ζu are",
+   "page": 15,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Idea of proof of theorem 1 .5. The proof of linear independence is",
+   "page": 16,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Roots of unity",
+   "page": 16,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{0, ±1, ∞},",
+   "page": 17,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "( N = 2; algebra generators). The following set of motivic perio ds:",
+   "page": 17,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "( N = 3, 4; linear basis). The set of motivic periods",
+   "page": 17,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Depth",
+   "page": 18,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Multiple modular values",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 2,
+   "title": "Eichler-Shimura integrals. Denote the space of homogenous poly-",
+   "page": 20,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Regularisation. The theory of tangential base points ([10], §15) gives",
+   "page": 21,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Cocycles. Choose a basis of Hecke normalised eigenforms fi indexed by",
+   "page": 21,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 2,
+   "title": "Galois action. One can mimic the Betti-de Rham aspects of the theory",
+   "page": 22,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "The coeﬃcients of CS can be interpreted as certain periods of the relative",
+   "page": 22,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "In ‘geometric’ situations, one expects the relative comp letion to be the Betti",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The action of the unipotent radical of the Tannaka group of mixed Hodge",
+   "page": 22,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Francis Brown",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-francis-brown",
+   "number": "2",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 318,
+   "n_words": 48
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1447,
+   "n_words": 258
+  },
+  {
+   "id": "sec-002-11-unipotent-completion-deligne-showed-10-that-t",
+   "number": "1.1",
+   "title": "Unipotent completion. Deligne showed [10] that the pro-unipotent",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 451,
+   "n_words": 73
+  },
+  {
+   "id": "sec-003-1-there-exists-an-abstract-tannakian-category-mt",
+   "number": "1",
+   "title": "There exists an abstract Tannakian category MT (Z) of mixed Tate motives",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 740,
+   "n_words": 147
+  },
+  {
+   "id": "sec-004-2-the-pro-unipotent-completion-πun",
+   "number": "2",
+   "title": "The pro-unipotent completion πun",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-1-x",
+   "number": "1",
+   "title": "(X,",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3180,
+   "n_words": 585
+  },
+  {
+   "id": "sec-006-13-motivic-periods-let-t-be-a-neutral-tannakian",
+   "number": "1.3",
+   "title": "Motivic periods. Let T be a neutral Tannakian category over Q with",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 897,
+   "n_words": 202
+  },
+  {
+   "id": "sec-007-4-francis-brown",
+   "number": "4",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 971,
+   "n_words": 190
+  },
+  {
+   "id": "sec-008-131-motivic-mzvs-let-t-mt-z-the-betti-and-de-rha",
+   "number": "1.3.1",
+   "title": "Motivic MZV’s. Let T = MT (Z). The Betti and de Rham realisations",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3171,
+   "n_words": 644
+  },
+  {
+   "id": "sec-009-14-transcendence-of-motivic-periods-with-hindsig",
+   "number": "1.4",
+   "title": "Transcendence of motivic periods. With hindsight, theorem 1.5",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 151,
+   "n_words": 29
+  },
+  {
+   "id": "sec-010-1-a-ﬁnite-dimensional-q-vector-space-mb-equipped",
+   "number": "1",
+   "title": "A ﬁnite-dimensional Q-vector space MB equipped with an increasing ﬁltra-",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 47,
+   "n_words": 10
+  },
+  {
+   "id": "sec-011-2-a-ﬁnite-dimensional-q-vector-space-mdr-equippe",
+   "number": "2",
+   "title": "A ﬁnite-dimensional Q-vector space MdR equipped with an increasing ﬁltra-",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 58,
+   "n_words": 10
+  },
+  {
+   "id": "sec-012-3-an-isomorphism-comp-bdr-mdr-c",
+   "number": "3",
+   "title": "An isomorphism comp B,dR : MdR ⊗ C",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 596,
+   "n_words": 130
+  },
+  {
+   "id": "sec-013-6-francis-brown",
+   "number": "6",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 934,
+   "n_words": 167
+  },
+  {
+   "id": "sec-014-141-multiple-modular-values-therefore-in-the-ﬁna",
+   "number": "1.4.1",
+   "title": "Multiple modular values. Therefore, in the ﬁnal part of this talk I want",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1104,
+   "n_words": 193
+  },
+  {
+   "id": "sec-015-15-contents-in-2-i-review-the-motivic-fundamenta",
+   "number": "1.5",
+   "title": "Contents. In §2, I review the motivic fundamental group of X from its",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1783,
+   "n_words": 305
+  },
+  {
+   "id": "sec-016-2-the-motivic-fundamental-group-of-p1-0-1",
+   "number": "2",
+   "title": "The motivic fundamental group of P1\\{ 0, 1, ∞}",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 156,
+   "n_words": 31
+  },
+  {
+   "id": "sec-017-1-betti-a-collection-of-schemes-πb",
+   "number": "1",
+   "title": "(Betti). A collection of schemes πB",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-018-1-x-x-y-which-are-deﬁned-over-q-and",
+   "number": "1",
+   "title": "(X, x, y) which are deﬁned over Q, and",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 55,
+   "n_words": 10
+  },
+  {
+   "id": "sec-019-1-x-x-y-πb",
+   "number": "1",
+   "title": "(X, x, y) × πB",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-1-x-y-z-πb",
+   "number": "1",
+   "title": "(X, y, z) − →πB",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-1-x-x-z",
+   "number": "1",
+   "title": "(X, x, z)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 60,
+   "n_words": 13
+  },
+  {
+   "id": "sec-022-1-x-x-y-πb",
+   "number": "1",
+   "title": "(X, x, y) − →πB",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-1-x-x-yq-21",
+   "number": "1",
+   "title": "(X, x, y)(Q) (2.1)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 146,
+   "n_words": 26
+  },
+  {
+   "id": "sec-024-2-de-rham-an-aﬃne-group-scheme-4-over-q-denoted",
+   "number": "2",
+   "title": "(de Rham). An aﬃne group scheme 4 over Q denoted by πdR",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 6,
+   "n_words": 2
+  },
+  {
+   "id": "sec-025-3-comparison-a-canonical-isomorphism-of-schemes",
+   "number": "3",
+   "title": "(Comparison). A canonical isomorphism of schemes over C",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 13,
+   "n_words": 3
+  },
+  {
+   "id": "sec-026-1-x-x-y-q-c",
+   "number": "1",
+   "title": "(X, x, y) ×Q C",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 8,
+   "n_words": 3
+  },
+  {
+   "id": "sec-027-1-x-q-c-22",
+   "number": "1",
+   "title": "(X) ×Q C . (2.2)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 467,
+   "n_words": 91
+  },
+  {
+   "id": "sec-028-1-x-x-y-but-does-not-depend-on-the-choice-of-bas",
+   "number": "1",
+   "title": "(X, x, y ) but does not depend on the choice of base points. The",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 47,
+   "n_words": 9
+  },
+  {
+   "id": "sec-029-1-x-x-y-π-dr",
+   "number": "1",
+   "title": "(X, x, y ) = π dR",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-030-1-x-is-equivalent-to-saying-that",
+   "number": "1",
+   "title": "(X) is equivalent to saying that",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 63,
+   "n_words": 13
+  },
+  {
+   "id": "sec-031-8-francis-brown",
+   "number": "8",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1064,
+   "n_words": 231
+  },
+  {
+   "id": "sec-032-1-m-x-yi-n1-if-k-n",
+   "number": "1",
+   "title": "(M, x, y)]/I n+1 if k = n",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 167,
+   "n_words": 35
+  },
+  {
+   "id": "sec-033-1-m-x-see",
+   "number": "1",
+   "title": "(M, x)]; see",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 266,
+   "n_words": 54
+  },
+  {
+   "id": "sec-034-1-betti-the-betti-fundamental-groupoid-is-deﬁned",
+   "number": "1",
+   "title": "(Betti). The Betti fundamental groupoid is deﬁned to be th e pro-unipotent",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 145,
+   "n_words": 27
+  },
+  {
+   "id": "sec-035-1-xc-x-q-0",
+   "number": "1",
+   "title": "(X(C), x)] − →Q − →0",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 137,
+   "n_words": 27
+  },
+  {
+   "id": "sec-036-1-x-x-lim",
+   "number": "1",
+   "title": "(X, x)) = lim",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 13,
+   "n_words": 4
+  },
+  {
+   "id": "sec-037-1-x-xi-n-1",
+   "number": "1",
+   "title": "(X, x)]/I N +1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 65,
+   "n_words": 16
+  },
+  {
+   "id": "sec-038-1-xc-x-y-is",
+   "number": "1",
+   "title": "(X(C), x, y)] is",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 79,
+   "n_words": 17
+  },
+  {
+   "id": "sec-039-2-de-rham-when-x-p10-1-one-veriﬁes-that",
+   "number": "2",
+   "title": "(de Rham). When X = P1\\{0, 1, ∞}, one veriﬁes that",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 5,
+   "n_words": 1
+  },
+  {
+   "id": "sec-040-1-x",
+   "number": "1",
+   "title": "(X)) ∼",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1079,
+   "n_words": 242
+  },
+  {
+   "id": "sec-041-21-periods-the-periods-of-the-motivic-fundamenta",
+   "number": "2.1",
+   "title": "Periods. The periods of the motivic fundamental groupoid of P1\\{0, 1, ∞}",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 918,
+   "n_words": 198
+  },
+  {
+   "id": "sec-042-10-francis-brown",
+   "number": "10",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 246,
+   "n_words": 56
+  },
+  {
+   "id": "sec-043-22-motivic-multiple-zeta-values-by-the-previous",
+   "number": "2.2",
+   "title": "Motivic multiple zeta values. By the previous paragraph, the",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2593,
+   "n_words": 568
+  },
+  {
+   "id": "sec-044-23-action-of-the-motivic-galois-group-the-catego",
+   "number": "2.3",
+   "title": "Action of the motivic Galois group. The category MT (Z) is",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 845,
+   "n_words": 168
+  },
+  {
+   "id": "sec-045-1-gm",
+   "number": "1",
+   "title": "(Gm,",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 452,
+   "n_words": 96
+  },
+  {
+   "id": "sec-046-12-francis-brown",
+   "number": "12",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 324,
+   "n_words": 52
+  },
+  {
+   "id": "sec-047-24-ihara-action-let-a-denote-the-group-of-automo",
+   "number": "2.4",
+   "title": "Ihara action. Let A denote the group of automorphisms of the groupoid",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1763,
+   "n_words": 380
+  },
+  {
+   "id": "sec-048-25-dual-formula-the-coaction-on-motivic-iterated",
+   "number": "2.5",
+   "title": "Dual formula. The coaction on motivic iterated integrals is dual to",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2148,
+   "n_words": 485
+  },
+  {
+   "id": "sec-049-14-francis-brown",
+   "number": "14",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 612,
+   "n_words": 129
+  },
+  {
+   "id": "sec-050-3-the-main-theorem-and-consequences",
+   "number": "3",
+   "title": "The main theorem and consequences",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1201,
+   "n_words": 240
+  },
+  {
+   "id": "sec-051-1-p10-1",
+   "number": "1",
+   "title": "(P1\\{0, 1, ∞},",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 478,
+   "n_words": 97
+  },
+  {
+   "id": "sec-052-31-canonical-generators-recall-that-the-unipoten",
+   "number": "3.1",
+   "title": "Canonical generators. Recall that the unipotent zeta values ζu are",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1890,
+   "n_words": 347
+  },
+  {
+   "id": "sec-053-16-francis-brown",
+   "number": "16",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-054-33-idea-of-proof-of-theorem-1-5-the-proof-of-lin",
+   "number": "3.3",
+   "title": "Idea of proof of theorem 1 .5. The proof of linear independence is",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2047,
+   "n_words": 365
+  },
+  {
+   "id": "sec-055-4-roots-of-unity",
+   "number": "4",
+   "title": "Roots of unity",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1134,
+   "n_words": 221
+  },
+  {
+   "id": "sec-056-1-p10-1",
+   "number": "1",
+   "title": "(P1\\{0, ±1, ∞},",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 418,
+   "n_words": 108
+  },
+  {
+   "id": "sec-057-5-depth",
+   "number": "5",
+   "title": "Depth",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 733,
+   "n_words": 143
+  },
+  {
+   "id": "sec-058-1-n-2-algebra-generators-the-following-set-of-mo",
+   "number": "1",
+   "title": "( N = 2; algebra generators). The following set of motivic perio ds:",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 217,
+   "n_words": 46
+  },
+  {
+   "id": "sec-059-2-n-3-4-linear-basis-the-set-of-motivic-periods",
+   "number": "2",
+   "title": "( N = 3, 4; linear basis). The set of motivic periods",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 421,
+   "n_words": 88
+  },
+  {
+   "id": "sec-060-18-francis-brown",
+   "number": "18",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4757,
+   "n_words": 917
+  },
+  {
+   "id": "sec-061-6-multiple-modular-values",
+   "number": "6",
+   "title": "Multiple modular values",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 328,
+   "n_words": 66
+  },
+  {
+   "id": "sec-062-20-francis-brown",
+   "number": "20",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-063-61-eichler-shimura-integrals-denote-the-space-of",
+   "number": "6.1",
+   "title": "Eichler-Shimura integrals. Denote the space of homogenous poly-",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1816,
+   "n_words": 411
+  },
+  {
+   "id": "sec-064-62-regularisation-the-theory-of-tangential-base",
+   "number": "6.2",
+   "title": "Regularisation. The theory of tangential base points ([10], §15) gives",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1525,
+   "n_words": 357
+  },
+  {
+   "id": "sec-065-63-cocycles-choose-a-basis-of-hecke-normalised-e",
+   "number": "6.3",
+   "title": "Cocycles. Choose a basis of Hecke normalised eigenforms fi indexed by",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 328,
+   "n_words": 83
+  },
+  {
+   "id": "sec-066-22-francis-brown",
+   "number": "22",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 743,
+   "n_words": 150
+  },
+  {
+   "id": "sec-067-64-galois-action-one-can-mimic-the-betti-de-rham",
+   "number": "6.4",
+   "title": "Galois action. One can mimic the Betti-de Rham aspects of the theory",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 60,
+   "n_words": 11
+  },
+  {
+   "id": "sec-068-1-the-coeﬃcients-of-cs-can-be-interpreted-as-cer",
+   "number": "1",
+   "title": "The coeﬃcients of CS can be interpreted as certain periods of the relative",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 499,
+   "n_words": 106
+  },
+  {
+   "id": "sec-069-2-in-geometric-situations-one-expects-the-relati",
+   "number": "2",
+   "title": "In ‘geometric’ situations, one expects the relative comp letion to be the Betti",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 211,
+   "n_words": 38
+  },
+  {
+   "id": "sec-070-3-the-action-of-the-unipotent-radical-of-the-tan",
+   "number": "3",
+   "title": "The action of the unipotent radical of the Tannaka group of mixed Hodge",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2932,
+   "n_words": 531
+  },
+  {
+   "id": "sec-071-7-references",
+   "number": "7",
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 97,
+   "n_words": 17
+  },
+  {
+   "id": "sec-072-24-francis-brown",
+   "number": "24",
+   "title": "Francis Brown",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 4915,
+   "n_words": 784
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 74,
+  "sections": 73,
+  "chars_total": 56540
+ }
+}

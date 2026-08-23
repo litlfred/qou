@@ -71,5 +71,5 @@ non-result — it was never the right quantity; #3864 already refused to interpr
 ## Cross-references
 
 - Superseded value: [`2026-07-18-bring-s4-elliptic-factor-genus-and-period-block.md`](2026-07-18-bring-s4-elliptic-factor-genus-and-period-block.md) (the 8.226 product, now retracted as the magnitude)
-- Structure + period: Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12 + Prop 4.6 (`uploads/2208.13692v1.pdf`)
+- Structure + period: Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12 + Prop 4.6 (`library/arxiv-2208.13692v1/2208.13692v1.pdf`)
 - The reduction this serves: `2026-07-17-alpha-em-kronecker-elliptic-determinant.md` (#3864, merged)

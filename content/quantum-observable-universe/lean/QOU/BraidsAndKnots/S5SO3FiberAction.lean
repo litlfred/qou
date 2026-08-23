@@ -21,7 +21,7 @@
   Geometric fiber map → conditional class (AGENTS.md §3b-cond).
 
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
-  -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring)
+  -- Ref: [klein1888] Klein, Lectures on the Icosahedron (Bring)
 -/
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
@@ -210,7 +210,7 @@ structure IcosahedralRotation where
     `conj:s5-so3-fiber-action`; no global instance is provided, so downstream
     theorems are genuinely conditional on it.
 
-    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring) -/
+    -- Ref: [klein1888] Klein, Lectures on the Icosahedron (Bring) -/
 class BringFiberAction where
   /-- The conjectural geometric fiber map on the corrected (A₅-irrep) domain:
       each A₅ irrep ↦ an icosahedral rotation, induced by Bring's quintic. -/
@@ -607,7 +607,7 @@ theorem reeb_eq_restriction_scaffold [bfa : BringFiberAction] (p : PartitionOf5)
     `scripts/keystone_habiro_coupling_lead.py` (exit 0), now machine-checked.
 
     -- Ref: [mckay1980graphs] McKay, Graphs, singularities, finite groups
-    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron -/
+    -- Ref: [klein1888] Klein, Lectures on the Icosahedron -/
 
 /-- Dimensions of the 9 irreducible reps of the binary icosahedral group 2I,
     equal to the Coxeter marks of the affine E₈ Dynkin diagram (McKay). -/

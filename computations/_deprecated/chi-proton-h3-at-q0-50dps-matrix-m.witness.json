@@ -3,7 +3,7 @@
   "description": "Lossless per-λ χ^λ(β_atomic(1,0))=proton at q_0, 50 dps, ALL 3 partitions of S_3 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — feasible at any n because χ_λ is dim-independent (~20 ms/λ). y_λ from the closed-form tower (y_lambda_tower_infra.py).",
   "producer": "rust-chi-q-via-gp-lossless",
   "convention": "sign-only-crossings",
-  "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 3,
   "atom": "proton",
@@ -15,27 +15,27 @@
   "n_skipped_max_dim": 0,
   "tr_M_partial": false,
   "partial": false,
-  "compute_time_sec": 0.0,
-  "tr_M_at_q0": "1.6331535900562524882042312883462421042749457306427",
+  "compute_time_sec": 0,
+  "tr_M_at_q0": "1.8843194672549750250902947231081562634724974417719",
   "by_partition": [
     {
       "partition": [
         3
       ],
-      "y_lambda": "0.41539579536061340131043751972541446062496615551882",
-      "chi_lambda": "3.1510888205302679097919517092829522529048865523641",
-      "contribution": "1.3089490468561078173537307971503357708022094621446",
-      "compute_time_sec": 0.0011
+      "y_lambda": "0.50540422650393080318755870324047227566035119774981",
+      "chi_lambda": "3.1510884206309757311343736985043593897060599433777",
+      "contribution": "1.5925734058744912397423356659210238068417578513713",
+      "compute_time_sec": 0
     },
     {
       "partition": [
         2,
         1
       ],
-      "y_lambda": "0.28092963103101970777815130637822107959502749332953",
-      "chi_lambda": "1.1797355219472526070797281903900417072180356666864",
-      "contribution": "0.3314226648948291275170046110172185790474005758911",
-      "compute_time_sec": 0.0003
+      "y_lambda": "0.24729788674803459840622064837976386216982440112509",
+      "chi_lambda": "1.1797353597191725258614203486158553915837977244179",
+      "contribution": "0.29174606138048378534795905718713245663073959040062",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -43,10 +43,14 @@
         1,
         1
       ],
-      "y_lambda": "0.022744942577347183133259867518143380184978857822109",
-      "chi_lambda": "-0.31735062289730035236679702737162728406223856393967",
-      "contribution": "-0.0072181216946844566665041198213122455746643073929845",
-      "compute_time_sec": 0.0002
+      "y_lambda": "3.5003166174815342380107344013862909374450688435081e-72",
+      "chi_lambda": "-0.31735066317173017737129673767300690430552086579962",
+      "contribution": "-1.1108277998687922742657076732154991659067273640766e-72",
+      "compute_time_sec": 0
     }
-  ]
+  ],
+  "pn_split_carried": false,
+  "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-gdtb (representation).",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

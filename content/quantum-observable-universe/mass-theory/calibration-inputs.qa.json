@@ -1422,6 +1422,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a fourth calibration.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.357Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The four closing bullets are all 'X is Y, not Z' ('topological ..., not a free choice'; 'knot invariants ..., not free parameters'; 'R-matrix eigenvalues ..., not independent inputs'), which is the reflex shape three times over -- but each contrast is against a named Standard-Model parameter the section is explicitly comparing to, so the negation carries the comparison rather than manufacturing emphasis.",
+        "notes": "note: if this block is ever revised, varying one or two of the four to a positive form would remove the only reason a reader would notice the construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1441,6 +1458,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.395Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the whole 1394-word remark; every numeric in it recomputed at 30 dps against the proton-pinned q_0 (table precisions, m_mu/m_e, Li_2 natural scale, all three E_0 values, Q_beta, h, q^2, the SM parameter count)."
       }
     ],
     "trap-em-dash": [
@@ -1460,6 +1493,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (7 in 1130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.429Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "About five spaced dashes in 1394 words, all appositive."
       }
     ],
     "trap-triples": [
@@ -1479,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 1130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.464Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'exactly three calibration inputs' and the three prediction groupings are the content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1498,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.499Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the whole 1394-word remark; every numeric in it recomputed at 30 dps against the proton-pinned q_0 (table precisions, m_mu/m_e, Li_2 natural scale, all three E_0 values, Q_beta, h, q^2, the SM parameter count)."
       }
     ],
     "trap-meta-commentary": [
@@ -1517,6 +1598,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.536Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the whole 1394-word remark; every numeric in it recomputed at 30 dps against the proton-pinned q_0 (table precisions, m_mu/m_e, Li_2 natural scale, all three E_0 values, Q_beta, h, q^2, the SM parameter count)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1536,6 +1633,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.573Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the whole 1394-word remark; every numeric in it recomputed at 30 dps against the proton-pinned q_0 (table precisions, m_mu/m_e, Li_2 natural scale, all three E_0 values, Q_beta, h, q^2, the SM parameter count)."
       }
     ],
     "trap-performed-warmth": [
@@ -1555,6 +1668,22 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.611Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the whole 1394-word remark; every numeric in it recomputed at 30 dps against the proton-pinned q_0 (table precisions, m_mu/m_e, Li_2 natural scale, all three E_0 values, Q_beta, h, q^2, the SM parameter count)."
       }
     ],
     "trap-superlative": [
@@ -1574,6 +1703,23 @@
         "reviewed_at": "2026-08-15T10:31:00.782Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.648Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'its mass is the most precisely measured particle mass in the Standard Model' is an unqualified superlative that the numbers in this block's own table do not support: it quotes m_e at 2.9e-10 relative, and CODATA 2018 gives m_p at 3.1e-10 -- the same order, so 'most precisely measured' is at best a tie. It sits inside a three-clause justification ('simplest charged lepton, ... most precisely measured ..., and its brane tower is fully computable'), which is where the inflation is easiest to miss.",
+        "notes": "proposed (structural): 'one of the two most precisely measured particle masses' or simply drop the clause -- the other two reasons carry the argument."
       }
     ],
     "trap-nonspeakable": [
@@ -1594,6 +1740,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "03ee80d9525d",
+          "ts": "9efc9d55778a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:41.698Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One sentence is truncated mid-clause: 'The free neutron is the simplest hadronic decay -- one crossing change (d -> u) inside one nucleon, no nuclear environment. Once $\\mathfrak{E}_0$ is fixed,' and then the text jumps straight to a bold run-in heading '**$\\mathfrak{Q}_\\beta$ cross-check gap.**'. The sentence never completes, so the paragraph has no predicate.",
+        "notes": "proposed (structural, NOT applied -- the missing clause is content, not grammar): restore the completion (presumably 'Once E_0 is fixed, every hadronic Q-value follows from (m_e, q_0)' or similar) or delete the fragment. RIGOR (not a trap). VERIFIED OK at the proton-pinned q_0 = 1.1099785827513808: table relative precisions 2.9e-10 / 2.2e-8 / 1.3e-6 all reproduce from the quoted +- values; hbar_q = (q-1)/q agrees with AGENTS.md's 1 - q^{-1}; m_mu/m_e = Vol(4_1)/hbar_q^2 = 206.768326 vs CODATA 206.7682830 (210 ppb, i.e. the documented mu-p tension); Li_2(q^{-2})/hbar_q^2 = 111.90 (quoted ~112) and m_e/that = 4.567e-3 (quoted 4.57e-3); E_0^{(N=0)} = m_e/(q_0(q_0-1)) = 4.18598 (quoted 4.186); E_0^full = 4.22748 (quoted 4.228); E_0^{(cal)} = 0.78233341/|h(h-2)/2| = 4.17897 (quoted 4.179); h = 0.20906 (quoted 0.209); q/q^{-1} = q^2 = 1.23205 (quoted 1.231); Q_beta(n) = 0.78233341 MeV is exactly m_n - m_p - m_e from CODATA; the 19-parameter Standard-Model count itemises correctly; the typed-decomposition '0.6% gap' measures 0.577%. THREE DEFECTS: (1) NUMERIC BASELINE -- 'With the tower form E_0^full active, the framework-derived value overshoots the calibrated value by +1.75%'. Against the CALIBRATED value defined three paragraphs earlier (4.179) the overshoot is +1.16%; +1.75% is the overshoot against the TYPED-crossings value 4.155, which the block introduces only as a parenthetical alternative. Proposed: name the baseline. (2) ORDERING -- the table lists CAL-1 = m_e first and CAL-2 = m_mu/m_e second, but the prose immediately below says 'The first input is a dimensionless ratio -- it fixes q_0' and 'The second input sets the leptonic mass scale', i.e. the reverse. (3) ABSOLUTE-MASS EXCISION (2026-08-11) -- the Predictions list carries 'Muon mass', 'Proton mass: via Skein pair formula ...' and 'Neutron mass: m_n = m_p + Q_beta' as predictions from q_0 + m_e. Absolute masses are m_e-scaled renderings of ratios and are no longer framework predictions; the muon entry is at least self-labelled '(first prediction, by construction matches calibration input)'. Proposed: restate as m_p/m_e, m_n/m_e and the splitting Delta_pn."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1616,5 +1779,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:41.698Z"
 }

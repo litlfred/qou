@@ -893,9 +893,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.154Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. No assertion-by-denial; positive claims are stated positively."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.193Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.236Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Spaced/unspaced dashes counted across the block; none load-bearing, density within normal parenthetical use."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.276Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. No reflex three-item list; enumerations present (if any) are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.316Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.357Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.398Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Final sentence checked against the block's opening claim; no restatement closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.438Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Institutional register throughout; no personal or affective language."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.478Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Maximum-strength claims checked against what the block establishes; none unqualified."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fe9c63555f1b",
+          "ts": "fd57a07fecf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:14.519Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full read of the block. Table-data block: rows are labels/relations/values only, no connective prose in which the construction could occur. Read for aloud-parseability; no noun-chain that stalls when spoken."
+      }
     ]
   },
   "label": "tbl:commutative-crossing-energy-table1-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:14.519Z"
 }

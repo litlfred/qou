@@ -187,8 +187,14 @@ def main() -> int:
         total += contrib
         per_partition.append({
             "partition": list(shape), "dim": f_dim,
-            "y_lambda": mp.nstr(y, 50), "chi_lambda": mp.nstr(chi_re, 50),
-            "contribution": mp.nstr(contrib, 50),
+            # NO FLOAT64 (bean qou-65qv): width follows the path actually
+            # taken. The `use_mp` branch is exact; the else-branch is an
+            # explicit double-precision fallback, and printing its result at
+            # 50 digits claimed 34 it never had.
+            "y_lambda": mp.nstr(y, 50),
+            "chi_lambda": mp.nstr(chi_re, 50 if use_mp else 17),
+            "contribution": mp.nstr(contrib, 50 if use_mp else 17),
+            "chi_precision": "mpmath" if use_mp else "float64-fallback",
         })
         if (idx + 1) % 10 == 0 or idx == len(shapes) - 1:
             el = time.time() - t0

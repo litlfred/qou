@@ -1,0 +1,182 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+ "source_sha256": "3bc30dc6a4a03a7f",
+ "brief": "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves — On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay",
+ "extended": "**On the Galois action on motivic fundamental groups of punctured elliptic and rational curves**\n\n123 pp, 32 sections.\n\n**Abstract.** On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021 ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) The algebraic, geometric, and analytic aspects of this action are examined in two cases: for- = P1 and for- an elliptic curve. To study this action, we rely on motivic correlators, canonical elements in the fundamental Lie coalgebra of the category of mixed motives over a number ﬁeld. We trace three themes: (1) The Lie coalgebra structure on the motivic correlators. Using combinatorial arguments with an injection of Hodge theory, we ﬁnd general families of relations (double shuﬄe relations) on these elements. (2) The Hodge realization of the structure in (1).\n\n**Outline.** Acknowledgments; Introduction; Hodge correlator integrals; Hodge and motivic correlators; Correlator coalgebra and fundamental group; Hodge correlators; Mixed Tate motives and correlators on rational; Motivic correlators; Multiple polylogarithms; Introduction and main results; Summary; Quasidihedral Lie coalgebras; Relations for Hodge and motivic correlators; Construction of the quasidihedral Lie coalgebr; Proof of Theorem 2.5; Specialization theorem for Hodge correlators; Proofs of Theorems 2.1, 2.6, and 2.7; Applications\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: is generalized to the following.\n- Theorem 1.5: (a) Thereisaﬂatconnectionon VmakingitavariationofmixedHodge\n- Theorem 1.6: The Hodge correlatorsCorH(I0,...,I =) are continuous onC=+1\\{I0=··· =I=}.\n- Theorem 2.1: (a) Supposethat A,B > 1andthatnotall =8 = 0ornotall F8 = 1. ThentheHodgecorrelators\n- Theorem 2.1: gives simple proofs of certain results of [GR].\n- Theorem 2.4: Theﬁrstshuﬄes,scalingrelations,anddistributionrelationsgenerateacoidealin C(",
+ "tokens": {
+  "brief": 48,
+  "extended": 514
+ },
+ "sections": [
+  {
+   "id": "sec-000-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-002-hodge-correlator-integrals",
+   "title": "Hodge correlator integrals",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-003-hodge-and-motivic-correlators",
+   "title": "Hodge and motivic correlators",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-004-correlator-coalgebra-and-fundamental-group",
+   "title": "Correlator coalgebra and fundamental group",
+   "pages": "12-18"
+  },
+  {
+   "id": "sec-005-hodge-correlators",
+   "title": "Hodge correlators",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-006-mixed-tate-motives-and-correlators-on-rational-c",
+   "title": "Mixed Tate motives and correlators on rational curves",
+   "pages": "18-25"
+  },
+  {
+   "id": "sec-007-motivic-correlators",
+   "title": "Motivic correlators",
+   "pages": "25-29"
+  },
+  {
+   "id": "sec-008-multiple-polylogarithms",
+   "title": "Multiple polylogarithms",
+   "pages": "29-34"
+  },
+  {
+   "id": "sec-009-introduction-and-main-results",
+   "title": "Introduction and main results",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-010-summary",
+   "title": "Summary",
+   "pages": "34-41"
+  },
+  {
+   "id": "sec-011-quasidihedral-lie-coalgebras",
+   "title": "Quasidihedral Lie coalgebras",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-012-relations-for-hodge-and-motivic-correlators",
+   "title": "Relations for Hodge and motivic correlators",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-013-construction-of-the-quasidihedral-lie-coalgebra",
+   "title": "Construction of the quasidihedral Lie coalgebra",
+   "pages": "45-52"
+  },
+  {
+   "id": "sec-014-proof-of-theorem-25",
+   "title": "Proof of Theorem 2.5",
+   "pages": "52-71"
+  },
+  {
+   "id": "sec-015-specialization-theorem-for-hodge-correlators",
+   "title": "Specialization theorem for Hodge correlators",
+   "pages": "71-76"
+  },
+  {
+   "id": "sec-016-proofs-of-theorems-21-26-and-27",
+   "title": "Proofs of Theorems 2.1, 2.6, and 2.7",
+   "pages": "76-79"
+  },
+  {
+   "id": "sec-017-applications",
+   "title": "Applications",
+   "pages": "79-82"
+  },
+  {
+   "id": "sec-018-introduction-and-main-results",
+   "title": "Introduction and main results",
+   "pages": "82-82"
+  },
+  {
+   "id": "sec-019-summary",
+   "title": "Summary",
+   "pages": "82-87"
+  },
+  {
+   "id": "sec-020-relations-for-correlators",
+   "title": "Relations for correlators",
+   "pages": "87-89"
+  },
+  {
+   "id": "sec-021-motivic-correlators-on-elliptic-curves",
+   "title": "Motivic correlators on elliptic curves",
+   "pages": "89-89"
+  },
+  {
+   "id": "sec-022-main-properties",
+   "title": "Main properties",
+   "pages": "89-93"
+  },
+  {
+   "id": "sec-023-symmetric-correlators-modulo-depth",
+   "title": "Symmetric correlators modulo depth",
+   "pages": "93-101"
+  },
+  {
+   "id": "sec-024-bianchi-hyperbolic-threefolds-and-modular-comple",
+   "title": "Bianchi hyperbolic threefolds and modular complexes",
+   "pages": "101-101"
+  },
+  {
+   "id": "sec-025-bianchi-tessellations-and-orbifolds",
+   "title": "Bianchi tessellations and orbifolds",
+   "pages": "101-103"
+  },
+  {
+   "id": "sec-026-modular-complexes",
+   "title": "Modular complexes",
+   "pages": "103-106"
+  },
+  {
+   "id": "sec-027-relating-the-modular-and-bianchi-complexes-to-th",
+   "title": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra",
+   "pages": "106-109"
+  },
+  {
+   "id": "sec-028-applications",
+   "title": "Applications",
+   "pages": "109-109"
+  },
+  {
+   "id": "sec-029-the-weight-4-case-euler-complexes",
+   "title": "The weight 4 case: Euler complexes",
+   "pages": "109-112"
+  },
+  {
+   "id": "sec-030-degeneration-to-rational-curves-voronoi-complexe",
+   "title": "Degeneration to rational curves: Voronoi complexes and multiple -values",
+   "pages": "112-120"
+  },
+  {
+   "id": "sec-031-references",
+   "title": "References",
+   "pages": "120-123"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

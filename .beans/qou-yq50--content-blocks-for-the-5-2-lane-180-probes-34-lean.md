@@ -96,3 +96,141 @@ because the "det +-2 phenomenon" is cited elsewhere.
   table to prose rather than risk it.
 - `qa-sweep` lives in the folio-assistant clone after miga:
   `bun run folio-assistant/content/pipeline/qa-sweep.ts <block-path>`.
+
+## Tranche 3 — the level-seven ladder, and the three sevens (2 blocks)
+
+1. `prop:fivetwo-level-seven-ladder` ->
+   `QOU.QBeta.FiveTwoLevelSevenLadder.sum_of_numerators`. Three five-term
+   instances give the three Q(zeta_7)^+ numerators m = (17,5,-1); the 7 comes
+   from the quadratic residues {1,2,4} mod 7 acting on the three real
+   conjugates. `L` abstract, generic CommRing. Conditional on its hypotheses,
+   which are NOT proved there (five-term, Landen, Route 8 transport).
+
+2. `rem:fivetwo-three-sevens` (interprets the trace-field block). The reusable
+   lesson of this whole arc.
+
+## THREE distinct sevens, measured
+
+| seven | layer | field |
+|---|---|---|
+| det(5_2) = 7 | abelian / Alexander | Q(sqrt-7) |
+| dt+ + dt- = 7 | tau-even Stokes sum | none claimed |
+| level 7 | cyclotomic | Q(zeta_7)^+ |
+
+and the trace field is a FOURTH object (cubic, disc -23).
+
+## The near-miss that makes a bare degree check insufficient
+
+Computed rather than recalled:
+
+    Q(zeta_7)^+ : x^3 - 2x^2 -  x + 1,  disc  49, totally real, CYCLIC
+    trace field : x^3 - 2x^2 + 3x - 1,  disc -23, one real place, S_3
+
+**Both cubic. Both minimal polynomials open `x^3 - 2x^2`.** Different fields.
+So matching degree AND matching leading coefficients is worth nothing — which
+is the sharper form of the qou-5gh6 lesson (where my own degree heuristic was
+the over-claim). A degree check rules things OUT (tower law); it never rules
+anything IN.
+
+## An authoring pattern worth keeping
+
+`char_seven_forces`: the ladder is stated CLEARED (7T = ...) not divided. Not
+timidity about 7^-1 -- in characteristic 7 the hypotheses FORCE 3*L1 = 0, so
+L1 = 0 and every target degenerates to 0 = 0. The divided form would be vacuous
+exactly where it could not be stated. Clear the denominator; let the content sit
+where the denominator is invertible.
+
+## Tranche 4 — the envelope transport (1 block)
+
+`prop:fivetwo-envelope-transport` ->
+`QOU.QBeta.FiveTwoDeformedSaddle.envelopeS_total` (in FiveTwoTransport.lean --
+note file name != namespace).
+
+S(pi) - S(0) = pi^2, given continuity on [0,pi] and dS/dphi = 2phi off ONE
+exceptional point (phi_0, where the discriminant vanishes, two root branches
+collide, and no differentiable labelling exists through it).
+
+## Two things worth having in the paper
+
+1. **Why one exceptional point is not a fudge.** S is a SYMMETRIC function of
+   the roots, so as a function of phi it needs no labelling at all -- well
+   defined and continuous across phi_0 precisely where the branches swap. The
+   labelling is needed only to differentiate term by term, a local operation.
+   Reusable and not specific to 5_2: a symmetric function of a family of roots
+   is insensitive to the monodromy that permutes them, so an obstruction to
+   labelling the branches is NOT an obstruction to the symmetric total.
+
+2. **Non-vacuity is PROVED.** `envelopeS_total_nonvacuous` exhibits
+   S(phi) = phi^2 satisfying both hypotheses. Deliberately trivial -- it exists
+   to rule out the vacuous reading, not to supply evidence, and the file says
+   so. Good authoring practice and the honest counterpart to the AGENTS.md
+   anti-vacuity discipline; worth copying.
+
+## Scope carried into the block
+
+The derivative is a HYPOTHESIS. What is formalised is the integration step
+(hypothesis -> total pi^2, tolerating one exceptional point), NOT the
+identification of the integrand. That identification is numerical (Route 30:
+S' = 2phi per root to 4.6e-41, summed 9.2e-41) and is not formalised.
+
+## Arc status: 8 blocks
+
+trace-field, saddle-sum-rule, bar-odd-arithmetic-home, dt-spectrum-split,
+stokes-unimodular, level-seven-ladder, three-sevens, envelope-transport.
+
+Remaining sorry-free and unnarrated: FiveTwoRootStructure (26 thms),
+FiveTwoDiscriminant, FiveTwoRogersReflection/RogersExtend, the pentagon
+machinery (FiveTwoComplexPentagon has 119 decls but its headline is already
+narrated as the sum rule), FiveTwoCyclotomicBloch, the Envelope* family,
+FiveTwoBranch*/ArgSector/CutAvoidance (branch bookkeeping -- mostly
+infrastructure rather than results).
+
+HONEST ASSESSMENT: the high-value surface is largely covered. What remains is
+mostly (a) infrastructure lemmas whose narrative face is already carried by the
+results they support, and (b) FiveTwoRootStructure/Discriminant, which are the
+root-existence and discriminant plumbing under the trace-field block. A tranche
+5 would be real but thinner than 1-4.
+
+## Tranche 5 — and I was WRONG that it would be thin
+
+I predicted tranche 5 would be "real but noticeably thinner than 1-4". On
+`FiveTwoDiscriminant` that was wrong, and the file is arguably the most
+instructive of the eight.
+
+`prop:fivetwo-discriminant-vanishes` ->
+`QOU.QBeta.FiveTwoDiscriminant.exists_unit_circle_disc_zero`.
+
+It is a REFUTATION. The transport argument had recorded a sub-gap closed on
+
+    "the three branches never collide on the arc (min |disc| = 0.348)"
+
+and stated the envelope theorem's implicit-function hypothesis as satisfied on
+the same constant. Both false. 0.348 was a GRID minimum from a ~360-point scan;
+the dip is narrow (|disc'| ~ 87) so refinement gives 0.068, 0.0068, 0.
+
+**A minimum over samples bounds the samples, not the function** -- and that
+constant had been carried into a proof step.
+
+The refutation is short: disc is palindromic, so disc x = x^4 Q(x + 1/x) with
+Q u = u^4 - 6u^3 + 7u^2 + 6u - 31; Q(-2) = 49 > 0 > -23 = Q(-1) gives an IVT
+root at u ~ -1.4844, and |x|=1 is exactly x + 1/x real in [-2,2] which contains
+(-2,-1). Verified the Q values and the root independently.
+
+Conclusion survives, argument dies: S is symmetric over all roots, a collision
+permutes them, and a symmetric function cannot notice a permutation. This is
+WHY tranche 4's envelope block tolerates one exceptional point -- the tolerance
+is the shape of the situation, not a hedge. The two blocks complete each other.
+
+## Two -23s, separated
+
+disc(1) = -23 IS the trace-field discriminant (at x=1 the curve degenerates to
+the saddle cubic, `ggm_one`). Q(-1) = -23 is a COINCIDENCE -- Q takes that value
+at u = -1, 1 and 2 alike, and only u=2 corresponds to x=1. Separated in the
+block, per rem:fivetwo-three-sevens.
+
+## Nine blocks. Remaining is now genuinely thin
+
+FiveTwoRootStructure (the IVT root existence feeding the branch pinning) is real
+but is infrastructure under the discriminant/envelope pair. The Rogers/pentagon
+and Branch*/ArgSector/CutAvoidance families are bookkeeping whose narrative face
+is carried by the results above.

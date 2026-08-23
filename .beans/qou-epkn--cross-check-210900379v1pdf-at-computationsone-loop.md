@@ -3,8 +3,9 @@
 title: Cross-check 2109.00379v1.pdf at computations/one_loop_torsion.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:11Z
-updated_at: 2026-08-08T23:36:11Z
+updated_at: 2026-08-21T17:04:53Z
 ---
 
 Regression-check computations/one_loop_torsion.py's 4_1 output against this paper's worked 4_1 example. This is a cross-check only: no external number may be adopted, and a match does not pin the c >= 2 constant the producer's own caveat flags as unpinned.
@@ -15,7 +16,14 @@ Regression-check computations/one_loop_torsion.py's 4_1 output against this pape
 - Sects. 3.1 and 5.1 (the knot 4_1) — Fully worked NZ matrices and 1-loop invariant for the figure-eight knot.
   Use here: An independent published 4_1 value to regression-test computations/one_loop_torsion.py against, which matters because the corpus's 4_1 calibration was previously off by exactly a factor of two.
 
-Source: `uploads/2109.00379v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-2109.00379v1/2109.00379v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2109.00379v1/  ->  [garoufalidis2021]
+  TWISTED NEUMANN–ZAGIER MATRICES
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [garoufalidis2021] as the citation key when you do it.

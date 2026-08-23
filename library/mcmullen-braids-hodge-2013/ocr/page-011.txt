@@ -1,0 +1,64 @@
+Braiding of the attractor 269
+
+Proof. We may assume |A|24 (otherwise Mod(A) itself is finite and there is
+nothing to prove). Propositions 4.2 and 4.3 imply the existence of a separator
+K such that f(K)=K. K is a distinguished component of the Julia set, so the
+map from Mod(J U A, f) onto Univ(A, f) can be factored:
+
+Mod(J U A) > Mod(K UA, f) > Univ(A, f).
+
+By the definition of an attractive map, K has measure zero. Thus K carries
+no invariant line field and by [Mc2, 3.4], Mod(K, f) is a finite group. (A sketch
+of the argument: one may perform surgery to create a new rational map g
+for which elements of Mod(K, f) can be realized as conformal automorphisms
+~— ie. Mébius transformations commuting with g. And the group of such
+automorphisms is finite.)
+
+Since K is a_ separator, the natural homomorphism Mod(KuU
+A, f) > Mod(K, f) is injective. (Each component of €—K is a disk containing
+at most one point of A. If [f] in Mod(K UA, f) is isotopic to the identity
+tel K, the isotopy can be easily modified so it is also rel A.) Hence Mod(K U A, f)
+and Univ(A, f) are both finite. 1
+
+Proof of Theorem 2.1 (Controlled Braiding). Let (X, f) be an attractive family
+with monodromy G; by Proposition 4.1 G is a subgroup of Univ(A, f). If G
+is irreducible and fixed-point free, the same is true of Univ(A, f); then by the
+above Univ(A, f) is finite, so G is finite. 0
+
+Acknowledgements. I'd like to thank Peter Doyle and Jane Gilman for discussions and for suggesting
+improvements.
+
+Appendix: A stable family with pseudo-Anosov monodromy
+
+Our construction begins with a function f(z) with the following properties.
+
+1) The map f(z) is a degree 6 monic polynomial, with three finite simple critical points c,,¢2,¢3,
+such that f(c,)=c;; and a fourth critical point x of multiplicity two such that f(x) > 00.
+
+2) The leaf through x of the canonical foliation of the basin of oo is a bouquet of three circles,
+each enclosing one of the c, and mapped by degre 2 to the leaf through f(x). (The foliation we
+tefer to is the closure of the small orbit relation; see [BI], §9] or [Sul 2].)
+
+It follows that from (1) that f is expanding, with attractor A={c1,C2,c3, 0}.
+
+For X we take the component of the space of expanding degree 6 polynomials which contains
+J. Then (X, f) is an attractive family.
+
+Theorem A.1. The monodromy group G of (X,f) contains a pseudo-Anosov transformation fixing oo
+and cyclically permuting the other three points in the attractor.
+
+The proof will use only properties (1) and (2), so we first discuss the existence of such an f.
+Proposition A.2. There exists a polynomial f (z) satisfying (1) and (2).
+
+Proof. This can be verified by an algebraic calculation, or done quasiconformally. The latter approach
+is more general and conceptual; to describe it, we introduce some notation: L, will denote the
+leaf of the foliation through f"(x), 4, the annulus bounded by L, and L,,,. Note that Lo is the
+bouquet through x (Fig. A.1).
+
+We will build a smooth map with the desired dynamics, then observe it is conjugate to a rational
+map.
+
+Begin by picking points to be {c,¢2,¢3,f(x) and f2(x)}, and drawing real analytic curves
+to represent the leaves L,, i=0,1,2, arranging the petals of the bouquet to meet in 60° angles
+at x. Map the disks enclosed by each petal conformally by degree 2 to the disk enclosed by the
+

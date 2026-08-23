@@ -11,7 +11,7 @@ $$
   q  \;\longmapsto\;  \tilde q \;:=\; \exp\!\bigl(2\pi i / \tau\bigr).
 $$
 
-The substrate enters this picture through its bar image $q_0^{-1}$, not through $q_0$. Modular convergence requires $\operatorname{Im}\tau > 0$. Because $q_0 \approx 1.11 > 1$, the value $q_0 = e^{2\pi i\tau_0}$ has $\operatorname{Im}\tau_0 < 0$. Only $q_0^{-1} \approx 0.901 < 1$ lands in $\mathbb{H}$. The modular sector is intrinsically bar-symmetric.
+The substrate enters this picture through its bar image $q_0^{-1}$, not through $q_0$. Modular convergence requires $\mathrm{Im}\tau > 0$. Because $q_0 \approx 1.11 > 1$, the value $q_0 = e^{2\pi i\tau_0}$ has $\mathrm{Im}\tau_0 < 0$. Only $q_0^{-1} \approx 0.901 < 1$ lands in $\mathbb{H}$. The modular sector is intrinsically bar-symmetric.
 
 The $S$-transform provides a structural duality. The parameter $q$ admits a bar-symmetric real parameterisation ($q \in \mathbb{R}_{>0}$) and a modular parameterisation ($q = e^{2\pi i \tau}$). The analytic continuation of every Hecke quantity to the modular parameter is well-defined. The $S$-transform $\tau \mapsto -1/\tau$ provides a categorical duality complementing the bar involution.
 
@@ -51,7 +51,7 @@ statement above; witness
 This gives the framework an **explicit categorical handle** on the
 small-$q_0$ $\leftrightarrow$ root-of-unity duality.
 
-## Relationship to 's complex-q lift
+## Relationship to the complex-$q$ lift
 
 The complex-$q$ extension
 ([`prop:q-zero-complex-extension`](#prop:q-zero-complex-extension)
@@ -112,7 +112,7 @@ parameter manifold:
 
 ## Cross-references
 
-  blocks `prop:q-zero-complex-extension` +
+- The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
   `prop:lusztig-vs-hermitian-bar`
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
 - The Bloch-group route: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)

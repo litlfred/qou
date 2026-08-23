@@ -22,11 +22,11 @@ design `docs/workplans/2026-06-08-bib-human-review-workflow-design.md`.
 - A **photo is attached** to a `bib-physical-review` GitHub issue (subscribe via
   `mcp__github__subscribe_pr_activity` / issue events), **or**
 - the `bib-human-review` skill has marked a reference `source-in-repo` (agent
-  identifies the cited passage in `uploads/` — no human photo needed).
+  identifies the cited passage in `library/` — no human photo needed).
 
 ## Pipeline (on a photo / identified passage)
 
-1. **Read the source.** OCR the photo (or read the `uploads/` passage); extract
+1. **Read the source.** OCR the photo (or read the `library/` passage); extract
    the specific cited theorem/section/equation.
 2. **Source-match.** Confirm the QOU usage matches the source statement — the
    `.md` claim, the `\cite{}`/`uses[]` sites, the Lean `-- Ref:`. Flag any

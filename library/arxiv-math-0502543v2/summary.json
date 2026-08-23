@@ -1,0 +1,37 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0502543v2",
+ "source_sha256": "227ef8150cb08faf",
+ "brief": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR — In his paper [6] J.",
+ "extended": "**CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR**\n\n12 pp, 3 sections.\n\n**Abstract.** In his paper [6] J. Milnor conjectured that the volume of n-dimensional hyperbolic and spherical simplices, as a function of the dihedral angles, extends continuously to the closure of the space of allowable angles. A prove of this conjecture was rec ently given by F . Luo ([5]1). In this paper we give a simple proof of this conjecture, prove much sharper regularity results, and then extend the method to apply to a large class of convex polytopes. The simplex argument works without change in dimensions greate r than 3 (and for spherical simplices in all dimensions), so th e bulk of this paper is concerned with the three-dimensional argum ent. The estimates relating the diameter of a polyhedron to the le ngth of the systole of the polar polyhedron are of independent int erest. 1. I ntroduction Consider the set of simplices in Hn or Sn.\n\n**Outline.** 2 A simple proof for simplices (among other th; 3 Convex polytopes; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Theorem 3. Let Ωbe a C 0,1 domain in Rn. Then,\n- Theorem 4: A metric space (M, g) homeomorphic to S2 can arise\n- Theorem 5: There exists a constant L 0, such that the maximal length ℓP of\n- Theorem 6: ) . Let C be an abstract polyhedron\n- Theorem 7: Let σ be a cell decomposition of S 2, and\n- Theorem 9: Let X be a convex polyhedron with N vertices inH3 of diameter",
+ "tokens": {
+  "brief": 23,
+  "extended": 369
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-a-simple-proof-for-simplices-among-other-thing",
+   "title": "A simple proof for simplices (among other things)",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-3-convex-polytopes",
+   "title": "Convex polytopes",
+   "pages": "5-11"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "11-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

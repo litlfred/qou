@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.193Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Full read of statement + empirical verification + structural interpretation. The one near-contrast (\"Partitions with l(lambda)>2 correspond to higher-rank symmetry components absent from the spin-1/2 pairing observable\") states a positive fact about absence; no \"not X but Y\" construction anywhere."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.229Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "No setup-then-reframe. Sections proceed statement -> numerics -> interpretation without a pivot clause."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.265Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Zero em-dashes in the .md."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.301Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Only triple is \"pp at gen 2, pn at gen 5, nn at gen 8\" — the three actual operator-valued interfaces of the canonical word; substantive enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.337Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Final line is a route comparison (\"This proposition derives the identical fingerprint from the Sigma_lambda y_lambda chi^lambda_q Wedderburn sum\"), factual bookkeeping, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1941,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.374Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "No narration of emphasis; \"We define\" / \"We have\" are standard mathematical register."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1975,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.412Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Cross-reference-closer false-positive class: the final sentence points at the Delta_lambda route rather than restating the proposition."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2009,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.447Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2043,21 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.482Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "No unqualified maximum-strength claims; \"at least 80%\" and \"86.6%\" are quantified."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2077,22 @@
         "reviewed_at": "2026-08-15T10:31:00.680Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2c52eab9c63b",
+          "ts": "8339b32a657d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:05:44.516Z",
+        "reviewed_sha": "d218911058f1230d36161ecfb620d55b1cf45b5e",
+        "evidence": "Prose reads aloud cleanly. Noted separately: \"The canonical formalism predicts the top block\" is a vague agentless subject that the .ts docstring attributes to the script delta_lambda_2row_stratum_analysis.py — likely token substitution from the canonical/numerical sweep; reported as a finding, not fixed inline.",
+        "notes": "STALE-WITNESS finding recorded separately; no prose edit applied."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1965,5 +2116,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:05:44.516Z"
 }

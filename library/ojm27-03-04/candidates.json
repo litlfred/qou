@@ -1,0 +1,93 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "ojm27-03-04",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b357cc8378dae3fdb81346201aac1ad1895fea5de9d204b9e885950eae2e2c96",
+  "file": "ojm27_03_04.pdf"
+ },
+ "provenance": {
+  "title": "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.18910/11468"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "proposition": 3,
+   "theorem": 1,
+   "conjecture": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1.1",
+   "name": null,
+   "statement": "For polygons in the hyperbolic plane H2, as indicated in",
+   "section_file": "sections/sec-001-1-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "The above construction gives a complete hyperbolic struc-",
+   "section_file": "sections/sec-004-3-infinitely-many-mutually-non-isometric-hyperbo.md",
+   "section_title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+   "pages": "11-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": "Thurston [3]",
+   "statement": "Let M3 be a non-singular hyperbolic 3-",
+   "section_file": "sections/sec-004-3-infinitely-many-mutually-non-isometric-hyperbo.md",
+   "section_title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+   "pages": "11-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.3",
+   "name": null,
+   "statement": "Let g be an integer greater than or equal to 2. Let Ml be",
+   "section_file": "sections/sec-004-3-infinitely-many-mutually-non-isometric-hyperbo.md",
+   "section_title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+   "pages": "11-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "3.4",
+   "name": null,
+   "statement": "With the same hypotheses as in Theorem 3.3, M|(\u03bc\u039b)\\",
+   "section_file": "sections/sec-004-3-infinitely-many-mutually-non-isometric-hyperbo.md",
+   "section_title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+   "pages": "11-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

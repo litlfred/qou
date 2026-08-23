@@ -1,0 +1,91 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9308100v1",
+ "source_sha256": "032c25faa757b650",
+ "brief": "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles .",
+ "extended": "**Gedanken Experiments Involving Black Holes**\n\n*Stanford University, Stanford, CA 94305-4060*\n\n22 pp, 14 sections.\n\n**Abstract.** Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles . Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale eﬀects for their analysis. Obser vers who fall through the event horizon after sampling the Hawking radiation cannot discov er duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signiﬁcant eﬀects well o utside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆ susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu 1\n\n**Outline.** Abstract; 1 Introduction; 2 Experiments in Rindler Space; 3 Experiments Outside Black Holes; 4 Experiments Performed Inside Black Holes; 5 Information Retention Time; 6 Experiments Involving Time Reversal; 7 Summary; References; 2 L. Susskind, L. Thorlacius, and J. Uglum, Th; 3 J. Preskill, private communication at the IT; 5 L. Susskind, String Theory and the Principle; 8 K. S. Thorne, R. H. Price, and D. A. MacDona; 11 D. N. Page, Expected Entropy of a Subsystem",
+ "tokens": {
+  "brief": 48,
+  "extended": 337
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-2-experiments-in-rindler-space",
+   "title": "Experiments in Rindler Space",
+   "pages": "4-10"
+  },
+  {
+   "id": "sec-003-3-experiments-outside-black-holes",
+   "title": "Experiments Outside Black Holes",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-004-4-experiments-performed-inside-black-holes",
+   "title": "Experiments Performed Inside Black Holes",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-005-5-information-retention-time",
+   "title": "Information Retention Time",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-006-6-experiments-involving-time-reversal",
+   "title": "Experiments Involving Time Reversal",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-007-7-summary",
+   "title": "Summary",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-009-2-l-susskind-l-thorlacius-and-j-uglum-the-stretc",
+   "title": "L. Susskind, L. Thorlacius, and J. Uglum, The Stretched Horizon and Black Hole",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-010-3-j-preskill-private-communication-at-the-itp-uc",
+   "title": "J. Preskill, private communication at the ITP, UC Santa Ba rbara Conference on",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-011-5-l-susskind-string-theory-and-the-principle-of",
+   "title": "L. Susskind, String Theory and the Principle of Black Hole Complementari ty, Stanford",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-8-k-s-thorne-r-h-price-and-d-a-macdonald-black-h",
+   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, Black Holes: The Membrane",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-013-11-d-n-page-expected-entropy-of-a-subsystem-univ",
+   "title": "D. N. Page, Expected Entropy of a Subsystem, University of Alberta report, THY-22-",
+   "pages": "22-22"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

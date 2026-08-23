@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 Building block for the RSZ resolution of the C1 module's ∞ slope-½ singularity (bean
 `qou-xufp`, W2). Per Ramis–Sauloy–Zhang, *Local analytic classification of q-difference
-equations* (Astérisque 355, `uploads/0903.0853v3.pdf`) §3.3 p. 39: an irregular singularity
+equations* (Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`) §3.3 p. 39: an irregular singularity
 of level `d` is resolved by a **q-Borel transform** `B_{q,d}(∑ fₙ zⁿ) = ∑ (fₙ/tₙ) ξⁿ` whose
 kernel is a theta family `(tₙ)` subject to `tₙ = q^{n−d}·t_{n−d}` (growth `q^{n²/2d}`). For
 level `d = 1` the canonical choice is the **Jacobi theta coefficient** `tₙ = q^{n(n−1)/2}`;
@@ -21,7 +21,7 @@ C1's slope ½, the `d`-th roots `B₁,B₂`, and the actual Stokes matrices
 (`F(P₁,P₂) ≅ Matr(ℂ)²`) are NOT here — the genuine RSZ-wild residual, beaned (`qou-xufp`).
 §7c: generic `Monoid` (commutativity unused). Sorry-free. No fit; nothing wired.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.Group.Basic

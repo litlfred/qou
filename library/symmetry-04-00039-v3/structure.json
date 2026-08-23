@@ -1,0 +1,658 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "symmetry-04-00039-v3",
+ "source": {
+  "file": "symmetry-04-00039-v3.pdf",
+  "sha256": "1aa8a81916887f8e2a6b8932843c497f6113993a49ac6e96ca02ce55db738114",
+  "bytes": 7709400,
+  "pages": 77
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.3390/sym4010039",
+  "title": "Knots on a Torus: A Model of the Elementary Particles",
+  "authors_raw": null,
+  "abstract": "Two knots; just two rudimentary knots, th e unknot and the trefoil. That’s all we need to build a model of the elementary particles of physics, one with fermions and bosons, hadrons and leptons, interactions weak and stro ng and the attributes of spin, isospin, mass, charge, CPT invariance and more. There ar e no quarks to provide fractional charge, no gluons to sequester them within nucleons and no “colors” to avoid violating Pauli’s principle. Nor do we require the importation of an enigmatic Higgs boson to confer mass upon the particles of our world. All the requi site attributes emerge simply (and relativistically invariant) as a result of pa rticle conformation and occupation in and of spacetime itself, a spacetime endowed with th e imprimature of general relativity. Also emerging are some novel tools for systemiz ing the particle taxonomy as governed by the gauge group SU(2) and the details of particle degeneracy as well as connections to Hopf algebra, Dirac theory, string theory, topological quantum field theory and dark matter. One exception: it is found necessary to invoke the munificent geom etry of the icosahedron in order to provide, as per the group “flavor” SU(3), a scaffold upon which to organize the well-known three generations—no more, no le ss—of the particle family tree.",
+  "docinfo": {
+   "Author": "Jack S. Avrin",
+   "CreationDate": "D:20120213084125+08'00'",
+   "Creator": "PScript5.dll Version 5.2.2",
+   "Producer": "Acrobat Distiller 9.0.0 (Windows)",
+   "Title": "Knots on a Torus: A Model of the Elementary Particles"
+  },
+  "title_lines": [
+   "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039",
+   "symmetry",
+   "www.mdpi.com/journal/symmetry",
+   "Article",
+   "Knots on a Torus: A Model of the Elementary Particles",
+   "Jack S. Avrin",
+   "28715 Leacrest Drive, Rancho Palos Verdes, CA 90275, USA; E-Mail: javrin@aol.com"
+  ],
+  "title_prev": "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos Verdes, CA 90275, USA; E-Mail: javrin@aol.com"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Basic Particle Model",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Antiparticles and Some Aspects of Time",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Fusion",
+   "page": 17,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 17,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Hopf Algebra",
+   "page": 18,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "First-Order Fusion",
+   "page": 19,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The Dirac Connection",
+   "page": 20,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "D  (3-4)",
+   "page": 20,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "Formalizing First-Order Fusion",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Second Order Fusion",
+   "page": 25,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Fusion Summary",
+   "page": 29,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Detailed Composition and Contingency",
+   "page": 30,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The Standard Model Connection",
+   "page": 34,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Ambiguities",
+   "page": 34,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Delta Creation and Decay",
+   "page": 35,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Beta Decay Examples",
+   "page": 37,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "The Boson Matrix as per the SM",
+   "page": 39,
+   "source": "inferred",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Expansion to Three Generations",
+   "page": 41,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Scaffolds for the Family Tree",
+   "page": 41,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Triplication of Time",
+   "page": 46,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Occupancy of the Three Generational Scaffold",
+   "page": 47,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 1,
+   "title": "Some Quantum Mechanical Connections",
+   "page": 49,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Retrospective",
+   "page": 52,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Time is identified as the odd dimension in the 2 + 1 dimensions occupied by each FMS",
+   "page": 52,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Some Connections",
+   "page": 53,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "String Theory",
+   "page": 54,
+   "source": "inferred",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "TQFT",
+   "page": 54,
+   "source": "inferred",
+   "number": "11.2"
+  },
+  {
+   "level": 2,
+   "title": "New Particles",
+   "page": 56,
+   "source": "inferred",
+   "number": "11.3"
+  },
+  {
+   "level": 1,
+   "title": "Emphasis added",
+   "page": 56,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Dark Matter",
+   "page": 57,
+   "source": "inferred",
+   "number": "11.4"
+  },
+  {
+   "level": 1,
+   "title": "L = ( / ) ( / ) cos dA sA w r V   (A-11)",
+   "page": 59,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "BB* 0 (A, B, C)",
+   "page": 73,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "AB* AC*",
+   "page": 73,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 76,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 17153,
+   "n_words": 2919
+  },
+  {
+   "id": "sec-001-2-the-basic-particle-model",
+   "number": "2",
+   "title": "The Basic Particle Model",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-introduction",
+   "number": "2.1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 9878,
+   "n_words": 1792
+  },
+  {
+   "id": "sec-003-22-antiparticles-and-some-aspects-of-time",
+   "number": "2.2",
+   "title": "Antiparticles and Some Aspects of Time",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 8050,
+   "n_words": 1414
+  },
+  {
+   "id": "sec-004-3-fusion",
+   "number": "3",
+   "title": "Fusion",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-31-introduction",
+   "number": "3.1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2672,
+   "n_words": 443
+  },
+  {
+   "id": "sec-006-33-hopf-algebra",
+   "number": "3.3",
+   "title": "Hopf Algebra",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2268,
+   "n_words": 360
+  },
+  {
+   "id": "sec-007-33-first-order-fusion",
+   "number": "3.3",
+   "title": "First-Order Fusion",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3272,
+   "n_words": 543
+  },
+  {
+   "id": "sec-008-34-the-dirac-connection",
+   "number": "3.4",
+   "title": "The Dirac Connection",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 684,
+   "n_words": 114
+  },
+  {
+   "id": "sec-009-0-d-3-4",
+   "number": "0",
+   "title": "D  (3-4)",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3416,
+   "n_words": 644
+  },
+  {
+   "id": "sec-010-35-formalizing-first-order-fusion",
+   "number": "3.5",
+   "title": "Formalizing First-Order Fusion",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 7935,
+   "n_words": 1348
+  },
+  {
+   "id": "sec-011-4-second-order-fusion",
+   "number": "4",
+   "title": "Second Order Fusion",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 4539,
+   "n_words": 854
+  },
+  {
+   "id": "sec-012-5-fusion-summary",
+   "number": "5",
+   "title": "Fusion Summary",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 3816,
+   "n_words": 741
+  },
+  {
+   "id": "sec-013-6-detailed-composition-and-contingency",
+   "number": "6",
+   "title": "Detailed Composition and Contingency",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 9292,
+   "n_words": 1661
+  },
+  {
+   "id": "sec-014-7-the-standard-model-connection",
+   "number": "7",
+   "title": "The Standard Model Connection",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-015-71-ambiguities",
+   "number": "7.1",
+   "title": "Ambiguities",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1873,
+   "n_words": 307
+  },
+  {
+   "id": "sec-016-72-delta-creation-and-decay",
+   "number": "7.2",
+   "title": "Delta Creation and Decay",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 2690,
+   "n_words": 501
+  },
+  {
+   "id": "sec-017-73-beta-decay-examples",
+   "number": "7.3",
+   "title": "Beta Decay Examples",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 3108,
+   "n_words": 567
+  },
+  {
+   "id": "sec-018-74-the-boson-matrix-as-per-the-sm",
+   "number": "7.4",
+   "title": "The Boson Matrix as per the SM",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3095,
+   "n_words": 546
+  },
+  {
+   "id": "sec-019-8-expansion-to-three-generations",
+   "number": "8",
+   "title": "Expansion to Three Generations",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-81-scaffolds-for-the-family-tree",
+   "number": "8.1",
+   "title": "Scaffolds for the Family Tree",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 46,
+   "n_chars": 10153,
+   "n_words": 1733
+  },
+  {
+   "id": "sec-021-82-triplication-of-time",
+   "number": "8.2",
+   "title": "Triplication of Time",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 3490,
+   "n_words": 556
+  },
+  {
+   "id": "sec-022-83-occupancy-of-the-three-generational-scaffold",
+   "number": "8.3",
+   "title": "Occupancy of the Three Generational Scaffold",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 3198,
+   "n_words": 544
+  },
+  {
+   "id": "sec-023-9-some-quantum-mechanical-connections",
+   "number": "9",
+   "title": "Some Quantum Mechanical Connections",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 6802,
+   "n_words": 1259
+  },
+  {
+   "id": "sec-024-10-retrospective",
+   "number": "10",
+   "title": "Retrospective",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 561,
+   "n_words": 94
+  },
+  {
+   "id": "sec-025-5-time-is-identified-as-the-odd-dimension-in-the",
+   "number": "5",
+   "title": "Time is identified as the odd dimension in the 2 + 1 dimensions occupied by each FMS",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 4083,
+   "n_words": 665
+  },
+  {
+   "id": "sec-026-11-some-connections",
+   "number": "11",
+   "title": "Some Connections",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 1838,
+   "n_words": 319
+  },
+  {
+   "id": "sec-027-111-string-theory",
+   "number": "11.1",
+   "title": "String Theory",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 196,
+   "n_words": 33
+  },
+  {
+   "id": "sec-028-112-tqft",
+   "number": "11.2",
+   "title": "TQFT",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 6421,
+   "n_words": 1039
+  },
+  {
+   "id": "sec-029-113-new-particles",
+   "number": "11.3",
+   "title": "New Particles",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1671,
+   "n_words": 273
+  },
+  {
+   "id": "sec-030-8-emphasis-added",
+   "number": "8",
+   "title": "Emphasis added",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 570,
+   "n_words": 94
+  },
+  {
+   "id": "sec-031-114-dark-matter",
+   "number": "11.4",
+   "title": "Dark Matter",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 5839,
+   "n_words": 1061
+  },
+  {
+   "id": "sec-032-2-l-cos-da-sa-w-r-v-a-11",
+   "number": "2",
+   "title": "L = ( / ) ( / ) cos dA sA w r V   (A-11)",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 72,
+   "n_chars": 25756,
+   "n_words": 4833
+  },
+  {
+   "id": "sec-033-0-ab-ac",
+   "number": "0",
+   "title": "AB* AC*",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 73,
+   "n_chars": 1090,
+   "n_words": 236
+  },
+  {
+   "id": "sec-034-0-bb-0-a-b-c",
+   "number": "0",
+   "title": "BB* 0 (A, B, C)",
+   "level": 1,
+   "page_start": 73,
+   "page_end": 76,
+   "n_chars": 5354,
+   "n_words": 1142
+  },
+  {
+   "id": "sec-035-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 77,
+   "n_chars": 3423,
+   "n_words": 510
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "sections": 36,
+  "chars_total": 164186
+ }
+}

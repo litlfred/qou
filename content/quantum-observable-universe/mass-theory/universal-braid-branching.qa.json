@@ -1776,6 +1776,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:36.839Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:36.879Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:36.920Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1833,6 +1878,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:36.962Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The three base characters are the three irreps of H_3(q)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1912,23 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.005Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "major",
+        "evidence": "The block ends on a dangling \"**Archimedean specialisation.**\" banner: \"The character values chi^sym, chi^alt and skew-SYT counts are stated as real numbers, forming the archimedean evaluations of the generic Chebyshev/sl_2 branching over $[\\mathrm{CommRing}\\ R]$.\" This is the documented sweep-damage banner class, and here it is also wrong on its own terms - chi^sym = chi^alt = 1 and the skew-SYT counts are integers, which need no archimedean specialisation and live in any commutative ring. \"forming\" stands where \"are\" belongs (the verb-family substitution), and a Lean instance binder [CommRing R] has been typeset into display math. The same content is already carried correctly in the .ts authorNotes, where AGENTS 4d puts it.",
+        "notes": "Structural; not edited. Proposed: delete the paragraph - the .ts authorNotes note already says this, correctly and in the right place."
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.045Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None beyond the banner recorded above."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.087Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.130Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2050,23 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.174Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "major",
+        "evidence": "The Borromean row is right and the figure-eight row is for the wrong braid. VERIFIED: chi^std(B_3) = (2-[3])([3]^2-4[3]+1) is correct - I built the 2-dimensional H_3(q) rep independently, and (T_1 T_2^-1)^3 gives 1.99418581298 at the proton pin, matching t^3-3t with t = 2-[3], and matching the corpus's own closed form 2 - 3h^4 - h^6 exactly; symbolically t^3 - 3t = -(1+h^2)^3 + 3(1+h^2) = 2 - 3h^4 - h^6, so the two forms are identical. The unknot row (chi^std = 2) is right. WRONG: the 4_1 row gives chi^std = 2 - [3]_q, which is the character of the word the proof block names, T_1 T_2^-1 T_1^-1 T_2 - and that word is not the figure-eight. I computed its closure's Alexander polynomial from the reduced Burau representation: it is 1, the UNKNOT. The figure-eight is the closure of (T_1 T_2^-1)^2, whose Alexander polynomial computes to t - 3 + t^-1 as it should, and whose standard character is t^2 - 2 = [3]^2 - 4[3] + 2 = -0.910677 at the proton pin, not 2 - [3] = -1.043706. The rest of the corpus agrees with me and not with this block: braids-and-knots/winding-parity-sign-transport.md, pion-half-figure-eight-formalization-note.md and appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md all give 4_1 = (sigma_1 sigma_2^-1)^2.",
+        "notes": "Reported, not edited (mathematical). Route: recompute the 4_1 row for (T_1 T_2^-1)^2 - the value is [3]^2 - 4[3] + 2 - and correct the word in the proof block. NOTE: 2 - [3] is still a real and useful quantity here; it is the trace of the half-word w = T_1 T_2^-1, which is what the Borromean Chebyshev step actually uses."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2086,21 @@
         "reviewed_at": "2026-08-15T10:31:00.485Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1d3ef6f6bbfc",
+          "ts": "4ed1b5b75b2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:37.215Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Table plus one paragraph; reads cleanly apart from the banner."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2124,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:28:37.215Z"
 }

@@ -1,0 +1,2921 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0203194v1",
+ "source_sha256": "6f35e530f07116dc",
+ "brief": "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION",
+ "extended": "**Period mappings and differential equations. From C to Cp**\n\n256 pp, 580 sections.\n\n**Outline.** 2 INTRODUCTION; 4 INTRODUCTION; 6 INTRODUCTION; 8 INTRODUCTION; 1 Analytic continuation; topological point of ; 2 Analytic continuation; algebraic approach. 2; 3 The tale of F ( 1; 4 Abelian periods as algebraic integrals. 43; 5 Periods as solutions of the Gauss-Manin conn; 1 ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF ; 1.1.7 Let S be a topological space, connected ; 1.2.1 Forp a prime number, let Qp denote as us; 1.2.2 M. Krasner had the idea to remedy this b; 1 ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF ; 1.2.3 The ﬁrst achievement of rigid geometry w; 1.2.4 This result was extended by D. Mumford t; 1.3 Berkovich geometry and the principle of mo; 1.3.1 Rigid analytic spaces are endowed with a\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.6.3: There exists a basis (ω,η ) of H1\n- Theorem 5.3.9: In case p does not ramify in the ﬁeld of complex multipli-\n- Theorem 6.2.1: The period mappingP is etale. Its image lies in the period\n- Theorem 7.2.4: For suﬃciently small C p, there is a connected component\n- Theorem 7.6.4: There is a quotient y = y1/y2 of solutions of ∇GM in\n- Theorem 2.1.9: LetS′ be a Galois ´ etale covering ofS with group G. Then",
+ "tokens": {
+  "brief": 28,
+  "extended": 318
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-introduction",
+   "title": "INTRODUCTION",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-001-4-introduction",
+   "title": "INTRODUCTION",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-002-6-introduction",
+   "title": "INTRODUCTION",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-003-8-introduction",
+   "title": "INTRODUCTION",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-004-1-analytic-continuation-topological-point-of-vie",
+   "title": "Analytic continuation; topological point of view. 10",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-005-2-analytic-continuation-algebraic-approach-21",
+   "title": "Analytic continuation; algebraic approach. 21",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-006-3-the-tale-of-f-1",
+   "title": "The tale of F ( 1",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-007-4-abelian-periods-as-algebraic-integrals-43",
+   "title": "Abelian periods as algebraic integrals. 43",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "Periods as solutions of the Gauss-Manin connection. 52",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-009-1-analytic-continuation-topological-point-of-vie",
+   "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 11",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-010-117-let-s-be-a-topological-space-connected-and-l",
+   "title": "Let S be a topological space, connected and locally arcwise (or si m-",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-011-121-forp-a-prime-number-let-qp-denote-as-usual-t",
+   "title": "Forp a prime number, let Qp denote as usual the completion of Q",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-012-122-m-krasner-had-the-idea-to-remedy-this-by-usi",
+   "title": "M. Krasner had the idea to remedy this by using a deﬁnition of a n-",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-1-analytic-continuation-topological-point-of-vie",
+   "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 13",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-014-123-the-ﬁrst-achievement-of-rigid-geometry-was-t",
+   "title": "The ﬁrst achievement of rigid geometry was Tate’s represent ation",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-015-124-this-result-was-extended-by-d-mumford-to-cur",
+   "title": "This result was extended by D. Mumford to curves of higher gen us",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-016-13-berkovich-geometry-and-the-principle-of-monod",
+   "title": "Berkovich geometry and the principle of monodromy",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-017-131-rigid-analytic-spaces-are-endowed-with-a-gro",
+   "title": "Rigid analytic spaces are endowed with a Grothendieck gener alized",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-018-132-the-buildings-blocks-are-the-same-aﬃnoid-alg",
+   "title": "The buildings blocks are the same: aﬃnoid algebras A (called strictly",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-019-133-berkovichs-aﬃnoids-let-us-be-a-little-more-p",
+   "title": "Berkovich’s aﬃnoids. Let us be a little more precise about the",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-020-1-analytic-continuation-topological-point-of-vie",
+   "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 15",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-021-136-the-construction-of-strictly-analytic-k-spac",
+   "title": "The construction of (strictly) analytic K-spaces by gluing aﬃnoid",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-022-141-complex-manifolds-are-locally-contractible-a",
+   "title": "Complex manifolds are locally contractible, and have unive rsal cov-",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-023-142-it-is-again-more-convenient-to-tackle-these",
+   "title": "It is again more convenient to tackle these questions in the f ramework",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-024-1-analytic-continuation-topological-point-of-vie",
+   "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 17",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-025-143-there-are-only-three-one-dimensional-simply",
+   "title": "There are only three one-dimensional simply connected comp lex man-",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-026-144-one-deﬁnes-the-discrete-topological-fundamen",
+   "title": "One deﬁnes the (discrete) topological fundamental group πtop",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-027-1-ss",
+   "title": "(S,s )",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-028-1-ss-and-πtop",
+   "title": "(S,s ), and πtop",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-029-1-ss-classify-the",
+   "title": "(S,s ) classify the",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-030-1-ss-a-la-grothendieck-classifying-the-ﬁnite-eta",
+   "title": "(S,s ) ` a la Grothendieck, classifying the ﬁnite ´ etale covering s of",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-031-1-ss",
+   "title": "(S,s )→",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-032-1-ss-to-the-proﬁnite-completion-of-πtop",
+   "title": "(S,s )∧ to the proﬁnite completion of πtop",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-033-1-ss-is-generally-not-injective",
+   "title": "(S,s ) is generally not injective",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-034-151-let-us-brieﬂy-recall-the-complex-situation-l",
+   "title": "Let us brieﬂy recall the complex situation. Let S be a complex",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-035-1-ss-autcmo-ss",
+   "title": "(S,s )→ AutC((M⊗O S,s)∇)",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-036-1-ss-of-dimension-r-gives",
+   "title": "(S,s ) of dimension r gives",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-037-1-ss-v-0-this-sets-up-an-equivalence-of",
+   "title": "(S,s ), ∇(V ) = 0. This sets up an equivalence of",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-038-152-let-ss-be-now-a-pointed-connected-p-adic-man",
+   "title": "Let (S,s ) be now a pointed connected p-adic manifold. It is still",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-039-153-any-non-trivial-connection-over-the-projecti",
+   "title": "Any non-trivial connection over the projective line minus a few points",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-040-154-when-cauchys-theorem-holds-at-every-point-of",
+   "title": "When “Cauchy’s theorem” holds at every point of S, one can con-",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-041-1-ss-qz-and-the-connections-on-s",
+   "title": "(S,s ) = qZ, and the connections on S",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-042-1-analytic-continuation-topological-point-of-vie",
+   "title": "ANALYTIC CONTINUATION; TOPOLOGICAL POINT OF VIEW. 19",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-043-156-in-the-previous-example-it-is-easily-seen-th",
+   "title": "In the previous example, it is easily seen that rank-one vect or bundles",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-044-1-ss-form-a",
+   "title": "(S,s ) form a",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-045-1-ss-πtop",
+   "title": "(S,s ) → πtop",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-046-1-ss-is-an",
+   "title": "(S,s ) is an",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-047-c-simpsons-construction-si94-to-deﬁne-the-moduli",
+   "title": "Simpson’s construction ([ Si94]) to deﬁne the moduli space of connections",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-048-1-ss-is-free-onb1-generators",
+   "title": "(S,s ) is free onb1(∆) generators,",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-049-211-over-c-let-us-brieﬂy-survey-the-complex-anal",
+   "title": "Over C. Let us brieﬂy survey the complex analytic situation. Let",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-050-212-over-the-p-adics-we-have-an-analogous-situat",
+   "title": "Over the p-adics. We have an analogous situation. Let K be a",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-051-213-the-krasner-dwork-viewpoint-fors-a1-and-k-cp",
+   "title": "The Krasner-Dwork viewpoint. ForS = A1, and K = Cp, we deduce",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-052-2-analytic-continuation-algebraic-approach-23",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 23",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-053-222-it-follows-from-proposition-221-that-if-ω-γ",
+   "title": "It follows from Proposition 2.2.1 that if Ω /Γ is a Schottky partial",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-054-231-in-the-p-adic-situation-we-have-seen-that-th",
+   "title": "In the p-adic situation, we have seen that there are “much more”",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-055-232-to-bypass-such-problems-we-are-going-to-look",
+   "title": "To bypass such problems, we are going to look for some conveni ent",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-056-1-s0s-0-this-allows-to-interpret",
+   "title": "(S0,s 0). This allows to interpret",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-057-1-s0s-0-this-provides-a-kind-of-multival",
+   "title": "(S0,s 0). This provides a kind of multival-",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-058-2-analytic-continuation-algebraic-approach-25",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 25",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-059-241-let-us-assume-for-technical-simplicity-that",
+   "title": "Let us assume for technical simplicity that p⁄= 2. Let M be a free",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-060-242-f--crystals-letσ-be-the-frobenius-automorphi",
+   "title": "F -crystals. Letσ be the Frobenius automorphism of v lifting thepth-",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-061-1-s0s-0",
+   "title": "(S0,s 0)",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-062-243-unit-rootf--crystals-this-is-the-case-where",
+   "title": "Unit-rootF -crystals. This is the case where F (φ) (not only F (φ)⊗Q)",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-063-1-s0s-0-a-unit-root-f--crystal-uvvf-v-over-r-of",
+   "title": "(S0,s 0) a unit-root F -crystal (UV,∇V,F V ) over R of rank r. Let",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-064-1-s0s-0-let-gn",
+   "title": "(S0,s 0), let Gn",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-065-1-s0s-0gn",
+   "title": "(S0,s 0)→Gn",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-066-2-analytic-continuation-algebraic-approach-27",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 27",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-067-1-s0s-0-and-we-have-a-canonical-isomorphism",
+   "title": "(S0,s 0), and we have a canonical isomorphism",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-068-1-s0s-0-diagonal-action-of-φddz-on-the",
+   "title": "(S0,s 0) (diagonal action of φ,d/dz on the",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-069-1-s0s-0-on-the-right-hand-side-which",
+   "title": "(S0,s 0) on the right hand side), which",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-070-1-s0",
+   "title": "(S0),",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-071-1-a1",
+   "title": "(A1",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-072-2-analytic-continuation-algebraic-approach-29",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 29",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-073-251-in-fact-dworks-exponential-eπ-is-more-than-j",
+   "title": "In fact, Dwork’s exponential Eπ is more than just an element of the",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-074-252-let-again-s-be-d0-1-dζi-1-for-any-ρ-1-let-us",
+   "title": "Let again S be D(0, 1+)\\⋃ D(ζi, 1−). For any ρ> 1, let us consider",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-075-254-a-f--crystal-mf-is-overconvergent-if-m-as-we",
+   "title": "A F -crystal (M,∇,F ) is overconvergent if (M,∇) as well as F (φ)",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-076-26-overconvergence-and-f-robenius-dworks-derivat",
+   "title": "(Overconvergence and F robenius) Dwork’s derivation o f the",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-077-261-we-come-back-to-the-situation-of-245-for-any",
+   "title": "We come back to the situation of 2.4.5. For any α ∈ Zp, let us",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-078-262-this-function-γ-p-is-then-nothing-but-morita",
+   "title": "This function Γ p is then nothing but Morita’s p-adic Gamma func-",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-079-263-let-us-now-check-the-continuity-of-γ-p-on-zp",
+   "title": "Let us now check the continuity of Γ p on Zp, or better, its analyticity",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-080-2-analytic-continuation-algebraic-approach-31",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 31",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-081-264-gross-koblitz-formula-for-k-0-1-p-2-one-has",
+   "title": "Gross-Koblitz formula: for k = 0, 1,... ,p − 2, one has",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-082-265-a-more-straightforward-and-elementary-proof",
+   "title": "A more straightforward and elementary proof has been discov ered",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-083-266-the-right-hand-side-of-the-gross-koblitz-for",
+   "title": "The right hand side of the Gross-Koblitz formula is a special case of",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-084-2-analytic-continuation-algebraic-approach-33",
+   "title": "ANALYTIC CONTINUATION; ALGEBRAIC APPROACH. 33",
+   "pages": "37-40"
+  },
+  {
+   "id": "sec-085-1-s0s-0-is-hrord",
+   "title": "(S0,s 0) is (H⊗Rord",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-086-331-we-have-seen-that-dworks-hypergeometric-func",
+   "title": "We have seen that Dwork’s hypergeometric function extends t o an",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-087-332-we-have-seen-that-the-logarithmic-derivative",
+   "title": "We have seen that the logarithmic derivative dlog F ( 1",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-088-333-let-us-turn-to-the-more-subtle-case-of-f-1",
+   "title": "Let us turn to the more subtle case of F ( 1",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-089-336-finally-in-any-supersingular-disk-dcpζi-1-th",
+   "title": "Finally, in any supersingular disk DCp(ζi, 1−), there is no non-zero",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-090-341-it-turns-out-that-the-formal-group-ˆx-ˆ-ret",
+   "title": "It turns out that the formal group ˆX( ˆ Ret",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-091-342-we-come-back-to-the-symplectic-basis-vζu-ζ-a",
+   "title": "We come back to the symplectic basis vζ,u ζ and write 1√−1Fζ",
+   "pages": "43-47"
+  },
+  {
+   "id": "sec-092-42-over-the-p-adics-prolegomena",
+   "title": "Over the p-adics; prolegomena",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-093-422-one-simple-tentative-answer-would-be-to-repl",
+   "title": "One simple tentative answer would be to replace the topologi cal cov-",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-094-423-riemann-shnirelman-sums-it-is-appropriate-to",
+   "title": "(Riemann-Shnirelman sums.) . It is appropriate to evoke here Shnirel-",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-095-4-abelian-periods-as-algebraic-integrals-45",
+   "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 45",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-096-425-actually-there-is-no-way-to-remedy-this-if-o",
+   "title": "Actually, there is no way to remedy this if one remains in Cp. A",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-097-431-the-ring-r-letocp-be-the-ring-of-integers-of",
+   "title": "The ring R. LetOCp be the ring of integers of Cp, i.e. {x∈ Cp,",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-098-432-the-ring-b",
+   "title": "The ring B+",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-099-433-some-remarkable-elements-of-b",
+   "title": "Some remarkable elements of B+",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-100-4-abelian-periods-as-algebraic-integrals-47",
+   "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 47",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-101-0-this-degenerate-pairing-describes-half-of-the",
+   "title": "This degenerate pairing describes “half” of the (Hodge)- Tate-Raynaud",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-102-451-tate-elliptic-curves-in-this-case-tpak-sits",
+   "title": "Tate elliptic curves. In this case, Tp(AK ) sits in an exact sequence",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-103-421-let-η-h1",
+   "title": "Let η∈ H1",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-104-452-elliptic-curves-with-ordinary-reduction-we-n",
+   "title": "Elliptic curves with ordinary reduction. We now assume thatz∈ Zur",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-105-4-abelian-periods-as-algebraic-integrals-49",
+   "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 49",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-106-46-periods-of-cm-elliptic-curves-and-values-of-t",
+   "title": "Periods of CM elliptic curves and values of the Gamma fun c-",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-107-461-the-case-of-an-elliptic-curve-a-with-supersi",
+   "title": "The case of an elliptic curve A with supersingular reduction is more",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-108-462-the-lerch-chowla-selberg-ogus-formulas-leta",
+   "title": "The Lerch-Chowla-Selberg-Ogus formulas. LetA be an elliptic curve",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-109-464-the-ramiﬁed-case-in-the-ramiﬁed-case-ie-when",
+   "title": "The ramiﬁed case. In the ramiﬁed case, i.e. when ǫ(p) = 0, there",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-110-4-abelian-periods-as-algebraic-integrals-51",
+   "title": "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 51",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-111-465-colmez-product-formula-there-is-a-natural-ex",
+   "title": "Colmez’ product formula. There is a natural extension of | |p on Qp",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-112-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 53",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-113-511-in-order-to-see-how-this-idea-can-be-impleme",
+   "title": "In order to see how this idea can be implemented, let us consid er the",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-114-512-this-approach-inspired-by-stokes-lemma-is-we",
+   "title": "This approach inspired by Stokes’ lemma is well-suited for s tudying",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-115-513-when-no-exponential-is-involved-and-when-the",
+   "title": "When no exponential is involved and when the exponents are ra tio-",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-116-514-in-this-sketch-of-dworks-approach-periods-ar",
+   "title": "In this sketch of Dwork’s approach, “periods” are just analy tic solu-",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-117-521-over-c-we-ﬁrst-recall-the-multiplicative-uni",
+   "title": "Over C. We ﬁrst recall the “multiplicative uniformization” of com-",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-118-522-over-the-p-adics-let-k-be-a-p-adic-local-ﬁel",
+   "title": "Over the p-adics. Let K be a p-adic local ﬁeld and A an abelian",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-119-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 55",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-120-523-degenerating-abelian-pencils-leta-a10ζ-1-ζ-r",
+   "title": "Degenerating abelian pencils. LetA→ A1\\{0,ζ 1,... ,ζ r} be a pencil",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-121-524-relation-to-the-fontaine-messing-periods-sin",
+   "title": "Relation to the Fontaine-Messing periods. Since the restriction of∫ p to (2iπ)pM′∨",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-122-531-any-supersingular-abelian-variety-over-fp-is",
+   "title": "Any supersingular abelian variety over Fp is isogenous to a power of",
+   "pages": "60-61"
+  },
+  {
+   "id": "sec-123-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 57",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-124-535-let-a-be-an-abelian-variety-deﬁned-over-a-su",
+   "title": "Let A be an abelian variety deﬁned over a subﬁeld k⊂ Cp, which",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-125-536-horizontality-if-we-leta-move-in-a-familyaz",
+   "title": "Horizontality. If we letA move in a familyAz, H1",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-126-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 59",
+   "pages": "63-65"
+  },
+  {
+   "id": "sec-127-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 61",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-128-5311-l-1",
+   "title": "L 1",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-129-2-1-2zf",
+   "title": "(1− 2z)F",
+   "pages": "65-67"
+  },
+  {
+   "id": "sec-130-5-periods-as-solutions-of-the-gauss-manin-connec",
+   "title": "PERIODS AS SOLUTIONS OF THE GAUSS-MANIN CONNECTION. 63",
+   "pages": "67-69"
+  },
+  {
+   "id": "sec-131-1-a-survey-of-moduli-and-period-mappings-over-c",
+   "title": "A survey of moduli and period mappings over C. 66",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-132-2-preliminaries-on-p-divisible-groups-72",
+   "title": "Preliminaries on p-divisible groups. 72",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-133-3-a-stroll-in-the-crystalline-world-75",
+   "title": "A stroll in the crystalline world. 75",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-134-4-moduli-problems-for-p-divisible-groups-83",
+   "title": "Moduli problems for p-divisible groups. 83",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-135-6-the-p-adic-period-mapping-and-the-gauss-manin",
+   "title": "The p-adic period mapping and the Gauss-Manin connection. 90",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-136-111-the-term-moduli-was-coined-by-riemann-to-des",
+   "title": "The term “moduli” was coined by Riemann to describe the conti nu-",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-137-1-a-sur-vey-of-moduli-and-period-mappings-over-c",
+   "title": "A SUR VEY OF MODULI AND PERIOD MAPPINGS OVER C. 67",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-138-113-these-moduli-problems-admit-two-natural-gene",
+   "title": "These moduli problems admit two natural generalizations: m oduli",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-139-l-choosing-a-c-basis-ω1-ω-g-of-ω-1a",
+   "title": "Choosing a C-basis ω1,... ,ω g of Ω 1(A)∼",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-140-114-following-g-shimura-one-also-studies-reﬁned",
+   "title": "Following G. Shimura, one also studies reﬁned moduli proble ms for",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-141-121-in-the-case-of-curves-the-construction-of-pe",
+   "title": "In the case of curves, the construction of period mappings be longs",
+   "pages": "72-73"
+  },
+  {
+   "id": "sec-142-1-a-sur-vey-of-moduli-and-period-mappings-over-c",
+   "title": "A SUR VEY OF MODULI AND PERIOD MAPPINGS OVER C. 69",
+   "pages": "73-73"
+  },
+  {
+   "id": "sec-143-122-an-important-feature-of-the-period-mapping-p",
+   "title": "An important feature of the period mapping P is that it is a quo-",
+   "pages": "73-73"
+  },
+  {
+   "id": "sec-144-123-the-theory-of-period-mappings-has-been-gener",
+   "title": "The theory of period mappings has been generalized to any pro jective",
+   "pages": "73-74"
+  },
+  {
+   "id": "sec-145-124-in-the-simple-case-of-a-family-of-elliptic-c",
+   "title": "In the simple case of a family of elliptic curves and n = 1, GR =",
+   "pages": "74-75"
+  },
+  {
+   "id": "sec-146-1-a-sur-vey-of-moduli-and-period-mappings-over-c",
+   "title": "A SUR VEY OF MODULI AND PERIOD MAPPINGS OVER C. 71",
+   "pages": "75-76"
+  },
+  {
+   "id": "sec-147-211-we-begin-with-four-deﬁnitions-let-s-be-a-sch",
+   "title": "We begin with four deﬁnitions. Let S be a scheme. Let Λ and Λ ′ be",
+   "pages": "76-76"
+  },
+  {
+   "id": "sec-148-212-the-most-important-example-of-a-p-divisible",
+   "title": "The most important example of a p-divisible group is Λ = A[p∞],",
+   "pages": "76-76"
+  },
+  {
+   "id": "sec-149-213-when-p-is-locally-nilpotent-on-s-any-p-divis",
+   "title": "When p is locally nilpotent on S, any p-divisible group Λ over S is",
+   "pages": "76-76"
+  },
+  {
+   "id": "sec-150-221-a-considerable-amount-of-work-has-been-devot",
+   "title": "A considerable amount of work has been devoted to p-divisible groups",
+   "pages": "76-77"
+  },
+  {
+   "id": "sec-151-2-preliminaries-on-p-divisible-groups-73",
+   "title": "PRELIMINARIES ON p-DIVISIBLE GROUPS. 73",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-152-222-let-v-be-a-complete-discrete-valued-ring-v-o",
+   "title": "Let v be a complete discrete valued ring v of mixed characteristic",
+   "pages": "77-78"
+  },
+  {
+   "id": "sec-153-225-in-the-sequel-we-shall-have-to-deal-occasion",
+   "title": "In the sequel, we shall have to deal occasionally with p-divisible",
+   "pages": "78-79"
+  },
+  {
+   "id": "sec-154-311-at-ﬁrst-dieudonn-e-theory-presents-itself-as",
+   "title": "At ﬁrst, Dieudonn´ e theory presents itself as an analogue of Lie theory",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-155-313-when-k-is-algebraically-closed-dieudonn-e-mo",
+   "title": "When k is algebraically closed, Dieudonn´ e modules ⊗Q were com-",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-156-314-the-problem-of-generalizing-dieudonn-e-theor",
+   "title": "The problem of generalizing Dieudonn´ e theory to p-divisible groups",
+   "pages": "79-80"
+  },
+  {
+   "id": "sec-157-321-let-v-be-a-ﬁnite-extension-of-w-of-degree-e",
+   "title": "Let v be a ﬁnite extension of W of degree e. We assume that e<p ,",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-158-322-the-dieudonn-e-crystal-attached-to-ap-divisi",
+   "title": "The Dieudonn´ e crystal attached to ap-divisible group Λ over S is the",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-159-3-a-stroll-in-the-crystalline-world-77",
+   "title": "A STROLL IN THE CRYSTALLINE WORLD. 77",
+   "pages": "81-81"
+  },
+  {
+   "id": "sec-160-323-the-pull-back-of-a-crystal-e-ons0-via-the-ab",
+   "title": "The pull-back of a crystal E onS0 via the absolute Frobenius FS0 is",
+   "pages": "81-81"
+  },
+  {
+   "id": "sec-161-331-let-λ-be-the-serre-dual-of-λ-the-limof-the-c",
+   "title": "Let Λ ∨ be the (Serre) dual of Λ (the lim−→of the Cartier duals of the",
+   "pages": "81-81"
+  },
+  {
+   "id": "sec-162-332-now-let-s0s-be-a-nilpotent-divided-power-thi",
+   "title": "Now let S0֒→S be a nilpotent divided power thickening (this means",
+   "pages": "81-82"
+  },
+  {
+   "id": "sec-163-341-we-have-already-encountered-the-terms-f--cry",
+   "title": "We have already encountered the terms “ F -crystal”, “unit-root F -",
+   "pages": "82-82"
+  },
+  {
+   "id": "sec-164-342-let-us-brieﬂy-recall-the-construction-of-the",
+   "title": "Let us brieﬂy recall the construction of the connection atta ched to",
+   "pages": "82-83"
+  },
+  {
+   "id": "sec-165-3-a-stroll-in-the-crystalline-world-79",
+   "title": "A STROLL IN THE CRYSTALLINE WORLD. 79",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-166-343-in-general-the-taylor-series-converges-only",
+   "title": "In general, the Taylor series converges only in polydiscs of radius",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-167-35-interlude-analytic-spaces-associated-with-for",
+   "title": "Interlude : analytic spaces associated with formal sch emes",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-168-351-let-us-ﬁrst-review-the-raynaud-berthelot-con",
+   "title": "Let us ﬁrst review the Raynaud-Berthelot construction of th e an-",
+   "pages": "83-84"
+  },
+  {
+   "id": "sec-169-353-let-s0-be-a-closed-subscheme-of-xred-and-let",
+   "title": "Let S0 be a closed subscheme of Xred, and let XS0 be the formal",
+   "pages": "84-84"
+  },
+  {
+   "id": "sec-170-361-let-s0-be-a-separated-k-scheme-of-ﬁnite-type",
+   "title": "Let S0 be a separated k-scheme of ﬁnite type, and S0֒→Y a closed",
+   "pages": "84-84"
+  },
+  {
+   "id": "sec-171-362-there-is-a-natural-functor-from-the-category",
+   "title": "There is a natural functor from the category of F -isocrystals on S0/v",
+   "pages": "84-85"
+  },
+  {
+   "id": "sec-172-3-a-stroll-in-the-crystalline-world-81",
+   "title": "A STROLL IN THE CRYSTALLINE WORLD. 81",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-173-363-the-advantage-of-convergent-isocrystals-over",
+   "title": "The advantage of convergent isocrystals over “crystals up t o isogeny”",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-174-364-ifs0-is-the-reduced-underlying-scheme-xred-o",
+   "title": "IfS0 is the reduced underlying scheme Xred of a formal scheme X as",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-175-365-let-now-s-be-a-separated-scheme-in-nil-v-it",
+   "title": "Let now S be a separated scheme in Nil v (it may also be viewed in",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-176-366-let-us-apply-this-to-dieudonn-e-crystals-let",
+   "title": "Let us apply this to Dieudonn´ e crystals. Let X be a formal scheme",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-177-367-let-us-draw-from-this-two-consequences",
+   "title": "Let us draw from this two consequences:",
+   "pages": "86-87"
+  },
+  {
+   "id": "sec-178-41-moduli-problem-for-p-divisible-groups-quasi-i",
+   "title": "Moduli problem for p-divisible groups quasi-isogenous to a",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-179-411-here-we-work-over-the-discrete-valuation-rin",
+   "title": "Here, we work over the discrete valuation ring v = W = ˆ",
+   "pages": "87-89"
+  },
+  {
+   "id": "sec-180-4-moduli-problems-for-p-divisible-groups-85",
+   "title": "MODULI PROBLEMS FOR p-DIVISIBLE GROUPS. 85",
+   "pages": "89-89"
+  },
+  {
+   "id": "sec-181-431-just-as-in-the-complex-case-114-it-is-useful",
+   "title": "Just as in the complex case 1.1.4, it is useful to consider var iants or",
+   "pages": "89-89"
+  },
+  {
+   "id": "sec-182-432-we-assume-that-bp-acts-on-our-p-divisible-gr",
+   "title": "We assume that Bp acts on our p-divisible group Λ. One then re-",
+   "pages": "89-89"
+  },
+  {
+   "id": "sec-183-433-let-us-say-a-word-about-the-polarized-varian",
+   "title": "Let us say a word about the polarized variant (here, it is safe r to",
+   "pages": "89-91"
+  },
+  {
+   "id": "sec-184-511-we-begin-with-the-p-adic-analogue-of-the-ﬂag",
+   "title": "We begin with the p-adic analogue of the ﬂag space D∨ of 1.2.3,",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-185-124-in-124-this-ﬂag-space-parametrized-the-lagra",
+   "title": "In 1.2.4, this ﬂag space parametrized the lagrangian subspaces F 1 in",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-186-512-more-precisely-let-us-consider-a-moduli-prob",
+   "title": "More precisely, let us consider a moduli problem for p-divisible groups",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-187-513-let-v-be-the-ﬁnite-extension-of-w-zur",
+   "title": "Let v be the ﬁnite extension of W = Zur",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-188-514-in-our-three-basic-examples-421-422-434-we-h",
+   "title": "In our three basic examples (4.2.1, 4.2.2, 4.3.4), we have GCp =GL2,",
+   "pages": "91-92"
+  },
+  {
+   "id": "sec-189-521-in-thep-adic-case-one-cannot-deﬁne-symmetric",
+   "title": "In thep-adic case, one cannot deﬁne symmetric spaces by a positivit y",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-190-522-we-set-j-jgder",
+   "title": "We set J′ = J∩Gder",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-191-523-one-deﬁnes-the-symmetric-spaced-to-be-the-in",
+   "title": "One deﬁnes the symmetric spaceD to be the intersection of the semi-",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-192-532-we-now-turn-to-example-434-in-this-example-j",
+   "title": "We now turn to example 4.3.4. In this example, J = GL2(Qp) and",
+   "pages": "92-94"
+  },
+  {
+   "id": "sec-193-6-the-p-adic-period-mapping-and-the-gauss-manin",
+   "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 91",
+   "pages": "94-94"
+  },
+  {
+   "id": "sec-194-611-the-construction-of-the-p-adic-period-mappin",
+   "title": "The construction of the p-adic period mapping is parallel to the com-",
+   "pages": "94-94"
+  },
+  {
+   "id": "sec-195-612-more-precisely-notation-being-as-in-411431-l",
+   "title": "More precisely, notation being as in 4.1.1–4.3.1, let us con sider the",
+   "pages": "94-94"
+  },
+  {
+   "id": "sec-196-614-on-the-other-hand-we-have-a-locally-direct-s",
+   "title": "On the other hand, we have a locally direct summand F 1 = (ωΛ )an",
+   "pages": "94-95"
+  },
+  {
+   "id": "sec-197-624-the-argument-in-the-proof-of-613-shows-a-lit",
+   "title": "The argument in the proof of 6.1.3 shows a little more. Recall from",
+   "pages": "95-95"
+  },
+  {
+   "id": "sec-198-367-ii-that-the-analytic-vector-bundle-dλ",
+   "title": "(ii) that the analytic vector bundle ( D(Λ",
+   "pages": "95-95"
+  },
+  {
+   "id": "sec-199-631-we-start-with-example-411-p-divisible-groups",
+   "title": "We start with example 4.1.1 (p-divisible groups of elliptic curves with",
+   "pages": "95-96"
+  },
+  {
+   "id": "sec-200-632-since-the-basis-e0e1-is-horizontal-under-the",
+   "title": "Since the basis e0,e−1 is horizontal under the Gauss-Manin connec-",
+   "pages": "96-96"
+  },
+  {
+   "id": "sec-201-2-complex",
+   "title": "(complex",
+   "pages": "96-97"
+  },
+  {
+   "id": "sec-202-6-the-p-adic-period-mapping-and-the-gauss-manin",
+   "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 93",
+   "pages": "97-97"
+  },
+  {
+   "id": "sec-203-45-the-ambiguity-by-a-factor-in-z",
+   "title": "(the ambiguity — by a factor in Z×",
+   "pages": "97-97"
+  },
+  {
+   "id": "sec-204-2-1-2zf-3",
+   "title": "(1− 2z)F ( 3",
+   "pages": "97-97"
+  },
+  {
+   "id": "sec-205-633-we-now-turn-to-example-412-p-divisible-group",
+   "title": "We now turn to example 4.1.2 ( p-divisible groups of elliptic curves",
+   "pages": "97-98"
+  },
+  {
+   "id": "sec-206-634-at-last-let-us-turn-to-example-434-p-divisib",
+   "title": "At last, let us turn to example 4.3.4 ( p-divisible groups of fake elliptic",
+   "pages": "98-98"
+  },
+  {
+   "id": "sec-207-635-recall-that-the-p-adic-manifold-ω-cp-is-simp",
+   "title": "Recall that the p-adic manifold Ω Cp is simply connected (in the usual",
+   "pages": "98-99"
+  },
+  {
+   "id": "sec-208-6-the-p-adic-period-mapping-and-the-gauss-manin",
+   "title": "THE p-ADIC PERIOD MAPPING AND THE GAUSS-MANIN CONNECTION. 95",
+   "pages": "99-100"
+  },
+  {
+   "id": "sec-209-711-letsh-be-a-shimura-variety-of-pel-type-as-in",
+   "title": "LetSh be a Shimura variety of PEL type as in 1.1.4. We recall the",
+   "pages": "100-100"
+  },
+  {
+   "id": "sec-210-712-we-set-bp-bq-qpbp-b-z-zp-and-so-on-we-denote",
+   "title": "We set Bp =B⊗Q Qp,Bp =B⊗ Z Zp, and so on. We denote by Cp",
+   "pages": "100-100"
+  },
+  {
+   "id": "sec-211-713-let-s-be-a-scheme-the-objects-of-the-the-cat",
+   "title": "Let S be a scheme. The objects of the the category of S-abelian",
+   "pages": "100-101"
+  },
+  {
+   "id": "sec-212-721-one-ﬁxes-a-point-of-sh",
+   "title": "One ﬁxes a point of Sh(",
+   "pages": "101-101"
+  },
+  {
+   "id": "sec-213-722-one-deﬁnes-a-morphism-of-functors-on-nil-v",
+   "title": "One deﬁnes a morphism of functors on Nil v:",
+   "pages": "101-102"
+  },
+  {
+   "id": "sec-214-723-it-turns-out-that-the-decorated-abelian-vari",
+   "title": "It turns out that the decorated abelian varieties (up to prim e to p",
+   "pages": "102-102"
+  },
+  {
+   "id": "sec-215-725-let-us-consider-the-universal-decorated-abel",
+   "title": "Let us consider the universal decorated abelian scheme A overSh,",
+   "pages": "102-102"
+  },
+  {
+   "id": "sec-216-1-ss-on-ve",
+   "title": "(S,s ) on V⊗E′",
+   "pages": "102-102"
+  },
+  {
+   "id": "sec-217-727-the-assumption-c-c-pcp-is-necessary-to-deﬁne",
+   "title": "The assumption C = C pCp is necessary to deﬁne the morphism",
+   "pages": "102-103"
+  },
+  {
+   "id": "sec-218-73-global-uniformization",
+   "title": "Global uniformization",
+   "pages": "103-103"
+  },
+  {
+   "id": "sec-219-74-example-the-ˇcerednik-drinfeld-uniformization",
+   "title": "Example: the ˇCerednik-Drinfeld uniformization of Shimura",
+   "pages": "103-103"
+  },
+  {
+   "id": "sec-220-741-the-ﬁrst-historical-example-of-global-unifor",
+   "title": "The ﬁrst historical example of global uniformization in the above",
+   "pages": "103-104"
+  },
+  {
+   "id": "sec-221-742-we-ﬁx-an-indeﬁnite-quaternion-algebra-b-over",
+   "title": "We ﬁx an indeﬁnite quaternion algebra B over Q, a maximal or-",
+   "pages": "104-104"
+  },
+  {
+   "id": "sec-222-743-it-is-known-that-x-n-has-good-reduction-at-a",
+   "title": "It is known that X +(N ) has good reduction at any prime p which",
+   "pages": "104-105"
+  },
+  {
+   "id": "sec-223-744-the-case-of-x-is-the-one-originally-consider",
+   "title": "The case of X∗ is the one originally considered in [ ˇCer76], except",
+   "pages": "105-106"
+  },
+  {
+   "id": "sec-224-745-we-now-give-some-indications-on-drinfelds-mo",
+   "title": "We now give some indications on Drinfeld’s modular approach to",
+   "pages": "106-106"
+  },
+  {
+   "id": "sec-225-747-let-us-end-this-section-by-considering-the-c",
+   "title": "Let us end this section by considering the case where p divides the",
+   "pages": "106-107"
+  },
+  {
+   "id": "sec-226-751-shimuras-paper-shi67-deals-not-only-with-qua",
+   "title": "Shimura’s paper [Shi67] deals not only with quaternion algebra over",
+   "pages": "107-109"
+  },
+  {
+   "id": "sec-227-753-this-is-the-modular-way-taken-by-boutot-and",
+   "title": "This is the modular way taken by Boutot and Zink to reprove (an d",
+   "pages": "109-109"
+  },
+  {
+   "id": "sec-228-754-rapoport-zink-and-boutot-on-one-hand-by-modu",
+   "title": "Rapoport, Zink and Boutot on one hand (by modular methods ` a l a",
+   "pages": "109-110"
+  },
+  {
+   "id": "sec-229-761-we-consider-more-closely-the-gauss-manin-con",
+   "title": "We consider more closely the Gauss-Manin connection ( H,∇GM) in",
+   "pages": "110-111"
+  },
+  {
+   "id": "sec-230-762-let-us-now-turn-to-the-p-adic-side-we-ﬁx-an",
+   "title": "Let us now turn to the p-adic side. We ﬁx an embedding",
+   "pages": "111-111"
+  },
+  {
+   "id": "sec-231-1-xγ-cps-glh1",
+   "title": "((XΓ )Cp,s )→GL(H1",
+   "pages": "111-111"
+  },
+  {
+   "id": "sec-232-763-one-can-go-one-step-further-and-see-that-the",
+   "title": "One can go one step further and see that the phenomenon encoun -",
+   "pages": "111-112"
+  },
+  {
+   "id": "sec-233-765-this-discussion-generalizes-without-much-com",
+   "title": "This discussion generalizes without much complication to t he case",
+   "pages": "112-115"
+  },
+  {
+   "id": "sec-234-2-t-emperate-fundamental-groups-126",
+   "title": "T emperate fundamental groups. 126",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-235-3-local-and-global-monodromy-of-p-adic-diﬀerenti",
+   "title": "Local and global monodromy of p-adic diﬀerential equations. 141",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-236-4-non-archimedean-orbifolds-uniformizing-diﬀeren",
+   "title": "Non-archimedean orbifolds, uniformizing diﬀerential e quations",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-237-6-the-tale-of-f-1",
+   "title": "The tale of F ( 1",
+   "pages": "115-116"
+  },
+  {
+   "id": "sec-238-111-we-shall-work-throughout-in-the-context-of-b",
+   "title": "We shall work throughout in the context of Berkovich analyti c ge-",
+   "pages": "116-117"
+  },
+  {
+   "id": "sec-239-1-ss-s-is-a-pointed-k-manifold-and-πtop",
+   "title": "(S,s ); ˜S is a (pointed) K-manifold, and πtop",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-240-1-ss-is-a-discrete-group",
+   "title": "(S,s ) is a discrete group",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-241-1-ss-is-a-free-group-isomor",
+   "title": "(S,s ) is a free group isomor-",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-242-1-ss-actually-any-diﬀerentiable-manifold-is",
+   "title": "(S,s ): actually, any diﬀerentiable manifold is",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-243-113-berkovichs-analysis-of-the-homotopy-of-analy",
+   "title": "Berkovich’s analysis of the homotopy of analytic spaces of h igher",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-244-1-ss-πtop",
+   "title": "(S,s )→πtop",
+   "pages": "117-118"
+  },
+  {
+   "id": "sec-245-121-let-s-be-a-connected-k-manifold-let-s-f",
+   "title": "Let S be a connected K-manifold. Let S′ f",
+   "pages": "118-118"
+  },
+  {
+   "id": "sec-246-122-a-geometric-point-s-of-s-is-a-point-with-val",
+   "title": "A geometric point s of S is a point with value in some complete",
+   "pages": "118-121"
+  },
+  {
+   "id": "sec-247-131-let-us-ﬁx-a-geometric-point-s-of-s-we-consid",
+   "title": "Let us ﬁx a geometric point s of S. We consider the ﬁber functor",
+   "pages": "121-121"
+  },
+  {
+   "id": "sec-248-132-it-follows-from-sga-1-exp-v-that-algebraic-p",
+   "title": "It follows from [SGA 1 , exp. V] that algebraic paths exist. Using the",
+   "pages": "121-123"
+  },
+  {
+   "id": "sec-249-141-let-cov",
+   "title": "Let Cov•",
+   "pages": "123-123"
+  },
+  {
+   "id": "sec-250-1-s",
+   "title": "(S,",
+   "pages": "123-123"
+  },
+  {
+   "id": "sec-251-1-ss-is-an-incarnation-of",
+   "title": "(S,s ) is (an incarnation of)",
+   "pages": "123-124"
+  },
+  {
+   "id": "sec-252-143-it-is-clear-from-the-deﬁnitions-that-f",
+   "title": "It is clear from the deﬁnitions that F•",
+   "pages": "124-124"
+  },
+  {
+   "id": "sec-253-1-stπet",
+   "title": "(S,t)−πet",
+   "pages": "124-125"
+  },
+  {
+   "id": "sec-254-146-a-connected-etale-covering-s-s-is-galois-if",
+   "title": "A connected ´ etale covering S′ → S is Galois if S is the quotient",
+   "pages": "125-125"
+  },
+  {
+   "id": "sec-255-1-p1",
+   "title": "(P1,",
+   "pages": "125-126"
+  },
+  {
+   "id": "sec-256-1-p1ssl2qpsl2qpsl2zp",
+   "title": "(P1,s)→SL2(Qp)→SL2(Qp)/SL2(Zp)",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-257-1-p1s-cannot-be-open-thus-πet",
+   "title": "(P1,s) cannot be open. Thus πet",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-258-1-p1s-is-not-a",
+   "title": "(P1,s) is not a",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-259-1-ss-has-dense-im",
+   "title": "(S,s) has dense im-",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-260-1-ss-stab",
+   "title": "(S,s)/ Stab••",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-261-1-ss-is-neither-strict-nor-sur",
+   "title": "(S,s) is neither strict nor sur-",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-262-1-ss-πalg",
+   "title": "(S,s)→ πalg",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-263-1-ss-πalg",
+   "title": "(S,s) −−−→πalg",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-264-1-st",
+   "title": "(S,t)",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-265-1-ss-ˆπtop",
+   "title": "(S,s ) −−−→ ˆπtop",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-266-1-st",
+   "title": "(S,t )",
+   "pages": "126-127"
+  },
+  {
+   "id": "sec-267-1410-let-f-t-s-be-any-morphism-of-connected-k-ma",
+   "title": "Let f : T → S be any morphism of connected K-manifolds. We",
+   "pages": "127-129"
+  },
+  {
+   "id": "sec-268-151-whens-is-countable-at-inﬁnity-l-ramero-has-i",
+   "title": "WhenS is countable at inﬁnity, L. Ramero has introduced an inter-",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-269-1-sj",
+   "title": "(Sj,",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-270-1-sj-sπlocalg",
+   "title": "(Sj, s)→πloc.alg",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-271-1-s-s",
+   "title": "(S, s)∼",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-272-1-sj-s-sets-πlocalg",
+   "title": "(Sj, s)-sets→ πloc.alg",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-273-1-s-s-sets-is-an",
+   "title": "(S, s)-sets is an",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-274-1-s-s-is-a-pro-discrete-group-cf-in-this",
+   "title": "(S, s) is a pro-discrete group ( cf. in this",
+   "pages": "129-130"
+  },
+  {
+   "id": "sec-275-1-tt",
+   "title": "(T,t )∼",
+   "pages": "130-131"
+  },
+  {
+   "id": "sec-276-2-temperate-fundamental-groups-127",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 127",
+   "pages": "131-131"
+  },
+  {
+   "id": "sec-277-1-p1",
+   "title": "(P1",
+   "pages": "131-131"
+  },
+  {
+   "id": "sec-278-214-we-denote-the-category-of-temperate-etale-co",
+   "title": "We denote the category of temperate (´ etale) coverings ofS by Covtemp",
+   "pages": "131-131"
+  },
+  {
+   "id": "sec-279-1-ss-is-a-pro-discrete-group-hence-complete-cf-b",
+   "title": "(S,s) is a pro-discrete group (hence complete, cf. [Bou74,",
+   "pages": "131-131"
+  },
+  {
+   "id": "sec-280-1-ssh-is-the-galois-group-of-the-universal",
+   "title": "(S,s)/H is the Galois group of the universal",
+   "pages": "131-132"
+  },
+  {
+   "id": "sec-281-1-ss-which-shows",
+   "title": "(S,s )), which shows",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-282-1-ss-although-not-a-discrete-group-has-many-inﬁn",
+   "title": "(S,s), although not a discrete group, has many inﬁnite discrete",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-283-1-ss-may-be-identiﬁed-with-the-proﬁnite-completi",
+   "title": "(S,s) may be identiﬁed with the proﬁnite completion of πtemp",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-284-1-ss-is-not-too-small-as-opposed-to-πtop",
+   "title": "(S,s) is not “too small” (as opposed to πtop",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-285-1-ss",
+   "title": "(S,s)):",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-286-1-ssπalg",
+   "title": "(S,s)→πalg",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-287-1-tt-as-a-normal-subgroup-of",
+   "title": "(T,t ) as a normal subgroup of",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-288-1-ss-and-all-its-quotients",
+   "title": "(S,s) and all its quotients",
+   "pages": "132-133"
+  },
+  {
+   "id": "sec-289-2-temperate-fundamental-groups-129",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 129",
+   "pages": "133-133"
+  },
+  {
+   "id": "sec-290-1-ss-is-not-only-a-pro-discrete-group-which-alre",
+   "title": "(S,s) is not only a pro-discrete group (which already implies tha t",
+   "pages": "133-133"
+  },
+  {
+   "id": "sec-291-1-ss-admits-a-countable",
+   "title": "(S,s) admits a countable",
+   "pages": "133-133"
+  },
+  {
+   "id": "sec-292-1-ttπtemp",
+   "title": "(T,t)→πtemp",
+   "pages": "133-133"
+  },
+  {
+   "id": "sec-293-1-ss-g-be-the-continuous",
+   "title": "(S,s)→ G be the continuous",
+   "pages": "133-134"
+  },
+  {
+   "id": "sec-294-1-ttπet",
+   "title": "(t,t)→πet",
+   "pages": "134-134"
+  },
+  {
+   "id": "sec-295-1-st",
+   "title": "(S,t)",
+   "pages": "134-134"
+  },
+  {
+   "id": "sec-296-1-ssg",
+   "title": "(S,s)→G",
+   "pages": "134-134"
+  },
+  {
+   "id": "sec-297-1-tt",
+   "title": "(t,t)∼",
+   "pages": "134-134"
+  },
+  {
+   "id": "sec-298-1-ss-is-the-pro-vtfd-completion",
+   "title": "(S,s) is the pro-VTFD-completion",
+   "pages": "134-135"
+  },
+  {
+   "id": "sec-299-2-temperate-fundamental-groups-131",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 131",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-300-1-ss-the-deﬁnition-211-seems-however-more-natura",
+   "title": "(S,s). The deﬁnition 2.1.1 seems however more natural (and is",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-301-1-ss-πtop",
+   "title": "(S,s)→ πtop",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-302-1-ssπalg",
+   "title": "(S,s)×πalg",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-303-1-ss-denoted",
+   "title": "(S,s), denoted",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-304-1-ss-in-dimension-one-there-is-a-continuous-inje",
+   "title": "(S,s). In dimension one, there is a continuous injective homomor phism",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-305-1-ss-πtemp",
+   "title": "(S,s) → πtemp",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-306-1-ss-but-it-not-clear-whether-this-is-an",
+   "title": "(S,s), but it not clear whether this is an",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-307-1-ssπtemp",
+   "title": "(S,s)→πtemp",
+   "pages": "135-137"
+  },
+  {
+   "id": "sec-308-2-temperate-fundamental-groups-133",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 133",
+   "pages": "137-137"
+  },
+  {
+   "id": "sec-309-221-instead-of-basing-fundamental-groups-at-geom",
+   "title": "Instead of basing fundamental groups at geometric points, i t is some-",
+   "pages": "137-137"
+  },
+  {
+   "id": "sec-310-222-we-assume-thatk-is-algebraically-closed-of-c",
+   "title": "We assume thatK is algebraically closed of characteristic 0. Let S be",
+   "pages": "137-138"
+  },
+  {
+   "id": "sec-311-224-this-proposition-allows-to-construct-fundame",
+   "title": "This proposition allows to construct fundamental groups π•",
+   "pages": "138-139"
+  },
+  {
+   "id": "sec-312-2-temperate-fundamental-groups-135",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 135",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-313-231-it-follows-from-216-together-with-141-that-p",
+   "title": "It follows from 2.1.6 (together with 1.4.1) that P1 and A1 have trivial",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-314-1-gm-1-0-on-the",
+   "title": "(Gm, 1) = 0; on the",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-315-1-gm-1-πalg",
+   "title": "(Gm, 1) = πalg",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-316-1-gm-1-ˆz1-limn",
+   "title": "(Gm, 1) = ˆZ(1) := lim←−n",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-317-1-gn",
+   "title": "(Gn",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-318-232-elliptic-curves-let-us-ﬁrst-consider-the-cas",
+   "title": "Elliptic curves. Let us ﬁrst consider the case of an elliptic curve",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-319-1-s-1-1-then-any-ﬁnite-etale",
+   "title": "(S, 1) = {1}). Then any ﬁnite ´ etale",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-320-1-s-1-πalg",
+   "title": "(S, 1) = πalg",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-321-1-s-1",
+   "title": "(S, 1)∼",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-322-1-gm-1πtemp",
+   "title": "(Gm, 1)→πtemp",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-323-1-s-1qz-πtop",
+   "title": "(S, 1)→qZ =πtop",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-324-1-s-1-z-1",
+   "title": "(S, 1)→ Z→ 1,",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-325-1-s-1-πalg",
+   "title": "(S, 1)⊂ πalg",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-326-233-mumford-curves-let-now-s-be-a-mumford-curve",
+   "title": "Mumford curves. Let now S be a Mumford curve of genus g >1:",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-327-1-ss",
+   "title": "(S,s ) ∼",
+   "pages": "139-140"
+  },
+  {
+   "id": "sec-328-1-ω-sπtemp",
+   "title": "(Ω , ¯˜s)→πtemp",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-329-1-ssπtop",
+   "title": "(S,s)→πtop",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-330-1-ss-1",
+   "title": "(S,s )→ 1",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-331-1-ω-s-πtemp",
+   "title": "(Ω , ¯˜s)→ πtemp",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-332-1-ss-πtemp",
+   "title": "(S,s))−⊂ πtemp",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-333-1-ss-as-an-abstract",
+   "title": "(S,s). As an abstract",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-334-1-ssˆγ-1",
+   "title": "(S,s)→ˆΓ → 1,",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-335-1-ω-sπalg",
+   "title": "(Ω , ¯˜s)→πalg",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-336-1-ss-actually",
+   "title": "(S,s). Actually,",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-337-1-ss-is-metrizable-while-πalg",
+   "title": "(S,s) is metrizable, while πalg",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-338-1-ω-s-in-fact",
+   "title": "(Ω , ¯˜s). In fact,",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-339-234-aﬃnoid-curves-with-good-reduction-in-this-ca",
+   "title": "Aﬃnoid curves with good reduction. In this case, one has",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-340-1-ss-πalg",
+   "title": "(S,s) = πalg",
+   "pages": "140-141"
+  },
+  {
+   "id": "sec-341-2-temperate-fundamental-groups-137",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 137",
+   "pages": "141-141"
+  },
+  {
+   "id": "sec-342-1-ss-is-already-surjective-we",
+   "title": "(S,s) is already surjective. We",
+   "pages": "141-141"
+  },
+  {
+   "id": "sec-343-236-punctured-disks-let-us-ﬁx-rk-and-set-dr-dk-0",
+   "title": "Punctured disks. Let us ﬁx r∈|K×|, and set Dr = DK (0,r +), D∗",
+   "pages": "141-141"
+  },
+  {
+   "id": "sec-344-1-d",
+   "title": "(D∗",
+   "pages": "141-142"
+  },
+  {
+   "id": "sec-345-1-d",
+   "title": "(D∗,",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-346-1-ds-is-surjective-since-it-factors-through",
+   "title": "(D,s) is surjective. Since it factors through",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-347-1-ds-it-follows-that-πtemp",
+   "title": "(D∗,s), it follows that πtemp",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-348-1-dsπtemp",
+   "title": "(D∗,s)→πtemp",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-349-1-ds-πalg",
+   "title": "(D,s) = πalg",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-350-1-ds-is-sur",
+   "title": "(D,s) is sur-",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-351-1-ds-z1",
+   "title": "(D∗,s)) = Z(1),",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-352-1-ds-z1",
+   "title": "(D∗,s)→ Z(1)",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-353-1-ds-1",
+   "title": "(D,s)→ 1",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-354-1-ds-is-a-pro",
+   "title": "(D∗,s) is a pro-",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-355-238-a1-minus-a-few-points-let-s-a1ζ1-ζ-m-for-any",
+   "title": "A1 minus a few points. Let S = A1\\{ζ1,... ,ζ m}. For any i =",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-356-1-stiˆz1",
+   "title": "(S,⃗ti)→ˆZ(1)",
+   "pages": "142-143"
+  },
+  {
+   "id": "sec-357-2-temperate-fundamental-groups-139",
+   "title": "TEMPERATE FUNDAMENTAL GROUPS. 139",
+   "pages": "143-143"
+  },
+  {
+   "id": "sec-358-1-a1ζ1-ζ-m",
+   "title": "(A1\\{ζ1,... ,ζ m},",
+   "pages": "143-143"
+  },
+  {
+   "id": "sec-359-1-ss",
+   "title": "(S,s) ?",
+   "pages": "143-143"
+  },
+  {
+   "id": "sec-360-1-ss-is-indeed-a-rather-complicated-topological",
+   "title": "(S,s) is indeed a rather complicated topological group,",
+   "pages": "143-143"
+  },
+  {
+   "id": "sec-361-1-ttπtop",
+   "title": "(T,t)→πtop",
+   "pages": "143-144"
+  },
+  {
+   "id": "sec-362-1-x-rkπtop",
+   "title": "(X)> rkπtop",
+   "pages": "144-144"
+  },
+  {
+   "id": "sec-363-1-t-rankπtop",
+   "title": "(T ) < rankπtop",
+   "pages": "144-144"
+  },
+  {
+   "id": "sec-364-1-x-rank-πtop",
+   "title": "(X) = rank πtop",
+   "pages": "144-144"
+  },
+  {
+   "id": "sec-365-1-x-this-is-impossible-therefore",
+   "title": "(X), this is impossible. Therefore",
+   "pages": "144-145"
+  },
+  {
+   "id": "sec-366-3-local-and-global-monodromy-141",
+   "title": "LOCAL AND GLOBAL MONODROMY. 141",
+   "pages": "145-145"
+  },
+  {
+   "id": "sec-367-311-let-us-brieﬂy-review-some-well-known-facts-a",
+   "title": "Let us brieﬂy review some well-known facts about singularit ies of",
+   "pages": "145-145"
+  },
+  {
+   "id": "sec-368-312-we-begin-the-discussion-with-the-formal-sett",
+   "title": "We begin the discussion with the formal setting. One deﬁnes t he",
+   "pages": "145-147"
+  },
+  {
+   "id": "sec-369-3-local-and-global-monodromy-143",
+   "title": "LOCAL AND GLOBAL MONODROMY. 143",
+   "pages": "147-147"
+  },
+  {
+   "id": "sec-370-315-let-us-now-discuss-problems-at-p-adic-singul",
+   "title": "Let us now discuss problems at p-adic singularities, concentrating",
+   "pages": "147-148"
+  },
+  {
+   "id": "sec-371-32-local-monodromy-of-p-adic-diﬀerential-equatio",
+   "title": "Local monodromy of p-adic diﬀerential equations. Outline of",
+   "pages": "148-148"
+  },
+  {
+   "id": "sec-372-321-let-k-be-a-complete-subﬁeld-of-cp-we-assume",
+   "title": "Let K be a complete subﬁeld of Cp. We assume for simplicity that",
+   "pages": "148-148"
+  },
+  {
+   "id": "sec-373-322-for-any-ρ-1-suﬃciently-close-to-1-let-us-den",
+   "title": "For any ρ > 1 suﬃciently close to 1, let us denote by R(M,ρ ) the",
+   "pages": "148-149"
+  },
+  {
+   "id": "sec-374-3-local-and-global-monodromy-145",
+   "title": "LOCAL AND GLOBAL MONODROMY. 145",
+   "pages": "149-149"
+  },
+  {
+   "id": "sec-375-323-a-useful-criterion-which-goes-back-the-dwork",
+   "title": "A useful criterion (which goes back the Dwork’s early studie s) for M",
+   "pages": "149-150"
+  },
+  {
+   "id": "sec-376-329-let-us-return-to-our-original-diﬀerential-eq",
+   "title": "Let us return to our original diﬀerential equation ( ∗). Let us assume",
+   "pages": "150-150"
+  },
+  {
+   "id": "sec-377-33-local-monodromy-of-p-adic-diﬀerential-equatio",
+   "title": "Local monodromy of p-adic diﬀerential equations and Galois",
+   "pages": "150-150"
+  },
+  {
+   "id": "sec-378-331-the-diﬀerential-sub--k-algebra",
+   "title": "The diﬀerential sub- K-algebra",
+   "pages": "150-151"
+  },
+  {
+   "id": "sec-379-3-local-and-global-monodromy-147",
+   "title": "LOCAL AND GLOBAL MONODROMY. 147",
+   "pages": "151-151"
+  },
+  {
+   "id": "sec-380-332-in-i243-we-have-reviewed-katz-functor-from-r",
+   "title": "In I.2.4.3, we have reviewed Katz’ functor from representat ions of",
+   "pages": "151-152"
+  },
+  {
+   "id": "sec-381-341-let-us-return-to-a-general-ordinary-linear-d",
+   "title": "Let us return to a general ordinary linear diﬀerential equat ion with",
+   "pages": "152-152"
+  },
+  {
+   "id": "sec-382-342-letk-be-a-complete-non-archimedean-ﬁeld-we-n",
+   "title": "LetK be a complete non-archimedean ﬁeld. We note that by deﬁni-",
+   "pages": "152-153"
+  },
+  {
+   "id": "sec-383-3-local-and-global-monodromy-149",
+   "title": "LOCAL AND GLOBAL MONODROMY. 149",
+   "pages": "153-153"
+  },
+  {
+   "id": "sec-384-343-a-continuous-k-linear-representation-ρ-of-a",
+   "title": "A continuous K-linear representation ρ of a topological group Γ will",
+   "pages": "153-153"
+  },
+  {
+   "id": "sec-385-1-ss-representations",
+   "title": "(S,s)-representations",
+   "pages": "153-153"
+  },
+  {
+   "id": "sec-386-1-ss-autkv-where-autkv",
+   "title": "(S,s)→ AutKV , where AutKV",
+   "pages": "153-154"
+  },
+  {
+   "id": "sec-387-1-ss-set-on-its-ﬁber-at-s-comes-from-a-con",
+   "title": "(S,s)-set on its ﬁber at s comes from a con-",
+   "pages": "154-154"
+  },
+  {
+   "id": "sec-388-1-ss-autkv-the-cohomology-class-of-f-in",
+   "title": "(S,s)→ AutKV (the cohomology class of F in",
+   "pages": "154-154"
+  },
+  {
+   "id": "sec-389-1-ss-autkv-is-nothing-but-the-latter-homomorphis",
+   "title": "(S,s), AutKV ) is nothing but the latter homomorphism up to conju-",
+   "pages": "154-154"
+  },
+  {
+   "id": "sec-390-345-let-m-be-a-vector-bundle-locally-free-os-mod",
+   "title": "Let M be a vector bundle (= locally free OS-module of ﬁnite rank)",
+   "pages": "154-155"
+  },
+  {
+   "id": "sec-391-3-local-and-global-monodromy-151",
+   "title": "LOCAL AND GLOBAL MONODROMY. 151",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-392-1-ss-invariants-corresponds-to",
+   "title": "(S,s)-invariants corresponds to",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-393-347-the-πet",
+   "title": "The πet",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-394-1-ss-representation-attached-to-m-is-called-the",
+   "title": "(S,s)-representation attached to ( M,∇) is called the mono-",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-395-348-the-etale-riemann-hilbert-functor-uniﬁes-sev",
+   "title": "The ´ etale Riemann-Hilbert functor uniﬁes several earlier construc-",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-396-1-ss",
+   "title": "(S,s ),",
+   "pages": "155-156"
+  },
+  {
+   "id": "sec-397-351-for-any-full-subcategory-cov",
+   "title": "For any full subcategory Cov•",
+   "pages": "156-156"
+  },
+  {
+   "id": "sec-398-1-ss-with-the-same-coimage-it-follows",
+   "title": "(S,s) with the same coimage. It follows",
+   "pages": "156-156"
+  },
+  {
+   "id": "sec-399-352-the-functor-rh-top-was-studied-in-i15-in-the",
+   "title": "The functor RH top was studied in I.1.5 (in the case K = Cp). Its",
+   "pages": "156-156"
+  },
+  {
+   "id": "sec-400-353-the-essential-image-of-the-functor-rh-alg-co",
+   "title": "The essential image of the functor RH alg consists of objects ( M,∇)",
+   "pages": "156-157"
+  },
+  {
+   "id": "sec-401-3-local-and-global-monodromy-153",
+   "title": "LOCAL AND GLOBAL MONODROMY. 153",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-402-1-ss-one-can-distinguish-those-which-factor-thro",
+   "title": "(S,s), one can distinguish those which factor through",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-403-1-s0s0-the-corresponding-connections-underlie-ov",
+   "title": "(S0,s0). The corresponding connections underlie overconvergent unit-",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-404-1-srs-representationsr--diﬀerential-modules",
+   "title": "(Sr,s)-representations}→{R -diﬀerential modules}",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-405-354-the-essential-image-of-the-functorrh-localg",
+   "title": "The essential image of the functorRH loc.alg consists of objects (M,∇)",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-406-1-dǫ-s-representations",
+   "title": "(D(∞,ǫ )∗,s)-representations",
+   "pages": "157-158"
+  },
+  {
+   "id": "sec-407-356-the-essential-image-of-the-functor-rh-temp-c",
+   "title": "The essential image of the functor RH temp consists of objects (M,∇)",
+   "pages": "158-158"
+  },
+  {
+   "id": "sec-408-1-ss-note-that-varying-j-they-generate-the-ﬁnite",
+   "title": "(S,s) (note that, varying j, they generate the ﬁnite quotient",
+   "pages": "158-159"
+  },
+  {
+   "id": "sec-409-3-local-and-global-monodromy-155",
+   "title": "LOCAL AND GLOBAL MONODROMY. 155",
+   "pages": "159-159"
+  },
+  {
+   "id": "sec-410-358-much-more-interesting-examples-arise-in-the",
+   "title": "Much more interesting examples arise in the context of p-adic pe-",
+   "pages": "159-160"
+  },
+  {
+   "id": "sec-411-359-let-us-now-give-a-criterion-for-a-connection",
+   "title": "Let us now give a criterion for a connection in the image of RH et to",
+   "pages": "160-160"
+  },
+  {
+   "id": "sec-412-1-ss-glv-be-a-ﬁnite-dimensional",
+   "title": "(S,s)→ GL(V ) be a ﬁnite-dimensional",
+   "pages": "160-160"
+  },
+  {
+   "id": "sec-413-3511-we-ﬁnish-the-section-by-showing-that-the-co",
+   "title": "We ﬁnish the section by showing that the connections which li e in",
+   "pages": "160-160"
+  },
+  {
+   "id": "sec-414-1-ss-then",
+   "title": "(S,s). Then",
+   "pages": "160-160"
+  },
+  {
+   "id": "sec-415-1-ss-for-any-point-s-aboves-let-s",
+   "title": "(S′,s′) (for any point s′ aboves). Let S",
+   "pages": "160-161"
+  },
+  {
+   "id": "sec-416-3-local-and-global-monodromy-157",
+   "title": "LOCAL AND GLOBAL MONODROMY. 157",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-417-1-ssπtop",
+   "title": "(S′,s′)→πtop",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-418-3513-besides-discrete-representations-of-πtemp",
+   "title": "Besides discrete representations of πtemp",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-419-1-ss-it-is-also-useful-to",
+   "title": "(S,s), it is also useful to",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-420-1-s-by-πtop",
+   "title": "(S′) by πtop",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-421-1-s-which-is-a-free-group-for",
+   "title": "(S′), which is a free group, for",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-422-1-ss",
+   "title": "(S,s) →",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-423-1-ssslv-but",
+   "title": "(S′,s′)→SL(V ). But",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-424-1-ss-slv-let-s-be-a-ﬁnite-etale-covering-of-s-su",
+   "title": "(S′,s′)→ SL(V ). Let S′′ be a ﬁnite ´ etale covering of S′ such that",
+   "pages": "161-162"
+  },
+  {
+   "id": "sec-425-4-non-archimedean-orbifolds-uniformizing-diﬀeren",
+   "title": "Non-archimedean orbifolds, uniformizing diﬀerential",
+   "pages": "162-162"
+  },
+  {
+   "id": "sec-426-411-there-are-several-variants-of-the-notion-of",
+   "title": "There are several variants of the notion of complex orbifold . We",
+   "pages": "162-162"
+  },
+  {
+   "id": "sec-427-412-a-morphism-of-orbifolds-f-ss-is-a-morphism-s",
+   "title": "A morphism of orbifolds f :S′→S is a morphism S",
+   "pages": "162-163"
+  },
+  {
+   "id": "sec-428-4-non-archimedean-orbifolds-159",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 159",
+   "pages": "163-163"
+  },
+  {
+   "id": "sec-429-413-a-morphism-f-is-called-an-orbifold-covering",
+   "title": "A morphism f is called an orbifold-covering if it is a covering in the",
+   "pages": "163-163"
+  },
+  {
+   "id": "sec-430-414-following-thurston-an-orbifold-is-said-to-be",
+   "title": "Following Thurston, an orbifold is said to be good or uniformizable",
+   "pages": "163-163"
+  },
+  {
+   "id": "sec-431-415-it-is-proved-in-loc-cit-that-orbifold-charts",
+   "title": "It is proved in loc. cit. that orbifold charts are locally unique. Apart",
+   "pages": "163-163"
+  },
+  {
+   "id": "sec-432-416-lets-s-zie-i-be-a-connected-orbifold-and-let",
+   "title": "LetS = (S, (Zi,e i)) be a connected orbifold, and let Γ be a discrete",
+   "pages": "163-164"
+  },
+  {
+   "id": "sec-433-417-one-of-the-main-applications-of-complex-orbi",
+   "title": "One of the main applications of complex orbifolds is to repre sent",
+   "pages": "164-164"
+  },
+  {
+   "id": "sec-434-2-z2-by",
+   "title": "Z)2} by",
+   "pages": "164-165"
+  },
+  {
+   "id": "sec-435-4-non-archimedean-orbifolds-161",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 161",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-436-418-more-generally-let-us-consider-a-shimura-var",
+   "title": "More generally, let us consider a Shimura variety of PEL type as in",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-437-421-another-important-application-of-orbifolds-i",
+   "title": "Another important application of orbifolds is the Galois th eory of",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-438-422-each-divisor-zi-deﬁnes-a-conjugacy-class-of",
+   "title": "Each divisor Zi deﬁnes a conjugacy class of elements γi inπtop",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-439-1-ss",
+   "title": "(S,s ):",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-440-1-ss-is-the-quotient-of-πtop",
+   "title": "(S,s ) is the quotient of πtop",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-441-1-ss--sets-πtop",
+   "title": "(S,s )-sets} ⊂−−−→ { πtop",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-442-1-ss-has-generators-γ0-γ-n-and-relations-γe0",
+   "title": "(S,s ) has generators γ0,... ,γ n and relations γe0",
+   "pages": "165-166"
+  },
+  {
+   "id": "sec-443-1-ss-which-is-actually-the-proﬁnite-completion-o",
+   "title": "(S,s ), which is actually the proﬁnite completion of πorb",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-444-1-ss-when",
+   "title": "(S,s ). When",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-445-423-letφ-s",
+   "title": "Letφ : S",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-446-431-we-follow-the-exposition-in-y-o87-4-52-and-k",
+   "title": "We follow the exposition in [ Y o87, 4, 5.2] and [ Kra96, 4]. We now",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-447-432-we-ﬁx-a-non-constant-rational-function-z-cs",
+   "title": "We ﬁx a non-constant rational function z∈ C(S). We shall assume",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-448-1-ss-restricted-to-s-notice",
+   "title": "(S,s ), restricted to S). Notice",
+   "pages": "166-168"
+  },
+  {
+   "id": "sec-449-443-a-morphism-of-orbifolds-f-ss-is-a-morphism-s",
+   "title": "A morphism of orbifolds f :S′→S is a morphism S",
+   "pages": "168-168"
+  },
+  {
+   "id": "sec-450-444-a-morphism-f-is-called-an-orbifold-covering",
+   "title": "A morphism f is called an orbifold-covering if it is a covering in the",
+   "pages": "168-169"
+  },
+  {
+   "id": "sec-451-4-non-archimedean-orbifolds-165",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 165",
+   "pages": "169-169"
+  },
+  {
+   "id": "sec-452-445-an-orbifold-is-said-to-be-uniformizable25-if",
+   "title": "An orbifold is said to be uniformizable(25) if it admits a global orbifold",
+   "pages": "169-169"
+  },
+  {
+   "id": "sec-453-446-let-us-again-assume-that-k-is-of-characteris",
+   "title": "Let us again assume that K is of characteristic zero. Let S =",
+   "pages": "169-169"
+  },
+  {
+   "id": "sec-454-447-one-of-the-applications-of-k-orbifolds-would",
+   "title": "One of the applications of K-orbifolds would be to represent mod-",
+   "pages": "169-170"
+  },
+  {
+   "id": "sec-455-451-lets",
+   "title": "LetS = (",
+   "pages": "170-171"
+  },
+  {
+   "id": "sec-456-4-non-archimedean-orbifolds-167",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 167",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-457-1-ss--sets-πtemp",
+   "title": "(S,s )-sets} ⊂−−−→ { πtemp",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-458-1-se-πalg",
+   "title": "(Se) = πalg",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-459-1-d-zez",
+   "title": "(D)× Z/eZ",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-460-1-d-the-factor-corresponding-to",
+   "title": "(D∗) (the factor corresponding to",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-461-1-se-πtemp",
+   "title": "(Se) = πtemp",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-462-454-by-kiehls-theorems-is-locally-isomorphic-to",
+   "title": "By Kiehl’s theorem,S is locally isomorphic to a product D∗×Z smooth",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-463-1-dπtemp",
+   "title": "(D∗)→πtemp",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-464-1-ss-well-deﬁned-up-to-conjugation-let-us-denote",
+   "title": "(S,s), well-deﬁned up to conjugation. Let us denote by",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-465-1-ss-of-a-topological-generator-of-the-ˆz1-facto",
+   "title": "(S,s) of a topological generator of the ˆZ(1)-factor of",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-466-1-d-local-monodromy-at-zi-the-closure-γei",
+   "title": "(D∗) (“local monodromy” at Zi). The closure ⟨γei",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-467-1-ss-generated-by-the-γei",
+   "title": "(S,s) generated by the γei",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-468-1-ss",
+   "title": "(S,s)∼",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-469-1",
+   "title": "((",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-470-1-ss-πorb",
+   "title": "(S,s) → πorb",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-471-1-ss-induces-an-injective",
+   "title": "(S,s) induces an injective",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-472-1-ssγei",
+   "title": "(S,s)/⟨γei",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-473-1-ssγi",
+   "title": "(S,s)/⟨γi⟩− ∼",
+   "pages": "171-172"
+  },
+  {
+   "id": "sec-474-1-ss-set",
+   "title": "(S,s)-set",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-475-1-ss-set-if-and-only-if-the-γei",
+   "title": "(S,s)-set if and only if the γei",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-476-1-ss-and-πorb",
+   "title": "(S,s) and πorb",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-477-1-ss-respectively-form-a-fundamental-system-of",
+   "title": "(S,s) respectively form a fundamental system of",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-478-1-ss-by-any-closed-normal-subgroup-egγei",
+   "title": "(S,s) by any closed normal subgroup ( e.g.⟨γei",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-479-1-ss-admits",
+   "title": "(S,s) admits",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-480-457-letφ",
+   "title": "Letφ :",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-481-1-ss-g-1",
+   "title": "(S,s) −−−→G −−−→1",
+   "pages": "172-173"
+  },
+  {
+   "id": "sec-482-4-non-archimedean-orbifolds-169",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 169",
+   "pages": "173-173"
+  },
+  {
+   "id": "sec-483-459-assume-that-s-is-the-analytiﬁcation-of-a-smo",
+   "title": "Assume that S is the analytiﬁcation of a smooth algebraic K-variety",
+   "pages": "173-173"
+  },
+  {
+   "id": "sec-484-1-ss-give-rise-to",
+   "title": "(S,s) give rise to",
+   "pages": "173-173"
+  },
+  {
+   "id": "sec-485-1-ss-357-and-this-restriction-factors-through",
+   "title": "(S,s) (3.5.7), and this restriction factors through",
+   "pages": "173-173"
+  },
+  {
+   "id": "sec-486-461-we-now-develop-the-non-archimedean-counterpa",
+   "title": "We now develop the non-archimedean counterpart of 4.3. We as sume",
+   "pages": "173-175"
+  },
+  {
+   "id": "sec-487-4-non-archimedean-orbifolds-171",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 171",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-488-1-ss-it-factors-through-an",
+   "title": "(S,s ) [it factors through an",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-489-471-we-are-now-ready-for-a-synthesis-relating-th",
+   "title": "We are now ready for a synthesis, relating the theory of p-adic period",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-490-472-according-to-the-ˇcerednik-drinfeld-theory-s",
+   "title": "According to the ˇCerednik-Drinfeld theory surveyed in II.7.4, 7.6",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-491-473-following-ii75-all-this-generalizes-to-shimu",
+   "title": "Following II.7.5, all this generalizes to Shimura curves de ﬁned by",
+   "pages": "175-176"
+  },
+  {
+   "id": "sec-492-475-let-us-illustrate-this-section-with-a-concre",
+   "title": "Let us illustrate this section with a concrete example ( cf. [And98]",
+   "pages": "176-177"
+  },
+  {
+   "id": "sec-493-4-non-archimedean-orbifolds-173",
+   "title": "NON-ARCHIMEDEAN ORBIFOLDS. 173",
+   "pages": "177-178"
+  },
+  {
+   "id": "sec-494-476-in-general-it-is-quite-hard-to-compute-unifo",
+   "title": "In general, it is quite hard to compute uniformizing diﬀeren tial equa-",
+   "pages": "178-178"
+  },
+  {
+   "id": "sec-495-477-let-us-now-consider-the-critical-prime-5-sim",
+   "title": "Let us now consider the critical prime 5 (similar phenomena o ccur",
+   "pages": "178-178"
+  },
+  {
+   "id": "sec-496-5-this-group-is-generated",
+   "title": "This group is generated",
+   "pages": "178-180"
+  },
+  {
+   "id": "sec-497-513-the-quotientτ-of-a-suitable-basis-of-solutio",
+   "title": "The quotientτ of a suitable basis of solutions of HGDE (a,b,c ) sends",
+   "pages": "180-180"
+  },
+  {
+   "id": "sec-498-514-a-similar-situation-arises-for-any-hypergeom",
+   "title": "A similar situation arises for any hypergeometric diﬀerent ial equa-",
+   "pages": "180-180"
+  },
+  {
+   "id": "sec-499-515-the-case-1",
+   "title": "The case∑ 1",
+   "pages": "180-180"
+  },
+  {
+   "id": "sec-500-516-as-was-remarked-by-j-wolfart-belyis-criterio",
+   "title": "As was remarked by J. Wolfart, Belyi’s criterion for algebra ic curves",
+   "pages": "180-181"
+  },
+  {
+   "id": "sec-501-521-ap-adic-schwarz-orbifold-is-an-orbifold-over",
+   "title": "Ap-adic Schwarz orbifold is an orbifold over some complete subﬁeld",
+   "pages": "181-181"
+  },
+  {
+   "id": "sec-502-522-let-e0e-1e-be-integers-1-and-deﬁne",
+   "title": "Let e0,e 1,e∞ be integers > 1, and deﬁne",
+   "pages": "181-181"
+  },
+  {
+   "id": "sec-503-1-p1-0-1",
+   "title": "(P1\\{ 0, 1,∞},",
+   "pages": "181-181"
+  },
+  {
+   "id": "sec-504-1-p1-0-1spgl-2cp",
+   "title": "(P1\\{ 0, 1,∞},s)→PGL 2(Cp)]",
+   "pages": "181-181"
+  },
+  {
+   "id": "sec-505-1-se0e-1e",
+   "title": "(S(e0,e 1,e∞))",
+   "pages": "181-181"
+  },
+  {
+   "id": "sec-506-1-spgl-2cp",
+   "title": "(S)→PGL 2(Cp)",
+   "pages": "181-182"
+  },
+  {
+   "id": "sec-507-1-p1-0-1s-this-implies-a-cf-356-where-a-concrete",
+   "title": "(P1\\{ 0, 1,∞},s). This implies a), cf. 3.5.6 (where a concrete descrip-",
+   "pages": "182-182"
+  },
+  {
+   "id": "sec-508-1-p1-0-1s-implies-that-hgde-abc",
+   "title": "(P1\\{ 0, 1,∞},s) implies that HGDE (a,b,c )",
+   "pages": "182-182"
+  },
+  {
+   "id": "sec-509-1-p1-0-1s-cf-the-discus",
+   "title": "(P1\\{ 0, 1,∞},s) ( cf. the discus-",
+   "pages": "182-182"
+  },
+  {
+   "id": "sec-510-1-f4-1-because-f4-has-tree-like-reduction-but-th",
+   "title": "(F4) = 1 (because F4 has tree-like reduction). But the correspond-",
+   "pages": "182-182"
+  },
+  {
+   "id": "sec-511-525-the-case-1",
+   "title": "The case ∑ 1",
+   "pages": "182-183"
+  },
+  {
+   "id": "sec-512-531-our-aim-is-to-give-a-more-geometric-descript",
+   "title": "Our aim is to give a more geometric description of p-adic triangle",
+   "pages": "183-183"
+  },
+  {
+   "id": "sec-513-1-se0e-1es",
+   "title": "(S(e0,e 1,e∞),s)→",
+   "pages": "183-184"
+  },
+  {
+   "id": "sec-514-1-se0e-1es-g-1",
+   "title": "(S(e0,e 1,e∞),s) −−−→G −−−→1",
+   "pages": "184-184"
+  },
+  {
+   "id": "sec-515-2-1-1",
+   "title": "(1 + 1",
+   "pages": "184-184"
+  },
+  {
+   "id": "sec-516-2-1-1",
+   "title": "(−1+ 1",
+   "pages": "184-184"
+  },
+  {
+   "id": "sec-517-534-f-kato-calls-the-p-adic-triangle-groups-whic",
+   "title": "F. Kato calls the p-adic triangle groups which arise in this way “ p-",
+   "pages": "184-184"
+  },
+  {
+   "id": "sec-518-536-the-following-theorem-explains-how-to-obtain",
+   "title": "The following theorem explains how to obtains all p-adic triangle",
+   "pages": "184-186"
+  },
+  {
+   "id": "sec-519-541-cocompact-arithmetic-triangle-groups-are-hyp",
+   "title": "(Cocompact) arithmetic triangle groups are hyperbolic tri angle groups",
+   "pages": "186-187"
+  },
+  {
+   "id": "sec-520-542-the-complete-list-of-cocompact-arithmetic-tr",
+   "title": "The complete list of cocompact arithmetic triangle groups ( there are",
+   "pages": "187-188"
+  },
+  {
+   "id": "sec-521-543-we-do-not-know-whether-all-arithmetic-triang",
+   "title": "We do not know whether all arithmetic triangle groups are con gruent",
+   "pages": "188-188"
+  },
+  {
+   "id": "sec-522-55-arithmetic-p-adic-triangle-groups-a-p-adic-an",
+   "title": "Arithmetic p-adic triangle groups. A p-adic analogue of T akeuchi’s",
+   "pages": "188-188"
+  },
+  {
+   "id": "sec-523-551-arithmeticp-adic-triangle-groups-are-hyperbo",
+   "title": "Arithmeticp-adic triangle groups are hyperbolic p-adic triangle groups",
+   "pages": "188-188"
+  },
+  {
+   "id": "sec-524-552-let-pe0e-1e-pgl-2cp-be-an-arithmetic-p-adic",
+   "title": "Let ∆ p(e0,e 1,e∞) ⊂ PGL 2(Cp) be an arithmetic p-adic triangle",
+   "pages": "188-189"
+  },
+  {
+   "id": "sec-525-553-let-us-show-conversely-that-if-e0e-1e-appear",
+   "title": "Let us show, conversely, that if ∆( e0,e 1,e∞) appears in Takeuchi’s",
+   "pages": "189-189"
+  },
+  {
+   "id": "sec-526-554-putting-552-and-553-together-we-conclude-tha",
+   "title": "Putting 5.5.2 and 5.5.3 together, we conclude that the arith metic",
+   "pages": "189-191"
+  },
+  {
+   "id": "sec-527-1-s-is-either-commensurable-to-a",
+   "title": "(S) is either commensurable to a",
+   "pages": "191-192"
+  },
+  {
+   "id": "sec-528-56-on-special-values-of-hypergeometric-functions",
+   "title": "On special values of hypergeometric functions attache d to",
+   "pages": "192-192"
+  },
+  {
+   "id": "sec-529-561-let-abc-be-rational-numbers-such-that-c-ab-t",
+   "title": "Let a,b,c be rational numbers such that c > a+b. Then the hy-",
+   "pages": "192-192"
+  },
+  {
+   "id": "sec-530-562-ifhgde-abc-is-the-diﬀerential-equation-attac",
+   "title": "IfHGDE (a,b,c ) is the diﬀerential equation attached as above to an",
+   "pages": "192-193"
+  },
+  {
+   "id": "sec-531-563-there-is-an-entirely-analogous-phenomenon-fo",
+   "title": "There is an entirely analogous phenomenon for arithmeticp-adic tri-",
+   "pages": "193-194"
+  },
+  {
+   "id": "sec-532-611-this-is-the-symmetry-group-of-the-black-and",
+   "title": "This is the symmetry group of the black-and-white tesselati on of the",
+   "pages": "194-195"
+  },
+  {
+   "id": "sec-533-612-the-vertices-of-one-of-the-basic-triangles-a",
+   "title": "The vertices of one of the basic triangles are",
+   "pages": "195-195"
+  },
+  {
+   "id": "sec-534-613-the-group-2-4-6-enjoys-the-following-univers",
+   "title": "The group ∆(2 , 4, 6) enjoys the following “universal property”, dis-",
+   "pages": "195-195"
+  },
+  {
+   "id": "sec-535-621-the-q-subalgebra-ofm2q",
+   "title": "The Q-subalgebra ofM2(Q(√",
+   "pages": "195-196"
+  },
+  {
+   "id": "sec-536-622-any-element-of-n-b-can-be-written-uniquely-a",
+   "title": "Any element of N (B)+ can be written uniquely as a product",
+   "pages": "196-200"
+  },
+  {
+   "id": "sec-537-627-similar-considerations-apply-to-the-congruen",
+   "title": "Similar considerations apply to the congruence subgroup of level",
+   "pages": "200-200"
+  },
+  {
+   "id": "sec-538-628-by-the-general-theory-of-shimura-curves-x-2",
+   "title": "By the general theory of Shimura curves, X +(2) is a moduli space for",
+   "pages": "200-200"
+  },
+  {
+   "id": "sec-539-629-any-cm-point-on-x-2-parametrizes-an-abelian",
+   "title": "Any CM point on X +(2) parametrizes an abelian surface isogenous",
+   "pages": "200-201"
+  },
+  {
+   "id": "sec-540-3-n-of-the-group-g-1-n",
+   "title": "(N ) of the group {g∈ (1 +N",
+   "pages": "201-201"
+  },
+  {
+   "id": "sec-541-3-1-is-abbreviated-into-γ",
+   "title": "(1) is abbreviated into Γ +",
+   "pages": "201-201"
+  },
+  {
+   "id": "sec-542-632-these-uniformizations-actually-hold-over-q9",
+   "title": "These uniformizations actually hold over Q9, the quadratic unram-",
+   "pages": "201-201"
+  },
+  {
+   "id": "sec-543-3-2-consisting",
+   "title": "(2) consisting",
+   "pages": "201-202"
+  },
+  {
+   "id": "sec-544-64-the-non-archimedean-triangle-groups-32-4-6-22",
+   "title": "The non-archimedean triangle groups ∆ 3(2, 4, 6), ∆ 2(2, 4, 6) and",
+   "pages": "202-202"
+  },
+  {
+   "id": "sec-545-641-our-aim-here-is-to-explore-the-combinatorics",
+   "title": "Our aim here is to explore the combinatorics of the ﬁnitely ge nerated",
+   "pages": "202-202"
+  },
+  {
+   "id": "sec-546-642-let-s-be-a-mumford-curve-over-some-ﬁnite-ext",
+   "title": "Let S be a Mumford curve over some ﬁnite extension K of Qp, and",
+   "pages": "202-203"
+  },
+  {
+   "id": "sec-547-643-let-us-apply-this-to-s-x-2q9-withn-γ-32-4-6",
+   "title": "Let us apply this to S =X +(2)Q9 withN (Γ) = ∆ 3(2, 4, 6). One has",
+   "pages": "203-203"
+  },
+  {
+   "id": "sec-548-644-in-the-case-of-s-x-3q4-with-n-γ-22-4-6-one-s",
+   "title": "In the case of S =X +(3)Q4 with N (Γ) = ∆ 2(2, 4, 6), one still has",
+   "pages": "203-205"
+  },
+  {
+   "id": "sec-549-65-f-1",
+   "title": "F ( 1",
+   "pages": "205-205"
+  },
+  {
+   "id": "sec-550-1-p1-0-1πorb",
+   "title": "(P1\\{ 0, 1,∞})→πorb",
+   "pages": "205-205"
+  },
+  {
+   "id": "sec-551-1-p1-0-1-are-elements-of-order-2-4-6-respectivel",
+   "title": "(P1\\{ 0, 1,∞}) are elements of order 2 , 4, 6 respectively. By 2.3.9, the",
+   "pages": "205-205"
+  },
+  {
+   "id": "sec-552-1-p10-1-containing-γ1γ-is",
+   "title": "(P1\\{0, 1,∞}) containing γ1,γ∞ is",
+   "pages": "205-205"
+  },
+  {
+   "id": "sec-553-1-p1-0-1-itself-it-follows-that-the-smallest-nor",
+   "title": "(P1\\{ 0, 1,∞}) itself. It follows that the smallest normal subgroup of",
+   "pages": "205-206"
+  },
+  {
+   "id": "sec-554-651-rather-than-2-4-8-we-now-prefer-to-work-with",
+   "title": "Rather than ∆(2 , 4, 8), we now prefer to work with ∆(6 , 2, 4) (this",
+   "pages": "206-209"
+  },
+  {
+   "id": "sec-555-662-let-us-consider-our-hypergeometric-function",
+   "title": "Let us consider our hypergeometric function as a triadic fun ction",
+   "pages": "209-209"
+  },
+  {
+   "id": "sec-556-663-in-elk98-table-2-one-ﬁnds-a-table-of-rationa",
+   "title": "In [ Elk98, Table 2], one ﬁnds a table of rational CM points z (ratio-",
+   "pages": "209-213"
+  },
+  {
+   "id": "sec-557-2-rigid-analytic-spaces-209",
+   "title": "RIGID ANALYTIC SPACES. 209",
+   "pages": "213-215"
+  },
+  {
+   "id": "sec-558-2-rigid-analytic-spaces-211",
+   "title": "RIGID ANALYTIC SPACES. 211",
+   "pages": "215-217"
+  },
+  {
+   "id": "sec-559-3-relation-with-formal-geometry-213",
+   "title": "RELATION WITH FORMAL GEOMETRY. 213",
+   "pages": "217-219"
+  },
+  {
+   "id": "sec-560-3-relation-with-formal-geometry-215",
+   "title": "RELATION WITH FORMAL GEOMETRY. 215",
+   "pages": "219-221"
+  },
+  {
+   "id": "sec-561-4-topology-of-rigid-analytic-space-217",
+   "title": "TOPOLOGY OF RIGID ANALYTIC SPACE. 217",
+   "pages": "221-222"
+  },
+  {
+   "id": "sec-562-5-berkovich-approach-to-non-archimedean-analysis",
+   "title": "Berkovich’ approach to non-archimedean analysis",
+   "pages": "222-227"
+  },
+  {
+   "id": "sec-563-2-drinfeld-symmetric-space-223",
+   "title": "DRINFELD SYMMETRIC SPACE. 223",
+   "pages": "227-229"
+  },
+  {
+   "id": "sec-564-2-drinfeld-symmetric-space-225",
+   "title": "DRINFELD SYMMETRIC SPACE. 225",
+   "pages": "229-231"
+  },
+  {
+   "id": "sec-565-4-examples-227",
+   "title": "EXAMPLES. 227",
+   "pages": "231-233"
+  },
+  {
+   "id": "sec-566-5-mumfords-f-ake-projective-plane-229",
+   "title": "MUMFORD’S F AKE PROJECTIVE PLANE. 229",
+   "pages": "233-235"
+  },
+  {
+   "id": "sec-567-11-let-p-be-a-prime-number-k-a-perfect-ﬁeld-of-c",
+   "title": "Let p be a prime number, k a perfect ﬁeld of characteristic p, K0 an",
+   "pages": "235-236"
+  },
+  {
+   "id": "sec-568-21-let-g-be-a-linear-algebraic-group-over-qp-and",
+   "title": "Let G be a linear algebraic group over Qp and denote by Rep Qp(G)",
+   "pages": "236-236"
+  },
+  {
+   "id": "sec-569-22-let-d-lim",
+   "title": "Let D = lim",
+   "pages": "236-237"
+  },
+  {
+   "id": "sec-570-3-totaros-theorem-233",
+   "title": "TOTARO’S THEOREM. 233",
+   "pages": "237-237"
+  },
+  {
+   "id": "sec-571-24-let-k-be-a-totally-ramiﬁed-ﬁnite-extension-of",
+   "title": "Let K be a totally ramiﬁed ﬁnite extension of K0 in K 0. For a one-",
+   "pages": "237-237"
+  },
+  {
+   "id": "sec-572-31-letg-be-a-reductive-algebraic-group-over-qp-w",
+   "title": "LetG be a reductive algebraic group over Qp. We ﬁx a conjugacy class",
+   "pages": "237-237"
+  },
+  {
+   "id": "sec-573-32-two-one-parameter-subgroups-of-g-overk-0-are",
+   "title": "Two one-parameter subgroups of G overK 0 are equivalent if and only",
+   "pages": "237-238"
+  },
+  {
+   "id": "sec-574-33-let-b-gk0-for-a-ﬁnite-extension-k-of-e-a-poin",
+   "title": "Let b∈ G(K0). For a ﬁnite extension K of ˘E, a point ξ inFλ(K)",
+   "pages": "238-238"
+  },
+  {
+   "id": "sec-575-34-for-a-maximal-torus-t-ingk0-let-xt-be-the-fre",
+   "title": "For a maximal torus T inGK0, let X∗(T ) be the free abelian group of",
+   "pages": "238-238"
+  },
+  {
+   "id": "sec-576-35-now-we-assume-that-g-is-connected-let-u-λ-be",
+   "title": "Now we assume that G is connected. Let U (λ) be the unipotent radical",
+   "pages": "238-239"
+  },
+  {
+   "id": "sec-577-3-totaros-theorem-235",
+   "title": "TOTARO’S THEOREM. 235",
+   "pages": "239-240"
+  },
+  {
+   "id": "sec-578-41-let-g-be-a-reductive-group-over-qp-b-gk0-and",
+   "title": "Let G be a reductive group over Qp, b∈ G(K0), and ﬁx a conjugacy",
+   "pages": "240-243"
+  },
+  {
+   "id": "sec-579-bibliography",
+   "title": "Bibliography",
+   "pages": "243-256"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

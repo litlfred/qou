@@ -1,0 +1,199 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0403224v1",
+ "source": {
+  "file": "0403224v1.pdf",
+  "sha256": "c25ccba77da375adc5ecdc95a1f245148dc0071fc677c2c904c0d702dd4fbb84",
+  "bytes": 62801,
+  "pages": 7
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0403224",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "14 Mar 2004"
+  },
+  "doi": null,
+  "title": "Difference equation of the colored Jones polynomial for torus knot",
+  "authors_raw": null,
+  "abstract": "We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence equation, which reduces to the ﬁrst order di ﬀerence equation for a case of T2, 2m+1. We show that the A-polynomial of the torus knot can be derived from the di ﬀerence equation. Also constructed is a q-hypergeometric type expression of the colored Jones polynomial for T2, 2m+1. 1. I ntroduction The N-colored Jones polynomial JK(N) is one of the quantum invariants for knot K. It is associated with the N-dimensional irreducible represen- tation of sl(2), and is powerful to classify knots. Motivated by “volume conjecture” [12, 18] saying that a hyperbolic volume of the k not comple- ment dominates an asymptotic behavior of the colored Jones p olynomial JK(N) at q = e2πi/ N, it receives much interests toward a geometrical and topological interpretation of the quantum invariants. Recently another intriguing structure of the colored Jones polynomial was put forward; it was shown that the N-colored Jones polynomial JK(N) can be written in a q-hypergeometric form, and that it satisﬁes a recursion relation with respect to N [6]. It was further demonstrated for trefoil and ﬁgure-eight knot [5] that a recursion relation is related to the A-polynomial AK(L, M) (see also Ref. 4), which denotes an algebraic curve of eigen val- ues of the S L(2, C) representation of the boundary torus of knot K [3]. As the A-polynomial contains many geometrical information s such as the boundary slopes of the knot, this “AJ conjecture” may help our geometrical understanding of the colored Jones polynomial. In this article, we study torus knot Ts, t where s and t are relatively prime integers. We prove that theN-colored Jones polynomial JK(N) for the torus knots K = Ts, t satisﬁes the second order recursion relation (7) [Theorem 4], which reduces to the ﬁrst order (9) only in a case of K = T2, 2m+1 [Theo- rem 6]. Furthermore we shall show that this di ﬀerence operator gives the A-polynomial of",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181024075656-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0403224v1  [math.GT]  14 Mar 2004"
+  },
+  "title_lines": [
+   "DIFFERENCE EQUATION OF THE COLORED JONES",
+   "POLYNOMIAL FOR TORUS KNOT",
+   "KAZUHIRO HIKAMI"
+  ],
+  "title_prev": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "I ntroduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "KAZUHIRO HIKAMI",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "C olored Jones Polynomial",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(s−1)(t−1)(1−N)",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUHIRO HIKAMI",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A-P olynomial",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "KAZUHIRO HIKAMI",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 6,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 6,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-kazuhiro-hikami",
+   "number": "2",
+   "title": "KAZUHIRO HIKAMI",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 395,
+   "n_words": 67
+  },
+  {
+   "id": "sec-001-1-i-ntroduction",
+   "number": "1",
+   "title": "I ntroduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1825,
+   "n_words": 305
+  },
+  {
+   "id": "sec-002-2-c-olored-jones-polynomial",
+   "number": "2",
+   "title": "C olored Jones Polynomial",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 699,
+   "n_words": 171
+  },
+  {
+   "id": "sec-003-2-s1t11n",
+   "number": "2",
+   "title": "(s−1)(t−1)(1−N)",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 2894,
+   "n_words": 557
+  },
+  {
+   "id": "sec-004-4-kazuhiro-hikami",
+   "number": "4",
+   "title": "KAZUHIRO HIKAMI",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 614,
+   "n_words": 118
+  },
+  {
+   "id": "sec-005-3-a-p-olynomial",
+   "number": "3",
+   "title": "A-P olynomial",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2997,
+   "n_words": 622
+  },
+  {
+   "id": "sec-006-6-kazuhiro-hikami",
+   "number": "6",
+   "title": "KAZUHIRO HIKAMI",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 588,
+   "n_words": 139
+  },
+  {
+   "id": "sec-007-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 306,
+   "n_words": 52
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2918,
+   "n_words": 453
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 13236
+ }
+}

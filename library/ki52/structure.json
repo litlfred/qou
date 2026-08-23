@@ -1,0 +1,361 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ki52",
+ "source": {
+  "file": "ki52.pdf",
+  "sha256": "35ad4ee5a00d4a188ebc77f281ff2aa8048aa30b07d1b926a34761150cc7527b",
+  "bytes": 289246,
+  "pages": 52
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki",
+  "authors_raw": null,
+  "abstract": "We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern-Simons invariant of the complement of the 5 2 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 5 2 knot.",
+  "docinfo": {
+   "Creator": " TeX output 2016.01.12:0932",
+   "Producer": "dvipdfmx (20110311)",
+   "CreationDate": "D:20160112093302+09'00'"
+  },
+  "title_lines": [
+   "On the asymptotic expansion of",
+   "the Kashaev invariant of the 5 2 knot",
+   "Tomotada Ohtsuki"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Calculation of the Kashaev invariant of the 52 knot",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Kashaev invariant of the 52 knot",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of ⟨ 52 ⟩N toward its asymptotic expansion",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Calculation by the saddle point method",
+   "page": 10,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(Nx 2)2 +b4Nx 2)",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Calculation by the Poisson summation formula",
+   "page": 19,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Re 1",
+   "page": 19,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.1",
+   "page": 28,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.1",
+   "page": 28,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "(Poisson summation formula) (see also Remark 4.8 and Appendix B), this sum is",
+   "page": 28,
+   "source": "inferred",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of the asymptotic expansion",
+   "page": 30,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "(x2",
+   "page": 31,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "(t0 +s0)2 + 1",
+   "page": 32,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2\u0019",
+   "page": 34,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(\u0000Vts)3 + 3",
+   "page": 35,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the saddle point method",
+   "page": 36,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 49,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 381,
+   "n_words": 67
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 9480,
+   "n_words": 1776
+  },
+  {
+   "id": "sec-002-2-calculation-of-the-kashaev-invariant-of-the-52",
+   "number": "2",
+   "title": "Calculation of the Kashaev invariant of the 52 knot",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3592,
+   "n_words": 754
+  },
+  {
+   "id": "sec-003-22-calculation-of-52-n-toward-its-asymptotic-exp",
+   "number": "2.2",
+   "title": "Calculation of ⟨ 52 ⟩N toward its asymptotic expansion",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5071,
+   "n_words": 1225
+  },
+  {
+   "id": "sec-004-3-calculation-by-the-saddle-point-method",
+   "number": "3",
+   "title": "Calculation by the saddle point method",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 6258,
+   "n_words": 1409
+  },
+  {
+   "id": "sec-005-2-nx-22-b4nx-2",
+   "number": "2",
+   "title": "(Nx 2)2 +b4Nx 2)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 7778,
+   "n_words": 1684
+  },
+  {
+   "id": "sec-006-4-calculation-by-the-poisson-summation-formula",
+   "number": "4",
+   "title": "Calculation by the Poisson summation formula",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 940,
+   "n_words": 185
+  },
+  {
+   "id": "sec-007-2-re-1",
+   "number": "2",
+   "title": "Re 1",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 28,
+   "n_chars": 11034,
+   "n_words": 2585
+  },
+  {
+   "id": "sec-008-5-proof-of-theorem-11",
+   "number": "5",
+   "title": "Proof of Theorem 1.1",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 932,
+   "n_words": 170
+  },
+  {
+   "id": "sec-009-46-poisson-summation-formula-see-also-remark-48",
+   "number": "4.6",
+   "title": "(Poisson summation formula) (see also Remark 4.8 and Appendix B), this sum is",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3477,
+   "n_words": 782
+  },
+  {
+   "id": "sec-010-52-calculation-of-the-asymptotic-expansion",
+   "number": "5.2",
+   "title": "Calculation of the asymptotic expansion",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2304,
+   "n_words": 552
+  },
+  {
+   "id": "sec-011-24-x2",
+   "number": "24",
+   "title": "(x2",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1288,
+   "n_words": 359
+  },
+  {
+   "id": "sec-012-2-t0-s02-1",
+   "number": "2",
+   "title": "(t0 +s0)2 + 1",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1925,
+   "n_words": 498
+  },
+  {
+   "id": "sec-013-2-2",
+   "number": "2",
+   "title": "(2\u0019",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 2136,
+   "n_words": 550
+  },
+  {
+   "id": "sec-014-5-vts3-3",
+   "number": "5",
+   "title": "(\u0000Vts)3 + 3",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 526,
+   "n_words": 145
+  },
+  {
+   "id": "sec-015-53-verifying-the-assumption-of-the-saddle-point",
+   "number": "5.3",
+   "title": "Verifying the assumption of the saddle point method",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 5834,
+   "n_words": 1454
+  },
+  {
+   "id": "sec-016-54-verifying-the-assumption-of-the-poisson-summa",
+   "number": "5.4",
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 49,
+   "n_chars": 14855,
+   "n_words": 3613
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 7414,
+   "n_words": 1134
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 18,
+  "chars_total": 85225
+ },
+ "duplicate_of": "104171-qt-83",
+ "duplicate_note": "Same work as library/104171-qt-83/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

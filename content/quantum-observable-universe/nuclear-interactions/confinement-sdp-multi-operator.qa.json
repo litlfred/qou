@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.255Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.295Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.335Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.375Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.415Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.457Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.499Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.541Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.582Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "'It includes all shell-closure and magic-number configurations' is an unsupported 'all', but it is a modest classification claim, nothing in the block contradicts it, and it reads as definitional of the |S*| >= 2 regime - unlike the two superlative failures recorded elsewhere in this batch, which were both maximum-strength AND self-contradicted."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.459Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.624Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:12:41.624Z"
 }

@@ -1,0 +1,459 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2012.00062v3",
+ "source": {
+  "file": "2012.00062v3.pdf",
+  "sha256": "2aacb7fa43f5e0da2657c6b7f7e58947baea6c3c4b37810c529e9b13b6b35039",
+  "bytes": 1251854,
+  "pages": 68
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2012.00062",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "7 Apr 2022"
+  },
+  "doi": null,
+  "title": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY",
+  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO",
+  "abstract": "The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional state-integral which is a holomorphic function of a complexiﬁed Planck’s constantτ in the complex cut plane and an entire function of a complex parameteru. This gives rise to a vector of factorially divergent perturbative formal power series whose Stokes rays form a peacock-like pattern in the complex plane. We conjecture that these perturbative series are resurgent, their trans-series involve two non-perturbative variables, their Stokes automorphism satisﬁes a unique factorization prop- erty and that it is given explicitly in terms of a fundamental matrix solution to a (dual) linear q-diﬀerence equation. We further conjecture that a distinguished entry of the Stokes automorphism matrix is the 3D-index of Dimofte–Gaiotto–Gukov. We provide proofs of our statements regarding theq-diﬀerence equations and their properties of their fundamen- tal solutions and illustrate our conjectures regarding the Stokes matrices with numerical calculations for the two simplest hyperbolic41 and 52 knots.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220408010627Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_lines": [
+   "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX",
+   "CHERN-SIMONS THEORY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Chern–Simons theory with compact and complex gauge group",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Resurgence and the Stokes automorphism",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "A q-holonomic module of the partition function and its descendants",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Perturbative series and their resurgence",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Disclaimers",
+   "page": 8,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Further directions",
+   "page": 9,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Borel resummation and Stokes automorphisms",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Borel resummation",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Stokes automorphism",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "A summary of the story when u=0",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The 41 knot when u=0",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The 52 knot when u=0",
+   "page": 17,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Holonomic and elliptic functions inside and outside the unit disk",
+   "page": 24,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The 41 knot",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic series",
+   "page": 25,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic blocks",
+   "page": 27,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Taylor series expansion at u=0",
+   "page": 32,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Stokes matrices near u=0",
+   "page": 36,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "The Borel resummations of the asymptotic series",
+   "page": 39,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Stokes matrices for real u",
+   "page": 41,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "Numerical verification",
+   "page": 43,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "The 52 knot",
+   "page": 45,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic series",
+   "page": 45,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic blocks",
+   "page": 47,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Taylor series expansion at u=0",
+   "page": 54,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Stokes matrices near u=0",
+   "page": 57,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "The Borel resummations of the asymptotic series",
+   "page": 60,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Numerical verification",
+   "page": 61,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 1,
+   "title": "One-dimensional state-integrals and their descendants",
+   "page": 62,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 65,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
+   "number": "1.1",
+   "title": "Chern–Simons theory with compact and complex gauge group",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7557,
+   "n_words": 1152
+  },
+  {
+   "id": "sec-002-13-a-q-holonomic-module-of-the-partition-functio",
+   "number": "1.3",
+   "title": "A q-holonomic module of the partition function and its descendants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4637,
+   "n_words": 741
+  },
+  {
+   "id": "sec-003-14-perturbative-series-and-their-resurgence",
+   "number": "1.4",
+   "title": "Perturbative series and their resurgence",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5559,
+   "n_words": 896
+  },
+  {
+   "id": "sec-004-15-disclaimers",
+   "number": "1.5",
+   "title": "Disclaimers",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3030,
+   "n_words": 489
+  },
+  {
+   "id": "sec-005-16-further-directions",
+   "number": "1.6",
+   "title": "Further directions",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1200,
+   "n_words": 181
+  },
+  {
+   "id": "sec-006-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 466,
+   "n_words": 69
+  },
+  {
+   "id": "sec-007-2-borel-resummation-and-stokes-automorphisms",
+   "number": "2",
+   "title": "Borel resummation and Stokes automorphisms",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 24,
+   "n_chars": 25788,
+   "n_words": 4823
+  },
+  {
+   "id": "sec-008-4-holonomic-and-elliptic-functions-inside-and-ou",
+   "number": "4",
+   "title": "Holonomic and elliptic functions inside and outside the unit disk",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2726,
+   "n_words": 448
+  },
+  {
+   "id": "sec-009-5-the-41-knot",
+   "number": "5",
+   "title": "The 41 knot",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1849,
+   "n_words": 328
+  },
+  {
+   "id": "sec-010-51-asymptotic-series",
+   "number": "5.1",
+   "title": "Asymptotic series",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1337,
+   "n_words": 255
+  },
+  {
+   "id": "sec-011-52-holomorphic-blocks",
+   "number": "5.2",
+   "title": "Holomorphic blocks",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 39,
+   "n_chars": 21725,
+   "n_words": 3616
+  },
+  {
+   "id": "sec-012-55-the-borel-resummations-of-the-asymptotic-seri",
+   "number": "5.5",
+   "title": "The Borel resummations of the asymptotic series",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 45,
+   "n_chars": 12750,
+   "n_words": 2243
+  },
+  {
+   "id": "sec-013-6-the-52-knot",
+   "number": "6",
+   "title": "The 52 knot",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-61-asymptotic-series",
+   "number": "6.1",
+   "title": "Asymptotic series",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 2946,
+   "n_words": 560
+  },
+  {
+   "id": "sec-015-62-holomorphic-blocks",
+   "number": "6.2",
+   "title": "Holomorphic blocks",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 60,
+   "n_chars": 22459,
+   "n_words": 3802
+  },
+  {
+   "id": "sec-016-65-the-borel-resummations-of-the-asymptotic-seri",
+   "number": "6.5",
+   "title": "The Borel resummations of the asymptotic series",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 4926,
+   "n_words": 858
+  },
+  {
+   "id": "sec-017-7-one-dimensional-state-integrals-and-their-desc",
+   "number": "7",
+   "title": "One-dimensional state-integrals and their descendants",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 65,
+   "n_chars": 4681,
+   "n_words": 804
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 68,
+   "n_chars": 11717,
+   "n_words": 1593
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 32,
+  "sections": 19,
+  "chars_total": 135353
+ }
+}

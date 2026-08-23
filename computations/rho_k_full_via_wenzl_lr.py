@@ -222,12 +222,17 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
 
     # Load y_λ at q_0 for n = n_strands.
     from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-    from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-    y_table = y_lambda_at(n_strands, Q_FLOAT)
     # Combine: tr_M = (1 / averaging_denominator) · Σ_λ y_λ · χ^λ
     # χ^λ_LR contains q in symbolic form; we evaluate at q_0.
     Q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
+    # NO FLOAT64 (AGENTS.md "PROBES ARE NOT EXEMPT"; bean qou-65qv). The line
+    # above has always declared the intent -- "50-dps q, not f64-quantised" --
+    # and three lines below it was thrown away by `subs("q", float(Q_0))`, with
+    # the weights separately taken at the float64 `Q_FLOAT`. Every downstream
+    # value then carried ~16 good digits into a field named `..._mp30dps`.
+    y_table = y_lambda_at(n_strands, Q_0)
     tr_m_sum = mp.mpf(0)
     chi_lambda_table = []
     for term in chi_terms:
@@ -250,8 +255,10 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
         # Substitute q by name (sympify creates its own symbol; we
         # cannot rely on a pre-built `sp.Symbol("q")` matching it).
         # `subs("q", ...)` finds the symbol by name.
-        chi_subbed = chi_expr.subs("q", float(Q_0))
-        chi_at_q0 = mp.mpf(repr(float(chi_subbed)))
+        # Substitute at 50 dps and evaluate symbolically, rather than
+        # collapsing q to a double first.
+        chi_at_q0 = mp.mpf(str(sp.N(
+            chi_expr.subs("q", sp.Float(Q_50_DIGIT_STR, 50)), 50)))
         y_lam = y_table.get(lam)
         if y_lam is None:
             return {
@@ -261,7 +268,7 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
                     f"λ={lam}"
                 ),
             }
-        y_at_q0 = mp.mpf(repr(float(y_lam)))
+        y_at_q0 = mp.mpf(y_lam)
         contribution = y_at_q0 * chi_at_q0
         tr_m_sum += contribution
         chi_lambda_table.append({

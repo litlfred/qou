@@ -1774,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.235Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1809,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.275Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 454 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.315Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-triples": [
@@ -1831,6 +1879,23 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 454 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.356Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "severity": "minor",
+        "evidence": "'They function independently of whether the volumes are transcendental, algebraic, or rational.' The third item is a subset of the second -- rational numbers ARE algebraic -- so the list is a reflex three rather than a partition. The dichotomy transcendental/algebraic is exhaustive on its own.",
+        "notes": "PROPOSED (not applied -- the item names number-theoretic classes, so it is math-adjacent and I do not edit math): '...whether the volumes are transcendental or algebraic.'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1915,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.397Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1950,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.436Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1985,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.477Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2020,22 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.517Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full (volume table, conjecture statement, remark, scope section, two reduction paragraphs, closing scope paragraph). Judged all ten categories on the whole text.",
+        "notes": "VERIFIED: Vol(4_1) = 2 Cl_2(pi/3) = 2.0298832128 (stated ~2.02988, correct); Vol(5_2) = 2.8281220883 (stated ~2.82812, correct); Vol(Borromean) = 7.3277247534 (stated ~7.32772, correct); 'all torus knots have zero hyperbolic volume' is correct (torus knots are not hyperbolic); Reid 1991 -- 4_1 the unique arithmetic hyperbolic knot, commensurable with PSL_2(O_3) -- is correctly stated, 5_2 is non-arithmetic by that uniqueness, and pairwise non-commensurability follows from the distinct invariant trace fields Q(sqrt-3), the cubic field of 5_2, and Q(i). TWO DEFECTS reported, not fixed: (1) the volume table's third column reads 'Figure-eight 4_1 | Higgs BOSON', contradicting the corpus's own explicit disambiguation -- knot-formula-table.md, a sibling in this same chapter, says 'The Higgs FIELD (mass mechanism) is the figure-eight knot 4_1... The Higgs BOSON excitation (~125 GeV) is the torus link T(2,8)', and electroweak-higgs-torus-link-triplet.md states it flatly. Numerically decisive: Vol(4_1)/hbar_q^2 = 206.77, which is m_mu/m_e, not 125 GeV. (2) the display chain 'irrationality <= Q-linear independence <= algebraic independence' -- the right arrow is valid, the LEFT one is not as stated: Q-linear independence of a SET does not imply its members are irrational unless 1 is adjoined ({1/2, pi, e} is Q-linearly independent with a rational member). The sibling block implications-algebraic-independence derives irrationality from ALGEBRAIC independence, which IS valid; only this chain's middle link needs '1 adjoined'."
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2055,23 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.559Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "severity": "minor",
+        "evidence": "'The mathematical hardness is entirely external.' Checked what the superlative asserts rather than judging it as decoration, and the block's own next paragraph refutes it: it describes two framework-internal reductions, one of which 'pairs with a single QOU-native surreal bridge lemma' and 'the skein engine executes this computation natively'. So part of the hardness is by the block's own account internal. 'Entirely' is the carrier, not the decoration. ('strictly on the proved numerical distinctness' and 'suffices for all mass predictions' in the closing paragraph are the same de-hedging register.)",
+        "notes": "PROPOSED (not applied -- this is a scope claim about the framework, so the fix changes a claim, not a construction): 'The framework supplies only the choice of the three knots; the transcendence itself is an external open problem.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2091,23 @@
         "reviewed_at": "2026-08-15T10:31:01.114Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "70cf233fa2f8",
+          "ts": "7631465d6199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:53.599Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "severity": "minor",
+        "evidence": "'This reduction converts an external problem into an incremental research target natively structured on the framework's jet-order filtration.' Eleven consecutive nouns and modifiers after the verb, with 'natively structured on' modifying 'target' at four words' remove; it parses on the page and stalls aloud. Same paragraph: 'It replaces Grothendieck-period machinery with a finite per-order Groebner--Shirshov independence computation.'",
+        "notes": "PROPOSED: 'This reduction turns an external problem into an incremental target, structured on the framework's own jet-order filtration.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2130,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:53.599Z"
 }

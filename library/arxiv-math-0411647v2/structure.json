@@ -1,0 +1,428 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0411647v2",
+ "source": {
+  "file": "0411647v2.pdf",
+  "sha256": "d79f96b416cb28dad86af46aeb687d211e679a99b83fe0b3c5285a6335553225",
+  "bytes": 592480,
+  "pages": 60
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0411647",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "21 Oct 2005"
+  },
+  "doi": null,
+  "title": "Asymptotics of characters of symmetric groups, genus expansion and free probability",
+  "authors_raw": "GENUS EXPANSION AND FREE PROBABILITY",
+  "abstract": "The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys–Murphy element involves many conjugacy c lasses with complicated coefﬁcients. In this article we consider a combinato- rial setup which allows us to manipulate such products easil y: to each conjugacy class we associate a two-dimensional surface and the asymp- totic properties of the conjugacy class depend only on the ge nus of the resulting surface. This construction closely resembles th e genus expan- sion from the random matrix theory. As the main application w e study irreducible representations of symmetric groups Sq for large q. We ﬁnd the asymptotic behavior of characters when the corresponding Young di- agram rescaled by a factor q− 1/2 converge to a prescribed shape. The character formula (known as the Kerov polynomial) can be vie wed as a power series, the terms of which correspond to two-dimensional surfaces with prescribed genus and we compute explicitly the ﬁrst twoterms, thus we prove a conjecture of Biane. 1. I NTRODUCTION 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one c orrespondence with Young diagrams and due to algorithms such as Murnaghan–Nakayama rule or Robinson–Littlewood rule the essential questions concerning repre- sentations and characters of symmetric groups can be answer ed by a com- binatorial study of the corresponding Young diagrams [Ful9 7]. However, when one studies the asymptotic properties of large symmetr ic groups, the work with Young tableaux becomes cumbersome and one is in the need to ﬁnd another object which would encode the same information i n a more convenient way. Alternatively, one can state the above problem as follows: a typical partition of a large number q (or equivalently, a Young diagram with q boxes) is a collection of",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210902211750-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS"
+  ],
+  "title_prev": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Irreducible representations of large symmetric groups",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "The main technical problem: convolution in Sq",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Free probability and free cumulants",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Applications: Fluctuations of random Young diagrams",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Overview of the article",
+   "page": 6,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric group",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Partitions",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The first main result: Calculus of partitions",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Partition--indexed conjugacy class indicator",
+   "page": 17,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Multiplication of partitions",
+   "page": 22,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Map  is a homomorphism",
+   "page": 24,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Free cumulants of partitions",
+   "page": 26,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Free cumulants",
+   "page": 26,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+   "page": 27,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "First--order asymptotics of free cumulants",
+   "page": 31,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Higher order expansion for free cumulants",
+   "page": 33,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "The second main result: the second--order expansion of free cumulants and characters",
+   "page": 37,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Higher order expansion of characters",
+   "page": 42,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of technical results",
+   "page": 42,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Admissible and pushing sequences",
+   "page": 42,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Pushing partitions",
+   "page": 46,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Final remarks",
+   "page": 53,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Connection with the work of Biane",
+   "page": 53,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Ramified coverings and pushing partitions",
+   "page": 53,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Connection with orthogonal polynomials and Wick product",
+   "page": 57,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 57,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-irreducible-representations-of-large-symmetri",
+   "number": "1.1",
+   "title": "Irreducible representations of large symmetric groups",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3314,
+   "n_words": 561
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 52,
+   "n_words": 10
+  },
+  {
+   "id": "sec-002-12-the-main-technical-problem-convolution-in-sq",
+   "number": "1.2",
+   "title": "The main technical problem: convolution in Sq",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3771,
+   "n_words": 679
+  },
+  {
+   "id": "sec-003-13-free-probability-and-free-cumulants",
+   "number": "1.3",
+   "title": "Free probability and free cumulants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4836,
+   "n_words": 859
+  },
+  {
+   "id": "sec-004-14-applications-fluctuations-of-random-young-dia",
+   "number": "1.4",
+   "title": "Applications: Fluctuations of random Young diagrams",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 77,
+   "n_words": 15
+  },
+  {
+   "id": "sec-005-21-symmetric-group",
+   "number": "2.1",
+   "title": "Symmetric group",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 424,
+   "n_words": 74
+  },
+  {
+   "id": "sec-006-15-overview-of-the-article",
+   "number": "1.5",
+   "title": "Overview of the article",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 13,
+   "n_chars": 15754,
+   "n_words": 3210
+  },
+  {
+   "id": "sec-007-22-partitions",
+   "number": "2.2",
+   "title": "Partitions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 22,
+   "n_chars": 12878,
+   "n_words": 2833
+  },
+  {
+   "id": "sec-008-32-multiplication-of-partitions",
+   "number": "3.2",
+   "title": "Multiplication of partitions",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 7691,
+   "n_words": 1751
+  },
+  {
+   "id": "sec-009-41-free-cumulants",
+   "number": "4.1",
+   "title": "Free cumulants",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2932,
+   "n_words": 559
+  },
+  {
+   "id": "sec-010-4-free-cumulants-of-partitions",
+   "number": "4",
+   "title": "Free cumulants of partitions",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 9679,
+   "n_words": 2066
+  },
+  {
+   "id": "sec-011-44-higher-order-expansion-for-free-cumulants",
+   "number": "4.4",
+   "title": "Higher order expansion for free cumulants",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 42,
+   "n_chars": 16409,
+   "n_words": 3248
+  },
+  {
+   "id": "sec-012-46-higher-order-expansion-of-characters",
+   "number": "4.6",
+   "title": "Higher order expansion of characters",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 987,
+   "n_words": 169
+  },
+  {
+   "id": "sec-013-51-admissible-and-pushing-sequences",
+   "number": "5.1",
+   "title": "Admissible and pushing sequences",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 46,
+   "n_chars": 8302,
+   "n_words": 1964
+  },
+  {
+   "id": "sec-014-52-pushing-partitions",
+   "number": "5.2",
+   "title": "Pushing partitions",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 53,
+   "n_chars": 14863,
+   "n_words": 3321
+  },
+  {
+   "id": "sec-015-61-connection-with-the-work-of-biane",
+   "number": "6.1",
+   "title": "Connection with the work of Biane",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 57,
+   "n_chars": 8365,
+   "n_words": 1674
+  },
+  {
+   "id": "sec-016-63-connection-with-orthogonal-polynomials-and-wi",
+   "number": "6.3",
+   "title": "Connection with orthogonal polynomials and Wick product",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 2079,
+   "n_words": 345
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 6654,
+   "n_words": 939
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 18,
+  "chars_total": 119067
+ }
+}

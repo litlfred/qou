@@ -2116,6 +2116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.104Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2135,6 +2150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.144Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -2154,6 +2184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 81 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.184Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-triples": [
@@ -2173,6 +2218,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 81 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.223Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -2192,6 +2252,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.262Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -2211,6 +2286,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.303Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -2230,6 +2320,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.341Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -2249,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.378Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -2268,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.416Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -2287,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:01.091Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "70dcc00820e6",
+          "ts": "a976307c8751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.452Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proposition, ~1.1kB). The tikzcd is correctly wrapped in \\[ ... \\] inside the tex fence, satisfying render-math-mode-envelope (an inner env opening a fence directly is build-fatal; this one does not). Every symbol in the square is introduced in the preceding prose, and the block explicitly defers the edge-by-edge reading to rem:main-commutative-diagram-interpretation rather than restating it. The one em-dash pair is a true parenthetical. All ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2310,5 +2460,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:26:10.452Z"
 }

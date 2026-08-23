@@ -24,6 +24,10 @@ export default chapter({
         "fivetwo-bar-odd-arithmetic-home",
         "fivetwo-dt-spectrum-split",
         "fivetwo-stokes-unimodular",
+        "fivetwo-level-seven-ladder",
+        "fivetwo-three-sevens",
+        "fivetwo-envelope-transport",
+        "fivetwo-discriminant-vanishes",
       ],
     },
     {

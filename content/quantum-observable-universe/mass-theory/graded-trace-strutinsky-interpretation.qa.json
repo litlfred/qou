@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.290Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.373Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.455Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.554Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Three sentences, one per piece of the decomposition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.601Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Ends on the shell-fluctuation claim, which is the remark's content."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.634Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "The bold lead-in 'Physical interpretation of each piece.' names the remark's function and is accurate; the .ts correctly sets interprets: prop:graded-trace-residue-split, so this is not a dangling remark."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.681Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Each sentence assigns a different piece; no restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.721Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1503,23 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.757Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "minor",
+        "evidence": "'The categorical split maps precisely onto the Strutinsky energy decomposition' — 'precisely' claims exactness for what the sibling proposition calls a mirror, with no argument in a 47-word remark.",
+        "notes": "FIXED: 'maps precisely onto the Strutinsky energy decomposition' -> 'maps onto the Strutinsky energy decomposition'. RESIDUAL (not fixed, meaning at stake): 'The symbol map on the graded algebra implements the Strutinsky smoothing convolution' still asserts an identification rather than an analogy; 'plays the role of' would match the evidence."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1539,22 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9a84b1b7ee13",
+          "ts": "aaf6136ee326"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.797Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Three short sentences.",
+        "notes": "VERIFIED: E = E-tilde + delta-E_shell is the correct form of the Strutinsky shell-correction decomposition, and the assignment (smooth part to the graded trace, oscillating part to the residue sum) is consistent with the parent proposition."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1577,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:21:13.797Z"
 }

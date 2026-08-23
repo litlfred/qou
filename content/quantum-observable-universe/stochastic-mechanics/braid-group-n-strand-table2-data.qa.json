@@ -893,9 +893,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.594Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.633Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.673Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Three spaced em-dashes, all in the Status column ('Open R&D — links into ...', '— needed for Delta S ...', '— Wedderburn block sum ... is on the open conjecture list').",
+        "notes": "Table-cell appositive glossing a status token, not sentence structure; kept."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.713Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.752Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.790Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.829Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.869Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.909Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No claim language; used as the defect channel.",
+        "notes": "STRUCTURAL FINDING (not a trap). Row 'n = 4 | Borromean baryon braids' does not fit the table's own strand accounting and disagrees with the compute. The other rows scale as 3 strands per nucleon (n=6 deuteron = 2 nucleons, n=12 alpha = 4 nucleons), which puts a single Borromean baryon at n=3, not n=4; and the canonical Borromean word in computations is 3-strand - BORROMEAN_WORD = [1,-2,1,-2,1,-2] = (sigma_1 sigma_2^{-1})^3 in B_3 (computations/deltalambda/borromean_h9_magnitude_lift_probe.py:30, computations/probe3qrv.py:27 'trace_word(bor_interleaved, 3, ...)'). I computed the closure: (sigma_1 sigma_2^{-1}) is the 3-cycle (1 2)(2 3), its cube is the identity permutation, so the closure has 3 components = the Borromean rings. Reported, not resolved: n=4 may denote a different 4-strand construction, but nothing in the table or the cited blocks says so."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b03de81cdd73",
+          "ts": "21ee7841fd9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:44.948Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (which n recovers what), no prose sentences: none of the ten constructions can occur. The Status column's 'Open R&D' entries are honest scope statements."
+      }
     ]
   },
   "label": "tbl:braid-group-n-strand-table2-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:21:44.948Z"
 }

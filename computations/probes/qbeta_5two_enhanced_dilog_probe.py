@@ -3,7 +3,7 @@
 
 Lead
 ----
-Zagier, *The Dilogarithm Function* (2007), §II.1 B (`uploads/zagier-the-dilogarithm-function.pdf`):
+Zagier, *The Dilogarithm Function* (2007), §II.1 B (`library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`):
 the **enhanced dilogarithm** is
 
     D̃(ẑ) = F(v) + u·v/2,     F(v) = Li₂(1 − e^v),
@@ -53,7 +53,7 @@ G4  What the residual actually is, in closed form — and why the reading fails.
 No fitting: the branch scan ranges over integers only, every candidate is
 reported, and a MISS is reported as a MISS.
 
--- Ref: [manuscript] bean qou-0yqu; uploads/zagier-the-dilogarithm-function.pdf (Zagier 2007) §II.1 B
+-- Ref: [manuscript] bean qou-0yqu; library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf (Zagier 2007) §II.1 B
 """
 
 from __future__ import annotations
@@ -256,7 +256,7 @@ def main() -> None:
     result = {
         "probe": "qbeta_5two_enhanced_dilog_probe",
         "dps": mp.mp.dps,
-        "source": "uploads/zagier-the-dilogarithm-function.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
+        "source": "library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
         "gates": [g1, g2, g3, g4],
         "verdict": verdict,
         "scope": (

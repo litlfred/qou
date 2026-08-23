@@ -3,7 +3,7 @@ name: document-intake
 roles: [collaborator, owner]
 description: >
   Process uploaded documents (PDFs, scans, LaTeX, WHO L1/L2 guidelines, etc.)
-  from uploads/ into structured content objects. Handles OCR extraction,
+  from library/ into structured content objects. Handles OCR extraction,
   environment detection, structural analysis, and content-object generation.
   Supports multi-stage pipelines: raw upload → extracted text → structured
   blocks → .ts/.md content objects.
@@ -13,15 +13,15 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 # Document Intake
 
 > **Bib human-review integration (2026-06-09).** Track per-upload ingestion
-> status in `uploads/intake.json` (identified passage, formalised?, matched?) and
+> status in `library/intake.json` (identified passage, formalised?, matched?) and
 > link each upload to the `references.ts` entry it sources. An upload that
 > supplies a cited source moves that ref to `source-in-repo` (agent-identified
 > passage; no human photo) and then through the
 > [`local/bib-human-review`](bib-human-review.md) ladder to `validated`. Existing
-> `uploads/` follow the same agent-sourced path (design §5).
+> `library/` follow the same agent-sourced path (design §5).
 
 > **Per-upload state now lives in the source ledger (2026-08-08).** The
-> `uploads/<id>/intake.json` convention below covers 1 of the corpus's 284
+> `library/<id>/intake.json` convention below covers 1 of the corpus's 284
 > documents; the per-document row — reference join, examination status, and
 > relevance verdict — is now
 > `content/bib-qa-verifications.json` (`source-ledger/v1`), populated by
@@ -34,7 +34,7 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 
 ## Overview
 
-This skill manages the `uploads/` directory as an intake pipeline for
+This skill manages the `library/` directory as an intake pipeline for
 converting raw documents into structured content objects. It handles:
 
 1. **Scanned PDFs / images** — OCR extraction → text → blocks
@@ -44,22 +44,22 @@ converting raw documents into structured content objects. It handles:
 5. **Arbitrary documents** — best-effort structural analysis
 
 The key distinction from `paper-importer`: this skill owns the full
-lifecycle of `uploads/`, including tracking processing state, partial
+lifecycle of `library/`, including tracking processing state, partial
 extractions, and multi-pass refinement. Paper-importer focuses on the
 final content-object generation step.
 
 ## When to Use This Skill
 
 - User says "upload", "scan", "process document", "intake"
-- User drops a file into `uploads/`
+- User drops a file into `library/`
 - User mentions WHO, L1, L2, guideline, normative
 - User wants to convert a raw document into content objects
-- Files appear in `uploads/` that haven't been processed yet
+- Files appear in `library/` that haven't been processed yet
 
-## uploads/ Directory Convention
+## library/ Directory Convention
 
 ```
-uploads/
+library/
   <document-id>/
     intake.json                  ← processing state + metadata
     original.pdf                 ← raw upload (PDF, scan, etc.)
@@ -104,7 +104,7 @@ uploads/
 
 ### Stage 1: Upload (→ `uploaded`)
 
-Place raw files in `uploads/<document-id>/`. Create `intake.json`
+Place raw files in `library/<document-id>/`. Create `intake.json`
 with source metadata. Files are committed to git for reproducibility.
 
 Supported formats:
@@ -203,7 +203,7 @@ tags: ["imported", "source:<document-id>"]
 Add `meta.source` referencing the upload:
 ```typescript
 meta: {
-  source: "uploads/<document-id>",
+  source: "library/<document-id>",
   originalSection: "3.2",
   importedAt: "2026-03-25T..."
 }
@@ -252,7 +252,7 @@ export default definition({
   uses: ["def:who-anc-rec-1"],  // references Rec 1
   tags: ["imported", "source:who-anc-2016", "L1", "normative"],
   meta: {
-    source: "uploads/who-anc-2016",
+    source: "library/who-anc-2016",
     strength: "strong",
     quality: "moderate",
     gradeLevel: "⊕⊕⊕◯",
@@ -286,7 +286,7 @@ This allows multi-session processing of large documents.
 
 Before marking intake complete:
 
-- [ ] Raw files committed to `uploads/<document-id>/`
+- [ ] Raw files committed to `library/<document-id>/`
 - [ ] `intake.json` has complete metadata
 - [ ] `extracted-text.md` reviewed for OCR errors
 - [ ] `extracted-blocks.json` reviewed and confirmed by user

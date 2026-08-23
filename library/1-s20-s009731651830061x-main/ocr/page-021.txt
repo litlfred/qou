@@ -1,0 +1,40 @@
+580 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+in [32] (see also [31]), Krattenthaler extended this to (m,n, k)-Magog trapezoids in [21],
+and Ishikawa finally included the number of maxima [20]. Their formulas are different
+from ours as the rational functions underlying the constant term formulas involve in
+general determinants.
+
+4.1. First version
+
+Using a standard technique, we can transform (m,n, k)-Magog trapezoids with pre-
+scribed bottom row (bp—£41,0n—K42,-+-,bn) into families of non-intersecting lattice
+paths as follows: We start by adding a new leftmost SE-diagonal consisting entirely of
+
+1’s and a new rightmost SE-diagonal consisting of (m+1,m+42,..., m+n) as indicated
+in green in our running Example 1.1:
+
+1 2 3 4 7 9
+
+Next, we add i — 1 to the i-th NE-diagonal, counted from the left, for all 1 <i <n.
+Then we associate with each NE-diagonal a lattice path with north steps and east steps
+where the entries of the NE-diagonals are the heights of the paths, and, as long as
+1<i<n-—k-—1, the z-coordinate of the starting point is shifted by one unit to
+the left when passing from the i-th NE-diagonal to the (i + 1)-st NE-diagonal, while
+these x-coordinates are the same for the k + 1 rightmost NE-diagonals. The family of
+non-intersecting lattice paths in Fig. 2 corresponds to the Magog in (1.1). Note that each
+of the paths starts and ends with a horizontal step and thus we cut off these horizontal
+steps in the following.
+
+Now it can be deduced that (m,n, k)-Magogs with bottom row (bn 441, 0n—K+415--- Dn)
+correspond to the families of non-intersecting lattice paths starting at (—i + 1,i),
+1<i<n-k, and (-n+k+1,b; +i-1),n-—k+1 <i < n, and ending at
+(k —j +1,m+2j—1),1< 9 <1n, allowing steps in north direction and east direction.
+The last entry of a NE-diagonal is a maximum if the last step of the respective lattice
+path is horizontal, while the first entry of the n — k leftmost NE-diagonals is a minimum
+if the first step of the respective path is horizontal. The following generating function of
+lattice paths starting at (a,b) and ending at (c,d)
+
+3 Qlfizst step is horizontal] p[last step is horizontal]
+
+lattice path (a,b) + (c,d)

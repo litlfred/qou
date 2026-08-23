@@ -1541,6 +1541,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.385Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1560,6 +1577,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.434Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1579,6 +1613,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.487Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1598,6 +1649,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.538Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'real-valued physical observables, real-analytic bounds, transcendental constants' inside the banner.",
+        "notes": "Boilerplate enumeration, not a drafting reflex -- though the banner as a whole is flagged under trap-nonspeakable."
       }
     ],
     "trap-closing-aphorism": [
@@ -1617,6 +1685,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.587Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1636,6 +1721,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.648Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'What follows sits on the archimedean side of the substrate wall.'",
+        "notes": "Nothing follows. Flagged with the other two."
       }
     ],
     "trap-thesis-restatement": [
@@ -1655,6 +1757,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.687Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1674,6 +1793,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.727Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1693,6 +1829,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.770Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Definition is tight, term bolded, Gram matrix G_ij = tr_M(b_i b_j) stated correctly.",
+        "notes": "No unqualified maximum-strength claim; quantitative assertions checked against the block's own arithmetic and cited sources where present."
       }
     ],
     "trap-nonspeakable": [
@@ -1712,6 +1865,23 @@
         "reviewed_at": "2026-08-15T10:31:01.503Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "39b482c630f6",
+          "ts": "08d2b32bbc48"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.812Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Same orphaned 'Archimedean specialisation' banner, here in its long form ('...real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$').",
+        "notes": "ORPHANED: the block ends there. The definition it trails is the Gram-positivity condition Gx >= 0 over a six-element NF basis -- no q_0 evaluation, no transcendental constant. Grouped with lp-confined.md and n-equals-1-vacuous-magic.md."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1735,5 +1905,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:54.812Z"
 }

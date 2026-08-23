@@ -1,0 +1,167 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0808.1533v3",
+ "source": {
+  "file": "0808.1533v3.pdf",
+  "sha256": "3e003cc35a4e57116b238f20d412c351d3632eacc207a8291136b03a567ce9b4",
+  "bytes": 502462,
+  "pages": 30
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0808.1533",
+   "version": "3",
+   "primary_class": "math.DG",
+   "stamp_date": "18 Jun 2009"
+  },
+  "doi": null,
+  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
+  "authors_raw": "October 28, 2018",
+  "abstract": "We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯ µ 123-invariant for 3-component links and the homotopy invariants of maps to conﬁguration sp aces, and we provide a simple geometric proof of this fact in the case of Borromean l inks. Based on these connections we develop a formulation for the third order hel icity of B on invariant un- linked domains of B, and provide Arnold’s style ergodic interpretation of this invariant as an average asymptotic ¯µ 123-invariant of orbits of B.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220426012733-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗†",
+  "title_lines": [
+   "The third order helicity of magnetic fields",
+   "via link maps",
+   "R. Komendarczyk ∗†"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Milnor mu-123-invariant and the Hopf degree.",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Invariants of volume preserving flows. Helicities.",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The ergodic interpretation of H-123",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Flux formula for H-123.",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Energy bound.",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Comparison to the known approaches via Massey products.",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Equations for the frozen-in-field forms",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Zero contribution of short paths to the time average",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Notation in Section ??",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 21,
+   "n_chars": 42480,
+   "n_words": 8675
+  },
+  {
+   "id": "sec-001-energy-bound",
+   "number": null,
+   "title": "Energy bound.",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 7541,
+   "n_words": 1548
+  },
+  {
+   "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+   "number": null,
+   "title": "Comparison to the known approaches via Massey products.",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 8686,
+   "n_words": 1508
+  },
+  {
+   "id": "sec-003-zero-contribution-of-short-paths-to-the-time-ave",
+   "number": null,
+   "title": "Zero contribution of short paths to the time average",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2275,
+   "n_words": 552
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 4,
+  "chars_total": 60982
+ },
+ "duplicate_copies": [
+  "arxiv-0808.1533v1"
+ ]
+}

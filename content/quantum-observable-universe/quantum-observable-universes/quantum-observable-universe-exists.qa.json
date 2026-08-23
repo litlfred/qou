@@ -1651,7 +1651,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "quantum-observable-universe-exists.ts:1",
-        "notes": "The citations woronowicz1987, woronowicz1988, reshetikhin1991, kassel1995, chari1994,  in 'Existence of quantum observable universes' are consistent with the sources referenced in the text."
+        "notes": "The citations woronowicz1987, woronowicz1988, reshetikhin1991, kassel1995, chari1994guide,  in 'Existence of quantum observable universes' are consistent with the sources referenced in the text."
       },
       {
         "result": "pass",
@@ -2134,6 +2134,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.661Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no assertion-by-denial; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2153,6 +2169,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.700Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no setup-then-reframe construction; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -2172,6 +2204,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.737Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). em-dash count 0 in the block; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -2191,6 +2239,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.777Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no reflex three-item list; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -2210,6 +2274,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.815Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). final sentence is substantive, not a quotable placed for closure; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -2229,6 +2309,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.852Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no narration of the author's own emphasis; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -2248,6 +2344,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.891Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no block-final restatement of what the text established; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -2267,6 +2379,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.931Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no personal or institutional-warmth register; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -2286,6 +2414,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.970Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). no unqualified maximum-strength claim; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -2305,6 +2449,22 @@
         "reviewed_at": "2026-08-15T10:30:59.914Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:37.008Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proposition, two sentences). reads aloud without stalling; proposition, two sentences.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2328,5 +2488,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T22:53:56.254Z"
+  "updated_at": "2026-08-22T05:02:37.008Z"
 }

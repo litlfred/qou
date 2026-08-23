@@ -3,8 +3,9 @@
 title: Cite 0905.1873v2.pdf at content/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:59Z
-updated_at: 2026-08-08T16:12:59Z
+updated_at: 2026-08-21T17:05:01Z
 ---
 
 Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the registered key so the Lean -- Ref: convention holds and validate-bib can see the dependency.
@@ -17,7 +18,14 @@ Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the reg
 - Abstract + conclusions, p.4 — The net induced four-body contribution in A = 4 is smaller than the truncation errors of the chiral interaction, but four-nucleon forces are strongly density dependent so their size must be monitored for heavier nuclei.
   Use here: Scopes the bound honestly: the small-4N-force statement is an A = 4 statement, not an all-A statement. Any QOU use of it as a ceiling for heavier isotopes in the mass-table sweep must carry that caveat, or it over-claims.
 
-Source: `uploads/0905.1873v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0905.1873v2/0905.1873v2.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-0905.1873v2/  ->  [jurgenson2009srg]
+  Evolution of nuclear many-body forces with the similarity renormalization group
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [jurgenson2009srg] as the citation key when you do it.

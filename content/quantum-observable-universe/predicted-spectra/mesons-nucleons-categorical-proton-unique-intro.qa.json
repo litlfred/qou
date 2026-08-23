@@ -1359,6 +1359,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.798Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.836Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.874Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.912Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.949Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:46.987Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1569,23 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:47.099Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The preamble was four sentences and three of them said the same thing. Sentence 1 states the claim ('Borromean linking establishes the categorical proton's uniqueness'); sentence 2 restated it with a vaguer noun and a definite article with no antecedent ('This linking provides the structural anchor' — 'structural anchor' occurs nowhere else in content/, so it is not a term of art); sentence 4 restates it a third time, upgraded to a universal ('Every bound-state assignment factors through this two-stage construction').",
+        "notes": "PARTIALLY FIXED. Sentence 2 deleted — pure prose, no math, no claim lost, and its definite description resolved to nothing. before -> \"Borromean linking establishes the categorical proton's uniqueness. This linking provides the structural anchor. The construction extends to the neutron. Every bound-state assignment factors through this two-stage construction.\" ; after -> \"Borromean linking establishes the categorical proton's uniqueness. The construction extends to the neutron. Every bound-state assignment factors through this two-stage construction.\" Sentence 4 NOT fixed: it is the preamble's only forward-looking sentence, so deleting it would leave a two-sentence stub, and rewriting it is an author call. Proposed: replace with a pointer to what the section actually does, e.g. 'The Borromean construction is given first for the proton and then extended to the neutron.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1605,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:47.023Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1640,23 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:47.137Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'Every bound-state assignment factors through this two-stage construction.' A universal quantifier over all bound-state assignments, asserted in a section preamble that proves nothing and cites nothing. The chapter itself does not support it: rem:knot-formula-table assigns nuclear composites as iterated Hopf linkings of nucleons rather than through the Borromean two-stage construction, and the meson blocks assign mesons via the Hopf link L_H, not via B_3.",
+        "notes": "flagged, not fixed (same sentence as the restatement entry; one edit resolves both). Proposed: either scope it to what the section covers ('Both nucleon assignments factor through this two-stage construction') or drop the sentence."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "872dd96d733d",
+          "ts": "18e3bae0c26e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:47.060Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the section preamble (prose kind, no Lean, no math), after the fix recorded under trap-thesis-restatement. No negation-contrast, no pivot, no dash, no triple, no aphorism proper, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:17:47.137Z"
 }

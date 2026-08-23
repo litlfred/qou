@@ -1764,6 +1764,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.687Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of statement, recursion and the Markov-trace consequence; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1783,6 +1798,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.722Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1802,6 +1832,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.759Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "One parenthetical em-dash pair around the beta_atom aside; legitimate and low density."
       }
     ],
     "trap-triples": [
@@ -1821,6 +1866,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.794Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No reflex list; sigma_{3k}, sigma_{3k+1}, sigma_{3k+2} is the producer's actual per-nucleon generator layout."
       }
     ],
     "trap-closing-aphorism": [
@@ -1840,6 +1900,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.830Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Final sentence makes a specific complexity claim (per-block work drops to a few field operations, removing the n! wall), not a maxim."
       }
     ],
     "trap-meta-commentary": [
@@ -1859,6 +1934,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.867Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1878,6 +1968,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.903Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The closing paragraph states the downstream consequence (scaling to large atoms), which is new content relative to the statement."
       }
     ],
     "trap-performed-warmth": [
@@ -1897,6 +2002,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.937Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1916,6 +2036,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.970Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "\"never materialises the d_lambda-dimensional Hoefsmit representation\" and \"the n! wall\" are precise: sum_lambda d_lambda^2 = n! is the size of the per-basis-vector evaluation being avoided."
       }
     ],
     "trap-nonspeakable": [
@@ -1935,6 +2070,23 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "26ec75aa2611",
+          "ts": "7486057f1793"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:40.005Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "The pivotal sentence runs ~65 words with a nested em-dash aside that introduces three new symbols before the main clause lands: \"Hence whenever a braid word has a **monotone** generator sequence — as the multi-nucleon atom word beta_atom does, each nucleon contributing sigma_{3k}, sigma_{3k+1} and one interface crossing sigma_{3k+2} without revisiting a generator — every per-generator operator O_g is a single-generator polynomial, and its seminormal diagonal is a single alpha_g D(delta'_g) + beta_g.\" It parses on the page and stalls aloud.",
+        "notes": "NOT fixed (math-adjacent, subject-verb separated by a symbol-bearing aside). Proposed fix: split into two sentences — \"Suppose a braid word has a **monotone** generator sequence. Then every per-generator operator $O_g$ is a single-generator polynomial, and its seminormal diagonal is a single $\\alpha_g D(\\delta'_g) + \\beta_g$.\" — and move the beta_atom illustration into its own following sentence."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1958,5 +2110,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:13:40.005Z"
 }

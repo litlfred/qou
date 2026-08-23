@@ -1,0 +1,615 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p02",
+ "source": {
+  "file": "ant-v14-n7-s-p02.pdf",
+  "sha256": "fd2121feb180b282799f1a1431a615f74282d18722ead65c105dfa197fcd9a82",
+  "bytes": 527791,
+  "pages": 36
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1711",
+  "title": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  },
+  "title_lines": [
+   "Pro-unipotent harmonic actions and",
+   "dynamical properties of",
+   "p -adic cyclotomic multiple zeta values",
+   "David Jarossay",
+   "p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations of the crystalline"
+  ],
+  "title_prev": "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations of the crystalline"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction 1711",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries 1716",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the harmonic Frobenius of integrals at (1, 0) 1724",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the harmonic Frobenius of series 1731",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Comparison between equations on integrals and equations on series 1739",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the Frobenius on P1\\⋃",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ pα N,∞})",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}) iteratedα times. Considering",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X), in the sense of [Deligne",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X K, z, y)×π un,dR",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X K, y, x)→π un,dR",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X K, z, x) for any base-points x, y, z. By",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X, y, x) is canonically isomorphic to the spectrum of the shufﬂe",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X,⃗1ξ,⃗10). Let f↦→ f(ξ) be the isomorphism51,0→5ξ,0 induced by the automorphism",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}) is constructed",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X(p)) ∼−→",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X(pα)) ∼−→π un,dR",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(X). Whenα is divisible by o= log(p)/log(q),",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}, y, x) is an afﬁne scheme over K , and",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the harmonic Frobenius of series",
+   "page": 21,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Comparison between equations on integrals and equations on series",
+   "page": 29,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Iteration of the Frobenius on P1 \\ ⋃",
+   "page": 31,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}) at base-points(1, 0)",
+   "page": 31,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}) on the afﬁnoid",
+   "page": 31,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1\\{ 0,µ N,∞}), restricted to the rigid analytic sections on",
+   "page": 33,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 35,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(P1−{ 0,µ N,∞}), II-2: From standard algebraic relations of",
+   "page": 36,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1−{ 0,µ N,∞}), II-3: Sequences of multiple harmonic sums",
+   "page": 36,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1−{ 0,µ N,∞}), V-1: The Frobenius extended toπun,DR",
+   "page": 36,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(P1−",
+   "page": 36,
+   "source": "inferred",
+   "number": "1"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction-1711",
+   "number": "0",
+   "title": "Introduction 1711",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-preliminaries-1716",
+   "number": "1",
+   "title": "Preliminaries 1716",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-2-iteration-of-the-harmonic-frobenius-of-integra",
+   "number": "2",
+   "title": "Iteration of the harmonic Frobenius of integrals at (1, 0) 1724",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-3-iteration-of-the-harmonic-frobenius-of-series",
+   "number": "3",
+   "title": "Iteration of the harmonic Frobenius of series 1731",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-4-comparison-between-equations-on-integrals-and",
+   "number": "4",
+   "title": "Comparison between equations on integrals and equations on series 1739",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-5-iteration-of-the-frobenius-on-p1",
+   "number": "5",
+   "title": "Iteration of the Frobenius on P1\\⋃",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 13710,
+   "n_words": 2227
+  },
+  {
+   "id": "sec-006-1-p1-0µ-pα-n",
+   "number": "1",
+   "title": "(P1\\{ 0,µ pα N,∞})",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 74,
+   "n_words": 11
+  },
+  {
+   "id": "sec-007-1-p1-0µ-n-iteratedα-times-considering",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}) iteratedα times. Considering",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 164,
+   "n_words": 26
+  },
+  {
+   "id": "sec-008-1-preliminaries",
+   "number": "1",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 584,
+   "n_words": 99
+  },
+  {
+   "id": "sec-009-1-x-in-the-sense-of-deligne",
+   "number": "1",
+   "title": "(X), in the sense of [Deligne",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 222,
+   "n_words": 37
+  },
+  {
+   "id": "sec-010-1-x-k-z-yπ-undr",
+   "number": "1",
+   "title": "(X K, z, y)×π un,dR",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-1-x-k-y-xπ-undr",
+   "number": "1",
+   "title": "(X K, y, x)→π un,dR",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-1-x-k-z-x-for-any-base-points-x-y-z-by",
+   "number": "1",
+   "title": "(X K, z, x) for any base-points x, y, z. By",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 39,
+   "n_words": 7
+  },
+  {
+   "id": "sec-013-1-x-y-x-is-canonically-isomorphic-to-the-spectru",
+   "number": "1",
+   "title": "(X, y, x) is canonically isomorphic to the spectrum of the shufﬂe",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 228,
+   "n_words": 35
+  },
+  {
+   "id": "sec-014-1-x1ξ10-let-f-fξ-be-the-isomorphism5105ξ0-induce",
+   "number": "1",
+   "title": "(X,⃗1ξ,⃗10). Let f↦→ f(ξ) be the isomorphism51,0→5ξ,0 induced by the automorphism",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 855,
+   "n_words": 143
+  },
+  {
+   "id": "sec-015-1-p1-0µ-n-is-constructed",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}) is constructed",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1730,
+   "n_words": 296
+  },
+  {
+   "id": "sec-016-1-xp",
+   "number": "1",
+   "title": "(X(p)) ∼−→",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 138,
+   "n_words": 23
+  },
+  {
+   "id": "sec-017-1-xpα-π-undr",
+   "number": "1",
+   "title": "(X(pα)) ∼−→π un,dR",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-018-1-x-whenα-is-divisible-by-o-logplogq",
+   "number": "1",
+   "title": "(X). Whenα is divisible by o= log(p)/log(q),",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2756,
+   "n_words": 444
+  },
+  {
+   "id": "sec-019-1-p1-0µ-n-y-x-is-an-afﬁne-scheme-over-k-and",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}, y, x) is an afﬁne scheme over K , and",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6993,
+   "n_words": 1103
+  },
+  {
+   "id": "sec-020-1-p1",
+   "number": "1",
+   "title": "(P1\\",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 7222,
+   "n_words": 1146
+  },
+  {
+   "id": "sec-021-2-iteration-of-the-harmonic-frobenius-of-integra",
+   "number": "2",
+   "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 21,
+   "n_chars": 15732,
+   "n_words": 2668
+  },
+  {
+   "id": "sec-022-3-iteration-of-the-harmonic-frobenius-of-series",
+   "number": "3",
+   "title": "Iteration of the harmonic Frobenius of series",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 29,
+   "n_chars": 17013,
+   "n_words": 3050
+  },
+  {
+   "id": "sec-023-4-comparison-between-equations-on-integrals-and",
+   "number": "4",
+   "title": "Comparison between equations on integrals and equations on series",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3906,
+   "n_words": 696
+  },
+  {
+   "id": "sec-024-5-iteration-of-the-frobenius-on-p1",
+   "number": "5",
+   "title": "Iteration of the Frobenius on P1 \\ ⋃",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 76,
+   "n_words": 14
+  },
+  {
+   "id": "sec-025-1-p1-0µ-n-at-base-points1-0",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}) at base-points(1, 0)",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 70,
+   "n_words": 12
+  },
+  {
+   "id": "sec-026-1-p1-0µ-n-on-the-afﬁnoid",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}) on the afﬁnoid",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 5403,
+   "n_words": 939
+  },
+  {
+   "id": "sec-027-1-p1-0µ-n-restricted-to-the-rigid-analytic-secti",
+   "number": "1",
+   "title": "(P1\\{ 0,µ N,∞}), restricted to the rigid analytic sections on",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 6812,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-028-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 489,
+   "n_words": 78
+  },
+  {
+   "id": "sec-029-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1380,
+   "n_words": 202
+  },
+  {
+   "id": "sec-030-1-p1-0µ-n-ii-2-from-standard-algebraic-relations",
+   "number": "1",
+   "title": "(P1−{ 0,µ N,∞}), II-2: From standard algebraic relations of",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 285,
+   "n_words": 39
+  },
+  {
+   "id": "sec-031-1-p1-0µ-n-ii-3-sequences-of-multiple-harmonic-su",
+   "number": "1",
+   "title": "(P1−{ 0,µ N,∞}), II-3: Sequences of multiple harmonic sums",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 173,
+   "n_words": 23
+  },
+  {
+   "id": "sec-032-1-p1-0µ-n-v-1-the-frobenius-extended-toπundr",
+   "number": "1",
+   "title": "(P1−{ 0,µ N,∞}), V-1: The Frobenius extended toπun,DR",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1193,
+   "n_words": 174
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 35,
+  "sections": 33,
+  "chars_total": 87247
+ }
+}

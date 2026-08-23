@@ -1778,6 +1778,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.573Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.627Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.715Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.762Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "The three \"Adding a ...\" sentences enumerate the three actual interface cases (p-n, n-after-p, n-n) and match the census in the proof block."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.806Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Closes on the Archimedean-specialisation paragraph; its defect is factual, reported in the notes."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1948,22 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.873Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "The closing \"Archimedean specialisation. What follows sits on the archimedean side of the substrate wall\" is a dangling forward reference rather than emphasis narration; recorded as a finding instead of a trap, consistent with the same paragraph in prop:hecke-markov-transition."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1983,22 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.913Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "\"The structural interface identity completely determines the trace scaling\" restates the boxed identity, but it introduces the contrast with the empirical correction that follows."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2018,21 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.954Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2052,22 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.031Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "Three absolutes in nine lines (\"identically satisfies\", \"This exact factorisation\", \"completely determines\"), but the claim IS an exact algebraic identity, so each is defensible."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2087,23 @@
         "reviewed_at": "2026-08-15T10:31:00.681Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8c63f012eb39",
+          "ts": "1b90654eae98"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.069Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "\"The empirical single-block extraction correction operates independently at a different structural level.\" A five-word noun pile-up as subject, an agentless verb, and a predicate that names no level. Nothing in the block says what the correction is, what it corrects, or which level.",
+        "notes": "NOT fixed (the sentence names an object defined nowhere in the block, so rewriting it would require the author). Proposed fix: name the correction and its target, or delete the sentence. Separate (non-trap) findings: (1) CONVENTION C, LOAD-BEARING. The final display of the sibling proof gives z explicitly as 1/(q^{1/2} + q^{-1/2}), which AGENTS.md names verbatim as an EXCISED convention-C spelling; canonical convention D is z = q^3/(q^2+1). At the proton pin these are 0.4993203342 and 0.6126880371. The proof block verifies the boxed identity numerically against z_C for four atoms, so the whole verification collapses under D (see the findings on prf:interface-knot-markov-z). (2) uses[] carries the comment \"broken-ref removed (Phase 7): def:ew-interface-knot\", so the interface knot bowtie_K -- the block subject -- has no definition reference at all. (3) The declared computation witness computations/delta-lambda-fr-identity-phase5c.witness.json is about a DIFFERENT quantity: its parameters are q0, h, 3_q_squared, cosh_h and alpha_predicted, with no z, no interface census and no trace ratio. It does not verify this proposition."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2127,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:39:01.069Z"
 }

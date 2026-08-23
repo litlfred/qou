@@ -1,0 +1,216 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1012.1039v2",
+ "source": {
+  "file": "1012.1039v2.pdf",
+  "sha256": "acb2575050db419d1240392a1be451b27a093aec31d6ef767e62698d265b5fe1",
+  "bytes": 305110,
+  "pages": 22
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1012.1039",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "19 Jul 2011"
+  },
+  "doi": null,
+  "title": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS",
+  "authors_raw": "KOJI FUJIW ARA AND JASON FOX MANNING",
+  "abstract": "Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as “2 π –ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2 π –ﬁllings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 π –ﬁlling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume. In particular, we obtain information about the simplicial v olumes of some 4–dimensional homology spheres described by Ratcliﬀe and T schantz, answer- ing a question of Belegradek and establishing the existence of 4–dimensional homology spheres with positive simplicial volume.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030164753-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn filling of a 3–manifold d oes not increase hyperbolic volume",
+  "title_lines": [
+   "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC",
+   "MANIFOLDS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Outline",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Simplicial volume and duality",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Gromov norms",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetrization",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Main result",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. A proportionality theorem",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. (Anti)Symmetrization of chains",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9440,
+   "n_words": 1687
+  },
+  {
+   "id": "sec-001-11-outline",
+   "number": "1.1",
+   "title": "Outline",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 426,
+   "n_words": 70
+  },
+  {
+   "id": "sec-002-2-simplicial-volume-and-duality",
+   "number": "2",
+   "title": "Simplicial volume and duality",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 117,
+   "n_words": 18
+  },
+  {
+   "id": "sec-003-21-gromov-norms",
+   "number": "2.1",
+   "title": "Gromov norms",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5544,
+   "n_words": 1026
+  },
+  {
+   "id": "sec-004-22-symmetrization",
+   "number": "2.2",
+   "title": "Symmetrization",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2948,
+   "n_words": 590
+  },
+  {
+   "id": "sec-005-3-main-result",
+   "number": "3",
+   "title": "Main result",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 16656,
+   "n_words": 3414
+  },
+  {
+   "id": "sec-006-appendix-a-a-proportionality-theorem",
+   "number": null,
+   "title": "Appendix A. A proportionality theorem",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 11307,
+   "n_words": 2271
+  },
+  {
+   "id": "sec-007-appendix-b-antisymmetrization-of-chains",
+   "number": null,
+   "title": "Appendix B. (Anti)Symmetrization of chains",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3125,
+   "n_words": 706
+  },
+  {
+   "id": "sec-008-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 429,
+   "n_words": 71
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4501,
+   "n_words": 660
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 54493
+ }
+}

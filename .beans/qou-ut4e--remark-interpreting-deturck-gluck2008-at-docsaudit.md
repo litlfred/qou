@@ -17,7 +17,7 @@ Correct the audit doc's 'mixed/corrupted; only tail pages recovered' verdict for
 - Thm 2(3), p. 11 — The H³ Biot–Savart operator BS(V)(y) = ∫_{H³} P_yx V(x) × ∇_y φ(x,y) dx with the same csch kernel; the authors state they do not yet know how to characterise BS in H³.
   Use here: The magnetic-field half of the pair-energy construction, with its stated limitation.
 
-Source: `uploads/0510388v1.pdf` (`deturck-gluck2008`)
+Source: `library/0510388v1/0510388v1.pdf` (`deturck-gluck2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

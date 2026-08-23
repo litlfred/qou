@@ -1,0 +1,171 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "0310279v5",
+ "source_sha256": "a1d472d37291a333",
+ "brief": "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template",
+ "extended": "**Stabilization in the braid groups I: MTWS**\n\n*Choose any oriented link type X and closed braid representatives X+, X− of*\n\n128 pp, 30 sections.\n\n**Outline.** 1 Introduction; 1.1 The problem; 1.2 Block-strand diagrams and templates; 1.2.1 The two destabilization templates; 1.2.3 The exchange move template and sequences; 1.2.4 The cyclic templates; 1.3 Statement of results; 1.4 Plan of the paper; 2 Getting started; 2.1 The basic construction for knots; 2.2 The general case; 2.3 A key example of the basic construction; 3 Introducing braid foliations; 3.1 Braid foliations of Seifert surfaces; 3.2 Control over the foliations; 3.3 Using braid foliations to detect destabili; 3.4 Using braid foliations to detect stabiliza; 4 Braid foliations of the immersed annulus\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: [23]) Let X+, X− be closed braid representa-\n- Theorem 1: ] braids β,β′ in the n–string braid group Bn are conjugate if and only if the\n- Theorem 2: is about the relationship between two closed braid diagrams which represent\n- Theorem 2: will include the number of singularities in the foliation of a clasp annulus\n- Proposition 1.2.1: LetD be a block-strand diagram of braid index n. Then there exist\n- Proposition 2.2.1: Choose any µ–component oriented link type X in oriented R3.",
+ "tokens": {
+  "brief": 29,
+  "extended": 328
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-the-problem",
+   "title": "The problem",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-002-12-block-strand-diagrams-and-templates",
+   "title": "Block-strand diagrams and templates",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-121-the-two-destabilization-templates",
+   "title": "The two destabilization templates",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-123-the-exchange-move-template-and-sequences-of",
+   "title": "The exchange move template and sequences of exchange moves",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-124-the-cyclic-templates",
+   "title": "The cyclic templates",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-13-statement-of-results",
+   "title": "Statement of results",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-007-14-plan-of-the-paper",
+   "title": "Plan of the paper",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-008-2-getting-started",
+   "title": "Getting started",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-009-21-the-basic-construction-for-knots",
+   "title": "The basic construction for knots",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-010-22-the-general-case",
+   "title": "The general case",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-011-23-a-key-example-of-the-basic-construction",
+   "title": "A key example of the basic construction",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-012-3-introducing-braid-foliations",
+   "title": "Introducing braid foliations",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-013-31-braid-foliations-of-seifert-surfaces",
+   "title": "Braid foliations of Seifert surfaces",
+   "pages": "26-30"
+  },
+  {
+   "id": "sec-014-32-control-over-the-foliations",
+   "title": "Control over the foliations",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-015-33-using-braid-foliations-to-detect-destabilizat",
+   "title": "Using braid foliations to detect destabilizations and exchange moves",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-016-34-using-braid-foliations-to-detect-stabilizatio",
+   "title": "Using braid foliations to detect stabilizations",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-017-4-braid-foliations-of-the-immersed-annulus",
+   "title": "Braid foliations of the immersed annulus",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-018-41-tile-types-in-pa",
+   "title": "Tile types in PA",
+   "pages": "39-46"
+  },
+  {
+   "id": "sec-019-43-construction-of-the-tabs",
+   "title": "Construction of the tabs",
+   "pages": "46-52"
+  },
+  {
+   "id": "sec-020-45-creating-symmetric-normal-neighborhoods-of-th",
+   "title": "Creating symmetric normal neighborhoods of the clasp arcs",
+   "pages": "52-58"
+  },
+  {
+   "id": "sec-021-5-pushing-across-ca",
+   "title": "Pushing across CA",
+   "pages": "58-69"
+  },
+  {
+   "id": "sec-022-53-pushing-across-thin-annuli",
+   "title": "Pushing across thin annuli",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-023-531-constructing-the-thin-annuli",
+   "title": "Constructing the thin annuli",
+   "pages": "69-88"
+  },
+  {
+   "id": "sec-024-54-constructing-a-candidate-for-a-template-dd--f",
+   "title": "Constructing a candidate for a template (D+,D-) from CA",
+   "pages": "88-94"
+  },
+  {
+   "id": "sec-025-56-pushing-across-regions-with-a-gexchange-folia",
+   "title": "Pushing across regions with a G–exchange foliation",
+   "pages": "94-100"
+  },
+  {
+   "id": "sec-026-57-pushing-across-a-standard-annulus",
+   "title": "Pushing across a standard annulus",
+   "pages": "100-102"
+  },
+  {
+   "id": "sec-027-6-the-proof-of-the-mtws",
+   "title": "The proof of the MTWS",
+   "pages": "102-102"
+  },
+  {
+   "id": "sec-028-61",
+   "title": "6.1",
+   "pages": "102-123"
+  },
+  {
+   "id": "sec-029-7-open-problems",
+   "title": "Open problems",
+   "pages": "123-128"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

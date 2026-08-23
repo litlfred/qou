@@ -89,11 +89,24 @@ MARKER = "float64-intentional"
 MPF_CTORS = {"mpf", "mpmathify"}
 MPF_MODULES = {"mp", "mpmath"}
 F64_MODULES = {"math", "statistics", "np", "numpy"}
-F64_METHODS = {"item", "sum", "trace", "mean", "std"}
+# Bare-method detection is restricted to `.item()`, which is distinctive to
+# numpy/torch scalars. `.sum()`, `.trace()`, `.mean()`, `.std()` were here
+# too and are AMBIGUOUS -- sympy Matrix carries all of them symbolically.
+# Measured false positive: qbeta_hoefsmit's `sp.simplify(M.trace())` on a
+# sympy matrix was tagged float64, tainting an exactly-evaluated chi.
+# The numpy MODULE forms (np.trace, np.sum, ...) are caught by F64_MODULES
+# regardless, so nothing real is lost.
+F64_METHODS = {"item"}
+EXACT_SINKS = {"int", "round", "len"}   # collapse to an exact integer
 ARITH_OPS = (ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow, ast.FloorDiv)
 
 MPF = "MPF"
 F64 = "F64"
+
+
+def _short_enough(v: float) -> bool:
+    """Does `str(v)` round-trip the written decimal? True up to ~17 sig digits."""
+    return len(repr(v).replace("-", "").replace(".", "").lstrip("0")) <= 17
 
 
 def _exactly_representable(v: float) -> bool:
@@ -175,6 +188,12 @@ class Tainter:
         self.lines = lines
         self.gram = gram_names
         self.tainted: set[str] = set()
+        # name -> line where it BECAME tainted. Reported per row so a reader
+        # can jump to the origin instead of re-tracing the chain by hand.
+        self.origin: dict[str, int] = {}
+        # Names bound to a float literal short enough that `str()` round-trips
+        # it exactly (<= 17 significant digits). See the `str` case in f64().
+        self.short_lit: set[str] = set()
         self.mpf_names: set[str] = set()
         self.rows: list[dict] = []
 
@@ -190,6 +209,29 @@ class Tainter:
         if isinstance(node, ast.Call):
             f = node.func
             if isinstance(f, ast.Name):
+                if f.id == "str" and len(node.args) == 1:
+                    # `str(x)` on a float LITERAL round-trips: Python prints the
+                    # shortest decimal that reparses to the same double, so
+                    # `mpf(str(8.481798))` recovers the written value exactly.
+                    # This holds only up to ~17 significant digits -- which is
+                    # precisely why `Q_PROTON = 1.10997858275138080759...` (49
+                    # digits) was NOT recoverable and is a real defect. Measured
+                    # false positive without this: tritium_8_11's
+                    # `mp.mpf(str(AME_BINDING_3H_MEV))`.
+                    a0 = node.args[0]
+                    if isinstance(a0, ast.Name) and a0.id in self.short_lit:
+                        return False
+                    if isinstance(a0, ast.Constant) and isinstance(a0.value, float) \
+                            and _short_enough(a0.value):
+                        return False
+                if f.id in EXACT_SINKS:
+                    # int(x) / round(x) collapse to an exact integer, which
+                    # carries no float64 error however x was computed. Measured
+                    # false positive without this: jpsi_boundstate_mass_probe's
+                    # `mp.mpf(10) ** (-(int(CS_BITS / 3.3219) - 6))` is exact,
+                    # but the non-representable literal 3.3219 tainted the
+                    # division and the taint survived the int().
+                    return False
                 if f.id in MPF_CTORS:
                     # mpf(<tainted>) preserves the taint — it does not heal it.
                     return any(self.f64(a) for a in node.args)
@@ -236,12 +278,23 @@ class Tainter:
         ctx = " ".join(self.lines[max(0, lineno - 3): lineno + 1])
         return MARKER in ctx
 
+    def taint_origin(self, node) -> tuple[str, int]:
+        """The tainted name reached from this expression, and where it began."""
+        for n in ast.walk(node):
+            if isinstance(n, ast.Name) and n.id in self.tainted:
+                return n.id, self.origin.get(n.id, 0)
+        return "", 0
+
     def record(self, node, kind: str, detail: str) -> None:
         line = (self.lines[node.lineno - 1].strip()
                 if node.lineno <= len(self.lines) else "")
+        nm, oln = self.taint_origin(node)
         self.rows.append({
             "file": self.rel, "line": node.lineno, "kind": kind,
             "detail": detail, "source": line[:120],
+            "taint_name": nm, "taint_origin_line": oln,
+            "taint_origin_source": (self.lines[oln - 1].strip()[:110]
+                                    if 0 < oln <= len(self.lines) else ""),
             "class": "marked" if self.marked(node.lineno) else "CANDIDATE",
         })
 
@@ -252,6 +305,12 @@ class Tainter:
                 continue
             nm = getattr(n.func, "attr", None) or getattr(n.func, "id", "")
             if nm in SINKS and n.args and self.f64(n.args[0]):
+                # `_fmt(x, '+.6e')` prints six digits — a display at a stated
+                # width, not a claim of full precision. Only the bare form
+                # (which serializes at output precision) overstates anything.
+                spec = n.args[1] if len(n.args) > 1 else None
+                if isinstance(spec, ast.Constant) and isinstance(spec.value, str):
+                    continue
                 self.record(n, "serialized", f"{nm}(<float64-tainted>)")
             elif nm in NSTR and len(n.args) >= 2 and self.f64(n.args[0]):
                 d = n.args[1]
@@ -267,11 +326,22 @@ class Tainter:
                 t = self.f64(st.value)
                 for tgt in st.targets:
                     if isinstance(tgt, ast.Name):
-                        (self.tainted.add if t else self.tainted.discard)(tgt.id)
+                        if isinstance(st.value, ast.Constant) and isinstance(
+                                st.value.value, float) and _short_enough(st.value.value):
+                            self.short_lit.add(tgt.id)
+                        else:
+                            self.short_lit.discard(tgt.id)
+                        if t:
+                            self.tainted.add(tgt.id)
+                            self.origin.setdefault(tgt.id, st.lineno)
+                        else:
+                            self.tainted.discard(tgt.id)
+                            self.origin.pop(tgt.id, None)
             elif isinstance(st, ast.AugAssign):
                 self.check_sinks(st.value)
                 if isinstance(st.target, ast.Name) and self.f64(st.value):
                     self.tainted.add(st.target.id)
+                    self.origin.setdefault(st.target.id, st.lineno)
             elif isinstance(st, (ast.For, ast.While, ast.If, ast.With, ast.Try)):
                 for f in ("test", "iter"):
                     if getattr(st, f, None) is not None:
@@ -452,8 +522,11 @@ def main() -> int:
     if args.list:
         print("\n  candidates:")
         for r in cands:
-            print(f"    {r['file']}:{r['line']}  [{r['left']} {r['kind']} "
-                  f"{r['right']}]\n        {r['source']}")
+            print(f"    {r['file']}:{r['line']}  [{r['kind']}] {r['detail']}")
+            print(f"        {r['source']}")
+            if r.get("taint_origin_line"):
+                print(f"        taint `{r['taint_name']}` from L"
+                      f"{r['taint_origin_line']}: {r['taint_origin_source']}")
 
     print("\n  These are CANDIDATES for an agent verdict, not proved defects:")
     print("  a `-> float` annotation can be stale, and a name can be rebound")

@@ -1,0 +1,495 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1208.1663v2",
+ "source": {
+  "file": "1208.1663v2.pdf",
+  "sha256": "87e94e429d58386cc727555aa0708ad989d716adb4d3e4c12e2c3b9146fcd48e",
+  "bytes": 830232,
+  "pages": 29
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1208.1663",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "7 Oct 2015"
+  },
+  "doi": null,
+  "title": "The 3D index of an ideal triangulation and angle structures",
+  "authors_raw": null,
+  "abstract": "The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2 r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20151008003248Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE",
+   "STRUCTURES",
+   "STAVROS GAROUFALIDIS",
+   "With an appendix by Sander Zwegers"
+  ],
+  "title_prev": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Index structures, angle structures and the 3D index",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Index structures",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Angle structures",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Neumann-Zagier matrices",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "On the topological invariance of the index",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Axioms for the tetrahedron index",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Properties of a tetrahedron index",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Part (d) of Theorem 3.2",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The rank of V: part (a) of Theorem 3.2",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The rank of V+: part (b) of Theorem 3.2",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of triality: part (c) of Theorem 3.2",
+   "page": 12,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "I is a tetrahedron index",
+   "page": 13,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "The degree of I",
+   "page": 13,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 3.7",
+   "page": 13,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "Convergence of the 3D index",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.4",
+   "page": 14,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "An independent proof of convergence for strict index structures",
+   "page": 16,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Invariance of the 3D index under 23 moves and 20 moves",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Invariance under the 32 move",
+   "page": 18,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Invariance under the 23 move",
+   "page": 20,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "An ideal triangulation of m136",
+   "page": 21,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "An ideal triangulation of m064",
+   "page": 21,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "An ideal triangulation with no index structure",
+   "page": 22,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Invariance under the 2 0 move",
+   "page": 22,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgment",
+   "page": 23,
+   "source": "outline",
+   "number": "6.7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. I satisfies the pentagon identity",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1. A generating series proof of the pentagon identity",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2. A second proof of the pentagon identity",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4092,
+   "n_words": 719
+  },
+  {
+   "id": "sec-001-2-index-structures-angle-structures-and-the-3d-i",
+   "number": "2",
+   "title": "Index structures, angle structures and the 3D index",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3380,
+   "n_words": 675
+  },
+  {
+   "id": "sec-002-22-angle-structures",
+   "number": "2.2",
+   "title": "Angle structures",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2130,
+   "n_words": 363
+  },
+  {
+   "id": "sec-003-23-the-neumann-zagier-matrices",
+   "number": "2.3",
+   "title": "The Neumann-Zagier matrices",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3428,
+   "n_words": 608
+  },
+  {
+   "id": "sec-004-24-on-the-topological-invariance-of-the-index",
+   "number": "2.4",
+   "title": "On the topological invariance of the index",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2691,
+   "n_words": 510
+  },
+  {
+   "id": "sec-005-3-axioms-for-the-tetrahedron-index",
+   "number": "3",
+   "title": "Axioms for the tetrahedron index",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4019,
+   "n_words": 915
+  },
+  {
+   "id": "sec-006-4-properties-of-a-tetrahedron-index",
+   "number": "4",
+   "title": "Properties of a tetrahedron index",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-41-part-d-of-theorem-32",
+   "number": "4.1",
+   "title": "Part (d) of Theorem 3.2",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 639,
+   "n_words": 101
+  },
+  {
+   "id": "sec-008-43-the-rank-of-v-part-b-of-theorem-32",
+   "number": "4.3",
+   "title": "The rank of V+: part (b) of Theorem 3.2",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2079,
+   "n_words": 437
+  },
+  {
+   "id": "sec-009-44-proof-of-triality-part-c-of-theorem-32",
+   "number": "4.4",
+   "title": "Proof of triality: part (c) of Theorem 3.2",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2428,
+   "n_words": 464
+  },
+  {
+   "id": "sec-010-46-the-degree-of-i",
+   "number": "4.6",
+   "title": "The degree of I",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 774,
+   "n_words": 156
+  },
+  {
+   "id": "sec-011-47-proof-of-theorem-37",
+   "number": "4.7",
+   "title": "Proof of Theorem 3.7",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 659,
+   "n_words": 128
+  },
+  {
+   "id": "sec-012-5-convergence-of-the-3d-index",
+   "number": "5",
+   "title": "Convergence of the 3D index",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-51-proof-of-theorem-24",
+   "number": "5.1",
+   "title": "Proof of Theorem 2.4",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5437,
+   "n_words": 1088
+  },
+  {
+   "id": "sec-014-52-an-independent-proof-of-convergence-for-stric",
+   "number": "5.2",
+   "title": "An independent proof of convergence for strict index structures",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 8262,
+   "n_words": 1765
+  },
+  {
+   "id": "sec-015-63-an-ideal-triangulation-of-m136",
+   "number": "6.3",
+   "title": "An ideal triangulation of m136",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1876,
+   "n_words": 596
+  },
+  {
+   "id": "sec-016-64-an-ideal-triangulation-of-m064",
+   "number": "6.4",
+   "title": "An ideal triangulation of m064",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 869,
+   "n_words": 243
+  },
+  {
+   "id": "sec-017-65-an-ideal-triangulation-with-no-index-structur",
+   "number": "6.5",
+   "title": "An ideal triangulation with no index structure",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1734,
+   "n_words": 317
+  },
+  {
+   "id": "sec-018-67-acknowledgment",
+   "number": "6.7",
+   "title": "Acknowledgment",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 698,
+   "n_words": 108
+  },
+  {
+   "id": "sec-019-a1-a-generating-series-proof-of-the-pentagon-ide",
+   "number": null,
+   "title": "A.1. A generating series proof of the pentagon identity",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 3271,
+   "n_words": 638
+  },
+  {
+   "id": "sec-020-a2-a-second-proof-of-the-pentagon-identity",
+   "number": null,
+   "title": "A.2. A second proof of the pentagon identity",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1596,
+   "n_words": 247
+  },
+  {
+   "id": "sec-021-appendix-b-the-tetrahedron-index-and-the-quantum",
+   "number": null,
+   "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1557,
+   "n_words": 284
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 4513,
+   "n_words": 629
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 31,
+  "sections": 23,
+  "chars_total": 56132
+ }
+}

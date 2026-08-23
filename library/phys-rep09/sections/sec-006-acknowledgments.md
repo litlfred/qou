@@ -1,0 +1,23 @@
+---
+doc_id: phys-rep09
+doc_title: "The Magnus expansion and some of its applications"
+section_id: sec-006-acknowledgments
+section_title: "Acknowledgments"
+section_number: null
+pages: 84-85
+source_pdf: phys-rep09.pdf
+source_sha256: cd345d3df9358efc
+doc_brief: "The Magnus expansion and some of its applications — 8 sections: Introduction; Introduction; Stochastic differential equations"
+---
+Oneofus(J.A.O)wasintroducedtothefieldofMagnusexpansionbyProf.SilvioKlarsfeld(Orsay)towhomwealso
+acknowledgehiscontinuousinterestinourwork.EncouragingcommentsbyProf.A.J.Dragt(Maryland)inearlystagesof
+ourinvolvementwithMEaredeeplyacknowledged.Duringthelastdecade,wehavebenefitedfromenlighteningdiscussions
+with,andusefulcommentsby,Prof.AriehIserles.Wewouldliketothankhimforthat,asmuchasforthekindhospitality
+extendedtousduringourvisitstohisgroupinDAMTPinCambridge.WealsothankProf.Iserlesforprovidinguswithhis
+LatexmacrosforthegraphsinSection 2.5,andDr.AnderMuruaforreadingvariouspartsofthemanuscriptandproviding
+usefulfeedback.FriendlycollaborationwithDr.PerChristianMoanisalsoacknowledged.
+TheworkofSBandFChasbeenpartiallysupportedbyMinisteriodeCienciaeInnovación(Spain)underproject
+MTM2007-61572(co-financedbytheERDFoftheEuropeanUnion),thatofJAOandJRbycontractsMCyT/FEDER,Spain
+(GrantNo.FIS2004-0912)andGeneralitatValenciana,Spain(GrantNo.ACOMP07/03).SBalsoacknowledgesthesupportof
+theUPVthroughtheproject20070307.
+S.Blanesetal./PhysicsReports470(2009)151–238 235

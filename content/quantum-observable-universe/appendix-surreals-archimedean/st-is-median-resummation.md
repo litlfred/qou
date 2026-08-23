@@ -29,7 +29,7 @@ asymptotics of $\tilde f$ (Watson/Nevanlinna–Sokal uniqueness supplies
 the analytic half; the valuation quotient
 $\mathcal{O}/\mathfrak{m} \cong \mathbb{R}$ supplies the surreal half).
 
-Three consequences worth recording:
+Three consequences:
 
 1. **Directionality of the citation graph.** Resurgence-side blocks and
    witnesses (the alien datum, Borel-singularity probes, saddle

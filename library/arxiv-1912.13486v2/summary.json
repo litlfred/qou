@@ -1,0 +1,31 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1912.13486v2",
+ "source_sha256": "9a8dbc1a143f7448",
+ "brief": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold.",
+ "extended": "**Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds**\n\n*Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China*\n\n21 pp, 2 sections.\n\n**Abstract.** We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2×qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021\n\n**Outline.** 1 Introduction; 2.2 Analysis on homological block and index of",
+ "tokens": {
+  "brief": 42,
+  "extended": 175
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-9"
+  },
+  {
+   "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+   "title": "Analysis on homological block and index of lens space theory",
+   "pages": "9-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

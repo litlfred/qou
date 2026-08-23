@@ -16,8 +16,8 @@ export default conjecture({
   ],
   cites: [
     "kashiwara1991",
-    "khovanov-lauda2009",
-    "brundan-kleshchev2009",
+    "khovanovlauda2009",
+    "brundankleshchev2009",
     "lecouvey2007",
   ],
   tags: [

@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.163Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "One-sentence section opening; positive statement of what is consolidated."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.202Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Single sentence; no pivot."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 21 words)"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.244Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 21 words)"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.284Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Three items (q, i, ribbon twist v=q^{1/2}) are exactly the three conventions the section fixes; substantive, not reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.325Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No closer beyond the single sentence."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.373Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'We consolidate' is sectioning language, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.425Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Nothing to restate."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.478Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.517Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:30:59.882Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "74e1761cb292",
+          "ts": "dd306ec45c99"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.556Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1533,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:54:01.556Z"
 }

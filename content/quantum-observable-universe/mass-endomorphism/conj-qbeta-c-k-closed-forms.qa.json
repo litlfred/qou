@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean"
   },
   "source_hashes": {
-    "md": "484c92e4df23",
+    "md": "72d6eba9636e",
     "ts": "9f7581265889",
     "lean": "866e46508f42",
     "lean_statement": "1d4490fcb73d"
@@ -2151,6 +2151,23 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.209Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "severity": "major",
+        "evidence": "Evidence section: 'The empirical c_k from binding_q_target_sweep are not arbitrary fits. They are tautologically determined...' — assert-by-denying, and softer than the sibling derivation block, which states plainly they are 'extracted (fit) against CODATA ... a calibration tautology, not a derivation'.",
+        "notes": "proposed: replace with the derivation sibling's wording: 'are extracted (fit) against CODATA Q_beta values by enforcing the precision-ladder structure — a calibration tautology, not a derivation; these conjectures supply a categorical interpretation of the extracted constants, they do not derive them.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2170,6 +2187,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.282Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no setup-then-reframe pivot construction."
       }
     ],
     "trap-em-dash": [
@@ -2189,6 +2221,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 303 words)"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.325Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; spaced-dash density low; uses are ranges or true parentheticals."
       }
     ],
     "trap-triples": [
@@ -2208,6 +2255,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 303 words)"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.370Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; enumerations reflect underlying mathematical content, not reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -2227,6 +2289,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.417Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; final line is substantive (statement, cross-reference, or open-item bookkeeping), not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2246,6 +2323,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.468Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no self-narrated emphasis; 'note that' style uses are standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2265,6 +2357,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.511Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no block-final restatement of already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -2284,6 +2391,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.558Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; institutional scholarly register throughout; no personal register."
       }
     ],
     "trap-superlative": [
@@ -2303,6 +2425,23 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.658Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "severity": "minor",
+        "evidence": "Precision section: 'already achieves a +6.02 ppb residual at N=3, satisfying the 7.8 ppb accuracy target ... drive the residual below 1 ppb ... exceeding experimental requirements by two orders of magnitude' — stale muon-era claim; the sibling derivation block and AGENTS record the operative proton-pinned status as ~164x MISS of the 7.8 ppb target.",
+        "notes": "proposed: import the derivation sibling's corrected Precision paragraph (muon-anchored +6.02 ppb is anchor-conditional; proton-pinned misses by ~164x; c_4..c_7 tuned to the muon ladder, proton-anchored precision open). Also fixed mechanically: 'precisely reproduces' -> 'reproduces' in Evidence."
       }
     ],
     "trap-nonspeakable": [
@@ -2322,6 +2461,21 @@
         "reviewed_at": "2026-08-15T10:31:01.051Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:38.733Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; sentences parse aloud; technical noun compounds are standard terminology."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2343,7 +2497,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "72d6eba9636e",
+          "ts": "9f7581265889",
+          "lean": "866e46508f42",
+          "lean_statement": "1d4490fcb73d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T13:00:01.656Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T13:00:01.656Z"
 }

@@ -76,7 +76,29 @@ from schur_principal_mpmath import (  # noqa: E402
     y_lambda_at_q0_mpmath, _f_lambda, partitions_of,
 )
 
-CANONICAL = HERE / "y-lambda-mpfr-witness.json"
+# The PROTON-anchored table, matching the q this module evaluates at.
+#
+# `extend_y_lambda_tower` binds `q_val = mp.mpf(Q_50_DIGIT_STR)` — the 50-dps
+# EXPERIMENTAL (proton) pin. This constant pointed at
+# `y-lambda-mpfr-witness.json`, which `regenerate_y_lambda_mpfr.py` writes for
+# the MUON anchor (its `OUTPUT_BY_ANCHOR` keeps one cache per layer). So the
+# module gated a proton-evaluated closed form against a muon-built table —
+# evaluating at one anchor and comparing against the other, the straddle
+# AGENTS.md §"q₀ anchor convention" forbids.
+#
+# It surfaced as a hard stop, mislabelled: extending the tower for 5Li/6Li
+# raised "closed-form y_λ disagrees with symbolic source at n=2:
+# max_rel_err=2.40e-09 > gate 1e-40. Convention drift". It is not convention
+# drift — 2.40e-09 is the 11.54 ppb μ–p pin gap amplified through y_λ.
+# Measured against the proton table with the same 50-dps q, the same
+# comparison gives 2.05e-70, i.e. the gate passes with 30 orders to spare:
+#
+#     muon table,   any q            2.399e-09   FAIL
+#     proton table, f64 Q            5.665e-18   FAIL  (f64 input, not the table)
+#     proton table, 50-dps string    2.047e-70   PASS
+#
+# The middle row is why the q must stay the 50-dps string and not `Q`.
+CANONICAL = HERE / "y-lambda-mpfr-proton-witness.json"
 SOURCE_TAG = ("schur_principal_mpmath closed-form principal specialization "
               "s_λ=Q^{n(λ)}∏(1−Q^r Q^{c})/(1−Q^{h}); verified ≡ symbolic to ~1e-48")
 

@@ -1,7 +1,7 @@
 ---
 # vaud
-title: 'The committed vacuity-audit JSON is stale by 78 defects — it reports 44 where the corpus has 122'
-status: todo
+title: The committed vacuity-audit JSON is stale by 78 defects — it reports 44 where the corpus has 122
+status: completed
 type: bug
 priority: medium
 tags:
@@ -9,7 +9,7 @@ tags:
     - vacuity
     - data-integrity
 created_at: 2026-08-08T16:20:00Z
-updated_at: 2026-08-08T16:20:00Z
+updated_at: 2026-08-19T21:17:20Z
 ---
 
 Found while measuring an unrelated detector change (`vrfw`), and filed
@@ -64,3 +64,8 @@ Regenerating is one command. Committing the result is not a mechanical act:
 
 None of that is hard; all of it is a decision about the audit's contract rather
 than a fix. Filed rather than swept into a detector PR.
+
+
+
+## RESOLVED 2026-08-19 (verified on current main @ 5b158ef0)
+The committed docs/audits/2026-06-17-lean-vacuity-axiom-audit.json is now a FRESH FULL-CORPUS scan: scanned_files=2911, files_flagged=170, total_defects=99, generated 2026-08-15T23:26:52 — regenerated the same day the clobbering root cause (qou-c7jp) was fixed. The stale '44 vs 122' state this bean reported is gone. Root cause fixed + regression-tested under qou-h43i.

@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0603217v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "d7375d4fee00dd9895ab8bab2ee23a9f69b74698ce303abd84def586a4fd3baf",
+  "file": "0603217v3.pdf"
+ },
+ "provenance": {
+  "title": "K; exp(2\u03c0 \u221a\u22121) would determine the simplicial volume of the knot complement S3 \\ K. In [15]",
+  "authors": "Y. Yokota and the author proved that for the \ufb01gure-eight knot E and a complex",
+  "arxiv": {
+   "id": "math/0603217",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "15 Apr 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "remark": 7,
+   "conjecture": 3,
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s 2.5 and 4.2, and to S. Gukov, who described the di\ufb00erence b etween his",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.1",
+   "name": "Parameterized Volume Conjecture",
+   "statement": "There exists an open subset",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.2",
+   "name": null,
+   "statement": "If u is parameterized by a real number t, then V",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "If there exist coprime integers p and q satisfying pu+qvK(u) = 2 \u03c0 \u221a",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.4",
+   "name": null,
+   "statement": "The open set OK may not contain 0. Therefore Conjecture 2.1 is",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.5",
+   "name": null,
+   "statement": "S. Garoufalidis and T. Le proved that if u is close enough to \u22122\u03c0 \u221a",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.1",
+   "name": null,
+   "statement": "Note that the conjecture above is proved for the \ufb01gure-eight kn ot by Yokota and",
+   "section_file": "sections/sec-001-2-a-conjecture.md",
+   "section_title": "A conjecture",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": "[12]",
+   "statement": "Suppose that |r| > 1/ (ab), Re r > 0 and Im r > 0, then",
+   "section_file": "sections/sec-002-3-proof.md",
+   "section_title": "Proof",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.2",
+   "name": null,
+   "statement": "The volume function for a torus knot would be zero. See [3, Appen-",
+   "section_file": "sections/sec-002-3-proof.md",
+   "section_title": "Proof",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "4.1",
+   "name": null,
+   "statement": "[4] Let K be a knot in the three-sphere. For a \u2208 C \\ Q, de\ufb01ne",
+   "section_file": "sections/sec-003-4-comments.md",
+   "section_title": "Comments",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "If |a| is small enough the right hand side of (4.1) vanishes [3]. This",
+   "section_file": "sections/sec-003-4-comments.md",
+   "section_title": "Comments",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

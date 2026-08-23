@@ -1,0 +1,350 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9907032v1",
+ "source": {
+  "file": "9907032v1.pdf",
+  "sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
+  "bytes": 310862,
+  "pages": 27
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9907032",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "6 Jul 1999"
+  },
+  "doi": null,
+  "title": "Combinatorial optimization in geometry",
+  "authors_raw": "Igor Rivin Mathematics Institute, Warwick University",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181109074643-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9907032v1  [math.GT]  6 Jul 1999"
+  },
+  "title_lines": [
+   "Combinatorial optimization in geometry 1"
+  ],
+  "title_prev": "Combinatorial optimization in geometry 1"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "BACKGROUND",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "NECESSARY CONDITIONS ON DIHEDRAL ANGLES",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "SUFFICIENCY OF CONDITIONS 2.1 AND 2.2",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "If the feasible region of L is empty, the program is said to be infeasible. Now",
+   "page": 7,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Some corollaries and reﬁnements",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "A NETWORK FLOW APPROACH",
+   "page": 13,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(a triangle cannot have all angles greater than π/3), we get",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "DELAUNAY TRIANGULATIONS OF INFINITE SETS OF POINTS",
+   "page": 16,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "(when F = T ) no longer exists. Since the new inequalities require u to be",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Remarks and Corollaries",
+   "page": 19,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "DELAUNAY CELLS IN MODULI SPACE",
+   "page": 20,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "COMPUTATIONAL COMPLEXITY",
+   "page": 21,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "SOME APPLICATIONS TO COMBINATORIAL GEOMETRY",
+   "page": 22,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "LINEAR HYPERBOLIC STRUCTURES ON 3-MANIFOLDS",
+   "page": 23,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6617,
+   "n_words": 1129
+  },
+  {
+   "id": "sec-001-1-background",
+   "number": "1",
+   "title": "BACKGROUND",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6787,
+   "n_words": 1312
+  },
+  {
+   "id": "sec-002-2-necessary-conditions-on-dihedral-angles",
+   "number": "2",
+   "title": "NECESSARY CONDITIONS ON DIHEDRAL ANGLES",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2345,
+   "n_words": 562
+  },
+  {
+   "id": "sec-003-3-sufficiency-of-conditions-21-and-22",
+   "number": "3",
+   "title": "SUFFICIENCY OF CONDITIONS 2.1 AND 2.2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1268,
+   "n_words": 223
+  },
+  {
+   "id": "sec-004-l-if-the-feasible-region-of-l-is-empty-the-progr",
+   "number": "L",
+   "title": "If the feasible region of L is empty, the program is said to be infeasible. Now",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4946,
+   "n_words": 1024
+  },
+  {
+   "id": "sec-005-4-dihedral-angles-of-delaunay-triangulations",
+   "number": "4",
+   "title": "DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3319,
+   "n_words": 718
+  },
+  {
+   "id": "sec-006-41-some-corollaries-and-reﬁnements",
+   "number": "4.1",
+   "title": "Some corollaries and reﬁnements",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5756,
+   "n_words": 1176
+  },
+  {
+   "id": "sec-007-5-a-network-flow-approach",
+   "number": "5",
+   "title": "A NETWORK FLOW APPROACH",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 5415,
+   "n_words": 1100
+  },
+  {
+   "id": "sec-008-3-a-triangle-cannot-have-all-angles-greater-than",
+   "number": "3",
+   "title": "(a triangle cannot have all angles greater than π/3), we get",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 210,
+   "n_words": 50
+  },
+  {
+   "id": "sec-009-6-delaunay-triangulations-of-infinite-sets-of-po",
+   "number": "6",
+   "title": "DELAUNAY TRIANGULATIONS OF INFINITE SETS OF POINTS",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2586,
+   "n_words": 507
+  },
+  {
+   "id": "sec-010-22-when-f-t-no-longer-exists-since-the-new-inequ",
+   "number": "2.2",
+   "title": "(when F = T ) no longer exists. Since the new inequalities require u to be",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4857,
+   "n_words": 999
+  },
+  {
+   "id": "sec-011-61-remarks-and-corollaries",
+   "number": "6.1",
+   "title": "Remarks and Corollaries",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3274,
+   "n_words": 613
+  },
+  {
+   "id": "sec-012-7-delaunay-cells-in-moduli-space",
+   "number": "7",
+   "title": "DELAUNAY CELLS IN MODULI SPACE",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3691,
+   "n_words": 663
+  },
+  {
+   "id": "sec-013-8-computational-complexity",
+   "number": "8",
+   "title": "COMPUTATIONAL COMPLEXITY",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2664,
+   "n_words": 495
+  },
+  {
+   "id": "sec-014-9-some-applications-to-combinatorial-geometry",
+   "number": "9",
+   "title": "SOME APPLICATIONS TO COMBINATORIAL GEOMETRY",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2567,
+   "n_words": 502
+  },
+  {
+   "id": "sec-015-10-linear-hyperbolic-structures-on-3-manifolds",
+   "number": "10",
+   "title": "LINEAR HYPERBOLIC STRUCTURES ON 3-MANIFOLDS",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 7988,
+   "n_words": 1495
+  },
+  {
+   "id": "sec-016-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 377,
+   "n_words": 64
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3570,
+   "n_words": 543
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 18,
+  "chars_total": 68237
+ }
+}

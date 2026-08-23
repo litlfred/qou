@@ -17,4 +17,4 @@ $$
 $$
 This adjoint representation is the double cover $\mathrm{Sp}(1) \twoheadrightarrow \mathrm{SO}(3)$. The $\mathrm{SO}(3)$ holonomy of the chiral sheets lifts directly to $\mathrm{Sp}(1)$ conjugation in the quaternion basis.
 
-Thus, writing spectral resolvents in the $\{\mathbf{i}, \mathbf{j}, \mathbf{k}\}$ basis equates to expanding an $\mathfrak{su}(2)$-valued $1$-form along the structure group's Lie algebra generators. The spatial-temporal decomposition $(\omega_1 \mid \omega_2, \omega_3)$ corresponds perfectly to splitting $\mathfrak{su}(2) \cong \mathfrak{u}(1) \oplus \mathfrak{m}$ into the Cartan subalgebra and its orthogonal complement.
+Thus, writing spectral resolvents in the $\{\mathbf{i}, \mathbf{j}, \mathbf{k}\}$ basis equates to expanding an $\mathfrak{su}(2)$-valued $1$-form along the structure group's Lie algebra generators. The spatial-temporal decomposition $(\omega_1 \mid \omega_2, \omega_3)$ corresponds exactly to splitting $\mathfrak{su}(2) \cong \mathfrak{u}(1) \oplus \mathfrak{m}$ into the Cartan subalgebra and its orthogonal complement.

@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.154Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.211Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.258Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.307Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,23 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.351Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Block-final sentence was 'The structural information lost in the classical limit returns.' - a short quotable closer adding nothing over the preceding sentence and over the opening claim that the q-character 'explicitly breaks the parity blindness'.",
+        "notes": "FIXED inline (1 sentence, pure prose, no math): deleted 'The structural information lost in the classical limit returns.' The paragraph now ends on the substantive 'This separation restores the beta-decay calibration constraint.' Delimiters re-checked ($$ count even)."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.395Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.459Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The deleted final sentence also restated the block thesis; adjudicated once, under trap-closing-aphorism, and fixed there. Remaining block-final sentence adds the CAL-2 / beta-decay consequence not stated earlier, so it is not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.515Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1700,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.558Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'explicitly breaks', 'strictly separates', 'preserves q exactness' read as technical rather than inflated: the separation claimed IS strict (a positive vs negative crossing get distinct Hecke eigenvalues q vs -q^{-1}), so the strength is earned."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fcf91e54ddd6",
+          "ts": "3ae9740a0489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:17.608Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 3-paragraph remark (interprets prop:schur-weyl-mass-decomposition). Checked the Hecke conventions against AGENTS.md 7a: generator sigma_i (not T), eigenvalue gap (q, -q^{-1}) matches (sigma_i-q)(sigma_i+q^{-1})=0 - correct. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1771,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:10:17.608Z"
 }

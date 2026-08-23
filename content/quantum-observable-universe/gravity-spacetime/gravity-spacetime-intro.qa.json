@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/gravity-spacetime/gravity-spacetime-intro.md"
   },
   "source_hashes": {
-    "md": "5d9a3addd0a5",
+    "md": "c20a0e1e7398",
     "ts": "a1f4ff234bac"
   },
   "criteria": {
@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.790Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Fixed: doubled denial reduced to the single substantive one.",
+        "notes": "fix applied: deleted redundant second negation 'Gravity requires no additional axiom.' between 'We do not impose this pull as a separate force law.' and the positive claim — same content stated twice as denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.834Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1259,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.876Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1293,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.919Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1327,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.961Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'the long-range geometric content of the framework is gravity' is the chapter-scope claim, positioned as Part II closure bookkeeping."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1361,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.001Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'This chapter develops/closes' is standard structural signposting."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.044Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Second paragraph adds Part-II position, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.084Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.126Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'universal long-range attraction' is the standard description of gravity."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.965Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.169Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Readable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1381,7 +1532,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "c20a0e1e7398",
+          "ts": "a1f4ff234bac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:06.710Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:06.710Z"
 }

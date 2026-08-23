@@ -136,7 +136,188 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:14.996Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.040Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.082Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.123Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.168Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.211Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.252Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.294Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.336Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "severity": "minor",
+        "evidence": "Block-final sentence: 'The mass spectrum construction resolves any residual ambiguity.' 'Any residual ambiguity' is an unqualified sweep -- it claims exhaustive closure of an unnamed set, in a roadmap paragraph that has just listed four separate things still to be formalised, and nothing in the block bounds what the residual ambiguity is. Checked what it asserts before judging it style: the assertion is unbounded, so it is the carrier rather than decoration.",
+        "notes": "PROPOSED (not applied -- the fix must name the ambiguity, which requires the downstream block's content): name it, e.g. 'The mass spectrum construction fixes which of the admissible pairs is produced.'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1c53b28441ea",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.377Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on Breit--Wheeler pair production. Judged all ten categories in context.",
+        "notes": "COSMETIC reported, not fixed: the block writes 'Breit--Wheeler' with an en-dash in the first paragraph and 'Breit-Wheeler' with a hyphen in the second -- the stripped-token sweep-damage class, inconsistent within one block. Also a trailing space after 'pair. ' at the end of paragraph 1. Content check: gamma gamma -> e+ e- is the correct Breit--Wheeler channel, and 'photonic knot states (0_1 exceptional divisors)' is consistent with the corpus's unknot-as-neutrino / identity-braid-as-photon assignments."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:56.419019Z"
+  "updated_at": "2026-08-22T03:42:15.377Z"
 }

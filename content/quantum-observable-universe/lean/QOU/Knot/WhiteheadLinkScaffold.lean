@@ -35,6 +35,28 @@ here.  This file records the honest split:
 Route context: `docs/audits/2026-08-02-whitehead-chain-positive-sum-route.md`.
 -/
 
+/-
+**CROSS-REFERENCE (2026-08-19) — a second Whitehead-link VC program exists.**
+
+`QOU/Knot/WhiteheadVolumeConjecture.lean` + `QOU/Knot/WhiteheadSaddleClausen.lean`
+(beans `qou-t2sc` / `qou-dw20` / `qou-1gkf`) attack the same theorem from the
+OPPOSITE end, by van der Veen's Lemma-1 POSITIVE-sum route:
+
+* they have the MAGNITUDE — `whitehead_vc_innerSum_half` (sorry-free): the
+  inner sum `Σ_k S_{n,k}` at the slice `n = ⌊N/2⌋` has scaled log `→ 4G`;
+* this program has the PHASES — the majorant bound, its `4G` limit, and the
+  residue isolated as `VdVWhiteheadLemma4` (no instance anywhere: open).
+
+The gap between the two ends is non-cancellation of the phased outer sum
+`Σ_n (2n+1)·χ_{N,n}^{-1}·(Σ_k S_{n,k})` — which is exactly Lemma 4. The two are
+COMPLEMENTARY, not redundant. Coordinate before extending either.
+
+Note their `whitehead_volume_conjecture` is not the VC for `J_N(W)`: it assumes
+`hk : kashaev N = whiteheadInnerSum N ((N-1)/2)`, so it concerns the inner sum
+at one slice. Their docstring says so; the name alone does not.
+Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
+-/
+
 import QOU.Knot.WhiteheadChainVolume
 
 namespace QOU.Knot.FigureEightVolume
@@ -108,7 +130,7 @@ theorem norm_whiteheadLinkKashaev_le (N : ℕ) :
     share their exponential growth.  This is the analytic essence of
     van der Veen's Lemma 4 (Gaussian → erfc, arXiv:math/0611181 §3); a
     future sorry-free discharge would formalize that argument.
-    -- Ref: [manuscript] uploads/0611181v2.pdf, Lemma 4 -/
+    -- Ref: [manuscript] library/arxiv-math-0611181v2/0611181v2.pdf, Lemma 4 -/
 class VdVWhiteheadLemma4 : Prop where
   /-- The majorant exceeds the modulus by at most `N^p` for some fixed `p`,
       eventually in `N` — phases cost polynomially, never exponentially. -/

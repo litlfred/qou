@@ -1,5 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+-- The channel definitions and `pair_cancellation` were relocated to the Lake
+-- tree so the content-block resolver finds `pair_cancellation`; the theorems
+-- remaining below still use the definitions.
+import QOU.Braiding.crossing_energy_channels
 
 
 /-!
@@ -20,12 +24,6 @@ See `GroundRingAnnotations.lean`.
 -/
 
 namespace QOU.Braiding
-
-/-- The symmetric (strong) channel weight: cosh(ln q). -/
-noncomputable def symmetricWeight (q : ℝ) : ℝ := (q + q⁻¹) / 2
-
-/-- The antisymmetric (Coulomb) channel weight: sinh(ln q). -/
-noncomputable def antisymmetricWeight (q : ℝ) : ℝ := (q - q⁻¹) / 2
 
 /-- q decomposes as cosh + sinh. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
@@ -160,22 +158,6 @@ That multiplicity mismatch is exactly what makes pair creation work
 (`pair_cancellation`), and it is also what bounds the scope of the
 "ratio is independent of `𝔥`" claim (`ratio_general` below). -/
 
-/-- Total crossing energy of a composite with `p` positive and `m`
-negative crossings: `p·q - m·q⁻¹`. -/
-noncomputable def crossingEnergy (p m : ℕ) (q : ℝ) : ℝ :=
-  (p : ℝ) * q - (m : ℝ) * q⁻¹
-
-/-- Symmetric (strong-binding) channel of the composite. The multiplicity
-is `p - m`: the `cosh` part carries the crossing sign. -/
-noncomputable def symChannel (p m : ℕ) (q : ℝ) : ℝ :=
-  ((p : ℝ) - (m : ℝ)) * symmetricWeight q
-
-/-- Antisymmetric (Coulomb) channel of the composite. The multiplicity is
-`p + m`: the `sinh` part is sign-blind, contributing `+sinh λ` for a
-negative crossing just as for a positive one. -/
-noncomputable def asymChannel (p m : ℕ) (q : ℝ) : ℝ :=
-  ((p : ℝ) + (m : ℝ)) * antisymmetricWeight q
-
 /-- The composite splits into its two channels. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem crossingEnergy_split (p m : ℕ) (q : ℝ) :
@@ -197,20 +179,6 @@ net Coulomb energy. -/
 theorem asymChannel_mirror (p m : ℕ) (q : ℝ) :
     asymChannel m p q = asymChannel p m q := by
   unfold asymChannel; ring
-
-/-- **Pair cancellation.** For a composite and its mirror, the symmetric
-(strong) channels cancel and the antisymmetric (Coulomb) channels add:
-
-  `𝔈(𝔥) + 𝔈(𝔥^σ) = 2·E_asym(𝔥)`.
-
-This is the formal content of the QOU analogue of Einstein's hope for
-`g_[μν]`: the sign-blind antisymmetric sector is what survives when the
-symmetric sector is cancelled by pairing. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
-theorem pair_cancellation (p m : ℕ) (q : ℝ) :
-    crossingEnergy p m q + crossingEnergy m p q = 2 * asymChannel p m q := by
-  unfold crossingEnergy asymChannel antisymmetricWeight
-  ring
 
 /-- **Ratio identity, correctly scoped.** For a *positive braid closure*
 (`m = 0`, every crossing positive) with at least one crossing, the

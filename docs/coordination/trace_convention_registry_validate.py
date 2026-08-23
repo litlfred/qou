@@ -52,6 +52,15 @@ Rules (errors unless marked):
       its production_convention must have status "disputed" AND a non-null
       `open_item` carrying a bean and an audit. A disputed channel silently
       recorded as agreed is an error.
+
+      "disputed" answers "which convention is right?". It cannot answer "the
+      owner settled it and the code has not moved yet" -- so recording the
+      2026-08-15 ruling on `qbeta-decay`, whose production still returns z_C,
+      forced a choice between lying about the code and losing the ruling.
+      "agreed-migration-pending" (added 2026-08-16, bean qou-cdh1) is that
+      third state: it additionally requires a `resolution` block naming the
+      ruling and its date, and a `production_convention_target` equal to the
+      settled definitional convention.
   R9  EVALUATION (added 2026-08-09, bean qou-wgta item 12): import every entry
       in `evaluators` and CALL IT at q_0, comparing the result to the declared
       convention's own `z_at_q0` / `weights_at_q0` at 1e-40 absolute.
@@ -101,7 +110,7 @@ FORCING_STATUS = {
     "not-a-z-trace",
     "deprecated",
 }
-CHANNEL_STATUS = {"agreed", "disputed"}
+CHANNEL_STATUS = {"agreed", "disputed", "agreed-migration-pending"}
 CONV_DECL = re.compile(r"convention[\s:]+([A-D])\b", re.IGNORECASE)
 REL_TOL = 1e-15
 
@@ -403,6 +412,26 @@ def _eval_z(entry, mod, q0):
         if len(free) != 1:
             raise ValueError("expected exactly one free symbol, got %s" % free)
         return mp.mpf(str(sp.N(obj.subs(free[0], sp.Float(mp.nstr(q0, 60), 60)), 55)))
+    # --- function-level kinds -------------------------------------------
+    # R9 could previously reach only MODULE ATTRIBUTES. Anything computed
+    # inside a function was invisible to it, and that is exactly where
+    # pyhecke.gram's 50-dps mpmath path sat: `z` (module attr) is convention
+    # D and was checked; `z_mp()` and `tr_m_mp()` return convention C and
+    # were not. A convention that only exists at call time is still a
+    # convention, and the high-precision path is the one you reach for when
+    # the answer matters.
+    if kind == "callable_no_arg":
+        return mp.mpf(str(obj()))
+    if kind == "callable_index":
+        idx = entry.get("index")
+        if idx is None:
+            raise ValueError("callable_index requires an `index`")
+        return mp.mpf(str(obj()[idx]))
+    if kind == "callable_q_index":
+        idx = entry.get("index")
+        if idx is None:
+            raise ValueError("callable_q_index requires an `index`")
+        return mp.mpf(str(obj(q0)[idx]))
     raise ValueError("unknown z kind %r" % kind)
 
 
@@ -477,6 +506,104 @@ def check_evaluated(reg: dict) -> tuple[list[str], list[str], list[str]]:
             else:
                 notes.append("R9 %s: z CONFIRMED convention %s by evaluation "
                              "(|d| = %s)" % (entry["id"], cid, mp.nstr(d, 4)))
+
+        # --- R10: one module, one convention ------------------------------
+        # R9 checks each entry against the registry INDEPENDENTLY, so a module
+        # whose symbols disagree with EACH OTHER passes it entry by entry.
+        # pyhecke.gram does exactly that: `z` is D, `z_mp()` and `tr_m_mp()`
+        # are C, and every one of them is correctly registered -- R9 confirms
+        # all three and says nothing is wrong.
+        #
+        # A caller does not import a registry entry, it imports a module, and
+        # `from pyhecke.gram import z` versus `gram.z_mp()` differ by 18.5%
+        # with nothing at the call site to suggest it. So the divergence is
+        # the defect even when both halves are accurately recorded.
+        #
+        # Waivable, because a module MAY legitimately export a preserved
+        # historical constant beside its production one -- that is what
+        # schur_principal_mpmath does, and it says so in the symbol name.
+        # The waiver has to name the module, so the exception is a decision
+        # somebody made rather than a silence.
+        waived = set(reg.get("intra_module_split_waivers", []))
+        by_module: dict = {}
+        for entry in ev.get("z", []):
+            by_module.setdefault(entry.get("module", "?"), []).append(entry)
+        for mod_name, entries in sorted(by_module.items()):
+            convs = {e["convention"] for e in entries}
+            if len(convs) < 2:
+                continue
+            detail = ", ".join(
+                "%s=%s" % (e["id"], e["convention"])
+                for e in sorted(entries, key=lambda x: x["id"]))
+            msg = ("R10 %s exports MORE THAN ONE convention (%s): %s"
+                   % (mod_name, "/".join(sorted(convs)), detail))
+            if mod_name in waived:
+                # A waiver downgrades to WARNING, never to a note. A note is
+                # read once and then scrolled past; a warning is counted in
+                # the summary line, so a known split stays visible for as long
+                # as it is open. Waiving is for "tracked and not blocking",
+                # not for "resolved".
+                warnings.append(msg + " -- WAIVED in intra_module_split_waivers "
+                                "(open defect, not an approved design)")
+            else:
+                errors.append(
+                    msg + " -- a caller imports a module, not a registry entry, "
+                    "so two conventions behind one import is a defect even when "
+                    "both are accurately recorded. Fix the module, or waive it "
+                    "by name in `intra_module_split_waivers`.")
+
+        # --- R11: derived quantities must match their own z ----------------
+        # R9 checks the Markov parameter itself. Everything DERIVED from it --
+        # tr_M(sigma_1^2) = h*z+1, the H_2 weight (q*z+1)/(q^2+1), the entries
+        # of the TR_M vector -- gets written out in closed form, and a closed
+        # form derived under one convention keeps working, silently, after z
+        # moves. `scan_closed_forms` hunts those statically, but it keys on the
+        # BINDING NAME (trM, W2, y_lambda, ...), and a name-keyed detector is
+        # exactly what has been blind three times over in this excision:
+        # missed the half-argument spelling, missed returns, missed the
+        # reciprocal form. A numeric identity cannot be evaded by spelling.
+        #
+        # It has a track record. TR_M[5] was z^3 rather than h*z^2+z until
+        # docs/audits/2026-05-19-trm5-markov-bug.md, and main carries the
+        # commit "flip trace_weights to h*z^2 + z -- Rust and Python finally
+        # agree". This is that check, at 1e-40, keyed off the registry.
+        _IDENTITIES = {
+            "z": lambda z, h, q: z,
+            "z^2": lambda z, h, q: z ** 2,
+            "z^3": lambda z, h, q: z ** 3,
+            "h*z+1": lambda z, h, q: h * z + 1,
+            "h*z^2+z": lambda z, h, q: h * z * z + z,
+            "z+h*z^2": lambda z, h, q: z + h * z * z,
+            "(q*z+1)/(q^2+1)": lambda z, h, q: (q * z + 1) / (q ** 2 + 1),
+        }
+        for entry in ev.get("derived", []):
+            cid = entry["convention"]
+            ident = entry.get("identity")
+            z_s = (by_id.get(cid) or {}).get("z_at_q0")
+            if z_s is None or ident not in _IDENTITIES:
+                errors.append("R11 %s: convention %s has no z_at_q0, or unknown "
+                              "identity %r" % (entry["id"], cid, ident))
+                continue
+            tol = mp.mpf(str(entry.get("abs_tol", default_tol)))
+            try:
+                got = _eval_z(entry, _import_for(entry), q0)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append("R11 %s: could not evaluate (%s: %s); NOT confirmed"
+                                % (entry["id"], type(exc).__name__, exc))
+                continue
+            zc = mp.mpf(z_s)
+            want = _IDENTITIES[ident](zc, q0 - 1 / q0, q0)
+            d = abs(got - want)
+            if d > tol:
+                errors.append(
+                    "R11 %s: should equal %s = %s for convention %s, but the CODE "
+                    "returns %s (|d| = %s > %s). The derived form has drifted from "
+                    "the z it is derived from."
+                    % (entry["id"], ident, mp.nstr(want, 25), cid,
+                       mp.nstr(got, 25), mp.nstr(d, 4), mp.nstr(tol, 2)))
+            else:
+                notes.append("R11 %s: CONFIRMED %s under convention %s (|d| = %s)"
+                             % (entry["id"], ident, cid, mp.nstr(d, 4)))
 
         for entry in ev.get("weights_n3", []):
             cid = entry["convention"]
@@ -627,9 +754,10 @@ def check_channels(reg: dict, channels=None) -> tuple[list[str], list[str]]:
                           % (ch["id"], st, sorted(CHANNEL_STATUS)))
             continue
         if d != p:
-            if st != "disputed":
+            if st not in ("disputed", "agreed-migration-pending"):
                 errors.append("R8 channel %s: definitional %s != production %s "
-                              "but status is %r -- must be 'disputed'"
+                              "but status is %r -- must be 'disputed' or "
+                              "'agreed-migration-pending'"
                               % (ch["id"], d, p, st))
             oi = ch.get("open_item") or {}
             if not oi.get("bean") or not oi.get("audit"):
@@ -637,6 +765,31 @@ def check_channels(reg: dict, channels=None) -> tuple[list[str], list[str]]:
                               "open_item with a bean and an audit -- a "
                               "convention disagreement may not be recorded "
                               "silently" % (ch["id"], d, p))
+            # 'agreed-migration-pending' separates the two questions R8
+            # originally ran together: WHICH convention is right (settled by an
+            # owner ruling) and HAS THE CODE MOVED (not yet). The old vocabulary
+            # could express only "disputed", so recording a settlement forced a
+            # choice between lying about the code (production := D while the
+            # code returns z_C) and losing the ruling. It demands strictly MORE
+            # evidence than 'disputed' -- which required a bean and an audit and
+            # nothing else -- so it cannot be used to quiet a live dispute.
+            if st == "agreed-migration-pending":
+                res = ch.get("resolution") or {}
+                for field in ("ruling", "date"):
+                    if not res.get(field):
+                        errors.append(
+                            "R8 channel %s is 'agreed-migration-pending' but "
+                            "its resolution block has no %r -- a settlement "
+                            "must name the authority that settled it"
+                            % (ch["id"], field))
+                tgt = ch.get("production_convention_target")
+                if tgt != d:
+                    errors.append(
+                        "R8 channel %s is 'agreed-migration-pending' with "
+                        "production_convention_target %r, which does not match "
+                        "the settled definitional_convention %r -- the target "
+                        "of the migration IS the settled convention"
+                        % (ch["id"], tgt, d))
         elif st == "disputed":
             warnings.append("R8 channel %s: status 'disputed' but the two "
                             "conventions agree (%s)" % (ch["id"], d))

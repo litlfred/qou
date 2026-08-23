@@ -7,12 +7,12 @@ tests the **formal** q-Borel transform: apply it to the proved C1 kernel
 `[m+1]_q · b_{m+1} = b_m + b_{m−1}` (the q-analogue, on the generating-series
 level, of Borel-transforming `f′ = (1+x)f`) and compare the transformed
 recurrence to GGM eq 49 `y_{m+1} − (2 − q^m)·y_m + y_{m−1} = 0`
-(arXiv:2012.00062 p. 14, `uploads/2012.00062v3.pdf`) — exact match, match up
+(arXiv:2012.00062 p. 14, `library/arxiv-2012.00062v3/2012.00062v3.pdf`) — exact match, match up
 to diagonal gauge, or still distinct.
 
 ## 0. Convention (RSZ) and why
 
-Ramis–Sauloy–Zhang (`uploads/0903.0853v3.pdf`, **Definition 2.3.3**, §2.3.1
+Ramis–Sauloy–Zhang (`library/arxiv-0903.0853v3/0903.0853v3.pdf`, **Definition 2.3.3**, §2.3.1
 p. 23, under their standing convention |q| > 1) define the level-1 formal
 q-Borel transform by the **theta-kernel** coefficient map
 

@@ -3,8 +3,9 @@
 title: Cite centsim.pdf at computations/hh1_h5_cocenter_action.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:35Z
-updated_at: 2026-08-08T23:37:35Z
+updated_at: 2026-08-21T17:05:01Z
 ---
 
 Once the key exists, the probe's dim Z = 7 consistency check and its specialization-to-zeta_5 step should cite Sec. 5.1 and Thm 5.2 rather than asserting them.
@@ -17,7 +18,14 @@ Once the key exists, the probe's dim Z = 7 consistency check and its specializat
 - Thm. 3.3 / Thm. 5.4 — Under stated height-1 / height-2 prime conditions the number of simple modules of the specialized algebra equals that of a cyclotomic specialization -- the 'genericity' of the number of simple modules for Iwahori-Hecke algebras.
   Use here: The general control on how the Wedderburn block count behaves at a root of unity, which the corpus's root-of-unity Hecke work (H_5 at zeta_5) needs and currently reasons about case by case.
 
-Source: `uploads/centsim.pdf` — no `references.ts` entry yet
+Source: `library/centsim/centsim.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/centsim/  ->  [geck-rouquier-centsim]
+  Centers and Simple Modules for Iwahori-Hecke Algebras
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [geck-rouquier-centsim] as the citation key when you do it.

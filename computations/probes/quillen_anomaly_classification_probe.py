@@ -6,7 +6,7 @@ Bean qou-2nm8. Scope-(a), audit-only, NO FIT, nothing wired. The owner asked
 "are we seeing Quillen's holomorphic anomaly?" against the uploaded
 Alvarez-Gaumé–Moore–Vafa 1986 paper (AGMV: "Theta Functions, Modular
 Invariance, and Strings", Commun. Math. Phys. 106, 1–40 (1986);
-uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf). This probe grounds the answer rigorously.
+library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf). This probe grounds the answer rigorously.
 
 TASK A — THE EXACT CURVATURE (formalize-first anchor, symbolic + numeric).
 The corpus's verified genus-1 identity det'Δ(E_τ) = (Im τ)²·|η(τ)|⁴
@@ -484,7 +484,7 @@ def main() -> None:
         "citation": "L. Alvarez-Gaume, G. Moore, C. Vafa, 'Theta Functions, "
                     "Modular Invariance, and Strings', Commun. Math. Phys. "
                     "106, 1-40 (1986)",
-        "upload": "uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
+        "upload": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
         "key_locations": {
             "Sect. 2": "torus spin structures; Det(theta,phi) = "
                        "theta[](0|tau)/eta(tau) (Eq. 2.3); the holomorphic "

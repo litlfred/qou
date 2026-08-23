@@ -1,0 +1,417 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "cor-ma1",
+ "source": {
+  "file": "cor-ma1.pdf",
+  "sha256": "d90c91dcd82bfcab19801d10649fe8a95f11d017378a5d37abcf7fd31f26dddc",
+  "bytes": 425740,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+  "authors_raw": "The documents may come from teaching and research",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "HAL",
+   "Title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+   "Author": "Sylvie Corteel, Olivier Mallet",
+   "Producer": "PDFLaTeX",
+   "CreationDate": "D:20260712140347+02'00'"
+  },
+  "title_lines": [
+   "HAL Id: hal-00017295",
+   "HAL is a multi-disciplinary open access archive",
+   "for the deposit and dissemination of scientific re-",
+   "search documents, whether they are published or not"
+  ],
+  "title_prev": "HAL Id: hal-00017295 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Definitions on overpartitions",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 7,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Paths and generating function",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 9,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 11,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Paths and successive ranks",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 13,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Paths and multiplicities",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 15,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 2,
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
+   "page": 15,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 17,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Paths and successive Durfee squares",
+   "page": 18,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 19,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 21,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 23,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "New partition theorems",
+   "page": 23,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "page": 25,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 25,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-syl-vie-corteel-and-olivier-mallet",
+   "number": "2",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 637,
+   "n_words": 88
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 8000,
+   "n_words": 1379
+  },
+  {
+   "id": "sec-002-2-definitions-on-overpartitions",
+   "number": "2",
+   "title": "Definitions on overpartitions",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 6732,
+   "n_words": 1391
+  },
+  {
+   "id": "sec-003-6-syl-vie-corteel-and-olivier-mallet",
+   "number": "6",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1413,
+   "n_words": 261
+  },
+  {
+   "id": "sec-004-3-paths-and-generating-function",
+   "number": "3",
+   "title": "Paths and generating function",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3726,
+   "n_words": 825
+  },
+  {
+   "id": "sec-005-8-syl-vie-corteel-and-olivier-mallet",
+   "number": "8",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2577,
+   "n_words": 550
+  },
+  {
+   "id": "sec-006-10-syl-vie-corteel-and-olivier-mallet",
+   "number": "10",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3620,
+   "n_words": 766
+  },
+  {
+   "id": "sec-007-4-paths-and-successive-ranks",
+   "number": "4",
+   "title": "Paths and successive ranks",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1360,
+   "n_words": 278
+  },
+  {
+   "id": "sec-008-12-syl-vie-corteel-and-olivier-mallet",
+   "number": "12",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2416,
+   "n_words": 580
+  },
+  {
+   "id": "sec-009-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-suﬃc",
+   "number": "2",
+   "title": "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2234,
+   "n_words": 516
+  },
+  {
+   "id": "sec-010-5-paths-and-multiplicities",
+   "number": "5",
+   "title": "Paths and multiplicities",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 419,
+   "n_words": 73
+  },
+  {
+   "id": "sec-011-14-syl-vie-corteel-and-olivier-mallet",
+   "number": "14",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 560,
+   "n_words": 110
+  },
+  {
+   "id": "sec-012-51-a-generating-function-proof-letbkia-q",
+   "number": "5.1",
+   "title": "A generating function proof. LetBk,i(a, q) =∑",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4392,
+   "n_words": 829
+  },
+  {
+   "id": "sec-013-16-syl-vie-corteel-and-olivier-mallet",
+   "number": "16",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3943,
+   "n_words": 913
+  },
+  {
+   "id": "sec-014-6-paths-and-successive-durfee-squares",
+   "number": "6",
+   "title": "Paths and successive Durfee squares",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1297,
+   "n_words": 244
+  },
+  {
+   "id": "sec-015-18-syl-vie-corteel-and-olivier-mallet",
+   "number": "18",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4583,
+   "n_words": 916
+  },
+  {
+   "id": "sec-016-20-syl-vie-corteel-and-olivier-mallet",
+   "number": "20",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4804,
+   "n_words": 969
+  },
+  {
+   "id": "sec-017-22-syl-vie-corteel-and-olivier-mallet",
+   "number": "22",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1464,
+   "n_words": 286
+  },
+  {
+   "id": "sec-018-7-new-partition-theorems",
+   "number": "7",
+   "title": "New partition theorems",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3441,
+   "n_words": 660
+  },
+  {
+   "id": "sec-019-24-syl-vie-corteel-and-olivier-mallet",
+   "number": "24",
+   "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 2742,
+   "n_words": 506
+  },
+  {
+   "id": "sec-020-8-conclusion",
+   "number": "8",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1055,
+   "n_words": 169
+  },
+  {
+   "id": "sec-021-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 5043,
+   "n_words": 806
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 22,
+  "chars_total": 66458
+ }
+}

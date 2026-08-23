@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0306165v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "4f187debec912a24c2cbe354107bb61308895f30eb6d608aad5bda2d454775ae",
+  "file": "0306165v1.pdf"
+ },
+ "provenance": {
+  "title": "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson loop in an in\ufb01nite-dimensional representation of the gauge group, the classical and quan-",
+  "authors": null,
+  "arxiv": {
+   "id": "hep-th/0306165",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "17 Jun 2003"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "example": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Following [53], let us demonstrate how the condition (4.5) c an be used to constrain",
+   "section_file": "sections/sec-026-14-it-follows-from-the-axioms-1-and-2-that-a-com.md",
+   "section_title": "It follows from the axioms (1) and (2) that a compact oriented 3-manifold M with \u2202M =",
+   "pages": "34-37",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

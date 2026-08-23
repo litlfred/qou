@@ -39,7 +39,7 @@ Bean:          qou-ynff
 
 The det(5_2)=7 dilog closed-form home for the bar-odd c3 action, via the owner-
 uploaded paper "Analytic dilogarithm identities" (Hakimoglu-Brown, arXiv 2506.10206v2,
-uploads/2506.10206v2.pdf), whose Theorem 3 gives the closed form of a THREE-TERM
+library/arxiv-2506.10206v2/2506.10206v2.pdf), whose Theorem 3 gives the closed form of a THREE-TERM
 dilogarithm combination L(u)=Li2(z_a)+Li2(z_b)+Li2(u) -- exactly the shape of the
 5_2 THREE-ideal-tetrahedron potential -- and whose Examples 5-8 evaluate it in the
 field Q(sqrt-7) (WRONG: not the invariant trace field of 5_2 -- see the
@@ -192,7 +192,7 @@ def main() -> int:
     wb.add_data("bloch_wigner_z2", mp.nstr(Dz2, 15))
     wb.add_data("vol_over_D", mp.nstr(vol_over_D, 12))
     wb.add_data("cs_re_complex_volume", mp.nstr(mp.re(cvol), 12))
-    wb.add_data("paper", "uploads/2506.10206v2.pdf (Hakimoglu-Brown, arXiv 2506.10206v2)")
+    wb.add_data("paper", "library/arxiv-2506.10206v2/2506.10206v2.pdf (Hakimoglu-Brown, arXiv 2506.10206v2)")
     wb.add_data("route", "Theorem 3 L(u)=E(u) elementary at real-u substrate face = bar-odd action")
     wb.add_data("verdict", verdict)
     wb.save()

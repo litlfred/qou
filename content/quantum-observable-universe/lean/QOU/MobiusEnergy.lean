@@ -144,10 +144,22 @@ noncomputable def quantumTwo (q : ℝ) : ℝ := q + q⁻¹
     3. **Self-energy subtraction** — the diagonal regularisation matches the
        arc-length subtraction via the antipode `S`.
 
+    Stated along the whole Möbius orbit rather than at the base energy
+    alone. In that form it is **derived** from two fields — invariance
+    carries the transformed energy back to `E_cat`, and the classical
+    limit then applies — rather than returned verbatim.
+
+    The base case is `cme.classicalLimit` itself, which is what this
+    declaration used to restate: `theorem MobiusEnergy … :=
+    cme.classicalLimit`, the structure field under a second name. Use
+    the field directly when the orbit plays no part.
+
     LaTeX: `\label{prop:mobius-energy}` -/
-theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :
-    cme.energy = (1 / 4) * cme.classicalEnergy.value + cme.classicalLimitConst :=
-  cme.classicalLimit
+theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) (g : ℝ) :
+    cme.energyUnderMobius g
+      = (1 / 4) * cme.classicalEnergy.value + cme.classicalLimitConst := by
+  rw [cme.mobiusInvariant g]
+  exact cme.classicalLimit
 
 /-- The categorical Möbius energy is non-negative (inheriting from the
     classical bound and the normalisation). -/

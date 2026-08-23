@@ -1,0 +1,264 @@
+---
+# qou-nok3
+title: 'Unrecorded argv provenance: 4 confirmed producers whose flag changes the payload'
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-21T23:15:31Z
+updated_at: 2026-08-22T10:57:17Z
+---
+
+## The class
+
+`provenance.rs` records, for the Rust binaries: *"The parameters were not
+recorded at all ... none of them wrote it down."* The same holds on the
+Python side, and it is not theoretical -- it was found by walking into it.
+
+**Worked case, measured (not inferred).** `whitehead_c0_mpmath.py` gates its
+N=12 data point behind an opt-in flag:
+
+    EXTEND_N12 = "--n12" in sys.argv        # line 47
+
+The committed `whitehead-c0-mpmath.witness.json` CONTAINS N=12, so it was
+generated with `--n12`, and nothing in the witness says so. Re-running it the
+obvious way silently drops the point:
+
+    committed   "10": 7062.35924065477,  "12": 29287.27767465885
+    plain re-run "10": 7062.35924065477
+    factor       1.9678009716166576  ->  1.8973391741766672     (3.6%)
+
+The verdict ("nearest prediction: FACTOR 2; excludes factor 1 & 4") survives,
+but by luck rather than by design. I nearly committed that as a precision fix.
+
+## Scan: 4 confirmed, 6 to triage, 11 benign
+
+Producers with argv-gated behaviour that emit a COMMITTED witness which does
+not record the flag:
+
+**AFFECTS PAYLOAD (4)** -- the flag's `if` body does more than return/exit:
+
+    computations/whitehead_c0_mpmath.py                  --n12        (MEASURED)
+    computations/em_linking_cusp_geometry_probe.py       --live
+    computations/he4_link_volume_braid_closure.py        --live
+    computations/probes/borromean_nz_adjoint_torsion.py  --recompute
+
+**INLINE, unclassified (6)** -- flag tested inline, needs manual reading:
+
+    computations/whitehead_c0_tower.py                    --hi
+    computations/whitehead_recurrence_hunt_fast.py        --nmax
+    computations/whitehead_diagonal_recurrence_hunt.py    --nmax
+    computations/takata_fig8_recurrence_hunt.py           --nmax
+    computations/derived_chi_catalogue_matrix_m_mpfr.py   --use-mu-n-blocks
+    computations/probes/borromean_cusp_framing_factor.py  --recompute
+
+**EXIT-CODE ONLY (11), benign** -- all `--strict` on `computations/audits/*`,
+where the flag only selects the return code and the payload is identical.
+These are NOT defects and must not be counted as such.
+
+## Two heuristics over-flagged before the AST one worked
+
+Recording this because the wrong number was nearly the reported one:
+
+1. *"Producer has argv-gated behaviour + committed witness lacking the flag"*
+   -> **21**. Counts the 11 benign `--strict` audits.
+2. *"Variable is used on a line without `return`"* -> also flagged the
+   `--strict` set, because it matched the variable name inside DOCSTRINGS and
+   because `if strict and X: return 1` has the `return` on a different line
+   from the test. `stale_probe_audit.py`'s own docstring says
+   *"With --strict, exits non-zero ... Without --strict, returns 0 and reports
+   the breakdown"* -- i.e. the file states it is exit-code only, and the
+   heuristic flagged it anyway.
+3. AST: find `If` nodes testing the flag variable, check whether every
+   statement in the body is Return/Raise/Pass/sys.exit -> **4 payload,
+   11 exit-only, 6 inline**. Defensible.
+
+Same lesson as the hyperbolic-volume audit in bean `qou-ckbv`: a
+high-recall grep over "has the feature" is not a defect count, and the
+separation has to be mechanical rather than assumed.
+
+## Fix shape (not yet applied)
+
+For each of the 4: record the invocation in the witness. `Generation` in
+`tools/hecke-engine/src/provenance.rs` already does exactly this on the Rust
+side -- it stores raw `argv` plus a ready-to-run `reproduce` string, and its
+design note argues for argv over modelled per-flag fields precisely because
+modelling silently drops what it does not know. The Python `WitnessBuilder`
+should carry the same.
+
+That is a `WitnessBuilder` change plus 4 regenerations, and the regenerations
+must be done WITH the flags their committed witnesses imply, or they lose
+data -- as demonstrated above.
+
+## Standing rule this yields
+
+**Before regenerating any witness, check its producer for argv-gated
+behaviour, because the witness will not tell you.** Diffing the regenerated
+output against the committed one is not sufficient either -- the difference
+looks like ordinary drift.
+
+
+---
+
+## Update: the 6 "inline, unclassified" are ALL payload-affecting. 10, not 4.
+
+The AST pass could not classify six sites because the flag is tested inline
+rather than bound to a variable. Read by hand, every one changes what is
+computed:
+
+| producer | flag | effect |
+|---|---|---|
+| `whitehead_c0_tower.py` | `--hi` | `Ns [6,8,10,12]` -> `[6,8,10,12,14]` |
+| `whitehead_recurrence_hunt_fast.py` | `--nmax` | tower depth, default 28 |
+| `whitehead_diagonal_recurrence_hunt.py` | `--nmax` | tower depth, default 12 |
+| `takata_fig8_recurrence_hunt.py` | `--nmax` | tower depth, default 26 |
+| `derived_chi_catalogue_matrix_m_mpfr.py` | `--use-mu-n-blocks` | `sys.exit(validate_mu_n_blocks())` instead of `sys.exit(main())` -- an entirely different function |
+| `probes/borromean_cusp_framing_factor.py` | `--recompute` | live SnapPy gluing equations instead of baked constants |
+
+**So the payload-affecting count is 10, not 4.** The AST classifier was
+high-precision and low-recall: it never mis-classified, but it declined on
+a third of the population, and declining is not the same as clearing.
+
+## `whitehead_c0_tower --hi` is CONFIRMED by artifact evidence
+
+Not inferred from the source -- read out of the committed witness:
+
+    computations/whitehead-c0-tower.witness.json
+      "Ns": [6, 8, 10, 12, 14]
+
+`Ns` is `[6, 8, 10, 12]` by default and gains the 14 **only** under `--hi`.
+So that witness was generated with the flag, and nothing in it records that.
+A plain re-run drops the N=14 point and moves `whitehead_factor` (committed
+2.308131318350451) exactly as `whitehead_c0_mpmath` moved 1.9678 -> 1.8973.
+
+Both witnesses are dated **2026-07-25** and are siblings in the same
+Whitehead c_0 investigation, so this is one authoring session that left two
+un-reproducible artifacts, not two independent slips.
+
+**Two of ten are now confirmed against their own artifacts** (`--n12`
+measured by re-running, `--hi` by reading `Ns` out of the file). The other
+eight are confirmed payload-affecting from source but their committed
+witnesses have not been checked for whether the flag was used.
+
+## Method note
+
+The `--nmax` family takes a VALUE, not just a presence. Recording raw argv
+captures `["...", "--nmax", "28"]` and therefore the value too; a checker
+modelling flags as booleans would record that the flag was present and lose
+which depth was run. That is the second concrete argument for the raw-argv
+design `provenance.rs` chose, alongside the one its own note gives.
+
+
+---
+
+## Complete picture: where the severity actually is
+
+Checked all ten committed witnesses for evidence of whether the flag was
+used. The population is NOT uniform, and lumping it together over-states
+part of it while under-stating the rest.
+
+### Confirmed the flag WAS used (5 of 10)
+
+| producer | flag | evidence in the witness |
+|---|---|---|
+| `whitehead_c0_mpmath` | `--n12` | `"12"` key present; also re-run both ways |
+| `whitehead_c0_tower` | `--hi` | `"Ns": [6,8,10,12,14]` |
+| `whitehead_recurrence_hunt_fast` | `--nmax` | `Nmax: 30` (default 28) |
+| `whitehead_diagonal_recurrence_hunt` | `--nmax` | `Nmax: 10` (default 12) |
+| `takata_fig8_recurrence_hunt` | `--nmax` | `Nmax: 60` (default 26) |
+
+### But 3 of those 5 are SELF-DOCUMENTING, and that matters
+
+The three `--nmax` producers record `Nmax` at the top level of their own
+witness. So the *value* is recoverable without any invocation block -- a
+reader sees `Nmax: 30` and knows to run `--nmax 30`. The invocation block
+makes them uniform; it does not rescue them.
+
+**The two that are genuinely dangerous are `--n12` and `--hi`.** Neither
+records its parameter anywhere. `whitehead_c0_mpmath` gives no hint that
+N=12 was opt-in, and `whitehead_c0_tower`'s `Ns` list is only decodable if
+you already know the default. Both are Whitehead c_0 siblings dated
+2026-07-25 -- one authoring session.
+
+### Undeterminable (5 of 10)
+
+`derived_chi_catalogue_matrix_m_mpfr --use-mu-n-blocks`,
+`em_linking_cusp_geometry_probe --live`,
+`he4_link_volume_braid_closure --live`,
+`probes/borromean_nz_adjoint_torsion --recompute`,
+`probes/borromean_cusp_framing_factor --recompute`.
+
+No distinguishing evidence in the witness at all. These are the worst case
+-- not because a flag is known to have been used, but because it CANNOT BE
+DETERMINED either way, and no amount of reading the artifact will settle it.
+That is precisely the state the invocation block ends for future runs, and
+cannot repair for these.
+
+### Revised severity summary
+
+    2   dangerous and confirmed  (--n12, --hi: flag used, value unrecoverable)
+    3   confirmed but self-documenting (--nmax family: value recoverable)
+    5   undeterminable
+    ---
+    10  payload-affecting, unrecorded invocation
+
+The fix in PR #5438 prevents all ten going forward. For the existing
+artifacts it repairs nothing: the three self-documenting ones are already
+readable, and the other seven need a human who remembers, or a re-run
+that establishes a new baseline rather than reproducing the old one.
+
+
+---
+
+## RESOLVED 2026-08-22 (owner: "y investigate and resolve")
+
+All five "undeterminable" cases are now determined, by inspection or by
+running both ways. None of them needed the invocation block to settle;
+what they needed was somebody to look.
+
+| producer | flag | verdict | how |
+|---|---|---|---|
+| `probes/borromean_cusp_framing_factor` | `--recompute` | **benign** — verification-only | the flag only runs `assert live == BOR_ROWS`; the payload is computed from `BOR_ROWS` either way |
+| `probes/borromean_nz_adjoint_torsion` | `--recompute` | **self-documenting; flag NOT used** | the witness records `parameters.snappy_recompute: False` |
+| `derived_chi_catalogue_matrix_m_mpfr` | `--use-mu-n-blocks` | **flag NOT used** | the two paths write DIFFERENT witness names (`...-m-mpfr` vs `...-m-mu-n-mpfr`); the committed file is `main()`'s |
+| `he4_link_volume_braid_closure` | `--live` | **benign** — verification-only | ran both ways, payloads byte-identical modulo ephemerals |
+| `em_linking_cusp_geometry_probe` | `--live` | **flag NOT used — AND the baked table is WRONG** | see below |
+
+So the honest final tally for the ten:
+
+    2  flag used, value unrecoverable   (--n12, --hi)  <- the real defects
+    3  flag used, self-documenting      (--nmax family)
+    1  flag not used, self-documenting  (--recompute / nz_adjoint)
+    4  benign or flag-not-used          (rest)
+
+## The em_linking find — a wrong baked constant, caught by the flag nobody ran
+
+`em_linking_cusp_geometry_probe.py` carried a table headed
+
+    # Baked SnapPy 3.3.2 cusp geometry (2026-07-04; --live reproduces)
+
+`--live` does NOT reproduce it, and did not. Running both ways:
+
+    vol(8_11)/vol(L6a4)   baked  1.130818317293783
+                          live   1.1308171494762735
+
+The SnapPy census settles which is right:
+
+    census                       1.1308171494762736
+    live  vs census    1.2e-16   ✓
+    baked vs census    1.03e-6   ✗
+
+The baked values were rounded to **6 significant digits** (`"vol": 7.32772`),
+and the committed witness carried the rounded figures. The `--live` path that
+would have caught it had apparently never been run — which is exactly the
+failure mode this bean is about, showing up as a wrong NUMBER rather than as
+a missing label.
+
+**Fixed**: the table is re-baked at full float precision, generated by
+`run_live()` itself rather than transcribed, so the header's claim is now
+true and re-checkable. Verified: plain and `--live` now agree byte-for-byte,
+and the ratio matches the census to the last digit.
+
+The probe's CONCLUSION is unaffected — `allPassed` still true, no assertion
+flipped, the negative result (the 3.213 length-scale is not a cusp-geometry
+ratio) stands. A 1e-6 correction cannot move a 3.2-vs-1.1 comparison. But the
+number in the corpus was wrong and now is not.

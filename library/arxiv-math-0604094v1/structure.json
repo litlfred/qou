@@ -1,0 +1,182 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0604094v1",
+ "source": {
+  "file": "0604094v1.pdf",
+  "sha256": "f0c4c36ab0acf537819987a2db5166320182388e6d87fff89bb9f2ab7ccd4d9a",
+  "bytes": 420806,
+  "pages": 58
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0604094",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "5 Apr 2006"
+  },
+  "doi": null,
+  "title": "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant",
+  "authors_raw": null,
+  "abstract": "We study quantum invariant Zγ(M) for cusped hyperbolic 3-manifoldM. We construct this invariant based on oriented ideal triangulation of M by assigning to each tetrahedron the quantum dilogarithm function, which is introduced by Faddeev in studies of the modular double of the quantum group. Following Thurston and Neumann–Zagier, we deform a complete hyperbolic structure of M, and correspondingly we deﬁne quantum invariantZγ(Mu). This quantum invariant is shown to give the Neumann–Zagier potential function in th e classical limit γ → 0, and the A- polynomial can be derived from the potential function. We ex plain our construction by taking examples of 3-manifolds such as complements of hyperbolic k nots and punctured torus bundle over the circle. 1. I ntroduction Since the quantum invariant of knots /links and 3-manifolds as a generalization of the Jones polynomial [25] is constructed by Witten [53] by use of the Ch ern–Simons path integral, stud- ies on quantum invariants have been much developed. Recentl y geometrical interpretations of the quantum invariants have received interests since Kasha ev observed an intriguing relation- ship [29] between the hyperbolic volume and his knot invaria nt, which is later identiﬁed with a speciﬁc value of the N-colored Jones polynomial JK ( N; e2πi/N ) [41] (here the N-colored Jones polynomial is normalized to be Junknot(N; q) = 1). Namely the hyperbolic volume of the knot complement S 3 \\ K is conjectured to dominate the asymptotics of the invariant JK ( N; e2πi/N ) in the large-N limit N → ∞, lim N→∞ 2 π N log ⏐ ⏐ ⏐ ⏐JK ( N; e2πi/N) ⏐ ⏐ ⏐ ⏐= V ol(S 3 \\ K) (1.1) This “volume conjecture” is generalized for other values (near the N-th root of unity) of the N- colored Jones polynomial [18] (see also Refs. 39, 40), and a relationship with the A-polynomial is conjectured; when we deﬁne b by b = − d da lim N,k→∞ N/k=a 1 k log JK ( N; e2πi/k) (1.2) Date: April 4, 2006. 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030215454-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INVARIANT KAZUHIRO HIKAMI",
+  "title_lines": [
+   "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS:",
+   "THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF",
+   "QUANTUM INVARIANT",
+   "KAZUHIRO HIKAMI"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Dilogarithm Function",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Invariant and Potential Function",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Figure-Eight knot  41",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "52",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Pretzel knot (-2,3,7)",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Once-Punctured Torus Bundles over the Circle",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusion and Discussion",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "More Examples",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Complement of Knots up to 7 Crossings",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Complement of ``Simple'' Hyperbolic Knots",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-quantum-dilogarithm-function",
+   "number": null,
+   "title": "Quantum Dilogarithm Function",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 12,
+   "n_chars": 17540,
+   "n_words": 3576
+  },
+  {
+   "id": "sec-001-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 2379,
+   "n_words": 559
+  },
+  {
+   "id": "sec-002-52",
+   "number": null,
+   "title": "52",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 4291,
+   "n_words": 1067
+  },
+  {
+   "id": "sec-003-once-punctured-torus-bundles-over-the-circle",
+   "number": null,
+   "title": "Once-Punctured Torus Bundles over the Circle",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 26,
+   "n_chars": 9942,
+   "n_words": 2069
+  },
+  {
+   "id": "sec-004-complement-of-knots-up-to-7-crossings",
+   "number": null,
+   "title": "Complement of Knots up to 7 Crossings",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 58,
+   "n_chars": 38653,
+   "n_words": 12762
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 5,
+  "chars_total": 72805
+ }
+}

@@ -5,7 +5,7 @@ Executes the deferred "Next compute" of the m(q₀) unified-boundary memo
 (PR #3660, docs/scope/2026-07-12-mq0-unified-boundary-selection.md §5):
 implement the BRANCH-TRACKED complex volume 𝔙(u) = Vol(u) + i·CS(u) for the
 figure-eight 4₁ from Murakami–Yokota's THEOREM-GRADE formula
-(uploads/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
+(library/arxiv-math-0401084v3/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
 the merged gluing Newton solver on the real slice and against the
 Neumann–Zagier / Hikami leading series, then push the eight NAMED candidates
     (N, k) ∈ {3, 6, 60, 120} × {1, 2}
@@ -64,7 +64,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 40
 
 # ---- canonical constants (no fit) ---------------------------------------
-VOL_4_1 = mp.mpf("2.02988321281930725417066550300100495")   # 2·Λ(π/3)
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 36 digits, correct to 17 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)                      # complete shape
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}
 A_PRIME = mp.mpf("2.37")                                     # G3 numerator slope

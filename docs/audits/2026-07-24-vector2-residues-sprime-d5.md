@@ -24,7 +24,7 @@ use** (anti-guessing rule) — and both comparisons are decided.
 ## A5 residue — the BN12 anti-involution spectrum (CLOSES, scope-(a))
 
 Source: Braden–Northover, SIGMA 8 (2012) 065
-(`uploads/sigma12-065.pdf`), pp. 8, 13, 14. Extracted matrices: the
+(`library/sigma12-065/sigma12-065.pdf`), pp. 8, 13, 14. Extracted matrices: the
 intersection form $C$ of the homology basis $\alpha_{1..8}$ (p. 13, "precisely
 the matrix claimed by Riera and Rodríguez"), the real-structure
 anti-involution $S'$ (p. 14), the canonical form
@@ -88,7 +88,7 @@ scope-(b), requiring a proved invariant about the wall itself).
 ## B4 residue — the GK D₅ product on the explicit 4₁ data (CLOSES, scope-(a))
 
 Source: Garoufalidis–Kashaev, arXiv:1411.6062v2
-(`uploads/1411.6062v2.pdf`), equations (1), (9), (10), (4)/(7), Thm 1.1 (15),
+(`library/arxiv-1411.6062v2/1411.6062v2.pdf`), equations (1), (9), (10), (4)/(7), Thm 1.1 (15),
 Cor 1.2 (18), Cor 1.3, App A (75). The $4_1$ state integral is
 $\mathcal I_{1,2}(\mathsf b) = \int \Phi_{\mathsf b}(x)^2 e^{-\pi i x^2}dx$
 ((A,B) = (1,2), §2.2); its gluing data $g(z) = -z(1-z)^{-2}$ gives

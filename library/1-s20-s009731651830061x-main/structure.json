@@ -1,0 +1,451 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1-s20-s009731651830061x-main",
+ "source": {
+  "file": "1-s2.0-S009731651830061X-main.pdf",
+  "sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
+  "bytes": 771366,
+  "pages": 45
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1016/j.jcta.2018.04.008",
+  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
+  "authors_raw": "Fakultät für Mathematik, Universität Wien, Oskar-Morgenstern-Platz 1",
+  "abstract": null,
+  "docinfo": {},
+  "title_prev": "Series A www.elsevier.com/locate/jcta Constant term formulas for refined enumerations of Gog and Magog trapezoids Ilse Fischer 1",
+  "title_lines": [
+   "Series A",
+   "www.elsevier.com/locate/jcta",
+   "Constant term formulas for refined enumerations",
+   "of Gog and Magog trapezoids",
+   "Ilse Fischer 1"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+   "page": 3,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 4,
+   "title": "Gog trapezoids",
+   "page": 3,
+   "source": "outline",
+   "number": "1.1.1"
+  },
+  {
+   "level": 4,
+   "title": "Magog trapezoids",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1.2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Inversion numbers",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁned enumeration with respect to the top entry",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Truncated monotone triangles: (s,t)-trees",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Inversion numbers",
+   "page": 15,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Minima and maxima",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Gog pentagons",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Inversion numbers",
+   "page": 19,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 3,
+   "title": "Minima and maxima",
+   "page": 19,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "First version",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Second version",
+   "page": 27,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Connecting Gogs and Magogs",
+   "page": 31,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+   "page": 34,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "The application of Theorem 17 to (2.8) when bi=i",
+   "page": 38,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgment",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix A The case v=1-u",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.2 The case (u,v)=(1/2,1/2)",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.3 The general case",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "A.3.1 Perfect matchings",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "A.3.2 Independence of u",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-constant-term-formulas-for-reﬁned-enumerations-o",
+   "number": null,
+   "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2421,
+   "n_words": 367
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1430,
+   "n_words": 241
+  },
+  {
+   "id": "sec-002-111-gog-trapezoids",
+   "number": "1.1.1",
+   "title": "Gog trapezoids",
+   "level": 4,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2625,
+   "n_words": 437
+  },
+  {
+   "id": "sec-003-112-magog-trapezoids",
+   "number": "1.1.2",
+   "title": "Magog trapezoids",
+   "level": 4,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-11-gog-trapezoids-magog-trapezoids-and-krattenth",
+   "number": "1.1",
+   "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3445,
+   "n_words": 630
+  },
+  {
+   "id": "sec-005-2-preliminaries-monotone-triangles-and-truncated",
+   "number": "2",
+   "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-21-inversion-numbers",
+   "number": "2.1",
+   "title": "Inversion numbers",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 8676,
+   "n_words": 1676
+  },
+  {
+   "id": "sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en",
+   "number": "2.2",
+   "title": "Reﬁned enumeration with respect to the top entry",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 8707,
+   "n_words": 1692
+  },
+  {
+   "id": "sec-008-3-application-constant-term-formula-for-the-gene",
+   "number": "3",
+   "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1138,
+   "n_words": 231
+  },
+  {
+   "id": "sec-009-31-inversion-numbers",
+   "number": "3.1",
+   "title": "Inversion numbers",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1013,
+   "n_words": 188
+  },
+  {
+   "id": "sec-010-32-minima-and-maxima",
+   "number": "3.2",
+   "title": "Minima and maxima",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3237,
+   "n_words": 658
+  },
+  {
+   "id": "sec-011-33-gog-pentagons",
+   "number": "3.3",
+   "title": "Gog pentagons",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2162,
+   "n_words": 403
+  },
+  {
+   "id": "sec-012-34-inversion-numbers",
+   "number": "3.4",
+   "title": "Inversion numbers",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1067,
+   "n_words": 206
+  },
+  {
+   "id": "sec-013-35-minima-and-maxima",
+   "number": "3.5",
+   "title": "Minima and maxima",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3153,
+   "n_words": 571
+  },
+  {
+   "id": "sec-014-41-first-version",
+   "number": "4.1",
+   "title": "First version",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 8918,
+   "n_words": 1916
+  },
+  {
+   "id": "sec-015-42-second-version",
+   "number": "4.2",
+   "title": "Second version",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 6696,
+   "n_words": 1596
+  },
+  {
+   "id": "sec-016-5-connecting-gogs-and-magogs",
+   "number": "5",
+   "title": "Connecting Gogs and Magogs",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 5721,
+   "n_words": 1101
+  },
+  {
+   "id": "sec-017-51-a-variant-of-theorem-16-and-its-application-t",
+   "number": "5.1",
+   "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 6527,
+   "n_words": 1361
+  },
+  {
+   "id": "sec-018-52-the-application-of-theorem-17-to-28-when-bii",
+   "number": "5.2",
+   "title": "The application of Theorem 17 to (2.8) when bi=i",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 3738,
+   "n_words": 795
+  },
+  {
+   "id": "sec-019-acknowledgment",
+   "number": null,
+   "title": "Acknowledgment",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 8646,
+   "n_words": 1558
+  },
+  {
+   "id": "sec-020-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 5458,
+   "n_words": 809
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 21,
+  "chars_total": 84778
+ }
+}

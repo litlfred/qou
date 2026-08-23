@@ -3,7 +3,7 @@
 **Date:** 2026-07-04
 **Bean:** [`s013`](../../.beans/s013--keystone-value-map-colored-lawrence-rozansky-s-mat.md)
 **Follows:** [`2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md`](2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md) and [`2026-07-04-keystone-valuemap-target-is-compact-hecke.md`](2026-07-04-keystone-valuemap-target-is-compact-hecke.md) (PR #3292)
-**Source (owner upload, decisive):** `uploads/1208.2521v1.pdf` — Koornwinder T.H., Swarttouw R.F., "On q-analogues of the Fourier and Hankel transforms", arXiv:1208.2521 = *Trans. Amer. Math. Soc.* **333** (1992) 445–461. Eq. (1.2) + the Hansen–Lommel orthogonality (roots of $C_\alpha(q;\mu)=0$ over the q-lattice) — the Plancherel kernel that #3292's open ask named.
+**Source (owner upload, decisive):** `library/arxiv-1208.2521v1/1208.2521v1.pdf` — Koornwinder T.H., Swarttouw R.F., "On q-analogues of the Fourier and Hankel transforms", arXiv:1208.2521 = *Trans. Amer. Math. Soc.* **333** (1992) 445–461. Eq. (1.2) + the Hansen–Lommel orthogonality (roots of $C_\alpha(q;\mu)=0$ over the q-lattice) — the Plancherel kernel that #3292's open ask named.
 **Script:** [`computations/probes/keystone_qhankel_eq2_vacuum_row.py`](../../computations/probes/keystone_qhankel_eq2_vacuum_row.py)
 **Witness:** [`computations/probes/keystone-qhankel-eq2-vacuum-row.witness.json`](../../computations/probes/keystone-qhankel-eq2-vacuum-row.witness.json)
 **Status:** the single remaining disciplined form of redirect (ii) is now tested and **refuted (scope a)**, fully sourced. No fit; nothing wired.
@@ -12,7 +12,7 @@
 
 Two prior q-Bessel refutations were partial: the single-argument row (2026-07-02
 §4) was un-sourced, and the 0th-order q-Bessel **Tricomi** $C_{0,q}$
-(2026-07-04, `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`) is the *confluent* q-Bessel — it lacks the
+(2026-07-04, `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`) is the *confluent* q-Bessel — it lacks the
 Gaussian factor $q^{k(k-1)/2}$ and therefore has no discrete orthogonality, so
 it is **not** the Plancherel object. #3292 named the one form that would be
 genuinely falsifiable and still unbuilt: the **E_q(2) vacuum row** — the values

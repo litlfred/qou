@@ -70,7 +70,29 @@ noncomputable def tracePolynomial (m : ℕ) (h : ℝ) : ℝ :=
     convention (Vol(B_3) = 8G; Adams 1985). Real-valued, transcendental.
 
     Implementation note: encoded as a Real here for use in the mass
-    formula; in production, this connects to mpmath G ≈ 0.91596. -/
+    formula; in production, this connects to mpmath G ≈ 0.91596.
+
+    ⚠ **NAME COLLISION + truncated-literal trap (flagged 2026-08-19).**
+
+    1. This is a **decimal literal**, i.e. a rational — so the docstring's
+       "transcendental" describes the intended constant, not this definition.
+       Nothing in this file is false as a result: the only consequence drawn
+       from it, `volBorromean / 4 = 2 * catalanG`, is a `ring` identity that
+       holds for any value. But it is a live trap. The moment anyone asserts
+       `volBorromean = Vol(𝓑₃)`, or links it to
+       `QOU.Knot.BorromeanVolume`'s `8·Cl₂(π/2)`, that statement becomes
+       **false** — by ~1e-52 — in exactly the way `VOL_4_1` was before bean
+       `qou-yf47` replaced its truncated decimal with `2·Cl₂(π/3)`.
+    2. A **second, different `catalanG`** exists in this corpus:
+       `QOU.Knot.WhiteheadVC.catalanG := ∑' n, (-1)^n/(2n+1)^2` — the exact
+       series. Two objects under one name is what the AGENTS.md notation
+       register forbids.
+
+    The exact form is already available: `QOU.Knot.clausen (π/2)`, with
+    certified rational bounds in `QOU/Knot/CatalanValueBounds.lean`. Switching
+    to it is the `qou-yf47` repair applied here; left to this file's owner
+    because it may move numerics downstream.
+    Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`. -/
 noncomputable def catalanG : ℝ := 0.9159655941772190150546035149323841107741493742816721
 
 /-- Hyperbolic volume of the Borromean rings complement, Vol(𝓑_3) = 8G.

@@ -1,0 +1,53 @@
+264 M. Geck and R. Rouquier
+
+Z(H) — CF(#): If A is a commutative O-algebra, then the canonical
+map CF(H) — CF(A#) is surjective if and only if the canonical map
+Z(H) — Z(AR) is surjective.
+
+If B is an O-basis of H, then the dual basis {bY }4ep is defined by the
+requirement 7(bbY) = 64,5, for b),b2 € B. For f € Homo(H, 0), one has
+f° = Dies f(b)"
+
+Let M be an H-module. We have a map Tr : Endo(M) — Endy(M)
+given by
+
+Tr(F)(m) = oF (%m).
+beB
+We have Higman’s lemma, following [Br] :
+
+Lemma 4.1 The module M is projective if and only if there is f €
+Endo(M) such that Tr(f) is the identity.
+
+Assume © is an integrally closed integral domain with field of frac-
+tions K perfect. Let us assume that KH is quasicentral.
+
+Proposition 4.2 Let x € Ir(KH) and let cy, be the scalar by which
+x* € Z(KH) acts on a simple KH-module V affording a multiple of x.
+Then the following hold:
+
+(1) The element c, lies in O.
+
+(2) The module V is projective if and only if cy #0. In particular, the
+algebra KH is semisimple if and only if cy, #0 for allx € Inr(KH).
+
+(3) Assume KH semisimple. Then, x* = cyey where e, denotes the
+central primitive idempotent corresponding to x (i.e., x*ey # 0).
+
+Moreover,
+1
+T= > — x.
+
+x€In{K H) %
+
+Proof. Let V be a simple module with character a multiple of x €
+Irr(KH). The polynomial X — c, divides p(H)(x*): the roots of this
+polynomial are algebraic over O, hence c, is algebraic over O. Finally,
+c, € K, hence c, lies in the integral closure of © in K, i.e., in O.
+
+There is a finite extension K’ of K such that A’H is split and it is
+clear that if the parts (2) and (3) of the proposition hold for A’H, they
+hold for AK. Hence, we can assume that KH is split.
+
+Let V be a simple K H-module with character y € Inr(K HH). Note
+that if¢ is a primitive idempotent of Endo(V), then Tr(z) = cyly. Hence,
+if c, # 0, it follows from Lemma 4.1 that V is projective.

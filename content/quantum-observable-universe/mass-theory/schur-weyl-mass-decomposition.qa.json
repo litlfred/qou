@@ -2111,6 +2111,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.455Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2130,6 +2145,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.497Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "Statement then four explanatory paragraphs; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2149,6 +2179,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 205 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.540Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2168,6 +2213,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 205 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.584Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "The partition triple {(3),(2,1),(1^3)} and symmetric/standard/antisymmetric are forced by p(3) = 3; the closing paragraph is four parallel assignments, not a triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2187,6 +2247,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.627Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "Ends on the standard Archimedean-specialisation boilerplate."
       }
     ],
     "trap-meta-commentary": [
@@ -2206,6 +2281,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.673Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2225,6 +2315,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.716Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "Each paragraph adds new content."
       }
     ],
     "trap-performed-warmth": [
@@ -2244,6 +2349,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.760Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2263,6 +2383,23 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.807Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "severity": "minor",
+        "evidence": "Five unqualified strength words in five paragraphs — the weights 'recover the three-parameter Wedderburn mass formula PRECISELY'; the discarded weights 'remain NEGLIGIBLE'; the excluded partitions 'accumulate MASSIVE q-hook products'; 'SHARP hook-product factorization'; and Schur-Weyl duality 'ISOLATES the physical origin of each correction' — none carried by the cited compute.",
+        "notes": "PROPOSED: hedge each, and attach the quantitative claim to evidence. THE CITED WITNESS IS EMPTY: .ts sets computation.status = verified against computations/atom-level-wedderburn-tower.witness.json, whose data object is {} with no assertions array; allPassed = true is therefore vacuous, and the witness description calls the quantity it evaluates a candidate ('Tests Sum_lambda w_lambda Phi_q(|chi^lambda(A)|/dim) as atom-level brane tower candidate'). Consequently 'causing the OBSERVED 5%-20% binding-energy drift in the approximation' is unprovenanced — no citation, no derivation, no witness field supports either the range or the word observed — as are the four liquid-drop-to-partition assignments (base volume to (3A), surface to (3A-1,1), pair-crossing to (3A-2,2), magic peaks to rectangular partitions). Typography: the title uses the en-dash Schur-Weyl, the body a hyphen."
       }
     ],
     "trap-nonspeakable": [
@@ -2282,6 +2419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.518Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "04cd3f307a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:37:01.850Z",
+        "reviewed_sha": "0307430da8e811764eb92fb0b82b63a01946350e",
+        "evidence": "Readable throughout; 'isolates the physical origin of each correction into specific partition geometries' has an odd verb-preposition pairing (isolate ... into) but does not stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2305,5 +2457,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:37:01.850Z"
 }

@@ -1321,7 +1321,7 @@
           "ts": "1b4bf929c1cd"
         },
         "result": "pass",
-        "notes": "Salvage re-verify (§0a): deleted ∃…,True:=sorry shadow sibling; library gains proved markov_gns_embedding; .ts repointed. lean-direct exit 0.",
+        "notes": "Salvage re-verify (\u00a70a): deleted \u2203\u2026,True:=sorry shadow sibling; library gains proved markov_gns_embedding; .ts repointed. lean-direct exit 0.",
         "reviewed_at": "2026-07-11T22:28:43.000Z",
         "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
         "reviewer": {
@@ -1425,7 +1425,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No false claims identified in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side': mathematical reasoning is consistent.",
+        "notes": "No false claims identified in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1469,7 +1469,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1491,7 +1491,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The prose in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "notes": "The prose in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
       }
     ],
@@ -1512,7 +1512,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1558,6 +1558,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "093e754ac8cc",
+          "ts": "1b4bf929c1cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'AlgebraicGnsEmbedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1599,7 +1613,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1621,7 +1635,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1643,7 +1657,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The physical concepts described in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ — operator-algebra route to the Archimedean side' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.ts:1"
       }
@@ -1667,7 +1681,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1 — content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+        "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1 \u2014 content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "093e754ac8cc",
+          "ts": "1b4bf929c1cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'AlgebraicGnsEmbedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1691,6 +1719,20 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean contains compilation errors: content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "093e754ac8cc",
+          "ts": "1b4bf929c1cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'AlgebraicGnsEmbedding.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [

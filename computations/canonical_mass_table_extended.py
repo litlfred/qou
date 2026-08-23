@@ -493,6 +493,15 @@ def main() -> int:
             "intend the canonical table to shrink."
         ),
     )
+    parser.add_argument(
+        "--allow-precision-downgrade",
+        action="store_true",
+        help=(
+            "Permit REPLACING the committed canonical witness with one built "
+            "at a LOWER --target-dps. Off by default: see the guard below. "
+            "Only pass this if you intend the canonical table to get coarser."
+        ),
+    )
     args = parser.parse_args()
 
     # dps policy:
@@ -800,6 +809,57 @@ def main() -> int:
         print("  consumer of data.rows (see bean qou-xwet).")
         print("  Run with the full default --atoms set and filter downstream,")
         print("  or pass --allow-partial-canonical if the shrink is intended.")
+        return 2
+
+    # Sibling guard: refuse to REPLACE the canonical witness with a
+    # LOWER-PRECISION one.
+    #
+    # The partial-write guard above closes the row-subset shrink (bean
+    # `qou-xwet`). It does not see the other axis. The output path is equally
+    # fixed for precision, so a caller passing a smaller `--target-dps`
+    # overwrites the canonical artifact with a coarser computation, and nothing
+    # in the run says an artifact was downgraded.
+    #
+    # Measured, not hypothetical (bean `qou-7e1t`). `low_isotope_mass_table.py`
+    # re-runs this script by default with its OWN defaults —
+    # `--method auto --target-dps 11` — over a committed canonical table built
+    # at `--target-dps 60`:
+    #
+    #     target_dps  60 -> 11        method  branching -> auto
+    #     rows         7 ->  9        (p, n compute under `auto`)
+    #
+    # Note the row count moves the OTHER way, so the partial guard above stays
+    # silent by construction: the replacement is WIDER in coverage while being
+    # coarser in precision. That combination is what made this survive the
+    # qou-xwet fix, and it is why the check has to be on dps specifically
+    # rather than on "does the table look smaller".
+    #
+    # Refuse rather than warn: a warning in a subprocess whose stdout is
+    # already dozens of lines is exactly what got missed.
+    _existing_dps = None
+    try:
+        _existing_path = _pb.witness_path(
+            "canonical-mass-table-extended.witness.json", HERE)
+        if _existing_path.exists():
+            _existing_dps = (json.loads(_existing_path.read_text())
+                             .get("parameters", {}).get("target_dps"))
+    except Exception:  # noqa: BLE001 — a missing/unreadable prior artifact is
+        _existing_dps = None  # not a reason to block the first write.
+
+    if (_existing_dps is not None
+            and isinstance(_existing_dps, int)
+            and args.target_dps < _existing_dps
+            and not args.allow_precision_downgrade):
+        print()
+        print("  REFUSING to overwrite the canonical witness at LOWER precision.")
+        print(f"    committed target_dps : {_existing_dps}")
+        print(f"    this run             : {args.target_dps}")
+        print("  The output path is fixed, so this would REPLACE the canonical")
+        print("  table with a coarser computation. The partial-write guard")
+        print("  above cannot catch it — a coarser run can be WIDER in row")
+        print("  coverage (see bean qou-7e1t).")
+        print("  Re-run at >= the committed target_dps, or pass")
+        print("  --allow-precision-downgrade if the downgrade is intended.")
         return 2
 
     out = builder.save()

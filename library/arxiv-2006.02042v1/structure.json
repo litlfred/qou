@@ -1,0 +1,260 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2006.02042v1",
+ "source": {
+  "file": "2006.02042v1.pdf",
+  "sha256": "9de75ced3a3360bb7cff8b7d51183eae135606c3a267221a370915288ee45571",
+  "bytes": 171708,
+  "pages": 11
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2006.02042",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "3 Jun 2020"
+  },
+  "doi": null,
+  "title": "The Strong AJ Conjecture for the Figure 8 Knot",
+  "authors_raw": "HOANG-AN NGUYEN AND ANH T. TRAN",
+  "abstract": "Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ co njecture of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture h as been veriﬁed for all torus knots and most of their cables. In this paper, we verify the s trong AJ conjecture for the ﬁgure eight knot.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220307013821-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT"
+  ],
+  "title_prev": "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The colored Jones polynomial and recurrence ideal",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "The AJ conjecture",
+   "page": 1,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Main result",
+   "page": 2,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Step 1: Applying symmetric conditions",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Step 2: Applying polynomial conditions",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Step 3: Checking if equation (??) has a solution",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Step 4: Finding solutions of equation (??)",
+   "page": 6,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Step 5: Imposing condition (??) on solutions",
+   "page": 7,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Step 6: Applying initial conditions",
+   "page": 8,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Step 7: Explicit solution",
+   "page": 9,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Double-checking the recurrence relation",
+   "page": 9,
+   "source": "outline",
+   "number": "2.8"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-the-colored-jones-polynomial-and-recurrence-i",
+   "number": "1.1",
+   "title": "The colored Jones polynomial and recurrence ideal",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1178,
+   "n_words": 234
+  },
+  {
+   "id": "sec-002-12-the-aj-conjecture",
+   "number": "1.2",
+   "title": "The AJ conjecture",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2091,
+   "n_words": 393
+  },
+  {
+   "id": "sec-003-13-main-result",
+   "number": "1.3",
+   "title": "Main result",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5285,
+   "n_words": 1154
+  },
+  {
+   "id": "sec-004-21-step-1-applying-symmetric-conditions",
+   "number": "2.1",
+   "title": "Step 1: Applying symmetric conditions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 770,
+   "n_words": 154
+  },
+  {
+   "id": "sec-005-22-step-2-applying-polynomial-conditions",
+   "number": "2.2",
+   "title": "Step 2: Applying polynomial conditions",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6820,
+   "n_words": 1718
+  },
+  {
+   "id": "sec-006-26-step-6-applying-initial-conditions",
+   "number": "2.6",
+   "title": "Step 6: Applying initial conditions",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2125,
+   "n_words": 511
+  },
+  {
+   "id": "sec-007-27-step-7-explicit-solution",
+   "number": "2.7",
+   "title": "Step 7: Explicit solution",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 970,
+   "n_words": 247
+  },
+  {
+   "id": "sec-008-28-double-checking-the-recurrence-relation",
+   "number": "2.8",
+   "title": "Double-checking the recurrence relation",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1355,
+   "n_words": 378
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 85,
+   "n_words": 14
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3125,
+   "n_words": 522
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 11,
+  "chars_total": 23804
+ }
+}

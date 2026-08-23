@@ -2115,6 +2115,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.005Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the 5.9 kB proposition (statement, 4-step proof, scale section, corollary, 2 open items). The two negations are load-bearing mathematics: 'the baseline V^(1) is not a single braid product' (why Step 2 fails at higher rank) and 'the qualitative bound survives ..., but the prefactor degrades' (what does and does not carry over). Neither is assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2134,6 +2149,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.057Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Structure is Statement -> Steps 1-4 -> numeric instantiation -> corollary -> open items; every paragraph pays off its own setup. No second-clause reframe."
       }
     ],
     "trap-em-dash": [
@@ -2153,6 +2183,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 557 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.110Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Four spaced em-dashes, all of them step-header labels ('*Step 1 — Operator-norm control of the Markov trace.*'), i.e. a heading convention rather than a substitute for sentence structure. Compound-name double hyphens (Jones--Wenzl, Cauchy--Schwarz, Hilbert--Schmidt, Kassel--Turaev) are LaTeX en-dashes, not the flagged construction. Body sentences use commas and full stops."
       }
     ],
     "trap-triples": [
@@ -2172,6 +2217,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 557 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.162Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the deuteron, tritium, and 3He' names the three isotopes actually evaluated; the numbered open-items list has two entries. No reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2191,6 +2251,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.215Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Ends on 'A sharp constant would require a specific representation-theoretic analysis of the jet prolongation map on the Jones--Wenzl filtration' — a concrete statement of what the missing work is, not a cadence line."
       }
     ],
     "trap-meta-commentary": [
@@ -2210,6 +2285,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.257Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No emphasis narration. Bolded 'net' and 'sub-ppm binding precision' place emphasis directly rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -2229,6 +2319,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.294Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Proof closes with 'The right-hand side is independent of n; set Delta_max(varrho) equal to it.' — the definitional step that discharges the statement, which the skill explicitly admits alongside 'This completes the proof'."
       }
     ],
     "trap-performed-warmth": [
@@ -2248,6 +2353,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.336Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No personal or affective register anywhere in the block."
       }
     ],
     "trap-superlative": [
@@ -2267,6 +2387,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.374Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Claims are hedged where they should be ('empirically within a factor of 2', 'worst-case bound', 'The qualitative bound survives'). 'sub-ppm' is a measured magnitude, not an intensifier."
       }
     ],
     "trap-nonspeakable": [
@@ -2286,6 +2421,21 @@
         "reviewed_at": "2026-08-15T10:31:00.743Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.420Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Longest chain is 'a specific representation-theoretic analysis of the jet prolongation map on the Jones--Wenzl filtration'; it is nested but parses aloud in one breath group per prepositional phrase. Proof steps are short declaratives."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2309,5 +2459,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:43:04.420Z"
 }

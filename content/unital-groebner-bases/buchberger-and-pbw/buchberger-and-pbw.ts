@@ -14,7 +14,7 @@ export default chapter({
       title: "S-polynomial cancellation",
       label: "sec:ugb-s-poly-cancel",
       blocks: [
-        "s-polynomial-decomposition",
+        "ugb-s-polynomial-decomposition",
       ],
     }),
     section({
@@ -35,7 +35,7 @@ export default chapter({
       title: "The PBW theorem over a commutative ring",
       label: "sec:ugb-pbw",
       blocks: [
-        "pbw-corollary",
+        "ugb-pbw-corollary",
       ],
     }),
   ],

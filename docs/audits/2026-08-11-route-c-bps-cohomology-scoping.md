@@ -208,7 +208,7 @@ Lean from the weakly- vs strictly-increasing filling conditions.
 
 Part 1 forced the `5₂` remainder to be `1` and said any completion "must derive
 it independently". `H_floor` **does**, from arithmetic already sitting in the
-corpus. Garoufalidis–Zagier (`uploads/2111.06645v3.pdf` §2.1, glyph-verified)
+corpus. Garoufalidis–Zagier (`library/arxiv-2111.06645v3/2111.06645v3.pdf` §2.1, glyph-verified)
 give `P_K`, the boundary-parabolic `SL₂(ℂ)` representations, for three knots:
 
 | `K` | reduced trace algebra | real | pairs | `\|P_K\|` | core | remainder |

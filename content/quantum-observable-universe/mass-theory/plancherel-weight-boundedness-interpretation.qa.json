@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:35.908Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'sums to a finite value ~1.51 rather than exactly 1' and 'It does not construct a pure probability measure at generic q != 1' are both substantive: the failure of normalisation IS the remark's content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:35.965Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'However, ...' turns from the failure of normalisation to the surviving boundedness property; this is an argumentative concession, not a manufactured reframe."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.023Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.078Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1564,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.147Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Without this boundedness, the deep-tower calculations would mathematically diverge' is a consequence claim rather than a flourish, but 'mathematically diverge' is an odd qualifier - possibly sweep damage over 'numerically diverge' (compare the confirmed 'canonical'-for-'numerical' substitutions elsewhere in this chapter)."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.214Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closing sentence states a consequence, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.343Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1701,23 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.418Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Intensifier flood in one sentence: 'successfully neutralizes massive matrix dimension divergences ... suppressing massive combinatorial scale factors cleanly into manageable average bounds' - four unearned intensifiers ('successfully', 'massive' x2, 'cleanly', plus 'manageable').",
+        "notes": "FIXED inline (intensifier deletion only, no math, no meaning change): now reads 'the Plancherel boundedness property neutralizes matrix-dimension divergences inside log-pairings, suppressing combinatorial scale factors into average bounds'. $$ count re-checked even. SEPARATE NUMERIC DEFECT, not fixed (reported to the coordinating session): the '~1.51' is quoted with no n. Recomputed sum_lambda dim_q^2 V_lambda/[n]_q! with symmetric [m]_q at the proton pin q0=1.1099785827513808 - n=3: 0.9874, n=4: 0.9822, n=6: 0.9911, n=9: 1.1109, n=12: 1.5171, n=14: 2.1668, n=16: 3.5717, n=18: 6.9246, n=20: 16.0598. So 1.51 is the n=12 value only (the sibling proof block does say 'at n = 12'), and the quantity grows without evident bound in n, which undercuts the remark's own boundedness conclusion for the q-deformed weight."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1737,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "feffa8ca45a0",
+          "ts": "a3469c72fd52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:36.471Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The pre-fix sentence was a stack of noun premodifiers ('massive matrix dimension divergences', 'massive combinatorial scale factors'); the applied fix hyphenates and thins it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1775,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:03:36.471Z"
 }

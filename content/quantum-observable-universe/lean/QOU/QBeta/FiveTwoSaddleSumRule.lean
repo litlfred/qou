@@ -76,7 +76,7 @@ file:
 to (SUM), and (SUM) was proved without it.
 
 -- Ref: [manuscript] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
--- Ref: [garoufalidis2020] https://arxiv.org/abs/2012.00062 eq (233)–(234)
+-- Ref: [garoufalidis-gu-marino2023peacock] https://arxiv.org/abs/2012.00062 eq (233)–(234)
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Algebra.BigOperators.Fin
@@ -766,7 +766,7 @@ theorem sum_pentagon_diagonal (L : ℂ → ℂ)
 /-! ### §7g — Neumann's kernel condition, and why `R` does not see the flattening
 
 Route 49 read the definitions from Neumann, *Extended Bloch group and the
-Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`uploads/0307092v2.pdf`):
+Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`library/0307092v2/0307092v2.pdf`):
 
 * `R(z;p,q) = R(z) + (πi/2)·(p·log(1−z) + q·log z) − π²/6`, valued in `ℂ/π²ℤ`;
 * `ℬ̂(ℂ) = ker ν` with `ν([z;p,q]) = (log z + pπi) ∧ (−log(1−z) + qπi)`.

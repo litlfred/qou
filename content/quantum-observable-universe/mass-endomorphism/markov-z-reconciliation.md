@@ -37,7 +37,7 @@ $$
 $$
 at $q_0$ ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
 
-**Block weights.** The two loop values jointly determine the Wedderburn block weights of the canonical trace in closed form:
+**Block weights.** The two loop values jointly determine the Wedderburn block weights of the convention-C trace in closed form:
 
 $$
   w_\lambda
@@ -50,4 +50,6 @@ $$
 
 with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-All mass tables, vertex volumes, and nuclear binding computations in this paper use $z = z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2})$, with $z_{-}$ entering wherever a negative crossing is stabilised.
+**Convention.** The parameter $z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2}) = \sqrt{q}/(1+q)$ is **convention C** of the [trace-convention registry](docs/coordination/trace-convention-registry.md), there named the full-Hecke Ocneanu/Wenzl $z$-trace. The **mass** and **binding** channels are registered as **convention D**, $z_{\mathrm{D}} = q^3/(q^2+1)$, in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The numerical values quoted above ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) and the weights evaluated at them are therefore **convention-C values**, and do not describe the parameter the mass tables use.
+
+The weight formula itself is **frame-general** — it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights exactly, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.

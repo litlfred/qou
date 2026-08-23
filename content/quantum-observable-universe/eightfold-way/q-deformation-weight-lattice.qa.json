@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Eightfold/WeylInvarianceQDeformation.lean"
   },
   "source_hashes": {
-    "md": "1ed7085c29aa",
-    "ts": "4dd659bf3b0b",
+    "md": "975c199563d6",
+    "ts": "ef67ad6998ef",
     "lean": "a4991e91947b",
     "lean_statement": "07518028fbce"
   },
@@ -1042,6 +1042,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not to the machine-checked list above.\"; \", not machine-checked:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.178Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'The Cartan entry is untouched', 'does not become cos theta_q' — the separation IS the block's claim (substantive mathematical contrast)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1061,6 +1076,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.219Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'What changes is the dynamics on the lattice' is the content, stated directly."
       }
     ],
     "trap-em-dash": [
@@ -1080,6 +1110,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 562 words)"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.264Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Dashes are paired parentheticals around Lean witnesses; acceptable density."
       }
     ],
     "trap-triples": [
@@ -1099,6 +1144,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 562 words)"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.306Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Bullet lists enumerate actual q-dependent/independent objects."
       }
     ],
     "trap-closing-aphorism": [
@@ -1118,6 +1178,22 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.348Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Fixed: closing 'This separation is a feature:' aphorism removed.",
+        "notes": "fix applied: 'This separation is a feature: the classification is universal (it holds for any q), while...' -> 'The classification thus holds for any q, while the quantitative predictions (mass ratios, decay rates) are specific to q = q_0.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1137,6 +1213,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.388Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'Resolving this confusion is essential' is motivation for a real documented confusion, not emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1156,6 +1247,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.430Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Post-fix the closer no longer restates the preceding paragraph as a slogan."
       }
     ],
     "trap-performed-warmth": [
@@ -1175,6 +1281,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.475Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1194,6 +1315,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.519Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'A persistent confusion' documented against early drafts; no maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1213,6 +1349,21 @@
         "reviewed_at": "2026-08-15T10:31:00.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "4dd659bf3b0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:00.562Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Speakable; framed-binomial witness at q=2 (5 vs 4) checks out as q^2+1 vs 2q."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1234,7 +1385,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "975c199563d6",
+          "ts": "ef67ad6998ef",
+          "lean": "a4991e91947b",
+          "lean_statement": "07518028fbce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:03.966Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:03.966Z"
 }

@@ -1,0 +1,53 @@
+4 Asymptotics of the quantum invariants for the figure 8 knot
+
+This follows directly from the functional equation
+(1+ eT) 84 (6 +7) = S4(¢ = 9)
+
+which Faddeev’s S', satisfies. Recall that for Re(¢) < a + we have the expression
+
+1 eS?
+54(6) = exp (; [. sinh(7z) asi) ,
+
+which together with the functional equation determines S$, as a meromorphic func-
+tion on C. For the so-called top color, i.e. A = 7, we obtain the sligthly simpler
+expression
+S,(a — (2m + 1)y
+Jie(r) =r >> Sila = 2m + Vy)
+S4(—m + (2m + 1)y)
+Then we simply use the residue formula to convert this expression into a contour
+integral
+Jig (r) = [ tan(mrx)g,(x)da,
+Cr
+where C;, is contained in the strip {z € C | 0 < Re(z) < 1} and encloses (m + $)/r
+for m = 0,...,7 — 1, and g; is a holomorphic function in this strip expressed in
+terms of the above quotient of S, functions (see formula (3.21)).
+Similarly we get for the quantum invariant with the use of (1.1) and the residue
+theorem, now a double contour integral, since the quantum invariant also involves
+a sum over colors:
+
+Tr(Mp/q) = [ 7 cot(mra) tan(mry) fr,q,r(a, y)dady, (1.2)
+vr X Or
+
+where fy,q,r is holomorphic on the double strip {z € C | 0 < Re(z) < 1}? and given
+by some expression involving quotients of evaluations of S$ functions, and where
+we furthermore require of C, that it also encloses k/r for k = 1,...,r—1.
+
+From this it is clear that we need to understand the small 7 asymptotics of Sy.
+We have that
+
+3(6) = exp (petal) +11)
+
+where Lig is Euler’s dilogarithm function, and where we have certain analytic esti-
+mates on I,(¢) (see Lemma 3).
+
+Let us first explain how we use this to give a proof of the volume conjecture of
+Murakami and Murakami [24] for the figure 8 knot, namely that
+
+bm 2tLosx(r))
+
+roo Tr
+
+= Vol(K),
+
+where the right-hand side is the hyperbolic volume of the figure 8 knot, i.e. the hy-
+perbolic volume of the complement $* \ K. The basic idea in analyzing the above

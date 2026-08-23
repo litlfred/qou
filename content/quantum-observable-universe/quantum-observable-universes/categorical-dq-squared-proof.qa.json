@@ -1477,6 +1477,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.803Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; the vanishing statements are computations, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1496,6 +1511,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.840Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Expansion -> three terms treated in order -> middle-term analysis -> QED; linear."
       }
     ],
     "trap-em-dash": [
@@ -1515,6 +1545,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.877Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "One LaTeX em-dash ('--- a canonical 2-form measuring the failure of the horizontal distribution to be integrable'), a true appositive gloss on omega_V and the only one in the block."
       }
     ],
     "trap-triples": [
@@ -1534,6 +1579,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.914Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The three terms are the three terms of a binomial square."
       }
     ],
     "trap-closing-aphorism": [
@@ -1553,6 +1613,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.951Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends at the QED box after the middle-term identification."
       }
     ],
     "trap-meta-commentary": [
@@ -1572,6 +1647,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:49.988Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'Write a = q^{-1} and b = 1 - q^{-1}' is standard proof bookkeeping."
       }
     ],
     "trap-thesis-restatement": [
@@ -1591,6 +1681,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:50.027Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1610,6 +1715,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:50.064Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1629,6 +1749,21 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:50.101Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'canonical' is used technically."
       }
     ],
     "trap-nonspeakable": [
@@ -1648,6 +1783,22 @@
         "reviewed_at": "2026-08-15T10:30:59.937Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "8cda94b8b618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:50.138Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Prose is short declaratives around the displays.",
+        "notes": "THREE MATH FINDINGS to report (none edited). (1) Degree mismatch in the displayed commutator: [d, pi_V] alpha = L_xi(alpha) - pi_V(L_xi(alpha)) = pi_H(L_xi alpha) cannot hold, since d raises form degree by one and pi_V preserves it, so the left side has degree deg(alpha)+1 while the right side has degree deg(alpha). (2) omega_V = d(pi_V(d 1_A)) is identically zero: in any first-order differential calculus d(1_A) = 0 (from d(1.1) = 2 d1), so pi_V(d 1_A) = 0 and omega_V = 0 - which would make prop:categorical-dq-squared's right-hand side vanish for every alpha, contradicting the proposition. Whatever 2-form is intended, this is not a well-formed definition of it. (3) The middle term is over-stated rather than wrong: (pi_V d) o d = pi_V o d^2 = 0 by the same d^2 = 0 already invoked, so ab(d(pi_V d alpha) + pi_V d(d alpha)) reduces to ab d(pi_V d alpha) and the second summand can be dropped. Checked and correct: the binomial expansion is right, and the coefficient ab = q^{-1}(1 - q^{-1}) matches the proposition's stated prefactor exactly. The align* is correctly fenced as an outer environment inside a tex fence (render-math-mode-envelope satisfied)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1671,5 +1822,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:03:50.138Z"
 }

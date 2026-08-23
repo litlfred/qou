@@ -1,0 +1,32 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0810.1064v1",
+ "source_sha256": "b2d7514c5382ceaa",
+ "brief": "Multiple polylogarithm values at roots of unity — For any positive integer N let µ N be the group of the N th roots of unity.",
+ "extended": "**Multiple polylogarithm values at roots of unity**\n\n*Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA*\n\n9 pp, 2 sections.\n\n**Abstract.** For any positive integer N let µ N be the group of the N th roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at µ N . We show that the standard relations considered by Racinet do not provide all the pos sible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further ﬁnd some (presumably all) of th e missing relations in (i) by using the octahedral symmetry of P1 − ({0, ∞} ∪ µ 4). We also prove some other results when N = p or N = p2 (p prime ≥ 5) by using the motivic fundamental group of P1 − ({0, ∞} ∪ µ N ).\n\n**Outline.** Introduction; The motivic setup\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let p ≥ 5 be a prime. Then\n- Theorem 2: If p ≥ 5 is a prime then ker βp2 ⁄= 0 and d(2, p2) < p 2(p − 1)2/4.\n- Theorem 3: Suppose N is non-standard. Then the non-standard relations exist in MPV (3, N) for\n- Proposition 1: ([4, 5.25]) Let N be a positive integer. Let ϕ be the Euler’s totient function and ν(N )\n- Proposition: Let h = (p − 3)/2. Then one has",
+ "tokens": {
+  "brief": 31,
+  "extended": 331
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-the-motivic-setup",
+   "title": "The motivic setup",
+   "pages": "2-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

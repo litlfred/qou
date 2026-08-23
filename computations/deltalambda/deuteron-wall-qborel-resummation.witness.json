@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-21T15:55:41.748510+00:00",
+  "commitSha": "67a4b507d67041e01efddcb989ce995d087beda7",
+  "assertions": [
+    {
+      "name": "qborel_resummation_undershoots_B_D_at_substrate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "q-Borel–Laplace (level-1/2 kernel q0^{n^2}, theta-measure q-Laplace) of Z_n(q0) at the substrate coupling gives <= 0.06107 MeV (<= 2.75% of B_D); reaches B_D only beyond the Borel radius (a fit). Scope-(a) negative; no fit; audit-only."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "deuteron-wall-qborel-resummation",
+  "scriptFile": "deuteron_wall_qborel_resummation_probe.py",
+  "scriptHash": "1732a010f303",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "q-Borel–Laplace resummation of the deuteron-wall binding statistic Z_n(q0) — the CORRECT transform on the CORRECT object, correcting deuteron_wall_full_transseries_probe.py (which used a classical Gamma-Borel on the q=1 telephone period I(n)/n). Measured: Z_n(q0) is q-Gevrey, log Z_n/n^2 -> ln q0 so Z_n ~ q0^(n^2); the level-1 theta kernel q^C(n,2) under-tames (root test rises), the matched level-1/2 kernel q0^(n^2) gives finite Borel radius ~0.955. q-Laplace via a positive theta measure (points q0^(2k), weights q0^(-k^2)/Theta) that reproduces t_n=q0^(n^2) as an exact q-moment. Parameter-free at the substrate coupling the resummed binding m_e·f <= 0.061 MeV (<=2.75% of B_D=2.2245), undershooting ~36x; robust in N/Pade/theta-cutoff/period; alien jump ~0.007 MeV. Reaches B_D only at x~1.12 beyond the Borel radius (a fit). Scope-(a) negative; confirms the earlier negative closure was robust to the transform. No fit; no wiring; audit-only.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "q0_pin": "proton (q_at(30))",
+    "q0_str": "1.1099785827513808075916690956107688798744991218736",
+    "qgevrey_logZ_over_n2": "0.109638033049",
+    "ln_q0": "0.10434072032",
+    "qborel_kernel": "level-1/2 t_n = q0^{n^2}",
+    "qlaplace_measure": "theta: u_k=q0^{2k}, p_k=q0^{-k^2}/Theta (exact q-moment)",
+    "qborel_radius": "0.9551814171",
+    "target_B_D_over_m_e": "4.353277041",
+    "resummation_by_coupling": {
+      "hbar_q^2": {
+        "x": "0.0098171865",
+        "m_e_f_MeV": "0.0050721441",
+        "pct_of_B_D": "0.22801",
+        "alien_jump_MeV": "0.000512"
+      },
+      "hbar_q": {
+        "x": "0.099081716",
+        "m_e_f_MeV": "0.057502648",
+        "pct_of_B_D": "2.5849",
+        "alien_jump_MeV": "0.006615"
+      },
+      "t=ln q0": {
+        "x": "0.10434072",
+        "m_e_f_MeV": "0.061065941",
+        "pct_of_B_D": "2.7451",
+        "alien_jump_MeV": "0.007118"
+      }
+    },
+    "best_substrate_MeV": "0.06106594089",
+    "best_pct_of_B_D": "2.74513",
+    "undershoot_factor": "36.4282",
+    "x_star_for_B_D_diagnostic_only": "1.1212793",
+    "period_robustness_pct": {
+      "Zn_over_n": "2.7451",
+      "Zn": "3.2377"
+    },
+    "scope": "(a) scope-limited negative — not (b); no invariant proved forbidding all resummation routes",
+    "verdict": "Scope-(a) NEGATIVE (no fit): the q-Borel–Laplace resummation of the q-Gevrey binding statistic Z_n(q0) ~ q0^(n^2), with the level-1/2 q-Borel kernel t_n=q0^(n^2) (the q-lift of the classical Gevrey-1/2 moment Gamma(n/2+1)) and a positive theta measure carrying t_n as an exact q-moment (Jackson/Zhang q-Laplace), evaluated parameter-free at the substrate coupling gives m_e·f <= 0.06107 MeV (<= 2.75% of B_D=2.2245), undershooting by ~36x. The value is robust in N, Pade order, theta cutoff and the period convention (Z_n/n 2.75%, Z_n 3.24%); the Stokes/alien jump at the substrate is ~0.007 MeV (negligible). f reaches B_D only at x~1.12, beyond the Borel radius 0.9552 (through the singularity) — not a substrate quantity, so a match would require tuning the coupling (a fit). This CORRECTS the transform used by the prior negative-closure probe (classical Gamma-Borel on the q=1 telephone period) and confirms its conclusion was robust: the correct q-Borel–Laplace on the correct q-Gevrey object does NOT close the deuteron wall parameter-free. Distinct-mechanism (q-rotational mu0·hbar_q·J_q^2) route indicated. No fit; no wiring; no tier change; EXPLORATORY."
+  }
+}

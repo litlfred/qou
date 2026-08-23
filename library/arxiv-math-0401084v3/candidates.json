@@ -1,0 +1,191 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0401084v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f56bbd4cee4f3418d4741504d48a78a4a9ec5e1154d88bde650832c13192651d",
+  "file": "0401084v3.pdf"
+ },
+ "provenance": {
+  "title": "THE COLORED JONES POL YNOMIALS OF THE",
+  "authors": "FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SP ACES",
+  "arxiv": {
+   "id": "math/0401084",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "9 Mar 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "conjecture": 1,
+   "theorem": 5,
+   "remark": 2,
+   "corollary": 1,
+   "lemma": 3
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": null,
+   "statement": "Let K be a hyperbolic knot (that is, the complement of K pos-",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": "Let E be the \ufb01gure-eight knot and r a irrational number satisfying",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.1",
+   "name": "T. Yoshida",
+   "statement": "Put \u03bb(\u03b3) := length( \u03b3) + \u221a\u22121 torsion(\u03b3). Then we",
+   "section_file": "sections/sec-001-2-main-result.md",
+   "section_title": "Main result",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let E be the \ufb01gure-eight knot. There exists a neighborhood U of 0",
+   "section_file": "sections/sec-001-2-main-result.md",
+   "section_title": "Main result",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "The precise meaning of the limit is as follows. If the ratio",
+   "section_file": "sections/sec-001-2-main-result.md",
+   "section_title": "Main result",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.4",
+   "name": null,
+   "statement": "Let Eu be the three-manifold obtained from the \ufb01gure-eight knot by",
+   "section_file": "sections/sec-001-2-main-result.md",
+   "section_title": "Main result",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "If r \u2044\u2208R, then there exist constants d \u2265 1 and \u03b4 > 0 such that",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.3",
+   "name": null,
+   "statement": "If r \u2044\u2208R, then for any positive number \u03b5",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": "Steepest Descent Method",
+   "statement": "Let \u0393 : [ a, b] \u2192 C be a C1 curve. Let",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.5",
+   "name": null,
+   "statement": "In [5, Theorem 7.2.9] it is assumed that gN (z) does not depend on",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.7",
+   "name": null,
+   "statement": "There exists a neighborhood U \u2032 of 1 \u2208 C such that if r\u2208U \u2032,",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.8",
+   "name": null,
+   "statement": "Let E be the \ufb01gure-eight knot. There exists a neighborhood U of 0",
+   "section_file": "sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+   "section_title": "Limits of the colored Jones polynomials",
+   "pages": "4-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

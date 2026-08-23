@@ -1,0 +1,77 @@
+72
+
+—q in 2mt1)/2 (q)ntm
+
+x
+gi/2 — q-1/2 (q)n—m-1
+
+we have
+N-1in-1
+
+tn (Mp) = P(N) > > ee n(pn/4—m)—n
+
+(q)n- 1(q)n- -m-1
+
+n=1m=0
+
+where (q)x = (1—q)(1—q”) --- (1—q*) and P(N) is a function of N with polynomial
+growth. Note that this also holds for a non-positive p.
+3. AN OPTIMISTIC LIMIT
+Suppose that we are given a function S(N) of N by the following summation.
+
+(3-1) S(N)=P(N) So go?" TT (ais,
+a=1
+
+1 ,N2,...j.Mk
+
+where P(N) is a function of N with polynomial growth, ¢, = +1, 1, and L are linear
+
+functions of nj,n2,...,n% (they do not depend on N but may have constant terms),
+Q= > rjjnin;, and the summation runs over some range in {(m1,n2,..., x) |
+1StS7Sk
+
+anrJ/-1
+N
+
+O<n<N-1(t=1,2,...,k)}. Note that q= exp ( ) and we regard S
+
+as a function of N rather than q.
+= on./—
+27/—1log S(N) | denoted by o-lim m/—1log S(N)
+N Noo
+
+Then an optimistic limit of W
+
+is defined as: follows.
+First we replace S(N)/P(N) with the following iterated integral [(N) along
+some contours.
+
+(3.2) I(N) := / [exp [aM even 12)| dz, dzy-+-dzz
+
+Here V(z1,22,..., 2k) is defined as follows. Put
+(3.3) . V(21,20,...,2%) = -De {ti (ta) — ahs Sy riz log 2; log z;,
+1<i<j<k
+
+where 2; = q™ and xq = q'*’ with I,’ the degree one term in Ig, and Lip (z) is
+Euler’s dilogarithm defined by
+
+ENG =-[ lost? log(1 — u) du.
+
+Next we consider the following system of vartial differential equations:
+
+OV (21, 20,-.-, 2%) _ -
+(3.4) EE = 0 (F=1,2,...8).
+Since
+
+OV(z1,22,..., 2) _< log(1 — xq) log z; log 2;
+rr a Yo ealai " + orig — + Ti
+
+' z:
+a=1 : j=l % u
+
+with 1,’ = a ‘l oa (3.4) implies the following algebraic equations.
+
+(3.5) els ni Th (1—2,)!§=1 (é=1,2,...,h).
+a=1
+
+Let (€1,€2,.-.,Ck) = a solution to (3.5).

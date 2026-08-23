@@ -1,0 +1,63 @@
+{
+ "engine": "mpmath",
+ "scriptFile": "logsine_sharp_constant_check.py",
+ "commitSha": "374e0b1da95355f13ca50e2475eb975e96c5bb90",
+ "description": "Statement-level check of QOU.Knot.FigureEightVolume.phi_smooth_defect_sharp: the proved inequality holds numerically, its residual is O(h^2) so the identified Euler-Maclaurin term (h/2)(phi(nh) - phi(h)) is the leading behaviour, and that term reproduces the limit measured in logsine_smooth_defect_constant.py -- the 1/2 the antitone squeeze cannot pin (bean qou-shrp).",
+ "computation": "logsine_sharp_constant_check",
+ "audit_only": true,
+ "precision_dps": 30,
+ "rows": [
+  {
+   "N": 200,
+   "h": "0.01570796327",
+   "S": "-0.00355938155234",
+   "identified_term": "-0.00354639928886",
+   "residual": "1.2982263e-5",
+   "lean_bound": "7.7893842e-5",
+   "inequality_holds": true,
+   "scaled_term_over_h": "-0.2257707908",
+   "earlier_probe_limit": "-0.225791352645",
+   "residual_halving_ratio": null
+  },
+  {
+   "N": 400,
+   "h": "0.007853981634",
+   "S": "-0.00177657979593",
+   "identified_term": "-0.00177332076394",
+   "residual": "3.259032e-6",
+   "lean_bound": "1.9554208e-5",
+   "inequality_holds": true,
+   "scaled_term_over_h": "-0.225786212215",
+   "earlier_probe_limit": "-0.225791352645",
+   "residual_halving_ratio": "3.98347"
+  },
+  {
+   "N": 800,
+   "h": "0.003926990817",
+   "S": "-0.000887491962511",
+   "identified_term": "-0.000886675521794",
+   "residual": "8.1644072e-7",
+   "lean_bound": "4.8986453e-6",
+   "inequality_holds": true,
+   "scaled_term_over_h": "-0.225790067539",
+   "earlier_probe_limit": "-0.225791352645",
+   "residual_halving_ratio": "3.99176"
+  },
+  {
+   "N": 1600,
+   "h": "0.001963495408",
+   "S": "-0.000443543973857",
+   "identified_term": "-0.000443339653371",
+   "residual": "2.0432049e-7",
+   "lean_bound": "1.225923e-6",
+   "inequality_holds": true,
+   "scaled_term_over_h": "-0.225791031369",
+   "earlier_probe_limit": "-0.225791352645",
+   "residual_halving_ratio": "3.99588"
+  }
+ ],
+ "inequality_holds_everywhere": true,
+ "residual_is_order_h_squared": true,
+ "identified_term_matches_earlier_limit": true,
+ "timestamp": "2026-08-19T14:03:35+00:00"
+}

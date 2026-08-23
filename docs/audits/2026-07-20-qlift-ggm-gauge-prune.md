@@ -5,7 +5,7 @@ proved C1 kernel `[m+2]_q · b_{m+2} = b_{m+1} + b_m` (q-involution / q-Borel
 form; c(q)=1 exact per
 [`qlift_kernel_candidate_crosscheck_probe`](../../computations/probes/qlift_kernel_candidate_crosscheck_probe.py))
 into the GGM descendant kernel `y_{m+1} − (2 − q^m)·y_m + y_{m−1} = 0`
-(eq 49, Garoufalidis–Gu–Mariño, arXiv:2012.00062, `uploads/2012.00062v3.pdf`
+(eq 49, Garoufalidis–Gu–Mariño, arXiv:2012.00062, `library/arxiv-2012.00062v3/2012.00062v3.pdf`
 p. 14)? Formalize-first: the consistency condition is derived symbolically
 before any numerics.
 
@@ -64,7 +64,7 @@ survival iff max_m |C_m| < 1e-40). Witness:
 The C1 kernel is **bar-covariant**: `[k]_{1/q} = q^{−(k−1)}[k]_q`, and the
 prior probe (T3) found the C1 solution b_n(1/q)/b_n(q) is bar-**neither**
 (not ±1, not a fixed q-power; non-integer log_q ratios). GGM Thm 9
-(`uploads/2012.00062v3.pdf` pp. 14–15) proves the eq-49 fundamental solutions
+(`library/arxiv-2012.00062v3/2012.00062v3.pdf` pp. 14–15) proves the eq-49 fundamental solutions
 satisfy exact bar parity `G^j_m(q^{−1}) = (−1)^j G^j_m(q)`, while the eq-49
 kernel is bar-invariant only jointly with m → −m.
 

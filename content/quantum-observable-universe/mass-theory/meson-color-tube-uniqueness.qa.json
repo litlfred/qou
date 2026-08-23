@@ -2385,6 +2385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.659Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read (145 words). No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2404,6 +2419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.747Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -2423,6 +2453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.844Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -2442,6 +2487,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.943Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The Lean-structure list has three items, each a distinct declaration."
       }
     ],
     "trap-closing-aphorism": [
@@ -2461,6 +2521,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.026Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the Lean declaration list."
       }
     ],
     "trap-meta-commentary": [
@@ -2480,6 +2555,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.118Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2499,6 +2589,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.210Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -2518,6 +2623,21 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.300Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2537,6 +2657,23 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.375Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The pair {T(2,3), T(2,4)} is the SMALLEST NON-TRIVIAL torus-knot pair on the substrate's Hecke-algebra surface' and 'factors UNIQUELY' both assert minimality/uniqueness with no argument and no cited proposition. The Lean sibling named in the block does not establish either; per its own description meson_ratio_via_alpha_shift 'proves the factorisation using the specific indices', which presupposes the indices rather than showing no other pair works.",
+        "notes": "Proposed: either cite where minimality and uniqueness are proved, or restate as 'the pair ... realises the factorisation' and drop 'smallest' and 'uniquely'."
       }
     ],
     "trap-nonspeakable": [
@@ -2556,6 +2693,22 @@
         "reviewed_at": "2026-08-15T10:31:00.627Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.444Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "THREE FINDINGS, none fixed inline. (1) T(2,4) IS NOT A KNOT. The block writes 'The knot T(2,4) carries [4]_q' and calls the pair a 'torus-knot pair'. T(p,k) is a knot iff gcd(p,k) = 1; gcd(2,4) = 2, so T(2,4) is the (2,4)-TORUS LINK with TWO components — the closure of sigma_1^4 in B_2, which is the standard 2-component (4,2) link, not a knot. The companion pair it is compared to, {T(2,9), T(3,5)}, is genuinely two knots (gcd 1 both), which makes the slip easy to miss. The same issue affects 'the lepton tower T(2,k)', which is a knot only for odd k. (2) THE LEAN PATTERN LOOKS SELF-ASSUMING. The block describes MesonGMORFactorization as 'the substrate factorisation axiom' and then says meson_ratio_via_alpha_shift 'proves the factorisation using the specific indices'. If the class carries the factorisation as a field and the theorem projects it, that is the vacuous self-assuming projection AGENTS.md section 3b-cond item 5 forbids — the class must axiomatise the HYPOTHESES, not the conclusion. Worth checking QOU.BraidKnot.meson_ratio_via_alpha_shift directly. (3) NUMBER SUPPLIED (the block quotes none): at the proton pin, [3]_q [4]_q = 12.50866587 against (m_K/m_pi)^2 = 12.51120685 from PDG m_K+- = 493.677, m_pi+- = 139.57039, i.e. -203.1 ppm. Note this disagrees with the sibling prop:meson-kaon-pion-hecke-seifert, whose route gives -289.65 ppm on the unsquared ratio (about -579 ppm squared): two derivations of the same observable in one chapter, differing by roughly 3x in residual. Also the .ts has uses: [] while the .md cites prop:alpha-shift-torus-knot, so the dependency edge is missing."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2579,5 +2732,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:51:00.444Z"
 }

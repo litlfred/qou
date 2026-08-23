@@ -1,0 +1,275 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "helicity03mmj",
+ "source": {
+  "file": "helicity03mmj.pdf",
+  "sha256": "e364dad3afff318066eddcf12175c21c9943416323ccfded7a105f7f83cf2889",
+  "bytes": 301760,
+  "pages": 23
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Geometry of higher helicities",
+  "authors_raw": "Volume 3, Number 3, July–September 2003, Pages 989–1011",
+  "abstract": "We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem. We also survey various results related to Arnold’s the- orem on the asymptotic Hopf invariant on three-dimensional manifolds and recent work on linking of a vector ﬁeld with a foliation, the asymp- totic crossing number, short path systems, and relations with the Calabi invariant. 2000 Math. Subj. Class. 37A15, 55Q25, 76W05.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20040302215400Z",
+   "Creator": "TeX",
+   "Producer": "pdfTeX14.h",
+   "Title": ""
+  },
+  "title_prev": "MOSCOW MATHEMATICAL JOURNAL",
+  "title_lines": [
+   "MOSCOW MATHEMATICAL JOURNAL"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "What is Helicity?",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Three-Dimensional Ramifications",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Bilinear and multi-linear forms.",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Energy estimates.",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Ergodic meaning of the Calabi invariant.",
+   "page": 8,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Short paths systems.",
+   "page": 10,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Linking of a Vector Field with a Measured Foliation",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Linking of a curve with a foliation",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Linking of a vector field with a foliation.",
+   "page": 12,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Linking of several measured foliations.",
+   "page": 14,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Linking of Foliations and Brownian Motion",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Novikov's Integrals",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3881,
+   "n_words": 678
+  },
+  {
+   "id": "sec-001-2-what-is-helicity",
+   "number": "2",
+   "title": "What is Helicity?",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 7823,
+   "n_words": 1440
+  },
+  {
+   "id": "sec-002-3-three-dimensional-ramifications",
+   "number": "3",
+   "title": "Three-Dimensional Ramifications",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 72,
+   "n_words": 10
+  },
+  {
+   "id": "sec-003-31-bilinear-and-multi-linear-forms",
+   "number": "3.1",
+   "title": "Bilinear and multi-linear forms.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2746,
+   "n_words": 487
+  },
+  {
+   "id": "sec-004-32-energy-estimates",
+   "number": "3.2",
+   "title": "Energy estimates.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 6534,
+   "n_words": 1143
+  },
+  {
+   "id": "sec-005-33-ergodic-meaning-of-the-calabi-invariant",
+   "number": "3.3",
+   "title": "Ergodic meaning of the Calabi invariant.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3966,
+   "n_words": 734
+  },
+  {
+   "id": "sec-006-34-short-paths-systems",
+   "number": "3.4",
+   "title": "Short paths systems.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4115,
+   "n_words": 832
+  },
+  {
+   "id": "sec-007-4-linking-of-a-vector-field-with-a-measured-foli",
+   "number": "4",
+   "title": "Linking of a Vector Field with a Measured Foliation",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-41-linking-of-a-curve-with-a-foliation",
+   "number": "4.1",
+   "title": "Linking of a curve with a foliation",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5156,
+   "n_words": 1012
+  },
+  {
+   "id": "sec-009-43-linking-of-several-measured-foliations",
+   "number": "4.3",
+   "title": "Linking of several measured foliations.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3515,
+   "n_words": 612
+  },
+  {
+   "id": "sec-010-5-linking-of-foliations-and-brownian-motion",
+   "number": "5",
+   "title": "Linking of Foliations and Brownian Motion",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 22,
+   "n_chars": 17096,
+   "n_words": 3395
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 240,
+   "n_words": 37
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 4069,
+   "n_words": 658
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 13,
+  "chars_total": 59213
+ }
+}

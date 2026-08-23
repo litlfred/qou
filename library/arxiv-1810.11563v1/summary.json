@@ -1,0 +1,241 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1810.11563v1",
+ "source_sha256": "8e17ac8b91bc3cc9",
+ "brief": "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The",
+ "extended": "**Three Lectures on Complexity and Black Holes**\n\n*Stanford Institute for Theoretical Physics and Department of Physics*\n\n84 pp, 44 sections.\n\n**Abstract.** This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how ﬁrewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The ﬁnal lecture is about the thermodynamics of complexity, and “uncomplexity” as a resource for doing computational work. I explain the remarkable power of “one clean qubit,” in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018\n\n**Outline.** 1 Preface; 2 How Huge?; 3 Volume of CP(N); 4 Relative Complexity; 5 Dual Role of Unitaries; 7.1 Relative Complexity of Unitaries; 7.2 Complexity is Discontinuous; 8 Graph Theory Perspective; 8.1 Collisions and Loops; 9 The Second Law of Quantum Complexity; 9.1 Hamiltonian Evolution; 10 Preface; 11 The Black Hole-Quantum Circuit Corresponden; 11.1 Two Problems; 11.2 Circuits and Black Holes; 12 The Growth of Wormholes; 12.1 Properties of Growth; 12.2 Rindler Time and CV",
+ "tokens": {
+  "brief": 49,
+  "extended": 383
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-preface",
+   "title": "Preface",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-2-how-huge",
+   "title": "How Huge?",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-002-3-volume-of-cpn",
+   "title": "Volume of CP(N)",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-4-relative-complexity",
+   "title": "Relative Complexity",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-5-dual-role-of-unitaries",
+   "title": "Dual Role of Unitaries",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-005-71-relative-complexity-of-unitaries",
+   "title": "Relative Complexity of Unitaries",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-006-72-complexity-is-discontinuous",
+   "title": "Complexity is Discontinuous",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-007-8-graph-theory-perspective",
+   "title": "Graph Theory Perspective",
+   "pages": "17-21"
+  },
+  {
+   "id": "sec-008-81-collisions-and-loops",
+   "title": "Collisions and Loops",
+   "pages": "21-26"
+  },
+  {
+   "id": "sec-009-9-the-second-law-of-quantum-complexity",
+   "title": "The Second Law of Quantum Complexity",
+   "pages": "26-30"
+  },
+  {
+   "id": "sec-010-91-hamiltonian-evolution",
+   "title": "Hamiltonian Evolution",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-011-10-preface",
+   "title": "Preface",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-012-11-the-black-hole-quantum-circuit-correspondence",
+   "title": "The Black Hole-Quantum Circuit Correspondence",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-013-111-two-problems",
+   "title": "Two Problems",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-014-112-circuits-and-black-holes",
+   "title": "Circuits and Black Holes",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-015-12-the-growth-of-wormholes",
+   "title": "The Growth of Wormholes",
+   "pages": "35-40"
+  },
+  {
+   "id": "sec-016-121-properties-of-growth",
+   "title": "Properties of Growth",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-017-122-rindler-time-and-cv",
+   "title": "Rindler Time and CV",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-018-13-exponential-time-breakdown-of-gr",
+   "title": "Exponential Time Breakdown of GR",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-019-131-cv",
+   "title": "C=V",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-020-14-precursors",
+   "title": "Precursors",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-021-141-the-epidemic-model",
+   "title": "The Epidemic Model",
+   "pages": "45-49"
+  },
+  {
+   "id": "sec-022-142-lyapunov-and-rindler",
+   "title": "Lyapunov and Rindler",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-023-15-precursors-and-black-holes",
+   "title": "Precursors and Black Holes",
+   "pages": "51-54"
+  },
+  {
+   "id": "sec-024-151-instability-of-white-holes",
+   "title": "Instability of White Holes",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-025-16-complexity-and-firewalls",
+   "title": "Complexity and Firewalls",
+   "pages": "55-59"
+  },
+  {
+   "id": "sec-026-161-firewalls-are-fragile",
+   "title": "Firewalls are Fragile",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-027-162-what-happens-after-exponential-time",
+   "title": "What Happens After Exponential Time?",
+   "pages": "60-63"
+  },
+  {
+   "id": "sec-028-163-the-fragility-of-complexity-equilibrium",
+   "title": "The Fragility of Complexity Equilibrium",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-029-17-do-typical-states-have-firewalls",
+   "title": "Do Typical States have Firewalls?",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-030-171-ads-black-holes",
+   "title": "AdS Black Holes",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-031-172-evaporating-black-holes",
+   "title": "Evaporating Black Holes",
+   "pages": "65-67"
+  },
+  {
+   "id": "sec-032-18-preface",
+   "title": "Preface",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-033-19-negentropy",
+   "title": "Negentropy",
+   "pages": "67-69"
+  },
+  {
+   "id": "sec-034-20-uncomplexity",
+   "title": "Uncomplexity",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-035-201-the-auxiliary-system",
+   "title": "The Auxiliary System",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-036-202-combining-auxiliary-systems",
+   "title": "Combining Auxiliary Systems",
+   "pages": "70-72"
+  },
+  {
+   "id": "sec-037-21-uncomplexity-as-a-resource",
+   "title": "Uncomplexity as a Resource",
+   "pages": "72-73"
+  },
+  {
+   "id": "sec-038-22-the-power-of-one-clean-qubit",
+   "title": "The Power of One Clean Qubit",
+   "pages": "73-73"
+  },
+  {
+   "id": "sec-039-221-the-protocol",
+   "title": "The Protocol",
+   "pages": "73-75"
+  },
+  {
+   "id": "sec-040-231-ca",
+   "title": "CA",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-041-222-expending-uncomplexity-and-negentropy",
+   "title": "Expending Uncomplexity and Negentropy",
+   "pages": "75-76"
+  },
+  {
+   "id": "sec-042-23-spacetime-and-uncomplexity",
+   "title": "Spacetime and Uncomplexity",
+   "pages": "76-77"
+  },
+  {
+   "id": "sec-043-232-geometric-interpretation-of-uncomplexity",
+   "title": "Geometric Interpretation of Uncomplexity",
+   "pages": "77-84"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

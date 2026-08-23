@@ -891,11 +891,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.253Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      },
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.636Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block - no prose. NUMERIC AUDIT (recorded here as the block carries no prose criterion): recomputed with mpmath dps=40. Table h=0.20906032, d9(T_2,9)=2.16660039, d10(T_3,5)=2.48662110, ratio=7.30870098e-3 reproduce the IDEAL MUON pin q0=1.10997859555733471 (h=0.209060322, d9=2.166600390, d10=2.486621101, ratio=7.308700983e-3), NOT the proton compute default q0=1.1099785827513808 (h=0.2090602988, d9=2.166600084, d10=2.486620733, ratio=7.30870156e-3). Muon vs old-muon 1.109978595554181 are indistinguishable at 9 displayed digits; 1.1097 is excluded (ratio 7.3212569e-3).",
+        "notes": "PIN-CURRENCY + CAPTION DEFECT, structural, do not fix in prose: (i) values are muon-pinned while the owner directive 2026-08-07 makes proton the compute default - proton differs in the 8th digit of d9 (2.16660008 vs 2.16660039), so the table CAN distinguish the pins and currently picks the ideal-layer one; (ii) the .ts caption calls row 5 'the CODATA alpha_EM definition' but 7.30870098e-3 is NOT CODATA (7.2973525693e-3, 1/alpha=137.035999084); the tabulated value gives 1/alpha=136.8232089, 0.1555% high. Rows 4 and 5 are the same algebraic expression at the same q0, so 'Match: exact (within 1e-12)' certifies an algebraic identity, not agreement with experiment. Proposed fix: relabel row 5 '1/(q [9]_q [10]_q) (prop:em-coupling-projection)', drop 'CODATA' from the .ts caption, add a CODATA comparison row showing the 0.1555% deviation, and re-pin the table to the proton q0."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.293Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.332Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.372Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.411Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.448Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.485Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.523Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.560Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cc11f6f7b56b",
+          "ts": "f1cf470298e5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.598Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "table() pure-data block: six-row quantity/value witness table, no prose sentences. Prose trap categories not applicable. Numerics were recomputed - see notes on trap-negation-contrast."
+      }
     ]
   },
   "source_hashes": {
     "md": "cc11f6f7b56b",
     "ts": "f1cf470298e5"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:23:09.636Z"
 }

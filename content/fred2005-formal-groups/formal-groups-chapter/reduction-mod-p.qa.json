@@ -1242,6 +1242,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.276Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1261,6 +1277,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.315Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-em-dash": [
@@ -1280,6 +1312,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.355Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-triples": [
@@ -1299,6 +1347,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.395Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1318,6 +1382,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.437Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-meta-commentary": [
@@ -1337,6 +1417,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.477Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1356,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.518Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-performed-warmth": [
@@ -1375,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.561Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-superlative": [
@@ -1394,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.604Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ],
     "trap-nonspeakable": [
@@ -1413,8 +1557,24 @@
         "reviewed_at": "2026-08-15T10:31:01.652Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.649Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.652Z"
+  "updated_at": "2026-08-22T04:06:55.649Z"
 }

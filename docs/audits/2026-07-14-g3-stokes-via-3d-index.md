@@ -78,7 +78,7 @@ resolution also corrects two of that stub's own assumptions.
 
 ### 1. The `I_Δ` normalization was never the blocker — the total-index assembly was
 
-With the DGG source now in-repo (`uploads/1112.5179v1.pdf`), eqs 4.17–4.20
+With the DGG source now in-repo (`library/arxiv-1112.5179v1/1112.5179v1.pdf`), eqs 4.17–4.20
 were read glyph-verified. The stub's worry — "the standard `I_Δ` carries a
 normalization prefactor that must be pinned before the 4₁ gluing" — was a
 **red herring**: the canonical `I_Δ` sum

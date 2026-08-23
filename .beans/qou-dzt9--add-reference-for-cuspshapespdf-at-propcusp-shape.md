@@ -1,10 +1,11 @@
 ---
 # qou-dzt9
 title: Add reference for CuspShapes.pdf at prop:cusp-shape-bar-parity
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:38Z
-updated_at: 2026-08-08T23:36:38Z
+updated_at: 2026-08-21T17:03:32Z
 ---
 
 No ref() entry, and no source anywhere in the corpus for the notion of cusp shape despite three blocks depending on it.
@@ -15,7 +16,16 @@ No ref() entry, and no source anywhere in the corpus for the notion of cusp shap
 - Thm 1.1 — Cusp shapes of hyperbolic tunnel-number-one manifolds are dense in the Teichmuller space of the torus.
   Use here: Background only: it says the cusp shape is not constrained by low tunnel number, so no structural conclusion can be drawn from a particular knot's cusp shape being special.
 
-Source: `uploads/CuspShapes.pdf` — no `references.ts` entry yet
+Source: `library/cuspshapes/CuspShapes.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+RESOLVED 2026-08-21 (bean qou-kqbk, PR #5384). This bean's task was to add the reference; it exists.
+
+  library/cuspshapes/  ->  [dang-purcell]
+  Cusp shape and tunnel number
+
+The library registration backlog is drained to zero — every library document now has a references.ts entry, and 351 entries name the copy they point at. The 'no `references.ts` entry yet' line in the body above is stale and was true when paper-relevance-triage raised this.
+
+Closing only because adding the reference WAS the whole task. Sibling beans titled 'Cite X at Y' (81), 'Remark interpreting X' (70) and 'Cross-check' (33) carry that same stale line and are NOT closed: the entry existing is necessary for them and not sufficient — the citation site, the remark, or the check is still to be written.

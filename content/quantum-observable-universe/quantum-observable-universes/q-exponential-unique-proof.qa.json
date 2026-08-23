@@ -1371,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.490Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is uniqueness proof by linearising the grouplike condition; no negation-contrast construction present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.526Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is uniqueness proof by linearising the grouplike condition; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.565Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 1 in the block. Block is uniqueness proof by linearising the grouplike condition; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -1428,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.600Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is uniqueness proof by linearising the grouplike condition; no three-item enumeration present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.637Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is uniqueness proof by linearising the grouplike condition; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.673Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is uniqueness proof by linearising the grouplike condition; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1581,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.709Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is uniqueness proof by linearising the grouplike condition; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1616,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.746Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is uniqueness proof by linearising the grouplike condition; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1651,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.784Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is uniqueness proof by linearising the grouplike condition; no superlative inflation.",
+        "notes": "No fix needed."
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1686,22 @@
         "reviewed_at": "2026-08-15T10:30:59.905Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:06.821Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is uniqueness proof by linearising the grouplike condition; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1724,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:06.821Z"
 }

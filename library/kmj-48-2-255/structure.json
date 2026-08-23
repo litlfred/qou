@@ -1,0 +1,328 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "kmj-48-2-255",
+ "source": {
+  "file": "KMJ-48-2-255.pdf",
+  "sha256": "720279042c6d762b98e252c2e19ad62426c8716b734b8284d8aeff7b79e388d8",
+  "bytes": 293447,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A formula for the colored Jones polynomial of 2-bridge knots",
+  "authors_raw": "Department of Mathematics, Faculty of Science, Niigata University, Niigata 950-",
+  "abstract": "We derive a formula for the colored Jones polynomial of 2-bridge knots. For a twist knot, a more explicit formula is given and it leads to a relation between the degree of the colored Jones polynomial and the crossing number.",
+  "docinfo": {
+   "Creator": " TeX output 2008.04.22:1711",
+   "Producer": "dvipdfm 0.13.2c, Copyright © 1998, by Mark A. Wicks",
+   "CreationDate": "D:20080422171138+09'00'"
+  },
+  "title_lines": [
+   "A Formula for the Colored Jones Polynomial of 2-Bridge Knots",
+   "Toshie Takata"
+  ],
+  "title_prev": "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(σp′ + 1)mp′ −",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(σik − σik′ )(mik − mik−1)(mik′ − mik′ −1)",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The corresponding enhanced Gauss diagram without blobs and chords can be",
+   "page": 5,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(−lik ),",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(σik − σik′ )lik lik′",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(σik − σik′ )lik lik′ ,",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−lik )",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(σik − σik′ )lik lik′ }",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(n−mj −1)q",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(σp′ + σ1)mp′ −",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Results for a twist knot",
+   "page": 19,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(k+b+1) =",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(k+b+1−2j)),",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2n − 1 − m2p1+1)m2p1+1 ≥ − 1",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3318,
+   "n_words": 702
+  },
+  {
+   "id": "sec-001-2-σp-1mp",
+   "number": "2",
+   "title": "(σp′ + 1)mp′ −",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 206,
+   "n_words": 57
+  },
+  {
+   "id": "sec-002-2-σik-σik-mik-mik1mik-mik-1",
+   "number": "2",
+   "title": "(σik − σik′ )(mik − mik−1)(mik′ − mik′ −1)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 516,
+   "n_words": 116
+  },
+  {
+   "id": "sec-003-2-proof-of-theorem-1",
+   "number": "2",
+   "title": "Proof of Theorem 1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3064,
+   "n_words": 663
+  },
+  {
+   "id": "sec-004-5-the-corresponding-enhanced-gauss-diagram-witho",
+   "number": "5",
+   "title": "The corresponding enhanced Gauss diagram without blobs and chords can be",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 5803,
+   "n_words": 1495
+  },
+  {
+   "id": "sec-005-2-lik",
+   "number": "2",
+   "title": "(−lik ),",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 785,
+   "n_words": 193
+  },
+  {
+   "id": "sec-006-2-σik-σik-lik-lik",
+   "number": "2",
+   "title": "(σik − σik′ )lik lik′",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2619,
+   "n_words": 705
+  },
+  {
+   "id": "sec-007-2-lik",
+   "number": "2",
+   "title": "(−lik )",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 208,
+   "n_words": 51
+  },
+  {
+   "id": "sec-008-2-σik-σik-lik-lik",
+   "number": "2",
+   "title": "(σik − σik′ )lik lik′ ,",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 305,
+   "n_words": 90
+  },
+  {
+   "id": "sec-009-2-σik-σik-lik-lik",
+   "number": "2",
+   "title": "(σik − σik′ )lik lik′ }",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 1318,
+   "n_words": 346
+  },
+  {
+   "id": "sec-010-2-nmj-1q",
+   "number": "2",
+   "title": "(n−mj −1)q",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1160,
+   "n_words": 317
+  },
+  {
+   "id": "sec-011-2-σp-σ1mp",
+   "number": "2",
+   "title": "(σp′ + σ1)mp′ −",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 3028,
+   "n_words": 777
+  },
+  {
+   "id": "sec-012-3-results-for-a-twist-knot",
+   "number": "3",
+   "title": "Results for a twist knot",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 24,
+   "n_chars": 5196,
+   "n_words": 1137
+  },
+  {
+   "id": "sec-013-2-kb1",
+   "number": "2",
+   "title": "(k+b+1) =",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 16,
+   "n_words": 6
+  },
+  {
+   "id": "sec-014-2-kb12j",
+   "number": "2",
+   "title": "(k+b+1−2j)),",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2180,
+   "n_words": 506
+  },
+  {
+   "id": "sec-015-2-2n-1-m2p11m2p11-1",
+   "number": "2",
+   "title": "(2n − 1 − m2p1+1)m2p1+1 ≥ − 1",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 547,
+   "n_words": 112
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 758,
+   "n_words": 116
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 17,
+  "chars_total": 31027
+ }
+}

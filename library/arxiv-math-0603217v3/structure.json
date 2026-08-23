@@ -1,0 +1,131 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0603217v3",
+ "source": {
+  "file": "0603217v3.pdf",
+  "sha256": "d7375d4fee00dd9895ab8bab2ee23a9f69b74698ce303abd84def586a4fd3baf",
+  "bytes": 127442,
+  "pages": 5
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0603217",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "15 Apr 2006"
+  },
+  "doi": null,
+  "title": "A version of the volume conjecture",
+  "authors_raw": "Y. Yokota and the author proved that for the figure-eight knot E and a complex",
+  "abstract": "W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a representation of the fundamental group of the kn ot complement to the special linear group of degree two over complex number s. W e also conﬁrm the conjecture for the ﬁgure-eight knot and torus kno ts. This version is diﬀerent from S. Gukov’s because of a choice of polarizati on.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181122094633-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "A VERSION OF THE VOLUME CONJECTURE",
+   "HITOSHI MURAKAMI"
+  ],
+  "title_prev": "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A conjecture",
+   "page": 1,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Comments",
+   "page": 4,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1416,
+   "n_words": 267
+  },
+  {
+   "id": "sec-001-2-a-conjecture",
+   "number": "2",
+   "title": "A conjecture",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4218,
+   "n_words": 884
+  },
+  {
+   "id": "sec-002-3-proof",
+   "number": "3",
+   "title": "Proof",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1847,
+   "n_words": 479
+  },
+  {
+   "id": "sec-003-4-comments",
+   "number": "4",
+   "title": "Comments",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2261,
+   "n_words": 513
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2754,
+   "n_words": 440
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 12496
+ }
+}

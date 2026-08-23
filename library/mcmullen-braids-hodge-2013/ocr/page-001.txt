@@ -1,0 +1,43 @@
+Invent. math, 91, 259-272 (1988) Inventiones
+
+mathematicae
+© Springer-Verlag 1988
+
+Braiding of the attractor and the failure
+of iterative algorithms *
+
+Curt McMullen
+Department of Mathematics, Princeton University, Princeton, NJ 08540, USA
+
+Introduction
+
+The motion of the attractor in a stable family of rational maps determines
+a group of braids on the Riemann sphere. We show the corresponding group
+of mapping classes is either reducible, finite, or fixes one of the attractors. In
+particular, not every braid can arise. The proof is based on the finiteness of
+the modular group for a connected component of the Julia set, discussed in
+[Mc2].
+
+This leads to a topological criterion for the existence of bifurcations in itera-
+tive root-finding algorithms based on rational maps (such as Newton’s method).
+For example, any such algorithm must fail on every neighborhood of p(X)=X¢
+when d is 4 or more. We show that on such neighborhoods one cannot even
+continuously assign to each polynomial p an expanding rational map T, such
+that the attractor of T, is contained in the roots of p.
+
+Outline of the paper
+
+§§1 and 2 present our results on the failure of algorithms and braiding of the
+attractor. These are really two formulations of the same result; in §2 the former
+is deduced from the latter. §§3 and 4 present the proofs. First we show that
+topological assumptions on the braiding of the attractor imply the existence
+of a separator, that is a characteristic component of the Julia set which separates
+the attracting periodic points from one another. Then the results of [Mc2]
+imply the monodromy of this component (by holomorphic motions) is a finite
+group, completing the proof in §4.
+
+In the Appendix we give an example of a stable family in which the braiding
+is pseudo-Anosov.
+
+* Research partially supported by NSF Grant 8120790
+

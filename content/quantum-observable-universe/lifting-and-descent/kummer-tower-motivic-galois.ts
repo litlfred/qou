@@ -7,7 +7,7 @@ export default remark({
   tags: ["kummer", "motivic-galois", "frobenius", "perpetual-obstruction"],
   uses: [
     "def:adelic-substrate",
-    "conj:motivic-perpetual-obstruction",
+    "thm:motivic-perpetual-obstruction",
   ],
-  foreshadows: ["conj:motivic-perpetual-obstruction"],
+  foreshadows: ["thm:motivic-perpetual-obstruction"],
 });

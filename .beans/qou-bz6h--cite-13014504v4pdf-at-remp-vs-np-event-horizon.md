@@ -3,8 +3,9 @@
 title: Cite 1301.4504v4.pdf at rem:p-vs-np-event-horizon
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:07Z
-updated_at: 2026-08-08T23:36:07Z
+updated_at: 2026-08-21T17:04:50Z
 ---
 
 rem:p-vs-np-event-horizon frames horizon opacity as a P-vs-NP-shaped claim with no reference to prior complexity-theoretic work on black-hole decoding.
@@ -13,7 +14,14 @@ rem:p-vs-np-event-horizon frames horizon opacity as a P-vs-NP-shaped claim with 
 - Sect. 4.4 (Error Correction and Zero-Knowledge Proofs) — The decoding task is recast as a quantum error-correction problem, and connected to zero-knowledge proof structure, to explain where the exponential comes from.
   Use here: The witnesses-versus-theorem framing of rem:p-vs-np-event-horizon (verifiable partial evidence accumulating toward a proof that never terminates) has a direct counterpart here; citing it grounds the analogy in an existing technical construction rather than leaving it as metaphor.
 
-Source: `uploads/1301.4504v4.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1301.4504v4/1301.4504v4.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1301.4504v4/  ->  [arxiv-1301.4504v4]
+  Quantum Computation vs. Firewalls
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-1301.4504v4] as the citation key when you do it.

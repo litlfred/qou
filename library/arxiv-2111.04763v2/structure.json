@@ -1,0 +1,421 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2111.04763v2",
+ "source": {
+  "file": "2111.04763v2.pdf",
+  "sha256": "760a7f9794e8baaa78e7288747f5b919cb8c9596c16504f1d17782387fe390da",
+  "bytes": 1203153,
+  "pages": 59
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2111.04763",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "18 Apr 2026"
+  },
+  "doi": null,
+  "title": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
+  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER",
+  "abstract": "Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals. Along the way, we use our matrix to give an analytic extension of the Kashaev invariant and of the colored Jones polynomial and to complete the matrix valued holomorphic quantum modular forms as well as to give an exact version of the refined quantum modularity conjecture of Zagier and the first author. Finally, our matrix provides an extension of the 3D-index in a sector of the trivial flat connection. We illustrate our definitions, theorems, numerical calculations and conjectures with the two simplest hyperbolic knots.",
+  "docinfo": {
+   "Author": "Stavros Garoufalidis; Jie Gu; Marcos Marino; Campbell Wheeler",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Resurgence of Chern-Simons theory at the trivial flat connection"
+  },
+  "title_lines": [
+   "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT",
+   "CONNECTION"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Resurgence of Chern–Simons perturbation theory",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "A summary of our results",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Challenges",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Illustration with the two simplest hyperbolic knots",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The 41 knot",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A 2 2 matrix of q-series",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A 3 3 matrix of q-series",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The (0)() asymptotic series",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Borel resummation and Stokes constants",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "The Andersen–Kashaev state-integral",
+   "page": 18,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "A new state-integral",
+   "page": 19,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "A 3 3 matrix of state-integrals",
+   "page": 21,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "The x-variable",
+   "page": 23,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The (0)(x,) series",
+   "page": 24,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "A 33 matrix of (x,q)-series",
+   "page": 25,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Borel resummation and Stokes constants",
+   "page": 27,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "(u,) state-integrals",
+   "page": 33,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "An analytic extension of the colored Jones polynomial",
+   "page": 35,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "The 52-knot",
+   "page": 36,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "A 3 3 matrix of q-series",
+   "page": 36,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Habiro polynomials and the descendant Kashaev invariants",
+   "page": 37,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "A 6 6 matrix of q-series",
+   "page": 39,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Borel resummation and Stokes constants",
+   "page": 42,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "(x,q)-series",
+   "page": 47,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "x-version of Borel resummation and Stokes constants",
+   "page": 48,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+   "page": 52,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 2,
+   "title": "A new state-integral for the 52 knot?",
+   "page": 53,
+   "source": "outline",
+   "number": "4.8"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. q-series identities",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
+   "number": "1.1",
+   "title": "Resurgence of Chern–Simons perturbation theory",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7885,
+   "n_words": 1114
+  },
+  {
+   "id": "sec-002-12-a-summary-of-our-results",
+   "number": "1.2",
+   "title": "A summary of our results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 4481,
+   "n_words": 721
+  },
+  {
+   "id": "sec-003-13-challenges",
+   "number": "1.3",
+   "title": "Challenges",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1312,
+   "n_words": 185
+  },
+  {
+   "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
+   "number": "1.4",
+   "title": "Illustration with the two simplest hyperbolic knots",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2486,
+   "n_words": 363
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 12083,
+   "n_words": 2024
+  },
+  {
+   "id": "sec-006-24-borel-resummation-and-stokes-constants",
+   "number": "2.4",
+   "title": "Borel resummation and Stokes constants",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 18,
+   "n_chars": 9272,
+   "n_words": 1602
+  },
+  {
+   "id": "sec-007-25-the-andersenkashaev-state-integral",
+   "number": "2.5",
+   "title": "The Andersen–Kashaev state-integral",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3120,
+   "n_words": 467
+  },
+  {
+   "id": "sec-008-26-a-new-state-integral",
+   "number": "2.6",
+   "title": "A new state-integral",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 27,
+   "n_chars": 19043,
+   "n_words": 2692
+  },
+  {
+   "id": "sec-009-33-borel-resummation-and-stokes-constants",
+   "number": "3.3",
+   "title": "Borel resummation and Stokes constants",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 37,
+   "n_chars": 17367,
+   "n_words": 2755
+  },
+  {
+   "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+   "number": "4.2",
+   "title": "The Habiro polynomials and the descendant Kashaev invariants",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 42,
+   "n_chars": 11767,
+   "n_words": 1896
+  },
+  {
+   "id": "sec-011-44-borel-resummation-and-stokes-constants",
+   "number": "4.4",
+   "title": "Borel resummation and Stokes constants",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 47,
+   "n_chars": 9180,
+   "n_words": 1519
+  },
+  {
+   "id": "sec-012-45-xq-series",
+   "number": "4.5",
+   "title": "(x,q)-series",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 2181,
+   "n_words": 309
+  },
+  {
+   "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+   "number": "4.6",
+   "title": "x-version of Borel resummation and Stokes constants",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 52,
+   "n_chars": 5885,
+   "n_words": 979
+  },
+  {
+   "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+   "number": "4.7",
+   "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 56,
+   "n_chars": 7522,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 59,
+   "n_chars": 9168,
+   "n_words": 1157
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 31,
+  "sections": 16,
+  "chars_total": 122752
+ }
+}

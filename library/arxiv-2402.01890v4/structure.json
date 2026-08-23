@@ -1,0 +1,177 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2402.01890v4",
+ "source": {
+  "file": "2402.01890v4.pdf",
+  "sha256": "e1eeb2865f0b53e1d85365990676623a1dbae001dd82c43a796613f573754841",
+  "bytes": 1060883,
+  "pages": 27
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2402.01890",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "4 Nov 2024"
+  },
+  "doi": null,
+  "title": "On the spherical partition algebra",
+  "authors_raw": "Katherine Ormeño Bast´ ıas∗1, Paul Martin †2, and Steen Ryom-Hansen ‡3",
+  "abstract": "For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group Sk. We determine a basis for SP k, and this provides a combinatorial interpretation of the dimension of SP k involving bipartite partitions of k. For t ∈ C we consider the specialized algebra SP k(t). For t = n ∈ N, we describe the structure of SP k(n) by giving the permutation module decomposition of thekth symmetric power of the defining module for the symmetric group algebra CSn. In general, we show that SP k(t) is quasi-hereditary over C for all t ∈ C , except t = 0. We determine the decomposition numbers for SP k(t) for every specialization t ∈ C except t = 0, (which includes semisimple and non-semisimple cases). In particular we determine the structure of all indecomposable projective modules, and the indecomposable tilting modules.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241105021347Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "On the spherical partition algebra"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Basic notation",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bipartite partitions",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The partition algebra and the spherical partition algebra",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Rank of the Spherical Partition Algebra",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Schur-Weyl duality for SP k(n)",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Cellularity of SP k(t)",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The decomposition numbers for  SP k(n)  when  SP k(n)  is non-semisimple.",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Tilting modules for  P k(n)  and  SP k(n)",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7880,
+   "n_words": 1337
+  },
+  {
+   "id": "sec-001-basic-notation",
+   "number": null,
+   "title": "Basic notation",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 111,
+   "n_words": 17
+  },
+  {
+   "id": "sec-002-bipartite-partitions",
+   "number": null,
+   "title": "Bipartite partitions",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 11523,
+   "n_words": 2136
+  },
+  {
+   "id": "sec-003-the-partition-algebra-and-the-spherical-partitio",
+   "number": null,
+   "title": "The partition algebra and the spherical partition algebra",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4482,
+   "n_words": 812
+  },
+  {
+   "id": "sec-004-rank-of-the-spherical-partition-algebra",
+   "number": null,
+   "title": "Rank of the Spherical Partition Algebra",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 8785,
+   "n_words": 1714
+  },
+  {
+   "id": "sec-005-schur-weyl-duality-for-sp-kn",
+   "number": null,
+   "title": "Schur-Weyl duality for SP k(n)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 15852,
+   "n_words": 2938
+  },
+  {
+   "id": "sec-006-cellularity-of-sp-kt",
+   "number": null,
+   "title": "Cellularity of SP k(t)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 27,
+   "n_chars": 41918,
+   "n_words": 7625
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 7,
+  "chars_total": 90551
+ }
+}

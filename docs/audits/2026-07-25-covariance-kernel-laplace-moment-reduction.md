@@ -121,13 +121,13 @@ A literature check (2026-07-25) places the problem squarely in the Kerov-CLT / P
 - `ω₃ = |C₃|·χ̂₃` **is** a Kerov observable (a low free cumulant; its Plancherel law is Gaussian by Kerov's CLT).
 - `ln f^λ = ln(k!) − Σ_□ ln(hook(□))` is a **hook-based, non-polynomial** functional — it lies **outside** the Ivanov–Olshanski algebra of polynomial functions on Young diagrams, where the clean CLT and Biane's free-cumulant asymptotics live. So `Cov_Planch(ω₃, ln f)` is a covariance of a character observable with a *smooth linear statistic of the shape*, which the cited theorems do not cover verbatim.
 
-**Per-paper check** (corpus copies in `uploads/`, read 2026-07-25):
+**Per-paper check** (corpus copies in `library/`, read 2026-07-25):
 
 | paper | gives | why it does not close it |
 |---|---|---|
-| Ivanov–Olshanski, `uploads/0304010v1.pdf` (Kerov CLT) | CLT for the character-polynomial algebra (`p_k^#`), the shape, and free cumulants/Biane | `ω₃=\|C₃\|χ̂₃` is in the algebra; **`ln f` is not** (non-polynomial, hook-based) |
-| Śniady, `uploads/0411647v2.pdf` (genus expansion, free prob.) | asymptotics of characters / products of JM moments — the epic's planned Phase-2 tool | works on the **Plancherel (β=2)** character side; does not reach the `(f^λ)^{β>2}` measure |
-| Dołęga–Féray `uploads/1402.4615v3.pdf`; Dołęga–Śniady `uploads/1704.02352v2.pdf` (Gaussian fluctuations of **Jack**-deformed diagrams) | second-order asymptotics of Jack-deformed random shapes | `(f^λ)^β` is a Jack measure **only at β=2 (α=1)**; β>2 is outside the Jack family |
+| Ivanov–Olshanski, `library/arxiv-math-0304010v1/0304010v1.pdf` (Kerov CLT) | CLT for the character-polynomial algebra (`p_k^#`), the shape, and free cumulants/Biane | `ω₃=\|C₃\|χ̂₃` is in the algebra; **`ln f` is not** (non-polynomial, hook-based) |
+| Śniady, `library/arxiv-math-0411647v2/0411647v2.pdf` (genus expansion, free prob.) | asymptotics of characters / products of JM moments — the epic's planned Phase-2 tool | works on the **Plancherel (β=2)** character side; does not reach the `(f^λ)^{β>2}` measure |
+| Dołęga–Féray `library/arxiv-1402.4615v3/1402.4615v3.pdf`; Dołęga–Śniady `library/arxiv-1704.02352v2/1704.02352v2.pdf` (Gaussian fluctuations of **Jack**-deformed diagrams) | second-order asymptotics of Jack-deformed random shapes | `(f^λ)^β` is a Jack measure **only at β=2 (α=1)**; β>2 is outside the Jack family |
 
 **Honest status:** the conjecture is **open**, reduced (§2–§3b) to a Kerov-CLT-framework statement whose genuinely-new ingredients are (i) a **CLT / covariance sign for the smooth linear statistic `ln f`** (outside the character-polynomial algebra) against the character observable `ω₃`, and (ii) control of the **`(f^λ)^{β>2}` (non-Jack) measure**. Both are plausibly reachable — the moment/Chebyshev transform of the shape CLT to the `ln f` linear statistic, plus a genus-expansion-style treatment adapted off β=2 — but each is a real research step, not a lookup. This corrects the earlier "cited Kerov/Biane" phrasing.
 

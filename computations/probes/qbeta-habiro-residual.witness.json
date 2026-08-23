@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:23:36.344416+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-21T16:12:04.458444+00:00",
+  "commitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
   "assertions": [
     {
       "name": "Q_A_witness_matches_live_single_wrap",
@@ -14,19 +14,19 @@
     },
     {
       "name": "sigma_theory_dominates_sigma_CAL",
-      "computed": 0.29363616296692,
+      "computed": 0.3131196070973382,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1248.212283155282,
+      "tolerance": 602433.1526396247,
       "source": "σ_CAL << σ_theory (residual is framework's, not propagated)"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "qbeta-habiro-residual",
   "scriptFile": "qbeta_habiro_residual_probe.py",
-  "scriptHash": "2842493a1100",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "12fe19290b4f",
+  "scriptCommitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,46 +38,46 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "σ_theory vs σ_CAL decomposition of the production Q_β residual at the canonical (proton-pinned) q₀. Recomputed LIVE — settles the q0-repin staleness question: the ~1248 ppb is the genuine Q_N2 truncation residual, NOT a stale-witness artifact. Anti-flip-flop per ck-dk-canonical-registry.md §8: proposes NO new c_k wiring.",
   "contentBlock": "rem:beta-decay-energy-scale",
   "data": {
-    "q0_anchor": "m_p/m_e",
-    "q0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q0_anchor": "m_p/m_e (proton; owner ruling 2026-08-21)",
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "qA_witness_vs_live_consistency_ppb": 1.1065452700764615e-42,
-    "residual_N0_ppb": 1677537.8381469732,
-    "residual_N1_ppb": 73796.88063318116,
-    "residual_N2_ppb_PRODUCTION": 1248.212283155282,
-    "dlnQ_beta_dlnq": "-2.596755095615304458530070730593813110509751672185074812194932794750295",
-    "sigma_theory_ppb": 1248.212283155282,
-    "sigma_CAL_me_ppb": 0.2935426771375079,
-    "sigma_CAL_q0_ppb": 0.00740897434739738,
-    "sigma_CAL_total_ppb": 0.29363616296692,
+    "residual_N0_ppb": 1677567.847474663,
+    "residual_N1_ppb": 675025.4055819606,
+    "residual_N2_ppb_PRODUCTION": 602433.1526396247,
+    "dlnQ_beta_dlnq": "-2.596755082599951972907875671278499074230952510302354267955903135075887",
+    "sigma_theory_ppb": 602433.1526396247,
+    "sigma_CAL_me_ppb": 0.31311218894667514,
+    "sigma_CAL_q0_ppb": 0.002155337981167248,
+    "sigma_CAL_total_ppb": 0.3131196070973382,
     "sigma_exp_target_ppb": 779.7187135341695,
     "target_100x_ppb": 7.797187135341695,
-    "anchor_stability_q0_worstcase_shift_ppb": 29.862683599576002,
+    "anchor_stability_q0_worstcase_shift_ppb": 29.862683449899446,
     "c3_cross_anchor_swing_pct": 2.98,
     "c3_dcdq": 4600000.0,
     "verdict": "The 1248 ppb is σ_theory (formula truncation), NOT σ_CAL (σ_CAL ≈ 0.29 ppb, m_e-dominated; q₀ contributes 0.007 ppb). It is theory-improvable IN PRINCIPLE, but the ONLY known route below it is the fitted/near-match c_3 ladder, which FAILS the cross-anchor test (2.98 % swing) and is registry-REFUTED as a real-q derivation. No PROVED higher-order Habiro term exists. Closing 1248 → 7.8 ppb (the L2 100× target, itself BELOW the 779.7 ppb σ_exp floor) is Subgoal-2 / owner-gated q₀ work. NOT improvable by derivation today.",
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "0f45c31755832805ee99e5c44672819f308f1516eff63624826b04b6f3cd3265",
+        "size_bytes": 6236,
+        "commitSha": "ae93693b685de1623473709fec0e186c6d10f3e0",
+        "scriptCommitSha": "a25bfdd01be3ba8a088c8ed66c322f8d76c5b35c",
+        "computedAt": "2026-08-21T15:30:35.711869+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
-        "size_bytes": 5560,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
-        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+        "sha256": "9aa21529f58d110b04f12de6a9b6941b3f8fdd7e48d9fc106c6c631b36fb18f0",
+        "size_bytes": 5678,
+        "commitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
+        "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+        "computedAt": "2026-08-21T16:11:36.484968+00:00"
       }
     ]
   }

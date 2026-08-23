@@ -1,0 +1,212 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0508100v6",
+ "source_sha256": "9cc100a86b40c336",
+ "brief": "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial.",
+ "extended": "**ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT**\n\n*STA VROS GAROUF ALIDIS AND THANG TQ L Ê*\n\n31 pp, 38 sections.\n\n**Abstract.** To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial. The paper is concerned with the asymptotic behavior of the value of the nth colored Jones polynomial at eα/n , when α is a ﬁxed complex number and n tends to inﬁnity. W e analyze this asymptotic behavior to all orders in 1 /n when α is a suﬃciently small complex number. In addition, we give upper bounds for the coeﬃcients and degree of the nth colored Jones polynomial, with applications to upper bounds in the Generalized Volume Conjecture. W ork of Agol-D unﬁeld-Storm-W.Thurston implies that our bounds are asymptotically optimal. Moreover, we give resul ts for the Generalized Volume Conjecture when α is near 2 πi . Our proofs use crucially the cyclotomic expansion of the co lored Jones function, due to Habiro.\n\n**Outline.** 1.1 Asymptotics of the colored Jones function ; 1 Introduction; 1.2 The generalized volume conjecture; 1.4 Upper bounds for the generalized volume co; 1.6 The main ideas and organization of the pap; 1.7 Acknowledgment; 2 Weak versus strong convergence; 2.1 A lemma from complex analysis; 3 Two expansions of the colored Jones polynomi; 3.1 The loop expansion; 3.2 The cyclotomic expansion; 3.3 Comparing the cyclotomic and the loop expa; 4 A reduction of Theorem 2.2 to estimates of t; 4.1 Uniform bounds of the colored Jones functi; 4.2 Theorem 4.2 implies Theorem 2.2; 5 A reduction of Theorem 1.6 to estimates of t; 5.1 Some estimates; 6 Bounds for the degree and coefficients of th\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: (The MMR conjecture) [ BNG96] For every knot K we have\n- Theorem 1.5: [Roz98] For every knot K there exists a sequence PK,k (q) ∈ Q[q±1] of Laurent polynomials\n- Theorem 1.6: (Proof in Section 5.2) For every knot K there exists an open neighborhood ˜UK of 0 ∈ C such\n- Theorem 1.9: For every knot K there exists an open neighborhood UK of 0 ∈ C, such that for α ∈ UK, we\n- Theorem 1.11: (Proof in Section 9) For every knot K there exist a neighborhood VK of 1 ∈ C such that\n- Theorem 1.12: (Proof in Section 6.3) For every knot K with c + 2 crossings and every α ∈ C, we have",
+ "tokens": {
+  "brief": 45,
+  "extended": 580
+ },
+ "sections": [
+  {
+   "id": "sec-000-11-asymptotics-of-the-colored-jones-function-of",
+   "title": "Asymptotics of the colored Jones function of a knot",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-12-the-generalized-volume-conjecture",
+   "title": "The generalized volume conjecture",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-14-upper-bounds-for-the-generalized-volume-conje",
+   "title": "Upper bounds for the generalized volume conjecture",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-16-the-main-ideas-and-organization-of-the-paper",
+   "title": "The main ideas and organization of the paper",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-17-acknowledgment",
+   "title": "Acknowledgment",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-006-2-weak-versus-strong-convergence",
+   "title": "Weak versus strong convergence",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-21-a-lemma-from-complex-analysis",
+   "title": "A lemma from complex analysis",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-3-two-expansions-of-the-colored-jones-polynomial",
+   "title": "Two expansions of the colored Jones polynomial",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-31-the-loop-expansion",
+   "title": "The loop expansion",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-32-the-cyclotomic-expansion",
+   "title": "The cyclotomic expansion",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-011-33-comparing-the-cyclotomic-and-the-loop-expansi",
+   "title": "Comparing the cyclotomic and the loop expansion",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-012-4-a-reduction-of-theorem-22-to-estimates-of-the",
+   "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-013-41-uniform-bounds-of-the-colored-jones-function",
+   "title": "Uniform bounds of the colored Jones function",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-014-42-theorem-42-implies-theorem-22",
+   "title": "Theorem 4.2 implies Theorem 2.2",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-015-5-a-reduction-of-theorem-16-to-estimates-of-the",
+   "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-016-51-some-estimates",
+   "title": "Some estimates",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-017-6-bounds-for-the-degree-and-coefficients-of-the",
+   "title": "Bounds for the degree and coefficients of the colored Jones function",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-018-63-proof-of-theorem-112",
+   "title": "Proof of Theorem 1.12",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-019-7-proof-of-theorem-42",
+   "title": "Proof of Theorem 4.2",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-020-71-the-bound-for-degrees-of-hkn",
+   "title": "The bound for degrees of HK,n",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-021-72-the-bound-for-the-l1-norm-of-hkn",
+   "title": "The bound for the l1-norm of HK,n",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-022-8-growth-rates-of-r-matrices-and-the-lobachevsky",
+   "title": "Growth rates of R-matrices and the Lobachevsky function",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-023-82-asymptotics-of-the-r-matrix-using-ideal-octah",
+   "title": "Asymptotics of the R-matrix using ideal octahedra",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-024-83-the-maximum-of-the-growth-rate-of-the-r-matri",
+   "title": "The maximum of the growth rate of the R-matrix",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-025-84-the-maximum-of-the-r-matrices-at-roots-of-uni",
+   "title": "The maximum of the R-matrices at roots of unity",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-026-85-proof-of-theorem-113",
+   "title": "Proof of Theorem 1.13",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-027-10-the-q-holonomic-point-of-view",
+   "title": "The q-holonomic point of view",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-028-101-bounds-on-l1-norm-of-q-holonomic-functions",
+   "title": "Bounds on l1-norm of q-holonomic functions",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-029-102-bounds-for-higher-rank-groups",
+   "title": "Bounds for higher rank groups",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-030-11-some-physics",
+   "title": "Some physics",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-031-111-a-small-dose-of-physics",
+   "title": "A small dose of physics",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-032-112-the-wkb-method",
+   "title": "The WKB method",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-033-appendix-a-the-volume-conjecture-for-the-borrome",
+   "title": "Appendix A. The volume conjecture for the Borromean rings",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-034-appendix-b-proof-of-proposition-89",
+   "title": "Appendix B. Proof of Proposition 8.9",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-035-b1-preliminary-estimates",
+   "title": "B.1. Preliminary estimates",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-036-b2-proof-of-proposition-89",
+   "title": "B.2. Proof of Proposition 8.9",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-037-references",
+   "title": "References",
+   "pages": "30-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

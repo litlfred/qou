@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1010.5321v3",
+ "source_sha256": "c6bb20926b1f291f",
+ "brief": "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume.",
+ "extended": "**Formulas on hyperbolic volume**\n\n*Budapest University of Technology and Economics*\n\n16 pp, 16 sections.\n\n**Abstract.** This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨ aﬂi diﬀerential formula), using edge-lengthes as the only parameters.\n\n**Outline.** 1 Introduction; 2 General formulas; 1.1 Notation; 2.1 Coordinate system based on paracycles (hor; 2.2 Volume in the Poincare half-space model; 2.3 Hyperbolic orthogonal coordinate system; 2.4 Coordinate system based on spherical hyper; 2.5 Volume in the projective model; 3 The three dimensional case; 3.1 Formulas of J. Bolyai; 3.2 Formulas of N.I.Lobachevsky; 3.3 Once more again on the volume of the ortho; 3.3.1 The 3-dimensional case; 3.3.2 The case of dimension two; 3.3.3 The case of dimension n; 3.4 Further results on concrete volumes\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let the edges of an orthosceme be a,b,c , respectively where a⊥b and (a,b )⊥c. If\n- Theorem 2: Opposite dihedral angles of ideal tetrahedron are equal to e ach\n- Theorem 3: LetR be a Lambert cube with essential angles wk, 0 ≤wk ≤\n- Theorem 4: Let O be an ideal symmetric octahedron with all vertices on\n- Theorem 5: The volume of the hyperbolic tetrahedron T\n- Theorem 6: The volume of the simplex T is",
+ "tokens": {
+  "brief": 24,
+  "extended": 376
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-2-general-formulas",
+   "title": "General formulas",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-11-notation",
+   "title": "Notation",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
+   "title": "Coordinate system based on paracycles (horocycles)",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-22-volume-in-the-poincare-half-space-model",
+   "title": "Volume in the Poincare half-space model",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-23-hyperbolic-orthogonal-coordinate-system",
+   "title": "Hyperbolic orthogonal coordinate system",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-24-coordinate-system-based-on-spherical-hyperbol",
+   "title": "Coordinate system based on spherical hyperbolic coordinates",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-25-volume-in-the-projective-model",
+   "title": "Volume in the projective model",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-3-the-three-dimensional-case",
+   "title": "The three dimensional case",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-009-31-formulas-of-j-bolyai",
+   "title": "Formulas of J. Bolyai",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-010-32-formulas-of-nilobachevsky",
+   "title": "Formulas of N.I.Lobachevsky",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce",
+   "title": "Once more again on the volume of the orthosceme",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-331-the-3-dimensional-case",
+   "title": "The 3-dimensional case",
+   "pages": "9-13"
+  },
+  {
+   "id": "sec-013-332-the-case-of-dimension-two",
+   "title": "The case of dimension two",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-014-333-the-case-of-dimension-n",
+   "title": "The case of dimension n",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-015-34-further-results-on-concrete-volumes",
+   "title": "Further results on concrete volumes",
+   "pages": "14-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

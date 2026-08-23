@@ -13,7 +13,7 @@ The corpus recovers tau_0 to 50 dps by an exact SL_2(Z) word and reports a 6-dig
 - section on the period matrix (j-invariant conditions) — tau_0 = -0.5 + 0.186676i to 6 d.p., characterised by j(tau_0) = -29^3 x 5/2^5 and j(5 tau_0) = -25/2; Riera-Rodriguez swapped the two values.
   Use here: The published tau_Bring / j(E) input used by BringEllipticFactor.lean and the alpha_em period-matrix probes; also the authority for the swap correction the corpus records.
 
-Source: `uploads/2208.13692v1.pdf` (`braden-disney-hogg-2022`)
+Source: `library/arxiv-2208.13692v1/2208.13692v1.pdf` (`braden-disney-hogg-2022`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

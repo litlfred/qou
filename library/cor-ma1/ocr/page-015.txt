@@ -1,0 +1,61 @@
+14 SYLVIE CORTEEL AND OLIVIER MALLET
+
+We will first give a generating function proof of that proposition (without the refinement). Then we will
+give the sketch of a combinatorial proof which is a generalization of Burge’s correspondence for partitions
+presented in (id.
+
+Recall that By,;(n, 7) is the number of overpartitions \ of n with j overlined parts such that for all £,
+
+fi<i
+1 if Aepe—1 is overlined
+Ne — Acer—-1 >
+‘ (rkoT . otherwise
+or equivalently,
+fi<i
+
+. . k+1 ifa part @ is overlined
+Ve, fet fer < { p
+
+k otherwise
+
+We will abbreviate this last condition with the notation V0, fe + fey < k+1.
+
+5.1. A generating function proof. Let B;,i(a,q) => By i(n,j)aiq”". We prove that
+
+n,j>0
+
+(5.1) Br,i(a,q) = Ex,i(a,@)
+
+We will generalize Lovejoy’s proof of Theorem 1.1 of ba. Let
+(5.2) Tei(a,%,q) = Hgil(a,xgq,q) — axqHy,i—-1(a, 29, 9)
+
+CO kn gkn?-+n—in gn(y — gig2ni)(qzqntl La
+
+Andrews showed in 8, p. 106-107] that
+(5.4) Ay i(a,2,q) — Hei-i(a,2,q) = vi e—ig (a, x,q)
+(5.5) Jn i(a,2,Q) — Jk i-1(a,0,qQ) = (2g) (Jk nit (@, 29, q) — ASp,k—i42(a, 29, q))-
+
+We plug i = 0 in equation and obtain Hz,9 = 0. We then plug i = 1 in equation and obtain
+Ay s(a,2,q) = Jkn(a,x,q). Then we plug i = 1 in equation (6.2) and obtain Jki(a,2,q) = Jk,r(a, xq, q)-
+Finally we set x = 0 in equations and 6.3) and get Jx,;(a,0,q) = 1. This implies for 1 <i < k, the
+following equations determine Jy ,i(a, x, q):
+
+Ix i(a,0,q) = 1
+Te ila, 2,4) — Jei-1(a,0,q) = (aq) (Jenin (@, 29,9) — OSp,b—i42(a, 09, 9));
+Ipa(a,t,q) = Ixn(a,xq,4)-
+
+Let Br i(a,2,q) = Yn,j,p>0 Bya(n,j,p)aix?q” where By,i(n,j,p) is the number of overpartitions counted
+by Byi(n, 7) with p parts. We show that
+
+Lemma 5.2. For1<i<k,
+Bri(a,x,q) = Jki(—@, 2,9).
+
+Proof. The only overpartition with zero parts is the empty one. Therefore By,;(a,0,¢q) = 1. It is obvious
+that for 2 < i < k, Bri(a,z,q) — Bri-i(a,2,q) is the generating function for overpartitions such that
+Ve, fet fexi < k+1 and f; =i—1. Moreover Bx,i(a, xq, q) is the generating function for overpartitions such
+that Ve, fet fey: < RFI, fo <iand f; =0. Therefore (2q)''By 4:41 (a, xq, q) is the generating function for
+overpartitions such that V0, fo+ fexi < k¥1, fi = i—1 and 1 is not overlined and a(xq)''By,n-i42(a, 29,9)
+is the generating function for overpartitions such that V0, fe+ feyi < K-FI, f: =i—1 and 1 is overlined. We
+get, for 2 <i <k, Byi(a,x,q) — Bi-1(a,2,9q) = (vq)! (Br n—iga (a, 9, q) + @Br,k—i+2(@, 09, q)). Finally
+Bx,x(a,xq,q) is the generating function for overpartitions such that V0, fe + fer < K-FI, fo <k and f; =0
+and therefore is equal to By,1(a, 2, q)- O

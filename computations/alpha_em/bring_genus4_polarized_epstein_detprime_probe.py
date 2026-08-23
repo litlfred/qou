@@ -263,7 +263,7 @@ def main():
                         "(full genus-4 Epstein det'Δ at Im τ₀=0.187, was Siegel-reduction-blocked)",
             "structure_source": "τ_B=τ₀·M, M=[[4,1,-1,1],[1,4,1,-1],[-1,1,4,1],[1,-1,1,4]] "
                                 "(Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12) + Prop 4.6 "
-                                "diag(5,5,5,1); PDF uploads/2208.13692v1.pdf",
+                                "diag(5,5,5,1); PDF library/arxiv-2208.13692v1/2208.13692v1.pdf",
             "method": "Fincke–Pohst exact norm-cutoff (Q=14, tail<8.5e-20) + Chowla–Selberg "
                       "heat-kernel split identical to the 2026-07-18 sibling",
             "scope_guard": "no q₀, no 8π manufactured, nothing wired, no tier change; scope-(a)",

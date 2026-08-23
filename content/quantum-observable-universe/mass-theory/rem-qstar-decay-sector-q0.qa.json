@@ -951,6 +951,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not interpolated from anchors:\"; \", not a three-way picture.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:00.897Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Seven negation shapes, but the block IS a self-retraction and each marks a specific withdrawn claim: 'root-found, not interpolated', 'not an independent third determination', 'These are not close agreements ...; they are the absence of a measurement', 'a two-way tension ..., not a three-way picture', 'not a singularity of the underlying object'. Substantive-contrast false-positive class; density is a property of the genre."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -970,6 +985,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:00.960Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'The supporting statistics do not rescue it' and 'The same arithmetic denies the converse' are argumentative topic sentences that the following text discharges quantitatively; 'Both remain true and neither is evidence, because ...' carries its weight in the because-clause, which is the block's actual argument."
       }
     ],
     "trap-em-dash": [
@@ -990,6 +1020,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "8 stylistic spaced dashes in 499 words (1.60/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.013Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "FIXES APPLIED (2 of 4 dashes, both dodging a full stop): (1) 'sits $80.30\\%$ of the way from the proton end of that window — the same figure.' -> '... of that window, the same figure.'; (2) '$dq^{*}/d\\mathfrak{Q}_\\beta \\approx -0.539$ — a sharper $\\mathfrak{Q}_\\beta$ measurement directly sharpens ...' -> '$... \\approx -0.539$. A sharper $\\mathfrak{Q}_\\beta$ measurement directly sharpens ...'. The two remaining dashes are true appositives (the bar-even-point gloss; the '61% of |c_3|' gloss)."
       }
     ],
     "trap-triples": [
@@ -1009,6 +1054,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 499 words)"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.066Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No reflex triples; the two-item 'First ... Second ...' and the three ppb comparisons are forced by the data."
       }
     ],
     "trap-closing-aphorism": [
@@ -1028,6 +1088,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.110Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Block ends on the probe and witness citation."
       }
     ],
     "trap-meta-commentary": [
@@ -1047,6 +1122,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.162Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'The residual empirical content must be stated with its error bar, because the error bar dominates it' states a methodological requirement and then meets it; 'Two calibrating facts sharpen how q* may be used' is structural signposting, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1066,6 +1156,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.206Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The one-line 'So the mu-p substrate tension is a two-way tension ..., not a three-way picture' is the corpus-level payload of the preceding argument and is followed by three further paragraphs; not a terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1085,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.265Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register; the retraction is stated without apology or hedging warmth."
       }
     ],
     "trap-superlative": [
@@ -1104,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.331Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'the famous hypersensitivity' is the only inflation and it is idiomatic. NOTE: the number it attaches to is wrong — see trap-nonspeakable notes."
       }
     ],
     "trap-nonspeakable": [
@@ -1123,6 +1258,22 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "771cfe471535",
+          "ts": "f2688033d390"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:22:01.398Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Long sentences but each is well-structured with commas and semicolons doing real work; no noun-chain stalls.",
+        "notes": "RECOMPUTED EVERY NUMERIC IN THIS BLOCK. VERIFIED: q* = 1.10997859303152 lies strictly between the proton and muon anchors, 80.276% of the way muon-ward; window (2.02020024, 2.06934258) width 0.0491423; Vol(4_1)=2.0298832 sits 80.2961% from the proton end; sigma(c_3)=1.262 = 61.0% of |c_3(p)|; 0.0313 sigma (proton) and 0.00767 sigma (muon); band [0.8073, 3.3313]; 51.36x wider than the window; 31.98x / 130.3x sharper Q_beta needed. THREE FINDINGS: (1) 'the famous hypersensitivity $dc_3/dq \\approx 4.7\\times10^{6}$' is WRONG and is contradicted by the block's own next clause and its own cited witness. Three independent recomputations give 3.84e6: the secant from the block's own two anchor c_3 values = 3.83746e6; 2.37 x (1/u^3) with the canonical u = 0.00852 = 3.83204e6; and the witness's own data/hypersensitivity_decomp/S_prime_qstar = 3838404.458 with inv_u_cubed = 1618467.41 (ratio 2.3717 = the quoted prefactor). 4.7e6 would require u = 0.0079595. PROPOSED: '$dc_3/dq \\approx 3.84\\times10^{6}$'. (2) '$\\approx 367\\times$ more precise' is 22 ppb / 0.06 ppb = 366.67, the SUPERSEDED proton precision; the live figure is 0.017 ppb, giving 1294x, and the companion '$\\approx 0.0007\\%$ muon-ward' recomputes to 0.000744% at 0.06 ppb but 0.00006% at 0.017 ppb. Pin-currency only — the argument strengthens under the tighter value. Witness carries the same stale 366.7. (3) The CITED WITNESS asserts the claim this block retracts: assertions[2] 'qstar_is_decay_sector_not_mass_mean' has source '... q* is an independent decay-sector determination of q0', passed true, allPassed true. The .md was corrected; probe and witness were not. Also witness data/q_star/frac_muon_ward_pct = 80.29605 is the Vol(4_1)-in-window fraction stored under the q_star key; the recorded q*'s actual position is 80.27627%."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1145,5 +1296,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:22:01.398Z"
 }

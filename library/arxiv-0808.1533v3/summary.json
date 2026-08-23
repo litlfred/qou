@@ -1,0 +1,42 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0808.1533v3",
+ "source_sha256": "3e003cc35a4e5711",
+ "brief": "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a",
+ "extended": "**On the third order helicity of magnetic fields on invariant domains in S³**\n\n*October 28, 2018*\n\n30 pp, 4 sections.\n\n**Abstract.** We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯ µ 123-invariant for 3-component links and the homotopy invariants of maps to conﬁguration sp aces, and we provide a simple geometric proof of this fact in the case of Borromean l inks. Based on these connections we develop a formulation for the third order hel icity of B on invariant un- linked domains of B, and provide Arnold’s style ergodic interpretation of this invariant as an average asymptotic ¯µ 123-invariant of orbits of B.\n\n**Outline.** Introduction; Energy bound.; Comparison to the known approaches via Massey ; Zero contribution of short paths to the time a\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: Let L = {L1, L2, L3} be a 3-component Borromean link in S3, consider the\n- Theorem: For orbits {O 1(x), O 2(y)} of B1 and B2 through x, y ∈ M, we introduce the\n- Theorem 3.1: Given B1, B2 ∈ SVect(M), The following\n- Theorem 4.3: On every unlinked invariant handlebody T in\n- Theorem 4.3: We begin by observing that given a volume preserving vector ﬁeld B on M and its ﬂow\n- Theorem 5.1: For any real valued L1-function F",
+ "tokens": {
+  "brief": 49,
+  "extended": 354
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-21"
+  },
+  {
+   "id": "sec-001-energy-bound",
+   "title": "Energy bound.",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+   "title": "Comparison to the known approaches via Massey products.",
+   "pages": "25-29"
+  },
+  {
+   "id": "sec-003-zero-contribution-of-short-paths-to-the-time-ave",
+   "title": "Zero contribution of short paths to the time average",
+   "pages": "29-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

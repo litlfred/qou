@@ -35,7 +35,7 @@ symmetry supplied by the merged `bilinM_isSymm`, not fabricated. `1/(8π)` stays
 phase-4 identification; nothing is wired.
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [halverson-1998-markov-weights] https://doi.org/10.1006/jabr.1998.7437
+-- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 -/
 import QOU.Archimedean.LoopWeightRealSymmReduction
 import Mathlib.LinearAlgebra.Matrix.SesquilinearForm

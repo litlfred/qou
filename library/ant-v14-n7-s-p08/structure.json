@@ -1,0 +1,240 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p08",
+ "source": {
+  "file": "ant-v14-n7-s-p08.pdf",
+  "sha256": "81b8f00fe5fbd0f6b46f6fbc9dfc991ff3617dd879a73ac462c47b53e8df5ca2",
+  "bytes": 552616,
+  "pages": 42
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1911",
+  "title": "Burgess bounds for short character sums evaluated at forms",
+  "authors_raw": "Lillian B. Pierce and Junyan Xu",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  },
+  "title_lines": [
+   "Burgess bounds for",
+   "short character sums evaluated at forms"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Method of proof: an overview",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Fa2",
+   "page": 11,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The stratiﬁcation of complete character sums",
+   "page": 15,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Initiation of the Burgess argument",
+   "page": 21,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+   "page": 25,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion of the Burgess argument",
+   "page": 31,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2)",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 36,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 39,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 39,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 19257,
+   "n_words": 3353
+  },
+  {
+   "id": "sec-001-2-method-of-proof-an-overview",
+   "number": "2",
+   "title": "Method of proof: an overview",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 8184,
+   "n_words": 1464
+  },
+  {
+   "id": "sec-002-3-preliminaries",
+   "number": "3",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 315,
+   "n_words": 57
+  },
+  {
+   "id": "sec-003-1-fa2",
+   "number": "1",
+   "title": "Fa2",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 11045,
+   "n_words": 2053
+  },
+  {
+   "id": "sec-004-4-the-stratiﬁcation-of-complete-character-sums",
+   "number": "4",
+   "title": "The stratiﬁcation of complete character sums",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 17516,
+   "n_words": 3167
+  },
+  {
+   "id": "sec-005-5-initiation-of-the-burgess-argument",
+   "number": "5",
+   "title": "Initiation of the Burgess argument",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 6156,
+   "n_words": 1198
+  },
+  {
+   "id": "sec-006-6-stratiﬁcation-and-a-menshovrademacher-argument",
+   "number": "6",
+   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 31,
+   "n_chars": 12022,
+   "n_words": 2186
+  },
+  {
+   "id": "sec-007-7-conclusion-of-the-burgess-argument",
+   "number": "7",
+   "title": "Conclusion of the Burgess argument",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 642,
+   "n_words": 114
+  },
+  {
+   "id": "sec-008-2-h1q12r-p-h1q12r-7-2",
+   "number": "2",
+   "title": "H1q−1/(2r)≤ P≤ H1q−1/(2r). (7-2)",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 36,
+   "n_chars": 9281,
+   "n_words": 1838
+  },
+  {
+   "id": "sec-009-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 6147,
+   "n_words": 1127
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 335,
+   "n_words": 53
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 42,
+   "n_chars": 8635,
+   "n_words": 1348
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 12,
+  "chars_total": 99535
+ }
+}

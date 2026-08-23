@@ -81,6 +81,46 @@ theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
   -- Ref: [prop:markov-pair-z2]; follows from trace_prod_gen field.
   exact MT.trace_prod_gen i j h
 
+/-- **Idempotent-sandwich collapse.** For an idempotent `e` (`e * e = e`),
+    `tr_M(e · x · e) = tr_M(e · x)`.  Derived purely from the cyclicity axiom
+    (M2) and idempotency: `tr(e·x·e) = tr(e·(e·x)) = tr((e·e)·x) = tr(e·x)`.
+
+    This is the structural simplification behind the **Pauli-full-shell** case of
+    the knot operator `F(τ, N)` in `cor:spectral-decomposition-qvalue`, whose
+    numerator is `|tr_M(e_{(1³)} · τ · T_β · e_{(1³)})|` with `e_{(1³)}` the
+    alternating Young idempotent: the outer `e` sandwich collapses, so the
+    numerator equals `|tr_M(e_{(1³)} · τ · T_β)|`.  Bean `qou-xq3f`. -/
+theorem trace_idempotent_sandwich (e x : A) (he : e * e = e) :
+    MT.trace (e * x * e) = MT.trace (e * x) := by
+  rw [MT.cyclic (e * x) e, ← mul_assoc, he]
+
+/-- The mirror form: `tr_M(e · x · e) = tr_M(x · e)` for an idempotent `e`.
+    Same derivation via cyclicity applied to the leading factor. -/
+theorem trace_idempotent_sandwich' (e x : A) (he : e * e = e) :
+    MT.trace (e * x * e) = MT.trace (x * e) := by
+  rw [MT.cyclic (e * x) e, ← mul_assoc, he, MT.cyclic e x]
+
+/-- **Trace of a generator times an inverse generator**:
+    `tr_M(σ_i · σ_j⁻¹) = z² − (q − q⁻¹)·z` for `i < j`.
+
+    The Hecke quadratic relation gives `σ_j⁻¹ = σ_j − (q − q⁻¹)·1`
+    (`HeckeAlgebra.inv_formula`), so writing `σ_j⁻¹` in that form and using
+    `R`-linearity of the trace:
+
+      `tr_M(σ_i · (σ_j − (q−q⁻¹)·1))
+        = tr_M(σ_i·σ_j) − (q−q⁻¹)·tr_M(σ_i)
+        = z² − (q−q⁻¹)·z`
+
+    by `trace_prod_gen` (`i < j`) and `trace_gen`.  This is the **denominator**
+    `tr_M(T_β)` of the Pauli-full-shell knot operator `F(τ,N)` in
+    `cor:spectral-decomposition-qvalue`, whose decay operator is
+    `T_β = σ_0 · σ_1⁻¹` (`i = 0`, `j = 1`).  Bean `qou-xq3f`. -/
+theorem trace_gen_mul_invGen (i j : Generator n) (h : i.idx.val < j.idx.val) :
+    MT.trace (HA.embed i * (HA.embed j - (q - q⁻¹) • 1))
+      = MT.z_param * MT.z_param - (q - q⁻¹) * MT.z_param := by
+  rw [mul_sub, mul_smul_comm, mul_one, map_sub, map_smul,
+      MT.trace_prod_gen i j h, MT.trace_gen i, smul_eq_mul]
+
 end MarkovTrace
 
 /- **Uniqueness of the Markov trace (target statement).**

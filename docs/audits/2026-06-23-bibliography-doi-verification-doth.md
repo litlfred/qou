@@ -86,7 +86,7 @@ Author selected Groups A + B and supplied arXiv math/0409565 for the C cluster.
   the wrong DOI). Ids retained for cross-ref stability.
 - **B (Marsh):** `carter-leal-saliola-2000` → `marsh2000` (single-author
   R. J. Marsh); cite key updated in crystal-graph-realization.ts + bib-qa id.
-- **C (math/0409565):** corpus + local PDF (uploads/0409565v2.pdf) confirm
+- **C (math/0409565):** corpus + local PDF (library/arxiv-math-0409565v2/0409565v2.pdf) confirm
   math/0409565 = **"Unital Gröbner Bases over Arbitrary Commutative Ground Rings"**,
   Leitner & **Robert** Pawloski. Fixed `leitnerpawloski2004`'s fabricated title
   ("On the morphisms of non-commutative formal groups") + given-name. The PDF has
@@ -108,7 +108,7 @@ leitnerpawloski2004 for inner-product content that belongs to pawlowski-leitner-
 ## Correction (2026-06-24, author): pawlowski-leitner-rep was an AGENT MISTAKE
 
 The author confirmed there is **one** Pawloski–Leitner paper — the arXiv PDF in
-`uploads/` (math/0409565 = `leitnerpawloski2004` = "Unital Gröbner Bases over
+`library/` (math/0409565 = `leitnerpawloski2004` = "Unital Gröbner Bases over
 Arbitrary Commutative Ground Rings"). The separate `pawlowski-leitner-rep`
 "inner-product / SU(2)-intertwiner" entry was a fabricated 2026-05-19
 "wrong-work-split", NOT a real distinct paper. (My §B note had wrongly kept it as

@@ -1,4 +1,5 @@
 import QOU.Torsion.MassIdentity
+import QOU.Torsion.ArchimedeanMassIdentity
 import QOU.Torsion.Descent
 import QOU.MathlibExt.QIntegerCanonical
 import Mathlib.Data.Real.Basic
@@ -60,7 +61,7 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
 /-- **Topological Decomposition of Mass** (data).
     LaTeX: `\label{thm:topological-mass}` -/
 structure TopologicalMassDecomposition (M : Type*) where
-  mi : MassIdentity M
+  mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)
   bb : BraneBoundary M
   numBlowups : ℕ
@@ -211,7 +212,7 @@ theorem qNumber_at_one (n : ℕ) : qNumber 1 n = ↑n := by
 
 /-- Mass at dimension 0 is pointwise. -/
 theorem mass_dim_zero_pointwise {M : Type*}
-    (mi : MassIdentity M)
+    (mi : ArchimedeanMassIdentity M)
     (p : M) (hp : p ∈ mi.vortexCycle) :
     0 ≤ mi.connectionGradient p * mi.leviCurvatureCoupling p :=
   mi.integrand_nonneg p hp

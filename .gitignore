@@ -37,16 +37,23 @@ qou.fmt.sha
 # LaTeX renderer; see content/pipeline/render-latex.ts image case).
 !content/**/rendered/*.pdf
 !figures/*.pdf
-# Whitelist intake uploads (raw PDFs, scans, WHO guidelines etc.
-# committed via scripts/upload-bib-papers.sh and similar intake
-# pipelines per AGENTS.md §"uploads/").
-!uploads/*.pdf
-!uploads/*.txt
-!uploads/*.json
-!uploads/*.html
-!uploads/*.xml
-!uploads/*.csv
-!uploads/*.tsv
+# Whitelist the ingested-source library (raw PDFs, scans, WHO guidelines
+# etc. committed via scripts/upload-bib-papers.sh and similar intake
+# pipelines per AGENTS.md §"library/").
+#
+# The layout is per-document — library/<doc-id>/<file>.pdf — so these
+# patterns must reach INTO a subdirectory. The old single-level
+# `!uploads/*.pdf` did not, and a freshly ingested PDF would have been
+# silently ignored while the git-mv'd ones stayed tracked (the worst
+# kind of half-working). `**` covers both depths.
+!library/**/*.pdf
+!library/**/*.txt
+!library/**/*.json
+!library/**/*.html
+!library/**/*.xml
+!library/**/*.csv
+!library/**/*.tsv
+!library/**/*.md
 diff.tex
 main-flat.tex
 tikz-cache/
@@ -210,3 +217,4 @@ lake-oleans.tgz
 # gitignore semantics — consistent with the leading-slash rule above, which
 # only needs stating for patterns that have no slash of their own.
 .work/*.lock
+content/quantum-observable-universe/lean/.lake

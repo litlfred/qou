@@ -33,7 +33,7 @@ The skill operates at two levels:
 | 3 | `metadata_ok`    | ✓     | Title, author(s), year present; type-specific fields complete |
 | 4 | `cited_in_paper` | ✓     | Referenced by `\cite{}` in .md/.tex or `-- Ref:` in .lean |
 | 5 | `has_screenshot` | ✓     | Screenshot exists in `content/bib-qa-images/<id>.*` |
-| 6 | `has_local_pdf`  | ✓     | Full paper PDF / data file present at `uploads/<id>*.{pdf,txt}` for offline verification (added 2026-05-19) |
+| 6 | `has_local_pdf`  | ✓     | Full paper PDF / data file present at `library/<id>*.{pdf,txt}` for offline verification (added 2026-05-19) |
 | 7 | `verification_status` | ✓ | Per-paper verification record exists in `content/bib-qa-verifications.json` with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
 
 \* ✓* = automated but requires `--check-urls` flag (makes network requests).
@@ -59,7 +59,7 @@ citation sites' descriptions match the cited paper's content**:
     {
       "id": "boyd-vandenberghe-2004",
       "status": "partial",
-      "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
+      "local_pdf": "library/boyd-vandenberghe-2004-convex-optimization.pdf",
       "verified_at": "2026-05-19T05:50:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 4,
@@ -78,7 +78,7 @@ keep the reference but hasn't decided where to cite it yet; tag
 passes the verification_status QA check), `uncited` (bib entry
 has zero consumers AND author hasn't claimed it; decision
 pending), `paper-mismatch` (local PDF ≠ references.ts metadata;
-escalate), `unfetchable` (not in `uploads/`).
+escalate), `unfetchable` (not in `library/`).
 
 The distinction `pending-placement` vs `uncited` matters: both
 have 0 citation sites, but `pending-placement` says "keep this
@@ -102,11 +102,11 @@ When verifying a paper:
 4. Re-run `cd content && bun run pipeline/bib-qa.ts` to regenerate
    `bib-qa.json` (gitignored — but useful for the dashboard).
 
-### Intake & local evidence (new — `uploads/` workflow)
+### Intake & local evidence (new — `library/` workflow)
 
-The `uploads/` directory holds full-paper PDFs and data tables for
+The `library/` directory holds full-paper PDFs and data tables for
 offline verification of citation correctness. Once a paper is in
-`uploads/`, the `has_local_pdf` tag passes, and reviewers can verify:
+`library/`, the `has_local_pdf` tag passes, and reviewers can verify:
 
 - That the `-- Ref: [<id>]` comment's free-text description (e.g.
   "Theorem 3.2 (Pieri rule for SYT)") actually matches the cited
@@ -149,7 +149,7 @@ step to a normal-network machine.
 
 | Server (`.mcp.json` key) | Package | Tools (most useful) | Use for |
 |--------------------------|---------|---------------------|---------|
-| `paper-search-mcp` | [openags/paper-search-mcp](https://github.com/openags/paper-search-mcp) | `search_arxiv`, `search_pubmed`, `search_biorxiv`, `search_medrxiv`, `search_google_scholar`, `download_arxiv`, `read_arxiv_paper` | Find arxiv preprints by title for URL-missing entries; bulk-download to `uploads/`; pull parsed paper text for `validate-bib --cross-check` cross-references |
+| `paper-search-mcp` | [openags/paper-search-mcp](https://github.com/openags/paper-search-mcp) | `search_arxiv`, `search_pubmed`, `search_biorxiv`, `search_medrxiv`, `search_google_scholar`, `download_arxiv`, `read_arxiv_paper` | Find arxiv preprints by title for URL-missing entries; bulk-download to `library/`; pull parsed paper text for `validate-bib --cross-check` cross-references |
 | `openalex-paper-search` | [drAbreu/alex-mcp](https://github.com/drAbreu/alex-mcp)@4.1.0 | OpenAlex `get_work`, `search_works`, `get_work_citations`, `get_work_references`, author disambiguation | Fill metadata gaps for the 9 no-arxiv-URL DOI refs (canonical title/author/year/venue); resolve wrong-work mismatches via author IDs (e.g. `leitnerpawloski2004` PL-inner-product split); citation-network mapping |
 
 (Notes: the legacy `mcp-scholar` entry in `.mcp.json` was removed
@@ -346,7 +346,7 @@ content/
   bib-qa-images/              ← Screenshot evidence
     <refid>.png               ← Named by reference id
     <refid>-1.png             ← Multiple images per reference
-uploads/                      ← Full-paper PDFs / data tables for
+library/                      ← Full-paper PDFs / data tables for
                                 offline citation verification.
   <id>.pdf                    ← One file per cited paper (where
                                 publicly downloadable)
@@ -391,7 +391,7 @@ When authoring adds a `ref()` entry:
    to confirm no anchor mismatch; pair with `--strict` in CI.
 7. **Local PDF intake** (optional but recommended for theorem-citing
    references): add the paper to `scripts/bib-papers-list.txt` or
-   place the PDF in `uploads/<id>.pdf` directly via
+   place the PDF in `library/<id>.pdf` directly via
    `bash scripts/upload-to-uploads.sh <url-or-local-path>`.
 8. **Screenshot** (Optional): For theorem/result citations, capture
    the relevant page to `content/bib-qa-images/<id>.png`.
@@ -405,14 +405,14 @@ When `validate-bib --cross-check` or a code reviewer (e.g. Copilot)
 flags an entry's metadata as not matching the .lean citation comment,
 the canonical workflow is:
 
-1. **Confirm by inspecting `uploads/<id>.pdf`** if present:
-   `file uploads/<id>.pdf` → real PDFs report "PDF document, version X.X";
+1. **Confirm by inspecting `library/<id>.pdf`** if present:
+   `file library/<id>.pdf` → real PDFs report "PDF document, version X.X";
    landing pages report "HTML document". HTML files are likely intake
    failures (numdam landing pages, NIST CGI lookups etc.).
 2. **For HTML landing pages**: update the URL-pattern logic in
    `scripts/gen-bib-papers-list.py` (e.g. numdam.org/item/<id>/ →
    /item/<id>.pdf), regenerate `bib-papers-list.txt`, delete the
-   broken `uploads/<id>.pdf`, re-run `upload-bib-papers.sh`.
+   broken `library/<id>.pdf`, re-run `upload-bib-papers.sh`.
 3. **For wrong-work resolution** (entry metadata names a different
    paper than the .lean comment intends): two options —
      a. Update the entry's `title` / `author` / `DOI` / `issued` to
@@ -478,7 +478,7 @@ Status symbols:
   [Pending]         — pending (not yet examined)
   [Uncited]         — bib orphan (no QOU citations)
   [Paper-Mismatch]  — local PDF ≠ bib metadata
-  [Unfetchable]     — not in uploads/
+  [Unfetchable]     — not in library/
 
 Rendering targets:
 - **LaTeX/biblatex**: the `annotation` field renders via
@@ -502,7 +502,7 @@ both:
 When verifying a published-journal paper, always check arxiv.org for
 a freely-accessible mirror. Most math/physics authors deposit the
 preprint version to arxiv either before or after journal publication.
-The mirror URL is the right intake target for `uploads/` because:
+The mirror URL is the right intake target for `library/` because:
 
 - arxiv mirrors are stable + freely-accessible (no doi.org paywall).
 - Content is usually the same as the published version (modulo
@@ -523,8 +523,8 @@ publisher landing page (doi.org, journal site, etc.):
 Verified arxiv-mirror finds during the 2026-05-19 22-paper batch:
 `faddeev_kashaev1994` (hep-th/9310070), `baez2004` (math/0307200),
 `hu-mathas2012graded` (1008.1462), `freed2010` (0905.0731),
-`berarducci2018` (1503.00315), `yekutieli2008` (0801.3233),
-`leitnerpawloski2004` (math/0409565), `bilsonthompson2005` (hep-ph/0503213),
+`berarducci-mantova2018` (1503.00315), `yekutieli2008` (0801.3233),
+`leitnerpawloski2004` (math/0409565), `bilson-thompson2005` (hep-ph/0503213),
 `bufetov2020` (2003.02730), `blitvic2012` (1205.4003),
 `finster2021/2022/2024` + `dappiaggi2024` (all arxiv-natives).
 
@@ -551,7 +551,7 @@ PDF that contains the WRONG content. Two cases observed:
 
 Detection workflow:
 
-1. `pdftotext -layout -f 1 -l 1 uploads/<id>.pdf` and inspect the
+1. `pdftotext -layout -f 1 -l 1 library/<id>.pdf` and inspect the
    title page.
 2. Compare the title page to the `references.ts` entry's `title` field.
 3. If they disagree, mark the entry as `paper-mismatch` in
@@ -567,7 +567,7 @@ When verifying a paper against its QOU citation sites, the canonical
 procedure (per the 2026-05-19 batch experience):
 
 1. **Extract the PDF** from the upload branch:
-   `git show origin/claude/upload-bib-papers-<date>:uploads/<file> > /tmp/<id>.pdf`.
+   `git show origin/claude/upload-bib-papers-<date>:library/<file> > /tmp/<id>.pdf`.
 2. **Read the title page** (`pdftotext -layout -f 1 -l 1`) — confirm
    the local PDF matches the `references.ts` entry's `title`.
 3. **Read the section list** (`pdftotext -layout` + grep for

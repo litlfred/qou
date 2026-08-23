@@ -32,7 +32,7 @@ from pathlib import Path
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from computations.hecke_engine import HeckeRational
+from hecke.hecke_engine import HeckeRational  # repo-root `hecke/` package, not `computations.`
 
 # ── Quark-level ordering expansion ───────────────────────────────
 

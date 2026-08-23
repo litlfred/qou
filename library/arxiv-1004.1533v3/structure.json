@@ -1,0 +1,335 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1004.1533v3",
+ "source": {
+  "file": "1004.1533v3.pdf",
+  "sha256": "95c1544431e6bf37e7dae3806a24bea3d6ea51480583a1b0b44fbda6a7f900d9",
+  "bytes": 447448,
+  "pages": 39,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1004.1533",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "14 Jun 2010"
+  },
+  "doi": null,
+  "title": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
+  "authors_raw": "BENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR",
+  "title_lines": [
+   "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+  ],
+  "abstract": "In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. W e demonstrate that this gives an extended TQFT which c onjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this stateme nt.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126172437-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries I: spherical categories",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries II: Drinfeld Center",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Polytope decompositions",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "TV invariants from polytope decompositions",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of independence of polytope decomposition",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Invariance under M1",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Invariance under M2",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Invariance under M3",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Surfaces with boundary",
+   "page": 22,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Extended combinatorial surfaces",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Invariants of extended 3-manifolds",
+   "page": 27,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Some computations",
+   "page": 34,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Cylinder over an annulus",
+   "page": 34,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Sphere with n holes",
+   "page": 36,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2879,
+   "n_words": 506
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 74,
+   "n_words": 11
+  },
+  {
+   "id": "sec-002-1-preliminaries-i-spherical-categories",
+   "number": "1",
+   "title": "Preliminaries I: spherical categories",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 6567,
+   "n_words": 1358
+  },
+  {
+   "id": "sec-003-2-preliminaries-ii-drinfeld-center",
+   "number": "2",
+   "title": "Preliminaries II: Drinfeld Center",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 6504,
+   "n_words": 1353
+  },
+  {
+   "id": "sec-004-3-polytope-decompositions",
+   "number": "3",
+   "title": "Polytope decompositions",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 9073,
+   "n_words": 1791
+  },
+  {
+   "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
+   "number": "4",
+   "title": "TV invariants from polytope decompositions",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 9198,
+   "n_words": 1854
+  },
+  {
+   "id": "sec-006-5-proof-of-independence-of-polytope-decompositio",
+   "number": "5",
+   "title": "Proof of independence of polytope decomposition",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 564,
+   "n_words": 106
+  },
+  {
+   "id": "sec-007-invariance-under-m1",
+   "number": null,
+   "title": "Invariance under M1",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1348,
+   "n_words": 337
+  },
+  {
+   "id": "sec-008-invariance-under-m2",
+   "number": null,
+   "title": "Invariance under M2",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 589,
+   "n_words": 144
+  },
+  {
+   "id": "sec-009-invariance-under-m3",
+   "number": null,
+   "title": "Invariance under M3",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 120,
+   "n_words": 19
+  },
+  {
+   "id": "sec-010-6-surfaces-with-boundary",
+   "number": "6",
+   "title": "Surfaces with boundary",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 5298,
+   "n_words": 1016
+  },
+  {
+   "id": "sec-011-7-extended-combinatorial-surfaces",
+   "number": "7",
+   "title": "Extended combinatorial surfaces",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 4035,
+   "n_words": 800
+  },
+  {
+   "id": "sec-012-8-invariants-of-extended-3-manifolds",
+   "number": "8",
+   "title": "Invariants of extended 3-manifolds",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 34,
+   "n_chars": 10332,
+   "n_words": 2159
+  },
+  {
+   "id": "sec-013-9-some-computations",
+   "number": "9",
+   "title": "Some computations",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 73,
+   "n_words": 13
+  },
+  {
+   "id": "sec-014-91-cylinder-over-an-annulus",
+   "number": "9.1",
+   "title": "Cylinder over an annulus",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 885,
+   "n_words": 231
+  },
+  {
+   "id": "sec-015-92-sphere-with-n-holes",
+   "number": "9.2",
+   "title": "Sphere with n holes",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 1686,
+   "n_words": 433
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 3327,
+   "n_words": 457
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 17,
+  "chars_total": 62552
+ }
+}

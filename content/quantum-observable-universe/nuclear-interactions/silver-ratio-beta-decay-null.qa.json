@@ -2907,6 +2907,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.210Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2926,6 +2941,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.247Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-em-dash": [
@@ -2945,6 +2975,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.287Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-triples": [
@@ -2964,6 +3009,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.327Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-closing-aphorism": [
@@ -2983,6 +3043,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.369Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-meta-commentary": [
@@ -3002,6 +3077,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.411Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-thesis-restatement": [
@@ -3021,6 +3111,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.450Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-performed-warmth": [
@@ -3040,6 +3145,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.489Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-superlative": [
@@ -3059,6 +3179,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.530Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "trap-nonspeakable": [
@@ -3078,6 +3213,21 @@
         "reviewed_at": "2026-08-15T10:31:01.312Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cded7188997f",
+          "ts": "582c14cb7e0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.571Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (proposition, ~0.6kB). Pure statement, italicised, two numbered consequences; no rhetorical construction in any of the ten categories. b^2=7/8 at q=1+sqrt(2) recomputed and confirmed ([3]_q/[2]_q^2 = 0.875 exactly). Two substantive (non-trap) defects in the boxed identity and the iff clause are reported separately as anomalies, not as trap verdicts."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3101,5 +3251,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:06:45.571Z"
 }

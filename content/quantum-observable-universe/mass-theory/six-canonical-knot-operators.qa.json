@@ -2141,6 +2141,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.132Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No assert-by-denying constructions in the two-sentence statement plus pointer."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2160,6 +2175,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.172Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Statement plus a cross-reference; nothing to pivot."
       }
     ],
     "trap-em-dash": [
@@ -2179,6 +2209,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.211Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2198,6 +2243,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.251Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -2217,6 +2277,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.293Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Closes on a cross-reference to the trajectory trace."
       }
     ],
     "trap-meta-commentary": [
@@ -2236,6 +2311,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.334Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2255,6 +2345,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.378Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2274,6 +2379,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.419Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2293,6 +2413,21 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.461Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "'a unique trajectory' is a specific claim the cited witness checks operator by operator."
       }
     ],
     "trap-nonspeakable": [
@@ -2312,6 +2447,22 @@
         "reviewed_at": "2026-08-15T10:31:00.527Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2b55a4712224",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:18.503Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Two short sentences.",
+        "notes": "NOTES. (1) The conditional banner reads 'Proposition (conditional on def:q-reeb-flow-on-color-coords)' — a DEFINITION, not a conjecture. uses[] carries no conj:, so there is no SS3b propagation issue, but every proposition is conditional on its definitions and the banner form invites the reader to expect a conjectural dependency; recommend dropping it or naming what is actually assumed. (2) computation.status = verified is HONEST here, unlike several siblings in this batch: computations/reeb-flow-garside-closed-form-verification.witness.json carries twelve real assertions, all passing, checking direct iterative composition against the closed form and centre-of-mass preservation for each of the six operators. (3) BUT two of its consumers misreport it — the sibling table's two 3-cycle rate rows and the context remark's 'All three sectors rotate uniformly' both contradict the witness's own predicted twists (0.5, 0, -0.5) and its centre-of-mass assertion. See the verdicts recorded on those two blocks."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2335,5 +2486,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:43:18.503Z"
 }

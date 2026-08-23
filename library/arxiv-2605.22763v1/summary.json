@@ -1,0 +1,91 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2605.22763v1",
+ "source_sha256": "1fe6b92bb5eb0b45",
+ "brief": "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob",
+ "extended": "**Advancing mathematics research with AI-driven formal proof search**\n\n*Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós*\n\n59 pp, 14 sections.\n\n**Outline.** Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (i).There is an infinite set𝐴⊆ℕ satisfying that there are no distinct𝑎,𝑏,𝑐∈𝐴\n- Theorem: There exists an infinite set𝐴⊂ℤ + with no distinct𝑎,𝑏,𝑐∈𝐴 with 𝑏,𝑐 > 𝑎,\n- Theorem: Let M(𝑆) denote the set of multiples of a subset𝑆⊆ℕ , and let𝑑(𝑋) denote\n- Theorem: is still used to construct a counterexample, but with additional constraints to\n- Theorem: Let𝐴⊂ℝ 2 be an infinite set for which there exists some𝜖 >0such that in any\n- Theorem: , any finite coloring of the edges of the infinite complete graph must contain a",
+ "tokens": {
+  "brief": 36,
+  "extended": 292
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-alphaproof-nexus",
+   "title": "AlphaProof Nexus",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-systematic-evaluation-on-open-problems",
+   "title": "Systematic Evaluation on Open Problems",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-deployment-in-mathematics-research",
+   "title": "Deployment in Mathematics Research",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-impact-of-agent-architecture-and-model",
+   "title": "Impact of Agent Architecture and Model",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-discussion",
+   "title": "Discussion",
+   "pages": "10-18"
+  },
+  {
+   "id": "sec-006-materials-and-methods",
+   "title": "Materials and Methods",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-007-further-details-on-alphaproof-nexus-agents",
+   "title": "Further Details on AlphaProof Nexus Agents",
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-008-prompts",
+   "title": "Prompts",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-009-supplementary-text",
+   "title": "Supplementary Text",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-010-related-work",
+   "title": "Related Work",
+   "pages": "22-26"
+  },
+  {
+   "id": "sec-011-selection-of-erdős-and-oeis-problems",
+   "title": "Selection of Erdős and OEIS Problems",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-012-details-on-comparisons-across-agent-architecture",
+   "title": "Details on Comparisons across Agent Architectures and Models",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-013-deformalized-lean-proofs",
+   "title": "Deformalized Lean Proofs",
+   "pages": "30-59"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
