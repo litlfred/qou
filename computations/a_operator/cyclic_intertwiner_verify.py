@@ -64,7 +64,34 @@ def _idcheck(lam, n_inner, n_block, q_str, h, rho_in, rho_bl, p_in, p_bl,
     mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
     if dim == 0:
         return None, 0
-    I_if = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    # THE SIXTH INTERFACE CONSTRUCTION, and the one 3dcf933c5 missed.
+    #
+    # That commit moved the physical p-n interface from the colour-BLIND
+    # `-h/2` to the colour-weighted `_d_pn(h) = -h(1 - delta/2)/2`, and swept
+    # the five `I_iface` sites in `a_operator_gauge_align`. This construction
+    # lives HERE, in the verifier, so the sweep did not reach it — leaving one
+    # leg of the pairing
+    #
+    #     chi^lambda(W . I . beta)  ==  sum Tr[A . (rho_mu (x) rho_nu)]
+    #
+    # colour-weighted (the `A` side, built by
+    # `gauge_aligned_A_combiner_general_cyclic`) and the other colour-blind.
+    #
+    # 3dcf933c5 predicted this failure in its own closing paragraph — it
+    # deferred re-verifying the 1.5e-49 reconstruction figure, said
+    # "expectation is not measurement", and warned that leaving an interface
+    # blind "would have degraded a verified 1.5e-49 result to the ~1e-4 scale
+    # of the colour weighting, silently." Measured before this fix: h6
+    # max_abs_residual 6.7123064e-49 -> 0.0011504265, identical at
+    # QOU_COMPUTE_DPS 50/60/70 so precision was exonerated, and the
+    # colour-weighting delta 7.19e-5 (~6.9e-4 relative) is the same order as
+    # the residual. Bean qou-w701.
+    #
+    # Calling `g._d_pn` rather than restating `-h * (1 - delta/2) / 2` is
+    # deliberate: a second copy of the formula is exactly how the two legs
+    # drifted apart, and the underscore is worth crossing to keep ONE
+    # definition.
+    I_if = mats[n_inner - 1] + g._d_pn(h) * mp.eye(dim)
 
     def fac(br):
         return [(mp.mpf(1), mp.mpf(0) if s > 0 else -h, gg) for (s, gg) in br]
