@@ -3,12 +3,12 @@
   "description": "Bean qou-tq20 tranche 5: period-side q-deformation check via the #3934 theta machinery. Geometric heat family of the (3,1) isotypic weights spans [3,15] exactly (endpoints exact); the categorical Markov ratio covers the same range on [q15, 1]; the dictionary endpoint q15 = 0.62556... matches NO pre-stated distinguished constant (nearest 1/phi at 1.22%). Structured null: endpoint dictionaries killed; identification neither refuted nor doubly-confirmed; wall stays open, dictionary-gated. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-period-qdeformation.md",
   "tier": "symbolic-exact (Markov ratio) + 40-dps theta numerics (geometric family); pre-stated decision rules; structured null",
-  "computedAt": "2026-08-23T08:49:25.453574+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-07-18T23:11:19.744650+00:00",
+  "commitSha": "8bffc388e32b20b3f6223526b6f67ef69b6edc45",
   "engine": "sympy+mpmath",
-  "engineVersion": "1.14.0/1.4.1",
+  "engineVersion": "1.14.0/1.3.0",
   "scriptFile": "alpha_em_period_qdeformation_probe.py",
-  "scriptHash": "80be355cedb9",
+  "scriptHash": "9c77772dc4e2",
   "assertions": [
     {
       "name": "geometric_heat_family_endpoints",
@@ -22,33 +22,33 @@
     },
     {
       "name": "dictionary_endpoint_q15_computed",
-      "passed": false,
-      "detail": "r(q\u2081\u2085) = 15 at q\u2081\u2085 = 3.732050807568877293527446 (30-dps root of the exact symbolic ratio)"
+      "passed": true,
+      "detail": "r(q\u2081\u2085) = 15 at q\u2081\u2085 = 0.6255624478797316675325509 (30-dps root of the exact symbolic ratio)"
     },
     {
       "name": "distinguished_candidate_test_null",
       "passed": true,
-      "detail": "q\u2081\u2085 vs the PRE-STATED candidate list at exact-grade tolerance 1e-6: NO match \u2014 nearest is 1/q0 at 314.2497% relative (a clean miss for exact quantities). HONEST NULL: endpoint-to-distinguished-constant dictionaries are killed; the deformation matching stays dictionary-gated. Recorded, not scored (post-hoc): r(1/q0) = 3.0437062"
+      "detail": "q\u2081\u2085 vs the PRE-STATED candidate list at exact-grade tolerance 1e-6: NO match \u2014 nearest is 1/phi at 1.2181% relative (a clean miss for exact quantities). HONEST NULL: endpoint-to-distinguished-constant dictionaries are killed; the deformation matching stays dictionary-gated. Recorded, not scored (post-hoc): r(1/q0) = 4.007239"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "result": {
     "geometric_family": "R_geo(t) = 3 theta_{G(5t0)^-1}/theta_{G(t0)^-1}: [15 -> 3], monotone; endpoints exact",
     "categorical_family": "r(q) = y_[2]/y_[1,1]: r(1)=3; covers [3,15] on [q15,1]",
-    "q15": "3.73205080756887729352744634151",
+    "q15": "0.625562447879731667532550949732",
     "candidate_test": {
-      "1/q0": 3.1424965139339194,
-      "|nome(tau0)|^(1/5)": 3.718740293495132,
-      "1/phi": 5.038585054387937,
-      "1/sqrt(5)": 7.345119301206997,
-      "1/phi^2": 8.770635861956814,
-      "|nome(tau0)|": 11.059802290328363,
-      "e^(-2pi/5)": 12.11288006657797,
-      "1/5": 17.660254037844386
+      "1/phi": 0.012181302754990431,
+      "|nome(tau0)|^(1/5)": 0.2090496938249253,
+      "1/q0": 0.30563907266904705,
+      "1/sqrt(5)": 0.3988001576302492,
+      "1/phi^2": 0.6377437506347221,
+      "|nome(tau0)|": 1.021451429970698,
+      "e^(-2pi/5)": 1.1979672239632186,
+      "1/5": 2.1278122393986583
     },
     "outcome": "structured null \u2014 no distinguished-constant match; dictionary-gated",
     "recorded_not_scored": "r(1/q0) ~ 4.0072",
-    "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
+    "verdict": "PERIOD-SIDE q-DEFORMATION: STRUCTURED NULL (scope-(a); no fit; nothing wired): the canonical geometric heat deformation of the (3,1) isotypic weights spans exactly [3, 15] (endpoints exact: multiplicity 3 at t\u2192\u221e = consistency-1's anchor; 3\u00b7area-ratio 15 at t\u21920, canonical via the #3934 isogeny-block Grams), and the categorical Markov family covers the same range on [q\u2081\u2085, 1] \u2014 but the dictionary endpoint q\u2081\u2085 = 0.6255624478\u2026 matches NO pre-stated distinguished constant (nearest 1/\u03c6 at 1.22%). Formalize-first pruning made explicit: free-reparameterization curve matching is vacuous; only endpoints + distinguished points are dictionary-free, and the distinguished-point test returns NULL. The identification survives (nothing refuted \u2014 the true dictionary need not send t\u21920 to a distinguished q) but gains no second consistency point; the \u03c4-identification remains OPEN and dictionary-gated. NO tier change."
   },
   "context": {
     "bean": "qou-tq20 (B2 lift) tranche 5; consistency-1 #4019 merged",

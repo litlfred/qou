@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-23T09:15:45.188129+00:00",
+  "computedAt": "2026-07-18T17:56:11.193325+00:00",
   "computation": "option-e-kl-betti-contributive-deuteron",
   "scriptFile": "option_e_kl_betti_contributive_deuteron.py",
   "description": "Scope-limited measurement (AGENTS.md \u00a7before-declaring-refuted): size of the KL left-cell Betti-sum contribution to deuteron binding vs the canonical f^\u03bb ansatz. NOT a refutation. B_\u03bb = f^\u03bb on hooks; bulk partitions carry B_\u03bb > f^\u03bb.",
   "data": {
     "nucleus": "D (H_6/S_6)",
-    "sum_f_lambda": "-0.7174453364014864558505375091836859818891525274553567833395941125434865",
-    "sum_betti": "-1.026412395557070556167800989435987409262307752987894974564454315439565",
-    "B_D_f_lambda_MeV": "0.3666138140785936394958716786653497752118192854230487321061062654402234",
-    "B_D_betti_MeV": "0.5244956571048722722120410131665333410570908487446660442743603949620598",
+    "sum_f_lambda": "-0.74378088192245153080934819302349346704789156765195",
+    "sum_betti": "-1.4893825647789469116246259571038329627700686697145",
+    "B_D_f_lambda_MeV": "0.38007125020565552219596113307785274017954268304705",
+    "B_D_betti_MeV": "0.76107292777802282364340002724379559535253892596337",
     "B_D_AME_MeV": "2.22452",
-    "factor_needed_to_close": "6.067747353140145591936897978484338367585930493459440296798895401496722",
-    "factor_betti_delivers": "1.430648919826115354076835410247023955569598120760869048083202919782976",
+    "factor_needed_to_close": "5.8529025775991166499485734259440224345805350917274",
+    "factor_betti_delivers": "2.0024480340625825487404897024704115540947582527927",
     "verdict": "CONTRIBUTIVE (moves toward AME) but does NOT close",
-    "reconstruction_matches_canonical": false,
+    "reconstruction_matches_canonical": true,
     "per_partition": [
       {
         "partition": [
@@ -30,9 +30,9 @@
         "betti": 1,
         "sgn": -1,
         "chi": -0.6768766363460386,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": -1.2437991483744833e-05,
+        "term_f": -8.418985838417876e-06,
+        "term_betti": -8.418985838417876e-06
       },
       {
         "partition": [
@@ -46,9 +46,9 @@
         "betti": 5,
         "sgn": 1,
         "chi": 2.155255181452089,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": 9.863560383539689e-05,
+        "term_f": 0.0010629244812094733,
+        "term_betti": 0.0010629244812094733
       },
       {
         "partition": [
@@ -61,9 +61,9 @@
         "betti": 21,
         "sgn": -1,
         "chi": -0.8196548894596312,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": -0.00034205182747287707,
+        "term_f": -0.0025232800755307125,
+        "term_betti": -0.005887653509571663
       },
       {
         "partition": [
@@ -76,9 +76,9 @@
         "betti": 10,
         "sgn": 1,
         "chi": -0.49012578644043403,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": -0.0006853090066213158,
+        "term_f": 0.00335887615824985,
+        "term_betti": 0.00335887615824985
       },
       {
         "partition": [
@@ -90,9 +90,9 @@
         "betti": 21,
         "sgn": 1,
         "chi": -3.497294144384569,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": 0.0007731866279680458,
+        "term_f": -0.013520305332545482,
+        "term_betti": -0.05678528239669103
       },
       {
         "partition": [
@@ -104,9 +104,9 @@
         "betti": 41,
         "sgn": 1,
         "chi": -1.9722719128260298,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": 0.007318453556334671,
+        "term_f": -0.23094368631169027,
+        "term_betti": -0.5917931961737063
       },
       {
         "partition": [
@@ -118,9 +118,9 @@
         "betti": 10,
         "sgn": -1,
         "chi": -0.4698055110854846,
-        "y": 0.0,
-        "term_f": 0.0,
-        "term_betti": 0.0
+        "y": 0.010133462518969929,
+        "term_f": 0.04760756537790269,
+        "term_betti": 0.04760756537790269
       },
       {
         "partition": [
@@ -131,9 +131,9 @@
         "betti": 23,
         "sgn": -1,
         "chi": 4.2494023464559305,
-        "y": 0.01512381009802332,
-        "term_f": -0.32133577058947094,
-        "term_betti": -1.4781445447115664
+        "y": 0.014120874264455371,
+        "term_f": -0.3000263811669291,
+        "term_betti": -1.3801213533678738
       },
       {
         "partition": [
@@ -144,9 +144,9 @@
         "betti": 20,
         "sgn": 1,
         "chi": 1.6743958918986115,
-        "y": 0.046032434692020424,
-        "term_f": 0.6936886758816911,
-        "term_betti": 1.5415303908482025
+        "y": 0.04028438790125638,
+        "term_f": 0.6070681224856243,
+        "term_betti": 1.3490402721902761
       },
       {
         "partition": [
@@ -157,9 +157,9 @@
         "betti": 5,
         "sgn": -1,
         "chi": 3.2163177570587527,
-        "y": 0.07895296247592667,
-        "term_f": -1.2696890759185817,
-        "term_betti": -1.2696890759185817
+        "y": 0.05896068354593311,
+        "term_f": -0.9481814672855324,
+        "term_betti": -0.9481814672855324
       },
       {
         "partition": [
@@ -169,24 +169,22 @@
         "betti": 1,
         "sgn": 1,
         "chi": 1.559870308060941,
-        "y": 0.11532422490206616,
-        "term_f": 0.1798908342248752,
-        "term_betti": 0.1798908342248752
+        "y": 0.05918772109163174,
+        "term_f": 0.09232516873262867,
+        "term_betti": 0.09232516873262867
       }
     ]
   },
   "assertions": [
     {
       "label": "f^\u03bb path reproduces canonical -0.7439",
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "wallSeconds": 8.62,
-  "scriptHash": "3745c6ea3973",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
-  "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "allPassed": true,
+  "wallSeconds": 6.26,
+  "scriptHash": "a901f0e35160",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "durationMs": 0
 }

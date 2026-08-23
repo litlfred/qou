@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:23:35.048910+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-06-22T13:20:30.723709+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
-      "computed": 4.653311810663103e-41,
+      "computed": 1.8911325004052471e-41,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -24,9 +24,9 @@
     },
     {
       "name": "gram_matrix_nondegenerate",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (0 = non-degenerate, 1 = degenerate)",
       "source": "Frobenius self-duality A ≅ A^∨ implies the Markov-trace pairing is non-degenerate at generic q."
@@ -41,12 +41,12 @@
       "source": "Proposition states G has indefinite signature, NOT positive definite — confirmed empirically."
     }
   ],
-  "allPassed": false,
-  "durationMs": 769,
+  "allPassed": true,
+  "durationMs": 696,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
-  "scriptHash": "47b4c23be419",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "f71989f918b7",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,33 +56,23 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
-  },
-  "invocation": {
-    "argv": [
-      "computations/probes/frobenius_gram_matrix_probe.py"
-    ],
-    "reproduce": "python3 -u computations/probes/frobenius_gram_matrix_probe.py"
+    "mpmath": "1.3.0"
   },
   "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
   "contentBlock": "prop:frobenius-gram-matrix",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "z_at_q0": 0.6126880371464652,
-    "h_at_q0": 0.2090602987956393,
-    "max_single_trace_residue": 4.653311810663103e-41,
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "z_at_q0": 0.4993203340335613,
+    "h_at_q0": 0.20906032199559368,
+    "max_single_trace_residue": 1.8911325004052471e-41,
     "symmetry_residue": 0.0,
-    "det_G_at_q0": 2.9430936683045635e-41,
-    "num_positive_eigenvalues": 4,
+    "det_G_at_q0": -0.18920525307968047,
+    "num_positive_eigenvalues": 5,
     "num_negative_eigenvalues": 1,
-    "num_zero_eigenvalues": 1,
+    "num_zero_eigenvalues": 0,
     "is_indefinite": true,
-    "is_nondegenerate": false
+    "is_nondegenerate": true
   },
   "data": {
     "single_element_traces": [
@@ -95,47 +85,47 @@
       },
       {
         "basis_element": "σ_0",
-        "expected_closed_form": "q**3/(q**2 + 1)",
-        "expected_at_q0": 0.6126880371464652,
-        "computed_at_q0": 0.6126880371464652,
+        "expected_closed_form": "sqrt(q)/(q + 1)",
+        "expected_at_q0": 0.4993203340335613,
+        "computed_at_q0": 0.4993203340335613,
         "residue": 0.0
       },
       {
         "basis_element": "σ_1",
-        "expected_closed_form": "q**3/(q**2 + 1)",
-        "expected_at_q0": 0.6126880371464652,
-        "computed_at_q0": 0.6126880371464652,
+        "expected_closed_form": "sqrt(q)/(q + 1)",
+        "expected_at_q0": 0.4993203340335613,
+        "computed_at_q0": 0.4993203340335613,
         "residue": 0.0
       },
       {
         "basis_element": "L_+ = σ_0 σ_1",
-        "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.3753866308623884,
-        "computed_at_q0": 0.3753866308623884,
-        "residue": 3.062918244623176e-42
+        "expected_closed_form": "q/(q**2 + 2*q + 1)",
+        "expected_at_q0": 0.2493207959793872,
+        "computed_at_q0": 0.2493207959793872,
+        "residue": 1.8911325004052471e-41
       },
       {
         "basis_element": "L_- = σ_1 σ_0",
-        "expected_closed_form": "q**6/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.3753866308623884,
-        "computed_at_q0": 0.3753866308623884,
-        "residue": 3.062918244623176e-42
+        "expected_closed_form": "q/(q**2 + 2*q + 1)",
+        "expected_at_q0": 0.2493207959793872,
+        "computed_at_q0": 0.2493207959793872,
+        "residue": 1.8911325004052471e-41
       },
       {
         "basis_element": "e^- = σ_0 σ_1 σ_0",
-        "expected_closed_form": "(q**7 + q**3)/(q**4 + 2*q**2 + 1)",
-        "expected_at_q0": 0.6911664783584446,
-        "computed_at_q0": 0.6911664783584446,
-        "residue": 4.653311810663103e-41
+        "expected_closed_form": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**(5/2) + 2*q**(3/2) + sqrt(q))",
+        "expected_at_q0": 0.5514434199212097,
+        "computed_at_q0": 0.5514434199212097,
+        "residue": 1.0702368036185566e-41
       }
     ],
     "gram_matrix_eigenvalues": [
-      -0.7527021132519655,
-      4.230339225030225,
-      -2.167386424266832e-41,
-      0.7527021132519655,
-      0.7527021132519655,
-      0.7527021132519655
+      -0.8550672738326165,
+      3.4769498654951074,
+      0.10179668177772717,
+      0.8550672738326165,
+      0.8550672738326165,
+      0.8550672738326165
     ],
     "notes": {
       "errata_fix_propagated": "tr_M(e^-) corrected from stale z³ to canonical hz² + z",

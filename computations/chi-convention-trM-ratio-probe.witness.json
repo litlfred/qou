@@ -1,34 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:57:13.632810+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-06-29T01:15:03.418258+00:00",
+  "commitSha": "86f19c09a1e92aafbd63f2f445d3615d13c4eb8b",
   "assertions": [
     {
       "name": "sign_only_collapses_pn",
-      "computed": 0,
+      "computed": 1,
       "expected": 1,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "unit": "bool",
       "source": "probe (this script)"
     },
     {
       "name": "averaged_preserves_pn",
-      "computed": 0,
+      "computed": 1,
       "expected": 1,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "unit": "bool",
       "source": "probe (this script)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 29,
+  "allPassed": true,
+  "durationMs": 123,
   "computation": "chi-convention-trM-ratio-probe",
   "scriptFile": "chi_convention_trM_ratio_probe.py",
-  "scriptHash": "5662e6141e68",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "adee784af513",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,18 +38,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
-  },
-  "invocation": {
-    "argv": [
-      "computations/chi_convention_trM_ratio_probe.py"
-    ],
-    "reproduce": "python3 -u computations/chi_convention_trM_ratio_probe.py"
+    "mpmath": "1.3.0"
   },
   "description": "Resolves the #3047 ⚠ finding: switching canonical_tr_m_via_chi_cache from averaged (B) to sign-only (A) changes tr_M by 1.5–3.4×, BUT B is correct for the mass path (p/n asymmetry + documented 1.065/0.923). NOT a bug. See docs/audits/2026-06-29-chi-convention-mass-path-verdict.md.",
   "data": {
@@ -59,9 +49,33 @@
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "tr_M_averaged_B": "0.5751722439177718708265353439858617251768310907401",
-        "tr_M_sign_only_A": "2.1754468169362366623539329747065119848455136774687",
-        "ratio_A_over_B": "3.7822527772171917118546555816854172818270098351841",
+        "tr_M_averaged_B": "0.38835725751064872266708027251119746558196979855394",
+        "tr_M_sign_only_A": "1.3317824833042552057680837507791586073202815454154",
+        "ratio_A_over_B": "3.4292715213845021150061647853921811471422795098002",
+        "averaged_complete": true,
+        "sign_only_complete": true,
+        "ratio_trustworthy": true
+      },
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "n_strands": 3,
+        "tr_M_averaged_B": "1.0653062286131670593652845464313725576506616741352",
+        "tr_M_sign_only_A": "1.6331535640940526472880098820991948140198706950646",
+        "ratio_A_over_B": "1.5330367177333774408164138400934711172519049779825",
+        "averaged_complete": true,
+        "sign_only_complete": true,
+        "ratio_trustworthy": true
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "n_strands": 3,
+        "tr_M_averaged_B": "0.92323329718615355710525339599068604013866212190137",
+        "tr_M_sign_only_A": "1.6331535640940526472880098820991948140198706950646",
+        "ratio_A_over_B": "1.768950024952096488133649244630624227339682944466",
         "averaged_complete": true,
         "sign_only_complete": true,
         "ratio_trustworthy": true
@@ -71,16 +85,16 @@
         "Z": 2,
         "N": 2,
         "n_strands": 12,
-        "tr_M_averaged_B": "0.16097414544240738182587344098076450724643379378599",
-        "tr_M_sign_only_A": "2.8995883213999056886707037666542827444906358532248",
-        "ratio_A_over_B": "18.012757970734546192960988439222078349208087281279",
+        "tr_M_averaged_B": "0.053865961595545598776697941717895067043265134906821",
+        "tr_M_sign_only_A": "0.88561628693652081010879479101507762130836386196361",
+        "ratio_A_over_B": "16.441111616760891869178850582082115864495609258067",
         "averaged_complete": true,
         "sign_only_complete": true,
-        "ratio_trustworthy": true
+        "ratio_trustworthy": false
       }
     ],
-    "pn_distinct_sign_only_A": null,
-    "pn_distinct_averaged_B": null,
+    "pn_distinct_sign_only_A": false,
+    "pn_distinct_averaged_B": true,
     "verdict": "NOT a bug. The mass/vol-density path correctly uses the averaged (B) trace: sign-only (A) gives proton==neutron (cannot produce m_n≠m_p), while the documented canonical-for-mass values tr_M(𝓑₃)≈1.065(p)/0.923(n) (_li_2_q_util.py) ARE the averaged (B) values. Switching to A would destroy the p/n mass asymmetry. The #3047 'convention inconsistency' flag is downgraded to 'intentional three-convention structure' (A=character catalogue, B=mass/vol-density, C=binding)."
   }
 }

@@ -3,66 +3,66 @@
   "description": "Cross-isotope check REFUTES the block-trace magnitude \u0394_\u03bb=sgn\u00b7dim_q\u00b2: it matches the deuteron (~101%) by coincidence and blows up 40-450x for T/\u00b3He/\u2074He. The DERIVED sign is validated cross-isotope (right sign all four). Binding magnitude returns to open; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-block-trace.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-08-23T09:01:12.703973+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-07-11T18:24:26.578054+00:00",
+  "commitSha": "344c82081c513dbcf46d44a2dba888a09178a302",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "1.3.0",
   "scriptFile": "deltalambda_binding_cross_isotope_probe.py",
-  "scriptHash": "88abb820bf91",
+  "scriptHash": "9f8d9ee4610b",
   "assertions": [
     {
       "name": "deuteron_dimq2_near_100",
-      "passed": false,
-      "detail": "D: dim_q\u00b2 -> 0.331 (~101%, the earlier #3558 match)"
+      "passed": true,
+      "detail": "D: dim_q\u00b2 -> 1.014 (~101%, the earlier #3558 match)"
     },
     {
       "name": "block_magnitude_blows_up_for_heavier",
-      "passed": false,
-      "detail": "T/\u00b3He/\u2074He: dim_q\u00b2 -> t:12.8, 3he:19.5, 4he:-26.7 (40-450x overshoot) => block-trace magnitude REFUTED; deuteron match coincidental"
+      "passed": true,
+      "detail": "T/\u00b3He/\u2074He: dim_q\u00b2 -> t:39.4, 3he:59.5, 4he:449.6 (40-450x overshoot) => block-trace magnitude REFUTED; deuteron match coincidental"
     },
     {
       "name": "derived_sign_right_all_isotopes",
-      "passed": false,
+      "passed": true,
       "detail": "all four B same sign as target<0 => derived sign (-1)^{n(\u03bb)} is RIGHT cross-isotope (counit systematics had WRONG sign for all four)"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "result": {
     "per_isotope": [
       {
         "iso": "d",
         "n": 6,
         "npart": 11,
-        "ratio_dimq2": 0.33139995056924326,
-        "ratio_dim2": 0.35192690446576563,
+        "ratio_dimq2": 1.0139378067056035,
+        "ratio_dim2": 0.9086351823944088,
         "right_sign": true
       },
       {
         "iso": "t",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 12.783148653188045,
-        "ratio_dim2": 7.602869236632956,
+        "ratio_dimq2": 39.43810788594934,
+        "ratio_dim2": 22.484042680126638,
         "right_sign": true
       },
       {
         "iso": "3he",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 19.542091262119346,
-        "ratio_dim2": 11.49071012392136,
+        "ratio_dimq2": 59.5207760789318,
+        "ratio_dim2": 33.399923714712024,
         "right_sign": true
       },
       {
         "iso": "4he",
         "n": 12,
         "npart": 77,
-        "ratio_dimq2": -26.66759362457424,
-        "ratio_dim2": -7.519143805778336,
-        "right_sign": false
+        "ratio_dimq2": 449.6130441574843,
+        "ratio_dim2": 107.7448845195278,
+        "right_sign": true
       }
     ],
-    "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
+    "verdict": "REFUTED (block-trace magnitude), SIGN VALIDATED (cross-isotope): \u0394_\u03bb=sgn\u00b7dim_q\u00b2 reproduces the deuteron (~1.01) only by COINCIDENCE \u2014 it blows up 40-450x for T/\u00b3He/\u2074He (t:39x, 3he:60x, 4he:450x), growing ~unboundedly with A. So the block-trace magnitude (dim_q\u00b2 or dim\u00b2) is NOT the binding magnitude; the #3558 'block is the direction / convention selects dim_q\u00b2' lead is OVERTURNED by this cross-check (the single-isotope caveat was right). WHAT SURVIVES: the DERIVED sign (-1)^{n(\u03bb)} (#3542) gives the RIGHT sign for ALL FOUR isotopes (all ratios >0), where the counit had the wrong sign for all four \u2014 so the jet-order sign holds up cross-isotope; only the magnitude fails. The binding magnitude returns to OPEN; nothing wired."
   },
   "context": {
     "reuses": "atom-chi-rust-{d,t,3he,4he}.witness.json (\u03c7); wedderburn_jones_markov.y_lambda_at (validated y_\u03bb)",

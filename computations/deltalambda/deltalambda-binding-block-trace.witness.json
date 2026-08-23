@@ -3,27 +3,27 @@
   "description": "Track-A binding test: irrep-trace \u0394_\u03bb=sgn\u00b7dim reproduces 17% of the deuteron (refuted); the regular-rep BLOCK dimension dim\u00b2 reaches ~91-101%, localizing the magnitude to the block trace. Structural lead, not a closure; no fit selected; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-block-trace.md",
   "tier": "measurement (reuses co-Casimir witness y_\u03bb\u03c7^\u03bb; derived sign; magnitude scan)",
-  "computedAt": "2026-08-23T09:01:11.972417+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-07-11T18:08:16.798859+00:00",
+  "commitSha": "45494e50d1ad37a302b3895d59bf9933573c3b17",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "1.3.0",
   "scriptFile": "deltalambda_binding_block_trace_probe.py",
-  "scriptHash": "46d2495af045",
+  "scriptHash": "35d2ec7670f9",
   "assertions": [
     {
       "name": "irrep_trace_refuted",
       "passed": true,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim (irrep trace, #3542) -> 0.165 of target (17%): does NOT close binding"
+      "detail": "\u0394_\u03bb=sgn\u00b7dim (irrep trace, #3542) -> 0.171 of target (17%): does NOT close binding"
     },
     {
       "name": "derived_sign_validated_in_context",
       "passed": true,
-      "detail": "derived sign gives RIGHT sign (B_irrep=-0.71753<0) vs co-Casimir WRONG sign (+0.2483) => the jet-order sign holds up in the binding formula"
+      "detail": "derived sign gives RIGHT sign (B_irrep=-0.7439<0) vs co-Casimir WRONG sign (+0.145) => the jet-order sign holds up in the binding formula"
     },
     {
       "name": "block_trace_is_the_direction",
-      "passed": false,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (regular-rep BLOCK trace) -> 0.352 (91%): 5x better than irrep, the structural direction for the magnitude (dim\u00b2=Wedderburn block dim)"
+      "passed": true,
+      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (regular-rep BLOCK trace) -> 0.909 (91%): 5x better than irrep, the structural direction for the magnitude (dim\u00b2=Wedderburn block dim)"
     },
     {
       "name": "binding_trace_convention_is_quantum",
@@ -32,19 +32,19 @@
     },
     {
       "name": "convention_selects_quantum_block_not_classical",
-      "passed": false,
-      "detail": "quantum block dim_q\u00b2 (0.332, +-66.82%) is tr_M-convention-consistent; classical dim\u00b2 (0.352) mixes a classical integer into a quantum trace => quantum selected on CONVENTION grounds (not the 100% match); residual ~1.45% open"
+      "passed": true,
+      "detail": "quantum block dim_q\u00b2 (1.014, +1.45%) is tr_M-convention-consistent; classical dim\u00b2 (0.909) mixes a classical integer into a quantum trace => quantum selected on CONVENTION grounds (not the 100% match); residual ~1.45% open"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "result": {
-    "target_signed": "-4.35336500593",
-    "ratio_irrep_dim": 0.16482262559935748,
-    "ratio_block_dim2": 0.3522554404850362,
-    "ratio_block_dimq2": 0.33179164375279857,
-    "ratio_mixed": 0.34308216237138117,
-    "co_casimir_wrong_sign": "0.24827709",
-    "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
+    "target_signed": "-4.35336727599",
+    "ratio_irrep_dim": 0.1708793027097621,
+    "ratio_block_dim2": 0.9090820556579068,
+    "ratio_block_dimq2": 1.0144688251629193,
+    "ratio_mixed": 0.9599848954392969,
+    "co_casimir_wrong_sign": "0.14495922",
+    "verdict": "STRUCTURAL LEAD (not a closure): the derived irrep-trace \u0394_\u03bb=sgn\u00b7dim (#3542) reproduces only 17.1% of the deuteron \u2014 REFUTED as the closure \u2014 but its SIGN is validated in-context (right sign + coherent sum, vs co-Casimir's wrong sign). The REGULAR-REP BLOCK magnitude (tr g_\u03c1 over the \u03bb-block) reaches 90.9% (classical dim\u00b2) / 101.4% (quantum dim_q\u00b2), a 5x improvement. Q-DEFORMATION RESOLVED BY CONVENTION (not the 100% match): the binding \u0394_\u03bb is a quantum Markov trace tr_M (selector \u0394_\u03bb=tr_M(C_dim_q\u00b71_\u03bb)=1/dim_q; y_\u03bb,\u03c7^\u03bb at q0), so the block magnitude is the QUANTUM block dimension dim_q\u00b2 (101.4%, +1.45% residual) \u2014 classical dim\u00b2 (90.9%) mixes a classical integer into a quantum trace and is convention-INconsistent. This REVISES #3537: its 'classical magnitude' described the REFUTED irrep-trace; the working block trace is QUANTUM. OPEN: the 1.45% residual (higher-body / exact block-trace form) \u2014 DERIVE, do not fit; single-isotope (deuteron), could be coincidence until cross-checked on 3H/4He. NOTHING WIRED."
   },
   "context": {
     "reuses": "computations/rho-k-h3a-co-casimir.witness.json (y_\u03bb\u03c7^\u03bb, target, \u03bb\u22a26 deuteron)",

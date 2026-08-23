@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:57:27.223441+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-15T23:14:36.244429+00:00",
+  "commitSha": "1d14bdfe2fbe5264f6499152a136337bf2563173",
   "assertions": [
     {
       "name": "derived_b_matches_NgeZ_chain_within_5pct",
@@ -20,9 +20,9 @@
     },
     {
       "name": "3He_is_Z_outlier_gt_10pct",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "source": "proton-rich 3He needs the Z-dependent correction"
     },
     {
@@ -33,12 +33,12 @@
       "source": "extended alpha-cluster tower b ≈ 2"
     }
   ],
-  "allPassed": false,
-  "durationMs": 8,
+  "allPassed": true,
+  "durationMs": 65,
   "computation": "qlommel-delta-lambda-two-seed",
   "scriptFile": "qlommel_delta_lambda_two_seed_test.py",
-  "scriptHash": "67b677e0bbbf",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9ee1c4635d2f",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,124 +46,99 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.11.2",
+    "numpy": "1.26.4",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
-  },
-  "invocation": {
-    "argv": [
-      "computations/qbeta/qlommel_delta_lambda_two_seed_test.py"
-    ],
-    "reproduce": "python3 -u computations/qbeta/qlommel_delta_lambda_two_seed_test.py"
+    "clarabel": "0.11.1"
   },
   "description": "Derive-or-refute (no fit of b) of the binding Δ_λ ladder via the q-Lommel ORDER recurrence in its second-kind/hyperbolic regime. Derived coefficient b = q0^10 + q0^-10 = 2cosh(10 log q0) from the q0^(10A-5) canonical residual (Bring quintic '5'); Lean QOU.QBeta.two_root_geometric + two_seed_unique. Verdict NEAR-MATCH, gate-respecting, NOT wired: derived-b + two N≥Z seeds predicts Δ(4He) to ~-3.5%; 3He is the Z-dependent outlier. Extended α-cluster tower shows decisive b≈2 double-root behavior. Open keystone: derive 10A-5 from W_free/W_atom crossing-jet bookkeeping on Bring's surface.",
   "parameters": {
-    "q0": "1.10997858275",
-    "b_derived": "3.19112561185",
-    "geometric_ratio_r": "2.83887317251"
+    "q0": "1.10997859556",
+    "b_derived": "3.19112589873",
+    "geometric_ratio_r": "2.83887350003"
   },
   "data": {
     "pure_law_rows": [
       {
         "atom": "D",
         "A": 2,
-        "Delta_lambda": "5.1092",
-        "q0_pow_10A_5": "4.7832049",
-        "exp_actual": "15.6319",
+        "Delta_lambda": "4.7776",
+        "q0_pow_10A_5": "4.7832057",
+        "exp_actual": "14.9888",
         "exp_law": 15,
-        "exp_dev": "0.6319"
+        "exp_dev": "-0.01124"
       },
       {
         "atom": "T",
         "A": 3,
-        "Delta_lambda": "12.2017",
-        "q0_pow_10A_5": "13.578912",
-        "exp_actual": "23.9751",
+        "Delta_lambda": "13.4854",
+        "q0_pow_10A_5": "13.578916",
+        "exp_actual": "24.9338",
         "exp_law": 25,
-        "exp_dev": "-1.025"
+        "exp_dev": "-0.06623"
       },
       {
         "atom": "3He",
         "A": 3,
-        "Delta_lambda": "11.0486",
-        "q0_pow_10A_5": "13.578912",
-        "exp_actual": "23.0236",
+        "Delta_lambda": "11.7281",
+        "q0_pow_10A_5": "13.578916",
+        "exp_actual": "23.5957",
         "exp_law": 25,
-        "exp_dev": "-1.976"
+        "exp_dev": "-1.404"
       },
       {
         "atom": "4He",
         "A": 4,
-        "Delta_lambda": "32.2986",
-        "q0_pow_10A_5": "38.548809",
-        "exp_actual": "33.3046",
+        "Delta_lambda": "39.6597",
+        "q0_pow_10A_5": "38.548825",
+        "exp_actual": "35.2723",
         "exp_law": 35,
-        "exp_dev": "-1.695"
+        "exp_dev": "0.2723"
       },
       {
         "atom": "6Li",
         "A": 6,
-        "Delta_lambda": "29.1194",
-        "q0_pow_10A_5": "310.6726",
-        "exp_actual": "32.3115",
+        "Delta_lambda": "43.3454",
+        "q0_pow_10A_5": "310.67279",
+        "exp_actual": "36.124",
         "exp_law": 55,
-        "exp_dev": "-22.69"
-      },
-      {
-        "atom": "7Li",
-        "A": 7,
-        "Delta_lambda": "35.4824",
-        "q0_pow_10A_5": "881.9601",
-        "exp_actual": "34.2056",
-        "exp_law": 65,
-        "exp_dev": "-30.79"
-      },
-      {
-        "atom": "7Be",
-        "A": 7,
-        "Delta_lambda": "29.5014",
-        "q0_pow_10A_5": "881.9601",
-        "exp_actual": "32.4364",
-        "exp_law": 65,
-        "exp_dev": "-32.56"
+        "exp_dev": "-18.88"
       }
     ],
     "chains": {
       "T": {
-        "interior_b_emp": "3.0657859",
-        "b_derived_rel_err_pct": "4.0883"
+        "interior_b_emp": "3.2952156",
+        "b_derived_rel_err_pct": "-3.1588"
       },
       "3He": {
-        "interior_b_emp": "3.3857502",
-        "b_derived_rel_err_pct": "-5.7483"
+        "interior_b_emp": "3.7889598",
+        "b_derived_rel_err_pct": "-15.778"
       }
     },
     "two_seed_predictions": {
       "T": {
-        "pred_4He": "33.827957",
-        "actual_4He": "32.2986",
-        "err_pct": "4.7351"
+        "pred_4He": "38.256009",
+        "actual_4He": "39.6597",
+        "err_pct": "-3.5393"
       },
       "3He": {
-        "pred_4He": "30.14827",
-        "actual_4He": "32.2986",
-        "err_pct": "-6.6577"
+        "pred_4He": "32.648244",
+        "actual_4He": "39.6597",
+        "err_pct": "-17.679"
       }
     },
     "second_kind_admixture": {
-      "alpha": "0.51905591",
-      "beta": "7.4630145",
-      "beta_over_alpha": "14.3781"
+      "alpha": "0.58894066",
+      "beta": "0.25151018",
+      "beta_over_alpha": "0.427055"
     },
     "alpha_cluster_recurrence": {
       "8Be": {
-        "b_emp": "2.088914",
-        "err_pct": "4.4457"
+        "b_emp": "2.0889151",
+        "err_pct": "4.4458"
       },
       "12C": {
         "b_emp": "1.9564076",
@@ -174,12 +149,12 @@
         "err_pct": "-1.4558"
       },
       "20Ne": {
-        "b_emp": "2.0226915",
-        "err_pct": "1.1346"
+        "b_emp": "2.0226904",
+        "err_pct": "1.1345"
       },
       "24Mg": {
-        "b_emp": "1.9184937",
-        "err_pct": "-4.0753"
+        "b_emp": "1.9184958",
+        "err_pct": "-4.0752"
       }
     },
     "discipline": "derived b (no fit); near-match tier; NOT wired; open keystone = derive 10A-5 from Bring crossings"
