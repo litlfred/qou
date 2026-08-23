@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-23T07:44:35Z
+updated_at: 2026-08-23T07:55:08Z
 ---
 
 ## Context
@@ -149,3 +149,21 @@ The 7 open items, ordered by tractability. (Item 4 already discharged, PR #4727.
   color-tube-coords-intro, thurston-relaxation); spin-flavour-colour selection
   rule; Gell-Mann-Okubo (asserted not derived; ≈6% vs ≈3.3% cross-check). These
   are open physics/math, not formalization bookkeeping — leave beaned.
+
+
+
+## PROGRESS 2026-08-23 — T1 partially closed (decuplet wired; schur-weyl already backed)
+
+Corpus-grep first (per discipline) found item 2 is PARTIALLY STALE:
+- prop:schur-weyl-eightfold ALREADY has a Lean ref (a sibling landed it):
+  qou:QOU.Eightfold.RowCapObstruction.weyl_dim_alt_eq_zero_iff — backs the
+  obstruction half (alternating channel (1³)=0 iff N<3; decuplet forces N=3;
+  27=10+2·8+1). So item-2's 'schur-weyl-eightfold ref removed' is no longer true.
+- RowCapObstruction.lean ALSO already proves the decuplet DIMENSION shadow
+  (eightfold_channels_at_three: weylDimSym 3 = 10 ∧ weylDimMixed 3 = 8 ∧
+  weylDimAlt 3 = 1 ∧ 3³ = 10+2·8+1, sorry-free via decide).
+
+DONE this session: wired prop:borromean-decuplet → RowCapObstruction.eightfold_channels_at_three (no new Lean — reused the existing sorry-free decl per anti-duplication). Backs the block's stated dimension C(5,3)=10; the topological realisation stays def:borromean-baryon + weight table, and quantum Schur-Weyl duality itself stays open (qou-8pl3).
+
+STILL OPEN in item 2: prop:meson-octet-decomposition — its dimension shadow is 3⊗3̄ = 8⊕1 (9 = 8+1), a DIFFERENT decomposition than V^⊗3 (RowCapObstruction is baryon V^⊗3, not meson qq̄). Needs either a small new 9=8+1 lemma or a note that the octet dim matches weylDimMixed. Deferred.
+Remaining tiers T2 (Sym2Gate SU(3)/FS), T3 (octonion def), T4 (QA sidecars) unchanged.
