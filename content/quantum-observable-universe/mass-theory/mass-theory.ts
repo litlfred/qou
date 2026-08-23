@@ -204,6 +204,7 @@ export default chapter({
             "q-beta-categorical-precision-ladder-context",
             "q-beta-c3-hopf-three-fold-markov",
             "q-beta-c3-hopf-three-fold-markov-context",
+            "q-beta-c3-continuum-geometry",
             "ck-extraction-from-algebraic-rules",
             "typed-b3-sub-braid-extraction",
             "cl3-zeta5-geometric-realization",
