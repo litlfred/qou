@@ -1,20 +1,22 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:51:29.796342+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-23T13:34:19.361716+00:00",
+  "commitSha": "8f5f8d94574bcf6aabe3291eca6c39f29ca2f3fd",
   "assertions": [
     {
       "name": "I1_polynomial_identity",
       "computed": "7.2445e-71",
       "expected": "0.0",
-      "passed": false
+      "passed": true,
+      "tolerance": "1e-45"
     },
     {
       "name": "I2_g_equals_inverse_deformed_eig",
       "computed": "4.5278e-72",
       "expected": "0.0",
-      "passed": false
+      "passed": true,
+      "tolerance": "1e-45"
     },
     {
       "name": "I3_g_equals_sin_arctan_z",
@@ -29,12 +31,12 @@
       "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 1,
+  "allPassed": true,
+  "durationMs": 2,
   "computation": "reeb-g-structural-identity",
   "scriptFile": "reeb_g_structural_identity_probe.py",
-  "scriptHash": "4a9a108a853c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "ad76764d3923",
+  "scriptCommitSha": "a66995b53850c1ff451324e88c388fb211102bd3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
