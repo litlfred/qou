@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:22:10Z
-updated_at: 2026-08-22T19:18:49Z
+updated_at: 2026-08-23T03:47:43Z
 ---
 
 Follow-up to `qou-cdj8` (#5431), which surfaced the number, and to the owner's
@@ -188,3 +188,35 @@ through.
 
 qou-mass 1,036 -> **1,029** (9 files). Baselines re-tightened; all blocking
 precision gates green.
+
+
+## Verification closeout (2026-08-23)
+
+Three sibling findings landed on #5453 and are all now resolved:
+
+1. **#5427/#5460 — "headline counts cannot distinguish a drain from a
+   loosening; check `total_fields`."** Checked per-file, not by headline.
+   Against `origin/main`'s committed baseline this branch has **0 entries
+   added** and **0 entries increased**; 162 removed and 18 reduced, all
+   downward. Removals (47,956) exceed this branch's own drain (~44,236)
+   because `main` drained several witnesses — and deprecated
+   `binding_k_enumerator` outright — without re-baselining; the post-rebase
+   refresh tightens those stale over-permissive entries. Fresh re-run:
+   0 NEW / 0 REGRESSED. Triple mine 1410/487,638/0 vs main 1533/531,891/57.
+
+2. **#5474 / `qou-s2gm` defect 1 — "`--changed` reads the working tree only,
+   so it no-ops after a commit."** Audited the session transcript: of 73
+   `precision-gates.sh` invocations, **3** used `--changed` as a real check.
+   Those three were potentially false all-clears; all are superseded by
+   full-suite runs against the current tip, which is green. Recorded on #5495.
+
+3. **#5474 — collision on `q0-value-drift-audit.witness.json`.** Moot. #5474
+   landed first; this branch rebased onto it, and re-running
+   `q0_value_drift_audit.py` reproduces the committed witness
+   byte-identically under their new drift-vs-content classifier.
+
+PR body corrected on three stale counts: qou-mass is **684**, not 909;
+`mass_tower_operator_valued` (208) and `m_p_borromean` are drained, so A2 is
+0; and the "changing the assertion payloads alters assertion semantics" claim
+is retracted — it was float64 laundering, caught by
+`mpf_mixed_arithmetic_audit` and fixed at the source.
