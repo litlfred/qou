@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T18:45:00Z
+updated_at: 2026-08-23T19:05:00Z
 ---
 
 
@@ -1058,3 +1058,68 @@ the corpus moved), both watched scripts correctly `fixed`. The witness is
 refreshed by a clean plain run of the corrected producer; the intermediate
 monkeypatched test runs overwrote it and were reverted from a snapshot taken
 before any run, with `git status` confirmed clean before the final run.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `guarded_off_audit.py:136`, three facts behind one `None`
+
+The last Tier-2 entry, and structurally the twin of `incomplete_coverage_audit`
+above — including the same closure assertion:
+
+```python
+except (OSError, UnicodeDecodeError):
+    return None          # :136 — could not read the file
+if "import" not in text:
+    return None          # :139 — pre-filtered, never a candidate
+...                      #      — and read-and-clean is also None
+.add_assertion(name="no_guarded_off_candidates",
+               computed=1.0 if not rows else 0.0,
+               source="Closure gate: when this passes, every canonical-witness
+                       consumer runs unconditionally …")
+```
+
+Three different facts, one return value, feeding a closure gate that fires on an
+empty row set. Fixed the same way, deliberately: `stats` parameter, printed
+funnel, denominator embedded in the assertion `source`, `scan_coverage` in the
+witness. Three audits in this bean now share one idiom rather than three.
+
+### Measured
+
+```
+  python files seen:                2992
+  scanned for guard shapes:         2990
+  pre-filtered (no `import`):       2
+  UNREADABLE (not scanned at all):  0
+  scripts with guard-shape hits:    1
+```
+
+Zero unreadable, so the present result is sound; the two pre-filtered files are
+now visible rather than folded into the same silence as a read failure.
+
+## The witness is NOT refreshed here — the environment guard caught me
+
+Running the corrected producer produced a correct witness that I did **not**
+commit, because `WitnessBuilder` refused it on provenance grounds:
+
+> ⚠ environment: the environment block records **LESS** than the witness on disk
+> — downgraded numpy 2.5.0 → 2.4.6; python 3.13.12 → 3.11.15; scipy 1.18.0 →
+> 1.17.1. … install it and re-run rather than committing the weaker record; the
+> numbers can be identical while the provenance silently degrades.
+
+The committed witness was produced in a **stronger** container than this one.
+Refreshing it here would have traded a coverage improvement for a provenance
+regression — a straight downgrade of the artefact, with the numbers looking fine.
+Witness restored from a pre-run snapshot; **source change committed alone**.
+
+Consequence, stated rather than hidden: the committed `guarded-off-audit.witness.json`
+does not yet carry `scan_coverage`. The next run in a current container will add
+it. That is the correct order.
+
+### Checked the two witnesses I DID refresh earlier in this bean
+
+Both were produced in an environment **identical** to their predecessors —
+`git show <commit>^:<witness>` reports `python 3.11.15 / numpy 2.4.6 / scipy
+1.17.1` before and after for `witness-provenance-audit` and
+`incomplete-coverage-audit`, and neither run emitted the environment warning. No
+downgrade was committed. Verified rather than assumed, because this failure mode
+is invisible in the numbers.
