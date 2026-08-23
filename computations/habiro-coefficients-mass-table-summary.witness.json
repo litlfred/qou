@@ -1,14 +1,14 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:38:36.186709+00:00",
-  "commitSha": "c65facf831eaaa93edf9d31f92caa85808c2f6b9",
+  "computedAt": "2026-08-23T17:14:25.678010+00:00",
+  "commitSha": "98d4f7b30998ed8bde8f3e404a9117025e78e67c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-mass-table-summary",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "2313bfea83ad",
+  "scriptHash": "1cf43d2b762b",
   "scriptCommitSha": "23dd97f9a497891220811c909126d9fcf3a2b9f3",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -42,9 +42,9 @@
     "PR #1642 (Q_β Wenzl-Habiro keystone)",
     "PR #1625 (Φ_8 mechanism — level-2 Wenzl annihilator)"
   ],
-  "timestamp": "2026-08-23T08:38:35.839320+00:00",
+  "timestamp": "2026-08-23T17:14:25.592083+00:00",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "generator": "_habiro_coefficient_extract.py"
   },
@@ -62,7 +62,7 @@
       "n_nonzero": 9,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "4.15425589888142818118762888776e-30",
       "interface_kinds": []
     },
     {
@@ -78,7 +78,7 @@
       "n_nonzero": 9,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "5.95601115591098061094383420334e-30",
       "interface_kinds": []
     },
     {
@@ -94,7 +94,7 @@
       "n_nonzero": 13,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "4.69327225428433681711545935152e-31",
       "interface_kinds": [
         "positive"
       ]
@@ -112,7 +112,7 @@
       "n_nonzero": 15,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "3.77843877006629013677984271937e-31",
       "interface_kinds": [
         "positive",
         "negative"
@@ -131,7 +131,7 @@
       "n_nonzero": 16,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "8.84489965107140451464844035513e-31",
       "interface_kinds": [
         "positive",
         "positive"
@@ -150,7 +150,7 @@
       "n_nonzero": 18,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "4.68029061247002639096437659606e-31",
       "interface_kinds": [
         "positive",
         "positive",
@@ -170,7 +170,7 @@
       "n_nonzero": 20,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "5.28852047860839106921315410809e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -191,7 +191,7 @@
       "n_nonzero": 20,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "1.80147310173949471714338815399e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -212,7 +212,7 @@
       "n_nonzero": 22,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "1.89223718569128396834386315532e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -234,12 +234,34 @@
       "n_nonzero": 22,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "3.90069599874597689018687903228e-30",
       "interface_kinds": [
         "positive",
         "positive",
         "positive",
         "positive",
+        "negative"
+      ]
+    },
+    {
+      "label": "⁶He (helium-6, A=6)",
+      "slug": "helium-6",
+      "Z": 2,
+      "N": 4,
+      "A": 6,
+      "max_m": 128,
+      "extracted": true,
+      "deg_p_u": 232,
+      "n_habiro_coeffs": 22,
+      "n_nonzero": 22,
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0_rel_err": "2.92091972254847320887130866448e-30",
+      "interface_kinds": [
+        "positive",
+        "positive",
+        "negative",
+        "negative",
         "negative"
       ]
     },
@@ -256,7 +278,7 @@
       "n_nonzero": 24,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "1.40446196118830829167734272017e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -279,7 +301,7 @@
       "n_nonzero": 24,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "3.60186829629398934208583782138e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -302,7 +324,7 @@
       "n_nonzero": 25,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "5.45221009057322638407298507901e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -326,7 +348,7 @@
       "n_nonzero": 25,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "3.91861626264092171272771245463e-31",
       "interface_kinds": [
         "positive",
         "positive",
@@ -350,7 +372,7 @@
       "n_nonzero": 26,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "9.5249844001097703257122872417e-31",
       "interface_kinds": [
         "positive",
         "positive",
@@ -374,7 +396,7 @@
       "n_nonzero": 27,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "4.72551912103638486708407444591e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -399,7 +421,7 @@
       "n_nonzero": 27,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "9.59497890112261577836937917354e-31",
       "interface_kinds": [
         "positive",
         "positive",
@@ -424,7 +446,7 @@
       "n_nonzero": 28,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "5.84172947041971350755330879184e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -450,7 +472,7 @@
       "n_nonzero": 28,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "1.66374540919352017430961004133e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -476,7 +498,7 @@
       "n_nonzero": 29,
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0_rel_err": 0.0,
+      "tr_M_at_q0_rel_err": "1.44361330301338751875297394901e-30",
       "interface_kinds": [
         "positive",
         "positive",
@@ -484,6 +506,122 @@
         "positive",
         "positive",
         "positive",
+        "negative",
+        "negative",
+        "negative"
+      ]
+    },
+    {
+      "label": "¹²B (boron-12, A=12)",
+      "slug": "boron-12",
+      "Z": 5,
+      "N": 7,
+      "A": 12,
+      "max_m": 224,
+      "extracted": true,
+      "deg_p_u": 472,
+      "n_habiro_coeffs": 31,
+      "n_nonzero": 31,
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0_rel_err": "1.62568024726541597268610212534e-30",
+      "interface_kinds": [
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "negative",
+        "negative",
+        "negative",
+        "negative",
+        "negative",
+        "negative"
+      ]
+    },
+    {
+      "label": "¹²N (nitrogen-12, A=12)",
+      "slug": "nitrogen-12",
+      "Z": 7,
+      "N": 5,
+      "A": 12,
+      "max_m": 224,
+      "extracted": true,
+      "deg_p_u": 488,
+      "n_habiro_coeffs": 31,
+      "n_nonzero": 31,
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0_rel_err": "2.25627596808423648114557488453e-30",
+      "interface_kinds": [
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "negative",
+        "negative",
+        "negative",
+        "negative"
+      ]
+    },
+    {
+      "label": "¹⁴C (carbon-14, A=14)",
+      "slug": "carbon-14",
+      "Z": 6,
+      "N": 8,
+      "A": 14,
+      "max_m": 256,
+      "extracted": true,
+      "deg_p_u": 552,
+      "n_habiro_coeffs": 33,
+      "n_nonzero": 33,
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0_rel_err": "2.29514243049942882496787015227e-31",
+      "interface_kinds": [
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "negative",
+        "negative",
+        "negative",
+        "negative",
+        "negative",
+        "negative",
+        "negative"
+      ]
+    },
+    {
+      "label": "¹⁴O (oxygen-14, A=14)",
+      "slug": "oxygen-14",
+      "Z": 8,
+      "N": 6,
+      "A": 14,
+      "max_m": 256,
+      "extracted": true,
+      "deg_p_u": 568,
+      "n_habiro_coeffs": 34,
+      "n_nonzero": 34,
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "tr_M_at_q0_rel_err": "1.03768853741719094877168875244e-30",
+      "interface_kinds": [
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "positive",
+        "negative",
+        "negative",
         "negative",
         "negative",
         "negative"
@@ -535,6 +673,21 @@
       "phi_8_mult": 8,
       "factored": "1024*u**74*(u - 1)*(u + 1)*(u**2 + 1)*(u**4 + 1)**8*(u**16 + u**8 + u**4 + 1)**2*(u**16 - u**12 + u**8 + 1)**2*(u**28 + u**24 + u**20 - 1)**2*(u**20 + u**12 - u**8 + u**4 - 1)**2*(u**48 + 2*u**44 + 3*u**40 + 4*u**36 + 6*u**32 + 7*u**28 + 6*u**24 + 2*u**20 + u**16 - u**12 - 2*u**8 - 2*u**4 - 1)",
       "len_factored": 294
+    },
+    {
+      "pair": "beryllium-6_minus_helium-6",
+      "label_X": "⁶Be (beryllium-6, A=6)",
+      "label_Y": "⁶He (helium-6, A=6)",
+      "Z_X": 4,
+      "N_X": 2,
+      "A": 6,
+      "diff_zero": false,
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 9,
+      "factored": "4096*u**86*(u - 1)*(u + 1)*(u**2 + 1)*(u**4 + 1)**9*(u**8 + 1)*(u**16 + u**8 + u**4 + 1)**2*(u**16 - u**12 + u**8 + 1)**2*(u**28 + u**24 + u**20 - 1)**2*(u**20 + u**12 - u**8 + u**4 - 1)**2*(u**44 + u**40 + 2*u**36 + 2*u**32 + 2*u**28 + u**24 + u**20 + u**16 - u**8 - u**4 - 1)*(u**48 + 2*u**44 + 3*u**40 + 4*u**36 + 6*u**32 + 7*u**28 + 6*u**24 + 2*u**20 + u**16 - u**12 - 2*u**8 - 2*u**4 - 1)",
+      "len_factored": 393
     },
     {
       "pair": "beryllium-7_minus_lithium-7",
@@ -595,6 +748,36 @@
       "phi_8_mult": 17,
       "factored": "1048576*u**150*(u - 1)*(u + 1)*(u**2 + 1)*(u**4 + 1)**17*(u**8 + 1)*(u**16 + u**8 + u**4 + 1)**4*(u**16 - u**12 + u**8 + 1)**4*(u**28 + u**24 + u**20 - 1)**4*(u**20 + u**12 - u**8 + u**4 - 1)**4*(u**44 + u**40 + 2*u**36 + 2*u**32 + 2*u**28 + u**24 + u**20 + u**16 - u**8 - u**4 - 1)*(u**48 + 2*u**44 + 3*u**40 + 4*u**36 + 6*u**32 + 7*u**28 + 6*u**24 + 2*u**20 + u**16 - u**12 - 2*u**8 - 2*u**4 - 1)",
       "len_factored": 398
+    },
+    {
+      "pair": "nitrogen-12_minus_boron-12",
+      "label_X": "¹²N (nitrogen-12, A=12)",
+      "label_Y": "¹²B (boron-12, A=12)",
+      "Z_X": 7,
+      "N_X": 5,
+      "A": 12,
+      "diff_zero": false,
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 21,
+      "factored": "16777216*u**182*(u - 1)*(u + 1)*(u**2 + 1)*(u**4 + 1)**21*(u**8 + 1)*(u**16 + u**8 + u**4 + 1)**5*(u**16 - u**12 + u**8 + 1)**5*(u**28 + u**24 + u**20 - 1)**5*(u**20 + u**12 - u**8 + u**4 - 1)**5*(u**44 + u**40 + 2*u**36 + 2*u**32 + 2*u**28 + u**24 + u**20 + u**16 - u**8 - u**4 - 1)*(u**48 + 2*u**44 + 3*u**40 + 4*u**36 + 6*u**32 + 7*u**28 + 6*u**24 + 2*u**20 + u**16 - u**12 - 2*u**8 - 2*u**4 - 1)",
+      "len_factored": 399
+    },
+    {
+      "pair": "oxygen-14_minus_carbon-14",
+      "label_X": "¹⁴O (oxygen-14, A=14)",
+      "label_Y": "¹⁴C (carbon-14, A=14)",
+      "Z_X": 8,
+      "N_X": 6,
+      "A": 14,
+      "diff_zero": false,
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 25,
+      "factored": "268435456*u**214*(u - 1)*(u + 1)*(u**2 + 1)*(u**4 + 1)**25*(u**8 + 1)*(u**16 + u**8 + u**4 + 1)**6*(u**16 - u**12 + u**8 + 1)**6*(u**28 + u**24 + u**20 - 1)**6*(u**20 + u**12 - u**8 + u**4 - 1)**6*(u**44 + u**40 + 2*u**36 + 2*u**32 + 2*u**28 + u**24 + u**20 + u**16 - u**8 - u**4 - 1)*(u**48 + 2*u**44 + 3*u**40 + 4*u**36 + 6*u**32 + 7*u**28 + 6*u**24 + 2*u**20 + u**16 - u**12 - 2*u**8 - 2*u**4 - 1)",
+      "len_factored": 400
     }
   ],
   "phi_k_scaling_table": [
@@ -623,6 +806,15 @@
       "phi_2_mult": 1,
       "phi_4_mult": 1,
       "phi_8_mult": 8,
+      "phi_1_phi_2": 1
+    },
+    {
+      "A": 6,
+      "pair": "beryllium-6_minus_helium-6",
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 9,
       "phi_1_phi_2": 1
     },
     {
@@ -660,14 +852,32 @@
       "phi_4_mult": 1,
       "phi_8_mult": 17,
       "phi_1_phi_2": 1
+    },
+    {
+      "A": 12,
+      "pair": "nitrogen-12_minus_boron-12",
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 21,
+      "phi_1_phi_2": 1
+    },
+    {
+      "A": 14,
+      "pair": "oxygen-14_minus_carbon-14",
+      "phi_1_mult": 1,
+      "phi_2_mult": 1,
+      "phi_4_mult": 1,
+      "phi_8_mult": 25,
+      "phi_1_phi_2": 1
     }
   ],
   "verdicts": {
     "phi_1_universal_across_mirror_pairs": true,
     "phi_2_universal_across_mirror_pairs": true,
     "phi_8_universal_across_mirror_pairs": false,
-    "n_atoms_extracted": 20,
-    "n_mirror_pairs_tested": 7,
+    "n_atoms_extracted": 25,
+    "n_mirror_pairs_tested": 10,
     "failures": []
   },
   "q0Anchor": "proton",
