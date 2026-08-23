@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:11:55.849819+00:00",
-  "commitSha": "6d05da72698585f2e277d5be1fb3cdc5ea829a4c",
+  "computedAt": "2026-08-23T21:27:36.826216+00:00",
+  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -647,7 +647,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ae8a199838f7",
-  "scriptCommitSha": "cfda3b0249e7779bfe5992974c412f273adf984a",
+  "scriptCommitSha": "916a47d7643d5f7212b58f78177f8585715d84a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -3858,6 +3858,7 @@
         "he4-sdp-compositional-probe.witness.json",
         "hecke-crossed-module-q8.witness.json",
         "phi0-normalization-disproof.witness.json",
+        "hecke-a2-tail-schedule.witness.json",
         "hecke-agtb-corner-shape.witness.json",
         "hecke-agtb-lineage-schedule.witness.json",
         "hecke-block-transport-shape.witness.json",
