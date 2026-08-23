@@ -136,7 +136,45 @@ def candidates(kind: str = "inline") -> list[Path]:
                 for n in ast.walk(tree))
             if in_code:
                 out.append(p)
+
+
     return out
+
+
+# ---------------------------------------------------------------------------
+# 🛑 `--literal` CANNOT CONCLUDE "STRADDLE". Measured 2026-08-23: it reported 3
+# of 14, and ALL THREE were false positives, each for a DIFFERENT benign reason:
+#
+#   chirality_avg_content_chiral   the literal sits inside an ordinary STRING
+#                                  explaining that the PREVIOUSLY COMMITTED
+#                                  witness was muon-era. Not a docstring, so
+#                                  the docstring guard above does not catch it.
+#   sigma_all_evaluator            `_SELFTEST_Q0`, used only in a selftest. Its
+#                                  own comment: "the witness IS emitted at the
+#                                  live proton q_0 ... the two anchors are
+#                                  deliberate."
+#   qbeta_eigenphase_taylor_in_u   `Q0_MP_PIN` and `Q0_MUON_PIN` iterated in a
+#                                  loop that BUILDS an anchor-comparison table.
+#                                  A comparison producer needs both pins --
+#                                  AGENTS.md sanctions exactly this.
+#
+# So a muon literal in code does NOT mean the producer has a q of its own IN
+# THE COMPUTED PATH. It may be documentation, a pinned test constant, or one
+# leg of a deliberate comparison, and no static selector distinguishes those
+# from a live second anchor.
+#
+# `--candidates` (inline) is NOT affected and remains sound: it keys on a
+# COMPUTED CLOSED FORM, `1/(1 - sqrt(Vol/ratio))`, which cannot appear for
+# documentation. Its 3 straddles were independently confirmed by tracing the
+# carrier to a shared defaulted `_cached_seminormal` call.
+#
+# Therefore `--literal` reports MOVES, a fact, instead of STRADDLE, a judgement.
+LITERAL_VERDICT_NOTE = (
+    "MOVES = its output changed under the anchor flip. In --literal mode that "
+    "is NOT a straddle verdict: the selector cannot tell a computed second "
+    "anchor from a documented one, a selftest constant, or a deliberate "
+    "comparison leg. Read the producer."
+)
 
 
 def _run(prod: Path, anchor: str, timeout: int) -> int:
@@ -170,7 +208,7 @@ def _tree_witnesses() -> dict:
     return out
 
 
-def audit(prod: Path, timeout: int = 900):
+def audit(prod: Path, timeout: int = 900, verdict_word: str = "STRADDLE"):
     """(verdict, detail). Restores every witness in the tree, not just local ones."""
     saved = _tree_witnesses()
 
@@ -219,7 +257,8 @@ def audit(prod: Path, timeout: int = 900):
                      and not any(s in k for s in STAMP_KEYS)
                      and fa.get(k) != fb.get(k)]
             if moved:
-                return "STRADDLE", f"{len(moved)} field(s) move, e.g. {moved[0]} [{f.name}]"
+                return (verdict_word,
+                        f"{len(moved)} field(s) move, e.g. {moved[0]} [{f.name}]")
         return "clean", "anchor flip moves nothing but the stamp"
     finally:
         restore()
@@ -251,10 +290,16 @@ def main(argv=None) -> int:
 
     print("=" * 72)
     print("anchor-flip straddle audit — producers with a q of their own")
+    if args.literal:
+        print("-" * 72)
+        for line in LITERAL_VERDICT_NOTE.split(". "):
+            if line.strip():
+                print("  " + line.strip().rstrip(".") + ".")
     print("=" * 72)
     counts = {}
     for t in targets:
-        verdict, detail = audit(t if t.is_absolute() else REPO / t, args.timeout)
+        verdict, detail = audit(t if t.is_absolute() else REPO / t, args.timeout,
+                                "MOVES" if args.literal else "STRADDLE")
         counts[verdict] = counts.get(verdict, 0) + 1
         print(f"  {verdict:11s} {t.stem}: {detail}")
     print("\n  " + "  ".join(f"{k}={v}" for k, v in sorted(counts.items())))
@@ -264,7 +309,7 @@ def main(argv=None) -> int:
               f"{tested} actually tested — "
               f"TIMEOUT/RUN-FAIL/NO-WITNESS are UNTESTED, not clean")
     print("=" * 72)
-    return 1 if counts.get("STRADDLE") else 0
+    return 1 if counts.get("STRADDLE") else 0  # MOVES never fails the gate
 
 
 if __name__ == "__main__":
