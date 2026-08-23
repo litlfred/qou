@@ -140,6 +140,11 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
         # against the downstream witness's own directory first (upstreams
         # are typically siblings, e.g. substrate/), then fall back to the
         # computations/ root for the pre-existing flat-layout witnesses.
+        # Set by the tree-search fallback below when the ONLY match for this
+        # upstream lives under _deprecated/. Must be reset per entry: a witness
+        # with several upstreams would otherwise carry a True from an earlier
+        # entry onto a later one that resolved perfectly well as a sibling.
+        deprecated_only = False
         ups_path = witness_path.parent / ups_name
         if not ups_path.exists():
             ups_path = HERE / ups_name
@@ -161,7 +166,20 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
             # rejects an absolute pattern outright
             _base = Path(ups_name).name
             matches = sorted(HERE.rglob(_base)) if _base else []
-            matches = [m for m in matches if "_deprecated" not in m.parts]
+            live = [m for m in matches if "_deprecated" not in m.parts]
+            # A live witness may LEGITIMATELY depend on a retired one, and at
+            # least one does so deliberately: he4_sdp_compositional_probe.py
+            # carries its own two-path resolver and a comment explaining that
+            # the anchor "currently lives under computations/_deprecated/
+            # (which _path_bridge.witness_path skips by convention)". Excluding
+            # _deprecated outright reported that as `upstream_missing`, which is
+            # false — the file is there and the producer reads it. But silently
+            # accepting it would hide the fact that a live result rests on a
+            # retired artifact. So: resolve it, and say which kind it is.
+            if live:
+                matches = live
+            elif matches:
+                deprecated_only = True
             if matches:
                 if len(matches) > 1:
                     _AMBIGUOUS_UPSTREAMS.setdefault(
@@ -174,6 +192,16 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
                 "downstream":      witness_path.name,
                 "upstream":        ups_name,
                 "kind":            "upstream_missing",
+                "recorded_sha256": recorded_sha,
+                "recorded_at":     entry.get("computedAt"),
+            })
+        elif deprecated_only and current_sha == recorded_sha:
+            # Resolves, hash matches — not drift. Reported so the dependency on
+            # a retired artifact is visible rather than silent.
+            drifts.append({
+                "downstream":      witness_path.name,
+                "upstream":        ups_name,
+                "kind":            "upstream_deprecated",
                 "recorded_sha256": recorded_sha,
                 "recorded_at":     entry.get("computedAt"),
             })
@@ -320,7 +348,17 @@ def main() -> int:
                         help="skip the self-staleness (scriptHash) check")
     args = parser.parse_args()
 
-    witnesses = sorted(HERE.rglob("*.witness.json"))
+    # Deprecated witnesses are not audited. This tool already excludes
+    # `_deprecated` when resolving an upstream (line ~164) and when locating a
+    # producer (~212); the scan itself did not, so it was auditing retired
+    # artifacts. One of them, qbeta-gb-filtration-residues.witness.json, is
+    # hand-written and not even valid JSON — it carries `"rel_error_pct": +20.27`,
+    # and JSON forbids a leading `+` on a number — so it surfaced as a permanent
+    # `unreadable` drift record that no regeneration could ever clear.
+    witnesses = sorted(
+        w for w in HERE.rglob("*.witness.json")
+        if "_deprecated" not in w.parts
+    )
     repo_root = HERE.parent
     producer_index = (
         {} if args.no_self
