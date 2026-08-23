@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-23T07:52:07Z
+updated_at: 2026-08-23T08:18:06Z
 ---
 
 
@@ -279,3 +279,5 @@ LEAN + HONEST WALK-BACK (2026-08-23, PR #5506).
 SOLID: M_1>0 exact n<=67; Lean-proved k<=7; kappa>0 derived; kappa_n>kappa emp n<=67.
 FRONTIER: prove kappa_n>=kappa asymptotically - 2nd-order Plancherel fluctuation of
 UNDETERMINED order (bulk and edge both plausible). Open.
+
+2026-08-23 (PR #5518, branch claude/m1-lean-base-k8): Lean finite base of M_1>0 extended k<=7 -> k<=8 (m1_pos_of_le_seven -> m1_pos_of_le_eight; interval_cases k <;> decide; whole-file lean-direct EXIT=0). Also fixed a stale over-claim: the merged #5506 docstring still called the kappa_n->kappa sign 'bulk second-order (edge subleading n^-2/3)'; walked back to 'order UNDETERMINED, edge vs bulk unranked' to match the corrected audit. Asymptotic sign kappa_n>=kappa (n>=13) stays OPEN. scope-(a); no fit; L2 unchanged.
