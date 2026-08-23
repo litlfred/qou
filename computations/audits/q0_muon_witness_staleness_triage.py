@@ -145,6 +145,41 @@ def restore():
                        cwd=ROOT, capture_output=True)
 
 
+def diff_paths(a, b, prefix="", out=None, cap=40):
+    """Dotted paths at which two stripped witness bodies differ.
+
+    A SUBSTANTIVE verdict alone says a number moved but not WHICH one, and the
+    tree is restored straight afterwards -- so answering "what changed?" later
+    means re-running the producer, which for several here costs 420s.  The
+    drain PR needs the field list, so record it while it is in hand.
+    """
+    if out is None:
+        out = []
+    if len(out) >= cap:
+        return out
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k in sorted(set(a) | set(b)):
+            if k not in a:
+                out.append(prefix + k + " (added)")
+            elif k not in b:
+                out.append(prefix + k + " (removed)")
+            else:
+                diff_paths(a[k], b[k], prefix + k + ".", out, cap)
+            if len(out) >= cap:
+                break
+    elif isinstance(a, list) and isinstance(b, list):
+        if len(a) != len(b):
+            out.append(f"{prefix.rstrip('.')} (len {len(a)} -> {len(b)})")
+        else:
+            for i, (x, y) in enumerate(zip(a, b)):
+                diff_paths(x, y, f"{prefix}{i}.", out, cap)
+                if len(out) >= cap:
+                    break
+    elif a != b:
+        out.append(prefix.rstrip("."))
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--timeout", type=int, default=300, help="per-producer seconds")
@@ -255,6 +290,13 @@ def main() -> int:
                     verdict += "/ASSERT-FAIL"
         rec = {"producer": prod, "witness": wp, "verdict": verdict,
                "siblings_moved": sib}
+        if verdict.startswith("SUBSTANTIVE"):
+            b_, a_ = before.get(wp, (None, None))[0], after.get(wp, (None, None))[0]
+            if b_ and a_:
+                try:
+                    rec["changed_fields"] = diff_paths(json.loads(b_), json.loads(a_))
+                except Exception:
+                    pass
         if verdict.startswith("CRASH") or "ASSERT-FAIL" in verdict:
             rec["stderr_tail"] = err
         results.append(rec)
