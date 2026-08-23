@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T20:13:39Z
-updated_at: 2026-08-19T20:14:33Z
+updated_at: 2026-08-23T17:00:27Z
 ---
 
 PR #4899 excised convention C from the producer layer ("178 sites -> 0") and
@@ -68,3 +68,38 @@ check the raw-float64 ratchet did not grow.
 
 Related: `qou-1c4y` (the muon->proton witness migration) has the same
 "large tracked sweep, needs scoped sign-off" shape.
+
+
+## 2026-08-23 — re-measured after merging main, and RANKED
+
+**73, down from 99.** Main drained 26 of the candidates during the four days
+this branch was open — independent corroboration that the detector tracks a
+real class rather than a grep artifact.
+
+**Every one of the 73 is CONSUMED.** Ranked by in-corpus references
+(`_deprecated/` consumers excluded, since those do not matter):
+
+| refs | witness | reached by |
+|---|---|---|
+| content 2 | `alpha-k-jones-markov-h3` | `explicit-alpha-k-h3-proof.md`, `categorical-mass-markov-proof.ts`, `codata_reconciliation.py` |
+| content 2 | `wedderburn-pair-volumes` | `knot-operator-lp-selection.ts` + `.qa.json` |
+| content 2 | `probes/gauge-coupling-uniqueness-probe` | `gauge-coupling-uniqueness.ts` + proof `.qa.json` |
+| content 1, code 22 | `free-neutron-decay` | `energy-scale-planck.qa.json`, `beta-decay-energy-scale.py` |
+| content 1, code 7 | `binding-depth-stratified` | `depth-stratified-frobenius-reciprocity.ts`, `low_isotope_binding_model_comparison.py` |
+| content 1, code 2 | `demazure-markov-trace` | `demazure-fiber-markov-trace.ts`, **`onepb_status_dashboard.py`** |
+| content 1, code 2 | `qbeta/qbeta-c3even-exact-sseries` | `binding-qbeta-complex-volume.md` |
+
+**0 of 73 are terminal probes.** So this is not a backwater: the class reaches
+content blocks (the paper itself), the **L1 status dashboard**, and the CODATA
+reconciliation.
+
+### What this ranking does and does not establish
+
+It says **which to check first**, not that any of them is stale. Consumption
+is a priority signal, not evidence. The confirmed count is still **2 of 2
+attempted** (`wedderburn-lp-ew-wiring`, `fr-pullback-cosh-h`) — every other
+row needs its own decisive test (swap `z` to the C form, check the committed
+value reappears) before being called anything.
+
+Suggested order for a drainer: the three content-cited rows first, since a
+stale frame there propagates into the paper rather than into another probe.
