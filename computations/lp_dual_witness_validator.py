@@ -195,7 +195,13 @@ def main(argv: list[str]) -> int:
     strict_wired = "--strict-wired" in argv
     list_wired = "--list-wired" in argv
     root = Path(__file__).parent
-    repo_root = root.parent.parent
+    # `root.parent.parent` walked one level ABOVE the repo: this file is at
+    # `<repo>/computations/`, so `.parent.parent` is the repo's *parent*.
+    # `collect_wired_witnesses` then globbed a `content/` that does not exist,
+    # returned an empty set, and `--strict-wired` reported
+    # "OK — all 0 flagged wired witnesses include LP dual" — a gate passing
+    # because it found nothing to check. Bean `qou/augu`.
+    repo_root = root.parent
     wired = collect_wired_witnesses(repo_root) if (strict_wired or list_wired) else set()
     # RECURSIVE. This was `root.glob(...)` — non-recursive — and so scanned
     # only the witnesses sitting directly in `computations/`. The Phase 6

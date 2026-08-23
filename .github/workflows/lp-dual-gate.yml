@@ -1,0 +1,73 @@
+name: lp-dual-gate
+
+# Fails a PR whose content-wired LP/SDP witnesses do not report their duals.
+#
+# WHY THIS EXISTS
+# `computations/lp_dual_witness_validator.py` has existed since 2026-05 and was
+# run by nothing — `scripts/check-sidecars.sh` mentions it as advice, and no
+# workflow invoked it. Its own docstring names the failure mode it is for:
+# "scripts that solve the primal LP but never extract / report the dual,
+# losing the principled binding-energy interpretation."
+#
+# Measured 2026-08-22 (bean qou/augu), it was catching **1 of 6** live cases,
+# for three independent reasons — each a check narrower than its stated
+# purpose, and silent about it:
+#
+#   1. It gated on the WITNESS NAME before consulting the script. A witness had
+#      to contain one of ten literal hints before its sibling was looked at, so
+#      `nucleus-operator-selection-sdp` missed (the hint is
+#      `operator-selection-lp`, and that one ends `-sdp`) and three others
+#      carried no hint substring at all. Whether a script solves an LP is a
+#      property of the SCRIPT.
+#   2. Its walk was NOT RECURSIVE. The Phase 6 subdirectory refactor
+#      (2026-06-02) moved compute scripts into cluster directories and the walk
+#      was never updated: it saw 1410 of 2697 live witnesses, leaving 1287
+#      invisible — 516 `probes/`, 362 `qbeta/`, 169 `deltalambda/`.
+#   3. `--strict-wired` computed `repo_root` one level ABOVE the repo, so it
+#      globbed a `content/` that does not exist, found zero wired witnesses,
+#      and reported "OK — all 0 flagged wired witnesses include LP dual". A
+#      gate passing because it found nothing to check.
+#
+# All three are fixed; the validator now scans 2697, flags 27 and finds 1
+# unreported (`benzene-assembly-spine`, a cardinality knapsack whose duals are
+# genuinely not `y0_star`/`y_star` — a scope question, tracked in qou/augu).
+#
+# WHAT THIS GATES
+# `--strict-wired`, not `--strict`: it fails only for witnesses a content block
+# actually cites via `computation.witness`. 140 witnesses are wired, 3 of them
+# LP/SDP, and all 3 report their duals today — so this is green now and blocks
+# NEW drift. A whole-corpus `--strict` would fail on the one known survivor and
+# block every unrelated PR, the same reason `probe-float64-gate` and
+# `lean-orphan-gate` are scoped rather than absolute.
+#
+# The unscoped run is kept as an informational step that never fails, so the
+# backlog stays visible rather than silently excused.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Runnable on demand, and locally:
+  #   PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
+  #     python3 computations/lp_dual_witness_validator.py --strict-wired
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    env:
+      # `lp_dual_solver` imports `pyhecke`, which needs its siblings on the
+      # path. Without this the validator dies on import before scanning
+      # anything — which is how it went unrun locally too.
+      PYTHONPATH: computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numeric stack
+        run: python3 -m pip install --quiet numpy scipy mpmath
+      - name: Gate — content-wired LP/SDP witnesses must report their duals
+        run: python3 computations/lp_dual_witness_validator.py --strict-wired
+      - name: Survey (informational, never fails)
+        run: python3 computations/lp_dual_witness_validator.py || true

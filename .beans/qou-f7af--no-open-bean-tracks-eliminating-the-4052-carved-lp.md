@@ -46,12 +46,21 @@ The bean records both — *"route 2 taken (owner decision)"*, *"Owner took route
 3 after route 2's audit half landed"* — so the `# owner decision 2026-08-11`
 comment in `witness_raw_float64_audit.py` is accurate, not self-asserted.
 
-The reason is structural: `scipy.linprog` and Clarabel are float64 solvers, so
-the standing fix ("carry `mpmath.mpf` from the source, serialize with
-`_precision.fmt`") has **no source to carry from**. And stringifying is
-explicitly ruled out by `lp_dual_solver.to_dict()`'s own docstring — 56
-producers do arithmetic on those values (`sum(r["y_star"] …)`,
-`r["duality_gap"] < 1e-6`), so it would break readers *silently*.
+**CORRECTED 2026-08-23.** This bean first repeated `ftuv`'s reason — *"scipy
+and Clarabel are float64 solvers, so there is no source to carry from"* —
+without checking it. **The second half is false.** This project uses a Clarabel
+**fork with MPFR** (`README.md`: *"not on crates.io due to Clarabel fork + MPFR
+system deps"*), and `clarabel-operator-selection-lp`, built here and run
+against scipy, returns all six fields with `*_str` companions at ~52 digits.
+Full correction in `qou/ftuv`.
+
+What survives: `scipy.linprog` **is** f64, and `aK_via_lp_dual_full.py` passes
+`backend="scipy"` explicitly — so the excused fields are f64 because of a
+backend *choice*, not a solver limitation. And `to_dict()`'s objection stands:
+56 producers do arithmetic on those values (`sum(r["y_star"] …)`,
+`r["duality_gap"] < 1e-6`), so replacing them with strings would break readers
+*silently* — which is why the `*_str` companion shape, not stringification, is
+the route that works.
 
 ## The gap
 
@@ -80,12 +89,14 @@ bean's parenthesis.
 
 ## Next
 
-- [ ] Owner: is the carve-out permanent, or is an MPFR/Clarabel exact backend
-      wanted eventually? If permanent, say so in
-      `witness_raw_float64_audit.py` so a future reader does not re-derive the
-      four routes — which `ftuv` explicitly tried to prevent.
-- [ ] If not permanent: scope route 2's solver half. `ftuv` notes the shadow
-      rule is already in place to recognise the `*_str` companions it would
-      produce, so the audit side is done.
+- [ ] The premise question is settled — see `qou/ftuv`. The MPFR backend
+      exists, builds, cross-checks against scipy, and already emits the `*_str`
+      companions route 2's shadow rule recognises. **Retiring the carve-out on
+      the LP path needs a default-backend switch, not new machinery.**
+- [ ] Correct the premise in `witness_raw_float64_audit.py`'s carve-out
+      comment. It states as fact something a sibling binary had already
+      contradicted for ten days, and it is now the canonical source future
+      readers will trust — the outcome `ftuv`'s own process note tried to
+      prevent.
 - [ ] Either way, consider a ceiling or a per-witness cap on the excused
       count, so growth is a decision rather than a side effect.

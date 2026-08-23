@@ -231,3 +231,187 @@ change the rule, not appeal to it.
 growth was a precision regression or content growth. This bean had already
 settled that. The corpus-grep checklist covers `.beans/`, not only `content/`,
 `docs/` and `computations/`.
+
+---
+
+## 2026-08-23 — CORRECTION: the premise of route 3 is false. Clarabel is not f64 here.
+
+Left `completed`; the carve-out is live and this is why it should be revisited.
+
+This bean's load-bearing claim, repeated in the carve-out's source comment and
+by me when I leaned on it:
+
+> `x_star`, `y_star`, `u_lambda_star` are Clarabel output, and Clarabel is a
+> float64 solver — there is no `mpmath.mpf` to carry from the source, which is
+> what the standing fix assumes.
+
+**Both halves are wrong.**
+
+### 1. This project does not use upstream Clarabel. It uses an MPFR fork.
+
+`README.md`, on `hecke-engine`: *"Currently path-only (not on crates.io due to
+**Clarabel fork + MPFR system deps**)."* The crate carries
+`dense_la_mpfr.rs`, `sdp_clarabel_mpfr_prep.rs`, `matrix_m_mpfr.rs`,
+`seminormal_mpfr.rs`, `tr_m_atomic_mpfr.rs`, and three Cargo features —
+`clarabel-sdp`, `clarabel-mpfr`, `clarabel-bigrational`.
+
+And the binary this bean says was *"not taken … left undone deliberately"* —
+`clarabel-operator-selection-lp` — **already existed**. Its own `Cargo.toml`
+entry reads:
+
+```toml
+# Operator-selection LP (prop:operator-selection-lp) — MPFR JSON CLI.
+# Replaces the scipy HiGHS f64 path in pyhecke.lp_dual_solver at 50 dps.
+name = "clarabel-operator-selection-lp"
+required-features = ["clarabel-mpfr"]
+```
+
+**Added 2026-08-01. Route 3 landed 2026-08-11** (`0c1917b722`). Ten days.
+`pyhecke.lp_dual_solver` already carried `solve_operator_selection_lp_mpfr`,
+a locator for the binary, and a `backend="clarabel"` switch — with
+*"Values cross the boundary as decimal strings, so the marshalling adds no f64
+truncation"*, and string inputs accepted from `gram.gram_matrix_mp_strings()` /
+`gram.tr_m_mp_strings()`, which the docstring says *"exist for precisely this
+boundary"*.
+
+There is also `clarabel-h3-exact-lp` behind `clarabel-bigrational` — an
+**exact-rational** LP at q₀, stronger again.
+
+### 2. The producer that triggered this bean chose f64 by hand.
+
+`aK_via_lp_dual_full.py:142`:
+
+```python
+result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+```
+
+Not "Clarabel is f64" — the caller passed `backend="scipy"` explicitly. And on
+the SDP side, `solve_psd_operator_selection_sdp`'s own docstring says the
+default is *"clarabel MPFR via the diagonal-lift LP when available"* and
+**"For the current diagonal lift clarabel is EXACT."**
+
+So the carve-out excuses a property of a **backend choice**, described as a
+property of the solver.
+
+### What is actually still true
+
+`to_dict()`'s objection stands and is untouched by any of this: 56 producers do
+arithmetic on those values (`sum(r["y_star"] …)`, `r["duality_gap"] < 1e-6`),
+so **stringifying the existing fields would break readers silently**. That was
+always the real constraint, and it argues for `*_str` companions — which route
+2's shadow rule already recognises — not for accepting f64.
+
+The one genuine f64 corner: `sdp_clarabel_mpfr_prep.rs` exports
+`build_rho_lambda_mpfr_to_f64` — the SDP *prep* is MPFR and then narrowed to
+f64 for the solve. So the SDP path is MPFR-in / f64-solve. The **LP** path is
+MPFR end-to-end at 167 bits.
+
+### The stated blocker is also stale
+
+`solve_operator_selection_lp_mpfr`: *"NOT yet cross-checked against the scipy
+backend to 1e-25 — that needs a scipy+numpy environment. The scipy backend
+therefore remains the default."* `scipy 1.17.1`, `numpy 2.4.6` and `mpmath
+1.3.0` all install from PyPI in this container. That is the third stale
+capability blocker in this arc (`mpmath` and `pyhecke` in `k4f8` were the
+others), and it is the one keeping the f64 backend as the default.
+
+### Not claimed
+
+That route 3 was the wrong call given what its author believed. The four routes
+were laid out honestly and the owner chose. What is wrong is the **premise**,
+and the carve-out's own comment now teaches that premise to every future
+reader — the failure mode this bean's process note was written to prevent.
+
+## Next
+
+- [ ] Build `clarabel-operator-selection-lp` (`--features clarabel-mpfr`) and
+      run the 1e-25 cross-check against the scipy backend. The environment
+      blocker is gone.
+- [ ] If it cross-checks: `backend="clarabel"` can become the default for the
+      LP path, `*_str` companions carry 50 dps, and the shadow rule from route
+      2 already excuses the f64 mirrors — the carve-out shrinks to the SDP
+      corner instead of covering everything.
+- [ ] Either way, correct the premise in `witness_raw_float64_audit.py`'s
+      carve-out comment. It currently states as fact something a sibling
+      binary had already contradicted for ten days.
+
+## 2026-08-23 — cross-check RUN. The blocker was stale; the target is not met.
+
+Built `clarabel-operator-selection-lp` (`cargo build --release --features
+clarabel-mpfr`, 3m25s, cargo + MPFR/GMP present in-container) and ran the
+comparison the docstring said *"needs a scipy+numpy environment"*.
+
+### The duals agree, and clarabel is ~5 orders better
+
+H₃, `d = 6`, 50-dps string inputs via `gram.tr_m_mp_strings()` /
+`gram.gram_matrix_mp_strings()`:
+
+| | scipy (f64) | clarabel (MPFR 167b) | \|Δ\| |
+|---|---|---|---|
+| `y0_star` | -0.0 | -6.617584e-19 | 6.6e-19 |
+| `dual_obj` | -0.0 | -6.617584e-19 | 6.6e-19 |
+| `primal_obj` | **1.066e-10** | **3.815e-16** | 1.07e-10 |
+| `y_star` max\|Δ\| | — | — | 2.7e-19 |
+| `active_set` | `[0]` | `[0]` | identical |
+
+Same at `n_target ∈ {1.0, 0.6614, 3.0}`. The `primal_obj` "disagreement" is
+**scipy being the worse of the two**: the true value is 0, scipy reaches
+1.07e-10, clarabel 3.8e-16. The duals — the fields this bean is about — agree
+to 1e-18/1e-19, and both find the same degenerate `y* = e₀`, `active_set = [0]`.
+
+### The `*_str` companions already exist. The carve-out is unnecessary on this path.
+
+`_str_fields_if_decimal` in `lp_dual_solver.py` already attaches all six:
+
+```
+y0_star_str  = -6.617584414762339209252677635680114030945338718238926e-19
+y_star_str   = ['1.000000000000000000197520683389830430717854621669529', …]
+x_star_str, primal_obj_str, dual_obj_str, duality_gap_str
+```
+
+~52 significant digits. **Route 2's shadow rule already skips an f64 that sits
+beside a >17-digit `*_str` companion** — so a producer on `backend="clarabel"`
+needs no carve-out at all, and `to_dict()`'s objection (56 consumers do
+arithmetic on the floats) is satisfied too, because the f64 mirrors stay.
+
+Every piece needed to retire route 3 on the LP path is already built and
+wired. What is missing is the default backend switch.
+
+### But the 1e-25 target is NOT met, and that is new
+
+The residual does **not** move with precision:
+
+```
+prec_bits  dual_tol    primal_obj      duality_gap
+      167     1e-09    3.81482e-16     3.82144e-16
+      167     1e-30    3.81482e-16     3.82144e-16
+      333     1e-40    3.81482e-16     3.82144e-16
+```
+
+Identical to six figures across 167 → 333 bits and 1e-9 → 1e-40 tolerance. The
+duals carry ~19–20 genuine digits (`y_star_str[0] = 1 + 1.975e-19`), not 50.
+
+So **"at 50 dps" in the Cargo comment is the arithmetic width, not the achieved
+accuracy**, and the docstring's "cross-checked to 1e-25" is not reachable as
+configured — agreement is ~1e-18. Something downstream of `prec_bits` fixes the
+residual near f64 scale. That is the real open question, and it was not
+knowable before the cross-check ran.
+
+**Not claimed:** that the MPFR path is broken. It is strictly better than scipy
+here and its duals are self-consistent to 1e-19. Only that it does not
+currently deliver what its own documentation claims, and that the claim should
+be corrected either way.
+
+## Next
+
+- [x] Build the binary and run the cross-check — the environment blocker was
+      stale.
+- [ ] Why is the residual pinned at ~3.8e-16 regardless of `prec_bits`? Until
+      that is understood, `backend="clarabel"` should not become the default
+      on a "50 dps" claim it does not meet.
+- [ ] Correct the "at 50 dps" claim in `Cargo.toml` and the "cross-checked to
+      1e-25" wording in `solve_operator_selection_lp_mpfr`'s docstring to the
+      measured ~1e-19.
+- [ ] Independently of that: the `*_str` companions mean the carve-out is
+      already avoidable for any producer that opts into clarabel. Retiring
+      route 3 does not have to wait on the precision question.
