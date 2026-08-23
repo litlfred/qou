@@ -720,10 +720,10 @@ def log_phi_q(z_val: float, *, q: float = Q0,
 
 #: Cached (q, q^-1) for the Li_2^q tower term, loaded once from the canonical
 #: pinning witness.
-_LI2Q_Q_CACHE: tuple | None = None
+_LI2Q_Q_CACHE: tuple | None = None   # (dps, q, q_inv)
 
 
-def tower_term_li2q(v_abs: float) -> float:
+def tower_term_li2q(v_abs: float) -> "mpmath.mpf":
     """Lean-mandated per-generator tower term: ``towerTerm q V = -Li_2^q(-|V|)``.
 
     This is `QOU.BraidKnot.QuantumDilogarithm.towerTerm`, the form the Lean
@@ -742,14 +742,29 @@ def tower_term_li2q(v_abs: float) -> float:
     diverges here because |V_hat| can exceed 1.
     """
     global _LI2Q_Q_CACHE
-    if _LI2Q_Q_CACHE is None:
-        from _li_2_q_util import load_q_50dps
-        q, q_inv, _z = load_q_50dps()
-        _LI2Q_Q_CACHE = (q, q_inv)
-    q, q_inv = _LI2Q_Q_CACHE
-    from _li_2_q_util import li_2_q
     import mpmath as _mp
-    return float(-li_2_q(-abs(_mp.mpf(str(v_abs))), q, q_inv))  # float64-ok: tower arithmetic is float64 throughout this module; mpf is carried inside li_2_q
+    from _li_2_q_util import li_2_q, load_q_50dps
+    # Built at >= 60 dps regardless of the caller's ambient precision, for the
+    # reason `_q_h_at_precision` gives above: an mpf keeps the precision it was
+    # CREATED at, so loading q under the mpmath default (dps = 15) would bake in
+    # a 15-digit q and silently undo everything below. It matters twice here --
+    # `li_2_q` also sets its own truncation from the ambient dps
+    # (`eps = 10**(5 - mp.dps)`), so at the default it would stop the series at
+    # 1e-10 and hand back an mpf-typed, float64-valued answer. That is the exact
+    # "precision theatre" this module already carries a warning about.
+    # Callers already inside a higher workdps keep theirs.
+    with _mp.workdps(max(_mp.mp.dps, 60)):
+        dps = _mp.mp.dps
+        if _LI2Q_Q_CACHE is None or _LI2Q_Q_CACHE[0] != dps:
+            q, q_inv, _z = load_q_50dps()
+            _LI2Q_Q_CACHE = (dps, q, q_inv)
+        _, q, q_inv = _LI2Q_Q_CACHE
+        # Returns mpf, NOT float. `mpf(v_abs)` on a Python float is exact -- it
+        # takes the binary64 value verbatim, no decimal round-trip -- so nothing
+        # is lost on the way in and nothing is truncated on the way out. The sums
+        # in `mass_from_tower_safe` promote to mpf on contact, which is the
+        # point: a downcast here would cap the whole tower at 53 bits.
+        return -li_2_q(-abs(_mp.mpf(v_abs)), q, q_inv)
 
 
 def _tower_spec(term: str, cap_frac: float):

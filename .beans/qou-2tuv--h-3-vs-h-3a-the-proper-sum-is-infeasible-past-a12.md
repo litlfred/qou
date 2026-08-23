@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T21:35:32Z
+updated_at: 2026-08-23T07:39:35Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1413,3 +1413,79 @@ annotation, which the guard honours.
 The remaining error is real and unexplained. It is no longer buried under a
 function that was wrong by eight orders of magnitude, which is the point of
 making the swap independent of whether it helped.
+
+
+---
+
+# Removed my float64 downcast — and it was hiding a real 1e-10 error
+
+The user does not want float64 in this path. My `tower_term_li2q` had a
+`float(...)` downcast on its return, carrying a `# float64-ok:` annotation I
+wrote myself. Both are now gone.
+
+## Why my annotation was the wrong kind of exception
+
+There are 15 `float64-ok` markers in the tree. Every pre-existing one sits at an
+**output boundary**, where a value stops being a computation and becomes text or
+JSON:
+
+    option_e_multi_isotope_delta_lambda_probe_v3.py:217  "written to the witness as a JSON number"
+    option_e_multi_isotope_delta_lambda_probe_v3.py:221  "JSON number, 2-dp threshold"
+    option_e_multi_isotope_delta_lambda_probe_v3.py:246  "console formatting only"
+
+That is a coherent rule: once a number is being printed or serialised, binary64
+is the format, and the loss is visible at the boundary where it happens.
+
+**Mine was not at a boundary.** It was the return value of a compute function
+whose output flows straight into the tower sums. That is precisely the case the
+guard exists to catch — a downcast in the middle of a pipeline, where the loss is
+invisible and every downstream term inherits it. My stated reason ("tower
+arithmetic is float64 throughout this module") was an argument for matching the
+surrounding damage, not a justification.
+
+## The downcast was hiding a second, larger defect
+
+`li_2_q` sets its own series truncation from the ambient precision:
+`eps = mpf(10) ** (5 - mp.dps)`. At mpmath's default `mp.dps = 15` that stops
+the series at **1e-10**. So the term was not merely being rounded to float64 on
+the way out — it was only ever computed to ten digits on the way in.
+
+    dps = 15 (before) : 0.4486225372 8787743201
+    dps >= 60 (after) : 0.4486225372 5803283172 35470461371304082152
+                                    ^ diverges at the 11th digit
+
+Fixed by wrapping the body in this module's own established idiom, copied from
+`_q_h_at_precision` at line 392:
+
+    with _mp.workdps(max(_mp.mp.dps, 60)):
+
+The `q` load had to move inside that block too, for the reason that function
+already documents: an mpf keeps the precision it was CREATED at, so loading a
+50-digit q under `dps = 15` bakes in a 15-digit q and silently undoes everything
+downstream. The cache is now keyed by dps so it cannot serve a low-precision q to
+a high-precision caller.
+
+`mpf(v_abs)` on a Python float is exact — it takes the binary64 value verbatim,
+with no decimal round-trip — so nothing is lost converting in.
+
+## Verified
+
+    probe-float64-guard : 21 hits on main's copies of these two files, 21 on mine
+                          -> this change adds none
+    float64-ok markers I own : 0
+    f64_into_mpmath_audit    : mass_at_3A_proper is not flagged
+    precision-gates.sh       : exit 0, all blocking gates green
+    D binding                : 1.8042217338504000779 MeV, -18.893886% (unmoved)
+
+## What is still float64, honestly
+
+The **inputs** are. `per_generator_V_hat_3A` hands the tower float64 volumes, and
+`E_0` is a Python float, so the final `B_MeV` still equals its own float64
+round-trip even though the term no longer does. That residue is the documented
+`QOU_H3A_MPF` territory — the module's own note says flipping it "changes every
+value this module produces beyond digit ~16 and costs the full 642x", which is
+not a change to make silently on behalf of ~20 consumers.
+
+So: no float64 downcast in the code I wrote, and the term itself is now correct
+to 60 digits rather than 10. The remaining float64 is upstream, pre-existing, and
+flagged rather than papered over.
