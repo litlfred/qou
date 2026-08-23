@@ -366,10 +366,24 @@ user's last message, not the most recently mentioned file.
       "did not move" fact was counted ~119 times and dragged the rate down.
       **Do not quote 39 %.**
 
-      Re-measured per PRODUCER, and then re-classified on which fields actually
-      moved: of 49 producers run to completion, **36 moved a genuinely
-      mathematical field** (73 %), 10 moved *only* invocation metadata, 3 were
-      identical. The raw rate looks like 94 % until you strip
+      **WITHDRAWN the same day: the 73 % that replaced it is also unsupported.**
+      Spot-checking three of its MOVED verdicts by re-running each producer in
+      isolation against `origin/main` found **two false positives**:
+      `t6_three_halves_factor_probes` (census: 20 fields moved; clean re-run: 0)
+      and `canonical_ordering_dof_probe` (census: `/allPassed` moved; clean
+      re-run: 0). Only `option_e_isospin_probe` reproduced as a genuine move.
+
+      The defect is in the harness, and it is worth knowing because it is easy
+      to repeat: the census took its **before** snapshot from the *working tree*
+      partway through a long sequential run, where an earlier producer's sibling
+      writes can contaminate it. Baseline from **git** (`git show
+      origin/main:<witness>`), never from a tree the sweep itself is mutating.
+
+      So the honest state is: **39 % was wrong (per-witness duplication), 73 %
+      was wrong (contaminated baseline), and the real rate is UNMEASURED.** Do
+      not quote either number. What survives is the qualitative point — a
+      `substantive` verdict is a re-run candidate, not a work order — and the
+      method requirements below. The raw rate looks like 94 % until you strip
       `/invocation/argv/0` and `/invocation/reproduce` — the script path as the
       sampler invoked it, which differs from whatever produced the committed
       witness and has nothing to do with the mathematics. Strip
