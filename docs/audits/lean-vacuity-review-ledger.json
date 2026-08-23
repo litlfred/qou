@@ -81,17 +81,6 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `LeviFormDefect` carries field `carrier` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `LeviFormDefect` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `carrier` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean::uncertainty_vanishes::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 62,
-      "verdict": "genuine",
-      "file_sha": "bfc8b6403333",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `QuaternionicResolvent` carries field `omega` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `QuaternionicResolvent` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `omega` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean::MobiusEnergy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -103,17 +92,6 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `CategoricalMobiusEnergy` carries field `energy` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalMobiusEnergy` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `energy` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/climax-volume-mass/mobius-energy.lean::mobius_energy_nonneg::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 73,
-      "verdict": "genuine",
-      "file_sha": "2fbb52aa1f54",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `CategoricalMobiusEnergy` carries field `energy_classical_nonneg` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalMobiusEnergy` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `energy_classical_nonneg` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean::NonSelfIntersection.exclusionRadius_eq::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -124,17 +102,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `NonSelfIntersection` carries field `exclusionRadius` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `NonSelfIntersection` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `exclusionRadius` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean::noncocomm_iff_quantum::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 67,
-      "verdict": "genuine",
-      "file_sha": "14c763cf7b8c",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `NonSelfIntersection` carries field `noncocomm_pos` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `NonSelfIntersection` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `noncocomm_pos` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::core_levi_form::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
