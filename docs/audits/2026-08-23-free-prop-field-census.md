@@ -133,7 +133,31 @@ about whether the Hecke relation holds — §7a states it and the compute uses i
 The defect is that a downstream `[IwahoriHeckeAlgebra] → P` reads as conditional
 while being unconditional.
 
-Not drained here, and not claimed: whether each of the 109 should be repaired,
-demoted, or is a legitimate abstraction point is a per-carrier agent call. The
-census is the queue, not the verdict — which is the same discipline result 1
-arrived at from the other direction.
+Not drained here, and not claimed: whether each should be repaired, demoted, or
+is a legitimate abstraction point is a per-carrier agent call. The census is the
+queue, not the verdict — which is the same discipline result 1 arrived at from
+the other direction.
+
+**Mind the units when quoting this.** The bucket table counts **fields**; the
+drain queue is **carriers**. The 109 `UNPINNED-EMPTY` *fields* sit in **77**
+carriers, and the 39 `UNPINNED-FAKE-IF` fields in 32. Quoting 109 as a carrier
+count overstates the queue by 40 %.
+
+## Follow-up that needs a decision, not a chore
+
+Wiring this as a criterion in
+[`content/pipeline/lean-vacuity-axiom-audit.ts`](../../content/pipeline/lean-vacuity-axiom-audit.ts)
+would close the blind spot — **zero** of these carriers currently appear in the
+ledger under *any* criterion. It would also seed every one of them as
+`needs-agent`, and `--check-ledger` exits 1 unless every non-exempt candidate
+carries a fresh verdict. Measured against the live ledger:
+
+| | ledger | gate |
+|---|---|---|
+| today | 124 | green |
+| wire `UNPINNED-EMPTY` only | ~201 (+77) | **red until all 77 are read** |
+| wire `EMPTY` + `FAKE-IF` | ~233 (+109) | **red until all 109 are read** |
+
+That turns the gate red for **every branch**, not just the one that wires it —
+so it is an owner call on sequencing, not something to land quietly. The
+standalone script is the interim: it measures the class without gating anyone.

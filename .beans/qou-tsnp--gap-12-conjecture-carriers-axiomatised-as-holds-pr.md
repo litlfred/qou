@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-08-23T17:49:50Z
+updated_at: 2026-08-23T18:52:44Z
 ---
 
 
@@ -172,3 +172,29 @@ while the consequents may still carry content.
 about whether the relation holds.
 
 Full write-up: `docs/audits/2026-08-23-free-prop-field-census.md`.
+
+
+### 2026-08-23 (2) — units correction, and the wiring decision this needs
+
+**Units.** The census bucket table counts **FIELDS**; a drain queue is
+**CARRIERS**. 109 `UNPINNED-EMPTY` fields sit in **77** carriers; 39 `FAKE-IF`
+fields in 32. I wrote "109 ... carriers" in PR #5562's body — corrected there and
+in the audit doc. Quoting the field count as a carrier count overstates the
+queue by 40%.
+
+**The wiring decision.** Adding this as a criterion to
+`content/pipeline/lean-vacuity-axiom-audit.ts` closes a measured blind spot —
+**zero** of these carriers appear in the ledger under any criterion today. But
+`--check-ledger` exits 1 unless every non-exempt candidate carries a fresh
+verdict, so wiring it seeds a large `needs-agent` batch and turns the gate red
+**for every branch**, not just the one that wires it:
+
+| | ledger | gate |
+|---|---|---|
+| today | 124 | green |
+| wire `UNPINNED-EMPTY` only | ~201 (+77) | red until all 77 are read |
+| wire `EMPTY` + `FAKE-IF` | ~233 (+109) | red until all 109 are read |
+
+That is a sequencing call for the owner, not something to land quietly — so it
+is recorded here rather than done. `scripts/free-prop-field-audit.py` is the
+interim: it measures the class without gating anyone.
