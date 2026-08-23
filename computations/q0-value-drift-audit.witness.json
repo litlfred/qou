@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 295,
-      "proton-pin": 1253,
+      "proton-pin": 1256,
       "unknown": 25,
       "canonical": 202
     },
@@ -8518,6 +8518,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/phase5/phase2b-dim-v21-bridge.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/photon-operator-table.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -10443,9 +10450,23 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/qbeta/fbor-normalisation-barsymmetry.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/fbor-q3-is-qschur-plancherel-weight.witness.json",
         "field": "parameters.q_0",
         "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/fbor-q3-is-qschur-plancherel-weight.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
