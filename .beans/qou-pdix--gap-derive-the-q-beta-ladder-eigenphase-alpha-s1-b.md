@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-23T00:21:11Z
+updated_at: 2026-08-23T00:35:56Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -482,3 +482,41 @@ form definitional or a truncation? That is now the bottleneck, and it is a
 corpus-archaeology question rather than a derivation.
 
 PROBE: qbeta_eigenphase_holonomy_consistency_probe.py, now 13/13.
+
+
+## evalMap provenance: fork SETTLED — affineness is not a truncation (probe now 16/16)
+
+The last entry left the bottleneck as archaeology: is `evalMap h w = h²/2 − h·w`
+definitional or a truncation? Chased; it settles, and the answer is sharper than
+either branch of the fork.
+
+**It is neither definitional-by-fiat nor a truncation — it is a linear
+functional on a fixed vector.** The NF difference is
+`(n−p) = [h²/2, −h/2, −h/2, 0, 0, 0]` in `[γ, σ₀, σ₁, L₊, L₋, e⁻]`, and the
+Markov rule is `tr_M(eᵢ) = z^#cr(eᵢ)`. So `deg_z E = max{#cr(eᵢ) : cᵢ ≠ 0} = 1`
+because the support is crossing-numbers {0,1}. No small parameter enters the
+step at all, so "truncation" was the wrong category. Reading (a) adopted.
+
+**The part worth carrying forward — the abelian character belongs to the
+DIFFERENCE, not to the evaluation.** `L₊ = s₁s₂` has TWO crossings and
+coefficient **1 in both n and p**; it cancels. Restore it and the map is
+quadratic in w with d²-coefficient −1 (assertion 15). So n and p each carry a
+genuine second-order-in-weight term and the abelian gap is what survives their
+cancellation.
+
+**That corrects my own acceptance test.** I had written that a construction
+"must be exactly first-order in the crossing weight". Wrong as stated: a
+non-abelian construction is not forbidden second-order weight structure — it
+must have that structure *cancel between n and p*, as `L₊` does. Same
+falsifiability, different and more specific target.
+
+**Residual, named narrowly.** The NF vector is asserted in
+`docs/audits/2026-06-16-...counit-vs-trace.md` ("audit step 5") and transcribed
+downstream — the Lean `epsNP`/`trMNP` are defs encoding it, and the single
+probe carrying it (`probes/probe_path_a_net_vs_trm_leading_order.py:137`)
+comments "from the .md". Nothing in `computations/` recomputes it. Assertion 16
+confines the exposure: the conclusion depends on the SUPPORT, not the values.
+The one thing that overturns it is a nonzero L₊/L₋/e⁻ coefficient in the
+difference.
+
+NEXT: branch 3's construction itself, against the corrected test.
