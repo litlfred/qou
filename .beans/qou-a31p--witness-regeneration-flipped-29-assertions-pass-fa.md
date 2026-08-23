@@ -3,8 +3,9 @@
 title: Witness regeneration flipped 29 assertions PASS->FAIL and every blocking gate stayed green
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-23T14:00:03Z
-updated_at: 2026-08-23T14:00:03Z
+updated_at: 2026-08-23T15:38:50Z
 ---
 
 ## What happened
@@ -67,3 +68,69 @@ flip a zero-tolerance boolean.
 2. **The failed-assertion ratchet should block**, or a pre-commit assertion diff
    should exist. Nothing else catches a regeneration that quietly turns passes
    into failures.
+
+
+---
+
+# ROOT CAUSE FOUND — and it reverses my conclusion. The sweep caused none of it.
+
+I reported that commit `a0ee2ac5e` "flipped 29 assertions PASS -> FAIL" and
+restored 20 witnesses in `3d3928331` to undo it. **That was wrong.** The sweep
+caused zero of them.
+
+## The bisect
+
+For each regressed witness, I ran its producer at the **pre-sweep source**
+(`34b2a75d4~1`) in this container and compared against the committed witness:
+
+    already failing before the sweep : 15
+    caused by the sweep              :  0
+    inconclusive (crash/not found)   :  4
+
+Fifteen for fifteen. Every testable case was **already failing from its own
+pre-sweep source**.
+
+Precision is independently exonerated. Sweeping `chi_convention_trM_ratio_probe`
+across `QOU_COMPUTE_DPS`:
+
+    dps=30 40 50 60 65 70  ->  computed=[0,0] at every one
+
+The assertion fails at the ORIGINAL dps=50 just as it does at 70. And the
+producer is deterministic — five consecutive runs, identical `[0,0]`.
+
+## So what was actually wrong
+
+**The committed witnesses were stale.** They recorded `passed: True` for
+assertions their own producers no longer satisfy. `chi_convention_trM_ratio_probe`
+is the clean example: witness last generated `d156e8d50` (2026-08-02), source
+changed by `7768c9d26` (2026-08-22, *"per_knot_density_* is now canonical — owner
+ruling"*), witness never regenerated after. It kept asserting a property the
+owner ruling had already invalidated, for three weeks.
+
+Regeneration did not break these assertions. **It stopped the corpus from lying
+about them.**
+
+## Corrected here
+
+`3d3928331` is undone — the 20 witnesses are back to their regenerated content,
+recording the failures that are actually there. The advisory ratchet returns to
+136 witnesses / 177 failed assertions against a baseline of 111.
+
+Those 25-over-baseline are **not new breakage**. They are pre-existing failures
+that were invisible because stale witnesses recorded stale passes. A corpus that
+reports 136 real failures is in better shape than one reporting 111 while 25 more
+are hidden.
+
+## What still stands from the original finding
+
+The gate observation is unchanged and still worth acting on:
+`scripts/precision-gates.sh:118` registers the failed-assertion ratchet with
+`blocking=no`. Nothing blocking watches assertion outcomes. That is how a
+three-week-stale PASS survived — and equally how a genuine regression would.
+
+## What I got wrong, and why
+
+I saw PASS -> FAIL, assumed my change caused it, and reverted without bisecting.
+The correct first move was the one I eventually made: run the pre-sweep source and
+see whether the failure predates the change. Reverting on suspicion put 15 stale
+passes back into the tree for one commit.
