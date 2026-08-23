@@ -78,6 +78,59 @@ theorem index_rescaled_wronskian_le [DecidableEq σ]
   have hmap : map (algebraMap ℤ ℚ) U' = C l * mvGenWronskian Dx φ := hU'
   rwa [hmap, index_C_mul _ _ hl] at hIHapp
 
+/-- **Non-vacuity.**  The largest hypothesis stack in this arc, shown jointly satisfiable.
+
+One variable on each side, everything constant: `n = r = 1`, `d₁ ≡ 1`, `P = 1`, `φ = ψ ≡ 1`,
+`p/q = 1/2`, `B = 1`, `E = 0`.  Then the auxiliary polynomial's determinant is `1`, whose
+coefficients are `0` and `1`, so `B = 1` works; `E = 0` makes `B ≤ q^E` read `1 ≤ 1`; and the
+induction hypothesis is `rothLemmaUniform_one`, which is **proved**.
+
+⚠ This certifies joint satisfiability and nothing more — and the arc has been explicit that
+finite witnesses test vacuity, not usefulness (correction 9). What it rules out is the failure
+mode that a stack this large invites: two side conditions that quietly contradict each other,
+leaving a theorem that is true because it is empty. -/
+theorem index_rescaled_wronskian_le_witness :
+    index (fun _ : Unit => 1 * 1) (fun _ : Unit => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ))
+        (mvGenWronskian (fun _ : Fin 1 => ([] : List Unit))
+          (fun _ : Fin 1 => (1 : MvPolynomial Unit ℚ)))
+      ≤ ((((1 : ℕ) : ℚ) * 1 : ℚ) : WithTop ℚ) := by
+  classical
+  have hW : ∀ {α : Type} [DecidableEq α],
+      mvGenWronskian (fun _ : Fin 1 => ([] : List α))
+        (fun _ : Fin 1 => (1 : MvPolynomial α ℚ)) = 1 := by
+    intro α _
+    rw [mvGenWronskian, Matrix.det_fin_one, mvWronskianMatrix_apply]
+    simp
+  have hdet : (Matrix.of fun _ _ : Fin 1 =>
+      pderivList (([] : List Unit).map Sum.inl ++ ([] : List Unit).map Sum.inr)
+        (1 : MvPolynomial (Unit ⊕ Unit) ℤ)).det = 1 := by
+    rw [Matrix.det_fin_one]
+    simp
+  refine index_rescaled_wronskian_le (σ := Unit) (n := 1) (r := 1)
+    (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ :
+      Unit ≃ Fin 1) 1 1 (rothLemmaUniform_one 1 1)
+    one_ne_zero (fun _ => 1) (fun _ => one_ne_zero) ?_
+    (fun _ => 1) (fun _ => 2) 1 0
+    (fun _ => []) (fun _ => []) (fun _ => 1) (fun _ => 1) 1
+    ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · intro j k h
+    have := j.isLt
+    have := k.isLt
+    omega
+  · simp
+  · rw [hW]; exact one_ne_zero
+  · rw [hW]; exact one_ne_zero
+  · intro j k
+    rw [show (1 : MvPolynomial Unit ℚ) = C 1 from (map_one C).symm, degreeOf_C]
+    exact Nat.zero_le 1
+  · intro m
+    rw [hdet, coeff_one]
+    split <;> simp
+  · intro j; norm_num
+  · intro j; exact isCoprime_one_left
+  · intro j; norm_num
+  · intro j; norm_num
+
 /-! ### Next
 
 The `y` half of `hres` is the base case: one variable, so `RothBaseCase` applies to

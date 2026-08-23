@@ -2529,3 +2529,32 @@ that was found *by writing the witness*. Writing it is the immediate next thing.
 Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. `#print axioms`-clean. Orphan gate: 2040 modules, 1157 reachable (up two for
 the two new modules), 883 not built — registered, and the inherited red did not grow.
+
+---
+
+## 2026-08-23 — the guard, written
+
+`index_rescaled_wronskian_le_witness`. The previous entry flagged that the arc's largest
+hypothesis stack had none, and that "satisfiable on paper" was exactly the state correction 8
+was in when it was wrong.
+
+Instance: one variable on each side, everything constant — `n = r = 1`, `d₁ ≡ 1`, `P = 1`,
+`φ = ψ ≡ 1`, `p/q = 1/2`, `B = 1`, `E = 0`. The determinant is `1`, whose coefficients are `0`
+and `1`, so `B = 1` works; `E = 0` makes `B ≤ q^E` read `1 ≤ 1`; and the induction hypothesis
+is `rothLemmaUniform_one`, which is **proved** rather than assumed — so the witness does not
+smuggle in an unproved `RothLemmaUniform` to make itself work.
+
+**Result: the stack is jointly satisfiable.** No two side conditions quietly contradict.
+
+⚠ And what it does *not* show, in its own docstring: finite witnesses test **vacuity, not
+usefulness** — correction 9's lesson, where a hypothesis satisfiable at every small `r` failed
+only asymptotically. This rules out one failure mode, the one a stack of eleven hypotheses
+invites, and not the other.
+
+⚠ The `hIH` choice is the part worth having been careful about. Instantiating with an
+*assumed* `RothLemmaUniform` would have made the witness vacuous in precisely the way it
+exists to detect — the theorem would have been shown satisfiable only relative to an
+unproved hypothesis. `rothLemmaUniform_one` is the `m = 1` case and is proved outright.
+
+Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.
