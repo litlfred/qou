@@ -205,12 +205,22 @@ The eight writers, with what each actually emits:
 | `sublemma_2_1_A_operator_extract` | `sublemma-2-1-A-operator-extract` | refreshed here (§1) |
 | `sublemma_2_1_alpha_shift_extract` | `sublemma-2-1-alpha-shift-extract` | deliberately not — §2, `qou-b3l8` |
 | `sublemma_2_1_h12_he4_phase25` | `he4-canonical-tr-m-block-fingerprint` | measuring |
-| `nuclide_braid_pipeline` | `nuclide-braid-<sym>` | **unmeasured** |
+| `nuclide_braid_pipeline` | `nuclide-braid-<sym>` | **nothing to move** — see below |
 | `probes/poly_q_proof_probe` | `poly-q-proof` | **unmeasured** |
 | `probes/qbeta_operator_identification_probe` | `qbeta-operator-identification-probe` | **unmeasured** |
 
-So the open set is three witnesses plus the H12 one, not nine. None of the four
-is claimed either way here.
+`nuclide_braid_pipeline` turns out not to be an open item at all.
+It requires `--Z` and `--N` (no default, no sweep) and writes
+`nuclide-braid-<sym>.witness.json` only for the nuclide it is asked about —
+and **no such file is tracked in the repository, or present on disk**
+(`git ls-files | grep nuclide-braid` is empty). It is an on-demand tool, not a
+producer of a tracked artifact, so there is no committed witness for #5517 to
+move. Anyone re-running it in future gets whatever the current code produces,
+which is the normal situation for a tool of that shape.
+
+So of the eight writers, seven are settled — four refreshed or reproduced, two
+deliberately left alone with reasons, one with nothing to move — and the open
+set is exactly **one**: the H12 ⁴He producer.
 
 The transitive import cone is not a useful scoping tool for this question:
 `computations/` uses a flat namespace, so 572 modules and 201 witness-writers
