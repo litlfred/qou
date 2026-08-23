@@ -435,6 +435,27 @@ theorem degreeOf_mvGenWronskian_le [DecidableEq σ] {m : ℕ} (i : σ) (D : Fin 
       ≤ ∑ _k : Fin m, d := Finset.sum_le_sum fun k _ => hterm k
     _ = m * d := by simp
 
+/-- **A bounded-order family can be degenerate**, and for `m ≥ 2` an obvious one always is:
+take every operator list empty.  The order condition `|D i| ≤ i` holds (`0 ≤ i` for every
+`i`), the matrix has all rows equal to `f`, and the determinant vanishes.
+
+⚠ This is the record of the **tenth correction**.  A hypothesis of the form "for *every*
+bounded-order family realising a separated representation of `P`, the Wronskians' indices are
+bounded" is **unsatisfiable**: this family realises the same representation and its Wronskian
+is `0`, whose index is `⊤`.  Such a hypothesis has to be restricted to families whose
+Wronskians do not vanish — which is exactly what `BoundedOrderWronskian` produces, and what
+the argument was always using. -/
+theorem mvGenWronskian_nil_eq_zero {m : ℕ} (hm : 2 ≤ m) (f : Fin m → MvPolynomial σ R) :
+    mvGenWronskian (fun _ => ([] : List σ)) f = 0 := by
+  rw [mvGenWronskian]
+  refine Matrix.det_zero_of_row_eq (i := ⟨0, by omega⟩) (j := ⟨1, by omega⟩) ?_ ?_
+  · intro h
+    have h2 := congrArg Fin.val h
+    simp at h2
+  · funext k
+    simp [mvWronskianMatrix_apply]
+
+
 /-! ### Changing the coefficient ring
 
 Roth's lemma's auxiliary polynomial has **integer** coefficients, but the separated

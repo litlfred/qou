@@ -2558,3 +2558,59 @@ unproved hypothesis. `rothLemmaUniform_one` is the `m = 1` case and is proved ou
 
 Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.
+
+---
+
+## 2026-08-23 — ⚠ TENTH CORRECTION: "for every bounded-order family" is unsatisfiable
+
+Supplying both halves of `hres` is what exposed it. The two halves each need the Wronskian
+they bound to be **non-zero** — and `hres` gave them nowhere to get that from, because it
+quantified over *every* bounded-order family realising a separated representation of `P`.
+
+**That hypothesis is false for every `P`.** Take `Dx i = []` for all `i`. The order condition
+`|Dx i| ≤ i` holds (`0 ≤ i`); the family realises the same representation, since it does not
+touch `φ` or `ψ`; and for `r ≥ 2` the Wronskian matrix has all rows equal, so the determinant
+is `0` and the index is `⊤`, below no finite bound. And every `P` admits a length-`2`
+representation — pad a shorter one with zeros — so this is not an edge case.
+
+`mvGenWronskian_nil_eq_zero` is that computation, landed as the record.
+
+### The repair costs nothing
+
+Carry `mvGenWronskian Dx φ ≠ 0` and `mvGenWronskian Dy ψ ≠ 0` into `hfac` and `hres`. The proof
+only ever applies them to the family `exists_sepW_ne_zero_le_degreeOf` produces, **whose
+Wronskians are non-zero by construction** — the `sepW ≠ 0` it returns had been discarded with
+a `-`. The hypothesis had simply been stated more strongly than the argument used.
+
+The type system then forced the same repair on `index_le_of_rothGrowth_split`, which is the
+one piece of good news here: once the head was fixed, nothing downstream could silently keep
+the broken form.
+
+### ⚠ How it was found, and what could not have found it
+
+It surfaced only when the halves were **supplied**. Not `lake build`, not `#print axioms`, and
+— importantly — **not a witness at small `r`**: at `r = 1` a one-column determinant is `φ 0`,
+which need not vanish, so the hypothesis is perfectly satisfiable there. The same asymptotic
+blind spot as correction 9's `S·rr ≤ r`.
+
+So the pattern, now twice: **a hypothesis nobody has had to discharge is indistinguishable
+from a false one.** Correction 9 was found by testing a side condition; this one by supplying
+one. Both times the theorem was sound and the hypothesis was the defect, and both times every
+finite example agreed with it.
+
+⚠ Worth noting against my own previous entry: I wrote that the `hres` assembly was "purely
+bookkeeping" and that saying so was risky given the last three such predictions. It was risky.
+
+### Where this leaves the arc
+
+Both halves of `hres` are now supplied and the hypothesis they feed is satisfiable:
+
+* `index_rescaled_wronskian_le` — the `x` half, from `RothLemmaUniform` at `m − 1`;
+* `index_rescaled_wronskian_le_right` — the `y` half, from `rothLemmaUniform_one`, **proved**.
+
+Open: quantify the two halves' auxiliary data (`B`, `E`, denominators) uniformly in the family
+— `abs_coeff_det_pderivList_le` is what makes a uniform `B` available — assemble `hres`, and
+iterate. Then `c_m = 2^m − 3`, still unasserted since §14 is unread.
+
+Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Four declarations `#print axioms`-clean.

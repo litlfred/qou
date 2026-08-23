@@ -572,6 +572,31 @@ theorem exists_index_le_of_rothGrowth {K : Type*} [Field K] [CharZero K] [Decida
     le_trans (hmain θ q (le_trans hcost hθ) hq0 hq hidx) (by linarith)⟩
 
 
+/-! ### ⚠ The tenth correction: "for every bounded-order family" is unsatisfiable
+
+`hfac` and `hres` below quantify over the families realising a separated representation of
+`P`, and an earlier version quantified over **all** of them.  That version is **vacuous**.
+
+Take `Dx i = []` for every `i`.  The order condition `|Dx i| ≤ i` holds, since `0 ≤ i`; the
+family realises the same representation, because it does not touch `φ` or `ψ`; and for `r ≥ 2`
+its Wronskian matrix has all rows equal, so the determinant is `0` and the index is `⊤` — below
+no finite bound.  `mvGenWronskian_nil_eq_zero` (`QOU/Mathlib/MvGenWronskian.lean`) is that
+computation.  And every `P` admits a length-`2` representation (pad a shorter one with zeros),
+so this is not an edge case: the hypothesis was false for **every** `P`.
+
+The repair is to carry `mvGenWronskian Dx φ ≠ 0` and `mvGenWronskian Dy ψ ≠ 0` into `hfac`, and
+it costs nothing, because the proof only ever applies `hfac` to the family
+`exists_sepW_ne_zero_le_degreeOf` produces — whose Wronskians are non-zero by construction.
+The hypothesis had simply been stated more strongly than the argument used.
+
+⚠ **How this was found, and what did not find it.**  It surfaced when the two halves of `hres`
+were finally supplied and the non-vanishing hypotheses they need had nowhere to come from.
+Neither `lake build` nor `#print axioms` could have caught it, and neither could a witness at
+small `r` — at `r = 1` a one-column determinant is `φ 0`, which need not vanish, so the
+hypothesis is satisfiable there.  That is correction 9's lesson exactly: **a hypothesis nobody
+has had to discharge is indistinguishable from a false one**, and the discharging is what
+tests it. -/
+
 /-! ### What the induction hypothesis supplies
 
 `exists_index_le_of_rothGrowth` leaves `S` — the bound on the determinant's index —
@@ -609,6 +634,7 @@ theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K
         (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
       0 < r → (∀ i, (Dx i).length ≤ (i : ℕ)) → (∀ j, (Dy j).length ≤ (j : ℕ)) →
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) →
+      mvGenWronskian Dx φ ≠ 0 → mvGenWronskian Dy ψ ≠ 0 →
       index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ)
         ≤ ((((r : ℚ) * Φ : ℚ)) : WithTop ℚ))
     (θ q : ℚ) (hθt : 2 / ω ≤ θ) (hq0 : 0 ≤ q)
@@ -616,8 +642,13 @@ theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K
     (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P) :
     θ ≤ 2 / ω + 2 * max Φ q := by
   have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
-  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, -⟩ :=
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, hne⟩ :=
     exists_sepW_ne_zero_le_degreeOf P hP hdeg
+  rw [sepW_eq] at hne
+  have hWx : mvGenWronskian Dx φ ≠ 0 := by
+    intro h; rw [h, map_zero, zero_mul] at hne; exact hne rfl
+  have hWy : mvGenWronskian Dy ψ ≠ 0 := by
+    intro h; rw [h, map_zero, mul_zero] at hne; exact hne rfl
   obtain ⟨D₁, hD₁ne, hd₁, hcost⟩ :=
     exists_degree_floor ω hω d₁ (d₂ ()) hd0 (rothGrowth_split o ω hω d₁ d₂ hg hlast)
   have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁ne
@@ -629,7 +660,7 @@ theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K
       (Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det
         ≤ ((((r : ℚ) * Φ : ℚ)) : WithTop ℚ) := by
     rw [hPeq, ← sepW, index_sepW]
-    exact hfac r φ ψ Dx Dy hr hDx hDy hPeq
+    exact hfac r φ ψ Dx Dy hr hDx hDy hPeq hWx hWy
   have hqq : (r : ℚ) * Φ ≤ q ^ 2 * (D₂ : ℚ) := le_trans (by nlinarith) hq
   have hmain := index_le_two_mul_max_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
     (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P θ
@@ -669,6 +700,7 @@ theorem index_le_of_rothGrowth_of_rescaled_bounds {K : Type*} [Field K] [CharZer
         (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
       0 < r → (∀ i, (Dx i).length ≤ (i : ℕ)) → (∀ j, (Dy j).length ≤ (j : ℕ)) →
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) →
+      mvGenWronskian Dx φ ≠ 0 → mvGenWronskian Dy ψ ≠ 0 →
       index (fun j => r * d₁ j) α (mvGenWronskian Dx φ) ≤ ((εU : ℚ) : WithTop ℚ) ∧
         index (fun j => r * d₂ j) β (mvGenWronskian Dy ψ) ≤ ((εV : ℚ) : WithTop ℚ))
     (θ q : ℚ) (hθt : 2 / ω ≤ θ) (hq0 : 0 ≤ q)
@@ -677,37 +709,33 @@ theorem index_le_of_rothGrowth_of_rescaled_bounds {K : Type*} [Field K] [CharZer
     θ ≤ 2 / ω + 2 * max (εU + εV) q :=
   index_le_of_rothGrowth_of_factor_bound o ω hω d₁ d₂ hg hlast hd0 hD₂ hd₂ α β P hP hdeg
     (εU + εV) hε
-    (fun r φ ψ Dx Dy hr hDx hDy hPeq =>
-      have h := hres r φ ψ Dx Dy hr hDx hDy hPeq
+    (fun r φ ψ Dx Dy hr hDx hDy hPeq hWx hWy =>
+      have h := hres r φ ψ Dx Dy hr hDx hDy hPeq hWx hWy
       factor_bound_of_rescaled (Nat.pos_iff_ne_zero.mp hr) d₁ d₂ α β Dx Dy φ ψ εU εV
         h.1 h.2)
     θ q hθt hq0 hq hθ
 
 /-! ### Next
 
-The chain now runs from the induction hypothesis's literal shape to §13's conclusion:
+The chain runs from the induction hypothesis's literal shape to §13's conclusion, and **both
+halves of `hres` are now supplied**:
 
-    hres  (bounds at the RESCALED degrees — what RothLemmaUniform gives)
-      ↓  factor_bound_of_rescaled
-    hfac  (the two Wronskians' indices sum to ≤ r·Φ)
-      ↓  index_le_of_rothGrowth_of_factor_bound
-    index P ≤ 2/ω + 2·max(εU + εV, q)
+* the `x` half by `index_rescaled_wronskian_le` — §6's Gauss, then `RothLemmaUniform` at
+  `m − 1`, then `index_C_mul` to carry the bound back;
+* the `y` half by `index_rescaled_wronskian_le_right`, which needs **no induction hypothesis
+  at all**: the split-off group is one variable, so the relevant instance is
+  `rothLemmaUniform_one`, and that is proved.
 
-Everything above `hres` is proved.  What remains is **discharging `hres`**, in two halves:
+Both live in `QOU/Mathlib/RothInductionHypothesis.lean`.
 
-1. **The `x` half — blocked on transport, not on mathematics.**  `RothLemmaUniform` at `m−1`
-   bounds `index (r·d₁) α (mvGenWronskian Dx φ)` given degree and height bounds on that
-   Wronskian, and both exist (`degreeOf_mvGenWronskian_le`, `abs_coeff_mvGenWronskian_le`).
-   The gap is that these theorems are stated for `σ ⊕ Unit` while `RothLemmaUniform` takes an
-   `o : σ ≃ Fin m`.  Bridging that is `Fin (n+1) ≃ Fin n ⊕ Unit` plus `index_rename_equiv`.
-2. **The `y` half.**  One variable, so `RothBaseCase` applies directly; the work is matching
-   its `ℤ`-coefficient, height-and-denominator hypotheses to what the step has.
+What remains is the **recursion**: quantify the two halves' auxiliary data (`B`, `E`, the
+denominators) uniformly in the family — `abs_coeff_det_pderivList_le` is what makes a uniform
+`B` available — assemble `hres`, and iterate.  Then `c_m = 2^m − 3`.
 
-Then `c_m = 2^m − 3` by iterating with `rothLemmaUniform_one` as the base.
+⚠ Provenance: §5, §6, §7 and §13 have been read directly and match.  §11 (property `Γ_m`) and
+§14 have **not**.  The `2/ω` bound is the arc's own reconstruction; `c_m = 2^m − 3` stays
+unasserted. -/
 
-⚠ Provenance: §5, §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14
-have **not**.  The `2/ω` bound is the arc's own reconstruction of what a growth condition must
-be doing; `c_m = 2^m − 3` stays unasserted. -/
 
 
 

@@ -139,7 +139,12 @@ internally; the caller states degrees, growth and the index bound entirely in te
 
 ⚠ `hres` is still phrased on the **renamed** polynomial, and deliberately: that is what the
 induction actually produces, since the sub-problems live on the split.  Hiding the rename here
-would only move the transport into the caller. -/
+would only move the transport into the caller.
+
+⚠ It also carries the two non-vanishing hypotheses — see the tenth correction in
+`QOU/Mathlib/RothOperatorFamily.lean`.  Without them the hypothesis is unsatisfiable, because
+the all-empty operator family is bounded-order, realises the same representation, and has a
+vanishing Wronskian for `r ≥ 2`. -/
 theorem index_le_of_rothGrowth_split {K : Type*} [Field K] [CharZero K] [DecidableEq σ]
     {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 1 ≤ ω) (d : σ → ℕ)
     (hg : RothGrowth o ω d) (hd0 : d (o.symm (Fin.last n)) ≠ 0)
@@ -153,6 +158,7 @@ theorem index_le_of_rothGrowth_split {K : Type*} [Field K] [CharZero K] [Decidab
       rename (splitOrder o) P
           = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (Fin n ⊕ Unit) K)
               * rename Sum.inr (ψ k) →
+      mvGenWronskian Dx φ ≠ 0 → mvGenWronskian Dy ψ ≠ 0 →
       index (fun j => r * splitLeft o d j) (splitLeft o α) (mvGenWronskian Dx φ)
           ≤ ((εU : ℚ) : WithTop ℚ) ∧
         index (fun j => r * splitRight o d j) (splitRight o α) (mvGenWronskian Dy ψ)
