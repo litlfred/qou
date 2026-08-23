@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T14:00:03Z
-updated_at: 2026-08-23T15:38:50Z
+updated_at: 2026-08-23T22:19:54Z
 ---
 
 ## What happened
@@ -134,3 +134,47 @@ I saw PASS -> FAIL, assumed my change caused it, and reverted without bisecting.
 The correct first move was the one I eventually made: run the pre-sweep source and
 see whether the failure predates the change. Reverting on suspicion put 15 stale
 passes back into the tree for one commit.
+
+
+---
+
+## MEASURED 2026-08-23 — both halves, and they separate cleanly
+
+**Half 1: the 29 flips.** Resolved. Every one bisected to a STALE PASS, not a
+regression. Detail in `93e24e23d`: the worst,
+`m_n_matches_codata_within_10ppb` at 2.389 -> 501.43 ppb, is identical at
+`QOU_COMPUTE_DPS` 50/60/70 so precision is exonerated, and its inputs were
+corrected AFTER the witness was last computed (`codata_constants.py` 08-19,
+"hand-typed and 7 of 11 were wrong"; `experimental_constants.py` 08-22).
+
+My own error here is recorded in `1edde3a7b`: I reverted 20 witnesses on
+suspicion, and bisecting afterwards showed 15 of 15 were already failing before
+the sweep. The revert put 15 stale passes back for one commit. **Bisect, do not
+revert.**
+
+A second instance landed later on this branch and was handled the right way:
+`qbeta-jacobi-anger-tower-general` flipped PASS -> FAIL, and the obvious bisect
+misleads — running the whole tree at the pre-change commit DOES restore the
+passing numbers, because that moves the producer and every dependency at once.
+Holding the tree at HEAD and reverting only the single suspect line reproduced
+HEAD bit for bit, exonerating this branch and pointing at the 2026-08-09
+convention C -> D excision instead.
+
+**Half 2: "and every blocking gate stayed green."** Confirmed, and now
+quantified. `witness_failed_assertion_audit.py` is the gate that sees this, and
+it is registered ADVISORY at `precision-gates.sh:145`.
+
+    origin/main                   28 NEW + 1 GROWN   (--strict exits 1)
+    claude/mass-table-...-triage  34 NEW + 1 GROWN   (--strict exits 1)
+
+Diffing the NEW sets: **the branch adds exactly 6, clears 0.** Named,
+with values, in bean **qou-60r9**.
+
+The flip-to-blocking condition is already written into
+`precision-gates.sh:118` — "when a plain run reports no witness outside the
+baseline" — and it cannot be met from this branch alone, because 28 of the 34
+are main's. Two separable jobs: resolve the branch's 6 (qou-60r9), and drain
+main's 28 (existing triage, qou-ad4t), then flip.
+
+So this bean's structural complaint is real, is not fixable by editing a gate
+flag, and is now tracked with the exact count each side owns.
