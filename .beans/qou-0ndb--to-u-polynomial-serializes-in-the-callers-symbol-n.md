@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:12Z
-updated_at: 2026-08-18T22:10:15Z
+updated_at: 2026-08-23T22:39:41Z
 ---
 
 
@@ -603,3 +603,79 @@ cite it as established.
 Also fixed `witness_shape_guard`: it flagged a witness as COLLAPSED on
 `durationMs: 1 -> 0` while that witness GAINED content. Floored at 1 s, at the
 guard rather than --accept-ing past it.
+
+
+---
+
+## 2026-08-23 — the consumer survey's criterion is not sufficient, and 24 more sites were armed
+
+This bean's survey classifies a `check_q`-only reader as SAFE iff its own
+symbol is **assumption-free**, on the reasoning that a fresh `Symbol('u')` with
+default assumptions IS equal to an assumption-free `Symbol('u')`. That
+reasoning is correct, and it is why most such readers worked by accident.
+
+**It is not sufficient.** It checks assumptions and not the NAME:
+
+    habiro_ladder_bridge.py:123   U = sp.Symbol("U")
+        assumption-free -> "safe" by this bean's rule
+        BROKEN ANYWAY: the witness string says `u`, the symbol is named `U`,
+        so `sympify` mints a free `Symbol('u')` that never resolves.
+
+The criterion needs a name check as well as an assumptions check — or, simpler,
+bind both names unconditionally, which is what
+`habiro_coefficients_atomic`'s own docstring already prescribes: *"Mapping both
+names onto the caller's symbol is the fix; it cannot misfire, because a given
+string uses one name or the other and both resolve to the same object."*
+
+### What the two bridges were actually doing (b60c449bd)
+
+`habiro_ladder_bridge` — the crash was the LATE symptom. Before it died,
+`sp.limit(dq, q, 1)` was already returning
+`(2u⁸+4u⁴−6)/(4u¹⁸(u⁸+2u⁴+1))` instead of `0`, and `leadterm` gave ε⁰ instead
+of ε¹. The order-matching result the probe exists to compute was already wrong.
+
+`habiro_mode_to_ladder_bridge` — worse variant: its symbol is
+`sp.Symbol("u", positive=True)`, so the minted symbol **prints identically**.
+Measured `dtrM.free_symbols` = 2 distinct objects, 451 numerator terms, against
+5 terms and 1 symbol once fixed. The visible tell was `u**15*u**28` in the
+output — powers sympy refuses to combine because they are different symbols.
+
+Cross-check after the fix: the two independently-repaired producers agree
+exactly on Δtr_M, both equal the atomic witness's own `tr_M_in_q` difference,
+and the factorisation gives Φ₁=Φ₂=Φ₄=1, Φ₈=0 — the corpus's convention-D row
+for A=1 — restoring the Φ₁ divisibility that `mirror_traceDiff_eq_zero_of_tau_eq`
+PROVES must hold. The buggy path violated it.
+
+### The rest of the class (3a47febca)
+
+**22 further sites across 12 files** were still `check_q`-only. All now bind
+both names:
+
+    habiro/habiro_q_difference_fourier.py            4
+    qbeta/qbeta_habiro_delta_a_m_pattern_probe.py    5
+    habiro/habiro_q_difference_mode_solve.py         2
+    probes/motivic_obstruction_symbolic.py           2
+    probes/habiro_frobenius_probe.py                 2
+    habiro/habiro_coefficients_extended.py           1   <- the assumptions case
+    habiro/habiro_witness_validator.py               1
+    probes/habiro_frobenius_norm_probe.py            1
+    probes/habiro_expansion_atomic_probe.py          1
+    markov/markov_substrate_realizer.py              1
+    qbeta/qbeta_habiro_cross_pair_quick_dp.py        1
+    qbeta/qbeta_habiro_phase5q_dn_refactorize.py     1
+
+All eleven runnable producers were RUN, not merely parsed: 9 rc=0, 2 rc=1, and
+both non-zero exits verified pre-existing (one is the deliberate
+`AmDifferenceInvalid` convention-D blocker; the other reproduces identically
+with the file reverted to HEAD). Zero assertion flips across every affected
+witness.
+
+`habiro_ladder_bridge` and `habiro_mode_to_ladder_bridge` additionally carry a
+`stray = free_symbols - {U}` guard that raises rather than continuing with a
+non-numeric trace, so the next name change fails loudly instead of silently.
+
+### Still open
+
+The two-name `locals` remains load-bearing until every affected witness is
+regenerated, exactly as this bean says. What has changed is that the readers no
+longer depend on WHICH name a given witness happens to carry.
