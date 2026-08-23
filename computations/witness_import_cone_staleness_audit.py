@@ -116,6 +116,65 @@ REPO_ROOT = HERE.parent
 _commit_time_cache: dict[Path, datetime | None] = {}
 
 
+# ── Provenance-only cone modules ────────────────────────────────────────
+#
+# A module that WRITES the witness cannot move the number inside it.  Excluding
+# those from ATTRIBUTION does not change the count -- 1,473 before and after --
+# it changes which module each stale witness is filed under.
+#
+# That distinction matters because `newest_dep` reports only the single newest
+# cone module, so one recent commit to a near-universally-imported module
+# OVERWRITES the attribution on everything behind it.  Measured on
+# origin/main 2026-08-23, peeling the layers one at a time:
+#
+#     attributed to                              count
+#     qou_substrate/witness.py                    1444   <- before this fix
+#     substrate/witness_base.py                   1116   <- revealed by excluding the above
+#     substrate/q_parameter.py                    1171   <- revealed by excluding both
+#     mass_at_3A_proper.py                         247
+#     _li_2_q_util.py                               36
+#
+# So the two provenance modules were not standing in for nothing -- they were
+# standing in FRONT of real movers.  Only **15** of the 1,473 turn out to be
+# provenance-ONLY.  An earlier reading of this table (mine) took the 1,444 as
+# 1,444 false positives and concluded the real signal was ~29; that was wrong,
+# and the correction is recorded here because the table invites it.
+#
+# Worked example of the misfiling: `markov-peel-atomic-tr-m-muon` is genuinely
+# cone-stale -- confirmed by re-run, its numbers move up to 2.9x -- via the
+# ctype/averaged_weighted repair and four `canonical_braid_crossings` commits.
+# None of those appeared in the output; it was filed under the JSON serializer.
+#
+# The corpus already holds this judgement about `witness.py` one field over:
+# AGENTS.md records that it masks `scriptCommitSha` in `_EPHEMERAL_META_FIELDS`,
+# and that `witness_dependency_drift.py` keys self-staleness on `scriptHash`
+# alone, because that field is provenance, not mathematics.
+#
+# DELIBERATELY NOT LISTED: `_precision.py` and `q_parameter.py`.  Both CAN move
+# a number -- one sets working precision, the other serves q_0 -- so excluding
+# them would hide real staleness.  `q_parameter` is now the top attribution at
+# 1,171, and it is imported nearly as universally as WitnessBuilder, so the same
+# "one recent commit to a near-universal module" dynamic applies to it -- but it
+# applies to a module that genuinely can change values, which is the difference.
+# Whether those 1,171 actually moved is a re-run question, not one this detector
+# settles.
+#
+# Keep this list minimal.  Every addition is a claim that the module cannot
+# affect a value, and a wrong path fails SILENTLY -- `computations/witness_base.py`
+# in the first draft of this list matched nothing (the file is at
+# `computations/substrate/witness_base.py`), so attribution simply fell through
+# to the next provenance module and the fix looked like it had worked.
+PROVENANCE_ONLY = frozenset({
+    "tools/qou-substrate/python/qou_substrate/witness.py",
+    "computations/substrate/witness_base.py",
+    "computations/_path_bridge.py",
+})
+
+
+def _is_provenance_only(rel_path: str) -> bool:
+    return rel_path in PROVENANCE_ONLY
+
+
 def _rel(p: Path) -> str:
     """Display path relative to the repo root — the cone reaches outside
     `computations/` (e.g. `tools/qou-substrate/.../witness.py`), so anchoring
@@ -271,15 +330,23 @@ def main() -> int:
                 movers.append((mod, ct))
         if movers:
             movers.sort(key=lambda t: t[1], reverse=True)
-            newest = movers[0][1]
+            # Attribute to the newest module that could actually MOVE a number.
+            # Reporting the bare newest lets one provenance commit overwrite the
+            # real cause on every witness behind it (see PROVENANCE_ONLY).
+            substantive = [m for m in movers
+                           if not _is_provenance_only(_rel(m[0]))]
+            attrib = substantive[0] if substantive else movers[0]
+            newest = attrib[1]
             stale.append({
                 "witness": _rel(wp),
                 "producer": _rel(producer),
                 "computed_at": when,
-                "newest_dep": _rel(movers[0][0]),
+                "newest_dep": _rel(attrib[0]),
                 "newest_dep_time": newest,
                 "lag_days": (newest - when).days,
                 "n_movers": len(movers),
+                "n_substantive_movers": len(substantive),
+                "provenance_only": not substantive,
             })
 
     stale.sort(key=lambda r: r["lag_days"], reverse=True)
@@ -291,8 +358,14 @@ def main() -> int:
     print(f"  SELF-stale (already caught)  : {self_stale_skipped:,}  (excluded below)")
     print(f"  producer unresolved          : {unresolved:,}")
     print(f"  no usable computedAt         : {no_computed_at:,}")
+    prov_only = [r for r in stale if r["provenance_only"]]
+    substantive = [r for r in stale if not r["provenance_only"]]
     print(f"  IMPORT-CONE STALE            : {len(stale):,}  <- invisible to the "
           f"existing validator")
+    print(f"    of which PROVENANCE-ONLY   : {len(prov_only):,}  (every mover "
+          f"only writes the witness — cannot change a value)")
+    print(f"    of which SUBSTANTIVE       : {len(substantive):,}  <- the "
+          f"triage-worthy set")
     if GRAFT:
         print()
         print(f"  ⚠ SHALLOW CLONE (graft {GRAFT[:12]}). Every module not touched since")
