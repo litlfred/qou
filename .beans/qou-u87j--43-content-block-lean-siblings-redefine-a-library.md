@@ -417,3 +417,73 @@ numerical no-change check.
   is wrong.** Sometimes that is the library, and then it is not a resync at all.
 - Option 1's gate stands regardless, and is the reason none of this is urgent:
   the population cannot grow while the baseline holds.
+
+## New axis 2026-08-23 — §7c regime, and 7 pairs the field comparison called faithful
+
+`check-mirror-drift.ts` now also compares which **side of the §7c wall** each
+copy sits on, judged by the corpus's own `ARCHIMEDEAN_TYPE_RE` applied to field
+*types*. Two mirrors can agree on every field **name** and still be on opposite
+sides. Before this, the checker scored those as faithful mirrors.
+
+On `main`: 147 pairs, **94** faithful (was 101), **46** drifted, plus
+
+| | count |
+|---|---|
+| **`regime`-only** — same fields, opposite sides of the wall | **7** across 5 files |
+| drifted pairs that **also** cross the wall | **10** |
+| **total pairs with a §7c disagreement** | **17** |
+
+Counted on its own axis, not folded into `drifted`, so the `--baseline 46` gate
+in `prepare-merge` §4a is unchanged and a §7c figure will not move when someone
+drains the drift backlog.
+
+### The 7 that were invisible
+
+| declaration | sibling | library | direction |
+|---|---|---|---|
+| `QOU.ArchimedeanObservation` | `quantum-observable-universes/observation.lean:74` | `…/GaugeTheory.lean:250` | lib archimedean |
+| `QOU.QReebFlow` | `…/q-torsion-leaf.lean:55` | `…/Particles.lean:93` | lib archimedean |
+| `QOU.QReebFlow` | `…/q-reeb-flow.lean:44` | `…/Particles.lean:93` | lib archimedean |
+| `QOU.QTorsionLeaf` | `…/q-torsion-leaf.lean:65` | `…/Particles.lean:102` | lib archimedean |
+| `QOU.ReebDecomposition` | `models-of-qous/reeb-decomposition.lean:46` | `…/Particles.lean:18` | lib archimedean |
+| `QOU.BraidKnot.GBResidueSpectralSum` | `mass-theory/gb-residue-spectral-sum.lean:74` | `…/GBResidueSpectralSum.lean:67` | **sib** archimedean |
+| `QOU.BraidKnot.RootOfUnity` | `mass-theory/gb-residue-spectral-sum.lean:49` | `…/GBResidueSpectralSum.lean:52` | **sib** archimedean |
+
+**Five have the library on the archimedean side and the sibling algebraic** —
+the `qou-6ome` shape, where the §7c migration reached the siblings and not the
+library. Two go the other way. Direction is per-case; do not assume.
+
+### The 10 drifted pairs that also cross the wall
+
+`QOU.BraidsKnots.FibreFunctor`, `QOU.CRManifoldData` ×2, `QOU.CategoricalMobiusEnergy`,
+`QOU.CategoricalQExtDeriv`, `QOU.ClassicalMobiusEnergy`, `QOU.KnotEmbedding`,
+`QOU.SubstrateParameter` ×2, `QOU.Torsion.VacuumState`.
+
+For these a field resync is not the fix, and the checker now says so in the
+finding: *"a field resync will not fix this, a wall split will."* That is the
+trap from §Option 3, made machine-visible.
+
+### The good news: 17 pairs, ~9 library files
+
+They cluster hard:
+
+| library file | pairs |
+|---|---|
+| `QuantumObservableUniverse/Particles.lean` | 4 |
+| `MobiusEnergy.lean` | 3 |
+| `QuantumObservableUniverse/SubstrateParameter.lean` | 2 (`qou-6ome`) |
+| `QuantumObservableUniverse/CRRealisation.lean` | 2 |
+| `BraidKnot/GBResidueSpectralSum.lean` | 2 |
+| `GaugeTheory.lean`, `MotivesArchimedean.lean`, `Instanton.lean`, `Torsion/BraneTower.lean` | 1 each |
+
+So the §7c backlog is a **file-sized** job, not a pair-sized one — and
+`Particles.lean` alone accounts for four. `SubstrateParameter.lean` is the one
+with 22 downstream files behind it; the others are much smaller and are the
+sensible place to learn the pattern before touching q₀.
+
+### Why this axis had to be added rather than assumed covered
+
+`check-wall-side` and `check-base-ring` **PASS** on every one of these files.
+They fire on a file that *mixes* regimes; a declaration wholly on the wrong side
+is not mixed. Passing the wall gate means "not mixed", not "on the right side of
+the wall". Recorded at length on `qou-6ome`.
