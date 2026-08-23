@@ -145,6 +145,29 @@ def restore():
                        cwd=ROOT, capture_output=True)
 
 
+def environment():
+    """What this run ran against.
+
+    Verdicts are not comparable across containers without it, and that is not
+    hypothetical: this sweep was run once with `mpmath` absent (all 55
+    producers died at import, every verdict wrong) and once with `scipy`
+    absent (`hadron_knot_table` CRASHed for a reason that is this container's,
+    not the corpus's). Neither run said so anywhere in its output.
+    """
+    import platform
+    mods = {}
+    for name in ("mpmath", "sympy", "numpy", "scipy", "pyhecke_native"):
+        try:
+            m = __import__(name)
+            mods[name] = getattr(m, "__version__", "present")
+        except Exception:
+            mods[name] = None          # explicit: absent, not merely unrecorded
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT,
+                          capture_output=True, text=True).stdout.strip()
+    return {"python": platform.python_version(), "modules": mods,
+            "tree_commit": head}
+
+
 def diff_paths(a, b, prefix="", out=None, cap=40):
     """Dotted paths at which two stripped witness bodies differ.
 
@@ -189,6 +212,17 @@ def main() -> int:
                     help="skip producers already measured in --out")
     args = ap.parse_args()
 
+    ENV = environment()
+    missing = [k for k, v in ENV["modules"].items()
+               if v is None and k in ("mpmath", "sympy", "numpy")]
+    if missing:
+        # Refuse rather than attribute the resulting silence to the corpus.
+        print(f"REFUSING TO RUN: {', '.join(missing)} not importable. Every "
+              f"producer would die at import and the sweep would report the "
+              f"whole corpus as reproducing its artifacts.")
+        return 2
+    print(f"environment: {ENV['modules']}")
+
     tg = targets()
     print(f"muon-anchored witnesses carrying A: {len(tg)}")
     runnable = [(w, s, c) for w, s, c in tg if len(c) == 1]
@@ -212,7 +246,7 @@ def main() -> int:
         json.dump({"results": rs, "tally": dict(collections.Counter(
                        r["verdict"] for r in rs)),
                    "partial": partial, "measured": len(rs),
-                   "total": len(runnable),
+                   "total": len(runnable), "environment": ENV,
                    "skipped": [{"witness": w, "scriptFile": s_, "candidates": c}
                                for w, s_, c in skipped]},
                   open(tmp, "w"), indent=2)
