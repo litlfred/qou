@@ -194,9 +194,14 @@ theorem sn_spectralData_exists (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypic
 `Σ_i ω_i · dim(λ_i)² = n! · binom(n,2)`
 
 for **all `n`** — where `ω_i` is the Jucys–Murphy content-square eigenvalue and `dim(λ_i)` the SYT
-dimension of block `i`.  This is the unconditional general-`n` Identity (B): the only residual inputs
-are the bricks' own honest `sorry`s (the isotypic-projection identification, the OV eigenvalue
-theorem, the standard-basis dimension theorem's spanning core), all wired in `snSpectralData`.
+dimension of block `i`.  This is the unconditional general-`n` Identity (B).
+
+**Corrected 2026-08-23.** The sentence that stood here said "the only residual inputs are the
+bricks' own honest `sorry`s (the isotypic-projection identification, the OV eigenvalue theorem, the
+standard-basis dimension theorem's spanning core)". Measured, there are none left:
+`#print axioms` on `identityB_general`, on `sum_numSYT_sq_eq_factorial` and on `snSpectralData`
+reports `[propext, Classical.choice, Quot.sound]`. The class hypothesis `SnIsotypicSpechtSplit` is
+also no longer an open premise — it is inhabited by `SnIsotypicSpechtSplitInstance`.
 
 (The statement is stated exactly as the keystone's `identityB_conditional` concludes, against the
 assembled `W := (sn_spectralData_exists n).some`.) -/
