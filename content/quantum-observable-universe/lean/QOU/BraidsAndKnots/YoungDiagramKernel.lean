@@ -296,20 +296,25 @@ theorem m1_eq_cov_rowSq_contentSq_of_le_five (k : ℕ) (hk : k ≤ 5) :
   interval_cases k <;> exact ⟨by decide, by decide⟩
 
 set_option maxRecDepth 1000000 in
-set_option maxHeartbeats 8000000 in
-/-- **`M₁ > 0` — the first odd hook-power moment, Lean-verified base cases `3 ≤ k ≤ 7`** (`decide`).
+set_option maxHeartbeats 120000000 in
+/-- **`M₁ > 0` — the first odd hook-power moment, Lean-verified base cases `3 ≤ k ≤ 8`** (`decide`).
 The `(k!)²`-scaled Plancherel covariance `scaledCov k (Σ□ h) (Σ□ c²) = (k!)²·Cov_Planch(Σ□ h, Σ□ c²)`
-(same sign as `M₁`, since `(k!)² > 0`) is **strictly positive** for every `3 ≤ k ≤ 7`. Machine-checked
-over the full partition / SYT-dimension / hook / content machinery.
+(same sign as `M₁`, since `(k!)² > 0`) is **strictly positive** for every `3 ≤ k ≤ 8`. Machine-checked
+over the full partition / SYT-dimension / hook / content machinery. (`k = 8` decides in ≈40 s cold;
+the `k ≤ 8` range matches `hookSqSum_eq_contentSq_add_sq_card_of_le_eight` above.)
 
 This certifies the **finite base** of the one-sided reduction of the all-`n` conjecture
 `M₁(n) > 0 ⟸ (exact `M₁>0` for small `n`) ∧ (κ_n ≥ κ for `n ≥ 13`)` (bean `qou-k5r5`), where
 `κ_n = M₁/n^{5/2} → κ = 128/(225π²)` (derived). Unlike the **even** moments (`threeM4_pos`, `M6_pos`,
 exact polynomials with manifest-positive factorisations), `M₁` is **non-polynomial**, so its all-`n`
-positivity is **open**: the remaining content is the *sign* `κ_n → κ` from above, a **bulk**
-second-order Kerov–CLT statement (edge/Tracy–Widom is subleading, `n^{-2/3}`), not settled here.
-Exact `Fraction` computation independently verifies `M₁ > 0` for all `n ≤ 67`. -/
-theorem m1_pos_of_le_seven (k : ℕ) (hk3 : 3 ≤ k) (hk : k ≤ 7) :
+positivity is **open**: the remaining content is the *sign* `κ_n → κ` from above, a **second-order
+Plancherel-fluctuation** statement whose asymptotic order is **undetermined** at reachable `n` — the
+edge (Tracy–Widom) contributes at relative order `n^{-2/3}` (a valid scaling estimate) and a bulk CLT
+correction at `n^{-1/2}`, but the measured effective exponent of `κ_n − κ` is still rising (`≈ 0.25 →
+0.36` over `n = 40 … 64`, not converged), so edge vs bulk **cannot be ranked**. Not settled here; see
+`docs/audits/2026-08-23-covariance-kernel-M1-correction-bulk-not-edge.md`. Exact `Fraction`
+computation independently verifies `M₁ > 0` for all `n ≤ 67`. -/
+theorem m1_pos_of_le_eight (k : ℕ) (hk3 : 3 ≤ k) (hk : k ≤ 8) :
     0 < scaledCov k (fun l => (hookSum l : ℤ)) contentSq := by
   interval_cases k <;> decide
 

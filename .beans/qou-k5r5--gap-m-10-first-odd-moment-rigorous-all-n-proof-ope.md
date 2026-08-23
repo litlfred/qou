@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-23T07:52:07Z
+updated_at: 2026-08-23T08:35:52Z
 ---
 
 
@@ -279,3 +279,9 @@ LEAN + HONEST WALK-BACK (2026-08-23, PR #5506).
 SOLID: M_1>0 exact n<=67; Lean-proved k<=7; kappa>0 derived; kappa_n>kappa emp n<=67.
 FRONTIER: prove kappa_n>=kappa asymptotically - 2nd-order Plancherel fluctuation of
 UNDETERMINED order (bulk and edge both plausible). Open.
+
+2026-08-23 (PR #5518, branch claude/m1-lean-base-k8): Lean finite base of M_1>0 extended k<=7 -> k<=8 (m1_pos_of_le_seven -> m1_pos_of_le_eight; interval_cases k <;> decide; whole-file lean-direct EXIT=0). Also fixed a stale over-claim: the merged #5506 docstring still called the kappa_n->kappa sign 'bulk second-order (edge subleading n^-2/3)'; walked back to 'order UNDETERMINED, edge vs bulk unranked' to match the corrected audit. Asymptotic sign kappa_n>=kappa (n>=13) stays OPEN. scope-(a); no fit; L2 unchanged.
+
+2026-08-23 FRONTIER SHARPENED (PR #5518): the Sniady genus expansion IS applicable to M_1's kappa_n-kappa sign, correcting a scope trap. It was eliminated (route #11, 2026-07-25 A5) only for the DIM-TILT kernel Cov(dim,omega3) because dim notin A. But M_1=Cov(Sigma_h,omega3) has BOTH legs polynomial-on-Young-diagrams (omega3=R4+R2; Sigma_h=1/2(p2+p2')), so the dim-obstruction is absent. Concrete route (NOT executed, no order/sign claimed): genus-0 = IO CLT = kappa*n^5/2 (derived); genus-1 via Sniady math/0411647 sec 4.4 explicit 2nd-order R_k expansion -> order+sign. Blocker: sec 4.4 OCR garbled; needs clean PDF statement composed with the R_k forms of Sigma_h, omega3. Next honest step for the frontier.
+
+2026-08-23 ENV BLOCKER on the genus-1 execution: the clean Sniady math/0411647 sec 4.4 formula (explicit 2nd-order R_k expansion) is NOT obtainable in this sandbox — arxiv.org firewalled (403 via proxy); local library OCR of sec 4.4 is math-garbled; pypdf+pdfminer both broken (cryptography/_cffi_backend pyo3 panic container-wide); custom zlib extraction won't help (2004 LaTeX PDF stores math in cmsy/cmmi custom font encodings -> glyph codes not Unicode, which is WHY the OCR is garbled). Refused to reconstruct the formula from garbled OCR/memory (confabulation). NEXT SESSION with working egress or a clean secondary source (e.g. Dolega-Sniady 1704.02352, or Ivanov-Olshanski explicit covariance tables) should: (1) get the explicit genus-1 R_k correction, (2) compose with Sigma_h=1/2(p2+p2') and omega3=R4+R2 in free cumulants, (3) read off order+sign of kappa_n-kappa. That is the concrete unblock for the M_1>0 all-n frontier.

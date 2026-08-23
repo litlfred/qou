@@ -1,17 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T08:30:37.554Z",
+  "generated": "2026-08-23T08:46:47.677Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3042,
-  "files_flagged": 142,
-  "total_defects": 127,
+  "files_flagged": 141,
+  "total_defects": 124,
   "total_exempt": 47,
   "total_promoted_from_exempt": 76,
   "categories": {
     "proof-no-self-assuming-projection": 117,
     "proof-docstring-sorry-mismatch": 1,
-    "proof-no-trivial-true": 2,
-    "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1
   },
@@ -2190,32 +2188,6 @@
         "exempt": false,
         "detail": "the projected field `jgcs.adjoint_vanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean": [
-      {
-        "line": 68,
-        "category": "proof-no-trivial-true",
-        "pattern": "axiom-true",
-        "snippet": "axiom su3_sym2_irreducible :",
-        "decl": "su3_sym2_irreducible",
-        "severity": "critical"
-      },
-      {
-        "line": 68,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom su3_sym2_irreducible :",
-        "decl": "su3_sym2_irreducible",
-        "severity": "critical"
-      },
-      {
-        "line": 82,
-        "category": "proof-no-trivial-true",
-        "pattern": "conjunction-of-tautologies",
-        "snippet": "theorem octonion_3_passes_sym2_gate : (6 : ℕ) = 6 ∧ (0 : ℕ) = 0 := by",
-        "decl": "octonion_3_passes_sym2_gate",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean": [
