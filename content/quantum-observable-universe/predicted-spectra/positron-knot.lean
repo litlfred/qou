@@ -1,3 +1,4 @@
+import QOU.Archimedean.ParticleKnots
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -24,32 +25,6 @@ numerical evaluation.
 namespace QOU.Archimedean
 
 noncomputable section
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
-
-/-- The positron: mirror trefoil σ(T_{2,3}) with reversed crossings.
-    Antiparticle of the electron; same knot as down quark but in
-    the lepton sector (orbital, not color-tube). -/
--- Ref: [manuscript] Ch. 5, §positron-knot
-structure Positron where
-  /-- Torus knot parameter p (same as trefoil). -/
-  torusP : ℕ := 2
-  /-- Torus knot parameter n (same as trefoil). -/
-  torusN : ℕ := 3
-  /-- Crossing number (same as trefoil). -/
-  crossing_number : ℕ := 3
-  /-- Seifert genus (same as trefoil). -/
-  genus : ℕ := 1
-  /-- Hyperbolic volume (torus knot → non-hyperbolic). -/
-  volume : R_q := 0
-  /-- Coulomb charge: +1 (reversed crossing chirality). -/
-  charge : ℤ := 1
-  /-- Orientation: -1 for antiparticle (reversed time direction). -/
-  orientation : ℤ := -1
-
 /-- The positron is a mirror trefoil T_{2,3} with reversed crossings. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
