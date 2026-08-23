@@ -1,13 +1,6 @@
 {
   "results": [
     {
-      "producer": "computations/a_operator/cyclic_intertwiner_verify.py",
-      "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",
-      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
-      "siblings_moved": [],
-      "stderr_tail": ""
-    },
-    {
       "producer": "computations/alpha/alpha_5_lp_dual_crystal.py",
       "witness": "computations/alpha/alpha-5-lp-dual-crystal.witness.json",
       "verdict": "TIMEOUT",
@@ -22,28 +15,69 @@
       ]
     },
     {
+      "producer": "computations/audits/q0_anchor_consistency_audit.py",
+      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": []
+    },
+    {
+      "producer": "computations/a_operator/cyclic_intertwiner_verify.py",
+      "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "allPassed",
+        "assertions.0.computed",
+        "assertions.0.passed",
+        "data.h6_all_lambda6.max_abs_residual",
+        "data.h6_all_lambda6.passed",
+        "data.h9_feasible_8_1.max_abs_residual",
+        "data.h9_feasible_8_1.passed",
+        "data.q0",
+        "q0Anchor (removed)",
+        "q0Value (removed)",
+        "scriptHash"
+      ],
+      "stderr_tail": ""
+    },
+    {
       "producer": "computations/atomic_tr_m_mpfr_50dps.py",
       "witness": "computations/atomic-tr-m-mpfr-50dps.witness.json",
       "verdict": "SUBSTANTIVE",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "changed_fields": [
+        "results.0.bridge_elapsed_sec",
+        "results.0.python_hoefsmit_elapsed_sec",
+        "results.0.rust_canonical_chi_elapsed_sec",
+        "results.1.bridge_elapsed_sec",
+        "results.1.python_hoefsmit_elapsed_sec",
+        "results.1.rust_canonical_chi_elapsed_sec",
+        "results.2.bridge_elapsed_sec",
+        "results.2.python_hoefsmit_elapsed_sec",
+        "results.2.rust_canonical_chi_elapsed_sec",
+        "results.3.bridge_elapsed_sec",
+        "results.3.python_hoefsmit_elapsed_sec",
+        "results.3.rust_canonical_chi_elapsed_sec",
+        "results.4.bridge_elapsed_sec",
+        "results.4.python_hoefsmit_elapsed_sec",
+        "results.4.rust_canonical_chi_elapsed_sec",
+        "scriptHash"
+      ]
     },
     {
       "producer": "computations/audits/muon_pin_three_values_probe.py",
       "witness": "computations/audits/muon-pin-three-values.witness.json",
       "verdict": "SUBSTANTIVE",
-      "siblings_moved": []
-    },
-    {
-      "producer": "computations/audits/q0_anchor_consistency_audit.py",
-      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
-      "verdict": "UNCHANGED",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion"
+      ]
     }
   ],
   "tally": {
-    "SUBSTANTIVE/ASSERT-FAIL": 1,
     "TIMEOUT": 1,
     "UNCHANGED": 2,
+    "SUBSTANTIVE/ASSERT-FAIL": 1,
     "SUBSTANTIVE": 2
   },
   "partial": true,
