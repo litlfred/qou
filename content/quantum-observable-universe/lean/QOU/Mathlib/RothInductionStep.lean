@@ -206,6 +206,84 @@ theorem sum_index_le_index_sepW_concrete {K : Type*} [CommRing K] [IsDomain K]
   sum_index_le_index_sepW_add d₁ d₂ α β Dx Dy φ ψ _
     (cost_bound_of_bounded_order hD₁ hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hx hy)
 
+/-! ### The rescaling, applied -/
+
+/-- **The induction step's inequality with the rescaling applied.**
+
+Given upper bounds on the two factors' indices *in their own degree vectors* — which is the
+shape the induction hypothesis produces, since `mvGenWronskian` of `r` functions of degree
+`≤ d` has degree `≤ r·d` — and a lower bound `θ` on `index P`, this concludes
+
+    θ ≤ εU + εV + (r/D₁ + r/D₂).
+
+The rescaling is what makes the `εU`, `εV` terms come out un-divided: without it the induction
+hypothesis simply does not apply to `U` and `V`, because they are not of degree `d`.
+
+═══ ⚠ THIS CONFIRMS THE SIXTH CORRECTION RATHER THAN RESOLVING IT ═══
+
+The error term is now `r/D₁ + r/D₂`, down a factor `r` from the unscaled
+`sum_index_le_index_sepW_concrete`.  **It is still too large.**
+
+`r` is the length of a minimal separated representation, so it is bounded by the number of
+distinct monomials in the split-off variable group — of order `D₁`.  Then `r/D₁` is of order
+`1`, and Roth's lemma needs a conclusion of the form `index ≤ m·ε` with `ε` small.  An error
+of order `1` swamps it.  The `r/D₂` term is worse: under the growth condition the two degree
+scales differ by a factor `ω`, so `r/D₂` is of order `ω`.
+
+⚠ Two things to be clear about in that estimate:
+
+* the bound `r ≲ D₁` is **not proved here** — it is a plausible bound on the length of a
+  minimal representation, and the magnitude argument rests on it;
+* the theorem below is **correct** regardless; what is in question is whether it is *strong
+  enough*, which is a statement about constants, not about validity.
+
+So the honest status is unchanged from the sixth correction: the arc has a proved inequality
+that is **not established** to yield Roth's lemma, and applying the rescaling did not close
+that.  Reconstructing the correct constant bookkeeping needs the actual argument, not more
+lemmas — every ingredient here is tight given only "operators have order at most `r`", so the
+loss is structural and must be repaired upstream of this statement. -/
+
+theorem index_le_of_rescaled_factor_bounds {K : Type*} [CommRing K] [IsDomain K]
+    [DecidableEq σ] [DecidableEq τ] {r D₁ D₂ : ℕ}
+    (hr : r ≠ 0) (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : τ → K)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (hx : ∀ i, (Dx i).length ≤ r) (hy : ∀ j, (Dy j).length ≤ r)
+    (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K)
+    (εU εV θ : ℚ)
+    (hU : index (fun j => r * d₁ j) α (mvGenWronskian Dx φ) ≤ ((εU : ℚ) : WithTop ℚ))
+    (hV : index (fun j => r * d₂ j) β (mvGenWronskian Dy ψ) ≤ ((εV : ℚ) : WithTop ℚ))
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β)
+        (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k))) :
+    θ ≤ εU + εV + ((r : ℚ) / (D₁ : ℚ) + (r : ℚ) / (D₂ : ℚ)) := by
+  classical
+  have hrQ : (0 : ℚ) < (r : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hr
+  set C : ℚ := (r : ℚ) / (D₁ : ℚ) + (r : ℚ) / (D₂ : ℚ) with hC
+  -- rescaled factor bounds, pushed back to the unscaled weights
+  have hU' : index d₁ α (mvGenWronskian Dx φ) ≤ (((r : ℚ) * εU : ℚ) : WithTop ℚ) :=
+    (index_scale_degree_le_iff hr d₁ α _ εU).mp hU
+  have hV' : index d₂ β (mvGenWronskian Dy ψ) ≤ (((r : ℚ) * εV : ℚ) : WithTop ℚ) :=
+    (index_scale_degree_le_iff hr d₂ β _ εV).mp hV
+  -- the step's inequality
+  have hkey := sum_index_le_index_sepW_concrete hD₁ hD₂ d₁ d₂ hd₁ hd₂ α β Dx Dy hx hy φ ψ
+  -- the assumed lower bound, summed
+  have hsum : (((r : ℚ) * θ : ℚ) : WithTop ℚ)
+      ≤ ∑ _i : Fin r, index (Sum.elim d₁ d₂) (Sum.elim α β)
+          (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k)) := by
+    have h := Finset.sum_le_sum (s := (Finset.univ : Finset (Fin r)))
+      (f := fun _ => ((θ : ℚ) : WithTop ℚ)) (fun _ _ => hθ)
+    rwa [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_coe_withTop] at h
+  -- chain
+  have hchain : (((r : ℚ) * θ : ℚ) : WithTop ℚ)
+      ≤ ((((r : ℚ) * εU + (r : ℚ) * εV) + (r : ℚ) * C : ℚ) : WithTop ℚ) := by
+    refine le_trans hsum (le_trans hkey ?_)
+    rw [WithTop.coe_add, WithTop.coe_add]
+    exact add_le_add (add_le_add hU' hV') le_rfl
+  rw [WithTop.coe_le_coe] at hchain
+  have : (r : ℚ) * θ ≤ (r : ℚ) * (εU + εV + C) := by linarith
+  exact le_of_mul_le_mul_left this hrQ
+
 /-! ### Next
 
 The statement is now written (`QOU/Mathlib/RothLemmaStatement.lean`), its `m = 1` case proved,
@@ -216,9 +294,10 @@ and the step's inputs are all constructible (`SeparatedRepresentation`).  With
 `Dy` with bounded order, and doing the arithmetic that turns the inequality plus the induction
 hypothesis into a contradiction.
 
-⚠ And the **degree rescaling**, visible from `sum_index_le_index_sepW_concrete`.  The tool is
-now in `RothIndex.lean` (`le_index_scale_degree_iff`, `index_scale_degree_le_iff`), but no
-statement in this arc is yet phrased in rescaled weights — so the rescaling is *available*,
-not *applied*. -/
+⚠ And, ahead of the recursion, the **constant regime**.  The rescaling is now applied
+(`index_le_of_rescaled_factor_bounds`), and it improved the error term by a factor `r` without
+making it small.  Until that is repaired — upstream of these statements, since each step here
+is tight given only "operators have order at most `r`" — the recursion has nothing usable to
+run on. -/
 
 end MvPolynomial

@@ -1342,3 +1342,64 @@ be the same move this arc has had to correct six times.
 
 Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+---
+
+## ⚠ 2026-08-23 — the rescaling is APPLIED, and it CONFIRMS the sixth correction
+
+`index_le_of_rescaled_factor_bounds` in `RothInductionStep.lean`, axiom-clean:
+
+> Given upper bounds `εU`, `εV` on the two factors' indices **in their own degree vectors** —
+> the shape the induction hypothesis produces — and a lower bound `θ` on `index P`:
+>
+> `θ ≤ εU + εV + (r/D₁ + r/D₂)`
+
+The rescaling is what makes `εU`, `εV` come out un-divided: without it the induction
+hypothesis simply does not apply to `U` and `V`, because they have degree `r·d`, not `d`.
+
+### The error term improved by a factor `r` — and is still too large
+
+Down from `r²(1/D₁ + 1/D₂)` to `r(1/D₁ + 1/D₂)`. But `r` is the length of a minimal separated
+representation, bounded by the number of distinct monomials in the split-off group — of order
+`D₁`. So `r/D₁` is of order **1**, while Roth's lemma needs `index ≤ m·ε` with `ε` small. And
+`r/D₂` is worse: under the growth condition the two degree scales differ by `ω`, so that term
+is of order `ω`.
+
+⚠ Two honesty points about that estimate:
+
+* **`r ≲ D₁` is not proved here.** It is a plausible bound on minimal-representation length,
+  and the whole magnitude argument rests on it. I did not formalise it.
+* **The theorem is correct regardless.** What is in question is whether it is *strong enough* —
+  a statement about constants, not validity.
+
+### Why this is a stopping point rather than another lemma
+
+Every step in the chain is **tight given only "operators have order at most `r`"**:
+`sum_map_inv_le_length_div` is tight when all degrees equal the floor; `cost_bound_of_bounded_order`
+is tight when every list has full length; `index_det_ge` is tight at the minimising permutation.
+So the loss is **structural**, not a slack constant to be shaved — it has to be repaired
+upstream of these statements.
+
+I tried to reconstruct the classical bookkeeping and could not, and I record the attempts
+rather than a guess:
+
+* splitting off the **first** (largest-degree) variable gives `r ≤ d₁+1` and `r/d₂ ≈ d₁/d₂ ≥ ω`
+  — catastrophic;
+* splitting off the **last** (smallest-degree) variable gives `r ≤ dₘ+1` and `r/dₘ ≈ 1` —
+  still order 1.
+
+Neither yields a small error, so the actual proof must differ structurally from what this arc
+has built — a different choice of operators, or the index measured against something other
+than these weights. **Determining which needs the source text, not more Lean.**
+
+### Open
+
+1. ⚠ **Consult the actual proof of Roth's lemma** and identify where this arc's structure
+   diverges. That is now the blocking item, and it is a reading task.
+2. The recursion proper (`ω(m, ε)`, choice of `Dx`, `Dy`, arithmetic) — blocked on (1).
+
+The seven corrections so far were all found by measurement inside Lean. This one is the first
+that measurement can only *detect*, not *fix*.
+
+Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.
