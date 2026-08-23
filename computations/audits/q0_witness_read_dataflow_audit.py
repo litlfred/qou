@@ -49,32 +49,50 @@ WHAT THIS DOES NOT ESTABLISH
     Chains are followed ONE hop. A producer reading a witness whose own producer
     reads a pinned witness is not resolved here.
 
-MEASURED RECALL — 80 %, AND THE MISSES ARE A TAXONOMY
-    Scored against the same adjudication that motivated it, on the 55 producers
-    agents independently classified as this route:
+MEASURED — AND EVERY HEADLINE NUMBER HERE WAS AN ARTIFACT FIRST
+    Scored against a 13-agent read-only adjudication, on the 55 producers agents
+    independently classified as this route:
 
-        caught                  44 / 55   (80 %)
-        missed                  11
-        fires on adjudicated-independent   9 / 246  (3.7 %)
+        direct reads (filename in the producer)      44 / 55
+        + transitive (read is in an imported module) 46 / 55   (84 %)
+        fires on adjudicated-independent             14 / 246  (5.7 %)
 
-    The 11 misses are not noise; each names a route this shape cannot reach:
+    The corpus counts: **542** producers read a pinned witness directly (559
+    proton / 268 muon / 12 comparison), **53** read more than one pin (layer-
+    straddle candidates), and **239** more inherit one through an imported
+    module — 115 of those via `wedderburn_jones_markov`, the accessor AGENTS.md
+    §q₀-anchor names as the straddle trap.
 
-      * **The pin is one hop further.** `alpha_em_b2_cm_weierstrass_scale_probe`
-        reads `alpha-em-b2-invariant-c.witness.json`, which carries no pin of its
-        own — its *producer* calls `q_at()`. Chains are followed one hop, by
-        construction, and this is the cost.
-      * **The filename never appears as a string.** `qbeta_dladder_coupled_
-        qsqrt3_recurrence_probe` gets its data from `dlad.build_d_ladder()` — a
-        function call into another module that does the reading. Invisible to a
-        filename scan *and* to an import-cone pin check, since the imported
-        module's pin arrives through ITS filesystem read.
+    **Three of those numbers were wrong by an order of magnitude first**, each
+    for the same reason, and the pattern is more useful than any of them:
 
-    The 9 that fire on adjudicated-independent producers are the documented
-    caveat working as intended: reading a pinned witness is not using its pin.
-    Treat every hit as a candidate.
+      1. Counting `qou_substrate/witness.py` gave 400 spurious straddles. It
+         knows both pins because it STAMPS the anchor field.
+      2. Counting `_precision.py` gave 195 of 198 muon reaches. It has no q₀ at
+         all — its DOCSTRING mentions `wedderburn_jones_markov`.
+      3. Counting `q_parameter` in the transitive pass gave **1117** instead of
+         239. It is the q₀ accessor, so its importers are the import-cone
+         classifier's job, not this one.
 
-    Recall is quoted against 55 adjudicated cases, not against the truth. A
-    route nobody has adjudicated cannot appear in either column.
+    **A shared module's q₀ knowledge is infrastructure for its importers, not
+    evidence about them.** Any count here is dominated by the exclusion list
+    until that is applied, so quote no number from this file without it.
+
+    **And the fix for (2) caused a blind spot.** Discounting string-constant
+    evidence as prose also discounted `"q-pinning-50-digit.witness.json"` — a
+    FILENAME, which is this route exactly. That is why the motivating case
+    (`qbeta_dladder_coupled_qsqrt3_recurrence_probe`, whose imported module
+    reads the pin witness at line 111) stayed missed through two revisions. A
+    filter aimed at prose cannot be shaped like "is it a string".
+
+THE LIMIT THAT NO SCAN REMOVES
+    Of the 9 route-b cases still missed, several read witnesses that are
+    entirely q₀-DERIVED while containing no q₀: `atom-chi-rust-*.witness.json`
+    carry 50-dps χ values computed at a pin the file never records. Nothing
+    recoverable from the artifact says which pin, because the pin is not in it.
+
+    That is the whole reason `q0Anchor` exists as a declared field. A detector
+    can find the read; only the producer can say what it was reading at.
 
 READ-ONLY
     Emits a report and, with `--emit`, a JSON list. Writes no witness, edits no
@@ -94,7 +112,7 @@ COMPUTE_DIR = HERE.parent
 REPO = COMPUTE_DIR.parent
 
 sys.path.insert(0, str(HERE))
-from q0_producer_pin_classifier import strip_main_block  # noqa: E402
+from q0_producer_pin_classifier import strip_main_block, classify  # noqa: E402
 
 # 11 digits after the point — the corpus carries two muon values agreeing to 11
 # and diverging at the 12th (see q0_muon_population_partition.py). A 12-digit
@@ -155,10 +173,50 @@ def witness_names_read(py: Path) -> set[str]:
     return names
 
 
+def local_import_index() -> dict[str, Path]:
+    """module basename -> path, for the repo's flat-ish import namespace."""
+    idx: dict[str, Path] = {}
+    for root in (COMPUTE_DIR, REPO / "tools"):
+        if not root.is_dir():
+            continue
+        for p in root.rglob("*.py"):
+            if SKIP_DIRS & set(p.parts):
+                continue
+            idx.setdefault(p.stem, p)
+    return idx
+
+
+# `witness.py` STAMPS the q0Anchor field and so names pinned witnesses without
+# evaluating anything; every producer imports WitnessBuilder. Counting it made
+# an earlier version of this analysis report 400 spurious straddles.
+INFRA_MODULES = {"witness", "_precision", "witness_base", "_path_bridge"}
+
+
+def imported_modules(py: Path, idx: dict[str, Path]) -> list[Path]:
+    try:
+        tree = ast.parse(py.read_text(encoding="utf-8", errors="replace"))
+    except (SyntaxError, OSError, ValueError):
+        return []
+    mods: set[str] = set()
+    for node in ast.walk(ast.Module(body=strip_main_block(tree), type_ignores=[])):
+        if isinstance(node, ast.Import):
+            for a in node.names:
+                mods.add(a.name.split(".")[0])
+        elif isinstance(node, ast.ImportFrom) and node.module:
+            mods.add(node.module.split(".")[-1])
+            mods.add(node.module.split(".")[0])
+    return [idx[m] for m in sorted(mods)
+            if m in idx and m not in INFRA_MODULES]
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--emit", type=str, default=None)
     ap.add_argument("--show", type=int, default=15)
+    ap.add_argument("--transitive", action="store_true",
+                    help="also report producers whose IMPORTED MODULE does the "
+                         "reading — the third route, invisible to a filename "
+                         "scan and to an import-cone pin check alike")
     args = ap.parse_args(argv)
 
     widx = witness_index()
@@ -213,6 +271,87 @@ def main(argv=None) -> int:
     if len(straddles) > args.show:
         print(f"       … and {len(straddles) - args.show} more")
 
+    transitive = []
+    if args.transitive:
+        midx = local_import_index()
+        cone_owned: dict[Path, bool] = {}
+        direct = set(by_producer)
+        for py in sorted(COMPUTE_DIR.rglob("*.py")):
+            if SKIP_DIRS & set(py.parts):
+                continue
+            rel = str(py.relative_to(REPO))
+            if rel in direct:
+                continue          # already caught directly; nothing new to say
+            seen = {py}
+            frontier = [py]
+            found = None
+            for _ in range(3):
+                nxt = []
+                for cur in frontier:
+                    for mod in imported_modules(cur, midx):
+                        if mod in seen:
+                            continue
+                        seen.add(mod)
+                        nxt.append(mod)
+                        # A module the IMPORT-CONE classifier already owns is
+                        # not this route. `q_parameter` reads the pin witness,
+                        # but any producer importing it is caught by
+                        # q0_producer_pin_classifier — reporting it here is
+                        # double-counting, and it dominated: without this gate
+                        # the count reads 1117, almost all `via q_parameter`.
+                        # Third artifact of exactly this shape in this analysis
+                        # (see witness.py and _precision.py above); the pattern
+                        # is that a shared module's q0 knowledge is INFRASTRUCTURE
+                        # for its importers, not evidence about them.
+                        if mod not in cone_owned:
+                            # Own it only on IMPORT-SHAPED evidence. classify()
+                            # also fires on the artifact NAME
+                            # ("q-pinning-50-digit.witness.json"), which is
+                            # precisely this route — skipping on it would hide
+                            # the very case this pass exists for. Measured: with
+                            # the naive `!= "none"` gate, the motivating miss
+                            # (qbeta_dladder_coupled_qsqrt3_recurrence_probe,
+                            # whose imported module reads the pin witness at
+                            # line 111) stayed missed.
+                            _pin, _ev = classify(mod)
+                            cone_owned[mod] = _pin != "none" and any(
+                                "import" in e or e.startswith(".")
+                                for e in _ev)
+                        if cone_owned[mod]:
+                            continue
+                        for name in witness_names_read(mod):
+                            for wp in widx.get(name, []):
+                                if wp not in pin_cache:
+                                    pin_cache[wp] = witness_pin(wp)
+                                pin, _how = pin_cache[wp]
+                                if pin:
+                                    found = (str(mod.relative_to(REPO)),
+                                             str(wp.relative_to(REPO)), pin)
+                                    break
+                            if found:
+                                break
+                        if found:
+                            break
+                    if found:
+                        break
+                if found or not nxt:
+                    break
+                frontier = nxt
+            if found:
+                transitive.append({"producer": rel, "via_module": found[0],
+                                   "reads": found[1], "pin": found[2]})
+
+        print(f"\n  TRANSITIVE — the read happens in an IMPORTED module : "
+              f"{len(transitive)}")
+        print("     (the third route: no filename in the producer, and the")
+        print("      imported module's pin arrives through ITS filesystem read,")
+        print("      so an import-cone PIN check does not see it either.)")
+        for t in transitive[:args.show]:
+            print(f"       {t['producer']}")
+            print(f"           via {t['via_module']}  →  {t['pin']}")
+        if len(transitive) > args.show:
+            print(f"       … and {len(transitive) - args.show} more")
+
     if args.emit:
         Path(args.emit).write_text(json.dumps({
             "schema": "q0-witness-read-dataflow/v1",
@@ -220,6 +359,7 @@ def main(argv=None) -> int:
                     "that a q0 moved. One hop only.",
             "hits": hits,
             "straddle_candidates": {p: sorted(v) for p, v in straddles.items()},
+            "transitive": transitive,
         }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print(f"\n  written: {args.emit}")
 
