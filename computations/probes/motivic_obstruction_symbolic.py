@@ -131,6 +131,24 @@ def main() -> int:
         "atoms": results,
         "all_nonunit": all_nonunit,
     }
+    # Provenance envelope — this producer writes raw JSON, so without it the
+    # witness lands with no `scriptFile` and no `scriptHash` and is
+    # unverifiable from birth: it cannot be checked against its producer, so
+    # it never appears as stale and never can. Detector:
+    # computations/witness_drain_audit.py. Bean qou-nb4s tracks the ~513
+    # producers still in this state.
+    try:
+        from witness_base import WitnessBuilder  # noqa: E402
+    except ImportError:  # cluster subdir without the _path_bridge bootstrap
+        import sys as _sys
+        from pathlib import Path as _Path
+        _sys.path.insert(0, str(next(
+            _a / "substrate" for _a in _Path(__file__).resolve().parents
+            if (_a / "substrate" / "witness_base.py").is_file())))
+        from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__,
+        engine=witness.get("engine", "sympy"))
     OUTPUT.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
     print(f"\nWrote: {OUTPUT.name}")
     return 0

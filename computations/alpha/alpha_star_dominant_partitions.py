@@ -39,6 +39,12 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
+# Re-imported under a name that SURVIVES the `del` above. That block
+# imports the bridge for its sys.path side effect only and then deletes
+# every name it bound, so `_pb.witness_path(...)` at a call site
+# raises NameError. The bootstrap has already run by this point, so a
+# plain bare-name import resolves.
+import _path_bridge as _pb  # noqa: E402
 
 import json
 import sys
@@ -58,7 +64,13 @@ def alpha_star_from_min_eig(min_eig: float) -> float:
 
 
 def main() -> int:
-    witness_path = Path(__file__).resolve().parent / "joint-tower-sdp-rust.witness.json"
+    # Phase-6: this witness stayed FLAT at `computations/` when the
+    # module moved into a cluster subdirectory, so a `__file__`-relative
+    # join looks in the wrong place and raises FileNotFoundError.
+    # `_bridge.witness_path` is the idiom that resolves both layouts;
+    # a sibling consumer in this same directory already uses it.
+    witness_path = _pb.witness_path(
+        "joint-tower-sdp-rust.witness.json", Path(__file__).resolve().parent)
     with open(witness_path) as f:
         w = json.load(f)
 

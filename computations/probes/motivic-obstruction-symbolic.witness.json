@@ -1,0 +1,51 @@
+{
+  "computation": "motivic-obstruction-symbolic",
+  "computedAt": "2026-08-23T22:58:31.825056+00:00",
+  "description": "Symbolic proof of motivic perpetual obstruction via prime-ideal collapse. C = a₀(-1) + 2·a₁(-1) is the residue of Frob_p mod 𝔭 = (1-ζ_p). If C ≠ ±1, the Frobenius is not a unit for all sufficiently large primes.",
+  "proof_method": "prime-ideal-collapse",
+  "atoms": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "a0_polynomial": "8",
+      "a1_polynomial": "-172*u - 172",
+      "a0_at_neg1": 8,
+      "a1_at_neg1": 0,
+      "C": 8,
+      "C_is_unit": false,
+      "obstruction_bound_N": 9,
+      "proof_method": "prime-ideal-collapse"
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "a0_polynomial": "2",
+      "a1_polynomial": "-34*u - 34",
+      "a0_at_neg1": 2,
+      "a1_at_neg1": 0,
+      "C": 2,
+      "C_is_unit": false,
+      "obstruction_bound_N": 3,
+      "proof_method": "prime-ideal-collapse"
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "a0_polynomial": "192",
+      "a1_polynomial": "-8544*u - 8544",
+      "a0_at_neg1": 192,
+      "a1_at_neg1": 0,
+      "C": 192,
+      "C_is_unit": false,
+      "obstruction_bound_N": 193,
+      "proof_method": "prime-ideal-collapse"
+    }
+  ],
+  "all_nonunit": true,
+  "scriptFile": "motivic_obstruction_symbolic.py",
+  "scriptHash": "01e1e0dfe7e9",
+  "scriptCommitSha": "3a47febca402f1297fdfe2c726e76398cacd48a4",
+  "commitSha": "6ed921b93f9313ae60a4bc3a923191ec90ee7085",
+  "engine": "sympy",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

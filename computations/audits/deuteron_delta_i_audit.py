@@ -77,6 +77,12 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
+# Re-imported under a name that SURVIVES the `del` above. That block
+# imports the bridge for its sys.path side effect only and then deletes
+# every name it bound, so `_pb.witness_path(...)` at a call site
+# raises NameError. The bootstrap has already run by this point, so a
+# plain bare-name import resolves.
+import _path_bridge as _pb  # noqa: E402
 
 import json
 import sys
@@ -155,7 +161,13 @@ def main() -> int:
     # predictions live in `atomic-mass-via-rho-k.witness.json`.
     # This script remains a legacy-witness consumer by design.
     here = Path(__file__).parent
-    s3_path = here / "atomic-braid-mass-table.witness.json"
+    # Same Phase-6 shape as the two above, and the two OTHER consumers of
+    # this name in this directory (braid_encoding_audit.py:397,
+    # delta_n2_placeholder_audit.py:166) already use the bridge. This one
+    # still fails afterwards — atomic-braid-mass-table.witness.json exists
+    # NOWHERE in the tree — but it now fails for the true reason (an absent
+    # upstream) rather than for a wrong path, which are different repairs.
+    s3_path = _pb.witness_path("atomic-braid-mass-table.witness.json", here)
     s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 
