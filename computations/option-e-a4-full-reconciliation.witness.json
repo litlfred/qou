@@ -3,23 +3,23 @@
   "engineVersion": "50dps",
   "computation": "option-e-a4-full-reconciliation",
   "scriptFile": "option_e_a4_full_reconciliation.py",
-  "description": "Full A=4 (\u2074He/S\u2081\u2082) Option-E binding: B=m_e\u00b7|\u03a3_\u03bb y\u00b7\u03c7\u00b7sgn\u00b7M_\u03bb|, M_\u03bb\u2208{f^\u03bb, KL-Betti B_\u03bb}. \u03c7 77/77 (chi_q_via_gp), B_\u03bb via kl_betti_sum_rust cheapest-cell-first under a wall budget; f^\u03bb fallback for uncomputed deep cells. Tests #2839's single-scalar 'closure' against the full signed sum.",
+  "description": "Full A=4 (⁴He/S₁₂) Option-E binding: B=m_e·|Σ_λ y·χ·sgn·M_λ|, M_λ∈{f^λ, KL-Betti B_λ}. χ 77/77 (chi_q_via_gp), B_λ via kl_betti_sum_rust cheapest-cell-first under a wall budget; f^λ fallback for uncomputed deep cells. Tests #2839's single-scalar 'closure' against the full signed sum.",
   "data": {
     "nucleus": "4He (H_12/S_12)",
-    "sum_f_lambda": "0.4857822428714270768813728060545597964532673444238229758739404380524303",
-    "B_he4_f_lambda_MeV": "0.2482342163711339688692354615005809348774795966226163633098967495603508",
-    "B_he4_f_err_pct": -99.1227127539307,
-    "sum_betti_partial": "0.4857822428714270768813728060545597964532673444238229758739404380524303",
-    "B_he4_betti_partial_MeV": "0.2482342163711339688692354615005809348774795966226163633098967495603508",
-    "B_he4_betti_err_pct": -99.1227127539307,
+    "sum_f_lambda": "-10.866621221429757438347534235089627792981400002536",
+    "B_he4_f_lambda_MeV": "5.5528320416962921925368123616796515803161559479831",
+    "B_he4_f_err_pct": -80.37567583970018,
+    "sum_betti_partial": "-10.866621221429757438347534235089627792981400002536",
+    "B_he4_betti_partial_MeV": "5.5528320416962921925368123616796515803161559479831",
+    "B_he4_betti_err_pct": -80.37567583970018,
     "betti_shapes_computed": 2,
-    "betti_weight_coverage_pct": 2.5990127679770074,
+    "betti_weight_coverage_pct": 0.9468382465670024,
     "B_lambda_computed": {
       "12": 1,
       "11,1": 11
     },
     "AME_he4_MeV": "28.29566",
-    "factor_needed_close": 113.98775081713664
+    "factor_needed_close": 5.095716886001143
   },
   "assertions": [
     {
@@ -27,5 +27,10 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "c8f99a166bf2",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "computedAt": "2026-07-18T19:19:19.713794+00:00",
+  "durationMs": 0
 }

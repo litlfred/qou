@@ -1,40 +1,24 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:33.381608+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-05-25T14:19:05.749489+00:00",
+  "commitSha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "torus-knot-markov-trace-generalized",
   "scriptFile": "torus_knot_markov_trace_generalized.py",
-  "scriptHash": "ff72cd86ed3e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "dea258b71142",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
-    "compute_dps": 70,
-    "output_dps": 60,
+    "compute_dps": 50,
+    "output_dps": 40,
     "guard_digits": 10,
-    "truncation_bound": "1e-60"
-  },
-  "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
-  },
-  "invocation": {
-    "argv": [
-      "computations/torus_knot_markov_trace_generalized.py"
-    ],
-    "reproduce": "python3 -u computations/torus_knot_markov_trace_generalized.py"
+    "truncation_bound": "1e-40"
   },
   "description": "Generalized torus-knot Markov trace via q-Schur closed-form weights (PR #1256 trace_weights_n_q_schur). Extends sibling commit 5418678c8 from H_2 only (T(2,k) for W/Z/H) to arbitrary H_N (T(N,k) for any N≥2). Uses Rust upstream pn.trace_weights_n_q_schur(N, q) + pn.chi_lambda_braid directly — no LP, no hardcoded y_λ values. q-Schur convention with tr(σ_i) = h = q - q⁻¹.",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955541805,
     "trace_convention": "q-Schur (tr(σ_i) = h = q - q⁻¹)",
     "upstream_function": "pn.trace_weights_n_q_schur(N, q) — PR #1256 commit 4059af433"
   },
@@ -44,7 +28,7 @@
         "N": 2,
         "k": 4,
         "label": "T(2,4) = W±",
-        "tr_M_at_q0": 1.1330288582618557,
+        "tr_M_at_q0": 1.1330288882035506,
         "h_expansion": [
           1.000000000000418,
           -1.8939330659328846e-10,
@@ -59,7 +43,7 @@
         "N": 2,
         "k": 6,
         "label": "T(2,6) = Z",
-        "tr_M_at_q0": 1.271871903543747,
+        "tr_M_at_q0": 1.2718719660258877,
         "h_expansion": [
           1.000000000000553,
           -2.502961449213359e-10,
@@ -74,7 +58,7 @@
         "N": 2,
         "k": 8,
         "label": "T(2,8) = Higgs",
-        "tr_M_at_q0": 1.4663036474685767,
+        "tr_M_at_q0": 1.4663037575566231,
         "h_expansion": [
           1.0000000000008034,
           -3.678750637448047e-10,
@@ -89,7 +73,7 @@
         "N": 2,
         "k": 3,
         "label": "T(2,3) = trefoil",
-        "tr_M_at_q0": 0.42725783060631256,
+        "tr_M_at_q0": 0.42725788003599036,
         "h_expansion": [
           -4.9915228428279614e-14,
           2.0000000000349907,
@@ -104,7 +88,7 @@
         "N": 3,
         "k": 2,
         "label": "T(3,2) = trefoil (= T(2,3) for SnapPy)",
-        "tr_M_at_q0": 0.25448624304389844,
+        "tr_M_at_q0": 0.25448626295727267,
         "h_expansion": [
           0.16666666666677835,
           -4.800185249287381e-11,
@@ -119,7 +103,7 @@
         "N": 3,
         "k": 4,
         "label": "T(3,4)",
-        "tr_M_at_q0": 0.4033015457719177,
+        "tr_M_at_q0": 0.40330160274548205,
         "h_expansion": [
           0.16666666666690425,
           -1.183498021806173e-10,
@@ -134,7 +118,7 @@
         "N": 3,
         "k": 5,
         "label": "T(3,5) = cinquefoil",
-        "tr_M_at_q0": 0.5130045599569876,
+        "tr_M_at_q0": 0.5130046465079979,
         "h_expansion": [
           0.16666666666783378,
           -5.533103974997289e-10,
@@ -149,7 +133,7 @@
         "N": 4,
         "k": 3,
         "label": "T(4,3)",
-        "tr_M_at_q0": 0.13845922355173912,
+        "tr_M_at_q0": 0.1384592512359414,
         "h_expansion": [
           4.455122726986509e-12,
           0.4166666644695227,
@@ -164,7 +148,7 @@
         "N": 4,
         "k": 5,
         "label": "T(4,5)",
-        "tr_M_at_q0": 0.28781510006690014,
+        "tr_M_at_q0": 0.287815176102819,
         "h_expansion": [
           9.951925846509303e-11,
           0.583333284231136,

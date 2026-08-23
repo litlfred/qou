@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:59:17.047557+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-10T01:46:03.322171+00:00",
+  "commitSha": "5f881d3ad7b1b9e330b0b3a77ff1b9a11898d63e",
   "assertions": [
     {
       "name": "markov_interface_identity_max_rel_err",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20869,
+  "durationMs": 21241,
   "computation": "delta-lambda-fr-identity-phase5c",
   "scriptFile": "delta_lambda_fr_identity_phase5c.py",
-  "scriptHash": "11711368bfb6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "7f4542540f92",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,23 +42,16 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
-  },
-  "invocation": {
-    "argv": [
-      "computations/delta_lambda_fr_identity_phase5c.py"
-    ],
-    "reproduce": "python3 -u computations/delta_lambda_fr_identity_phase5c.py"
+    "clarabel": "0.11.1"
   },
   "description": "Phase 5c.1 of the Δ_λ thread: numerical test of the Frobenius-reciprocity identity predicted by the Phase 5b bar-symmetric synthesis. Computes τ_M(β) = Σ_λ y_λ · χ_λ(β) at q_0 for D, T, ³He, ⁴He via cached y_λ + pyhecke_native χ_λ. Compares both the full canonical braid (include_inter=True) and the constituent-vacuum baseline (include_inter=False; PR #801's T_constit). The ratio τ_M(β_{Z=2}^N) / τ_M(β_{Z=1}^N) is the Ind-side per-Z step factor; under FR it should equal [3]_q² · cosh(h) · (interface-knot correction).",
   "contentBlock": "conj:delta-lambda-categorical-closure",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "h": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
-    "3_q_squared": "9.264147483859420458085353026849284741866672234237833839024925999939231",
-    "cosh_h": "1.021932813341466534749488068306523999518143126433971144723074932647706",
-    "alpha_predicted": "9.467336301390725984002578662081793619147019501326245894715252914156925"
+    "h": "0.20906029879563931543084621312967494385975749526306",
+    "3_q_squared": "9.2641474838594204580853530268492847418666722342378",
+    "cosh_h": "1.021932813341466534749488068306523999518143126434",
+    "alpha_predicted": "9.4673363013907259840025786620817936191470195013262"
   },
   "data": {
     "results_full": {
@@ -122,10 +115,10 @@
               1,
               1
             ],
-            "y": 2.1882430220530458e-72,
+            "y": 0.0,
             "chi": 0.7344082746371132,
-            "y_chi": 1.6070637823126798e-72,
-            "abs_y_chi": 1.6070637823126798e-72
+            "y_chi": 0.0,
+            "abs_y_chi": 0.0
           }
         ]
       },
@@ -390,10 +383,10 @@
               1,
               1
             ],
-            "y": 2.1882430220530458e-72,
+            "y": 0.0,
             "chi": 8.76777067892785,
-            "y_chi": 1.9186013007125165e-71,
-            "abs_y_chi": 1.9186013007125165e-71
+            "y_chi": 0.0,
+            "abs_y_chi": 0.0
           }
         ]
       },
