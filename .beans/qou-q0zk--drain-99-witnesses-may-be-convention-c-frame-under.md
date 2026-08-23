@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T20:13:39Z
-updated_at: 2026-08-23T17:00:27Z
+updated_at: 2026-08-23T17:04:24Z
 ---
 
 PR #4899 excised convention C from the producer layer ("178 sites -> 0") and
@@ -103,3 +103,37 @@ value reappears) before being called anything.
 
 Suggested order for a drainer: the three content-cited rows first, since a
 stale frame there propagates into the paper rather than into another probe.
+
+
+## CONFIRMED #3 — `wedderburn-pair-volumes`, and it is cited by a content block
+
+The top-ranked content-cited candidate, tested decisively:
+
+    committed (2026-06-12)   full = 0.6003376915089118
+    convention C, proton pin        0.60033769150891203   rel 3.70e-16
+    convention D (current code)     0.68036965422380191   rel 0.1333
+
+C-frame, confirmed to machine zero. Cited by
+`content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.ts`
+and its `.qa.json`.
+
+**Confirmed count is now 3 of 3 attempted** — the detector has not produced a
+false positive yet, though three is a small sample and the list is still
+CANDIDATES, not findings.
+
+Two things I had wrong going in, worth recording:
+
+* I expected the residual 8th-digit gap from my earlier C value to be a muon
+  pin, since 2026-06-12 predates the proton migration. It is not — the
+  witness is already proton-pinned (module `q0 = 1.1099785827513808`), and
+  C+proton reproduces it exactly. The gap was between two different C
+  evaluations, not two pins.
+* The frame was decidable by INSPECTION before running anything: 0.60 against
+  D's 0.68 is a 13% gap. The run only settled the pin question.
+
+### NOT regenerated, deliberately
+
+Regenerating this one moves a **content-cited** number by 13%, which stales
+the block's `.qa.json` sidecar and may contradict figures quoted in the `.md`.
+That is the drain itself, not a ride-along fix, and it needs a scope decision
+before it runs — same standing as `qou-1c4y`.
