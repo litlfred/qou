@@ -495,6 +495,63 @@ theorem index_rename_equiv {τ : Type*} [DecidableEq τ] (e : σ ≃ τ) (d : τ
   have h := index_rename_of_injective (e : σ → τ) e.injective d α (rename e.symm P)
   rwa [rename_rename, Equiv.self_comp_symm, rename_id_apply] at h
 
+/-! ### Rescaling the degree vector
+
+⚠ These exist because of a gap identified in `QOU/Mathlib/RothInductionStep.lean`: the
+classical proof of Roth's lemma measures a *Wronskian's* index against the **Wronskian's own**
+degree vector, while every other statement in this arc uses one degree vector throughout.
+
+`degreeOf_mvGenWronskian_le` says a generalized Wronskian of `r` functions of degree `≤ d`
+has degree `≤ r · d`, so the scale factor is exactly `r`.  These three lemmas are what let
+that rescaling be expressed and moved across.
+
+⚠ They make the rescaling **expressible**.  They do **not** by themselves establish that the
+error term in the induction step becomes small — that is the recursion's arithmetic, and it is
+not done. -/
+
+/-- **Scaling the degree vector scales the weight inversely.**
+
+No hypothesis on `c`: at `c = 0` both sides are `0`, since `x / 0 = 0` in `ℚ`. -/
+theorem idxWeight_scale_degree (c : ℕ) (d : σ → ℕ) (i : σ →₀ ℕ) :
+    idxWeight (fun j => c * d j) i = idxWeight d i / (c : ℚ) := by
+  unfold idxWeight
+  rw [div_eq_mul_inv, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  push_cast
+  rw [mul_comm (c : ℚ) (d j : ℚ), ← div_div, div_eq_mul_inv]
+
+/-- **Lower bounds transport across a rescaling:** `θ ≤ index_{c·d} P ↔ c·θ ≤ index_d P`.
+
+Stated as an iff on bounds rather than as `index_{c·d} = index_d / c`, because `WithTop ℚ` has
+no usable division and `⊤` must be handled. -/
+theorem le_index_scale_degree_iff {c : ℕ} (hc : c ≠ 0) (d : σ → ℕ) (α : σ → R)
+    (P : MvPolynomial σ R) (θ : ℚ) :
+    ((θ : ℚ) : WithTop ℚ) ≤ index (fun j => c * d j) α P
+      ↔ (((c : ℚ) * θ : ℚ) : WithTop ℚ) ≤ index d α P := by
+  have hcQ : (0 : ℚ) < (c : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hc
+  rw [le_index_iff, le_index_iff]
+  refine forall_congr' fun i => forall_congr' fun _ => ?_
+  rw [idxWeight_scale_degree, WithTop.coe_le_coe, WithTop.coe_le_coe, le_div_iff₀ hcQ,
+    mul_comm θ (c : ℚ)]
+
+/-- **Upper bounds transport across a rescaling:** `index_{c·d} P ≤ θ ↔ index_d P ≤ c·θ`.
+
+This is the direction the induction *hypothesis* is used in — it supplies upper bounds on the
+factors' indices, which have to be converted out of the rescaled weights.
+
+The proof goes through `Finset.inf_le_iff`, which needs the bound to be below `⊤`; a coerced
+rational always is. -/
+theorem index_scale_degree_le_iff {c : ℕ} (hc : c ≠ 0) (d : σ → ℕ) (α : σ → R)
+    (P : MvPolynomial σ R) (θ : ℚ) :
+    index (fun j => c * d j) α P ≤ ((θ : ℚ) : WithTop ℚ)
+      ↔ index d α P ≤ (((c : ℚ) * θ : ℚ) : WithTop ℚ) := by
+  have hcQ : (0 : ℚ) < (c : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hc
+  unfold index
+  rw [Finset.inf_le_iff (WithTop.coe_lt_top _), Finset.inf_le_iff (WithTop.coe_lt_top _)]
+  refine exists_congr fun i => and_congr_right fun _ => ?_
+  rw [idxWeight_scale_degree, WithTop.coe_le_coe, WithTop.coe_le_coe, div_le_iff₀ hcQ,
+    mul_comm (c : ℚ) θ]
+
 /-! ### Sums, products and determinants
 
 The index counterparts of the height bounds in `QOU/Mathlib/MvPolynomialHeight.lean`, and

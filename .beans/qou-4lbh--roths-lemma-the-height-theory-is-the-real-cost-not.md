@@ -1294,3 +1294,51 @@ whether the theorem says anything.
 
 ⚠ Nothing here should be read as "the index side of the induction step is done". The module
 docstrings now say so at the two places the claim was made.
+
+---
+
+## 2026-08-23 — the degree rescaling, as a tool
+
+The previous entry identified the missing rescaling as a prerequisite. Three lemmas in
+`RothIndex.lean`, all axiom-clean:
+
+```
+idxWeight_scale_degree     idxWeight (c·d) i = idxWeight d i / c
+le_index_scale_degree_iff  θ ≤ index_{c·d} P  ↔  c·θ ≤ index_d P
+index_scale_degree_le_iff  index_{c·d} P ≤ θ  ↔  index_d P ≤ c·θ
+```
+
+Both directions are needed and they are used differently: the induction *hypothesis* supplies
+**upper** bounds on the factors' indices (`index_scale_degree_le_iff`), while the assumption
+being contradicted is a **lower** bound on `index P` (`le_index_scale_degree_iff`).
+
+Stated as iffs on bounds rather than as `index_{c·d} = index_d / c`, because `WithTop ℚ` has no
+usable division and `⊤` has to survive. The upper-bound one goes through `Finset.inf_le_iff`,
+which needs the bound below `⊤` — a coerced rational always is.
+
+`idxWeight_scale_degree` needs **no hypothesis on `c`**: at `c = 0` both sides are `0`, since
+`x / 0 = 0` in `ℚ`. The two index versions do need `c ≠ 0`.
+
+The scale factor is pinned by `degreeOf_mvGenWronskian_le`: a Wronskian of `r` functions of
+degree `≤ d` has degree `≤ r·d`, so it is exactly `r`.
+
+### ⚠ Available is not applied
+
+**This is a tool, not a fix.** No statement in the arc is yet phrased in rescaled weights —
+`index_sepW`, `sum_index_le_index_sepW_add` and `sum_index_le_index_sepW_concrete` all still
+use a single `d` throughout. So the sixth correction stands: it is still **not established**
+that the induction step's inequality is in the form Roth's lemma needs.
+
+Both places in `RothInductionStep.lean` that discuss the gap now say "available, not applied"
+rather than implying it is closed. Writing a "tool exists" note as though it were a fix would
+be the same move this arc has had to correct six times.
+
+### Open
+
+* **Apply** the rescaling: restate the step's inequality with the Wronskian's index measured
+  against `r·d`, and check the error term is then small. This is where the sixth correction
+  gets resolved or confirmed.
+* The **recursion**: `ω(m, ε)`, the choice of bounded-order `Dx`, `Dy`, the arithmetic.
+
+Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.

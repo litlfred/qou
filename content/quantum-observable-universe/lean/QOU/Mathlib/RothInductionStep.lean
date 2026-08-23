@@ -184,9 +184,14 @@ used for `index W` are `r·d` rather than `d`.  Every statement in this arc uses
 vector `d` throughout, `index_sepW` included.
 
 ⚠ So: this inequality is **proved and correct**, and it is **not established** that it is the
-form Roth's lemma needs.  Supplying the rescaling — an `index (r • d) …` variant, or a lemma
-relating `index d` to `index (r • d)` — is unfinished work that the recursion will force.
-Nothing here should be read as "the index side of the induction step is done". -/
+form Roth's lemma needs.
+
+The rescaling *tool* now exists — `idxWeight_scale_degree`, `le_index_scale_degree_iff` and
+`index_scale_degree_le_iff` in `QOU/Mathlib/RothIndex.lean`, with scale factor `r` supplied by
+`degreeOf_mvGenWronskian_le`.  ⚠ But having the tool is not the same as having used it:
+nothing below is stated in rescaled weights, and whether the error term actually becomes small
+is the recursion's arithmetic.  Nothing here should be read as "the index side of the
+induction step is done". -/
 theorem sum_index_le_index_sepW_concrete {K : Type*} [CommRing K] [IsDomain K]
     [DecidableEq σ] [DecidableEq τ] {r D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
     (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
@@ -211,9 +216,9 @@ and the step's inputs are all constructible (`SeparatedRepresentation`).  With
 `Dy` with bounded order, and doing the arithmetic that turns the inequality plus the induction
 hypothesis into a contradiction.
 
-⚠ And, newly visible from `sum_index_le_index_sepW_concrete`: the **degree rescaling**.  The
-classical argument measures the Wronskian's index against the Wronskian's own degree vector
-`r·d`, while every statement here uses a single `d` throughout.  That is not a detail the
-recursion can paper over — it is what makes the error term small — and it is not written. -/
+⚠ And the **degree rescaling**, visible from `sum_index_le_index_sepW_concrete`.  The tool is
+now in `RothIndex.lean` (`le_index_scale_degree_iff`, `index_scale_degree_le_iff`), but no
+statement in this arc is yet phrased in rescaled weights — so the rescaling is *available*,
+not *applied*. -/
 
 end MvPolynomial
