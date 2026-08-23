@@ -13320,6 +13320,132 @@ theorem gtBlock (hn : 0 < n) (hp : HeckeParams) {j₁ x x' : Fin n}
     w A ((⟨x'⟩ : HeckeGen n) :: (descWord x j₁ ++ B)) hw hcol
   exact (MultiStepReduction.refl _).step hbs |>.trans htr
 
+/-- **The whole run, at any length** — `gtBlock` iterated.
+
+Each block pulls the **leading letter** of the trailing descending run across
+`descWord i j₁`, demotes it by one, and deposits it on the left. So the run
+`descWord y j₂` slides down by one — to `descWord z j₂'` — and jumps to the
+left of `descWord i j₁`. `k` is the number of blocks minus one: the run has
+`k + 1` letters.
+
+`z` and `j₂'` are the predecessors of `y` and `j₂`, passed as parameters with
+`+ 1 =` hypotheses rather than constructed. That is this file's idiom for a
+`Fin n` predecessor (`descWord_cons_le` takes its `i'` the same way), and it is
+what keeps the induction free of `Fin n` arithmetic: the one place a
+predecessor must be *built* is the recursive call's `z − 1`.
+
+`hsplit : w ++ descWord y j₁ = descWord i j₁` is what makes the block
+applicable — the redex `bsWord₁ y j₁` is the tail of `descWord i j₁` from `y`
+down, plus the run's leading letter. Carrying it as a hypothesis means no `Fin
+n` **successor** is ever needed for `w`, which is what a direct
+`w = descWord i (y+1)` would have forced.
+
+`hj₁ : j₁ ≤ j₂'` is the corner's own hypothesis `a > b` — the last block, which
+consumes `σⱼ₂`, needs floor room one below `j₂`.
+
+**Both lineages are this one lemma.** The first at `a₀ = σᵢ₋₂`,
+`A₀ = [σᵢ₋₁, σᵢ₋₂]`, `w = descWord i i₁`, `y = i₂`, `B = []`; the second at
+`a₀ = σᵢ₋₁`, `A₀ = []`, `w = [σᵢ]`, `y = i₁`, `B = [σᵢ]`. -/
+theorem gtRun (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ j₂' : Fin n}
+    (hj₂' : j₂'.val + 1 = j₂.val) (hj₁ : j₁.val ≤ j₂'.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (a₀ : HeckeGen n)
+    (hhead : ∀ q ∈ (L₁ ++ L₂).map Prod.fst, ∀ X : Monomial (HeckeGen n),
+      q ≠ a₀ :: X) :
+    ∀ (k : ℕ) (y z : Fin n) (A₀ w B : Monomial (HeckeGen n)),
+      y.val = j₂.val + k → z.val + 1 = y.val →
+      w ++ descWord y j₁ = descWord i j₁ →
+      (∀ u ∈ w, y.val < u.index.val) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms (L₁ ++
+          (a₀ :: (A₀ ++ (descWord i j₁ ++ (descWord y j₂ ++ B))), c) :: L₂))
+        (AlgElement.ofTerms (L₁ ++
+          (a₀ :: (A₀ ++ (descWord z j₂' ++ (descWord i j₁ ++ B))), c) :: L₂)) := by
+  intro k
+  induction k with
+  | zero =>
+    intro y z A₀ w B hy hz hsplit hw
+    have hyj₂ : y = j₂ := Fin.ext (by omega)
+    have hzj₂' : z = j₂' := Fin.ext (by omega)
+    have hrun : descWord y j₂ = [(⟨y⟩ : HeckeGen n)] := by
+      rw [← hyj₂, descWord_self]
+    have hdep : descWord z j₂' = [(⟨z⟩ : HeckeGen n)] := by
+      rw [← hzj₂', descWord_self]
+    have hyd : descWord y j₁ = (⟨y⟩ : HeckeGen n) :: descWord z j₁ :=
+      descWord_cons_le (i' := z) (i := y) (j := j₁) hz (by omega)
+    have hb := gtBlock (j₁ := j₁) (x := z) (x' := y) hn hp hz (by omega) c hc
+      L₁ L₂ (a₀ :: A₀) w B
+      (fun u hu => by have := hw u hu; omega)
+      (fun q hq => by
+        simp only [List.cons_append]
+        exact hhead q hq _)
+      (fun _ _ _ _ q hq => by
+        simp only [List.cons_append]
+        exact hhead q hq _)
+    have e1 : a₀ :: (A₀ ++ (descWord i j₁ ++ (descWord y j₂ ++ B)))
+        = ((a₀ :: A₀) ++ w) ++ bsWord₁ y j₁ ++ B := by
+      rw [hrun, ← hsplit]
+      simp only [bsWord₁, List.cons_append, List.nil_append, List.append_assoc]
+    have e2 : (a₀ :: A₀) ++ ((⟨z⟩ : HeckeGen n) ::
+          (w ++ ((⟨y⟩ : HeckeGen n) :: (descWord z j₁ ++ B))))
+        = a₀ :: (A₀ ++ (descWord z j₂' ++ (descWord i j₁ ++ B))) := by
+      rw [hdep, ← hsplit, hyd]
+      simp only [List.cons_append, List.nil_append, List.append_assoc]
+    rw [e1, ← e2]
+    exact hb
+  | succ k ih =>
+    intro y z A₀ w B hy hz hsplit hw
+    have hzn : z.val < n := z.isLt
+    have hzk : z.val = j₂.val + k := by omega
+    obtain ⟨z', hz'⟩ : ∃ z' : Fin n, z'.val + 1 = z.val :=
+      ⟨⟨z.val - 1, by omega⟩, by show z.val - 1 + 1 = z.val; omega⟩
+    have hrun : descWord y j₂ = (⟨y⟩ : HeckeGen n) :: descWord z j₂ :=
+      descWord_cons_le (i' := z) (i := y) (j := j₂) hz (by omega)
+    have hyd : descWord y j₁ = (⟨y⟩ : HeckeGen n) :: descWord z j₁ :=
+      descWord_cons_le (i' := z) (i := y) (j := j₁) hz (by omega)
+    have hdep : descWord z j₂' = (⟨z⟩ : HeckeGen n) :: descWord z' j₂' :=
+      descWord_cons_le (i' := z') (i := z) (j := j₂') hz' (by omega)
+    have hb := gtBlock (j₁ := j₁) (x := z) (x' := y) hn hp hz (by omega) c hc
+      L₁ L₂ (a₀ :: A₀) w (descWord z j₂ ++ B)
+      (fun u hu => by have := hw u hu; omega)
+      (fun q hq => by
+        simp only [List.cons_append]
+        exact hhead q hq _)
+      (fun _ _ _ _ q hq => by
+        simp only [List.cons_append]
+        exact hhead q hq _)
+    have hih := ih z z' (A₀ ++ [(⟨z⟩ : HeckeGen n)])
+      (w ++ [(⟨y⟩ : HeckeGen n)]) B hzk hz'
+      (by rw [List.append_assoc, List.singleton_append, ← hyd]; exact hsplit)
+      (fun u hu => by
+        rcases List.mem_append.mp hu with h | h
+        · have := hw u h; omega
+        · simp only [List.mem_singleton] at h
+          subst h
+          -- `omega` treats `(⟨y⟩ : HeckeGen n).index` as an opaque atom, so
+          -- reduce the projection first
+          show z.val < y.val
+          omega)
+    have e1 : a₀ :: (A₀ ++ (descWord i j₁ ++ (descWord y j₂ ++ B)))
+        = ((a₀ :: A₀) ++ w) ++ bsWord₁ y j₁ ++ (descWord z j₂ ++ B) := by
+      rw [hrun, ← hsplit]
+      simp only [bsWord₁, List.cons_append, List.nil_append, List.append_assoc]
+    have e2 : (a₀ :: A₀) ++ ((⟨z⟩ : HeckeGen n) ::
+          (w ++ ((⟨y⟩ : HeckeGen n) ::
+            (descWord z j₁ ++ (descWord z j₂ ++ B)))))
+        = a₀ :: ((A₀ ++ [(⟨z⟩ : HeckeGen n)]) ++
+            (descWord i j₁ ++ (descWord z j₂ ++ B))) := by
+      rw [← hsplit, hyd]
+      simp only [List.cons_append, List.nil_append, List.append_assoc]
+    have e3 : a₀ :: ((A₀ ++ [(⟨z⟩ : HeckeGen n)]) ++
+          (descWord z' j₂' ++ (descWord i j₁ ++ B)))
+        = a₀ :: (A₀ ++ (descWord z j₂' ++ (descWord i j₁ ++ B))) := by
+      rw [hdep]
+      simp only [List.cons_append, List.nil_append, List.append_assoc]
+    rw [e1, ← e3]
+    rw [e2] at hb
+    exact hb.trans hih
+
 /-! ### `b = 1`: the base case, uniform in `a`
 
 `b = 1` means `j₂ = i₁`, which collapses `descWord i₁ j₂` to the single letter
@@ -13915,6 +14041,183 @@ theorem sPoly_zero_gt₂ {n : ℕ} (i i₁ i₂ i₃ j₁ : Fin n) :
         [(WGt₂ i i₁ i₂ i₃ j₁, (1 : ℝ)), (WGt₂ i i₁ i₂ i₃ j₁, -1)])
       (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
   have h := ofTerms_cancel_pair (WGt₂ i i₁ i₂ i₃ j₁) (1 : ℝ) [] []
+  simpa using h
+
+/-! ### Every `b ≥ 2`, in one chain
+
+`vOpen` + `gtRun` on the first lineage, `gtRun` + two `bsStep`s on the second.
+No induction is written here — `gtRun` carries it — and no step count appears:
+the chain is four lemma applications whatever `b` is, which is the point of the
+block decomposition.
+
+`b = 1` is **not** covered and cannot be: there the first lineage's run
+`descWord i₂ j₂` is *empty* (`j₂ = i₁ > i₂`), so `vOpen` already lands on the
+meeting word and `gtRun`, whose run has `k + 1 ≥ 1` letters, has nothing to do.
+That case is `sPolyChain_gt₁`. -/
+
+/-- The word both lineages reach, at any `b`: `bsWord₂ i₂ i₁ (j₂ − 1)` followed
+by `descWord i j₁`, with `j₂'` standing for `j₂ − 1`. `WGt₁` and `WGt₂` are its
+`b = 1` and `b = 2` shapes written out. -/
+def WGt (i i₁ i₂ j₁ j₂' : Fin n) : Monomial (HeckeGen n) :=
+  bsWord₂ i₂ i₁ j₂' ++ descWord i j₁
+
+set_option linter.unusedSimpArgs false in
+/-- **The `a > b` chain at every `b ≥ 2`**, `T0` to a two-term element whose
+entries are equal and oppositely signed.
+
+`hb : j₂ ≤ i₂` is `b ≥ 2`; `hj₁ : j₁ ≤ j₂ − 1` is `a > b`, the corner's own
+hypothesis, and it is what gives the last block of each run its floor room.
+Nothing constrains `a` beyond that, which is the measured `a`-independence of
+this corner.
+
+At `b = 2` this is `sPolyChain_gt₂`, proved separately first: `gtRun` was
+written *after* that concrete case, so that the induction step was designed
+against words that had already been checked against the engine. -/
+theorem sPolyChain_gt (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ j₂' : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂' : j₂'.val + 1 = j₂.val) (hb : j₂.val ≤ i₂.val)
+    (hj₁ : j₁.val ≤ j₂'.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (AlgElement.ofTerms
+        [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ)), (WGt i i₁ i₂ j₁ j₂', -1)]) := by
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hi₂1 : 1 ≤ i₂.val := by omega
+  have hi₂n : i₂.val < n := i₂.isLt
+  obtain ⟨i₃, h₃⟩ : ∃ i₃ : Fin n, i₃.val + 1 = i₂.val :=
+    ⟨⟨i₂.val - 1, by omega⟩, by show i₂.val - 1 + 1 = i₂.val; omega⟩
+  -- the six peels every word below is built from
+  have hd1j1 : descWord i₁ j₁ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega)
+  have hdIj1 : descWord i j₁
+      = (⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₁) h₁ (by omega), hd1j1]
+  have hdIi1 : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hdIj2 : descWord i j₂
+      = (⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega),
+      descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)]
+  have hd1j2 : descWord i₁ j₂ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)
+  have hd1j2' : descWord i₁ j₂' = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂' :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₂') h₂ (by omega)
+  have hd2j2' : descWord i₂ j₂' = (⟨i₂⟩ : HeckeGen n) :: descWord i₃ j₂' :=
+    descWord_cons_le (i' := i₃) (i := i₂) (j := j₂') h₃ (by omega)
+  -- the first lineage: `vOpen` at `S = descWord i₂ j₂`, then its run
+  have vall := vOpen (j₁ := j₁) hn hp h₁ h₂ (by omega) 1 one_ne_zero []
+    [(U0 i i₁ j₁ j₂, (-1 : ℝ))] (descWord i₂ j₂)
+    (fun q hq X => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [U0]
+      simp only [List.cons_append, List.nil_append, List.singleton_append]
+      intro hcon
+      exact hne1i (List.cons.inj hcon).1)
+    (fun q hq X => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [U0]
+      simp only [List.cons_append, List.nil_append, List.singleton_append]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1.symm)
+  have vrun := gtRun hn hp hj₂' hj₁ 1 one_ne_zero []
+    [(U0 i i₁ j₁ j₂, (-1 : ℝ))] (⟨i₂⟩ : HeckeGen n)
+    (fun q hq X => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [U0]
+      simp only [List.cons_append, List.nil_append, List.singleton_append]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1.symm)
+    (i₂.val - j₂.val) i₂ i₃ [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] (descWord i i₁) []
+    (by omega) h₃
+    (by rw [hdIi1, hdIj1]; simp only [List.cons_append, List.nil_append])
+    (fun u hu => by have := descWord_index_ge hu; omega)
+  -- the second lineage: its run, then the two closing Bokut-Shiao steps
+  have urun := gtRun hn hp hj₂' hj₁ (-1) (by norm_num)
+    [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ))] [] (⟨i₁⟩ : HeckeGen n)
+    (fun q hq X => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [WGt, bsWord₂]
+      simp only [List.cons_append, List.nil_append]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+    (i₁.val - j₂.val) i₁ i₂ [] [(⟨i⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    (by omega) h₂
+    (by rw [hdIj1, hd1j1]; simp only [List.cons_append, List.nil_append,
+      List.singleton_append])
+    (fun u hu => by
+      simp only [List.mem_singleton] at hu
+      subst hu
+      show i₁.val < i.val
+      omega)
+  have u1 := bsStep (i' := i₁) (i := i) (j := j₁) hn hp h₁ (by omega)
+    [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ))] []
+    (descWord i₁ j₂') []
+    ((⟨i₁⟩ : HeckeGen n) :: ([] ++ (descWord i₂ j₂' ++
+      (descWord i j₁ ++ [(⟨i⟩ : HeckeGen n)]))))
+    (descWord i₁ j₂' ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) ::
+      descWord i₁ j₁)))
+    (-1) (by norm_num)
+    (by rw [hd1j2', bsWord₁]
+        simp only [List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil])
+    (by rw [bsWord₂]
+        simp only [List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil])
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [WGt, bsWord₂]
+      simp only [List.cons_append, List.nil_append]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  have u2 := bsStep (i' := i₂) (i := i₁) (j := j₂') hn hp h₂ (by omega)
+    [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ))] []
+    [] ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₁)
+    (descWord i₁ j₂' ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) ::
+      descWord i₁ j₁)))
+    (WGt i i₁ i₂ j₁ j₂')
+    (-1) (by norm_num)
+    (by rw [bsWord₁]
+        simp only [List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil])
+    (by rw [WGt, hdIj1, hd1j1]
+        simp only [bsWord₂, List.cons_append, List.nil_append,
+          List.append_assoc, List.append_nil])
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [WGt, bsWord₂, hd1j2']
+      simp only [List.cons_append, List.nil_append]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  rw [T0, V0, U0, WGt]
+  -- `urun` already carries its second term written out, so `U0` is not there
+  rw [U0] at vall vrun
+  simp only [hdIj1, hd1j1, hdIi1, hdIj2, hd1j2, hd1j2', hd2j2', bsWord₁,
+    bsWord₂, WGt, List.cons_append, List.nil_append, List.append_assoc,
+    List.append_nil, List.singleton_append] at vall vrun urun u1 u2 ⊢
+  exact (((vall.trans vrun).trans urun).step u1).step u2
+
+/-- **The `a > b` S-polynomial resolves to zero at every `b ≥ 2`.** -/
+theorem sPoly_zero_gt {n : ℕ} (i i₁ i₂ j₁ j₂' : Fin n) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms
+        [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ)), (WGt i i₁ i₂ j₁ j₂', -1)])
+      (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+  have h := ofTerms_cancel_pair (WGt i i₁ i₂ j₁ j₂') (1 : ℝ) [] []
   simpa using h
 
 end CornerGt
