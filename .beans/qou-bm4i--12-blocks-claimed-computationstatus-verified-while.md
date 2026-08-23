@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T13:11:22Z
+updated_at: 2026-08-23T13:38:29Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -114,3 +114,67 @@ and the check is "does the block still match the computation". Tolerances were
 untouched (5e-07 on tr_M, 0.15 on the percentages) and the mismatch was fixed at
 its source. If a future case tempts you to move a *tolerance* instead, that is
 the banned move.
+
+
+---
+
+## `conj:gs-graded-markov-trace-existence` — diagnosed, NOT fixed. It is import-cone drift, and it is the documented one.
+
+Second of the 12. Different failure mode from ⁴He, and the answer is "do not
+touch this witness".
+
+**First, a near-miss of my own.** The recorded tolerances read `9.2323329` and
+`1.0653062`, which look enormous beside a 6.7e-8 difference — I was one step
+from reporting a broken comparator. My own display had truncated the string at
+9 characters and eaten the exponent: they are `9.232332971861535e-10` and
+`1.065306228613167e-09`. The assertions fail honestly, by **72.9x** and
+**79.2x**.
+
+**What is actually being compared.** Two independent pipelines evaluate
+`tr_M(q_0)`:
+
+    realizer  markov-substrate-realization.witness.json   computed 2026-06-22
+    term6     term6-full-pole-sum.witness.json            computed 2026-08-10
+
+Seven weeks apart. They agree to 7.3e-8 (neutron) / 7.9e-8 (proton) against
+`AGREEMENT_RTOL = 1e-9`. Both values are stored as float64, whose floor is
+~1e-16, so the gap is real arithmetic disagreement, not rounding.
+
+**Re-running the realizer makes it worse, and that is the finding.**
+
+    atom        committed (Jun)   fresh re-run (today)    move
+    proton         1.0653062          1.1457597          +7.5 %
+    neutron        0.9232333          0.9877437          +7.0 %
+    deuteron        (absent)          0.5751722            —
+
+The deuteron's absence is the third failing assertion,
+`no_atoms_only_in_term6 = 1`: the June realizer covered 2 atoms, term6 covers 3.
+
+**The producer is byte-identical.** `scriptHash 23130ffe0ffc` in the committed
+witness matches a fresh sha256 of `markov_substrate_realizer.py` exactly. So
+nothing in the producer changed — something it *calls* did. That is
+**import-cone drift**, and it is not a new instance:
+
+    AGENTS.md: "tr_M_atom moved 0.388 -> 0.575 (48 %) because
+                tr_m_atom_via_transfer.py, which computes that quantity, changed."
+
+    measured here: term6 deuteron 0.3882864 -> realizer fresh 0.5751722, +48.1 %
+
+Same numbers, same 48 %. The corpus already documents this drift; this witness
+is one of its downstream casualties.
+
+**Deliberately NOT committed.** The regenerated realizer witness was restored to
+the committed version. Which side is correct is a research question about the
+import cone, not a metadata fix, and AGENTS.md measures this class at ~39 %
+actionable — re-running is a diagnosis, not a work order. `status: "failed"`
+(set in `cd19e98ac8`) is correct and stays.
+
+**One thing here IS mechanically actionable**, separately from the drift: both
+witnesses declare `precisionMetadata: {compute_dps: 70, output_dps: 60}` while
+storing `tr_M_at_q0` as a **bare JSON float** — 16 significant figures, not 60.
+Both producers emit the `raw-float64` warning on every run
+(`markov_substrate_realizer`: 7 fields; `probe_he4_...`: 108). So a comparison
+advertised at `rtol = 1e-9` is being run on values serialised at ~1e-16, and the
+witness's own provenance block overstates its precision by 44 digits. That is
+the "carry mpmath.mpf from the source, do NOT stringify the float" rule, and it
+is worth fixing before anyone tries to adjudicate the 7e-8.
