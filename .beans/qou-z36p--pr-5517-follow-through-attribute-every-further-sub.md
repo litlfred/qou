@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T13:22:15Z
-updated_at: 2026-08-23T14:56:19Z
+updated_at: 2026-08-23T15:19:12Z
 ---
 
 Continues the stalled #5517 session (container reclaimed; the diagnostics were
@@ -57,3 +57,43 @@ then re-run the head ALONE and compare peaks. Serial, not concurrent.
 minutes. AGENTS.md §Long-compute logging discipline requires periodic progress
 for anything past 5 minutes. From outside, "computing" and "wedged" are
 indistinguishable, which is exactly why the OOM went unnoticed for 46 min.
+
+
+## The #5486 stopgap broke two producers — #5517 unbreaks them
+
+Not claimed by #5517 and the best evidence for it.
+
+* `qbeta_operator_identification_probe` — **exit 1 on main**, the guard raises
+  at `q=1.1099785955573347`. Unrunnable today; runs at #5517's head. Witness
+  NOT refreshed: only `parameters.q_0` moves, by 2.842e-12, and that is two
+  different MUON literals (the inconsistent-muon-pin class), not #5517.
+* `poly_q_proof_probe` — worse, because it does not fail. Six of its seven
+  q-points raise, it catches each, and writes a witness with ONE row while
+  still emitting `max_relative_diff_across_q: 3.35`. Refreshed here.
+
+The committed poly-q witness (pre-stopgap, all seven rows) shows the original
+defect in plain sight — `tr_M_numeric` reads 1.6343, 1.6334, 1.6332, 1.6320,
+1.6302, 1.6129, 1.5734 across q = 1.05 … 2.0. Constant to 3.7 % over a factor
+of two in q. After #5517: 0.982 … 1446.13.
+
+Verdict does NOT flip — PR #546's closed form fails either way. Only the
+evidence changes from worthless to real.
+
+## Scope map corrected: 8 writers, not 12
+
+The 12 came from regexing witness filenames and treating every hit as an
+output. Four only read. Two of those name the ANCHOR-DEFINING
+`q-pinning-50-digit.witness.json` and merely read it, so the anchor hazard the
+grep implied does not exist. Same class killed a prediction of mine cheaply:
+`chi-deuteron-h6-at-q0-50dps` is written by `chi_at_q0_via_hoefsmit_mpfr.py`,
+which never touches `char_fast`.
+
+Remaining unmeasured: `nuclide_braid_pipeline`, plus H12 in flight.
+
+## H12 update — the memory hypothesis is weakening
+
+The branch-point run is now at **5.76 GB** at 94 min, up from ~4.0 GB earlier,
+i.e. climbing toward the 9.86 GB at which the head run was killed. That is
+further reason not to have banked "the symbolic rep costs 2.5x memory" — it
+looks increasingly like both runs reach a similar peak and the kill simply
+selected whichever was ahead.
