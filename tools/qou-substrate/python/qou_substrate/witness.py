@@ -33,7 +33,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePath
 from typing import Any, Mapping, Optional, Union
 
 
@@ -1781,6 +1781,8 @@ class WitnessBuilder:
                   f"environment block than the copy on disk; rewriting "
                   f"provenance only (payload unchanged).", file=sys.stderr)
 
+        _check_producer_takeover(existing, witness, out_path)
+
         _check_raw_float64(witness, out_path.name)
         _check_nonfinite(witness, out_path.name)
         _check_environment_regression(witness, existing, out_path.name)
@@ -1843,6 +1845,109 @@ class WitnessBuilder:
 # Sync note: mirrored in `qou-mass/src/qou_mass/_internal/witness_base.py`
 # (PyPI bundle copy). The cross-package sync is asserted by the
 # `test_ephemeral_mask_sync` test in `tools/qou-substrate/tests/`.
+#: Set to a non-empty value to allow a producer takeover that would otherwise
+#: be refused. This is the deliberate-ownership-transfer escape hatch — use it
+#: when a witness is genuinely moving to a new producer AND the field loss is
+#: intended, and say so in the commit.
+_TAKEOVER_OVERRIDE_ENV = "QOU_WITNESS_ALLOW_PRODUCER_TAKEOVER"
+
+
+def _top_level_data_keys(w: object) -> set:
+    """Top-level keys plus `data.*` keys — the shape a consumer reads.
+
+    Nested payload keys are deliberately NOT walked: per-partition tables and
+    result lists legitimately change shape run to run, and comparing them would
+    make the guard fire on ordinary recomputation.
+    """
+    if not isinstance(w, dict):
+        return set()
+    keys = {k for k in w if k not in _EPHEMERAL_META_FIELDS}
+    data = w.get("data")
+    if isinstance(data, dict):
+        keys |= {f"data.{k}" for k in data}
+    return keys
+
+
+def _check_producer_takeover(existing: object, witness: dict,
+                             out_path: "Path") -> None:
+    """Refuse to let a DIFFERENT producer silently overwrite a poorer witness.
+
+    The failure this exists for (bean `qou-okl8`): two producers emitted the
+    same witness name with different schemas —
+    `per_irrep_pole_atom.py` writes `f"per-irrep-pole-{atom}-h{n}"`, which for
+    the deuteron is exactly the literal `per_irrep_pole_deuteron_h6.py` writes.
+    Whichever ran last won. Running the atom-specific one over the committed
+    atom-produced witness deleted `cemetery_class_signed_power_projection`,
+    `net_signed_power`, `is_pure_power_in_cemetery` and the per-`gen_idx`
+    breakdown — 230 deletions against 39 insertions — with no warning of any
+    kind. It was caught by eye in a diff; nothing in the pipeline objected.
+
+    **Why this keys on OWNERSHIP CHANGE and not on field loss.** The obvious
+    guard is "refuse to shrink a witness", and it is the wrong one: ordinary
+    schema evolution drops fields all the time, so a shrink-guard would fire
+    constantly on legitimate work and be silenced. Ownership change is the
+    actual signal — `scriptFile` is already recorded on every witness, so the
+    comparison is free and near-zero-false-positive. Both conditions must hold:
+
+      * a *different* `scriptFile` is writing this name, AND
+      * the incoming payload *lacks* keys the on-disk one has.
+
+    A different producer writing an equal-or-richer witness is a legitimate
+    consolidation and passes with a note. The same producer dropping a field is
+    schema evolution and is not this function's business.
+
+    Scope, measured rather than assumed: a scan of every `WitnessBuilder(...)`
+    name in `computations/` found **zero** literal-vs-literal collisions and
+    exactly **two** template-vs-literal ones, both this same
+    generalised-supersedes-specific shape (`per-irrep-pole-deuteron-h6` and
+    `per-irrep-pole-proton-h3`). So this guard is a backstop for a small,
+    bounded family — not a widespread class — and it is written to stay quiet.
+
+    Raises RuntimeError unless `QOU_WITNESS_ALLOW_PRODUCER_TAKEOVER` is set.
+    """
+    if not isinstance(existing, dict):
+        return
+    old_script = existing.get("scriptFile")
+    new_script = witness.get("scriptFile")
+    if not isinstance(old_script, str) or not isinstance(new_script, str):
+        return
+
+    # Compare BASENAMES. `save()` writes `self._script_path.name`, but 32
+    # committed witnesses carry a path-qualified `scriptFile`
+    # (`computations/foo.py`, `markov/bar.py`) from older producers — and 29 of
+    # those resolve to a file that still exists. Comparing the raw strings
+    # would read every one of them as a producer change on its next run, which
+    # is how a guard like this earns a reputation for crying wolf and gets
+    # switched off. Measured before the first commit, not after a bug report.
+    if PurePath(old_script).name == PurePath(new_script).name:
+        return
+
+    lost = sorted(_top_level_data_keys(existing) - _top_level_data_keys(witness))
+    if not lost:
+        print(f"  note: {out_path.name} changed producer "
+              f"{old_script} -> {new_script}; no fields lost.")
+        return
+
+    if os.environ.get(_TAKEOVER_OVERRIDE_ENV):
+        print(f"  ⚠ {out_path.name}: producer takeover "
+              f"{old_script} -> {new_script} DROPS {len(lost)} field(s): "
+              f"{', '.join(lost)} — allowed by "
+              f"{_TAKEOVER_OVERRIDE_ENV}.")
+        return
+
+    raise RuntimeError(
+        f"REFUSING to overwrite {out_path.name}: it was written by "
+        f"{old_script!r}, this run is {new_script!r}, and the new payload "
+        f"drops {len(lost)} field(s) the committed one carries: "
+        f"{', '.join(lost)}.\n"
+        f"Two producers are writing the same witness name with different "
+        f"schemas (bean qou-okl8). Either run the owning producer "
+        f"({old_script}), or give this one a distinct witness name. If this "
+        f"IS a deliberate ownership transfer and the field loss is intended, "
+        f"re-run with {_TAKEOVER_OVERRIDE_ENV}=1 and say so in the commit."
+    )
+
+
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
     "durationSeconds", "duration_sec",
