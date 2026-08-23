@@ -65,6 +65,24 @@ Do NOT skip ahead — the review is the input to Phase 2.
 > only live external reviewer.** Waiting for a Gemini review that can
 > never arrive is the documented stall mode (PR #4456).
 
+> **🛑 MEASURED 2026-08-23 — do NOT run this wait. Copilot never enqueues.**
+> n=5 (bean `qou-gwe9`, AGENTS.md rule 10): on #5474, #5495, #5411, #5459 and
+> #5482 the review was requested explicitly and **zero** arrived. Critically
+> `get_check_runs` returns `total_count: 0` — there is no `queued` or
+> `in_progress` `copilot-pull-request-reviewer` run, so step 1 below polls for
+> an object that is never created and the 15-minute cap is the only exit.
+> Re-requesting after a force-push does not help (#5459), and the cases span
+> new Lean, a 20-file revert and a `.beans/`-only change, so the
+> "did not trigger for this file type" reading in step 1 does not survive n=5.
+>
+> **Do this instead:** request the review once (cheap, keeps the record), then
+> proceed immediately with 0 comments and say so in the briefing —
+> "Copilot: not enqueued (measured, `qou-gwe9`)". With CI dispatch-only and
+> Gemini sunset, there are **zero** live external gates; your own verification
+> is the whole gate, so state what you ran.
+>
+> The protocol below is kept for the day a reviewer is reinstated.
+
 **Wait protocol (15-minute window — extended 2026-05-31 per author):**
 
 1. After requesting reviews in Phase 1, poll for Copilot's
@@ -186,6 +204,8 @@ After merge:
 - Do NOT merge without resolving review comments (even if CI is green).
 - Do NOT squash unless the user explicitly says "squash" on this PR.
 - Do NOT wait on a Gemini review — Gemini Code Assist is sunset.
+- Do NOT wait on a Copilot review either — measured n=5, it never enqueues
+  (`qou-gwe9`). Request once, then proceed with 0 comments.
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.
