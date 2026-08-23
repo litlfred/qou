@@ -764,17 +764,24 @@
         "data.cherednik_candidates.15.rel_residue_geom_mult"
       ],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+      "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
     }
   ],
   "tally": {
-    "TIMEOUT": 4,
+    "TIMEOUT": 5,
     "SUBSTANTIVE/ASSERT-FAIL": 5,
     "SUBSTANTIVE": 25,
     "UNCHANGED": 6,
     "CRASH": 3
   },
   "partial": true,
-  "measured": 43,
+  "measured": 44,
   "total": 47,
   "environment": {
     "python": "3.11.15",
