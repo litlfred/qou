@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T22:10:55Z
+updated_at: 2026-08-23T22:27:28Z
 parent: qou-59vq
 ---
 
@@ -606,3 +606,34 @@ wants the two `Fintype` instances definitionally equal and they are noncomputabl
 (`Set.Finite.fintype`); `Fintype.sum_equiv`, which asks only for a pointwise equality, goes
 through instantly. And a Sigma-valued intermediate function needs a `set F : … := … with hF`
 binding: written inline it has no inferable type and its projections do not resolve.
+
+
+## The general-`n` corner identity at convention D may be MUCH closer than the PR says
+
+Noticed while replying to the two sibling coordination comments. `markov_of_corner_identity`
+quantifies its hypothesis over **all** `ν` of size `m+1`, and I had been reading that as
+"needs the general-`n` identity". It may not, at convention D, because of the vanishing:
+
+- **`ν` with ≥3 rows.** `w_ν = 0`, so the RHS is `z·0 = 0`. Adding a cell cannot *reduce* the
+  row count, so every `ν+s` also has ≥3 rows and every `w_{ν+s} = 0` — the LHS is `0` too.
+  The hypothesis holds **trivially**, not by any corner arithmetic.
+- **`ν` with ≤2 rows.** Its addable cells are `(0,m)`, `(1,k)` and `(2,0)`; the third makes a
+  3-row diagram, weight `0`. So the sum has exactly the **two** surviving terms that
+  `markov_corner_row0` / `markov_corner_row1` / `markov_corner_row1_diag` already prove.
+
+If that holds up, `ocneanuWeight` at convention D satisfies the Markov property **at general
+`n`, unconditionally** — which is the open item the PR headline names, and the last external
+citation the whole tranche was aimed at.
+
+**Not attempted, and I am not claiming it.** Two things have to be built and either could be
+harder than the sketch: a classification putting every `ν` in one of the two buckets, and an
+enumeration of the addable cells of `twoRow m k` as the subtype the hypothesis sums over
+(with `(2,0)` shown to contribute zero). The second is the fiddly one. Also worth checking
+before starting: whether `markov_corner_row1`'s statement without `0 < k` lines up with the
+`k = 0` (single-row `ν`) case, where row 1 has no removable corner — the file's own docstring
+flags that the identity there "corresponds to no corner and carries no Markov content", which
+is about the *removable* side but is the kind of edge the enumeration will hit.
+
+This supersedes my previous "next step" note, which said to attack the corner identity at
+general `n` directly from `schurPrincipal`'s hook-content form. That is the right move for
+**arbitrary** `z`; at convention D specifically, the vanishing may do the work.
