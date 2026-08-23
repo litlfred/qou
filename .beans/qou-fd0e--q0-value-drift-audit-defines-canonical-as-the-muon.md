@@ -207,3 +207,57 @@ The same pattern used for `--payload-check` on the anchor audit applies: report
 the producer-layer mismatch as an opt-in, print-only diagnostic that cannot change
 the exit code. That makes the 162 visible and countable without forcing either
 horn. Not implemented in this entry; noted as the obvious next step.
+
+---
+
+## `--layer-check` added 2026-08-23 — the blind class is now countable, and my 162 was wrong
+
+Implemented the safe partial: an **opt-in, print-only** producer-layer diagnostic
+on `q0_value_drift_audit.py`. It resolves each `canonical`-classed witness to its
+`scriptFile` and checks that producer against the manifest's `ideal_muon`.
+
+```
+  canonical-classed witness files            : 165
+  producer NOT in ideal_muon (blind to STALE): 148
+  legitimately muon-layer                    :   3
+  UNRESOLVED (not evidence either way)       :  14
+```
+
+`148 + 3 + 14 = 165`, and the **3** matches `ideal_muon`'s three entries exactly —
+a real self-check, not a coincidence.
+
+Findings are printed, never written to the witness (verified: the artefact is
+byte-identical after a `--layer-check` run — this audit writes raw JSON with no
+invocation record, unlike the `WitnessBuilder` audits), and the exit code is
+untouched: `new_stale` remains the only gate.
+
+### Correcting my own figure: 162 → 148
+
+I reported **162** above. That number lumped **14 unresolved** witnesses in with
+the mismatches, because my ad-hoc script counted everything that was not provably
+legitimate as a mismatch. The honest split is 148 mismatched, 14 unresolved.
+
+### And I shipped that same defect into the first version of this diagnostic
+
+The first `--layer-check` printed *"legitimately muon-layer: 17"* — computed as
+`165 − 148`. But only **3** producers are in `ideal_muon`, so 17 was impossible on
+its face. The cause: unresolved witnesses `continue`d out of the loop and were
+then counted as legitimate **by subtraction**.
+
+That is exactly the defect this session has been cataloguing — `PROV_AUDIT_EXEMPT`
+returning `[]` before checking (`qou-0uqm`), `count_package` returning `-1` and
+being read as an improvement (`qou-i5jy`) — reproduced by me, in a tool written to
+detect it. The fix is the same one I recommended for those: **three explicit
+classes, and never infer a verdict by subtraction.** `UNRESOLVED` is now its own
+line, labelled *"not evidence either way"*.
+
+A second latent bug in the same first version: it referenced an undefined `REPO`
+on the fallback path. It never fired because the relative paths happened to
+resolve against the process cwd, so it would have raised `NameError` only when run
+from another directory. Now resolves against `HERE.parent` explicitly.
+
+### The decision this surfaces is unchanged
+
+148 witnesses sit in a class that cannot be `STALE`, and acting on that fails a
+blocking gate or breaks the documented `--rebaseline` discipline. Still the
+owner's call; the diagnostic makes the number visible without forcing it.
