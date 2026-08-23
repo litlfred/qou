@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T22:25:49Z
-updated_at: 2026-08-23T22:26:45Z
+updated_at: 2026-08-23T22:34:05Z
 ---
 
 ## What
@@ -79,3 +79,78 @@ That contrast is the cheapest lead.
    two cones is where to look first.
 3. Once located, decide whether the correct fix is to pin the second source
    explicitly or to remove it. Do **not** re-bucket the stems until then.
+
+
+---
+
+## LOCATED (2026-08-23) — a defaulted parameter, three modules down
+
+The carrier is found, and the chain is verified end to end rather than inferred.
+
+```
+xi_ell_phi_q_probe.py
+  |- q0  derived INLINE from M_MU_OVER_M_E                    -> muon, always
+  `- per_generator_V_hat_general.py:94
+         _cached_seminormal(shape)            <-- NO q ARGUMENT PASSED
+           `- mass_at_3A_proper.py:64
+                  from q_parameter import Q as Q0             -> MANIFEST-RESOLVED
+```
+
+`_cached_seminormal`'s own docstring: *"`q` defaults to the module-level
+`Q0` (float64) … Seminormal (Young orthogonal) matrices for `shape`, built
+**AT `q`**."* So the seminormal matrices — and therefore `V̂` — are built at
+whatever the **manifest** resolves, while the probe's own `q0` is the inline
+muon value. Two layers, one computed quantity.
+
+### Confirmed by the anchor, not just by reading
+
+```
+QOU_Q0_ANCHOR unset      max_abs_V = 0.3164349897485959
+QOU_Q0_ANCHOR=physical   max_abs_V = 0.3164349897485959
+QOU_Q0_ANCHOR=ideal      max_abs_V = 0.3164350254931353     <- the shifted value
+```
+
+The env override reproduces the manifest-entry shift **exactly**, which pins the
+mechanism on `q_parameter` resolution and rules out anything else in the cone.
+
+### A false lead worth recording
+
+`per_generator_V_hat_general.py:46` is `from q_parameter import Q as Q0_FLOAT`
+— which looks like the answer and **is not**: `Q0_FLOAT` appears exactly once
+in the file and is never used. A dead import cannot move a number. The live
+path is the defaulted parameter one module further down, which is the more
+invisible form: **nothing at the call site mentions an anchor at all.**
+
+### Population of the same latent shape
+
+`_cached_seminormal` call sites across `computations/`, `tools/`,
+`qou-mass/` (excluding `_deprecated` and the def itself):
+
+| | n |
+|---|---|
+| pass `q` explicitly | 6 |
+| **default it** | **22** |
+| total | 28 |
+
+Every defaulted site inherits the manifest anchor silently. That does not make
+them all straddles — a site whose *only* q is the manifest one is consistent,
+not mixed. It becomes a straddle exactly when the caller ALSO has its own q,
+which is the `xi_ell_phi_q_probe` case. Each needs the same check.
+
+## The decision this needs, and it is not mine
+
+Fixing it means passing an explicit `q` at
+`per_generator_V_hat_general.py:94`, which **changes that probe's numbers**.
+Which q is correct is a judgement:
+
+1. **The probe's inline muon `q0`** — self-consistent with the rest of the
+   probe, and makes `xi_ell_phi_q_probe` cleanly muon.
+2. **The canonical proton pin** — the 2026-08-07 default for compute, but then
+   the probe's own inline derivation is the thing that is wrong.
+
+Option 2 arguably makes the inline re-derivation (`qou-5le1` Mode A) the real
+defect across all 9 files that do it. Option 1 keeps them and fixes the call
+site. That is a scope call about the muon layer, not a bug fix.
+
+Secondary, and separate: `mass_at_3A_proper`'s `Q0` is the **float64** `Q`,
+so the seminormal matrices are built in float64 regardless of which anchor wins.
