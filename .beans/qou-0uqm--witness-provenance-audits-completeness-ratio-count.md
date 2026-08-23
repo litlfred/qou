@@ -89,3 +89,88 @@ The same shape exists in two sibling detectors and is recorded in `qou-ivhc`:
 Not touched here because the anchor audit's `Q0_FLIP` is a **CI-failing gate**;
 adding coverage reporting there is safe by the same additive pattern used above,
 but it should be done deliberately rather than folded into this change.
+
+---
+
+## The exempt class is itself INFLATED by a silent grep failure — and it fails OPEN
+
+Swept the 242 `PROV_EXEMPT_NO_READER` witnesses asking "has the exemption aged?"
+The answer is worse and more specific: **it was wrong at emission.**
+
+### The mechanism, verified
+
+`build_reference_index()` builds the "who cites this" index from two greps, each
+wrapped so that failure is silent:
+
+```python
+    try:
+        out = subprocess.run(
+            ["grep", "-rhoE", pat, str(repo / "content")],
+            capture_output=True, text=True, timeout=120,
+        ).stdout
+        paper = set(out.split())
+    except Exception:   # noqa: BLE001
+        pass            # ← a timeout leaves `paper` EMPTY, silently
+```
+
+and the rule is `has_reader() = name in paper or py_counts.get(name, 0) > 1`.
+
+**If the `content/` grep fails, `paper` is empty, every witness looks uncited, and
+the exempt class swells.** Because `PROV_EXEMPT_NO_READER` sits in the numerator
+of `completeness_ratio`, that failure **raises the headline score**. A gate whose
+index fails open, and reports a better number for having failed.
+
+### Verified: the `content` branch contributed nothing to the committed report
+
+Three witnesses picked from the exempt list and checked directly:
+
+| witness | in `PROV_EXEMPT_NO_READER` | cited in `content/` today |
+|---|---|---|
+| `aomega-bps-sector-nondegeneracy` | **yes** | `mass-theory/aomega-fourone-dt-count.ts` |
+| `canonical-mass-table-242ppb` | **yes** | `appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts` |
+| `sigma-f-electron-shell-chain` | **yes** | `knots-particles-confinement/shell-closure-stability.ts` |
+
+The audit's own `name in paper` test returns **True** for all three, so its own rule
+would not have exempted them. Corroboration from the sweep: **all 44 surviving
+`PROV_MISSING` entries have `py_occurrences > 1`; not one was retained as a gap by
+the `content/` branch** — exactly the signature of `paper == set()`. Plausible
+cause is the `timeout=120` on a 6.8 GB `content/` tree (6.5 GB of it untracked
+`.lake` build output); that specific mechanism is **not proven** — a warm run here
+took 8.3 s — so it is recorded as the likely cause, not a measured one.
+
+### And the second half of the rule is inert
+
+`py_counts > 1` contributes **nothing** to this class: the maximum py-occurrence
+count across all 242 is **1** (62 have 0, 180 have 1). Every one of the 242
+exemptions therefore rested solely on the `content/` grep that returned nothing.
+
+### The rule is also blind by construction
+
+`has_reader` cannot see a read whose path is built at runtime. The entire
+`chi-*` cache family is consumed that way — e.g.
+`bar_pairing_binding_observable.py:122` builds
+`chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json` from an f-string, so no
+literal filename appears anywhere. **12 of the 13 exempt `chi-*` witnesses have a
+genuine runtime reader**; e.g. `canonical_tr_m_via_chi_cache.py:80,244` and
+`delta_lambda_energy_scale_extensivity_probe.py:103`. It is also scoped to `.py`
+under `computations/` only, so `.ts`/`.sh` readers elsewhere are invisible.
+
+**Demonstrable genuine readers: 25 of 242 (10.3 %).** The naive "mentioned
+anywhere" count is 227, but **79 % of those mention-sites are other audits' own
+report JSON** — machine inventories, not readers. That distinction matters: it is
+the difference between a 94 % error rate and a 10 % one, and only the second is
+defensible.
+
+### What this needs
+
+1. **Fail loudly.** `check=True` on both greps, or record `paper_index_ok` in the
+   witness so a failed index is visible rather than score-improving. This is the
+   single highest-value change — it converts a fail-open gate into a fail-closed
+   one.
+2. **Cover dynamic reads**, or stop treating "no literal mention" as "no reader"
+   for families known to be built by f-string.
+3. **Exclude machine inventories** from any future "is it cited" measure.
+
+My `evaluated_coverage` change above already surfaces the *symptom* — 320
+witnesses excluded, 0.882 coverage — but not the cause. Not fixed here: (1) is a
+behaviour change to a `--strict` gate and should be a deliberate call.
