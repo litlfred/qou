@@ -87,6 +87,25 @@ _T0 = time.monotonic()
 #: truncations). Drains as sites are migrated to read the pin; must never grow.
 BASELINE_DIVERGENT = 71
 
+
+def ratchet_fires(count: int, baseline: int) -> bool:
+    """The ratchet's ONE predicate. ``main()`` and ``_self_test()`` must both
+    call this -- that shared call is the whole point.
+
+    Previously each spelled the comparison out separately, and the self-test
+    spelled it against literals: ``fires = n > (n - 1)``, ``holds = not (n > n)``.
+    Both are tautologies for every ``int``, so ``--self-test`` returned 0
+    unconditionally and could not report failure. It printed the numbers while
+    never touching the predicate it claimed to test; flipping ``>`` to ``>=``
+    in ``main()`` would not have moved it.
+
+    Routed through here, a flipped operator is caught: ``>=`` breaks the
+    ``holds`` leg (``not (n >= n)`` is False) and ``<`` breaks the ``fires``
+    leg. The test can now fail, which is the only property that made it worth
+    having.
+    """
+    return count > baseline
+
 #: Only literals long enough to be a deliberate transcription rather than a
 #: display rounding. 14 chars still discriminates muon from proton.
 _MIN_LEN = 14
@@ -161,7 +180,8 @@ def _self_test() -> int:
     """
     fams = scan()["families"]
     n = sum(len(v) for k, v in fams.items() if k is not None)
-    fires, holds = n > (n - 1), not (n > n)
+    fires = ratchet_fires(n, n - 1)   # the REAL predicate, at baseline n-1
+    holds = not ratchet_fires(n, n)   # and at baseline n
     print(f"self-test: {n} divergent literals")
     print(f"  ratchet FIRES at baseline {n - 1}: {fires}  (expect True)")
     print(f"  ratchet HOLDS at baseline {n}:     {holds}  (expect True)")
@@ -207,7 +227,7 @@ def main(argv: list[str] | None = None) -> int:
         if len(grp) > 6:
             print(f"      … and {len(grp) - 6} more")
 
-    grew = n_div > BASELINE_DIVERGENT
+    grew = ratchet_fires(n_div, BASELINE_DIVERGENT)
     assertions = [
         {"name": "1_divergent_set_has_not_grown", "passed": not grew,
          "detail": f"{n_div} divergent literals vs baseline {BASELINE_DIVERGENT}. "

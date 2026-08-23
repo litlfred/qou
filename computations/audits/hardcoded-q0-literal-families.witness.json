@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:47:58.314570+00:00",
-  "commitSha": "8d0fd7cc3f6532a347bea9af4003c1b413cc8ef8",
+  "computedAt": "2026-08-23T08:34:00.861169+00:00",
+  "commitSha": "0d757116bd4fcf43b442bbde1022907394d89f3d",
   "assertions": [
     {
       "name": "1_divergent_set_has_not_grown",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 335,
+  "durationMs": 333,
   "computation": "hardcoded-q0-literal-families",
   "scriptFile": "hardcoded_q0_literal_families_audit.py",
-  "scriptHash": "361fa9700275",
-  "scriptCommitSha": "67d286fbe769af27bbb6101f5e6fd1db07543759",
+  "scriptHash": "cea037bf5055",
+  "scriptCommitSha": "2f569affa7996a1d5483c09b4707870e38ebad75",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -562,18 +562,8 @@
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.1099785955541805753",
-          "length": 21
-        },
-        {
-          "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.1099785955541805752815940796095093779667618976181",
+          "literal": "1.1099785955541805169583001889887986763787613849839",
           "length": 51
-        },
-        {
-          "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
@@ -587,18 +577,28 @@
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746",
+          "length": 71
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
           "literal": "1.109978595554180575281594079609518150067234842238",
           "length": 50
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.1099785955541805169583001889887986763787613849839",
+          "literal": "1.1099785955541805753",
+          "length": 21
+        },
+        {
+          "file": "computations/test_q0_provenance_audit.py",
+          "literal": "1.1099785955541805752815940796095093779667618976181",
           "length": 51
         },
         {
           "file": "computations/test_q0_provenance_audit.py",
-          "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746",
-          "length": 71
+          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+          "length": 61
         },
         {
           "file": "computations/three_quark_borromean_lp_sweep.py",
