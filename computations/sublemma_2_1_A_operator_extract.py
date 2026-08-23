@@ -441,7 +441,12 @@ def main() -> int:
             status = "✓"
         else:
             status = "✗"
-        print(f"  {str(lam):<14} {support_str:<22} {n_unknowns:>10} {max_rel:>10.2e}  {status}")
+        # `max_rel` is an mpf since the float64 port; mpmath does not
+        # implement __format__ for the "e" presentation type, so the old
+        # `{max_rel:>10.2e}` raised TypeError and killed the run before the
+        # witness was written. `mp.nstr` is a display conversion only.
+        print(f"  {str(lam):<14} {support_str:<22} {n_unknowns:>10} "
+              f"{mp.nstr(max_rel, 3):>10}  {status}")
 
         results_per_lambda[lam] = {
             "support": [{**p, "mu": list(p["mu"]), "nu": list(p["nu"])} for p in pairs],
