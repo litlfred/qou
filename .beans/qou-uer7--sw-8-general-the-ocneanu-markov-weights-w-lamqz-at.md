@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T22:49:06Z
+updated_at: 2026-08-23T22:59:25Z
 parent: qou-59vq
 ---
 
@@ -672,3 +672,41 @@ normalisation `tr(1) = 1`.
 So do **not** write "Wenzl's theorem is discharged". Write "the Markov-property leg is discharged
 at convention D; the normalisation leg at general `n` is open." That second leg is the next item,
 and it is a different shape — an identity in `f^λ` and the weights, not a corner recursion.
+
+
+## The normalisation leg is closed too — both defining properties now hold at every `n`
+
+`QOU/SchurWeyl/MarkovNormalisation.lean`, `sum_dim_weight_eq_one`, sorry-free, axiom-clean:
+
+    ∑_{|λ| = n} f^λ · W_λ = 1   for every n,  W = ocneanuWeight q z_D
+
+which is `tr(1) = 1`, since `tr(1) = ∑_λ W_λ · dim V_λ` and `dim V_λ = f^λ`.
+
+**I said in the last note that this was "a different shape — an identity in `f^λ` and the weights,
+not a corner recursion". That was wrong, and being wrong about it is why it landed quickly:** it
+is the *same* exchange, run without the Hoefsmit factor. `ocneanuWeight_addable_sum` gives
+`∑_{s addable} W_{ν+s} = W_ν` for every diagram (same ≥3-rows / `twoRow` split, `(2,0)` dropping
+out), `numStandardYoungTableaux_branching` expands `f^λ`, and `sum_corner_eq_sum_addable` closes
+it — so the sum is *constant in `n`* and equals its value at `n = 0`. The base case is `⊥` with
+`f = 1` (`numStandardYoungTableaux_bot`, **already in the corpus**) and `W = 1`.
+
+Complement, not replacement: `OcneanuWeightMarkov3`'s normalisation lemmas do the same identity at
+`n = 3, 4` for **arbitrary** `z`. Neither subsumes the other.
+
+### Status of the external input
+
+| | |
+|---|---|
+| Markov property `tr(x·σ_n) = z·tr(x)` | **Lean**, convention D, every `n` |
+| Normalisation `tr(1) = 1` | **Lean**, convention D, every `n` |
+| Uniqueness — that a Markov trace with a given `z` is *the* one | **not proved** |
+| Both properties at **arbitrary** `z` | **not proved**; symbolic tests to `n = 6` |
+
+So Wenzl's theorem is no longer an input *for the two properties the downstream mass channel
+actually uses*. It is still an input for the word "**the**". Do not compress this to "Wenzl
+discharged" — the uniqueness step is a real statement and nobody has written it here.
+
+The natural next item is that uniqueness: a Markov trace is determined on `H_n` by the two
+properties plus cyclicity, by induction on reduced words. #5592's coset recursion
+(`pyhecke.tl.markov_trace_basis`, `w = u·d` with `d` minimal in `S_{n-1}w`) is exactly that
+induction done computationally, and is the obvious thing to formalise against.
