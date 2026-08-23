@@ -1,11 +1,11 @@
 ---
 # qou-cauj
 title: 'Nine .md the 52c68267f2 bulk import dropped: 2 restored, 2 need an authoring call, 5 are probably not blocks'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T08:44:25Z
-updated_at: 2026-08-23T08:47:25Z
+updated_at: 2026-08-23T09:19:32Z
 ---
 
 MEASURED 2026-08-23 while draining the last validate errors.
@@ -109,3 +109,59 @@ Its first version reported the deleted path above. `files` comes from
 unregistered block. Guarded with `[ -f "$m" ] || continue`. Verified: the
 deleted path is now passed over, `qbeta-fmap-structural-form.md` is still
 caught, and registered blocks / audit docs / `lean/AUDIT-REPORT.md` are not.
+
+
+---
+
+## CLOSED 2026-08-23 — all four dispositioned; `run-validate` exits 0
+
+`✓ Valid — 28 issue(s)`, **zero errors**, against 52 issues / 11 errors on clean
+`origin/main`. Every chapter-level `.md` in the corpus is now registered, so the
+gate added in `4cea7a3883` starts from a clean baseline rather than a backlog.
+
+| file | disposition |
+|---|---|
+| `spectral-decomposition-qvalue-interpretation` | registered — `rem:`, shape fixed by 6 siblings |
+| `q-clt-jsj-mass-scaling` | registered — `rem:`, interprets `conj:jsj-decomposition-linearity` |
+| `q-beta-c3-continuum-geometry` | registered — `rem:`, and its **broken** `.lean` fixed |
+| `qbeta-fmap-structural-form` | moved to `docs/audits/`, refutation labelled (b) |
+
+### The finding that mattered most
+
+`q-beta-c3-continuum-geometry.lean` **had not compiled**, and nothing said so.
+No manifest means no gate ever built it. Two errors:
+`intervalIntegrable_log'` is namespaced under `intervalIntegral`, and the
+`convert` in `f_integrable` left `log (2*|s|) = log (2*s)` — which needs
+`← Real.log_abs` and `abs_mul`, not the `simp [Real.log_abs]` that was there.
+Now sorry-free, `#print axioms` clean on all five declarations.
+
+Its own CORRECTION note was **stale in two places** — items (c) "the
+integrability facts are `axiom`s" and (d) "the capstone is `: True := by
+trivial`" were both true in July and both false now. That staleness is *how the
+breakage hid*: a reader who opened the file saw a note describing worse problems
+than the real ones and stopped there. Marked discharged, not deleted.
+
+So the class was worse than "four manifests missing": one of the four was
+carrying a red Lean file into the corpus, invisibly, for eight days.
+
+### What `qbeta-fmap-structural-form` turned out to be
+
+Not a block that lost its manifest — a workplan. "Exploratory Series",
+"Derivation pathways A/B/C", "What remains open". Registering it would land a
+one-voice violation whatever the mathematics is worth, and the mathematics is
+worth something: its refutation is a **valid scope-(b)** on an
+order-of-vanishing invariant (`ord_w` ratio `= −1`; any power series in
+`u = O(w²)` has `ord_w ≥ 0`), it just carried no (a)/(b) label. Labelled, then
+moved to `docs/audits/` intact.
+
+**Worth promoting later:** the pole obstruction itself is a real, checkable
+structural result and would make a good `remark`. Splitting it out from the
+routes-and-open-questions material is an authoring decision, deliberately not
+taken here.
+
+### Still true, and not fixed by any of this
+
+The four remaining non-block `.md` (`PieceACornerInduction`,
+`PieceASpechtCharacter`, `bring_tetraplectic` at the paper root, and
+`lean/AUDIT-REPORT.md`) are untouched. None is a block; none is flagged; the new
+gate correctly skips them.
