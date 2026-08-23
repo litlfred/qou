@@ -642,9 +642,33 @@ class SdpDualResult:
     duality_gap: float
     eigenvalues: list[float]
     feasible: bool
+    # Full-precision decimal companions, mirroring `LpDualResult`. Populated
+    # by `_solve_psd_via_clarabel_lp` from the MPFR solve; `None` on the
+    # cvxpy/SCS f64 path, so `X_star_str is not None` answers "was this
+    # solved at precision?".
+    X_star_str: Optional[list] = None
+    Z_star_str: Optional[list] = None
+    primal_obj_str: Optional[str] = None
+    dual_obj_str: Optional[str] = None
+    duality_gap_str: Optional[str] = None
+    eigenvalues_str: Optional[list] = None
 
     def to_dict(self) -> dict:
-        return {
+        """Serialize the SDP, f64 fields verbatim plus `*_str` companions.
+
+        The f64 fields stay f64 for the same reason `LpDualResult.to_dict`
+        gives: consumers do arithmetic on them, so replacing them with
+        strings breaks readers silently.
+
+        **The `*_str` half was missing entirely until 2026-08-23.** The
+        diagonal-lift path solves through `_solve_operator_selection_lp_clarabel`
+        at 167 bits, and every digit past f64 was discarded here — a ~50-dps
+        solve reaching its witness as f64. That is exactly the defect
+        `qou-t0rf` fixed for `LpDualResult` and never for this one, and it is
+        why the LP-dual float64 carve-out looked structurally necessary on
+        the SDP side (bean `qou/ftuv`).
+        """
+        out = {
             "X_star": self.X_star,
             "Z_star": self.Z_star,
             "primal_obj": float(self.primal_obj),
@@ -653,6 +677,17 @@ class SdpDualResult:
             "eigenvalues": list(self.eigenvalues),
             "feasible": bool(self.feasible),
         }
+        for key, val in (
+            ("X_star_str", self.X_star_str),
+            ("Z_star_str", self.Z_star_str),
+            ("primal_obj_str", self.primal_obj_str),
+            ("dual_obj_str", self.dual_obj_str),
+            ("duality_gap_str", self.duality_gap_str),
+            ("eigenvalues_str", self.eigenvalues_str),
+        ):
+            if val is not None:
+                out[key] = val
+        return out
 
 
 def _solve_psd_via_clarabel_lp(
@@ -688,9 +723,37 @@ def _solve_psd_via_clarabel_lp(
             primal_obj=float("nan"), dual_obj=float("nan"),
             duality_gap=float("nan"), eigenvalues=[], feasible=False,
         )
-    G = np.asarray(G, dtype=float)
+    G_f = np.asarray(G, dtype=float)
     x_star = np.asarray(lp.x_star, dtype=float)
-    gx = (G @ x_star).tolist()
+    gx = (G_f @ x_star).tolist()
+
+    # The eigenvalues of `diag(Gx)` ARE `(Gx)_i`, and recomputing them through
+    # numpy would re-truncate an MPFR solve to f64 — the second leak on this
+    # path. When both `G` and `x*` are available as decimals, redo the product
+    # with `mpmath` at the same working precision so `eigenvalues_str` is as
+    # good as the solve that produced it.
+    gx_str = None
+    if lp.x_star_str is not None:
+        try:
+            import mpmath as _mp
+            with _mp.workdps(max(60, int(prec_bits * 0.30103) + 10)):
+                if isinstance(G[0][0], str):
+                    G_m = [[_mp.mpf(G[i][j]) for j in range(len(G))]
+                           for i in range(len(G))]
+                else:
+                    G_m = [[_mp.mpf(repr(float(G_f[i, j]))) for j in range(G_f.shape[1])]
+                           for i in range(G_f.shape[0])]
+                x_m = [_mp.mpf(v) for v in lp.x_star_str]
+                gx_m = [sum((G_m[i][j] * x_m[j] for j in range(len(x_m))), _mp.mpf(0))
+                        for i in range(len(G_m))]
+                gx_str = [_mp.nstr(v, _mp.mp.dps) for v in sorted(gx_m)]
+        except Exception:  # noqa: BLE001 — companions are best-effort
+            gx_str = None
+
+    z_str = None
+    if lp.y0_star_str is not None and lp.y_star_str is not None:
+        z_str = [lp.y0_star_str, *lp.y_star_str]
+
     return SdpDualResult(
         X_star=lp.x_star,
         Z_star=[lp.y0_star, *lp.y_star],
@@ -699,6 +762,12 @@ def _solve_psd_via_clarabel_lp(
         duality_gap=lp.duality_gap,
         eigenvalues=sorted(gx),
         feasible=True,
+        X_star_str=lp.x_star_str,
+        Z_star_str=z_str,
+        primal_obj_str=lp.primal_obj_str,
+        dual_obj_str=lp.dual_obj_str,
+        duality_gap_str=lp.duality_gap_str,
+        eigenvalues_str=gx_str,
     )
 
 

@@ -503,3 +503,99 @@ the precision objection to making it the default is gone.
       4,052 excused fields.
 - [ ] The SDP path is still MPFR-in / f64-solve
       (`build_rho_lambda_mpfr_to_f64`); the carve-out stays justified there.
+
+## 2026-08-23 (second) — SDP path: the f64 was at the OUTPUT boundary, not the solve
+
+**Correction to my own note above.** I wrote *"the SDP path is still MPFR-in /
+f64-solve (`build_rho_lambda_mpfr_to_f64`); the carve-out stays justified
+there."* Wrong on both halves for the path that actually runs.
+
+`solve_psd_operator_selection_sdp` enforces `M(x) = diag(Gx) ⪰ 0`. A PSD
+constraint on a **diagonal** matrix is componentwise non-negativity — it is the
+operator-selection LP. And `_solve_psd_via_clarabel_lp` says so and does so:
+
+> "the faithful MPFR port delegates to the verified LP solver
+> (`_solve_operator_selection_lp_clarabel`) … the PSD matrix's eigenvalues are
+> its diagonal entries `(Gx)_i`."
+
+So the diagonal-lift SDP has been solving at 167 bits all along, and after the
+tolerance fix it is accurate to ~44 digits. `build_rho_lambda_mpfr_to_f64` is a
+**different** path — the dense lift — and not what this entry point calls.
+
+### The actual leak
+
+`SdpDualResult.to_dict()` did
+
+```python
+"primal_obj": float(self.primal_obj),
+"duality_gap": float(self.duality_gap),
+"eigenvalues": list(self.eigenvalues),
+```
+
+and had **no `*_str` companions at all**, while `_solve_psd_via_clarabel_lp`
+dropped `lp.x_star_str` / `lp.y_star_str` / … on the floor when repacking. A
+~50-dps solve reached its witness as f64.
+
+That is verbatim the defect `qou-t0rf` fixed for `LpDualResult` — whose own
+docstring records it: *"`_lp_result_from_dict` kept them on the dataclass but
+`to_dict` dropped them again, so a ~50-dps solve still reached its witness as
+f64"* — and it was never fixed for the SDP twin.
+
+### Second leak: the eigenvalues were recomputed in numpy
+
+`gx = (G_f @ x_star)` with an f64 `x_star`, re-truncating the MPFR solve even
+if the companions had been carried. Now recomputed with `mpmath` from
+`x_star_str` at the solve's own working precision when available.
+
+It matters here more than usual, because `x*` has entries of order `2.7e5` and
+the tight constraint is a near-total cancellation:
+
+```
+(Gx)_0    f64   +8.003553e-11
+          mpfr   3.48674832724324827173100129759035917630359719874442870395486e-44
+```
+
+Complementary slackness says `(Gx)_0 = 0` exactly at the active constraint.
+The f64 value is 33 orders from it; the companion is at the solve's accuracy.
+
+### Fixed
+
+`SdpDualResult` gains `X_star_str`, `Z_star_str`, `primal_obj_str`,
+`dual_obj_str`, `duality_gap_str`, `eigenvalues_str`, populated from the MPFR
+solve and emitted by `to_dict()` alongside the f64 fields — same shape as
+`LpDualResult`, so `to_dict()`'s arithmetic-consumer contract is untouched, and
+route 2's shadow rule can now excuse the f64 mirrors on **SDP** witnesses too.
+On the cvxpy/SCS path the companions stay `None` and `to_dict()` emits exactly
+the seven keys it always did (asserted).
+
+**Tests:** 193 passed / 44 skipped / 0 failed across `tools/pyhecke`; 208/208
+in the Rust crate.
+
+### What is genuinely still f64
+
+Only the **dense** PSD lift — off-diagonal correlations / moment matrix — which
+needs Clarabel's actual PSD cone. `sdp_clarabel_mpfr_prep.rs` records the
+blocker: upstream defines `MaybeBlasFloatT: BlasFloatT + Copy` under
+`cfg(feature = "sdp")` because *"the SDP code paths (chordal decomposition,
+dense 3x3 eigen/svd, BLAS Cholesky) … contain hundreds of by-value reads"*, and
+`MpfrFloat` is not `Copy`.
+
+**But this is `litlfred/Clarabel.rs`, a fork** — so "upstream defines" is a
+statement about a file in this repo's own dependency tree, not an external
+constraint. The bound is `Copy` on a marker trait, and the fork has already
+carried larger changes (`RealConst`, `RealSentinel`, `BitWidthDiagnostic`,
+`MpfrFloat` itself). Whether relaxing it for the SDP paths is worth the
+by-value-read churn is a scoping question, not an impossibility — and the
+audit that concluded "not implementable"
+(`docs/audits/exact-sdp-feasibility.md`) was reasoning about upstream.
+
+## Next
+
+- [x] Excise f64 from the diagonal-lift SDP path — companions carried,
+      eigenvalues recomputed at precision.
+- [ ] The dense PSD lift: scope relaxing `MaybeBlasFloatT: Copy` in the fork
+      for the SDP code paths, or an MPFR eigensolver. Re-read
+      `docs/audits/exact-sdp-feasibility.md` first — it may be reasoning about
+      upstream Clarabel rather than this fork.
+- [ ] Re-run the SDP producers so the committed witnesses pick up the
+      companions, then re-measure `qou/f7af`'s excused count.
