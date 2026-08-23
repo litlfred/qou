@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T23:41:05Z
+updated_at: 2026-08-23T23:52:52Z
 parent: qou-59vq
 ---
 
@@ -740,3 +740,42 @@ strength of the name.
 manipulation. Not a five-line bridge, but not the multi-session job I implied either, given (1).
 Where it should live is a real question — this PR is already 26 files, so a follow-up branch may
 serve the reviewer better than the combine-into-one-branch default.
+
+
+## Uniqueness is proved — but read what it does and does not give
+
+`QOU/SchurWeyl/MarkovTraceUnique.lean`, `markovTrace_unique`, sorry-free, **generic
+`[CommRing K]`** (no ordering, nothing archimedean):
+
+> any two Markov traces on the Hecke tower with the same `z` agree, on every `H_n(q)`.
+
+The scoping note two entries up was right: `HeckeCoset.span_cosetFam_eq_top` does the structural
+work, and the proof is one induction over that family. `descProd_eq_last_mul_incl` is the only new
+ingredient — `r_j = σ_m · ι(t)` for `1 ≤ j ≤ m+1` — after which cyclicity moves the tail and the
+Markov property collapses the rest.
+
+**The `j ≤ m+1` bound is load-bearing.** The factorisation is *false* past it: `descProd 0 2 =
+σ₀·σ₀`, and `σ₀ ∉ ι(H_0) = K·1`. `cosetIndex` only ever supplies `j : Fin (m+2)`, so the family
+stays in range — but a future generalisation that drops the bound will break here, not obviously.
+
+**It does NOT identify the Ocneanu weight with anything yet, and I want that recorded before
+someone reads the theorem name.** It is a statement *about* `MarkovTraceFamily`, and **no instance
+is built**. The identification needs the weighted seminormal trace packaged as one, which needs two
+properties not yet proved for it:
+
+- **cyclicity** `tr(xy) = tr(yx)` — blockwise from `Matrix.trace_mul_comm`; `seminormalRep` is an
+  `AlgHom`, so this should be short.
+- **consistency** `tr_{n+1}(ι x) = tr_n x` — the corner decomposition *without* the `σ` factor.
+  Needs a small new lemma ("trace of a block-preserving matrix = sum of the compressed block
+  traces"), then `compress_seminormalRep_heckeIncl` and `ocneanuWeight_addable_sum` close it.
+
+Index conventions will need care there: this file's `tr (n+1)` is on `Hecke K q qi (n+1) =
+H_{n+2}(q)`, while `markov_conventionD` is indexed by diagram size.
+
+| | |
+|---|---|
+| Markov property | **Lean**, convention D, every `n` |
+| Normalisation | **Lean**, convention D, every `n` |
+| Uniqueness (abstract) | **Lean**, generic `CommRing` |
+| The seminormal trace **as** a `MarkovTraceFamily` | **open** — cyclicity + consistency + packaging |
+| Either property at arbitrary `z` | **open**; symbolic tests to `n = 6` |

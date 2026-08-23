@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-08-23T22:10:56Z
+updated_at: 2026-08-23T23:52:52Z
 ---
 
 ## The false positive
@@ -114,3 +114,20 @@ about a file that contains no ℝ at all.
 Non-blocking (that branch does not set `action`), so this is noise rather than a false gate. But
 it is the concrete instance behind the 165-file measurement already recorded here: the marker is
 not "archimedean", it is "any inequality". Checker still NOT changed.
+
+
+## The sharpest instance yet: a file flagged because of its own §7c disclaimer
+
+`QOU/SchurWeyl/MarkovTraceUnique.lean` is generic `[CommRing K]` end to end. `grep -E 'ℝ|Real\.'`
+returns **exactly one** line — line 44 of its docstring:
+
+    Generic `[CommRing K]` throughout — no ordering, nothing archimedean, and no `ℝ`.
+
+That sentence is the file's entire ℝ content, and `check-sidecars.sh` reports the file as
+`⚠ §7c MIXED generic + archimedean`. The `GEN` regex matches `[CommRing`, the `RTYPE`/`JUST` side
+matches the prose ℝ and the `1 ≤ j` / `j ≤ m+1` naturals, and the two together take the MIXED
+branch — which, unlike the "ℝ justified" branch, **does** set `action=1`.
+
+So the checker can be tripped into a *blocking* warning by a docstring that correctly states the
+file has no ℝ. Recorded, checker still NOT changed — but if the regex is ever revisited, excluding
+comment lines is a cheaper and safer fix than touching the ℝ patterns.
