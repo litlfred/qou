@@ -544,3 +544,57 @@ the *other* direction), `GaugeTheory.lean` (1), `MotivesArchimedean.lean` (1),
 `Instanton.lean` (1), `BraneTower.lean` (1), and `SubstrateParameter.lean` (2,
 `qou-6ome`, the expensive one). The plain-drift 42 are unclassified beyond the
 §Option 3 breakdown.
+
+## `CategoricalQExtDeriv` — verdict reached, fix blocked
+
+Fifth direction, and the second where the **sibling is ahead**:
+
+| | |
+|---|---|
+| library `QuantumObservableUniverse/Instanton.lean:27` | `q : ℝ`, `q_ne_zero : q ≠ 0` |
+| sibling `categorical-q-ext-deriv.lean:49` | `q : R_q`, `qinv : R_q`, `q_mul_qinv : q * qinv = 1` |
+
+The sibling is right, and argues it in its own docstring:
+
+> `R_q = ℤ[q, q⁻¹]` is a ring, not a field: it has no `Inv` instance, so `q⁻¹`
+> cannot be *written* even though `q` is invertible in it. Carrying the inverse
+> explicitly … is **strictly stronger** than the `q ≠ 0` it replaces — over a
+> ring, invertible is not implied by nonzero.
+
+The block agrees: `def:categorical-q-ext-deriv` is `d_q = q⁻¹ d + (1 − q⁻¹) π_V ∘ d`,
+which needs `q⁻¹` to **exist**, not merely `q ≠ 0`. And `def:substrate-parameter`
+puts `q ∈ End(𝟙)`, i.e. `R_q`, not `ℝ`. The sibling has already carried the
+consequence through `proj_H`, `dq` and `dq_classical`, including replacing
+`inv_one` with a derivation from `q_mul_qinv`.
+
+**Not fixed.** Porting it needs an `R_q` in `Instanton.lean`, and there is no
+canonical one to import: five library declarations across three namespaces, two
+of which disagree about the ring. Filed as
+[`qou-kfcl`](qou-kfcl--38-defabbrev-fqns-are-declared-in-two-library-modu.md) —
+38 `def`/`abbrev` FQNs declared in two modules each, verified by compiling
+(`environment already contains 'QOU.q_param'`). This pair is parked there.
+
+### Running tally
+
+| | main | branch |
+|---|---|---|
+| drifted | 46 | **42** |
+| §7c regime-only | 7 | **0** |
+| drifted **and** crossing the wall | 10 | **5** |
+| faithful mirrors | 94 | **106** |
+
+The 5 remaining crossers: `SubstrateParameter` ×2 (`qou-6ome`),
+`CategoricalQExtDeriv` (blocked on `qou-kfcl`), `BraidsKnots.FibreFunctor`,
+`Torsion.VacuumState`.
+
+Ten pairs closed, and the **five** directions seen so far are:
+
+1. library never made a §7c split — `SubstrateParameter`
+2. sibling over-generalised into `R_q` — `QReebFlow`
+3. sibling over-generalised **and deleted content** — Möbius energy
+4. sibling never picked up a generalisation — `GBResidueSpectralSum`
+5. sibling correctly generalised, library never followed — `CategoricalQExtDeriv`
+
+plus one where **neither** side was right and the answer was the union
+(`CRManifoldData`). Six shapes, ten pairs. The field diff predicted the correct
+side in none of them; the block's `.md` decided every one.
