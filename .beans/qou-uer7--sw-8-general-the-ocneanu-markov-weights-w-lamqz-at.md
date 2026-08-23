@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T21:39:56Z
+updated_at: 2026-08-23T22:10:55Z
 parent: qou-59vq
 ---
 
@@ -555,3 +555,54 @@ callers that only want `addCell` and the round-trips.
 | 2a. lift to every Hecke element | **Lean** |
 | 2b. the exchange + its sum reindexing | **Lean** |
 | 3. the λ-sum with weights | **OPEN — the only gap** |
+
+
+## Step 3 is CLOSED — the assembly is formalised
+
+`QOU/SchurWeyl/MarkovAssembly.lean`, `markov_of_corner_identity`, sorry-free and axiom-clean:
+
+    ∑_{|λ| = m+2} w_λ · tr(ρ_λ(ι y) · σ_{m+1}) = z · ∑_{|ν| = m+1} w_ν · tr(ρ_ν(y))
+
+for every `y ∈ H_{m+1}(q)` and **every** weight function `w`, with the per-corner identity
+as an explicit hypothesis — not an axiom, not a `sorry`.
+
+**What that is worth, stated precisely.** What is proved is the *reduction*: the Markov
+condition for the weighted seminormal trace **is** that finite arithmetic identity in the
+corner contents of one partition. Everything representation-theoretic is now discharged in
+Lean — branching, the block structure of the last generator, the Hoefsmit entry, the
+reindexing. `OcneanuWeightMarkovCorner` proves the hypothesis at convention D for the ≤2-row
+diagrams the trace lives on; the general-`n` statement is what
+`ocneanu_markov_corner_reduction.py` tests exactly at symbolic `z` through `n = 6`.
+
+**So the standing caveat has moved, and I have narrowed it in the two files that carry it.**
+`OcneanuWeightMarkovCorner` and `SeminormalBlockEquality` both said the λ-sum was paper-only;
+both now say what is actually still outside Lean, which is the corner identity at general `n`.
+
+Two bricks landed on the way, both in `SeminormalCornerTrace` / `YoungDiagramCornerReindex`:
+
+- `trace_heckeIncl_mul_lastGen_corner` — the block trace as a sum over corners, with
+  `branchEquiv` (packaging `branchInv`'s two bijectivity halves, which `SYTBranchingRule`
+  proved separately because it only needed the cardinality) and `axialDist_insertMax_top`.
+- `sum_corner_eq_sum_addable` — the exchange as a **double**-sum reindexing, which is the form
+  the block trace actually needs. The summand is a function of the erased diagram *as a
+  subtype element carrying its card proof*; that is what lets the two sides' card proofs meet
+  without transport (both are proofs of a Prop, hence definitionally equal), and the last step
+  of that proof is `rfl`.
+
+Plus `addCellOrSelf` (`addCell` made total, so it can appear in a summand quantified over all
+cells) and `isCornerCell_cellOf_card`, which is what lets the corner identity apply at
+`r = ` the cell carrying each downstairs tableau's top entry.
+
+| step | status |
+|---|---|
+| 1. block equality at a generator | **Lean** |
+| 2a. lift to every Hecke element | **Lean** |
+| 2b. the exchange + its double-sum reindexing | **Lean** |
+| 3. the λ-sum with weights | **Lean** |
+| the corner identity at general `n` | **open** — proved at convention D for ≤2 rows; tested exactly through n=6 |
+
+Two mechanical notes worth keeping. `Equiv.sum_comp` times out at `whnf` on these sums — it
+wants the two `Fintype` instances definitionally equal and they are noncomputable
+(`Set.Finite.fintype`); `Fintype.sum_equiv`, which asks only for a pointwise equality, goes
+through instantly. And a Sigma-valued intermediate function needs a `set F : … := … with hF`
+binding: written inline it has no inferable type and its projections do not resolve.

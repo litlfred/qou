@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-08-23T18:04:39Z
+updated_at: 2026-08-23T22:10:56Z
 ---
 
 ## The false positive
@@ -97,3 +97,20 @@ the table above excludes `.lake/`.)
 Adjudicate the 77 (cheap: `grep -n 'ℝ\|Real' <f>` per file, decide
 docstring-only vs code), then either widen `RTYPE` or split `JUST` into
 strong/weak and gate MIXED on strong.  The 88 are safe either way.
+
+
+## The §7c classifier's exact firing token, on a file with literally zero ℝ
+
+`YoungDiagramAddCell.lean` — pure ℕ × ℕ combinatorics, `grep -E 'ℝ|Real|sqrt|rpow|log|exp|linarith|positivity'`
+returns **nothing** — is reported by `check-sidecars.sh` as
+
+    [library Lean — archimedean construct present, ℝ justified]
+
+The cause is in `JUST` (line 142): the alternation includes bare `≤` and `≥` and `0\s*<`. Every
+`b.1 ≤ a.1` on ℕ in a lower-set proof matches. So `hasR = 0, hasJ = 1` and the file takes the
+`elif [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]` branch — which prints "archimedean construct present"
+about a file that contains no ℝ at all.
+
+Non-blocking (that branch does not set `action`), so this is noise rather than a false gate. But
+it is the concrete instance behind the 165-file measurement already recorded here: the marker is
+not "archimedean", it is "any inequality". Checker still NOT changed.
