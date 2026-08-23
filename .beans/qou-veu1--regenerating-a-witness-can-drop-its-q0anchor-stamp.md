@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T15:42:38Z
+updated_at: 2026-08-23T17:06:23Z
 ---
 
 ## The measurement
@@ -116,3 +116,38 @@ Note `flavor_split_alpha_bond_dilog_probe.py` is also one of the three paths
 re-measure after the rebase before concluding anything: the version measured
 here is not the version on main, and a q0-literal migration is exactly the kind
 of change that could either cause or cure the dropped stamp.
+
+## Measured against the sibling's landed fix — 3 of 5 covered, 2 not
+
+`qou-khmj` is **in-progress**, not idle, and its owner already landed
+`8b4825920b` ("the producer lookup was root-only, so half the corpus was
+invisible", #5550). The manifest grew **410 → 645** stems. So I am **not**
+taking that work — it is mechanical, it has an owner, and duplicating it is
+exactly what the one-owner rule forbids. What follows is measurement, offered
+to them rather than a second attempt at their fix.
+
+Checked the five droppers against `origin/main`'s post-fix manifest:
+
+| producer | now listed |
+|---|---|
+| `cyclic_intertwiner_verify` | ✅ |
+| `probe_9b_gate_interface_algebra` | ✅ |
+| `trefoil_complex_volume_probe` | ✅ |
+| `flavor_split_alpha_bond_dilog_probe` | ❌ |
+| `flavor_split_alpha_dilog_expansion_probe` | ❌ |
+
+**Listed is necessary, not sufficient — do not read the ✅ as fixed.** This
+bean already establishes that manifest absence is not sufficient to cause the
+drop (`q0_anchor_consistency_audit` is absent and retains its stamp). So the
+three ✅ rows have had *a candidate cause* removed; whether the stamp actually
+survives regeneration is a re-measurement, not an inference. That check comes
+free after the rebase — the sweep records `q0Anchor (removed)` directly.
+
+The two ❌ are the `flavor_split_alpha_*` pair, and they may fall under the
+sibling's own follow-up `qou-5t8y` (650 suffixed producers the manifest cannot
+see) — worth their checking against that scope rather than my guessing at it.
+
+Note `flavor_split_alpha_bond_dilog_probe` is **doubly implicated**: it is also
+one of `qou-6q7q`'s three paths that drifted on main. Its verdict here was
+measured against a pre-migration version *and* it is unlisted. That one needs
+re-measuring before any claim is made about it in either bean.
