@@ -1,8 +1,8 @@
 {
   "engine": "static-scan",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T20:10:49.995198+00:00",
-  "commitSha": "6800135a7d236ec9bf132c117c4b8eeadc845229",
+  "computedAt": "2026-08-23T16:49:08.027565+00:00",
+  "commitSha": "79c2290867621e16ca4da7619c674c443dfd31f2",
   "assertions": [
     {
       "name": "scan_completed",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "convention-frame-staleness-audit",
   "scriptFile": "convention_frame_staleness_audit.py",
   "scriptHash": "8cd61eba005d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b681bf8a6cf0980694633b522c572a5e63deb5b5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,17 +30,24 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/convention_frame_staleness_audit.py"
+    ],
+    "reproduce": "python3 -u computations/convention_frame_staleness_audit.py"
   },
   "parameters": {
     "d_migration_date": "2026-08-10",
     "detector": "D-form bound to a Markov-named variable"
   },
   "data": {
-    "producers_with_d_form": 137,
-    "witnesses_examined": 138,
-    "suspect_count": 99,
-    "dropped_producer_unchanged": 2,
+    "producers_with_d_form": 139,
+    "witnesses_examined": 140,
+    "suspect_count": 73,
+    "dropped_producer_unchanged": 0,
     "confirmed_by_decisive_test": [
       {
         "witness": "computations/wedderburn-lp-ew-wiring.witness.json",
@@ -75,11 +82,6 @@
         "witness": "computations/probes/brane-tower-two-avenues-probe.witness.json",
         "producer": "computations/probes/brane_tower_two_avenues_probe.py",
         "computedAt": "2026-05-03"
-      },
-      {
-        "witness": "computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "producer": "computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
-        "computedAt": "2026-05-17"
       },
       {
         "witness": "computations/option-b-proton-mass-full-chain.witness.json",
@@ -152,68 +154,8 @@
         "computedAt": "2026-06-21"
       },
       {
-        "witness": "computations/mmu-kashiwara-cos-factor-probe.witness.json",
-        "producer": "computations/mmu_kashiwara_cos_factor_probe.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/fr-pullback-k3-test.witness.json",
-        "producer": "computations/fr_pullback_k3_test.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/e-hartree-mechanism-b-probe.witness.json",
-        "producer": "computations/e_hartree_mechanism_b_probe.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/mmu-simpler-form-search-probe.witness.json",
-        "producer": "computations/mmu_simpler_form_search_probe.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/h2s-chiral-residue-bar-antisymmetric.witness.json",
-        "producer": "computations/h2s_chiral_residue_bar_antisymmetric.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/per-basis-row-invariants-probe.witness.json",
-        "producer": "computations/per_basis_row_invariants_probe.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/confined-knot-binding.witness.json",
-        "producer": "computations/confined_knot_binding.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/vdw-pskew-sinh-probe.witness.json",
-        "producer": "computations/vdw_pskew_sinh_probe.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/hh-vertex-volume.witness.json",
-        "producer": "computations/hh-vertex-volume.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/h5-h3-functor-keystone.witness.json",
-        "producer": "computations/h5_h3_functor_keystone.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/basis-knot-tables.witness.json",
-        "producer": "computations/basis_knot_tables.py",
-        "computedAt": "2026-06-22"
-      },
-      {
         "witness": "computations/binding-depth-stratified-lr.witness.json",
         "producer": "computations/binding_depth_stratified_lr.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/c-3-categorical-derivation-attempt.witness.json",
-        "producer": "computations/c_3_categorical_derivation_attempt.py",
         "computedAt": "2026-06-22"
       },
       {
@@ -224,51 +166,6 @@
       {
         "witness": "computations/binding-depth-stratified-rust.witness.json",
         "producer": "computations/binding_depth_stratified_rust.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/h2-molecular-binding.witness.json",
-        "producer": "computations/h2-molecular-binding.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/native-5-strand-baryon.witness.json",
-        "producer": "computations/native_5_strand_baryon.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/molecular-trefoil-scan.witness.json",
-        "producer": "computations/molecular-trefoil-scan.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/hh-trefoil-corrected.witness.json",
-        "producer": "computations/hh-trefoil-corrected.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/q-beta-operator-valued-N3.witness.json",
-        "producer": "computations/probe_q_beta_operator_valued_N3.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/delta-n2-lp-dual-extraction.witness.json",
-        "producer": "computations/delta_n2_lp_dual_extraction.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/photon-operator-table.witness.json",
-        "producer": "computations/photon_operator_table.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/iterative-lp-dual-levels.witness.json",
-        "producer": "computations/iterative_lp_dual_levels.py",
-        "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/ch-bond-writhe-lp.witness.json",
-        "producer": "computations/ch-bond-writhe-lp.py",
         "computedAt": "2026-06-22"
       },
       {
@@ -320,21 +217,6 @@
         "witness": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
         "producer": "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
         "computedAt": "2026-06-22"
-      },
-      {
-        "witness": "computations/branching-qvalue-chain.witness.json",
-        "producer": "computations/branching-qvalue-chain.py",
-        "computedAt": "2026-06-29"
-      },
-      {
-        "witness": "computations/probe-9b-laurent-degree-10a5.witness.json",
-        "producer": "computations/probe_9b_laurent_degree_10a5.py",
-        "computedAt": "2026-07-02"
-      },
-      {
-        "witness": "computations/probe-9b-alphak-structure.witness.json",
-        "producer": "computations/probe_9b_alphak_structure.py",
-        "computedAt": "2026-07-02"
       },
       {
         "witness": "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
@@ -397,11 +279,6 @@
         "computedAt": "2026-07-07"
       },
       {
-        "witness": "computations/co-bond-order-active-set.witness.json",
-        "producer": "computations/co_bond_order_active_set.py",
-        "computedAt": "2026-07-07"
-      },
-      {
         "witness": "computations/probes/phi-q-regularization-probe.witness.json",
         "producer": "computations/probes/phi_q_regularization_probe.py",
         "computedAt": "2026-07-07"
@@ -445,11 +322,6 @@
         "witness": "computations/qbeta/qbeta-h4-route-a-gate.witness.json",
         "producer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
         "computedAt": "2026-07-13"
-      },
-      {
-        "witness": "computations/h2-integer-lp.witness.json",
-        "producer": "computations/h2-integer-lp.py",
-        "computedAt": "2026-07-17"
       },
       {
         "witness": "computations/q-beta-c3-wenzl-decomposition.witness.json",
@@ -522,8 +394,8 @@
         "computedAt": "2026-08-08"
       },
       {
-        "witness": "computations/delta-lambda-full-variance-phase5e-1.witness.json",
-        "producer": "computations/delta_lambda_full_variance_phase5e_1.py",
+        "witness": "computations/markov-z-full-bar-condition.witness.json",
+        "producer": "computations/markov_z_full_bar_condition_probe.py",
         "computedAt": "2026-08-08"
       },
       {
@@ -550,6 +422,11 @@
         "witness": "computations/qbeta/qbeta-ck-cache.witness.json",
         "producer": "computations/qbeta/qbeta_ck_cache.py",
         "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/markov-z-fibre-rank-bar-covariance.witness.json",
+        "producer": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+        "computedAt": "2026-08-09"
       }
     ]
   }
