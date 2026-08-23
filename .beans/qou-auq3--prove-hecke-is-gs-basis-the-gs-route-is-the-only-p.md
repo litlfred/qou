@@ -4002,3 +4002,45 @@ Two things worth keeping from the `a = 1` proof:
   lineage to its end first means the V words are only ever compared against
   words of a different length. `MultiStepReduction` fixes no order beyond each
   step's redex being present — deg-lex picks one, the Lean is not obliged to.
+
+### The `a > b` corner — measured, and it is EASIER (2026-08-23)
+
+I had written *"the `a > b` corner is a new construction, not an extension"*
+into this PR's body and a scheduled follow-up note, inferred from `trio`'s
+`hj₂ : j₂ ≤ j₁` not instantiating there. Sound inference, wrong emphasis, and
+**unmeasured**. Measured (15 cases, `a ∈ 2..6`, `b ∈ 1..a−1`, 8/8 assertions,
+[`hecke_agtb_corner_shape.py`](../computations/hecke_agtb_corner_shape.py)):
+
+| | `a ≤ b` | `a > b` |
+|---|---|---|
+| S-polynomial | partial cancellation, 2 terms survive | **reduces to ZERO**, 15/15 |
+| max terms | 4 | **2** |
+| quadratic steps | 2 (one per trio) | **0**, 15/15 |
+| step count | `a² + a + 5` | `b² + 3b + 5` — **no `a` dependence at all** |
+| first cancellation | mid-chain | **is the end of the chain**, 15/15 |
+
+`Q` is the only rule that splits one term into two, so with zero `Q`s the whole
+4-term apparatus this arc built — `quadPair`, `trio`, `TOpen`,
+`ofTerms_cancel_split` — is **unnecessary** in `a > b`. It is a 2-term
+convergence over `monicStep` / `bsStep` / `farComm_transport_left_sources`
+ending at the zero element. So: *"new construction"* was right about the route
+and **wrong about the effort** — `a > b` is the easier half, and the hard half
+is the one already done.
+
+It also understates how related they are. Same two-run target shape, **bottoms
+swapped**:
+
+```
+a ≤ b :  WStar = bsWord₂ i₂ i₁ j₁       ++ descWord i j₂
+a > b :          bsWord₂ i₂ i₁ (j₂ − 1) ++ descWord i j₁
+```
+
+and both counts quadratic in `min(a,b)`: `m² + m + 5` for `m = a ≤ b`,
+`m² + 3m + 5` for `m = b < a`. They differ by `2m`, so they do **not** meet on
+the diagonal — the diagonal belongs to `a ≤ b`.
+
+**Sixth instance of the arc's recurring error, caught by the probe rather than
+shipped.** I first wrote the middle run as `descWord i₂ j₁`. That is right
+exactly when `b = a−1` or `b = 1` — which is every case a quick eyeball lands
+on. Extending the sweep to `a = 6` broke it and the assertion fired. The
+formula is asserted in the probe rather than stated in prose *because* of this.
