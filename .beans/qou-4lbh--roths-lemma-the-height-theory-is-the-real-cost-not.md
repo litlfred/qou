@@ -628,3 +628,64 @@ I predict no further height machinery is needed. **Treat that as a claim to be m
 This bean has now mis-predicted the location of the remaining cost three times — onto the
 `m=1` base case, onto bare-hands-vs-upstream Mahler, and onto Gelfond for the induction step —
 and each time the prediction was confident and wrong.
+
+---
+
+## 2026-08-23 — the index splits too: index(U(x)·V(y)) = index U + index V
+
+New module `QOU/Mathlib/SeparatedIndex.lean`, nine declarations plus a discriminating
+validation example, all `[propext, Classical.choice, Quot.sound]`, built by name with the
+`.olean` deleted, no linter output.
+
+```
+translate_rename_inl / _inr    translate commutes with the variable injections
+idxWeight_sumElim              idxWeight (i ⊞ j) = idxWeight i + idxWeight j
+idxWeight_mapDomain_inl / _inr
+index_rename_inl / _inr        injecting into the larger variable set preserves the index
+index_separated                index (U(x)·V(y)) = index U + index V
+index_X_sq_weight_two          validation input
+```
+
+This is the **index analogue of last turn's height result**, and it is the other half of what
+Roth's induction splits on. The separated Wronskian factors as `W = U(x)·V(y)`; the induction
+hypothesis bounds `index U` and `index V` separately; `index_separated` is what turns those
+two bounds into a bound on `index W`. Without it the recursion has nothing to recurse on.
+
+### ⚠ Where `IsDomain` does real work — and it is only one of the two directions
+
+* **`≥`** is `index_mul_ge` (already in `RothIndex.lean`) plus the new rename-invariance
+  lemmas. True over any `CommRing`. Nothing new.
+* **`≤`** is the new content and is **false in general without `IsDomain`**. The proof picks
+  multi-indices `i₀, j₀` realising each index and needs `i₀ ⊞ j₀` to actually occur in the
+  product. Its coefficient there is exactly `coeff i₀ (translate α U) · coeff j₀ (translate β V)`
+  — a product of two non-zero elements, which is non-zero only in a domain. Over a ring with
+  zero divisors that monomial can cancel, the realising index need not occur, and the
+  inequality can be strict.
+
+So the equality is not a formality: half of it was already free, and the half that costs
+something is precisely the half that constrains the coefficient ring. That is recorded at the
+single `mul_ne_zero` in the proof as well as in the module header.
+
+The combinatorial reason the index is *exactly* additive rather than merely superadditive is
+`idxWeight_sumElim`: the support of `sumElim i j` is the **disjoint** sum of the two supports,
+so the defining sum splits with no overlap.
+
+### The validation is discriminating, not decorative
+
+`RothIndex.lean` sets the standard — it pins the *value* of `index` on `X` and `X²` because a
+wrong definition would satisfy every structural lemma. The same risk applies here: with
+`σ = τ`, a version of `index_separated` attaching `d₁` to the wrong factor still typechecks.
+So the example uses **different weights on the two sides** (`1` left, `2` right) with `X` left
+and `X²` right, giving `1 + 1 = 2`; the mis-attached version would give `1/2 + 2 = 5/2`.
+
+### Open
+
+Both halves the induction splits on — index and height — are now exactly additive/controlled
+across the separated factorization. What remains is the **statement of Roth's lemma itself**
+and the recursion: parameter bookkeeping (`dⱼ/dⱼ₊₁` growth, `ε`, the `qⱼ` conditions) and the
+argument feeding the `m = 1` case (`RothHeightBound.lean`) and the `m−1` case back into the
+`m` case.
+
+⚠ None of that is index or height machinery. **Last turn I predicted exactly this, and this
+time the prediction held** — which is one data point against three failures, not a reason to
+start trusting predictions from this arc.

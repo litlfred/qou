@@ -1112,3 +1112,7 @@ import QOU.Mathlib.MvPolynomialHeight
 -- Not Mathlib-only: it needs mvGenWronskian.  Its two dependencies are, so the three
 -- lift together.
 import QOU.Mathlib.WronskianHeight
+-- The index across a disjoint-variable product: index (U(x)·V(y)) = index U + index V,
+-- exactly.  The index analogue of SeparatedHeight, and what Roth's induction on the
+-- number of variables splits on.  The ≤ direction is the half that needs IsDomain.
+import QOU.Mathlib.SeparatedIndex
