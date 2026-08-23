@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T16:01:28Z
+updated_at: 2026-08-23T16:31:47Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -240,3 +240,61 @@ research — not attempted here.
 Also newly visible: term6 serialises as `0.3882864240747888000000…`. The
 trailing zeros are its own float64 deficit, exposed by the realizer's full
 width. term6 is the next producer to give this treatment.
+
+
+---
+
+## RESOLVED (`cb2e2d0ec2`) — and it CORRECTS what this bean said two entries ago
+
+term6 got the same treatment as the realizer. Same root cause: `Q_0` is
+`q_parameter.Q`, a float64, and the load-bearing field went through
+`float(complex(sp.N(tr_M_expr.subs(q, Q_0))).real)` — where `sp.N` also
+defaults to 15 digits, so the loss was independent of the `float()`.
+
+**With BOTH sides exact, the pipelines agree byte-for-byte at 60 digits.**
+
+    markov_pipeline_cross_validator: PASS
+      D  realizer=0.5751722439  term6=0.5751722439  rel_diff = 0
+      n  realizer=0.9877436881  term6=0.9877436881  rel_diff = 0
+      p  realizer=1.1457596925  term6=1.1457596925  rel_diff = 0
+
+`rel_diff` is **exactly 0**, not merely inside `rtol = 1e-9`, and far past the
+~16-digit float64 floor. Two independently implemented pipelines agreeing to 60
+digits is a genuine cross-validation result — and it was invisible for as long
+as either side was truncated.
+
+### Retracting the "7–32 % disagreement"
+
+The entry above says these pipelines "disagree by 6.5 % to 32.5 %" and calls it
+"the real state". **That was wrong**, and wrong in an instructive way: it was
+measured with the realizer fixed and term6 still stale. The whole history was
+epochs, not mathematics:
+
+    7.3e-08    Jun realizer (muon q₀, ~12 digits) vs Aug term6 (float64)
+               — two stale values that happened to land close.
+    6.5–32.5%  current realizer vs Aug term6. One side fixed.
+    0          both current, both exact. The truth.
+
+Every intermediate reading was an artifact. The lesson is narrower than "check
+staleness": **fixing ONE side of a cross-validation makes the comparison worse
+before it makes it better, and the intermediate number looks like a finding.**
+I published that intermediate as a finding. Do not repeat it — fix both sides,
+then read.
+
+### The status gate fired in its other direction, correctly
+
+`check-computation-status.py` flagged `conj:gs-graded-markov-trace-existence`
+as "failed but every cited witness all-passed" and I flipped it back to
+`verified`. First time that arm has fired. Note this block round-tripped
+verified → failed → verified inside one day, and each state was correct when
+set — which is an argument for the gate, not against it.
+
+### Score
+
+    ⁴He                          block's number was wrong          FIXED
+    gs-graded-markov             staleness both sides              FIXED
+    remaining                    10 blocks                         open
+
+Both resolved cases were **stale artifacts**, not mathematical errors in the
+framework. That is worth knowing before triaging the other ten: the prior
+should be "something drifted", not "the physics is wrong".
