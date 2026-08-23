@@ -55,9 +55,10 @@ export default chapter({
       blocks: [
         "electron-shells-intro",
         "electron-shell-braid-capacity",
-        "electron-shell-2n2-capacity",
         "atomic-valence-open-sites",
         "shell-capacity-self-square",
+        "shell-space-is-self-square",
+        "electron-shell-2n2-capacity",
         "shell-filling-rule",
         "shell-filling-rule-aufbau-hund",
         "shell-filling-rule-table-data",

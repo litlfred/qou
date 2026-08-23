@@ -1,10 +1,11 @@
 ---
 # qou-pt9b
 title: 'INFRA (measured): 4 of 4 changed-file collectors were narrower than the branch'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-22T20:49:54Z
-updated_at: 2026-08-22T20:49:54Z
+updated_at: 2026-08-22T21:22:18Z
 ---
 
 Recorded from PR #5474 so the finding survives the branch.

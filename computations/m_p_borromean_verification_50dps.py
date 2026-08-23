@@ -347,9 +347,9 @@ def main() -> int:
     })
     w.add_assertion(
         "muon_borromean_baseline_ppm_lt_2",
-        computed=float(abs(mu_ppm)),
-        expected=0.0,
-        tolerance=2.0,  # 2 ppm
+        computed=fmt(abs(mu_ppm)),
+        expected="0",
+        tolerance="2.0",  # 2 ppm
         unit="ppm",
         source="CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²",
     )
@@ -397,8 +397,8 @@ def main() -> int:
     _mp_canon, _mn_canon = _canonical_pn()
     w.add_data("canonical_mass_reference", {
         "route": "canonical_mass.proton_neutron_mass_mev (muon-anchored Hecke energy)",
-        "m_p_MeV": _mp_canon,
-        "m_n_MeV": _mn_canon,
+        "m_p_MeV": fmt(_mp_canon),
+        "m_n_MeV": fmt(_mn_canon),
         "note": (
             "Production absolute-mass route (owner ruling 2026-06-24). "
             "The λ_A-path m_avg_pred above overshoots this by ~2.9 % — "
@@ -421,9 +421,9 @@ def main() -> int:
     # is the actual regression guard for the PR's central wire-up.
     w.add_assertion(
         "substrate_flavor_split_ratio_within_1000ppm_of_codata",
-        computed=float(abs(dm_ratio_ppm)),
-        expected=0.0,
-        tolerance=1000.0,  # 0.1 % ceiling — current value ~305 ppm
+        computed=fmt(abs(dm_ratio_ppm)),
+        expected="0",
+        tolerance="1000.0",  # 0.1 % ceiling — current value ~305 ppm
         unit="ppm",
         source=(
             "prop:flavor-split-substrate / flavor_split_subleading "
@@ -455,9 +455,9 @@ def main() -> int:
     # the residual is a Bring-Bloch / categorical-q-dilog R&D task.
     w.add_assertion(
         "proton_borromean_tower_within_5pct_of_codata",
-        computed=float(abs(proton_ppm)),
-        expected=0.0,
-        tolerance=50000.0,  # 5 % ceiling
+        computed=fmt(abs(proton_ppm)),
+        expected="0",
+        tolerance="50000.0",  # 5 % ceiling
         unit="ppm",
         source="Borromean baryon formula (Family A λ) vs CODATA m_p at MPFR 50 dps",
     )
@@ -482,9 +482,9 @@ def main() -> int:
     # absolute scale gap is the same as for the proton).
     w.add_assertion(
         "neutron_borromean_tower_within_5pct_of_codata",
-        computed=float(abs(neutron_ppm)),
-        expected=0.0,
-        tolerance=50000.0,  # 5 % ceiling
+        computed=fmt(abs(neutron_ppm)),
+        expected="0",
+        tolerance="50000.0",  # 5 % ceiling
         unit="ppm",
         source="Borromean baryon formula (Family A λ + flavor split) vs CODATA m_n at MPFR 50 dps",
     )
@@ -510,14 +510,18 @@ def main() -> int:
 
     # ── 1700× scale-gap explanation ───────────────────────────
     single_level_estimate = mp.mpf("1.065") * M_E_CODATA_MEV  # T1 alone
-    gap_factor = float(M_P_CODATA_MEV / single_level_estimate)
-    tower_multiplier = float(GEOM_FULL_BORROMEAN)
+    # No float(). Both inputs are already mpf; casting here and then handing
+    # the result to fmt() would serialize a float64 as a 50-digit string —
+    # 17 real digits followed by 33 invented ones. The mixed-arithmetic gate
+    # caught exactly that when this was first drained, which is what it is for.
+    gap_factor = M_P_CODATA_MEV / single_level_estimate
+    tower_multiplier = mp.mpf(GEOM_FULL_BORROMEAN)
     w.add_data("scale_gap_resolution", {
         "single_level_m_p_estimate_MeV": mp.nstr(single_level_estimate, 8),
         "codata_m_p_MeV": mp.nstr(M_P_CODATA_MEV, 8),
-        "scale_gap_factor": gap_factor,
-        "borromean_tower_multiplier": tower_multiplier,
-        "match_to_gap_pct": float(abs(tower_multiplier - gap_factor) / gap_factor * 100),
+        "scale_gap_factor": fmt(gap_factor),
+        "borromean_tower_multiplier": fmt(tower_multiplier),
+        "match_to_gap_pct": fmt(abs(tower_multiplier - gap_factor) / gap_factor * mp.mpf(100)),
         "conclusion": (
             "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
@@ -584,8 +588,8 @@ def main() -> int:
     print()
     print(f"Scale-gap explanation:")
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
-    print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
-    print(f"  CODATA / single-level:   {gap_factor:.4f}")
+    print(f"  Borromean tower factor:  {float(tower_multiplier):.4f}")
+    print(f"  CODATA / single-level:   {float(gap_factor):.4f}")
     print(f"  → VolDensity(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")

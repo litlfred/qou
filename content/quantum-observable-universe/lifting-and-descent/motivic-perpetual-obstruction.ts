@@ -8,7 +8,7 @@ import { theorem } from "../../schema/builders";
 // downstream cone is then handled correctly under AGENTS.md §3b
 // propagation.
 export default theorem({
-  label: "conj:motivic-perpetual-obstruction",
+  label: "thm:motivic-perpetual-obstruction",
   title:
     "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
   tags: [
@@ -25,7 +25,7 @@ export default theorem({
   ],
   cites: ["yekutieli2010"],
   lean: {
-    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction",
+    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
     validation: "not_checked",
   },
 });

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T21:20:52Z
+updated_at: 2026-08-23T04:10:28Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -186,83 +186,25 @@ would fix nothing, because there is none to flip.
 q₀ into a 50-dps pipeline. Caps the branching path at ~1e-16 regardless of
 `target_dps`. Precision defect, not a convention one; worth its own fix.
 
----
 
-## TRIAGE DONE 2026-08-21 — none of the 8 is a silent drift; 2 labels were wrong
+## Contained-scope finding from `qou-058n` (2026-08-23)
 
-Read all eight, resolving control flow rather than grepping assignments. **Every
-one passes `pn_convention` EXPLICITLY** — there is no file picking up a
-convention from a default it does not name. So the risk this bean was framed
-around ("28 witnesses off canon") is not a drift risk; it is a labelling and
-authorisation question.
+Fixing the one live colour-blind interface in `mass_tower_operator_valued`
+(bean `qou-058n`), I swept the other consumers of the A-operator extracts to
+see how wide the class is. **It is narrower than the grep suggests** — of the
+A-operator consumers carrying a `-h/2`, `mass_tower_operator_valued` was the
+only genuine instance. Each of the others was checked by running it, not by
+reading the literal:
 
-| file | explicit? | label | verdict |
-|---|---|---|---|
-| `binding_canonical` | yes | yes, line 211 | **NOT a defect** — see below |
-| `binding_bring_enhancement_compare` | yes | yes — canonical vs historical baseline | legitimate |
-| `binding_combiner_markov_peel_fallback` | yes | yes — **structural** | legitimate |
-| `closed_form_tau_M_verification_phase5q` | yes ×3 | it *is* the Phase-5q verification | legitimate |
-| `iterative_knot_builder` | yes | yes — structural | legitimate |
-| `_habiro_coefficient_extract` | yes | calls `chi_lambda_braid` *"the production convention"* | **label stale under R3** |
-| `atomic_tr_m_helium4_canonical` | yes + witness declares | called it **"the default"** — false | **FIXED, see below** |
-| `chi_monotone_transfer` | yes | **none at the call site** | **unlabelled** |
+| file | verdict |
+|---|---|
+| `mass_tower_operator_valued` | **was the bug** — loaded a colour-weighted A, built χ at `-h/2`. Fixed; identity 3.32e-04 → 1.12e-15 |
+| `sublemma_2_1_h9_tritium_verify` | **NOT a defect.** Already carries an `[H_6 frame guard] consumed extract vs canonical colour-weighted I_pn`, which passes at **5.51e-15**. 30/30 λ verify, max rel 1.22e-13 |
+| `probes/A_operator_per_interface_probe` | **self-consistent**, not broken. It runs its own `np.linalg.lstsq` per interface at the same `d_int` it then tests. The residual claim is valid; what is off is only the *label* — its `"pn"` row is the colour-**blind** crossing `(1, -h/2)`, not the canonical `averaged_weighted` p-n boundary. A per-interface probe whose `pn` is not the canonical `pn` is worth renaming or re-pointing, but nothing it reports is wrong |
+| `canonical_tr_m_via_branching` | **NOT a defect.** It derives `d` correctly via `d_for_ctype`, and the `float(...)` around it is consistent with a module that is float64 end to end (`_compiled_sigmas(…, "double")`, `complex(d)` two lines later). Flagging the cast would have been a false positive |
 
-### `binding_canonical.py` — the bean's first item, and it is clean
-
-*"A file with `canonical` in its name assigning a non-canonical p/n convention is
-either a naming defect or a real one."* It is **neither**. The
-`pn_convention="strict_averaged"` at line 290 sits inside `if use_closed_form:`
-(line 254), and the signature is `use_closed_form: bool = False` — so the
-**default path is the canonical transfer path**, and the off-canon branch is
-reached only when a caller opts in. Line 211 labels that branch exactly:
-*"`use_closed_form=True` still takes precedence: it is the strict_averaged-
-convention path retained for that family of callers (`mass_table_comprehensive`,
-`binding_factor_f_*`, …)"*, and the opt-in callers are enumerable and match:
-`binding_factor_f_sequence`, `binding_link_volumes`,
-`binding_shell_enhancement_derivation`, and two probes.
-
-The suspicion was reasonable from a grep and does not survive reading the
-control flow.
-
-### `atomic_tr_m_helium4_canonical.py` — a real latent trap, now fixed
-
-Two prose references described `chi_lambda_braid` as **"the default"**. It is
-not: `closed_form_tau_M`'s default is `bring_color_weighted` at all four sites
-(`closed_form_tau_M.py:245,344,392,495`), which R3 makes canonical.
-
-The computation itself was never wrong — the file passes the convention
-explicitly (`:117`, `:123`) and **declares it in the witness** (`:154`), which is
-the right hygiene. The hazard was latent: a reader told the argument merely
-restates the default would delete it as redundant, silently switching this file
-to `bring_color_weighted` and **invalidating the 1e-49 Phase-5q agreement the
-docstring cites**, which was measured under `chi_lambda_braid`.
-
-Corrected both references, and recorded at the call site that the explicit
-argument is **load-bearing**. No number moved. This is the campaign's recurring
-shape once more — *a description that outlived the thing it describes* — and the
-only reason it was harmless so far is that the author passed the argument anyway.
-
-### `binding_combiner_markov_peel_fallback.py` — worth quoting, it is the good case
-
-Its justification is structural, not preferential: the canonical crossing
-`σ − h·(½ − δ/4)·1` carries `δ = flavor_split_leading(q₀)`, a *numeric* function
-of q₀, and *"a numeric δ cannot be represented as an exact polynomial in the
-formal symbol q, so the exact-symbolic trace path can only carry the color-blind
-averaged crossing"*. That is a reason R3 cannot overrule — the exact-symbolic
-route is not *choosing* a convention, it is reporting the only one it can
-represent.
-
-### What is actually left for this bean
-
-1. **`chi_monotone_transfer.py`** — the one unlabelled site. Needs a one-line
-   justification or a migration; not guessable from the call site.
-2. **`_habiro_coefficient_extract.py`** — calls `chi_lambda_braid` *"the
-   production convention"*, which R3 superseded. Label-only.
-3. **The 28 witnesses** recording a non-colour-weighted `pn_convention` — untouched
-   here. Now that the producers are known to be explicit and mostly labelled, the
-   witness question is "which of these were produced by a legitimately off-canon
-   route", and the answer is per-producer, above.
-
-**Not attempted:** migrating any of them. R3 makes `bring_color_weighted`
-canonical, and this bean says correctly that switching it *moves binding
-numbers* — that is science and needs its own authorisation, not a hygiene sweep.
+I had predicted `h9_tritium_verify` was a second live instance — it loads the
+committed A witnesses *and* builds `I_pn` at `-h/2`, which is exactly the
+failing shape. Running it refuted that: someone had already put the guard in.
+Recording the prediction and its refutation because the grep signature alone
+is not sufficient evidence for this class, in either direction.

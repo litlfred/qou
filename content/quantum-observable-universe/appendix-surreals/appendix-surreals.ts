@@ -163,7 +163,7 @@ export default chapter({
         "spectral-normal-form",
         "kashaev-surreal",
         // ε^ω = the perpetual obstruction as a single surreal grade
-        // (narrowing of conj:motivic-perpetual-obstruction).
+        // (narrowing of thm:motivic-perpetual-obstruction).
         "perpetual-obstruction-depth-omega",
       ],
     },

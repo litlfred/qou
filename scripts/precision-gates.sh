@@ -52,6 +52,10 @@ set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
 
+# Shared changed-file collection. ONE definition, so the fifth gate script
+# cannot repeat the defect the first four shared (bean qou-pt9b).
+. "$ROOT/scripts/lib/changed-files.sh"
+
 # name|script|args|self-test?|blocking?
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
@@ -197,6 +201,37 @@ GATES=(
   # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
   "mixed mpf/f64 -> serializer|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|yes"
   "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits --strict|no|yes"
+  # BLOCKING, green on arrival. Bean qou-ishr.
+  #
+  # THIS IS COVERAGE, NOT LAUNDERING — read before objecting to the number.
+  # The baseline is 129 files / 44,937 fields, which is large, and this file's
+  # own rule is "never make a red run green by widening a baseline". That rule
+  # is about SILENCING AN EXISTING GATE. There was no gate here: the ratchet's
+  # default root is computations/, so qou-mass/src had never been scanned by
+  # anything, and 44,937 float64 fields shipped unobserved. Establishing a
+  # ratchet where none existed is the opposite act — from here the count can
+  # only shrink, and any new float64 entering the package is NEW and blocking.
+  #
+  # It is not a 45k-field sweep. Measured by producer:
+  #     43,901  canonical_isotope_witness.py   <- 97.7%
+  #        277  adjacent_vs_full_probe.py
+  #        273  canonical_tower.py
+  #        208  mass_tower_operator_valued.py
+  #        ...  long tail
+  # One producer is 97.7% of it, and the SAME 43,901 fields sit in the 119
+  # computations/canonical-isotope-witness-Z*.json it also writes. So the drain
+  # is one producer fixed at source (carry mpmath.mpf, serialize with
+  # _precision.fmt), which drains BOTH trees: computations/ directly, and this
+  # package automatically on the next `sync-qou-mass-vendor.py --apply`, now
+  # that the sync covers the package data (PR #5431). Before that PR a corpus
+  # drain would have left the package stale.
+  #
+  # Why the count is large in the first place: #5431 re-synced 122 witnesses
+  # that had been frozen since 2026-05-19, and the current sources are BIGGER
+  # than the three-month-old copies were, so syncing to truth took the field
+  # count 32,883 -> 44,937. The copies were smaller only because they were
+  # stale, and were also missing the q0 anchor (8 -> 128 of 140 recorded).
+  "qou-mass raw-float64|computations/witness_raw_float64_audit.py|--scan-root qou-mass/src --strict|no|yes"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
   # self-test), ships --strict/--list, and was in NO array, so nothing ran it.
@@ -275,14 +310,17 @@ if [ "${1:-}" = "--changed" ]; then
   #
   # On `main` the merge-base IS HEAD, so this contributes nothing there and
   # cannot make a clean checkout run the suite for no reason.
-  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
-  relevant=$( { git diff --name-only HEAD 2>/dev/null
-                git diff --cached --name-only 2>/dev/null
-                git ls-files --others --exclude-standard 2>/dev/null
-                [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } \
-              | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
+  considered=$(changed_files)
+  relevant=$(printf '%s\n' "$considered" \
+             | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
   if [ -z "$relevant" ]; then
-    echo "precision-gates: no witness or computations/ script touched — skipped."
+    echo "precision-gates: 0 relevant of $(printf '%s\n' "$considered" | grep -c .) changed file(s) — skipped."
+    echo "  scope: $(changed_files_scope)"
     exit 0
   fi
   echo "precision-gates: $(printf '%s\n' "$relevant" | wc -l) relevant file(s) changed — running."

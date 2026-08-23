@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T16:18:28Z
+updated_at: 2026-08-22T20:55:12Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -403,3 +403,22 @@ sign-rep identity and the quotient re-posing answer.
 
 **Gates GREEN.** The raw-float64 RED I had been carrying and attributing to
 main is fixed on main (55ac29d94). Nothing red on this branch now.
+
+── CORRECTION 2026-08-22 (branch n24484): the 'missing detector' EXISTS ──
+The remaining-item note 'the detector-class question of committed witnesses whose
+producers crash — a detector class the campaign does not currently have' is STALE.
+Corpus-grep found computations/witness_producer_executes_audit.py (committed
+witness dated 2026-08-10, i.e. it PREDATES the 2026-08-19 note): 'Coverage-complete
+check that every *.witness.json names a producer that exists, parses, and (with
+--smoke) still runs and still emits the committed values.' Its tally already
+classifies static PRODUCER_NOT_FOUND (11) + smoke CRASHED (6) / DIFFERS (5) /
+TIMEOUT (5) / ENV_MISSING (6) / REPRODUCES (18) — precisely the crashing/stale-value
+class this item wanted. I started building a redundant static-only version
+(scripts/witness_producer_integrity.py), caught the duplication by corpus-grep, and
+DISCARDED it (mine over-counted 'absent' at 89 vs the authoritative audit's 11
+because it did not resolve producer basenames tree-wide, and it could not smoke-test).
+NET: this cds2 sub-item is not open work — the tool is built. The genuinely
+actionable subset is that audit's smoke CRASHED(6)/DIFFERS(5) rows, not a new
+detector. Caveat learned: running that audit re-emits its own witness (side effect);
+inspect its committed witness or run read-only rather than executing it in a clean
+tree.
