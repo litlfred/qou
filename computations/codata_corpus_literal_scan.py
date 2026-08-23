@@ -75,34 +75,31 @@ SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
     ".beans", "build", "dist", ".pytest_cache", "_deprecated",
-    # `.claude` because agent worktrees live at `.claude/worktrees/<agent-id>/`
-    # — a FULL SECOND CHECKOUT of the repo, gitignored (.gitignore:120), 0
-    # tracked files. Without it this gate scans every file twice and reports
-    # the copy as a finding.
+    # `.claude/worktrees/` holds gitignored agent worktrees — whole extra
+    # copies of the repo. Scanning them reports the SAME literal once per
+    # worktree and turns this gate RED on findings that are not in the branch,
+    # not on main, and would not reproduce in a clean checkout. Measured
+    # 2026-08-22: 83 of 83 hits came from there, and the same commit scanned
+    # 50272 files with a worktree present vs 25145 without — the gate's verdict
+    # depended on local checkout state.
     #
-    # Measured 2026-08-22 with one worktree present: **83 of 83** reported
-    # literals were under `.claude/worktrees/`, and **zero** were real. So
-    # this BLOCKING gate went red on a clean tree, for files nobody touched,
-    # purely because an agent had a worktree checked out — and it would go
-    # green again when that worktree was removed, with no code change.
+    # Skipped by directory NAME rather than by excluding all of `.claude`:
+    # `.claude/skills/` is TRACKED source and DOES carry CODATA literals — e.g.
+    # `local/compute-audit.md` quotes "0.51099895" (the electron mass in MeV)
+    # among others. None is flagged today because they match the table exactly
+    # and exact matches are silent by design, but a skill doc quoting a STALE
+    # value is precisely what this gate is for, so those 150 files stay in
+    # scope. Keeping them costs 3 counted sites and no findings.
     #
-    # That environment-dependence is the serious part: a gate whose verdict
-    # depends on local checkout state cannot be trusted or reproduced, and the
-    # cost of a false red is that people learn to skip the preflight. Same
-    # root cause as the fix to `f64_into_mpmath_audit.py` (bean `qou-myk3`),
-    # which is why that bean flags every `rglob` scanner as a candidate.
-    # Scoped to all of `.claude`, not just `.claude/worktrees`, for two
-    # reasons — and checked rather than assumed, since over-excluding a gate is
-    # its own defect. (a) `SKIP_DIRS` matches a single path COMPONENT, so
-    # `.claude/worktrees` is not expressible; `"worktrees"` alone would match
-    # any directory of that name anywhere. (b) The rest of `.claude` is agent
-    # configuration and skills — the same category as `.beans`, already listed
-    # above — not paper or compute source. Measured: of the 150 non-worktree
-    # `.claude` files with a scanned extension, **zero** contain a literal this
-    # scan would consider (7+ significant digits). So nothing is lost today,
-    # and a skill doc that later quotes a constant is not what this gate is
-    # for.
-    ".claude",
+    # This narrower scope is #5440's, adopted in preference to my own. I had
+    # excluded `.claude` wholesale, on a measurement that said those files
+    # contained zero literals. That measurement was WRONG: the command was
+    # `grep -ohE -P …`, which is invalid ("conflicting matchers specified"),
+    # and its stderr went to /dev/null — so a broken grep produced an empty
+    # result and the zero count read as a finding. Silence from a suppressed
+    # error is not evidence. The wholesale exclusion would have dropped a real
+    # CODATA literal out of the gate's reach.
+    "worktrees",
 }
 
 # A literal needs enough digits to identify a constant. Below ~7 significant
