@@ -72,16 +72,39 @@ structure NonSelfIntersection where
   q : ℝ
   /-- `q > 1` — the non-classical regime. -/
   q_gt_one : q > 1
-  /-- The exclusion radius `ℏ_q = 1 − q⁻¹`. -/
-  exclusionRadius : ℝ
-  /-- The exclusion radius is exactly `ℏ_q`. -/
-  exclusionRadius_def : exclusionRadius = hbar_q q
 
-/-- The exclusion radius is exactly `ℏ_q`. -/
+/-- The exclusion radius of the quantum exclusion zone.
+
+    **Derived, not carried.** The structure above used to have a free
+    field `exclusionRadius : ℝ` alongside a field
+    `exclusionRadius_def : exclusionRadius = hbar_q q` asserting what it
+    equals, and `exclusionRadius_eq` returned that second field — the
+    §3b-cond item-5 degenerate shape, and this file's
+    `proof-no-self-assuming-projection` ledger entry. A free field
+    constrained by an equation field is not a derivation: the radius could
+    be anything and the structure merely assumed it away.
+
+    Here the radius is a definition of `q`, matching the library encoding
+    in `QOU/MobiusEnergy.lean`, so it is not a free parameter at all. -/
+def NonSelfIntersection.exclusionRadius (nsi : NonSelfIntersection) : ℝ :=
+  hbar_q nsi.q
+
+/-- The exclusion radius is exactly `ℏ_q` — now an unfolding lemma of the
+    definition above rather than a projection of an assumed equation. -/
 theorem NonSelfIntersection.exclusionRadius_eq
     (nsi : NonSelfIntersection) :
     nsi.exclusionRadius = hbar_q nsi.q :=
-  nsi.exclusionRadius_def
+  rfl
+
+/-- **The exclusion zone is nonempty**: the radius is strictly positive.
+
+    This is what the free-field encoding could not give. Positivity is
+    derived from the structure's own `q_gt_one`, through `hbar_q_pos`;
+    no field of `NonSelfIntersection` asserts it. -/
+theorem NonSelfIntersection.exclusionRadius_pos
+    (nsi : NonSelfIntersection) :
+    0 < nsi.exclusionRadius :=
+  hbar_q_pos nsi.q nsi.q_gt_one
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
 theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
