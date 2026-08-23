@@ -1,10 +1,11 @@
 ---
 # qou-6ome
 title: Library QOU.SubstrateParameter never made the §7c split its own block and siblings made — 22 files, 85 field sites, carries q0
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-23T12:48:18Z
-updated_at: 2026-08-23T12:48:18Z
+updated_at: 2026-08-23T21:53:55Z
 ---
 
 
@@ -93,3 +94,54 @@ should be the one `qou-mt7r` needs, not a second parallel mechanism.
 Deliberately. This is a q₀-adjacent refactor of the most load-bearing object in
 the corpus; it wants its own branch and a numerical no-change check, and it
 should not be started at the tail of a session doing something else.
+
+## Done 2026-08-23 — the split landed, and survived the merge of `main`
+
+Commit `44b9b23448`, verified again after merging 659 commits of `main`
+(`3e2d1e3c51`).
+
+| layer | what it is |
+|---|---|
+| `SubstrateParameter M` | categorical: `field : M → QOU.GroundRing.R_q`, matching `def:substrate-parameter` |
+| `ArchimedeanSubstrateField M` | the former structure, renamed — `M → ℝ` with the order axioms |
+
+The archimedean layer keeps every field it had, so the ~85 field sites across
+22 modules kept working: the rename is about which side of the §7c wall the
+*name* advertises, not about weakening what is assumed. 20 library modules now
+carry `ArchimedeanSubstrateField`.
+
+One field became a theorem rather than surviving the rename.
+`ArchimedeanSubstrateField.field_pos` was a fourth field beside
+`field_ge_one`, and `0 < q` follows from `1 ≤ q` by transitivity with `0 < 1` —
+so it was a redundant axiom, which is exactly what the co-located sibling had
+already avoided. Kept under the same name, so every `sp.field_pos p` call site
+reads identically: dot notation resolves to the theorem exactly as it resolved
+to the field.
+
+### Why the two gates never caught this
+
+`check-wall-side` and `check-base-ring` both **PASS** on a file that is
+*wholly* archimedean, because they fire on files that **mix** regimes. Passing
+the wall gate means "not mixed", not "on the right side of the wall". That is
+the general lesson, not a quirk of this bean.
+
+### The precautions this bean asked for, and what came of them
+
+- *"Wants a numerical no-change check"* — **withdrawn as unnecessary, not
+  skipped.** `QOU.SubstrateParameter` has no Python touchpoint; nothing in
+  `computations/` reads it, so there is no number for the refactor to move.
+- *"Wants its own branch"* — it did not get one. Recorded as a deviation.
+- *"The tie between the layers is the part to get right"* — **not built, and
+  still owed.** There is no τ carrying `eval q = q_real` between the two
+  layers. `qou-mt7r` still needs it, and it should be the same τ, not a second
+  parallel mechanism. That is the honest residue of this bean and the reason
+  the split is a rename plus a wall, not yet a coherent two-layer theory.
+
+### Verification
+
+`lean-direct-cone.sh --all`: `err=0` through 2071 of 2084 modules on the merged
+tree, with all 24 modules touching `ArchimedeanSubstrateField`,
+`QOU.GroundRingCore` or `CategoricalQExtDeriv` freshly rebuilt after the merge.
+Checked by olean-newer-than-source per module rather than inferred from the
+aggregate, because the build had planned its work list before the merge was
+redone.
