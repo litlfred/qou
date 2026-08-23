@@ -78,8 +78,9 @@ opaque transientMIdisc : ℕ → ℝ
 /-- **Open input 1 — disjoint-support additivity.**  The transient
     component is supported in the disjoint discs `Dᵢ`, so the MI-norm
     over `Σ` decomposes as the sum of the per-disc MI-norms.  Needs
-    the multiplicative-integral / non-abelian-Stokes API (not in
-    Mathlib). -/
+    massive infrastructure (multiplicative-integral / non-abelian-Stokes API,
+    not in Mathlib) that cannot be added as a simple class field, so it is
+    left as a sorry. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 theorem transient_disjoint_disc_additivity :
     transientMItotal
@@ -89,7 +90,9 @@ theorem transient_disjoint_disc_additivity :
 /-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
     Each disc contribution equals the exceptional-divisor integral
     (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
-    restricts to `(∇_A q, L ∧ F⁺)` there). -/
+    restricts to `(∇_A q, L ∧ F⁺)` there). Needs massive infrastructure
+    (multiplicative-integral / non-abelian-Stokes API) that cannot be added
+    as a simple class field, so it is left as a sorry. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 theorem transient_disc_is_divisor_integral :
     ∀ i : ℕ, transientMIdisc i = transientMIdiv i :=
