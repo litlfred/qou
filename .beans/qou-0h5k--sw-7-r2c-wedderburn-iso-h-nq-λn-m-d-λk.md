@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-23T13:39:07Z
+updated_at: 2026-08-23T15:46:25Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
@@ -125,3 +125,43 @@ Implementation order: (i) the abstract Pi-algebra lemma (no Hecke content, so it
 checks on its own terms); (ii) instantiate with the seminormal blocks; (iii) the
 finrank count; (iv) `HeckeWedderburnData` instance
 (`QSchurWeyl.lean:62`, the n=3 case is `HeckeWedderburnData3`).
+
+
+## Step 2 LANDED — the product map is SURJECTIVE (the step that needed an argument)
+
+`HeckeProductSurjective.lean`, sorry-free, axiom-clean:
+- `heckeProduct` — Phi = (+)_{lam |- n+1} rho_lam, indexed by `Partition (n+1)`.
+- `heckeProduct_jmPowSum` — the central Murphy power sums land on SCALAR TUPLES,
+  block lam seeing `sum_{c in lam} (q^{2c})^m`. This is what feeds
+  `PiBlockSeparation` its separating family.
+- `contentPowSum_separates` — those scalars separate the partitions.
+- `heckeProduct_range_eq_top` / `heckeProduct_surjective`.
+
+**No density theorem anywhere.** Mathlib has no Jacobson density and no
+bicommutant; the textbook proof wants one. `eq_top_of_separating_of_blockSurj`
+replaces it with finite Lagrange interpolation, and block simplicity is never
+used.
+
+## A generalisation landed in the sibling's file, not a copy
+
+`contentCount_eq_of_matRepEquiv` used `MatRepEquiv` only to obtain the power-sum
+equality. I loosened it to `contentCount_eq_of_contentPowSum_eq` (raw scalar
+hypothesis) and made the original a two-line corollary, then added
+`youngDiagram_eq_of_contentPowSum_eq`. Rather than duplicate ~40 lines of their
+proof body into my file. The distinction that made this necessary:
+`seminormalRep_not_matRepEquiv_of_ne` answers *'are these two blocks
+isomorphic'*; a PRODUCT-map argument instead needs *'do the block scalars
+separate the index set'*, which is a different statement.
+
+## Remaining for SW-7
+
+1. `finrank (prod_lam Matrix (SYT lam)) = sum_lam d_lam^2 = (n+1)!` — SW-3 is
+   available for every n now (`QOU.Mathlib.rskBurnsideHolds`); the work is
+   plumbing the SYT-indexed matrix finrank to `dLambda` and the sum identity.
+2. Surjective + `finrank_le_factorial` + (1) => BIJECTIVE. Note the direction:
+   surjectivity forces `dim source >= dim target`, and `<=` is already on main,
+   so this gives `finrank H_{n+1}(q) = (n+1)!` as a COROLLARY — the
+   Iwahori-Hecke basis theorem's lower bound, without the GS route (`qou-auq3`).
+3. `HeckeWedderburnData` instance (`QSchurWeyl.lean:62`); the n=3 case is
+   `HeckeWedderburnData3`. Also wants the Markov weights, which
+   `HeckeMarkov3` has only at n=3.
