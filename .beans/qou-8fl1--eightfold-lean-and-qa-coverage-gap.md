@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-23T07:55:08Z
+updated_at: 2026-08-23T08:07:10Z
 ---
 
 ## Context
@@ -167,3 +167,26 @@ DONE this session: wired prop:borromean-decuplet → RowCapObstruction.eightfold
 
 STILL OPEN in item 2: prop:meson-octet-decomposition — its dimension shadow is 3⊗3̄ = 8⊕1 (9 = 8+1), a DIFFERENT decomposition than V^⊗3 (RowCapObstruction is baryon V^⊗3, not meson qq̄). Needs either a small new 9=8+1 lemma or a note that the octet dim matches weylDimMixed. Deferred.
 Remaining tiers T2 (Sym2Gate SU(3)/FS), T3 (octonion def), T4 (QA sidecars) unchanged.
+
+
+
+## PROGRESS 2026-08-23 (2) — T1 CLOSED (all 3 item-2 props now Lean-backed)
+
+meson-octet: authored content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.lean
+(QOU.Eightfold.MesonOctet) with the genuine dimension shadow — NOT a trivial 9=9:
+- fundAntifundDim N = N*N (dim V⊗V*); adjointDim N = N*N−1 (adjoint/octet dim).
+- meson_nonet_dim (N≥1): N² = (N²−1)+1 (V⊗V* = adjoint ⊕ singlet at dim level).
+- meson_octet_at_three: fundAntifundDim 3 = 9 ∧ adjointDim 3 = 8 ∧ 9 = 8+1.
+Wired prop:meson-octet-decomposition → MesonOctet.meson_octet_at_three.
+lean-direct exit 0; #print axioms [propext, Quot.sound], no sorryAx; vacuity audit 0 defects.
+
+item 2 status: ALL THREE props now backed —
+- prop:schur-weyl-eightfold: RowCapObstruction.weyl_dim_alt_eq_zero_iff (already, sibling).
+- prop:borromean-decuplet: RowCapObstruction.eightfold_channels_at_three (this arc, PR #5508).
+- prop:meson-octet-decomposition: MesonOctet.meson_octet_at_three (this arc).
+All are DIMENSION shadows; the rep-level SU(3) Clebsch-Gordan + weight assignments
+remain the genuine SU(3) content (Mathlib gap), unchanged. T1 done.
+
+Remaining tiers: T2 Sym2Gate SU(3)/FS (hard Mathlib gap), T3 def:octonion-algebra,
+T4 QA sidecars (folio-assistant now set up this session ⇒ item 1 unblocked, can run
+qa-sweep next), research-gated items 6,7.
