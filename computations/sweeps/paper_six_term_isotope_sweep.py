@@ -274,6 +274,10 @@ def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
 
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
 _T6_CACHE: dict | None = None
+#: A → verbatim upstream reason why that atom has NO Term 6 residue.
+#: Populated by `_load_canonical_t6_MeV` from the null rows of the Habiro
+#: residue witness; read at the assembly site to stamp `term6_status`.
+_T6_GAPS: dict[int, str] = {}
 
 
 def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
@@ -295,12 +299,73 @@ def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
         return _T6_CACHE
     d = json.loads(path.read_text())
     out: dict[int, mp.mpf] = {}
-    for r in d.get("results_by_atom", []):
-        try:
-            A = int(r["atom"].split("=")[1])
-            out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
-        except (KeyError, IndexError, ValueError):
+    # `results_by_atom` is nested under `data` — `WitnessBuilder` puts every
+    # payload key there.  Reading it at the TOP level (the pre-2026-08-23
+    # code) matched nothing, so `.get(..., [])` returned `[]`, `_T6_CACHE`
+    # came back empty, and EVERY Term 6 in this sweep silently evaluated to
+    # 0 MeV: a 5-term sum wearing a 6-term label, with a proton calibration
+    # `E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke` that dropped its T6 term.
+    # The `path.exists()` warning above cannot catch this — the file is
+    # present; only the key was looked up in the wrong place.  The
+    # top-level read is kept as a fallback for any hand-rolled witness that
+    # does not nest under `data`.
+    _dat = d.get("data")
+    _t6_rows = (
+        (_dat.get("results_by_atom") if isinstance(_dat, dict) else None)
+        or d.get("results_by_atom")
+        or []
+    )
+    for r in _t6_rows:
+        _val = r.get("term6_b_pred_mev_50dps")
+        if _val is None:
+            # A NULL row is an upstream derivation GAP, not a zero.  The
+            # bridge emits null for A = 2, 3, 4 because
+            # `term6_residues_at_roots.py` raises `ValueError:
+            # LaurentQ.from_sympy: non-Laurent factor` on every
+            # multi-nucleon braid word, and for A = 0 because the electron
+            # T6 at H_2 is a separate, not-yet-derived calculation.  The
+            # atom is therefore left OUT of the map and its verbatim
+            # upstream reason recorded in `_T6_GAPS`, so the caller can say
+            # "absent" instead of quietly printing 0 — substituting 0 here
+            # would rebuild the exact silent 5-term-as-6-term bug the
+            # `data` fix above removes.
+            #
+            # This guard is also what keeps the sweep from crashing:
+            # `mp.mpf(None)` raises `TypeError`, which the `except` below
+            # does NOT catch.
+            try:
+                _A_gap = int(str(r["atom"]).split("=")[1])
+            except (KeyError, IndexError, ValueError):
+                continue
+            _T6_GAPS[_A_gap] = str(
+                r.get("upstream_error")
+                or r.get("precision_note")
+                or "upstream row present but term6_b_pred_mev_50dps is null"
+            )
             continue
+        try:
+            A = int(str(r["atom"]).split("=")[1])
+            out[A] = mp.mpf(_val)
+        except (KeyError, IndexError, ValueError, TypeError):
+            continue
+    if not out:
+        # Loud, because the failure mode this replaces was silent: an empty
+        # map means every row's Term 6 is missing, and the sweep would go on
+        # to emit a "6-term" witness that is nothing of the kind.
+        warnings.warn(
+            f"T6 witness {path.name} yielded NO usable per-A residues "
+            f"({len(_t6_rows)} rows read, {len(_T6_GAPS)} of them null). "
+            "Every Term 6 in this sweep will be reported as absent.",
+            stacklevel=2,
+        )
+    elif _T6_GAPS:
+        warnings.warn(
+            "T6 upstream gap: no cyclotomic residue for A ∈ "
+            f"{sorted(_T6_GAPS)} (derived for A ∈ {sorted(out)}). "
+            "Those rows carry term6_status='upstream_gap'; their masses are "
+            "5-term sums and must not be read as 6-term predictions.",
+            stacklevel=2,
+        )
     _T6_CACHE = out
     return _T6_CACHE
 
@@ -731,10 +796,24 @@ def paper_six_term_mass(Z, N, include_inter=True,
         return result
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
+    # Bound here so every path through the term-5 dispatch below leaves it
+    # defined; only the closed-form fallback ever sets it non-None.
+    chirality_fallback_reason = None
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
     t4 = mp.mpf(str(m_e_hecke)) * t4_raw
     if chirality_signs is None:
         chirality_signs = []
+    # What was ASKED for vs what was actually computed.  These diverge on
+    # the fallback path below, and until 2026-08-23 only the request was
+    # recorded — so a row whose a_K came from the closed-form heuristic
+    # still went into the witness stamped `term5_chirality_source: "v2"`.
+    # That is a live path, not a hypothetical: `aK_v2` raises
+    # `ValueError: scipy.sparse does not support dtype object` on the first
+    # partition with dim > 500 (⁴He hits it at λ = (8,3,1), dim 891), and
+    # the blanket `except Exception` below turns that into a silent method
+    # substitution.  `term5_chirality_source` now reports the method that
+    # produced the number; the request is preserved alongside it.
+    chirality_source_used = chirality_source
     if chirality_source == "v2":
         try:
             from term5_v2_chirality import aK_v2
@@ -750,6 +829,8 @@ def paper_six_term_mass(Z, N, include_inter=True,
                 flush=True,
             )
             t5_factor = term5_chirality(Z, N, chirality_signs)
+            chirality_source_used = "closed_form_fallback"
+            chirality_fallback_reason = f"{type(exc).__name__}: {exc}"
     elif chirality_source == "closed_form":
         t5_factor = term5_chirality(Z, N, chirality_signs)
     else:
@@ -760,7 +841,22 @@ def paper_six_term_mass(Z, N, include_inter=True,
     # T6: canonical cyclotomic residue tail in MeV (per-A from Habiro
     # residue witness).  Returned in MeV directly; not in Hecke units.
     # Caller adds it to M_pred post-calibration (after × E_0).
-    t6_MeV = _load_canonical_t6_MeV().get(Z + N, mp.mpf(0))
+    _t6_map = _load_canonical_t6_MeV()
+    _t6_A = Z + N
+    # `.get(A, 0)` alone cannot distinguish "the residue for this A is
+    # zero" from "there is no residue for this A", and the second case is
+    # the live one for A = 2, 3, 4 (see `_load_canonical_t6_MeV`).  Keep the
+    # additive contribution at 0 so the mass sum stays finite, but stamp the
+    # row so the absence travels with the number instead of being absorbed
+    # by it.
+    t6_MeV = _t6_map.get(_t6_A, mp.mpf(0))
+    if _t6_A in _t6_map:
+        t6_status = "derived"
+        t6_gap_reason = None
+    else:
+        t6_status = "upstream_gap"
+        t6_gap_reason = _T6_GAPS.get(
+            _t6_A, "no row for this A in the T6 residue witness")
 
     if term5_mode == "additive":
         t1_with_chirality = t1
@@ -792,9 +888,17 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term4_frobenius_codim_raw": float(t4_raw),
         "term4_frobenius_codim_scaled": float(t4),
         "term5_chirality_factor_a_K": float(t5_factor),
-        "term5_chirality_source": chirality_source,
+        # The method that actually produced `term5_chirality_factor_a_K`,
+        # not the one requested — see `chirality_source_used` above.
+        "term5_chirality_source": chirality_source_used,
+        "term5_chirality_source_requested": chirality_source,
+        "term5_chirality_fallback_reason": chirality_fallback_reason,
         "term5_additive_contribution": float(t5),
         "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
+        # `term6_cyclotomic_tail_MeV == 0.0` is ambiguous on its own; these
+        # two fields say whether the 0 is a derived residue or a hole.
+        "term6_status": t6_status,
+        "term6_gap_reason": t6_gap_reason,
         "term5_mode": term5_mode,
         "tower_mode": tower_mode,
         # `sub_tower_mode` is None on every non-`combined` direct call;
@@ -1323,20 +1427,55 @@ if __name__ == "__main__":
     # of these will be flagged by witness_dependency_drift.py.
     _upstream_hashes: list[dict] = []
     for _name in (
-        # Fix #3 — y-lambda cache + Wedderburn weight scheme
+        # Fix #3 — y-lambda cache
         "y-lambda-at-q0.witness.json",
-        "probe-wedderburn-weight-scheme.witness.json",
+        # `probe-wedderburn-weight-scheme.witness.json` was declared HERE
+        # until 2026-08-23 and is deliberately gone.  It never lived under
+        # `computations/`: it sat in the root-level agent-scratch tree at
+        # `_deprecated/probes/`, and both the witness and its producer
+        # `probe_wedderburn_weight_scheme.py` were untracked wholesale by
+        # 0763606e4 ("chore: untrack the five root-level agent-scratch
+        # dirs").  Neither can be regenerated in-tree, so the
+        # `upstream_missing` drift record it produced could never clear by
+        # re-running anything — it could only be dropped or kept forever.
+        #
+        # Dropping it loses no provenance.  The recovered file carried
+        # `"assertions": []`: it is a DIAGNOSTIC that compares Plancherel
+        # weights against the Wenzl-bridge y_λ and reports that the two
+        # disagree — an open question, not a computed input.  And this loop
+        # only ever consumed its *hash* (`_, _hr = ...`), never its data;
+        # the sha256 of an untracked scratch file is not meaningful
+        # provenance for anything.
+        #
+        # Its live sibling `y-lambda-at-q0.witness.json` above IS a real
+        # input and its sha256 drift is real drift.  Do not conflate the
+        # two, and do not re-add this name.
         # Fix #4 — CAL-3 calibration inputs
         "cal-3-q-beta.witness.json",
         "codata-2022-validation-masses.witness.json",
         # Fix #6 — per-nucleon shift additive linearity
         "per-nucleon-shift-derivation.witness.json",
     ):
-        try:
-            _, _hr = load_and_hash_upstream(HERE / _name)
-            _upstream_hashes.append(_hr)
-        except FileNotFoundError as _exc:
-            print(f"  ⚠ upstream missing: {_exc}")
+        # `_pb.witness_path`, not `HERE / _name`.  HERE is
+        # `computations/sweeps/` and all four upstreams above live at the
+        # `computations/` root, so the bare join named a path that does not
+        # exist for EVERY entry.  The `except FileNotFoundError` that used
+        # to sit below then swallowed all five and appended nothing, so a
+        # regenerated witness would have emitted
+        # `upstream_witness_hashes: []` — deleting the entire dependency
+        # declaration and "clearing" five drift records by destroying the
+        # evidence rather than by refreshing it.  This is exactly the
+        # pre-refactor idiom `_path_bridge.witness_path` was introduced to
+        # replace (see its docstring), and it restores agreement with
+        # `witness_dependency_drift.py`, which already resolves these bare
+        # names against `computations/`.
+        _path = _pb.witness_path(_name, HERE)
+        # Hard failure, not a printed warning: every name in the tuple above
+        # is a live in-tree witness, so a miss here is a real upstream
+        # regression.  Emitting a witness that quietly under-declares its
+        # inputs is worse than emitting none.
+        _, _hr = load_and_hash_upstream(_path)
+        _upstream_hashes.append(_hr)
 
     # `M_P_MEV_VALIDATION` was referenced BARE here while the file only ever
     # imports it aliased, and function-scoped at that (`as _M_P_CODATA`, twice).
