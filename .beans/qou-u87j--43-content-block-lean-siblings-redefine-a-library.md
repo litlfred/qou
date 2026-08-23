@@ -108,3 +108,63 @@ landed.
    the root cause; much the largest change.
 
 Options 1 and 2 are complementary, not alternatives. Not started.
+
+## Correction 2026-08-23 — the figures above are from an ad-hoc scan; use the checker's
+
+The counts in the previous section (167 / 117 / 50 / 43) came from a throwaway
+script written to test whether the `QuantumObservableUniverse` case was isolated.
+It answered that question and should not be quoted further. There is now a real
+checker — **folio-assistant `scripts/check-mirror-drift.ts`** — and its numbers
+supersede them:
+
+| | ad-hoc scan | `check-mirror-drift.ts` |
+|---|---|---|
+| declarations, Lake trees / block siblings | — | 1214 / 841 |
+| same-FQN pairs | 167 | **148** |
+| identical (faithful mirrors) | 117 | **103** |
+| **drifted** | 50 | **45** |
+| distinct sibling files carrying drift | 43 | **38** |
+| drifted pairs that mask a block's `lean.ref` | 43 (= all) | **45 (= all)** |
+| duplicate FQNs inside the Lake tree | not measured | **0** |
+
+Four reasons the checker is lower, all of them the ad-hoc scan being wrong:
+
+1. **Named sections.** `section Foo … end Foo` is indistinguishable from a
+   namespace at the regex level. The old scan only popped on `end <name>` and
+   kept one stack for namespaces alone, so every declaration after the first
+   named section got the wrong namespace — inventing collisions and hiding real
+   ones. The checker keeps namespaces and sections on one stack and pops
+   whichever is on top.
+2. **Docstrings and comments.** The old scan read `field :` lines inside `/-- … -/`
+   as fields. The checker tracks docstring state.
+3. **`extends`.** Not parsed before, so a pair differing only in whether it
+   inherits or inlines a parent looked like field drift. Now compared
+   separately and reported as `extends differs` (1 case).
+4. **Duplicates inside the library.** The old scan silently compared against
+   whichever library copy it hit first. The checker reports those as their own
+   finding and excludes them from the drift count. There are none here, so this
+   changed nothing for qou — but it would have, silently, on a tree that had any.
+
+**What does not change** is the finding. `45 / 45` of the drifted pairs sit in a
+file that is a content-block sibling, so every one of them masks a `lean.ref`.
+The faithful-mirror rate is 70 %, unchanged, and that ratio remains the parser's
+control. The `QOU.CRManifoldData` example is reproduced verbatim by the checker,
+including both anti-vacuity fields.
+
+**Reproduce:** `bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou`
+from the qou repo root. `--tsv` for one row per pair, `--json` for the totals.
+
+### Option 1 is now built, not proposed
+
+`check-mirror-drift.ts` exists on folio-assistant branch
+`claude/gracious-dijkstra-0ijp2l`. It exits 0 by default — a gate that fails CI
+on a 45-item backlog only teaches people to pass `--warn-only`. Wire it as
+`--baseline 45` so it fires on *growth*, which is what keeps the 103 faithful
+mirrors from becoming the next 45. `--max 0` is the end state once the backlog
+is drained.
+
+Verified: exit 2 over `--max`, exit 3 over `--baseline`, 0 with `--warn-only`,
+64 on an unknown package, and 0 with an all-zero report when run from the
+platform repo with no content injected. `eslint` clean.
+
+Options 2–4 are untouched.
