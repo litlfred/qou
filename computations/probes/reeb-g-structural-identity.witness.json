@@ -1,20 +1,20 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T18:36:56.751729+00:00",
-  "commitSha": "ac13ae95e8faa2fcc85e3bb1be4ff1f53592d49b",
+  "computedAt": "2026-08-23T07:51:29.796342+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "I1_polynomial_identity",
-      "computed": "0.0",
+      "computed": "7.2445e-71",
       "expected": "0.0",
-      "passed": true
+      "passed": false
     },
     {
       "name": "I2_g_equals_inverse_deformed_eig",
-      "computed": "0.0",
+      "computed": "4.5278e-72",
       "expected": "0.0",
-      "passed": true
+      "passed": false
     },
     {
       "name": "I3_g_equals_sin_arctan_z",
@@ -29,12 +29,12 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 1,
   "computation": "reeb-g-structural-identity",
   "scriptFile": "reeb_g_structural_identity_probe.py",
   "scriptHash": "4a9a108a853c",
-  "scriptCommitSha": "dbf1bf8744ef43d14acc0a279496992f9a62e5f2",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,40 +43,52 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/reeb_g_structural_identity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/reeb_g_structural_identity_probe.py"
   },
   "description": "Exact structural identities for the Reeb-flow pn magnitude: g = 1/sqrt(1+[2]_v^2) = z/sqrt(1+z^2) (q-deformed ss-ceiling / sin-from-tan); polynomial identity 5+(v-1/v)^2 = 1+(v+1/v)^2; det-vs-linear reconciliation verdict. audit-only.",
   "tier": "structural (exact identities; one named physical identification remains)",
   "result": {
     "constants": {
-      "q0": "1.10997859556",
-      "v": "1.05355521714",
-      "[2]_v": "2.00272236446",
-      "z=1/[2]_v": "0.499320334034",
-      "g_landed": "0.446727067798147",
-      "E0_MeV": "4.1859808"
+      "q0": "1.10997858275",
+      "v": "1.05355521106",
+      "[2]_v": "2.00272236386",
+      "z=1/[2]_v": "0.499320334184",
+      "g_landed": "0.446727067905661",
+      "E0_MeV": "4.1859814"
     },
     "I1_polynomial": {
-      "lhs_5+(v-1/v)^2": "5.01089686911908",
-      "rhs_1+[2]^2": "5.01089686911908"
+      "lhs_5+(v-1/v)^2": "5.01089686670712",
+      "rhs_1+[2]^2": "5.01089686670712"
     },
     "I2_deformed_ceiling": {
-      "g": "0.446727067798147",
-      "ss_matrix_eig_magnitude": "2.23850326538048",
-      "1/g": "2.23850326538048",
+      "g": "0.446727067905661",
+      "ss_matrix_eig_magnitude": "2.23850326484174",
+      "1/g": "2.23850326484174",
       "classical_limit_v=1": "1/sqrt(5)"
     },
     "I3_projection": {
-      "g=z/sqrt(1+z^2)": "0.446727067798147",
-      "theta=arctan_z_rad": "0.4631037284",
+      "g=z/sqrt(1+z^2)": "0.446727067905661",
+      "theta=arctan_z_rad": "0.4631037285",
       "reading": "g = sin(theta), z = tan(theta); 1-g^2 = cos^2(theta) is the A=2 det factor"
     },
     "headroom_vs_deformation": {
-      "1-sqrt5*g": "0.001087909",
-      "(v-1/v)^2/10": "0.0010896869"
+      "1-sqrt5*g": "0.0010879088",
+      "(v-1/v)^2/10": "0.0010896867"
     },
     "reconciliation_5g_vs_det": {
-      "g_eff_deuteron_needs_under_det_form": "0.64205729",
+      "g_eff_deuteron_needs_under_det_form": "0.64205726",
       "classical_ceiling": "0.4472136",
       "g_eff_exceeds_ceiling": true,
       "linear_law_q_to_1_limit": "B(2H) = sqrt(5) MeV (unit implicit)",

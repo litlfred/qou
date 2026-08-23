@@ -67,25 +67,39 @@ def witness_populations() -> dict:
     return {"tally": tally, "stamp_by_value": stamp_by_value}
 
 
-# One-hop transitive path: `_li_2_q_util.load_q_50dps(path=None)` defaults to
-# the MUON-anchored pin witness, so a caller using the no-arg form reaches the
-# ideal pin without naming it and without importing q_parameter.  A scan that
-# only looks for the witness filename inside each producer MISSES these
-# entirely -- measured 2026-08-22, that undercounted the contradictions by 9.
-_NO_ARG_LOAD = re.compile(r"(?<![\w.])load_q_50dps\s*\(\s*\)")
+# One-hop transitive path through `_li_2_q_util.load_q_50dps`.
+#
+# HISTORY, because the right pattern here changed once already.  Until
+# 2026-08-22 that helper's signature was `load_q_50dps(path=None)` and a
+# `None` path defaulted to the MUON-anchored pin witness -- so the BARE
+# no-arg call was the muon route, and a scan that only looked for the
+# witness filename inside each producer missed it, undercounting the
+# contradictions by 9.
+#
+# The helper now takes `anchor="proton"` and the bare call resolves to the
+# experimental pin.  So the bare form is CORRECT and must NOT be flagged;
+# the muon route is now an explicit `anchor="muon"` or an explicit path to
+# the pin witness.  A detector keyed on the old shape would report every
+# fixed caller as a defect.
+_MUON_ANCHOR_ARG = re.compile(
+    r"(?<![\w.])load_q_50dps\s*\([^)]*anchor\s*=\s*[\"']muon[\"']"
+)
+_LOAD_WITH_PIN_PATH = re.compile(
+    r"(?<![\w.])load_q_50dps\s*\(\s*[A-Za-z_][\w.]*\s*[,)]"
+)
 
 
-def _uses_muon_default_helper(text: str) -> bool:
-    """True if the producer calls load_q_50dps() with no path argument.
+def _uses_muon_via_helper(text: str) -> bool:
+    """True if the producer asks `load_q_50dps` for the ideal/muon pin.
 
-    Comment and docstring lines are excluded: a `# Was: load_q_50dps()` marker
-    left by an earlier fix is a record of the trap, not an instance of it.
+    Comment and docstring lines are excluded: a `# Was: load_q_50dps()`
+    marker left by an earlier fix records the trap, it is not an instance.
     """
     for line in text.splitlines():
         stripped = line.strip()
         if stripped.startswith("#") or '"""' in stripped:
             continue
-        if _NO_ARG_LOAD.search(line):
+        if _MUON_ANCHOR_ARG.search(line):
             return True
     return False
 
@@ -114,7 +128,7 @@ def direct_pinners() -> list[tuple[str, str]]:
             and re.search(r'derived_50_digit"\]', text)
             and re.search(r'\[\s*"q"\s*\]', text)
         )
-        via_helper = _uses_muon_default_helper(text)
+        via_helper = _uses_muon_via_helper(text)
         if not (direct or via_helper):
             continue
         if ROUTES_ANCHOR.search(text):

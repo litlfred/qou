@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:53:28Z
-updated_at: 2026-08-22T21:27:16Z
+updated_at: 2026-08-23T08:06:54Z
 ---
 
 Found while measuring dual-purpose reads for `qou-1c4y` / `qou-v90i`.
@@ -111,3 +111,39 @@ numbers by ~11.5 ppb in one commit; or (c) add an explicit `anchor=` parameter
 defaulting to proton. (b) is a bulk numerical change of exactly the shape that
 broke main once (`qou-m9xp`), so it wants a deliberate call rather than an
 idle-pass decision.
+
+
+## DONE (2026-08-23, PR #5494) — default is now proton, with an explicit anchor=
+
+```python
+def load_q_50dps(path: Path | None = None, anchor: str = "proton") -> ...
+```
+
+`path` still wins when given; `anchor="muon"` reaches the ideal/CAL-2 pin
+explicitly; anything else raises. The ideal layer stays reachable but must be
+**asked for**. Owner picked both options (proton default + anchor param).
+
+**Contradictions 11 -> 2**, census 637 -> 619 (current-muon 208 -> 199).
+
+**23 of 26 callers regenerated** in the same commit (constraint 4). Three did not:
+
+| producer | why |
+|---|---|
+| `binding_via_interface_knot` | timeout at 600 s (known-slow; its witness is stamped `muon` with muon data, so it is internally honest but now **stale** vs the source — needs a standalone long run) |
+| `fr_pullback_borromean_h3a_test` | timeout at 600 s at the ⁴He H_12 step (47 crossings). **Emits no witness** — it is a validator, so no staleness |
+| `delta_lambda_q_dilog_categorical_action` | hit a bug in my own change (below); fixed and re-run successfully |
+
+**Bug found and fixed by the batch:** `from q_parameter import Q_MP` inside
+`_li_2_q_util` failed for callers without a substrate path bridge —
+`_li_2_q_util` sets up none of its own and `q_parameter` lives in
+`computations/substrate/`. Now resolved relative to `__file__` with a
+`ModuleNotFoundError` fallback; verified from a clean `sys.path`.
+
+**Detector had to be corrected too.** It flagged the bare no-arg call as the
+muon route — true under the old default, **false** under the new one. Left
+unchanged it would have reported every fixed caller as a defect. Now keyed on
+`anchor="muon"`.
+
+Two pre-existing defects surfaced by the re-runs, beaned separately:
+`qou-rh31` (Markov identity broken at **both** pins — import-cone drift, not
+the re-pin) and `qou-a9li` (exact-zero assertions with `tolerance=None`).

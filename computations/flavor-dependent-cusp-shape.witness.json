@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:48:34.202640+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T07:40:58.121885+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 131,
+  "durationMs": 140,
   "computation": "flavor-dependent-cusp-shape",
   "scriptFile": "flavor_dependent_cusp_shape.py",
   "scriptHash": "c3e067e3840e",
@@ -21,30 +21,38 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/flavor_dependent_cusp_shape.py"
+    ],
+    "reproduce": "python3 -u computations/flavor_dependent_cusp_shape.py"
   },
   "auditOnly": "docs/audits/2026-06-01-flavor-dependent-cusp-shape.md",
-  "q0": "1.1099785955573347198997632204832250266562084087802",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
   "dps": 70,
   "cubic_root_structure": {
-    "z": "1.10997859555733471989976322048",
+    "z": "1.10997858275138080759166909561",
     "kind": "one_real_one_pair",
-    "c_real": "-2.85284561491617175883206685192",
+    "c_real": "-2.85284559120814717685930116078",
     "c_plus": [
-      "-1.29353438365658356038349301501",
-      "1.63355798557223899518878395077"
+      "-1.29353436989868802675368761083",
+      "1.63355797529875522542145998024"
     ],
     "c_minus": [
-      "-1.29353438365658356038349301501",
-      "-1.63355798557223899518878395077"
+      "-1.29353436989868802675368761083",
+      "-1.63355797529875522542145998024"
     ],
     "note": "At any real z the color-tube cubic (negative discriminant) has exactly ONE real root and ONE complex-conjugate pair c_± = x ± iy. The three roots ARE the three color sheets (c_r,c_g,c_b); flavor decorates which sheet a strand carries."
   },
   "D_on_color_roots": {
     "D_c_real": "0.0",
-    "D_c_plus": "0.533271493606385266130028292056",
-    "D_c_minus": "-0.533271493606385266130028292056",
+    "D_c_plus": "0.533271495897285668025305301581",
+    "D_c_minus": "-0.533271495897285668025305301581",
     "D_plus_plus_minus": "0.0",
     "D_real_is_zero": true,
     "pair_cancels": true,
@@ -64,49 +72,49 @@
       {
         "u_root": "c_real",
         "d_root": "c_plus",
-        "sum_D_proton": "0.5332714936063852661300283",
-        "sum_D_neutron": "1.066542987212770532260057",
-        "pn_difference": "-0.5332714936063852661300283",
+        "sum_D_proton": "0.5332714958972856680253053",
+        "sum_D_neutron": "1.066542991794571336050611",
+        "pn_difference": "-0.5332714958972856680253053",
         "pn_diff_imag": "0.0"
       },
       {
         "u_root": "c_real",
         "d_root": "c_minus",
-        "sum_D_proton": "-0.5332714936063852661300283",
-        "sum_D_neutron": "-1.066542987212770532260057",
-        "pn_difference": "0.5332714936063852661300283",
+        "sum_D_proton": "-0.5332714958972856680253053",
+        "sum_D_neutron": "-1.066542991794571336050611",
+        "pn_difference": "0.5332714958972856680253053",
         "pn_diff_imag": "0.0"
       },
       {
         "u_root": "c_plus",
         "d_root": "c_real",
-        "sum_D_proton": "1.066542987212770532260057",
-        "sum_D_neutron": "0.5332714936063852661300283",
-        "pn_difference": "0.5332714936063852661300283",
+        "sum_D_proton": "1.066542991794571336050611",
+        "sum_D_neutron": "0.5332714958972856680253053",
+        "pn_difference": "0.5332714958972856680253053",
         "pn_diff_imag": "0.0"
       },
       {
         "u_root": "c_plus",
         "d_root": "c_minus",
-        "sum_D_proton": "0.5332714936063852661300283",
-        "sum_D_neutron": "-0.5332714936063852661300283",
-        "pn_difference": "1.066542987212770532260057",
+        "sum_D_proton": "0.5332714958972856680253053",
+        "sum_D_neutron": "-0.5332714958972856680253053",
+        "pn_difference": "1.066542991794571336050611",
         "pn_diff_imag": "0.0"
       },
       {
         "u_root": "c_minus",
         "d_root": "c_real",
-        "sum_D_proton": "-1.066542987212770532260057",
-        "sum_D_neutron": "-0.5332714936063852661300283",
-        "pn_difference": "-0.5332714936063852661300283",
+        "sum_D_proton": "-1.066542991794571336050611",
+        "sum_D_neutron": "-0.5332714958972856680253053",
+        "pn_difference": "-0.5332714958972856680253053",
         "pn_diff_imag": "0.0"
       },
       {
         "u_root": "c_minus",
         "d_root": "c_plus",
-        "sum_D_proton": "-0.5332714936063852661300283",
-        "sum_D_neutron": "0.5332714936063852661300283",
-        "pn_difference": "-1.066542987212770532260057",
+        "sum_D_proton": "-0.5332714958972856680253053",
+        "sum_D_neutron": "0.5332714958972856680253053",
+        "pn_difference": "-1.066542991794571336050611",
         "pn_diff_imag": "0.0"
       }
     ],
@@ -126,7 +134,7 @@
     "is_derived": false
   },
   "raw_reference": {
-    "abs_D_c_plus": "0.53327149360638526613",
+    "abs_D_c_plus": "0.53327149589728566803",
     "m_n_minus_m_p_MeV": "1.293332",
     "delta_over_mp_ppm": "1378",
     "note": "D(c_+) ≈ O(1) is a pure dimensionless hyperbolic volume; the physical isospin split is 1.29 MeV ≈ 1378 ppm of m_p. These are NOT comparable without the full VolDensity/m_e MeV chain, and NO value here is tuned to the split. Listed for falsification scope only."
