@@ -39,13 +39,23 @@ the anchor ruling, and belongs in its own PR.
 
 ## What a verdict means
 
-    UNCHANGED   re-run reproduces the committed artifact once ephemera are
-                masked.  The anchor move is the ONLY thing that will change it.
-    SUBSTANTIVE the producer already disagrees with its committed artifact ON
-                MAIN.  Pre-existing staleness — drain separately.
-    CRASH       the producer does not run at all here; it cannot be regenerated
-                in either PR until that is fixed.
-    TIMEOUT     exceeded the per-producer budget; unmeasured, not a verdict.
+    UNCHANGED      re-run reproduces the committed artifact once ephemera are
+                   masked.  The anchor move is the ONLY thing that changes it.
+    SUBSTANTIVE    already disagrees with its committed artifact ON MAIN.
+                   Pre-existing staleness — drain separately.
+    …/ASSERT-FAIL  as above, but the producer also exited nonzero because an
+                   assertion INSIDE it failed.  It still ran and still wrote its
+                   artifact, so the staleness verdict stands and it CAN be
+                   regenerated; the failing assertion is a separate question.
+    CRASH          emitted nothing at all.  This one genuinely cannot be
+                   regenerated until it is fixed.
+    TIMEOUT        exceeded the per-producer budget; unmeasured, not a verdict.
+
+A nonzero exit was originally classified CRASH outright.  That was wrong in the
+direction that matters: `cyclic_intertwiner_verify.py` exits 1 while writing its
+witness and reporting `PASS=False, max_abs=0.001150426`, so calling it a crash
+discarded a real SUBSTANTIVE answer *and* put a false claim in a PR body — that
+it could not be regenerated at all.
 
 No witness is written and no number is edited.  This is a measurement.
 """
@@ -58,11 +68,23 @@ ROOT = Path(__file__).resolve().parents[2]
 MUON_A = "1.109978595557"
 sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
 try:
-    from qou_substrate.witness import _EPHEMERAL_META_FIELDS as EPH
+    from qou_substrate.witness import _EPHEMERAL_META_FIELDS as _SHARED
 except Exception:
-    EPH = frozenset({"commitSha", "computedAt", "durationMs", "environment",
-                     "scriptCommitSha", "durationSeconds", "elapsed_seconds",
-                     "elapsed_sec", "duration_sec"})
+    _SHARED = frozenset({"commitSha", "computedAt", "durationMs", "environment",
+                         "scriptCommitSha", "durationSeconds", "elapsed_seconds",
+                         "elapsed_sec", "duration_sec"})
+
+# The shared set PLUS `invocation`, matching `scripts/precision-gates.sh`.
+# That script masks `invocation` locally rather than widening the shared set,
+# and its reason (precision-gates.sh:434) is that `invocation` is genuine
+# provenance -- it records argv so a reader can reproduce the number -- while
+# 309 in-repo importers depend on `witness.py`'s comparison semantics.  That is
+# correct and is left alone.  The same local widening is required *here* for a
+# different reason: a witness committed from a bare `python3 <script>` differs
+# from this harness's run on argv ALONE, so without it every such producer reads
+# SUBSTANTIVE for a reason unrelated to staleness.  Deliberately NOT masked:
+# `scriptHash` and `engineVersion` -- a changed producer or engine is signal.
+EPH = frozenset(_SHARED | {"invocation"})
 
 
 def strip_eph(o):
@@ -157,14 +179,24 @@ def main() -> int:
             rc = None
         if rc is None:
             verdict, sib = "TIMEOUT", []
-        elif rc != 0:
-            verdict, sib = "CRASH", []
         else:
             after = {p: canon(p) for p in
                      glob.glob("computations/**/*.witness.json", recursive=True)}
             moved = [p for p in after if before.get(p) != after[p]]
-            verdict = "SUBSTANTIVE" if wp in moved else "UNCHANGED"
             sib = [p for p in moved if p != wp]
+            produced = bool(moved) or canon(wp) is not None
+            if rc != 0 and not produced:
+                verdict = "CRASH"          # genuinely emitted nothing
+            else:
+                # A nonzero exit does NOT mean the producer failed to run: many
+                # write their witness and THEN exit 1 because an ASSERTION
+                # inside it failed.  Measured: cyclic_intertwiner_verify.py
+                # exits 1, writes its artifact, and reports PASS=False with
+                # max_abs=0.001150426.  Calling that CRASH discards a real
+                # staleness answer and wrongly implies it cannot be regenerated.
+                verdict = "SUBSTANTIVE" if wp in moved else "UNCHANGED"
+                if rc != 0:
+                    verdict += "/ASSERT-FAIL"
         results.append({"producer": prod, "witness": wp, "verdict": verdict,
                         "siblings_moved": sib})
         extra = f"  (+{len(sib)} sibling(s) moved)" if sib else ""
