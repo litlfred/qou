@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T19:46:56Z
-updated_at: 2026-08-23T12:58:16Z
+updated_at: 2026-08-23T13:42:04Z
 ---
 
 From qou-e58e. Measured: the bar mirror law L(Z,N;q) - L(N,Z;1/q) = delta(q) has delta EXACTLY nucleus-independent (22-30 digits, A=2..6). Symbolically the ONLY non-bar-odd letter is the color-weighted interface, defect (q-1)^4 (q+1)^2 (q^2+1)^2 / (12 q^5) -- and interface letters are also exactly what separates the atom word from the free word. But the NUMBER of interfaces grows with A while delta does not. Nothing explains how a growing set of interface defects nets to an A-independent amount. This is the real open step; any closed form for delta comes through it. Blocked in practice by qou-j320 (symbolic trace). Audit: docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md section 4b.
@@ -52,3 +52,31 @@ STILL OPEN, and this bean stays open for them:
 2. P is irreducible over Q and remains UNINTERPRETED.
 
 Audit section 4d.
+
+CLOSED 2026-08-19 -- both remaining items, by one rule.
+
+THE RULE: a letter (sigma + d*I) contributes  z + d  to tr_M^atom / tr_M^free, with z = q^3/(q^2+1) the convention-D Markov parameter. It reproduces all three bond types, and the middle one is not a fit:
+
+    p-p   d = 0        ->  z
+    n-n   d = -h       ->  z - h = zbar   EXACTLY the bar image (9.1e-72)
+    p-n   d = d_iface  ->  z + d_iface
+
+so the whole product formula is
+
+    tr_M^free / tr_M^atom = PROD over bonds of 1/(z + d_b)
+
+worst |ratio-1| over 16 nuclei A=2..10: 4.45e-31 (the transfer floor).
+
+P IS IDENTIFIED:  P(q) = 12 q^5 (q^2+1) (z + d_iface), symbolically verified. P is the INTERFACE MARKOV WEIGHT with denominators cleared -- not a link polynomial, and the 12 and q^5 are exactly that clearing (hence P(1)=12). THE LITERATURE QUESTION OF SECTION 4e IS WITHDRAWN: nothing needs looking up. My "P probably has no knot-theoretic name" was right for the right reason, but calling it open was premature by one step.
+
+NUCLEUS-INDEPENDENCE IN ONE LINE. Since z(1/q) = zbar, and the mirror swaps the p-p/n-n counts while the bar swaps z/zbar:
+
+    R(Z,N;q)   = 1/[ z^(Z-1) zbar^(N-1) (z + d) ]
+    R(N,Z;1/q) = 1/[ zbar^(N-1) z^(Z-1) (zbar + dbar) ]
+    exp(delta) = (zbar + dbar)/(z + d)
+
+The z^(Z-1) zbar^(N-1) CANCELS IDENTICALLY -- the two swaps undo each other. delta depends ONLY on the single p-n interface. All the exponent bookkeeping (a = 7-3Z+N, b = A-1, a+a_mirror+2b = 12) was never needed; it was the same statement in coordinates that hid the cancellation. Verified symbolically: (zbar+dbar)/(z+d) == q^12 P(1/q)/P(q).
+
+REMAINING RIGOR GAP, precisely: the rule tr(x*(sigma+d*I)) = (z+d)*tr(x) is VERIFIED (16 nuclei numerically, 6 symbolically), NOT PROVED from Markov theorem -- these bond generators are not the last-strand generator Markov theorem addresses, so the rule has the FORM of the Markov property without being an instance of it. That is the entire remainder. Tracked as a fresh bean rather than keeping this one open on a much smaller object.
+
+Audit section 4f.

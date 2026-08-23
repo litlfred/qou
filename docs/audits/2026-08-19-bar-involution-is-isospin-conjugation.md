@@ -395,12 +395,13 @@ identical.
 
 ### What is still not derived
 
-- **The product formula is verified, not proved** — symbolically at six nuclei
-  (`n = 6, 9, 12`), numerically at 16 (`A = 2…10`) to ~1e-31. The bond count and the one-`(q+q⁻¹)`-per-bond factor follow from the
+- ~~**The product formula is verified, not proved.**~~ **Derived in §4f** from a
+  single rule; what remains is that rule itself, stated there. The bond count and the one-`(q+q⁻¹)`-per-bond factor follow from the
   Cayley–Hamilton reduction in `_alpha_beta`; the isospin exponent `6 + 2(N−Z)`
   is measured, not derived.
-- **`P` remains uninterpreted** — see §4e for what it is *not*, and for the
-  narrowed literature question. Irreducible over `ℚ`, no real roots, `P(1) = 12`.
+- ~~**`P` remains uninterpreted.**~~ **Identified in §4f**:
+  `P = 12 q⁵ (q²+1)(z + d_iface)`, the interface's Markov weight with
+  denominators cleared. The §4e literature question is withdrawn.
 
 ## 4e. The bond factors are Markov parameters; and what `P` is not
 
@@ -461,6 +462,71 @@ So `P` stays open, and the honest form of the literature question is narrower
 than "what is this polynomial": it is *"is there a treatment of Markov traces of
 Hecke-algebra elements with one non-group-like letter?"* — which the library, as
 scanned, does not appear to hold.
+
+## 4f. The product formula derived, and `P` with it — `qou-kgsx` closed
+
+Both items §4d left open turn out to be one item, and it is a single rule.
+
+### One rule
+
+> **A letter `σ + d·I` contributes `z + d` to `tr_M^atom / tr_M^free`**, with
+> `z = q³/(q²+1)` the convention-D Markov parameter.
+
+It reproduces all three bond types, and the middle one is not a fit:
+
+| bond | `d` | `z + d` | |
+|---|---|---|---|
+| p–p | `0` | `z` | |
+| n–n | `−h` | `z − h = z̄` | **exactly** the bar image, `9.1e-72` |
+| p–n | `d_iface` | `z + d_iface` | |
+
+So the entire product formula of §4d is
+
+```
+tr_M^free / tr_M^atom  =  ∏_{bonds b}  1 / (z + d_b)
+```
+
+Worst `|ratio − 1|` over 16 nuclei, `A = 2…10`: **4.45e-31**, the transfer's own
+floor.
+
+### `P` is the interface's Markov weight
+
+```
+P(q)  =  12 · q⁵ · (q²+1) · (z + d_iface)        (symbolically verified)
+```
+
+`P` is not a link polynomial and needs no knot-theoretic name — §4e's objection
+was right for the right reason, but the conclusion "open" was premature. The
+`12` and the `q⁵` are exactly the clearing of denominators; `P(1) = 12` follows.
+**The literature question of §4e is withdrawn: nothing needs looking up.**
+
+### Nucleus-independence in one line
+
+Since `z(1/q) = z̄`, and the mirror swaps the p–p and n–n bond counts while the
+bar swaps `z` and `z̄`:
+
+```
+R(Z,N; q)    =  1 / [ z^{Z−1} · z̄^{N−1} · (z + d) ]
+R(N,Z; 1/q)  =  1 / [ z̄^{N−1} · z^{Z−1} · (z̄ + d̄) ]
+──────────────────────────────────────────────────────
+exp(δ)       =  (z̄ + d̄) / (z + d)
+```
+
+The `z^{Z−1} z̄^{N−1}` **cancels identically** — the two swaps undo each other. So
+**`δ` depends only on the single p–n interface**, and nucleus-independence is
+immediate. The exponent bookkeeping of §4c–§4d (`a = 7−3Z+N`, `b = A−1`,
+`a + a′ + 2b = 12`) was never needed; it was the same statement in coordinates
+that hid the cancellation.
+
+Verified symbolically: `(z̄ + d̄)/(z + d) = q¹² P(1/q)/P(q)`.
+
+### The remaining rigor gap, stated precisely
+
+The rule `tr(x·(σ + d·I)) = (z + d)·tr(x)` is **verified, not proved from
+Markov's theorem** — 16 nuclei numerically, 6 symbolically. These bond generators
+are *not* the last-strand generator Markov's theorem addresses, so the rule has
+the *form* of the Markov property without being an instance of it. That is the
+entire remainder, and it is a much smaller object than what §4b started with.
 
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 

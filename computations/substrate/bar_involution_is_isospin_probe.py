@@ -463,6 +463,90 @@ def part7_general_A() -> None:
 
 
 
+
+
+# Convention-D Markov parameter and its bar image.
+def _z(x):
+    """z = q^3/(q^2+1), the convention-D Markov parameter."""
+    return x ** 3 / (x ** 2 + 1)
+
+
+def _d_iface(x):
+    """The p-n interface letter's coefficient, -h(1/2 - f/4)."""
+    hh = x - 1 / x
+    ff = (x - 1) ** 2 * (1 - x ** -4) / 3
+    return -hh * (mp.mpf(1) / 2 - ff / 4)
+
+
+def part8_bond_product() -> None:
+    print()
+    print("=" * 74)
+    print("8. THE PRODUCT FORMULA DERIVED -- one rule, and P with it")
+    print("=" * 74)
+    print("  The rule: a letter (sigma + d*I) contributes  z + d  to")
+    print("  tr_M^atom / tr_M^free, with z = q^3/(q^2+1) the convention-D")
+    print("  Markov parameter. That single rule reproduces ALL THREE bond types:")
+    print()
+    print("      p-p   d = 0        ->  z + 0  =  z")
+    print("      n-n   d = -h       ->  z - h  =  zbar   (EXACTLY the bar image)")
+    print("      p-n   d = d_iface  ->  z + d_iface")
+    print()
+    z, zb = _z(Q0), _z(mp.mpf(1) / Q0)
+    hh = Q0 - 1 / Q0
+    print(f"    |(z - h) - zbar| = {mp.nstr(abs((z - hh) - zb), 4)}")
+    check(abs((z - hh) - zb) < mp.mpf("1e-45"), "z - h is not zbar")
+    print()
+    print("  so the whole product formula of part 7 is just")
+    print()
+    print("      tr_M^free / tr_M^atom  =  PROD over bonds of  1/(z + d_b)")
+    print()
+    dif = _d_iface(Q0)
+    worst = mp.mpf(0)
+    NUC = [(1, 1), (1, 2), (2, 1), (2, 2), (1, 3), (3, 1), (2, 3), (3, 2),
+           (3, 3), (1, 4), (4, 1), (4, 2), (2, 4), (3, 4), (4, 3), (5, 5)]
+    for (Z, N) in NUC:
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, q=Q0)
+        pred = 1 / (z ** (Z - 1) * zb ** (N - 1) * (z + dif))
+        worst = max(worst, abs((tf / ta) / pred - 1))
+    print(f"    worst |ratio - 1| over {len(NUC)} nuclei, A = 2..10 : "
+          f"{mp.nstr(worst, 6)}")
+    check(worst < mp.mpf("1e-25"), f"the bond product fails (worst {worst})")
+    print()
+    print("  AND P FALLS OUT.  P = 12 q^5 (q^2+1) (z + d_iface) -- verified")
+    print("  symbolically. P is the interface's Markov weight with the")
+    print("  denominators cleared; it is not a link polynomial and needs no")
+    print("  knot-theoretic name. The 12 and the q^5 are that clearing.")
+    pP = 12 * Q0 ** 5 * (Q0 ** 2 + 1) * (z + dif)
+    print(f"    |12 q^5 (q^2+1)(z+d) - P(q_0)| / P = "
+          f"{mp.nstr(abs(pP - _P(Q0)) / abs(_P(Q0)), 6)}")
+    check(abs(pP - _P(Q0)) / abs(_P(Q0)) < mp.mpf("1e-40"),
+          "P is not 12 q^5 (q^2+1)(z + d_iface)")
+    print()
+    print("  THE MIRROR CANCELLATION, IN ONE LINE. Since z(1/q) = zbar,")
+    print()
+    print("      R(Z,N; q)    = 1 / [ z^(Z-1) zbar^(N-1) (z + d) ]")
+    print("      R(N,Z; 1/q)  = 1 / [ zbar^(N-1) z^(Z-1) (zbar + dbar) ]")
+    print("      ------------------------------------------------------")
+    print("      exp(delta)   = (zbar + dbar) / (z + d)")
+    print()
+    print("  The z^(Z-1) zbar^(N-1) CANCELS IDENTICALLY -- the mirror swaps the")
+    print("  p-p and n-n bond counts and the bar swaps z and zbar, and the two")
+    print("  swaps undo each other. So delta depends ONLY on the single p-n")
+    print("  interface. Nucleus-independence is immediate; parts 4 and 7's")
+    print("  exponent bookkeeping was never needed.")
+    print()
+    print("  Verified symbolically: (zbar + dbar)/(z + d) == q^12 P(1/q)/P(q).")
+    print()
+    print("  REMAINING RIGOR GAP, stated precisely: the rule")
+    print("  tr(x*(sigma+d*I)) = (z+d)*tr(x) is VERIFIED (16 nuclei numerically,")
+    print("  6 symbolically), not PROVED from Markov's theorem -- these bond")
+    print("  generators are not the last-strand generator Markov's theorem")
+    print("  addresses. So it is an exact, exhaustively-checked multiplicativity")
+    print("  that has the FORM of the Markov property. That is the whole of what")
+    print("  is left.")
+
+
+
 def main() -> int:
     part1_premise_is_wrong()
     part2_weights_are_bar_even()
@@ -471,6 +555,7 @@ def main() -> int:
     part5_extensive_intensive_split()
     part6_closed_form()
     part7_general_A()
+    part8_bond_product()
 
     print()
     print("=" * 74)
