@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T20:39:45Z
+updated_at: 2026-08-23T20:52:54Z
 parent: qou-59vq
 ---
 
@@ -392,3 +392,36 @@ The assembly needs `heckeWedderburn` (the lam-indexed decomposition) and `ocnean
 weights) combined with `OcneanuWeightMarkovCorner`'s corner identities. No new mathematics is
 identified as missing there either — but I said that about the inclusion gap too, and it still took
 a session's work, so read "no new mathematics" as a claim about difficulty class, not about effort.
+
+
+## Update — the tableau side of the branching compatibility (ingredients only)
+
+`SytInsertMaxTransport.lean`, sorry-free, axiom-clean, no ring at all:
+
+  cellOf_insertMax, axialDist_insertMax, swapAdmissible_insertMax_iff,
+  swapTableau_insertMax, insertMax_injective
+
+`genMat`'s entry rules read exactly four things about a tableau — cellOf, axialDist, SwapAdmissible,
+swapTableau — so "the seminormal rep of lam restricted to a corner's block IS the seminormal rep of
+mu" reduces to their compatibility with `insertMax`. These are those four, plus injectivity.
+
+**Corpus-grep paid.** I was about to build the branching bijection from scratch;
+`QOU.Mathlib.SYTBranchingRule` already has it — `branchInv`, surjective AND injective — along with
+`insertMax`, `eraseCorner`, `IsCornerCell`, `card_eraseCorner`, `syt_ext`. Only the five transport
+lemmas were genuinely absent. Anyone continuing this should grep `QOU/Mathlib/SYT*` before writing
+anything about tableaux.
+
+**These are ingredients, not the conclusion.** Still unwritten:
+
+1. the block equality `genMat_lam q k (insertMax S'') (insertMax S') = genMat_mu q k S'' S'` — a
+   case analysis over genMat's three branches using the five lemmas;
+2. the outer reindexing `{(lam, corner)} <-> {(mu, addable corner)}` — `branchInv` gives the inner
+   half (fixing lam), not the exchange of the outer index;
+3. the lam-sum with weights, where the corner identities of `OcneanuWeightMarkovCorner` get used.
+
+So the "assembly" I have been calling one gap is really these three steps. Item 1 looks
+mechanical given the transport lemmas; items 2 and 3 are where the remaining thought is.
+
+Note on `check-sidecars.sh`: it labels this file "archimedean construct present, ℝ justified". The
+file contains no ℝ and no ring — the flag comes from `≤` inside `Set.Icc`, the same weak-marker
+false positive measured under `qou-9e7p`.
