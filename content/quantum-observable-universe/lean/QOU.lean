@@ -477,6 +477,7 @@ import QOU.BraidKnot.SpechtWedderburnLe12
 import QOU.BraidKnot.SpechtWedderburnGeneral
 import QOU.BraidKnot.CentralC2Transport
 import QOU.BraidKnot.SpechtCentralC2Scalar
+import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
