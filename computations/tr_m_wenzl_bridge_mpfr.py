@@ -662,7 +662,14 @@ if __name__ == "__main__":
     # Threshold reflects the precision of the y-lambda-mpfr-witness.json
     # input q (currently stored at f64 ≈ 1e-16); regenerating that witness
     # with a 50-dps q_str would tighten this to ~1e-45.
-    TOL = mp.mpf("1e-14")
+    # Built inside `workdps` so the constant carries compute precision
+    # regardless of the ambient dps at call time — the import-time-dps gate's
+    # own prescribed fix. This module never calls `set_compute_dps()`, and
+    # adding one at module scope would raise global precision at import for
+    # every one of its importers, which is a far larger change than this
+    # self-test warrants.
+    with mp.workdps(max(50, mp.mp.dps)):
+        TOL = mp.mpf("1e-14")
     n_pass = 0
     for name, word, n_strands, expected_fn in cases:
         with mp.workdps(60):
