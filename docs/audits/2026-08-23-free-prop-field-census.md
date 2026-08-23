@@ -152,6 +152,65 @@ names three propositions and asserts them.
 > `CrystalGraphRealization.canonical`, `hasBlochGroup_real`, …). Only the two
 > above were confirmed by synthesis; some of the rest are likely legitimate
 > (e.g. a genuine `Prop` Boolean-algebra instance). A count is not a verdict.
+>
+> **FIXED 2026-08-23**: both demoted `instance` → `def`. `#synth
+> IwahoriHeckeAlgebra ℤ 3 1` now reports *failed to synthesize*; the trivial
+> model stays reachable by name (`triv_hecke ℤ 3 1`). See the correction on
+> blast radius below.
+
+### Inhabitation is what makes a free `Prop` field harmful — and it re-ranks the queue
+
+Crossing the census against inhabitation changes which carriers matter:
+
+| free-`Prop` carriers | count |
+|---|---|
+| **no inhabitant at all** | **89** |
+| `def`-only inhabitant | 17 |
+| **inhabited by a global `instance`** | **7** |
+
+The 89 are the §3b-tax **honest open state** — nothing inhabits them, so a
+downstream `[C] → P` can never be *applied*. Weak, but inert. The harm needs an
+inhabitant, so the actionable set is the intersection: `IwahoriHeckeAlgebra`,
+`CanonicalKnotIdSDP`, `HeckeAnyonicSubstrate` (×2 — two *different* classes
+sharing the name, one parameterless in `IwahoriHecke/Tw.lean` and one
+`(R) [CommRing R] (q)` in `BraidKnot/`, so also a name collision),
+`BorromeanQuark` (whose `instance canonical` is declared **twice**, in a
+chapter sibling and in the library — the shadow-pair shape again), plus
+`WedderburnDecomposition`.
+
+**So "drain the 77" was the wrong queue**; ~5–7 carriers are.
+
+> A note against my own earlier result: inhabitation **failed** as a signal when
+> I tried it as a *legitimacy classifier* on the projection ledger (§1 above).
+> Here it is not classifying legitimacy — it is the **harm multiplier**.
+> Different question, so this does not overturn that negative.
+
+### Correction: the blast radius was 3 errors, not 1
+
+I reported "demoting both produces **exactly one** error." That was wrong, and
+the way it was wrong is worth recording: **Lean halts elaboration of a
+declaration at its first error, so each fix exposes the next.** The single
+error I measured was only the first of a chain:
+
+1. `triv_wedderburn` lost the instance it was resolving — fixed by taking
+   `[self : IwahoriHeckeAlgebra R n q]` as a hypothesis. (A `letI` in the
+   *type* does **not** work: it binds for the ascription but not for the
+   `where` fields, which elaborate against the class and need it again.)
+2. Then `block_proj _ := PUnit.unit` stopped type-checking — it only ever
+   worked because the global instance pinned the carrier to `PUnit`. Over an
+   arbitrary model the projector must land in `self.carrier`, so it becomes
+   `self.one`, which is the honest reading of "trivial projector".
+
+Final state: `lean` exit 0, 0 errors, and nothing outside this file needed
+changing — so the *scope* claim ("nothing else in the corpus depended on the
+global resolution") held; only the effort estimate was wrong.
+
+**Three of my measurements in this session were truncated-log artifacts** — a
+`lean` run killed by a 2-minute command timeout leaves a log with zero errors
+in it, which reads as success. Both the "1 error" figure and a later "the
+demotion still resolves" non-result came from that. Every Lean check here now
+writes a `COMPLETE` sentinel *after* the process exits, and is only read once
+that sentinel is present.
 
 The witness genuinely violates the intended relation, not merely an unstated
 one: at `q = 1` over `ℤ`, `q − q⁻¹ = 0`, so `σᵢ² = (q − q⁻¹)σᵢ + 1` reads
