@@ -116,6 +116,43 @@ instance degenerate : QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra ℤ 3 (1 : �
 `IwahoriHeckeAlgebra` — the class does not encode the Hecke presentation, it
 names three propositions and asserts them.
 
+> **🛑 The `degenerate` instance above was UNNECESSARY, and saying "one could
+> build one" understates the finding. The library already ships one, as a
+> GLOBAL instance.** `HeckeAlgebra.lean` declares
+>
+> ```lean
+> instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+>     IwahoriHeckeAlgebra R n q where
+>   carrier := PUnit
+>   …
+>   hecke_relation := True ; braid_relation := True ; far_commute := True
+> ```
+>
+> so **typeclass resolution discharges `[IwahoriHeckeAlgebra R n q]`
+> automatically, for every `R`, `n`, `q`**. Verified by synthesis, not by
+> reading ([`2026-08-23-trivial-global-instance-probe.lean`](2026-08-23-trivial-global-instance-probe.lean),
+> exit 0): `#synth IwahoriHeckeAlgebra ℤ 3 1` answers `triv_hecke ℤ 3 1`, and
+> `(inferInstance …).carrier = PUnit` closes by `rfl`.
+>
+> `WedderburnDecomposition` has the same shape — `#synth` answers
+> `triv_wedderburn ℤ 3 1`. Those are **two steps of the canonical derivation
+> chain** whose Lean hypotheses are inert.
+>
+> Its docstring is candid about why it exists — *"Discharges the §3b-cond
+> hypothesis at the audit level; genuine instances at `R = ℚ(q)` arrive when
+> Mathlib's Iwahori–Hecke library lands"* — which is precisely what §3b-tax
+> forbids: *"an unproved primary is honestly represented by a content-bearing
+> class with no instance; do not fabricate a trivial instance to 'close' it."*
+> The harm is not the placeholder but its **globality**: being an `instance`
+> rather than a `def`, it reaches every downstream `[IwahoriHeckeAlgebra …]`
+> silently.
+>
+> **Screened, not verified:** 8 further all-trivial global instances match the
+> same shape (`HasGeneratorAction_punit`, `weinbergAngleCanonical`,
+> `CrystalGraphRealization.canonical`, `hasBlochGroup_real`, …). Only the two
+> above were confirmed by synthesis; some of the rest are likely legitimate
+> (e.g. a genuine `Prop` Boolean-algebra instance). A count is not a verdict.
+
 The witness genuinely violates the intended relation, not merely an unstated
 one: at `q = 1` over `ℤ`, `q − q⁻¹ = 0`, so `σᵢ² = (q − q⁻¹)σᵢ + 1` reads
 `σᵢ² = 1`; with `σᵢ = 0` that is `0 = 1`. So this is not a vacuous
