@@ -26,6 +26,12 @@ This probe tests the two steps AFTER the collapse.  Both fail.
       gives u4 == 4 (mod P).
       So `x == 4 (mod P)` is COMPATIBLE with x being a unit.
 
+Note on the ring.  The Frobenius lives in Z[zeta_2p] while CHECK 2 computes in
+Z[zeta_p].  These are the SAME ring for odd p: zeta_p = zeta_2p^2 gives one
+inclusion, and zeta_2p = -zeta_p^{(p+1)/2} (a primitive 2p-th root, since -1 is
+already in Z[zeta_p]) gives the other.  So the counterexample applies directly
+and is not an argument about a smaller ring.
+
 NO FLOATS ANYWHERE.  Every value below is a Python int; the polynomial
 arithmetic is exact integer arithmetic and every division is checked to have
 zero remainder.  (AGENTS.md: probes are not exempt from the precision gates.)
