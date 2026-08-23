@@ -94,3 +94,60 @@ disagreeing about the ring. That fix is parked on this bean.
 - `qou-ooeb` (completed) is a *different* thing: redundant `QOU.Foo.` prefixes on declarations inside `namespace QOU.Foo`, a style warning. These are hard import errors.
 
 Not started.
+
+## Correction and gate 2026-08-23 — 65 FQNs / 64 pairs, and the first count was wrong
+
+**The 38 above is superseded, and so is the 80 I replaced it with.** Both came
+from ad-hoc scans; the checker now exists and its figure is:
+
+| | value |
+|---|---|
+| declarations scanned | 33 798 |
+| **FQNs declared in >1 module** | **65** |
+| **mutually un-importable module pairs** | **64** (across 70 modules) |
+
+Three passes, three numbers, and the corrections are the interesting part:
+
+1. **38** — first ad-hoc scan, `def`/`abbrev` only. Undercounted by ignoring
+   every other declaration kind, and the import error does not care which kind
+   collided.
+2. **80 / 99 pairs** — all kinds, but the name capture stopped at the first dot.
+   So `theorem SurrealField.IsFinite.pow` read as a redeclaration of
+   `class SurrealField`, and `def SurrealField.finiteSubring` as a third. That
+   manufactured a three-module collision in `AppendixSurreals` out of nothing —
+   and `SurrealField` is a class this batch's own `SpectralNormalForm` work
+   depends on, so it was a plausible-looking false alarm in exactly the wrong
+   place.
+3. **65 / 64** — dotted names captured whole. Pinned by a test.
+
+The `QOU.R_q` / `QOU.q_param` finding survives all three unchanged, because it
+was verified by compiling rather than by counting:
+
+```
+QOU.R_q      abbrev  BraidKnot/CasimirShared.lean:46      (RatFunc ℚ)
+QOU.R_q      abbrev  CategoricalDqSquared.lean:60         (LaurentPolynomial ℤ)
+QOU.q_param  def     BraidKnot/CasimirShared.lean:49
+QOU.q_param  def     CategoricalDqSquared.lean:61
+```
+
+### Option 2 is built
+
+**folio-assistant `scripts/check-duplicate-decls.ts`**, with 12 scanner tests.
+Growth gate: `--baseline 65` (exit 3), `--max 0` for the end state, `--json` /
+`--tsv` for the list. Verified: exit 2 over `--max`, 0 at `--baseline 65`, 64 on
+an unknown package.
+
+```sh
+bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 65
+```
+
+Not yet wired into `prepare-merge`; that is a one-paragraph addition next to
+§4a when someone wants it.
+
+Documented limits, reported rather than silently filtered: `private`
+declarations are counted though they do not really collide, and a declaration
+head that wraps before its name is missed. **Verify any finding with the
+two-line import before acting on it** — that is how the one case that mattered
+was established, and it is the only method here that has not been wrong yet.
+
+Option 1 (one canonical `R_q`) is untouched.
