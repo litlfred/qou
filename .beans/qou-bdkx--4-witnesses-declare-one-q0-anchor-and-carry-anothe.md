@@ -3,8 +3,9 @@
 title: 4 witnesses declare one q0 anchor and carry another — declaration/payload contradiction
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-23T07:53:49Z
-updated_at: 2026-08-23T13:45:00Z
+updated_at: 2026-08-23T23:43:56Z
 ---
 
 Split out of qou-p8lx after re-measuring the `q0 constant staleness` gate on
@@ -124,3 +125,38 @@ covers 11 cases including every z2bn-shaped negative.
 Gate: 6 -> 5 stale. The five remaining are unchanged and still belong to this
 bean (2) and to the gated bulk migration qou-1c4y (2, plus z2bn's own fix on
 PR #5532's branch).
+
+
+## aK_via_lp_dual_hecke_basis — RETRACTED as a straddle (2026-08-23, PR #5611)
+
+I reported this as the fourth genuine straddle. It is not one.
+
+Its q of its own is real — a file read of the muon anchor-defining witness
+`q-pinning-50-digit.witness.json` (`Q_PIN`, line 76; `Q` line 81; `H` line 82).
+But `Q` and `H` reach exactly two statements, both stamps:
+
+    w.add_parameter("q0", repr(Q))    # line 237
+    w.add_parameter("h",  repr(H))    # line 238
+
+Every number in the witness comes from `pyhecke.gram`'s IMPORT-TIME float64
+constants `TR_M` (gram.py:218) and `G = _build_gram()` (gram.py:394), built
+from `q_parameter.Q` — the manifest pin, proton for this unlisted stem.
+
+So the 39 moving fields are anchor-sensitive MATH, as they should be. No
+computed quantity mixes two layers. The defect is a MISLABEL: the witness
+advertises muon over numbers that are entirely proton — the direction that
+misleads a reader who trusts the stamp.
+
+Bounded: `a-K-via-lp-dual-hecke-basis.witness.json` is UNTRACKED, so nothing
+wrong is on main. (`qou-fu8c` — degenerates under convention D — is likely why.)
+
+Carrier is a THIRD shape, distinct from the other two found this session:
+  1. defaulted function parameter  (`_cached_seminormal(shape)`, no q passed)
+  2. import-time module constant   (`pyhecke.gram.TR_M` / `G`) — this one
+     has no parameter to pass at all; q is fixed the instant the module loads
+  3. (the earlier inline closed-form derivations)
+
+Guard added: `anchor_flip_straddle_audit.stamp_only()` vetoes a straddle
+verdict when the producer's q reaches only stamps. Vetoes 0 of 8 inline and
+0 of 174 literal candidates — it changes no automated verdict, and fires only
+on the producer I misread by hand. That is its whole value.
