@@ -251,7 +251,11 @@ def main() -> int:
 
     # operator-selection LP with duals (AGENTS.md LP-dual rule)
     t_costs = -np.array([r["y_times_chi_abs"] for r in per_lambda])
-    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)), n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by whether
+    # the Rust binary happens to be built, so the same script yields different
+    # numbers on different boxes. Bean `qou/ftuv`.
+    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)),
+                                     n_target=1.0, backend="clarabel")
     lp_dict = lp.to_dict()
     dominant = per_lambda[0]["lambda"]
     print(f"  dominant λ*(K) = {tuple(dominant)}   duality gap = "

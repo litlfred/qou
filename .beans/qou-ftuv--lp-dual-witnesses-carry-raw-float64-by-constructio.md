@@ -1404,3 +1404,127 @@ behaviour for a tripwire; it fired, and the flip was investigated against the
       receives is infeasible before precision matters.
 - [ ] **~1,100 of the remaining carved fields are in witnesses recording no
       backend** — untouched producers, the same mechanical treatment.
+
+
+---
+
+## A local reimplementation shadowing the canonical solver, with a sign error (2026-08-23)
+
+Draining `e-0-lp-dual-h3` (120 fields) turned up something worse than
+truncation. `derive_e_0_lp_dual_h3.py` **defined its own function named
+`solve_operator_selection_lp`** — the canonical entry point's exact name — as a
+local `scipy.optimize.linprog` wrapper. A reader, or a grep-based audit looking
+for producers on the canonical path, finds that name and concludes the
+canonical solver is in use. It was not.
+
+And the reimplementation had a **sign error**: `y_0_star = -eq_marg[0]` where
+the canonical takes `+eq_marginals[0]`.
+
+```
+local      primal_obj +0.3753866308623884   y_0_star -0.3753866308623884
+           dual_obj   -0.3753866308623884   duality_gap 0.7507732617247768
+canonical  primal_obj +0.3753866308623884   y_0_star +0.3753866308623884
+           dual_obj   +0.3753866308623884   duality_gap 0.0
+```
+
+Its own strong-duality check therefore computed a gap equal to **twice the
+objective** — maximally violated — and recorded it rather than failing. Every
+`results_per_target_cone` entry in the committed witness carried
+`y_0_star = -0.12449094312996863` with `duality_gap ≈ 2 × primal_obj`, in a
+witness whose entire purpose is the LP-dual certificate. The file emits **no
+assertions at all**, so nothing could have caught it. `E_0` is derived
+downstream as `y_0_star · m_e`, so the sign propagated into an energy.
+
+Both of its modes were expressible by the canonical solver all along —
+`cone=False` is `M_bound=M_bound`, `cone=True` is `M_bound=0.0` — so the
+reimplementation was never needed. Now delegates, with the return shape kept
+verbatim so callers are unaffected. After:
+
+```
+y_0_star  +0.3753866308623884    duality_gap 2.67e-51    backend clarabel-mpfr
+```
+
+### Why it had gone unnoticed for three months
+
+The producer **could not run**. Its upstream,
+`beta-decay-energy-scale.witness.json`, had been moved to `_deprecated/` while
+**nine live scripts still read it** — this one, `derived_masses`,
+`meson_mass_from_hecke`, `derivation_chain`, `q_beta_predicted`,
+`derive_m_e_hecke_path_a`, two probes and an audit. `_deprecated/README.md`'s
+own criteria require that nothing live consume a witness before it moves, and
+the README already documents this exact failure once: `hecke_core_legacy.py`
+was moved back OUT because nine importers depended on it.
+
+So the witness sat frozen at **2026-05-11** carrying a broken certificate,
+because the script that would have refreshed it died on import.
+
+Resolved conservatively: the producer now resolves the live path first and
+falls back to the deprecated copy, with the situation spelled out at the call
+site. Verified the two copies' `nucleon_nf` payloads are **identical**, so the
+fallback changes no number — it only lets the script run. Restoring the witness
+to the live area is the fix the README's own precedent prescribes, but it is
+the owner's call: it partly reverses a deprecation, and the corpus ratchet
+baseline is documented drains-only, so the restored file would either fail
+`--strict` as a NEW dirty witness or require growing a baseline that is not
+supposed to grow.
+
+### `pyhecke-native` built — and it surfaced six pre-existing failures
+
+`scripts/build-pyhecke-native.sh` works in this sandbox (~2.5 min) and unblocks
+`he4_binding_k_stage2_probe` (158 fields) and `r5_full_canonical_knot_solver`
+(40), both of which died on `ModuleNotFoundError: pyhecke_native`.
+
+Installing it moved 31 tests from *skipped* to *running*, and **6 of them
+fail**:
+
+```
+test_native_version              '0.9.0' == '0.4.0'   (test stale vs the crate)
+test_native_gram_matches_python   max|Δ| 6.6e-08  vs a 1e-14 tolerance
+test_native_markov_z_matches_python, test_native_trace_weights_match_python,
+test_bridge_det_uses_native, test_native_version_bumped
+```
+
+Not caused by this arc — `operator_selection_lp.rs` is not on the Gram path,
+and these tests were skipped for want of the module, so they could not fail.
+Another check invisible from its own absence. The wheel is ephemeral (dies with
+the container), so CI is unaffected either way, and nothing committed here
+depends on it being present.
+
+`he4_binding_k_stage2_probe` is a long resumable compute (exact χ_λ via
+seminormal MPFR over 77 blocks, ~154 characters); it was pinned to clarabel and
+left running. The pin is a no-op for the numbers where `auto` already resolves
+to clarabel-MPFR, and protective where it does not.
+
+### Carve-out
+
+```
+4,052  start of arc
+1,352  previous commit
+1,287  aK aggregates + per-basis slices + deuteron mirrors
+1,168  derive_e_0 on the canonical MPFR solver
+```
+
+### Verification
+
+```
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0, 2 reasoned exemptions
+NaN / feasibility sweep vs pre-arc base   1 flagged — the known frobenius
+                                          false-positive correction
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+pytest tools/pyhecke (no native)          209 passed, 44 skipped
+pytest tools/pyhecke (native installed)   234 passed, 13 skipped, 6 FAILED
+                                          — pre-existing, see above
+```
+
+## Next
+
+- [ ] **Owner: `beta-decay-energy-scale.witness.json` is deprecated with nine
+      live readers.** The README's `hecke_core_legacy` precedent says move it
+      back; the ratchet's drains-only baseline says that costs a `--strict`
+      failure. Needs a ruling, not a workaround.
+- [ ] **Six native tests fail once the wheel is installed.** Invisible while it
+      is absent, which is why they have stayed red.
+- [ ] `he4-binding-k-stage2` (158) and `r5-full-canonical-knot-solver` (40)
+      are now runnable and unregenerated.
