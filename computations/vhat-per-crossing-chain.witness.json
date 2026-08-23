@@ -1,11 +1,11 @@
 {
-  "description": "vhat_per_crossing_chain — derive V̂_i = z·a_i+b_i per crossing from the Hoefsmit/seminormal rep for atomic p/n braids; falsification-test vs production vertex_volume",
+  "description": "vhat_per_crossing_chain \u2014 derive V\u0302_i = z\u00b7a_i+b_i per crossing from the Hoefsmit/seminormal rep for atomic p/n braids; falsification-test vs production vertex_volume",
   "computation": "vhat_per_crossing_chain",
   "audit_only": true,
-  "missing_input": "yekutieli-volume-join-derivation §5 item 1: per-crossing V̂_i",
+  "missing_input": "yekutieli-volume-join-derivation \u00a75 item 1: per-crossing V\u0302_i",
   "functional": {
-    "name": "Markov trace of the per-generator reduced element a_i·σ_i + b_i",
-    "form": "V̂_i = z·a_i + b_i  (z = tr_M(σ_i), 1 = tr_M(I))",
+    "name": "Markov trace of the per-generator reduced element a_i\u00b7\u03c3_i + b_i",
+    "form": "V\u0302_i = z\u00b7a_i + b_i  (z = tr_M(\u03c3_i), 1 = tr_M(I))",
     "channel": "STANDARD (2,1) Hoefsmit seminormal rep of H_3",
     "derived": true,
     "source_blocks": [
@@ -16,13 +16,13 @@
   "constants": {
     "q_0": "1.1099785955573347",
     "h": "0.20906032199559366",
-    "z": "0.49932033403356124",
+    "z": "0.6126880505488901",
     "W_sym": "0.16546138476803504",
     "W_std": "0.66907723046393",
     "W_alt": "0.16546138476803504"
   },
   "per_crossing": {
-    "proton σ_0 (uud, gen 0)": {
+    "proton \u03c3_0 (uud, gen 0)": {
       "chain": [
         [
           1,
@@ -42,7 +42,7 @@
         ],
         [
           1,
-          -0.10453016099779683
+          "-0.104530160997796839490931318232983675130811650823739913394872"
         ],
         [
           1,
@@ -53,42 +53,42 @@
           0
         ]
       ],
-      "a_transfer": 1.2024504271261043,
-      "b_transfer": 0.5456935721480104,
-      "vhat_genuine_z_a_plus_b": 1.146101521079414,
-      "vhat_explicit_matrix_markov": 1.1461015210794152,
-      "vhat_production_vertex_volume": 0.9890073159508124,
-      "genuine_vs_production_rel_pct": -13.706831571137629,
+      "a_transfer": "1.20245042712610454259036180821593016593357839231264992646369",
+      "b_transfer": "0.545693572148010858940986174179818079572242292550986568536563",
+      "vhat_genuine_z_a_plus_b": "1.28242058022558202484002609758634833528387770856240941074579",
+      "vhat_explicit_matrix_markov": "1.28242058022558407131003562974230498569354799682192780091508",
+      "vhat_production_vertex_volume": "1.08021529450377897647021376316541900627107255101769458408798",
+      "genuine_vs_production_rel_pct": "-15.7674704258281997718078413952742096649707575305936012391504",
       "scalar_vs_matrix_agree": true
     },
-    "proton σ_1 (uud, gen 1)": {
+    "proton \u03c3_1 (uud, gen 1)": {
       "chain": [
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.10453016099779683
+          "-0.104530160997796839490931318232983675130811650823739913394872"
         ]
       ],
-      "a_transfer": -0.31815910102188105,
-      "b_transfer": 1.0883675532219148,
-      "vhat_genuine_z_a_plus_b": 0.9295042446238508,
-      "vhat_explicit_matrix_markov": 0.9295042446238516,
-      "vhat_production_vertex_volume": 0.9710701586540191,
-      "genuine_vs_production_rel_pct": 4.471836924960904,
+      "a_transfer": "-0.318159101021881136918503233496761496783265309599999892411215",
+      "b_transfer": "1.08836755322191526446612827981639420245911617743741263342214",
+      "vhat_genuine_z_a_plus_b": "0.893435273852430228355597157392487618262363820813414320960249",
+      "vhat_explicit_matrix_markov": "0.893435273852431527638166636286294525318073471976538517815816",
+      "vhat_production_vertex_volume": "0.946937231584592669873808234171650999678844197647039734067695",
+      "genuine_vs_production_rel_pct": "5.98834177449315973617099582217549587100622391854825937488985",
       "scalar_vs_matrix_agree": true
     },
-    "neutron σ_0 (udd, gen 0)": {
+    "neutron \u03c3_0 (udd, gen 0)": {
       "chain": [
         [
           1,
@@ -104,11 +104,11 @@
         ],
         [
           1,
-          -0.10453016099779683
+          "-0.104530160997796839490931318232983675130811650823739913394872"
         ],
         [
           1,
-          -0.10453016099779683
+          "-0.104530160997796839490931318232983675130811650823739913394872"
         ],
         [
           1,
@@ -119,73 +119,73 @@
           0
         ]
       ],
-      "a_transfer": 1.1454089901740099,
-      "b_transfer": 0.4319263365849453,
-      "vhat_genuine_z_a_plus_b": 1.003852336163675,
-      "vhat_explicit_matrix_markov": 1.003852336163676,
-      "vhat_production_vertex_volume": 0.8542103128425175,
-      "genuine_vs_production_rel_pct": -14.906776418235973,
+      "a_transfer": "1.14540899017401014566466030753029813985871993928732872338351",
+      "b_transfer": "0.431926336584945775200094861479249274182023004810445916380428",
+      "vhat_genuine_z_a_plus_b": "1.13370473785583104826887483480629447964918129604881878049639",
+      "vhat_explicit_matrix_markov": "1.13370473785583284897490065771835754810041963930083677639779",
+      "vhat_production_vertex_volume": "0.941091598135794812533087401119772036095338695886712627865057",
+      "genuine_vs_production_rel_pct": "-16.9897093386347055728245679168031816884628837739259222787485",
       "scalar_vs_matrix_agree": true
     },
-    "neutron σ_1 (udd, gen 1)": {
+    "neutron \u03c3_1 (udd, gen 1)": {
       "chain": [
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ],
         [
           1,
-          -0.20906032199559366
+          "-0.209060321995593678981862636465967350261623301647479826789744"
         ]
       ],
-      "a_transfer": -0.42725788004816806,
-      "b_transfer": 1.1330288882109272,
-      "vhat_genuine_z_a_plus_b": 0.9196903408268037,
-      "vhat_explicit_matrix_markov": 0.9196903408268047,
-      "vhat_production_vertex_volume": 0.9755094711102174,
-      "genuine_vs_production_rel_pct": 6.069339625034243,
+      "a_transfer": "-0.427257880048168077604444428510375002070765004023024651833779",
+      "b_transfer": "1.13302888821092762415796814100254725519902122953618220183324",
+      "vhat_genuine_z_a_plus_b": "0.871253090602562706857769561467723724872869372513548169232939",
+      "vhat_explicit_matrix_markov": "0.871253090602564004905554062869087301289767183451027124674423",
+      "vhat_production_vertex_volume": "0.943101209878893899467659217218458706510677403932553867816029",
+      "genuine_vs_production_rel_pct": "8.24652676143056178250837560016105878969989321976198884080348",
       "scalar_vs_matrix_agree": true
     }
   },
   "scalar_vs_matrix_all_agree": true,
   "production_is_genuine_seminormal": false,
-  "production_max_rel_pct_vs_genuine": 14.906776418235973,
+  "production_max_rel_pct_vs_genuine": "16.9897093386347055728245679168031816884628837739259222787485",
   "production_consumer_trace": {
-    "note": "terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr computes BOTH the genuine std channel (Vs = z·a+b, line 246) AND the W-weighted 3-channel full (Vf, line 247). The genuine V̂_i = z·a+b IS production's 'std' field; the brane tower (_li_2_q_util.compute_t2_t3_from_vols) consumes the 'full' field.",
+    "note": "terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr computes BOTH the genuine std channel (Vs = z\u00b7a+b, line 246) AND the W-weighted 3-channel full (Vf, line 247). The genuine V\u0302_i = z\u00b7a+b IS production's 'std' field; the brane tower (_li_2_q_util.compute_t2_t3_from_vols) consumes the 'full' field.",
     "genuine_equals_production_std_channel": true
   },
   "pn_signal": {
-    "gen0_proton": 1.146101521079414,
-    "gen0_neutron": 1.003852336163675,
-    "gen0_rel_pct": 13.232766316031247,
-    "gen1_proton": 0.9295042446238508,
-    "gen1_neutron": 0.9196903408268037,
-    "gen1_rel_pct": 1.0614246736673723,
+    "gen0_proton": "1.28242058022558202484002609758634833528387770856240941074579",
+    "gen0_neutron": "1.13370473785583104826887483480629447964918129604881878049639",
+    "gen0_rel_pct": "12.3102755686400112253489685603987150687410638164491988967134",
+    "gen1_proton": "0.893435273852430228355597157392487618262363820813414320960249",
+    "gen1_neutron": "0.871253090602562706857769561467723724872869372513548169232939",
+    "gen1_rel_pct": "2.51400572437256091970811085714356974260436871764797879793646",
     "proton_neutron_differ": true
   },
   "trM_composition": {
-    "proton_product_production": 0.960395491210341,
-    "neutron_product_production": 0.8332902504978975,
-    "proton_product_genuine": 1.0653062286131674,
-    "neutron_product_genuine": 0.9232332971861534
+    "proton_product_production": "1.02289608049274392606720457632631918048822305970399326912168",
+    "neutron_product_production": "0.887544624808729898317703074864958328462536375976697283996892",
+    "proton_product_genuine": "1.14575978228783534599645178760111046174572198919985514060954",
+    "neutron_product_genuine": "0.987743756687660970942083960796410335340186900817751258877289"
   },
-  "verdict": "V̂_i = z·a_i + b_i is DERIVED from the standard-channel Hoefsmit seminormal rep with zero free parameters (Markov trace of the per-generator reduced element). It DIFFERS for proton vs neutron (p/n signal present in quark-pair crossings). PRODUCTION's vertex_volume is a DIFFERENT object (W-weighted 3-channel sum), NOT the genuine per-generator Markov-trace factor — flagged RED.",
-  "timestamp": "2026-07-18T17:52:31+00:00",
-  "scriptHash": "c728b1065ffa",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "verdict": "V\u0302_i = z\u00b7a_i + b_i is DERIVED from the standard-channel Hoefsmit seminormal rep with zero free parameters (Markov trace of the per-generator reduced element). It DIFFERS for proton vs neutron (p/n signal present in quark-pair crossings). PRODUCTION's vertex_volume is a DIFFERENT object (W-weighted 3-channel sum), NOT the genuine per-generator Markov-trace factor \u2014 flagged RED.",
+  "timestamp": "2026-08-23T19:27:26+00:00",
+  "scriptHash": "746c74373f14",
+  "scriptCommitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "commitSha": "b2d213833d304718b929427968cef3369a1af332",
   "engine": "python",
-  "computedAt": "2026-07-18T17:52:31.661038+00:00",
+  "computedAt": "2026-08-23T19:27:27.760053+00:00",
   "durationMs": 0,
-  "scriptFile": "vhat_per_crossing_chain.py",
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "scriptFile": "vhat_per_crossing_chain.py"
 }
