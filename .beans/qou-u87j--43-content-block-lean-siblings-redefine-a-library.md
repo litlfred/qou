@@ -640,3 +640,34 @@ coincidence, and easy to double-count.
 **Both §7c counters are now 0 on this branch.** What remains under this bean is
 37 pairs of plain field drift with no wall component — a different and much
 less urgent problem than the one it was opened for.
+
+## 2026-08-23 — after merging `main` (659 commits)
+
+Re-measured on the merged tree. `main` had been draining the same population
+from the other end: it deleted 11 content siblings that shadowed the library,
+so the pair count falls rather than the drift alone.
+
+| | `main` @797db0ebf7 | this branch, pre-merge | merged |
+|---|---|---|---|
+| same-FQN pairs | 141 | 148 | 141 |
+| faithful mirrors | 91 | 111 | 106 |
+| drifted | 43 | 37 | **35** |
+| drifted **and** crossing the §7c wall | 7 | 0 | **0** |
+| §7c regime-only | 7 | 0 | **0** |
+
+Both §7c counters hold at 0 through the merge. `prepare-merge` §4a baseline
+lowered 37 → 35.
+
+One of the 11 deletions was ours to adjudicate: `mobius-energy-proof.lean`
+conflicted (we had modified it, `main` deleted it). Accepted the deletion after
+checking the library rather than trusting the screen — `QOU/MobiusEnergy.lean`
+carries `unknot_iff`, `energyUnderMobius` and `mobiusInvariant`, none of which
+the sibling had, and hardcodes `1/4` in `classicalLimit` where the sibling had
+a free `classicalLimitCoeff`, which is a weakening rather than a
+generalisation. Our §7c fix there — reverting a migration that had deleted four
+archimedean conditions — is subsumed: the library was always `ℝ` on this
+material, so deleting the wrongly-migrated copy removes the defect outright.
+
+Worth recording, because it is the seventh direction-shape and the first that
+resolves by deletion: **sibling wrong, library right, and the sibling should
+not exist at all.** The previous six all ended with two copies in agreement.

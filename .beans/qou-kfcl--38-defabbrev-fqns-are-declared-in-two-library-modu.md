@@ -236,3 +236,23 @@ Earlier entries in this bean quoted 65 → 60 and 64 → 63 against the
 flags it and nothing is un-importable. It is redundancy, not breakage: two
 names for one ring. Corpus-wide there remain ~100 `abbrev R_q` declarations,
 and `GroundRingCore` is now the module they should collapse into.
+
+## 2026-08-23 — after merging `main`: 56 → 57, and the +1 is not ours
+
+| | `main` @797db0ebf7 | this branch, pre-merge | merged |
+|---|---|---|---|
+| declarations scanned | 34 138 | 33 793 | 34 136 |
+| duplicated FQNs | 66 | 56 | **57** |
+| un-importable module pairs | 65 | 61 | 62 |
+| modules involved | 72 | 64 | 66 |
+
+Set-differenced the pre- and post-merge FQN lists rather than reading the
+totals: **1 new, 0 gone.** The new one is
+`QOU.Mathlib.Schensted.wordOfPerm_injective`, a `theorem` at both
+`QOU/Mathlib/SchenstedPermInjective.lean:42` and
+`QOU/Mathlib/SchenstedRSKPairInjective.lean:68`, which arrived with `main`'s
+RSK–Burnside work.
+
+`prepare-merge` §4a baseline **raised** 56 → 57 with that reason stated in the
+file — a ratchet loosening should never be silent. Put it back to 56 when that
+pair is resolved.
