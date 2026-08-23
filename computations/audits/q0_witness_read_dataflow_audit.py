@@ -103,6 +103,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -266,10 +267,50 @@ def main(argv=None) -> int:
     print("      straddle the two layers inside one quantity'. Candidate, not")
     print("      verdict: reading two pinned witnesses is not yet combining")
     print("      them inside one number.)")
-    for p, v in sorted(straddles.items())[:args.show]:
-        print(f"       {p}  →  {sorted(v)}")
-    if len(straddles) > args.show:
-        print(f"       … and {len(straddles) - args.show} more")
+    # SPLIT THE STRADDLES, because the raw count over-claims.
+    # A producer that reads two differently-pinned witnesses ON PURPOSE is a
+    # cross-anchor comparison, which the owner ruling of 2026-08-08 (bean
+    # qou-pin2) protects explicitly: "explicit comparison probes are OK ... and
+    # must not be fixed". Measured on this tree, 29 of 53 carry such a signal,
+    # so quoting 53 as a defect count would be wrong by more than half.
+    #
+    # The signal is deliberately weak-but-cheap (a `compare` in prose, an
+    # explicit muon accessor, a pins dict, both literals). It is a TRIAGE
+    # ORDER, not a verdict: a `silent` producer may still be a legitimate
+    # comparison whose author never said so, and a `deliberate` one may still
+    # combine its two pins inside a single number, which is the thing actually
+    # forbidden. Only a read settles either.
+    _CMP = re.compile(
+        r"\b(compare|comparison|cross[- _]?anchor|both pins|anchor.?dependence)\b",
+        re.I)
+
+    def _deliberate(rel: str) -> list[str]:
+        f = REPO / rel
+        try:
+            src = f.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            return []
+        sig = []
+        if "q_muon_at" in src or "Q_MUON" in src:
+            sig.append("muon-accessor")
+        if _CMP.search(src):
+            sig.append("compare-word")
+        if re.search(r"(ANCHORS|PINS)\s*=\s*\{", src):
+            sig.append("pins-dict")
+        if MUON_PREFIX in src and PROTON_PREFIX in src:
+            sig.append("both-literals")
+        return sig
+
+    delib, silent = {}, []
+    for p in sorted(straddles):
+        sig = _deliberate(p)
+        (delib.setdefault(p, sig) if sig else silent.append(p))
+    print(f"     ├─ deliberate comparison (protected, qou-pin2) : {len(delib)}")
+    print(f"     └─ SILENT — no comparison signal in source     : {len(silent)}")
+    for p in silent[:args.show]:
+        print(f"          {p}  →  {sorted(straddles[p])}")
+    if len(silent) > args.show:
+        print(f"          … and {len(silent) - args.show} more")
 
     transitive = []
     if args.transitive:
@@ -359,6 +400,8 @@ def main(argv=None) -> int:
                     "that a q0 moved. One hop only.",
             "hits": hits,
             "straddle_candidates": {p: sorted(v) for p, v in straddles.items()},
+            "straddle_deliberate": delib,
+            "straddle_silent": silent,
             "transitive": transitive,
         }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print(f"\n  written: {args.emit}")
