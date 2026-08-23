@@ -909,3 +909,64 @@ untouched.
 
 Verification for this addendum: all **sixteen** arc modules rebuilt with `.olean`s deleted —
 exit 0, no linter output; every declaration `[propext, Classical.choice, Quot.sound]`.
+
+---
+
+## 2026-08-23 — index transport, and a DESIGN finding: the induction should not be indexed by `Fin m`
+
+Setting out to write Roth's lemma's statement in Lean — the check this bean asked for — turned
+up a structural decision worth recording before anyone writes it.
+
+### The transport lemma
+
+`RothIndex.lean` gains three declarations, all axiom-clean:
+
+```
+translate_rename_of_injective     translate α (rename f P) = rename f (translate (α∘f) P)
+idxWeight_mapDomain_of_injective  idxWeight d (mapDomain f i) = idxWeight (d∘f) i
+index_rename_of_injective         index d α (rename f P) = index (d∘f) (α∘f) P
+```
+
+Reindexing the variables does not change the index, provided the weights **and** the base
+point are transported with them. Injectivity is what keeps the support sum term-for-term.
+
+**Subsumption checked, not asserted.** `SeparatedIndex.lean`'s `index_rename_inl` and
+`index_rename_inr` are now one-line specialisations
+(`index_rename_of_injective Sum.inl Sum.inl_injective _ _ _`) rather than direct proofs. If
+the general lemma did not really cover them, those lines would not compile.
+
+That left `idxWeight_mapDomain_inl` and `idxWeight_mapDomain_inr` with **no consumers** — they
+existed only to support the old direct proofs. Both **deleted**. Verified by grep over the
+whole `QOU/` corpus that nothing else referenced them; keeping trivially-derivable dead
+theorems next to the general lemma they duplicate is clutter, not API.
+
+### ⚠ The design finding: `Unit ⊕ τ`, not `Fin m`
+
+The natural first instinct is to state Roth's lemma over `MvPolynomial (Fin m) ℤ`, since the
+parameter conditions (`dⱼ/dⱼ₊₁ ≥ ω`) want the variables ordered. **That fights every piece
+this arc has built.**
+
+* The separated machinery — `index_separated`, `abs_coeff_le_of_mul_separated`,
+  `det_separated_wronskian`, `RothInductionStep` — is stated for `σ ⊕ τ`. The induction
+  *already* has the shape "one variable group plus the rest".
+* The base case, `RothBaseCase.lean`, is stated at `Unit`, because `MvPolynomial.pUnitAlgEquiv`
+  is what carries one variable to `Polynomial`.
+
+So the recursion should be structured as `Unit ⊕ τ → τ`, and then **no reindexing is needed
+anywhere**: the base case lands at `Unit` exactly as proved, and the step consumes the `σ ⊕ τ`
+lemmas exactly as proved.
+
+Choosing `Fin m` instead would require, at minimum: `Fin 1 ≃ Unit` transport (that is what
+`index_rename_of_injective` was proved for), `pUnitAlgEquiv` commuting with `Polynomial.map`,
+and `Fin (m+1) ≃ Unit ⊕ Fin m` transport for both index and height. All provable, all pure
+overhead, and none of it needed by the `Unit ⊕ τ` formulation.
+
+⚠ **This is a prediction about a statement nobody has written yet.** It is better founded than
+the four wrong predictions above — it is about which existing theorems compose, and that is
+checkable — but it should still be checked by writing the statement, not adopted on this
+entry's say-so. The ordering condition is the part that will resist: `Unit ⊕ τ` carries no
+order, so the `dⱼ/dⱼ₊₁ ≥ ω` hypothesis has to be carried as data through the recursion rather
+than read off the index type. That is the real design question and it is **not** settled here.
+
+Verification: all sixteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.

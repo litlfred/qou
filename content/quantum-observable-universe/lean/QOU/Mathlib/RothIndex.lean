@@ -437,6 +437,50 @@ theorem le_index_of_X_pow_dvd_translate (d : σ → ℕ) (α : σ → R) (P : Mv
   rw [X_pow_dvd_iff_support] at h
   exact le_index_of_forall_le_support d α P j k h
 
+/-! ### Transport along a renaming
+
+Reindexing the variables does not change the index, provided the weights and the base point
+are transported with them.  This is what lets a result proved for one variable type be used
+at another — and it subsumes the two injection-specific lemmas in
+`QOU/Mathlib/SeparatedIndex.lean`, which are now derived from it. -/
+
+/-- Translating after an injective renaming is renaming after translating by the pulled-back
+point.  The variables outside the image never see `α`. -/
+theorem translate_rename_of_injective {τ : Type*} (f : σ → τ) (α : τ → R)
+    (P : MvPolynomial σ R) :
+    translate α (rename f P) = rename f (translate (α ∘ f) P) := by
+  induction P using MvPolynomial.induction_on with
+  | C a => simp [translate]
+  | add p q hp hq => simp only [map_add, translate_add, hp, hq]
+  | mul_X p i hp =>
+      rw [map_mul, rename_X, translate_mul, translate_mul, translate_X, translate_X, hp,
+        map_mul, map_add, rename_X, rename_C]
+      rfl
+
+/-- Pushing a multi-index forward along an injection and weighting by `d` is weighting by
+`d ∘ f`: injectivity is what keeps the support sum term-for-term. -/
+theorem idxWeight_mapDomain_of_injective {τ : Type*} [DecidableEq τ] (f : σ → τ)
+    (hf : Function.Injective f) (d : τ → ℕ) (i : σ →₀ ℕ) :
+    idxWeight d (Finsupp.mapDomain f i) = idxWeight (d ∘ f) i := by
+  classical
+  unfold idxWeight
+  rw [Finsupp.mapDomain_support_of_injective hf, Finset.sum_image (fun a _ b _ h => hf h)]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  rw [Finsupp.mapDomain_apply hf]
+  rfl
+
+/-- **The index is invariant under an injective renaming**, with the weights and base point
+transported. -/
+theorem index_rename_of_injective {τ : Type*} [DecidableEq τ] (f : σ → τ)
+    (hf : Function.Injective f) (d : τ → ℕ) (α : τ → R) (P : MvPolynomial σ R) :
+    index d α (rename f P) = index (d ∘ f) (α ∘ f) P := by
+  classical
+  unfold index
+  rw [translate_rename_of_injective, support_rename_of_injective hf, Finset.inf_image]
+  refine congrArg (Finset.inf (translate (α ∘ f) P).support) ?_
+  refine _root_.funext fun i => ?_
+  simp only [Function.comp_apply, idxWeight_mapDomain_of_injective f hf d i]
+
 /-! ### Sums, products and determinants
 
 The index counterparts of the height bounds in `QOU/Mathlib/MvPolynomialHeight.lean`, and

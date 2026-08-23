@@ -83,35 +83,19 @@ theorem idxWeight_sumElim (d₁ : σ → ℕ) (d₂ : τ → ℕ) (i : σ →₀
   rw [Finsupp.sumElim_support, Finset.sum_disjSum]
   rfl
 
-theorem idxWeight_mapDomain_inl (d₁ : σ → ℕ) (d₂ : τ → ℕ) (i : σ →₀ ℕ) :
-    idxWeight (Sum.elim d₁ d₂) (Finsupp.mapDomain Sum.inl i) = idxWeight d₁ i := by
-  classical
-  have h : Finsupp.mapDomain Sum.inl i = Finsupp.sumElim i (0 : τ →₀ ℕ) := by
-    rw [sumElim_eq_mapDomain_add]
-    simp
-  rw [h, idxWeight_sumElim, idxWeight_zero, add_zero]
-
-theorem idxWeight_mapDomain_inr (d₁ : σ → ℕ) (d₂ : τ → ℕ) (j : τ →₀ ℕ) :
-    idxWeight (Sum.elim d₁ d₂) (Finsupp.mapDomain Sum.inr j) = idxWeight d₂ j := by
-  classical
-  have h : Finsupp.mapDomain Sum.inr j = Finsupp.sumElim (0 : σ →₀ ℕ) j := by
-    rw [sumElim_eq_mapDomain_add]
-    simp
-  rw [h, idxWeight_sumElim, idxWeight_zero, zero_add]
-
 /-! ### The index is invariant under the injections -/
 
-/-- Injecting `U` into the larger variable set does not change its index. -/
+/-- Injecting `U` into the larger variable set does not change its index.
+
+Now a one-line specialisation of `index_rename_of_injective` in `RothIndex.lean`.  An earlier
+version of this module proved it directly; deriving it instead is the check that the general
+transport lemma really does subsume the injection-specific ones. -/
 theorem index_rename_inl (d₁ : σ → ℕ) (d₂ : τ → ℕ) (α : σ → R) (β : τ → R)
     (U : MvPolynomial σ R) :
     index (Sum.elim d₁ d₂) (Sum.elim α β) (rename Sum.inl U : MvPolynomial (σ ⊕ τ) R)
       = index d₁ α U := by
   classical
-  unfold index
-  rw [translate_rename_inl, support_rename_of_injective Sum.inl_injective, Finset.inf_image]
-  refine congrArg (Finset.inf (translate α U).support) ?_
-  refine _root_.funext fun i => ?_
-  simp only [Function.comp_apply, idxWeight_mapDomain_inl]
+  exact index_rename_of_injective Sum.inl Sum.inl_injective _ _ _
 
 /-- The right-hand counterpart of `index_rename_inl`. -/
 theorem index_rename_inr (d₁ : σ → ℕ) (d₂ : τ → ℕ) (α : σ → R) (β : τ → R)
@@ -119,11 +103,7 @@ theorem index_rename_inr (d₁ : σ → ℕ) (d₂ : τ → ℕ) (α : σ → R)
     index (Sum.elim d₁ d₂) (Sum.elim α β) (rename Sum.inr V : MvPolynomial (σ ⊕ τ) R)
       = index d₂ β V := by
   classical
-  unfold index
-  rw [translate_rename_inr, support_rename_of_injective Sum.inr_injective, Finset.inf_image]
-  refine congrArg (Finset.inf (translate β V).support) ?_
-  refine _root_.funext fun j => ?_
-  simp only [Function.comp_apply, idxWeight_mapDomain_inr]
+  exact index_rename_of_injective Sum.inr Sum.inr_injective _ _ _
 
 /-! ### The index is exactly additive across a disjoint-variable product -/
 
