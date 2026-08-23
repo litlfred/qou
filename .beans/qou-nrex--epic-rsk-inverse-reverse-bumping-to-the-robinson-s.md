@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-23T10:58:01Z
+updated_at: 2026-08-23T11:15:13Z
 ---
 
 
@@ -1155,3 +1155,22 @@ on resolution order. Cross-checked at `n = 4` against the hand instance (`parts`
 by `decide`, `dim` by `rfl`).
 
 All sorry-free; `#print axioms` `[propext, Classical.choice, Quot.sound]`.
+
+
+### Downstream drain (same branch)
+
+* `WedderburnUnconditional.nuV_top_closed_form` — the (TAIL) first instance with
+  **no** hypothesis. `PlancherelNormalisation`'s "unconditional" version still
+  carried `[SnIsotypicSpechtSplit ℚ]`; the `r + 2 ≤ 20` bound is a *separate*
+  cap of the tail machinery and is NOT discharged by the instance.
+* Nine of my own Schensted brick docstrings got the dated supersession note the
+  other thirteen already had.
+* `BurnsideDischarge`'s "residual `sorryAx`" and three `SYTEncodingBridge`
+  claims corrected, each checked by `#print axioms` first. Notably the
+  custom-`Partition` hook-length gap it calls open is **closed**
+  (`numSYT_mul_hookProduct_partition`), as is its own "remaining half of the
+  bridge" (`numSYT_eq_numStandardYoungTableaux`, in `NumSYTBridge`).
+
+Left alone on purpose: `SchenstedRSKBurnside`, `RSKBurnsideTarget` and
+`SpechtWedderburnLe12` state the old claim in past tense or inside a quoted
+correction — they read correctly.
