@@ -226,3 +226,61 @@ ratchet: lower it as the backlog drains, or the next regressions go unnoticed.
 Options 2–4 remain open, and option 2 (reorder `lean.ref` resolution so the
 Lake tree wins) would make most of option 3's hand-resync moot — worth deciding
 before anyone spends a day on the 46.
+
+## Option 2 measured 2026-08-23 — and it has to be split in two
+
+Option 2 was written as one thing ("reorder `lean.ref` resolution so the Lake
+tree wins"). Measured, it is two, and only one of them is viable.
+
+Classification of every block `walkBlocks` yields under
+`content/quantum-observable-universe`, with candidates 2–3 resolved through the
+**canonical resolver** (`resolveCanonicalLean`, with a `LakeTreeCache`) rather
+than a hand-rolled matcher — the `qou-2u26` lesson:
+
+| | blocks |
+|---|---|
+| sibling **and** Lake candidate, resolving to **different** files | **338** |
+| sibling and Lake candidate, same file (reorder is a no-op) | 0 |
+| **sibling only** — no Lake candidate at all | **569** |
+| Lake only, no sibling (unaffected either way) | 353 |
+| neither | 2226 |
+| total walked | 3486 |
+
+- **2a — reorder, sibling demoted to last resort.** The 338 start being audited
+  against the library declaration instead of the sibling; the 569 keep
+  resolving, because the sibling is still in the chain. Viable.
+- **2b — drop candidate 1 outright.** The same 338 move, *and* **569 blocks go
+  unresolved**. Not viable, and worth stating plainly because "the Lake tree
+  wins" reads like 2b.
+
+**338 is the review surface, not 46.** The drift checker only compares
+`structure`/`class` declarations that appear on both sides under the same
+fully-qualified name; 46 of those disagree. The other ~292 of the 338 change
+which file is audited without a *known* disagreement — and "no known
+disagreement" here means "no same-FQN structure pair was found", which is not
+the same as "the two files agree". Several of the 338 point at a Lake file that
+is plainly not a mirror at all: `def:so3-generators`, `def:su2-basis` and
+`prf:knot-eigenbasis-complete` all resolve to `lean/QOU/PathIntegrals.lean`, a
+large multi-declaration module, via the basename/decl-name fallback.
+
+So 2a is not a free win either: it would repoint 338 blocks' audits at files
+nobody has checked are the right target. It fixes the masking and inherits a
+different question.
+
+**Do not read 2226 as a backlog.** `walkBlocks` yields every block kind, and
+prose, remarks, tables and algorithms are not expected to carry Lean. That row
+is "has no Lean on either route", not "is missing Lean it owes".
+
+Reproduce: `scripts/` has no home for this yet — the measurement script is
+`measure-option2.ts` in the session scratchpad. If option 2 goes anywhere it
+should be re-run and committed alongside the change.
+
+### One documentation bug found on the way
+
+`BlockPaths.root` in `content/pipeline/qa-utils.ts` is documented as
+*"Root name shared by all sibling files (e.g. `carbon-valence`)"*. The value is
+the **full path stem** — `/abs/path/to/carbon-valence`. Joining it onto
+`dirname(b.ts)`, as the docstring invites, doubles the path and matches nothing:
+the first run of this measurement reported **0 siblings across 3486 blocks** and
+looked plausible enough to nearly publish. Worth a one-line docstring fix in
+folio-assistant.
