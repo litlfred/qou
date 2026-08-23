@@ -145,6 +145,15 @@ theorem prod_oneSub_telescope (R : Type*) [CommRing R] (Q : R) (d : ℕ) :
       _ = (∏ j ∈ range n, (1 - Q ^ (j + 1))) * (1 - Q ^ (n + 1)) * (1 - Q ^ (n + 1 + 1)) := by
             ring_nf
 
+/-- `Q·(1 + ⋯ + Q^{n−1}) + 1 = 1 + ⋯ + Q^n`.  The companion of `geom_oneSub`, and the whole
+arithmetic content of the row-0 Markov corner identity in `OcneanuWeightMarkovCorner`. -/
+theorem mul_geom_succ {R : Type*} [CommRing R] (x : R) :
+    ∀ n : ℕ, x * (∑ i ∈ range n, x ^ i) + 1 = ∑ i ∈ range (n + 1), x ^ i
+  | 0 => by simp
+  | n + 1 => by
+      rw [Finset.sum_range_succ (n := n), Finset.sum_range_succ (n := n + 1), ← mul_geom_succ x n]
+      ring
+
 /-- `(1 + Q + ⋯ + Q^{n−1})(1 − Q) = 1 − Q^n`.  Proved here rather than imported: the Mathlib
 module carrying `geom_sum_mul` is deprecated, and this is four lines. -/
 theorem geom_oneSub {R : Type*} [CommRing R] (Q : R) :
