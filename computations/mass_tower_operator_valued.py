@@ -50,6 +50,7 @@ from sublemma_2_1_A_operator_extract import (  # noqa: E402
     evaluate_word_matrix,
     chi_lambda_matrix_trace,
     with_interface,
+    _pn_interface_d,
     H,
 )
 from sublemma_2_1_deuteron_branching import (  # noqa: E402
@@ -108,10 +109,28 @@ NEUTRON_WORD = [
     (1.0, 0.0, 1), (1.0, 0.0, 0), (1.0, 0.0, 1),
     (-1.0, 0.0, 0), (-1.0, 0.0, 1), (-1.0, 0.0, 0),
 ]
-# Deuteron interface I = σ_2 - (h/2)·I on H_6 (boundary at strand 3).
-# This is the canonical interface used in the existing A-extraction.
+# Deuteron interface I on H_6 (boundary at strand 3), DERIVED from the same
+# classifier the A-extraction uses rather than typed.
+#
+# This read `INTERFACE_D = -H / 2` with the comment "this is the canonical
+# interface used in the existing A-extraction". That comment was true when it
+# was written and is not any more: `-h/2` is the colour-BLIND averaged
+# crossing, and the extraction migrated to the canonical `averaged_weighted`
+# p-n boundary `d = -h(1/2 - δ/4)`, which sits 7.190163e-05 away
+# (bean `qou-cds4`; AGENTS.md R3 makes colour weighting canonical).
+#
+# A^λ_{μν}(I) is a function of I, so contracting an A extracted at the
+# colour-weighted interface against a χ evaluated at `-h/2` compares two
+# different objects. Measured, that mismatch alone accounts for the whole
+# `operator_trace_identity_forward` failure: the identity holds to
+# **1.12e-15** at the canonical interface and to only **3.32e-04** at `-h/2`
+# (bean `qou-058n`). The 1e-6 tolerance was never mis-calibrated.
+#
+# Derived, not typed, so this consumer cannot drift from the extraction again
+# the way the literal did — the same reasoning `_pn_interface_d` records for
+# the producer side.
 INTERFACE_C = 1.0
-INTERFACE_D = -H / 2
+INTERFACE_D = _pn_interface_d()
 
 
 # ── Canonical API surface for downstream consumers ───────────────
