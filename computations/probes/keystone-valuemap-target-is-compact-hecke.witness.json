@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T14:14:56.082126+00:00",
-  "commitSha": "95cf7b962bb41d3777900cc6bc494b271c14d179",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:24:47.478049+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "value_target_is_compact_hecke",
@@ -13,25 +13,25 @@
     },
     {
       "name": "murakami_scan_ran",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true,
+      "passed": false,
       "source": "the committed library/arxiv-2205.01282v2/2205.01282v2.pdf must be readable (pymupdf present, file intact); a skipped scan is a failure, not a silent pass"
     },
     {
       "name": "murakami_supplies_colored_block",
-      "computed": "False",
+      "computed": "pdf-unavailable",
       "expected": "False",
-      "passed": true,
+      "passed": false,
       "source": "the uploaded GPPV paper has no colored/decorated block term (source scan)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 6,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "keystone-valuemap-target-is-compact-hecke",
   "scriptFile": "keystone_valuemap_target_is_compact_hecke.py",
-  "scriptHash": "46b8589df21c",
-  "scriptCommitSha": "70dffddcc2389351723e592716b750304442d630",
+  "scriptHash": "1ca16670215f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,8 +40,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_valuemap_target_is_compact_hecke.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_valuemap_target_is_compact_hecke.py"
   },
   "description": "s013 redirect (ii) grounding: the value-map target bwS0=d_q/D is the compact SU_q(2)/Hecke quantum-dimension vector (Laurent polynomials, = Verlinde S_0λ/S_00), and the uploaded Murakami GPPV paper has no colored/decorated block (its Σ(2,3,5) block is the undecorated D=2 golden false theta). So the non-compact q-Bessel search chases the wrong function class; single-arg form refuted, multi-arg is an unfalsifiable fit without the un-uploaded Koelink–Swarttouw kernel. No fit; no q-Bessel formula written; nothing wired.",
   "data": {
@@ -68,23 +79,10 @@
     "q_integers_are_laurent_polynomials": true,
     "self_conjugate_is_sole_product": "(3,1,1) = [4][3]/[2]",
     "murakami_scan": {
-      "available": true,
-      "pages": 18,
-      "counts": {
-        "color": 0,
-        "colour": 0,
-        "decorat": 0,
-        "wilson": 0,
-        "refined": 0,
-        "equivariant": 0,
-        "knot_total": 4,
-        "homological_block": 32,
-        "false_theta": 9
-      },
-      "any_colored_block": false
+      "available": false
     },
     "value_target_is_compact_hecke": true,
-    "murakami_supplies_colored_block": false,
+    "murakami_supplies_colored_block": "pdf-unavailable",
     "verdict": "GROUNDED: (1) bwS0=d_q/D is exactly the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced q-integers [1],[4],[5] (Laurent polynomials) + the product [4][3]/[2]; = Verlinde S_{0λ}/S_{00}. (2) The uploaded Murakami paper (GPPV proof) has no colored/decorated block; its Σ(2,3,5) block is the undecorated D=2 false theta (golden, refuted). Consequence: the non-compact q-Bessel search (redirect ii) targets a transcendental function class to hit a compact-algebraic target; the single-argument (falsifiable) form is refuted (qbessel-gate §4) and the multi-argument form is an unfalsifiable ≥4-dof fit without the (un-uploaded) Koelink–Swarttouw Plancherel kernel. The honest resolution is redirect (iii): the compact Verlinde/Hecke identity S_{0λ}/S_{00}=d_q (BWVacuumRowIsHecke), near-definitional. Scope (a) on the tested q-Bessel forms; no structural exclusion of a Plancherel-fixed row asserted."
   }
 }

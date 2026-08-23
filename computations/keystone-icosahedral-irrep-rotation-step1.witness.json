@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T16:36:24.851470+00:00",
-  "commitSha": "278f8a6a3b59934a2260467c0a92b45294510545",
+  "computedAt": "2026-08-23T09:09:33.182463+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "char_table_orthogonal",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "keystone-icosahedral-irrep-rotation-step1",
   "scriptFile": "keystone_icosahedral_irrep_rotation_step1.py",
-  "scriptHash": "caf9982f71ea",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cde55efa045f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +42,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/keystone_icosahedral_irrep_rotation_step1.py"
+    ],
+    "reproduce": "python3 -u computations/keystone_icosahedral_irrep_rotation_step1.py"
   },
   "description": "Step 1 of the keystone geometric fibre map. A₅ character table (orthogonality-verified) + the two elementary derived candidates for irrepToRotation. (a) SO(3)↓I first-ℓ FAILS injectivity (T₂,G collide at ℓ=3); (b) argmax-χ over non-identity classes gives a DERIVED injective map {0,72,120,144,180}° separating T₁/T₂ by the Galois swap. (b) is a candidate pending confirmation against the Σ₄ H⁰(Ω¹) automorphism action — not wired.",
   "data": {

@@ -60,13 +60,14 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
     seminormal_matrices_mpfr)
+from _precision import set_compute_dps  # noqa: E402
 
 try:
     from qou_substrate.constants import q_at
 except Exception:
     q_at = None
 
-mp.mp.dps = 50
+set_compute_dps()
 SHAPE = (4, 1)
 ALPHA_EM = mp.mpf("0.0072973525693")     # CODATA fine-structure const
 INV_8PI = 1 / (8 * mp.pi)

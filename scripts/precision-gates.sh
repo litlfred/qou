@@ -151,6 +151,14 @@ GATES=(
   # chi_numpy, invisible to compute_audit_scan, and misdiagnosed as slow
   # hardware for six hours. Bean qou-5qwb.
   "numpy/mpmath dtype leak|computations/numpy_mpmath_dtype_leak_audit.py||yes|yes"
+  # ADVISORY, and it was never wired in at all until now (bean qou-d8gq).
+  # This audit already names, in prose, the exact shape that cost 642x in
+  # syt_prefix_cache -- "`BlockCache(float(Q0), float(HA_VAL))` seeds a cache
+  # with doubles" -- and nothing ever ran it, so nobody read it. Advisory
+  # rather than blocking because three of its five tiers are explicitly
+  # circumstantial ("lists of places to look", per its own docstring), and a
+  # gate that fails on a high-recall list gets muted rather than fixed.
+  "f64-into-mpmath (advisory)|computations/f64_into_mpmath_audit.py||yes|no"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not

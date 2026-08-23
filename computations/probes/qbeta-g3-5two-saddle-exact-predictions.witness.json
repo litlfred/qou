@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-22T10:39:18.941584+00:00",
-  "commitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
+  "computedAt": "2026-08-23T09:38:40.910848+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "u0_controls_pass",
@@ -33,8 +33,8 @@
   "durationMs": 5,
   "computation": "qbeta-g3-5two-saddle-exact-predictions",
   "scriptFile": "qbeta_g3_5two_saddle_exact_predictions.py",
-  "scriptHash": "c93a388dd0b8",
-  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "scriptHash": "a031b1491212",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
   "invocation": {
     "argv": [
@@ -73,7 +74,7 @@
       "12": {
         "iota": "(0.91055766672409931382 + 0.0j)",
         "pole": "(0.90955435341651493926 + 0.030208740237786990186j)",
-        "arg_minus_kinematic_rad": "-8.352389719e-53"
+        "arg_minus_kinematic_rad": "0.0"
       },
       "13": {
         "iota": "(0.45527883336204965691 - 0.64717131939685599363j)",

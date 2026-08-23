@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-21T22:04:52.259818+00:00",
-  "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
+  "computedAt": "2026-08-23T09:06:45.663769+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9827,
+  "durationMs": 13725,
   "computation": "dilog-archimedean-limit-partA",
   "scriptFile": "dilog_archimedean_partA_witness.py",
-  "scriptHash": "08f2ab0cd184",
-  "scriptCommitSha": "632fbdd705331bdbe6ca058b2ff2033384c92dbe",
+  "scriptHash": "6c5ed053f6f8",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,14 +23,21 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/dilog_archimedean_partA_witness.py"
+    ],
+    "reproduce": "python3 -u computations/dilog_archimedean_partA_witness.py"
   },
   "description": "Numerical confirmation of Part A of conj:dilogarithm-archimedean-limit: (1-q) log Phi_n(x;q) -> Li_2(x) for fixed x in (0,1), q -> 1^-, along Faddeev scaling. Error tracks the elementary monotone-Riemann-sum + tail bound.",
   "schema": "qou-witness/v1",
   "name": "dilog-archimedean-limit-partA",
   "computationDetail": {
     "engine": "python+mpmath",
-    "dps": 40,
+    "dps": 70,
     "C_n_eps": "30.0",
     "script": "computations/dilog_archimedean_partA_witness.py"
   },

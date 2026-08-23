@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T07:01:30.556403+00:00",
-  "commitSha": "c71d1ba05a34a48b52d5bd7393ae5a55e7577898",
+  "computedAt": "2026-08-23T09:44:54.361560+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "no_sign_flip_at_any_geometric_mu",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "qbeta-c3-barodd-hs-matrix-resolvent",
   "scriptFile": "qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
-  "scriptHash": "416d239a1047",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8815dfffad84",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,15 +43,27 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py"
   },
   "description": "Hilbert–Schmidt matrix-O probe (PR #4064 Frobenius-pairing lens): does the MATRIX Gram-resolvent ⟨O,(G−μ)⁻¹O⟩=tr(Oᵀ(G−μ)⁻¹O) supply the bar-odd flip the SCALAR Frobenius closure Σy_λχ_λΔ_λ cannot? O = fig-8 (σ₀σ₁⁻¹)² left-reg rep on the H₃(q) NF basis; G = canonical Markov Gram; μ geometric (0/1/z/λ_min−ε), no fit. FINDINGS (scope-(a)): (1) NO sign flip at any μ — HS(p)/HS(m)≈+1.0000 vs target −4.08, incl. near-pole μ (mag ~1e6, same sign). (2) The pairing is BAR-EVEN (|HS(q)−HS(1/q)|≪|HS(q)+HS(1/q)|); S is bar-ODD (Lean fig8Trace_im_odd), so a real bar-even resolvent from Markov (bar-even) data cannot carry S's chirality. (3) Gram eigenvalues shift ~1e-8 same-direction, no crossing; a fixed μ between anchors would be a ~1e-8 fit AND diverge (pole) not zero-cross. A REAL matrix resolvent alone does not reproduce bar-odd S — reconfirms the proved bar-parity obstruction from a matrix direction. NOT scope-(b) for a COMPLEX fibre-level pole; surviving open object = pole→cusp phase φ(q₀) (qbeta_c3_barodd_pole_cusp_phase_probe.py), the fibre continuation that is the c₃⟺q₀ crux bwS0_eq_hecke. No fit; nothing wired; no tier change.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
     "target": {
       "S_proton": "-0.039459364",
-      "S_muon": "0.0096829778",
-      "target_ratio": "-4.07513",
+      "S_muon": "0.010022901",
+      "target_ratio": "-3.93692",
       "bar_parity": "bar-ODD (opposite sign)"
     },
     "finding1_no_flip": {
@@ -82,7 +94,7 @@
       "verdict": "real matrix Gram-resolvent is bar-EVEN; S is bar-ODD (Lean fig8Trace_im_odd) => cannot carry the chirality"
     },
     "finding3_no_eigen_crossing": {
-      "max_eigen_shift": "3.19926e-8",
+      "max_eigen_shift": "3.22139e-8",
       "min_gap_or_dist_to_zero": "0.0141161",
       "no_crossing": true,
       "verdict": "eigenvalue shift ~3e-8 << min gap (O(0.1)); no level/zero crossing, so a between-anchor geometric pole needs mu tuned to ~1e-8 (a fit) AND diverges (pole) rather than zero-crossing like S at q*"

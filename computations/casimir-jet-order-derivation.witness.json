@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:44:23.572033+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:57:02.261271+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "casimir-jet-order-derivation",
   "scriptFile": "casimir_jet_order_derivation.py",
-  "scriptHash": "7ceb72b63da8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "7e34286678f9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_jet_order_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_jet_order_derivation.py"
   },
   "description": "Derivation attempt under the jet-order axiom: Casimir lives at GB rank 0 (commutative substratum, no q-deformation).  This forces ε_n = n·ε (no [n]_q), which gives Σ n³ → ζ(-3) = -1/120 (standard ζ-regularization), yielding c_q = π²/720 EXACTLY at any q.  Test: evaluate the derived prefactor at three q values (1.05, substrate, 1.5).  If all three give π²/720, the derivation is q-independent (as required by the rank-0 hypothesis) and matches the textbook value.  This makes the jet-order route the FIRST candidate that's both derived (no q-deformation choice) AND matches standard Casimir at substrate.",
   "contentBlock": "conj:casimir-epsilon-vacuum",

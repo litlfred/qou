@@ -84,7 +84,7 @@ def main():
 
     order = 8
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     from codata_constants import (  # registry (no inline CODATA literals)
         M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu,
         M_P_MEV_VALIDATION as m_p_codata, M_N_MEV_VALIDATION as m_n_codata,

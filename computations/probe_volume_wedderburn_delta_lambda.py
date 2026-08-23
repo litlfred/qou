@@ -43,8 +43,9 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).parent
 
 # CAL-1 electron mass (CODATA, the binding energy scale ρ).

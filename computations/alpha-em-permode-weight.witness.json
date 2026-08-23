@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:30:52.775294+00:00",
-  "commitSha": "89e8eff44c438c399af0e8859c8599203d495b48",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:53:44.927793+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "flat_permode_det_is_L_squared_no_pi",
-      "computed": 6.310887241768095e-30,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 57,
+  "durationMs": 220,
   "computation": "alpha-em-permode-weight",
   "scriptFile": "alpha_em_permode_weight_probe.py",
-  "scriptHash": "d50c37cae132",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "09ecb41a88ba",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,8 +52,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_permode_weight_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_permode_weight_probe.py"
   },
   "description": "α_EM 1/π per-mode weight localization (follow-up to the ζ_Λ(0)=−b₁ lead, PR #3831). Machine-verified: (1) the flat-torus per-mode ζ-determinant det'(−∂²)_{S¹}(L)=L² (no bare 1/π; the fitting-trap route ruled out, scope-(a)); (2) the proved 1/(12π) template's π is Gauss–Bonnet 2πχ (Area=12π, 2/(3π)=b₁/Area); (3) the loop measure 1/(8π)=1/(π·b₁)=1/(2π·g) needs a GENUS (2πg) source, distinct from the template's Euler-char (2πχ). Conclusion: the 1/π is not forced by the ζ-determinant; it reduces to the open conj:dilogarithm-archimedean-limit (Bloch–Suslin archimedean π) plus an explicit 2πg identity on Bring. No fit; nothing wired; not reverse-engineered to 8π.",
   "data": {

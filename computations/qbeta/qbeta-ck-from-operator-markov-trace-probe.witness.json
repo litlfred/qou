@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:21:13.892218+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-23T09:48:14.916095+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "stage_c_operator_data_assembled",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30414,
+  "durationMs": 23957,
   "computation": "qbeta-ck-from-operator-markov-trace-probe",
   "scriptFile": "qbeta_ck_from_operator_markov_trace_probe.py",
-  "scriptHash": "ad510a146cb7",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "12244626bcb8",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ck_from_operator_markov_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ck_from_operator_markov_trace_probe.py"
   },
   "description": "c_4..c_8 extraction attempt from the operator-level Markov trace of the trefoil. Combines PR #1873's clean chi closed forms (q^3, 0, -q^{-3}) with y_lambda_wenzl_bridge symbolic weights; expands R(q) = tr_M / [Q_A*cos(alpha_eff)] in u = b*hbar_q^2 around q_0 to read off c_k. Gate: c_2 = -1.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
@@ -41,11 +50,11 @@
       "(1,1,1)": "-1/q**3"
     },
     "y_lambda_symbolic": {
-      "(3,)": "(q**(21/2) + q**(19/2) - q**(17/2) - q**(15/2) - 3*q**(13/2) - 3*q**(11/2) + 5*q**(9/2) + 5*q**(7/2) - 2*q**(5/2) - 2*q**(3/2) + q**11 - 2*q**9 + q**8 + 2*q**7 - 2*q**6 - 4*q**5 + 5*q**3 + 2*q**2 - 2*q - 1)/(q**14 + 2*q**13 - 2*q**11 - 2*q**10 - 2*q**9 - q**8 + q**6 + 2*q**5 + 2*q**4 + 2*q**3 - 2*q - 1)",
-      "(2,1)": "(q**(25/2) + q**(23/2) - 3*q**(21/2) - 3*q**(19/2) + 2*q**(17/2) + 2*q**(15/2) + 2*q**(13/2) + 2*q**(11/2) - 3*q**(9/2) - 3*q**(7/2) + q**(5/2) + q**(3/2) + q**12 + q**11 - q**10 - 2*q**9 - 2*q**8 + 2*q**6 + 2*q**5 + q**4 - q**3 - q**2)/(q**14 + 2*q**13 - 2*q**11 - 2*q**10 - 2*q**9 - q**8 + q**6 + 2*q**5 + 2*q**4 + 2*q**3 - 2*q - 1)",
-      "(1,1,1)": "(-2*q**(25/2) - 2*q**(23/2) + 5*q**(21/2) + 5*q**(19/2) - 3*q**(17/2) - 3*q**(15/2) - q**(13/2) - q**(11/2) + q**(9/2) + q**(7/2) + q**14 + 2*q**13 - 2*q**12 - 5*q**11 + 4*q**9 + 2*q**8 - 2*q**7 - q**6 + 2*q**5 - q**3)/(q**14 + 2*q**13 - 2*q**11 - 2*q**10 - 2*q**9 - q**8 + q**6 + 2*q**5 + 2*q**4 + 2*q**3 - 2*q - 1)"
+      "(3,)": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+      "(2,1)": "q**2/(q**2 + 1)**2",
+      "(1,1,1)": "0"
     },
-    "tr_M_trefoil_q": "(q**(27/2) + q**(25/2) - q**(23/2) - q**(21/2) - q**(19/2) - q**(17/2) + q**(11/2) + q**(9/2) + q**(7/2) + q**(5/2) - q**(3/2) - sqrt(q) + q**14 - 2*q**12 + q**8 + q**6 - 2*q**2 + 1)/((q - 1)**3*(q + 1)**5*(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+    "tr_M_trefoil_q": "q**3*(q**4 + 1)/(q**2 + 1)**2",
     "tr_M_at_q_eq_1": "1/2",
     "u_at_q_0": "0.0085172363404849214399331129022993960823890422302814",
     "u_q_leading_order_near_q1": "u(q) ~ (sqrt(3)/2)(q-1)^2 near q=1",

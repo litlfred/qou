@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T16:51:41.764045+00:00",
-  "commitSha": "dd13043cefd32bb26989f4c7b4db2239d67e452a",
+  "computedAt": "2026-08-23T08:57:11.441765+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3546,
+  "durationMs": 4500,
   "computation": "chi-at-q0-rust-lossless-helium-4",
   "scriptFile": "chi_4he_via_rust_lossless.py",
-  "scriptHash": "61add1850a3c",
-  "scriptCommitSha": "d196f9ff2646ebd4293d9819c02dd0eb9bf24118",
+  "scriptHash": "2dfa4abf5e5f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,15 +23,22 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_4he_via_rust_lossless.py"
+    ],
+    "reproduce": "python3 -u computations/chi_4he_via_rust_lossless.py"
   },
   "description": "Lossless ⁴He per-λ χ at q_0 via Rust chi_q_via_gp (all 77 partitions, no max_dim cap). Completes the lossless matrix-M active-set inputs for A≤4. Sign-only convention; matches the matrix-M backend.",
   "data": {
     "atom": "helium-4",
     "n_strands": 12,
     "n_partitions": 77,
-    "tr_M_at_q0": "2.8995883213999056886707037666534943681400616436088",
-    "cache_path": "/workspace/qou/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+    "tr_M_at_q0": "2.899588321399905688670703766653494368140061643608610474185328210206333",
+    "cache_path": "/tmp/qou-mine/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
     "lean_uniqueness_ref": {
       "nucleus": "helium-4",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",

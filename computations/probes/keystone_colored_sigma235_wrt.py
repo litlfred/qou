@@ -64,8 +64,9 @@ from mpmath import mp, mpf, nstr  # noqa: E402
 from _precision import str_at_true_precision  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 # Experimental (proton) pin — the default for all compute per the 2026-08-07 owner directive.
 # This file previously carried the muon pin 1.1099785955541805 (−11.5 ppb); it was moved here
 # rather than left straddling, since the whole quantity must sit on one layer.

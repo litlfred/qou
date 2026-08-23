@@ -2,7 +2,7 @@
   "probe": "qbeta_5two_route35_inversion_shape",
   "bean": "qou-invr",
   "cross_ref": "qou-rstq",
-  "dps": 40,
+  "dps": 70,
   "attack_vector": "A2 -- is Re Li2 continuous across the cut? YES",
   "gates": [
     {
@@ -71,8 +71,8 @@
       "gate": "G3",
       "claim": "THE REDUCTION. Given G1/G2, the inversion leg is equivalent to the REAL identity Re Li2(x) + Li2(1/x) = pi^2/3 - (1/2)log^2(x) for x > 1 -- in which 1/x lies in (0,1), where the series converges and cLiTwo_ofReal already bridges. No boundary value, no cut-crossing, no new analytic infrastructure. This is a different and much smaller problem than the one qou-invr recorded",
       "n_points": 200,
-      "worst": "9.757521467e-41",
-      "at_x": "10.8",
+      "worst": "9.055679079e-71",
+      "at_x": "9.45",
       "pass": true
     },
     {
@@ -113,12 +113,12 @@
       "gate": "G5",
       "claim": "the target itself: extend(pi^2/6, rogersL)(x) = Re L(x) for x > 1, 200 points. And at w_1 = 1/(1-x_root) = 2.24698 -- the ONE argument of the six that `extended_sum` uses in this regime, and the whole of what qou-rstq item 4 still lacks",
       "n_points": 200,
-      "worst": "9.183549616e-41",
-      "at_x": "1.4",
+      "worst": "7.244543263e-71",
+      "at_x": "1.7",
       "w1": "2.2469796037174670611",
       "extend_at_w1": "2.543675100801596303694",
       "ReL_at_w1": "2.543675100801596303694",
-      "difference_at_w1": "4.5917748e-41",
+      "difference_at_w1": "3.6222716e-71",
       "pass": true
     },
     {

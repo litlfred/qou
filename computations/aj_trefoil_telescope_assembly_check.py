@@ -126,7 +126,9 @@ print(f"  [SIM N=1..10] J-form + annihilation at w = 9/7: "
 # These are the two cited cores of the Lean case split (they are the
 # root-of-unity periodicity of the Rosso-Jones sum).
 import mpmath as mp  # noqa: E402
-mp.mp.dps = 40
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 
 def qint_mp(vv, k):

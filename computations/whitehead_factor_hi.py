@@ -23,8 +23,10 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from whitehead_weightblock_numeric import reduced_at_root  # noqa: E402
 from whitehead_c0_mpmath import fig8_exact_logJ, fit_c0, VOL_WHITEHEAD, VOL_4_1  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 OUT = Path(__file__).resolve().parent / "whitehead-factor-hi.witness.json"
 # EXACT-root anchors (mpmath) from the merged whitehead-c0-mpmath tower; the
 # float64 δ-extrap tower (N≥16) carries ~1e-3, so these anchor the low-N scale.

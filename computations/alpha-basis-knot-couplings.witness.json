@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:27:10.694629+00:00",
-  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
+  "computedAt": "2026-08-23T08:49:02.057516+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "trace-ratio identity: alpha_EM=h^2/(q dq9 dq10) is 1/(q[9]_q[10]_q)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "alpha-basis-knot-couplings",
   "scriptFile": "alpha_basis_knot_couplings.py",
-  "scriptHash": "f1eff9c09d34",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "3a28a60b8370",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,50 +34,59 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_basis_knot_couplings.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_basis_knot_couplings.py"
   },
   "description": "Pre-archimedean foundation of the alpha_{basis-knot} coupling family (owner: take up + finish; no pi). The 6 cohomological force-knots on Sigma_4 each carry the q-dimension decoration delta_q(T_{2,k}) = q^k-q^-k = h[k]_q in R=Z[q^+-1/2,h^-1] (no pi). alpha_EM := alpha_{T_2_3} (trefoil, electromagnetic) has the pre-archimedean bare form 1/alpha_EM = q[9]_q[10]_q = h^2/(q delta_q(T_{2,9}) delta_q(T_{3,5})) (the antisymmetric e_- / sinh Hopf coupling, prop:alpha-em-categorical-trace-ratio), bare residual -1.55e-3 vs CODATA. The pi-carrying corrections 2/(3pi)+alpha/(4pi) are the archimedean image of the Hopf S^1->S^3->S^2 / e_- sinh channel (the SAME channel as van der Waals, prop:vdw-pskew-isolation); the program's optimization is to express them by their pre-archimedean sinh/q source. The 3-strand T_{3,4} delta_q (Rosso-Jones) and the per-force alpha_K assembly are the open next steps. Nothing fitted.",
   "contentBlock": "prop:alpha-em-categorical-trace-ratio",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "h": "0.20906029879563931543084621312967494385975749526306",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "h": "0.209060298795639315430846213129674943859757495263024555381696054458976",
     "basis_knots": {
       "T_2_3": {
         "strand": 2,
         "k_eff": 3,
         "force": "electromagnetic (= alpha_EM particle, trefoil)",
-        "qbracket": "3.0437062085325219894020193356773883097682139607135",
-        "delta_q": "0.6363181294019515139253712488142545739471077114434"
+        "qbracket": "3.04370620853252198940201933567738830976821396071350610903595079685529",
+        "delta_q": "0.6363181294019515139253712488142545739471077114432856525408475083536772"
       },
       "T_2_5": {
         "strand": 2,
         "k_eff": 5,
         "force": "2nd generation",
-        "qbracket": "5.2204412753268982449604332529939014512324483022232",
-        "delta_q": "1.0913870128649297170551322491154806202713029123852"
+        "qbracket": "5.220441275326898244960433252993901451232448302223150673793231822439806",
+        "delta_q": "1.091387012864929717055132249115480620271302912384958173558037893635092"
       },
       "T_2_7": {
         "strand": 2,
         "k_eff": 7,
         "force": "charm / 3rd generation",
-        "qbracket": "7.6253420371324969567014176298925592462313698621",
-        "delta_q": "1.594156284701868797602245650114350220181861076835"
+        "qbracket": "7.625342037132496956701417629892559246231369862099751206274393560130806",
+        "delta_q": "1.594156284701868797602245650114350220181861076834695654333573384122148"
       },
       "T_2_9": {
         "strand": 2,
         "k_eff": 9,
         "force": "strong binding (force-carrier)",
-        "qbracket": "10.363517588144814615476005235618123336048773635113",
-        "delta_q": "2.1666000835514182499532437954221779175359042942104"
+        "qbracket": "10.3635175881448146154760052356181233360487736351127375694972183228255",
+        "delta_q": "2.166600083551418249953243795422177917535904294209919408659280265148226"
       },
       "T_3_5": {
         "strand": 3,
         "k_eff": 10,
         "force": "weak / beta-decay (force-carrier; Rosso-Jones->[10])",
-        "qbracket": "11.89427522820016978504740777238092244938011281392",
-        "delta_q": "2.4866207331650984990238622236724320096391903086749"
+        "qbracket": "11.89427522820016978504740777238092244938011281391924746506418488888182",
+        "delta_q": "2.486620733165098499023862223672432009639190308674340629266773293231987"
       },
       "T_3_4": {
         "strand": 3,
@@ -86,10 +95,10 @@
         "status": "open-3strand-rosso-jones"
       }
     },
-    "inv_alpha_em_bare": "136.82320885358258430804610540444147849492999517976",
-    "trace_ratio_check": "0.0073087015600556568914203806394122356062676461516769",
+    "inv_alpha_em_bare": "136.8232088535825843080461054044414784949299951797473600635303837071519",
+    "trace_ratio_check": "0.007308701560055656891420380639412235606267646151677753333843048344441257",
     "codata_inv_alpha": "137.035999177",
-    "bare_residual_rel": "-0.0015528060122549916813082164487812227620256805028112",
+    "bare_residual_rel": "-0.001552806012254991681308216448781222762025680502931893738744306896250931",
     "finding": "The alpha_{basis-knot} family is founded on the pre-archimedean q-dimension decorations delta_q(T_{2,k}) = q^k-q^-k = h[k]_q (no pi). alpha_EM := alpha_{T_2_3} bare = 1/(q[9]_q[10]_q) (the e_- sinh Hopf coupling), residual -1.55e-3. The pi corrections are the archimedean image of the Hopf/e_-/sinh channel (= the van der Waals channel); the no-pi optimization is their pre-archimedean sinh/q source. Open: 3-strand T_{3,4} Rosso-Jones exponent; the per-force alpha_K assembly (which carriers mediate which force)."
   },
   "q0Anchor": "proton",

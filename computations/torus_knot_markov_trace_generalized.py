@@ -62,8 +62,9 @@ sys.path.insert(0, str(HERE))
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 Q_0 = mp.mpf(Q_50_DIGIT_STR)
 Q_0_F64 = float(Q_0)
 

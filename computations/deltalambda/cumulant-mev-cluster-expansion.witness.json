@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T13:38:52.488236+00:00",
-  "commitSha": "0faae5a69238cee2b346a2c8b36d0c10076568cd",
+  "computedAt": "2026-08-23T09:01:10.918890+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "deuteron_pair_order_matches_AME_6dig",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "cumulant-mev-cluster-expansion",
   "scriptFile": "cumulant_mev_cluster_expansion_probe.py",
-  "scriptHash": "ad6bcec92ee1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7a8e2aa2c3b0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/cumulant_mev_cluster_expansion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/cumulant_mev_cluster_expansion_probe.py"
   },
   "description": "Item 1: the cumulant->MeV map is a cluster expansion — the deuteron's LINEAR B=√5·E_unit·ladder is the pair order, the He4-local LOG b₄=−ln det is a connected many-body order; same E_unit anchor. Resolves the #4093 'linear-vs-log inconsistency' as a category error (pair term vs 4-body cumulant; 5g linear vs -ln det2 ~ g^2 quadratic). Deuteron pair-order matches AME to 6 digits; 4He = 6 pair terms + many-body (b3+b4) remainder. Does not derive E_unit or close the b4 magnitude. Forward, no fit, audit-only.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

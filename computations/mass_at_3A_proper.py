@@ -48,6 +48,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+import os
 import sys
 import math
 import json
@@ -88,10 +89,31 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)
 
 def jones_wenzl_weight(shape: tuple[int, ...],
                         q: float = Q0, z: float = Z_MARKOV) -> float:
-    """Ocneanu/Jones–Wenzl weight ω_λ(q, z) for H_n(q) Markov trace.
+    """Hook-content weight ω_λ(q, z) for H_n(q). **DOES NOT SUM TO 1.**
 
-    Σ_λ ω_λ = 1 (normalization) — unlike the Plancherel weight
-    d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1.
+    The docstring here used to assert "Σ_λ ω_λ = 1 (normalization) — unlike the
+    Plancherel weight d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1". That is
+    backwards. Measured over all λ ⊢ 3A via `ocneanu_weights_3A`:
+
+        A       1         2         3
+        this   -0.8230   +0.0547   -0.0009
+        plancherel  1.0000    1.0000    1.0000
+
+    `computations/ocneanu_weights.py::omega_lambda_formula_guess` carries the
+    same hook-content shape under the docstring "FAILED GUESS: ... Does NOT
+    satisfy Σ ω = 1 at q ≠ 1. Retained for reference; see
+    omega_lambda_via_inversion below for the correct approach."
+
+    So this function is a closed-form GUESS at the Ocneanu/Jones–Wenzl weights,
+    not those weights. Selecting `weight_scheme="jones_wenzl"` buys small V̂
+    values — which looks like it fixes the Φ_q pole that
+    `normalized_plancherel` walks into — but it gets them by near-cancelling
+    weights driving the volumes toward zero, not by being right. Bean qou-2tuv.
+
+    The correct construction is the linear-system inversion in
+    `ocneanu_weights.py` (solve Σ_λ (ω_λ/d_λ)·χ_λ(T_w) = tr_M(T_w) over reduced
+    words; "works at ANY convention — no need to guess the formula"), which is
+    p(n)×p(n) and therefore has its own feasibility ceiling.
     """
     n = sum(shape)
     if n == 0:
@@ -158,10 +180,53 @@ _SEMINORMAL_CACHE: dict[tuple[int, tuple[int, ...]], tuple] = {}
 _BLOCK_CACHE: BlockCache | None = None
 
 
+#: Build the seminormal matrices at full mpf precision instead of float64.
+#:
+#: `BlockCache(float(Q0), float(HA_VAL))` is named verbatim in
+#: `f64_into_mpmath_audit`'s own prose as the shape that "seeds a cache with
+#: doubles". Every seminormal entry therefore descends from a binary64 q, and
+#: the whole H_{3A} character sum is capped at 53 bits — while the braid word
+#: it multiplies against has been mpf since `efcaf79ed`, so the products leave
+#: BLAS for dtype=object anyway. Measured: 642x slower at dim=162, carrying
+#: float64 information. Worst of both (bean qou-d8gq).
+#:
+#: OFF BY DEFAULT, and deliberately so. Turning it on changes every value this
+#: module produces beyond digit ~16 and costs the full 642x, so it is not a
+#: change to make silently on behalf of ~20 consumers. It exists so the
+#: correct-and-slow path can be MEASURED — which is what the A-dependence
+#: question needs (bean qou-2tuv) — and so the choice between it and a declared
+#: float64 tier is made on numbers rather than on principle alone.
+_H3A_MPF = os.environ.get("QOU_H3A_MPF", "0") in ("1", "true", "yes")
+
+
+def _q_pair():
+    """(q, h) at the precision this run is configured for.
+
+    `set_compute_dps()` FIRST, and it is not optional. Without it mpmath sits
+    at its default `mp.dps = 15` / `mp.prec = 53`, so every mpf built here —
+    and every product of them — carries exactly 53 bits. The first version of
+    this flag did that: it built `dtype=object` arrays of mpf, paid the full
+    642x object-matmul cost, and returned values with a 52-bit mantissa that
+    compared EQUAL to their own float64 round-trip. mpf-typed, float64-valued.
+
+    That is the laundering pattern `pyhecke.atom.reject_float64_q` is written to
+    catch ("an mpf whose VALUE is a float64's decimal expansion"), and shipping
+    it under a flag named QOU_H3A_MPF would have been worse than not having the
+    flag: it would have let a caller believe the precision question was
+    answered. Caught by an adversarial review of this diff, not by a gate.
+    """
+    if _H3A_MPF:
+        from _precision import set_compute_dps
+        set_compute_dps()
+        from q_parameter import Q_MP as _q_mp, HA_MP as _h_mp
+        return _q_mp, _h_mp
+    return float(Q0), float(HA_VAL)
+
+
 def _ensure_block_cache() -> BlockCache:
     global _BLOCK_CACHE
     if _BLOCK_CACHE is None:
-        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+        _BLOCK_CACHE = BlockCache(*_q_pair())
     return _BLOCK_CACHE
 
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
@@ -241,10 +306,20 @@ def _cached_seminormal(shape: tuple[int, ...], q=None):
     # collided every shape at the same n into a single n{n}_q1.npz file
     # that held only the LAST-written shape's data.  Construct the
     # filename by direct string concat to avoid with_suffix.
-    # The q in this stem was always the module `Q0`; it is now the q this
-    # build is actually AT. Same format, so every existing archive still
-    # resolves — the field simply becomes meaningful instead of constant.
-    stem_name = f"n{n}_q{float(q):.10f}_shape{'-'.join(map(str, shape))}"
+    # Two independent fixes to this stem, both kept.
+    #
+    # main: the q here was always the module `Q0`; it is now the q this build is
+    # actually AT. Same format, so every existing archive still resolves — the
+    # field simply becomes meaningful instead of constant.
+    #
+    # this branch: `_mpf` in the stem, because the cache is keyed on q to 10 dp,
+    # which CANNOT distinguish an f64 build from an mpf one (they agree to far
+    # more than 10 dp). Without the suffix, flipping QOU_H3A_MPF would silently
+    # load the truncated float64 .npz and report it as full precision — the exact
+    # class of error that flag exists to remove. The two are orthogonal: one names
+    # WHICH q, the other names AT WHAT PRECISION.
+    _prec_tag = "_mpf" if _H3A_MPF else ""
+    stem_name = f"n{n}_q{float(q):.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
@@ -541,6 +616,26 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                              include_inter: bool = True,
                              weight_scheme: str = "normalized_plancherel",
+                             # NOT changed to "jones_wenzl", and the attempt
+                             # is recorded here so nobody repeats it. That
+                             # scheme's weights DO NOT SUM TO 1 — measured
+                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
+                             # +0.0547 at A=2, -0.0009 at A=3 — against the
+                             # "normalized to Sigma = 1 for the Markov identity
+                             # tr_M(1) = 1" three lines below. It appears to fix
+                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
+                             # binding_3A_tower 1e7 -> 0.331) only because the
+                             # near-cancelling weights drive every V_hat toward
+                             # zero, not because the volumes become right.
+                             #
+                             # So the Phi_q-pole problem documented on bean
+                             # qou-2tuv is REAL and still OPEN: normalized_
+                             # plancherel puts V_hat at 1.08837 against a cap of
+                             # 1.087779, and docs/audits/2026-05-11-plancherel-
+                             # usage-audit.md marked this scheme DEPRECATED in
+                             # May. Both schemes are wrong for the tower; that
+                             # is the finding, and picking between them is not
+                             # the fix.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -577,7 +672,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             word_by_gen[g].append((c, d))
 
     nfac = qfac(n_strands)
-    V_hat = [0.0] * n_gens
+    # Under QOU_H3A_MPF the accumulator must NOT start as a float: `0.0 + mpf`
+    # is fine, but `float(np.trace(M))` two lines down would still truncate the
+    # mpf trace, so building the matrices at mpf would buy nothing. Both are
+    # conditioned on the flag; the f64 path is byte-identical to before.
+    V_hat = [(mpf(0) if _H3A_MPF else 0.0)] * n_gens
 
     # Weight table — normalized to Σ = 1 for the Markov identity
     # tr_M(𝟏) = 1; alternate schemes available for audit.
@@ -620,9 +719,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             for (c, d) in w_i_steps:
                 M = M @ (c * sigmas[i] + d * I_lam)
             if is_sparse:
-                tr = float(M.diagonal().sum())
+                _t = M.diagonal().sum()
+                tr = _t if _H3A_MPF else float(_t)
             else:
-                tr = float(np.trace(M))
+                _t = np.trace(M)
+                tr = _t if _H3A_MPF else float(_t)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
@@ -684,8 +785,74 @@ def log_phi_q(z_val: float, *, q: float = Q0,
     return total
 
 
+#: Cached (q, q^-1) for the Li_2^q tower term, loaded once from the canonical
+#: pinning witness.
+_LI2Q_Q_CACHE: tuple | None = None   # (dps, q, q_inv)
+
+
+def tower_term_li2q(v_abs: float) -> "mpmath.mpf":
+    """Lean-mandated per-generator tower term: ``towerTerm q V = -Li_2^q(-|V|)``.
+
+    This is `QOU.BraidKnot.QuantumDilogarithm.towerTerm`, the form the Lean
+    class `HasCorrectedMassEndomorphismTower` requires of any consumer of the
+    mass-endomorphism tower ("should assert `f = towerTerm`, not `f = phi_q`.
+    The latter is the historical pathological form preserved only as a
+    diagnostic").
+
+    Lean proves these are genuinely different functions, not two spellings of
+    one: `phi_q_ne_li2_q` refutes the historical identity claim
+    `Phi_q(z) = -Li_2^q(-z)` by counter-example at z = 0, where Phi_q is the
+    empty PRODUCT (1) and -Li_2^q(-0) is the empty SUM (0). No `sorry`.
+
+    Note the minus signs: outside AND on the argument. The negative argument is
+    what makes the series alternate and converge; the positive-argument form
+    diverges here because |V_hat| can exceed 1.
+    """
+    global _LI2Q_Q_CACHE
+    import mpmath as _mp
+    from _li_2_q_util import li_2_q, load_q_50dps
+    # Built at >= COMPUTE_DPS regardless of the caller's ambient precision, for the
+    # reason `_q_h_at_precision` gives above: an mpf keeps the precision it was
+    # CREATED at, so loading q under the mpmath default (dps = 15) would bake in
+    # a 15-digit q and silently undo everything below. It matters twice here --
+    # `li_2_q` also sets its own truncation from the ambient dps
+    # (`eps = 10**(5 - mp.dps)`), so at the default it would stop the series at
+    # 1e-10 and hand back an mpf-typed, float64-valued answer. That is the exact
+    # "precision theatre" this module already carries a warning about.
+    # Callers already inside a higher workdps keep theirs.
+    from _precision import COMPUTE_DPS
+    with _mp.workdps(max(_mp.mp.dps, COMPUTE_DPS)):
+        dps = _mp.mp.dps
+        if _LI2Q_Q_CACHE is None or _LI2Q_Q_CACHE[0] != dps:
+            q, q_inv, _z = load_q_50dps()
+            _LI2Q_Q_CACHE = (dps, q, q_inv)
+        _, q, q_inv = _LI2Q_Q_CACHE
+        # Returns mpf, NOT float. `mpf(v_abs)` on a Python float is exact -- it
+        # takes the binary64 value verbatim, no decimal round-trip -- so nothing
+        # is lost on the way in and nothing is truncated on the way out. The sums
+        # in `mass_from_tower_safe` promote to mpf on contact, which is the
+        # point: a downcast here would cap the whole tower at 53 bits.
+        return -li_2_q(-abs(_mp.mpf(v_abs)), q, q_inv)
+
+
+def _tower_spec(term: str, cap_frac: float):
+    """Resolve the archimedean specialisation function by name.
+
+    ``"tower_term"`` -> `tower_term_li2q`  (Lean-mandated, DEFAULT)
+    ``"phi_q"``      -> `phi_q_safe`       (historical; MASS context only --
+                        absolute masses and ratios, per `_li_2_q_util`'s rule
+                        that Li_2^q is canonical for BINDING context)
+    """
+    if term == "tower_term":
+        return tower_term_li2q
+    if term == "phi_q":
+        return lambda x: phi_q_safe(x, cap_frac=cap_frac)
+    raise ValueError(f"unknown term: {term!r} (want 'tower_term' or 'phi_q')")
+
+
 def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
-                            cross_mode: str = "adjacent"):
+                            cross_mode: str = "adjacent",
+                            term: str = "tower_term"):
     """Tower mass using phi_q_safe — Φ_q evaluations clipped at cap_frac·q₀.
 
     Mirrors mass_endomorphism.mass_from_tower but regularizes the
@@ -704,31 +871,28 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
     Returns (desc, single, cross, total).
     """
     from mass_endomorphism import z_mark as _zm
+    _spec = _tower_spec(term, cap_frac)
     n = len(vols)
     desc = 1.0
     for v in vols:
         desc *= v["full"]
     desc = abs(desc)
-    single = sum(phi_q_safe(abs(v["full"]), cap_frac=cap_frac)
-                  for v in vols)
+    single = sum(_spec(abs(v["full"])) for v in vols)
     cross = 0.0
     if cross_mode == "adjacent":
         for i in range(n - 1):
-            cross += _zm * _zm * phi_q_safe(
-                abs(vols[i]["full"] * vols[i + 1]["full"]),
-                cap_frac=cap_frac)
+            cross += _zm * _zm * _spec(
+                abs(vols[i]["full"] * vols[i + 1]["full"]))
     elif cross_mode == "full":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += _zm * _zm * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += _zm * _zm * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     elif cross_mode == "full_z2pow":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += (_zm ** (2 * (j - i))) * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += (_zm ** (2 * (j - i))) * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     else:
         raise ValueError(f"unknown cross_mode: {cross_mode}")
     return desc, single, cross, desc + single + cross
@@ -740,7 +904,8 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",
-                       verbose: bool = False) -> dict:
+                       verbose: bool = False,
+                       term: str = "tower_term") -> dict:
     """FULL-TOWER + H_{3A} binding.
 
     Combines the Φ_q tower formula (prop:mass-endomorphism-tower)
@@ -769,9 +934,11 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         return {"status": "trivial", "Z": Z, "N": N}
     if use_safe_phi_q:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower_safe(
-            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower_safe(
-            vols_free, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_free, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
     else:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)

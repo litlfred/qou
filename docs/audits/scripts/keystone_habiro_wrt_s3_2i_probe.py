@@ -33,9 +33,15 @@ DISCIPLINE: no fit to any target; report the value + structure; the bare Σ(2,3,
 invariant is ONE number while W_λ is a λ-family ⇒ a direct equality is a type
 mismatch and is NOT claimed.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, nstr
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 INV = 1 / Q0   # bar image, inside the unit disk
 

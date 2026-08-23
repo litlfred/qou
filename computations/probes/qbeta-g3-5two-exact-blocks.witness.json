@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T14:55:04.579231+00:00",
-  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:37:30.390743+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "assembly_derived_and_heldout_verified",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 6,
   "computation": "qbeta-g3-5two-exact-blocks",
   "scriptFile": "qbeta_g3_5two_exact_blocks.py",
-  "scriptHash": "7108c772ffb8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "eace46406953",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_exact_blocks.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_exact_blocks.py"
   },
   "description": "Exact deformed Z_52 from GGM Theorem 22 (proven): H+- q-hypergeometric blocks; assembly ratios derived anchor-free by two-pole Laurent cancellation, cross-checked against the printed exponent form (-pi i/3, c_C = c_B); exact three-term saddle structure near the Kashaev ray recorded.",
   "contentBlock": "conj:im-q-physical-role",
@@ -55,21 +63,21 @@
     "source": "library/arxiv-2012.00062v3/2012.00062v3.pdf sec 6.2, eqs 240-245",
     "derived_ratios": {
       "(0.0 + 0.5j)": {
-        "cB_over_cA": "(-0.207879576350762 - 1.00613897489136e-44j)",
-        "cC_over_cA": "(-0.207879576350762 + 1.71437394218545e-45j)",
-        "heldout_c2_rel": "8.36382e-45",
-        "heldout_c1_rel": "1.36449e-43"
+        "cB_over_cA": "(-0.207879576350762 + 1.48060799514509e-62j)",
+        "cC_over_cA": "(-0.207879576350762 - 1.73806524274599e-64j)",
+        "heldout_c2_rel": "2.4673e-69",
+        "heldout_c1_rel": "2.99657e-61"
       },
       "(0.0 + 0.4j)": {
-        "cB_over_cA": "(-0.110901278364195 - 7.2824846858341e-45j)",
-        "cC_over_cA": "(-0.110901278364195 + 9.7558613378589e-45j)",
-        "heldout_c2_rel": "4.74666e-45",
-        "heldout_c1_rel": "2.71389e-43"
+        "cB_over_cA": "(-0.110901278364195 + 1.64152131031324e-62j)",
+        "cC_over_cA": "(-0.110901278364195 - 3.05463540836786e-64j)",
+        "heldout_c2_rel": "6.42454e-70",
+        "heldout_c1_rel": "1.26021e-61"
       }
     },
     "printed_form_fit": {
-      "alpha": "(-6.2532943970495e-44 - 3.14159265358979j)",
-      "beta": "(-2.86098436466317e-44 - 1.0471975511966j)",
+      "alpha": "(-1.57057731144606e-60 + 3.14159265358979j)",
+      "beta": "(1.27986889143514e-61 - 1.0471975511966j)",
       "beta_printed": "-pi*i/3",
       "cC_eq_cB": true
     },

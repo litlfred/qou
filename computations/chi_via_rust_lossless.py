@@ -37,7 +37,9 @@ import mpmath as mp
 # Standalone high-precision compute script: enforce the 50-dps floor at module
 # load so compute_atom / _ensure_y_lambda are correct when imported as a library,
 # not only under main().
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -228,7 +230,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     raw = sys.argv[1:] or ["5Li", "6Li"]
     atoms = [ATOM_ALIASES.get(a, a) for a in raw]
     q = mp.mpf(Q_50_DIGIT_STR)

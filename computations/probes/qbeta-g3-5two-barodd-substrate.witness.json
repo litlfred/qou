@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T15:25:32.491328+00:00",
-  "commitSha": "3f2744fc130ac954c221d932963e14eaa66f0210",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:37:03.035846+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "assembly_consistent_with_derived",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-barodd-substrate",
   "scriptFile": "qbeta_g3_5two_barodd_substrate.py",
-  "scriptHash": "23f3376de200",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d2565604ea51",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_barodd_substrate.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_barodd_substrate.py"
   },
   "description": "The exact bar-odd 5_2 substrate datum: Theorem-22 Z_52 at the substrate q0-pair (tau and -tau = the bar involution), split even/odd. First exact non-amphichiral bar-odd anchor-dependent number; assembly certified in #3951; u-evenness certifies the implementation. Nothing wired; N_odd identification not claimed.",
   "contentBlock": "conj:im-q-physical-role",
@@ -58,7 +66,7 @@
       "tau": "i*t/(2*pi)"
     },
     "Z_pair": {
-      "Z_q": "(-438404090150268.2244345422 + 396408263854217.0691857696j)",
+      "Z_q": "(-438404090150268.2244343319 + 396408263854217.0691855599j)",
       "Z_qbar": "(-3.93241600747721117639164e-16 - 6.174240138198423322489911e-16j)"
     },
     "bar_split": {
@@ -69,7 +77,7 @@
     },
     "checks": {
       "assembly_ratio_consistent": true,
-      "u_evenness_rel": "3.2641725e-44",
+      "u_evenness_rel": "5.8601122e-69",
       "odd_nonzero": true
     },
     "capstone_rows": {
@@ -84,7 +92,7 @@
       "log_split_re": "34.4318219271",
       "log_split_im": "2.27218496785"
     },
-    "verdict": "Exact 5_2 substrate bar-pair computed from the PROVEN Theorem-22 factorization with the #3951-certified assembly (ratio consistency True); implementation certified by exact u-evenness (True, rel 3.26e-44). HONEST FINDING: the raw bar-split is DEGENERATE — the bar image is exponentially suppressed (|Z_qbar/Z_q| ~ 1e-30), so D_odd ~ D_even ~ Z_q/2 measures the CLASSICAL exponential asymmetry, not an intrinsic odd datum. The log-split L_odd = (34.431822 + 2.272185j) is the scale-separated record; the INTRINSIC bar-odd datum requires stripping the classical e^(V/2 pi i tau) prefactor — the normalization derivation, now precisely localized as the single remaining open step (with all exact machinery in place: positions #3944, amplitudes #3951, this bar-pair). No identification claimed. Scope-(a); no fit; no c_k wired.",
+    "verdict": "Exact 5_2 substrate bar-pair computed from the PROVEN Theorem-22 factorization with the #3951-certified assembly (ratio consistency True); implementation certified by exact u-evenness (True, rel 5.86e-69). HONEST FINDING: the raw bar-split is DEGENERATE — the bar image is exponentially suppressed (|Z_qbar/Z_q| ~ 1e-30), so D_odd ~ D_even ~ Z_q/2 measures the CLASSICAL exponential asymmetry, not an intrinsic odd datum. The log-split L_odd = (34.431822 + 2.272185j) is the scale-separated record; the INTRINSIC bar-odd datum requires stripping the classical e^(V/2 pi i tau) prefactor — the normalization derivation, now precisely localized as the single remaining open step (with all exact machinery in place: positions #3944, amplitudes #3951, this bar-pair). No identification claimed. Scope-(a); no fit; no c_k wired.",
     "honest_finding": "raw bar-split degenerate: bar image exp-suppressed (classical prefactor asymmetry); intrinsic odd datum = the normalization-derivation open step"
   }
 }

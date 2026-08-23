@@ -2,7 +2,7 @@
   "probe": "qbeta_clx8_route23_slit_radial",
   "bean": "qou-clx8",
   "parent_bean": "qou-0yqu",
-  "dps": 30,
+  "dps": 70,
   "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithm{Slit,Deriv,Unique}.lean",
   "gates": [
     {
@@ -37,7 +37,7 @@
           "y": "(1.0001 - 2.0j)",
           "old_hypothesis": false,
           "new_hypothesis": true,
-          "|cLiTwoExt - Li2|": "0.0"
+          "|cLiTwoExt - Li2|": "5.6597994e-73"
         },
         {
           "point": "deep right",
@@ -47,7 +47,7 @@
           "|cLiTwoExt - Li2|": "0.0"
         }
       ],
-      "worst": "0.0",
+      "worst": "5.6597994e-73",
       "all_rejected_by_old": true,
       "all_accepted_by_new": true,
       "pass": true
@@ -94,7 +94,7 @@
       "gate": "G4",
       "claim": "cLiTwoExt(t*y) = -int_0^t log(1-y u)/u du -- the substitution u = t*z, which moves the parameter OUT of the integrand and INTO the limit of integration. This is what lets FTC reach it instead of differentiation under the integral",
       "n_checks": 9,
-      "worst": "0.0",
+      "worst": "4.5278395e-72",
       "pass": true
     },
     {
@@ -104,47 +104,47 @@
         {
           "y": "(1.5 + 0.3j)",
           "t": "0.3",
-          "|fd - pred|": "8.52708e-21"
+          "|fd - pred|": "1.45672e-24"
         },
         {
           "y": "(1.5 + 0.3j)",
           "t": "0.75",
-          "|fd - pred|": "5.07992e-20"
+          "|fd - pred|": "9.03299e-24"
         },
         {
           "y": "(-2.0 + 1.0j)",
           "t": "0.3",
-          "|fd - pred|": "1.90668e-20"
+          "|fd - pred|": "4.10217e-25"
         },
         {
           "y": "(-2.0 + 1.0j)",
           "t": "0.75",
-          "|fd - pred|": "4.30715e-20"
+          "|fd - pred|": "1.36644e-25"
         },
         {
           "y": "(0.4 + 0.2j)",
           "t": "0.3",
-          "|fd - pred|": "4.03452e-21"
+          "|fd - pred|": "1.31728e-26"
         },
         {
           "y": "(0.4 + 0.2j)",
           "t": "0.75",
-          "|fd - pred|": "1.23136e-20"
+          "|fd - pred|": "2.10011e-26"
         }
       ],
-      "worst": "5.0799235e-20",
+      "worst": "9.0329856e-24",
       "pass": true
     },
     {
       "gate": "G6",
       "claim": "the radial statement is the chain-rule reading of d/dw Li2(w) = -log(1-w)/w: cLiTwoExt'(t y)*y = -log(1-y t)/t identically. So G5 is that derivative restricted to rays, not a weaker statement about a different function",
-      "worst": "3.9443045e-31",
+      "worst": "2.0249114e-71",
       "pass": true
     },
     {
       "gate": "G7",
       "claim": "the quadrature trap qou-clx8 records is REAL and is mitigated here: at y = 3 + 0.001i plain quad([0,1]) is silently wrong, while splitting at Re(1/y) is exact. Demonstrated rather than asserted, so every other gate's method is visible",
-      "err_plain_quad": "0.033140924",
+      "err_plain_quad": "0.011522133",
       "err_split_at_Re_inv_y": "0.0",
       "split_point": "0.3333332963",
       "pass": true
@@ -157,25 +157,25 @@
         {
           "w": "(1.5 + 0.3j)",
           "direction": "(1.0 + 0.0j)",
-          "|fd - pred|": "5.98385e-20"
+          "|fd - pred|": "5.29992e-25"
         },
         {
           "w": "(1.5 + 0.3j)",
           "direction": "(0.0 + 1.0j)",
-          "|fd - pred|": "5.98385e-20"
+          "|fd - pred|": "5.29992e-25"
         },
         {
           "w": "(1.5 + 0.3j)",
           "direction": "(0.5 + 0.5j)",
-          "|fd - pred|": "5.98385e-20"
+          "|fd - pred|": "2.64996e-25"
         },
         {
           "w": "(1.5 + 0.3j)",
           "direction": "(-0.6 + 0.4j)",
-          "|fd - pred|": "2.14579e-19"
+          "|fd - pred|": "2.75596e-25"
         }
       ],
-      "worst": "4.6594865e-19",
+      "worst": "5.2999157e-25",
       "pass": true
     },
     {

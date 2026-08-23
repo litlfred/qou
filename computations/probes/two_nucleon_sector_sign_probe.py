@@ -94,6 +94,7 @@ import sys
 import mpmath as mp
 
 import mass_binding_dashboard as mbd
+from _precision import set_compute_dps  # noqa: E402
 
 # (label, Z, N, bond key, nature value MeV, nature is-bound)
 SYSTEMS = [
@@ -104,7 +105,7 @@ SYSTEMS = [
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     me, q0, E0 = mbd._constants()
     alpha = mp.mpf(str(E0))
     L = mbd._bond_type_L()

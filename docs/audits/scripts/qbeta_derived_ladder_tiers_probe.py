@@ -43,9 +43,15 @@ Exit 0.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 from mpmath import cos, mp, mpf, nstr, sqrt
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # Inlined constants (provenance): repo experimental_constants / codata_constants,
 # verbatim (M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, Q_50_DIGIT_STR).

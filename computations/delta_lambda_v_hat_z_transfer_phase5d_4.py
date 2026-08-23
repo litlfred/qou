@@ -50,6 +50,7 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from mass_at_3A_proper import per_generator_V_hat_3A
+from _precision import set_compute_dps  # noqa: E402
 
 
 # (Z, N, label, expected_interface_generators) — interface gens are at
@@ -63,7 +64,7 @@ ATOMS = [
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("v-hat-z-transfer-phase5d-4")
     builder.set_description(
         "Phase 5d.4: probe whether the Phase 5c.1 z-exactness finding "

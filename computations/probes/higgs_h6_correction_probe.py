@@ -44,8 +44,9 @@ from pathlib import Path
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 H_0 = Q_0 - mpf(1) / Q_0

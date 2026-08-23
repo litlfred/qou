@@ -65,8 +65,9 @@ from experimental_constants import (  # noqa: E402
 )
 from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # Hyperbolic volumes — sourced from the canonical registry
 # (`experimental_constants.py`) per the README convention.  The

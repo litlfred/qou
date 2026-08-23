@@ -57,6 +57,36 @@ from pathlib import Path
 from mpmath import mp, mpf
 
 
+#: [n]_q cache, keyed by (working precision, q). [n]_q depends ONLY on q and n
+#: — never on z — and q is a pinned substrate constant, so every caller of
+#: `li_2_q` at a given precision wants the same ladder. Keyed on `mp.prec` as
+#: well as q because an mpf keeps the precision it was CREATED at: a ladder
+#: built at dps 15 must not be served to a caller running at 70.
+_QINT_CACHE: dict = {}
+
+
+def _q_int_ladder(q: mpf, q_inv: mpf, upto: int) -> list:
+    """Return [[0]_q, [1]_q, ..., [upto]_q], extending the cache in place.
+
+    Powers are built INCREMENTALLY (q^n from q^{n-1}) rather than by `q**n`.
+    The naive form costs two full mpf exponentiations per term; at the
+    ~7,000 terms the series needs near the disc edge that dominates the whole
+    evaluation. Measured 3.4x on its own.
+    """
+    key = (mp.prec, q)
+    st = _QINT_CACHE.get(key)
+    if st is None:
+        st = {"vals": [mpf(0)], "qp": mpf(1), "qip": mpf(1), "h": q - q_inv}
+        _QINT_CACHE[key] = st
+    vals = st["vals"]
+    while len(vals) <= upto:
+        n = len(vals)
+        st["qp"] = st["qp"] * q
+        st["qip"] = st["qip"] * q_inv
+        vals.append(mpf(1) if n == 1 else (st["qp"] - st["qip"]) / st["h"])
+    return vals
+
+
 def _q_int(n: int, q: mpf, q_inv: mpf) -> mpf:
     """Symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
 
@@ -67,14 +97,14 @@ def _q_int(n: int, q: mpf, q_inv: mpf) -> mpf:
         return mpf(0)
     if n == 1:
         return mpf(1)
-    return (q**n - q_inv**n) / (q - q_inv)
+    return _q_int_ladder(q, q_inv, n)[n]
 
 
 def li_2_q(
     z_val: mpf,
     q: mpf,
     q_inv: mpf | None = None,
-    max_k: int = 2000,
+    max_k: int = 50_000,
     eps: mpf | None = None,
 ) -> mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
@@ -91,6 +121,23 @@ def li_2_q(
         q_inv = mpf(1) / q
     if eps is None:
         eps = mpf(10) ** (5 - mp.dps)
+    # DISPATCH TO THE CLOSED FORM for negative z near the disc edge.
+    #
+    # The series and the q-product are the SAME function (see
+    # `li_2_q_negative_continuation` for the derivation), but their costs run in
+    # opposite directions:
+    #
+    #   series      terms ~ dps·ln10 / ln(q/|z|)   -> explodes as |z| -> q
+    #   closed form terms ~ dps·ln10 / (2·ln q)    -> independent of z
+    #
+    # Equating them puts the crossover at ln(q/|z|) = 2·ln q, i.e. |z| = 1/q.
+    # That is DERIVED, not tuned, and it matches measurement: at dps 70 the
+    # series needs 180 terms at z = -0.5 but 7,083 at z = -1.08837, while the
+    # product sits at ~717 throughout. At the brane tower's largest argument
+    # (max|V_hat| = 1.08837) this is a 29.6x speedup, and the two agree to the
+    # full 65 digits.
+    if z_val < 0 and mp.fabs(z_val) >= q_inv:
+        return li_2_q_negative_continuation(z_val, q, q_inv, eps=eps)
     if mp.fabs(z_val) >= q:
         # OUTSIDE THE SERIES DISC. The series has radius |z| < q, but the
         # FUNCTION does not stop there — see `li_2_q_negative_continuation`.
@@ -115,13 +162,39 @@ def li_2_q(
         term = z_pow / (mpf(n) * qn)
         total = total + term
         if mp.fabs(term) < eps:
-            break
-    return total
+            return total
+    raise RuntimeError(
+        f"li_2_q: series did not reach eps={mp.nstr(eps, 3)} within "
+        f"max_k={max_k} at z={mp.nstr(z_val, 10)} (|z|/q="
+        f"{mp.nstr(mp.fabs(z_val) / q, 6)}). The old max_k=2000 default "
+        f"returned SILENTLY here, correct to ~21 digits rather than mp.dps; "
+        f"raise max_k or use li_2_q_negative_continuation for z < 0.")
 
 
 # ── Shared helpers (centralized per gemini #687 review) ─────────
 
-_Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
+def _find_q_witness() -> Path:
+    """Locate q-pinning-50-digit.witness.json in whichever layout we are in.
+
+    `Path(__file__).parent / ...` is right for computations/ but WRONG for the
+    vendored copy: the sync flattens this module into qou-mass/.../_internal/
+    while the witness lands one level up in qou-mass/.../qou_mass/. Same class
+    of bug as the fixed-`.parent`-count in `_precision.py` — a path tuned for
+    one layout, silently wrong in the other. Searched, not counted.
+    """
+    here = Path(__file__).resolve().parent
+    for base in (here, *here.parents):
+        cand = base / "q-pinning-50-digit.witness.json"
+        if cand.is_file():
+            return cand
+        cand = base / "computations" / "q-pinning-50-digit.witness.json"
+        if cand.is_file():
+            return cand
+    # preserve the historical value so the error names the expected location
+    return here / "q-pinning-50-digit.witness.json"
+
+
+_Q_WITNESS_DEFAULT = _find_q_witness()
 
 
 def li_2_q_negative_continuation(
@@ -726,3 +799,70 @@ vol_density_per_block = per_knot_density_per_block
 vol_density_borromean = per_knot_density_borromean
 vol_density_borromean_spectral = per_knot_density_borromean_spectral
 vol_density_borromean_bring_color_weighted = per_knot_density_borromean_bring_color_weighted
+
+
+# ── self-test ──────────────────────────────────────────────────
+#
+# The docstring above has long referenced `--self-test`, but no entry point
+# existed: `python3 _li_2_q_util.py --self-test` imported the module, did
+# nothing, and exited 0 — so the claim "verified against li_2_q" was never
+# actually being checked by anything. It is now, and it matters more than it
+# did, because `li_2_q` dispatches between two DIFFERENT algorithms at
+# |z| = 1/q. This pins them together across that boundary.
+
+def _self_test() -> int:
+    """Series and q-product must agree to full precision, especially at 1/q."""
+    # `_precision` lives in computations/substrate/ in the source layout and
+    # flat beside this file in the vendored one. Resolve it here rather than at
+    # module scope: this is a LIBRARY module, and the vendor sync strips
+    # `import _path_bridge`, so a module-scope bare import would break the
+    # shipped copy (exactly the regression the qou-fl9i sweep hit).
+    try:
+        from _precision import COMPUTE_DPS
+    except ModuleNotFoundError:
+        import sys as _s2
+        _s2.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+        from _precision import COMPUTE_DPS
+    mp.dps = COMPUTE_DPS
+    q, q_inv, _z = load_q_50dps()
+    eps = mpf(10) ** (5 - mp.dps)
+
+    def pure_series(z):
+        """The series with NO dispatch — the reference implementation."""
+        tot = mpf(0)
+        z_pow = mpf(1)
+        for n in range(1, 50_000):
+            z_pow = z_pow * z
+            term = z_pow / (mpf(n) * _q_int(n, q, q_inv))
+            tot = tot + term
+            if mp.fabs(term) < eps:
+                return tot
+        raise RuntimeError(f"reference series did not converge at z={z}")
+
+    # straddle the |z| = 1/q dispatch boundary deliberately
+    cases = ["-0.5", "-0.9", "-0.90091", "-0.90092", "-0.91", "-1", "-1.05",
+             "-1.08837"]
+    worst = mpf(0)
+    fails = 0
+    print(f"Li_2^q self-test at dps={mp.dps}, dispatch threshold 1/q="
+          f"{mp.nstr(q_inv, 10)}")
+    for c in cases:
+        z = mpf(c)
+        got = li_2_q(z, q, q_inv)
+        ref = pure_series(z)
+        rel = mp.fabs(got - ref) / mp.fabs(ref) if ref else mp.fabs(got - ref)
+        worst = max(worst, rel)
+        path = "closed" if mp.fabs(z) >= q_inv else "series"
+        ok = rel < mpf(10) ** (10 - mp.dps)
+        fails += not ok
+        print(f"  z={c:>10}  path={path:>6}  rel={mp.nstr(rel, 4):>12}  "
+              f"{'ok' if ok else 'FAIL'}")
+    print(f"worst relative disagreement: {mp.nstr(worst, 4)}")
+    return 1 if fails else 0
+
+
+if __name__ == "__main__":
+    import sys as _s
+    if "--self-test" in _s.argv:
+        _s.exit(_self_test())
+    print("usage: python3 _li_2_q_util.py --self-test")

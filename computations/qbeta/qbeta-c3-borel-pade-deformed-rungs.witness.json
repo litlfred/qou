@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T22:52:38.748293+00:00",
-  "commitSha": "15105df99f96ea44321f40b051959a8c44436a2d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:44:59.388404+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "meridian_corrected_imV_stable_vs_truncation",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-c3-borel-pade-deformed-rungs",
   "scriptFile": "qbeta_c3_borel_pade_deformed_rungs_probe.py",
-  "scriptHash": "6cd4e8fc0f89",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f76810e98761",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,8 +35,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_borel_pade_deformed_rungs_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_borel_pade_deformed_rungs_probe.py"
   },
   "description": "Borel–Padé[2/2] resummation of the DEFORMED 4₁ Ohtsuki rungs κ̃₁…κ̃₄ at the substrate meridian (merged #3691 tall-ladder), the meridian-corrected version of #3692's u=0 resummation. (A) Deformed rungs are complex, so the even rungs now feed Im 𝔙_b: meridian-corrected Im 𝔙_b (truncation 0.057057657, resummed 0.058549995) vs #3692's odd-only u=0 0.05481/0.05545. (B) DECISIVE: the deformed Borel singularities stay off the imaginary substrate Laplace ray (nearest s-pole 0.48943·π off), so the Borel sum stays single-valued — no Stokes split / trans-series even at the deformed meridian; #3692's representational conclusion for the odd-S sign-flip (1/u³ ladder, #3636) survives the deformation. Caveat: 4 rungs → Padé[2/2], indicative. Scope-(a); no c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",

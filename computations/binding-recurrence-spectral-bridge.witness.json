@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-25T12:04:32.417100+00:00",
-  "commitSha": "939a9bd391bd05092f74fb99245a1b2b91bd9954",
+  "computedAt": "2026-08-23T09:18:39.557880+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "ratio_convergence",
@@ -29,7 +29,7 @@
     },
     {
       "name": "lw_reproduces_anchors",
-      "computed": "2.673e-50",
+      "computed": "2.896e-50",
       "expected": "0",
       "passed": true,
       "tolerance": 1e-25,
@@ -61,11 +61,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 22,
   "computation": "binding-recurrence-spectral-bridge",
   "scriptFile": "binding_recurrence_spectral_bridge_probe.py",
-  "scriptHash": "b7a61105dc92",
-  "scriptCommitSha": "70b9f23045605b5039ba0c41dd3314c6d295e5b2",
+  "scriptHash": "781c5ef2670a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,8 +75,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_recurrence_spectral_bridge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_recurrence_spectral_bridge_probe.py"
   },
   "description": "Spectral bridge (0 fit): the depth-2 binding kernel R=x²−τx+1 (τ=2.6424 from the selection-rule anchors, #2612) has dominant root λ₊=2.185>1 — the EXTENSIVE-growth eigenvalue the saturating |χ| joint trace (λ_eff≈1, A-independent, PR #2703) lacks. det=1 forces λ₋=1/λ₊<1. Connects the geometric/algebraic kernel to the empirical saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary. SCOPE (PR #2752): the tabulated aD_sequence is the iterated fixed-τ recurrence (→λ₊ tautologically); the physical a_D^(n)=lw(n−1) grow super-geometrically (#2708, diverge ≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate. The witness emits BOTH aD_sequence_2_to_9 (iterated) and aD_physical_lw_2_to_9 (direct q-hook), so the divergence is DATA — asserted by physical_diverges_from_iterated / physical_super_geometric.",
   "parameters": {
@@ -144,8 +154,8 @@
     ],
     "iterated_vs_physical_rel_divergence": [
       "0.0",
-      "5.99738e-51",
-      "1.89948e-50",
+      "8.15518e-51",
+      "2.17075e-50",
       "0.00381706",
       "0.143143",
       "0.321721",

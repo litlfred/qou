@@ -76,6 +76,14 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 COMP = str(_COMP)
 
@@ -112,7 +120,7 @@ def main() -> int:
     unique_singlet_A = [A for A in range(1, 8) if ranks[A] == 1]  # A with a rank-1 shell
 
     # ---- PART 2: exchange spectrum, derived magnitudes, NO fit ---------------
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
     two_v = v + 1 / v

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T15:21:26.978157+00:00",
-  "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:28:56.601868+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "pade_locates_zeta12",
@@ -41,8 +41,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-median-borel-resummation",
   "scriptFile": "qbeta_5two_median_borel_resummation_probe.py",
-  "scriptHash": "b55158a38220",
-  "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
+  "scriptHash": "115afd0c20f5",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,8 +52,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_median_borel_resummation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_median_borel_resummation_probe.py"
   },
   "description": "A4.3 (bean qou-ea86): Borel–Laplace resummation of φ_σ1(5₂) on the A4.2 24-order basis. Padé pole map locates the predicted Stokes point ζ₁₂ = i(V₁−V₂) (resurgence gate; ζ₁₃ diagnostic); directional Laplace along the substrate ray (singularity-free — the median prescription is never needed at the substrate, a structural finding); exact-object cross-check F = h₁e^{−V/2πτ} at |x| = 1..3 shows the resummation beating raw truncation as the singularity radius is approached; the bar-odd resummed datum [φ(x)−φ(−x)]/2 at ±x_sub is truncation-consistent. At the substrate itself the 24-term truncation is already converged (minimal term bound) — an honest statement of where resummation matters. auditOnly; no c_k wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -94,6 +104,16 @@
       "resummed": "(0.001265892790003254497848556 + 0.0110119579826481671582588j)"
     },
     "structural_finding": "the substrate ray arg(x) = 180° (and its mirror 0°) never touches a Stokes ray (nearest at ~90°±14°) — the directional Borel sum is unambiguous at the substrate; median averaging is not required for the physical evaluation",
-    "verdict": "A4 RESUMMATION LANDED: the 24-order basis Borel-resums with the predicted resurgence structure (ζ₁₂ located), beats truncation toward the singularity radius against the exact object, and yields a truncation-consistent bar-odd datum at the substrate — where the directional sum is unambiguous (no median needed; structural finding). auditOnly."
+    "verdict": "A4 RESUMMATION LANDED: the 24-order basis Borel-resums with the predicted resurgence structure (ζ₁₂ located), beats truncation toward the singularity radius against the exact object, and yields a truncation-consistent bar-odd datum at the substrate — where the directional sum is unambiguous (no median needed; structural finding). auditOnly.",
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-5two-phi-series-engine.witness.json",
+        "sha256": "f866db7ad97ad2068716ed86f703443105f2bdf1e635450f0cec58c0a40ae963",
+        "size_bytes": 5970,
+        "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
+        "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
+        "computedAt": "2026-08-01T15:17:51.390941+00:00"
+      }
+    ]
   }
 }

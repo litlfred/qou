@@ -37,9 +37,15 @@ Exit 0.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 from mpmath import clsin, diff, mp, mpf, nstr, pi
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # proton-pinned q₀ (documented raw proton pin; canonical source
 # qou_substrate.constants.Q_50_DIGIT_STR).

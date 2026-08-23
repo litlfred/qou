@@ -77,8 +77,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 MURAKAMI_PDF = ROOT.parent / "library" / "arxiv-2205.01282v2" / "2205.01282v2.pdf"
 

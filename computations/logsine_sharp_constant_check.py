@@ -37,6 +37,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def phi(x):
@@ -58,7 +60,7 @@ def interior_defect(h, n):
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     print(__doc__.split("\n")[0], "\n")
 
     rows = []

@@ -111,8 +111,9 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 
 
 def _hash_upstream(path: Path) -> dict:

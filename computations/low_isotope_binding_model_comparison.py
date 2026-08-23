@@ -28,8 +28,9 @@ import time
 import mpmath as mp  # noqa: E402
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 HERE = pathlib.Path(__file__).resolve().parent
 
 
