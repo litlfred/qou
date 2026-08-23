@@ -216,7 +216,26 @@ def main():
         # Try numerical check
         import mpmath as mp
         set_compute_dps()
-        q0 = mp.mpf(Q_50_DIGIT_STR) if 'Q_50_DIGIT_STR' in dir() else mp.mpf("1.1097785955541805")
+        # Was:
+        #   q0 = mp.mpf(Q_50_DIGIT_STR) if 'Q_50_DIGIT_STR' in dir() \
+        #        else mp.mpf("1.1097785955541805")
+        #
+        # THREE compounding defects, all in one line:
+        #  1. `dir()` with no argument returns the LOCAL namespace. This line
+        #     is inside `main()`, so a module-level name could never appear
+        #     there — the guard is unsatisfiable.
+        #  2. `Q_50_DIGIT_STR` is imported at line ~282, AFTER `main()`, so it
+        #     was never a local of `main()` under any circumstance. The guard
+        #     was therefore ALWAYS False and the fallback ALWAYS taken.
+        #  3. The fallback literal `1.1097785955541805` is a DIGIT-TRANSPOSED
+        #     muon pin — `1.10977…` for `1.10997…` — which is 0.018 % off,
+        #     roughly 15,600x the ~11.5 ppb μ–p substrate tension.
+        #
+        # Reached only when the symbolic comparison above fails (`diff != 0`),
+        # so it is a rarely-executed path rather than a live wrong number in
+        # every run. Import it properly and let an ImportError be loud.
+        from q_parameter import Q_50_DIGIT_STR as _Q0_STR
+        q0 = mp.mpf(_Q0_STR)
         tr_num = float(total_tr.subs(q, float(q0)).evalf())
         lean_num = float(lean_expanded.subs(q, float(q0)).evalf())
         print(f"  Numerical at q₀: tr_M = {tr_num:.15e}, lean = {lean_num:.15e}")
