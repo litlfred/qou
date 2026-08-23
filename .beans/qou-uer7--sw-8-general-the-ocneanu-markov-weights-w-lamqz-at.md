@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T20:24:36Z
+updated_at: 2026-08-23T20:30:59Z
 parent: qou-59vq
 ---
 
@@ -320,3 +320,38 @@ State of the arc:
 
 Proving that assembly discharges the corpus's only external citation (Wenzl), per
 `OcneanuWeightWenzl`.
+
+
+## Update — block-preservation lifted to the subalgebra, and a gap I had not named
+
+`SeminormalBlockTrace.lean` extended, sorry-free, axiom-clean: `BlockPreserving` (closed under
+zero/one/add/neg/smul/mul), `blockSubalgebra`, generator membership, hence
+
+    adjoin_earlyGens_le_blockSubalgebra : Algebra.adjoin R (earlyGens q N) <= blockSubalgebra N
+    trace_mul_genMat_of_adjoin : X in adjoin -> (X * genMat q k).trace
+                                   = sum_T X_TT * seminormalParam q (axialDist T k)
+
+### CORRECTION — "only the assembly remains" was one gap short
+
+The previous update's table listed the assembly as **the only remaining gap**. That was wrong, and
+the missing item is on the structural side, not the assembly side:
+
+**Identifying `Algebra.adjoin R (earlyGens q N)` with the image of the Hecke inclusion
+`H_{N-1} -> H_N` under `seminormalRep`.** Without it, `trace_mul_genMat_of_adjoin` applies only to
+matrices already known to lie in that adjoin — there is no route from an actual `x in H_{N-1}` to
+the hypothesis. I did not notice this until writing the theorem's statement down, which is the
+usual way: the gap was invisible while the result was prose.
+
+Corrected state of the arc:
+
+| piece | status |
+|---|---|
+| closed-form weight, derived + checked vs proved n=3 | **Lean** |
+| bridge to `schurPrincipal` at convention D | **Lean** |
+| branching (trace-tower consistency) | **Lean** |
+| Markov corner identities (arithmetic core) | **Lean** |
+| block structure + trace identity, for one V_lam | **Lean** |
+| `adjoin(earlyGens)` = image of the Hecke inclusion | **OPEN** |
+| assembly: lam-indexed sum with weights | **OPEN** |
+
+Two gaps, not one. Neither has been shown to need new mathematics; both are work.
