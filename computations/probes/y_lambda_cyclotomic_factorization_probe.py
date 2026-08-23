@@ -65,6 +65,7 @@ sys.path.insert(0, str(HERE.parent))
 import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, sqrt  # noqa: E402
 
+from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from markov_weights_symbolic import y_lambda_symbolic  # noqa: E402
@@ -130,7 +131,7 @@ def main() -> int:
         "y-lambda-cyclotomic-factorization-probe",
         engine="sympy+mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()   # canonical dps; was a sub-canonical mp.dps = 50
 
     r = sp.symbols("r", positive=True)
     q_sym = sp.symbols("q", positive=True)

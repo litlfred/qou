@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:56:14.265502+00:00",
-  "commitSha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb",
+  "computedAt": "2026-08-23T20:49:42.758677+00:00",
+  "commitSha": "a8ded878ea6343dcbe96ce9cfaf63e9b71634f51",
   "assertions": [
     {
       "name": "denominator_factors_as_cyclotomic_product",
@@ -15,7 +15,7 @@
     },
     {
       "name": "markov_normalisation_sum_y_dim_eq_one",
-      "computed": "1.000000000000000000000953329266371202092479249319e-30",
+      "computed": "9.999999999999999999999999999999999999999932666070221248339877270507313e-31",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-25",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2134,
+  "durationMs": 2164,
   "computation": "y-lambda-cyclotomic-factorization-probe",
   "scriptFile": "y_lambda_cyclotomic_factorization_probe.py",
-  "scriptHash": "f31530b8e35c",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "565407fdbb26",
+  "scriptCommitSha": "440038755f17461f5597233a7397068e42081cba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
