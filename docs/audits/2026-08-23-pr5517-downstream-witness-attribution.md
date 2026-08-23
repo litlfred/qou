@@ -309,3 +309,81 @@ arrays must be aligned **by q value, not by index**. The branch-point run has
 one row and the committed run has seven, so an index-wise diff compares
 different q and reports a spurious 0.58 on the closed-form column — which is
 what a first pass of this section did, before the alignment was fixed.
+
+## 6. The H12 producer — measured, and it is not #5517's problem
+
+#5517 lists the H12 ⁴He producers as "Not run" and expects them to move at the
+same ~1e-14. That expectation is untested here too, and for a reason worth
+recording: **the producer cannot complete on either side of the PR.**
+
+`py-spy dump` on the live branch-point run, 109 minutes in, found it inside a
+single `sp.lambdify` — in sympy's *string printer*:
+
+```
+precedence_Float (sympy/printing/precedence.py:86)
+…
+_recursive_to_string (sympy/utilities/lambdify.py:989)
+lambdify (sympy/utilities/lambdify.py:894)
+_compiled_sigmas (computations/substrate/char_fast.py:156)
+main (computations/sublemma_2_1_h12_he4_phase25.py:82)
+```
+
+Line 82 is this loop:
+
+```python
+for lam in parts_12:                       # all 77 partitions of 12
+    _, d = _compiled_sigmas(lam, "double") # build the FULL rep …
+    dims.append((lam, d))                  # … and keep only the dimension
+```
+
+It builds and lambdifies every H12 irrep to read an integer the hook-length
+formula gives instantly.
+
+Timing `_compiled_sigmas(lam, "double")` per shape, both sides, sequentially on
+an idle box:
+
+| dim | branch point | #5517 head | speedup |
+|---|---|---|---|
+| 54 | 1.48 s | 0.69 s | 2.14× |
+| 132 | 8.66 s | 3.04 s | 2.85× |
+| 165 | 13.32 s | 4.38 s | 3.04× |
+| 275 | 36.71 s | 11.29 s | 3.25× |
+| 330 | 53.58 s | 15.77 s | 3.40× |
+| 462 | 107.41 s | 30.67 s | 3.50× |
+| 616 | timeout > 120 s | 53.7 s | — |
+| 891 | — | 110.36 s | — |
+
+Quadratic in dim on both sides; `t = c·dim²` fits with **c = 5.03e-4** at the
+branch point and **1.39e-4** at #5517's head, a 3.62× improvement whose ratio
+grows with dim.
+
+The total is exact, since `Σ_{λ⊢n} (dim λ)² = n!` (verified: the 77 partitions
+of 12 sum to 479,001,600 = 12!):
+
+| | projected cost of the 77-shape loop |
+|---|---|
+| branch point | **67.0 h** |
+| #5517 head | **18.5 h** |
+
+The largest single shape has dim 7700 — about 2.3 h by itself even after #5517.
+
+**Three things this settles.**
+
+1. **Nobody was hiding a result.** 67 h — or 18.5 h — is the entry price for 77
+   integers, so "Not run" was the only honest state.
+2. **#5517 helps substantially and is not the cause.** 3.6× extends the PR's
+   own n=6 measurement (7.5 s → 3.6 s) to H12. It does not make the producer
+   feasible, and no witness comparison for the H12 path is claimed here.
+3. **The 9.86 GB OOM was `lambdify`'s working set, not a memory regression.**
+   Both runs were inside `sp.lambdify` holding a printed source string for one
+   shape; with 3.6× the throughput the head run was further into the 77 when
+   the kill landed, so a larger resident set is what one would expect. The two
+   runs were concurrent and are **not** a valid memory comparison — that
+   comparison is not made.
+
+The loop is fixable in one line (hook-length formula, or
+`pyhecke.wedderburn.partition_dimension`, already used at
+`chi_at_q0_via_hoefsmit_mpfr.py:327`), which would also let `--max-dim`
+filter *before* any rep is built. Filed as `qou-pag7`, and deliberately not
+fixed in this PR — it is a performance defect in a producer #5517 does not
+touch, and its fix wants its own measurement.
