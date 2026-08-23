@@ -215,3 +215,28 @@ term, not a scalar.
 
 Candidate (3) (transcription) was already ruled out, and is now doubly so:
 the 6× render agrees with both pypdf modes on every digit group.
+
+## 2026-08-23 — CLOSED as far as the source permits (Addendum 46)
+
+The remaining item — candidate (2), the unprinted normalisation — is **not
+resolvable from the printed source**, and this is structural, not a compute
+limit.
+
+`exp(A h + B h³)` with `h = log(1+x)`: `x¹` and `x²` are **B-free**, `x³` is
+**linear in B** with unit slope. So three printed coefficients support two
+parameters and exactly **one** genuine held-out test — `x²` — which the
+earlier narrowing already passed at ~6 nontrivial digits. Fitting `B` to `x³`
+is exactly-determined.
+
+**Control:** under the one-parameter model `x³` *is* a genuine test, and it
+is the one that failed. Adding `h³` to repair it consumes the coefficient
+that detected the failure — the over-fitting boundary.
+
+**(288)'s `x²⁰⁰` cannot rescue it:** `Φ₁` is printed only to `h³`, so the
+quotient stops at ~`x³` regardless of machinery.
+
+**Status:** candidate (1) eliminated (Addendum 36 — typo for `f₁`);
+candidate (3) eliminated (transcription, doubly);
+candidate (2) **under-determined by the printed source**. Reopens
+immediately given the arXiv LaTeX or the unprinted `Φ₁` coefficients —
+`arxiv.org/e-print/2412.04241v2` is 403-blocked from this sandbox.

@@ -324,6 +324,10 @@ import QOU.QuantumObservableUniverses.QExpEntire
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.BurnsideSpan
+import QOU.SchurWeyl.PiBlockSeparation
+import QOU.SchurWeyl.HeckeProductSurjective
+import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3

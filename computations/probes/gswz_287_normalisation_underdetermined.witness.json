@@ -1,0 +1,46 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_287_normalisation_underdetermined_probe",
+ "engine": "sympy-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. A symbolic parameter count on a power series; the substrate modulus never enters and no anchor is imported.",
+ "scriptFile": "gswz_287_normalisation_underdetermined_probe.py",
+ "commitSha": "6d98a0c4294711edf5ab8d5aef71d319a15277a8",
+ "beans": [
+  "qou-xx9f"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 eqns (281), (282), (287), (288); Addendum 36 (this repo)",
+ "checks": {
+  "x1_is_B_free": true,
+  "x2_is_B_free": true,
+  "x3_depends_on_B": true,
+  "x3_is_linear_in_B_with_nonzero_slope": true,
+  "h_cubed_starts_at_x3": true,
+  "control_one_param_x3_is_a_genuine_test": true,
+  "control_one_param_x3_determined_by_A_alone": true,
+  "only_one_held_out_test_exists": true,
+  "the_one_test_is_x2_and_is_already_spent": true,
+  "x200_target_is_unreachable_from_printed_inputs": true
+ },
+ "result": {
+  "two_param_coeffs": {
+   "x^1": "A",
+   "x^2": "A*(A - 1)/2",
+   "x^3": "(A**3 - 3*A**2 + 2*A + 6*B)/6"
+  },
+  "d_x3_d_B": "1",
+  "h_cubed_series": "-3*x**4/2 + x**3",
+  "one_param_coeffs": {
+   "x^1": "A",
+   "x^2": "A*(A - 1)/2",
+   "x^3": "A*(A - 2)*(A - 1)/6"
+  },
+  "printed_coefficients_available": 3,
+  "parameters_in_model": 2,
+  "genuine_held_out_tests": 1,
+  "phi1_printed_order_in_h": 3,
+  "x200_reachable": false,
+  "verdict": "NOT RESOLVABLE from the printed source. Three printed coefficients, two parameters, one genuine held-out test (x^2) -- already passed. x^3 is linear in the h^3 coefficient, so it cannot test the model that coefficient was introduced to save: adding the term consumes the evidence that detected the failure. (288)'s x^200 would be a real target but is unreachable, because Phi_1 is printed only to h^3. Stopping rather than fitting, per the standing rule. The arXiv LaTeX source or the unprinted Phi_1 coefficients would reopen it at once."
+ },
+ "scope": "scope-(a) STOP, not a fit. The queued step was to fit the h^1 and h^3 coefficients of the unprinted normalisation and confirm on x^3. That test does not exist. With h = log(1+x), h^3 first reaches x^3, so x^1 and x^2 are free of the h^3 coefficient while x^3 is LINEAR in it with unit slope -- any printed x^3 is matchable exactly. Three printed coefficients, two parameters, one genuine held-out test, and that test is x^2, which the earlier narrowing already passed at ~6 nontrivial digits. The control is what makes this a finding: under the one-parameter model x^3 IS a genuine test, and it is the test that failed -- so introducing the h^3 term to repair the failure consumes the very coefficient that detected it. That is the over-fitting boundary. (288)'s x^200 coefficient would be a decisive held-out target but is unreachable, because the input Phi_1 series at (282) is printed only to h^3; the limit is the printed INPUT, not the compute. VERDICT: qou-xx9f's remaining item is not resolvable from the printed source. The arXiv LaTeX source, or the unprinted Phi_1 coefficients, would reopen it immediately. Nothing wired."
+}
