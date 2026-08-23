@@ -39,6 +39,13 @@ identity in A3.  Nothing is compared to a measured value; nothing is tuned.
 
 No witness by design -- every number is reproduced by the tables printed here,
 and nothing downstream consumes it.
+
+CORRECTION (2026-08-23): an earlier revision of this docstring said branch 3
+"is untouched". That is FALSE and was false when the predecessor wrote it --
+`.beans/qou-pdix` + `qbeta_eigenphase_holonomy_consistency_probe.py` landed
+1h45m earlier and already carry four refuted sub-routes. See the Lean file's
+correction section for the list and for the z'(1) discriminator, which points
+at C in the same breath as this probe excludes it.
 """
 
 from __future__ import annotations
@@ -223,7 +230,13 @@ def main() -> int:
     print("Scope-(b): a structural exclusion citing a proved invariant. It does "
           "NOT derive alpha in\neither convention, does NOT state a D-frame "
           "ladder, and leaves branch 3 (KZ /\nKohno-Drinfeld holonomy) as the "
-          "only place a derivation of alpha can live.")
+          "only branch where a derivation of alpha can still live.")
+    print()
+    print("CORRECTION: branch 3 is NOT untouched. qbeta_eigenphase_holonomy_"
+          "consistency_probe.py\n(16 assertions) and .beans/qou-pdix predate "
+          "the 'untouched' claim by 1h45m and\nalready refute four sub-routes. "
+          "Un-attempted is narrower: build a KZ connection\non Conf_n whose "
+          "monodromy is the H_3(q) braiding on V_(2,1).")
     return 0
 
 

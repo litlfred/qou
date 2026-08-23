@@ -61,14 +61,53 @@ hypothesis above.  It **subsumes** `no_laurent_of_surjective_nonpos`: a Laurent
 relation `2 cos α = P(s)/s^N` is the case `d = 1`, `p₀ = −P`, `p₁ = X^N`.
 
 **Does not.**  It does not derive `α`, in either convention; it does not state a
-D-frame ladder; and branch 3 (a holonomy of an independently-defined
-KZ / Kohno–Drinfeld connection) is untouched and remains the only place a
-derivation of `α` can live.  As before the argument **never reads `z`'s
-formula**, so it is a property of the whole class of Markov parameters with
-unbounded phase, not a fact about convention C or D.
+D-frame ladder; and it leaves branch 3 (a holonomy of an independently-defined
+KZ / Kohno–Drinfeld connection) as the only branch where a derivation of `α` can
+still live — **though branch 3 is NOT untouched; see the correction below.**  As
+before the argument **never reads `z`'s formula**, so it is a property of the
+whole class of Markov parameters with unbounded phase, not a fact about
+convention C or D.
 
 **Scope-(b)** — a structural exclusion citing a proved invariant, per
 AGENTS.md §"Before declaring refuted".
+
+## CORRECTION (2026-08-23) — "branch 3 is untouched" is FALSE, and this file said it
+
+An earlier revision of this docstring, inherited verbatim from the predecessor,
+closed with *"branch 3 … is untouched and remains the only place a derivation of
+`α` can live."*  **The first half is false and was already false when the
+predecessor wrote it.**
+
+`.beans/qou-pdix` and
+[`qbeta_eigenphase_holonomy_consistency_probe.py`](../../../../../../computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py)
+(16 assertions) landed on `main` at **08:11 UTC**; the predecessor's claim landed
+at **09:56 UTC**, an hour and three quarters later.  Branch 3 carries roughly a
+dozen dated bean entries and **four already-refuted sub-routes**:
+
+1. `α = c·ln q` for a single constant `c` — fails at `t³` (C matches through
+   `t²`; D fails already at `t²`).
+2. `α` as a quarter of `σ₁`'s half-monodromy log-gap — refuted; the ratio is not
+   constant and the `iπ` dominates the real part ~15× at `q₀`.
+3. Unitary holonomy — structurally blocked: `σ₁`'s phase content is `{0, π}` and
+   `q`-independent.
+4. Modular / `cosh` resummation — excluded; the required factor is `< 1` while
+   `cosh ≥ 1`, and the near-miss is explicitly fenced.
+
+What is genuinely un-attempted is narrower and worth stating exactly:
+**constructing a KZ connection on `Conf_n` whose monodromy is the `H₃(q)`
+braiding on `V_(2,1)`, and computing its holonomy angle.**  Kohno–Drinfeld fixes
+the scale (`ħ = 2 ln q`), so the target is not free.
+
+**A tension this file should not bury.**  Expanding `α = (z−1)h/2` at `q = 1+t`
+gives `t¹` coefficient `z(1) − 1` and `t²` coefficient `1/4 + z′(1)`
+(re-verified independently here).  So `α` is holonomy-shaped through `t²`
+exactly when `z′(1) = 0` — **true for `z_C` (giving `1/4`), false for `z_D`
+(giving `5/4`)**.  That is an independent structural signal pointing at C, in the
+same file that excludes C.  The two do not contradict — the exclusion is a
+statement about field membership (`z_C ∉ ℚ(q)`), the discriminator is a statement
+about the `q → 1` jet — but anyone building branch 3 has to face both, and the
+combination is unexplained.
+
 
 **One import of shape, unchanged from the predecessor.**  That a braid image's
 matrix entries are algebraic over `ℝ(s)` is the standard `χ_λ(T_w) ∈ ℤ[q,q⁻¹]`
