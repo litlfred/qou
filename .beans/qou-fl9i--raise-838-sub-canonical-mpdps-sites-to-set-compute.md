@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-08-23T10:10:08Z
+updated_at: 2026-08-23T12:26:41Z
 ---
 
 ## The defect, with evidence
@@ -202,3 +202,64 @@ knowingly stale until it is fixed at the producer.
     precision-gates.sh   EXIT 0 — all blocking gates green
     witness shape guard  563 modified, 0 collapsed
     raw-float64          0 NEW, 0 REGRESSED
+
+
+---
+
+## Re-ran the Li_2^q consumers after the truncation fix
+
+The 563 witnesses regenerated earlier used the **truncated** `li_2_q` — correct
+to ~21 digits, not 70. Re-ran the producers that consume it, with a 300s cap
+(vs the 45s that gutted five witnesses last time). 20 ok, 1 timeout, 2 error;
+shape guard **0 collapsed**, so no repeat of the mid-write damage.
+
+Only **2 of 23** produced real value changes. The rest differed by timestamp
+alone and were reverted rather than committed as churn.
+
+### 1. The truncation fix, visible
+
+`pentagon-reduction-li2q.witness.json`:
+
+    before 0.99691749365058832615339880074753972921545435821921249075196766
+    after  0.99691749365058832615345387364575161283101167046312650339379126
+                                 ^ diverges at digit ~22
+
+Exactly the ~21-digit error the `max_k=2000` cap predicted, now corrected.
+
+### 2. A stale payload that a metadata-only refresh had masked — 8% error
+
+`canonical-ordering-dof.witness.json`, assertion `closed_form_matches_full_trace`,
+flipped **False -> True**. That is NOT the precision fix — its tolerance is 1e-6,
+far too loose for a 21-vs-70-digit difference to matter. The real magnitudes:
+
+    ratio                 rel BEFORE      rel AFTER
+    T_npn_over_pnn         0.0803424    4.92315e-17
+    He3_pnp_over_ppn       0.0467039    4.92315e-17
+    T_npn_over_pnn         0.0803863    4.92315e-17
+    He3_pnp_over_ppn       0.0466652    4.92315e-17
+
+The closed form was disagreeing with the full trace by **5-8%** and now matches to
+machine precision. Cause, from the history: the producer's last substantive fix
+was `7d7ad545c` ("Part 6 measures its own readings instead of quoting eight
+decimals"), but the witness's last touch was `e049d2830` — *"metadata only,
+payload identical"*. The payload was never regenerated after that source fix, so
+it kept carrying the pre-fix numbers while its metadata looked current.
+
+That is the strongest argument yet for draining stale witnesses: a **metadata-only
+refresh actively hid an 8% error**, and nothing flagged it, because scriptHash and
+provenance both looked fresh.
+
+### Still not committed
+
+`per-knot-density-borromean-q-locality-probe.witness.json` regenerated again
+(its producer is a Li_2^q consumer) and again carries 23 raw float64 fields, so it
+would enter the corpus as a NEW dirty witness. Removed a second time. Its producer
+needs to carry mpf and serialize with `_precision.fmt` before its output belongs
+in the tree — same for the two `casimir-*` producers noted earlier.
+
+### Not re-run
+
+The Li_2^q consumer set was built with a loose regex; a strict `\bli_2_q\b` scan
+finds ~19 further witness producers not in the re-run set, including
+`derive_m_p_hecke_full_tower_50dps.py` and `m_p_m_e_li2q.py` — proton-mass paths.
+Their witnesses were computed with the truncated series too. Not run here.
