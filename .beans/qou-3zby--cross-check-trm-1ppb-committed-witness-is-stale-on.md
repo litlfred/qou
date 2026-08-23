@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-08-21T15:03:49Z
+updated_at: 2026-08-23T07:59:27Z
 ---
 
 Found during /prepare-merge on PR #5199 (provenance triage). NOT that branch's regression -- cross_check_trM_1ppb.py reads none of its files (inputs are atomic-tr-m-mpfr-50dps, canonical-tr-m-via-chi-cache, habiro-coefficients-extended, markov-peel-atomic-tr-m-muon, q-pinning-50-digit). Confirmed inherited: a pristine origin/main worktree (cbb49a1a35) exits 1 on the same gate.
@@ -79,3 +79,34 @@ bean.
 
 Neither is drained here. The gate is still red at 6/6 divergent, correctly:
 this makes the reason legible, it does not make the number green.
+
+
+## Cross-link + a THIRD hypothesis, from the #5471 merge (2026-08-23)
+
+**Cross-link:** `qou-dau6` is the same failing gate with a DIFFERENT
+root-cause hypothesis — *"peel witness computed at proton q0 but the gate
+expects the muon pin"*. Two beans, two diagnoses, one red. They should be
+adjudicated together; whichever is right changes the fix.
+
+**New datum.** The #5471 prepare-merge agent re-ran the audit witnesses in a
+fresh container and reported `hoefsmit_50dps` moving **0.388 -> 0.575** on a
+bare re-run, alongside `sympy 1.12 -> 1.14.0` and an added
+`pyhecke_native_build` stamp. It correctly declined to commit that.
+
+**Why this matters here, stated as a HYPOTHESIS not a finding.** AGENTS.md
+documents `0.388 -> 0.575` (48 %) by those exact digits as the canonical
+**import-cone drift** example: source-stable producer, moved number, because
+`tr_m_atom_via_transfer.py` — which computes the quantity — changed
+underneath it. This bean's own tell is `hoef_vs_chi` collapsing **7 orders**
+(0.481 -> 1.45e-07) while peel and habiro stayed put. Both observations point
+at the **Hoefsmit/transfer cone** having moved.
+
+So the C/D straddle recorded above may be a *symptom* of import-cone drift in
+that cone rather than a convention straddle per se. **Not verified** — the
+distinguishing test is whether the Hoefsmit leg moves under
+`witness_import_cone_staleness_audit.py` with the producer source held
+byte-stable. Run that before adopting either diagnosis.
+
+**Do not re-run-and-commit to 'fix' this.** Two of the three candidate causes
+here (environment, import cone) produce a moved number that is not a result.
+AGENTS.md: a `substantive` verdict is not a work order — measured, 39 %.
