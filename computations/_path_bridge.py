@@ -79,8 +79,26 @@ _add_to_path(_HERE)
 #    Filter out: leading-underscore dirs (`_deprecated`,
 #    `__pycache__`), leading-dot dirs, and any dir without
 #    `__init__.py` (so untracked tmp dirs don't pollute sys.path).
+#
+#    SORTED, and that is load-bearing rather than cosmetic. `iterdir()`
+#    yields in `os.scandir` order — filesystem-dependent, and NOT sorted.
+#    Measured on this checkout before the fix, the cluster tail came out
+#    `phase5, a_operator, markov, probes, substrate, alpha, audits,
+#    habiro, sweeps, qbeta, hecke`. Since `witness_path` returns the FIRST
+#    existing match, an unsorted search order means a stem duplicated
+#    across two cluster dirs resolves differently on different machines,
+#    and can flip on the same machine after unrelated file churn — the
+#    worst failure shape for a witness read: silent, and not reproducible
+#    from the source. `_HERE` stays first so the package root keeps
+#    priority over every cluster; only the tail is ordered.
+#
+#    Today exactly one duplicated stem is cluster-vs-cluster
+#    (`qbeta-phib-2loop-bdictionary`, in `probes/` and `qbeta/`), and
+#    `probes` precedes `qbeta` under both the old fs order and the sorted
+#    one, so this changes no resolution on this checkout — it removes the
+#    nondeterminism, it does not move a number. Bean `qou-kcii`.
 _WITNESS_DIRS: list[Path] = [_HERE]
-for _child in _HERE.iterdir():
+for _child in sorted(_HERE.iterdir()):
     if not _child.is_dir():
         continue
     name = _child.name
