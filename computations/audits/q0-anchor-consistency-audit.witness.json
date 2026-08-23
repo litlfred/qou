@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T13:06:56.382631+00:00",
-  "commitSha": "a9faf3f83276e743f7d01121350c055cc865bf33",
+  "computedAt": "2026-08-23T19:03:22.224333+00:00",
+  "commitSha": "1eb6d2711dd6813b43a30243cc94e68ffa05153d",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -45,7 +45,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 663,
+      "Q0_OK": 664,
       "Q0_AMBIGUOUS": 18,
       "Q0_INDEPENDENT": 35,
       "Q0_INDEPENDENT_NO_REASON": 0,
@@ -9729,6 +9729,10 @@
         },
         {
           "witness": "geom-leading-alt-q-locality-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gram-h3-convention-frame-probe.witness.json",
           "detail": ""
         },
         {

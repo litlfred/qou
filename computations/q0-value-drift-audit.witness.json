@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 306,
-      "proton-pin": 1230,
+      "proton-pin": 1231,
       "unknown": 25,
       "canonical": 211
     },
@@ -9398,6 +9398,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/probes/gram-h3-convention-frame-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/gram-norm-binding-probe.witness.json",
