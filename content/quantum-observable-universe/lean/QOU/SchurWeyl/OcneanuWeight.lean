@@ -103,6 +103,16 @@ Vanishing on the partitions of three or more rows is the condition for a trace o
 factor through its Temperley–Lieb quotient; that reading is standard (Jones (1983), Wenzl (1988))
 and is *not* proved here.  What is proved here is the vanishing itself.
 
+**This DUPLICATES existing corpus content, and is kept for one specific reason.**
+`QOU.QBeta.WenzlWeight.schurPrincipal_eq_zero_iff` (sorry-free, general `n`, general level `r`)
+already proves the vanishing criterion, and `wenzlLevel_conventionD` already proves that convention D
+is level `r = 2`.  I derived the statement below independently and only then grepped the corpus —
+the wrong order, and the corpus-grep discipline exists precisely to catch it.  The theorem is
+retained because its hypotheses are strictly weaker: it needs no root-of-unity condition on `q`,
+where the `iff` does.  The sharper `iff`, and the identification of the two weight formulas that
+makes the duplication visible, are in `OcneanuWeightWenzl`:
+`ocneanuWeight q (q³/(q²+1)) μ = schurPrincipal 2 (q²) μ / (q²+1)^{|μ|}`.
+
 Cross-checked against `computations/ocneanu_weights.py::omega_lambda_via_inversion`, an independent
 `p(n) × p(n)` linear solve at the live `q₀` and this `z`: at `n = 2 … 5` exactly the diagrams with
 three or more rows come back zero, and every other weight agrees with the closed form to the limit
