@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T21:20:52Z
+updated_at: 2026-08-23T04:10:28Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -185,3 +185,26 @@ would fix nothing, because there is none to flip.
 `canonical_mass_table_extended.py:310` passes `q_val=float(Q_FLOAT)` — a float64
 q₀ into a 50-dps pipeline. Caps the branching path at ~1e-16 regardless of
 `target_dps`. Precision defect, not a convention one; worth its own fix.
+
+
+## Contained-scope finding from `qou-058n` (2026-08-23)
+
+Fixing the one live colour-blind interface in `mass_tower_operator_valued`
+(bean `qou-058n`), I swept the other consumers of the A-operator extracts to
+see how wide the class is. **It is narrower than the grep suggests** — of the
+A-operator consumers carrying a `-h/2`, `mass_tower_operator_valued` was the
+only genuine instance. Each of the others was checked by running it, not by
+reading the literal:
+
+| file | verdict |
+|---|---|
+| `mass_tower_operator_valued` | **was the bug** — loaded a colour-weighted A, built χ at `-h/2`. Fixed; identity 3.32e-04 → 1.12e-15 |
+| `sublemma_2_1_h9_tritium_verify` | **NOT a defect.** Already carries an `[H_6 frame guard] consumed extract vs canonical colour-weighted I_pn`, which passes at **5.51e-15**. 30/30 λ verify, max rel 1.22e-13 |
+| `probes/A_operator_per_interface_probe` | **self-consistent**, not broken. It runs its own `np.linalg.lstsq` per interface at the same `d_int` it then tests. The residual claim is valid; what is off is only the *label* — its `"pn"` row is the colour-**blind** crossing `(1, -h/2)`, not the canonical `averaged_weighted` p-n boundary. A per-interface probe whose `pn` is not the canonical `pn` is worth renaming or re-pointing, but nothing it reports is wrong |
+| `canonical_tr_m_via_branching` | **NOT a defect.** It derives `d` correctly via `d_for_ctype`, and the `float(...)` around it is consistent with a module that is float64 end to end (`_compiled_sigmas(…, "double")`, `complex(d)` two lines later). Flagging the cast would have been a false positive |
+
+I had predicted `h9_tritium_verify` was a second live instance — it loads the
+committed A witnesses *and* builds `I_pn` at `-h/2`, which is exactly the
+failing shape. Running it refuted that: someone had already put the guard in.
+Recording the prediction and its refutation because the grep signature alone
+is not sufficient evidence for this class, in either direction.
