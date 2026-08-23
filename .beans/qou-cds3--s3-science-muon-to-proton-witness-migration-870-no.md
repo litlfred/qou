@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T01:50:00Z
+updated_at: 2026-08-24T02:20:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -869,3 +869,76 @@ changes a published witness field name, which is a contract change for anything
 reading it — and this bean's own §"the last group will be hardest to fix after
 the sweep" warns against unilateral moves in this area. The three are now
 identified precisely, with the mechanism, which is what the fix needs.
+
+---
+
+## 2026-08-23 — the blocked probe: my "malformed exponent" diagnosis was WRONG
+
+I recorded that `qbeta_singularity_cross_anchor_probe.py` is blocked because *"a
+stored value has a malformed exponent"*. **There is no malformed value.**
+Verified directly:
+
+```
+c_k_extracted_50dps = {'c_2': None, 'c_3': None, … 'c_10': None}    all null
+str(None)            = 'None'
+'None'.split('e')    = ['Non', '']
+mp.mpf(str(None))    -> ValueError: invalid literal for int() with base 10: ''
+```
+
+The "empty exponent" is the **letter `e` inside the word `None`**. mpmath splits
+the mantissa on `e`, gets `['Non', '']`, and calls `int('')`. The probe's
+`mp.mpf(str(v))` turns a JSON `null` into that error.
+
+### The nulls are deliberate, and the probe is a stale consumer
+
+`qbeta_decay_sdp_extended_ck.py:463-466` writes `None` for every unresolved rung:
+
+```python
+w.add_data("c_k_extracted_50dps", {
+    f"c_{k}": (mp.nstr(v, 50) if resolved[k] else None) for k, v in c_k.items()})
+```
+
+Introduced by `e5885ebc0` — *"SDP c_k extractor emitted the residual FLOOR as
+data"* (bean `qou-8ofm`). The witness records `last_resolved_rung: null`,
+`n_unresolved: 9`, so **all nine rungs are null**. The raw quotients are preserved
+under `c_k_unresolved_raw_quotient`, and their successive ratios lock onto
+117.409001 = the recorded `one_over_u` — the floor/uᵏ blow-up signature the fix
+exists to stop publishing.
+
+So the blockage is **not an upstream data defect**. It is a consumer written
+against the pre-`e5885ebc0` format, which coerces a sentinel instead of skipping
+it. The fix belongs in the probe (`skip or raise on None`), not in the witness —
+and there is no "correct number" to substitute, because the whole point of
+`qou-8ofm` was that those numbers were spurious.
+
+### A worse instance of the same shape, found while checking the breadth claim
+
+`computations/deltalambda/binding_weight_markov_pinning_probe.py:125` uses the
+same `mp.mpf(str(v))` idiom — but inside:
+
+```python
+    try:
+        …  return {…: mp.mpf(str(v)) …}, "canonical-module"
+    except Exception:
+        return dict(Y_LAMBDA_CACHE.get(n, {})), "verified-cache"
+```
+
+A `None` here does **not** crash. It raises, is swallowed by the bare
+`except Exception`, and the function silently returns a **cached** y_λ table
+labelled `"verified-cache"`. That is strictly worse than the crash: the crash
+stops and says so; this substitutes different data and calls it verified. Same
+family as `qou-i5jy`.
+
+### Breadth NOT established — stated as a bound, not a finding
+
+`grep` counts **687** `.py` files under `computations/` using `mp.mpf(str(`, of
+which **495** also mention `witness.json`. **These are file counts, not verified
+call sites**, and this campaign's own rule is to verify counts by resolving call
+sites rather than by `grep -rl`. They are recorded as an upper bound on where the
+idiom *could* meet a `null`, and nothing more. The corpus holds ~6600 `null`s
+sitting in dicts whose siblings are numeric strings, so the collision surface is
+real — but how much of it is live is unmeasured.
+
+**Consequence for this bean:** `qbeta_singularity_cross_anchor_probe` moves out of
+"blocked by upstream data" and into "consumer needs a null guard" — a one-line
+source fix in a file this bean does not own, so it is reported rather than made.
