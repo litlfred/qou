@@ -232,6 +232,14 @@ def main():
                 return (len(moved) == 1
                         and obst == list(range(obst[0], obst[0] - len(obst), -1)))
 
+            # U's block COUNT, against b.  I wrote "b+1 blocks" in a
+            # follow-up note; it is b blocks with an F-run plus 2 trailing
+            # B-only steps.  Asserted so the wrong count cannot propagate.
+            _ublocks = _blocks([s["rule"] for s in usteps])
+            u_blocks_with_f = sum(1 for _b in _ublocks
+                                  if any(x[0] == "F" for x in _b))
+            u_blocks_no_f = len(_ublocks) - u_blocks_with_f
+
             blk_tot = blk_single = 0
             for _lin in (vsteps, usteps):
                 for _b in _blocks([s["rule"] for s in _lin]):
@@ -260,6 +268,8 @@ def main():
                 "y_labelled_steps": y_tot,
                 "y_steps_matching_bsStep_leading_word": y_same_lm,
                 "y_steps_giving_identical_element": y_same_result,
+                "U_blocks_with_an_F_run": u_blocks_with_f,
+                "U_trailing_B_only_steps": u_blocks_no_f,
                 "blocks_with_an_F_run": blk_tot,
                 "blocks_whose_F_run_is_a_single_transport": blk_single,
                 "a_eq_b_plus_1": a == b + 1,
@@ -346,6 +356,17 @@ def main():
         "non_single_transport_blocks_OUTSIDE_the_a_eq_b_plus_1_cases",
         computed=str(sum(r["blocks_with_an_F_run"]
                          - r["blocks_whose_F_run_is_a_single_transport"]
+                         for r in rows if not r["a_eq_b_plus_1"])),
+        expected="0")
+    # U is exactly b blocks plus a two-step close (outside the a = b+1 cases).
+    w.add_assertion(
+        "non_degenerate_cases_where_U_block_count_is_NOT_b",
+        computed=str(sum(0 if r["U_blocks_with_an_F_run"] == r["b"] else 1
+                         for r in rows if not r["a_eq_b_plus_1"])),
+        expected="0")
+    w.add_assertion(
+        "non_degenerate_cases_whose_U_close_is_NOT_two_B_only_steps",
+        computed=str(sum(0 if r["U_trailing_B_only_steps"] == 2 else 1
                          for r in rows if not r["a_eq_b_plus_1"])),
         expected="0")
     w.add_assertion(
