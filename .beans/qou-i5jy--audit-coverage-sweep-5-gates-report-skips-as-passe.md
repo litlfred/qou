@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T17:00:00Z
+updated_at: 2026-08-23T17:30:00Z
 ---
 
 
@@ -767,3 +767,91 @@ Normal run is behaviourally identical: `scanned 2643 (76 audit-exempt)`,
 Note this audit was already honest about its main denominators — it prints
 `scanned`, `with`, and `without` — which is why only the empty-set branch needed
 work.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `block-manifest-audit.ts:284,362`, and the file already knew
+
+Filed in Tier 2 as *"one failed chapter silently skips every block under it"*.
+Confirmed, and it is worse than that phrasing: the `catch` sets `out = null`
+wholesale, so **one unreadable chapter discards the listing for the entire
+paper**, not just its own blocks. That null is then cached.
+
+### The sentence it prints instead
+
+```ts
+const listed = await listedInPaper(paperDir);
+if (listed === null) continue;   // :362 — silent
+...
+if (!quiet && !unlisted.length) {
+  console.log("block-manifest-audit: every manifest in this diff loads and is listed.");
+}
+```
+
+A skipped block never reaches `unlisted`, so `unlisted.length` is 0 and the
+success line fires. Demonstrated end to end by making one chapter manifest
+unparseable and running the **committed** version against a block under it:
+
+```
+block-manifest-audit: every manifest in this diff loads and is listed.
+exit=0
+```
+
+**Both halves of that sentence are false.** A manifest demonstrably does not
+load, and nothing was compared against the paper. This runs in CI
+(`scripts/check-sidecars.sh:326`, `--diff` mode).
+
+### The file documents this exact harm, ten lines above the defect
+
+> *"silence here is how the 2026-07-18 clarity drain moved five fluid-dynamics
+> remarks out of the paper while reporting itself 'manifest-safe'."*
+
+The comment was written to justify reporting unlisted blocks as a warning. Two
+`continue`s below it reintroduce precisely the silence it blames — which is the
+clearest single illustration this bean has of the pattern being *systemic rather
+than careless*.
+
+### After
+
+```
+⚠ block-manifest-audit: 1 of 1 block(s) were
+  NOT checked against a paper manifest. This is not a pass — nothing was
+  compared for them, so a block missing from the paper would not show up here:
+    …/gluon-model-comparison.md
+      the paper listing at content/quantum-observable-universe could not be
+      built: AggregateError: 3 errors building "…/appendix-knot-operations-
+      archimedean.ts"
+block-manifest-audit: 0 of 1 block(s) checked and listed; 1 NOT checked (above).
+```
+
+### Changes
+
+1. Both silent `continue`s now push to an `unchecked[]` list with a **reason** —
+   `no paper manifest found in any parent directory`, or the paper listing that
+   could not be built and the error that stopped it.
+2. `_listedError` records *why* a listing came back null, so the skip names the
+   failing chapter file rather than shrugging.
+3. The success line is now conditional. With skips it reads
+   `N of M block(s) checked and listed; K NOT checked (above)` — a ratio, not a
+   universal claim.
+4. The caller's comment `// paper manifest unreadable; not this check's business`
+   was also **wrong about the condition**: the `catch` fires on a *chapter*
+   import failure too, not only the paper manifest. Replaced with what actually
+   happens.
+
+### `out = null` deliberately KEPT
+
+The tempting "fix" is to return the partially-built set. That is worse: every
+block in the chapters after the failure would be reported **unlisted** — false
+positives in a check whose warnings ask an author to edit `sections[].blocks[]`.
+The listing genuinely is unusable, so `null` is the honest value. What was
+missing was never the null; it was that null read as *fine*. Comment added at
+the `catch` saying so, so nobody "simplifies" it later.
+
+### Verified
+
+Normal path unchanged (`every manifest in this diff loads and is listed.`,
+exit 0). Type errors identical before and after (8 pre-existing, all from
+missing `@types/node` under a standalone `tsc`, none in the edited region). The
+chapter manifest used to force the failure was restored from a copy and
+`git status` confirmed clean, twice.
