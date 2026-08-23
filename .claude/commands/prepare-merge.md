@@ -436,7 +436,7 @@ the CI copy does not run.
 ### Duplicate declarations — run it in the same breath
 
 ```sh
-bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 60
+bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 56
 ```
 
 Same family of defect — the library disagreeing with itself — and the same kind
@@ -450,7 +450,7 @@ error: import QOU.CategoricalDqSquared failed, environment already contains
 ```
 
 Baseline on `main` at 2026-08-23 (bean `qou-kfcl`): 33 798 declarations,
-**60 duplicated FQNs, 63 mutually un-importable module pairs across 68
+**56 duplicated FQNs, 61 mutually un-importable module pairs across 64
 modules**. The worst is `QOU.R_q` — `RatFunc ℚ` in one module and
 `LaurentPolynomial ℤ` in the other, the same name for two different rings.
 

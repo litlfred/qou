@@ -1,6 +1,7 @@
 import QOU.Basic
 import QOU.Glossary
 import QOU.QuantumObservableUniverse.Instanton
+import QOU.GroundRingCore
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -51,15 +52,21 @@ downstream.
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
+-- Ground ring from the canonical module rather than re-declared here.
+-- This file used to declare `R_q`, `q_param` and `q_inv_param` directly in
+-- `namespace QOU`, which collided with the SAME THREE NAMES in
+-- `QOU/BraidKnot/CasimirShared.lean` — and there `R_q` is `RatFunc ℚ`, a
+-- different ring. The two modules could never both be imported:
+--
+--     error: import QOU.CategoricalDqSquared failed, environment already
+--            contains 'QOU.q_param' from QOU.BraidKnot.CasimirShared
+--
+-- Bean `qou-kfcl`.
+open QOU.GroundRing
+
 namespace QOU
 
 noncomputable section
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
 
