@@ -2113,3 +2113,56 @@ and here.
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. `exists_index_le_of_rothGrowth` `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — `S` is no longer existential: the form the recursion consumes
+
+`exists_index_le_of_rothGrowth` left `S` — the bound on the determinant's index — existential
+and unconstrained. Honest, but not usable: the recursion has to *know* `S` is small, and it
+knows that because `index_sepW` splits the determinant's index into the two factors' indices,
+which the induction hypothesis (the `x` side) and the base case (the single split-off variable)
+bound.
+
+```
+index_le_of_rothGrowth_of_factor_bound :
+    index P  ≤  2/ω + 2·max(Φ, q)        whenever (d+1)·Φ ≤ q²·D₂
+```
+
+where `hfac` is the assumption the induction hypothesis discharges: for **any** bounded-order
+family realising a separated representation of `P`, the two Wronskians' indices sum to at most
+`r·Φ`.
+
+### ⚠ The factor `r` in `hfac` is not slack
+
+It is the source's `J(W) ≤ n·Φ_m`, and it is what makes `S/r ≤ Φ`. Correction 9 is exactly the
+observation that the conclusion depends on `S/r` and not on `S`; a hypothesis bounding the
+factors by `Φ` *without* the `r` would be asking for something strictly stronger than the
+recursion can deliver, and would look fine until the constants were checked.
+
+So the `r` appears twice and cancels: once in `hfac` (from degree rescaling, the source's
+`p_h = n·r_h`) and once in §13's `S/r`. Neither is decoration.
+
+### Also landed
+
+`exists_degree_floor` — the ceiling construction and its cost bound, factored out of
+`exists_index_le_of_rothGrowth` now that both forms need it. §13 wants a **natural** degree
+floor `D₁ ≤ d₁ k`; the growth condition supplies a **rational** `ω·d ≤ d₁ k`; `⌈ω·d⌉` sits
+between them. Also `rothGrowth_split`, which reads the growth condition off for the split-off
+variable.
+
+### Open — `hfac`, and it decomposes
+
+1. **The `x` side**: `RothLemmaUniform` at `m−1` bounds `index d₁ α (mvGenWronskian Dx φ)`
+   given degree and height bounds on that Wronskian. Both exist —
+   `degreeOf_mvGenWronskian_le`, `abs_coeff_mvGenWronskian_le`. What is missing is **transport**:
+   this is stated for `σ ⊕ Unit`, `RothLemmaUniform` for an `o : σ ≃ Fin m`.
+2. **The `y` side**: one variable, so `RothBaseCase` / `rothLemmaUniform_one` applies directly.
+3. **The factor `r`**: from `index_scale_degree_le_iff` applied to each factor.
+4. Then `c_m = 2^m − 3` by iterating.
+
+⚠ Provenance unchanged: §5, §6, §13 read and matching; §11 and §14 not read; the `2/ω` bound
+is the arc's own reconstruction; `c_m = 2^m − 3` unasserted.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Four declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.

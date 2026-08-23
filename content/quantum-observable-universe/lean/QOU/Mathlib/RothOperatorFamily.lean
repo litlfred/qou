@@ -489,6 +489,48 @@ theorem exists_index_le_of_separated_le_degreeOf {K : Type*} [Field K] [CharZero
   exact hS
 
 
+/-- The degree floor the join needs, packaged.
+
+§13 wants a **natural** `D₁` below every `d₁ k`; the growth condition supplies the
+**rational** bound `ω·d ≤ d₁ k`.  `⌈ω·d⌉` sits between them and also carries the cost bound.
+Factored out because both forms of the conclusion below need exactly this. -/
+theorem exists_degree_floor (ω : ℚ) (hω : 1 ≤ ω) (d₁ : σ → ℕ) (dl : ℕ) (hd0 : dl ≠ 0)
+    (hgrow : ∀ k, ω * (dl : ℚ) ≤ (d₁ k : ℚ)) :
+    ∃ D₁ : ℕ, D₁ ≠ 0 ∧ (∀ k, D₁ ≤ d₁ k) ∧ ((dl : ℚ) + 1) / (D₁ : ℚ) ≤ 2 / ω := by
+  have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
+  have hdl1 : (1 : ℚ) ≤ (dl : ℚ) := by exact_mod_cast Nat.one_le_iff_ne_zero.mpr hd0
+  have hcnn : (0 : ℤ) ≤ ⌈ω * (dl : ℚ)⌉ := Int.ceil_nonneg (by positivity)
+  refine ⟨⌈ω * (dl : ℚ)⌉.toNat, ?_, ?_, ?_⟩ <;>
+    [skip; skip; skip]
+  all_goals {
+    have hcast : ((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℚ) = ((⌈ω * (dl : ℚ)⌉ : ℤ) : ℚ) := by
+      rw [show ((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℚ)
+          = (((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℤ) : ℚ) by push_cast; ring,
+        Int.toNat_of_nonneg hcnn]
+    have hfloor : ω * (dl : ℚ) ≤ ((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℚ) := by
+      rw [hcast]; exact Int.le_ceil _
+    first
+      | (intro h0
+         have h1 : (1 : ℚ) ≤ ((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
+         rw [h0] at h1
+         norm_num at h1)
+      | (intro k
+         have h2 : ⌈ω * (dl : ℚ)⌉ ≤ (d₁ k : ℤ) := Int.ceil_le.mpr (by exact_mod_cast hgrow k)
+         omega)
+      | (have hpos : (0 : ℚ) < ((⌈ω * (dl : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
+         rw [div_le_div_iff₀ hpos hωpos]
+         nlinarith) }
+
+/-- The growth condition, read off for the split-off variable. -/
+theorem rothGrowth_split {m : ℕ} (o : (σ ⊕ Unit) ≃ Fin m) (ω : ℚ) (hω : 1 ≤ ω)
+    (d₁ : σ → ℕ) (d₂ : Unit → ℕ) (hg : RothGrowth o ω (Sum.elim d₁ d₂))
+    (hlast : ∀ k : σ, (o (Sum.inl k) : ℕ) + 1 ≤ (o (Sum.inr ()) : ℕ)) :
+    ∀ k : σ, ω * ((d₂ () : ℕ) : ℚ) ≤ ((d₁ k : ℕ) : ℚ) := by
+  intro k
+  have h := rothGrowth_mul_le (o := o) hω hg (j := o (Sum.inl k)) (k := o (Sum.inr ()))
+    (hlast k)
+  simpa using h
+
 /-! ### The two halves, joined
 
 §13's conclusion has a row cost `t = (d+1)/D₁`; `RothGrowth` bounds that by `2/ω`.  Those are
@@ -522,56 +564,110 @@ theorem exists_index_le_of_rothGrowth {K : Type*} [Field K] [CharZero K] [Decida
       2 / ω ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) →
       ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
       θ ≤ 2 / ω + 2 * max (S / (r : ℚ)) q := by
-  have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
-  have hdl1 : (1 : ℚ) ≤ ((d₂ () : ℕ) : ℚ) := by
-    exact_mod_cast Nat.one_le_iff_ne_zero.mpr hd0
-  have hgrow : ∀ k : σ, ω * ((d₂ () : ℕ) : ℚ) ≤ ((d₁ k : ℕ) : ℚ) := by
-    intro k
-    have h := rothGrowth_mul_le (o := o) hω hg (j := o (Sum.inl k)) (k := o (Sum.inr ()))
-      (hlast k)
-    simpa using h
-  have hcnn : (0 : ℤ) ≤ ⌈ω * ((d₂ () : ℕ) : ℚ)⌉ := Int.ceil_nonneg (by positivity)
-  have hD₁cast : ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
-      = ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉ : ℤ) : ℚ) := by
-    rw [show ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
-        = (((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℤ) : ℚ) by push_cast; ring,
-      Int.toNat_of_nonneg hcnn]
-  have hfloor : ω * ((d₂ () : ℕ) : ℚ) ≤ ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by
-    rw [hD₁cast]; exact Int.le_ceil _
-  have hd₁ : ∀ k, ⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat ≤ d₁ k := by
-    intro k
-    have h2 : ⌈ω * ((d₂ () : ℕ) : ℚ)⌉ ≤ (d₁ k : ℤ) :=
-      Int.ceil_le.mpr (by exact_mod_cast hgrow k)
-    omega
-  have hD₁ne : ⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat ≠ 0 := by
-    have h1 : (1 : ℚ) ≤ ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
-    intro h0
-    rw [h0] at h1
-    norm_num at h1
+  obtain ⟨D₁, hD₁ne, hd₁, hcost⟩ :=
+    exists_degree_floor ω hω d₁ (d₂ ()) hd0 (rothGrowth_split o ω hω d₁ d₂ hg hlast)
   obtain ⟨r, S, hr, hcard, hmain⟩ :=
     exists_index_le_of_separated_le_degreeOf hD₁ne hD₂ d₁ d₂ hd₁ hd₂ α β P hP hdeg
-  have hD₁pos : (0 : ℚ) < ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
-  have hcost : (((d₂ () : ℕ) : ℚ) + 1) / ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
-      ≤ 2 / ω := by
-    rw [div_le_div_iff₀ hD₁pos hωpos]
-    nlinarith
   exact ⟨r, S, hr, hcard, fun θ q hθ hq0 hq hidx =>
     le_trans (hmain θ q (le_trans hcost hθ) hq0 hq hidx) (by linarith)⟩
 
+
+/-! ### What the induction hypothesis supplies
+
+`exists_index_le_of_rothGrowth` leaves `S` — the bound on the determinant's index —
+existential and unconstrained.  That is honest but not usable: the recursion has to *know* `S`
+is small, and it knows that because `index_sepW` splits the determinant's index into the two
+factors' indices, which the induction hypothesis (for the `x`-side) and the base case (for the
+single split-off variable) bound.
+
+⚠ Note the factor `r` in `hfac`.  It is not slack: the source's `J(W) ≤ n·Φ_m` carries it, and
+it is what makes `S/r ≤ Φ` — which is the quantity correction 9 showed the conclusion actually
+depends on.  A hypothesis bounding the factors by `Φ` *without* the `r` would be asking for
+something stronger than the recursion can deliver. -/
+
+/-- **§13's conclusion in the form the recursion consumes.**
+
+`hfac` is what the induction hypothesis supplies: for *any* bounded-order family realising a
+separated representation of `P`, the two Wronskians' indices sum to at most `r·Φ`.  Then
+
+    index P ≤ 2/ω + 2·max(Φ, q)        whenever  (d+1)·Φ ≤ q²·D₂.
+
+Both `2/ω` and `Φ` are small in the intended regime, and neither mentions the representation
+length — the `r` in `hfac` cancels against the `S/r` in §13's conclusion.
+
+⚠ Still not Roth's lemma: `hfac` is an assumption here, and discharging it is the induction. -/
+theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] {m : ℕ} (o : (σ ⊕ Unit) ≃ Fin m) (ω : ℚ) (hω : 1 ≤ ω)
+    (d₁ : σ → ℕ) (d₂ : Unit → ℕ)
+    (hg : RothGrowth o ω (Sum.elim d₁ d₂))
+    (hlast : ∀ k : σ, (o (Sum.inl k) : ℕ) + 1 ≤ (o (Sum.inr ()) : ℕ))
+    (hd0 : d₂ () ≠ 0) {D₂ : ℕ} (hD₂ : D₂ ≠ 0) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : Unit → K) (P : MvPolynomial (σ ⊕ Unit) K) (hP : P ≠ 0)
+    (hdeg : degreeOf (Sum.inr ()) P ≤ d₂ ())
+    (Φ : ℚ) (hΦ0 : 0 ≤ Φ)
+    (hfac : ∀ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial Unit K)
+        (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
+      0 < r → (∀ i, (Dx i).length ≤ (i : ℕ)) → (∀ j, (Dy j).length ≤ (j : ℕ)) →
+      P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) →
+      index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ)
+        ≤ ((((r : ℚ) * Φ : ℚ)) : WithTop ℚ))
+    (θ q : ℚ) (hθt : 2 / ω ≤ θ) (hq0 : 0 ≤ q)
+    (hq : (((d₂ () : ℕ) : ℚ) + 1) * Φ ≤ q ^ 2 * (D₂ : ℚ))
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P) :
+    θ ≤ 2 / ω + 2 * max Φ q := by
+  have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, -⟩ :=
+    exists_sepW_ne_zero_le_degreeOf P hP hdeg
+  obtain ⟨D₁, hD₁ne, hd₁, hcost⟩ :=
+    exists_degree_floor ω hω d₁ (d₂ ()) hd0 (rothGrowth_split o ω hω d₁ d₂ hg hlast)
+  have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁ne
+  have hrQ : (0 : ℚ) < (r : ℚ) := by exact_mod_cast hr
+  have hrle : (r : ℚ) ≤ ((d₂ () : ℕ) : ℚ) + 1 := by
+    have : (r : ℚ) ≤ ((d₂ () + 1 : ℕ) : ℚ) := by exact_mod_cast hcard
+    push_cast at this; linarith
+  have hS : index (Sum.elim d₁ d₂) (Sum.elim α β)
+      (Matrix.of fun i j => pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det
+        ≤ ((((r : ℚ) * Φ : ℚ)) : WithTop ℚ) := by
+    rw [hPeq, ← sepW, index_sepW]
+    exact hfac r φ ψ Dx Dy hr hDx hDy hPeq
+  have hqq : (r : ℚ) * Φ ≤ q ^ 2 * (D₂ : ℚ) := le_trans (by nlinarith) hq
+  have hmain := index_le_two_mul_max_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
+    (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P θ
+    ((((d₂ () : ℕ) : ℚ) + 1) / (D₁ : ℚ)) (D₂ : ℚ) ((r : ℚ) * Φ) q hr hD₂Q
+    (le_trans hcost hθt) hq0 hqq hθ
+    (fun i j => le_trans (cost_sepW_le hD₁ne hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hDx hDy i j)
+      (by
+        have : (r : ℚ) / (D₁ : ℚ) ≤ (((d₂ () : ℕ) : ℚ) + 1) / (D₁ : ℚ) :=
+          div_le_div_of_nonneg_right hrle hD₁Q.le
+        linarith)) hS
+  rw [mul_div_cancel_left₀ Φ (ne_of_gt hrQ)] at hmain
+  linarith
+
 /-! ### Next
 
-§13 is derived and its row cost is bounded by `2/ω`.  What is left is the **recursion** —
-structure, not constants:
+§13 is derived, its row cost is bounded by `2/ω`, and `index_le_of_rothGrowth_of_factor_bound`
+puts the conclusion in the form the recursion consumes: `index P ≤ 2/ω + 2·max(Φ, q)`, with
+`Φ` the bound on the two Wronskians' indices that the induction hypothesis supplies.
 
-1. **Connect `RothLemmaUniform σ m ω ε` to this.**  `exists_index_le_of_rothGrowth` is stated
-   for `σ ⊕ Unit`, which is the `m → (m−1) + 1` split the induction performs.  Turning an
-   `o : σ ≃ Fin m` into that split, and transporting the statement across it, is the missing
-   structural step.
-2. **`c_m = 2^m − 3`**, from iterating the step with `rothLemmaUniform_one` as the base.
+What is left is **discharging `hfac`**, and it decomposes:
+
+1. **The `x` side, from the induction hypothesis.**  `RothLemmaUniform` at `m−1` bounds
+   `index d₁ α (mvGenWronskian Dx φ)` given degree and height bounds on that Wronskian.  Both
+   exist: `degreeOf_mvGenWronskian_le` and `abs_coeff_mvGenWronskian_le`.  What is missing is
+   the *transport*: `exists_index_le_of_rothGrowth_of_factor_bound` is stated for `σ ⊕ Unit`,
+   and `RothLemmaUniform` for an `o : σ ≃ Fin m`.
+2. **The `y` side, from the base case.**  One variable, so `RothBaseCase` /
+   `rothLemmaUniform_one` applies directly.
+3. **The factor `r`.**  `hfac` asks for `r·Φ`, which is the source's `J(W) ≤ n·Φ_m`.  It comes
+   from degree rescaling — `index_scale_degree_le_iff` — applied to each factor.  ⚠ The `r` is
+   not slack: it cancels against the `S/r` in §13's conclusion, and correction 9 is what that
+   cancellation depends on.
+4. Then `c_m = 2^m − 3` by iterating.
 
 ⚠ Provenance: §5, §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14
 have **not**.  The `2/ω` bound is the arc's own reconstruction of what a growth condition must
-be doing; `c_m = 2^m − 3` stays unasserted until §14 is read. -/
+be doing; `c_m = 2^m − 3` stays unasserted. -/
+
 
 
 
