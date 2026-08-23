@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T09:39:24Z
+updated_at: 2026-08-23T13:58:35Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1099,3 +1099,58 @@ assumed half: the eigenvalue-pair case, still needing transcendence)*, with the
 boundary named. That is strictly better bookkeeping than before, and it is less
 than "branch 1 is closed" unqualified. Recorded in the Lean header (§"Three
 limits"), the probe docstring, and registry §9g.
+
+
+---
+
+## 2026-08-23 — branch 1 of the trichotomy is now closed IN FULL
+
+Branch `claude/b3nk-decay-convention-c-excluded-2026-08-23` (PR #5544).
+
+The 2026-08-15 pass closed branch 1 only for the **character** case and named
+the boundary honestly: the **eigenvalue-pair** sub-case was left open, "still
+needing the transcendence argument" (§9g "Three limits" (i)).
+
+**It does not need one.** Boundedness was the wrong invariant to push. The
+hypothesis that pass already proved — `alpha` attains EVERY non-positive real
+on [1,inf) (`alphaC_surjective_nonpos` / `alphaD_neg_surjective_nonpos`) — is
+far stronger than boundedness: each level set `{s : 2cos alpha(s) = c}` for
+`c` in [-2,2] is INFINITE, and infinitely many solutions kill a polynomial
+relation of ANY degree, Laurent or algebraic.
+
+`QOU.QBeta.BraidImageEigenphase.coeffs_zero_of_surjective_nonpos`
+(BraidImageEigenphaseAlgebraic.lean, sorry-free, axioms [propext,
+Classical.choice, Quot.sound]): if `sum_{j<=d} p_j(s)*(2cos alpha s)^j = 0` on
+[1,inf), then EVERY `p_j = 0`. Three applications of "a polynomial with
+infinitely many roots is zero" — freeze Y at c, freeze X at x, read off
+coefficients.
+
+Covers the eigenvalue-pair case because a sum of two eigenvalues of a matrix
+over QQ(s) is algebraic over QQ(s) (pairwise-sum resolvent; coefficients are
+symmetric functions, so they stay in the base field) — verified exactly at 3x3
+and 4x4.
+
+**Subsumption machine-checked, not asserted:** `no_laurent_of_algebraic`
+re-derives the predecessor `no_laurent_of_surjective_nonpos` as the `d = 1`
+case (`p_0 = -P`, `p_1 = X^N`).
+
+Probe `computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py`, 4/4,
+sympy-exact over QQ(s) + mpmath 60 dps, no float64. A1 confirms the
+strengthening was NECESSARY: the cited counterexample q/(q+1) really is
+bounded, non-constant and algebraic, so the Laurent argument genuinely does
+not extend.
+
+## What this does NOT do — the bean stays OPEN
+
+- Does **not** derive `alpha`, in either convention.
+- Does **not** state a D-frame ladder. The re-derivation this bean is actually
+  about is untouched.
+- Branch (3) — a holonomy of an independently-defined KZ / Kohno-Drinfeld
+  connection — is untouched, and with branch (1) now closed in full and branch
+  (2) circular, it is the **ONLY** place a derivation of `alpha` can live.
+  That is the next front.
+- `c_3 ~ -974` remains a sensitivity measurement, wired nowhere.
+
+Scope-(b): structural exclusion citing a proved invariant. The argument never
+reads `z`'s formula, so it holds for every Markov parameter with unbounded
+phase — C and D alike.
