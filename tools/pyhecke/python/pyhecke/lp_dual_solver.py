@@ -299,9 +299,29 @@ def _solve_operator_selection_lp_clarabel(
     f64 truncation (the *inputs* are still f64 here because callers pass
     ``np.ndarray``; pass 50-dps strings upstream for full precision).
 
-    NOT yet cross-checked against the scipy backend to 1e-25 — that needs a
-    scipy+numpy environment.  The scipy backend therefore remains the
-    default; this path is opt-in via ``backend="clarabel"``.
+    CROSS-CHECKED 2026-08-23 (bean ``qou/ftuv``), and it passes by 20 orders
+    of margin.  On the H_3 operator-selection LP with 50-dps string inputs,
+    against ``backend="scipy"`` at ``n_target`` in {1.0, 0.6614, 3.0}::
+
+        |Δ y0_star|   ≤ 7.5e-46          active_set   identical, [0]
+        max |Δ y_star| ≤ 2.8e-47
+        primal_obj     scipy 1.07e-10    clarabel 3.6e-44
+
+    The stated precondition — "that needs a scipy+numpy environment" — was
+    stale; both install from PyPI.
+
+    Reaching that needed a fix in ``operator_selection_lp.rs``: the solver
+    tolerance was hardcoded ``1e-12``/``1e-8``, so ``prec_bits`` widened the
+    arithmetic and never tightened termination.  The residual sat at
+    3.81482e-16 identically at 167 and 333 bits.  It now derives from ``F``'s
+    probed working precision and tracks it: 3.6e-44 at 167 bits, 3.8e-84 at
+    333, 3.8e-124 at 500.
+
+    The scipy backend nonetheless REMAINS the default, and changing it is an
+    owner call rather than a consequence of this fix: ``to_dict()``'s f64
+    fields feed arithmetic in 56 producers, and switching the default moves
+    every LP/SDP witness in the corpus at once.  This path stays opt-in via
+    ``backend="clarabel"``.
     """
     # STRINGS IN, not just strings out. Callers may pass decimal strings (or
     # mpmath mpf) for `t`, `G` and `n_target` — e.g. from

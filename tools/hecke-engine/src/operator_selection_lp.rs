@@ -144,15 +144,62 @@ pub fn solve_operator_selection_lp<F: FloatT>(
         SupportedConeT::NonnegativeConeT(d), // x ≥ -M
     ];
 
-    // Tolerances: 1e-12 is achievable by BOTH the f64 and the MPFR IPM on
-    // a well-conditioned LP (so the cross-validation test converges on
-    // both), while still 4 orders tighter than SciPy HiGHS' f64 default
-    // (~1e-8). MPFR can be pushed tighter via a custom settings build.
-    let eps = F::from_f64(1e-12).unwrap();
-    let eps_red = F::from_f64(1e-8).unwrap();
+    // Tolerances, DERIVED FROM `prec_bits` rather than fixed.
+    //
+    // These used to be `1e-12` / `1e-8` hardcoded, with the note that
+    // "1e-12 is achievable by BOTH the f64 and the MPFR IPM ... MPFR can be
+    // pushed tighter via a custom settings build". The consequence was that
+    // `prec_bits` widened the *arithmetic* and never tightened *termination*,
+    // so the MPFR path stopped at an f64-scale residual no matter what it was
+    // asked for. Measured 2026-08-23 at H_3 (bean `qou/ftuv`): `primal_obj`
+    // came back 3.81482e-16 identically at (167 bits, 1e-9), (167, 1e-30) and
+    // (333, 1e-40) — six figures apart from nothing. The duals carried ~19
+    // genuine digits while the binary's own CLI documents "167 ≈ 50 dps".
+    //
+    // Scaling instead of a "custom settings build": the caller already passes
+    // the precision, so the tolerance can follow it. `0.8 · dps` for the main
+    // tolerance leaves ~20% headroom for IPM round-off; `0.5 · dps` for the
+    // reduced (fallback) tolerance keeps the same ratio the fixed pair had.
+    //
+    // **`prec_bits` is NOT the number to scale by.** The doc comment above
+    // says it is "ignored (harmless) for non-MPFR `F`", so for `F = f64` it
+    // reports whatever the caller asked for while the arithmetic stays at 53
+    // bits. Keying the tolerance on it asked the f64 IPM for 1e-40 and got
+    // `InsufficientProgress` — caught by `mpfr_agrees_with_f64`, which is
+    // exactly the shared cross-validation test the old fixed constants were
+    // chosen to keep converging.
+    //
+    // So probe `F`'s ACTUAL working precision: the largest `k` with
+    // `1 + 10^-k ≠ 1`. That is ~15 for f64 and ~50 at 167 bits, costs at most
+    // 300 additions, and cannot disagree with the type in play. The requested
+    // precision still caps it, so asking for less than `F` can do is honoured.
+    //
+    // At f64 the clamps then reproduce the old constants exactly —
+    // `floor(0.8 · 15) = 12` and `max(8, floor(0.5 · 15)) = 8`. At 167 bits
+    // they become 1e-40 / 1e-25.
+    //
+    // The 300/250 ceilings keep `10^-e` inside f64's normal range (min normal
+    // ≈ 2.2e-308), since `F::from_f64` is how the value is built.
+    let one = F::from_f64(1.0).unwrap();
+    let mut usable_dps = 0f64;
+    for k in 1..=300i32 {
+        let probe = one.clone() + F::from_f64(10f64.powi(-k)).unwrap();
+        if probe == one {
+            break;
+        }
+        usable_dps = f64::from(k);
+    }
+    let dps = (f64::from(prec_bits) * std::f64::consts::LOG10_2).min(usable_dps);
+    let e_tight = ((0.8 * dps).floor() as i32).clamp(12, 300);
+    let e_red = ((0.5 * dps).floor() as i32).clamp(8, 250);
+    let eps = F::from_f64(10f64.powi(-e_tight)).unwrap();
+    let eps_red = F::from_f64(10f64.powi(-e_red)).unwrap();
+    // A tighter tolerance needs more interior-point steps. 200 was tuned for
+    // the f64 tolerance; hold that at f64 and allow more as precision rises.
+    let max_iter = 200u32 + 10 * ((dps - 16.0).max(0.0) as u32);
     let settings = DefaultSettingsBuilder::default()
         .verbose(false)
-        .max_iter(200)
+        .max_iter(max_iter)
         .tol_gap_abs(eps.clone())
         .tol_gap_rel(eps.clone())
         .tol_feas(eps.clone())

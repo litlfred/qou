@@ -415,3 +415,91 @@ be corrected either way.
 - [ ] Independently of that: the `*_str` companions mean the carve-out is
       already avoidable for any producer that opts into clarabel. Retiring
       route 3 does not have to wait on the precision question.
+
+## 2026-08-23 — FIXED. The tolerance never followed the precision.
+
+The ~19-digit ceiling had a single cause, in
+`tools/hecke-engine/src/operator_selection_lp.rs`:
+
+```rust
+// Tolerances: 1e-12 is achievable by BOTH the f64 and the MPFR IPM ...
+// MPFR can be pushed tighter via a custom settings build.
+let eps     = F::from_f64(1e-12).unwrap();
+let eps_red = F::from_f64(1e-8).unwrap();
+```
+
+`prec_bits` set the MPFR working precision and **nothing else**. The IPM then
+terminated at an f64-scale tolerance no matter how wide the arithmetic was —
+which is exactly the measurement: 3.81482e-16 identically at 167 and 333 bits.
+The author knew (*"can be pushed tighter via a custom settings build"*); the
+consequence, that the documented "50 dps" was unreachable, was not recorded.
+
+**No custom settings build was needed.** The caller already passes the
+precision, so the tolerance can follow it: `0.8 · dps` for the main tolerance,
+`0.5 · dps` for the reduced one, clamped so f64 reproduces the old `1e-12` /
+`1e-8` exactly.
+
+### The first attempt broke the f64 path, and the test caught it
+
+Scaling by `prec_bits` directly fails, because the function's own doc says it
+is *"ignored (harmless) for non-MPFR `F`"* — for `F = f64` it reports whatever
+the caller asked for while the arithmetic stays at 53 bits. Asking the f64 IPM
+for 1e-40 returned `InsufficientProgress`, and
+`operator_selection_lp::tests::mpfr_agrees_with_f64` failed —
+**the very cross-validation test the fixed constants were chosen to protect.**
+
+So the scale factor is now `F`'s *probed* working precision — the largest `k`
+with `1 + 10^-k ≠ 1` — capped by the requested `prec_bits`. ~15 for f64, ~50 at
+167 bits, at most 300 additions, and it cannot disagree with the type in play.
+
+### Result
+
+```
+prec_bits  ~dps    primal_obj      duality_gap     y_star[0] - 1
+       53  16.0    -5.82077e-11    5.83356e-11     1.974e-13
+      167  50.3     3.57331e-44    3.60031e-44     3.094e-46
+      333 100.2     3.81494e-84    3.82144e-84     1.75e-87
+      500 150.5     3.81501e-124   3.82144e-124    0.0
+```
+
+Before: **3.81482e-16 at every setting.** At 167 bits the duals now carry ~46
+genuine digits, not ~19.
+
+**Cross-check against scipy, `n_target ∈ {1.0, 0.6614, 3.0}`:**
+
+```
+|Δ y0_star|    ≤ 7.5e-46        active_set  identical, [0]
+max |Δ y_star| ≤ 2.8e-47
+primal_obj     scipy 1.07e-10   clarabel 3.6e-44
+```
+
+The docstring's "cross-checked to 1e-25" precondition is met by ~20 orders.
+
+**Tests:** 7/7 in `operator_selection_lp` including `mpfr_agrees_with_f64`;
+208/208 across the crate.
+
+**Docs corrected:** the `Cargo.toml` "50 dps" note now says it is the achieved
+accuracy and why it was not before; `solve_operator_selection_lp_mpfr`'s
+docstring carries the measured cross-check in place of the stale
+"NOT yet cross-checked … needs a scipy+numpy environment".
+
+### The default is deliberately NOT changed
+
+Switching `backend` to clarabel moves every LP/SDP witness in the corpus at
+once and `to_dict()`'s f64 fields feed arithmetic in 56 producers. That is an
+owner call, not a side effect of fixing a tolerance. What has changed is that
+the precision objection to making it the default is gone.
+
+## Next
+
+- [x] Build the binary and run the cross-check.
+- [x] Diagnose the ~19-digit ceiling — hardcoded tolerance, now derived.
+- [x] Correct the stale precision claims in both docs.
+- [ ] **Owner: make `backend="clarabel"` the default for the LP path?** With
+      the tolerance fixed, the `*_str` companions carry ~46 digits and route
+      2's shadow rule already excuses their f64 mirrors — so the route-3
+      carve-out becomes unnecessary on the LP path without touching
+      `to_dict()`'s contract. That is the concrete way to shrink `qou/f7af`'s
+      4,052 excused fields.
+- [ ] The SDP path is still MPFR-in / f64-solve
+      (`build_rho_lambda_mpfr_to_f64`); the carve-out stays justified there.
