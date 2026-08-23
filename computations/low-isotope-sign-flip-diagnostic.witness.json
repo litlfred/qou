@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:39:09.269596+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-23T21:39:19.728287+00:00",
+  "commitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -18,7 +18,7 @@
   "durationMs": 5,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "b5dcefa9b59f",
+  "scriptHash": "f6d0ee34c08f",
   "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -46,7 +46,7 @@
   "parameters": {
     "input_witness": "low-isotope-mass-table.witness.json",
     "q_0_at_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h_q0": "0.20906032199559368",
+    "h_q0": "0.209060321995593678981862636465967350261623301647479826789744",
     "channel_d_coefficients": "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), SIGMA_INV=(1,-h))"
   },
   "data": {
@@ -56,108 +56,108 @@
         "N": 0,
         "A": 1,
         "atom_label": "p",
-        "err_pct": -2.851767032995154e-10,
-        "err_MeV": -2.675733412615955e-09,
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 0,
         "N": 1,
         "A": 1,
         "atom_label": "n",
-        "err_pct": 8.775678797490492e-08,
-        "err_MeV": 8.245324352174066e-07,
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 1,
         "N": 1,
         "A": 2,
         "atom_label": "²H",
-        "err_pct": 1.0903067242833393,
-        "err_MeV": 0.024254594864734358,
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
         "prediction_type": "binding_energy",
         "channels_pp": 0,
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 1,
-        "signed_h_weight": -0.10453016099779684
+        "signed_h_weight": "-0.104530160997796839490931318232983675130811650823739913394872"
       },
       {
         "Z": 1,
         "N": 2,
         "A": 3,
         "atom_label": "³H",
-        "err_pct": -0.15560163384943174,
-        "err_MeV": -0.013197813466979014,
+        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
         "prediction_type": "binding_energy",
         "channels_pp": 0,
         "channels_pn": 1,
         "channels_nn": 1,
         "n_inter_total": 2,
-        "signed_h_weight": -0.31359048299339054
+        "signed_h_weight": "-0.313590482993390518472793954698951025392434952471219740184616"
       },
       {
         "Z": 2,
         "N": 1,
         "A": 3,
         "atom_label": "³He",
-        "err_pct": -2.9686548792542626,
-        "err_MeV": -0.2291220102290401,
+        "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
+        "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
         "prediction_type": "binding_energy",
         "channels_pp": 1,
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 2,
-        "signed_h_weight": -0.10453016099779684
+        "signed_h_weight": "-0.104530160997796839490931318232983675130811650823739913394872"
       }
     ],
     "linear_fit_err_pct_vs_n_inter": {
-      "slope": -0.7810641501438265,
-      "intercept_pct": 0.3742742098740777,
-      "R_squared": 0.26528719463905365
+      "slope": "-0.781076597539494544749132990161767124335728190736042954842658",
+      "intercept_pct": "0.374296748822892484449723688889393553878164183259420728881159",
+      "R_squared": "0.265294481219706539444094650992637586036348368582876658383702"
     },
     "linear_fit_err_pct_vs_signed_h_weight": {
-      "slope": 0.496193877122594,
-      "intercept_pct": -0.35492271440800294,
-      "R_squared": 0.0017547699041416728
+      "slope": "0.496273257376354385801675790461027009796997196667593229843485",
+      "intercept_pct": "-0.354904325224150668400862478683106910704943810537099661688035",
+      "R_squared": "0.00175532366481437121233077670643698026879885833687363791383848"
     },
     "klr_positivity_check": {
       "trace_level_violations": [],
       "prediction_error_sign_flips": [
         {
           "atom": "p",
-          "err_pct": -2.851767032995154e-10,
+          "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
           "atom": "n",
-          "err_pct": 8.775678797490492e-08,
+          "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
           "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
         },
         {
           "atom": "²H",
-          "err_pct": 1.0903067242833393,
+          "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
           "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
         },
         {
           "atom": "³H",
-          "err_pct": -0.15560163384943174,
+          "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
           "atom": "³He",
-          "err_pct": -2.9686548792542626,
+          "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         }
       ],
@@ -168,11 +168,11 @@
     "upstream_witness_hashes": [
       {
         "path": "low-isotope-mass-table.witness.json",
-        "sha256": "1ffe5632f51a7950050662003877a9c8dbf5670dce94651ed344e9f315c4b6ef",
-        "size_bytes": 23102,
-        "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-15T21:36:26.010824+00:00"
+        "sha256": "4a3bdefce5350b0ababcc0d0e8fc3b16c4d736a07ace737e8de5eab8ec56e457",
+        "size_bytes": 24763,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "12a288ee64ba91f0b87fd06cc61acabff00bc8df",
+        "computedAt": "2026-08-23T19:42:37.077025+00:00"
       },
       {
         "path": "q-pinning-50-digit.witness.json",

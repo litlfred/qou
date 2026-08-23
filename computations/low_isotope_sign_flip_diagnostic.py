@@ -64,7 +64,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -78,33 +78,72 @@ INPUT_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
-def _pearson_r(xs: list[float], ys: list[float]) -> float:
-    """Pearson correlation coefficient.  Returns NaN if degenerate."""
+def _mpf(v):
+    """Coerce a numeric witness field to ``mp.mpf`` at the READ boundary.
+
+    ``low-isotope-mass-table.witness.json`` used to serialize ``err_pct`` /
+    ``err_MeV`` as JSON floats and now serializes them as precision-preserving
+    decimal STRINGS (the raw-float64 ratchet, ``_check_raw_float64`` in
+    ``qou_substrate.witness``).  Reading a string straight into ``sum()`` is
+    what crashed this script:
+
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+    ``mpf`` and not ``float``: the string carries ~60 significant digits and
+    ``float()`` would throw away 40+ of them right where the coercion happens,
+    which is precisely the truncation ``_precision.fmt`` exists to avoid.
+    ``mpf`` supports every operation this module performs on the value
+    (arithmetic, ``**0.5``, ordering against 0, ``:.4f`` format specs).
+
+    ``mp.mpf(v)`` on the string branch and ``mp.mpf(repr(v))`` on the float
+    branch: mpmath parses a decimal string exactly, while a legacy JSON float
+    must go through ``repr`` (its shortest round-tripping form) so the decimal
+    the file states is recovered rather than the binary64 tail.  Matches
+    ``binding_per_block_magnitude_a3_probe._mpf`` and
+    ``canonical_isotope_witness._as_mpf``.
+    """
+    if v is None:
+        return None
+    if isinstance(v, mp.mpf):
+        return v
+    # float64-intentional: `repr` is the shortest round-tripping decimal of a
+    # legacy JSON float, so this recovers the literal the file states.
+    return mp.mpf(v) if isinstance(v, str) else mp.mpf(repr(v))
+
+
+def _pearson_r(xs: list, ys: list):
+    """Pearson correlation coefficient.  Returns NaN if degenerate.
+
+    Values are ``mp.mpf`` throughout (see ``_mpf``), so the sums, the
+    ``**0.5`` and the final quotient all stay at ``mp.dps`` working
+    precision; ``mp.nan`` (not ``float('nan')``) keeps the degenerate
+    return in the same type as the live path.
+    """
     n = len(xs)
     if n < 2:
-        return float("nan")
+        return mp.nan
     mx = sum(xs) / n
     my = sum(ys) / n
     num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
     denx = sum((x - mx) ** 2 for x in xs) ** 0.5
     deny = sum((y - my) ** 2 for y in ys) ** 0.5
     if denx == 0 or deny == 0:
-        return float("nan")
+        return mp.nan
     return num / (denx * deny)
 
 
-def _linear_fit(xs: list[float], ys: list[float]) -> tuple[float, float, float]:
-    """Returns (slope, intercept, R²) for y = slope·x + intercept."""
+def _linear_fit(xs: list, ys: list) -> tuple:
+    """Returns (slope, intercept, R²) for y = slope·x + intercept, as mpf."""
     r = _pearson_r(xs, ys)
     if not (r == r):  # NaN check
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     n = len(xs)
     mx = sum(xs) / n
     my = sum(ys) / n
     cov = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / n
     var = sum((x - mx) ** 2 for x in xs) / n
     if var == 0:
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     slope = cov / var
     intercept = my - slope * mx
     return slope, intercept, r ** 2
@@ -132,7 +171,10 @@ def main() -> int:
     src = record_upstream(INPUT_WITNESS, _UPSTREAM_RECORDS)
     rows_in = src["data"]["rows"]
     q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
-    h_q0 = float(q - 1 / q)  # h = q − q⁻¹ at substrate
+    # mpf, not float(): h feeds `signed_h_weight`, which is serialized into
+    # the witness.  A float64 here both truncates and trips the raw-float64
+    # guard in `WitnessBuilder.save`.
+    h_q0 = q - 1 / q  # h = q − q⁻¹ at substrate
 
     # Per-isotope rows
     rows_out = []
@@ -141,6 +183,8 @@ def main() -> int:
             # Skip rows that have no prediction (e.g. ⁵Li, ⁶Li until
             # wired in a follow-up commit).
             continue
+        err_pct = _mpf(r["err_pct"])
+        err_MeV = _mpf(r["err_MeV"])
         ch = _count_channels(r["knot_operators"])
         n_inter = ch["pp"] + ch["pn"] + ch["nn"]
         # Sum of d-coefficients: pp contributes 0, pn contributes -h/2
@@ -155,8 +199,8 @@ def main() -> int:
         rows_out.append({
             "Z": r["Z"], "N": r["N"], "A": r["A"],
             "atom_label": _atom_label(r["Z"], r["N"]),
-            "err_pct": r["err_pct"],
-            "err_MeV": r["err_MeV"],
+            "err_pct": err_pct,
+            "err_MeV": err_MeV,
             "prediction_type": r.get("prediction_type", "binding_energy"),
             "channels_pp": ch["pp"],
             "channels_pn": ch["pn"],
@@ -167,7 +211,7 @@ def main() -> int:
 
     # Regress err_pct against each candidate predictor
     err_pcts = [r["err_pct"] for r in rows_out]
-    n_inters = [float(r["n_inter_total"]) for r in rows_out]
+    n_inters = [mp.mpf(r["n_inter_total"]) for r in rows_out]
     h_weights = [r["signed_h_weight"] for r in rows_out]
 
     slope_n, intercept_n, r2_n = _linear_fit(n_inters, err_pcts)
@@ -205,7 +249,7 @@ def main() -> int:
     # KLR-positivity cross-check
     klr_pos_violations = [
         r for r in rows_out
-        if float(r.get("err_pct", 0)) < 0
+        if r["err_pct"] < 0
         and r["prediction_type"] == "binding_energy"
     ]
 
@@ -224,28 +268,36 @@ def main() -> int:
     )
     w.add_parameter("input_witness", INPUT_WITNESS.name)
     w.add_parameter("q_0_at_50dps", str(q))
-    w.add_parameter("h_q0", str(h_q0))
+    w.add_parameter("h_q0", fmt(h_q0))
     w.add_parameter("channel_d_coefficients",
                     "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py "
                     "CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), "
                     "SIGMA_INV=(1,-h))")
-    w.add_data("per_isotope", rows_out)
+    # Serialize the mpf fields at OUTPUT_DPS.  `fmt`, never `str(mpf)`:
+    # `str` renders at the live COMPUTE dps (70), which is 10 guard digits
+    # wider than the serialization contract and re-exposes floor noise.
+    _MPF_FIELDS = ("err_pct", "err_MeV", "signed_h_weight")
+    rows_json = [
+        {k: (fmt(v) if k in _MPF_FIELDS else v) for k, v in r.items()}
+        for r in rows_out
+    ]
+    w.add_data("per_isotope", rows_json)
     w.add_data("linear_fit_err_pct_vs_n_inter", {
-        "slope": slope_n,
-        "intercept_pct": intercept_n,
-        "R_squared": r2_n,
+        "slope": fmt(slope_n),
+        "intercept_pct": fmt(intercept_n),
+        "R_squared": fmt(r2_n),
     })
     w.add_data("linear_fit_err_pct_vs_signed_h_weight", {
-        "slope": slope_w,
-        "intercept_pct": intercept_w,
-        "R_squared": r2_w,
+        "slope": fmt(slope_w),
+        "intercept_pct": fmt(intercept_w),
+        "R_squared": fmt(r2_w),
     })
     w.add_data("klr_positivity_check", {
         "trace_level_violations": [],  # all tr_M > 0 by construction
         "prediction_error_sign_flips": [
             {
                 "atom": r["atom_label"],
-                "err_pct": r["err_pct"],
+                "err_pct": fmt(r["err_pct"]),
                 "interpretation": (
                     "UNDER-prediction (err < 0) → missing positive "
                     "contributions OR over-weighted negative channels"
