@@ -34,6 +34,13 @@ remaining entry — is the next brick of epic `qou-nrex`. Nothing here claims it
 unrelated route, `PartitionsOfBridge.rskBurnsideHolds_le12`, with no RSK correspondence in it).
 
 Pure combinatorics on `ℕ`; nothing archimedean.
+
+**Scope note superseded (2026-08-23).** The scope paragraph above records the state of the arc when
+this brick landed. `RSKBurnsideHolds` is now proved for **every** `n`
+(`QOU.Mathlib.rskBurnsideHolds`, brick 42), and `SnIsotypicSpechtSplit` is inhabited, so any
+statement here that they "remain open" or hold "only for `n ≤ 12`" describes history rather than the
+corpus. The per-brick scope is otherwise unchanged and still accurate.
+
 -/
 
 namespace QOU.Mathlib.Schensted
