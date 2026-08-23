@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 292,
-      "proton-pin": 1308,
+      "proton-pin": 1309,
       "unknown": 25,
-      "canonical": 184
+      "canonical": 186
     },
     "stale_total": 292,
     "new_stale": 0,
@@ -1502,6 +1502,13 @@
         "value": "1.1099785955573347",
         "class": "canonical",
         "ppb_vs_canonical": -1.792806032488518e-08
+      },
+      {
+        "file": "computations/alpha/alpha-k-jones-markov-h12.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/alpha/alpha-k-jones-markov-h3.witness.json",
@@ -7160,6 +7167,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/hydrogen-step-by-step.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
         "file": "computations/i6-trace-convention-pin.witness.json",
         "field": "result.q0",
         "value": "1.10997859555733471",
@@ -10910,6 +10924,13 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
+        "file": "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json",

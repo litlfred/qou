@@ -157,8 +157,13 @@ def candidates() -> list[tuple[str, Path]]:
         sp = Path(str(script))
         if q0_anchor_is_declared(sp) and resolve_q0_anchor(sp)[0] == "muon":
             continue  # legitimately declared muon
+        # See q0_producer_pin_classifier.find_producer: the same
+        # (computations-first, fewest-parts) tie-break resolves 3 of the 7
+        # colliding `.py` names to `_deprecated/`. This tool then classifies
+        # the retired copy's pin and migrates a stamp on that basis.
         hits = [p for p in REPO.rglob(sp.name)
-                if ".git" not in p.parts and p.is_file()]
+                if ".git" not in p.parts and "_deprecated" not in p.parts
+                and ".claude" not in p.parts and p.is_file()]
         if not hits:
             continue
         hits.sort(key=lambda p: (0 if "computations" in p.parts else 1,
