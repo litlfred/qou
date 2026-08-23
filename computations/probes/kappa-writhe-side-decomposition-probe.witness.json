@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:05:22.320463+00:00",
-  "commitSha": "87df0bb994e81efee7aae63aec3949f35422d5b5",
+  "computedAt": "2026-08-23T21:11:26.240005+00:00",
+  "commitSha": "56f7884e691e239374b8e742ee216b0eb56a2a77",
   "assertions": [
     {
       "name": "b_total_consistent_with_synthesis_band",
@@ -15,10 +15,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "kappa-writhe-side-decomposition-probe",
   "scriptFile": "kappa_writhe_side_decomposition_probe.py",
-  "scriptHash": "840ccce345d6",
+  "scriptHash": "80486794e6c3",
   "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -45,7 +45,7 @@
   "description": "Location probe for the writhe coefficient κ = b/4 of the canonical residual's bar-odd term: exact decomposition b_total = b_AME − b_pred using the per-member B_pred/B_AME already recorded in the IMME triplet (A=6,8,10,12) and quartet (A=9, same-T) witnesses. Answers WHERE κ lives (framework interface asymmetry z vs z−h, or experimental Coulomb) before any derivation attempt — the bar-odd analogue of the 2026-06-13 H1 location refutation. Post-processing only; no fit; not wired.",
   "parameters": {
     "q0": "1.10997858275138080759166909561076887987449912187357763605672",
-    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903107280035403236148105300608750305535139429259667255290"
+    "swap_exponent_log_q0_z_over_z_minus_h": "4.00000000000000000000000000000000000000000000000000000000000"
   },
   "data": {
     "rows": [
