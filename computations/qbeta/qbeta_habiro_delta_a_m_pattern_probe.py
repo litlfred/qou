@@ -75,7 +75,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def _parse_a_m_to_poly(a_m_str: str, u_sym: sp.Symbol) -> sp.Expr:
     """Parse witness string like '340*u**2 + 365*u + 389' into a sympy Poly."""
-    return sp.sympify(a_m_str, locals={"check_q": u_sym})
+    return sp.sympify(a_m_str, locals={"check_q": u_sym, "u": u_sym})
 
 
 def _gcd_of_coeffs(poly: sp.Poly) -> int:
@@ -190,7 +190,7 @@ def main() -> int:
         if d["delta_a_m"] == "0":
             lead_coeffs.append(0)
         else:
-            poly = sp.Poly(sp.sympify(d["delta_a_m"], locals={"check_q": u}), u)
+            poly = sp.Poly(sp.sympify(d["delta_a_m"], locals={"check_q": u, "u": u}), u)
             lc = int(poly.LC()) if poly.LC() else 0
             lead_coeffs.append(lc)
     print(f"  {lead_coeffs}")
@@ -203,7 +203,7 @@ def main() -> int:
         if d["delta_a_m"] == "0":
             const_terms.append(0)
         else:
-            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u})
+            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u, "u": u})
             const = int(expr.subs(u, 0))
             const_terms.append(const)
     print(f"  {const_terms}")
@@ -216,7 +216,7 @@ def main() -> int:
         if d["delta_a_m"] == "0":
             u_1_vals.append(0)
         else:
-            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u})
+            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u, "u": u})
             v = int(expr.subs(u, 1))
             u_1_vals.append(v)
     print(f"  {u_1_vals}")
@@ -229,7 +229,7 @@ def main() -> int:
         if d["delta_a_m"] == "0":
             u_m1_vals.append(0)
         else:
-            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u})
+            expr = sp.sympify(d["delta_a_m"], locals={"check_q": u, "u": u})
             v = int(expr.subs(u, -1))
             u_m1_vals.append(v)
     print(f"  {u_m1_vals}")

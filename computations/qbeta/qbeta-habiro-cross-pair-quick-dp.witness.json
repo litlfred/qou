@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:21:02.179271+00:00",
-  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+  "computedAt": "2026-08-23T22:37:21.084765+00:00",
+  "commitSha": "1ca6fe52b601d383fcbe29c47a389b301e32b88e",
   "assertions": [
     {
       "name": "cross_pair_quick_dp_completed",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2657,
+  "durationMs": 4672,
   "computation": "qbeta-habiro-cross-pair-quick-dp",
   "scriptFile": "qbeta_habiro_cross_pair_quick_dp.py",
-  "scriptHash": "68a054f81951",
+  "scriptHash": "383be0866f4a",
   "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
   "precisionMetadata": {
     "compute_dps": 70,

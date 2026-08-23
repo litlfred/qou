@@ -101,7 +101,7 @@ def evaluate_habiro_at_root(habiro_coeffs: list[dict], p: int,
             break
 
         a_m_str = coeff_record.get("a_m_str", coeff_record.get("a_m", "0"))
-        a_m_expr = sp.sympify(a_m_str, locals={"check_q": u})
+        a_m_expr = sp.sympify(a_m_str, locals={"check_q": u, "u": u})
         a_m_at_zeta = reduce_mod_cyclotomic(a_m_expr, n_2p, u)
 
         term = a_m_at_zeta * poch

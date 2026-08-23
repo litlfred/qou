@@ -53,7 +53,7 @@ def parse_atom_coeffs(witness_atom: dict) -> dict[int, sp.Poly]:
     for c in witness_atom["habiro_coefficients"]:
         m = c["m"]
         a_m_str = c["a_m"].replace("^", "**")
-        a_m_expr = sp.sympify(a_m_str, locals={"check_q": u})
+        a_m_expr = sp.sympify(a_m_str, locals={"check_q": u, "u": u})
         out[m] = sp.Poly(a_m_expr, u)
     return out
 

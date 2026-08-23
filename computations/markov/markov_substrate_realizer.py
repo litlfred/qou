@@ -90,7 +90,7 @@ def q_pochhammer_poly(N: int, u: Symbol, domain) -> sp.Poly:
 
 
 def parse_poly_zz(s: str, u: Symbol) -> sp.Poly:
-    return sp.Poly(sp.expand(sp.sympify(s, locals={"check_q": u})), u, domain="ZZ")
+    return sp.Poly(sp.expand(sp.sympify(s, locals={"check_q": u, "u": u})), u, domain="ZZ")
 
 
 def realize_archimedean(record: HabiroCompletionRecord, q_0: float) -> dict:

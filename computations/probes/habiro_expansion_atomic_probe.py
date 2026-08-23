@@ -52,7 +52,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def parse_a_m(a_m_str: str, u: sp.Symbol) -> sp.Expr:
     """Parse a Habiro coefficient polynomial string into sympy."""
-    return sp.sympify(a_m_str, locals={"check_q": u})
+    return sp.sympify(a_m_str, locals={"check_q": u, "u": u})
 
 
 def all_integer_coeffs(poly: sp.Expr, u: sp.Symbol) -> bool:

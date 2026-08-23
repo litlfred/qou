@@ -79,8 +79,8 @@ def main() -> int:
         a0_str = coeffs[0].get("a_m_str", coeffs[0].get("a_m", "0"))
         a1_str = coeffs[1].get("a_m_str", coeffs[1].get("a_m", "0"))
 
-        a0_expr = sp.sympify(a0_str, locals={"check_q": u})
-        a1_expr = sp.sympify(a1_str, locals={"check_q": u})
+        a0_expr = sp.sympify(a0_str, locals={"check_q": u, "u": u})
+        a1_expr = sp.sympify(a1_str, locals={"check_q": u, "u": u})
 
         a0_neg1 = int(a0_expr.subs(u, -1))
         a1_neg1 = int(a1_expr.subs(u, -1))

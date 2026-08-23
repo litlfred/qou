@@ -165,7 +165,7 @@ def parse_int_poly(a_m_str: str, u: sp.Symbol) -> list[int]:
     arise in practice for Habiro expansions but we handle the
     fallback gracefully).
     """
-    expr = sp.sympify(a_m_str, locals={"check_q": u})
+    expr = sp.sympify(a_m_str, locals={"check_q": u, "u": u})
     try:
         poly = sp.Poly(expr, u)
         return [int(c) for c in poly.all_coeffs()]
@@ -250,7 +250,7 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
     denom_inversion_error: str | None = None
     if denom_in_u is not None:
         try:
-            denom_expr = sp.sympify(denom_in_u, locals={"check_q": u})
+            denom_expr = sp.sympify(denom_in_u, locals={"check_q": u, "u": u})
             denom_poly = sp.Poly(denom_expr, u)
             _, denom_red = denom_poly.div(phi_2p)
             if denom_red.is_zero:

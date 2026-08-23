@@ -85,7 +85,7 @@ def q_pochhammer_poly(N: int, u: Symbol) -> sp.Poly:
 
 def parse_poly(s: str, u: Symbol) -> sp.Poly:
     """Parse a witness-format polynomial string to `sympy.Poly` over ℤ[u]."""
-    expr = sp.sympify(s, locals={"check_q": u})
+    expr = sp.sympify(s, locals={"check_q": u, "u": u})
     return sp.Poly(sp.expand(expr), u, domain="ZZ")
 
 

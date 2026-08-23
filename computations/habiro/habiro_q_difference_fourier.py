@@ -106,10 +106,10 @@ def q_pochhammer_sym(u: sp.Symbol, m: int) -> sp.Expr:
 
 def habiro_trM_symbolic(atom: dict, u: sp.Symbol) -> sp.Expr:
     """Exact tr_M(u) = (1/D(u))·Σ_m a_m(u)·(u;u)_m from witness data."""
-    D = sp.sympify(atom["denom_in_u"], locals={"check_q": u})
+    D = sp.sympify(atom["denom_in_u"], locals={"check_q": u, "u": u})
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
-        a_m = sp.sympify(c["a_m"], locals={"check_q": u})
+        a_m = sp.sympify(c["a_m"], locals={"check_q": u, "u": u})
         total += a_m * q_pochhammer_sym(u, int(c["m"]))
     return sp.cancel(total / D)
 
@@ -187,8 +187,8 @@ def main() -> int:
     # denominator + coefficients ONCE per atom (Gemini review #1622: the
     # sp.sympify calls are expensive and were redundant per loop iter).
     parsed_atoms = {
-        id(a): (sp.sympify(a["denom_in_u"], locals={"check_q": u}),
-                [(int(c["m"]), sp.sympify(c["a_m"], locals={"check_q": u}))
+        id(a): (sp.sympify(a["denom_in_u"], locals={"check_q": u, "u": u}),
+                [(int(c["m"]), sp.sympify(c["a_m"], locals={"check_q": u, "u": u}))
                  for c in a["habiro_coefficients"]])
         for a in (p_atom, n_atom)
     }

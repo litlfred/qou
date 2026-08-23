@@ -72,7 +72,7 @@ def _factor_denominator(denom_str: str, u: sp.Symbol) -> str:
     """Try to factor the denominator polynomial as power_of_2 · u^shift ·
     cyclotomic-style polynomial, returning a human-readable form."""
     try:
-        d = sp.expand(sp.sympify(denom_str, locals={"check_q": u}))
+        d = sp.expand(sp.sympify(denom_str, locals={"check_q": u, "u": u}))
         f = sp.factor(d)
         return str(f)
     except Exception:
