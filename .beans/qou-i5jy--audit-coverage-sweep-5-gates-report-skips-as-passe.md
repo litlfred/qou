@@ -130,3 +130,66 @@ ratchet. #2 is the highest-value correctness item but needs a decision about wha
 to *do* with 359 unresolvable witnesses, which is `qou-cds3`-adjacent scope.
 
 Nothing edited. No witnesses written.
+
+---
+
+## Finding #1 FIXED 2026-08-23 — `extraction_wall_gate.py`
+
+The `-1` sentinel no longer masquerades as a file count.
+
+**Before**
+
+```
+IMPROVED  witness-schema: 6 → -1 qou-referencing files (run --update-baseline to ratchet)
+```
+
+**After**
+
+```
+MISSING   witness-schema: tools/witness-schema/ does not exist — NOT counted,
+          NOT an improvement (baseline 6 retained)
+```
+
+### Changes
+
+1. `MISSING = -1` named, with a comment recording *why* it must never be compared
+   against a baseline (`-1 < b` for every real `b`).
+2. Absent packages are partitioned out **before** the regression/improvement
+   comparison and reported in their own class.
+3. **`--update-baseline` can no longer persist the sentinel.** It was the real
+   harm: the old message invited the flag, and the flag wrote `witness-schema: -1`
+   into `tools/extraction-wall-baseline.json`, after which no real count could
+   ever exceed it and that package's wall was permanently disabled by a missing
+   directory. Absent packages now retain their prior baseline, so the wall
+   re-arms if the directory returns.
+4. The clean-path headline no longer filters `v > 0` (which laundered the
+   sentinel out of the total) and now prints scope:
+   `scope: 8 of 9 declared package(s) evaluated; 1 absent`.
+5. The `--update-baseline` listing prints what was **written**, not what was
+   measured — for an absent package those differ, and printing `-1` beside
+   "baseline written" is how the sentinel got trusted in the first place.
+
+### Verified on both paths
+
+Report path shows `MISSING`, not `IMPROVED`. Update path writes
+`witness-schema: 6` and prints `NOTE: 1 package(s) absent, baseline left
+unchanged for them`. The real baseline file was backed up before each
+`--update-baseline` test and restored — `git status` clean afterwards, confirmed
+both times. That flag would otherwise have ratcheted the four genuinely regressed
+packages upward and weakened the wall.
+
+### Deliberately NOT changed
+
+- **The exit code.** A missing package still does not fail the gate. Making
+  `MISSING` a failure is a policy call for the gate's owner — a package may have
+  been removed on purpose — and this bean's criterion is that exclusion be
+  *visible*, not that it be *fatal*.
+- **`PACKAGES` scope.** Five directories under `tools/` are not in the list
+  (`hecke-engine-gap`, `-julia`, `-octave`, `qou-substrate`,
+  `borromean-recurrence-crt`). Adding them changes what the wall covers, which is
+  a scope decision, not a reporting fix. The new `scope:` line at least states the
+  denominator now.
+
+Finding #2 (`producer_importability_audit.py`, 0.868 evaluated) is untouched: it
+needs a decision about what to do with 359 unresolvable witnesses, which is
+`qou-cds3`-adjacent.
