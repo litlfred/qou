@@ -296,6 +296,35 @@ def main() -> None:
     fig.savefig(out_png, dpi=140, bbox_inches="tight")
     print(f"Saved plot: {out_png}", file=sys.stderr)
 
+    # LP duals at the four named anchors. `solve_lp` computes x_star,
+    # y0_star, y_star and active_set at every sweep point and the witness
+    # kept none of them — it recorded the active-set TRANSITIONS and the
+    # verdict drawn from them, so the conclusion rested on numbers the
+    # witness did not carry. This program is the operator-selection LP
+    # (`min tᵀx s.t. Gx ≥ 0, 1ᵀx = n_target, x ≥ -M`), not a different one,
+    # so the canonical field names of `prop:operator-selection-lp` apply.
+    # `dual_obj` and `duality_gap` are derived here because `solve_lp`
+    # returns neither. Bean `qou/augu`.
+    _anchor_duals = []
+    for _nm, _qv in (("q_0", Q0), ("phi", PHI), ("delta_silver", DELTA_SILVER),
+                     ("delta_bronze", DELTA_BRONZE)):
+        _r = solve_lp(_qv, n_target=1.0)
+        if _r.get("status") != "optimal":
+            _anchor_duals.append({"anchor": _nm, "q": str(_qv), **_r})
+            continue
+        _dual_obj = 1.0 * _r["y0_star"]
+        _anchor_duals.append({
+            "anchor": _nm, "q": str(_qv),
+            "x_star": _r["x_star"], "y0_star": _r["y0_star"],
+            "y_star": _r["y_star"], "active_set": _r["active_set"],
+            "primal_obj": _r.get("primal_obj"),
+            "dual_obj": _dual_obj,
+            "duality_gap": abs(_r.get("primal_obj", _dual_obj) - _dual_obj),
+        })
+    _canon = {k: [d.get(k) for d in _anchor_duals]
+              for k in ("y0_star", "y_star", "active_set", "primal_obj",
+                        "dual_obj", "duality_gap")}
+
     witness = {
         "description": (
             "Two-quark binding LP at strand count n=2.  Closed-form "
@@ -322,6 +351,8 @@ def main() -> None:
         },
         "active_set_transitions": transitions,
         "n_transitions": len(transitions),
+        "lp_duals_at_anchors": _anchor_duals,
+        **_canon,
         "verdict": (
             "If active_set_transitions is empty across the sweep, the "
             "active set is q-CONSTANT — metallic structure does not "

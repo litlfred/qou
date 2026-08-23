@@ -1,10 +1,10 @@
 {
-  "description": "Three-quark Borromean LP active-set sweep at n=3.  Basis {γ, σ_0, σ_1, L_+, L_-, e^-} of H_3(q).  Markov-trace cost vector t(q) computed from Hoefsmit-Wenzl character formulas; Gram matrix approximation (outer-product + diagonal self-norm) is exact at the active-set-detection level.  Sweep q across metallic intervals to find S(3) ⊆ {1, 2, 3}.",
-  "computed_at": "2026-06-09T05:27:43.590832+00:00",
+  "description": "Three-quark Borromean LP active-set sweep at n=3.  Basis {\u03b3, \u03c3_0, \u03c3_1, L_+, L_-, e^-} of H_3(q).  Markov-trace cost vector t(q) computed from Hoefsmit-Wenzl character formulas; Gram matrix approximation (outer-product + diagonal self-norm) is exact at the active-set-detection level.  Sweep q across metallic intervals to find S(3) \u2286 {1, 2, 3}.",
+  "computed_at": "2026-08-23T07:35:29.685523+00:00",
   "basis": [
-    "γ",
-    "σ_0",
-    "σ_1",
+    "\u03b3",
+    "\u03c3_0",
+    "\u03c3_1",
     "L_+",
     "L_-",
     "e^-"
@@ -26,7 +26,7 @@
         5
       ],
       "labels_below": [
-        "γ",
+        "\u03b3",
         "L_+",
         "L_-",
         "e^-"
@@ -37,7 +37,7 @@
         "e^-"
       ],
       "metallic_brackets": [
-        "δ_silver"
+        "\u03b4_silver"
       ]
     },
     {
@@ -61,32 +61,228 @@
         "e^-"
       ],
       "labels_above": [
-        "σ_0",
-        "σ_1",
+        "\u03c3_0",
+        "\u03c3_1",
         "L_+",
         "L_-",
         "e^-"
       ],
       "metallic_brackets": [
-        "δ_silver"
+        "\u03b4_silver"
       ]
     }
   ],
   "n_transitions": 2,
+  "lp_duals_at_transition_brackets": [
+    {
+      "bracket": "q_below",
+      "q": "2.4092135623730950488016887242096980785696718753769",
+      "x_star": [
+        -0.04063618418327389,
+        1.2031809209163693,
+        -0.040636184183273895,
+        -0.04063618418327389,
+        -0.04063618418327389,
+        -0.04063618418327389
+      ],
+      "y0_star": 27.499746321835502,
+      "y_star": [
+        0.0018220815952190278,
+        0.0,
+        0.0,
+        0.40211300350638,
+        0.40211300350638,
+        0.5282813731897339
+      ],
+      "active_set": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "primal_obj": 27.4997463218355,
+      "dual_obj": 27.499746321835502,
+      "duality_gap": 3.552713678800501e-15
+    },
+    {
+      "bracket": "q_above",
+      "q": "2.4142135623730950488016887242096980785696718753769",
+      "x_star": [
+        -0.04054054054054053,
+        1.2027027027027029,
+        -0.04054054054054053,
+        -0.04054054054054053,
+        -0.040540540540540536,
+        -0.040540540540540536
+      ],
+      "y0_star": 27.691830430792088,
+      "y_star": [
+        0.0,
+        0.0,
+        0.0,
+        0.40222575516693176,
+        0.40222575516693176,
+        0.5283783783783784
+      ],
+      "active_set": [
+        3,
+        4,
+        5
+      ],
+      "primal_obj": 27.6918304307921,
+      "dual_obj": 27.691830430792088,
+      "duality_gap": 1.0658141036401503e-14
+    },
+    {
+      "bracket": "q_below",
+      "q": "2.4142135623730950488016887242096980785696718753769",
+      "x_star": [
+        -0.04054054054054053,
+        1.2027027027027029,
+        -0.04054054054054053,
+        -0.04054054054054053,
+        -0.040540540540540536,
+        -0.040540540540540536
+      ],
+      "y0_star": 27.691830430792088,
+      "y_star": [
+        0.0,
+        0.0,
+        0.0,
+        0.40222575516693176,
+        0.40222575516693176,
+        0.5283783783783784
+      ],
+      "active_set": [
+        3,
+        4,
+        5
+      ],
+      "primal_obj": 27.6918304307921,
+      "dual_obj": 27.691830430792088,
+      "duality_gap": 1.0658141036401503e-14
+    },
+    {
+      "bracket": "q_above",
+      "q": "2.4192135623730950488016887242096980785696718753769",
+      "x_star": [
+        1.2014921471297448,
+        -0.040298429425948926,
+        -0.040298429425948926,
+        -0.04029842942594892,
+        -0.04029842942594892,
+        -0.04029842942594894
+      ],
+      "y0_star": 27.78379805295517,
+      "y_star": [
+        0.0,
+        0.0018127020898915304,
+        0.0018127020898915307,
+        0.40269245176204815,
+        0.40269245176204826,
+        0.5283705034847708
+      ],
+      "active_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "primal_obj": 27.783798052955177,
+      "dual_obj": 27.78379805295517,
+      "duality_gap": 7.105427357601002e-15
+    }
+  ],
+  "y0_star": [
+    27.499746321835502,
+    27.691830430792088,
+    27.691830430792088,
+    27.78379805295517
+  ],
+  "y_star": [
+    [
+      0.0018220815952190278,
+      0.0,
+      0.0,
+      0.40211300350638,
+      0.40211300350638,
+      0.5282813731897339
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.40222575516693176,
+      0.40222575516693176,
+      0.5283783783783784
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.40222575516693176,
+      0.40222575516693176,
+      0.5283783783783784
+    ],
+    [
+      0.0,
+      0.0018127020898915304,
+      0.0018127020898915307,
+      0.40269245176204815,
+      0.40269245176204826,
+      0.5283705034847708
+    ]
+  ],
+  "active_set": [
+    [
+      0,
+      3,
+      4,
+      5
+    ],
+    [
+      3,
+      4,
+      5
+    ],
+    [
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "primal_obj": [
+    27.4997463218355,
+    27.6918304307921,
+    27.6918304307921,
+    27.783798052955177
+  ],
+  "dual_obj": [
+    27.499746321835502,
+    27.691830430792088,
+    27.691830430792088,
+    27.78379805295517
+  ],
+  "duality_gap": [
+    3.552713678800501e-15,
+    1.0658141036401503e-14,
+    1.0658141036401503e-14,
+    7.105427357601002e-15
+  ],
   "S_3_candidates": [
-    "δ_silver"
+    "\u03b4_silver"
   ],
-  "verdict": "S(3) = the set of metallic ratios bracketing an active-set transition.  Empty = LP-vertex structure constant across the sweep.  {φ, silver, bronze} subset = sharpened (M2) conjecture confirmed at full n=3 LP.",
+  "verdict": "S(3) = the set of metallic ratios bracketing an active-set transition.  Empty = LP-vertex structure constant across the sweep.  {\u03c6, silver, bronze} subset = sharpened (M2) conjecture confirmed at full n=3 LP.",
   "limitations": [
-    "Gram matrix uses a rank-1 outer-product + diagonal approximation.  The exact Gram requires the multiplication table of the 6 NF basis elements which is not in closed form here.  For the structural active-set transition detection, the relative ordering of t_i is the dominant factor; cross-coupling terms in G are smaller.  A more careful probe would use the pyhecke `gram_matrix()` API to get the exact G(q) — deferred.",
-    "scipy.linprog in floating point: at metallic q the LP coefficients are algebraic integers in ℤ[δ_n] — a symbolic solver (sympy or QSOpt-Ex) would give exact vertex coordinates.  Floating-point shadow is sufficient for active-set detection."
-  ],
-  "scriptHash": "0e0e047b0c23",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "mpmath",
-  "computedAt": "2026-07-18T19:19:23.744072+00:00",
-  "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "three_quark_borromean_lp_sweep.py"
+    "Gram matrix uses a rank-1 outer-product + diagonal approximation.  The exact Gram requires the multiplication table of the 6 NF basis elements which is not in closed form here.  For the structural active-set transition detection, the relative ordering of t_i is the dominant factor; cross-coupling terms in G are smaller.  A more careful probe would use the pyhecke `gram_matrix()` API to get the exact G(q) \u2014 deferred.",
+    "scipy.linprog in floating point: at metallic q the LP coefficients are algebraic integers in \u2124[\u03b4_n] \u2014 a symbolic solver (sympy or QSOpt-Ex) would give exact vertex coordinates.  Floating-point shadow is sufficient for active-set detection."
+  ]
 }

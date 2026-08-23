@@ -328,16 +328,75 @@ regress the `witness_raw_float64_audit.py` ratchet, so it was run:
 and stringifying would break every consumer that does arithmetic on them.
 Counted and reported as `carved_out`, not hidden.
 
+---
+
+## 2026-08-22 (third) — CORRECTION: two of the "three different LPs" were the same LP
+
+**6 → 1.** The claim above that the remaining three are "genuinely different
+LPs, not missing emissions" is **wrong for two of the three**. I based it on
+grepping one `linprog(...)` line per file and seeing `A_ub` / `A_eq` — reading
+"has its own constraint matrices" as "different program". In
+`three_quark_borromean_lp_sweep.py` the matrix is literally
+
+```python
+A_ub = -G          # G x ≥ 0 ⇔ -G x ≤ 0
+A_eq = np.ones((1, d))
+b_eq = np.array([n_target])
+bounds = [(-M, None)] * d
+```
+
+That is `prop:operator-selection-lp` verbatim, box included.
+`two_quark_active_set_mahler_sweep.py` is the same at `d = 2`. Both **already
+compute** `x_star`, `y0_star`, `y_star`, `active_set` — and both write
+hand-rolled witness dicts that keep the *transitions* and the *verdict* and
+discard the duals the verdict is drawn from. Same defect as
+`binding_sdp_bondgraph_degenerate`, third and fourth instance.
+
+Fixed: duals emitted at each script's own named points — the four metallic
+anchors for two-quark, the transition brackets for three-quark — plus
+canonical top-level aggregates. `dual_obj` and `duality_gap` are derived
+(`n_target · y0_star`, `|primal − dual|`) because neither solver returns them.
+
+### And the new numbers are the H₂/H₃ contrast, visible for the first time
+
+**`two-quark-active-set-mahler-sweep`** — `H₂`, `d = 2`:
+
+| anchor | `y0*` | `y_star` | active |
+|---|---|---|---|
+| `q_0` | **-0.0** | `[1, 0]` = e₀ | `[0]` |
+| `phi` | **-0.0** | `[1, 0]` = e₀ | `[0]` |
+| `delta_silver` | 5.6569 | `[0, 0]` | `[]` |
+| `delta_bronze` | 5.8590 | `[0, 0.125]` | `[1]` |
+
+This is **"attained but not forced"** in one table. `k4f8` proved `H₂`'s Gram
+is non-singular, so nothing forces `y₀ = 0` there — and indeed the `t = G e₀`
+certificate, which is always *available*, stops being *optimal* above
+`δ_silver`, where the LP finds `y₀ > 0`. At `H₃` the radical forces `y₀ = 0`
+at every `q`. The distinction this bean drew from theory is now a committed
+measurement, and it was unreadable while the witness discarded its duals.
+
+**`three-quark-borromean-lp-sweep`** — `y0* ≈ 27.5` at all four brackets,
+active sets `[0,3,4,5]`, `[3,4,5]`, `[1,2,3,4,5]`. **Not degenerate**, and it
+should not be: its Gram is the script's own approximation
+(`G[i,j] = t_i t_j / ‖t‖₁ + δ_ij |t_i|`), not the trace form, so `t` is not a
+row of `G` and there is no radical. A third control alongside
+`rho-k-h3a-lp-dual` (`y₀* = 8.671`) and `frobenius-repose` (invertible Gram,
+`y* = e₀`): the signature tracks the trace-form Gram specifically, not "any LP
+over the H₃ basis".
+
+Ratchet re-checked: NEW 0, REGRESSED 0, exit 0; excused 3,892 → 4,052 in 45
+witnesses. Validator 6 → **1**.
+
 ## Next
 
-- [ ] The remaining **3** are genuinely different LPs, not missing emissions:
-      `benzene_assembly_spine` (a knapsack: `linprog([-b], A_ub=[[1]*n],
-      b_ub=[cap])`), `three_quark_borromean_lp_sweep` and
-      `two_quark_active_set_mahler_sweep` (own `A_ub`/`A_eq`). Their duals are
-      not `y0_star`/`y_star` in the Frobenius sense. Either report duals in
-      their own form, or decide the operator-selection contract does not apply
-      to them — **a judgement, not a mechanical fix**, and the validator
-      should learn whichever answer is given rather than keep flagging them.
+- [ ] The remaining **1** is genuinely a different LP:
+      `benzene_assembly_spine` — `max Σxᵢ s.t. Σxᵢ ≤ min(3, pairs),
+      0 ≤ xᵢ ≤ 1`, a cardinality knapsack with no Gram, no `n_target`
+      equality and no Frobenius row. Its only dual is the multiplier on the
+      dimension cap. Either report that in its own form, or decide the
+      operator-selection contract does not apply and teach the validator so —
+      **a judgement, not a mechanical fix**. Verified by reading the LP this
+      time, not by grepping the call.
 - [ ] Re-run the `y0_star` sweep once those three are settled, for a count
       over the whole population rather than over what happened to report.
 - [ ] Consider wiring `lp_dual_witness_validator.py` into CI diff-scoped, the

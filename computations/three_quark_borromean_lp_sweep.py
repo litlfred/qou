@@ -298,6 +298,36 @@ def main() -> None:
     fig.savefig(out_png, dpi=140, bbox_inches="tight")
     print(f"Saved plot: {out_png}", file=sys.stderr)
 
+    # LP duals at the transition brackets. `solve_lp_n3` computes x_star,
+    # y0_star, y_star and active_set at every sweep point and the witness
+    # kept none of them — it recorded the transitions and the verdict drawn
+    # from them, so the conclusion rested on numbers the witness did not
+    # carry. This program IS the operator-selection LP (`min tᵀx s.t.
+    # Gx ≥ 0, 1ᵀx = n_target, x ≥ -M`); `A_ub` is literally `-G`. So the
+    # canonical field names of `prop:operator-selection-lp` apply, and
+    # `dual_obj` / `duality_gap` are derived here because `solve_lp_n3`
+    # returns neither. Bean `qou/augu`.
+    _bracket_duals = []
+    for _tr in transitions:
+        for _side in ("q_below", "q_above"):
+            _qv = mp.mpf(_tr[_side])
+            _r = solve_lp_n3(_qv, n_target=1.0)
+            if "x_star" not in _r:
+                _bracket_duals.append({"bracket": _side, "q": str(_qv), **_r})
+                continue
+            _dual_obj = 1.0 * _r["y0_star"]
+            _bracket_duals.append({
+                "bracket": _side, "q": str(_qv),
+                "x_star": _r["x_star"], "y0_star": _r["y0_star"],
+                "y_star": _r["y_star"], "active_set": _r["active_set"],
+                "primal_obj": _r.get("primal_obj"),
+                "dual_obj": _dual_obj,
+                "duality_gap": abs(_r.get("primal_obj", _dual_obj) - _dual_obj),
+            })
+    _canon = {k: [d.get(k) for d in _bracket_duals]
+              for k in ("y0_star", "y_star", "active_set", "primal_obj",
+                        "dual_obj", "duality_gap")}
+
     witness = {
         "description": (
             "Three-quark Borromean LP active-set sweep at n=3.  Basis "
@@ -312,6 +342,8 @@ def main() -> None:
         "n_q_points": len(qs),
         "transitions": transitions,
         "n_transitions": len(transitions),
+        "lp_duals_at_transition_brackets": _bracket_duals,
+        **_canon,
         "S_3_candidates": sorted({
             m for t in transitions for m in t["metallic_brackets"]
         }),

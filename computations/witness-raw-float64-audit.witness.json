@@ -5,7 +5,7 @@
   "data": {
     "dirty_witnesses": 1539,
     "total_fields": 532294,
-    "lp_dual_carved_out_fields": 3892,
+    "lp_dual_carved_out_fields": 4052,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 812,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 75,
@@ -47,6 +47,8 @@
       "computations/r5-full-canonical-knot-solver.witness.json": 40,
       "computations/rho-k-h3a-gg-trajectory.witness.json": 34,
       "computations/rho-k-h3a-lp-dual.witness.json": 67,
+      "computations/three-quark-borromean-lp-sweep.witness.json": 104,
+      "computations/two-quark-active-set-mahler-sweep.witness.json": 56,
       "computations/wedderburn-lp-ew-wiring.witness.json": 80,
       "computations/wedderburn-pair-volumes.witness.json": 16,
       "computations/whitehead-saddle.witness.json": 1
