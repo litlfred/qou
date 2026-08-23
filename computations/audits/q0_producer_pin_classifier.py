@@ -104,6 +104,41 @@ PROTON_NAMES = {"Q_50_DIGIT_STR", "q_at", "Q_MP", "Q_PROTON"}
 # hidden 56 clean files behind a muon association that no longer exists.
 MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0")
 
+
+_ARTIFACT_PIN_CACHE: dict[str, str] = {}
+
+
+def _artifact_pin(name: str) -> str:
+    """The pin a named witness ACTUALLY carries today, or "" if unresolvable.
+
+    Keyed on the 50-digit prefixes rather than on `q0Anchor`, because most of
+    these artifacts predate that field. 11 digits after the point, not 12: the
+    corpus carries two muon values agreeing to 11 (see
+    q0_muon_population_partition.py).
+    """
+    if name in _ARTIFACT_PIN_CACHE:
+        return _ARTIFACT_PIN_CACHE[name]
+    stem = name.rsplit("/", 1)[-1]
+    if not stem.endswith(".witness.json"):
+        _ARTIFACT_PIN_CACHE[name] = ""
+        return ""
+    verdict = ""
+    for cand in COMPUTE_DIR.rglob(stem):
+        if "_deprecated" in cand.parts:
+            continue
+        try:
+            raw = cand.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        has_mu = "1.10997859555" in raw
+        has_pr = "1.109978582751" in raw
+        verdict = ("" if (has_mu and has_pr)
+                   else "muon" if has_mu
+                   else "proton" if has_pr else "")
+        break
+    _ARTIFACT_PIN_CACHE[name] = verdict
+    return verdict
+
 # Literal q₀ pins written directly into producer source.
 #
 # MUON_LITERAL is deliberately 11 digits after the point, NOT 12. The corpus
@@ -212,7 +247,24 @@ def classify(path: Path) -> tuple[str, list[str]]:
                 is_prose = s in docs
                 for art in MUON_ARTIFACTS:
                     if art in s:
-                        (muon_prose if is_prose else muon).append(f'"{s[:48]}"')
+                        # RESOLVE, do not assume (2026-08-23), composed with
+                        # main's prose/code split.
+                        #
+                        # These names were hardcoded as muon evidence, but two
+                        # of them are FILES and a file's pin is not a constant:
+                        # `y-lambda-at-q0.witness.json` was regenerated to the
+                        # PROTON pin in the convention-D cascade (7665e0e4b,
+                        # 506ac9135) and nothing updated the tuple. So when the
+                        # artifact names a witness that exists, believe the
+                        # witness. A PROSE mention still resolves to prose --
+                        # main is right that a docstring naming an artifact is
+                        # not evidence about the producer.
+                        resolved = _artifact_pin(s)
+                        if resolved == "proton" and not is_prose:
+                            proton.append(f'"{s[:48]}" (resolved: proton)')
+                        else:
+                            (muon_prose if is_prose else muon).append(
+                                f'"{s[:48]}"')
                 if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
                     muon.append(f'env-like "{s}"')
                 if s.startswith(MUON_LITERAL):
