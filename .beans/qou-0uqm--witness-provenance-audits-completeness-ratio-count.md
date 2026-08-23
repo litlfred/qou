@@ -4,7 +4,7 @@ title: witness_provenance_audit's completeness ratio counts 320 never-checked wi
 status: todo
 type: task
 created_at: 2026-08-22T21:14:23Z
-updated_at: 2026-08-22T21:14:23Z
+updated_at: 2026-08-23T16:20:00Z
 ---
 
 
@@ -174,3 +174,80 @@ defensible.
 My `evaluated_coverage` change above already surfaces the *symptom* — 320
 witnesses excluded, 0.882 coverage — but not the cause. Not fixed here: (1) is a
 behaviour change to a `--strict` gate and should be a deliberate call.
+
+---
+
+## FIXED 2026-08-23 — and the timeout is no longer a hypothesis
+
+The bean recorded the `content/` grep timeout as *"the likely cause, not a
+measured one"* (a warm run took 8.3 s). **It is now measured.** Running the audit
+unchanged on this tree, with the health reporting added:
+
+```
+  reader index           : paper=0 name(s), py=2005 name(s)
+  *** READER INDEX DID NOT BUILD ***
+      paper_index: TimeoutExpired: Command '['grep', '-rhoE', …, '/workspace/qou/content']'
+                   timed out after 120 seconds
+```
+
+`content/` is **6.8 GB**. The grep does not finish, `paper` comes back empty, and
+every witness therefore looks reader-less. Before this change the run printed
+**nothing at all** about it and reported a clean `completeness ratio 0.983`.
+
+### Two changes
+
+**1. The index reports its own health.** Both greps sat under
+`except Exception: pass` and neither checked the return code — `grep` exits 0
+with matches, 1 with none, ≥2 on error, and the code took `.stdout` regardless.
+Now each records `*_ok` / `*_returncode` / `*_error`, the result goes into the
+witness as `reader_index_health`, and a failed index prints an unmissable block
+tying the failure to the exact count it inflates:
+
+> *An empty index makes EVERY witness look reader-less, so the 242
+> PROV_EXEMPT_NO_READER verdict(s) above are UNSUPPORTED — and they RAISE the
+> completeness ratio, so this failure reads as an improvement.*
+
+**2. The paper index uses `git grep`, so it actually builds.** Tracked files
+only: **~2–5 s instead of >120 s**, and it is the *more correct* semantics —
+`content/` is overwhelmingly untracked build output, and an untracked build
+artifact is not the paper citing a witness. The original recursive grep is
+retained as a fallback (`paper_index_fallback`) for use outside a git checkout.
+
+### Measured effect — fixing a fail-open makes the number WORSE, which is right
+
+| | index empty | index builds |
+|---|---|---|
+| paper index | 0 names | **588 names** |
+| `PROV_EXEMPT_NO_READER` | 242 | **229** |
+| `PROV_MISSING` | 45 | **57** |
+| `completeness_ratio` | 0.9838 | **0.9790** |
+
+**13 witnesses were being exempted as "nothing reads this" while the paper cites
+them**, and 12 of those become `PROV_MISSING`. That is the whole point: the
+failure was not neutral, it was scoring in its own favour, and the corrected
+number is lower. Any completeness figure quoted from this audit before today was
+measured against an empty index.
+
+### Scope — deliberately NOT changed
+
+- **`--strict` semantics.** Unchanged: still exits 1 on `PROV_MISSING` only.
+  Note this file is **not** gate-wired. `scripts/precision-gates.sh:267` wires a
+  *different* script with a near-identical name — `computations/witness_provenance_audit.py`,
+  which asks "does this `scriptFile` actually write this witness?" — not
+  `computations/audits/witness_provenance_audit.py` (this I14 completeness
+  audit). Worth stating, because the names invite exactly that confusion.
+- Bean items **(2) dynamic reads** and **(3) exclude machine inventories** are
+  untouched. `has_reader` still cannot see an f-string-built path, so the
+  `chi-*` family is still exempted for a reason that is false for 12 of 13 of
+  them. That is a semantics change, not a fail-open fix.
+
+### Checked and CLEARED — the gate-wired sibling is not an instance
+
+I went looking for the same defect in the blocking gate
+(`computations/witness_provenance_audit.py`) and it is **not there**. It has a
+first-class `UNCONFIRMED` verdict — *"asserted as unchecked", "deliberately not
+folded into either neighbour"* — and its headline names its own denominator:
+`"N witnesses carry a scriptFile claim"`. Its three `continue` paths exclude 292
+of 2719 claim-less witnesses, but that population is disclosed in the headline,
+so by this campaign's criterion it is not a defect. Recorded because I nearly
+filed it as one.

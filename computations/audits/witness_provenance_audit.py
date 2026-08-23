@@ -140,7 +140,7 @@ def load_acknowledged_floor() -> "dict[str, str]":
 
 
 def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
-    """Return (paper_referenced_names, py_mention_counts).
+    """Return (paper_referenced_names, py_mention_counts, index_health).
 
     A witness's provenance only matters if something depends on it. This indexes
     two cheap single-pass greps: witness names cited under `content/` (the paper),
@@ -156,25 +156,56 @@ def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
 
     repo = HERE.parent.parent
     pat = r"[a-z0-9][a-z0-9._-]*\.witness\.json"
-    paper: set[str] = set()
-    try:
-        out = subprocess.run(
-            ["grep", "-rhoE", pat, str(repo / "content")],
-            capture_output=True, text=True, timeout=120,
-        ).stdout
-        paper = set(out.split())
-    except Exception:  # noqa: BLE001
-        pass
-    py_counts: "dict[str, int]" = {}
-    try:
-        out = subprocess.run(
-            ["grep", "-rhoE", "--include=*.py", pat, str(HERE.parent)],
-            capture_output=True, text=True, timeout=120,
-        ).stdout
-        py_counts = dict(Counter(out.split()))
-    except Exception:  # noqa: BLE001
-        pass
-    return paper, py_counts
+    health: dict = {}
+
+    def _grep(label: str, cmd: list[str]) -> str:
+        """Run one index grep, recording whether it actually ran.
+
+        Both greps used to sit under `except Exception: pass`, and neither
+        checked the return code. That fails OPEN in the worst direction: an
+        empty index makes `has_reader` False for EVERY witness, so every one is
+        exempted as PROV_EXEMPT_NO_READER — which *raises* the completeness
+        ratio. A timeout on the `content/` tree therefore looked like an
+        improvement. grep exits 0 with matches, 1 with none, >=2 on error.
+        """
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        except Exception as exc:  # noqa: BLE001
+            health[f"{label}_ok"] = False
+            health[f"{label}_error"] = f"{exc.__class__.__name__}: {exc}"
+            return ""
+        health[f"{label}_ok"] = r.returncode in (0, 1)
+        health[f"{label}_returncode"] = r.returncode
+        if r.returncode not in (0, 1):
+            health[f"{label}_error"] = (r.stderr or "").strip()[:200]
+            return ""
+        return r.stdout
+
+    # `content/` is ~6.8 GB, nearly all of it untracked build output, and the
+    # plain recursive grep TIMES OUT at 120 s on it — measured on this tree, not
+    # hypothesised, which is how every name silently vanished from the index.
+    # `git grep` searches TRACKED files only: ~2 s instead of >120 s, and it is
+    # the more correct semantics anyway — an untracked build artifact is not the
+    # paper citing a witness.
+    paper: set[str] = set(
+        _grep("paper_index",
+              ["git", "-C", str(repo), "grep", "-hoE", pat, "--", "content/"]).split()
+    )
+    if not health.get("paper_index_ok"):
+        # Fall back to the original recursive grep rather than losing the index
+        # entirely (e.g. outside a git checkout).
+        health["paper_index_fallback"] = True
+        paper = set(
+            _grep("paper_index", ["grep", "-rhoE", pat, str(repo / "content")]).split()
+        )
+    py_counts: "dict[str, int]" = dict(Counter(
+        _grep("py_index",
+              ["grep", "-rhoE", "--include=*.py", pat, str(HERE.parent)]).split()
+    ))
+    health["paper_names"] = len(paper)
+    health["py_names"] = len(py_counts)
+    health["ok"] = bool(health.get("paper_index_ok") and health.get("py_index_ok"))
+    return paper, py_counts, health
 
 
 def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]") -> bool:
@@ -193,7 +224,7 @@ def main(argv: list[str] | None = None) -> int:
 
     legacy_removed = load_legacy_removed_set()
     acknowledged_floor = load_acknowledged_floor()
-    paper_refs, py_counts = build_reference_index()
+    paper_refs, py_counts, index_health = build_reference_index()
     by_verdict: dict[str, list[dict]] = {
         "PROV_OK": [], "PROV_MISSING": [],
         "PROV_AUDIT_EXEMPT": [], "PROV_EXEMPT_NO_READER": [],
@@ -264,6 +295,18 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  └─ corpus evaluated    : {evaluated_coverage:.3f}"
           f"   ({n_evaluated}/{n_total}) — the rest was never checked")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
+    print(f"  reader index           : paper={index_health.get('paper_names', 0)} "
+          f"name(s), py={index_health.get('py_names', 0)} name(s)")
+    if not index_health.get("ok"):
+        print("  *** READER INDEX DID NOT BUILD ***")
+        for _k in ("paper_index", "py_index"):
+            if not index_health.get(f"{_k}_ok"):
+                print(f"      {_k}: {index_health.get(f'{_k}_error', 'failed')}")
+        print(f"      An empty index makes EVERY witness look reader-less, so the")
+        print(f"      {n_no_reader} PROV_EXEMPT_NO_READER verdict(s) above are")
+        print( "      UNSUPPORTED -- and they RAISE the completeness ratio, so this")
+        print( "      failure reads as an improvement. Re-run before quoting any")
+        print( "      number on this page.")
     if n_missing:
         print()
         print("PROV_MISSING witnesses (need WitnessBuilder migration "
@@ -305,6 +348,7 @@ def main(argv: list[str] | None = None) -> int:
             "evaluated_coverage": evaluated_coverage,
         })
         .add_data("by_verdict", by_verdict)
+        .add_data("reader_index_health", index_health)
         .add_assertion(
             "no_missing_provenance",
             computed=n_missing,
