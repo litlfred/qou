@@ -4111,10 +4111,43 @@ applicable — so `sPolyChain_gt₂`'s hypothesis is `j₁ ≤ i₃`, i.e. `a �
 **with equality allowed**, and it covers `a = 3` as well. The exception is in
 the engine's schedule, not in the mathematics.
 
-### What remains
+### CLOSED — `gtRun`, and the chain at every `b`
 
-`b ≥ 3`, as an induction. The block is the induction step, and in
-`descWord`-relative form it reads
+The induction landed the same session. `sPolyChain_gt` proves the corner for
+every `b ≥ 2`; with `sPolyChain_gt₁` that is the **whole `a > b` half**, and
+both resolve to zero.
+
+| | |
+|---|---|
+| `gtRun` | the induction — `gtBlock` iterated over a run of any length |
+| `sPolyChain_gt` | `b ≥ 2`, any `a > b` → `(W, 1), (W, −1)` |
+| `sPoly_zero_gt` | → 0 |
+
+The whole chain is **four lemma applications regardless of `b`** — `vOpen` +
+`gtRun` on the first lineage, `gtRun` + two `bsStep`s on the second — where the
+step count is `b² + 3b + 5`. That is the measured block decomposition turned
+into Lean.
+
+Two design points, both bought by proving `b = 1` and `b = 2` concretely first:
+
+- **`z` and `j₂'` are parameters with `+1 =` hypotheses, not constructed.**
+  That is the file's idiom (`descWord_cons_le` takes its `i'` the same way).
+  The one place a `Fin n` predecessor must be *built* is the recursive call's
+  `z − 1`.
+- **The split `w ++ descWord y j₁ = descWord i j₁` is a hypothesis, not a
+  computation.** Stating `w` as `descWord i (y+1)` instead would have forced a
+  `Fin n` **successor** at every level; carrying the split forces none. This
+  was the obstacle identified below, and carrying the split is what dissolved
+  it.
+
+`b = 1` is not covered by the general theorem and cannot be: there the first
+lineage's run `descWord i₂ j₂` is **empty** (`j₂ = i₁ > i₂`), so `vOpen`
+already lands on the meeting word and `gtRun`, whose run has `k + 1 ≥ 1`
+letters, has nothing to do.
+
+### How the induction was found
+
+The block, in `descWord`-relative form, is the induction step:
 
 ```
 A ++ (descWord i j₁ ++ (σ_y :: T))   →*   (A ++ [σ_{y−1}]) ++ (descWord i j₁ ++ T)
@@ -4126,9 +4159,10 @@ lineages are that same move: the whole trailing descending run slides down by
 one and jumps to the left of `descWord i j₁`. Verified against the exact words
 at `b = 2` and `b = 3`.
 
-The obstacle is not the mathematics but `Fin n` predecessor arithmetic in the
-induction: the deposited letters are `y−1, y−2, …`, and stating that over
-`Fin n` needs either a list-of-indices formulation with a "descends by one"
-hypothesis, or a shift lemma for `descWord`. `b = 2` was proved concretely
-first, deliberately, to check that `gtBlock` composes at a longer run before
-committing to a design for the induction.
+The obstacle looked like `Fin n` predecessor arithmetic — the deposited
+letters are `y−1, y−2, …`. It was not: passing the predecessors as parameters
+with `+1 =` hypotheses, and carrying the split rather than computing `w`,
+removes every construction but one. `b = 2` was proved concretely first,
+deliberately, to check that `gtBlock` composes at a longer run before
+committing to a design for the induction — and that is what made the right
+statement visible.
