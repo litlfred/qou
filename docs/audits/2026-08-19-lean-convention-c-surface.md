@@ -124,12 +124,28 @@ argues the 80.3% is "a reading of `Vol(4₁)`'s own value" — every constant in
 window of width `0.0491` places a zero between the anchors — so the position was
 never evidence. Under D it is not even in the window.
 
-**Caveat on my own number.** My `Φ` is a reconstruction from the Lean `def`, not
-the block's producer; under C it lands `3.35e-10` from the block's stated `q*`,
-which is 2.9% of the anchor gap. **So my C-frame percentage is not reliable and
-must not be quoted against the block's 80.3%.** The D result is insensitive to
-that — a 20,000-gap displacement survives any plausible constant-vintage
-difference.
+**Re-run through the canonical producer** —
+[`qstar_anchor_interval_convention_probe.py`](../../computations/qbeta/qstar_anchor_interval_convention_probe.py),
+assertions pass — confirms all of the above and sharpens two points.
+
+*The C frame is in the shipped chain, not just my reconstruction.*
+`qbeta_utils.substrate_ladder_quantities:155` sets `z = 1/(sq + 1/sq)` =
+`0.499320334183694452`, and the same module's `markov_parameter:53` returns
+`√q/(1+q)` — **both C spellings in one file**, exactly mirroring the Lean.
+
+*A second, independent finding: the block's figure is stale.* The shipped
+`c3_target_at` roots at `1.1099785934034`; the block states `1.10997859303152`.
+That `3.35e-10` gap is **2.9% of the `1.281e-8` anchor interval**, so today's
+producer puts the landmark at **83.2%**, not 80.3%. Constant vintages,
+presumably — but it means *any* percentage quoted inside this interval is
+hypersensitive at the `1e-10` level and should carry that warning. My earlier
+caveat about my own reconstruction turns out to apply to the block's number too.
+
+*The D column is a sensitivity measurement, not a value.* Substituting `z_D`
+into a C-frame relation is the move AGENTS.md forbids for the `c_k` ladder, and
+the objection applies here. It shows the placement is convention-dependent and
+by how much, which is all that is needed to scope one sentence; a real D-frame
+`q*` needs the ladder re-derived (`qou-cds1`).
 
 ## What this audit did not do
 
