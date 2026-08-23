@@ -68,14 +68,44 @@ search for `A` across 6 hypothesis families
 (`qbeta_residue_categorical_id_probe.py`) came back uniformly negative — it was
 searching for a closed form of a numerical artifact.
 
-## 3. Current state is worse than the 2026-08-10 fix left it
+## 3. Why the floor is 6.0e-4 today — already answered on `main`
 
-`6d261854d4` (2026-08-23, "regenerate the q-pin consumers") re-ran the extractor
-and **no rung resolves at all**: `last_resolved_rung: null`, `n_unresolved: 9`.
-The floor moved from 7.4e-5 to 6.0e-4, so even `c_2` and `c_3` — which
-`qou-frch` reported as passing convincingly — no longer clear the 10× bar at
-this pin. Whether that is a genuine anchor effect or a regeneration defect is
-**not settled here**; it is filed separately.
+The extraction now resolves **nothing**: `last_resolved_rung: null`,
+`n_unresolved: 9`, floor 6.0e-4 against the 7.4e-5 that `qou-frch` instrumented.
+I filed that as an open question (`qou-1g6q`) before finding it **already
+answered in the producer's own header**, added 2026-08-21 (`qou-m9xp`) — a
+corpus-grep miss on my part: I searched the witness history and the commit
+messages, not the producer source.
+
+The answer is neither "anchor effect" nor "regeneration defect". It is the
+**convention C → D substitution**:
+
+```
+-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))     # convention C
++    z = q**3 / (q**2 + 1)                     # convention D
+```
+
+Verified there at 60 dps: muon + C reproduces the committed 2026-06-22 value
+byte for byte; muon + D and proton + D both land 6.0e-4 away. The μ–p pin shift
+contributes **3.0e-8** — four orders less. I reached the same bound
+independently before finding the banner (`Q_A` moves 3.0e-8 and `ℏ_q²` moves
+−2.1e-7 across the anchors, against a 6.0e-4 output move), so the two routes
+agree.
+
+AGENTS.md forbids that substitution in terms — `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
+(sorry-free) makes the C-frame ladder and the mass channel's three-row forcing
+mutually exclusive, so **a z-swap is not a re-derivation**. So the all-null
+state is not a degradation to explain: it is a C-frame ladder correctly failing
+to resolve anything at a D parameter. Neither `602,433 ppb` (D-substituted) nor
+`1248 ppb` (coherent C-frame, and C is excised) is currently a valid statement
+about Q_β. Re-deriving under D is tranche S1 of `qou-cds1` — research, not
+repair.
+
+**This sharpens §2 rather than competing with it.** The floor identity is
+arithmetic and holds in any frame; only the floor's *magnitude* is frame-
+dependent. PR #1727's `f = 2.118e-13` was the muon + C floor, and the
+`6.0e-4` measured above is the D-substituted one. The simple-pole evidence was
+therefore **also** C-frame — one more reason it cannot be quoted as it stands.
 
 ## 4. Scope — what is NOT claimed
 

@@ -1,10 +1,13 @@
 ---
 # qou-1g6q
 title: 'GAP: at the proton pin NO c_k rung resolves, not even c_2/c_3'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-23T22:22:29Z
-updated_at: 2026-08-23T22:22:29Z
+updated_at: 2026-08-23T22:44:30Z
 ---
 
 6d261854d4 (2026-08-23, regenerate the q-pin consumers) re-ran qbeta_decay_sdp_extended_ck and produced last_resolved_rung: null, n_unresolved: 9 -- every c_k null. The residual floor moved from 7.4e-5 (recorded in e5885ebc0f's instrumentation) to 6.0e-4, an order of magnitude worse, so even c_2 and c_3 no longer clear the 10x resolution bar. qou-frch reported c_2 = -1 and c_3 = -2 as testing and passing convincingly against R(q0) at the prior state. Two readings, not settled: (a) genuine anchor effect -- the proton pin really does leave the model's accuracy an order worse, in which case the c_2/c_3 support in qou-frch was pin-specific and needs restating; or (b) a regeneration defect in the q-pin sweep. This matters because c_2 = -1 is quoted in AGENTS.md as structural (no fit, no CODATA, no q0) and c_3 = -2 = J_Hopf(q=1) is a headline near-match. Neither claim depends on THIS extraction -- both are stated independently -- but this extraction is the corpus's numerical check on them, and it currently checks nothing. Determine which reading holds before anything downstream cites the extraction again.
+
+ANSWERED — and it was already answered on main before I filed this. The producer's own header (computations/probe_q_beta_operator_valued_N3.py, added 2026-08-21 under qou-m9xp) records the archaeology: the 9x floor move is the convention C -> D substitution (z = 1/(sqrt(q)+1/sqrt(q)) -> z = q^3/(q^2+1)), NOT the anchor. Verified there at 60 dps: muon+C reproduces the committed 2026-06-22 value byte for byte; muon+D and proton+D both land 6.0e-4 away; the mu-p pin shift contributes 3.0e-8, four orders less. I reached the same bound independently before finding the banner (Q_A moves 3.0e-8, hbar_q^2 moves -2.1e-7 across anchors, against a 6.0e-4 output move), so two routes agree. MY MISS: I greped the witness history and the commit messages but not the producer source, which is where the answer was. Neither reading in this bean's title was right -- it is not an anchor effect and not a regeneration defect; it is a z-swap that AGENTS.md forbids in terms (QOU.QBeta.decayLadder_zC_threeRow_ne_zero, sorry-free, makes the C-frame ladder and the three-row forcing mutually exclusive). Consequence: c_2 = -1 and c_3 = -2 have NOT lost support -- they are C-frame results and stay C-frame results, needing scoping rather than correction. The real work is qou-cds1 tranche S1: re-derive the ladder under D. Neither 602,433 ppb (D-substituted) nor 1248 ppb (coherent C, excised) is currently a valid Q_beta statement.
