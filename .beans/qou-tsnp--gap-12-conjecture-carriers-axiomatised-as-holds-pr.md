@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-08-09T00:33:35Z
+updated_at: 2026-08-23T17:49:50Z
 ---
 
 
@@ -117,3 +117,58 @@ Sibling stub deleted; module wired into `QOU.lean`; `.ts` set to
 **11 remain.** Each needs the same treatment: read the `.md`, state the
 actual claim, prove what is unconditional, carry only the genuinely open
 part as a class field.
+
+
+## 2026-08-23 — census WIDENED 9x, from PR #5562 (branch bring-surface-categorical-trace)
+
+Contribution from another branch, not a takeover of this bean.
+
+**A re-runnable detector now exists**: `scripts/free-prop-field-audit.py`
+(`--self-test`, 4 hand-read cases). Worth having because this bean's own count
+history (18 -> 16 -> 12) is the hand-count decay problem.
+
+```
+free `: Prop` fields: 166 in 113 carrier(s), 101 file(s)
+  UNPINNED-EMPTY      109  (66%)
+  UNPINNED-FAKE-IF     39  (23%)
+  PINNED               18  (11%)
+```
+
+**113 is NOT a fourth correction of the 12 — read this before "fixing" the
+count.** The three prior corrections were all downward because the earlier
+figure was WRONG, so a bigger number here has exactly the shape of a fourth bad
+count. It is not. Different SETS:
+
+- only **21** of the 113 have a field literally named `holds`
+- **11** are on this bean's list of 12. The twelfth, `TFromTraceCyclicity`,
+  **has since been repaired** — it now carries a real quantified statement
+  (`∀ ρ w, markovTrace ρ (timeReversal w) = markovTrace ρ w`). So the live
+  count for this bean's own scope is **11**, not 12.
+- the other **102** are outside this bean's scope by construction:
+  **67 in LIBRARY files** (`lean/QOU/**`), 30 chapter siblings, 5 glossary.
+
+**The library concentration is what the `holds`-named + conjecture-sibling scope
+could not see**, and it is the more consequential half — these are definitions,
+not conjecture stubs:
+
+| carrier | free fields | what the docstring says it encodes |
+|---|---|---|
+| `IwahoriHeckeAlgebra` | `hecke_relation`, `braid_relation`, `far_commute` | the Hecke presentation itself (§7a) |
+| `MarkovTraceRecursion` | `markov_axiom_holds` | the Markov axiom |
+| `ClassicalLimitFunctor` | `is_exact` | exactness — the docstring ADMITS it |
+
+**Three buckets, because not every free `Prop` is a defect.** A field PINNING it
+(`regular_iff : regular ↔ 0 < x`) makes `True` refutable. A field merely
+asserting it (`hP : P`) or using it as an antecedent (`impl : P → X`) does not —
+the antecedent case is its own weaker defect where the CONDITIONALITY is fake
+while the consequents may still carry content.
+
+**Verified, not asserted**: `docs/audits/2026-08-23-free-prop-field-triviality-probe.lean`,
+`lean` exit 0 — three carriers instantiated as `⟨True, …⟩`, and a
+`[HabiroFlowSolution]`-conditional theorem shown unconditional.
+
+**Scope**: a claim about Lean ENCODINGS, not the mathematics. That
+`IwahoriHeckeAlgebra`'s Lean does not encode the Hecke relation says nothing
+about whether the relation holds.
+
+Full write-up: `docs/audits/2026-08-23-free-prop-field-census.md`.
