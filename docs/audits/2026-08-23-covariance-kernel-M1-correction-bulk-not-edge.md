@@ -1,4 +1,4 @@
-# Covariance-kernel epic (`qou-x631`) — M₁>0: correcting "edge-sensitive" → bulk-dominated; extend to n≤67
+# Covariance-kernel epic (`qou-x631`) — M₁>0: exact to n≤67, Lean-proved k≤7; correction order UNDETERMINED (edge n^{-2/3} vs bulk, unranked)
 
 **Date:** 2026-08-23 · **Branch:** `claude/m1-kappa-edge-scaling-2026-08-23` · **Tier:** correction of
 a prior characterization + extended exact verification · **Discipline:** scope-(a); no fit; nothing
@@ -11,20 +11,27 @@ The exact `Fraction` covariance gives `κ_n > κ = 128/(225π²)` (hence `M₁ =
 **every `13 ≤ n ≤ 67`** — extending the previous `n ≤ 60`. The crossing stays at `n₀ = 13`; the gap
 `κ_n − κ` is positive and declining slowly (`≈ 0.001317` at n=65). No sign of recrossing.
 
-### 2. Correcting the "edge-sensitive" label — the dominant correction is **bulk `n^{-1/2}`**, not edge
-The [prior audit](2026-08-22-covariance-kernel-M1-sign-attempt-wall.md) guessed the `κ_n − κ`
-correction was **edge (Tracy–Widom) dominated**. A scaling estimate shows that is **wrong**:
+### 2. The correction's order is UNDETERMINED — edge (`n^{-2/3}`) vs bulk (`n^{-1/2}`) cannot be ranked
+The [prior audit](2026-08-22-covariance-kernel-M1-sign-attempt-wall.md) called the correction
+edge-dominated; this session first over-corrected to "bulk-dominated". **Both are over-claims.** What
+is defensible is a scaling estimate for the **edge (Tracy–Widom)** contribution:
 
 - **Edge contribution.** The Tracy–Widom edge enters `Σh` through `λ₁² = 4n + 4n^{2/3}χ + …`
   (`χ = TW`, `O(1)`), so `δ(Σh)_edge ~ n^{2/3}χ`. It enters `ω₃ = Σc²` through the extreme content
   `≈ λ₁ ≈ 2√n`: `∂Σc²/∂λ₁ ≈ (2√n)² = 4n`, so `δ(ω₃)_edge ~ 4n·n^{1/6}χ = 4n^{7/6}χ`. Both driven by the
   *same* `χ`, hence `Cov_edge ~ n^{2/3}·n^{7/6} = n^{11/6}`, i.e. **relative order `n^{-2/3}`** vs the
   leader `κn^{5/2}`.
-- **Bulk second-order.** The standard CLT correction is relative order `~ n^{-1/2}`.
-- **`−2/3 < −1/2`**, so the edge is **subleading**. The dominant correction is **bulk**, and the sign
-  question `κ_n → κ` from above is a **bulk second-order Kerov-CLT** statement — *not* a Tracy–Widom
-  edge problem. This is meaningfully more tractable than the prior (incorrect) characterization, and it
-  **retracts the "edge-sensitive wall" framing**.
+- A bulk second-order CLT correction would be relative order `~ n^{-1/2}`.
+
+> **⚠ Honest walk-back — do NOT read this as "bulk-dominated".** An earlier draft concluded "since
+> `−2/3 < −1/2` the edge is subleading, so the correction is bulk-dominated." **Withdrawn** — that
+> assumed the bulk correction is exactly `n^{-1/2}`, which is *not* established. The measured effective
+> exponent `β` of `κ_n − κ` at high `n` (well past the peak at `n≈32`) runs `β ≈ 0.25 → 0.36` over
+> `n = 40 … 64` and is **still rising, not converged**; no test `(κ_n−κ)·n^{β}` for `β ∈ {1/2, 2/3, 1}`
+> is flat. So the correction's asymptotic order is **genuinely undetermined at `n ≤ 67`**, and edge
+> (`n^{-2/3}`) vs bulk (`n^{-1/2}`) **cannot be ranked**. Both this session's "bulk-dominated" and the
+> prior session's "edge-sensitive" are **over-claims**. The only defensible statement is: *the edge
+> contributes at relative order `n^{-2/3}` (valid scaling); which of edge/bulk dominates is unknown.*
 
 ## Honest limits on the coefficient (no over-claim)
 
@@ -34,18 +41,27 @@ is NOT numerically pinned:** a **3-term** fit (n=44,52,60) collapses `a₁` to `
 `a₂ ≈ 0.15`, `a₃ ≈ −0.63` — the series is **deeply pre-asymptotic** at reachable `n` (recall
 `κ_n − κ` only peaks at `n≈32`). So:
 
-- **Defensible:** `M₁>0` exact to n≤67; the correction is **bulk-dominated** (edge subleading, by
-  scaling); `κ_n − κ > 0` empirically.
-- **NOT claimed:** a specific value or even a firm exponent for the correction — the fits disagree
-  (`a₁` from `0.002` to `0.017` depending on model). The magnitude/exponent are numerically
-  unresolved at n≤67.
+- **Defensible:** `M₁>0` exact to n≤67 (**and Lean-proved for `k ≤ 7`**, `m1_pos_of_le_seven`); the
+  edge contributes at `n^{-2/3}`; `κ_n − κ > 0` empirically throughout.
+- **NOT claimed:** the correction's exponent or coefficient, or which of edge/bulk dominates — all
+  numerically unresolved at n≤67.
 
-## Refined frontier
+## Frontier (honestly scoped)
 
-Prove `κ_n ≥ κ` for `n ≥ 13` via the **bulk** second-order Kerov-CLT: show the leading correction
-coefficient (the `n^{-1/2}` term of `κ_n`, equivalently the `n²` term of `M₁`) is `≥ 0`. This is the
-`c_N > c_P` deficit-coefficient comparison (deficit audit), now correctly scoped as a **bulk** (not
-edge) computation. Still open, still hard, but no longer mis-attributed to Tracy–Widom.
+Prove `κ_n ≥ κ` for `n ≥ 13` — i.e. `κ_n − κ ≥ 0` asymptotically. This is a **second-order
+Plancherel-fluctuation** statement whose relevant order (bulk `n^{-1/2}` vs edge `n^{-2/3}` vs a mix)
+is **not determined** by the accessible data. The sign is empirically robust (exact to n≤67) but its
+proof needs the genuine second-order asymptotics; both bulk and edge contribute at close orders and
+neither is ruled out. Open.
+
+## Lean
+
+`M₁ > 0` for the finite base is now **machine-checked**: `m1_pos_of_le_seven`
+(`0 < scaledCov k (Σ□ h) (Σ□ c²)` for `3 ≤ k ≤ 7`, `interval_cases k <;> decide`) in
+[`YoungDiagramKernel.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernel.lean),
+verified `lean`-direct exit 0. The all-`n` statement is **not** Lean-provable (it is the open analytic
+problem above); the even moments `threeM4_pos`/`M6_pos` remain the only *general-`n`* proved
+positivity.
 
 ## Compute
 
