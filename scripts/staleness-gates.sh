@@ -87,13 +87,48 @@ fi
 
 # 🛑 THIS SCRIPT IS RED ON `main` — MEASURED, NOT INHERITED FROM YOUR BRANCH.
 #
-# A full run on a pristine origin/main worktree (2026-08-22) exits 1 on three
-# gates: `scriptHash + upstream drift`, `q0 constant staleness`, and `qou-mass
-# vendor mirror`. If you see those three, they are almost certainly not yours —
-# check a clean worktree before spending time on them:
+# A full run on `main` exits 1. Re-measured 2026-08-23; the set SHRANK, and the
+# correction matters more than the count:
+#
+#   scriptHash + upstream drift   RED   dominated by sha256_mismatch against
+#                                       q-pinning-50-digit.witness.json
+#   q0 constant staleness         RED   6 witnesses in the muon basin
+#   qou-mass vendor mirror        GREEN — was RED on 2026-08-22 and is NOT a
+#                                       backlog. It was a TRANSIENT mid-arc
+#                                       state: the qou-ishr float64 drain
+#                                       (945b2edf2f, e005856e18) rewrote source
+#                                       witnesses, drifting the vendored mirror,
+#                                       and that arc's own follow-ups re-synced
+#                                       it (09571f1b3f, c1c8f34bfa).
+#
+# THE LESSON, because it cost a bean an over-claim: A RED MEASURED ONCE ON MAIN
+# MAY BE MID-ARC, NOT PERSISTENT. A sibling that lands a source change in one
+# commit and its derived artifact in the next is red in between, and a snapshot
+# taken there reads exactly like a standing backlog. Re-measure before treating
+# any red here as work.
+#
+# Check a clean worktree before spending time on the two that remain:
 #
 #   git worktree add --detach /tmp/mainwt origin/main
 #   (cd /tmp/mainwt && bash scripts/staleness-gates.sh)
+#
+# AND THE TWO REMAINING ARE NOT ONE BACKLOG EITHER. Of the 6 witnesses the q0
+# gate flags, measured 2026-08-23: 2 declare `q0Anchor: muon` AND carry a muon
+# q0 -- self-consistent, valid as recorded, and part of the GATED bulk
+# migration (bean qou-1c4y, needs scoped sign-off; do not drain them here). The
+# other 4 are a different defect entirely -- their declared anchor CONTRADICTS
+# their payload:
+#
+#   lever1-color-eq-intrinsic-tau-rapidity   declares proton, carries muon
+#   lever1-color-eq-lambda-sw-rapidity       declares proton, carries muon
+#   z2bn-tau-derivation-probe                declares `independent`
+#                                            ("reads no substrate value") and
+#                                            records .q0 = 1.10997859555733...
+#   knot-volumes                             declares no anchor at all
+#
+# Those 4 are actionable WITHOUT the gated migration, because fixing them means
+# reconciling a declaration with a payload, not re-pinning the corpus. Which
+# side is wrong is per-witness and needs the producer read. Bean qou-bdkx.
 #
 # WHY NOBODY KNEW. Until 2026-08-22 the `--changed` predicate below read the
 # working tree only, so it printed "nothing touched — skipped" for any change
