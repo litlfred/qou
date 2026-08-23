@@ -1627,3 +1627,78 @@ against a clean copy, and no downstream constant should be asserted until it is.
 Verification: all nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no errors and
 no linter output. All seven new/underlying declarations `#print axioms`-clean on
 `[propext, Classical.choice, Quot.sound]`.
+
+---
+
+## 2026-08-23 — §13 finished, and an eighth correction found by the vacuity audit
+
+Read §13 of the source directly rather than working from the reconstruction. Three things it
+settled, then the correction it produced.
+
+### The source confirms the shape that was guessed
+
+§13's determinant is `det(A_{μν} A)` where `A_{μν} = Δ_{j_{μ1},…,j_{μ,m−1}, ν−1}` with
+`∑_{h<m} j_{μh} ≤ μ−1` and order exactly `ν−1` in the last variable. That is a matrix of
+derivatives of a **single** polynomial — exactly `M i j = pderivList (D i j) P`, not a
+Wronskian of `r` distinct functions. `sum_max_le_index_det` was written to the right shape.
+
+It also confirms the detail that made the permutation step legal: the row index `μ` bounds
+`∑_{h<m} j_{μh} ≤ t` and the column index `ν` contributes `(ν−1)/r_m`, so the cost is
+**uniform in the row**. A cost varying in `i` would break `sum_max_le_index_det`, and the
+source is the reason it does not.
+
+And it confirms the constants: Mahler's case-2 conclusion `J(A) < t + 2√(J(W)/r_m)` is the
+weakening of `θ − t ≤ √(2S/r_m)`, which is exactly `sq_mul_le_two_mul_of_sum_le`. The factor
+`2` in place of `√2` is his, and costs nothing.
+
+### ⚠ Eighth correction: Mahler's `max` is an artefact, and transcribing it produced a theorem that says nothing
+
+§13 ends by combining its two cases as `J(A) < t + max(J(W), 2√(J(W)/r_m))`. That was written
+here literally, as `θ ≤ t + 2 * max S q`, and built. Writing its non-vacuity witness is what
+exposed it: for `0 ≤ S`, `2·max S q ≥ 2S ≥ S`, so the statement is **implied by
+`index_le_add_of_det_bound`** (`θ ≤ t + S`) alone. It is a true theorem that carries no
+information about determinants at all.
+
+Mahler needs the `max` because he knows only that *one* of his two cases holds. Case (1) is
+unconditional here — the `j = 0` term of `sum_max_le_index_det`, every other term
+non-negative — so there is nothing to hedge against, and the `max` protects the branch that
+never fails while discarding the branch that is strong.
+
+`max_form_implied_by_case_one` is landed as the record: a one-line proof that the discarded
+statement follows from case (1). Nothing else uses it.
+
+This is the vacuity audit doing the job the previous seven corrections were found by hand.
+Worth noting: the *build* was green for the max form. Nothing about `lake build` or
+`#print axioms` would ever have caught it.
+
+### What replaced it
+
+```
+index_le_add_of_det_bound   θ ≤ t + S                     — case (1), unconditional, r > 0
+index_le_of_det_bound       θ ≤ t + 2q                    — given S ≤ q²·rr and S·rr ≤ r
+```
+
+The second is stronger than anything in the source's combined display. The gain is moving
+the branch hypothesis off `θ`: `sq_index_le_of_det_bound` needs `(θ−t)·rr ≤ r`, which mentions
+the quantity being bounded (Mahler's `n > N` has the same defect), but case (1) gives
+`θ − t ≤ S`, so **`S·rr ≤ r` implies it**. A caller can discharge `S·rr ≤ r` without already
+knowing the answer.
+
+Non-vacuity: `index_le_of_det_bound_witness`, same `1 × 1` instance, labelled in its docstring
+as certifying satisfiability only.
+
+### Open — no longer inequalities
+
+1. **The operator family.** Build §13's `D : Fin r → Fin r → List σ` and prove `hc` for it.
+   A construction; the arc has none.
+2. **The determinant is non-zero.** `hS` is unsatisfiable at `det = 0` (`index = ⊤`), so
+   `BoundedOrderWronskian`'s non-vanishing is a real precondition, not bookkeeping.
+3. **`S·rr ≤ r` in the recursion's regime** reads `Φ_m · r_m ≤ 1` with `S = nΦ_m`, `rr = r_m`,
+   `r = n`. Unchecked against the parameter conditions — do not assume it.
+
+⚠ Provenance narrows but does not close: §13's *structure* is now read directly and matches.
+The surrounding parameter bookkeeping (`ω(m,ε)`, `c_m = 2^m − 3`) is still from the illegible
+region and must be re-derived against a clean copy.
+
+Verification: nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Four new declarations `#print axioms`-clean.

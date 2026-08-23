@@ -364,27 +364,156 @@ theorem sq_index_le_of_det_bound_witness : ((1 : ℚ) - 0) ^ 2 * 1 ≤ 2 * 1 :=
         (X 0 : MvPolynomial (Fin 1) ℚ) ≤ (((1 : ℚ)) : WithTop ℚ)
       rw [index_X])
 
+
+/-- **Mahler §13, case (1).**  `θ ≤ t + S`, with no hypothesis relating `θ`, `rr` and `r`.
+
+The source presents this as the case `n ≤ N`, which invites formalising a hypothesis that is
+not needed: the bound is just the `j = 0` term of `sum_max_le_index_det`, and every other
+term is non-negative.  It holds in **every** regime.  (What the case `n ≤ N` really says is
+that in that regime this is the *best* bound available — a statement about strength, not
+about validity.)
+
+Needs `0 < r` only so that column `0` exists; at `r = 0` the determinant is `1` and carries
+no information about `P`. -/
+theorem index_le_add_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S : ℚ)
+    (hr : 0 < r)
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    θ ≤ t + S := by
+  have hsum : (∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) ≤ S := by
+    have h := le_trans (sum_max_le_index_det d α D P θ t rr hθ hc) hS
+    exact_mod_cast h
+  have hfirst : max 0 (θ - t - ((⟨0, hr⟩ : Fin r) : ℚ) / rr)
+      ≤ ∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) :=
+    Finset.single_le_sum (f := fun j : Fin r => max 0 (θ - t - (j : ℚ) / rr))
+      (fun i _ => le_max_left _ _) (Finset.mem_univ _)
+  have hz : ((⟨0, hr⟩ : Fin r) : ℚ) = 0 := by norm_num
+  rw [hz] at hfirst
+  have : θ - t ≤ max 0 (θ - t - 0 / rr) := by
+    rw [zero_div, sub_zero]
+    exact le_max_right _ _
+  linarith
+
+/-! ### ⚠ The eighth correction: Mahler's `max` is an artefact of his case split
+
+Mahler's §13 ends by combining his two cases into one display,
+`J(A) < t + max(J(W), 2√(J(W)/r_m))`.  Transcribed literally that becomes
+
+    θ ≤ t + 2 * max S q        (q any rational with S ≤ q²·rr)
+
+and it was written here in exactly that form.  **It carries no information.**  For `0 ≤ S`
+we have `2·max S q ≥ 2S ≥ S`, so the statement is implied by `index_le_add_of_det_bound`
+alone — `max_form_implied_by_case_one` below is that one-line proof, kept as the record.
+
+The reason Mahler needs a `max` is that he knows only that *one* of his two cases holds, and
+must state a bound valid either way.  But case (1) is unconditional (see
+`index_le_add_of_det_bound`), so there is nothing to hedge against: the `max` protects a
+branch that never fails, at the cost of discarding the branch that is actually strong.
+
+What the recursion wants is the **other** branch, and its hypothesis can be moved off `θ`:
+
+* `sq_index_le_of_det_bound` needs `(θ − t)·rr ≤ r`, which mentions the very quantity being
+  bounded — the same awkwardness as Mahler's `n > N`;
+* but case (1) gives `θ − t ≤ S`, so `S·rr ≤ r` *implies* `(θ − t)·rr ≤ r`.
+
+`index_le_of_det_bound` below is that composition: a side condition on `S`, `rr` and `r`
+alone, and the conclusion `θ ≤ t + 2q` with `q ≥ √(S/rr)`.  This is stronger than anything
+in the source's combined display, and it is the form a caller can actually check.
+
+⚠ Whether `S·rr ≤ r` holds in the recursion's regime is **not** settled here.  With
+`S = n·Φ_m`, `rr = r_m`, `r = n` it reads `Φ_m · r_m ≤ 1`, which is a real smallness demand
+on `Φ_m` and has to be checked against the parameter conditions, not assumed. -/
+
+/-- The discarded `max` form, derived from case (1) alone — the record of the eighth
+correction.  Nothing else should use this; it exists to show that the literal transcription
+of Mahler's combined display is a consequence of the unconditional case and therefore was
+never worth stating as a theorem about determinants. -/
+theorem max_form_implied_by_case_one {θ t S q : ℚ} (hS0 : 0 ≤ S) (h : θ ≤ t + S) :
+    θ ≤ t + 2 * max S q := by
+  have := le_max_left S q
+  linarith
+
+/-- **Mahler §13, in the form the recursion can use.**  `θ ≤ t + 2q` whenever `q ≥ √(S/rr)`
+(stated as `S ≤ q²·rr`, so no `Real.sqrt` appears) and `S·rr ≤ r`.
+
+The side condition `S·rr ≤ r` replaces Mahler's `n > N`: it is a statement about the *bound*
+`S` rather than about `θ`, so a caller can discharge it without already knowing the answer.
+It suffices because case (1) gives `θ − t ≤ S`, hence `(θ − t)·rr ≤ S·rr ≤ r`.
+
+`2q` in place of `√2·q` is Mahler's own weakening; keeping `√2` would need a square root and
+buys a factor `1.41`. -/
+theorem index_le_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S q : ℚ)
+    (hr : 0 < r) (hrr : 0 < rr) (hθt : t ≤ θ) (hq0 : 0 ≤ q)
+    (hq : S ≤ q ^ 2 * rr) (hSr : S * rr ≤ (r : ℚ))
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    θ ≤ t + 2 * q := by
+  have h1 : θ - t ≤ S := by
+    have := index_le_add_of_det_bound d α D P θ t rr S hr hθ hc hS
+    linarith
+  have hn : (θ - t) * rr ≤ (r : ℚ) :=
+    le_trans (by nlinarith) hSr
+  have h2 := sq_index_le_of_det_bound d α D P θ t rr S hrr hθt hn hθ hc hS
+  have hsq : (θ - t) ^ 2 ≤ (2 * q) ^ 2 := by nlinarith
+  nlinarith [sq_nonneg (θ - t - 2 * q)]
+
+/-- **Satisfiability of `index_le_of_det_bound`.**  The same `1 × 1` instance as
+`sq_index_le_of_det_bound_witness`, with `S = 1`, `rr = 1`, `r = 1`, `q = 1`: the side
+condition `S·rr ≤ r` reads `1 ≤ 1` and the conclusion reads `1 ≤ 2`.
+
+⚠ As before, this certifies joint satisfiability only — it does not exercise the truncation,
+and at `q = S = 1` the two branches happen to agree. -/
+theorem index_le_of_det_bound_witness : (1 : ℚ) ≤ 0 + 2 * 1 :=
+  index_le_of_det_bound (σ := Fin 1) (R := ℚ) (r := 1)
+    (fun _ => 1) (fun _ => (0 : ℚ)) (fun _ _ => []) (X 0) 1 0 1 1 1
+    one_pos one_pos (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by rw [index_X])
+    (by intro i j; simp)
+    (by
+      rw [Matrix.det_fin_one]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (pderivList ([] : List (Fin 1)) (X 0 : MvPolynomial (Fin 1) ℚ))
+          ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [pderivList_nil]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (X 0 : MvPolynomial (Fin 1) ℚ) ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [index_X])
+
+
 /-! ### Next
 
-The statement is now written (`QOU/Mathlib/RothLemmaStatement.lean`), its `m = 1` case proved,
-and the step's inputs are all constructible (`SeparatedRepresentation`).  With
-`sum_index_le_index_sepW_add` above, the step's key *inequality* is proved too.
+**§13 is complete.**  `index_le_of_det_bound` is its conclusion in a form the recursion can
+apply: given a matrix of derivatives of `P` whose per-column cost is `t + j/rr`, an upper
+bound `S` on the determinant's index with `S·rr ≤ r`, and a rational `q ≥ √(S/rr)`, the index
+of `P` is at most `t + 2q`.  Every hypothesis is checkable without knowing the index of `P`.
 
-The **constant regime** is no longer where it was.  `index_le_of_rescaled_factor_bounds`
-improved the error term by a factor `r` without making it small, and the sixth correction
-recorded that this was not enough.  `sq_index_le_of_det_bound` shows why it could not be:
-the loss was not in the ingredients but in *dividing through linearly*, which discards the
-truncation.  With the truncated sum the conclusion is on `(θ − t)²`, and the excess is
-controlled by `√(2S/rr)` rather than by `S`.
+What that leaves is **not** more inequalities.  It is two constructions and one check:
 
-⚠ What remains is the **recursion**: choosing `ω(m, ε)`, choosing the operator families `Dx`,
-`Dy` with bounded order so that `hc`'s per-column cost `t + j/rr` actually holds, and doing
-the arithmetic that turns `sq_index_le_of_det_bound` plus the induction hypothesis into a
-contradiction.  Only the last of those is now a question about constants; the first two are
-constructions.
+1. **The operator family.**  §13's matrix is `A_{μν} = Δ_{j_{μ1},…,j_{μ,m−1}, ν−1}` with
+   `∑_{h<m} j_{μh} ≤ μ−1` and order exactly `ν−1` in the last variable.  Building that as a
+   `D : Fin r → Fin r → List σ` and proving `hc` for it is a construction the arc does not
+   have.  Note it is `t + j/rr` with the cost *uniform in the row* — which is what makes the
+   permutation step in `sum_max_le_index_det` sound, so this is not a free choice.
+2. **The determinant is non-zero.**  `hS` is unsatisfiable when `det = 0` (`index = ⊤`), so
+   the generalized Wronskian's non-vanishing — `BoundedOrderWronskian`'s business — is a real
+   precondition, not bookkeeping.
+3. **`S·rr ≤ r` in the recursion's regime.**  With `S = n·Φ_m`, `rr = r_m`, `r = n` this is
+   `Φ_m · r_m ≤ 1`.  Whether the parameter conditions of Roth's lemma deliver it is unchecked.
 
-⚠ Provenance, carried forward from `RothRecursionArith`: those constants come from a partly
-illegible scan.  Re-derive them against a clean copy of Mahler §13 before `ω(m, ε)` or
-`c_m = 2^m − 3` is asserted anywhere. -/
+⚠ Provenance, still standing for `RothRecursionArith`'s constants: reconstructed from a
+partly illegible scan.  §13's *structure* has since been read directly and matches — the
+matrix shape, the uniform-in-row cost, and the weakening of `√2` to `2` are all confirmed —
+but the surrounding parameter bookkeeping (`ω(m, ε)`, `c_m = 2^m − 3`) is not, and should be
+re-derived against a clean copy before being asserted. -/
 
 end MvPolynomial
