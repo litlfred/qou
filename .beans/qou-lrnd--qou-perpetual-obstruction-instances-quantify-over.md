@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-22T19:54:06Z
+updated_at: 2026-08-23T07:57:07Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -91,3 +91,101 @@ The four original theorems are KEPT — all four are cited externally — with
 their docstrings corrected to say what their types actually prove. The
 proton/deuteron ones now open with 'read the TYPE. The conclusion is
 not IsUnit (4 : Z), which mentions neither p nor S'.
+
+
+---
+
+# RE-SCOPED 2026-08-23 — the collapse is easier than recorded; the step after it does not hold
+
+Worked in the foreground. The bean said the remaining work was that proving
+`h_collapse` "needs cyclotomic ring theory over Z[zeta_2p]". Both halves of
+that turned out to be wrong, in opposite directions.
+
+## The collapse needs no cyclotomic theory at all — PROVED, general
+
+New file `QOU/LiftingDescent/HabiroCollapse.lean` (sorry-free, lean-direct
+exit 0, `#print axioms` = propext / Classical.choice / Quot.sound on all seven
+declarations):
+
+    map_qPoch_eq_zero     phi q = -1  ->  phi ((q;q)_m) = 0   for m >= 2
+    map_habiro_expansion  phi (sum_{m<N} a m (q;q)_m) = phi (a 0) + 2 phi (a 1)
+
+The whole mechanism is that the `i = 2` factor is `1 - q^2` and `1 - (-1)^2 = 0`.
+No roots of unity, no ramification, no ring of integers appears in either
+proof. So the cyclotomic content of `h_collapse` was exactly ONE fact,
+`phi(zeta_2p) = -1`; everything downstream of it was ordinary ring theory that
+had simply never been separated out.
+
+## The step AFTER the collapse does not hold — scope (b), invariant exhibited
+
+Per AGENTS.md this is a **structural exclusion, not a scope-limited
+negative**, and the invariant is cited rather than asserted. Two exact checks
+in `computations/probes/cyclotomic_residue_four_unit_probe.py` (pure integer
+arithmetic; every polynomial division asserted exact; no floats):
+
+**(1) The target ring cannot be Z.** `habiro_frobenius_not_unit` types
+`reduce p : R p ->+* Z` while its docstring calls it "reduction modulo the
+prime ideal P = (1 - zeta_p)". Those cannot be the same map — that reduction
+lands in `O/P = F_p`. And no hom `Z[zeta_2p] ->+* Z` sends `zeta -> -1`: it
+would force `Phi_2p(-1) = 0`, and computing Phi_2p from the defining recursion
+(no closed form assumed) gives `Phi_2p(-1) = p` for every p tested. None
+exists at all, in fact — `O/ker` would be an infinite quotient of a rank-(p-1)
+ring of integers.
+
+**(2) With the correct target, the residue is a UNIT.**
+`not_isUnit_of_image : not IsUnit (phi x) -> not IsUnit x` needs the RESIDUE
+to be a non-unit. In `F_p`, `4` is a unit for every `p != 2`
+(`isUnit_four_zmod`, in Lean). And this is not a gap awaiting a cleverer
+proof — the inference is FALSE: the cyclotomic unit
+
+    u4 = 1 + zeta + zeta^2 + zeta^3 = (1 - zeta^4)/(1 - zeta)
+
+is a unit of `Z[zeta_p]` — inverse `1 + zeta^4 + ... + zeta^{4(b-1)}` where
+`4b == 1 (mod p)`, integral by inspection — and `zeta == 1 (mod P)` gives
+`u4 == 4 (mod P)`. Verified `u4 * v = 1` exactly for
+p in {3,5,7,11,13,17,19,23,29,31,101,1009}.
+
+So `Frob_p == 4 (mod P)` is COMPATIBLE with `Frob_p` being a unit.
+
+## The sharp statement of what the route CAN give
+
+If `reduce p (frob p) = C` then `frob p` is a non-unit exactly when the
+residue VANISHES, i.e. when `p | C` — then `frob p` lies in the proper ideal
+`P`. For `C = 4` and `C = -32` that is `p = 2` alone.
+
+**The collapse route therefore yields non-unitness at the finitely many primes
+dividing C — which is the complement of what "perpetual" means.** A congruence
+to a fixed nonzero constant is the wrong shape for an almost-every-prime
+statement, independently of how the constant was derived.
+
+## Correcting my own work from earlier today
+
+I added `habiro_frobenius_not_unit` + the proton/deuteron instances in
+`577266d17c` and reported them as closing the `p`-is-decoration defect. The
+`p`-decoration part stands. But I described `h_collapse` as "an explicit
+hypothesis ... the remaining work", implying it was dischargeable. It is not,
+in the shape it is stated. The four theorems remain true, sorry-free and
+cited — they are correct statements about an arbitrary family with a hom to Z
+— and their docstrings are corrected in `0eb307afd0` to say what they reach.
+
+Also removed there: `qou_proton_perpetual_obstruction`'s claim that
+"N(Frob_p) == 4^{p-1} (mod p), which is never +-1 for p >= 3". Wrong twice —
+by Fermat `4^{p-1} == 1 (mod p)` for `p` odd, and `1 == +1`.
+
+## STILL OPEN — and it is a different question than this bean opened with
+
+Not "discharge h_collapse". The open question is: **what argument gives the
+perpetual obstruction for the QOU Frobenius at all?** A residue mod one prime
+cannot, by (2). Candidate shapes, none attempted here:
+
+* An **archimedean** bound. A unit of `O` has norm +-1, so bounding
+  `|Frob_p|` below at every complex embedding bounds `|N(Frob_p)| > 1`. This
+  is the norm argument the deleted docstring was reaching for, done at the
+  right place — the archimedean side, not mod P.
+* A **valuation** at some prime dividing the collapse invariant, which gives
+  the finite set above and nothing more.
+* Dropping "perpetual". If the honest theorem is about `p | C`, say so; a
+  finite exception set is what `perpetual_obstruction_from_trace` already
+  models, but with `S` the COMPLEMENT of the good set rather than a bad set.
+
+Commits: `a9c289bb38` (HabiroCollapse + probe), `0eb307afd0` (docstrings).
