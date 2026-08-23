@@ -151,3 +151,50 @@ two-line import before acting on it** — that is how the one case that mattered
 was established, and it is the only method here that has not been wrong yet.
 
 Option 1 (one canonical `R_q`) is untouched.
+
+## Triage 2026-08-23 — 2 of 65 are mechanical, and one of those is already done
+
+Compared the head-line definition text of every duplicated FQN:
+
+| | count |
+|---|---|
+| definitions **byte-identical** — safe mechanical dedup | **2** |
+| definitions differ — needs judgement | 63 |
+
+So this bean has no mechanical subset either, which is the same conclusion
+`qou-u87j` option 3 reached about mirror drift, arrived at independently. Two
+scans of two different populations, same answer: **the duplication is not
+clerical.**
+
+### Done: `QOU/scratch_fusion.lean` deleted
+
+Forty lines, literally named "scratch", imported by nothing, in no `lean.ref`,
+not in the `QOU.lean` umbrella — and all five of its declarations already live
+in `QOU/BraidsKnots/RamifiedDiscFusion.lean` under the same FQNs, with
+docstrings and the label `prop:ramified-disc-fusion` the scratch copy lacks.
+
+**65 → 60 duplicated FQNs, 64 → 63 pairs, 70 → 68 modules.**
+`prepare-merge` §4a baseline lowered to 60 in the same change.
+
+### Not done: `QOU.Archimedean.R_q`, and why it is not a one-liner
+
+The other byte-identical case is `abbrev R_q := LaurentPolynomial ℤ` in both
+`Archimedean/GroundRing.lean:33` and `Archimedean/WeierstrassProjection.lean:26`.
+`WeierstrassProjection` also duplicates `q_param` and `q_inv_param`, and **uses**
+its copies — 14 references. So it cannot simply drop them.
+
+The obvious move, importing `GroundRing`, has a cost worth stating rather than
+paying silently: `WeierstrassProjection.lean` currently has **three** Mathlib
+imports, while `GroundRing.lean` pulls `Mathlib.Tactic` and
+`QOU.MathlibExt.QIntegerCanonical`. Pointing a light module at a heavy one to
+fix a three-line duplication is a build-cost regression, not a cleanup.
+
+What this actually wants is a **minimal ground-ring module** — `R_q`,
+`q_param`, `q_inv_param` and nothing else — that both import, with
+`GroundRing.lean` keeping its tactic-heavy material on top. That is a module-
+layout decision, so it is option 1 and it is the owner's, not something to
+invent at the tail of a session. No cycle blocks it: `GroundRing` does not
+import `WeierstrassProjection`.
+
+Corpus-wide there are still 100 `abbrev R_q` declarations, so whatever module
+gets created is the target for a much wider sweep than these two.
