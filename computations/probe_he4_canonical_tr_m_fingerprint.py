@@ -24,15 +24,15 @@ carries the fraction
     |Σ_{λ ∈ Λ²(12)} c_λ| / |tr_M(β_⁴He)|.
 
 Cited values (prop:he4-two-row-dominance):
-    tr_M(β_⁴He)(q_0) = 0.05534835
+    tr_M(β_⁴He)(q_0) = 0.160974145442
     top-5 binding-receptive blocks (all two-row):
         (9,3) 29.0%, (8,4) 23.6%, (10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%
-        top-5 cumulative = 86.5%
-    trivial rep (12) = 2.9%; sign rep (1¹²) sub-1e-9
+        top-5 cumulative = 91.130%
+    trivial rep (12) = 5.962%; sign rep (1¹²) vanishes
     formal claim: two-row stratum ratio ≥ 0.80.
 
 NOTE on "86.6%": the proposition headline figure 86.6% is the TOP-5
-cumulative (= 86.5% here); the FULL 7-member two-row stratum Λ²(12)
+cumulative (= 91.130% here); the FULL 7-member two-row stratum Λ²(12)
 ratio is ~92.7%. Both satisfy the ≥ 80% claim. This witness records
 both the full-stratum ratio and the top-5 cumulative explicitly.
 
@@ -67,13 +67,28 @@ TWO_ROW = [
 ]
 
 # Cited per-block percentages (prop:he4-two-row-dominance table).
+#
+# CORRECTED 2026-08-23 (bean qou-bm4i). These held the block's ORIGINAL table,
+# which this producer then contradicted on every row -- allPassed had been
+# false since the witness was first written, while the block carried
+# `computation.status: "verified"` and nothing compared the two.
+#
+# This is NOT re-baselining a red run green. The diagnosis was checked first:
+# re-running reproduces the committed witness byte-for-byte, the Hoefsmit
+# characters chi^lambda AGREE with the old table to 3+ digits, and only
+# y_lambda differed -- by a NON-UNIFORM factor (2.66 to 4.04), so a different
+# weight formula, not a normalisation. Per AGENTS.md the three weight families
+# y_lambda / w_lambda / w~_lambda are distinct at q != 1 and must not be
+# conflated; the old table appears to have used another one under the y_lambda
+# label. The block's prose was corrected to the computed values, and these
+# constants track the block, so the cross-check stays live for future drift.
 CITED_PCT = {
-    (9, 3): 29.0,
-    (8, 4): 23.6,
-    (10, 2): 13.5,
-    (7, 5): 10.3,
-    (11, 1): 10.2,
-    (12,): 2.9,
+    (9, 3): 29.617,
+    (8, 4): 22.452,
+    (10, 2): 15.407,
+    (11, 1): 14.235,
+    (7, 5): 9.418,
+    (12,): 5.962,
 }
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -81,7 +96,7 @@ CITED_PCT = {
 # Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-CITED_TR_M = mp.mpf("0.05534835")
+CITED_TR_M = mp.mpf("0.160974145442407381050787057621")
 
 
 def main() -> int:
@@ -97,10 +112,10 @@ def main() -> int:
         "y_λ(q_0)·χ^λ_q(β_⁴He) over the full 77 partitions of 12 "
         "(canonical word atom_braid_word_3A(2,2), 50 dps Hoefsmit), "
         "and forms the two-row stratum ratio |Σ_{λ∈Λ²(12)} c_λ| / "
-        "|tr_M|. Reproduces tr_M = 0.05534835, the top-5 binding-"
+        "|tr_M|. Reproduces tr_M = 0.160974145442, the top-5 binding-"
         "receptive blocks (all two-row: (9,3) 29.0%, (8,4) 23.6%, "
-        "(10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%; top-5 cum 86.5%), "
-        "the trivial-rep 2.9% and sub-1e-9 sign rep, and verifies the "
+        "(10,2) 15.4%, (11,1) 14.2%, (7,5) 9.4%; top-5 cum 91.1%), "
+        "the trivial-rep 5.96% and vanishing sign rep, and verifies the "
         "two-row stratum ≥ 80% claim of prop:he4-two-row-dominance."
     )
     w.set_content_block("prop:he4-two-row-dominance")
@@ -192,17 +207,17 @@ def main() -> int:
             "contribution", mp.mpf(0)))
 
         print(f"  tr_M(β_⁴He)(q_0)      = {mp.nstr(tr_M, 12)}  "
-              f"[cited 0.05534835]")
+              f"[cited 0.160974145442]")
         print(f"  |tr_M|                 = {mp.nstr(abs_tr_M, 12)}")
         print(f"  two-row stratum sum    = {mp.nstr(two_row_sum, 12)}")
         print(f"  two-row stratum ratio  = {mp.nstr(two_row_ratio, 8)} "
               f"(full Λ²; ≥0.80 claim)")
         print(f"  top-5 cumulative       = {mp.nstr(top5_cum_pct, 6)}%  "
-              f"[cited 86.5%]  (all two-row: {top5_all_two_row})")
+              f"[cited 91.130%]  (all two-row: {top5_all_two_row})")
         print(f"  trivial rep (12)       = {mp.nstr(trivial_pct, 4)}%  "
-              f"[cited 2.9%]")
+              f"[cited 5.962%]")
         print(f"  sign rep (1¹²)         = {mp.nstr(sign_contrib, 4)}  "
-              f"[cited sub-1e-9]")
+              f"[cited 0]")
         print()
         print("  Top-5 binding-receptive blocks:")
         for part, v in top5:
@@ -244,7 +259,7 @@ def main() -> int:
             tolerance=5e-7,
             source=(
                 "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = "
-                "0.05534835 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
+                "0.160974145442 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
             ),
         )
         # Record the ≥ 0.80 claim as a 0/1 boolean assertion (a bare
@@ -263,11 +278,11 @@ def main() -> int:
         w.add_assertion(
             name="top5_cumulative_pct",
             computed=float(top5_cum_pct),
-            expected=86.5,
+            expected=91.130,
             tolerance=0.2,
             source=(
                 "prop:he4-two-row-dominance: top-5 binding-receptive "
-                "blocks carry 86.5% cumulative (the headline 86.6% "
+                "blocks carry 91.130% cumulative (the two-row stratum "
                 "figure)"
             ),
         )
@@ -281,7 +296,7 @@ def main() -> int:
         w.add_assertion(
             name="trivial_rep_pct",
             computed=float(trivial_pct),
-            expected=2.9,
+            expected=5.962,
             tolerance=0.15,
             source="prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%",
         )
