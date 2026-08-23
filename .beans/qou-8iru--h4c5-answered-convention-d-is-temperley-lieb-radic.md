@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-08-09T14:54:51Z
+updated_at: 2026-08-23T17:20:31Z
 ---
 
 
@@ -182,3 +182,53 @@ partition confirmed >= 3 rows.
       confinement-operator-selection. Own PR. Overlaps qou-cds2.
 
 Deliberately NOT attempted: any wholesale rewrite of the binding chain.
+
+
+## Formalize-first brick, 2026-08-23: the TL_3 target is WELL-POSED (exact)
+
+Owner directed me onto this. Before the 2-3 day engine move, the question
+worth settling first is whether the repair actually lands on a non-singular
+form. It does, and the proof is symbolic over Q(q) at zero engine cost.
+
+    det G_TL  =  -(q^4 + 1)(q^2 - q + 1)^4 (q^2 + q + 1)^4 / (q^2 + 1)^10
+
+Probe: `computations/qbeta/tl3_gram_nonsingular_probe.py`, 7/7, exact sympy,
+no float64, no q_0 evaluation, no anchor — so it is pin-independent.
+
+**1. Non-singular for EVERY real q > 0, not merely generically.** The
+numerator's bracket has all-positive coefficients, so it is strictly positive
+on q > 0 and the determinant strictly negative. Confirmed independently: the
+numerator has **no real roots at all**.
+
+**2. The exponents ARE this bean's result.** Factor multiplicities are
+`[1, 4, 4]` = dim(3)^2 = 1 and dim(2,1)^2 = 4. Exactly the two partitions of
+3 with fewer than three rows — the surviving blocks. The three-row block
+(1^3), the one convention D kills, is absent, which is what makes the
+quotient Temperley-Lieb. So the determinant independently exhibits the
+Catalan structure this bean established from the y_lambda side.
+
+**3. Cross-checked against the closed form.** `y_(3)^1 * y_(2,1)^4` from
+`y_(n-k,k) = [n-2k+1]/[2]^n` differs from det G_TL by exactly `-(J^2)`,
+`J = (q^4+q^2+1)^2/q^4` — the change-of-basis law
+`det_B(G) = det(P)^2 det_W(G)`, since the NF basis is not the matrix-unit
+basis. A mismatch of any *other* shape would have meant one of the two routes
+is wrong; a perfect square is the only thing that can appear here.
+
+**Basis choice, stated because it looks arbitrary and is not.** The quotient
+basis is the first five NF cosets. Any five work: `v` has a nonzero
+coefficient on every NF element (`(-1/q)^len != 0`), so no five of the six
+are dependent mod the radical.
+
+### What this does and does not buy
+
+It **removes the risk** that the engine move lands on a form that is still
+degenerate — the single largest unknown in the 2-3 day estimate. It does
+**not** perform the migration, does not touch gram.rs or gram.py, and wires
+nothing.
+
+Also relevant to `qou-yof3`, closed earlier today: that bean's fix option 2
+was 'solve on the TL_3 quotient', and for THAT system it does not work — the
+all-ones RHS does not annihilate the radical (`<v,1> = (q-1)(q^2-q+1)/q^3`
+!= 0), so it never descends. **Non-singularity of the quotient form and
+solvability of a particular system on it are different questions**; this
+brick establishes the first and says nothing about the second.
