@@ -217,3 +217,85 @@ The transitive import cone is not a useful scoping tool for this question:
 reach `char_fast` through *some* path. Direct importers that evaluate the rep
 are the actionable set — and "evaluate", not "mention", is the operative word,
 which is the whole content of the correction above.
+
+## 5. Two producers the #5486 stopgap broke, which #5517 unbreaks
+
+This is not something #5517 claims, and it is the most legible evidence for it.
+
+The stopgap #5517 removes (#5486) wrapped each lambdified σ in a guard that
+raises when handed a `q` more than 1e-12 from the baked one. Correct as far as
+it went — the function was lying about its signature. But two producers *do*
+evaluate off-anchor, and the guard's effect on them was not the same in both
+cases.
+
+### 5a. `qbeta_operator_identification_probe` — dies outright
+
+At the branch point, **exit 1**:
+
+```
+ValueError: _compiled_sigmas(2, 1)[0] is PINNED at q=1.1099785827513808
+and ignores its argument; you passed q=1.1099785955573347.
+```
+
+At #5517's head it runs to completion. So this probe **cannot be run on `main`
+today**, and #5517 restores it. Note the q it passes is the *muon* pin while
+`char_fast`'s module q₀ is the *proton* one — before the guard existed, it was
+silently receiving the proton answer to a muon question, which is the layer
+straddle AGENTS.md §q₀ forbids.
+
+**Its witness is NOT refreshed here.** The one assertion reads 1.0 before and
+after, and the only field that moves is `parameters.q_0`, by 2.842e-12 —
+committed `1.109978595554181` vs live `1.109978595557335`. Both are muon
+values; they are two *different muon literals*, which is the known
+mutually-inconsistent-muon-pin class, not #5517's doing. A refresh here would
+carry that pin change in on #5517's back, the same reason §2 leaves the
+alpha-shift witness alone.
+
+### 5b. `poly_q_proof_probe` — degrades silently, which is worse
+
+This one does not fail. It catches the guard's exception per q-point and
+carries on. At the branch point six of its seven q-points error out —
+
+```
+1.05  ERROR: ValueError: _compiled_sigmas(3,)[0] is PINNED … you passed q=1.05.
+1.10  …  1.15  …  1.20  …  1.50  …  2.00  …
+```
+
+— and it writes a witness containing **one** verification row while still
+emitting `max_relative_diff_across_q: 3.35`, a statistic *across q* computed
+from a single q. Anyone running this probe on `main` today gets that artifact,
+with nothing in it saying six sevenths of the evidence is missing.
+
+At #5517's head all seven succeed.
+
+**And the committed witness shows the original defect in plain sight.** It
+predates the stopgap (2026-07-18), so it has all seven rows — computed with the
+constant rep:
+
+| q | committed `tr_M_numeric` | after #5517 |
+|---|---|---|
+| 1.05 | 1.63429708159 | 0.982219651541 |
+| 1.10 | 1.63339559107 | 1.70107498866 |
+| 1.10998 | 1.63315337745 | 1.88431946725 |
+| 1.15 | 1.63199324870 | 2.79757616186 |
+| 1.20 | 1.63015893024 | 4.47338972555 |
+| 1.50 | 1.61290680721 | 54.0870825327 |
+| 2.00 | 1.57344916831 | 1446.1271875 |
+
+Constant to 3.7 % across a factor of two in q, where the Markov trace of a
+20-crossing braid word must move over orders of magnitude.
+`tr_M_pr546_closed_form` is byte-identical in both columns — it is symbolic and
+never went through the rep — so this is the same claimed closed form measured
+against a numeric trace that used to ignore q and now does not.
+
+**The verdict does not flip.** PR #546's closed form failed before (rel_diff
+0.69 … 7.89) and fails after (3.35 … 12.48). The earlier, smaller diffs were
+comparisons against a constant and carried no information; do not read
+`max_relative_diff_across_q` 7.89 → 12.48 as a regression. The witness is
+refreshed here on that basis.
+
+A caution for anyone repeating this: the two witnesses' `numerical_verification`
+arrays must be aligned **by q value, not by index**. The branch-point run has
+one row and the committed run has seven, so an index-wise diff compares
+different q and reports a spurious 0.58 on the closed-form column — which is
+what a first pass of this section did, before the alignment was fixed.
