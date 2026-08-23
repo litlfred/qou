@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T09:36:02Z
+updated_at: 2026-08-23T09:39:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1074,3 +1074,28 @@ branch 1 precisely because a holonomy is transcendental, and escapes branch 2
 because the connection is prior to the phase. **Do not search for a corrective
 term that lands `α_D` near the required window; that is a fit** (the required
 window is ±1.09e-5 rad and `z_D` misses by 1.19e-2 rad — see the #5210 entry).
+
+
+### Correction to my own entry above, same day — the closure is NARROWER than I first wrote
+
+Devil's-advocate pass on my own result. The entry above says branch 1 is
+"closed"; that is true **for the case branch 1 actually states**, and I should
+have named the boundary the first time.
+
+`EigenphaseCarrierVacuity`'s branch 1 is a **2 × 2** matrix on `V_(2,1)` with
+`trace = 2cos α` and `det = 1` — a *character*. That is exactly what
+`no_braid_character_C` / `_D` exclude, so the closure is real.
+
+**But if `α` were one eigenphase among several of a LARGER braid-image matrix,
+the argument does not extend.** `2cos α` is then a sum of two eigenvalues — an
+**algebraic** function of `q`, root of a polynomial with Laurent coefficients,
+not a Laurent polynomial itself. And boundedness does not kill algebraic: `q/(q+1)`
+is bounded on `(0,∞)` and non-constant. That sub-case still needs the
+transcendence argument the docstring asserted.
+
+**Net effect on the corpus, stated precisely:** one unproved assertion becomes
+*(proved half: the character case, elementary, every convention)* + *(still
+assumed half: the eigenvalue-pair case, still needing transcendence)*, with the
+boundary named. That is strictly better bookkeeping than before, and it is less
+than "branch 1 is closed" unqualified. Recorded in the Lean header (§"Three
+limits"), the probe docstring, and registry §9g.

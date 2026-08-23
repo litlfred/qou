@@ -831,9 +831,17 @@ words of length ≤ 5; and the concrete failure: `ρ(σ₁σ₂)` has `det = 1`,
 against `2cos(α_C(q₀)) = 1.99726`. The rational-normalisation escape is closed
 by `det M = 1`, which forces `c = ±1` (`−c² = 1` has no real solution).
 
-**Two limits.** It excludes a *functional* identification on the substrate
-branch, not a numerical coincidence at `q₀`; and the Laurent shape of
-`tr ρ(w)` is imported from Geck–Pfeiffer as the shape of the hypothesis.
+**Three limits.** (i) It closes the **character** case — branch (1) as stated
+is a `2 × 2` matrix on `V_(2,1)` with `trace = 2cos α`, `det = 1` — and **not**
+the *eigenvalue-pair* case: were `α` one eigenphase among several of a larger
+braid-image matrix, `2cos α` would be **algebraic** rather than Laurent, and
+boundedness does not extend (an algebraic function can be bounded on `(0,∞)`
+and non-constant, e.g. `q/(q+1)`), so that sub-case still needs the
+transcendence argument. Net: one unproved assertion becomes *(proved half)* +
+*(still assumed half)*, boundary named. (ii) It excludes a *functional*
+identification on the substrate branch, not a numerical coincidence at `q₀`.
+(iii) The Laurent shape of `tr ρ(w)` is imported from Geck–Pfeiffer as the
+shape of the hypothesis.
 
 **Still open, and unchanged by this:** no D-frame ladder is stated, `α` is
 derived in neither convention, and branch (3) is untouched — it is now the
