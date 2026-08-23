@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T19:33:47Z
+updated_at: 2026-08-23T20:12:24Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -273,3 +273,57 @@ Also corrected a stale docstring: the header said `z = 1/(q^½+q^−½)`
   problem: `mp.findroot` lands at residual `0.023` against a `1e-40` tolerance,
   ~21 orders off. That is "no root found", not "tolerance too tight", and needs
   numerical investigation rather than a plumbing fix.
+
+## ALL FIVE CRASH producers addressed. Three fixed green, one improved-in-kind, one honest negative.
+
+| producer | before | after |
+|---|---|---|
+| `derivation_chain_validator` | CRASH | reports (found `qou-ibcv`, since closed) |
+| `habiro_interpolate_cross_validator` | CRASH | runs; cross-validation closes `1 -> 0` |
+| `vhat_per_crossing_chain` | CRASH | exit 0, exact 2×2, 0 raw float64 in witness |
+| `hadron_knot_table` | CRASH | runs, but **>600 s** — see below |
+| `parabolic_cylinder_channel_mixing_probe` | CRASH | exit 0, reports the unsolvable case |
+
+### `hadron_knot_table` — two defects, and a cost worth naming
+
+1. `unified_iterative_correction` fed an `mpf`-carrying `M` to scipy's sparse
+   kernels, which are float64-only. **scipy was right to refuse** — the only
+   way to satisfy it is to discard the exact coefficients. numpy's `@` does
+   support object dtype, so exact chains now route to the dense path.
+2. `_crossing_in_partition` — **latent, exposed only by fixing (1)**:
+   `np.asarray(csr_matrix)` does **not** densify; it returns a 0-d *object*
+   array wrapping the matrix. So `c * sig_np` stayed object and the same
+   `TypeError` fired one frame down. The `dim < 8` branch is worse — `sig[i][j]`
+   is not valid indexing on a `csr_matrix` at all. Both unreachable while
+   sparse-sigma states never took that path.
+
+**Honest status: CRASH → unmeasured-at-600 s, not green.** It computes proton,
+neutron and protium and proceeds, where it previously died in seconds. But an
+exact chain gives up scipy's `O(dim·nnz)` kernel for dense `O(dim³)`, and that
+is structural. Restoring the complexity for exact chains needs an mpmath-aware
+sparse product — separate work. Float64 chains are untouched by construction.
+
+I also cannot check the exact path against a prior value, because it never ran.
+No agreement is claimed that was not measured.
+
+### `parabolic_cylinder_channel_mixing_probe` — the one that was not a code defect
+
+`R(nu) = √2·|Γ((1−nu)/2)/Γ(−nu/2)|` is an **absolute value**, so `R ≥ 0` for
+every `nu`. 3He's `rho = −0.15171379` is **negative**, so `R(nu) = rho` has no
+solution *at all* — not "none in (0,1)", not a bracketing or starting-point
+problem. mpmath's own advice ("Try another starting point or tweak arguments")
+is precisely the wrong instinct: no argument makes an absolute value negative.
+
+The sign is **physical** — 3H and 3He are mirror nuclei with opposite odd-channel
+parts (`+0.15173766` vs `−0.15171379`).
+
+The probe now records 3He as unsolvable with that reason and continues. **And it
+withholds `n_organized`:** that verdict compares within-N-class against
+across-class spread, and dropping 3He leaves the N=1 class a **singleton**, so
+within-class spread is identically 0 and the comparison is degenerate. A verdict
+on the reduced sample would be a weaker claim wearing the stronger one's name.
+
+**OPEN, and deliberately not decided by me:** whether the correct reading is to
+invert `|rho|` and carry the sign separately. That is a question about what the
+probe *claims*, not about how it runs, and it is the owner's call. Until it is
+answered, this probe has no `n_organized` verdict.
