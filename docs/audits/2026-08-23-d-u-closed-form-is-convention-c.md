@@ -96,6 +96,29 @@ convention-*free* — moves as well. Crossing-counting alone therefore does not
 determine it, which is a genuine open sub-question this audit does **not**
 close.
 
+## This is the SECOND instance of a documented pattern, not a new theory
+
+PR #5265 §0 (merged 2026-08-19) reached the same structural conclusion by a
+different route, on a different object — the eigenphase rather than the D(u)
+denominator:
+
+> *"the `h²/2` anomaly is **not a defect of D**. It is the signature that D
+> tracks the crossing-sign exchange, while the phase formula `α = (z−1)h/2` —
+> written in the C frame, where `z` does not move under bar — was carried over
+> unchanged. **It is the phase formula that needed re-deriving, not the
+> convention.**"*
+
+That agent also recorded having had it backwards first: *"The opposite of how I
+framed it one commit earlier, where D 'failed' the test and C 'passed' it. Both
+facts were right; the value judgement attached to them was backwards."*
+
+`qou-iayk` is the same inversion one object over. A C-frame formula carried
+into D produces an apparent "D is broken" signal; the formula is what broke.
+
+**The generalisable rule:** when D-frame output contradicts a landed result,
+check whether the *result* was derived from `z` before concluding the output
+is wrong. Two for two so far, on independent objects.
+
 ## What follows
 
 1. **Re-derive the law in D.** The `(1+u²)^(3A−1)` factor becomes
