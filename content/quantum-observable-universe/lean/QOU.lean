@@ -474,6 +474,7 @@ import QOU.BraidKnot.SpechtWedderburnCriterion
 -- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
 -- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
 import QOU.BraidKnot.SpechtWedderburnLe12
+import QOU.BraidKnot.SpechtWedderburnGeneral
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
