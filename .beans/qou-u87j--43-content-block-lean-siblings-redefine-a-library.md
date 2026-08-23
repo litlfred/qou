@@ -183,3 +183,45 @@ Verified: exit 2 over `--max`, exit 3 over `--baseline`, 0 with `--warn-only`,
 platform repo with no content injected. `eslint` clean.
 
 Options 2–4 are untouched.
+
+## Final figures 2026-08-23 — measured on `origin/main`, in a worktree
+
+An eighth parser bug turned up while checking the baseline, and it is the one
+that matters most for reading this bean: `EXTENDS` split its clause on commas
+**before** stripping `.{u, v}`, so `extends B.{u, v} R` became the two entries
+`B.{u` and `v} R` and compared unequal against a plain `extends B R`. Every
+mirror that spells its universes explicitly was reported as drift.
+
+That is a false positive, and it had swallowed a real result: it hid the fact
+that the `qou-n1dj` branch actually *fixes* one of these. Corrected numbers,
+each measured by running the checker against the tree named:
+
+| | `origin/main` | `claude/n1dj-volume-iso-reading-2026-08-22` |
+|---|---|---|
+| same-FQN pairs | 147 | 148 |
+| identical (faithful mirrors) | 101 | 103 |
+| **drifted** | **46** | **45** |
+| distinct files | 39 | 38 |
+| drifted pairs masking a `lean.ref` | 46 (= all) | 45 (= all) |
+
+`QOU.QuantumObservableUniverse` is the difference. On `main` the sibling carries
+a `volumeForm_epi` field the library never had; the `qou-n1dj` branch resyncs
+it, and with universes normalised the pair is now genuinely identical rather
+than "identical except `.{u, v}`". So the earlier note in §Notable entries about
+"a 44th on main" was right in substance and wrong in count — it is one of the
+46, not an extra one.
+
+Baseline to use: **46 on `main` today, 45 once #5498 lands.**
+
+### Option 1 is wired, not just built
+
+`.claude/commands/prepare-merge.md` **§4a. Mirror-drift gate (BLOCKING on
+growth)** runs it at `--baseline 46`. It sits in `prepare-merge` rather than
+`.github/workflows/` because every workflow in this repo is
+`workflow_dispatch`-only under the 2026-06-30 Actions-billing directive — §4b
+already says the same thing about the precision gates. Treat the baseline as a
+ratchet: lower it as the backlog drains, or the next regressions go unnoticed.
+
+Options 2–4 remain open, and option 2 (reorder `lean.ref` resolution so the
+Lake tree wins) would make most of option 3's hand-resync moot — worth deciding
+before anyone spends a day on the 46.
