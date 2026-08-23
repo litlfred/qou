@@ -816,6 +816,61 @@ theorem lapsOf_length (w : BraidWord n) : (lapsOf w).length = n := by
   simp only [lapsOf, List.length_flatMap, List.length_map, walk_length]
   exact sum_cycleLen_leaders (closurePerm w)
 
+open scoped Classical in
+/-- **Walks from distinct leaders never meet.** Different components are
+disjoint, so no strand is walked twice. Note the walk runs under `f⁻¹` (a lap
+applies the first letter first) while leadership is stated for `f`; the two
+agree because `Equiv.Perm.sameCycle_inv` says a permutation and its inverse have
+the same cycles. -/
+theorem walk_disjoint_of_ne_leader (f : Equiv.Perm (Fin n)) {p q : Fin n}
+    (hp : IsLeader f p) (hq : IsLeader f q) (hne : p ≠ q) {a b : ℕ} {x : Fin n}
+    (hx : x ∈ walk f⁻¹ p a) (hy : x ∈ walk f⁻¹ q b) : False := by
+  have h1 : f.SameCycle p x :=
+    Equiv.Perm.sameCycle_inv.mp (walk_sameCycle f⁻¹ p x a hx)
+  have h2 : f.SameCycle q x :=
+    Equiv.Perm.sameCycle_inv.mp (walk_sameCycle f⁻¹ q x b hy)
+  exact hne (leader_unique f hp hq (h1.trans h2.symm))
+
+open scoped Classical in
+/-- **A component walk does not repeat.** The orbit is traversed exactly once,
+so the walk visits each strand of its component a single time. -/
+theorem walk_nodup (g : Equiv.Perm (Fin n)) (p : Fin n) :
+    (walk g p (cycleLen g p)).Nodup := by
+  classical
+  refine List.Nodup.map_on ?_ List.nodup_range
+  intro i hi j hj hij
+  simp only [List.mem_range] at hi hj
+  by_cases hfix : g p = p
+  · rw [cycleLen_of_fixed g hfix] at hi hj
+    omega
+  · set s := g.cycleOf p with hs
+    have hcyc : s.IsCycle := Equiv.Perm.isCycle_cycleOf g hfix
+    have hsp : s p ≠ p := by
+      rw [hs, Equiv.Perm.cycleOf_apply_self]
+      exact hfix
+    have hord : orderOf s = cycleLen g p := by
+      rw [cycleLen_eq_card_support g hfix, ← hs]
+      exact hcyc.orderOf
+    have key : ∀ a b : ℕ, a ≤ b → (g ^ a) p = (g ^ b) p →
+        b - a < orderOf s → a = b := by
+      intro a b hab heq hlt
+      have hb : (s ^ a) p = (s ^ b) p := by
+        rw [Equiv.Perm.cycleOf_pow_apply_self, Equiv.Perm.cycleOf_pow_apply_self,
+            heq]
+      have hsplit : s ^ b = s ^ a * s ^ (b - a) := by
+        rw [← pow_add]
+        congr 1
+        omega
+      rw [hsplit, Equiv.Perm.mul_apply] at hb
+      have h1 : (s ^ (b - a)) p = p := ((s ^ a).injective hb).symm
+      have h2 : s ^ (b - a) = 1 := hcyc.pow_eq_one_iff.mpr ⟨p, hsp, h1⟩
+      have hdvd := orderOf_dvd_of_pow_eq_one h2
+      have hzero : b - a = 0 := Nat.eq_zero_of_dvd_of_lt hdvd hlt
+      omega
+    rcases le_total i j with h | h
+    · exact key i j h hij (by omega)
+    · exact (key j i h hij.symm (by omega)).symm
+
 /-! ### The remaining bridge, stated
 
 `card_involved` counts the **starting positions** involved in crossing `k`:
