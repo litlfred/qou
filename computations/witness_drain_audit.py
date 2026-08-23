@@ -117,7 +117,13 @@ def classify(witness: Path, index, head_cache: dict) -> tuple[str, dict]:
     h_sf = head.get("scriptFile") if head else None
     h_sh = head.get("scriptHash") if head else None
 
-    info = {"witness": rel, "head_scriptFile": h_sf, "now_scriptFile": c_sf}
+    info = {"witness": rel, "head_scriptFile": h_sf, "now_scriptFile": c_sf,
+            # Recorded so the NO_PROV report can split "no hash to compare"
+            # from "no producer to locate". Without it the split reads
+            # `i.get("scriptHash")` as absent on every row and reports 100%
+            # of the backlog as hash-less, which is the same predicate/label
+            # mismatch the split was added to fix.
+            "now_scriptHash": c_sh}
 
     # Provenance LOST relative to HEAD — the false-drain case.
     #
@@ -251,10 +257,14 @@ def main() -> int:
         print(f"\n  (backlog, reported not gated) {len(noprov)} witnesses are "
               f"missing scriptFile, scriptHash, or both,")
         print("   so they sit outside the self-staleness audit entirely:")
-        _nh = sum(1 for i in noprov if not i.get("scriptHash"))
+        _nh = sum(1 for i in noprov if not i.get("now_scriptHash"))
+        _nf = sum(1 for i in noprov if not i.get("now_scriptFile"))
+        _both = sum(1 for i in noprov
+                    if not i.get("now_scriptHash") and not i.get("now_scriptFile"))
         print(f"     {_nh} carry no scriptHash — no recorded value to compare")
-        print(f"     {len(noprov) - _nh} carry no scriptFile — producer cannot "
-              f"be located to re-hash")
+        print(f"     {_nf} carry no scriptFile — producer cannot be located "
+              f"to re-hash")
+        print(f"     {_both} carry neither")
 
     if args.json:
         print(json.dumps({k: v for k, v in buckets.items()}, indent=1))
