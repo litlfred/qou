@@ -1,6 +1,8 @@
 /-
-  **§13's operator family, constructed** — the input `index_le_of_det_bound` needs and the
-  arc did not have.
+  **§13's remaining inputs, both supplied** — the operator family *constructed*, and the
+  determinant's non-vanishing *proved*.  Together with `RothInductionStep` this closes
+  Mahler §13: `exists_index_le_of_separated` assumes nothing about the family and nothing
+  about the determinant.
 
   Bean `qou-4lbh`.
 
@@ -34,18 +36,42 @@
   opaque to any concrete instance.  `exists_rothOpFamily_of_idxWeight_le` recovers the
   multi-index form as a corollary, so nothing is lost and the family stays computable.
 
+  ═══ AND THE NON-VANISHING ═══
+
+  `index_le_of_det_bound`'s hypothesis `index d α (det …) ≤ ↑S` is *unsatisfiable* when the
+  determinant vanishes, since the index of `0` is `⊤`.  §6 of the source supplies that, and
+  the argument needs nothing new: write `A` in a **minimum** separated representation, note
+  both families are then independent, apply Lemma 1 to each, and use the multiplication law
+  for determinants —
+
+      det (D_{μν} A)  =  U*(x₁,…,x_{m−1}) · V**(x_m),
+
+  a product of two non-zero polynomials over a domain.  `exists_sepW_ne_zero` is that
+  composition; every piece of it was already in the arc.
+
+  ⚠ Worth recording how long that sat as "the blocking item": it was blocked on **reading**,
+  not on proving.  The pieces had been in place since `SeparatedRepresentation` landed.
+
   ═══ ⚠ WHAT THIS DOES *NOT* CLOSE ═══
 
-  This is the **cost** half of the construction.  It says: a family of the required shape
-  exists, and its cost bound holds.  It does **not** say that the determinant of the
-  resulting matrix is non-zero — and `index_le_of_det_bound`'s hypothesis
-  `index d α (det …) ≤ ↑S` is *unsatisfiable* when the determinant vanishes, since the index
-  of `0` is `⊤`.  Supplying that is `BoundedOrderWronskian`'s business and is not done here.
+  `exists_index_le_of_separated` discharges every *input* of §13 and leaves three arithmetic
+  side conditions on the caller, of which one is a real open question:
 
-  So: after this module the recursion still has an unmet input, but it is one input rather
-  than two, and it is a non-vanishing statement rather than a construction.
+  * `S·D₂ ≤ r` — the cut-off lands inside the matrix.  In the recursion's regime
+    (`S = n·Φ_m`, `D₂ = r_m`, `r = n`) this reads `Φ_m·r_m ≤ 1`, and whether Roth's lemma's
+    parameter conditions deliver it is **unchecked**.
+  * the row cost is `t = r/D₁`, with `r` the minimum representation length and `D₁` the degree
+    floor.  This is the **constant regime** the sixth correction was about, in its final form:
+    the source treats `t` as a chosen constant with `0 < t ≤ 1`, and whether `r/D₁` is below
+    the `t` the recursion needs is a statement about representation length versus degree that
+    the arc does not have.
+
+  So §13 is *derived*, with no gaps and no assumed inputs.  Whether its constants close the
+  induction is a separate question, and it is still open.
 -/
 import QOU.Mathlib.RothInductionStep
+import QOU.Mathlib.BoundedOrderWronskian
+import QOU.Mathlib.SeparatedRepresentation
 
 namespace MvPolynomial
 
@@ -238,20 +264,150 @@ theorem index_le_of_rothOpFamily_two_witness :
   · fin_cases μ <;> simp [multiIndexOf, Finsupp.sum_single_index]
   · rw [hdet, hidx]
 
+/-! ### The determinant is non-zero
+
+⚠ This was the arc's last unmet input, and §6 of the source is where the answer is — not §7,
+and not in any new inequality.  Every piece was already here; what was missing was the
+composition.
+
+Mahler's §6: write `A = ∑ₖ Pₖ(x₁,…,x_{m−1}) Σₖ(x_m)` in a **minimum** representation.  Both
+families are then linearly independent, so Lemma 1 gives bounded-order Wronskians `U*` and
+`V**` that do not vanish.  Differentiating the representation with the *combined* operators
+`D_{μν} = D*_μ D**_ν` gives a matrix identity, and by the multiplication law for determinants
+
+    det (D_{μν} A)  =  U*(x₁,…,x_{m−1}) · V**(x_m).
+
+A product of two non-zero polynomials over a domain is non-zero.  That is the whole argument.
+
+Mapped onto this arc: `exists_separated_representation_indep` is the minimum representation,
+`exists_bounded_order_mvGenWronskian_ne_zero` is Lemma 1, `sepW_eq`
+(`det_separated_wronskian`) is the multiplication law, and `MvPolynomial` over a field is a
+domain. -/
+
+/-- **The separated Wronskian of a non-zero polynomial can be made non-zero.**
+
+⚠ Note the direction of the quantifier: it is not that *every* bounded-order family works —
+most give a vanishing determinant — but that *some* does.  That is what
+`index_le_of_det_bound`'s `hS` needs, since a vanishing determinant has index `⊤` and
+satisfies no bound at all. -/
+theorem exists_sepW_ne_zero {τ : Type*} {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] [DecidableEq τ]
+    (P : MvPolynomial (σ ⊕ τ) K) (hP : P ≠ 0) :
+    ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K)
+      (Dx : Fin r → List σ) (Dy : Fin r → List τ),
+      0 < r ∧ (∀ i, (Dx i).length ≤ (i : ℕ)) ∧ (∀ j, (Dy j).length ≤ (j : ℕ)) ∧
+      P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k) ∧
+      sepW Dx Dy φ ψ ≠ 0 := by
+  classical
+  obtain ⟨r, φ, ψ, hφ, hψ, hPeq⟩ := exists_separated_representation_indep P
+  have hr : 0 < r := by
+    rcases Nat.eq_zero_or_pos r with rfl | h
+    · exact absurd (hPeq.trans (by simp)) hP
+    · exact h
+  obtain ⟨Dx, hDx, hWx⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr φ hφ
+  obtain ⟨Dy, hDy, hWy⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr ψ hψ
+  refine ⟨r, φ, ψ, Dx, Dy, hr, hDx, hDy, hPeq, ?_⟩
+  rw [sepW_eq]
+  refine mul_ne_zero ?_ ?_
+  · intro h
+    have h0 : (rename Sum.inl (mvGenWronskian Dx φ) : MvPolynomial (σ ⊕ τ) K)
+        = rename Sum.inl 0 := by rw [h, map_zero]
+    exact hWx (rename_injective _ Sum.inl_injective h0)
+  · intro h
+    have h0 : (rename Sum.inr (mvGenWronskian Dy ψ) : MvPolynomial (σ ⊕ τ) K)
+        = rename Sum.inr 0 := by rw [h, map_zero]
+    exact hWy (rename_injective _ Sum.inr_injective h0)
+
+/-- A non-zero polynomial's index is bounded by *some* rational — the form `hS` wants.
+
+This is the only place the non-vanishing is used, and it is used for exactly one thing:
+`index d α 0 = ⊤` is below no `↑S`. -/
+theorem exists_index_le_of_ne_zero (d : σ → ℕ) (α : σ → R) {P : MvPolynomial σ R}
+    (hP : P ≠ 0) : ∃ S : ℚ, index d α P ≤ ((S : ℚ) : WithTop ℚ) := by
+  have hne : index d α P ≠ ⊤ := fun hcon =>
+    hP ((translate_eq_zero_iff α).mp ((index_eq_top_iff d α).mp hcon))
+  obtain ⟨a, ha⟩ := WithTop.ne_top_iff_exists.mp hne
+  exact ⟨a, le_of_eq ha.symm⟩
+
+/-- The **column-graded** cost bound for a mixed operator family.
+
+`cost_bound_of_bounded_order` gives the *uniform* bound `r/D₁ + r/D₂`; this keeps the column
+index, which is the whole difference between the linear conclusion the sixth correction
+rejected and §13's square root. -/
+theorem cost_sepW_le {τ : Type*} {r D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (hDx : ∀ i, (Dx i).length ≤ (i : ℕ)) (hDy : ∀ j, (Dy j).length ≤ (j : ℕ)) (i j : Fin r) :
+    (((Dx i).map Sum.inl ++ (Dy j).map Sum.inr).map
+        (fun k => (1 : ℚ) / ((Sum.elim d₁ d₂ k : ℕ) : ℚ))).sum
+      ≤ (r : ℚ) / (D₁ : ℚ) + (j : ℚ) / (D₂ : ℚ) := by
+  have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁
+  have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
+  rw [sum_map_inv_append_sumElim]
+  refine add_le_add (le_trans (sum_map_inv_le_length_div hD₁ d₁ hd₁ _) ?_)
+    (le_trans (sum_map_inv_le_length_div hD₂ d₂ hd₂ _) ?_)
+  · refine div_le_div_of_nonneg_right ?_ hD₁Q.le
+    exact_mod_cast le_trans (hDx i) (le_of_lt i.isLt)
+  · exact div_le_div_of_nonneg_right (by exact_mod_cast hDy j) hD₂Q.le
+
+/-- **§13 for an arbitrary non-zero polynomial in two variable groups** — every input
+supplied, nothing assumed about the operator family or the determinant.
+
+The existence produces the representation length `r` and a bound `S` on the determinant's
+index; the conclusion then holds for any `θ` and `q` meeting the arithmetic side conditions.
+
+Reading the side conditions:
+
+* `r/D₁ ≤ θ` — the row cost `t` is below the index being bounded, so there is something to
+  bound.  (`index_le_of_det_bound` needs `t ≤ θ`.)
+* `S ≤ q²·D₂` — `q` is a rational stand-in for `√(S/D₂)`, keeping everything in `ℚ`.
+* `S·D₂ ≤ r` — the cut-off lands inside the matrix.  ⚠ This is the one that is **not
+  established** in the recursion's regime; see the module's closing note.
+
+⚠ What this is *not*: it is not Roth's lemma, and it does not choose `ω(m, ε)`.  It is §13's
+inequality with all of §13's inputs discharged. -/
+theorem exists_index_le_of_separated {τ : Type*} {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] [DecidableEq τ] {D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : τ → K) (P : MvPolynomial (σ ⊕ τ) K) (hP : P ≠ 0) :
+    ∃ (r : ℕ) (S : ℚ), 0 < r ∧ ∀ θ q : ℚ,
+      (r : ℚ) / (D₁ : ℚ) ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) → S * (D₂ : ℚ) ≤ (r : ℚ) →
+      ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
+      θ ≤ (r : ℚ) / (D₁ : ℚ) + 2 * q := by
+  classical
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hDx, hDy, hPeq, hne⟩ := exists_sepW_ne_zero P hP
+  obtain ⟨S, hS⟩ :=
+    exists_index_le_of_ne_zero (Sum.elim d₁ d₂) (Sum.elim α β) hne
+  have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
+  refine ⟨r, S, hr, fun θ q hθt hq0 hq hSr hθ => ?_⟩
+  refine index_le_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
+    (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P θ ((r : ℚ) / (D₁ : ℚ))
+    (D₂ : ℚ) S q hr hD₂Q hθt hq0 hq hSr hθ
+    (fun i j => cost_sepW_le hD₁ hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hDx hDy i j) ?_
+  rw [hPeq, ← sepW]
+  exact hS
+
 /-! ### Next
 
-The arc's remaining input is now a **single** statement, and it is not an inequality:
+§13 is closed: `exists_index_le_of_separated` takes a non-zero `P` in two variable groups and
+returns the representation length, a bound on the determinant's index, and §13's conclusion —
+no assumed operator family, no assumed non-vanishing.
 
-⚠ **the determinant of `Matrix.of fun μ ν => pderivList (rothOpFamily z L μ ν) P` is
-non-zero** for a suitable choice of row lists.
+What is left is **not** part of §13:
 
-`BoundedOrderWronskian` has the criterion in the form the arc needs it — linear independence
-of a family is equivalent to some bounded-order generalized Wronskian being non-zero — but
-that is stated for `mvGenWronskian D f`, a Wronskian of `m` *distinct* functions, whereas
-§13's matrix is derivatives of a *single* `P`.  Relating the two is the next piece of work,
-and it is where §7 of the source (which this arc has not read) belongs.
+1. **`S·D₂ ≤ r`, i.e. `Φ_m·r_m ≤ 1`.** A side condition on the caller, unchecked against the
+   parameter conditions.  It is the first thing to test, because if it fails in the intended
+   regime then §13's square-root branch never fires and the whole repair of the sixth
+   correction buys nothing.
+2. **`t = r/D₁` versus the source's constant `t ≤ 1`.** Representation length against degree
+   floor.  The sixth correction's original worry, in its final and sharpest form.
+3. **The recursion** (§14): choosing `ω(m, ε)`, and feeding `rothLemmaUniform_one` and the
+   `m−1` case back into the `m` case.
 
-Until then `index_le_of_rothOpFamily` is conditional on `hS`, and `hS` cannot be discharged
-for any `P` whose matrix has vanishing determinant. -/
+⚠ Provenance, still standing for `RothRecursionArith`'s constants: reconstructed from a partly
+illegible scan.  §6 and §13's *structure* have now been read directly and match; §14's
+parameter bookkeeping has not been, and `ω(m, ε)` and `c_m = 2^m − 3` should not be asserted
+until it is. -/
+
 
 end MvPolynomial

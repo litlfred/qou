@@ -1785,3 +1785,80 @@ Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no e
 output. Eleven declarations `#print axioms`-clean. Orphan gate re-run: 2037 modules, 1154
 reachable (up one), 883 not built — the new module is reachable, so the inherited red did not
 grow.
+
+---
+
+## 2026-08-23 — the determinant's non-vanishing: it was blocked on reading, not on proving
+
+The item I called "the arc's remaining input" is closed, and the way it closed is the lesson.
+
+### It was in §6, and every piece was already here
+
+I had said the next step was to read §7 ("Majorants for U, V and W"). Wrong section — §13's
+reference is to the *identity*, which is **§6**. And §6's argument needs nothing new:
+
+* write `A = ∑ₖ Pₖ(x₁,…,x_{m−1}) Σₖ(x_m)` in a **minimum** representation;
+* in a minimum representation both families are linearly **independent** (else you could
+  shorten it — the source proves exactly this);
+* Lemma 1 gives bounded-order Wronskians `U*`, `V**` that do not vanish;
+* differentiating the representation with the *combined* operators `D_{μν} = D*_μ D**_ν`
+  gives a matrix identity, and by the **multiplication law for determinants**
+
+      det (D_{μν} A) = U*(x₁,…,x_{m−1}) · V**(x_m);
+
+* a product of two non-zero polynomials over a domain is non-zero.
+
+Mapped onto the arc: `exists_separated_representation_indep` **is** the minimum
+representation, `exists_bounded_order_mvGenWronskian_ne_zero` **is** Lemma 1, `sepW_eq`
+(`det_separated_wronskian`) **is** the multiplication law. `exists_sepW_ne_zero` is eleven
+lines of composition.
+
+⚠ Those pieces have been in place since `SeparatedRepresentation` landed. The item was
+blocked on **reading the source**, not on proving anything — and I spent the previous turn
+describing it as the hard remaining input. Recording that because it is the cheapest kind of
+mistake to repeat: the arc's habit of composing existing lemmas is good, but it does not help
+if the composition is never looked for.
+
+### What landed
+
+`QOU/Mathlib/RothOperatorFamily.lean`:
+
+```
+exists_sepW_ne_zero            some bounded-order family has non-vanishing determinant
+exists_index_le_of_ne_zero     P ≠ 0 ⟹ ∃ S, index ≤ ↑S      (the form hS wants)
+cost_sepW_le                   COLUMN-GRADED cost: ≤ r/D₁ + j/D₂
+exists_index_le_of_separated   §13 for any non-zero P, every input discharged
+```
+
+`QOU/Mathlib/RothIndex.lean`: `translate_neg_translate`, `translate_injective`,
+`translate_eq_zero_iff` — needed because `index_eq_top_iff` is stated in terms of
+`translate α P = 0`, and nothing said that is the same as `P = 0`. ⚠ Deliberately **not**
+`@[simp]`: `translate` appears unfolded in several proofs in this arc and a new rewrite rule
+would change what `simp` does to them.
+
+`cost_sepW_le` is worth naming separately: `cost_bound_of_bounded_order` already gave the
+*uniform* bound `r/D₁ + r/D₂`, and the column-graded `r/D₁ + j/D₂` is the entire difference
+between the linear conclusion the sixth correction rejected and §13's square root.
+
+### ⚠ Status, stated carefully
+
+§13 is **derived** — no gaps, no assumed inputs, standard axioms. It is **not** established
+that its constants are good enough, and two things are open, of which the second is the sixth
+correction in its final form:
+
+1. **`S·D₂ ≤ r`, i.e. `Φ_m·r_m ≤ 1`.** A side condition the caller must discharge. Unchecked
+   against Roth's lemma's parameter conditions. Test it first: if it fails in the intended
+   regime the square-root branch never fires and the repair buys nothing.
+2. **`t = r/D₁` versus the source's constant `t ≤ 1`.** `r` is the minimum representation
+   length, `D₁` the degree floor. The source *chooses* `t` small; the arc *derives*
+   `t = r/D₁`. Whether that is small enough is a statement about representation length versus
+   degree, and the arc does not have it. This is exactly what the sixth correction was
+   pointing at, now isolated to one ratio instead of diffused across the argument.
+3. The recursion itself (§14) — `ω(m, ε)`, and feeding the `m−1` case back in.
+
+⚠ Provenance narrows again: §6 and §13 have now both been read directly and match. §14 has
+not been read, so `ω(m, ε)` and `c_m = 2^m − 3` remain unasserted.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Nine declarations `#print axioms`-clean on the standard set. No `sorry`/`admit`/
+`native_decide`.

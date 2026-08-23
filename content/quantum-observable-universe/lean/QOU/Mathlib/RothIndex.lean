@@ -77,6 +77,35 @@ theorem translate_mul (α : σ → R) (P Q : MvPolynomial σ R) :
     translate α (P * Q) = translate α P * translate α Q := by
   simp [translate]
 
+/-- Translating back by `-α` undoes `translate α`.
+
+`translate α` is an algebra endomorphism of the polynomial ring; this exhibits its inverse,
+which is what makes `index` well behaved at `P = 0` and nowhere else. -/
+theorem translate_neg_translate (α : σ → R) (P : MvPolynomial σ R) :
+    translate (fun j => -α j) (translate α P) = P := by
+  show (aeval fun j => X j + C (-α j)) ((aeval fun j => X j + C (α j)) P) = P
+  rw [← AlgHom.comp_apply, comp_aeval]
+  have h : (fun i => (aeval fun j => (X j + C (-α j) : MvPolynomial σ R)) (X i + C (α i)))
+      = fun i => (X i : MvPolynomial σ R) := by
+    funext i
+    simp
+  rw [h]
+  exact aeval_X_left_apply P
+
+theorem translate_injective (α : σ → R) : Function.Injective (translate α) := by
+  intro P Q h
+  have h' := congrArg (translate (fun j => -α j)) h
+  rwa [translate_neg_translate, translate_neg_translate] at h'
+
+/-- **Translation detects the zero polynomial and nothing else.**
+
+⚠ Deliberately *not* a `simp` lemma: `translate` appears unfolded in several proofs in this
+arc, and turning this into a rewrite rule changes what `simp` does to them. -/
+theorem translate_eq_zero_iff (α : σ → R) {P : MvPolynomial σ R} :
+    translate α P = 0 ↔ P = 0 := by
+  refine ⟨fun h => translate_injective α ?_, fun h => by rw [h, translate_zero]⟩
+  rw [h, translate_zero]
+
 /-- The **weight** of a multi-index against the degree vector `d`: `∑ⱼ iⱼ / dⱼ`. -/
 noncomputable def idxWeight (d : σ → ℕ) (i : σ →₀ ℕ) : ℚ :=
   ∑ j ∈ i.support, (i j : ℚ) / (d j : ℚ)
