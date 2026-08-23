@@ -1,11 +1,11 @@
 ---
 # qou-u87j
 title: 46 content-block .lean siblings mirror a library structure with a different field set, and all 46 mask its lean.ref
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-23T08:05:53Z
+updated_at: 2026-08-23T20:28:24Z
 ---
 
 
@@ -598,3 +598,45 @@ Ten pairs closed, and the **five** directions seen so far are:
 plus one where **neither** side was right and the answer was the union
 (`CRManifoldData`). Six shapes, ten pairs. The field diff predicted the correct
 side in none of them; the block's `.md` decided every one.
+
+## 2026-08-23 — `CategoricalQExtDeriv` closed; both §7c counters reach 0
+
+The pair this bean parked on `qou-kfcl` is done (`b9e05bde21`).
+`QOU/GroundRingCore.lean` gave the library one canonical `R_q`, so
+`Instanton.lean` could take the sibling's shape: `q : ℝ` + `q_ne_zero` →
+`q qinv : R_q` + `q_mul_qinv : q * qinv = 1`, and all five `[Linear ℝ C]`
+binders across `Instanton.lean` and `CategoricalDqSquared.lean` →
+`[Linear R_q C]`. Two proofs that reached `q⁻¹ = 1` via `inv_one` now reach
+`qinv = 1` off the relation.
+
+Direction 5 confirmed once more: the **sibling was ahead**, and its docstring
+had the argument the library lacked — `R_q` is a ring, not a field, so `q⁻¹`
+cannot be *written*; carrying the inverse as data is strictly stronger than
+`q ≠ 0`, because over a ring invertible is not implied by nonzero. The block
+needs the stronger form, since `d_q = q⁻¹ d + (1 − q⁻¹) π_V ∘ d` requires
+`q⁻¹` to exist.
+
+### Tally, re-measured against **current** `origin/main` (797db0ebf7)
+
+The earlier table compared against the merge-base. `main` has since moved 1206
+commits, so both columns are re-measured with the current parser:
+
+| | main @797db0ebf7 | this branch |
+|---|---|---|
+| pairs | 141 | 148 |
+| faithful mirrors | 91 | **111** |
+| drifted | 43 | **37** |
+| drifted **and** crossing the wall | 7 | **0** |
+| §7c regime-only | 7 | **0** |
+| duplicated FQNs | 66 | **56** |
+| un-importable module pairs | 65 | **61** |
+
+`pairs = faithful + regime-only + drifted` holds in both columns (91+7+43=141,
+111+0+37=148). Note the two 7s on main are **different sets**: `regimeOnly` is
+same-fields-opposite-wall and is *excluded* from `drifted`, while
+`driftedRegime` is the subset of `drifted` that also crosses. Equal by
+coincidence, and easy to double-count.
+
+**Both §7c counters are now 0 on this branch.** What remains under this bean is
+37 pairs of plain field drift with no wall component — a different and much
+less urgent problem than the one it was opened for.

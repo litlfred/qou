@@ -1,10 +1,11 @@
 ---
 # qou-kfcl
 title: 38 def/abbrev FQNs are declared in two library modules each — those module pairs can never be imported together, and QOU.R_q means two different rings
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-23T16:49:53Z
+updated_at: 2026-08-23T20:29:08Z
 ---
 
 
@@ -198,3 +199,40 @@ import `WeierstrassProjection`.
 
 Corpus-wide there are still 100 `abbrev R_q` declarations, so whatever module
 gets created is the target for a much wider sweep than these two.
+
+## 2026-08-23 — the minimal ground-ring module exists, and unblocked `qou-u87j`
+
+The owner call this bean deferred has been taken: `QOU/GroundRingCore.lean`
+is the minimal module it described — `R_q`, `q_param`, `q_inv_param`,
+`q_param_mul_inv`, and **one** Mathlib import
+(`Mathlib.Algebra.Polynomial.Laurent`). So pointing a light module at it costs
+nothing, which was the objection to importing `Archimedean/GroundRing.lean`.
+
+Four modules import it now: `Archimedean/WeierstrassProjection.lean` (its three
+duplicate declarations are gone — the `abbrev R_q` at line 25 is a comment
+recording the removal), `QuantumObservableUniverse/SubstrateParameter.lean`,
+`QuantumObservableUniverse/Instanton.lean`, and `CategoricalDqSquared.lean`.
+
+No `R_q`, `q_param` or `q_inv_param` appears in the duplicate report any more.
+
+### Counts, re-measured against **current** `origin/main` (797db0ebf7)
+
+| | main @797db0ebf7 | this branch |
+|---|---|---|
+| duplicated FQNs | 66 | **56** |
+| un-importable module pairs | 65 | **61** |
+| modules involved | 72 | **64** |
+| total declarations scanned | 34138 | 33793 |
+
+Earlier entries in this bean quoted 65 → 60 and 64 → 63 against the
+**merge-base**; `main` has moved 1206 commits since, hence the re-measurement.
+`prepare-merge` §4a baseline updated to 56 in the same change.
+
+### Still open
+
+`Archimedean/GroundRing.lean:33` still declares its own
+`abbrev R_q := LaurentPolynomial ℤ`. It is not a *duplicate* — the FQN is
+`QOU.Archimedean.R_q`, distinct from `QOU.GroundRing.R_q` — so no checker
+flags it and nothing is un-importable. It is redundancy, not breakage: two
+names for one ring. Corpus-wide there remain ~100 `abbrev R_q` declarations,
+and `GroundRingCore` is now the module they should collapse into.

@@ -366,7 +366,7 @@ surface the duplicates in step 6) saves a full review cycle.
 ## 4a. Mirror-drift gate (BLOCKING on growth)
 
 ```sh
-bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 46
+bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 37
 ```
 
 A green Lean build does not mean the checkers looked at the code it compiled.
@@ -377,20 +377,34 @@ wins **candidate 1** of `lean.ref` resolution, before any Lake-tree candidate,
 so every checker aimed at that block audits the sibling's copy and never sees
 the declaration `lake build` just compiled.
 
-Baseline on `main` at 2026-08-23 (bean `qou-u87j`): 147 same-FQN pairs, 94
-faithful mirrors, **46 drifted across 39 files — and all 46 mask a `lean.ref`**.
-PR #5498 takes drift to **42** across 36 files, wall-crossing 10 → 5 and
-regime-only 7 → 4; **lower the baseline to 42 when that lands.**
+Measured 2026-08-23 (bean `qou-u87j`), both columns with the current parser:
 
-- **`--baseline 46` fires on growth only** (exit 3). A gate that failed on the
+| | `main` @797db0ebf7 | after `qou-u87j` |
+|---|---|---|
+| same-FQN pairs | 141 | 148 |
+| faithful mirrors | 91 | 111 |
+| **drifted** | **43** | **37** |
+| drifted **and** crossing the §7c wall | 7 | **0** |
+| §7c regime-only | 7 | **0** |
+
+Every drifted pair masks a `lean.ref`, in both columns. `pairs = faithful +
+regime-only + drifted`; the two 7s on `main` are different sets — `regimeOnly`
+is same-fields-opposite-wall and is *excluded* from `drifted`, while
+`driftedRegime` is the subset of `drifted` that also crosses. Easy to
+double-count.
+
+- **`--baseline 37` fires on growth only** (exit 3). A gate that failed on the
   whole backlog would just teach everyone to pass `--warn-only`; this one stops
-  the 94 faithful mirrors becoming the next 46.
+  the 111 faithful mirrors becoming the next 37.
 - **If you touched a mirrored declaration, resync both copies in the same
   change.** The checker names the file and line on each side and prints the
   field-level diff; `--tsv` gives one row per pair.
 - **Lower the baseline when you drain some.** It is a ratchet, like the
-  float64 ones in §4b — leaving it at 46 after fixing five means the next five
+  float64 ones in §4b — leaving it at 37 after fixing five means the next five
   regressions go unnoticed.
+- **The two §7c counters are at 0 and should stay there.** They are the reason
+  this gate was built; what is left under `qou-u87j` is plain field drift with
+  no wall component. If either goes non-zero, that is a regression, not backlog.
 - `--max 0` is the end state once the backlog is gone.
 
 Worked example of why it is not cosmetic — `QOU.CRManifoldData`: the library
@@ -449,10 +463,20 @@ error: import QOU.CategoricalDqSquared failed, environment already contains
        'QOU.q_param' from QOU.BraidKnot.CasimirShared
 ```
 
-Baseline on `main` at 2026-08-23 (bean `qou-kfcl`): 33 798 declarations,
-**56 duplicated FQNs, 61 mutually un-importable module pairs across 64
-modules**. The worst is `QOU.R_q` — `RatFunc ℚ` in one module and
-`LaurentPolynomial ℤ` in the other, the same name for two different rings.
+Measured 2026-08-23 (bean `qou-kfcl`) — the earlier text labelled the
+right-hand column "main", which it never was:
+
+| | `main` @797db0ebf7 | after `qou-kfcl` |
+|---|---|---|
+| declarations scanned | 34 138 | 33 793 |
+| **duplicated FQNs** | **66** | **56** |
+| un-importable module pairs | 65 | 61 |
+| modules involved | 72 | 64 |
+
+The worst was `QOU.R_q` — `RatFunc ℚ` in one module and `LaurentPolynomial ℤ`
+in the other, the same name for two different rings. That one is resolved:
+`QOU/GroundRingCore.lean` is the canonical minimal module (one Mathlib import),
+and no `R_q`, `q_param` or `q_inv_param` appears in the report any more.
 
 - **A green Lean build says nothing about this.** `lean-direct-cone.sh --all`
   compiles each module against its own cone, and no *existing* module imports
