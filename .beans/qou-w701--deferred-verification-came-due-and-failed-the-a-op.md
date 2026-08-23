@@ -1,10 +1,11 @@
 ---
 # qou-w701
 title: 'Deferred verification came due and failed: the a_operator pn interface is colour-weighted on one leg only'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-23T22:31:23Z
-updated_at: 2026-08-23T22:31:23Z
+updated_at: 2026-08-23T23:26:58Z
 ---
 
 Commit **`3dcf933c5`** (2026-08-10, *"a_operator: the pn interface is
@@ -78,3 +79,56 @@ staked a prediction on it and the prediction failed.
 
 Found on `claude/mass-table-comprehensive-triage` while draining self-staleness;
 tracked alongside the branch's other recorded assertion failures in qou-60r9.
+
+
+---
+
+## RESOLVED 2026-08-23 (a819eb1ab) — it was a SIXTH interface, in the verifier
+
+    h6 max_abs_residual   0.0011504265    ->  6.7076893e-49
+    h9 max_abs_residual   0.00057521327   ->  3.3538446e-49
+
+The bean's two candidate sites were "the `W·I·β` character side or the
+`ρ_μ⊗ρ_ν` trace side", with the guess that the unconverted one was "a sixth
+construction it missed, or a consumer rebuilding the interface locally". It
+was both at once: a sixth construction, in a consumer.
+
+`computations/a_operator/cyclic_intertwiner_verify.py:67`
+
+    I_if = mats[n_inner - 1] - (h / 2) * mp.eye(dim)      # colour-BLIND
+
+`3dcf933c5` swept the five `I_iface` sites in `a_operator_gauge_align.py`
+(lines 340, 568, 680, 780, 863). This one lives in the VERIFIER, so the sweep
+never reached it — leaving the `A` side colour-weighted (built by
+`gauge_aligned_A_combiner_general_cyclic`, which goes through the converted
+module) and the `I` side blind.
+
+Fixed to `mats[n_inner - 1] + g._d_pn(h) * mp.eye(dim)`. Calling the single
+definition rather than restating `-h * (1 - delta/2) / 2` is the point: a
+second copy of that formula is exactly how the two legs drifted apart, and the
+underscore is worth crossing to keep one source of truth.
+
+## The prediction was exact
+
+`3dcf933c5` warned that leaving an interface blind *"would have degraded a
+verified 1.5e-49 result to the ~1e-4 scale of the colour weighting,
+silently."* Measured: **1.15e-3**, with the colour-weighting delta 7.19e-5
+(~6.9e-4 relative) at the same order. The commit both deferred the
+verification and named the failure mode it would show.
+
+## What this does NOT close
+
+The structural gap that let it sit for two weeks. `cyclic_intertwiner_verify.py`
+changed once in that time — `726eecfe6` added `set_compute_dps()`, nothing
+semantic — so its own `scriptHash` barely moved, re-running it was "correct",
+and **the drift axis does not follow IMPORTS**. Nothing in the staleness
+family could have surfaced this; it took running the thing.
+
+Making `scriptHash` cover a producer's first-party imports would catch this
+class, but would also re-stale a large fraction of the corpus on any
+shared-module edit. That is a design question, not a patch, and it remains
+open.
+
+A cheaper partial measure worth weighing: when a commit DEFERS a verification
+in its own message — "expectation is not measurement" — that is a bean, not a
+paragraph. This one was findable the moment it was written down.
