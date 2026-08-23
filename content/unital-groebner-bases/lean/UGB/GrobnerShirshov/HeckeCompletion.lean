@@ -12320,6 +12320,84 @@ theorem closingV_at_TOpen (hn : 0 < n) (hp : HeckeParams)
     List.append_assoc] at key ⊢
   exact key
 
+/-- The chain at the prefix's first cancellation: four terms, two of them the
+same word with opposite coefficients. -/
+noncomputable def TCancel (i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(WStar i i₁ i₂ j₁ j₂, h),
+     (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+     (WStar i i₁ i₂ j₁ j₂, -h),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+
+/-- **The `a ≤ b` chain's closing phase** — `4(a−1)` steps, `TOpen` to `TCancel`.
+
+The U lineage's `fRun` and two Bokut–Shiao steps, then the V lineage's `fRun`,
+whose last step lands on the word the U side already reached. The two halves
+compose on the nose: `closingV_at_TOpen`'s source *is* `closingU_at_TOpen`'s
+target, because both were stated against the same four-term list. -/
+theorem closingPhase (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹))
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) := by
+  rw [TCancel]
+  exact (closingU_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop).trans
+    (closingV_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop)
+
+/-- **The cancellation.** `TCancel`'s two `WStar` entries carry `h` and `−h`, so
+they contribute nothing; what survives is the two plain words. They are not
+adjacent — `trio` emits each lineage's `h`-weighted word immediately before its
+plain one — which is why this is `ofTerms_cancel_split` and not
+`ofTerms_cancel_pair`. -/
+theorem TCancel_coeffEq {n : ℕ} (i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp h)
+      (AlgElement.ofTerms
+        [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]) := by
+  have := ofTerms_cancel_split (WStar i i₁ i₂ j₁ j₂) h
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ))]
+    [(trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+  rw [TCancel]
+  simpa only [List.nil_append, List.cons_append, List.singleton_append] using this
+
+/-- **The whole `a ≤ b` prefix** — all `a² + a + 5` steps, from the
+S-polynomial to the first cancellation.
+
+`openingPhase` is `a² − 3a + 9` of them and `closingPhase` the remaining
+`4(a − 1)`; `hecke_closing_from_topen.py` measures the two against the prefix
+length and they close exactly, 6/6 at `a = 4, 5, 6` and `b ∈ {a, a+1}` — the
+diagonal `b = a` included.
+
+`a = 3` is **not** covered: its loop parameter would be `m = −1`, so there is no
+loop pass at all and the opening phase's shape does not arise. It needs its own
+treatment. -/
+theorem prefixChain (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  (openingPhase hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop).trans
+    (closingPhase hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop)
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
