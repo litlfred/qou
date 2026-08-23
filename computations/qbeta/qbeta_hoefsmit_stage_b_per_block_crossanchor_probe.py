@@ -35,10 +35,20 @@ mp.mp.dps = 65
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "hecke"))
 
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+from pathlib import Path as _QPath  # noqa: E402
+_QOU_REPO_ROOT = next(
+    (_a for _a in _QPath(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    _QPath(__file__).resolve().parent,
+)
 try:
     import qou_substrate.constants as qs
 except ImportError:
-    sys.path.insert(0, str(HERE.parent.parent.parent / "tools" / "qou-substrate" / "python"))
+    sys.path.insert(0, str(_QOU_REPO_ROOT / "tools" / "qou-substrate" / "python"))
     import qou_substrate.constants as qs
 
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q

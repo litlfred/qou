@@ -91,6 +91,15 @@ def bloch_wigner(x: mp.mpf) -> mp.mpf:
     return mp.im(mp.polylog(2, x)) + mp.arg(1 - x) * mp.log(abs(x))
 
 
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
 def period_basis(q: mp.mpf) -> dict[str, mp.mpf]:
     """Transcendental + hyperbolic-volume period candidates."""
     c = substrate_constants(q)
@@ -109,7 +118,7 @@ def period_basis(q: mp.mpf) -> dict[str, mp.mpf]:
     }
     # Hyperbolic volumes (4_1 figure-eight, Borromean) from pyhecke if present.
     try:
-        sys.path.insert(0, str(Path(__file__).resolve().parents[3]
+        sys.path.insert(0, str(_QOU_REPO_ROOT
                                / "tools" / "pyhecke" / "python"))
         from pyhecke.constants import VOL_FIGURE8, VOL_BORROMEAN  # type: ignore
         basis["Vol(4_1)"] = mp.mpf(str(VOL_FIGURE8))

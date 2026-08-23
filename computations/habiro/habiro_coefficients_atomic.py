@@ -109,7 +109,6 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     """
     A = Z + N
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
-    chi_cache_label = _ATOM_CHI_LABEL_BY_ZN.get((Z, N, include_inter))
     q_pos = sp.Symbol("q", positive=True)
 
     # Work internally in u_internal where u_internal² = q.  This
@@ -126,10 +125,10 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
             w_u = w.subs(q_pos, u_int ** 2)
             if w_u == 0:
                 continue
-            chi = q_character_on_braid_word(
-                lam, crossings, q,
-                atom_cache_label=chi_cache_label,
-            )
+            # The witness-backed chi cache and its selector were removed
+            # (bean qou-tnrz): the cache's glob had been inert since Phase-6,
+            # so the selector argument chose nothing.
+            chi = q_character_on_braid_word(lam, crossings, q)
             chi_u = chi.subs(q, u_int ** 2)
             if chi_u == 0:
                 continue

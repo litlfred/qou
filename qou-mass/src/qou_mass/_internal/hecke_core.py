@@ -49,12 +49,24 @@ from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 try:
     import pyhecke.gram as _probe  # noqa: F401
 except ImportError:
-    import os as _os
     import sys as _sys
-    _PYHECKE_PATH = _os.path.normpath(
-        _os.path.join(_os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
-    )
-    if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
+    from pathlib import Path as _PPath
+    # SEARCH upward for the pyhecke checkout rather than counting `..`s. A
+    # fixed count cannot be right for both layouts this file lives in:
+    #   computations/substrate/hecke_core.py            -> tools/ is 2 up
+    #   qou-mass/src/qou_mass/_internal/hecke_core.py   -> tools/ is 4 up
+    # (the vendor sync copies this file verbatim into a flatter tree). The
+    # hardcoded `../..` resolved to `qou-mass/src/tools/...` there, so
+    # `is_dir()` was False and the fallback silently never fired in the
+    # vendored layout -- masked in-repo because `_path_bridge` puts pyhecke
+    # on sys.path first, and the sync STRIPS that import. Bean qou-rug0.
+    _PYHECKE_PATH = None
+    for _anc in _PPath(__file__).resolve().parents:
+        _cand = _anc / "tools" / "pyhecke" / "python"
+        if _cand.is_dir():
+            _PYHECKE_PATH = str(_cand)
+            break
+    if _PYHECKE_PATH is not None and _PYHECKE_PATH not in _sys.path:
         _sys.path.insert(0, _PYHECKE_PATH)
 
 from pyhecke.gram import (  # noqa: E402

@@ -270,48 +270,26 @@ def _q_character_compute(shape, braid_crossings, q):
 # first request only.  Backed by chi-{atom}-h{n}.witness.json caches that
 # already exist for atoms whose Hoefsmit-matrix products are too
 # expensive to recompute (n ≥ 6).
-_CHI_WITNESS_STRINGS: dict[str, dict[tuple, str]] = {}
-
-
-def _load_chi_witness(atom_label: str) -> dict[tuple, str]:
-    """Read chi-{atom_label}-h{n}.witness.json (n implied by atom_label)
-    and return {partition_tuple: chi_q_symbolic_string}.  Cached per
-    atom_label; lazy on first request."""
-    if atom_label in _CHI_WITNESS_STRINGS:
-        return _CHI_WITNESS_STRINGS[atom_label]
-    out: dict[tuple, str] = {}
-    here = Path(__file__).parent
-    # Try canonical naming patterns.  chi-deuteron-h6, chi-tritium-h9,
-    # chi-helium-3-h9, etc.
-    for pattern in (
-        f"chi-{atom_label}-h*.witness.json",
-        f"chi-{atom_label}.witness.json",
-    ):
-        for path in sorted(here.glob(pattern)):
-            try:
-                with path.open() as f:
-                    doc = json.load(f)
-                entries = doc.get("chi_lambda_symbolic")
-                if not isinstance(entries, list):
-                    continue
-                for w in entries:
-                    try:
-                        lam = tuple(w["partition"])
-                        out[lam] = w["chi_q_symbolic"]
-                    except (KeyError, TypeError):
-                        continue
-            except Exception:
-                continue
-            if out:
-                break
-        if out:
-            break
-    _CHI_WITNESS_STRINGS[atom_label] = out
-    return out
-
-
-def q_character_on_braid_word(shape, braid_crossings, q,
-                                *, atom_cache_label: str | None = None):
+# The witness-backed chi cache was REMOVED here (bean qou-tnrz).
+#
+# `_load_chi_witness` globbed `Path(__file__).parent` for chi-*.witness.json.
+# Phase-6 moved this module into computations/hecke/ while those witnesses
+# stayed in flat computations/, so the glob matched nothing and the cache had
+# been silently inert ever since — every call fell through to recompute.
+#
+# It was deleted rather than repointed. The cache is a pure optimisation (a
+# miss costs time, never correctness), and it has a documented history of the
+# opposite: 026a8514b drained chi-deuteron-h6 for carrying colour-BLIND
+# symbolic chi, moving every nonzero pole order by +8, with a stored tag that
+# was 'accurate about the bytes and silent about the drift'. The fingerprint
+# guard added for that (45789ddf, 'chi caches could not tell that the question
+# had changed') does NOT cover this path. Repointing the glob would have
+# reactivated an unguarded cache in exactly the configuration that produced
+# the error — and the sympify here is wrapped in a bare except, so a stale
+# string fails silently into recompute while a plausible one is trusted.
+#
+# If the recompute cost is ever measured to matter, the guard must land first.
+def q_character_on_braid_word(shape, braid_crossings, q):
     """Compute χ^λ_q(T_w) symbolically for a braid word represented as
     a list of (gen_index, (c, d)) pairs.  Each crossing contributes
     c · ρ_λ(T_gen) + d · I_dim to the product; the final trace is the
@@ -323,8 +301,6 @@ def q_character_on_braid_word(shape, braid_crossings, q,
     Optimizations:
 
     - **Witness-cache lookup** (preferred for n ≥ 6): if
-      `atom_cache_label` is supplied (e.g. ``"deuteron"``,
-      ``"tritium"``, ``"helium-3"``) the function consults the
       committed `chi-{label}-h{n}.witness.json` cache for the
       requested partition.  These caches store the closed-form
       symbolic χ^λ_q(β_atom) values (155+ s first-run compute) and
@@ -337,20 +313,6 @@ def q_character_on_braid_word(shape, braid_crossings, q,
 
     Returns sympy expression for χ^λ_q(T_w).
     """
-    # 1. Witness-cache hit — most expensive computations skipped.
-    if atom_cache_label is not None:
-        cache = _load_chi_witness(atom_cache_label)
-        lam = tuple(shape)
-        if lam in cache:
-            try:
-                # Bind q-string to the caller's q symbol.  The cached
-                # strings always use the bare name "q"; sympify via
-                # `locals={"q": q}` ensures the returned expression
-                # composes with downstream callers' q.
-                return sp.sympify(cache[lam], locals={"q": q})
-            except (sp.SympifyError, SyntaxError, ValueError):
-                pass  # fall through to recompute
-
     # 2. In-memory lru_cache for pure-Symbol q (Symbols are cheap to key
     # by name; non-Symbol q goes straight to compute since cache keys
     # would be unstable).

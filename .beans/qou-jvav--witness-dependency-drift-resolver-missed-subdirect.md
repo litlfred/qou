@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T17:11:30Z
-updated_at: 2026-08-23T17:55:25Z
+updated_at: 2026-08-23T21:04:04Z
 ---
 
 `staleness-gates.sh` is red on `scriptHash + upstream drift`. Two findings, one
@@ -135,3 +135,51 @@ category from 'stale', and no gate distinguishes them.
 69 records across a long tail — 7 on `habiro-coefficients-atomic`, 6 on
 `q-beta-operator-valued-N3`, then 3s and 2s. No single dominant cause remains,
 so the rest is per-upstream work rather than one sweep.
+
+
+---
+
+## The 12 assertion flips are stale passes, not regressions — bisected
+
+Draining the drift tail flipped 12 assertions across 6 witnesses. Applying the
+bisect that settled this question once already, rather than assuming either way.
+
+The alarming one first: `m-p-substrate-identity-50dps`,
+`m_n_matches_codata_within_10ppb`, **2.389 ppb -> 501.43 ppb** against a 10 ppb
+tolerance. A 200x degradation in the neutron-mass prediction.
+
+**Precision is exonerated.** Re-running the producer at
+`QOU_COMPUTE_DPS` = 50, 60, 70 gives **501.43180043143343 at every one** — the
+same value at the original precision as at the new one. The dps sweep did not
+cause it.
+
+**The producer is untouched** by this branch (last changed 2026-08-08) and uses
+no native code, so neither the sweep nor the wheel rebuild explains it.
+
+**An input changed.** The witness was last regenerated **2026-08-08**. Its
+constants were corrected after that:
+
+    codata_constants.py        2026-08-19  "fix(AME): the canonical binding
+                                            reference was hand-typed and 7 of 11
+                                            were wrong"
+    experimental_constants.py  2026-08-22  CODATA drain (qou-7ot6)
+
+So the 2.4 ppb agreement was computed against **hand-typed constants that were
+wrong**, and 501 ppb is the honest number against corrected ones. The flattering
+value was an artifact.
+
+All six flipped witnesses were last regenerated **2026-08-08 or 2026-08-02** —
+every one predates those fixes. The whole set is the same shape: stale witnesses
+recording passes their own inputs no longer support.
+
+This is the second time in this branch that PASS -> FAIL turned out to be the
+corpus ceasing to lie rather than breaking. The first time I reverted on
+suspicion and put 15 stale passes back for a commit.
+
+## The one shape-guard flag is also benign
+
+`a-K-via-lp-dual-hecke-basis`, `durationMs 6,950 -> 384`. Not a partial write:
+206 of 211 data leaves are unchanged and all 4 assertions still pass. The 5 that
+moved are all inside `upstream_witness_hashes[0]` — the recorded upstream hash
+being refreshed, which is the entire point of the drain. The 18x speedup is
+qou-rug0's path fix making `tools/pyhecke/python` actually resolve.

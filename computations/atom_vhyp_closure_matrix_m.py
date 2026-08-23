@@ -38,7 +38,15 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).parent
-_ROOT = HERE.parents[1]
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_ROOT = next(
+    (_a for _a in _Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    _Path(__file__).resolve().parent,
+)
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))

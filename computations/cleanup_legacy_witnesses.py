@@ -40,7 +40,16 @@ from pathlib import Path
 
 COMP_DIR = Path(__file__).resolve().parent
 DEPRECATED_DIR = COMP_DIR / "_deprecated"
-REPO_ROOT = COMP_DIR.parent.parent
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
+REPO_ROOT = _QOU_REPO_ROOT
 
 _IMPORT_RE = re.compile(
     r"^\s*(?:from\s+([\w_]+)\s+import|import\s+([\w_]+))", re.MULTILINE
@@ -245,7 +254,7 @@ def move_one(
         if use_git:
             subprocess.run(
                 ["git", "mv", str(src), str(dst)],
-                cwd=str(REPO_ROOT),
+                cwd=_QOU_REPO_ROOT,
                 check=True,
             )
         else:

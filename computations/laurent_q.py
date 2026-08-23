@@ -21,11 +21,24 @@ from __future__ import annotations
 try:
     from pyhecke.laurent_q import *  # noqa: F401, F403
 except ImportError:
-    import os as _os
     import sys as _sys
-    _PYHECKE_PATH = _os.path.normpath(
-        _os.path.join(_os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
-    )
-    if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
+    from pathlib import Path as _Path
+    # SEARCH upward for the pyhecke checkout rather than counting `..`s.
+    # The hardcoded `../..` was wrong in BOTH layouts this file lives in:
+    #   computations/laurent_q.py                          -> tools/ is 1 up,
+    #       so `../..` walked out of the repo entirely;
+    #   qou-mass/src/qou_mass/_internal/laurent_q.py       -> tools/ is 4 up.
+    # `os.path.isdir` was therefore False in both, so the fallback never
+    # fired anywhere -- invisible because `_path_bridge` normally puts
+    # pyhecke on sys.path first, and the vendor sync STRIPS that import.
+    # Same defect class as the fixed `.parent` counts in
+    # `substrate/_precision.py` (bean qou-rug0).
+    _PYHECKE_PATH = None
+    for _anc in _Path(__file__).resolve().parents:
+        _cand = _anc / "tools" / "pyhecke" / "python"
+        if _cand.is_dir():
+            _PYHECKE_PATH = str(_cand)
+            break
+    if _PYHECKE_PATH is not None and _PYHECKE_PATH not in _sys.path:
         _sys.path.insert(0, _PYHECKE_PATH)
     from pyhecke.laurent_q import *  # noqa: F401, F403

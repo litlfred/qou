@@ -55,7 +55,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 # only if the caller's working precision is lower; it never lowers
 # the caller's precision.
 
-REPO_ROOT = HERE.parent.parent
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
 BIN_CANDIDATES = [
     REPO_ROOT / "tools" / "hecke-engine" / "target" / "release"
     / "hecke-canonical-chi",

@@ -1,9 +1,9 @@
 {
   "target": "m_p (MeV)",
-  "target_value": "938.2720881603788142358888",
+  "target_value": "938.2720894273242637273567",
   "target_tolerance": 0.01,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 938.272 MeV vs CODATA 938.27208816 (rel_diff 4.037e-13, 0.00040374 ppb).  Target: 1 ppb.",
+  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 938.272 MeV vs CODATA 938.27208943 (rel_diff 2.852e-12, 0.0028518 ppb).  Target: 1 ppb.",
   "steps": [
     {
       "name": "tr_M(p, q_0) at 50 dps via Markov-trace assembly chain",
@@ -42,22 +42,22 @@
         "terms_50dps"
       ],
       "output_name": "m_p_Hecke",
-      "output_value": "2.3414190861432517770226268063152396328857534017146",
+      "output_value": "2.4218725408294706472823080567603054007337915201145",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: computations/mass_endomorphism.py + proton_mass_tower_derivation.py.  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain.  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision.  **Precision note**: the stored `output_value` (2.3414190861432517770226268063152396328857534017146) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  The full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`; downstream code that needs >4 sig figs should read from that witness rather than from this chain step."
+      "notes": "script: computations/mass_endomorphism.py + proton_mass_tower_derivation.py.  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain.  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision.  **Precision note**: the stored `output_value` (2.4218725408294706472823080567603054007337915201145) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  The full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`; downstream code that needs >4 sig figs should read from that witness rather than from this chain step."
     },
     {
       "name": "m_e_Hecke (electron mass in cat units, 50 dps)",
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
       "inputs": [],
       "output_name": "m_e_Hecke",
-      "output_value": "2.0027223644627019945245817080123884466067438705739",
+      "output_value": "2.4574285836932135580777709797787704954440001857194",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.00272236446270199452458170801238844660674387057392118180329) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+      "notes": "script: computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.45742858369321355807777097977877049544400018571937189708911) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
     },
     {
       "name": "Dimensionless mass ratio m_p/m_e at 50 dps",
@@ -67,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_p_over_m_e",
-      "output_value": "1.1691181602056042514241301336251819141582631813373",
+      "output_value": "0.98553119993000710433348644499709070032681595084431",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",
@@ -80,7 +80,7 @@
         "Hecke.Energy"
       ],
       "output_name": "m_p_substrate_identity_MeV",
-      "output_value": "938.2720881603788142358888",
+      "output_value": "938.2720894273242637273567",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "notes": "script: computations/m_p_substrate_identity_50dps.py (producer of m-p-substrate-identity-50dps.witness.json; hash recorded in the codata witness's upstream_witness_hashes)."
@@ -92,11 +92,11 @@
         "m_p_substrate_identity_MeV"
       ],
       "output_name": "m_p_pred_MeV",
-      "output_value": "938.2720881603788142358888",
+      "output_value": "938.2720894273242637273567",
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
-      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 938.272 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 4.037e-13 = 0.00040374 ppb.  λ_A excision (2026-06-24): the former headline Borromean VolDensity path ≈ 966.05 MeV (+2.96%, a CODATA-implied fit) is retained only as an audit column in the codata witness.  The q₀ pin and m_p inform the same H¹ datum, so this residual is a calibration-consistency cross-check (AGENTS.md §q₀ anchor convention)."
+      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 938.272 MeV vs CODATA m_p = 938.27208943 MeV.  Current relative error: 2.852e-12 = 0.0028518 ppb.  λ_A excision (2026-06-24): the former headline Borromean VolDensity path ≈ 966.05 MeV (+2.96%, a CODATA-implied fit) is retained only as an audit column in the codata witness.  The q₀ pin and m_p inform the same H¹ datum, so this residual is a calibration-consistency cross-check (AGENTS.md §q₀ anchor convention)."
     }
   ]
 }

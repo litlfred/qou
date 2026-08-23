@@ -66,10 +66,18 @@ from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 try:
     import pyhecke.gram as _probe  # noqa: F401
 except ImportError:
-    _PYHECKE_PATH = _os.path.normpath(
-        _os.path.join(_os.path.dirname(__file__), "..", "..", "..", "tools", "pyhecke", "python")
-    )
-    if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
+    # SEARCH upward for the landmark rather than counting `..`s. This file is
+    # flat in computations/, where tools/ is ONE level up -- the `../../..`
+    # copied from substrate/hecke_core.py resolved to `/`, so `isdir` was
+    # False and the fallback never fired. Bean qou-rug0.
+    from pathlib import Path as _QPath
+    _PYHECKE_PATH = None
+    for _anc in _QPath(__file__).resolve().parents:
+        _cand = _anc / "tools" / "pyhecke" / "python"
+        if _cand.is_dir():
+            _PYHECKE_PATH = str(_cand)
+            break
+    if _PYHECKE_PATH is not None and _PYHECKE_PATH not in _sys.path:
         _sys.path.insert(0, _PYHECKE_PATH)
 
 from pyhecke.gram import (  # noqa: E402

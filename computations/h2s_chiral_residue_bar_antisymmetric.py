@@ -46,9 +46,18 @@ from pathlib import Path
 import numpy as np
 
 _HERE = Path(__file__).resolve().parent
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
 for _p in (str(_HERE),
-           str(_HERE.parents[1] / "tools" / "pyhecke" / "python"),
-           str(_HERE.parents[1] / "tools" / "qou-substrate" / "python")):
+           str(_QOU_REPO_ROOT / "tools" / "pyhecke" / "python"),
+           str(_QOU_REPO_ROOT / "tools" / "qou-substrate" / "python")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 import _path_bridge  # noqa: F401

@@ -4,41 +4,41 @@
   "caveats": [
     "STRUCTURE is derived (\u03b1 = filled [1^4] via the proved SU(4) gate); the per-\u03b1 SCALE (~29.8 MeV) is still EMPIRICAL, not yet substrate-derived. This localizes the magnitude gap to 'derive the per-\u03b1 binding scale'."
   ],
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "computation": "alpha-cluster-binding-scaling",
-  "computedAt": "2026-08-08T13:00:16.792989+00:00",
+  "computedAt": "2026-08-23T19:35:54.802306+00:00",
   "contentBlock": "alg:delta-lambda-closure",
   "data": {
     "alpha_conjugate": [
       {
         "A": 4,
-        "B_MeV": 28.295673,
-        "B_per_A": 7.07391825,
-        "B_per_alpha": 28.295673,
+        "B_MeV": 28.2956624,
+        "B_per_A": 7.0739156,
+        "B_per_alpha": 28.2956624,
         "iso": "4He",
         "n_alpha": 1
       },
       {
         "A": 8,
-        "B_MeV": 56.4995,
-        "B_per_A": 7.0624375,
-        "B_per_alpha": 28.24975,
+        "B_MeV": 56.4994848,
+        "B_per_A": 7.0624356,
+        "B_per_alpha": 28.2497424,
         "iso": "8Be",
         "n_alpha": 2
       },
       {
         "A": 12,
-        "B_MeV": 92.16173,
-        "B_per_A": 7.680144166666667,
-        "B_per_alpha": 30.72057666666667,
+        "B_MeV": 92.1617352,
+        "B_per_A": 7.680144599999999,
+        "B_per_alpha": 30.720578399999997,
         "iso": "12C",
         "n_alpha": 3
       },
       {
         "A": 16,
-        "B_MeV": 127.61931,
-        "B_per_A": 7.976206875,
-        "B_per_alpha": 31.9048275,
+        "B_MeV": 127.6193152,
+        "B_per_A": 7.9762072,
+        "B_per_alpha": 31.9048288,
         "iso": "16O",
         "n_alpha": 4
       }
@@ -46,39 +46,39 @@
     "sub_alpha_onset": [
       {
         "A": 2,
-        "B_MeV": 2.224566,
-        "B_per_A": 1.112283,
+        "B_MeV": 2.2245662,
+        "B_per_A": 1.1122831,
         "frac_of_alpha": 0.5,
         "iso": "2H"
       },
       {
         "A": 3,
-        "B_MeV": 8.481798,
-        "B_per_A": 2.827266,
+        "B_MeV": 8.4817962,
+        "B_per_A": 2.8272654,
         "frac_of_alpha": 0.75,
         "iso": "3H"
       },
       {
         "A": 3,
-        "B_MeV": 7.718043,
-        "B_per_A": 2.5726809999999998,
+        "B_MeV": 7.71804132,
+        "B_per_A": 2.57268044,
         "frac_of_alpha": 0.75,
         "iso": "3He"
       }
     ],
     "upstream_witness_hashes": [
       {
-        "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
-        "computedAt": "2026-07-18T23:59:56.849702+00:00",
+        "commitSha": "bc787ae9a14e34547a52806b232217dc50dc779b",
+        "computedAt": "2026-08-19T17:36:26.225964+00:00",
         "path": "ame-2020-binding-energies.witness.json",
         "scriptCommitSha": "unknown",
-        "sha256": "804f9ce72c6230d8bea6dab0e35fba853d1b29de25b9caeb02f34f8365adb8c8",
-        "size_bytes": 3071
+        "sha256": "e2b7d19c294df4b20ef322f1a96650fbf34bf5d28cc75e7bc02409ed82199d94",
+        "size_bytes": 3246
       }
     ]
   },
   "description": "0-fit \u03b1-cluster (Wigner SU(4) [1^4] supermultiplet) scaling test. B/n_\u03b1 is constant to CV~5% across \u03b1-conjugate nuclei (\u2074He\u2192\u00b9\u2076O) \u2014 the extensive binding term is the \u03b1-cluster volume term; the sub-\u03b1 nuclei trace partial [1^4] filling. Categorical origin: the proved SU(4) gate dim[1^A]=C(4,A) (present A\u22644, vanishes A>4).",
-  "durationMs": 6,
+  "durationMs": 4,
   "engine": "exact",
   "engineVersion": "python 3.11.15",
   "environment": {
@@ -86,13 +86,20 @@
     "mpmath": "1.4.1",
     "numpy": "2.4.6",
     "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "0aaae20308e9cca7",
     "python": "3.11.15",
     "scipy": "1.17.1",
     "sympy": "1.14.0"
   },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/alpha_cluster_binding_scaling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/alpha_cluster_binding_scaling_probe.py"
+  },
   "parameters": {
-    "cv_B_per_alpha": 0.0529220571680049,
-    "mean_B_per_alpha_MeV": 29.792706791666667,
+    "cv_B_per_alpha": 0.0529222339397731,
+    "mean_B_per_alpha_MeV": 29.792703,
     "no_fit": true,
     "su4_gate_lean": "QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff"
   },

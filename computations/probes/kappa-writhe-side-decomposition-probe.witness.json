@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T01:08:16.630146+00:00",
-  "commitSha": "583fd1a5ba77e03d6516bb641c41188ee40b6ca0",
+  "computedAt": "2026-08-23T19:10:48.706120+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "b_total_consistent_with_synthesis_band",
-      "computed": -1.7619,
+      "computed": -1.7855800000000002,
       "expected": -1.75,
       "passed": true,
       "tolerance": 0.15,
@@ -33,7 +33,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/kappa_writhe_side_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/kappa_writhe_side_decomposition_probe.py"
   },
   "description": "Location probe for the writhe coefficient κ = b/4 of the canonical residual's bar-odd term: exact decomposition b_total = b_AME − b_pred using the per-member B_pred/B_AME already recorded in the IMME triplet (A=6,8,10,12) and quartet (A=9, same-T) witnesses. Answers WHERE κ lives (framework interface asymmetry z vs z−h, or experimental Coulomb) before any derivation attempt — the bar-odd analogue of the 2026-06-13 H1 location refutation. Post-processing only; no fit; not wired.",
   "parameters": {
@@ -46,67 +53,67 @@
         "A": 6,
         "source": "triplet",
         "delta_T3": 2,
-        "b_total": -1.727,
-        "b_pred_framework": 1.3261,
-        "b_AME_experimental": -0.4009
+        "b_total": -1.69,
+        "b_pred_framework": 1.2898,
+        "b_AME_experimental": -0.4002
       },
       {
         "A": 8,
         "source": "triplet",
         "delta_T3": 2,
-        "b_total": -1.795,
-        "b_pred_framework": 1.3652,
-        "b_AME_experimental": -0.4298
+        "b_total": -1.82,
+        "b_pred_framework": 1.3903,
+        "b_AME_experimental": -0.4297
       },
       {
         "A": 9,
         "source": "quartet(inner, same-T)",
         "delta_T3": 1,
-        "b_total": -1.8435,
-        "b_pred_framework": 1.3694,
+        "b_total": -1.8809,
+        "b_pred_framework": 1.4068,
         "b_AME_experimental": -0.4741
       },
       {
         "A": 10,
         "source": "triplet",
         "delta_T3": 2,
-        "b_total": -1.727,
-        "b_pred_framework": 1.3709,
-        "b_AME_experimental": -0.3561
+        "b_total": -1.771,
+        "b_pred_framework": 1.4144,
+        "b_AME_experimental": -0.3566
       },
       {
         "A": 12,
         "source": "triplet",
         "delta_T3": 2,
-        "b_total": -1.717,
-        "b_pred_framework": 1.3717,
-        "b_AME_experimental": -0.3453
+        "b_total": -1.766,
+        "b_pred_framework": 1.4203,
+        "b_AME_experimental": -0.3457
       }
     ],
     "framework_share_b_pred_over_b_total": [
-      -0.7679,
-      -0.7606,
-      -0.7428,
-      -0.7938,
-      -0.7989
+      -0.7632,
+      -0.7639,
+      -0.7479,
+      -0.7986,
+      -0.8042
     ],
     "location_verdict": "FRAMEWORK-SIDE: the interface asymmetry in B_pred carries |b| — κ is derivable from the canonical trace.",
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-imme-triplet.witness.json",
-        "sha256": "e7c8435c8a849d016f5a0a1e31e9626fa2107090220563c04c594406029623bb",
-        "size_bytes": 7601,
-        "commitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
-        "scriptCommitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
-        "computedAt": "2026-06-29T17:30:28.608480+00:00"
+        "sha256": "b0d58f64a6a5160927533e975346947954e6b4aebbe40d399278b11a1c480d7d",
+        "size_bytes": 7628,
+        "commitSha": "1e5d7568d07e46298511ea337ec2aa16069d11d5",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T15:51:40.994427+00:00"
       },
       {
         "path": "delta-lambda-imme-quartet.witness.json",
-        "sha256": "52ab9680ccfb1d15795a0280619af81a6cb1b09f963ed8b431dd19796e9a2e5c",
-        "size_bytes": 4018,
-        "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
-        "scriptCommitSha": "9a36dce996508a31051bd964096af2d749a67172",
-        "computedAt": "2026-07-02T16:45:44.847377+00:00"
+        "sha256": "be3b594d18bf22c5f078e0cc01f59f491ada308d5db80193b768e955433b5da0",
+        "size_bytes": 4059,
+        "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T14:48:04.354973+00:00"
       }
     ]
   },

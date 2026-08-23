@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-08T13:29:43.629556+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T19:21:14.748652+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lever1-binding-core-characterization",
   "scriptFile": "lever1_binding_core_characterization.py",
-  "scriptHash": "ef16bbd52abd",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "faf6783af8b0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,23 +23,34 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/lever1_binding_core_characterization.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/lever1_binding_core_characterization.py"
   },
   "description": "Lever-1 binding correction non-cyclotomic core R_m: palindromy, q=1/q0 values, irreducibility over Q, cross-m shared factors, degree law.",
   "data": {
     "upstream_witness_hashes": [
       {
         "path": "lever1-binding-correction-cyclotomic-structure.witness.json",
-        "sha256": "3099b828d10bee4b0b2c5fc8b8923d8e5d222cd87da62140c6d213847bd10638",
-        "size_bytes": 5168,
-        "commitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-02T12:18:13.344356+00:00"
+        "sha256": "b3b15d84b641c56c51acc428c96ef084f021e0a93392e15d818dd57400ba6715",
+        "size_bytes": 5389,
+        "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
+        "scriptCommitSha": "6a36fefb981b89f057038817750b47a58e5e02df",
+        "computedAt": "2026-08-21T22:05:39.893603+00:00"
       }
     ]
   },
   "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
   "bean": "z2bn",
+  "computationDetail": {
+    "script": "computations/substrate/lever1_binding_core_characterization.py",
+    "reads": "computations/substrate/lever1-binding-correction-cyclotomic-structure.witness.json"
+  },
   "params": {
     "q0": "1.10997858275138"
   },
@@ -170,7 +181,5 @@
     12
   ],
   "verdict": "The growing core R_m is UNIFORMLY PALINDROMIC (q↔1/q bar-symmetric); R_m(1)≠0 (all positive); each R_m is IRREDUCIBLE over ℚ; the cores share NO common factor across m (each order brings a genuinely new bar-symmetric core). This pins the binding correction's essential content: a (q−1)² × Φ_d cyclotomic tower (Stage 7) times a tower of bar-symmetric, q=1-nonvanishing cores that grow and do not nest — the genuine cyclotomic-completion (Habiro) residue, not reducible to a single finite element.",
-  "scope": "(a)/(b) per AGENTS.md: palindromy / irreducibility / no-nesting / R_m(1)≠0 are exact derived facts on the available m=6..11; 'core grows unboundedly / not a single finite element' remains a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data).",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "scope": "(a)/(b) per AGENTS.md: palindromy / irreducibility / no-nesting / R_m(1)≠0 are exact derived facts on the available m=6..11; 'core grows unboundedly / not a single finite element' remains a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
 }

@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T13:53:08.967272+00:00",
-  "commitSha": "cc2687b3d9d0850622e4a3acd12b1d1ef3463abd",
+  "computedAt": "2026-08-23T19:43:24.727769+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 838,
+  "durationMs": 2236,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "8e4de27ec5a0",
@@ -23,13 +23,28 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B for every L1 atom — incremental save.",
+  "invocation": {
+    "argv": [
+      "computations/rho_k_co_casimir_extended.py"
+    ],
+    "reproduce": "python3 -u computations/rho_k_co_casimir_extended.py"
+  },
+  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B (Δ_λ := 1/dim_q(λ), forced by thm:frobenius-codim-universal — zero free parameters, τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-bridge witness (n=2..12, sp.Expr in q) OR the numeric Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever covers the requested n. Per repo-owner directive 2026-05-19 'all nucleotides', DEFAULT_ATOMS extended to A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via --max-A (default 4). Generalises rho_k_h3a_co_casimir.py from D-only. Witness MeV scaling: rows use m_e (CAL-1) as the natural scale for ρ_K^LO and the co-Casimir correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · |tr_M|. Note: binding-via-interface-knot.witness.json uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 ≈ 0.65×.",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.510998950690000000000000000000000000000000000000000565443472",
-    "n_ok": 4
+    "atoms_attempted": [
+      "proton",
+      "neutron",
+      "deuteron",
+      "tritium",
+      "helium-3",
+      "helium-4"
+    ],
+    "n_ok": 6
   },
   "data": {
     "per_atom": [
@@ -39,7 +54,59 @@
         "N": 0,
         "A": 1,
         "n_strands": 3,
-        "status": "no_tr_M_in_L1_witness"
+        "abs_tr_M_at_q0": "1.14575969245730086968908159577411930594372806194352203945878",
+        "rho_K_LO": "1602.56350918861145518203490656786221063132392497234380818069",
+        "constituent_sum_MeV": "938.27208942999999999999999999999999999999999999999945922491",
+        "delta_rho_pred_co_casimir": "0.803857813421412357615943983593422563965983518286003398029424",
+        "rho_K_pred_co_casimir": "1603.36736700203286753965085055145563319528990849062981157872",
+        "M_pred_MeV": "938.742733710790728255131443056324856459893961250863670638777",
+        "M_codata_MeV": "938.27208942999999999999999999999999999999999999999945922491",
+        "err_MeV": "0.470644280790728255131443056324856459893961250864211413866528",
+        "err_ppm": "501.607461303303296674129926884120061823334941257298404389295",
+        "n_partitions": 3,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.505404226503930803187558703240472275660351197749811332764632",
+            "chi_lambda_at_q0": "1.3824944633925964",
+            "y_chi_product_signed": "0.698718544916902066343977506015898202098291709025140003569282",
+            "contribution_y_chi_Delta": "0.698718544916902066343977506015898202098291709025140003569282"
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "self_dual": true,
+            "dim_q_at_q0": "2.01089686670712229975249197809186281588924074848413692174479",
+            "Delta_lambda_co_casimir": "0.497290545604915555995839231664869631848190730328512985925225",
+            "y_lambda_at_q0": "0.247297886748034598406220648379763862169824401125094333617684",
+            "chi_lambda_at_q0": "1.8077030637786238",
+            "y_chi_product_signed": "0.447041147540401267009039666868579784992775836745039591143145",
+            "contribution_y_chi_Delta": "0.222309336168213699907035686108385727111749406928782256093252"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-0.7392235707764777",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          }
+        ],
+        "compute_wall_sec": "0.07",
+        "status": "ok"
       },
       {
         "label": "neutron",
@@ -47,7 +114,59 @@
         "N": 1,
         "A": 1,
         "n_strands": 3,
-        "status": "no_tr_M_in_L1_witness"
+        "abs_tr_M_at_q0": "0.987743688115809571634020165501294982055048759062790056921782",
+        "rho_K_LO": "1861.49877152990668044874792512775916797561229307521433454266",
+        "constituent_sum_MeV": "939.565421939999999999999999999999999999999999999999573525322",
+        "delta_rho_pred_co_casimir": "0.7859234648818124472527085409543166339509578690735779631847",
+        "rho_K_pred_co_casimir": "1862.28469499478849289600063366871348460956325094428791250584",
+        "M_pred_MeV": "939.962105796679280858120110191659697298018585460356761809805",
+        "M_codata_MeV": "939.565421939999999999999999999999999999999999999999573525322",
+        "err_MeV": "0.396683856679280858120110191659697298018585460357188284482896",
+        "err_ppm": "422.199292796678521964499139451693494086127692768961995821874",
+        "n_partitions": 3,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.505404226503930803187558703240472275660351197749811332764632",
+            "chi_lambda_at_q0": "1.1221068216024748",
+            "y_chi_product_signed": "0.567117530226783032079907599729129873967603578423961127862886",
+            "contribution_y_chi_Delta": "0.567117530226783032079907599729129873967603578423961127862886"
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "self_dual": true,
+            "dim_q_at_q0": "2.01089686670712229975249197809186281588924074848413692174479",
+            "Delta_lambda_co_casimir": "0.497290545604915555995839231664869631848190730328512985925225",
+            "y_lambda_at_q0": "0.247297886748034598406220648379763862169824401125094333617684",
+            "chi_lambda_at_q0": "1.7008886061270454",
+            "y_chi_product_signed": "0.420626157889028500095533607139537624267560876894052502874463",
+            "contribution_y_chi_Delta": "0.209173411552334338498875792996700104817602878449179981902062"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-0.9107622145530778",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          }
+        ],
+        "compute_wall_sec": "0.02",
+        "status": "ok"
       },
       {
         "label": "deuteron",
@@ -55,15 +174,15 @@
         "N": 1,
         "A": 2,
         "n_strands": 6,
-        "abs_tr_M_at_q0": "0.575090958682446712091773040231153383121357773890000053489481",
-        "rho_K_LO": "6390.00888461959536826091935509544276244219090849430380471949",
+        "abs_tr_M_at_q0": "0.575172243917774294137965748280864709755960556179999345494153",
+        "rho_K_LO": "6389.10582752422221533139786833105800534068343438146126975443",
         "constituent_sum_MeV": "1877.83751136999999999999999999999999999999999999999903275023",
-        "delta_rho_pred_co_casimir": "0.431758505540321900251565517799306555720480586200369965927082",
-        "rho_K_pred_co_casimir": "6390.44064312513569016117092061324206899791138908050417468542",
+        "delta_rho_pred_co_casimir": "0.43169748800670713943199607853392537717456753706235281620922",
+        "rho_K_pred_co_casimir": "6389.53752501222892247082986440959193071785800191852362257064",
         "M_pred_MeV": "1877.96439262043271119797551873652556043949264668934747006216",
         "M_codata_MeV": "1877.83751136999999999999999999999999999999999999999903275023",
-        "err_MeV": "0.126881250432711197975518736525560439492646689348437311927889",
-        "err_ppm": "67.5677472968059862532485759955928723453204714370352157967273",
+        "err_MeV": "0.126881250432711197975518736525560439492646689348437311928049",
+        "err_ppm": "67.5677472968059862532485759955928723453204714370352157968121",
         "n_partitions": 11,
         "per_lambda": [
           {
@@ -232,15 +351,15 @@
         "N": 2,
         "A": 3,
         "n_strands": 9,
-        "abs_tr_M_at_q0": "0.229310147182826882258918179177713169271845436208713791256341",
-        "rho_K_LO": "24043.9425171331597201484142218204685401188048029343853506921",
+        "abs_tr_M_at_q0": "0.229310102104556507332090810268822375141122395452654441392918",
+        "rho_K_LO": "24043.947243742810664917906244415941561268696170116257688073",
         "constituent_sum_MeV": "2817.40293330999999999999999999999999999999999999999860627555",
-        "delta_rho_pred_co_casimir": "0.194214517557951506501196253378852106124952785211273014318464",
-        "rho_K_pred_co_casimir": "24044.1367316507176716549154180738473922249297557195966237065",
+        "delta_rho_pred_co_casimir": "0.19421455573705680043821456823484701639806147367897255352238",
+        "rho_K_pred_co_casimir": "24044.1414582985477217183444589841764082850942315899366606265",
         "M_pred_MeV": "2817.42569083202739841074736354622219534959894321637084840445",
         "M_codata_MeV": "2817.40293330999999999999999999999999999999999999999860627555",
-        "err_MeV": "0.0227575220273984107473635462221953495989432163722421288987226",
-        "err_ppm": "8.07748219409353162166050439739518551702689977357377913494885",
+        "err_MeV": "0.0227575220273984107473635462221953495989432163722421288984039",
+        "err_ppm": "8.07748219409353162166050439739518551702689977357377913483576",
         "n_partitions": 30,
         "per_lambda": [
           {
@@ -702,7 +821,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "0.43",
+        "compute_wall_sec": "0.35",
         "status": "ok"
       },
       {
@@ -711,15 +830,15 @@
         "N": 1,
         "A": 3,
         "n_strands": 9,
-        "abs_tr_M_at_q0": "0.403767138483831240377191090408085854220080958322842091263489",
-        "rho_K_LO": "13648.9290078696131655830673586036726399009995488837711249348",
+        "abs_tr_M_at_q0": "0.403767036851428170368670253333240521653469699944352047412313",
+        "rho_K_LO": "13648.9324434483697151580869086475672131527966770149737973401",
         "constituent_sum_MeV": "2816.10960079999999999999999999999999999999999999999849197514",
-        "delta_rho_pred_co_casimir": "0.174318825531524186573548604505904237358195646979603352009295",
-        "rho_K_pred_co_casimir": "13649.1033266951446897696409072081785441383577445307507282868",
+        "delta_rho_pred_co_casimir": "0.174318869409403067581299639173480561632383476182379183687978",
+        "rho_K_pred_co_casimir": "13649.1067623177791182256682082867406937144290604911561765238",
         "M_pred_MeV": "2816.14556705917655992482154108098522434976995718982382633237",
         "M_codata_MeV": "2816.10960079999999999999999999999999999999999999999849197514",
-        "err_MeV": "0.0359662591765599248215410809852243497699571898253343572305272",
-        "err_ppm": "12.7716120020125052021878256526216484073843827312072194581737",
+        "err_MeV": "0.0359662591765599248215410809852243497699571898253343572308458",
+        "err_ppm": "12.7716120020125052021878256526216484073843827312072194582869",
         "n_partitions": 30,
         "per_lambda": [
           {
@@ -1181,7 +1300,7 @@
             "contribution_y_chi_Delta": "0.0"
           }
         ],
-        "compute_wall_sec": "0.19",
+        "compute_wall_sec": "0.23",
         "status": "ok"
       },
       {
@@ -2449,17 +2568,20 @@
           }
         ],
         "compute_wall_sec": "733.73",
-        "status": "ok"
+        "status": "ok",
+        "not_recomputed_this_run": "skip_insufficient_memory",
+        "not_recomputed_required_bytes": 15889720000,
+        "not_recomputed_available_bytes": 15734255616
       }
     ],
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "2ec45ffa6440582b7b4d82d67f217085b79f17a958ba8bdbf9c2453d2617dce0",
-        "size_bytes": 65331,
-        "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
-        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-16T12:46:35.532141+00:00"
+        "sha256": "49bbb87abb59763acaf6e3870ddb0eb6b54d64b41b3750ae710bf40c2f9519f6",
+        "size_bytes": 72808,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
+        "computedAt": "2026-08-23T19:42:36.593762+00:00"
       },
       {
         "path": "y-lambda-wenzl-bridge-symbolic-witness.json",
@@ -2471,11 +2593,11 @@
       },
       {
         "path": "rho-k-h3a-refinement.witness.json",
-        "sha256": "09aac30a867e85092dcdc668d3b5f1eaeee09f8ae1cf9b142c2e95c9e95fcfcc",
-        "size_bytes": 11370,
-        "commitSha": "3627e611d7be8fe197fbcdd1359fb50f8ec401a7",
-        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-        "computedAt": "2026-08-10T16:58:00.812491+00:00"
+        "sha256": "c6a8c335f39b07f5377c345c7f0d8c8ea8a1c5e742280b05dba15e8c39b14334",
+        "size_bytes": 11271,
+        "commitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
+        "scriptCommitSha": "05a3178ab90f8022188353adebe9d784dd7572dd",
+        "computedAt": "2026-08-16T20:46:47.833494+00:00"
       },
       {
         "path": "rho-k-h3a-co-casimir.witness.json",

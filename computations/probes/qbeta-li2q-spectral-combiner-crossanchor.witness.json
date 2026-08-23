@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:31:33.099457+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-23T19:20:53.930803+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "cross_anchor_completion_emitted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 80,
+  "durationMs": 71,
   "computation": "qbeta-li2q-spectral-combiner-crossanchor",
   "scriptFile": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
   "scriptHash": "9f0edb84d85e",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,16 +28,25 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py"
   },
   "description": "Cross-anchor completion of PR #1609 Li_2^q × spectral combiner deferred test. Evaluates candidate at BOTH q_proton and q_muon using symbolic χ_λ(q) from upstream witness. Tests structural vs anchor-precision-limited refutation.",
   "auditOnly": "docs/audits/2026-06-01-qbeta-li2q-spectral-crossanchor-completion.md",
   "data": {
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "q_muon": "1.109978595554180575281594079609509377993282279958686225466751689153746",
-    "q_anchor_gap_abs": "0.000000000003154144618169140873715648662926128821467461141229456991184830581582313",
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "q_anchor_gap_abs": "0.00000001289135823909012603376923287282556643915543282090123152981729611559406",
     "symbolic_chi_lambda_q_forms": {
       "(3)": "-(q**2 - 1)*(q**2 + 1)**2/(4*q)",
       "(2,1)": "(q**2 - 1)*(-q**4 - 1)/(4*q**3)",
@@ -45,51 +54,51 @@
     },
     "at_q_proton": {
       "chi_lambda": {
-        "(3)": "-0.2603876773188875409678299384021051585713694975475",
-        "(2,1)": "-0.10681447001204184831103763732191695758011166823619",
-        "(1,1,1)": "-0.17153865926605784593979774906009395759912865147583"
+        "(3)": "-0.26038764179012080207328534278800868339582395384801",
+        "(2,1)": "-0.10681445765157804962363125892114490752183755404506",
+        "(1,1,1)": "-0.17153864377659950567184053169442511515877870210905"
       },
       "mu_lambda": {
-        "(3)": "0.4770363291742378766072748449926170758569923911811230082305033275175094",
-        "(2,1)": "0.2025154089202863946777014091872152478841691536226257760352169447687684",
-        "(1,1,1)": "0.3204482619054757287150237458201676762588384551962512157342797277137221"
+        "(3)": "0.4770363211999476390494968075766741868494998312300526228380806740061073",
+        "(2,1)": "0.2025154087811513006645526973657397989076630271362427652112811043793274",
+        "(1,1,1)": "0.3204482700189010602859504950575860142428371416337046119506382216145653"
       },
-      "c3_candidate": "-1.797484591079713605322298590812784752115830846377374223964783055231232",
+      "c3_candidate": "-1.797484591218848699335447302634260201092336972863757234788718895620673",
       "c3_empirical": "-2.0693",
-      "err_pct": 13.135621172390973
+      "err_pct": 13.135621165667196
     },
     "at_q_muon": {
       "chi_lambda": {
-        "(3)": "-0.26038767731013669965830978226775450644984851937734",
-        "(2,1)": "-0.10681447000899742923063709690268705604954083369844",
-        "(1,1,1)": "-0.17153865926224274628405587306326019762649288609035"
+        "(3)": "-0.26038767755583283085971669733979481417635573593811",
+        "(2,1)": "-0.10681447009447515225950632218692177720363067120317",
+        "(1,1,1)": "-0.17153865936935875857650330951083230390747525350938"
       },
       "mu_lambda": {
-        "(3)": "0.4770363291722737851811450563037655354621262676026664978873240173413867",
-        "(2,1)": "0.2025154089202521252922874635671856722762858397865447285822429921929981",
-        "(1,1,1)": "0.3204482619074740895265674801290487922615878926107887735304329904656153"
+        "(3)": "0.4770363292274193017722426824229348188011308024836427565524960868824642",
+        "(2,1)": "0.2025154089212143019689240597921567771485878578469199101183126804581979",
+        "(1,1,1)": "0.3204482618513663962588332577849084040502813396694373333291912326593379"
       },
-      "c3_candidate": "-1.797484591079747874707712536432814327723714160213455271417757007807002",
+      "c3_candidate": "-1.797484591078785698031075940207843222851412142153080089881687319541802",
       "c3_empirical": "-2.0097",
-      "err_pct": 10.559556596519487
+      "err_pct": 10.559556596567363
     },
     "cross_anchor_analysis": {
-      "candidate_swing_abs": "0.00000000000003426938541394562002957560788331383608104745297395257577036820049987336",
-      "candidate_swing_pct": 1.9065190090648107e-12,
+      "candidate_swing_abs": "-0.0000000001400630013043713624264169782409248307106771449070315760788704464032485",
+      "candidate_swing_pct": -7.792167008752861e-09,
       "empirical_swing_abs": "-0.05959999999999999999999999999999999999999999999999999999999999999999999",
       "empirical_swing_pct": -2.8802010341661433,
-      "swing_ratio_candidate_to_empirical": -6.61939561318425e-13,
+      "swing_ratio_candidate_to_empirical": 2.7054246965121303e-09,
       "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent ⟹ structural refutation strong (13% mismatch is real). If swing_ratio ≈ 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
-      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 1.91e-12% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
+      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 7.79e-09% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
     },
     "upstream_witness_hashes": [
       {
         "path": "qbeta-per-block-paper-closed-forms.witness.json",
-        "sha256": "ade7228b078f970780b54f587449fbd8764609ae533e6e7219a4d802163dce00",
-        "size_bytes": 2924,
-        "commitSha": "18e46c1c0c0ad4b7f0327c7f4783a0ec73fb8448",
-        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
-        "computedAt": "2026-05-31T04:44:06.333077+00:00"
+        "sha256": "a3f5bfed724755876ad0001296e3422ff35eb056e12b622e99197d7d91009c80",
+        "size_bytes": 3195,
+        "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-11T11:02:39.299498+00:00"
       }
     ]
   }

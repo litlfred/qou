@@ -51,6 +51,16 @@ assertions).
 from __future__ import annotations
 
 
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+from pathlib import Path as _QPath  # noqa: E402
+_QOU_REPO_ROOT = next(
+    (_a for _a in _QPath(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    _QPath(__file__).resolve().parent,
+)
 def main() -> None:
     import sys
     from pathlib import Path
@@ -61,7 +71,7 @@ def main() -> None:
     import json
     import sympy as sp
 
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]
+    sys.path.insert(0, str(_QOU_REPO_ROOT
                            / "tools" / "qou-substrate" / "python"))
     from qou_substrate.witness import WitnessBuilder
 

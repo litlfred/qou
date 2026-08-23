@@ -32,6 +32,9 @@ Limitations:
     `target=`) are filtered out — they're closure tests, not
     inputs.
   - String literals in docstrings are filtered out.
+  - Self-test fixture pairs (`("<literal>", True)`) are
+    filtered out — a detector's own example of a bad value
+    is not a use of it.
 
 Emits `hardcoded-literal-audit.witness.json`.
 
@@ -105,6 +108,24 @@ ASSERTION_KW_RX = re.compile(
     r'\b(expected|tolerance|target|computed|reference|atol|rtol)\s*='
 )
 
+# A detector's own test corpus is not a registry bypass.  The precision
+# audits carry the canonical example of the defect they detect as a
+# self-test case — a bare `("<literal>", <expected bool>)` pair in a
+# `cases = [...]` list.  Harvesting those made this audit record the very
+# string `witness_float64_padding_audit.py` exists to document (it matches
+# AME_B_TRITIUM_MEV_VALIDATION at rel_err 1.8e-16), and the float64-padding
+# ratchet then read our own witness back as NEW fake precision — one audit's
+# ILLUSTRATION of a bug read as an INSTANCE of it.
+#
+# Deliberately shaped so it cannot widen into cover for ordinary sloppiness:
+# the ENTIRE line (after inline comments are stripped) must be exactly a
+# quoted numeric paired with a bool.  A literal that is actually *used* —
+# `m_e = 0.51099895`, `mp.mpf("0.51099895")`, or any tuple bound to a name —
+# cannot take this form, so no real hardcoding can hide behind it.
+FIXTURE_CASE_RX = re.compile(
+    r'^\s*\(\s*["\'][-+\d.eE]+["\']\s*,\s*(?:True|False)\s*\)\s*,?\s*$'
+)
+
 
 # Anchor-banner markers (shared with the I11 audit) — scripts that
 # explicitly acknowledge CLASS-A status / Workplan-0b have their
@@ -166,6 +187,10 @@ def _classify_script(path: Path,
         code_part = re.sub(r"#.*$", "", line)
         # Filter out assertion-style usage (closure tests are OK).
         if ASSERTION_KW_RX.search(code_part):
+            continue
+        # Filter out self-test fixture pairs — a detector documenting the
+        # bad value it catches, not a script consuming it.
+        if FIXTURE_CASE_RX.match(code_part):
             continue
         for m in NUMERICAL_LITERAL_RX.finditer(code_part):
             literal_str = m.group(1)

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T04:16:50.783442+00:00",
-  "commitSha": "13a5ebfaddf4b37a3d3aa9253acdd71db6287a4e",
+  "computedAt": "2026-08-23T20:18:54.237707+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "s1_base_p_rewrite_exact",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 276610,
+  "durationMs": 904507,
   "computation": "ksel2id-sw-identification",
   "scriptFile": "ksel2id_sw_identification_probe.py",
-  "scriptHash": "ef7a4644fbf7",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "2d91f6c06744",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,7 +64,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ksel2id_sw_identification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ksel2id_sw_identification_probe.py"
   },
   "description": "KSel-2-ID (bean qou-0ms0; audit-only, scope-(a), NO FIT, nothing wired): literature identification of the balanced binding-kernel moment family m_k = q^(-k(k-1)/4)[k]_q! against the classical Stieltjes-Wigert / q-Laguerre indeterminate families. S1: exact base-p rewrite (Gaussian factor at base qtilde x Pochhammer factor at base q). S2-S3: SW-proper (log-normal) moment sequences are log-quadratic, a property invariant under every affine-in-log map s -> c s^a; the balanced family is exactly NOT log-quadratic (Delta^2 ln m_k = ln qtilde + ln((1-p^(k+2))/(1-p^(k+1))), strictly increasing) => NO-MATCH to SW-proper, scope-(b) with cited invariant. S4: the SW structure IS present as an exact tensor factor: balanced = SW(t = 1/qtilde, scaled) (*) Jackson (determinate, compact support) — the indeterminacy core is Stieltjes' 1894 log-normal example at base sqrt(q), = the ksel3 Gaussian. S5: the ONE-SIDED normalizer [k]_q! is EXACTLY the alpha=0 q-Laguerre (Moak/generalized-SW) moment family under s -> (p/(1-p)) s (weight functional equation derivation + quadrature cross-check); the balanced member sits exactly one SW-Gaussian convolution away — the bar-symmetric half-dressed point. Nothing here proves or refutes any conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md",
@@ -124,11 +131,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

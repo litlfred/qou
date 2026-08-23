@@ -82,7 +82,16 @@ Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 
 # Add tools/pyhecke to sys.path
-TOOLS = HERE.parent.parent / "tools" / "pyhecke" / "python"
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
+TOOLS = _QOU_REPO_ROOT / "tools" / "pyhecke" / "python"
 sys.path.insert(0, str(TOOLS))
 
 from pyhecke.gram import (  # noqa: E402

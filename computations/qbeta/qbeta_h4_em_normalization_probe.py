@@ -3,7 +3,15 @@ from pathlib import Path
 import mpmath as mp
 
 # Add repo tools to path
-repo_root = Path(__file__).resolve().parent.parent.parent.parent
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+repo_root = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
 sys.path.insert(0, str(repo_root / "tools" / "qou-substrate" / "python"))
 
 from qou_substrate.constants import q_at, vol_4_1_at, M_P_MEV, M_N_MEV, M_E_MEV

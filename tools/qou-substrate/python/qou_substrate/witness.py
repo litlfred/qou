@@ -2060,8 +2060,24 @@ if __name__ == "__main__":
         sys.exit(1 if result["stale"] else 0)
 
     elif args.command == "check-all":
-        comp_dir = Path(__file__).resolve().parent
-        witnesses = sorted(comp_dir.glob("*.witness.json"))
+        # `computations/` -- located, not assumed. This CLI was promoted out of
+        # computations/witness_base.py, and `Path(__file__).parent` followed it
+        # into the installed package, so `check-all` has been globbing the
+        # package directory and reporting nothing. Search upward for the real
+        # tree; fall back to this directory when running from an installed
+        # package with no repo around it, which is the only case where globbing
+        # beside the module is the right answer. Bean qou-tnrz.
+        comp_dir = None
+        for _anc in Path(__file__).resolve().parents:
+            _cand = _anc / "computations"
+            if _cand.is_dir():
+                comp_dir = _cand
+                break
+        if comp_dir is None:
+            comp_dir = Path(__file__).resolve().parent
+        witnesses = sorted(comp_dir.rglob("*.witness.json"))
+        witnesses = [w for w in witnesses if "_deprecated" not in w.parts]
+        print(f"  scanning {comp_dir} — {len(witnesses)} witness(es)")
         stale_count = 0
         for wf in witnesses:
             result = check_witness_staleness(str(wf))

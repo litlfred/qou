@@ -18,7 +18,16 @@ import time
 from pathlib import Path
 from datetime import datetime, timezone
 
-sys.path.insert(0, str(Path(__file__).parent / "../../tools/pyhecke/python"))
+# SEARCH upward for the landmark rather than counting `..`s: this file is flat
+# in computations/, so `../..` left the repo and this inserted a path that does
+# not exist -- harmless only because `_path_bridge` (above) already puts
+# tools/pyhecke/python on sys.path. Bean qou-rug0.
+for _anc in Path(__file__).resolve().parents:
+    _cand = _anc / "tools" / "pyhecke" / "python"
+    if _cand.is_dir():
+        if str(_cand) not in sys.path:
+            sys.path.insert(0, str(_cand))
+        break
 import pyhecke
 
 sys.path.insert(0, str(Path(__file__).parent))

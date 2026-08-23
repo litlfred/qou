@@ -1,17 +1,17 @@
 {
   "allPassed": true,
   "assertions": [],
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "computation": "binding-multibody-scaling",
-  "computedAt": "2026-08-08T13:00:17.135824+00:00",
+  "computedAt": "2026-08-23T19:35:55.339150+00:00",
   "contentBlock": "alg:delta-lambda-closure",
   "data": {
     "rows": [
       {
         "A": 2,
-        "B_MeV": 2.224566,
-        "B_per_A": 1.112283,
-        "B_per_pair": 2.224566,
+        "B_MeV": 2.2245662,
+        "B_per_A": 1.1122831,
+        "B_per_pair": 2.2245662,
         "B_per_triple": null,
         "cap_ratio_B_over_B2": 1.0,
         "exceeds_pairwise_cap": false,
@@ -20,44 +20,44 @@
       },
       {
         "A": 3,
-        "B_MeV": 8.481798,
-        "B_per_A": 2.827266,
-        "B_per_pair": 2.827266,
-        "B_per_triple": 8.481798,
-        "cap_ratio_B_over_B2": 3.812787752757167,
+        "B_MeV": 8.4817962,
+        "B_per_A": 2.8272654,
+        "B_per_pair": 2.8272654,
+        "B_per_triple": 8.4817962,
+        "cap_ratio_B_over_B2": 3.81278660082132,
         "exceeds_pairwise_cap": true,
         "iso": "3H",
         "pairwise_cap_C_A_2": 3
       },
       {
         "A": 3,
-        "B_MeV": 7.718043,
-        "B_per_A": 2.5726809999999998,
-        "B_per_pair": 2.5726809999999998,
-        "B_per_triple": 7.718043,
-        "cap_ratio_B_over_B2": 3.469460110421539,
+        "B_MeV": 7.71804132,
+        "B_per_A": 2.57268044,
+        "B_per_pair": 2.57268044,
+        "B_per_triple": 7.71804132,
+        "cap_ratio_B_over_B2": 3.469459043295722,
         "exceeds_pairwise_cap": true,
         "iso": "3He",
         "pairwise_cap_C_A_2": 3
       },
       {
         "A": 4,
-        "B_MeV": 28.295673,
-        "B_per_A": 7.07391825,
-        "B_per_pair": 4.7159455,
-        "B_per_triple": 7.07391825,
-        "cap_ratio_B_over_B2": 12.719637448383192,
+        "B_MeV": 28.2956624,
+        "B_per_A": 7.0739156,
+        "B_per_pair": 4.715943733333334,
+        "B_per_triple": 7.0739156,
+        "cap_ratio_B_over_B2": 12.719631539848084,
         "exceeds_pairwise_cap": true,
         "iso": "4He",
         "pairwise_cap_C_A_2": 6
       },
       {
         "A": 6,
-        "B_MeV": 31.99405,
-        "B_per_A": 5.332341666666667,
-        "B_per_pair": 2.1329366666666667,
-        "B_per_triple": 1.5997025,
-        "cap_ratio_B_over_B2": 14.3821536425532,
+        "B_MeV": 31.9939872,
+        "B_per_A": 5.3323312,
+        "B_per_pair": 2.13293248,
+        "B_per_triple": 1.59969936,
+        "cap_ratio_B_over_B2": 14.382124119300203,
         "exceeds_pairwise_cap": false,
         "iso": "6Li",
         "pairwise_cap_C_A_2": 15
@@ -68,7 +68,7 @@
         "B_per_A": 5.6064401,
         "B_per_pair": 1.8688133666666669,
         "B_per_triple": 1.1212880200000002,
-        "cap_ratio_B_over_B2": 17.641679635488455,
+        "cap_ratio_B_over_B2": 17.641678049410263,
         "exceeds_pairwise_cap": false,
         "iso": "7Li",
         "pairwise_cap_C_A_2": 21
@@ -79,29 +79,29 @@
         "B_per_A": 6.4626693,
         "B_per_pair": 1.615667325,
         "B_per_triple": 0.6924288535714286,
-        "cap_ratio_B_over_B2": 26.14623423175577,
+        "cap_ratio_B_over_B2": 26.14623188107416,
         "exceeds_pairwise_cap": false,
         "iso": "9Be",
         "pairwise_cap_C_A_2": 36
       },
       {
         "A": 12,
-        "B_MeV": 92.16173,
-        "B_per_A": 7.680144166666667,
-        "B_per_pair": 1.3963898484848485,
-        "B_per_triple": 0.4189169545454546,
-        "cap_ratio_B_over_B2": 41.42908324590056,
+        "B_MeV": 92.1617352,
+        "B_per_A": 7.680144599999999,
+        "B_per_pair": 1.3963899272727271,
+        "B_per_triple": 0.41891697818181817,
+        "cap_ratio_B_over_B2": 41.429081858746216,
         "exceeds_pairwise_cap": false,
         "iso": "12C",
         "pairwise_cap_C_A_2": 66
       },
       {
         "A": 16,
-        "B_MeV": 127.61931,
-        "B_per_A": 7.976206875,
-        "B_per_pair": 1.06349425,
-        "B_per_triple": 0.227891625,
-        "cap_ratio_B_over_B2": 57.36818327709765,
+        "B_MeV": 127.6193152,
+        "B_per_A": 7.9762072,
+        "B_per_pair": 1.0634942933333333,
+        "B_per_triple": 0.2278916342857143,
+        "cap_ratio_B_over_B2": 57.36818045693583,
         "exceeds_pairwise_cap": false,
         "iso": "16O",
         "pairwise_cap_C_A_2": 120
@@ -109,17 +109,17 @@
     ],
     "upstream_witness_hashes": [
       {
-        "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
-        "computedAt": "2026-07-18T23:59:56.849702+00:00",
+        "commitSha": "bc787ae9a14e34547a52806b232217dc50dc779b",
+        "computedAt": "2026-08-19T17:36:26.225964+00:00",
         "path": "ame-2020-binding-energies.witness.json",
         "scriptCommitSha": "unknown",
-        "sha256": "804f9ce72c6230d8bea6dab0e35fba853d1b29de25b9caeb02f34f8365adb8c8",
-        "size_bytes": 3071
+        "sha256": "e2b7d19c294df4b20ef322f1a96650fbf34bf5d28cc75e7bc02409ed82199d94",
+        "size_bytes": 3246
       }
     ]
   },
   "description": "0-fit multi-body scaling test for the missing extensive binding term. Which combinatorial count (A, C(A,2), C(A,3)) does AME B(A) track with a constant ratio? Complements the proved pairwise cap \u03c1_A \u2264 C(A,2).",
-  "durationMs": 6,
+  "durationMs": 4,
   "engine": "exact",
   "engineVersion": "python 3.11.15",
   "environment": {
@@ -127,14 +127,21 @@
     "mpmath": "1.4.1",
     "numpy": "2.4.6",
     "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "0aaae20308e9cca7",
     "python": "3.11.15",
     "scipy": "1.17.1",
     "sympy": "1.14.0"
   },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/binding_multibody_scaling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/binding_multibody_scaling_probe.py"
+  },
   "parameters": {
-    "cv_B_per_A_satregime": 0.1476410363164322,
-    "cv_B_per_pair_satregime": 0.5646005971645007,
-    "cv_B_per_triple_satregime": 1.2809476548456658,
+    "cv_B_per_A_satregime": 0.14764143561957743,
+    "cv_B_per_pair_satregime": 0.5646005511609865,
+    "cv_B_per_triple_satregime": 1.2809478232094067,
     "most_constant_scaling_A_ge_4": "per_A",
     "no_fit": true
   },

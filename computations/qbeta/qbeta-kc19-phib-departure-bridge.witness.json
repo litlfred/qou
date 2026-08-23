@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:25:23.107795+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T19:21:06.077047+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "ladder_departure_prefactor_identity",
@@ -14,9 +14,9 @@
     },
     {
       "name": "anchors_reproduced_vs_saddle_witness",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.5,
       "source": "S(anchor) from c3_target_at matches the committed saddle witness S_target to 1e-6"
     },
@@ -29,8 +29,8 @@
       "source": "vol_deficit rel spread < 1e-5 across anchors while S(p)*S(mu) < 0: even anchor-blind handles cannot source the swing through the anchor-rigid affine bridge"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 4,
   "computation": "qbeta-kc19-phib-departure-bridge",
   "scriptFile": "qbeta_kc19_phib_departure_bridge_probe.py",
   "scriptHash": "e6222b5d651a",
@@ -48,7 +48,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_kc19_phib_departure_bridge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_kc19_phib_departure_bridge_probe.py"
   },
   "description": "Bridge probe KC19 x Phi_b: push the two anchor-blind geometric handles of the saddle witness (vol_deficit ~0.0094, finite_b t*kappa1 ~0.0578) through the exact affine crossing-weight departure w(u)-1 = -(h-2)/2 * sum c_k u^k (Lean ladder_departure; prefactor identity (h-2)/2=(q^2-2q-1)/(2q) verified to 1e-55). RESULT: |S|/handle is O(1) at both anchors (scale match, quantified per anchor) but the handles are anchor-blind (~2e-7 rel) while S sign-flips — under KC19 anchor-rigidity a bar-even anchor-blind handle cannot source the swing (scope-(a): these two handles alone, at real meridian, do not close S). Named fit-free pipeline for any future bar-odd geometric S_geo: c3_geo = -Vol(4_1)+S_geo, dw3_geo = -(h-2)/2*c3_geo*u^3, compare per anchor. Candidates: Q(sqrt-3) odd channel, kappa1(u) at meridian, deformed rungs (#3691). No c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -62,26 +69,26 @@
       "dw3_S_part": "-2.183216847e-8"
     },
     "required_departure_muon": {
-      "c3": "-2.02020023502",
-      "S": "0.009682977798",
-      "prefactor_neg_h_minus_2_over_2": "0.895469839005",
-      "u": "0.00851723634004",
-      "dw3": "-1.117741755e-6",
-      "dw3_S_part": "5.357423692e-9"
+      "c3": "-2.01986031187",
+      "S": "0.01002290095",
+      "prefactor_neg_h_minus_2_over_2": "0.895469838925",
+      "u": "0.00851723635242",
+      "dw3": "-1.117553687e-6",
+      "dw3_S_part": "5.545497298e-9"
     },
     "handle_vol_deficit": {
       "proton": "0.00940251967967",
-      "muon": "0.00940252175269",
-      "rel_spread": "2.20475e-7",
+      "muon": "0.00940252176703",
+      "rel_spread": "2.22e-7",
       "S_over_handle_proton": "-4.1966798",
-      "S_over_handle_muon": "1.0298277"
+      "S_over_handle_muon": "1.0659801"
     },
     "handle_finite_b_im": {
       "proton": "0.0578273459437",
-      "muon": "0.0578273523362",
-      "rel_spread": "1.10544e-7",
+      "muon": "0.0578273523804",
+      "rel_spread": "1.11309e-7",
       "S_over_handle_proton": "-0.68236513",
-      "S_over_handle_muon": "0.16744633"
+      "S_over_handle_muon": "0.17332457"
     },
     "verdict": {
       "scale": "both handles O(1) vs |S| at both anchors (capstone scale-match, quantified)",
@@ -91,11 +98,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-c3-phib-saddle-state-integral.witness.json",
-        "sha256": "b3aa04233c55948e1442bb55d1b9e065e19973b82416eee16fe2a698a4e692d7",
-        "size_bytes": 3166,
-        "commitSha": "c8aedd7efc3c4594ed42cbb1c728fbc6965c614b",
-        "scriptCommitSha": "8fabb54497f162569c0561272437d1826891a323",
-        "computedAt": "2026-07-12T11:10:46.668730+00:00"
+        "sha256": "ac9af6efd21cab82582b177f4b29d932a308edd92c01ceae4957ef2c2fe2e80e",
+        "size_bytes": 3480,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T09:46:13.279962+00:00"
       }
     ]
   }

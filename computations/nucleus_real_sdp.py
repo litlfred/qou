@@ -48,7 +48,16 @@ HERE = Path(__file__).parent
 import sys
 
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in _Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    _Path(__file__).resolve().parent,
+)
+sys.path.insert(0, str(_QOU_REPO_ROOT / "tools" / "pyhecke" / "python"))
 
 from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from murnaghan_nakayama import dim_specht  # noqa: E402

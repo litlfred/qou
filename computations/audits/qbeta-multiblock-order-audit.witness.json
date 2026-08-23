@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T08:54:01.979774+00:00",
-  "commitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "computedAt": "2026-08-23T19:35:50.465029+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "block_contributions_are_sqrt_u_order",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 806,
+  "durationMs": 686,
   "computation": "qbeta-multiblock-order-audit",
   "scriptFile": "qbeta_multiblock_order_audit.py",
   "scriptHash": "9b11a04bbb5a",
@@ -32,7 +32,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/qbeta_multiblock_order_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/qbeta_multiblock_order_audit.py"
   },
   "description": "Order audit of the H_3(q) per-Wedderburn-block Δtr_M contributions vs the Q_β ladder variable u = b·ℏ². Shows the per-block forms are O(√u) (ε¹ coefficients -2/-1/-2) while the ladder c_3 is the u³ (=ε⁶) coefficient — five ε-orders apart (ε¹ vs ε⁶) in two different objects, so the shared value -2 is an accidental coincidence, not a structural identity. This is the root cause of the four-session c_3 wire/un-wire flip-flop. Includes the q₀-independence diagnostic (per-block ε-coefficients are fixed rationals, anchor-invariant) locating the empirical c_3 swing entirely in the (open) categorical map f. Proposes no fitted form. Sub-attack of probe-qbeta-habiro-element-search.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -122,11 +129,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-per-block-paper-closed-forms.witness.json",
-        "sha256": "d45627bdcdf09fee7e55e7e5795cf05434ad842bcaa50b296620d1f432f330d3",
-        "size_bytes": 3191,
-        "commitSha": "53a910996c4fcd0f3ed9dfbb550be9a89fea2cdf",
-        "scriptCommitSha": "2228cc3d85583f6db342665c72c8181494a29ab6",
-        "computedAt": "2026-08-08T00:00:27.324582+00:00"
+        "sha256": "a3f5bfed724755876ad0001296e3422ff35eb056e12b622e99197d7d91009c80",
+        "size_bytes": 3195,
+        "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-11T11:02:39.299498+00:00"
       }
     ]
   }

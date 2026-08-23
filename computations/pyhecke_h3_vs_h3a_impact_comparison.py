@@ -29,11 +29,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-# Bootstrap pyhecke path (matches hecke_core.py pattern)
-_PYHECKE_PATH = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
-)
-if os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in sys.path:
+# Bootstrap pyhecke path. SEARCH upward for the landmark rather than counting
+# `..`s: hecke_core.py lives in computations/substrate/, so the `../..` copied
+# from it walked one level PAST the repo root from here, `isdir` was False and
+# this bootstrap never fired. Bean qou-rug0.
+_PYHECKE_PATH = None
+for _anc in Path(__file__).resolve().parents:
+    _cand = _anc / "tools" / "pyhecke" / "python"
+    if _cand.is_dir():
+        _PYHECKE_PATH = str(_cand)
+        break
+if _PYHECKE_PATH is not None and _PYHECKE_PATH not in sys.path:
     sys.path.insert(0, _PYHECKE_PATH)
 
 

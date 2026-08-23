@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:24:38.835296+00:00",
-  "commitSha": "b9b87e05051cb1a6607623dc2675a6e328778dca",
+  "computedAt": "2026-08-23T19:40:31.148602+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "323777215220",
-  "scriptCommitSha": "4fe2715ad3aab1fc1b03986991d98c2bbae8ad7c",
+  "scriptCommitSha": "dde3930f727335922558baa7f5ef7925afb27c0f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,10 +27,13 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -205,19 +208,19 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "5c8ccec32dcf28cc19c6ae339bf49f6a5509bf8527fd6ba583e74141d57de338",
-        "size_bytes": 5562,
-        "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+        "sha256": "0a4781756ba64ee5a4a23e8423e6d7fbaebd19b9cc939a57a522d656f0a6d3a6",
+        "size_bytes": 5781,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
         "scriptCommitSha": "fab11b31a6700c768c67e1412c61020addb65720",
-        "computedAt": "2026-08-08T13:04:48.908965+00:00"
+        "computedAt": "2026-08-23T19:35:41.415538+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "801f033a07287f27a73581cb0000ed997b17557256380838a755a7b007592d85",
-        "size_bytes": 11146,
-        "commitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
-        "scriptCommitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
-        "computedAt": "2026-08-22T10:40:01.373592+00:00"
+        "sha256": "8c810f773a83934900498a083263808be90496ee879ef7069e9d98b26b636077",
+        "size_bytes": 11476,
+        "commitSha": "ba28ebdb1dae72fb39af5ef536c9e08bed944835",
+        "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
+        "computedAt": "2026-08-22T21:18:55.791557+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
@@ -245,11 +248,11 @@
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
-        "sha256": "a70741b5e73deaef4e42c1ed3215c6293c144361c6bee1dc90aba88d5a516178",
-        "size_bytes": 4157,
-        "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
-        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
-        "computedAt": "2026-07-05T11:19:01.311438+00:00"
+        "sha256": "1e9f73feb2dcc65a935b4a06dd07531c2f8d83395c410c51c6d639cc9cbfd3e9",
+        "size_bytes": 5338,
+        "commitSha": "f711201aaf98029f41125cde266b860fc93742d2",
+        "scriptCommitSha": "230cdd113691715ea8cb58b69686d8438834a60c",
+        "computedAt": "2026-08-22T19:52:33.547735+00:00"
       }
     ]
   },

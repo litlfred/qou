@@ -1,11 +1,11 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:11:47.712553+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T19:10:47.395240+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "inter-knot-decoupling",
   "scriptFile": "probe_inter_knot_decoupling.py",
   "scriptHash": "071c89a4939a",
@@ -23,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_inter_knot_decoupling.py"
+    ],
+    "reproduce": "python3 -u computations/probe_inter_knot_decoupling.py"
   },
   "description": "Tests Mechanism 2 of prop:categorical-chain-convergence-mechanisms: the joint Markov trace of two unlinked braids factorises as τ_M(K_1) · τ_M(K_2) · z^k by Markov axiom M3 (disconnected-strand stabilisation). Confirms that the infinite product Q_β^cat over the base space converges because most inter-atomic-knot pairs are unlinked.",
   "parameters": {
@@ -43,11 +50,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

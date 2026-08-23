@@ -61,7 +61,15 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
-REPO_ROOT = HERE.parent.parent
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+REPO_ROOT = next(
+    (_a for _a in _Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    _Path(__file__).resolve().parent,
+)
 BINARY = REPO_ROOT / "tools" / "hecke-engine" / "target" / "release" / "dump-block-matrices"
 
 # Parsed PSD report (from the Rust binary; captured for the witness)

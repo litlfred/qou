@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:15:57.070349+00:00",
-  "commitSha": "35d18af5f783dc2e7ec449a94da4f9037c50d671",
+  "computedAt": "2026-08-23T19:43:03.887499+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 28,
   "computation": "canonical-isotope-witness-Z06",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "e56cabeee1ea",
@@ -188,10 +188,10 @@
         "err_ppm": "54103.4210011128792832033483330305154421597485295668792452141",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "11172.9430664955615159141918472031778802223001623399194712970",
+          "M_pred_MeV": "11172.9458883162543159141918472031778802223001623399194712970",
           "M_AME_MeV": "11177.9292446400000000000000000000000000000000000000040932909",
-          "err_MeV": "-4.98617814443848408580815279682211977769983766008462199393215",
-          "err_ppm": "-446.073511051202807089032151712655732803074629221606513626065",
+          "err_MeV": "-4.98335632374568408580815279682211977769983766008462199393215",
+          "err_ppm": "-445.821065304674834638196507683464990519886320560779255895059",
           "canonical_status": "canonical-recursive",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -566,11 +566,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
-        "size_bytes": 65295,
-        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
-        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-22T09:49:32.663084+00:00"
+        "sha256": "49bbb87abb59763acaf6e3870ddb0eb6b54d64b41b3750ae710bf40c2f9519f6",
+        "size_bytes": 72808,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
+        "computedAt": "2026-08-23T19:42:36.593762+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",

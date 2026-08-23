@@ -68,13 +68,22 @@ def hbar_q(q: mp.mpf) -> mp.mpf:
     return (q - 1) / q
 
 
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
 def main() -> None:
     import sys
     here = Path(__file__).resolve().parent
     sys.path.insert(0, str(here.parent))
     import _path_bridge as _pb  # noqa: F401
 
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]
+    sys.path.insert(0, str(_QOU_REPO_ROOT
                            / "tools" / "qou-substrate" / "python"))
     from qou_substrate.witness import WitnessBuilder
 

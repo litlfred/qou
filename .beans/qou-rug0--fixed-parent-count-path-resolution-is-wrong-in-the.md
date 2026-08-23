@@ -1,10 +1,11 @@
 ---
 # qou-rug0
 title: Fixed-.parent-count path resolution is wrong in the vendored layout — audit the remaining shims
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-23T10:32:58Z
-updated_at: 2026-08-23T10:32:58Z
+updated_at: 2026-08-23T19:22:03Z
 ---
 
 `_precision.py`, `q_parameter.py` and `witness_base.py` all carried the same

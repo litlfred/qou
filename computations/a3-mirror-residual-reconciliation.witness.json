@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T12:23:36.946542+00:00",
-  "commitSha": "35f9c02f7c360f87e7ae4e659f43551a2d720729",
+  "computedAt": "2026-08-23T19:35:49.091194+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "he3_bondcount_residual_pct",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "a3-mirror-residual-reconciliation",
   "scriptFile": "a3_mirror_residual_reconciliation.py",
-  "scriptHash": "a596af57467e",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "62b142b2838f",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/a3_mirror_residual_reconciliation.py"
+    ],
+    "reproduce": "python3 -u computations/a3_mirror_residual_reconciliation.py"
   },
   "description": "The ~3% ³He residual of the linear-chain bond-count binding reconciles with the corpus-derived pp-Coulomb mechanism (def:coulomb-charge): the bond-count VOLUME gap (8_11 vs L6a4) and the pp-Coulomb reduction are the same mirror-split object. Residual = the OPEN two-like-charge EM-linking invariant (owner-gated; 3.2× remaining of the split). No fit — fitting a pp-Coulomb constant is a CAL-4 violation.",
   "data": {
@@ -57,11 +64,11 @@
     "upstream_witness_hashes": [
       {
         "path": "per-bond-growth-a3.witness.json",
-        "sha256": "6f8834a9e56f15f02ff65f62c98199045f9e3b5606a7549a5d2fb61e01a9775d",
-        "size_bytes": 1949,
-        "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
-        "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
-        "computedAt": "2026-06-22T14:20:00.964304+00:00"
+        "sha256": "6e187a84f13fef26687538acfd613c021151560dd31cddd64ece2e604107c884",
+        "size_bytes": 1990,
+        "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T14:57:35.973470+00:00"
       }
     ]
   }

@@ -147,8 +147,21 @@ def _mass_ratio_p_e():
     import sys as _s
     from pathlib import Path as _P
     try:
-        _pkg = _P(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"
-        if _pkg.is_dir() and str(_pkg) not in _s.path:
+        # SEARCH upward for the substrate checkout rather than counting
+        # `.parent`s. A fixed count cannot be right for both layouts this
+        # module lives in: `.parent.parent` is the repo root from
+        # computations/, but only `qou_mass/` from
+        # qou-mass/src/qou_mass/_internal/ once the vendor sync flattens it
+        # -- so `is_dir()` was False there, the import failed, and this
+        # returned None silently (the except below swallows it), leaving
+        # MASS_RATIO_P_E unset in the packaged copy. Bean qou-rug0.
+        _pkg = None
+        for _anc in _P(__file__).resolve().parents:
+            _cand = _anc / "tools" / "qou-substrate" / "python"
+            if _cand.is_dir():
+                _pkg = _cand
+                break
+        if _pkg is not None and str(_pkg) not in _s.path:
             _s.path.insert(0, str(_pkg))
         from qou_substrate.constants import MASS_RATIO_P_E_STR
         return _load_mpf(MASS_RATIO_P_E_STR)

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-05T04:45:12.898462+00:00",
-  "commitSha": "0ebdb9134e72ed33194023e4d03fc48e866bd808",
+  "computedAt": "2026-08-23T19:20:50.851099+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "co_casimir_delta_is_bar_even",
@@ -22,7 +22,7 @@
     },
     {
       "name": "prediction_matches_witness",
-      "computed": 1.6626231120299994e-51,
+      "computed": 2.9430957006186815e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-09,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 85,
+  "durationMs": 5,
   "computation": "probe-d-cocasimir-barparity",
   "scriptFile": "probe_d_cocasimir_barparity.py",
   "scriptHash": "b8b5457a1c21",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_cocasimir_barparity.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_cocasimir_barparity.py"
   },
   "description": "Bar-parity SECTOR classification of the refuted Frobenius co-Casimir Δ_λ ansatz at the deuteron (H_6, 11 λ⊢6), from the committed rho-k-h3a-co-casimir witness. Finding: Delta_lambda_co_casimir is BAR-EVEN (Δ_λ=Δ_λ' on all conjugate pairs; the norm-type Casimir ∝ Σcontent², not the linear content sum which would be bar-odd). So it occupies the SAME bar-even sector as the binding target; its prediction couples only to a^even and the bar-odd sector contributes 0. The co-Casimir refutation (wrong sign +0.145 vs −4.353) is therefore scope-(a) NUMERICAL, not a scope-(b) sector exclusion — corroborating probe_d_barparity_binding that bar-symmetric ansätze are not structurally excluded. Audit-only; characterises an already-refuted ansatz, proposes no closure (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
@@ -54,20 +66,20 @@
     "co_casimir_parity": "BAR-EVEN",
     "delta_bar_even_max_dev": 0.0,
     "delta_bar_odd_max_dev": 2.0,
-    "a_even_l2_norm": "0.16257439097168726257",
-    "a_odd_l2_norm": "0.16257215105111791172",
-    "prediction_full": "0.14495922412654927718",
-    "prediction_from_even_sector": "0.14495922412654927718",
+    "a_even_l2_norm": "0.23118086979595078485",
+    "a_odd_l2_norm": "0.23118086979595078485",
+    "prediction_full": "0.24827709361826238295",
+    "prediction_from_even_sector": "0.24827709361826238295",
     "prediction_from_odd_sector": "0.0",
-    "target_signed": "-4.3533672818701486569",
+    "target_signed": "-4.353365005928394293",
     "upstream_witness_hashes": [
       {
         "path": "rho-k-h3a-co-casimir.witness.json",
-        "sha256": "28dbef0e3f1070690e51ad6ef876efff80b493266d4c3a0f0f69c1fdb1ee9cd9",
-        "size_bytes": 13879,
-        "commitSha": "71735cc5beff98b495e89da7e8b39814ea22b39c",
-        "scriptCommitSha": "fbf39bd26ca0665fbde72cec214f607eb92e2c42",
-        "computedAt": "2026-05-09T15:53:54.819985+00:00"
+        "sha256": "c4e440787b532ebad31adb6d0bb5f63bf90c3257792fa9364b54d0ea7ece328a",
+        "size_bytes": 14441,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
+        "computedAt": "2026-08-10T18:20:43.888346+00:00"
       }
     ]
   }

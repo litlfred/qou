@@ -209,7 +209,13 @@ def required_witnesses(cone: list[str], idx: dict[str, Path]) -> dict[str, Path]
     names: set[str] = set()
     for mod in cone:
         text = idx[mod].read_text(encoding="utf-8", errors="replace")
-        names.update(re.findall(r"[a-z0-9][a-z0-9._-]*\.witness\.json", text))
+        # Case-INSENSITIVE. The lowercase-only class silently skipped any
+        # witness with a capital in its name — sublemma-2-1-A-operator-extract
+        # .witness.json never entered the vendored set, which is exactly the
+        # quiet miss this script exists to prevent ("a rename upstream should
+        # be loud"). Bean qou-tnrz.
+        names.update(re.findall(r"[A-Za-z0-9][A-Za-z0-9._-]*\.witness\.json",
+                                text))
     found: dict[str, Path] = {}
     for name in sorted(names):
         hits = [p for p in SRC_ROOT.rglob(name) if "_deprecated" not in p.parts]

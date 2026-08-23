@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T16:43:44.657175+00:00",
-  "commitSha": "367ca15c3dcebc778b97d4a8c95d93ce506adc09",
+  "computedAt": "2026-08-23T19:20:50.108464+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "li_2_q_measure_normalized_at_proton",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 12,
   "computation": "phi-q-spectral-combiner-probe",
   "scriptFile": "phi_q_spectral_combiner_probe.py",
   "scriptHash": "3f2297a73e94",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/phi_q_spectral_combiner_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/phi_q_spectral_combiner_probe.py"
   },
   "description": "User-proposed 2026-05-31: Li_2^q × spectral combiner for Q_β c_3. Tests Li_2^q-derived per-block measure μ_λ replacing y_λ in Wedderburn-block sum. Cross-anchor (q_proton vs q_muon) is the pre-stated failure signature: matches at one only ⟹ NEAR-MATCH.",
   "data": {
@@ -40,7 +47,7 @@
     "EMPIRICAL_C3_MUON": "-2.00970000000000000000000000000000000000000000000000000000000",
     "anchor_q_proton": {
       "q_at_this_anchor": "1.10997858275138080759166909561076887987449912187357873607281",
-      "Σ_y_λ_(should_be_1_but_isnt)": "0.752702113251965401593779351620236137830175598874900000000000",
+      "Σ_y_λ_(should_be_1_but_isnt)": "0.752702113251965401593779351620236137830175598874910000000000",
       "Σ_μ_λ_(should_be_1_by_construction)": "1.00000000000000000000000000000000000000000000000000000000000",
       "Σ_μ_λ_deviation_from_1": "0.0",
       "per_block_χ_λ": {
@@ -50,7 +57,7 @@
       },
       "per_block_y_λ": {
         "(3)": "0.505404226503930803187558703240472275660351197749810000000000",
-        "(2,1)": "0.247297886748034598406220648379763862169824401125090000000000",
+        "(2,1)": "0.247297886748034598406220648379763862169824401125100000000000",
         "(1,1,1)": "0.0"
       },
       "per_block_Li_2_q_neg_chi": {
@@ -65,7 +72,7 @@
       },
       "c3_candidate_Li_2_q_measure": "-1.79748459107547219945050839920325667971294191107702928541482",
       "c3_baseline_uniform_sum_(mech_5)": "-5.00000000000000000000000000000000000000000000000000000000000",
-      "c3_baseline_y_lambda_weighted_(mech_6)": "-1.25810633975589620478133805486070841349052679662471000000000"
+      "c3_baseline_y_lambda_weighted_(mech_6)": "-1.25810633975589620478133805486070841349052679662472000000000"
     },
     "anchor_q_muon": {
       "note": "DEFERRED — q_muon cross-anchor evaluation requires Hoefsmit χ_λ(q) closed-form re-evaluation infrastructure not yet wired. Single-anchor refutation at q_proton is decisive (13% off empirical c_3 = -2.07). The fibre/observable distinction (user 2026-05-31) would matter here: a TRULY q-independent Li_2^q × spectral mechanism would close at both anchors; an empirical near-match would swing. Deferred to a future session that wires the Hoefsmit evaluator."
@@ -80,12 +87,14 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-per-block-paper-closed-forms.witness.json",
-        "sha256": "e120fc74ac51481d1ec72ca644341b092ce824d0f0fb8a5f01eb28095303cc12",
-        "size_bytes": 3196,
-        "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+        "sha256": "a3f5bfed724755876ad0001296e3422ff35eb056e12b622e99197d7d91009c80",
+        "size_bytes": 3195,
+        "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
         "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-        "computedAt": "2026-08-10T14:24:42.260066+00:00"
+        "computedAt": "2026-08-11T11:02:39.299498+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

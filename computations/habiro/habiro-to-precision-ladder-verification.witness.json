@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:08:43.835209+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T20:06:19.465481+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "habiro_sum_nonzero",
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -58,12 +58,14 @@
       },
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "5c8ccec32dcf28cc19c6ae339bf49f6a5509bf8527fd6ba583e74141d57de338",
-        "size_bytes": 5562,
-        "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+        "sha256": "0a4781756ba64ee5a4a23e8423e6d7fbaebd19b9cc939a57a522d656f0a6d3a6",
+        "size_bytes": 5781,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
         "scriptCommitSha": "fab11b31a6700c768c67e1412c61020addb65720",
-        "computedAt": "2026-08-08T13:04:48.908965+00:00"
+        "computedAt": "2026-08-23T19:35:41.415538+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T09:49:32.663084+00:00",
-  "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
+  "computedAt": "2026-08-23T19:42:36.593762+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5321,
+  "durationMs": 5823,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "dfcd6d57966b",
-  "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+  "scriptHash": "b2a81e17dbae",
+  "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,14 +23,25 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Extended canonical mass table via operator-valued Wenzl branching combiner (canonical pipeline) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
+  "invocation": {
+    "argv": [
+      "computations/canonical_mass_table_extended.py",
+      "--method",
+      "auto",
+      "--target-dps",
+      "60"
+    ],
+    "reproduce": "python3 -u computations/canonical_mass_table_extended.py --method auto --target-dps 60"
+  },
+  "description": "Extended canonical mass table via per-atom route: A<2 -> direct H_3 Hoefsmit (laurent_q_rust, falling back to laurent_q when pyhecke_native is absent); A>=2 -> operator-valued Wenzl branching combiner; + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "method": "branching",
+    "method": "auto",
     "precision": "mpfr",
-    "dps": 0,
+    "dps": 50,
     "compute_dps": 70,
     "output_dps": 60,
     "target_dps": 60,
@@ -41,6 +52,202 @@
   },
   "data": {
     "rows": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ]
+        ],
+        "markov_closure": "trefoil 3_1 = T(2,3)",
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "938.2720894273243",
+        "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_ppb": "-0.00285171275799438004559808144017787678295044432823505734577907",
+        "err_ppm": "-0.00000285171275799438004559808144017787678295044432823505734577907",
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via laurent_q_rust)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": "trefoil 3_1 = T(2,3)",
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "939.5658930679812",
+        "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
+        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729",
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via laurent_q_rust)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
       {
         "Z": 1,
         "N": 1,
@@ -199,17 +406,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
+        "tr_M_q0_canonical_50dps": "0.575172243917774294137965748280864709755960556179999345494153",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
+        "prediction_MeV_50dps": "2.2488207979013090647629504720728859696833657096508",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",
-        "err_pct": "1.09030686078521643396256885981009538938840181233977742207137",
-        "err_ppb": "10903068.6078521643396256885981009538938840181233977706812035",
-        "err_ppm": "10903.0686078521643396256885981009538938840181233977720825020",
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_ppb": "10903068.6078522027184223477246422109997741176013763636812810",
+        "err_ppm": "10903.0686078522027184223477246422109997741176013763510695948",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -452,12 +659,12 @@
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "8.468598397968138217308132595917413709685206413269",
+        "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318617826918674040825862903147935867309524973906117",
-        "err_pct": "-0.155601499029908107104334858724691950447873137189413923293933",
-        "err_ppb": "-1556014.99029908107104334858724691950447873137189414100851038",
-        "err_ppm": "-1556.01499029908107104334858724691950447873137189413914741086",
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -1895,7 +2102,7 @@
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": "31.9939871999999960000000000000000000000000000000000000000000",
+        "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
@@ -2454,6 +2661,36 @@
       }
     ],
     "rows_by_nuclide": {
+      "p": {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "prediction_type": "mass",
+        "prediction_method": "canonical-trace",
+        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "prediction_MeV_50dps": "938.2720894273243",
+        "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_ppb": "-0.00285171275799438004559808144017787678295044432823505734577907",
+        "err_ppm": "-0.00000285171275799438004559808144017787678295044432823505734577907"
+      },
+      "n": {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "prediction_type": "mass",
+        "prediction_method": "canonical-trace",
+        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
+        "prediction_MeV_50dps": "939.5658930679812",
+        "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
+        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729"
+      },
       "D": {
         "Z": 1,
         "N": 1,
@@ -2461,13 +2698,13 @@
         "n_strands": 6,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
-        "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
+        "tr_M_q0_canonical_50dps": "0.575172243917774294137965748280864709755960556179999345494153",
+        "prediction_MeV_50dps": "2.2488207979013090647629504720728859696833657096508",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",
-        "err_pct": "1.09030686078521643396256885981009538938840181233977742207137",
-        "err_ppb": "10903068.6078521643396256885981009538938840181233977706812035",
-        "err_ppm": "10903.0686078521643396256885981009538938840181233977720825020"
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_ppb": "10903068.6078522027184223477246422109997741176013763636812810",
+        "err_ppm": "10903.0686078522027184223477246422109997741176013763510695948"
       },
       "T": {
         "Z": 1,
@@ -2477,12 +2714,12 @@
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
         "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268822375141122395452654441392918",
-        "prediction_MeV_50dps": "8.468598397968138217308132595917413709685206413269",
+        "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318617826918674040825862903147935867309524973906117",
-        "err_pct": "-0.155601499029908107104334858724691950447873137189413923293933",
-        "err_ppb": "-1556014.99029908107104334858724691950447873137189414100851038",
-        "err_ppm": "-1556.01499029908107104334858724691950447873137189413914741086"
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419"
       },
       "3He": {
         "Z": 2,
@@ -2538,7 +2775,7 @@
         "prediction_method": "canonical-trace",
         "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977892269632763162623001259777637",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": "31.9939871999999960000000000000000000000000000000000000000000",
+        "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
@@ -2560,23 +2797,23 @@
         "err_ppm": null
       }
     },
-    "n_atoms_computed": 7,
+    "n_atoms_computed": 9,
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "10513cdb945eb811d9a52ab55f0a27b04b4f25b36d69696b201bf69ed2f354f4",
-        "size_bytes": 16500,
-        "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
-        "scriptCommitSha": "bbb18e6ff3fb3b6447c87e019e853850ee76383a",
-        "computedAt": "2026-08-19T21:21:57.161289+00:00"
+        "sha256": "74a6ddbaf2f7a6fc75bffaf1ea30aaf3aa1d7738f69b995e9987428960ae6778",
+        "size_bytes": 16765,
+        "commitSha": "6a5a5660675bbe5b19240de78af6e2450d99b355",
+        "scriptCommitSha": "5822016e790d07408ab22b9db038867eb4d1ae19",
+        "computedAt": "2026-08-23T13:07:09.714211+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "80bf4958e6630693a0098e4a23c7c539f50dea878e0bfe453070d92b46667bbd",
-        "size_bytes": 10940,
-        "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-19T21:21:56.859542+00:00"
+        "sha256": "8c810f773a83934900498a083263808be90496ee879ef7069e9d98b26b636077",
+        "size_bytes": 11476,
+        "commitSha": "ba28ebdb1dae72fb39af5ef536c9e08bed944835",
+        "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
+        "computedAt": "2026-08-22T21:18:55.791557+00:00"
       }
     ]
   },

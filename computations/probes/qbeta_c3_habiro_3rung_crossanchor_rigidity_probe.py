@@ -49,7 +49,16 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
-sys.path.insert(0, str(HERE.parent.parent.parent / "tools" / "qou-substrate" / "python"))
+# Repo root by LANDMARK SEARCH, not by counting `.parent`s: the fixed
+# count was off by one and resolved OUTSIDE the repo, so this bootstrap
+# never fired -- masked because `_path_bridge`/PYTHONPATH already supplies
+# the same directory in every in-repo run. Bean qou-rug0.
+_QOU_REPO_ROOT = next(
+    (_a for _a in Path(__file__).resolve().parents
+     if (_a / "tools").is_dir() and (_a / "computations").is_dir()),
+    Path(__file__).resolve().parent,
+)
+sys.path.insert(0, str(_QOU_REPO_ROOT / "tools" / "qou-substrate" / "python"))
 
 import _path_bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:19:03.238960+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T19:20:49.377523+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "cross_check_mu_ext_reproduced",
@@ -18,7 +18,7 @@
       "expected": "True",
       "passed": true,
       "tolerance": 0,
-      "source": "best real per-knot candidate S/(A*m_e) Spearman +0.40 vs best junk JUNK:A +0.32; margin < 0.25 ⇒ no meaningful shape match (n=4)."
+      "source": "best real per-knot candidate S/(A*m_e) Spearman +0.80 vs best junk JUNK:A +0.63; margin < 0.25 ⇒ no meaningful shape match (n=4)."
     },
     {
       "name": "no_perknot_candidate_reproduces_mu_ext_order",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "perknot-additive-sk-vs-kA-extensivity",
   "scriptFile": "perknot_additive_sk_vs_kA_extensivity.py",
   "scriptHash": "48920c46e27c",
@@ -48,7 +48,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/perknot_additive_sk_vs_kA_extensivity.py"
+    ],
+    "reproduce": "python3 -u computations/probes/perknot_additive_sk_vs_kA_extensivity.py"
   },
   "description": "Bean qou-cqqs (PR #3205 verdict #5 salvage). Tests whether the per-knot additive S(K)/tr_M structure — regularised on the canonical base (S/(A m_e) uniform to ×1.73, no sign flip) — informs the single open Delta_lambda gate gap: the DERIVED extensivity multiplier k(A)=mu_ext=B_AME/B_base (5.853/4.444/3.292/9.313 for D/T/3He/4He, NON-MONOTONE, 4He max, D 2nd). Parameter-free candidates vs mu_ext by rank order, Spearman, and mean-aligned rel-err, calibrated against junk controls (A, C(A,2)). No fit, no BW, no rescaler-as-closure. EXPLORATORY, scope-(a).",
   "auditOnly": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
@@ -62,41 +69,41 @@
     "cross_check_B_AME_over_B_base_equals_mu_target": true,
     "targets": {
       "D": {
-        "B_base_MeV": 0.3800712502056555,
+        "B_base_MeV": 0.3666138140785936,
         "B_AME_MeV": 2.22452,
-        "mu_ext_target": 5.852902577599116,
-        "mu_ext_recomputed": 5.852902577599117,
+        "mu_ext_target": 6.067747353140145,
+        "mu_ext_recomputed": 6.067747353140146,
         "A": 2
       },
       "T": {
-        "B_base_MeV": 1.9085327610510177,
+        "B_base_MeV": 1.2647941324365348,
         "B_AME_MeV": 8.4818,
-        "mu_ext_target": 4.444146924325849,
-        "mu_ext_recomputed": 4.444146924325849,
+        "mu_ext_target": 6.706071591003053,
+        "mu_ext_recomputed": 6.706071591003054,
         "A": 3
       },
       "3He": {
-        "B_base_MeV": 2.344605684539159,
+        "B_base_MeV": 1.5733613345103694,
         "B_AME_MeV": 7.71804,
-        "mu_ext_target": 3.2918285794896933,
-        "mu_ext_recomputed": 3.2918285794896933,
+        "mu_ext_target": 4.905446594314495,
+        "mu_ext_recomputed": 4.905446594314495,
         "A": 3
       },
       "4He": {
-        "B_base_MeV": 3.038186964593764,
+        "B_base_MeV": 0.09756895913453323,
         "B_AME_MeV": 28.29567,
-        "mu_ext_target": 9.313340597451814,
-        "mu_ext_recomputed": 9.313340597451814,
+        "mu_ext_target": 290.00688590911824,
+        "mu_ext_recomputed": 290.00688590911824,
         "A": 4
       }
     },
     "mu_ext_order_desc": [
       "4He",
-      "D",
       "T",
+      "D",
       "3He"
     ],
-    "mu_ext_spread_max_over_min": 2.8292301292601296,
+    "mu_ext_spread_max_over_min": 59.11936463547308,
     "candidates": {
       "S/(A*m_e)": {
         "order_desc": [
@@ -107,34 +114,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.3999999999999999,
+        "spearman_vs_mu": 0.7999999999999998,
         "spread_max_over_min": 1.1411262863358718,
         "monotone_or_uniform_note": "uniform (spread<1.3)",
-        "max_rel_err_mean_aligned": 0.6295925732124298,
+        "max_rel_err_mean_aligned": 2.1919621303932115,
         "per_isotope": {
           "D": {
             "candidate_raw": 1582.5392217339456,
-            "candidate_scaled": 4.867967965435942,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.16828139527434235
+            "candidate_scaled": 14.209138438512259,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 1.3417485289922015
           },
           "T": {
             "candidate_raw": 1787.1614611927403,
-            "candidate_scaled": 5.497395971403327,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.23699690064527945
+            "candidate_scaled": 16.0463793031543,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 1.3928135996463737
           },
           "3He": {
             "candidate_raw": 1743.905787395111,
-            "candidate_scaled": 5.364339405424827,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.6295925732124298
+            "candidate_scaled": 15.65799976171822,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 2.1919621303932115
           },
           "4He": {
             "candidate_raw": 1805.8771050781181,
-            "candidate_scaled": 5.5549662063999055,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.4035474008198758
+            "candidate_scaled": 16.21442137837178,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.9440895297105013
           }
         }
       },
@@ -147,34 +154,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.3999999999999999,
+        "spearman_vs_mu": 0.7999999999999998,
         "spread_max_over_min": 2.2822525726717435,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 0.6782906201290086,
+        "max_rel_err_mean_aligned": 2.287349360389852,
         "per_isotope": {
           "D": {
             "candidate_raw": 3165.0784434678912,
-            "candidate_scaled": 3.342293490932444,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.42895111500327304
+            "candidate_scaled": 9.755838832958412,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 0.6078188931036538
           },
           "T": {
             "candidate_raw": 5361.48438357822,
-            "candidate_scaled": 5.6616777994719625,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.273962786532042
+            "candidate_scaled": 16.52590243365421,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 1.4643194170228604
           },
           "3He": {
             "candidate_raw": 5231.717362185333,
-            "candidate_scaled": 5.524645028030151,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.6782906201290086
+            "candidate_scaled": 16.125916724246334,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 2.287349360389852
           },
           "4He": {
             "candidate_raw": 7223.5084203124725,
-            "candidate_scaled": 7.627957918304594,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.18096435554051907
+            "candidate_scaled": 22.26528827509024,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.9232249668648638
           }
         }
       },
@@ -187,34 +194,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 1,
-        "spearman_vs_mu": -0.3999999999999999,
+        "spearman_vs_mu": -0.7999999999999998,
         "spread_max_over_min": 7.0153220550781485,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 1.4047952837460884,
+        "max_rel_err_mean_aligned": 5.770830646619132,
         "per_isotope": {
           "D": {
             "candidate_raw": 0.388357188723781,
-            "candidate_scaled": 14.075032514835678,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 1.4047952837460884
+            "candidate_scaled": 41.083689734583416,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 5.770830646619132
           },
           "T": {
             "candidate_raw": 0.10407106930208715,
-            "candidate_scaled": 3.771794952719249,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.15128932122526348
+            "candidate_scaled": 11.009513009412357,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 0.6417231549067943
           },
           "3He": {
             "candidate_raw": 0.206578475087403,
-            "candidate_scaled": 7.486918842098218,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 1.274395115452475
+            "candidate_scaled": 21.85360854069478,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 3.4549681910763277
           },
           "4He": {
             "candidate_raw": 0.055358426266783105,
-            "candidate_scaled": 2.0063273509513726,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.7845748977010123
+            "candidate_scaled": 5.856279927283503,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.9798064107721954
           }
         }
       },
@@ -227,34 +234,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.3999999999999999,
+        "spearman_vs_mu": 0.7999999999999998,
         "spread_max_over_min": 7.0153220550781485,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 0.6846695146637033,
+        "max_rel_err_mean_aligned": 2.258779487235693,
         "per_isotope": {
           "D": {
             "candidate_raw": 2.5749491165238863,
-            "candidate_scaled": 2.0063273509513726,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.6572081417124193
+            "candidate_scaled": 5.856279927283503,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 0.03485105980017519
           },
           "T": {
             "candidate_raw": 9.608818346021788,
-            "candidate_scaled": 7.486918842098218,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.6846695146637033
+            "candidate_scaled": 21.85360854069478,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 2.258779487235693
           },
           "3He": {
             "candidate_raw": 4.8407753981962625,
-            "candidate_scaled": 3.771794952719249,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.14580539710362472
+            "candidate_scaled": 11.009513009412357,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 1.2443446886513025
           },
           "4He": {
             "candidate_raw": 18.06409732785401,
-            "candidate_scaled": 14.075032514835678,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.5112764713755549
+            "candidate_scaled": 41.083689734583416,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.8583354681189945
           }
         }
       },
@@ -267,34 +274,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.3999999999999999,
+        "spearman_vs_mu": 0.7999999999999998,
         "spread_max_over_min": 14.030644110156297,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 1.0755461058456466,
+        "max_rel_err_mean_aligned": 2.276700164014472,
         "per_isotope": {
           "D": {
             "candidate_raw": 5.120388095129788,
-            "candidate_scaled": 1.3777177767243607,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.7646094807732976
+            "candidate_scaled": 4.021427987544831,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 0.3372453146943099
           },
           "T": {
             "candidate_raw": 27.978696120950477,
-            "candidate_scaled": 7.528090898435177,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.6939338475127358
+            "candidate_scaled": 21.973785882132496,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 2.276700164014472
           },
           "3He": {
             "candidate_raw": 14.782981397846077,
-            "candidate_scaled": 3.9775844889901526,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.20832066219157952
+            "candidate_scaled": 11.61019321742368,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 1.366796375049748
           },
           "4He": {
             "candidate_raw": 71.84234306864718,
-            "candidate_scaled": 19.33026780945528,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 1.0755461058456466
+            "candidate_scaled": 56.42322490786357,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.8054417751806577
           }
         }
       },
@@ -307,34 +314,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 2,
-        "spearman_vs_mu": -0.3999999999999999,
+        "spearman_vs_mu": -0.7999999999999998,
         "spread_max_over_min": 1.984975041313043,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 1.5170319525259797,
+        "max_rel_err_mean_aligned": 3.9302327499042193,
         "per_isotope": {
           "D": {
             "candidate_raw": 0.388357188723781,
-            "candidate_scaled": 5.192194667787598,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.1128855129658664
+            "candidate_scaled": 15.15552554128039,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 1.4977186193220768
           },
           "T": {
             "candidate_raw": 0.31221320790626145,
-            "candidate_scaled": 4.174177278991322,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.060747236743411606
+            "candidate_scaled": 12.184028992222133,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 0.8168653326887195
           },
           "3He": {
             "candidate_raw": 0.619735425262209,
-            "candidate_scaled": 8.285637716813765,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 1.5170319525259797
+            "candidate_scaled": 24.18499345219544,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 3.9302327499042193
           },
           "4He": {
             "candidate_raw": 0.3321505576006986,
-            "candidate_scaled": 4.440732408596252,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.5231858684722362
+            "candidate_scaled": 12.962078224457134,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.9553042398154671
           }
         }
       },
@@ -347,34 +354,34 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.31622776601683794,
+        "spearman_vs_mu": 0.6324555320336759,
         "spread_max_over_min": 2.0,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 0.6625569065054825,
+        "max_rel_err_mean_aligned": 2.2565309712524093,
         "per_isotope": {
           "D": {
             "candidate_raw": 2.0,
-            "candidate_scaled": 3.6485682265751476,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.37662242311372884
+            "candidate_scaled": 10.649825841473204,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 0.755153143606378
           },
           "T": {
             "candidate_raw": 3.0,
-            "candidate_scaled": 5.472852339862722,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.23147421384879638
+            "candidate_scaled": 15.974738762209807,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 1.3821306625538727
           },
           "3He": {
             "candidate_raw": 3.0,
-            "candidate_scaled": 5.472852339862722,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.6625569065054825
+            "candidate_scaled": 15.974738762209807,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 2.2565309712524093
           },
           "4He": {
             "candidate_raw": 4.0,
-            "candidate_scaled": 7.297136453150295,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.21648560183154522
+            "candidate_scaled": 21.299651682946408,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.9265546691549205
           }
         }
       },
@@ -387,57 +394,57 @@
         ],
         "order_matches_mu": false,
         "D_rank_in_candidate": 4,
-        "spearman_vs_mu": 0.31622776601683794,
+        "spearman_vs_mu": 0.6324555320336759,
         "spread_max_over_min": 6.0,
         "monotone_or_uniform_note": "non-uniform",
-        "max_rel_err_mean_aligned": 0.7865336616763551,
+        "max_rel_err_mean_aligned": 2.4993702637599546,
         "per_isotope": {
           "D": {
             "candidate_raw": 1.0,
-            "candidate_scaled": 1.9603208552421987,
-            "mu_ext_target": 5.852902577599116,
-            "rel_err": 0.6650685998524974
+            "candidate_scaled": 5.721991314202228,
+            "mu_ext_target": 6.067747353140145,
+            "rel_err": 0.056982603067509595
           },
           "T": {
             "candidate_raw": 3.0,
-            "candidate_scaled": 5.8809625657265965,
-            "mu_ext_target": 4.444146924325849,
-            "rel_err": 0.323305162017951
+            "candidate_scaled": 17.165973942606684,
+            "mu_ext_target": 6.706071591003053,
+            "rel_err": 1.559765983655284
           },
           "3He": {
             "candidate_raw": 3.0,
-            "candidate_scaled": 5.8809625657265965,
-            "mu_ext_target": 3.2918285794896933,
-            "rel_err": 0.7865336616763551
+            "candidate_scaled": 17.165973942606684,
+            "mu_ext_target": 4.905446594314495,
+            "rel_err": 2.4993702637599546
           },
           "4He": {
             "candidate_raw": 6.0,
-            "candidate_scaled": 11.761925131453193,
-            "mu_ext_target": 9.313340597451814,
-            "rel_err": 0.2629115201339599
+            "candidate_scaled": 34.33194788521337,
+            "mu_ext_target": 290.00688590911824,
+            "rel_err": 0.8816167837615682
           }
         }
       }
     },
     "junk_control": {
       "best_real_candidate": "S/(A*m_e)",
-      "best_real_spearman": 0.3999999999999999,
+      "best_real_spearman": 0.7999999999999998,
       "best_junk_candidate": "JUNK:A",
-      "best_junk_spearman": 0.31622776601683794,
+      "best_junk_spearman": 0.6324555320336759,
       "real_beats_junk_by_0p25": false,
       "any_real_order_matches_mu": false,
       "any_real_D_at_rank2": true
     },
     "verdict_tag": "PRUNE",
-    "verdict": "PRUNE (scope-(a)). Cross-check: B_AME/B_base reproduces mu_ext_target for all four isotopes (True). mu_ext is NON-MONOTONE (order 4He/D/T/3He, spread ×2.83, deuteron 2nd-largest from its tiny B_base). NO parameter-free per-knot reading of the additive S(K)/tr_M structure reproduces that shape: every candidate that has 4He as the max (S/m_e, S/(A m_e), 1/tr_M, constit_sum/tr_M) puts the DEUTERON SMALLEST (rank 4), the exact opposite of mu_ext's D-at-rank-2 — the per-knot S/(A m_e) family is monotone/compressed (spread ×1.14 across the four) and cannot supply mu_ext's ×2.83 non-monotone range, as the formalize-first uniformity argument predicts. tr_M(K) itself is anti-shaped (4He MIN, not max). JUNK CONTROL: the best real candidate (S/(A*m_e), Spearman +0.40) does NOT beat the best junk control (JUNK:A, Spearman +0.32) by a meaningful n=4 margin (beats_by_>0.25=False) — so any apparent partial match is within look-elsewhere noise. CONCLUSION: the per-knot additive S(K) structure does NOT inform the derived k(A) extensivity multiplier; it is pruned as a source of the non-monotone k(A). Scope-limited negative (a): constrains the per-knot S(K)/tr_M single-quantity reading only; NOT a structural exclusion of tr_M in a richer multi-term / operator-valued branching combiner (GAP-A-3/GAP-A-4 remain the open derived directions). No fit, no BW, no rescaler-as-closure.",
+    "verdict": "PRUNE (scope-(a)). Cross-check: B_AME/B_base reproduces mu_ext_target for all four isotopes (True). mu_ext is NON-MONOTONE (order 4He/T/D/3He, spread ×59.12, deuteron 2nd-largest from its tiny B_base). NO parameter-free per-knot reading of the additive S(K)/tr_M structure reproduces that shape: every candidate that has 4He as the max (S/m_e, S/(A m_e), 1/tr_M, constit_sum/tr_M) puts the DEUTERON SMALLEST (rank 4), the exact opposite of mu_ext's D-at-rank-2 — the per-knot S/(A m_e) family is monotone/compressed (spread ×1.14 across the four) and cannot supply mu_ext's ×2.83 non-monotone range, as the formalize-first uniformity argument predicts. tr_M(K) itself is anti-shaped (4He MIN, not max). JUNK CONTROL: the best real candidate (S/(A*m_e), Spearman +0.80) does NOT beat the best junk control (JUNK:A, Spearman +0.63) by a meaningful n=4 margin (beats_by_>0.25=False) — so any apparent partial match is within look-elsewhere noise. CONCLUSION: the per-knot additive S(K) structure does NOT inform the derived k(A) extensivity multiplier; it is pruned as a source of the non-monotone k(A). Scope-limited negative (a): constrains the per-knot S(K)/tr_M single-quantity reading only; NOT a structural exclusion of tr_M in a richer multi-term / operator-valued branching combiner (GAP-A-3/GAP-A-4 remain the open derived directions). No fit, no BW, no rescaler-as-closure.",
     "upstream_witness_hashes": [
       {
         "path": "deltalambda-extensivity-gap-synthesis.witness.json",
-        "sha256": "a5e111cffb8b26c8ee3bdd5d4e6808ced566b4999061e0cab8dc0ba90baba43c",
-        "size_bytes": 3968,
-        "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-07-18T19:19:17.146991+00:00"
+        "sha256": "60efce1624fde3335f9df28e9e5b7ad884a2efd2ae50822f98a3e3a0d8983816",
+        "size_bytes": 3594,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
       },
       {
         "path": "gap-a4-S-K-additive-probe-perknot-rerun.witness.json",

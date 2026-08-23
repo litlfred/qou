@@ -1,24 +1,24 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:34.504647+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-23T19:35:46.776848+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "three_hecke_natural_forms_all_match_upstream_sym",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.0,
       "source": "Exact algebraic identity verified via sympy after q→t² substitution"
     }
   ],
-  "allPassed": true,
-  "durationMs": 262,
+  "allPassed": false,
+  "durationMs": 466,
   "computation": "qbeta-sym-part-hecke-natural-form",
   "scriptFile": "qbeta_sym_part_hecke_natural_form.py",
   "scriptHash": "3c7bc152dece",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,19 +30,28 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sym_part_hecke_natural_form.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sym_part_hecke_natural_form.py"
   },
   "description": "Hecke-natural closed form for sym(Δtr_M)(q): exact algebraic identity sym = -h·(q-1)/(2·q^(1/2)) = -[2]_{q^(1/2)}·h̃²/2 with h = q-q⁻¹, h̃ = q^(1/2)-q^(-1/2).",
   "auditOnly": "docs/audits/2026-06-01-qbeta-sym-part-hecke-natural-form.md",
   "data": {
-    "upstream_sym_q": "(-q**3 + q**2 + q - 1)/(2*q**(3/2))",
+    "upstream_sym_q": "(-q**10 + q**8 + q**2 - 1)/(8*q**5)",
     "hecke_natural_form_1_h_times_qm1": "(-q + 1/q)*(q - 1)/(2*sqrt(q))",
     "hecke_natural_form_2_two_q_half_h_tilde_sq": "(-sqrt(q) - 1/sqrt(q))*(sqrt(q) - 1/sqrt(q))**2/2",
     "hecke_natural_form_3_explicit_t_basis": "(-sqrt(q) - 1/sqrt(q))*(sqrt(q) - 1/sqrt(q))**2/2",
-    "diff_form_1": "0",
-    "diff_form_2": "0",
-    "diff_form_3": "0",
-    "all_three_forms_match": true,
+    "diff_form_1": "(t**20 - t**16 - 4*t**7*(t**2 - 1)*(t**4 - 1) - t**4 + 1)/(8*t**10)",
+    "diff_form_2": "(t**20 - t**16 - 4*t**7*(t**2 - 1)**2*(t**2 + 1) - t**4 + 1)/(8*t**10)",
+    "diff_form_3": "(t**20 - t**16 - 4*t**7*(t**2 - 1)**2*(t**2 + 1) - t**4 + 1)/(8*t**10)",
+    "all_three_forms_match": false,
     "hecke_natural_reading": {
       "h_full_q": "q - q^(-1) — full-q bar-antisymmetric",
       "h_tilde_half_q": "q^(1/2) - q^(-1/2) — half-q bar-antisymmetric",
@@ -54,11 +63,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-delta-tr-bar-decomposition-probe.witness.json",
-        "sha256": "c1cfee8558a3ba55f93bf369ecfcefdc2ea043dabdaf7fc5945b65a40c5282a4",
-        "size_bytes": 3962,
-        "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
-        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
-        "computedAt": "2026-06-22T13:26:50.204197+00:00"
+        "sha256": "284ddddebdfc5b793b07172f102b9838fd26d5215a22a9f52fcfe59360425369",
+        "size_bytes": 4542,
+        "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
+        "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+        "computedAt": "2026-08-23T19:35:42.538855+00:00"
       }
     ]
   }

@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:25:22.749967+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T19:21:05.389025+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "swing_is_amplified_slope",
-      "computed": 0.9999996258034674,
+      "computed": 0.9999996300752454,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.05,
@@ -22,7 +22,7 @@
     },
     {
       "name": "candidates_at_S_scale",
-      "computed": 0.16537965158992168,
+      "computed": 0.17118534203267116,
       "expected": 0.4,
       "passed": true,
       "tolerance": 0.4,
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-kc19-kappatilde-barodd-source-test",
   "scriptFile": "qbeta_kc19_kappatilde_barodd_source_test.py",
   "scriptHash": "ab7cde3fd1d5",
@@ -48,7 +48,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_kc19_kappatilde_barodd_source_test.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_kc19_kappatilde_barodd_source_test.py"
   },
   "description": "Fit-free KC19 consumption test of the three derived bar-odd meridian candidates from the #3691 deformed-rung tower (Im V_b truncation 0.05706, resummed 0.05855, odd-only 0.05679). Value level: all three sit at the |S| scale (ratios 0.17-0.69 per anchor) but S sign-flips while each candidate is one smooth number — scale-only, same verdict class as the Phi_b handles. Slope level: the anchor swing equals S'(q*)*(q_p - q_mu) with S' ~ 3.8e6 (verified <5%), so any c3-level geometric source needs a 1e6 slope that smooth t=ln q rungs cannot supply — excluded at c3 level, scope-(a). Correct consumption level is the numerator N_odd = S*u^3 (dN/dq = O(1)); required per-anchor KC19 departures dw_odd reported as the normalization-bearing target. Decisive follow-up: tall-ladder d(kappa-tilde)/dq at both anchors. No c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -60,26 +67,26 @@
     },
     "targets": {
       "proton": "-0.0394593643",
-      "muon": "0.009682977798"
+      "muon": "0.01002290095"
     },
     "value_ratios": {
       "G1_imVb_truncation": {
         "proton": "-0.69157001",
-        "muon": "0.16970514"
+        "muon": "0.17566268"
       },
       "G2_imVb_resummed_pade22": {
         "proton": "-0.67394308",
-        "muon": "0.16537965"
+        "muon": "0.17118534"
       },
       "G3_odd_only_partial_sum": {
         "proton": "-0.69483361",
-        "muon": "0.170506"
+        "muon": "0.17649165"
       }
     },
     "slope_test": {
       "S_prime_qstar": "3838404.458",
-      "swing_pred": "-0.04914232371",
-      "swing_true": "-0.04914234209"
+      "swing_pred": "-0.04948224694",
+      "swing_true": "-0.04948226524"
     },
     "numerator_level": {
       "proton": {
@@ -88,20 +95,20 @@
         "dw_odd_required": "-2.306921825e-7"
       },
       "muon": {
-        "u": "0.00851723634",
-        "N_odd": "5.982807526e-9",
-        "dw_odd_required": "5.660984348e-8"
+        "u": "0.008517236352",
+        "N_odd": "6.192835378e-9",
+        "dw_odd_required": "5.859714518e-8"
       },
       "dN_odd_dq_at_qstar": "2.3716291"
     },
     "upstream_witness_hashes": [
       {
         "path": "qbeta-c3-borel-pade-deformed-rungs.witness.json",
-        "sha256": "b72044087ee5156d1bf90f433e9d7f6a2bcccbf54ba6b89e756a8804a6de3cb9",
-        "size_bytes": 4903,
-        "commitSha": "15105df99f96ea44321f40b051959a8c44436a2d",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-07-12T22:52:38.748293+00:00"
+        "sha256": "31b63bd22c3e7d3de8b4c2e0e5d6861c3fca6bface7338b8a440275b16bae93c",
+        "size_bytes": 5293,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T09:44:59.388404+00:00"
       }
     ]
   }

@@ -90,7 +90,26 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
         return _Y_LAMBDA_AT_Q0_WITNESS_CACHE
     import json
     from pathlib import Path
-    path = Path(__file__).parent / "y-lambda-at-q0.witness.json"
+    # SEARCH for the witness rather than assuming it sits beside this file.
+    # `Path(__file__).parent` is right for computations/ but WRONG for the
+    # vendored copy: the sync flattens this module into
+    # qou-mass/src/qou_mass/_internal/ while the witness lands one level up
+    # in qou-mass/src/qou_mass/. The miss was silent -- the `not exists()`
+    # branch below just disables the fast path -- so the packaged copy always
+    # took the slow recompute route. Same class as the fixed `.parent` counts
+    # in substrate/_precision.py and `_li_2_q_util._find_q_witness`
+    # (bean qou-rug0).
+    _here = Path(__file__).resolve().parent
+    path = _here / "y-lambda-at-q0.witness.json"
+    if not path.exists():
+        for _base in _here.parents:
+            for _cand in (_base / "y-lambda-at-q0.witness.json",
+                          _base / "computations" / "y-lambda-at-q0.witness.json"):
+                if _cand.is_file():
+                    path = _cand
+                    break
+            if path.is_file():
+                break
     if not path.exists():
         _Y_LAMBDA_AT_Q0_WITNESS_CACHE = {}
         return {}

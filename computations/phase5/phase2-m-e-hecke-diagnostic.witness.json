@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T23:31:49.877966+00:00",
-  "commitSha": "fb8844fcc2738e086751aa0117d79a88e1e5239e",
+  "computedAt": "2026-08-23T19:10:45.835228+00:00",
+  "commitSha": "e556f8f38e215f24bfcd8aa0c9d3fbcb7479b90a",
   "assertions": [
     {
       "name": "approach_A_proton_sum_is_negative",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "phase2-m-e-hecke-diagnostic",
   "scriptFile": "phase2_proton_m_e_hecke_diagnostic.py",
-  "scriptHash": "42917773b41f",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "9ca3cd1fa542",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,112 +48,119 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase2_proton_m_e_hecke_diagnostic.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase2_proton_m_e_hecke_diagnostic.py"
   },
   "description": "Phase 2 diagnostic — surveys three approaches for deriving m_p_Hecke / m_e_Hecke to replace the DEPRECATED placeholder literals in derivation_chain.M_HECKE_PIPELINE_AT_Q0.  Finds all three approaches incomplete: 6-term sum is sign-indefinite for the proton and out-of-scale for nuclei; categorical-formula ratio reproduces only ~2.135 (vs CODATA 1836); placeholder ratio matches numerologically but at (m_p - m_e)/m_e, not m_p/m_e.  Quarantines T2/T3/T5/T6 as known-broken-or-empirical and exposes a T1+T4 Path A residual for downstream chains.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
     "M_E_MEV_CODATA": "0.51099895069",
-    "M_P_MEV_CODATA": "938.27208816"
+    "M_P_MEV_CODATA": "938.27208943"
   },
   "data": {
     "approach_A_6term_sum": {
       "p (proton)": {
-        "sum_6term": "-3.92812784524121249598414850783657508844133292128056",
+        "sum_6term": "-3.74739969746999035737369258923323869257930539962609",
         "terms": {
-          "term1_descended": "1.065306238075878215688040411687927620546686279347",
-          "term2_single": "1.6183053302954052121005146214792043795858871928452",
-          "term3_pair": "0.19831347943185270261248044616200802536048847918444",
+          "term1_descended": "1.1457596924573008696890815957741193059437280619435",
+          "term2_single": "1.6183053300444349149523787757479828158901893933081",
+          "term3_pair": "0.29858812456725995609424958689266750803986693764861",
           "term4_frob_per_vortex": "0.0",
-          "term5_chirality_bw": "-7.7917512212112304229216339871657151139343948726572",
+          "term5_chirality_bw": "-7.7917511727058678946458525476480083224530897925263",
           "term6_habiro_residue": "0.98169832816688179653645"
         },
-        "t1_t4_only": "1.065306238075878215688040411687927620546686279347"
+        "t1_t4_only": "1.1457596924573008696890815957741193059437280619435"
       },
       "n (neutron)": {
-        "sum_6term": "-3.86024418344882243344390540712771382141832202857819",
+        "sum_6term": "-3.70691156908932564288071295341903806336577439789807",
         "terms": {
-          "term1_descended": "0.92323330514983772546573530276491123416377319107628",
-          "term2_single": "1.5257534880271809191552671233775761933172594401629",
-          "term3_pair": "0.17566398286919822695171411345330223090453835285773",
+          "term1_descended": "0.98774368811580957163402016550129498205504875906283",
+          "term2_single": "1.5257534877990689485803461382933990454859983667255",
+          "term3_pair": "0.2644862031053610741602016593214972375447665977076",
           "term4_frob_per_vortex": "0.0",
-          "term5_chirality_bw": "-7.4665932876619211015530719467235034798038930126751",
+          "term5_chirality_bw": "-7.466593276276447033791730916535229328451588121394",
           "term6_habiro_residue": "0.98169832816688179653645"
         },
-        "t1_t4_only": "0.92323330514983772546573530276491123416377319107628"
+        "t1_t4_only": "0.98774368811580957163402016550129498205504875906283"
       },
       "D (deuteron)": {
-        "sum_6term": "55.33174122032400568973486833227407420720611593976231",
+        "sum_6term": "56.20486997211401362671281034486039158939854092729916",
         "terms": {
-          "term1_descended": "0.38835720735922144817878790508123279260887487029191",
-          "term2_single": "3.392619344776266895929480859927525272305136618872",
-          "term3_pair": "1.3573247883030273085462009938590394899349517566124",
+          "term1_descended": "0.57517224391777187082653534398618088915249435289286",
+          "term2_single": "3.3926193442814171066493146427763904433151135219393",
+          "term3_pair": "2.0436385067596161669833260451824766678926951793947",
           "term4_frob_per_vortex": "0.0",
-          "term5_chirality_bw": "-5.631416417083903958550101426593723347642847306014",
+          "term5_chirality_bw": "-5.6314164198141855133768656870846564109617621269277",
           "term6_habiro_residue": "55.8248562969693939956305"
         },
-        "t1_t4_only": "0.38835720735922144817878790508123279260887487029191"
+        "t1_t4_only": "0.57517224391777187082653534398618088915249435289286"
       },
       "T (triton)": {
-        "sum_6term": "-21353.83211814732990889848113110686800503910165393030462",
+        "sum_6term": "-21352.02533939668713500145690456363213690641094073466104",
         "terms": {
-          "term1_descended": "0.10407107962429064105153902006889028135434911519428",
-          "term2_single": "5.0720625108474547971957381691265013968875371475727",
-          "term3_pair": "3.3255886912107245647010164146573943637154922420414",
+          "term1_descended": "0.22931010210455650733209081026890887960280163645606",
+          "term2_single": "5.0720625101181118828690580512680428228128612127522",
+          "term3_pair": "5.0071295872525497201781665159334506834708356718457",
           "term4_frob_per_vortex": "0.0",
-          "term5_chirality_bw": "13.150266931085879795570575289279208918940967564887",
+          "term5_chirality_bw": "13.150265763935905585163780058897460707702560744285",
           "term6_habiro_residue": "-21375.484107360098258697"
         },
-        "t1_t4_only": "0.10407107962429064105153902006889028135434911519428"
+        "t1_t4_only": "0.22931010210455650733209081026890887960280163645606"
       },
       "3He": {
-        "sum_6term": "-21353.78722442031631929556562113934086910671236426184678",
+        "sum_6term": "-21351.70393151577765560756216781151653206501696949537731",
         "terms": {
-          "term1_descended": "0.20657849186184512447085968557168335652150174015212",
-          "term2_single": "5.3503768467755464887143151573409909186959481443519",
-          "term3_pair": "3.7301565391404062569859624577549252581640437903082",
+          "term1_descended": "0.40376703685142817036867025333340254115508707059189",
+          "term2_single": "5.3503768460018056318547442414170075485991327373636",
+          "term3_pair": "5.6162619332766859316044419238150936587260940982462",
           "term4_frob_per_vortex": "0.0",
-          "term5_chirality_bw": "12.409771062004141531263241559991531359906142063341",
+          "term5_chirality_bw": "12.409770028190683355609975769917964186502716598421",
           "term6_habiro_residue": "-21375.484107360098258697"
         },
-        "t1_t4_only": "0.20657849186184512447085968557168335652150174015212"
+        "t1_t4_only": "0.40376703685142817036867025333340254115508707059189"
       }
     },
     "approach_B_categorical_ratio": {
       "proton": {
         "tr_M_q0": "1.065306228613167",
-        "categorical_ratio_to_m_e_Hecke": "2.133512608403511501460585798377736140378814082491338349255583911835902"
+        "categorical_ratio_to_m_e_Hecke": "1.738741682593847938961366582692448444152070032490253502042545006588491"
       },
       "neutron": {
         "tr_M_q0": "0.9232332971861535",
-        "categorical_ratio_to_m_e_Hecke": "1.848979971335407575534705466498886365207258135959641640224087752513621"
+        "categorical_ratio_to_m_e_Hecke": "1.506857064626269667006016231758234979050336519312997518035834403152084"
       },
       "deuteron": {
         "tr_M_q0": "0.3882864715477132",
-        "categorical_ratio_to_m_e_Hecke": "0.7776300001531018821709163603627186721810358865122159950432347502355501"
+        "categorical_ratio_to_m_e_Hecke": "0.6337425378111176336751535677732115581117175276566203807476518928977389"
       }
     },
     "approach_C_placeholder_anomaly": {
-      "M_p_Hecke_path_a": "2.34141908614",
-      "M_e_Hecke_path_a": "2.00272236446",
-      "path_a_ratio": "1.16911816021",
-      "codata_m_p_over_m_e": "1836.15267095",
-      "codata_m_p_minus_m_e_over_m_e": "1835.15267095",
-      "diff_to_codata_p_over_e_ppb": "-9.99363e+8",
-      "diff_to_codata_minus_one_ppb": "-9.99363e+8"
+      "M_p_Hecke_path_a": "2.42187254083",
+      "M_e_Hecke_path_a": "2.45742858369",
+      "path_a_ratio": "0.98553119993",
+      "codata_m_p_over_m_e": "1836.15267343",
+      "codata_m_p_minus_m_e_over_m_e": "1835.15267343",
+      "diff_to_codata_p_over_e_ppb": "-9.99463e+8",
+      "diff_to_codata_minus_one_ppb": "-9.99463e+8"
     },
-    "finding": "Phase 2 deliverable status: NONE OF THE THREE APPROACHES CLOSES.\n  A. 6-term sum: proton sum is sign-indefinite (-4.77); D/T/³He T2+T3 are 10^5..10^6 (out of scale).\n  B. Categorical ratio: predicts m_p/m_e ≈ 2.135 vs CODATA 1836 (factor 860 off — missing the higher T_k structure).\n  C. Placeholder ratio: hits CODATA-(m_p - m_e)/m_e to ~470 ppb, NOT m_p/m_e — hidden algebraic +1 (audit doc 2026-05-09-proton-m_e-anomaly.md).\n\nRecommended forward path: a Path A *partial* chain — T1 (canonical Wenzl-bridge anchor) + T4 (Frobenius per-vortex) only — quarantining T2 (single-pole), T3 (pair-pole), T5 (chirality-BW), T6 (Habiro residue) until each closes individually.  Currently T1+T4 yields:\n    proton:      +1.0653\n    neutron:     +0.9232\n    deuteron:    +0.3884\nNote: T1+T4 ratio (proton/neutron) ~ 1.022 vs CODATA m_p/m_n ~ 0.999 (off by 2.3%) — confirming T1+T4 alone is not the right closure either, but is the cleanest currently-trustable subset.\n\nNEXT STEPS:\n  1. Rederive T2 (single-pole brane tower) at q_0 using canonical Wenzl-bridge weight; compare to the current 6-term mpfr witness values which use the legacy weight (factor-of-2 issue same root cause as habiro_interpolate_cross_validator).\n  2. Audit T5 (chirality-BW) for sign convention — current value -7.79 dominates but with the wrong sign would give the right scale.\n  3. Once T2..T6 are individually closed, replace the placeholders with sum-derived values and re-run applied_uniqueness_mass_table.py.",
+    "finding": "Phase 2 deliverable status: NONE OF THE THREE APPROACHES CLOSES.\n  A. 6-term sum: proton sum is sign-indefinite (-4.77); D/T/³He T2+T3 are 10^5..10^6 (out of scale).\n  B. Categorical ratio: predicts m_p/m_e ≈ 2.135 vs CODATA 1836 (factor 860 off — missing the higher T_k structure).\n  C. Placeholder ratio: hits CODATA-(m_p - m_e)/m_e to ~470 ppb, NOT m_p/m_e — hidden algebraic +1 (audit doc 2026-05-09-proton-m_e-anomaly.md).\n\nRecommended forward path: a Path A *partial* chain — T1 (canonical Wenzl-bridge anchor) + T4 (Frobenius per-vortex) only — quarantining T2 (single-pole), T3 (pair-pole), T5 (chirality-BW), T6 (Habiro residue) until each closes individually.  Currently T1+T4 yields:\n    proton:      +1.1458\n    neutron:     +0.9877\n    deuteron:    +0.5752\nNote: T1+T4 ratio (proton/neutron) ~ 1.022 vs CODATA m_p/m_n ~ 0.999 (off by 2.3%) — confirming T1+T4 alone is not the right closure either, but is the cleanest currently-trustable subset.\n\nNEXT STEPS:\n  1. Rederive T2 (single-pole brane tower) at q_0 using canonical Wenzl-bridge weight; compare to the current 6-term mpfr witness values which use the legacy weight (factor-of-2 issue same root cause as habiro_interpolate_cross_validator).\n  2. Audit T5 (chirality-BW) for sign convention — current value -7.79 dominates but with the wrong sign would give the right scale.\n  3. Once T2..T6 are individually closed, replace the placeholders with sum-derived values and re-run applied_uniqueness_mass_table.py.",
     "phase": "Phase 2 of 1ppb workplan (2026-05-10)",
     "workplan_doc": "docs/audits/2026-05-10-1ppb-workplan-update.md",
     "upstream_witness_hashes": [
       {
         "path": "mass-formula-6term-mpfr-50dps.witness.json",
-        "sha256": "4f0ee86827c822970b71cda930585eb2757939eb9a937361a634a02f57f7bf6b",
-        "size_bytes": 6332,
-        "commitSha": "7b464086db196881f64974f3d09b297b7b96014e",
-        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-        "computedAt": "2026-06-29T17:24:35.235400+00:00"
+        "sha256": "e0e9ca8dc65b2b24ff5c1ab1a03fdf097148c020114354959cbd9a3390faf098",
+        "size_bytes": 6334,
+        "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T14:54:54.518928+00:00"
       }
     ]
   }
