@@ -123,6 +123,44 @@ theorem sum_index_le_index_mvGenWronskian_add [DecidableEq σ] {m : ℕ}
     _ ≤ index d α (mvGenWronskian D f) + (((m : ℚ) * C : ℚ) : WithTop ℚ) :=
         add_le_add_right hdet _
 
+/-- **The index of a determinant of operators applied to a single polynomial.**
+
+`sum_index_le_index_mvGenWronskian_add` covers a *family* `f`, with one operator list per row.
+The separated factorisation of `QOU/Mathlib/SeparatedWronskian.lean` produces something else:
+a matrix whose `(i,j)` entry is a *mixed* operator `Dx i ++ Dy j` applied to **one**
+polynomial `P`.  Nothing covered that, and it is what turns "`P` has large index" into "its
+Wronskian has large index".
+
+Same proof shape as the family version — evaluate `index_det_ge`'s infimum at a permutation
+attaining it, then bound each entry by `index_le_index_pderivList_add`. -/
+theorem sum_index_le_index_det_pderivList_add [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R) (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (C : ℚ)
+    (hC : ∀ i j, ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ C) :
+    ∑ _i : Fin r, index d α P
+      ≤ index d α (Matrix.of fun i j => pderivList (D i j) P).det
+        + (((r : ℚ) * C : ℚ) : WithTop ℚ) := by
+  classical
+  set M : Matrix (Fin r) (Fin r) (MvPolynomial σ R) :=
+    Matrix.of fun i j => pderivList (D i j) P with hM
+  obtain ⟨p₀, -, hp₀⟩ := Finset.exists_mem_eq_inf (Finset.univ : Finset (Equiv.Perm (Fin r)))
+    Finset.univ_nonempty (fun p => ∑ i : Fin r, index d α (M (p i) i))
+  have hdet : ∑ i : Fin r, index d α (M (p₀ i) i) ≤ index d α M.det := by
+    rw [← hp₀]; exact index_det_ge d α _
+  have hterm : ∀ i : Fin r,
+      index d α P ≤ index d α (M (p₀ i) i) + ((C : ℚ) : WithTop ℚ) := by
+    intro i
+    have h : M (p₀ i) i = pderivList (D (p₀ i) i) P := rfl
+    rw [h]
+    exact le_trans (index_le_index_pderivList_add d α (D (p₀ i) i) P)
+      (add_le_add_left (WithTop.coe_le_coe.mpr (hC _ _)) _)
+  calc ∑ _i : Fin r, index d α P
+      ≤ ∑ i : Fin r, (index d α (M (p₀ i) i) + ((C : ℚ) : WithTop ℚ)) :=
+        Finset.sum_le_sum (fun i _ => hterm i)
+    _ = (∑ i : Fin r, index d α (M (p₀ i) i)) + (((r : ℚ) * C : ℚ) : WithTop ℚ) := by
+        rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ, Fintype.card_fin,
+          nsmul_coe_withTop]
+    _ ≤ index d α M.det + (((r : ℚ) * C : ℚ) : WithTop ℚ) := add_le_add_right hdet _
+
 /-! ### Validation — the bound is attained
 
 `RothIndex.lean` sets the standard that a validation should pin a value, since a wrong

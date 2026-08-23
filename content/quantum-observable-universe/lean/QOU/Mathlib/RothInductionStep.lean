@@ -34,6 +34,7 @@
 import QOU.Mathlib.SeparatedWronskian
 import QOU.Mathlib.SeparatedIndex
 import QOU.Mathlib.SeparatedHeight
+import QOU.Mathlib.WronskianIndex
 
 namespace MvPolynomial
 
@@ -96,11 +97,52 @@ theorem abs_coeff_le_of_sepW_right {r : ℕ}
   have h := hB n
   rwa [sepW, det_separated_wronskian] at h
 
+/-! ### The key inequality of the step -/
+
+/-- **`r · index P ≤ index U + index V + r·C`** — the inequality the recursion runs on.
+
+Read: differentiating `P` into its separated Wronskian costs at most `C` of index per entry,
+and the Wronskian's index then splits exactly between the two factors.  So a *large* index for
+`P` forces a large index for one of `U`, `V`, which is what the induction hypothesis
+contradicts.
+
+Additive rather than `r·index P − r·C ≤ …` because `WithTop ℚ` has no subtraction, and `⊤`
+must survive: a zero `P` gives `⊤` on the left and the statement stays true.
+
+One line from `sum_index_le_index_det_pderivList_add` and `index_sepW`, because `sepW` **is**
+that determinant — `rfl` bridges them.  That the composition is a `rfl` is the check that the
+two modules were built to the same shape. -/
+theorem sum_index_le_index_sepW_add {K : Type*} [CommRing K] [IsDomain K]
+    [DecidableEq σ] [DecidableEq τ] {r : ℕ}
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (α : σ → K) (β : τ → K)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K) (C : ℚ)
+    (hC : ∀ i j, (((Dx i).map Sum.inl ++ (Dy j).map Sum.inr).map
+        (fun k => (1 : ℚ) / ((Sum.elim d₁ d₂) k : ℚ))).sum ≤ C) :
+    ∑ _i : Fin r, index (Sum.elim d₁ d₂) (Sum.elim α β)
+        (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k))
+      ≤ (index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ))
+        + (((r : ℚ) * C : ℚ) : WithTop ℚ) := by
+  classical
+  have h := sum_index_le_index_det_pderivList_add (Sum.elim d₁ d₂) (Sum.elim α β)
+    (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr)
+    (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k)) C hC
+  have hsep : (Matrix.of fun i j =>
+      pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr)
+        (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k))).det
+      = sepW Dx Dy φ ψ := rfl
+  rw [hsep, index_sepW] at h
+  exact h
+
 /-! ### Next
 
-⚠ The recursion itself.  Writing Roth's lemma's statement in Lean — with `dⱼ/dⱼ₊₁` growth, `ε`,
-and the `qⱼ` hypotheses — and matching each of its hypotheses to a named theorem is the
-remaining work, and is also the check that this arc has learned to run: it is what found the
-fifth correction, and it is what this module is a small instance of. -/
+The statement is now written (`QOU/Mathlib/RothLemmaStatement.lean`), its `m = 1` case proved,
+and the step's inputs are all constructible (`SeparatedRepresentation`).  With
+`sum_index_le_index_sepW_add` above, the step's key *inequality* is proved too.
+
+⚠ What remains is the **recursion**: choosing `ω(m, ε)`, choosing the operator families `Dx`,
+`Dy` with bounded order, and doing the arithmetic that turns this inequality plus the
+induction hypothesis into a contradiction.  The pieces exist; the argument that assembles them
+does not. -/
 
 end MvPolynomial

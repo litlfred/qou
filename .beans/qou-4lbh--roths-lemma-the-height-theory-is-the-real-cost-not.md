@@ -1179,3 +1179,64 @@ height.
 
 ⚠ That is the *step's inputs*, not the recursion. `ω(m, ε)` remains the one open item, and it
 cannot be settled until the recursion is written.
+
+---
+
+## 2026-08-23 — the induction step's key INEQUALITY, and a bridge that was missing
+
+Setting out to write the recursion turned up one more absent piece, found the same way as the
+last three: by trying to use what exists.
+
+### The gap
+
+`sum_index_le_index_mvGenWronskian_add` bounds the index of `mvGenWronskian D f` — a
+determinant with **one operator list per row and one function per column**. But
+`det_separated_wronskian` builds something else: a matrix whose `(i,j)` entry is a **mixed**
+operator `Dx i ++ Dy j` applied to a **single** polynomial `P`. Those are different shapes, and
+nothing covered the second.
+
+That matters because the second is the one Roth's lemma actually forms.
+
+`sum_index_le_index_det_pderivList_add` (in `WronskianIndex.lean`) covers it — same proof
+shape as the family version: evaluate `index_det_ge`'s infimum at a permutation attaining it,
+then bound each entry with `index_le_index_pderivList_add`.
+
+### The key inequality
+
+`sum_index_le_index_sepW_add` (in `RothInductionStep.lean`):
+
+```
+r · index P  ≤  index U + index V + r·C
+```
+
+for `P = ∑ₖ φₖ(x)ψₖ(y)`, `U = mvGenWronskian Dx φ`, `V = mvGenWronskian Dy ψ`, and `C` a bound
+on the per-entry differentiation cost.
+
+**This is what the recursion runs on.** Differentiating `P` into its separated Wronskian costs
+at most `C` of index per entry, and the Wronskian's index splits *exactly* between the two
+factors — so a large index for `P` forces a large index for one of `U`, `V`, which the
+induction hypothesis contradicts.
+
+Additive rather than `r·index P − r·C ≤ …` because `WithTop ℚ` has no subtraction, and `⊤`
+must survive: a zero `P` gives `⊤` on the left and the statement stays true.
+
+⚠ Worth noting **how** it composes: `sepW` *is* that determinant, so the bridge is `rfl`. That
+the composition is definitional is the check that `WronskianIndex` and `RothInductionStep`
+were built to the same shape — had either drifted, this would not have been one line.
+
+### Open
+
+Only the **recursion**: choosing `ω(m, ε)`, choosing bounded-order operator families `Dx`, `Dy`,
+and the arithmetic that turns the key inequality plus the induction hypothesis into a
+contradiction.
+
+Everything it consumes now exists: `exists_separated_representation_indep` builds the
+representation with both families independent, `BoundedOrderWronskian` converts independence
+into non-vanishing Wronskians, `sum_index_le_index_sepW_add` supplies the index inequality,
+`abs_coeff_le_of_sepW_left/_right` the height control, and `rothLemmaUniform_one` terminates.
+
+⚠ That list is a claim about inputs, not about the argument. The argument is not written, and
+this arc's record is that a list of available pieces is not evidence that they assemble.
+
+Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.
