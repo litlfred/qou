@@ -172,12 +172,48 @@ full run touches neither — those are reads.
 
 ## 4. Scope of what is still unmeasured
 
-22 modules import `char_fast` directly; 12 of them write a witness. Three
-witnesses are now refreshed and attributed (§1, §3, plus the deuteron one
-#5517 shipped). The rest are **not** claimed either way here — in particular
-the H12 ⁴He producers #5517 itself lists as "Not run".
+22 modules import `char_fast` directly. **Eight of them write a witness** —
+not twelve, which is what a first pass of this audit reported and what an
+earlier revision of this section said.
+
+> **Correction.** The twelve came from regexing `*.witness.json` string
+> literals out of each module and treating every hit as an output. Four of the
+> twelve only *read* those files: `canonical_tr_m_via_branching`,
+> `chi_atom_fmatrix_recoupling`, `chi_monotone_transfer`, and
+> `probes/delta_lambda_master_formula_h3_probe`. The same conflation ran the
+> other way too — `nuclide_braid_pipeline` and
+> `probes/qbeta_operator_identification_probe` both name
+> `q-pinning-50-digit.witness.json`, which is the **anchor-defining** witness
+> AGENTS.md forbids re-pinning, and both merely **read** it. There is no
+> anchor-rewrite hazard here; checking the call sites is what established
+> that, and the filename grep alone would have reported one.
+>
+> A second instance, same class: `chi-deuteron-h6-at-q0-50dps.witness.json`
+> was flagged as a likely mover on the reasoning that #5517's own evidence
+> calls the 50-digit deuteron χ "34 digits of noise". Its actual producer is
+> `chi_at_q0_via_hoefsmit_mpfr.py`, which reaches `tr_m_wenzl_bridge_mpfr` and
+> `pyhecke_native` and **never touches `char_fast`** — it imports
+> `mass_at_3A_proper` only for `atom_braid_word_3A`, the braid word, not the
+> rep. #5517 cannot move it. The prediction was refuted before it cost a run.
+
+The eight writers, with what each actually emits:
+
+| module | writes | status |
+|---|---|---|
+| `sublemma_2_1_deuteron_branching` | `sublemma-2-1-deuteron-branching` | refreshed by #5517 |
+| `sublemma_2_1_h9_tritium_verify` | `sublemma-2-1-h9-tritium-verify` | refreshed by #5517; reproduced in §3 |
+| `sublemma_2_1_A_operator_extract` | `sublemma-2-1-A-operator-extract` | refreshed here (§1) |
+| `sublemma_2_1_alpha_shift_extract` | `sublemma-2-1-alpha-shift-extract` | deliberately not — §2, `qou-b3l8` |
+| `sublemma_2_1_h12_he4_phase25` | `he4-canonical-tr-m-block-fingerprint` | measuring |
+| `nuclide_braid_pipeline` | `nuclide-braid-<sym>` | **unmeasured** |
+| `probes/poly_q_proof_probe` | `poly-q-proof` | **unmeasured** |
+| `probes/qbeta_operator_identification_probe` | `qbeta-operator-identification-probe` | **unmeasured** |
+
+So the open set is three witnesses plus the H12 one, not nine. None of the four
+is claimed either way here.
 
 The transitive import cone is not a useful scoping tool for this question:
 `computations/` uses a flat namespace, so 572 modules and 201 witness-writers
 reach `char_fast` through *some* path. Direct importers that evaluate the rep
-are the actionable set.
+are the actionable set — and "evaluate", not "mention", is the operative word,
+which is the whole content of the correction above.
