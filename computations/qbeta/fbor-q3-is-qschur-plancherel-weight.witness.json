@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-19T13:59:15.385042+00:00",
-  "commitSha": "c86d838636412bddbce45ec0e6301f49d08fecdf",
+  "computedAt": "2026-08-23T14:36:48.557400+00:00",
+  "commitSha": "d2ab464acc599f6a4b366a739a07ffe6c95b85f0",
   "assertions": [
     {
       "name": "wenzl_weights_reproduce_the_lean_trM",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "fbor-q3-is-qschur-plancherel-weight",
   "scriptFile": "fbor_q3_is_qschur_plancherel_weight_probe.py",
-  "scriptHash": "6de10d3fadac",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3b709c6b703f",
+  "scriptCommitSha": "b95f0922f66c5905be1d0bd3a6db67f7b550757b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,7 +72,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py"
   },
   "description": "Identifies the provenance of F_Bor's /q^3: it is 1/y_(3) for the q-SCHUR Plancherel weight y_lam = q^{c(lam)}/[n]_q!, whose exponent at lam = (3) is the content sum 0+1+2 = 3. Measures that this is a DIFFERENT weight family from the Wenzl/Markov weights that actually decompose the tr_M appearing in F_Bor: the Wenzl weights reproduce the Lean closed form and are trace-normalised, the q-Schur ones do neither.",
   "auditOnly": "docs/audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md",
@@ -134,5 +141,7 @@
         "m_p_MeV": "938.272089427324"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
