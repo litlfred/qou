@@ -4,19 +4,22 @@
       "producer": "computations/alpha/alpha_5_lp_dual_crystal.py",
       "witness": "computations/alpha/alpha-5-lp-dual-crystal.witness.json",
       "verdict": "TIMEOUT",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "anchor_defining": false
     },
     {
       "producer": "computations/binding_via_interface_knot.py",
       "witness": "computations/binding-via-interface-knot.witness.json",
       "verdict": "TIMEOUT",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "anchor_defining": false
     },
     {
       "producer": "computations/block_swap_binding.py",
       "witness": "computations/block-swap-binding.witness.json",
       "verdict": "TIMEOUT",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "anchor_defining": false
     },
     {
       "producer": "computations/a_operator/cyclic_intertwiner_verify.py",
@@ -36,7 +39,8 @@
         "q0Value (removed)",
         "scriptHash"
       ],
-      "stderr_tail": ""
+      "stderr_tail": "",
+      "anchor_defining": false
     },
     {
       "producer": "computations/binding_canonical.py",
@@ -44,7 +48,8 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [
         "computations/binding-canonical.witness.json"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/atomic_tr_m_mpfr_50dps.py",
@@ -68,7 +73,8 @@
         "results.4.python_hoefsmit_elapsed_sec",
         "results.4.rust_canonical_chi_elapsed_sec",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/audits/muon_pin_three_values_probe.py",
@@ -77,13 +83,15 @@
       "siblings_moved": [],
       "changed_fields": [
         "engineVersion"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/audits/q0_anchor_consistency_audit.py",
       "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
       "verdict": "UNCHANGED",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "anchor_defining": false
     },
     {
       "producer": "computations/borromean-axial-coupling.py",
@@ -131,7 +139,8 @@
         "data.gram_inverse.5.4",
         "data.gram_inverse.5.5",
         "data.gram_inverse_kind (added)"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/canonical_tr_m_via_chi_cache.py",
@@ -139,7 +148,8 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [
         "computations/canonical-tr-m-via-chi-cache.witness.json"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/cross_check_trM_1ppb.py",
@@ -185,7 +195,8 @@
         "data.deltas.5.rel_delta_max",
         "engineVersion",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/deltalambda/wlambda_nuclear_braid_connected_probe.py",
@@ -221,7 +232,8 @@
         "result.per_bond_C_std.4He",
         "result.per_bond_C_std.6Li",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/deltalambda/wlambda_transfer_matrix_connected_probe.py",
@@ -235,14 +247,16 @@
         "q0Value",
         "result.braided_connected",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/derivation_chain_validator.py",
       "witness": "computations/derivation-chain-audit.witness.json",
       "verdict": "CRASH",
       "siblings_moved": [],
-      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 498, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in main\n    results = [validate_chain(p) for p in chain_files]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in <listcomp>\n    results = [validate_chain(p) for p in chain_files]\n               ^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 254, in validate_chain\n    f\"c_q algebra re-eval at q_0={Q_0} gives {recomputed} \"\nTypeError: unsupported format string passed to mpf.__format__\n"
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 498, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in main\n    results = [validate_chain(p) for p in chain_files]\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 401, in <listcomp>\n    results = [validate_chain(p) for p in chain_files]\n               ^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/derivation_chain_validator.py\", line 254, in validate_chain\n    f\"c_q algebra re-eval at q_0={Q_0} gives {recomputed} \"\nTypeError: unsupported format string passed to mpf.__format__\n",
+      "anchor_defining": false
     },
     {
       "producer": "computations/derived_chi_catalogue_matrix_m_mpfr.py",
@@ -250,7 +264,8 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [
         "computations/derived-chi-catalogue-matrix-m-mpfr.witness.json"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/deuteron_fpn_wlambda_wiring.py",
@@ -260,14 +275,16 @@
       "changed_fields": [
         "q0Anchor",
         "q0Value"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/habiro/habiro_interpolate_cross_validator.py",
       "witness": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
       "verdict": "CRASH",
       "siblings_moved": [],
-      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 204, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 158, in main\n    p_at_u0 = parse_polynomial_in_u(record.p_in_u, u_0)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 102, in parse_polynomial_in_u\n    return mp.mpf(eval(s, {\"__builtins__\": {}}, {\"check_q\": u_value, \"mp\": mp}))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'u' is not defined\n"
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 204, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 158, in main\n    p_at_u0 = parse_polynomial_in_u(record.p_in_u, u_0)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/habiro/habiro_interpolate_cross_validator.py\", line 102, in parse_polynomial_in_u\n    return mp.mpf(eval(s, {\"__builtins__\": {}}, {\"check_q\": u_value, \"mp\": mp}))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'u' is not defined\n",
+      "anchor_defining": false
     },
     {
       "producer": "computations/habiro/qbeta_h4_stagec_markov_infra.py",
@@ -279,20 +296,23 @@
         "data.worst_dev.C",
         "q0Anchor",
         "q0Value"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/hadron_knot_table.py",
       "witness": "computations/hadron-knot-table.witness.json",
       "verdict": "CRASH",
       "siblings_moved": [],
-      "stderr_tail": "hon3.11/dist-packages/scipy/sparse/_base.py\", line 815, in _matmul_dispatch\n    return self._matmul_multivector(other)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py\", line 404, in _matmul_multivector\n    dtype=upcast_char(self.dtype.char, other.dtype.char))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 64, in upcast_char\n    t = upcast(*map(np.dtype, args))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 56, in upcast\n    raise TypeError(f'no supported conversion for types: {args!r}')\nTypeError: no supported conversion for types: (dtype('float64'), dtype('O'))\n"
+      "stderr_tail": "hon3.11/dist-packages/scipy/sparse/_base.py\", line 815, in _matmul_dispatch\n    return self._matmul_multivector(other)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_compressed.py\", line 404, in _matmul_multivector\n    dtype=upcast_char(self.dtype.char, other.dtype.char))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 64, in upcast_char\n    t = upcast(*map(np.dtype, args))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/scipy/sparse/_sputils.py\", line 56, in upcast\n    raise TypeError(f'no supported conversion for types: {args!r}')\nTypeError: no supported conversion for types: (dtype('float64'), dtype('O'))\n",
+      "anchor_defining": false
     },
     {
       "producer": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
       "witness": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
       "verdict": "TIMEOUT",
-      "siblings_moved": []
+      "siblings_moved": [],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/hecke_channel_binding_probe.py",
@@ -302,7 +322,8 @@
       "changed_fields": [
         "q0Anchor",
         "q0Value"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/i6_trace_convention_pin.py",
@@ -312,7 +333,8 @@
       "changed_fields": [
         "context.facade",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/markov/markov_peel_atomic_witness.py",
@@ -320,14 +342,16 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [
         "computations/markov/markov-peel-atomic-tr-m.witness.json"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/parabolic_cylinder_channel_mixing_probe.py",
       "witness": "computations/parabolic-cylinder-channel-mixing-probe.witness.json",
       "verdict": "CRASH",
       "siblings_moved": [],
-      "stderr_tail": "/user/qou/computations/parabolic_cylinder_channel_mixing_probe.py\", line 72, in main\n    nu_cl = invert_ratio(rho, mp.gamma)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/parabolic_cylinder_channel_mixing_probe.py\", line 59, in invert_ratio\n    return mp.findroot(lambda nu: weber_ratio(nu, gamma) - rho,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/mpmath/calculus/optimization.py\", line 985, in findroot\n    raise ValueError('Could not find root within given tolerance. '\nValueError: Could not find root within given tolerance. (0.023017455017688137634896513654613483800440217798653771515 > 9.9999999999999999999999999999999999999999999999999938605e-41)\nTry another starting point or tweak arguments.\n"
+      "stderr_tail": "/user/qou/computations/parabolic_cylinder_channel_mixing_probe.py\", line 72, in main\n    nu_cl = invert_ratio(rho, mp.gamma)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/parabolic_cylinder_channel_mixing_probe.py\", line 59, in invert_ratio\n    return mp.findroot(lambda nu: weber_ratio(nu, gamma) - rho,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/mpmath/calculus/optimization.py\", line 985, in findroot\n    raise ValueError('Could not find root within given tolerance. '\nValueError: Could not find root within given tolerance. (0.023017455017688137634896513654613483800440217798653771515 > 9.9999999999999999999999999999999999999999999999999938605e-41)\nTry another starting point or tweak arguments.\n",
+      "anchor_defining": false
     },
     {
       "producer": "computations/probe_9b_gate_interface_algebra.py",
@@ -372,7 +396,8 @@
         "q0Anchor (removed)",
         "q0Value (removed)",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
@@ -420,7 +445,8 @@
         "data.proton_anchor.rows.1.q_inflation_factor",
         "data.proton_anchor.rows.1.qgauss_ceiling_over_target",
         "data.proton_anchor.rows.1.qgauss_signed_net_over_target"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/casimir_macdonald_probe.py",
@@ -468,7 +494,8 @@
         "data.cherednik_candidates.15.raw_value",
         "data.cherednik_candidates.15.rel_residue_direct",
         "data.cherednik_candidates.15.rel_residue_geom_mult"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
@@ -506,7 +533,8 @@
         "q0Anchor (removed)",
         "q0Value (removed)",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
@@ -554,7 +582,8 @@
         "data.proton_anchor.leading",
         "data.proton_anchor.q0",
         "q0Anchor (removed)"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/su4_occupancy_binding_probe.py",
@@ -562,7 +591,8 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [
         "computations/probes/su4-occupancy-binding-mass-probe.witness.json"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/probes/trefoil_complex_volume_probe.py",
@@ -572,7 +602,8 @@
       "changed_fields": [
         "q0Anchor (removed)",
         "q0Value (removed)"
-      ]
+      ],
+      "anchor_defining": false
     },
     {
       "producer": "computations/q_pinning_50_digit.py",
@@ -582,7 +613,8 @@
       "changed_fields": [
         "scriptHash",
         "timestamp"
-      ]
+      ],
+      "anchor_defining": true
     },
     {
       "producer": "computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py",
@@ -605,18 +637,26 @@
         "data.anchors.1.q",
         "data.anchors.1.u",
         "scriptHash"
-      ]
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+      "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
     }
   ],
   "tally": {
-    "TIMEOUT": 4,
+    "TIMEOUT": 5,
     "SUBSTANTIVE/ASSERT-FAIL": 1,
     "UNCHANGED": 6,
     "SUBSTANTIVE": 18,
     "CRASH": 4
   },
   "partial": true,
-  "measured": 33,
+  "measured": 34,
   "total": 55,
   "environment": {
     "python": "3.11.15",
@@ -627,7 +667,7 @@
       "scipy": "1.17.1",
       "pyhecke_native": "0.9.0"
     },
-    "tree_commit": "09365daf41f5bbef800035e91e5fb95c2b2b420a"
+    "tree_commit": "8b762633833d0fe42bc8af3cb8b277718dd2e3bd"
   },
   "skipped": [
     {
