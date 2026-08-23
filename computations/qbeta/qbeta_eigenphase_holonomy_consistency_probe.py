@@ -177,19 +177,43 @@ second-order weight structure.  What it must do is have that structure
 **cancel between `n` and `p`**, exactly as `L₊` does.  A construction whose
 second-order term survives the difference contradicts `evalMap_affine`.
 
-### The residual, named narrowly
+### The residual, named — and then CHECKED, which changed the answer
 
 The NF vector above is asserted in the audit doc (`audit step 5`) and
 transcribed everywhere downstream: the Lean `epsNP`/`trMNP` are `def`s
 encoding it, and the one probe in `computations/` that carries it
 (`probes/probe_path_a_net_vs_trm_leading_order.py:137`) comments *"from the
-.md"*.  No committed script recomputes it.  So the whole chain rests on a
-single upstream computation that is not machine-checked here.
+.md"*.  No committed script recomputed it.  Assertion 16 shows the conclusion
+depends only on the **support**, so I named the one thing that would overturn
+it: a nonzero `L₊`/`L₋`/`e⁻` coefficient in the difference.
 
-That residual is narrow, because assertion 16 shows the conclusion does not
-depend on the coefficient *values* — only on the **support**.  The one thing
-that would overturn it is a nonzero `L₊`, `L₋`, or `e⁻` coefficient in the
-difference; the `L₊` cancellation in particular is the load-bearing line.
+**It is nonzero.**  `qbeta_nf_single_wrap_vs_typed_probe.py` (8/8) recomputes
+the construction symbolically from `pyhecke.gram.hm` + `atom.build_nucleon_nf`,
+validated against the live `PROTON_NF`/`NEUTRON_NF`, and the typed 6-term
+difference has **full support** — `deg_z E = 3`, with `d²` and `d³` both
+surviving.  Nothing cancels.
+
+These are **two different corpus objects**, and
+`docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 already names both
+and the factor between them (**1.00579**, *"typed-crossings 6-term NF picks up
+nonzero L±, e⁻ contributions that exactly cancel at single wrap"*).  Both its
+numbers reproduce from the symbolic run: single-wrap `|ε| = 0.187207`, typed
+`|ε| = 0.188291`.  So the 2026-06-16 vector is the **single-wrap** NF — never
+wrong, just a different and simpler object from the one the live mass compute
+uses.
+
+**So everything in this section is scope-limited to the single-wrap NF.**  On
+that object `deg_z E = 1`, the `d²` term vanishes, the gap is an abelian period,
+and reading (a) holds.  On the typed NF none of that is true, and the
+non-abelian Stokes framing is **not** deflated.  The unqualified claim in commit
+`17afd55cbe` needed this qualifier.
+
+And the sharper consequence, which is a scope-(a) negative for the derivation
+programme rather than for branch 3 alone: the ladder needs a **0.160 %** `N=1`
+correction, while the single-wrap-vs-typed ambiguity in the object it corrects
+is **0.579 %** — **3.6× larger**.  A 0.16 % phase cannot be derived from an
+object whose NF convention is unsettled at 0.58 %; settling it moves the target
+by more than the target.
 
 ## Scope — this is consistency, NOT a derivation
 

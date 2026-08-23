@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-23T00:35:56Z
+updated_at: 2026-08-23T00:52:17Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -520,3 +520,40 @@ The one thing that overturns it is a nonzero L₊/L₋/e⁻ coefficient in the
 difference.
 
 NEXT: branch 3's construction itself, against the corrected test.
+
+
+## CORRECTION to the entry above — I named the residual, then checked it, and it fails
+
+New probe `computations/qbeta/qbeta_nf_single_wrap_vs_typed_probe.py` (8/8).
+
+The entry above said the residual was narrow and that "the one thing that
+overturns it is a nonzero L+/L-/e- coefficient in the difference." **It is
+nonzero.** Reimplemented `pyhecke.gram.hm` + `atom.build_nucleon_nf`
+symbolically over Q(h), validated against the live PROTON_NF/NEUTRON_NF to
+float64 eps, and the typed 6-term difference has FULL support: deg_z E = 3,
+with d^2 and d^3 both surviving. Nothing cancels, L+ least of all.
+
+**These are two different corpus objects, and the corpus already said so.**
+`docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 names both and the
+factor between them — 1.00579, "typed-crossings 6-term NF picks up nonzero
+L+-, e- contributions that exactly cancel at single wrap". Both its numbers
+reproduce from the symbolic run: single-wrap |eps| = 0.187207 (audit 0.18721),
+typed |eps| = 0.188291 (audit 0.18829). So the 2026-06-16 vector is the
+SINGLE-WRAP NF. It was never wrong — it is a simpler object than the one the
+live mass compute uses.
+
+**Consequence 1 — my abelian deflation needs a qualifier it did not have.**
+On the single-wrap NF: deg_z = 1, d^2 vanishes, abelian period, reading (a)
+holds. On the typed NF: none of that. The non-abelian Stokes framing is NOT
+deflated there. Commit 17afd55cbe stated it unqualified.
+
+**Consequence 2 — the sharper one, and it is bigger than branch 3.** The ladder
+needs an N=1 factor of 0.99839767, a 0.160% correction. The
+single-wrap-vs-typed ambiguity in the very object it corrects is 0.579% —
+3.6x larger. A 0.16% phase cannot be derived from an object whose NF convention
+is unsettled at 0.58%. Scope-(a): settle which NF is canonical FIRST; settling
+it moves the target by more than the target. Neither declared canonical here —
+the 2026-05-11 audit treats the 1.00579 as still to be explained.
+
+NEXT: this is now the gating question for the whole alpha derivation, ahead of
+branch 3. Which NF is canonical for the Q_beta counit chain?
