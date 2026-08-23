@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-23T08:55:40Z
+updated_at: 2026-08-23T16:27:09Z
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`
@@ -43,3 +43,50 @@ and would then demand an expensive re-run to clear the drift it caused.
 
 Until (1), its staleness is UNMEASURED. That is not the same as UNCHANGED, and
 it must not be reported as either.
+
+## CORRECTION to my own count — "3 print sites in 426 lines" is wrong
+
+Measured: **20** print sites, at lines 152, 166, 253–256, 286, 292, 296, 299,
+302, 303, 306, 310, 316–318, 341, 353, 421. I wrote 3. The producer is not
+silent, and I should not have said so without counting.
+
+**The conclusion survives, on a different and narrower basis.** Two things are
+actually true, and they are the ones that matter:
+
+1. **No timing anywhere.** `grep -cE "elapsed|ETA|time\.time|perf_counter"` →
+   **0**. AGENTS.md's long-compute rule asks for periodic progress *including
+   wall elapsed + ETA*; prints without timing cannot tell you whether a run is
+   at 5 % or 95 %. That requirement is unmet regardless of the print count.
+2. **The expensive region is the silent one.** Prints at 292–318 sit inside the
+   stratum/atom loops, so that section does report. But the q-sweep at
+   **321–338** (`for q_v in q_sweep_q` × `for atom in atoms`) emits nothing
+   until line **341**, after it finishes. A timeout landing inside that nest —
+   which is where a q-sweep's cost lives — produces no output at all.
+
+So: "violates the logging rule" holds; "carries only 3 print sites" does not,
+and the difference is not cosmetic. The first is a claim about *where and what*
+it logs, which I checked; the second was a number I asserted without measuring
+and which anyone opening the file would have caught.
+
+## The decision is unchanged
+
+Do **not** add logging now. `scriptHash` is a whole-file hash, so a
+logging-only edit drifts it while the payload stays byte-identical —
+manufacturing staleness inside the audit that exists to measure it. Add the
+timing in the same pass as the eventual re-run, paying the drift once. That
+reasoning never depended on the print count.
+
+## This is a class, not one producer
+
+All four TIMEOUT producers, measured:
+
+| producer | lines | print sites | timing refs |
+|---|---|---|---|
+| `alpha_5_lp_dual_crystal` | 426 | 20 | **0** |
+| `binding_via_interface_knot` | 361 | 7 | 3 |
+| `block_swap_binding` | 192 | 17 | 3 |
+| `he3_tritium_cosh_asymmetry_diagnosis` | 130 | 14 | **0** |
+
+Two of four carry no timing at all. Four of 33 measured producers (12 %) are
+TIMEOUT, i.e. unmeasured — and the sweep cannot say how close any of them came
+to finishing, which is the decision it would need to inform a budget raise.
