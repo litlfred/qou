@@ -1,11 +1,11 @@
 ---
 # qou-q7f1
 title: Migrate wedderburn_lp_ew_wiring off float64 onto the MPFR LP path (62 baselined f64 fields)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T16:24:41Z
-updated_at: 2026-08-19T17:28:28Z
+updated_at: 2026-08-23T18:06:46Z
 ---
 
 ## Scope (PR #5260, owner directive "no f64 path")
