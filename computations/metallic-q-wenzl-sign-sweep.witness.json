@@ -1,6 +1,6 @@
 {
   "description": "Wenzl y_\u03bb positive-block count N(q,n) sweep across the first three metallic-ladder intervals plus bar-mirrors. Tests the owner's piecewise-on-q conjecture: if N(q,n) jumps at \u03c6 / \u03b4_silver / \u03b4_bronze and is constant within each interval, the metallic-piecewise structure is empirically confirmed at the Wenzl-weight level (necessary condition for SDP feasibility).",
-  "computed_at": "2026-08-23T21:09:11.489827+00:00",
+  "computed_at": "2026-08-23T21:42:07.335487+00:00",
   "precision_dps": 70,
   "anchors": {
     "q_0_substrate": "1.1099785955541805",
@@ -1326,9 +1326,9 @@
   ],
   "scriptHash": "307504a78e11",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "commitSha": "d79d543e934d26dc63848a215a36a84baad350ae",
   "engine": "mpmath",
-  "computedAt": "2026-08-23T21:09:11.549391+00:00",
+  "computedAt": "2026-08-23T21:42:07.405343+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",

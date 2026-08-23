@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:09:47.914972+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-08-23T21:42:10.868124+00:00",
+  "commitSha": "d79d543e934d26dc63848a215a36a84baad350ae",
   "assertions": [
     {
       "name": "dq_conjugation_symmetric",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "keystone-colored-wrt-perblock-vs-dq",
   "scriptFile": "keystone_colored_wrt_perblock_vs_dq.py",
   "scriptHash": "2de520c15595",
