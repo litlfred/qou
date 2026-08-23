@@ -1116,3 +1116,8 @@ import QOU.Mathlib.WronskianHeight
 -- exactly.  The index analogue of SeparatedHeight, and what Roth's induction on the
 -- number of variables splits on.  The ≤ direction is the half that needs IsDomain.
 import QOU.Mathlib.SeparatedIndex
+-- The m = 1 case of Roth's lemma stated against `index`, which is what the induction
+-- consumes.  RothHeightBound proved the corresponding statement about Taylor
+-- coefficients; nothing connected the two, because index lives on MvPolynomial and the
+-- height bound on Polynomial.  This module is that connection.
+import QOU.Mathlib.RothBaseCase

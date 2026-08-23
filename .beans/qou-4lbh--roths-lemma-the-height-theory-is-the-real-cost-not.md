@@ -731,3 +731,68 @@ Both fixes are recorded at the site rather than silently patched.
 Verification: all **thirteen** arc modules rebuilt with their `.olean`s deleted — exit 0, no
 linter output. `RothIndex`'s import closure changed, so every downstream module was rebuilt
 rather than trusted.
+
+---
+
+## ⚠ 2026-08-23 — FOURTH CORRECTION: the `m = 1` base case was not complete
+
+This bean recorded, on 2026-08-22, "**the `m = 1` base case is COMPLETE**", citing
+`pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero`, and added:
+
+> With Roth's hypothesis `H(P) ≤ q^{εd}` this gives `q^{θd} ≤ q^{εd}`, i.e. the index `θ ≤ ε`
+> — which **is** the base case.
+
+**That last step was prose, not Lean.** What was proved is a statement about *Taylor
+coefficients*: if every coefficient of the translate below `k` vanishes then `q^k ≤ |lead P|`.
+The induction does not consume that — it consumes a bound on `index`. Nothing anywhere
+related the two, because `index` lives on `MvPolynomial` and the height bound on `Polynomial`.
+
+New module `QOU/Mathlib/RothBaseCase.lean`, five declarations plus a validation example, all
+`[propext, Classical.choice, Quot.sound]`:
+
+```
+coeff_pUnitAlgEquiv                 coefficients correspond along n ↦ single () n
+pUnitAlgEquiv_translate             translate ↔ Polynomial.taylor
+taylor_coeff_eq_zero_of_le_index    index ≥ k/d kills Taylor coefficients below k
+pow_le_abs_leadingCoeff_of_le_index the height bound, restated against index
+index_le_of_abs_leadingCoeff_le     |lead P| ≤ q^e ⟹ index ≤ e/d
+```
+
+With `e = εd` the last reads `index ≤ ε`, which **is** the base case — now as a theorem.
+
+### Why the gap was easy to miss, and what it says
+
+The arc had a correct height calculus and a correct index calculus and no theorem relating
+them. Each side looked finished from its own end. This is the same failure the 2026-08-22
+determinant entry flagged in a different costume — a stack of true lemmas reading as a
+finished argument — and it survived a round of that very warning.
+
+Two details worth keeping:
+
+* **`q ≥ 2`, not `q > 0`.** The proof is by contradiction on the *realised* index: in one
+  variable every support element is `single () n`, so the index is literally `n₀/d` for some
+  natural `n₀`, and `e/d < index` forces `e < n₀`, hence `(e+1)/d ≤ index`, hence
+  `q^{e+1} ≤ |lead P| ≤ q^e`. With `q = 1` the powers do not separate and the argument gives
+  nothing.
+* **Universe trap.** `pUnitAlgEquiv` is stated for `PUnit.{u+1}`; a statement written with an
+  unannotated `PUnit` gets an auto-bound universe and will not unify with `index` elsewhere.
+  The error is an inscrutable `index.{u_2, 0}` vs `index.{0, 0}` mismatch. Every statement in
+  the module pins `Unit`.
+
+The validation is not a satisfiability check: with `P = 1`, `p/q = 1/2`, `d = 1`, `e = 0` the
+theorem gives `index ≤ 0`, which with `index_nonneg` **pins** the index of a non-zero constant
+to exactly `0`.
+
+### Open
+
+Only the **induction on the number of variables**: the parameter conditions (`dⱼ/dⱼ₊₁` growth,
+`ε`, the `qⱼ` hypotheses) and the step feeding this theorem and the `m−1` case back into the
+`m` case. Everything that step needs from the index and height calculus is proved —
+`index_separated` and `abs_coeff_le_of_mul_separated` split the separated Wronskian,
+`abs_coeff_mvGenWronskian_le` and `index_det_ge` bound it, and this terminates the recursion.
+What is not written is the recursion itself.
+
+⚠ I have now said "only the assembly remains" four times, and twice it turned out a *named*
+piece was missing rather than merely unassembled. Before budgeting from that claim again,
+someone should write the statement of Roth's lemma down in Lean and check each hypothesis
+against an existing theorem — not against a bean entry.
