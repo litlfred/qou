@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 292,
-      "proton-pin": 1303,
+      "proton-pin": 1298,
       "unknown": 25,
-      "canonical": 194
+      "canonical": 199
     },
     "stale_total": 292,
     "new_stale": 0,
@@ -7589,9 +7589,9 @@
       {
         "file": "computations/low-isotope-sign-flip-diagnostic.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/lp-confinement-nf-forcing.witness.json",
@@ -7659,9 +7659,9 @@
       {
         "file": "computations/m-p-borromean-verification-50dps.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/m-p-spectral-corrected-50dps.witness.json",
@@ -7869,9 +7869,9 @@
       {
         "file": "computations/mass-sweep-wiring-status.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/mass-table-comprehensive.witness.json",
@@ -10613,9 +10613,9 @@
       {
         "file": "computations/q1-mass-gap-probe.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/qbeta/c1-chi-magnitude-vs-r-star.witness.json",
@@ -12426,9 +12426,9 @@
       {
         "file": "computations/verify-isospin-bar-anomaly.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/vhat-per-crossing-chain.witness.json",
