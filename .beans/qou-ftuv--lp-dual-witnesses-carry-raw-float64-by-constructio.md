@@ -1639,3 +1639,106 @@ bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
       `electron-m_e-derivation`, `meson-mass-from-hecke`, `q-beta-predicted`.
       Deliberate regeneration + review, not a side effect.
 - [ ] `he4-binding-k-stage2` (158) still computing; `r5-full` (40) runnable.
+
+
+---
+
+## Retracting my own "next", and draining two more families (2026-08-23)
+
+### The beta-decay drain is a q_0 migration, not a precision fix — do not do it in isolation
+
+The previous entry proposed re-deriving `beta-decay-energy-scale.py`'s NF
+coefficients from the upstream's `coefficient_symbolic` at 50 dps. Measured
+before touching it, and the premise is wrong:
+
+```
+particle   stored coefficient_numeric      symbolic @ canonical q_0    rel diff
+ν              -0.20170383884270415        -0.20170381820966586        1.02e-07
+σ₀              0.048130389504680182        0.048130377815135110       2.43e-07
+L₊             -0.009640792161232925       -0.0096407888397318254      3.45e-07
+```
+
+3.4e-07 relative is nowhere near f64 noise. Evaluating the same symbolic at
+`q_0 = 1.1099785955541805` reproduces the stored numbers to **4.6e-15** — and
+`free-neutron-decay.witness.json` records exactly that value in its own `q0`
+field, computed 2026-04-14. So the stored coefficients are not truncated; they
+were computed at a **stale q_0**, the same one the native tests had pinned.
+
+Re-deriving from symbolic therefore evaluates at the *current* canonical q_0
+and is a **value refresh of the whole chain**, not a drain. And that chain is
+part of a tracked backlog: `q0_value_drift_audit.py` reports
+
+```
+canonical  539    proton-pin  891 (documented, legitimate)
+STALE      307    unknown      25        baseline 329, NEW 0
+```
+
+Migrating one witness out of 307 in isolation would leave its consumers
+inconsistent with the rest. This belongs to the q_0 migration, which has its
+own gate and baseline — not to the float64 drain. Retracted.
+
+### Drained instead
+
+**`nucleus_real_sdp.py`** — unpinned `auto` backend, and mirrors lifted from an
+`lp.to_dict()` that carries the companions. Pinned and wired. The script takes
+`--atom`, so all six nuclei needed regenerating, not just the `he3` default:
+95 bare -> **0 bare, 53 shadowed**.
+
+**`r5_full_canonical_knot_solver.py`** — already pinned and already spreading
+`**lp_res.to_dict()`; its witness was simply stale because the producer died on
+`ModuleNotFoundError: pyhecke_native` until the wheel was built this session.
+40 bare -> **0 bare, 40 shadowed**. No code change was needed at all, which is
+worth noting: the "fix" was making the producer runnable.
+
+### A side effect worth having
+
+Re-running those producers pulled seven witnesses onto the current q_0:
+
+```
+q0 drift audit   canonical 532 -> 539    stale 310 -> 307
+```
+
+Small, but it moves the right direction and confirms the re-runs used the
+canonical value rather than inheriting a pin.
+
+### Carve-out
+
+```
+4,052  start of arc
+1,168  previous commit
+1,009  nucleus-real-sdp family + r5-full
+```
+
+### Verification
+
+```
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+NaN / feasibility sweep vs pre-arc base   1 flagged — the known frobenius
+                                          false-positive correction
+pytest tools/pyhecke                      240 passed, 13 skipped, 0 failed
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+### Correction
+
+An earlier entry reported `he4_binding_k_stage2_probe` as finished. It was
+not — the shell reported the exit status of the trailing `echo`, not of the
+`timeout`, which had returned **124**. The probe is a long resumable compute
+(exact χ_λ via seminormal MPFR over 77 blocks × 2 branches); it is resumed and
+still running, and its 158 fields are still outstanding.
+
+## Next
+
+- [ ] `he4-binding-k-stage2` (158) — resumed, long-running.
+- [ ] `three-quark-borromean-lp-sweep` (80),
+      `two-quark-active-set-mahler-sweep` (48) — both call
+      `scipy.optimize.linprog` DIRECTLY and never reach the canonical entry
+      point, so they are out of contract with AGENTS.md §LP/SDP first-class
+      infra rather than merely unannotated.
+- [ ] `alpha-5-lp-dual-crystal` (75) — pinned, but the producer hangs in
+      `global_wedderburn_sum_q_hecke_seminormal` for the tritium stratum.
+- [ ] **Owner: the q_0 migration.** 307 stale witnesses, tracked and gated at
+      NEW 0. Nothing here changes that; this entry only records why the
+      beta-decay chain cannot be drained independently of it.
