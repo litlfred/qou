@@ -1,10 +1,11 @@
 ---
 # qou-z11r
 title: 58 committed witnesses still carry the convention-C z value while source is migrated to D
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-23T08:09:25Z
-updated_at: 2026-08-23T08:09:25Z
+updated_at: 2026-08-23T08:59:50Z
 ---
 
 Found while answering "any other uses of C convention that need to migrate to D?"
@@ -49,3 +50,41 @@ Only (a) is mechanical. Do not mass-regenerate.
 historical value* inside a comparison, which is exactly case (b). The
 detector reporting 1 actionable site is consistent with the source being
 right and the outputs merely old. That is the hypothesis, on one confirmation.
+
+
+## TRIAGE DONE (2026-08-23, PR #5510)
+
+Full result: [`docs/audits/2026-08-23-convention-c-witness-triage.md`](../docs/audits/2026-08-23-convention-c-witness-triage.md)
+plus a per-witness JSON twin.
+
+    z-parameter-echo   40   C only in z/markov-named fields
+    payload-or-mixed   16   C baked into a COMPUTED field (Gram, tr_M, traces)
+    LIVE-C-PRODUCER     2   source computes sqrt(q)/(q+1) today
+
+Both live-C producers also hardcode a **muon** Q0 literal, and
+`signed_crossing_feasibility_probe` types `delta` instead of deriving it —
+off-canon on three axes at once.
+
+**The finding that matters:** `signed_crossing_feasibility_probe` emits a
+durable `"verdict": "signed-ILP-pure-chirality-refuted"` computed on
+convention-C z at a muon pin. Per AGENTS.md that refutation is **C-conditional
+and has not been re-derived under D**. Not re-derived here — substituting z_D
+into a C-frame result is not a valid move
+(`QOU.QBeta.decayLadder_zC_threeRow_ne_zero`), so this is research, not cleanup.
+
+Pin split: 28 p50 / 23 muon / 3 other / 4 mixed — convention and pin are not
+separable in this backlog.
+
+**Nothing was mass-regenerated**, and 15 of 58 have no locatable producer.
+
+## Method correction, recorded
+
+I ran two re-run sweeps before concluding the instrument was wrong:
+
+1. A **file-level substring test** cannot distinguish a flipped field from an
+   untouched one, because a witness can legitimately hold both z_C and z_D.
+2. A producer that **exits 0 in 0 s without rewriting its witness** is
+   indistinguishable from one that re-emitted C.
+
+The committed classification is therefore **static**. Both sweeps were stopped
+and the tree restored; neither produced a verdict that survived.
