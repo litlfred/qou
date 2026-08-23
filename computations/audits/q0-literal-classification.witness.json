@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:32:00.481440+00:00",
-  "commitSha": "af1d87f17a5ca2c39ee4c4e58a474daf72ff58ed",
+  "computedAt": "2026-08-23T09:47:33.922888+00:00",
+  "commitSha": "0def568f502c30c4f19ea3c7d8aefbe9a3b2c84d",
   "assertions": [
     {
       "name": "1_every_live_site_is_classified",
@@ -23,21 +23,21 @@
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "class in ('a', 'b', 'c', 'd'), substate in ('a-migrated', 'a-blocked') iff class a, non-empty reason, unique key. Offenders: 0 class, 0 substate, 0 reason, 0 duplicate."
+      "detail": "class in ('a', 'b', 'c', 'd'), substate in ('a-cost-deferred', 'a-correctness-deferred') iff class a, non-empty reason, unique key. Offenders: 0 class, 0 substate, 0 reason, 0 duplicate."
     },
     {
       "name": "4_declared_counts_match_entries",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "entries give {'c': 4, 'b': 10, 'a': 45, 'd': 10} / {'a-blocked': 45}; ledger declares {'c': 4, 'b': 10, 'a': 45, 'd': 10, 'total': 69} / {'a-blocked': 45}."
+      "detail": "entries give {'c': 4, 'b': 10, 'a': 37, 'd': 10} / {'a-correctness-deferred': 5, 'a-cost-deferred': 32}; ledger declares {'c': 4, 'b': 10, 'a': 37, 'd': 10, 'total': 61} / {'a-correctness-deferred': 5, 'a-cost-deferred': 32}."
     }
   ],
   "allPassed": true,
-  "durationMs": 329,
+  "durationMs": 348,
   "computation": "q0-literal-classification",
   "scriptFile": "q0_literal_classification_audit.py",
-  "scriptHash": "3e83ed9c6031",
+  "scriptHash": "56efb80a7dba",
   "scriptCommitSha": "af1d87f17a5ca2c39ee4c4e58a474daf72ff58ed",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -69,18 +69,19 @@
   "q0AnchorReason": "Reads no substrate value as an input. It joins two string sets and computes nothing from any q0.",
   "scope": "scope-(a) MEASUREMENT plus a curated ledger. It classifies; it changes no literal and asserts nothing about which value a producer SHOULD carry -- that is the A-vs-C anchor question, an owner matter (ruled 2026-08-22, landing in PR #5500).",
   "result": {
-    "live_divergent_sites": 69,
-    "ledger_rows": 69,
+    "live_divergent_sites": 61,
+    "ledger_rows": 61,
     "class_counts": {
       "c": 4,
       "b": 10,
-      "a": 45,
+      "a": 37,
       "d": 10
     },
     "substate_counts": {
-      "a-blocked": 45
+      "a-correctness-deferred": 5,
+      "a-cost-deferred": 32
     },
-    "defect_count_class_a": 45,
+    "defect_count_class_a": 37,
     "non_defect_count_bcd": 24,
     "unclassified": [],
     "orphans": [],
