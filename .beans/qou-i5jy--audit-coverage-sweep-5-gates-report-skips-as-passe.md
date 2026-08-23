@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T18:20:00Z
+updated_at: 2026-08-23T18:45:00Z
 ---
 
 
@@ -998,3 +998,63 @@ two runs.
 Normal run unchanged in substance: 124 candidates, 0 unparseable, **27 hits**
 reported exactly as before, exit 0 without `--strict`. Not gate-wired and writes
 no witness, so this fix carries no CI or artefact risk.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `silent_self_check_audit.py:319`, where absence was read as *repair*
+
+The `except SyntaxError: continue` is the ordinary version of this bean's shape.
+What makes this instance worth its own entry is what the skip feeds:
+
+```python
+flagged = {f["script"] for f in findings}
+state = "still FLAGGED" if s in flagged else f"fixed — {how}"
+```
+
+The regression check reads **"fixed" from ABSENCE among the findings** — and a
+file that failed to parse is also absent. So a syntax error in a watched script
+is reported as a **repair**, complete with the explanation of how it was
+supposedly fixed.
+
+### Demonstrated
+
+Forcing every parse to fail and running the **committed** version:
+
+```
+  regression check — each hand-found defect is flagged or fixed:
+    computations/chi_at_q0_via_matrix_m_mpfr.py
+        fixed — q₀ resume guard + --fresh ported from the hoefsmit producer
+    computations/substrate/deuteron_tower_fusion_frame_probe.py
+        fixed — exits 1 when allPassed is False (qou-9d6h)
+```
+
+Nothing was parsed. Both repairs are certified anyway. The comment above that
+block is careful — it explains that a bare count *"reads as a detector
+regression the moment a repair lands"* — so the author had already thought about
+this verdict being misread in one direction and not the other.
+
+*After*, same forced failure:
+
+```
+    computations/chi_at_q0_via_matrix_m_mpfr.py
+        UNKNOWN — this file did not parse, so no criterion ran on it
+```
+
+### Changes
+
+1. Unparseable files are collected with their reason instead of `continue`-ing
+   into silence, and the summary prints `scripts scanned N of M` plus an
+   `UNPARSEABLE (no criterion ran)` block.
+2. **The regression check gains a third state.** `UNKNOWN` when the watched file
+   is among the unparseable — a two-state flagged/fixed test cannot be honest
+   when the input can be missing.
+3. `scan_coverage` (`scripts_seen`, `scripts_parsed`, `unparseable`) added to the
+   witness.
+
+### Verified
+
+Normal run: **3074 of 3074 parsed, 0 unparseable**, 69 candidates (68 before —
+the corpus moved), both watched scripts correctly `fixed`. The witness is
+refreshed by a clean plain run of the corrected producer; the intermediate
+monkeypatched test runs overwrote it and were reverted from a snapshot taken
+before any run, with `git status` confirmed clean before the final run.
