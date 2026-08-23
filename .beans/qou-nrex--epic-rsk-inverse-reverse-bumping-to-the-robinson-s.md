@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T19:52:50Z
+updated_at: 2026-08-23T10:58:01Z
 ---
 
 
@@ -1126,3 +1126,32 @@ cells_biUnion + rows_pairwiseDisjoint + row_eq_prod, from SchenstedCellsBridge, 
 general even though its headline theorem is stated only for a tableauShape. Estimate: 1 brick for
 (c), then (a)+(b)+(d) assemble PlancherelSnData for every n, which would lift the keystone's
 twoM = Identity-I bridge off its n = 3..12 cap.
+
+
+## 2026-08-23 — the blocker is closed, and so is its consumer (PR #5538)
+
+The blocker recorded after #5530 was: `PlancherelSnData` does not generalise the
+way `RSKBijection` did, because identity (ii) is stated with `sumSqContents`
+(row-length list) while the OV/JM layer proves it with `contentSqSum` (diagram
+cells), and nothing in the corpus related the two.
+
+**Both halves landed on `claude/content-sq-sum-bridge-2026-08-23`:**
+
+* `ContentSqSumBridge.contentSqSum_ofRowLens` — the missing identification.
+  Weighted analogue of brick 41's `card_cells_ofRowLens`: `cells_biUnion` +
+  `rows_pairwiseDisjoint` + `row_eq_prod` + `rowLen_getD`.
+* `PlancherelSnDataGeneral.plancherelSnDataGeneral n : PlancherelSnData n` for
+  **every** `n` — (i) from `sum_map_dimHLF_sq` (i.e. from `rskBurnsideHolds`,
+  this epic's own result), (ii) from `identityB_conditional` at
+  `snSpectralData`, reindexed through `numSYT_partitionEquiv` +
+  `contentSqSum_ofRowLens` and cleared by `2·binom(n,2) = n(n−1)`.
+* `two_sum_dim_sq_hooks_general` / `twoM_eq_plancherel_hook_sum_general` — the
+  two Identity I payoffs with **no hypothesis**, where before they held only at
+  `n = 2 … 12`. The keystone's `twoM = Identity I` bridge is off its cap.
+
+Deliberately a `def` rather than an `instance`: the class carries data and eleven
+per-`n` instances are registered; a general instance would make `h.parts` depend
+on resolution order. Cross-checked at `n = 4` against the hand instance (`parts`
+by `decide`, `dim` by `rfl`).
+
+All sorry-free; `#print axioms` `[propext, Classical.choice, Quot.sound]`.
