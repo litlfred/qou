@@ -987,3 +987,59 @@ For (ii) the ingredients exist but do NOT compose yet:
 Estimate: 3-5 bricks, not a one-liner. NOT attempted.
 
 ### #5426 now carries bricks 16-42 + the general split, nineteen files, zero sorries
+
+### REBASE ONTO MAIN (+544 commits) — clean, and it changed the picture
+
+git rebase origin/main: 49 commits replayed, ZERO conflicts. All 14 new Lean files still compile
+lean-direct exit 0 after the rebase. My cone's imports (SYTEncodingBridgeTwo, SpechtActionInjective,
+SpechtStandardBasis, SpechtWedderburnCriterion, PartitionsOfBridge, StandardYoungTableau) are all
+UNCHANGED on main, which is why nothing broke.
+
+### WHAT MAIN DID WHILE THIS BRANCH RAN — read this before touching the keystone
+
+sn_isotypic_specht_split is NO LONGER a `sorry`. It was restructured into the §3b-cond pattern:
+
+    class SnIsotypicSpechtSplit (R) [Field R] [CharZero R] : Prop where
+      exists_split (n) : ∃ e : MonoidAlgebra R (Perm (Fin n)) ≃ₐ[R] (∀ i, Matrix (Fin d_i) (Fin d_i) R),
+        e (RegularRepTrace.centralC2 n) = fun i => (contentSqSum i.diagram : R) • 1
+
+and a LARGE cone is now conditional on it — measured, every hit is a CONSUMER, there is NO INSTANCE
+anywhere in the corpus:
+  OVTopAssembly.{snSpectralData, sn_spectralData_exists, identityB_general, sum_numSYT_sq_eq_factorial}
+  RSKBurnsideDischarge.{rskBurnsideHolds, substrate_witness}
+  BurnsideDischarge.{burnside_proved, instBurnsideContext}
+  PieceASpechtCharacter.trace_centralC2_regular_rep
+  PlancherelNormalisation.{sum_sytDim_sq_eq_factorial, sum_map_sytDim_sq_eq_factorial,
+                           tiltNorm_zero_eq_factorial, nuV_top_closed_form_unconditional}
+  SnWedderburnPartitionBridge.{sn_isotypic_specht_split, sn_rational_specht_split, snBridge,
+                               snBlocks_c2_aligned}
+
+NOTE THE DIRECTION. main's RSKBurnsideDischarge.rskBurnsideHolds derives Burnside FROM the class,
+i.e. from the Wedderburn split. THIS BRANCH derives Burnside from RSK with NO hypothesis, and then
+gives the split. So the two are not duplicates and mine is not redundant — mine breaks a circle the
+other route cannot. (Also: that file's docstring says "It is now a theorem". Conditional-proved ≠
+premise-established; the phrasing overclaims. Not edited here — separate concern, flag to owner.)
+
+### CORRECTION to my own keystone estimate two entries above
+
+I wrote that transporting centralC2 along the index equiv "needs the class-sum characterisation"
+because "an arbitrary bijection does not preserve the i < k structure". THAT WAS WRONG, and it was
+pessimism from not reading the definition:
+
+    transportPermHom (h : a = b) := (Equiv.permCongrHom (finCongr h)).toMonoidHom
+
+finCongr is the CANONICAL ORDER-PRESERVING cast from an equality of naturals. So `i < k` IS
+preserved and centralC2 transports TERMWISE. Likewise the ambient-vs-restricted gap is small:
+spechtRep μ σ = (Mtab.rep μ σ).restrict …, literally the restriction, so it is a
+LinearMap.ext + Subtype.ext step against centralC2_acts_by_contentSqSum as stated.
+
+### THE INSTANCE IS THE PRIZE — route, measured
+  B1  mapDomain (transportPermHom h.symm) (centralC2 n) = centralC2 (nOf μ)
+        ring hom => commutes with the sum and the square; single (swap i k) 1 ↦ single (swap (e i) (e k)) 1
+        by permCongr-of-swap; index sum reindexes along finCongr, order preserved.
+  B2  (rep.comp φ).asAlgebraHom a = rep.asAlgebraHom (mapDomain φ a)   [check if it already exists]
+  B3  restricted-vs-ambient at centralC2 -> spechtProduct n (centralC2 n) i = contentSqSum • 1 in End
+  B4  End k M ≃ₐ[k] Matrix (Fin (finrank k M)) … via algEquivMatrix (Module.finBasis k M);
+        an algebra hom sends c • 1 to c • 1
+  B5  assemble  instance : SnIsotypicSpechtSplit ℚ  from SpechtWedderburnGeneral.spechtEquiv
+Landing B5 turns the ENTIRE cone above unconditional in one commit. 5 bricks, not attempted.
