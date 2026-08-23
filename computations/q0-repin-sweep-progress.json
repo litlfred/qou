@@ -1539,17 +1539,6 @@
    "n_fields": 112,
    "err": ""
   },
-  "alpha_5_lp_dual_crystal": {
-   "rc": -9,
-   "sec": 1800.1,
-   "witnesses": [
-    "alpha-5-lp-dual-crystal.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 229,
-   "err": "TIMEOUT >1800s"
-  },
   "alpha_em_coulomb_channel_probe": {
    "rc": 0,
    "sec": 1.9,
@@ -1572,26 +1561,6 @@
    "n_fields": 10,
    "err": ""
   },
-  "alpha_high_precision": {
-   "rc": 1,
-   "sec": 0.5,
-   "witnesses": [
-    "alpha-high-precision.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 28,
-   "err": ""
-  },
-  "aoperator_a5_crosscheck": {
-   "rc": 1,
-   "sec": 0.7,
-   "witnesses": [],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 0,
-   "err": "TypeError: unsupported format string passed to mpf.__format__"
-  },
   "archimedean_knot_eigenbasis_probe": {
    "rc": 0,
    "sec": 1.9,
@@ -1613,6 +1582,37 @@
    "median_rel_move": 0.005787695338812625,
    "n_fields": 99,
    "err": "\u26a0 raw-float64: binding-qgaussian-ell1-ceiling-measurement.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .data.proton_anchor.rows[0].B_AME_MeV, .data.proton_anchor.rows[1].B_AME_MeV, ."
+  },
+  "alpha_5_lp_dual_crystal": {
+   "rc": -9,
+   "sec": 300.1,
+   "witnesses": [
+    "alpha-5-lp-dual-crystal.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 229,
+   "err": "TIMEOUT >300s"
+  },
+  "alpha_high_precision": {
+   "rc": 1,
+   "sec": 0.5,
+   "witnesses": [
+    "alpha-high-precision.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": ""
+  },
+  "aoperator_a5_crosscheck": {
+   "rc": 1,
+   "sec": 0.9,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "TypeError: unsupported format string passed to mpf.__format__"
   }
  }
 }
