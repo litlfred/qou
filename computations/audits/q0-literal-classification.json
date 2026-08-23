@@ -44,312 +44,584 @@
   "value-migrated in this PR without pre-empting #5500's regeneration of the",
   "anchor. They are recorded `a-blocked` with that reason, not silently fixed."
  ],
- "class_counts": {"a": 50, "b": 10, "c": 2, "d": 10, "total": 72},
- "substate_counts": {"a-migrated": 7, "a-blocked": 43},
+ "class_counts": {
+  "c": 4,
+  "b": 10,
+  "a": 45,
+  "d": 10,
+  "total": 69
+ },
+ "substate_counts": {
+  "a-blocked": 45
+ },
  "entries": [
-  {"file": "computations/audits/hardcoded_q0_literal_families_audit.py",
-   "literal": "1.1099785955541810", "diverges_at": 13, "class": "c",
-   "reason": "Module docstring. The audit quotes B to explain what it detects; it is in its own char-13 family for exactly that reason."},
-
-  {"file": "computations/audits/muon_pin_three_values_probe.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "b",
-   "reason": "The A/B/C three-values probe. `B.startswith('1.1099785955541805')` IS the assertion; naming B is the probe's subject."},
-
-  {"file": "computations/audits/q0_muon_population_partition.py",
-   "literal": "1.109978595554180", "diverges_at": 13, "class": "b",
-   "reason": "`MUON_OLD` -- the partition's whole job is to separate the MUON_CURRENT population from the MUON_OLD one. Migrating it collapses the two populations the script exists to split."},
-
-  {"file": "computations/c_3_categorical_derivation_attempt.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_MUON_PIN_STR`, labelled in-source 'muon-pin (stale, pre-#1422)'. It reproduces the historical cross-anchor c_3 pair (-2.0097 vs -2.069); re-pinning it destroys the comparison."},
-
-  {"file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
-   "literal": "1.1099785955573347117485528280749490295019743898536", "diverges_at": 19,
-   "class": "a", "substate": "a-migrated",
-   "reason": "`Q0 = mp.mpf(...)` feeds chi/y_lambda arithmetic at 50 dps. Transcribes the ANCHOR value A but is wrong from digit 19 -- neither A, B nor C. Migrated to read `_q0_value_for_anchor('muon')`."},
-
-  {"file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
-   "literal": "1.1099785955573347117485528280749490295019743898536", "diverges_at": 19,
-   "class": "a", "substate": "a-migrated",
-   "reason": "Same wrong-from-digit-19 transcription of A as its sibling probe, same fix."},
-
-  {"file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
-   "literal": "1.10997859555733471989976322048322502665620840878015405145269", "diverges_at": 52,
-   "class": "a", "substate": "a-migrated",
-   "reason": "A cross-anchor probe that READS the proton pin (`from q_parameter import Q_MP`) and TRANSCRIBES the muon one -- and gets its tail wrong from digit 52. Migrated to read the anchor; the proton side already reads."},
-
-  {"file": "computations/gap_a3_cross_atom_overshoot_probe.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 18, feeds the overshoot arithmetic. Destination under #5500 (A->C); B is that PR's declared out-of-scope family."},
-
-  {"file": "computations/gap_a3_deuteron_A_D_overshoot.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 30, feeds A(K) arithmetic. Same blocked reason."},
-
-  {"file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 20, feeds the flat-baseline p_lambda sum. Same blocked reason."},
-
-  {"file": "computations/gap_a3_overshoot_robustness_check.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "NOT class (b) despite an in-source instruction not to change it. Its comment justifies B as 'CURRENT, not stale: a 17-digit truncation of q_muon_at()'. That was true under CODATA 2018; q_muon_at() now returns C, so the stated justification has EXPIRED. Blocked on #5500, and the comment needs correcting when it lands."},
-
-  {"file": "computations/habiro_interpolation_wlambda.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "MISLABEL: bound as `Q0_PROTON` and commented 'package-layer proton-pinned q0 (constants.py)'. The proton pin is 1.10997858275...; this is muon-B. The probe computes F_lambda at both 'pins' and both are muon values, so the cross-anchor comparison it reports is between muon-A-truncated and muon-B. Emits a witness; blocked pending #5500 so the label and the value are fixed in one pass."},
-
-  {"file": "computations/metallic_q_jones_sign_sweep.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` evaluated against the metallic-mean deltas. Blocked on #5500."},
-
-  {"file": "computations/metallic_q_n4_character_sweep.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` feeds q_int / character arithmetic. Blocked on #5500."},
-
-  {"file": "computations/metallic_q_quark_bifurcation.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` feeds q_int arithmetic. Blocked on #5500."},
-
-  {"file": "computations/metallic_q_wenzl_sign_sweep.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)`, commented 'Substrate substrate-value at the canonical anchor (50 dps)' -- an 18-char literal described as 50 dps. Blocked on #5500."},
-
-  {"file": "computations/mp_dk_decisive_test.py",
-   "literal": "1.10997859555418057528159407960950937799328227995870", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_STALE_MUON_PIN`, explicitly 'the stale muon-pin q0 recorded in proton-brane-tower-correction-probe.witness.json'. The test reproduces that witness's pin on purpose."},
-
-  {"file": "computations/per_basis_row_invariants_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995870", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_STALE_MUON_PIN` -- the probe's claim is 'a genuine structural invariant should NOT drift between this and the canonical m_p-pin q0'. The drift test needs the stale value as one leg."},
-
-  {"file": "computations/probe_inter_knot_decoupling.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "PUBLISHES the literal as `w.add_data('q_0_50dps', ...)`. It computes nothing -- every value in the witness is a transcription of an earlier run -- so re-pinning only the q0 label would make the witness self-inconsistent with the tau_M values beside it, which were computed at B. Needs a genuine re-derivation, not a literal swap."},
-
-  {"file": "computations/probe_qbeta_form.py",
-   "literal": "1.1099785955573347596001309852899479366668383822292", "diverges_at": 18,
-   "class": "a", "substate": "a-migrated",
-   "reason": "`q0 = mp.mpf(...)` at dps 50, drives the whole Q_beta form evaluation. Transcribes A but is wrong from digit 18 -- a value that matches no pin in the corpus. Migrated to read `_q0_value_for_anchor('muon')`."},
-
-  {"file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-   "literal": "1.1099785955541810", "diverges_at": 13,
-   "class": "a", "substate": "a-migrated",
-   "reason": "Silent `except: return mpf(B)` fallback under `q_muon_at()`. Fires only when the substrate import fails, and then answers with a retired pin. Migrated to the in-corpus precedent fix (raise, do not guess) from flavor_split_alpha_dilog_expansion_probe."},
-
-  {"file": "computations/probes/brane_tower_full_channel_trace_audit.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "MISLABEL: commented 'q0 (proton-pinned, 50 dps)' over the muon-B value, and cites zhabiro_physical_z_pin.py as the source of the same literal -- so the mislabel is inherited, not local. Blocked on #5500; label and value belong in one pass."},
-
-  {"file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
-   "literal": "1.1099785955541810", "diverges_at": 13,
-   "class": "a", "substate": "a-migrated",
-   "reason": "The same silent `except: return mpf(B)` fallback, in the same probe family. Same precedent fix."},
-
-  {"file": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
-   "literal": "1.1099785955541810", "diverges_at": 13, "class": "c",
-   "reason": "Docstring only. This probe ALREADY removed its fallback; the literal survives in the docstring recording what was removed and why (bean qou-khac). It is the precedent the two migrations above copy."},
-
-  {"file": "computations/probes/he3_brane_tower_structural_gap.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 50 driving the brane-tower gap. Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_colored_lr_modulus_s013.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 40, feeds q-integer arithmetic. Keystone s013 family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_colored_wrt_perblock_vs_dq.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 55. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_framing_is_phase.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_mckay_e8_valuemap.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_q0_framing_residual.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_qbessel_latticept_search.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)`, commented 'muon-q0 canonical computations/ value'. Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)`; `Q = 1/Q0` is the |q|<1 evaluation point, so the literal propagates into every node. Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."},
-
-  {"file": "computations/probes/keystone_valuemap_qbessel_gate_s013.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` inside `mp.workdps(50)`; INV and QHAT derive from it. Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_valuemap_screen_s013.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)`; ETA = log(Q0). Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_valuemap_sigma345_dm6.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` driving the d_q(lambda)/D targets. Blocked on #5500."},
-
-  {"file": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mpf(B)` at dps 50, default argument of `qint`. Blocked on #5500."},
-
-  {"file": "computations/probes/zhabiro_physical_z_pin.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` and `HBAR_Q = 1 - 1/Q0`, described as 'exact constants from production witnesses (50 dps)'. It is the literal brane_tower_full_channel_trace_audit copied. Blocked on #5500."},
-
-  {"file": "computations/q0_anchor_gate_test.py",
-   "literal": "1.10997859555733471989976322048322502665620840878015405145269", "diverges_at": 52,
-   "class": "a", "substate": "a-migrated",
-   "reason": "NOT class (d): the literal is an INPUT anchor at which y_lambda is evaluated, not a pinned expected value, so reading it cannot make the test tautological -- the assertions compare cache vs live, not against this string. It transcribes A with a wrong tail from digit 52. Migrated to read the anchor, which is also what the test is about."},
-
-  {"file": "computations/q0_provenance_audit.py",
-   "literal": "1.10997859555418057528159407960950937799328227995870", "diverges_at": 13, "class": "b",
-   "reason": "`Q_MUON_50` is this audit's REFERENCE string: every witness q0 in the corpus is classified clean/stale/unknown against it. Migrating it changes every verdict the audit issues. NOTE the live defect: its comment claims 'DERIVED not typed: q_muon_at(60) reproduces exactly this'. q_muon_at() now returns C, so that claim is false -- and this audit and hardcoded_q0_literal_families_audit currently classify A and B with OPPOSITE polarity. #5500 is the resolution."},
-
-  {"file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']`. A genuine two-anchor probe -- but the proton leg is transcribed too, and the muon leg is meant to BE the canonical muon pin, so this is a transcription, not a deliberate comparison value. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON_50` used in the h_q / prefactor arithmetic. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
-   "literal": "1.10997859555418057528159407961", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON` at 31 chars, plus the same value in the docstring's ANCHORS table. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON_50`, commented 'Muon-pinned q_0 for cross-anchor (Step 5b)'. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON_50` in the mixed Wenzl/Kashaev evaluation. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']`, commented 'muon = ideal CAL-2 pin' -- which is precisely the thing that should be read rather than typed. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q0_MUON_PIN` beside `Q0_MP_PIN = Q_50_DIGIT_STR` -- the proton leg READS and the muon leg transcribes, in one file. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-   "literal": "1.10997859555418057528159407961", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q0_MUON`, sourced by comment from qbeta_chain4_kashiwara_step3_cross_anchor -- transcription of a transcription. Carries a durable REFUTATION verdict, so its anchor matters. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON_50` in the residue-ratio arithmetic. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`Q_MUON_50` in the sl_6 Demazure evaluation. Blocked on #5500."},
-
-  {"file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13,
-   "class": "a", "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."},
-
-  {"file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995870", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_STALE_MUON_PIN` -- the q0-stability test's second leg, deliberately the stale pin against the canonical m_p-pin."},
-
-  {"file": "computations/qbeta_multi_block_eigenphase_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995870", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_STALE_MUON_PIN`, commented 'Stale muon-pin q0 for the q0-stability test (vs canonical m_p-pin)'. Same deliberate second leg."},
-
-  {"file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "b",
-   "reason": "`Q0_STR`, held fixed BY DESIGN: the module docstring's 'Anchor: deliberately unchanged' section says the regeneration moves the convention only, because moving convention and anchor together 'would conflate two independent axes'. Re-pinning here silently does the thing that section refuses to do."},
-
-  {"file": "computations/regenerate_y_lambda_orphans_conventionD.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "b",
-   "reason": "`MUON_Q0` in the same convention-D regeneration pair, held at the committed witnesses' anchor for the same one-axis-at-a-time reason."},
-
-  {"file": "computations/sigma_all_evaluator.py",
-   "literal": "1.1099785955541805752815940796095093779932822799587", "diverges_at": 13, "class": "d",
-   "reason": "`_SELFTEST_Q0`, inside `if __name__ == '__main__'` and paired with a hardcoded `expected` dict computed AT that q0. Re-pinning without recomputing every expected value turns a real check into a guaranteed failure; re-pinning both makes it assert the code equals itself."},
-
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture: `assert verdict('1.1099785955541805') == 'clean'`. The string IS the input under test."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.1099785955541805169583001889887986763787613849839", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture in `test_genuinely_different_values_stay_flagged` -- a deliberately wrong value that must stay 'unknown'."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture for the trailing-zero-padding test; the 61-char form must verdict 'clean'."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture, 71-char form of the same padding test."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.1099785955541805752815940796095093779667618976181", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture -- diverges at digit 38 by construction and must stay flagged."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.109978595554180575281594079609518150067234842238", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture -- diverges at digit 28 by construction and must stay flagged."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.10997859555418057528159407961", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture: the correctly-rounded 31-char form must verdict 'clean'."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.1099785955541805753", "diverges_at": 13, "class": "d",
-   "reason": "pytest fixture: the correctly-rounded 21-char form must verdict 'clean'."},
-  {"file": "computations/test_q0_provenance_audit.py",
-   "literal": "1.109978595557334700000000000000", "diverges_at": 18, "class": "d",
-   "reason": "pytest fixture in `test_zero_padded_stale_string_is_still_flagged` -- the padding is the point."},
-
-  {"file": "computations/three_quark_borromean_lp_sweep.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` feeding the LP sweep's q-integers. Blocked on #5500."},
-
-  {"file": "computations/two_quark_active_set_mahler_sweep.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` feeding the n=2 Markov/Gram closed forms. Blocked on #5500."},
-
-  {"file": "computations/two_quark_hopf_vs_borromean_sdp.py",
-   "literal": "1.1099785955541805", "diverges_at": 13, "class": "a", "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` feeding the Hopf-vs-Borromean SDP. Blocked on #5500."}
- ]
+  {
+   "file": "computations/audits/hardcoded_q0_literal_families_audit.py",
+   "literal": "1.1099785955541810",
+   "diverges_at": 13,
+   "class": "c",
+   "reason": "Module docstring. The audit quotes B to explain what it detects; it is in its own char-13 family for exactly that reason."
+  },
+  {
+   "file": "computations/audits/muon_pin_three_values_probe.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "The A/B/C three-values probe. `B.startswith('1.1099785955541805')` IS the assertion; naming B is the probe's subject."
+  },
+  {
+   "file": "computations/audits/q0_muon_population_partition.py",
+   "literal": "1.109978595554180",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`MUON_OLD` -- the partition's whole job is to separate the MUON_CURRENT population from the MUON_OLD one. Migrating it collapses the two populations the script exists to split."
+  },
+  {
+   "file": "computations/c_3_categorical_derivation_attempt.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_MUON_PIN_STR`, labelled in-source 'muon-pin (stale, pre-#1422)'. It reproduces the historical cross-anchor c_3 pair (-2.0097 vs -2.069); re-pinning it destroys the comparison."
+  },
+  {
+   "file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
+   "literal": "1.1099785955573347117485528280749490295019743898536",
+   "diverges_at": 19,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "NOT MIGRATED, and the reason is a second defect. `Q0` feeds chi at 50 dps against y_lambda read from `wenzl-y-lambda-h12.witness.json`, whose recorded `parameters.q0` is B -- so the probe already STRADDLES two muon values (chi at a near-A literal, y_lambda at B). Pointing Q0 at the anchor would make the straddle exact-A-vs-B rather than close it. The correct fix reads the consumed witness's own q0, and that changes numbers and needs a re-run, so it belongs with #5500 rather than here. The literal is also wrong from digit 19: it matches neither A, B nor C."
+  },
+  {
+   "file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
+   "literal": "1.1099785955573347117485528280749490295019743898536",
+   "diverges_at": 19,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "Same wrong-from-digit-19 literal and the same y_lambda-h12 straddle as its sibling probe; blocked for the same reason."
+  },
+  {
+   "file": "computations/gap_a3_cross_atom_overshoot_probe.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` at dps 18, feeds the overshoot arithmetic. Destination under #5500 (A->C); B is that PR's declared out-of-scope family."
+  },
+  {
+   "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` at dps 30, feeds A(K) arithmetic. Same blocked reason."
+  },
+  {
+   "file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` at dps 20, feeds the flat-baseline p_lambda sum. Same blocked reason."
+  },
+  {
+   "file": "computations/gap_a3_overshoot_robustness_check.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "NOT class (b) despite an in-source instruction not to change it. Its comment justifies B as 'CURRENT, not stale: a 17-digit truncation of q_muon_at()'. That was true under CODATA 2018; q_muon_at() now returns C, so the stated justification has EXPIRED. Blocked on #5500, and the comment needs correcting when it lands."
+  },
+  {
+   "file": "computations/habiro_interpolation_wlambda.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "MISLABEL: bound as `Q0_PROTON` and commented 'package-layer proton-pinned q0 (constants.py)'. The proton pin is 1.10997858275...; this is muon-B. The probe computes F_lambda at both 'pins' and both are muon values, so the cross-anchor comparison it reports is between muon-A-truncated and muon-B. Emits a witness; blocked pending #5500 so the label and the value are fixed in one pass."
+  },
+  {
+   "file": "computations/metallic_q_jones_sign_sweep.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` evaluated against the metallic-mean deltas. Blocked on #5500."
+  },
+  {
+   "file": "computations/metallic_q_n4_character_sweep.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` feeds q_int / character arithmetic. Blocked on #5500."
+  },
+  {
+   "file": "computations/metallic_q_quark_bifurcation.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` feeds q_int arithmetic. Blocked on #5500."
+  },
+  {
+   "file": "computations/metallic_q_wenzl_sign_sweep.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)`, commented 'Substrate substrate-value at the canonical anchor (50 dps)' -- an 18-char literal described as 50 dps. Blocked on #5500."
+  },
+  {
+   "file": "computations/mp_dk_decisive_test.py",
+   "literal": "1.10997859555418057528159407960950937799328227995870",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_STALE_MUON_PIN`, explicitly 'the stale muon-pin q0 recorded in proton-brane-tower-correction-probe.witness.json'. The test reproduces that witness's pin on purpose."
+  },
+  {
+   "file": "computations/per_basis_row_invariants_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995870",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_STALE_MUON_PIN` -- the probe's claim is 'a genuine structural invariant should NOT drift between this and the canonical m_p-pin q0'. The drift test needs the stale value as one leg."
+  },
+  {
+   "file": "computations/probe_inter_knot_decoupling.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "PUBLISHES the literal as `w.add_data('q_0_50dps', ...)`. It computes nothing -- every value in the witness is a transcription of an earlier run -- so re-pinning only the q0 label would make the witness self-inconsistent with the tau_M values beside it, which were computed at B. Needs a genuine re-derivation, not a literal swap."
+  },
+  {
+   "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
+   "literal": "1.1099785955541810",
+   "diverges_at": 13,
+   "class": "c",
+   "reason": "Docstring only, as of this PR. The literal was a silent `except: return mpf(B)` fallback under `q_muon_at()` -- it fired only when the substrate import failed, and then answered with a retired pin. Replaced by the in-corpus precedent fix (raise, do not guess) from flavor_split_alpha_dilog_expansion_probe, which is class (c) for exactly the same reason: the value now survives only in the prose recording what was removed and why. Value-neutral on the normal path, so no re-run is owed for the fix itself. The witness is nonetheless NOT regenerated: a trial re-run moved this probe's anchor-drift figure by 3-4 orders of magnitude from main-side drift in `Q_50_DIGIT_STR`, and dropped `q0Anchor`/`q0Value`. See the audit doc."
+  },
+  {
+   "file": "computations/probes/brane_tower_full_channel_trace_audit.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "MISLABEL: commented 'q0 (proton-pinned, 50 dps)' over the muon-B value, and cites zhabiro_physical_z_pin.py as the source of the same literal -- so the mislabel is inherited, not local. Blocked on #5500; label and value belong in one pass."
+  },
+  {
+   "file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+   "literal": "1.1099785955541810",
+   "diverges_at": 13,
+   "class": "c",
+   "reason": "Docstring only, as of this PR. The literal was a silent `except: return mpf(B)` fallback under `q_muon_at()` -- it fired only when the substrate import failed, and then answered with a retired pin. Replaced by the in-corpus precedent fix (raise, do not guess) from flavor_split_alpha_dilog_expansion_probe, which is class (c) for exactly the same reason: the value now survives only in the prose recording what was removed and why. Value-neutral on the normal path, so no re-run is owed for the fix itself. The witness is nonetheless NOT regenerated: a trial re-run moved this probe's anchor-drift figure by 3-4 orders of magnitude from main-side drift in `Q_50_DIGIT_STR`, and dropped `q0Anchor`/`q0Value`. See the audit doc."
+  },
+  {
+   "file": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+   "literal": "1.1099785955541810",
+   "diverges_at": 13,
+   "class": "c",
+   "reason": "Docstring only. This probe ALREADY removed its fallback; the literal survives in the docstring recording what was removed and why (bean qou-khac). It is the precedent the two migrations above copy."
+  },
+  {
+   "file": "computations/probes/he3_brane_tower_structural_gap.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` at dps 50 driving the brane-tower gap. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_colored_lr_modulus_s013.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 40, feeds q-integer arithmetic. Keystone s013 family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_colored_wrt_perblock_vs_dq.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 55. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_framing_is_phase.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_mckay_e8_valuemap.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_q0_framing_residual.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_qbessel_latticept_search.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)`, commented 'muon-q0 canonical computations/ value'. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)`; `Q = 1/Q0` is the |q|<1 evaluation point, so the literal propagates into every node. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_valuemap_qbessel_gate_s013.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` inside `mp.workdps(50)`; INV and QHAT derive from it. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_valuemap_screen_s013.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)`; ETA = log(Q0). Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_valuemap_sigma345_dm6.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` driving the d_q(lambda)/D targets. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mpf(B)` at dps 50, default argument of `qint`. Blocked on #5500."
+  },
+  {
+   "file": "computations/probes/zhabiro_physical_z_pin.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` and `HBAR_Q = 1 - 1/Q0`, described as 'exact constants from production witnesses (50 dps)'. It is the literal brane_tower_full_channel_trace_audit copied. Blocked on #5500."
+  },
+  {
+   "file": "computations/q0_provenance_audit.py",
+   "literal": "1.10997859555418057528159407960950937799328227995870",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q_MUON_50` is this audit's REFERENCE string: every witness q0 in the corpus is classified clean/stale/unknown against it. Migrating it changes every verdict the audit issues. NOTE the live defect: its comment claims 'DERIVED not typed: q_muon_at(60) reproduces exactly this'. q_muon_at() now returns C, so that claim is false -- and this audit and hardcoded_q0_literal_families_audit currently classify A and B with OPPOSITE polarity. #5500 is the resolution."
+  },
+  {
+   "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']`. A genuine two-anchor probe -- but the proton leg is transcribed too, and the muon leg is meant to BE the canonical muon pin, so this is a transcription, not a deliberate comparison value. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON_50` used in the h_q / prefactor arithmetic. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+   "literal": "1.10997859555418057528159407961",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON` at 31 chars, plus the same value in the docstring's ANCHORS table. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON_50`, commented 'Muon-pinned q_0 for cross-anchor (Step 5b)'. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON_50` in the mixed Wenzl/Kashaev evaluation. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']`, commented 'muon = ideal CAL-2 pin' -- which is precisely the thing that should be read rather than typed. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0_MUON_PIN` beside `Q0_MP_PIN = Q_50_DIGIT_STR` -- the proton leg READS and the muon leg transcribes, in one file. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+   "literal": "1.10997859555418057528159407961",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0_MUON`, sourced by comment from qbeta_chain4_kashiwara_step3_cross_anchor -- transcription of a transcription. Carries a durable REFUTATION verdict, so its anchor matters. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON_50` in the residue-ratio arithmetic. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q_MUON_50` in the sl_6 Demazure evaluation. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
+  },
+  {
+   "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995870",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_STALE_MUON_PIN` -- the q0-stability test's second leg, deliberately the stale pin against the canonical m_p-pin."
+  },
+  {
+   "file": "computations/qbeta_multi_block_eigenphase_probe.py",
+   "literal": "1.10997859555418057528159407960950937799328227995870",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_STALE_MUON_PIN`, commented 'Stale muon-pin q0 for the q0-stability test (vs canonical m_p-pin)'. Same deliberate second leg."
+  },
+  {
+   "file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`Q0_STR`, held fixed BY DESIGN: the module docstring's 'Anchor: deliberately unchanged' section says the regeneration moves the convention only, because moving convention and anchor together 'would conflate two independent axes'. Re-pinning here silently does the thing that section refuses to do."
+  },
+  {
+   "file": "computations/regenerate_y_lambda_orphans_conventionD.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "b",
+   "reason": "`MUON_Q0` in the same convention-D regeneration pair, held at the committed witnesses' anchor for the same one-axis-at-a-time reason."
+  },
+  {
+   "file": "computations/sigma_all_evaluator.py",
+   "literal": "1.1099785955541805752815940796095093779932822799587",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "`_SELFTEST_Q0`, inside `if __name__ == '__main__'` and paired with a hardcoded `expected` dict computed AT that q0. Re-pinning without recomputing every expected value turns a real check into a guaranteed failure; re-pinning both makes it assert the code equals itself."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture: `assert verdict('1.1099785955541805') == 'clean'`. The string IS the input under test."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.1099785955541805169583001889887986763787613849839",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture in `test_genuinely_different_values_stay_flagged` -- a deliberately wrong value that must stay 'unknown'."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture for the trailing-zero-padding test; the 61-char form must verdict 'clean'."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture, 71-char form of the same padding test."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.1099785955541805752815940796095093779667618976181",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture -- diverges at digit 38 by construction and must stay flagged."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.109978595554180575281594079609518150067234842238",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture -- diverges at digit 28 by construction and must stay flagged."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.10997859555418057528159407961",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture: the correctly-rounded 31-char form must verdict 'clean'."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.1099785955541805753",
+   "diverges_at": 13,
+   "class": "d",
+   "reason": "pytest fixture: the correctly-rounded 21-char form must verdict 'clean'."
+  },
+  {
+   "file": "computations/test_q0_provenance_audit.py",
+   "literal": "1.109978595557334700000000000000",
+   "diverges_at": 18,
+   "class": "d",
+   "reason": "pytest fixture in `test_zero_padded_stale_string_is_still_flagged` -- the padding is the point."
+  },
+  {
+   "file": "computations/three_quark_borromean_lp_sweep.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` feeding the LP sweep's q-integers. Blocked on #5500."
+  },
+  {
+   "file": "computations/two_quark_active_set_mahler_sweep.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` feeding the n=2 Markov/Gram closed forms. Blocked on #5500."
+  },
+  {
+   "file": "computations/two_quark_hopf_vs_borromean_sdp.py",
+   "literal": "1.1099785955541805",
+   "diverges_at": 13,
+   "class": "a",
+   "substate": "a-blocked",
+   "reason": "`Q0 = mp.mpf(B)` feeding the Hopf-vs-Borromean SDP. Blocked on #5500."
+  }
+ ],
+ "migrated_in_pr_5535": {
+  "note": "Sites whose divergent literal this PR removed. They no longer appear in `entries`, because the ledger tracks LIVE divergent sites -- a migrated site is not one. Recorded here so the work stays visible after the row drains.",
+  "read_the_anchor": [
+   {
+    "file": "computations/probe_qbeta_form.py",
+    "was": "1.1099785955573347596001309852899479366668383822292",
+    "now": "_q0_value_for_anchor('muon')",
+    "why": "wrong from digit 18 -- matches no pin in the corpus",
+    "witness": "none (print-only)"
+   },
+   {
+    "file": "computations/q0_anchor_gate_test.py",
+    "was": "1.10997859555733471989976322048322502665620840878015405145269",
+    "now": "_q0_value_for_anchor('muon')",
+    "why": "wrong from digit 52; a test ABOUT crossing calibration layers cannot transcribe the anchor it tests",
+    "witness": "none (print-only); re-run PASSes 3/3"
+   },
+   {
+    "file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
+    "was": "1.10997859555733471989976322048322502665620840878015405145269",
+    "now": "_q0_value_for_anchor('muon')",
+    "why": "wrong from digit 52; its proton leg already read the pin",
+    "witness": "NOT regenerated -- a re-run moves d2 by 22 %, and that move reproduces with the ORIGINAL literal, so it is main-side drift, not this edit"
+   }
+  ],
+  "raise_do_not_guess": [
+   {
+    "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
+    "was": "except: return mpf('1.1099785955541810')",
+    "now": "raise RuntimeError(...) from exc",
+    "witness": "NOT regenerated -- see the row's reason"
+   },
+   {
+    "file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+    "was": "except: return mpf('1.1099785955541810')",
+    "now": "raise RuntimeError(...) from exc",
+    "witness": "NOT regenerated -- see the row's reason"
+   }
+  ]
+ }
 }

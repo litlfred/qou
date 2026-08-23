@@ -85,7 +85,19 @@ _T0 = time.monotonic()
 
 #: Ratchet on literals that DIVERGE from the canonical pin (not mere
 #: truncations). Drains as sites are migrated to read the pin; must never grow.
-BASELINE_DIVERGENT = 71
+#:
+#: 72 -> 69 (PR #5535). The char-52 family is gone: `q0_anchor_gate_test` and
+#: `mu3_anchor_consistency_probe` both transcribed the anchor and both got its
+#: tail wrong from digit 52, and both now READ `_q0_value_for_anchor("muon")`.
+#: `probe_qbeta_form` took the char-18 family from 2 to 1 the same way.
+#:
+#: The remaining 69 are classified in `q0-literal-classification.json`: only
+#: **45** are class-(a) defects. 24 are class (b) deliberate classifier
+#: constants, (c) documentation, or (d) test fixtures -- do NOT count this
+#: number as a defect backlog, and do NOT migrate a class-(b) site: the code
+#: names a superseded value in order to detect it, so re-pinning one disables
+#: the check it powers.
+BASELINE_DIVERGENT = 69
 
 
 def ratchet_fires(count: int, baseline: int) -> bool:
