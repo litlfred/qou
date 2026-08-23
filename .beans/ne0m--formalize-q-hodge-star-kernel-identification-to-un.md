@@ -69,3 +69,85 @@ framework question, not a Lean question.
 Scoped alongside `ne0m`, whose block `nsi_q_deformed_kernel.lean` is the
 same pattern and the same missing object.
 
+
+## OPTION-2 ANSWERED 2026-08-23 — the connection is NOT determinate, and CS is excluded BY THE FRAMEWORK
+
+Follow-up to the scoping note above, which asked whether the missing
+`E -> A` is (a) a real unwritten piece or (b) evidence these blocks are
+informal. Answer: **(a), but the route that would have made it tractable is
+closed.**
+
+### Correction to my own scoping note
+
+That note says "no such map exists in the corpus". **Too strong.** The
+interface exists and is canonical-chain-sanctioned:
+
+    -- QOU/Mathlib/NonAbelianStokes.lean:49
+    structure LieValuedOneForm (M G : Type u) where
+      eval : M -> M -> G          -- two points of M |-> a group element
+
+Exactly the shape `K_FH(q; s, t)` needs. My greps keyed on
+`def .*(embed|toAlgebra|...)` and `E -> A`, and missed it because it is a
+structure FIELD named `eval` — the same name-gate blindness as the
+CONCLUSION_FIELD miss in the vacuity detector. Recorded as a correction, not
+deleted: the diagnosis (a metric-carrying map is what is missing) stands; the
+claim of total absence was wrong.
+
+Its status: an "abstract carrier" by its own docstring, and its ONLY instance
+corpus-wide is `punitInstance` (NonAbelianStokes.lean:108) — the qou-6dzi /
+PUnit defect. The slot exists and has never carried anything.
+
+### Why the Chern-Simons route is closed
+
+The tractable attack was to identify the connection with the Chern-Simons
+connection: its two-point function has magnitude exactly `1/|x-y|^2`, the
+Mobius kernel on the nose, and its Wilson loops give Jones, which is the
+chain the framework already runs on. `witten1989` is cited in references.ts
+as "the bridge between QFT and knot theory used throughout the QOU braid /
+WRT material".
+
+**The framework rejects this in writing.**
+`models-of-qous/categorical-action-vs-chern-simons.md`:
+
+- "The bulk categorical action does not recover classical Chern-Simons."
+- "(Here A_cl is a g-valued connection 1-form on a 3-manifold M, DISTINCT
+  from the QOU observable object A in C.)"
+- CS "enters the framework separately as a geometric knot invariant for
+  non-hyperbolic torus knots."
+
+Pursuing the CS identification would not merely be fitting — it would
+contradict an existing content block.
+
+### And the base connection is a free input anyway
+
+`def:categorical-q-connection` reads "Let nabla be a categorical connection
+on A", then defines
+`nabla_q = q^-1 nabla + (1 - q^-1)(iota_xi nabla) Theta_A`, with
+`nabla_q = nabla` at `q = 1`. So nabla is universally quantified;
+`prop:categorical-connection-exists` / `-unique` pin it only up to gauge, with
+no formula anywhere. The `q -> 1` limit of any kernel built from `nabla_q` is
+therefore the classical kernel built from nabla — and getting `1/r^2` out
+means CHOOSING nabla to produce it. That is the fit vta3 forbids.
+
+### The deeper reason it cannot work
+
+`predicted-spectra/three-knot-jet-order-independence.md`: "The coloured-Jones
+invariant J_K(q) acts as the holonomy of the categorical connection,
+parallel-transported along the SUBSTRATE q-DEFORMATION PATH on
+S = P x_G CP^1."
+
+The framework transports along the **q-direction**, on the state fibre — not
+along the filament in R^3. A connection whose holonomy is J_K(q) in q-space
+has no two-point Euclidean data to give. `1/|gamma(s)-gamma(t)|^2` cannot come
+from it, whatever nabla is chosen.
+
+### Disposition
+
+- Option 1 (instantiate Stokes with a CS connection): **DROPPED.** Excluded by
+  the framework, not merely unsupported.
+- Option 3 (formalise the classical Mobius / Freedman-He-Wang side,
+  independent of the q-side): **live and safe.** It also unblocks
+  `mobius_energy_nonneg`, whose `energy_classical` is an opaque field today.
+- These beans stay open on the strength of the interface slot existing — but
+  the next agent should NOT go looking for a connection to instantiate it
+  with. That search is closed.
