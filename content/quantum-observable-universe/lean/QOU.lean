@@ -1139,3 +1139,7 @@ import QOU.Mathlib.RothLemmaStatement
 -- ∑ₖ φₖ(x)·ψₖ(y).  The audit against the statement found this missing — every piece of
 -- the separated machinery TAKES such a representation and nothing produced one.
 import QOU.Mathlib.SeparatedRepresentation
+-- The arithmetic core of Roth's-lemma recursion: Mahler §13's case split, isolated from
+-- the polynomial content.  The induction step is NOT linear — it extracts a square-root
+-- bound — which is what the arc's linear form was missing.
+import QOU.Mathlib.RothRecursionArith

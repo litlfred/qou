@@ -1487,3 +1487,60 @@ Roth's lemma.
 
 ⚠ The sixth correction is now **explained, not repaired**: the inequality is still linear and
 still too weak. What changed is that the fix is known and local, rather than unknown.
+
+---
+
+## 2026-08-23 — coefficient rings, audited; and §13's square-root bound, formalised
+
+### Which ring is the arc over? (measured, not remembered)
+
+| module | ring |
+|---|---|
+| `RothIndex`, `SeparatedHeight`, `SeparatedWronskian`, `WronskianIndex`, `MvPolynomialHeight` | general `[CommRing R]` |
+| `SeparatedIndex`, `RothInductionStep`, `MvGenWronskian`, `RothHeightBound` | `[CommRing R]` **+ `IsDomain`** where used |
+| `BoundedOrderWronskian`, `SeparatedRepresentation` (minimal version) | `[Field K]` |
+| `MvPolynomialHeight`, `SeparatedHeight`, `WronskianHeight` (height side) | pinned to **`ℤ`** |
+| `RothBaseCase`, `RothLemmaStatement` | `ℤ` with the index over **`ℚ`** |
+| `MahlerJensen` | **`ℂ`** — and unused by everything else |
+
+So: **general `CommRing` wherever it works**, with `IsDomain` added only where genuinely
+needed (`index_separated`'s `≤` half, Gauss in `RothHeightBound`), `Field` where division is
+needed (minimal representations, the bounded-order criterion), `ℤ`/`ℚ` for heights and the
+statement, and `ℂ` **only** in the Mahler module — which nothing downstream uses. That last
+row is the third correction showing up as a measurement.
+
+### §13's arithmetic, formalised
+
+New module `QOU/Mathlib/RothRecursionArith.lean` — pure `ℚ`, Mathlib-only, axiom-clean:
+
+```
+sum_range_div                Gauss's sum, divided through
+sum_max_sub_ge               ∑_{ν<n} max(0, θ − ν/r) ≥ Kθ − K(K−1)/(2r)   for any K ≤ n
+sq_mul_le_two_mul_of_sum_le  θ²·r ≤ 2S   given θr ≤ n and the sum ≤ S
+```
+
+The last is Mahler's second case, stated **squared** so no `Real.sqrt` is needed and
+everything stays in `ℚ`. The cut-off is `K = ⌈θ·r⌉`: at most `n` by hypothesis, at least `θr`
+by the ceiling property, at most `θr + 1` — which is exactly what makes the correction term
+`K(K−1)/(2r)` at most half of `Kθ`.
+
+⚠ **A misreading of the source, avoided.** The first case's conclusion `J ≤ t + S` holds
+**unconditionally**, not only when `n ≤ N`: it is just the `ν = 0` term, since every term is
+non-negative. So the case split's entire content is the second case. Reading the source as
+"two cases, two bounds" would have suggested formalising a trivial one alongside the real one.
+
+⚠ **Provenance.** Reconstructed from a partly illegible scan. The *structure* is legible;
+several constants are not. What is landed is Lean-checked and therefore true — what is **not**
+established is that its constants match Mahler's. The module header says so, and anyone wiring
+it in should re-derive against a clean copy.
+
+### Open
+
+1. **Wire it in**: produce `∑_{ν<n} max(0, θ − ν/r)` from `index_det_ge` +
+   `index_le_index_pderivList_add`, with `θ = index P − t` and `r` the split-off degree. This
+   replaces `index_le_of_rescaled_factor_bounds`, whose linear shape the sixth correction
+   rejected.
+2. Then `ω(m, ε)` and `c_m = 2^m − 3` fall out of the recursion.
+
+Verification: all nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
+output.
