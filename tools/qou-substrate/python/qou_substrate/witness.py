@@ -806,7 +806,54 @@ def _version_tuple(v: str) -> tuple:
     return tuple(out)
 
 
-def _check_environment_regression(witness: dict, existing, name: str) -> None:
+def _environment_delta(old, new) -> dict:
+    """Compare two `environment` blocks. Returns the four-way delta.
+
+    Split out of `_check_environment_regression` so `save()` can ask the
+    same question on the *preserve* path, where no write happens and the
+    guard therefore never used to run at all.
+
+    `weaker` is deliberately dominant: a block that both drops one library
+    and adds another is treated as a regression, not a repair. Losing a
+    recorded library is provenance damage whatever else came with it.
+    """
+    if not isinstance(old, dict) or not isinstance(new, dict):
+        return {"stripped": [], "downgraded": [], "added": [], "upgraded": []}
+    stripped = [k for k in old if k not in new]
+    downgraded = [
+        f"{k} {old[k]} -> {new[k]}"
+        for k in old
+        if k in new and old[k] != new[k]
+        and _version_tuple(new[k]) < _version_tuple(old[k])
+    ]
+    added = [k for k in new if k not in old]
+    upgraded = [
+        f"{k} {old[k]} -> {new[k]}"
+        for k in old
+        if k in new and old[k] != new[k]
+        and _version_tuple(new[k]) > _version_tuple(old[k])
+    ]
+    return {"stripped": stripped, "downgraded": downgraded,
+            "added": added, "upgraded": upgraded}
+
+
+def _environment_is_repair(old, new) -> bool:
+    """True iff `new` is strictly STRONGER provenance than `old`.
+
+    Strictly stronger = nothing dropped, nothing downgraded, and at least
+    one library added or upgraded. That monotonicity is what makes it safe
+    to write on the otherwise-preserve path: only upward moves write, so
+    two containers alternating cannot ping-pong the file (the weaker one
+    never writes), and a repair write is idempotent once applied.
+    """
+    d = _environment_delta(old, new)
+    if d["stripped"] or d["downgraded"]:
+        return False
+    return bool(d["added"] or d["upgraded"])
+
+
+def _check_environment_regression(witness: dict, existing, name: str,
+                                  preserved: bool = False) -> None:
     """Warn when a re-run RECORDS LESS than the witness already on disk.
 
     The `environment` block is provenance: it says which libraries produced
@@ -840,13 +887,8 @@ def _check_environment_regression(witness: dict, existing, name: str) -> None:
     if not isinstance(old, dict) or not isinstance(new, dict):
         return
 
-    stripped = [k for k in old if k not in new]
-    downgraded = [
-        f"{k} {old[k]} -> {new[k]}"
-        for k in old
-        if k in new and old[k] != new[k]
-        and _version_tuple(new[k]) < _version_tuple(old[k])
-    ]
+    delta = _environment_delta(old, new)
+    stripped, downgraded = delta["stripped"], delta["downgraded"]
     if not stripped and not downgraded:
         return
 
@@ -855,12 +897,23 @@ def _check_environment_regression(witness: dict, existing, name: str) -> None:
         bits.append(f"dropped {', '.join(sorted(stripped))}")
     if downgraded:
         bits.append(f"downgraded {'; '.join(sorted(downgraded))}")
-    msg = (f"{name}: the environment block records LESS than the witness on "
-           f"disk — {'; '.join(bits)}. If this container is simply missing a "
-           f"library, install it and re-run rather than committing the "
-           f"weaker record; the numbers can be identical while the provenance "
-           f"silently degrades. If the producer genuinely stopped using it, "
-           f"say so in the commit.")
+
+    if preserved:
+        # Nothing was written: the payload matched, so the STRONGER on-disk
+        # block was kept. Saying "rather than committing the weaker record"
+        # here would describe a write that did not happen.
+        msg = (f"{name}: this container would record LESS than the witness on "
+               f"disk — {'; '.join(bits)}. The file was NOT modified and its "
+               f"stronger environment block was kept. Nothing to commit; but "
+               f"any OTHER witness you regenerate here will carry the weaker "
+               f"record, so install the missing libraries before a batch run.")
+    else:
+        msg = (f"{name}: the environment block records LESS than the witness on "
+               f"disk — {'; '.join(bits)}. If this container is simply missing a "
+               f"library, install it and re-run rather than committing the "
+               f"weaker record; the numbers can be identical while the provenance "
+               f"silently degrades. If the producer genuinely stopped using it, "
+               f"say so in the commit.")
     if mode in ("warn", "warning", ""):
         print(f"⚠ environment: {msg}", file=sys.stderr)
     else:
@@ -1689,15 +1742,44 @@ class WitnessBuilder:
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops
         # when only commitSha/computedAt/durationMs would change.
+        #
+        # `environment` is one of those masked fields, which used to make
+        # this branch swallow provenance in BOTH directions (bean qou-dc0n):
+        #
+        #   * a degraded block already on disk could not be REPAIRED. Once
+        #     written, re-running with the missing libraries installed took
+        #     this branch (the payload matches), so the fresh, complete block
+        #     was discarded and the weak one kept. Only deleting the witness
+        #     and re-running restored it.
+        #   * and the guard below never ran, because this returns above it.
+        #     So the degraded record went SILENT at exactly the moment it was
+        #     wrong — while `_check_environment_regression` was telling the
+        #     agent to "install it and re-run", which did nothing.
+        #
+        # So ask the environment question here too. Only a strictly STRONGER
+        # block writes; a weaker one still preserves (never degrade a file we
+        # were not otherwise rewriting) but now says so.
         if isinstance(existing, dict) and _witnesses_substantively_equal(
                 existing, witness):
-            # Re-print the assertion summary for the validator runner
-            # without re-writing the file.
-            print(f"✓ Witness: {out_path.name}  "
-                  f"({len(self.assertions)} assertions, "
-                  f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
-                  f"[unchanged — kept on-disk commitSha for staleness]")
-            return out_path
+            _env_repair = _environment_is_repair(
+                existing.get("environment"), witness.get("environment"))
+            if not _env_repair:
+                # Weaker or lateral. Keep the file; warn only if weaker.
+                _check_environment_regression(
+                    witness, existing, out_path.name, preserved=True)
+                # Re-print the assertion summary for the validator runner
+                # without re-writing the file.
+                print(f"✓ Witness: {out_path.name}  "
+                      f"({len(self.assertions)} assertions, "
+                      f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
+                      f"[unchanged — kept on-disk commitSha for staleness]")
+                return out_path
+            # Strictly stronger: fall through and write, so the recovered
+            # provenance lands. The numbers are unchanged by construction —
+            # this branch is only reachable when the payload already matched.
+            print(f"↑ environment: {out_path.name}: recording a STRONGER "
+                  f"environment block than the copy on disk; rewriting "
+                  f"provenance only (payload unchanged).", file=sys.stderr)
 
         _check_producer_takeover(existing, witness, out_path)
 

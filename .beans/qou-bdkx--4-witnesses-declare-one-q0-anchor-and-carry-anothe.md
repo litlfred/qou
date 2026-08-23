@@ -4,7 +4,7 @@ title: 4 witnesses declare one q0 anchor and carry another — declaration/paylo
 status: todo
 type: bug
 created_at: 2026-08-23T07:53:49Z
-updated_at: 2026-08-23T07:53:49Z
+updated_at: 2026-08-23T13:45:00Z
 ---
 
 Split out of qou-p8lx after re-measuring the `q0 constant staleness` gate on
@@ -55,3 +55,72 @@ My first scan of these reported `knot-volumes: 0 muon-carrying fields` while
 the gate reported one. My scan only walked STRING values; the value is a JSON
 number. Anyone re-measuring must walk numbers too — repr() the float, do not
 rely on the serialized text.
+
+
+## knot-volumes RESOLVED — and two claims about it were wrong (2026-08-23)
+
+Disposition, measured, with SnapPy 3.3.2 actually installed and the producer
+actually re-run (`computations/knot-volumes.py`, exit 0 after the fix):
+
+**1. It was never stale against a rename.** PR #5532's body says the witness is
+"stale against a rename (`knot-volumes.py` -> `knot_volumes.py`)". There is no
+rename. The producer `computations/knot-volumes.py` still exists under that
+exact name and the witness's `scriptHash` `54201a9fe7aa` is its sha256 prefix
+**byte-for-byte**. `computations/substrate/knot_volumes.py` is a *different
+file* — a constants module (`VOL_4_1_MPF`, `vol_at`, `iter_provenance`), sha
+`436b24a480fe`, no witness emitter, its `__main__` only prints. It happens to
+sit next to the witness and differ by one hyphen. Hashing it is what produced
+the false "stale" reading. `witness-provenance-audit` independently agrees:
+`PROV_OK`.
+
+**2. A re-run does NOT reproduce it unchanged.** The prior session reported
+"the re-run reproduced the witness unchanged", which is what a run of the
+*constants module* looks like — it writes nothing. A real run of the producer
+changes three assertions and, before the fix, **exits 1**.
+
+**3. The real defect: a CODATA edition straddle.** `MASS_ASSERTIONS` carried
+the hand-typed literal `206.7682830` for m_mu/m_e with `tolerance: 1e-7`. That
+is the CODATA-**2018** value. `qou_substrate.constants` moved to reading the
+NIST table (`allascii.txt`) and now supplies the 2022 value `206.7682827` —
+3.0e-7 away, three times the tolerance. So this producer has been **failing on
+main** since that switch, while its committed witness still recorded
+`allPassed: true` from the last run under the old literal. Exactly the straddle
+`codata_table_vintage_audit.py` was written to catch, one file over.
+
+  Fixed at the producer: `expected` is now read from the same NIST row the
+  registry reads, so the assertion checks registry-vs-table instead of
+  registry-vs-transcription. Re-run: 11/11 pass, exit 0.
+
+**4. The anchor is `independent`, and this is the MIRROR of the z2bn case.**
+The producer reads no substrate q0 — no `q_parameter.Q` / `Q_MP` / `q_at`, no
+q0 literal; its only registry import is the CODATA mass ratio. Its q comes out
+of `Vol(4_1)` and `m_mu/m_e`, i.e. the CAL-2 definition run forward as an
+assertion's own subject. Checkable evidence that it derives rather than
+transcribes: it carried `1.109978595554…` where all five other flagged
+witnesses carry the literal `1.109978595573…`; the difference is precisely the
+CODATA-2018 ratio it was computed from. z2bn declared `independent` falsely
+because it *consumed* a hardcoded q0; knot-volumes emits one without consuming
+any. The test is whether q0 is an INPUT, not whether a q0-shaped number appears.
+
+  `q0Anchor: "independent"` + `q0AnchorReason` now declared at the producer.
+  `q0-anchor-consistency-audit`: `Q0_INDEPENDENT` 37 -> 38, and knot-volumes
+  leaves `Q0_ANCHOR_MISSING`. (That bucket still reads 1921 because
+  `du-law-reparametrisation` entered it from main's `fbf64285` — not this
+  change.)
+
+**5. The staleness gate could not be drained at the producer, so the gate was
+wrong, not the witness.** Its value is in the muon basin BY CONSTRUCTION — the
+muon pin is *defined* by inverting this very relation — so no re-run can move
+it toward the proton pin. `witness_constant_staleness.py` now exempts a basin
+value only when BOTH (a) the witness declares `independent` with a reason, and
+(b) EVERY basin value sits at `.assertions[i].computed|expected`, i.e. is a
+measurement checked against its own expectation rather than a constant recorded
+for downstream use. Condition (b) is load-bearing: z2bn declared `independent`
+falsely and is **still caught**, because its value sat at top-level `.q0`.
+Measured across all six, (b) alone separates the one structural case from the
+five real ones. The exemption is printed, never silent, and `--selftest`
+covers 11 cases including every z2bn-shaped negative.
+
+Gate: 6 -> 5 stale. The five remaining are unchanged and still belong to this
+bean (2) and to the gated bulk migration qou-1c4y (2, plus z2bn's own fix on
+PR #5532's branch).

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T16:49:32.262606+00:00",
-  "commitSha": "79c2290867621e16ca4da7619c674c443dfd31f2",
+  "computedAt": "2026-08-23T16:55:00.718389+00:00",
+  "commitSha": "ccb3043058f1ffb2c8574995ecb665080ca2a50b",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -32,28 +32,28 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 667,
+      "Q0_OK": 668,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 37,
+      "Q0_INDEPENDENT": 40,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1924,
+      "Q0_ANCHOR_MISSING": 1919,
       "Q0_VALUE_MISSING": 0,
-      "Q0_AUDIT_EXEMPT": 78,
+      "Q0_AUDIT_EXEMPT": 77,
       "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 0
     },
@@ -3501,10 +3501,6 @@
           "detail": ""
         },
         {
-          "witness": "phase2b-dim-v21-bridge.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "phase2b2-dim-v21-categorical-bridge.witness.json",
           "detail": ""
         },
@@ -4609,10 +4605,6 @@
           "detail": ""
         },
         {
-          "witness": "poly-q-proof.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "probe-convention-d-vs-c-borromean.witness.json",
           "detail": ""
         },
@@ -5570,14 +5562,6 @@
         },
         {
           "witness": "dt-crossknot-connection-count-certified.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "fbor-normalisation-barsymmetry.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
           "detail": ""
         },
         {
@@ -7301,10 +7285,6 @@
           "detail": ""
         },
         {
-          "witness": "knot-volumes.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lever1-binding-core-root-distribution.witness.json",
           "detail": ""
         },
@@ -7848,10 +7828,6 @@
         },
         {
           "witness": "atom-braid-active-partitions.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "atom-dual-q0-mpfr-demo.witness.json",
           "detail": ""
         },
         {
@@ -8811,10 +8787,6 @@
           "detail": ""
         },
         {
-          "witness": "rho-k-h3a-residual-decomposition.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "t25-cinquefoil-deltalambda-sign.witness.json",
           "detail": ""
         },
@@ -9295,10 +9267,6 @@
           "detail": ""
         },
         {
-          "witness": "lp-dual-kkt-residual-50dps.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lw-growth-rate-probe.witness.json",
           "detail": ""
         },
@@ -9615,6 +9583,10 @@
           "detail": ""
         },
         {
+          "witness": "phase2b-dim-v21-bridge.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "photon-operator-table.witness.json",
           "detail": ""
         },
@@ -9803,6 +9775,10 @@
           "detail": ""
         },
         {
+          "witness": "poly-q-proof.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "probe-d-dressing-cross-a.witness.json",
           "detail": ""
         },
@@ -9912,6 +9888,14 @@
         },
         {
           "witness": "q1-mass-gap-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-normalisation-barsymmetry.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
           "detail": ""
         },
         {
@@ -10691,10 +10675,6 @@
           "detail": ""
         },
         {
-          "witness": "convention-frame-staleness-audit.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "delta-S-chain-audit.witness.json",
           "detail": ""
         },
@@ -10861,11 +10841,19 @@
           "detail": ""
         },
         {
+          "witness": "gswz_287_normalisation_underdetermined.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_alpha_line_unit_structure.witness.json",
           "detail": ""
         },
         {
           "witness": "gswz_epsm_chi_eigenspace_place.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_field_variation.witness.json",
           "detail": ""
         },
         {
@@ -10958,6 +10946,10 @@
         },
         {
           "witness": "qns-phase-scramble-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "knot-volumes.witness.json",
           "detail": ""
         },
         {

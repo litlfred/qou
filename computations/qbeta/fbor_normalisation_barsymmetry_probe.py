@@ -45,6 +45,29 @@ from codata_constants import (  # noqa: E402
     M_E_MEV, M_P_MEV_VALIDATION, M_MU_MEV_VALIDATION,
 )
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import resolve_q0_anchor  # noqa: E402
+
+# q₀ pin, declared by the producer rather than inferred.
+#
+# `WitnessBuilder.build()` stamps `q0Anchor` only when `q0_anchor_is_declared()`
+# is true, i.e. only when this stem is already in `q0_anchor_manifest.json`. The
+# manifest is generated from the q₀ value SERIALIZED in a witness. A producer
+# that reads q₀ without recording it therefore cannot bootstrap in: no stamp =>
+# no manifest entry => no stamp. Declaring it here breaks that loop, and an
+# explicit payload declaration wins over the resolver by design.
+#
+# The value comes from the SAME resolver the runtime uses, and is asserted
+# against the pin this script actually computes with -- a stamp that disagrees
+# with the compute is the defect `_q0_value_for_anchor`'s docstring records
+# (the 2026-08-15 derive-the-muon-branch change, reverted the same day).
+_Q0_ANCHOR, _Q0_VALUE = resolve_q0_anchor(__file__)
+assert _Q0_VALUE is not None and str(Q0)[:14] == _Q0_VALUE[:14], (
+    "q0 stamp/compute straddle: computing with "
+    + str(Q0)[:16] + " but resolver says "
+    + str(_Q0_ANCHOR) + " = " + _Q0_VALUE[:16]
+)
+_Q0_STAMP = {"q0Anchor": _Q0_ANCHOR, "q0Value": _Q0_VALUE}
+
 
 VOL41 = 2 * mp.clsin(2, mp.pi / 3)
 
@@ -123,7 +146,7 @@ def main() -> int:
     b.add_assertion("barsym_reproduces_proton_pin",
                     computed=bool(abs(m_p_barsym(q_sym) - M_P_MEV_VALIDATION)
                                   < mp.mpf("1e-6")), expected=True)
-    b.save()
+    b.save(_Q0_STAMP)
 
     print("=" * 74)
     print("F_Bor normalisation: does a bar-symmetric convention repair it?")

@@ -1,0 +1,44 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_field_variation_probe",
+ "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. Teichmueller discrete logs of exceptional units at a degree-1 place; the substrate modulus never enters.",
+ "scriptFile": "gswz_epsm_field_variation_probe.py",
+ "commitSha": "9b2d89643e9041b69a5b835558f5d7ac34c9a117",
+ "beans": [
+  "qou-w4gn"
+ ],
+ "source": "Addenda 40, 42 (this repo); CGZ arXiv:1712.04887v3",
+ "checks": {
+  "mu24_generator_found": true,
+  "catalogue_rebuilt": true,
+  "K_itself_is_in_the_catalogue": true,
+  "K_signature_is_6_12": true,
+  "signature_computed_for_every_field": true,
+  "signature_VARIES_across_fields": true,
+  "control_dlog24_is_not_constant": true,
+  "control_all_beta_and_1_minus_beta_are_units": true
+ },
+ "result": {
+  "fields_found": 46,
+  "K_signature": [
+   6,
+   12
+  ],
+  "signatures_seen": {
+   "(6, 12)": 18,
+   "(12, 6)": 14,
+   "(18, 18)": 14
+  },
+  "distinct_signatures": 3,
+  "verdict": "The local mu_24 signature (dlog beta, dlog 1-beta) at the degree-1 place VARIES across the catalogued exceptional-unit fields; K's (6, 12) is one of several. So the class is not forced by the local structure, and the expensive question -- whether eps itself varies -- is worth asking, though it needs a Bloch element per field and this probe does not supply one.",
+  "dlog24_on_arbitrary_units": [
+   0,
+   6,
+   12,
+   18
+  ]
+ },
+ "scope": "scope-(a) GATE, not an answer to whether eps varies. Computing eps in a second field needs a Bloch element there, and there is no canonical one -- K's came from GSWZ Example 4.3, which does not generalise for free. So this asks the cheaper question that gates it: does the local data determining the class vary at all? Everything the class depended on in this arc entered through the mu_24 discrete logs of the arguments at the degree-1 place. Measured across the catalogued exceptional-unit cubics, K's signature (6, 12) is one of several -- the signature VARIES, so the class is not forced by local structure and the expensive question is live. A constant signature would have been the stronger result; it is not what the data shows. Controls: dlog24 is non-constant on arbitrary units, and every catalogued beta is genuinely an exceptional unit. Nothing wired."
+}

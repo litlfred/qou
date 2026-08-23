@@ -85,36 +85,47 @@ def evaluate_word_matrix(shape: tuple, word: list, q_val=None) -> "mp.matrix":
     an `mp.matrix` with `mpf` entries. Nothing needed building — this function
     was simply asking for the wrong one.
 
-    ACCURACY CEILING — read before quoting any digit of this producer's output
-    past the 16th. `"mpmath50"` buys mpmath ARITHMETIC, not 50-digit DATA. The
-    rep matrices it hands back are float64 numbers widened to `mpf`, because
-    `char_fast._compiled_sigmas` builds them from `_cached_seminormal(shape)`,
-    which returns a float64 ndarray with q ALREADY SUBSTITUTED at the module
-    `Q0` (its disk cache is even keyed `q{Q0:.10f}`). The `lambdify(Q_SYM, ...)`
-    wrapper is therefore a constant function of q — measured:
-    `sigma(q=0.5) == sigma(q=2.0) == sigma(q=7.0)`, all equal to the float64
-    truncation of the proton q0, which sits 2.3e-16 from the 50-digit `Q0` this
-    file passes in.
+    ACCURACY CEILING — the ~1e-16 ceiling this docstring used to describe is
+    GONE, and the paragraph describing it has been removed rather than left to
+    mislead. It said `"mpmath50"` bought mpmath ARITHMETIC and not 50-digit
+    DATA, because `_cached_seminormal(shape)` substituted q at build time and
+    handed back float64 constants, making the `lambdify(Q_SYM, ...)` wrapper a
+    constant function of its argument. That was true when it was written and is
+    the defect #5517 (bean `qou-v6vp`) fixed at the source: the rep is now built
+    symbolically in q, so the callable varies with what it is handed.
 
-    That is what pins the per-lambda residuals at ~1e-15, and no amount of
-    mpmath in THIS file can lower it. Concretely, for this producer's output:
+    Measured here, on this function, perturbing `Q0` at the k-th digit and
+    reading the largest relative change in the returned matrix — shape (3,2,1),
+    the five-generator word, dps 70:
 
-      * the values are accurate to ~1e-16 relative, not to 50 digits;
-      * the `fmt(...)` strings in the witness are a faithful SERIALIZATION of
-        the computed quantity, and are the right thing to store — but digits
-        past ~16 carry no information about the mathematics, only about the
-        arithmetic that widened them. The witness says so in
-        `precision.accuracy_ceiling` rather than leaving a reader to infer
-        50 significant figures from the field width;
-      * the port's actual, narrower win stands: the emitted witness no longer
-        carries raw float64 JSON fields (the ratchet target, bean `qou-zck8`)
-        and the intermediate linear algebra no longer accumulates float64 error
-        across a 144-equation solve.
+        digit perturbed      before #5517      after #5517
+             16                   0.0            2.1e-16
+             30                   0.0            2.1e-30
+             45                   0.0            2.1e-45
+             60                   0.0            2.1e-60
 
-    No current caller of `char_fast` sweeps q — every one passes q0 — so the
-    constant-function behaviour is latent rather than actively wrong. It is
-    still a trap, and is filed separately; it is upstream of this file and is
-    deliberately NOT fixed here.
+    Exactly zero at every depth before; linear response at every depth after.
+    So the ceiling is no longer set by this path at all. What remains is the
+    50-digit `Q_50_DIGIT_STR` literal `Q0` is built from, and the working
+    precision — not a float64 input.
+
+    Two things that did NOT change, and are worth keeping straight:
+
+      * this is a statement about INTERNAL consistency at a given q0 literal.
+        The physical q0 is pinned by a CODATA ratio and is known to nothing
+        like 50 digits; digits past that describe the model evaluated at that
+        literal, not the world;
+      * the port's original, narrower win still stands: the emitted witness
+        carries no raw float64 JSON fields (the ratchet target, bean
+        `qou-zck8`), and the linear algebra no longer accumulates float64
+        error across a 144-equation solve.
+
+    The visible consequence is the per-lambda residual. It sat at ~1e-15 for
+    every `rank > 1` lambda, which was the float64 floor of the rep and not a
+    property of the system; those rows now land at ~1e-70. The two `rank = 1`
+    rows — the trivial and sign irreps, where every sigma_i acts as a scalar
+    and no rep matrix entered — were at ~1e-71 before and are unchanged, which
+    is the control that says this is a correction and not a different answer.
     """
     if q_val is None:
         q_val = Q0
@@ -441,7 +452,12 @@ def main() -> int:
             status = "✓"
         else:
             status = "✗"
-        print(f"  {str(lam):<14} {support_str:<22} {n_unknowns:>10} {max_rel:>10.2e}  {status}")
+        # `max_rel` is an mpf since the float64 port; mpmath does not
+        # implement __format__ for the "e" presentation type, so the old
+        # `{max_rel:>10.2e}` raised TypeError and killed the run before the
+        # witness was written. `mp.nstr` is a display conversion only.
+        print(f"  {str(lam):<14} {support_str:<22} {n_unknowns:>10} "
+              f"{mp.nstr(max_rel, 3):>10}  {status}")
 
         results_per_lambda[lam] = {
             "support": [{**p, "mu": list(p["mu"]), "nu": list(p["nu"])} for p in pairs],
@@ -539,14 +555,23 @@ def main() -> int:
             "serialization": "_precision.fmt",
             # Stated explicitly so no consumer reads significance off the field
             # width. See `evaluate_word_matrix.__doc__` for the measurement.
-            "accuracy_ceiling_relative": "~1e-16",
+            "accuracy_ceiling_relative": "~1e-50",
             "accuracy_ceiling_cause": (
-                "char_fast._compiled_sigmas returns rep matrices built by "
-                "_cached_seminormal(shape), which are float64 with q already "
-                "substituted; the mpmath backend widens them but adds no "
-                "information. Arithmetic here is exact-to-precision; the INPUT "
-                "data is float64. Digits past ~16 are arithmetic, not "
-                "mathematics."),
+                "Set by the 50-digit q_0 literal (q_parameter.Q_50_DIGIT_STR) "
+                "and the working precision, NOT by the rep. char_fast now "
+                "builds the seminormal rep symbolically in q (PR #5517, bean "
+                "qou-v6vp), so the input data is no longer float64: perturbing "
+                "q_0 at the k-th digit moves this producer's matrices by "
+                "~2e-k, measured to k=60, where before the same test moved "
+                "them by exactly 0.0. This is INTERNAL consistency at the "
+                "given q_0 literal; the physical q_0 is pinned by a CODATA "
+                "ratio and is known to nothing like 50 digits."),
+            "accuracy_ceiling_history": (
+                "This field read '~1e-16' until PR #5517, caused by "
+                "_cached_seminormal substituting q at build time and returning "
+                "float64. That is fixed; the residuals below moved from ~1e-15 "
+                "to ~1e-70 for every rank>1 lambda as a result, while the two "
+                "rank-1 lambdas (scalar action, no rep matrix) did not move."),
         },
         "results_per_lambda": {
             str(lam): results_per_lambda[lam] for lam in parts_6

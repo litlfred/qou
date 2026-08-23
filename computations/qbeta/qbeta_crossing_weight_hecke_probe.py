@@ -123,13 +123,59 @@ def main():
         check("W1_trM_pairing_G_dependent",
               abs(trM_pairing - float(hv * hv / 2 - hv * zv)) < 1e-12,
               f"<v,e_γ>_G={trM_pairing:.12g} vs h^2/2-h*z={float(hv*hv/2-hv*zv):.12g}")
-        # (b) the cointegral ω = G^-1·1 matches the committed net-ansatz value
-        # (tests G^-1; drift in G moves ω).
-        omega = np.linalg.solve(gram.G, np.ones(6))
-        omega_ref = np.array([0.601, 0.188, 0.188, 0.396, 0.396, 0.026])
-        check("W1_cointegral_matches_net_ansatz",
-              float(np.max(np.abs(omega - omega_ref))) < 2e-3,
-              f"ω=G^-1·1={np.round(omega,3).tolist()} vs net-ansatz {omega_ref.tolist()}")
+        # (b) the cointegral ω = G^-1·1.
+        #
+        # 🛑 UNDER CONVENTION D THIS OBJECT DOES NOT EXIST, and the previous
+        # `np.linalg.solve(gram.G, np.ones(6))` here was not merely unguarded
+        # (bean qou-yof3) — it was ILL-POSED. Measured: numpy raises nothing
+        # and returns a vector of order 1e14 with residual ||G·ω − 1|| = 0.14.
+        #
+        # Both fixes the bean proposed are refuted, exactly, over ℚ(q):
+        #
+        #   G's radical is spanned by the q-antisymmetriser v_i = (−1/q)^len(w_i)
+        #   (gram.py closed form). The all-ones RHS pairs with it as
+        #
+        #       ⟨v, 1⟩ = 1 − 2/q + 2/q² − 1/q³ = (q−1)(q²−q+1) / q³
+        #
+        #   which vanishes ONLY at q = 1 (and at the primitive 6th roots of
+        #   unity, which are not real). At the substrate q₀ it is ≈ 0.0902372.
+        #
+        #   • ⟨v,1⟩ ≠ 0 ⇒ 1 ∉ range(G) ⇒ G·ω = 1 is INCONSISTENT, so no
+        #     pseudo-inverse recovers a solution. Routing through
+        #     `safe_inverse`/`pinv` (the bean's option 1) returns a
+        #     least-squares vector for an unsolvable system — it converts a
+        #     loudly wrong answer into a quietly wrong one.
+        #   • The same ≠ 0 means the all-ones functional does not annihilate
+        #     the radical, so the RHS does not descend to H₃/rad. Solving on
+        #     the TL₃ quotient (the bean's option 2, and qou-8iru's move) does
+        #     not rescue THIS system either.
+        #
+        # So the honest check is the obstruction itself: it is exact, it is
+        # G-dependent (it moves if the radical or the convention drifts), and
+        # it is the well-posed statement of what the old assertion was groping
+        # at. The net-ansatz reference ω = [0.601, …] is a convention-C object
+        # and is retained in the detail string for provenance only.
+        import sympy as _sp
+        _q = _sp.symbols("q", positive=True)
+        _obstruction = _sp.simplify(sum(_sp.Integer(-1) ** len(w) / _q ** len(w)
+                                        for w in gram.NF_BASIS))
+        _num = _sp.factor(_sp.numer(_sp.together(_obstruction)))
+        check("W1_cointegral_obstruction_is_exactly_(q-1)(q^2-q+1)/q^3",
+              _sp.simplify(_num - (_q - 1) * (_q ** 2 - _q + 1)) == 0,
+              f"⟨v,1⟩ numerator = {_num}; the cointegral G^-1·1 does not exist "
+              f"under D (C-frame net-ansatz was [0.601, 0.188, 0.188, 0.396, "
+              f"0.396, 0.026])")
+        # Nonvanishing is STRUCTURAL, not numerical — no q₀ evaluation, hence
+        # no float64 anywhere in this leg (AGENTS.md: probes are not exempt).
+        # For real q > 1: (q−1) > 0, and q²−q+1 has discriminant 1−4 = −3 < 0
+        # with positive leading coefficient, so it is positive for ALL real q.
+        # Hence ⟨v,1⟩ > 0 strictly on the whole substrate regime.
+        _disc = _sp.discriminant(_q ** 2 - _q + 1, _q)
+        check("W1_cointegral_obstruction_nonzero_for_every_real_q_gt_1",
+              _disc == -3 and _sp.simplify(_num.subs(_q, 1)) == 0,
+              f"disc(q²−q+1) = {_disc} < 0 ⇒ no real root ⇒ ⟨v,1⟩ ≠ 0 for every "
+              f"real q > 1 ⇒ 1 ∉ range(G): G·ω = 1 is inconsistent at every "
+              f"substrate value, so neither pinv nor the TL₃ quotient rescues it")
     except Exception as e:  # pragma: no cover
         skip("W1_trM_pairing_G_dependent",
              f"pyhecke/numpy unavailable ({type(e).__name__}); symbolic W1 stands")

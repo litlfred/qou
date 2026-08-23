@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 295,
-      "proton-pin": 1254,
+      "proton-pin": 1256,
       "unknown": 25,
-      "canonical": 203
+      "canonical": 202
     },
     "stale_total": 295,
     "new_stale": 0,
@@ -1764,13 +1764,6 @@
       },
       {
         "file": "computations/atom-braid-active-partitions.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/atom-dual-q0-mpfr-demo.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -5711,13 +5704,6 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
-        "file": "computations/deltalambda/rho-k-h3a-residual-decomposition.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
-      },
-      {
         "file": "computations/deltalambda/s5so3-geometric-wlambda-a4-helium.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785955573347198997632204832250266562084087802",
@@ -7524,13 +7510,6 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
-        "file": "computations/lp-dual-kkt-residual-50dps.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
         "file": "computations/lw-growth-rate-probe.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -8535,6 +8514,13 @@
         "file": "computations/phase-transition-sdp-derivation.witness.json",
         "field": "data.q0",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/phase5/phase2b-dim-v21-bridge.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -9848,6 +9834,13 @@
         "ppb_vs_canonical": -11.53836188477944
       },
       {
+        "file": "computations/probes/poly-q-proof.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/probe-d-dressing-cross-a.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -10457,9 +10450,23 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/qbeta/fbor-normalisation-barsymmetry.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/fbor-q3-is-qschur-plancherel-weight.witness.json",
         "field": "parameters.q_0",
         "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/fbor-q3-is-qschur-plancherel-weight.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
