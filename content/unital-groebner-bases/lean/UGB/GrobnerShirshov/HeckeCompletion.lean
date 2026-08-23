@@ -13240,4 +13240,362 @@ theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
 
 end CornerLe
 
+/-! ## §4ao  The other corner: `a > b`
+
+`CornerLe` proves the `a ≤ b` prefix for every `a`. This namespace is the
+corner on the other side of the diagonal, `j₁ < j₂`.
+
+It is **strictly easier**, which is not what "the other corner" suggests.
+`hecke_agtb_corner_shape.py` and `hecke_agtb_lineage_schedule.py` measure it
+across 15 cases:
+
+  * the S-polynomial reduces **completely to zero** — `CornerLe`'s prefix ends
+    at a *partial* cancellation with two terms surviving; here nothing is left;
+  * the element **never exceeds two terms**, because the chain uses **no
+    quadratic step**. `quadStep` is the only rule that splits one term in two,
+    so `quadPair`, `trio`, `TOpen` and `ofTerms_cancel_split` — the whole
+    four-term apparatus `CornerLe` needed — are unnecessary here;
+  * the step count is `b² + 3b + 5`, with **no `a`-dependence at all**;
+  * **every** step is a `bsStep` or a far-commutation. Measured 16/16: each
+    step the engine's trace labels `Y` is `bokutShiaoRelation x (x+1) x`, which
+    has the same leading word as Yang–Baxter and differs from it by a sign —
+    the same coincidence §4al records for `quadPair`, one level down.
+
+Both lineages therefore run without branching, and they meet on
+`bsWord₂ i₂ i₁ (j₂−1) ++ descWord i j₁` — the same two-run shape as
+`CornerLe.WStar` with the bottoms swapped. -/
+
+namespace CornerGt
+open CornerGeneral
+
+variable {n : ℕ}
+
+/-! ### `b = 1`: the base case, uniform in `a`
+
+`b = 1` means `j₂ = i₁`, which collapses `descWord i₁ j₂` to the single letter
+`σᵢ₋₁` in both S-polynomial terms. Nine steps — five on the first term, four on
+the second — and the count is independent of `a`, as it is for every `b`. -/
+
+/-- **`V0` at `b = 1`.** `descWord i j₂` is `[σᵢ, σᵢ₋₁]`, so the term ends in
+three letters rather than a run. -/
+theorem V0_eq_gt₁ {i i₁ j₁ j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
+    (hj₂i₁ : j₂ = i₁) :
+    V0 i i₁ j₁ j₂
+      = descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨i₁⟩] := by
+  subst hj₂i₁
+  rw [V0, descWord_cons_le (i' := j₂) (i := i) (j := j₂) h₁ (by omega),
+    descWord_self]
+
+/-- **`U0` at `b = 1`.** Same collapse on the other term: `descWord i₁ j₂` is
+the single letter `σᵢ₋₁`. -/
+theorem U0_eq_gt₁ {i i₁ j₁ j₂ : Fin n} (hj₂i₁ : j₂ = i₁) :
+    U0 i i₁ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]) := by
+  subst hj₂i₁
+  rw [U0, descWord_self]
+  simp only [List.cons_append, List.nil_append]
+
+/-- The word both lineages reach, where the element vanishes. This is
+`bsWord₂ i₂ i₁ (j₂ − 1) ++ descWord i j₁` at `j₂ = i₁`, where `j₂ − 1` is `i₂`
+and `descWord i₂ i₂` is a single letter. -/
+def WGt₁ (i i₁ i₂ j₁ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁
+
+-- One uniform tactic discharges all eighteen word identities below. Which of
+-- its rewrites fire varies by call site -- `bsWord₂`, `hd12` and `descWord_self`
+-- are each needed at some and idle at others -- so the unused-argument linter
+-- is off for this declaration rather than the tactic being split eighteen ways.
+-- The `| rfl` fallback is likewise reachable only at some of them.
+set_option linter.unusedSimpArgs false in
+set_option linter.unreachableTactic false in
+set_option linter.unusedTactic false in
+/-- **The whole `a > b` chain at `b = 1`**, nine steps, `T0` to a two-term
+element whose entries are equal and oppositely signed.
+
+Five steps on the first term, four on the second. Every step is a `bsStep` or a
+one-letter far-commutation `σᵢ σᵢ₋₂ → σᵢ₋₂ σᵢ`; there is **no quadratic step**,
+so neither term ever splits and no coefficient moves — the two terms keep the
+`1` and `−1` they start with, which is what makes the meeting a cancellation.
+
+The fourth step of the second lineage is `bokutShiaoRelation i₂ i₁ i₂`, whose
+bottom equals the pair's lower index. That is the rule the engine's trace names
+`Y`: it shares a leading word with Yang–Baxter and differs by a sign, so the
+monic Bokut–Shiao form is the one that applies — §4al makes the same move one
+level down for `quadPair`.
+
+Every collision hypothesis is a **head**. The first lineage's words open `σᵢ`
+or `σᵢ₋₂` and the second's open `σᵢ₋₁`; once the first has finished, the word
+it parks on opens `σᵢ₋₂`, still against `σᵢ₋₁`. -/
+theorem sPolyChain_gt₁ (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₁ : j₁.val ≤ i₂.val) (hj₂i₁ : j₂ = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (AlgElement.ofTerms
+        [(WGt₁ i i₁ i₂ j₁, (1 : ℝ)), (WGt₁ i i₁ i₂ j₁, -1)]) := by
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne2i : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- `descWord i j₁` peeled twice: every word below is built from these
+  have hd1 : descWord i₁ j₁ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega)
+  have hd : descWord i j₁
+      = (⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₁) h₁ (by omega), hd1]
+  have hd12 : descWord i₁ i₂ = [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := i₂) h₂ (by omega),
+      descWord_self]
+  have v1 := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    [] [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]), (-1 : ℝ))]
+    ([(⟨i⟩ : HeckeGen n)]) ([(⟨i⟩ : HeckeGen n), ⟨i₁⟩])
+    (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩, ⟨i₁⟩])
+    ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩])
+    1 (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne1i (List.cons.inj hcon).1)
+  have v2 := monicStep hn hp (farCommRelation i i₂)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i₂ i)
+    (farCommRelation_lm i i₂ (by omega))
+    (by simp [hne2i])
+    [] [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]), (-1 : ℝ))]
+    ([]) ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩]))
+    ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩])
+    ([(⟨i₂⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩])
+    1 (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne1i (List.cons.inj hcon).1)
+  have v3 := bsStep (i' := i₁) (i := i) (j := j₁) hn hp h₁ (by omega)
+    [] [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]), (-1 : ℝ))]
+    ([(⟨i₂⟩ : HeckeGen n)]) ([(⟨i₁⟩ : HeckeGen n)])
+    ([(⟨i₂⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n), ⟨i₁⟩])
+    ([(⟨i₂⟩ : HeckeGen n)] ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))) ++ [(⟨i₁⟩ : HeckeGen n)])
+    1 (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21.symm (List.cons.inj hcon).1)
+  have v4 := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    [] [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]), (-1 : ℝ))]
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩]) ([])
+    ([(⟨i₂⟩ : HeckeGen n)] ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))) ++ [(⟨i₁⟩ : HeckeGen n)])
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)))
+    1 (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21.symm (List.cons.inj hcon).1)
+  have v5 := monicStep hn hp (farCommRelation i i₂)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i₂ i)
+    (farCommRelation_lm i i₂ (by omega))
+    (by simp [hne2i])
+    [] [([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]), (-1 : ℝ))]
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩]) ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)))
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))))
+    1 (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21.symm (List.cons.inj hcon).1)
+  have u1 := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩]) ([(⟨i⟩ : HeckeGen n)])
+    ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i j₁ ++ [(⟨i₁⟩ : HeckeGen n), ⟨i⟩]))
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n)])
+    (-1) (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  have u2 := monicStep hn hp (farCommRelation i i₂)
+    (farCommRelation_mem hn hp (by omega))
+    (BokutShiaoBraid.far_hrel i₂ i)
+    (farCommRelation_lm i i₂ (by omega))
+    (by simp [hne2i])
+    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
+    ([(⟨i₁⟩ : HeckeGen n)]) ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ [(⟨i⟩ : HeckeGen n)]))
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁)) ++ [(⟨i⟩ : HeckeGen n)])
+    ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))) ++ [(⟨i⟩ : HeckeGen n)])
+    (-1) (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  have u3 := bsStep (i' := i₁) (i := i) (j := j₁) hn hp h₁ (by omega)
+    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩]) ([])
+    ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i₂⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))) ++ [(⟨i⟩ : HeckeGen n)])
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))))
+    (-1) (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  have u4 := bsStep (i' := i₂) (i := i₁) (j := i₂) hn hp h₂ (le_refl _)
+    [([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁, (1 : ℝ))] []
+    ([]) ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁))))
+    ([(⟨i₂⟩ : HeckeGen n), ⟨i₁⟩, ⟨i₂⟩] ++ descWord i j₁)
+    (-1) (by norm_num)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (by first
+      | simp only [bsWord₁, bsWord₂, hd, hd1, hd12, descWord_self,
+          List.cons_append, List.nil_append, List.append_assoc,
+          List.append_nil]
+      | rfl)
+    (fun q hq => by
+      simp only [List.nil_append, List.append_nil, List.map_cons,
+        List.map_nil, List.mem_cons, List.not_mem_nil, or_false] at hq
+      subst hq
+      try simp only [hd, List.cons_append, List.nil_append,
+        List.append_assoc]
+      intro hcon
+      exact hne21 (List.cons.inj hcon).1)
+  rw [T0, V0_eq_gt₁ h₁ hj₂i₁, U0_eq_gt₁ hj₂i₁, WGt₁]
+  simp only [hd, List.cons_append, List.nil_append, List.append_assoc]
+    at v1 v2 v3 v4 v5 u1 u2 u3 u4 ⊢
+  exact ((((((((MultiStepReduction.refl _).step v1).step v2).step v3).step
+    v4).step v5).step u1).step u2).step u3 |>.step u4
+
+/-- **The `a > b` S-polynomial resolves to zero at `b = 1`.** The two entries
+`sPolyChain_gt₁` lands on are the same word with opposite signs, so they
+contribute nothing and the element is zero.
+
+They are **adjacent**, which is why this is `ofTerms_cancel_pair` and not
+`CornerLe`'s `ofTerms_cancel_split`: there, `trio`'s quadratic step emits each
+lineage's `h`-weighted word immediately before its plain one, so the two
+cancelling entries are separated by two survivors. Here nothing splits, so
+nothing sits between them — and nothing survives. -/
+theorem sPoly_zero_gt₁ {n : ℕ} (i i₁ i₂ j₁ : Fin n) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms
+        [(WGt₁ i i₁ i₂ j₁, (1 : ℝ)), (WGt₁ i i₁ i₂ j₁, -1)])
+      (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) := by
+  have h := ofTerms_cancel_pair (WGt₁ i i₁ i₂ j₁) (1 : ℝ) [] []
+  simpa using h
+
+end CornerGt
+
 end UGB.GrobnerShirshov.Hecke
