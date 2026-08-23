@@ -1,53 +1,75 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:52:37.590251+00:00",
-  "commitSha": "87f79876b6dce270eae31cacb9f660f5f5a1330f",
+  "computedAt": "2026-08-23T21:12:16.304069+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "tau_M_T_beta_matches_target_at_q0",
-      "computed": 0.0,
+      "computed": 1.485099840674492e-16,
       "expected": 0,
       "passed": true,
       "tolerance": 1e-10,
-      "source": "min-L2-norm SDP exactly reproduces \u03c4_M(T_\u03b2) = Q_\u03b2/E_0 at q_0"
+      "source": "min-L2-norm SDP exactly reproduces τ_M(T_β) = Q_β/E_0 at q_0"
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 20,
   "computation": "qbeta-decay-sdp-knot-operator",
   "scriptFile": "qbeta_decay_sdp_solver.py",
-  "scriptHash": "5c1669b7c4f1",
-  "scriptCommitSha": "f7403a5abdaff14705606cc3a5c5f51e6fd25534",
-  "description": "\u03b2-decay knot operator T_\u03b2 identified as the min-L2-norm element of H_3(q)'s NF basis satisfying \u03c4_M(T_\u03b2) = Q_\u03b2/E_0 at q_0. Provides the symbolic \u03c4_M(T_\u03b2)(q) function and its Taylor expansion around q=1. The Taylor coefficients are the data from which the c_k precision-ladder coefficients can be extracted (after subtracting Q_A and cos contributions).",
+  "scriptHash": "08c7f27f56fb",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_decay_sdp_solver.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_decay_sdp_solver.py"
+  },
+  "description": "β-decay knot operator T_β identified as the min-L2-norm element of H_3(q)'s NF basis satisfying τ_M(T_β) = Q_β/E_0 at q_0. Provides the symbolic τ_M(T_β)(q) function and its Taylor expansion around q=1. The Taylor coefficients are the data from which the c_k precision-ladder coefficients can be extracted (after subtracting Q_A and cos contributions).",
   "parameters": {
-    "q_0": "1.1099785955541805",
+    "q_0": "1.1099785827513808",
     "Q_beta_codata": "0.78233341",
-    "E_0": "4.1859808220625245",
-    "n_target": "0.18689369188617716"
+    "E_0": "4.1859813632944745",
+    "n_target": "0.18689366772151217"
   },
   "data": {
     "T_beta_nf_coefficients": {
-      "\u03b3": 0.09698419128158346,
-      "\u03c3\u2080": 0.04842617878669864,
-      "\u03c3\u2081": 0.04842617878669864,
-      "L\u208a": 0.024180175767745112,
-      "L\u208b": 0.024180175767745112,
-      "e\u207b": 0.05348129411847532
+      "γ": 0.07445029684383929,
+      "σ₀": 0.045614806238223574,
+      "σ₁": 0.045614806238223574,
+      "L₊": 0.027947646098913537,
+      "L₋": 0.027947646098913537,
+      "e⁻": 0.05145754948229722
     },
-    "tau_M_at_q0": 0.18689369188617716,
-    "tau_M_at_q_1": 0.18424110501139232,
+    "tau_M_at_q0": 0.1868936677215122,
+    "tau_M_at_q_1": 0.15976770087266823,
     "tau_M_taylor_coefficients": {
-      "a_0": 0.18424110501139232,
-      "a_1": 0.02674064705923766,
-      "a_2": -0.025788698731329007,
-      "a_3": 0.01910353696651959,
-      "a_4": -0.013243603110608716,
-      "a_5": 0.009054959695900196,
-      "a_6": -0.006257894641804223,
-      "a_7": 0.004434585338020206
+      "a_0": 0.15976770087266823,
+      "a_1": 0.22431122889772004,
+      "a_2": 0.19559161733099006,
+      "a_3": 0.0683527441537908,
+      "a_4": 0.00036861643302208563,
+      "a_5": -0.012309669531133074,
+      "a_6": 0.01065599235316055,
+      "a_7": -0.0012850607449504375
     },
-    "Q_A_at_q0": 0.7836458028449501,
-    "structural_finding": "T_\u03b2 is identified as a 6-coefficient NF expansion (min-L2-norm). Its \u03c4_M(q) is a sum of z(q)^k contributions for k=0..3. The c_k extraction requires comparing \u03c4_M(T_\u03b2)(q) to Q_A(q)\u00b7cos(...) term-by-term in (q-1) \u2014 a finite algebraic exercise."
+    "Q_A_at_q0": 0.7836458273746212,
+    "structural_finding": "T_β is identified as a 6-coefficient NF expansion (min-L2-norm). Its τ_M(q) is a sum of z(q)^k contributions for k=0..3. The c_k extraction requires comparing τ_M(T_β)(q) to Q_A(q)·cos(...) term-by-term in (q-1) — a finite algebraic exercise."
   }
 }
