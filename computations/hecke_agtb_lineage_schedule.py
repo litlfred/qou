@@ -151,9 +151,41 @@ def main():
             j1, j2, i1, i2 = i - a, i - b, i - 1, i - 2
             rel = lambda w: [i - x for x in w]
 
+            y_tot = y_same_lm = y_same_result = 0
             f0 = start_element(i, a, b)
             seeds = sorted(f0, key=eng.deglex_key)
             V0, U0 = seeds[0], seeds[1]
+
+            # Every `Y`-labelled step is really `B(x, x+1, x)`: at j = i'
+            # the Bokut-Shiao rule and Yang-Baxter share a leading word and
+            # differ by a SIGN, and `apply` divides by the leading coefficient,
+            # so the rewrite is identical.  The engine names whichever its rule
+            # table reaches first.  This checks it step by step rather than
+            # relying on the general fact, because it is what licenses using
+            # `bsStep` for EVERY step of the Lean chain.
+            for seed in (V0, U0):
+                g, cur = dict(f0), seed
+                for _ in range(80):
+                    t = redex_on(g, cur)
+                    if t is None:
+                        break
+                    ww, nm, kk = t
+                    rid = ids.get(nm)
+                    if rid and rid[0] == "Y":
+                        y_tot += 1
+                        bn = f"B{rid[1]}{rid[1] + 1}{rid[1]}"
+                        if bn in eng.LM and eng.LM[bn] == eng.LM[nm]:
+                            y_same_lm += 1
+                            if apply(g, (ww, nm, kk))[0] == apply(
+                                    g, (ww, bn, kk))[0]:
+                                y_same_result += 1
+                    g, im = apply(g, t)
+                    nxt = [u for u in im if u != ww]
+                    if len(nxt) != 1:
+                        break
+                    cur = nxt[0]
+                    if cur not in g:
+                        break
 
             # V first, then U -- the order is free (no shared sources), and
             # this asserts that rather than relying on it
@@ -178,6 +210,9 @@ def main():
                                  + ([rel(vend)] if vend else []),
                 "U_words_rel_i": [rel(s["src"]) for s in usteps]
                                  + ([rel(uend)] if uend else []),
+                "y_labelled_steps": y_tot,
+                "y_steps_matching_bsStep_leading_word": y_same_lm,
+                "y_steps_giving_identical_element": y_same_result,
                 "quadratic_steps":
                     sum(1 for s in vsteps + usteps if s["rule"][0] == "Q"),
                 "steps_with_more_than_one_image":
@@ -226,6 +261,11 @@ def main():
         computed=str(sum(0 if r["meet_is_bsWord2_j2m1_plus_descWord_i_j1"]
                          else 1 for r in rows)), expected="0")
     w.add_assertion(
+        "y_labelled_steps_that_are_NOT_bsStep_at_a_degenerate_bottom",
+        computed=str(sum(r["y_labelled_steps"]
+                         - r["y_steps_giving_identical_element"]
+                         for r in rows)), expected="0")
+    w.add_assertion(
         "cases_that_do_NOT_reduce_to_zero",
         computed=str(sum(0 if r["reduces_to_zero"] else 1 for r in rows)),
         expected="0")
@@ -262,7 +302,11 @@ def main():
         print(f"     meet {r['meeting_word_rel_i']}"
               f"  = bsWord2 i2 i1 (j2-1) ++ descWord i j1: "
               f"{r['meet_is_bsWord2_j2m1_plus_descWord_i_j1']}")
-    print(f"\n{len(rows)} cases measured")
+    ytot = sum(r["y_labelled_steps"] for r in rows)
+    yok = sum(r["y_steps_giving_identical_element"] for r in rows)
+    print(f"\nY-labelled steps: {yok}/{ytot} are bsStep at a degenerate "
+          f"bottom, giving the identical element")
+    print(f"{len(rows)} cases measured")
     return 0
 
 
