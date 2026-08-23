@@ -1,3 +1,5 @@
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Combinatorics.Young.YoungDiagram
 
@@ -84,5 +86,55 @@ See the module docstring for how this was derived and for what is *not* proved a
 noncomputable def ocneanuWeight {R : Type*} [Field R] (q z : R) (mu : YoungDiagram) : R :=
   (∏ c ∈ mu.cells, (q ^ (2 * c.1) * (q ^ 2 - 1 - q * z) + q ^ (2 * c.2 + 1) * z))
     / (∏ c ∈ mu.cells, (q ^ (2 * hookLength mu c) - 1))
+
+/-! ### The convention-D Markov parameter truncates the support
+
+Setting the per-cell numerator factor of a cell of content `c` to zero and solving for `z` gives
+`z = q^{2k+1} / (1 + q² + ⋯ + q^{2k})` for `c = −k` (and no solution at `c = 0`, where the factor is
+the constant `q² − 1`).  The **`k = 2`** member of that family is `z = q³/(q²+1)` — which is exactly
+the Markov parameter of **convention D**, made canonical by the owner ruling of 2026-08-15.
+
+So at convention D every Young diagram with three or more rows carries weight **zero**: such a
+diagram contains the cell `(2,0)`, of content `−2`.  The `k = 1` member `z = q` likewise kills every
+diagram with two or more rows.  Convention C's `z = √q/(q+1)` is not a member of the family at any
+integer content, and truncates nothing.
+
+Vanishing on the partitions of three or more rows is the condition for a trace on `H_n(q)` to
+factor through its Temperley–Lieb quotient; that reading is standard (Jones (1983), Wenzl (1988))
+and is *not* proved here.  What is proved here is the vanishing itself.
+
+Cross-checked against `computations/ocneanu_weights.py::omega_lambda_via_inversion`, an independent
+`p(n) × p(n)` linear solve at the live `q₀` and this `z`: at `n = 2 … 5` exactly the diagrams with
+three or more rows come back zero, and every other weight agrees with the closed form to the limit
+of the float64 arithmetic that path uses (worst `1.5e-16`, which cannot distinguish agreement from a
+discrepancy below that scale). -/
+
+/-- The numerator factor of a cell of content `−2` vanishes at `z = q³/(q²+1)`. -/
+theorem ocneanuNumFactor_eq_zero_of_content_neg_two {R : Type*} [Field R] (q : R)
+    (hq : q ^ 2 + 1 ≠ 0) (j : ℕ) :
+    q ^ (2 * (j + 2)) * (q ^ 2 - 1 - q * (q ^ 3 / (q ^ 2 + 1)))
+        + q ^ (2 * j + 1) * (q ^ 3 / (q ^ 2 + 1)) = 0 := by
+  have hpow : q ^ (2 * (j + 2)) = q ^ (2 * j + 1) * q ^ 3 := by ring
+  rw [hpow]
+  field_simp
+  ring
+
+/-- **At the convention-D Markov parameter `z = q³/(q²+1)`, every partition with three or more rows
+has weight zero.**
+
+The hypothesis `0 < μ.rowLen 2` says the third row is nonempty, i.e. `μ` has at least three rows;
+equivalently `(2,0) ∈ μ`, a cell of content `−2`, whose numerator factor vanishes at this `z`. -/
+theorem ocneanuWeight_conventionD_eq_zero_of_three_rows {R : Type*} [Field R] (q : R)
+    (hq : q ^ 2 + 1 ≠ 0) (mu : YoungDiagram) (h : 0 < mu.rowLen 2) :
+    ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) mu = 0 := by
+  have hmem : (2, 0) ∈ mu.cells := by
+    rw [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
+    exact h
+  have hzero : ∏ c ∈ mu.cells,
+      (q ^ (2 * c.1) * (q ^ 2 - 1 - q * (q ^ 3 / (q ^ 2 + 1)))
+        + q ^ (2 * c.2 + 1) * (q ^ 3 / (q ^ 2 + 1))) = 0 :=
+    Finset.prod_eq_zero hmem (by
+      simpa using ocneanuNumFactor_eq_zero_of_content_neg_two (R := R) q hq 0)
+  rw [ocneanuWeight, hzero, zero_div]
 
 end QOU.SchurWeyl
