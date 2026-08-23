@@ -42,10 +42,10 @@ by the class `SnIsotypicSpechtSplit`, which is now **inhabited**
 Measured: `#print axioms` on `burnside_proved` reports `[propext, Classical.choice, Quot.sound]`.
 A hypothesis-free restatement is checked in `WedderburnUnconditional`.
 
-That is still a strict improvement over the projection it replaces. Before, the
-burnside claim was *assumed wholesale* through an instance nobody could provide.
-Now it is *derived*, and its remaining debt is two specific, located obligations in
-the Oka–Vershik assembly. Bridges (1) and (2) themselves are fully axiom-clean.
+Before, the burnside claim was *assumed wholesale* through an instance nobody
+could provide. Then it became *derived* with two located obligations in the
+Oka–Vershik assembly. Both of those are now discharged, so it is derived outright.
+Bridges (1) and (2) were always axiom-clean.
 
 -- Ref: [sagan2001] Sagan, The Symmetric Group §1.10–§3.10 (RSK; Σ (f^λ)² = n!)
 -- Ref: [manuscript] docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (axiom (i))

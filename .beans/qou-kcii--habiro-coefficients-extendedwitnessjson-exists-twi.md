@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-08-23T08:23:16Z
+updated_at: 2026-08-23T08:52:47Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -139,3 +139,47 @@ witness. Fix the resolution, then remove the artifact.
 cannot be regenerated. Per `qou-iayk` the parser error is FIXED; the live
 blocker is that the fresh values contradict a landed D(u) closed-form law
 that the old witness satisfies exactly. Different problem, different bean.
+
+
+## The MECHANISM is undetected: 6 sites bypass the resolver (2026-08-23)
+
+`duplicate_witness_stem_audit` measures the duplication and, better, the
+7 consumer-splitting stems. It does **not** detect the mechanism by which the
+incident in its own docstring happened — *"a probe used `rglob` instead of
+the resolver, read the other copy, and reported the wrong q0Anchor"*. Its
+only `rglob` references are that narrative and its own sweeps.
+
+So a recurrence would not be caught. Six sites resolve a witness or producer
+**recursively by name and take one**, without calling
+`_path_bridge.witness_path`:
+
+    computations/q0_muon_reproduction_sweep.py    L105   return w      (first match)
+    computations/witness_padding_provenance.py    L209   hits[0]
+    computations/producer_repad_sweep.py          L159   hits[0]
+    computations/witness_provenance_audit.py      L356   return cand   (first match)
+    computations/q0_repin_sweep.py                L332   break         (first non-deprecated)
+    scripts/convention-c-taint.py                 L108   return first
+
+Spot-verified on three of them: none references `witness_path` at all.
+
+**Why 'first match' is not a tie-break.** `Path.rglob` yields in
+`os.scandir` order — filesystem-dependent, and **not** sorted. Several of
+these sites do not wrap it in `sorted()`. So the copy chosen is not merely
+*a* deterministic wrong one; it can differ between machines and between runs
+after unrelated file churn. That is the worst failure shape for a witness
+read: silent, and not reproducible from the source.
+
+**Scope, honestly.** This is the *capability* to pick wrong. I have NOT
+established that any of the six currently resolves one of the 25 ambiguous
+stems — that needs per-call-site tracing of what names reach each. Read it as
+'the guard rail is absent here', not as six live defects. Four of the six are
+sweep/audit drivers, where a wrong pick corrupts a report rather than a
+published number; `witness_provenance_audit` is itself an audit.
+
+**Cheapest fix, if wanted:** route these through `witness_path`, which
+already implements the prefer-dir search order. Failing that, `sorted()` at
+minimum, and a hard error on `len(hits) > 1` rather than a silent `[0]`.
+
+Not building a detector for this here — if it should be gated, the existing
+`duplicate_witness_stem_audit` is its natural home rather than a second
+script scanning the same tree.

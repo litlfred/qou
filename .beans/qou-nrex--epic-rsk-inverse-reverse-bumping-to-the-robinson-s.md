@@ -1080,3 +1080,49 @@ changed. SnWedderburnPartitionBridge's olean predated main's class-ification, so
 not. Rebuild the one olean (`lean --o=… file.lean`, ~8 s) before believing an identifier is missing.
 
 ### #5426 now carries: RSK bricks 16-42, the general Wedderburn split, and the keystone instance
+
+### POST-MERGE FOLLOW-UP (#5426 merged 2026-08-23; #5530 open)
+
+#5530 = the sweep for what the keystone closure falsified or unlocked. TWO SUBSTANTIVE WINS, both
+found by following stale PROSE to code that had quietly become improvable:
+
+  1. RSKBridge.RSK_substrate_axiom  WAS A LIVE LEAN AXIOM  ->  now RSK_substrate_proved, a theorem.
+     Its own docstring named the exit condition ("pending the in-repo RSK proof … it becomes a
+     derived consequence"); that proof landed, so the condition was met. RSKBridge now declares NO
+     axioms. Only ONE real use site existed corpus-wide (one line in the same file) — everything
+     else was docstring mentions — so churn was nil.
+  2. RSKBijection n  for EVERY n (instRSKBijection). Was hand-registered at n = 3, 5, 7, 12 only.
+     The four are REMOVED, not kept: the class carries DATA (`dim`), so two instances at one n is an
+     ambiguity even when both supply dimSYT. Verified resolution at 3/5/7/12 AND 13/100.
+  3. PartitionsOfBridge.sum_map_dimHLF_sq — the list-model dimension identity for every n.
+     rskBurnsideHolds_le12 run BACKWARDS (that one lifts the decide-verified list identity UP to
+     Nat.Partition; this pushes RSK DOWN to the list index, same two bridges).
+  4. 17 files of stale claims corrected — incl. THIRTEEN OF MY OWN Schensted files from #5426.
+
+### MEASURED NEGATIVE + THE EXACT BLOCKER (do not re-derive this)
+
+PlancherelSnData n instances stop at n = 12. It does NOT generalise the way RSKBijection did.
+It needs TWO identities:
+  (i)  the dimension sum        — NOW AVAILABLE at every n (item 3 above);
+  (ii) the JM content-square mean — OVTopAssembly.identityB_general IS this for general n, and is
+       axiom-clean (measured: identityB_general, sum_numSYT_sq_eq_factorial and snSpectralData all
+       report [propext, Classical.choice, Quot.sound] — the docstring claiming "residual sorries"
+       was stale and is corrected).
+
+snSpectralData's fields are exactly the right shape:  Idx := PartitionIndex n,
+d := numSYT ∘ diagram,  ω := ((contentSqSum ∘ diagram : ℤ) : R).  So the reindex needs:
+  a) PartitionIndex n <-> partitionsOf n     — EXISTS (PartitionReindex.sum_map_eq_sum_partitionIndex,
+                                                already used by BurnsideDischarge.burnside_proved)
+  b) numSYT i.diagram = dimHLF l             — EXISTS (dimIrrep_eq_numSYT / dimSYT_eq_dimHLF)
+  c) contentSqSum i.diagram = sumSqContents l — ***DOES NOT EXIST. THIS IS THE BLOCKER.***
+  d) 2 * (n! * C(n,2)) arithmetic vs n(n-1)n!, plus ℚ/ℤ casts — trivial
+
+(c) in detail — the two are the same quantity through different indices, with NO bridge in the corpus:
+    JucysMurphy.contentSqSum (μ : YoungDiagram) := ∑ c ∈ μ.cells, (cellContent c)^2
+    IdentityIContentDecomposition.sumSqContents (l : List ℕ) :=
+        ((range l.length).map fun i => ((range (l.getD i 0)).map fun j => ((j:ℤ)-(i:ℤ))^2).sum).sum
+The proof shape is KNOWN: it is the weighted analogue of card_cells_ofRowLens (brick 41) —
+cells_biUnion + rows_pairwiseDisjoint + row_eq_prod, from SchenstedCellsBridge, whose LEMMAS are
+general even though its headline theorem is stated only for a tableauShape. Estimate: 1 brick for
+(c), then (a)+(b)+(d) assemble PlancherelSnData for every n, which would lift the keystone's
+twoM = Identity-I bridge off its n = 3..12 cap.

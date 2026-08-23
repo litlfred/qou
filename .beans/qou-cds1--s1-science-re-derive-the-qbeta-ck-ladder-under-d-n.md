@@ -5,11 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-22T19:31:51Z
-
-updated_at: 2026-08-22T12:44:58Z
-
-updated_at: 2026-08-22T14:07:58Z
+updated_at: 2026-08-23T09:39:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1004,3 +1000,102 @@ to D. Deriving alpha is what tranche S1 actually needs — not a tail re-derivat
 
 PR #5448 body + probe docstring + Lean header all corrected (commit 16847c7f5b).
 Probe now 8/8 (new assertion 7: markovZ' = z_C exactly).
+
+
+## 2026-08-23 (PR #5536) — branch 1 of the trichotomy is CLOSED, in every convention
+
+Picking up from the 2026-08-22 entry above, which named the real S1 residual:
+*"the tail is fine; the PHASE is the job"*, and from `EigenphaseCarrierVacuity.lean`,
+which reduced "where can a derivation of `α` live" to a trichotomy:
+
+1. `M` in the braid image — called excluded there, **by transcendence of
+   `2cos((z−1)h/2)` over `ℚ(q,z)`**. That was a docstring assertion, unproved,
+   and scoped to convention C.
+2. `M` arbitrary — circular (`rotationOfPhase` satisfies it for any `α`).
+3. `M` a holonomy of an independently-defined connection (KZ / Kohno–Drinfeld).
+
+**Branch 1 is now PROVED, and the proof is convention-independent.**
+`QOU/QBeta/BraidImageEigenphaseExclusion.lean` (sorry-free, lean-direct EXIT 0,
+axioms `[propext, Classical.choice, Quot.sound]` on all seven declarations):
+
+  `no_laurent_of_surjective_nonpos` — if `α` attains every non-positive real on
+      `[1,∞)`, then `2cos(α ·)` is no Laurent polynomial `P(s)/s^N` there.
+      `cos` hits `+1` at infinitely many points ⇒ `P = C 2 * X^N`; and `−1` at
+      infinitely many ⇒ `P = C (−2) * X^N`; compare `coeff N`.
+  `alphaC_le`   — `α_C(s) ≤ −(s−1)/4` for `s ≥ 1`  (unbounded BELOW)
+  `alphaD_ge`   — `α_D(s) ≥ s−3`      for `s ≥ 3`  (unbounded ABOVE)
+  `no_braid_character_C` / `_D` — branch 1 closed in both frames; D via `cos`
+      evenness applied to `−α_D`.
+
+**Why it is elementary rather than a transcendence argument.** A braid word's
+character is a Laurent polynomial and `|2cos α| ≤ 2` always; a Laurent
+polynomial bounded on `(0,∞)` is constant. That kills any braid-image
+realisation whose phase is non-constant — and **it never reads `z`'s formula**.
+So the exclusion is not a fact about C: re-picking `z` cannot repair the
+D-frame ladder inside the braid picture. Scope-(b), citing a proved invariant.
+
+Probe `computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py`,
+12/12 exact (sympy ℚ(s) + `Fraction`; one 60-dps mpmath readout; no float64):
+
+  det ρ(σ_i) = −1 identically in q; tr ρ(w) ∈ ℤ[q,q⁻¹] over all 1364 words of
+  length ≤ 5; `1/2 − z_C = (s−1)²/(2(s²+1))`; `α_C(10) = −9009/200 < −4π`;
+  `α_D(10) = 9899000001/2000200 > 4π`.
+
+**Concrete, not merely asymptotic.** The canonical single-wrap candidate
+`ρ(σ₁σ₂)` has `det = 1` and `tr = −1` **identically in q** — eigenphase `2π/3`
+at every substrate value — against `2cos(α_C(q₀)) = 1.99726`,
+`2cos(α_D(q₀)) = 1.99836`. A q-independent phase cannot be a ladder rung.
+
+**Objection I raised against myself, and closed.** A *normalised* character is a
+rational function, and a bounded rational function need not be constant
+(`1/(1+q²)`) — an apparent escape. It is not one: `det M = 1` pins the
+normalisation. For `M = c·ρ(w)`, `det M = c²·(−1)^{e(w)}`, so `det M = 1` forces
+`e(w)` even and `c = ±1` (assertion 11: `−c² = 1` has no real solution). No
+q-dependent normalisation survives.
+
+**Two limits, stated so this is not over-read.** (i) It excludes a FUNCTIONAL
+identification on the substrate branch, not a numerical coincidence at `q₀`.
+(ii) The Laurent shape of `tr ρ(w)` is imported from Geck–Pfeiffer as the shape
+of the hypothesis, checked exactly over 1364 words but not proved in Lean.
+
+### STILL OPEN — and this is the honest state of S1
+
+**No D-frame ladder is stated, and none is derivable from what is now known.**
+`α` remains derived in neither convention. Branch 2 is circular; branch 1 is
+closed; **branch 3 (KZ / Kohno–Drinfeld holonomy) is untouched and is the only
+remaining place a derivation of `α` can live.** Nothing here proposes a `c_k`;
+`−974` stays a sensitivity measurement and is wired nowhere.
+
+What branch 3 would have to deliver, stated concretely so the next agent can
+start cold: a connection defined **without reference to `α`**, whose monodromy
+reproduces the Hecke braiding on `V_(2,1)`, and whose holonomy angle along a
+specified path evaluates to `(z−1)h/2` — with `z` the D parameter. It escapes
+branch 1 precisely because a holonomy is transcendental, and escapes branch 2
+because the connection is prior to the phase. **Do not search for a corrective
+term that lands `α_D` near the required window; that is a fit** (the required
+window is ±1.09e-5 rad and `z_D` misses by 1.19e-2 rad — see the #5210 entry).
+
+
+### Correction to my own entry above, same day — the closure is NARROWER than I first wrote
+
+Devil's-advocate pass on my own result. The entry above says branch 1 is
+"closed"; that is true **for the case branch 1 actually states**, and I should
+have named the boundary the first time.
+
+`EigenphaseCarrierVacuity`'s branch 1 is a **2 × 2** matrix on `V_(2,1)` with
+`trace = 2cos α` and `det = 1` — a *character*. That is exactly what
+`no_braid_character_C` / `_D` exclude, so the closure is real.
+
+**But if `α` were one eigenphase among several of a LARGER braid-image matrix,
+the argument does not extend.** `2cos α` is then a sum of two eigenvalues — an
+**algebraic** function of `q`, root of a polynomial with Laurent coefficients,
+not a Laurent polynomial itself. And boundedness does not kill algebraic: `q/(q+1)`
+is bounded on `(0,∞)` and non-constant. That sub-case still needs the
+transcendence argument the docstring asserted.
+
+**Net effect on the corpus, stated precisely:** one unproved assertion becomes
+*(proved half: the character case, elementary, every convention)* + *(still
+assumed half: the eigenvalue-pair case, still needing transcendence)*, with the
+boundary named. That is strictly better bookkeeping than before, and it is less
+than "branch 1 is closed" unqualified. Recorded in the Lean header (§"Three
+limits"), the probe docstring, and registry §9g.
