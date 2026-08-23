@@ -115,6 +115,25 @@ _T0 = time.monotonic()
 #: producers dispositioned as `independent`, then seven more.
 BASELINE = 40
 
+
+def ratchet_fires(count: int, baseline: int) -> bool:
+    """The ratchet's ONE predicate. ``main()`` and ``_self_test()`` must both
+    call this -- that shared call is the whole point.
+
+    Previously each spelled the comparison out separately, and the self-test
+    spelled it against literals: ``fires = n > (n - 1)``, ``holds = not (n > n)``.
+    Both are tautologies for every ``int``, so ``--self-test`` returned 0
+    unconditionally and could not report failure. It printed the numbers while
+    never touching the predicate it claimed to test; flipping ``>`` to ``>=``
+    in ``main()`` would not have moved it.
+
+    Routed through here, a flipped operator is caught: ``>=`` breaks the
+    ``holds`` leg (``not (n >= n)`` is False) and ``<`` breaks the ``fires``
+    leg. The test can now fail, which is the only property that made it worth
+    having.
+    """
+    return count > baseline
+
 _MATCH = 14  # same discrimination width the anchor audit uses
 
 #: Producers that match the filter but are VERIFIABLY immune to the flip.
@@ -270,8 +289,8 @@ def _self_test() -> int:
     ``WitnessBuilder``, so it cannot leave anything behind.
     """
     n = len(scan()["at_risk"])
-    fires = n > (n - 1)      # the ratchet's own predicate, at baseline n-1
-    holds = not (n > n)      # and at baseline n
+    fires = ratchet_fires(n, n - 1)   # the REAL predicate, at baseline n-1
+    holds = not ratchet_fires(n, n)   # and at baseline n
     ok = fires and holds
     print(f"self-test: live count {n}")
     print(f"  ratchet FIRES at baseline {n - 1}: {fires}  (expect True)")
@@ -309,7 +328,7 @@ def main(argv: list[str] | None = None) -> int:
     if n > 20:
         print(f"    ... and {n - 20} more (all listed in the witness)")
 
-    grew = n > BASELINE
+    grew = ratchet_fires(n, BASELINE)
     assertions = [
         {"name": "1_at_risk_set_has_not_grown",
          "passed": not grew,

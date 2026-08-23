@@ -69,15 +69,24 @@ structure MainCommutativeDiagram where
   parallel_transport : sectionValue = schrodingerValue
   /-- Left arrow: q-linearisation of jet data gives sections. -/
   q_linearisation : sectionValue = (1 - qInv) * jetValue
-  /-- The diagram commutes: all four paths give the same result. -/
-  commutativity :
-    (1 - qInv) * einsteinValue = schrodingerValue
 
-/-- The diagram commutes by combining the four arrow equations. -/
+/-- **The diagram commutes.**
+
+    Both paths from the jet bundle to the Schrödinger corner agree:
+    going right along the Euler–Lagrange arrow and then down the
+    `q → 1` edge gives `(1 − q⁻¹) · einsteinValue`, while going down
+    the q-linearisation arrow and then right along parallel transport
+    gives `schrodingerValue`.
+
+    Commutativity is **derived** from the three arrow equations, not
+    assumed: it was formerly a fourth field `commutativity` of
+    `MainCommutativeDiagram`, which made this statement a restatement
+    of its own hypothesis. The chain is
+    `(1 − q⁻¹)·einstein = (1 − q⁻¹)·jet = section = schrodinger`. -/
 -- Ref: [manuscript] §1
 theorem diagram_commutes (d : MainCommutativeDiagram) :
     (1 - d.qInv) * d.einsteinValue = d.schrodingerValue := by
-  exact d.commutativity
+  rw [← d.euler_lagrange, ← d.q_linearisation, d.parallel_transport]
 
 end
 end QOU

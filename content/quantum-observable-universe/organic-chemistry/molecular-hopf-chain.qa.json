@@ -1089,6 +1089,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Molecular Hopf chain (open)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "26060c509243",
+          "ts": "ae028093b703",
+          "lean": "86b15183e156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'molecular-hopf-chain.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1154,6 +1169,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "26060c509243",
+          "ts": "ae028093b703",
+          "lean": "86b15183e156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-chain.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1263,7 +1293,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean:1 — content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean:38:52: error: Invalid field notation: Type of"
+        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean:38:52: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "26060c509243",
+          "ts": "ae028093b703",
+          "lean": "86b15183e156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-chain.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1287,6 +1332,21 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/molecular-hopf-chain.lean:38:52: error: Invalid field notation: Type of, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "26060c509243",
+          "ts": "ae028093b703",
+          "lean": "86b15183e156"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-chain.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [

@@ -682,7 +682,7 @@
           "in_degree": 0,
           "cone_size": 10,
           "depth": 7,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1002,6 +1002,21 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "91ffa3703cd4",
+          "ts": "9d6194042021",
+          "lean": "bc783c08584f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1096,7 +1111,22 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:1 — content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "91ffa3703cd4",
+          "ts": "9d6194042021",
+          "lean": "bc783c08584f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1117,6 +1147,21 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean:46:15: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "91ffa3703cd4",
+          "ts": "9d6194042021",
+          "lean": "bc783c08584f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "bib-cite-resolves": [
@@ -1179,7 +1224,7 @@
         "reviewed_at": "2026-08-09T11:32:14.438Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:4: Jimbo theorem — named result, no citation in block | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:11: Alexander theorem — named result, no citation in block"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:4: Jimbo theorem \u2014 named result, no citation in block | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.md:11: Alexander theorem \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [

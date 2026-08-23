@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mi-sw-abelianisation",
-  lean: { ref: "qou:QOU.Brings.mi_sw_abelianisation",
+  lean: { ref: "qou:QOU.BringsSurface.mi_sw_abelianisation",
     validation: "stub",
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
@@ -49,6 +49,25 @@ export default proposition({
         "principal bundles over S², nonabelian gauge theory, Yekutieli " +
         "multiplicative integration — so no-instance is expected to persist; " +
         "what has changed is that it is now stated rather than disguised.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-23",
+      body:
+        "**The block was never actually wired to that restatement** (bean " +
+        "`qou-lo1t`). The note above describes `QOU/BringsSurface.lean`, but " +
+        "`lean.ref` read `qou:QOU.Brings.mi_sw_abelianisation` while the " +
+        "declaration lives in namespace `QOU.BringsSurface` — `QOU.Brings` is a " +
+        "different, real namespace, so the ref named a declaration that exists " +
+        "nowhere. Resolution therefore fell to the sibling " +
+        "`mi-sw-abelianisation.lean`, which carried neither `mi_sw_abelianisation` " +
+        "nor any content: a `structure MISWAbelianisation` — colliding by name " +
+        "with the honest library `class` — plus `mi_sw_nonneg` and " +
+        "`sw_determines_mi`, each returning one of its own fields verbatim. The " +
+        "sibling is deleted (§0a forbids a stub shadowing a real library " +
+        "declaration; its three declarations had no reference anywhere) and the " +
+        "ref now names the class-with-no-instance the notes above describe. " +
+        "`validation: \"stub\"` is unchanged and still accurate.",
     },
   ],
   uses: [

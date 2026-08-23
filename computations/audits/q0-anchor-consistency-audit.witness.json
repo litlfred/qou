@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:58:28.688372+00:00",
-  "commitSha": "b873966b952b062bfeb5afe255654242cf6f1cf5",
+  "computedAt": "2026-08-23T15:38:09.922981+00:00",
+  "commitSha": "2ee9a5169a634bd3f61e78bae7869955e73a4799",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -30,29 +30,28 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
       "Q0_OK": 665,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 35,
+      "Q0_INDEPENDENT": 36,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1921,
+      "Q0_ANCHOR_MISSING": 1924,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 77,
       "Q0_PARSE_ERROR": 0,
@@ -2283,6 +2282,10 @@
         },
         {
           "witness": "h4-residual-vs-fine-structure-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "du-law-reparametrisation.witness.json",
           "detail": ""
         },
         {
@@ -5567,6 +5570,14 @@
         },
         {
           "witness": "dt-crossknot-connection-count-certified.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-normalisation-barsymmetry.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
           "detail": ""
         },
         {
@@ -10795,6 +10806,10 @@
       "Q0_INDEPENDENT": [
         {
           "witness": "hardcoded-q0-literal-families.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "q0-literal-classification.witness.json",
           "detail": ""
         },
         {

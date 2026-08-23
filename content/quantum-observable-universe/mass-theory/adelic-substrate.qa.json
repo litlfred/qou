@@ -981,7 +981,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — Lean file exists"
+        "evidence": "adelic-substrate.lean:1 \u2014 Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60",
+          "lean": "910a10f03d8f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'adelic-substrate.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1386,7 +1401,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "evidence": "adelic-substrate.lean:1 \u2014 content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",

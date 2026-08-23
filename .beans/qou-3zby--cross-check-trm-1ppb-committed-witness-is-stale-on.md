@@ -85,8 +85,15 @@ this makes the reason legible, it does not make the number green.
 
 I appended a section here claiming this bean and `qou-dau6` were **competing
 hypotheses with no adjudication between them**, and offered a **third**
-candidate (import-cone drift). Both claims are false. The append was caught
-before its PR (#5514) merged, so it never reached `main`; this replaces it.
+candidate (import-cone drift). Both claims are false. This replaces it.
+
+**Precision about "never reached main" — my first retraction said that, and
+it is wrong.** The correction was made before #5514 merged, but the merge is
+a REBASE, so the false commit `b9d0c5bfb9` replayed onto `main` and sits in
+its history. No revision of this file on `main` asserts the false claim, and
+the final state is clean — but the commit is there, and `git log -p` will
+show it. Recorded because a retraction that misstates its own blast radius
+is the same defect one level down.
 
 ### 1. The adjudication EXISTS, and predates my append by two days
 

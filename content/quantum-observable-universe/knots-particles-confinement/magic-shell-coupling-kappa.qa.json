@@ -1367,7 +1367,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`.",
+        "notes": "The claim in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1"
       }
@@ -1411,7 +1411,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1433,7 +1433,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry).",
         "severity": "minor"
       }
     ],
@@ -1454,7 +1454,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1500,6 +1500,21 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834",
+          "lean": "0e4a80410e98"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'magic-shell-coupling-kappa.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1519,7 +1534,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1541,7 +1556,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1563,7 +1578,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1585,7 +1600,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.ts:1"
       }
@@ -1609,7 +1624,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1 — content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`"
+        "evidence": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834",
+          "lean": "0e4a80410e98"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'magic-shell-coupling-kappa.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1632,7 +1662,22 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean for 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ — categorical closed form' fails compilation with error: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean for 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' fails compilation with error: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`. This invalidates the claim of formal verification."
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834",
+          "lean": "0e4a80410e98"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'magic-shell-coupling-kappa.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1927,7 +1972,7 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not because the identification stands.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not because the identification stands.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -2010,8 +2055,8 @@
         },
         "reviewed_at": "2026-08-15T21:33:09.109Z",
         "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
-        "evidence": "Two consecutive '— because' causal connectors used the spaced dash in place of plain syntax; remaining dashes are true parentheticals (kept).",
-        "notes": "fix applied: '$39$ — because the coefficient vanishes' -> '$39$, because...'; 'contradicted itself — because' -> 'contradicted itself because'"
+        "evidence": "Two consecutive '\u2014 because' causal connectors used the spaced dash in place of plain syntax; remaining dashes are true parentheticals (kept).",
+        "notes": "fix applied: '$39$ \u2014 because the coefficient vanishes' -> '$39$, because...'; 'contradicted itself \u2014 because' -> 'contradicted itself because'"
       }
     ],
     "trap-triples": [
