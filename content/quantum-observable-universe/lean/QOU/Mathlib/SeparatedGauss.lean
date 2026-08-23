@@ -269,6 +269,37 @@ theorem exists_integral_separated_factorization {τ : Type*}
   rw [hW, map_mul, map_rename, map_rename, hU'', hV'', e1, e2, mul_mul_mul_comm,
     ← C_mul, mul_inv_cancel₀ hl, C_1, one_mul]
 
+/-! ### Transporting to the integral factor
+
+The induction hypothesis is stated about an *integer* polynomial, so its hypotheses have to be
+checked of `U'` rather than of the rational Wronskian `U'` was built from.  All three transports
+are one-liners, and all three go in the easy direction. -/
+
+/-- A change of coefficient ring along an injective map does not move degrees. -/
+theorem degreeOf_map_of_injective {R S : Type*} [CommSemiring R] [CommSemiring S]
+    {f : R →+* S} (hf : Function.Injective f) (p : MvPolynomial σ R) (j : σ) :
+    degreeOf j (map f p) = degreeOf j p := by
+  classical
+  rw [degreeOf_eq_sup j (map f p), degreeOf_eq_sup j p, support_map_of_injective p hf]
+
+/-- Degrees transport to the integral factor.  `≤` suffices, which is why the scaling costs
+nothing here: `degreeOf_C_mul_le` is the only step. -/
+theorem degreeOf_integral_factor_le {p : MvPolynomial σ ℚ} {q : MvPolynomial σ ℤ} {l : ℚ}
+    (hq : map (Int.castRingHom ℚ) q = C l * p) (j : σ) {D : ℕ} (hp : degreeOf j p ≤ D) :
+    degreeOf j q ≤ D := by
+  have h1 : degreeOf j q = degreeOf j (map (Int.castRingHom ℚ) q) :=
+    (degreeOf_map_of_injective (fun a b h => Int.cast_injective h) q j).symm
+  rw [h1, hq]
+  exact le_trans (degreeOf_C_mul_le p j l) hp
+
+/-- Non-vanishing transports to the integral factor. -/
+theorem integral_factor_ne_zero {p : MvPolynomial σ ℚ} {q : MvPolynomial σ ℤ} {l : ℚ}
+    (hl : l ≠ 0) (hp : p ≠ 0) (hq : map (Int.castRingHom ℚ) q = C l * p) : q ≠ 0 := by
+  intro h
+  rw [h, map_zero] at hq
+  exact mul_ne_zero (fun hc => hl (C_eq_zero.mp hc)) hp hq.symm
+
+
 /-! ### The separated Wronskian, made integral
 
 ⚠ From here the module also uses `QOU/Mathlib/SeparatedWronskian.lean`. -/

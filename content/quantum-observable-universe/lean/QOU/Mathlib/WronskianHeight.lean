@@ -138,6 +138,47 @@ example (n : Unit →₀ ℕ) :
   · intro i j; simp [degreeOf_X]
   · intro j m; rw [coeff_X']; split_ifs <;> simp
 
+/-! ### The `D i j` shape — the height side's missing composite
+
+⚠ **This is correction 5's pattern again, on the other chain.**  There the *index* side had no
+counterpart to a height composite; here the *height* side has none to an index composite.
+
+`abs_coeff_mvGenWronskian_le` above is for `D : Fin m → List σ` — one operator list per **row**,
+applied to a different function per column.  Mahler §13's determinant is a different shape:
+`D : Fin r → Fin r → List σ`, a different operator for each **entry**, all applied to the same
+`P`.  The index side has that composite (`sum_max_le_index_det`,
+`QOU/Mathlib/WronskianIndex.lean`); the height side did not, and the gap went unnoticed for the
+same reason as last time — each side looked complete from its own end.
+
+The composite itself is short: `abs_coeff_det_le` for the determinant, and
+`card_support_pderivList_le` / `abs_coeff_pderivList_le` for the entries. -/
+
+/-- **`H(det (∂_{D i j} P)) ≤ r! · (S · (d^L · B))^r`.**
+
+The height counterpart of `sum_max_le_index_det`, for the matrix Mahler §13 actually forms:
+one operator list per *entry*, all applied to a single `P`. -/
+theorem abs_coeff_det_pderivList_le [DecidableEq σ] {r L : ℕ} {S d B : ℤ}
+    (hS1 : 1 ≤ S) (hd1 : 1 ≤ d) (hB0 : 0 ≤ B)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ ℤ)
+    (hS : ((P.support.card : ℕ) : ℤ) ≤ S)
+    (hd : ∀ j, (degreeOf j P : ℤ) ≤ d)
+    (hB : ∀ n, |coeff n P| ≤ B)
+    (hL : ∀ i j, (D i j).length ≤ L)
+    (n : σ →₀ ℕ) :
+    |coeff n (Matrix.of fun i j => pderivList (D i j) P).det|
+      ≤ (r.factorial : ℤ) * (S * (d ^ L * B)) ^ r := by
+  have hdL : (0 : ℤ) ≤ d ^ L * B :=
+    mul_nonneg (pow_nonneg (by linarith) L) hB0
+  have h := abs_coeff_det_le (S := S) (B := d ^ L * B) hS1 hdL
+    (Matrix.of fun i j => pderivList (D i j) P)
+    (fun i j => le_trans (by
+      exact_mod_cast card_support_pderivList_le (D i j) P) hS)
+    (fun i j m => le_trans (abs_coeff_pderivList_le hd1 hB0 hd hB (D i j) m)
+      (mul_le_mul_of_nonneg_right (pow_le_pow_right₀ hd1 (hL i j)) hB0))
+    n
+  simpa using h
+
+
 /-! ### Next
 
 The height side of Roth's lemma is now closed end to end: a bound on the auxiliary

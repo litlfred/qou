@@ -2425,3 +2425,55 @@ It needs a home importing both `SeparatedGauss` and `RothLemmaStatement`.
 
 Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. Five declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — ⚠ correction 5's pattern again, on the other chain
+
+Assembling `hres` turned up a gap of exactly the shape the arc has been bitten by before, and
+this time on the **height** side.
+
+`WronskianHeight.abs_coeff_mvGenWronskian_le` is for `D : Fin m → List σ` — one operator list
+per **row**, applied to a different function per column. Mahler §13's determinant is a
+different shape: `D : Fin r → Fin r → List σ`, a different operator per **entry**, all applied
+to the same `P`. The *index* side has that composite (`sum_max_le_index_det`); the height side
+did **not**.
+
+That is correction 5 with the chains exchanged — there the index side had no counterpart to a
+height composite. It went unnoticed for the same reason both times: each side looks complete
+from its own end, and nothing forces the comparison until something needs both.
+
+`abs_coeff_det_pderivList_le` closes it, and is short — `abs_coeff_det_le` for the
+determinant, `card_support_pderivList_le` and `abs_coeff_pderivList_le` for the entries. The
+gap was in noticing, not in proving.
+
+### Also landed — the transports the assembly needs
+
+```
+degreeOf_map_of_injective      a change of coefficient ring does not move degrees
+degreeOf_integral_factor_le    degrees transport to the integral factor  (SeparatedGauss)
+integral_factor_ne_zero        so does non-vanishing
+rothGrowth_scale               rescaling the degree vector preserves the growth condition
+```
+
+⚠ `degreeOf_integral_factor_le` only needs `≤`, so `degreeOf_C_mul_le` suffices and the
+scaling costs nothing — a third instance of the same theme: **the scaling `l` is free
+everywhere except the height bound.** Index (`index_C_mul`), degree (`degreeOf_C_mul_le`),
+non-vanishing — all indifferent to it. Only §7's "a non-zero integer has absolute value at
+least 1" cares, and that is the one place §6 does work.
+
+`rothGrowth_scale` is the source's `p_h = n·r_h` on the growth condition: the induction step
+measures its sub-problems against `r·d`, and the condition survives because the factor `r`
+appears on both sides.
+
+### Open
+
+The `hres` assembly itself. Every ingredient now exists and none of it is new:
+`index_C_mul` (index side), `abs_coeff_integral_wronskian_factor_le` +
+`abs_coeff_det_pderivList_le` (height side), `degreeOf_integral_factor_le` +
+`degreeOf_mvGenWronskian_le` (degree side), `rothGrowth_scale` and `integral_factor_ne_zero`
+for the remaining hypotheses of `RothLemmaUniform`. It needs a module importing
+`SeparatedGauss`, `RothLemmaStatement` and `RothOperatorFamily`.
+
+Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Five declarations `#print axioms`-clean.

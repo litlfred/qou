@@ -149,6 +149,21 @@ theorem rothGrowth_row_cost_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : �
   rw [div_le_div_iff₀ hdj hωpos]
   nlinarith
 
+/-- **Rescaling the degree vector preserves the growth condition.**
+
+The induction step measures its sub-problems against `r · d` rather than `d` (the source's
+`p_h = n·r_h`), so the growth condition has to survive that rescaling.  It does, and for the
+obvious reason: the factor `r` appears on both sides. -/
+theorem rothGrowth_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {r : ℕ}
+    (hr : r ≠ 0) (hg : RothGrowth o ω d) : RothGrowth o ω (fun j => r * d j) := by
+  intro j k hjk
+  have h := hg j k hjk
+  have hrQ : (0 : ℚ) < (r : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hr
+  show ω * ((r * d (o.symm k) : ℕ) : ℚ) ≤ ((r * d (o.symm j) : ℕ) : ℚ)
+  push_cast
+  nlinarith
+
+
 /-- **Roth's lemma, uniform-parameter form.**
 
 ⚠ A `def`, not a theorem: only `m = 1` is proved (`rothLemmaUniform_one`).  ⚠ False for small
