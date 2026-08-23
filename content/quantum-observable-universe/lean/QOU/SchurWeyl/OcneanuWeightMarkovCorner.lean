@@ -24,8 +24,14 @@ entry, its cell is a **removable corner** of `μ`.  The condition collapses to
 `SeminormalBlockTrace`, and by a much shorter route than the one described above: `genMat` has
 exactly two nonzero entries per column, so `σ_k`'s off-diagonal crossing blocks is immediate and
 needs no Okounkov–Vershik argument at all.  Read the justification below as the heavier route it
-is; `SeminormalBlockTrace`'s docstring records the correction.  What is still missing is the
-*assembly* — the λ-indexed sum with weights — so the caveat below still stands as written.
+is; `SeminormalBlockTrace`'s docstring records the correction.
+
+**Update 2 — the assembly is now formalised too**, in `MarkovAssembly`:
+`markov_of_corner_identity` proves the Markov condition for the weighted seminormal trace *from*
+the per-corner identity, taken as an explicit hypothesis, at every `m`.  So the reduction described
+below is no longer paper-only — what remains outside Lean is the corner identity **at general `n`**
+(this file proves it at convention D for the ≤2-row diagrams).  Read the caveat below with that
+narrowing: it was written when the whole reduction was on paper.
 
 **🛑 That reduction is NOT formalised, and this file does not formalise it.**  It is derived on
 paper (`computations/schurweyl/ocneanu_markov_corner_reduction.py`, which also tests the resulting

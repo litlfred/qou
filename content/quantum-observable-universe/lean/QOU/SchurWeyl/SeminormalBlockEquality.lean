@@ -26,9 +26,11 @@ Step 1 of the three the Markov assembly needs (bean `qou-uer7`):
 1. **this file** — the block equality at a generator;
 2. lifting it from generators to all of `H_{|μ|-1}(q)` — **also here**,
    `compress_seminormalRep_heckeIncl` — then the outer reindexing
-   `{(λ, corner)} ↔ {(μ, addable corner)}`, which is **not** written;
-3. the `λ`-sum with weights, where `OcneanuWeightMarkovCorner`'s corner identities are consumed —
-   **not** written.
+   `{(λ, corner)} ↔ {(μ, addable corner)}`, now in `QOU.Mathlib.YoungDiagramCornerReindex`;
+3. the `λ`-sum with weights, where `OcneanuWeightMarkovCorner`'s corner identities are consumed,
+   now in `MarkovAssembly`.
+
+All three are written.  What remains outside Lean is the corner identity itself at general `n`.
 
 The image characterisation is what makes step 2's first half work: lifting to a product needs the
 matrix-multiplication sum over the block to be a sum over `SYT (μ ∖ c)`, which is exactly the block
