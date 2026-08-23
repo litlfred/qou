@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T15:38:09.922981+00:00",
-  "commitSha": "2ee9a5169a634bd3f61e78bae7869955e73a4799",
+  "computedAt": "2026-08-23T16:46:36.175126+00:00",
+  "commitSha": "4882329c92ed6f20ba18f6207a127ba5871cfd89",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -46,12 +46,12 @@
     "counts": {
       "Q0_OK": 665,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 36,
+      "Q0_INDEPENDENT": 37,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1924,
+      "Q0_ANCHOR_MISSING": 1923,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 77,
       "Q0_PARSE_ERROR": 0,
@@ -7301,10 +7301,6 @@
           "detail": ""
         },
         {
-          "witness": "knot-volumes.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lever1-binding-core-root-distribution.witness.json",
           "detail": ""
         },
@@ -10946,6 +10942,10 @@
         },
         {
           "witness": "qns-phase-scramble-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "knot-volumes.witness.json",
           "detail": ""
         }
       ],

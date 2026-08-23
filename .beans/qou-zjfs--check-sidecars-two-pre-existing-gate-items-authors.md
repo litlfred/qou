@@ -81,7 +81,34 @@ on #5538: unrelated domain (mass/binding vs Specht/RSK), someone else's file,
 and a one-line allowlist edit belongs with whoever owns that guard's tuning.
 
 
-## 3. A per-block `qa-sweep` in this environment is LOSSY — do not drain sidecars here
+## 3. RETRACTED (2026-08-23) — the drain is safe; this was an off-pin clone
+
+**Everything in this section is withdrawn.** It reported that a per-block
+`qa-sweep` degrades verdicts and can erase findings, and told agents not to drain
+sidecars here. That is wrong.
+
+The cause was the platform clone sitting at `c396c1f`, **65 commits behind the
+pin** `e1030e8` — `qa-sweep` dirties the clone on every run, which makes
+`setup-folio-assistant.sh` silently skip its checkout step forever. Re-tested at
+the pin, `physics-names-knot-operations` gives **0 verdict changes** and keeps its
+recorded major.
+
+The drain then ran for real: **45 blocks, 4 verdict changes**, every one
+enumerated and accounted for (PR #5553) — two *new* findings surfaced, two cleared
+by legitimate re-evaluation against content that had moved. Not the 39 changes
+this section reported.
+
+Root cause and the guard that now catches it: bean `qou-a5p6` / PR #5549
+(`report_off_ref` warns when the clone is not at the pin).
+
+**§1 and §2 above are unaffected** — §1's 376/51/325 measurement is computed from
+committed `.qa.json` bytes, independent of clone version, and it is what made the
+45-block drain correctly targetable.
+
+The original text follows, kept because the reasoning is the record of how it went
+wrong.
+
+### (retracted) A per-block `qa-sweep` in this environment is LOSSY
 
 Attempted the ≤ 10-sidecar idle drain against the 51 (from §1's corrected count).
 It worked mechanically — 10 blocks swept, all criterion-fresh afterwards, and

@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.MeasureTheory.Integral.Bochner
 
 /-!
 # QOU.Geometry.MobiusKernel — the classical Möbius-energy integrand
@@ -80,5 +81,49 @@ theorem mobiusKernel_nonneg_of_injective {γ : ℝ → E} (hγ : LipschitzWith 1
     (hinj : Function.Injective γ) {s t : ℝ} (hst : s ≠ t) :
     0 ≤ mobiusKernel γ s t :=
   mobiusKernel_nonneg hγ fun h => hst (hinj h)
+
+/-- **The integrand is non-negative everywhere**, diagonal included.
+
+    At `s = t` both terms are `1/0`, which Lean's junk division sends to `0`,
+    so the kernel is `0` there rather than undefined. That is not a dodge: the
+    classical Möbius energy integrates *off* the diagonal, and a diagonal
+    contribution of `0` is exactly what that convention amounts to here. -/
+theorem mobiusKernel_nonneg_all {γ : ℝ → E} (hγ : LipschitzWith 1 γ)
+    (hinj : Function.Injective γ) (s t : ℝ) : 0 ≤ mobiusKernel γ s t := by
+  rcases eq_or_ne s t with rfl | hst
+  · simp [mobiusKernel]
+  · exact mobiusKernel_nonneg_of_injective hγ hinj hst
+
+open MeasureTheory in
+/-- The **Möbius energy** of an arc-length parametrised curve: the double
+    integral of the integrand.
+
+    Two honest caveats, both about what this does *not* say.
+
+    1. **It does not assert finiteness.** Mathlib defines `∫ f = 0` for a
+       non-integrable `f`, so `mobiusEnergy` is junk-valued rather than
+       meaningless when the integral diverges. `mobiusEnergy_nonneg` below is
+       correspondingly weak on such curves — it says `0 ≤ 0`. Integrability
+       (equivalently, finite Möbius energy) is a real hypothesis that has to
+       be added before this carries analytic content.
+    2. **It is the whole-line, arc-length-parametrised form**, not the `S¹`
+       version of Freedman–He–Wang. Closing up the parameter domain is a
+       separate step. -/
+noncomputable def mobiusEnergy (γ : ℝ → E) : ℝ :=
+  ∫ s, ∫ t, mobiusKernel γ s t
+
+open MeasureTheory in
+/-- **The Möbius energy of an embedded arc-length curve is non-negative** —
+    derived, by integrating the pointwise bound.
+
+    This is what `energy_classical_nonneg` should have been: a consequence of
+    the definition rather than a field of the structure carrying it. Note
+    `integral_nonneg` needs only the pointwise bound, not integrability — see
+    caveat 1 on `mobiusEnergy`. -/
+-- Ref: [freedman1994] https://doi.org/10.2307/2118583
+theorem mobiusEnergy_nonneg {γ : ℝ → E} (hγ : LipschitzWith 1 γ)
+    (hinj : Function.Injective γ) : 0 ≤ mobiusEnergy γ :=
+  integral_nonneg fun s => integral_nonneg fun t =>
+    mobiusKernel_nonneg_all hγ hinj s t
 
 end QOU.Geometry
