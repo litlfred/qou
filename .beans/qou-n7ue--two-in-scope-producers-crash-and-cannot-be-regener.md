@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T17:12:36Z
+updated_at: 2026-08-23T17:53:02Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -161,3 +161,51 @@ straddle it exposed is `qou-ibcv` and needs an owner decision.
 Item 3 (`hadron_knot_table` / float64 CSR vs mpf) — untouched.
 Fourth crash (`parabolic_cylinder_channel_mixing_probe`) — stderr captured,
 not yet diagnosed.
+
+## Both fixes VERIFIED by the sweep itself — and both producers were dirtier underneath
+
+Re-measured post-rebase. `CRASH` → `SUBSTANTIVE/ASSERT-FAIL` for both: they run
+and write their artifacts now. Fixing a crash did not make either producer
+clean; it made it **measurable**, and each immediately surfaced more.
+
+### 1. `derivation_chain_validator` — it reports now, and it found things
+
+`data.chain_results.14.issues (len 0 -> 1)`. That is the c_q structural issue
+appearing where the committed artifact recorded none — the finding the crash
+had been discarding, now written down. `qou-ibcv`.
+
+Two more drifts it also reports, invisible until it could run:
+`data.witness_trust.computational-only (len 1789 -> 1796)` — seven more
+computational-only witnesses than the committed audit records — and
+`audit-only-exempt (len 772 -> 774)`.
+
+Its nonzero exit is now the `qou-dc0n` environment-monotonicity guard
+(landed on main as `a8ee9eee94`) firing on its own witness: *"the environment
+block records LESS than the witness"*. That is a **different** guard doing its
+job, not the old crash.
+
+### 2. `habiro_interpolate_cross_validator` — the cross-validation now closes
+
+`data.atoms_only_in_interpolate (len 1 -> 0)`, `assertions (len 2 -> 3)`,
+`data.checks (len 2 -> 3)`. The committed witness recorded **one** atom present
+in the interpolate side and unmatched; with the parser able to read `u`, that
+atom resolves and the count goes to **zero**. The producer now validates what
+it was written to validate — good evidence the both-names binding is the
+correct fix and not merely a silencer.
+
+**It also trips the raw-float64 gate: 9 fields.** Checked whether that is mine
+— it is **not**. The committed witness already carries **6** raw JSON floats
+(`assertions.{0,1}.{computed,expected,tolerance}`). The new run writes 9 for the
+arithmetic reason that there are now 3 assertions instead of 2; the per-assertion
+behaviour is unchanged. So: a **pre-existing NO-FLOAT64 violation**, dormant
+only because the producer could not run. My fix converted it from moot to live —
+`precision-gates.sh` will now flag this producer on every run until the
+assertion values are carried as `mpf` and serialized via `_precision.fmt`.
+
+Worth stating plainly: the crash was hiding a gate violation as well as a
+finding. "Producer does not run" is not a neutral state — it suppresses every
+check downstream of it.
+
+**And it is an anchor-stamp dropper** (`q0Anchor (removed)`, `q0Value (removed)`),
+so it belongs to `qou-veu1`'s class too. Regenerating it as-is would remove it
+from the audited population.
