@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T12:22:58Z
-updated_at: 2026-08-23T16:31:47Z
+updated_at: 2026-08-23T16:44:14Z
 ---
 
 MEASURED + FIXED 2026-08-23 (`cd19e98ac8`). This bean tracks what the fix did
@@ -298,3 +298,31 @@ set — which is an argument for the gate, not against it.
 Both resolved cases were **stale artifacts**, not mathematical errors in the
 framework. That is worth knowing before triaging the other ten: the prior
 should be "something drifted", not "the physics is wrong".
+
+
+---
+
+## 3rd of 12: `prop:h2-lp-dual-binding` — a convention casualty, split out to `qou-wjw8`
+
+Third disposition, and a **fourth kind** of cause beyond the three this bean
+started with. Not a wrong number, not an unreachable tolerance, not a
+mis-authored assertion — a **convention-frame change**.
+
+H₂ dissociation energy, parameter-free: **4.6231 eV (+3.2 % vs the observed
+4.478) under convention C; 0.8645 eV (-80.7 %) under D.** The producer is
+byte-identical across the 2026-08-21 migration and exactly one input moves
+beyond ppb — `z: 0.49932033 -> 0.61268804`, which is C -> D verbatim. Split to
+its own bean because it belongs with the convention-D re-derivation tranche
+(`qou-cds1`, `qou-102c`), not with witness staleness.
+
+**Revising the prior recorded above.** After ⁴He and gs-graded-markov I wrote
+that the prior should be "something drifted, not the physics is wrong". Two for
+two was too small a sample: this one is neither. Better prior, three in:
+**assume a mechanical cause, but the mechanism differs each time** — a wrong
+transcription, a stale witness, a convention change. What has held all three
+times is that the *diagnosis* is cheap (re-run, diff the inputs, see which one
+moved) and the *fix* is not.
+
+**Lead for the remaining 9:** `hadron-knot-table.witness.json` is both a
+`verified`-but-failing block here AND still on convention C (see the sweep in
+`qou-wjw8`). Take that one next — two independent symptoms on one witness.

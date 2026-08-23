@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:42:54Z
-updated_at: 2026-08-23T16:42:54Z
+updated_at: 2026-08-23T16:44:14Z
 ---
 
 MEASURED 2026-08-23 while triaging `qou-bm4i` (blocks marked `verified` whose
@@ -76,3 +76,48 @@ prints `-80.7%` while the block that cites it says nothing about the frame.
 3. Worth a sweep: how many other observables compare against experiment through
    `z`? This one was found only because its assertion happened to be a pass/fail
    gate against a measured value.
+
+
+---
+
+## The sweep question, answered — 25 of 43 witnesses are still convention C
+
+AGENTS.md says of the remaining C surface: *"treat the remaining C surface as
+UNMEASURED rather than clear."* Here is one slice of it, measured — witness
+`parameters.z`, filtered to `0 < z < 1` so atomic numbers do not pollute the
+count:
+
+    witnesses carrying a Markov z    43
+      convention C  (0.49932033…)    25
+      convention D  (0.61268804…)    16
+      neither                         2   (0.49932008…, i.e. C at an older q₀)
+
+So **~60 % of the witness surface is still convention C**, nine days after the
+2026-08-15 ruling. Still on C:
+
+    binding-fast-pipeline          confinement-lp           confinement-sdp
+    confinement-operator-selection nuclear-binding-lp       nuclear-braid-level1
+    brane-tower-finite-laurent     deuterium-derived        derived-bond-graph-binding
+    four-term-photon-to-atoms      gram-matrix-dual         jet-lifted-hecke
+    hadron-knot-table              mass-from-q-symbolic     pentagon-reduction-li2q
+    garside-irrep-qvalues          delta-q-decoration       rho-k-pair-gen-extension
+    rho-k-pair-gen-v2-wedderburn   t35-exact-halflife       t35-full-calculation
+    t35-transfer-matrix            t35-weak-vertex          v-hat-z-transfer-phase5d-4
+    validate-isotope-nf-stability
+
+**This is a measurement, NOT a work order.** AGENTS.md is explicit: *"do not
+launch a corpus-wide sweep off any of these numbers."* Recorded so the tranche
+has a figure to plan against, not so anyone re-runs 25 producers.
+
+### The lead worth following first
+
+`hadron-knot-table.witness.json` is on that list **and** is one of the 12
+`verified`-but-failing blocks in `qou-bm4i` (`rem:hadron-level-knot-table`,
+failing `LP_stable` for c14, o16, ne20, si28, ca40, fe56). Two independent
+symptoms landing on one witness is the strongest signal in either bean: it is
+probably the same convention story as H₂, and it is the cheapest way to find
+out whether this class has one cause or several.
+
+`confinement-lp`, `confinement-sdp`, `confinement-operator-selection` and
+`nuclear-binding-lp` being on C matters more than their count suggests — those
+are core machinery, not probes.
