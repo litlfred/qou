@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T13:42:33Z
+updated_at: 2026-08-23T13:39:07Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
@@ -76,3 +76,52 @@ The missing half is the lower bound, and it has exactly two routes:
 
 So SW-7-general is downstream of one of those two landing, not independently
 attackable right now.
+
+
+## TAKEOVER 2026-08-23T13:35Z (owner-authorised, > 4h staleness rule)
+
+Last commit anywhere in the SchurWeyl area: `ace79127c` at 2026-08-22 19:24 UTC
+— **18.2 hours** before takeover, against the owner's 4-hour threshold. No open
+PR and no branch updated today carries SW-7 scope. Continuing from `main`
+(`9f11db11d`); no sibling branch touched.
+
+## Why SW-7 is NOW assemblable — both blockers cleared while I was away
+
+- **SW-3 landed**: `QOU.Mathlib.rskBurnsideHolds n` for EVERY n (e877f7755 /
+  1b5f4751c), not just n <= 12. `Sum d_lambda^2 = n!` is available.
+- **SW-5 landed**: `seminormalRep_range_eq_top` (each block SURJECTIVE) and
+  `seminormalRep_not_matRepEquiv_of_ne` (pairwise inequivalent, UNCONDITIONAL).
+
+## The route — and note it is NOT the classical file's route
+
+`SpechtWedderburnGeneral` (q=1, sorry-free) goes **injectivity + equal finrank**.
+That does not transfer: on the q-side we have `finrank H_n(q) <= n!`
+(`HeckeCoset.finrank_le_factorial`) but NOT the lower bound — that is the open
+GS-basis item `qou-auq3`. Injective + `dim source <= dim target` proves nothing.
+
+**Go through SURJECTIVITY instead**, which is what the q-side actually has:
+
+1. Product map Phi = (+)_lambda rho_lambda : H_n(q) -> Prod_lambda M_{d_lambda}(R).
+2. Each block surjective (SW-5) + blocks separated by central scalars (SW-5's
+   inequivalence machinery) => **Phi surjective**. THIS IS THE MISSING STEP.
+3. Surjective + `finrank H_n <= n!` + `finrank target = Sum d_lambda^2 = n!`
+   => bijective.
+4. **Corollary worth naming: `finrank H_n(q) = n!`** — the Iwahori-Hecke basis
+   theorem's LOWER bound, obtained without the GS route. If this lands it
+   partially obviates `qou-auq3`'s motivation (not its content).
+
+## Step 2's crux, and why it needs no Jacobson density
+
+Mathlib has no density / bicommutant, and none is needed. Let A = range Phi.
+- The central elements give A a family of block-scalar tuples that SEPARATE the
+  partitions. Lagrange interpolation over a finite index set (the same argument
+  as `DiagonalSeparation.single_self_mem_of_separating`, which I proved for the
+  single-block case) puts every **block idempotent** `Pi.single lambda 1` in A.
+- Then for any target x, `x = sum_lambda (Pi.single lambda 1) * a_lambda` where
+  `a_lambda` is any preimage of `x_lambda` in block lambda. Each summand is in A.
+So A = top, elementarily.
+
+Implementation order: (i) the abstract Pi-algebra lemma (no Hecke content, so it
+checks on its own terms); (ii) instantiate with the seminormal blocks; (iii) the
+finrank count; (iv) `HeckeWedderburnData` instance
+(`QSchurWeyl.lean:62`, the n=3 case is `HeckeWedderburnData3`).
