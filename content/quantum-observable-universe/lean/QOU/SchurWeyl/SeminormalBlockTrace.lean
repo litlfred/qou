@@ -16,7 +16,11 @@ the largest entry.  The reduction needs exactly two facts about that decompositi
 1. **`σ_k`'s off-diagonal entries cross blocks** — `genMat_eq_zero_of_cellOf_succ_eq`.
 2. **Earlier generators preserve blocks** — `cellOf_eq_of_genMat_ne_zero`.
 
-Together they give `trace_mul_genMat`: for any block-preserving `X`,
+Fact 2 is stated for a single generator; `adjoin_earlyGens_le_blockSubalgebra` lifts it to the whole
+algebra those generators build, which is what `H_{N-1} ⊂ H_N` actually contributes.
+
+Together they give `trace_mul_genMat` (and its usable form `trace_mul_genMat_of_adjoin`): for any
+block-preserving `X`,
 
 `tr(X · σ_k) = ∑_T X_{TT} · seminormalParam q (axialDist T k)`,
 
@@ -40,10 +44,13 @@ takes.
 
 ## What is still NOT proved
 
-`trace_mul_genMat` is about **one** `V_λ`.  The Markov condition is a statement about the weighted
+`trace_mul_genMat_of_adjoin` is about **one** `V_λ`.  The Markov condition is a statement about the weighted
 sum over all `λ ⊢ n+1`, and assembling it needs the λ-indexed decomposition of `H_{n+1}` and the
 weights — i.e. `heckeWedderburn` plus `ocneanuWeight`, together with the corner identities of
-`OcneanuWeightMarkovCorner`.  That assembly is not done here.  So the Markov condition remains open;
+`OcneanuWeightMarkovCorner`.  A further step is also missing on this side: identifying
+`Algebra.adjoin ℝ (earlyGens q N)` with the image of the Hecke inclusion `H_{N-1} → H_N` under
+`seminormalRep`.  That identification is what would let a statement about `x ∈ H_{N-1}` be fed to
+`trace_mul_genMat_of_adjoin` at all.  Neither is done here.  So the Markov condition remains open;
 what has changed is that its structural half is now Lean, not paper.  Bean `qou-uer7`.
 
 ## Base ring (§7c)
@@ -119,6 +126,96 @@ theorem trace_mul_genMat (q : ℝ) {k : ℕ} (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.
     · rw [genMat_eq_zero_of_cellOf_succ_eq q hk hkn hST hc, mul_zero]
     · rw [hX T S (Ne.symm hc), zero_mul]
   rw [hsingle, genMat_diag]
+
+/-! ### From generators to the subalgebra
+
+`cellOf_eq_of_genMat_ne_zero` is about a single generator.  What the reduction actually needs is that
+**everything `H_{N-1}` can build** preserves the blocks — sums, products, scalars.  The block-
+preserving matrices form a subalgebra, so that follows from generator membership.
+-/
+
+/-- Matrices that respect the decomposition of `SYT μ` by the cell holding the entry `N`. -/
+def BlockPreserving (N : ℕ) (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :
+    Prop := ∀ T S, cellOf T N ≠ cellOf S N → X T S = 0
+
+theorem blockPreserving_zero (N : ℕ) : BlockPreserving (μ := μ) N 0 := by
+  intro _ _ _; rfl
+
+theorem blockPreserving_one (N : ℕ) : BlockPreserving (μ := μ) N 1 := by
+  intro T S h
+  have hne : T ≠ S := fun hc => h (by rw [hc])
+  exact Matrix.one_apply_ne hne
+
+theorem blockPreserving_add {N : ℕ} {X Y : Matrix (StandardYoungTableau μ) _ ℝ}
+    (hX : BlockPreserving N X) (hY : BlockPreserving N Y) : BlockPreserving N (X + Y) := by
+  intro T S h; simp [hX T S h, hY T S h]
+
+theorem blockPreserving_smul {N : ℕ} (c : ℝ) {X : Matrix (StandardYoungTableau μ) _ ℝ}
+    (hX : BlockPreserving N X) : BlockPreserving N (c • X) := by
+  intro T S h; simp [hX T S h]
+
+theorem blockPreserving_neg {N : ℕ} {X : Matrix (StandardYoungTableau μ) _ ℝ}
+    (hX : BlockPreserving N X) : BlockPreserving N (-X) := by
+  intro T S h; simp [hX T S h]
+
+theorem blockPreserving_mul {N : ℕ} {X Y : Matrix (StandardYoungTableau μ) _ ℝ}
+    (hX : BlockPreserving N X) (hY : BlockPreserving N Y) : BlockPreserving N (X * Y) := by
+  intro T S h
+  rw [Matrix.mul_apply]
+  refine Finset.sum_eq_zero fun R _ => ?_
+  by_cases hc : cellOf T N = cellOf R N
+  · rw [hY R S (fun hc' => h (hc.trans hc')), mul_zero]
+  · rw [hX T R hc, zero_mul]
+
+/-- The block-preserving matrices form a subalgebra. -/
+def blockSubalgebra (N : ℕ) :
+    Subalgebra ℝ (Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) where
+  carrier := {X | BlockPreserving N X}
+  mul_mem' := blockPreserving_mul
+  add_mem' := blockPreserving_add
+  algebraMap_mem' := fun c => by
+    have : (algebraMap ℝ (Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ)) c
+        = c • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+      simp [Algebra.algebraMap_eq_smul_one]
+    rw [this]; exact blockPreserving_smul c (blockPreserving_one N)
+  zero_mem' := blockPreserving_zero N
+  one_mem' := blockPreserving_one N
+
+/-- Every generator `σ_l` with `l + 1 < N` lies in the block subalgebra. -/
+theorem genMat_mem_blockSubalgebra (q : ℝ) {l N : ℕ} (hl : 1 ≤ l)
+    (hln : l + 1 ≤ μ.cells.card) (hN : N ∈ Set.Icc 1 μ.cells.card) (hlN : l + 1 < N) :
+    genMat q l hl hln ∈ blockSubalgebra (μ := μ) N := by
+  intro T S h
+  by_contra hc
+  exact h (cellOf_eq_of_genMat_ne_zero q hl hln hN hlN hc)
+
+/-- The generators available to `H_{N-1}`: every `σ_l` that does not touch the entry `N`. -/
+def earlyGens (q : ℝ) (N : ℕ) : Set (Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :=
+  {X | ∃ (l : ℕ) (hl : 1 ≤ l) (hln : l + 1 ≤ μ.cells.card), l + 1 < N ∧ X = genMat q l hl hln}
+
+/-- **The whole subalgebra generated by the early generators preserves the blocks**, not merely the
+generators themselves.  This is the statement the Markov reduction needs about `H_{N-1} ⊂ H_N`. -/
+theorem adjoin_earlyGens_le_blockSubalgebra (q : ℝ) {N : ℕ}
+    (hN : N ∈ Set.Icc 1 μ.cells.card) :
+    Algebra.adjoin ℝ (earlyGens (μ := μ) q N) ≤ blockSubalgebra (μ := μ) N := by
+  rw [Algebra.adjoin_le_iff]
+  rintro X ⟨l, hl, hln, hlN, rfl⟩
+  exact genMat_mem_blockSubalgebra q hl hln hN hlN
+
+/-- **The usable form.**  For any `X` in the algebra generated by the generators that avoid `k+1`,
+
+`tr(X · σ_k) = ∑_T X_{TT} · seminormalParam q (axialDist T k)`.
+
+This is exactly the identity `chi^λ(x · σ_n) = ∑_T x_{TT} a(c(λ/μ) − c_T(n))` that the corner
+reduction of the Markov condition rests on, for a single `V_λ`. -/
+theorem trace_mul_genMat_of_adjoin (q : ℝ) {k : ℕ} (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    {X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ}
+    (hX : X ∈ Algebra.adjoin ℝ (earlyGens (μ := μ) q (k + 1))) :
+    (X * genMat q k hk hkn).trace
+      = ∑ T : StandardYoungTableau μ, X T T * seminormalParam q (axialDist T k) :=
+  trace_mul_genMat q hk hkn X
+    (adjoin_earlyGens_le_blockSubalgebra q ⟨by omega, hkn⟩ hX)
+
 
 end SeminormalRep
 end QOU.SchurWeyl
