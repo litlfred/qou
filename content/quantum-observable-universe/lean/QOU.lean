@@ -1143,3 +1143,8 @@ import QOU.Mathlib.SeparatedRepresentation
 -- the polynomial content.  The induction step is NOT linear — it extracts a square-root
 -- bound — which is what the arc's linear form was missing.
 import QOU.Mathlib.RothRecursionArith
+-- §13's operator family, CONSTRUCTED: row μ contributes a fixed list, column ν contributes
+-- ν copies of the distinguished variable, so the cost is uniform in the row and grows in the
+-- column — exactly what sum_max_le_index_det's permutation step needs.  This closes the COST
+-- half of the recursion's missing input; the determinant's non-vanishing is still open.
+import QOU.Mathlib.RothOperatorFamily

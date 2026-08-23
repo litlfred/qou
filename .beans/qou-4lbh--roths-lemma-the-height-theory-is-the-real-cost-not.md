@@ -1702,3 +1702,86 @@ region and must be re-derived against a clean copy.
 
 Verification: nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. Four new declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — §13's operator family, constructed; the remaining input is now one statement
+
+Open item 1 from the previous entry. New module `QOU/Mathlib/RothOperatorFamily.lean`
+(20th in the arc, registered in `QOU.lean` so it is not an orphan).
+
+### The bridge that made it short
+
+```
+sum_map_inv_eq_idxWeight   the "cost" in hc IS idxWeight of the operator's multi-index
+idxWeight_le_of_sum_le     total order ≤ N and degrees ≥ D  ⟹  weight ≤ N/D
+```
+
+The first is the conceptual step. `index_le_index_pderivList_add` and `index_le_of_det_bound`
+both speak of `∑_{k ∈ l} 1/d k`, and `idxWeight` speaks of `∑_j i_j/d_j`; saying they are the
+same object makes `idxWeight`'s additivity do all the work. The second converts Mahler's row
+constraint (a bound on *total order*) into a cost bound, which is the only place the degree
+floor `D` is used.
+
+### The family
+
+```
+rothOpFamily z L μ ν = L μ ++ List.replicate ν z
+cost_rothOpFamily_le   cost ≤ t + ν/(d z)      given a UNIFORM row bound t
+index_le_of_rothOpFamily   θ ≤ N/D + 2q        §13 with every hypothesis about the data
+```
+
+Design note worth keeping: the row part is a **list**, not a multi-index. The multi-index form
+needs `exists_multiIndexOf_eq`, whose witness is a `Classical.choose` and therefore opaque —
+no concrete instance can be evaluated through it, so no witness could be written.
+`exists_rothOpFamily_of_idxWeight_le` recovers the multi-index form as a corollary, so nothing
+is lost. I only noticed this because the witness would not go through.
+
+Where the uniformity lives is the point: `ht` quantifies over rows with a single `t`. That is
+not stylistic — `sum_max_le_index_det` picks the permutation minimising the diagonal sum, and
+may only do so because the bound does not depend on which row it lands in. Mahler's shape
+(`∑_{h<m} j_{μh} ≤ μ−1` on the rows, order exactly `ν−1` in the last variable on the columns)
+has that property, and a family that put the growth in the row would not.
+
+### A non-degenerate witness, at last
+
+`index_le_of_rothOpFamily_two_witness`: `σ = Fin 1`, unit degree, `P = X₀²`, row lists
+`![[], [x₀]]`, giving
+
+```
+⎡ P    ∂P  ⎤   ⎡ X²   2X ⎤
+⎣ ∂P   ∂²P ⎦ = ⎣ 2X   2  ⎦      det = 2X² − 4X² = −2X²  ≠ 0
+```
+
+so `N = 1`, `S = 2`, `q = 3/2`, conclusion `2 ≤ 1 + 3`. This is the first witness in this part
+of the arc with **distinct rows** and a **non-vanishing determinant** — the earlier `1 × 1`
+ones certify satisfiability but cannot fail to have a non-zero determinant, so they say
+nothing about the configuration the theorem exists for. Here the column cost genuinely grows.
+
+⚠ Still not exercised by it: the truncation. `θ − t = 1`, `rr = 1`, so the cut-off is `1` in a
+`2`-column matrix and `max 0` never fires. `RothArith.sum_max_truncation_active` remains the
+guard for that, and the docstring says so.
+
+Needed one new lemma upstream: `index_C_mul` (with `support_C_mul`) in `RothIndex.lean` — a
+Wronskian of powers is always a *scalar multiple* of a monomial, and the scalar is an artefact
+of differentiating, not part of the vanishing behaviour. `index_smul_units` covered only `ℤˣ`.
+
+### Open — one statement, and it is not an inequality
+
+⚠ **The determinant is non-zero.** `index_le_of_rothOpFamily`'s `hS` asserts
+`index d α (det …) ≤ ↑S`, which is **unsatisfiable** when the determinant vanishes
+(`index d α 0 = ⊤`). Nothing here supplies non-vanishing.
+
+`BoundedOrderWronskian` has the criterion — linear independence ⟺ some bounded-order
+generalized Wronskian is non-zero — but stated for `mvGenWronskian D f`, a Wronskian of `m`
+**distinct functions**, whereas §13's matrix is derivatives of a **single** `P`. Relating the
+two is §7 of the source, which this arc has not read. That is the next thing to read, not the
+next thing to prove.
+
+After that: `ω(m, ε)`, and the `S·rr ≤ r` check (`Φ_m·r_m ≤ 1`) that is still unverified
+against the parameter conditions.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Eleven declarations `#print axioms`-clean. Orphan gate re-run: 2037 modules, 1154
+reachable (up one), 883 not built — the new module is reachable, so the inherited red did not
+grow.

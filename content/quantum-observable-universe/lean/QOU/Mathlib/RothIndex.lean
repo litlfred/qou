@@ -596,6 +596,22 @@ theorem index_smul_units (d : σ → ℕ) (α : σ → R) (u : ℤˣ) (P : MvPol
     unfold index translate
     rw [map_neg, support_neg]
 
+/-- Multiplying by a non-zero constant does not change the support. -/
+theorem support_C_mul [NoZeroDivisors R] {c : R} (hc : c ≠ 0) (P : MvPolynomial σ R) :
+    (C c * P).support = P.support := by
+  ext i
+  simp [mem_support_iff, coeff_C_mul, hc]
+
+/-- **Rescaling the polynomial does not move its index.**
+
+`index_smul_units` says this for `ℤˣ`; this says it for any non-zero constant over a domain,
+which is what a determinant of derivatives needs — a generalized Wronskian of powers is
+always a *scalar multiple* of a monomial, and the scalar is an accident of the differentiation
+rather than part of the vanishing behaviour. -/
+theorem index_C_mul [NoZeroDivisors R] (d : σ → ℕ) (α : σ → R) {c : R} (hc : c ≠ 0)
+    (P : MvPolynomial σ R) : index d α (C c * P) = index d α P := by
+  rw [index, index, translate_mul, translate_C, support_C_mul hc]
+
 /-- **The index of a determinant is at least the least permutation-sum of entry indices.**
 
 Leibniz plus the two lemmas above: the determinant is a sum over permutations, so
