@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T12:40:00Z
+updated_at: 2026-08-23T13:10:00Z
 ---
 
 
@@ -342,3 +342,91 @@ was handed to the committer. Normal-path behaviour is unchanged: all three
   so the next run retries it.
 - **The `"Reverting"` stdout prefix contract** with `auto_commit_batches.py:7`,
   left byte-identical. Only one consumer exists (swept: no hook or CI wiring).
+
+---
+
+## Finding #6 NEW + FIXED 2026-08-23 — `scripts/session-start-coord-sweep.sh` reported "no sibling activity" over a ref namespace it never fetched
+
+Found while verifying my own push for #5, not by sweeping for it. **The most
+load-bearing instance of this bean's pattern found so far**, because it governs
+multi-agent coordination rather than a single artefact.
+
+### The mechanism, in three lines that are each correct alone
+
+```sh
+git fetch origin main                                    # :26 — main ONLY
+...
+refs/remotes/origin/claude 2>/dev/null                   # :39 — reads sibling refs
+...
+if [ -n "$RECENT_SIBLINGS" ]; then                       # :60 — heading printed ONLY if non-empty
+```
+
+This clone's configured refspec is `+refs/heads/main:refs/remotes/origin/main`
+— main only, which is the default for the ephemeral containers this campaign
+runs in. So `refs/remotes/origin/claude/*` is **never updated by any fetch**: it
+is a frozen snapshot from clone time, and in a fresh container it is very nearly
+empty. `RECENT_SIBLINGS` comes back empty, and `:60` then omits **the entire
+heading**.
+
+The agent does not read "0 siblings found". It reads a coord sweep with a main
+section and a beans section and **no sibling section at all**, and concludes the
+namespace is quiet. Absence of refs renders as absence of siblings, and the one
+line that would have disclosed the gap is deleted by the same condition that
+creates it.
+
+### Measured, after fixing the fetch
+
+| | |
+|---|---|
+| sibling branches the sweep reported | **0** |
+| updated in the last 24 h | **97** |
+| known on origin | **4775** |
+
+Among the 97 unreported, two are in this campaign's own scope:
+`claude/q0-literal-transcription-drain-2026-08-23` (*"q0 literals: 8 more sites
+were never blocked; ratchet 69 → 61"*) and
+`claude/cds1-ladder-d-rederivation-2026-08-23` (*"narrow my own claim: the
+closure is the CHARACTER case…"*) — the `qou-cds1` sibling this branch has been
+deferring to, whose progress was invisible here.
+
+### Second, independent defect in the same block — the 24 h window was never implemented
+
+`:36` commented *"updated in last 24h"* and `:61` printed the heading
+**"Recent sibling branches on origin (last 24h)"**, but the code was
+`--sort=-committerdate … | head -8` with **no date filter of any kind**. The
+label happened to be true whenever the 8 most recent were fresh, and would
+silently print June branches under a "last 24h" heading whenever they were not.
+Unenforced, not merely currently-wrong.
+
+### Fixes
+
+1. **Fetch the refs the sweep reads**, with the refspec passed *explicitly*
+   (`+refs/heads/claude/*:refs/remotes/origin/claude/*`) so correctness does not
+   depend on how the clone was configured — the failure mode being fixed.
+   `--prune` drops deleted siblings; bounded by `timeout 45` (with a fallback
+   when `timeout` is absent) because this is a SessionStart hook.
+2. **The 24 h window is now applied in code**, against
+   `%(committerdate:unix)`. Subjects are rebuilt from field 4 onward so a `|` in
+   a commit subject cannot truncate the line.
+3. **The section is always emitted**, empty or not:
+   `_0 of N known sibling branch(es) updated in the last 24h._` A measured zero
+   is now distinguishable from an unmeasured one.
+4. **A failed sibling fetch says so** — `**NOT REFRESHED** … Do NOT read an
+   empty list as "no siblings"` — instead of degrading into a clean-looking
+   empty section.
+
+Tested on all three paths (normal, sibling-fetch failure via a `git` shim, and
+`bash -n`); exit 0 on each. This is a SessionStart hook, so a crash would break
+every session in the repo — hence testing the degraded path before committing
+rather than after.
+
+### Related, NOT fixed — flagged for the owner
+
+The bean section prints **1853 of 3837 beans** every session (~247 KB): 1421
+`todo` + 302 `in-progress` + 122 `scrapped` + 7 `open` + 1 `draft`; only
+`completed` (1960) and `done` (24) are filtered. The parenthetical *"non-completed"*
+accurately describes what the code does, so this is **not** a mislabel of the
+kind this bean tracks — it is a session-start context-budget decision (most-recent
+N? `in-progress` only? exclude `scrapped`?) and it belongs to the hook's owner,
+not to a coverage fix. Recorded with the measurement so the choice can be made
+on numbers.
