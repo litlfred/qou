@@ -1,11 +1,11 @@
 ---
 # qou-akdup
-title: 'alpha-k witnesses duplicated at root and alpha/, in DIFFERENT conventions'
+title: alpha-k witnesses duplicated at root and alpha/, in DIFFERENT conventions
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T20:30:00Z
-updated_at: 2026-08-19T20:30:00Z
+updated_at: 2026-08-23T20:36:59Z
 ---
 
 `alpha-k-jones-markov-h3.witness.json` and `-h4` exist at **two paths**, and the
@@ -68,3 +68,52 @@ wrong *as recorded* — they are C-frame and unlabelled.
 3. Label the four `alpha-k-h3-*` chains C-frame, per the c_k precedent.
 
 Found while draining tier C (bean `dgpc`), PR #5289.
+
+
+---
+
+## Do NOT close this with a derivation chain — measured 2026-08-23 (PR #5584)
+
+Draining tier C of the derivation-chain gap (`dgpc`) took C-family from 14
+witnesses to **4**, and the 4 that remain are exactly this bean's two pairs.
+The obvious next move — author one chain per producer and drain them — is
+**wrong here, and would actively make things worse.**
+
+`derivation_chain_validator.py` matches a chain to witnesses by **producer
+basename**. Both copies of each pair declare (or resolve to) the same producer
+name, so a single chain for `alpha_k_jones_markov_h3.py` backs the root copy
+and the `alpha/` copy alike. Since the two are in **different trace
+conventions** — root is C (`z = 0.4993203341836944`, excised 2026-08-15),
+`alpha/` is D (`z = 0.6126880371464652`, canonical) — such a chain would
+certify a **convention-C witness under a convention-D derivation**. The count
+would go down and the corpus would be worse.
+
+That generalises past this bean, and is worth stating on its own: **the
+derivation-chain mechanism has a convention blind spot.** One chain per
+producer basename means any producer whose output exists in two conventions
+gets both certified by whichever convention the chain happens to describe.
+Nothing in the validator can see the difference.
+
+### The asymmetry, re-measured on today's main
+
+The two copies are not peers, and this settles the direction of the fix:
+
+| | root `computations/` | `computations/alpha/` |
+|---|---|---|
+| h3 | 16 keys, `q0Anchor` **absent** | **18 keys**, `q0Anchor: proton` |
+| h4 | **10 keys**, `q0Anchor` absent, **`scriptFile` absent** | **19 keys**, `q0Anchor: proton` |
+
+The `alpha/` copies are supersets on both counts. The root h4 copy carries no
+producer field at all, so the categoriser reaches it only by slug — it is a
+stale artifact, not a second computation.
+
+### So the disposition is retirement, not backing
+
+Retire the two root copies in favour of the `alpha/` ones, repoint any
+consumer, and then the `alpha/` pair can be chained safely — at which point
+one chain per producer is correct again, because only one convention remains
+under each name. Doing it in the other order bakes the C copies in.
+
+Left undone deliberately on #5584: retiring a witness that something might
+read is not a drive-by, and the four are the last of tier C precisely because
+they need this decision rather than more authoring.
