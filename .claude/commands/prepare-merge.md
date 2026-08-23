@@ -363,6 +363,44 @@ surface the duplicates in step 6) saves a full review cycle.
 - The Lean build must be green and the audit must report 100%
   coverage before continuing.
 
+## 4a. Mirror-drift gate (BLOCKING on growth)
+
+```sh
+bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 46
+```
+
+A green Lean build does not mean the checkers looked at the code it compiled.
+Content-block `.lean` siblings compile standalone and cannot import one another,
+so a sibling needing a library type **restates it**. That is deliberate. What is
+not deliberate is the two copies drifting — because a co-located `<block>.lean`
+wins **candidate 1** of `lean.ref` resolution, before any Lake-tree candidate,
+so every checker aimed at that block audits the sibling's copy and never sees
+the declaration `lake build` just compiled.
+
+Baseline on `main` at 2026-08-23 (bean `qou-u87j`): 147 same-FQN pairs, 101
+faithful mirrors, **46 drifted across 39 files — and all 46 mask a `lean.ref`**.
+PR #5498 takes it to 45; **lower the baseline to 45 when that lands.**
+
+- **`--baseline 46` fires on growth only** (exit 3). A gate that failed on the
+  whole backlog would just teach everyone to pass `--warn-only`; this one stops
+  the 101 faithful mirrors becoming the next 46.
+- **If you touched a mirrored declaration, resync both copies in the same
+  change.** The checker names the file and line on each side and prints the
+  field-level diff; `--tsv` gives one row per pair.
+- **Lower the baseline when you drain some.** It is a ratchet, like the
+  float64 ones in §4b — leaving it at 46 after fixing five means the next five
+  regressions go unnoticed.
+- `--max 0` is the end state once the backlog is gone.
+
+Worked example of why it is not cosmetic — `QOU.CRManifoldData`: the library
+copy carries `n_pos : 0 < n` and the two siblings do not; the siblings carry
+`contact_nondeg` and `reeb_preserves_contact` and the library does not. Each
+side has an anti-vacuity condition the other lacks, so whichever one a reader
+or a checker reaches, it is not the one the other half of the corpus means.
+
+This lives here rather than in `.github/workflows/` for the reason §4b gives:
+the CI copy does not run.
+
 ## 4b. Precision gates (BLOCKING)
 
 - Run [`scripts/precision-gates.sh`](../../scripts/precision-gates.sh). It runs
