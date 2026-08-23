@@ -37,3 +37,41 @@ axiomatises the theorem's *hypotheses* (legitimate) or its *conclusion* (degener
 merely projects it). Do not assume degenerate from the detector hit alone; read the file, and where
 it is genuinely conditional check whether the class carries real sub-hypotheses the theorem then
 composes.
+
+## 2026-08-22 — ADJUDICATED (all 5). Shape alone is NOT the verdict; severity varies sharply.
+Discriminator: field-type == conclusion establishes the SHAPE (that is what the regex matches);
+what decides laundering is whether the class has a PROVED instance and whether the file documents
+its posture. Measured per candidate:
+
+| # | class | instance? | verdict |
+|---|---|---|---|
+| 1 | Term7ShellCorrectionClass (MassTowerOpenProblemsClasses:71) | YES (L85) but on the PLACEHOLDER `alpha5_value = -1` | NEEDS ATTENTION |
+| 2 | QFactRatioBound (QHookBound:608) | **NONE** | NEEDS ATTENTION |
+| 3 | HasFiniteLPDuality (LpDualityHypothesisClass:158) | NONE, deliberately | OK — known + documented |
+| 4 | TheoremA.value_at_4 (Polylogarithm:157) | YES, discharged by sorry-free `beta3_from_jonquiere` | OK — honest |
+| 5 | H2SAngleS3HolonomyConjecture (h2s-angle-s3-braid-holonomy:39) | NONE | OK — conjecture carrier |
+
+* #4 is HONEST and is the important counterexample to reading a detector hit as a verdict.
+  `beta3_from_jonquiere : imLi3ZetaPredicted 4 = beta3` is a real proof (`unfold; field_simp; ring`),
+  the instance at L107 discharges `value_at_4` with it, and the file has ZERO sorries. So
+  `beta3_via_class` is a redundant convenience wrapper over already-proved content, not laundering.
+* #3 is the deliberate 3b-cond posture, documented in-file at L140-152: two false axioms were REMOVED
+  and a caller must now supply the instance for their own LP; real modelling work already beaned as
+  qou-7t1n. Nothing to do.
+* #5 is an explicitly-named `...Conjecture` carrier whose theorem is its conditional form — the
+  3b-tax dependent-conjecture pattern. The name states the epistemic status honestly.
+* #1 has an instance, but the file itself calls it a "placeholder `alpha5_value = -1`" sign witness,
+  so the unconditional content is the sign only, not the value. `term7_structural` derives nothing
+  beyond projecting the field.
+* #2 is the weakest: field IS the conclusion, NO instance anywhere in the corpus, and unlike #3 the
+  posture is undocumented, so `qFact_ratio_bound` proves nothing standalone. Note a substantial
+  `nlinarith` bound proof sits immediately above it (L590-606) — the material to inhabit the class
+  may already exist, which would turn the theorem into an honest wrapper like #4. Worth checking.
+
+Follow-up needed on #1 and #2 ONLY. Both turn on judgement about the framework's own math (what
+`alpha5_value` should be; whether the neighbouring bound proof discharges `QFactRatioBound`), so they
+are left for the owner / a targeted session rather than changed here.
+
+Detector-precision result worth keeping: 5/5 hits were the genuine shape (no regex false positives),
+but only 2/5 warrant action. That is evidence FOR the script's "candidates for inspection, not
+verdicts" framing, not a complaint about it.
