@@ -28,8 +28,10 @@ from wedderburn_jones_markov import y_lambda_at
 from chi_monotone_transfer import chi_all_lambda
 from mass_at_3A_proper import atom_braid_word_3A
 from lr_coefficients import partitions_of
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 18
+set_compute_dps()
 Q0 = mp.mpf("1.1099785955541805")
 VOL = {"D": mp.mpf("12.776"), "3He": mp.mpf("12.554"), "4He": mp.mpf("12.554")}
 B_OVER_ME = {"D": mp.mpf("4.353"), "3He": mp.mpf("15.10"), "4He": mp.mpf("55.37")}

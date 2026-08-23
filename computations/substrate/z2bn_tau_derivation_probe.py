@@ -19,7 +19,8 @@ _T0 = _time.monotonic()
 import mpmath as mp
 import sympy as sp
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 Q0 = mp.mpf("1.1099785955573347199")  # substrate q₀ (proton-pinned), 50 dps witness
 
 print("="*78)

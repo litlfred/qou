@@ -8,6 +8,8 @@ from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
 from rho_w_crystal_vertex_trace import standard_young_tableaux
 from a_operator.a_operator_categorical import q0_mp
 from codata_constants import M_E_MEV  # noqa: E402  (drain qou-7ot6-a)
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 def conjugate(lam):
     if not lam: return []
@@ -26,7 +28,7 @@ def get_total_depth(lam):
     return sum(syt_depth(T) for T in syts)
 
 def main():
-    mp.dps = 50
+    set_compute_dps()
     q = q0_mp(50)
     m_e = float(M_E_MEV)  # registry (was the truncated literal 0.510998950)
     

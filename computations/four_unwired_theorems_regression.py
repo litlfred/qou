@@ -45,10 +45,11 @@ import mpmath as mp
 
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     start_time = time.time()
 
     # Construct WitnessBuilder up-front so durationMs covers the

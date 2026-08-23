@@ -68,6 +68,7 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def n_lambda(p):
@@ -213,7 +214,7 @@ def emit_closed_forms(ns) -> dict:
 def cross_check_mpfr(witness_path: Path) -> dict:
     """Numerical spot-check (♣) at q_0 against the MPFR witness."""
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
 
     if not witness_path.exists():
         return {"available": False, "reason": f"{witness_path} not found"}

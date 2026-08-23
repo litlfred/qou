@@ -1,6 +1,8 @@
 from mpmath import mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 q0 = mp.mpf('1.1099785955573347596001309852899479366668383822292')
 m_e = mp.mpf('0.51099895000')
 Q_beta_codata = mp.mpf('0.78233341000')

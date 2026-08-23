@@ -30,8 +30,10 @@ DISCIPLINE: this tests the TREND (derive-or-refute); it proposes no P_λ and fit
 nothing.
 """
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 25
+set_compute_dps()
 
 # ── FROZEN #2635 DATASET — MUON-anchored and CONVENTION C. Labelled 2026-08-16
 # (bean qou-khac). Q0 and TRM below are a MATCHED PAIR from that one run;

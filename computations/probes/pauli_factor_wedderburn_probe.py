@@ -66,6 +66,7 @@ from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from probe_staircase_ew_k3_categorical import (  # noqa: E402
     build_hoefsmit_mpfr,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _evaluate_word(shape, word_signed, q):
@@ -108,7 +109,7 @@ def main() -> int:
         "pauli-factor-wedderburn-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
     q = Q_MP
 
     BRAIDS = [

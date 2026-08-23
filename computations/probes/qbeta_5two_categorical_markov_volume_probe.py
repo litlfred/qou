@@ -67,6 +67,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # canonical 3-braids (generators 1,2 ↦ σ₁,σ₂; negatives = inverses)
 # CORRECTED 2026-08-11 (bean qou-9mum).  This file previously used
@@ -193,7 +194,7 @@ def main() -> int:
 
     # ---- FINDING 3: anchor SHAPE of the 5₂ bar-odd datum ----
     odd_fn = sp.lambdify(_q, odd["5_2"], "mpmath")
-    mp.mp.dps = 50
+    set_compute_dps()
     qp, qm = q_at(50), q_muon_at(50)
     op, om = odd_fn(qp), odd_fn(qm)
     dln = (mp.log(abs(om)) - mp.log(abs(op))) / (qm - qp)

@@ -31,8 +31,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 37 digits, correct to 30 (qou-ckbv)
 VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 

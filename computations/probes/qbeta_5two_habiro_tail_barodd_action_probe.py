@@ -41,8 +41,9 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 VOL52_OVER_PI = mp.mpf("2.82812208833") / mp.pi
 PI2_5 = mp.pi ** 2 / 5
 

@@ -44,6 +44,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 q = Symbol("q", positive=True)
@@ -214,7 +215,7 @@ def main():
     if diff != 0:
         # Try numerical check
         import mpmath as mp
-        mp.mp.dps = 50
+        set_compute_dps()
         q0 = mp.mpf(Q_50_DIGIT_STR) if 'Q_50_DIGIT_STR' in dir() else mp.mpf("1.1097785955541805")
         tr_num = float(total_tr.subs(q, float(q0)).evalf())
         lean_num = float(lean_expanded.subs(q, float(q0)).evalf())

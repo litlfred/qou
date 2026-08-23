@@ -223,7 +223,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
     print(f"  reconstruction matches Σ a_m·(u;u)_m: {recon_matches}")
 
     # Numerical check at q₀ (50-dps mpmath).
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q0_mp
     u0 = mp.sqrt(q0)
     try:

@@ -63,6 +63,7 @@ from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # β_{4_1} = σ_1 σ_2⁻¹ σ_1 σ_2⁻¹  in B_3 (1-indexed → 0-indexed below)
@@ -131,7 +132,7 @@ def main() -> int:
         "hecke-branching-trace-decomposition-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     # Single-component H_3 characters of β_{4_1} at q_0.
     chi_single: dict[tuple[int, ...], "mp.mpf"] = {}

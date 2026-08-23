@@ -39,8 +39,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from markov_trace_for_knot import trM_torus_2_k_mpf  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 def h_of_q(q: mpf) -> mpf:

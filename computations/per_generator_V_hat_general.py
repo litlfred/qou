@@ -44,6 +44,7 @@ from mass_at_3A_proper import (
     partitions_of, dim_q, qfac, _cached_seminormal,
 )
 from q_parameter import Q as Q0_FLOAT
+from _precision import set_compute_dps  # noqa: E402
 
 
 def per_generator_V_hat_general(
@@ -157,7 +158,7 @@ def per_braid_mass_li2q(V_hats: list[float], q: mp.mpf, z: mp.mpf) -> dict:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
     Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)

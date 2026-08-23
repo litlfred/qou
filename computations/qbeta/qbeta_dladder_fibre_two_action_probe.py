@@ -46,8 +46,9 @@ from qou_substrate.constants import q_at  # noqa: E402
 ORD = int(sys.argv[1]) if len(sys.argv) > 1 else 63
 sys.argv = [sys.argv[0], str(ORD)]
 import qbeta_dladder_generating_function_structure_probe as dlad  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def to_mpf(v):

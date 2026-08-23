@@ -45,8 +45,9 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from hoefsmit_numpy import hoefsmit_matrices_numpy  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def main() -> int:

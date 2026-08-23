@@ -84,8 +84,9 @@ from pyhecke.trace_formal import (
     classical_limit,
     habiro_profile,
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # ── Pinned anchor data (verified against the corpus) ──────────────────
 # Cross-anchor q₀ + empirical c_3, from

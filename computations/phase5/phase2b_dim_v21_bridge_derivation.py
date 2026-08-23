@@ -83,7 +83,7 @@ h = q - 1/q
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     print("=" * 70)
     print("  Phase 2b: dim V_(2,1) bridge — WHY 2 enters linearly")

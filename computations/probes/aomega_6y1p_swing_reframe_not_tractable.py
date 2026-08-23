@@ -28,8 +28,16 @@ at the wall. (The S = c₃ + Vol(4₁) DEFINITION still stands — it is a defin
 Self-contained (mpmath). Reads committed corpus anchor values only. No fit.
 """
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # Anchors and c₃ values — 2026-07-06 cross-anchor verdict (post-bug-fix compute).
 Q_PROTON = mp.mpf("1.10997858275138")

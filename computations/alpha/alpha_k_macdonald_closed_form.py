@@ -65,6 +65,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -177,7 +178,7 @@ def main():
         .set_content_block("prop:macdonald-hook-telescope")
     )
 
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = Q_MP
 
     print(f"q_0 = {mp.nstr(q0, 20)}, dps = {mp.mp.dps}")

@@ -48,6 +48,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpc, mpf, polylog, exp, pi, zeta  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _cl3(theta: "mpf") -> "mpf":
@@ -68,7 +69,7 @@ def main() -> int:
         "cyclotomic-cl3-orbit-sum-general-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     results = []
     max_full_residue = mpf(0)

@@ -52,8 +52,16 @@ from mpmath import mp, mpf, log, fabs  # noqa: E402
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # AME2020 total nuclear binding (MeV), matching the ceiling probe.
 AME = {"D": mpf("2.224566"), "4He": mpf("28.295673"), "6Li": mpf("31.994564")}

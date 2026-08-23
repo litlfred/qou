@@ -55,6 +55,14 @@ for _p in (
         sys.path.insert(0, _p)
 
 import computations.qbeta.qbeta_h4_nucleon_assembly as h4  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _repo_head_sha():
@@ -166,7 +174,7 @@ def main():
     # ---- accuracy: full GS net is WORSE than the N=0 truncation ----
     try:
         import mpmath as mp
-        mp.mp.dps = 40
+        set_compute_dps()
         # Centralized constants (precision-safe) rather than hard-coded literals.
         from qou_substrate.constants import q_at
         from computations.substrate import codata_constants as C

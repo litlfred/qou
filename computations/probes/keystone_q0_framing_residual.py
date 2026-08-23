@@ -48,8 +48,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 
 PARTS5 = [(5,), (4, 1), (3, 2), (3, 1, 1), (2, 2, 1), (2, 1, 1, 1), (1, 1, 1, 1, 1)]

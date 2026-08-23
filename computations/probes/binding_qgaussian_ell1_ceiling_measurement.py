@@ -68,8 +68,9 @@ sys.path.insert(0, str(COMP))
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 M_E_MEV = 0.51099895069  # CODATA 2022 CAL-1 (matches the sign-prune script)
 

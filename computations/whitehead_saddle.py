@@ -34,6 +34,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 VOL_4G = 3.663862376708876   # 4·Catalan = 8·Λ(π/4) = Vol(Whitehead)
 
@@ -56,7 +58,7 @@ def discrete_saddle(N: int):
 def continuum_saddle_value():
     """2π·∫_0^{1/2}[log2 + 2 log sin(π(u+1/4)) − log sin(π u)] du, hi precision."""
     import mpmath as mp
-    mp.mp.dps = 40
+    set_compute_dps()
     f = lambda u: mp.log(2) + 2 * mp.log(mp.sin(mp.pi * (u + mp.mpf(1) / 4))) \
         - mp.log(mp.sin(mp.pi * u))
     return 2 * mp.pi * mp.quad(f, [0, mp.mpf(1) / 2])

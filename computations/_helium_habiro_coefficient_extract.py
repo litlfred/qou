@@ -73,6 +73,7 @@ from habiro_coefficients_atomic import (  # noqa: E402
     reconstruct,
 )
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _markov_z_q(q: sp.Symbol) -> sp.Expr:
@@ -169,7 +170,7 @@ def analyse_helium(label: str, Z: int, N: int, q,
     print(f"    elapsed: {time.perf_counter() - t0:.2f} s")
 
     # Numerical check at q₀ via mpmath (50 dps).
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q0_mp
     u0 = mp.sqrt(q0)
     # Evaluate tr_M_q at q₀ symbolically (then to float).

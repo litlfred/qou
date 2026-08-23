@@ -33,8 +33,9 @@ import mpmath as mp  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_PROTON = mp.mpf(str(Q0))
 Q_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015405145269")
