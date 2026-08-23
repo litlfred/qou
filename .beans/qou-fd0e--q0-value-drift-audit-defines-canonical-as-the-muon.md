@@ -4,7 +4,7 @@ title: q0_value_drift_audit defines CANONICAL as the muon pin — a BLOCKING CI 
 status: todo
 type: task
 created_at: 2026-08-23T07:56:50Z
-updated_at: 2026-08-23T07:56:50Z
+updated_at: 2026-08-24T02:50:00Z
 ---
 
 
@@ -261,3 +261,90 @@ from another directory. Now resolves against `HERE.parent` explicitly.
 148 witnesses sit in a class that cannot be `STALE`, and acting on that fails a
 blocking gate or breaks the documented `--rebaseline` discipline. Still the
 owner's call; the diagnostic makes the number visible without forcing it.
+
+---
+
+## ⚠ UNBLOCKED 2026-08-23 — this bean's premise was an artefact of a lookup bug
+
+Everything below the "real defect" heading rests on one measurement:
+
+```
+ideal_muon      :   3   ['atomic_tr_m_mpfr_50dps', 'cross_check_trM_1ppb', 'q_pinning_50_digit']
+physical_proton : 406
+_migration_2026_08_19: {'moved': 255, ...}
+```
+
+**That 3 was a bug, not a migration.** Commit `8b4825920` (2026-08-23 16:58 UTC),
+*"fix(q0-manifest): the producer lookup was root-only, so half the corpus was
+invisible"*, says it in its own body:
+
+> `_producer_stem` resolved a witness's producer by looking **ONLY** in
+> `computations/`. … for every witness under `probes/`, `qbeta/`, `substrate/`
+> and the rest it returned None — the witness was **never even read**. …
+> **700 LIVE witnesses** had their producer in a subdirectory only … Roughly half
+> the corpus.
+
+Current manifest, verified directly and identical on `origin/main`:
+
+| | bean | now |
+|---|---|---|
+| `ideal_muon` | 3 | **110** |
+| `physical_proton` | 406 | **513** |
+| `ambiguous` | 1 | **22** |
+
+`_migration_2026_08_19` no longer exists in the manifest at all (grep count 0).
+It survives only in this bean and in
+`computations/q0_value_drift_audit.py`'s docstring, both of which are now wrong.
+
+This bean was created 07:56 UTC and `--layer-check` added 08:48 UTC; the fix
+landed at 16:58 UTC — **after both**. My §"the 3 matches `ideal_muon`'s three
+entries exactly — a real self-check, not a coincidence" was a self-check against
+the same broken lookup. It agreed because both sides were blind in the same way.
+
+### The blocking dilemma has collapsed
+
+The bean stopped on: *"block CI on 162 pre-existing witnesses, or violate the
+audit's stated `--rebaseline` discipline. Both are owner decisions."*
+
+Re-measured against the fixed manifest:
+
+| | bean | now (worktree) | origin/main |
+|---|---|---|---|
+| canonical-classed witnesses | 165 | **156** | 150 |
+| producer NOT in `ideal_muon` | **148** | **66** | 66 |
+| legitimately muon-layer | 3 | **76** | 70 |
+| UNRESOLVED | 14 | 14 | 14 |
+
+And the 66 split **50 undeclared / 9 `physical_proton` / 7 `ambiguous`**. Fifty of
+them are a *declaration* gap — the producer is simply not in the manifest — which
+is hygiene needing no ruling and moving nothing into `STALE`. Only ~16 are genuine
+layer mismatches, a size an ordinary drain carries.
+
+`q0-drift-baseline.json` holds 329 stale keys against 292 current `STALE`, so
+**NEW = 0 and `--strict` exits 0 today.** The CI-failure horn does not exist as
+stated.
+
+### Waiting on the CODATA ruling was the wrong dependency
+
+It has **not** landed on `origin/main` (`q_parameter.py` last touched by an
+unrelated perf commit; `claude/muon-anchor-codata-2022-2026-08-22` unmerged), and
+`q_parameter.py:204` still reads `_MUON_Q_STR = _d["q"]` from the pinning witness
+— the self-certification the ruling was meant to remove.
+
+More importantly it is the **wrong axis**: the ruling changes the anchor *value*,
+this bean is about layer *membership*. And the derived muon value differs from the
+witness pin by **+0.0769 ppb** against a `canonical` tolerance of `1e-6` ppb — so
+if it lands it reclassifies **all ~193 currently-canonical fields**, a far larger
+event that would sweep these 66 up unresolved rather than settle them.
+
+### Status
+
+**Unblocked.** Not an owner decision any more — the decision it was waiting for was
+posed against numbers that no longer exist. Next step is mechanical: re-measure,
+replace the 165/148/3/14 block, split the 66 into "declare 50" and "drain ~16",
+and correct `q0_value_drift_audit.py:131-148`, whose docstring still tells readers
+`ideal_muon` has 3 entries and ~162 witnesses are at stake.
+
+**Not done here** — that is a fresh pass over a bean whose every figure moved, and
+it should be done in one piece rather than appended to three layers of superseded
+argument.

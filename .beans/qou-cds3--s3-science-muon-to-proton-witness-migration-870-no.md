@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T02:20:00Z
+updated_at: 2026-08-24T02:55:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -942,3 +942,81 @@ real — but how much of it is live is unmeasured.
 **Consequence for this bean:** `qbeta_singularity_cross_anchor_probe` moves out of
 "blocked by upstream data" and into "consumer needs a null guard" — a one-line
 source fix in a file this bean does not own, so it is reported rather than made.
+
+---
+
+## CORRECTION 2026-08-23 — my mechanism for the "source defects" was wrong; the count and membership change
+
+I recorded three source-naming defects, all attributed to the `ideal_muon`
+manifest auto-select. **The mechanism is narrower than I said, and only two of my
+three belong to it.**
+
+The auto-select in `computations/substrate/q_parameter.py:100-108` rebinds
+`q_at` / `Q_50_DIGIT_STR` **only inside the `q_parameter` module namespace**
+(`:206-217`); `qou_substrate.constants` is left untouched. So manifest membership
+is **not sufficient** — the producer must also import through `q_parameter`.
+Verified by reading the import lines:
+
+| producer | import route | today's `q_at()` | verdict |
+|---|---|---|---|
+| `qbeta_composite_crossanchor_2factor_sweep.py:88` | `from q_parameter` | **muon** | source defect ✓ |
+| `qbeta_cosh_avatar_crossanchor_multicoeff_probe.py:106` | `from q_parameter` | **muon** | source defect ✓ |
+| `qbeta_singularity_cross_anchor_probe.py:92` | `from qou_substrate.constants` | proton | **STALE**, not a source defect |
+| `qbeta_jacobi_anger_tower_general.py:87` | `from qou_substrate.constants` | proton | **STALE** |
+| `xq_habiro_element_search_probe.py:72` | `from qou_substrate.constants` | proton | **STALE** |
+
+So `xq_habiro`, `qbeta_singularity` and `qbeta_jacobi_anger` are in `ideal_muon`
+but bypass the mechanism entirely.
+
+### `habiro_interpolation_wlambda` — right conclusion, wrong reason, and the real reason is worse
+
+I wrote that its `proton_q0` is fed muon *by the manifest*. It is not.
+`habiro_interpolation_wlambda.py:372`:
+
+```python
+Q0_PROTON = mpf("1.1099785955541805")    # package-layer proton-pinned q₀ (constants.py)
+```
+
+A **hardcoded literal**, with a comment asserting it came from `constants.py`. It
+did not: that is the *old* `q_muon_at()` closed form (value B). So the file
+hardcodes a muon value, names it `Q0_PROTON`, and documents it as the proton pin
+— wrong on all three counts, and none of them touched by regeneration.
+
+My conclusion ("regeneration is a no-op, do not run it") **stands and is
+reinforced** — a hardcoded literal is even less reachable by re-running than a
+manifest lookup would be. But the reason I gave was wrong, and the correct reason
+identifies a defect that `q_at()`-based reasoning would never have found.
+
+### An agent inference I checked and did NOT adopt
+
+It was reported that `binding_qgaussian_ell1_ceiling_measurement.py` is a
+**latent** instance — its committed witness is correct, but re-running would
+introduce the mislabel, since it takes `Q_50_DIGIT_STR` from `q_parameter` (`:69`)
+and is in `ideal_muon`.
+
+The mechanism is real in isolation: forcing `sys.argv[0]` to that script's name,
+`Q_50_DIGIT_STR` does resolve to the muon pin. **But two actual runs contradict
+the prediction** — the sibling sweep `a0ee2ac5e` and my own regeneration both
+produced the correct proton value, and the committed witness holds
+`proton_anchor.q0 = 1.10997858275138…` with `muon_anchor.q0` at the current value C.
+`measure()` records `"q0": str(q)` directly from `mpf(Q_50_DIGIT_STR)` (`:214`,
+`:223`), so there is no laundering step between them.
+
+There are **two** `q_parameter.py` in the tree — `computations/substrate/` and
+`qou-mass/src/qou_mass/_internal/` — which plausibly explains why an isolated
+import resolves differently from the producer's own path setup. **I did not pin
+it down**, and I am not recording a latent defect on an inference that direct
+evidence contradicts. Noted as an open question about the auto-select's
+invocation sensitivity, not as a finding.
+
+### Corrected arithmetic
+
+| class | was | now |
+|---|---|---|
+| source naming defect (regeneration is a no-op) | 3 | **3**, but different membership: `qbeta_composite`, `qbeta_cosh_avatar` (manifest route) + `habiro_interpolation_wlambda` (hardcoded literal) |
+| stale — regeneration fixes | — | `xq_habiro`, `qbeta_singularity`, `qbeta_jacobi_anger`, `h4_form_AB` (the last in `ambiguous`, so auto-select never fires) |
+
+Two of those four stale ones are already held back for *conclusion movement*
+(`xq_habiro` TIER 1→2, `qbeta_jacobi_anger` assertion flip), and
+`qbeta_singularity` is the null-sentinel consumer. So the reclassification does
+not free any of them to be committed — it corrects **why** each is where it is.
