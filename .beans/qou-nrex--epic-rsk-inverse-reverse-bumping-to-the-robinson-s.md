@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-23T11:15:13Z
+updated_at: 2026-08-23T12:40:27Z
 ---
 
 
@@ -1174,3 +1174,30 @@ All sorry-free; `#print axioms` `[propext, Classical.choice, Quot.sound]`.
 Left alone on purpose: `SchenstedRSKBurnside`, `RSKBurnsideTarget` and
 `SpechtWedderburnLe12` state the old claim in past tense or inside a quoted
 correction — they read correctly.
+
+
+### The cap this actually lifts (same branch)
+
+`SecondMomentKernelVanishes.secondMomentKernel_eq_zero` — `Σ_λ (f^λ)²·ω₃(λ) = 0`
+for **every** `k`. The corpus had it only by `decide`, `3 ≤ k ≤ 20`, and that
+lemma's docstring named the blocker precisely: *"pending the general
+character-orthogonality proof, which needs the JM-eigenvalue ⇒ Plancherel-mean
+bridge (Sₙ representation-theory infrastructure, not yet in the corpus)."*
+
+That bridge is Identity (ii). With `PlancherelSnDataGeneral` stating it over the
+list model, the vanishing is arithmetic: `k!·C(k,2) − C(k,2)·k! = 0`.
+
+Two encoding bridges were needed:
+* `sytDim = dimHLF` on a sorted parts list (composes the two existing routes to
+  `#SYT`);
+* `contentSq = sumSqContents` — written identically in the two files but **not**
+  `rfl`-equal: `contentSq` leaves the coerced inner `List.range` as a monadic
+  bind, so the two elaborate differently.
+
+Downstream: mean-zero was the *only* consumer of `k ≤ 20` in `nuV_top_nonneg`
+and `nuV_top_closed_form`; both are restated uncapped. `k = 25` included as an
+instantiation past the old `decide` frontier.
+
+**Explicitly NOT touched: the kernel conjecture.** `kernelValue k ≤ 0` is the
+`dim³`-weighted total, outside the polynomial-function algebra, and stays open.
+This is the `dim²` total, which was never conjectural — only uncertified past 20.
