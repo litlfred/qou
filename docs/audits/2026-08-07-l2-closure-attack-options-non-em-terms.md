@@ -255,6 +255,23 @@ refuted", that existing refutation is scope-(a) with respect to this route and d
 **not** exclude it. Re-scoping the ledger row is warranted regardless of how the
 probe turns out.
 
+> **CROSS-LINK / TENSION CLOSED (2026-08-23).** The `N = 3` re-tune this section
+> hangs on is **already excluded scope-(b)**, and this memo never cited it:
+> [`docs/audits/2026-08-07-eightfold-live-surface-collapse.md` §2](2026-08-07-eightfold-live-surface-collapse.md)
+> rules *"Re-tune the Ocneanu parameter to `N = 3`"* out because **the `N = 2`
+> and `N = 3` Markov traces are not proportional** — so switching the binding
+> pipeline to `N = 3` is not a re-scaling of the `N = 2` mass fit, it is a
+> different (non-proportional) trace that breaks it. This settles the A2
+> "consistency requirement" (§4.2) in the negative: the flavor and binding
+> sectors **cannot share `N`**, binding stays `N = 2`, and the §4.3 coincidence
+> `ln[3]_q/ln[2]_q ≈ r*` is therefore **spurious** — exactly what its own
+> "wrong-way q-correction" already signalled. Consequence for A1: the extensive
+> volume coefficient is forced to `log[2]_q`, which §3's caveat measures **5.4×
+> short**. So the extensive-normalization route (A1) does **not** close the
+> volume term via an `N` re-tune. The structure (extensivity) is real — now
+> Lean-proved in `QOU/Mass/MarkovStabFactorExtensive.lean` — the **magnitude**
+> stays open, and the one lever this memo floated for it (`N = 3`) is closed.
+
 ---
 
 ## 5. The non-EM terms, one by one — insertion point, axiom source, gap closed
