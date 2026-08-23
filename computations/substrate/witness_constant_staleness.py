@@ -51,7 +51,9 @@ import glob
 import json
 import re
 import sys
+from decimal import Decimal, getcontext
 from pathlib import Path
+from typing import Optional
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parent.parent
@@ -73,6 +75,85 @@ Q0_SHAPE = re.compile(re.escape(_BASIN) + r"\d{6,}")
 assert Q0_SHAPE.match(Q_50_DIGIT_STR), (
     f"q₀ basin drift: current q₀ {Q_50_DIGIT_STR!r} does not match the "
     f"derived basin pattern {Q0_SHAPE.pattern!r}; widen _BASIN.")
+
+getcontext().prec = 80
+
+
+# ── Compare at the RECORDED value's own precision ────────────────────
+#
+# The comparison used to be `recorded[:n] != live[:n]` at a fixed n. That
+# reports a witness stale whenever it serializes FEWER digits than n, because
+# slicing a shorter string yields a shorter string and the two can never be
+# equal — the value is right, the width is not.
+#
+# Measured on `main` 2026-08-23: `lever1-color-eq-intrinsic-tau-rapidity`
+# records the proton q₀ as `1.10997858275` (13 chars). That is the live pin,
+# correctly re-pinned by PR #5532 and merely serialized short; the gate called
+# it stale. It was invisible until then because the field previously held a
+# FULL-precision muon literal, so the widths happened to agree and only the
+# digits differed. Re-pinning it to a shorter proton serialization exposed the
+# comparator, not a staleness.
+#
+# So compare numerically, to the precision the witness actually states: a
+# recorded value is fresh when it is within one unit in its own last place of
+# the live q₀. One ulp (not a half) because a producer may either TRUNCATE or
+# ROUND — a half-ulp bound would keep flagging round-ups such as `1.109978583`.
+#
+# This cannot mask a genuine pin flip. The muon and proton anchors are
+# ~1.28e-8 apart, while the basin regex matches at least 10 decimals, capping
+# the tolerance at 1e-10 — over two orders of magnitude tighter. That margin
+# is not left as an argument: `_assert_tolerance_cannot_mask_a_pin_flip`
+# below checks it against the live anchors at import, so widening `_BASIN`
+# later fails loudly instead of quietly blunting the gate.
+
+
+def _tolerance_for(recorded: str, max_sig: Optional[int] = None) -> Decimal:
+    """One unit in `recorded`'s own last decimal place.
+
+    `max_sig` caps how fine the comparison may get, in significant digits —
+    the `--ndigits` knob. q₀ is ~1.1, so N significant digits is N-1 decimals.
+    The cap can only LOOSEN the tolerance, never tighten it past what the
+    witness actually states.
+    """
+    frac = recorded.split(".", 1)[1] if "." in recorded else ""
+    decimals = len(frac)
+    if max_sig is not None:
+        decimals = min(decimals, max(max_sig - 1, 0))
+    return Decimal(1).scaleb(-decimals)
+
+
+def matches_live_q0(recorded: str, live: str = Q_50_DIGIT_STR,
+                    max_sig: Optional[int] = None) -> bool:
+    """True when `recorded` is the live q₀ to the precision it states."""
+    try:
+        return (abs(Decimal(recorded) - Decimal(live))
+                <= _tolerance_for(recorded, max_sig))
+    except ArithmeticError:
+        return False
+
+
+def _assert_tolerance_cannot_mask_a_pin_flip() -> None:
+    """The loosest tolerance this comparator can grant must still separate
+    the two anchors. Fails at import if a widened basin ever breaks that."""
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor
+        muon = _q0_value_for_anchor("muon")
+        proton = _q0_value_for_anchor("proton")
+    except Exception:
+        return  # anchors unreadable in this container; nothing to check
+    if not (muon and proton):
+        return
+    gap = abs(Decimal(muon) - Decimal(proton))
+    # Shortest string the basin regex can match => loosest tolerance granted.
+    shortest = _BASIN + "0" * 6
+    loosest = _tolerance_for(shortest)
+    assert loosest * 100 < gap, (
+        f"q₀ staleness tolerance {loosest} is within 100x of the muon/proton "
+        f"separation {gap}; the comparator could now accept a flipped pin. "
+        f"Narrow the basin or tighten _tolerance_for.")
+
+
+_assert_tolerance_cannot_mask_a_pin_flip()
 
 # State-tracking witnesses whose convention is to record provenance
 # (possibly an intentionally OLD q₀) — exempt from staleness, mirroring
@@ -143,7 +224,7 @@ _ASSERTION_PATH = re.compile(
     r"^\.assertions\[\d+\]\.(?:" + "|".join(_ASSERTION_VALUE_KEYS) + r")$")
 
 
-def derived_output_exempt(witness, ndigits: int, cur: str):
+def derived_output_exempt(witness, max_sig: Optional[int] = None):
     """Return a reason string if every stale basin value is a derived output.
 
     ``witness`` is the raw JSON text of a witness, or an already-parsed
@@ -167,7 +248,8 @@ def derived_output_exempt(witness, ndigits: int, cur: str):
         return None
 
     walked = list(_basin_paths(doc))
-    stale_walked = [(p, v) for p, v in walked if v[: ndigits + 2] != cur]
+    stale_walked = [(p, v) for p, v in walked
+                    if not matches_live_q0(v, max_sig=max_sig)]
     if not stale_walked:
         return None  # nothing stale to excuse; leave the normal path alone
 
@@ -178,9 +260,9 @@ def derived_output_exempt(witness, ndigits: int, cur: str):
 
     # And the raw-text scan must not see a stale value the walk missed.
     if raw is not None:
-        raw_stale = {m.group(0)[: ndigits + 2]
-                     for m in Q0_SHAPE.finditer(raw)} - {cur}
-        if not raw_stale <= {v[: ndigits + 2] for _, v in stale_walked}:
+        raw_stale = {m.group(0) for m in Q0_SHAPE.finditer(raw)
+                     if not matches_live_q0(m.group(0), max_sig=max_sig)}
+        if not raw_stale <= {v for _, v in stale_walked}:
             return None
 
     return ", ".join(sorted({p for p, _ in stale_walked}))
@@ -199,7 +281,6 @@ _SELFTEST_STALE = "1.1099785955541805"
 def _selftest() -> int:
     import copy
 
-    cur = Q_50_DIGIT_STR[:14]
     base = {
         "q0Anchor": "independent",
         "q0AnchorReason": "derives q from Vol(4_1) and m_mu/m_e; reads no pin",
@@ -208,7 +289,7 @@ def _selftest() -> int:
     }
 
     def case(label, doc, want):
-        got = derived_output_exempt(doc, 12, cur) is not None
+        got = derived_output_exempt(doc) is not None
         ok = got == want
         print(f"  {'ok  ' if ok else 'FAIL'}  {label}  (exempt={got}, want={want})")
         return ok
@@ -234,7 +315,7 @@ def _selftest() -> int:
             lambda d: d["assertions"][0].update(note=f"was {_SELFTEST_STALE}"),
             False)
     variant("nothing stale to excuse",
-            lambda d: d["assertions"][0].update(computed=float(cur + "3808")),
+            lambda d: d["assertions"][0].update(computed=float(Q_50_DIGIT_STR[:18])),
             False)
 
     # Raw-text path: a stale value the JSON walk cannot attribute to any
@@ -250,6 +331,40 @@ def _selftest() -> int:
 
     print("derived-output exemption self-test:")
     passed = all(case(*c) for c in checks)
+
+    # ── the precision-aware comparator ───────────────────────────────
+    #
+    # The truncation case is the measured regression (bean qou-bdkx): a
+    # correctly-re-pinned proton value, serialized short, was reported stale.
+    # The muon rows are the property that must NOT be lost to the fix.
+    live = Q_50_DIGIT_STR
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor
+        muon = _q0_value_for_anchor("muon") or ""
+    except Exception:
+        muon = ""
+
+    cmp_checks = [
+        ("live q0 at full precision", live, True),
+        ("live q0 truncated to 13 chars (the measured case)", live[:13], True),
+        ("live q0 truncated to 12 chars", live[:12], True),
+        ("live q0 ROUNDED up at 11 decimals", "1.10997858275", True),
+        ("a digit genuinely wrong in the 11th decimal", live[:12] + "9" + live[13:20], False),
+    ]
+    if muon:
+        cmp_checks += [
+            ("the muon pin at full precision must stay flagged", muon, False),
+            ("the muon pin truncated to 13 chars must stay flagged", muon[:13], False),
+            ("the muon pin truncated to 12 chars must stay flagged", muon[:12], False),
+        ]
+
+    print("precision-aware comparator self-test:")
+    for label, v, want in cmp_checks:
+        got = matches_live_q0(v)
+        ok = got == want
+        passed = passed and ok
+        print(f"  {'ok  ' if ok else 'FAIL'}  {label}  ({v[:16]}… fresh={got}, want={want})")
+
     print("PASS" if passed else "FAIL")
     return 0 if passed else 1
 
@@ -261,7 +376,10 @@ def main() -> int:
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any q₀-stale witness is found")
     ap.add_argument("--ndigits", type=int, default=12,
-                    help="significant digits of q₀ to compare (default 12)")
+                    help="cap on significant digits compared (default 12). A "
+                         "witness is compared at ITS OWN precision or this "
+                         "cap, whichever is coarser — never at a fixed width, "
+                         "which reported short serializations as stale.")
     ap.add_argument("--list", action="store_true",
                     help="print every stale witness (for driving the regen)")
     ap.add_argument("--tree", action="store_true",
@@ -324,10 +442,10 @@ def main() -> int:
         matches = list(Q0_SHAPE.finditer(raw))
         if matches:
             matched_any += 1
-        vals = {m.group(0)[: args.ndigits + 2] for m in matches}
-        bad = sorted(v for v in vals if v != cur)
+        vals = {m.group(0) for m in matches}
+        bad = sorted(v for v in vals if not matches_live_q0(v, max_sig=args.ndigits))
         if bad:
-            why = derived_output_exempt(raw, args.ndigits, cur)
+            why = derived_output_exempt(raw, max_sig=args.ndigits)
             if why:
                 derived.append((name, bad, why))
             else:

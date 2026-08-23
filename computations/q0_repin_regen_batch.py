@@ -55,17 +55,28 @@ CUR = Q_50_DIGIT_STR[: NDIGITS + 2]
 # source of truth (fixes the same hard-coded-regex / audit-false-positive
 # bugs Copilot flagged on the detector). Local fallback if unavailable.
 try:
-    from witness_constant_staleness import Q0_SHAPE as SHAPE, AUDIT_SUFFIXES
+    from witness_constant_staleness import (
+        Q0_SHAPE as SHAPE, AUDIT_SUFFIXES, matches_live_q0)
 except Exception:  # pragma: no cover
     SHAPE = re.compile(re.escape(Q_50_DIGIT_STR[:6]) + r"\d{6,}")
     AUDIT_SUFFIXES = ("-audit.witness.json", "-scan.witness.json",
                       "-compliance.witness.json")
+
+    def matches_live_q0(recorded: str) -> bool:
+        from decimal import Decimal
+        frac = recorded.split(".", 1)[1] if "." in recorded else ""
+        return (abs(Decimal(recorded) - Decimal(Q_50_DIGIT_STR))
+                <= Decimal(1).scaleb(-len(frac)))
 WGLOB = "computations/*.witness.json"
 BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
 
 
 def stale_q0(raw: str) -> bool:
-    return any(m.group(0)[: NDIGITS + 2] != CUR for m in SHAPE.finditer(raw))
+    # Each value is compared at the precision it states, not at a fixed
+    # width; a short-but-correct serialization is fresh. Slicing both sides
+    # to NDIGITS+2 made any witness with fewer digits look stale, which here
+    # would have queued it for a pointless regeneration and a branch push.
+    return any(not matches_live_q0(m.group(0)) for m in SHAPE.finditer(raw))
 
 
 def scan_stale() -> dict[str, list[str]]:
