@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T13:10:00Z
+updated_at: 2026-08-23T13:40:00Z
 ---
 
 
@@ -430,3 +430,74 @@ kind this bean tracks — it is a session-start context-budget decision (most-re
 N? `in-progress` only? exclude `scrapped`?) and it belongs to the hook's owner,
 not to a coverage fix. Recorded with the measurement so the choice can be made
 on numbers.
+
+---
+
+## Finding #4 FIXED 2026-08-23 — `classify_production_reach.py` now distinguishes "no readers" from "never searched"
+
+The residual after the narrowing above: `_rg` returned `set()` both when a
+pattern genuinely matched nothing and when neither `rg` nor `grep` could be run.
+Those are opposite facts — *no readers* is evidence toward `NOT-PRODUCTION`,
+*never searched* is no evidence at all.
+
+### Demonstrated, not asserted
+
+Same stem, `PATH` stripped of both `rg` and `grep`, old code vs new.
+
+*Old, total search failure:*
+
+```
+  verdict : NOT-PRODUCTION  (reaches no production location within depth)
+  readers : NONE (leaf)
+  action  : eligible for precision_tier='float64' + deprecated, ...
+exit=0
+```
+
+**Byte-identical to a successful run.** The output that licenses a float64
+carve-out was produced by gathering none of the evidence for it.
+
+*New, same conditions:*
+
+```
+  readers : NONE (leaf)
+  SEARCH  : *** INCOMPLETE *** one or more reachability searches
+            could not be run ... An empty 'readers' above is NOT
+            evidence of non-reachability — it is no evidence.
+  action  : eligible for precision_tier='float64' + deprecated, ...
+
+search coverage: 0/2 reachability searches ran
+WARNING: 2 search(es) did NOT run. ... Any NOT-PRODUCTION verdict above
+         that rests on an empty reader set is unsupported.
+exit=3
+```
+
+Normal run is unchanged apart from a new `search coverage: 2/2 reachability
+searches ran` line, and still exits 0.
+
+### Changes
+
+1. `_SearchHealth` counts searches attempted vs failed. `_rg` increments
+   `failed` on the fall-through path — the one place where the empty set means
+   "not searched" — with a comment saying so at the `return`.
+2. `classify()` snapshots the failure count per stem, so `search_degraded` is
+   about *that* stem rather than the whole run, and is set on **both** return
+   paths.
+3. The per-stem warning prints **before** the `action:` line, which is the line
+   that would otherwise be acted on.
+4. Run-level `search coverage: ran/attempted`, always printed — so a healthy run
+   states its coverage too, rather than coverage only appearing when it is bad.
+5. **Exit 3 when degraded.** No script or CI consumes this script (checked: it
+   is referenced only from `.beans/`, i.e. invoked by hand), so the exit code is
+   free to carry the signal. This follows the in-repo gold standard
+   `scripts/precision-gates.sh` — *"This is NOT a gate failure. Nothing was
+   examined"* — and the wording deliberately echoes it.
+
+### Signature deliberately NOT changed
+
+I proposed above that `_rg` "return `None` on total tool failure". It would have
+forced `Optional[set]` through `readers_of` and both `classify` paths, where a
+missed `None` check degrades into a `TypeError` mid-walk — replacing a silent
+wrong answer with a crash in a script whose whole purpose is to print evidence.
+Recording the health beside the result keeps every existing signature and every
+existing call site intact. The bean's earlier suggestion is superseded, not
+forgotten.
