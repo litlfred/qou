@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T01:15:00Z
+updated_at: 2026-08-24T01:50:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -798,3 +798,74 @@ at all. **Its witness is untouched** — nothing was half-written.
 as source defects, 1 blocked upstream, 1 excluded by design (`h4_form_AB`),
 `habiro_interpolation_wlambda` still last (only carrier of value B), and 3 were
 fixed by the sibling sweep.
+
+---
+
+## 2026-08-23 — `habiro_interpolation_wlambda` is the THIRD source defect, settled without running it
+
+This bean has repeatedly said `habiro_interpolation_wlambda` must be regenerated
+**last**, because it is the only carrier of muon **value B** and regenerating
+destroys the evidence of which muon value it held. Reading it settles the
+question without spending the run at all.
+
+Its two q₀ fields, as committed (2026-07-17):
+
+```
+data.archimedean_F_lambda.muon_q0.q0    = 1.1099785955573347   <- value A (frozen muon pin)
+data.archimedean_F_lambda.proton_q0.q0  = 1.1099785955541805   <- value B (CODATA-2018 muon)
+```
+
+**Neither leg is the proton pin.** The probe's "archimedean F_λ at proton vs muon
+q₀" comparison is B-versus-A — a 3.15e-12 muon-to-muon gap presented as the
+11.5 ppb muon-to-proton one. That is the **third** independent instance of the
+degenerate-comparison pattern found today, after the qbeta cross-anchor batch.
+
+### Why regeneration cannot fix it
+
+`habiro_interpolation_wlambda` **is in the `ideal_muon` manifest layer**. Under
+that layer `q_parameter` re-derives the q-family from
+`computations/q-pinning-50-digit.witness.json`, which holds
+
+```
+q0Value = 1.10997859555733471989976322048322     <- value A
+```
+
+So for this producer `q_at()` returns **A**, and `q_muon_at()` returns **C**.
+A regeneration would rewrite the fields as `proton_q0 = A`, `muon_q0 = C` —
+**still two muon values**, with the proton-named field still holding a muon
+number. The defect is the field name in source, exactly as for
+`qbeta_composite_crossanchor_2factor_sweep` and
+`qbeta_cosh_avatar_crossanchor_multicoeff_probe`.
+
+**So it is NOT the value-B evidence problem this bean feared.** Value B survives
+in the committed witness and should stay there until the naming is fixed; running
+the producer would have destroyed it *and* achieved nothing. Recorded here as the
+value of record:
+
+```
+habiro-interpolation-wlambda.witness.json
+  data.archimedean_F_lambda.proton_q0.q0 = 1.1099785955541805    (value B)
+  data.archimedean_F_lambda.muon_q0.q0   = 1.1099785955573347    (value A)
+  computedAt 2026-07-17T20:26:41Z   scriptHash 02bbdfe7dd7a
+```
+
+### Revised queue arithmetic
+
+The "regenerate" class is smaller and the "source naming defect" class is larger
+than this bean assumed:
+
+| class | n |
+|---|---|
+| committed, verdict-preserving | **10** |
+| held back — conclusion moves | 2 (`xq_habiro`, `qbeta_jacobi_anger`) |
+| **source naming defect — regeneration is a NO-OP** | **3** (`qbeta_composite_crossanchor`, `qbeta_cosh_avatar`, `habiro_interpolation_wlambda`) |
+| blocked by an upstream malformed value | 1 (`qbeta_singularity_cross_anchor`) |
+| excluded by design | 1 (`h4_form_AB`) |
+| fixed by the sibling sweep | 3 |
+| unresolved remainder | 1 |
+
+**Not fixed here.** Renaming `proton_q0` / `q_proton` in an ideal-layer producer
+changes a published witness field name, which is a contract change for anything
+reading it — and this bean's own §"the last group will be hardest to fix after
+the sweep" warns against unilateral moves in this area. The three are now
+identified precisely, with the mechanism, which is what the fix needs.
