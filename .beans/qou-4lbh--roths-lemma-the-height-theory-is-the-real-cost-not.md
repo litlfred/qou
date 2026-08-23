@@ -2056,3 +2056,60 @@ that look like they fit. Do not repeat it as established until the elaborator ha
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Three declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — the two halves joined: `index ≤ 2/ω + 2·max(S/r, q)`
+
+The previous entry ended by saying "`ω ≥ 2/ε` closes the constant question" is a **prose**
+claim of the kind correction 5 was about, and not to repeat it as established until the
+elaborator had checked it. It has now checked it. `exists_index_le_of_rothGrowth`:
+
+```
+index (Sum.elim d₁ d₂) (Sum.elim α β) P  ≤  2/ω + 2·max(S/r, q)
+```
+
+given `RothGrowth`, an ordering in which the split-off variable comes last, and `P ≠ 0`. It
+built first try, so the two halves did fit — but that was worth finding out from the compiler
+rather than from the prose.
+
+### The one piece of real work in the join
+
+§13 wants a **natural** degree floor `D₁ ≤ d₁ k`; the growth condition supplies the
+**rational** bound `ω·d ≤ d₁ k`. `⌈ω·d⌉` sits between them, and that is the only reason a
+ceiling appears. Worth noting because it is the kind of gap that reads as bookkeeping in prose
+and is a genuine (if small) construction in Lean.
+
+### The sixth correction, closed
+
+The row cost `t` is what correction 6 was about, and it is now bounded by the growth constant
+alone. The path took three separate findings, each of which looked like the last one at the
+time:
+
+1. the loss was not structural but from **dividing through linearly**, discarding the
+   truncation (→ the square-root branch);
+2. the combined display's first branch is `J(W)/n`, not `J(W)`, so **both** branches are
+   useful and no side condition is needed (correction 9);
+3. `t` is a ratio of degrees, not of a representation length — provided the representation is
+   grouped on the **`y`**-side.
+
+None of those was visible from the one before it.
+
+### ⚠ What this is, and is not
+
+A fact about **`RothGrowth` as this arc defines it**. Property `Γ_m` (§11) is in the illegible
+region and unread. If the source's condition differs, this is a theorem about
+`RothLemmaUniform` and not about Roth's lemma. Stated in the module header, in the docstring,
+and here.
+
+### Open — structure, not constants
+
+1. **Connect `RothLemmaUniform σ m ω ε` to `exists_index_le_of_rothGrowth`**, which is stated
+   for `σ ⊕ Unit` — the `m → (m−1) + 1` split the induction performs. Turning an
+   `o : σ ≃ Fin m` into that split and transporting the statement across it is the missing
+   structural step.
+2. `c_m = 2^m − 3`, from iterating with `rothLemmaUniform_one` as the base. Unasserted until
+   §14 is read.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. `exists_index_le_of_rothGrowth` `#print axioms`-clean.

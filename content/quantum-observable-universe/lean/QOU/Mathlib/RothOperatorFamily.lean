@@ -62,28 +62,36 @@
   complementary by construction, so no such condition is needed; and in the recursion's regime
   it reads `Φ_m·r_m ≤ 1`, which is false.
 
-  One constant question remains, and it is the sixth correction in its final form: the row
-  cost `t`.  Half of it is now settled.
+  ═══ THE CONSTANT QUESTION, CLOSED ═══
 
-  * `exists_index_le_of_separated_le_degreeOf` makes `t = (d+1)/D₁` — the split-off variable's
-    degree over the degree floor of the *other* variables.  It no longer depends on how long a
-    representation happens to be, because `SeparatedRepresentation` now bounds the minimum
-    length by `d + 1` (Mahler's `n ≤ r_m + 1`).
+  The sixth correction was about the row cost `t`.  It is now bounded by the growth constant
+  alone: `exists_index_le_of_rothGrowth` gives
 
-    ⚠ That bound is entirely about **which side the representation is grouped on**.  Grouping
-    on the `x`-side gives one term per `x`-monomial — a *product* of degrees — and no growth
-    condition can rescue a row cost of that size.  Grouping on the `y`-side gives one term per
-    `y`-monomial, which for a single split-off variable is `d + 1`.
+      index ≤ 2/ω + 2·max(S/r, q),
 
-  * ⚠ **What is left**: turning the *ratio of degrees* `(d+1)/D₁` into `1/ω`.  `RothGrowth`
-    orders the degrees so that the split-off variable's is the smallest, which should give
-    `D₁ ≥ ω·d` and hence `t ≲ 1/ω`; choosing `ω ≥ 2/ε` would then give `t ≤ ε/2` and determine
-    `ω(m, ε)`.  **Not proved**, and the reading it rests on (§11's property `Γ_m`) is in the
-    illegible region of the source.
+  so `ω ≥ 2/ε` makes the row cost at most `ε`.  Two steps got there:
+
+  * `SeparatedRepresentation` bounds the minimum representation length by `d + 1` (Mahler's
+    `n ≤ r_m + 1`), which makes `t` a ratio of **degrees**, `(d+1)/D₁`, rather than of a
+    representation length.  ⚠ That bound is entirely about **which side the representation is
+    grouped on**: the `x`-side gives one term per `x`-monomial, a *product* of degrees, and no
+    growth condition rescues a row cost of that size.
+  * `RothGrowth` (`QOU/Mathlib/RothLemmaStatement.lean`) orders the degrees so the split-off
+    variable's is smallest, giving `(d+1)/D₁ ≤ 2/ω`.
+
+  The join is written out rather than asserted: two true theorems that *look* like they fit is
+  exactly the fifth correction's failure mode.  The only real work in it is the degree floor —
+  §13 wants a **natural** `D₁ ≤ d₁ k`, the growth condition supplies a **rational** bound
+  `ω·d ≤ d₁ k`, and `⌈ω·d⌉` sits between them.
+
+  ⚠ **This is a fact about `RothGrowth` as this arc defines it.**  The source's parameter
+  condition is property `Γ_m` (§11), which is in the illegible region and has not been read.
+  If the two differ, what is proved concerns `RothLemmaUniform`, not Roth's lemma.
 -/
 import QOU.Mathlib.RothInductionStep
 import QOU.Mathlib.BoundedOrderWronskian
 import QOU.Mathlib.SeparatedRepresentation
+import QOU.Mathlib.RothLemmaStatement
 
 namespace MvPolynomial
 
@@ -480,23 +488,91 @@ theorem exists_index_le_of_separated_le_degreeOf {K : Type*} [Field K] [CharZero
   rw [hPeq, ← sepW]
   exact hS
 
+
+/-! ### The two halves, joined
+
+§13's conclusion has a row cost `t = (d+1)/D₁`; `RothGrowth` bounds that by `2/ω`.  Those are
+two true theorems that *look* like they fit, which is precisely the situation the fifth
+correction was about — so the join is written out and the elaborator, not this comment,
+decides whether it holds.
+
+The one piece of real work is the degree floor.  `exists_index_le_of_separated_le_degreeOf`
+wants a **natural** `D₁` below every `d₁ k`; the growth condition supplies the **rational**
+bound `ω·d ≤ d₁ k`.  `⌈ω·d⌉` sits between them, and that is the only reason a ceiling appears
+here. -/
+
+/-- **§13's conclusion with the row cost replaced by `2/ω`.**
+
+Given the growth condition, an ordering in which the split-off variable comes last, and a
+non-zero `P`, the index is at most `2/ω` plus §13's error term.  So `ω ≥ 2/ε` makes the row
+cost at most `ε` — this is what `ω(m, ε)` has to be.
+
+⚠ **A fact about `RothGrowth` as this arc defines it.**  The source's parameter condition is
+property `Γ_m` (§11), which is in the illegible region and has not been read.  If the two
+differ, this is a theorem about `RothLemmaUniform` and not about Roth's lemma. -/
+theorem exists_index_le_of_rothGrowth {K : Type*} [Field K] [CharZero K] [DecidableEq σ]
+    {m : ℕ} (o : (σ ⊕ Unit) ≃ Fin m) (ω : ℚ) (hω : 1 ≤ ω)
+    (d₁ : σ → ℕ) (d₂ : Unit → ℕ)
+    (hg : RothGrowth o ω (Sum.elim d₁ d₂))
+    (hlast : ∀ k : σ, (o (Sum.inl k) : ℕ) + 1 ≤ (o (Sum.inr ()) : ℕ))
+    (hd0 : d₂ () ≠ 0) {D₂ : ℕ} (hD₂ : D₂ ≠ 0) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : Unit → K) (P : MvPolynomial (σ ⊕ Unit) K) (hP : P ≠ 0)
+    (hdeg : degreeOf (Sum.inr ()) P ≤ d₂ ()) :
+    ∃ (r : ℕ) (S : ℚ), 0 < r ∧ r ≤ d₂ () + 1 ∧ ∀ θ q : ℚ,
+      2 / ω ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) →
+      ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
+      θ ≤ 2 / ω + 2 * max (S / (r : ℚ)) q := by
+  have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
+  have hdl1 : (1 : ℚ) ≤ ((d₂ () : ℕ) : ℚ) := by
+    exact_mod_cast Nat.one_le_iff_ne_zero.mpr hd0
+  have hgrow : ∀ k : σ, ω * ((d₂ () : ℕ) : ℚ) ≤ ((d₁ k : ℕ) : ℚ) := by
+    intro k
+    have h := rothGrowth_mul_le (o := o) hω hg (j := o (Sum.inl k)) (k := o (Sum.inr ()))
+      (hlast k)
+    simpa using h
+  have hcnn : (0 : ℤ) ≤ ⌈ω * ((d₂ () : ℕ) : ℚ)⌉ := Int.ceil_nonneg (by positivity)
+  have hD₁cast : ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
+      = ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉ : ℤ) : ℚ) := by
+    rw [show ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
+        = (((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℤ) : ℚ) by push_cast; ring,
+      Int.toNat_of_nonneg hcnn]
+  have hfloor : ω * ((d₂ () : ℕ) : ℚ) ≤ ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by
+    rw [hD₁cast]; exact Int.le_ceil _
+  have hd₁ : ∀ k, ⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat ≤ d₁ k := by
+    intro k
+    have h2 : ⌈ω * ((d₂ () : ℕ) : ℚ)⌉ ≤ (d₁ k : ℤ) :=
+      Int.ceil_le.mpr (by exact_mod_cast hgrow k)
+    omega
+  have hD₁ne : ⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat ≠ 0 := by
+    have h1 : (1 : ℚ) ≤ ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
+    intro h0
+    rw [h0] at h1
+    norm_num at h1
+  obtain ⟨r, S, hr, hcard, hmain⟩ :=
+    exists_index_le_of_separated_le_degreeOf hD₁ne hD₂ d₁ d₂ hd₁ hd₂ α β P hP hdeg
+  have hD₁pos : (0 : ℚ) < ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ) := by nlinarith
+  have hcost : (((d₂ () : ℕ) : ℚ) + 1) / ((⌈ω * ((d₂ () : ℕ) : ℚ)⌉.toNat : ℕ) : ℚ)
+      ≤ 2 / ω := by
+    rw [div_le_div_iff₀ hD₁pos hωpos]
+    nlinarith
+  exact ⟨r, S, hr, hcard, fun θ q hθ hq0 hq hidx =>
+    le_trans (hmain θ q (le_trans hcost hθ) hq0 hq hidx) (by linarith)⟩
+
 /-! ### Next
 
-§13 is closed, and the row cost is now a ratio of **degrees** rather than of a representation
-length.  Two things remain:
+§13 is derived and its row cost is bounded by `2/ω`.  What is left is the **recursion** —
+structure, not constants:
 
-1. **`RothGrowth` ⟹ `t ≲ 1/ω`.**  The growth condition makes the split-off variable's degree
-   the smallest, so `D₁ ≥ ω·d` and `(d+1)/D₁ ≲ 1/ω`.  This is a statement entirely inside the
-   arc — `RothGrowth` is defined in `QOU/Mathlib/RothLemmaStatement.lean` — so it can be
-   proved without reading anything further.  It determines **`ω(m, ε)`**, the one entry that
-   module's audit came back empty on.
-2. **The recursion** (§14): `c_m = 2^m − 3`, and feeding `rothLemmaUniform_one` and the `m−1`
-   case back into the `m` case.
+1. **Connect `RothLemmaUniform σ m ω ε` to this.**  `exists_index_le_of_rothGrowth` is stated
+   for `σ ⊕ Unit`, which is the `m → (m−1) + 1` split the induction performs.  Turning an
+   `o : σ ≃ Fin m` into that split, and transporting the statement across it, is the missing
+   structural step.
+2. **`c_m = 2^m − 3`**, from iterating the step with `rothLemmaUniform_one` as the base.
 
 ⚠ Provenance: §5, §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14
-are in the illegible region and have **not** been read.  Step 1 above is the arc's own
-reconstruction of what the growth condition must be doing; the fact that it is provable inside
-the arc does not make it the source's argument, and `c_m = 2^m − 3` stays unasserted. -/
+have **not**.  The `2/ω` bound is the arc's own reconstruction of what a growth condition must
+be doing; `c_m = 2^m − 3` stays unasserted until §14 is read. -/
+
 
 
 
