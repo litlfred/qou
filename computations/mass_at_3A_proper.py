@@ -586,6 +586,40 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
         # not here.
         M = float(c) * sigmas[g] + float(d) * I
         product = product @ M
+    # ONE dtype check per call, and it is EXACT rather than approximate.
+    #
+    # The defect this seals cost 57x and a hard `ValueError: scipy.sparse does
+    # not support dtype object` (see the cast above): a single mpf scalar
+    # against a float64 array silently promotes the whole product to object
+    # dtype, and `product @ M` stops being BLAS. Nothing in the corpus caught
+    # it — the blocking `numpy/mpmath dtype leak` gate cannot see the shape
+    # (an mpf arriving through a PARAMETER and hitting a multiplication is
+    # outside its scan), and a sibling then established that the obvious
+    # runtime interception does NOT work either:
+    #
+    #     np.matmul(prod, M)  patched at module level  ->  FIRES
+    #     prod @ M            same patch               ->  SILENT
+    #
+    # because `ndarray.__matmul__` dispatches in C and never reaches the
+    # module-level name — and `@` is exactly the form used here. So the
+    # consumption side cannot be hooked from Python at all.
+    #
+    # This checks the RESULT instead, which needs no interception, costs one
+    # attribute read per call, and cannot pass silently on the shape it was
+    # written for. Raising rather than casting: a float64 kernel that has
+    # somehow acquired object dtype has lost the guarantee its `-> float`
+    # signature makes, and quietly repairing it would hide the regression
+    # exactly the way the original promotion did.
+    if getattr(product, "dtype", None) == object:
+        raise TypeError(
+            "chi_lambda_of_word: `product` is object dtype, so the matmul ran "
+            "as a Python loop rather than BLAS and the scipy.sparse path would "
+            "raise. Something upstream is handing an mpf (or another Python "
+            "object) into this float64 kernel without casting at the numpy "
+            "boundary. This function returns `float(...)` on every path, so "
+            "the extra precision is discarded anyway — cast at the call site, "
+            "or use the mpfr entry point (`chi_lambda_all_partitions_mpfr`) "
+            "if the precision is genuinely needed.")
     if is_sparse:
         return float(product.diagonal().sum())
     return float(np.trace(product))
