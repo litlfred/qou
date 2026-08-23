@@ -25,48 +25,56 @@ the convergence step is to drop the duplicate, not to defend it.
 **both** pins deliberately now have a label of their own rather than needing an
 exclusion list.
 
-## The headline: a swarm measured my mechanical classifier, and it was wrong
+## The headline: a swarm measured my classifier, and each fix is quantified
 
 I built a mechanical classifier for the ~1900 anchor-missing witnesses — AST
 import-cone reachability at depth ≤ 3 over the repo's own
-`q0_producer_pin_classifier.classify()`. It reported **722 of 889** producers
-as reaching no q₀ at all, i.e. candidates for `q0Anchor: "independent"`.
+`q0_producer_pin_classifier.classify()`. It reported **722 of 889** producers as
+reaching no q₀ at all, i.e. candidates for `q0Anchor: "independent"`.
 
 Thirteen read-only agents then adjudicated the same producers by reading them.
-Five completed before the run hit a weekly limit, covering **443**. Against
-those:
+**887 of 889 adjudicated**; ground truth is **460 independent**, 420
+q₀-dependent, 7 undetermined.
 
-| | swarm: independent | swarm: q0_dependent |
-|---|---|---|
-| **mine: independent** | 222 | **130** |
-| **mine: q0_dependent** | 24 | 65 |
+Scored against that, with each fix made this session added in turn:
 
-**130 of my 352 `independent` calls were wrong — 37 %.** That is the *dangerous*
-direction, and I had said so in the swarm's own brief: a false `independent`
-lets a later migration skip a q₀-dependent witness silently, leaving a stale pin
-presented as pin-agnostic.
+| method | proposes independent | **false** | rate | true-indep excluded |
+|---|---|---|---|---|
+| **A** import-cone, as first reported | 720 | 285 | **39.6 %** | 32 |
+| **B** + proton-literal + artifact-resolution fixes | 588 | 159 | **27.0 %** | 38 |
+| **C** + the witness-read data-flow detector | 495 | **82** | **16.6 %** | 52 |
 
-The routes the swarm found, on those 130:
+**71 % of the false `independent` calls removed**, and the false direction is
+the dangerous one: it lets a migration skip a q₀-dependent witness silently,
+leaving a stale pin presented as pin-agnostic. The cost is 20 more genuinely
+independent producers wrongly excluded (32 → 52) — the safe direction, and the
+trade is worth taking.
 
-| n | route | why my method could not see it |
-|---|---|---|
-| 72 | **d** — literal in the producer's own file | see the defect below; also my walker never classified the producer itself, only its imports |
-| 49 | **b** — reads a q₀-bearing witness JSON by path | not an import; invisible to any import-cone method |
-| 5 | f — indirect import | my cone should have caught these |
-| 3+1 | a, e | — |
+Two numbers not to lose:
 
-Route **b** is the structural lesson: **an import graph is the wrong shape for
-this question.** A producer that opens `chi-proton-h3-at-q0-50dps.witness.json`
-and reads a number out of it is exactly as q₀-dependent as one that calls
-`q_at()`, and no amount of depth on the import cone will ever reach it.
+- **The 722 was wrong and remains wrong.** Do not quote it. Method C's 495 is
+  the current best mechanical proposal, still carrying 82 known-false members.
+- **An earlier report of this said 37 %, extrapolated from a 443-producer
+  sample.** The completed measurement is **39.6 %** — the extrapolation held and
+  slightly understated. Recorded because the extrapolation *could* have been
+  wrong and the only way to know was to finish.
 
-The 24 the other way (mine dependent, swarm independent) are the safe direction
-but still a 27 % over-flag on that side.
+### Why each fix bought what it did
 
-**Do not use the 722.** The honest reading is that ~55 % of the file-locally-
-clean producers are genuinely independent, so the surviving candidate set is
-roughly 490 of 889 — and that is an *extrapolation from a 443 sample*, not a
-measurement of the whole.
+The routes of the 285 false calls, and what remains after C:
+
+| route | in A | in C | what it is |
+|---|---|---|---|
+| **d** | 136 | 41 | a q₀ literal in the producer's own file |
+| **b** | 97 | 26 | reads a q₀-bearing witness **by file path** |
+| f | 14 | 9 | indirect import |
+| a, e | 6 | 6 | accessor / caller-supplied |
+
+Route **b** is the structural lesson and the reason method C exists: **an import
+graph is the wrong shape for this question.** A producer that opens
+`chi-proton-h3-at-q0-50dps.witness.json` and reads a number out of it is exactly
+as q₀-dependent as one calling `q_at()`, and no depth on the import cone reaches
+it. Route **d** shrank because `classify()` had no proton branch at all (below).
 
 ## A real defect in shared infra: `classify()` never looked for a proton literal
 
