@@ -56,8 +56,18 @@ name: lp-dual-gate
 #      a float64 solver. That catches an f64 witness produced anywhere and
 #      committed, not only one produced in this job. It is a ratchet: a
 #      witness with no `backend` field is reported and not failed, because
-#      the field is new (26 of 27 flagged witnesses predate it) and blocking
-#      on that backlog would block every unrelated PR.
+#      the field is new and blocking on that backlog would block every
+#      unrelated PR. The backlog is being drained rather than tolerated:
+#      26 of 27 flagged witnesses were unannotated when this gate shipped,
+#      11 as of 2026-08-23. Do not quote that number without re-running —
+#      it moves with the corpus.
+#
+#   3. An f64 solve with a MEASURED reason is exempted BY NAME, with the
+#      reason, in `F64_BACKEND_EXEMPT`. Without that list the gate rewards
+#      laundering: a producer that legitimately needs the f64 backend fails,
+#      and the cheapest way to pass is to stop recording `backend` at all,
+#      dropping into the unannotated bucket above. An exemption you must
+#      name and justify beats a blind spot that costs nothing to enter.
 #
 # The cargo build is cached on the lockfile; a cold build is ~3.5 min.
 
@@ -118,6 +128,15 @@ jobs:
               "take effect, so every witness this job could produce would be f64")
           assert "y0_star_str" in d, "no full-precision companions in the result"
           EOF
+      - name: Unit tests — provenance, the rescue, and every backend site
+        # These guard the gate itself. `test_lp_dual_provenance.py` covers the
+        # holes found on 2026-08-23: producers dropping `backend` and the
+        # `*_str` companions at the last step, clarabel's false `infeasible`
+        # on large costs, and `solve_frobenius_dual_lp`'s SUCCESS branch
+        # recording nothing while only its FAILURE branch did — so a
+        # successful f64 solve was invisible to the very check below.
+        run: python3 -m pytest tools/pyhecke/tests -q
+
       - name: Gate — content-wired LP/SDP witnesses must report their duals
         run: python3 computations/lp_dual_witness_validator.py --strict-wired
       - name: Survey (informational, never fails)
