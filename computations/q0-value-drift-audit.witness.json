@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 306,
-      "proton-pin": 1231,
+      "proton-pin": 1232,
       "unknown": 25,
       "canonical": 211
     },
@@ -7658,6 +7658,13 @@
       },
       {
         "file": "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/markov/markov-trace-axiomatic-proton.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",

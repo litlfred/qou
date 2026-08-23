@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-23T19:27:34Z
+updated_at: 2026-08-23T19:40:56Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -79,3 +79,49 @@ is answerable directly from the generic form.
   purely cosmetic stripped numerator parentheses — `(q^7 + q^3) / d` became
   `q^7 + q^3 / d`, a different expression. Six `mulVec` rows went red and Lean
   caught it. Any transformation of these 36 lines needs a re-verify, not an eye.
+
+
+---
+
+## Addendum 2026-08-23 — a third block on the same thread, and a gate blind spot
+
+Found while fixing `prop:markov-trace-axiomatic-closed-form` (bm4i block 6/12,
+now corrected: `1.63315 -> 1.88432`, `rho_p 1124.3 -> 974.44`, denominator
+`q^{10}(q+1)^3 -> q^7(q^2+1)^2`).
+
+### `prop:markov-trace-antipode-polynomial-symmetry` is unchecked, not checked
+
+Its witness `computations/probes/poly-q-proof.witness.json` carries a q-sweep
+of `tr_M_numeric` values, every one of them ~1.63 — the **convention-C** value
+for the same word. The block is `status: "verified"`.
+
+That status cannot be caught by `scripts/check-computation-status.py`, because
+the witness has **no assertions at all** and therefore no top-level
+`allPassed` to disagree with. This is the gate's blind spot and it is the same
+unearned-`verified` class as `qou-vfy1`: a witness that asserts nothing can
+never fail, so "verified" against it costs nothing to claim.
+
+Two of its recorded fields want a look, stated as pointers rather than
+verdicts — they are about a *different* object (PR #546's Plancherel form),
+and the claim-shape discipline says not to carry a conclusion across:
+
+- `max_relative_diff_across_q: 7.8879` — a **relative** difference of 7.9,
+  i.e. 789 %, sitting in a witness backing a "verified" block with nothing
+  asserting on it.
+- `anti_self_reciprocal_proved: true` — worth checking against the fact that
+  the H_3 longest-element trace is anti-self-reciprocal in **neither**
+  convention (measured in the block-6 work). Different object, so this is not
+  a contradiction; it is a reason to look.
+- `claimed_denominator: "12 * q^10"` — where the `q^{10}` in the block-6
+  mislabel plausibly came from. Worth checking whether the two are the same
+  provenance.
+
+### Filing matters as much as finding
+
+The block-6 convention mislabel had already been diagnosed **completely and
+correctly** by `agent:h00` on 2026-08-22 — same numbers, same reasoning, and
+notes proposing exactly the fix that was applied. It sat unfixed because it was
+filed under the criterion **`trap-superlative`**, a language-trap check.
+Nobody triaging prose traps acts on a convention defect, and nobody grepping
+for convention problems looks in a prose criterion. A correct finding in the
+wrong drawer is close to no finding.
