@@ -150,6 +150,8 @@ def main() -> int:
     ap.add_argument("--timeout", type=int, default=300, help="per-producer seconds")
     ap.add_argument("--limit", type=int, default=0, help="0 = all")
     ap.add_argument("--out", default="")
+    ap.add_argument("--resume", action="store_true",
+                    help="skip producers already measured in --out")
     args = ap.parse_args()
 
     tg = targets()
@@ -163,9 +165,38 @@ def main() -> int:
         runnable = runnable[: args.limit]
     print(f"measuring {len(runnable)} producers, {args.timeout}s budget each\n")
 
+    # Checkpointing.  The first version of this harness held every result in
+    # memory and wrote --out once, at the end.  A multi-hour sweep against a
+    # container that can be reclaimed therefore had exactly one durable moment,
+    # and losing it lost every measurement.  It did get reclaimed, at 7/55.
+    # So each result is flushed as it lands, and --resume reads them back.
+    def dump(rs, partial):
+        if not args.out:
+            return
+        tmp = args.out + ".tmp"
+        json.dump({"results": rs, "tally": dict(collections.Counter(
+                       r["verdict"] for r in rs)),
+                   "partial": partial, "measured": len(rs),
+                   "total": len(runnable),
+                   "skipped": [{"witness": w, "scriptFile": s_, "candidates": c}
+                               for w, s_, c in skipped]},
+                  open(tmp, "w"), indent=2)
+        os.replace(tmp, args.out)          # atomic: never a half-written file
+
     results, t0 = [], time.time()
+    if args.resume and args.out and os.path.exists(args.out):
+        try:
+            results = json.load(open(args.out)).get("results", [])
+            print(f"resuming: {len(results)} producer(s) already measured")
+        except Exception as e:
+            print(f"resume failed ({e}); starting from scratch")
+    done = {r["producer"] for r in results}
     for i, (wp, _sf, cands) in enumerate(runnable, 1):
         prod = cands[0]
+        if prod in done:
+            print(f"[{i}/{len(runnable)}] {prod}  -- already measured, skipping",
+                  flush=True)
+            continue
         before = {p: canon(p) for p in
                   glob.glob("computations/**/*.witness.json", recursive=True)}
         el = time.time() - t0
@@ -201,6 +232,7 @@ def main() -> int:
                         "siblings_moved": sib})
         extra = f"  (+{len(sib)} sibling(s) moved)" if sib else ""
         print(f"      -> {verdict}{extra}", flush=True)
+        dump(results, partial=True)
         restore()
 
     restore()
@@ -215,10 +247,7 @@ def main() -> int:
                 print(f"  {r['producer']}")
     print(f"\nwall {(time.time()-t0)/60:.1f} min")
     if args.out:
-        json.dump({"results": results, "tally": dict(tally),
-                   "skipped": [{"witness": w, "scriptFile": s,
-                                "candidates": c} for w, s, c in skipped]},
-                  open(args.out, "w"), indent=2)
+        dump(results, partial=False)
         print(f"wrote {args.out}")
     return 0
 
