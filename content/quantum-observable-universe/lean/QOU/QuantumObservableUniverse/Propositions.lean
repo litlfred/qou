@@ -45,7 +45,7 @@ theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
     LaTeX: `\label{prop:main-commutative-diagram}` -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M)
+    (sp : ArchimedeanSubstrateField cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData) where
   /-- The type of first-order jet data `J¹E`. -/
   JetBundle : Type*
@@ -69,7 +69,7 @@ structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
 
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M)
+    (sp : ArchimedeanSubstrateField cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData)
     (diag : MainCommutativeDiagram cqou sp inst) :
     ∀ (x : diag.JetBundle),
@@ -80,28 +80,28 @@ theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
 /-! ## §7  Classical Limit Properties -/
 
 /-- At classicality (`q = 1`), the quantum Planck constant vanishes. -/
-theorem planck_classical_limit {M : Type*} (sp : SubstrateParameter M)
+theorem planck_classical_limit {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p = 1) :
     quantumPlanckConstant sp p = 0 := by
   unfold quantumPlanckConstant
   rw [hq, inv_one, sub_self]
 
 /-- The q-deformed exterior derivative recovers `d` at `q = 1`. -/
-theorem qExtDeriv_classical {M : Type*} (sp : SubstrateParameter M)
+theorem qExtDeriv_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (d_alpha lieDerivReeb theta : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qExtDeriv sp d_alpha lieDerivReeb theta p = d_alpha p := by
   unfold qExtDeriv
   rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
 /-- The q-deformed Lie bracket recovers the classical bracket at `q = 1`. -/
-theorem qLieBracket_classical {M : Type*} (sp : SubstrateParameter M)
+theorem qLieBracket_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (bracket_VW thetaV_LxiW thetaW_LxiV : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qLieBracket sp bracket_VW thetaV_LxiW thetaW_LxiV p = bracket_VW p := by
   unfold qLieBracket
   rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
 /-- The q-deformed connection recovers the classical connection at `q = 1`. -/
-theorem qConnection_classical {M : Type*} (sp : SubstrateParameter M)
+theorem qConnection_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (connA iotaXiA theta : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qConnection sp connA iotaXiA theta p = connA p := by
   unfold qConnection

@@ -92,7 +92,7 @@ structure QHodgeStar (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **q-Weighted Yang–Mills–Levi functional**.
     LaTeX: `\label{def:q-yang-mills-levi}` -/
 structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M) where
+    (sp : ArchimedeanSubstrateField cqou.M) where
   /-- The integrand `q(p) · ‖F_A⁺|_H‖²(p)` at each point. -/
   integrand : cqou.M → ℝ
   /-- The total action value `S_q[A, θ]`. -/

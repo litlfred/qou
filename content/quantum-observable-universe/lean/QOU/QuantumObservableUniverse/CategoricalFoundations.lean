@@ -125,7 +125,7 @@ end FrobeniusHopfData
     category, `A` is a Frobenius–Hopf object in `C`, and `ω` is a fibre
     functor.  The deformation parameter `q` is not part of the base
     definition; it enters via the substrate parameter
-    (Definition 1.x, `SubstrateParameter`).
+    (Definition 1.x, `ArchimedeanSubstrateField`).
 
     **Rigidity is deliberately absent here.**  A quantum universe is
     braided but need not have duals; duals are imposed one level up, on
