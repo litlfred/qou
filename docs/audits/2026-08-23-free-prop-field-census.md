@@ -94,9 +94,44 @@ antecedent (`impl : P → X`); both survive `P := True`. The antecedent case is
 its own weaker defect — the *conditionality* is fake while the consequents may
 still carry content — hence `UNPINNED-FAKE-IF` as a separate bucket.
 
-### Verified, not asserted
+### Verified against the real modules — `IwahoriHeckeAlgebra` admits σ ≡ 0
 
-The triviality claim is compiled, not argued
+Strengthened 2026-08-23, after the first probe below was noted as one step
+removed from its subject. The carriers here are **imported, not restated**, so
+no transcription can flatter them
+([`2026-08-23-free-prop-real-module-probe.lean`](2026-08-23-free-prop-real-module-probe.lean),
+`lean` exit 0, 0 errors):
+
+```lean
+instance degenerate : QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra ℤ 3 (1 : ℤ) where
+  carrier := ℤ
+  …
+  sigma := fun _ => 0          -- every braid generator is 0
+  hecke_relation := True ;  hecke_holds := trivial
+  braid_relation := True ;  braid_holds := trivial
+  far_commute   := True ;  far_commute_holds := trivial
+```
+
+**This type-checks.** A structure in which every braid generator is `0` is an
+`IwahoriHeckeAlgebra` — the class does not encode the Hecke presentation, it
+names three propositions and asserts them.
+
+The witness genuinely violates the intended relation, not merely an unstated
+one: at `q = 1` over `ℤ`, `q − q⁻¹ = 0`, so `σᵢ² = (q − q⁻¹)σᵢ + 1` reads
+`σᵢ² = 1`; with `σᵢ = 0` that is `0 = 1`. So this is not a vacuous
+"nothing was stated so nothing is violated" — the intended axiom is false of
+the inhabitant, and the class admits it anyway.
+
+This is AGENTS.md §7a's central algebraic object: *"The Hecke algebra generator
+is `σᵢ` … `(σᵢ − q)(σᵢ + q⁻¹) = 0`"*. **Scope, again**: that relation holds — the
+manuscript states it and the compute engine uses it. What is measured here is
+only that **this Lean class does not carry it**, so a downstream
+`[IwahoriHeckeAlgebra …] → P` reads as conditional while being unconditional
+(also compiled, in the same probe).
+
+### Also verified: the reproduction probe
+
+The original triviality claim is likewise compiled, not argued
 ([`2026-08-23-free-prop-field-triviality-probe.lean`](2026-08-23-free-prop-field-triviality-probe.lean),
 `lean` exit 0, 0 errors). Carriers reproduced verbatim from their sources:
 
