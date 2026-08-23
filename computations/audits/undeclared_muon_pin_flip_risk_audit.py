@@ -105,10 +105,34 @@ from qou_substrate.witness import WitnessBuilder, _q0_value_for_anchor  # noqa: 
 
 _T0 = time.monotonic()
 
-#: Ratchet. The set should DRAIN as producers get manifest entries; it must
-#: never grow silently. Growth means a new witness landed asserting a pin its
-#: producer cannot reproduce.
-BASELINE = 49
+#: Ratchet. The set should DRAIN as producers are dispositioned; it must never
+#: grow silently. Growth means a new witness landed asserting a pin its producer
+#: cannot reproduce.
+#:
+#: RATCHET DOWN WITH THE DRAIN. Leaving this at a stale high number is slack the
+#: gate will not notice being taken up again -- baselines drain, never grow.
+#: 49 -> 47 -> 40 on 2026-08-22 (bean qou-o922): first the two class-(ii)
+#: producers dispositioned as `independent`, then seven more.
+BASELINE = 40
+
+
+def ratchet_fires(count: int, baseline: int) -> bool:
+    """The ratchet's ONE predicate. ``main()`` and ``_self_test()`` must both
+    call this -- that shared call is the whole point.
+
+    Previously each spelled the comparison out separately, and the self-test
+    spelled it against literals: ``fires = n > (n - 1)``, ``holds = not (n > n)``.
+    Both are tautologies for every ``int``, so ``--self-test`` returned 0
+    unconditionally and could not report failure. It printed the numbers while
+    never touching the predicate it claimed to test; flipping ``>`` to ``>=``
+    in ``main()`` would not have moved it.
+
+    Routed through here, a flipped operator is caught: ``>=`` breaks the
+    ``holds`` leg (``not (n >= n)`` is False) and ``<`` breaks the ``fires``
+    leg. The test can now fail, which is the only property that made it worth
+    having.
+    """
+    return count > baseline
 
 _MATCH = 14  # same discrimination width the anchor audit uses
 
@@ -250,11 +274,43 @@ def scan() -> dict:
             "at_risk": at_risk, "exempted": exempted}
 
 
+def _self_test() -> int:
+    """Prove the ratchet fires, WITHOUT writing a witness.
+
+    Exists because the obvious way to check a ratchet -- monkeypatch BASELINE
+    and call ``main()`` -- has a side effect: ``main()`` SAVES. Doing exactly
+    that left the self-test's own forced-failure output on disk
+    (``baseline: 39``, ``allPassed: false``) and it was committed, so the
+    artifact contradicted its own producer, which says ``BASELINE = 40``, and
+    reported the gate red. A proxy -- the residue a test left behind --
+    mistaken for the measurement.
+
+    This path scans, compares, and returns. It never constructs a
+    ``WitnessBuilder``, so it cannot leave anything behind.
+    """
+    n = len(scan()["at_risk"])
+    fires = ratchet_fires(n, n - 1)   # the REAL predicate, at baseline n-1
+    holds = not ratchet_fires(n, n)   # and at baseline n
+    ok = fires and holds
+    print(f"self-test: live count {n}")
+    print(f"  ratchet FIRES at baseline {n - 1}: {fires}  (expect True)")
+    print(f"  ratchet HOLDS at baseline {n}:     {holds}  (expect True)")
+    agree = "" if BASELINE == n else f"  <-- DISAGREES with live count {n}"
+    print(f"  BASELINE in source: {BASELINE}{agree}")
+    print("  no witness written")
+    return 0 if ok else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if the at-risk count exceeds the baseline")
+    ap.add_argument("--self-test", action="store_true",
+                    help="prove the ratchet FIRES, without writing anything")
     args = ap.parse_args(argv)
+
+    if args.self_test:
+        return _self_test()
 
     r = scan()
     n = len(r["at_risk"])
@@ -272,7 +328,7 @@ def main(argv: list[str] | None = None) -> int:
     if n > 20:
         print(f"    ... and {n - 20} more (all listed in the witness)")
 
-    grew = n > BASELINE
+    grew = ratchet_fires(n, BASELINE)
     assertions = [
         {"name": "1_at_risk_set_has_not_grown",
          "passed": not grew,

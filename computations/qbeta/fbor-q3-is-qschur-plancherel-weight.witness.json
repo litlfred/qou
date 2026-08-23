@@ -1,0 +1,138 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-19T13:59:15.385042+00:00",
+  "commitSha": "c86d838636412bddbce45ec0e6301f49d08fecdf",
+  "assertions": [
+    {
+      "name": "wenzl_weights_reproduce_the_lean_trM",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qschur_weights_do_not_reproduce_the_lean_trM",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "wenzl_weights_are_trace_normalised",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "qschur_weights_are_not_trace_normalised",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "current_factor_equals_one_over_qschur_trivial_weight",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "current_factor_differs_from_one_over_wenzl_trivial_weight",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "wenzl_standard_block_weight_is_inverse_two_bracket_squared",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "wenzl_sign_block_weight_vanishes_in_convention_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "fbor-q3-is-qschur-plancherel-weight",
+  "scriptFile": "fbor_q3_is_qschur_plancherel_weight_probe.py",
+  "scriptHash": "6de10d3fadac",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Identifies the provenance of F_Bor's /q^3: it is 1/y_(3) for the q-SCHUR Plancherel weight y_lam = q^{c(lam)}/[n]_q!, whose exponent at lam = (3) is the content sum 0+1+2 = 3. Measures that this is a DIFFERENT weight family from the Wenzl/Markov weights that actually decompose the tr_M appearing in F_Bor: the Wenzl weights reproduce the Lean closed form and are trace-normalised, the q-Schur ones do neither.",
+  "auditOnly": "docs/audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md",
+  "parameters": {
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_pin": "proton (m_p/m_e)",
+    "markov_convention": "D  (z = q^3/(q^2+1))"
+  },
+  "data": {
+    "reconstruction": {
+      "tr_M_lean_closed_form": "0.998562163836787265951213135147",
+      "sum_y_wenzl_chi": "0.998562163836787265951213135147",
+      "sum_y_qschur_chi": "0.668722872727012156307985103967",
+      "wenzl_abs_residual": "1.811135816e-71",
+      "qschur_abs_residual": "0.3298392911"
+    },
+    "trace_normalisation_sum_dim_times_y": {
+      "wenzl": "1.0",
+      "qschur": "0.66967281337086841548702973115",
+      "note": "must be 1: it is tr_M(identity), the Markov normalisation"
+    },
+    "the_factor": {
+      "current_[3]_q!_over_q3": "4.47557387774006744602869060636",
+      "one_over_y_qschur_(3)": "4.47557387774006744602869060636",
+      "one_over_y_wenzl_(3)": "1.9786142409559419401386848895",
+      "one_over_y_wenzl_(2,1)": "4.04370620853252198940201933568",
+      "two_bracket_squared": "4.04370620853252198940201933568",
+      "content_sum_of_(3)": 3
+    },
+    "options": [
+      {
+        "option": "writhe rule (w = 0)",
+        "N": "1.0",
+        "source": "corpus markov-axioms-primitive",
+        "m_p_MeV": "204.880969283763"
+      },
+      {
+        "option": "1/y^Wenzl_(3)  trivial block",
+        "N": "1.9786142409559419401",
+        "source": "y-lambda-wenzl-witness",
+        "m_p_MeV": "411.381253728816"
+      },
+      {
+        "option": "1/y^Wenzl_(2,1) = [2]_q^2  (TL delta^(n-1))",
+        "N": "4.0437062085325219894",
+        "source": "Wenzl == TL",
+        "m_p_MeV": "847.142415648139"
+      },
+      {
+        "option": "[3]_q!  no division",
+        "N": "6.1205792779150634615",
+        "source": "Poincare / dimension",
+        "m_p_MeV": "1285.38954269263"
+      },
+      {
+        "option": "1/y^Schur_(3) = [3]_q!/q^3  CURRENT",
+        "N": "4.475573877740067446",
+        "source": "q-Schur Plancherel",
+        "m_p_MeV": "938.272089427324"
+      }
+    ]
+  }
+}

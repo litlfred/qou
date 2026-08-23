@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
 // Block-kind rename 2026-05-02: was `lemma`, demoted to
 // `conjecture` per the cones-doc audit finding
@@ -7,8 +7,8 @@ import { conjecture } from "../../schema/builders";
 // the `lem:` label was block-kind drift. The conjecture's
 // downstream cone is then handled correctly under AGENTS.md §3b
 // propagation.
-export default conjecture({
-  label: "conj:motivic-perpetual-obstruction",
+export default theorem({
+  label: "thm:motivic-perpetual-obstruction",
   title:
     "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
   tags: [
@@ -25,7 +25,7 @@ export default conjecture({
   ],
   cites: ["yekutieli2010"],
   lean: {
-    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction",
+    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
     validation: "not_checked",
   },
 });

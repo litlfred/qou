@@ -601,9 +601,17 @@ def main() -> int:
              # else. A non-default root's backlog belongs to whoever gated it,
              # and stamping every root with #4677 would send the next agent to
              # an arc that never touched these files.
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it.
+             # Do NOT name a bean here — this string is written for EVERY
+             # root, so a hardcoded id sends the next agent to the wrong arc
+             # (it said qou-irzg, the audits-tree bean, while writing the
+             # qou-mass baseline). The owning bean is recorded beside the
+             # gate entry in scripts/precision-gates.sh, which is per-root.
              "drain_owner": ("PR #4677 (float64 residual, producer-side)"
                              if scan_root is None else
-                             f"whoever gated {args.scan_root} — see bean qou-irzg"),
+                             f"whoever gated {args.scan_root} — see the gate "
+                             f"entry in scripts/precision-gates.sh"),
              "files_count": len(found),
              "fields_count": total,
              "files": dict(sorted(found.items()))}, indent=2) + "\n")

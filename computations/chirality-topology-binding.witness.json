@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:22:38.720195+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T16:24:28.874395+00:00",
+  "commitSha": "1edde3a7b35b87ec23915ed96c120bc8f62f1aba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 123,
+  "durationMs": 296,
   "computation": "chirality-topology-binding",
   "scriptFile": "chirality_topology_binding_probe.py",
-  "scriptHash": "052d6feb9ad6",
+  "scriptHash": "f5d695903e71",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -120,6 +120,6 @@
   },
   "he4_alpha_cluster_residual_MeV": 12.733856229958173,
   "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. PROVED by running this producerunder QOU_Q0_ANCHOR=muon and =proton and diffing the emittedwitness: the only non-ephemeral leaves that differ areq0Anchor and q0Value THEMSELVES -- every substantive field isbyte-identical, so the pin changes the label and nothing else.Its previous `muon` label was therefore a false claim thatthis producer computed at that anchor. `independent` is thehonest disposition; a q0_anchor_manifest entry would be theWRONG fix, promoting a false claim into a declared one. Beanqou-o922, class (ii)."
 }

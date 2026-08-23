@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-21T22:58:10Z
+updated_at: 2026-08-22T20:40:40Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -210,3 +210,211 @@ adjudicated rather than trusted.
 Budget it as hand work, not a sweep. The audit script remains the right
 artifact: it holds the register and ratchets it, and makes no claim about which
 class an entry is in.
+
+
+## DRAIN STARTED 2026-08-22 — 49 -> 47 (PR #5457)
+
+Two class-(ii) producers dispositioned `independent`:
+`fitted_labelled_canonical_audit`, `compute_audit_scan`.
+
+**The disposition is the OPPOSITE of this bean's blanket rule, and that is the
+point.** "Declare the manifest entry FIRST, then re-run" is right for class (i);
+for class (ii) a manifest entry would promote a FALSE claim into a declared one.
+The honest label is `independent` + reason.
+
+**Proved empirically, superseding the AST method.** Static "zero q0 identifiers
+as code" is necessary but not sufficient — a module alias defeats it (that is
+how `aoa.q0_mp(dps)` slipped past). The decisive test: run under BOTH anchors
+and diff. For both producers the ONLY differing non-ephemeral leaves are
+`q0Anchor` and `q0Value` themselves; every substantive field is byte-identical.
+Use this test for the remaining 47, not the AST heuristic.
+
+**A library bug was in the way, found by the first step.** `save()` carried the
+old muon `q0Value` forward onto the new `independent` label — manufacturing the
+exact Q0_FLIP contradiction the declaration exists to avoid. Corpus blast radius
+0 today, but it would have fired on EVERY subsequent class-(ii) disposition.
+Fixed in the same PR.
+
+**Gap between the two audits, recorded.** Both these witnesses end in a suffix
+`q0_anchor_consistency_audit` exempts (`-audit.`, `-scan.`), so its flip check
+never ran on them — `Q0_FLIP` read 0 while two live contradictions sat on disk.
+The risk register scans them; the anchor audit does not. Not reconciled here.
+
+**Ratchet lowered 49 -> 47.** Baselines drain, never grow — a stale-high
+baseline is slack the gate will not notice being taken back up. Re-verified it
+still fires at 46.
+
+## The three NOT dispositioned, each a different case
+
+  derivation_chain_validator          EXITS 2 under the proton anchor — it DOES
+                                      depend on the pin, indirectly. Not (ii).
+  habiro_interpolate_cross_validator  byte-identical INCLUDING q0Anchor, so it
+                                      is already declared. Different state.
+  qbeta_fsc_g_pattern_comparison      witness not resolvable from its emit site.
+
+## Remaining: 47
+
+Still needs per-producer reads; the sort is not automatable (the two available
+rules fail in opposite directions, recorded above). But the both-anchor diff
+above is a much better per-producer TEST than anything tried so far — it decides
+class (ii) membership definitively in one run, without reading the source.
+
+
+## 2026-08-22 (cont.) — 47 -> 40, and the method I recorded above is WRONG
+
+**RETRACT the both-anchor diff test recorded in the previous entry.** I called it
+"the reusable part" and "definitive in one run". It is confounded and it nearly
+landed eight false dispositions.
+
+**Why.** The LABEL always tracks QOU_Q0_ANCHOR, because the builder reads the
+env var. The PAYLOAD only tracks it if the producer reaches q0 by a route that
+env var actually controls. So a "label-only" diff conflates
+
+    (a) the producer does not depend on the pin       <- class (ii)
+    (b) the producer does not respond to the ENV VAR  <- says nothing at all
+
+Run over all 47 it returned 16 members. Eight of them changed SUBSTANTIVELY on a
+plain re-run — alpha_q0 / alpha_eff_q0 / Q_N2_q0_MeV, z_q0, the Frobenius Gram
+eigenvalues, z_markov. Physics. Those producers DO depend on the pin.
+
+**THE CORRECT TEST:** run with NO env var — the default invocation, which is what
+any future re-run does — and diff against the COMMITTED witness. Class (ii) iff
+nothing but the label fields move. This compares the real before/after instead of
+two artificial states, and it is what caught the confound.
+
+Seven survive and are dispositioned `independent` (PR #5457):
+chirality_topology_binding_probe, probe_he4_magic_baryeven_prune,
+lambda_scale_substrate_probe, qbeta_c3_rung_structure_analysis,
+qbeta_habiro_f_from_shape_collapse, qbeta_rung1_div25_framing_squared_test,
+z2bn_tau_derivation_probe.
+
+**Also retract:** lever1_binding_core_characterization is NOT class (ii) — its
+bare re-run moves computationDetail and the upstream witness hashes. Its partner
+lever1_binding_habiro_single_element_test remains a genuine flip. Still two
+different cases, just not the two I assigned them.
+
+Ratchet 47 -> 40, re-verified firing at 39.
+
+## Running tally of method errors on this bean — five now
+
+  1. blob-search over the witness JSON            over-counted 185 vs 49
+  2. file-local grep for q0 identifiers            under-counted (module alias)
+  3. one-hop AST                                   over-counted (import != use)
+  4. AST "zero q0 identifiers as code"             necessary, not sufficient
+  5. both-anchor env-var diff                      confounded (label vs payload)
+
+Every one failed in a DIFFERENT direction, and each was caught only by measuring
+the thing itself rather than a proxy for it. That is the standing lesson for the
+remaining 40: the only trustworthy test touches the real committed state under
+the real default invocation. Budget accordingly -- it is one re-run per producer,
+not a static scan.
+
+
+## 2026-08-22 (cont.) — the drain's CHEAP PHASE IS OVER at 40
+
+Ran the corrected test (bare re-run, baseline from `git show HEAD:`) across all
+40 remaining. Result:
+
+    class (ii) label-only    1     <- and it is an AUDIT, freshness-confounded
+    depends on the pin      19
+    slow (>240s)             2
+    unresolved              14     <- witness not resolvable from emit site
+    error                    4
+
+**Essentially no more cheap wins.** The 19 that depend are genuine: their diffs
+land in `/data/proton_anchor/...` and `/data/muon_anchor/...` — producers that
+compute at both anchors on purpose and whose payload really does vary.
+
+**A SEVENTH confound, in the test I adopted as correct.** Bare-re-run-vs-committed
+cannot separate "depends on the pin" from "depends on anything else that drifted
+since the witness was committed". Corpus SCANNERS (compute_audit_scan,
+q0_anchor_consistency_audit) enumerate tree state, so 200+ commits of main make
+them differ for reasons that have nothing to do with q0. It errs CONSERVATIVE —
+over-reporting `depends`, under-claiming class (ii) — which is the safe
+direction, but it is not a verdict.
+
+So both tests are confounded, in opposite directions:
+
+    both-anchor env diff        isolates the anchor; blind when the producer
+                                gets q0 by a route the env var cannot reach
+    bare re-run vs committed    real before/after; blind to WHY it changed
+
+Neither is sound alone, which is the measured backing for "not automatable".
+
+## The 14 `unresolved` are a TOOLING gap, not producer defects
+
+My AST heuristic looks for a `wrap_legacy`/`WitnessBuilder` call with a literal
+first arg. These 14 build the name some other way. Resolving them needs the
+emit-site mapping, and that is worth building before any further drain — it is
+35 % of what remains and currently invisible to every sweep.
+
+## Recommended next step, and it is NOT more sweeping
+
+Stop trying to classify by re-running. Build the producer -> witness emit-site
+map first (fixes the 14), then read the 19 `depends` individually to separate
+"computes at the pin" (class i, needs a manifest entry) from "reads a muon
+witness for its q0" (label is TRUE, remove from the register entirely). The
+second category is invisible to both tests and may be a large share of the 19.
+
+
+## 2026-08-22 (final) — the drain stalls for a REASON, and it is a bigger finding
+
+Recovered the 14 the AST heuristic lost -- **the register already carried the
+mapping** (`{witness, producer_stem}`) in the data my sweep was reading. I
+rebuilt it badly instead of using it. EIGHTH error, and the most avoidable.
+(Checked: the heuristic never mis-resolved, only ever failed silently, so the
+26 classifications stand.)
+
+Those 14 yielded 5 more "class (ii) label-only" -- so the "cheap phase is over"
+call was premature, taken from a sweep that had silently dropped 35 % of the
+population.
+
+**But all 5 read q0 BY NAME, and none is class (ii).** Two signals disagreeing
+is what exposed the real category:
+
+    qbeta_composite4_fibre_root_of_unity_probe  Q0_STR = "1.10997859555733471989…"
+    trefoil_complex_volume_probe                Q0 = Decimal("1.1099785955573347")
+
+They HARDCODE the pin. So they do not respond to the anchor, their `muon` label
+is TRUE, and dispositioning them `independent` would replace a true label with
+a false one. **19 of the 40 are like this.**
+
+### The register's premise is wrong for ~half its members
+
+It flags producers that would "resolve PROTON on re-run". A producer whose q0
+is a literal never resolves. Those 19 are not at risk of that flip at all --
+they need neither `independent` nor a manifest entry; they need to LEAVE the
+register, and the register needs to stop claiming them.
+
+### The corpus-wide finding (now its own audit + ratchet)
+
+`computations/audits/hardcoded_q0_literal_families_audit.py`:
+
+    clean (truncated or correctly rounded)   221 sites, lengths 14..70
+    DIVERGENT                                 71 sites
+      char 13   65   the `…5541805…` CODATA-stale family
+      char 18/19/20  6
+
+Precision on the CLEAN sites alone spans 56 characters for one constant.
+
+**NINTH error, caught before it shipped:** my first pass called 75 correctly-
+ROUNDED sites divergent -- it would have reported the corpus's largest correct
+family as defective. Rounding is not divergence.
+
+**And the count is SITES, not defects** -- not yet split code-that-computes vs
+documentation. The predecessor CODATA sweep made that exact mistake and had to
+correct itself ("wrong for 87 % of its own count"). Do not quote 65 as defects.
+
+## Where this leaves the drain
+
+Not "40 producers to disposition". Three separate problems:
+
+  1. ~19 hardcode the pin -> the REGISTER's filter is wrong for them; fix the
+     filter, do not relabel the producers.
+  2. ~19 genuinely depend -> real class (i), still need per-producer reads.
+  3. 71 divergent literals corpus-wide -> a migration to READING the pin, which
+     is the CODATA sweep's lesson one layer down and much larger than this bean.
+
+(3) should not ride on this bean. It wants its own arc, and it is gated on
+A-vs-C (bean qou-bred) since you cannot migrate sites to read a pin before
+ruling which pin.

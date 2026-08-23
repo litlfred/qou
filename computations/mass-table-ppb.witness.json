@@ -1,15 +1,15 @@
 {
   "engine": "python+snappy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T21:21:57.161289+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "computedAt": "2026-08-23T13:07:09.714211+00:00",
+  "commitSha": "6a5a5660675bbe5b19240de78af6e2450d99b355",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "mass-table-ppb",
   "scriptFile": "mass_table_ppb.py",
-  "scriptHash": "bde10a73b298",
-  "scriptCommitSha": "bbb18e6ff3fb3b6447c87e019e853850ee76383a",
+  "scriptHash": "76d3d87e2ef8",
+  "scriptCommitSha": "5822016e790d07408ab22b9db038867eb4d1ae19",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_table_ppb.py"
+    ],
+    "reproduce": "python3 -u computations/mass_table_ppb.py"
   },
   "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ {m_e, 2m_e}; atom→knot assignments from framework rules (magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or census search (flagged 'hyp: census-assigned'). NO AME-derived calibrations or fits.",
   "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
@@ -41,17 +49,17 @@
         "N": 1,
         "A": 2,
         "B_AME_MeV": "2.2245662",
-        "B_pred_MeV": "2.2488207979013089793867766275070607662200927734375",
-        "B_pred_kashaev_only_MeV": "2.2488207979013089793867766275070607662200927734375",
+        "B_pred_MeV": "2.248820797901309064762950472072885969683365709650846996451385",
+        "B_pred_kashaev_only_MeV": "2.248820797901309064762950472072885969683365709650846996451385",
         "epsilon_shell_MeV": null,
-        "err_MeV": "0.02425459790130897938677662750706076622009277343749999999999999999999999",
-        "err_pct": "1.090306860785216433962568859810095389388401812339862036922074964548144",
-        "err_ppb": "10903068.60785216433962568859810095389388401812339862036922074964548144",
+        "err_MeV": "0.024254597901309064762950472072885969683365709650846996451385",
+        "err_pct": "1.090306860785220271842234772464221099977411760137639259797483212682095",
+        "err_ppb": "10903068.60785220271842234772464221099977411760137639259797483212682095",
         "formula": "1·m_e · Vol(6_2)",
         "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)",
         "inputs": {
           "knot": "6_2",
-          "Vol": 4.400832516123046,
+          "Vol": "4.4008325161230461014412038656409280339834854185165",
           "nu_sdp": 1
         }
       },
@@ -61,17 +69,17 @@
         "N": 2,
         "A": 3,
         "B_AME_MeV": "8.4817962",
-        "B_pred_MeV": "8.46859839796813821730813259591741370968520641326904296875",
-        "B_pred_kashaev_only_MeV": "8.46859839796813821730813259591741370968520641326904296875",
+        "B_pred_MeV": "8.468598397968137439766862761578",
+        "B_pred_kashaev_only_MeV": "8.468598397968137439766862761578",
         "epsilon_shell_MeV": null,
-        "err_MeV": "-0.01319780203186178269186740408258629031479358673095703124999999999999995",
-        "err_pct": "-0.1556014990299081071043348587246919504478731371894673825103225187136652",
-        "err_ppb": "-1556014.990299081071043348587246919504478731371894673825103225187136652",
+        "err_MeV": "-0.01319780203186256023313723842199999999999999999999999999999999999999988",
+        "err_pct": "-0.1556014990299172742813277973125550929884403494627706334184261583648978",
+        "err_ppb": "-1556014.990299172742813277973125550929884403494627706334184261583648978",
         "formula": "2·m_e · Vol(8_11)",
         "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)",
         "inputs": {
           "knot": "8_11",
-          "Vol": 8.286316817806593,
+          "Vol": "8.2863168178065925881",
           "nu_sdp": 2
         }
       },
@@ -125,8 +133,8 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet",
         "inputs": {
@@ -146,8 +154,8 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet",
         "inputs": {
@@ -188,14 +196,14 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: odd-A, Borromean halo — needs composite rule",
         "inputs": {
-          "B_AME_MeV_target": 58.165,
-          "vol_kashaev_target_m_e_units": "113.826065438020986139236169960440857426315038968460939326317503910411",
-          "vol_kashaev_target_2m_e_units": "56.91303271901049306961808498022042871315751948423046966315875195520551",
+          "B_AME_MeV_target": "58.1640237",
+          "vol_kashaev_target_m_e_units": "113.82415486658305881461730873989869640528595896401095993412987961218",
+          "vol_kashaev_target_2m_e_units": "56.91207743329152940730865436994934820264297948200547996706493980609",
           "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
@@ -209,14 +217,14 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: odd-A, p-shell — needs composite rule",
         "inputs": {
-          "B_AME_MeV_target": 76.206,
-          "vol_kashaev_target_m_e_units": "149.1314216929395297219619394041398025855050624927928068736207055947996",
-          "vol_kashaev_target_2m_e_units": "74.56571084646976486098096970206990129275253124639640343681035279739979",
+          "B_AME_MeV_target": "76.20505529999999",
+          "vol_kashaev_target_m_e_units": "149.1295729611588921206205305055359388726340869739213358226945051107068",
+          "vol_kashaev_target_2m_e_units": "74.56478648057944606031026525276796943631704348696066791134725255535338",
           "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
@@ -251,14 +259,14 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: odd-A, N=Z mirror — needs composite rule",
         "inputs": {
-          "B_AME_MeV_target": 104.659,
-          "vol_kashaev_target_m_e_units": "204.8125536435629545057655414686690698165859849399997209219318211199202",
-          "vol_kashaev_target_2m_e_units": "102.4062768217814772528827707343345349082929924699998604609659105599601",
+          "B_AME_MeV_target": "104.6586072",
+          "vol_kashaev_target_m_e_units": "204.8117849531390786269404971329413827137422609723911172988714146355462",
+          "vol_kashaev_target_2m_e_units": "102.4058924765695393134702485664706913568711304861955586494357073177731",
           "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
@@ -293,14 +301,14 @@
         "B_pred_kashaev_only_MeV": null,
         "epsilon_shell_MeV": null,
         "err_MeV": null,
-        "err_pct": 0.0,
-        "err_ppb": 0.0,
+        "err_pct": null,
+        "err_ppb": null,
         "formula": "GAP — no atom→knot rule",
         "origin": "GAP: odd-A, sd-shell onset — needs composite rule",
         "inputs": {
-          "B_AME_MeV_target": 147.801,
-          "vol_kashaev_target_m_e_units": "289.2393414906720299391179285348383151431802722905900533053793226371371",
-          "vol_kashaev_target_2m_e_units": "144.6196707453360149695589642674191575715901361452950266526896613185685",
+          "B_AME_MeV_target": "147.80136479999998",
+          "vol_kashaev_target_m_e_units": "289.2400553864628132471517971993196070803461946733180678265787692903491",
+          "vol_kashaev_target_2m_e_units": "144.6200276932314066235758985996598035401730973366590339132893846451746",
           "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
@@ -370,13 +378,13 @@
     ],
     "atoms_no_assignment": [],
     "within": {
-      "1": 6,
-      "1000.0": 6,
-      "1000000.0": 6,
-      "1000000000.0": 16
+      "1": 0,
+      "1000.0": 0,
+      "1000000.0": 0,
+      "1000000000.0": 10
     },
-    "mean_abs_pct": "4.249732880179781011215063134152579700508898038275684479890510625185106",
-    "mean_abs_ppb": "42497328.80179781011215063134152579700508898038275684479890510625185106"
+    "mean_abs_pct": "6.799572608287650918449766899768326406127194577248203215203168189074688",
+    "mean_abs_ppb": "67995726.08287650918449766899768326406127194577248203215203168189074688"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

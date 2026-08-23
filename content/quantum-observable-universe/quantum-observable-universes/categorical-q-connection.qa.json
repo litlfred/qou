@@ -1009,8 +1009,23 @@
         "reviewed_at": "2026-07-07T14:26:55.855704Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-q-connection.lean:1 — Lean file exists",
+        "evidence": "categorical-q-connection.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.md."
+      },
+      {
+        "field_hash": {
+          "md": "b733fd88656f",
+          "ts": "a2a0260f41dd",
+          "lean": "3b495e6dfd96"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'categorical-q-connection.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1414,7 +1429,7 @@
         "reviewed_at": "2026-07-07T14:26:55.855704Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-q-connection.lean:1 — content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "categorical-q-connection.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean:28:13: error: unexpected token 'section'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.lean fails compilation, indicating a reproducibility failure."
       },
       {

@@ -1,9 +1,31 @@
-from mpmath import mp
-import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+"""Q_beta Form-A shape probe, evaluated at the muon (ideal CAL-2) anchor.
 
+The anchor is READ, not retyped. It used to be the 50-char literal
+
+    1.1099785955573347596001309852899479366668383822292
+
+which is not the muon pin, not the proton pin, and not the CODATA-2018
+derivation either: it tracks the muon anchor for 17 digits and then goes its
+own way from the 18th. No pin in the corpus produces it, so it was a
+transcription slip that nothing could ever detect, because a transcribed
+constant is exactly the thing the anchor machinery cannot re-pin or flip.
+"""
+import sys
+from pathlib import Path
+
+sys.path[:0] = [str(Path(__file__).resolve().parent),
+                str(Path(__file__).resolve().parent / "substrate")]
+import _path_bridge  # noqa: F401,E402
+
+from mpmath import mp  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]
+                       / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
+
+from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-q0 = mp.mpf('1.1099785955573347596001309852899479366668383822292')
+q0 = mp.mpf(_q0_value_for_anchor("muon"))
 m_e = mp.mpf('0.51099895000')
 Q_beta_codata = mp.mpf('0.78233341000')
 

@@ -330,7 +330,7 @@ witness) · `conditional` (Lean implication; hypothesis named, NOT established)
 | KC18 | **archimedean evaluation map bar-decomposition**: the counit `ε`/Markov trace `tr_M` on the nucleon NF diff splits EXACTLY into a bar-even identity term `h²/2` (shadow) + a bar-odd crossing/loop term (`−h` / `−h·z`; the odd channel), since `h=q−q⁻¹` is bar-odd and `z` bar-even (KC13). Realizes the standing reading on the actual map; `D(q)` (KC15) feeds the observable via the Markov crossing term | proved-lean (`epsNP_decomp`, `trMNP_bar_image`) | mixed / — | PR (eval-map); [decomposition audit](../audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md) |
 | KC19 | evaluation map `E(w) = h²/2 − h·w` is **affine** in the crossing weight (`∂E/∂w = −h`) ⇒ ladder factor `L(w) = E(w)/E(w₀)` Möbius; bar-**odd** part `= 2h(w−w₀)/(4w₀²−h²)` (**linear** in the departure `(w−w₀)` × the **fixed anchor-free** bar-odd kernel `K(q) = 2h/(4w₀²−h²)`); bar-even part `(4ww₀−h²)/(4w₀²−h²)`. Keystone ⇒ single scalar `(w−w₀)`; `K(q)` anchor-rigid ⇒ c₃ swing lives in `w(q)`. Sharpens KC18 | proved-lean (`CrossingWeightAffine.evalMap_affine` / `ladder_odd_part` / `ladder_even_part`) | mixed / — | PR #3473 ([affine narrowing audit](../audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md)) |
 | KC12 | 4₁ Casoratian ratio `a₀/a₂` bar-invariant (twist 1) | proved-lean (`casoratian_ratio_bar_invariant`) | even / `1` | P-C15 |
-| KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel. **C-scoped (2026-08-15, §9g):** proved for the convention-C `z = √q/(1+q)` (`ZBarParity.lean:59-79`); under convention D `bar(z_D) = q⁻⁴·z_D` **exactly** (not bar-invariant), so the no-scalar-z-source prune does not transfer to D as stated — re-examination under D is open (bean `qou-b3nk`), not a result | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
+| KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel. **C-scoped (2026-08-15, §9g):** proved for the convention-C `z = √q/(1+q)` (`ZBarParity.lean:59-79`); under convention D `bar(z_D) = q⁻⁴·z_D` **exactly** (not bar-invariant), so the no-scalar-z-source prune does not transfer to D as stated — re-examination under D is open (bean `qou-cds1`; `qou-b3nk` closed 2026-08-23), not a result | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
 | KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |
 | KC20 | bar-ODD carrier is **not a root-of-unity object**: `num = (q²−1)·R₁₂` (cyclotomic content exactly `q²−1`; `Φ₄=q²+1 ∤ num`, remainder `−64`), and `R₁₂ = q⁶·C(q²+q⁻²)` with `C(y)=y³−4y²+3y−2` **irreducible** (no rational root among RRT candidates). Degree-3 field ⇒ no quadratic anchor (golden `y=3`, silver `y=6`, q=1 `y=2`) is a root ⇒ real-q/quadratic `c_3` closures structurally excluded. **proved-lean**: the factorisation, `Φ₄ ∤ num`, the trace-cubic reduction, `C = C_Hopf + C_unknot`, and no-rational-root of `C`/`C_Hopf`. **symbolic-exact** (witness, not Lean): the sector attribution (the cubic is the **Hopf (2-crossing)** sector `C_Hopf=y³−6y²+10y−6`; unknot adds `C_unknot=2y²−7y+4`; virtual+trefoil vanish). The discriminants (`C: −152=−2³·19`, `C_Hopf: −76=−2²·19`, shared prime 19) are **Lean-certified since 2026-07-13** (`cubicDisc` + `cubicC_disc`/`cubicC_Hopf_disc`/`disc_shared_prime_19`, generic `CommRing`) | proved-lean (`numOdd_factor`, `numOdd_at_phi4_root`, `R12_eq_cubic_trace`, `cubicC_sector_decomp`, `cubicC_rrt_candidates_all_nonzero`, `cubicC_Hopf_rrt_candidates_all_nonzero`, `cubicC_disc`, `cubicC_Hopf_disc`, `disc_shared_prime_19`) + symbolic-exact (sector attribution) | — / — | PR #3467 ([audit](../audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md); refines [2026-07-04 ζ₄ refutation](../audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md); complements KC19 affine ladder, PR #3473) |
 | KC21 | **the c₃ bar-odd part factors `S = h·D(ũ)`** — `h = q−q⁻¹` the anchor-blind bar-odd carrier, `D(ũ)` a bar-even ℚ(√3) ladder — and the "wall" is a representation artifact: the `dc₃/dq ≈ 4.66×10⁶` hypersensitivity is the `1/u³` ladder inversion over a **smooth** zero (`S′(q*_S) = 2.37×(1/u³)`); the sign-flip is **structural** (bar-odd: with `q = q₀+iε`, `S(−ε) = −S(ε)`, so no real q₀ produces it); the `S=0` point **`q*_S` ≈ 1.10998** (**NOT** KC22's `q*_ρ ≈ 1.48989` — see the glyph note under this table) is **NOT an independent determination of q₀** — it is the root of `c₃ + Vol(4₁)` and so presupposes (H1); the ~~"third, decay-sector determination"~~ reading is **WITHDRAWN 2026-08-15**, see **§9f**; the Φ_b state-integral saddle supplies the `\|S\|` scale from geometry (`Im 𝔙 = 0` at real substrate, volume deficit `0.0094 ≈ \|S(muon)\|`) — but that scale match is **muon-only and anchor-selective**, see the scale caveat below. **Convention note (2026-08-15, §9g):** the ladder behind `S`/`D(ũ)` consumes the convention-C `z` via `α=(z−1)h/2` (`qbeta_ck_sseries_exact_rational.py:20,248`), so the value-level `S`/`q*_S` facts are **C-conditional**; the structural parity statement and the `1/u³` result are convention-immune. **Parity immunity VERIFIED 2026-08-15 (§9h, bean `qou-kc21im`)** — it was *asserted* when added here, and is now measured (re-derived under D: holds to `1e-45` over eight decades of `ε` while the frame moves `c₃` by 470× its own magnitude) and *reduced*: the parity is Schwarz reflection, which reads only that `z` is **real-valued on the real q-axis** and never `z`'s formula, so it is immune to conventions beyond the two registered ones (`alphaPhase_im_odd_of_reflective_markov`, sorry-free, quantified over every reflective `z`). **Two corrections the verification forced.** (i) The statement is about **`Im S`**: the literal full-value reading `S(−ε)=−S(ε)` is **false**, since `Re S` is even and nonzero (`−0.0394593` at the proton pin). (ii) The operative hypothesis is **real coefficients, not bar-oddness** — the bar-**even** `Q_A` has the identical `ε`-parity — so this parity is **NOT evidence that the channel carrying it is bar-odd**, and the row's "bar-odd ⇒ odd in ε" reading of the Lean is superseded by "reflective ⇒ `Im` odd in ε" (`fig8TraceC_conj` is the operative lemma). Complex conjugation is **not** the bar involution `σ: q↦q⁻¹`; nothing here bears on `bar(z_D) = q⁻⁴·z_D` or the `z_C` full-bar-condition failure | proved-lean (`fig8Trace_im_odd`, `fig8Trace_im_real_zero`, `reflective_im_odd`, `alphaPhase_im_odd_of_reflective_markov`, `zD_reflective`) + symbolic-exact (`S = h·D` split, `1/u³` prefactor, Φ_b saddle) | odd / `0` | PRs #3600/#3636/#3654 ([capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md); [1/u³ audit](../audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)) |
@@ -799,6 +799,100 @@ to the paragraph above:
 Neither C nor D is *derived* for the decay channel; the full analysis and the
 two honest settlement routes:
 [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md).
+
+**One branch of the re-derivation is now CLOSED — in every convention, not only
+in C (added 2026-08-23, `qou-cds1`, PR #5536).** `z` reaches the ladder at
+exactly one place, the N=1 eigenphase `α = (z−1)h/2`
+(`QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common`, sorry-free), and
+`QOU.QBeta.EigenphaseCarrier` shows the carrier meant to hold that spectral
+identification is **vacuous** — so `α` is asserted in C and derived in neither
+frame. That file leaves a trichotomy for the transfer matrix: (1) braid image,
+(2) arbitrary — circular, (3) a holonomy of an independently-defined connection
+(KZ / Kohno–Drinfeld). It calls (1) excluded *by transcendence of
+`2cos((z−1)h/2)` over `ℚ(q,z)`* — an **unproved docstring assertion**, scoped
+to C.
+
+Branch (1) is now **proved**, by an elementary boundedness argument instead:
+`QOU.QBeta.BraidImageEigenphase.no_braid_character_C` / `_D`
+([`BraidImageEigenphaseExclusion.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseExclusion.lean),
+sorry-free, axioms `[propext, Classical.choice, Quot.sound]`). A braid word's
+character is a Laurent polynomial and `|2cos α| ≤ 2` always; a Laurent
+polynomial bounded on `(0,∞)` is constant; and `α_C`, `α_D` are both
+non-constant — indeed unbounded, C below (`α_C(s) ≤ −(s−1)/4`) and D above
+(`α_D(s) ≥ s−3`). **The argument never reads `z`'s formula**, so the exclusion
+is a property of the whole class: *re-picking `z` cannot repair the D-frame
+ladder inside the braid picture.* Scope-(b), citing a proved invariant.
+
+Exact companion, 12/12, no float64:
+[`qbeta_braid_image_eigenphase_exclusion_probe.py`](../../computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py)
+— `det ρ(σ_i) = −1` identically in `q`; `tr ρ(w) ∈ ℤ[q,q⁻¹]` over all 1364
+words of length ≤ 5; and the concrete failure: `ρ(σ₁σ₂)` has `det = 1`,
+`tr = −1` **identically in `q`** (eigenphase `2π/3` at every substrate value)
+against `2cos(α_C(q₀)) = 1.99726`. The rational-normalisation escape is closed
+by `det M = 1`, which forces `c = ±1` (`−c² = 1` has no real solution).
+
+**Three limits.** (i) ~~It closes the **character** case … not the
+*eigenvalue-pair* case … that sub-case still needs the transcendence
+argument.~~ **SUPERSEDED 2026-08-23 — the eigenvalue-pair case is now closed
+too, and not by a transcendence argument.** The diagnosis was right (an
+algebraic function *can* be bounded on `(0,∞)` and non-constant, e.g.
+`q/(q+1)` — verified, A1 of the probe below), but boundedness was simply the
+wrong invariant to push. The hypothesis already proved in that file is far
+stronger than boundedness: `α` attains **every** non-positive real on `[1,∞)`,
+so each level set `{s : 2cos α(s) = c}`, `c ∈ [−2,2]`, is **infinite** — and
+infinitely many solutions kill a polynomial relation of **any** degree, Laurent
+or algebraic. `QOU.QBeta.BraidImageEigenphase.coeffs_zero_of_surjective_nonpos`
+([`BraidImageEigenphaseAlgebraic.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BraidImageEigenphaseAlgebraic.lean),
+sorry-free, axioms `[propext, Classical.choice, Quot.sound]`): if
+`∑_{j≤d} p_j(s)·(2cos α s)^j = 0` on `[1,∞)` then **every** `p_j = 0`. Three
+applications of "a polynomial with infinitely many roots is zero" — freeze `Y`
+at `c`, freeze `X` at `x`, then read off coefficients. The subsumption of the
+Laurent statement is **machine-checked, not asserted** (`no_laurent_of_algebraic`
+re-derives the predecessor as the `d = 1` case). Applies to a *sum of two
+eigenvalues* because that is algebraic over `ℝ(s)` — the pairwise-sum resolvent
+has coefficients in the base field, verified exactly at `3×3` and `4×4` (A2). (ii) It excludes a *functional*
+identification on the substrate branch, not a numerical coincidence at `q₀`.
+(iii) The Laurent shape of `tr ρ(w)` is imported from Geck–Pfeiffer as the
+shape of the hypothesis.
+
+**Still open, and unchanged by either pass:** no D-frame ladder is stated, and
+`α` is derived in neither convention. With branch (1) now closed **in full**
+(character *and* eigenvalue-pair) and branch (2) circular, branch (3) — a
+holonomy of an independently-defined KZ / Kohno–Drinfeld connection — is the
+only branch where a derivation of `α` can still live. `c₃ ≈ −974` remains a
+sensitivity measurement, wired nowhere.
+
+> **🛑 CORRECTION 2026-08-23 — "branch (3) is untouched" is FALSE, and this
+> section said it.** The 2026-08-15 pass wrote *"branch (3) is untouched"* and
+> the 2026-08-23 pass repeated it. Both are wrong, and the first was already
+> wrong when written: `.beans/qou-pdix` and
+> [`qbeta_eigenphase_holonomy_consistency_probe.py`](../../computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py)
+> (16 assertions) landed on `main` at **08:11 UTC**, the claim at **09:56 UTC**.
+> Branch (3) carries ~a dozen dated bean entries and **four refuted sub-routes**:
+> `α = c·ln q` (fails at `t³`); `α` as a quarter of `σ₁`'s half-monodromy
+> log-gap (ratio not constant, `iπ` dominates ~15×); unitary holonomy
+> (structurally blocked — `σ₁`'s phase content is `{0, π}`, `q`-independent);
+> modular/`cosh` resummation (required factor `< 1`, `cosh ≥ 1`).
+>
+> **Un-attempted is narrower than "branch 3":** construct a KZ connection on
+> `Conf_n` whose monodromy is the `H₃(q)` braiding on `V_(2,1)` and compute its
+> holonomy angle. Kohno–Drinfeld fixes `ħ = 2 ln q`, so the scale is not free.
+> A gating question sits ahead of it (`qou-pdix`, unresolved): the
+> single-wrap-vs-typed NF ambiguity is **0.579 %** while the factor branch 3
+> must derive is a **0.160 %** correction — 3.6× smaller than the convention
+> ambiguity in the object it corrects.
+>
+> **A tension worth naming.** `α = (z−1)h/2` at `q = 1+t` has `t¹` coefficient
+> `z(1)−1` and `t²` coefficient `1/4 + z′(1)` (re-verified independently). So
+> `α` is holonomy-shaped through `t²` exactly when `z′(1) = 0` — **true for
+> `z_C` (`1/4`), false for `z_D` (`5/4`)**. An independent structural signal
+> pointing at C, alongside a field-membership argument excluding C. The two are
+> about different things (`q → 1` jet vs membership in `ℚ(q)`) and do not
+> contradict, but branch 3 has to face both.
+
+Exact companion to the 2026-08-23 pass, 4/4, sympy-exact over `ℚ(s)` plus
+mpmath at 60 dps, no float64:
+[`qbeta_eigenphase_algebraic_exclusion_probe.py`](../../computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py).
 
 ### 9h. The KC21 parity immunity is VERIFIED — and its stated mechanism was wrong (added 2026-08-15, `qou-kc21im`)
 

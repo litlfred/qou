@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T13:00:03.276094+00:00",
-  "commitSha": "bd7c371beb6324270a45b494aca276e5d3e0eb58",
+  "computedAt": "2026-08-23T08:34:00.314875+00:00",
+  "commitSha": "0d757116bd4fcf43b442bbde1022907394d89f3d",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "49 at risk vs baseline 49. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
+      "detail": "40 at risk vs baseline 40. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
     },
     {
       "name": "2_no_unlabelled_muon_q0value",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 818,
+  "durationMs": 654,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "502710ffc188",
-  "scriptCommitSha": "87add43d70883c8d249c7965f65f985fcabd4851",
+  "scriptHash": "c97056e5cad0",
+  "scriptCommitSha": "f634ecca3aa86d044cedcd06fe7d7fe22ed6e0ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -54,10 +55,10 @@
   "q0AnchorReason": "Reads no substrate value as an input. It compares recorded q0Value STRINGS against the canonical muon pin for classification only, and computes nothing from them, so no pin is used and none is recorded.",
   "scope": "scope-(a) RISK REGISTER, not a defect list. Nothing here is incorrect on disk; it enumerates producers whose next re-run would silently flip. Fixing means declaring each producer's intended pin in the manifest BEFORE re-running — re-running first destroys the evidence, since the committed muon q0Value is the only surviving record of intent for an unlisted producer.",
   "result": {
-    "at_risk_count": 49,
-    "baseline": 49,
-    "witnesses_scanned": 3025,
-    "declared_stems": 408,
+    "at_risk_count": 40,
+    "baseline": 40,
+    "witnesses_scanned": 3032,
+    "declared_stems": 410,
     "at_risk": [
       {
         "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",
@@ -68,20 +69,8 @@
         "producer_stem": "alpha_5_lp_dual_crystal"
       },
       {
-        "witness": "computations/audits/fitted-labelled-canonical-audit.witness.json",
-        "producer_stem": "fitted_labelled_canonical_audit"
-      },
-      {
         "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
         "producer_stem": "q0_anchor_consistency_audit"
-      },
-      {
-        "witness": "computations/chirality-topology-binding.witness.json",
-        "producer_stem": "chirality_topology_binding_probe"
-      },
-      {
-        "witness": "computations/compute-audit-scan.witness.json",
-        "producer_stem": "compute_audit_scan"
       },
       {
         "witness": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
@@ -120,10 +109,6 @@
         "producer_stem": "probe_9b_gate_interface_algebra"
       },
       {
-        "witness": "computations/probe-he4-magic-baryeven-prune.witness.json",
-        "producer_stem": "probe_he4_magic_baryeven_prune"
-      },
-      {
         "witness": "computations/probes/binding-qgaussian-ell1-ceiling-measurement.witness.json",
         "producer_stem": "binding_qgaussian_ell1_ceiling_measurement"
       },
@@ -140,10 +125,6 @@
         "producer_stem": "flavor_split_alpha_dilog_expansion_probe"
       },
       {
-        "witness": "computations/probes/lambda-scale-substrate-probe.witness.json",
-        "producer_stem": "lambda_scale_substrate_probe"
-      },
-      {
         "witness": "computations/probes/su4-occupancy-binding-sweep-probe.witness.json",
         "producer_stem": "su4_occupancy_binding_probe"
       },
@@ -154,10 +135,6 @@
       {
         "witness": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
         "producer_stem": "qbeta_alpha_eff_hoefsmit_symbolic_probe"
-      },
-      {
-        "witness": "computations/qbeta/qbeta-c3-rung-structure-analysis.witness.json",
-        "producer_stem": "qbeta_c3_rung_structure_analysis"
       },
       {
         "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
@@ -196,10 +173,6 @@
         "producer_stem": "qbeta_fsc_g_pattern_comparison"
       },
       {
-        "witness": "computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json",
-        "producer_stem": "qbeta_habiro_f_from_shape_collapse"
-      },
-      {
         "witness": "computations/qbeta/qbeta-jacobi-anger-tower-general.witness.json",
         "producer_stem": "qbeta_jacobi_anger_tower_general"
       },
@@ -218,10 +191,6 @@
       {
         "witness": "computations/qbeta/qbeta-klr-lusztig-demazure-preflight-run.witness.json",
         "producer_stem": "qbeta_klr_lusztig_demazure_preflight_run"
-      },
-      {
-        "witness": "computations/qbeta/qbeta-rung1-div25-framing-squared-test.witness.json",
-        "producer_stem": "qbeta_rung1_div25_framing_squared_test"
       },
       {
         "witness": "computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json",
@@ -246,10 +215,6 @@
       {
         "witness": "computations/substrate/lever1-binding-habiro-single-element-test.witness.json",
         "producer_stem": "lever1_binding_habiro_single_element_test"
-      },
-      {
-        "witness": "computations/substrate/z2bn-tau-derivation-probe.witness.json",
-        "producer_stem": "z2bn_tau_derivation_probe"
       },
       {
         "witness": "computations/zhabiro-phiq-production-crosscheck.witness.json",

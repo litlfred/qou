@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:17:38.591300+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T16:24:32.274010+00:00",
+  "commitSha": "1edde3a7b35b87ec23915ed96c120bc8f62f1aba",
   "assertions": [
     {
       "name": "published_near_misses_1plusq_2sqrtq_are_bar_odd_excluded",
@@ -13,10 +13,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "probe-he4-magic-baryeven-prune",
   "scriptFile": "probe_he4_magic_baryeven_prune.py",
-  "scriptHash": "8f26899ebc7e",
+  "scriptHash": "0f3d5379f28f",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -58,6 +58,6 @@
       "cosh(2 ln q) + 1": "-2.40%"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. PROVED by running this producerunder QOU_Q0_ANCHOR=muon and =proton and diffing the emittedwitness: the only non-ephemeral leaves that differ areq0Anchor and q0Value THEMSELVES -- every substantive field isbyte-identical, so the pin changes the label and nothing else.Its previous `muon` label was therefore a false claim thatthis producer computed at that anchor. `independent` is thehonest disposition; a q0_anchor_manifest entry would be theWRONG fix, promoting a false claim into a declared one. Beanqou-o922, class (ii)."
 }

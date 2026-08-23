@@ -1,52 +1,52 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-22T10:40:01.373592+00:00",
-  "commitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-22T21:18:55.791557+00:00",
+  "commitSha": "ba28ebdb1dae72fb39af5ef536c9e08bed944835",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
-      "computed": 0.0013582734278597749,
-      "expected": 0.0,
+      "computed": "0.00135827342785977481685783182273467067223819663984408766690371",
+      "expected": "0",
       "passed": true,
-      "tolerance": 2.0,
+      "tolerance": "2.0",
       "unit": "ppm",
       "source": "CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²"
     },
     {
       "name": "substrate_flavor_split_ratio_within_1000ppm_of_codata",
-      "computed": 305.4061011706576,
-      "expected": 0.0,
+      "computed": "305.406101170657614935844581781895568647141616324333661312083",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1000.0,
+      "tolerance": "1000.0",
       "unit": "ppm",
       "source": "prop:flavor-split-substrate / flavor_split_subleading vs CODATA (M_N − M_P)/M_avg at MPFR 50 dps"
     },
     {
       "name": "proton_borromean_tower_within_5pct_of_codata",
-      "computed": 28896.080785806676,
-      "expected": 0.0,
+      "computed": "28896.0807858066775937787415280410088690348813890493827030258",
+      "expected": "0",
       "passed": true,
-      "tolerance": 50000.0,
+      "tolerance": "50000.0",
       "unit": "ppm",
       "source": "Borromean baryon formula (Family A λ) vs CODATA m_p at MPFR 50 dps"
     },
     {
       "name": "neutron_borromean_tower_within_5pct_of_codata",
-      "computed": 28895.64794169264,
-      "expected": 0.0,
+      "computed": "28895.6479416926427730180790999673567595550465366198032299921",
+      "expected": "0",
       "passed": true,
-      "tolerance": 50000.0,
+      "tolerance": "50000.0",
       "unit": "ppm",
       "source": "Borromean baryon formula (Family A λ + flavor split) vs CODATA m_n at MPFR 50 dps"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "6620f8bc0048",
-  "scriptCommitSha": "d9236020372fe9bf16b6c25f5140434747d13db8",
+  "scriptHash": "35165a8ddc21",
+  "scriptCommitSha": "2a28775969f61d19175fa20006775838780ccd4e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,11 +56,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -106,8 +105,8 @@
     },
     "canonical_mass_reference": {
       "route": "canonical_mass.proton_neutron_mass_mev (muon-anchored Hecke energy)",
-      "m_p_MeV": 938.2720894273243,
-      "m_n_MeV": 939.5654227645324,
+      "m_p_MeV": "938.2720894273243",
+      "m_n_MeV": "939.5654227645324",
       "note": "Production absolute-mass route (owner ruling 2026-06-24). The λ_A-path m_avg_pred above overshoots this by ~2.9 % — that gap is what the excised fit was absorbing."
     },
     "substrate_flavor_split": {
@@ -143,9 +142,9 @@
     "scale_gap_resolution": {
       "single_level_m_p_estimate_MeV": "0.54421388",
       "codata_m_p_MeV": "938.27209",
-      "scale_gap_factor": 1724.0870173063252,
-      "borromean_tower_multiplier": 1890.511953602739,
-      "match_to_gap_pct": 9.652931355891326,
+      "scale_gap_factor": "1724.08701730632518054551985171981463694755194296197582195245",
+      "borromean_tower_multiplier": "1890.51195360273886289492956582830284923015442191875150023840",
+      "match_to_gap_pct": "9.65293135589132059136319851327689717049283643648818134336177",
       "conclusion": "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula closes the gap to ~2.89 % on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to ~305 ppm independently."
     },
     "lean_uniqueness_ref": {

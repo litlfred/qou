@@ -163,6 +163,22 @@ the claim is that a factor already present in the pipeline is being divided out,
 that its logarithm is the extensive term. Whether the resulting coefficient matches
 `a_V` is then a *prediction*, free to fail.
 
+> **Structure formalized (2026-08-22).** The extensivity itself — the part that is
+> purely algebraic and independent of the magnitude — is now Lean-proved sorry-free
+> in `QOU/Mass/MarkovStabFactorExtensive.lean`: the stabilisation factor
+> `markovStabFactor Nq n = N(q)^{n-1}` accrues one constant factor of `N(q)` per
+> strand (`markovStabFactor_succ`), the merge law
+> `stab(m)·stab(n)·N(q) = stab(m+n)` (`markovStabFactor_merge`), and it is
+> extensive-not-intensive for `N(q) ≠ 1` (`markovStabFactor_not_intensive`;
+> exponent affine with unit slope). The **`A`-constituent** form is proved too
+> (`markovStabFactor_merge_parts`): merging `A` parts gives
+> `stab(Σ nᵢ) = (∏ stab nᵢ)·N(q)^{A-1}`, so the normalisation that does **not**
+> cancel in a binding difference is exactly `N(q)^{A-1}` — extensive in the
+> constituent count `A`, the precise `∝ A` volume-term shape. This proves *only*
+> that the discarded normalisation is extensive — the coefficient/`a_V` question
+> (is `(A-1)·log N(q) = a_V·(A-1)`?) and the strand↔`A` identification are
+> deliberately left as the open prediction below.
+
 **Honest caveat.** `E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV` and `log[2]_q ≈ 0.6945`, so the
 naive `N = 2` reading gives `≈ 2.91 MeV` per strand against `a_V ≈ 15.6 MeV` —
 **5.4× short.** So the *structure* is right and the *magnitude* is not, in the Jones
@@ -238,6 +254,23 @@ factors**, which is a different mechanism entirely. Per AGENTS.md §"Before decl
 refuted", that existing refutation is scope-(a) with respect to this route and does
 **not** exclude it. Re-scoping the ledger row is warranted regardless of how the
 probe turns out.
+
+> **CROSS-LINK / TENSION CLOSED (2026-08-23).** The `N = 3` re-tune this section
+> hangs on is **already excluded scope-(b)**, and this memo never cited it:
+> [`docs/audits/2026-08-07-eightfold-live-surface-collapse.md` §2](2026-08-07-eightfold-live-surface-collapse.md)
+> rules *"Re-tune the Ocneanu parameter to `N = 3`"* out because **the `N = 2`
+> and `N = 3` Markov traces are not proportional** — so switching the binding
+> pipeline to `N = 3` is not a re-scaling of the `N = 2` mass fit, it is a
+> different (non-proportional) trace that breaks it. This settles the A2
+> "consistency requirement" (§4.2) in the negative: the flavor and binding
+> sectors **cannot share `N`**, binding stays `N = 2`, and the §4.3 coincidence
+> `ln[3]_q/ln[2]_q ≈ r*` is therefore **spurious** — exactly what its own
+> "wrong-way q-correction" already signalled. Consequence for A1: the extensive
+> volume coefficient is forced to `log[2]_q`, which §3's caveat measures **5.4×
+> short**. So the extensive-normalization route (A1) does **not** close the
+> volume term via an `N` re-tune. The structure (extensivity) is real — now
+> Lean-proved in `QOU/Mass/MarkovStabFactorExtensive.lean` — the **magnitude**
+> stays open, and the one lever this memo floated for it (`N = 3`) is closed.
 
 ---
 

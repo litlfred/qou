@@ -182,7 +182,19 @@ def main() -> int:
         "chirality-topology-binding", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(HERE.parent),
-    ).save()
+    ).save({"q0Anchor": "independent",
+         "q0AnchorReason": (
+            'Reads no substrate value. PROVED by running this producer'
+            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
+            'witness: the only non-ephemeral leaves that differ are'
+            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
+            'byte-identical, so the pin changes the label and nothing else.'
+            'Its previous `muon` label was therefore a false claim that'
+            'this producer computed at that anchor. `independent` is the'
+            'honest disposition; a q0_anchor_manifest entry would be the'
+            'WRONG fix, promoting a false claim into a declared one. Bean'
+            'qou-o922, class (ii).'
+         )})
     print(f"\n  witness: {out}")
     return 0
 

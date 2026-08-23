@@ -742,7 +742,7 @@
           "in_degree": 0,
           "cone_size": 60,
           "depth": 21,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 12,
           "edge_span_mean": 5,
           "worst_target": ""
@@ -1032,7 +1032,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The claim in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' is unverified due to Lean compilation failures in sibling file.",
+        "notes": "The claim in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:1"
       }
@@ -1054,7 +1054,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The claims in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' are non-vacuous as they make concrete conjectures about '[the Bring action lemma](#conj:n-v-bring-action) with [the t...'.",
+        "notes": "The claims in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are non-vacuous as they make concrete conjectures about '[the Bring action lemma](#conj:n-v-bring-action) with [the t...'.",
         "severity": "minor"
       }
     ],
@@ -1075,7 +1075,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1097,8 +1097,23 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The prose presents 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' as verified, but the sibling Lean file fails to compile.",
+        "notes": "The prose presents 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "10f17dfd84ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'n-v-leading-order-derivation.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1118,7 +1133,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1162,7 +1177,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Lean and narrative statements for 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' are structurally aligned.",
+        "notes": "Lean and narrative statements for 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are structurally aligned.",
         "severity": "minor"
       }
     ],
@@ -1183,7 +1198,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No citations are present in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1205,7 +1220,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1227,7 +1242,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1249,7 +1264,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The physical concepts described in 'Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts:1"
       }
@@ -1273,7 +1288,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:1 — content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:107:46: error: unknown tactic"
+        "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:1 \u2014 content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:107:46: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "10f17dfd84ca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'n-v-leading-order-derivation.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [

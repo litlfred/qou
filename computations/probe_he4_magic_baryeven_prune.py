@@ -160,7 +160,19 @@ def _emit_witness(excluded, survivors) -> None:
         source="bar-involution q↦q⁻¹; ⁴He self-mirror ⇒ magic factor bar-even")
     w.set_audit_only(
         "docs/audits/2026-06-25-he4-magic-factor-bar-even-pruning.md")
-    out = w.save()
+    out = w.save({"q0Anchor": "independent",
+         "q0AnchorReason": (
+            'Reads no substrate value. PROVED by running this producer'
+            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
+            'witness: the only non-ephemeral leaves that differ are'
+            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
+            'byte-identical, so the pin changes the label and nothing else.'
+            'Its previous `muon` label was therefore a false claim that'
+            'this producer computed at that anchor. `independent` is the'
+            'honest disposition; a q0_anchor_manifest entry would be the'
+            'WRONG fix, promoting a false claim into a declared one. Bean'
+            'qou-o922, class (ii).'
+         )})
     print(f"[witness → {out}]")
 
 

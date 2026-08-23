@@ -246,10 +246,34 @@ def _self_test() -> int:
     print(f"  transfer ≡ char_fast (color-weighted, n=6): "
           f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
 
-    # (2) vs cached atom oracles D/T/³He/⁴He (n=6..12). Those witnesses
-    #     (pyhecke_native, kernel PR #1748) used the strict_averaged pn
-    #     convention, so we compare on the MATCHING word — an exact (50-dps)
+    # (2) vs cached atom oracles D/T/³He/⁴He (n=6..12) — an exact (50-dps)
     #     cross-check of the transfer vs the per-basis-vector kernel to n=12.
+    #
+    #     This comparison used `pn_convention="strict_averaged"`, on the stated
+    #     grounds that the oracle witnesses "used the strict_averaged pn
+    #     convention, so we compare on the MATCHING word". That was wrong about
+    #     the witnesses, and it made this self-test FAIL on main — quietly,
+    #     since it is wired into no gate.
+    #
+    #     Measured by recomputing each oracle under both conventions:
+    #
+    #                    strict_averaged      bring_color_weighted
+    #         D             2.625e-04              5.743e-50
+    #         T             5.482e-04              8.257e-50
+    #         3He           5.281e-04              7.487e-50
+    #         4He           1.883e-03              4.079e-49
+    #
+    #     The oracles reproduce EXACTLY — to the full 50-dps working precision
+    #     — under the canonical colour-weighted convention, and miss by 2.6e-4
+    #     .. 1.9e-3 under strict_averaged. So the cached witnesses were always
+    #     canonical; it was this comparison word that was stale. The residuals
+    #     grow with A because the p-n interface `d` differs by 7.19e-05 and
+    #     compounds per interface, which is the colour-weighting scale — not a
+    #     precision scale, and the giveaway that the mismatch was structural.
+    #
+    #     Note the witnesses record no convention field at all (and no
+    #     `scriptFile`), so the old comment could not be checked against them;
+    #     it had to be tested by recomputation. Bean `qou-9ag4`.
     import json
     oracle = {"D": "chi-deuteron-h6-at-q0-50dps.witness.json",
               "T": "chi-tritium-h9-at-q0-50dps.witness.json",
@@ -262,7 +286,7 @@ def _self_test() -> int:
             print(f"  oracle {atom}: witness missing, skip"); continue
         Z, N = zn[atom]
         n = 3 * (Z + N)
-        word = atom_braid_word_3A(Z, N, pn_convention="strict_averaged")
+        word = atom_braid_word_3A(Z, N, pn_convention="bring_color_weighted")
         chi = chi_all_lambda(word, n)
         d = json.loads(f.read_text())
         bp = d.get("by_partition") or d["data"]["by_partition"]
@@ -273,7 +297,7 @@ def _self_test() -> int:
             max_rel = max(max_rel, abs(cv - rv) / (1 + abs(rv)))
         ok = max_rel < mp.mpf(10) ** -12
         ok_all &= ok
-        print(f"  transfer ≡ oracle (strict_averaged) {atom:<4} n={n:<3} "
+        print(f"  transfer ≡ oracle (color-weighted) {atom:<4} n={n:<3} "
               f"λ={len(ref):<4} max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
     return 0 if ok_all else 1
 
