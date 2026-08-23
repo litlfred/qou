@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T19:17:32Z
+updated_at: 2026-08-23T20:12:20Z
 parent: qou-59vq
 ---
 
@@ -221,3 +221,52 @@ Everything here is at convention D and on <=2-row diagrams. That is not a limita
 technique so much as the whole content of convention D — the >=3-row weights vanish, so <=2 rows
 IS the trace. A general-convention branching identity would need the full corner sum and the
 hook-ratio-in-corner-contents identity; not attempted, and not needed for the canonical convention.
+
+
+## Update — the Markov condition has a route, and its arithmetic core is proved (PR #5575)
+
+Last update I recorded that I had no route to the general-n Markov condition I would defend.
+I have one now, and it changes the shape of what is left.
+
+### The reduction
+
+For x in H_n, decompose V_lam over its removals and set A_mu = P_mu sigma_n P_mu. A_mu commutes
+with H_{n-1}; Hecke branching is multiplicity-free, so the commutant of H_{n-1} in End(V_mu) is
+the Gelfand-Tsetlin algebra and A_mu is DIAGONAL in the seminormal basis, with (T,T) entry the
+Hoefsmit parameter a(c(lam/mu) - c_T(n)). Since H_n = (+)_mu End(V_mu) the diagonal entries x_TT
+range freely, so coefficients match pointwise; and n being T's largest entry, its cell is a
+REMOVABLE corner of mu. Hence
+
+    for every mu |- n and every removable corner r of mu:
+      sum_{s addable corner of mu} w_{mu+s} a(c(s) - c(r)) = z w_mu
+
+— a finite identity in the corner contents of ONE partition. Tested exactly at SYMBOLIC z (not
+just convention D) for every partition of n = 1..6 and every removable corner:
+`computations/schurweyl/ocneanu_markov_corner_reduction.py`.
+
+### What is now proved in Lean
+
+`OcneanuWeightMarkovCorner.lean`, sorry-free, axiom-clean: `markov_corner_row0`,
+`markov_corner_row1`, `markov_corner_row1_diag`. At convention D the identity is two equations
+with at most two terms each (the third addable corner (2,0) has weight zero), and against
+`schurPrincipal_twoRow` both collapse to elementary geometric-sum facts —
+[d+2] - 1 = x[d+1] and [d+1] = [d] + x^d.
+
+### 🛑 What is NOT proved, and it is the whole remaining gap
+
+**The reduction is not formalised.** Steps (i) A_mu diagonal and (ii) the Hoefsmit entry are what
+`seminormalRep` encodes, but neither is proved in Lean. So the three theorems above do NOT prove
+the Markov condition. They prove its arithmetic core.
+
+**This is still progress worth naming:** the open item has changed from "prove the Markov
+condition" — a statement about an algebra, its trace, and an arbitrary element x — to "prove that
+P_mu sigma_n P_mu is diagonal in the seminormal basis, with the Hoefsmit entry". That is a
+statement about the explicit matrices `seminormalRep` already defines, and the corpus already has
+`seminormalRep_qJM_diag` (Ram 4.1) which is the same flavour of result. Different shape, and a
+more tractable-looking one.
+
+### Next
+
+Formalise the reduction: (i) the diagonality of A_mu, (ii) its entry. Then the Markov condition
+follows from the corner identities already proved — and that discharges the corpus's only external
+citation (Wenzl), per `OcneanuWeightWenzl`.
