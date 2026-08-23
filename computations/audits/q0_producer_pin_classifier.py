@@ -103,6 +103,18 @@ PROTON_NAMES = {"Q_50_DIGIT_STR", "q_at", "Q_MP", "Q_PROTON"}
 # a producer from triage as a possible deliberate comparison, so that would have
 # hidden 56 clean files behind a muon association that no longer exists.
 MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0")
+
+# Literal q₀ pins written directly into producer source.
+#
+# MUON_LITERAL is deliberately 11 digits after the point, NOT 12. The corpus
+# carries TWO muon values that agree to 11 digits and diverge at the 12th —
+#     current     1.10997859555733471989…
+#     superseded  1.10997859555418057528…   ("the old muon value")
+# — as `q0_muon_population_partition.py` documents. Both are the muon anchor for
+# classification purposes, so the shared prefix is the correct test here; a
+# 12-digit prefix silently drops every producer still on the superseded value.
+MUON_LITERAL = "1.10997859555"
+PROTON_LITERAL = "1.109978582751"
 MUON_ENV = ("ideal", "muon", "canonical")
 # Explicit muon ACCESSORS. A producer importing one of these is reaching for the
 # ideal layer on purpose -- typically a cross-anchor comparison probe -- so its
@@ -203,8 +215,28 @@ def classify(path: Path) -> tuple[str, list[str]]:
                         (muon_prose if is_prose else muon).append(f'"{s[:48]}"')
                 if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
                     muon.append(f'env-like "{s}"')
-                if s.startswith("1.10997859555"):
+                if s.startswith(MUON_LITERAL):
                     muon.append("hardcoded muon 50-digit")
+                # SYMMETRIC PROTON CHECK (added 2026-08-23).
+                # This branch did not exist. A producer hardcoding the PROTON
+                # pin — `mp.mpf("1.109978582751380808")` — reached the `none`
+                # verdict, which this module's own docstring defines as "no
+                # numeric q₀ reached at all (purely symbolic producer)". It is
+                # not symbolic; it is pinned, in the most literal way available.
+                #
+                # Measured on the 2026-08-23 tree: 137 producers carry a LIVE
+                # (non-comment, non-`__main__`) proton literal, and classify()
+                # called 53 of them `none`. Those 53 were therefore invisible to
+                # the manifest proposal path, so they stayed UNDETERMINED —
+                # the same gap that let the 30.4 ppb `qbeta-ck-cache` mislabel
+                # survive, one pin over.
+                #
+                # Safe by construction: the extra evidence can only turn `none`
+                # into `proton` (or `muon` into `BOTH`, which is never
+                # auto-proposed). It cannot manufacture an `ideal_muon` entry,
+                # which is the only behaviourally live direction.
+                if s.startswith(PROTON_LITERAL):
+                    proton.append("hardcoded proton 50-digit")
             self.generic_visit(n)
 
     V().visit(ast.Module(body=body, type_ignores=[]))
