@@ -4,7 +4,7 @@ title: q0_value_drift_audit defines CANONICAL as the muon pin — a BLOCKING CI 
 status: todo
 type: task
 created_at: 2026-08-23T07:56:50Z
-updated_at: 2026-08-24T02:50:00Z
+updated_at: 2026-08-24T03:20:00Z
 ---
 
 
@@ -348,3 +348,71 @@ and correct `q0_value_drift_audit.py:131-148`, whose docstring still tells reade
 **Not done here** — that is a fresh pass over a bean whose every figure moved, and
 it should be done in one piece rather than appended to three layers of superseded
 argument.
+
+---
+
+## RE-MEASURED 2026-08-23 — figures reproduced independently, docstring corrected
+
+Every number below was derived here by importing `q0_value_drift_audit` and
+calling `scan()` / `layer_mismatches()` directly. **The script was not run**: its
+`main()` writes `q0-value-drift-audit.witness.json` unconditionally at `:248`,
+before the `--layer-check` branch, so running it to read a diagnostic would have
+rewritten a committed artefact.
+
+```
+class counts        canonical 193   proton-pin 1309   STALE 292   unknown 25   (1819 fields)
+
+canonical-classed witness files            : 156
+producer NOT in ideal_muon (blind to STALE):  66
+legitimately muon-layer                    :  76
+UNRESOLVED (not evidence either way)       :  14
+                                       sum = 156
+```
+
+### The 66, split — and this is what dissolves the blocker
+
+| | n | what it is |
+|---|---|---|
+| **UNDECLARED** in the manifest | **50** (49 distinct stems) | a *declaration* gap — the producer is in no list at all |
+| `physical_proton` | 9 | genuine layer mismatch |
+| `ambiguous` | 7 | genuine, but the layer is undecided by design |
+
+All 14 UNRESOLVED share one reason: **`no scriptFile`**.
+
+Fifty of the 66 need a manifest entry, not a ruling — declaring a producer moves
+nothing into `STALE` and changes no value. The residue needing judgement is
+**16**, which an ordinary drain carries.
+
+### The CI horn, checked rather than assumed
+
+```
+stale total : 292      baseline : 329      NEW : 0      --strict exit : 0
+```
+
+The bean claimed acting here "fails a blocking gate immediately". It does not:
+nothing is currently unbaselined. **I got this wrong twice before getting it
+right** — first by comparing against the baseline file's top-level keys
+(`note`, `count`, `stale_keys`) instead of the `stale_keys` list, which reported
+292 NEW and a failing gate. `main()` uses
+`key = lambda r: f"{r['file']}::{r['field']}"` against `["stale_keys"]`; matching
+that exactly gives 0. Recorded because the wrong reading reproduced the bean's own
+alarming figure, which is precisely how a bad number survives.
+
+### Docstring corrected
+
+`computations/q0_value_drift_audit.py:131-148` told every future reader that
+`_migration_2026_08_19` moved 255 producers "on owner authorisation, leaving 3",
+and that acting would move ~162 witnesses into `STALE` and fail a blocking gate.
+Both were artefacts of the root-only lookup. Replaced with the measured figures
+and an explicit note of what was wrong, so the correction is legible rather than
+silent. **No behaviour change** — the edit is docstring-only, and the function's
+three-class return is untouched.
+
+### Still open, and now small
+
+1. Declare the 49 undeclared producer stems in `q0_anchor_manifest.json` — needs
+   a decision on *which* layer each belongs to, per producer. Not mechanical, but
+   not a gate-blocking ruling either.
+2. Drain the 16 real mismatches (9 `physical_proton`, 7 `ambiguous`).
+3. The 14 `no scriptFile` witnesses overlap `qou-0uqm`'s 286-witness class and
+   should be handled there, not here.

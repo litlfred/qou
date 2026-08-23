@@ -133,19 +133,30 @@ def layer_mismatches(canonical_rows: list) -> list:
 
     `canonical` here means "matches the CAL-2 muon pin", which the header table
     defines as *the `computations/` layer convention* — not as the framework's
-    canonical anchor. That was accurate when written. On 2026-08-19,
-    `q0_anchor_manifest.json`'s `_migration_2026_08_19` moved **255** producers
-    out of `ideal_muon` on owner authorisation, leaving 3.
+    canonical anchor.
 
-    The class definition did not follow, and `canonical` is the one class that can
-    never be `STALE`. So a witness written by a now-proton-layer producer, still
-    carrying the muon pin, is invisible to this audit's staleness test.
+    The class definition does not follow manifest membership, and `canonical` is
+    the one class that can never be `STALE`. So a witness written by a
+    proton-layer producer, still carrying the muon pin, is invisible to this
+    audit's staleness test. That is the gap this function reports.
+
+    CORRECTED 2026-08-23. This docstring previously said `_migration_2026_08_19`
+    moved 255 producers out of `ideal_muon` "on owner authorisation, leaving 3",
+    and that acting on the result would move ~162 witnesses into `STALE` and fail
+    a blocking gate. **Both figures were artefacts.** `ideal_muon` held 3 because
+    `q0_anchor_manifest.json`'s producer lookup was root-only and never read the
+    ~700 witnesses whose producers live in `probes/`, `qbeta/`, `substrate/` etc
+    (fixed in `8b4825920`). The manifest now holds 110 / 513 / 22, and
+    `_migration_2026_08_19` no longer exists in it.
+
+    Re-measured 2026-08-23 against the fixed manifest: 156 canonical-classed
+    witness files = 66 mismatch + 76 legitimately muon-layer + 14 unresolved.
+    The 66 are 50 producers simply **undeclared** in the manifest (a declaration
+    gap, not a stale value), 9 `physical_proton` and 7 `ambiguous`. Current
+    `STALE` is 292 against a 329-key baseline, so NEW = 0 and `--strict` exits 0.
 
     Diagnostic only: printed, never written to the witness, and it cannot change
-    the exit code. Acting on it would move ~162 witnesses into `STALE`, none of
-    them baselined, which fails a blocking gate — and `--rebaseline` is documented
-    *"only when draining … not a way to silence a new failure"*. That choice is
-    the owner's (bean `qou-fd0e`).
+    the exit code. Bean `qou-fd0e`.
     """
     try:
         man = json.loads((HERE / "q0_anchor_manifest.json").read_text())
