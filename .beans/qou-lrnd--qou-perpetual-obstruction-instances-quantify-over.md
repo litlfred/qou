@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-23T07:57:07Z
+updated_at: 2026-08-23T10:40:42Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -189,3 +189,74 @@ cannot, by (2). Candidate shapes, none attempted here:
   models, but with `S` the COMPLEMENT of the good set rather than a bad set.
 
 Commits: `a9c289bb38` (HabiroCollapse + probe), `0eb307afd0` (docstrings).
+
+
+---
+
+# 2026-08-23 (second pass) — the constants are 8 and 192, and the cited witness never tested the collapse
+
+Went at the archimedean route recorded above, and checked the input data before
+building on it. Two findings, both measured.
+
+## The Lean's constants are wrong
+
+`map_habiro_expansion` fixes `C = φ(a₀) + 2φ(a₁)` from a₀ and a₁ alone — it does
+not depend on p. Read straight out of
+`computations/habiro/habiro-coefficients-atomic.witness.json`:
+
+    atom      a_0            a_1              a_0(-1)  a_1(-1)   C     claimed
+    proton    8              -172u - 172         8        0        8       4
+    neutron   2              -34u - 34           2        0        2       —
+    deuteron  192            -8544u - 8544     192        0      192     -32
+
+`a₁(-1) = 0` holds — that half of the docstring was right. But **a₀ is a
+CONSTANT** in every case, so *"a₀(u) evaluated at u=-1 gives 4"* cannot be true
+at any evaluation point: `a₀ = 8` identically. Checked two independent ways
+(own exact `Fraction` parser; Python's evaluator on the raw strings) in
+[`habiro_collapse_constant_probe.py`](computations/probes/habiro_collapse_constant_probe.py).
+Integers and Fractions throughout, no floats. Corrected in `d95309bfba` — in the
+STATEMENTS, not just docstrings, since the theorems are named "QOU
+proton/deuteron instance" and a wrong constant makes the name a mislabel.
+
+Two more things fall out of the same table:
+
+* The docstring claimed "C = 4 for the proton **and neutron**". They do not
+  share a constant: 8 and 2.
+* `tr_M` carries a denominator (`denom(-1)` = 16 / 4 / 1536). Dividing through,
+  proton and neutron **both** collapse to `1/2`, the deuteron to `1/8` — not
+  integers, and **the collapse does not separate proton from neutron**. For a
+  quantity meant to carry nucleon-specific content that is a bigger problem
+  than the numerals.
+
+## The witness cited as `status: "verified"` never tested the collapse
+
+`habiro-frobenius-probe.witness.json` backs the block
+`rem:qou-motivic-galois-instance` with `status: "verified"`. What its
+`step2_compatibility_passed` actually asserts is that the **Galois norm is an
+integer** — not that anything equals a constant. Its recorded traces are nine
+different values per atom (proton: -16, -2, 2, -8, 14, 5, 9, -8, -31; deuteron:
+192, -9, -61, 23, -756, -525, 1162, 873, 134), `trace mod p` is not constant
+either (proton: 0,1,2,6,3,5,9,11,15), and **neither 4 nor -32 occurs anywhere in
+the file**. `galois_trace_full_is_integer` is `false` at every prime, and
+`step2_full_trace_compatible` is `false` for every atom.
+
+So "verified" is true of what the probe checks and not of what the Lean assumes.
+Worth generalising: a `computation.status: "verified"` on a block says a script
+ran and its own assertions passed. It does **not** say the script tested the
+proposition the block states, and nothing checks that it does.
+
+## Where this leaves the bean — still open, unchanged in direction
+
+Correcting 4 -> 8 does **not** rescue the route and is not offered as doing so.
+With C = 8 the residue is still a unit in `F_p` for every odd p, so the
+cyclotomic-unit refutation applies verbatim; and there is still no ring hom
+`ℤ[ζ_2p] →+* ℤ` for `reduce` to be. The constants are fixed because they were
+wrong.
+
+The archimedean route is untouched by this pass and remains the candidate: a
+unit of `O` has norm ±1, so a lower bound on `|Frob_p|` at every complex
+embedding would bound `|N(Frob_p)| > 1`. The witness records `abs_frob` at one
+embedding per prime and it is frequently **< 1** (proton at p=11: 0.046;
+deuteron at p=13: 0.033), which is not itself an obstacle — conjugates of a
+non-unit may individually be small — but it does mean the bound has to be over
+the whole orbit, and the data as recorded is one embedding, not the orbit.
