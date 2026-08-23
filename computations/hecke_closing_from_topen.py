@@ -239,12 +239,26 @@ def main():
     w.add_data("cases", rows)
     w.add_caveat(
         "a >= 4 only; a = 3 has no loop pass and is excluded from this arc's "
-        "opening-phase lemmas entirely.")
+        "opening-phase lemmas entirely (`prefixChain3` covers it). a = 2's "
+        "closing phase is the SAME three calls -- fRun, closingBs, fRun -- "
+        "landing on the SAME word, WStar, with both F-runs one step because "
+        "`descWord i jppp` is empty; see `prefixChain2` and "
+        "hecke_small_a_decomposition.py.")
     w.add_caveat(
         "Source-uniqueness is necessary for `monicStep`, not sufficient for the "
         "whole assembly: each lemma also needs its words to line up on the "
         "nose. This measures the hypothesis, not the composition.")
-    path = w.save()
+    path = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason":
+            "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL "
+            "parameter h = q - q^-1 (a sympy Symbol). The reduction is "
+            "combinatorial in the braid word and its coefficients are rational "
+            "functions of that symbol; no substrate q0 is read anywhere in the "
+            "import cone (verified: no qou_substrate constants import, no "
+            "q_parameter / q_at / Q_50_DIGIT reference, in this file or in "
+            "hecke_gs_confluence_n4.py which supplies the rule table).",
+    })
     print(f"witness -> {path}")
     for r in rows:
         print(f"a={r['a']} b={r['b']}  TOpen at {r['steps_to_TOpen']}"

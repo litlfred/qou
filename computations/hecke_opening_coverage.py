@@ -317,7 +317,13 @@ def main():
     w.add_data("cases", rows)
     w.add_caveat(
         "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own "
-        "treatment; a = 2 is excluded throughout this arc.")
+        "treatment (`prefixChain3`); a = 2 has no loop pass either, for the "
+        "opposite reason -- `descWord i j1` is three letters, so `U0` already "
+        "carries quadPair's redex and the loop's output pre-exists. Its prefix "
+        "is nonetheless the same 11 = a^2+a+5 steps and the same lemmas: "
+        "`prefixChain2`, measured in hecke_small_a_decomposition.py. a = 1 is "
+        "measured there too and is genuinely different (6 steps, and its "
+        "cancellation word is not WStar); it is not yet proved.")
     w.add_caveat(
         "The 3 steps after the loop are the bare Bokut-Shiao step plus the "
         "Y-then-Q pair; §4al's quadPair covers the latter two, so the U side "
@@ -327,7 +333,17 @@ def main():
         "remainder column says how much is left, and the collision "
         "hypotheses are discharged here by head separation rather than "
         "checked lemma by lemma.")
-    path = w.save()
+    path = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason":
+            "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL "
+            "parameter h = q - q^-1 (a sympy Symbol). The reduction is "
+            "combinatorial in the braid word and its coefficients are rational "
+            "functions of that symbol; no substrate q0 is read anywhere in the "
+            "import cone (verified: no qou_substrate constants import, no "
+            "q_parameter / q_at / Q_50_DIGIT reference, in this file or in "
+            "hecke_gs_confluence_n4.py which supplies the rule table).",
+    })
 
     print("  a   b  opening   m  V0->V2  U-run  loop  after-loop  covered  left")
     for r in rows:

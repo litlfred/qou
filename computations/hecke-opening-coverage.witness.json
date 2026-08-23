@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T19:55:04.137496+00:00",
-  "commitSha": "8f13875cba6000c6791423da662a3b5d69459b2a",
+  "computedAt": "2026-08-23T07:52:51.709266+00:00",
+  "commitSha": "67ffcd9e1f192e14bde4ffc7935ce1132b13ec7c",
   "assertions": [
     {
       "name": "cases_where_the_two_applications_do_not_fit",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 31,
   "computation": "hecke-opening-coverage",
   "scriptFile": "hecke_opening_coverage.py",
-  "scriptHash": "8fda89127381",
-  "scriptCommitSha": "8f13875cba6000c6791423da662a3b5d69459b2a",
+  "scriptHash": "7034c6dc817d",
+  "scriptCommitSha": "4c97299f4fb0741a96b6f83dfae2c1e8d1275b68",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -261,8 +261,10 @@
     ]
   },
   "caveats": [
-    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment; a = 2 is excluded throughout this arc.",
+    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment (`prefixChain3`); a = 2 has no loop pass either, for the opposite reason -- `descWord i j1` is three letters, so `U0` already carries quadPair's redex and the loop's output pre-exists. Its prefix is nonetheless the same 11 = a^2+a+5 steps and the same lemmas: `prefixChain2`, measured in hecke_small_a_decomposition.py. a = 1 is measured there too and is genuinely different (6 steps, and its cancellation word is not WStar); it is not yet proved.",
     "The 3 steps after the loop are the bare Bokut-Shiao step plus the Y-then-Q pair; §4al's quadPair covers the latter two, so the U side needs one more named step beyond loop + quadPair.",
     "Fitting the applications is not assembling the phase. The remainder column says how much is left, and the collision hypotheses are discharged here by head separation rather than checked lemma by lemma."
-  ]
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
 }
