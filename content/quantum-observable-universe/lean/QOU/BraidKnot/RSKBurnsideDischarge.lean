@@ -48,10 +48,18 @@ theorem dimSYT_eq_numSYT (n : ℕ) (p : Nat.Partition n) :
   unfold QOU.Mathlib.dimSYT
   exact (SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux _).symm
 
-/-- **`RSKBurnsideHolds` is a theorem**: `∑_{p ⊢ n} dimSYT p ² = n!`.
+/-- **`RSKBurnsideHolds`, conditional on `SnIsotypicSpechtSplit`**: `∑_{p ⊢ n} dimSYT p ² = n!`.
 
-Reindex the (proved) `PartitionIndex` form of the RSK sum-of-squares along
-`partitionEquivYoungIndex`, converting each summand with the SYT-encoding bridge. -/
+Reindex the `PartitionIndex` form of the RSK sum-of-squares along `partitionEquivYoungIndex`,
+converting each summand with the SYT-encoding bridge.
+
+**Scope (corrected 2026-08-23).** This carries a class hypothesis and so proves the *implication*;
+the docstring above previously read "is now a theorem", which overclaims a conditional proof
+(conditional-proved ≠ premise-established). Note also the direction: this derives the identity
+*from* the Wedderburn split. The **unconditional** theorem is `QOU.Mathlib.rskBurnsideHolds`, proved
+from the Robinson–Schensted correspondence with no hypothesis, and it is what
+`SnIsotypicSpechtSplitInstance` is built from — so citing this one as the source of the identity
+would be circular. -/
 theorem rskBurnsideHolds (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] : QOU.Mathlib.RSKBurnsideHolds n := by
   unfold QOU.Mathlib.RSKBurnsideHolds
   have hstep : ∑ p : Nat.Partition n, (QOU.Mathlib.dimSYT p) ^ 2
