@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:44:57Z
-updated_at: 2026-08-23T14:05:30Z
+updated_at: 2026-08-23T15:42:38Z
 ---
 
 ## The measurement
@@ -94,3 +94,25 @@ This also settles why the committed witness has a stamp at all: it was written
 when detection covered that producer, or with an anchor passed explicitly.
 Either way the record and the current generator now disagree, which is the
 thing to fix before #5500 regenerates anything.
+
+## Count update at 32/55: five, not one
+
+`q0Anchor (removed)` now appears in **5 of 19** SUBSTANTIVE results:
+
+- `a_operator/cyclic_intertwiner_verify.py`
+- `probe_9b_gate_interface_algebra.py`
+- `probes/flavor_split_alpha_bond_dilog_probe.py`
+- `probes/flavor_split_alpha_dilog_expansion_probe.py`
+- `probes/trefoil_complex_volume_probe.py`
+
+Roughly a quarter of the producers whose witnesses actually move also stop
+declaring their anchor when re-run. Extrapolating to the full 55 would be
+guessing, and the sweep will finish; the point already stands that this is a
+class, not the single instance it looked like.
+
+Note `flavor_split_alpha_bond_dilog_probe.py` is also one of the three paths
+`qou-6q7q` found drifting against current `main` — it was migrated there by
+`bc96793e5d` ("q0 literals: migrate the 5 unblocked sites"). So for that one,
+re-measure after the rebase before concluding anything: the version measured
+here is not the version on main, and a q0-literal migration is exactly the kind
+of change that could either cause or cure the dropped stamp.
