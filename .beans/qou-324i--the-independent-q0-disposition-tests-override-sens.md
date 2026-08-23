@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-08-22T20:28:04Z
+updated_at: 2026-08-23T08:12:38Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -74,3 +74,28 @@ check: no q₀-shaped literal (`1.10997858` / `1.10997859`), and no direct read 
 the pinning witness. My `computations/audits/q0_hardcoded_pin_audit.py` already
 does the literal half (strips comments/docstrings via `tokenize`), and
 `q0_muon_population_partition.py` on #5464 does the direct-read half.
+
+
+## ANSWERED (2026-08-23) — it IS the Markov parameter, measured
+
+I recorded above that I would not claim `load_q_50dps`'s z is *the* Markov
+parameter without a corpus read or an owner call. Measurement settles it.
+
+The defining Markov property `tr_M(T_w) = z^{ℓ(w)}` was tested against both
+conventions at the proton pin:
+
+    max|tr_M - z_D^l| = 2.5391265e-50    (holds, to the arithmetic floor)
+    max|tr_M - z_C^l| = 0.12606583       (fails)
+
+and `tr_M(T_1) = 0.61268803714647 = z_D` exactly. Corroborated by naming: of
+the 24 callers that bind the z return, `pentagon_reduction_li2q.py` calls it
+`z_markov` and `e0_lambda_composite.py` calls it `ZMARK`.
+
+So `load_q_50dps` returns **z_C in the Markov role**, under a canonical-D
+regime, with 24 consumers. The convention-C detector misses it because it is a
+**tuple-element return** — the blind spot this bean records.
+
+Full diagnosis in `qou-rh31`. Fix belongs with the convention-D tranche
+(`qou-cds1`/`qou-cds2`), not a q₀-pin PR; and some consumers may use the z in a
+pair-weight role (`compute_t2_t3_from_vols`: `T3 = z²·Σ_{i<j}`) rather than the
+Markov role, so a per-consumer read is still required before changing it.
