@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T21:13:40.209025+00:00",
-  "commitSha": "15f5e5b9920f1e7a30549411da743ec9c99488e5",
+  "computedAt": "2026-08-23T07:52:52.107831+00:00",
+  "commitSha": "67ffcd9e1f192e14bde4ffc7935ce1132b13ec7c",
   "assertions": [
     {
       "name": "cases_where_TL_is_not_reached_exactly",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 67,
+  "durationMs": 59,
   "computation": "hecke-opening-trio-shape",
   "scriptFile": "hecke_opening_trio_shape.py",
-  "scriptHash": "4518c29ec90e",
-  "scriptCommitSha": "15f5e5b9920f1e7a30549411da743ec9c99488e5",
+  "scriptHash": "f47f4cd0b0de",
+  "scriptCommitSha": "9f4dd32b3b356a1d95601c25164be9947971bf4a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -754,8 +754,10 @@
     ]
   },
   "caveats": [
-    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment; a = 2 is excluded throughout this arc.",
+    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment (`prefixChain3`); a = 2 has none either, for the opposite reason -- its `U0` already carries quadPair's redex -- yet its prefix is the same 11 = a^2+a+5 steps and the same lemmas (`prefixChain2`). Both are measured in hecke_small_a_decomposition.py, along with a = 1, which is genuinely different (6 steps) and not yet proved.",
     "The forced schedule follows each lineage by taking the deg-lex-greatest image word as the successor. That is a heuristic for 'which word did this term become', and it is only sound while the lineage has not split -- which is exactly what the term-count column records.",
     "Confirming a proved reduction numerically adds no logical strength. It is recorded because it checks the Lean's WORDS against the engine's: a lemma can be sorry-free and still be about the wrong monomial."
-  ]
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
 }

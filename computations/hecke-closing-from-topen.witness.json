@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T21:48:44.255739+00:00",
-  "commitSha": "17dce71d6e992dc2b5f8868cbdc777932d3f3309",
+  "computedAt": "2026-08-23T07:52:52.494072+00:00",
+  "commitSha": "67ffcd9e1f192e14bde4ffc7935ce1132b13ec7c",
   "assertions": [
     {
       "name": "cases_where_TOpen_is_not_the_four_lemma_words",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 93,
+  "durationMs": 64,
   "computation": "hecke-closing-from-topen",
   "scriptFile": "hecke_closing_from_topen.py",
-  "scriptHash": "892034728977",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ea5e19cd7671",
+  "scriptCommitSha": "d33c6a51988b19d0dfd3f55e1b8adf469dc7bcc6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -450,7 +450,9 @@
     ]
   },
   "caveats": [
-    "a >= 4 only; a = 3 has no loop pass and is excluded from this arc's opening-phase lemmas entirely.",
+    "a >= 4 only; a = 3 has no loop pass and is excluded from this arc's opening-phase lemmas entirely (`prefixChain3` covers it). a = 2's closing phase is the SAME three calls -- fRun, closingBs, fRun -- landing on the SAME word, WStar, with both F-runs one step because `descWord i jppp` is empty; see `prefixChain2` and hecke_small_a_decomposition.py.",
     "Source-uniqueness is necessary for `monicStep`, not sufficient for the whole assembly: each lemma also needs its words to line up on the nose. This measures the hypothesis, not the composition."
-  ]
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
 }
