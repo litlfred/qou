@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:31:59.966335+00:00",
-  "commitSha": "af1d87f17a5ca2c39ee4c4e58a474daf72ff58ed",
+  "computedAt": "2026-08-23T09:47:33.392204+00:00",
+  "commitSha": "0def568f502c30c4f19ea3c7d8aefbe9a3b2c84d",
   "assertions": [
     {
       "name": "1_divergent_set_has_not_grown",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "69 divergent literals vs baseline 69. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
+      "detail": "61 divergent literals vs baseline 61. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
     },
     {
       "name": "2_more_than_one_family_exists",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 341,
+  "durationMs": 330,
   "computation": "hardcoded-q0-literal-families",
   "scriptFile": "hardcoded_q0_literal_families_audit.py",
-  "scriptHash": "fa7eb60c49fd",
-  "scriptCommitSha": "9f69e6f5f2ef506ab6b4ca9b54f5b487813bccb5",
+  "scriptHash": "940a2ed287b4",
+  "scriptCommitSha": "0def568f502c30c4f19ea3c7d8aefbe9a3b2c84d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -281,8 +281,8 @@
       70,
       70
     ],
-    "divergent_count": 69,
-    "baseline_divergent": 69,
+    "divergent_count": 61,
+    "baseline_divergent": 61,
     "families": {
       "13": [
         {
@@ -306,17 +306,7 @@
           "length": 18
         },
         {
-          "file": "computations/gap_a3_cross_atom_overshoot_probe.py",
-          "literal": "1.1099785955541805",
-          "length": 18
-        },
-        {
           "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
-          "literal": "1.1099785955541805",
-          "length": 18
-        },
-        {
-          "file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
           "literal": "1.1099785955541805",
           "length": 18
         },
@@ -466,11 +456,6 @@
           "length": 52
         },
         {
-          "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
-        },
-        {
           "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
           "literal": "1.1099785955541805752815940796095093779932822799587",
           "length": 51
@@ -491,29 +476,9 @@
           "length": 51
         },
         {
-          "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
-        },
-        {
-          "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
-        },
-        {
-          "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
-        },
-        {
           "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
           "literal": "1.1099785955541805752815940796095093779932822799587",
           "length": 51
-        },
-        {
-          "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
         },
         {
           "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
@@ -529,11 +494,6 @@
           "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
           "literal": "1.1099785955541805752815940796095093779932822799587",
           "length": 51
-        },
-        {
-          "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
-          "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-          "length": 61
         },
         {
           "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",

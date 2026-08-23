@@ -38,10 +38,23 @@ from chi_monotone_transfer import chi_all_lambda
 from mass_at_3A_proper import atom_braid_word_3A
 from lr_coefficients import partitions_of
 
+# --- muon anchor: READ, never retyped ---------------------------------------
+# This file used to carry the muon q0 as a string literal. A transcribed pin
+# cannot be re-pinned, cannot be flipped by QOU_Q0_ANCHOR, and reports a
+# q0Anchor describing its label rather than its computation. The literal here
+# was B = Vol(4_1)/206.7682830, the CODATA-2018 derivation -- superseded by the
+# owner ruling of 2026-08-22 (A -> CODATA 2022, PR #5500). Reading the anchor
+# is correct before and after that ruling; retyping either value is not.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1]
+                        / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import _q0_value_for_anchor as _q0_for  # noqa: E402
+
 mp.mp.dps = 20
 N_STRANDS = 6           # deuteron: 3A = 3·2
 B_D_OVER_ME = mp.mpf("4.353")   # −B(D)/m_e target (gating-context canonical)
-Q0 = mp.mpf("1.1099785955541805")   # substrate q₀ (matches y-lambda witness hot path)
+Q0 = mp.mpf(_q0_for("muon"))   # substrate q₀ (matches y-lambda witness hot path)
 
 
 def transpose(lam):

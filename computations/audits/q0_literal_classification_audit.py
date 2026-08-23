@@ -72,8 +72,22 @@ LEDGER = HERE / "q0-literal-classification.json"
 
 #: The classes a ledger row may carry.
 _CLASSES = ("a", "b", "c", "d")
-#: Sub-states, meaningful only for class (a).
-_SUBSTATES = ("a-migrated", "a-blocked")
+#: Sub-states, meaningful only for class (a). A deferred class-(a) row must say
+#: WHICH kind of deferral, because the two are not the same argument:
+#:
+#:   a-cost-deferred         the file emits a witness, so reading the anchor
+#:                           regenerates it B->A now and #5500 regenerates it
+#:                           A->C, i.e. twice, and each regeneration is a place
+#:                           an unexplained number can slip through.
+#:   a-correctness-deferred  reading the anchor does NOT close the defect --
+#:                           a frozen tr_M or a B-built y_lambda beside it means
+#:                           moving q0 alone CREATES a straddle.
+#:
+#: "Blocked on #5500" is not one of these. That argues against transcribing C;
+#: it does not argue against READING the anchor, which is pinned to nothing and
+#: follows the anchor before and after the ruling. The first version of this
+#: ledger used it as a blanket reason and it did not survive review.
+_SUBSTATES = ("a-cost-deferred", "a-correctness-deferred")
 
 
 def live_sites() -> set[tuple[str, str]]:
@@ -126,8 +140,10 @@ def main(argv: list[str] | None = None) -> int:
               "d": "test fixture"}
     for c in _CLASSES:
         print(f"    ({c}) {labels[c]:<38} {counts.get(c, 0):>3}")
+    sublabel = {"a-cost-deferred": "cost — emits a witness, 2 regens",
+                "a-correctness-deferred": "correctness — reading it ≠ fixing it"}
     for s in _SUBSTATES:
-        print(f"         └ {s:<36} {subs.get(s, 0):>3}")
+        print(f"         └ {sublabel[s]:<38} {subs.get(s, 0):>3}")
     print()
     print(f"  DEFECT COUNT (class a)          : {counts.get('a', 0)} "
           f"of {len(rows)} sites")

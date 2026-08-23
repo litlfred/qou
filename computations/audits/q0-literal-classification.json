@@ -1,6 +1,9 @@
 {
  "schema": "q0-literal-classification/v1",
- "bean": "qou-q0lc",
+ "beans": [
+  "qou-c4kv",
+  "qou-72rd"
+ ],
  "produced_for": "computations/audits/hardcoded_q0_literal_families_audit.py",
  "why": [
   "The families audit reports SITES, not defects, and says so in its own",
@@ -47,12 +50,13 @@
  "class_counts": {
   "c": 4,
   "b": 10,
-  "a": 45,
+  "a": 37,
   "d": 10,
-  "total": 69
+  "total": 61
  },
  "substate_counts": {
-  "a-blocked": 45
+  "a-correctness-deferred": 5,
+  "a-cost-deferred": 32
  },
  "entries": [
   {
@@ -88,7 +92,7 @@
    "literal": "1.1099785955573347117485528280749490295019743898536",
    "diverges_at": 19,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-correctness-deferred",
    "reason": "NOT MIGRATED, and the reason is a second defect. `Q0` feeds chi at 50 dps against y_lambda read from `wenzl-y-lambda-h12.witness.json`, whose recorded `parameters.q0` is B -- so the probe already STRADDLES two muon values (chi at a near-A literal, y_lambda at B). Pointing Q0 at the anchor would make the straddle exact-A-vs-B rather than close it. The correct fix reads the consumed witness's own q0, and that changes numbers and needs a re-run, so it belongs with #5500 rather than here. The literal is also wrong from digit 19: it matches neither A, B nor C."
   },
   {
@@ -96,47 +100,31 @@
    "literal": "1.1099785955573347117485528280749490295019743898536",
    "diverges_at": 19,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-correctness-deferred",
    "reason": "Same wrong-from-digit-19 literal and the same y_lambda-h12 straddle as its sibling probe; blocked for the same reason."
-  },
-  {
-   "file": "computations/gap_a3_cross_atom_overshoot_probe.py",
-   "literal": "1.1099785955541805",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 18, feeds the overshoot arithmetic. Destination under #5500 (A->C); B is that PR's declared out-of-scope family."
   },
   {
    "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 30, feeds A(K) arithmetic. Same blocked reason."
-  },
-  {
-   "file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
-   "literal": "1.1099785955541805",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`Q0 = mp.mpf(B)` at dps 20, feeds the flat-baseline p_lambda sum. Same blocked reason."
+   "substate": "a-correctness-deferred",
+   "reason": "MATCHED PAIR. `TRM_BETA_D = 0.38835725751524` is the deuteron |tr_M| from the #2626 run AT THIS q0. The file emits no witness, so cost is not the obstacle -- moving q0 alone would leave a tr_M computed at the old pin beside a q0 read from the anchor, which is the straddle this ledger exists to catch. Both must move together, and recomputing tr_M is authorial work."
   },
   {
    "file": "computations/gap_a3_overshoot_robustness_check.py",
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
-   "reason": "NOT class (b) despite an in-source instruction not to change it. Its comment justifies B as 'CURRENT, not stale: a 17-digit truncation of q_muon_at()'. That was true under CODATA 2018; q_muon_at() now returns C, so the stated justification has EXPIRED. Blocked on #5500, and the comment needs correcting when it lands."
+   "substate": "a-correctness-deferred",
+   "reason": "MATCHED PAIR, stated in the file: 'Q0 and TRM below are a MATCHED PAIR from that one run; changing either alone makes them inconsistent, which is why neither has been corrected in place.' I migrated this file and reverted it on reading that. Note its Q0 comment is separately stale -- it justifies B as a truncation of `q_muon_at()`, true under CODATA 2018 and not now -- so the comment needs correcting whether or not the value moves."
   },
   {
    "file": "computations/habiro_interpolation_wlambda.py",
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "MISLABEL: bound as `Q0_PROTON` and commented 'package-layer proton-pinned q0 (constants.py)'. The proton pin is 1.10997858275...; this is muon-B. The probe computes F_lambda at both 'pins' and both are muon values, so the cross-anchor comparison it reports is between muon-A-truncated and muon-B. Emits a witness; blocked pending #5500 so the label and the value are fixed in one pass."
   },
   {
@@ -144,7 +132,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` evaluated against the metallic-mean deltas. Blocked on #5500."
   },
   {
@@ -152,7 +140,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` feeds q_int / character arithmetic. Blocked on #5500."
   },
   {
@@ -160,7 +148,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` feeds q_int arithmetic. Blocked on #5500."
   },
   {
@@ -168,7 +156,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)`, commented 'Substrate substrate-value at the canonical anchor (50 dps)' -- an 18-char literal described as 50 dps. Blocked on #5500."
   },
   {
@@ -190,7 +178,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-correctness-deferred",
    "reason": "PUBLISHES the literal as `w.add_data('q_0_50dps', ...)`. It computes nothing -- every value in the witness is a transcription of an earlier run -- so re-pinning only the q0 label would make the witness self-inconsistent with the tau_M values beside it, which were computed at B. Needs a genuine re-derivation, not a literal swap."
   },
   {
@@ -205,7 +193,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "MISLABEL: commented 'q0 (proton-pinned, 50 dps)' over the muon-B value, and cites zhabiro_physical_z_pin.py as the source of the same literal -- so the mislabel is inherited, not local. Blocked on #5500; label and value belong in one pass."
   },
   {
@@ -227,7 +215,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` at dps 50 driving the brane-tower gap. Blocked on #5500."
   },
   {
@@ -235,7 +223,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 40, feeds q-integer arithmetic. Keystone s013 family; blocked on #5500."
   },
   {
@@ -243,7 +231,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 55. Keystone family; blocked on #5500."
   },
   {
@@ -251,7 +239,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
   },
   {
@@ -259,7 +247,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."
   },
   {
@@ -267,7 +255,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 50. Keystone family; blocked on #5500."
   },
   {
@@ -275,7 +263,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)`, commented 'muon-q0 canonical computations/ value'. Blocked on #5500."
   },
   {
@@ -283,7 +271,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)`; `Q = 1/Q0` is the |q|<1 evaluation point, so the literal propagates into every node. Blocked on #5500."
   },
   {
@@ -291,7 +279,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
   },
   {
@@ -299,7 +287,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 40. Keystone family; blocked on #5500."
   },
   {
@@ -307,7 +295,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` inside `mp.workdps(50)`; INV and QHAT derive from it. Blocked on #5500."
   },
   {
@@ -315,7 +303,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)`; ETA = log(Q0). Blocked on #5500."
   },
   {
@@ -323,7 +311,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` driving the d_q(lambda)/D targets. Blocked on #5500."
   },
   {
@@ -331,7 +319,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mpf(B)` at dps 50, default argument of `qint`. Blocked on #5500."
   },
   {
@@ -339,7 +327,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` and `HBAR_Q = 1 - 1/Q0`, described as 'exact constants from production witnesses (50 dps)'. It is the literal brane_tower_full_channel_trace_audit copied. Blocked on #5500."
   },
   {
@@ -350,19 +338,11 @@
    "reason": "`Q_MUON_50` is this audit's REFERENCE string: every witness q0 in the corpus is classified clean/stale/unknown against it. Migrating it changes every verdict the audit issues. NOTE the live defect: its comment claims 'DERIVED not typed: q_muon_at(60) reproduces exactly this'. q_muon_at() now returns C, so that claim is false -- and this audit and hardcoded_q0_literal_families_audit currently classify A and B with OPPOSITE polarity. #5500 is the resolution."
   },
   {
-   "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']`. A genuine two-anchor probe -- but the proton leg is transcribed too, and the muon leg is meant to BE the canonical muon pin, so this is a transcription, not a deliberate comparison value. Blocked on #5500."
-  },
-  {
    "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON_50` used in the h_q / prefactor arithmetic. Blocked on #5500."
   },
   {
@@ -370,7 +350,7 @@
    "literal": "1.10997859555418057528159407961",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON` at 31 chars, plus the same value in the docstring's ANCHORS table. Blocked on #5500."
   },
   {
@@ -378,7 +358,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON_50`, commented 'Muon-pinned q_0 for cross-anchor (Step 5b)'. Blocked on #5500."
   },
   {
@@ -386,55 +366,23 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON_50` in the mixed Wenzl/Kashaev evaluation. Blocked on #5500."
-  },
-  {
-   "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
-  },
-  {
-   "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
-  },
-  {
-   "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']`, commented 'muon = ideal CAL-2 pin' -- which is precisely the thing that should be read rather than typed. Blocked on #5500."
   },
   {
    "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0_MUON_PIN` beside `Q0_MP_PIN = Q_50_DIGIT_STR` -- the proton leg READS and the muon leg transcribes, in one file. Blocked on #5500."
-  },
-  {
-   "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
   },
   {
    "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
    "literal": "1.10997859555418057528159407961",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0_MUON`, sourced by comment from qbeta_chain4_kashiwara_step3_cross_anchor -- transcription of a transcription. Carries a durable REFUTATION verdict, so its anchor matters. Blocked on #5500."
   },
   {
@@ -442,7 +390,7 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON_50` in the residue-ratio arithmetic. Blocked on #5500."
   },
   {
@@ -450,16 +398,8 @@
    "literal": "1.1099785955541805752815940796095093779932822799587",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q_MUON_50` in the sl_6 Demazure evaluation. Blocked on #5500."
-  },
-  {
-   "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
-   "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-   "diverges_at": 13,
-   "class": "a",
-   "substate": "a-blocked",
-   "reason": "`ANCHORS['muon']` at 61 chars. Blocked on #5500."
   },
   {
    "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
@@ -564,7 +504,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` feeding the LP sweep's q-integers. Blocked on #5500."
   },
   {
@@ -572,7 +512,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` feeding the n=2 Markov/Gram closed forms. Blocked on #5500."
   },
   {
@@ -580,7 +520,7 @@
    "literal": "1.1099785955541805",
    "diverges_at": 13,
    "class": "a",
-   "substate": "a-blocked",
+   "substate": "a-cost-deferred",
    "reason": "`Q0 = mp.mpf(B)` feeding the Hopf-vs-Borromean SDP. Blocked on #5500."
   }
  ],
@@ -622,6 +562,60 @@
     "now": "raise RuntimeError(...) from exc",
     "witness": "NOT regenerated -- see the row's reason"
    }
-  ]
- }
+  ],
+  "read_the_anchor_print_only": {
+   "note": "Print-only class-(a) sites migrated from the B literal to `_q0_value_for_anchor('muon')`. They emit no witness, so there is no regeneration cost and nothing was re-run to chase a number. Only the MUON leg moved: the proton literals in the qbeta ANCHORS dicts are not divergent, and at 61 chars against the anchor witness's 51, pointing them at the proton anchor would LOSE precision.",
+   "verification": "all 8 exit 0; the six qbeta probes still print ASSERTIONS PASS; `git status` after the runs lists no witness file",
+   "files": [
+    "computations/gap_a3_cross_atom_overshoot_probe.py",
+    "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
+    "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
+    "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+    "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+    "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
+    "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+    "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py"
+   ]
+  }
+ },
+ "why_each_class_a_row_is_deferred": [
+  "The first version of this ledger deferred every remaining class-(a) row",
+  "with one reason -- 'blocked on #5500' -- and that reason did not survive",
+  "review. It argues against TRANSCRIBING C. It does not argue against",
+  "READING the anchor, which is what the migration is: a site that calls",
+  "`_q0_value_for_anchor` is pinned to nothing and follows the anchor before",
+  "and after #5500. The ledger's own sentence said as much.",
+  "",
+  "Re-measured, the remainder splits three ways:",
+  "",
+  "  a-cost-deferred        (32)  The file EMITS A WITNESS. Reading the",
+  "                               anchor moves it B -> A now, and #5500 moves",
+  "                               it A -> C, so the same witness is",
+  "                               regenerated twice and each regeneration is",
+  "                               a place an unexplained number can slip",
+  "                               through -- which this PR measured happening",
+  "                               three times. A real cost argument, and a",
+  "                               different one from the original wording.",
+  "",
+  "  a-correctness-deferred  (5)  Reading the anchor does NOT close the",
+  "                               defect. Two carry a frozen tr_M computed at",
+  "                               the old pin (moving q0 alone CREATES a",
+  "                               straddle); two read y_lambda from a B-built",
+  "                               witness (moving q0 to the anchor makes the",
+  "                               straddle exact-A-vs-B rather than closing",
+  "                               it); one computes nothing at all.",
+  "",
+  "  migratable now          (0)  Empty as of this PR -- because the 8 that",
+  "                               were in it have been migrated. Established",
+  "                               by measurement, not by family label: a",
+  "                               scan for `WitnessBuilder` / `json.dump` /",
+  "                               `.save(` found 10 of the 45 write nothing,",
+  "                               and 2 of those 10 turned out to carry a",
+  "                               matched-pair constraint on a second reading,",
+  "                               so they moved to correctness-deferred.",
+  "",
+  "The 8 migrated cost nothing to migrate: no witness to regenerate, all 8",
+  "re-run at exit 0 with their assertions still passing, and `git status`",
+  "after the runs shows no witness file touched."
+ ]
 }

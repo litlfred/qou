@@ -1,4 +1,4 @@
-# Hardcoded-q₀ literals: the 72 sites are 45 defects
+# Hardcoded-q₀ literals: the 72 sites are 37 defects
 
 **Date:** 2026-08-23 · **PR:** #5535 · **Branch:** `claude/q0-literal-transcription-drain-2026-08-23`
 
@@ -6,9 +6,13 @@ Owner instruction: *"resolve the 71. do it proper."*
 
 `computations/audits/hardcoded_q0_literal_families_audit.py` reported **72**
 divergent hardcoded-q₀ literals against a baseline of 71. This document records
-the classification that had to come first, the five sites migrated, and three
-findings the classification surfaced that are larger than the thing it was
+the classification that had to come first, the thirteen sites migrated, and
+three findings the classification surfaced that are larger than the thing it was
 looking for.
+
+§2 corrects this document's own first deferral argument, which conflated
+*transcribing* the new value with *reading* the anchor. That correction is what
+turned up eight sites that were never blocked at all.
 
 Machine-checkable artifacts:
 
@@ -33,8 +37,8 @@ The split, on the 72 sites as found:
 | (c) | documentation / docstring / comment | 2 |
 | (d) | test fixture | 10 |
 
-**22 of 72 were never defects.** After this PR's migrations the live set is 69
-sites / **45** class-(a).
+**22 of 72 were never defects.** After this PR's migrations the live set is **61**
+sites / **37** class-(a) — 32 cost-deferred, 5 correctness-deferred.
 
 The code-vs-documentation half of the split was made mechanically — `tokenize`
 for comments, `ast` for module/class/function docstrings — rather than by eye.
@@ -64,7 +68,7 @@ ten rows bear that out:
 
 The validator records these under `never_migrate_class_b`.
 
-## 2. Why 45 of the 50 defects are not fixed here
+## 2. Why the remaining defects are not fixed here — the reason, corrected
 
 Owner ruling, 2026-08-22, landing in **#5500**: *"2022 CODATA better than 2018.
 A → CODATA 2022."*
@@ -75,27 +79,82 @@ B  1.10997859555418057528…   Vol(4₁)/206.7682830, CODATA 2018 — the 66-sit
 C  1.10997859564273904668…   q_muon_at(), live over the NIST ratio — the destination
 ```
 
-#5500 states that B is *"a separate pre-existing issue in 101 files, **untouched
-here**."* Measured inside `computations/**/*.py` — the families audit's scan root
-— that family is 66 of the 72.
+**The first version of this section gave one blanket reason — "blocked on
+#5500" — and it was wrong.** That argument works against *transcribing C*. It
+does not work against *reading the anchor*, which is what the migration is: a
+site that calls `_q0_value_for_anchor` is pinned to nothing and follows the
+anchor before and after the ruling. This document's own next sentence said as
+much. Corrected under review; recorded rather than quietly rewritten, because
+the distinction is the whole substance of the deferral.
 
-So the **destination** of a class-(a) migration is under revision right now. The
-principle that survives the revision is the one the audit's own docstring
-states: *read the authority, do not transcribe it.* A site that **reads** the
-anchor is correct under A and under C; a site that retypes either is correct
-under neither for long. Migrating 45 B-sites in this PR would pin them to a
-value the owner has just superseded, and would collide head-on with #5500's own
-53-witness regeneration.
+Re-measured — by scanning for `WitnessBuilder` / `json.dump` / `.save(`, not by
+family label — the 45 split three ways:
 
-Recorded `a-blocked` with that reason — not silently fixed, and not quietly
-dropped from the count.
+| why deferred | count | the argument |
+|---|---:|---|
+| **migratable now** | **10 → 8 migrated** | emits **no witness**, so reading the anchor costs no regeneration at all |
+| cost-deferred | 32 | emits a witness: reading the anchor regenerates it B→A now, and #5500 regenerates it A→C — **twice**, and each regeneration is a place an unexplained number slips through, which §4 measured happening three times |
+| correctness-deferred | 5 | reading the anchor does **not** close the defect |
 
-## 3. Migrated (5)
+**Category (3) was not empty**, and the eight in it are migrated in this PR —
+see §3.1. Two of the ten turned out on a second reading to carry a matched-pair
+constraint and moved to correctness-deferred; see §3.2.
 
-Only where the destination is unambiguous **and** the fix is right under both A
-and C.
+The five correctness cases:
 
-### Read the anchor (3)
+- `gap_a3_overshoot_robustness_check` — the file states it: *"Q0 and TRM below
+  are a **MATCHED PAIR** from that one run; changing either alone makes them
+  inconsistent, which is why neither has been corrected in place."*
+- `gap_a3_deuteron_A_D_overshoot` — same shape, `TRM_BETA_D` frozen at the same
+  #2626 run.
+- the two `he4_binding_k_*` probes — `y_λ` read from a **B**-built witness, so
+  pointing `Q0` at the anchor makes the straddle exact-A-vs-B rather than
+  closing it.
+- `probe_inter_knot_decoupling` — computes nothing; every value in its witness
+  is a transcription of an earlier run.
+
+For all five, cost is *not* the obstacle — two of them emit no witness at all.
+
+## 3. Migrated (13)
+
+### 3.1 Print-only, zero cost (8)
+
+Eight sites emit **no witness**, so reading the anchor costs no regeneration —
+the deferral argument never applied to them. All eight moved from the B literal
+to `_q0_value_for_anchor("muon")`:
+
+```
+gap_a3_cross_atom_overshoot_probe.py            qbeta/qbeta_counit_vs_trace_fork_probe.py
+gap_a3_deuteron_plambda_flat_baseline_probe.py  qbeta/qbeta_d_frame_two_row_cap_prune_probe.py
+qbeta/qbeta_bar_odd_sinh_partner_check_probe.py qbeta/qbeta_phase_bar_parity_completeness_probe.py
+qbeta/qbeta_ck_coordinate_magnifier_probe.py    qbeta/qbeta_sinh_partner_object_identification_probe.py
+```
+
+All eight re-run at **exit 0**; the six `qbeta` probes still print `ASSERTIONS
+PASS`; `git status` after the runs lists **no witness file**, which is the
+measurement that category (3) is real rather than assumed.
+
+Only the **muon** leg moved. The proton literals in the `qbeta` `ANCHORS` dicts
+are not divergent, and at 61 characters against the anchor witness's 51,
+pointing them at `_q0_value_for_anchor("proton")` would *lose* precision — a
+separate question, out of scope here.
+
+### 3.2 Two were migrated and reverted
+
+`gap_a3_overshoot_robustness_check` and `gap_a3_deuteron_A_D_overshoot` are
+print-only and were migrated with the other eight. Reading the first one's
+comment block reverted both:
+
+> Q0 and TRM below are a **MATCHED PAIR** from that one run; changing either
+> alone makes them inconsistent, which is why neither has been "corrected" in
+> place.
+
+Moving `Q0` alone would leave a `tr_M` computed at the old pin beside a `q₀`
+read from the anchor — creating exactly the straddle this ledger exists to
+catch. Reclassified `a-correctness-deferred`. The witness-emission scan cannot
+see a constraint like this; only reading the file can.
+
+### 3.3 Read the anchor (3)
 
 Each transcribed the **anchor** value A and got A itself wrong:
 
@@ -116,7 +175,7 @@ layers that transcribes the anchor it tests cannot follow a re-pin, which is
 the exact defect it exists to catch. Its proton leg already read
 (`q_parameter.Q_MP`); the muon leg is now symmetric with it.
 
-### Raise, do not guess (2)
+### 3.4 Raise, do not guess (2)
 
 `binding_qgaussian_ell1_ceiling_measurement.py` and
 `flavor_split_alpha_bond_dilog_probe.py` each carried
@@ -225,9 +284,7 @@ nine test fixtures are classified (b)/(d) and left alone.
 
 ## 5. Ratchet
 
-`BASELINE_DIVERGENT` 71 → **69** (live count 72 → 69; the char-52 family is
-gone entirely, and char-18 went 2 → 1). The baseline comment now says what the
-69 are, so the next reader does not mistake it for a defect backlog.
+`BASELINE_DIVERGENT` 71 → **61**, in two steps: 72 → 69 (the char-52 family gone entirely, char-18 2 → 1) and 69 → 61 (the eight print-only sites). The baseline comment now says what the 61 are and why each is deferred, so the next reader does not mistake it for a defect backlog.
 
 ## 6. Verification
 
@@ -242,6 +299,8 @@ verification is the gate.
 - `hardcoded_q0_literal_families_audit.py` → `allPassed: true` (was `false`).
 - `q0_anchor_gate_test.py` → PASS 3/3 after migration.
 - `probe_qbeta_form.py` → exit 0 after migration.
+- All 8 print-only migrations → exit 0; the six `qbeta` probes still print
+  `ASSERTIONS PASS`; `git status` after the runs lists no witness file.
 - No `invocation.argv` drift committed; `q0-anchor-consistency-audit` was
   regenerated once for its one substantive move (`Q0_INDEPENDENT` 36 → 37, the
   new witness) and thereafter reverted by the gate as drift-only.
@@ -251,7 +310,10 @@ rule 1; #5500 owns it).
 
 ## 7. What is left
 
-45 class-(a) rows, `a-blocked`, one coherent follow-up owned by the A→C
-migration. The ledger validator fails on an unclassified live site, so a new
+37 class-(a) rows: **32 cost-deferred** (each emits a witness, so reading the
+anchor regenerates it twice) and **5 correctness-deferred** (reading the anchor
+does not close the defect). The cost-deferred set is one coherent follow-up
+owned by the A→C migration, bean `qou-c4kv`; the correctness five are
+independent of it and need their frozen companions recomputed, not a re-pin. The ledger validator fails on an unclassified live site, so a new
 transcription cannot land unnoticed, and fails on an orphan row, so the ledger
 drains with the corpus rather than rotting beside it.
