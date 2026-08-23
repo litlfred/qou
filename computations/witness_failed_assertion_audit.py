@@ -61,6 +61,10 @@ RATCHET, NOT A BOOLEAN
 ----------------------
 
 108 of 2681 live witnesses are red as of 2026-08-21, spread across four months
+(NOTE 2026-08-23: `2681` is the whole corpus, which overstates the denominator —
+519 of those witnesses carry neither an `assertions` entry nor an `allPassed`
+key, so they can never be counted red. The red rate is over the EVALUABLE
+subset, not the corpus. The run now prints both numbers; qou-i5jy finding #3.)
 (2026-05: 1, 06: 38, 07: 25, 08: 44). A gate that is red on arrival gets
 skipped — `precision-gates.sh` says so in its own comments, and that is how a
 checker goes quiet. So the backlog is recorded in
@@ -136,14 +140,38 @@ def failed_assertions(w: dict) -> list[str]:
     return names
 
 
-def scan(scan_root: str = SCAN_ROOT) -> dict[str, dict]:
+def scan(scan_root: str = SCAN_ROOT,
+         coverage_out: dict | None = None) -> dict[str, dict]:
+    """Red witnesses. Pass `coverage_out` to also receive the denominator.
+
+    `failed_assertions` is deliberately conservative: a witness carrying neither
+    an `assertions` entry nor an `allPassed` key uses a different schema and is
+    never flagged (see WHAT IS A FAILURE above). That conservatism is correct —
+    but it means the red count has a denominator SMALLER than the corpus, and
+    this report printed only the numerator, so a reader had no way to see how
+    much of the corpus could be counted red at all.
+
+    Filled in the same walk rather than a second pass: this script is a gate in
+    `scripts/precision-gates.sh` and should not double its I/O to report its own
+    coverage.
+    """
+    cov = {"scanned": 0, "unparseable": 0, "no_signal": 0, "evaluable": 0}
     out: dict[str, dict] = {}
     for path in sorted(_iter_witnesses(scan_root)):
+        cov["scanned"] += 1
         try:
             with open(path, encoding="utf-8") as fh:
                 w = json.load(fh)
         except Exception:
+            cov["unparseable"] += 1
             continue
+        a = w.get("assertions") if isinstance(w, dict) else None
+        if (isinstance(w, dict)
+                and not (isinstance(a, list) and a)
+                and "allPassed" not in w):
+            cov["no_signal"] += 1
+        else:
+            cov["evaluable"] += 1
         names = failed_assertions(w)
         if names:
             rel = os.path.relpath(path, ROOT)
@@ -152,6 +180,8 @@ def scan(scan_root: str = SCAN_ROOT) -> dict[str, dict]:
                 "failed": names,
                 "computedAt": str(w.get("computedAt", ""))[:10],
             }
+    if coverage_out is not None:
+        coverage_out.update(cov)
     return out
 
 
@@ -192,7 +222,8 @@ def main(argv: list[str]) -> int:
     if "--self-test" in argv:
         return _self_test()
 
-    found = scan()
+    cov: dict = {}
+    found = scan(coverage_out=cov)
     total_files = len(found)
     total_asserts = sum(v["count"] for v in found.values())
 
@@ -229,6 +260,15 @@ def main(argv: list[str]) -> int:
 
     print(f"witnesses with a recorded assertion failure: {total_files} "
           f"({total_asserts} failed assertion(s))")
+    print(f"  denominator: {cov['evaluable']} EVALUABLE of {cov['scanned']} "
+          f"scanned")
+    if cov["no_signal"]:
+        print(f"  NOT EVALUABLE: {cov['no_signal']} witness(es) carry neither an "
+              "assertions[] entry\n                 nor an allPassed key, so they "
+              "can never be counted red.\n                 A different schema, not "
+              "a clean result — see WHAT IS A FAILURE.")
+    if cov["unparseable"]:
+        print(f"  UNPARSEABLE: {cov['unparseable']} witness(es) skipped")
     print(f"baseline: {len(baseline)} witness(es)")
 
     if "--list" in argv:

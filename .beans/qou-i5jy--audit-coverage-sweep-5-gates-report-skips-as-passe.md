@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T14:05:00Z
+updated_at: 2026-08-23T14:35:00Z
 ---
 
 
@@ -589,3 +589,78 @@ that **no staleness mechanism in the corpus can ever check**. Options are
 `qou-cds3`-adjacent (regenerate / relocate the producer / mark provenance-dead),
 and picking among them is a scope decision, not a coverage fix. The exit code is
 likewise unchanged: `--strict` still fails only on `in-repo-wiring`.
+
+---
+
+## Finding #3 RE-MEASURED and FIXED 2026-08-23 — the 519 is confirmed, and it was the right class
+
+Relayed, not measured, when this bean was filed. Re-measured now using the
+module's **own** `_iter_witnesses`, so the denominator matches the numerator's
+scan exactly rather than approximating it.
+
+```
+witnesses scanned .............................. 2719
+  recorded RED (the headline) .................. 116
+  NO SIGNAL (no assertions[], no allPassed) .... 519      <- 19.1%
+  allPassed:true + empty assertions[] .......... 433      <- distinct, benign
+  unparseable .................................. 0
+```
+
+**519 confirmed exactly**, and — the part worth checking — it is the *meaningful*
+class. I expected the relayed figure to be a conflation of "structurally
+incapable of being counted red" with the benign "`allPassed: true` and nothing
+failed". It is not: those 433 are a **separate** population, and the 519 are
+witnesses carrying no signal of either kind, which the audit is genuinely blind
+to. The relayed number and its interpretation both survive.
+
+### The docstring claim also holds — verified at `:63`
+
+> `108 of 2681 live witnesses are red as of 2026-08-21`
+
+`2681` is the whole corpus. The red rate belongs over the **evaluable** subset,
+which is smaller by 519. Annotated in place with a dated `NOTE` rather than
+overwritten — the original is a dated measurement and the correction is about
+its denominator, so both should read straight.
+
+### Changes
+
+1. `scan()` takes an optional `coverage_out` dict and fills it **in the same
+   walk**. This script is a gate in `scripts/precision-gates.sh`; making it walk
+   2719 files twice to report its own coverage would be a poor trade.
+2. The signature is extended, not changed — `scan()` and `scan(scan_root)` still
+   behave identically, so no caller breaks.
+3. The report prints the denominator, and names the excluded class as *"a
+   different schema, not a clean result"* pointing at the header section that
+   explains why the conservatism is deliberate.
+4. Self-test still 8/8, including the case that pins this exclusion
+   (`{}` → no offence).
+
+### Exit semantics deliberately unchanged
+
+`--strict` is wired into `scripts/precision-gates.sh:145`. It still fails on
+`new or grown` only. Coverage is **reported**, not made fatal — same criterion
+applied to `MISSING` in finding #1.
+
+### PRE-EXISTING RED, inherited from main — not introduced here
+
+Running `--strict` surfaced a failing gate:
+
+```
+GROWN (1):
+  computations/delta-lambda-canonical-residual.witness.json: 1 -> 2
+RED: a witness may not be committed with a recorded assertion failure.
+```
+
+Attribution checked three ways before reporting it as not mine: the witness is
+byte-identical between `origin/main` and this branch, the baseline file is too,
+and running the gate in a **pristine `origin/main` worktree** reproduces the same
+single `GROWN` entry. So `main` is red on this gate independently of this
+branch's 50+ commits.
+
+Not fixed here. The remedy is one of the three the gate itself names — fix the
+producer, the tolerance, or the schema misuse — and choosing among them requires
+knowing what `delta-lambda-canonical-residual` should assert, which is the
+q₀-migration campaign's own subject matter (last touched by *"migration: batch to
+116/254 at the proton pin"*), not an audit-coverage question. **Flagged so it is
+not mistaken for something this bean's commits caused, and so nothing downstream
+reads this gate as green.**
