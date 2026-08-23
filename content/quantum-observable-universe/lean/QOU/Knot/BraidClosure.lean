@@ -711,6 +711,100 @@ theorem cycleLen_eq_card_support (f : Equiv.Perm (Fin n)) {p : Fin n}
     (hp : f p ≠ p) : cycleLen f p = (f.cycleOf p).support.card :=
   (Equiv.Perm.isCycle_cycleOf f hp).orderOf
 
+/-! ### The leader map, and the fibres it cuts
+
+`exists_leader` + `leader_unique` say each cycle has exactly one leader. Turning
+that into a *count* needs the assignment as a function, so that `Fin n` is cut
+into fibres one can sum over. -/
+
+open scoped Classical in
+/-- The leader of `p`'s component. -/
+noncomputable def leaderOf (f : Equiv.Perm (Fin n)) (p : Fin n) : Fin n :=
+  (exists_leader f p).choose
+
+open scoped Classical in
+theorem leaderOf_isLeader (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    IsLeader f (leaderOf f p) := (exists_leader f p).choose_spec.1
+
+open scoped Classical in
+theorem leaderOf_sameCycle (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    f.SameCycle (leaderOf f p) p := (exists_leader f p).choose_spec.2
+
+open scoped Classical in
+/-- **Two positions share a leader exactly when they share a cycle** — so the
+fibres of `leaderOf` are precisely the components. -/
+theorem leaderOf_eq_iff (f : Equiv.Perm (Fin n)) (p q : Fin n) :
+    leaderOf f p = leaderOf f q ↔ f.SameCycle p q := by
+  constructor
+  · intro h
+    exact ((leaderOf_sameCycle f p).symm.trans (h ▸ leaderOf_sameCycle f q))
+  · intro h
+    exact leader_unique f (leaderOf_isLeader f p) (leaderOf_isLeader f q)
+      ((leaderOf_sameCycle f p).trans (h.trans (leaderOf_sameCycle f q).symm))
+
+open scoped Classical in
+/-- A leader is its own leader. -/
+@[simp] theorem leaderOf_of_isLeader (f : Equiv.Perm (Fin n)) {p : Fin n}
+    (hp : IsLeader f p) : leaderOf f p = p :=
+  leader_unique f (leaderOf_isLeader f p) hp (leaderOf_sameCycle f p)
+
+open scoped Classical in
+/-- **A leader's fibre is its component, and its size is `cycleLen`.** The two
+cases are the two shapes a component can have: a lone fixed strand, or a genuine
+cycle. -/
+theorem card_fiber_leader (f : Equiv.Perm (Fin n)) {l : Fin n} (hl : IsLeader f l) :
+    (Finset.univ.filter (fun q => leaderOf f q = l)).card = cycleLen f l := by
+  classical
+  have hfib : ∀ q, leaderOf f q = l ↔ f.SameCycle l q := by
+    intro q
+    constructor
+    · intro h
+      have hq : f.SameCycle (leaderOf f q) q := leaderOf_sameCycle f q
+      rwa [h] at hq
+    · intro h
+      have hq : leaderOf f q = leaderOf f l := (leaderOf_eq_iff f q l).mpr h.symm
+      rwa [leaderOf_of_isLeader f hl] at hq
+  by_cases hfix : f l = l
+  · have hset : Finset.univ.filter (fun q => leaderOf f q = l) = {l} := by
+      ext q
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_singleton,
+                 hfib]
+      constructor
+      · rintro ⟨i, hi⟩
+        rw [← hi, Equiv.Perm.zpow_apply_eq_self_of_apply_eq_self hfix]
+      · rintro rfl
+        exact Equiv.Perm.SameCycle.refl f _
+    rw [hset, cycleLen_of_fixed f hfix]
+    simp
+  · have hmem : l ∈ f.support := Equiv.Perm.mem_support.mpr hfix
+    have hset : Finset.univ.filter (fun q => leaderOf f q = l)
+        = (f.cycleOf l).support := by
+      ext q
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and, hfib,
+                 Equiv.Perm.mem_support_cycleOf_iff]
+      exact ⟨fun h => ⟨h, hmem⟩, fun h => h.1⟩
+    rw [hset, cycleLen_eq_card_support f hfix]
+
+open scoped Classical in
+/-- **The partition fact.** The components cover `Fin n` exactly: summing each
+leader's component size gives `n`. Proved by counting the fibres of `leaderOf`,
+which `card_fiber_leader` identifies with the components. -/
+theorem sum_cycleLen_leaders (f : Equiv.Perm (Fin n)) :
+    ∑ l ∈ Finset.univ.filter (fun p => IsLeader f p), cycleLen f l = n := by
+  classical
+  have hmaps : Set.MapsTo (leaderOf f) (↑(Finset.univ : Finset (Fin n)))
+      (↑(Finset.univ.filter (fun p => IsLeader f p))) := by
+    intro q _
+    simp [leaderOf_isLeader f q]
+  have hcard := Finset.card_eq_sum_card_fiberwise hmaps
+  rw [Finset.card_univ, Fintype.card_fin] at hcard
+  have h2 : ∑ l ∈ Finset.univ.filter (fun p => IsLeader f p), cycleLen f l
+      = ∑ l ∈ Finset.univ.filter (fun p => IsLeader f p),
+          (Finset.univ.filter (fun q => leaderOf f q = l)).card :=
+    Finset.sum_congr rfl fun l hl => (card_fiber_leader f (by simpa using hl)).symm
+  rw [h2]
+  exact hcard.symm
+
 /-! ### The remaining bridge, stated
 
 `card_involved` counts the **starting positions** involved in crossing `k`:
