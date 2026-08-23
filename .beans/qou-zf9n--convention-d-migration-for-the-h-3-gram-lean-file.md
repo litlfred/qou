@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-23T20:30:11Z
+updated_at: 2026-08-23T21:34:56Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -182,3 +182,25 @@ Consequence already recorded in the producer: the proton-excess penalty spread
 was quoted as −1.33 vs −1.77 (~33%); it is now −0.95 vs −1.77 (~86%), and the
 magnitude is not stable under input drift. That strengthens the existing
 "magnitude is NOT a single derivable number" verdict rather than weakening it.
+
+
+## Third independent arrival at the D-frame Gram singularity (2026-08-23)
+
+Main's `35b4923012` (qou-cds2) measured the numerical rank of the general-n
+Markov-Gram and found corank 1 at n=3 and corank 2 at n=4, identifying
+rank = #{partitions of n with at most two rows} — Temperley-Lieb.
+
+That generalises the n=3 result proved on this branch. The radical exhibited
+by `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_mulVec_radical`,
+(-q^3, q^2, q^2, -q, -q, 1), IS the three-strand q-antisymmetriser, i.e. the
+partition (1^3) — the unique partition of 3 with >= 3 rows. Checks out at
+n=4 too: partitions of 4 with >= 3 rows are (2,1,1) and (1^4), so corank 2.
+
+So three producers, reached separately, describe one phenomenon:
+  - Lean, exact over R, sorry-free   : det = 0, explicit 1-dim radical at n=3
+  - frobenius_gram_matrix_probe (sympy): exactly 1 degenerate direction,
+    indefinite signature
+  - qou-cds2 (numpy, general n)      : corank = #{partitions with >= 3 rows}
+
+and it is the same fact as `y_lambda = 0 for >= 3 rows` under D (qou-8iru),
+arriving from the rank of a Gram instead of from the weights.
