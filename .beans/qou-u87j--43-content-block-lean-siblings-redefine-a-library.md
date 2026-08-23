@@ -347,3 +347,73 @@ opened as a bean here; measured and recorded so whoever wants it has the number.
 
 Scripts: `measure-option2.ts` and `sample-338.ts` in the session scratchpad.
 Both use the canonical resolver; re-run before quoting.
+
+## Option 3 characterised 2026-08-23 — **there is no clerical subset. Do not batch this.**
+
+Option 3 reads as the boring one: copy the right field set across, 46 times.
+Started it, on the `quantum-observable-universes/` seven where this session
+already had context, and stopped after two. It is not clerical, and the reason
+generalises.
+
+### Direction of drift is not readable from the field diff
+
+Classifying the 45 pairs on this branch by which side has fields the other lacks:
+
+| | pairs |
+|---|---|
+| **both** sides have fields the other lacks | **28** |
+| library-only fields — *looks* like the sibling is behind | 12 |
+| sibling-only fields — *looks* like the library is behind | 4 |
+| order / rename only | 1 |
+
+The 12 look like the clerical bucket. **They are not**, and
+`QOU.SubstrateParameter` — two of them — shows why.
+
+### Worked case: `QOU.SubstrateParameter`, where the library is the stale side
+
+| | fields |
+|---|---|
+| library `lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean:23` | `field : M → ℝ`, `field_pos`, `field_ge_one`, `not_root_of_unity` |
+| siblings `substrate-parameter.lean:72`, `quantum-gauge-group.lean:44` | `field : M → R_q` |
+
+The field diff says "library-only: `field_pos field_ge_one not_root_of_unity`",
+i.e. sibling behind, add three fields. **The opposite is true.** The sibling's
+own docstring:
+
+> the archimedean properties (`q(p) > 0`, `q(p) ≥ 1`, not a root of unity) live
+> on `ArchimedeanSubstrateField` below, **after the substrate→archimedean wall
+> (AGENTS.md §7c)**.
+
+The siblings have been migrated to the two-layer §7c shape — categorical
+`SubstrateParameter` over the un-ordered `R_q`, archimedean properties on a
+separate `ArchimedeanSubstrateField`. The library never was. And the **block is
+the authority**: `substrate-parameter.md` defines
+`q ∈ End(𝟙)` — categorical, no ordering, no `q ≥ 1`. The siblings match the
+block; the library does not.
+
+So "resync the sibling to the library" here would **undo a §7c migration**.
+
+Note the checkers do not catch it: `check-wall-side` and `check-base-ring` both
+**PASS** on the library file, because it is *wholly* archimedean rather than
+mixed. Passing the wall gate means "not mixed", not "on the right side of the
+wall".
+
+### What doing it properly costs
+
+The same split as `MassIdentity` → `ArchimedeanMassIdentity` (PR #5458), on a
+much bigger object: **22 library files mention `SubstrateParameter`, with 85
+field-access sites**, and it is the carrier of `q₀` — every mass number in the
+corpus is downstream. Not started. It wants its own bean, its own branch, and a
+numerical no-change check.
+
+### Consequence for planning
+
+- **No batch pass.** Every one of the 45 needs a judgement about which side is
+  right, and the field-set diff does not supply it. The block's `.md` does, and
+  reading it is the per-case work.
+- **The 12 "library-only" are the trap, not the quick win** — that is precisely
+  the bucket the `SubstrateParameter` pair sits in.
+- **Sequence it as: block prose → decide the correct shape → fix whichever side
+  is wrong.** Sometimes that is the library, and then it is not a resync at all.
+- Option 1's gate stands regardless, and is the reason none of this is urgent:
+  the population cannot grow while the baseline holds.
