@@ -29,9 +29,15 @@ fit). No SU(2)-component ↔ W_λ numerical match is asserted (that needs the le
 S-matrix; forcing it would be numerology). W_λ values are the corpus q-Plancherel
 weights, shown for context.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, nstr
 
-mp.dps = 30
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 PARTS5 = [(5,), (4, 1), (3, 2), (3, 1, 1), (2, 2, 1), (2, 1, 1, 1), (1, 1, 1, 1, 1)]
 ROLE = {(3, 1, 1): "electron", (3, 2): "muon", (2, 2, 1): "(3,2)-twin"}

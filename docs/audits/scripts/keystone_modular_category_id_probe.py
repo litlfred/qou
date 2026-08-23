@@ -17,9 +17,15 @@ identification — NOT a finite compact MTC and NOT a finite Sasakian manifold.
 DISCIPLINE: no fit; every step is an exact regime check (|q|, η real/imaginary,
 root-of-unity test). Nothing wired.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, log, pi, sin, exp, mpc, fabs, nstr
 
-mp.dps = 40
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 
 

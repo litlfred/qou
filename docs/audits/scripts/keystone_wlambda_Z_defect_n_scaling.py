@@ -33,9 +33,14 @@ No fit: every number is computed; q_0 and the 210 ppb target are never used to t
 anything (they are not used at all -- this is a structural property of W_lambda).
 """
 import sys
+from pathlib import Path
+
 import mpmath as mp
 
-mp.mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 
 def q0_value():
