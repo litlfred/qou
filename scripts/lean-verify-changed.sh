@@ -140,7 +140,13 @@ if [ "${#files[@]}" -eq 0 ]; then
 fi
 
 if [ "${#files[@]}" -eq 0 ]; then
-  echo "lean-verify-changed: no .lean files to check"
+  # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
+  # considered" and "N considered, none relevant" were the same sentence, and
+  # they are not the same fact: the first means this gate examined NOTHING.
+  # The scope line says what was compared, so a caller can tell a genuine skip
+  # from the merge-base half having been dropped.
+  echo "lean-verify-changed: 0 .lean file(s) — this check examined NOTHING."
+  echo "  scope: $(changed_files_scope)"
   exit 0
 fi
 
