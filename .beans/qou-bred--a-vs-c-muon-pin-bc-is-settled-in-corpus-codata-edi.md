@@ -1,11 +1,11 @@
 ---
 # qou-bred
 title: 'A-vs-C muon pin: B/C is SETTLED in corpus (CODATA edition); A is a FIXED POINT, not a vintage'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T19:40:59Z
-updated_at: 2026-08-22T21:06:38Z
+updated_at: 2026-08-23T07:43:36Z
 ---
 
 Corpus-grep answer to "is A-vs-C already in the corpus?", run 2026-08-22 per the
@@ -181,3 +181,56 @@ open item rather than leaving it implicit.
 **What to avoid:** switching the anchor to call q_muon_at() directly. Maximum
 drift exposure across 56 witnesses for a 0.063-sigma gain, via the mechanism
 whose removal already broke main once.
+
+
+## RULED, 2026-08-23 — owner: "adopt C per recommendation"
+
+The A-vs-C question is CLOSED in favour of **C**. Two independent owner
+statements now say the same thing:
+
+- 2026-08-22, on #5500: *"2022 CODATA better than 2018. A --> CODATA 2022."*
+- 2026-08-23, this session: *"adopt C per recommendation"*
+
+## The execution is ALREADY IN FLIGHT — do not duplicate it
+
+**PR #5500 / `claude/muon-anchor-codata-2022-2026-08-22` is implementing
+this.** It re-points `q_parameter`'s ideal/muon branch at the live
+`q_muon_at()`, updates 10 hardcoded guards in 8 files, and regenerates the
+anchor-defining witness. That branch is the owner of this work. This is
+mechanical migration, not open research, so the AGENTS.md
+measured-research-overlap relaxation does NOT apply: one owner.
+
+## What I under-costed in my own recommendation
+
+My step 2 said "regenerate the stored string from C" without stating the
+cost. Measured on an untouched tree:
+
+    muon-stamped witnesses          : 56
+      with q0Value                  : 56  (none unstamped)
+      q0Value at A                  : 56  <- ALL become Q0_FLIP if anchor -> C
+      q0Value already at C          :  0
+
+**All 56 flip.** #5500 reports 53 because its branch has already regenerated
+3 — the two figures reconcile exactly, which is an independent confirmation
+of both. The regeneration is not a follow-up; it is part of the change.
+
+## Sequencing answer (posted to #5500)
+
+Their open question was "land the core first, or regenerate all 53 in this
+tranche?". Answer: **all 53 in one tranche.** AGENTS.md
+§"OWNER AUTHORISATION, RECORDED 2026-08-19" constraint 4 — *"Do not split
+the change... #5049 merged the witnesses and held the manifest, and the half
+that landed is the half that broke main."* Landing the anchor move with 53
+stale witnesses is the qou-m9xp failure mode at smaller radius.
+
+## What this bean shipped, and what stays true after the re-pin
+
+The staleness gate `muon_pin_stored_vs_live_gate.py` (#5471). After #5500
+lands, its reported gap goes 0.063sigma -> ~0 and its committed witness needs
+one refresh. The gate itself stays correct and useful: it is what makes the
+NEXT CODATA revision visible instead of silent, which is the whole reason
+"derive, don't transcribe" is the right rule.
+
+The 0.063sigma finding is unaffected by the ruling and is the reason the
+ruling is safe: |A - C| = 0.0769 ppb vs sigma(q0) = 1.2234 ppb. No framework
+observable distinguishes them; 53 regenerations move no physics.
