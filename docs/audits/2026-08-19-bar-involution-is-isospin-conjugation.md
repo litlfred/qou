@@ -528,6 +528,72 @@ are *not* the last-strand generator Markov's theorem addresses, so the rule has
 the *form* of the Markov property without being an instance of it. That is the
 entire remainder, and it is a much smaller object than what §4b started with.
 
+## 4g. Why the rule holds: the gap, not the last strand (`qou-g8i1`)
+
+§4f left one thing: the `(z+d)` rule is *not* an instance of Markov's theorem,
+because these bond generators are interior. Two measurements identify what it
+*is* an instance of.
+
+### The rule is junction-only, and "junction" means "unused"
+
+Inserting `σ_g + d·I` into the **free** deuteron word at each generator in turn,
+`tr_M` scales by `z + d` at **`g = 2` and nowhere else**. At `g = 0, 1, 3, 4` the
+ratio is something unrelated. Generator 2 is exactly the one the free word does
+not use (it uses `0, 1, 3, 4`).
+
+The pattern holds at larger `A`: the generators where insertion scales by `z` are
+**precisely** the unused ones — `{2, 5}` for `(1,2)`, `{2, 5, 8}` for `(2,2)`, an
+exact set match in both cases.
+
+So the statement is not about junctions *per se*:
+
+> **`W` monotone and not using generator `g` ⟹
+> `tr_M(W · (σ_g + d·I)) = (z + d) · tr_M(W)`.**
+
+### `d` enters trivially
+
+Inserting `d·I` changes nothing, so the `d` term reproduces `tr_M(W)` and the
+rule reduces to its `d = 0` case, `tr_M(W·σ_g) = z·tr_M(W)`. The whole `(z+d)`
+family is one statement about `σ_g`.
+
+### The mechanism: multiplicativity across a gap
+
+Measured directly — split any monotone word at any **unused** generator `g`, with
+`W_<` on generators `< g` and `W_>` on generators `> g`:
+
+```
+tr_M(W)  =  tr_M(W_<) · tr_M(W_>)
+```
+
+ratio `1.0` at every unused generator of `(1,2)`, `(2,2)`, `(2,3)`; worst
+`|ratio − 1|` = **1.1e-30**. In particular the **free trace factorises exactly
+over nucleons**, `tr_M^free = ∏_k tr_M(nucleon_k)`, since the junctions are
+precisely the unused generators of the free word.
+
+That is the point. Because `g` is unused, `W_<` lies in `⟨σ_0 … σ_{g−1}⟩` and
+`W_>` in `⟨σ_{g+1} … σ_{n−2}⟩`, **two subalgebras that commute** (`|i − j| ≥ 2`).
+The gap makes them independent towers, and inserting `σ_g` is then exactly the
+Markov step that joins them. So the rule *is* the Markov property — applied not
+at the last strand but at an interior gap, which is legitimate for the same
+reason: on either side of an unused generator the word behaves like a separate
+tower.
+
+### Status
+
+This is a **mechanism, not a Lean proof**. What it does is reduce `qou-g8i1` from
+"why does an unexplained multiplicativity hold" to a named standard fact —
+multiplicativity of the Markov/Ocneanu trace across a gap, plus the Markov
+property — with the gap condition identified as the hypothesis that licenses it.
+Formalising it is now a bounded task rather than an open question, and the
+`d`-reduction above means only the `σ_g` case needs doing.
+
+**The literature question re-opens, narrowly and differently from §4e.** Not
+"what is `P`" — that is answered — but whether the gap-multiplicativity of the
+Ocneanu trace is stated in the sources we hold. The library carries Markov traces
+of braids (Orellana, Geck–Lambropoulou, Birman, Webster–Williamson); whether any
+of them states the factorisation across an unused generator in this form is worth
+one look before deriving it from scratch.
+
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
 The conjecture assigns the bar-even channel to binding (`Re 𝔙`) and the bar-odd
