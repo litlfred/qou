@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-08-23T17:02:46Z
+updated_at: 2026-08-23T17:10:03Z
 ---
 
 Found while checking whether the C-frame alpha in QBetaQStarClosedFormExclusion.lean (qou-um5h) endangers the q* exclusion argument. IT DOES NOT -- but it does move q*.
@@ -48,3 +48,20 @@ WHAT IS NOT CLAIMED: the D column is NOT "q* under convention D". Substituting z
 BLOCK ARGUMENT UNAFFECTED and arguably strengthened -- its point is that the position was never evidence because every constant in a 0.0491-wide window places a zero between the anchors; under D it is not even in the window.
 
 ACTION REMAINING: re-scope the one sentence AND refresh the 80.3 -> 83.2 figure, or state the figure with its sensitivity. Not applied here.
+
+RETRACTION 2026-08-19, same day. MY "SECOND FINDING" WAS WRONG.
+
+I reported that the block stated q* and its 80.3% were STALE against today producer. THEY ARE NOT. I drew Q_codata from experimental_constants.Q_NEUTRON_MEV (0.7823334093100222) while the block own producer uses substrate.codata_constants.Q_BETA_MEV (0.78233341). The two differ by 8.8e-10 relative, and at dq*/dQ_beta = -0.539 that is a 3.7e-10 shift in q* -- 2.9% of the 1.281e-8 anchor interval, EXACTLY the discrepancy I saw and attributed to the block.
+
+With the producer own constants the probe reproduces q* = 1.109978593031523288402328, matching the block 1.10997859303152 to 2.96e-15, at 80.2763% -- the block 80.3%. Running the cited producer qbeta_c3_imq_qstar_ladder_amplification_probe.py directly gives q* = 1.109978593031523288402328 and 79.744% muon-ward. THE BLOCK IS FAITHFUL TO ITS PRODUCER and both of its 80.3% figures are correct.
+
+I also verified the block internal consistency claim before the retraction, and it HOLDS: the q* anchor-interval position and the Vol(4_1) window position agree to 8.6e-6 percentage points. The block "the same figure" is exact.
+
+WHAT THE ERROR INADVERTENTLY DEMONSTRATED is the block OWN point: an 8.8e-10 change in Q_beta moves the landmark ~3 percentage points across the anchor interval. That is precisely the hypersensitivity the block warns about (dq*/dQ_beta = -0.539), arrived at by walking into it.
+
+WHAT STANDS, unchanged: the CONVENTION finding. With the correct constants,
+    conv C   q* = 1.109978593031523288402   80.276273 %   INSIDE
+    conv D   q* = 1.110233707021087740936   1992231.7 %   19921.3 gaps OUTSIDE
+C->D displacement 2.551e-4 = 19921.5 gaps, which is 690,000x the constant-choice artifact. The block sentence placing the landmark between the anchors remains CONVENTION-C-FRAME.
+
+REMAINING ACTION is now SMALLER than I said: no figure refresh is needed. Only the convention scoping, and that still wants a D re-derivation (qou-cds1) rather than a z-swap.

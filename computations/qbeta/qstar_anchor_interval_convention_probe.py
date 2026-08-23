@@ -42,6 +42,20 @@ What the D column IS: evidence that the landmark's position is convention-
 dependent, and by how much. That is enough to scope the block's sentence, which
 is the point.
 
+RETRACTION (2026-08-19, same day). An earlier version of this probe drew
+`Q_codata` from `experimental_constants.Q_NEUTRON_MEV` while the block's own
+producer uses `substrate.codata_constants.Q_BETA_MEV`. The two differ by
+`8.8e-10` relative; at `dq*/dQ_β = -0.539` that is a `3.7e-10` shift in `q*`,
+which is **2.9% of the 1.281e-8 anchor interval**. On that basis this probe
+reported that the block's stated `q*` and its "80.3%" were STALE. **They are
+not.** Running the block's cited producer reproduces `q* =
+1.109978593031523...` and `79.744% muon-ward`, matching the block. The retracted
+finding was an artifact of my constant choice — and it is, ironically, a
+demonstration of the very hypersensitivity the block itself warns about.
+
+The convention finding below is unaffected: the C→D displacement is `2.55e-4`,
+some `690,000×` larger than the constant-choice artifact.
+
 NO FLOAT64: mpmath end to end at 50 dps; `float()` appears nowhere.
 
 Run:  python3 -u computations/qbeta/qstar_anchor_interval_convention_probe.py
@@ -80,9 +94,18 @@ VOL41 = 2 * mp.clsin(2, mp.pi / 3)
 
 
 def _codata():
-    from experimental_constants import Q_NEUTRON_MEV
-    from codata_constants import M_E_MEV
-    return mp.mpf(str(Q_NEUTRON_MEV)), mp.mpf(str(M_E_MEV))
+    """The constants the block's OWN producer uses.
+
+    `qbeta_c3_imq_qstar_ladder_amplification_probe` takes
+    `substrate.codata_constants.Q_BETA_MEV`, NOT `experimental_constants.
+    Q_NEUTRON_MEV`. The two differ by `8.8e-10` relative, and with
+    `dq*/dQ_β = -0.539` that is a `3.7e-10` shift in `q*` — about 2.9% of the
+    `1.281e-8` anchor interval. An earlier version of this probe used the wrong
+    one and reported the block's figure as stale; it is not. See the RETRACTION
+    in the docstring.
+    """
+    from substrate import codata_constants as C
+    return mp.mpf(str(C.Q_BETA_MEV)), mp.mpf(str(C.M_E_MEV))
 
 
 def _c3_with_z(q, qcod, me, conv: str):
@@ -135,22 +158,19 @@ def main() -> int:
     print(f"  relative difference           = "
           f"{mp.nstr(abs(qs_canon - Q_STAR_BLOCK) / Q_STAR_BLOCK, 6)}")
     print(f"  position in anchor interval   = {mp.nstr(frac_canon * 100, 6)} %")
-    # NOT asserted equal to the block's value: they differ by 3.35e-10, which is
-    # 2.9% of the 1.281e-8 anchor gap, and that is why the position below reads
-    # 83.2% where the block says 80.3%. A separate, smaller finding — the block's
-    # figure is stale against today's producer. Asserted only to the level the
-    # two actually agree.
-    check(abs(qs_canon - Q_STAR_BLOCK) / Q_STAR_BLOCK < mp.mpf("1e-9"),
+    # With the producer's own constants this now MATCHES the block to 1e-14.
+    check(abs(qs_canon - Q_STAR_BLOCK) / Q_STAR_BLOCK < mp.mpf("1e-13"),
           f"the canonical producer is further than 1e-9 from the block's q* "
           f"({mp.nstr(abs(qs_canon - Q_STAR_BLOCK) / Q_STAR_BLOCK, 6)} rel)")
     check(0 <= frac_canon <= 1,
           f"the canonical landmark is not inside the anchor interval "
           f"({mp.nstr(frac_canon * 100, 6)}%)")
     print()
-    print("  NOTE: 3.35e-10 relative is 2.9% of the 1.281e-8 anchor gap, which is")
-    print("  why this reads 83.2% and the block says 80.3%. The block's figure is")
-    print("  STALE against today's producer — a separate, smaller finding, and a")
-    print("  reminder that any percentage in this interval is hypersensitive.")
+    print("  RETRACTED: an earlier run of this probe used Q_NEUTRON_MEV instead of")
+    print("  the producer's Q_BETA_MEV (8.8e-10 apart) and reported the block's")
+    print("  figure as stale. It is not. What that error DID show is the block's")
+    print("  own point: at dq*/dQ_beta = -0.539, a 8.8e-10 change in Q_beta moves")
+    print("  the landmark by ~3 percentage points of the anchor interval.")
 
     print()
     print("=" * 74)
