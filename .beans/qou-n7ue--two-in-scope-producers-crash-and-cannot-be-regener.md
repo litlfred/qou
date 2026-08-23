@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T15:35:46Z
+updated_at: 2026-08-23T17:12:36Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -118,3 +118,46 @@ Caveat worth checking before anyone starts: the module is named
 `hecke_core_legacy.py`. Confirm whether `hadron_knot_table` should be on it at
 all — the cheapest fix may be retargeting the consumer rather than repairing
 the legacy path.
+
+## Item 2 FIXED — and the corpus had already solved it
+
+`15f9b3cb3c`. The fix was **not** the rename I assumed in the note above
+("bind both names, or normalise the stored expressions ... check which name the
+*stored data* uses"). Checking the data was the right instinct; the answer was
+that **both spellings are live**, so renaming would have broken things.
+
+`term6_full_pole_sum.py` (~line 321) already documents the whole mechanism:
+`to_u_polynomial` renders its strings with whatever SYMBOL the caller passed,
+so habiro witnesses carry either — older ones `check_q`, newer ones `u` — and
+that comment ends by noting the same class of mismatch "is why this producer
+has been dead on main". Two further consumers, `markov_substrate_realizer` and
+`probe_direct_cyclotomic_map`, also handle both.
+
+**This is a recurring class, now on its third instance.** Three consumers
+handle both spellings; this one bound one and died. A `to_u_polynomial` that
+emits whichever symbol its caller happened to pass is the upstream cause — every
+downstream consumer has to defend against it, and each one that forgets is
+silently dead until something re-runs it. Worth a separate bean if anyone wants
+the emitter normalised; the per-consumer defence is what the corpus does today.
+
+Live witnesses still using `check_q`: `probes/qbeta-habiro-recursion`,
+`probes/qbeta-habiro-p8-identification` (both non-deprecated).
+
+Verified read-only on a real witness expression — both spellings return
+`61684795064.221860557`, identical, as `mpf`.
+
+**On the secondary precision note above, which I flagged as unverified.** I
+also coerced `u_value` to `mpf`. Measured, the expressions carry exact integer
+coefficients, so an mpf `u` keeps the evaluation exact and `mp.mpf(eval(...))`
+is a no-op rather than a laundering step. But scope it correctly: the coercion
+stops float arithmetic *propagating*; it does **not** recover precision from a
+caller that already passed a float64. A float input lands on `...544` where the
+mpf input gives `...557`. Guard, not a repair.
+
+## Remaining in this bean
+
+Item 1 (`derivation_chain_validator`) — crash fixed in `59978486ad`; the
+straddle it exposed is `qou-ibcv` and needs an owner decision.
+Item 3 (`hadron_knot_table` / float64 CSR vs mpf) — untouched.
+Fourth crash (`parabolic_cylinder_channel_mixing_probe`) — stderr captured,
+not yet diagnosed.
