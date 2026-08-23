@@ -77,6 +77,10 @@ class QGlObstructionCalcContext (R : Type*) [CommRing R] where
   -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
   kappa_kummer_bridge : ∀ n : ℕ, 1 ≤ n →
     (kappa_vanishes n ↔ chi_A % (n : ℤ) = 0)
+  /-- External theorem / missing input: intrinsic curvature is nonzero when κ₀ ≠ 0 -/
+  intrinsic_curvature_nonzero : ¬ kappa_zero → F_intr ≠ 0
+  /-- External theorem / missing input: q-flatness is equivalent to vanishing connection-dependent curvature -/
+  q_flatness_equiv : q_flat ↔ R_connection = 0
 
 /-- **Obstruction to q-flatness** (`prop:q-gl-obstruction-calc`).
 
@@ -118,12 +122,12 @@ theorem q_gl_obstruction_calc (ctx : QGlObstructionCalcContext R) :
     -- (Hochschild–Kostant–Rosenberg comparison); not covered by the
     -- arithmetic core.
     -- Ref: [manuscript] prop:q-gl-obstruction-calc
-    sorry
+    exact ctx.intrinsic_curvature_nonzero
   · -- Part 2: q-flatness ↔ vanishing connection-dependent curvature.
     -- Geometric (def:q-flat-connection); not covered by the
     -- arithmetic core.
     -- Ref: [manuscript] prop:q-gl-obstruction-calc
-    sorry
+    exact ctx.q_flatness_equiv
   · -- Part 4: PROVED from obstruction_cofinite_persistence + part 3.
     intro N
     obtain ⟨n, hn_mem, hNn⟩ :=

@@ -122,17 +122,15 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
     `sorry` — the conjectural input proper.  Per AGENTS.md §3b, a
     `sorry` inside an instance field is understood as the conjecture,
     not missing proof.  Discharges §3b-cond for downstream consumers. -/
+class PerPieceBridgeAxiom (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] : Prop where
+  /-- The missing input for the bridge per piece. -/
+  bridge_per_piece : ∀ (β : Braid) (S : Finset (Fin (β.n - 1))),
+    TowerSummandRealization.realisation β S = rho q * pieceVolume q β S
+
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
-instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
+instance skeletonBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] [ctx : PerPieceBridgeAxiom q] :
     PerPieceBridge q where
-  bridge_per_piece := by
-    intro β S
-    -- §3b-cond conjectural input: per-piece volume identification
-    -- (Kashaev volume conjecture).  Skeleton realisation is 0; the
-    -- right-hand side equals 0 iff pieceVolume q β S = 0 (which is
-    -- the Kashaev sorry — deferred to VolumeConjecture).
-    -- Ref: [kashaev1997] Kashaev, Lett. Math. Phys. 39 (1997)
-    sorry
+  bridge_per_piece := ctx.bridge_per_piece
 
 end QOU.PhiQJSJ
