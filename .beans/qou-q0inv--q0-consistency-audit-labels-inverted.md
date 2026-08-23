@@ -135,3 +135,49 @@ owner directive makes canonical for all new compute.
 Still not applied here — this is a policy inversion in a tree-wide audit and
 wants owner sign-off, not a drive-by. But the decision no longer needs guessing:
 the numbers are right, the words and the conclusion are not.
+
+---
+
+## Addendum — the glob-hazard survey, and a number I withdrew
+
+Having found four instances of "audit tool's repo-wide glob picks up files it
+should not", I surveyed the audit layer for the same class. **Two corrections
+to my own framing came out of it, and the second reverses the emphasis.**
+
+### 1. I withdrew a "55 exposed tools" figure
+
+A regex heuristic (`parents[\d]|parent.parent`) counted 61 globs as
+"repo-rooted", of which 55 lacked a `.claude` exclusion. That number is
+**unsound and is not claimed**: from `computations/audits/x.py`,
+`parent.parent` resolves to `computations/`, **not** the repo root. The
+heuristic conflates the two, which is precisely the distinction that decides
+whether a glob can see `.claude/` at all. Publishing it would have been the
+over-fire class this bean is otherwise about.
+
+### 2. The two hazards are not equally live — and the one I emphasised is the weaker
+
+| | status | scope |
+|---|---|---|
+| `.claude/worktrees/` | **ABSENT in a fresh container** | only bites a session that spawned sub-agent worktrees |
+| `computations/_deprecated/` | **PRESENT, 893 entries** | every checkout, always |
+
+All four instances I found were in a container carrying five stale sub-agent
+worktrees. A fresh clone has none — so the `.claude` exclusion is **defensive
+and conditional**, not a standing defect in 55 tools.
+
+`_deprecated/` is the opposite: 893 retired copies sitting in-tree in every
+checkout, reachable by any repo-wide name-match glob. From the survey,
+**roughly 9 of ~32 audit tools with globs carry no `_deprecated` exclusion** —
+including `ab_methodology_metrics`, `content_block_label_audit`,
+`field_typeclass_audit`, `lean_ref_resolution_audit`,
+`q0_declared_vs_recorded_sweep`, `q0_producer_pin_classifier`,
+`tnjb_stale_stamp_migrate`.
+
+That is the always-live exposure, and it is the one worth draining. It is also
+the exact shape of the `resolve()` bug fixed in #5289: a live producer with a
+`_deprecated` twin resolved to `None` because a uniqueness test counted both.
+
+**Not claimed:** that those ~9 are currently producing wrong answers. Whether a
+missing exclusion *bites* depends on the glob's root and on whether a name
+collides with a retired copy — that needs per-tool measurement, which this
+addendum does not do.
