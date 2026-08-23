@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T16:55:00.718389+00:00",
-  "commitSha": "ccb3043058f1ffb2c8574995ecb665080ca2a50b",
+  "computedAt": "2026-08-23T17:17:31.241091+00:00",
+  "commitSha": "fe4561645a91974164bd7db0a39840b66a5d27d1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -44,9 +44,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 668,
+      "Q0_OK": 669,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 40,
+      "Q0_INDEPENDENT": 39,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -10255,6 +10255,10 @@
           "detail": ""
         },
         {
+          "witness": "z2bn-tau-derivation-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "zeropoint-unit-candidate-gate-probe.witness.json",
           "detail": ""
         },
@@ -10950,10 +10954,6 @@
         },
         {
           "witness": "knot-volumes.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "z2bn-tau-derivation-probe.witness.json",
           "detail": ""
         }
       ],
