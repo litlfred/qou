@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:00:40.536671+00:00",
-  "commitSha": "22a70e92fa72c571949b2a846866fee3f9cdc491",
+  "computedAt": "2026-08-23T19:17:18.278534+00:00",
+  "commitSha": "1fa7140209fd2ad81d59cf1f0d315a4a934e4b05",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -46,7 +46,7 @@
     "counts": {
       "Q0_OK": 701,
       "Q0_AMBIGUOUS": 17,
-      "Q0_INDEPENDENT": 44,
+      "Q0_INDEPENDENT": 45,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -10798,6 +10798,10 @@
         },
         {
           "witness": "hecke-agtb-corner-shape.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-agtb-lineage-schedule.witness.json",
           "detail": ""
         },
         {
