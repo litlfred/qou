@@ -7,7 +7,7 @@
       "STALE": 292,
       "proton-pin": 1310,
       "unknown": 25,
-      "canonical": 186
+      "canonical": 187
     },
     "stale_total": 292,
     "new_stale": 0,
@@ -10329,6 +10329,13 @@
         "value": "1.1099785955573347199",
         "class": "canonical",
         "ppb_vs_canonical": 2.133189934676923e-13
+      },
+      {
+        "file": "computations/probes/theta_jet_gb_grading_probe.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/probes/three-parameters-wedderburn-probe.witness.json",
