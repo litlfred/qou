@@ -435,6 +435,38 @@ theorem degreeOf_mvGenWronskian_le [DecidableEq σ] {m : ℕ} (i : σ) (D : Fin 
       ≤ ∑ _k : Fin m, d := Finset.sum_le_sum fun k _ => hterm k
     _ = m * d := by simp
 
+/-! ### Changing the coefficient ring
+
+Roth's lemma's auxiliary polynomial has **integer** coefficients, but the separated
+representation it is split through lives over `ℚ`.  So the same determinant of derivatives
+exists on both sides, and the two have to be identified before §6's Gauss step can be applied
+to it.  Both steps are commutations Mathlib already has — `pderiv_map` and `RingHom.map_det`;
+what is below is only the iteration and the assembly. -/
+
+/-- Iterated differentiation commutes with a change of coefficient ring. -/
+theorem map_pderivList {S : Type*} [CommRing S] (f : R →+* S) (l : List σ)
+    (P : MvPolynomial σ R) :
+    map f (pderivList l P) = pderivList l (map f P) := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      show map f (pderiv a (pderivList t P)) = pderiv a (pderivList t (map f P))
+      rw [← pderiv_map, ih]
+
+/-- **The determinant of derivatives commutes with a change of coefficient ring.**
+
+This is what lets the arc's `ℚ`-valued separated Wronskian be recognised as the image of the
+*same* determinant formed over `ℤ` — and hence as a polynomial with integer coefficients,
+which is what §6's Gauss step needs of it. -/
+theorem map_det_pderivList {S : Type*} [CommRing S] (f : R →+* S) {r : ℕ}
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) :
+    map f (Matrix.of fun i j => pderivList (D i j) P).det
+      = (Matrix.of fun i j => pderivList (D i j) (map f P)).det := by
+  rw [RingHom.map_det]
+  congr 1
+  ext i j
+  simp [RingHom.mapMatrix_apply, map_pderivList]
+
 /-- The multi-index counting occurrences of each variable in a list. -/
 noncomputable def multiIndexOf (l : List σ) : σ →₀ ℕ := (l.map fun j => Finsupp.single j 1).sum
 

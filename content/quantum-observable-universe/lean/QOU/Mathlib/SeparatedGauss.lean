@@ -39,6 +39,7 @@ import Mathlib.RingTheory.Int.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Data.Rat.Lemmas
 import QOU.Mathlib.SeparatedHeight
+import QOU.Mathlib.SeparatedWronskian
 
 namespace MvPolynomial
 
@@ -241,24 +242,92 @@ theorem exists_integral_separated_factors {τ : Type*}
   rw [hden j] at h1
   simpa using h1
 
+/-- **The factorisation is exact over `ℤ`.**
+
+`exists_integral_separated_factors` produces integral factors; this says their product is `W`
+on the nose, not merely up to a rational.  That is Mahler's `W = U·V`, and it is what
+`abs_coeff_le_of_mul_separated` consumes — the height step needs the product to *be* `W`. -/
+theorem exists_integral_separated_factorization {τ : Type*}
+    (U : MvPolynomial σ ℚ) (V : MvPolynomial τ ℚ) (hU : U ≠ 0)
+    (W : MvPolynomial (σ ⊕ τ) ℤ)
+    (hW : map (Int.castRingHom ℚ) W
+        = (rename Sum.inl U : MvPolynomial (σ ⊕ τ) ℚ) * rename Sum.inr V) :
+    ∃ (l : ℚ) (U' : MvPolynomial σ ℤ) (V' : MvPolynomial τ ℤ), l ≠ 0 ∧
+      map (Int.castRingHom ℚ) U' = C l * U ∧
+      map (Int.castRingHom ℚ) V' = C l⁻¹ * V ∧
+      (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W := by
+  obtain ⟨l, U', V', hl, hU'', hV''⟩ := exists_integral_separated_factors U V hU W hW
+  refine ⟨l, U', V', hl, hU'', hV'', ?_⟩
+  have hinj : Function.Injective (map (Int.castRingHom ℚ) :
+      MvPolynomial (σ ⊕ τ) ℤ → MvPolynomial (σ ⊕ τ) ℚ) :=
+    map_injective _ (fun a b h => Int.cast_injective h)
+  refine hinj ?_
+  have e1 : (rename Sum.inl (C l * U) : MvPolynomial (σ ⊕ τ) ℚ)
+      = C l * rename Sum.inl U := by rw [map_mul, rename_C]
+  have e2 : (rename Sum.inr (C l⁻¹ * V) : MvPolynomial (σ ⊕ τ) ℚ)
+      = C l⁻¹ * rename Sum.inr V := by rw [map_mul, rename_C]
+  rw [hW, map_mul, map_rename, map_rename, hU'', hV'', e1, e2, mul_mul_mul_comm,
+    ← C_mul, mul_inv_cancel₀ hl, C_1, one_mul]
+
+/-! ### The separated Wronskian, made integral
+
+⚠ From here the module also uses `QOU/Mathlib/SeparatedWronskian.lean`. -/
+
+/-- **§6, assembled.**  The separated Wronskian of a representation of an *integer* polynomial
+has integral factors whose product is the determinant taken over `ℤ`.
+
+The determinant on the right is formed from `P` itself, over `ℤ`; `map_det_pderivList` is what
+identifies it with the `ℚ`-valued one the representation produces. -/
+theorem exists_integral_wronskian_factors {τ : Type*} {r : ℕ}
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial τ ℚ)
+    (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) :
+    ∃ (l : ℚ) (U' : MvPolynomial σ ℤ) (V' : MvPolynomial τ ℤ), l ≠ 0 ∧
+      map (Int.castRingHom ℚ) U' = C l * mvGenWronskian Dx φ ∧
+      map (Int.castRingHom ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ ∧
+      (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V'
+        = (Matrix.of fun i j =>
+            pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det := by
+  refine exists_integral_separated_factorization _ _ hWx _ ?_
+  rw [map_det_pderivList, hP, det_separated_wronskian]
+
+/-- **§7's height step, with integrality supplied.**
+
+`H(U') ≤ H(W)` and `H(V') ≤ H(W)` for the integral factors above.  This is the inequality the
+induction hypothesis needs on the `x`-factor, and the reason §6 does Gauss at all: over `ℚ`
+the argument — "a non-zero coefficient has absolute value at least 1" — is false. -/
+theorem abs_coeff_integral_wronskian_factor_le {τ : Type*}
+    {U' : MvPolynomial σ ℤ} {V' : MvPolynomial τ ℤ} {W : MvPolynomial (σ ⊕ τ) ℤ}
+    (hfact : (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W)
+    (hV' : V' ≠ 0) {B : ℤ} (hB : ∀ n, |coeff n W| ≤ B) (i : σ →₀ ℕ) :
+    |coeff i U'| ≤ B :=
+  abs_coeff_le_of_mul_separated hV' (by rw [hfact]; exact hB) i
+
+
 /-! ### Next
 
-§6's Gauss step is done: `exists_integral_separated_factors` turns a rational separated
-factorisation of an integral `W` into an integral one.
+§6 and §7's height step are assembled: from an **integer** auxiliary polynomial and a
+**rational** separated representation, `exists_integral_wronskian_factors` produces integral
+Wronskian factors whose product is the `ℤ`-determinant, and
+`abs_coeff_integral_wronskian_factor_le` bounds their heights by its height.
 
-Wiring it into the arc needs one more thing, and it is a commutation, not a new idea:
+What that leaves is assembling `hres` (`QOU/Mathlib/RothOperatorFamily.lean`) from the
+induction hypothesis, and every ingredient now exists:
 
-1. **`map` commutes with the determinant of derivatives.**  The arc's `sepW` is built over
-   `ℚ`; the `W` this theorem wants is the *same* determinant built over `ℤ` from the integral
-   auxiliary polynomial.  Relating them is `map_det` plus
-   `map (pderivList l P) = pderivList l (map P)`.
-2. Then the induction hypothesis reaches the factors: `index_C_mul` says the rescaling does
-   **not** move the index (so the `l` is invisible on the index side), and
-   `abs_coeff_le_of_mul_separated` bounds the rescaled factors' heights by `W`'s — which is
-   §7's `max(|U|, |V|) ≤ |W|`, and is exactly the step that needed integrality.
+1. **The index side is free.**  `index_C_mul` says `index (C l * Wx) = index Wx`, so bounding
+   the index of the *integral* factor `U'` — which is what `RothLemmaUniform` does — bounds
+   the index of `Wx` itself.  The scaling is invisible here; it only ever mattered for heights.
+2. **The height side** is `abs_coeff_integral_wronskian_factor_le` above, together with
+   `abs_coeff_mvGenWronskian_le` bounding the determinant's own height.
+3. **The degree side** is `degreeOf_mvGenWronskian_le`, transported through `map` and the
+   scaling.
 
-⚠ That `index_C_mul` makes the scaling invisible on the index side is worth stating plainly:
-the *only* reason integrality is needed is the **height** side.  The index side never cared. -/
+⚠ None of those is a new idea; the work is bookkeeping across three modules, and it needs a
+home importing both this module and `RothLemmaStatement`. -/
+
 
 
 end MvPolynomial

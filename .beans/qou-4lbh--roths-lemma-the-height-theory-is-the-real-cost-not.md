@@ -2380,3 +2380,48 @@ to ask which of the two chains a step belongs to.
 
 Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. Two declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — §6 and §7's height step, assembled
+
+The commutation was the whole of it, and Mathlib had both halves.
+
+```
+map_pderivList        iterated differentiation commutes with a change of coefficient ring
+map_det_pderivList    so does the determinant of derivatives          (MvGenWronskian)
+exists_integral_separated_factorization   the factorisation is exact over ℤ: U'·V' = W
+exists_integral_wronskian_factors         §6, assembled                (SeparatedGauss)
+abs_coeff_integral_wronskian_factor_le    §7's height step: H(U') ≤ H(W)
+```
+
+`map_det_pderivList` is the identification that was missing: the arc's separated Wronskian is
+built over `ℚ` (the representation lives there), while the `W` Gauss needs is the **same**
+determinant formed over `ℤ` from the integer auxiliary polynomial. `pderiv_map` and
+`RingHom.map_det` are both in Mathlib; only the iteration and the assembly were needed.
+
+### The exactness is worth having separately
+
+`exists_integral_separated_factors` gives integral factors up to a rational; the new
+`exists_integral_separated_factorization` gives `U'·V' = W` **on the nose**. That is Mahler's
+`W = UV`, and it is what `abs_coeff_le_of_mul_separated` consumes — the height step needs the
+product to *be* `W`, not to agree with it up to a scalar. Proved by injectivity of
+`map (Int.castRingHom ℚ)`, which is where the two rational scalings `l` and `l⁻¹` cancel.
+
+### Open — bookkeeping across three modules, no new ideas
+
+Assembling `hres` from the induction hypothesis. Every ingredient now exists:
+
+1. **The index side is free.** `index_C_mul` says `index (C l * Wx) = index Wx`, so bounding
+   the index of the *integral* factor `U'` — which is what `RothLemmaUniform` does — bounds
+   the index of `Wx` itself. ⚠ The scaling is invisible here. It only ever mattered for
+   heights, and saying so three times has been the useful thing about this stretch.
+2. **The height side** is `abs_coeff_integral_wronskian_factor_le`, with
+   `abs_coeff_mvGenWronskian_le` bounding the determinant's own height.
+3. **The degree side** is `degreeOf_mvGenWronskian_le`, transported through `map` and the
+   scaling.
+
+It needs a home importing both `SeparatedGauss` and `RothLemmaStatement`.
+
+Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. Five declarations `#print axioms`-clean.
