@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-23T19:40:56Z
+updated_at: 2026-08-23T20:30:11Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -125,3 +125,60 @@ filed under the criterion **`trap-superlative`**, a language-trap check.
 Nobody triaging prose traps acts on a convention defect, and nobody grepping
 for convention problems looks in a prose criterion. A correct finding in the
 wrong drawer is close to no finding.
+
+
+---
+
+## Addendum 2026-08-23 (2) — an untraced Δ_λ drift, and a mirror pair that does not cancel
+
+From bm4i block 11/12, `prop:mirror-baseline-cancellation`. Two loose ends
+deliberately not chased there, both worth someone's attention.
+
+### 1. The upstream Δ_λ residual moved, and nothing recorded it
+
+`delta_lambda_z_coefficient_and_slope.py` carried a docstring table that is
+stale in **every row** against its own current output:
+
+    atom   stale dev    current dev
+    D        −0.01         +0.63
+    T        −0.07         −1.02
+    ³He      −1.40         −1.98
+    ⁴He      +0.27         −1.70
+    ⁶Li     −18.88        −22.69
+    ⁷Li     −26.21        −30.79
+    ⁷Be     −27.98        −32.56
+
+The witness payload itself has NOT drifted — a re-run reproduces the committed
+2026-08-21 numbers byte for byte. So the change happened upstream, in whatever
+produces `delta-lambda-canonical-residual.witness.json`, at some point between
+the docstring being written and that witness being regenerated. **Nobody
+recorded what changed or why.** The docstring is now corrected to print both
+columns, but the cause is untraced.
+
+This matters beyond bookkeeping: the stale table is where the "law holds for
+A≤4 (|dev| < 0.5)" claim came from, and with the current numbers no light
+nucleus is within 0.5. A conclusion outlived the numbers it was drawn from.
+
+### 2. The A=3 mirror pair does not cancel; A=7 does, exactly
+
+Under that same drift the two mirror pairs behaved differently:
+
+| pair | shift, proton-rich | shift, mirror | penalty before → after |
+|---|---|---|---|
+| ⁷Be / ⁷Li | −4.58 | −4.58 | −1.77 → **−1.77** (invariant) |
+| ³He / T   | −0.58 | −0.95 | −1.33 → **−0.95** (moved) |
+
+A=7 is exactly the baseline cancellation this block's proposition predicts:
+`f(Z,N) − f(N,Z)` kills the A-only term `β(A)`, so a perturbation to the
+baseline cannot move the mirror difference. Seeing that hold to the digit under
+an unrelated drift is a nice independent check of the proposition.
+
+A=3 not behaving that way is the interesting part. Either the drift was not
+baseline-only at A=3 (i.e. it touched the Z-odd channel there), or T and ³He
+were not regenerated together. **Not investigated** — stated as an observation,
+not a result, and specifically not as evidence for or against the proposition.
+
+Consequence already recorded in the producer: the proton-excess penalty spread
+was quoted as −1.33 vs −1.77 (~33%); it is now −0.95 vs −1.77 (~86%), and the
+magnitude is not stable under input drift. That strengthens the existing
+"magnitude is NOT a single derivable number" verdict rather than weakening it.
