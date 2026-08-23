@@ -4,7 +4,7 @@ title: witness_provenance_audit's completeness ratio counts 320 never-checked wi
 status: todo
 type: task
 created_at: 2026-08-22T21:14:23Z
-updated_at: 2026-08-23T20:00:00Z
+updated_at: 2026-08-23T20:10:00Z
 ---
 
 
@@ -333,3 +333,38 @@ with the number in front of them.
 `python 3.11.15 / numpy 2.4.6 / scipy 1.17.1` before **and** after, and the run
 emitted no environment warning — so this refresh does not weaken the record, the
 way the `guarded-off-audit` refresh would have. Checked, not assumed.
+
+---
+
+## STATE OF THIS BEAN — 2026-08-23
+
+| what it needed | state |
+|---|---|
+| (1) fail loudly instead of scoring on a failed index | **fixed** — health recorded + reported, and the index now *builds* (`git grep`, ~2 s vs a >120 s timeout) |
+| (2) cover dynamic reads | **fixed** — 27 of 33 f-string families matched, 6 rejected as too weakly anchored and printed |
+| (3) exclude machine inventories | **measured and reported; decision deferred** |
+
+Cumulative effect on the audit, from the state this bean opened in:
+
+| | at filing (index silently empty) | now |
+|---|---|---|
+| paper index | **0 names** | 588 |
+| `PROV_EXEMPT_NO_READER` | 242 | **217** |
+| `PROV_MISSING` | 45 | **70** |
+| corpus evaluated | 0.882 | **0.891** |
+| completeness ratio | 0.9838 | **0.974** |
+
+The ratio fell every time something was fixed. That is the shape of a metric
+that had been rising on failures.
+
+### Left `todo` for one residual, and it is a decision not a defect
+
+Whether a `*.qa.json` sidecar counts as the paper citing a witness. Excluding
+them removes 8 names from the reader index, which moves those witnesses *into*
+the exempt class — less evaluated, not more. That trade is the rule owner's to
+make, and the number is now printed and stored in the witness rather than argued
+about.
+
+Also unchanged by design: `--strict` still fails on `PROV_MISSING` only, and this
+file remains **not** gate-wired (`scripts/precision-gates.sh:267` wires the
+similarly-named `computations/witness_provenance_audit.py`, a different audit).
