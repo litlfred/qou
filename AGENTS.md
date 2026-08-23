@@ -381,7 +381,8 @@ user's last message, not the most recently mentioned file.
       after it (sha was in the fetched window ⇒ genuinely rewritten) and 330
       before it (**cause undetermined**). Do not repeat the stronger claim, and
       note a direct `git fetch origin <sha>` cannot settle it — GitHub refuses
-      arbitrary-sha fetches regardless of whether the object exists. This is the same effect the
+      arbitrary-sha fetches regardless of whether the object exists. This is
+      the same effect the
       `scriptCommitSha` ruling above describes, one field over: **"diff the
       producer first" is unrunnable for half the queue**, and hand-patching
       the sha (13 such commits on `main` in one 8-day window) buys only the
@@ -1655,25 +1656,9 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses: **but the keystone `…/q-pinning-50-digit.witness.json` no
-     longer does.** This line read "holds the muon value
-     `1.10997859555733471…`" until 2026-08-19; on `main` it holds
-     `1.1099785827513808075916`, the **proton** value. Deliberate, not
-     corruption — `9a9c6b31c` ("sweep(tnjb): first 25 witnesses regenerated at
-     the proton pin") flipped it, consistent with R2. The surrounding ~870
-     muon-fingerprinted witnesses (−11.5 ppb, ~72 producers) are unaffected and
-     still describe the canonical 3-CAL (muon) derivation.
-
-     **Consequence, and it is not cosmetic.** A producer that requests the
-     ideal/muon anchor now *cannot run*: `q_parameter` raises rather than fall
-     back to proton (the yfvb/tnjb anti-corruption guard), because the witness
-     it would read no longer carries a muon value. Confirmed on
-     `casimir_d6_qcorrection_structure.py`, which crashes before writing.
-     **The guard is correct — do not relax it, and do not silently re-pin such
-     a producer to proton;** which anchor a given quantity should use is a
-     substantive question, and the *ideal* CAL-2 definition above remains
-     muon-based even though compute defaults to proton. 16 files reference
-     `QOU_Q0_ANCHOR`; only the one has been checked.
+     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
+     `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
