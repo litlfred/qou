@@ -156,6 +156,51 @@ ideal-layer witness itself and never asks which anchor it wants. Same
 failure, one layer down, and it bypasses every guard built into the
 accessor path.
 
+## 🛑 CORRECTION 2026-08-22 (post-merge): the dual-purpose count is 3, not 21
+
+The section below reports **21** of the direct pinners as reading the pin
+witness for more than q₀, and builds a "straddle-by-partial-repin" hazard on
+20 of them co-reading q₀-derived scalars. **The 21 is wrong — measured
+correctly it is 3.**
+
+The detector matched the bare field name **anywhere in the file**. That also
+catches locally-computed variables (`hbar_q_num = (q_0 - 1) / q_0`,
+`hbar_q_sym`) and the producer's own *output* keys (`hbar_q_50dps`), none of
+which are reads of the witness. The correct test is dict-key use — a
+subscript or `.get()` against the loaded witness — and it is now
+`co_read_fields()` in
+[`q0_muon_population_partition.py`](../../computations/audits/q0_muon_population_partition.py),
+so the number is re-derivable rather than hand-scanned.
+
+Substring: **21**. Dict-key: **3**. A 7× over-report.
+
+The three that genuinely co-read:
+
+| producer | field | evidence |
+|---|---|---|
+| `nuclide_braid_pipeline` | `hbar_q` | `_QPIN["derived_50_digit"].get("hbar_q")` at `:66` |
+| `qbeta/qbeta_decay_sdp_extended_ck` | `hbar_q_sq` | `mpf(str(data["hbar_q_sq"]))` at `:168` |
+| `q1_mass_gap_probe` | `plancherel_weights_n3`, `two_q` | the reference-table case |
+
+**What this changes.** The straddle hazard is real but **narrow**: 3 producers,
+of which 2 co-read a q₀-derived scalar and 1 co-reads a reference table. It is
+not the dominant shape of the migration's remaining work, and the earlier
+framing ("only one is a reference table; the other 20 co-read q₀-derived
+scalars") overstated it substantially.
+
+**What this does not change.** The root-cause finding below — that a direct
+reader cannot be migrated by re-running it, because its q₀ comes from the
+anchor-defining witness, which must stay muon — is independent of this count
+and stands. So do the census (210/374/24/31), the 55 direct pinners, the 4
+remaining contradictions, and the `load_q_50dps` default.
+
+**Consequence for two of the four remaining contradictions.** I had recorded
+`path4_rho_K_at_h3A` and `q_beta_form_a_n1_extension` as dual-purpose and
+therefore complicated. They are not: `path4_rho_K_at_h3A:46` computes
+`q_inv = mpf(1) / q` locally, and `q_beta_form_a_n1_extension:163` computes
+`hbar_q_num = (q_0 - 1) / q_0` locally. Both are simple single-read fixes of
+the same shape as `b_over_m_order_probe`.
+
 ## The sweep hazard, measured: dual-purpose reads and a defaulting utility
 
 Of the 56 direct pinners, **21 read the pinning witness for more than
@@ -481,6 +526,103 @@ does not change reads. `--list-contradictions` is the check that catches it,
 and it is currently the only one: the anchor-consistency audit exempts
 `-audit`/`-scan` suffixes, and the flip-risk audit keys on witnesses stamped
 `muon`, which these are not.
+
+## Two more fixed (2026-08-22), and why the drift audit only saw one
+
+`path4_rho_K_at_h3A` and `q_beta_form_a_n1_extension` both re-pointed to
+`q_parameter.Q_MP`. Neither is dual-purpose (see the correction above), so
+both were single-read fixes of the same shape as `b_over_m_order_probe`.
+
+- `q_beta_form_a_n1_extension`: the comment being replaced said *"Load CAL-2
+  q_0"* — the exact conflation this document already corrects. Its
+  replacement says why. 3 assertions still pass; float64 at the baselined 12.
+- `path4_rho_K_at_h3A`: `json` and the `_pb` alias became unused and were
+  removed (the bare `_path_bridge` import stays — it is the path bridge).
+  float64 at the baselined 7.
+
+`scripts/precision-gates.sh` (full run): **all blocking gates green.**
+Contradictions **4 → 2**; census 639 → 637.
+
+### The count only moved by 1, and the reason matters
+
+`q0_value_drift_audit` went `canonical` 211 → 210, not 211 → 209. Traced to a
+single entry: only `q-beta-form-a-n1-extension`'s `parameters.q_0_50dps`
+changed class. `path4`'s fix is invisible to that audit because **it scans
+`q0Value` — the stamp — and not `q_pinned`, the field carrying the data.**
+
+That is the same blind spot as the contradiction itself, one level up. A
+witness whose *stamp* says proton and whose *data* says muon is counted
+`proton-pin` by the drift audit, so the audit structurally cannot see the
+contradiction, and its `canonical` count understates the muon population by
+however many such witnesses exist. This is why `--list-contradictions`
+compares the manifest against the **read**, not against any recorded field.
+
+### Stopping point
+
+Two remain, neither mechanical:
+
+- **`q1_mass_gap_probe`** — genuinely dual-purpose, one of the 3. It reads
+  `plancherel_weights_n3` and `two_q` as a reference table *and* binds q₀.
+  Separate the two before re-pinning either.
+- **`aK_via_lp_dual_hecke_basis`** — registers the pin witness as a **declared
+  upstream** (`record_upstream` → `add_upstream_records`). Re-pointing to
+  `Q_MP` would replace a file-hash-backed provenance record with a package
+  constant. That is a provenance-architecture call, on a producer that states
+  no pin intent either, so it is not a change to make unilaterally.
+
+## 🛑 SECOND detector correction: the contradictions are 11, not 2
+
+My detector looked for the pin-witness filename **inside each producer**. That
+misses every producer that reaches the muon pin **transitively** — via
+`_li_2_q_util.load_q_50dps()`, whose no-arg form defaults to the muon-anchored
+witness (`qou-dkm2`).
+
+Measured over the 26 files with a live no-arg call:
+
+| declared | files |
+|---|---:|
+| `physical_proton` | **9** |
+| UNDECLARED | 17 |
+| **`ideal_muon`** | **0** |
+
+**Zero callers legitimately want muon.** The nine declared `physical_proton`
+are the same contradiction as the direct readers, one hop out. Verified by
+sampling — `volume_def_reconcile`, `e0_lambda_composite`,
+`complex_fibre_cross_ratio`, `vhat_tower_im_cancellation` all carry
+`q0Anchor: proton` with muon data.
+
+With the one-hop path added to `direct_pinners()`, the counts become:
+
+| | before | after |
+|---|---:|---:|
+| producers reaching the muon pin | 53 | **78** |
+| **contradictions** | 2 | **11** |
+
+The full list: `aK_via_lp_dual_hecke_basis`, `binding_block_multiplicative`,
+`binding_via_interface_knot`, `complex_fibre_cross_ratio`,
+`convergence_safe_vhat_tower`, `e0_lambda_composite`,
+`flavor_dependent_cusp_shape`, `probe_9b_perlambda_brane_tower`,
+`q1_mass_gap_probe`, `vhat_tower_im_cancellation`, `volume_def_reconcile`.
+
+### Two detector failures in one arc, in opposite directions
+
+This is the second time a detector in this document reported the wrong number:
+
+| defect | direction | true |
+|---|---|---|
+| dual-purpose by substring match | **over** by 7× | 21 → 3 |
+| contradictions by file-local scan | **under** by 5.5× | 2 → 11 |
+
+Both were mine, both were caught by looking at an individual case rather than
+by trusting the aggregate, and both are entries in the pattern
+[`2026-08-15-detector-blindness-taxonomy.md`](2026-08-15-detector-blindness-taxonomy.md)
+already catalogues — thirteen spellings, four of them found *by* detectors
+written to catch the previous blind spot. The practical rule that keeps
+holding: **a count from a detector is a hypothesis until one of its members
+has been opened by hand.**
+
+The `--list-contradictions` gate now covers the one-hop helper path. It does
+not follow arbitrary indirection, and no claim is made that it does.
 
 ## What this does and does not license
 

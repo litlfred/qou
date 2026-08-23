@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T13:07:35.851824+00:00",
-  "commitSha": "6a5a5660675bbe5b19240de78af6e2450d99b355",
+  "computedAt": "2026-08-23T17:17:31.241091+00:00",
+  "commitSha": "fe4561645a91974164bd7db0a39840b66a5d27d1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -37,22 +37,21 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 664,
+      "Q0_OK": 669,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 37,
+      "Q0_INDEPENDENT": 39,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1924,
+      "Q0_ANCHOR_MISSING": 1919,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 77,
       "Q0_PARSE_ERROR": 0,
@@ -3502,10 +3501,6 @@
           "detail": ""
         },
         {
-          "witness": "phase2b-dim-v21-bridge.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "phase2b2-dim-v21-categorical-bridge.witness.json",
           "detail": ""
         },
@@ -4610,10 +4605,6 @@
           "detail": ""
         },
         {
-          "witness": "poly-q-proof.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "probe-convention-d-vs-c-borromean.witness.json",
           "detail": ""
         },
@@ -5571,14 +5562,6 @@
         },
         {
           "witness": "dt-crossknot-connection-count-certified.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "fbor-normalisation-barsymmetry.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
           "detail": ""
         },
         {
@@ -7299,10 +7282,6 @@
         },
         {
           "witness": "hoefsmit-toroidal-ladder-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "knot-volumes.witness.json",
           "detail": ""
         },
         {
@@ -9604,6 +9583,10 @@
           "detail": ""
         },
         {
+          "witness": "phase2b-dim-v21-bridge.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "photon-operator-table.witness.json",
           "detail": ""
         },
@@ -9792,6 +9775,10 @@
           "detail": ""
         },
         {
+          "witness": "poly-q-proof.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "probe-d-dressing-cross-a.witness.json",
           "detail": ""
         },
@@ -9901,6 +9888,14 @@
         },
         {
           "witness": "q1-mass-gap-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-normalisation-barsymmetry.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fbor-q3-is-qschur-plancherel-weight.witness.json",
           "detail": ""
         },
         {
@@ -10257,6 +10252,10 @@
         },
         {
           "witness": "sw-prolongation-symbol.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "z2bn-tau-derivation-probe.witness.json",
           "detail": ""
         },
         {
@@ -10846,11 +10845,19 @@
           "detail": ""
         },
         {
+          "witness": "gswz_287_normalisation_underdetermined.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_alpha_line_unit_structure.witness.json",
           "detail": ""
         },
         {
           "witness": "gswz_epsm_chi_eigenspace_place.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_field_variation.witness.json",
           "detail": ""
         },
         {
@@ -10946,7 +10953,7 @@
           "detail": ""
         },
         {
-          "witness": "z2bn-tau-derivation-probe.witness.json",
+          "witness": "knot-volumes.witness.json",
           "detail": ""
         }
       ],

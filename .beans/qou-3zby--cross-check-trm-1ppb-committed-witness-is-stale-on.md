@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-08-23T07:59:27Z
+updated_at: 2026-08-23T15:35:27Z
 ---
 
 Found during /prepare-merge on PR #5199 (provenance triage). NOT that branch's regression -- cross_check_trM_1ppb.py reads none of its files (inputs are atomic-tr-m-mpfr-50dps, canonical-tr-m-via-chi-cache, habiro-coefficients-extended, markov-peel-atomic-tr-m-muon, q-pinning-50-digit). Confirmed inherited: a pristine origin/main worktree (cbb49a1a35) exits 1 on the same gate.
@@ -147,3 +147,82 @@ legible, not the number green. Two independent fixes, neither done:
 `cross-check-trM-1ppb.witness.json` is deliberately NOT regenerated. Do not
 "fix" this red by re-running and committing: until both causes are drained, a
 re-run records the straddle rather than resolving it.
+
+## Independently reproduced 2026-08-23 (prepare-merge, PR #5494)
+
+Reproduced on the #5494 branch rebased onto main (eadcb02e08), container
+sympy 1.14.0 / pyhecke_native 0.9.0. Regenerating cross_check_trM_1ppb
+gives numbers matching this bean's table exactly:
+
+  hoef_vs_peel   0.00018212626385904026 -> 0.324798555527689657
+  hoefsmit_50dps 0.38828647155940888    -> 0.57517233101788385
+  rel_delta_max  0.48130900224209445    -> 0.48103926609393223
+
+--strict exits 1; 6/6 atoms diverge. Confirms inherited: PR #5494 touches
+neither that producer nor its cone, and main's committed witness already
+carries allPassed: false.
+
+Same disposition as #5199 — regenerated witness NOT committed; reverted and
+stated in the PR instead.
+
+Correction to my own first reading: I initially attributed the move to the
+sympy 1.12 -> 1.14 gap between this container and the witness's recorded
+environment. The environment stamp does differ, but this bean's probe already
+diagnosed the mechanism as the convention C/D straddle, and the numbers
+landing on this bean's values to full precision says the straddle is the
+cause, not the sympy bump. An environment difference was the easier
+explanation, not the right one.
+
+## Live confirmation, 2026-08-23: the Hoefsmit leg has ALREADY moved C -> D
+
+Ran the gate on `main` (df9e1f3a95) and diffed the fresh witness against the
+committed one. **Regeneration reverted, not committed** — the gate is still red
+and this bean's own instruction is that the witness stays as recorded until
+both causes are drained.
+
+    leg (deuteron)    committed        fresh run
+    hoefsmit_50dps    0.38828647...    0.57517233...
+    hoef_vs_chi       0.4813           1.482e-7      <- collapsed 7 orders
+    hoef_vs_peel      1.8213e-4        0.3248        <- partner swapped
+
+So the *"hoef_vs_chi collapsing 7 orders is the tell"* recorded above is not a
+prediction any more — it is **live on main**, and the direction is now
+explicit: the Hoefsmit leg's committed value sits on the **peel/C** side
+(agreeing with peel to 1.82e-4), while today's producer puts it on the
+**chi/D** side (agreeing with chi to 1.48e-7). The committed witness predates
+that migration.
+
+### Two measurements that constrain the diagnosis
+
+- **peel_vs_habiro = 0.0001820930999, identical to 11.5 digits across all four
+  atoms** (deuteron, He-3, He-4, tritium). A per-atom-varying quantity cannot
+  do that; whatever produces it is a global scale.
+- **hoef_vs_chi varies 6.91e-8 .. 2.46e-7, a 3.56x spread across atoms.** That
+  one is *not* a global scale.
+
+### 🛑 An unresolved collision — do not repeat my error
+
+I first read that constant 1.82e-4 as the **muon/proton pin separation**, per
+this bean's own table. But `cross_check_trM_1ppb.py`'s docstring explains the
+same number as the **colour-weighting amount** `δ·h/4 ~ 1.8e-4`, citing
+`docs/audits/2026-06-23-trM-crosscheck-colorweighting-split-at-C.md`, and its
+`cw_pairs`/`colorblind_max` split groups the legs on that axis instead.
+
+**These are different axes and my data does not distinguish them** — both
+predict a constant. Anyone reasoning about the 1.82e-4 must resolve which it
+is first. A discriminating test: the pin reading predicts the constant scales
+with the muon/proton q₀ separation (11.5 ppb) and vanishes if both legs are
+re-run at one pin; the colour-weighting reading predicts it is
+q₀-independent and vanishes only if both legs use the same `pn_convention`.
+Run one leg at the other pin and see whether 1.82e-4 moves.
+
+### And a correction about what the gate tests
+
+The gate does **not** verdict on `|Δ|max` (that column is display only). Its
+only gating pair is `cw_pairs = {peel_vs_chi}`; Hoefsmit and Habiro are
+already documented as informational, non-gating. So the red is
+`peel_vs_chi` = 0.481 / 0.955 / 1.20 — an order-1 disagreement between the two
+colour-weighted exact methods. That is a **convention** failure, not a
+precision one, and closing it needs peel and chi on one convention
+(`qou-cds2`, blocked on the Gram singularity under D). No amount of work on
+this bean's other legs will make the gate green.

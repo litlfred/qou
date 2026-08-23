@@ -27,11 +27,10 @@ Path 4 hypothesis is confirmed.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
-import json
 import sys
 from pathlib import Path
 from mpmath import mp, mpf
+from q_parameter import Q_MP  # noqa: E402 — experimental/proton pin, 50 dps
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -40,9 +39,13 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-# q_0 pinning
-Q_WITNESS = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q = mpf(json.load(Q_WITNESS.open())["derived_50_digit"]["q"])
+# q_0 pinning — experimental/proton per the 2026-08-07 owner directive.  This
+# script compares against proton/neutron rho_K_CODATA, i.e. it is an
+# experimental-layer computation, and its manifest entry is physical_proton.
+# It previously read q-pinning-50-digit.witness.json directly; that witness is
+# MUON-anchored, so the script computed at the ideal pin while declaring the
+# experimental one.  Q_MP is the proton pin at the same 50 dps.
+q = Q_MP
 q_inv = mpf(1) / q
 h_q = q - q_inv
 

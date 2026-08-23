@@ -145,21 +145,37 @@ def main() -> int:
     print(f"committed reproduced by convention C : {tally['C']}/{n}")
     print(f"committed reproduced by convention D : {tally['D']}/{n}")
 
+    # Report whichever convention the table is UNIFORM in, rather than
+    # asserting a particular one.  This probe was written to diagnose an
+    # all-C table; once #5526 regenerated it the table became all-D, and a
+    # verdict hard-coded to C reported "mixed / inconclusive" on a table that
+    # is in fact perfectly uniform -- the checker's own orientation, mistaken
+    # for a finding.  An interface-free atom matches BOTH conventions (empty
+    # product), so uniformity is decided on the interface-carrying atoms only.
     with_iface = [r for r in rows if r['interfaces']]
-    all_c = all(r['matches_C'] for r in rows)
-    only_trivial_d = all(not r['interfaces'] for r in rows if r['matches_D'])
+    uniform_c = bool(with_iface) and all(
+        r['matches_C'] and not r['matches_D'] for r in with_iface)
+    uniform_d = bool(with_iface) and all(
+        r['matches_D'] and not r['matches_C'] for r in with_iface)
+
     print()
     print(f'atoms carrying at least one interface : {len(with_iface)}')
-    print(f'  ... all of them convention C        : '
-          f"{all(r['matches_C'] and not r['matches_D'] for r in with_iface)}")
-    print(f'every committed atom matches C        : {all_c}')
-    print(f'D-matches are interface-free only     : {only_trivial_d}')
+    print(f'  ... uniformly convention C          : {uniform_c}')
+    print(f'  ... uniformly convention D          : {uniform_d}')
+    print(f'interface-free atoms (C == D)         : {len(rows) - len(with_iface)}')
 
-    ok = all_c and only_trivial_d
     print()
-    print('VERDICT: the committed mass-table Habiro witnesses are convention C.'
-          if ok else 'VERDICT: mixed / inconclusive -- inspect the table above.')
-    return 0 if ok else 1
+    if uniform_d:
+        print('VERDICT: the committed mass-table Habiro witnesses are '
+              'convention D -- canonical per the 2026-08-15 R1 ruling.')
+        return 0
+    if uniform_c:
+        print('VERDICT: the committed mass-table Habiro witnesses are '
+              'convention C -- OFF-CANON, regenerate (see #5526).')
+        return 1
+    print('VERDICT: MIXED -- the table is not uniform in either convention. '
+          'That is the worst state: inspect the table above.')
+    return 1
 
 
 if __name__ == '__main__':

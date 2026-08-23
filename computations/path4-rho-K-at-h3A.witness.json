@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:29.247545+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-22T21:15:11.883008+00:00",
+  "commitSha": "9436f70250d61e4e67905dbe5309ad1ddc6c6339",
   "assertions": [
     {
       "name": "max_dim_q_closes_rho_K_for_any_atom",
@@ -12,10 +12,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "path4-rho-K-at-h3A",
   "scriptFile": "path4_rho_K_at_h3A.py",
-  "scriptHash": "22614244913d",
+  "scriptHash": "7f9042d34e94",
   "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -28,12 +28,20 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/path4_rho_K_at_h3A.py"
+    ],
+    "reproduce": "python3 -u computations/path4_rho_K_at_h3A.py"
   },
   "description": "Path 4 hypothesis test: ρ_K = dim_q(λ*) at H_{3A}",
   "data": {
-    "q_pinned": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_pinned": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "hypothesis_max_dim_q": [
       {
         "atom": "proton",
@@ -43,9 +51,9 @@
           2,
           1
         ],
-        "max_dim_q_value": "2.010896869119075760817663804500482703050793515912827546426218055303123",
+        "max_dim_q_value": "2.010896866707122299752491978091862815889240748484132709580030711097733",
         "rho_K_CODATA": 1723.6,
-        "ratio": "857.129983376555"
+        "ratio": "857.1299844046324"
       },
       {
         "atom": "neutron",
@@ -55,9 +63,9 @@
           2,
           1
         ],
-        "max_dim_q_value": "2.010896869119075760817663804500482703050793515912827546426218055303123",
+        "max_dim_q_value": "2.010896866707122299752491978091862815889240748484132709580030711097733",
         "rho_K_CODATA": 1991.6,
-        "ratio": "990.4038494388182"
+        "ratio": "990.4038506267498"
       },
       {
         "atom": "D",
@@ -68,9 +76,9 @@
           2,
           1
         ],
-        "max_dim_q_value": "17.34467358268889889579803030370721792699969459411246644843517719297725",
+        "max_dim_q_value": "17.34467327674696545443439371658203548654080299894685548289998451975703",
         "rho_K_CODATA": 9453.0,
-        "ratio": "545.0088152385124"
+        "ratio": "545.008824851899"
       },
       {
         "atom": "T",
@@ -82,9 +90,9 @@
           1,
           1
         ],
-        "max_dim_q_value": "294.5113594163053726250366936490446288698847719811936698940595472285504",
+        "max_dim_q_value": "294.5113396898543560378751574114008693197596647674161921145411684000678",
         "rho_K_CODATA": 52828.5,
-        "ratio": "179.3767822901679"
+        "ratio": "179.3767943048744"
       },
       {
         "atom": "³He",
@@ -96,9 +104,9 @@
           1,
           1
         ],
-        "max_dim_q_value": "294.5113594163053726250366936490446288698847719811936698940595472285504",
+        "max_dim_q_value": "294.5113396898543560378751574114008693197596647674161921145411684000678",
         "rho_K_CODATA": 26609.2,
-        "ratio": "90.35033505239664"
+        "ratio": "90.35034110408708"
       }
     ],
     "paper_reference": "atomic-mass-gb-nf.md line 131-142 (binding operator K in H_{3A})"

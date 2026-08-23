@@ -34,7 +34,14 @@ import sympy as sp
 import mpmath as mp
 
 mp.mp.dps = 30
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# q₀ is READ from the canonical source, never typed here. It was a hardcoded
+# literal "1.1099785955573347198997632204832250266562084087802" -- the MUON
+# value -- while this producer's witness declared `q0Anchor: proton`. Declared
+# anchor and computed value disagreed by 11.54 ppb, which is the mu-p substrate
+# tension itself (AGENTS.md: "Never straddle the two layers inside one
+# quantity", and the 2026-08-07 owner directive that all production code
+# defaults to the experimental/proton anchor). Bean qou-bdkx.
+from q_parameter import Q_MP as Q0  # noqa: E402 — canonical proton-pinned q₀
 S0 = mp.sqrt(Q0)
 
 # ---- symbolic, rational in s = sqrt(q) ----
@@ -155,7 +162,13 @@ witness = {
     "discipline": (
         "no fit; sympy rational-in-s connection + mpmath 30dps periods; abelianised-holonomy "
         "spectral 1-form pre-registered (raw + x2 convention reported regardless of hit/miss); "
-        "torus theta=2 log q0 for calibration. N validated by period system to <1e-5 rel."
+        "torus theta=2 log q0 for calibration. N validated by period system to "
+        # REPORT the measured residual, do not assert a fixed bound. This read
+        # "<1e-5 rel" as hardcoded prose. It was true at the old (muon) pin by
+        # 1.195e-5 -- barely -- and re-pinning to proton moved it to 3.519e-5,
+        # falsifying the sentence while every assertion still passed, because
+        # nothing checked the prose against the number. Bean qou-bdkx.
+        f"{results['N_PF_ode_residual_rel']} rel."
     ),
     "auditOnly": "docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md",
     "results": results, "assertions": assertions,
@@ -166,7 +179,8 @@ witness["verdict"] = (
      "theta_binding -- candidate geometric derivation of tau."
      if hit else
      "NO 1% MATCH: the derived Gauss-Manin connection N(q) is SOLID (trace-free sl_2, "
-     "period-validated <1e-5), but theta_spec = int sqrt(-det N) dq differs from theta_binding "
+     f"period-validated to {results['N_PF_ode_residual_rel']} rel), but theta_spec = "
+     "int sqrt(-det N) dq differs from theta_binding "
      "under the natural (half/full-period) conventions. N(q) is delivered as the concrete "
      "Picard-Fuchs input the prior sessions punted on; the residual is the precise "
      "abelianisation frame/normalisation.") + " No fit; nothing wired."

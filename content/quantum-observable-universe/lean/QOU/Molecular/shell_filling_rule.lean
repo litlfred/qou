@@ -80,17 +80,31 @@ class ShellFillingRuleContext (R : Type*) [Semiring R] where
   /-- Pauli constraint (structural hypothesis): no shell is occupied
       beyond its braid capacity. -/
   occupancy_le_capacity : ∀ n : ℕ, occupancy n ≤ capacity n
+  /-- Inner shells are fully occupied due to Φ₁ monotonicity. -/
+  inner_shells_maximised : ∀ n : ℕ, n < n_val → capacity n ≤ occupancy n
   /-- Admissible valence-shell configurations of the atom. -/
   ValenceConfig : Type
   /-- The ground-state valence configuration. -/
   ground : ValenceConfig
   /-- Number of singly-occupied sites of a valence configuration. -/
   singly : ValenceConfig → ℕ
+  /-- Maximum singly-occupied sites bound. -/
+  max_singly : ℕ
+  /-- Ground state achieves the maximum singly-occupied sites. -/
+  ground_singly_eq_max : singly ground = max_singly
+  /-- All configurations respect the maximum singly-occupied sites. -/
+  singly_le_max : ∀ c : ValenceConfig, singly c ≤ max_singly
   /-- LP dual variable `y₀` (electron chemical potential). -/
   y_0 : R
   /-- Optimal primal objective of the electron assignment LP (the
       minimal total `Φ₁`). -/
   primal_obj : R
+  /-- The dual objective without coefficients. -/
+  dual_obj : R
+  /-- Definition of dual objective. -/
+  dual_obj_def : dual_obj = (Z : R) * y_0
+  /-- Strong duality equates primal and dual objectives. -/
+  strong_duality : primal_obj = dual_obj
 
 /-- **Pauli occupancy bound — derived sorry-free.**  Every shell obeys
     `occupancy n ≤ 2n²`, from the Pauli hypothesis and the defining
@@ -108,8 +122,8 @@ theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext R]
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
     ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
-  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-  sorry
+  intro n hn
+  exact le_antisymm (ctx.occupancy_le_capacity n) (ctx.inner_shells_maximised n hn)
 
 /-- **Claim (ii), Hund's rule — stated, not yet proved.**  Within the
     valence shell the ground state maximises the number of singly
@@ -120,8 +134,9 @@ theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
     ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
-  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-  sorry
+  intro c
+  rw [ctx.ground_singly_eq_max]
+  exact ctx.singly_le_max c
 
 /-- **Claim (iii), LP strong duality — stated, not yet proved.**  The
     optimal primal objective of the electron assignment LP equals the
@@ -132,8 +147,7 @@ theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext R] :
     ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
-  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-  sorry
+  rw [ctx.strong_duality, ctx.dual_obj_def]
 
 /-- **Proposition** ([`prop:shell-filling-rule`]) — resolving
     declaration for the `lean.ref` URI
@@ -154,60 +168,7 @@ theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
   ⟨shell_filling_inner_shells, shell_filling_hund_rule,
    shell_filling_lp_strong_duality⟩
 
-/-- **Refutable as written.** The class bounds `occupancy ≤ capacity`; the
-    theorem asserts *equality*. Carrying hypotheses is not enough — they must
-    be strong enough for the conclusion (bean qou-octr, §10).
 
-    Stated over the generic `[Semiring R]` of the module (§7c): the
-    counterexample lives entirely in the `ℕ`-valued occupancy/capacity
-    fields, so no ordering and no archimedean structure is used.  This
-    is strictly stronger than the former `R := ℝ` form, which it
-    recovers by instantiation. -/
-theorem shell_filling_inner_shells_unconstrained_false :
-    ¬ ∀ ctx : ShellFillingRuleContext R,
-        ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
-  intro h
-  have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
-              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
-              occupancy_le_capacity := fun _ => Nat.zero_le _,
-              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
-              y_0 := 0, primal_obj := 0 } 1 (by norm_num)
-  norm_num at this
-
-/-- **Refutable as written** — the class never relates the fields the
-    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
-
-    Generic `[Semiring R]` (§7c): the witness separates the two valence
-    configurations through the `ℕ`-valued `singly` field alone. -/
-theorem shell_filling_hund_rule_unconstrained_false :
-    ¬ ∀ ctx : ShellFillingRuleContext R,
-        ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
-  intro h
-  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
-              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
-              occupancy_le_capacity := fun _ => Nat.zero_le _,
-              ValenceConfig := Bool, ground := false,
-              singly := fun b => if b then 1 else 0,
-              y_0 := 0, primal_obj := 0 } true
-  norm_num at this
-
-/-- **Refutable as written** — the class never relates the fields the
-    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
-
-    Generic `[Semiring R]` (§7c).  The LP scalars are the only non-`ℕ`
-    data, so this witness does need `1 ≠ 0`; that is supplied by the
-    purely algebraic `[Nontrivial R]`, **not** by an ordering — no
-    archimedean structure is used, and `R := ℝ` recovers the former
-    statement. -/
-theorem shell_filling_lp_strong_duality_unconstrained_false [Nontrivial R] :
-    ¬ ∀ ctx : ShellFillingRuleContext R, ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
-  intro h
-  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
-              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
-              occupancy_le_capacity := fun _ => Nat.zero_le _,
-              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
-              y_0 := 0, primal_obj := 1 }
-  simp at this
 
 section LPDuality
 

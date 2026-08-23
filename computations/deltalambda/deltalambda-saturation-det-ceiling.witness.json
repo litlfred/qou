@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T19:40:59.241196+00:00",
-  "commitSha": "d106e6bad98069ec8c8ca62775d773ffbbf02429",
+  "computedAt": "2026-08-23T07:40:51.746311+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [
     {
       "name": "closed_form_det_matches_mp_det_A2_to_12",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 138,
+  "durationMs": 112,
   "computation": "deltalambda-saturation-det-ceiling",
   "scriptFile": "deltalambda_saturation_det_ceiling_probe.py",
   "scriptHash": "741f0e19514d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,17 +70,26 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py"
   },
   "description": "Nuclear-saturation angle on the Delta_lambda magnitude wall. The isospin-even (unsigned) complete-graph exchange CUMULANT b_A=-ln det(I+m(J-I)) SATURATES (b_A/A -> -ln(1-m)) -- taming the #3952 super-additive overshoot; it IS the extensive term the 2026-06-02 audit said the intensive trace binding lacks. But the saturation PROVABLY caps rho_A=b_A/b_2 <= C(A,2) (exact spectrum + one-line derivative proof), below the isospin-corrected strong targets rho_strong(3)~3.8>3, rho_strong(4)~13>6. The large-magnitude mechanism (the sqrt5 ceiling) is isospin-SIGNED and excluded (strong split proved 0). Scope-(b) exclusion; no fit, audit-only.",
   "tier": "structural derive+prune (exact spectrum + closed-form cumulant; no fit, no AME inversion)",
   "result": {
     "hypothesis": "the det-ceiling cumulant SATURATES (taming the #3952 overshoot) and a parameter-free m lands the light-nucleus rho ratios",
     "constants": {
-      "q0": "1.10997859556",
-      "E0_MeV": "4.1859808",
-      "g_reeb": "0.446727067798",
-      "z_naive_1/[2]_v": "0.499320334034",
+      "q0": "1.10997858275",
+      "E0_MeV": "4.1859814",
+      "g_reeb": "0.446727067906",
+      "z_naive_1/[2]_v": "0.499320334184",
       "ceiling_1/sqrt5": "0.4472135955"
     },
     "part0_algebraic_preflight": {
@@ -89,68 +98,68 @@
       "rows": [
         {
           "A": 2,
-          "closed_form": "0.8004349269",
-          "mp_det": "0.8004349269",
+          "closed_form": "0.8004349268",
+          "mp_det": "0.8004349268",
           "match": true
         },
         {
           "A": 3,
-          "closed_form": "0.5796070206",
-          "mp_det": "0.5796070206",
+          "closed_form": "0.5796070204",
+          "mp_det": "0.5796070204",
           "match": true
         },
         {
           "A": 4,
-          "closed_form": "0.3963398657",
-          "mp_det": "0.3963398657",
+          "closed_form": "0.3963398655",
+          "mp_det": "0.3963398655",
           "match": true
         },
         {
           "A": 5,
-          "closed_form": "0.2611441908",
-          "mp_det": "0.2611441908",
+          "closed_form": "0.2611441907",
+          "mp_det": "0.2611441907",
           "match": true
         },
         {
           "A": 6,
-          "closed_form": "0.1676440565",
-          "mp_det": "0.1676440565",
+          "closed_form": "0.1676440564",
+          "mp_det": "0.1676440564",
           "match": true
         },
         {
           "A": 7,
-          "closed_form": "0.1055667444",
-          "mp_det": "0.1055667444",
+          "closed_form": "0.1055667443",
+          "mp_det": "0.1055667443",
           "match": true
         },
         {
           "A": 8,
-          "closed_form": "0.06549676508",
-          "mp_det": "0.06549676508",
+          "closed_form": "0.065496765",
+          "mp_det": "0.065496765",
           "match": true
         },
         {
           "A": 9,
-          "closed_form": "0.04016003944",
-          "mp_det": "0.04016003944",
+          "closed_form": "0.04016003939",
+          "mp_det": "0.04016003939",
           "match": true
         },
         {
           "A": 10,
-          "closed_form": "0.0243896494",
-          "mp_det": "0.0243896494",
+          "closed_form": "0.02438964936",
+          "mp_det": "0.02438964936",
           "match": true
         },
         {
           "A": 11,
-          "closed_form": "0.01469483835",
-          "mp_det": "0.01469483835",
+          "closed_form": "0.01469483833",
+          "mp_det": "0.01469483833",
           "match": true
         },
         {
           "A": 12,
-          "closed_form": "0.008794574164",
-          "mp_det": "0.008794574164",
+          "closed_form": "0.008794574147",
+          "mp_det": "0.008794574147",
           "match": true
         }
       ]
@@ -252,7 +261,7 @@
         },
         {
           "A": 17,
-          "b_A": "7.3727341",
+          "b_A": "7.3727342",
           "b_A/A": "0.43369024",
           "frac_of_plateau": "0.732704"
         },
@@ -271,7 +280,7 @@
         {
           "A": 20,
           "b_A": "8.9961649",
-          "b_A/A": "0.44980824",
+          "b_A/A": "0.44980825",
           "frac_of_plateau": "0.759935"
         }
       ],
@@ -322,12 +331,12 @@
     "part4_forward_test": {
       "per_magnitude": {
         "g_reeb": {
-          "m": "0.446727067798",
+          "m": "0.446727067906",
           "rho_pred_3": "2.45016",
           "rho_pred_4": "4.15761",
           "vs_target_3_ratio_pred/strong": "0.64261",
           "vs_target_4_ratio_pred/strong": "0.3189",
-          "b4_MeV_at_this_m": "3.87405"
+          "b4_MeV_at_this_m": "3.87406"
         },
         "ceiling_1/sqrt5": {
           "m": "0.4472135955",
@@ -338,7 +347,7 @@
           "b4_MeV_at_this_m": "3.88249"
         },
         "z_naive": {
-          "m": "0.499320334034",
+          "m": "0.499320334184",
           "rho_pred_3": "2.40992",
           "rho_pred_4": "4.04458",
           "vs_target_3_ratio_pred/strong": "0.63206",

@@ -5,6 +5,17 @@
 **Settles:** the attribution left open by [PR #5526](https://github.com/litlfred/qou/pull/5526)
 **Probe:** [`computations/habiro/habiro_mass_table_convention_attribution_probe.py`](../../computations/habiro/habiro_mass_table_convention_attribution_probe.py)
 
+> **🟩 RESOLVED 2026-08-23 — this describes the table BEFORE the fix.** The
+> diagnosis below was acted on: PR #5526 regenerated all 25 atoms into
+> convention D (merged as `cde2fbcd89`), and the same probe now reports
+> **D 25/25**, exit 0. Read what follows as the measurement that motivated the
+> regeneration, not as a description of `main` today. The probe is kept as a
+> live regression check — it reports whichever convention the table is uniform
+> in and fails on a mixed one.
+>
+> The five atoms named under "Consequence" below were the reason the fix had to
+> be 25 rather than 20; they are now in `ATOMS` and regenerated.
+
 ## Verdict
 
 Every committed `computations/habiro-coefficients-*.witness.json` on `main`

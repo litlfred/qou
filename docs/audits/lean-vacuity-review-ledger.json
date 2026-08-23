@@ -81,17 +81,6 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `LeviFormDefect` carries field `carrier` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `LeviFormDefect` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `carrier` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean::MobiusEnergy::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 105,
-      "verdict": "genuine",
-      "file_sha": "746f35a9cbcc",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `CategoricalMobiusEnergy` carries field `energy` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalMobiusEnergy` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `energy` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean::NonSelfIntersection.exclusionRadius_eq::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -486,28 +475,6 @@
       },
       "stale_prev_verdict": "genuine"
     },
-    "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::su3_sym2_irreducible::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "axiom-true",
-      "line": 68,
-      "verdict": "advisory",
-      "file_sha": "72c72df7840c",
-      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
-      "evidence": "CORRECTED 2026-08-09 (earlier verdict `genuine`/`restate-or-drop` was made without reading the module header). The vacuity is real \u2014 `axiom su3_sym2_irreducible : True` asserts nothing \u2014 but it is ALREADY DISCLOSED at the point of use: the file header carries a section titled `Outstanding: this file's representation-theoretic content is vacuous`, which names this axiom and both gate theorems, states that `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` conclude arithmetic tautologies `whose representation-theoretic reading lives only in the docstrings`, assigns the repair to bean `qou-8fl1` item 3, and notes the chapter prose already labels the result honestly (`not excluded by the Sym\u00b2 gate`, `should not be cited as` a machine-checked pass). That is the honest-placeholder criterion satisfied. CRITICALLY, DO NOT REPAIR THIS FILE BY FORMALISING THE SELF-DUALITY ARGUMENT (singlet in Sym\u00b2 \u21d2 V self-dual \u21d2 not the SU(3) fundamental): that inference is REFUTED. The real criterion is formalised next door in `QOU.Eightfold.Sym2GateParity`, which proves `self_duality_does_not_decide_gate`, states `That inference is invalid`, and is explicitly written so that `the invalid inference cannot be re-derived from this file`. The correct gate is the parity criterion `gate_fails_iff_odd_dim` / `zero_mem_sym2Indices_iff`, both `by decide`. Leave this file disclosed; drain via the bean.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::su3_sym2_irreducible::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 68,
-      "verdict": "advisory",
-      "file_sha": "72c72df7840c",
-      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
-      "evidence": "CORRECTED 2026-08-09 (earlier verdict `genuine`/`restate-or-drop` was made without reading the module header). The vacuity is real \u2014 `axiom su3_sym2_irreducible : True` asserts nothing \u2014 but it is ALREADY DISCLOSED at the point of use: the file header carries a section titled `Outstanding: this file's representation-theoretic content is vacuous`, which names this axiom and both gate theorems, states that `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` conclude arithmetic tautologies `whose representation-theoretic reading lives only in the docstrings`, assigns the repair to bean `qou-8fl1` item 3, and notes the chapter prose already labels the result honestly (`not excluded by the Sym\u00b2 gate`, `should not be cited as` a machine-checked pass). That is the honest-placeholder criterion satisfied. CRITICALLY, DO NOT REPAIR THIS FILE BY FORMALISING THE SELF-DUALITY ARGUMENT (singlet in Sym\u00b2 \u21d2 V self-dual \u21d2 not the SU(3) fundamental): that inference is REFUTED. The real criterion is formalised next door in `QOU.Eightfold.Sym2GateParity`, which proves `self_duality_does_not_decide_gate`, states `That inference is invalid`, and is explicitly written so that `the invalid inference cannot be re-derived from this file`. The correct gate is the parity criterion `gate_fails_iff_odd_dim` / `zero_mem_sym2Indices_iff`, both `by decide`. Leave this file disclosed; drain via the bean.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean::amplitude_finite_sum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -678,17 +645,6 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean::MobiusEnergy::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 148,
-      "verdict": "genuine",
-      "file_sha": "f91330bdba7f",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `CategoricalMobiusEnergy` carries field `energy` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalMobiusEnergy` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `energy` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean::factors_def::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -780,17 +736,6 @@
       "disposition": "structure-field-accessor",
       "evidence": "NOT a defect, same as `kernelIncl_exact`. `CategoricalJetProlongation.commutes` is the DEFINING compatibility square of a prolongation (j\u00b9 \u226b \u2207 = \u2207' \u226b j\u00b9) \u2014 it is what the word means \u2014 and the theorem is an accessor universally quantified over `jp`.",
       "stale_prev_verdict": "legit"
-    },
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean::main_commutative_diagram::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 71,
-      "verdict": "genuine",
-      "file_sha": "7c5c2c909ae2",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `MainCommutativeDiagram` carries field `JetBundle` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `MainCommutativeDiagram` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `JetBundle` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean::cat_eigenspace_decomposition::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -960,17 +905,6 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `SharedDenominatorCuspHolonomy` carries field `cusp_complete_of_root` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cusp_complete_of_root` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean::main_commutative_diagram::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 63,
-      "verdict": "genuine",
-      "file_sha": "1b4f5f7ea85b",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `MainCommutativeDiagram` carries field `JetBundle` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `MainCommutativeDiagram` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `JetBundle` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean::opening_eq_holonomy_of_conj::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -1042,51 +976,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `VolumeFormFactorisation` carries field `epsilon_epi` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `VolumeFormFactorisation` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `epsilon_epi` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/quantum-universes/categorical-jet.lean::CategoricalJet.kernelIncl_exact::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 57,
-      "verdict": "genuine",
-      "file_sha": "20c5a10fc303",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "disposition": "construct-witness-or-drop",
-      "evidence": "Decl unchanged at line 57: `cj.kernelIncl \u226b cj.jetEval = 0 := cj.exact`, projecting the `exact` field whose type is character-identical to the conclusion. `CategoricalJet` has no def/instance/example/builder inhabiting it anywhere (grepped the file; only consumed by `CategoricalJetProlongation` as a hypothesis), so this is a self-assuming projection, not the discharged-accessor idiom. Docstring also over-claims 'monic' while the statement is just the field. Re-confirms prior genuine."
-    },
-    "content/quantum-observable-universe/quantum-universes/categorical-jet.lean::categorical_jet_prolongation::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 85,
-      "verdict": "genuine",
-      "file_sha": "20c5a10fc303",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "disposition": "construct-witness-or-drop",
-      "evidence": "Decl unchanged at line 85: `cj.jetEval \u226b jp.connection = jp.prolonged_connection \u226b cj.jetEval := jp.commutes`, returning the `commutes` field verbatim; its type is identical to the conclusion. `CategoricalJetProlongation` is never inhabited with real content, so this is a self-assuming projection. Re-confirms prior genuine."
-    },
-    "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::octonion_3_passes_sym2_gate::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "conjunction-of-tautologies",
-      "line": 82,
-      "verdict": "advisory",
-      "file_sha": "72c72df7840c",
-      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
-      "evidence": "Newly detected by the `conjunction-of-tautologies` arm added 2026-08-09 \u2014 it had escaped every check because the reflexive tests read the conclusion as one proposition, so `(6 : \u2115) = 6 \u2227 (0 : \u2115) = 0` parsed as lhs `(6:\u2115)` against rhs `6\u2227(0:\u2115)=0` and matched nothing. Both conjuncts are tautologies, so the theorem asserts nothing while its name and docstring claim the octonion G\u2082 route passes the Sym\u00b2 gate. Same disposition as its file-mates: the module header already carries an `Outstanding: this file's representation-theoretic content is vacuous` section naming this declaration explicitly (`conclude ... 6 = 6 \u2227 0 = 0 \u2014 arithmetic tautologies whose representation-theoretic reading lives only in the docstrings`), the repair is assigned to bean `qou-8fl1` item 3, and the chapter prose already labels the result honestly. DO NOT repair via the self-duality argument \u2014 `QOU.Eightfold.Sym2GateParity` proves `self_duality_does_not_decide_gate` and is written so the invalid inference cannot be re-derived; the correct criterion is the parity one (`gate_fails_iff_odd_dim`).",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
     },
     "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean::r_matrix_braiding_structure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",

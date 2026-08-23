@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-23T13:37:42Z
+updated_at: 2026-08-23T17:35:00Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -187,43 +187,128 @@ running the cheap control that could kill it. The control was three lines and on
 field of the input witness. Run it first.
 
 
+## RESOLVED (option C run) — and TWO of my own claims here were wrong
+
+Ran the producer end-to-end: `python3 -u _habiro_coefficient_extract.py`,
+**236.4 s, FAILURES: 0**, all 20 canonical atoms + the mass-table summary,
+regenerated uniformly from one `(τ_p, τ_n)`.
+
+### Correction 1 — "the driver is semantic: `include_inter`" was WRONG
+
+`canonical_interface_kinds(1,0)` and `(0,1)` both return **`[]`**, so the
+interface product is `1` and **free ≡ bound at A = 1**. The flag cannot be what
+made the deprecated proton differ from the live one. `include_inter: True` at
+line 288 is a **correct descriptive label** — this producer always multiplies in
+the interface product — not a hardcoded switch suppressing a variant.
+
+**So the "blocker" I reported to the author does not exist.** Nothing had to be
+un-hardcoded. Emitting a genuine *free* variant would mean omitting
+`_interface_product_symbolic`, which is a different change, and at A = 1 it would
+be a no-op anyway.
+
+### Correction 2 — "the committed composites cannot be reproduced" was OVERSTATED
+
+That came from comparing `tr_M_in_q` with `sp.simplify(together(...))`. At the
+coefficient level, measured per atom:
+
+    proton, neutron        reproduce EXACTLY (tr_M string-equal, all a_m equal)
+    deuteron, ³He          coefficients IDENTICAL; only the tr_M SERIALISATION
+                           differs (expanded vs factored — same expression)
+    tritium                genuinely differs (16 -> 15 coefficients, from m=1)
+
+Four of five reproduced. One did not.
+
+### What the full run actually found — 16 of 20, and the split is exact
+
+| | |
+|---|---|
+| coefficients changed | **16** atoms |
+| unchanged | proton, neutron, deuteron, ³He |
+
+**The split is predicted perfectly (20/20) by one property: whether the atom's
+`canonical_interface_kinds` contain `negative`/`averaged`.** Every atom with a
+`negative` interface changed; every all-`positive` atom did not.
+
+Both generations are self-consistent: old **and** new carry
+`reconstruction_matches: True` (exact symbolic `Σ a_m (u;u)_m = p(u)`), and both
+`deg_p_u` and `denom_in_u` changed on all 16. So these are exact expansions of
+**different input polynomials**, not a precision or truncation artefact.
+
+### Attribution — localised, NOT settled
+
+`_markov_z_q` documents its own migration: `z = q³/(q²+1)` (**convention D**),
+"was `1/(q^{1/2}+q^{-1/2})`, convention C, excised by the owner ruling of
+2026-08-09 … the audit keyed off an assignment TARGET and this computes straight
+into its return, so it had no name to match" — the detector-blindness class.
+
+The tempting conclusion is "the 16 were computed under convention C". **I am not
+asserting that, and the data argues against it:** the deuteron's only interface
+factor **is** `z`, and the deuteron is **unchanged**. A C→D change in `z` would
+have moved it. So the difference sits in the `negative`/`averaged` branch —
+`(z − h)` / `(z − h/2)` — not in `z` itself.
+
+Which upstream edit did it is **not established here**. Do not write "the
+mass-table witnesses were convention-C" anywhere on the strength of this bean.
+
+### Verification
+
+- `scripts/precision-gates.sh --changed` → **all blocking gates green, EXIT=0**.
+  (The one `!!` is a pre-existing untraceable literal in
+  `qbeta_t4_stokes3_crux_probe.py:60`, unrelated.)
+- All regenerated files: `reconstruction_matches: True`.
+- Diff is `computations/habiro-coefficients-*` only.
+
+### Not merged, deliberately
+
+The ask was five atoms; the honest run touches **16**, and it rewrites
+mass-table witnesses with downstream consumers. That is 3× the requested blast
+radius with an unresolved attribution, so it goes up as a PR for the author, not
+onto main.
+
 ---
 
-## Defect 1 ANSWERED (2026-08-23, takeover session) — the committed generation is convention C
+## RESOLVED for defect 1 (2026-08-23) — the table is convention D, all 25, merged
 
-"Which generation is canonical is an author call" is now decided on evidence
-rather than editorially. Measured in `computations/habiro/habiro_mass_table_convention_attribution_probe.py`
-(PR #5543), by reconstructing every committed `tr_M_in_q` from `(τ_p, τ_n)`
-under each convention — the "test the answer, not the source" method:
+The two cautions above were right about **their own evidence** and are now
+superseded by a different measurement. Recorded rather than deleted, because
+the reasoning is the instructive part.
 
-    committed reproduced by convention C : 25/25
-    committed reproduced by convention D :  2/25
-    atoms carrying at least one interface : 23, all C
-    D-matches are interface-free only     : True
+**"Do not write that the mass-table witnesses were convention-C."** They were.
+Measured by reconstructing every committed `tr_M_in_q` from `(τ_p, τ_n)` under
+each convention — exact arithmetic, three perfect-square rationals so `√q` is
+exact (`computations/habiro/habiro_mass_table_convention_attribution_probe.py`,
+PR #5543):
 
-The 2 D-matches are proton and neutron: empty interface product, so C and D are
-the same statement there. Exact arithmetic, no float — tested at three
-perfect-square rationals so `√q` is exact.
+    before:  C 25/25   D 2/25      after:  D 25/25   C 2/25
 
-**#5526's counter-argument does not hold.** It reasoned that the deuteron's only
-interface factor is `z`, that the deuteron was unchanged, and so `z` could not
-have changed. The deuteron DID change — `tr_M_at_q0` 0.565089262867502 →
-0.6933894087146489 (+22.7 %), and `denom_in_u` from `(q+1)`-type to `(q²+1)`-type
-factors. Only `p_in_u` held, and `p_in_u` is the one field that CANNOT move for
-an all-`positive` atom: `p(u) := u^shift · denom · tr_M(u²)`, so for a pure power
-`z^k` the swap is absorbed wholesale by `denom`. The 16/4 split is the SIGNATURE
-of the swap, not evidence against it.
+The 2 either way are proton and neutron: empty interface product, so C and D
+make the same statement about them.
 
-**Consequence for the repoint in defect 1:** the deprecated witness being
-*deeper* (proton 10 vs 9, tritium 19 vs 16, ³He 20 vs 16) is a separate axis from
-the convention. Depth governs how many primes the Pochhammer mechanism covers;
-convention governs whether the numbers are canonical at all. A repoint to a live
-witness that is convention C buys neither.
+**"The deuteron is unchanged, so `z` did not change."** The deuteron DID change
+— in every field except the one that was compared. `tr_M_at_q0` moved
+0.565089262867502 → 0.6933894087146489 (+22.7 %) and `denom_in_u` went from
+`(q+1)`-type to `(q²+1)`-type factors; only `p_in_u` held. And `p_in_u` is the
+one field that CANNOT move for an all-`positive` atom: `p(u) := u^shift · denom
+· tr_M(u²)`, so for a pure power `z^k` the swap is absorbed wholesale by
+`denom`. Put `z` inside a sum `(z − h)` and the numerator moves. **The 16/4
+split is the signature of the swap, not evidence against it.**
 
-**Blocker surfaced for #5526:** its `ATOMS` list has 20 entries; `main` carries
-25 committed atom witnesses. Merging as-is leaves helium-6, boron-12, carbon-14,
-nitrogen-12 and oxygen-14 in C beside 20 in D. All five carry `negative`
-interfaces, so all five are genuinely C-valued. Regenerate all 25 or none.
+**"Not merged, deliberately — 3× the requested blast radius."** The owner was
+asked and chose to go wider still: regenerate all 25. Merged as `cde2fbcd89`.
 
-Defects 2 (headline omits `step2_full_trace_passed`, False at 45/45) and 3 (the
-uniform half-odd-integer full trace) are UNTOUCHED by this and remain open.
+The blast radius was in fact **25**, not 16 — `ATOMS` had 20 entries while
+`main` carried 25 committed atom witnesses, all five extras naming this same
+producer. They had been dropped from the list, so every run silently covered 20
+of 25. That is the mechanism by which a mixed-convention table arises, and it
+would have survived a merge of the 20-atom version.
+
+Two gate failures surfaced by adding them, both fixed at the producer, no
+baseline widened: the `raw-float64` ratchet went RED (summary regressed 21 → 26,
+exactly +5 — now 21 → 0, corpus 487570 → 487524), and the environment block
+would have recorded less than the witnesses on disk (numpy/scipy missing,
+mpmath downgraded) — the exact versions were installed and the run repeated.
+
+**Defects 2 and 3 are untouched by all of this and remain open:** the witness
+headline still omits `step2_full_trace_passed` (False at 45/45), and the uniform
+half-odd-integer full trace still wants a probe before it is read as a
+refutation.
