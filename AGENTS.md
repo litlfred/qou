@@ -366,29 +366,32 @@ user's last message, not the most recently mentioned file.
       "did not move" fact was counted ~119 times and dragged the rate down.
       **Do not quote 39 %.**
 
-      **WITHDRAWN the same day: the 73 % that replaced it is also unsupported.**
-      Spot-checking three of its MOVED verdicts by re-running each producer in
-      isolation against `origin/main` found **two false positives**:
-      `t6_three_halves_factor_probes` (census: 20 fields moved; clean re-run: 0)
-      and `canonical_ordering_dof_probe` (census: `/allPassed` moved; clean
-      re-run: 0). Only `option_e_isospin_probe` reproduced as a genuine move.
+      **MEASURED, third attempt: 58 % move, so `substantive` over-flags by
+      ~41 %.** Full sweep, all **152 producers**, baselined from git and
+      calibrated against three hand-verified answers before it was trusted:
 
-      The defect is in the harness, and it is worth knowing because it is easy
-      to repeat: the census took its **before** snapshot from the *working tree*
-      partway through a long sequential run, where an earlier producer's sibling
-      writes can contaminate it. Baseline from **git** (`git show
-      origin/main:<witness>`), never from a tree the sweep itself is mutating.
+          completed (rate denominator)   128
+            moved, substantive field      74   -> 58 %
+            moved, noise only              2
+            identical                     52
+          excluded: 14 crashed, 10 timed out
 
-      So the honest state is: **39 % was wrong (per-witness duplication), 73 %
-      was wrong (contaminated baseline), and the real rate is UNMEASURED.** Do
-      not quote either number. What survives is the qualitative point — a
-      `substantive` verdict is a re-run candidate, not a work order — and the
-      method requirements below. The raw rate looks like 94 % until you strip
-      `/invocation/argv/0` and `/invocation/reproduce` — the script path as the
-      sampler invoked it, which differs from whatever produced the committed
-      witness and has nothing to do with the mathematics. Strip
-      `/data/upstream_witness_hashes/*` too: that tracks an upstream file, not
-      this producer's output.
+      **Both earlier figures were wrong, in opposite directions, and both were
+      mine.** 39 % (implying 61 % over-flag) came from PER-WITNESS sampling when
+      119 of 268 witnesses shared one producer, so a single "did not move" fact
+      counted ~119 times. 73 % (implying 27 % over-flag) came from a
+      CONTAMINATED BASELINE: the sweep snapshotted `before` from the working
+      tree it was itself mutating, and producers write sibling witnesses. Two of
+      three spot-checked MOVED verdicts under that method were false.
+
+      **Baseline from git** (`git show origin/main:<witness>`), never from a
+      tree your own sweep writes to. That single change turned both known false
+      positives back to IDENTICAL while leaving the known true positive intact.
+
+      **16 % of producers cannot complete at all** — 14 crash, 10 exceed 240 s.
+      They are excluded from the rate, and they are their own backlog: a
+      producer that cannot run is a stronger defect than one whose numbers
+      drifted.
 
       Two lessons in the measurement itself, both worth more than the number:
       **mask volatile keys or you measure your own harness** — `timestamp`,
