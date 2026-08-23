@@ -8,6 +8,5 @@ export default corollary({
   uses: [
     "thm:ugb-main",
     "thm:ugb-buchberger",
-    "def:unital-groebner-basis",
   ],
 });
