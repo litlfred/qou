@@ -637,6 +637,21 @@ theorem leader_unique (f : Equiv.Perm (Fin n)) {p q : Fin n}
     (hp : IsLeader f p) (hq : IsLeader f q) (h : f.SameCycle p q) : p = q :=
   le_antisymm (hp q h) (hq p h.symm)
 
+/-- **The lap-step permutation**: where one full pass through the word sends a
+strand. By `lapStep_eq` this is `(closurePerm w)⁻¹`, and it — not `closurePerm`
+— is the permutation the traversal actually walks.
+
+Naming it matters beyond taste. Stating the walk under `(closurePerm w)⁻¹` while
+counting laps with `cycleLen (closurePerm w)` forced a `cycleLen f⁻¹ p =
+cycleLen f p` bridge, which is blocked by a `DecidableRel` instance divergence
+(see the diagnosis above). Phrasing every part of the traversal in the *same*
+permutation removes the need for that bridge entirely. -/
+noncomputable def stepPerm (w : BraidWord n) : Equiv.Perm (Fin n) :=
+  (closurePerm w)⁻¹
+
+@[simp] theorem stepPerm_apply (w : BraidWord n) (p : Fin n) :
+    stepPerm w p = lapStep w p := (lapStep_eq w p).symm
+
 open scoped Classical in
 /-- The traversal as a **list of laps**, in order: every component (by
 increasing least position), each walked once, one entry per lap.
@@ -646,8 +661,8 @@ length — one slot per crossing — so crossing `k`'s verdicts are the `k`-th
 column. Flattening first would turn that projection into modular arithmetic on a
 global index for no gain. -/
 noncomputable def lapsOf (w : BraidWord n) : List (List (Option Bool)) :=
-  ((List.finRange n).filter (fun p => decide (IsLeader (closurePerm w) p))).flatMap
-    (fun p => (walk (closurePerm w)⁻¹ p (cycleLen (closurePerm w) p)).map
+  ((List.finRange n).filter (fun p => decide (IsLeader (stepPerm w) p))).flatMap
+    (fun p => (walk (stepPerm w) p (cycleLen (stepPerm w) p)).map
       (lapVerdicts w))
 
 open scoped Classical in
@@ -810,22 +825,21 @@ so no transfer lemma is needed. -/
 theorem lapsOf_length (w : BraidWord n) : (lapsOf w).length = n := by
   classical
   simp only [lapsOf, List.length_flatMap, List.length_map, walk_length]
-  exact sum_cycleLen_leaders (closurePerm w)
+  exact sum_cycleLen_leaders (stepPerm w)
 
 open scoped Classical in
 /-- **Walks from distinct leaders never meet.** Different components are
-disjoint, so no strand is walked twice. Note the walk runs under `f⁻¹` (a lap
-applies the first letter first) while leadership is stated for `f`; the two
-agree because `Equiv.Perm.sameCycle_inv` says a permutation and its inverse have
-the same cycles. -/
-theorem walk_disjoint_of_ne_leader (f : Equiv.Perm (Fin n)) {p q : Fin n}
-    (hp : IsLeader f p) (hq : IsLeader f q) (hne : p ≠ q) {a b : ℕ} {x : Fin n}
-    (hx : x ∈ walk f⁻¹ p a) (hy : x ∈ walk f⁻¹ q b) : False := by
-  have h1 : f.SameCycle p x :=
-    Equiv.Perm.sameCycle_inv.mp (walk_sameCycle f⁻¹ p x a hx)
-  have h2 : f.SameCycle q x :=
-    Equiv.Perm.sameCycle_inv.mp (walk_sameCycle f⁻¹ q x b hy)
-  exact hne (leader_unique f hp hq (h1.trans h2.symm))
+disjoint, so no strand is walked twice.
+
+Stated in a *single* permutation: after the `stepPerm` refactor the walk and the
+leadership are both taken in the same permutation, so the earlier
+`sameCycle_inv` reconciliation between `f` and `f⁻¹` is no longer needed. -/
+theorem walk_disjoint_of_ne_leader (g : Equiv.Perm (Fin n)) {p q : Fin n}
+    (hp : IsLeader g p) (hq : IsLeader g q) (hne : p ≠ q) {a b : ℕ} {x : Fin n}
+    (hx : x ∈ walk g p a) (hy : x ∈ walk g q b) : False := by
+  have h1 : g.SameCycle p x := walk_sameCycle g p x a hx
+  have h2 : g.SameCycle q x := walk_sameCycle g q x b hy
+  exact hne (leader_unique g hp hq (h1.trans h2.symm))
 
 /-! **Blocked lemma, diagnosed** — `cycleLen f⁻¹ p = cycleLen f p`.
 
@@ -891,6 +905,37 @@ theorem walk_nodup (g : Equiv.Perm (Fin n)) (p : Fin n) :
     rcases le_total i j with h | h
     · exact key i j h hij (by omega)
     · exact (key j i h hij.symm (by omega)).symm
+
+open scoped Classical in
+/-- The starting positions of the laps, in traversal order. -/
+noncomputable def lapStarts (w : BraidWord n) : List (Fin n) :=
+  ((List.finRange n).filter (fun p => decide (IsLeader (stepPerm w) p))).flatMap
+    (fun p => walk (stepPerm w) p (cycleLen (stepPerm w) p))
+
+open scoped Classical in
+/-- The laps are exactly the laps of the starting positions. -/
+theorem lapsOf_eq_map (w : BraidWord n) :
+    lapsOf w = (lapStarts w).map (lapVerdicts w) := by
+  classical
+  simp [lapsOf, lapStarts, List.map_flatMap]
+
+open scoped Classical in
+/-- **No strand is walked twice.** Nodup within each component
+(`walk_nodup`) and disjointness across components
+(`walk_disjoint_of_ne_leader`), combined over the concatenation. -/
+theorem lapStarts_nodup (w : BraidWord n) : (lapStarts w).Nodup := by
+  classical
+  rw [lapStarts, List.nodup_flatMap]
+  refine ⟨fun p _ => walk_nodup _ p, ?_⟩
+  refine List.Pairwise.imp_of_mem ?_ ((List.nodup_finRange n).filter _)
+  intro a b ha hb hab x hx hy
+  have hla : IsLeader (stepPerm w) a := by
+    have := (List.mem_filter.mp ha).2
+    simpa using this
+  have hlb : IsLeader (stepPerm w) b := by
+    have := (List.mem_filter.mp hb).2
+    simpa using this
+  exact walk_disjoint_of_ne_leader (stepPerm w) hla hlb hab hx hy
 
 /-! ### The remaining bridge, stated
 
