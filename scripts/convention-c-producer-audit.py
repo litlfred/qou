@@ -96,6 +96,31 @@ DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
 BLOCKED_BY_DESIGN = "tools/pyhecke/"
 
 
+def _is_unit_numerator(node: ast.AST) -> bool:
+    """Is this a literal one, however the corpus spells it?
+
+    `1`, `1.0` -- and `mpf(1)` / `mp.mpf(1)` / `mpmath.mpf("1")`, which is how
+    the corpus writes it, because the NO-FLOAT64 discipline requires carrying
+    `mpmath.mpf` rather than a bare Python literal.
+
+    That is the whole reason this matters.  The detector accepted only the bare
+    literal, so **complying with the precision discipline made a site invisible
+    to the convention detector** -- one house rule blinding another.  Measured
+    2026-08-23: teaching it `mpf(1)` took the actionable count from 1 to 11,
+    every one of them `1/(sqrt(q) + sqrt(q_inv))` in the Markov role, two of
+    them named outright (`Z_MARK`, `z_mark`).  Beans `qou-324i` / `qou-rh31`.
+    """
+    if isinstance(node, ast.Constant) and node.value in (1, 1.0):
+        return True
+    if isinstance(node, ast.Call):
+        fn = ast.unparse(node.func).split(".")[-1]
+        if fn in ("mpf", "mpmathify", "Integer", "Rational") and node.args:
+            a = node.args[0]
+            if isinstance(a, ast.Constant) and str(a.value).strip('"\'') in ("1", "1.0"):
+                return True
+    return False
+
+
 def is_c_form(node: ast.AST) -> bool:
     """Does this expression have the shape ``1 / (<sqrt-ish> + <anything>)``?
 
@@ -110,7 +135,7 @@ def is_c_form(node: ast.AST) -> bool:
     """
     if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
         return False
-    if not (isinstance(node.left, ast.Constant) and node.left.value in (1, 1.0)):
+    if not _is_unit_numerator(node.left):
         return False
     den = node.right
     if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
@@ -597,7 +622,7 @@ def is_c_form_reciprocal(node: ast.AST, half_vars: set):
         return None
     if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
         return None
-    if not (isinstance(node.left, ast.Constant) and node.left.value in (1, 1.0)):
+    if not _is_unit_numerator(node.left):
         return None
     den = node.right
     if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
@@ -750,6 +775,14 @@ def selftest() -> int:
         "1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))",
         "1 / (q0 ** mpf('0.5') + q0 ** mpf('-0.5'))",
         "1 / (mp.sqrt(q0) + mp.sqrt(qi))",
+        # The mpf(1) numerator. The NO-FLOAT64 discipline requires carrying
+        # mpmath.mpf rather than a bare literal, so this is how the corpus
+        # actually writes it -- and until 2026-08-23 the matcher accepted only
+        # the bare `1`, which meant complying with one house rule made a site
+        # invisible to the other. Teaching it took actionable 1 -> 11.
+        "mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))",
+        "mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))",
+        "_mp.mpf(1) / (_mp.sqrt(_q) + _mp.sqrt(_qi))",
     ]
     half = [
         ("t / (t ** 2 + 1)", True),        # convention C in r = sqrt(q)

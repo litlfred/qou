@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T00:55:45.367668+00:00",
-  "commitSha": "82900c72a9ea9f2d71d502f2c9c2e66127bddee6",
+  "computedAt": "2026-08-23T07:51:01.648434+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3462,
+  "durationMs": 2931,
   "computation": "pentagon-reduction-li2q",
   "scriptFile": "pentagon_reduction_li2q.py",
   "scriptHash": "8bb70841a24d",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,13 +23,20 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/pentagon_reduction_li2q.py"
+    ],
+    "reproduce": "python3 -u computations/pentagon_reduction_li2q.py"
   },
   "description": "Pentagon-identity reduction of Li_2^q at pair-product arguments |V_i V_j| > q_0. Algebraic reorganisation per the Hopf-algebra pentagon identity (\u2605 above); not analytic continuation. Applied to the V\u0302 values from PR #801's binding_via_interface_knot.py. SCALE NOTE: per-atom 'B_MeV_first_plus_T3' here uses m_e (CAL-1) as the dimensional factor; companion binding-via-interface-knot.witness.json uses E_0 = Q_\u03b2(n), so its 'B_MeV_with_t3' differs by factor ~m_e/E_0 \u2248 0.65\u00d7. Both scalings are valid; choose per downstream convention.",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "z_markov": "0.4993203340335612717689663862757371401611757978999",
-    "convergence_radius_Li2q": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "z_markov": "0.49932033418369445241344268025766630375194816404153",
+    "convergence_radius_Li2q": "1.1099785827513808075916690956107688798744991218736",
     "method": "pentagon-identity-recursive"
   },
   "data": {
@@ -42,14 +49,14 @@
         "n_strands": 6,
         "T1_atom": "0.00003058107370850951311383167211802663448958223544654",
         "T2_atom": "2.8185778434787250203103364728517888097353346143785",
-        "T3_atom_pentagon": "0.88473789021005277390945011372807240001809769554527",
+        "T3_atom_pentagon": "0.88473789062911382341504156565698376055287462053122",
         "T1_free": "0.42531823714486633652285116656186476572265111695923",
         "T2_free": "3.6415572578454074384783264534931689580742939763421",
-        "T3_free_pentagon": "1.5873896862482675348817762307998948155580755361631",
-        "B_dim_first_plus_T3": "1.9509188664760550061500534326029493029670987373052",
-        "B_MeV_first_plus_T3": "0.99691749365058832615339880074753972921545435835659",
+        "T3_free_pentagon": "1.5873896869876571723764644931946356068189663171182",
+        "B_dim_first_plus_T3": "1.9509188667963835941391502430687787336932125932743",
+        "B_MeV_first_plus_T3": "0.99691749381427589849183660805640437841701858353828",
         "B_AME_MeV": "2.2245662",
-        "ratio_pred_over_AME": 0.44814017836402814,
+        "ratio_pred_over_AME": 0.44814017843760995,
         "max_pair_product_atom": "1.1483478151688043758432868112684",
         "t3_divergent_pairs_atom": 1
       },
@@ -61,14 +68,14 @@
         "n_strands": 9,
         "T1_atom": "0.000001919279692036574065492574389167052949306794991475",
         "T2_atom": "4.0850015741218834188564189821902538279474934317132",
-        "T3_atom_pentagon": "2.3151915252591272545029217023043351829492032899139",
+        "T3_atom_pentagon": "2.3151915263687875259752589768231552299359351891827",
         "T1_free": "0.25536300045909654711711774482426825572101744672663",
         "T2_free": "5.8384121494488306339763801955981909810184960100658",
-        "T3_free_pentagon": "4.4832323609046077184484276067426527464503323490526",
-        "B_dim_first_plus_T3": "4.176812492151832189608519370096133805240199777423",
-        "B_MeV_first_plus_T3": "2.1343468007184701090509185200036641389035789096691",
+        "T3_free_pentagon": "4.4832323629857476194403787502765613423506274115469",
+        "B_dim_first_plus_T3": "4.1768124931233118191281332391112223541537629406485",
+        "B_MeV_first_plus_T3": "2.1343468012148951803521511558443454911758444255864",
         "B_AME_MeV": "8.4817962",
-        "ratio_pred_over_AME": 0.2516385386291727,
+        "ratio_pred_over_AME": 0.251638538687701,
         "max_pair_product_atom": "1.18454388775308044259320638396995",
         "t3_divergent_pairs_atom": 3
       },
@@ -80,14 +87,14 @@
         "n_strands": 9,
         "T1_atom": "0.0000022644583563105954573470617126573831216078727086476",
         "T2_atom": "4.3652117910375861598020828651352945935608573689811",
-        "T3_atom_pentagon": "2.3987569567928434056029638657149278454270200004787",
+        "T3_atom_pentagon": "2.3987569579377628520851872453504885216229424700095",
         "T1_free": "0.30128953204753837725060616300672795947633988910217",
         "T2_free": "5.9093109387967527531024975777474898287511538085754",
-        "T3_free_pentagon": "4.5999459121421166692003014728189898528695155451712",
-        "B_dim_first_plus_T3": "4.0465753706976219235529011356612725447260102655162",
-        "B_MeV_first_plus_T3": "2.067795768314482576213871877028219609625097339229",
+        "T3_free_pentagon": "4.5999459142720409175733238747289464357835422198742",
+        "B_dim_first_plus_T3": "4.0465753716826267254437001579356684514441144706885",
+        "B_MeV_first_plus_T3": "2.0677957688178189964046815053761138552116797096981",
         "B_AME_MeV": "7.71804132",
-        "ratio_pred_over_AME": 0.2679171673979173,
+        "ratio_pred_over_AME": 0.2679171674631329,
         "max_pair_product_atom": "1.1483478151688054475822129257248",
         "t3_divergent_pairs_atom": 3
       }
@@ -103,11 +110,11 @@
       },
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "56f15f59959d49641dc610d52265939727ebd6b837d2308da61c8ecfa91c0d75",
-        "size_bytes": 59149,
-        "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
-        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-        "computedAt": "2026-06-29T17:22:46.103608+00:00"
+        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
+        "size_bytes": 65295,
+        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
+        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+        "computedAt": "2026-08-22T09:49:32.663084+00:00"
       }
     ]
   },

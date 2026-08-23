@@ -67,6 +67,43 @@ def witness_populations() -> dict:
     return {"tally": tally, "stamp_by_value": stamp_by_value}
 
 
+# One-hop transitive path through `_li_2_q_util.load_q_50dps`.
+#
+# HISTORY, because the right pattern here changed once already.  Until
+# 2026-08-22 that helper's signature was `load_q_50dps(path=None)` and a
+# `None` path defaulted to the MUON-anchored pin witness -- so the BARE
+# no-arg call was the muon route, and a scan that only looked for the
+# witness filename inside each producer missed it, undercounting the
+# contradictions by 9.
+#
+# The helper now takes `anchor="proton"` and the bare call resolves to the
+# experimental pin.  So the bare form is CORRECT and must NOT be flagged;
+# the muon route is now an explicit `anchor="muon"` or an explicit path to
+# the pin witness.  A detector keyed on the old shape would report every
+# fixed caller as a defect.
+_MUON_ANCHOR_ARG = re.compile(
+    r"(?<![\w.])load_q_50dps\s*\([^)]*anchor\s*=\s*[\"']muon[\"']"
+)
+_LOAD_WITH_PIN_PATH = re.compile(
+    r"(?<![\w.])load_q_50dps\s*\(\s*[A-Za-z_][\w.]*\s*[,)]"
+)
+
+
+def _uses_muon_via_helper(text: str) -> bool:
+    """True if the producer asks `load_q_50dps` for the ideal/muon pin.
+
+    Comment and docstring lines are excluded: a `# Was: load_q_50dps()`
+    marker left by an earlier fix records the trap, it is not an instance.
+    """
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("#") or '"""' in stripped:
+            continue
+        if _MUON_ANCHOR_ARG.search(line):
+            return True
+    return False
+
+
 def direct_pinners() -> list[tuple[str, str]]:
     """Producers that bind q₀ straight out of the muon-anchored pin witness.
 
@@ -85,14 +122,20 @@ def direct_pinners() -> list[tuple[str, str]]:
         if "_deprecated" in path.parts:
             continue
         text = path.read_text(errors="replace")
-        if PIN_WITNESS not in text or not READS_JSON.search(text):
+        direct = (
+            PIN_WITNESS in text
+            and READS_JSON.search(text)
+            and re.search(r'derived_50_digit"\]', text)
+            and re.search(r'\[\s*"q"\s*\]', text)
+        )
+        via_helper = _uses_muon_via_helper(text)
+        if not (direct or via_helper):
             continue
         if ROUTES_ANCHOR.search(text):
             continue  # resolves its anchor properly
-        if not (re.search(r'derived_50_digit"\]', text) and re.search(r'\[\s*"q"\s*\]', text)):
-            continue  # reads the file, but not as its pin
         rel = str(path.relative_to(COMP))
-        out.append((rel, bucket.get(path.stem, "UNDECLARED"), classify_intent(text)))
+        out.append((rel, bucket.get(path.stem, "UNDECLARED"), classify_intent(text),
+                    co_read_fields(text)))
     return out
 
 
@@ -131,6 +174,38 @@ def classify_intent(text: str) -> str:
     return "silent on the pin"
 
 
+# Fields of the pin witness OTHER than the q₀ bind itself.  A producer that
+# reads one of these too cannot be migrated by re-pointing only its `["q"]`
+# read -- the rest would stay on the muon anchor, straddling two layers inside
+# one quantity, which AGENTS.md forbids outright.
+_CO_READ_FIELDS = (
+    "calibration_inputs", "quantum_integers", "quantum_factorials",
+    "plancherel_weights_n3", "physical_anchoring_bound",
+    "universal_shape_coupling", "hbar_q", "hbar_q_sq", "q_inv",
+    "H_A", "two_q", "z_markov", "s_skein", "Vol_4_1_str",
+)
+
+
+def co_read_fields(text: str) -> list[str]:
+    """Which other pin-witness fields does this producer actually READ?
+
+    The test is dict-key use -- a subscript or `.get()` against the loaded
+    witness -- NOT the bare field name appearing anywhere in the file.  That
+    distinction is the whole point: a substring scan counts local variables
+    (`hbar_q_num`, `hbar_q_sym`) and emitted output keys (`hbar_q_50dps`) as
+    though they were reads, and it over-reports by 7x.  Measured 2026-08-22:
+    substring says 21 producers, dict-key says 3.  The inflated figure reached
+    a merged audit doc before it was caught.
+    """
+    found = []
+    for field in _CO_READ_FIELDS:
+        quoted = re.escape(field)
+        if re.search(r'\[\s*["\']' + quoted + r'["\']\s*\]', text) or \
+           re.search(r'\.get\(\s*["\']' + quoted + r'["\']', text):
+            found.append(field)
+    return found
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list-contradictions", action="store_true",
@@ -138,7 +213,7 @@ def main() -> int:
     args = ap.parse_args()
 
     pins = direct_pinners()
-    contradictions = [r for r, b, _ in pins if b == "physical_proton"]
+    contradictions = [r for r, b, _, _ in pins if b == "physical_proton"]
 
     if args.list_contradictions:
         for rel in contradictions:
@@ -159,17 +234,23 @@ def main() -> int:
     print()
     print(f"producers binding q₀ direct from {PIN_WITNESS}.witness.json")
     print("  (no anchor resolution — inherits whatever that witness carries)")
-    by_bucket = Counter(b for _, b, _ in pins)
+    by_bucket = Counter(b for _, b, _, _ in pins)
     for name, count in by_bucket.most_common():
         print(f"  {count:4d}  declared {name}")
     print()
     print("  of the UNDECLARED, what each producer SAYS it wants:")
-    by_intent = Counter(i for _, b, i in pins if b == "UNDECLARED")
+    by_intent = Counter(i for _, b, i, _ in pins if b == "UNDECLARED")
     for name, count in by_intent.most_common():
         print(f"    {count:4d}  {name}")
     print()
     print("    'silent' means the directive default (proton) already answers it;")
     print("    a 'CAL-2 q_0' mention is NOT a muon signal -- see classify_intent().")
+    print()
+    co = [(r, f) for r, _, _, f in pins if f]
+    print(f"  co-read a SECOND pin-witness field (cannot be re-pointed alone): {len(co)}")
+    for rel, fields in co:
+        print(f"    {rel}  {fields}")
+    print("    (dict-key test, not substring -- see co_read_fields())")
     print()
     if contradictions:
         print(f"CONTRADICTION — declared physical_proton, pins muon: {len(contradictions)}")
