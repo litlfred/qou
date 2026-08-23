@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T00:24:02Z
+updated_at: 2026-08-23T01:57:13Z
 ---
 
 ## Why this bean exists
@@ -334,3 +334,40 @@ recorded so "first met as an under-crossing" is well defined — then the
 well-founded reduction. `stepOver` and `closurePerm` are its two atoms and are
 now in place; the ordering and the termination argument are not, and that is
 still the substantial piece.
+
+
+## The lap layer — one strand's pass through the whole word
+
+The traversal walks a strand around the closure; one *lap* is one pass through
+the word. Both halves now exist:
+
+- `lapStep` — where the strand ends up.
+- `lapVerdicts` — what it met, as `List (Option Bool)` **indexed by crossing
+  position** rather than a list of `(index, verdict)` pairs. The crossing index
+  is then the list index, so no index arithmetic is needed anywhere; `none`
+  means this strand was not one of the two at that crossing.
+- `lapVerdicts_length` — exactly one verdict slot per crossing, which is what
+  makes "the first crossing met as an under-crossing" expressible without
+  separate bookkeeping.
+- `lapStep_eq` — **a lap is the INVERSE of `closurePerm`**, since a lap applies
+  the first letter first while `closurePerm`, being a product, applies the last
+  first. This is the orientation `closurePerm_reverse` pinned earlier, now
+  restated as an equation so it does not have to be re-derived at the use site.
+- `lapStep_eq_self_iff` — a lap returns to its start exactly on the fixed points
+  of the closure permutation (the strands that close up alone).
+- `lapStep_flipSign_cons` — switching leaves the itinerary untouched.
+
+44 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## What remains — the multi-lap ordering, and it is still the hard part
+
+A lap is one trip around. The traversal needs **many** laps per component
+(walking the whole cycle), components taken in increasing order of least start
+position, with a **global** encounter order across all of it. That ordering is
+what "first met as an under-crossing" quantifies over, and it is the piece with
+the real difficulty: it needs a termination argument for the per-component walk
+(the cycle is finite, so it terminates, but Lean needs that argument) and then
+the well-founded reduction on top.
+
+Nothing landed so far shrinks that. The atoms (`stepOver`, `closurePerm`) and
+now the lap are in place; the ordering is not.

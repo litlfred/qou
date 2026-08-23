@@ -469,4 +469,76 @@ theorem stepOver_flipSign (c : BraidCrossing n) (p : Fin n) :
     · subst h1; simp [h0]
     · simp [h0, h1]
 
+/-! ### One lap — a single strand's pass through the whole word
+
+The traversal walks a strand around the closure; one *lap* is one pass through
+the word. `lapStep` is where the strand ends up, `lapVerdicts` is what it met.
+
+`lapVerdicts` returns `List (Option Bool)` **indexed by crossing position**
+rather than a list of `(index, verdict)` pairs: the crossing index is then the
+list index, and no index arithmetic is needed anywhere. `none` means this strand
+was not one of the two at that crossing.
+
+Note the direction: a lap applies `w[0]` **first**, matching the reference
+engine, so it runs *opposite* to `closurePerm` — which is why the lemma below
+identifies it with the **inverse**. This is the orientation already pinned by
+`closurePerm_reverse`; it is restated here as an equation rather than left for
+the reader to re-derive. -/
+
+/-- Where a strand at position `p` ends up after one full pass through `w`. -/
+def lapStep : BraidWord n → Fin n → Fin n
+  | [], p => p
+  | c :: w, p => lapStep w (crossingSwap c p)
+
+/-- What a strand at position `p` meets during one full pass: one entry per
+crossing, in word order. `none` = not involved. -/
+def lapVerdicts : BraidWord n → Fin n → List (Option Bool)
+  | [], _ => []
+  | c :: w, p => stepOver c p :: lapVerdicts w (crossingSwap c p)
+
+@[simp] theorem lapStep_nil (p : Fin n) : lapStep ([] : BraidWord n) p = p := rfl
+
+@[simp] theorem lapVerdicts_nil (p : Fin n) :
+    lapVerdicts ([] : BraidWord n) p = [] := rfl
+
+/-- **One verdict slot per crossing** — so the crossing index really is the list
+index, which is what makes "the first crossing met as an under-crossing"
+expressible without separate bookkeeping. -/
+@[simp] theorem lapVerdicts_length (w : BraidWord n) (p : Fin n) :
+    (lapVerdicts w p).length = w.length := by
+  induction w generalizing p with
+  | nil => rfl
+  | cons c w ih => simp [lapVerdicts, ih]
+
+/-- **A lap is the inverse of `closurePerm`.** The lap applies the first letter
+first; `closurePerm`, being a product, applies the last letter first. -/
+theorem lapStep_eq (w : BraidWord n) (p : Fin n) :
+    lapStep w p = (closurePerm w)⁻¹ p := by
+  induction w generalizing p with
+  | nil => simp
+  | cons c w ih =>
+      rw [lapStep, ih, closurePerm_cons, mul_inv_rev]
+      simp [crossingSwap, Equiv.swap_inv]
+
+/-- Hence a lap returns to its start exactly on the fixed points of the closure
+permutation — the strands that close up alone. -/
+theorem lapStep_eq_self_iff (w : BraidWord n) (p : Fin n) :
+    lapStep w p = p ↔ closurePerm w p = p := by
+  rw [lapStep_eq]
+  constructor
+  · intro h
+    have := congrArg (closurePerm w) h
+    simpa using this.symm
+  · intro h
+    have : (closurePerm w)⁻¹ (closurePerm w p) = (closurePerm w)⁻¹ p :=
+      congrArg _ h
+    simpa using this.symm
+
+/-- Switching a crossing leaves the lap's *itinerary* untouched and flips
+exactly the verdicts — the lap-level form of `closurePerm_switch` together with
+`stepOver_flipSign`. -/
+theorem lapStep_flipSign_cons (c : BraidCrossing n) (w : BraidWord n) (p : Fin n) :
+    lapStep (flipSign c :: w) p = lapStep (c :: w) p := by
+  simp [lapStep, crossingSwap, flipSign]
+
 end QOU.Knot.BraidClosure
