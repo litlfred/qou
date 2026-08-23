@@ -7,7 +7,7 @@
       "STALE": 292,
       "proton-pin": 1298,
       "unknown": 25,
-      "canonical": 199
+      "canonical": 198
     },
     "stale_total": 292,
     "new_stale": 0,
@@ -8887,13 +8887,6 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
-      },
-      {
-        "file": "computations/probes/aoperator_a5_crosscheck.witness.json",
-        "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
