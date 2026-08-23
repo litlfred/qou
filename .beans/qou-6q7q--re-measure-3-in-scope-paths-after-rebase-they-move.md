@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-08-23T13:38:20Z
+updated_at: 2026-08-23T16:23:05Z
 ---
 
 ## The claim that needs qualifying
@@ -48,3 +48,15 @@ Main moves during a multi-hour sweep. Any verdict file should record the commit
 it was measured at, so this comparison is mechanical next time rather than
 reconstructed by hand. Related to `qou-cdjd` (the run records nothing about
 what it ran against — there, the environment; here, the tree).
+
+## Re-measured at main +98 (was +88): still exactly 3, the same 3
+
+Ten further commits landed on `main` and the in-scope drift did **not** grow —
+same three paths, same attribution. So the "108 of 111 transfer" figure is not
+decaying commit-by-commit; the exposure is concentrated in the q0-literal
+migration (`bc96793e5d`) rather than accumulating from ordinary traffic.
+
+Worth re-running this check at rebase time rather than trusting it then — but
+it means the sweep's currency is holding up better than the raw
+commits-behind number (98) suggests. Commits-behind is the wrong metric here;
+in-scope-paths-changed is the right one, and it is 3.
