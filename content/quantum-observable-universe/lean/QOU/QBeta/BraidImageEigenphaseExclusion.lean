@@ -64,6 +64,16 @@ the only place a derivation of `α` can live.
   `χ_λ(T_w) ∈ ℤ[q,q⁻¹]` of Geck–Pfeiffer, and appears here as the shape of the
   hypothesis rather than as a proved lemma.  It is checked exactly, over every
   braid word of length ≤ 5, in the companion probe.
+
+**One objection, answered.**  A *normalised* character — divided by a q-integer,
+as Markov normalisations routinely are — is a rational function, and a bounded
+rational function need **not** be constant (`1/(1+q²)`), so the boundedness kill
+would seem to have an escape.  It does not: the unimodular-spectrum requirement
+`det M = 1` pins the normalisation.  For `M = c·ρ(w)` with a real scalar `c`,
+`det M = c²·(−1)^{e(w)}`, so `det M = 1` forces `e(w)` even and `c = ±1`.  No
+`q`-dependent normalisation survives, and `tr M = ± tr ρ(w)` is a Laurent
+polynomial after all.  (Assertion 11 of the probe, exact.)  The hypothesis below
+lets `P` be **any** real polynomial, so the `±` is already covered.
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Algebra.Polynomial.Roots
