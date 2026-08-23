@@ -1157,3 +1157,8 @@ import QOU.Mathlib.RothVariableSplit
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
 -- representation (which lives over ℚ, because shortening divides by a coefficient).
 import QOU.Mathlib.SeparatedGauss
+-- Applying the induction hypothesis to the x-factor: §6's Gauss makes the rational Wronskian
+-- integral, RothLemmaUniform at m−1 applies to THAT, and index_C_mul carries the bound back
+-- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
+-- `hres`.
+import QOU.Mathlib.RothInductionHypothesis

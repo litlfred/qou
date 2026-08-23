@@ -2477,3 +2477,55 @@ for the remaining hypotheses of `RothLemmaUniform`. It needs a module importing
 
 Verification: twenty-two arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
 linter output. Five declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-23 — `hres`'s `x` half, discharged from the induction hypothesis
+
+New module `QOU/Mathlib/RothInductionHypothesis.lean` (23rd in the arc).
+`index_rescaled_wronskian_le` builds the `x` conjunct of `hres` out of `RothLemmaUniform` at
+`m − 1`. It built first try, which — after the last three "purely bookkeeping" predictions
+each turned something up — is worth recording as the one that actually was.
+
+The chain:
+
+* §6's Gauss (`exists_integral_wronskian_factors`) replaces the rational Wronskian
+  `Wx = mvGenWronskian Dx φ` by an **integral** `U'` with `map U' = C l · Wx`;
+* `RothLemmaUniform` applies to `U'`, because `U'` is an integer polynomial — its degree,
+  non-vanishing and height hypotheses come from `degreeOf_integral_factor_le`,
+  `integral_factor_ne_zero` and `abs_coeff_integral_wronskian_factor_le`, and its growth
+  hypothesis from `rothGrowth_scale`;
+* `index_C_mul` carries the bound back to `Wx` **unchanged**.
+
+### ⚠ The theme, in its final form
+
+The Gauss scaling `l` is free on the index side (`index_C_mul`), free on the degree side
+(`degreeOf_C_mul_le`), free for non-vanishing — and costs something on exactly one side, the
+**height**. That is why §6 does Gauss at all, and why §7's "a non-zero integer has absolute
+value at least 1" is where integrality is load-bearing.
+
+Stated four times now across this stretch, each time from a different direction. It is the
+same instinct correction 3 came from: **ask which of the two chains a step belongs to.**
+
+`hWy` deserves a note for the same reason. The `y`-Wronskian's non-vanishing appears in this
+theorem, and it is needed for the **height** step and nothing else —
+`abs_coeff_le_of_mul_separated` picks a non-zero coefficient of the other factor. It is
+exactly what `BoundedOrderWronskian` supplies.
+
+### Open
+
+1. **The `y` half of `hres`**: one variable, so `RothBaseCase` applies to `mvGenWronskian Dy ψ`
+   directly — through the same Gauss step, since that Wronskian is rational too and
+   `RothBaseCase` is about integer polynomials.
+2. Then `index_le_of_rothGrowth_of_rescaled_bounds` gives §13's conclusion outright and the
+   induction can be written: `rothLemmaUniform_one` is the base, this is the step.
+3. `c_m = 2^m − 3` from iterating. ⚠ §14 has **not** been read; it stays unasserted.
+
+⚠ **Not yet guarded.** This is the largest hypothesis stack in the arc and it has **no
+non-vacuity witness**. The hypotheses are satisfiable on paper — `σ = Unit`, `n = r = 1`,
+`E = 0`, `B = 1`, `P = 1`, everything constant — but on paper is what correction 8 was, and
+that was found *by writing the witness*. Writing it is the immediate next thing.
+
+Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no
+linter output. `#print axioms`-clean. Orphan gate: 2040 modules, 1157 reachable (up two for
+the two new modules), 883 not built — registered, and the inherited red did not grow.
