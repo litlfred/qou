@@ -51,6 +51,7 @@ import argparse
 import ast
 import json
 import os
+import random
 import re
 import subprocess
 import sys
@@ -63,6 +64,8 @@ EPHEMERAL = {"computedAt", "commitSha", "durationMs", "environment", "invocation
              "elapsed_seconds", "measured_at", "generated"}
 STAMP_KEYS = ("q0Anchor", "q0Value")
 INLINE_Q0 = re.compile(r"1\s*\)?\s*/\s*\(\s*(mp\.)?mpf?\(?1\)?\s*-\s*", re.I)
+MUON_LITERAL = re.compile(r"1\.10997859555")
+WRITES_WITNESS = ("write_text", "WitnessBuilder", "json.dump")
 SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__")
 
 
@@ -79,8 +82,13 @@ def _flat(o, prefix="", out=None):
     return out
 
 
-def candidates() -> list[Path]:
-    """Producers with a q of their own: the inline-derivation set."""
+def candidates(kind: str = "inline") -> list[Path]:
+    """Producers with a q of their own.
+
+    ``inline``  -- derives q0 from the muon ratio (qou-5le1 Mode A). 9 files.
+    ``literal`` -- hardcodes the muon 50-digit literal AND writes a witness.
+                   207 files, which is why sampling exists.
+    """
     out = []
     for p in sorted(REPO.rglob("*.py")):
         if any(x in p.parts for x in SKIP):
@@ -89,36 +97,89 @@ def candidates() -> list[Path]:
             src = p.read_text(encoding="utf-8")
         except Exception:  # noqa: BLE001
             continue
-        if "M_MU_OVER_M_E" in src and INLINE_Q0.search(src):
-            out.append(p)
+        if kind == "inline":
+            if "M_MU_OVER_M_E" in src and INLINE_Q0.search(src):
+                out.append(p)
+        else:
+            if (MUON_LITERAL.search(src) and ".witness.json" in src
+                    and any(w in src for w in WRITES_WITNESS)):
+                out.append(p)
     return out
 
 
-def _run(prod: Path, anchor: str) -> int:
+def _run(prod: Path, anchor: str, timeout: int) -> int:
     env = dict(os.environ)
     env["QOU_Q0_ANCHOR"] = anchor
     r = subprocess.run([sys.executable, "-u", prod.name], cwd=prod.parent,
-                       capture_output=True, timeout=900, env=env)
+                       capture_output=True, timeout=timeout, env=env)
     return r.returncode
 
 
-def audit(prod: Path):
-    """(verdict, detail). Restores every witness it touches."""
-    saved = {f: f.read_bytes() for f in prod.parent.glob("*.witness.json")}
+def _tree_witnesses() -> dict:
+    """Every witness in the repo, so a SIBLING write cannot escape the restore.
+
+    Snapshotting only `prod.parent` was a real bug, and it is the hazard
+    AGENTS.md names: "Producers write SIBLING witnesses ... anything that
+    re-runs producers to compare must restore the whole `computations/` tree
+    afterwards, not the one file it was looking at." Measured 2026-08-23: a
+    24-producer sample left `qbeta-habiro-cyclotomic.witness.json` modified and
+    created `keystone-wrt-schurweyl-higher-colour-foreclosure.witness.json`
+    outright -- both from producers this audit had classified NO-WITNESS,
+    precisely because it was looking in the wrong directory for their output.
+    """
+    out = {}
+    for f in REPO.rglob("*.witness.json"):
+        if any(x in f.parts for x in SKIP):
+            continue
+        try:
+            out[f] = f.read_bytes()
+        except OSError:
+            pass
+    return out
+
+
+def audit(prod: Path, timeout: int = 900):
+    """(verdict, detail). Restores every witness in the tree, not just local ones."""
+    saved = _tree_witnesses()
 
     def restore():
         for f, b in saved.items():
-            f.write_bytes(b)
+            try:
+                if f.read_bytes() != b:
+                    f.write_bytes(b)
+            except OSError:
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_bytes(b)
+        # Witnesses the run CREATED did not exist in the snapshot; remove them
+        # so the tree is left exactly as found.
+        for f in REPO.rglob("*.witness.json"):
+            if any(x in f.parts for x in SKIP):
+                continue
+            if f not in saved:
+                f.unlink(missing_ok=True)
 
     try:
-        if _run(prod, "physical") != 0:
+        try:
+            rc = _run(prod, "physical", timeout)
+        except subprocess.TimeoutExpired:
+            return "TIMEOUT", f"exceeded {timeout}s — UNTESTED, not clean"
+        if rc != 0:
             return "RUN-FAIL", "could not execute — UNTESTED, not clean"
-        phys = {f: json.loads(f.read_text())
-                for f in prod.parent.glob("*.witness.json")
-                if f.read_bytes() != saved.get(f)}
+        phys = {}
+        for f in REPO.rglob("*.witness.json"):
+            if any(x in f.parts for x in SKIP):
+                continue
+            try:
+                if f.read_bytes() != saved.get(f):
+                    phys[f] = json.loads(f.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
         if not phys:
             return "NO-WITNESS", "library, or writes nothing"
-        _run(prod, "ideal")
+        try:
+            _run(prod, "ideal", timeout)
+        except subprocess.TimeoutExpired:
+            return "TIMEOUT", f"exceeded {timeout}s on the second leg — UNTESTED"
         for f, doc_p in phys.items():
             fa, fb = _flat(doc_p), _flat(json.loads(f.read_text()))
             moved = [k for k in sorted(set(fa) | set(fb))
@@ -137,22 +198,39 @@ def main(argv=None) -> int:
     ap.add_argument("producers", nargs="*")
     ap.add_argument("--candidates", action="store_true",
                     help="audit every inline-q0-derivation producer")
+    ap.add_argument("--literal", action="store_true",
+                    help="audit the hardcoded-muon-literal producer set (207)")
+    ap.add_argument("--sample", type=int, default=0,
+                    help="audit a random sample of N (seeded, so reproducible)")
+    ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--timeout", type=int, default=900,
+                    help="per-run seconds; an exceeded run is UNTESTED, not clean")
     args = ap.parse_args(argv)
 
     targets = ([Path(p) for p in args.producers] if args.producers
-               else candidates() if args.candidates else [])
+               else candidates("inline") if args.candidates
+               else candidates("literal") if args.literal else [])
     if not targets:
-        ap.error("give producer paths or --candidates")
+        ap.error("give producer paths, --candidates or --literal")
+    population = len(targets)
+    if args.sample and args.sample < population:
+        random.Random(args.seed).shuffle(targets)
+        targets = sorted(targets[:args.sample])
 
     print("=" * 72)
     print("anchor-flip straddle audit — producers with a q of their own")
     print("=" * 72)
     counts = {}
     for t in targets:
-        verdict, detail = audit(t if t.is_absolute() else REPO / t)
+        verdict, detail = audit(t if t.is_absolute() else REPO / t, args.timeout)
         counts[verdict] = counts.get(verdict, 0) + 1
         print(f"  {verdict:11s} {t.stem}: {detail}")
     print("\n  " + "  ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+    if args.sample and args.sample < population:
+        tested = counts.get("STRADDLE", 0) + counts.get("clean", 0)
+        print(f"  sample {len(targets)} of {population} (seed {args.seed}); "
+              f"{tested} actually tested — "
+              f"TIMEOUT/RUN-FAIL/NO-WITNESS are UNTESTED, not clean")
     print("=" * 72)
     return 1 if counts.get("STRADDLE") else 0
 
