@@ -265,3 +265,108 @@ No literal changed and no witness regenerated. Replacing a hand-typed pin with a
 import moves numbers in the 11th figure across 424 witnesses and three producers;
 that is a scoped migration, not a hygiene edit, and it needs the same
 authorisation `qou-cds3` is waiting on.
+
+---
+
+## ⚠ CORRECTION 2026-08-23 — the live value has MOVED, and this bean's explanation of A is not available
+
+Two of the claims above are now wrong, and they are wrong for the same reason the
+bean exists: **the number they were computed against moved underneath them.**
+
+### 1. `q_muon_at()` no longer returns what this bean says it returns
+
+The 2026-08-16 correction says the live derivation returns
+`1.109978595554180575281594…` and calls that "the variant". Re-run today:
+
+```
+q_muon_at() live              1.10997859564273904668179512938
+```
+
+Cause: `MASS_RATIO_MU_E_STR` moved from `206.7682830` to `206.7682827` — CODATA
+2018 → CODATA 2022. Verified at dps=60 against `vol_4_1_at(50)`:
+
+```
+Vol/206.7682830  ->  1.10997859555418057528159407961   == this bean's "variant", to 28 digits
+Vol/206.7682827  ->  1.10997859564273904668179512938   == q_muon_at() today, to 28 digits
+```
+
+So there are not two derivations. There is **one derivation at two CODATA
+vintages**, and the bean happened to be written while the first was live.
+
+### 2. "Stranded against a superseded Vol(4₁)" is NOT an available explanation
+
+The bean says `Q_MUON` "implies `Vol(4_1) = 2.029883212924203479151486`, **1.05e-10**
+from the current value", i.e. it attributes the anomaly to an outdated Vol(4₁).
+That cannot be right: `vol_4_1_at()` computes
+
+```
+Vol(4_1) = 2 · Cl₂(π/3) = 2.02988321281930725004240510855
+```
+
+**exactly, from Clausen** — it is a mathematical constant with no vintages to be
+superseded between. Inverting A for Vol therefore identifies nothing; the only
+free parameter in `q = 1/(1 − √(Vol/r))` that *can* have moved is `r`.
+
+And the bean's own figure no longer reproduces. Running that same inversion at
+today's mass ratio:
+
+```
+this bean recorded   Vol implied by A = 2.029883212924203479151486   ("1.05e-10")
+recomputed 2026-08-23 Vol implied by A = 2.029883209979046924955691   (rel 1.399e-9)
+```
+
+It moved because it was computed against CODATA 2018. A derived figure recorded
+without its inputs is exactly the defect this bean was opened about, committed
+inside the bean itself.
+
+### 3. What A actually is — inverted the other way, and it is sharper
+
+```
+invert A for the mass ratio  ->  m_mu/m_e = 206.768282989315044
+   rel from CODATA 2018 (206.7682830): 5.168e-11
+   rel from CODATA 2022 (206.7682827): 1.399e-9
+```
+
+**A matches neither published figure**, sitting strictly between them. So A is
+not "the derivation at an older CODATA" either. It is not reproducible from any
+published muon ratio — a stronger and more useful statement than "frozen".
+
+### Attribution — this was found first by a sibling, and independently
+
+`computations/audits/muon_pin_three_values_probe.py` on
+`origin/claude/q0-anchor-comparison-vocabulary-2026-08-21` (bean `qou-po7i`,
+commit `458b6fde95`, corrected by `11f1a09619` *"B is CODATA 2018 and C is CODATA
+2022"*). Everything in §1–§3 above was **recomputed here from the substrate**
+rather than relayed — the mass ratio, both evaluations, and both inversions —
+and it reproduces their figures exactly, including `206.768282989315`.
+Recorded as confirmation, not as a finding of this bean.
+
+### State of this bean's three files
+
+| file | then | now |
+|---|---|---|
+| `deltalambda/mu3_anchor_consistency_probe.py:87` | hand-typed, 59 digits | **already an import** — `mp.mpf(_q0_value_for_anchor("muon"))` |
+| `probes/baldfn_theta_limit_probe.py:677` | hand-typed, 17 digits | unchanged |
+| `probes/qbeta_5two_higher_cable_qstar_probe.py:58` | hand-typed, 17 digits | unchanged |
+
+One of the three is done. Note that converting the remaining two is **not**
+value-neutral: they are 17-digit truncations, so importing raises them to 50 and
+moves whatever they feed.
+
+### The broader population belongs to `qou-0hnz`, not here
+
+Literal A appears in **215 distinct `.py` files** (213 under `computations/`, 2
+under `tools/`) in at least ten different truncations — 94 lines at 17 digits, 81
+at 49, 18 at 68. That is `qou-0hnz` (*"254 producers hardcode the muon pin as an
+import f…"*), which is sibling-owned. **Do not drain it from here.**
+
+### Still open, and now explicitly BLOCKED
+
+Give the muon pin a canonical home. Blocked on a ruling this bean cannot make:
+**is a "muon-anchored" quantity A (the frozen pin) or C (the live derivation)?**
+The sibling probe reaches the same wall and calls it an owner/registry question.
+`origin/claude/muon-anchor-codata-2022-2026-08-22` carries *"muon anchor → CODATA
+2022 (owner ruling): derive it, stop the self-certification"* and rewrites
+`computations/substrate/q_parameter.py` — if that lands it rules for C and this
+item should be executed against it, not against A. **Converting literals before
+that ruling would do the work twice.**
