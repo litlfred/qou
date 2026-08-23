@@ -54,6 +54,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+REPO_ROOT = HERE.parent.parent
 for p in (str(HERE), str(HERE.parent.parent.parent / "tools" / "qou-substrate" / "python")):
     if p not in sys.path:
         sys.path.insert(0, p)
@@ -263,6 +264,10 @@ def main() -> int:
                     help="significant digits of q₀ to compare (default 12)")
     ap.add_argument("--list", action="store_true",
                     help="print every stale witness (for driving the regen)")
+    ap.add_argument("--tree", action="store_true",
+                    help=("scan EVERY *.witness.json in the repository instead "
+                          "of only computations/substrate/. Opt-in on purpose "
+                          "-- see the scope note below."))
     args = ap.parse_args()
 
     if args.selftest:
@@ -274,7 +279,42 @@ def main() -> int:
     total = 0
     exempt = 0
     matched_any = 0  # witnesses embedding ≥1 q₀-shaped value
-    for wf in sorted(glob.glob(str(HERE / "*.witness.json"))):
+    # SCOPE. As shipped this globs ONE directory, non-recursively: the 55
+    # witnesses in computations/substrate/. The docstring above describes a
+    # corpus-wide detector ("~390 witnesses carrying the pre-re-pin q0",
+    # "wire it into the witness-pipeline so any future constant re-pin
+    # auto-flags the affected witnesses"), so the narrow glob is an
+    # implementation/intent mismatch, not a design choice.
+    #
+    # Measured 2026-08-23 with this file's own Q0_SHAPE, AUDIT_SUFFIXES and
+    # derived_output_exempt, over the tree minus .git/.claude/_deprecated:
+    #
+    #     scanned 55   -> 3 q0-stale      (as shipped)
+    #     scanned 2848 -> 454 q0-stale    (--tree)
+    #
+    # 454 is the same order as the ~390 the docstring names, which is what
+    # says the wide scope was the intent.
+    #
+    # 454 is NOT 454 defects. By declared anchor: 340 declare none, 52
+    # declare muon (consistent -- the GATED qou-1c4y migration, leave them),
+    # 49 declare proton while carrying a non-proton q0-shaped value, 9
+    # independent, 3 ambiguous, 1 comparison. The 49 are the contradictory
+    # class bean qou-bdkx triages -- and that bean lists 2 of them, because
+    # it was written from the 55-file scan. Even those 49 are CANDIDATES: a
+    # proton-declaring witness may carry a muon value as a deliberate
+    # comparison (one is literally named ...-model-comparison), and at least
+    # one basin match, 1.109940825176, is neither pin. Per-witness triage,
+    # never a batch fix.
+    #
+    # --tree is opt-in rather than the default because scripts/staleness-gates.sh
+    # runs this --strict as a BLOCKING gate; flipping the default turns it red
+    # with 454 findings in one commit. Bean qou-5op4 carries the flip.
+    scan = (REPO_ROOT.rglob("*.witness.json") if args.tree
+            else (Path(p) for p in sorted(glob.glob(str(HERE / "*.witness.json")))))
+    for wf in sorted(scan):
+        if args.tree and any(part in (".git", ".claude", "_deprecated",
+                                      "node_modules") for part in Path(wf).parts):
+            continue
         name = Path(wf).name
         if name.endswith(AUDIT_SUFFIXES):
             exempt += 1
