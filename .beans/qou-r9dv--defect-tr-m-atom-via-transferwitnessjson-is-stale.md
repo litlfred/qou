@@ -1,11 +1,11 @@
 ---
 # qou-r9dv
 title: 'DEFECT: tr-m-atom-via-transfer.witness.json is stale -- records passed:true against 0.388357, a value NEITHER live path produces'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T20:16:50Z
-updated_at: 2026-08-23T17:38:23Z
+updated_at: 2026-08-23T17:59:42Z
 ---
 
 Found while verifying qou-j320 (the two edits are NOT the cause -- reproduced identically on a stashed clean tree).

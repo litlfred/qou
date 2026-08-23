@@ -1,11 +1,11 @@
 ---
 # qou-g8i1
 title: 'Prove the (z+d) bond rule: tr(x*(sigma+d*I)) = (z+d)*tr(x) at a non-last-strand generator'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T16:44:50Z
+updated_at: 2026-08-23T18:13:53Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -84,3 +84,75 @@ which is what remains open. Combined with markovZ_sub_h from MarkovBondRule, the
 SCOPE HONESTY: this is NOT the H_n Markov trace object. Building H_n(q) as a Lean algebra with its Wedderburn decomposition, the y_lambda weights, gap-multiplicativity and the Markov property is a multi-session build. What landed is the piece that is fully provable with a trace, an algebra and linearity -- and it removes a parameter from the open hypothesis rather than restating it.
 
 MarkovLinear is shown inhabited (zero functional) so the abstraction is demonstrably not empty; that witness is labelled in-file as evidence about well-formedness and nothing else -- the zero functional satisfies the rule trivially for every z.
+
+
+CLOSED 2026-08-23 -- THE RULE IS DERIVED, NOT ASSUMED.
+
+content/quantum-observable-universe/lean/QOU/MathlibExt/MarkovUnusedGenerator.lean
+lean-direct EXIT 0, no errors, no warnings, SORRY-FREE (0 occurrences of the
+token; #print axioms on all four principal declarations reports
+[propext, Classical.choice, Quot.sound] -- no sorryAx).
+
+WHAT IT PROVES
+
+    tr (wordProd l * sigma_g) = z * tr (wordProd l)
+
+for any strictly-increasing (monotone) word l with g not in l -- the single
+equation MarkovBondLinear left open. Derived from a new structure MarkovTower,
+which axiomatises ONLY the standard Jones/Ocneanu data:
+
+    H : Nat -> Subalgebra, monotone
+    sigma n in H (n+1)
+    far_comm : i+2 <= j -> sigma i * sigma j = sigma j * sigma i
+    tr linear, tr (a*b) = tr (b*a)
+    markov : a in H n -> tr (a * sigma n) = z * tr a     [LAST strand only]
+
+No field encodes the conclusion; the interior-generator rule is what gets
+derived. z is an abstract ring element, so the file is CONVENTION-NEUTRAL --
+neither C nor D -- and instantiating z := q^3/(q^2+1) specialises it without
+reproving anything. That dissolves the convention blocker recorded above: it
+was never necessary to pick a frame to state this.
+
+THE PROOF (the mechanism from section 4g, now an actual argument)
+
+Induction peeling the TOP letter sigma_m, available because the word is
+monotone. Three cases:
+
+ * m < g          every letter is below g, the word lies in H_g, Markov applies
+                  directly. NO INDUCTION NEEDED -- I had expected this to be
+                  the hard case and it is the free one.
+ * g + 2 <= m     sigma_m and sigma_g commute, so sigma_g slides down past the
+                  top letter; Markov at m peels sigma_m; IH finishes.
+ * m = g + 1      the only case where neither move exists. Cyclicity rotates
+                  sigma_g to the front, sigma_g * W lands in H_(g+1), Markov at
+                  g+1 peels sigma_(g+1), cyclicity rotates back, Markov at g
+                  finishes.
+
+The m = g+1 case is why the trace property is needed and linearity alone is not.
+
+GAP-MULTIPLICATIVITY IS NOT USED. My section-4g mechanism note said the rule
+follows from "gap-multiplicativity plus the Markov property". The proof does
+not need the multiplicativity statement at all -- monotonicity plus far-
+commutation is enough. The measured factorisation tr(W) = tr(W_<)*tr(W_>) is
+still true and still explains WHY the free trace factorises over nucleons, but
+it is a separate corollary, not a lemma of this theorem. Correcting my own
+framing.
+
+BondRule IS NOW DISCHARGED. bondRuleOfTower constructs a
+MarkovBondRule.BondRule R A q from any MarkovTower whose parameter is
+markovZ q, reading Unused g x as "x is a monotone word omitting g" -- the
+condition the numerics were measured under. So MarkovBondRule.bond_pp_nn,
+stated there conditionally, holds outright for any such tower. What is still
+assumed is only that the HECKE tower carries a Markov trace, which is the
+cited standard result (Jones 1987, Wenzl 1988) rather than anything specific
+to this framework.
+
+MarkovTower is shown inhabited by a NON-DEGENERATE model (A = R, tr = id,
+z = 1): unlike a zero-functional witness this one is faithful, so the axioms
+do not force tr = 0. It is a witness of well-formedness and nothing else --
+it is commutative and says nothing about the Hecke tower.
+
+SCOPE, HONESTLY: this is still not a construction of H_n(q) with its
+Wedderburn decomposition. It is the trace-level layer, which is all the bond
+product ever needed. The remaining open thing in the chain is one citation,
+not one derivation.
