@@ -643,30 +643,72 @@ theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K
   rw [mul_div_cancel_left₀ Φ (ne_of_gt hrQ)] at hmain
   linarith
 
+
+/-- **§13's conclusion from bounds at the rescaled degrees** — the literal shape of the
+induction hypothesis.
+
+`RothLemmaUniform` bounds the index of a polynomial *at its own declared degrees*.  In the
+induction step the sub-problems carry the rescaled degrees `r·d`, so what the hypothesis
+supplies is `hres`, not `hfac`.  `factor_bound_of_rescaled` converts one into the other, and
+the factor `r` it introduces is exactly the one §13's `S/r` cancels.
+
+⚠ `hres` is still an assumption.  Discharging it is the induction: the `x` side from
+`RothLemmaUniform` at `m−1` (degree and height bounds on the Wronskian exist —
+`degreeOf_mvGenWronskian_le`, `abs_coeff_mvGenWronskian_le`), the `y` side from
+`RothBaseCase`. -/
+theorem index_le_of_rothGrowth_of_rescaled_bounds {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] {m : ℕ} (o : (σ ⊕ Unit) ≃ Fin m) (ω : ℚ) (hω : 1 ≤ ω)
+    (d₁ : σ → ℕ) (d₂ : Unit → ℕ)
+    (hg : RothGrowth o ω (Sum.elim d₁ d₂))
+    (hlast : ∀ k : σ, (o (Sum.inl k) : ℕ) + 1 ≤ (o (Sum.inr ()) : ℕ))
+    (hd0 : d₂ () ≠ 0) {D₂ : ℕ} (hD₂ : D₂ ≠ 0) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : Unit → K) (P : MvPolynomial (σ ⊕ Unit) K) (hP : P ≠ 0)
+    (hdeg : degreeOf (Sum.inr ()) P ≤ d₂ ())
+    (εU εV : ℚ) (hε : 0 ≤ εU + εV)
+    (hres : ∀ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial Unit K)
+        (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
+      0 < r → (∀ i, (Dx i).length ≤ (i : ℕ)) → (∀ j, (Dy j).length ≤ (j : ℕ)) →
+      P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) →
+      index (fun j => r * d₁ j) α (mvGenWronskian Dx φ) ≤ ((εU : ℚ) : WithTop ℚ) ∧
+        index (fun j => r * d₂ j) β (mvGenWronskian Dy ψ) ≤ ((εV : ℚ) : WithTop ℚ))
+    (θ q : ℚ) (hθt : 2 / ω ≤ θ) (hq0 : 0 ≤ q)
+    (hq : (((d₂ () : ℕ) : ℚ) + 1) * (εU + εV) ≤ q ^ 2 * (D₂ : ℚ))
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P) :
+    θ ≤ 2 / ω + 2 * max (εU + εV) q :=
+  index_le_of_rothGrowth_of_factor_bound o ω hω d₁ d₂ hg hlast hd0 hD₂ hd₂ α β P hP hdeg
+    (εU + εV) hε
+    (fun r φ ψ Dx Dy hr hDx hDy hPeq =>
+      have h := hres r φ ψ Dx Dy hr hDx hDy hPeq
+      factor_bound_of_rescaled (Nat.pos_iff_ne_zero.mp hr) d₁ d₂ α β Dx Dy φ ψ εU εV
+        h.1 h.2)
+    θ q hθt hq0 hq hθ
+
 /-! ### Next
 
-§13 is derived, its row cost is bounded by `2/ω`, and `index_le_of_rothGrowth_of_factor_bound`
-puts the conclusion in the form the recursion consumes: `index P ≤ 2/ω + 2·max(Φ, q)`, with
-`Φ` the bound on the two Wronskians' indices that the induction hypothesis supplies.
+The chain now runs from the induction hypothesis's literal shape to §13's conclusion:
 
-What is left is **discharging `hfac`**, and it decomposes:
+    hres  (bounds at the RESCALED degrees — what RothLemmaUniform gives)
+      ↓  factor_bound_of_rescaled
+    hfac  (the two Wronskians' indices sum to ≤ r·Φ)
+      ↓  index_le_of_rothGrowth_of_factor_bound
+    index P ≤ 2/ω + 2·max(εU + εV, q)
 
-1. **The `x` side, from the induction hypothesis.**  `RothLemmaUniform` at `m−1` bounds
-   `index d₁ α (mvGenWronskian Dx φ)` given degree and height bounds on that Wronskian.  Both
-   exist: `degreeOf_mvGenWronskian_le` and `abs_coeff_mvGenWronskian_le`.  What is missing is
-   the *transport*: `exists_index_le_of_rothGrowth_of_factor_bound` is stated for `σ ⊕ Unit`,
-   and `RothLemmaUniform` for an `o : σ ≃ Fin m`.
-2. **The `y` side, from the base case.**  One variable, so `RothBaseCase` /
-   `rothLemmaUniform_one` applies directly.
-3. **The factor `r`.**  `hfac` asks for `r·Φ`, which is the source's `J(W) ≤ n·Φ_m`.  It comes
-   from degree rescaling — `index_scale_degree_le_iff` — applied to each factor.  ⚠ The `r` is
-   not slack: it cancels against the `S/r` in §13's conclusion, and correction 9 is what that
-   cancellation depends on.
-4. Then `c_m = 2^m − 3` by iterating.
+Everything above `hres` is proved.  What remains is **discharging `hres`**, in two halves:
+
+1. **The `x` half — blocked on transport, not on mathematics.**  `RothLemmaUniform` at `m−1`
+   bounds `index (r·d₁) α (mvGenWronskian Dx φ)` given degree and height bounds on that
+   Wronskian, and both exist (`degreeOf_mvGenWronskian_le`, `abs_coeff_mvGenWronskian_le`).
+   The gap is that these theorems are stated for `σ ⊕ Unit` while `RothLemmaUniform` takes an
+   `o : σ ≃ Fin m`.  Bridging that is `Fin (n+1) ≃ Fin n ⊕ Unit` plus `index_rename_equiv`.
+2. **The `y` half.**  One variable, so `RothBaseCase` applies directly; the work is matching
+   its `ℤ`-coefficient, height-and-denominator hypotheses to what the step has.
+
+Then `c_m = 2^m − 3` by iterating with `rothLemmaUniform_one` as the base.
 
 ⚠ Provenance: §5, §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14
 have **not**.  The `2/ω` bound is the arc's own reconstruction of what a growth condition must
 be doing; `c_m = 2^m − 3` stays unasserted. -/
+
 
 
 

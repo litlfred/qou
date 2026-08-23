@@ -399,6 +399,35 @@ theorem index_le_add_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r :
     exact le_max_right _ _
   linarith
 
+/-- **The reusable half of `index_le_of_rescaled_factor_bounds`.**
+
+That theorem's *rescaling* is correct and is what the source's `p_h = n·r_h` does; only the
+linear conclusion drawn from it was too weak (correction 6).  This isolates the rescaling:
+bounds on the two Wronskians' indices **at the rescaled degrees** give a bound on their sum at
+the unscaled ones, with the factor `r` the recursion needs.
+
+⚠ The factor `r` in the conclusion is the source's `J(W) ≤ n·Φ_m`, and it is not slack: it
+cancels against the `S/r` in §13's conclusion.  A version without it would be asking the
+induction hypothesis for something strictly stronger than it can give. -/
+theorem factor_bound_of_rescaled {K : Type*} [CommRing K] {r : ℕ} (hr : r ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (α : σ → K) (β : τ → K)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K) (εU εV : ℚ)
+    (hU : index (fun j => r * d₁ j) α (mvGenWronskian Dx φ) ≤ ((εU : ℚ) : WithTop ℚ))
+    (hV : index (fun j => r * d₂ j) β (mvGenWronskian Dy ψ) ≤ ((εV : ℚ) : WithTop ℚ)) :
+    index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ)
+      ≤ ((((r : ℚ) * (εU + εV) : ℚ)) : WithTop ℚ) := by
+  have hU' := (index_scale_degree_le_iff hr d₁ α _ εU).mp hU
+  have hV' := (index_scale_degree_le_iff hr d₂ β _ εV).mp hV
+  calc index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ)
+      ≤ ((((r : ℚ) * εU : ℚ)) : WithTop ℚ) + ((((r : ℚ) * εV : ℚ)) : WithTop ℚ) :=
+        add_le_add hU' hV'
+    _ = ((((r : ℚ) * (εU + εV) : ℚ)) : WithTop ℚ) := by
+        rw [← WithTop.coe_add]
+        congr 1
+        ring
+
+
 /-! ### ⚠ Corrections eight and nine — the second one corrects the first
 
 **Correction 8, as recorded:** §13's combined display, transcribed as `θ ≤ t + 2·max S q`,

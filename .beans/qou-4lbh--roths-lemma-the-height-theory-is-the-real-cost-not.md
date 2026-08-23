@@ -2166,3 +2166,58 @@ is the arc's own reconstruction; `c_m = 2^m − 3` unasserted.
 
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Four declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.
+
+---
+
+## 2026-08-23 — the chain now starts at the induction hypothesis's literal shape
+
+`hfac` asked for the two Wronskians' indices summed at the **unscaled** degrees. What
+`RothLemmaUniform` actually gives is a bound at a polynomial's *own declared* degrees, and in
+the induction step the sub-problems carry the **rescaled** degrees `r·d`. So the hypothesis as
+stated was one conversion away from what the recursion produces.
+
+```
+factor_bound_of_rescaled              rescaled bounds ⟹ Σ of unscaled indices ≤ r·(εU+εV)
+index_le_of_rothGrowth_of_rescaled_bounds   index P ≤ 2/ω + 2·max(εU+εV, q)
+```
+
+`factor_bound_of_rescaled` is the **reusable half of `index_le_of_rescaled_factor_bounds`** —
+the theorem correction 6 rejected. Its *rescaling* was always right (it is the source's
+`p_h = n·r_h`); only the linear conclusion drawn from it was too weak. Isolating the rescaling
+lets the good half be used without the bad one, and keeps the superseded theorem as the
+record rather than as a dependency.
+
+⚠ The factor `r` shows up twice and cancels: once here (from the rescaling) and once as §13's
+`S/r`. Correction 9 is what makes the second one exist. Had that correction not been found,
+this conversion would have introduced an `r` with nothing to cancel it, and the bound would
+have been off by the matrix size — silently, since every witness in the branch is at `r ≤ 2`.
+
+### The chain, end to end
+
+```
+hres  (bounds at the RESCALED degrees — what RothLemmaUniform gives)
+  ↓  factor_bound_of_rescaled
+hfac  (the two Wronskians' indices sum to ≤ r·Φ)
+  ↓  index_le_of_rothGrowth_of_factor_bound
+index P ≤ 2/ω + 2·max(εU + εV, q)
+```
+
+Everything above `hres` is proved.
+
+### Open — `hres`, in two halves
+
+1. **The `x` half is blocked on transport, not on mathematics.** `RothLemmaUniform` at `m−1`
+   bounds `index (r·d₁) α (mvGenWronskian Dx φ)` given degree and height bounds on that
+   Wronskian, and **both exist** (`degreeOf_mvGenWronskian_le`, `abs_coeff_mvGenWronskian_le`).
+   The gap is that these theorems are stated for `σ ⊕ Unit` while `RothLemmaUniform` takes an
+   `o : σ ≃ Fin m`. Bridging it is `Fin (n+1) ≃ Fin n ⊕ Unit` plus `index_rename_equiv`.
+   ⚠ Worth noting against correction 7, which called `Fin m` transport "pure overhead": it is
+   not overhead, but it is also not deep — this is the second time the indexing choice has cost
+   real work.
+2. **The `y` half.** One variable, so `RothBaseCase` applies directly; the work is matching its
+   `ℤ`-coefficient, height-and-denominator hypotheses to what the step has.
+
+Then `c_m = 2^m − 3` by iterating with `rothLemmaUniform_one` as the base.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Two declarations `#print axioms`-clean.
