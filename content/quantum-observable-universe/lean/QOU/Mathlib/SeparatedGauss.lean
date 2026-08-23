@@ -338,6 +338,17 @@ theorem abs_coeff_integral_wronskian_factor_le {τ : Type*}
   abs_coeff_le_of_mul_separated hV' (by rw [hfact]; exact hB) i
 
 
+/-- §7's height step for the **right** factor.  Mirror of the previous theorem; the
+non-vanishing hypothesis swaps sides, because the argument picks a non-zero coefficient of the
+*other* factor. -/
+theorem abs_coeff_integral_wronskian_factor_le_right {τ : Type*}
+    {U' : MvPolynomial σ ℤ} {V' : MvPolynomial τ ℤ} {W : MvPolynomial (σ ⊕ τ) ℤ}
+    (hfact : (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W)
+    (hU' : U' ≠ 0) {B : ℤ} (hB : ∀ n, |coeff n W| ≤ B) (j : τ →₀ ℕ) :
+    |coeff j V'| ≤ B :=
+  abs_coeff_le_of_mul_separated_right hU' (by rw [hfact]; exact hB) j
+
+
 /-! ### Next
 
 §6 and §7's height step are assembled: from an **integer** auxiliary polynomial and a

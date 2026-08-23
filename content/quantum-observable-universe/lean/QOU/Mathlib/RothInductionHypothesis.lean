@@ -131,6 +131,52 @@ theorem index_rescaled_wronskian_le_witness :
   · intro j; norm_num
   · intro j; norm_num
 
+/-- **The `y` half of `hres`** — and it needs **no induction hypothesis at all**.
+
+The split-off group is a single variable, so the relevant instance of `RothLemmaUniform` is
+the `m = 1` case, which is `rothLemmaUniform_one` and is **proved**.  So where the `x` half
+consumes the induction hypothesis, this half consumes the base case, and the recursion's two
+inputs turn out to be the same theorem at two different arities.
+
+The growth condition does not appear: at one variable there is no consecutive pair, so
+`RothGrowth` is vacuous — which is also why `rothLemmaUniform_one` holds for every `ω`. -/
+theorem index_rescaled_wronskian_le_right [DecidableEq σ]
+    (ε : ℚ) {r : ℕ} (hr : r ≠ 0)
+    (d₂ : Unit → ℕ) (hd₂ : ∀ j, d₂ j ≠ 0)
+    (pn qd : Unit → ℤ) (B : ℤ) (E : ℕ)
+    (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
+    (P : MvPolynomial (σ ⊕ Unit) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) (hWy : mvGenWronskian Dy ψ ≠ 0)
+    (hdeg : ∀ j k, degreeOf j (ψ k) ≤ d₂ j)
+    (hB : ∀ m, |coeff m (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det| ≤ B)
+    (hq2 : ∀ j, 2 ≤ qd j) (hco : ∀ j, IsCoprime (pn j) (qd j))
+    (hBq : ∀ j, B ≤ qd j ^ E) (hE : ∀ j, (E : ℚ) ≤ ε * ((r * d₂ j : ℕ) : ℚ)) :
+    index (fun j => r * d₂ j) (fun j => (pn j : ℚ) / (qd j : ℚ)) (mvGenWronskian Dy ψ)
+      ≤ ((((1 : ℕ) : ℚ) * ε : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
+    exists_integral_wronskian_factors Dx Dy φ ψ P hP hWx
+  have hU'ne : U' ≠ 0 := integral_factor_ne_zero hl hWx hU'
+  have hV'ne : V' ≠ 0 := integral_factor_ne_zero (inv_ne_zero hl) hWy hV'
+  have hdegV : ∀ j, degreeOf j V' ≤ r * d₂ j := fun j =>
+    degreeOf_integral_factor_le hV' j
+      (degreeOf_mvGenWronskian_le j Dy ψ (d₂ j) (fun k => hdeg j k))
+  have hBV : ∀ m, |coeff m V'| ≤ B := fun m =>
+    abs_coeff_integral_wronskian_factor_le_right hfact hU'ne hB m
+  have hIHapp := rothLemmaUniform_one 1 ε
+    (⟨fun _ => 0, fun _ => (), fun _ => rfl, fun i => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
+    (fun j => r * d₂ j) pn qd V' B E
+    (fun j => Nat.mul_ne_zero hr (hd₂ j))
+    (by intro j k h; have := j.isLt; have := k.isLt; omega)
+    hV'ne hdegV hBV hq2 hco hBq hE
+  have hmap : map (algebraMap ℤ ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ := hV'
+  rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at hIHapp
+
+
 /-! ### Next
 
 The `y` half of `hres` is the base case: one variable, so `RothBaseCase` applies to
