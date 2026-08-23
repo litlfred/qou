@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-22T23:52:12Z
+updated_at: 2026-08-23T00:58:09Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -139,3 +139,49 @@ extensive in constituent count A"*. An extensive 2-adic valuation is the shape a
 claim** — I have not read that derivation, and matching two things that are both
 "extensive in A" is weak evidence on its own. Whoever picks this up should read
 `183aa45d06` first and decide whether the exponents are even commensurable.
+
+
+## The extensivity is DEFLATED — it is the Habiro denominator's integer content
+
+I flagged the `v₂`-extensive-in-A finding as possibly resonating with
+`183aa45d06` (*"the surviving binding normalisation is `N(q)^{A-1}`, extensive in
+constituent count A"*), and said whoever picked it up should read that derivation
+first. I read it, then ran the control I should have run before flagging anything:
+**is there a mundane source of a 2-power that grows with A?**
+
+There is, and it accounts for the whole effect. `frob_full = frob_num / denom`,
+and `denom_in_u` carries an integer content that is a pure power of 2:
+
+| atom | A | `denom_in_u` leading terms | content | `v₂` |
+|---|---|---|---|---|
+| proton | 1 | `4u²⁸ + 4u²⁴ + 4u²⁰` | 4 | 2 |
+| neutron | 1 | `4u²⁴ + 4u²⁰ + 4u¹⁶` | 4 | 2 |
+| deuteron | 2 | `32u⁷⁶ + 128u⁷² + 288u⁶⁸ + …` | 32 | 5 |
+| tritium | 3 | `128u¹⁶⁶ + 896u¹⁶² + …` | 128 | 7 |
+| ³He | 3 | `128u¹⁶⁴ + 896u¹⁶⁰ + …` | 128 | 7 |
+
+Measured over the 30 cells with p ≥ 5:
+
+    v₂(denominator of Tr(full))  ≤  v₂(content of denom_in_u)     30/30, no violation
+    equality attained                                            in every atom
+
+and the per-atom **maxima match exactly, 5/5**: 2, 2, 5, 7, 7.
+
+So the "extensive in A" behaviour of `v₂` is a property of the Habiro expansion's
+own denominator normalisation, and the A-dependence is inherited from how
+`denom_in_u` is built. It is **not** a signal about the motivic channel, and the
+`N(q)^{A-1}` resonance is **withdrawn** — two things are "extensive in A" for
+unrelated reasons, which is precisely the coincidence-of-vocabulary this repo's
+discipline warns about. Nobody should spend a pass chasing it.
+
+**What survives.** The bound `v₂(den Tr(full)) ≤ v₂(content(denom_in_u))`, tight
+per atom, is a real and useful statement: it says `step2_full_trace_passed`'s
+failure is bounded by, and traceable to, a *known and inspectable* normalisation
+constant rather than anything mysterious. That makes the fix concrete — if the
+full trace should be integral, the place to look is the content of `denom_in_u`,
+not the Galois theory.
+
+**Sequencing note for the next agent.** Both wrong turns here (the "uniform factor
+of 2", then the `N(q)^{A-1}` resonance) came from reporting a pattern before
+running the cheap control that could kill it. The control was three lines and one
+field of the input witness. Run it first.
