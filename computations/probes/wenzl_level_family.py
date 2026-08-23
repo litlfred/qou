@@ -336,7 +336,7 @@ Z_SPELLINGS = [
      "the level-2 member of the family", "mass, binding, borromean-binding"),
     ("z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}", sp.sqrt(q) / (q + 1),
      "not in Q(q): sqrt(q) is not a rational function of q "
-     "(x^2 - q Eisenstein at q)", "qbeta-decay (disputed)"),
+     "(x^2 - q Eisenstein at q)", "qbeta-decay (agreed-migration-pending)"),
     ("z_TL = q/(q^2+1) = 1/[2]_q", q / (q**2 + 1),
      "in Q(q), but no r matches: z_r has numerator q^(2r-1), so degree 1 "
      "forces r = 1, and z_1 = q != q/(q^2+1)",
@@ -389,7 +389,8 @@ CHANNELS = [
                      "wedderburn_jones_markov.py::y_lambda_at", "agreed"),
     ("borromean-binding-single-pipeline", "D",
      "borromean_binding_recompute.py:110", "agreed"),
-    ("qbeta-decay", "C", "qbeta/qbeta_utils.py::markov_parameter", "disputed"),
+    ("qbeta-decay", "C", "qbeta/qbeta_utils.py::markov_parameter",
+     "agreed-migration-pending"),
 ]
 
 CONVENTION_Z = {"D": q**3 / (q**2 + 1), "C": sp.sqrt(q) / (q + 1)}

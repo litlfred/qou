@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:07:27.083061+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T07:52:34.698683+00:00",
+  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "volume-def-reconcile",
   "scriptFile": "volume_def_reconcile.py",
-  "scriptHash": "7d6377a5e502",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "d17d42f2c102",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,52 +21,60 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/volume_def_reconcile.py"
+    ],
+    "reproduce": "python3 -u computations/volume_def_reconcile.py"
   },
   "description": "Reconciliation of the two Borromean-volume definitions (8G vs ln|Vol_q|). Determines they are the SAME post-τ volume Vol(K) linked by the Kashaev Volume Conjecture; the keystone audit's 5090× was a cross-τ category comparison. No fit.",
   "schema": "volume-def-reconcile/1",
   "compute_dps": 70,
-  "q0": "1.1099785955573347199",
-  "hbar_q": "0.099081726438258959082",
+  "q0": "1.1099785827513808076",
+  "hbar_q": "0.099081716044258507839",
   "definition_A_production": {
     "name": "classical hyperbolic Vol(𝓑₃) = 8·G",
     "value": "7.3277247534177521204",
     "chain_stage": "POST-τ (archimedean ℝ). topological-mass-formula Step 1: Re tr(τ̂_desc·Hol)=Vol(K), CS/volume corr.",
-    "provenance": "_li_2_q_util.vol_density_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
+    "provenance": "_li_2_q_util.per_knot_density_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
   },
   "definition_B_vol_through_tau": {
     "name": "Vol(K)=τ_arch(Vol_q)=ln|Vol_q|, Vol_q=∏V̂_i ∈ ℤ[q^½]",
     "chain_stage": "Vol_q is PRE-τ algebraic; τ_arch=ln|·| is the archimedean EXIT. The result ln|Vol_q| is POST-τ ℝ.",
     "kvc_bridge": "kashaev-volume-conjecture.md: Vol_hyp = 2π·lim log|J_N|/N at roots of unity = regulator of a Bloch-group class. prop:vol-through-tau asserts this EQUALS the classical Vol(K)=8G.",
-    "normalized_trM_at_q0": "0.998562163197",
-    "ln_normalized_trM_at_q0_WRONGSTAGE": "-0.00143887148184",
+    "normalized_trM_at_q0": "0.998562163837",
+    "ln_normalized_trM_at_q0_WRONGSTAGE": "-0.00143887084155",
     "note": "The keystone audit's −0.00144 = ln|trM_norm(q₀)| logs the PRE-τ algebraic number at q₀ — a category error, not the τ_arch/Kashaev regulator."
   },
   "exact_functional_relation": {
-    "exp_ln_trM_norm": "0.998562163197",
-    "trM_norm": "0.998562163197",
+    "exp_ln_trM_norm": "0.998562163837",
+    "trM_norm": "0.998562163837",
     "ln_8G": "1.99166506572",
-    "ratio_8G_over_abs_ln_trM_norm": "5092.6889",
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
     "is_log_or_exp_relation": "NO. exp(ln_trM_norm)=trM_norm≈1 (round-trips to the trace, not 8G); ln(8G)≈1.99 (not ≈ln_trM_norm). 8G is NEITHER log NOR exp of ln_trM_norm. The '5090×' = 8G / |ln(trM_norm(q₀))| is the ratio of a POST-τ volume to ln of a PRE-τ algebraic number at q₀ — a cross-functor (category) comparison, not one functional map."
   },
   "the_5090x_explained": {
-    "ratio_8G_over_abs_ln_trM_norm": "5092.6889",
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
     "interpretation": "8G / |ln(trM_norm(q₀))| = 7.328 / 0.00144 ≈ 5090. NOT a log↔exp relation (see exact_functional_relation). It is the magnitude of a post-τ volume over ln of a pre-τ number — cross-functor compare."
   },
   "raw_m_p_readings_no_fit": {
     "production_8G_over_hbar2_times_linking_weight": {
-      "m_avg_MeV": "966.0496246",
-      "err_vs_codata_pct": "2.88959",
+      "m_avg_MeV": "966.0498245",
+      "err_vs_codata_pct": "2.88961",
       "stage": "POST-τ classical Vol (8G) × H₄ linking_weight (Def A, production)"
     },
     "8G_over_hbar2_bare_lw1": {
-      "m_avg_MeV": "381.4187386",
+      "m_avg_MeV": "381.4188187",
       "err_vs_codata_pct": "-59.3768",
       "stage": "POST-τ classical Vol (8G) alone, linking_weight=1"
     },
     "lnTrMnorm_over_hbar2_WRONGSTAGE": {
-      "m_avg_MeV": "-0.07489535485",
+      "m_avg_MeV": "-0.07489533724",
       "err_vs_codata_pct": "-100.008",
       "stage": "ln of PRE-τ normalized trace at q₀ — CATEGORY ERROR (the keystone audit's −0.00144 reading; gives negative mass)"
     }

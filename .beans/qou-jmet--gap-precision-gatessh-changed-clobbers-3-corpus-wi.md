@@ -1,10 +1,11 @@
 ---
 # qou-jmet
-title: 'GAP: precision-gates.sh --changed clobbers 3 corpus-wide audit witnesses with scoped output'
-status: todo
+title: precision-gates.sh double-run clobbers 3 corpus-wide audit witnesses (shared output path, NOT --changed) — CLOSED
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T15:05:15Z
-updated_at: 2026-08-15T15:05:15Z
+updated_at: 2026-08-21T17:02:30Z
 ---
 
 
@@ -38,3 +39,21 @@ Lesson for the overlap rule: this was **mechanical** work, which AGENTS.md
 says has one owner. I did not check whether a sibling was on it before
 starting. A `git log origin/main --since` on the touched file would have cost
 seconds and saved the duplicate.
+
+
+
+## Update 2026-08-21 — doc half confirmed closed
+
+Verified: `.claude/skills/local/compute-author.md` §5.1 and the §7 gotchas
+table row already carry the corrected mechanism on `main`
+(`git diff origin/main -- .claude/skills/local/compute-author.md` is
+0 lines against this branch's checkout). The corrected text — "The cause is
+a shared output path, not a scoping flag" / "`--changed` is NOT the
+mechanism" — matches the reference wording in `qou-pgdw`. No other site in
+`.claude/skills/`, `docs/`, or other beans carries the wrong
+(`--changed`-clobbers) description; a repo-wide grep for that phrasing
+returns only this bean's own (retrospective, correct-in-context) title and
+body text. Title corrected above to name the real mechanism, since titles
+are what people grep. Both the code half (landed by `qou-pgdw`,
+`70835094` + `7668b998`) and the doc half are now closed; no code or
+witness files were touched for this update.
