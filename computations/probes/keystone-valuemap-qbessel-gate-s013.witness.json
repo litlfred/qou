@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:44:14.933425+00:00",
-  "commitSha": "d79d543e934d26dc63848a215a36a84baad350ae",
+  "computedAt": "2026-08-23T22:10:22.954332+00:00",
+  "commitSha": "5451a042570305a89559b76b9e3048cdaf56bc4b",
   "assertions": [
     {
       "name": "colored_residue_character_derived_and_pure_sign",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 16,
   "computation": "keystone-valuemap-qbessel-gate-s013",
   "scriptFile": "keystone_valuemap_qbessel_gate_s013.py",
   "scriptHash": "4d2854351ec6",

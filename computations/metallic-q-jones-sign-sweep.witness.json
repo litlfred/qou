@@ -1,7 +1,7 @@
 {
   "description": "Jones-polynomial sign sweep across the first three metallic-ladder intervals. Companion to the Wenzl-y_\u03bb sweep, which returned NULL (Wenzl weights stay positive for all real q > 0). This probe tests whether the metallic-piecewise structure shows up at the level of Jones polynomials of canonical knots (unknot, trefoil, figure-eight, 5_1, Hopf).",
   "companion_to": "metallic-q-wenzl-sign-sweep.witness.json",
-  "computed_at": "2026-08-23T21:42:06.414746+00:00",
+  "computed_at": "2026-08-23T22:08:13.526447+00:00",
   "precision_dps": 70,
   "anchors": {
     "q_0_substrate": "1.1099785955541805",
@@ -2502,9 +2502,9 @@
   ],
   "scriptHash": "d33ed9b3c591",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "d79d543e934d26dc63848a215a36a84baad350ae",
+  "commitSha": "5451a042570305a89559b76b9e3048cdaf56bc4b",
   "engine": "mpmath",
-  "computedAt": "2026-08-23T21:42:06.481259+00:00",
+  "computedAt": "2026-08-23T22:08:13.596040+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
