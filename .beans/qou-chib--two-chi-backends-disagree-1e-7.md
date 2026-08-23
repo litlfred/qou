@@ -1,11 +1,11 @@
 ---
 # qou-chib
 title: 'Two averaged-chi backends disagreed at 1e-7 — RESOLVED: stale witnesses'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T18:00:00Z
-updated_at: 2026-08-19T19:59:08Z
+updated_at: 2026-08-23T17:08:49Z
 ---
 
 Two production producers compute χ^λ(β_atomic; q₀) in the **same** (averaged /
@@ -116,3 +116,33 @@ implementations cross-validating at the arithmetic floor.
   producer until you re-run. The shape of the residual (both 1-dim blocks
   disagreeing by *exactly* the same amount, higher-dim by up to 11× more) read
   as a matrix-product defect; it was a version difference.
+
+
+## CLOSED 2026-08-23 — 4He landed, all four regenerated
+
+⁴He at H₁₂ was the long one: 77 partitions, ~85 min CPU across ~3.6 cores.
+
+| | before | after |
+|---|---|---|
+| vs independent closed form | 6.956e-8 | **1.129e-49** |
+| vs hoefsmit, 77 partitions | 3.207e-6 | **3.92e-49** |
+
+All four `atom-chi-rust-*` are correct. The two **independent** implementations
+now agree at the arithmetic floor on every shared nuclide — deuteron
+(4.64e-50) and helium-4 (3.92e-49).
+
+`chi-at-q0-averaged-atomic.derivation.json` now claims **both** producers (12
+witnesses, was 8); its new step 7 records the cross-backend agreement and the
+three negative probes that got there.
+
+**Two false starts worth recording:** the first regeneration was killed by a
+900s cap, the second died with its container. Both times a "background task
+completed (exit 0)" notification arrived and the file was unchanged. A process
+exiting is not a result — I reported ⁴He as outstanding both times and only
+claimed it after measuring.
+
+### Residual, flagged not fixed
+
+- `atom-chi-rust-*` records **no q₀**, contrary to the AGENTS.md rule.
+- The producer emits three raw float64 fields (`compute_time_sec` ×2,
+  `assertions[0].computed`). Already baselined; NEW dirty 0, REGRESSED 0.
