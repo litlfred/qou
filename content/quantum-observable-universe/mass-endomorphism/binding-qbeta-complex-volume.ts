@@ -27,10 +27,38 @@ export default conjecture({
     witness:
       "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
     status: "failed",
-    // status was "verified" until 2026-08-23; the cited witness's own
-    // `allPassed` is false (c2_gate). Per ComputationStatus,
-    // "failed" = script ran, witness does NOT match expected values.
-    // Nothing compared the two until scripts/check-computation-status.py.,
+    // STAYS "failed", and that is the correct terminal state — do not "fix"
+    // this one. It was "verified" until 2026-08-23 while its witness's own
+    // `allPassed` was false; nothing had compared the two until
+    // scripts/check-computation-status.py.
+    //
+    // The red assertion is `c2_gate`, and it is red ON PURPOSE. It asks whether
+    // a scalar s-series in s = q-1 reproduces c_2 = -1. It does not, and that
+    // IS the finding: u = b*hbar_q^2 is quadratic in t = q-1 near q = 1, so the
+    // u-reversion is singular, R(q) is not analytic in u, and the c_k are not
+    // scalar-q Taylor coefficients at all. Blocker 2 of
+    // docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md, whose verdict
+    // is that "exact operator-level c_4..c_8 as constants do not exist".
+    // Relaxing the gate would delete a recorded refutation.
+    //
+    // A trap this block set for me, recorded so it does not catch the next
+    // reader. The witness committed 2026-06-16 carried c_2 = -8.006410058709255,
+    // which matches the registry's c_2^even = -1049/144 - 5*sqrt(3)/12 to
+    // FIFTEEN digits — an identification I was one commit from writing down.
+    // It does not survive a re-run: a byte-identical producer now yields
+    // -7.45876032789888, because free-neutron-decay.witness.json was regenerated
+    // in 52c68267f2. Import-cone drift, invisible to a file-local diff of the
+    // producer. A 9.8e-8 relative change in the input moved the output by 6.8%,
+    // ~7e5 amplification — which is the audit's own blocker 3
+    // (sigma(c_k) = sigma_R/u^k) measured rather than argued. An extraction
+    // that amplifies input error by five orders of magnitude cannot identify a
+    // constant, and a 15-digit coincidence is exactly what its noise looks like.
+    //
+    // SEPARATE CONCERN, not resolved here: this is a conjecture about
+    // complex-volume unification of binding and Q_beta, and the witness it
+    // cites is a c_k-extraction refutation. Whatever that witness reports, it
+    // does not bear on the conjecture's claim. The citation looks wrong, but
+    // choosing the right one is an authoring call, not a status fix.,
   },
   tags: [
     "tier:keystone",
