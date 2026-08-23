@@ -2274,3 +2274,68 @@ Verification: twenty-one arc modules rebuilt with `.olean`s deleted — exit 0, 
 linter output. Seven declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`.
 Orphan gate re-run: 2038 modules, 1155 reachable (up one), 883 not built — the new module is
 registered and the inherited red did not grow.
+
+---
+
+## 2026-08-23 — multivariate content over ℤ, because Mathlib has none
+
+New module `QOU/Mathlib/SeparatedGauss.lean` (22nd in the arc). Mathlib-only imports.
+
+### Why integrality is the blocker, precisely
+
+§7's height step is `max(|U|, |V|) ≤ |W|`, and its argument is: any coefficient of `U` times
+any coefficient of `V` **is** a coefficient of `W`, and a non-zero **integer** has absolute
+value at least 1. That is `abs_coeff_le_of_mul_separated`, which the arc already has — over
+`ℤ`. Over `ℚ` a coefficient of `V` can be arbitrarily small and the step is **false**.
+
+So integrality is not bookkeeping there; it is the whole argument. And the minimum
+representation lives over `ℚ` (shortening divides by a coefficient), so the induction
+hypothesis — which is about integer polynomials — cannot reach its factors until §6's Gauss
+step is done.
+
+### ⚠ A genuine Mathlib gap
+
+Mathlib has `Polynomial.content` and `Polynomial.IsPrimitive` for **one** variable. There is
+no `MvPolynomial` counterpart — checked, not assumed. So:
+
+```
+exists_int_scaling        a rational polynomial has an integral multiple
+intContent                the gcd of the coefficients
+intContent_dvd_coeff, intContent_ne_zero
+exists_primitive_part     p = content · q with q primitive
+exists_primitive_scaling  ∃ l ≠ 0 and primitive integral U' with map U' = C l · U
+```
+
+Primitivity is stated as "**every common divisor of the coefficients is a unit**" rather than
+by defining `IsPrimitive` for `MvPolynomial`. That is what the Gauss argument consumes, and it
+avoids committing to a definition the arc would then have to maintain.
+
+### The disjoint case is much easier than general Gauss
+
+General Gauss needs unique factorisation. In *disjoint* variable groups it needs neither
+factorisation nor Bézout: `coeff (i ⊞ j) (U·V) = uᵢ·vⱼ` exactly, so once `U` is primitive and
+integral, the denominator of every `vⱼ` divides **every** coefficient of `U`, hence divides
+their gcd, hence is `1`. One gcd argument.
+
+⚠ Worth noting how the Bézout step was avoided. The first derivation used "gcd = 1 ⟹ ∃ integer
+combination = 1" and then summed. The denominator argument is strictly simpler and needs no
+finite-family Bézout — which Mathlib does not have in a convenient form either.
+
+### Open
+
+Part 4, the disjoint Gauss itself, stated in the module's `Next`. Given the above it is short;
+it rests on `coeff_sumElim_rename_mul` from `SeparatedHeight`, which is why that part of the
+module will not be Mathlib-only.
+
+### Build notes worth keeping
+
+- `IsLocalization (nonZeroDivisors ℤ) ℚ` needs `Mathlib.RingTheory.Localization.FractionRing`;
+  `NormalizedGCDMonoid ℤ` needs `Mathlib.RingTheory.Int.Basic`. Neither comes with
+  `MvPolynomial.Basic`, and `MvPolynomial.map` itself lives in `MvPolynomial.Eval`.
+- `rw [← hq]` where `hq : C (intContent A) * q = A` rewrote `A` inside `intContent A` as well.
+  `conv_rhs => rw [← hq]` is the fix — the same shape of mistake as the `rw [hP]` one two
+  entries ago, so it is worth naming: **an equation whose right side is a bare variable will
+  rewrite that variable everywhere, including inside the other side's own subterms.**
+
+Verification: `lake build` with `.olean` deleted — exit 0, no errors, no linter output. Five
+declarations `#print axioms`-clean. No `sorry`/`admit`/`native_decide`. Registered in `QOU.lean`.
