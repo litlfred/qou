@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T00:40:36.255459+00:00",
-  "commitSha": "55eeb01ba76a6ab1ef39626ab676fb49fd1465b5",
+  "computedAt": "2026-08-23T20:00:36.545416+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "structural_constants_match_probe1",
@@ -22,7 +22,7 @@
     },
     {
       "name": "decomposition_identity_T_3He",
-      "computed": 1.2868893973670072e-85,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -38,7 +38,7 @@
     },
     {
       "name": "gate_residual_identity",
-      "computed": 2.0107646833859488e-85,
+      "computed": 8.043058733543795e-86,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -46,51 +46,51 @@
     },
     {
       "name": "gate_near_cancellation_A3",
-      "computed": -0.03365376809060528,
+      "computed": -0.4708557485879333,
       "expected": -0.033654,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.0001,
       "source": "A=3 swap+mirror = −0.938014 + 0.904360 = −0.033654: a near-cancellation with computable residual, NOT an identity (swap = interface algebra at q₀; mirror = AME data; no shared structure)"
     },
     {
       "name": "m3_residuals_match_hpower_witness",
-      "computed": 5.821731985378165e-15,
+      "computed": 0.9587303987382305,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-09,
       "source": "M3 residuals recomputed here (T +0.0665, ³He +0.0329) vs the committed probe-9b-h-power-asymmetry witness"
     },
     {
       "name": "swap_not_naive_g_ratio",
-      "computed": 2.4061465898611125,
+      "computed": 2.7615636814839406,
       "expected": 2.406147,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.001,
       "source": "candidate 'swap = log g_pp − log g_nn = −3.344 (A-independent)' REFUTED: actual A=3 swap is −0.938; 1−∏f does not factor over interfaces, so the swap term is A-dependent"
     },
     {
       "name": "swap_decays_with_A",
-      "computed": 0.016673263790684838,
+      "computed": 0.06327532037893908,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.02,
       "source": "|swap| shrinks −0.938 (A=3) → −0.117 (A=5) → −0.0167 (A=7): geometric decay of the interface product, a DERIVED property of the closed form (all f ∈ (0,1) at q₀)"
     },
     {
       "name": "cancellation_fails_A7",
-      "computed": 0.39351831355901845,
+      "computed": 0.34691630232629367,
       "expected": 0.3935,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.005,
       "source": "⁷Li/⁷Be (both bound, vendored AME2020): swap+mirror = −0.0167 + 0.4102 = +0.394 — an order of magnitude above the A=3 residual −0.0337; the near-cancellation behind the [Z>N] gate is A=3-specific, not generic"
     }
   ],
-  "allPassed": true,
-  "durationMs": 17,
+  "allPassed": false,
+  "durationMs": 6,
   "computation": "probe-9b-gate-interface-algebra",
   "scriptFile": "probe_9b_gate_interface_algebra.py",
-  "scriptHash": "d43e04543f1a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2c3eecce6a29",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,16 +100,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_9b_gate_interface_algebra.py"
+    ],
+    "reproduce": "python3 -u computations/probe_9b_gate_interface_algebra.py"
   },
   "description": "PROBE 1-c (9b, bean cywi): derive-or-refute the [Z>N] proton-excess gate of model M3 from the Phase-5q interface algebra. Exact mirror decomposition gap = asym + swap + mirror (identity ≤1e-30); gate exact ⟺ swap+mirror = 0. At A=3 the cancellation holds to −0.0337 (= res_M3(³He) − res_M3(T), identity), but the swap term decays geometrically with A (derived: all f ∈ (0,1) at q₀) while the AME mirror term stays O(0.4): at ⁷Li/⁷Be swap+mirror = +0.394. VERDICT: gate-as-derived-rule REFUTED scope-(a); A=3 near-match retained with stated residual. Exploratory; NOT wired; no new constants.",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-laurent-degree-manybody.md",
   "parameters": {
     "compute_dps": 85,
-    "q0": "1.1099785955573347198997632204832250266562084087802",
-    "Q_beta_n_MeV": 0.7823334093100222,
-    "kappa_log_q0_trn_over_trp": -1.3718095572365478,
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "Q_beta_n_MeV": 0.7823334093099085,
+    "kappa_log_q0_trn_over_trp": -1.4222629791962889,
     "source_witnesses": [
       "probe-9b-laurent-degree-10a5.witness.json",
       "probe-9b-h-power-asymmetry.witness.json"
@@ -133,12 +143,12 @@
         ],
         "B_AME_n_rich_MeV": "8.4817962",
         "B_AME_p_rich_MeV": "7.71804132",
-        "asym": 1.3718095572365478,
-        "swap": -0.9380141737821568,
-        "mirror": 0.9043604056915515,
-        "swap_plus_mirror": -0.03365376809060528,
-        "gap_log_Delta_n_rich_minus_p_rich": 1.3381557891459426,
-        "decomposition_identity_residual": 1.2868893973670072e-85,
+        "asym": 1.4222629791962889,
+        "swap": -1.3752162542760407,
+        "mirror": 0.9043605056881074,
+        "swap_plus_mirror": -0.4708557485879333,
+        "gap_log_Delta_n_rich_minus_p_rich": 0.9514072306083556,
+        "decomposition_identity_residual": 0.0,
         "note": "both bound (anchor pair)"
       },
       {
@@ -160,12 +170,12 @@
         ],
         "B_AME_n_rich_MeV": "27.5606625",
         "B_AME_p_rich_MeV": "26.3306625",
-        "asym": 1.3718095572365478,
-        "swap": -0.11731666221070021,
-        "mirror": 0.43756018288519166,
-        "swap_plus_mirror": 0.3202435206744914,
-        "gap_log_Delta_n_rich_minus_p_rich": 1.6920530779110392,
-        "decomposition_identity_residual": 1.9303340960505108e-85,
+        "asym": 1.4222629791962889,
+        "swap": -0.2690229935232934,
+        "mirror": 0.43756023126691096,
+        "swap_plus_mirror": 0.16853723774361754,
+        "gap_log_Delta_n_rich_minus_p_rich": 1.5908002169399065,
+        "decomposition_identity_residual": 9.651670480252554e-86,
         "note": "both particle-unstable (resonances) — corroborating only"
       },
       {
@@ -191,12 +201,12 @@
         ],
         "B_AME_n_rich_MeV": "39.2450807",
         "B_AME_p_rich_MeV": "37.6008409",
-        "asym": 1.3718095572365478,
-        "swap": -0.016673263790684838,
-        "mirror": 0.4101915773497033,
-        "swap_plus_mirror": 0.39351831355901845,
-        "gap_log_Delta_n_rich_minus_p_rich": 1.7653278707955662,
-        "decomposition_identity_residual": 1.608611746708759e-86,
+        "asym": 1.4222629791962889,
+        "swap": -0.06327532037893908,
+        "mirror": 0.41019162270523274,
+        "swap_plus_mirror": 0.34691630232629367,
+        "gap_log_Delta_n_rich_minus_p_rich": 1.7691792815225826,
+        "decomposition_identity_residual": 4.664974065455401e-85,
         "note": "both bound — clean AME test"
       }
     ],

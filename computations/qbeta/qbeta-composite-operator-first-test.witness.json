@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:32.820904+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-23T20:00:48.808386+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "composite_first_test_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-composite-operator-first-test",
   "scriptFile": "qbeta_composite_operator_first_test.py",
   "scriptHash": "7803b049b0b1",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_composite_operator_first_test.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_composite_operator_first_test.py"
   },
   "data": {
     "target_c_3": "-2.06934257711516783787971951725",
@@ -77,5 +87,7 @@
     "best_candidate_err_ppm": 31779.782638571818,
     "any_candidate_passes_10_ppm": false,
     "interpretation": "Composite-operator first-test (6 candidates). Best: 'C5. -(q^2 + q^-2) x (1 - 2*hbar_q^2)' at 31779.78 ppm. NEGATIVE — simple 2-factor product space exhausted. Search becomes upstream-infra-gated (infinite Habiro products / KLR / Demazure)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

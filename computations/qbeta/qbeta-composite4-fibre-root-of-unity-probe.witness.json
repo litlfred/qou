@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "mpmath",
-  "computedAt": "2026-07-18T17:46:26.981969+00:00",
+  "computedAt": "2026-08-23T20:00:45.273819+00:00",
   "computation": "qbeta-composite4-fibre-root-of-unity-probe",
   "scriptFile": "qbeta_composite4_fibre_root_of_unity_probe.py",
   "precisionMetadata": {
@@ -13,21 +13,21 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "Independent self-contained re-derivation of #1801: the q-deformed /[5]_q₀² denominator gives a worse c_3 fit than the undeformed /25."
+      "source": "Independent self-contained re-derivation of #1801: the q-deformed /[5]_q\u2080\u00b2 denominator gives a worse c_3 fit than the undeformed /25."
     },
     {
       "name": "no_finite_root_beats_25_baseline",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "[5]_ζ² at ζ=exp(2πi/N) (N=3..24) is real (=(sin5θ/sinθ)²) and discrete; no finite root gives a better c_3 ppm than the /25 baseline. (Separately, none has denom≈25 either — see any_finite_root_denom_near_25.)"
+      "source": "[5]_\u03b6\u00b2 at \u03b6=exp(2\u03c0i/N) (N=3..24) is real (=(sin5\u03b8/sin\u03b8)\u00b2) and discrete; no finite root gives a better c_3 ppm than the /25 baseline. (Separately, none has denom\u224825 either \u2014 see any_finite_root_denom_near_25.)"
     },
     {
       "name": "five_zeta_imag_residue_within_tol",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "[5]_ζ for roots of unity is a real sin-ratio; the max imaginary residue across the sweep must be < 1e-40, confirming the re(...) projection drops only numerical noise (not genuine imaginary content)."
+      "source": "[5]_\u03b6 for roots of unity is a real sin-ratio; the max imaginary residue across the sweep must be < 1e-40, confirming the re(...) projection drops only numerical noise (not genuine imaginary content)."
     }
   ],
   "data": {
@@ -187,13 +187,13 @@
       "five_zeta_sq_is_real_discrete": true,
       "any_finite_root_beats_25": false,
       "twenty_five_is_q1_classical_limit": true,
-      "conclusion": "Independently re-derives #1801 (self-contained): q-deformed /[5]_q₀² is WORSE (982 ppm) than undeformed /25 (2.66 ppm). [5]_ζ² at roots of unity is REAL (=(sin5θ/sinθ)²) and discrete; no finite root reproduces 25 — only the N→∞ (q→1) classical limit does. So /25 = [5]_q² at the q=1 fibre point, rest of c_3 at archimedean q₀ (a real fibre/observable split). A full residue-A derivation still needs the Habiro element (cyclotomic coefficients over all roots of unity) + τ, which a single denominator-swap cannot supply. EXPLORATORY; nothing wired."
+      "conclusion": "Independently re-derives #1801 (self-contained): q-deformed /[5]_q\u2080\u00b2 is WORSE (982 ppm) than undeformed /25 (2.66 ppm). [5]_\u03b6\u00b2 at roots of unity is REAL (=(sin5\u03b8/sin\u03b8)\u00b2) and discrete; no finite root reproduces 25 \u2014 only the N\u2192\u221e (q\u21921) classical limit does. So /25 = [5]_q\u00b2 at the q=1 fibre point, rest of c_3 at archimedean q\u2080 (a real fibre/observable split). A full residue-A derivation still needs the Habiro element (cyclotomic coefficients over all roots of unity) + \u03c4, which a single denominator-swap cannot supply. EXPLORATORY; nothing wired."
     }
   },
   "allPassed": true,
   "scriptHash": "f46c61e714cb",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptCommitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "durationMs": 0,
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"

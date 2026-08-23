@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python (stdlib decimal, 60 dps)",
-  "computedAt": "2026-06-25T10:38:48.256756+00:00",
-  "commitSha": "2788a7800dbf491cc158f07eaf0e1c4670bef26b",
+  "computedAt": "2026-08-23T20:01:17.994209+00:00",
+  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
   "assertions": [
     {
       "name": "trefoil_markov_trace_nonzero",
@@ -26,11 +26,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "trefoil-complex-volume-probe",
   "scriptFile": "trefoil_complex_volume_probe.py",
   "scriptHash": "f284c0e39372",
-  "scriptCommitSha": "2788a7800dbf491cc158f07eaf0e1c4670bef26b",
+  "scriptCommitSha": "6d1c131d141ecd373efae82de10042e204fc52cc",
   "precisionMetadata": {
     "compute_dps": 60,
     "output_dps": 30,
@@ -39,7 +39,7 @@
   "environment": {
     "python": "stdlib only (no mpmath/pyhecke/qou_substrate in sandbox)"
   },
-  "description": "Electron knot = trefoil 3_1 = T(2,3): NON-hyperbolic (Seifert-fibered) so Vol_hyp = 0, yet its algebraic invariant tr_M(sigma^3) = (h^2+1)z + h and Jones polynomial are non-zero at q_0. Substantiates the complex-volume 𝔙 = E0*tr_M((Pi_free-1)∘M) point for a primitive knot: the algebraic quantum volume survives where the geometric (hyperbolic) volume degenerates. Hecke/Markov conventions per AGENTS.md §7a.",
+  "description": "Electron knot = trefoil 3_1 = T(2,3): NON-hyperbolic (Seifert-fibered) so Vol_hyp = 0, yet its algebraic invariant tr_M(sigma^3) = (h^2+1)z + h and Jones polynomial are non-zero at q_0. Substantiates the complex-volume \ud835\udd19 = E0*tr_M((Pi_free-1)\u2218M) point for a primitive knot: the algebraic quantum volume survives where the geometric (hyperbolic) volume degenerates. Hecke/Markov conventions per AGENTS.md \u00a77a.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "parameters": {
     "knot": "3_1 = T(2,3) (electron, per rem:knot-particle-dictionary)",
@@ -60,7 +60,5 @@
     "abs_jones_trefoil_at_q0": "0.973370169227929648594555422492",
     "vol_hyp_trefoil": "0.0",
     "vol_hyp_reason": "(2,3) torus knot: Seifert-fibered, non-hyperbolic, Gromov norm 0"
-  },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  }
 }
