@@ -755,3 +755,84 @@ pytest tools/pyhecke                     193 passed, 44 skipped, 0 failed
 - [ ] Consider building the Rust binary in the gate, so CI does not quietly
       run at f64 while local runs are at 50 dps. The warning makes the
       divergence visible; building it removes the divergence.
+
+## 2026-08-23 (fifth) — no float64 in CI
+
+Two mechanisms, because either alone leaves a hole.
+
+### 1. CI builds the MPFR solver, and a missing binary is an ERROR
+
+`lp-dual-gate.yml` now installs `libgmp-dev`/`libmpfr-dev`, builds
+`clarabel-operator-selection-lp --features clarabel-mpfr` (cached on
+`Cargo.lock`; cold build ~3.5 min), and runs the whole job under
+**`QOU_REQUIRE_CLARABEL=1`** so the fallback raises instead of downgrading.
+
+Then it *proves* the binary took effect rather than assuming it:
+
+```python
+d = solve_operator_selection_lp(t, G, 1.0).to_dict()
+assert d.get("backend") == "clarabel-mpfr", (
+    f"CI solved with {d.get('backend')!r} — the MPFR binary did not take "
+    "effect, so every witness this job could produce would be f64")
+assert "y0_star_str" in d
+```
+
+A build step that succeeds while the binary is never found is exactly the
+"absent check indistinguishable from a passing one" shape this whole arc keeps
+turning up; the assertion is what closes it.
+
+Verified locally, both directions:
+
+```
+with the binary      backend='clarabel-mpfr'  bits=167  primal_obj 3.5733e-44   ASSERTIONS PASS
+binary missing + Q_R_C=1   RuntimeError: "refusing to fall back to scipy float64"
+```
+
+### 2. A committed f64-solved witness FAILS the gate
+
+Building the binary only protects solves that happen *in* CI. A witness
+produced on a box without it and committed would still sail through. So
+`lp_dual_witness_validator.py` now reads the `backend` provenance and fails on
+any flagged witness recording a float64 solver (`scipy-highs`, `cvxpy`, `scs`,
+…), including the prefixed forms producers use for a second solver in one row
+(`sdp_backend`, `lp_backend`).
+
+**Ratchet, not sweep.** A witness with *no* `backend` field is reported and not
+failed — 26 of the 27 flagged predate the field, and blocking on that backlog
+would block every unrelated PR. Same scoping as the vacuity ledger gate and
+`probe-float64-gate`.
+
+**Shown to fail before being trusted.** Planted a fixture pair (a script
+importing `linprog`, a witness recording `backend: "scipy-highs"`):
+
+```
+✗ float64 backend: 1 flagged witness(es) record a float64 solve:
+  ✗  _tmp_f64_gate_probe.witness.json   backend=scipy-highs
+Exit 1 (--strict mode).                       exit=1
+fixture removed →                             exit=0
+```
+
+### Verification
+
+```
+lp_dual_witness_validator --strict-wired   exit 0
+witness_raw_float64_audit --strict         NEW 0, REGRESSED 0, excused 4,004/45
+witness_raw_float64_audit --self-test      25/25 PASSED
+pytest tools/pyhecke                       193 passed, 44 skipped, 0 failed
+```
+
+### Still true, and worth stating plainly
+
+All workflows in this repo are `workflow_dispatch:`-only under the 2026-06-30
+Actions-billing directive, so none of this fires on push. It runs on demand and
+locally. That is a property of the repo's CI posture, not of these gates.
+
+## Next
+
+- [x] Build the Rust binary in the gate; make a missing binary an error.
+- [x] Fail CI on a committed witness that records a float64 solve.
+- [ ] **Owner: switch the producers that force `backend="scipy"`** —
+      `aK_via_lp_dual_full.py` at 812 fields chief among them. The new gate
+      does not catch those: they record `backend="scipy-highs"` *honestly*,
+      and forcing that backend is a deliberate choice the gate should not
+      override on its own.

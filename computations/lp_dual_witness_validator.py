@@ -172,6 +172,54 @@ def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
     return True, f"{field} matches '{hint}' + script imports '{marker}'"
 
 
+# ── float64-backend gate (bean qou/ftuv, 2026-08-23) ─────────────────────
+#
+# `LpDualResult` / `SdpDualResult` now record WHICH solver served each solve
+# (`backend`, `precision_bits`). Before that, `backend="auto"` picked
+# clarabel-MPFR or scipy f64 depending on whether a Rust binary happened to be
+# built, with nothing printed and nothing recorded — the same producer writing
+# witnesses whose residuals differ by ~28 orders of magnitude (3.6e-44 vs
+# 1.07e-10 on H_3), indistinguishable afterwards.
+#
+# This turns that record into a gate: a witness that says it was solved in
+# float64 FAILS. It is a RATCHET, not a sweep — a witness with no `backend`
+# field at all is reported, never failed, because the corpus predates the
+# field and blocking on the backlog would block every unrelated PR. That is
+# the same scoping the vacuity ledger gate and `probe-float64-gate` use.
+F64_BACKENDS = frozenset({
+    "scipy-highs", "scipy", "highs", "cvxpy", "scs", "ecos", "osqp",
+})
+
+
+def _recorded_backends(path: Path) -> tuple[set[str], bool]:
+    """`(f64_backends_found, any_backend_recorded)` for one witness."""
+    try:
+        data = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return set(), False
+    found: set[str] = set()
+    seen_any = False
+
+    def walk(o):
+        nonlocal seen_any
+        if isinstance(o, dict):
+            for k, v in o.items():
+                # `backend`, and the prefixed forms producers use for a
+                # second solver in the same row (`sdp_backend`, `lp_backend`).
+                if k == "backend" or k.endswith("_backend"):
+                    if isinstance(v, str):
+                        seen_any = True
+                        if v.strip().lower() in F64_BACKENDS:
+                            found.add(v)
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+
+    walk(data)
+    return found, seen_any
+
+
 def collect_wired_witnesses(repo_root: Path) -> set[str]:
     """Collect wired witness basenames from content block `computation.witness`."""
     wired: set[str] = set()
@@ -240,6 +288,32 @@ def main(argv: list[str]) -> int:
             print(f"  - {w.name:45s} [{status}] {reason}")
         print()
 
+    # ── float64-backend gate ──────────────────────────────────────────
+    f64_solved: list = []
+    unannotated = 0
+    for w, _reason in flagged:
+        bad, seen = _recorded_backends(w)
+        if bad:
+            f64_solved.append((w, sorted(bad)))
+        elif not seen:
+            unannotated += 1
+    if f64_solved:
+        print(f"✗ float64 backend: {len(f64_solved)} flagged witness(es) record "
+              "a float64 solve:")
+        for w, bad in f64_solved:
+            print(f"  ✗  {w.name}   backend={', '.join(bad)}")
+        print("  Rebuild the MPFR path and re-run the producer:")
+        print("    cargo build --release --features clarabel-mpfr \\")
+        print("      --bin clarabel-operator-selection-lp   (in tools/hecke-engine)")
+        print("  and/or set QOU_REQUIRE_CLARABEL=1 so a missing binary is an")
+        print("  error rather than a silent downgrade.")
+        print()
+    if unannotated:
+        print(f"ℹ {unannotated} flagged witness(es) record no backend at all — "
+              "produced before the field existed. Reported, not failed: the "
+              "gate ratchets on NEW float64 solves.")
+        print()
+
     failures = []
     for w, reason in flagged:
         result = verify_dual_present(w)
@@ -252,12 +326,23 @@ def main(argv: list[str]) -> int:
     else:
         scope_msg = "flagged witnesses"
 
+    # The float64-backend gate shares the strict scoping: in --strict-wired it
+    # blocks only witnesses a content block cites, in --strict everything.
+    f64_blocking = (
+        [w for w, _ in f64_solved if w.name in wired] if strict_wired
+        else [w for w, _ in f64_solved]
+    )
+
     if not failures:
         if strict_wired:
             print(f"OK — all {len([w for w, _ in flagged if w.name in wired])} "
                   "flagged wired witnesses include LP dual.")
         else:
             print(f"OK — all {len(flagged)} flagged witnesses include LP dual.")
+        if f64_blocking and (strict or strict_wired):
+            print(f"Exit 1 — {len(f64_blocking)} witness(es) record a float64 "
+                  "solve (see above).")
+            return 1
         return 0
 
     # Brief failure summary
@@ -284,6 +369,10 @@ def main(argv: list[str]) -> int:
     print("  solve_operator_selection_lp() or solve_psd_operator_selection_sdp().")
     print("The result's .to_dict() contains all required fields.")
     print()
+    if f64_blocking and (strict or strict_wired):
+        print(f"Additionally: {len(f64_blocking)} witness(es) record a float64 "
+              "solve (see above).")
+        print()
     if strict or strict_wired:
         if strict_wired:
             print("Exit 1 (--strict-wired mode).")

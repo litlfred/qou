@@ -42,6 +42,24 @@ name: lp-dual-gate
 #
 # The unscoped run is kept as an informational step that never fails, so the
 # backlog stays visible rather than silently excused.
+#
+# NO FLOAT64 IN CI
+# Two mechanisms, because either alone leaves a hole.
+#
+#   1. The MPFR solver is BUILT here, and `QOU_REQUIRE_CLARABEL=1` makes a
+#      missing binary an ERROR rather than a silent downgrade to scipy f64.
+#      Without this, CI ran every solve at ~16 digits while a developer box
+#      with the binary built ran at ~46 — a residual difference of ~28 orders
+#      (1.07e-10 vs 3.6e-44 on H_3) with nothing in the log to say so.
+#
+#   2. The validator FAILS on any flagged witness whose recorded `backend` is
+#      a float64 solver. That catches an f64 witness produced anywhere and
+#      committed, not only one produced in this job. It is a ratchet: a
+#      witness with no `backend` field is reported and not failed, because
+#      the field is new (26 of 27 flagged witnesses predate it) and blocking
+#      on that backlog would block every unrelated PR.
+#
+# The cargo build is cached on the lockfile; a cold build is ~3.5 min.
 
 on:
   # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
@@ -58,6 +76,8 @@ jobs:
       # path. Without this the validator dies on import before scanning
       # anything — which is how it went unrun locally too.
       PYTHONPATH: computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate
+      # A missing MPFR binary must fail, not downgrade. See "NO FLOAT64 IN CI".
+      QOU_REQUIRE_CLARABEL: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -67,6 +87,37 @@ jobs:
           python-version: '3.12'
       - name: Install numeric stack
         run: python3 -m pip install --quiet numpy scipy mpmath
+      - name: MPFR/GMP headers (rug -> gmp-mpfr-sys builds against these)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libgmp-dev libmpfr-dev
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/hecke-engine/target
+          key: hecke-mpfr-${{ runner.os }}-${{ hashFiles('tools/hecke-engine/Cargo.lock') }}
+          restore-keys: hecke-mpfr-${{ runner.os }}-
+      - name: Build the MPFR operator-selection LP
+        working-directory: tools/hecke-engine
+        run: |
+          cargo build --release --features clarabel-mpfr \
+            --bin clarabel-operator-selection-lp
+      - name: Confirm CI solves at 50 dps, not float64
+        run: |
+          python3 - <<'EOF'
+          import numpy as np
+          from pyhecke import gram
+          from pyhecke.lp_dual_solver import solve_operator_selection_lp
+          t = np.array(gram.TR_M, dtype=float)
+          G = np.array(gram.gram_matrix(), dtype=float)
+          d = solve_operator_selection_lp(t, G, 1.0).to_dict()
+          print(f"backend={d.get('backend')!r} precision_bits={d.get('precision_bits')}")
+          print(f"primal_obj={d['primal_obj']:.4e}")
+          assert d.get("backend") == "clarabel-mpfr", (
+              f"CI solved with {d.get('backend')!r} — the MPFR binary did not "
+              "take effect, so every witness this job could produce would be f64")
+          assert "y0_star_str" in d, "no full-precision companions in the result"
+          EOF
       - name: Gate — content-wired LP/SDP witnesses must report their duals
         run: python3 computations/lp_dual_witness_validator.py --strict-wired
       - name: Survey (informational, never fails)
