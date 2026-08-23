@@ -79,8 +79,8 @@ theorem codim_block_contribution {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ]
     Ref: [manuscript] `thm:frobenius-codim-universal`. -/
 theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     [SemisimpleFrobeniusAlgebra Λ] :
-    ∑ μ, (1 / (frobDimQ μ * frobTauIdem μ)) * frobTauIdem μ
-      = ∑ μ, 1 / frobDimQ μ := by
+    ∑ μ : Λ, (1 / (frobDimQ μ * frobTauIdem μ)) * frobTauIdem μ
+      = ∑ μ : Λ, 1 / frobDimQ μ := by
   apply Finset.sum_congr rfl
   intro μ _
   exact codim_block_contribution μ
@@ -88,9 +88,13 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
 /-- Helper: `(1 / (a * b)) * b = 1 / a` when both are non-zero.
     Used in `frobenius_codim_tau_invariant` to show the per-block
     contribution telescopes to `1 / dim_q` independent of τ. -/
-private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (_ha : a ≠ 0) (hb : b ≠ 0) :
+private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) :
     (1 / (a * b)) * b = 1 / a := by
-  rw [div_mul_eq_mul_div, one_mul, mul_div_assoc, div_self hb, mul_one]
+  -- The old `rw` chain reached `mul_div_assoc` with the goal at
+  -- `b / (a * b)`, where the product is in the DENOMINATOR, so the lemma
+  -- had nothing to fire on. Both hypotheses are genuinely needed to clear
+  -- the denominators, so `_ha` is no longer an unused binder.
+  field_simp
 
 /-- **τ-invariance of the Frobenius co-Casimir trace.**
 
@@ -119,8 +123,8 @@ theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
     (dim_q : Λ → ℝ) (h_dim : ∀ μ, dim_q μ ≠ 0)
     (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ μ, τ₁ μ ≠ 0) (hτ₂ : ∀ μ, τ₂ μ ≠ 0) :
     -- Both Frobenius pairings give the same C_{dim_q} trace value.
-    ∑ μ, (1 / (dim_q μ * τ₁ μ)) * τ₁ μ
-      = ∑ μ, (1 / (dim_q μ * τ₂ μ)) * τ₂ μ := by
+    ∑ μ : Λ, (1 / (dim_q μ * τ₁ μ)) * τ₁ μ
+      = ∑ μ : Λ, (1 / (dim_q μ * τ₂ μ)) * τ₂ μ := by
   -- Per-block contribution telescopes to 1 / dim_q λ for both τ₁
   -- and τ₂, independent of the τ choice.  Proved via explicit
   -- lemma `one_div_mul_eq_div_of_ne` instead of `field_simp`
@@ -221,7 +225,7 @@ noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
 theorem hecke_n2_frobenius_codim (q : ℝ) :
     ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
   rw [Fin.sum_univ_two]
-  simp
+  norm_num [heckeH2DimQ]
 
 /-- The q-hook-length dimensions of the five partitions of n=4.
     Indexed by `Fin 5`:
@@ -795,26 +799,26 @@ theorem hecke_n8_frobenius_codim (q : ℝ) :
     contribute exactly 1 (since 1/1 = 1), and all other 1/dim_q(λ)
     terms are positive. -/
 theorem gb_filtration_self_dual_bound
-    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
     (s a : Λ) (hsa : s ≠ a)
     (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
-    (h_pos : ∀ μ, 0 < frobDimQ μ) :
-    (2 : ℝ) ≤ ∑ μ, 1 / frobDimQ μ := by
+    (h_pos : ∀ μ : Λ, 0 < frobDimQ μ) :
+    (2 : ℝ) ≤ ∑ μ : Λ, 1 / frobDimQ μ := by
   -- Split the sum over the universe finset into {s, a} and the rest.
   -- The two flagged blocks contribute 1 each; the remaining terms are positive.
   have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
     rw [h_dim_s, h_dim_a]; norm_num
   -- Rewrite the sum: 1/frobDimQ s + 1/frobDimQ a + (rest)
   have hSplit :
-      ∑ μ, 1 / frobDimQ μ
+      ∑ μ : Λ, 1 / frobDimQ μ
         = 1 / frobDimQ s + 1 / frobDimQ a
           + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ := by
-    rw [show ∑ μ, 1 / frobDimQ μ
+    rw [show ∑ μ : Λ, 1 / frobDimQ μ
           = 1 / frobDimQ s + ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ from
-        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+        (Finset.add_sum_erase _ _ (Finset.mem_univ s)).symm]
     rw [show ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ
           = 1 / frobDimQ a + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ from
-        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+        (Finset.add_sum_erase _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
     ring
   rw [hSplit, h_two]
   -- 2 ≤ 2 + (sum of positives)
@@ -847,26 +851,26 @@ theorem gb_filtration_self_dual_bound
     Ref: [manuscript] `prop:partition-sum-proton-residual` (general
     n ≥ 3 strict bound). -/
 theorem gb_filtration_strict_self_dual_bound
-    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
     (s a t : Λ) (hsa : s ≠ a) (hst : s ≠ t) (hat : a ≠ t)
     (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
-    (h_pos : ∀ μ, 0 < frobDimQ μ) :
-    (2 : ℝ) < ∑ μ, 1 / frobDimQ μ := by
+    (h_pos : ∀ μ : Λ, 0 < frobDimQ μ) :
+    (2 : ℝ) < ∑ μ : Λ, 1 / frobDimQ μ := by
   have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
     rw [h_dim_s, h_dim_a]; norm_num
   have ht_mem : t ∈ (Finset.univ.erase s).erase a :=
     Finset.mem_erase.mpr ⟨hat.symm,
       Finset.mem_erase.mpr ⟨hst.symm, Finset.mem_univ t⟩⟩
   have hSplit :
-      ∑ μ, 1 / frobDimQ μ
+      ∑ μ : Λ, 1 / frobDimQ μ
         = 1 / frobDimQ s + 1 / frobDimQ a
           + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ := by
-    rw [show ∑ μ, 1 / frobDimQ μ
+    rw [show ∑ μ : Λ, 1 / frobDimQ μ
           = 1 / frobDimQ s + ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ from
-        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+        (Finset.add_sum_erase _ _ (Finset.mem_univ s)).symm]
     rw [show ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ
           = 1 / frobDimQ a + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ from
-        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+        (Finset.add_sum_erase _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
     ring
   rw [hSplit, h_two]
   -- Residual sum is strictly positive: it contains 1/frobDimQ t > 0.
