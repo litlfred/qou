@@ -74,6 +74,34 @@ GATES=(
   # does not apply here. Coverage as of 2026-08-22: 42 modules, 18 cone
   # witnesses, 122 package-data witnesses, 0 uncovered.
   "qou-mass vendor mirror|scripts/sync-qou-mass-vendor.py|--check|yes"
+  # BLOCKING, and green on arrival — same reasoning as the vendor mirror above.
+  #
+  # A compiled wheel is a derived artifact, and it goes stale exactly the way
+  # the vendored mirror does, except that nothing about a stale wheel LOOKS
+  # stale: it imports, it runs, it returns numbers.
+  #
+  # Measured instance, bean qou-nm6y: a container carried a wheel built
+  # 2026-08-09. `gram_inverse` was deliberately deleted from the source on
+  # 2026-08-15 because the Markov-Gram form is singular under convention D, so
+  # the 6x6 inverse does not exist and AttributeError is the INTENDED outcome.
+  # The stale wheel still exported it, so delta_lambda_full_variance_phase5e_1
+  # got a "6x6 inverse" of a singular matrix, its try/except never fired, and
+  # 37 float64 values went into a witness. Twelve native-backed witnesses were
+  # regenerated against that wheel and had to be reverted.
+  #
+  # Verified to fire on the real case, not just to pass on the fixed one: the
+  # pre-deletion lib.rs registers 56 exports, the current one 57, and the set
+  # difference is exactly {gram_inverse} — so a wheel built from that source
+  # trips the blocking direction by name.
+  #
+  # Only "installed but undeclared in source" is blocking; a build cannot invent
+  # an export, so it can only mean the wheel predates a deletion, and the call
+  # SUCCEEDS with a wrong number. The reverse is advisory (AttributeError is
+  # loud, and operator_selection_lp is legitimately absent wherever the
+  # clarabel-lp fork could not be fetched). Module not installed exits 0 — it is
+  # optional in several environments, and a gate should not redden on something
+  # it cannot evaluate.
+  "pyhecke-native wheel|scripts/check-pyhecke-native-staleness.py|--check|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then
