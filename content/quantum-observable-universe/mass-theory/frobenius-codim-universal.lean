@@ -471,7 +471,7 @@ theorem hecke_n6_frobenius_codim (q : ℝ) :
         + 2 / (q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹)
         + 1 / ((q ^ 3 + (q ^ 3)⁻¹) * (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹) * (q + q⁻¹)) := by
   rw [Fin_sum_univ_eleven]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-- The q-hook-length dimensions of the fifteen partitions of n=7.
@@ -606,7 +606,7 @@ theorem hecke_n7_frobenius_codim (q : ℝ) :
         + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
                 * (q ^ 4 + 1 + (q ^ 4)⁻¹)) := by
   rw [Fin_sum_univ_fifteen]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-! ## n=8 Frobenius co-Casimir closure
@@ -745,6 +745,12 @@ private lemma Fin_sum_univ_twentytwo {M : Type*} [AddCommMonoid M]
       Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_eight]
   rfl
 
+-- The n=8 sum has 22 branches of degree-7 Laurent expressions; `simp`
+-- exhausts the default heartbeat budget partway through. Deterministic
+-- timeout, not a failed proof. `set_option ... in` must precede the
+-- docstring: placed after it, the docstring is orphaned and the file
+-- fails to parse.
+set_option maxHeartbeats 1000000 in
 /-- **H_8 specialisation: τ(C_dim_q) = Σ_{λ⊢8} 1/dim_q(λ).**
 
     Closes the n=8 case of the Frobenius co-Casimir trace by Fin-22
@@ -784,7 +790,7 @@ theorem hecke_n8_frobenius_codim (q : ℝ) :
         1 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) * (q ^ 4 + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)) +
         1 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)) := by
   rw [Fin_sum_univ_twentytwo]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
