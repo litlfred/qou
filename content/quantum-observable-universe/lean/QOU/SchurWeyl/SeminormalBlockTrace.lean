@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.SeminormalRep
 import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.HeckeInclusion
 
 /-!
 # QOU.SchurWeyl.SeminormalBlockTrace — the structural half of the Markov reduction
@@ -66,7 +67,7 @@ namespace QOU.SchurWeyl
 namespace SeminormalRep
 
 open QOU.Mathlib (StandardYoungTableau)
-open QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal
+open QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
 
 variable {μ : YoungDiagram}
 
@@ -215,6 +216,58 @@ theorem trace_mul_genMat_of_adjoin (q : ℝ) {k : ℕ} (hk : 1 ≤ k) (hkn : k +
       = ∑ T : StandardYoungTableau μ, X T T * seminormalParam q (axialDist T k) :=
   trace_mul_genMat q hk hkn X
     (adjoin_earlyGens_le_blockSubalgebra q ⟨by omega, hkn⟩ hX)
+
+
+/-! ### Connecting to actual Hecke elements
+
+The subalgebra results above are about *matrices*.  What the reduction needs is a statement about
+`y ∈ H_m(q)`.  `heckeIncl` is an `AlgHom` and `adjoin_range_σ_eq_top` says the σ generate, so the
+image of the composite lands in the block subalgebra — and `trace_heckeIncl_mul_lastGen` is then the
+reduction's identity for a single `V_λ`, with its hypothesis discharged rather than assumed.
+-/
+
+/-- **The image of the tower inclusion preserves the blocks.**  For every `y ∈ H_m(q)`, the
+seminormal matrix of `ι y ∈ H_{m+1}(q)` is block-preserving for the top entry. -/
+theorem seminormalRep_heckeIncl_mem_blockSubalgebra {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (m : ℕ) (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
+    seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y)
+      ∈ blockSubalgebra (μ := μ) (m + 2) := by
+  set F : Hecke ℝ q q⁻¹ m →ₐ[ℝ] Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+    (seminormalRep q hq0 hq2 (m + 1) hN).comp (heckeIncl ℝ q q⁻¹ m) with hF
+  have hle : Algebra.adjoin ℝ (Set.range (Hecke.σ ℝ q q⁻¹ m))
+      ≤ Subalgebra.comap F (blockSubalgebra (μ := μ) (m + 2)) := by
+    rw [Algebra.adjoin_le_iff]
+    rintro _ ⟨i, rfl⟩
+    show F (Hecke.σ ℝ q q⁻¹ m i) ∈ blockSubalgebra (μ := μ) (m + 2)
+    rw [hF, AlgHom.comp_apply, heckeIncl_σ, seminormalRep_σ]
+    show seminormalGen q (m + 1) hN i.castSucc ∈ _
+    rw [seminormalGen]
+    have hi := i.isLt
+    have hc : ((i.castSucc : Fin (m + 1)) : ℕ) = (i : ℕ) := by simp
+    exact genMat_mem_blockSubalgebra q (by omega) (by rw [hc, hN]; omega)
+      ⟨by omega, by omega⟩ (by rw [hc]; omega)
+  have hy : y ∈ Algebra.adjoin ℝ (Set.range (Hecke.σ ℝ q q⁻¹ m)) := by
+    rw [HeckeInclusion.adjoin_range_σ_eq_top]; trivial
+  exact hle hy
+
+/-- **The reduction, for a single `V_λ`, stated about an actual Hecke element.**
+
+For every `y ∈ H_m(q)`, with `σ_{m+1}` the last generator of `H_{m+2}(q)`:
+
+`tr(ρ(ι y) · ρ(σ_{m+1})) = ∑_T ρ(ι y)_{TT} · seminormalParam q (axialDist T (m+1))`.
+
+This is `χ^λ(x·σ_n) = ∑_T x_{TT} · a(c(λ/μ) − c_T(n))` — the identity the corner reduction of the
+Markov condition rests on — with the hypothesis now discharged for genuine elements of the
+subalgebra rather than assumed of a matrix. -/
+theorem trace_heckeIncl_mul_lastGen {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (m : ℕ) (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
+    ((seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
+        * genMat q (m + 1) (by omega) (by omega)).trace
+      = ∑ T : StandardYoungTableau μ,
+          (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y)) T T
+            * seminormalParam q (axialDist T (m + 1)) :=
+  trace_mul_genMat q (by omega) (by omega) _
+    (seminormalRep_heckeIncl_mem_blockSubalgebra hq0 hq2 m hN y)
 
 
 end SeminormalRep
