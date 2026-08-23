@@ -169,6 +169,32 @@ def _is_inverse_name(base: str, other: str) -> bool:
 #     `1/16 - sqrt(3)/64` (a sign change), and the h^6 rung from purely
 #     rational to irrational, contradicting that probe's own headline finding.
 
+# G3  THE SITE IS A BAR IMAGE, AND BAR-SYMMETRY IS C-SPECIFIC.  Measured:
+#       bar(z_C) = z_C           (ratio 1)      -- bar-symmetric
+#       bar(z_D) = 1/(q^3 + q)   (ratio q^-4)   -- NOT bar-symmetric
+#     So a line like
+#         z_bar = 1/(sqrt(qi) + sqrt(q))   # = z (bar-symmetric)
+#     is not a spelling of z that needs updating: it is the BAR IMAGE, and
+#     under C it happens to coincide with z.  Substituting z_D there writes
+#     `z_bar = z_D`, which is WRONG under D -- the bar image is q^-4 * z_D.
+#     Neither G1 (no C-named symbol) nor G2 (no ladder phase) catches it.
+#
+#     STATUS, stated exactly, because I first claimed more than is true: the
+#     motivating site `convergence_safe_vhat_tower.py:198` is in the AUDIT's
+#     actionable list, but this migrator would NOT have rewritten it -- the
+#     prefilter requires the value to start `1/(` and that line reads
+#     `mp.mpf(1) / (...)`, so it never reaches any guard. G3 is therefore
+#     PRE-EMPTIVE, not a fix for a live path: it exists so that widening the
+#     prefilter (an obvious future improvement) cannot turn a bar image into
+#     wrong mathematics. The hazard for a HUMAN working the audit's actionable
+#     list is live today.
+#     Converting such a site is a MATHS decision (what is the bar image under
+#     D?), not a substitution, so it is handed to a human.
+
+BAR_SITE = re.compile(r"(^|_)bar(_|$)|\bbar\s*\(|bar-symmetric|bar symmetric",
+                      re.I)
+
+
 def _file_has_c_reference(tree: ast.AST) -> bool:
     """G1: does anything in this file mention a deliberately C-named symbol?"""
     for node in ast.walk(tree):
@@ -238,6 +264,17 @@ def migrate_file(path: pathlib.Path, apply: bool):
         nm = names[0]
         if DELIBERATE.search(nm):
             skipped.append((n.lineno, nm, old_src, "deliberately C-named"))
+            continue
+        # G3: bar images -- see the note above BAR_SITE.
+        line_txt = ""
+        try:
+            line_txt = src.splitlines()[n.lineno - 1]
+        except Exception:
+            pass
+        if BAR_SITE.search(nm) or BAR_SITE.search(line_txt):
+            skipped.append((n.lineno, nm, old_src,
+                            "G3: bar image — bar-symmetry is C-specific "
+                            "(bar(z_D) = q^-4·z_D); substitution here is wrong"))
             continue
         if nm in phase_targets:
             skipped.append((n.lineno, nm, old_src,
