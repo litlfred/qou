@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 306,
-      "proton-pin": 1229,
+      "proton-pin": 1230,
       "unknown": 25,
-      "canonical": 212
+      "canonical": 211
     },
     "stale_total": 306,
     "new_stale": 0,
@@ -7645,9 +7645,9 @@
       {
         "file": "computations/markov/markov-substrate-realization.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
