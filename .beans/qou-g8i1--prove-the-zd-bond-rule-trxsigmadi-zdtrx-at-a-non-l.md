@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T15:45:43Z
+updated_at: 2026-08-23T16:34:16Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -53,3 +53,18 @@ Audit section 4g.
 BLOCKER FOR THE LEAN ROUTE (found 2026-08-19): QOU/Braiding/HnMarkovTrace.lean MarkovTraceTower carries z := 1/(Real.sqrt q + 1/Real.sqrt q) -- CONVENTION C, in a docstring calling it "the canonical Wenzl Markov parameter". My (z+d) bond rule is CONVENTION D (z = q^3/(q^2+1), matched to 4.45e-31 over 16 nuclei). Formalising the rule on top of MarkovTraceTower would silently make it a C-frame statement about a D-frame result.
 
 Use QOU/MathlibExt/MarkovNormalisation.lean instead -- it carries D and argues D is DERIVED (Wenzl r=2), not chosen -- or state z abstractly and instantiate. Lean C-surface measurement tracked as qou-um5h.
+
+LEAN LANDED 2026-08-19: content/quantum-observable-universe/lean/QOU/MathlibExt/MarkovBondRule.lean -- lean-direct EXIT 0, no errors, no warnings, SORRY-FREE (all six declarations depend only on propext / Classical.choice / Quot.sound; no sorryAx). Built on MathlibExt/MarkovNormalisation (convention D), NOT on the C-frame MarkovTraceTower.
+
+PROVED UNCONDITIONALLY, generic [Field R], no R anywhere:
+ * markovZ_inv       z(1/q) = 1/(q(q^2+1))
+ * markovZ_sub_h     z - h = z(1/q)  -- THE NON-OBVIOUS ONE. The n-n bond letter lands EXACTLY on the bar image of the Markov parameter; this is what makes q -> 1/q act as p<->n conjugation on the bond letters, and it is special to convention D.
+ * mirrorP_eq        P = 12 q^5 (q^2+1)(z + dIface)  [needs CharZero, carried on that theorem alone -- it clears 2,3,4,12]
+ * mirrorP_bar_sub   q^12 P(1/q) - P(q) = (q-1)^5 (q+1)^3 (q^2+1)^2  -- the order-5 vanishing, DERIVED
+ * bondFactor_mirror_cancel   for ANY exponents a b : N, the bond factors cancel out of the mirror-crossed ratio leaving (zbar+dbar)/(z+d). Stated about arbitrary ring elements, so it is independent of every other definition in the file. THIS IS THE NUCLEUS-INDEPENDENCE.
+
+CARRIED AS A HYPOTHESIS, NEVER DISCHARGED: class BondRule with the single field tr_mul_sigmaPlus : tr(x * (sigma_g + d I)) = (z+d) tr x for g unused by x. Content-bearing per 3b-cond (a parameter-quantified equation in the shape of the claim, not a marker), NO instance provided -- the honest representation of an open primary. bond_pp_nn derives the p-p and n-n bond values from it CONDITIONALLY.
+
+INDEPENDENT CONFIRMATION AS A SIDE EFFECT: mirrorP_eq being machine-proved means Lean and sympy independently agree that P is the interface Markov weight. That was a single-engine result until now.
+
+STILL OPEN, unchanged: the trace-level rule itself. Mechanism known (gap-multiplicativity + the last-strand Markov property, section 4g), formalising it needs a Markov trace on H_n as a Lean object.
