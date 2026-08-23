@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T03:35:02Z
+updated_at: 2026-08-23T03:40:35Z
 ---
 
 ## Why this bean exists
@@ -405,3 +405,38 @@ The per-component termination worry is now **gone** (the count is explicit and
 `pow_cycleLen_apply` closes it). What remains is the cross-component ordering
 and the reduction's own well-foundedness — genuinely smaller than the piece
 described two entries ago, but not small.
+
+
+## Component ordering — the mutable `seen_start` set is not needed
+
+The reference engine takes components "in increasing order of their smallest
+starting position", implemented with a mutable `seen_start` set. That set has a
+**stateless characterisation**: a position starts a component exactly when it is
+the least position in its own cycle. Modelling it that way removes the state
+entirely — the traversal becomes a filter over `Fin n` in the natural order,
+which is both closer to a specification and far easier to reason about than a
+fold carrying a visited-set.
+
+- `IsLeader f p` — `p` is the least position in its cycle.
+- `exists_leader` — **every position has a leader in its cycle**, so no
+  component is skipped. (Least element of a nonempty finite set.)
+- `leader_unique` — a cycle has **exactly one** leader, so no component is
+  walked twice. Together these two are precisely what `seen_start` was doing,
+  and they are theorems rather than an invariant of a loop.
+- `traversalVerdicts` — the full traversal: every component, in increasing order
+  of least position, each walked once.
+
+53 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## What is left
+
+The descending predicate itself: per crossing, which of its **two** encounters
+in `traversalVerdicts` comes first. The list is now defined and ordered
+correctly; what is missing is the indexing lemma — that each crossing index
+appears exactly twice in `traversalVerdicts` — and then `Descending w` as "for
+every crossing, the earlier of its two entries is `over`". After that, the
+well-founded reduction, which is a separate argument.
+
+The "exactly twice" lemma is the natural next target: it is what makes "first
+of the two" well posed, and it is the traversal-level counterpart of
+`stepOver_lo_ne_hi` (which gave opposite verdicts at a single crossing).
