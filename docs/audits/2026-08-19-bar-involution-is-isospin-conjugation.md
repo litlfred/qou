@@ -162,10 +162,10 @@ That is the same extensive/intensive language the `Δ_λ` magnitude problem is
 stated in — where the missing object is likewise *"a separate additive extensive
 term"* rather than a per-block weight. Here the separation is exact and measured.
 
-**Still open, and not explained.** The *number* of interface letters grows with
-`A`, yet `δ` does not. Something makes a growing set of interface defects
-contribute an `A`-independent net amount to `ln(free/atom)`. That is the missing
-step, and any closed form for `δ` has to come through it. I do not have it.
+**Still open, and not explained.** ~~The *number* of interface letters grows with
+`A`, yet `δ` does not.~~ **Retracted in §4d** — there is exactly **one** interface
+letter at every `A`; I had miscounted. The `A`-independence needs no such
+explanation.
 
 **The blocker for the symbolic route, named.** `chi_monotone_transfer.word_to_mpfr`
 calls `float(h)` — not as a computation (precision is fine; it rebuilds `d` at
@@ -319,6 +319,89 @@ the fourth digit. Which is canonical is not decided here.
 - None of this derives `Im 𝔙`, and none of it identifies the mirror difference
   with `Q_β`. §5 stands unchanged.
 
+## 4d. General `A` — the product formula, and a correction to §4b
+
+§4b called this the real open step:
+
+> *"the **number** of interface letters grows with `A`, yet `δ` does not …
+> That is the missing step."*
+
+**That premise is false.** Censusing the words by letter type, every atom word
+carries **exactly one** color-weighted p–n interface, at every `A`. The bond
+census, verified on 16 nuclei up to `A = 10`:
+
+| | count |
+|---|---|
+| p–n interface (the one non-bar-odd letter) | **1**, always |
+| p–p bonds (`d = 0`, plain `σ`) | `Z − 1` |
+| n–n bonds (`d = −h`, `σ⁻¹`-like) | `N − 1` |
+| **total bonds** | `A − 1` |
+
+Both bond types are *exactly* bar-odd (`0 → 0` and `−h → +h`), so they contribute
+nothing to `δ`. **`δ` is `A`-independent for the plain reason that its sole source
+occurs once, however many nucleons there are.** There was no puzzle; I had
+miscounted, and the bean opened on that miscount (`qou-kgsx`) is answered by
+correcting it rather than by solving it.
+
+### The product formula
+
+```
+tr_M^free / tr_M^atom  =  (12 / P(q)) · (q + q⁻¹)^{A−1} · q^{6 + 2(N−Z)}
+```
+
+Worst `|ratio − 1|` over 16 nuclei, `A = 2…10`: **4.5e-31** — the transfer path's
+own floor (§4b), not a mismatch.
+
+Each factor does one job, and each earns its place in `δ`:
+
+- **`(q + q⁻¹)^{A−1}`** — one Cayley–Hamilton denominator per bond, and there are
+  exactly `A − 1` bonds. `q + q⁻¹` is **bar-even**, so it *cancels* between
+  `R(Z,N;q)` and `R(N,Z;1/q)`. **That cancellation is the `A`-independence of `δ`.**
+- **`q^{6 + 2(N−Z)}`** — a pure **isospin** monomial. Mirror-crossing gives
+  `q^{6+2(N−Z)} / q^{−6−2(Z−N)} = q^{12}`: the isospin dependence cancels and
+  leaves exactly the `12`. **The `12` is `2 × 6`** — twice the isospin-neutral
+  exponent.
+- **`P(q)`** — universal, so it contributes `P(1/q)/P(q)` and nothing else.
+
+Multiplying the three,
+
+> `exp(δ(q)) = q¹² · P(1/q) / P(q)` **for every `(Z,N)`**
+
+no longer three checked points but an identity, given the product formula.
+§4c's closed form is now general, and the earlier exponent bookkeeping
+(`a = 7 − 3Z + N`, `b = A − 1`, `a + a′ + 2b = 12`) is the same statement in
+less transparent coordinates: `a = 6 + 2(N−Z) − (A−1)`, where the `−(A−1)` is
+just the `q` in each bond's `(q²+1)/q`.
+
+### Symbolic confirmation, not only numeric
+
+Five nuclei were also run through the (now unblocked) **symbolic** trace, which
+returns `R` as an exact rational function. Every one lands on the predicted
+monomial, and the mirror-crossed ratio is `q¹² P(1/q)/P(q)` **symbolically**, not
+to a tolerance:
+
+| nucleus | `n` | `R · P / 12` | predicted `q^a (q²+1)^b` | mirror ratio `= q¹²P(1/q)/P(q)` |
+|---|---|---|---|---|
+| `(1,1)` | 6 | `q⁵(q²+1)` | `a=5, b=1` | ✓ |
+| `(1,2)` | 9 | `q⁶(q²+1)²` | `a=6, b=2` | ✓ |
+| `(2,1)` | 9 | `q²(q²+1)²` | `a=2, b=2` | ✓ |
+| `(2,2)` | 12 | `q³(q²+1)³` | `a=3, b=3` | ✓ |
+| `(1,3)` | 12 | `q⁷(q²+1)³` | `a=7, b=3` | ✓ |
+| `(3,1)` | 12 | `(q²+1)³/q` | `a=−1, b=3` | ✓ |
+
+Both orientations of the `A=4` mirror pair are included, which is the case that
+matters: the exponents differ (`7` vs `−1`) and the mirror-crossed result is
+identical.
+
+### What is still not derived
+
+- **The product formula is verified, not proved** — symbolically at six nuclei
+  (`n = 6, 9, 12`), numerically at 16 (`A = 2…10`) to ~1e-31. The bond count and the one-`(q+q⁻¹)`-per-bond factor follow from the
+  Cayley–Hamilton reduction in `_alpha_beta`; the isospin exponent `6 + 2(N−Z)`
+  is measured, not derived.
+- **`P` remains uninterpreted.** Irreducible over `ℚ`, correct, verified,
+  unexplained.
+
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
 The conjecture assigns the bar-even channel to binding (`Re 𝔙`) and the bar-odd
@@ -354,8 +437,10 @@ corpus stated.
    structural instead of `float`-based (§4b). That is what stands between here
    and a derived `δ`; identifying `δ` from the numeric sample instead would be a
    fit.
-3. **Explain the `A`-independence** of `δ` against a growing interface count
-   (§4b). This is the real open step.
+3. ~~**Explain the `A`-independence** of `δ` against a growing interface count.~~
+   **Answered in §4d by correcting the count** — there is one interface letter at
+   every `A`. What remains is proving the product formula from the transfer, and
+   interpreting `P`.
 4. **Re-scope the four bar-oddness sites** (`qou-sglq`) with this in hand: the
    supporting quantity *is* computable, and what it shows is a mirror law, not
    the bar-oddness those sites assert.
