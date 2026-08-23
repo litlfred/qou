@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T08:33:45Z
+updated_at: 2026-08-23T08:55:15Z
 ---
 
 ## Why this bean exists
@@ -640,3 +640,40 @@ one explicit `DecidableRel` instance through this section instead of relying on
 5. ⬜ transfer `card_involved` across that permutation
 
 Then the well-founded reduction.
+
+
+## `cycleLen_inv` — an instance-plumbing wall, now diagnosed (not guessed)
+
+Last entry attributed the failure to `open scoped Classical`. **That was only
+half right.** Removing the `Classical` decoration from the `cycleLen` family was
+a real fix for a *different* mismatch — a standalone probe of exactly the same
+statement compiles fine without it, and the file is simpler for the removal
+(kept). But `cycleLen_inv` still fails, and the cause is one level deeper.
+
+Measured, so the next attempt need not repeat it:
+
+* `∀ g, cycleLen g p = orderOf (g.cycleOf p) := fun _ => rfl` **holds** — the
+  definition is transparent, so `cycleLen` is *not* the obstruction.
+* `show orderOf (f⁻¹.cycleOf p) = orderOf (f.cycleOf p)` is rejected as **not
+  definitionally equal** to `cycleLen f⁻¹ p = cycleLen f p`. That is only
+  possible if the two `DecidableRel f.SameCycle` arguments differ.
+* `orderOf (f⁻¹.cycleOf p) = orderOf ((f.cycleOf p)⁻¹)` **is provable** via
+  `congr 1` + `cycleOf_inv` — and *still* will not `rw` into the goal. Same
+  divergence, one level out.
+
+So it is instance plumbing, not mathematics: fix **one** `DecidableRel` instance
+for the section and pass it explicitly, or bridge with `Subsingleton.elim`. The
+diagnosis is now in the Lean file so it is not re-derived.
+
+**This blocks `lapStarts_nodup`** (step 3), because the walk runs under `f⁻¹`
+while the lap count is stated for `f`. Steps 1-2 remain proved.
+
+## Also this pass
+
+The Lean LSP MCP server reconnected, but **its Mathlib search tools are
+unusable here** — `leansearch` and `loogle` both return
+`403 Forbidden` through the agent proxy, and `lean_goal` timed out at 60 s on
+this file. Local `#check` / `exact?` probes remain the only working
+name-discovery route in this container. Lemma names confirmed this way for the
+next steps: `List.nodup_flatMap`, `List.map_flatMap`,
+`List.perm_of_nodup_nodup_toFinset_eq`, `List.nodup_finRange`.

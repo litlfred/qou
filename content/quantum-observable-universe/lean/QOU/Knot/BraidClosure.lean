@@ -553,13 +553,11 @@ rather than a side condition.
 it is the lcm over all cycles and so would walk short components round and round
 instead of once. -/
 
-open scoped Classical in
 /-- The number of laps that returns a strand to its start: the length of its
 cycle. -/
 noncomputable def cycleLen (f : Equiv.Perm (Fin n)) (p : Fin n) : ℕ :=
   orderOf (f.cycleOf p)
 
-open scoped Classical in
 /-- **The walk closes up.** After `cycleLen` laps the strand is back where it
 started — so the component walk is well posed without a termination argument. -/
 theorem pow_cycleLen_apply (f : Equiv.Perm (Fin n)) (p : Fin n) :
@@ -696,7 +694,6 @@ theorem descending_nil : Descending ([] : BraidWord n) :=
 the number of strands in the component — rather than merely a number that
 happens to close the walk. -/
 
-open scoped Classical in
 /-- A strand that closes up alone needs one lap. -/
 theorem cycleLen_of_fixed (f : Equiv.Perm (Fin n)) {p : Fin n} (hp : f p = p) :
     cycleLen f p = 1 := by
@@ -704,7 +701,6 @@ theorem cycleLen_of_fixed (f : Equiv.Perm (Fin n)) {p : Fin n} (hp : f p = p) :
   have : f.cycleOf p = 1 := (Equiv.Perm.cycleOf_eq_one_iff f).mpr hp
   simp [cycleLen, this]
 
-open scoped Classical in
 /-- **Otherwise `cycleLen` is exactly the size of the component.** So the walk
 takes one lap per strand of the component — no more, no fewer. -/
 theorem cycleLen_eq_card_support (f : Equiv.Perm (Fin n)) {p : Fin n}
@@ -830,6 +826,31 @@ theorem walk_disjoint_of_ne_leader (f : Equiv.Perm (Fin n)) {p q : Fin n}
   have h2 : f.SameCycle q x :=
     Equiv.Perm.sameCycle_inv.mp (walk_sameCycle f⁻¹ q x b hy)
   exact hne (leader_unique f hp hq (h1.trans h2.symm))
+
+/-! **Blocked lemma, diagnosed** — `cycleLen f⁻¹ p = cycleLen f p`.
+
+True; not proved here. `cycleOf` takes a `DecidableRel f.SameCycle` argument, and
+separately-elaborated occurrences of it do not agree, so `Equiv.Perm.cycleOf_inv`
+cannot be rewritten into a goal mentioning `cycleLen f⁻¹ p`. Measured, so the
+next attempt need not repeat it:
+
+* `∀ g, cycleLen g p = orderOf (g.cycleOf p) := fun _ => rfl` **holds** — the
+  definition is transparent, so `cycleLen` is *not* the obstruction.
+* `show orderOf (f⁻¹.cycleOf p) = orderOf (f.cycleOf p)` is rejected as **not
+  definitionally equal** to `cycleLen f⁻¹ p = cycleLen f p`, which is only
+  possible if the two `DecidableRel` arguments differ.
+* `orderOf (f⁻¹.cycleOf p) = orderOf ((f.cycleOf p)⁻¹)` is **provable** by
+  `congr 1` + `cycleOf_inv`, yet still fails to `rw` into the goal — the same
+  divergence one level out.
+* Removing `open scoped Classical` from the `cycleLen` family (done — it was
+  causing a *different* mismatch, and the file is simpler for it) does not fix
+  this one.
+
+The fix is instance plumbing, not mathematics: fix **one** `DecidableRel
+(Equiv.Perm.SameCycle ·)` instance for the section and pass it explicitly, or
+state the lemma with `Subsingleton.elim` bridging the two instances. It is
+needed for `lapStarts_nodup`, since the walk runs under `f⁻¹` while the lap
+count is stated for `f`. -/
 
 open scoped Classical in
 /-- **A component walk does not repeat.** The orbit is traversed exactly once,
