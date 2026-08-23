@@ -578,6 +578,33 @@ at the last strand but at an interior gap, which is legitimate for the same
 reason: on either side of an unused generator the word behaves like a separate
 tower.
 
+### Checked against the sources, and against a kernel defect
+
+The sources define the Markov property in the **last-strand** form —
+`τ(h·g_n) = z·τ(h)` for `h ∈ H_n`, i.e. a combination of basis elements *not
+involving* `g_n` (Geck–Lambropoulou §2). That is narrower than "at any gap", so
+the §4g claim needed checking rather than asserting. It checks out, in the
+strongest form:
+
+```
+tr_M(W_< · σ_2)_{H₄} / tr_M(W_<)_{H₃}  =  0.612688037146465252  =  z     exact
+```
+
+`W_<` uses generators `0, 1` so it lies in `H₃`, and `σ_2` is the **last**
+generator of `H₄` — a literal instance of the sources' Markov property. Combined
+with gap-multiplicativity it gives the with-spectator rule. So §4g stands as
+stated.
+
+**It nearly did not.** Run through `chi_all_lambda_reduced_block`, that same test
+returns `0/0`, which reads as "the literal Markov instance is degenerate here"
+and would have retracted a correct claim. The reduced kernel is **silently wrong
+for `n` not divisible by 3** — it composes cached `H₃` blocks and its loop is
+hard-wired to groups of three generators, so `χ^λ(1) ≠ dim λ` and `tr_M(1) = 0`
+at `n = 4, 5, 7, 8`, where the normalisation `Σ y_λ f^λ = 1` demands `1`.
+`chi_monotone_transfer.chi_all_lambda` is correct at every `n`. Production is
+unaffected (`tr_m_atom_via_transfer` only calls it at `n = 3A`), but it is a trap:
+bean `qou-ym48`.
+
 ### Status
 
 This is a **mechanism, not a Lean proof**. What it does is reduce `qou-g8i1` from
