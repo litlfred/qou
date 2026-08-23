@@ -133,13 +133,24 @@ assertions pass — confirms all of the above and sharpens two points.
 `0.499320334183694452`, and the same module's `markov_parameter:53` returns
 `√q/(1+q)` — **both C spellings in one file**, exactly mirroring the Lean.
 
-*A second, independent finding: the block's figure is stale.* The shipped
-`c3_target_at` roots at `1.1099785934034`; the block states `1.10997859303152`.
-That `3.35e-10` gap is **2.9% of the `1.281e-8` anchor interval**, so today's
-producer puts the landmark at **83.2%**, not 80.3%. Constant vintages,
-presumably — but it means *any* percentage quoted inside this interval is
-hypersensitive at the `1e-10` level and should carry that warning. My earlier
-caveat about my own reconstruction turns out to apply to the block's number too.
+*A second finding — **RETRACTED, same day**.* I reported that the block's `q*`
+and its "80.3%" were **stale**, on the basis that the shipped `c3_target_at`
+rooted at `1.1099785934034` against the block's `1.10997859303152`. **That was
+my error, not the block's.** I drew `Q_codata` from
+`experimental_constants.Q_NEUTRON_MEV` while the block's own producer uses
+`substrate.codata_constants.Q_BETA_MEV`. The two differ by `8.8e-10` relative,
+and at `dq*/dQ_β = −0.539` that is a `3.7e-10` shift — 2.9% of the anchor
+interval, which is exactly the gap I saw.
+
+With the producer's constants the probe reproduces `q* = 1.109978593031523…`,
+matching the block to **2.96e-15**, at **80.2763%** — the block's 80.3%. Running
+the block's cited producer directly gives the same. **The block is faithful to
+its producer, and both of its 80.3% figures are correct.**
+
+What the error did inadvertently demonstrate is the block's *own* point: a
+`8.8e-10` change in `Q_β` moves the landmark ~3 percentage points across the
+anchor interval. That is the hypersensitivity the block warns about, arrived at
+by walking into it.
 
 *The D column is a sensitivity measurement, not a value.* Substituting `z_D`
 into a C-frame relation is the move AGENTS.md forbids for the `c_k` ladder, and
