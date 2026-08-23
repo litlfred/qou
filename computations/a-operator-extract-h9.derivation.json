@@ -1,0 +1,56 @@
+{
+  "target": "the Sub-lemma 2.1 interface operator A^lambda_{xi nu}(I) at the H_9 peel level (A = 3), for the pn and pp interfaces",
+  "target_value": "A^lambda_{xi nu}(I) recovered from chi^lambda(W_inner . I . beta_block) by least-squares inversion of a bilinear system on K_inner x K_block = 216 test pairs -- NOT a derivation, and NOT consumed by production; see the frontier step",
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for A-operator-extract-h9-pn.witness.json and A-operator-extract-h9-pp.witness.json. One producer at two interface types, so one chain covers both.\n\nTHIS CHAIN EXISTS TO RECORD A NEGATIVE, and its value is that record rather than a derivation. The two witnesses are FITTED, RANK-DEFICIENT, and INERT: they are least-squares extracts, 24 of their 30 partitions are underdetermined, and the production path refuses them by construction. Backing them with a chain that read as a derivation would be exactly the laundering AGENTS.md forbids. What is derived here is the sub-lemma's STRUCTURE -- that such an operator exists and is what the peel recursion needs; what is not derived is the numbers.\n\nThe honest replacement is the closed-form categorical interface operator A^lambda_{xi nu}(I) = Pi_{xi nu} rho_lambda(I) Pi_{xi nu} in a_operator_categorical.py, which is exact rather than fitted. When that supersedes these extracts everywhere, these two witnesses should be retired, not re-derived.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0; the eigenvalue separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint.",
+      "inputs": ["Hecke.Energy"],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Wedderburn blocks and the branching H_n down to H_{n-3} x H_3",
+      "operation": "H_n(q) is split semisimple with blocks indexed by lambda |- n. Restricting to the subalgebra H_{n-3}(q) tensor H_3(q) -- the (A-1)-nucleon prefix and the A-th nucleon's intra-block -- decomposes V_lambda with Littlewood-Richardson multiplicities c^lambda_{xi nu}.",
+      "inputs": ["hecke_relation", "Wedderburn", "Schur"],
+      "output_name": "lr_branching",
+      "output_value": "V_lambda restricted = direct sum over (xi |- n-3, nu |- 3) of c^lambda_{xi nu} copies of V_xi tensor V_nu",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HeckeWedderburn",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Sub-lemma 2.1 -- the peel identity that DEFINES the interface operator",
+      "operation": "For a canonical atomic braid written as beta = W_inner . I . beta_block with W_inner in H_{n-3}, beta_block in H_3 and I the outer-most interface, the character factorises as chi^lambda(beta) = sum over (xi, nu) of c^lambda_{xi nu} . Tr( A^lambda_{xi nu}(I) . (rho_xi(W_inner) tensor rho_nu(beta_block)) ). This EXISTS and is well-defined by the branching above -- the operator is the interface's action on the (xi, nu) isotypic component. It is the structural content of the sub-lemma, and it is the part of this chain that is actually derived.",
+      "inputs": ["lr_branching"],
+      "output_name": "sublemma_2_1_identity",
+      "output_value": "chi^lambda(W_inner . I . beta_block) = sum_{xi,nu} c^lambda_{xi nu} Tr(A^lambda_{xi nu}(I) (rho_xi(W_inner) tensor rho_nu(beta_block)))",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 1,
+      "citation": "manuscript:sublemma-2-1-interface-operator",
+      "notes": "Note what this step does and does not give. It gives that A^lambda_{xi nu}(I) EXISTS and is determined by rho_lambda(I) -- which is why the closed form A^lambda_{xi nu}(I) = Pi_{xi nu} rho_lambda(I) Pi_{xi nu} in a_operator_categorical.py is available at all, verified exact to 1e-49. It does NOT give the numbers by inversion, and the next step does not derive them either."
+    },
+    {
+      "name": "Least-squares inversion at H_9 -- a FIT, rank-deficient on 24 of 30 partitions",
+      "operation": "Rather than evaluating the closed form, this producer INVERTS the sub-lemma numerically: it evaluates chi^lambda on K_inner x K_block = 18 x 12 = 216 test pairs and solves the resulting bilinear system for the entries of A^lambda_{xi nu}(I). Where the system is rank-deficient the solver returns the minimum-norm solution, which is a choice, not a determination.",
+      "inputs": ["sublemma_2_1_identity"],
+      "output_name": "a_operator_h9_extract",
+      "output_value": "30 partitions of 9 at each of I_pn and I_pp; 30 report consistent, but 24 are UNDERDETERMINED -- 80 percent of the recorded operators are a min-norm pick among infinitely many solutions",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:sublemma-2-1-interface-operator",
+      "notes": "script: computations/a_operator/A_operator_extract_at_level.py -- the frontier, and the reason this chain does not claim a derivation.\n\nTHREE THINGS A READER MUST NOT MISREAD.\n\n1. `consistent: 30 of 30` is NOT `determined: 30 of 30`. Consistency says the 216 equations admit a solution; `underdetermined: 24` says that for 24 of the 30 lambda the solution is not unique and what is written into the witness is whichever one has least Frobenius norm. Quoting the residual (max_relative_residual ~ 8.9e-16 on lambda = (9)) as accuracy would compound the error: a min-norm solution of an underdetermined consistent system fits the data exactly BY CONSTRUCTION.\n\n2. These extracts are INERT IN PRODUCTION, verified on main rather than taken from the docstring. canonical_tr_m_via_branching.py returns None for A >= 3 before any extract is applied, with the comment 'return None for A>=3 so any stray caller fails loudly rather than using a fitted extract'. So no live mass or binding value depends on these two witnesses. Only the H_6 (A = 2, deuteron) extract is full-rank and live.\n\n3. The producer's own docstring marks the H_9+ extracts SUPERSEDED, and flags them as suspect under docs/audits/2026-06-16-unjustified-least-squares-fitting-audit.md. The non-fitted replacement is a_operator_categorical.py / a_operator_gauge_align.py. This chain records the extracts as what they are; it is not an endorsement, and re-deriving them would be the wrong move -- retiring them in favour of the closed form is the right one.\n\nThe engine is numpy (float64), which is appropriate for an inert diagnostic and would NOT be appropriate for anything feeding a witness value. The pin recorded in parameters.q_0 is the 17-digit ancestor tracked in bean qou-5op4, not either canonical pin."
+    }
+  ]
+}
