@@ -1,11 +1,11 @@
 ---
 # qou-v6vp
 title: char_fast._compiled_sigmas returns a CONSTANT function of q; "mpmath50" is a label with no high-precision data
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T09:43:02Z
-updated_at: 2026-08-22T12:39:17Z
+updated_at: 2026-08-23T08:12:52Z
 ---
 
 ## What
