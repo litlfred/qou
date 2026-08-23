@@ -11,8 +11,21 @@ numeric matching is performed beyond restating the ledger's own numbers;
 predicted-first gate respected (every identity is derived below BEFORE any
 evaluation, and none touches E_unit).
 
-(1) THE BOND FACTOR IS THE CANONICAL MARKOV PARAMETER. The corpus Markov-
-    Ocneanu-Wenzl trace normalization (pyhecke.gram) sets
+(1) THE BOND FACTOR IS THE CANONICAL MARKOV PARAMETER.
+
+    !! STALE AS WRITTEN (noted 2026-08-23). This paragraph calls
+    z = 1/[2]_v "the canonical Markov parameter". That was convention C,
+    which owner ruling 2026-08-09 excised and 2026-08-15 (R1) re-affirmed:
+    the canonical parameter is D's q^3/(q^2+1). The paragraph predates the
+    ruling and is kept because the FILE ITSELF now contradicts it -- see
+    `z_formula` below, which is D, and the note at
+    `z_canonical_equals_pyhecke_gram_z`, which explains that the resulting
+    mismatch is a deliberate live detector for the pyhecke C/D split
+    (`qou-5wpk`), not a bug. Read identity (1) as "the bond factor is
+    pyhecke.gram's z", which is true and is what is actually tested; do NOT
+    read it as a claim that C is canonical.
+
+    The corpus Markov-Ocneanu-Wenzl trace normalization (pyhecke.gram) sets
         z = 1/(sqrt(q0) + 1/sqrt(q0)) = 1/[2]_v,  v = sqrt(q0)
     — identical to the reeb-flow bond factor z = 1/[2]_v = delta^{-1}.
     The 2H law's z is not a modeling choice; it is THE trace parameter of
@@ -82,6 +95,15 @@ three_v = v**2 + 1 + v**(-2)  # [3]_v
 import pyhecke.gram as gram  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402  (canonical q0, via substrate path)
 
+# DELIBERATE C-vs-D COMPARISON — do not "migrate" this to D. `gram.z` is
+# convention C by registration (`qou-5wpk`, R10-waived); `z_formula` below is
+# D. The mismatch is the POINT: this is the live detector for the pyhecke C/D
+# split, and making it agree would silently delete the signal it exists to
+# raise. See the note at the bottom of this file.
+#
+# The float() cast is likewise left alone: the two values differ by 0.11 while
+# the tolerance is 1e-12, so float64 cannot affect the verdict, and touching a
+# deliberately-failing detector for a precision nicety is not worth the risk.
 z_live = float(gram.z)
 z_formula = Q0**3 / (Q0**2 + 1)
 z_canonical_ok = abs(z_live - z_formula) < 1e-12

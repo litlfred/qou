@@ -169,6 +169,53 @@ a live-C producer and the next agent migrates the one thing that must not be
 z-swapped. `agreed-migration-pending` / `deliberately not migrated` /
 `must be re-derived` are now quarantine markers.
 
+## The shared-package sweep: 2 hits, both deliberate, neither migrated
+
+Scanning `pyhecke`, `qou-substrate`, `qou-mass`, `hecke-engine` and
+`computations/substrate` for C spellings — the natural next step after the local
+cone came up nearly empty — returned exactly **two**, and **both must stay C**:
+
+| site | why it stays |
+|---|---|
+| `qou_mass/_internal/schur_principal_mpmath.py:121` | `_wenzl_constants_convention_C_HISTORICAL` — retained so the excision stays *measurable*; the detector already classified it correctly |
+| `computations/substrate/deuteron_tower_fusion_frame_probe.py:85` | a **deliberate C-vs-D detector** |
+
+The second is worth spelling out, because it is the sharpest example yet of why
+"find C, replace with D" is the wrong instinct:
+
+```python
+z_live    = float(gram.z)          # convention C, registered qou-5wpk, R10-waived
+z_formula = Q0**3 / (Q0**2 + 1)    # convention D
+z_canonical_ok = abs(z_live - z_formula) < 1e-12      # DELIBERATELY FAILS
+```
+
+The file's own note says it: *"`z_canonical_equals_pyhecke_gram_z` is the live
+detector for the `pyhecke` C/D split (`qou-5wpk`) … Silent success on that check
+is exactly the failure shape this campaign exists to find, so it is now loud."*
+Migrating `z_live` to D would make the check pass and **delete the signal it
+exists to raise**. Left untouched, with the reason restated at the line.
+
+The `float()` cast there is also left: the two values differ by **0.11** against
+a `1e-12` tolerance, so float64 cannot affect the verdict, and perturbing a
+deliberately-failing detector for a precision nicety is a bad trade.
+
+### What the sweep did surface: a stale canonical claim in prose
+
+That probe's module docstring opens identity (1) with *"THE BOND FACTOR IS THE
+CANONICAL MARKOV PARAMETER … z = 1/(√q₀ + 1/√q₀)"* — i.e. it asserts **C is
+canonical**, which the 2026-08-09 excision and the 2026-08-15 R1 ruling make
+false. The file then contradicts itself twenty lines down, where `z_formula` is
+D and the mismatch is documented as intentional.
+
+The prose is corrected in place with a `!! STALE AS WRITTEN` note rather than
+rewritten, since identity (1) is still true under the reading *"the bond factor
+is `pyhecke.gram`'s z"* — which is what the code actually tests.
+
+**This is a detector class worth keeping.** A C spelling in a *docstring* is not
+a live-C producer, but it can be a live *claim*, and this one asserted the
+excised convention was canonical. Blanking docstrings the way comments are
+blanked would have hidden it.
+
 ## Still open
 
 - **28 `unresolved` C witnesses.** The import-cone walk (depth 2, local modules
