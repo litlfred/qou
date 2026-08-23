@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-22T21:17:08Z
+updated_at: 2026-08-23T07:44:04Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -64,3 +64,42 @@ STILL OPEN (remaining deep content):
 1. The VALUE tr_M(e·τ·T_β) and the denominator tr_M(T_β) as explicit closed forms — needs the weighted Wedderburn sum tr_M = Σ_λ y_λ χ^λ instantiated for the specific τ, T_β=σ_0σ_1⁻¹, e_{(1³)} (the y_λ closed forms exist in schur_principal_mpmath / WenzlSchurElement but aren't wired to a general braid-word trace in Lean).
 2. Shell-assignment (which shell active) + basis completeness (prop:cohomological-embedding).
 Progress ladder so far: collapse mechanism (1) + inactive branches (2) + active-numerator idempotent collapse (3).
+
+
+
+## ═══ TIERED WORKPLAN (2026-08-23) ═══
+
+Goal: fully derive cor:spectral-decomposition-qvalue's F(τ,N) = |tr_M(e·τ·T_β·e)|/|tr_M(T_β)| and the exact decomposition, in Lean. Ordered by tractability.
+
+**T0 — collapse bookkeeping [DONE].**
+  - knot_operator_product_collapse (#5481): ∏ mostly-1 factors → active.
+  - shellFactor + inactive branches (#5491): non-embeddable/unchanged ⇒ F=1.
+  - trace_idempotent_sandwich (#5496): tr(e·x·e)=tr(e·x), numerator outer-e collapse.
+
+**T1a — denominator closed form [DONE 2026-08-23].**
+  MarkovTrace.trace_gen_mul_invGen: tr_M(σ_i·σ_j⁻¹) = z²−(q−q⁻¹)z for i<j.
+  So tr_M(T_β)=tr_M(σ_0σ_1⁻¹)=z²−(q−q⁻¹)z. sorry-free, no sorryAx.
+
+**T1b — numerator value tr_M(e_{(1³)}·τ·T_β) [NEXT, medium].**
+  Needs: e_{(1³)} the alternating Young idempotent of H_3 as a concrete Hecke
+  element (check QOU.Hecke for a Young-symmetrizer def; if absent, define via the
+  antisymmetrizer over S_3). Then tr_M of the specific word e·τ·T_β. For the
+  trefoil τ=σ_1² the σ_1²-trace closed form already exists
+  (MarkovTraceTower.trM_sigma1_sq / TrMHopfSigma1SqClosedForm). Tractable for
+  small specific τ; general τ needs T2.
+
+**T2 — general braid-word tr_M via weighted Wedderburn sum [KEYSTONE, hard].**
+  Wire tr_M = Σ_λ y_λ χ^λ to a general braid-word trace. y_λ closed forms exist
+  in schur_principal_mpmath / WenzlSchurElement (compute side) but not as a Lean
+  A→R trace on arbitrary words. This is the 08a2 keystone-de-abstraction epic.
+  Prereq for the general active-shell value + exactness.
+
+**T3 — shell-assignment [physical].**
+  Model which shell is active (converting neutron's shell) and that all others
+  are unchanged/non-embeddable, discharging shell_product_collapse's hypothesis
+  for the real nuclear decay, not an abstract Finset.
+
+**T4 — basis completeness [hard, conj-backed].**
+  prop:cohomological-embedding (Rosso-Jones completeness + self-duality
+  τ(r,s)↔τ(s,r)). Guarantees the torus-knot basis is complete ⇒ (v) exactness.
+  Depends on T2.
