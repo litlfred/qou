@@ -551,3 +551,71 @@ unverifiable migration would sit in the tree looking like progress and
 misleading the next reader. The table above is recorded so the discovery
 does not have to be repeated; the migration should land together with
 whatever resolves the structural blocker.
+
+### 4h. The structural fix, and a baseline that had silently expired
+
+The owner authorised the §4e/§4g architectural move. Two library modules now
+hold the structures that content-block siblings were re-declaring or failing
+to reach:
+
+- `QOU/Archimedean/ParticleKnots.lean` — Electron, Positron, Neutrino,
+  Antineutrino, UpQuark, DownQuark
+- `QOU/AlgebraicSubstrate/LocalQZetaFunction.lean`
+
+| file | before | after |
+|---|---:|---|
+| `positron-knot` | 6 | **exit 0** |
+| `up-quark` / `electron-knot` | 4 / 4 | **exit 0** |
+| `neutrino-knot` / `antineutrino-knot` | 3 / 3 | **exit 0** |
+| `local-q-zeta-function` | — | **deleted** (contained only what moved) |
+| `spectral-half-line` | 4 | 6 |
+| `hasse-weil-bound` | 22 | 24 |
+
+**Not a dedup — the duplicates disagreed.** `down-quark.lean` carried
+*stripped-down* copies of `Neutrino` and `UpQuark`. The fuller declarations
+are canonical; field-level identity was checked against all six originals
+before switching.
+
+**The two that rose are not regressions.** Removing the blocker lets those
+files reach proof errors it was hiding.
+
+**The `Complex.abs` migration reverted in §4g was re-applied**, because the
+blocker's removal made it verifiable. It clears its class outright: two
+`Unknown constant Complex.abs` → **zero**.
+
+#### A baseline that expired without saying so
+
+§4d's validation baseline — "✗ Invalid, 5 issue(s), identical on clean HEAD"
+— was measured at `c37d5eda9`, **before this branch was rebased onto
+`e9fd81a63`**. The rebase brought in main's commits, one of which
+(`1d3988bc3`) broke `motivic-perpetual-obstruction`. The count became 21, and
+the 5 stopped being a comparison the moment the base moved. It was carried
+forward across that boundary anyway, and briefly read as evidence that this
+branch had introduced 16 issues.
+
+**Re-measured properly**, by validating `origin/main` in a worktree and
+diffing the issue lists: **21 on main, 21 on the branch, byte-identical apart
+from the worktree path in one error string.** The branch adds nothing.
+
+The rule this earns: *a validation baseline is valid only against a fixed
+base, and a rebase silently invalidates it.* Re-measure the base, do not
+carry the number.
+
+#### A live breakage on `main`, not fixed here
+
+17 of the 21 stem from one commit. `1d3988bc3` changed
+`motivic-perpetual-obstruction.ts` from `conjecture()` to `theorem()` while
+leaving its label `conj:…`. A `theorem` block requires a `thm:` label, so the
+block fails Zod, never loads, and 16 references to it dangle across
+`kummer-tower-motivic-galois`, `chi-minus-six-chain`,
+`perpetual-obstruction-depth-omega`, `ns-obstruction-tower`,
+`substrate-gm-torsion`, `motivic-galois-character`,
+`yekutieli-transcendence-shadow`, `geom-yekutieli-alignment`,
+`brings-is-qou-verification`, `definition-index` and the two
+`qou-motivic-galois-instance` blocks.
+
+Left alone deliberately: the fix direction — relabel and retarget 16
+references, or revert the kind — depends on the author's intent, and the
+commit is recent.
+
+**Standing count: 47 → 42.**
