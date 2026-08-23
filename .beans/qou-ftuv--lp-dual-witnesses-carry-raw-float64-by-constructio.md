@@ -690,3 +690,68 @@ decision, not the machinery.
 - [ ] CI/fresh containers fall back to f64 silently when the Rust binary is
       unbuilt. If the MPFR path is meant to be the norm, that fallback should
       be loud — or the binary should be built in the gate.
+
+## 2026-08-23 (fourth) — the fallback is now audible, and the witness says how it was solved
+
+The remaining silent failure: `backend="auto"` picks clarabel-MPFR when the
+Rust binary is on disk and scipy f64 when it is not, **with nothing printed and
+nothing recorded**. Same producer, CI vs fresh container vs developer box,
+writing witnesses whose residuals differ by ~28 orders of magnitude — and no
+way to tell them apart afterwards. A witness that does not record how it was
+solved is indistinguishable from one solved the other way.
+
+That needed no ruling: it changes no numbers, only whether the difference is
+visible.
+
+**Provenance on the result, emitted by `to_dict()`** — `LpDualResult` and
+`SdpDualResult` both now carry
+
+```
+backend         "clarabel-mpfr" | "scipy-highs"
+precision_bits  167             | 53
+```
+
+**And the downgrade warns.** `QOU_REQUIRE_CLARABEL=1` already turned it into an
+error, but the default path said nothing. It now raises a `RuntimeWarning`
+naming the consequence (~16 digits instead of ~46) and both remedies.
+
+Verified on all three paths:
+
+```
+clarabel available (auto)   backend='clarabel-mpfr'  bits=167  primal_obj +3.5733e-44   companions: yes
+forced scipy                backend='scipy-highs'    bits=53   primal_obj +1.0662e-10   companions: no
+clarabel missing (auto)     backend='scipy-highs'    + RuntimeWarning raised
+```
+
+### First movement on `qou/f7af`'s number: 4,052 → 4,004
+
+Re-running `binding_sdp_bondgraph_degenerate.py` — no backend argument, just
+the default — picked clarabel because the binary now exists, so its 48 carved
+fields gained `*_str` companions and became **shadowed rather than carved**.
+Its `y0_star` sharpened from `-0.0` to `-7.472446261721805e-46` in the process.
+
+So the excused count moves **without** the owner decision, one producer at a
+time, as producers are re-run in an environment where the binary is built. The
+owner call is only about switching producers that *force* `backend="scipy"` —
+`aK_via_lp_dual_full.py` being the one this bean was filed over, at 812 fields.
+
+### Verification
+
+```
+witness_raw_float64_audit --self-test    25/25 PASSED
+witness_raw_float64_audit --strict       NEW 0, REGRESSED 0, exit 0
+                                         excused 4,052 -> 4,004 in 45 witnesses
+lp_dual_witness_validator --strict-wired 3/3 wired OK
+pytest tools/pyhecke                     193 passed, 44 skipped, 0 failed
+```
+
+## Next
+
+- [x] Make the silent f64 fallback loud — warning + `backend` / `precision_bits`
+      recorded in every result and witness.
+- [ ] **Owner: switch the producers that force `backend="scipy"`.** That is
+      now the only remaining lever, and `aK_via_lp_dual_full.py` (812 fields)
+      is the whole reason this bean exists.
+- [ ] Consider building the Rust binary in the gate, so CI does not quietly
+      run at f64 while local runs are at 50 dps. The warning makes the
+      divergence visible; building it removes the divergence.

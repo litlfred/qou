@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import json
 import os
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -70,6 +71,20 @@ class LpDualResult:
     primal_obj_str: Optional[str] = None
     dual_obj_str: Optional[str] = None
     duality_gap_str: Optional[str] = None
+    # WHICH SOLVER PRODUCED THIS, and at what width.
+    #
+    # `backend="auto"` picks clarabel-MPFR when the Rust binary is on disk and
+    # falls through to scipy f64 when it is not — silently, by default. So the
+    # same producer run in CI, in a fresh container, and on a developer box
+    # could write witnesses differing by ~28 orders of magnitude in residual
+    # with nothing in the file saying which had happened. A witness that does
+    # not record how it was solved cannot be told apart from one solved the
+    # other way.
+    #
+    # `"clarabel-mpfr"` with `precision_bits` set, or `"scipy-highs"` with
+    # `precision_bits = 53`. Always emitted by `to_dict()`.
+    backend: Optional[str] = None
+    precision_bits: Optional[int] = None
 
     def to_dict(self) -> dict:
         """Serialize both sides of the LP.
@@ -98,6 +113,10 @@ class LpDualResult:
             "duality_gap": float(self.duality_gap),
             "feasible": bool(self.feasible),
         }
+        if self.backend is not None:
+            d["backend"] = self.backend
+        if self.precision_bits is not None:
+            d["precision_bits"] = int(self.precision_bits)
         for key, val in (
             ("x_star_str", self.x_star_str),
             ("y0_star_str", self.y0_star_str),
@@ -166,6 +185,8 @@ def solve_frobenius_dual_lp(
             dual_obj=float("nan"),
             duality_gap=float("nan"),
             feasible=False,
+            backend="scipy-highs",
+            precision_bits=53,
         )
 
     x_star = np.asarray(res.x)
@@ -252,6 +273,8 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         # That is worse than an absent field: a reader takes `*_str` as the
         # authoritative value precisely because it is a string.
         **_str_fields_if_decimal(out),
+        backend="clarabel-mpfr",
+        precision_bits=int(out["precision_bits"]) if out.get("precision_bits") else None,
     )
 
 
@@ -425,6 +448,21 @@ def solve_operator_selection_lp(
                     "unavailable; refusing to fall back to scipy float64. "
                     f"Build it (see _find_clarabel_lp_bin). Cause: {_e!r}"
                 ) from _e
+            # Not strict — but say so. The downgrade is ~28 orders of
+            # magnitude in residual (3.6e-44 -> 1.07e-10 on H_3), and it used
+            # to happen with nothing printed, so a CI run and a local run
+            # could write materially different witnesses and look identical
+            # in the log. The result records `backend` either way; this makes
+            # it visible at the moment it happens too.
+            warnings.warn(
+                "clarabel-MPFR unavailable — falling back to scipy float64. "
+                "Duals will carry ~16 digits instead of ~46, and the witness "
+                'will record backend="scipy-highs". Build the binary, or set '
+                "QOU_REQUIRE_CLARABEL=1 to make this an error. "
+                f"Cause: {_e!r}",
+                RuntimeWarning,
+                stacklevel=2,
+            )
         else:
             # Return clarabel when forced, or in auto mode when it actually
             # solved; otherwise (auto + infeasible/error) fall back to scipy.
@@ -494,6 +532,8 @@ def solve_operator_selection_lp(
         dual_obj=dual_obj,
         duality_gap=duality_gap,
         feasible=True,
+        backend="scipy-highs",
+        precision_bits=53,
     )
 
 
@@ -652,6 +692,13 @@ class SdpDualResult:
     dual_obj_str: Optional[str] = None
     duality_gap_str: Optional[str] = None
     eigenvalues_str: Optional[list] = None
+    # Which solver produced this, and at what width — same reason as
+    # `LpDualResult`: `backend="auto"` silently picks clarabel-MPFR or
+    # cvxpy/SCS f64 depending on whether a Rust binary happens to be built,
+    # and a witness that does not say which cannot be told apart from one
+    # solved the other way.
+    backend: Optional[str] = None
+    precision_bits: Optional[int] = None
 
     def to_dict(self) -> dict:
         """Serialize the SDP, f64 fields verbatim plus `*_str` companions.
@@ -677,6 +724,10 @@ class SdpDualResult:
             "eigenvalues": list(self.eigenvalues),
             "feasible": bool(self.feasible),
         }
+        if self.backend is not None:
+            out["backend"] = self.backend
+        if self.precision_bits is not None:
+            out["precision_bits"] = int(self.precision_bits)
         for key, val in (
             ("X_star_str", self.X_star_str),
             ("Z_star_str", self.Z_star_str),
@@ -722,6 +773,7 @@ def _solve_psd_via_clarabel_lp(
             X_star=[float("nan")] * d, Z_star=[],
             primal_obj=float("nan"), dual_obj=float("nan"),
             duality_gap=float("nan"), eigenvalues=[], feasible=False,
+            backend=lp.backend, precision_bits=lp.precision_bits,
         )
     G_f = np.asarray(G, dtype=float)
     x_star = np.asarray(lp.x_star, dtype=float)
@@ -768,6 +820,8 @@ def _solve_psd_via_clarabel_lp(
         dual_obj_str=lp.dual_obj_str,
         duality_gap_str=lp.duality_gap_str,
         eigenvalues_str=gx_str,
+        backend=lp.backend,
+        precision_bits=lp.precision_bits,
     )
 
 
