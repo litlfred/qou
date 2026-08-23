@@ -187,6 +187,18 @@ def main():
                     if cur not in g:
                         break
 
+            # Does each lineage's OPENING generalise in `b`?  Tested against
+            # the template with THIS case's own indices substituted -- not by
+            # naming indices, which is ambiguous: at a=3,b=1 the index i-2 is
+            # BOTH i₂ and j₂-1, and two earlier versions of this check reported
+            # spurious differences because the naming picked one alias.
+            def _norm(ru):
+                # `Y x (x+1)` IS `B x (x+1) x`, measured 16/16 above
+                return ("B", ru[1], ru[2], ru[1]) if ru[0] == "Y" else tuple(ru)
+            v_tmpl = [("B", i2, i1, j1), ("F", i, i2), ("B", i1, i, j1),
+                      ("B", i2, i1, j1), ("F", i, i2)]
+            u_tmpl = [("B", i2, i1, j1), ("F", i, i2), ("B", i1, i, j1)]
+
             # V first, then U -- the order is free (no shared sources), and
             # this asserts that rather than relying on it
             f1, vend, vsteps = run_lineage(dict(f0), V0, ids, [U0])
@@ -194,6 +206,8 @@ def main():
                                            [w for w in f1 if w != U0])
 
             meet = vend if vend == uend else None
+            vsteps_rules_head = [s["rule"] for s in vsteps[:5]]
+            usteps_rules_head = [s["rule"] for s in usteps[:3]]
             rows.append({
                 "a": a, "b": b, "i": i, "n": n,
                 "V0_rel_i": rel(V0), "U0_rel_i": rel(U0),
@@ -213,6 +227,10 @@ def main():
                 "y_labelled_steps": y_tot,
                 "y_steps_matching_bsStep_leading_word": y_same_lm,
                 "y_steps_giving_identical_element": y_same_result,
+                "V_opening_matches_template":
+                    [_norm(ru) for ru in vsteps_rules_head] == v_tmpl,
+                "U_opening_matches_template":
+                    [_norm(ru) for ru in usteps_rules_head] == u_tmpl,
                 "quadratic_steps":
                     sum(1 for s in vsteps + usteps if s["rule"][0] == "Q"),
                 "steps_with_more_than_one_image":
@@ -265,6 +283,18 @@ def main():
         computed=str(sum(r["y_labelled_steps"]
                          - r["y_steps_giving_identical_element"]
                          for r in rows)), expected="0")
+    # The V opening generalises in `b`; the U opening does NOT.  Both counts
+    # are asserted as MEASURED, exceptions included, rather than rounded to the
+    # claim I expected.
+    w.add_assertion(
+        "cases_whose_V_opening_does_NOT_match_the_b-independent_template",
+        computed=str(sum(0 if r["V_opening_matches_template"] else 1
+                         for r in rows)), expected="1")
+    w.add_assertion(
+        "cases_whose_U_opening_DOES_match_that_template",
+        computed=str(sum(1 if r["U_opening_matches_template"] else 0
+                         for r in rows)),
+        expected=str(sum(1 for r in rows if r["b"] == 1)))
     w.add_assertion(
         "cases_that_do_NOT_reduce_to_zero",
         computed=str(sum(0 if r["reduces_to_zero"] else 1 for r in rows)),
@@ -278,6 +308,23 @@ def main():
         "chain both had to reorder for the same reason, and in the a = 1 case "
         "the deg-lex order was actively worse -- it made two words collide in "
         "both length and prefix.")
+    w.add_caveat(
+        "The two openings do NOT generalise the same way, which is the point "
+        "of measuring them separately. The V opening is b-INDEPENDENT: same "
+        "five rules, and its words are the b = 1 words with an inert "
+        "`descWord i2 j2` suffix appended (verified 10/10 separately). Its one "
+        "exception is a=3,b=2, where j2 = i2 and j1 = i2-1 make the fifth step "
+        "degenerate -- a real coincidence, not a naming artifact. The U "
+        "opening does NOT generalise: it matches only at b = 1, and from "
+        "b >= 2 its third step is B(i2-1, i2, j1) rather than B(i1, i, j1). So "
+        "a Lean generalisation that parameterises the trailing context works "
+        "for V and must NOT be assumed for U.")
+    w.add_caveat(
+        "The template test substitutes each case's OWN indices rather than "
+        "naming them. Naming is ambiguous here -- at a=3,b=1 the index i-2 is "
+        "both i2 and j2-1 -- and two earlier versions of this check reported "
+        "spurious differences because the naming silently picked one alias. "
+        "The rule sequence was uniform all along; the comparison was not.")
     w.add_caveat(
         "Per-lineage step counts are for THIS order. A Lean chain may group "
         "the same steps differently; what transfers is the rule sequence per "
