@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-22T20:55:12Z
+updated_at: 2026-08-23T08:57:15Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -422,3 +422,60 @@ actionable subset is that audit's smoke CRASHED(6)/DIFFERS(5) rows, not a new
 detector. Caveat learned: running that audit re-emits its own witness (side effect);
 inspect its committed witness or run read-only rather than executing it in a clean
 tree.
+
+
+## MEASURED 2026-08-23 — the TL-ideal identification is CONFIRMED EXACTLY (the repair is correctly aimed)
+
+The bean asserts *"the radical is exactly ker(H_n -> TL_n) ... on the
+5-dimensional TL_3 quotient the form is genuinely NON-SINGULAR"* and cites Lean.
+[`probes/gram_radical_cellular_revalidation.py`](../computations/probes/gram_radical_cellular_revalidation.py)
+tests exactly that, independently (it does **not** import `pyhecke.gram`), and
+had **never been run to a recorded result** — it prints JSON to stdout and
+writes no witness, so nothing durable existed. Run 2026-08-23, exit 0, 192 s:
+
+| n | dim | ideal dim | rank_ℚ | corank | n! − Catalan(n) |
+|---|---:|---:|---:|---:|---:|
+| 3 | 6 | 1 | 5 | **1** | 1 ✓ |
+| 4 | 24 | 10 | 14 | **10** | 10 ✓ |
+| 5 | 120 | 78 | 42 | **78** | 78 ✓ |
+
+**Rank pinned from both sides at every n**: the exhibited TL ideal is annihilated
+by G *exactly over ℚ* (upper bound), and the GF(p) rank forces the lower bound;
+they meet at Catalan(n). GF(p) is used only for the inequality it always
+satisfies, never as an approximation. No float64 anywhere.
+
+- **H1 confirmed** — corank(n) = n! − Catalan(n) at n = 3, 4, 5.
+- **H2 confirmed** — corank constant at **all 12 rational q spanning [1/3, 5]**,
+  so the degeneracy is **generic in q**, not a Jantzen/Graham-Lehrer
+  special-parameter reducibility.
+- **H3 confirmed** — at n=3 the null vector **equals the q-antisymmetriser
+  `(-1/q)^len(w)` identically in q**.
+
+**Consequence for this bean.** Quotient-by-the-radical is the classical
+Jones/TL construction, not a repair invented here, and the quotient has
+dimension Catalan(n) where the form has full rank by construction. The named
+repair is **correctly aimed**, now on exact-arithmetic evidence rather than on
+the Lean alone.
+
+**Gap worth closing:** the probe emits no witness. Its result is not durable and
+had to be re-derived to be known. Worth a `WitnessBuilder` so the next reader
+does not repeat this.
+
+## Two currency corrections to this bean
+
+1. **Finding 1 is STALE.** It says *"pyhecke/gram.py is internally
+   CONVENTION-SPLIT ... z_mp / tr_m_mp (L622-652) and gram_matrix_mp (L746) are
+   still convention C"*. Measured: `gram.py` now has **zero** convention-C —
+   `z_mp`'s docstring reads `z = q³/(q² + 1)` — **convention D**, MIGRATED
+   2026-08-16 (bean qou-cds2)`. This bean's own work fixed it; the finding was
+   never updated.
+2. **A NEW unregistered C site exists in the shipped package.**
+   `tools/pyhecke/python/pyhecke/regime_scanner.py:94` —
+   `z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))` in `scan_h2_molecule`,
+   classified *"C with NO registry row (unexplained)"*. It has **no importers**.
+   Invisible until 2026-08-23, when `scripts/convention-c-producer-audit.py`
+   learned to see an `mpf(1)` numerator (bean `qou-324i`, PR #5494) — the
+   detector had accepted only a bare literal, so **complying with NO-FLOAT64
+   hid the site from the convention gate**. That fix took actionable C sites
+   **1 -> 31** corpus-wide, which also re-sizes the C-excision tranche
+   (`qou-cdx1`).
