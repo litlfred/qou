@@ -178,6 +178,12 @@ def solve_atom_lp(atom: str) -> dict:
             "self_conjugate": sc,
             "x_star": result.x_star[i],
             "y_star": result.y_star[i],
+            # The per-basis SLICE needs its own companion; the row-level
+            # vectors are shadowed but re-slicing them drops the digits again.
+            **({"x_star_str": result.x_star_str[i]}
+               if result.x_star_str is not None else {}),
+            **({"y_star_str": result.y_star_str[i]}
+               if result.y_star_str is not None else {}),
             "is_active": i in result.active_set,
         })
 
@@ -257,6 +263,14 @@ def main() -> int:
     # Top-level LP-dual fields per AGENTS.md §LP/SDP duals infra.
     w.add_data("y0_star", [r["y0_star"] for r in rows])
     w.add_data("y_star", [r["y_star"] for r in rows])
+    # Companions for the aggregates; the rows already carry them.
+    for _k in ("y0_star", "y_star", "primal_obj", "dual_obj"):
+        _sk = _k + "_str"
+        if any(_sk in r for r in rows):
+            w.add_data(_sk, [r.get(_sk) for r in rows])
+    _wm = max(rows, key=lambda r: r.get("duality_gap") or 0)
+    if "duality_gap_str" in _wm:
+        w.add_data("duality_gap_str", _wm["duality_gap_str"])
     w.add_data("active_set", [r["active_set"] for r in rows])
     w.add_data("primal_obj", [r["primal_obj"] for r in rows])
     w.add_data("dual_obj", [r["dual_obj"] for r in rows])

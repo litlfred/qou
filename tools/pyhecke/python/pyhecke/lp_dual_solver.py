@@ -484,6 +484,10 @@ def gram_pseudo_inverse_solve(G_str, rhs_str, *, dps: int = 50,
                 # and it is the only nucleus-dependent quantity this test
                 # yields — carry it rather than making a caller re-derive it.
                 exc.kernel_fraction = float(frac)
+                # ...and its full-precision companion. It is computed in MPFR
+                # here, so emitting only the f64 view would be the same
+                # truncation-at-the-last-step this module exists to stop.
+                exc.kernel_fraction_str = _mp.nstr(frac, dps)
                 raise exc
 
         y = _mp.matrix(d, 1)

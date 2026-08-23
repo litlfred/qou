@@ -201,6 +201,16 @@ F64_BACKENDS = frozenset({
 #
 # Add an entry only with a measurement behind it, not a preference.
 F64_BACKEND_EXEMPT = {
+    "deuteron-real-sdp.witness.json": (
+        "The phase-B methods stack extra equality rows onto A_eq, which the "
+        "canonical `solve_operator_selection_lp` cannot express — it takes the "
+        "net row plus Gx >= 0 and nothing else. So this is a raw scipy solve "
+        "of a genuinely different LP, with no MPFR path today: the same gap "
+        "`solve_frobenius_dual_lp` has, and for the same reason. It records "
+        "`backend` honestly rather than dropping into the unannotated bucket, "
+        "which is exactly the laundering this list exists to make unnecessary. "
+        "Bean `qou/ftuv`."
+    ),
     "rho-k-h3a-gg-trajectory.witness.json": (
         "t = 1/(dim_q · |y·χ|) with a 1e-15 floor spans 1.1 … 1e15, a cost "
         "dynamic range of 15 orders. Clarabel's interior-point method returns "

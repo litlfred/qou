@@ -314,6 +314,20 @@ def main() -> int:
         "duality_gap",
         max((r.get("duality_gap") or 0) for r in rows if "duality_gap" in r),
     )
+    # The aggregates re-list values the rows already carry companions for.
+    # Re-listing without them is the same truncation as re-slicing, one level
+    # up: the digits are in `rows`, and dropping them here is what left these
+    # top-level mirrors bare. `duality_gap` takes the companion of whichever
+    # row supplied the max, so the pair still describes one solve.
+    for _k in ("y0_star", "y_star", "primal_obj", "dual_obj"):
+        _sk = _k + "_str"
+        if any(_sk in r for r in rows):
+            w.add_data(_sk, [r.get(_sk) for r in rows])
+    _gap_rows = [r for r in rows if "duality_gap" in r]
+    if _gap_rows:
+        _wm = max(_gap_rows, key=lambda r: r.get("duality_gap") or 0)
+        if "duality_gap_str" in _wm:
+            w.add_data("duality_gap_str", _wm["duality_gap_str"])
 
     for r in rows:
         if "error" in r:

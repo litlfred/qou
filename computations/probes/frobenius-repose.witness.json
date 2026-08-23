@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T16:27:30.754528+00:00",
-  "commitSha": "d4fbedf3af438911d87174d626707dd52aaa17f4",
+  "computedAt": "2026-08-23T16:33:44.260439+00:00",
+  "commitSha": "56adf475010fa69a3eac716fc2599c87b04f748e",
   "assertions": [
     {
       "name": "gram_full_rank_forces_unique_solve",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 168049,
+  "durationMs": 173130,
   "computation": "frobenius-repose",
   "scriptFile": "frobenius_repose_probe.py",
-  "scriptHash": "b3441f9aab7a",
-  "scriptCommitSha": "d4fbedf3af438911d87174d626707dd52aaa17f4",
+  "scriptHash": "d2aad59c7113",
+  "scriptCommitSha": "56adf475010fa69a3eac716fc2599c87b04f748e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,6 +95,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.368662953153363,
+          "nf_out_of_range_fraction_str": "0.36866295315336298315785902228912623983441817329007",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -109,6 +110,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.368662953153363,
+          "nf_out_of_range_fraction_str": "0.36866295315336298315785902228912623983441817329007",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.368663 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -152,6 +154,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.40860239318942615,
+          "nf_out_of_range_fraction_str": "0.40860239318942613102612539338662039970645350181824",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -166,6 +169,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.40860239318942615,
+          "nf_out_of_range_fraction_str": "0.40860239318942613102612539338662039970645350181824",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.408602 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -209,6 +213,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.3225322609189096,
+          "nf_out_of_range_fraction_str": "0.32253226091890959941440051585383819430286307446226",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -223,6 +228,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.3225322609189096,
+          "nf_out_of_range_fraction_str": "0.32253226091890959941440051585383819430286307446226",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.322532 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -266,6 +272,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.3318628858916943,
+          "nf_out_of_range_fraction_str": "0.33186288589169434487655078417443460432517773919551",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -280,6 +287,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.3318628858916943,
+          "nf_out_of_range_fraction_str": "0.33186288589169434487655078417443460432517773919551",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.331863 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -323,6 +331,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.22323648308079322,
+          "nf_out_of_range_fraction_str": "0.2232364830807932229983356472456542614913856977136",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -337,6 +346,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.22323648308079322,
+          "nf_out_of_range_fraction_str": "0.2232364830807932229983356472456542614913856977136",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.223236 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -380,6 +390,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.21431021413341095,
+          "nf_out_of_range_fraction_str": "0.21431021413341095437932599733041321244797882472386",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -394,6 +405,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.21431021413341095,
+          "nf_out_of_range_fraction_str": "0.21431021413341095437932599733041321244797882472386",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.21431 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -437,6 +449,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.1879165318722424,
+          "nf_out_of_range_fraction_str": "0.18791653187224237447707967784660628083855288029865",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -451,6 +464,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.1879165318722424,
+          "nf_out_of_range_fraction_str": "0.18791653187224237447707967784660628083855288029865",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.187917 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -494,6 +508,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.025600080354540304,
+          "nf_out_of_range_fraction_str": "0.025600080354540303921672969195580601717686186398909",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -508,6 +523,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.025600080354540304,
+          "nf_out_of_range_fraction_str": "0.025600080354540303921672969195580601717686186398909",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.0256001 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -551,6 +567,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 0.0027264029889030373,
+          "nf_out_of_range_fraction_str": "0.00272640298890303710433104615718652512732280415383",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -565,6 +582,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 0.0027264029889030373,
+          "nf_out_of_range_fraction_str": "0.00272640298890303710433104615718652512732280415383",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.0027264 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -608,6 +626,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 2.2600537833061013e-16,
+          "nf_out_of_range_fraction_str": "2.2600537833061014520626625426849086827170027885229e-16",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -622,6 +641,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 2.2600537833061013e-16,
+          "nf_out_of_range_fraction_str": "2.2600537833061014520626625426849086827170027885229e-16",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 2.26005e-16 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
@@ -665,6 +685,7 @@
           "active_count": 6,
           "gram_kernel_dim": 1,
           "nf_out_of_range_fraction": 1.2193968332777543e-14,
+          "nf_out_of_range_fraction_str": "0.000000000000012193968332777542182836809941559352247361691503548",
           "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
@@ -679,6 +700,7 @@
           "active_count": 0,
           "duality_gap": null,
           "nf_out_of_range_fraction": 1.2193968332777543e-14,
+          "nf_out_of_range_fraction_str": "0.000000000000012193968332777542182836809941559352247361691503548",
           "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 1.2194e-14 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       }

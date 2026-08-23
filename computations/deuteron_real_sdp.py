@@ -118,6 +118,14 @@ def solve_lp_with_eq(t, G, A_eq, b_eq, n_target):
         "primal_obj": float(res.fun) if res.success else None,
         "x_star": res.x.tolist() if res.success else None,
         "duality_gap": 0.0 if res.success else None,
+        # This is a RAW scipy solve, not the canonical entry point: the
+        # phase-B methods stack extra equality rows onto `A_eq`, which
+        # `solve_operator_selection_lp` cannot express (it takes the net row
+        # plus `Gx >= 0`). So it is genuinely f64 and has no MPFR path today —
+        # the same gap `solve_frobenius_dual_lp` has, and for the same reason.
+        # Recording the backend is what lets the float64 gate SEE it instead
+        # of it sitting in the unannotated bucket. Bean `qou/ftuv`.
+        "backend": "scipy-highs",
     }
     if res.success and res.eqlin is not None:
         out["eq_duals"] = _np.asarray(res.eqlin.marginals).tolist()
@@ -428,6 +436,13 @@ def main() -> int:
             "primal_obj": lp_d.get("primal_obj"),
             "dual_obj": lp_d.get("dual_obj"),
             "duality_gap": lp_d.get("duality_gap"),
+            # `lp_d` is a to_dict() and carries the companions; mirroring the
+            # numbers up without them is what left these bare.
+            **{_sk: lp_d[_sk] for _sk in
+               ("y0_star_str", "y_star_str", "primal_obj_str",
+                "dual_obj_str", "duality_gap_str") if _sk in lp_d},
+            **{_k: lp_d[_k] for _k in ("backend", "precision_bits")
+               if _k in lp_d},
             "strong_duality_holds": bounded,
             "real_sdp_well_posed_without_constraints": bounded,
             "diagnostic": (

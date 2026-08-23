@@ -162,6 +162,7 @@ def _variant_a(t, G, Ginv, nf):
     try:
         _x_str, x_f64, _k = gram_pseudo_inverse_solve(_G_MP_STR, [repr(float(v)) for v in nf])
         kernel_frac = 0.0        # in range(G): no kernel component by definition
+        kernel_frac_str = "0"
         x = np.asarray(x_f64, dtype=float)
         resid = float(np.linalg.norm(G @ x - nf))
         rel = resid / (float(np.linalg.norm(nf)) + 1.0)
@@ -170,6 +171,7 @@ def _variant_a(t, G, Ginv, nf):
     except ValueError as exc:
         # Not in range(G) — genuinely no solution.
         kernel_frac = getattr(exc, "kernel_fraction", None)
+        kernel_frac_str = getattr(exc, "kernel_fraction_str", None)
         x_out, x_str_out, obj = None, None, None
         nfv = np.asarray(nf, dtype=float)
         # Residual of the best possible fit, for the record.
@@ -195,6 +197,7 @@ def _variant_a(t, G, Ginv, nf):
         # reproduce the census: ²H (target 1) is 0.323 and ³H (target 2) is
         # 0.332. Recorded as an observable, not as a selectivity claim.
         "nf_out_of_range_fraction": kernel_frac,
+        "nf_out_of_range_fraction_str": kernel_frac_str,
         "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)",
     }
     if x_str_out is not None:
@@ -230,6 +233,7 @@ def _variant_b(t, G, Ginv, nf):
             "active_set": [], "active_count": 0,
             "duality_gap": None,
             "nf_out_of_range_fraction": getattr(exc, "kernel_fraction", None),
+            "nf_out_of_range_fraction_str": getattr(exc, "kernel_fraction_str", None),
             "solution_undefined_reason": (
                 f"Gx = nf has no solution: {exc}. No net RHS can make the "
                 f"stacked system consistent."),
