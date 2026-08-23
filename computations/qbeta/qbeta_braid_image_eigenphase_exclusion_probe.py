@@ -70,6 +70,16 @@ repair the D-frame ladder inside the braid picture.  Branch (3), the KZ /
 Kohno–Drinfeld holonomy route, is untouched and remains the only place a
 derivation of `α` can live.  Branch (2) remains circular.
 
+**It closes the *character* case, not the *eigenvalue-pair* case.**  Branch (1)
+as `EigenphaseCarrierVacuity` states it is a `2 × 2` matrix on `V_(2,1)` with
+`trace = 2cos α` and `det = 1`, and that is what is excluded.  Were `α` instead
+**one** eigenphase among several of a *larger* braid-image matrix, `2cos α`
+would be a sum of two eigenvalues — an **algebraic** function of `q`, not a
+Laurent polynomial — and boundedness does not extend, since an algebraic
+function can be bounded on `(0,∞)` and non-constant (`q/(q+1)`).  That sub-case
+still needs the transcendence argument.  Net: one unproved corpus assertion
+becomes *(proved half)* + *(still assumed half)*, with the boundary named.
+
 Assertion 3 makes the failure concrete rather than merely asymptotic: the
 canonical single-wrap candidate `ρ(σ₁σ₂)` has `det = 1` and `tr = −1`
 *identically in q*, i.e. eigenphase `2π/3` for every substrate value — while

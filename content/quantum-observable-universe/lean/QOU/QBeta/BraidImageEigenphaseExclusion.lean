@@ -52,8 +52,19 @@ Scope-(b) — a structural exclusion citing a proved invariant, per AGENTS.md
 and it does **not** state a D-frame ladder.  Branch 3 is untouched and remains
 the only place a derivation of `α` can live.
 
-**Two limits of the exclusion, stated so nobody over-reads it.**
+**Three limits of the exclusion, stated so nobody over-reads it.**
 
+* **It closes the *character* case, not the *eigenvalue-pair* case — and the
+  difference is real.**  Branch 1 as `EigenphaseCarrierVacuity` states it is a
+  `2 × 2` matrix on `V_(2,1)` with `M.trace = 2cos α` and `M.det = 1`, which is
+  exactly what is excluded here.  If instead `α` were **one** eigenphase among
+  several of a *larger* braid-image matrix, `2cos α` would be a sum of two
+  eigenvalues — an **algebraic** function of `q`, not a Laurent polynomial —
+  and the boundedness argument does **not** extend: an algebraic function can
+  be bounded on `(0,∞)` and non-constant (`q/(q+1)`).  That sub-case still needs
+  the transcendence argument the docstring asserted.  So the net effect on the
+  corpus is that one unproved assertion becomes *(proved half)* + *(still
+  assumed half)*, with the boundary named.
 * It excludes a **functional identification** on the substrate branch — the
   hypothesis `heq` quantifies over all `s ≥ 1` — not a numerical coincidence at
   the single anchor `q₀`.  That is the right target (a ladder is a `q`-dependent
