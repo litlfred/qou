@@ -28,8 +28,11 @@ theorem perpetual_obstruction_from_trace
 
 /-- **The collapse invariant for the proton/neutron is not a unit.**
 
-    C = a₀(-1) + 2·a₁(-1) = 4 for the proton and neutron Habiro expansions,
-    and |4| > 1.
+    C = a₀(-1) + 2·a₁(-1) = 8 for the proton, and |8| > 1.
+
+    (This said "= 4 for the proton and neutron" until 2026-08-23. Both halves
+    were wrong: `a₀` is 8 for the proton and **2** for the neutron, so they do
+    not share a numerator constant. Bean `qou-lrnd`.)
 
     NOTE (2026-08-22, bean `qou-lrnd`): read the TYPE. The conclusion is
     `¬IsUnit (4 : ℤ)`, which mentions neither `p` nor `S`, and the proof term
@@ -42,7 +45,7 @@ theorem perpetual_obstruction_from_trace
 
     Derivation: at q = ζ_{2p}, the prime ideal 𝔭 = (1-ζ_p) satisfies
     q ≡ -1 (mod 𝔭), and (q;q)_m ≡ 0 (mod 𝔭) for m ≥ 2. Therefore
-    Frob_p ≡ a₀(-1) + a₁(-1)·(1-(-1)) = 4 + 0 = 4 (mod 𝔭).
+    Frob_p ≡ a₀(-1) + a₁(-1)·(1-(-1)) = 8 + 0 = 8 (mod 𝔭).
     CORRECTION (2026-08-23, bean `qou-lrnd`): this paragraph previously
     continued "The Galois norm N(Frob_p) ≡ 4^{p-1} (mod p), which is never ±1
     for p ≥ 3". That is wrong twice: by Fermat 4^{p-1} ≡ 1 (mod p) whenever
@@ -52,25 +55,37 @@ theorem perpetual_obstruction_from_trace
     not to hold at all.
 
     This proof uses only the STRUCTURE of the Habiro expansion, not
-    numerical approximation. The value C=4 is an exact algebraic
-    identity: a₀(u) evaluated at u=-1 gives 4, and a₁(-1)=0.
+    🛑 **C IS 8, NOT 4** (2026-08-23, bean `qou-lrnd`). This read "The value
+    C=4 is an exact algebraic identity: a₀(u) evaluated at u=-1 gives 4, and
+    a₁(-1)=0." Half of that holds — `a₁(-1) = 0` — but `a₀` is the **constant
+    8** for the proton (and 2 for the neutron, 192 for the deuteron), so no
+    evaluation point yields 4. Measured from the canonical coefficients witness
+    in `computations/probes/habiro_collapse_constant_probe.py`. The statement
+    below is re-stated at 8; `1 < natAbs` is unaffected.
+
+    And `tr_M` carries a denominator: dividing through, proton and neutron
+    both collapse to `1/2` and the deuteron to `1/8` — not integers, and the
+    collapse does not separate proton from neutron.
 
     Ref: [thm:motivic-perpetual-obstruction]
     Ref: [def:motivic-galois-character]
     Ref: bean qou-86gm (symbolic derivation) -/
 theorem qou_proton_perpetual_obstruction :
-    ∃ S : Finset ℕ, ∀ p : Nat.Primes, (p : ℕ) ∉ S → ¬IsUnit (4 : ℤ) :=
-  ⟨∅, fun _ _ => galois_trace_not_unit 4 (by norm_num)⟩
+    ∃ S : Finset ℕ, ∀ p : Nat.Primes, (p : ℕ) ∉ S → ¬IsUnit (8 : ℤ) :=
+  ⟨∅, fun _ _ => galois_trace_not_unit 8 (by norm_num)⟩
 
 /-- **The collapse invariant for the deuteron is not a unit.**
-    C = a₀(-1) + 2·a₁(-1) = -32, and |-32| > 1.
+    C = a₀(-1) + 2·a₁(-1) = 192, and |192| > 1.
 
-    Same reading as the proton above: the conclusion is `¬IsUnit (-32 : ℤ)`,
+    🛑 This said `-32` until 2026-08-23. The deuteron's `a₀` is the constant
+    **192** and `a₁(-1) = 0`, so C = 192 (bean `qou-lrnd`; probe as above).
+
+    Same reading as the proton above: the conclusion is `¬IsUnit (192 : ℤ)`,
     a fact about one integer. `qou_deuteron_frobenius_not_unit` is the
     statement about the Frobenius. -/
 theorem qou_deuteron_perpetual_obstruction :
-    ∃ S : Finset ℕ, ∀ p : Nat.Primes, (p : ℕ) ∉ S → ¬IsUnit (-32 : ℤ) :=
-  ⟨∅, fun _ _ => galois_trace_not_unit (-32) (by norm_num)⟩
+    ∃ S : Finset ℕ, ∀ p : Nat.Primes, (p : ℕ) ∉ S → ¬IsUnit (192 : ℤ) :=
+  ⟨∅, fun _ _ => galois_trace_not_unit 192 (by norm_num)⟩
 
 /-- The prime-ideal-collapse invariant C is a rational integer derived
     from the Habiro expansion: C = a₀(-1) + 2·a₁(-1). When |C| > 1,
@@ -131,20 +146,24 @@ theorem habiro_frobenius_not_unit
   rw [h_collapse p]
   exact galois_trace_not_unit C hC
 
-/-- **QOU proton/neutron instance**, C = a₀(-1) + 2·a₁(-1) = 4. -/
+/-- **QOU proton/neutron instance**, C = a₀(-1) + 2·a₁(-1) = 8.
+    (Was stated at 4 until 2026-08-23; `a₀` is the constant 8. Bean
+    `qou-lrnd`.) Note this instance does NOT separate proton from neutron —
+    after the `tr_M` denominator both collapse to `1/2`. -/
 theorem qou_proton_frobenius_not_unit
     {R : Nat.Primes → Type*} [∀ p, CommRing (R p)]
     (frob : ∀ p, R p) (reduce : ∀ p, R p →+* ℤ)
-    (h_collapse : ∀ p, reduce p (frob p) = 4) :
+    (h_collapse : ∀ p, reduce p (frob p) = 8) :
     ∀ p : Nat.Primes, ¬ IsUnit (frob p) :=
-  habiro_frobenius_not_unit frob reduce 4 (by norm_num) h_collapse
+  habiro_frobenius_not_unit frob reduce 8 (by norm_num) h_collapse
 
-/-- **QOU deuteron instance**, C = a₀(-1) + 2·a₁(-1) = -32. -/
+/-- **QOU deuteron instance**, C = a₀(-1) + 2·a₁(-1) = 192.
+    (Was stated at -32 until 2026-08-23. Bean `qou-lrnd`.) -/
 theorem qou_deuteron_frobenius_not_unit
     {R : Nat.Primes → Type*} [∀ p, CommRing (R p)]
     (frob : ∀ p, R p) (reduce : ∀ p, R p →+* ℤ)
-    (h_collapse : ∀ p, reduce p (frob p) = -32) :
+    (h_collapse : ∀ p, reduce p (frob p) = 192) :
     ∀ p : Nat.Primes, ¬ IsUnit (frob p) :=
-  habiro_frobenius_not_unit frob reduce (-32) (by norm_num) h_collapse
+  habiro_frobenius_not_unit frob reduce 192 (by norm_num) h_collapse
 
 end QOU.LiftingDescent
