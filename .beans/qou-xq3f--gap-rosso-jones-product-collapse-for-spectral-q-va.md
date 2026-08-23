@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-23T08:52:05Z
+updated_at: 2026-08-23T08:56:54Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -125,3 +125,23 @@ weights are supplied. STILL OPEN for the full tr_M: fixing the y_λ(q) values
 M3 Markov peel, and then the specific numerator tr_M(e_{(1³)}·τ·T_β). Ladder:
 collapse mechanism + inactive branches + numerator idempotent collapse + denominator
 + weighted-trace cyclicity (this). The y_λ-value fix remains the 08a2 keystone core.
+
+
+
+## PROGRESS 2026-08-23 (5) — T2 brick 2: identity value (M1 shadow)
+
+weightedCharacterTrace_nil: tr_M(1) = Σ_λ y_λ·d_λ (χ^λ(1)=tr(𝟙_{d_λ})=d_λ via
+eval_nil+trace_one+card_fin). So M1 normalisation tr_M(1)=1 ⟺ Σ y_λ d_λ = 1 —
+the relation that pins y_λ given the block dims. lean-direct exit 0, no sorryAx.
+
+T2 structural bricks now landed (PR #5528): M2 cyclicity + M1 identity-value, both
+independent of the y_λ values. The Wedderburn-weighted trace has its class-function
+property AND its normalisation-relation established.
+
+HONEST WALL (08a2 keystone core, genuinely large): what remains for the full tr_M
+is (a) the y_λ(q) CLOSED-FORM VALUES — the compute-side schur_principal_mpmath /
+WenzlSchurElement results, which must be transcribed/derived into Lean and shown to
+satisfy Σ y_λ d_λ = 1 + the M3 Markov peel; (b) M3 (Markov peel) as a theorem; (c)
+the concrete e_{(1³)}, τ, T_β braid elements + the numerator value. This is
+multi-session infra, not a single-session brick — the structural scaffolding (M1/M2
+shadows) is now in place for it.
