@@ -12,6 +12,57 @@ Log: `/tmp/frobenius_repose.log`. Follows the diagnostic
 [`frobenius_admissibility_diagnostic.py`](../../computations/probes/frobenius_admissibility_diagnostic.py)
 and audit [`2026-08-02-gemini-q-saddle-offset-salvage.md`](2026-08-02-gemini-q-saddle-offset-salvage.md).
 
+> ## ⚠ CORRECTED 2026-08-23 — the premise below is false (bean `qou/ftuv`)
+>
+> This audit reasons throughout from *"G … is 6×6 **rank-6, invertible**, so
+> `Gx = nf` already fixes `x = G⁻¹nf` uniquely"*. **G is exactly singular.**
+> Its determinant tracks the working precision instead of converging —
+> `-2.008684335e-57` at 60 dps, `+5.724314033e-117` at 120 dps, sign flip
+> included — which is what an exactly-zero determinant looks like in floating
+> point. `G` has a one-dimensional kernel
+>
+> ```
+> γ  -0.47268915   σ₀  0.4258543   σ₁  0.4258543
+> L₊ -0.38365992   L₋ -0.38365992  e⁻  0.34564624
+> ```
+>
+> confirmed by `‖Gv‖∞ = 3.4e-76` at 80 dps. It is an exact linear relation
+> among the six normal-form channels, and it respects the conjugation symmetry
+> (`σ₀ = σ₁`, `L₊ = L₋`): under the Frobenius pairing the "6-channel basis"
+> spans only five dimensions.
+>
+> Two consequences for the text below.
+>
+> **`x = G⁻¹nf` does not exist**, so every statement of the form "the test is
+> an invertible linear solve dressed as an LP" describes a solve that cannot
+> be performed. `range(G)` is the kernel-perp, and the nuclide `nf` vectors are
+> not in it — `|v·nf| / ‖nf‖` runs 0.0027 (¹⁶O) to 0.41 (n). `Gx = nf` has **no
+> solution** for them.
+>
+> **The reported feasibility counts were false positives.** `|G⁻¹| ~ 7.6e15`,
+> so the computed `x` is large enough that `G @ x` reproduces `nf` to `2e-16`
+> through round-off alone, and the relative-residual check passed on that. The
+> corrected figures:
+>
+> | | audit (f64 inverse) | corrected (MPFR pseudo-inverse) |
+> |---|---|---|
+> | variant (a) feasible | 1514 / 3558 | **0 / 3558** |
+> | variant (b) feasible | 181 / 3558 | **0 / 3558** |
+>
+> **The lead answer is unaffected, and is strengthened.** The test was
+> non-selective because the active-channel count was a constant `1` for every
+> nucleus; it is now non-selective because the system is unsolvable for every
+> nucleus. Either way it reproduces neither the census `{²H:1, ³H:2, ³He:2}`
+> nor any discrimination between nuclei, and ν_SDP stays underived. What was
+> wrong was the *mechanism*, not the conclusion.
+>
+> One quantity the corrected posing does produce, which the old one did not:
+> the out-of-range fraction `|v·nf| / ‖nf‖` **varies by nucleus** and falls
+> with A (0.369 p, 0.409 n, 0.323 ²H, 0.332 ³H, 0.223 ³He, 0.214 ⁴He, 0.188
+> ⁷Li, 0.026 ¹²C, 0.0027 ¹⁶O) where the old active-count was constant. It does
+> **not** reproduce the census — ²H (target 1) sits at 0.323 and ³H (target 2)
+> at 0.332, effectively equal — so this is a new observable, not a rescue.
+
 ## What was tested
 
 The original Frobenius LP (`solve_frobenius_dual_lp`) imposes 7 equalities —

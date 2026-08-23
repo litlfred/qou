@@ -473,12 +473,18 @@ def gram_pseudo_inverse_solve(G_str, rhs_str, *, dps: int = 50,
         nb = _mp.sqrt(sum(x ** 2 for x in b))
         for j in kernel:
             ip = sum(V[r, j] * b[r] for r in range(d))
-            if nb > 0 and abs(ip) / nb > _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps):
-                raise ValueError(
+            frac = abs(ip) / nb if nb > 0 else _mp.mpf(0)
+            if nb > 0 and frac > _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps):
+                exc = ValueError(
                     f"right-hand side is not in range(G): kernel component "
-                    f"{_mp.nstr(abs(ip) / nb, 6)} of ||rhs||. No solution "
+                    f"{_mp.nstr(frac, 6)} of ||rhs||. No solution "
                     f"exists; do not record one."
                 )
+                # The size of the violation is the evidence behind the verdict,
+                # and it is the only nucleus-dependent quantity this test
+                # yields — carry it rather than making a caller re-derive it.
+                exc.kernel_fraction = float(frac)
+                raise exc
 
         y = _mp.matrix(d, 1)
         for j in range(d):

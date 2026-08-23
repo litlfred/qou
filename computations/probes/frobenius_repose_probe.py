@@ -161,6 +161,7 @@ def _variant_a(t, G, Ginv, nf):
     resid = None
     try:
         _x_str, x_f64, _k = gram_pseudo_inverse_solve(_G_MP_STR, [repr(float(v)) for v in nf])
+        kernel_frac = 0.0        # in range(G): no kernel component by definition
         x = np.asarray(x_f64, dtype=float)
         resid = float(np.linalg.norm(G @ x - nf))
         rel = resid / (float(np.linalg.norm(nf)) + 1.0)
@@ -168,6 +169,7 @@ def _variant_a(t, G, Ginv, nf):
         x_out, x_str_out, obj = x.tolist(), _x_str, float(t @ x)
     except ValueError as exc:
         # Not in range(G) — genuinely no solution.
+        kernel_frac = getattr(exc, "kernel_fraction", None)
         x_out, x_str_out, obj = None, None, None
         nfv = np.asarray(nf, dtype=float)
         # Residual of the best possible fit, for the record.
@@ -186,6 +188,13 @@ def _variant_a(t, G, Ginv, nf):
         "y_star": y_f64, "y_star_str": y_str,
         "active_set": active, "active_count": len(active),
         "gram_kernel_dim": kernel_dim,
+        # |v·nf| / ‖nf‖ — how far nf lies outside range(G). Zero would mean
+        # solvable. This VARIES by nucleus (0.0027 for ¹⁶O to 0.41 for n,
+        # falling with A) where the old constant active-count did not, so it
+        # is the one nucleus-dependent quantity the test produces. It does not
+        # reproduce the census: ²H (target 1) is 0.323 and ³H (target 2) is
+        # 0.332. Recorded as an observable, not as a selectivity claim.
+        "nf_out_of_range_fraction": kernel_frac,
         "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)",
     }
     if x_str_out is not None:
@@ -220,6 +229,7 @@ def _variant_b(t, G, Ginv, nf):
             "y0_star": None, "y_star": None,
             "active_set": [], "active_count": 0,
             "duality_gap": None,
+            "nf_out_of_range_fraction": getattr(exc, "kernel_fraction", None),
             "solution_undefined_reason": (
                 f"Gx = nf has no solution: {exc}. No net RHS can make the "
                 f"stacked system consistent."),
