@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T14:55:59Z
+updated_at: 2026-08-23T15:35:46Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -67,3 +67,54 @@ the result *after* evaluation, so if any sub-expression evaluates in float the
 on `u_value`'s type and the expression text, which I have not checked. Worth
 looking at while the file is open, given the NO-FLOAT64 discipline; do not
 record it as a defect without measuring it.
+
+## CORRECTION — it is three, not two, and I reported two
+
+I recorded above that `hadron_knot_table` was "**this container's missing
+`scipy`** and is not a corpus defect", and that the count went 3 → 2. The
+first clause is right; the second is wrong. Installing `scipy` moved the
+producer *past* the `ImportError` and into a genuine defect underneath:
+
+```
+scipy/sparse/_compressed.py:404  in _matmul_multivector
+    dtype=upcast_char(self.dtype.char, other.dtype.char)
+TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))
+```
+
+**Three in-scope producers crash, all three for corpus reasons.** An absent
+module masking a defect is not the same as an absent module causing one, and I
+should not have called the verdict before the module was present. The general
+lesson is the one this bean already carries in the other direction: an
+environment fault and a corpus fault can occupy the same producer, and clearing
+the first is what makes the second visible.
+
+## 3. `hadron_knot_table.py` → `hecke_core_legacy.py:1010` — float64 matrices meet mpf vectors
+
+The Hecke Y-matrices are built in **float64** and then multiplied against an
+**object-dtype** (`mpmath.mpf`) vector, which scipy refuses to upcast. Both
+build paths do it:
+
+```python
+use_sparse = dim >= sparse_threshold
+if use_sparse:
+    from scipy.sparse import csr_matrix    # -> float64 CSR
+...
+    M = [[0.0] * dim for _ in range(dim)]  # dense path: float64 zeros
+```
+
+Read against the NO-FLOAT64 discipline, **scipy is doing the right thing**. The
+`TypeError` is a refusal to silently mix a float64 operator with an
+exact-carried vector; had it upcast, the producer would have run and quietly
+resolved the mpf side to float64 — a precision violation that emits a witness
+instead of an error. The crash is the guardrail working.
+
+So the fix is **not** to cast the vector to float64 to make it run. It is to
+build the matrices over the same exact ring the vector is carried in, or to
+keep an exact non-scipy path for this case. Casting to clear the error would
+convert a loud failure into a silent wrong number, which is the trade this
+repo's precision rules exist to refuse.
+
+Caveat worth checking before anyone starts: the module is named
+`hecke_core_legacy.py`. Confirm whether `hadron_knot_table` should be on it at
+all — the cheapest fix may be retargeting the consumer rather than repairing
+the legacy path.
