@@ -94,7 +94,14 @@ def main() -> int:
     n_target = mp.mpf(_load_json("chi-proton-h3-at-q0-50dps.witness.json")["tr_M_at_q0"])
     t = np.asarray([float(x) for x in TR_M], dtype=float)
     G = np.asarray(gram_matrix(), dtype=float)
-    res = solve_operator_selection_lp(t, G, float(n_target), backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, float(n_target), backend="clarabel")
     y_star = list(res.y_star)
     chi_y = sum(y for y, sc in zip(y_star, SELF_CONJUGATE) if not sc)
     sc_y = sum(y for y, sc in zip(y_star, SELF_CONJUGATE) if sc)
@@ -219,8 +226,13 @@ def main() -> int:
         ),
         "parameters": {
             "q_0_50dps": mp.nstr(Q0, 50),
-            "lp_backend": "scipy linprog (f64) — canonical aK_via_lp_dual pattern; "
-                          "exhibits degeneracy only, not a precision-critical value",
+            # REPORTED, not asserted. This was the literal string "scipy
+            # linprog (f64) — … exhibits degeneracy only, not a
+            # precision-critical value". When the solve moved to clarabel-MPFR
+            # (2026-08-23) the literal did not, so the witness declared a
+            # backend it had not used. Read it off the result instead, so it
+            # cannot drift again. Bean `qou/ftuv`.
+            "lp_backend": f"{res.backend} @ {res.precision_bits} bits",
             "n_target_proton": mp.nstr(n_target, 50),
             "nf_basis": list(NF_NAMES),
         },

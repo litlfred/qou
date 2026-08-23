@@ -130,6 +130,56 @@ class LpDualResult:
         return d
 
 
+#: Every full-precision companion either result class can carry. Kept as one
+#: tuple so a new `*_str` field is picked up by `provenance()` automatically
+#: rather than needing a matching edit in ten producers.
+PROVENANCE_STR_FIELDS = (
+    "x_star_str", "y0_star_str", "y_star_str",
+    "X_star_str", "Z_star_str", "eigenvalues_str",
+    "primal_obj_str", "dual_obj_str", "duality_gap_str",
+)
+
+
+def provenance(res) -> dict:
+    """Solver provenance + full-precision companions, to spread into a witness row.
+
+    Producers do not all serialize via `to_dict()`. Most cherry-pick the
+    numeric fields off the result and `float()`-cast each one, which drops
+    `backend`, `precision_bits` and every `*_str` companion at the last
+    step. That is the *same* truncation `qou-t0rf` fixed on the dataclass
+    and this module's `to_dict` docstring describes fixing again one layer
+    up — recurring a third time, in the producers. Spreading `provenance(res)`
+    into the row keeps "which solver, at what precision, with what digits"
+    attached to the numbers it describes.
+
+    Keys are omitted rather than emitted as null, so a reader can ask
+    `"backend" in row` / `"y_star_str" in row` and get a truthful answer;
+    an all-f64 scipy solve contributes `backend`/`precision_bits` only.
+    """
+    # Accepts either a result dataclass or its `to_dict()`: producers hold
+    # both forms, and a helper that silently returned `{}` for the dict form
+    # would be an absent check indistinguishable from a passing one.
+    if isinstance(res, dict):
+        def _get(key):
+            return res.get(key)
+    else:
+        def _get(key):
+            return getattr(res, key, None)
+
+    out: dict = {}
+    backend = _get("backend")
+    if backend is not None:
+        out["backend"] = str(backend)
+    bits = _get("precision_bits")
+    if bits is not None:
+        out["precision_bits"] = int(bits)
+    for key in PROVENANCE_STR_FIELDS:
+        val = _get(key)
+        if val is not None:
+            out[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
+    return out
+
+
 def solve_frobenius_dual_lp(
     t: np.ndarray,
     G: np.ndarray,

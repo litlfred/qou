@@ -68,7 +68,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
@@ -157,8 +157,14 @@ def solve_atom_lp(atom: str) -> dict:
     G = gram_matrix()
     n_target = tr_M_atom
 
-    # Pin scipy: committed-witness producer → byte-deterministic.
-    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-
+    # deterministic too (6 identical solves, 1 output hash), so that reason
+    # never distinguished the two. The real concern was `backend="auto"`
+    # silently choosing by whether the Rust binary happened to be built;
+    # pinning `clarabel` answers it, and QOU_REQUIRE_CLARABEL=1 makes a
+    # missing binary an error instead of a changed answer. Bean `qou/ftuv`.
+    result = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     blocks = assign_wedderburn_dominant_block()
 
     per_basis = []
@@ -203,6 +209,9 @@ def solve_atom_lp(atom: str) -> dict:
         "dual_obj": result.dual_obj,
         "duality_gap": result.duality_gap,
         "feasible": result.feasible,
+        # Solver, precision, and the full-precision decimals behind the f64
+        # fields above — otherwise the row cannot say which backend made it.
+        **provenance(result),
         "u0_star": u0,
         "self_conjugate_y_sum": sc_y_sum,
         "chirality_y_sum": chi_y_sum,

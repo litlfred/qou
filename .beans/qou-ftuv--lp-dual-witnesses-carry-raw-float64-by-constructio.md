@@ -831,8 +831,132 @@ locally. That is a property of the repo's CI posture, not of these gates.
 
 - [x] Build the Rust binary in the gate; make a missing binary an error.
 - [x] Fail CI on a committed witness that records a float64 solve.
-- [ ] **Owner: switch the producers that force `backend="scipy"`** —
+- [x] **Owner: switch the producers that force `backend="scipy"`** —
       `aK_via_lp_dual_full.py` at 812 fields chief among them. The new gate
       does not catch those: they record `backend="scipy-highs"` *honestly*,
       and forcing that backend is a deliberate choice the gate should not
-      override on its own.
+      override on its own. **Owner ruled: switch them.** See below.
+
+
+---
+
+## The forced-`scipy` sites, enumerated and switched (2026-08-23)
+
+Owner asked what was still overriding the backend and why. Twelve sites forced
+`backend="scipy"`. Their stated justifications, verbatim from the source:
+
+| justification | sites |
+| --- | --- |
+| "Pin scipy: committed-witness producer → byte-deterministic" | 4 |
+| "availability varies by environment; f64 is ample" | 1 |
+| *(no reason given at all)* | 5 |
+| comparison harness — scipy is the point | 1 |
+| already on clarabel | 1 |
+
+**The byte-determinism reason never distinguished the backends.** Measured it
+rather than reasoning about it: six identical clarabel-MPFR solves produced one
+output hash. Byte-determinism is true of *both* paths, so it was never a reason
+to prefer either.
+
+The real concern underneath it was different and legitimate: `backend="auto"`
+chose silently by whether the Rust binary happened to be built, so the same
+script could produce f64 or MPFR numbers depending on the box. Pinning answers
+that — but pinning to `clarabel` answers it just as well as pinning to `scipy`,
+and `QOU_REQUIRE_CLARABEL=1` turns a missing binary into an error instead of a
+changed answer.
+
+**Eleven of twelve switched to `backend="clarabel"`.** The twelfth,
+`clarabel_lp_crosscheck.py`, keeps scipy deliberately: it is the harness that
+compares the two, so removing scipy would remove the comparison.
+
+## The same truncation, a third time — in the producers
+
+Switching the backend was necessary and not sufficient. Seven of the
+regenerated witnesses still recorded **no backend at all**, and none carried a
+single full-precision digit, because the producers do not serialize via
+`to_dict()`. They cherry-pick the numeric fields off the result and
+`float(...)`-cast each one:
+
+```python
+"primal_obj": float(res_dict["primal_obj"]),
+"y_star": [float(y) for y in res_dict.get("y_star", [])],
+```
+
+That is the *same* defect `qou-t0rf` fixed on the dataclass and this module's
+`to_dict` docstring describes fixing again one layer up — recurring a third
+time, one layer further out. The solver produced 51 digits; the last step threw
+50 of them away.
+
+Fixed once, in `pyhecke.lp_dual_solver.provenance(res)`, spread into each
+producer's row. It accepts a result dataclass *or* its `to_dict()` — producers
+hold both forms, and a helper that silently returned `{}` for the dict form
+would be another absent check indistinguishable from a passing one. New `*_str`
+fields are picked up from one `PROVENANCE_STR_FIELDS` tuple rather than needing
+a matching edit in ten producers.
+
+## Two stale claims retracted
+
+**`ak_lp_dual_quotient_probe.py`** carried, next to its f64 duals:
+
+> float64-intentional: … the solver … works in double precision. There is no
+> exact route to a number the solver only ever computed as a double.
+
+Accurate when written about the scipy path; **false** once the backend was
+pinned to clarabel-MPFR at 167 bits. Rewritten to say why those fields stay f64
+(consumers do arithmetic on them) and to point at the `*_str` companions that
+now carry the exact decimals.
+
+**`nucleus_operator_selection_sdp.py`** contained both halves of the same
+argument three lines apart. Its SDP block refuses `round(..., 6)` — "the value
+destroyed outright, not merely truncated" — while its LP block did exactly that
+to the row above:
+
+```
+lp_y0_star     0.0        ← round(-2.4e-43, 5)
+lp_primal_obj  0.0        ← round(4.2e-44, 6)
+```
+
+`y0_star = 0` happens to be the exact certificate for `t = G e₀`, so the
+written value was not wrong. But rounding is not what established that: it
+would equally have written `0.0` for a value that ought to be `3e-6`. The check
+was absent and its absence was indistinguishable from its passing. Rounding
+removed; the row now carries the solver's value beside a companion that agrees
+with it to 51 digits — which also keeps the audit's laundering guard satisfied
+rather than tripped, since a rounded `0.0` paired with a true `6.65e-46`
+companion is precisely the contradiction that guard exists to catch.
+
+## Effect on the carve-out
+
+The route-3 carve-out is not a target in itself — the point is that fewer f64
+fields need excusing because they now carry their own evidence.
+
+```
+4,052  start of arc
+4,004  bondgraph auto-picked MPFR
+3,331  11 producers switched to backend="clarabel"
+2,714  provenance() carried through the producers   (42 witnesses, was 45)
+```
+
+A third of the carve-out discharged, by the `*_str` shadow rule (route 2)
+rather than by the carve-out list (route 3).
+
+### Verification
+
+```
+witness_raw_float64_audit               NEW 0, REGRESSED 0, excused 2,714/42
+witness_raw_float64_audit --self-test   25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+pytest tools/pyhecke                    193 passed, 44 skipped, 0 failed
+bun run scripts/run-validate.ts         ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+Every regenerated witness now records its own backend; `lp-dual` unannotated
+count fell 25 → 21 of 27 flagged.
+
+## Next
+
+- [ ] **21 flagged LP/SDP witnesses still record no backend.** Produced by
+      scripts outside this arc, so the gate still reports rather than fails
+      them. Draining that backlog is what would let the ratchet become a
+      sweep — the point at which "no backend recorded" stops being
+      indistinguishable from "solved at precision".

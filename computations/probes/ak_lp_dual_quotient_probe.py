@@ -111,7 +111,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 
 #: (Z, N, chi-cache) — mirrors aK_via_lp_dual_full.ATOM_CHI.
 ATOMS = [
@@ -153,8 +153,16 @@ def solve(contribs, target, keep=None):
     """Run the operator-selection LP over `keep` (default: every column)."""
     idx = list(range(len(contribs))) if keep is None else list(keep)
     t = np.array([abs(float(contribs[i])) for i in idx], dtype=float)
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"` with no stated
+    # reason. Elsewhere the reason given was byte-determinism; measured
+    # 2026-08-23, clarabel-MPFR is byte-deterministic too (6 identical solves,
+    # 1 output hash), so it never distinguished the two. The real concern was
+    # `backend="auto"` choosing silently by whether the Rust binary happened
+    # to be built; pinning `clarabel` answers it, and QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
     res = solve_operator_selection_lp(t, np.diag(t), float(target),
-                                      backend="scipy")
+                                      backend="clarabel")
     return idx, t, res
 
 
@@ -228,21 +236,28 @@ def main() -> int:
                         "active_set": list(amb.active_set),
                         "primal_obj": amb.primal_obj,
                         "dual_obj": amb.dual_obj,
-                        "duality_gap": amb.duality_gap},
+                        "duality_gap": amb.duality_gap,
+                        **provenance(amb)},
             "quotient": {"y0_star": y0,
                          "y_star": list(quo.y_star),
                          "active_set": list(quo.active_set),
                          "primal_obj": quo.primal_obj,
                          "dual_obj": quo.dual_obj,
-                         "duality_gap": quo.duality_gap},
+                         "duality_gap": quo.duality_gap,
+                         **provenance(quo)},
             "y0_star_equals_min_contrib": bool(
                 abs(y0 - y0_predicted) <= 1e-9 * max(1.0, abs(y0_predicted))),
             # float64-intentional: these are LP DUAL variables straight from
-            # the solver, which works in double precision. There is no exact
-            # route to a number the solver only ever computed as a double.
-            # float64-intentional: LP dual, solver works in double precision.
+            # the solver. NOT because no exact route exists — the solver is
+            # clarabel-MPFR at 167 bits and the full-precision decimals ride
+            # alongside in the `*_str` companions `provenance()` emits above.
+            # These stay f64 because consumers do arithmetic on them; the
+            # earlier wording here ("no exact route to a number the solver
+            # only ever computed as a double") described the scipy path and
+            # became false when the backend was pinned to clarabel.
             "min_live_contrib": fmt(y0_predicted),
-            # float64-intentional: LP dual, solver works in double precision.
+            # float64-intentional: derived from the f64 duals above; same
+            # reasoning, and the exact decimals are in the `*_str` companions.
             "chirality_dual_sum": fmt(float(chir)),
             "a_K_via_lp_dual_quotient": fmt(aK) if aK is not None else None,
             "a_K_closed": fmt(aKc),

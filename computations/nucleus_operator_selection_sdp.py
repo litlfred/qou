@@ -55,7 +55,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from pn_alpha_lp_dual import build_gram, TR_M_BASIS, NF_NAMES  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 try:
     from lp_dual_solver import solve_psd_operator_selection_sdp
     _HAVE_SDP = True
@@ -116,18 +116,37 @@ def main() -> int:
         if not r:
             continue
         ta = abs(float(r["tr_M_atom"].strip("()").split("+")[0]))
-        lp = solve_operator_selection_lp(t, G, ta, backend="scipy").to_dict()
+        # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+        # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+        # too (6 identical solves, 1 output hash), so that reason never distinguished
+        # the two. The real concern was `backend="auto"` choosing silently by whether
+        # the Rust binary happened to be built; pinning `clarabel` answers it, and
+        # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+        # changed answer. Bean `qou/ftuv`.
+        lp = solve_operator_selection_lp(t, G, ta, backend="clarabel").to_dict()
         active_ops = [NF_NAMES[i] for i in lp["active_set"]]
         row = {
             "nucleus": lab, "Z": Z, "N": N, "A": Z + N,
             "n_target_tr_atom": round(ta, 5),
             "lp_active_ops": active_ops,
-            "lp_y0_star": round(lp["y0_star"], 5),
-            "lp_y_star": [round(y, 5) for y in lp["y_star"]],
+            # NOT rounded. These are ~1e-43 on the MPFR backend, and
+            # `round(..., 5)` wrote a literal `0.0` into the witness for
+            # y0_star / primal_obj / dual_obj — the same destruction the SDP
+            # block below already refuses, applied to the LP side of the very
+            # same row. `y0_star = 0` happens to be the exact certificate for
+            # `t = G e₀`, but rounding is not what established that: it would
+            # equally have written 0.0 for a value that ought to be 3e-6. Emit
+            # the solver's value and let the `*_str` companions below prove
+            # it. Bean `qou/ftuv`.
+            "lp_y0_star": lp["y0_star"],
+            "lp_y_star": list(lp["y_star"]),
             "lp_active_set_idx": lp["active_set"],
-            "lp_primal_obj": round(lp["primal_obj"], 6),
-            "lp_dual_obj": round(lp["dual_obj"], 6),
-            "lp_duality_gap": float(f"{lp['duality_gap']:.2e}"),
+            "lp_primal_obj": lp["primal_obj"],
+            "lp_dual_obj": lp["dual_obj"],
+            "lp_duality_gap": lp["duality_gap"],
+            # Solver, precision, and full-precision decimals for the LP half,
+            # prefixed to match the row's `lp_` convention.
+            **{f"lp_{k}": v for k, v in provenance(lp).items()},
             "wedderburn": wedderburn_structure(stem),
         }
         for k in canonical:

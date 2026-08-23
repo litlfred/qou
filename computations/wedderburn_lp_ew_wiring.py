@@ -38,7 +38,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402
 from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import (  # noqa: E402
+    PROVENANCE_STR_FIELDS,
+    provenance,
+    solve_operator_selection_lp,
+)
 from partition_utils import hook_lengths  # noqa: E402
 
 
@@ -378,8 +382,14 @@ def main() -> int:
     # the LP is bounded for every atom and strong duality holds; the
     # default M_bound=1e6 in `solve_operator_selection_lp` is intended
     # for problems with signed coefficients (not this case).
-    # Pin scipy: committed-witness producer → byte-deterministic.
-    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="clarabel")
     res_dict = res.to_dict()
 
     # Also run LP for each atom in atoms_to_test (sweep)
@@ -429,7 +439,14 @@ def main() -> int:
         ntarget_a = float(ta.sum() * 0.5)
         try:
             ra = solve_operator_selection_lp(
-                ta, Ga, ntarget_a, M_bound=0.0, backend="scipy"
+                # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+                # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+                # too (6 identical solves, 1 output hash), so that reason never distinguished
+                # the two. The real concern was `backend="auto"` choosing silently by whether
+                # the Rust binary happened to be built; pinning `clarabel` answers it, and
+                # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+                # changed answer. Bean `qou/ftuv`.
+                ta, Ga, ntarget_a, M_bound=0.0, backend="clarabel"
             ).to_dict()
         except Exception as e:
             lp_results_per_atom.append({
@@ -452,6 +469,11 @@ def main() -> int:
             "y0_star": float(ra["y0_star"]),
             "n_active": len(ra.get("active_set", [])),
             "n_target": ntarget_a,
+            # `ra` is already a to_dict(); carry its provenance + `*_str`
+            # through the float() casts above rather than dropping them.
+            **{k: v for k, v in ra.items()
+               if k in ("backend", "precision_bits")
+               or k in PROVENANCE_STR_FIELDS},
         })
         print(f"    {atom_name:<12} (Z={Za}, N={Na}): pairs={npairs_a}, "
               f"primal={ra['primal_obj']:.4f}, y_0={ra['y0_star']:.4f}")
@@ -610,6 +632,9 @@ def main() -> int:
         "active_set": list(res_dict.get("active_set", [])),
         "n_target": n_target,
         "supply_matrix_shape": list(G.shape),
+        # Solver, precision, and the full-precision decimals behind every
+        # `float(...)` cast above — those casts are what dropped them.
+        **provenance(res),
         "atom_sweep": lp_results_per_atom,
     })
 
@@ -620,6 +645,8 @@ def main() -> int:
     w.add_data("y0_star", float(res_dict["y0_star"]))
     w.add_data("y_star", [float(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
+    for _k, _v in provenance(res).items():
+        w.add_data(_k, _v)
 
     # (B) Alt-Δ_I Weinberg probe
     w.add_data("deliverable_B_alt_delta_I_weinberg_probe", {
