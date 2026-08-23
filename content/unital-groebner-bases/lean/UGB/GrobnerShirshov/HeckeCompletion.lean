@@ -14220,6 +14220,61 @@ theorem sPoly_zero_gt {n : ℕ} (i i₁ i₂ j₁ j₂' : Fin n) :
   have h := ofTerms_cancel_pair (WGt i i₁ i₂ j₁ j₂') (1 : ℝ) [] []
   simpa using h
 
+/-! ### The corner, in one statement -/
+
+/-- **`WGt₁` is `WGt` at `b = 1`.** At `j₂ = i₁` the predecessor `j₂'` is `i₂`,
+and `descWord i₂ i₂` is a single letter, so `bsWord₂ i₂ i₁ i₂` is exactly the
+three letters `WGt₁` writes out. The two lineages meet at the same word in
+both regimes; only its shape differs. -/
+theorem WGt₁_eq (i i₁ i₂ j₁ : Fin n) :
+    WGt₁ i i₁ i₂ j₁ = WGt i i₁ i₂ j₁ i₂ := by
+  rw [WGt₁, WGt, bsWord₂, descWord_self]
+
+/-- **The `a > b` corner, for every `a > b ≥ 1`.**
+
+`hb : j₂ ≤ i₁` is `b ≥ 1`; `hj₁ : j₁ ≤ j₂ − 1` is `a > b`. Nothing else is
+assumed — in particular nothing about `a`, which is the measured
+`a`-independence of this corner.
+
+The case split is on `b`, not on `a`: `sPolyChain_gt` for `b ≥ 2`, and
+`sPolyChain_gt₁` for `b = 1`, where `j₂ > i₂` forces `j₂ = i₁` and the first
+lineage's run is empty. -/
+theorem sPolyChain_gt_all (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ j₂' : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂' : j₂'.val + 1 = j₂.val)
+    (hb : j₂.val ≤ i₁.val) (hj₁ : j₁.val ≤ j₂'.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (AlgElement.ofTerms
+        [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ)), (WGt i i₁ i₂ j₁ j₂', -1)]) := by
+  rcases le_or_gt j₂.val i₂.val with h | h
+  · exact sPolyChain_gt hn hp h₁ h₂ hj₂' h hj₁
+  · have hj₂i₁ : j₂ = i₁ := Fin.ext (by omega)
+    have hj₂'i₂ : j₂' = i₂ := Fin.ext (by omega)
+    rw [hj₂'i₂, ← WGt₁_eq]
+    exact sPolyChain_gt₁ hn hp h₁ h₂ (by omega) hj₂i₁
+
+/-- **The `a > b` corner is closed.** The S-polynomial of the two Bokut–Shiao
+rules at top `i − 1` with bottoms `j₁ < j₂ ≤ i − 1` reduces to an element that
+is zero. Both halves are needed and neither is decoration: the reduction says
+the completion procedure *reaches* the element, and the coefficient equality
+says nothing is left when it gets there. -/
+theorem sPoly_gt_resolves (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ j₂' : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂' : j₂'.val + 1 = j₂.val)
+    (hb : j₂.val ≤ i₁.val) (hj₁ : j₁.val ≤ j₂'.val) :
+    ∃ E : AlgElement (HeckeGen n) ℝ,
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (T0 i i₁ j₁ j₂) E
+      ∧ AlgElement.CoeffEq E
+          (AlgElement.ofTerms ([] : List (Monomial (HeckeGen n) × ℝ))) :=
+  ⟨AlgElement.ofTerms
+      [(WGt i i₁ i₂ j₁ j₂', (1 : ℝ)), (WGt i i₁ i₂ j₁ j₂', -1)],
+    sPolyChain_gt_all hn hp h₁ h₂ hj₂' hb hj₁,
+    sPoly_zero_gt i i₁ i₂ j₁ j₂'⟩
+
 end CornerGt
 
 end UGB.GrobnerShirshov.Hecke
