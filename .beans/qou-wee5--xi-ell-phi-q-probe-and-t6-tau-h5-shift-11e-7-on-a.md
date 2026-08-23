@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T22:25:49Z
-updated_at: 2026-08-23T22:34:05Z
+updated_at: 2026-08-23T22:41:33Z
 ---
 
 ## What
@@ -154,3 +154,50 @@ site. That is a scope call about the muon layer, not a bug fix.
 
 Secondary, and separate: `mass_at_3A_proper`'s `Q0` is the **float64** `Q`,
 so the seminormal matrices are built in float64 regardless of which anchor wins.
+
+
+---
+
+## The method generalises — 3 of 9 inline-derivation producers straddle (2026-08-23)
+
+Packaged as
+[`computations/audits/anchor_flip_straddle_audit.py`](computations/audits/anchor_flip_straddle_audit.py).
+
+**Why empirical rather than static.** A per-file scan of the 16 files holding a
+defaulted `_cached_seminormal` call reports **one** candidate — and misses
+`xi_ell_phi_q_probe` entirely, because there the manifest value arrives three
+modules down through a defaulted parameter. Nothing in that file names an
+anchor, so no grep can find it. Static analysis is per-file; the interesting
+straddles are not.
+
+**The test.** Run the producer twice, `QOU_Q0_ANCHOR=physical` then `=ideal`,
+and diff its witnesses with ephemeral fields *and the q₀ stamp* masked.
+
+Scope is what makes it a straddle test rather than a re-pin test: a producer
+whose **only** q is the manifest one *should* move — it is following the
+anchor, correctly. A producer with its **own** q that also moves is mixing two
+sources. So the audit is run over producers that derive or hardcode a q of
+their own (`--candidates` = the inline-derivation set, `qou-5le1` Mode A).
+
+### Result over the 9
+
+| verdict | n | |
+|---|---|---|
+| **STRADDLE** | **3** | `per_generator_V_hat_general` (24 fields), `xi_ell_phi_q_probe` (36), `t6_tau_h5_embedding_probe` (15) |
+| clean | 4 | flip moves nothing but the stamp |
+| RUN-FAIL | 1 | `lepton_tower_probe_1_cinquefoil_muon` — **untested, not clean** |
+| excluded | 1 | `q_beta_complex_q_test1_phaseA_v2` computes the *inverse* (`cal2_q0` from a given q₀, a consistency check), not an inline q₀ |
+
+**The third one is new and is the interesting one.**
+`per_generator_V_hat_general` is not only the module that carries the defect
+into the other two — it is a **producer in its own right**, and it straddles:
+24 fields move, including `/electron_V_hat_calibration_check/computed_value`. A
+calibration check whose computed value depends on which anchor the manifest
+happens to resolve.
+
+All three straddle through the **same** defaulted `_cached_seminormal(shape)`
+call, so one call-site fix closes all three — which is why the option-1-vs-2
+decision below governs three producers, not one.
+
+The audit restores every witness it touches and exits 1 when any straddle is
+found, so it can gate.
