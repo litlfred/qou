@@ -391,3 +391,37 @@ without gating on it.
 Follow-ups left for others, all recorded above: the three-valued muon prefix map
 (`qou-khac`), the exemption-vs-pass reporting fix, and the 288 source-side
 hardcodes (`qou-cds3`'s unauthorised sweep).
+
+---
+
+## ⚠ RETRACTION 2026-08-23 — my `test_q0_anchor.py` claim was WRONG
+
+I wrote, in this bean and in commit `188768f8e`:
+
+> Sharpest: `tools/qou-substrate/tests/test_q0_anchor.py` **asserts**
+> `q0Value.startswith("1.109978595557")` — a test in the substrate package that
+> pins the stale muon value as the anchor and would fail if the canonical pin
+> were emitted.
+
+**That file is not inverted and would not fail correct code.** Verified by
+reading it:
+
+- The muon assertions are **round-trips on payloads the test stamps itself**:
+  `stamp_staleness_metadata(..., q0_anchor="muon", q0_value="1.10997859555733…")`
+  followed by `assert payload["q0Value"].startswith("1.109978595557")`. That
+  tests the stamping machinery, not which pin is canonical.
+- It carries an explicit instruction not to make the "fix" I proposed: *"Do NOT
+  'correct' this to the `q_muon_at()` value … a muon-tagged producer computes
+  with the witness string, so a derived label would disagree with the number the
+  witness reports."*
+- And it already contains a **`RETRACTED 2026-08-15`** block removing the two
+  tests that genuinely were wrong, whose note reads: *"The tests encoded the wrong
+  invariant and would have failed correct code."*
+
+So the file had already been fixed, three days before I called it a defect. I
+matched on the literal `startswith("1.109978595557")` without reading what the
+surrounding test was asserting — the same shape as the `F3a` retraction in
+`qou-a613`: keying on a string and not checking what it was there **for**.
+
+The genuine instances of this class are in `qou-fd0e`, and none of them is that
+file.
