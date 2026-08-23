@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:24:40.777018+00:00",
-  "commitSha": "5c74597d32c0dcc4568a61457424f3d62b0f6023",
+  "computedAt": "2026-08-23T22:48:21.638105+00:00",
+  "commitSha": "cbd405726f3933e4401760b0d6254c1d673fd9d6",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -59,9 +59,9 @@
   "data": {
     "counts": {
       "total_scanned": 2723,
-      "prov_ok": 2347,
+      "prov_ok": 2346,
       "prov_audit_exempt": 78,
-      "prov_exempt_no_reader": 221,
+      "prov_exempt_no_reader": 222,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 74,
       "prov_parse_error": 0,
@@ -3955,10 +3955,6 @@
         },
         {
           "witness": "lepton-tower-bend-screening.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": []
         },
         {
@@ -10908,6 +10904,14 @@
         },
         {
           "witness": "keystone-wrt-schurweyl-plancherel-4count.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
