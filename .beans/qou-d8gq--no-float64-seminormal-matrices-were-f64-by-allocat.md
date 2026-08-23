@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-16T13:45:22Z
-updated_at: 2026-08-23T22:45:35Z
+updated_at: 2026-08-23T22:59:31Z
 ---
 
 ## The defect
@@ -145,3 +145,52 @@ Cheaper and possibly better alternative worth weighing first: a RUNTIME assert.
 Any function whose return is `float(...)` could check `product.dtype != object`
 once per call, which is exact rather than approximate, costs nothing, and needs
 no regex at all.
+
+
+---
+
+## NEGATIVE RESULT: the consumption side cannot be hooked from Python
+
+Recorded because it saves the next person the attempt, and because it changes
+which detector is worth building.
+
+A runtime probe patching `np.matmul` to report object-dtype operands was built
+and validated in BOTH directions:
+
+    np.matmul(prod, M)   module-level patch  ->  FIRES  (dtypes ('object','float64'))
+    prod @ M             same patch          ->  SILENT
+
+`ndarray.__matmul__` dispatches in C and never reaches the module-level name.
+**`@` is exactly the form in `chi_lambda_of_word`**, so the obvious
+interception point would have passed silently on its own motivating case — the
+failure mode this whole area keeps producing. It was correctly NOT registered
+as a gate.
+
+A static AST proxy — a function parameter reaching `*` or `@` in a module that
+handles both mpf and numpy — returns **116 sites**, mostly integer parameters
+(`n`, `k`, `Z`, `i`) in ordinary arithmetic. It does not discriminate and was
+correctly not offered as a finding.
+
+## What DOES work, and it is cheaper than either
+
+Check the RESULT rather than intercepting the operation. Landed in `6ed921b93`:
+
+    if getattr(product, "dtype", None) == object:
+        raise TypeError(...)
+
+one attribute read per call, immediately before the trace. Exact rather than
+approximate, needs no interception, and cannot pass silently on the shape it
+was written for. It RAISES rather than casting: a float64 kernel that has
+acquired object dtype has lost the guarantee its `-> float` signature makes,
+and quietly repairing it would hide the regression the way the original
+promotion did.
+
+Verified in both directions, not just the passing one:
+
+    current code, mpf word            ->  no raise, chi = 5.478692360634873
+    same function with the cast removed ->  TypeError, guard fires
+
+The generalisable rule: **every float64 kernel that ends in `float(...)` and
+does a numpy matmul should carry this one-line dtype assert.**
+`chi_lambda_of_word` is the first; a sweep for that signature would find the
+rest, and it is a far better use of effort than another approximate scan.

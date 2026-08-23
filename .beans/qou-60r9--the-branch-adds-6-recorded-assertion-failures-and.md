@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T22:19:32Z
-updated_at: 2026-08-23T22:44:13Z
+updated_at: 2026-08-23T22:59:31Z
 ---
 
 `witness_failed_assertion_audit.py` is registered **advisory** in
@@ -260,3 +260,64 @@ descendant should be checked against the 2026-08-09 ruling BEFORE it is treated
 as a defect. Note `gram.TR_M` has **~70 live importers**, not zero — an earlier
 count of "all under `_deprecated/`" came from a `head -12` on a sorted grep and
 was wrong.
+
+
+---
+
+## Batch-1 drain results (2026-08-23, final). Six more, five of them textbook stale passes.
+
+### 12–15. `binding-depth-stratified-*` ×4 — the AME correction landing on the deuteron
+
+    data_loaded   2.22456607 -> 2.2245662   tol 1e-10
+    source        "AME 2020 deuteron binding"
+
+All four computed **2026-06-22**, two months before the 2026-08-19 correction
+whose own message says the canonical binding reference was *"hand-typed and 7
+of 11 were wrong"*. This is that correction reaching the deuteron. The cleanest
+instance of the class on this list.
+
+### 16. `mass-from-q-symbolic` ×2 — a 4-month-stale witness with an anchor question under it
+
+    HEAD computedAt 2026-04-14
+
+    ℏ_q² = Vol(4_1)/(m_μ/m_e)                 0.00981718851347867 -> 0.009817186454275078
+    m_μ/m_e from Vol(4_1)/ℏ_q² (self-consist) 206.768283          -> 206.7683263706738
+
+HEAD's 206.768283 IS the CODATA muon/electron ratio; the new value misses it by
+~4.4e-5 (2.1e-7 relative). Note the same witness records
+`q₀ = 1/(1 - ℏ_q) = 1.1099785827513808` — the **proton** pin. If ℏ_q is now
+derived at the proton anchor while the assertion compares against the
+muon-defined ratio, this is the qou-g8bk story again in a second producer.
+Worth checking against `q0_anchor_manifest.json` before treating it as
+anything else.
+
+Attribution unresolved: the witness was rewritten at 22:40:23 and its producer
+appears in no run log I or the drain agent kept. Recorded here so it is not
+lost.
+
+## Ledger
+
+    main                                       28 NEW + 1 GROWN
+    branch at session start                    34 NEW
+      -1  qbeta-sym-part-hecke-natural-form    RESOLVED (cffc1265f)
+      +2  cyclic-intertwiner (qou-w701), alpha-em-b2
+      +3  atomic-tr-m-helium4, borromean x2 (qou-g8bk)
+      +5  binding-depth-stratified x4, mass-from-q-symbolic (x2 assertions)
+    branch now                                 43 NEW
+
+## Causes, updated
+
+    convention C -> D migration       4   (one resolved)
+    q0 anchor correction              2-4 (borromean x2 confirmed;
+                                           mass-from-q-symbolic x2 suspected)
+    stale input correction (CODATA/AME) 5  (binding-depth x4, and m_n at 501 ppb
+                                            is the same correction's largest hit)
+    deferred verification failed       1   (qou-w701 — a REAL open defect)
+    frozen expected value              2
+    schema misuse, pre-existing        1
+    genuinely open science             2
+
+**Only ONE of the 15 diagnosed is a live defect** (qou-w701). Everything else
+is the corpus ceasing to lie: a stale witness meeting corrected inputs, a
+convention ruling, or an anchor being applied for the first time. That is worth
+stating plainly, because a ratchet counting 43 reads like 43 regressions.
