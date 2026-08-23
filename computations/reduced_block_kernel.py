@@ -81,9 +81,33 @@ def chi_all_lambda_reduced_block(word, n: int, *, dps: int = 50, q=None):
     """
     O(A) composition of cached H_3 blocks.
     Replaces the 1-generator-at-a-time loop in chi_monotone_transfer.
+
+    **`n` MUST be divisible by 3 for the fast path**; any other `n` is delegated
+    to `chi_monotone_transfer.chi_all_lambda`, which is correct at every `n`.
+
+    Why the guard exists (bean `qou-ym48`, added 2026-08-19). The composition
+    below covers generator 0,1 for nucleon 0 and then `3k-1, 3k, 3k+1` for each
+    `k` in `1 .. A-1` with `A = n // 3` — that is `2 + 3(A-1)` generators, which
+    equals `n - 1` **only when `n == 3A`**. For any other `n` the trailing
+    generators are silently skipped and the sweep ends holding shapes of size
+    `3 * (n // 3)` instead of `n`, so every `λ ⊢ n` lookup by the caller misses
+    and the whole result reads as **zero** — no exception, no warning.
+
+    Measured before the fix, on the EMPTY word where `χ^λ` must be `dim λ`:
+    `n = 3` correct, `n = 4` and `n = 5` wrong with `tr_M(1) = 0`, `n = 6`
+    correct. The `y_λ` normalisation `Σ y_λ f^λ = 1` makes `tr_M(1) = 1` at every
+    `n`, so a zero there is unambiguous.
+
+    Production was never affected — `tr_m_atom_via_transfer` only ever calls this
+    at `n = 3(Z+N)` — but the silence was a trap: it turned a correct Markov-step
+    check at `H_4` into an apparent `0/0` degeneracy, which came within one step
+    of retracting a correct result.
     """
     if mp.mp.dps < dps:
         mp.mp.dps = dps
+    if n % 3 != 0:
+        # Not the shape this kernel composes. Delegate rather than return zeros.
+        return chi_all_lambda(word, n, dps=dps, q=q)
     if q is None:
         q = mp.mpf(Q_50_DIGIT_STR)
     qi = 1 / q
