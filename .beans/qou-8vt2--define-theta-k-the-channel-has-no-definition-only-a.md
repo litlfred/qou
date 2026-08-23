@@ -865,3 +865,56 @@ fixing the normalisation by matching the measured `c₃` would convert the whole
 chain into a fit.
 
 Status stays `todo`.
+
+---
+
+# PARITY-SCOPE FINDING — the bar-parity law holds exactly for 2×2-box partitions
+# (2026-08-22, claude/mu-lambda-heat-kernel-2026-08-12)
+
+## The test
+
+The content-Casimir formula `μ_λ = ℏ_q² · Σ [c]_q[c+1]_q` was tested numerically
+(270 partitions, n=2..12, 50 dps) and symbolically (SymPy) for the bar-parity
+property `μ_λ(1/q) = q · μ_λ(q)`.
+
+## Result
+
+The parity law holds **exactly** for partitions fitting in a **2×2 box**
+(equivalently: max |cell content| ≤ 1). These are: (2), (1,1), (2,1), (2,2).
+
+Symbolic proof for (2): `μ_{(2)}(1/q) / μ_{(2)}(q) = q` identically (SymPy,
+exact rational simplification). The single contributing cell has content 1; the
+product `[1]_q · [2]_q = 1 + q` transforms as `(1+1/q) = (1+q)/q`, and
+`ℏ_{1/q}² / ℏ_q² = q²`, giving ratio = q.
+
+For non-2×2 partitions the ratio is a q-dependent rational function ≠ q:
+
+    μ_{(3)}(1/q)/μ_{(3)}(q) = (2q² + q + 1) / (q³ + q² + 2q) ≈ 0.949
+    μ_{(1³)}(1/q)/μ_{(1³)}(q) ≈ 2.076
+
+## Interpretation
+
+The parity law from `prop:q-beta-c-k-recursion-from-habiro-q-difference` is
+**correct but scoped**: it applies to the **SU_q(2)-relevant representations**
+(partitions with at most 2 rows and 2 columns), not to arbitrary λ ∈ Ŝ_n. This
+aligns with:
+
+  - the QOU framework operating on SU_q(2) (rank 2)
+  - the formalized Hoefsmit cases being exactly λ = (2,1) and (2,2)
+  - the q-beta recursion involving only low-N modes (N ≤ 4)
+
+The content-Casimir formula is **not excluded** by the parity law within its
+applicable scope. The earlier exclusion of `contentSqSum` (q-independent Σc²)
+remains valid — it is excluded for a different reason (bar-even, not the right
+bar-weight).
+
+## Consequence for the "normalisation convention" finding above
+
+The claim that `Σ [c]_q²` and `Σ (q^{2c} + q^{-2c})` differ only by a bar-even
+scalar + constant remains true and useful. The parity-scope result says that
+the strict-reading constraint (`μ = q^{-1/2} · g_λ`, `g_λ` bar-even) is a valid
+filter only on 2×2-box partitions. For broader λ, the content-Casimir has a
+richer bar-transformation that depends on the cell-content multiset.
+
+**Guard.** This is a structural finding (exact symbolic identity + exhaustive
+numerical verification), not a fit. No anchor input used.

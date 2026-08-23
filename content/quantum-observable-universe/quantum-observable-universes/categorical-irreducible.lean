@@ -1,55 +1,41 @@
-import QOU.QuantumObservableUniverse.CategoricalFoundations
-import Mathlib.CategoryTheory.Monoidal.Category
-
+import QOU.QuantumObservableUniverse.Instanton
 
 /-!
 # QOU.categorical_irreducible — Irreducibility of categorical instantons
 
-Any categorical instanton ∇ in a quantum observable universe is
-irreducible: Hom_C(𝟙, Ad(A)) = 0.
+The canonical Lean source for `lem:categorical-irreducible` lives at
+`content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean`,
+which is Lake-built under the `qou` package and declares
+`QOU.categorical_irreducible`. Per AGENTS.md §0a (no shadowing stubs) this
+sibling does not re-declare the theorem; the import above re-verifies the
+canonical declaration so the block's `lean.ref`
+(`qou:QOU.categorical_irreducible`) resolves to the library formalization.
 
-This follows directly from condition (ii) of the QOU axioms:
-`Subsingleton (𝟙_ C ⟶ adjointObj)`.
+## Why this file stopped declaring anything (2026-08-23)
 
-LaTeX label: `lem:categorical-irreducible`
+It carried its own `QOU.categorical_irreducible` — the **same
+fully-qualified name** as the library's — proved by projecting the
+structure field `qou.adjoint_vanishing`:
 
-## References
+    theorem categorical_irreducible (qou : QuantumObservableUniverse R)
+        (f g : (𝟙_ qou.C) ⟶ qou.adjointObj) : f = g :=
+      @Subsingleton.elim _ qou.adjoint_vanishing f g
 
-- [manuscript] §1-quantum-observable-universe/categorical-irreducible
+Two defects, one of which had already been diagnosed elsewhere:
+
+1. **Name collision.** The twin sibling `categorical-irreducible-proof.lean`
+   was converted to a note-only importer for exactly this reason, and says
+   so: the old declaration *"collided with it on import"*. That conversion
+   was applied to one of the two blocks sharing the ref and missed this
+   one, so the collision survived — and the two blocks, carrying the
+   *identical* `lean.ref`, resolved to *different* declarations.
+2. **The claim was assumed, not derived.** `qou.adjoint_vanishing` is the
+   vanishing itself, so the theorem restated a hypothesis. The block's own
+   proof (`prf:categorical-irreducible`) derives it from trace-freeness of
+   `Ad(A)` plus non-degeneracy of `∫_A`; the library now carries those two
+   as the hypotheses of `HasCategoricalIrreducibility` and performs the
+   cancellation step.
+
+`adjoint_hom_subsingleton` went with it (same projection of the same field;
+zero references anywhere in the corpus).
 -/
-
-open CategoryTheory MonoidalCategory
-
-namespace QOU
-
-universe u v
-
-/-- The adjoint hom-space is either empty or a singleton.
-
-    In a quantum observable universe over a commutative ring `R`, condition (ii)
-    requires `Hom_C(𝟙, Ad(A))` to be trivial (a subsingleton). This is
-    exactly the bundled `adjoint_vanishing` field. -/
--- Ref: [manuscript] §1
-theorem adjoint_hom_subsingleton {R : Type*} [CommRing R]
-    (qou : QuantumObservableUniverse.{u, v} R) :
-    letI := qou.catInst
-    letI := qou.monInst
-    Subsingleton ((𝟙_ qou.C) ⟶ qou.adjointObj) :=
-  qou.adjoint_vanishing
-
-/-- **Irreducibility of categorical instantons**.
-
-    In a quantum observable universe `(C, A, ω)` over a commutative ring `R`,
-    condition (ii) makes `Hom_C(𝟙, Ad(A))` a subsingleton. Hence every
-    categorical instanton is irreducible: there are no nontrivial
-    gauge-invariant endomorphisms `𝟙 → Ad(A)`. -/
--- Ref: [manuscript] §1
-theorem categorical_irreducible {R : Type*} [CommRing R]
-    (qou : QuantumObservableUniverse.{u, v} R)
-    (f g : (letI := qou.catInst; letI := qou.monInst; (𝟙_ qou.C) ⟶ qou.adjointObj)) :
-    f = g :=
-  letI := qou.catInst
-  letI := qou.monInst
-  @Subsingleton.elim _ qou.adjoint_vanishing f g
-
-end QOU

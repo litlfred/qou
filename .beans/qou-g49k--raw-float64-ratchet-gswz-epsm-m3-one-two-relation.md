@@ -1,11 +1,11 @@
 ---
 # qou-g49k
 title: 'raw-float64 ratchet: gswz_epsm_m3_one_two_relation_closure carries a wall-clock float'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-19T18:14:44Z
-updated_at: 2026-08-19T18:15:23Z
+updated_at: 2026-08-23T18:06:47Z
 ---
 
 `witness_raw_float64_audit.py` reports `new_not_baselined: 0 -> 1` after
