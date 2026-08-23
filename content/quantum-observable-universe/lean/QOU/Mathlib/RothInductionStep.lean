@@ -399,54 +399,60 @@ theorem index_le_add_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r :
     exact le_max_right _ _
   linarith
 
-/-! ### ⚠ The eighth correction: Mahler's `max` is an artefact of his case split
+/-! ### ⚠ Corrections eight and nine — the second one corrects the first
 
-Mahler's §13 ends by combining his two cases into one display,
-`J(A) < t + max(J(W), 2√(J(W)/r_m))`.  Transcribed literally that becomes
+**Correction 8, as recorded:** §13's combined display, transcribed as `θ ≤ t + 2·max S q`,
+says nothing, since `2·max S q ≥ 2S ≥ S` makes it a consequence of `index_le_add_of_det_bound`
+(`θ ≤ t + S`).  `max_form_implied_by_case_one` below is that one-line proof and it stands.
 
-    θ ≤ t + 2 * max S q        (q any rational with S ≤ q²·rr)
+**Correction 9: the transcription was wrong, and so was the conclusion drawn from it.**  The
+source's first branch is not `J(W)` but **`J(W)/n`** — the combined display reads
 
-and it was written here in exactly that form.  **It carries no information.**  For `0 ≤ S`
-we have `2·max S q ≥ 2S ≥ S`, so the statement is implied by `index_le_add_of_det_bound`
-alone — `max_form_implied_by_case_one` below is that one-line proof, kept as the record.
+    J(A) < t + 2 max( J(W)/n , √(J(W)/r_m) ).
 
-The reason Mahler needs a `max` is that he knows only that *one* of his two cases holds, and
-must state a bound valid either way.  But case (1) is unconditional (see
-`index_le_add_of_det_bound`), so there is nothing to hedge against: the `max` protects a
-branch that never fails, at the cost of discarding the branch that is actually strong.
+Correction 8 concluded from the vacuous form that "Mahler's `max` is an artefact of his case
+split" and that the strong branch should be extracted alone.  **That was wrong.**  With the
+`1/n` restored:
 
-What the recursion wants is the **other** branch, and its hypothesis can be moved off `θ`:
+* the combined statement is **not** implied by `θ ≤ t + S` — `2S/n` can be far smaller than
+  `S`, and in the application it is: `S` is of size `n·Φ_m`, so `2S/n` is of size `Φ_m`;
+* case (1) is genuinely useful, so the `max` is combining two *useful* bounds rather than
+  hedging a useless one against a strong one;
+* and the two branches are **complementary by construction**, so the combination needs no
+  side condition at all.
 
-* `sq_index_le_of_det_bound` needs `(θ − t)·rr ≤ r`, which mentions the very quantity being
-  bounded — the same awkwardness as Mahler's `n > N`;
-* but case (1) gives `θ − t ≤ S`, so `S·rr ≤ r` *implies* `(θ − t)·rr ≤ r`.
+The cost of the error was a real one: `index_le_of_det_bound` below carries the hypothesis
+`S·rr ≤ r`, introduced to force the strong branch because case (1) looked worthless.  In the
+recursion's regime that condition reads `Φ_m·r_m ≤ 1`, which is **false** — `Φ_m` is small but
+`r_m` is a large degree.  So the theorem is sound and its hypothesis is unsatisfiable where it
+matters.  `index_le_two_mul_max_of_det_bound` replaces it and assumes nothing of the kind.
 
-`index_le_of_det_bound` below is that composition: a side condition on `S`, `rr` and `r`
-alone, and the conclusion `θ ≤ t + 2q` with `q ≥ √(S/rr)`.  This is stronger than anything
-in the source's combined display, and it is the form a caller can actually check.
+⚠ How this was caught: by taking the *next* step seriously — "check `S·rr ≤ r` against the
+parameter conditions" — instead of carrying it as a caveat.  The check failed, and tracing why
+found the mis-transcription.  A side condition nobody tests is indistinguishable from a bug.
 
-⚠ Whether `S·rr ≤ r` holds in the recursion's regime is **not** settled here.  With
-`S = n·Φ_m`, `rr = r_m`, `r = n` it reads `Φ_m · r_m ≤ 1`, which is a real smallness demand
-on `Φ_m` and has to be checked against the parameter conditions, not assumed. -/
+⚠ And what did **not** catch it: `lake build`, `#print axioms`, and the non-vacuity witnesses.
+The witnesses were all at `r = 1` or `r = 2`, where `S·rr ≤ r` is satisfiable; the hypothesis
+only becomes unsatisfiable in the asymptotic regime, which no finite witness reaches. -/
 
-/-- The discarded `max` form, derived from case (1) alone — the record of the eighth
-correction.  Nothing else should use this; it exists to show that the literal transcription
-of Mahler's combined display is a consequence of the unconditional case and therefore was
-never worth stating as a theorem about determinants. -/
+/-- The vacuous `max` form, derived from the unsharpened case (1) alone.
+
+⚠ This is a record of correction 8, and correction 9 explains what it does **not** show: the
+source's combined display has `J(W)/n` in the first branch, and *that* form is not derivable
+this way.  Nothing should use this theorem; it exists so the mis-transcription stays visible
+rather than being quietly deleted. -/
 theorem max_form_implied_by_case_one {θ t S q : ℚ} (hS0 : 0 ≤ S) (h : θ ≤ t + S) :
     θ ≤ t + 2 * max S q := by
   have := le_max_left S q
   linarith
 
-/-- **Mahler §13, in the form the recursion can use.**  `θ ≤ t + 2q` whenever `q ≥ √(S/rr)`
-(stated as `S ≤ q²·rr`, so no `Real.sqrt` appears) and `S·rr ≤ r`.
+/-- ⚠ **Superseded by `index_le_two_mul_max_of_det_bound`.**  `θ ≤ t + 2q` whenever
+`q ≥ √(S/rr)` (stated as `S ≤ q²·rr`) and `S·rr ≤ r`.
 
-The side condition `S·rr ≤ r` replaces Mahler's `n > N`: it is a statement about the *bound*
-`S` rather than about `θ`, so a caller can discharge it without already knowing the answer.
-It suffices because case (1) gives `θ − t ≤ S`, hence `(θ − t)·rr ≤ S·rr ≤ r`.
-
-`2q` in place of `√2·q` is Mahler's own weakening; keeping `√2` would need a square root and
-buys a factor `1.41`. -/
+The theorem is true.  Its hypothesis `S·rr ≤ r` is the problem: it was introduced to force
+§13's second branch, on the mistaken belief (correction 8) that the first branch was
+worthless, and in the recursion's regime it reads `Φ_m·r_m ≤ 1` and is **false**.  Kept as the
+record of correction 9; use the `max` form instead. -/
 theorem index_le_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
     (d : σ → ℕ) (α : σ → R)
     (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S q : ℚ)
@@ -489,6 +495,67 @@ theorem index_le_of_det_bound_witness : (1 : ℚ) ≤ 0 + 2 * 1 :=
         (X 0 : MvPolynomial (Fin 1) ℚ) ≤ (((1 : ℚ)) : WithTop ℚ)
       rw [index_X])
 
+
+
+/-- **Mahler §13, combined — the real form, and it needs no side condition.**
+
+    θ ≤ t + 2 · max ( S/r , q )        for any `q` with `S ≤ q²·rr`.
+
+Both branches are useful and they are complementary by construction:
+
+* if `(r−1)/rr ≤ θ − t` the cut-off falls outside the matrix, every column contributes, and
+  Gauss's sum eats half of them — `θ − t ≤ 2S/r`;
+* otherwise `(θ−t)·rr < r`, which is exactly the hypothesis of `sq_index_le_of_det_bound`, and
+  that gives `θ − t ≤ √(2S/rr) ≤ 2q`.
+
+The `1/r` in the first branch is what makes it worth having: in the application `S` is of
+size `r·Φ`, so `S/r` is of size `Φ`.  Dropping it — which is what `index_le_add_of_det_bound`
+does, keeping only the `j = 0` term — gives a bound of size `r·Φ` and is useless.  That was
+correction 9.
+
+⚠ Compare `index_le_of_det_bound` above, which reaches `θ ≤ t + 2q` but needs `S·rr ≤ r`.
+This needs nothing, and is weaker only by the `max` — which costs nothing, since `S/r` is
+itself a good bound. -/
+theorem index_le_two_mul_max_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S q : ℚ)
+    (hr : 0 < r) (hrr : 0 < rr) (hθt : t ≤ θ) (hq0 : 0 ≤ q) (hq : S ≤ q ^ 2 * rr)
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    θ ≤ t + 2 * max (S / (r : ℚ)) q := by
+  have hbridge := sum_max_le_index_det d α D P θ t rr hθ hc
+  have hsum : (∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) ≤ S := by
+    have h := le_trans hbridge hS
+    exact_mod_cast h
+  rw [Fin.sum_univ_eq_sum_range (fun ν => max 0 (θ - t - (ν : ℚ) / rr)) r] at hsum
+  have h := RothArith.le_two_mul_max_of_sum_le hrr (by linarith) hq0 hq hr hsum
+  linarith
+
+/-- **Satisfiability of the `max` form**, on the same `1 × 1` instance: `θ = 1`, `t = 0`,
+`rr = 1`, `S = 1`, `q = 1`, conclusion `1 ≤ 0 + 2·max 1 1 = 2`.
+
+⚠ Note what this cannot test.  The distinction between this theorem and the superseded
+`index_le_of_det_bound` is asymptotic — the latter's `S·rr ≤ r` is satisfiable at every small
+`r` and only fails in the regime the recursion runs in.  No finite witness separates them;
+that is why correction 9 needed the parameter check rather than another example. -/
+theorem index_le_two_mul_max_of_det_bound_witness : (1 : ℚ) ≤ 0 + 2 * max (1 / (1 : ℚ)) 1 :=
+  index_le_two_mul_max_of_det_bound (σ := Fin 1) (R := ℚ) (r := 1)
+    (fun _ => 1) (fun _ => (0 : ℚ)) (fun _ _ => []) (X 0) 1 0 1 1 1
+    Nat.one_pos one_pos (by norm_num) (by norm_num) (by norm_num)
+    (by rw [index_X])
+    (by intro i j; simp)
+    (by
+      rw [Matrix.det_fin_one]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (pderivList ([] : List (Fin 1)) (X 0 : MvPolynomial (Fin 1) ℚ))
+          ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [pderivList_nil]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (X 0 : MvPolynomial (Fin 1) ℚ) ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [index_X])
 
 /-! ### Next
 

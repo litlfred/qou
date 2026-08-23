@@ -54,20 +54,29 @@
 
   ═══ ⚠ WHAT THIS DOES *NOT* CLOSE ═══
 
-  `exists_index_le_of_separated` discharges every *input* of §13 and leaves three arithmetic
-  side conditions on the caller, of which one is a real open question:
+  §13 is *derived*: `exists_index_le_of_separated` assumes nothing about the operator family,
+  nothing about the determinant, and no arithmetic side condition beyond `q ≥ √(S/D₂)`.
 
-  * `S·D₂ ≤ r` — the cut-off lands inside the matrix.  In the recursion's regime
-    (`S = n·Φ_m`, `D₂ = r_m`, `r = n`) this reads `Φ_m·r_m ≤ 1`, and whether Roth's lemma's
-    parameter conditions deliver it is **unchecked**.
-  * the row cost is `t = r/D₁`, with `r` the minimum representation length and `D₁` the degree
-    floor.  This is the **constant regime** the sixth correction was about, in its final form:
-    the source treats `t` as a chosen constant with `0 < t ≤ 1`, and whether `r/D₁` is below
-    the `t` the recursion needs is a statement about representation length versus degree that
-    the arc does not have.
+  ⚠ An earlier version demanded `S·D₂ ≤ r` as well.  That was a **mistake** — see correction 9
+  in `QOU/Mathlib/RothInductionStep.lean`.  The two branches of §13's conclusion are
+  complementary by construction, so no such condition is needed; and in the recursion's regime
+  it reads `Φ_m·r_m ≤ 1`, which is false.
 
-  So §13 is *derived*, with no gaps and no assumed inputs.  Whether its constants close the
-  induction is a separate question, and it is still open.
+  One constant question remains, and it is the sixth correction in its final form:
+
+  * the row cost is `t = r/D₁` — representation length over degree floor.  The source *chooses*
+    `t` with `0 < t ≤ 1`; this arc *derives* it.  The two pieces that would settle it:
+
+      1. a bound `r ≤ d(split-off variable) + 1` on the **minimum representation length** —
+         true (expand `P` in powers of the split-off variable) but **not proved here**:
+         `exists_separated_representation_fin` splits on the `σ`-monomials, giving
+         `r = #{σ-monomials}`, and `exists_indep_representation` only shortens without
+         recording by how much;
+      2. `RothGrowth`, which makes the split-off variable's degree the *smallest*, so that
+         `D₁ ≥ ω · d(split-off)` and hence `t ≲ 1/ω`.
+
+    Together those would give `t ≲ 1/ω` and so determine `ω(m, ε)` — which is the one entry
+    `RothLemmaStatement`'s audit came back empty on.
 -/
 import QOU.Mathlib.RothInductionStep
 import QOU.Mathlib.BoundedOrderWronskian
@@ -351,18 +360,19 @@ theorem cost_sepW_le {τ : Type*} {r D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD�
   · exact div_le_div_of_nonneg_right (by exact_mod_cast hDy j) hD₂Q.le
 
 /-- **§13 for an arbitrary non-zero polynomial in two variable groups** — every input
-supplied, nothing assumed about the operator family or the determinant.
+supplied, and no side condition beyond `q ≥ √(S/D₂)`.
 
 The existence produces the representation length `r` and a bound `S` on the determinant's
-index; the conclusion then holds for any `θ` and `q` meeting the arithmetic side conditions.
-
-Reading the side conditions:
+index; the conclusion then holds for any `θ` and `q` meeting two conditions:
 
 * `r/D₁ ≤ θ` — the row cost `t` is below the index being bounded, so there is something to
-  bound.  (`index_le_of_det_bound` needs `t ≤ θ`.)
+  bound.  (`index_le_two_mul_max_of_det_bound` needs `t ≤ θ`.)
 * `S ≤ q²·D₂` — `q` is a rational stand-in for `√(S/D₂)`, keeping everything in `ℚ`.
-* `S·D₂ ≤ r` — the cut-off lands inside the matrix.  ⚠ This is the one that is **not
-  established** in the recursion's regime; see the module's closing note.
+
+⚠ An earlier version of this also demanded `S·D₂ ≤ r`.  That condition is **unnecessary** —
+§13's two branches are complementary, so the `max` form needs nothing — and it is **false** in
+the recursion's regime, where it reads `Φ_m·r_m ≤ 1`.  See correction 9 in
+`QOU/Mathlib/RothInductionStep.lean`.
 
 ⚠ What this is *not*: it is not Roth's lemma, and it does not choose `ω(m, ε)`.  It is §13's
 inequality with all of §13's inputs discharged. -/
@@ -371,43 +381,39 @@ theorem exists_index_le_of_separated {τ : Type*} {K : Type*} [Field K] [CharZer
     (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
     (α : σ → K) (β : τ → K) (P : MvPolynomial (σ ⊕ τ) K) (hP : P ≠ 0) :
     ∃ (r : ℕ) (S : ℚ), 0 < r ∧ ∀ θ q : ℚ,
-      (r : ℚ) / (D₁ : ℚ) ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) → S * (D₂ : ℚ) ≤ (r : ℚ) →
+      (r : ℚ) / (D₁ : ℚ) ≤ θ → 0 ≤ q → S ≤ q ^ 2 * (D₂ : ℚ) →
       ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
-      θ ≤ (r : ℚ) / (D₁ : ℚ) + 2 * q := by
+      θ ≤ (r : ℚ) / (D₁ : ℚ) + 2 * max (S / (r : ℚ)) q := by
   classical
   obtain ⟨r, φ, ψ, Dx, Dy, hr, hDx, hDy, hPeq, hne⟩ := exists_sepW_ne_zero P hP
   obtain ⟨S, hS⟩ :=
     exists_index_le_of_ne_zero (Sum.elim d₁ d₂) (Sum.elim α β) hne
   have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
-  refine ⟨r, S, hr, fun θ q hθt hq0 hq hSr hθ => ?_⟩
-  refine index_le_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
+  refine ⟨r, S, hr, fun θ q hθt hq0 hq hθ => ?_⟩
+  refine index_le_two_mul_max_of_det_bound (Sum.elim d₁ d₂) (Sum.elim α β)
     (fun i j => (Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P θ ((r : ℚ) / (D₁ : ℚ))
-    (D₂ : ℚ) S q hr hD₂Q hθt hq0 hq hSr hθ
+    (D₂ : ℚ) S q hr hD₂Q hθt hq0 hq hθ
     (fun i j => cost_sepW_le hD₁ hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hDx hDy i j) ?_
   rw [hPeq, ← sepW]
   exact hS
 
 /-! ### Next
 
-§13 is closed: `exists_index_le_of_separated` takes a non-zero `P` in two variable groups and
-returns the representation length, a bound on the determinant's index, and §13's conclusion —
-no assumed operator family, no assumed non-vanishing.
+§13 is closed.  What is left is the constant bookkeeping, and it now has a shape:
 
-What is left is **not** part of §13:
+1. **Bound the minimum representation length.**  `r ≤ d(split-off variable) + 1`, which is
+   Mahler's `n ≤ r_m + 1`.  Needs the representation split on the *`τ`*-monomials (the arc
+   splits on `σ`) and a length bound threaded through `exists_indep_representation`, which
+   currently only shortens without saying by how much.
+2. **Feed that to `RothGrowth`.**  With the split-off variable's degree smallest,
+   `D₁ ≥ ω·d(split-off)`, so `t = r/D₁ ≲ 1/ω`.  Choosing `ω ≥ 2/ε` then gives `t ≤ ε/2`.
+3. **The recursion** (§14): `ω(m, ε)` follows from 2, and `c_m = 2^m − 3` from iterating.
 
-1. **`S·D₂ ≤ r`, i.e. `Φ_m·r_m ≤ 1`.** A side condition on the caller, unchecked against the
-   parameter conditions.  It is the first thing to test, because if it fails in the intended
-   regime then §13's square-root branch never fires and the whole repair of the sixth
-   correction buys nothing.
-2. **`t = r/D₁` versus the source's constant `t ≤ 1`.** Representation length against degree
-   floor.  The sixth correction's original worry, in its final and sharpest form.
-3. **The recursion** (§14): choosing `ω(m, ε)`, and feeding `rothLemmaUniform_one` and the
-   `m−1` case back into the `m` case.
+⚠ Provenance: §6 and §13 have been read directly and match.  §11 (property `Γ_m`) and §14 are
+in the illegible region and have **not** been read; steps 2 and 3 above are the arc's own
+reconstruction of what the growth condition must be doing, not a transcription.  They should
+be checked against a clean copy before `ω(m, ε)` or `c_m = 2^m − 3` is asserted. -/
 
-⚠ Provenance, still standing for `RothRecursionArith`'s constants: reconstructed from a partly
-illegible scan.  §6 and §13's *structure* have now been read directly and match; §14's
-parameter bookkeeping has not been, and `ω(m, ε)` and `c_m = 2^m − 3` should not be asserted
-until it is. -/
 
 
 end MvPolynomial

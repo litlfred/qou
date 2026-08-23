@@ -128,6 +128,73 @@ theorem sq_mul_le_two_mul_of_sum_le {θ r S : ℚ} (hr : 0 < r) (hθ : 0 ≤ θ)
     nlinarith [mul_le_mul_of_nonneg_left hKlt hKnn]
   nlinarith [hkey, hdiv, mul_le_mul_of_nonneg_right hKge hθ]
 
+/-- **Mahler §13, case (1) — the SHARP form.**
+
+When the cut-off falls outside the range (`(n−1)/r ≤ θ`, so every one of the `n` terms is
+unclipped), Gauss's sum eats half of them and the conclusion carries a factor `2/n`:
+
+    θ ≤ 2S/n.
+
+⚠ The `2/n` is the entire content.  Dropping it — keeping only the `ν = 0` term, which gives
+`θ ≤ S` unconditionally — is true but useless in the application, where `S` is of size `n·Φ`.
+`2S/n` is then of size `Φ`, and `S` is of size `n·Φ`; the factor separating them is the matrix
+size.  See the ninth correction in `QOU/Mathlib/RothInductionStep.lean`. -/
+theorem le_two_mul_div_of_sum_le {θ r S : ℚ} (hr : 0 < r) {n : ℕ} (hn : 0 < n)
+    (hge : ((n : ℚ) - 1) / r ≤ θ)
+    (hS : ∑ ν ∈ range n, max 0 (θ - (ν : ℚ) / r) ≤ S) :
+    θ ≤ 2 * S / (n : ℚ) := by
+  have hnQ : (0 : ℚ) < (n : ℚ) := by exact_mod_cast hn
+  have hterm : ∀ ν ∈ range n, max 0 (θ - (ν : ℚ) / r) = θ - (ν : ℚ) / r := by
+    intro ν hν
+    rw [Finset.mem_range] at hν
+    refine max_eq_right ?_
+    have hvn : ((ν : ℚ)) + 1 ≤ (n : ℚ) := by exact_mod_cast hν
+    have h1 : ((ν : ℚ)) / r ≤ ((n : ℚ) - 1) / r :=
+      div_le_div_of_nonneg_right (by linarith) hr.le
+    linarith
+  rw [Finset.sum_congr rfl hterm, Finset.sum_sub_distrib, Finset.sum_const,
+    Finset.card_range, nsmul_eq_mul, sum_range_div] at hS
+  have hgeR : (n : ℚ) - 1 ≤ θ * r := by rwa [div_le_iff₀ hr] at hge
+  have hdiv : (n : ℚ) * ((n : ℚ) - 1) / (2 * r) ≤ (n : ℚ) * θ / 2 := by
+    rw [div_le_div_iff₀ (by positivity : (0 : ℚ) < 2 * r) (by norm_num : (0 : ℚ) < 2)]
+    nlinarith [mul_le_mul_of_nonneg_left hgeR hnQ.le]
+  rw [le_div_iff₀ hnQ]
+  linarith
+
+/-- **Mahler §13, combined — and it needs no side condition.**
+
+    θ ≤ 2 · max (S/n, q)        for any `q` with `S ≤ q²·r`.
+
+The case split is on whether the cut-off `θ·r` falls inside the range of columns:
+
+* `(n−1)/r ≤ θ` — it does not, every column contributes, and `le_two_mul_div_of_sum_le` gives
+  `θ ≤ 2S/n`;
+* otherwise `θ·r < n−1 ≤ n`, which is exactly `sq_mul_le_two_mul_of_sum_le`'s hypothesis, and
+  that gives `θ² ≤ 2q² ≤ (2q)²`, hence `θ ≤ 2q`.
+
+⚠ Note what is **absent**: no hypothesis relating `S`, `r` and `n`.  The two branches are
+complementary by construction, so the combination is unconditional.  An earlier form of this
+demanded `S·r ≤ n` in order to force the second branch — see the ninth correction; that
+condition is both unnecessary and false in the intended regime. -/
+theorem le_two_mul_max_of_sum_le {θ r S q : ℚ} (hr : 0 < r) (hθ : 0 ≤ θ) (hq0 : 0 ≤ q)
+    (hq : S ≤ q ^ 2 * r) {n : ℕ} (hn : 0 < n)
+    (hS : ∑ ν ∈ range n, max 0 (θ - (ν : ℚ) / r) ≤ S) :
+    θ ≤ 2 * max (S / (n : ℚ)) q := by
+  have hnQ : (0 : ℚ) < (n : ℚ) := by exact_mod_cast hn
+  rcases le_or_gt (((n : ℚ) - 1) / r) θ with hge | hlt
+  · have h1 := le_two_mul_div_of_sum_le hr hn hge hS
+    have := le_max_left (S / (n : ℚ)) q
+    rw [mul_div_assoc] at h1
+    linarith
+  · have hn' : θ * r ≤ (n : ℚ) := by
+      rw [lt_div_iff₀ hr] at hlt
+      linarith
+    have h2 := sq_mul_le_two_mul_of_sum_le hr hθ hn' hS
+    have hsq : θ ^ 2 ≤ (2 * q) ^ 2 := by nlinarith
+    have hle : θ ≤ 2 * q := by nlinarith [sq_nonneg (θ - 2 * q)]
+    have := le_max_right (S / (n : ℚ)) q
+    linarith
+
 /-! ### Non-vacuity
 
 Two guards.  The first shows the `max 0` is load-bearing rather than decorative; the second

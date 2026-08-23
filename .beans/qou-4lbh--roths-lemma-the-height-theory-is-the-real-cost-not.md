@@ -1862,3 +1862,90 @@ not been read, so `ω(m, ε)` and `c_m = 2^m − 3` remain unasserted.
 Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
 output. Nine declarations `#print axioms`-clean on the standard set. No `sorry`/`admit`/
 `native_decide`.
+
+---
+
+## 2026-08-23 — ⚠ NINTH CORRECTION: the eighth was wrong, and the check that found it
+
+I said the next step was to test the side condition `S·D₂ ≤ r` (`Φ_m·r_m ≤ 1`) against the
+parameter conditions, because "if it fails in the intended regime the square-root branch never
+fires and the repair buys nothing." **It fails.** Tracing why found a mis-transcription, and
+that mis-transcription is what produced the eighth correction.
+
+### What §13 actually says
+
+The combined display is
+
+    J(A) < t + 2 max( J(W)/n , √(J(W)/r_m) ).
+
+I transcribed the first branch as `J(W)`, dropping the **`1/n`**. Correction 8 then observed —
+correctly — that `θ ≤ t + 2·max S q` is implied by `θ ≤ t + S` and therefore says nothing, and
+concluded that Mahler's `max` was an artefact of his case split and that the strong branch
+should be extracted alone. That conclusion is **wrong**:
+
+* with the `1/n` restored, the combined statement is **not** implied by `θ ≤ t + S`. `2S/n`
+  can be far smaller than `S`, and in the application it is: `S` is of size `n·Φ_m`, so `2S/n`
+  is of size `Φ_m` while `S` is of size `n·Φ_m`. The separating factor is the matrix size.
+* so the `max` combines two *useful* bounds. It is not hedging.
+* and because the two branches are complementary **by construction**, the combination needs no
+  side condition at all.
+
+Case (1) sharpened (`RothArith.le_two_mul_div_of_sum_le`): when `(n−1)/r ≤ θ` every term is
+unclipped, so `J(W) ≥ nθ − n(n−1)/(2r)`, and `(n−1)/r ≤ θ` makes the correction term at most
+`nθ/2`, leaving `J(W) ≥ nθ/2`. That is where the `2/n` comes from — Gauss's sum eating half.
+
+### The cost of the error, and what it cost me
+
+`index_le_of_det_bound` carries `S·rr ≤ r`, introduced **because** case (1) looked worthless
+and the strong branch had to be forced. In the recursion's regime that reads `Φ_m·r_m ≤ 1`,
+which is false — `Φ_m` is small but `r_m` is a large degree. So the theorem is sound and its
+hypothesis is unsatisfiable exactly where it is wanted.
+
+⚠ Two things about how this was caught, both worth keeping:
+
+* **The check is what found it.** Carrying `S·rr ≤ r` as a documented caveat would have hidden
+  a wrong theorem behind an honest-looking warning indefinitely. A side condition nobody tests
+  is indistinguishable from a bug.
+* **No witness could have found it.** All three non-vacuity witnesses sit at `r = 1` or
+  `r = 2`, where `S·rr ≤ r` is perfectly satisfiable. The hypothesis only fails asymptotically.
+  Finite examples test vacuity; they do not test *usefulness*, and this arc has now been bitten
+  by the difference twice (correction 6 was the same species).
+
+### What landed
+
+`RothRecursionArith` (pure ℚ):
+
+```
+le_two_mul_div_of_sum_le   (n−1)/r ≤ θ  ⟹  θ ≤ 2S/n          — sharp case (1)
+le_two_mul_max_of_sum_le   θ ≤ 2·max(S/n, q)  for S ≤ q²r     — combined, NO side condition
+```
+
+`RothInductionStep`: `index_le_two_mul_max_of_det_bound`, the index-side form, plus a witness.
+`index_le_of_det_bound` and `max_form_implied_by_case_one` are **kept and relabelled** as the
+record of the error rather than deleted.
+
+`RothOperatorFamily`: `exists_index_le_of_separated` no longer takes `S·D₂ ≤ r`.
+
+### Where the constants stand now
+
+`S/r` is of size `Φ_m` and `q ≈ √(S/D₂) = √(nΦ_m/r_m) ≈ √Φ_m` since `n ≤ r_m + 1`. So §13's
+conclusion is `θ ≤ t + 2·max(Φ_m, √Φ_m)` — **Mahler's Lemma 4**. The only remaining constant
+question is `t`, and it now has a shape:
+
+1. **Bound the minimum representation length**: `r ≤ d(split-off variable) + 1`, i.e. Mahler's
+   `n ≤ r_m + 1`. True — expand `P` in powers of the split-off variable — but **not proved
+   here**: `exists_separated_representation_fin` splits on the `σ`-monomials, so `r` is the
+   number of those, and `exists_indep_representation` only shortens without recording by how
+   much.
+2. **Feed it to `RothGrowth`**, which makes the split-off variable's degree the *smallest*, so
+   `D₁ ≥ ω·d(split-off)` and `t = r/D₁ ≲ 1/ω`. Choosing `ω ≥ 2/ε` gives `t ≤ ε/2`.
+
+That would determine **`ω(m, ε)`** — the one entry `RothLemmaStatement`'s audit came back
+empty on.
+
+⚠ Provenance: §6 and §13 have now been read directly and match. §11 (property `Γ_m`) and §14
+are in the illegible region and have **not** been read. Steps 1 and 2 are the arc's own
+reconstruction of what the growth condition must be doing, not a transcription.
+
+Verification: twenty arc modules rebuilt with `.olean`s deleted — exit 0, no errors, no linter
+output. Five new declarations `#print axioms`-clean.
