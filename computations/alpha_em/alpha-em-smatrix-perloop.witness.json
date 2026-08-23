@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:50:13.034842+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-23T20:52:07.500036+00:00",
+  "commitSha": "51453478504f0afd0957f3a4410bf273438ce1f9",
   "assertions": [
     {
       "name": "controls_reproduce_3822_genuine_smatrix",
@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "C1..C5: D(2,3,5)=2, S\u00b2=1, vacuum row=Cor.12 weights, \u03a3|S0i|\u00b2=1, ratio=\u03c6"
+      "source": "C1..C5: D(2,3,5)=2, S²=1, vacuum row=Cor.12 weights, Σ|S0i|²=1, ratio=φ"
     },
     {
       "name": "S00_equals_reciprocal_total_quantum_dimension",
@@ -18,7 +18,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "S_{00} = 1/\ud835\udc9f with \ud835\udc9f = \u221a(\u03a3 d_i\u00b2) reproduced to 1e-40"
+      "source": "S_{00} = 1/𝒟 with 𝒟 = √(Σ d_i²) reproduced to 1e-40"
     },
     {
       "name": "total_quantum_dimension_closed_form_sqrt_5plussqrt5_over2",
@@ -26,7 +26,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "\u03a3d_i\u00b2=(5+\u221a5)/2, \ud835\udc9f=\u221a((5+\u221a5)/2) \u2014 algebraic in \u211a(\u221a5), matched to 1e-40"
+      "source": "Σd_i²=(5+√5)/2, 𝒟=√((5+√5)/2) — algebraic in ℚ(√5), matched to 1e-40"
     },
     {
       "name": "D_is_neither_b1_nor_pi_b1_FALSIFIED_value_axis",
@@ -34,18 +34,18 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "\ud835\udc9f\u22481.902, \u03a3d_i\u00b2\u22483.618 \u2209 {8, 8\u03c0=25.13}; #3853 n=5 reading 11.357 also \u2209 \u2014 the naive S\u2080\u2080=1/D shared-wall value identification is falsified"
+      "source": "𝒟≈1.902, Σd_i²≈3.618 ∉ {8, 8π=25.13}; #3853 n=5 reading 11.357 also ∉ — the naive S₀₀=1/D shared-wall value identification is falsified"
     },
     {
       "name": "smatrix_carries_no_bare_pi_structural_pi_axis",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "source": "\ud835\udc9f,S\u2080\u2080 \u2208 \u211a(\u221a5) algebraic (cyclotomic quantum dims) \u21d2 S-matrix cannot supply the bare \u03c0 of 1/(\u03c0\u00b7b\u2081); \u03c0 is archimedean (1-loop det 4\u03c0\u00b2)"
+      "source": "𝒟,S₀₀ ∈ ℚ(√5) algebraic (cyclotomic quantum dims) ⇒ S-matrix cannot supply the bare π of 1/(π·b₁); π is archimedean (1-loop det 4π²)"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "alpha-em-smatrix-perloop",
   "scriptFile": "alpha_em_smatrix_perloop_probe.py",
   "scriptHash": "0f79cc1f8450",
@@ -61,10 +61,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -72,7 +72,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em/alpha_em_smatrix_perloop_probe.py"
   },
-  "description": "Tests the #3870/#3882 redirect: does the RT/WRT modular-S-matrix total quantum dimension D=\u221a(\u03a3d_i\u00b2) (S_{00}=1/D) yield the \u03b1_EM per-loop measure 1/(\u03c0\u00b7b\u2081)=1/(8\u03c0), b\u2081=dim H\u00b9(M_Bring)=8? REUSES #3822's machine-validated genuine \u03a3(2,3,5) S-matrix (Hikami math-ph/0405028, eq. 3.8). The genuine family has D(2,3,5)=2 primary fields; quantum dims are the icosahedral/Fibonacci pair {1,\u03c6}, so \u03a3d_i\u00b2=(5+\u221a5)/2\u22483.618 and \ud835\udc9f=\u221a((5+\u221a5)/2)\u22481.902 \u2014 ALGEBRAIC in \u211a(\u221a5), NO \u03c0. Per-axis: (i) area-free \u2713 (\u221aReidemeister-torsion magnitudes); (ii) \u03c0-power \u22121 \u2717 (b)-STRUCTURAL \u2014 every MTC quantum dimension is a cyclotomic algebraic integer, so S_{00}=1/\ud835\udc9f carries no bare \u03c0 for ANY root-of-unity S-matrix; (iii) reciprocal \u2713 FORM (S_{00}=1/\ud835\udc9f IS the 1/(total-count) democratic average the redirect predicted) but \u2717 VALUE (\ud835\udc9f\u22481.902\u22608, \u22608\u03c0\u224825.13; only 2 primary fields, far too few for the b\u2081=8 count). Cross-check: the other natural reading (n=5 Hecke hook-content at q\u2080, #3853) gives 11.357 \u2014 also \u22608/8\u03c0 (robust double-negative). Scope-(a) NEGATIVE: the reciprocal 1/D FORM is confirmed, but the bare \u03c0 is ARCHIMEDEAN (1-loop det 4\u03c0\u00b2 / heat-kernel), NOT categorical \u2014 the only \u03c0's in the RT normalization are unit-modulus framing/CS phases (e^{\u03c0i/4}, CS=\u22121/120,\u221249/120, surgery Gauss sum). This DECIDES the #3853 gate: \ud835\udc9f algebraic \u21d2 the 'D=\u03c0\u00b7b\u2081=8\u03c0 (\u03c0 categorical)' branch is structurally impossible; \u03c0 is the universal archimedean 1-loop factor. No CODATA read, no convention tuned to 8\u03c0. No fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
+  "description": "Tests the #3870/#3882 redirect: does the RT/WRT modular-S-matrix total quantum dimension D=√(Σd_i²) (S_{00}=1/D) yield the α_EM per-loop measure 1/(π·b₁)=1/(8π), b₁=dim H¹(M_Bring)=8? REUSES #3822's machine-validated genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, eq. 3.8). The genuine family has D(2,3,5)=2 primary fields; quantum dims are the icosahedral/Fibonacci pair {1,φ}, so Σd_i²=(5+√5)/2≈3.618 and 𝒟=√((5+√5)/2)≈1.902 — ALGEBRAIC in ℚ(√5), NO π. Per-axis: (i) area-free ✓ (√Reidemeister-torsion magnitudes); (ii) π-power −1 ✗ (b)-STRUCTURAL — every MTC quantum dimension is a cyclotomic algebraic integer, so S_{00}=1/𝒟 carries no bare π for ANY root-of-unity S-matrix; (iii) reciprocal ✓ FORM (S_{00}=1/𝒟 IS the 1/(total-count) democratic average the redirect predicted) but ✗ VALUE (𝒟≈1.902≠8, ≠8π≈25.13; only 2 primary fields, far too few for the b₁=8 count). Cross-check: the other natural reading (n=5 Hecke hook-content at q₀, #3853) gives 11.357 — also ≠8/8π (robust double-negative). Scope-(a) NEGATIVE: the reciprocal 1/D FORM is confirmed, but the bare π is ARCHIMEDEAN (1-loop det 4π² / heat-kernel), NOT categorical — the only π's in the RT normalization are unit-modulus framing/CS phases (e^{πi/4}, CS=−1/120,−49/120, surgery Gauss sum). This DECIDES the #3853 gate: 𝒟 algebraic ⇒ the 'D=π·b₁=8π (π categorical)' branch is structurally impossible; π is the universal archimedean 1-loop factor. No CODATA read, no convention tuned to 8π. No fit; no α_k wired; 1/(8π) stays a phase-4 identification.",
   "contentBlock": "prop:alpha-em-categorical-trace",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-smatrix-perloop-quantum-dimension.md",
   "parameters": {
@@ -100,7 +100,7 @@
       "D_total": "1.90211303259030714423287866676",
       "D_total_closed_form": "sqrt((5+sqrt(5))/2)",
       "S00_equals_inv_D": true,
-      "field": "Q(sqrt5) \u2014 algebraic, no pi"
+      "field": "Q(sqrt5) — algebraic, no pi"
     },
     "comparison_to_targets": {
       "b1": 8,
@@ -115,11 +115,11 @@
       "source": "#3853 alpha_em_2I_total_quantum_dimension_gate_test_probe",
       "D_q0": "11.356887116006046877",
       "equals_8_or_8pi": false,
-      "note": "the OTHER natural keystone-S-matrix reading; also misses 8 and 8\u03c0"
+      "note": "the OTHER natural keystone-S-matrix reading; also misses 8 and 8π"
     },
     "three_axis_verdict": {
-      "axis_i_area_free": "PASS \u2014 sqrt(Reidemeister torsion) magnitudes, topological",
-      "axis_ii_pi_power_minus1": "FAIL (b)-structural \u2014 D,S00 in Q(sqrt5) algebraic, no bare pi for ANY root-of-unity S-matrix (cyclotomic quantum dimensions)",
+      "axis_i_area_free": "PASS — sqrt(Reidemeister torsion) magnitudes, topological",
+      "axis_ii_pi_power_minus1": "FAIL (b)-structural — D,S00 in Q(sqrt5) algebraic, no bare pi for ANY root-of-unity S-matrix (cyclotomic quantum dimensions)",
       "axis_iii_reciprocal": "FORM PASS (S00=1/D democratic average) / VALUE FAIL (D~1.902 != b1=8, != 8pi)",
       "where_pi_must_come_from": "archimedean 1-loop determinant 4pi^2 / heat-kernel (log(4pi^2) in zeta'_Delta0(0)); the RT normalization's only pi's are unit-modulus framing/CS phases (magnitude 1)",
       "decides_3853_gate": "D algebraic => 'D=pi*b1=8pi (pi categorical)' branch structurally impossible; pi is universal archimedean 1-loop factor"
