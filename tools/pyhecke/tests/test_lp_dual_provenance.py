@@ -239,3 +239,76 @@ def test_a_small_scale_lp_is_solved_not_declared_infeasible():
             "loosen, so 'solver gave up' is again reading as 'no solution'"
         )
         assert got.primal_obj == pytest.approx(ref.primal_obj, rel=1e-5)
+
+
+# ── the singular Gram ─────────────────────────────────────────────────
+
+
+def test_pseudo_inverse_refuses_an_out_of_range_rhs():
+    """`Gx = b` with `b` outside `range(G)` has NO solution, and returning a
+    vector would present "no solution" as an answer — the failure this arc
+    keeps finding. `frobenius_repose_probe` recorded exactly that for every
+    census nucleus, via an inverse of an exactly-singular matrix."""
+    from pyhecke.lp_dual_solver import gram_pseudo_inverse_solve
+
+    # A rank-1 Gram in 2D: kernel is (1, -1)/sqrt(2), range is span(1, 1).
+    G = [["1", "1"], ["1", "1"]]
+    ok_str, ok_f64, kernel_dim = gram_pseudo_inverse_solve(G, ["2", "2"], dps=30)
+    assert kernel_dim == 1
+    assert ok_f64 == pytest.approx([1.0, 1.0])
+
+    with pytest.raises(ValueError, match="not in range"):
+        gram_pseudo_inverse_solve(G, ["1", "-1"], dps=30)
+
+
+def test_pseudo_inverse_returns_the_minimum_norm_representative():
+    """The solution is unique only up to a kernel vector; the representative
+    with no kernel component is the canonical one."""
+    from pyhecke.lp_dual_solver import gram_pseudo_inverse_solve
+
+    G = [["1", "1"], ["1", "1"]]
+    _s, y, _k = gram_pseudo_inverse_solve(G, ["2", "2"], dps=30)
+    kernel = np.array([1.0, -1.0]) / np.sqrt(2.0)
+    assert abs(float(np.dot(y, kernel))) < 1e-20, "solution carries a kernel component"
+
+
+def test_pseudo_inverse_carries_full_precision_strings():
+    """The f64 view and the decimal string must agree, and the string must
+    actually carry more than f64 — otherwise it is f64 wearing a string, which
+    the audit's laundering guard counts rather than excuses."""
+    from pyhecke.lp_dual_solver import gram_pseudo_inverse_solve
+
+    # det must not be of the form 2^a·5^b, or the exact answer is a short
+    # terminating decimal and the digit count is legitimately tiny: the
+    # first draft used one whose answer is 0.4, which `mp.nstr` renders
+    # as "0.4". That is the test being wrong, not the companions.
+    G = [["4", "1"], ["1", "6"]]        # det 23, so 1/det never terminates
+    s, f, kernel_dim = gram_pseudo_inverse_solve(G, ["1", "1"], dps=50)
+    assert kernel_dim == 0, "this G is nonsingular; no kernel expected"
+    for si, fi in zip(s, f):
+        assert float(si) == pytest.approx(fi, rel=1e-15)
+    digits = max(len(x.replace("-", "").replace(".", "").lstrip("0")) for x in s)
+    assert digits > 17, f"companions carry only {digits} digits — not full precision"
+
+
+def test_pseudo_inverse_rank_is_stable_across_working_precision():
+    """Rank is a property of the DATA, so raising `dps` above the input's own
+    precision must not change the answer. It did: at dps=80 against 50-dps
+    input strings the exactly-zero eigenvalue read as ~1e-50 invented noise,
+    the kernel was missed, and the H_3 solve returned `y[0] = 1.0` with its
+    exact `y[1] == y[2]` symmetry broken."""
+    from pyhecke.lp_dual_solver import gram_pseudo_inverse_solve
+
+    # A rank-1 Gram whose entries carry ~50 significant digits.
+    a = "1." + "3" * 49
+    G = [[a, a], [a, a]]
+    seen = set()
+    for dps in (30, 50, 80, 120):
+        _s, y, kernel_dim = gram_pseudo_inverse_solve(
+            G, [a, a], dps=dps
+        )
+        seen.add(kernel_dim)
+        assert kernel_dim == 1, (
+            f"kernel missed at dps={dps}: rank changed with working precision"
+        )
+    assert seen == {1}

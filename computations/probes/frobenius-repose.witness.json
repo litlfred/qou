@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T22:30:17.326959+00:00",
-  "commitSha": "788b50dcd4ea0f475d839d6395106a11df7b4d13",
+  "computedAt": "2026-08-23T16:08:05.600059+00:00",
+  "commitSha": "4b40a465a1f0a983c95e1e124ef9c2bfb7f29e4b",
   "assertions": [
     {
       "name": "gram_full_rank_forces_unique_solve",
-      "computed": 6,
+      "computed": 5,
       "expected": 6,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "np.linalg.matrix_rank(gram_matrix()) — invertible ⇒ Gx=nf unique"
     },
@@ -21,12 +21,12 @@
       "source": "neither variant reproduces the census AND is chart-selective"
     }
   ],
-  "allPassed": true,
-  "durationMs": 147405,
+  "allPassed": false,
+  "durationMs": 182335,
   "computation": "frobenius-repose",
   "scriptFile": "frobenius_repose_probe.py",
-  "scriptHash": "9d9ba12ce345",
-  "scriptCommitSha": "4267b4ec2075eb640cdb677ca7ff72061df91d62",
+  "scriptHash": "ba932b4a5ec6",
+  "scriptCommitSha": "dbc13fc3824dd85f2990f01dbf8edf09aab26f3f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,21 +38,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
-  "description": "Re-posed Frobenius per-nucleus admissibility (bean qou-vd7j): removes the inconsistent net row two ways — (a) drop 1ᵀx=A, (b) replace its RHS with the consistent 1ᵀG⁻¹nf. G invertible ⇒ Gx=nf is a unique linear solve, so both variants are trivially feasible and NON-SELECTIVE. Honest negative: re-posing does not recover ν_SDP.",
+  "description": "Re-posed Frobenius per-nucleus admissibility (bean qou-vd7j): removes the inconsistent net row two ways — (a) drop 1ᵀx=A, (b) replace its RHS with the net consistent with Gx=nf. CORRECTED 2026-08-23 (bean qou/ftuv): G is EXACTLY SINGULAR (kernel dimension 1), so Gx=nf is not a unique linear solve and the census nf vectors are not in range(G) at all. Both variants are NON-SELECTIVE either way. Honest negative: re-posing does not recover ν_SDP.",
   "data": {
-    "gram_rank": 6,
-    "gram_invertible": true,
+    "gram_rank": 5,
+    "gram_invertible": false,
+    "gram_kernel_dim": 1,
+    "gram_singular_evidence": "det(G) tracks working precision: -2.008684335e-57 at 60 dps, +5.724314033e-117 at 120 dps (sign flip) — an exactly-zero determinant seen through floating point.",
     "variant_a_shadow_prices_G_invT_t": [
-      1.0,
-      1.1102230246251565e-16,
-      0.0,
-      -5.551115123125783e-17,
-      6.653602267197949e-17,
-      -2.428447575170137e-17
+      0.7765649663446181,
+      0.2012967070964,
+      0.2012967070964,
+      -0.1813518839232302,
+      -0.1813518839232302,
+      0.16338322805625738
     ],
     "per_nucleus_sample": [
       {
@@ -62,59 +62,52 @@
         "A": 1,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 4.186977109895015e-16,
-          "rel_resid": 2.0403870812529626e-16,
-          "x_star": [
-            2.646820092371895,
-            -1.4734225937641408,
-            -1.6828428293132076,
-            1.1453102380600928,
-            1.0442431544464745,
-            -1.084315202899063
-          ],
-          "primal_obj": 1.0187953038517876,
+          "resid": 0.38785200437692297,
+          "rel_resid": 0.18900705649871205,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.5957928589020509,
-          "x_star": [
-            2.6468200923718945,
-            -1.47342259376414,
-            -1.6828428293132072,
-            1.145310238060092,
-            1.0442431544464739,
-            -1.0843152028990624
-          ],
-          "primal_obj": 1.0187953038517878,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 2.220446049250313e-16
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.368663 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -124,59 +117,52 @@
         "A": 1,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 5.909884900864189e-16,
-          "rel_resid": 2.877803454775552e-16,
-          "x_star": [
-            -2.103407587691348,
-            1.4647732114134915,
-            2.637617597939987,
-            -1.5971066580477324,
-            -1.3170590531043327,
-            1.0697759200853867
-          ],
-          "primal_obj": -0.19164166704248703,
+          "resid": 0.43050741813557925,
+          "rel_resid": 0.2096344947489433,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.15459343059545216,
-          "x_star": [
-            -2.103407587691346,
-            1.4647732114134895,
-            2.637617597939985,
-            -1.5971066580477309,
-            -1.3170590531043307,
-            1.0697759200853858
-          ],
-          "primal_obj": -0.19164166704248664,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 1.1102230246251565e-16
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.408602 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -186,59 +172,52 @@
         "A": 2,
         "nu_sdp_target": 1,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 5.628636387720389e-16,
-          "rel_resid": 2.6787998477271816e-16,
-          "x_star": [
-            1.222289286987781,
-            -1.490208466462554,
-            -1.2475080627116106,
-            2.2561402131556774,
-            1.0624403989637554,
-            -1.3659418490105706
-          ],
-          "primal_obj": -0.07055672200560988,
+          "resid": 0.35516556020131534,
+          "rel_resid": 0.16903160606729992,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.4372115209224787,
-          "x_star": [
-            1.2222892869877797,
-            -1.4902084664625526,
-            -1.2475080627116093,
-            2.256140213155676,
-            1.0624403989637543,
-            -1.36594184901057
-          ],
-          "primal_obj": -0.07055672200561018,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 1.942890293094024e-16
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.322532 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -248,59 +227,52 @@
         "A": 3,
         "nu_sdp_target": 2,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 6.606267951425374e-16,
-          "rel_resid": 3.1642149848461605e-16,
-          "x_star": [
-            -1.4233783012300338,
-            2.4183162350655683,
-            1.1463855764517732,
-            -1.3637167555849932,
-            -1.3582489961470008,
-            0.9001735090348242
-          ],
-          "primal_obj": 0.17430188360466134,
+          "resid": 0.36100253502104634,
+          "rel_resid": 0.1729099756897666,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.3195312675901376,
-          "x_star": [
-            -1.4233783012300325,
-            2.4183162350655665,
-            1.1463855764517712,
-            -1.3637167555849914,
-            -1.3582489961469986,
-            0.9001735090348232
-          ],
-          "primal_obj": 0.17430188360466123,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 8.326672684688674e-17
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.331863 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -310,59 +282,52 @@
         "A": 3,
         "nu_sdp_target": 2,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 4.607446452429839e-16,
-          "rel_resid": 2.1110862257116849e-16,
-          "x_star": [
-            0.8265694851552388,
-            -1.3210622914483197,
-            -0.861198163098872,
-            1.92299033793834,
-            0.6932534542289694,
-            -0.7794037311638431
-          ],
-          "primal_obj": -0.04059060379912437,
+          "resid": 0.2639772221181841,
+          "rel_resid": 0.12095174263423922,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.4811490916115133,
-          "x_star": [
-            0.8265694851552374,
-            -1.3210622914483183,
-            -0.8611981630988704,
-            1.9229903379383384,
-            0.6932534542289681,
-            -0.7794037311638419
-          ],
-          "primal_obj": -0.040590603799124304,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 2.0816681711721685e-17
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.223236 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -372,59 +337,52 @@
         "A": 4,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 1.6468328502005443e-15,
-          "rel_resid": 7.290685543744059e-16,
-          "x_star": [
-            2.215916018458271,
-            -0.6119722373374372,
-            -1.2208405597096166,
-            0.6964976369513289,
-            0.6291975403329979,
-            -0.9072662451113603
-          ],
-          "primal_obj": 1.130972701265814,
+          "resid": 0.26977745999657055,
+          "rel_resid": 0.11943304552040432,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.8015321535841836,
-          "x_star": [
-            2.2159160184582696,
-            -0.6119722373374368,
-            -1.2208405597096164,
-            0.6964976369513278,
-            0.6291975403329976,
-            -0.9072662451113589
-          ],
-          "primal_obj": 1.1309727012658135,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 2.220446049250313e-16
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.21431 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -434,59 +392,52 @@
         "A": 7,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 5.291788109079048e-16,
-          "rel_resid": 2.208954548763626e-16,
-          "x_star": [
-            -0.7591507401470838,
-            2.195658734867104,
-            0.6973749319638931,
-            -0.9743714847738304,
-            -1.0850081768700537,
-            0.5651304001988486
-          ],
-          "primal_obj": 0.48359105782688183,
+          "resid": 0.2622577233732945,
+          "rel_resid": 0.10947441187221918,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 0.6396336652388779,
-          "x_star": [
-            -0.7591507401470832,
-            2.195658734867103,
-            0.6973749319638917,
-            -0.9743714847738296,
-            -1.0850081768700526,
-            0.5651304001988486
-          ],
-          "primal_obj": 0.4835910578268819,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 1.6653345369377348e-16
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.187917 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -496,59 +447,52 @@
         "A": 12,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 2.0977046352944823e-15,
-          "rel_resid": 4.2716617086004505e-16,
-          "x_star": [
-            2.4654982860168078,
-            -1.096286397632215,
-            0.11598884196280812,
-            0.15415982350036517,
-            -0.5695870999807517,
-            1.273010333750121
-          ],
-          "primal_obj": 2.5744342885204214,
+          "resid": 0.10011541606576226,
+          "rel_resid": 0.020387006924293842,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 2.3427837876171353,
-          "x_star": [
-            2.465498286016806,
-            -1.0962863976322135,
-            0.1159888419628093,
-            0.15415982350036375,
-            -0.5695870999807525,
-            1.2730103337501235
-          ],
-          "primal_obj": 2.5744342885204214,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 0.0
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.0256001 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -558,59 +502,52 @@
         "A": 16,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 2.4665947643496394e-14,
-          "rel_resid": 9.915240176319477e-16,
-          "x_star": [
-            14.296833109342849,
-            -10.201976698629034,
-            -0.09985485480781797,
-            -0.37460167720712434,
-            -13.625190562788266,
-            14.854463783789537
-          ],
-          "primal_obj": 13.85387601525871,
+          "resid": 0.06509778702917246,
+          "rel_resid": 0.002616806792384993,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "net_rhs_used": 4.849673099700144,
-          "x_star": [
-            14.296833109342852,
-            -10.201976698629029,
-            -0.09985485480781484,
-            -0.3746016772071165,
-            -13.62519056278826,
-            14.854463783789528
-          ],
-          "primal_obj": 13.853876015258717,
-          "y0_star": -0.0,
-          "y_star": [
-            1.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0,
-            -0.0
-          ],
-          "active_set": [
-            0
-          ],
-          "active_count": 1,
-          "duality_gap": 0.0
+          "net_rhs_used": null,
+          "x_star": null,
+          "primal_obj": null,
+          "y0_star": null,
+          "y_star": null,
+          "active_set": [],
+          "active_count": 0,
+          "duality_gap": null,
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 0.0027264 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -620,36 +557,44 @@
         "A": 40,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 1.75,
-          "rel_resid": 2.9035992762645737e-16,
-          "x_star": [
-            2338120015465760.0,
-            -1630214489865650.2,
-            -1917784398492160.2,
-            1283124303658792.0,
-            -4465180387820516.5,
-            4036806957411988.0
-          ],
-          "primal_obj": 1999249880155990.0,
+          "resid": 2.207940216581962,
+          "rel_resid": 3.663413494230189e-16,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
           "feasible": false,
           "overflow": false,
-          "net_rhs_used": -355127999641787.0,
+          "net_rhs_used": null,
           "x_star": null,
           "primal_obj": null,
           "y0_star": null,
@@ -657,7 +602,7 @@
           "active_set": [],
           "active_count": 0,
           "duality_gap": null,
-          "solution_undefined_reason": "LP infeasible — no primal/dual point"
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 2.26005e-16 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       },
       {
@@ -667,36 +612,44 @@
         "A": 56,
         "nu_sdp_target": null,
         "variant_a": {
-          "feasible": true,
+          "feasible": false,
           "overflow": false,
-          "resid": 9164161296328224.0,
-          "rel_resid": 5.003153578969334e-16,
-          "x_star": [
-            6.899912150906814e+30,
-            -4.7511559523279014e+30,
-            -6.061894016739472e+30,
-            4.128580607799164e+30,
-            -1.3590641215451842e+31,
-            1.2255547664996767e+31
-          ],
-          "primal_obj": 5.899888991811695e+30,
+          "resid": 2.228208256002766e+17,
+          "rel_resid": 1.2164853662250488e-14,
+          "x_star": null,
+          "primal_obj": null,
           "y_star": [
-            1.0,
-            1.1102230246251565e-16,
-            0.0,
-            -5.551115123125783e-17,
-            6.653602267197949e-17,
-            -2.428447575170137e-17
+            0.7765649663446181,
+            0.2012967070964,
+            0.2012967070964,
+            -0.1813518839232302,
+            -0.1813518839232302,
+            0.16338322805625738
+          ],
+          "y_star_str": [
+            "0.77656496634461811045883736749364629595793833085252",
+            "0.20129670709639999810151826380095288551400391618006",
+            "0.20129670709639999810151826380095288551400391618006",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "-0.18135188392323021697819653260023328493483862561418",
+            "0.16338322805625739104067866233689162388375244697535"
           ],
           "active_set": [
-            0
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
           ],
-          "active_count": 1
+          "active_count": 6,
+          "gram_kernel_dim": 1,
+          "y_method": "minimum-norm G+ t at 50 dps (G is exactly singular)"
         },
         "variant_b": {
           "feasible": false,
           "overflow": false,
-          "net_rhs_used": -1.1196507608164709e+30,
+          "net_rhs_used": null,
           "x_star": null,
           "primal_obj": null,
           "y0_star": null,
@@ -704,22 +657,18 @@
           "active_set": [],
           "active_count": 0,
           "duality_gap": null,
-          "solution_undefined_reason": "LP infeasible — no primal/dual point"
+          "solution_undefined_reason": "Gx = nf has no solution: right-hand side is not in range(G): kernel component 1.2194e-14 of ||rhs||. No solution exists; do not record one.. No net RHS can make the stacked system consistent."
         }
       }
     ],
     "full_chart": {
       "n_total": 3558,
-      "n_finite_f64": 2218,
-      "n_overflow_heavy": 1340,
-      "variant_a_feasible": 1514,
-      "variant_b_feasible": 181,
-      "variant_a_active_count_hist": {
-        "1": 1514
-      },
-      "variant_b_active_count_hist": {
-        "1": 181
-      }
+      "n_finite_f64": 2221,
+      "n_overflow_heavy": 1337,
+      "variant_a_feasible": 0,
+      "variant_b_feasible": 0,
+      "variant_a_active_count_hist": {},
+      "variant_b_active_count_hist": {}
     },
     "selectivity_verdict": {
       "census_target": {
@@ -728,14 +677,14 @@
         "3He": 2
       },
       "variant_a_census_active_counts": {
-        "2H": 1,
-        "3H": 1,
-        "3He": 1
+        "2H": 6,
+        "3H": 6,
+        "3He": 6
       },
       "variant_b_census_active_counts": {
-        "2H": 1,
-        "3H": 1,
-        "3He": 1
+        "2H": 0,
+        "3H": 0,
+        "3He": 0
       },
       "variant_a_reproduces_census": false,
       "variant_b_reproduces_census": false,
@@ -745,9 +694,9 @@
     },
     "findings": [
       "G (H_3 NF Gram at q_0) is 6x6 rank-6 (invertible), so the Frobenius demand Gx=nf has a UNIQUE solution x=G⁻¹nf. Removing the inconsistent net row leaves a determined linear solve, not an optimisation.",
-      "Variant (a) [drop net]: nf ∈ range(G) is MATHEMATICALLY GUARANTEED for every finite nf (G full-rank), so feasibility is universal in exact arithmetic. The measured f64 count (1514/3558) is capped by two infra effects, NOT physics: the 1340 heavy-A build_atom_nf/G⁻¹nf overflows, and f64 ill-conditioning of G⁻¹nf at large-magnitude nf (rel-resid > 1e-9). Both vanish with the mpfr native path. The Frobenius shadow prices y=G⁻ᵀt are nucleus-INDEPENDENT, so the active-channel set is CONSTANT across the whole chart — zero selective power.",
-      "Variant (b) [net RHS = 1ᵀG⁻¹nf]: identical unique point x=G⁻¹nf; the net row is now redundant (implied by Gx=nf). The canonical HiGHS solver reports 181/3558 feasible (lower than (a) only because HiGHS's own feasibility tolerance rejects large-RHS problems — again f64 conditioning, not range(G)); same non-selective active-count histogram (all count 1).",
-      "VERDICT (honest NEGATIVE): re-posing removes the 0/3558 artifact but does NOT recover a selective ν_SDP. The Frobenius admissibility test, with the inconsistent net row removed, is an invertible linear solve dressed as an LP — it is trivially feasible and cannot discriminate the census {'2H': 1, '3H': 2, '3He': 2} (or any nuclei). It has no selective power; ν_SDP stays underived. No fit wired."
+      "Variant (a) [drop net]: nf ∈ range(G) is MATHEMATICALLY GUARANTEED for every finite nf (G full-rank), so feasibility is universal in exact arithmetic. The measured f64 count (0/3558) is capped by two infra effects, NOT physics: the 1337 heavy-A build_atom_nf/G⁻¹nf overflows, and f64 ill-conditioning of G⁻¹nf at large-magnitude nf (rel-resid > 1e-9). Both vanish with the mpfr native path. The Frobenius shadow prices y=G⁻ᵀt are nucleus-INDEPENDENT, so the active-channel set is CONSTANT across the whole chart — zero selective power.",
+      "Variant (b) [net RHS = 1ᵀG⁻¹nf]: identical unique point x=G⁻¹nf; the net row is now redundant (implied by Gx=nf). The canonical HiGHS solver reports 0/3558 feasible (lower than (a) only because HiGHS's own feasibility tolerance rejects large-RHS problems — again f64 conditioning, not range(G)); same non-selective active-count histogram (all count 1).",
+      "VERDICT (honest NEGATIVE, and STRONGER after the 2026-08-23 correction): re-posing does NOT recover a selective ν_SDP. G is exactly singular (kernel dimension 1), so the Frobenius test is not an invertible linear solve — and the census nf vectors are not in range(G) (kernel component 0.17–0.41 of ‖nf‖), so `Gx = nf` has NO solution for any of them. The test was previously reported as feasible for 20 of them; that was a false positive, not selectivity: `|G⁻¹| ~ 7.6e15` made x large enough that `Gx` reproduced nf to 2e-16 through round-off alone, and the relative-residual check passed on it. Either way the test cannot discriminate the census {'2H': 1, '3H': 2, '3He': 2}: it now admits nothing rather than everything. ν_SDP stays underived. No fit wired. Bean `qou/ftuv`."
     ]
   }
 }

@@ -1273,3 +1273,134 @@ confirmed against a clean tree.
 - [ ] **1,282 of the remaining carved fields sit in witnesses that record no
       backend at all** — untouched producers. That is where the f64 is, not in
       the dense PSD lift.
+
+
+---
+
+## The Gram is exactly singular, and a feasibility test was passing on round-off (2026-08-23)
+
+Went to give `solve_frobenius_dual_lp` an MPFR path — the item this bean's
+previous "Next" named as the largest remaining f64 source. **The port would
+have fixed nothing.** All 143 carved fields in `frobenius-repose` come from
+`_variant_a`, which never calls the LP solver; it computes `x = G⁻¹nf` and
+`y = G⁻ᵀt` with numpy. Checking that first is what turned up the real problem.
+
+### G has no inverse
+
+```
+dps= 60   det(G) = -2.008684335e-57    |eig|min = 1.478983446e-57
+dps=120   det(G) = +5.724314033e-117   |eig|min = 4.215451518e-117
+```
+
+The determinant tracks the working precision instead of converging, sign flip
+included. That is an **exactly zero** determinant seen through floating point.
+`G` has a one-dimensional kernel
+`v ≈ (-0.4727, 0.4259, 0.4259, -0.3837, -0.3837, 0.3457)`, confirmed by
+`‖Gv‖∞ = 3.4e-76` at 80 dps.
+
+So `frobenius_repose_probe.py` was inverting a matrix with no inverse — and
+its docstring asserted the opposite (*"G is invertible ⇒ nf ∈ range(G) is
+mathematically guaranteed"*), while flagging the symptom as *"the known infra
+ceiling (needs mpfr)"*. **Precision cannot fix this**: at 120 dps the condition
+number is 1e117 and an inverse-based solve still has zero correct digits.
+
+### A feasibility test that passed on round-off
+
+The committed baseline reported **`feasible=True` for 20 nuclei** with
+`rel_resid ≈ 2e-16`. It is a false positive: `|G⁻¹| ~ 7.6e15`, so `x = G⁻¹nf`
+is large enough that `G @ x` reproduces `nf` to machine epsilon through
+round-off alone, and the relative-residual check passed on that.
+
+The truth, measured at 80 dps: the census `nf` vectors are **not in
+`range(G)`** at all. For symmetric `G`, `range(G) = kernel⊥`, and
+
+```
+v·nf / ‖nf‖   =  0.37 (p)   0.41 (n)   0.32 (2H)   0.22 (3He)   0.21 (4He)
+```
+
+O(1), not round-off. `Gx = nf` has no solution for any of them. Twenty nuclei
+were being reported as Frobenius-admissible when the system defining
+admissibility is unsolvable.
+
+This **strengthens** the probe's honest-negative verdict rather than changing
+it — the test now admits nothing rather than everything, and is non-selective
+either way.
+
+### What IS well defined
+
+`t` is in `range(G)` exactly (`v·t = -3.4e-76`), so `Gy = t` is solvable, with
+`y` unique up to a kernel vector. The minimum-norm representative is canonical
+and is what `gram_pseudo_inverse_solve` now returns. It is not an
+approximation of the old row:
+
+```
+via G⁻¹        0.75,  0.5,   0.25,  0.5,    0.154, -0.311
+minimum-norm   0.777, 0.201, 0.201, -0.181, -0.181, 0.163
+```
+
+off by 1e7–1e8 relative — and the old row **breaks the exact symmetry**
+`y[1] = y[2]`, `y[3] = y[4]` that the true solution has, which is independent
+evidence it was round-off rather than a nearby answer.
+
+`x_star` is now `null` where no solution exists, instead of a vector.
+
+### Two bugs in my own helper, both caught by tests
+
+1. **Absolute rank cutoff.** A fixed `1e-40` is not scale-invariant, and is
+   *tighter than the arithmetic* below ~50 dps — so a genuinely zero
+   eigenvalue computed as 1e-31 at dps=30 read as nonzero and the kernel was
+   missed. Now relative to `|eig|max`.
+2. **Working precision above input precision.** At dps=80 against 50-dps input
+   strings the zero eigenvalue read as ~1e-50 *invented* noise, the kernel was
+   missed, and the H_3 solve returned `y[0] = 1.0` with the symmetry broken.
+   The cutoff is now bounded by the digits actually present in the input. A
+   helper that answers a question its inputs cannot support is the same absent
+   check this arc keeps finding — this time in the fix.
+
+`test_pseudo_inverse_rank_is_stable_across_working_precision` pins it: rank is
+a property of the data, so dps must not change it.
+
+### The other caller was ordinary
+
+`all_nuclides_sdp_admissibility.py`'s 144 fields were `solve_operator_selection_lp`
+on an unpinned `auto` backend. Pinned; `to_dict()` carried the companions.
+
+### Carve-out
+
+```
+4,052  start of arc
+1,774  previous commit
+1,352  frobenius-repose 143 -> 0 bare, all-nuclides 144 -> 0 bare
+```
+
+### Verification
+
+```
+NaN / feasibility sweep vs pre-arc base   1 flagged, investigated: a CORRECTION
+                                          (20 false-positive feasibles removed)
+witness_raw_float64_audit                 NEW 0, REGRESSED 0, excused 1,352/37
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+pytest tools/pyhecke                      209 passed, 44 skipped   (was 205)
+clarabel_lp_crosscheck                    all cases agree
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+```
+
+The sweep cannot distinguish "corrected a false positive" from "broke
+something" — it sees `feasible` going down either way. That is the right
+behaviour for a tripwire; it fired, and the flip was investigated against the
+80-dps range test rather than waved through.
+
+## Next
+
+- [ ] **Owner: 20 nuclei lost Frobenius admissibility.** No downstream content
+      block cites `frobenius-repose` (it is not in the wired set), so nothing
+      breaks mechanically — but anything that reasoned from "the Frobenius
+      test admits these" was reasoning from a false positive.
+- [ ] **`solve_frobenius_dual_lp` still has no MPFR path**, and is still
+      worth giving one — the Rust change is small (`ZeroConeT(d)` with
+      `b = u_demand` in place of `NonnegativeConeT(d)` with `b = 0`). It is
+      just no longer the largest f64 source, and on this Gram every call it
+      receives is infeasible before precision matters.
+- [ ] **~1,100 of the remaining carved fields are in witnesses recording no
+      backend** — untouched producers, the same mechanical treatment.

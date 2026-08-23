@@ -4,13 +4,12 @@
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
     "dirty_witnesses": 1539,
-    "total_fields": 531757,
-    "lp_dual_carved_out_fields": 1774,
+    "total_fields": 531746,
+    "lp_dual_carved_out_fields": 1352,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 173,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 43,
       "computations/a-K-via-lp-dual.witness.json": 1,
-      "computations/all-nuclides-sdp-admissibility.witness.json": 144,
       "computations/alpha/alpha-5-lp-dual-crystal.witness.json": 75,
       "computations/binding-sdp-bondgraph-degenerate.witness.json": 30,
       "computations/borromean-axial-coupling.witness.json": 16,
@@ -35,7 +34,6 @@
       "computations/onepb-status-dashboard.witness.json": 48,
       "computations/option-b-proton-mass-full-chain.witness.json": 12,
       "computations/probes/borromean-angle-structure-lp-probe.witness.json": 1,
-      "computations/probes/frobenius-repose.witness.json": 278,
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 11,
       "computations/probes/qbk2-reeb-vs-lp-dual-active-channel.witness.json": 11,
       "computations/r5-full-canonical-knot-solver.witness.json": 40,
@@ -71,6 +69,6 @@
     "baseline_fields": 536570,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 53
+    "drained_files": 54
   }
 }

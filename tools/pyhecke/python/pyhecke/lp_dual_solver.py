@@ -384,6 +384,114 @@ def _str_fields_if_decimal(out: dict) -> dict:
     return {f"{k}_str": v for k in _STR_KEYS if (v := _pick(k)) is not None}
 
 
+
+
+def _input_dps(rows) -> int:
+    """Significant decimal digits actually present in a decimal-string matrix.
+
+    Rank determination cannot be sharper than the data. Returns at least 15 so
+    an all-integer matrix (``"1"``, ``"0"``) is not treated as one-digit data.
+    """
+    best = 0
+    for row in rows:
+        cells = row if isinstance(row, (list, tuple)) else [row]
+        for cell in cells:
+            digits = str(cell).lstrip("-").replace(".", "")
+            # strip a leading exponent-free zero run, then drop any exponent
+            digits = digits.split("e")[0].split("E")[0].lstrip("0")
+            best = max(best, len(digits))
+    return max(best, 15)
+
+
+def gram_pseudo_inverse_solve(G_str, rhs_str, *, dps: int = 50,
+                              cutoff_rel_dps: float = 0.8):
+    """Minimum-norm solve of ``G y = rhs`` for a SYMMETRIC, possibly SINGULAR G.
+
+    Use this instead of an inverse whenever `G` is a Gram matrix that may be
+    rank-deficient. Measured 2026-08-23 on the H_3 six-channel Gram (bean
+    `qou/ftuv`), `G` is **exactly singular**: its determinant tracks the
+    working precision rather than converging to a value ---
+
+        dps= 60   det(G) = -2.008684335e-57   |eig|min = 1.478983446e-57
+        dps=120   det(G) = +5.724314033e-117  |eig|min = 4.215451518e-117
+
+    --- sign flip included, which is what a determinant of exactly zero looks
+    like when it is computed in floating point. `G` has a one-dimensional
+    kernel, so `G^-1` does not exist and no amount of precision creates it:
+    at 120 dps the condition number is 1e117 and an inverse-based solve still
+    has zero correct digits.
+
+    What that cost: `frobenius_repose_probe.py` computed `y = G^-T t` through
+    `numpy.linalg.inv` and recorded the result. The committed values
+
+        f64 (via the nonexistent inverse)   0.75, 0.5,    0.25,  0.5,    0.154, -0.311
+        minimum-norm (this function)        0.777, 0.201, 0.201, -0.181, -0.181, 0.163
+
+    differ by factors of 1e7--1e8, and the f64 row BREAKS a symmetry the true
+    solution has exactly (`y[1] == y[2]`, `y[3] == y[4]`) --- independent
+    evidence that it is round-off, not an approximation.
+
+    The minimum-norm solution IS well defined whenever `rhs` lies in
+    `range(G)`, which for symmetric `G` means orthogonal to the kernel; `t` is
+    (`v . t = -3.4e-76` at 80 dps). It is unique only up to a kernel vector,
+    and this returns the representative with no kernel component.
+
+    Raises `ValueError` when `rhs` is NOT in `range(G)`, because then no
+    solution exists and returning a vector would present "no solution" as an
+    answer --- the failure this whole arc keeps finding.
+    """
+    from mpmath import mp as _mp
+
+    with _mp.workdps(dps):
+        G = _mp.matrix([[_mp.mpf(str(v)) for v in row] for row in G_str])
+        b = _mp.matrix([_mp.mpf(str(v)) for v in rhs_str])
+        d = G.rows
+        E, V = _mp.eigsy(G)
+        # RELATIVE rank cutoff, scaled by the working precision. An absolute
+        # threshold is wrong twice: it is not scale-invariant (a Gram scaled
+        # by 1e-6 would read as all-kernel), and a fixed 1e-40 is TIGHTER than
+        # the arithmetic below ~50 dps, so a genuinely zero eigenvalue
+        # computed as 1e-31 at dps=30 would be classified as nonzero and the
+        # kernel missed entirely. Caught by
+        # `test_pseudo_inverse_refuses_an_out_of_range_rhs`.
+        emax = max((abs(E[j]) for j in range(G.rows)), default=_mp.mpf(1))
+        if emax == 0:
+            emax = _mp.mpf(1)
+        # Bound the cutoff by the precision of the INPUT, not just the working
+        # precision. Rank is a property of the data: asking for 80 dps from
+        # 50-dps decimal strings invents 30 digits, and the exactly-zero
+        # eigenvalue then reads as ~1e-50 input noise rather than zero — so
+        # the kernel is missed, and the H_3 solve silently returned
+        # `y[0] = 1.0` with its exact `y[1] == y[2]` symmetry broken. A helper
+        # that answers a question its inputs cannot support is the same absent
+        # check this whole arc keeps turning up, so cap it and mean it.
+        eff_dps = min(dps, _input_dps(G_str))
+        cut = emax * _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps)
+
+        kernel = [j for j in range(d) if abs(E[j]) < cut]
+        # Range test: for symmetric G, range(G) = kernel-perp.
+        nb = _mp.sqrt(sum(x ** 2 for x in b))
+        for j in kernel:
+            ip = sum(V[r, j] * b[r] for r in range(d))
+            if nb > 0 and abs(ip) / nb > _mp.mpf(10) ** (-cutoff_rel_dps * eff_dps):
+                raise ValueError(
+                    f"right-hand side is not in range(G): kernel component "
+                    f"{_mp.nstr(abs(ip) / nb, 6)} of ||rhs||. No solution "
+                    f"exists; do not record one."
+                )
+
+        y = _mp.matrix(d, 1)
+        for j in range(d):
+            if abs(E[j]) < cut:
+                continue
+            coeff = sum(V[r, j] * b[r] for r in range(d)) / E[j]
+            for r in range(d):
+                y[r] += coeff * V[r, j]
+        return ([_mp.nstr(y[i], dps) for i in range(d)],
+                [float(y[i]) for i in range(d)],
+                len(kernel))
+
+
 def _certifies_optimality(t_str, G_str, n_str, m_str, res) -> tuple[bool, str]:
     """Check `(x*, y*)` against the ORIGINAL data, for a loosened solve.
 
