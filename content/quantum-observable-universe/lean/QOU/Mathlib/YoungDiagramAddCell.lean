@@ -187,4 +187,17 @@ def cornerAddEquiv (n : ℕ) : CornerPair n ≃ AddPair n where
     rw [eraseCorner_addCell]
 
 
+instance instDecidableIsAddableCell (ν : YoungDiagram) (s : ℕ × ℕ) :
+    Decidable (IsAddableCell ν s) := by
+  unfold IsAddableCell; infer_instance
+
+/-- **`addCell` made total in the cell.**  A summand quantified over *all* cells cannot mention
+`addCell ν s hs`, which needs the addability proof; this is the version that can appear there, and
+`addCellOrSelf_of` recovers the real thing wherever the proof is available. -/
+noncomputable def addCellOrSelf (ν : YoungDiagram) (s : ℕ × ℕ) : YoungDiagram :=
+  if h : IsAddableCell ν s then addCell ν s h else ν
+
+@[simp] theorem addCellOrSelf_of {ν : YoungDiagram} {s : ℕ × ℕ} (h : IsAddableCell ν s) :
+    addCellOrSelf ν s = addCell ν s h := dif_pos h
+
 end QOU.Mathlib
