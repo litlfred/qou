@@ -306,11 +306,10 @@ def part5_extensive_intensive_split() -> None:
     print("    * the ATOM channel obeys the same extensive law MINUS a purely")
     print("      INTENSIVE constant 2*delta, identical at every A.")
     print()
-    print("  STILL OPEN, and not explained here: the NUMBER of interface")
-    print("  letters grows with A, yet delta does not. Something makes the")
-    print("  growing set of interface defects contribute an A-independent net")
-    print("  amount to ln(free/atom). That is the missing step, and it is what")
-    print("  a closed form for delta would have to come through.")
+    print("  [SUPERSEDED -- see part 7. This spot used to say the number of")
+    print("   interface letters grows with A and called that the open step.")
+    print("   There is exactly ONE interface letter at every A; I had")
+    print("   miscounted, and the A-independence needs no such explanation.]")
 
 
 
@@ -394,6 +393,76 @@ def part6_closed_form() -> None:
 
 
 
+
+
+def part7_general_A() -> None:
+    """The product formula, and with it delta for general (Z,N)."""
+    print()
+    print("=" * 74)
+    print("7. GENERAL A -- the product formula, and a CORRECTION to part 5")
+    print("=" * 74)
+    print("  CORRECTION FIRST. Part 5 said 'the NUMBER of interface letters")
+    print("  grows with A, yet delta does not', and called that the real open")
+    print("  step. THAT PREMISE IS FALSE. Censusing the words by letter type:")
+    print("  every atom word carries EXACTLY ONE color-weighted p-n interface,")
+    print("  at every A. The bond census is")
+    print()
+    print("      1 p-n interface   (the one non-bar-odd letter)")
+    print("      Z-1 p-p bonds     (d = 0,  plain sigma)")
+    print("      N-1 n-n bonds     (d = -h, sigma-inverse-like)")
+    print("      ---------------------------------------------")
+    print("      A-1 bonds total")
+    print()
+    print("  Both bond types are EXACTLY bar-odd (0 -> 0 and -h -> +h), so they")
+    print("  contribute nothing to delta. delta is A-independent for the plain")
+    print("  reason that its sole source occurs once, however many nucleons")
+    print("  there are. There was no puzzle; I had miscounted.")
+    print()
+    lq = mp.log(Q0)
+    NUC = [(1, 1), (1, 2), (2, 1), (2, 2), (1, 3), (3, 1), (2, 3), (3, 2),
+           (3, 3), (1, 4), (4, 1), (4, 2), (2, 4), (3, 4), (4, 3), (5, 5)]
+    print("  THE PRODUCT FORMULA. Verified over the nuclei below:")
+    print()
+    print("      tr_M^free / tr_M^atom  =  (12 / P(q)) * (q + 1/q)^(A-1)"
+          " * q^(6 + 2(N-Z))")
+    print()
+    worst = mp.mpf(0)
+    for (Z, N) in NUC:
+        A = Z + N
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, q=Q0)
+        pred = (12 / _P(Q0)) * (Q0 + 1 / Q0) ** (A - 1) * Q0 ** (6 + 2 * (N - Z))
+        worst = max(worst, abs((tf / ta) / pred - 1))
+    print(f"  worst |ratio - 1| over {len(NUC)} nuclei, A = 2..10 : "
+          f"{mp.nstr(worst, 6)}")
+    check(worst < mp.mpf("1e-25"),
+          f"the product formula fails somewhere (worst {worst})")
+    print("  (that is the transfer path's own floor, not a mismatch -- part 3)")
+    print()
+    print("  Each factor has a job, and each one earns its place in delta:")
+    print()
+    print("   * (q + 1/q)^(A-1) -- ONE Cayley-Hamilton denominator per bond,")
+    print("     and there are exactly A-1 bonds. q + 1/q is BAR-EVEN, so it")
+    print("     CANCELS between R(Z,N;q) and R(N,Z;1/q). That cancellation is")
+    print("     the A-independence of delta.")
+    print("   * q^(6 + 2(N-Z)) -- a pure ISOSPIN monomial. Mirror-crossing it")
+    print("     gives q^(6+2(N-Z)) / q^(-6-2(Z-N)) = q^12: the isospin")
+    print("     dependence cancels and leaves exactly the 12. The '12' is")
+    print("     2 x 6, twice the isospin-neutral exponent.")
+    print("   * P(q) -- universal, so it contributes P(1/q)/P(q) and nothing")
+    print("     else.")
+    print()
+    print("  Multiplying the three:  exp(delta) = q^12 P(1/q)/P(q)  for EVERY")
+    print("  (Z,N) -- no longer three checked points but an identity, given the")
+    print("  product formula. Part 6's closed form is now general.")
+    print()
+    print("  WHAT IS STILL NOT DERIVED: the product formula itself is VERIFIED")
+    print("  (16 nuclei, A=2..10, ~1e-31), not proved from the transfer. The")
+    print("  bond count and the (q+1/q)-per-bond factor follow from the")
+    print("  Cayley-Hamilton reduction; the isospin exponent 6 + 2(N-Z) is")
+    print("  measured. And P remains uninterpreted.")
+
+
+
 def main() -> int:
     part1_premise_is_wrong()
     part2_weights_are_bar_even()
@@ -401,6 +470,7 @@ def main() -> int:
     part4_size_of_the_offset(deltas)
     part5_extensive_intensive_split()
     part6_closed_form()
+    part7_general_A()
 
     print()
     print("=" * 74)
