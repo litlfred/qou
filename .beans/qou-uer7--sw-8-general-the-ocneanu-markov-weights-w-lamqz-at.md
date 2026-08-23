@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T21:15:42Z
+updated_at: 2026-08-23T21:22:45Z
 parent: qou-59vq
 ---
 
@@ -463,3 +463,32 @@ the same pass.
 half (lam fixed, corner varying) but not the exchange of the outer index. 3 is where
 `ocneanuWeight` and `OcneanuWeightMarkovCorner` finally meet. Neither is written, and I have not
 attempted either, so I am not going to estimate them.
+
+
+## Update — step 2b: the missing `addCell`, and why it was missing
+
+`QOU/Mathlib/YoungDiagramAddCell.lean`, sorry-free, axiom-clean, pure combinatorics:
+
+    IsAddableCell, addCell, card_addCell, isCornerCell_addCell,
+    isAddableCell_eraseCorner, eraseCorner_addCell, addCell_eraseCorner
+
+**Why the corpus did not already have it.** `eraseCorner` exists; there was no inverse. That is fine
+for `branchInv`, which fixes `lam` and varies the corner — it only ever REMOVES. Step 2b needs the
+OUTER exchange, `{(lam, removable corner)} <-> {(mu, addable corner)}`, and the backwards direction
+has to BUILD `lam` from `(mu, s)`. Nothing in the corpus could do that.
+
+**Not assembled: the equivalence itself.** The dependent `Sigma` packaging — the second component's
+type depends on the first — is its own piece of work, and I stopped before it rather than half-do
+it. What is landed is the construction plus both round-trips, which is what that packaging consumes.
+
+Also worth noting for whoever does the packaging: `Finset.sum_nbij'` may be the better route than an
+`Equiv`, since the assembly wants a sum reindexing and the dependent-Sigma `Equiv` is the painful
+form of the same content.
+
+| step | status |
+|---|---|
+| 1. block equality at a generator | **Lean** |
+| 2a. lift to every Hecke element | **Lean** |
+| 2b. `addCell` + round-trips | **Lean** |
+| 2b. the reindexing equivalence / sum-reindex | **OPEN** |
+| 3. the lam-sum with weights | **OPEN** |
