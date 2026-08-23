@@ -734,17 +734,302 @@
         "scriptHash"
       ],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py",
+      "witness": "computations/qbeta/qbeta-dladder-ecalle-acceleration.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+      "witness": "computations/qbeta/qbeta-fsc-g-pattern-comparison.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.upstream_witness_hashes.0.sha256",
+        "data.upstream_witness_hashes.0.size_bytes",
+        "engineVersion"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_jacobi_anger_tower_general.py",
+      "witness": "computations/qbeta/qbeta-jacobi-anger-tower-general.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "allPassed",
+        "assertions.1.computed",
+        "assertions.1.passed",
+        "data.n3.cross_anchor_x_swing_rel",
+        "data.n3.muon.W1",
+        "data.n3.muon.W5",
+        "data.n3.muon.matches_physical_weight_6_8pct",
+        "data.n3.muon.overdet_rel_residual",
+        "data.n3.muon.q",
+        "data.n3.muon.single_x",
+        "data.n3.proton.W1",
+        "data.n3.proton.W5",
+        "data.n3.proton.matches_physical_weight_6_8pct",
+        "data.n3.proton.overdet_rel_residual",
+        "data.n3.proton.q",
+        "data.n3.proton.single_x"
+      ],
+      "stderr_tail": "",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_klr_composite1_preflight_run.py",
+      "witness": "computations/qbeta/qbeta-klr-composite1-preflight-run.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.anchors.0.q",
+        "data.anchors.0.q_pochhammer_2",
+        "data.anchors.0.q_pochhammer_3",
+        "data.anchors.0.sum_Demazure_ell_eq_2_omega_1_sl_3",
+        "data.anchors.0.u2_coefficient",
+        "data.anchors.1.q",
+        "data.anchors.1.q_pochhammer_2",
+        "data.anchors.1.q_pochhammer_3",
+        "data.anchors.1.sum_Demazure_ell_eq_2_omega_1_sl_3",
+        "data.anchors.1.u2_coefficient"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_klr_composite3_preflight_run.py",
+      "witness": "computations/qbeta/qbeta-klr-composite3-preflight-run.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.anchors.0.q",
+        "data.anchors.0.q_cubed",
+        "data.anchors.0.u2_coefficient_2q_cubed",
+        "data.anchors.1.q",
+        "data.anchors.1.q_cubed",
+        "data.anchors.1.u2_coefficient_2q_cubed"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_klr_composite4_preflight_run.py",
+      "witness": "computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.anchors.0.A_2_bare",
+        "data.anchors.0.A_2_with_Y",
+        "data.anchors.0.A_3_with_Y",
+        "data.anchors.0.Y_2_renormalised",
+        "data.anchors.0.c2_miss_factor_Y",
+        "data.anchors.0.c3_miss_factor_Y",
+        "data.anchors.0.q",
+        "data.anchors.0.q_pochhammer_2_bare",
+        "data.anchors.0.tr_M_p2_JW_sym",
+        "data.anchors.1.A_2_bare",
+        "data.anchors.1.A_2_with_Y",
+        "data.anchors.1.A_3_with_Y",
+        "data.anchors.1.Y_2_renormalised",
+        "data.anchors.1.c2_miss_factor_Y",
+        "data.anchors.1.c3_miss_factor_Y",
+        "data.anchors.1.q",
+        "data.anchors.1.q_pochhammer_2_bare",
+        "data.anchors.1.tr_M_p2_JW_sym"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_klr_lusztig_demazure_preflight_run.py",
+      "witness": "computations/qbeta/qbeta-klr-lusztig-demazure-preflight-run.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.anchors.0.q",
+        "data.anchors.0.q_pochhammer_2",
+        "data.anchors.0.sum_D_Lusztig_dual",
+        "data.anchors.0.sum_D_standard",
+        "data.anchors.0.u2_coefficient_dual",
+        "data.anchors.1.q",
+        "data.anchors.1.q_pochhammer_2",
+        "data.anchors.1.sum_D_Lusztig_dual",
+        "data.anchors.1.sum_D_standard",
+        "data.anchors.1.u2_coefficient_dual"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
+      "witness": "computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "assertions.1.computed",
+        "data.numerical_at_q0.Q_N1_q0_MeV",
+        "data.numerical_at_q0.Q_N2_q0_MeV",
+        "data.numerical_at_q0.alpha_eff_q0",
+        "data.numerical_at_q0.alpha_q0",
+        "data.numerical_at_q0.eps_N1_ppm",
+        "data.numerical_at_q0.eps_N2_ppm",
+        "data.numerical_at_q0.residual_after_N2",
+        "scriptHash"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py",
+      "witness": "computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "allPassed",
+        "assertions.0.computed",
+        "assertions.1.computed",
+        "assertions.1.passed",
+        "data.G_symbolic_diag.0",
+        "data.G_symbolic_diag.1",
+        "data.G_symbolic_diag.2",
+        "data.G_symbolic_diag.3",
+        "data.G_symbolic_diag.4",
+        "data.G_symbolic_diag.5",
+        "data.Q_A_vs_Qbeta_ppb",
+        "data.Q_A_vs_Qbeta_rel_err",
+        "data.Q_beta_CODATA_MeV",
+        "data.S_cancels_from_ck_directions",
+        "data.direction_max_diff_across_scales",
+        "data.direction_scale_invariant",
+        "data.dual_obj",
+        "data.duality_gap",
+        "data.frobenius_gram_eigenvalues.0",
+        "data.frobenius_gram_eigenvalues.1",
+        "data.frobenius_gram_eigenvalues.2",
+        "data.frobenius_gram_eigenvalues.3",
+        "data.frobenius_gram_eigenvalues.4",
+        "data.frobenius_gram_eigenvalues.5",
+        "data.primal_obj",
+        "data.t_at_q0.1",
+        "data.t_at_q0.2",
+        "data.t_at_q0.3",
+        "data.t_at_q0.4",
+        "data.t_at_q0.5",
+        "data.t_equals_1739_A",
+        "data.t_symbolic.0",
+        "data.t_symbolic.1",
+        "data.t_symbolic.2",
+        "data.t_symbolic.3",
+        "data.t_symbolic.4",
+        "data.t_symbolic.5",
+        "data.verdict",
+        "data.x_star.0",
+        "data.x_star.1"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/qbeta/qbeta_trm_crosscheck_convention_pin_split_probe.py",
+      "witness": "computations/qbeta/qbeta-trm-crosscheck-convention-pin-split.witness.json",
+      "verdict": "SUBSTANTIVE/ASSERT-FAIL",
+      "siblings_moved": [],
+      "changed_fields": [
+        "allPassed",
+        "assertions.3.detail",
+        "assertions.3.passed",
+        "engineVersion",
+        "result.input_anchors.Hoefsmit.recorded_q0",
+        "result.input_anchors.chi-cache.q0Anchor",
+        "result.input_anchors.chi-cache.recorded_q0",
+        "result.inputs_without_recorded_q0 (len 2 -> 1)"
+      ],
+      "stderr_tail": "",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/probes/signed_crossing_feasibility_probe.py",
+      "witness": "computations/signed-crossing-feasibility.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "_provenance.kernel",
+        "q0Anchor (removed)",
+        "q0Value (removed)",
+        "scriptFile (removed)",
+        "scriptHash (removed)"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/substrate/lever1_binding_core_characterization.py",
+      "witness": "computations/substrate/lever1-binding-core-characterization.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "computationDetail (added)",
+        "data.upstream_witness_hashes.0.sha256",
+        "data.upstream_witness_hashes.0.size_bytes",
+        "q0Anchor (removed)",
+        "q0Value (removed)"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/substrate/lever1_binding_habiro_single_element_test.py",
+      "witness": "computations/substrate/lever1-binding-habiro-single-element-test.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "computationDetail (added)",
+        "params.q0",
+        "q0Anchor (removed)",
+        "q0Value (removed)"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/vhat_per_crossing_chain.py",
+      "witness": "computations/vhat-per-crossing-chain.witness.json",
+      "verdict": "CRASH",
+      "siblings_moved": [],
+      "stderr_tail": "^^^^\n  File \"/home/user/qou/computations/vhat_per_crossing_chain.py\", line 159, in main\n    v_matrix, a, b = vhat_via_explicit_markov_trace(chain)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/qou/computations/vhat_per_crossing_chain.py\", line 129, in vhat_via_explicit_markov_trace\n    coeffs, *_ = np.linalg.lstsq(A, M.reshape(-1), rcond=None)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/dist-packages/numpy/linalg/_linalg.py\", line 2540, in lstsq\n    x, resids, rank, s = _umath_linalg.lstsq(a, b, rcond,\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nnumpy._core._exceptions._UFuncInputCastingError: Cannot cast ufunc 'lstsq' input 1 from dtype('O') to dtype('float64') with casting rule 'same_kind'\n",
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/probes/zhabiro_phiq_production_crosscheck.py",
+      "witness": "computations/zhabiro-phiq-production-crosscheck.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion (removed)",
+        "q0",
+        "q0Anchor (removed)",
+        "q0Value (removed)",
+        "result.max_euler_vs_cyclo_abs",
+        "samples.0.abs_euler_vs_cyclo_fixedN",
+        "samples.0.phi_q_prod",
+        "samples.1.abs_euler_vs_cyclo_fixedN",
+        "samples.1.phi_q_prod",
+        "samples.2.abs_euler_vs_cyclo_fixedN",
+        "samples.2.phi_q_prod",
+        "samples.3.abs_euler_vs_cyclo_fixedN",
+        "samples.3.phi_q_prod",
+        "samples.4.abs_euler_vs_cyclo_fixedN",
+        "samples.4.phi_q_prod",
+        "scriptFile (removed)",
+        "scriptHash (removed)"
+      ],
+      "anchor_defining": false
     }
   ],
   "tally": {
     "TIMEOUT": 6,
-    "SUBSTANTIVE/ASSERT-FAIL": 1,
-    "UNCHANGED": 6,
-    "SUBSTANTIVE": 23,
-    "CRASH": 4
+    "SUBSTANTIVE/ASSERT-FAIL": 3,
+    "UNCHANGED": 7,
+    "SUBSTANTIVE": 34,
+    "CRASH": 5
   },
-  "partial": true,
-  "measured": 40,
+  "partial": false,
+  "measured": 55,
   "total": 55,
   "environment": {
     "python": "3.11.15",
@@ -755,7 +1040,7 @@
       "scipy": "1.17.1",
       "pyhecke_native": "0.9.0"
     },
-    "tree_commit": "8b762633833d0fe42bc8af3cb8b277718dd2e3bd"
+    "tree_commit": "59978486ade2882983245f44578da3292adc3871"
   },
   "skipped": [
     {
