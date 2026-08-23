@@ -204,3 +204,45 @@ judgement on whether it is a deliberate legacy comparison.
 
 **Still owner-gated:** the AGENTS.md `y_lambda_at` "muon-built cache" text vs
 the proton file on disk; the 326 transcribable witnesses (a mutation).
+
+## 2026-08-23 (night) — four directed tasks
+
+**1. The 17 off-pin literals, adjudicated.** 3 leave (documented `STALE_Q0`;
+a `is_f64_padded=True` test fixture; a bisection bracket). 7 archival, now
+annotated — the `option_e_v5..v9` family IS the v1..v9 record
+`docs/coordination/option-e.md` tracks, and `option_e_probe1` exists to show
+the published 0.11 % was obtained at that stale q₀; re-pinning would delete its
+subject. 7 migrated, the sharpest being `Q_PROTON = "1.10997861"` commented
+"proton-pinned spot value" but **+24.5 ppb** off — two probes reported the μ–p
+gap as **+13.0 ppb** when it is **−11.5 ppb**, wrong in sign and magnitude, in
+probes whose subject is that tension.
+
+**2. AGENTS.md `y_lambda_at`: evidence assembled, decision left open.** All
+three claims false — the accessor's live body reads no file (cache path is
+`_..._CONVENTION_C_HISTORICAL`, "DEAD"), the cache is **proton** not muon-built,
+and it holds convention **D** not C (which also makes
+`wedderburn_jones_markov`'s own docstring stale). Two producers load it
+directly and get D-at-proton, correct. Doc:
+`docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`, three costed
+options, recommendation = rewrite as a closed case.
+
+**3. The 326 → 229 labelled.** `Q0_ANCHOR_MISSING` 1880 → 1651, `Q0_FLIP` 0,
+`--strict` exit 0.
+
+> **I GOT THIS WRONG FIRST.** Applied 307, grepped `Q0_` with `head -12`, and
+> `Q0_FLIP` is the **13th line** — I truncated my own verification and reported
+> "zero flips" over **76 real ones**. The gate caught it. Causes: 74 carry the
+> **superseded** muon value (the 11-digit detection prefix matches both muon
+> values by design; the audit's 14-digit one does not, and `muon` NAMES the
+> current value), and 4 grabbed **prose** containing a prefix. Both guards are
+> now in the script with the measurement, and the report counts what an applier
+> will ACCEPT (78 fewer) rather than what merely carries a pin.
+
+**4. `float(q_at())` excised in all five.** `q_at()` already returns `mpf` at
+50 dps, so the cast was a pure downgrade buying nothing — four of the five use
+no `math`/`numpy` at all. `hbond_vdw_sdp` split two ways: `eigvalsh` → `mp.eigsy`
+(its PSD test compares to `-1e-9`, at the float64 noise floor), scipy LP kept
+and documented. Raw float64 in that witness **36 → 16**.
+
+**NEW CLASS, needs an owner read:** the **74 superseded-muon witnesses** —
+computed at a value that is neither canonical pin.
