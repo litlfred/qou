@@ -3,12 +3,12 @@
   "description": "W1/W2 gates for the independent Q_beta crossing-weight determination from the H_3 GS reducer. W1 PASS (counit reproduction); W2 KILL (full GS augmentation is not the production cos*(1+c_k u^2) ladder; disagrees at O(u), +0.75% vs +0.17% N=0). scope-(a).",
   "audit_only": true,
   "tier": "structural-exact (symbolic; + numeric cross-checks; no fit, no CODATA in the algebra)",
-  "computedAt": "2026-07-07T17:01:38.757705+00:00",
-  "commitSha": "ddcaccd15758edec8ce8265c343bd5783ee6b044",
+  "computedAt": "2026-08-23T16:30:56.857862+00:00",
+  "commitSha": "d25141775dacce27b48442285c0ed218e5d3dafc",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_crossing_weight_hecke_probe.py",
-  "scriptHash": "e26f9b078847",
+  "scriptHash": "2c9f0baa5c01",
   "assertions": [
     {
       "name": "W1_gs_net_matches_counit_through_hbar2",
@@ -26,13 +26,19 @@
       "name": "W1_trM_pairing_G_dependent",
       "passed": true,
       "skipped": false,
-      "detail": "<v,e_\u03b3>_G=-0.0825349539929 vs h^2/2-h*z=-0.0825349539929"
+      "detail": "<v,e_\u03b3>_G=-0.106235639848 vs h^2/2-h*z=-0.106235639848"
     },
     {
-      "name": "W1_cointegral_matches_net_ansatz",
+      "name": "W1_cointegral_obstruction_is_exactly_(q-1)(q^2-q+1)/q^3",
       "passed": true,
       "skipped": false,
-      "detail": "\u03c9=G^-1\u00b71=[0.601, 0.188, 0.188, 0.396, 0.396, 0.026] vs net-ansatz [0.601, 0.188, 0.188, 0.396, 0.396, 0.026]"
+      "detail": "\u27e8v,1\u27e9 numerator = (q - 1)*(q**2 - q + 1); the cointegral G^-1\u00b71 does not exist under D (C-frame net-ansatz was [0.601, 0.188, 0.188, 0.396, 0.396, 0.026])"
+    },
+    {
+      "name": "W1_cointegral_obstruction_nonzero_for_every_real_q_gt_1",
+      "passed": true,
+      "skipped": false,
+      "detail": "disc(q\u00b2\u2212q+1) = -3 < 0 \u21d2 no real root \u21d2 \u27e8v,1\u27e9 \u2260 0 for every real q > 1 \u21d2 1 \u2209 range(G): G\u00b7\u03c9 = 1 is inconsistent at every substrate value, so neither pinv nor the TL\u2083 quotient rescues it"
     },
     {
       "name": "W2_gs_ratio_leading_is_plus_hbar2_coshlike",
@@ -65,7 +71,7 @@
   "skippedCount": 0,
   "result": {
     "Q_beta_GS_over_Q_A_minus_1": "-3023*t**7/8 - 1253*t**6/8 - 217*t**5/4 - 57*t**4/4 - 2*t**3 + t**2",
-    "Q_beta_GS_over_Q_N1_minus_1": "-1977233*t**7/5120 - 12037*sqrt(3)*t**7/7680 - 7276139*t**6/46080 - sqrt(3)*t**6/32 - 10387*t**5/192 + sqrt(3)*t**5/4 - 5311*t**4/384 + sqrt(3)*t**4/16 - 15*t**3/8 + sqrt(3)*t**3/8 + 9*t**2/8",
+    "Q_beta_GS_over_Q_N1_minus_1": "-5757383*t**7/15360 - 38579*sqrt(3)*t**7/15360 - 7211579*t**6/46080 - 421*sqrt(3)*t**6/384 - 3513*t**5/64 - 13*sqrt(3)*t**5/64 - 5563*t**4/384 - 3*sqrt(3)*t**4/16 - 19*t**3/8 + sqrt(3)*t**3/8 + 9*t**2/8",
     "u_of_hbar": "-sqrt(3)*t**7/18 + sqrt(3)*t**6/72 + sqrt(3)*t**5/12 + sqrt(3)*t**4/12 + sqrt(3)*t**2/2",
     "verdict": "W1 PASS + W2 KILL (scope-(a)). The first-principles categorical Q_beta net -- the augmentation Delta(net) of the H_3 GS-reduced nucleon NF -- reproduces the counit through O(hbar^2) (W1), but the FULL GS net is NOT the production cos*(1 + c_k u^2) ladder: Q_beta^GS/Q_A = 1 + hbar^2 - 2 hbar^3 - ... is cosh-like (leading +hbar^2), and Q_beta^GS/Q_N1 - 1 carries a leading O(hbar^2)=O(u) term (coeff 9/8) BELOW the c_2 u^2 (O(hbar^4)) rung, so it is not of pure ladder shape. Numerically the full GS net gives Q_beta = +0.75% vs CODATA, WORSE than the N=0 truncation Q_A (+0.17%): the categorical higher orders push away from the ladder. scope-(a): this refutes the hypothesis 'full GS augmentation == production ladder', NOT the ladder ansatz or any c_k. W3 (c_2 reproduction) is moot under this kill. NO c_k value; nothing wired."
   },
