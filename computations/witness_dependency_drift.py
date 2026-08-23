@@ -269,10 +269,37 @@ def check_self_staleness(
         return None
     recorded = w.get("scriptHash")
     script_file = w.get("scriptFile")
+    # FALL BACK TO `producer`. Some producers record themselves under a
+    # `producer` key instead of `scriptFile` — a path or a bare filename, both
+    # seen — and those witnesses were classed `self_unverifiable` and dropped
+    # out of the audit entirely despite naming a producer that exists and runs.
+    # Measured 2026-08-23: 42 such witnesses, of which 34 resolve to a real
+    # file. Several already carry a `scriptHash`, so they become checkable the
+    # moment they resolve — e.g. chi-deuteron-h6-at-q0-50dps has
+    # scriptHash='c36a8a393fcd', scriptFile=None, producer=
+    # 'chi_at_q0_via_hoefsmit_mpfr.py'.
+    #
+    # The 8 that do not resolve name a METHOD, not a script —
+    # 'matrix-m-chi-q-via-gp', 'rust-chi-q-via-gp-lossless' — and no
+    # normalisation rescues those.
+    if not script_file:
+        script_file = w.get("producer")
     if not recorded or not script_file:
         return {"downstream": witness_path.name, "kind": "self_unverifiable",
                 "detail": "witness lacks scriptHash/scriptFile"}
-    candidates = producer_index.get(script_file, [])
+    # NORMALISE TO A BASENAME. `_build_producer_index` keys on `py.name`, but a
+    # witness may record `scriptFile` PATH-QUALIFIED — 'markov/
+    # markov_identity_symbolic_probe.py', 'computations/probes/
+    # binding_mayer_linked_cluster_probe.py' — and the lookup missed every one.
+    # Measured: 21 of the 22 `producer_unresolved` witnesses resolve on this
+    # change alone.
+    #
+    # The single survivor is joint-tower-sdp-rust.witness.json, whose
+    # scriptFile is 'joint_tower_sdp.rs' — a RUST producer, which an index
+    # built by rglob("*.py") can never resolve however the key is normalised.
+    # That one is a genuine permanent exception, not the same bug.
+    candidates = (producer_index.get(script_file)
+                  or producer_index.get(Path(script_file).name, []))
     if len(candidates) == 0:
         return {"downstream": witness_path.name, "kind": "producer_unresolved",
                 "scriptFile": script_file}
