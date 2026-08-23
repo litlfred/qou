@@ -1,30 +1,30 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:52:13.237364+00:00",
-  "commitSha": "ee7898b94d3b5ad1f4b5f40facf0077a6de279aa",
+  "computedAt": "2026-08-23T09:31:59.966335+00:00",
+  "commitSha": "af1d87f17a5ca2c39ee4c4e58a474daf72ff58ed",
   "assertions": [
     {
       "name": "1_divergent_set_has_not_grown",
-      "computed": "0",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
-      "detail": "72 divergent literals vs baseline 71. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
+      "passed": true,
+      "detail": "69 divergent literals vs baseline 69. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
     },
     {
       "name": "2_more_than_one_family_exists",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "4 distinct divergence points ([13, 18, 19, 52]). More than one means the corpus carries mutually inconsistent hardcoded pins, not a single stale value -- which is the finding."
+      "detail": "3 distinct divergence points ([13, 18, 19]). More than one means the corpus carries mutually inconsistent hardcoded pins, not a single stale value -- which is the finding."
     }
   ],
-  "allPassed": false,
-  "durationMs": 320,
+  "allPassed": true,
+  "durationMs": 341,
   "computation": "hardcoded-q0-literal-families",
   "scriptFile": "hardcoded_q0_literal_families_audit.py",
-  "scriptHash": "c21126ec2023",
-  "scriptCommitSha": "eadcb02e08df85f09e15218aa1c522dabf99e0a0",
+  "scriptHash": "fa7eb60c49fd",
+  "scriptCommitSha": "9f69e6f5f2ef506ab6b4ca9b54f5b487813bccb5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -281,8 +281,8 @@
       70,
       70
     ],
-    "divergent_count": 72,
-    "baseline_divergent": 71,
+    "divergent_count": 69,
+    "baseline_divergent": 69,
     "families": {
       "13": [
         {
@@ -618,11 +618,6 @@
       ],
       "18": [
         {
-          "file": "computations/probe_qbeta_form.py",
-          "literal": "1.1099785955573347596001309852899479366668383822292",
-          "length": 51
-        },
-        {
           "file": "computations/test_q0_provenance_audit.py",
           "literal": "1.109978595557334700000000000000",
           "length": 32
@@ -638,18 +633,6 @@
           "file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
           "literal": "1.1099785955573347117485528280749490295019743898536",
           "length": 51
-        }
-      ],
-      "52": [
-        {
-          "file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
-          "literal": "1.10997859555733471989976322048322502665620840878015405145269",
-          "length": 61
-        },
-        {
-          "file": "computations/q0_anchor_gate_test.py",
-          "literal": "1.10997859555733471989976322048322502665620840878015405145269",
-          "length": 61
         }
       ]
     },
