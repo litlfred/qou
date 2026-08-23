@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T22:19:32Z
-updated_at: 2026-08-23T22:31:52Z
+updated_at: 2026-08-23T22:44:13Z
 ---
 
 `witness_failed_assertion_audit.py` is registered **advisory** in
@@ -205,3 +205,58 @@ all trace to it, each a downstream artifact that was never regenerated after
 the 2026-08-09 owner ruling. Anything on this list that touches `y_lambda_at`,
 `gram.TR_M` or a `habiro-coefficients-atomic` descendant should be checked
 against that ruling BEFORE it is treated as a defect.
+
+
+---
+
+## Three more (2026-08-23, later). Branch total 10; the ledger below is current.
+
+### 9. `atomic-tr-m-helium4-canonical` :: `abs_tau_4he_positive` — stale pass, C→D
+
+    HEAD (computedAt 2026-05-25)  computed 0.1538719675410952  exp 0.15 tol 0.1  PASS
+    NOW                           computed 0.4185152019887448  exp 0.15 tol 0.1  FAIL
+
+A tr_M witness, so the C→D pre-check applies and clears it: the recorded pass
+is from 2026-05-25, two and a half months before the 2026-08-09 ruling, and
+its producer has not been touched since 08-02. Nothing about the producer moved
+the number; the tr_M underneath it did.
+
+### 10 + 11. `borromean-axial-coupling` :: `g_A`, `lp_duality_gap_zero` — PROMOTED TO **qou-g8bk**
+
+Not a numeric regression: a q₀ re-anchoring. At HEAD the witness declared
+`q0Anchor: "muon"` while computing at the PROTON value (1.1099785827513808 in
+its own `char_on_basis[1]`); the regeneration is the first time its numbers and
+its declared pin agree. Bean tnjb's exact hazard, caught on the correcting
+side.
+
+But the corrected result does not stand up: at the declared muon anchor the
+operator-selection LP DEGENERATES — `x_star[0]` sits at exactly −1,000,000, the
+box bound, and the duality gap is 0.0209 against 1e-10. So g_A = 1.0 was
+obtained at the wrong anchor and 0.58 is not a result either. Owner decision
+required; see qou-g8bk.
+
+## Ledger
+
+    main                                      28 NEW + 1 GROWN
+    branch at session start                   34 NEW
+      -1  qbeta-sym-part-hecke-natural-form   RESOLVED (cffc1265f)
+      +2  cyclic-intertwiner (-> qou-w701), alpha-em-b2
+      +3  atomic-tr-m-helium4, borromean x2 (-> qou-g8bk)
+    branch now                                38 NEW
+
+Causes, for whoever drains this:
+
+    convention C -> D migration    4   (#6 resolved, #8, #9, + the frozen
+                                        constant fixed in 9a5d18462)
+    q0 anchor correction           2   (#10, #11 — same root, one producer)
+    deferred verification failed   1   (#7, qou-w701 — a real open defect)
+    frozen expected value          2   (#3 bond-edge-set, #4 rho-k-h3a)
+    schema misuse, pre-existing    1   (#8's vector-vs-prose assertion)
+    genuinely open science         2   (#1 m_n at 501 ppb, #2 snappy stage 2)
+
+**The C→D migration remains the single largest cause.** Anything on this list
+touching `y_lambda_at`, `gram.TR_M` or a `habiro-coefficients-atomic`
+descendant should be checked against the 2026-08-09 ruling BEFORE it is treated
+as a defect. Note `gram.TR_M` has **~70 live importers**, not zero — an earlier
+count of "all under `_deprecated/`" came from a `head -12` on a sorted grep and
+was wrong.
