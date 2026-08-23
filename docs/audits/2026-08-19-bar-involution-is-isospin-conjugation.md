@@ -621,6 +621,78 @@ of braids (Orellana, Geck–Lambropoulou, Birman, Webster–Williamson); whether
 of them states the factorisation across an unused generator in this form is worth
 one look before deriving it from scratch.
 
+## 4h. The rule is derived (2026-08-23, closes `qou-g8i1`)
+
+[`QOU/MathlibExt/MarkovUnusedGenerator.lean`](https://github.com/litlfred/qou/blob/claude/frakv-fibre-workplan-2026-08-19/content/quantum-observable-universe/lean/QOU/MathlibExt/MarkovUnusedGenerator.lean)
+proves the open equation. `lean`-direct exit 0, no warnings, sorry-free;
+`#print axioms` on every principal declaration reports
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`.
+
+$$
+  \mathrm{tr}\bigl(W\,\sigma_g\bigr) \;=\; z\,\mathrm{tr}(W)
+  \qquad
+  W \text{ monotone},\; g \notin W .
+$$
+
+It is derived from a new structure `MarkovTower`, which axiomatises only the
+standard Jones/Ocneanu data — an increasing tower of subalgebras, generators
+with `σ n ∈ H (n+1)`, far-commutation, a linear trace with
+`tr(ab) = tr(ba)`, and the Markov property **at the last strand only**. No
+field of the structure encodes the conclusion; the interior-generator rule is
+what gets derived.
+
+`z` is an abstract ring element throughout, so the file is
+**convention-neutral** — neither C-frame nor D-frame. That dissolves the
+blocker recorded in `qou-g8i1`: choosing a frame was never necessary to state
+this, and instantiating $z := q^3/(q^2+1)$ specialises it without reproving
+anything.
+
+### The argument
+
+Induction peeling the **top** letter $\sigma_m$ — available because the word is
+monotone, each generator occurring once in increasing order. Three cases:
+
+| case | move |
+|---|---|
+| $m < g$ | every letter is below $g$, so the word lies in $H_g$ and the Markov property applies directly — no induction |
+| $g + 2 \le m$ | $\sigma_m$ and $\sigma_g$ commute, so $\sigma_g$ slides past the top letter; Markov at $m$ peels $\sigma_m$; the induction hypothesis finishes |
+| $m = g + 1$ | neither move exists. Cyclicity rotates $\sigma_g$ to the front, $\sigma_g W$ lands in $H_{g+1}$, Markov at $g+1$ peels $\sigma_{g+1}$, cyclicity rotates back, Markov at $g$ finishes |
+
+The $m = g+1$ case is why the trace property is needed and linearity alone is
+not.
+
+### Correcting §4g's framing
+
+§4g attributed the rule to *gap-multiplicativity plus the Markov property*. The
+proof does not use gap-multiplicativity at all — monotonicity together with
+far-commutation suffices. The measured factorisation
+$\mathrm{tr}(W) = \mathrm{tr}(W_<)\,\mathrm{tr}(W_>)$ remains true and still
+explains why the free trace factorises over nucleons, but it is a separate
+corollary rather than a lemma of this theorem. **The literature question of §4g
+therefore closes without needing an answer:** nothing had to be looked up.
+
+### `BondRule` is discharged
+
+`bondRuleOfTower` constructs a `MarkovBondRule.BondRule R A q` from any
+`MarkovTower` whose parameter is `markovZ q`, reading `Unused g x` as "`x` is a
+monotone word omitting `g`" — the condition under which the numerics of §4f were
+measured. `MarkovBondRule.bond_pp_nn`, stated there conditionally, consequently
+holds outright for any such tower.
+
+What remains assumed is that the **Hecke** tower carries a Markov trace, which
+is the cited standard result (Jones 1987, Wenzl 1988) rather than anything
+specific to this framework. The remaining open item in the chain is a citation,
+not a derivation.
+
+### Scope
+
+This is not a construction of $H_n(q)$ with its Wedderburn decomposition; it is
+the trace-level layer, which is all the bond product ever needed. `MarkovTower`
+is shown inhabited by a non-degenerate model ($A = R$, $\mathrm{tr} = \mathrm{id}$,
+$z = 1$) — faithful rather than the zero functional, so the axioms do not force
+degeneracy — but that model is commutative and says nothing about the Hecke
+tower.
+
 ## 5. What this does and does not say about `conj:binding-qbeta-complex-volume`
 
 The conjecture assigns the bar-even channel to binding (`Re 𝔙`) and the bar-odd
