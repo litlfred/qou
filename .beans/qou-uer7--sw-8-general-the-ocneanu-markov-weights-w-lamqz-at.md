@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T21:22:45Z
+updated_at: 2026-08-23T21:29:10Z
 parent: qou-59vq
 ---
 
@@ -492,3 +492,34 @@ form of the same content.
 | 2b. `addCell` + round-trips | **Lean** |
 | 2b. the reindexing equivalence / sum-reindex | **OPEN** |
 | 3. the lam-sum with weights | **OPEN** |
+
+
+## Update — step 2b is CLOSED
+
+`cornerAddEquiv n : CornerPair n ≃ AddPair n`, sorry-free, axiom-clean:
+`(lam, removable corner) <-> (lam \ c, that corner, now addable)`.
+
+**The phrasing is the whole trick, and it cost me an attempt.** The natural spelling is a `Sigma`
+over the diagram, `Sigma L : {mu // |mu| = n+1}, {c // IsCornerCell L.1 c}`. Don't. The second
+component's type then depends on the first, so `left_inv` lands on a `HEq` between corner-proofs
+over two diagrams that are equal but not syntactically so, and discharging it needs a transport
+whose motive does not typecheck — the card-proof inside the diagram depends on the diagram. I hit
+that, backed out, and rephrased **both sides as subtypes of one product type**. The dependency
+disappears and the round-trips become plain `Subtype.ext` on a pair. Same content, no HEq.
+
+Recorded in the file's docstring too, because the `Sigma` spelling is the one anyone would reach
+for first.
+
+| step | status |
+|---|---|
+| 1. block equality at a generator | **Lean** |
+| 2a. lift to every Hecke element | **Lean** |
+| 2b. `addCell` + round-trips + the exchange equivalence | **Lean** |
+| 3. the lam-sum with weights | **OPEN — the only gap** |
+
+Step 3 is where `ocneanuWeight` and `OcneanuWeightMarkovCorner`'s corner identities finally meet.
+It will also want Fintype instances on `CornerPair`/`AddPair`, transportable from `Nat.Partition`
+via `partitionShapeEquiv`, to turn `cornerAddEquiv` into a sum reindexing.
+
+I have said "only one gap left" twice this session and been wrong once. This time the remaining
+item is a single named theorem rather than a category of work, but I have not attempted it.
