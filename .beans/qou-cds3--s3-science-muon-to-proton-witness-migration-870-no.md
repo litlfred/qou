@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T20:45:00Z
+updated_at: 2026-08-23T21:30:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -410,3 +410,71 @@ under either reading — but the 11 qbeta cross-anchor probes are the overlap: a
 probe whose *purpose* is to compare two pins may be recording the pins it
 actually used, in which case the label is right and the value is right and only
 the name reads oddly. **Check that per-probe before regenerating any of the 11.**
+
+---
+
+## ⚠ 2026-08-23 — SEVEN REGENERATIONS RUN AND DELIBERATELY NOT COMMITTED. Regeneration is not hygiene.
+
+Last section I regenerated `he4_rho_f_bar_symmetric_audit_probe`, found its
+conclusion unchanged, and wrote that *"for this one, regeneration is genuinely
+hygiene."* **That generalised, and the generalisation is wrong.** I then ran the
+other seven non-qbeta producers and reverted every one.
+
+### What regenerating actually does
+
+A witness computed in **June 2026** and regenerated in **August** replays *every*
+producer change in between — not just the q₀ pin. Two are load-bearing here:
+
+- **`e5dcd8f54`** (2026-08-01) — *"A=3 magnitude r\*≈1.585 is a FREE parameter of
+  the Berezinian cross-term"*. A physics change, touching all three probes I
+  spot-checked.
+- **`bc96793e5`** (**2026-08-23, today**) — a **sibling's** q0-literal migration
+  (`claude/q0-literal-transcription-drain`), which edited
+  `binding_qgaussian_ell1_ceiling_measurement.py`.
+
+So the mislabel fix **cannot be isolated by regeneration**. Running the producer
+applies the pin correction *and* two months of unrelated evolution in one commit.
+
+### Measured, on the seven
+
+| witness | what moved |
+|---|---|
+| `xq-habiro-element-search-probe` | **all 6 candidates `TIER 1 (cross-anchor proved-candidate)` → `TIER 2 (near-match)`** |
+| `binding-qgaussian-ell1-ceiling-measurement` | `muon_anchor.rows[0].classical_ceiling_over_target` 0.516 → 0.566 (**9.7 %**) |
+| `flavor-split-alpha-*` | `alpha_true_anchor_drift` 5.8e-8 → 2.4e-4 (**4000×**) |
+| `option-e-v9-bar-symmetric-test-probe` | 29 non-pin fields; verdict held |
+| `yekutieli-*` | `data.h` moved at 1e-8; verdicts held |
+
+A 9.7 % move is not an 11.5 ppb pin shift, and `muon_anchor.*` fields moving at
+all is the tell: these probes' **muon legs** changed too. Every one still reported
+*"1 assertions, all passed"* — which is exactly why "assertions passed" is not a
+substitute for diffing the payload.
+
+### The one that is a finding in its own right, independent of the pin
+
+`xq-habiro-element-search-probe.witness.json` **as committed advertises six
+`TIER 1 (cross-anchor proved-candidate)` results that the current producer does
+not reproduce** — it now grades all six `TIER 2 (near-match)`. The committed
+artefact is not merely stale in its pin; it is asserting a stronger claim than
+today's code supports. That is worth someone's attention on its own terms, and it
+was invisible until a regeneration was attempted. **Not resolved here** —
+deciding whether June's TIER 1 or August's TIER 2 is correct is `qbeta`/Berezinian
+subject matter, not migration hygiene.
+
+### Why the `he4` commit still stands
+
+Re-checked its committed diff field by field: 34 non-pin fields moved, all at the
+**ppb level** (`B_pred_MeV` 29.95567724 → 29.95567728, ~1.4e-9 relative) and the
+verdict is identical (+5.87 %, all candidates fail). That is the pin correction
+propagating and nothing else — the honest outcome of a regeneration whose producer
+had not meaningfully changed. Kept.
+
+### Consequence for this bean
+
+The remaining **20** are not a drain queue. Each needs its payload diffed against
+the committed witness **before** the regeneration is committed, and any probe
+whose conclusion moves needs an owner, not a hygiene commit. That applies to the
+non-qbeta ten as much as the qbeta eleven — the split I drew last section was the
+wrong axis. The right axis is **"has this producer changed since the witness was
+computed?"**, which is a one-line `git log` per file and should be the first
+question, not the last.
