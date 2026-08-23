@@ -20,7 +20,9 @@ to the first cancellation instead:
   * the closing phase is the **same three calls** as `a ≥ 3` — `fRun`,
     `closingBs`, `fRun` — landing on the **same word**, `WStar`.
 
-`CornerLe.prefixChain₂` now proves it. This is the fourth time in this arc that
+`CornerLe.prefixChain₂` now proves it, and `prefixChain₁` proves `a = 1`, so
+the corner's `a ≤ b` prefix is proved for **every** `a`. This is the fourth
+time in this arc that
 a structural claim went into a durable artifact having been measured against
 the wrong question, so the check is stated as a question this time: run to the
 first cancellation, not to a normal form.
@@ -202,10 +204,11 @@ def main():
         "is what the correction in the docstring records.")
     w.add_caveat(
         "Reaching an endpoint is necessary, not sufficient: a stretch that "
-        "transfers still has to compose on the nose. Here it did -- "
-        "`prefixChain₂` is proved, lean-direct exit 0, axiom-clean -- so for "
-        "a = 2 this caveat is discharged rather than outstanding. It still "
-        "applies to a = 1, which is measured but not yet proved.")
+        "transfers still has to compose on the nose. Here it did -- both "
+        "`prefixChain2` and `prefixChain1` are proved, lean-direct exit 0, "
+        "axiom-clean -- so this caveat is discharged rather than outstanding. "
+        "`oc` requires only j1 <= i1, i.e. a >= 1, so with a >= 3 already "
+        "proved there is no uncovered corner left in this regime.")
     path = w.save({
         "q0Anchor": "independent",
         "q0AnchorReason":

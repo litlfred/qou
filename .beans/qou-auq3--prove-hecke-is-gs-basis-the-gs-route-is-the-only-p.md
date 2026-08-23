@@ -3969,3 +3969,36 @@ own docstring: **run to the first cancellation, not to a normal form.**
 uniform in `b`. Nothing transfers: at `a = 1`, `j₁ = i₁`, so **both** `V0` and
 `U0` carry a bare quadratic redex `σᵢ₋₁σᵢ₋₁` from the start and the chain opens
 with two `Q` steps, one per term. Not yet proved.
+
+### `a = 1` PROVED — the `a ≤ b` regime is complete (2026-08-23)
+
+`prefixChain₁`: six steps, `T0` to the first cancellation. Unlike `a = 2`,
+`a = 1` shares **neither** the count formula (6, not 7) **nor** the target
+(`bsWord₂ i₁ i j₂`, not `WStar`) — the "measured, open" entry above is now
+closed, and its measurement stands.
+
+| | steps | target |
+|---|---|---|
+| `prefixChain`  | `a ≥ 4` | `a²+a+5` | `WStar` |
+| `prefixChain₃` | `a = 3` | 17 | `WStar` |
+| `prefixChain₂` | `a = 2` | 11 | `WStar` |
+| `prefixChain₁` | `a = 1` | 6 | `bsWord₂ i₁ i j₂` |
+
+`oc` requires only `j₁ ≤ i₁`, i.e. `a ≥ 1`, so **no uncovered corner is left in
+this regime.** All four are lean-direct exit 0, 0 sorries, and `#print axioms`
+clean.
+
+Two things worth keeping from the `a = 1` proof:
+
+* **Every word is written over `D = descWord i₂ j₂`,** which is *empty* on the
+  diagonal `b = 1`. That is what makes the bystander arguments uniform in `b`:
+  the words have lengths `|D|+2 … |D|+5`, and at the three places where two
+  collide they differ in their first letter.
+* **The chain's order is deliberately not deg-lex's, and that is load-bearing.**
+  Deg-lex interleaves the lineages and at `b = 1` takes a U step before the V
+  one; under that order the U word after its `bsStep` and the V word after its
+  braid are both `|D|+4` long *and* agree in their first three letters, so
+  separating them would need a case split on whether `D` is empty. Running the U
+  lineage to its end first means the V words are only ever compared against
+  words of a different length. `MultiStepReduction` fixes no order beyond each
+  step's redex being present — deg-lex picks one, the Lean is not obliged to.

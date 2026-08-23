@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T07:52:51.288983+00:00",
-  "commitSha": "67ffcd9e1f192e14bde4ffc7935ce1132b13ec7c",
+  "computedAt": "2026-08-23T08:27:34.670918+00:00",
+  "commitSha": "6f31740b1c8c163bf9f188e842dde16ce7e919f1",
   "assertions": [
     {
       "name": "a2_cases_whose_prefix_is_NOT_a2_plus_a_plus_5_steps",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 41,
   "computation": "hecke-small-a-decomposition",
   "scriptFile": "hecke_small_a_decomposition.py",
-  "scriptHash": "0d08c7b2d12f",
-  "scriptCommitSha": "c93cec710951d2e2c1ebe50cdf276e26dc325f1a",
+  "scriptHash": "17a2d30bb976",
+  "scriptCommitSha": "c74244c13a4c55e9b6f866fecf57ddb290dfcdfc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1051,7 +1051,7 @@
   },
   "caveats": [
     "The prefix ends at the FIRST cancellation, which is what the Lean chain proves and is NOT a normal form. Running further is a different question and answering it does not answer this one -- that confusion is what the correction in the docstring records.",
-    "Reaching an endpoint is necessary, not sufficient: a stretch that transfers still has to compose on the nose. Here it did -- `prefixChain₂` is proved, lean-direct exit 0, axiom-clean -- so for a = 2 this caveat is discharged rather than outstanding. It still applies to a = 1, which is measured but not yet proved."
+    "Reaching an endpoint is necessary, not sufficient: a stretch that transfers still has to compose on the nose. Here it did -- both `prefixChain2` and `prefixChain1` are proved, lean-direct exit 0, axiom-clean -- so this caveat is discharged rather than outstanding. `oc` requires only j1 <= i1, i.e. a >= 1, so with a >= 3 already proved there is no uncovered corner left in this regime."
   ],
   "q0Anchor": "independent",
   "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
