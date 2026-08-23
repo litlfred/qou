@@ -46,7 +46,7 @@
     "habiro_sum_proton": "354.7485347060081697155869717695221581070",
     "M_proton": 8,
     "all_integral": true,
-    "conclusion": "The Habiro expansion terminates at M=8 for the proton. All coefficients are integer polynomials in u. The precision-ladder c_k are the Taylor expansion of this FINITE, EXACT, INTEGER sum — no truncation error exists.",
+    "conclusion": "The Habiro expansion terminates at M=8 for the proton. All coefficients are integer polynomials in u. The precision-ladder c_k are the Taylor expansion of this FINITE, EXACT, INTEGER sum \u2014 no truncation error exists.",
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
@@ -65,5 +65,8 @@
         "computedAt": "2026-08-08T13:04:48.908965+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

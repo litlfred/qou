@@ -1,86 +1,89 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_theta_canonical.py",
- "commitSha": "unknown",
- "description": "Bean qou-wgnx. Builds the theta-normalised canonical solutions of the ramified C1 operator explicitly \u2014 the step both step 3 and step 4 tried to shortcut past. Ansatz y = theta_p(z/T)^{-1} h(z) with theta_p(pw) = w theta_p(w); substitution forces the indicial equation T^2 p^3 = p^2 - 1 and then determines every h_n uniquely. Verified by substituting the truncated series back into the equation. FINDING: the canonical parameter is T_theta = sqrt(q-1)/q^(3/4), which differs from the Newton edge-polynomial root sqrt(q-1)/q by exactly q^(1/4). The edge polynomial is correct about itself; what does not transfer is the name 'the leading block indexing the Stokes sectors'. Multipliers NOT extracted \u2014 that needs the connection matrix.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_theta_canonical.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "ed3858b98f9f"
- },
- "results": {
-  "q": "1.1099785827513808075916690956",
-  "ramification": "x = z^2, q = p^2, tau F(z) = F(pz)",
-  "operator": "(p^4 z^2 - 1) tau^2 - (p^2-1) tau - (p^2-1)",
-  "ansatz": "y = theta_p(z/T)^{-1} h(z), theta_p(pw) = w theta_p(w)",
-  "indicial_equation": "T^2 p^3 = p^2 - 1",
-  "T_theta_canonical": "0.30666775231891254188",
-  "T_theta_closed_form": "sqrt(q-1)/q^(3/4)",
-  "T_edge_newton": "0.29877170145444403187",
-  "T_edge_closed_form": "sqrt(q-1)/q",
-  "ratio_T_theta_over_T_edge": "1.0264283760009060974",
-  "ratio_equals_q_quarter": true,
-  "n_terms": 40,
-  "branches": {
-   "T+": {
-    "T": "0.30666775231891254188",
-    "h_first_6": [
-     "1.0",
-     "-3.09509932369286",
-     "0.473938459932619",
-     "7.93365861223527",
-     "-7.01232155922182",
-     "-7.28987430085539"
-    ],
-    "residual": {
-     "50": "1.94469e-62",
-     "200": "9.72346e-63",
-     "1000": "1.94469e-62"
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_theta_canonical.py",
+  "commitSha": "unknown",
+  "description": "Bean qou-wgnx. Builds the theta-normalised canonical solutions of the ramified C1 operator explicitly \u2014 the step both step 3 and step 4 tried to shortcut past. Ansatz y = theta_p(z/T)^{-1} h(z) with theta_p(pw) = w theta_p(w); substitution forces the indicial equation T^2 p^3 = p^2 - 1 and then determines every h_n uniquely. Verified by substituting the truncated series back into the equation. FINDING: the canonical parameter is T_theta = sqrt(q-1)/q^(3/4), which differs from the Newton edge-polynomial root sqrt(q-1)/q by exactly q^(1/4). The edge polynomial is correct about itself; what does not transfer is the name 'the leading block indexing the Stokes sectors'. Multipliers NOT extracted \u2014 that needs the connection matrix.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_theta_canonical.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "ed3858b98f9f"
+  },
+  "results": {
+    "q": "1.1099785827513808075916690956",
+    "ramification": "x = z^2, q = p^2, tau F(z) = F(pz)",
+    "operator": "(p^4 z^2 - 1) tau^2 - (p^2-1) tau - (p^2-1)",
+    "ansatz": "y = theta_p(z/T)^{-1} h(z), theta_p(pw) = w theta_p(w)",
+    "indicial_equation": "T^2 p^3 = p^2 - 1",
+    "T_theta_canonical": "0.30666775231891254188",
+    "T_theta_closed_form": "sqrt(q-1)/q^(3/4)",
+    "T_edge_newton": "0.29877170145444403187",
+    "T_edge_closed_form": "sqrt(q-1)/q",
+    "ratio_T_theta_over_T_edge": "1.0264283760009060974",
+    "ratio_equals_q_quarter": true,
+    "n_terms": 40,
+    "branches": {
+      "T+": {
+        "T": "0.30666775231891254188",
+        "h_first_6": [
+          "1.0",
+          "-3.09509932369286",
+          "0.473938459932619",
+          "7.93365861223527",
+          "-7.01232155922182",
+          "-7.28987430085539"
+        ],
+        "residual": {
+          "50": "1.94469e-62",
+          "200": "9.72346e-63",
+          "1000": "1.94469e-62"
+        }
+      },
+      "T-": {
+        "T": "-0.30666775231891254188",
+        "h_first_6": [
+          "1.0",
+          "3.09509932369286",
+          "0.473938459932619",
+          "-7.93365861223527",
+          "-7.01232155922182",
+          "7.28987430085539"
+        ],
+        "residual": {
+          "50": "1.94469e-62",
+          "200": "9.72346e-63",
+          "1000": "4.86173e-62"
+        }
+      }
+    },
+    "indicial_residual_at_T_theta": "9.72346e-63",
+    "indicial_residual_at_T_edge": "-0.00559052"
+  },
+  "checks": [
+    {
+      "name": "indicial_satisfied_at_T_theta",
+      "detail": "T^2 p^3 - (p^2-1) vanishes to working precision",
+      "passed": true
+    },
+    {
+      "name": "indicial_violated_at_T_edge",
+      "detail": "the Newton edge root does NOT solve the indicial equation",
+      "passed": true
+    },
+    {
+      "name": "ratio_is_exactly_q_quarter",
+      "detail": "T_theta / T_edge = q^(1/4)",
+      "passed": true
+    },
+    {
+      "name": "formal_solutions_verified_by_substitution",
+      "detail": "truncated series residual decays with z for both branches",
+      "passed": true
     }
-   },
-   "T-": {
-    "T": "-0.30666775231891254188",
-    "h_first_6": [
-     "1.0",
-     "3.09509932369286",
-     "0.473938459932619",
-     "-7.93365861223527",
-     "-7.01232155922182",
-     "7.28987430085539"
-    ],
-    "residual": {
-     "50": "1.94469e-62",
-     "200": "9.72346e-63",
-     "1000": "4.86173e-62"
-    }
-   }
-  },
-  "indicial_residual_at_T_theta": "9.72346e-63",
-  "indicial_residual_at_T_edge": "-0.00559052"
- },
- "checks": [
-  {
-   "name": "indicial_satisfied_at_T_theta",
-   "detail": "T^2 p^3 - (p^2-1) vanishes to working precision",
-   "passed": true
-  },
-  {
-   "name": "indicial_violated_at_T_edge",
-   "detail": "the Newton edge root does NOT solve the indicial equation",
-   "passed": true
-  },
-  {
-   "name": "ratio_is_exactly_q_quarter",
-   "detail": "T_theta / T_edge = q^(1/4)",
-   "passed": true
-  },
-  {
-   "name": "formal_solutions_verified_by_substitution",
-   "detail": "truncated series residual decays with z for both branches",
-   "passed": true
-  }
- ],
- "verdict": "The two theta-normalised canonical solutions are CONSTRUCTED and verified by substitution, for both signs of T. This is the prerequisite steps 3 and 4 skipped. CONVENTION CORRECTION, scope-(b) for the specific claim: the parameter indexing the canonical solutions is sqrt(q-1)/q^(3/4), NOT the Newton edge-polynomial root sqrt(q-1)/q \u2014 they differ by q^(1/4), and the edge root provably does NOT satisfy the indicial equation. The Lean theorem leading_blocks_q remains correct as an arithmetic statement about the edge polynomial; it is the gloss 'the leading blocks indexing the two Stokes sectors' that carries the silent q^(1/4). Stokes multipliers remain OPEN \u2014 they need the connection matrix between the theta-normalised solutions at 0 and at infinity. Nothing wired to production.",
- "durationMs": 962
+  ],
+  "verdict": "The two theta-normalised canonical solutions are CONSTRUCTED and verified by substitution, for both signs of T. This is the prerequisite steps 3 and 4 skipped. CONVENTION CORRECTION, scope-(b) for the specific claim: the parameter indexing the canonical solutions is sqrt(q-1)/q^(3/4), NOT the Newton edge-polynomial root sqrt(q-1)/q \u2014 they differ by q^(1/4), and the edge root provably does NOT satisfy the indicial equation. The Lean theorem leading_blocks_q remains correct as an arithmetic statement about the edge polynomial; it is the gloss 'the leading blocks indexing the two Stokes sectors' that carries the silent q^(1/4). Stokes multipliers remain OPEN \u2014 they need the connection matrix between the theta-normalised solutions at 0 and at infinity. Nothing wired to production.",
+  "durationMs": 962,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

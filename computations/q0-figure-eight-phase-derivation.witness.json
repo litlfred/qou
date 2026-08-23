@@ -10,7 +10,7 @@
       "expected": 0,
       "passed": true,
       "tolerance": 5,
-      "source": "θ(q₀) vs Vol(4₁)"
+      "source": "\u03b8(q\u2080) vs Vol(4\u2081)"
     }
   ],
   "allPassed": true,
@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Test whether θ(q₀) = Vol(4₁) where θ = arccos(tr(ρ_{(2,1)}(4₁;q))/2) is the spectral phase of the figure-eight on V_{(2,1)}. Result: 0.6732% miss at q₀. Derivation status: approximate.",
+  "description": "Test whether \u03b8(q\u2080) = Vol(4\u2081) where \u03b8 = arccos(tr(\u03c1_{(2,1)}(4\u2081;q))/2) is the spectral phase of the figure-eight on V_{(2,1)}. Result: 0.6732% miss at q\u2080. Derivation status: approximate.",
   "data": {
     "phase_at_q0": {
       "tr_21": "-0.9106773300269627",

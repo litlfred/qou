@@ -32,7 +32,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Cross-anchor completion of PR #1609 Li_2^q × spectral combiner deferred test. Evaluates candidate at BOTH q_proton and q_muon using symbolic χ_λ(q) from upstream witness. Tests structural vs anchor-precision-limited refutation.",
+  "description": "Cross-anchor completion of PR #1609 Li_2^q \u00d7 spectral combiner deferred test. Evaluates candidate at BOTH q_proton and q_muon using symbolic \u03c7_\u03bb(q) from upstream witness. Tests structural vs anchor-precision-limited refutation.",
   "auditOnly": "docs/audits/2026-06-01-qbeta-li2q-spectral-crossanchor-completion.md",
   "data": {
     "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
@@ -79,8 +79,8 @@
       "empirical_swing_abs": "-0.05959999999999999999999999999999999999999999999999999999999999999999999",
       "empirical_swing_pct": -2.8802010341661433,
       "swing_ratio_candidate_to_empirical": -6.61939561318425e-13,
-      "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent ⟹ structural refutation strong (13% mismatch is real). If swing_ratio ≈ 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
-      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 1.91e-12% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
+      "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent \u27f9 structural refutation strong (13% mismatch is real). If swing_ratio \u2248 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
+      "verdict": "STRUCTURAL REFUTATION CONFIRMED \u2014 candidate is essentially q-independent (swing 1.91e-12% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
     },
     "upstream_witness_hashes": [
       {

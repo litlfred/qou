@@ -75,5 +75,8 @@
     }
   ],
   "verdict": "The bar-parity twist RELOCATES the parity obstruction, it does not remove it. Proved in Lean (obstruction_fires_on_one_of, twist_clears_only_if_everywhere_alternating) and measured here: the twisted sequence still flips, at exactly the indices where the untwisted one did not. Consequence: 'the diagonal Z/2 character is the sole residual' cannot be read as 'applying the character makes the target a non-negative combination of the squares'. It must be read at the MODULE level, up to a gauge. This does not refute the conjecture \u2014 it removes one reading of it, and the block has been amended to say which. Deliberately NOT reported: a scalar fit against a prose-reconstructed f_+/f_-, which would not be trustworthy. Nothing wired to production.",
-  "durationMs": 7
+  "durationMs": 7,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): computation.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

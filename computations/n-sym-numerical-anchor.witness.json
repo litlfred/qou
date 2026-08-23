@@ -10,7 +10,7 @@
   "scriptFile": "n_sym_numerical_anchor.py",
   "scriptHash": "d279deb69637",
   "scriptCommitSha": "4a7af5993a77e88d836e6195e1782344e0e95a29",
-  "description": "Numerical anchor for conj:n-sym-symmetric-channel-normalization. Computes N_sym(q_0) = N_v / ∏_{k=2,3,4} [2k]_q²/[2]_q ≈ 213.11 and tests 25+ q-arithmetic ansatze plus PSLQ. No clean closed form found; candidate (a) Gram determinant naive = [4]_q[6]_q[8]_q evaluated for comparison.",
+  "description": "Numerical anchor for conj:n-sym-symmetric-channel-normalization. Computes N_sym(q_0) = N_v / \u220f_{k=2,3,4} [2k]_q\u00b2/[2]_q \u2248 213.11 and tests 25+ q-arithmetic ansatze plus PSLQ. No clean closed form found; candidate (a) Gram determinant naive = [4]_q[6]_q[8]_q evaluated for comparison.",
   "q_0_dps": 200,
   "q_0": "1.1099785955541805169583001889887986763787613849839",
   "N_v": "1445519.449145220729668372",
@@ -18,57 +18,57 @@
   "N_sym_target": "213.1118072427836670785458",
   "ansatz_tests": [
     {
-      "ansatz": "[7]_q · [8]_q · [3]_q",
+      "ansatz": "[7]_q \u00b7 [8]_q \u00b7 [3]_q",
       "value_at_q0": "207.623216282864384079260703526",
       "rel_err_pct": 2.57545137030653
     },
     {
-      "ansatz": "[8]_q · [7]_q · [3]_q",
+      "ansatz": "[8]_q \u00b7 [7]_q \u00b7 [3]_q",
       "value_at_q0": "207.623216282864384079260703526",
       "rel_err_pct": 2.57545137030653
     },
     {
-      "ansatz": "[8]_q · [7]_q · 3",
+      "ansatz": "[8]_q \u00b7 [7]_q \u00b7 3",
       "value_at_q0": "204.641842605527293680297251842",
       "rel_err_pct": 3.9744229786419685
     },
     {
-      "ansatz": "[6]_q² · [7]_q · [8]_q / [10]_q",
+      "ansatz": "[6]_q\u00b2 \u00b7 [7]_q \u00b7 [8]_q / [10]_q",
       "value_at_q0": "234.032829807005331788719984587",
       "rel_err_pct": 9.81692325493152
     },
     {
-      "ansatz": "45 · [5]_q",
+      "ansatz": "45 \u00b7 [5]_q",
       "value_at_q0": "234.91985960990579896487153835",
       "rel_err_pct": 10.23315068708404
     },
     {
-      "ansatz": "binom(10,2) · [5]_q",
+      "ansatz": "binom(10,2) \u00b7 [5]_q",
       "value_at_q0": "234.91985960990579896487153835",
       "rel_err_pct": 10.23315068708404
     },
     {
-      "ansatz": "[6]_q · [7]_q · 5",
+      "ansatz": "[6]_q \u00b7 [7]_q \u00b7 5",
       "value_at_q0": "243.556733999904321176527753649",
       "rel_err_pct": 14.28589394037508
     },
     {
-      "ansatz": "[9]_q · [10]_q · 2",
+      "ansatz": "[9]_q \u00b7 [10]_q \u00b7 2",
       "value_at_q0": "246.533077669392797960019772677",
       "rel_err_pct": 15.682505281621758
     },
     {
-      "ansatz": "binom(8,2) · [6]_q",
+      "ansatz": "binom(8,2) \u00b7 [6]_q",
       "value_at_q0": "178.866427027316573548068787541",
       "rel_err_pct": 16.06920829893469
     },
     {
-      "ansatz": "[10]_q² / [2]_q² · 8",
+      "ansatz": "[10]_q\u00b2 / [2]_q\u00b2 \u00b7 8",
       "value_at_q0": "279.889361016378032428082525698",
       "rel_err_pct": 31.334516204219163
     },
     {
-      "ansatz": "[10]_q² · 2",
+      "ansatz": "[10]_q\u00b2 \u00b7 2",
       "value_at_q0": "282.947587389623128838262251798",
       "rel_err_pct": 32.76954996082424
     },
@@ -78,27 +78,27 @@
       "rel_err_pct": 38.383006957195924
     },
     {
-      "ansatz": "C_3 · [5]_q · [4]_q",
+      "ansatz": "C_3 \u00b7 [5]_q \u00b7 [4]_q",
       "value_at_q0": "107.271780091256260998773012923",
       "rel_err_pct": 49.66408408847621
     },
     {
-      "ansatz": "[5]_q! · 5 / [2]_q",
+      "ansatz": "[5]_q! \u00b7 5 / [2]_q",
       "value_at_q0": "326.5037841044127252078687287",
       "rel_err_pct": 53.20774026023314
     },
     {
-      "ansatz": "[3]_q^4 · [4]_q",
+      "ansatz": "[3]_q^4 \u00b7 [4]_q",
       "value_at_q0": "352.711151272448826326021685941",
       "rel_err_pct": 65.50521335996612
     },
     {
-      "ansatz": "3 · [5]_q · [7]_q · [3]_q",
+      "ansatz": "3 \u00b7 [5]_q \u00b7 [7]_q \u00b7 [3]_q",
       "value_at_q0": "363.488388529983552502271546948",
       "rel_err_pct": 70.5622946155612
     },
     {
-      "ansatz": "5! · [3]_q",
+      "ansatz": "5! \u00b7 [3]_q",
       "value_at_q0": "365.244746187661444029477373374",
       "rel_err_pct": 71.3864430662742
     },
@@ -108,12 +108,12 @@
       "rel_err_pct": 97.12799615190563
     },
     {
-      "ansatz": "6! · [3]_q / 5",
+      "ansatz": "6! \u00b7 [3]_q / 5",
       "value_at_q0": "438.293695425193732835372848049",
       "rel_err_pct": 105.66373167952905
     },
     {
-      "ansatz": "C_4 · [6]_q · [5]_q",
+      "ansatz": "C_4 \u00b7 [6]_q \u00b7 [5]_q",
       "value_at_q0": "466.880843624251885448476183165",
       "rel_err_pct": 119.07788670402788
     },
@@ -123,22 +123,22 @@
       "rel_err_pct": 293.61469249047815
     },
     {
-      "ansatz": "[2]_q · [3]_q · [4]_q · [5]_q · [6]_q",
+      "ansatz": "[2]_q \u00b7 [3]_q \u00b7 [4]_q \u00b7 [5]_q \u00b7 [6]_q",
       "value_at_q0": "838.839384739583489045638992695",
       "rel_err_pct": 293.61469249047815
     },
     {
-      "ansatz": "12 · [5]_q · [7]_q² / [3]_q",
+      "ansatz": "12 \u00b7 [5]_q \u00b7 [7]_q\u00b2 / [3]_q",
       "value_at_q0": "1196.75267595305208369896998271",
       "rel_err_pct": 461.560943730196
     },
     {
-      "ansatz": "[10]_q · [9]_q²",
+      "ansatz": "[10]_q \u00b7 [9]_q\u00b2",
       "value_at_q0": "1277.4749819896923130317610868",
       "rel_err_pct": 499.4388572447104
     },
     {
-      "ansatz": "32 · [7]_q · [3]_q²",
+      "ansatz": "32 \u00b7 [7]_q \u00b7 [3]_q\u00b2",
       "value_at_q0": "2260.55344033072570276707325119",
       "rel_err_pct": 960.7358970755816
     }

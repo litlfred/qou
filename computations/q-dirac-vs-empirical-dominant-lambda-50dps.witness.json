@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Cross-check of D_q² ranking vs empirical Δ_λ dominance."
+      "source": "Cross-check of D_q\u00b2 ranking vs empirical \u0394_\u03bb dominance."
     }
   ],
   "allPassed": true,
@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Tests whether q-Dirac eigenvalue D_q²(λ) = [c_λ]_q² predicts the empirically Δ_λ-dominant partition λ*(K) per atom K from PR #1229 / #1288 / Option E audit (Δ_λ closure). Single-session structural input to Option E's ρ_w(K) investigation.",
+  "description": "Tests whether q-Dirac eigenvalue D_q\u00b2(\u03bb) = [c_\u03bb]_q\u00b2 predicts the empirically \u0394_\u03bb-dominant partition \u03bb*(K) per atom K from PR #1229 / #1288 / Option E audit (\u0394_\u03bb closure). Single-session structural input to Option E's \u03c1_w(K) investigation.",
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870"
@@ -203,7 +203,7 @@
     "top1_matches": 0,
     "top5_matches": 1,
     "n_atoms_tested": 5,
-    "verdict": "NEGATIVE: D_q² rank does NOT predict empirical Δ_λ dominance. Only 1/5 are in top-5 by D_q². The Δ_λ-dominance criterion is structurally distinct from Dirac eigenvalue magnitude. Option E's ρ_w(K) needs a different selection mechanism.",
-    "implication_for_option_E": "If D_q² rank does NOT match empirical dominant λ*(K), Option E's ρ_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (AGENTS.md §7b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both λ* and λ*^T (e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
+    "verdict": "NEGATIVE: D_q\u00b2 rank does NOT predict empirical \u0394_\u03bb dominance. Only 1/5 are in top-5 by D_q\u00b2. The \u0394_\u03bb-dominance criterion is structurally distinct from Dirac eigenvalue magnitude. Option E's \u03c1_w(K) needs a different selection mechanism.",
+    "implication_for_option_E": "If D_q\u00b2 rank does NOT match empirical dominant \u03bb*(K), Option E's \u03c1_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (AGENTS.md \u00a77b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both \u03bb* and \u03bb*^T (e.g. \u2074He: (4,4,4) \u2194 (3,3,3,3))."
   }
 }

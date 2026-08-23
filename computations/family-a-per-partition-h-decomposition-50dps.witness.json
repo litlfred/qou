@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Sum over 5 partitions of (1/4)·dim_q V_λ h-coefficients must equal Family A's symbolic h⁰=5/2, h²=3/4 (within 1e-40 at 50 dps)"
+      "source": "Sum over 5 partitions of (1/4)\u00b7dim_q V_\u03bb h-coefficients must equal Family A's symbolic h\u2070=5/2, h\u00b2=3/4 (within 1e-40 at 50 dps)"
     }
   ],
   "allPassed": true,
@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Per-partition decomposition of `linking_weight_family_a = (1/4)·Σ_{λ⊢4} dim_q V_λ` at H_4. Identifies the categorical channels (5 Wedderburn blocks) and shows h⁰ and h² contributions per channel at mp.mpf 50 dps. Addresses the prerequisite to PR #1276's 'partition-channel assignment' open question (which partitions carry Bring color-tube vs Faddeev h⁴).",
+  "description": "Per-partition decomposition of `linking_weight_family_a = (1/4)\u00b7\u03a3_{\u03bb\u22a24} dim_q V_\u03bb` at H_4. Identifies the categorical channels (5 Wedderburn blocks) and shows h\u2070 and h\u00b2 contributions per channel at mp.mpf 50 dps. Addresses the prerequisite to PR #1276's 'partition-channel assignment' open question (which partitions carry Bring color-tube vs Faddeev h\u2074).",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
@@ -114,7 +114,7 @@
       "h0_each_active_contrib": "1/4",
       "h2_each_active_contrib_family_a": "1/4",
       "h2_each_active_contrib_reading_a_uniform": "-0.305321864726",
-      "interpretation": "Family A: h² is 3 × (1/4) = 3/4 across (3,1), (2,2), (2,1,1). Reading-A: h² becomes -G ≈ -0.916; under uniform redistribution, each active partition's h² coefficient becomes (1/4 + (-G - 3/4)/3) ≈ -0.305. PR #1276's Bring color-tube + Faddeev h⁴ rational expression does not naturally fit this Wedderburn-block decomposition — addresses why my h-expansion fit gave wildly varying coefficients."
+      "interpretation": "Family A: h\u00b2 is 3 \u00d7 (1/4) = 3/4 across (3,1), (2,2), (2,1,1). Reading-A: h\u00b2 becomes -G \u2248 -0.916; under uniform redistribution, each active partition's h\u00b2 coefficient becomes (1/4 + (-G - 3/4)/3) \u2248 -0.305. PR #1276's Bring color-tube + Faddeev h\u2074 rational expression does not naturally fit this Wedderburn-block decomposition \u2014 addresses why my h-expansion fit gave wildly varying coefficients."
     }
   }
 }

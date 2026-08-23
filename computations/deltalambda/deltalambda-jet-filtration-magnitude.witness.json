@@ -9,42 +9,42 @@
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "W_A(q)=[A]_q!=∏[k]_q: W_A(1)=A! (A=2..5) and W_3(q)=1+2q+2q²+q³=Σ_{w∈S_3}q^{ℓ(w)} (a Poincaré polynomial, a sum of positive q-powers — NOT −ln det of any exchange matrix ⇒ outside the Lean-excluded family)"
+      "source": "W_A(q)=[A]_q!=\u220f[k]_q: W_A(1)=A! (A=2..5) and W_3(q)=1+2q+2q\u00b2+q\u00b3=\u03a3_{w\u2208S_3}q^{\u2113(w)} (a Poincar\u00e9 polynomial, a sum of positive q-powers \u2014 NOT \u2212ln det of any exchange matrix \u21d2 outside the Lean-excluded family)"
     },
     {
       "name": "graded_dim_escapes_C_A_2_cap_at_q1",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "classical (q=1) ratio A!/2!: ρ(3)=3, ρ(4)=12; ρ(4)=12 > 6 = C(4,2) ⇒ the graded dimension escapes the determinant cap WITHOUT any q (factorial growth is super-quadratic)"
+      "source": "classical (q=1) ratio A!/2!: \u03c1(3)=3, \u03c1(4)=12; \u03c1(4)=12 > 6 = C(4,2) \u21d2 the graded dimension escapes the determinant cap WITHOUT any q (factorial growth is super-quadratic)"
     },
     {
       "name": "graded_dim_at_q0_reaches_rho4_target",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "ρ_grad(4)(q₀)=15.7396 > 13.0316=ρ_strong(4) ⇒ the object CAN reach the A=4 target magnitude (the determinant, capped at 6, provably cannot). First non-determinant object to clear ρ_4."
+      "source": "\u03c1_grad(4)(q\u2080)=15.7396 > 13.0316=\u03c1_strong(4) \u21d2 the object CAN reach the A=4 target magnitude (the determinant, capped at 6, provably cannot). First non-determinant object to clear \u03c1_4."
     },
     {
       "name": "rho3_target_exceeds_classical_coinvariant_ratio",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "ρ_strong(3)=3.8128 > 3 = 3!/2! (the full classical coinvariant dimension ratio) ⇒ A=3 needs q>1; at q₀, [3]_{q0}=3.34203 still < 3.8128 (undershoots by -12.3%)"
+      "source": "\u03c1_strong(3)=3.8128 > 3 = 3!/2! (the full classical coinvariant dimension ratio) \u21d2 A=3 needs q>1; at q\u2080, [3]_{q0}=3.34203 still < 3.8128 (undershoots by -12.3%)"
     },
     {
       "name": "graded_step_too_steep_for_all_q_ge_1",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "data step T4/T3=3.4179; graded step [4]_q is 4 at q=1 and 4.7096 at q₀ — monotone ↑ in q, so [4]_q ≥ 4 > 3.4179 for ALL q ≥ 1 ⇒ the A=3→A=4 growth is intrinsically too steep; no q flattens it to the data ratio"
+      "source": "data step T4/T3=3.4179; graded step [4]_q is 4 at q=1 and 4.7096 at q\u2080 \u2014 monotone \u2191 in q, so [4]_q \u2265 4 > 3.4179 for ALL q \u2265 1 \u21d2 the A=3\u2192A=4 growth is intrinsically too steep; no q flattens it to the data ratio"
     },
     {
       "name": "single_q_cannot_land_both",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "forcing ρ_grad(3)=ρ_strong(3) needs q=1.25009; at that q ρ_grad(4)=21.9858 vs target 13.0316 (+68.7%) ⇒ no single parameter-free q lands both"
+      "source": "forcing \u03c1_grad(3)=\u03c1_strong(3) needs q=1.25009; at that q \u03c1_grad(4)=21.9858 vs target 13.0316 (+68.7%) \u21d2 no single parameter-free q lands both"
     },
     {
       "name": "lands_both_targets_parameter_free",
@@ -82,7 +82,7 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py"
   },
-  "description": "Non-determinant Δ_λ binding-magnitude object: the jet-filtration graded dimension W_A(q)=[A]_q!=Σ_{w∈S_A}q^{ℓ(w)} (coinvariant Poincaré / graded dim of the principal filtration on H_A). Escapes the C(A,2) determinant cap q-independently (A!/2!={3,12}, 12>6) and can reach ρ_4=13.03, but does NOT land both {3.81,13.03} at a single parameter-free q₀ (undershoots A=3, overshoots A=4 growth). Scope-(a) honest negative + escape advance; no fit; nothing wired.",
+  "description": "Non-determinant \u0394_\u03bb binding-magnitude object: the jet-filtration graded dimension W_A(q)=[A]_q!=\u03a3_{w\u2208S_A}q^{\u2113(w)} (coinvariant Poincar\u00e9 / graded dim of the principal filtration on H_A). Escapes the C(A,2) determinant cap q-independently (A!/2!={3,12}, 12>6) and can reach \u03c1_4=13.03, but does NOT land both {3.81,13.03} at a single parameter-free q\u2080 (undershoots A=3, overshoots A=4 growth). Scope-(a) honest negative + escape advance; no fit; nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
   "parameters": {
     "q0": "1.10997859555733471",
@@ -97,9 +97,9 @@
     "det_cap_C_A_2": {
       "A3": 3,
       "A4": 6,
-      "source": "SaturationRhoCap.lean (ρ_A ≤ C(A,2))"
+      "source": "SaturationRhoCap.lean (\u03c1_A \u2264 C(A,2))"
     },
-    "object": "W_A(q)=[A]_q!=prod_{k=1}^A [k]_q = sum_{w in S_A} q^{len(w)} (coinvariant Poincaré / jet-filtration graded dim); NON-determinant (no -ln det)",
+    "object": "W_A(q)=[A]_q!=prod_{k=1}^A [k]_q = sum_{w in S_A} q^{len(w)} (coinvariant Poincar\u00e9 / jet-filtration graded dim); NON-determinant (no -ln det)",
     "forward_test_rows": [
       {
         "A": 2,
@@ -133,12 +133,15 @@
       "rho4_forced": "21.9858",
       "overshoot_pct": "68.71"
     },
-    "verdict": "SCOPE-(a) HONEST NEGATIVE on the crack, STRUCTURAL ADVANCE on the escape. The jet-filtration graded dimension W_A(q)=[A]_q!=Σ_{w∈S_A}q^{ℓ(w)} (=Σ_λ dim(λ)f^λ(q), coinvariant Poincaré / graded dim of the principal filtration on H_A) is a NON-determinant object — a sum of positive q-powers, not −ln det — so it is outside the three Lean-excluded exchange-determinant no-gos. It ESCAPES the C(A,2) cap, q-INDEPENDENTLY: the classical ratio A!/2!={3,12} already has 12 > 6=C(4,2), and at q₀ ρ_grad(4)=15.74 > 13.03 ⇒ it is the FIRST non-determinant object that can REACH ρ_4=13.03 (the determinant provably cannot). It does NOT land both parameter-free: at q₀ ρ_grad(3)=3.34 (−12%) and ρ_grad(4)=15.74 (+21%); it undershoots A=3 and overshoots A=4. The A=3→A=4 step [4]_q ≥ 4 for all q≥1 is too steep vs the data ratio 3.42, and ρ_strong(3)=3.81 exceeds even the classical 3!/2!=3, so no single parameter-free q lands both. BRACKET: sub-extensive log-det (undershoots both, capped) < true binding < super-extensive graded dim (overshoots A=4). NOT excluded as an ingredient (permanence): a graded-dim factor may combine with a growth-DAMPING term; this probe measures the direction of the missing correction. No fit; nothing wired."
+    "verdict": "SCOPE-(a) HONEST NEGATIVE on the crack, STRUCTURAL ADVANCE on the escape. The jet-filtration graded dimension W_A(q)=[A]_q!=\u03a3_{w\u2208S_A}q^{\u2113(w)} (=\u03a3_\u03bb dim(\u03bb)f^\u03bb(q), coinvariant Poincar\u00e9 / graded dim of the principal filtration on H_A) is a NON-determinant object \u2014 a sum of positive q-powers, not \u2212ln det \u2014 so it is outside the three Lean-excluded exchange-determinant no-gos. It ESCAPES the C(A,2) cap, q-INDEPENDENTLY: the classical ratio A!/2!={3,12} already has 12 > 6=C(4,2), and at q\u2080 \u03c1_grad(4)=15.74 > 13.03 \u21d2 it is the FIRST non-determinant object that can REACH \u03c1_4=13.03 (the determinant provably cannot). It does NOT land both parameter-free: at q\u2080 \u03c1_grad(3)=3.34 (\u221212%) and \u03c1_grad(4)=15.74 (+21%); it undershoots A=3 and overshoots A=4. The A=3\u2192A=4 step [4]_q \u2265 4 for all q\u22651 is too steep vs the data ratio 3.42, and \u03c1_strong(3)=3.81 exceeds even the classical 3!/2!=3, so no single parameter-free q lands both. BRACKET: sub-extensive log-det (undershoots both, capped) < true binding < super-extensive graded dim (overshoots A=4). NOT excluded as an ingredient (permanence): a graded-dim factor may combine with a growth-DAMPING term; this probe measures the direction of the missing correction. No fit; nothing wired."
   },
   "caveats": [
     "Scope-(a): the graded dimension ALONE does not close the magnitude; it is not excluded as an ingredient (permanence).",
-    "The ESCAPE (graded dim > C(A,2) cap) is proved q-independently (A!/2!=12>6) — a structural advance, not a numerical near-match.",
-    "No fit: q₀ fixed from substrate BEFORE comparison; the q_forcing_rho3 solve is shown ONLY to demonstrate no single q lands both — it is NOT wired."
+    "The ESCAPE (graded dim > C(A,2) cap) is proved q-independently (A!/2!=12>6) \u2014 a structural advance, not a numerical near-match.",
+    "No fit: q\u2080 fixed from substrate BEFORE comparison; the q_forcing_rho3 solve is shown ONLY to demonstrate no single q lands both \u2014 it is NOT wired."
   ],
-  "auditOnly": "docs/audits/2026-07-18-deltalambda-jet-filtration-magnitude.md"
+  "auditOnly": "docs/audits/2026-07-18-deltalambda-jet-filtration-magnitude.md",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

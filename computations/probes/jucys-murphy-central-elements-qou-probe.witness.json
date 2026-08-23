@@ -10,8 +10,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over (λ, ℓ, SYT pair) of |e_ℓ(J_1(T), …) − e_ℓ(J_1(T'), …)|  on V_λ",
-      "source": "JM elements act diagonally on the Hoefsmit basis; elementary symmetric polynomials of diagonal matrices are also diagonal; centrality says they act as the SAME scalar across all SYTs of shape λ."
+      "unit": "max over (\u03bb, \u2113, SYT pair) of |e_\u2113(J_1(T), \u2026) \u2212 e_\u2113(J_1(T'), \u2026)|  on V_\u03bb",
+      "source": "JM elements act diagonally on the Hoefsmit basis; elementary symmetric polynomials of diagonal matrices are also diagonal; centrality says they act as the SAME scalar across all SYTs of shape \u03bb."
     },
     {
       "name": "P_ell_scalar_matches_closed_form_c_ell",
@@ -19,8 +19,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "max over (λ, ℓ) of |e_ℓ(JM eigenvalues for any SYT) − e_ℓ({q^{2c(□)} : □ ∈ λ})|",
-      "source": "Closed form c_ℓ(λ) = e_ℓ({q^{2c(□)}}) per the proposition; the JM-eigenvalue sum over an SYT visits each cell of λ exactly once."
+      "unit": "max over (\u03bb, \u2113) of |e_\u2113(JM eigenvalues for any SYT) \u2212 e_\u2113({q^{2c(\u25a1)} : \u25a1 \u2208 \u03bb})|",
+      "source": "Closed form c_\u2113(\u03bb) = e_\u2113({q^{2c(\u25a1)}}) per the proposition; the JM-eigenvalue sum over an SYT visits each cell of \u03bb exactly once."
     }
   ],
   "allPassed": true,
@@ -51,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/probes/jucys_murphy_central_elements_qou_probe.py"
   },
-  "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n ∈ {3, 4, 5} and ℓ ∈ {1, …, n}: (i) the elementary symmetric polynomial P_ℓ = e_ℓ(J_1, …, J_n) acts as a scalar on V_λ (all SYT diagonal entries equal — centrality); (ii) the scalar value matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : □ ∈ λ}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  All residues at ~1e-50 (mpmath 50 dps).",
+  "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n \u2208 {3, 4, 5} and \u2113 \u2208 {1, \u2026, n}: (i) the elementary symmetric polynomial P_\u2113 = e_\u2113(J_1, \u2026, J_n) acts as a scalar on V_\u03bb (all SYT diagonal entries equal \u2014 centrality); (ii) the scalar value matches the closed form c_\u2113(\u03bb) = e_\u2113({q^{2c(\u25a1)} : \u25a1 \u2208 \u03bb}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  All residues at ~1e-50 (mpmath 50 dps).",
   "contentBlock": "prop:jucys-murphy-central-elements-qou",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -616,5 +616,8 @@
         ]
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

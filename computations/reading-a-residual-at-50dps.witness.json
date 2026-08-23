@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Reading-A (5/2 − G·h²) substitution to Family A closes the m_p-anchored target gap to less than 1e-4 in linking_weight units at q_0, mp.mpf 50 dps. This corresponds to < ~0.04 ppm in m_p — far below PR #1272's claimed '8% h⁴+ tower' (which would be ~5e-3 in lw, ~2400 ppm in m_p)."
+      "source": "Reading-A (5/2 \u2212 G\u00b7h\u00b2) substitution to Family A closes the m_p-anchored target gap to less than 1e-4 in linking_weight units at q_0, mp.mpf 50 dps. This corresponds to < ~0.04 ppm in m_p \u2014 far below PR #1272's claimed '8% h\u2074+ tower' (which would be ~5e-3 in lw, ~2400 ppm in m_p)."
     }
   ],
   "allPassed": true,
@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "mp.mpf 50-dps measurement of Reading-A (5/2 − G·h²) residual against the m_p-anchored target linking_weight. Finds residual ≈ 1.38e-5 (≈ 0.3 ppm in m_p) — closes 99.98% of the Family A gap, vs PR #1272's claim of 92%. Reconciles with PR #1272 by noting their 'via_jones' is a DIFFERENT mathematical object from target_lw.",
+  "description": "mp.mpf 50-dps measurement of Reading-A (5/2 \u2212 G\u00b7h\u00b2) residual against the m_p-anchored target linking_weight. Finds residual \u2248 1.38e-5 (\u2248 0.3 ppm in m_p) \u2014 closes 99.98% of the Family A gap, vs PR #1272's claim of 92%. Reconciles with PR #1272 by noting their 'via_jones' is a DIFFERENT mathematical object from target_lw.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
@@ -52,9 +52,9 @@
       "bring_faddeev_ppm": "796.90015"
     },
     "pr_1272_reconciliation": {
-      "pr_1272_claim": "92% h² + 8% h⁴+ tower",
-      "actual_50dps": "99.98% closure by Reading-A; h⁴+ residual ≈ 1.4e-5",
-      "interpretation": "PR #1272's 'via_jones' (2.5269 at q_0) is NOT the m_p-anchored target_lw (2.4599 at q_0). The 8% they attribute to 'h⁴+ tower' is actually (Family A − via_jones) = 0.0059, which is structurally distinct from the (Reading-A − target_lw) gap = 1.4e-5."
+      "pr_1272_claim": "92% h\u00b2 + 8% h\u2074+ tower",
+      "actual_50dps": "99.98% closure by Reading-A; h\u2074+ residual \u2248 1.4e-5",
+      "interpretation": "PR #1272's 'via_jones' (2.5269 at q_0) is NOT the m_p-anchored target_lw (2.4599 at q_0). The 8% they attribute to 'h\u2074+ tower' is actually (Family A \u2212 via_jones) = 0.0059, which is structurally distinct from the (Reading-A \u2212 target_lw) gap = 1.4e-5."
     }
   }
 }

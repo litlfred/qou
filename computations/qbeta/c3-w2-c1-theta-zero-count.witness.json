@@ -102,5 +102,8 @@
     }
   ],
   "verdict": "The statement holds at our p, and \u2014 the substantive finding \u2014 the Jacobi triple product is NOT required to prove it. The converse zero locus follows from three facts already proved in Lean (holomorphy on C*, the functional equation, vanishing on the orbit) plus the argument principle, which is the SOLE remaining gap. Mathlib has no argument principle, no winding number and no complex residue (name scan at HEAD 2026-08-07), but it does have the full circleIntegral API including the annulus Cauchy theorem, so this is one named lemma rather than a theory build-out. Bean qou-c1ln row 2 is rescoped accordingly: it previously said JTP was needed, and that was over-scoped. Numerically: one simple zero per fundamental annulus at exactly -p^k, exactly 9 across a 9-annulus sweep, and both new Lean identities reproduced to full working precision. Still NOT proved in Lean: the = direction itself. Nothing wired to production.",
-  "durationMs": 680316
+  "durationMs": 680316,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): computation.q, results.zero_locations.2). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

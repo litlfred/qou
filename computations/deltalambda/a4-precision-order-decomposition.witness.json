@@ -53,5 +53,8 @@
     "builds_on": "the A=3 probe (a3_precision_order_decomposition), #4320 (\u03bc\u2084 simplex), three-walls Route 3 (\u03bc\u2084<0 sign-swap), PR #4491 (frame-robustness)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

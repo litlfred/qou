@@ -10,8 +10,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
-      "unit": "|residue of (c − q)(c + q⁻¹) − (c² − (q − q⁻¹)c − 1)|",
-      "source": "Claim 1: R-matrix eigenvalues are q and −q⁻¹ satisfying the Hecke quadratic."
+      "unit": "|residue of (c \u2212 q)(c + q\u207b\u00b9) \u2212 (c\u00b2 \u2212 (q \u2212 q\u207b\u00b9)c \u2212 1)|",
+      "source": "Claim 1: R-matrix eigenvalues are q and \u2212q\u207b\u00b9 satisfying the Hecke quadratic."
     },
     {
       "name": "schur_weyl_two_part_partition_counts",
@@ -19,8 +19,8 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "unit": "boolean (1 = all counts = ⌊n/2⌋ + 1 for n=2..8)",
-      "source": "Claim 2: V^⊗n decomposes by H_n(q) Schur–Weyl into two-part-partition-labelled irreps; the count is ⌊n/2⌋ + 1 for `Rep(SU_q(2))` rank-2 gauge group."
+      "unit": "boolean (1 = all counts = \u230an/2\u230b + 1 for n=2..8)",
+      "source": "Claim 2: V^\u2297n decomposes by H_n(q) Schur\u2013Weyl into two-part-partition-labelled irreps; the count is \u230an/2\u230b + 1 for `Rep(SU_q(2))` rank-2 gauge group."
     },
     {
       "name": "eigenvalues_root_quadratic_at_q_0",
@@ -28,7 +28,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
-      "unit": "|(λ − q)(λ + q⁻¹) at λ = q| + |…at λ = −q⁻¹| at q_0",
+      "unit": "|(\u03bb \u2212 q)(\u03bb + q\u207b\u00b9) at \u03bb = q| + |\u2026at \u03bb = \u2212q\u207b\u00b9| at q_0",
       "source": "Direct evaluation of the root quadratic at q_0."
     }
   ],
@@ -50,7 +50,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "I1 probe for cor:archimedean-knot-eigenbasis.  Verifies the two concrete algebraic claims of the corollary: (1) the R-matrix braiding eigenvalues `q` and `-q⁻¹` satisfy the quadratic `(c − q)(c + q⁻¹) = 0`, expanding to `c² − (q − q⁻¹)·c − 1 = 0`; (2) V^⊗n's Schur–Weyl decomposition has exactly ⌊n/2⌋ + 1 two-part partitions for n ∈ {2, …, 8}.  The Markov-trace-detection (claim 3) and combining-theorem completeness (claim 4) are structural assertions about an infinite limit and require Lean formalisation — not a concrete probe.",
+  "description": "I1 probe for cor:archimedean-knot-eigenbasis.  Verifies the two concrete algebraic claims of the corollary: (1) the R-matrix braiding eigenvalues `q` and `-q\u207b\u00b9` satisfy the quadratic `(c \u2212 q)(c + q\u207b\u00b9) = 0`, expanding to `c\u00b2 \u2212 (q \u2212 q\u207b\u00b9)\u00b7c \u2212 1 = 0`; (2) V^\u2297n's Schur\u2013Weyl decomposition has exactly \u230an/2\u230b + 1 two-part partitions for n \u2208 {2, \u2026, 8}.  The Markov-trace-detection (claim 3) and combining-theorem completeness (claim 4) are structural assertions about an infinite limit and require Lean formalisation \u2014 not a concrete probe.",
   "contentBlock": "cor:archimedean-knot-eigenbasis",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
@@ -196,8 +196,11 @@
       }
     ],
     "structural_claims_not_probed": [
-      "claim 3 (braid representation extends faithfully to ρ_n for all n)",
+      "claim 3 (braid representation extends faithfully to \u03c1_n for all n)",
       "claim 4 (combining theorem: completeness of the knot-type eigenbasis)"
     ]
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

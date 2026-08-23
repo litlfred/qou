@@ -47,7 +47,7 @@
     ],
     "reproduce": "python3 -u computations/derive_m_p_hecke_full_tower_50dps.py"
   },
-  "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
+  "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) \u00d7 M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_\u03b2 injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
@@ -68,7 +68,7 @@
         "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160248",
         "T5_chirality_BW_50dps_cat_units": "4.1887308561594223214016865798174551308989203243785",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
-        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "tower_convention": "Paper canon: m(\u03b2) = |\u03a0 V\u0302_i| \u2212 \u03a3 Li_2^q(\u2212|V\u0302_i|) \u2212 \u03a3_{i<j} z\u00b2 Li_2^q(\u2212|V\u0302_i V\u0302_j|) + T4 + T5 + T6 + \u2026. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog \u03a6_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (\u03c3-shell \u03b1_5 for A=1 atoms is research-scope).",
         "m_hecke_50dps": "12.087610107363198228665160131670025800022384321816",
         "wedderburn_vols_full_50dps": [
           "0.9890073159292597737327090873425711234998226354167",
@@ -88,7 +88,7 @@
         "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
         "T5_chirality_BW_50dps_cat_units": "4.0020362578956189901527841422126845706272788993274",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
-        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "tower_convention": "Paper canon: m(\u03b2) = |\u03a0 V\u0302_i| \u2212 \u03a3 Li_2^q(\u2212|V\u0302_i|) \u2212 \u03a3_{i<j} z\u00b2 Li_2^q(\u2212|V\u0302_i V\u0302_j|) + T4 + T5 + T6 + \u2026. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog \u03a6_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (\u03c3-shell \u03b1_5 for A=1 atoms is research-scope).",
         "m_hecke_50dps": "11.353704679559850988726454346488458062346538756059",
         "wedderburn_vols_full_50dps": [
           "0.8542103128258389606769442997911669155688329382913",

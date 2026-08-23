@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Canonical |tr_M(⁴He)| via Phase 5q closed form: tr_M(𝓑_⁴He) = tau_p² · tau_n² · ∏_i f_i(q) where f_i ∈ {positive=z, negative=z-h, averaged=z-h/2} per interface. Replaces the deprecated disjoint-product witness atomic-tr-m-helium4.witness.json (PR #564 audit). 22M× faster than the empirical slow path; matches the slow path at machine precision (1e-49 rel.err per Phase 5q witness).",
+  "description": "Canonical |tr_M(\u2074He)| via Phase 5q closed form: tr_M(\ud835\udcd1_\u2074He) = tau_p\u00b2 \u00b7 tau_n\u00b2 \u00b7 \u220f_i f_i(q) where f_i \u2208 {positive=z, negative=z-h, averaged=z-h/2} per interface. Replaces the deprecated disjoint-product witness atomic-tr-m-helium4.witness.json (PR #564 audit). 22M\u00d7 faster than the empirical slow path; matches the slow path at machine precision (1e-49 rel.err per Phase 5q witness).",
   "parameters": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",
     "Z": 2,
@@ -53,7 +53,7 @@
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",
-      "reason": "disjoint-product extension on H_12 fails the Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M by ~5x per PR #564 audit; this canonical-word closed-form path matches the empirical slow path at 1e-49"
+      "reason": "disjoint-product extension on H_12 fails the Schur-Weyl identity \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = tr_M by ~5x per PR #564 audit; this canonical-word closed-form path matches the empirical slow path at 1e-49"
     }
   }
 }

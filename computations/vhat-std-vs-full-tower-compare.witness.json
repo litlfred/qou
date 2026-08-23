@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/vhat_std_vs_full_tower_compare.py"
   },
-  "description": "RAW brane-tower m_p / m_n (full T1..T6 endomorphism tower @ MPFR 50 dps) computed with BOTH per-generator V̂_i channels: (a) production 'full' = W-weighted 3-channel Wedderburn average; (b) DERIVED 'std' = thm:markov-trace-product factor V̂_i = z·a_i + b_i whose product reproduces tr_M to 4e-6 (item-2 audit 2026-06-01-vhat-per-crossing-transfer-chain.md, verdict A + RED). ZERO tuning: no channel weight fitted, no correction hard-coded; only CAL-1 (m_e) + CAL-2 (q_0) consumed. Reports m_p/m_n in MeV and rel-diff vs CODATA for each channel and the std−full delta. Production default in derive_m_p_hecke_full_tower_50dps stays 'full' — this is a diagnostic for the owner-gated wiring decision.",
+  "description": "RAW brane-tower m_p / m_n (full T1..T6 endomorphism tower @ MPFR 50 dps) computed with BOTH per-generator V\u0302_i channels: (a) production 'full' = W-weighted 3-channel Wedderburn average; (b) DERIVED 'std' = thm:markov-trace-product factor V\u0302_i = z\u00b7a_i + b_i whose product reproduces tr_M to 4e-6 (item-2 audit 2026-06-01-vhat-per-crossing-transfer-chain.md, verdict A + RED). ZERO tuning: no channel weight fitted, no correction hard-coded; only CAL-1 (m_e) + CAL-2 (q_0) consumed. Reports m_p/m_n in MeV and rel-diff vs CODATA for each channel and the std\u2212full delta. Production default in derive_m_p_hecke_full_tower_50dps stays 'full' \u2014 this is a diagnostic for the owner-gated wiring decision.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",

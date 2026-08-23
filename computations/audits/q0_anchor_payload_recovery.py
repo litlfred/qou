@@ -44,6 +44,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -65,6 +66,23 @@ REPO = COMPUTE_DIR.parent
 # matches the current value and MISSES every witness still carrying the
 # superseded one — counting them as "no pin in payload" and so shunting them
 # into the expensive producer-analysis bucket they do not belong in.
+# TWO GUARDS, both learned by getting it wrong on 2026-08-23 (see below).
+#
+# 1. The 11-digit MUON_PREFIX deliberately matches BOTH muon values -- the
+#    current 1.10997859555733471989... and the superseded 1.10997859555418057528...
+#    That is right for ASKING "does this witness carry a muon-family value?" and
+#    WRONG for writing `q0Anchor: "muon"`, because the anchor NAMES the current
+#    value: q0_anchor_consistency_audit compares q0Value[:14] against it, and a
+#    superseded-muon witness then reads as a FLIP. Measured: 74 of 307 proposed
+#    labels were superseded-muon and all 74 became flips.
+# 2. A string that CONTAINS a pin prefix is not necessarily a NUMBER. Four
+#    payloads carried it inside prose ("1.10997859555...; current producer...").
+#    Transcribing those wrote a non-decimal into q0Value.
+#
+# Both are now refused at proposal time rather than discovered by the gate.
+_SUPERSEDED_MUON = "1.10997859555418"
+_CLEAN_DECIMAL = re.compile(r"^\d\.\d{14,}$")
+
 MUON_PREFIX = "1.10997859555"
 PROTON_PREFIX = "1.109978582751"
 
@@ -113,6 +131,21 @@ def classify_payload(body) -> tuple[str, list[tuple[str, str]]]:
     return pins.pop(), ev
 
 
+def _longest_pin_value(body, pin: str) -> str | None:
+    """The longest CLEAN DECIMAL in the payload carrying this pin's prefix."""
+    want = MUON_PREFIX if pin == "muon" else PROTON_PREFIX
+    best = None
+    for _key, s in _strings(body):
+        if want not in s:
+            continue
+        cand = s[s.index(want):]
+        if not _CLEAN_DECIMAL.match(cand):
+            continue
+        if best is None or len(cand) > len(best):
+            best = cand
+    return best
+
+
 def iter_anchor_missing():
     for p in sorted(COMPUTE_DIR.rglob("*.witness.json")):
         # Match q0_anchor_consistency_audit.py exactly. Without this skip the
@@ -144,6 +177,7 @@ def main(argv=None) -> int:
     counts = Counter()
     keys = Counter()
     proposal = []
+    refused: list[tuple[str, str]] = []
     both = []
     for path, body in iter_anchor_missing():
         verdict, ev = classify_payload(body)
@@ -152,6 +186,14 @@ def main(argv=None) -> int:
         for k in {k.split(".")[-1].replace("[]", "") for k, _ in ev}:
             keys[k] += 1
         if verdict in ("muon", "proton"):
+            longest = _longest_pin_value(body, verdict)
+            if longest is None:
+                refused.append((rel, "no clean decimal carrying the pin"))
+                continue
+            if verdict == "muon" and longest.startswith(_SUPERSEDED_MUON):
+                refused.append((rel, "carries the SUPERSEDED muon value — "
+                                     "labelling it 'muon' would read as a flip"))
+                continue
             proposal.append({
                 "witness": rel,
                 "q0Anchor": verdict,
@@ -166,10 +208,22 @@ def main(argv=None) -> int:
     print("q₀ anchor recovery from witness payload")
     print("=" * 72)
     print(f"  witnesses with no q0Anchor        : {total}")
-    print(f"  RECOVERABLE by transcription      : {counts['muon'] + counts['proton']}")
-    print(f"      proton                        : {counts['proton']}")
-    print(f"      muon                          : {counts['muon']}")
+    # Count what is APPLICABLE, not what merely carries a pin. The two differ
+    # by the guards above, and reporting the larger number is the same defect
+    # this file was written to catch: a headline that an applier then refuses.
+    _p = sum(1 for r in proposal if r["q0Anchor"] == "proton")
+    _m = sum(1 for r in proposal if r["q0Anchor"] == "muon")
+    print(f"  RECOVERABLE by transcription      : {len(proposal)}")
+    print(f"      proton                        : {_p}")
+    print(f"      muon                          : {_m}")
+    print(f"  (carrying a pin but NOT labellable : "
+          f"{counts['muon'] + counts['proton'] - len(proposal)})")
     print(f"  cross-anchor comparison (EXCLUDE) : {counts['both']}")
+    print(f"  REFUSED (carries a pin but not labellable) : {len(refused)}")
+    for rel, why in refused[:args.show]:
+        print(f"      {rel}\n          {why}")
+    if len(refused) > args.show:
+        print(f"      … and {len(refused) - args.show} more")
     print(f"  no pin in payload                 : {counts['none']}")
 
     print(f"\n  the key it was recorded under — DISTINCT WITNESSES (top {args.show}):")

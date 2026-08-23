@@ -10,7 +10,7 @@
       "expected": 3,
       "passed": true,
       "tolerance": 0,
-      "source": "knot_braid_database.HYPERBOLIC_NSTRANDS — corrects the r5_full_canonical_knot_solver.py line 18-19 'B_5/8_11' comment"
+      "source": "knot_braid_database.HYPERBOLIC_NSTRANDS \u2014 corrects the r5_full_canonical_knot_solver.py line 18-19 'B_5/8_11' comment"
     }
   ],
   "allPassed": true,
@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Phase B-2 probe (EXPLORATORY): corrects the B_5 → B_3 misframing of tritium's canonical knot (8_11 has braid index 3, not 5). Computes |tr_M(8_11, q_0)| via common-infra (markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl JM and q-Schur conventions and confirms the same bare-|tr_M| << AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ (proton-mass). The framework's VolDensity chain is the correct substrate-pure derivation; bare |tr_M| is not.",
+  "description": "Phase B-2 probe (EXPLORATORY): corrects the B_5 \u2192 B_3 misframing of tritium's canonical knot (8_11 has braid index 3, not 5). Computes |tr_M(8_11, q_0)| via common-infra (markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl JM and q-Schur conventions and confirms the same bare-|tr_M| << AME pattern documented at 7\u00b2_1 (PR #1274) and \ud835\udcd1\u2083 (proton-mass). The framework's VolDensity chain is the correct substrate-pure derivation; bare |tr_M| is not.",
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",

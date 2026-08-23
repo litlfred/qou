@@ -10,8 +10,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
-      "unit": "max over 5 test braids of |Σ_λ y_λ(q_0)·χ_λ(β) − tr_M(β) via recursive reducer|",
-      "source": "Wedderburn-Artin decomposition H_n(q) ≅ ⊕_λ M_{f^λ}(ℂ) combined with Wenzl 1988 Schur principal specialization for y_λ(q)."
+      "unit": "max over 5 test braids of |\u03a3_\u03bb y_\u03bb(q_0)\u00b7\u03c7_\u03bb(\u03b2) \u2212 tr_M(\u03b2) via recursive reducer|",
+      "source": "Wedderburn-Artin decomposition H_n(q) \u2245 \u2295_\u03bb M_{f^\u03bb}(\u2102) combined with Wenzl 1988 Schur principal specialization for y_\u03bb(q)."
     }
   ],
   "allPassed": true,
@@ -20,7 +20,7 @@
   "scriptFile": "q_hecke_seminormal_character_closure_probe.py",
   "scriptHash": "288e79eb52eb",
   "scriptCommitSha": "7b82cb92cb4e3b305794fe70927e912b64683d04",
-  "description": "I1 probe for prop:q-hecke-seminormal-character-closure. Verifies tr_M^{partition-sum}(β) := Σ_λ y_λ(q) · χ_λ(β) equals tr_M(β) computed via the recursive Markov-axiom reducer, on 5 test braids in B_3 (covering identity, single generator, Coxeter, figure-eight, full-twist).  B_4 tests were dropped because y_lambda_symbolic(n=4) exceeds the 3-min symbolic compute timeout.  LHS uses canonical Hoefsmit χ_λ (mpmath 50 dps) × y_λ from `markov_weights_symbolic` (sympy.N at 30 dps).  RHS uses `markov_trace_recursive.markov_trace_of_word`.  All residues below 1e-10 witness the partition-sum closure.",
+  "description": "I1 probe for prop:q-hecke-seminormal-character-closure. Verifies tr_M^{partition-sum}(\u03b2) := \u03a3_\u03bb y_\u03bb(q) \u00b7 \u03c7_\u03bb(\u03b2) equals tr_M(\u03b2) computed via the recursive Markov-axiom reducer, on 5 test braids in B_3 (covering identity, single generator, Coxeter, figure-eight, full-twist).  B_4 tests were dropped because y_lambda_symbolic(n=4) exceeds the 3-min symbolic compute timeout.  LHS uses canonical Hoefsmit \u03c7_\u03bb (mpmath 50 dps) \u00d7 y_\u03bb from `markov_weights_symbolic` (sympy.N at 30 dps).  RHS uses `markov_trace_recursive.markov_trace_of_word`.  All residues below 1e-10 witness the partition-sum closure.",
   "contentBlock": "prop:q-hecke-seminormal-character-closure",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
@@ -58,7 +58,7 @@
         ]
       },
       {
-        "label": "H_3 σ_1",
+        "label": "H_3 \u03c3_1",
         "n": 3,
         "word": [
           1
@@ -88,7 +88,7 @@
         ]
       },
       {
-        "label": "H_3 σ_1 σ_2 (Coxeter)",
+        "label": "H_3 \u03c3_1 \u03c3_2 (Coxeter)",
         "n": 3,
         "word": [
           1,
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "label": "H_3 β_{4_1} = σ_1 σ_2⁻¹ σ_1 σ_2⁻¹",
+        "label": "H_3 \u03b2_{4_1} = \u03c3_1 \u03c3_2\u207b\u00b9 \u03c3_1 \u03c3_2\u207b\u00b9",
         "n": 3,
         "word": [
           1,
@@ -152,7 +152,7 @@
         ]
       },
       {
-        "label": "H_3 (σ_1 σ_2)^3 = δ^2 (full twist)",
+        "label": "H_3 (\u03c3_1 \u03c3_2)^3 = \u03b4^2 (full twist)",
         "n": 3,
         "word": [
           1,

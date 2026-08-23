@@ -10,7 +10,7 @@
       "expected": -2,
       "passed": true,
       "tolerance": 0,
-      "source": "J_Hopf(q=1) = -2 ≡ c_3 exactly"
+      "source": "J_Hopf(q=1) = -2 \u2261 c_3 exactly"
     }
   ],
   "allPassed": true,
@@ -19,7 +19,7 @@
   "scriptFile": "khovanov_at_q0_probe.py",
   "scriptHash": "b1b787e73f9e",
   "scriptCommitSha": "unknown",
-  "description": "Khovanov polynomials Kh(L)(q, t) evaluated at the substrate q_0 with t = −1 (Jones-decategorification limit). Tests whether the empirical c_k coefficients of the Q_β precision ladder match Kh values at q_0 rather than at q=1, providing an automatic source of the b²-correction terms that were unexplained at q=1.",
+  "description": "Khovanov polynomials Kh(L)(q, t) evaluated at the substrate q_0 with t = \u22121 (Jones-decategorification limit). Tests whether the empirical c_k coefficients of the Q_\u03b2 precision ladder match Kh values at q_0 rather than at q=1, providing an automatic source of the b\u00b2-correction terms that were unexplained at q=1.",
   "data": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "b_sq_at_q0": "0.752702113845058055986303163434",
