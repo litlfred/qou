@@ -1,8 +1,8 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-23T16:25:42.286Z",
+  "generated": "2026-08-23T16:37:23.605Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3060,
+  "scanned_files": 3063,
   "files_flagged": 130,
   "total_defects": 109,
   "total_exempt": 47,
@@ -724,7 +724,7 @@
       {
         "name": "PlancherelSnData",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIPlancherelConditional.lean",
-        "line": 72
+        "line": 88
       },
       {
         "name": "PLCorrectnessHypotheses",
