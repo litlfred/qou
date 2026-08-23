@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T21:30:00Z
+updated_at: 2026-08-23T22:15:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -478,3 +478,80 @@ non-qbeta ten as much as the qbeta eleven — the split I drew last section was 
 wrong axis. The right axis is **"has this producer changed since the witness was
 computed?"**, which is a one-line `git log` per file and should be the first
 question, not the last.
+
+---
+
+## 2026-08-23 — two cheap proxies for "will regeneration move conclusions", and BOTH are wrong
+
+Last section ended by recommending a one-line `git log` per producer as the first
+question. **I tried it, and it does not work.** Then I tried the mechanism the
+corpus is actually built on, and that does not work either. Each failure has a
+concrete counterexample, so both are recorded rather than just the fix.
+
+### Proxy 1 — `git log --since=<witness date> -- <producer>`. REJECTED.
+
+It reported **0 of 20 producers unchanged**, with `e5dcd8f54` (2026-08-01) as the
+sole commit for **14 of them** — which looked like a single reviewable class.
+
+It is not. `e5dcd8f54` is a **28,620-file, 9,957,932-insertion** commit that adds
+`uploads/*.pdf` and shows these producers as `new file mode`: a bulk
+import/re-baseline of the tree, not a change to any probe. **My own recommendation
+from the previous section was measuring repository history, not producer history.**
+
+### Proxy 2 — recorded `scriptHash` vs the current file. BETTER, STILL WRONG.
+
+The designed mechanism (`witness.scriptHash` = sha256 prefix of the producer's
+bytes, `witness.py:417`). It separates cleanly:
+
+| | n |
+|---|---|
+| `scriptHash` **matches** — producer byte-identical since the witness was made | **13** |
+| `scriptHash` **differs** — producer genuinely changed | **7** |
+
+`h4-form-AB`, `binding-qgaussian`, both `flavor-split-alpha-*`, and three `qbeta`
+cross-anchor probes are the seven that really moved.
+
+**But `xq-habiro-element-search-probe` is in the MATCHES column** — and
+regenerating it flipped all six candidates `TIER 1 → TIER 2`. A byte-identical
+producer produced a different verdict.
+
+### Why, and it is the interesting part
+
+`scriptHash` covers the **producer file only**. `xq_habiro_element_search_probe.py`
+imports `_precision`, `witness_base`, `experimental_constants`, and via
+`_path_bridge` the substrate — and the substrate's muon input moved. `qou-khac`
+measured it directly this session at dps=60:
+
+```
+MASS_RATIO_MU_E_STR   206.7682830  (CODATA 2018)  ->  206.7682827  (CODATA 2022)
+q_muon_at()           1.109978595554180…          ->  1.109978595642739…
+```
+
+`constants.py:231` now reads `MASS_RATIO_MU_E_STR = _MU_E.value_str  # CODATA 2022`.
+(The `git log -S` history for that line is unreadable — it resolves to the same
+bulk-import commit — which is *why* the runtime measurement in `qou-khac` was
+worth doing.)
+
+So a probe with a muon leg changes output while its own bytes, and therefore its
+`scriptHash`, are unchanged.
+
+### Corpus-level consequence — this is a hole in the staleness apparatus itself
+
+`producer_importability_audit`'s own thesis is that *"every existing staleness
+mechanism compares a witness against its producer: `witness.scriptHash` vs the
+current file hash…"*. **`scriptHash` is blind to dependency drift, and there is a
+live instance in this queue.** A witness can be materially stale — asserting
+`TIER 1` where the current code says `TIER 2` — with every drift detector green,
+because nothing hashes what the producer *imports*.
+
+Same shape as `qou-i5jy`: a check reporting clean over a surface it does not
+cover. Recorded here because it is discovered from the migration queue, but it is
+not a cds3 defect and is bigger than this bean.
+
+### Settled method for the remaining 20
+
+Neither proxy is sound, so the only reliable test is the one used last section:
+**regenerate into a snapshot, diff the payload excluding pin/timestamp/env fields,
+and decide per witness.** It costs a producer run each, and that cost is not
+avoidable by inspection — which is the useful thing to have established, since
+both cheap alternatives look convincing until they are checked.
