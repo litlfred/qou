@@ -204,7 +204,7 @@ The eight writers, with what each actually emits:
 | `sublemma_2_1_h9_tritium_verify` | `sublemma-2-1-h9-tritium-verify` | refreshed by #5517; reproduced in §3 |
 | `sublemma_2_1_A_operator_extract` | `sublemma-2-1-A-operator-extract` | refreshed here (§1) |
 | `sublemma_2_1_alpha_shift_extract` | `sublemma-2-1-alpha-shift-extract` | deliberately not — §2, `qou-b3l8` |
-| `sublemma_2_1_h12_he4_phase25` | `he4-canonical-tr-m-block-fingerprint` | measuring |
+| `sublemma_2_1_h12_he4_phase25` | `sublemma-2-1-h12-he4-phase25-verify` (untracked) | see §6 and the correction below |
 | `nuclide_braid_pipeline` | `nuclide-braid-<sym>` | **nothing to move** — see below |
 | `probes/poly_q_proof_probe` | `poly-q-proof` | **unmeasured** |
 | `probes/qbeta_operator_identification_probe` | `qbeta-operator-identification-probe` | **unmeasured** |
@@ -387,3 +387,43 @@ The loop is fixable in one line (hook-length formula, or
 filter *before* any rep is built. Filed as `qou-pag7`, and deliberately not
 fixed in this PR — it is a performance defect in a producer #5517 does not
 touch, and its fix wants its own measurement.
+
+## 7. Correction to §6, and what fixing the loop revealed
+
+Two things in §6 need amending, both found by actually applying the fix.
+
+**The producer's output was named wrong here.** This document listed
+`sublemma_2_1_h12_he4_phase25` as writing
+`he4-canonical-tr-m-block-fingerprint.witness.json`. It does not: it **reads**
+that file and writes `sublemma-2-1-h12-he4-phase25-verify.witness.json`, which
+is **untracked** — no committed artifact, like `nuclide_braid_pipeline`. This is
+the same read-vs-write conflation §7 above corrects, one instance further on,
+and it survived into the table because the fix had not been run yet.
+
+**The fix works, and what it uncovers is worse than the cost.** Replacing the
+77-rep dimension loop with `pyhecke.wedderburn.partition_dimension` (verified
+equal on all 66 partitions of n ≤ 8 and six H₁₂ shapes before the swap) takes
+the producer from *never finishes* to **2 s**. What it then prints is:
+
+```
+Path A loaded from F1 cache: 0 λ ⊢ 12
+Verified: 0/0  max rel residual: 0.00e+00
+✓ Witness: … (1 assertions, all passed)
+```
+
+`load_f1_cache()` reads `data["per_partition_contributions"]`, and **that key
+has never existed** in the file it reads — zero occurrences in all five commits
+that have ever touched it. `.get(..., [])` swallows the miss, so every
+comparison is skipped and the witness passes on an empty set.
+
+So the 67-hour loop was hiding a producer that verifies nothing. Fixing the
+cost does not fix that, and the two should not be conflated.
+
+The nearest-looking substitute is **not** the right quantity, which was
+measured rather than assumed: repointing the loader at `per_block_ranked` /
+`chi_lambda` makes the two rank-1 shapes agree to 7.15e-05 (the storage
+precision of that field) and every dim > 1 shape disagree at O(1), with sign
+flips — 0 of 8. The rank-1 agreement is the case where χ is
+convention-insensitive, so it is not evidence. That repointing was reverted and
+not committed: a confidently wrong 0/8 is worse than an honest 0/0. Filed as
+`qou-ag9p`.
