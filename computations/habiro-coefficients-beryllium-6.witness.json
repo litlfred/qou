@@ -1,14 +1,14 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:35:08.895777+00:00",
-  "commitSha": "c65facf831eaaa93edf9d31f92caa85808c2f6b9",
+  "computedAt": "2026-08-23T17:08:39.605097+00:00",
+  "commitSha": "98d4f7b30998ed8bde8f3e404a9117025e78e67c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-beryllium-6",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "2313bfea83ad",
+  "scriptHash": "1cf43d2b762b",
   "scriptCommitSha": "23dd97f9a497891220811c909126d9fcf3a2b9f3",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -48,7 +48,7 @@
     "thm:knot-mass-formula-unified"
   ],
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
@@ -230,7 +230,7 @@
   "reconstruction_matches": true,
   "tr_M_at_q0": 0.09563157157251585,
   "tr_M_at_q0_via_u_poly": 0.09563157157251585,
-  "tr_M_at_q0_rel_err": 0.0,
+  "tr_M_at_q0_rel_err": 3.900695998745977e-30,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
