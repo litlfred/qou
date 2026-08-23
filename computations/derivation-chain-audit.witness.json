@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T16:52:41.440972+00:00",
-  "commitSha": "e6b215028bb6d306f1c57436b053f215dd546058",
+  "computedAt": "2026-08-23T17:05:15.400245+00:00",
+  "commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -208,6 +208,12 @@
     },
     {
       "name": "chain_valid[hoefsmit-rep-21-sigma2.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[markov-peel-atomic-tr-m.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -1307,7 +1313,7 @@
           "axiom": 1,
           "mathlib-cited": 1,
           "derived": 3,
-          "script-cited": 1
+          "script-cited": 2
         },
         "has_script_frontier": true
       },
@@ -1371,6 +1377,21 @@
           "axiom": 1
         },
         "has_script_frontier": false
+      },
+      {
+        "chain": "markov-peel-atomic-tr-m.derivation.json",
+        "target": "production atomic Markov trace tr_M(beta_atom; q_0) for p, n, D, T, 3He, 4He via Markov-axiom recursive ascent on the Groebner-Shirshov normal form",
+        "target_value": "tr_M(beta_atom) computed symbolically in H_{3A}(q) by incremental GS reduction followed by recursive Markov-axiom descent, then evaluated at q_0; emitted at BOTH substrate pins as a deliberate comparison pair",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "derived": 2,
+          "script-cited": 1
+        },
+        "has_script_frontier": true
       },
       {
         "chain": "markov-trace-assembly-deuteron.derivation.json",
@@ -2211,6 +2232,10 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "alpha-cluster-recursion.witness.json",
+        "atom-chi-rust-3he.witness.json",
+        "atom-chi-rust-4he.witness.json",
+        "atom-chi-rust-d.witness.json",
+        "atom-chi-rust-t.witness.json",
         "atomic-braid-gb-filtration-extension.witness.json",
         "bar-pairing-binding-observable-extension.witness.json",
         "binding-energy-categorical-deuteron.witness.json",
@@ -2379,6 +2404,8 @@
         "habiro-coefficients-tritium.witness.json",
         "hecke-character-symbolic.witness.json",
         "m-p-substrate-identity-50dps.witness.json",
+        "markov-peel-atomic-tr-m-muon.witness.json",
+        "markov-peel-atomic-tr-m.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
         "nucleus-real-sdp-deuteron.witness.json",
@@ -3241,10 +3268,6 @@
         "alphaem-dilog-bloch-probe.witness.json",
         "ame-2020-binding-energies.witness.json",
         "ame-registry-routing-triage.witness.json",
-        "atom-chi-rust-3he.witness.json",
-        "atom-chi-rust-4he.witness.json",
-        "atom-chi-rust-d.witness.json",
-        "atom-chi-rust-t.witness.json",
         "atom-level-wedderburn-tower.witness.json",
         "atom-mass-derived.witness.json",
         "atom-mass-full-hecke.witness.json",
@@ -3868,8 +3891,6 @@
         "m-tau-knot-prediction.witness.json",
         "magic-a-truncation-overclaim-correction.witness.json",
         "hecke-regular-nf-h4.witness.json",
-        "markov-peel-atomic-tr-m-muon.witness.json",
-        "markov-peel-atomic-tr-m.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
