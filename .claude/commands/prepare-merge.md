@@ -377,13 +377,13 @@ wins **candidate 1** of `lean.ref` resolution, before any Lake-tree candidate,
 so every checker aimed at that block audits the sibling's copy and never sees
 the declaration `lake build` just compiled.
 
-Baseline on `main` at 2026-08-23 (bean `qou-u87j`): 147 same-FQN pairs, 101
+Baseline on `main` at 2026-08-23 (bean `qou-u87j`): 147 same-FQN pairs, 94
 faithful mirrors, **46 drifted across 39 files — and all 46 mask a `lean.ref`**.
-PR #5498 takes it to 45; **lower the baseline to 45 when that lands.**
+PR #5498 takes drift to 44; **lower the baseline to 44 when that lands.**
 
 - **`--baseline 46` fires on growth only** (exit 3). A gate that failed on the
   whole backlog would just teach everyone to pass `--warn-only`; this one stops
-  the 101 faithful mirrors becoming the next 46.
+  the 94 faithful mirrors becoming the next 46.
 - **If you touched a mirrored declaration, resync both copies in the same
   change.** The checker names the file and line on each side and prints the
   field-level diff; `--tsv` gives one row per pair.
@@ -397,6 +397,37 @@ copy carries `n_pos : 0 < n` and the two siblings do not; the siblings carry
 `contact_nondeg` and `reeb_preserves_contact` and the library does not. Each
 side has an anti-vacuity condition the other lacks, so whichever one a reader
 or a checker reaches, it is not the one the other half of the corpus means.
+
+### The §7c line in the same output — read it, it is not gated
+
+The checker also reports a **`regime`** count: pairs that agree on every field
+name and parent and still sit on **opposite sides of the substrate→archimedean
+wall**, judged by the corpus's own `ARCHIMEDEAN_TYPE_RE` on field *types*. On
+`main` that is **7 regime-only pairs across 5 files**, plus **10** of the 46
+drifted pairs crossing the wall as well — 17 §7c disagreements in total.
+
+**No baseline flag covers this yet**, deliberately: the fix is a wall split, not
+a field resync, and folding it into the drift number would make that number move
+for two unrelated reasons. Treat the line as a read-and-judge item. If your
+change adds one, fix it rather than let it ride.
+
+Why it needs a check of its own: **`check-wall-side` and `check-base-ring` PASS
+on every one of these files.** They fire on a file that *mixes* regimes, so a
+declaration **wholly** on the wrong side passes both. Passing the wall gate
+means "not mixed", not "on the right side of the wall" — bean `qou-6ome`.
+
+Direction is per-case and all three shapes occur:
+
+| shape | example | how to spot it |
+|---|---|---|
+| the **library** never migrated | `QOU.SubstrateParameter` (`qou-6ome`) | the block defines the categorical form; the siblings already split |
+| the **sibling** over-generalised | `QOU.QReebFlow` | the sibling's own docstring records the divergence and leaves it standing |
+| the sibling over-generalised **and lost content** | Möbius energy | conditions commented out with "(archimedean; not meaningful over `R_q`)" |
+
+**The block's `.md` adjudicates, not the field diff.** The diff cannot tell you
+which side is behind — `QOU.SubstrateParameter` reads as "sibling is missing
+three fields" when in fact the siblings are correct and the library never made
+the split.
 
 This lives here rather than in `.github/workflows/` for the reason §4b gives:
 the CI copy does not run.
