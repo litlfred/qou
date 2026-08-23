@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:42.496400+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-23T21:15:15.704605+00:00",
+  "commitSha": "678db33982bbd907cf4a41a65a9b9ee8a8be99e1",
   "assertions": [
     {
       "name": "factorisation_h_equals_hbar_q_times_q_plus_1",
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "hecke-log-decomposition-probe",
   "scriptFile": "hecke_log_decomposition_probe.py",
-  "scriptHash": "bfab6426e3d2",
+  "scriptHash": "f295d5b6bf87",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -40,10 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -54,7 +54,7 @@
   "description": "I1 probe for prop:hecke-log-decomposition.  Verifies h = ℏ_q · (q + 1) and equivalently log(1/h) = log(1/ℏ_q) − log(1 + q), at three q values {q_0, 1.5, 2.0}.  h = q − q⁻¹ is the Hecke skein deformation; ℏ_q = (q − 1)/q is the QOU quantum Planck constant.  All residues at ~1e-50 (mpmath 50 dps).",
   "contentBlock": "prop:hecke-log-decomposition",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "max_factorisation_residue": 9.055679078826712e-72,
     "max_log_form_residue": 1.8111358157653425e-71
   },
@@ -62,9 +62,9 @@
     "per_q_value_results": [
       {
         "label": "q_0 (substrate)",
-        "q": 1.1099785827513808,
-        "h": 0.2090602987956393,
-        "hbar_q": 0.09908171604425851,
+        "q": 1.1099785955573347,
+        "h": 0.20906032199559368,
+        "hbar_q": 0.09908172643825897,
         "factorisation_residue": "2.263919769706678091877279822721947945170632799534784547395653722483875e-72",
         "log_form_residue": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71"
       },
@@ -85,5 +85,7 @@
         "log_form_residue": "4.527839539413356183754559645443895890341265599069569094791307444967751e-72"
       }
     ]
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }
