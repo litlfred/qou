@@ -274,7 +274,7 @@
           "is_a_level": false,
           "level_if_any": null,
           "exclusion_invariant": "not in Q(q): sqrt(q) is not a rational function of q (x^2 - q Eisenstein at q)",
-          "call_sites": "qbeta-decay (disputed)"
+          "call_sites": "qbeta-decay (agreed-migration-pending)"
         },
         {
           "z": "z_TL = q/(q^2+1) = 1/[2]_q",
@@ -327,7 +327,7 @@
           "channel": "qbeta-decay",
           "convention": "C",
           "producer": "qbeta/qbeta_utils.py::markov_parameter",
-          "registry_status": "disputed",
+          "registry_status": "agreed-migration-pending",
           "level": null,
           "formal_level_at_q0": "2.5995155364002",
           "in_the_level_family": false
