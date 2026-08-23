@@ -181,3 +181,41 @@ the exact shape of the `resolve()` bug fixed in #5289: a live producer with a
 missing exclusion *bites* depends on the glob's root and on whether a name
 collides with a retired copy — that needs per-tool measurement, which this
 addendum does not do.
+
+---
+
+## Drain result — 2 resolvers fixed, 3 misresolutions measured
+
+Followed the addendum's own recommendation. The `_deprecated` surface is **37
+collisions**, not 890 files; of the 8 colliding `.py`, `__init__.py` is a
+package marker, leaving **7 substantive**.
+
+**Enumeration vs resolution.** Six unguarded tools only `rglob("*.ext")` —
+retired files show up as extra findings, a mild problem. **Two** do bare-name
+resolution unguarded, which can return the *wrong file*:
+
+- `audits/q0_producer_pin_classifier.py:168` — `REPO.rglob(script_name)`
+- `audits/tnjb_stale_stamp_migrate.py:160` — `REPO.rglob(sp.name)`
+
+Both sort `(computations-first, fewest parts)` and take `hits[0]` — which
+**ties** when the live copy is as deeply nested as the retired one.
+
+**Replaying that exact tie-break: 3 of 7 pick `_deprecated/`** —
+`path_b_habiro_mass_probe`, `rho_k_markov_multiplicativity_probe`,
+`term5_aK_audit`. The other four are correct *only* because their live copy is
+one level shallower; neither tool intends that.
+
+`rho_k_markov_multiplicativity_probe.py` is the same file that broke
+`witness_producer_executes_audit.resolve()` in #5289 — **third tool, same
+collision**, because the fix keeps being applied per-tool rather than centrally.
+
+Fixed both. Verified all three now resolve live.
+
+**Not claimed:** that the misresolutions produced wrong committed output — that
+needs a per-tool re-run and diff.
+
+### Worth doing centrally
+
+Three tools have now needed the same one-line guard. A shared
+`resolve_producer(name)` helper — excluding `_deprecated`, `.claude`, `.git`,
+`node_modules` — would end the recurrence. Not attempted here.
