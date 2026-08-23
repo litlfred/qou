@@ -9,7 +9,7 @@ idle-backlog policy caps witness refreshes at 3 per pass and tells the agent to
 worked case `canonical-ordering-dof`, which drifted on +21 lines that are *all*
 comment).
 
-At the current backlog — 764 self-stale of ~3000 — "diff it first" is advice no
+At the current backlog — 628 self-stale of ~3000 — "diff it first" is advice no
 one can act on witness-by-witness. This script does it for the whole set at
 once, so an idle pass can spend its budget on the drifts that can actually move
 a number.
@@ -112,13 +112,13 @@ observation is independently true and still worth knowing —
 keys and re-emit 7 and 9, deleting the `scriptHash` this audit reads — it is
 simply not the *first* reason those two must not be refreshed.
 
-**The measured result on this corpus is `cosmetic = 0`.** Of ~764 self-stale
+**The measured result on this corpus is `cosmetic = 0`.** Of ~628 self-stale
 witnesses, not one is safe to refresh by the naive "re-run the producer" advice.
 That is the finding, not a limitation of the script: the idle-pass witness
 budget has nothing to spend itself on here, and an agent that spends it anyway
 is doing damage rather than maintenance.
 
-**It is not a snapshot.** Re-measured six times across 1833 commits of main
+**It is not a snapshot.** Re-measured nine times across ~2900 commits of main
 (2026-08-11 and twice on 2026-08-19, corpus 2898 -> 2985 witnesses), `cosmetic`
 came back 0 every time, and the class shape barely moved:
 
@@ -127,6 +127,7 @@ came back 0 every time, and the class shape barely moved:
     2026-08-19   substantive 256   rewritten 338   unresolvable 103   cosmetic 0
     2026-08-19   substantive 268   rewritten 366   unresolvable 111   cosmetic 0
     2026-08-19   substantive 267   rewritten 376   unresolvable 113   cosmetic 0
+    2026-08-23   substantive 160   rewritten 348   unresolvable 113   cosmetic 0
 
 So this is structural, not a bad week. Meanwhile main spent 45 `chore(witness)`
 commits over those same 8 days, 13 of them titled "refresh provenance sha after
