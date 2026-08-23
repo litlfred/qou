@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-23T00:58:09Z
+updated_at: 2026-08-23T13:37:42Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -185,3 +185,45 @@ not the Galois theory.
 of 2", then the `N(q)^{A-1}` resonance) came from reporting a pattern before
 running the cheap control that could kill it. The control was three lines and one
 field of the input witness. Run it first.
+
+
+---
+
+## Defect 1 ANSWERED (2026-08-23, takeover session) — the committed generation is convention C
+
+"Which generation is canonical is an author call" is now decided on evidence
+rather than editorially. Measured in `computations/habiro/habiro_mass_table_convention_attribution_probe.py`
+(PR #5543), by reconstructing every committed `tr_M_in_q` from `(τ_p, τ_n)`
+under each convention — the "test the answer, not the source" method:
+
+    committed reproduced by convention C : 25/25
+    committed reproduced by convention D :  2/25
+    atoms carrying at least one interface : 23, all C
+    D-matches are interface-free only     : True
+
+The 2 D-matches are proton and neutron: empty interface product, so C and D are
+the same statement there. Exact arithmetic, no float — tested at three
+perfect-square rationals so `√q` is exact.
+
+**#5526's counter-argument does not hold.** It reasoned that the deuteron's only
+interface factor is `z`, that the deuteron was unchanged, and so `z` could not
+have changed. The deuteron DID change — `tr_M_at_q0` 0.565089262867502 →
+0.6933894087146489 (+22.7 %), and `denom_in_u` from `(q+1)`-type to `(q²+1)`-type
+factors. Only `p_in_u` held, and `p_in_u` is the one field that CANNOT move for
+an all-`positive` atom: `p(u) := u^shift · denom · tr_M(u²)`, so for a pure power
+`z^k` the swap is absorbed wholesale by `denom`. The 16/4 split is the SIGNATURE
+of the swap, not evidence against it.
+
+**Consequence for the repoint in defect 1:** the deprecated witness being
+*deeper* (proton 10 vs 9, tritium 19 vs 16, ³He 20 vs 16) is a separate axis from
+the convention. Depth governs how many primes the Pochhammer mechanism covers;
+convention governs whether the numbers are canonical at all. A repoint to a live
+witness that is convention C buys neither.
+
+**Blocker surfaced for #5526:** its `ATOMS` list has 20 entries; `main` carries
+25 committed atom witnesses. Merging as-is leaves helium-6, boron-12, carbon-14,
+nitrogen-12 and oxygen-14 in C beside 20 in D. All five carry `negative`
+interfaces, so all five are genuinely C-valued. Regenerate all 25 or none.
+
+Defects 2 (headline omits `step2_full_trace_passed`, False at 45/45) and 3 (the
+uniform half-odd-integer full trace) are UNTOUCHED by this and remain open.
