@@ -165,9 +165,13 @@ def main() -> int:
         rt_s = f"{rt:.4f}" if rt is not None else "—"
         print(f"| {name} | {cv['tr_M_atom']:.6f} | {ti_s} "
               f"| {cv['mass_mod_usual']:.6f} | {bn_s} | {rt_s} |")
-    print("  *bar-norm not computable here: the color-weighted word bakes q₀ "
-          "and cannot re-lift at q⁻¹ (needs a q-parameterised word builder — "
-          "the follow-up).")
+    print("  *bar-norm n/a here because tr_M(q₀)·tr_M(q₀⁻¹) is NEGATIVE, so it "
+          "has no real square root — NOT because the re-lift fails. The q₀⁻¹ "
+          "column above is computed for every row. Corrected 2026-08-19 (bean "
+          "`qou-jqjc`); the old wording claimed the word could not re-lift at "
+          "q⁻¹, which the same table disproves. As a real number the bar-norm "
+          "does not EXIST for those words, which is stronger than 'not yet "
+          "computable' and means the claim should be retired, not repaired.")
 
     print(f"\n  Im channel: Q_β,pred = {im_pred:.6f} MeV vs CODATA "
           f"{qbeta_codata:.6f} MeV  (err {im_err*100:.3f}%)")
@@ -196,6 +200,40 @@ def main() -> int:
     w.add_data("im_qbeta_pred_MeV", str(im_pred))
     w.add_data("im_qbeta_rel_err", str(im_err))
     w.add_data("fibre_caveat", "Im(q_0)=0; complex structure is fibre-level (pre-tau)")
+
+    # Assertions (bean `qou-jqjc`). This witness previously emitted NONE, so a
+    # consumer reading `allPassed` saw a pass over zero checks — the producer's
+    # prose was honest but its machine surface was not. Values are passed as
+    # STRINGS, the drained convention (qou-t0rf), so adding them does not put
+    # new raw float64 into the witness.
+    #
+    # Only what is actually checked is asserted. In particular there is NO Re
+    # assertion: the log-trace binding sits 22–69% from AME (see re_rel_err per
+    # isotope in the data), which is a recorded gap, not a passing test. Nor is
+    # the single-frakV descent asserted — it is the open conjecture.
+    w.add_assertion(
+        "im_qbeta_matches_codata",
+        computed=str(im_pred), expected=str(qbeta_codata),
+        tolerance=str(0.002 * qbeta_codata), unit="MeV",
+        source="CODATA neutron beta-decay Q-value")
+    im_spread = max(abs(r[3]["im_qbeta_MeV"] - im_pred) for r in rows)
+    w.add_assertion(
+        "im_channel_isotope_independent",
+        computed=str(im_spread), expected="0", tolerance="1e-30", unit="MeV",
+        source="Im is the single n->p decay Q-value, so it cannot vary by isotope")
+    w.add_caveat(
+        "Re channel is NOT asserted: the log-trace binding is 22-69% from AME "
+        "across 2H/3H/3He/4He (re_rel_err per isotope). Recorded, not checked.")
+    w.add_caveat(
+        "The single-frakV descent (conj:binding-qbeta-complex-volume) is NOT "
+        "tested here. Im is ASSIGNED from q_beta_substrate, not derived from a "
+        "trace; that the two channels descend from one fibre object is the open "
+        "conjecture. `allPassed` refers to the two assertions above and to "
+        "nothing else.")
+    w.add_caveat(
+        "Bar-norm sqrt(tr_M(q0)*tr_M(q0^-1)) is n/a for 2H and 3H because the "
+        "product is NEGATIVE, not because the re-lift fails; as a real number it "
+        "does not exist for those words.")
     for name, Z, N, cv, b_ame, re_err in rows:
         w.add_data(f"V_{name}", {
             "re_binding_MeV": cv["re_binding_MeV"],
