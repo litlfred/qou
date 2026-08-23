@@ -58,6 +58,30 @@ builder, so the `add_upstream` *method* did not fit their shape.
 Heuristic, therefore high-recall: a producer may read a witness through a
 variable path this cannot see, and a `.witness.json` mention inside a comment
 counts as a read. Treat the output as candidates.
+
+## Which lever actually matters — measured, and it is not the obvious one
+
+Having retracted the claim above, the obvious next step looked like
+"regenerate witnesses older than the 2026-08-08 edge port, so drift can see
+them". Measured over 2722 witnesses, that step is worth far less than it looks:
+
+    no upstream edge                                2489
+      generated AFTER the port                      1099   producer records nothing
+      generated BEFORE the port                     1390
+        ... AND producer NOW records edges            52   <- regen adds an edge
+        ... producer still records nothing          1338   <- regen adds NOTHING
+
+So regenerating by age buys **52** edges, not 1390. For the other 1338 the
+producer never learned to record, so a fresh run reproduces the same edgeless
+witness — at the cost of a value-attribution each.
+
+And 1099 witnesses written AFTER the port still carry no edge, which is the
+219-producer gap above showing up on the witness side.
+
+**The lever is instrumenting the 219 gap producers, not regenerating.** One
+helper call per producer makes every future run of it edge-bearing; regeneration
+only helps the 52 whose producers are already instrumented. Recorded here
+because the age-based plan is the intuitive one and it is mostly wasted work.
 """
 from __future__ import annotations
 
