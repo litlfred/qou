@@ -284,3 +284,66 @@ the **full path stem** — `/abs/path/to/carbon-valence`. Joining it onto
 the first run of this measurement reported **0 siblings across 3486 blocks** and
 looked plausible enough to nearly publish. Worth a one-line docstring fix in
 folio-assistant.
+
+## Option 2a graded 2026-08-23 — **the evidence does not support it. Recommendation withdrawn.**
+
+I wrote above that 2a was "viable" and said in session that it was the one I'd
+take. Grading the 338 says otherwise, and I am withdrawing that.
+
+Two independent gradings of the 338 blocks whose audited file 2a would change:
+
+**Which candidate produced the Lake target.** Candidate 2 is the direct module
+path spelled in `lean.ref` — an author's deliberate pointer. Candidate 3 is the
+basename / decl-name fallback the resolver reaches for when that module path
+does not exist — a guess.
+
+**The label test.** Does the file carry the block's `\label{…}` in a docstring?
+This is the test that found four broken refs earlier in this batch when no
+name-based index could. Presence is strong evidence; absence is weak, because
+plenty of library files carry no labels at all.
+
+| | both | lake-only | sib-only | neither | total |
+|---|---|---|---|---|---|
+| **cand 2** — deliberate module path | 2 | **4** | **4** | 24 | **34** |
+| **cand 3** — basename guess | 33 | 24 | 44 | 203 | **304** |
+| total | 35 | **28** | **48** | 227 | 338 |
+
+Three things follow, and they point the same way:
+
+1. **304 of 338 are candidate-3 guesses.** 2a would repoint nine out of ten of
+   these audits at a file the resolver picked by basename, not at a target
+   anyone chose.
+2. **Where the label test speaks at all, it favours the sibling: 48 to 28.**
+   Those 48 are blocks whose `\label` appears *only* in the sibling — 2a would
+   move the audit off the one file demonstrably about that block.
+3. **Even the strongest subset is a tie.** Among the 34 deliberate candidate-2
+   refs, lake-only and sib-only are **4 and 4**, with 24 silent. There is no
+   subgroup here where the evidence favours the Lake target — not even the one
+   built out of the author's own pointers.
+
+`cand3 / neither` alone is **203 blocks, 60 % of the population**: a guessed
+target, and no label anywhere to adjudicate it.
+
+### So what should happen
+
+**Not a resolution reorder, in any global form.** The masking is real — 46
+drifted pairs, all masking a `lean.ref` — but reordering treats 338 blocks to
+fix 46, and on the only available evidence it would regress more of them than it
+improves.
+
+- **Option 1 (the gate) is the right primary fix** and is done: `prepare-merge`
+  §4a, `--baseline 46`. It stops the population growing without touching
+  resolution at all.
+- **Option 3 (resync the 46) is now the natural follow-up**, not the fallback it
+  was written as. It is bounded, it is exactly the defect, and it needs no
+  decision about resolution order.
+- **Option 4 (stop mirroring)** remains the root-cause fix and remains the
+  largest.
+
+The `cand3 / neither` 203 are worth their own look — a block whose `lean.ref`
+resolves only by basename guess, to a file carrying nobody's label, is a
+different defect from drift and is adjacent to `qou-2u26` / `qou-cu0a`. Not
+opened as a bean here; measured and recorded so whoever wants it has the number.
+
+Scripts: `measure-option2.ts` and `sample-338.ts` in the session scratchpad.
+Both use the canonical resolver; re-run before quoting.
