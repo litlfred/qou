@@ -96,6 +96,47 @@ convention-*free* — moves as well. Crossing-counting alone therefore does not
 determine it, which is a genuine open sub-question this audit does **not**
 close.
 
+## The D-frame law is now PINNED EXACTLY at the deuteron
+
+`markov/peel_anchor_identification_probe.py` computes `tr_M_atomic` as an
+**integer-coefficient rational function of q with no anchor in it** — so its
+denominator *is* the D-frame `D(u)`, not an approximation of it. For the
+deuteron (numerator degree 50):
+
+    denominator : 192*q**23*(q**2 + 1)**3      at q = u^2 ->  192 * u^46 * (1+u^4)^3
+
+Against the C-frame law at (Z,N) = (1,1):
+
+| factor | C-frame law | D-frame, exact | |
+|---|---|---|---|
+| prefactor | `2^(2A+1)` = **32** | **192** | ×6 |
+| u-exponent | `18Z+21N+1` = **40** | **46** | +6 |
+| cyclotomic | `(1+u²)^(3A−1)` = `^5` | `(1+u⁴)^3` | base *and* exponent |
+
+Both fields `qou-iayk` recorded for the fresh Habiro deuteron — prefactor 192,
+exponent 46 — are reproduced **exactly** by this independent exact computation.
+That settles reading (a): the fresh values are not a producer defect.
+
+It also independently corroborates the convention identification. The peel
+probe writes convention C as `1/(√q + q^{-1/2})` — the *same* spelling as
+`d_u_closed_form_proof.py:18` — and notes that C "would leave half-integer
+powers of q behind", which is why the `(q²+1)` factorisation is itself a
+structural convention test.
+
+### The remaining open piece, stated precisely
+
+The cyclotomic **exponent** moves 5 → 3, and clearing `z` does not explain
+that. `z_D^(n−1)` with `n = 3A = 6` would give `(1+u⁴)^5`, not `^3`. The probe
+says `(q²+1)` appears **"once per Markov peel"** — three peels for the
+deuteron — where the C law used `z^(n−1)` — five. Those are two different
+countings, and only one data point is in hand.
+
+So the D-frame law is **exact at the deuteron and not yet general**: the
+`(Z,N)` dependence of all three factors needs the other atoms. `12Z+20N+14`
+fits the four recorded exponents and is now corroborated at the deuteron by
+this exact route — but it remains a fit for T, ³He and ⁴He until each is
+computed the same way.
+
 ## This is the SECOND instance of a documented pattern, not a new theory
 
 PR #5265 §0 (merged 2026-08-19) reached the same structural conclusion by a
@@ -134,7 +175,8 @@ is wrong. Two for two so far, on independent objects.
 
 ## Not claimed
 
-- No re-derived D-frame law is landed here; this establishes that one is
-  *needed* and identifies which factor is definitional.
+- No **general** re-derived D-frame law is landed here. The deuteron case is
+  now exact (above); the `(Z,N)` dependence is not, and the cyclotomic
+  exponent's counting rule is open.
 - The Habiro regeneration is **not** unblocked by this alone — it should land
   together with the re-derived law, or the same mismatch recurs.
