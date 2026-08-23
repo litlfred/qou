@@ -27,6 +27,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+import mpmath as _mp  # noqa: E402
 
 AME2020_DATA = {}
 try:
@@ -85,6 +86,24 @@ ELEMENT_NAMES = {
 }
 
 
+def _num(v):
+    """Coerce a witness field to mpf for arithmetic.
+
+    Witness numerics are serialized as full-precision STRINGS (`_precision.fmt`),
+    so `field * 1000.0` raises TypeError: can't multiply sequence by float. This
+    renderer predates that change and had been dying on the first row it reached.
+    mpf, not float, so a 28-digit ppm value is not truncated on the way to a
+    display that only needs a few of them -- the coercion should not be where
+    precision is lost.
+    """
+    if v is None:
+        return None
+    try:
+        return _mp.mpf(v)
+    except (TypeError, ValueError):
+        return None
+
+
 def _fmt(v, fmt: str = "{:.4f}") -> str:
     if v is None:
         return "—"
@@ -130,7 +149,7 @@ def render_row(r: dict) -> str:
             bind_total_ref = ame.get("binding_energy_total_keV")
             if bind_unc_per_a is not None and bind_total_ref is not None and bind_total_ref != 0:
                 bind_unc_total = bind_unc_per_a * r["A"]
-                exp_bind_ppm = (bind_unc_total / bind_total_ref) * 1e6
+                exp_bind_ppm = (_num(bind_unc_total) / _num(bind_total_ref)) * 1000000
                 exp_bind_ppm_str = f" $\\pm$ {exp_bind_ppm:.4f}"
                 
         err_cell = f"{err}{exp_bind_ppm_str}"
@@ -143,7 +162,7 @@ def render_row(r: dict) -> str:
     
     cm_ppm_val = cm.get("err_ppm")
     if cm_ppm_val is not None:
-        cm_ppb = _fmt(cm_ppm_val * 1000.0, "{:+.2f}")
+        cm_ppb = _fmt(_num(cm_ppm_val) * 1000, "{:+.2f}")
         cm_cell_err = f"{cm_ppb}"
     else:
         cm_cell_err = "—"
@@ -158,7 +177,7 @@ def render_row(r: dict) -> str:
         unc = ame.get("atomic_mass_unc_micro_u")
         val = ame.get("atomic_mass_micro_u")
         if unc is not None and val is not None and val != 0:
-            exp_ppb = (unc / val) * 1e9
+            exp_ppb = (_num(unc) / _num(val)) * 1000000000
             cm_cell_err_exp = f"{exp_ppb:.2f}"
             
     # Combine pred and exp mass error
@@ -177,7 +196,7 @@ def render_row(r: dict) -> str:
     if cm_ref != "—":
         try:
             cal3_err_mev = r["N"] * 6.1e-7
-            m_ref_val = float(cm.get("M_AME_MeV"))
+            m_ref_val = _num(cm.get("M_AME_MeV"))
             if m_ref_val > 0:
                 cal3_ppb = (cal3_err_mev / m_ref_val) * 1e9
                 cal3_cell = f"±{cal3_ppb:.2f}"
