@@ -1,7 +1,7 @@
 {
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "commitSha": "de21861068134deceb1da50a10b6451d2890e7a8",
   "compute": "yekutieli_mi_k3_structural_h6_scaffold",
-  "computedAt": "2026-08-23T10:00:28.304038+00:00",
+  "computedAt": "2026-08-23T19:56:02.643878+00:00",
   "description": "Path B scaffold step 1: extract the structural h\u2076 coefficient of the Borromean Markov trace closed form, and solve for the C_6 required to close each anchor's Higgs residual with the augmented formula m_H = m_anchor \u00b7 (P/P) \u00b7 (6/5) \u00b7 (1 - h\u2074\u00b72G - h\u2076\u00b7C_6). Confirms PR #1167's negative finding that no single C_6 closes both anchors, and identifies the research-grade ~1 month CBH expansion needed for full closure.",
   "durationMs": 0,
   "engine": "sympy",
@@ -11,14 +11,14 @@
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "required_C_6": {
-    "difference": -134.1542951490419,
-    "from_W_anchor": -81.63990781203869,
-    "from_Z_anchor": 52.5143873370032,
+    "difference": -126.22063343475659,
+    "from_W_anchor": -68.15827588897348,
+    "from_Z_anchor": 58.06235754578311,
     "single_coefficient_works": false
   },
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "yekutieli_mi_k3_h6_scaffold.py",
-  "scriptHash": "05199c16fa99",
+  "scriptHash": "031442cb17a4",
   "status": "exploratory",
   "structural_candidates_tested": [
     {
@@ -71,5 +71,5 @@
     "path-b-scaffold",
     "higgs-residual-research-grade"
   ],
-  "verdict": "Single C_6 FAILS to close both anchors (confirms PR #1167). Required C_6 differs by -134.1543 between W and Z. The structural Borromean Markov h\u2076 = -1/16 does not match either anchor. Full Path B closure requires the 64-cell CBH expansion (research-grade ~1 month) to capture cross-cell h\u2076 contributions beyond the bare Borromean term."
+  "verdict": "Single C_6 FAILS to close both anchors (confirms PR #1167). Required C_6 differs by -126.2206 between W and Z. The structural Borromean Markov h\u2076 = -1/16 does not match either anchor. Full Path B closure requires the 64-cell CBH expansion (research-grade ~1 month) to capture cross-cell h\u2076 contributions beyond the bare Borromean term."
 }

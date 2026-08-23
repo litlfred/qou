@@ -1,14 +1,14 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T08:58:54.809524+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T19:56:01.770752+00:00",
+  "commitSha": "de21861068134deceb1da50a10b6451d2890e7a8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "crystal-yekutieli-probes-abcd",
   "scriptFile": "crystal_yekutieli_probes_abcd.py",
-  "scriptHash": "e8b23f8ed81c",
+  "scriptHash": "ebbbd5b1d252",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -83,7 +83,7 @@
     "verdict": "NEGATIVE — no naive bijection"
   },
   "probe_b_wedderburn_vs_closed": {
-    "chi_std_at_q0": 1.9942421595069573,
+    "chi_std_at_q0": 1.9941858129799641,
     "verdict": "Structural form CONFIRMED — algebraic Wedderburn matches"
   },
   "probe_c_jet_distance_hypothesis": {
@@ -92,9 +92,9 @@
     "verdict": "NEGATIVE for simple distance hypothesis. Crystal-graph diameter = 2 underestimates h-order = 6. Refinement (distance × generators-per-step) might match but is speculative without deeper crystal-graph computation."
   },
   "probe_d_multi_tessellation_consistency": {
-    "R1_closed_form_at_substrate": 0.9985760239840343,
-    "R3_jones_over_bracket2_at_substrate": 0.9918374967728644,
-    "abs_diff_R1_R3": 0.0067385272111699646,
+    "R1_closed_form_at_substrate": 0.9985621638367873,
+    "R3_jones_over_bracket2_at_substrate": 0.9917979054017241,
+    "abs_diff_R1_R3": 0.006764258435063231,
     "symbolic_residual": "h**2*(-135*h**4 - 1528*h**2 + 384)/2048",
     "verdict": "INCONCLUSIVE — R1 (framework-cited closed form) ≠ R3 (Jones polynomial / [2]_q² with my normalization). Numerical diff at substrate ≈ 6.74e-3. Symbolic h-series residual: h²·(-135h⁴ − 1528h² + 384)/2048, nonzero. This reflects normalization convention differences between the Markov trace and the Jones polynomial (writhe factors), NOT a failure of tessellation-coordinate-freedom. To properly test the audit §11 claim, both routes need to be at matching framing. Probe D as written conflates normalization with tessellation choice; needs redo."
   },
