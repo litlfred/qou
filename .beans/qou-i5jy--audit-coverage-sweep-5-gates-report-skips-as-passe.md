@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T13:40:00Z
+updated_at: 2026-08-23T14:05:00Z
 ---
 
 
@@ -501,3 +501,91 @@ wrong answer with a crash in a script whose whole purpose is to print evidence.
 Recording the health beside the result keeps every existing signature and every
 existing call site intact. The bean's earlier suggestion is superseded, not
 forgotten.
+
+---
+
+## Finding #2 — reporting half FIXED 2026-08-23; the decision half remains the owner's
+
+The bean split this item into a *measurement* defect and a *decision* it is
+blocked on. The measurement half needed no decision and is done; the 359
+witnesses still need one.
+
+### First, a narrowing of my own claim
+
+I wrote that the dropped witnesses are *"dropped silently."* In the **output**,
+yes. In the **header**, no — the METHOD paragraph already says *"For each
+committed `*.witness.json` **that names a `scriptFile`**"*, which discloses the
+286-witness precondition up front. What it does not disclose is what happens
+when the named producer is not beside the witness (the other 73), and neither
+disclosure reaches the printed report, which is what a reader acts on. The
+report showed `producers checked N` with **no denominator at all**, so nothing
+on screen let a reader compute coverage. That is the defect, and it is narrower
+than "silently excluded."
+
+### Re-measured, and the earlier figures hold
+
+`--scope-only`, against the current corpus:
+
+```
+    witnesses scanned                2719
+    witnesses w/ producer resolved   2360   [86.8% EVALUATED]
+    witnesses NOT evaluated          359
+      no scriptFile field            286
+      producer not beside witness    73
+      unparseable                    0
+```
+
+The two classes match my earlier independent measurement **exactly** (286 / 73);
+the totals moved 2715 → 2719 and 2356 → 2360 because `main` advanced between
+the two runs. So the figure in this bean is confirmed, not merely repeated.
+
+### Changes
+
+1. `_producers` returns `(out, scope)` and **counts** every witness it declines
+   to map, instead of `continue`-ing past it.
+2. `_print_scope` prints the denominator in the report, above the existing
+   counts, with the note that a witness whose producer cannot be located is the
+   **maximal case of this audit's thesis, not an exemption from it** — plus
+   three worked examples per class, so the reader sees the shape of what was
+   dropped rather than only its size.
+3. **`--scope-only`** computes the accounting and exits without importing
+   anything or writing a witness. The full audit spawns a subprocess import per
+   producer; coverage should not cost that.
+4. The units are named. `scope` counts **witnesses**; `producers checked` counts
+   **distinct producer files** and is necessarily smaller — one producer can
+   emit several witnesses. Printing the two adjacently without saying so was an
+   invitation to read a coverage figure as a producer count.
+5. `wb.add_data("scope", scope)` so the artefact carries the denominator too.
+
+### The repo's own float64 guard caught my first version
+
+The initial patch stored `evaluated_fraction = round(resolved/scanned, 4)`, and
+the raw-float64 guard fired on the `--limit 3` verification run:
+
+> `⚠ raw-float64: … 1 raw float64 field(s) would enter the witness —
+> .data.scope.evaluated_fraction`
+
+Correct, and the right fix was not to serialize it more carefully but to **not
+store a ratio at all**: the two integers are exact, the fraction is derivable,
+and a coverage ratio needs no precision policy. The percentage is now computed
+in `_print_scope` for display only. Recorded because it is this bean's pattern
+inverted — a guard that fired, on the right field, with the right instruction.
+
+### Verification discipline
+
+`producer-importability-audit.witness.json` was snapshotted to scratchpad
+**before** any run, and restored from that snapshot after each `--limit 3`
+verification (a 3-producer run must never be committed as the audit's witness).
+`git status` confirmed byte-clean afterwards both times. `--scope-only` writes
+no witness at all, which is why it is the path used for the numbers above.
+
+### STILL THE OWNER'S CALL — unchanged by this commit
+
+What to *do* with the 359. They are not a reporting problem now, they are a
+corpus problem: 286 witnesses name no producer, and 73 name one that is not
+where the witness says it is (e.g. `qbeta-closed-form-wiring-n4-to-n10.witness.json
+-> qbeta_closed_form_wiring_n4_to_n10.py`, absent). Each is a committed number
+that **no staleness mechanism in the corpus can ever check**. Options are
+`qou-cds3`-adjacent (regenerate / relocate the producer / mark provenance-dead),
+and picking among them is a scope decision, not a coverage fix. The exit code is
+likewise unchanged: `--strict` still fails only on `in-repo-wiring`.
