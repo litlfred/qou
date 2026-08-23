@@ -128,6 +128,30 @@ theorem sq_mul_le_two_mul_of_sum_le {θ r S : ℚ} (hr : 0 < r) (hθ : 0 ≤ θ)
     nlinarith [mul_le_mul_of_nonneg_left hKlt hKnn]
   nlinarith [hkey, hdiv, mul_le_mul_of_nonneg_right hKge hθ]
 
+/-! ### Non-vacuity
+
+Two guards.  The first shows the `max 0` is load-bearing rather than decorative; the second
+shows the hypothesis stack of `sq_mul_le_two_mul_of_sum_le` is satisfiable at a point where
+the truncation is active. -/
+
+/-- **The truncation is doing work.**  At `θ = 1`, `r = 1`, `n = 3` the truncated sum is `1`
+(terms `1, 0, 0`) while the untruncated sum `∑ (θ − ν/r)` is `0` (terms `1, 0, −1`).
+
+They differ, so no reading of the theorem in which `max 0` is dropped is the same theorem —
+and the untruncated version is the *smaller* quantity, which is the wrong direction for a
+lower bound on a sum being estimated from above. -/
+theorem sum_max_truncation_active :
+    (∑ ν ∈ range 3, max 0 ((1 : ℚ) - (ν : ℚ) / 1) = 1) ∧
+      (∑ ν ∈ range 3, ((1 : ℚ) - (ν : ℚ) / 1) = 0) := by
+  constructor <;> norm_num [Finset.sum_range_succ]
+
+/-- **Satisfiability at that instance.**  With `θ = 1`, `r = 1`, `n = 3`, `S = 1` every
+hypothesis holds and the conclusion reads `1 ≤ 2`. -/
+theorem sq_mul_le_two_mul_witness : (1 : ℚ) ^ 2 * 1 ≤ 2 * 1 :=
+  sq_mul_le_two_mul_of_sum_le (n := 3) one_pos zero_le_one (by norm_num)
+    (by norm_num [Finset.sum_range_succ])
+
+
 /-! ### Next
 
 Wiring this into `RothInductionStep`: the sum `∑_{ν<n} max(0, θ − ν/r)` has to be produced

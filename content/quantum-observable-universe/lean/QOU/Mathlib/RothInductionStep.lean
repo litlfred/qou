@@ -35,6 +35,7 @@ import QOU.Mathlib.SeparatedWronskian
 import QOU.Mathlib.SeparatedIndex
 import QOU.Mathlib.SeparatedHeight
 import QOU.Mathlib.WronskianIndex
+import QOU.Mathlib.RothRecursionArith
 
 namespace MvPolynomial
 
@@ -284,20 +285,106 @@ theorem index_le_of_rescaled_factor_bounds {K : Type*} [CommRing K] [IsDomain K]
   have : (r : ℚ) * θ ≤ (r : ℚ) * (εU + εV + C) := by linarith
   exact le_of_mul_le_mul_left this hrQ
 
+/-! ### The square-root conclusion — what the sixth correction was missing
+
+`index_le_of_rescaled_factor_bounds` above is the *linear* shape: it divides the summed
+inequality through by `r` and reads off `θ ≤ εU + εV + C`.  The sixth correction recorded
+that this is not strong enough, and the reading of Mahler §13 says why: dividing through
+linearly throws away the fact that the per-column cost **grows with the column**.
+
+Mahler's argument instead splits on the cut-off `N = ⌊(J(A) − t)·r⌋ + 1` — the column past
+which `t + ν/r` already exceeds the index, so the column contributes nothing.  Keeping the
+truncation gives a sum of `r` terms of which only the first `N` are positive, and estimating
+*that* gives a bound on `(θ − t)²`, not on `θ − t`.  The square root is the whole gain.
+
+`sq_index_le_of_det_bound` is that conclusion, assembled from two halves proved separately:
+
+* `sum_max_le_index_det` (`QOU/Mathlib/WronskianIndex.lean`) — index side, `WithTop ℚ`,
+  turns `index_det_ge` plus a growing per-column cost into `∑_{ν<r} max(0, θ−t−ν/rr)`;
+* `RothArith.sq_mul_le_two_mul_of_sum_le` (`QOU/Mathlib/RothRecursionArith.lean`) — pure
+  rational arithmetic, turns a bound on that truncated sum into `(θ−t)² · rr ≤ 2S`.
+
+⚠ **Provenance caveat.**  The constants in `RothRecursionArith` were reconstructed from a
+partly illegible scan of Mahler §13.  The *shape* — truncated sum, square-root conclusion —
+is what the source shows and what is proved here; the numeric bookkeeping should be re-derived
+against a clean copy before any downstream constant (`ω(m, ε)`, `c_m = 2^m − 3`) is trusted.
+
+⚠ This does **not** yet make the recursion run.  It replaces a shape that was known to be too
+weak with one that is the right shape; whether the resulting constants close the induction is
+the next thing to check, and is a question about `ω`, not about these two halves. -/
+
+/-- **The square-root bound.**  With a lower bound `θ` on `index P`, per-column operator costs
+bounded by `t + j/rr`, and an upper bound `S` on the index of the determinant, the excess
+`θ − t` satisfies `(θ − t)² · rr ≤ 2S`.
+
+The hypothesis `hn : (θ − t)·rr ≤ r` is Mahler's "the cut-off falls inside the matrix" — it
+says the determinant has at least as many columns as the truncation needs.  Without it the
+sum over `Fin r` is missing positive terms and the conclusion is false. -/
+theorem sq_index_le_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S : ℚ)
+    (hrr : 0 < rr) (hθt : t ≤ θ) (hn : (θ - t) * rr ≤ (r : ℚ))
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    (θ - t) ^ 2 * rr ≤ 2 * S := by
+  have hbridge := sum_max_le_index_det d α D P θ t rr hθ hc
+  have hsum : (∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) ≤ S := by
+    have h := le_trans hbridge hS
+    exact_mod_cast h
+  rw [Fin.sum_univ_eq_sum_range (fun ν => max 0 (θ - t - (ν : ℚ) / rr)) r] at hsum
+  exact RothArith.sq_mul_le_two_mul_of_sum_le hrr (by linarith) hn hsum
+
+
+
+/-- **Satisfiability of `sq_index_le_of_det_bound`.**  One variable, unit weight, the origin,
+`P = X₀`, a `1 × 1` matrix whose only operator list is empty: `θ = 1`, `t = 0`, `rr = 1`,
+`S = 1`, and the conclusion reads `1 ≤ 2`.
+
+⚠ Read this for what it is.  It certifies that the four hypotheses are **jointly
+satisfiable** — a stack of side conditions that silently contradict each other would make the
+theorem vacuous, and this rules that out.  It does **not** exercise the truncation: with
+`r = 1` there is only one column and nothing is clipped.  The guard for the truncation itself
+is `RothArith.sum_max_truncation_active`, where it is cheap to state exactly. -/
+theorem sq_index_le_of_det_bound_witness : ((1 : ℚ) - 0) ^ 2 * 1 ≤ 2 * 1 :=
+  sq_index_le_of_det_bound (σ := Fin 1) (R := ℚ) (r := 1)
+    (fun _ => 1) (fun _ => (0 : ℚ)) (fun _ _ => []) (X 0) 1 0 1 1
+    one_pos (by norm_num) (by norm_num)
+    (by rw [index_X])
+    (by intro i j; simp)
+    (by
+      rw [Matrix.det_fin_one]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (pderivList ([] : List (Fin 1)) (X 0 : MvPolynomial (Fin 1) ℚ))
+          ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [pderivList_nil]
+      show index (fun _ : Fin 1 => 1) (fun _ : Fin 1 => (0 : ℚ))
+        (X 0 : MvPolynomial (Fin 1) ℚ) ≤ (((1 : ℚ)) : WithTop ℚ)
+      rw [index_X])
+
 /-! ### Next
 
 The statement is now written (`QOU/Mathlib/RothLemmaStatement.lean`), its `m = 1` case proved,
 and the step's inputs are all constructible (`SeparatedRepresentation`).  With
 `sum_index_le_index_sepW_add` above, the step's key *inequality* is proved too.
 
-⚠ What remains is the **recursion**: choosing `ω(m, ε)`, choosing the operator families `Dx`,
-`Dy` with bounded order, and doing the arithmetic that turns the inequality plus the induction
-hypothesis into a contradiction.
+The **constant regime** is no longer where it was.  `index_le_of_rescaled_factor_bounds`
+improved the error term by a factor `r` without making it small, and the sixth correction
+recorded that this was not enough.  `sq_index_le_of_det_bound` shows why it could not be:
+the loss was not in the ingredients but in *dividing through linearly*, which discards the
+truncation.  With the truncated sum the conclusion is on `(θ − t)²`, and the excess is
+controlled by `√(2S/rr)` rather than by `S`.
 
-⚠ And, ahead of the recursion, the **constant regime**.  The rescaling is now applied
-(`index_le_of_rescaled_factor_bounds`), and it improved the error term by a factor `r` without
-making it small.  Until that is repaired — upstream of these statements, since each step here
-is tight given only "operators have order at most `r`" — the recursion has nothing usable to
-run on. -/
+⚠ What remains is the **recursion**: choosing `ω(m, ε)`, choosing the operator families `Dx`,
+`Dy` with bounded order so that `hc`'s per-column cost `t + j/rr` actually holds, and doing
+the arithmetic that turns `sq_index_le_of_det_bound` plus the induction hypothesis into a
+contradiction.  Only the last of those is now a question about constants; the first two are
+constructions.
+
+⚠ Provenance, carried forward from `RothRecursionArith`: those constants come from a partly
+illegible scan.  Re-derive them against a clean copy of Mahler §13 before `ω(m, ε)` or
+`c_m = 2^m − 3` is asserted anywhere. -/
 
 end MvPolynomial

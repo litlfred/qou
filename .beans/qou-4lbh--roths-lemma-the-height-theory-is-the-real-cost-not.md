@@ -1544,3 +1544,86 @@ it in should re-derive against a clean copy.
 
 Verification: all nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+---
+
+## 2026-08-23 — the sixth correction is repaired: the bound is square-root, not linear
+
+Open item 1 from the previous entry is done. The two halves that were proved separately are
+now joined, so the arc no longer has an arithmetic lemma sitting beside an index lemma with
+nothing between them.
+
+### What landed
+
+`QOU/Mathlib/WronskianIndex.lean` (index side, `WithTop ℚ`, general `[CommRing R]`):
+
+```
+coe_sum_withTop       (∑ f i : ℚ) ↑ = ∑ (f i)↑            — by Finset induction; WithTop ℚ
+                                                            is not a semiring, so no map_sum
+coe_sub_le_of_le_add  θ ≤ x + c  ⊢  θ − c ≤ x             — case split on x = ⊤
+sum_max_le_index_det  ∑_{j<r} max(0, θ − t − j/rr)
+                        ≤ index (det (∂_{D i j} P))       — the bridge
+```
+
+`QOU/Mathlib/RothInductionStep.lean` (the join):
+
+```
+sq_index_le_of_det_bound   (θ − t)² · rr ≤ 2S
+```
+
+from `sum_max_le_index_det` + `RothArith.sq_mul_le_two_mul_of_sum_le`.
+
+### Why this is the repair and not another lemma
+
+The sixth correction said `index_le_of_rescaled_factor_bounds` was too weak and that the loss
+looked structural. It was not structural — it was in **dividing the summed inequality through
+linearly**, which discards the fact that the per-column cost `t + ν/rr` *grows*. Columns past
+the cut-off `(θ−t)·rr` contribute nothing but `index ≥ 0`; keeping that truncation is what
+turns a bound on `θ − t` into a bound on `(θ − t)²`. The `max 0` in `sum_max_le_index_det` is
+that truncation, and it is where the whole gain lives.
+
+Two details worth recording, because both were places the proof could have gone wrong:
+
+* `index_det_ge` bounds the determinant's index below by the `Finset.inf` over permutations,
+  not by any particular diagonal. `sum_max_le_index_det` picks the minimising `p₀` with
+  `Finset.exists_mem_eq_inf` and bounds *its* diagonal — sound only because the cost
+  hypothesis `hc` is uniform in the row index `i`. A per-`(i,j)` cost that varied in `i`
+  would not survive this step.
+* The `max 0` cannot be dropped. `sum_max_truncation_active` computes both sums at
+  `θ = 1, r = 1, n = 3`: truncated `= 1`, untruncated `= 0`. The untruncated one is *smaller*,
+  which is the wrong direction — a version without `max` would not just be weaker, it would
+  be estimating the wrong quantity.
+
+### Non-vacuity
+
+- `RothArith.sum_max_truncation_active` — the truncation changes the value (above).
+- `RothArith.sq_mul_le_two_mul_witness` — hypotheses satisfiable at `θ=1, r=1, n=3, S=1`.
+- `MvPolynomial.sq_index_le_of_det_bound_witness` — hypotheses jointly satisfiable at
+  `σ = Fin 1`, `P = X₀`, `r = 1`. ⚠ Stated in its own docstring: this certifies
+  satisfiability only; with `r = 1` there is one column and **nothing is clipped**, so it does
+  not exercise the truncation. That is what the first witness is for.
+
+### Status, stated honestly
+
+What is now true: the arc has the **right shape** for §13's conclusion, Lean-checked, on the
+standard axiom set. What is **not** established: that the constants close the induction. That
+is a question about `ω(m, ε)`, and it is downstream of the provenance caveat below.
+
+⚠ **Provenance, carried forward.** `RothRecursionArith`'s constants were reconstructed from a
+partly illegible scan of Mahler §13. The structure — truncated sum, square-root conclusion —
+is what the source shows and what is proved. The numeric bookkeeping is not established
+against a clean copy, and no downstream constant should be asserted until it is.
+
+### Open
+
+1. Choose the operator families `Dx`, `Dy` so that `hc`'s per-column cost `t + j/rr` actually
+   holds — a construction, not an estimate, and the last input `sq_index_le_of_det_bound`
+   needs that the arc does not have.
+2. `index_mul_eq` — Mahler's property (B) is an **equality** `J(AB) = J(A) + J(B)`; the arc
+   has only `index_mul_ge` plus `index_separated` for the disjoint case. §12 appears to use
+   only the disjoint case, so this may not be needed; check before proving it.
+3. Then `ω(m, ε)` and `c_m = 2^m − 3`.
+
+Verification: all nineteen arc modules rebuilt with `.olean`s deleted — exit 0, no errors and
+no linter output. All seven new/underlying declarations `#print axioms`-clean on
+`[propext, Classical.choice, Quot.sound]`.

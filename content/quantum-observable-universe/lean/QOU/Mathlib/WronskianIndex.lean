@@ -214,16 +214,108 @@ theorem sum_index_mvGenWronskian_bound_tight :
   rw [hW, h1, Fin.sum_univ_one, index_X]
   norm_num
 
+/-! ### The truncated-sum shape Mahler §13 actually needs
+
+The three theorems below take the *last* step of the index side from
+"`index_det_ge` gives a lower bound in terms of the entries" to the concrete
+`∑_{ν<r} max(0, θ − t − ν/rr)` that `QOU/Mathlib/RothRecursionArith.lean` consumes.
+
+⚠ This is the shape that the arc's **sixth correction** identified as missing.  The
+error was not in any lemma; it was the assumption that once the per-column cost is
+`t + ν/rr`, the conclusion follows by dividing through *linearly*.  It does not — the
+columns whose cost already exceeds `θ` contribute nothing, so the sum is truncated, and
+truncation is what turns the bound from linear into the square root of `RothArith`. -/
+
+/-- Casting a rational sum into `WithTop ℚ` distributes over the sum.
+
+`WithTop ℚ` has no `RingHom` from `ℚ` to push through (it is not a semiring), so this is
+proved by induction on the `Finset` rather than by `map_sum`. -/
+theorem coe_sum_withTop {ι : Type*} (s : Finset ι) (f : ι → ℚ) :
+    ((∑ i ∈ s, f i : ℚ) : WithTop ℚ) = ∑ i ∈ s, ((f i : ℚ) : WithTop ℚ) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp
+  | insert a s ha ih => rw [Finset.sum_insert ha, Finset.sum_insert ha, WithTop.coe_add, ih]
+
+/-- Subtraction against a `WithTop ℚ` upper summand.
+
+`WithTop ℚ` has no subtraction worth using, so `θ ≤ x + c ⊢ θ − c ≤ x` has to be done by
+case-splitting on `x = ⊤` and descending to `ℚ` on the other branch. -/
+theorem coe_sub_le_of_le_add {θ c : ℚ} {x : WithTop ℚ}
+    (h : ((θ : ℚ) : WithTop ℚ) ≤ x + ((c : ℚ) : WithTop ℚ)) :
+    ((θ - c : ℚ) : WithTop ℚ) ≤ x := by
+  rcases eq_or_ne x ⊤ with rfl | hx
+  · exact le_top
+  · obtain ⟨a, rfl⟩ := WithTop.ne_top_iff_exists.mp hx
+    rw [← WithTop.coe_add, WithTop.coe_le_coe] at h
+    rw [WithTop.coe_le_coe]
+    linarith
+
+/-- **The bridge.**  A lower bound `θ` on `index P`, plus a per-column cost bound
+`t + j/rr` on the operator lists `D i j`, gives the truncated-sum lower bound on the
+determinant's index.
+
+The `max 0` is the whole point: `index_le_index_pderivList_add` gives
+`index P ≤ index (∂_{D i j} P) + cost`, so column `j` contributes at least `θ − t − j/rr`
+*only while that is positive*; past the cut-off all it contributes is `index ≥ 0`.  A
+formulation without the `max` would be false for every column past `(θ−t)·rr`.
+
+Note the permutation `p₀`: `index_det_ge` bounds `index (det M)` below by the `Finset.inf`
+over permutations, so we pick the minimising one and bound *its* diagonal.  The cost
+hypothesis is uniform in `i`, so the choice of `p₀` costs nothing. -/
+theorem sum_max_le_index_det [DecidableEq σ] {r : ℕ} (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr : ℚ)
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr) :
+    ((∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) : WithTop ℚ)
+      ≤ index d α (Matrix.of fun i j => pderivList (D i j) P).det := by
+  classical
+  set M : Matrix (Fin r) (Fin r) (MvPolynomial σ R) :=
+    Matrix.of fun i j => pderivList (D i j) P with hM
+  obtain ⟨p₀, -, hp₀⟩ := Finset.exists_mem_eq_inf (Finset.univ : Finset (Equiv.Perm (Fin r)))
+    Finset.univ_nonempty (fun p => ∑ i : Fin r, index d α (M (p i) i))
+  have hdet : ∑ i : Fin r, index d α (M (p₀ i) i) ≤ index d α M.det := by
+    rw [← hp₀]; exact index_det_ge d α _
+  have hterm : ∀ j : Fin r,
+      ((max 0 (θ - t - (j : ℚ) / rr) : ℚ) : WithTop ℚ) ≤ index d α (M (p₀ j) j) := by
+    intro j
+    have hentry : M (p₀ j) j = pderivList (D (p₀ j) j) P := rfl
+    have h1 : index d α P
+        ≤ index d α (M (p₀ j) j) + (((t + (j : ℚ) / rr : ℚ)) : WithTop ℚ) := by
+      rw [hentry]
+      exact le_trans (index_le_index_pderivList_add d α (D (p₀ j) j) P)
+        (add_le_add_left (WithTop.coe_le_coe.mpr (hc _ _)) _)
+    have h2 := le_trans hθ h1
+    rcases le_or_gt (θ - t - (j : ℚ) / rr) 0 with hle | hlt
+    · rw [max_eq_left hle]
+      simpa using index_nonneg d α (M (p₀ j) j)
+    · rw [max_eq_right hlt.le]
+      have := coe_sub_le_of_le_add h2
+      rwa [show θ - (t + (j : ℚ) / rr) = θ - t - (j : ℚ) / rr by ring] at this
+  calc ((∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) : WithTop ℚ)
+      = ∑ j : Fin r, ((max 0 (θ - t - (j : ℚ) / rr) : ℚ) : WithTop ℚ) := coe_sum_withTop _ _
+    _ ≤ ∑ j : Fin r, index d α (M (p₀ j) j) := Finset.sum_le_sum (fun j _ => hterm j)
+    _ ≤ index d α M.det := hdet
+
+
 /-! ### Next
 
 Both halves of what the induction needs from a Wronskian are now composites rather than
-fragments: `abs_coeff_mvGenWronskian_le` bounds its height, this bounds its index, and
-`index_separated` / `abs_coeff_le_of_mul_separated` carry both across the separated
-factorization to the two factors.
+fragments: `abs_coeff_mvGenWronskian_le` bounds its height, `sum_index_le_index_mvGenWronskian_add`
+bounds its index, and `index_separated` / `abs_coeff_le_of_mul_separated` carry both across
+the separated factorization to the two factors.
+
+`sum_max_le_index_det` above adds the piece those composites were missing: when the per-column
+cost is allowed to *grow* with the column (`t + ν/rr`, which is what a bounded-order operator
+family actually gives), the resulting lower bound on the determinant's index is a **truncated**
+sum, not a linear one.  Feeding it to `RothArith.sq_mul_le_two_mul_of_sum_le` is done in
+`QOU/Mathlib/RothInductionStep.lean` as `sq_index_le_of_det_bound`.
 
 ⚠ What remains is the **recursion** — Roth's lemma's statement with its parameter conditions
 (`dⱼ/dⱼ₊₁` growth, `ε`, the `qⱼ` hypotheses) and the step feeding `RothBaseCase` and the `m−1`
-case back into the `m` case.
+case back into the `m` case.  What `sq_index_le_of_det_bound` supplies is the *shape* of that
+recursion's conclusion (`(θ−t)² · rr ≤ 2S`); choosing `ω(m, ε)` still has to be done.
 
 ⚠ And a standing caution, earned: this module exists because a *prose* claim about what was
 "bounded" turned out false.  The next such claim should be checked by writing Roth's lemma's
