@@ -85,7 +85,28 @@ _T0 = time.monotonic()
 
 #: Ratchet on literals that DIVERGE from the canonical pin (not mere
 #: truncations). Drains as sites are migrated to read the pin; must never grow.
-BASELINE_DIVERGENT = 71
+#:
+#: 72 -> 61 (PR #5535), in two steps.
+#:
+#: 72 -> 69: the char-52 family is gone -- `q0_anchor_gate_test` and
+#: `mu3_anchor_consistency_probe` both transcribed the anchor and both got its
+#: tail wrong from digit 52 -- and `probe_qbeta_form` took char-18 from 2 to 1.
+#: All three now READ `_q0_value_for_anchor("muon")`.
+#:
+#: 69 -> 61: eight PRINT-ONLY sites. A file that emits no witness costs nothing
+#: to migrate, so "defer until #5500" never applied to it; that was established
+#: by scanning for `WitnessBuilder` / `json.dump` / `.save(`, not assumed from
+#: the family label. All eight re-run at exit 0 with their assertions intact.
+#:
+#: The remaining 61 are classified in `q0-literal-classification.json`: only
+#: **37** are class-(a) defects, and each says WHY it is deferred --
+#: 32 cost (emits a witness, so reading the anchor regenerates it twice, B->A
+#: now and A->C at #5500) and 5 correctness (a frozen tr_M or a B-built
+#: y_lambda beside it, so moving q0 alone CREATES a straddle). 24 are class
+#: (b) / (c) / (d): do NOT count this number as a defect backlog, and do NOT
+#: migrate a class-(b) site -- the code names a superseded value in order to
+#: detect it, so re-pinning one disables the check it powers.
+BASELINE_DIVERGENT = 61
 
 
 def ratchet_fires(count: int, baseline: int) -> bool:
