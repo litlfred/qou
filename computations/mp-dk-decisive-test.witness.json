@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:17.922391+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-23T21:09:12.034151+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "d4_drifts_with_q0",
@@ -18,7 +18,7 @@
   "computation": "mp-dk-decisive-test",
   "scriptFile": "mp_dk_decisive_test.py",
   "scriptHash": "a6b6419599aa",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mp_dk_decisive_test.py"
+    ],
+    "reproduce": "python3 -u computations/mp_dk_decisive_test.py"
   },
   "description": "Decisive test: are the m_p brane-tower d_k (d_4 = 46, etc.) stable categorical derivations or stale-q₀ near-matches? Recomputes the d_k from the fixed N=0 substrate formula at both the stale muon-pin q₀ (witness value) and the canonical m_p-pin q₀, and reports the drift. Mirrors the item-1 c_k decisive test (qbeta-delta-tr-vs-formA). Zero free parameters.",
   "contentBlock": "prop:proton-brane-tower-correction",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:17:07.700991+00:00",
-  "commitSha": "134aa60f3f95d344c7a478440dd4dbea889c703d",
+  "computedAt": "2026-08-23T21:12:03.029605+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "braid_index_8_11_is_3",
@@ -10,25 +10,41 @@
       "expected": 3,
       "passed": true,
       "tolerance": 0,
-      "source": "knot_braid_database.HYPERBOLIC_NSTRANDS \u2014 corrects the r5_full_canonical_knot_solver.py line 18-19 'B_5/8_11' comment"
+      "source": "knot_braid_database.HYPERBOLIC_NSTRANDS — corrects the r5_full_canonical_knot_solver.py line 18-19 'B_5/8_11' comment"
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 15,
   "computation": "tritium-8-11-jones-markov-probe",
   "scriptFile": "tritium_8_11_jones_markov_probe.py",
-  "scriptHash": "9323f93c549a",
-  "scriptCommitSha": "b57caa7e9f0c8487b0e012443e3dd28d0f752ea9",
+  "scriptHash": "727fbc5a8a10",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Phase B-2 probe (EXPLORATORY): corrects the B_5 \u2192 B_3 misframing of tritium's canonical knot (8_11 has braid index 3, not 5). Computes |tr_M(8_11, q_0)| via common-infra (markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl JM and q-Schur conventions and confirms the same bare-|tr_M| << AME pattern documented at 7\u00b2_1 (PR #1274) and \ud835\udcd1\u2083 (proton-mass). The framework's VolDensity chain is the correct substrate-pure derivation; bare |tr_M| is not.",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/tritium_8_11_jones_markov_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/tritium_8_11_jones_markov_probe.py"
+  },
+  "description": "Phase B-2 probe (EXPLORATORY): corrects the B_5 → B_3 misframing of tritium's canonical knot (8_11 has braid index 3, not 5). Computes |tr_M(8_11, q_0)| via common-infra (markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl JM and q-Schur conventions and confirms the same bare-|tr_M| << AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ (proton-mass). The framework's VolDensity chain is the correct substrate-pure derivation; bare |tr_M| is not.",
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.51099895069",
     "knot": "8_11 (tritium hyperbolic knot)",
     "braid_word": [
@@ -69,20 +85,25 @@
     "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default"
   },
   "data": {
-    "tr_M_wenzl": "0.1856426281474071278622884",
-    "tr_M_qschur": "0.1960583585670819702090489",
-    "m_e_times_abs_tr_M_wenzl_MeV": "0.09486318818665890098185604",
-    "m_e_times_abs_tr_M_qschur_MeV": "0.1001856155017826587520418",
+    "tr_M_wenzl": "0.2831341569663054266073495",
+    "tr_M_qschur": "0.1960583516449993534856762",
+    "m_e_times_abs_tr_M_wenzl_MeV": "0.1446812571142798266824084",
+    "m_e_times_abs_tr_M_qschur_MeV": "0.1001856119646057050169089",
     "AME_binding_3H_MeV": 8.481798,
-    "ratio_AME_to_bare_wenzl": "89.41084694845665077947986",
-    "ratio_AME_to_bare_qschur": "84.66083636376999270020899",
+    "ratio_AME_to_bare_wenzl": "58.62402752901473820178005",
+    "ratio_AME_to_bare_qschur": "84.66083935282554067314568",
     "wall_seconds": {
-      "wenzl_jm": 0.0016676690000849703,
-      "q_schur": 0.000478202999943278
+      "wenzl_jm": 0.0009914480006045778,
+      "q_schur": 0.00042065800062118797
     },
     "phase_b_2_correction": {
       "original_assumption": "tritium 8_11 is in B_5 / H_5, requiring new Python Hoefsmit seminormal implementation",
       "corrected_finding": "8_11 has braid index 3; canonical representative is in B_3 / H_3; R5-full's existing H_3 machinery handles it without new code"
+    },
+    "lean_uniqueness_ref": {
+      "tritium": "qou:QOU.BraidKnot.tritium_uniqueness_closed",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }
