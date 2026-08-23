@@ -124,6 +124,35 @@ the route-3 enumeration found elliptic words such as `σ₁σ₂⁻¹`, whose tr
 supply oscillatory, `q`-dependent phases; what it never supplies is **this** one,
 and that is the rationality exclusion, not a shortage of phases.
 
+## The gap is ABELIAN — branch 3's target is a period, not a curvature integral
+
+Sibling commit `93d211598f` proves `2α = ε(Δ) − tr_M(Δ)`, the counit-minus-trace
+gap, via `CrossingWeightAffine.evalMap h w = h²/2 − h·w`.  That map is **affine
+in the crossing weight** — degree exactly 1 — and the consequence for branch 3
+does not appear in either PR:
+
+    E(w₀) − E(w₀ + d) = d·h          the d² coefficient is EXACTLY 0
+
+A genuine non-abelian holonomy carries a second-order Magnus/BCH term in the
+departure.  **This gap has none.**  So the phase is an *abelian period* of an
+affine map, not a curvature integral — a much smaller object than the
+"non-abelian Stokes" holonomy the canonical chain invokes at step 2.
+
+Two readings, and the probe does not choose between them:
+
+  * the non-abelian Stokes framing is not what produces *this* phase — it may be
+    right elsewhere in the chain and simply not here; or
+  * `evalMap`'s affineness is itself a truncation, and the higher-order weight
+    structure was dropped upstream.  Its docstring reads definitional rather
+    than approximate, but that is a docstring, not a proof, and settling it
+    means chasing where `evalMap` comes from.
+
+**Sharpened acceptance test.**  Previously: reproduce `α` through `t²` in `q`.
+Add: the construction must be **exactly first-order in the crossing weight** —
+any second-order term in the departure contradicts `evalMap_affine`.  That is a
+strong constraint, because it is the one an honest non-abelian construction
+would be most likely to violate.
+
 ## Scope — this is consistency, NOT a derivation
 
   * It does **not** derive `α`, in either convention.
@@ -284,11 +313,32 @@ def main() -> int:
         f"closest candidate (2-cosh, 1/cosh) still off by {mp.nstr(best,4)} relative",
     )
 
+    # ---- 12. the counit-minus-trace gap reproduces alpha exactly ----
+    hs, ws, zs, ds, w0s = sp.symbols("h w z d w0")
+    evalMap = lambda hh, ww: hh ** 2 / 2 - hh * ww
+    gap = sp.expand(evalMap(hs, 1) - evalMap(hs, zs))
+    check(
+        "12. sibling identity: E(1) - E(z) = 2*alpha, exactly",
+        sp.simplify(gap - 2 * ((zs - 1) * hs / 2)) == 0,
+        f"E(1)-E(z) = {gap} = h(z-1) = 2*alpha",
+    )
+
+    # ---- 13. evalMap is AFFINE in the weight: no second-order Magnus term ----
+    deg = sp.Poly(sp.expand(evalMap(hs, ws)), ws).degree()
+    dep = sp.expand(evalMap(hs, w0s) - evalMap(hs, w0s + ds))
+    second = sp.Poly(dep, ds).coeff_monomial(ds ** 2)
+    check(
+        "13. the gap is ABELIAN — d^2 coefficient exactly 0, so no curvature term",
+        deg == 1 and second == 0,
+        f"deg_w(evalMap) = {deg}; E(w0)-E(w0+d) = {dep}; d^2 coeff = {second}. "
+        "A non-abelian holonomy would carry a Magnus/BCH second-order term",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/11: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/13: {', '.join(failures)}")
         return 1
-    print("11/11 assertions hold.")
+    print("13/13 assertions hold.")
     print()
     print("READING: alpha is second-order logarithmic exactly when the Markov")
     print("parameter is STATIONARY at the classical point. z_C is (q=1 is its")
