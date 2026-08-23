@@ -3465,6 +3465,37 @@ with no help at all (§6 already carries the congruences). What is missing is th
 to be stated against a list whose first two entries are dead weight. -/
 
 set_option linter.unnecessarySeqFocus false in
+/-- **Two terms on one word with opposite coefficients contribute nothing, even
+with other terms between them.**
+
+The adjacent case is what §4ak's cancellations need at the top level; the
+`a ≤ b` closing phase needs the split one. There the four-term element is
+`[(Vh, h), (V1, 1), (Uh, −h), (U1, −1)]`, and the two terms that reconverge are
+the two `h`-weighted ones — with `(V1, 1)` sitting between them. That ordering
+is not a choice: `trio` emits its `h`-weighted word immediately before its plain
+one, in place, so the two lineages interleave as `V, V, U, U`.
+
+`ofTerms_cancel_pair` is this at `M = []`. -/
+theorem ofTerms_cancel_split {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
+    (L₁ M L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms (L₁ ++ (w, c) :: (M ++ (w, -c) :: L₂)))
+      (AlgElement.ofTerms (L₁ ++ (M ++ L₂))) := by
+  intro m
+  simp only [AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons,
+    List.map_append, List.sum_append, decide_eq_true_eq]
+  -- The append normalisation has to run AGAIN after `split_ifs`: resolving the
+  -- inner `if` leaves `(w, -c) :: filter L₂` sitting inside `filter M ++ …`,
+  -- which `map_append` had already passed over. And `simp only` closes some
+  -- branches outright while making no progress on others -- "no progress" being
+  -- an ERROR rather than a no-op -- so both it and `ring` are guarded. Same
+  -- hazard the adjacent-pair proof below documents from the other side.
+  split_ifs <;>
+    (try simp only [List.map_append, List.sum_append, List.map_cons,
+      List.sum_cons]) <;>
+    (try ring)
+
+set_option linter.unnecessarySeqFocus false in
 /-- **Two terms on one word with opposite coefficients contribute nothing.**
 The bridge between the chain's term list before and after a cancellation. -/
 theorem ofTerms_cancel_pair {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
@@ -5128,6 +5159,55 @@ one lemma serve both — and `small(a)` is where the prefix's own
 `block · two steps · block` self-similarity stops being an observation and
 becomes literal reuse. -/
 
+/-- **The block from its second level on, with the source-only collision
+hypothesis.** Two families, one per underlying transport: the `σ_jpp` step
+across `descWord j₁ j₂`, and the block carried across `descWord jp j₂`. See
+`blockTransportRightSources` (§4ai) for why `hpark` is stronger than needed. -/
+theorem blockPassFromTwoSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord j₁ j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T)))))))
+    (hcol₂ : ∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+      P ++ (x :: S) = descWord i jppp → u ++ v = descWord jp j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ (descWord jpp jp ++ T))))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
+          :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
+  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
+    descWord_cons hjp hj₂
+  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
+    rw [descWord_cons hjpp (le_refl _), descWord_self]
+  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
+    (descWord j₁ j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v huv hv r hr => by
+      have := hcol₁ u v huv hv r hr
+      simpa only [List.append_assoc] using this)
+  have s3 := blockTransportRightSources hn hp c hc L₁ L₂ A (descWord jp j₂)
+    (descWord i jppp) (descWord jpp jp ++ T)
+    (fun x hx y hy => by
+      have hx' := descWord_index_ge hx
+      have hy' := descWord_index_le hy
+      omega)
+    hcol₂
+  rw [hd2, hd3] at s3 ⊢
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
+  exact MultiStepReduction.trans s2 s3
+
 /-- **The block from its second level on.** The two levels below the cap are
 `h = j₁+1` and `h = j₁+2`; this covers the second and everything above it, which
 is all of the block when the first level is absent.
@@ -5150,29 +5230,55 @@ theorem blockPassFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
           ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
           :: L₂))
       (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) :=
+  blockPassFromTwoSources hn hp hjp hjpp hjppp hj₂ c hc L₁ L₂ A T
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
+
+/-- **The block off the diagonal, with the source-only collision hypothesis.**
+Three families: the leading `σ_jp` transport across `descWord jm j₂`, plus the
+two `blockPassFromTwoSources` asks. -/
+theorem blockPassSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ jm j₁ jp jpp jppp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ jm.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hcol₀ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord jm j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T))))))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord j₁ j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T)))))))
+    (hcol₂ : ∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+      P ++ (x :: S) = descWord i jppp → u ++ v = descWord jp j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ (descWord jpp jp ++ T))))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
         (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
-  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
-    descWord_cons hjp hj₂
-  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
-    rw [descWord_cons hjpp (le_refl _), descWord_self]
-  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
-    (descWord j₁ j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
-    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
+    descWord_cons hjm hj₂
+  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
+    (descWord jm j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
     (fun y hy => by have := descWord_index_le hy; omega)
-    (fun u v _ _ r hr => by
-      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
-        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))))
+    (fun u v huv hv r hr => by
+      have := hcol₀ u v huv hv r hr
       simpa only [List.append_assoc] using this)
-  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
-    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ T)
-    (fun x hx y hy => by
-      have hx' := descWord_index_ge hx
-      have hy' := descWord_index_le hy
-      omega)
-  rw [hd2, hd3] at s3 ⊢
-  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
-  exact MultiStepReduction.trans s2 s3
+  have hj₂' : j₂.val ≤ j₁.val := by omega
+  have s23 := blockPassFromTwoSources (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
+    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T
+    hcol₁ hcol₂
+  rw [hd1] at s23
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
+  exact MultiStepReduction.trans s1 s23
 
 /-- **The block, at general depth, off the diagonal.** One pass of the `a ≤ b`
 regime's far-commutation block when `j₂ < j₁`: the first level below the cap,
@@ -5193,23 +5299,11 @@ theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
         (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
           ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
       (AlgElement.ofTerms (L₁ ++
-        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
-  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
-    descWord_cons hjm hj₂
-  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
-    (descWord jm j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
-    (fun y hy => by have := descWord_index_le hy; omega)
-    (fun u v _ _ r hr => by
-      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
-        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T)))))
-      simpa only [List.append_assoc] using this)
-  have hj₂' : j₂.val ≤ j₁.val := by omega
-  have s23 := blockPassFromTwo (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
-    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T hpark
-  rw [hd1] at s23
-  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
-  exact MultiStepReduction.trans s1 s23
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) :=
+  blockPassSources hn hp hjm hjp hjpp hjppp hj₂ c hc L₁ L₂ A T
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
 
 /-! ### §4al  The quadratic pair, at general depth
 
@@ -10340,6 +10434,198 @@ theorem loopTwoFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : F
   loopTwo hn hp hed hj₁ hj₂ (by omega) S c c' hc m i idd A [] hid hm (le_refl _)
     (by simp) (by rw [descWord_cons_le hid (by omega)]; simp)
 
+/-- **The loop against an arbitrary term list, with the source-only collision
+hypothesis.**
+
+Two generalisations of `loopTwo` at once, both forced by the corner.
+
+**Source-only collisions.** `loopTwoGen` below asks that the parked word `P` be
+no extension of `A` at all. That is sufficient — every word any pass rewrites
+does have the form `A ++ z` — but not necessary, and
+`hecke_prefix_head_separation.py` measures where the difference bites: at `2a`
+steps of the corner's closing phase no choice of left context satisfies it, while
+**every source in the chain is unique**, so the precise condition holds
+throughout.
+
+What the loop actually needs is that each parked word differ from the two
+families `blockStep` asks about, at every level. The accumulator only ever grows
+on the right of `A`, so quantifying over that growth `D` makes the hypothesis
+closed under the recursion: descending a level replaces `D` by `σ_kd :: D`.
+
+**An arbitrary term list.** `blockStep` has taken general `L₁`/`L₂` all along;
+`loopTwo` and its descendants fixed them to `[(P, c')]` and `[]`, which puts the
+parked term *first*. `ofTerms` is a representation rather than a normal form, so
+that choice is not free: a chain ending at `[(P, c'), (w, c)]` does not compose
+with one starting at `[(w, c), (P, c')]`, even though the two are the same
+element. Carrying `L₁` and `L₂` through the induction removes the choice, and
+`loopTwoGenSources` / `loopTwoGenRightSources` are the two slots. The corner's
+opening phase needs both: the U-side loop parks V and the V-side loop parks U. -/
+theorem loopListSources (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S : Monomial (HeckeGen n)) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (c : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ P ∈ (L₁ ++ L₂).map Prod.fst,
+        ∀ (D Y' : Monomial (HeckeGen n)) (k' kd' : Fin n),
+        (P ≠ A ++ (D ++ (descWord i j₁ ++ (descWord k' j₂ ++ S)))) ∧
+        (∀ u v : Monomial (HeckeGen n), u ++ v = Y' → u ≠ [] →
+          P ≠ A ++ (D ++ (u ++ ((⟨kd'⟩ : HeckeGen n) ::
+            (v ++ (((⟨k'⟩ : HeckeGen n) :: descWord kd' j₁) ++
+              (descWord kd' j₂ ++ S)))))))) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          (L₁ ++ (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c) :: L₂))
+        (AlgElement.ofTerms
+          (L₁ ++
+            (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)
+              :: L₂)) := by
+  intro m
+  induction m with
+  | zero =>
+    intro k kd A Y hk hke hP hY hD
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkde : kd = ed := Fin.ext (by omega)
+    subst hkde
+    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc L₁ L₂
+      (fun q hq => by simpa only [List.nil_append] using (hP q hq [] Y k kd).1)
+      (fun u v huv hu q hq => by
+        simpa only [List.nil_append] using (hP q hq [] Y k kd).2 u v huv hu)
+    simpa [descWord_self] using hstep
+  | succ m ih =>
+    intro k kd A Y hk hke hP hY hD
+    have hkdlt : kd.val < n := kd.isLt
+    have hkdlow : ed.val ≤ kd.val := by omega
+    have hkdpos : 0 < kd.val := by omega
+    have hj₁kd : j₁.val ≤ kd.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    refine MultiStepReduction.trans
+      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc L₁ L₂
+        (fun q hq => by simpa only [List.nil_append] using (hP q hq [] Y k kd).1)
+        (fun u v huv hu q hq => by
+          simpa only [List.nil_append] using (hP q hq [] Y k kd).2 u v huv hu)) ?_
+    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
+      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
+    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
+      descWord_cons_le hkdd (by omega)
+    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
+      descWord_cons_le hkdd (by omega)
+    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
+      hkdd (by omega)
+      (fun q hq D Y' k' kd' => by
+        constructor
+        · have := (hP q hq ([(⟨kd⟩ : HeckeGen n)] ++ D) Y' k' kd').1
+          simpa only [List.append_assoc] using this
+        · intro u v huv hu
+          have := (hP q hq ([(⟨kd⟩ : HeckeGen n)] ++ D) Y' k' kd').2 u v huv hu
+          simpa only [List.append_assoc] using this)
+      (by
+        intro y hy
+        rcases List.mem_append.mp hy with hy | hy
+        · have := hY y hy
+          omega
+        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
+          subst hyk
+          show kdd.val + 1 < k.val
+          omega)
+      (by rw [hD, hsplit]; simp)
+    rw [hrun]
+    simpa using hnext
+
+/-- **The loop with the parked term listed first**, the shape `loopTwoGen` and the
+`a > b` corner use. `loopListSources` at `L₁ = [(P, c')]`, `L₂ = []`. -/
+theorem loopTwoGenSources (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S P : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ (D Y' : Monomial (HeckeGen n)) (k' kd' : Fin n),
+        (P ≠ A ++ (D ++ (descWord i j₁ ++ (descWord k' j₂ ++ S)))) ∧
+        (∀ u v : Monomial (HeckeGen n), u ++ v = Y' → u ≠ [] →
+          P ≠ A ++ (D ++ (u ++ ((⟨kd'⟩ : HeckeGen n) ::
+            (v ++ (((⟨k'⟩ : HeckeGen n) :: descWord kd' j₁) ++
+              (descWord kd' j₂ ++ S)))))))) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(P, c'), (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
+        (AlgElement.ofTerms
+          [(P, c'),
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) :=
+  fun m k kd A Y hk hke hP hY hD =>
+    loopListSources hn hp hed hj₁ hj₂ S [(P, c')] [] c hc m k kd A Y hk hke
+      (fun q hq => by
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        exact hP)
+      hY hD
+
+/-- **The loop with the parked term listed second.** `loopListSources` at
+`L₁ = []`, `L₂ = [(P, c')]`.
+
+`AlgElement.ofTerms` is a *representation*, not a normal form: the same element
+with its two terms in the other order is a different value, so this does not
+follow from `loopTwoGenSources` by rearrangement — it has to be the same
+induction against the other slot of `blockStep`'s term list, which is what
+`loopListSources` supplies.
+
+The corner's opening phase needs exactly this. `loopTwoGen` forces the parked
+term first, so the U-side loop ends at `[(V2, 1), (U0L, −1)]`; the V-side loop
+that follows then has the *V* term active with the U term parked, and its source
+must therefore list the U term first. Without this variant the two loops do not
+compose without a change-of-representation argument. -/
+theorem loopTwoGenRightSources (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S P : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ (D Y' : Monomial (HeckeGen n)) (k' kd' : Fin n),
+        (P ≠ A ++ (D ++ (descWord i j₁ ++ (descWord k' j₂ ++ S)))) ∧
+        (∀ u v : Monomial (HeckeGen n), u ++ v = Y' → u ≠ [] →
+          P ≠ A ++ (D ++ (u ++ ((⟨kd'⟩ : HeckeGen n) ::
+            (v ++ (((⟨k'⟩ : HeckeGen n) :: descWord kd' j₁) ++
+              (descWord kd' j₂ ++ S)))))))) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c), (P, c')])
+        (AlgElement.ofTerms
+          [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c),
+           (P, c')]) :=
+  fun m k kd A Y hk hke hP hY hD =>
+    loopListSources hn hp hed hj₁ hj₂ S [] [(P, c')] c hc m k kd A Y hk hke
+      (fun q hq => by
+        simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        exact hP)
+      hY hD
+
+/-- `loopTwoGenRightSources` with the sufficient collision hypothesis, matching
+`loopTwoGen`. -/
+theorem loopTwoGenRight (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S P : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ z : Monomial (HeckeGen n), P ≠ A ++ z) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c), (P, c')])
+        (AlgElement.ofTerms
+          [(A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c),
+           (P, c')]) :=
+  fun m k kd A Y hk hke hpark hY hD =>
+    loopTwoGenRightSources hn hp hed hj₁ hj₂ S P c c' hc m k kd A Y hk hke
+      (fun _ _ _ _ => ⟨hpark _, fun _ _ _ _ => hpark _⟩) hY hD
+
 /-- **The loop with a parked term that is not its endpoint.**
 
 `loopTwo` carries the word the loop is heading for. The corner needs the other
@@ -10362,70 +10648,10 @@ theorem loopTwoGen (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
           [(P, c'), (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
         (AlgElement.ofTerms
           [(P, c'),
-           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) := by
-  intro m
-  induction m with
-  | zero =>
-    intro k kd A Y hk hke hP hY hD
-    have hj₂k : j₂.val ≤ k.val := by omega
-    have hkde : kd = ed := Fin.ext (by omega)
-    subst hkde
-    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc [(P, c')] []
-      (by
-        intro q hq
-        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-          List.not_mem_nil, or_false] at hq
-        subst hq
-        exact hP _)
-      (by
-        intro u v _ _ q hq
-        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-          List.not_mem_nil, or_false] at hq
-        subst hq
-        exact hP _)
-    simpa [descWord_self] using hstep
-  | succ m ih =>
-    intro k kd A Y hk hke hP hY hD
-    have hkdlt : kd.val < n := kd.isLt
-    have hkdlow : ed.val ≤ kd.val := by omega
-    have hkdpos : 0 < kd.val := by omega
-    have hj₁kd : j₁.val ≤ kd.val := by omega
-    have hj₂k : j₂.val ≤ k.val := by omega
-    refine MultiStepReduction.trans
-      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc [(P, c')] []
-        (by
-          intro q hq
-          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-            List.not_mem_nil, or_false] at hq
-          subst hq
-          exact hP _)
-        (by
-          intro u v _ _ q hq
-          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-            List.not_mem_nil, or_false] at hq
-          subst hq
-          exact hP _)) ?_
-    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
-      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
-    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
-      descWord_cons_le hkdd (by omega)
-    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
-      descWord_cons_le hkdd (by omega)
-    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
-      hkdd (by omega)
-      (fun z => by rw [List.append_assoc]; exact hP _)
-      (by
-        intro y hy
-        rcases List.mem_append.mp hy with hy | hy
-        · have := hY y hy
-          omega
-        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
-          subst hyk
-          show kdd.val + 1 < k.val
-          omega)
-      (by rw [hD, hsplit]; simp)
-    rw [hrun]
-    simpa using hnext
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) :=
+  fun m k kd A Y hk hke hpark hY hD =>
+    loopTwoGenSources hn hp hed hj₁ hj₂ S P c c' hc m k kd A Y hk hke
+      (fun _ _ _ _ => ⟨hpark _, fun _ _ _ _ => hpark _⟩) hY hD
 
 end CornerBlock
 
@@ -11132,9 +11358,18 @@ What this namespace adds is the *second* term's head, which the `a > b` regime
 does not share: there `s3`/`s4` need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e.
 `j₁ < j₂`, and cannot be instantiated here at all.
 
-`uHead` is that head. It is the **same two-rule motif** as `s1`/`s2` — a
-Bokut–Shiao step then a far-commutation — displaced one letter right, because
-`U0` carries a leading `σᵢ₋₁` that `V0` does not:
+`uHead` is that head — and it is **`loopTwoGen` at `m = 0`**, not new work.
+I first proved it by hand before checking; the instantiation is `k = i₁`,
+`kd = ed = i₂`, `A = [σᵢ₋₁]`, `S = [σᵢ]`, `Y = [σᵢ]`, and the hypothesis
+`descWord i j₁ = Y ++ (σ_k :: descWord kd j₁)` is just the run's first two
+letters peeled off. Recorded because the consequence matters for the assembly:
+if one level is `loopTwoGen` at `m = 0`, the **whole** U-side loop is
+`loopTwoGen` at general `m`, so the opening phase's second lineage is a single
+application rather than a chain.
+
+It is the **same two-rule motif** as `s1`/`s2` — a Bokut–Shiao step then a
+far-commutation — displaced one letter right, because `U0` carries a leading
+`σᵢ₋₁` that `V0` does not:
 
     U0  = σᵢ₋₁ · σᵢ · (descWord i₁ j₁ ++ [σᵢ₋₁]) · descWord i₂ j₂ · σᵢ
       B →  σᵢ₋₁ · σᵢ · (σᵢ₋₂ σᵢ₋₁ descWord i₂ j₁) · descWord i₂ j₂ · σᵢ
@@ -11159,10 +11394,1839 @@ def U0' (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
   [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++
     (descWord i j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
 
-/-- After the Bokut–Shiao step at top `i−1`, before the far-commutation. -/
-def U0₁ (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
-  [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (bsWord₂ i₂ i₁ j₁ ++
-    (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+/-- The second term after its whole loop, at general depth. -/
+def U0L (i i₁ i₂ j₁ j₂ jpp : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ jpp ++
+    (descWord i j₁ ++ (descWord jpp j₂ ++ [(⟨i⟩ : HeckeGen n)])))
+
+/-- **The second term's whole loop, at general depth.** `loopTwoGen` at
+`m = i₁ − jppp`, which `hecke_opening_coverage.py` measures as the U side's
+entire contribution to the opening phase — `2`, `5`, `9` steps at `a = 4, 5, 6`.
+
+`uHead` below is this at `jppp = i₁`, i.e. `m = 0`, i.e. `a = 4`. That the
+general case is the same lemma at a larger `m` is why the opening phase's second
+lineage is one application rather than a chain of levels. -/
+theorem uLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]) := by
+  have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have key := CornerBlock.loopTwoGen (i := i) (j₁ := j₁) (j₂ := j₂)
+    (e := jppp) (ed := jpp)
+    hn hp hjpp hj₁ hj₂ [(⟨i⟩ : HeckeGen n)] (V2 i i₂ j₁ j₂)
+    (-1) 1 (by norm_num)
+    (i₁.val - jppp.val) i₁ i₂ [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    h₂ (by omega)
+    (fun z => by
+      rw [V2]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne2 (List.cons.inj hcon).1)
+    (by
+      intro y hy
+      simp only [List.mem_singleton] at hy
+      subst hy
+      show i₂.val + 1 < i.val
+      omega)
+    (by rw [descWord_cons h₁ (by omega), descWord_cons h₂ (by omega)]; simp)
+  simpa [U0L, U0] using key
+
+/-- The first term after its own loop, at general depth. -/
+def V2L (i i₁ i₂ j₁ j₂ jpp : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₂⟩ : HeckeGen n)] ++ (descWord i₁ jpp ++
+    (descWord i j₁ ++ (descWord jpp j₂ ++ [])))
+
+/-- **The first term's whole loop, at general depth**, with the second parked at
+the word its own loop left it on.
+
+`V2` is already in the loop's entry shape on the nose —
+`[σᵢ₋₂] ++ (descWord i j₁ ++ (descWord i j₂ ++ []))` — so this is
+`loopTwoGenRight` at `A = [σᵢ₋₂]`, `k = i`, `S = []`, and `m = i − jppp`. That is
+one more than `uLoop`'s `m = i₁ − jppp`, which is why
+`hecke_opening_coverage.py` measures the two lineages at `L` and `L + 1` steps
+for the same bottom `jppp`.
+
+The two loops compose without any change of representation, and that is what
+`loopTwoGenRight` bought: `uLoop` runs `loopTwoGen`, which lists the parked term
+first, so it ends at `[(V2, 1), (U0L, −1)]` — V parked, U active. Here V is the
+active one and U the parked one, so the source must list V first, which is the
+same list. The collision hypothesis is one letter: `U0L` opens `σᵢ₋₁`, and every
+word this loop touches extends `[σᵢ₋₂]`. -/
+theorem vLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)])
+      (AlgElement.ofTerms
+        [(V2L i i₁ i₂ j₁ j₂ jpp, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]) := by
+  have hne1 : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i₂⟩ := heckeGen_ne_of_val_ne (by omega)
+  have key := CornerBlock.loopTwoGenRight (i := i) (j₁ := j₁) (j₂ := j₂)
+    (e := jppp) (ed := jpp)
+    hn hp hjpp hj₁ hj₂ [] (U0L i i₁ i₂ j₁ j₂ jpp)
+    1 (-1) one_ne_zero
+    (i.val - jppp.val) i i₁ [(⟨i₂⟩ : HeckeGen n)] []
+    h₁ (by omega)
+    (fun z => by
+      rw [U0L]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne1 (List.cons.inj hcon).1)
+    (by simp)
+    (by rw [descWord_cons h₁ (by omega)]; simp)
+  simpa [V2, V2L] using key
+
+/-- **The trio**: one Bokut–Shiao step then `quadPair`, in the shape both
+lineages of the opening phase use.
+
+`hecke_opening_trio_shape.py` measures the six steps after `TL` as
+`B(jp,jpp,j₁)`, `Y(j₁,jp)`, `Q(j₁)` twice, 6/6 — and the two occurrences differ
+only in `A` and `T`, so this is one lemma applied twice rather than a U trio and
+a V trio:
+
+| | `A` | `T` |
+|---|---|---|
+| U | `[σᵢ₋₁] ++ descWord i₂ jpp ++ descWord i jppp` | `[σᵢ]` |
+| V | `[σᵢ₋₂] ++ descWord i₁ jpp ++ descWord i jppp` | `[]` |
+
+The Bokut–Shiao redex straddles the two descending runs: `descWord i j₁` splits
+at `jppp`, leaving `descWord jpp j₁`, and `descWord jpp j₂` opens with `σ_jpp` —
+so `descWord jpp j₁ ++ [σ_jpp]` is `bsWord₁ jpp j₁`, sitting on the join. Its
+image `bsWord₂ jp jpp j₁ = [σ_jp, σ_jpp, σ_jp, σ_j₁]` then meets `descWord jp j₂`,
+whose first two letters are `σ_jp, σ_j₁` — and `σ_jp σ_j₁ σ_jp` followed by
+`σ_j₁` is exactly `quadPair`'s redex. Neither step creates it alone, which is
+the same mechanism §4al describes one level down.
+
+**`hj₂ : j₂ ≤ j₁` is the regime.** It is what makes `descWord jp j₂` open with
+those two letters, and it is `b ≥ a` — so this lemma does not instantiate in the
+`a > b` corner at all. The diagonal `b = a` is included: there `descWord j₁ j₂`
+is the single letter `σ_j₁` and `descWord jm j₂` is empty.
+
+One collision hypothesis serves both steps: no bystander extends `A`.
+`quadPair` asks about `A ++ [σ_jp, σ_jpp]`, which is an extension of `A`, and
+`bsStep` asks about a source that begins with `A`. At both call sites it is
+discharged by a single letter — the U trio's `A` opens `σᵢ₋₁` against the parked
+`V2L`'s `σᵢ₋₂`, and the V trio's the other way round. -/
+theorem trio (hn : 0 < n) (hp : HeckeParams) {j₂ jm j₁ jp jpp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n),
+      r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))),
+          c * (hp.q - hp.q⁻¹))
+        :: (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+              ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ (descWord jm j₂ ++ T))), c)
+        :: L₂)) := by
+  -- `descWord jp j₂` opens `σ_jp, σ_j₁` — this is where `j₂ ≤ j₁` is used
+  have hsplit : descWord jp j₂ =
+      (⟨jp⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le hjp (by omega), descWord_cons_le hjm hj₂]
+  -- state the Bokut-Shiao step's TARGET already in `quadPair`'s source shape,
+  -- so the two compose with no rewriting between them
+  have hmid : (A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))
+      = A ++ bsWord₂ jp jpp j₁ ++ (descWord jp j₂ ++ T) := by
+    rw [bsWord₂, hsplit,
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+    simp only [List.cons_append, List.append_assoc, List.nil_append]
+  have hbs := bsStep (i' := jp) (i := jpp) (j := j₁) hn hp hjpp (by omega)
+    L₁ L₂ A (descWord jp j₂ ++ T)
+    (A ++ (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T)))
+    ((A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) ++
+      ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+        ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T))))
+    c hc
+    (by simp only [List.append_assoc])
+    hmid
+    (fun q hq => by
+      have := hpark q hq (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T))
+      simpa only [List.append_assoc] using this)
+  have hq := quadPair (j₁ := j₁) (jp := jp) hn hp hjp c hc L₁ L₂
+    (A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) (descWord jm j₂ ++ T)
+    (fun r hr z => by
+      have := hpark r hr ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ z)
+      simpa only [List.append_assoc] using this)
+  have hchain := ((MultiStepReduction.refl _).step hbs).trans hq
+  simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+    List.nil_append] using hchain
+
+/-- The chain after both loops, before either trio. -/
+noncomputable def TL (i i₁ i₂ j₁ j₂ jpp : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(V2L i i₁ i₂ j₁ j₂ jpp, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]
+
+/-- **The `a ≤ b` chain's opening phase, loops included** — the two setup steps
+and both loops, in the one order in which they compose.
+
+`hecke_opening_coverage.py` decomposes the opening's `a² − 3a + 9` steps into
+five stretches: the two setup steps, the U loop (`L` steps), a trio, the V loop
+(`L + 1` steps), and a second trio. This lemma is the first three of those five —
+`2 + L + (L + 1) = 2L + 3` steps — because **both loops must precede both
+trios**, and that ordering is a constraint, not a preference.
+
+`L = (a² − 3a)/2`: measured `2, 5, 9` at `a = 4, 5, 6`, so `2L + 9` recovers the
+phase length `13, 19, 27`. It is **not** `jpp − j₁`, which this docstring said
+until `hecke_opening_trio_shape.py` measured it — that difference is `2` for
+every `a`, and agrees only at `a = 4`. The loop's *level* parameter `m = a − 4`
+is the thing that is linear in `a`; its step count is not, because each level
+descends by a pass whose own length grows.
+
+The probe measures why. `loopTwoGenRight` (like every loop lemma here) is stated
+for a *two-term* element, while `quadPair`, which the trios use, takes general
+`L₁`/`L₂`. Under the order the confluence engine itself produces, the U trio's
+quadratic step **splits U into two terms** before the V loop has run — at step
+6, 9 and 13 for `a = 4, 5, 6`, against V-loop completion at 9, 15 and 23 — so a
+V loop scheduled after the U trio would face three terms and no loop lemma
+applies. Running both loops first keeps the element at two terms throughout, and
+the trios then run against the general-list `quadPair`.
+
+That the reordering is *legal* is the same argument §4am makes for the tail: the
+two lineages act on different terms, so their steps commute, and
+`MultiStepReduction` fixes no order beyond each step's redex being present. Deg-lex
+picks one; the Lean is not obliged to. -/
+theorem openingLoops (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp) := by
+  have hj₁i₂ : j₁.val ≤ i₂.val := by omega
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂) (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂)).step
+      (s2 hn hp h₁ h₂ hj₁i₂)
+  have hU := uLoop hn hp h₁ h₂ hjpp hj₁ hj₂ htop
+  -- `vLoop` asks only `jppp ≤ i`, which `jppp ≤ i₁ < i` gives. The distinction
+  -- is not cosmetic: at `a = 3` the FIRST holds and the second does not.
+  have hV := vLoop hn hp h₁ h₂ hjpp hj₁ hj₂ (by omega)
+  rw [T0, TL] at *
+  rw [T2] at hsetup
+  exact (hsetup.trans hU).trans hV
+
+/-- The trio's `A`, for a lineage whose leading letter is `x` and whose second
+run starts at `y`. `U` takes `(x, y) = (i₁, i₂)`, `V` takes `(i₂, i₁)`. -/
+def trioLeft (i x y jpp jppp : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨x⟩ : HeckeGen n)] ++ (descWord y jpp ++ descWord i jppp)
+
+/-- **Both lineage words open on the trio's redex.** `descWord i j₁` splits at
+`jppp`, and `descWord jpp j₂` opens with `σ_jpp`; the two halves meet as
+`bsWord₁ jpp j₁`. This is the one rewriting that turns `U0L` and `V2L` into
+`trio`'s source shape, and it is the same for both. -/
+theorem lineage_eq_trio_source {n : ℕ} {i x y j₁ j₂ jp jpp jppp : Fin n}
+    (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jpp.val) (htop : jppp.val ≤ i.val)
+    (T : Monomial (HeckeGen n)) :
+    [(⟨x⟩ : HeckeGen n)] ++ (descWord y jpp ++
+        (descWord i j₁ ++ (descWord jpp j₂ ++ T)))
+      = trioLeft i x y jpp jppp ++
+          (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T)) := by
+  rw [trioLeft, bsWord₁,
+    descWord_split (k := jppp) (k' := jpp) hjppp hj₁ htop,
+    descWord_cons_le (i' := jp) (i := jpp) (j := j₂) hjpp (by omega)]
+  simp only [List.cons_append, List.append_assoc, List.nil_append]
+
+/-- The chain after both trios: four terms, two per lineage. -/
+noncomputable def TOpen (i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n)
+    (h : ℝ) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), h),
+     (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))),
+        -h),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+
+/-- **The `a ≤ b` chain's opening phase, whole** — `a² − 3a + 9` steps, from the
+S-polynomial `T0` to the four-term `TOpen`.
+
+Five stretches, in the one order in which the lemmas compose: `s1`, `s2`, the U
+loop, the V loop, then `trio` twice. `hecke_opening_trio_shape.py` measures
+`2 + L + (L+1) + 6 = 2L + 9` steps and `2L + 9 = a² − 3a + 9`, so this is the
+whole phase and nothing is left over.
+
+The two trios run U before V, which is deg-lex's order and also the one the term
+list forces: `openingLoops` ends at `[(V2L, 1), (U0L, −1)]`, so U is the second
+entry and V the parked one; after U's quadratic step splits it in two, V is the
+first entry of three. Each trio's collision hypothesis is one letter — `U`'s
+left context opens `σᵢ₋₁` against the parked `V2L`'s `σᵢ₋₂`, and `V`'s the other
+way round against both of U's outputs, which share U's prefix. -/
+theorem openingPhase_of_loops (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htopi : jppp.val ≤ i.val)
+    (hloops : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp)) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) := by
+  have hj₁ : j₁.val ≤ jpp.val := by omega
+  have hne : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i₂⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- every index pinned by name: these are bare `have`s with no expected type,
+  -- so an implicit the hypotheses do not determine stays a metavariable and
+  -- the `by omega` beside it has nothing to prove about
+  -- both lineage words, rewritten into `trio`'s source shape
+  have hUeq := lineage_eq_trio_source (i := i) (x := i₁) (y := i₂) (j₁ := j₁)
+    (j₂ := j₂) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hjpp hjppp hj₁ (by omega) (by omega) [(⟨i⟩ : HeckeGen n)]
+  have hVeq := lineage_eq_trio_source (i := i) (x := i₂) (y := i₁) (j₁ := j₁)
+    (j₂ := j₂) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hjpp hjppp hj₁ (by omega) (by omega) ([] : Monomial (HeckeGen n))
+  have hU := trio hn hp hjm hjp hjpp hj₂ (-1) (by norm_num)
+    [(V2L i i₁ i₂ j₁ j₂ jpp, (1 : ℝ))] [] (trioLeft i i₁ i₂ jpp jppp)
+    [(⟨i⟩ : HeckeGen n)]
+    (fun r hr z => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      rw [V2L, trioLeft]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne (List.cons.inj hcon).1.symm)
+  have hV := trio hn hp hjm hjp hjpp hj₂ (1 : ℝ) one_ne_zero []
+    [(trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))),
+        -1 * (hp.q - hp.q⁻¹)),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+    (trioLeft i i₂ i₁ jpp jppp) ([] : Monomial (HeckeGen n))
+    (fun r hr z => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      rw [trioLeft] at *
+      rcases hr with hr | hr <;> subst hr <;>
+        · simp only [List.cons_append]
+          intro hcon
+          exact hne (List.cons.inj hcon).1
+      )
+  -- Put every endpoint in `trio`'s source shape. `hUeq`/`hVeq` are the only
+  -- rewriting the composition needs; the three chains then meet syntactically.
+  rw [TL, V2L, U0L, hUeq, hVeq] at hloops
+  rw [V2L, hVeq] at hU
+  rw [T0, TOpen]
+  simp only [List.nil_append, List.append_nil, List.cons_append,
+    one_mul, neg_one_mul] at hloops hU hV ⊢
+  exact (hloops.trans hU).trans hV
+
+/-! #### The closing phase's F-run
+
+`hecke_closing_from_topen.py` measures the `4(a−1)` steps after `TOpen` as one
+shape, uniform in `a` and `b`: an F-run of `2a−3` steps, two Bokut–Shiao steps,
+the **same** F-run again, then the cancellation. Machine-checked — exactly two
+adjacent `B` steps, the two runs literally equal.
+
+The engine interleaves two letters through the run, but they are on one term, so
+the order is free and the run **sequences into three lemma calls**. The first is
+the bare far-commutation `σ_jpp σ_j₁ → σ_j₁ σ_jpp`, which makes `σ_jp` and
+`σ_j₁` adjacent; the pair then transports left past `descWord i jppp` — first
+`σ_jp`, whose every obstacle is `≥ jppp = jp + 1`… no: `≥ jppp`, and
+`jp + 1 = jpp < jppp`, so all far-commute; then `σ_j₁`, for which they are
+`≥ jppp = j₁ + 3`. That is `2(a−2)` engine steps replaced by two inductions.
+
+**The `A`-prefix collision hypothesis is unavailable here, and this is the `2a`
+hard core.** The two terms of one lineage share their whole left context —
+`quadPair` splits a word into two that differ only in an interior `σ_j₁` — so
+"no other term extends `A`" is false at exactly the `2a` steps
+`hecke_prefix_head_separation.py` counted. Measured again at `TOpen`: `U1`
+extends `Uh`'s `A`. What the steps actually need is `monicStep`'s `hne` and the
+transports' split-indexed source condition, which this arc's `_sources`
+relaxations supply — so the hypotheses below are stated in that form and not
+collapsed. -/
+
+/-- **The F-run over an arbitrary run `D`.** `fRun` below is this at
+`D = descWord i jppp`, which is the only shape the `a ≥ 3` closing phase needs.
+
+Two hypotheses replace `fRun`'s `jppp ≤ i`, and neither mentions `jppp`. `hD` is
+what the two transports actually ask of the run — every letter far enough above
+`j₁` and `jp` to commute — and `hclose` is what `descWord_split` was being used
+to produce. So the run may be **empty**, which is the `a = 2` corner: there
+`jpp = i`, `descWord i jppp` is empty, and `jppp ≤ i` is false while the run
+still closes up (`[] ++ [σ_jpp, σ_jp]` is `descWord i jp` on the nose).
+
+Same split as `fRun_target_eq_of_left` one section down — take the list identity
+as a hypothesis, keep the `descWord_split` supplier as the named corollary. -/
+theorem fRun_gen (hn : 0 < n) (hp : HeckeParams) {i j₁ jp jpp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A S D : Monomial (HeckeGen n))
+    (hD : ∀ y ∈ D, jpp.val < y.index.val)
+    (hclose : D ++ [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] = descWord i jp)
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ A ++ (D ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = D → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (u ++ ((⟨jp⟩ : HeckeGen n) ::
+          (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S)))))
+    (hcol₂ : ∀ u v : Monomial (HeckeGen n), u ++ v = D → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ (A ++ [(⟨jp⟩ : HeckeGen n)]) ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+          (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++ S))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (D ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord i jp ++ S)), c)
+          :: L₂)) := by
+  have hjpj₁ : j₁.val + 1 < jpp.val := by omega
+  have hgen : (⟨j₁⟩ : HeckeGen n) ≠ ⟨jpp⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- stage 1: the bare far-commutation, making σ_jp and σ_j₁ adjacent
+  have hswap := monicStep hn hp (farCommRelation jpp j₁)
+    (farCommRelation_mem hn hp hjpj₁)
+    (BokutShiaoBraid.far_hrel j₁ jpp)
+    (farCommRelation_lm jpp j₁ (by omega))
+    (by simp [hgen])
+    L₁ L₂ (A ++ (D ++ [(⟨jp⟩ : HeckeGen n)]))
+    ((⟨jp⟩ : HeckeGen n) :: S)
+    -- both words named: a bare `have` pins no implicit, and `_` here left
+    -- `monicStep`'s W and W' open (the same failure as `openingPhase`'s).
+    -- W' is written in stage 2's SOURCE shape so the two compose directly.
+    (A ++ (D ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)))
+    (A ++ (D ++ ((⟨jp⟩ : HeckeGen n) ::
+      ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S))))
+    c hc
+    (by simp only [List.append_assoc, List.cons_append, List.nil_append])
+    (by simp only [List.append_assoc, List.cons_append, List.nil_append])
+    (fun q hq => by
+      have := hne q hq
+      simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+        List.nil_append] using this)
+  -- stage 2: σ_jp leftwards past the run; every obstacle is above jpp
+  have hstep2 := farComm_transport_left_sources hn hp jp c hc L₁ L₂
+    D A ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S)
+    (fun y hy => by have := hD y hy; omega) hcol₁
+  -- stage 3: σ_j₁ leftwards past the same run, now behind σ_jp
+  have hstep3 := farComm_transport_left_sources hn hp j₁ c hc L₁ L₂
+    D (A ++ [(⟨jp⟩ : HeckeGen n)])
+    ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++ S)
+    (fun y hy => by have := hD y hy; omega) hcol₂
+  -- normalise the three endpoints BEFORE composing: `MultiStepReduction.trans`
+  -- needs them equal on the nose, and the three lemmas bracket their appends
+  -- differently
+  simp only [List.append_assoc, List.cons_append,
+    List.nil_append] at hswap hstep2 hstep3
+  have hchain := (((MultiStepReduction.refl _).step hswap).trans
+    hstep2).trans hstep3
+  rw [← hclose]
+  simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+    List.nil_append] using hchain
+
+/-- **The closing phase's F-run**, as three lemma calls rather than `2a−3`
+steps. `S` is whatever trails the block: `σ_j₁ :: R` for the `h`-weighted term
+of a lineage and `R` for the plain one, which is the only difference between
+them.
+
+`fRun_gen` at `D = descWord i jppp`; `htop` enters only through the run's
+close-up, which is why the `a = 2` corner can use the general form. -/
+theorem fRun (hn : 0 < n) (hp : HeckeParams) {i j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val) (htop : jppp.val ≤ i.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A S : Monomial (HeckeGen n))
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩]
+        ++ S)))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord i jppp → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (u ++ ((⟨jp⟩ : HeckeGen n) ::
+          (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S)))))
+    (hcol₂ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord i jppp → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ (A ++ [(⟨jp⟩ : HeckeGen n)]) ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+          (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++ S))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord i jp ++ S)), c)
+          :: L₂)) :=
+  fRun_gen hn hp hjp hjpp c hc L₁ L₂ A S (descWord i jppp)
+    (fun _ hy => by have := descWord_index_ge hy; omega)
+    (by
+      rw [descWord_split (k := jppp) (k' := jpp) (i := i) (j := jp) hjppp
+        (by omega) htop,
+        descWord_cons_le (i' := jp) (i := jpp) (j := jp) hjpp (by omega),
+        descWord_self])
+    hne hcol₁ hcol₂
+
+/-- **The two Bokut–Shiao steps between the closing phase's two F-runs.**
+
+After `fRun` the moved term reads `descWord i₁ j₁ ++ bsWord₁ i j₂`, because its
+two halves close up: the left context `[σᵢ₋₁] ++ descWord i₂ jpp ++ [σ_jp, σ_j₁]`
+*is* `descWord i₁ j₁`, and `descWord i j₁ ++ descWord jm j₂` is `descWord i j₂`.
+Both are `descWord_split`, one at each end.
+
+**The two steps sit at different bottoms, and that is invisible on the
+diagonal.** The first is at `j₂`, the second at `j₁`. When `b = a` they coincide
+and any check run only there would pass; at `b = a+1` the first redex is
+`bsWord₁ i j₂`, three letters longer. Read off the trace at `a = 6, b = 7`, not
+derived. -/
+theorem closingBs (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁ : j₁.val ≤ i₂.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hne₀ : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i₁ j₁ ++ bsWord₁ i j₂)
+    (hne₁ : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i₁ j₁ ++ bsWord₁ i j₂, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂), c)
+          :: L₂)) := by
+  have hb₀ := bsStep (i' := i₁) (i := i) (j := j₂) hn hp h₁ (by omega)
+    L₁ L₂ (descWord i₁ j₁) []
+    (descWord i₁ j₁ ++ bsWord₁ i j₂)
+    -- the target is written in the SECOND step's source shape, so the two
+    -- compose with no rewriting between them
+    (bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    c hc
+    (by simp only [List.append_nil])
+    (by simp only [bsWord₁, bsWord₂, List.append_nil, List.append_assoc,
+      List.cons_append, List.nil_append])
+    hne₀
+  have hb₁ := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    L₁ L₂ [] ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)
+    (bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    (bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    c hc
+    (by simp only [List.nil_append])
+    (by simp only [List.nil_append])
+    hne₁
+  exact ((MultiStepReduction.refl _).step hb₀).step hb₁
+
+/-! #### Bridging `TOpen` to `fRun` and `fRun` to `closingBs`
+
+Two list identities, each shared by both lineages. Neither is a step; they are
+what lets the closing phase's four lemma calls meet on the nose. -/
+
+/-- **A `TOpen` word is an `fRun` source.** Pure associativity once `trioLeft`
+is unfolded — `fRun`'s left context is `trioLeft` without its trailing run. -/
+theorem trio_out_eq_fRun_source {n : ℕ} (i x y j₁ jp jpp jppp : Fin n)
+    (S : Monomial (HeckeGen n)) :
+    trioLeft i x y jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ S))
+      = ([(⟨x⟩ : HeckeGen n)] ++ descWord y jpp) ++
+          (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)) := by
+  rw [trioLeft]
+  simp only [List.append_assoc, List.cons_append, List.nil_append]
+
+/-- **An `fRun` target closes up into two descending runs.** Both ends rejoin:
+`descWord y jpp ++ [σ_jp, σ_j₁]` is `descWord y j₁`, and
+`descWord i jp ++ (σ_j₁ :: descWord jm j₂)` is `descWord i j₂`. Both are
+`descWord_split`; `hj₂ : j₂ ≤ j₁` is the regime, entering here as it does in
+`trio`. -/
+theorem fRun_target_eq_of_left {n : ℕ} {i x y j₂ jm j₁ jp jpp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hj₂ : j₂.val ≤ j₁.val)
+    (hleft : descWord y j₁ = descWord y jpp ++ [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩])
+    (hi : jp.val ≤ i.val)
+    (T : Monomial (HeckeGen n)) :
+    ([(⟨x⟩ : HeckeGen n)] ++ descWord y jpp) ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++
+          (descWord i jp ++ ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T))))
+      = [(⟨x⟩ : HeckeGen n)] ++ (descWord y j₁ ++ (descWord i j₂ ++ T)) := by
+  have hright : descWord i j₂
+      = descWord i jp ++ ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_split (k := jp) (k' := j₁) (i := i) (j := j₂) hjp
+      (by omega) hi,
+      descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+  rw [hleft, hright]
+  simp only [List.append_assoc, List.cons_append, List.nil_append]
+
+/-- `fRun_target_eq_of_left` with the left split supplied by `descWord_split`,
+which is what `a ≥ 4` has: there `jpp < jppp ≤ i₁`, so `jpp ≤ y` for both
+`y = i₂` and `y = i₁`.
+
+**At `a = 3` the U lineage has `y = i₂` and `jpp = i₁ > i₂`, so this supplier
+does not apply** — and the identity is nonetheless true there, because
+`descWord i₂ jpp` is *empty* and `jp = i₂`. That is a different proof, not a
+weaker bound, which is why the split is a hypothesis rather than a side
+condition. -/
+theorem fRun_target_eq {n : ℕ} {i x y j₂ jm j₁ jp jpp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hy : jpp.val ≤ y.val) (hi : jp.val ≤ i.val)
+    (T : Monomial (HeckeGen n)) :
+    ([(⟨x⟩ : HeckeGen n)] ++ descWord y jpp) ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++
+          (descWord i jp ++ ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T))))
+      = [(⟨x⟩ : HeckeGen n)] ++ (descWord y j₁ ++ (descWord i j₂ ++ T)) :=
+  fRun_target_eq_of_left hjm hjp hj₂
+    (by
+      rw [descWord_split (k := jpp) (k' := jp) (i := y) (j := j₁) hjpp
+        (by omega) hy,
+        descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+        descWord_self])
+    hi T
+
+/-- The word both lineages converge on: `closingBs`'s target, and the V run's. -/
+def WStar (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)
+
+/-- **The U lineage's whole closing run**: `fRun` then `closingBs`, carrying the
+bystanders throughout, from a `TOpen` word to `WStar`.
+
+**One hypothesis covers all five obligations.** Every word this run touches has
+the form `A ++ X` for the *same* left context `A = [σᵢ₋₁] ++ descWord i₂ jpp` and
+an `X` of the *same* length — because both rules involved are length-preserving.
+Far-commutation swaps two adjacent letters; Bokut–Shiao takes
+`descWord i j ++ [σᵢ]` to `σᵢ₋₁ :: σᵢ :: descWord (i−1) j`, and
+`|descWord i j| = |descWord (i−1) j| + 1`. So `hsep` — no bystander equals `A`
+followed by anything of that length — is exactly what is needed, and it is
+*discharged* differently per bystander, which is the point:
+
+* a word opening `σᵢ₋₂` fails at the first letter;
+* `U1`, which opens `σᵢ₋₁` and shares the whole context, fails on **length**: it
+  is `A ++ X₀` with `|X₀|` one short, so `List.append_cancel_left` reduces the
+  question to `|X₀| ≠ |X|`.
+
+No length *formula* appears: the same `descWord`s occur on both sides, so `omega`
+closes each obligation with their lengths opaque.
+
+An earlier version of this lemma packaged the hypothesis as "every bystander
+opens `σᵢ₋₂`". That is **false at the call site** — the U run acts on `TOpen`'s
+third entry, so `U1` is a bystander and opens `σᵢ₋₁` — and the lemma, though
+true and sorry-free, could not be applied. Sorry-freeness does not check
+instantiability. -/
+theorem closingU (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi₁ : jpp.val ≤ i₁.val)
+    (hleft : descWord i₂ j₁
+      = descWord i₂ jpp ++ [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩])
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hsep : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ X : Monomial (HeckeGen n),
+      X.length = (descWord i jppp).length + (descWord jm j₂).length + 6 →
+      r ≠ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ X) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))),
+          c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (WStar i i₁ i₂ j₁ j₂, c) :: L₂)) := by
+  -- the three `descWord` length relations the obligations need; each is
+  -- `congrArg List.length` on a split or a cons, never a closed formula
+  have hDsplit : (descWord i j₂).length
+      = (descWord i jppp).length + (descWord jpp j₂).length := by
+    have := congrArg List.length (descWord_split (k := jppp) (k' := jpp)
+      (i := i) (j := j₂) hjppp (by omega) (by omega))
+    simpa only [List.length_append] using this
+  have hDjpp : (descWord jpp j₂).length = (descWord jm j₂).length + 3 := by
+    rw [descWord_cons_le (i' := jp) (i := jpp) (j := j₂) hjpp (by omega),
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₂) hjp (by omega),
+      descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+    simp
+  have hDi₁ : (descWord i j₂).length = (descWord i₁ j₂).length + 1 := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
+    simp
+  -- again through `descWord i₁ j₁`: `[σᵢ₋₁] ++ descWord i₂ jpp` IS
+  -- `descWord i₁ jpp`, so the split needs `jpp ≤ i₁`, not `jpp ≤ i₂`
+  have hAsplit : descWord i₁ j₁
+      = ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ descWord jp j₁ := by
+    have hpre : [(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp = descWord i₁ jpp := by
+      rw [descWord_cons_le (i' := i₂) (i := i₁) (j := jpp) h₂ (by omega)]
+      simp
+    rw [hpre]
+    exact descWord_split (k := jpp) (k' := jp) (i := i₁) (j := j₁) hjpp
+      (by omega) (by omega)
+  have hjpj₁ : descWord jp j₁ = [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+  have hfr := fRun (i := i) (j₁ := j₁) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hn hp hjp hjpp hjppp (by omega) c hc L₁ L₂
+    ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp)
+    ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+    (fun q hq => by
+      refine hsep q hq _ ?_
+      simp only [List.length_append, List.length_cons, List.length_nil]
+      omega)
+    (fun u v huv _ r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      have := hsep r hr (u ++ ((⟨jp⟩ : HeckeGen n) ::
+        (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))))))
+        (by
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      simpa only [List.append_assoc] using this)
+    (fun u v huv _ r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      have := hsep r hr ([(⟨jp⟩ : HeckeGen n)] ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+        (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))))))
+        (by
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      simpa only [List.append_assoc] using this)
+  have hbs := closingBs (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    hn hp h₁ h₂ hj₂ (by omega) c hc L₁ L₂
+    (fun q hq => by
+      have := hsep q hq (descWord jp j₁ ++ bsWord₁ i j₂)
+        (by
+          rw [hjpj₁, bsWord₁]
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      rw [hAsplit]
+      simpa only [List.append_assoc] using this)
+    (fun q hq => by
+      have := hsep q hq (descWord jp j₁ ++ ([(⟨i₁⟩ : HeckeGen n)] ++
+        ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)))
+        (by
+          rw [hjpj₁]
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      rw [bsWord₁, hAsplit]
+      simpa only [List.append_assoc] using this)
+  rw [trio_out_eq_fRun_source] at *
+  rw [fRun_target_eq_of_left (i := i) (x := i₁) (y := i₂) (j₂ := j₂) (jm := jm)
+    (j₁ := j₁) (jp := jp) (jpp := jpp) hjm hjp hj₂ hleft (by omega)
+    [(⟨i⟩ : HeckeGen n)]] at hfr
+  have hUeq : [(⟨i₁⟩ : HeckeGen n)] ++
+      (descWord i₂ j₁ ++ (descWord i j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+      = descWord i₁ j₁ ++ bsWord₁ i j₂ := by
+    rw [bsWord₁, descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega)]
+    simp only [List.cons_append, List.nil_append]
+  rw [hUeq] at hfr
+  rw [WStar]
+  exact hfr.trans hbs
+
+/-- **`closingU` instantiated at `TOpen`** — the U lineage's run, in place, with
+the real three bystanders.
+
+This exists to *check that `closingU`'s hypothesis is reachable*, which the
+previous version's was not. The discharge is the measured one: `Vh` and `V1`
+open `σᵢ₋₂` and fail at the first letter; `U1` opens `σᵢ₋₁` and shares the whole
+left context, so it fails on length — it is `A ++ X₀` with `|X₀|` exactly one
+short of what `hsep` quantifies over, and taking `List.length` of both sides is
+the whole argument. -/
+theorem closingU_at_TOpen (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi₁ : jpp.val ≤ i₁.val)
+    (hleft : descWord i₂ j₁
+      = descWord i₂ jpp ++ [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩]) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms
+        [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]) := by
+  have hne : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have key := closingU (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jm := jm) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ hjppi₁ hleft
+    (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+     (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1)]
+    [(trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+    (by
+      intro r hr X hX hcon
+      simp only [List.map_cons, List.map_nil, List.cons_append, List.nil_append,
+        List.mem_cons, List.not_mem_nil, or_false] at hr
+      rcases hr with hr | hr | hr <;> subst hr
+      -- Vh and V1 open σᵢ₋₂; the run's words open σᵢ₋₁
+      case _ | _ =>
+        · rw [trioLeft] at hcon
+          simp only [List.cons_append] at hcon
+          exact hne (List.cons.inj hcon).1
+      -- U1 shares the context; it is one letter short
+      case _ =>
+        · have hlen := congrArg List.length hcon
+          rw [trioLeft] at hlen
+          simp only [List.length_append, List.length_cons, List.length_nil,
+            hX] at hlen
+          omega)
+  exact key
+
+/-- `WStar` split at the V run's left context. Both ends of `descWord i₂ j₁`
+are needed: `[σᵢ₋₂] ++ descWord i₁ jpp` is `σᵢ₋₂ :: σᵢ₋₁ :: descWord i₂ jpp`, and
+`descWord i₂ j₁` continues past `jpp` by exactly `[σ_jp, σ_j₁]`. -/
+theorem WStar_split {n : ℕ} {i i₁ i₂ j₁ j₂ jp jpp : Fin n}
+    (h₂ : i₂.val + 1 = i₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppi₁ : jpp.val ≤ i₁.val) :
+    WStar i i₁ i₂ j₁ j₂
+      = ([(⟨i₂⟩ : HeckeGen n)] ++ descWord i₁ jpp) ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++
+            ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)) := by
+  -- split `descWord i₁ j₁`, NOT `descWord i₂ j₁`: the former asks `jpp ≤ i₁`,
+  -- which holds at `a = 3` (with equality) where `jpp ≤ i₂` does not
+  have hcons : descWord i₁ j₁ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₁ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega)
+  have hsplit : descWord i₁ j₁ = descWord i₁ jpp ++ descWord jp j₁ :=
+    descWord_split (k := jpp) (k' := jp) (i := i₁) (j := j₁) hjpp
+      (by omega) hjppi₁
+  have hjpj₁ : descWord jp j₁ = [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+  rw [WStar, bsWord₂, ← hcons, hsplit, hjpj₁]
+  simp
+
+/-- **The V lineage's closing run, in place** — `fRun` alone: the V side does not
+run `closingBs`, because its final step *is* the cancellation. It lands on
+`WStar`, the word the U side reached two steps earlier.
+
+All three bystanders are separated, and by three different arguments — measured
+uniform across `a = 4,5,6` and `b ∈ {a, a+1}`, for each of `fRun`'s three
+hypothesis families:
+
+* `U1` opens `σᵢ₋₁` while every word here opens `σᵢ₋₂` — **head**;
+* `V1` shares the head and is one letter short — **length**;
+* `WStar` shares head *and* length — **peel**. After cancelling the common left
+  context, every family word continues `σᵢ` (families 1 and 2) or `σ_jp, σᵢ`
+  (family 3), where `WStar` continues `σ_jp, σ_j₁`. So the discriminator is
+  `σᵢ ≠ σ_jp` or `σᵢ ≠ σ_j₁`, one letter in from the split.
+
+`WStar` is the reason the packaged `hsep` of `closingU` does not transfer: it is
+the one bystander neither head nor length reaches. -/
+theorem closingV_at_TOpen (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi₁ : jpp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)])
+      (AlgElement.ofTerms
+        [(WStar i i₁ i₂ j₁ j₂, hp.q - hp.q⁻¹),
+         (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]) := by
+  have hne : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i₂⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hnei : (⟨i⟩ : HeckeGen n) ≠ ⟨jp⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hnej : (⟨i⟩ : HeckeGen n) ≠ ⟨j₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hWs := WStar_split (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jp := jp) (jpp := jpp) h₂ hjp hjpp (by omega)
+  have hDi₁ : (descWord i j₂).length = (descWord i₁ j₂).length + 1 := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
+    simp
+  have hDsplit : (descWord i j₂).length
+      = (descWord i jppp).length + (descWord jpp j₂).length := by
+    have := congrArg List.length (descWord_split (k := jppp) (k' := jpp)
+      (i := i) (j := j₂) hjppp (by omega) (by omega))
+    simpa only [List.length_append] using this
+  have hDjpp : (descWord jpp j₂).length = (descWord jm j₂).length + 3 := by
+    rw [descWord_cons_le (i' := jp) (i := jpp) (j := j₂) hjpp (by omega),
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₂) hjp (by omega),
+      descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+    simp
+  -- one bystander-separation fact, applied at all three families
+  have hsep : ∀ r ∈ ([(trioLeft i i₂ i₁ jpp jppp ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ)),
+        (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+        (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)] : List _).map Prod.fst,
+      ∀ Y : Monomial (HeckeGen n),
+        Y.length = (descWord i jppp).length + (descWord jm j₂).length + 5 →
+        (∃ Z : Monomial (HeckeGen n), Y = (⟨i⟩ : HeckeGen n) :: Z) ∨
+          (∃ Z : Monomial (HeckeGen n), Y = (⟨jp⟩ : HeckeGen n) ::
+            ((⟨i⟩ : HeckeGen n) :: Z)) →
+        r ≠ ([(⟨i₂⟩ : HeckeGen n)] ++ descWord i₁ jpp) ++ Y := by
+    intro r hr Y hY hshape hcon
+    simp only [List.map_cons, List.map_nil, List.mem_cons, List.not_mem_nil,
+      or_false] at hr
+    rcases hr with hr | hr | hr <;> subst hr
+    · -- V1: shares the head, one letter short
+      have hlen := congrArg List.length hcon
+      rw [trioLeft] at hlen
+      simp only [List.length_append, List.length_cons, List.length_nil,
+        hY] at hlen
+      omega
+    · -- WStar: shares head AND length; peel the context, compare one letter in
+      rw [hWs] at hcon
+      have hZ := List.append_cancel_left hcon
+      rcases hshape with ⟨Z, hZ'⟩ | ⟨Z, hZ'⟩ <;> rw [hZ'] at hZ
+      · exact hnei (List.cons.inj hZ).1.symm
+      · exact hnej (List.cons.inj (List.cons.inj hZ).2).1.symm
+    · -- U1: opens σᵢ₋₁ where every word here opens σᵢ₋₂
+      rw [trioLeft] at hcon
+      simp only [List.cons_append] at hcon
+      exact hne (List.cons.inj hcon).1
+  have key := fRun (i := i) (j₁ := j₁) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hn hp hjp hjpp hjppp (by omega) (hp.q - hp.q⁻¹) hp.h_ne_zero
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ)),
+     (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+    ([(⟨i₂⟩ : HeckeGen n)] ++ descWord i₁ jpp)
+    ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)
+    (fun q hq => by
+      have := hsep q (by simpa using hq)
+        (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)))
+        (by
+          simp only [List.length_append, List.length_cons, List.length_nil]
+          omega)
+        (Or.inl ⟨descWord i₁ jppp ++
+            ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)), by
+          rw [descWord_cons_le (i' := i₁) (i := i) (j := jppp) h₁ (by omega)]
+          simp⟩)
+      simpa only [List.append_assoc] using this)
+    (fun u v huv hu r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      obtain ⟨y, u', hu'⟩ : ∃ (y : HeckeGen n) (u' : Monomial (HeckeGen n)),
+          u = y :: u' := by
+        cases u with
+        | nil => exact absurd rfl hu
+        | cons y u' => exact ⟨y, u', rfl⟩
+      have hy : y = (⟨i⟩ : HeckeGen n) := by
+        have := huv
+        rw [hu', descWord_cons_le (i' := i₁) (i := i) (j := jppp) h₁
+          (by omega)] at this
+        exact (List.cons.inj this).1
+      have := hsep r (by simpa using hr)
+        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)))))
+        (by
+          simp only [List.length_append, List.length_cons, List.length_nil]
+          omega)
+        (Or.inl ⟨u' ++ ((⟨jp⟩ : HeckeGen n) :: (v ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)))), by
+          rw [hu', hy]; simp⟩)
+      simpa only [List.append_assoc] using this)
+    (fun u v huv hu r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      obtain ⟨y, u', hu'⟩ : ∃ (y : HeckeGen n) (u' : Monomial (HeckeGen n)),
+          u = y :: u' := by
+        cases u with
+        | nil => exact absurd rfl hu
+        | cons y u' => exact ⟨y, u', rfl⟩
+      have hy : y = (⟨i⟩ : HeckeGen n) := by
+        have := huv
+        rw [hu', descWord_cons_le (i' := i₁) (i := i) (j := jppp) h₁
+          (by omega)] at this
+        exact (List.cons.inj this).1
+      have := hsep r (by simpa using hr)
+        ([(⟨jp⟩ : HeckeGen n)] ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+          (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))))))
+        (by
+          simp only [List.length_append, List.length_cons, List.length_nil]
+          omega)
+        (Or.inr ⟨u' ++ ((⟨j₁⟩ : HeckeGen n) :: (v ++
+            ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂)))), by
+          rw [hu', hy]; simp⟩)
+      simpa only [List.append_assoc] using this)
+  -- `T = []` leaves `descWord jm j₂ ++ []` in the equation but not in `key`,
+  -- so the rewrite has to be normalised before it will match
+  have hteq := fRun_target_eq (i := i) (x := i₂) (y := i₁) (j₂ := j₂) (jm := jm)
+    (j₁ := j₁) (jp := jp) (jpp := jpp) hjm hjp hjpp hj₂ (by omega)
+    (by omega) ([] : Monomial (HeckeGen n))
+  simp only [List.append_nil] at hteq
+  rw [hteq] at key
+  have hVeq : [(⟨i₂⟩ : HeckeGen n)] ++
+      (descWord i₁ j₁ ++ descWord i j₂) = WStar i i₁ i₂ j₁ j₂ := by
+    rw [WStar, bsWord₂,
+      descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega),
+      descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
+    simp
+  rw [hVeq] at key
+  -- normalise BOTH sides the same way; `rw ... at *` hit the hypotheses too and
+  -- left the two associations different
+  simp only [trio_out_eq_fRun_source, List.nil_append,
+    List.append_assoc] at key ⊢
+  exact key
+
+/-- **`a ≥ 4`**: the loop stretch is `openingLoops`. -/
+theorem openingPhase (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  openingPhase_of_loops hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+    (openingLoops (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+      (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjppp (by omega) (by omega) htop)
+
+/-! #### `a = 3`: the same construction, with the U loop as the identity
+
+`hecke_closing_from_topen.py`'s small-`a` sweep measures `a = 3` at
+`s1, s2` = 2 steps, U loop = **0**, V loop = **1**, two trios = 6 — the same
+`a² − 3a + 9 = 9` the general case gives, and the same five stretches.
+
+The U loop is zero-length for a structural reason, not by accident: at `a = 3`,
+`jpp = i₁`, so `descWord i₂ jpp` is empty and **`U0L` and `U0` are the same
+word**. `uLoop` is not *absent* here, it is the identity — which is exactly what
+its parameter `m = i₁ − jppp = −1` cannot express.
+
+`vLoop` runs one pass, and needs only `jppp ≤ i`, which at `a = 3` holds with
+equality. That weakening (three commits back) is what makes this case reachable
+at all. -/
+
+/-- `a = 3` collapses the U loop: `jpp = i₁` empties `descWord i₂ jpp`. -/
+theorem U0L_eq_U0 {n : ℕ} {i i₁ i₂ j₁ j₂ jpp : Fin n}
+    (h₂ : i₂.val + 1 = i₁.val) (hjppi : jpp = i₁) :
+    U0L i i₁ i₂ j₁ j₂ jpp = U0 i i₁ j₁ j₂ := by
+  subst hjppi
+  rw [U0L, U0, descWord_of_lt (by omega)]
+  simp
+
+/-- **`a = 3`'s loop stretch**: `s1`, `s2`, then the V loop alone. -/
+theorem openingLoops₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjp : j₁.val + 1 = jp.val) (hjpplow : jp.val + 1 = jpp.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp) := by
+  have hjppv : jpp.val = i₁.val := congrArg Fin.val hjppi
+  have hj₁i₂ : j₁.val ≤ i₂.val := by omega
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂)
+      (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂)).step
+      (s2 hn hp h₁ h₂ hj₁i₂)
+  have hV := vLoop (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjpp hj₁ hj₂ (by omega)
+  have hUU := U0L_eq_U0 (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := jpp) h₂ hjppi
+  -- rewrite `U0L → U0` in `hV` and in the GOAL. Doing it in `hsetup` instead
+  -- hits its SOURCE too, which is `T0` and must stay `U0`.
+  rw [T0, TL, hUU]
+  rw [T2] at hsetup
+  rw [hUU] at hV
+  exact hsetup.trans hV
+
+/-- **`a = 3`**: the loop stretch is `openingLoops₃`. Same `TOpen`, same trios. -/
+theorem openingPhase₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  have hjppv : jpp.val = i₁.val := congrArg Fin.val hjppi
+  openingPhase_of_loops hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+    (openingLoops₃ (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+      (jp := jp) (jpp := jpp) (jppp := jppp) hn hp h₁ h₂ hjp hjpp hjppp
+      (by omega) (by omega) hjppi)
+
+/-- The chain at the prefix's first cancellation: four terms, two of them the
+same word with opposite coefficients. -/
+noncomputable def TCancel (i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(WStar i i₁ i₂ j₁ j₂, h),
+     (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+     (WStar i i₁ i₂ j₁ j₂, -h),
+     (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+
+/-- **The `a ≤ b` chain's closing phase** — `4(a−1)` steps, `TOpen` to `TCancel`.
+
+The U lineage's `fRun` and two Bokut–Shiao steps, then the V lineage's `fRun`,
+whose last step lands on the word the U side already reached. The two halves
+compose on the nose: `closingV_at_TOpen`'s source *is* `closingU_at_TOpen`'s
+target, because both were stated against the same four-term list. -/
+theorem closingPhase (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹))
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) := by
+  rw [TCancel]
+  exact (closingU_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+      (by
+        rw [descWord_split (k := jpp) (k' := jp) (i := i₂) (j := j₁) hjpp
+          (by omega) (by omega),
+          descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+          descWord_self])).trans
+    (closingV_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega))
+
+/-- **The cancellation.** `TCancel`'s two `WStar` entries carry `h` and `−h`, so
+they contribute nothing; what survives is the two plain words. They are not
+adjacent — `trio` emits each lineage's `h`-weighted word immediately before its
+plain one — which is why this is `ofTerms_cancel_split` and not
+`ofTerms_cancel_pair`. -/
+theorem TCancel_coeffEq {n : ℕ} (i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp h)
+      (AlgElement.ofTerms
+        [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]) := by
+  have := ofTerms_cancel_split (WStar i i₁ i₂ j₁ j₂) h
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), (1 : ℝ))]
+    [(trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+  rw [TCancel]
+  simpa only [List.nil_append, List.cons_append, List.singleton_append] using this
+
+/-- **The whole `a ≤ b` prefix** — all `a² + a + 5` steps, from the
+S-polynomial to the first cancellation.
+
+`openingPhase` is `a² − 3a + 9` of them and `closingPhase` the remaining
+`4(a − 1)`; `hecke_closing_from_topen.py` measures the two against the prefix
+length and they close exactly, 6/6 at `a = 4, 5, 6` and `b ∈ {a, a+1}` — the
+diagonal `b = a` included.
+
+`a = 3` is **not** covered: its loop parameter would be `m = −1`, so there is no
+loop pass at all and the opening phase's shape does not arise. It needs its own
+treatment. -/
+theorem prefixChain (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  (openingPhase hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop).trans
+    (closingPhase hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop)
+
+/-- **`a = 3`'s closing phase.** Same `closingU_at_TOpen` and
+`closingV_at_TOpen`; only the left split is supplied differently.
+
+At `a = 3`, `jpp = i₁` forces `jp = i₂`, and then
+`descWord i₂ jpp = descWord i₂ i₁` is **empty** while `descWord i₂ j₁` is
+`descWord jp j₁ = [σ_jp, σ_j₁]`. So `hleft` holds with both sides equal to that
+two-letter word — the same identity `descWord_split` gives for `a ≥ 4`, by a
+different route. That is why it is a hypothesis. -/
+theorem closingPhase₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹))
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) := by
+  have hjppv : jpp.val = i₁.val := congrArg Fin.val hjppi
+  have hjpi₂ : jp = i₂ := Fin.ext (by omega)
+  rw [TCancel]
+  exact (closingU_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega)
+      (by
+        rw [descWord_of_lt (show i₂.val < jpp.val by omega), ← hjpi₂,
+          descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+          descWord_self]
+        simp)).trans
+    (closingV_at_TOpen hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ (by omega))
+
+/-- **The whole `a = 3` prefix**, `a² + a + 5 = 17` steps. Same `TCancel`, same
+five stretches; the U loop is the identity and the left split has its own
+proof. -/
+theorem prefixChain₃ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppi : jpp = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂)
+      (TCancel i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹)) :=
+  (openingPhase₃ hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ hjppi).trans
+    (closingPhase₃ hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ hjppi)
+
+/-! #### `a = 2`: the quadratic pair is already in `U0`
+
+`hecke_small_a_decomposition.py` measures the two remaining cases. `a = 2` is a
+**partial** transfer: `s1`, `s2` reach `V2` unchanged and the V loop is trivial
+(`jpp = i` empties `descWord i₁ jpp`, so `V2L = V2`), but the U loop never
+reaches `U0L` and the trios do not apply.
+
+The reason is the mirror of `a = 3`'s. There, `jpp = i₁` made the U loop the
+**identity** — it collapsed *into* the general construction. Here `j₁ = i₂`
+makes `descWord i j₁` only three letters, so `U0` **already carries** the braid
+redex `[σ_jp, σ_j₁, σ_jp] ++ (σ_j₁ :: R)` that the `a ≥ 3` loop exists to build.
+`a = 2` falls *out* of the construction because the loop's output pre-exists.
+
+Measured 3/3: the redex sits at `L = [σ_jp, σ_jpp]`, which is exactly `trio`'s
+`L` at `A = []`. -/
+
+/-- **At `a = 2`, `U0` IS `quadPair`'s source.** `j₁ = i₂` forces `jp = i₁` and
+`jpp = i`, and then `U0`'s three runs telescope into the braid redex with
+`L = [σ_jp, σ_jpp]` and `R = descWord jm j₂ ++ [σ_jpp]`. -/
+theorem U0_eq_quadPair_source₂ {n : ℕ} {i i₁ i₂ j₁ j₂ jm jp jpp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hj₁i₂ : j₁ = i₂) :
+    U0 i i₁ j₁ j₂
+      = [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) ::
+              (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]))) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hjpi₁ : jp = i₁ := Fin.ext (by omega)
+  have hjppi : jpp = i := Fin.ext (by omega)
+  -- these `subst`s rewrite i₁ → jp, i → jpp, i₂ → j₁ (that direction, not the
+  -- reverse), so everything below is named in jp/jpp/j₁
+  subst hjpi₁; subst hjppi; subst hj₁i₂
+  rw [U0,
+    -- descWord jpp j₁ = [σ_jpp, σ_jp, σ_j₁]
+    descWord_cons_le (i' := jp) (i := jpp) (j := j₁) hjpp (by omega),
+    descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+    descWord_self,
+    -- descWord jp j₂ = σ_jp :: σ_j₁ :: descWord jm j₂
+    descWord_cons_le (i' := j₁) (i := jp) (j := j₂) hjp (by omega),
+    descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+  simp
+
+/-- **`a = 2`'s U-side opening**: `quadPair` applied directly to `U0`, with no
+loop and no `bsStep` before it. One term in, two out. -/
+theorem uQuad₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hj₁i₂ : j₁ = i₂)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n),
+      r ≠ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (U0 i i₁ j₁ j₂, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) ::
+            (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]))),
+          c * (hp.q - hp.q⁻¹))
+        :: ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)])), c)
+        :: L₂)) := by
+  rw [U0_eq_quadPair_source₂ h₁ h₂ hjm hjp hjpp hj₂ hj₁i₂]
+  exact quadPair (j₁ := j₁) (jp := jp) hn hp hjp c hc L₁ L₂
+    [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]
+    (descWord jm j₂ ++ [(⟨jpp⟩ : HeckeGen n)]) hpark
+
+/-! ##### The `a = 2` opening — the same five stretches, three degenerate
+
+`hecke_small_a_decomposition.py` originally measured where the U lineage *ends*,
+which is its normal form, well past the prefix. Re-measured to the first
+cancellation the picture is the opposite of what that suggested: the prefix is
+**11 steps for every `b`**, and `a² + a + 5 = 11`. The general count holds at
+`a = 2`, so does the phase split — `a² − 3a + 9 = 7` and `4(a − 1) = 4` — and
+both phases are the same lemmas.
+
+Three stretches degenerate, all because `j₁ = i₂` forces `jp = i₁`, `jpp = i`:
+
+  * the **U loop is absent**, not the identity. `descWord i j₁` is three
+    letters, so `U0` already carries `quadPair`'s redex and needs neither the
+    loop nor the trio's `bsStep`: `uQuad₂` is `trio` minus its first step. At
+    `a = 3` the loop is present and *is* the identity, so the two small cases
+    degenerate in opposite directions.
+  * the **V loop is trivial**: `descWord i₁ jpp` is empty, so `V2L = V2`, and
+    `V2` is already the V trio's source.
+  * both **F-runs are one step**: `descWord i jppp` is empty, which is what
+    `fRun_gen` was split out for.
+
+The V trio, both Bokut–Shiao steps and the cancellation transfer unchanged.
+Every one of the eleven steps has its source word absent from the other terms,
+so the source-only relaxations cover this corner too. -/
+
+/-- The four words the `a = 2` opening leaves, two per lineage, `h`-weighted
+first in each pair — `TOpen` with `jp = i₁`, `jpp = i`, and both `trioLeft`s
+collapsed (`U`'s to `[]`, `V`'s to `[σᵢ₋₂]`). -/
+noncomputable def TOpen₂ (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), h),
+     ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) ::
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -h),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+
+/-- **`V2` is the V trio's source at `a = 2`.** `descWord i j₂` opens `σᵢ`,
+which joins `descWord i j₁` into `bsWord₁ i j₁` and leaves `descWord i₁ j₂` —
+the same meeting-of-two-halves as `lineage_eq_trio_source`, with the loop's
+`descWord y jpp` empty so no split is needed. -/
+theorem V2_eq_trio_source₂ {n : ℕ} {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (hj₂i₁ : j₂.val ≤ i₁.val) :
+    V2 i i₂ j₁ j₂
+      = [(⟨i₂⟩ : HeckeGen n)] ++
+          (bsWord₁ i j₁ ++ (descWord i₁ j₂ ++ ([] : Monomial (HeckeGen n)))) := by
+  rw [V2, bsWord₁,
+    descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
+  simp only [List.append_assoc, List.cons_append, List.nil_append,
+    List.append_nil]
+
+/-- **The `a = 2` opening phase, whole** — `a² − 3a + 9 = 7` steps, `T0` to the
+four-term `TOpen₂`. Four stretches rather than five: `s1`, `s2`, then `uQuad₂`
+where `a ≥ 3` runs a loop and a trio, then the V trio. No V loop, because at
+`jpp = i` it is the identity on `V2`.
+
+The two lineages run U before V, as at `a ≥ 3` and for the same reason: after
+`uQuad₂` splits U in two, V is the first entry of three. Each collision
+hypothesis is one letter — U's redex opens `σᵢ₋₁` against the parked `V2`'s
+`σᵢ₋₂`, and V's `A = [σᵢ₋₂]` against both of U's outputs, which share U's
+prefix. -/
+theorem openingPhase₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TOpen₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hj₁i₂' : j₁.val ≤ i₂.val := by omega
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- s1, s2, exactly as at `a ≥ 3`: `hj₁ : j₁ ≤ i₂` holds with equality
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂)
+      (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂')).step
+      (s2 hn hp h₁ h₂ hj₁i₂')
+  -- U: `quadPair` straight onto `U0`, with `V2` parked
+  have hU := uQuad₂ (jp := i₁) (jpp := i) hn hp h₁ h₂ hjm (by omega) h₁ hj₂
+    hj₁i₂ (-1) (by norm_num) [(V2 i i₂ j₁ j₂, (1 : ℝ))] []
+    (fun r hr => by
+      simp only [List.append_nil, List.map_cons, List.map_nil,
+        List.mem_singleton] at hr
+      subst hr
+      intro z
+      simpa only [List.cons_append, List.nil_append] using
+        V2_ne_cons (i := i) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂) h₂
+          ((⟨i⟩ : HeckeGen n) :: z))
+  -- V: the trio, unchanged, against both of U's outputs
+  have hV := trio (jp := i₁) (jpp := i) hn hp hjm (by omega) h₁ hj₂
+    (1 : ℝ) (by norm_num) []
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) ::
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -(hp.q - hp.q⁻¹)),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+    [(⟨i₂⟩ : HeckeGen n)] []
+    (fun r hr z => by
+      simp only [List.nil_append, List.map_cons, List.map_nil,
+        List.mem_cons, List.not_mem_nil, or_false] at hr
+      rcases hr with hr | hr <;> subst hr <;>
+        · simp only [List.cons_append, List.nil_append]
+          intro hcon
+          exact hne21 (List.cons.inj hcon).1.symm)
+  rw [T0, TOpen₂]
+  rw [T2] at hsetup
+  rw [← V2_eq_trio_source₂ (i₂ := i₂) (j₁ := j₁) h₁ (by omega)] at hV
+  simp only [List.cons_append, List.nil_append, List.append_nil,
+    one_mul, neg_one_mul] at hU hV ⊢
+  exact (hsetup.trans hU).trans hV
+
+/-- **The `a = 2` U lineage's closing run**: `fRun_gen` over an empty run, then
+`closingBs` unchanged — from `TOpen₂`'s `h`-weighted U word to `WStar`, the same
+word `a ≥ 3` lands on.
+
+`closingBs` transfers because its `hj₁ : j₁ ≤ i₂` holds with equality here. Its
+second `bsStep` is the step the engine reports as `Y`: at `j₁ = i₂` the
+Bokut–Shiao rule and Yang–Baxter share a leading word and differ by a sign, and
+the Lean takes the monic one for the reason §4al gives.
+
+The bystanders separate two ways, one fewer than at `a ≥ 3`: the two V words
+open `σᵢ₋₂` against the run's `σᵢ₋₁`, and the plain U word shares that head but
+is one letter shorter than every word the run touches. -/
+theorem closingU₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- the three descending runs, all three letters or fewer at `a = 2`
+  have hd1 : descWord i₁ j₁ = [(⟨i₁⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega),
+      ← hj₁i₂, descWord_self]
+  have hii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd1j₂ : descWord i₁ j₂
+      = (⟨i₁⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega),
+      ← hj₁i₂, descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm (by omega)]
+  have hd2 : descWord i j₂
+      = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega), hd1j₂]
+    simp only [List.cons_append, List.nil_append]
+  exact
+    (fRun_gen (i := i) (j₁ := j₁) (jp := i₁) (jpp := i) hn hp (by omega) h₁
+      (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+      [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+       ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1)]
+      [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+      [] ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])) []
+      (by simp)
+      (by rw [hii₁]; simp)
+      (by
+        intro r hr
+        simp only [List.map_cons, List.map_nil, List.cons_append,
+          List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+        rcases hr with hr | hr | hr <;> subst hr
+        · intro hcon; exact hne21 (List.cons.inj hcon).1
+        · intro hcon; exact hne21 (List.cons.inj hcon).1
+        · intro hcon
+          have hlen := congrArg List.length hcon
+          simp only [List.length_append, List.length_cons,
+            List.length_nil] at hlen
+          omega)
+      (by intro u v huv hu; cases u with
+          | nil => exact absurd rfl hu
+          | cons a t => simp at huv)
+      (by intro u v huv hu; cases u with
+          | nil => exact absurd rfl hu
+          | cons a t => simp at huv)).trans
+    (by
+      have hB := closingBs (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+        hn hp h₁ h₂ hj₂ (by omega)
+        (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1)]
+        [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+        (by
+          intro r hr
+          simp only [List.map_cons, List.map_nil, List.cons_append,
+            List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with hr | hr | hr <;> subst hr <;> rw [hd1]
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon
+            have hlen := congrArg List.length hcon
+            simp only [bsWord₁, hd2, List.length_append, List.length_cons,
+              List.length_nil] at hlen
+            omega)
+        (by
+          intro r hr
+          simp only [List.map_cons, List.map_nil, List.cons_append,
+            List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with hr | hr | hr <;> subst hr <;> rw [bsWord₁, hd1]
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon; exact hne21 (List.cons.inj hcon).1
+          · intro hcon
+            have hlen := congrArg List.length hcon
+            simp only [hd1j₂, List.length_append, List.length_cons,
+              List.length_nil] at hlen
+            omega)
+      -- the goal carries `descWord i i₁` (fRun_gen's target), `hB` carries
+      -- `descWord i₁ j₁ ++ bsWord₁ i j₂`; expand each on its own side
+      rw [WStar, hii₁]
+      rw [hd1, bsWord₁, hd2] at hB
+      simp only [List.cons_append, List.nil_append] at hB ⊢
+      exact hB)
+
+/-- The `a = 2` chain at its first cancellation: `WStar` twice, with `h` and
+`−h`, separated by the plain V word. -/
+noncomputable def TCancel₂ (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(WStar i i₁ i₂ j₁ j₂, h), ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+     (WStar i i₁ i₂ j₁ j₂, -h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+
+/-- **The `a = 2` V lineage's closing run**: one `fRun_gen`, again over an empty
+run, landing on the very word the U lineage just reached. No `closingBs` — the V
+lineage's two `bsStep`s were spent in its trio.
+
+`WStar` opens `σᵢ₋₂ σᵢ₋₁` exactly as this run's source does, so the bystander
+argument here is the **third** letter: the source's is `σᵢ`, `WStar`'s is
+`σ_j₁`, and `j₁ = i₂` is two below `i`. Length does not separate them — both are
+`|descWord jm j₂| + 6`. -/
+theorem closingV₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹), ([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)])
+      (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) := by
+  have hj₁v : j₁.val = i₂.val := congrArg Fin.val hj₁i₂
+  have hne21 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hneij₁ : (⟨i⟩ : HeckeGen n) ≠ ⟨j₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd2j₁ : descWord i₂ j₁ = [(⟨j₁⟩ : HeckeGen n)] := by
+    rw [← hj₁i₂, descWord_self]
+  have hd1j₂ : descWord i₁ j₂
+      = (⟨i₁⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega),
+      ← hj₁i₂, descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm (by omega)]
+  have hF := fRun_gen (i := i) (j₁ := j₁) (jp := i₁) (jpp := i) hn hp
+    (by omega) h₁ (hp.q - hp.q⁻¹) hp.h_ne_zero
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ)), (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]
+    [(⟨i₂⟩ : HeckeGen n)] ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) []
+    (by simp)
+    (by rw [hii₁]; simp)
+    (by
+      intro r hr
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      rcases hr with hr | hr | hr <;> subst hr
+      -- the plain V word is one letter shorter
+      · intro hcon
+        have hlen := congrArg List.length hcon
+        simp only [List.length_append, List.length_cons,
+          List.length_nil] at hlen
+        omega
+      -- `WStar` shares `σᵢ₋₂ σᵢ₋₁`; it is the third letter that differs
+      · rw [WStar, bsWord₂, hd2j₁]
+        intro hcon
+        simp only [List.cons_append, List.nil_append] at hcon
+        have h3 := (List.cons.inj
+          (List.cons.inj (List.cons.inj hcon).2).2).1
+        exact hneij₁ h3.symm
+      · intro hcon; exact hne21 (List.cons.inj hcon).1.symm)
+    (by intro u v huv hu; cases u with
+        | nil => exact absurd rfl hu
+        | cons a t => simp at huv)
+    (by intro u v huv hu; cases u with
+        | nil => exact absurd rfl hu
+        | cons a t => simp at huv)
+  rw [TCancel₂, WStar, bsWord₂, hd2j₁, hd1j₂]
+  rw [hii₁] at hF
+  simp only [List.cons_append, List.nil_append,
+    WStar, bsWord₂, hd2j₁, hd1j₂] at hF ⊢
+  exact hF
+
+/-- **The `a = 2` closing phase, whole** — `4(a − 1) = 4` steps, `TOpen₂` to the
+cancellation. The same three calls as `a ≥ 3` (`fRun`, `closingBs`, `fRun`),
+with both F-runs one step because the run is empty. -/
+theorem closingPhase₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹))
+      (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) :=
+  (closingU₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂).trans
+    (closingV₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂)
+
+/-- **The whole `a = 2` prefix**, `a² + a + 5 = 11` steps — the same count
+formula as `a ≥ 3`, and the same `WStar` cancellation. -/
+theorem prefixChain₂ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hj₂ : j₂.val ≤ j₁.val) (hj₁i₂ : j₁ = i₂) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TCancel₂ i i₁ i₂ j₁ j₂ jm (hp.q - hp.q⁻¹)) :=
+  (openingPhase₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂).trans
+    (closingPhase₂ hn hp h₁ h₂ hjm hj₂ hj₁i₂)
+
+/-- **The `a = 2` cancellation.** Same shape as `TCancel_coeffEq`: the two
+`WStar` entries carry `h` and `−h` and are not adjacent, so this is
+`ofTerms_cancel_split`. -/
+theorem TCancel₂_coeffEq {n : ℕ} (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel₂ i i₁ i₂ j₁ j₂ jm h)
+      (AlgElement.ofTerms [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), -1)]) := by
+  have := ofTerms_cancel_split (WStar i i₁ i₂ j₁ j₂) h
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₂⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord jm j₂)), (1 : ℝ))] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨i₁⟩] ++
+            (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+  rw [TCancel₂]
+  simpa using this
+
+/-! ##### `a = 1`: two bare quadratic steps, and nothing transfers
+
+At `a = 1` the corner is `j₁ = i₁`, so `descWord i j₁` is two letters and
+**both** `V0` and `U0` carry a bare `σᵢ₋₁σᵢ₋₁` from the start. The chain opens
+with a quadratic step on each term, where `a ≥ 2` opens with a Bokut–Shiao or a
+Yang–Baxter. Measured: six steps, not `a² + a + 5 = 7`, and the cancellation
+word is `bsWord₂ i₁ i j₂`, not `WStar`. So unlike `a = 2` this case shares
+neither the count formula nor the target; it is built, not transferred.
+
+Every word is written over `D = descWord i₂ j₂`, which is **empty on the
+diagonal** `b = 1` (there `j₂ = i₁ > i₂`). Writing them this way makes the
+bystander arguments uniform in `b`: the words have lengths `|D| + 2 … |D| + 5`,
+and at the three places where two collide they differ in their first letter.
+
+**The order below is not deg-lex's,** which interleaves the lineages and at
+`b = 1` takes a U step before the V one. `MultiStepReduction` fixes no order
+beyond each step's redex being present, so this runs the U lineage to its end
+first — and that is not cosmetic. Under the deg-lex order the U word after its
+`bsStep` and the V word after its braid are both `|D| + 4` long *and* agree in
+their first three letters, so separating them would need a case split on
+whether `D` is empty. Running U first means the V words are only ever compared
+against words of a different length. -/
+
+/-- **`V0` at `a = 1`.** Two descending runs collapse: `descWord i j₁` is
+`[σᵢ, σᵢ₋₁]`, and the `σᵢ₋₁` the S-polynomial inserts lands against the second
+of them — that adjacency is the quadratic redex. -/
+theorem V0_eq₁ {n : ℕ} {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    V0 i i₁ j₁ j₂ = [(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) := by
+  -- `subst` rewrites i₁ -> j₁ (that direction), uniformly on both sides;
+  -- `rw [← hj₁i₁]` would hit the RHS's own `⟨i₁⟩`s and leave one behind
+  subst hj₁i₁
+  rw [V0,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₁) h₁ (by omega),
+    descWord_self,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₂) h₁ (by omega),
+    descWord_cons_le (i' := i₂) (i := j₁) (j := j₂) h₂ (by omega)]
+  simp only [List.cons_append, List.nil_append]
+
+/-- **`U0` at `a = 1`.** The same collapse on the other term: `descWord i₁ j₂`
+opens `σᵢ₋₁`, and it meets the `σᵢ₋₁` ending `descWord i j₁`. -/
+theorem U0_eq₁ {n : ℕ} {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    U0 i i₁ j₁ j₂ = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])) := by
+  subst hj₁i₁
+  rw [U0,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₁) h₁ (by omega),
+    descWord_self,
+    descWord_cons_le (i' := i₂) (i := j₁) (j := j₂) h₂ (by omega)]
+  simp only [List.cons_append, List.nil_append]
+
+/-- The `a = 1` chain at its first cancellation: `bsWord₂ i₁ i j₂` twice, with
+`h²` and `−h²`, separated by the two plain V words. -/
+noncomputable def TCancel₁ (i i₁ i₂ j₂ : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), h * h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -(h * h)), ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+
+/-- **The whole `a = 1` prefix**, six steps: a quadratic step on each term,
+then the U lineage's `bsStep` and its second quadratic step, then the V
+lineage's braid step and its second quadratic step. The two `h²`-weighted
+copies of `bsWord₂ i₁ i j₂` are what cancel.
+
+The V lineage's braid step is `bsStep` at `j = i₁` — the degenerate
+Bokut–Shiao rule that shares a leading word with Yang–Baxter — and on the
+diagonal `b = 1` so is the U lineage's. The engine's trace names both `Y`. -/
+theorem prefixChain₁ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TCancel₁ i i₁ i₂ j₂ (hp.q - hp.q⁻¹)) := by
+  have hj₁v : j₁.val = i₁.val := congrArg Fin.val hj₁i₁
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hlen : ∀ u v : Monomial (HeckeGen n), u.length ≠ v.length → u ≠ v :=
+    fun _ _ hL hc => hL (congrArg List.length hc)
+  -- the two runs the Bokut-Shiao steps ask for
+  have hdij₂ : descWord i j₂ = (⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega),
+      descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)]
+  have hdii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd1j₂ : descWord i₁ j₂ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)
+  -- 1. the quadratic redex inside `V0`
+  have s1 := quadStep hn hp i₁ [] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+    [(⟨i⟩ : HeckeGen n)] ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)) ([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)))) 1 one_ne_zero rfl
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      subst hw
+      simp only [List.cons_append, List.nil_append]
+      intro hcon
+      exact hne1i (List.cons.inj hcon).1)
+  -- 2. the same redex inside `U0`
+  have s2 := quadStep hn hp i₁
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] []
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))) (-1) (by norm_num) rfl
+    (fun w hw => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 3. the U lineage's Bokut-Shiao step, at the general bottom `j₂`
+  have s3 := bsStep (i' := i₁) (i := i) (j := j₂) hn hp h₁ (by omega)
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), (-1 : ℝ))]
+    [(⟨i₁⟩ : HeckeGen n)] [] ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))) ([(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) (-1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by rw [bsWord₁, hdij₂]; simp only [List.cons_append, List.nil_append,
+      List.append_nil])
+    (by rw [bsWord₂, hd1j₂]; simp only [List.cons_append, List.nil_append,
+      List.append_nil])
+    (fun w hw => by
+      simp only [List.map_cons, List.map_nil, List.cons_append,
+        List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw <;> subst hw
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega)
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 4. its second quadratic step, which lands on the cancellation word
+  have s4 := quadStep hn hp i₁
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), (-1 : ℝ))]
+    [] ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)) ([(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) (-1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by simp only [List.cons_append, List.nil_append])
+    (fun w hw => by
+      simp only [List.map_cons, List.map_nil, List.cons_append,
+        List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw <;> subst hw
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega)
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 5. the V lineage's braid step -- `bsStep` at the bottom `i₁`, where the
+  --    Bokut-Shiao rule degenerates into Yang-Baxter
+  have s5 := bsStep (i' := i₁) (i := i) (j := i₁) hn hp h₁ (le_refl _)
+    [] [([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹) * (hp.q - hp.q⁻¹)),
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+    [] ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂) ([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)))) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord i₂ j₂)) (1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by rw [bsWord₁, hdii₁]; simp only [List.cons_append, List.nil_append])
+    (by rw [bsWord₂, descWord_self]; simp only [List.cons_append,
+      List.nil_append])
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 6. its second quadratic step, landing on the same word as step 4
+  have s6 := quadStep hn hp i₁
+    [] [([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹) * (hp.q - hp.q⁻¹)),
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord i₂ j₂)) (1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero) rfl
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  rw [T0, V0_eq₁ h₁ h₂ hj₂ hj₁i₁, U0_eq₁ h₁ h₂ hj₂ hj₁i₁, TCancel₁]
+  simp only [List.cons_append, List.nil_append, one_mul,
+    neg_mul] at s1 s2 s3 s4 s5 s6 ⊢
+  exact ((((((MultiStepReduction.refl _).step s1).step s2).step s3).step
+    s4).step s5).step s6
+
+/-- **The `a = 1` cancellation.** Same shape as `TCancel_coeffEq` and
+`TCancel₂_coeffEq`: the two `bsWord₂ i₁ i j₂` entries carry `h²` and `−h²` and
+are not adjacent, so this is `ofTerms_cancel_split`. What survives is the two
+plain V words and the two plain U words. -/
+theorem TCancel₁_coeffEq {n : ℕ} (i i₁ i₂ j₂ : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel₁ i i₁ i₂ j₂ h)
+      (AlgElement.ofTerms
+        [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h),
+         ([(⟨i⟩ : HeckeGen n)] ++
+            ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)),
+            (1 : ℝ)),
+         ((⟨i⟩ : HeckeGen n) ::
+            ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h),
+         ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]) := by
+  have := ofTerms_cancel_split
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂))
+    (h * h) ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h),
+     ([(⟨i⟩ : HeckeGen n)] ++
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)),
+        (1 : ℝ))]
+    [((⟨i⟩ : HeckeGen n) ::
+        ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+  rw [TCancel₁]
+  simpa using this
 
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
@@ -11170,63 +13234,9 @@ theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
       (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
-  have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
-  -- U0 = σ_{i₁} σ_i · (descWord i₁ j₁ ++ [σ_{i₁}]) · (descWord i₂ j₂ ++ [σ_i])
-  have hU0 : U0 i i₁ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ bsWord₁ i₁ j₁ ++
-          (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) := by
-    rw [U0, bsWord₁, descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
-      descWord_cons h₂ hj₂]
-    simp only [List.append_assoc, List.cons_append, List.nil_append]
-  -- step one: the Bokut–Shiao rule at top i₁, bottom j₁
-  have s := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
-    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
-    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])
-    (U0 i i₁ j₁ j₂) (U0₁ i i₁ i₂ j₁ j₂) (-1) (by norm_num) hU0 rfl
-    (fun q hq => by
-      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-        List.not_mem_nil, or_false] at hq
-      subst hq
-      rw [hU0, V2]
-      simp only [List.cons_append]
-      intro hcon
-      exact hne2 (List.cons.inj hcon).1)
-  -- step two: far-commute σ_i rightwards past σ_{i₂}
-  have t := farComm_transport_right_sources hn hp i (-1) (by norm_num)
-    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
-    [(⟨i₂⟩ : HeckeGen n)] [(⟨i₁⟩ : HeckeGen n)]
-    ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
-      [(⟨i⟩ : HeckeGen n)])))
-    (by
-      intro y hy
-      simp only [List.mem_singleton] at hy
-      subst hy
-      show i₂.val + 1 < i.val
-      omega)
-    (fun u v _ hv r hr => by
-      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-        List.not_mem_nil, or_false] at hr
-      subst hr
-      rw [V2]
-      simp only [List.cons_append]
-      intro hcon
-      exact hne2 (List.cons.inj hcon).1)
-  have hstart : U0₁ i i₁ i₂ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ([(⟨i₂⟩ : HeckeGen n)] ++
-          ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
-            [(⟨i⟩ : HeckeGen n)]))))) := by
-    rw [U0₁, bsWord₂]
-    simp only [List.cons_append, List.nil_append]
-  have hend : U0' i i₁ i₂ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₂⟩ : HeckeGen n)] ++
-          ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) ::
-            (descWord i₂ j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))))) := by
-    rw [U0', descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
-      descWord_cons h₂ hj₁]
-    simp only [List.cons_append, List.nil_append]
-  rw [hstart] at s
-  rw [hend]
-  exact (MultiStepReduction.refl _).step s |>.trans t
+  have h := uLoop (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := i₂) (jppp := i₁) hn hp h₁ h₂ h₂ (by omega) (by omega) (le_refl _)
+  simpa [U0L, U0', descWord_self] using h
 
 end CornerLe
 
