@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-22T19:39:22Z
+updated_at: 2026-08-23T07:44:35Z
 ---
 
 ## Context
@@ -110,3 +110,42 @@ content-free axiom su3_sym2_irreducible and restate octonion_3_passes_sym2_gate
 (6=6∧0=0) to a real dim claim tied to sym2_dim_3. Ref: [fulton-harris1991] §11;
 FS indicator (-1)^{2j}. (Both decls are advisory in the vacuity ledger; the
 file docstring already documents the vacuity honestly.)
+
+
+
+## ═══ TIERED WORKPLAN (2026-08-23) ═══
+
+The 7 open items, ordered by tractability. (Item 4 already discharged, PR #4727.)
+
+**T1 — Lean coverage for the 3 backing-free props [item 2, tractable-first].**
+  prop:meson-octet-decomposition, prop:borromean-decuplet, prop:schur-weyl-eightfold.
+  ASSESS each: if the claim is dimension-count arithmetic (like sym2_dim_3:
+  3·4/2=6), it is a real decidable lemma — author it. If it needs genuine SU(3)
+  rep decomposition (Clebsch-Gordan 3⊗3̄=8⊕1, 3⊗3⊗3=10⊕8⊕8⊕1), that part is a
+  Mathlib gap → state the dimension shadow + bean the rep-level claim. Do NOT
+  fake a decomposition proof.
+
+**T2 — Sym2Gate SU(3)/Frobenius-Schur [item 3, hard Mathlib gap].**
+  su3_sym2_irreducible : True + octonion_3_passes (6=6∧0=0). Needs SU(3)
+  fundamental + FS-indicator (-1)^{2j} / complex-type infra, thin in Mathlib.
+  Options: (a) build minimal SU(3)+FS infra (large); (b) if unused downstream,
+  remove the content-free axiom + restate octonion_3_passes to a real dim claim
+  tied to sym2_dim_3. Ref [fulton-harris1991] §11. Sub-bean candidate.
+
+**T3 — def:octonion-algebra [item 5, definition].**
+  §5 uses 𝕆 and G_2=Aut(𝕆) with no content block. Either author the definition
+  (a genuine algebraic structure — Mathlib has no octonions; sizeable) or keep
+  explicit literature citation. Lower priority; decide author-vs-cite.
+
+**T4 — QA sidecars [item 1, pipeline-gated].**
+  11 empty-criteria .qa.json removed ⇒ chapter has no sidecar coverage. Needs
+  qa-sweep via folio-assistant pipeline (scripts/setup-folio-assistant.sh) —
+  run when the pipeline is available; also the same defect in
+  appendix-standard-model/strand-twist-datum.qa.json + 6 section-title-audit
+  sidecars across 5 papers.
+
+**Research-gated [items 6, 7 — NOT session-closeable].**
+  §1/§5/§6 .ts TODOs (a2-root-system-proof, hexagonal-weight-lattice,
+  color-tube-coords-intro, thurston-relaxation); spin-flavour-colour selection
+  rule; Gell-Mann-Okubo (asserted not derived; ≈6% vs ≈3.3% cross-check). These
+  are open physics/math, not formalization bookkeeping — leave beaned.
