@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-24T00:02:03Z
+updated_at: 2026-08-24T00:11:38Z
 parent: qou-59vq
 ---
 
@@ -823,3 +823,44 @@ The two fields that were missing:
 Follow-on work, none of it blocking: arbitrary `z` (the per-corner identity is the whole gap);
 instantiating `HeckeWedderburnData` with `ocneanuWeight` (sibling `sw8` is on the structure side);
 and re-reading the downstream two-row-cap audit now that the identification is not a citation.
+
+
+## Follow-up: the identification does NOT discharge `IsOcneanuWeightSystem`, and that is proved
+
+I went to cash the result downstream — remove the `[IsOcneanuWeightSystem …]` hypothesis that
+`QBeta/WenzlWeightVanishing.lean` puts on every statement about the *actual* weight — and it does
+not work. `QOU/SchurWeyl/OcneanuWeightSystemScope.lean`, `not_isOcneanuWeightSystem`, sorry-free.
+
+**The shape does not match.** The class asks for a **single** normaliser, `Z` quantified *outside*
+the `∀ μ`:
+
+    weight_eq_schurPrincipal : ∃ Z, Z ≠ 0 ∧ ∀ μ, y μ = schurPrincipal r Q μ / Z
+
+The true relation carries one that depends on the **size**: `… / (q²+1)^{|μ|}`. Evaluating at `⊥`
+(`|μ| = 0`, weight `1`) forces `Z = 1`; at a single cell (`|μ| = 1`, weight nonzero) forces
+`q²+1 = 1`, hence `q = 0`.
+
+This is the AGENTS.md §"Grep the claim SHAPE" failure mode caught before it cost anything — a
+topic-grep would have said "the class carries Wenzl's theorem, my work proves Wenzl's theorem,
+therefore discharge"; the *arity* of `Z` says otherwise.
+
+**Scope, stated as scope-(b) with its invariant named.** It rests on the bridge plus
+`ocneanuWeight_bot` and the one-cell non-vanishing, not on a failed search. Two things it does not
+say:
+
+- **Not "the class is wrong."** For an *unnormalised* `y` a single `Z` is exactly right — take
+  `Z = 1`, `y = schurPrincipal r Q`. The class is inhabitable; it is not inhabited by a
+  per-size-normalised family.
+- **Not "the corpus is inconsistent."** It is a gap between the class's *prose* (the header
+  describes the weights as "normalised so that `Σ_λ f^λ y_λ = 1`") and its *fields* (no
+  normalisation, and a `Z` that cannot vary with `|μ|`). Per-size normalisation is *proved* for
+  `ocneanuWeight`, so the two cannot both hold of one family.
+
+Resolution — index `Z` by the size, or drop the normalisation from the prose — is an authoring
+decision for whoever owns that class. **Deliberately not made here**, and not something I should
+decide unilaterally in someone else's file.
+
+Also confirmed while checking: the factor-of-`q` between `z_D` and Wenzl's `z_W` is **not** a
+discrepancy. `wenzlLevel_conventionD` already records `z_W = q·z_D` at `Q = q²`, which matches
+`Q²/(1+Q) = q⁴/(1+q²)` exactly. I checked this before touching anything, because a bare
+`z_W ≠ z_D` would have undermined the whole tranche.
