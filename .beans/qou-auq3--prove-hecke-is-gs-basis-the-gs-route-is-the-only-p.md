@@ -5258,3 +5258,63 @@ A descent phase — for `k = 1, 2, …` a `BS(-k)@(2k+1)` followed by an `FC` sw
 `FC(-(k-1))@(2k), …, FC(0)@(k+1)` — terminated by `YB(-(i-1))@(2i-1)`, then a
 final `FC` sweep. Doubly nested, and each loop is a descending sweep, so both
 levels are gap inductions of the `descWord_split_aux` kind.
+
+## §4bo — side B's half of `hdeep`, PROVED in full generality (PR pending)
+
+Not a measurement this time. Lean, general in `i`, sorry-free.
+
+`doubleDesc_sweep`: `descWord m z ++ descWord m z ⟶* pairSweep m z`, by exactly
+one Bokut–Shiao step per level. The peel is uniform — the second copy's head
+`σ_m` closes the first copy into `bsWord₁ m z`, the rule replaces it by
+`bsWord₂ (m−1) m z = σ_{m−1}σ_m ++ descWord (m−1) z`, and what remains is the
+same shape one level down. **The bottom needs no step at all**:
+`descWord z z ++ descWord z z` *is* `σ_z σ_z`.
+
+`bside_to_splitWord`: the sweep applied in the context `[σ_{i−1}, σ_i] ⋯ [σᵢ]`,
+landing B on `pairSweep i 0 ++ [σᵢ]` in `i − 1` steps.
+
+**`pairSweep` is defined by a zip, not a recursion** —
+`zip (descWord m z) ((descWord m z).tail ++ [σ_z])` flattened pair-by-pair — so
+no arithmetic on `Fin n` appears in the definition and `pairSweep_cons` is a
+one-line `descWord_cons` rewrite. That choice is what kept the whole section
+short; a recursive definition would have needed `Fin.mk` bounds at every level.
+
+**A correction to the measurement that led here.** The BFS labelled B's last
+step `YB`. It is a **Bokut–Shiao** step: at `m = 1` the word `σ₁σ₀σ₁` is
+`bsWord₁ 1 0` *and* the braid word `wHi 0 1` — §4j's shared-lm pair — and both
+rules send it to `σ₀σ₁σ₀`. So the route is uniform after all, one rule
+throughout, which is why the induction is a single peel rather than a peel plus
+a special last step.
+
+### What this does NOT do
+
+- **Side A is not this.** Doubly nested — a `BS` per level each followed by an
+  `FC` sweep — and `(i²+i+4)/2` steps rather than `i−1`. Still to be written.
+- **Both statements are on a ONE-TERM element**, which makes `monicStep`'s side
+  condition on the surrounding terms vacuous. The `hdeep` application carries
+  the other spoly term alongside; re-establishing that condition against every
+  intermediate is work this section does not do.
+- **`hdeep` is still open**, and so `heckeCompleted_isGrobnerShirshovBasis` is
+  still conditional.
+
+### Measured for the next tranche: B's two branches share one chain shape
+
+After the split, B's `H`-branch and `1`-branch follow the **same shape** of
+chain — same families, same positions, same top indices — for `i = 3, 4, 5`
+(5, 8, 12 steps each).
+
+**Not "the same chain", and I nearly wrote that.** My label printed only each
+rule's *top* index, which hid that the Bokut–Shiao steps differ in their bottom
+index `j`: the `H`-branch uses `bsWord₁(3,0)` where the `1`-branch uses
+`bsWord₁(3,1)`. That is exactly the extra `σ₀` showing up. So the two branches
+are one lemma **parameterised by `j`**, not one lemma applied twice — which is
+still a halving of the work, but it is a different statement.
+
+The extra `σ₀` travels: it starts before the final `σᵢ` and ends after it,
+commuting past by far-commutation. That is why `NF₂ = NF₁ ++ [σ₀]` while the
+branch words differ in the *middle*.
+
+Remaining for `hdeep`, now fully scoped:
+1. side A's route to `NF₁·σ₀σ₀` — doubly nested, `(i²+i+4)/2` steps;
+2. B's post-split chain, one lemma in `j` — `(i²−i+4)/2` steps;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
