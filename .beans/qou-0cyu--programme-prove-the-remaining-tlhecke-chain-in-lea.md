@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-08-24T20:03:10Z
+updated_at: 2026-08-24T20:31:35Z
 ---
 
 
@@ -284,3 +284,38 @@ class has NO INSTANCE (qou-luq7)"* — still true — but the reason given, that
 "the two halves have never been put together", was not the whole story.
 
 Unchanged: the four Mathlib gaps G1–G4 and the mis-priced G5.
+
+
+## 2026-08-24 (later) — the two halves ARE now put together; three corrections
+
+`QOU/MathlibExt/WedderburnIdempotents.lean` (PR #5717) joins them:
+`exists_central_completeOrthogonalIdempotents` turns any Artin–Wedderburn
+equivalence `A ≃ₐ M₁ × ⋯ × M_N` into the idempotent/orthogonal/central/complete
+system `WedderburnDecomp` asks for. Only **centrality** is new — Mathlib's
+`CompleteOrthogonalIdempotents.single` + `.map` already give the other three.
+
+**The remaining gap is the INDEXING, not the construction.** `WedderburnDecomp`
+indexes by `Partition n`; Artin–Wedderburn gives an index of unconstrained size.
+That the blocks of `H_n(q)` are the partitions of `n` and there are no others is
+Mathas §3.43 — not in Mathlib, not here. This bean should say that rather than
+"the halves have never been put together".
+
+### Corrections to this catalogue, measured
+
+1. **"Mathlib HAS Artin-Wedderburn" — CORRECT.** `WedderburnArtin.lean` has
+   zero `proof_wanted`. Verified rather than assumed, because:
+2. **`IsSemisimpleRing.matrix` / `.module_end` ARE `proof_wanted`.** A grep for
+   them finds statements that read like theorems. The discriminator is
+   synthesis: `failed to synthesize IsSemisimpleRing (Matrix (Fin 3) (Fin 3) ℚ)`.
+   The tree's `MathlibExt/MatrixSemisimple.lean` fills the division-ring case,
+   sorry-free and axiom-clean — an upstream candidate this bean does not mention.
+3. **The QOU semisimplicity modules are sorry-free.** `grep -c sorry` reports
+   3/6/2/1 across `HeckeGenericSemisimple`, `MatrixSemisimple`,
+   `TraceFormSemisimple`, `EndSemisimple`; every one of those twelve hits is the
+   phrase **"sorry-free"**. Real count: **zero**. Do not use `grep -c sorry` on
+   this tree.
+
+Also measured: `H_2(q)` at `q > 1` is concretely semisimple
+(`h2_isSemisimpleRing_of_one_lt`, axiom-clean), and its Wedderburn decomposition
+is already explicit in `Machinery/HeckeH2Wedderburn.lean` — so the `n = 2`
+specialisation of the new bridge is redundant and was dropped rather than landed.
