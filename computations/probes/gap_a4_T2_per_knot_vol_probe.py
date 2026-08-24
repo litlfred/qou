@@ -53,6 +53,7 @@ from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noq
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 Q_0_50DPS = Q_50_DIGIT_STR
 
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
@@ -66,7 +67,6 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
     M_HE4_MEV_VALIDATION as M_HE4_MEV,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Small-knot volumes (50-dps from `substrate/knot_volumes.py`):
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")

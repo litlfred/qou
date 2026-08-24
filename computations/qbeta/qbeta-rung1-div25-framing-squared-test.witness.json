@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:10:11.481550+00:00",
-  "commitSha": "c679568568a3c38a9df794d34334a9c14b770945",
+  "computedAt": "2026-08-24T15:46:28.802002+00:00",
+  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
   "assertions": [
     {
       "name": "div25_q_deformation_test_decisive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 43,
   "computation": "qbeta-rung1-div25-framing-squared-test",
   "scriptFile": "qbeta_rung1_div25_framing_squared_test.py",
-  "scriptHash": "a9c789f80f63",
-  "scriptCommitSha": "b3440cbcebfad9716b80219a51ed9c37f5e5186f",
+  "scriptHash": "07e808d3a782",
+  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -46,7 +46,7 @@
   "data": {
     "setup": {
       "c_3_target_cal_anchored": "-2.069342577",
-      "q_0": "1.1099785955573347198997632204832250266562084087802"
+      "q_0": "1.1099785827513808075916690956107688798744991218736"
     },
     "candidate_categorical_25_at_q_1": {
       "5_squared": "5^2 = 25 (trivial)",
@@ -56,12 +56,12 @@
       "note": "All four reduce to 25 at q=1; they DIFFER away from q=1."
     },
     "numerical_at_q0": {
-      "[5]_q": "5.220441324676728546019237",
-      "[5]_q_squared": "27.25300762439251630999648",
-      "c_3_main_with_div_25": "-2.069348075269290713323227",
-      "c_3_qdef_with_div_[5]_q_sq": "-2.067309987052062690639603",
-      "eps_main_ppm": 2.657012595123018,
-      "eps_qdef_ppm": -982.2394660646415
+      "[5]_q": "5.220441275326898244960433",
+      "[5]_q_squared": "27.25300710913673180653988",
+      "c_3_main_with_div_25": "-2.069348062472493332671029",
+      "c_3_qdef_with_div_[5]_q_sq": "-2.067309974912808129258518",
+      "eps_main_ppm": 2.6508286033940096,
+      "eps_qdef_ppm": -982.2453323019172
     },
     "verdict": {
       "main_undeformed_better": true,
