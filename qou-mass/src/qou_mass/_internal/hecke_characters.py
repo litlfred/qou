@@ -597,8 +597,18 @@ def _q_int_at(k, q):
     `q0_anchor_manifest.json::ideal_muon`. So every q-integer here is a function
     of the ENTRY POINT unless the caller names its q (bean qou-wee5).
     """
-    h = q - 1 / q
-    return (q ** k - q ** (-k)) / h
+    # Association order MIRRORS the module-level `q_int`, which is
+    # `(Q**n - Q_INV**n) / HA` over PRECOMPUTED reciprocal and h. Computing
+    # `q**(-k)` and `q - 1/q` inline instead is the same mathematics but a
+    # different float64 rounding path: measured, it moved `binding_3A` by
+    # 1.7e-16 to 3.2e-16 relative — 1 to 1.5 ULP. That is the floor of the
+    # arithmetic and not a semantic change, but a witness diff cannot tell the
+    # difference, so threading a q would have shown up as "fields moved" across
+    # the whole migration. Binding the reciprocal once makes the explicit path
+    # bit-identical to the default when `q` IS the module q. Bean qou-6p3b.
+    qi = 1 / q
+    h = q - qi
+    return (q ** k - qi ** k) / h
 
 
 def qfac(n, q=None):
