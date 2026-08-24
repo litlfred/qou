@@ -6,7 +6,7 @@
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 75,
+      "computed": 91,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -9716,6 +9716,20 @@
           ]
         },
         {
+          "witness": "nucleus-real-sdp-proton.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "nv-pslq-extended-basis.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "one-loop-ambiguity-group.witness.json",
           "missing_fields": [
             "engine",
@@ -9822,6 +9836,22 @@
           ]
         },
         {
+          "witness": "gt-matrix-pslq-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "nv-categorical-derivation-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "rho-f-categorical-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -9860,6 +9890,22 @@
           ]
         },
         {
+          "witness": "rho-w-crystal-vertex-trace.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "shadow-price-c-321-q0.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "sigma-f-electron-shell-chain.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -9890,7 +9936,39 @@
           ]
         },
         {
+          "witness": "low-isotope-binding-sweep.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "paper-six-term-shadow-price-sweep.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "t35-weak-vertex.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "takata-fig8-recurrence-hunt.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "toffoli-lp-stability.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -10281,6 +10359,38 @@
         },
         {
           "witness": "alpha-em-bring-real-structure.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "beta-ew-delta-I-321-and-wedderburn.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "beta-ew-delta-I-eigenvalues.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "beta-ew-delta-I-numerical-spectrum.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "binding-ladder-catalog.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -11093,7 +11203,7 @@
           ]
         },
         {
-          "witness": "aomega-m2-bps-cohomology.witness.json",
+          "witness": "pn-alpha-lp-dual.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
