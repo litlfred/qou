@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T19:30:27Z
-updated_at: 2026-08-24T19:31:04Z
+updated_at: 2026-08-24T19:47:41Z
 ---
 
 ## The claim, and what backs it
@@ -88,3 +88,46 @@ trivial instance to make the "proved" claims true would be the laundering the
 rule forbids, in the opposite direction. Either prove it from the Hecke
 presentation, or cite it as literature (Kassel Ch. XIV / Mathas §3, which the
 file already names) and report it as **cited**, not proved.
+
+
+## 2026-08-24 follow-up — one retraction of mine, and a refinement
+
+### RETRACTED: EigenbasisStructuralLemmas.lean:117 is NOT an acknowledgement
+
+I read the docstring phrase *"with an actual ribbon-eigenvalue instance
+`[RibbonTwistEigenvalue q]`"* as the file conceding no instance exists. **It is
+not.** It is ordinary prose describing the theorem's own hypothesis binder. Do
+not cite line 117 as evidence; the evidence for the zero-instance claim is the
+grep, which is independent and holds.
+
+### The zero-instance claim IS robust — re-checked for the obvious escapes
+
+`instance`, `haveI`, `letI`, anonymous-constructor introduction: all absent
+across `content/`. `RibbonTwistEigenvalue` occurs exactly at its declaration
+(`ChiralityWritheRibbon.lean:86`), in two docstrings, and as a hypothesis binder
+at `ChiralityWritheRibbon:108,199,274` and `EigenbasisStructuralLemmas:121`.
+Nothing inhabits it.
+
+### Refinement: for L3 the axiom carries no mathematical weight at all
+
+`framing_gf_ribbon_class` (the class version) proves its goal by
+
+    simp only [RT.framing_formula, ...]
+    exact framing_gf_ribbon q t chi_0 kappa N
+
+i.e. it unfolds the class field to the literal `q^{2kappa}` and defers to
+`framing_gf_ribbon`, which is **unconditional** in `q, t, chi_0, kappa`:
+
+    (1 - t*q^{2k}) * sum_m t^m (q^{2mk} chi_0) = chi_0 (1 - (t q^{2k})^N)
+
+That is the geometric-series identity with base `x := q^{2kappa}`, discharged
+through `framing_gf_closed_form` from a step relation. **It holds for ANY base.**
+The twist exponent enters only as NOTATION for `x`; nothing in the algebra cares
+whether the physical twist is `q^{2c}`, `q^{c}`, or anything else.
+
+Consequence for how to report L3: the axiom is load-bearing for the
+INTERPRETATION (that this particular base is the Hecke twist eigenvalue), not for
+the identity. So `anchored_on_axiom_class` is the right label for the
+interpretive claim, and it would be equally wrong to say the identity itself is
+axiom-dependent. Both directions of over-claim are available here; the fix
+committed avoids the first, and this note guards the second.
