@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-24T17:52:46Z
+updated_at: 2026-08-24T18:13:35Z
 ---
 
 
@@ -614,3 +614,45 @@ Genuinely open, tracked elsewhere:
 Keeping this bean IN-PROGRESS rather than closing on the manifest number: the
 mechanism-5 question and the slow producers are real remaining work, and
 closing on "120 -> 36" would read as done when it is not.
+
+
+## CORRECTION 2026-08-24 — "five refuse a proton run" was wrong. Three refuse; two fail SILENTLY.
+
+Caught in review of the #5664 merge: AGENTS.md (via #5332) says THREE producers
+refuse a proton run by design, while #5664's own material says FIVE. AGENTS.md
+is right, and the discrepancy is not cosmetic — it collapses two opposite
+behaviours into one word.
+
+Verified at source:
+
+    atomic_tr_m_mpfr_50dps                REFUSES  "Refusing rather than writing
+                                                    a straddled witness"
+    cross_check_trM_1ppb                  REFUSES  "must run under the MUON q0 pin"
+    he4_stage2_ranking_seminormal_xcheck  REFUSES  assert q.startswith("1.109978595557")
+    ---
+    chi_lambda_he4_full_partition_table   RUNS, and emits a STRADDLE
+    bwhk_st_matrix_corroboration          RUNS, and emits a STRADDLE
+
+The last two do not refuse anything. They complete with rc=0, flip `.q0Value`
+to proton, and leave the muon value sitting in the payload
+(`.parameters.q_0_f64`, `.data.q0`) — because they read the anchor-defining
+witness directly (mechanism 5) rather than consulting q_parameter at all.
+
+**Why the distinction matters more than the count.** A producer that refuses is
+the SAFE case: it tells you, loudly, at the moment you get it wrong. A producer
+that silently straddles is the DANGEROUS one — nothing surfaces, and the only
+way to find out is to check whether the muon value actually left the witness.
+Calling both "refuses by design" hides the dangerous class behind the safe one,
+which is the opposite of what the label should do.
+
+Both are still correctly held on `ideal_muon`; only the reason differs. The
+keep-on-muon set is therefore:
+
+    3  refuse loudly            (safe: they self-identify)
+    2  straddle silently        (unsafe: found only by checking the payload)
+    1  defines the anchor       (q_pinning_50_digit)
+    1  needs BOTH pins          (q0_anchor_consistency_audit)
+
+The two silent ones are the strongest argument for the WitnessBuilder fix
+proposed in qou-aj91: make `.q0Value` report the anchor the PAYLOAD used, and
+the silent class stops being silent.
