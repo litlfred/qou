@@ -48,6 +48,7 @@ from itertools import product as cart_product
 from pathlib import Path
 from typing import Optional
 from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -679,7 +680,7 @@ def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
     for lam in partitions_of(n):
         shape = list(lam)
         chi_val = chi_lambda_braid(shape, hc_word, q_value=float(q))
-        chi_id = dim_q(shape)
+        chi_id = dim_q(shape, Q0_PROTON)
 
         # Quantum Schur function at SU(N)
         schur = 1.0

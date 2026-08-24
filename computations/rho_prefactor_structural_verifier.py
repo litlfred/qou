@@ -68,6 +68,7 @@ from hecke_characters import (  # noqa: E402
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -274,7 +275,7 @@ def analyze_atom(atom: dict, wenzl: dict) -> dict:
         y = wenzl.get(lam, 0.0)
         prod = abs(y * chi)
         d_lam = syt_count(lam)
-        dq = float(dim_q(lam))      # q-dim at module-level Q
+        dq = float(dim_q(lam, Q0_PROTON))      # q-dim at module-level Q
         per_lambda.append({
             "lambda": list(lam),
             "is_hook": is_hook_partition(lam),
