@@ -171,6 +171,45 @@ trefoil or `5₂` is an authorial call, and picking one to make the table
 self-consistent would be exactly the kind of silent resolution the corpus
 disciplines forbid. Flagged with the evidence.
 
+### The `𝔡` defect is a ONE-OFF finding, not a QA criterion — measured and declined
+
+The obvious next move is to mechanise the `𝔡` check as a sidecar criterion:
+`T(2,n)` has crossing number `n`, `5₂` is not a torus knot, so a block asserting
+both should be decidable by arithmetic. **Measured, it is not mechanisable at
+that level, and the criterion is declined.** Recorded here so it is not
+re-proposed.
+
+The arithmetic claim is correct; the *detector* built on it is not. Two scopes
+were prototyped against the whole `content/` tree:
+
+| scope | flagged | real |
+|---|---|---|
+| file-level co-occurrence of `T(2,n)` and an AB symbol | 11 | **1** |
+| single table row carrying both | worse | — |
+
+**File scope** over-flags ~10:1: 8 of the 11 hits are one auto-generated
+`definition-index.md` counted once per occurrence; one is `3_2`, which is not a
+knot at all (regex noise); and the `brings-surface` hits are the corpus's
+legitimate Kashaev / Borel-summability work on `5₂` merely *co-occurring* with a
+`T(2,n)` in the same file. Co-occurrence in a file is not a claim about the same
+object.
+
+**Row scope is worse, not better.** A table row routinely holds several distinct
+objects and several unrelated integer columns, so the check reads genus and index
+cells as crossing counts (`crossings=1` against `T(2,7)`) and flags
+`4₁` beside `T(2,3)` in an *embeddability comparison* table — where naming two
+different knots in one row is the point.
+
+Doing it properly needs per-table column semantics — knowing which cell names the
+object and which is its crossing number. That is table-specific schema, not a
+generic criterion, and the corpus has ~215 `.md` files carrying a `T(2,n)`.
+
+**So: `𝔡` stays a one-off finding, flagged above with its evidence.** The general
+lesson is the one this session has now hit twice: a criterion that sounds
+deterministic is worth nothing until you measure what it flags. (The other
+instance: `qou-omiu`'s suffix exclusion, declined at 26.6 % of scan surface for
+zero measured benefit.)
+
 **Two cautions, so this is not over-read.** (1) `σ` is **overloaded**: the same
 superscript marks particle/antiparticle elsewhere (`knot-notation-convention.md`:
 electron `T_{2,3}` vs positron `T_{2,3}^σ`; `antineutrino-knot.md`). Whether
