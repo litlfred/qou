@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.ArchimedeanEval
 
 /-!
 # QOU.Information.toffoli_transfer_matrix
@@ -11,8 +11,8 @@ This module states the manuscript claim over a context class so the `lean.ref` U
 
 ## Base ring (§7c) — `ℝ` here is correct
 
-`ToffoliTransferMatrixContext` extends `QOU.Shared.MarkovTraceContext`, which
-supplies a generic coefficient ring `R`, but this block's amplitudes stay at
+`ToffoliTransferMatrixContext` inherits a generic coefficient ring `R` from
+`QOU.Shared.MarkovTraceContext`, but this block's amplitudes stay at
 `ℝ`: sub-claim (vi) is the closed form
 `P_{7,7} = (q + Real.sqrt q − 1) / (q + 1)`, and a square root is an
 archimedean construct with no counterpart over a generic `CommRing`.  The whole
@@ -20,10 +20,15 @@ family of amplitudes is stated at the same specialisation for coherence, so the
 block sits after the substrate→archimedean wall.  Reviewed under bean
 `qou-mtcx`; do not "port" it to `R` to reduce an `ℝ` count.
 
-The private `q_real : ℝ` is genuinely used (it is the argument of `Real.sqrt`),
-but nothing connects it to the inherited `q : R` — tying the two would need the
-archimedean evaluation functor, which the parent context does not carry.  That
-gap is recorded as bean `qou-mt7r`, not papered over here.
+`q_real` is genuinely used (it is the argument of `Real.sqrt`) and is now
+**tied** to the inherited `q : R` (bean `qou-mt7r`): the class extends
+`QOU.Shared.ArchimedeanEval`, which carries an assumed evaluation
+`eval : R →+* ℝ` and derives `q_real := eval q`.  It used to be an independent
+field, so sub-claim (v) — the classical limit `q_real = 1 → P_flip k = 0` —
+could hold at `q_real = 1` while the substrate parameter sat anywhere at all.
+The evaluation is assumed, not constructed: it is **not** the archimedean
+τ-functor, and `ArchimedeanEval.ofRingHom` machine-checks how little it takes
+to inhabit.
 -/
 
 
@@ -33,9 +38,7 @@ namespace QOU.Information
 /-- Abstract context for the `toffoli_transfer_matrix` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
-  /-- Real-valued specialisation of `q` for the analytic formulae below. -/
-  q_real : ℝ
+class ToffoliTransferMatrixContext extends QOU.Shared.ArchimedeanEval where
   /-- Target-flip amplitude on a 3-strand nuclear braid, indexed by
       the two control types `(k₁, k₂) ∈ {0,1}²`. -/
   P_flip : ℕ × ℕ → ℝ
@@ -75,14 +78,14 @@ class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
   claim_iv_antisymmetry : P_6_7 = - P_7_6
   /-- Manuscript sub-claim (v) — Classical limit: every target-flip
       amplitude vanishes at `q = 1` because the core carries `(q − 1)`. -/
-  claim_v_classical_limit : ∀ k : ℕ × ℕ, q_real = 1 → P_flip k = 0
+  claim_v_classical_limit : ∀ k : ℕ × ℕ, toArchimedeanEval.q_real = 1 → P_flip k = 0
   /-- The Toffoli-diagonal amplitude `P_{7,7}(q) = (q + q^{1/2} − 1) /
       (q + 1)`. -/
   P_7_7 : ℝ
   /-- Manuscript sub-claim (vi) — Toffoli diagonal closed form:
       `P_{7,7}(q) = (q + √q − 1) / (q + 1)`. -/
   claim_vi_diagonal_formula :
-    P_7_7 = (q_real + Real.sqrt q_real - 1) / (q_real + 1)
+    P_7_7 = (toArchimedeanEval.q_real + Real.sqrt toArchimedeanEval.q_real - 1) / (toArchimedeanEval.q_real + 1)
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip

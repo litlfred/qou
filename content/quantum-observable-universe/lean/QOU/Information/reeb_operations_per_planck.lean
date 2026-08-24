@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
-import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.ArchimedeanEval
 
 /-!
 # QOU.Information.reeb_operations_per_planck — discrete iterations per Reeb circuit
@@ -30,17 +30,22 @@ one jet-prolongation step, advancing the phase by `ℏ_q` of a full circuit.
   = 1`) are structural *definitions* of the discrete dynamics (one `∇_q`
   application, one `R`-matrix evaluation per `f_q`-iteration), carried as
   honest data fields — not self-assumed conclusions.
-- **Base ring (§7c) — `ℝ` here is correct.** The class extends
-  `QOU.Shared.MarkovTraceContext` and so inherits a generic coefficient ring
-  `R`, but the substrate parameter is deliberately specialised: the whole
+- **Base ring (§7c) — `ℝ` here is correct.** The class inherits a generic
+  coefficient ring `R` from `MarkovTraceContext`, but the substrate parameter
+  is deliberately specialised: the whole
   proposition rests on the ordering hypothesis `1 < q_real`, and the proof runs
   through `lt_trans`, `div_pos`, `div_lt_one` and `linarith`.  Ordering and
   `linarith` are archimedean, so this block sits after the
   substrate→archimedean wall.  Reviewed under bean `qou-mtcx`; do not "port" it
-  to `R` to reduce an `ℝ` count.  What is *not* established is any link between
-  `q_real` and the inherited `q : R` — that would need the archimedean
-  evaluation functor, which the parent does not carry; recorded as bean
-  `qou-mt7r`.
+  to `R` to reduce an `ℝ` count.
+- **`q_real` is now tied to the inherited `q : R`** (bean `qou-mt7r`). The class
+  extends `QOU.Shared.ArchimedeanEval`, which carries an assumed evaluation
+  `eval : R →+* ℝ` and *derives* `q_real := eval q`. It used to be an
+  independent field, so a context could set `q_real := 37` alongside an
+  unrelated `q` and this proposition still held — it was a statement about *a*
+  real number, not about this universe's substrate parameter. The evaluation is
+  assumed, not constructed: it is **not** the archimedean τ-functor, and
+  `ArchimedeanEval.ofRingHom` machine-checks how little it takes to inhabit.
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/
@@ -53,20 +58,21 @@ namespace QOU.Information
     `n_R = t_P`) are carried as fields; the arithmetic identities
     `t_P = 1/ℏ_q` and `0 < ℏ_q < 1` are *derived* in the theorem, not
     assumed. The per-iteration operation counts are modelling data. -/
-class ReebOperationsPerPlanckContext extends QOU.Shared.MarkovTraceContext where
-  /-- Real substrate parameter `q_real : ℝ` (specialisation of the
-      generic shared `q : R` to ℝ for the analytic identity below). -/
-  q_real : ℝ
-  /-- `q > 1` (QOU regime). -/
-  q_gt_one : 1 < q_real
+class ReebOperationsPerPlanckContext extends QOU.Shared.ArchimedeanEval where
+  /-- `q > 1` (QOU regime).
+
+      `q_real` is no longer a field here: it is `ArchimedeanEval.q_real`, i.e.
+      `eval q`, so this bound now constrains the image of the inherited
+      substrate parameter rather than a free real (bean `qou-mt7r`). -/
+  q_gt_one : 1 < toArchimedeanEval.q_real
   /-- Substrate q-Planck constant `ℏ_q`. -/
   hbar_q : ℝ
   /-- **Definition:** `ℏ_q = (q − 1)/q`. -/
-  hbar_q_eq : hbar_q = (q_real - 1) / q_real
+  hbar_q_eq : hbar_q = (toArchimedeanEval.q_real - 1) / toArchimedeanEval.q_real
   /-- Planck time `t_P(q)`. -/
   t_P : ℝ
   /-- **Definition:** `t_P = q/(q − 1)`. -/
-  t_P_eq : t_P = q_real / (q_real - 1)
+  t_P_eq : t_P = toArchimedeanEval.q_real / (toArchimedeanEval.q_real - 1)
   /-- Number of iterations per Reeb circuit `n_R(q)`. -/
   n_R : ℝ
   /-- **Definition (Reeb-time coordinate `t = ℏ_q · 𝒯`):** the iteration
