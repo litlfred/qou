@@ -89,8 +89,13 @@ def main() -> int:
     # 2026-08-08): two layers meeting inside one quantity, invisible because
     # each half is individually reasonable. Take q_0 from the same place the
     # V̂ side takes it, so the pair is single-layer by construction.
-    from q_parameter import Q as _Q_RUNTIME  # noqa: E402
-    q = mp.mpf(str(_Q_RUNTIME))
+    # `Q_MP`, not `mpf(str(Q))`. `Q` is the float64 view of the pin, so
+    # stringifying it and re-wrapping recovers exactly its 17 digits and
+    # discards the other 32 — laundering, in the shape
+    # `f64_into_mpmath_audit` calls out by name. `Q_MP` is the same
+    # constant carried at full precision.
+    from q_parameter import Q_MP as _Q_RUNTIME  # noqa: E402
+    q = mp.mpf(_Q_RUNTIME)
     q_inv = mp.mpf(1) / q
     z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
     h = q - q_inv
