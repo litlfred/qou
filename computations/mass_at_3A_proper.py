@@ -846,6 +846,41 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
     else:
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")
 
+    # Per-generator SCALAR collapse, replacing a per-λ matrix product.
+    #
+    # Every factor accumulated at generator i is a polynomial in the SAME
+    # σ_i, so the factors commute, and σ_i obeys the Hecke quadratic relation
+    # σ² = (q − q⁻¹)σ + 1. Measured against the built matrices rather than
+    # assumed: max|σ² − ((q−q⁻¹)σ + 1)| = 6.661e-16 for (3,2,1) and
+    # (4,3,1,1), while the (q−1)σ + q alternative misses by 1.992e-01;
+    # eigenvalues are [−q⁻¹, q] = [−0.90091828, 1.10997858].
+    #
+    # So Π_k (c_k σ_i + d_k · 1) = α_i σ_i + β_i · 1 with (α, β) built by a
+    # scalar recursion, and χ_λ of it is α · tr σ_i^λ + β · dim λ — a diagonal
+    # sum, O(dim), no matmul at any point.
+    #
+    # This is what makes A ≥ 3 tractable, and the reason is dtype, not dim³:
+    # the word's coefficients are a MIX of int and mpf (19 of the 35 steps at
+    # A=3 carry one, and every generator hits one by step 0-4), so
+    # `c * sigmas[i] + d * I_lam` promoted the float64 seminormal matrix to
+    # dtype=object and each `M @ ...` ran as a Python-level loop — ~6e7 mpf
+    # mul+add per word-step sweep over λ ⊢ 9. Same defect ca8a629034 fixed in
+    # chi_lambda_of_word; that fix did not reach THIS function. Measured here:
+    # A=2 0.577s → 0.0009s, A=3 >20 min → 0.1 s, values unchanged to 9.107e-16.
+    #
+    # δ is taken at Q0_PROTON, NOT at the `q` parameter, because the matrices
+    # below are built at Q0_PROTON — the relation has to hold for the matrices
+    # actually in hand or the collapse is inconsistent with them. That the
+    # weight table above already honours `q` while `_cached_seminormal` does
+    # not is pre-existing and is left alone here.
+    _delta = Q0_PROTON - 1.0 / Q0_PROTON
+    _alpha_beta = []
+    for i in range(n_gens):
+        _a, _b = 0, 1                      # identity: 0·σ + 1·1
+        for (c, d) in word_by_gen[i]:
+            _a, _b = _a * c * _delta + _a * d + _b * c, _a * c + _b * d
+        _alpha_beta.append((_a, _b))
+
     for (shape, w_lam) in weight_table:
         sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
@@ -855,11 +890,6 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
             is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
         except ImportError:
             is_sparse = False
-        if is_sparse:
-            from scipy import sparse as sp_sparse
-            I_lam = sp_sparse.eye(dim, format='csr')
-        else:
-            I_lam = np.eye(dim)
         for i in range(n_gens):
             w_i_steps = word_by_gen[i]
             if not w_i_steps:
@@ -869,15 +899,13 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
             if i >= len(sigmas):
                 # Shouldn't happen (len(sigmas) = n_strands - 1)
                 continue
-            M = I_lam
-            for (c, d) in w_i_steps:
-                M = M @ (c * sigmas[i] + d * I_lam)
+            _a, _b = _alpha_beta[i]
             if is_sparse:
-                _t = M.diagonal().sum()
-                tr = _t if _H3A_MPF else float(_t)
+                _s = sigmas[i].diagonal().sum()
             else:
-                _t = np.trace(M)
-                tr = _t if _H3A_MPF else float(_t)
+                _s = np.trace(sigmas[i])
+            _t = _a * _s + _b * dim
+            tr = _t if _H3A_MPF else float(_t)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
