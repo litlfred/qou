@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T19:20:00Z
+updated_at: 2026-08-24T10:15:00Z
 ---
 
 
@@ -1177,3 +1177,71 @@ gate-wired `computations/witness_provenance_audit.py`, whose `UNCONFIRMED`
 verdict is *"asserted as unchecked"*. **This was never a missing idea. It was an
 inconsistently applied one**, and the useful next step is a shared helper rather
 than a thirteenth hand-written coverage block.
+
+---
+
+## Finding #2 — the DECISION half dissolves. It was a resolver defect, not a corpus decision.
+
+This bean has carried #2's disposition as owner-blocked since it was filed:
+*"the highest-value correctness item but needs a decision about what to do with
+359 unresolvable witnesses."* **Most of them were never unresolvable.**
+
+`_producers` located a producer with exactly one rule:
+
+```python
+cand = wf.parent / os.path.basename(str(sf))     # beside the witness, nowhere else
+```
+
+That discards the directory component outright. `computations/` has had
+subdirectories for a long time, so the rule dropped:
+
+| | n |
+|---|---|
+| witnesses whose `scriptFile` is a **correct repo-root path**, thrown away anyway | **4** |
+| producer one directory over, overwhelmingly `computations/probes/` | **62** |
+| genuinely not locatable anywhere | **6** |
+
+**66 of the 72 were addressing, not absence** — reported as "producer not beside
+witness" and excluded from an audit whose stated thesis is that a witness with no
+runnable producer is *the maximal case* of unrefreshability.
+
+### Fixed
+
+`_resolve_producer` now tries, most-certain first: beside the witness → the
+declared path relative to the repo root → a basename index over the repo
+(excluding `_deprecated`, `.git`, `__pycache__`, `node_modules`). **A basename
+matching more than one file is NOT resolved** — it is reported as
+`ambiguous_basename` rather than guessed, because picking `hits[0]` is how a
+resolver starts quietly attributing witnesses to the wrong producer. The route
+that resolved each witness is counted and printed.
+
+```
+witnesses w/ producer resolved   2437   [89.5% EVALUATED]     (was 2371 / 87.1%)
+  producer not locatable         6                            (was 72)
+  ambiguous basename (>1 match)  0
+resolved by: basename_search=62, beside_witness=2371, declared_path=4
+```
+
+### What remains, and it is a different question
+
+The **280 witnesses with no `scriptFile` at all** are untouched by this. They are
+the real residue, and they are `qou-0uqm`'s class (provenance recorded?) rather
+than this audit's (can the producer run?). Measured overlap: of the 352 dropped,
+**290 already sit in a non-`PROV_OK` class that `qou-0uqm` owns** — re-litigating
+them here would be duplicate work.
+
+The genuinely new population is **78 witnesses the provenance audit rates
+`PROV_OK`** — they carry `engine`/`computedAt`/`commitSha` — yet whose producer
+this audit still could not locate. That is exactly where the two lenses disagree,
+and it is owned by neither bean today.
+
+### Still needing a policy call, but now small
+
+- **5 non-Python producers that exist** (`.rs`, `.lean`, `.sage` — e.g.
+  `joint-tower-sdp-rust` → `tools/hecke-engine/src/bin/joint_tower_sdp.rs`).
+  Importing them as Python is meaningless, so they should be a **named class**,
+  not folded into `producers checked`.
+- **~15 prose-marker or hand-authored witnesses** (`"legacy — no matching producer
+  found"`, `"Hand-authored summary witness: no producer script was run"`).
+
+That is a decision over ~20 items, not 359.

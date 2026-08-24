@@ -109,6 +109,62 @@ _LOADER = (
 )
 
 
+_PRODUCER_SUFFIXES = (".py", ".rs", ".lean", ".sage")
+_basename_index: "dict[str, list[Path]] | None" = None
+
+
+def _repo_basename_index(root: Path) -> "dict[str, list[Path]]":
+    """Every producer-shaped file in the repo, keyed by basename.
+
+    Built once. `_deprecated`, `.git`, `__pycache__` and `node_modules` are
+    excluded so a resolution never lands on a retired copy.
+    """
+    global _basename_index
+    if _basename_index is None:
+        idx: "dict[str, list[Path]]" = {}
+        repo = root.parent
+        skip = {"_deprecated", ".git", "__pycache__", "node_modules"}
+        for f in repo.rglob("*"):
+            if not f.is_file() or f.suffix not in _PRODUCER_SUFFIXES:
+                continue
+            if skip & set(f.parts):
+                continue
+            idx.setdefault(f.name, []).append(f)
+        _basename_index = idx
+    return _basename_index
+
+
+def _resolve_producer(root: Path, sf: str, wf: Path) -> "tuple[Path | None, str]":
+    """Locate the producer a witness names. Returns (path, how).
+
+    The original rule was `wf.parent / basename(scriptFile)` — beside the witness
+    and nowhere else. `computations/` has had subdirectories for a long time, and
+    the rule discards the directory component outright, so it dropped even the
+    witnesses whose `scriptFile` is a CORRECT repo-root path. Measured before this
+    change: 2371 resolved beside, **4** naming a correct path that was thrown away,
+    and **62** whose producer sits one directory over (mostly
+    `computations/probes/`). Those 66 were reported as "producer not beside
+    witness" and silently excluded from an audit whose whole thesis is that a
+    witness with no runnable producer is the maximal case of unrefreshability.
+
+    Resolution order, most to least certain. A basename that matches more than one
+    file is NOT resolved — reported as ambiguous rather than guessed.
+    """
+    base = os.path.basename(sf)
+    beside = wf.parent / base
+    if beside.exists():
+        return beside, "beside_witness"
+    named = root.parent / sf
+    if named.exists() and named.is_file():
+        return named, "declared_path"
+    hits = _repo_basename_index(root).get(base, [])
+    if len(hits) == 1:
+        return hits[0], "basename_search"
+    if len(hits) > 1:
+        return None, "ambiguous"
+    return None, "unresolved"
+
+
 def _producers(root: Path):
     """witness -> producer path, plus an accounting of what could NOT be resolved.
 
@@ -127,6 +183,8 @@ def _producers(root: Path):
         "unparseable": [],
         "no_script_file": [],
         "producer_not_beside_witness": [],
+        "ambiguous_basename": [],
+        "resolved_by": {},
     }
     for wf in root.rglob("*.witness.json"):
         s = str(wf)
@@ -146,15 +204,19 @@ def _producers(root: Path):
         if not sf:
             scope["no_script_file"].append(rel)
             continue
-        cand = wf.parent / os.path.basename(str(sf))
-        if cand.exists():
+        cand, how = _resolve_producer(root, str(sf), wf)
+        if cand is not None:
+            scope["resolved_by"][how] = scope["resolved_by"].get(how, 0) + 1
             out.setdefault(cand, []).append(wf)
+        elif how == "ambiguous":
+            scope["ambiguous_basename"].append(f"{rel}  ->  {sf}")
         else:
             scope["producer_not_beside_witness"].append(f"{rel}  ->  {sf}")
     scope["witnesses_resolved"] = sum(len(v) for v in out.values())
     scope["witnesses_unresolved"] = (len(scope["unparseable"])
                                      + len(scope["no_script_file"])
-                                     + len(scope["producer_not_beside_witness"]))
+                                     + len(scope["producer_not_beside_witness"])
+                                     + len(scope["ambiguous_basename"]))
     # Deliberately NO ratio stored: a float64 in a witness violates the corpus's
     # no-float64 rule (the repo's own raw-float64 guard fires on it), and a
     # coverage ratio needs no precision policy anyway — the two integers above
@@ -175,9 +237,14 @@ def _print_scope(scope: dict) -> None:
           f"   [{pct:.1f}% EVALUATED]")
     print(f"    witnesses NOT evaluated          {scope['witnesses_unresolved']}")
     print(f"      no scriptFile field            {len(scope['no_script_file'])}")
-    print(f"      producer not beside witness    "
+    print(f"      producer not locatable         "
           f"{len(scope['producer_not_beside_witness'])}")
+    print(f"      ambiguous basename (>1 match)  "
+          f"{len(scope['ambiguous_basename'])}")
     print(f"      unparseable                    {len(scope['unparseable'])}")
+    if scope.get("resolved_by"):
+        print("    resolved by: " + ", ".join(
+            f"{k}={v}" for k, v in sorted(scope["resolved_by"].items())))
     if scope["witnesses_unresolved"]:
         print("    NOTE: a witness whose producer cannot be located is the MAXIMAL"
               "\n          case of this audit's thesis, not an exemption from it."
