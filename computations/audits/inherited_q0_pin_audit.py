@@ -216,8 +216,56 @@ def _find_upstream(fname: str) -> Path | None:
     return None
 
 
+
+# ---------------------------------------------------------------------------
+# 🛑 THE MANIFEST IS NOT THE STAMP. Comparing an inherited pin against
+# `q0_anchor_manifest.json` answers "what was this producer SUPPOSED to be
+# pinned at", which is a different question from "what does its witness
+# CLAIM" -- and the second is the one a reader is misled by.
+#
+# Three ways they come apart, all measured:
+#   * ABSENT from the manifest resolves to `proton` at runtime, not to
+#     "unknown" (witness.py:291, "matching the runtime default"). The corpus
+#     names the distinction: `q0_anchor_is_declared` exists precisely because
+#     "absence is the runtime default, not evidence".
+#   * ...but only for producers that stamp at all. `mu3_target_frame_robustness`
+#     is ABSENT *and* emits NO `q0Anchor` -- so the manifest default never
+#     applies, and the witness sits outside every anchor audit's scope. Reading
+#     ABSENT as "declared proton" would have called it a MISLABEL; it is not one.
+#   * `independent` / `comparison` are declared by the producer at save() and
+#     can never come from a manifest lookup at all.
+#
+# So the oracle is the committed witness, indexed by its own `scriptFile`
+# field -- exact, rather than guessing the filename from the producer stem
+# (`strip_float64_padding` emits `q0-value-drift-audit.witness.json`).
+def _stamp_index() -> dict[str, str | None]:
+    """producer basename -> its witness's q0Anchor (None = emits no stamp)."""
+    idx = {}
+    for f in COMPUTE.rglob("*.witness.json"):
+        if any(x in f.parts for x in SKIP):
+            continue
+        try:
+            w = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:                                       # noqa: BLE001
+            continue
+        sf = w.get("scriptFile")
+        if isinstance(sf, str):
+            idx.setdefault(Path(sf).name, w.get("q0Anchor"))
+        # A witness with NO `scriptFile` is invisible to the index above, and
+        # "no-witness" is the wrong thing to say about a producer whose witness
+        # is sitting right there. Measured: mu3_target_frame_robustness_probe
+        # emits mu3-target-frame-robustness.witness.json, which carries neither
+        # `scriptFile` nor `q0Anchor` -- so it must classify `unstamped` (the
+        # qou-veu1 mechanism: outside every anchor audit's scope), not
+        # `no-witness`. Fall back on the stem convention, underscores to hyphens.
+        idx.setdefault("__stem__" + f.name[: -len(".witness.json")].replace("-", "_"),
+                       w.get("q0Anchor"))
+    return idx
+
+
 def scan() -> list[dict]:
     mcls = manifest_class()
+    stamps = _stamp_index()
     rows = []
     for p in sorted(COMPUTE.rglob("*.py")):
         if any(x in p.parts for x in SKIP):
@@ -266,13 +314,25 @@ def scan() -> list[dict]:
                 w = None
             if w is not None:
                 r["upstream_pin"] = _pin_in(w, r["expr"])
-        declared = {"ideal_muon": "muon", "physical_proton": "proton"}.get(r["manifest"])
-        if r["upstream_pin"] and declared and r["upstream_pin"] != declared:
+        base = Path(r["producer"]).name
+        stem = base[: -len(".py")]
+        stamp = stamps.get(base, stamps.get(
+            "__stem__" + stem.removesuffix("_probe"),
+            stamps.get("__stem__" + stem, "__nowitness__")))
+        r["stamp"] = stamp
+        pin = r["upstream_pin"]
+        if stamp == "__nowitness__":
+            r["verdict"] = "no-witness"          # nothing to mislabel
+        elif stamp is None:
+            r["verdict"] = "unstamped"           # outside every anchor audit
+        elif stamp not in ("muon", "proton"):
+            r["verdict"] = "declared-other"      # independent / comparison / ambiguous
+        elif pin in ("muon", "proton") and pin != stamp:
             r["verdict"] = "MISLABEL"
-        elif r["upstream_pin"] and declared:
+        elif pin in ("muon", "proton"):
             r["verdict"] = "agrees"
         else:
-            r["verdict"] = "undetermined"
+            r["verdict"] = "undetermined"        # upstream unresolved, or neither-pin
     return rows
 
 
@@ -334,12 +394,13 @@ def main() -> int:
     print("inherited-q0-pin audit — producers whose q0 comes from another")
     print("producer's witness, stamped from a manifest that cannot know it")
     print("=" * 72)
-    order = {"MISLABEL": 0, "undetermined": 1, "agrees": 2}
+    order = {"MISLABEL": 0, "unstamped": 1, "undetermined": 2,
+             "declared-other": 3, "no-witness": 4, "agrees": 5}
     for r in sorted(rows, key=lambda x: (order[x["verdict"]], x["producer"])):
         print(f"  {r['verdict']:13s} {r['producer']}")
         print(f"{'':17s}{r['expr']}")
         print(f"{'':17s}upstream={r['upstream']} holds={r['upstream_pin']} "
-              f"manifest={r['manifest']}")
+              f"stamp={r['stamp']} manifest={r['manifest']}")
     tally = {}
     for r in rows:
         tally[r["verdict"]] = tally.get(r["verdict"], 0) + 1
