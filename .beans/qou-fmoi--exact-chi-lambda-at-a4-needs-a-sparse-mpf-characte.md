@@ -3,8 +3,9 @@
 title: Exact chi_lambda at A=4 needs a sparse-mpf character product (dense mpmath is ~571 h)
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-08-24T09:11:25Z
+updated_at: 2026-08-24T20:04:40Z
 ---
 
 
@@ -202,3 +203,81 @@ changed is that we now know float64 was not *silently* wrong here — which is
 useful for triaging the OTHER float64-into-sparse sites (`qou-q7lf`,
 `hecke_core_legacy`), where the same question will come up and can now be asked
 the same cheap way.
+
+## Correction: the engine has 14 candidate consumers, not zero
+
+I said on merging #5648 that "nothing currently needs it, since the case I built
+it for prunes to one cheap irrep". That was measured only against `su4`.
+
+Measured properly — producers that call `chi_lambda_of_word` **and** build their
+word with `atom_braid_word_3A`, which carries exact `mpf` offsets:
+
+    binding_rotation_phase_lead          phase3_deuteron_tritium_h_expansion
+    wedderburn_jones_markov              ocneanu_weights
+    tr_m_q_hecke_seminormal              h6_deuteron_free_word_chi_lambda_probe
+    su4_1111_markov_trace_probe          trace_convention_reconciliation
+    he3_tritium_cosh_asymmetry_diagnosis term5_v2_chirality
+    hoefsmit_mpmath                      canonical_brane_tower
+    binding_per_bond_decomposition       mass_at_3A_proper
+
+**14 producers are on the silent-coercion path** after `qou-qrsp` made
+`chi_lambda_of_word` coerce its word coefficients to `float` at the contract.
+
+### What that does and does not establish
+
+It establishes the *set*, not the *need*. `qou-qrsp` measured the coercion at
+half an ulp per coefficient, and for `su4` the verdict was unaffected — all four
+metrics agreed with the exact route to ~16 digits. Whether any of the other 13
+has a conclusion sensitive to that loss is **unmeasured**, and the su4 result is
+mild evidence they do not.
+
+The cheap check now exists for each: run the caller against
+`chi_lambda_of_word_sparse_mp` and compare. That is what settled it for `su4`,
+and it is a per-caller question rather than a corpus sweep.
+
+
+## 2026-08-24 — the engine HAS a consumer, and the corpus already named the blocker it retires
+
+**CORRECTION FIRST.** On merging #5648 I said "nothing currently needs the
+engine", then corrected that to "14 producers on the silent-coercion path". BOTH
+figures were loose: they counted files that merely MENTION `chi_lambda_of_word`
+and `atom_braid_word_3A`, which sweeps in the engine module itself, its own test,
+and docstring text. Measured by the definition that matters — who IMPORTS the
+float64 kernel:
+
+    8 importers of `mass_at_3A_proper.chi_lambda_of_word`
+      -2 already handled (the sparse test; `su4_1111_markov_trace_probe`, migrated)
+    = 6 remaining consumers, all with live call sites, 5 of which WRITE A WITNESS
+
+Do not quote 14 or 19.
+
+### The case does not rest on a verdict flip, and should not be argued that way
+
+`mass_at_3A_proper.py:561` is `def chi_lambda_of_word(...) -> float`, and its own
+docstring is explicit: *"This is a float64 kernel, and the return annotation is
+the contract ... no caller has ever received more than 53 bits from here."* So
+five committed witnesses carry numbers from a float64 kernel. Under the STRICT
+NO-FLOAT64 rule that is a defect on its own terms — "note it as a limitation and
+ship" is banned, and a float64 result "resolves to ~1e-16 no matter what is
+true". Whether any of the six has a VERDICT that turns on the extra bits is still
+UNMEASURED, and I am not claiming it does.
+
+### The corpus had already written down the blocker the engine removes
+
+Same docstring, closing line: *"at A = 4 the largest irrep is f^λ = 4158, i.e.
+~7.2e10 mpf operations per matrix multiply, so that route is not a drop-in for
+the A ≥ 4 producers."*
+
+That is exactly the wall `chi_lambda_of_word_sparse_mp` goes around. Hoefsmit
+seminormal matrices carry ≤2 nonzeros per row, so propagating one sparse row
+through the word costs O(dim²·|word|·nnz) instead of O(dim³·|word|) — the
+measured 82–223× — and the stated reason the exact route "is not a drop-in" no
+longer holds. The justification for the engine was sitting in the very function
+it replaces.
+
+### Next honest step
+
+Migrate the five witness-writing consumers, cheapest dim first, and diff each
+witness. That measurement is what would decide whether any verdict moves; until
+it is run, the claim is "removes a float64 kernel from five witnesses", not
+"changes a result".

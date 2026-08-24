@@ -3,8 +3,9 @@
 title: 'RETRACTED measurement: the 88% file-only q0Anchor figure is an over-count'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-24T14:21:00Z
-updated_at: 2026-08-24T14:21:00Z
+updated_at: 2026-08-24T19:57:58Z
 ---
 
 
@@ -218,3 +219,105 @@ this session already made once with `qou-q7lf`.
 
 Recorded only so the next reader knows the 44 were seen and deliberately left
 to that arc.
+
+## Remediation view: 93 producers, and a quarter of them cannot be fixed that way
+
+`q0_anchor_reproducibility_audit.py --by-producer`.
+
+**The "241" is 241 witnesses but only 93 producers**, and one of them —
+`canonical_isotope_witness` — accounts for **120** of the witnesses. A
+per-witness rate here is half one file. That is the distortion AGENTS.md
+records costing a 39 %-vs-73 % swing on the staleness census; counting
+producers is what avoids it.
+
+| producers | witnesses | would a manifest entry reach it? |
+|---:|---:|---|
+| 48 | 196 | **EFFECTIVE** — reads `q_parameter` |
+| 22 | 22 | UNKNOWN — no visible q0 source (indirect/helper) |
+| 12 | 12 | **INERT** — hardcoded q0 literal |
+| 11 | 11 | **INERT** — reads the anchor witness directly (`qou-aj91`) |
+
+**23 of 93 producers (24 %) cannot be fixed by a manifest entry at all.** They
+never consult the manifest: they read the anchor-defining witness directly, or
+carry a literal. An entry for those declares a pin the producer does not obey —
+which is worse than the missing stamp it replaces, because it *looks*
+established.
+
+So the shape of the work is now concrete: 48 producers where an entry is the
+right instrument (and one of them drains 120 witnesses), 23 where it is the
+wrong one, and 22 that need reading before either.
+
+The 11 direct-anchor readers are `qou-aj91`'s class — that bean says the fix
+belongs in `WitnessBuilder`, not in the producers, and this is a second reason
+to agree.
+
+
+## 2026-08-24 — RESOLVED for the reachable bucket: 48 producers declared, 396 -> 200 at-risk
+
+**The instrument is a RUNTIME NO-OP, which is what makes it safe.** My own
+objection on #5696 was that a manifest entry "declares a pin the producer does
+not obey". Measured, that is backwards for this bucket: an undeclared producer
+ALREADY resolves proton (`q_parameter.py:100-113`, `witness.py:324` — both
+default not-in-`ideal_muon` to proton). Verified directly by adding one stem and
+re-resolving:
+
+    BEFORE  declared=False  resolve=proton
+    AFTER   declared=True   resolve=proton
+
+Only `q0_anchor_is_declared` flips. The entry does not re-pin anything; it
+RECORDS the pin the producer was already using. That is precisely why this is
+not the `qou-1c4y` bulk migration and does not need its sign-off — no witness is
+regenerated, no producer changes anchor, `ideal_muon` is untouched (598 -> 646
+in `physical_proton`, 48 insertions, additive only).
+
+MEASURED EFFECT: at-risk 396 -> 200 (38% -> 19%); builder-but-undeclared
+241 -> 45. The residual 45 are the INERT/UNKNOWN producers where an entry WOULD
+be the lie I described — they never consult the manifest.
+
+### The evidence does NOT rest on the on-disk stamps, and that matters
+
+Provenance of the 196 labels in this bucket:
+
+    174  ASSERTED: no reason recorded (backfill co-write)  <- circular, per this bean
+     22  INDEPENDENT: transcribed from the producer's own recorded q0 value
+
+So 89% of the labels are exactly the self-confirming kind this bean was opened
+about. The determination does not use them: it uses the RUNTIME RESOLUTION RULE,
+a code fact. The 22 independent readings are corroboration, and all 22 say
+proton. Zero independent readings contradict it.
+
+### Two producers read differently, and one is a real find
+
+- **`qbeta_signchannel_cross_atom_probe` — a STALE WITNESS, not a mislabel.**
+  Its `muon` label is one of the 22 INDEPENDENT ones: `q0AnchorReason` records it
+  was transcribed from `parameters.q_50dps` in its own payload. Computed
+  2026-06-22, before the proton directive. The producer calls plain `q_at()`, so
+  a re-run today gives PROTON — the recorded numbers are muon-era and would
+  move. The declaration is truthful about the producer; the witness still needs
+  regenerating. THE STAMP CONFLICT IS A STALE-WITNESS DETECTOR, which is a use
+  for this axis nobody has claimed yet.
+- **`markov_peel_atomic_witness` — env-driven dual-layer**, writes
+  `markov-peel-atomic-tr-m{,-muon}` by pin. Env wins over the manifest, so the
+  entry fixes the proton stamp and leaves the muon run alone. Its muon stamp
+  already reproduces via the env var, which the audit CANNOT SEE — so the audit
+  over-reports on env-driven producers. Separately: its docstring asserts "it is
+  tagged `physical_proton` in `q0_anchor_manifest.json`" and **it was not**
+  (until this change). A source comment asserting a manifest fact that did not
+  exist.
+
+### One safety check worth keeping, and why it over-reported
+
+`witness.py:1601` stamps by the BUILDER'S FILE (`self._script_path`) while
+`q_parameter` selects by `sys.argv[0]`'s stem. For an imported helper those are
+different files, so declaring a helper `physical_proton` could stamp proton on a
+muon-resolved run. Checked all 48 against the importers of each: one flag,
+`per_irrep_pole_atom` <- `block_swap_binding` (`ideal_muon`). READ, and it is
+benign — `block_swap_binding` imports only `parts_of`, a pure helper, never
+reaching that module's builder. Import-based detection over-reports because
+importing a FUNCTION is not reaching the module's WitnessBuilder. Over-reporting
+is the safe direction and it surfaced the one pair worth reading.
+
+Also checked: 4 of the 48 mention the muon layer; 2 (`flavor_split_alpha_*`)
+genuinely call `q_muon_at()`. AGENTS.md already adjudicates that shape — a
+producer reading `q_at()`/`q_muon_at()` by name "belongs under
+`physical_proton`" — so the entry is right for them too.
