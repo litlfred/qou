@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 229,
-      "proton-pin": 1644,
+      "proton-pin": 1645,
       "unknown": 25,
-      "canonical": 168
+      "canonical": 167
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -12419,9 +12419,9 @@
       {
         "file": "computations/qbeta/qbeta-composite-crossanchor-2factor-sweep.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-composite-operator-first-test.witness.json",
