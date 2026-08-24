@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 292,
-      "proton-pin": 1295,
+      "proton-pin": 1296,
       "unknown": 25,
       "canonical": 201
     },
@@ -5082,6 +5082,13 @@
       },
       {
         "file": "computations/d-density-derivation.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/d-frame-prefactor-localisation.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
