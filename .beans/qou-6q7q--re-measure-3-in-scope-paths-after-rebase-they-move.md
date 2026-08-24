@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-08-24T18:08:27Z
+updated_at: 2026-08-24T18:14:30Z
 ---
 
 ## The claim that needs qualifying
@@ -111,3 +111,54 @@ One further path differs from main — `parabolic-cylinder-channel-mixing-probe.
 So the re-measurement scope is **1 producer, not 3**, and it is running via the
 `--resume` path this bean prescribed — which is the part of the plan that does
 work, and the checkpointing is what makes it cost one producer instead of 47.
+
+
+## The sweep's DENOMINATOR is not stable — 47 → 142 in one day
+
+Re-running with `--resume` to re-measure the one genuinely-drifted producer did
+something I did not expect: the record now reads **`measured: 55 / 142`**, not
+`/ 47`. `--resume` is working correctly — it skipped the 46 retained entries —
+but the **target set itself grew from 47 to 142**.
+
+**Mechanism, read from the harness rather than guessed.** `targets()` scans
+`computations/**/*.witness.json` at *run time* and selects on
+`q0Anchor == "muon"` plus the muon value prefix. So the in-scope set is a
+function of **how many witnesses currently carry a muon stamp** — not of how
+much work exists.
+
+**Attribution, verified on an instance rather than inferred.** One of the
+newly-in-scope producers is `cross_check_trM_cw_seminormal_leg.py`; its witness
+`cross-check-trM-cw-seminormal.witness.json` was last touched by
+**`4101909790` — *"q0: label 229 witnesses from their own payload"***. Main
+labelled 229 previously-unstamped witnesses; every muon one among them entered
+this selector.
+
+So the growth is not drift and not churn: **labelling work on main enlarges this
+sweep's population by construction.** The better main gets at stamping, the more
+this audit has to measure.
+
+## This is the bean's own standing hazard, with a magnitude
+
+This bean already says:
+
+> Main moves during a multi-hour sweep. Any verdict file should record the
+> commit it was measured at, so this comparison is mechanical next time rather
+> than reconstructed by hand.
+
+That is exactly right, and now has a number against it: **the denominator moved
+47 → 142 in a single day.** Two consequences worth stating plainly:
+
+1. **"47 / 47 measured" was only ever true relative to one tree.** It is not a
+   completion figure and must not be quoted as one. The same applies to any
+   percentage derived from it.
+2. **A verdict file needs its `tree_commit` beside its counts, not just in the
+   environment block.** The sweep does record `environment.tree_commit` — good —
+   but the *tally* does not carry it, so a reader comparing two tallies has no
+   way to see they were computed over different populations.
+
+## Status
+
+The re-run is left going: it is checkpointed per producer, so nothing is lost if
+it dies, and the partial record self-describes with `partial: true`. It will hit
+the four confirmed long producers from `qou-uz7q` and burn a timeout on each;
+that is expected, not a fault.

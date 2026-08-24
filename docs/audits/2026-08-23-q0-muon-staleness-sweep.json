@@ -635,21 +635,6 @@
       "anchor_defining": false
     },
     {
-      "producer": "computations/audits/q0_anchor_consistency_audit.py",
-      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
-      "verdict": "SUBSTANTIVE",
-      "siblings_moved": [],
-      "changed_fields": [
-        "data.by_verdict.Q0_AMBIGUOUS (len 18 -> 17)",
-        "data.by_verdict.Q0_ANCHOR_MISSING (len 1919 -> 1897)",
-        "data.by_verdict.Q0_OK (len 669 -> 695)",
-        "data.counts.Q0_AMBIGUOUS",
-        "data.counts.Q0_ANCHOR_MISSING",
-        "data.counts.Q0_OK"
-      ],
-      "anchor_defining": false
-    },
-    {
       "producer": "computations/binding_via_interface_knot.py",
       "witness": "computations/binding-via-interface-knot.witness.json",
       "verdict": "TIMEOUT",
@@ -820,32 +805,273 @@
         "scriptHash"
       ],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/aK_via_lp_dual_full.py",
+      "witness": "computations/a-K-via-lp-dual-full.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "assertions.1.computed",
+        "assertions.3.computed",
+        "assertions.5.computed",
+        "assertions.7.computed",
+        "assertions.9.computed",
+        "assertions.11.computed",
+        "data.active_set.0 (len 1 -> 3)",
+        "data.active_set.1 (len 1 -> 3)",
+        "data.active_set.2 (len 7 -> 11)",
+        "data.active_set.3 (len 25 -> 30)",
+        "data.active_set.4 (len 25 -> 30)",
+        "data.active_set.5 (len 70 -> 77)",
+        "data.dual_obj.0",
+        "data.dual_obj.1",
+        "data.dual_obj.2",
+        "data.dual_obj.3",
+        "data.dual_obj.4",
+        "data.dual_obj.5",
+        "data.dual_obj_str.0",
+        "data.dual_obj_str.1",
+        "data.dual_obj_str.2",
+        "data.dual_obj_str.3",
+        "data.dual_obj_str.4",
+        "data.dual_obj_str.5",
+        "data.duality_gap",
+        "data.duality_gap_str",
+        "data.primal_obj.0",
+        "data.primal_obj.1",
+        "data.primal_obj.2",
+        "data.primal_obj.3",
+        "data.primal_obj.4",
+        "data.primal_obj.5",
+        "data.primal_obj_str.0",
+        "data.primal_obj_str.1",
+        "data.primal_obj_str.2",
+        "data.primal_obj_str.3",
+        "data.primal_obj_str.4",
+        "data.primal_obj_str.5",
+        "data.rows.0.active_set (len 1 -> 3)",
+        "data.rows.0.chirality_dual_sum"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/aK_via_lp_dual_hecke_basis.py",
+      "witness": "computations/a-K-via-lp-dual-hecke-basis.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "assertions.1.computed",
+        "assertions.3.computed",
+        "data.dual_obj.0",
+        "data.dual_obj.1",
+        "data.dual_obj_str.0",
+        "data.dual_obj_str.1",
+        "data.duality_gap",
+        "data.duality_gap_str",
+        "data.primal_obj.0",
+        "data.primal_obj.1",
+        "data.primal_obj_str.0",
+        "data.primal_obj_str.1",
+        "data.rows.0.dual_obj",
+        "data.rows.0.dual_obj_str",
+        "data.rows.0.duality_gap",
+        "data.rows.0.duality_gap_str",
+        "data.rows.0.per_basis.0.x_star",
+        "data.rows.0.per_basis.0.x_star_str",
+        "data.rows.0.per_basis.0.y_star_str",
+        "data.rows.0.per_basis.1.x_star",
+        "data.rows.0.per_basis.1.x_star_str",
+        "data.rows.0.per_basis.1.y_star",
+        "data.rows.0.per_basis.1.y_star_str",
+        "data.rows.0.per_basis.2.x_star",
+        "data.rows.0.per_basis.2.x_star_str",
+        "data.rows.0.per_basis.2.y_star",
+        "data.rows.0.per_basis.2.y_star_str",
+        "data.rows.0.per_basis.3.x_star",
+        "data.rows.0.per_basis.3.x_star_str",
+        "data.rows.0.per_basis.3.y_star",
+        "data.rows.0.per_basis.3.y_star_str",
+        "data.rows.0.per_basis.4.x_star",
+        "data.rows.0.per_basis.4.x_star_str",
+        "data.rows.0.per_basis.4.y_star",
+        "data.rows.0.per_basis.4.y_star_str",
+        "data.rows.0.per_basis.5.x_star",
+        "data.rows.0.per_basis.5.x_star_str",
+        "data.rows.0.per_basis.5.y_star",
+        "data.rows.0.per_basis.5.y_star_str",
+        "data.rows.0.primal_obj"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/aK_via_lp_dual.py",
+      "witness": "computations/a-K-via-lp-dual.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.upstream_witness_hashes.0.sha256",
+        "data.upstream_witness_hashes.0.size_bytes"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/ame_2020_binding_energies.py",
+      "witness": "computations/ame-2020-binding-energies.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/audits/option_e_v9_one_plus_q_structural_audit.py",
+      "witness": "computations/audits/option-e-v9-one-plus-q-structural-audit.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/audits/q0_anchor_consistency_audit.py",
+      "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/binding_k_solver.py",
+      "witness": "computations/binding-k-solver.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "data.per_atom_results.0.K_alpha_gap",
+        "data.per_atom_results.0.K_min_eig_overall",
+        "data.per_atom_results.0.K_per_block.(1, 1, 1, 1, 1, 1).chi",
+        "data.per_atom_results.0.K_per_block.(1, 1, 1, 1, 1, 1).det",
+        "data.per_atom_results.0.K_per_block.(1, 1, 1, 1, 1, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(2, 1, 1, 1, 1).chi",
+        "data.per_atom_results.0.K_per_block.(2, 1, 1, 1, 1).det",
+        "data.per_atom_results.0.K_per_block.(2, 1, 1, 1, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(2, 2, 1, 1).chi",
+        "data.per_atom_results.0.K_per_block.(2, 2, 1, 1).det",
+        "data.per_atom_results.0.K_per_block.(2, 2, 1, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(2, 2, 2).chi",
+        "data.per_atom_results.0.K_per_block.(2, 2, 2).det",
+        "data.per_atom_results.0.K_per_block.(2, 2, 2).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(3, 1, 1, 1).chi",
+        "data.per_atom_results.0.K_per_block.(3, 1, 1, 1).det",
+        "data.per_atom_results.0.K_per_block.(3, 1, 1, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(3, 2, 1).chi",
+        "data.per_atom_results.0.K_per_block.(3, 2, 1).det",
+        "data.per_atom_results.0.K_per_block.(3, 2, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(3, 3).chi",
+        "data.per_atom_results.0.K_per_block.(3, 3).det",
+        "data.per_atom_results.0.K_per_block.(3, 3).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(4, 1, 1).chi",
+        "data.per_atom_results.0.K_per_block.(4, 1, 1).det",
+        "data.per_atom_results.0.K_per_block.(4, 1, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(4, 2).chi",
+        "data.per_atom_results.0.K_per_block.(4, 2).det",
+        "data.per_atom_results.0.K_per_block.(4, 2).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(5, 1).chi",
+        "data.per_atom_results.0.K_per_block.(5, 1).det",
+        "data.per_atom_results.0.K_per_block.(5, 1).min_eig_sym",
+        "data.per_atom_results.0.K_per_block.(6,).chi",
+        "data.per_atom_results.0.K_per_block.(6,).det",
+        "data.per_atom_results.0.K_per_block.(6,).min_eig_sym",
+        "data.per_atom_results.0.explicit_binding_k_heuristic.K_min_eig_overall_explicit",
+        "data.per_atom_results.0.explicit_binding_k_heuristic.candidate_rules_explicit.rule_A_exact_dim_q.rho_predicted",
+        "data.per_atom_results.0.explicit_binding_k_heuristic.candidate_rules_explicit.rule_A_exact_dim_q.value",
+        "data.per_atom_results.0.explicit_binding_k_heuristic.candidate_rules_explicit.rule_B_round_dim_q.value",
+        "data.per_atom_results.0.explicit_binding_k_heuristic.candidate_rules_explicit.rule_C_floor_dim_q.value"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/c_k_beta_decay_witness.py",
+      "witness": "computations/c-k-beta-decay-bound.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/chi_lambda_he4_full_partition_table.py",
+      "witness": "computations/chi-lambda-he4-full-partition-table.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
     }
   ],
   "tally": {
     "TIMEOUT": 6,
     "SUBSTANTIVE/ASSERT-FAIL": 6,
-    "SUBSTANTIVE": 26,
-    "UNCHANGED": 6,
+    "SUBSTANTIVE": 30,
+    "UNCHANGED": 10,
     "CRASH": 3
   },
-  "partial": false,
-  "measured": 47,
-  "total": 47,
+  "partial": true,
+  "measured": 55,
+  "total": 142,
   "environment": {
     "python": "3.11.15",
     "modules": {
-      "mpmath": "1.3.0",
+      "mpmath": "1.4.1",
       "sympy": "1.14.0",
       "numpy": "2.4.6",
       "scipy": "1.17.1",
       "pyhecke_native": "0.9.0"
     },
-    "tree_commit": "fab8c20105db48e5a9f86b6c56cc5b62e5e599f1"
+    "tree_commit": "8775c31469e25e72991e2cf617d25856cba4672b"
   },
   "skipped": [
     {
-      "witness": "computations/probes/aoperator_a5_crosscheck.witness.json",
+      "witness": "computations/deltalambda/a3-precision-order-decomposition.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/a4-precision-order-decomposition.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/binding-weight-markov-pinning.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/deltalambda-additive-signchanging-term.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/deltalambda-kappa-interface-residual-simplex.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/deuteron-naive-z-physical-but-does-not-close.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/deltalambda/mu3-target-frame-robustness.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/probes/theta_jet_gb_grading_probe.witness.json",
+      "scriptFile": null,
+      "candidates": []
+    },
+    {
+      "witness": "computations/signed-crossing-feasibility.witness.json",
       "scriptFile": null,
       "candidates": []
     }
