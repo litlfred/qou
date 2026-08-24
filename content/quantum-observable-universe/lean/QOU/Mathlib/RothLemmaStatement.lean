@@ -405,13 +405,25 @@ Sum: `(2c+3)s`.  ⚠ Note the second bound is the *crude* one, `2√(c+1) ≤ c+
 **exactly tight at `c = 0`**.  So §14's constant is not slack that a sharper argument could
 shave; it is what this inequality gives.
 
-⚠ **The hypotheses are stated, not derived** — this theorem is true whatever `Ψ` and `u` mean,
-and the reading above is a reconstruction of which quantity §14's displays refer to.  It is
-corroborated rather than read: §13's `t` is a *row cost* and §11's `t` is the parameter, and
-`Ψ_m = Θ_{m−1} + t` closes to `2c+3` only if that `t` is the parameter.  Under the other
-reading — row cost, bounded by `2t` via `rothGrowth_row_cost_le` — the same computation gives
-`2c+4`, which is not §14's constant.  So the reading is forced by the answer, which is weaker
-evidence than reading it and is worth saying.
+⚠⚠ **Correction twelve: an earlier version of this docstring claimed the reading was "forced
+by the answer".  It is not, and the claim is withdrawn.**
+
+What it said was: §13's `t` is a *row cost* and §11's is the parameter, `Ψ_m = Θ_{m−1} + t`
+closes to `2c+3` only under the parameter reading, so the constant identifies the reading.
+The second clause is false.  §14's own display splits the same total differently — leading
+term `s` (the row cost weakened), and `2√(c+1)` bounded by the cruder `2c+2` — and lands on
+`2c+3` as well:
+
+    §14:        1     + (2c+2)  =  2c+3
+    this proof: (c+1) + (c+2)   =  2c+3
+
+`rothConstant_step_source` below proves that route, so the agreement is a **checked fact** and
+not an assertion.  Two distinct splits reaching the same constant means reproducing the
+constant discriminates nothing.
+
+So: the hypotheses here are **stated, not derived**.  The theorem is true whatever `Ψ` and `u`
+mean, and which quantity §14's `Ψ_m = Θ_{m−1} + t` refers to remains an unverified
+reconstruction.  That is the honest status, and the previous docstring overstated it.
 
 ⚠ **`0 ≤ u` is not a hypothesis**, though the quantity it stands for is non-negative.  The
 squared bound alone gives `u ≤ (c+2)s`: a negative `u` clears a non-negative right-hand side
@@ -430,6 +442,31 @@ theorem rothConstant_step {m : ℕ} (hm : 1 ≤ m) {s Ψ u θ : ℚ}
   have hus : u ≤ ((rothConstant m : ℚ) + 2) * s := by
     refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
     nlinarith [sq_nonneg ((rothConstant m : ℚ) * s)]
+  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+    rw [rothConstant_rec m hm]; push_cast; ring
+  rw [hrec]
+  linarith
+
+/-- **§14's own split of the same step** — a different route to the same constant.
+
+The source's display leads with the row cost (weakened from `t` to `s`) rather than with `Ψ`,
+and bounds `2√(c+1)` by the crude `2c+2` where `rothConstant_step` uses the sharper `c+2`.
+Both land on `2c+3`; this is the checked half of correction twelve.
+
+⚠ Note this route needs **no** `s ≤ 1`.  `rothConstant_step` does, for `s² ≤ s`.  (Getting
+`Ψ ≤ (c+1)s²` in the first place needs it either way, so nothing is gained — but the
+difference is real and shows the two splits are not notational variants of one argument.) -/
+theorem rothConstant_step_source {m : ℕ} (hm : 1 ≤ m) {s Ψ u θ : ℚ}
+    (hs0 : 0 ≤ s)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (hu : u ^ 2 ≤ 4 * Ψ)
+    (hθ : θ ≤ s + u) :
+    θ ≤ (rothConstant (m + 1) : ℚ) * s := by
+  have hc0 : (0 : ℚ) ≤ (rothConstant m : ℚ) := Nat.cast_nonneg _
+  have hus : u ≤ (2 * (rothConstant m : ℚ) + 2) * s := by
+    refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
+    nlinarith [sq_nonneg ((rothConstant m : ℚ) * s),
+      mul_nonneg hc0 (sq_nonneg s)]
   have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
   rw [hrec]
@@ -507,11 +544,18 @@ Chaining them through `le_mul_of_max_form_squeeze` gives `(d₂ + 1)·Φ ≤ Ψ�
 `Ψ = Θ_{m−1} + t = Φ + t` that rearranges to exactly the hypothesis below.
 
 ⚠ **It is a largeness requirement on the split-off degree, not a bookkeeping identity.**  At
-the best case `D₂ = d₂` it reads `Φ ≤ t·d₂` (`factor_bound_le_of_split_degree_eq`), and
-`Φ ≈ Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` *much* larger than `t` — so `d₂` must be
-at least `Φ/t`.  That is what `Γ_m`'s clauses 2 and 3 are for, and this is the point where they
-finally have to be used: nothing earlier in the arc needed them, which is exactly why they went
-missing for so long.
+the best case `D₂ = d₂` it reads `Φ ≤ t·d₂` (`factor_bound_le_of_split_degree_eq`).
+
+What `Φ` is, precisely: `RothInductionStep.factor_bound_of_rescaled` bounds the two
+Wronskians' summed index at the *unscaled* degrees by `r·(εU + εV)`, so the arc's `Φ` is
+`εU + εV` — the **sum** of the two halves' bounds, hence `Φ ≤ 2Θ_{m−1}`, not `Θ_{m−1}`.  The
+`r` is the rescaling factor and cancels against §13's `S/r`; it is not a row count entering
+the size of `Φ`.  Since `Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` much larger than
+`t`, `d₂` must be at least `Φ/t`.
+
+That is what `Γ_m`'s clauses 2 and 3 are for, and this is the point where they finally have to
+be used: nothing earlier in the arc needed them, which is exactly why they went missing for so
+long.
 
 ⚠ Neither positivity of `Φ` nor of `D₂` is a hypothesis — the rearrangement is linear in the
 monomials.  Same reason `0 ≤ u` came off `rothConstant_step`. -/
