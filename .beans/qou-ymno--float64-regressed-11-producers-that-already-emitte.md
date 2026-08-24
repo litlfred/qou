@@ -135,4 +135,4 @@ this one holds up on reading:
   * LP_DUAL_F64_FIELDS currently covers the LP solution fields only, not
     gram_matrix / gram_inverse / shadow_prices / char_on_basis.
 Extending a carve-out is an owner call: the sibling carve-out in that same
-file is annotated "qou-7kq3, owner-approved 2026-08-15". See bean qou-brm1.
+file is annotated "qou-7kq3, owner-approved 2026-08-15". See bean qou-mmcc.
