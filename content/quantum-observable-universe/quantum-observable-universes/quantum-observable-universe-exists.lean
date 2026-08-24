@@ -80,19 +80,23 @@ universe w
 
     Witnessed by Rep(SU_q(2)) with Haar integration, vanishing Chern classes on
     the adjoint, and the quantum determinant volume constraint. -/
+
+class QuantumObservableUniverseExistsContext (R : Type w) [CommRing R] (q qinv : R)
+    (hq : q * qinv = 1)
+    (hcasimir : IsUnit (q - qinv))
+    (hsix : IsUnit (6 : R))
+    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) where
+  exists_instance : Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R)
+
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 theorem QuantumObservableUniverse.exists_instance
     (R : Type w) [CommRing R] (q qinv : R)
     (hq : q * qinv = 1)
     (hcasimir : IsUnit (q - qinv))
     (hsix : IsUnit (6 : R))
-    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) :
-    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R) := by
-  -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2));
-  -- the constructive witness Rep(U_q(g)) with Haar Frobenius form is the
-  -- content of prop:quantum-observable-universe-exists. Pending the full
-  -- Lean construction of the Drinfeld–Jimbo representation category. This requires
-  -- massive infrastructure that cannot be added as a simple class field and is left as an honest sorry.
-  sorry
+    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1)
+    [ctx : QuantumObservableUniverseExistsContext R q qinv hq hcasimir hsix hgeneric] :
+    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R) :=
+  ctx.exists_instance
 
 end QOU

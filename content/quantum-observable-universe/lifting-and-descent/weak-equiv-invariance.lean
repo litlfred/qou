@@ -55,9 +55,24 @@ structure WeakEquivalence (R : Type*) [CommRing R] where
 attribute [instance] WeakEquivalence.instAddCommGroup WeakEquivalence.instModule
 attribute [instance] WeakEquivalence.instDLAddCommGroup WeakEquivalence.instDL
 
-/-- **Vacuum state**: a linear functional τ : A_∞ → R. -/
+/-- **Linear vacuum state**: a linear functional `τ : A_∞ → R`.
+
+    Renamed from `VacuumState` (bean `qou-u87j`). That name is already taken,
+    in the same namespace, by a **different** structure:
+    `QOU.Torsion.VacuumState` in `lean/QOU/Torsion/BraneTower.lean:66` is the
+    real-valued state of `prop:vacuum-state`, carrying `invariant` and
+    `extends_haar`. This one is the `R`-linear functional that
+    `def:weak-equiv-invariance` needs, over a generic ring and a generic
+    module.
+
+    They are not two copies of one declaration that drifted apart — they are
+    two concepts that collided on a name, which is the case the mirror-drift
+    checker's own limits section warns it cannot distinguish. Making them match
+    would merge two different things; renaming is the fix. The block that owns
+    the bare name is `prop:vacuum-state`, so this one yields it. -/
 -- Ref: [manuscript] §3
-structure VacuumState (R : Type*) [CommRing R] (DL : Type*) [AddCommGroup DL] [Module R DL] where
+structure LinearVacuumState (R : Type*) [CommRing R] (DL : Type*) [AddCommGroup DL]
+    [Module R DL] where
   /-- The vacuum state as a linear functional. -/
   tau : DL →ₗ[R] R
 
@@ -71,7 +86,7 @@ structure WeakEquivInvariance (R : Type*) [CommRing R] where
   /-- The weak equivalence data. -/
   weq : WeakEquivalence R
   /-- The vacuum state on A_∞. -/
-  vac : VacuumState R weq.DirectLimit
+  vac : LinearVacuumState R weq.DirectLimit
   /-- **Invariance**: for all elements a ∈ A_∞,
       `τ(ιₙ(a|ₙ)) = τ(ιₘ(a|ₘ))`. -/
   invariance : ∀ (a : weq.DirectLimit),
@@ -87,7 +102,7 @@ structure WeakEquivInvariance (R : Type*) [CommRing R] where
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem weak_equiv_transitive {R : Type*} [CommRing R]
     (weq : WeakEquivalence R)
-    (vac : VacuumState R weq.DirectLimit)
+    (vac : LinearVacuumState R weq.DirectLimit)
     (midLevel : ℕ)
     (h_src_mid : ∀ (a : weq.DirectLimit),
       vac.tau (weq.embed weq.srcLevel (weq.restrict weq.srcLevel a)) =

@@ -74,8 +74,14 @@ structure Observation {R : Type*} [CommRing R]
 structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
   /-- The type of global sections `Γ(S)` of the state bundle. -/
   StateSections : Type*
-  /-- The observation map `obs : Γ(S) → ℝ`. -/
-  obs : StateSections → R_q
+  /-- The observation map `obs : Γ(S) → ℝ`.
+
+      Was `StateSections → R_q` while this very docstring said `→ ℝ`, and the
+      structure is named **Archimedean**Observation with the label
+      `rem:observation-archimedean`. The library copy
+      (`lean/QOU/QuantumObservableUniverse/GaugeTheory.lean:250`) always had
+      `ℝ`. Bean `qou-u87j`. -/
+  obs : StateSections → ℝ
   /-- Gauge equivalence relation. -/
   gaugeEquiv : StateSections → StateSections → Prop
   /-- `obs` is constant on gauge-equivalence classes. -/

@@ -366,15 +366,32 @@ user's last message, not the most recently mentioned file.
       "did not move" fact was counted ~119 times and dragged the rate down.
       **Do not quote 39 %.**
 
-      Re-measured per PRODUCER, and then re-classified on which fields actually
-      moved: of 49 producers run to completion, **36 moved a genuinely
-      mathematical field** (73 %), 10 moved *only* invocation metadata, 3 were
-      identical. The raw rate looks like 94 % until you strip
-      `/invocation/argv/0` and `/invocation/reproduce` — the script path as the
-      sampler invoked it, which differs from whatever produced the committed
-      witness and has nothing to do with the mathematics. Strip
-      `/data/upstream_witness_hashes/*` too: that tracks an upstream file, not
-      this producer's output.
+      **MEASURED, third attempt: 58 % move, so `substantive` over-flags by
+      ~41 %.** Full sweep, all **152 producers**, baselined from git and
+      calibrated against three hand-verified answers before it was trusted:
+
+          completed (rate denominator)   128
+            moved, substantive field      74   -> 58 %
+            moved, noise only              2
+            identical                     52
+          excluded: 14 crashed, 10 timed out
+
+      **Both earlier figures were wrong, in opposite directions, and both were
+      mine.** 39 % (implying 61 % over-flag) came from PER-WITNESS sampling when
+      119 of 268 witnesses shared one producer, so a single "did not move" fact
+      counted ~119 times. 73 % (implying 27 % over-flag) came from a
+      CONTAMINATED BASELINE: the sweep snapshotted `before` from the working
+      tree it was itself mutating, and producers write sibling witnesses. Two of
+      three spot-checked MOVED verdicts under that method were false.
+
+      **Baseline from git** (`git show origin/main:<witness>`), never from a
+      tree your own sweep writes to. That single change turned both known false
+      positives back to IDENTICAL while leaving the known true positive intact.
+
+      **16 % of producers cannot complete at all** — 14 crash, 10 exceed 240 s.
+      They are excluded from the rate, and they are their own backlog: a
+      producer that cannot run is a stronger defect than one whose numbers
+      drifted.
 
       Two lessons in the measurement itself, both worth more than the number:
       **mask volatile keys or you measure your own harness** — `timestamp`,

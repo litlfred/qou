@@ -200,7 +200,7 @@ structure DimensionOneReduction (M : Type*) where
     LaTeX: `\label{rem:descent-reduction-zero}` -/
 structure DimensionZeroReduction (M : Type*) where
   dim : ℕ := 0
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   curvature : M → ℝ
   curvature_vanishes : ∀ (p : M), curvature p = 0
 

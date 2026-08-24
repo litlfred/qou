@@ -421,3 +421,122 @@ mentions a numerical substrate value or compares against one.
 > pushed on `claude/n1dj-fibre-premise-2026-08-16`; no session is holding this
 > bean. The four open items in the preceding section are unclaimed and the next
 > agent should take them without waiting.
+
+## Progress 2026-08-22 — items 2 and 3 done; and item 2 was never mine to decide
+
+Branch `claude/n1dj-volume-iso-reading-2026-08-22`. Owner instruction: take the
+**iso** reading. **No production numerical value changed. Bean stays open** —
+items 1 and 4 are untouched.
+
+### Item 2 is settled by the corpus, not by an editorial call
+
+The bean records item 2 as *"which reading of condition (v) the author intends
+… Editorial, and not something Lean can settle."* That is true of Lean and
+false of the corpus: **the author already wrote the answer, one block away.**
+`lem:volume-from-rigidity`
+([`volume-from-rigidity.md`](../content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md))
+constructs this very `ε` and then says, verbatim:
+
+> producing an epimorphism `ε : Λ²V → 𝟙`. **For `ε` to be non-degenerate, we
+> must have `rank(Λ²V) = 1`.**
+
+`rank(Λ²V) = 1` is `C(N,2) = 1` is `N = 2` — `exteriorSquareDim_eq_one_iff`,
+already proved. So the corpus's own gloss on "non-degenerate" *is* the strong
+reading, and the two-row table in the previous section is not a choice between
+two readings the author might have meant: row 2 is the one the author defined.
+
+I went looking to make an editorial decision and found it already made. Whoever
+picks up item 1 should check the same way before treating a gap as open.
+
+One thing that block's prose **overstates**, recorded so it is not cited as a
+second route: *"this alternating condition forces `rank(V) = 2`"*. An
+alternating form exists on every even rank; what forces `2` is the next
+sentence's `rank(Λ²V) = 1`. Not corrected in the prose — the sentence after it
+carries the real condition — but the Lean structure no longer repeats the claim.
+
+### Item 3 — the formalised condition (v) is no longer vacuous
+
+`CategoricalFoundations.lean`, `QuantumObservableUniverse`:
+
+| before | after |
+|---|---|
+| `exteriorSquare : C` | `exteriorSquare : C` |
+| — | `exteriorSquareProj : (fundamentalObj ⊗ fundamentalObj) ⟶ exteriorSquare` |
+| — | `exteriorSquare_epi : Epi exteriorSquareProj` |
+| `volumeForm : exteriorSquare ⟶ (𝟙_ C)` | `volumeIso : exteriorSquare ≅ (𝟙_ C)` |
+
+Same defect and same repair as `adjointObj` under `qou-fav8`, which is cited in
+the new docstring. Three sorry-free consequences, `#print axioms` clean
+(`iso_unit_hom_ne_zero` needs only `propext`):
+
+- `iso_unit_hom_ne_zero` — **the vacuity, killed.** `volumeForm := 0` used to
+  inhabit condition (v) for *any* `exteriorSquare`, because `QuantumUniverse`
+  supplies `Preadditive C`. An iso cannot: `e.inv ≫ e.hom = 𝟙` collapses, so a
+  zero volume form forces `End (𝟙_ C)` trivial, and
+  `QuantumUniverse.unitEndEquiv : R ≃+* End (𝟙_ C)` carries that to the base
+  ring being trivial.
+- `epi_of_iso_unit` — an iso is epi, so the weak reading comes free.
+- `epi_proj_comp_volume` — `π ≫ ε : V ⊗ V ↠ 𝟙`. This is why the projection
+  fields matter: the iso *alone* says `Λ²V ≅ 𝟙` about an object with no stated
+  relation to `V`, and `π` alone lets `Λ²V` be any quotient. Together they say
+  something about the fundamental object.
+
+**Deliberately no braiding-eigenvalue condition on `π`.** On the `q`-exterior
+square the braiding acts by `-q⁻¹`, not `-1`; demanding `β ≫ π = -π` would look
+like extra rigour and would silently impose `q = 1`, ruling out the quantum
+group the framework is about.
+
+### Two things this does not do, and one it costs
+
+1. **No categorical → numeric bridge.** Getting from `volumeIso` to
+   `exteriorSquareDim N = 1` needs the fibre functor to be monoidal *and* to
+   send `exteriorSquare` to `Λ²(τ V)`. `QuantumUniverse.fibreFunctor` is a plain
+   `Functor C (Type*)`, so neither is available.
+   `markovWeights_eq_jones_of_volume_constraint` still takes `hvol` as a
+   hypothesis on a natural number. **The forcing chain is not shorter than it
+   was** — what changed is that its top link is now a non-vacuous axiom.
+2. **Item 1 is untouched.** `MassTraceIsFibreCategorical` is still the open
+   premise.
+3. **The cost: a higher bar for a witness.** There is no
+   `QuantumObservableUniverse` instance anywhere in the tree — 50 files mention
+   it, always as a hypothesis — and `WitnessObstruction.lean` already rules out
+   module categories. Strengthening condition (v) cannot break an instance,
+   because there is none; it does make one harder to build. Named as a cost
+   rather than buried.
+
+### Downstream consequence worth reading twice
+
+`su2-emergence.lean`'s `RankOneGaugeData` carries a scope warning saying only
+one of its three fields constrains the QOU — `volume_nondeg`. That field is now
+**derivable** from `volumeIso` and carries a default value, so `RankOneGaugeData`
+adds *nothing* to `QuantumObservableUniverse`. The content did not evaporate; it
+moved upstream into the framework axiom, which is where the corpus states it.
+But the scope warning now understates the situation and has been amended in
+place: "none of the three, because the axiom already does".
+
+### Two incidental findings, both from the same cause
+
+Co-located `.lean` siblings are outside `globs = ["QOU", "QOU.+"]` in
+`lean/lakefile.toml`, so `lake build` never sees them, and they have no
+`.qa.json` compile gate either.
+
+1. **`qou-exists-axiom-4.lean` did not compile on `main`** — two
+   `unknown universe level 'v'` errors under the build's own
+   `-DautoImplicit=false`, from `QuantumObservableUniverse.{u, v}` with no
+   `universe` command. Verified against a stashed tree. Fixed here (one line).
+   Its `exists_axiom_4_volume` also proved `Nonempty (Q.exteriorSquare ⟶ 𝟙)` by
+   exhibiting `Q.volumeForm` — a satisfiability proof worth nothing, since the
+   Hom-set contains `0`. Now states `Epi`, which is what Axiom 4 claims.
+2. **`quantum-observable-universes/quantum-observable-universe.lean` is a second
+   definition of `QuantumObservableUniverse`**, not a stub that imports the
+   library one — and its field set had **diverged**: it carried a
+   `volumeForm_epi` field the library structure never had. Because a co-located
+   sibling wins candidate 1 of `lean.ref` resolution, every checker on
+   `def:quantum-observable-universe` has been auditing the duplicate. Kept in
+   sync here; the duplication itself is not fixed and deserves its own bean.
+
+All four touched siblings now compile clean under `-DautoImplicit=false`
+(`quantum-observable-universe`, `qou-exists-axiom-4`, `su2-emergence`,
+`volume-from-rigidity`); one of them was red before. Library: `check-base-ring`
+PASS, `check-wall-side` PASS, `run-validate` unchanged at 51 issues (no issue
+added or removed).

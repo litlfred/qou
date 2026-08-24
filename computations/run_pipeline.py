@@ -261,9 +261,10 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
     # regeneration, never a hard CI failure. Audit / state-tracking witnesses
     # are exempt (they may record an old q₀ on purpose). Reuses
     # witness_constant_staleness.py (#1500).
-    from witness_constant_staleness import Q0_SHAPE, AUDIT_SUFFIXES
+    from witness_constant_staleness import (
+        Q0_SHAPE, AUDIT_SUFFIXES, matches_live_q0)
     from qou_substrate.constants import Q_50_DIGIT_STR
-    cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits
+    cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits, for the message
     for wp in witnesses:
         if wp.name.endswith(AUDIT_SUFFIXES):
             continue
@@ -271,7 +272,14 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
             raw = wp.read_text(encoding="utf-8")
         except OSError:
             continue
-        drifted = {m.group(0)[:14] for m in Q0_SHAPE.finditer(raw)} - {cur}
+        # Compare at each recorded value's OWN precision, not at a fixed
+        # width — a witness that serializes q₀ short is not stale, and
+        # slicing both to 14 chars reported it as such. Here that misfire
+        # cost recurring regeneration rather than a red gate, because this
+        # path is warn-and-heal: it would re-run the producer on every pass
+        # and the rewritten witness would be flagged again next time.
+        drifted = {m.group(0) for m in Q0_SHAPE.finditer(raw)
+                   if not matches_live_q0(m.group(0))}
         if drifted:
             return True, f"stale q₀ in {wp.name} ({sorted(drifted)[0]} ≠ {cur})"
 
