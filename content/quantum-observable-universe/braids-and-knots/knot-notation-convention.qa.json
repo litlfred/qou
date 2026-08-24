@@ -968,6 +968,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3eb69b261c68",
+          "ts": "2f204223fff4"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "knot-notation-convention.md:5 \u2014 \"For amphichiral knots like $\\mathfrak{K}_\\mu$ and $\\mathfrak{K}_\\gamma$, the sign is trivial since $K \\cong K^{\\sigma}$.\" $\\mathfrak{K}_\\mu$ is the cinquefoil $5_1 = T_{2,5}$ (Table 1: \"| K_mu | cinquefoil | 5_1 | mu- | mu+ |\"), which is CHIRAL, not amphichiral: a nontrivial torus knot is never amphichiral. The block CONTRADICTS ITSELF one clause earlier by treating the electron's trefoil $3_1 = T_{2,3}$ as chiral \u2014 \"assigns K_e^- = T_{2,3} to the electron and K_e^+ = T_{2,3}^{\\sigma} to the positron\" \u2014 since $3_1$ and $5_1$ are both $T_{2,\\mathrm{odd}}$ and have the same chirality status. The corpus elsewhere uses the term correctly and treats $4_1$ (figure-eight / Higgs) as THE amphichiral knot, a keystone: braids-and-knots.ts:227 \"4_1 (Higgs) amphichiral => CS=0 => real complex volume\"; self-dual-higgs-real-volume.md:1. Consequence if taken at face value: mu- and mu+ would carry the SAME knot, so knot type could not distinguish muon from antimuon \u2014 defeating the superscript's stated purpose in this very block. ($\\mathfrak{K}_\\gamma$ = empty knot is trivially fine; only $\\mathfrak{K}_\\mu$ is wrong.) || SECOND: this block defines the superscript as BOTH \"mirror reflection (charge conjugation)\" and \"mirror image T_{m,n}^{\\sigma} = T_{m,-n}\", equating a topological operation with a physical relation. predicted-spectra/knot-formula-table.md then uses the same superscript as the up-type -> down-type partner map (d = T_{2,3}^sigma vs u = T_{2,3}; s = T_{2,5}^sigma vs c = T_{2,5}; b = T_{2,7}^sigma), which under THIS block's definition asserts d = u-bar, s = c-bar, b = t-bar \u2014 charge -1/3 identified with charge -2/3.",
+        "notes": "Counterpart to the da-definitional-ambiguity fail recorded on predicted-spectra/knot-formula-table (same PR). The sigma contradiction spans two blocks and flagging only the usage side would leave a reader of the DEFINING block seeing no problem. The amphichirality error is independent of the sigma question and is decidable on the block's own internal inconsistency alone. NOT resolved here: whether K_mu's entry or the amphichiral clause is the one to change, and which relation sigma denotes on a quark knot, are authorial calls. Analysis: docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md; beans qou-qpj9 / qou-mesont3; PR #5659.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "agent_date": "2026-08-24"
+        },
+        "reviewed_at": "2026-08-24T17:30:00.000Z",
+        "reviewed_sha": "621d98b9ad54ad6ff98f609da8f8821ac66f6c52"
       }
     ],
     "da-empirical-fragility": [

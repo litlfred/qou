@@ -210,6 +210,39 @@ deterministic is worth nothing until you measure what it flags. (The other
 instance: `qou-omiu`'s suffix exclusion, declined at 26.6 % of scan surface for
 zero measured benefit.)
 
+### A third defect, independent of σ: the muon's knot is called amphichiral, and it is not
+
+`knot-notation-convention.md:5`:
+
+> "For amphichiral knots like `𝔎_μ` and `𝔎_γ`, the sign is trivial since
+> `K ≅ K^σ`."
+
+`𝔎_μ` is the **cinquefoil `5₁ = T(2,5)`** (its own Table 1: `| 𝔎_μ | cinquefoil |
+5₁ | μ⁻ | μ⁺ |`). A nontrivial torus knot is **never amphichiral**, so `5₁` is
+chiral and `5₁ ≇ 5₁^σ`.
+
+**The block contradicts itself one clause earlier**, which decides this without
+appealing to any outside fact: it treats the electron's trefoil `3₁ = T(2,3)` as
+**chiral** — "assigns `𝔎_e^- = T_{2,3}` to the electron and `𝔎_e^+ =
+T_{2,3}^σ` to the positron". `3₁` and `5₁` are both `T(2,odd)` and have the same
+chirality status; one sentence cannot treat them oppositely.
+
+The corpus uses the term correctly everywhere else, and treats **`4₁`
+(figure-eight / Higgs)** as *the* amphichiral knot — a keystone, not an aside:
+`braids-and-knots.ts:227` ("`4₁` (Higgs) amphichiral ⇒ CS=0 ⇒ real complex
+volume") and `self-dual-higgs-real-volume.md`. So this is a local slip, not a
+corpus-wide misuse.
+
+**Consequence if taken at face value:** `μ⁻` and `μ⁺` would carry the *same*
+knot, so knot type could not distinguish muon from antimuon — defeating the
+superscript's stated purpose in the very block that states it. (`𝔎_γ`, the empty
+knot, is trivially fine; only `𝔎_μ` is wrong.)
+
+**Not resolved here** — whether the amphichiral clause or `𝔎_μ`'s assignment is
+the thing to change is an authorial call. Recorded as a
+`da-definitional-ambiguity` **fail/major** on that block's sidecar, alongside the
+σ finding.
+
 **Two cautions, so this is not over-read.** (1) `σ` is **overloaded**: the same
 superscript marks particle/antiparticle elsewhere (`knot-notation-convention.md`:
 electron `T_{2,3}` vs positron `T_{2,3}^σ`; `antineutrino-knot.md`). Whether
