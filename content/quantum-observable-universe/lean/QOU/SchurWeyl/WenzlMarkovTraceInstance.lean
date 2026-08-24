@@ -248,5 +248,101 @@ noncomputable def markovTraceOfWeight (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠
   tr_incl := wtraceW_incl q hq0 hq2 w hbranch
   tr_markov := wtraceW_markov q hq0 hq2 w z hmarkov
 
+/-! ## The level-`r` instance, and uniqueness at every level -/
+
+/-- **The level-`r` Markov trace.**
+
+`w = wenzlWeight r (q²)` at `z_r = Q^r / (q · [r]_Q)`, `Q = q²`.  The three weight inputs are
+exactly the three theorems #5662 generalised: `sum_dim_wenzlWeight_eq_one`,
+`sum_addable_wenzlWeight_all`, `markov_wenzlWeight`.  Nothing else is needed, and in particular no
+level-specific argument appears — the level enters only through those three. -/
+noncomputable def wenzlMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) :
+    HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))) :=
+  markovTraceOfWeight q hq0 hq2 (wenzlWeight r (q ^ 2)) _
+    (fun n => sum_dim_wenzlWeight_eq_one (q ^ 2) (pow_ne_zero 2 hq0) hgen
+      (levelBracket_ne_zero_of_gen hgen hr) (ne_one_of_gen hgen) n)
+    (fun ν => sum_addable_wenzlWeight_all (q ^ 2) (pow_ne_zero 2 hq0) hgen
+      (levelBracket_ne_zero_of_gen hgen hr) (ne_one_of_gen hgen) ν)
+    (fun _ y => markov_wenzlWeight q hq0 hq2 hgen hr y)
+
+theorem wenzlMarkovTrace_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) :
+    (wenzlMarkovTrace q hq0 hq2 hgen hr).tr = wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) := rfl
+
+/-- **Uniqueness of the Markov trace at every integer level `r`.**
+
+*Every* Markov trace on the Hecke tower whose parameter is the level-`r` Wenzl parameter is the
+`wenzlWeight r (q²)`-weighted seminormal trace.  At `r = 2` this is
+`MarkovTraceInstance.eq_wtrace_of_markov` (see `wenzlMarkovTrace_two_tr`).
+
+The uniqueness argument is `markovTrace_unique`, unchanged and level-free; what makes the statement
+available at level `r` is `wenzlMarkovTrace`, the instance. -/
+theorem eq_wenzlWtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0)
+    (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))))
+    (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
+    T.tr n x = wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) n x :=
+  HeckeCoset.markovTrace_unique T (wenzlMarkovTrace q hq0 hq2 hgen hr) n x
+
+/-- **Conservativity: at `r = 2` the level-`r` trace is `wtrace`**, the convention-D object of
+`MarkovTraceInstance` — pointwise, on every `H_n(q)`.  A generalisation that does not contain its
+own special case is a different object wearing the same name; this is the evidence that this one
+does. -/
+theorem wenzlMarkovTrace_two_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+    (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
+    wtraceW q hq0 hq2 (wenzlWeight 2 (q ^ 2)) n x = wtrace q hq0 hq2 n x := by
+  rw [wtraceW_apply, wtrace_apply]
+  exact Finset.sum_congr rfl fun ν _ =>
+    by rw [wenzlWeight_two_eq_ocneanuWeight q hq0 hq21]
+
 end SeminormalRep
+
+/-! ## The level is a functional invariant of the trace -/
+
+/-- Wenzl's parameter relation holds at `z_W = Q^r / [r]_Q`. -/
+theorem wenzlMarkovParam_spec {Q : R} {r : ℕ} (hbr : levelBracket r Q ≠ 0) :
+    Q ^ r / levelBracket r Q * (1 - Q ^ r) = Q ^ r * (1 - Q) := by
+  rw [one_sub_pow_eq_mul_levelBracket r Q]
+  field_simp
+
+/-- **Equal level-`r` Markov parameters force equal levels.**
+
+The `q` of `z_r = Q^r/(q·[r]_Q)` is the Hecke-normalisation shift; clearing it lands on Wenzl's
+`Q^r/[r]_Q`, where `level_unique_of_markovParameter` applies. -/
+theorem level_unique_of_wenzlMarkovParam_eq (q : ℝ) (hq0 : q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
+    (h : (q ^ 2) ^ r / (q * levelBracket r (q ^ 2))
+        = (q ^ 2) ^ s / (q * levelBracket s (q ^ 2))) : r = s := by
+  have hbr : levelBracket r (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hr
+  have hbs : levelBracket s (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hs
+  have key : (q ^ 2) ^ r / levelBracket r (q ^ 2) = (q ^ 2) ^ s / levelBracket s (q ^ 2) := by
+    field_simp at h ⊢
+    linarith [h]
+  refine QOU.QBeta.WenzlWeight.level_unique_of_markovParameter (pow_ne_zero 2 hq0) hgen
+    (wenzlMarkovParam_spec hbr) ?_
+  rw [key]
+  exact wenzlMarkovParam_spec hbs
+
+/-- **Distinct levels give distinct traces.**
+
+If the level-`r` and level-`s` weighted seminormal traces agree on every `H_n(q)` — indeed, if they
+agree at the single element `σ₀ ∈ H_1(q)` — then `r = s`.
+
+This is the composition the two uniqueness statements admit: `param_eq` reads the parameter off the
+trace, and `level_unique_of_markovParameter` reads the level off the parameter.  Neither alone says
+this.  In particular the level is not extra bookkeeping attached to the trace; it is **recoverable
+from one value of it**. -/
+theorem level_unique_of_wenzlMarkovTrace_eq (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
+    (h : SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) 1
+          (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0))
+        = SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight s (q ^ 2)) 1
+          (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0))) : r = s := by
+  have hpr := (SeminormalRep.wenzlMarkovTrace q hq0 hq2 hgen hr).param_eq
+  have hps := (SeminormalRep.wenzlMarkovTrace q hq0 hq2 hgen hs).param_eq
+  rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hr] at hpr
+  rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hs] at hps
+  exact level_unique_of_wenzlMarkovParam_eq q hq0 hgen hr hs (by rw [← hpr, ← hps]; exact h)
+
 end QOU.SchurWeyl
