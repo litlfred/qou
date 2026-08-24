@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T23:52:52Z
+updated_at: 2026-08-24T00:02:03Z
 parent: qou-59vq
 ---
 
@@ -779,3 +779,47 @@ H_{n+2}(q)`, while `markov_conventionD` is indexed by diagram size.
 | Uniqueness (abstract) | **Lean**, generic `CommRing` |
 | The seminormal trace **as** a `MarkovTraceFamily` | **open** — cyclicity + consistency + packaging |
 | Either property at arbitrary `z` | **open**; symbolic tests to `n = 6` |
+
+
+## CLOSED — the Ocneanu weight *is* the Markov trace, and Wenzl is no longer an input at convention D
+
+`QOU/SchurWeyl/MarkovTraceInstance.lean`, sorry-free, axiom-clean:
+
+    ocneanuMarkovTrace  : MarkovTraceFamily ℝ q q⁻¹ (q³/(q²+1))
+    eq_wtrace_of_markov : ∀ T : MarkovTraceFamily ℝ q q⁻¹ (q³/(q²+1)), ∀ n x,
+                            T.tr n x = wtrace … n x
+
+Every Markov trace on the Hecke tower with parameter `z_D` **is** the Ocneanu-weighted seminormal
+trace. That is exactly what `QBeta/WenzlWeightVanishing.lean` calls *"the external input, and the
+only one"*.
+
+**Building the instance also retires my own caveat from two entries up.** I flagged uniqueness as
+possibly vacuous — a theorem about a structure nobody had inhabited. It is inhabited now, so the
+uniqueness statement has content and the identification follows from it.
+
+The two fields that were missing:
+
+- **cyclicity** — `seminormalRep` is an `AlgHom`, so `Matrix.trace_mul_comm` blockwise. Short, as
+  predicted.
+- **consistency** — the corner decomposition again, minus the `σ` factor. `trace_eq_sum_compress`
+  needs **no** block-preserving hypothesis, which I had assumed it would: the trace is a sum over
+  `SYT μ` and `branchEquiv` is a bijection onto it, so the split is unconditional.
+
+### Final status
+
+| | |
+|---|---|
+| Markov property | **Lean**, convention D, every `n` |
+| Normalisation | **Lean**, convention D, every `n` |
+| Uniqueness | **Lean**, generic `[CommRing K]` |
+| The instance, and the identification | **Lean**, convention D |
+| Either property at **arbitrary `z`** | **open** — symbolic tests to `n = 6` |
+| Root-of-unity regime | **out of scope by construction** — `H_n(q)` is not semisimple there and partitions stop indexing the irreducibles; needs a different statement, not a better proof (cf. `qou-4lft`) |
+
+**Do not quote this as "Wenzl's theorem is proved".** It is proved *at convention D*, under
+`q ≠ 0`, `q² ≠ 1`, `q² + 1 ≠ 0`, and `q²` not a root of unity. Convention D is canonical per the
+2026-08-15 owner ruling, so that is the case the corpus needs — but the qualifier is real.
+
+Follow-on work, none of it blocking: arbitrary `z` (the per-corner identity is the whole gap);
+instantiating `HeckeWedderburnData` with `ocneanuWeight` (sibling `sw8` is on the structure side);
+and re-reading the downstream two-row-cap audit now that the identification is not a citation.
