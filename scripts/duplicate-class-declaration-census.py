@@ -52,9 +52,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 
+# ALL declaration kinds that put a name in the environment, not just `class`.
+#
+# This scanned `class` alone until 2026-08-24, and the omission was found the
+# hard way: `R5FullWitness` looked like a mechanical library-vs-sibling dedup
+# until the import turned out to be impossible, because the sibling forks
+# `inductive LightNucleus` — invisible to a class-only scan. Lean's environment
+# is flat, so a duplicated `def` collides on import exactly as a duplicated
+# `class` does. Measured, the kinds this used to skip carry 213 same-namespace
+# duplicates against `class`/`structure`'s 38.
+#
+# `theorem`/`lemma` are deliberately EXCLUDED: they are proofs of propositions,
+# duplicating one is redundancy rather than a fork of a definition, and
+# including them would bury the definitional collisions this exists to surface.
+DECL_KINDS = ("class", "structure", "inductive", "abbrev", "def")
 CLASS = re.compile(
-    r"^\s*(?:noncomputable\s+|private\s+|protected\s+|scoped\s+|local\s+)*"
-    r"class\s+([A-Za-z_][A-Za-z0-9_']*)"
+    r"^\s*(?:noncomputable\s+|private\s+|protected\s+|scoped\s+|local\s+|partial\s+|unsafe\s+)*"
+    r"(?:" + "|".join(DECL_KINDS) + r")\s+([A-Za-z_][A-Za-z0-9_'.]*)"
 )
 NS_OPEN = re.compile(r"^\s*namespace\s+([A-Za-z_][A-Za-z0-9_'.]*)")
 NS_END = re.compile(r"^\s*end\b\s*([A-Za-z_][A-Za-z0-9_'.]*)?\s*$")
@@ -117,6 +131,12 @@ namespace Outer
 class InOuter where
   f : Nat
 
+inductive AnInductive : Type
+  | a
+noncomputable def ADef : Nat := 0
+abbrev AnAbbrev := Nat
+theorem NotADecl : True := trivial
+
 section
 class AlsoInOuter where
   g : Nat
@@ -142,6 +162,10 @@ def self_test() -> int:
     and a `section`'s `end` stealing a namespace pop."""
     got = {name: ns for name, ns, _ in declarations(FIXTURE.split("\n"))}
     want = {
+        # kinds beyond `class` must be scanned -- the LightNucleus blocker
+        "AnInductive": "Outer",
+        "ADef": "Outer",
+        "AnAbbrev": "Outer",
         "InOuter": "Outer",
         "AlsoInOuter": "Outer",   # `section`/`end` must not pop `Outer`
         "InInner": "Outer.Inner",  # nested, not "Outer"
@@ -149,6 +173,10 @@ def self_test() -> int:
         "AtRoot": "<root>",
     }
     fails = [f"{k}: got {got.get(k)!r}, want {v!r}" for k, v in want.items() if got.get(k) != v]
+    # theorems are deliberately out of scope; including them would bury the
+    # definitional collisions this census exists to surface.
+    if "NotADecl" in got:
+        fails.append("theorem must NOT be scanned -- it is a proof, not a definition")
     for f in fails:
         print("  self-test FAIL:", f)
     print(f"self-test: {'PASS' if not fails else f'{len(fails)} FAILURE(S)'}")
@@ -186,7 +214,7 @@ def main() -> int:
             collide[k] = hot
 
     print(f"scanned {n_files} .lean under content/ (comment-stripped)")
-    print(f"  distinct class names                     : {len(by_name)}")
+    print(f"  distinct declaration names               : {len(by_name)}")
     print(f"  declared in >1 FILE                      : {len(multi)}")
     print(f"  ...with >1 file in the SAME namespace    : {len(collide)}   <- can collide on import")
     print()
