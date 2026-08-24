@@ -203,7 +203,35 @@ present" assertions are made against the real tree.
 
 ## Disposition
 
-Nothing in `content/` is changed by this pass. The three findings are recorded,
-not actioned, because demoting a 39-consumer instance is a change whose blast
-radius should be measured first — the same discipline #5581 and #5621 applied to
-one-file demotions. Tracked on `qou-hjf4`.
+**Finding A is actioned. The blast radius was measured, and it is zero.**
+
+`CrystalGraphRealization.canonical` is now a `def`. The "39 consumers" figure
+counted *binder sites*, and a hypothesis binder `[C : CrystalGraphRealization R q]`
+in a signature needs no synthesis — it is a parameter. Measured across all twelve
+files that bind the class (eight library modules plus four content-block
+siblings, the latter outside the Lake library so nothing routinely compiles
+them):
+
+    12 files -> exit 0, 0 errors, 0 `failed to synthesize`
+
+**The measurement is sensitive, not vacuous.** A paired control run both ways:
+
+| | `#inferInstance` for the class | exit |
+|---|---|---|
+| `canonical` a `def` | `failed to synthesize QOU.BraidKnot.CrystalGraphRealization` | 1 |
+| `canonical` an `instance` | succeeds | 0 |
+
+Written with `[CommRing R]` already in scope as a hypothesis, so a failure can
+only be about `CrystalGraphRealization`. The first attempt at this control was
+**invalid and nearly recorded as a pass**: it used a bare `ℤ` and failed on
+`failed to synthesize CommRing ℤ` — the right exit code for the wrong reason,
+which is the "must-fail probe accepts any error" trap logged on `qou-lo1t`.
+
+Its docstring no longer claims a `sorry` it does not have; the comment-stripped
+`sorry`-term count for the file is **0**, as stated.
+
+**Findings B and C are recorded, not actioned.** `QIntegerMassFormula`'s vacuity
+is split across two declarations, so the fix is a design question — whether
+`IsAMEValue` should carry `fits_bound` at all — rather than a demotion.
+`MassEndomorphism` already has an owner per `VolumeBridge.lean`. Both stay on
+`qou-hjf4`.
