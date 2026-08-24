@@ -3724,3 +3724,36 @@ fixed `D`, which is what lets it compose through the induction without threading
 actually be built is §12's height estimate — a uniform `B` and `E` with `B ≤ H^E` and
 `E ≤ ε·(r·d j)`, where `abs_coeff_det_pderivList_le` gives `B = r!·(S·(d^L·B₀))^r` and §12
 computes `b = 2^{2n(r₁+…+r_m)}·n!·a^n`. That is doc pages 92–93, **not yet read**.
+
+### §12's height estimate, read from the page scan (doc p. 92)
+
+Verbatim, the tail of §11's descent proof:
+
+    n ≤ r_m + 1 ≤ r₁ + 1 ≤ 2^{r₁},   hence   n! ≤ n^n ≤ 2^{n r₁} = 2^{ρ₁}
+    and, by assumption,   a ≤ H₁^{(1/m) r₁ t},   r₁ + r₂ + … + r_m ≤ m r₁
+    Therefore
+      b ≤ 2^{2n·m r₁} · 2^{ρ₁} · a^n  ≤  2^{(2m+1)ρ₁} · H₁^{(1/m) ρ₁ t}  ≤  H₁^{(1/(m−1)) ρ₁ t}
+    because
+      H₁^{(1/(m−1))ρ₁t} / H₁^{(1/m)ρ₁t} = H₁^{(1/(m(m−1)))ρ₁t} ≥ 2^{(2m+1)ρ₁}
+
+The last step is clause 3 exactly — `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}` raised to `ρ₁t/(m(m−1))` —
+which this arc had already identified. The new content is the rest: `ρ₁ = n·r₁`, `n! ≤ 2^{ρ₁}`
+via `n ≤ 2^{r₁}`, and `Σ r_h ≤ m r₁` (which is `Γ`'s derived `Σ s_h ≤ M s₁`). The conclusion
+`b ≤ H₁^{ρ₁t/(m−1)}` is **clause 4 at arity `m−1`**, with `ε` moving `t/m → t/(m−1)`.
+
+⚠⚠ **An open question, deliberately not recorded as a correction — §13 has not been read.**
+
+`RothLemmaUniform` asks for a **single** `E` with `∀ j, B ≤ Kh j ^ E` *and* `∀ j, E ≤ ε·d j`.
+§11 states clause 4 only at `h = 1` (`b ≤ K₁^{(1/M)s₁t}`); clause 2 (`K_h^{s_h} ≥ K₁^{s₁}`)
+propagates it as `b ≤ K_h^{ε s_h}` — an exponent that **varies with `h`**. A single `E` bounded
+by `ε·min_h d_h` does not follow: `E ≤ ε s_h` makes `K_h^E ≤ K_h^{ε s_h}`, so `b ≤ K_h^{ε s_h}`
+is the wrong direction to give `b ≤ K_h^E`.
+
+So the uniform-`E` form may be a hypothesis `Γ` cannot supply — the same defect as corrections
+18 and 18b, a third time. **Or it may be exactly what §13's recursion produces**, in which case
+the varying exponent is absorbed somewhere I have not read.
+
+I do not know which, and the arc's own history says guessing here is how corrections 14 and 17
+happened: 14 read one display without the derivation, 17 read a label without the theorem. The
+answer is in §13 (doc pp. 93–95), which is the next thing to read — **before** any change to
+`RothLemmaUniform`'s `E`.
