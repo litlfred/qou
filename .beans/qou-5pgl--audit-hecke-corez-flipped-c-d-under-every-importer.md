@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-08-24T13:29:48Z
+updated_at: 2026-08-24T13:42:53Z
 ---
 
 Generalises the `alpha_high_precision` finding (`qou-l1gv`) from one file to its
@@ -125,3 +125,47 @@ This is the exact hazard AGENTS.md names — *"a sha can be missing merely becau
 the history was never fetched"* — and I walked into it by reading a boundary as
 a landing. **Do not date-reason from `git log` in this clone without checking
 `--is-shallow-repository` first.**
+
+
+## Triage CORRECTED — digit count is the wrong heuristic; z-dependence is the right one
+
+I ranked the candidates by "looks calibrated" (many decimal places). Read in
+context, that picked the **wrong constant twice** in the same file.
+
+| constant | what it actually is | z-dependent? | verdict |
+|---|---|---|---|
+| `3.74446989` | `ALPHA_BORROMEAN_MEV`, commented `m_e · 8G` (`prop:binding-scale-catalan`) | **no** — m_e and Catalan's G carry no Markov parameter | **PRUNE** |
+| `1.2999219630934102` | `M_E_SIGMA_9`, used as the additive `T4 (MeV)` term | no evidence it is | deprioritise |
+| `0.998367` | `TRM_L6A4` — a **Markov trace**, used as `b_desc = RHO * m_e * TRM_L6A4` | **YES** — tr_M is defined through z | **the real candidate** |
+
+I had flagged the 17-digit `M_E_SIGMA_9` as "no physical constant is written
+that way by hand" and never looked at the 6-digit `0.998367` sitting two lines
+above it. Precision of the literal says nothing about whether the *quantity*
+moves with the convention.
+
+**Corroboration for `0.998367` being a trace, and that its convention was
+already doubted:** it recurs across `computations/_deprecated/` as the λ=[3]
+value for proton / neutron / ³He, and
+`_deprecated/probe_multi_term_tau_M_corrected.py:35` annotates the row
+*"(registry; convention TBD)"*. A prior agent flagged the convention question
+and it was never closed; the live file still hardcodes the number.
+
+**Revised rule for this audit:** triage a hardcoded constant by asking *"is this
+quantity defined through z?"* — traces, Markov weights, `V̂`, blend parameters
+yes; masses, CODATA values, Catalan/π products no. Not by how many digits it
+carries.
+
+## Incidental: `3.74446989` does not reproduce its own stated closed form
+
+Pruned from this audit as z-independent, but recording the measurement since I
+made it:
+
+    m_e(CODATA 0.51099895069) * 8 * Catalan  =  3.74445965994
+    the file's constant                      =  3.74446989
+    relative difference                      =  2.73e-6   (~2.7 ppm)
+
+So the comment `# m_e · 8G` does not reproduce the literal to better than
+~2.7 ppm. That is not a convention issue and not urgent — most likely an older
+m_e vintage or a slightly different intended factor — but the constant and its
+stated closed form do not currently agree. Not filed separately; noted here for
+whoever touches `prop:binding-scale-catalan`.
