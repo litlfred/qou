@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T14:11:33Z
+updated_at: 2026-08-24T14:23:46Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -94,3 +94,50 @@ dropping it*.
 Lean docstrings in `MesonFluxTubeReduction.lean` corrected on PR #5659;
 `D_charm7_crossing_collides_etaPhi` kept (true arithmetic, 7+3 = 5+5) but demoted
 from corpus-fact to counterfactual-robustness remark.
+
+
+## Correcting my own note from earlier today — σ CANNOT be T₃ as documented
+
+The note above says σ "may be the grading" and treats the overload as undecided.
+**Too generous; corrected on a second pass** (same branch, PR #5659).
+
+`knot-notation-convention.md` states, two consecutive sentences apart:
+
+> "The superscript distinguishes a particle from its antiparticle via **mirror
+> reflection (charge conjugation)**."
+> "We denote torus knots by `T_{m,n}`, with mirror image `T_{m,n}^σ = T_{m,-n}`."
+
+So on a knot the corpus **documents** σ = charge conjugation, and instantiates it
+on leptons (electron `T(2,3)` / positron `T(2,3)^σ`). `knot-formula-table.md`
+then applies the same superscript to quarks. Read with the stated meaning:
+
+    d = ū,   s = c̄,   b = t̄
+
+— charge −1/3 identified with charge −2/3. Cannot be intended.
+
+**So σ cannot be the T₃ grading as documented.** One superscript, two relations,
+and only the unusable one is defined. The discriminating assignment is
+**undefined**, not merely unprojected by `windingContent`. The 5/5 down-type
+alignment is real and suggestive; it is not a licensed grading.
+
+**This relocates this bean's work.** Deciding which relation σ denotes on a quark
+knot is a **prerequisite** for the T₃ derivation, not a step inside it. Until
+that is settled, "lift `windingContent` to carry σ" has nothing well-defined to
+carry.
+
+## Separate defect found in the same block (unrecorded, flagged not fixed)
+
+`knot-formula-table.md` gives `𝔡` two incompatible knots one sentence apart:
+
+- `𝔡 = T_{2,3}^σ` — the **mirror trefoil** `3₁`, 3 crossings, a torus knot
+- "Here `𝔡` denotes the **three-twist knot `5₂`**" — 5 crossings, a twist knot,
+  **not a torus knot at all**
+
+The block's own table 2 row lists `| Down quark | 𝔡 | T_{2,3}^σ | 1 | 3 |` —
+**Crossings = 3**, agreeing with the formula and contradicting the prose.
+Corpus-grepped: unrecorded; every other `5₂` in the corpus is Kashaev /
+Borel-summability literature, none about the down quark.
+
+**Deliberately not resolved.** Both this and the σ semantics are authorial calls;
+picking one to make the tables self-consistent would be the silent resolution the
+corpus disciplines forbid. Flagged with the evidence that decides them.
