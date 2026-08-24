@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-08-24T14:13:08Z
+updated_at: 2026-08-24T18:38:26Z
 ---
 
 `QOU/Mathlib/SpectralSequence.lean:125`:
@@ -211,3 +211,24 @@ self-discharging      125 unconditional, 17 trivial (new gate)
 `PagedSpectralSequence.lean` was written, compiled and axiom-checked — and then
 **not committed** before the container reset, so it had to be reconstructed
 from scratch. Compiling is not landing. Commit before moving to the next file.
+
+THE DOWNSTREAM CONSUMER, found 2026-08-24. The spectral-collapse work is not decorative — the exactness of every binding energy in the corpus rests on it.
+
+`prop:atom-knot-mass-derivation` (content/quantum-observable-universe/mass-theory/):
+
+    M(H) = nu_SDP * [ tr_M(T_w) + tower(T_w) + tr_M(C_dimq) ]
+    B(H) = m_e * M(H) |_{q=q0}
+
+and the load-bearing sentence: "Since the GB spectral sequence collapses at E_2, no higher slices contribute. The computation relies entirely on the pre-Archimedean data encoded in the GB-filtration jet-order certificate."
+
+So M is an EXACT FINITE SUM only because the GB spectral sequence collapses at E_2. That is S-GB-spectral-collapse — the assertion whose fifteen classes have zero instances between them. If the collapse fails, M is a truncation and every binding energy is approximate, not exact.
+
+Three consequences for the arc, all actionable:
+
+1. `SpectralCollapseCriteria.legacyOfPaged` (landed today) is the route by which a real filtration can discharge `GBFiltrationCollapsesAtE2`. Before today the only discharge was `canonicalTrivial` (PUnit), so the binding-energy derivation was resting on a hypothesis that only a trivial model had ever satisfied.
+
+2. `EulerCharacteristic.eulerChar_bump_eq` bounds the damage if collapse fails: an ALTERNATING SUM of page ranks is page-independent with no collapse hypothesis, while an individual graded piece is not (`finrank_bump_eq_iff`). So whichever part of M is index-like survives a collapse failure; whichever part reads an individual slice does not. Splitting M along that line is the next concrete task, and it does not need the collapse to be proved first.
+
+3. The certificate named is the GB-filtration JET-ORDER certificate — which is exactly the filtration `DqTwist.dq_sq_eq_curvature` points at, since the curvature of d_q is first order in (1 - q^-1) and therefore sits in filtration degree >= 1. The twist thread and the collapse thread meet here, at a formula the physics actually uses.
+
+Also settled this session (binding channel question): the "action" is not the normal-form net. net(p) ~ 0.999, net(bare qqbar) ~ 1.418, net(M_+) ~ 1.515 are commensurable (same H_3(q), same NF basis, same q0) but binding RAISES net by 0.097, so net cannot be the minimised functional. The minimisation is the confinement SDP (`confined(P,q)` strict feasibility; sigma_F the optimal dual objective), and nu_SDP is what enters M above.
