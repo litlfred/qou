@@ -16490,4 +16490,93 @@ So this cell is **not** the one-application-per-column shape the two quadratic
 columns had, and saying so is the point of this section. `oc_ext_of_left_ne_nil`
 still does the bridging; what it does not do is choose the chain. -/
 
+/-! ## §4bg  The braid-word cell — the clean case, measured as such
+
+§4bf read the `BS × FC` cell before writing it and found a four-way split. The
+same reading applied to the braid-word families finds the opposite, and the
+reason is in their own docstrings: `wHi i' i` carries **exactly two** rules
+(§4j), and on the other side *"`rule₁` cannot double: `j₁ ≤ i − 2` puts its
+leading monomial strictly longer than the braid word"*. So `BraidSelfOverlap`'s
+four theorems are not a sample of a larger family — they are all of it.
+
+`lm_eq_wHi_cases` turns that into something a caller can use: a rule of the
+completed system leading on `wHi i' i` **is** `yangBaxterRelation i' i` or
+`bokutShiaoRelation i' i i'`. The quadratic and far-commutation words are the
+wrong length, and a Bokut–Shiao word reaches length three only when its
+descending run is a singleton (`descWord_eq_singleton`), which forces `j = i − 1`.
+
+`braid_self_resolves` is then two applications of `lm_eq_wHi_cases` and one of
+`oc_ext_of_left_ne_nil` per branch. Note the bridge is unusually direct here:
+`BraidSelfOverlap.oc` takes its two rules as *parameters*, so the constructed
+composition already has the arbitrary one's rules and the rule-equality side
+conditions are the classification's own output.
+
+Cells crossed so far, all under `oc.left ≠ []`: `BS × BS` (§4aw, modulo the deep
+diagonal), `? × quadratic` (§4bd), `quadratic × ?` (§4be), and the braid word
+here. `BS × FC` is mapped but not crossed (§4bf). -/
+
+/-- **Only two rules lead on the braid word.** No hypothesis relating `i'` to
+`i` is needed: matching a leading monomial against `[σᵢ, σᵢ', σᵢ]` *forces*
+`i' + 1 = i` in both surviving families, so the side condition is an output
+rather than an input. -/
+theorem lm_eq_wHi_cases (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hm : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hlm : r.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i) :
+    r = yangBaxterRelation i' i ∨ r = bokutShiaoRelation i' i i' := by
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm with
+    ⟨a, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a', a, b, hb₁, hb₂, ha⟩
+  · rw [ha, heckeRelation_lm] at hlm
+    simp [BraidSelfOverlap.wHi] at hlm
+  · rw [ha, yangBaxterRelation_lm a b (by omega), BraidSelfOverlap.wHi] at hlm
+    obtain ⟨hbi, hai', -⟩ : b = i ∧ a = i' ∧ b = i := by simpa using hlm
+    exact Or.inl (by rw [ha, hbi, hai'])
+  · rw [ha, farCommRelation_lm a b (by omega)] at hlm
+    simp [BraidSelfOverlap.wHi] at hlm
+  · rw [ha, bokutShiaoRelation_lm hb₁ hb₂, bsWord₁_cons hb₁ hb₂,
+      BraidSelfOverlap.wHi] at hlm
+    obtain ⟨hai, htail⟩ := List.cons.inj hlm
+    have hai' : a = i := congrArg HeckeGen.index hai
+    have hrun : descWord a' b = [(⟨i'⟩ : HeckeGen n)] := by
+      have h2 : descWord a' b ++ [(⟨a⟩ : HeckeGen n)]
+          = [(⟨i'⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)] := htail
+      exact (List.append_inj' h2 (by simp)).1
+    obtain ⟨hba', hz⟩ := descWord_eq_singleton hb₂ hrun
+    have ha'i' : a' = i' := (congrArg HeckeGen.index hz).symm
+    exact Or.inr (by rw [ha, hai', ha'i', hba', ha'i'])
+
+/-- **The braid-word cell of `overlap_resolves`, for an arbitrary composition.** -/
+theorem braid_self_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i : Fin n}
+    (hi : i'.val + 1 = i.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  rcases lm_eq_wHi_cases hn hp hm₁ h₁ with e₁ | e₁ <;>
+    rcases lm_eq_wHi_cases hn hp hm₂ h₂ with e₂ | e₂
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (yangBaxterRelation i' i) (yangBaxterRelation i' i)
+        (BraidSelfOverlap.yb_hlm i' i hi) (BraidSelfOverlap.yb_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.yb_yb_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (yangBaxterRelation i' i) (bokutShiaoRelation i' i i')
+        (BraidSelfOverlap.yb_hlm i' i hi) (BraidSelfOverlap.bs_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.yb_bs_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (bokutShiaoRelation i' i i') (yangBaxterRelation i' i)
+        (BraidSelfOverlap.bs_hlm i' i hi) (BraidSelfOverlap.yb_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.bs_yb_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (bokutShiaoRelation i' i i') (bokutShiaoRelation i' i i')
+        (BraidSelfOverlap.bs_hlm i' i hi) (BraidSelfOverlap.bs_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.bs_bs_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+
 end UGB.GrobnerShirshov.Hecke

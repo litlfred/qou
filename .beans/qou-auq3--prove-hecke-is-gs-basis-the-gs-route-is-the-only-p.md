@@ -4807,3 +4807,39 @@ the map in the file so the next agent starts from it rather than re-deriving it.
 were ~1 PR each; this cell looks like more, chiefly for its fourth row. The
 braid-word families (`BraidSelfOverlap`, `BokutShiaoBraid`, `BraidBokutShiao`)
 have not been read this way yet and may hold similar splits — that is unmeasured.
+
+## The braid-word cell — the clean case, measured as such (2026-08-24, §4bg)
+
+§4bf read the next cell before writing it and found a four-way split. The same
+reading applied to the braid-word families finds the **opposite**, and the reason
+is in their own docstrings: `wHi i' i` carries **exactly two** rules (§4j), and on
+the other side *"`rule₁` cannot double: `j₁ ≤ i − 2` puts its leading monomial
+strictly longer than the braid word"*. `BraidSelfOverlap`'s four theorems are not
+a sample of a larger family — they are all of it.
+
+- **`lm_eq_wHi_cases`** — a rule of the completed system leading on `wHi i' i`
+  **is** `yangBaxterRelation i' i` or `bokutShiaoRelation i' i i'`. Quadratic and
+  far-commutation are the wrong length; a Bokut–Shiao word reaches length three
+  only when its descending run is a singleton (`descWord_eq_singleton`), forcing
+  `j = i − 1`.
+- **`braid_self_resolves`** — two applications of that plus one
+  `oc_ext_of_left_ne_nil` per branch. The bridge is unusually direct here, since
+  `BraidSelfOverlap.oc` takes its two rules as *parameters*, so the rule-equality
+  side conditions are the classification's own output.
+
+**A hypothesis dropped, not silenced.** The first draft gave `lm_eq_wHi_cases` an
+`hi : i'.val + 1 = i.val`; the linter flagged it unused, and it is — matching a
+leading monomial against `[σᵢ, σᵢ', σᵢ]` *forces* `i' + 1 = i` in both surviving
+families, so the side condition is an **output**, not an input. Removing it made
+the lemma strictly stronger. (The warning appeared only once the code was in the
+file, not in the scratchpad — worth knowing: the per-file linter set differs.)
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × FC` | **mapped only** (§4bf) |
