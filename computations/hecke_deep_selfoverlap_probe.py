@@ -113,6 +113,48 @@ def reduce_elt(elt: dict, rs: list, cap: int = 200000):
             raise RuntimeError(f"no termination within {cap} steps")
 
 
+def _classify(lm: tuple) -> tuple:
+    """(family, index) of a rule, from the shape of its leading monomial."""
+    if len(lm) == 2 and lm[0] == lm[1]:
+        return "QUAD", lm[0]
+    if len(lm) == 3 and lm[0] == lm[2]:
+        return "YB", lm[0]
+    if len(lm) == 2:
+        return "FC", lm[0]
+    return "BS", lm[0]
+
+
+def census(word: tuple, rs: list) -> tuple:
+    """Which rule families fire, reducing `word`.  Returns (counts, quad indices)."""
+    elt = {word: sp.Integer(1)}
+    counts = {}
+    quads = []
+    while True:
+        target = None
+        for w in elt:
+            if sp.simplify(elt[w]) == 0:
+                continue
+            for lm, rep in rs:
+                k = _find(w, lm)
+                if k is not None:
+                    target = (w, lm, rep, k)
+                    break
+            if target:
+                break
+        if target is None:
+            return counts, quads
+        w, lm, rep, k = target
+        c = elt.pop(w)
+        family, idx = _classify(lm)
+        counts[family] = counts.get(family, 0) + 1
+        if family == "QUAD":
+            quads.append(idx)
+        pre, post = w[:k], w[k + len(lm):]
+        for rw, rc in rep.items():
+            nw = pre + rw + post
+            elt[nw] = sp.cancel(elt.get(nw, 0) + c * rc)
+
+
 def deep_spoly(i: int):
     """The two monomials of the deep self-overlap's S-polynomial."""
     return (descWord(i, 0) + bsWord2(i, 0),
@@ -172,6 +214,52 @@ def main() -> int:
     print("(the second word is the first with a trailing sigma_0, since")
     print("descWord(i, 1) ++ [sigma_0] = descWord(i, 0)).  i = 1 is degenerate:")
     print("descWord(i-1, ...) collapses and the normal form has four terms.")
+    print()
+    print("=== which rules fire ===")
+    print(f"{'i':>2} {'side':<4} {'QUAD':>4} {'YB':>3} {'FC':>3} {'BS':>3}  quad indices")
+    for i in range(1, top + 1):
+        rs = rules(i + 1)
+        for label, w in zip(("A", "B"), deep_spoly(i)):
+            c, qs = census(w, rs)
+            nq, nyb = c.get("QUAD", 0), c.get("YB", 0)
+            nfc, nbs = c.get("FC", 0), c.get("BS", 0)
+            if i == 1:
+                # Degenerate: three quadratic steps, hence the H^2 coefficient
+                # and the four-term normal form.
+                assert (nq, qs) == (3, [0, 1, 0]), f"i=1 {label}: {nq}, {qs}"
+            else:
+                # THE structural fact, and the robust one: exactly one
+                # coefficient-producing step, always on sigma_0.  It is pinned
+                # by the two-term normal form rather than by the strategy --
+                # each quadratic step splits a term, and nothing cancels.
+                assert nq == 1, f"i={i} {label}: {nq} quadratic steps, expected 1"
+                assert qs == [0], f"i={i} {label}: quadratic on {qs}, expected [0]"
+                # Measured, not argued.  "Two-term normal form implies one
+                # split" is only an argument -- a second split whose branch
+                # died would look the same -- so check the count directly
+                # under the reversed rule order too.
+                c_rev, qs_rev = census(w, list(reversed(rs)))
+                assert c_rev.get("QUAD", 0) == 1 and qs_rev == [0], \
+                    f"i={i} {label}: reversed order gives {c_rev.get('QUAD',0)} quad {qs_rev}"
+            if i >= 3:
+                # Strategy-dependent bookkeeping, like the step count: recorded
+                # so a change in the rule set shows up, not claimed as algebra.
+                assert nyb == 1, f"i={i} {label}: {nyb} Yang-Baxter steps"
+                assert nbs == (i if label == "A" else i + 2), f"i={i} {label}: {nbs} BS"
+                assert nfc == (i + 4) * (i - 1) // 2 - (0 if label == "A" else 1), \
+                    f"i={i} {label}: {nfc} far-commutation steps"
+            print(f"{i:>2} {label:<4} {nq:>4} {nyb:>3} {nfc:>3} {nbs:>3}  {qs}")
+
+    print()
+    print("For i >= 2 EXACTLY ONE quadratic step fires, always on sigma_0.  It is")
+    print("the only coefficient-producing rule, which is why the normal form has")
+    print("two terms: the split's `1` branch drops two letters and its `H sigma_0`")
+    print("branch drops one, so the two words differ by a trailing sigma_0.  Every")
+    print("other step is a length-preserving monomial rewrite.  So the coefficient")
+    print("bookkeeping in a Lean proof is one split; the rest is word combinatorics.")
+    print("The quadratic count is measured under the reversed rule order too, so")
+    print("it is not an artefact of the strategy (the YB/FC/BS split is).")
+    print("i = 1 is degenerate: three quadratic steps, hence H^2 and four terms.")
     print()
     print("Step counts are i(i+5)/2 and one more, checked for every i >= 2 tested.")
     print("That is strategy-dependent -- a size estimate for the chain, not a")
