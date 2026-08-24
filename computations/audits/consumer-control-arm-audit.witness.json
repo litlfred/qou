@@ -1,5 +1,5 @@
 {
-  "arithmetic": "decimal.Decimal end to end; source literals recovered as text via ast.get_source_segment and witnesses parsed with parse_float=Decimal, so no float64 exists on the comparison path",
+  "arithmetic": "decimal.Decimal end to end; source literals recovered as text via a pre-split line index and witnesses parsed with parse_float=Decimal, so no float64 exists on the comparison path",
   "bean": "qou-okkz",
   "compute": "consumer_control_arm_audit",
   "control_arms": [
