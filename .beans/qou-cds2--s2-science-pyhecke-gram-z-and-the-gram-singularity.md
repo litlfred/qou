@@ -632,3 +632,42 @@ return-form C site left in the tree … registered and R10-waived"*. It is at li
 docstring says **convention D, MIGRATED 2026-08-16 (bean `qou-cds2`)** — this bean. The AGENTS.md
 paragraph is stamped the same day, which is presumably how they crossed. The surrounding posture
 ("treat the remaining C surface as UNMEASURED") is unaffected, and I did not re-run the detector.
+
+## Rust increment landed — PR #5625 (2026-08-24)
+
+The Rust counterpart to #5592, additive at n = 3.
+
+`gram.rs` gains `TL_BASIS_INDICES`, `gram_matrix_tl`, `gram_tl_inverse`,
+`det_gram_tl`, `det_gram_tl_closed_form`. `gram_quotient_inverse`,
+`gram_radical`, `gram_matrix_markov` and every consumer are UNTOUCHED —
+nothing repointed, per this module's own header on why `gram_inverse` was
+deleted rather than rebound.
+
+**What n = 3 is, recorded so n >= 4 is not mis-scoped.** The TL quotient
+form is the principal 5x5 submatrix of the full form, dropping
+`e- = s0 s1 s0` — the longest element of S_3, whose permutation (3,2,1) is
+the unique 321 pattern. Confirmed to 0.0 difference against `pyhecke.tl` in
+exact Q(q) before the Rust was written. At n >= 4 the quotient is NOT
+obtained by deleting one basis element, so this shortcut does not
+generalise.
+
+**A hazard checked rather than assumed.** Rust's `NF_BASIS` order and
+Python's `tl_basis_words(3)` = `((), s1, s0, s0s1, s1s0)` swap positions 1
+and 2. The matrices agree anyway because the form is invariant under exactly
+that swap. Test `tl_gram_matches_python_at_q0` pins it entrywise; the doc
+comment flags it as a coincidence not to carry forward.
+
+`cargo test --lib` 206 passed (gram: 21, was 16).
+
+### Still open on this bean
+
+1. **General-n Rust TL form.** `gram.rs` is hard-coded at n = 3 throughout
+   (`[[f64;6];6]`, six-word `NF_BASIS`). Matching Python's general-n
+   `pyhecke.tl` is a NEW Rust module, not an extension of this file — a
+   separate, larger increment.
+2. **Consumer migration.** `gram.py::G_PINV` (module-import time),
+   `gram.rs::gram_quotient_inverse`, `gram_inverse()`'s raise, and
+   `confinement-operator-selection.py::_pg_safe_inverse` all still use the
+   pseudoinverse. Deliberately out of scope in both #5592 and #5625:
+   `G_PINV` is computed at import, so changing what it means is the
+   documented failure mode. Needs its own PR with per-consumer adjudication.
