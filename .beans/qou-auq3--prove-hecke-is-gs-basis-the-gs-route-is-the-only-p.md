@@ -4769,3 +4769,41 @@ one.
 | quadratic × ? | §4be `quad_left_resolves` |
 
 All still assume `oc.left ≠ []`.
+
+## CORRECTION: the remaining cells are not all mechanical (2026-08-24, §4bf)
+
+I told the owner, at the end of the §4be turn, that what remains is "mechanical
+application of the bridge, at roughly one column per PR". **Measured against the
+next cell, that is wrong.**
+
+Applying §4be's own lesson — read what each chain covers, not what it is called —
+to Bokut–Shiao against far-commutation turns up **four** namespaces, partitioned
+by where the far-commutation bottom `j₀` sits relative to the Bokut–Shiao
+bottom `j`:
+
+| `j₀` vs `j` | chain | target |
+|---|---|---|
+| `j₀ + 1 < j` | `CyclicFarCommLow.bokutShiao_resolves` | `CyclicFarCommLow.oc` |
+| `j₀ + 1 = j` | `BokutShiaoFarComm.oc_reduces_to_zero` (§4o) | `BokutShiaoFarComm.oc` |
+| `j₀ = j` | `BokutShiaoFarCommSame.oc_reduces_to_zero` | `BokutShiaoFarCommSame.oc` |
+| `j < j₀` | `CyclicFarCommInner.oc_reduces_to_zero` | `CyclicFarCommLow.oc` |
+
+The partition is complete (`farCommRelation i j₀` needs `j₀ + 1 < i`; the
+Bokut–Shiao side has `j ≤ i − 1`), and the last row shares its *target* with the
+first while needing a different chain — `σ_{j₀}` lands **inside** the descending
+run rather than below it.
+
+**Three of the four rows would go the §4bd/§4be way. The fourth will not:**
+`CyclicFarCommInner.oc_reduces_to_zero` asks for four structural hypotheses
+(`hsplit`, `hsplit'`, `hB`, `hfarA`) exhibiting how `descWord i j` breaks at
+`σ_{j₀}` — a caller has to *build* those with `descWord_split`, not read them off
+a leading monomial.
+
+So: `oc_ext_of_left_ne_nil` still bridges; what it does not do is **choose the
+chain**, and choosing it is where the remaining work actually is. §4bf records
+the map in the file so the next agent starts from it rather than re-deriving it.
+
+**Estimate to carry forward, stated as an estimate:** the two quadratic columns
+were ~1 PR each; this cell looks like more, chiefly for its fourth row. The
+braid-word families (`BraidSelfOverlap`, `BokutShiaoBraid`, `BraidBokutShiao`)
+have not been read this way yet and may hold similar splits — that is unmeasured.

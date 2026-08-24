@@ -16457,4 +16457,37 @@ theorem quad_left_resolves (hn : 0 < n) (hp : HeckeParams)
       rw [hbr]
       exact QuadBokutShiao.resolves hp hn hc₁ hc''.1 hc''.2
 
+/-! ## §4bf  The `BS × FC` cell is a four-way split — a map, not a result
+
+§4be's lesson applied to the next cell, before writing any of it: **read what
+each chain covers, not what it is called.** Doing that for Bokut–Shiao against
+far-commutation turns up four namespaces, not one, partitioned by where the
+far-commutation rule's bottom index `j₀` sits relative to the Bokut–Shiao
+bottom `j`. Both rules lead through `σᵢ`, so the composition is the same shape
+throughout; only the reduction differs.
+
+| `j₀` vs `j` | chain | target |
+|---|---|---|
+| `j₀ + 1 < j` | `CyclicFarCommLow.bokutShiao_resolves` | `CyclicFarCommLow.oc` |
+| `j₀ + 1 = j` | `BokutShiaoFarComm.oc_reduces_to_zero` (§4o) | `BokutShiaoFarComm.oc` |
+| `j₀ = j` | `BokutShiaoFarCommSame.oc_reduces_to_zero` | `BokutShiaoFarCommSame.oc` |
+| `j < j₀` | `CyclicFarCommInner.oc_reduces_to_zero` | `CyclicFarCommLow.oc` |
+
+The partition is complete: `farCommRelation i j₀` exists only for `j₀ + 1 < i`
+and the Bokut–Shiao side has `j ≤ i − 1`, so every legal pair falls in exactly
+one row. Note the last row shares its *target* with the first while needing a
+different chain — `σ_{j₀}` lands **inside** the descending run there rather than
+below it, and `CyclicFarCommInner` is the namespace for that.
+
+**Why this is a map and not a theorem.** The three upper rows would go the way
+§4bd and §4be do: name the constructed composition, apply
+`oc_ext_of_left_ne_nil`. The fourth will not. `CyclicFarCommInner.oc_reduces_to_zero`
+asks for four structural hypotheses — `hsplit`, `hsplit'`, `hB`, `hfarA` —
+exhibiting how `descWord i j` breaks at `σ_{j₀}`, which a caller has to build
+with `descWord_split` rather than read off a leading monomial.
+
+So this cell is **not** the one-application-per-column shape the two quadratic
+columns had, and saying so is the point of this section. `oc_ext_of_left_ne_nil`
+still does the bridging; what it does not do is choose the chain. -/
+
 end UGB.GrobnerShirshov.Hecke
