@@ -16024,4 +16024,180 @@ theorem inclusion_contexts_empty_general (hn : 0 < n) (hp : HeckeParams)
   rw [ic.decomposition, hl, hr]
   simp
 
+/-! ## §4bc  The inclusion half of the criterion, for every `n`
+
+§4bb says every inclusion composition has empty contexts and a shared leading
+monomial. One thing stands between that and `IsGrobnerShirshovBasis`'s
+`inclusion_resolves`: **which pairs of rules can share a leading monomial**.
+
+`shared_lm_classify` answers it — the same rule, or §4j's Yang–Baxter /
+Bokut–Shiao pair, and nothing else. Sixteen cases off
+`mem_heckeCompletedRewritingSystem_rules` (§4at), which is finally doing the job
+it was written for: this is its first consumer outside `lm_cases`, and the
+leading-monomial inversion could not have served, since the conclusion is about
+*rules*.
+
+Eleven of the sixteen are impossible and most die on length —
+`bsWord₁_length_ge_three` kills every pairing of a Bokut–Shiao word with a
+two-letter one, with no arithmetic. The two live off-diagonal cases are
+Yang–Baxter against Bokut–Shiao, where matching lengths force the descending run
+to be a singleton (`descWord_eq_singleton`) and pin `j = i − 1` — exactly §4j.
+
+`inclusion_resolves_general` then needs **no structure bridge**, unlike the
+overlap side's §4av. `InclusionComposition.spoly_isZero_of_scaled` already takes
+an arbitrary `ic` and asks only for empty contexts plus a coefficient identity,
+so the arbitrary composition is discharged where it stands:
+`spoly_isZero_of_self` on the diagonal, and `relations_add_eq_zero` with the two
+`lc` lemmas on §4j's pair — the same three lines `ybBsInclusion_spoly_isZero`
+uses on the constructed one.
+
+**Half the criterion, and only half.** `IsGrobnerShirshovBasis` also asks
+`overlap_resolves` for every `OverlapComposition`; there the Bokut–Shiao × 
+Bokut–Shiao cell is closed (§4aw, modulo the deep diagonal) and the rest is not.
+This section says nothing about it. -/
+
+/-- A Bokut–Shiao word has length at least three: `bsWord₁_cons` exposes two
+letters, and the descending run between them is itself non-empty. -/
+theorem bsWord₁_length_ge_three {n : ℕ} {i' i j : Fin n} (hi : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val) : 3 ≤ (bsWord₁ i j).length := by
+  obtain ⟨u, hu⟩ := descWord_head (i := i') (j := j) hj
+  rw [bsWord₁_cons hi hj, hu]
+  simp
+
+/-- A descending run of length one is the singleton at its own top. -/
+theorem descWord_eq_singleton {n : ℕ} {i' j : Fin n} (hj : j.val ≤ i'.val)
+    {z : HeckeGen n} (h : descWord i' j = [z]) : j = i' ∧ z = ⟨i'⟩ := by
+  obtain ⟨u, hu⟩ := descWord_head (i := i') (j := j) hj
+  -- rewrite a COPY: `h` itself is needed unmutated below.
+  have hz : z = (⟨i'⟩ : HeckeGen n) := by
+    have h' := h
+    rw [hu] at h'
+    exact (by simpa using h'.symm : _ ∧ _).1
+  refine ⟨?_, hz⟩
+  have hsing : descWord i' j = descWord i' i' := by
+    rw [h, hz, descWord_self]
+  exact descWord_bot_inj hj le_rfl hsing
+
+/-- **Two rules sharing a leading monomial are the same rule, or §4j's pair.** -/
+theorem shared_lm_classify (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hlm : r₁.lm (heckeOrder n) = r₂.lm (heckeOrder n)) :
+    r₁ = r₂
+    ∨ (∃ i' i : Fin n, i'.val + 1 = i.val
+        ∧ ((r₁ = yangBaxterRelation i' i ∧ r₂ = bokutShiaoRelation i' i i')
+           ∨ (r₁ = bokutShiaoRelation i' i i' ∧ r₂ = yangBaxterRelation i' i))) := by
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₁ with
+    ⟨a, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a', a, b, ha₁, ha₂, ha⟩
+  -- ── r₁ quadratic ──────────────────────────────────────────────────────────
+  · rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₂ with
+      ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+    · rw [ha, hc, heckeRelation_lm, heckeRelation_lm] at hlm
+      have : a = c := by simpa using hlm
+      exact Or.inl (by rw [ha, hc, this])
+    · rw [ha, hc, heckeRelation_lm, yangBaxterRelation_lm c d (by omega)] at hlm
+      simp at hlm
+    · rw [ha, hc, heckeRelation_lm, farCommRelation_lm c d (by omega)] at hlm
+      obtain ⟨h1, h2⟩ : a = c ∧ a = d := by simpa using hlm
+      omega
+    · rw [ha, hc, heckeRelation_lm, bokutShiaoRelation_lm hc₁ hc₂] at hlm
+      have h3 := bsWord₁_length_ge_three hc₁ hc₂
+      rw [← hlm] at h3; simp at h3
+  -- ── r₁ Yang–Baxter ────────────────────────────────────────────────────────
+  · rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₂ with
+      ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+    · rw [ha, hc, yangBaxterRelation_lm a b (by omega), heckeRelation_lm] at hlm
+      simp at hlm
+    · rw [ha, hc, yangBaxterRelation_lm a b (by omega),
+        yangBaxterRelation_lm c d (by omega)] at hlm
+      obtain ⟨h1, h2, -⟩ : b = d ∧ a = c ∧ b = d := by simpa using hlm
+      exact Or.inl (by rw [ha, hc, h1, h2])
+    · rw [ha, hc, yangBaxterRelation_lm a b (by omega),
+        farCommRelation_lm c d (by omega)] at hlm
+      simp at hlm
+    · rw [ha, hc, yangBaxterRelation_lm a b (by omega),
+        bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂] at hlm
+      obtain ⟨hbc, htail⟩ := List.cons.inj hlm
+      have htail' : [(⟨a⟩ : HeckeGen n)] ++ [(⟨b⟩ : HeckeGen n)]
+          = descWord c' d ++ [(⟨c⟩ : HeckeGen n)] := htail
+      obtain ⟨hrun, -⟩ := List.append_inj' htail' (by simp)
+      obtain ⟨hdc, hac⟩ := descWord_eq_singleton hc₂ hrun.symm
+      have hbc' : b = c := congrArg HeckeGen.index hbc
+      have hac' : a = c' := congrArg HeckeGen.index hac
+      have hda : d = a := hdc.trans hac'.symm
+      have hc2 : r₂ = bokutShiaoRelation a b a := by
+        rw [hc, ← hac', ← hbc', hda]
+      exact Or.inr ⟨a, b, hab.symm, Or.inl ⟨ha, hc2⟩⟩
+  -- ── r₁ far commutation ────────────────────────────────────────────────────
+  · rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₂ with
+      ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+    · rw [ha, hc, farCommRelation_lm a b (by omega), heckeRelation_lm] at hlm
+      obtain ⟨h1, h2⟩ : a = c ∧ b = c := by simpa using hlm
+      omega
+    · rw [ha, hc, farCommRelation_lm a b (by omega),
+        yangBaxterRelation_lm c d (by omega)] at hlm
+      simp at hlm
+    · rw [ha, hc, farCommRelation_lm a b (by omega),
+        farCommRelation_lm c d (by omega)] at hlm
+      obtain ⟨h1, h2⟩ : a = c ∧ b = d := by simpa using hlm
+      exact Or.inl (by rw [ha, hc, h1, h2])
+    · rw [ha, hc, farCommRelation_lm a b (by omega),
+        bokutShiaoRelation_lm hc₁ hc₂] at hlm
+      have h3 := bsWord₁_length_ge_three hc₁ hc₂
+      rw [← hlm] at h3; simp at h3
+  -- ── r₁ Bokut–Shiao ────────────────────────────────────────────────────────
+  · rcases mem_heckeCompletedRewritingSystem_rules hn hp hr₂ with
+      ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+    · rw [ha, hc, bokutShiaoRelation_lm ha₁ ha₂, heckeRelation_lm] at hlm
+      have h3 := bsWord₁_length_ge_three ha₁ ha₂
+      rw [hlm] at h3; simp at h3
+    · rw [ha, hc, bokutShiaoRelation_lm ha₁ ha₂, bsWord₁_cons ha₁ ha₂,
+        yangBaxterRelation_lm c d (by omega)] at hlm
+      obtain ⟨hac, htail⟩ := List.cons.inj hlm
+      have htail' : descWord a' b ++ [(⟨a⟩ : HeckeGen n)]
+          = [(⟨c⟩ : HeckeGen n)] ++ [(⟨d⟩ : HeckeGen n)] := htail
+      obtain ⟨hrun, -⟩ := List.append_inj' htail' (by simp)
+      obtain ⟨hba, hca⟩ := descWord_eq_singleton ha₂ hrun
+      have had : a = d := congrArg HeckeGen.index hac
+      have hca' : c = a' := congrArg HeckeGen.index hca
+      have hba' : b = a' := hba.trans (by rfl)
+      have ha2 : r₁ = bokutShiaoRelation a' a a' := by rw [ha, hba']
+      have hc2 : r₂ = yangBaxterRelation a' a := by rw [hc, ← hca', ← had]
+      exact Or.inr ⟨a', a, ha₁, Or.inr ⟨ha2, hc2⟩⟩
+    · rw [ha, hc, bokutShiaoRelation_lm ha₁ ha₂,
+        farCommRelation_lm c d (by omega)] at hlm
+      have h3 := bsWord₁_length_ge_three ha₁ ha₂
+      rw [hlm] at h3; simp at h3
+    · rw [ha, hc, bokutShiaoRelation_lm ha₁ ha₂, bokutShiaoRelation_lm hc₁ hc₂,
+        bsWord₁_cons ha₁ ha₂, bsWord₁_cons hc₁ hc₂] at hlm
+      obtain ⟨hac, htail⟩ := List.cons.inj hlm
+      have hac' : a = c := congrArg HeckeGen.index hac
+      subst hac'
+      have ha'c' : a' = c' := Fin.ext (by omega)
+      subst ha'c'
+      obtain ⟨hrun, -⟩ := List.append_inj' htail (by simp)
+      have hbd : b = d := descWord_bot_inj ha₂ hc₂ hrun
+      exact Or.inl (by rw [ha, hc, hbd])
+
+/-- **The inclusion half of the Gröbner–Shirshov condition, for every `n`.** -/
+theorem inclusion_resolves_general (hn : 0 < n) (hp : HeckeParams)
+    (ic : InclusionComposition (HeckeGen n) ℝ (heckeOrder n))
+    (hin : ic.inner ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hout : ic.outer ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      ic.spoly nf ∧ nf.isZero := by
+  obtain ⟨hl, hr, hlmeq⟩ := inclusion_contexts_empty_general hn hp ic hin hout
+  rcases shared_lm_classify hn hp hin hout hlmeq with hsame | ⟨i', i, hi, hpair⟩
+  · exact reducesToNF_self_of_isZero (ic.spoly_isZero_of_self hsame)
+  · refine reducesToNF_self_of_isZero (ic.spoly_isZero_of_scaled hl hr ?_)
+    intro m
+    rcases hpair with ⟨hinn, hout'⟩ | ⟨hinn, hout'⟩
+    · rw [hinn, hout', DegenerateYbBs.yangBaxter_lc hi, DegenerateYbBs.bokutShiao_lc hi]
+      have := DegenerateYbBs.relations_add_eq_zero hi m
+      linarith
+    · rw [hinn, hout', DegenerateYbBs.yangBaxter_lc hi, DegenerateYbBs.bokutShiao_lc hi]
+      have := DegenerateYbBs.relations_add_eq_zero hi m
+      linarith
+
 end UGB.GrobnerShirshov.Hecke
