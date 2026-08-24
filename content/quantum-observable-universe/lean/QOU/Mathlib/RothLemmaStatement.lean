@@ -460,6 +460,145 @@ theorem exists_isRothTheta {σ : Type*} [Finite σ] (a : ℤ) (r H : σ → ℕ)
   exists_isRothTheta_of_finite a r H (finite_rothPolySet a r) (finite_rothFracSet H)
     (exists_inRothPolySet a r ha) (exists_inRothFracSet H hH)
 
+/-! ### §10 — the base case in `Θ` form
+
+`index_le_of_abs_coeff_le` bounds the index of **one** polynomial at **one** point.  `Θ₁` is a
+supremum over `R(a;r) × Q(H)`, and §9's *attainment* clause is exactly what turns the one into
+the other: the supremum is realised at some pair, so a bound holding at every pair holds at the
+realising one, and therefore at `Θ₁`.
+
+⚠ Attainment is doing real work here, not bookkeeping.  A supremum that is merely a least upper
+bound would need the pointwise bound *plus* a limiting argument; because `R(a;r)` and `Q(H)` are
+finite (`finite_rothPolySet`, `finite_rothFracSet`), it is a maximum and one instantiation
+suffices.  That is why §9 had to come before §10.
+
+⚠ **`InRothPolySet`'s degree clause is not used.**  §10's estimate consumes only the height
+bound `|coeff n A| ≤ a`; the degrees `r` enter through `idxWeight` as *weights*, not as a
+constraint on `A`.  Worth recording because it is the one place in this arc where a clause of
+the ambient definition turns out to be genuinely inert — everywhere else, a hypothesis that
+looked droppable was load-bearing. -/
+
+section BaseCaseTheta
+
+open Polynomial
+
+/-- **`IsRothTheta`'s realising pair, transported to `ℤ[X]`.**
+
+Everything §10 needs about the maximising `(A, κ)`, in the one-variable dictionary: a
+polynomial, a point in lowest terms, the height identity `max(|p|,|q|) = H`, the coefficient
+bound, and the index *equal* to `Θ`.
+
+Coprimality and `0 < q` are not hypotheses anywhere — Lean's `ℚ` carries `reduced` and a
+positive denominator by construction, which is why `InRothFracSet` needs no coprimality clause
+even though §9 states one.
+
+Extracted so that the unpowered and powered `Θ` bounds share it; they differ only in which
+index theorem they call. -/
+theorem exists_polynomial_of_isRothTheta {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ}
+    (hΘ : IsRothTheta a r H Θ) :
+    ∃ (P : ℤ[X]) (p q : ℤ), P ≠ 0 ∧ 0 < q ∧ IsCoprime p q ∧
+      max |p| |q| = ((H () : ℤ)) ∧ (∀ n, |P.coeff n| ≤ a) ∧
+      index (fun _ : Unit => r ()) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = ((Θ : ℚ) : WithTop ℚ) := by
+  obtain ⟨-, A, κ, hA, hκ, heq⟩ := hΘ
+  obtain ⟨hA0, -, hAc⟩ := hA
+  refine ⟨pUnitAlgEquiv ℤ A, (κ ()).num, (((κ ()).den : ℤ)), ?_, ?_, ?_, ?_, ?_, ?_⟩
+  · exact fun h => hA0 ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
+  · exact_mod_cast (κ ()).pos
+  · rw [Int.isCoprime_iff_gcd_eq_one]
+    simpa [Int.gcd] using (κ ()).reduced
+  · rw [Int.abs_eq_natAbs, Int.abs_eq_natAbs, Int.natAbs_natCast, ← Nat.cast_max, hκ ()]
+  · intro n
+    rw [coeff_pUnitAlgEquiv]
+    exact hAc _
+  · have hmap := symm_map_pUnitAlgEquiv A
+    have hκeq : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
+      funext u
+      cases u
+      push_cast
+      exact Rat.num_div_den _
+    have hreq : (fun _ : Unit => r ()) = r := by
+      funext u
+      cases u
+      rfl
+    rw [hmap, hκeq, hreq]
+    exact heq
+
+/-- **§10 in `Θ` form: `a ≤ H^e` and `H ≥ 2` give `Θ₁ ≤ e/r`.**
+
+Mahler states this as `Θ₁(a; r; H) ≤ log a / (r log H)`; `e` is a root-free stand-in for
+`log a / log H`, kept exponential because the recursion amplifies any rounding
+(`two_sqrt_expands`).
+
+⚠ `2 ≤ H` is necessary, not cosmetic: at `H = 1` the right-hand side of Mahler's form is
+infinite and the estimate is empty. -/
+theorem isRothTheta_le_of_pow_le {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hH : 2 ≤ H ()) (e : ℕ)
+    (hae : a ≤ (H () : ℤ) ^ e) :
+    Θ ≤ (e : ℚ) / (r () : ℚ) := by
+  obtain ⟨P, p, q, hPne, hq0, hco, hheight, hPc, hidx⟩ := exists_polynomial_of_isRothTheta hΘ
+  have hbound := index_le_of_abs_coeff_le hq0 hco hr hPne e (a := a)
+    (by rw [hheight]; exact_mod_cast hH) hPc (by rw [hheight]; exact hae)
+  rw [hidx] at hbound
+  exact_mod_cast hbound
+
+/-- **§10 in `Θ` form, powered: `a^Q ≤ H^S` gives `Θ₁ ≤ S/(Q·r)`.**
+
+The shape `Γ₁` delivers.  §11's clause (i) is `b ≤ K₁^{s₁t}` for rational `t = p/q`; clearing
+the exponent gives `b^q ≤ K₁^{s₁p}` with no rounding anywhere. -/
+theorem isRothTheta_le_of_pow_pow_le {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {Qe S : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hQe : Qe ≠ 0) (hH : 2 ≤ H ())
+    (hae : a ^ Qe ≤ (H () : ℤ) ^ S) :
+    Θ ≤ (S : ℚ) / ((Qe : ℚ) * (r () : ℚ)) := by
+  obtain ⟨P, p, q, hPne, hq0, hco, hheight, hPc, hidx⟩ := exists_polynomial_of_isRothTheta hΘ
+  have hbound := index_le_of_pow_abs_coeff_le hq0 hco hr hPne hQe (a := a)
+    (by rw [hheight]; exact_mod_cast hH) hPc (by rw [hheight]; exact hae)
+  rw [hidx] at hbound
+  exact_mod_cast hbound
+
+/-- **`Γ₁` closes the base case: `Θ₁ ≤ t`.**
+
+§11's clause (i) is `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`.  With correction eighteen's reading
+(`K₁ = H₁`, `b = a`, `s₁ = r₁`) and `t = p/q`, that is `a^q ≤ H^{r·p}`, and §10 turns it into
+`Θ₁ ≤ t` exactly.
+
+⚠ **This is where §10's `P^j` half is load-bearing.**  The `Q^j` half alone gives
+`Θ₁ ≤ log a/(r log q)`, and clause (i) then only bounds that by `t·log H/log q ≥ t` — the wrong
+side of `t`, by exactly the factor the two halves differ in.  The arc carried the `q`-form for
+a long time and could not close the base case; the reason was this factor, not any missing
+recursion. -/
+theorem isRothTheta_le_of_gamma_one {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {p q : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hq : q ≠ 0) (hH : 2 ≤ H ())
+    (hclause : a ^ q ≤ (H () : ℤ) ^ (r () * p)) :
+    Θ ≤ (p : ℚ) / (q : ℚ) := by
+  have h := isRothTheta_le_of_pow_pow_le hΘ hr hq hH hclause
+  have hrQ : ((r () : ℚ)) ≠ 0 := Nat.cast_ne_zero.mpr hr
+  have hqQ : ((q : ℚ)) ≠ 0 := Nat.cast_ne_zero.mpr hq
+  have heq : (((r () * p : ℕ) : ℚ)) / ((q : ℚ) * ((r () : ℚ))) = (p : ℚ) / (q : ℚ) := by
+    push_cast
+    field_simp
+  rwa [heq] at h
+
+/-- **Validation — the hypotheses are jointly satisfiable, and non-degenerately.**
+
+`isRothTheta_degenerate` satisfies `IsRothTheta` with `r ≡ 0` and `H ≡ 1`, which fails *both*
+of this theorem's side conditions, so satisfiability of `IsRothTheta` alone would not rule out
+vacuity.  `exists_isRothTheta` supplies an instance at `a = 2`, `r = 1`, `H = 2`, where both
+hold, and the theorem then gives `Θ₁ ≤ 1`.
+
+⚠ **Not proved here:** the value is in fact *exactly* `1`, so the bound is attained rather than
+slack — `A = 2x − 1` lies in `R(2; 1)`, `κ = 1/2` lies in `Q(2)`, and `translate (1/2) A = 2x`
+has index `1`.  That witness is a computation in `MvPolynomial`'s support, and it is recorded
+rather than formalised.  Stated as a remark precisely so it is not read later as a theorem. -/
+example : ∃ Θ : ℚ, IsRothTheta (2 : ℤ) (fun _ : Unit => 1) (fun _ : Unit => 2) Θ ∧ Θ ≤ 1 := by
+  obtain ⟨Θ, hΘ⟩ := exists_isRothTheta (2 : ℤ) (fun _ : Unit => 1) (fun _ : Unit => 2)
+    (by norm_num) (fun _ => by norm_num)
+  refine ⟨Θ, hΘ, ?_⟩
+  simpa using isRothTheta_le_of_pow_le hΘ one_ne_zero (by norm_num) 1 (by norm_num)
+
+end BaseCaseTheta
+
 /-- `R(a; r)` only grows with `a`. -/
 theorem InRothPolySet.mono {σ : Type*} {a a' : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ}
     (haa : a ≤ a') (h : InRothPolySet a r A) : InRothPolySet a' r A :=
@@ -518,17 +657,28 @@ a long time, which made every statement here *stronger* than the source's: dropp
 hypothesis strengthens a theorem, and a theorem stronger than the one the source proves is one
 nothing in the source will discharge.  The other two are reinstated below. -/
 
-/-- **Mahler's denominator floor**, `Γ_m`'s third clause: `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.
+/-- **Mahler's height floor**, `Γ_m`'s third clause: `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`.
 
-The exponent `ω·(m−1)m(2m+1)` is rational, so this rounds it **up** (`Nat.ceil`).  That makes the clause
-stronger than the source's and hence every statement carrying it weaker — the safe direction
-for a hypothesis being reinstated, since it cannot let a claim here outrun §14's. -/
-def rothDenomFloor (m : ℕ) (ω : ℚ) : ℕ :=
+⚠⚠ **Correction eighteen: `K_h` is the HEIGHT `H_h`, not the denominator.**  This definition
+was called `rothDenomFloor` and its clause "the first *denominator*".  §11 fixes the reading
+beyond argument — after defining `Γ_M` abstractly on `b, s₁,…,s_M, K₁,…,K_M` it says:
+
+> By way of application, let `m ≥ 2`; let the ordered system of numbers `a, r₁,…,r_m, H₁,…,H_m`
+> have the property `Γ_m`
+
+so `b = a`, `s_h = r_h`, and `K_h = H_h`.  §13's descent confirms it: the new system is
+`b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` — the same heights, truncated — and its clauses are written
+`ρ_h log H_h ≥ ρ₁ log H₁` and `H₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`, in `H` throughout.
+
+The exponent `ω·(m−1)m(2m+1)` is rational, so this rounds it **up** (`Nat.ceil`).  That makes
+the clause stronger than the source's and hence every statement carrying it weaker — the safe
+direction for a hypothesis being reinstated, since it cannot let a claim here outrun §14's. -/
+def rothHeightFloor (m : ℕ) (ω : ℚ) : ℕ :=
   2 ^ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊
 
-/-- At one variable the floor is `1`, so it constrains nothing beyond the standing `2 ≤ q`. -/
-theorem rothDenomFloor_one (ω : ℚ) : rothDenomFloor 1 ω = 1 := by
-  norm_num [rothDenomFloor]
+/-- At one variable the floor is `1`, so it constrains nothing beyond `Γ₁`'s own `K₁ ≥ 2`. -/
+theorem rothHeightFloor_one (ω : ℚ) : rothHeightFloor 1 ω = 1 := by
+  norm_num [rothHeightFloor]
 
 /-- **The floor is monotone in the arity.**
 
@@ -536,8 +686,8 @@ This is what lets `Γ_m` hand its floor clause down to `Γ_{m−1}`: the sub-sys
 *smaller* floor than the system supplies, because `(m−1)m(2m+1)` grows with `m`.  Without it
 the descent (`RothVariableSplit.rothGamma_descend`) would have nothing to discharge clause 3
 with. -/
-theorem rothDenomFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤ m) :
-    rothDenomFloor m' ω ≤ rothDenomFloor m ω := by
+theorem rothHeightFloor_mono {m m' : ℕ} {ω : ℚ} (hω : 0 ≤ ω) (h : m' ≤ m) :
+    rothHeightFloor m' ω ≤ rothHeightFloor m ω := by
   have hA : (m' - 1) * m' * (2 * m' + 1) ≤ (m - 1) * m * (2 * m + 1) :=
     Nat.mul_le_mul (Nat.mul_le_mul (Nat.sub_le_sub_right h 1) h) (by omega)
   have hQ : ω * (((m' - 1) * m' * (2 * m' + 1) : ℕ) : ℚ)
@@ -564,7 +714,7 @@ Where the rest lives:
 * **clause 4** is `RothLemmaUniform`'s height condition — `∀ j, B ≤ qⱼ^E` with `E ≤ ε·dⱼ` and
   `ε = t/m`, which is `b ≤ K₁^{(1/M)s₁t}` in uniform form.  It is carried, just not here.
 * **case (i)** is the `m = 1` specialisation.  At `m = 1` the three fields below are vacuous or
-  trivial (`rothDenomFloor 1 ω = 1`), and `RothLemmaUniform`'s standing `2 ≤ qⱼ` supplies
+  trivial (`rothHeightFloor 1 ω = 1`), and `RothLemmaUniform`'s standing `2 ≤ qⱼ` supplies
   `K₁ ≥ 2`.  So the aggregate matches, but this structure alone is **not** `Γ₁`.
 
 Clause 2 is stated as `K₁^{s₁} ≤ K_h^{s_h}`, the same inequality with the logarithms cleared —
@@ -579,22 +729,23 @@ additional.
 
 Both indexed clauses are written `∀ j, (j : ℕ) = 0 → …` rather than through `o.symm 0`, so that
 `m = 0` needs no side condition rather than no `Fin 0` element. -/
-structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) (qd : σ → ℤ) :
+structure RothGamma {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (ω : ℚ) (d : σ → ℕ) (Kh : σ → ℤ) :
     Prop where
   /-- Clause 1: consecutive degrees drop by at least a factor `ω = 1/t`. -/
   growth : RothGrowth o ω d
   /-- Clause 2: the first variable's `K^s` is the smallest.  `s_h·log K_h ≥ s₁·log K₁`. -/
   height : ∀ j k : Fin m, (j : ℕ) = 0 →
-    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
-  /-- Clause 3: the first denominator is at least `2^{ω(m−1)m(2m+1)}`. -/
-  floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothDenomFloor m ω : ℤ) ≤ qd (o.symm j)
+    Kh (o.symm j) ^ d (o.symm j) ≤ Kh (o.symm k) ^ d (o.symm k)
+  /-- Clause 3: the first **height** is at least `2^{ω(m−1)m(2m+1)}`.  See correction
+  eighteen at `rothHeightFloor`: `K_h` is `H_h`, not `Q_h`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (rothHeightFloor m ω : ℤ) ≤ Kh (o.symm j)
 
 /-- **`K₁ ≥ 2` is forced by clause 3** once `m ≥ 2` and `ω > 0`.
 
 The floor's exponent `ω·(m−1)m(2m+1)` is then at least `10ω > 0`, so its ceiling is at least
 `1` and the floor is at least `2`. -/
-theorem rothDenomFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω) :
-    2 ≤ rothDenomFloor m ω := by
+theorem rothHeightFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω) :
+    2 ≤ rothHeightFloor m ω := by
   have hA : 0 < (m - 1) * m * (2 * m + 1) := by
     have : 1 ≤ m - 1 := by omega
     have : 1 ≤ m := by omega
@@ -604,15 +755,15 @@ theorem rothDenomFloor_two_le {m : ℕ} {ω : ℚ} (hm : 2 ≤ m) (hω : 0 < ω)
     positivity
   have hceil : 1 ≤ ⌈ω * (((m - 1) * m * (2 * m + 1) : ℕ) : ℚ)⌉₊ := Nat.ceil_pos.mpr hpos
   calc (2 : ℕ) = 2 ^ 1 := by norm_num
-    _ ≤ rothDenomFloor m ω := Nat.pow_le_pow_right (by norm_num) hceil
+    _ ≤ rothHeightFloor m ω := Nat.pow_le_pow_right (by norm_num) hceil
 
 /-- **`K₁ ≥ 2` is a consequence of `Γ_m`, not a hypothesis** — §11 says so, and this is the
 first index's case.  `RothLemmaUniform`'s standing `2 ≤ qⱼ` is therefore redundant at `j = 0`
 rather than additional. -/
 theorem rothGamma_first_two_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
-    {qd : σ → ℤ} (hm : 2 ≤ m) (hω : 0 < ω) (hg : RothGamma o ω d qd)
-    (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ qd (o.symm j) :=
-  le_trans (by exact_mod_cast rothDenomFloor_two_le hm hω) (hg.floor j hj)
+    {Kh : σ → ℤ} (hm : 2 ≤ m) (hω : 0 < ω) (hg : RothGamma o ω d Kh)
+    (j : Fin m) (hj : (j : ℕ) = 0) : 2 ≤ Kh (o.symm j) :=
+  le_trans (by exact_mod_cast rothHeightFloor_two_le hm hω) (hg.floor j hj)
 
 /-- **Property `Γ_M`, case (ii), in full** — all four clauses, in the `t = p/q` idiom.
 
@@ -626,19 +777,36 @@ rational exponent become `ℕ` inequalities with nothing rounded.
 
 ⚠ Still case (ii) only; `Γ₁` is case (i) and is not this. -/
 structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
-    (d : σ → ℕ) (qd : σ → ℤ) (b : ℤ) : Prop where
+    (d : σ → ℕ) (Kh : σ → ℤ) (b : ℤ) : Prop where
   /-- Clause 1, with `ω = 1/t = q/p`. -/
   growth : RothGrowth o ((q : ℚ) / (p : ℚ)) d
   /-- Clause 2: the first variable's `K^s` is the smallest. -/
   height : ∀ j k : Fin m, (j : ℕ) = 0 →
-    qd (o.symm j) ^ d (o.symm j) ≤ qd (o.symm k) ^ d (o.symm k)
+    Kh (o.symm j) ^ d (o.symm j) ≤ Kh (o.symm k) ^ d (o.symm k)
   /-- Clause 3a: the floor's exponent is large enough, cleared of division. -/
   floorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p
-  /-- Clause 3b: the first denominator is at least `2^F`. -/
-  floor : ∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ qd (o.symm j)
+  /-- Clause 3b: the first **height** is at least `2^F`. -/
+  floor : ∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ Kh (o.symm j)
   /-- Clause 4, raised to `m·q` so that it is integral. -/
   heightBound : ∀ j : Fin m, (j : ℕ) = 0 →
-    b ^ (m * q) ≤ qd (o.symm j) ^ (d (o.symm j) * p)
+    b ^ (m * q) ≤ Kh (o.symm j) ^ (d (o.symm j) * p)
+  /-- §11's derived list: `K₁ ≥ 2, K₂ ≥ 2, …, K_M ≥ 2`.
+
+  ⚠⚠ **Correction twenty.**  This clause was absent, and its absence made `RothLemmaTheta`
+  **false at `m = 1`** — see the counterexample recorded there.  At `m ≥ 2` it is a
+  *consequence* of clauses 3a/3b (`(m−1)m(2m+1) ≥ 10 > 0` forces `F ≥ 1`, so `2 ≤ 2^F ≤ K₁`,
+  and clause 2 carries it along), so adding it costs case (ii) nothing.  At `m = 1` those
+  clauses are vacuous, and §11 states `K₁ ≥ 2` outright — it is the middle conjunct of case (i),
+  `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`.  `RothGammaFull` encodes case (ii) only, so at `m = 1` it was
+  not `Γ₁`. -/
+  two_le : ∀ j, 2 ≤ Kh j
+  /-- §11's standing setting: `s₁,…,s_M, K₁,…,K_M` are **positive** integers.
+
+  ⚠ Also absent, and also unsafe in the same direction: without it `d j = 0` is admitted, where
+  `idxWeight` reads `n/0 = 0` in `ℚ` and the index collapses.  A hypothesis structure missing a
+  clause is a *weaker* hypothesis, hence a *stronger* theorem — the shape this arc has now got
+  wrong four times. -/
+  degPos : ∀ j, d j ≠ 0
 
 /-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
 idioms, with the rounding as an explicit hypothesis.
@@ -657,13 +825,13 @@ theorem le_pow_of_pow_le_pow {x y : ℤ} {Q S e : ℕ} (hQ : Q ≠ 0) (hy : 1 �
 /-- **`Γ_M` in full implies the three-clause form** — so `RothGammaFull` feeds everything
 `RothGamma` feeds, at `ω = q/p`.
 
-The only content is clause 3: `rothDenomFloor m (q/p)` rounds `(q/p)(m−1)m(2m+1)` **up**, while
+The only content is clause 3: `rothHeightFloor m (q/p)` rounds `(q/p)(m−1)m(2m+1)` **up**, while
 `floorExp` says `F` is already at least that value, so the ceiling is at most `F` and the
 rounded floor is at most `2^F`. -/
 theorem RothGammaFull.toRothGamma {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {p q F : ℕ}
-    {d : σ → ℕ} {qd : σ → ℤ} {b : ℤ} (hp : p ≠ 0)
-    (hg : RothGammaFull o p q F d qd b) :
-    RothGamma o ((q : ℚ) / (p : ℚ)) d qd where
+    {d : σ → ℕ} {Kh : σ → ℤ} {b : ℤ} (hp : p ≠ 0)
+    (hg : RothGammaFull o p q F d Kh b) :
+    RothGamma o ((q : ℚ) / (p : ℚ)) d Kh where
   growth := hg.growth
   height := hg.height
   floor := by
@@ -676,8 +844,8 @@ theorem RothGammaFull.toRothGamma {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {p q
       rw [Nat.ceil_le, div_mul_eq_mul_div, div_le_iff₀ hpQ]
       push_cast at hA ⊢
       linarith
-    show ((rothDenomFloor m ((q : ℚ) / (p : ℚ)) : ℕ) : ℤ) ≤ (2 : ℤ) ^ F
-    unfold rothDenomFloor
+    show ((rothHeightFloor m ((q : ℚ) / (p : ℚ)) : ℕ) : ℤ) ≤ (2 : ℤ) ^ F
+    unfold rothHeightFloor
     push_cast at hceil ⊢
     exact pow_le_pow_right₀ (by norm_num) hceil
 
@@ -707,21 +875,21 @@ not after. -/
 
 The induction step measures its sub-problems against `r·d`, and all three clauses survive.
 Clause 2 does so because raising `K₁^{s₁} ≤ K_h^{s_h}` to the `r`-th power is monotone once the
-denominators are non-negative, which `2 ≤ qd j` supplies; clause 3 does not mention `d` at
+heights are non-negative, which `2 ≤ Kh j` supplies; clause 3 does not mention `d` at
 all. -/
-theorem rothGamma_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {qd : σ → ℤ}
-    {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j) (hg : RothGamma o ω d qd) :
-    RothGamma o ω (fun j => r * d j) qd where
+theorem rothGamma_scale {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ} {Kh : σ → ℤ}
+    {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ Kh j) (hg : RothGamma o ω d Kh) :
+    RothGamma o ω (fun j => r * d j) Kh where
   growth := rothGrowth_scale hr hg.growth
   height := by
     intro j k hj
     have h := hg.height j k hj
-    have h0 : (0 : ℤ) ≤ qd (o.symm j) ^ d (o.symm j) :=
+    have h0 : (0 : ℤ) ≤ Kh (o.symm j) ^ d (o.symm j) :=
       pow_nonneg (le_trans (by norm_num) (hq _)) _
-    calc qd (o.symm j) ^ (r * d (o.symm j))
-        = (qd (o.symm j) ^ d (o.symm j)) ^ r := by rw [← pow_mul, mul_comm]
-      _ ≤ (qd (o.symm k) ^ d (o.symm k)) ^ r := pow_le_pow_left₀ h0 h r
-      _ = qd (o.symm k) ^ (r * d (o.symm k)) := by rw [← pow_mul, mul_comm]
+    calc Kh (o.symm j) ^ (r * d (o.symm j))
+        = (Kh (o.symm j) ^ d (o.symm j)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (Kh (o.symm k) ^ d (o.symm k)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = Kh (o.symm k) ^ (r * d (o.symm k)) := by rw [← pow_mul, mul_comm]
   floor := hg.floor
 
 /-! ### ⚠ The eleventh correction: `c_m = 2^{m+1} − 3`, and the conclusion is not linear in `t`
@@ -835,6 +1003,23 @@ theorem rothBound_two (t θ : ℚ) : RothBound 2 t θ ↔ (0 ≤ θ ∧ θ ^ 2 �
 theorem RothBound.mono {m : ℕ} {t θ θ' : ℚ} (h : RothBound m t θ) (h0 : 0 ≤ θ')
     (hle : θ' ≤ θ) : RothBound m t θ' :=
   ⟨h0, le_trans (pow_le_pow_left₀ h0 hle _) h.2⟩
+
+/-- **Roth's lemma at `m = 1`, in the arc's own encoding: `Γ₁ ⟹ RothBound 1 t Θ₁`.**
+
+`rothBound_one` unfolds `RothBound 1 t θ` to `0 ≤ θ ∧ θ ≤ t`, so this is `isRothTheta_le_of_gamma_one`
+paired with `IsRothTheta.nonneg`.  Its value is that it is the shape `rothBound_chain` and
+`rothConstant_chain` consume: the base case now enters the recursion as a `RothBound`, not as a
+statement about `index` that something else would have to translate.
+
+⚠ **`t` is the exact bound at `m = 1`, and that is what pins `c₁ = 1`.**  `rothConstant_rec`
+does not determine the constant — `rothConstant_chain` needs a starting value, and correction
+eleven traced `c_m = 2^{m+1} − 3` to the base case rather than to the recurrence.  This theorem
+is that starting value, now proved from `Γ₁` rather than assumed. -/
+theorem rothBound_one_of_gamma_one {a : ℤ} {r H : Unit → ℕ} {Θ : ℚ} {p q : ℕ}
+    (hΘ : IsRothTheta a r H Θ) (hr : r () ≠ 0) (hq : q ≠ 0) (hH : 2 ≤ H ())
+    (hclause : a ^ q ≤ (H () : ℤ) ^ (r () * p)) :
+    RothBound 1 ((p : ℚ) / (q : ℚ)) Θ :=
+  (rothBound_one _ _).mpr ⟨hΘ.nonneg, isRothTheta_le_of_gamma_one hΘ hr hq hH hclause⟩
 
 /-! ### ⚠ The root bound and the linear bound are not the same shape
 
@@ -1475,7 +1660,7 @@ theorem height_descend_assemble {m : ℕ} {n r₁ ρ₁ sumR t L Λ A Fac B : �
 `B ≤ qⱼ^E` with `E : ℕ` and `E ≤ ε·dⱼ`.  Clause 4 in that idiom is `a ≤ K^E`, and §11's chain
 becomes: `b ≤ 2^c·a^n` with the `2^c` absorbed into `K^j` through clause 3's `2^F ≤ K`.
 
-Everything stays in `ℤ`.  `F` is `rothDenomFloor`'s exponent and `j` the number of powers of
+Everything stays in `ℤ`.  `F` is `rothHeightFloor`'s exponent and `j` the number of powers of
 `K` needed to swallow `2^c`; the arithmetic that says `j` is small enough is
 `height_descend_step`, in `ℚ`. -/
 theorem height_descend_exp {a b K : ℤ} {F j c n E : ℕ}
@@ -1498,7 +1683,7 @@ theorem height_descend_exp {a b K : ℤ} {F j c n E : ℕ}
 
 /-! ### ⚠ Where the two halves of the descent do not meet
 
-`rothGamma_descend` gives clauses 1–3 over `ℕ` degrees and `ℤ` denominators;
+`rothGamma_descend` gives clauses 1–3 over `ℕ` degrees and `ℤ` heights;
 `height_descend_exp` gives clause 4's multiplicative content over `ℤ`; `height_descend_step`
 gives its arithmetic over `ℚ`.  Joining them needs `j` — the number of powers of `K` that
 swallow `2^c` — to be a **natural number** lying in
@@ -1587,7 +1772,7 @@ theorem height_descend_pq_witness : (32 : ℤ) ^ (1 * 1) ≤ (1024 : ℤ) ^ (1 *
 `B = 15`: clause 3 reads `1·2·5·1 = 10 ≤ 30` and the conclusion `1·15 ≤ 30`.
 
 ⚠ `L = 30` against `Λ = 1` is not slack — at `m = 2` clause 3 demands `H₁ ≥ 2^{10}`, and
-`rothDenomFloor_two` says the same.  The witness is at the boundary of what `Γ₂` allows. -/
+`rothHeightFloor_two` says the same.  The witness is at the boundary of what `Γ₂` allows. -/
 theorem height_descend_step_witness : (((2 : ℕ) : ℚ) - 1) * 1 ≤ (1 : ℚ) * 1 * 30 :=
   height_descend_step (m := 2) le_rfl (ρ₁ := 1) (t := 1) (L := 30) (Λ := 1) (B := 1)
     (by norm_num) (by norm_num) (by norm_num)
@@ -1613,20 +1798,40 @@ for all three.
 ⚠ **The bound `θ` is a parameter, so this is a schema and not a claim.**  Taking `θ` large
 makes it trivially true.  Roth's lemma is the instance in `RothLemmaMahler` below, where `ω`,
 `ε` and `θ` are all tied to the single parameter `t` the source uses.  Quoting this `def` on
-its own overstates what it says. -/
+its own overstates what it says.
+
+⚠⚠ **Correction eighteen, second consequence: the point and `Γ`'s parameter are different
+objects.**  This `def` used to quantify one function `qd : σ → ℤ` and use it *both* as the
+denominator of the point (`index d (fun j => pn j / qd j)`, `IsCoprime (pn j) (qd j)`) **and**
+as `Γ_m`'s `K_h` (`RothGamma o ω d qd`, `B ≤ qd j ^ E`).  §11 says `K_h = H_h = max(|P_h|,|Q_h|)`,
+and `H ≥ Q` with equality only when the denominator dominates, so the two readings are not
+interchangeable.
+
+The old form was **not false** — it is a theorem with a *stronger* hypothesis (`B ≤ Q^E`
+implies `B ≤ H^E`) and hence a weaker statement.  What it could not be is *fed from `Γ_m`*,
+which supplies only `B ≤ H^E`.  Since the induction consumes this schema at `m − 1` and `Γ`
+is what the induction carries, the old form was unusable at exactly the point of use.
+
+Now: the point is a rational `κ : σ → ℚ` (Lean's `ℚ` supplies lowest terms and a positive
+denominator, so no coprimality clause is needed — §9 states one and the type carries it), and
+`Kh` is pinned to its **height** by the second hypothesis.  Compare `InRothFracSet`, which
+took the same shape after correction sixteen.
+
+⚠ The `m = 1` proof now goes through `index_le_of_abs_coeff_le` rather than
+`index_le_of_abs_leadingCoeff_le` — i.e. through **both** halves of §10.  It has to: the
+`Q^j` half alone cannot bound `B` by a power of the *height*. -/
 def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε θ : ℚ) : Prop :=
-  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn qd : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
+  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (κ : σ → ℚ) (Kh : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
     (∀ j, d j ≠ 0) →
-    RothGamma o ω d qd →
+    (∀ j, max |(κ j).num| |(((κ j).den : ℤ))| = Kh j) →
+    RothGamma o ω d Kh →
     P ≠ 0 →
     (∀ j, degreeOf j P ≤ d j) →
     (∀ n, |coeff n P| ≤ B) →
-    (∀ j, 2 ≤ qd j) →
-    (∀ j, IsCoprime (pn j) (qd j)) →
-    (∀ j, B ≤ qd j ^ E) →
+    (∀ j, 2 ≤ Kh j) →
+    (∀ j, B ≤ Kh j ^ E) →
     (∀ j, (E : ℚ) ≤ ε * (d j : ℚ)) →
-    index d (fun j => ((pn j : ℚ) / (qd j : ℚ))) (map (algebraMap ℤ ℚ) P)
-      ≤ ((θ : ℚ) : WithTop ℚ)
+    index d κ (map (algebraMap ℤ ℚ) P) ≤ ((θ : ℚ) : WithTop ℚ)
 
 /-- **Roth's lemma as Mahler states it** (§14, Theorem 1), assembled from the schema.
 
@@ -1666,25 +1871,30 @@ Everything comes from `RothBaseCase.lean`; **no reindexing lemma appears**, whic
 evidence for the design choice argued in the module header. -/
 theorem rothLemmaUniform_one (ω ε θ : ℚ) (hεθ : ε ≤ θ) : RothLemmaUniform Unit 1 ω ε θ := by
   classical
-  rintro o d pn qd P B E hd - hP - hB hq hco hBq hE
+  rintro o d κ Kh P B E hd hheight - hP - hB hq hBq hE
   have hd0 : d () ≠ 0 := hd ()
   have hdQ : (0 : ℚ) < (d () : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd0
   set P' : Polynomial ℤ := pUnitAlgEquiv ℤ P with hP'
   have hP'0 : P' ≠ 0 := fun h => hP ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
-  have hlead : |P'.leadingCoeff| ≤ qd () ^ E := by
-    have hcoe : P'.leadingCoeff = coeff (Finsupp.single () P'.natDegree) P := by
-      rw [Polynomial.leadingCoeff, hP', coeff_pUnitAlgEquiv]
-    rw [hcoe]
-    exact le_trans (hB _) (hBq ())
-  have hmain := index_le_of_abs_leadingCoeff_le (p := pn ()) (q := qd ()) (hq ()) (hco ())
-    hd0 hP'0 E hlead
+  have hcoeff : ∀ n, |P'.coeff n| ≤ B := by
+    intro n
+    rw [hP', coeff_pUnitAlgEquiv]
+    exact hB _
+  have hq0 : (0 : ℤ) < (((κ ()).den : ℤ)) := by exact_mod_cast (κ ()).pos
+  have hco : IsCoprime ((κ ()).num) (((κ ()).den : ℤ)) := by
+    rw [Int.isCoprime_iff_gcd_eq_one]
+    simpa [Int.gcd] using (κ ()).reduced
+  have hmain := index_le_of_abs_coeff_le hq0 hco hd0 hP'0 E (a := B)
+    (by rw [hheight ()]; exact hq ()) hcoeff (by rw [hheight ()]; exact hBq ())
   rw [hP', symm_map_pUnitAlgEquiv] at hmain
-  have hdfun : d = fun _ : Unit => d () := by
+  have hdfun : (fun _ : Unit => d ()) = d := by
     refine _root_.funext fun u => ?_; cases u; rfl
-  have hafun : (fun j : Unit => ((pn j : ℚ) / (qd j : ℚ)))
-      = fun _ : Unit => ((pn () : ℚ) / (qd () : ℚ)) := by
-    refine _root_.funext fun u => ?_; cases u; rfl
-  rw [hdfun, hafun]
+  have hafun : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
+    refine _root_.funext fun u => ?_
+    cases u
+    push_cast
+    exact Rat.num_div_den _
+  rw [hdfun, hafun] at hmain
   refine le_trans hmain ?_
   rw [WithTop.coe_le_coe]
   have h2 := mul_le_mul_of_nonneg_right (hE ()) (le_of_lt (inv_pos.mpr hdQ))
@@ -1712,18 +1922,20 @@ example :
   refine rothLemmaUniform_one 0 1 1 le_rfl
     (⟨fun _ => 0, fun _ => (), fun _ => Subsingleton.elim _ _,
       fun _ => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
-    (fun _ => 1) (fun _ => 1) (fun _ => 2) 1 1 0 (fun _ => one_ne_zero) ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_ ?_
+    (fun _ => 1) (fun _ => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ)) (fun _ => 2) 1 1 0
+    (fun _ => one_ne_zero) ?_ ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_
+  · intro j
+    norm_num
   · exact
       { growth := by intro j k hjk; omega
         height := by intro j k _; exact le_rfl
-        floor := by intro j _; rw [rothDenomFloor_one]; norm_num }
+        floor := by intro j _; rw [rothHeightFloor_one]; norm_num }
   · intro j
     have h : degreeOf j (1 : MvPolynomial Unit ℤ) = 0 := by
       rw [← C_1]; exact degreeOf_C _ _
     omega
   · intro n; rw [coeff_one]; split_ifs <;> simp
   · intro j; norm_num
-  · intro j; exact isCoprime_one_left
   · intro j; norm_num
   · intro j; norm_num
 

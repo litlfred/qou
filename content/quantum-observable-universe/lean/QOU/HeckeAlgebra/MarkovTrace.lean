@@ -75,10 +75,11 @@ axiom JonesMarkovCoefficient :
 
     Stated against an explicit `Finset` of partitions
     (`partitions_as_finset n`) since `Nat.Partition n` is a
-    proposition, not a `Finset`.  Concrete enumeration of
-    partitions as a Finset is a deferred Mathlib-API task. -/
--- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; Mathlib-API task)
-axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
+    proposition, not a `Finset`.  CLOSED: Mathlib provides
+    `Fintype (Nat.Partition n)` in `Combinatorics.Enumerative.Partition`,
+    so we can use `Finset.univ`. -/
+-- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
+def partitions_as_finset (n : ℕ) : Finset (Nat.Partition n) := Finset.univ
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation Σ_λ y_λ = 1)
 axiom JonesMarkovCoefficient_sum_eq_one :

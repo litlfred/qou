@@ -131,17 +131,18 @@ induction apply its hypothesis at all.  Nothing in this arc supplied it until no
 went unnoticed because every earlier step consumed `Γ_m` and none had to *produce* one.
 
 The sub-system is §13's: the first `m−1` variables, degrees rescaled by `n` (`ρ_h = n·r_h`,
-read off §13's body), denominators unchanged.  All three clauses come across:
+read off §13's body), **heights unchanged** — §13 descends to `b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}`,
+the same `H` truncated by one.  All three clauses come across:
 
 * **growth** — restricting the consecutive-pair condition to a prefix loses nothing, and the
   rescaling is `rothGrowth_scale`'s;
 * **height** — clause 2 compares every `h` against `h = 1`, so a prefix keeps its own first
   element; raising to the `r`-th power is monotone once `2 ≤ qⱼ`;
-* **floor** — `rothDenomFloor` is monotone in the arity, so the *larger* floor `Γ_m` supplies
+* **floor** — `rothHeightFloor` is monotone in the arity, so the *larger* floor `Γ_m` supplies
   implies the smaller one `Γ_{m−1}` asks for.
 
 ⚠ Only the arity moves.  `ω` is the same `t⁻¹` throughout, which is what makes this a
-single-parameter induction — and is why `rothDenomFloor_mono` needs no hypothesis relating two
+single-parameter induction — and is why `rothHeightFloor_mono` needs no hypothesis relating two
 different `ω`s.
 
 ⚠⚠ **This produces clauses 1–3 and *not* clause 4**, and that is where the remaining work is.
@@ -155,9 +156,9 @@ That relocates what this arc had been calling "the height chain, which
 has `Γ_{m−1}`.  So the open item is: **produce clause 4 for the Wronskian**, which is
 `WronskianHeight`'s business and the one genuinely unbuilt piece left. -/
 theorem rothGamma_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 0 ≤ ω)
-    (d : σ → ℕ) (qd : σ → ℤ) {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ qd j)
-    (hg : RothGamma o ω d qd) :
-    RothGamma (Equiv.refl (Fin n)) ω (fun k => r * splitLeft o d k) (splitLeft o qd) where
+    (d : σ → ℕ) (Kh : σ → ℤ) {r : ℕ} (hr : r ≠ 0) (hq : ∀ j, 2 ≤ Kh j)
+    (hg : RothGamma o ω d Kh) :
+    RothGamma (Equiv.refl (Fin n)) ω (fun k => r * splitLeft o d k) (splitLeft o Kh) where
   growth := by
     intro j k hjk
     have h := hg.growth j.castSucc k.castSucc (by simpa using hjk)
@@ -168,25 +169,25 @@ theorem rothGamma_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 0
   height := by
     intro j k hj
     have h := hg.height j.castSucc k.castSucc (by simpa using hj)
-    have h0 : (0 : ℤ) ≤ qd (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
+    have h0 : (0 : ℤ) ≤ Kh (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
       pow_nonneg (le_trans (by norm_num) (hq _)) _
     simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
-    calc qd (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
-        = (qd (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
-      _ ≤ (qd (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
-      _ = qd (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
+    calc Kh (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
+        = (Kh (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (Kh (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = Kh (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
   floor := by
     intro j hj
     have h := hg.floor j.castSucc (by simpa using hj)
     simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
     refine le_trans ?_ h
-    exact_mod_cast rothDenomFloor_mono hω (Nat.le_succ n)
+    exact_mod_cast rothHeightFloor_mono hω (Nat.le_succ n)
 
 /-- **§11's descent lemma, in full** — all four clauses of `Γ_{m}` from `Γ_{m+1}`.
 
 This is what Lemma 4 asserts exists and what `rothGamma_descend` supplies only three quarters
 of.  The sub-system is §11's: first `n` variables, degrees rescaled by `r` (`ρ_h = r·s_h`),
-denominators unchanged, and the new height `b` bounded by `2^c·a^r` — which is
+heights unchanged, and the new coefficient bound `b` bounded by `2^c·a^r` — which is
 `b = 2^{2r∑s}·r!·a^r` with `c` absorbing the first two factors.
 
 Where each clause comes from:
@@ -201,14 +202,13 @@ Where each clause comes from:
 `Γ`: it says the accumulated `2`-power in `b` is what §11 says it is.  Discharging it is
 `WronskianHeight`'s business. -/
 theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
-    (d : σ → ℕ) (qd : σ → ℤ) (a b : ℤ) {r c : ℕ} (hr : r ≠ 0)
+    (d : σ → ℕ) (Kh : σ → ℤ) (a b : ℤ) {r c : ℕ} (hr : r ≠ 0)
     (ha0 : 0 ≤ a) (hb0 : 0 ≤ b)
-    (hq2 : ∀ j, 2 ≤ qd j)
-    (hg : RothGammaFull o p q F d qd a)
+    (hg : RothGammaFull o p q F d Kh a)
     (hb : b ≤ 2 ^ c * a ^ r)
     (hc : ∀ j : Fin (n + 1), (j : ℕ) = 0 → c ≤ (2 * n + 3) * (r * d (o.symm j))) :
     RothGammaFull (Equiv.refl (Fin n)) p q F
-      (fun k => r * splitLeft o d k) (splitLeft o qd) b where
+      (fun k => r * splitLeft o d k) (splitLeft o Kh) b where
   growth := by
     intro j k hjk
     have h := hg.growth j.castSucc k.castSucc (by simpa using hjk)
@@ -219,13 +219,13 @@ theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
   height := by
     intro j k hj
     have h := hg.height j.castSucc k.castSucc (by simpa using hj)
-    have h0 : (0 : ℤ) ≤ qd (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
-      pow_nonneg (le_trans (by norm_num) (hq2 _)) _
+    have h0 : (0 : ℤ) ≤ Kh (o.symm j.castSucc) ^ d (o.symm j.castSucc) :=
+      pow_nonneg (le_trans (by norm_num) (hg.two_le _)) _
     simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
-    calc qd (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
-        = (qd (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
-      _ ≤ (qd (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
-      _ = qd (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
+    calc Kh (o.symm j.castSucc) ^ (r * d (o.symm j.castSucc))
+        = (Kh (o.symm j.castSucc) ^ d (o.symm j.castSucc)) ^ r := by rw [← pow_mul, mul_comm]
+      _ ≤ (Kh (o.symm k.castSucc) ^ d (o.symm k.castSucc)) ^ r := pow_le_pow_left₀ h0 h r
+      _ = Kh (o.symm k.castSucc) ^ (r * d (o.symm k.castSucc)) := by rw [← pow_mul, mul_comm]
   floorExp := by
     have h := hg.floorExp
     have hmono : q * ((n - 1) * n * (2 * n + 1)) ≤ q * (n * (n + 1) * (2 * n + 3)) :=
@@ -250,6 +250,8 @@ theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
     rw [hsimp] at hFe
     simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply]
     exact height_descend_pq ha0 hb0 hK rfl ha hb (hc j.castSucc hjc) hFe
+  two_le := fun j => by simpa [splitLeft] using hg.two_le _
+  degPos := fun k => Nat.mul_ne_zero hr (hg.degPos _)
 
 /-! ### Lemma 4 and Roth's Lemma, in `Θ_m` form
 
@@ -262,10 +264,21 @@ and known to exist, the source's own two statements can finally be written.
 
 **Roth's Lemma** (§14): if the system has `Γ_m` then `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.
 
-⚠ Both are `def`s, and neither is proved.  What *is* proved is the implication between them —
-`rothBound_succ_of_lemma4` — which is the induction step of §14 in `Θ` language. -/
+⚠ Both are `def`s.  **`RothLemmaTheta` is now proved at `m = 1`** (`rothLemmaTheta_one`);
+`RothLemma4` is not proved at any arity, and `RothLemmaTheta` is open for `m ≥ 2`.  What is also
+proved is the implication between them — `rothBound_succ_of_lemma4` — which is the induction
+step of §14 in `Θ` language.
 
-/-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w = Ψ ∨ w² = Ψ`. -/
+⚠ This paragraph read "neither is proved" after `rothLemmaTheta_one` landed, which is correction
+seventeen's failure mode verbatim: prose that a green build has no opinion about.  Stated here
+because the arc has now caught it twice in one session. -/
+
+/-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w = Ψ ∨ w² = Ψ`. 
+⚠ **Not checked against correction twenty.**  `RothLemma4` has the same shape as
+`RothLemmaTheta` — `RothGammaFull` as hypothesis, no `0 < t ≤ 1` — so it may carry the same
+defect.  Its conclusion `Θ ≤ t + 2w` is weaker, so the `m = 1` counterexample does not
+transfer directly, and no counterexample has been sought.  Recorded as unchecked rather than
+asserted either way. -/
 def RothLemma4 (σ : Type*) (n p q F : ℕ) : Prop :=
   ∀ (o : σ ≃ Fin (n + 1)) (a : ℤ) (r H : σ → ℕ) (Θ : ℚ),
     RothGammaFull o p q F r (fun j => (H j : ℤ)) a →
@@ -277,12 +290,70 @@ def RothLemma4 (σ : Type*) (n p q F : ℕ) : Prop :=
       Θ ≤ (p : ℚ) / (q : ℚ) + 2 * w
 
 /-- **Roth's Lemma**, stated in `Θ_m` form: `Γ_m` forces `Θ_m ≤ c_m·t^{2^{−(m−1)}}`,
-with the conclusion in `RothBound`'s root-free shape. -/
+with the conclusion in `RothBound`'s root-free shape.
+
+**This is the shape the induction actually uses**, and §12 settles that it is: at the point
+where the induction hypothesis is invoked, Mahler writes
+
+> `J(U; ρ₁,…,ρ_{m−1}; κ₁,…,κ_{m−1}) ≤ Θ_{m−1}(b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1})`,
+> `J(V; ρ_m; κ_m) ≤ Θ₁(b; ρ_m; H_m)`
+
+— both by the **definition** of `Θ` (`U ∈ R(b;ρ)`, `κ ∈ Q(H)`), with no exponent condition
+anywhere.  The `Γ` clauses enter separately: §11's descent proves `Γ_{m−1}` for the descended
+system, and *that* is what lets the induction bound `Θ_{m−1}`.
+
+⚠⚠ **Correction nineteen: `RothLemmaUniform` cannot serve as the induction hypothesis.**  It
+fuses the two — membership in `R(b;ρ)×Q(H)` and `Γ` — into one `∀`-statement sharing a single
+`E` with `∀ j, B ≤ Kh j ^ E` and `∀ j, E ≤ ε·d j`.  §11 states clause 4 only at `h = 1`
+(`b ≤ K₁^{(1/M)s₁t}`); clause 2 (`K_h^{s_h} ≥ K₁^{s₁}`) propagates it as `b ≤ K_h^{ε s_h}`, an
+exponent that **varies with `h`**.  A single `E ≤ ε·min_h d_h` does not follow — `E ≤ ε s_h`
+makes `K_h^E ≤ K_h^{ε s_h}`, the wrong direction.  So `RothLemmaUniform` is true but unusable
+at its point of use, exactly like the pre-correction-18b form was.  `RothLemmaTheta` has no `E`
+and is what §12 invokes.
+
+⚠⚠ **Correction twenty: this was false at `m = 1`, and the counterexample is small.**
+`RothGammaFull` encodes `Γ_M`'s case (ii), which requires `M ≥ 2`; at `M = 1` the source uses
+case (i), `M = 1, K₁ ≥ 2, b ≤ K₁^{s₁t}`.  Nothing in case (ii) forces `K₁ ≥ 2` when `m = 1`,
+because clause 3a reads `q·((1−1)·1·3) ≤ F·p`, i.e. `0 ≤ 0`, leaving `F = 0` admissible and
+clause 3b saying only `1 ≤ K₁`.  Take
+
+    σ = Unit,  m = 1,  p = 1,  q = 2  (t = 1/2),  F = 0,  a = 1,  r ≡ 1,  H ≡ 1.
+
+Every clause holds: growth is vacuous at one variable, `height` is `1 ≤ 1`, `floorExp` is
+`0 ≤ 0`, `floor` is `2^0 = 1 ≤ 1`, `heightBound` is `1^2 = 1 ≤ 1^1 = 1`.  And `Θ = 1`, attained
+at `A = x − 1`, `κ = 1` (height `max(1,1) = 1`, so `κ ∈ Q(1)`), whose translate is `x`.  The
+conclusion `RothBound 1 (1/2) 1` asks `1 ≤ 1/2`.
+
+Fixed by the `two_le` clause on `RothGammaFull` and by carrying §14's opening `0 < t ≤ 1` —
+which `RothLemmaMahler` already carried and this did not.  `q = 0` is the second half of that:
+it makes `t = 0` in `ℚ` while `heightBound` degenerates to `1 ≤ K₁^{r₁p}`, so `Θ ≤ 0` is
+demanded and false (take `a = 100`, `H = 2`, `A = 2x − 1`, `κ = 1/2`, giving `Θ ≥ 1`). -/
 def RothLemmaTheta (σ : Type*) (m p q F : ℕ) : Prop :=
+  0 < p → p ≤ q →
   ∀ (o : σ ≃ Fin m) (a : ℤ) (r H : σ → ℕ) (Θ : ℚ),
     RothGammaFull o p q F r (fun j => (H j : ℤ)) a →
     IsRothTheta a r H Θ →
     RothBound m ((p : ℚ) / (q : ℚ)) Θ
+
+/-- **Roth's lemma at `m = 1`, in `Θ` form** — `RothLemmaTheta` discharged at the base.
+
+Straight from `isRothTheta_le_of_gamma_one`: `RothGammaFull`'s `heightBound` at `m = 1` is
+`a^{1·q} ≤ K₁^{r₁p}`, which is §11's case (i) cleared of its exponent, and `two_le` supplies
+case (i)'s `K₁ ≥ 2`.  `rothBound_one` turns `Θ ≤ t` into `RothBound 1 t Θ`.
+
+This is the first instance of `RothLemmaTheta` proved, and it is the value `rothConstant_chain`
+needs to start from: correction eleven traced `c_m = 2^{m+1} − 3` to the base case rather than
+the recurrence, and `c₁ = 1` is exactly `Θ₁ ≤ t`. -/
+theorem rothLemmaTheta_one {p q F : ℕ} : RothLemmaTheta Unit 1 p q F := by
+  intro hp hpq o a r H Θ hg hΘ
+  have hq : q ≠ 0 := by omega
+  have hu : o.symm 0 = () := Subsingleton.elim _ _
+  have hH : 2 ≤ H () := by exact_mod_cast hg.two_le ()
+  have hclause : a ^ q ≤ ((H () : ℤ)) ^ (r () * p) := by
+    have h := hg.heightBound 0 rfl
+    rwa [hu, one_mul] at h
+  exact (rothBound_one _ _).mpr
+    ⟨hΘ.nonneg, isRothTheta_le_of_gamma_one hΘ (hg.degPos ()) hq hH hclause⟩
 
 /-- **§14's induction step in `Θ` language** — Lemma 4's conclusion plus the sub-problem's
 `RothBound` gives the next one.
@@ -344,17 +415,19 @@ theorem rothGammaFull_descend_witness :
       (fun k => 1 * splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => 1) k)
       (splitLeft (Equiv.refl (Fin 2)) (fun _ : Fin 2 => (1024 : ℤ))) 32 :=
   rothGammaFull_descend (Equiv.refl (Fin 2)) 1 1 10 (fun _ => 1) (fun _ => 1024) 1 32
-    (r := 1) (c := 5) one_ne_zero (by norm_num) (by norm_num) (fun _ => by norm_num)
+    (r := 1) (c := 5) one_ne_zero (by norm_num) (by norm_num)
     { growth := by intro j k hjk; norm_num
       height := by intro j k _; exact le_rfl
       floorExp := by norm_num
       floor := by intro j _; norm_num
-      heightBound := by intro j _; norm_num }
+      heightBound := by intro j _; norm_num
+      two_le := fun _ => by norm_num
+      degPos := fun _ => one_ne_zero }
     (by norm_num) (by intro j _; norm_num)
 
 /-- **Non-vacuity of the descent**, and a demonstration that clause 3 bites.
 
-`n + 1 = 2`, `d ≡ 1`, `r = 1`, `ω = 1`.  ⚠ The denominators cannot be `2`: at arity `2` the
+`n + 1 = 2`, `d ≡ 1`, `r = 1`, `ω = 1`.  ⚠ The heights cannot be `2`: at arity `2` the
 floor is `2^⌈1·(1·2·5)⌉ = 2^10 = 1024`, so `Γ_2` demands `H₁ ≥ 1024`.  That is worth exhibiting
 rather than describing — every other witness in this arc got away with `q = 2`, and clause 3 is
 the one hypothesis that makes that impossible. -/
@@ -366,11 +439,11 @@ theorem rothGamma_descend_witness :
     one_ne_zero (fun _ => by norm_num)
     { growth := by intro j k hjk; norm_num
       height := by intro j k _; exact le_rfl
-      floor := by intro j _; norm_num [rothDenomFloor] }
+      floor := by intro j _; norm_num [rothHeightFloor] }
 
 /-- ⚠ **`Γ_2` really does exclude `q = 2`** — the floor at arity 2 is `1024`. -/
-theorem rothDenomFloor_two : rothDenomFloor 2 1 = 1024 := by
-  norm_num [rothDenomFloor]
+theorem rothHeightFloor_two : rothHeightFloor 2 1 = 1024 := by
+  norm_num [rothHeightFloor]
 
 /-- **The split-off variable comes last** — the hypothesis `index_le_of_rothGrowth_*` needs. -/
 theorem splitLast_hlast (n : ℕ) (k : Fin n) :

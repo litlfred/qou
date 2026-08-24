@@ -141,19 +141,46 @@ term `t = r/D₁` can afford.
 grouping and, unlike the originals, state the index set **explicitly** rather than
 existentially — the whole point is to count it. -/
 
+theorem degreeOf_monomial_le (s : σ →₀ ℕ) (i : σ) (a : R) :
+    degreeOf i (monomial s a) ≤ s i := by
+  classical
+  rw [degreeOf_eq_sup]
+  refine Finset.sup_le fun m hm => ?_
+  have hm' : m = s := Finset.mem_singleton.mp (support_monomial_subset hm)
+  subst hm'
+  exact le_rfl
+
 /-- **The mirror of `exists_separated_representation_monomial`: group by the `y`-part.**
 
 Now the *right* factors are bare monomials and the left ones collect the coefficients, so the
-count is the number of distinct `y`-parts. -/
+count is the number of distinct `y`-parts.
+
+**The grouped coefficients inherit `P`'s `x`-degrees.**  `φ j` is a sum of monomials whose
+exponents are the `x`-parts of `P`'s own support, so every exponent occurring in `φ j` occurs
+in `P`.
+
+⚠⚠ **That clause was missing, and without it `hres` cannot be discharged at all.**
+`RothLemmaUniform` at `m − 1` asks for `degreeOf j (φ k) ≤ d₁ j`; nothing anywhere in the chain
+from `P` down to `φ` recorded *any* bound on the factors' degrees, so the induction hypothesis
+had no way to apply to the separated representation the induction step constructs.  §7 supplies
+it on the source's side — "the degrees of `U` in `x₁,…,x_{m−1}` do not exceed `ρ₁,…,ρ_{m−1}`" —
+and the arc had the length bound `n ≤ r_m + 1` from the same construction but not this. -/
 theorem exists_separated_representation_monomial_right [DecidableEq τ]
     (P : MvPolynomial (σ ⊕ τ) R) :
     ∃ φ : (τ →₀ ℕ) → MvPolynomial σ R,
+      (∀ j x, degreeOf x (φ j) ≤ degreeOf (Sum.inl x) P) ∧
       P = ∑ j ∈ P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2),
             (rename Sum.inl (φ j) : MvPolynomial (σ ⊕ τ) R)
               * rename Sum.inr (monomial j (1 : R)) := by
+  classical
   refine ⟨fun j =>
     ∑ n ∈ P.support.filter (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2 = j),
-      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (coeff n P), ?_⟩
+      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (coeff n P), ?_, ?_⟩
+  · intro j x
+    refine le_trans (degreeOf_sum_le x _ _) (Finset.sup_le fun n hn => ?_)
+    refine le_trans (degreeOf_monomial_le _ _ _) ?_
+    rw [Finsupp.fst_sumFinsuppEquivProdFinsupp]
+    exact monomial_le_degreeOf _ (Finset.mem_filter.mp hn).1
   conv_lhs => rw [as_sum P]
   rw [← Finset.sum_fiberwise_of_maps_to
     (g := fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)
@@ -172,14 +199,23 @@ theorem exists_separated_representation_fin_right [DecidableEq τ]
     (P : MvPolynomial (σ ⊕ τ) R) :
     ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ R) (ψ : Fin r → MvPolynomial τ R),
       r = (P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).card ∧
+      (∀ k x, degreeOf x (φ k) ≤ degreeOf (Sum.inl x) P) ∧
+      (∀ k y, degreeOf y (ψ k) ≤ degreeOf (Sum.inr y) P) ∧
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) R) * rename Sum.inr (ψ k) := by
-  obtain ⟨φ₀, hP⟩ := exists_separated_representation_monomial_right P
+  classical
+  obtain ⟨φ₀, hdeg₀, hP⟩ := exists_separated_representation_monomial_right P
   refine ⟨(P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).card,
     fun k => φ₀ (((P.support.image
       (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).equivFin.symm k : τ →₀ ℕ)),
     fun k => monomial (((P.support.image
       (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).equivFin.symm k : τ →₀ ℕ)) (1 : R),
-    rfl, ?_⟩
+    rfl, fun k x => hdeg₀ _ x, ?_, ?_⟩
+  · intro k y
+    refine le_trans (degreeOf_monomial_le _ _ _) ?_
+    obtain ⟨n, hn, hne⟩ := Finset.mem_image.mp
+      ((P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).equivFin.symm k).2
+    rw [← hne, Finsupp.snd_sumFinsuppEquivProdFinsupp]
+    exact monomial_le_degreeOf _ hn
   conv_lhs => rw [hP]
   rw [← Finset.sum_coe_sort]
   exact (Equiv.sum_comp
@@ -278,12 +314,21 @@ theorem exists_shorter_of_psi_dep {n : ℕ}
     (φ : Fin (n + 1) → MvPolynomial σ K) (ψ : Fin (n + 1) → MvPolynomial τ K)
     (h : ¬ LinearIndependent K ψ) :
     ∃ (φ' : Fin n → MvPolynomial σ K) (ψ' : Fin n → MvPolynomial τ K),
+      (∀ D : σ → ℕ, (∀ k x, degreeOf x (φ k) ≤ D x) → ∀ k x, degreeOf x (φ' k) ≤ D x) ∧
+      (∀ D : τ → ℕ, (∀ k y, degreeOf y (ψ k) ≤ D y) → ∀ k y, degreeOf y (ψ' k) ≤ D y) ∧
       ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k)
         = ∑ k, (rename Sum.inl (φ' k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ' k) := by
   classical
   obtain ⟨c, hsum, j, hcj⟩ := Fintype.not_linearIndependent_iff.mp h
+  have hpφ : ∀ D : σ → ℕ, (∀ k x, degreeOf x (φ k) ≤ D x) →
+      ∀ k x, degreeOf x (φ (j.succAbove k) - (c (j.succAbove k) / c j) • φ j) ≤ D x := by
+    intro D hD k x
+    refine le_trans (degreeOf_sub_le x _ _) (max_le (hD _ _) ?_)
+    refine le_trans ?_ (hD j x)
+    rw [smul_eq_C_mul]
+    exact degreeOf_C_mul_le _ _ _
   refine ⟨fun i => φ (j.succAbove i) - (c (j.succAbove i) / c j) • φ j,
-          fun i => ψ (j.succAbove i), ?_⟩
+          fun i => ψ (j.succAbove i), hpφ, fun D hD k y => hD _ _, ?_⟩
   -- the dependence, solved for ψ j
   have h0 := Fin.sum_univ_succAbove (fun k => c k • ψ k) j
   rw [hsum] at h0
@@ -328,12 +373,22 @@ theorem exists_shorter_of_phi_dep {n : ℕ}
     (φ : Fin (n + 1) → MvPolynomial σ K) (ψ : Fin (n + 1) → MvPolynomial τ K)
     (h : ¬ LinearIndependent K φ) :
     ∃ (φ' : Fin n → MvPolynomial σ K) (ψ' : Fin n → MvPolynomial τ K),
+      (∀ D : σ → ℕ, (∀ k x, degreeOf x (φ k) ≤ D x) → ∀ k x, degreeOf x (φ' k) ≤ D x) ∧
+      (∀ D : τ → ℕ, (∀ k y, degreeOf y (ψ k) ≤ D y) → ∀ k y, degreeOf y (ψ' k) ≤ D y) ∧
       ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k)
         = ∑ k, (rename Sum.inl (φ' k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ' k) := by
   classical
   obtain ⟨c, hsum, j, hcj⟩ := Fintype.not_linearIndependent_iff.mp h
+  have hpψ : ∀ D : τ → ℕ, (∀ k y, degreeOf y (ψ k) ≤ D y) →
+      ∀ k y, degreeOf y (ψ (j.succAbove k) - (c (j.succAbove k) / c j) • ψ j) ≤ D y := by
+    intro D hD k y
+    refine le_trans (degreeOf_sub_le y _ _) (max_le (hD _ _) ?_)
+    refine le_trans ?_ (hD j y)
+    rw [smul_eq_C_mul]
+    exact degreeOf_C_mul_le _ _ _
   refine ⟨fun i => φ (j.succAbove i),
-          fun i => ψ (j.succAbove i) - (c (j.succAbove i) / c j) • ψ j, ?_⟩
+          fun i => ψ (j.succAbove i) - (c (j.succAbove i) / c j) • ψ j,
+          fun D hD k x => hD _ _, hpψ, ?_⟩
   have h0 := Fin.sum_univ_succAbove (fun k => c k • φ k) j
   rw [hsum] at h0
   have h1 : ∑ i : Fin n, c (j.succAbove i) • φ (j.succAbove i) = -(c j • φ j) :=
@@ -375,30 +430,35 @@ theorem exists_indep_representation (r : ℕ) :
     ∀ (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K),
     ∃ (r' : ℕ) (φ' : Fin r' → MvPolynomial σ K) (ψ' : Fin r' → MvPolynomial τ K),
       r' ≤ r ∧ LinearIndependent K φ' ∧ LinearIndependent K ψ' ∧
+      (∀ D : σ → ℕ, (∀ k x, degreeOf x (φ k) ≤ D x) → ∀ k x, degreeOf x (φ' k) ≤ D x) ∧
+      (∀ D : τ → ℕ, (∀ k y, degreeOf y (ψ k) ≤ D y) → ∀ k y, degreeOf y (ψ' k) ≤ D y) ∧
       ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k)
         = ∑ k, (rename Sum.inl (φ' k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ' k) := by
   induction r with
   | zero =>
       intro φ ψ
-      exact ⟨0, φ, ψ, le_rfl, linearIndependent_empty_type, linearIndependent_empty_type, rfl⟩
+      exact ⟨0, φ, ψ, le_rfl, linearIndependent_empty_type, linearIndependent_empty_type,
+        fun _ h => h, fun _ h => h, rfl⟩
   | succ n ih =>
       intro φ ψ
       by_cases hφ : LinearIndependent K φ
       · by_cases hψ : LinearIndependent K ψ
-        · exact ⟨n + 1, φ, ψ, le_rfl, hφ, hψ, rfl⟩
-        · obtain ⟨φ', ψ', heq⟩ := exists_shorter_of_psi_dep φ ψ hψ
-          obtain ⟨r', φ'', ψ'', h0, h1, h2, h3⟩ := ih φ' ψ'
-          exact ⟨r', φ'', ψ'', h0.trans (Nat.le_succ n), h1, h2, heq.trans h3⟩
-      · obtain ⟨φ', ψ', heq⟩ := exists_shorter_of_phi_dep φ ψ hφ
-        obtain ⟨r', φ'', ψ'', h0, h1, h2, h3⟩ := ih φ' ψ'
-        exact ⟨r', φ'', ψ'', h0.trans (Nat.le_succ n), h1, h2, heq.trans h3⟩
+        · exact ⟨n + 1, φ, ψ, le_rfl, hφ, hψ, fun _ h => h, fun _ h => h, rfl⟩
+        · obtain ⟨φ', ψ', hpφ, hpψ, heq⟩ := exists_shorter_of_psi_dep φ ψ hψ
+          obtain ⟨r', φ'', ψ'', h0, h1, h2, h3, h4, h5⟩ := ih φ' ψ'
+          exact ⟨r', φ'', ψ'', h0.trans (Nat.le_succ n), h1, h2,
+            fun D hD => h3 D (hpφ D hD), fun D hD => h4 D (hpψ D hD), heq.trans h5⟩
+      · obtain ⟨φ', ψ', hpφ, hpψ, heq⟩ := exists_shorter_of_phi_dep φ ψ hφ
+        obtain ⟨r', φ'', ψ'', h0, h1, h2, h3, h4, h5⟩ := ih φ' ψ'
+        exact ⟨r', φ'', ψ'', h0.trans (Nat.le_succ n), h1, h2,
+          fun D hD => h3 D (hpφ D hD), fun D hD => h4 D (hpψ D hD), heq.trans h5⟩
 
 theorem exists_separated_representation_indep (P : MvPolynomial (σ ⊕ τ) K) :
     ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K),
       LinearIndependent K φ ∧ LinearIndependent K ψ ∧
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k) := by
   obtain ⟨r, φ, ψ, -, hP⟩ := exists_separated_representation_fin P
-  obtain ⟨r', φ', ψ', -, h1, h2, h3⟩ := exists_indep_representation r φ ψ
+  obtain ⟨r', φ', ψ', -, h1, h2, -, -, h3⟩ := exists_indep_representation r φ ψ
   exact ⟨r', φ', ψ', h1, h2, hP.trans h3⟩
 
 
@@ -412,10 +472,14 @@ theorem exists_separated_representation_indep_card_le [DecidableEq τ]
     ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K),
       r ≤ (P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)).card ∧
       LinearIndependent K φ ∧ LinearIndependent K ψ ∧
+      (∀ k x, degreeOf x (φ k) ≤ degreeOf (Sum.inl x) P) ∧
+      (∀ k y, degreeOf y (ψ k) ≤ degreeOf (Sum.inr y) P) ∧
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k) := by
-  obtain ⟨r, φ, ψ, hcard, hP⟩ := exists_separated_representation_fin_right P
-  obtain ⟨r', φ', ψ', hle, h1, h2, h3⟩ := exists_indep_representation r φ ψ
-  exact ⟨r', φ', ψ', hcard ▸ hle, h1, h2, hP.trans h3⟩
+  obtain ⟨r, φ, ψ, hcard, hdegφ, hdegψ, hP⟩ := exists_separated_representation_fin_right P
+  obtain ⟨r', φ', ψ', hle, h1, h2, h3, h4, h5⟩ := exists_indep_representation r φ ψ
+  exact ⟨r', φ', ψ', hcard ▸ hle, h1, h2,
+    h3 (fun x => degreeOf (Sum.inl x) P) hdegφ,
+    h4 (fun y => degreeOf (Sum.inr y) P) hdegψ, hP.trans h5⟩
 
 /-- **Mahler's `n ≤ r_m + 1`.**  For a single split-off variable of degree at most `d`, a
 minimum separated representation has at most `d + 1` terms.
@@ -427,9 +491,12 @@ theorem exists_separated_representation_indep_le_degreeOf
     (P : MvPolynomial (σ ⊕ Unit) K) {d : ℕ} (hd : degreeOf (Sum.inr ()) P ≤ d) :
     ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial Unit K),
       r ≤ d + 1 ∧ LinearIndependent K φ ∧ LinearIndependent K ψ ∧
+      (∀ k x, degreeOf x (φ k) ≤ degreeOf (Sum.inl x) P) ∧
+      (∀ k y, degreeOf y (ψ k) ≤ degreeOf (Sum.inr y) P) ∧
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) := by
-  obtain ⟨r, φ, ψ, hcard, h1, h2, hP⟩ := exists_separated_representation_indep_card_le P
-  exact ⟨r, φ, ψ, hcard.trans (card_image_snd_le_of_degreeOf hd), h1, h2, hP⟩
+  obtain ⟨r, φ, ψ, hcard, h1, h2, h3, h4, hP⟩ :=
+    exists_separated_representation_indep_card_le P
+  exact ⟨r, φ, ψ, hcard.trans (card_image_snd_le_of_degreeOf hd), h1, h2, h3, h4, hP⟩
 
 
 end Field

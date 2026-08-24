@@ -920,6 +920,39 @@ def _version_tuple(v: str) -> tuple:
     return tuple(out)
 
 
+# Environment keys that are NOT versions and must never be ORDERED.
+#
+# `pyhecke_native_build` is `sha256(<compiled .so>)[:16]` — a content hash of
+# the binary, not a version. Ordering it with `_version_tuple` is meaningless
+# and the result depends on whether the hash happens to start with a digit:
+#
+#     _version_tuple("30fd920c241a54fa") == (30,)    # leading "30" parsed
+#     _version_tuple("b843d058d29dcec6") == ()       # starts with a letter
+#     () < (30,)  ->  reported as a DOWNGRADE
+#
+# Measured on real corpus pairs, the verdict is a coin flip:
+#     b9cd89fd -> 0aaae203   "upgraded"
+#     0aaae203 -> e114ae83   "downgraded"
+#     fe19077e -> 30fd920c   "upgraded"
+#
+# And the committed corpus already carries FIVE distinct values across 811
+# witnesses, all within 2026-08-22..24 — a Rust release build is not
+# byte-reproducible across containers (embedded paths, link order), so this
+# value legitimately changes on every rebuild. It is not a corpus constant.
+#
+# The consequence was not cosmetic. A false "downgraded" makes `save()` take
+# the preserve path and KEEP THE OLD environment block, so a freshly computed
+# witness silently carries the PREVIOUS container's build hash — roughly half
+# the time, decided by a leading hex digit.
+#
+# A *changed* content hash is neither an upgrade nor a downgrade. A *missing*
+# one is still provenance loss and is still caught, by `stripped` below.
+# `platform` / `stdlib_only` / `note` are free text and get the same treatment.
+_NON_ORDINAL_ENV_KEYS = frozenset({
+    "pyhecke_native_build", "platform", "stdlib_only", "note",
+})
+
+
 def _environment_delta(old, new) -> dict:
     """Compare two `environment` blocks. Returns the four-way delta.
 
@@ -938,6 +971,7 @@ def _environment_delta(old, new) -> dict:
         f"{k} {old[k]} -> {new[k]}"
         for k in old
         if k in new and old[k] != new[k]
+        and k not in _NON_ORDINAL_ENV_KEYS
         and _version_tuple(new[k]) < _version_tuple(old[k])
     ]
     added = [k for k in new if k not in old]
@@ -945,6 +979,7 @@ def _environment_delta(old, new) -> dict:
         f"{k} {old[k]} -> {new[k]}"
         for k in old
         if k in new and old[k] != new[k]
+        and k not in _NON_ORDINAL_ENV_KEYS
         and _version_tuple(new[k]) > _version_tuple(old[k])
     ]
     return {"stripped": stripped, "downgraded": downgraded,

@@ -76,19 +76,33 @@ BASE_LEAN_PATH="$LEAN_PATH"
 # build) may be supplied via LEAN_EXTRA_ROOTS, colon-separated.
 BASE_LEAN_PATH="${LEAN_EXTRA_ROOTS:+$LEAN_EXTRA_ROOTS:}$BASE_LEAN_PATH"
 
-roots() { printf '%s' "$BASE_LEAN_PATH" | tr ':' '\n' | while read -r r; do [ -n "$r" ] && [ -d "$r" ] && printf '%s\n' "$r"; done; }
+# LOAD-BEARING newline: `printf '%s'` emits no trailing newline, so `read`
+# hits EOF on the final field and bash DISCARDS it.  That silently dropped the
+# LAST LEAN_PATH root — which is the QOU package's own build directory — so the
+# farm was built from Mathlib alone and every `check` of a file importing
+# another QOU module died with "object file ... does not exist".  The failure
+# reads like a real Lean error, and the natural workaround (point
+# LEAN_EXTRA_ROOTS at some other agent's QOU overlay) reintroduces exactly the
+# partial-overlay trap this script exists to prevent.
+roots() { printf '%s\n' "$BASE_LEAN_PATH" | tr ':' '\n' | while read -r r; do [ -n "$r" ] && [ -d "$r" ] && printf '%s\n' "$r"; done; }
 
 farm_init() {
   mkdir -p "$OVL"
   local n=0 skipped=0
   # First root wins, matching Lean's own resolution order.
   while read -r r; do
+    local rn=0 rs=0
     while IFS= read -r -d '' f; do
-      local rel="${f#"$r"/}" dst="$OVL/${f#"$r"/}"
-      if [ -e "$dst" ] || [ -L "$dst" ]; then skipped=$((skipped+1)); continue; fi
+      local dst="$OVL/${f#"$r"/}"
+      if [ -e "$dst" ] || [ -L "$dst" ]; then rs=$((rs+1)); continue; fi
       mkdir -p "$(dirname "$dst")"
-      ln -s "$f" "$dst" && n=$((n+1))
+      ln -s "$f" "$dst" && rn=$((rn+1))
     done < <(find "$r" -name '*.olean' -print0 2>/dev/null)
+    # PER-ROOT, not just the total.  "9429" and "7268" look alike enough that
+    # two readers missed an entire package by eye; a root contributing 0 is
+    # the dropped-root / shadowed-root failure and must be obvious at a glance.
+    printf 'lean-overlay:   %6d linked %6d present  %s\n' "$rn" "$rs" "$r"
+    n=$((n+rn)); skipped=$((skipped+rs))
   done < <(roots)
   echo "lean-overlay: farm at $OVL — $n linked, $skipped already present"
 }
@@ -161,6 +175,56 @@ case "$cmd" in
       echo "selftest: FAIL — farm overlay does not resolve $modname" >&2
       rc=1
     fi
+    # ─────────────────────────────────────────────────────────────────────
+    # (1) and (2) check SHADOWING.  Neither can ever catch a MISSING root, and
+    # (2) is worth spelling out because it looks like it should: it runs lean
+    # with LEAN_PATH="$OVL:$BASE_LEAN_PATH", so when the farm lacks a module
+    # Lean simply falls through to the real root still sitting in
+    # BASE_LEAN_PATH behind it.  Measured: under the dropped-root bug, with no
+    # LEAN_EXTRA_ROOTS at all, (2) still printed "ok — farm overlay resolves"
+    # while the farm held 0 of 2161 QOU oleans.  The base path silently repairs
+    # exactly the omission the check is supposed to expose.
+    #
+    # So (3) and (4) assert COVERAGE, and both iterate a root list built by a
+    # DIFFERENT mechanism (IFS array split) from the one roots() uses
+    # (printf | tr | read) — otherwise a dropped root is invisible to the very
+    # checks meant to find it, since it never appears in roots() output.
+    # ─────────────────────────────────────────────────────────────────────
+    st_expected=0
+    st_roots=()
+    IFS=':' read -r -a st_fields <<< "$BASE_LEAN_PATH"
+    for st_f in "${st_fields[@]:-}"; do
+      if [ -n "$st_f" ] && [ -d "$st_f" ]; then
+        st_expected=$((st_expected+1)); st_roots+=("$st_f")
+      fi
+    done
+    # (3) ROOT COMPLETENESS — roots() must not drop any existing root.
+    st_actual=$(roots | wc -l)
+    if [ "$st_expected" -eq "$st_actual" ]; then
+      echo "selftest: ok — roots() emits all $st_expected existing LEAN_PATH roots"
+    else
+      echo "selftest: FAIL — roots() emits $st_actual of $st_expected existing LEAN_PATH roots" >&2
+      echo "          (the dropped one is the LAST: 'printf %s' ends without a newline," >&2
+      echo "           so 'read' hits EOF on the final field and bash discards it)" >&2
+      rc=1
+    fi
+    # (4) PER-ROOT COVERAGE — the farm must reach into EVERY root, not merely
+    #     be globally non-empty.  Under the bug the farm held 7268 links and
+    #     zero QOU modules, so farm_check's global non-empty test passed while
+    #     the modules under test were absent.  A link supplied by an earlier
+    #     root counts: the invariant is reachability, which is what Lean needs.
+    for st_r in "${st_roots[@]:-}"; do
+      [ -n "$st_r" ] || continue
+      st_olean=$(find "$st_r" -name '*.olean' 2>/dev/null | sort | head -1)
+      [ -n "$st_olean" ] || continue          # root carries no oleans at all
+      st_rel="${st_olean#"$st_r"/}"
+      if [ -e "$OVL/$st_rel" ]; then
+        echo "selftest: ok — farm covers $st_r"
+      else
+        echo "selftest: FAIL — farm has no link for $st_rel (root $st_r)" >&2
+        rc=1
+      fi
+    done
     rm -rf "$probe"
     exit $rc
     ;;

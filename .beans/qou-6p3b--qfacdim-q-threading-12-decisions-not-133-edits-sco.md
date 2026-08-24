@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-08-24T19:50:11Z
+updated_at: 2026-08-24T20:43:46Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -109,3 +109,58 @@ paid for once.
 **Migrate 2, hold 2, measure 3** — not "migrate 6". Still sequenced behind
 PR #5500 (muon anchor -> CODATA 2022, audit red, 53 witnesses), which touches the
 same witnesses.
+
+
+## CORRECTION: the anchor-flip verdicts on 5 of the 7 were UNSOUND (2026-08-24)
+
+I ran all seven through `anchor_flip_straddle_audit` **by explicit path**, which
+bypasses the `--candidates` selector. That selector exists to enforce the
+audit's own stated precondition — *sound only for producers with a q of their
+own*. I quoted that precondition in the tool and then did not apply it.
+
+Measured, do these producers have an INDEPENDENT q (not the manifest-resolved
+shim)?
+
+| producer | q source | audit sound? |
+|---|---|---|
+| `aoperator_a5_crosscheck` | shim only | **NO** |
+| `binding_via_interface_knot` | **no q at all** | **NO** |
+| `block_swap_binding` | shim only | **NO** |
+| `gg_production_bond_probe` | shim only | **NO** |
+| `gram_norm_binding_probe` | shim only | **NO** |
+| `lever1_binding_habiro_single_element_test` | independent | yes |
+| `qbeta_hoefsmit_tbeta_matrix_build_probe` | independent | yes |
+
+**A producer whose only q is the manifest's cannot straddle** — there is no
+second layer to mix. Its numbers move under an anchor flip because you changed
+its one and only anchor. That is a RE-PIN, which is trivially true, not a
+defect.
+
+### What survives
+
+- `lever1_binding_habiro_single_element_test` — **clean**, and the verdict is
+  sound. MIGRATE, free.
+- `qbeta_hoefsmit_tbeta_matrix_build_probe` — **STRADDLE at `/…/dim_q`**, sound.
+  HOLD. This is the one real straddle in the set.
+
+### What was wrong
+
+- `aoperator_a5_crosscheck` "STRADDLE, /allPassed flips" is **NOT a straddle**.
+  `/allPassed` is `all(a["passed"] …)`; with no independent q, the flip means an
+  assertion whose EXPECTED side is anchor-independent while its computed side is
+  not. Still a concrete reason to HOLD it — just a different defect class, and
+  the hold now rests on the right evidence.
+
+### What this saved
+
+I was about to spend HOURS measuring the three TIMEOUT producers. One leg of
+`binding_via_interface_knot` alone exceeded 1700 s without finishing. **The
+measurement could never have answered the question** — all three lack an
+independent q, so the instrument does not apply to them. Killed the run.
+
+### Disposition for the 5
+
+Pure policy: should they be muon-pinned? **No straddle risk either way**, because
+none has a second layer. `aoperator_a5_crosscheck` should still be held for its
+assertion. The other four are free to migrate on the directive alone, with the
+usual per-producer witness diff.

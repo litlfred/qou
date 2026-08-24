@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-08-24T20:04:40Z
+updated_at: 2026-08-24T20:43:16Z
 ---
 
 
@@ -281,3 +281,163 @@ Migrate the five witness-writing consumers, cheapest dim first, and diff each
 witness. That measurement is what would decide whether any verdict moves; until
 it is run, the claim is "removes a float64 kernel from five witnesses", not
 "changes a result".
+
+
+## 2026-08-24 (later) — MEASURED: the float64 kernel gives ~14 digits, not 16, and TWO of my own claims above are corrected
+
+### Correction 1: it is FOUR producers, not five, and one is already exact
+
+I wrote "6 remaining consumers, 5 of which write a witness". Reading the CALL
+SITES rather than the import list:
+
+    h6_deuteron_free_word_chi_lambda_probe  ALREADY EXACT -- it computes with
+      chi_lambda_of_word_mp (lines 122-124) and calls the float64 kernel at 127
+      only as a CROSS-CHECK (`chi_b64`). Not a defect. Remove it from the list.
+
+So: **5 files use the float64 route exclusively, 4 of which write a witness** --
+`native_5_strand_baryon`, `phase3_deuteron_tritium_h_expansion`,
+`rho_k_h3a_gg_trajectory`, `tr_m_q_hecke_seminormal` (witness-writing), plus
+`canonical_brane_tower` (no witness).
+
+**An import is a proxy, not a verdict.** I inferred float64 payloads from an
+import list without reading what the call site did with the result -- the same
+shape as "a non-zero exit is not a defect" and "a source-text grep is not the
+answer", which this bean's own notes already warn about. Third time.
+
+### Correction 2: for `tr_m_q_hecke_seminormal` this is not a kernel swap
+
+That producer is float64 END TO END, not merely through the character:
+`q_val: float = Q_0_FLOAT` is its q0, and every emitted field is `float(...)`
+(`y_at_q0`, `chi_q_at_q0`, `contribution`). Migrating it means carrying q as
+`mpf` from `Q_50_DIGIT_STR`, taking y_lambda exact, and serializing via
+`_precision.fmt` -- a producer rewrite whose numbers move, not a one-line
+substitution. Budget it accordingly.
+
+### The measurement: ~14 good digits, and the loss GROWS with word length
+
+`computations/probes/chi_lambda_float64_precision_loss_probe.py` (new, committed,
+writes no witness). Proton pin, exact side at dps 70:
+
+    deuteron  A=2, |word| = 23   worst rel gap 5.36e-15   24.1x the ulp floor
+    helium-3  A=3, |word| = 35   worst rel gap 8.17e-15   36.8x the ulp floor
+
+"float64, therefore ~1e-16" was the assumption I would otherwise have shipped.
+1e-16 is the FLOOR, not a measurement -- a character is a trace of a PRODUCT over
+the whole word, so rounding accumulates with length and the (c, d) coefficients
+alternate in sign. 23 ops -> 35 ops moved the loss 24x -> 37x, so A >= 4 is worse
+again.
+
+### Why the number decides something
+
+The L1 goal is internal cross-method agreement <= 1 ppQ = 1e-15. **Every gap
+measured is larger than that.** So a quantity computed through this kernel
+cannot meet L1 -- arithmetically, not as a matter of taste about float64. Any
+producer reporting more than ~14 significant digits from it, or claiming
+agreement "to 1 ppQ", is reporting its own rounding.
+
+That is the consumer case for the engine, and it does not depend on a verdict
+flipping. Whether any of the four CONCLUSIONS changes is still unmeasured; at 14
+digits, a probe reporting 4 significant figures is unaffected and should be left
+alone.
+
+
+## 2026-08-24 (later still) — the consumers PUBLISH past the ceiling, which is what scopes the migration
+
+The 14-digit ceiling alone does not establish that anything is wrong: a witness
+storing SIX significant digits is untouched by a 14-digit kernel. So I measured
+what the four float64-only producers actually publish, over their committed
+witnesses:
+
+    native-5-strand-baryon        n= 25  max 18 digits    68% carry > 14
+    rho-k-h3a-gg-trajectory       n=106  max 17 digits    83% carry > 14
+    tr-m-q-hecke-seminormal       n= 65  max 18 digits    93% carry > 14
+    phase3-deuteron-tritium-...          no bare floats in data
+
+**Three of the four publish three to four digits of their own rounding, stored
+as data.** Digits past the 14th are not determined by the computation that
+produced them.
+
+That makes the migration a CORRECTNESS fix for those three rather than hygiene,
+and it also bounds it: `phase3_deuteron_tritium_h_expansion` publishes no bare
+floats and is the cheapest to leave alone. Census wired into the probe
+(`consumer_census()`), so it is re-runnable rather than a number in a bean.
+
+### What this does NOT establish
+
+It does not show a CONCLUSION moves. A trajectory reported at `.6g` in the
+console is unaffected whatever the stored JSON carries; the defect is in what is
+published, not necessarily in what was argued from. Keep those separate.
+
+### Migration shape, from reading the three
+
+- `rho_k_h3a_gg_trajectory` is MOSTLY exact already -- `Q_MP`, `mp.mpf` for
+  `y_at_q0`/`dim_q_at_q0`, and most `float()` is inside f-strings (display,
+  permitted). The genuine leaks are four: the word coefficients
+  (`float(c), float(d)`, l.127/129), the stored character (`float(chi)`, l.148),
+  `build_seminormal_matrices(..., q=float(Q_MP))` (l.216) and
+  `y_lambda_at(n, q_val=float(Q_MP))` (l.212). The LP input `float(abs(target))`
+  (l.325) is a legitimate solver boundary -- Clarabel takes float.
+- `tr_m_q_hecke_seminormal` is float64 end to end (`q_val: float = Q_0_FLOAT`);
+  a rewrite, not a swap.
+- `native_5_strand_baryon` not yet read.
+
+None of the four uses `_precision.fmt` for serialization -- that is the other
+half of the fix, and is what stops 18 digits being written in the first place.
+
+
+### Cross-check against the raw-float64 ratchet — and a miscount of mine, caught before it shipped
+
+All three float64-publishing consumers are already on the drain list in
+`computations/raw-float64-baseline.json`, with raw-float64 field counts:
+
+    native-5-strand-baryon        25
+    rho-k-h3a-gg-trajectory       84
+    tr-m-q-hecke-seminormal       65
+    phase3-deuteron-tritium-...   NOT baselined
+
+**I nearly wrote "3 of the 6 baseline entries are these consumers."** That was
+wrong: the file's top level has six KEYS (`note`, `enforced_rule`,
+`drain_owner`, `files_count`, `fields_count`, `files`) and the real count is
+`files_count: 1410`. I counted the wrapper, not the contents. Being in a
+1410-file baseline is unremarkable and is NOT corroboration -- the opposite of
+the striking coincidence I was about to report. Same error class as everything
+else in this bean: a proxy read as the answer.
+
+What IS real: the ONE consumer my census found clean (no bare floats in data) is
+the ONE not baselined. Two methods, same negative, on the same single file.
+
+So the migration is a DRAIN, not a new finding -- AGENTS.md's "baselines drain,
+never grow" already owns these three. What the census adds is the REASON they
+should drain ahead of the other 1407: they do not merely carry raw float64, they
+publish 3-4 digits of rounding as data, and the kernel feeding them is measured
+at ~14 digits. That is a stronger argument than "raw float64 present".
+
+
+### CORRECTION — it is FOUR of four, and the "clean" one escaped through a shared blind spot
+
+The census above walked BARE FLOATS and reported `phase3_deuteron_tritium_h_expansion`
+as carrying none, i.e. clean. **It is not clean.** It stores its values as
+STRINGS -- `"12.7030229395046"`, fifteen significant digits -- which is what
+`_precision.fmt` emits. Re-measured counting string-serialized numbers too:
+
+    native-5-strand-baryon        n= 28  max 18 digits    71% carry > 14
+    rho-k-h3a-gg-trajectory       n=136  max 17 digits    82% carry > 14
+    tr-m-q-hecke-seminormal       n= 70  max 18 digits    87% carry > 14
+    phase3-deuteron-tritium-...   n=  6  max 15 digits   100% carry > 14
+
+All four publish digits their own computation does not determine.
+
+**And the corroboration I reported one entry above is WITHDRAWN.** I wrote:
+"the one consumer the census found clean is the one NOT baselined. Two methods,
+same negative, same single file." That is not two methods -- the raw-float64
+ratchet keys on the same REPRESENTATION my walker did, so both are blind to a
+string. They agreed because they share the blind spot, not because they
+independently confirmed anything.
+
+**Two detectors agreeing is not corroboration when they key on the same thing.**
+That belongs in the detector-blindness taxonomy
+(`docs/audits/2026-08-15-detector-blindness-taxonomy.md`), which already records
+that four of its thirteen blind spellings were found BY detectors written to
+catch the previous blind spot. This is a fifth, and it was caught only because I
+re-verified a negative by a different method before merging -- the negative is
+the result nobody re-checks.

@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 229,
-      "proton-pin": 1644,
+      "proton-pin": 1647,
       "unknown": 25,
-      "canonical": 168
+      "canonical": 166
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -7069,13 +7069,6 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
-        "file": "computations/h4-markov-weights-closed-form.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
         "file": "computations/h4-residual-higher-precision-pslq.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11066,6 +11059,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/probes/markov-reduction-h3-to-h4-conventions.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/meson-lepton-knot-dictionary-probe.witness.json",
         "field": "parameters.q0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11606,6 +11606,13 @@
       },
       {
         "file": "computations/probes/six-fifths-deviation-h4-correction-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -12419,9 +12426,9 @@
       {
         "file": "computations/qbeta/qbeta-composite-crossanchor-2factor-sweep.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-composite-operator-first-test.witness.json",
@@ -12839,9 +12846,9 @@
       {
         "file": "computations/qbeta/qbeta-signchannel-cross-atom.witness.json",
         "field": "q0Value",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-signed-vs-abs-tower-diagnostic.witness.json",

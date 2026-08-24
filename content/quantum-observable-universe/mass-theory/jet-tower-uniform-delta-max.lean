@@ -46,7 +46,7 @@ class JetTowerUniformDeltaMax (ρ : Type*) where
   uniform_bound : ∀ n : ℕ, 1 ≤ n → |delta n| ≤ delta_max
 
 /-- The substrate Planck constant squared, instantiated abstractly. -/
-def hbarSq (q : ℝ) : ℝ := ((q - 1) / q) ^ 2
+noncomputable def hbarSq (q : ℝ) : ℝ := ((q - 1) / q) ^ 2
 
 /-- Conditional theorem: under the uniform-bound conjecture, the
     geometric-tail bound holds.

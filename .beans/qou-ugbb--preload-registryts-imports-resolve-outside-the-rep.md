@@ -1,11 +1,11 @@
 ---
 # qou-ugbb
 title: preload-registry.ts imports resolve outside the repo (worktree-fragile)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T20:26:35Z
-updated_at: 2026-08-22T20:26:57Z
+updated_at: 2026-08-23T07:43:11Z
 ---
 
 ## Finding
