@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:20:20Z
-updated_at: 2026-08-24T14:08:07Z
+updated_at: 2026-08-24T14:21:26Z
 ---
 
 ## Survey: are the Delta_lambda / y_lambda assertions Lean-proved?
@@ -132,3 +132,61 @@ because a SINGULAR Gram amplified a 2e-8 anchor tilt into a 2e-2 duality gap.
 Where no such amplifier exists the straddle is silently wrong at ~1e-8
 relative, which is above the L1 target of 1e-15 and invisible to every check
 we have.
+
+
+## MEASURED: the straddle class is 1 real, not 11 — my last claim was wrong
+
+I wrote that these are "silently wrong at ~1e-8 relative, above the L1 target
+and invisible to every check we have." **That was an inference, not a
+measurement, and it is wrong.** Ran each producer under both anchors
+(`QOU_Q0_ANCHOR=ideal` vs `physical`) and diffed its output with volatile AND
+stamp fields masked:
+
+| producer | anchor-sensitive? |
+|---|---|
+| gap_a3_deuteron_p_lambda_channels_probe | NO — byte-identical |
+| gap_a3_plambda_bar_even_admissibility_probe | NO |
+| gap_a3_transpose_invariant_plambda_probe | NO |
+| option_e_kashiwara_crystal_delta_lambda_probe | NO |
+| parabolic_cylinder_channel_mixing_probe | NO |
+| probe_9b_gate_interface_algebra | NO |
+| qbeta_decay_sdp_extended_ck | NO |
+| rho_f_categorical_probe | NO (stdout hash identical) |
+| **rho_w_crystal_vertex_trace** | **YES** |
+
+**8 of 9 move nothing.** For those the manifest entry is a LABELLING defect: the
+output does not depend on q0 at all, so the anchor is irrelevant to the numbers
+and only the stamp is wrong. Worth fixing for honesty, not for correctness.
+
+**Two were never straddles:**
+- `atomic_tr_m_mpfr_50dps` writes BOTH `atomic-tr-m-mpfr-50dps.witness.json`
+  (muon) and `...-proton.witness.json` (proton). That is a DELIBERATE
+  COMPARISON producer — migration constraint 3 — and correctly needs both. My
+  detector missed it because it tests for `q_muon_at()`-style calls, and this
+  one expresses the comparison by emitting two witnesses instead.
+- `qbeta_route_alpha_lift_prediction` writes a PROTON-stamped witness while
+  classified `ideal_muon`. Stamp contradicts classification, but its output
+  declares proton, so consumers are not misled.
+
+**The one real hit, sized.** `rho_w_crystal_vertex_trace` mixes a q0-dependent
+`Delta_lambda^rho_w` against an anchor-fixed `chi^lambda_cache` (the cache is
+byte-identical across pins; only Delta moves). Magnitude ~1e-11 relative — real,
+above the 1e-15 L1 target, and **five orders below that producer's own
+cross-check residual** `|Sum_w rho_w - chi^lambda_cache| = 8.9e-7`. So even
+there the straddle is not the dominant error; the ~1e-6 Delta_lambda
+cross-check discrepancy is, and it is pre-existing and unexplained.
+
+**probe_9b is straddled AND failing, but not because of it.** Five failing
+assertions with ORDER-UNITY discrepancies (`gate_near_cancellation_A3`
+computed -0.4709 vs expected -0.0337). A 1e-8 anchor difference cannot produce
+that. No block cites the witness, so it is not a status disagreement. Its
+`gate_near_cancellation_A3` / `cancellation_fails_A7` pair IS bean qou-zf9n
+item 4 (A=3 mirror fails to cancel while A=7 does) — same producer, separate
+investigation.
+
+**Why borromean was different, and why the amplifier is the real lesson.** Its
+Gram came from a committed proton WITNESS FILE while its q came from the muon
+manifest — two numerical layers genuinely combined in one computation, and a
+singular Gram turned a 2e-8 tilt into a 2e-2 duality gap. That amplifier is
+what made it visible and what made it matter. Absent such an amplifier the
+straddle is mostly cosmetic, which is the opposite of what I asserted.
