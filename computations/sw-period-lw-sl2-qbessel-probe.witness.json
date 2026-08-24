@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-25T21:55:50.441036+00:00",
-  "commitSha": "f2cf43b05580c0da42dc1304f576c7e32e06ca01",
+  "computedAt": "2026-08-21T15:05:32.275046+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "sl2_depth2_diverges_from_lw_by_n6",
@@ -18,15 +18,15 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "lw ratio at n=8 = 3.099626 > λ₊ = 2.1846463 (SL₂ geometric cap) — super-exponential."
+      "source": "lw ratio at n=8 = 3.0996259 > λ₊ = 2.1846463 (SL₂ geometric cap) — super-exponential."
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 20,
   "computation": "sw-period-lw-sl2-qbessel-probe",
   "scriptFile": "sw_period_lw_sl2_qbessel_probe.py",
   "scriptHash": "db4a55db8760",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,17 +35,20 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "selection_rule": "a_D^(n) = lw(n−1) = (1/n) Σ_{λ⊢n} dim_q V_λ (canonical q-hook dim_q)",
-    "tau_anchored": "2.642386313301486",
-    "sl2_lambda_plus": "2.184646315299639",
+    "tau_anchored": "2.642386309448846",
+    "sl2_lambda_plus": "2.184646310425804",
     "period_table_n2_to_n8": [
       {
         "n": 2,
@@ -57,48 +60,48 @@
       },
       {
         "n": 3,
-        "true_aD_lw": "1.33696562304",
-        "sl2_extrap": "1.33696562304",
+        "true_aD_lw": "1.33696562224",
+        "sl2_extrap": "1.33696562224",
         "rel_resid": "0.0",
         "true_ratio": "1.33697",
         "sl2_ratio": "1.33697"
       },
       {
         "n": 4,
-        "true_aD_lw": "2.53277966367",
-        "sl2_extrap": "2.53277966367",
+        "true_aD_lw": "2.5327796564",
+        "sl2_extrap": "2.5327796564",
         "rel_resid": "1.43e-71",
         "true_ratio": "1.89442",
         "sl2_ratio": "1.89442"
       },
       {
         "n": 5,
-        "true_aD_lw": "5.37613776906",
-        "sl2_extrap": "5.35561669486",
+        "true_aD_lw": "5.37613772968",
+        "sl2_extrap": "5.35561666668",
         "rel_resid": "0.003817",
         "true_ratio": "2.12262",
         "sl2_ratio": "2.11452"
       },
       {
         "n": 6,
-        "true_aD_lw": "13.5598273276",
-        "sl2_extrap": "11.6188285901",
+        "true_aD_lw": "13.5598271251",
+        "sl2_extrap": "11.6188285023",
         "rel_resid": "0.1431",
         "true_ratio": "2.52222",
         "sl2_ratio": "2.16947"
       },
       {
         "n": 7,
-        "true_aD_lw": "37.3678083587",
-        "sl2_extrap": "25.3458169483",
+        "true_aD_lw": "37.3678073797",
+        "sl2_extrap": "25.3458166996",
         "rel_resid": "0.3217",
         "true_ratio": "2.75577",
         "sl2_ratio": "2.18144"
       },
       {
         "n": 8,
-        "true_aD_lw": "115.826229059",
-        "sl2_extrap": "55.3546112134",
+        "true_aD_lw": "115.826224199",
+        "sl2_extrap": "55.3546105466",
         "rel_resid": "0.5221",
         "true_ratio": "3.09963",
         "sl2_ratio": "2.18397"
@@ -111,7 +114,7 @@
         "-53.6683",
         "-16.0495",
         "-7.60462",
-        "-4.40602",
+        "-4.40603",
         "-2.8593",
         "-1.99537",
         "-1.46438"
@@ -120,6 +123,6 @@
     },
     "residual_open": "a_D^(n)=lw(n−1) geometric↔algebraic identification (#1765) and the exact q-Bessel⇒period correspondence remain open (bean z2bn)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -43,6 +43,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 h = Symbol("h")
 
@@ -131,7 +132,7 @@ def main():
     print("  m_p substrate identity h-dependence")
     print("=" * 70)
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     from q_parameter import Q_50_DIGIT_STR
     from codata_constants import M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu  # registry (no literals)
     q0 = mp.mpf(Q_50_DIGIT_STR)

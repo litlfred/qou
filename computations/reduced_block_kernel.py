@@ -22,6 +22,8 @@ from chi_monotone_transfer import _addable, _add, _alpha_beta, word_to_mpfr, chi
 from mass_at_3A_proper import atom_braid_word_3A
 from q_parameter import Q_50_DIGIT_STR
 import time
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Module-level cache keyed by:
 # (ab0, ab1, ab2, shape_in, c_in) -> dict of (shape_out, c_out) -> amplitude
@@ -145,7 +147,7 @@ def chi_all_lambda_reduced_block(word, n: int, *, dps: int = 50, q=None):
     return dict(out)
 
 if __name__ == "__main__":
-    mp.mp.dps = 50
+    set_compute_dps()
     # Small test on 6Li to benchmark cache reuse
     print("Testing 6Li (A=6)...")
     word = atom_braid_word_3A(3, 3) # 6Li

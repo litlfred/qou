@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:42:35.618624+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T14:48:47.383146+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "lone-pair trace exceeds bond-pair trace (Δtr > 0 ⇒ angle narrows)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "h2o-bond-angle-shift-phi1",
   "scriptFile": "h2o_bond_angle_shift_phi1.py",
   "scriptHash": "9d015092d8c3",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,21 +42,21 @@
   "description": "H₂O H–O–H angle shift via the Markov trace tr_M (owner correction: use the checked trace, not |Φ₁|, so the q-commutator structure is kept). Lone pair = intra-block electron pair e⁻ = σ₀σ₁σ₀ (tr_M = h z² + z); bond pair = cross-block O–H σ generator (tr_M = z). Δtr = h z² > 0 is the lone-pair trace excess that drives b > 0 ⇒ θ_min < θ₀ (angle narrows below tetrahedral). q-exact SIGN; magnitude left to the geometric angular stiffness a (not fitted).",
   "contentBlock": "prop:h2o-bond-angle-shift",
   "parameters": {
-    "q": 1.1099785955573347,
-    "z": 0.49932033403356124,
-    "h": 0.20906032199559366
+    "q": 1.1099785827513808,
+    "z": 0.6126880371464652,
+    "h": 0.20906029879563937
   },
   "data": {
-    "tr_M_lone_pair_e_minus": 0.5514434199212096,
-    "tr_M_bond_pair_sigma": 0.49932033403356124,
-    "delta_tr_lone_minus_bond": 0.05212308588764836,
-    "delta_tr_closed_form_h_z2": 0.05212308588764839,
-    "fractional_trace_excess_hz": 0.10438806981200362,
+    "tr_M_lone_pair_e_minus": 0.6911664783584446,
+    "tr_M_bond_pair_sigma": 0.6126880371464652,
+    "delta_tr_lone_minus_bond": 0.07847844121197933,
+    "delta_tr_closed_form_h_z2": 0.07847844121197929,
+    "fractional_trace_excess_hz": 0.1280887441143539,
     "observed_theta0_deg": 109.4712,
     "observed_theta_hoh_deg": 104.5,
     "observed_fractional_angular_shift": 0.04541103048107627,
     "finding": "Switching the molecular sub-braid score from Φ₁=Σ log|v| to the Markov trace tr_M reverses the sign error of the prior H₂O probe. |v| is a generator-count sum (4-strand bond pair > 3-strand lone pair → wrong sign → angle opened ~140°); tr_M keeps the h z² commutator weight of the intra-block electron pair e⁻, giving tr_M(lone) − tr_M(bond) = h z² > 0 → b > 0 → θ_min < θ₀ (narrows, correct). q-exact sign + right order of magnitude (h z ≈ 10.4 % vs observed 4.5 %). The exact degrees need the geometric angular stiffness a; deliberately not fitted (formalize-first)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

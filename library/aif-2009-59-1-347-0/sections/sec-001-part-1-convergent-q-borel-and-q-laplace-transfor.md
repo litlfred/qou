@@ -1,13 +1,13 @@
 ---
 doc_id: aif-2009-59-1-347-0
-doc_title: "L’INSTITUT FOURIER"
+doc_title: "On q-summation and confluence"
 section_id: sec-001-part-1-convergent-q-borel-and-q-laplace-transfor
 section_title: "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1"
 section_number: null
 pages: 7-8
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "On q-summation and confluence — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 conﬂuence: the case q <1
 We suppose that q ∈ (0, 1) ⊂ R and we set p =q−1.

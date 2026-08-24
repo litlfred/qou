@@ -167,7 +167,13 @@ def epsilon_stratification() -> dict:
 
 
 def main() -> int:
-    # q₀ from the canonical pinning witness (proton anchor)
+    # q₀ from q-pinning-50-digit.witness.json, which is the MUON
+    # anchor-defining witness (`q0Anchor: muon`, holding
+    # 1.10997859555733471989…). This comment said "proton anchor" until
+    # 2026-08-23 and was simply wrong about the file it reads -- the kind
+    # of mislabel that makes a reader classify the producer's layer
+    # backwards. AGENTS.md: never re-pin this witness; it is what
+    # `qou_substrate.witness._q0_value_for_anchor("muon")` reads.
     with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
         pin = json.load(fh)
     q0 = mp.mpf(pin["derived_50_digit"]["q"])

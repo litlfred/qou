@@ -26,7 +26,7 @@ $z \in Z(A)$ with $\tau(z) = \sum_\lambda 1/\dim_q(\lambda)$ is
 matching $\tau(z) = \sum c_\lambda \cdot \tau(p_\lambda)$ to
 $\sum 1/\dim_q$ forces $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$
 — this **is** the definition of $C_{\dim_q}$.  The element is
-therefore **forced by the structure**, not ad-hoc.*
+therefore **forced by the structure**.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
@@ -37,7 +37,7 @@ therefore **forced by the structure**, not ad-hoc.*
 2. *The $q$-dimension $\dim_q(\lambda)$ is the categorical
    **quantum trace** of the identity on the simple module
    $V_\lambda$ — intrinsic to a ribbon-category / rigid-monoidal
-   structure, not a choice.*
+   structure.*
 3. *In the equivalence between Frobenius algebras and 2D TQFTs
    (Atiyah–Segal / Abrams 1996 / Kock 2004 §2), every element of
    $A$ corresponds to a decorated 2-cobordism.  The standard
@@ -45,9 +45,6 @@ therefore **forced by the structure**, not ad-hoc.*
    **torus with puncture**; $C_{\dim_q}$ corresponds to the torus
    with a **$\dim_q$-labelled puncture**, i.e., the torus twisted
    by the ribbon-category structure.*
-
-*So the element is required (unique) and its construction is
-purely categorical — no arbitrary choices.*
 
 **TQFT / handle-element interpretation.**
 *For a 2-dimensional TQFT with state-space $A$, the
@@ -124,7 +121,7 @@ one middle level exists (level $1$, $\lambda = (2,1)$), giving
 $\tau(C_{\dim_q}) = 2 + 1/[2]_q$.*
 
 **Independence of the vortex $\varrho$.**
-*Critically, $\tau(C_{\dim_q}^{(A)})$ is **independent of the
+*$\tau(C_{\dim_q}^{(A)})$ is **independent of the
 specific vortex $\varrho$** — it depends only on the algebra
 $A$ (equivalently on $n$ and $q$), not on the braid word
 $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
@@ -139,7 +136,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 * *Limitation (vortex-blind):* *The Frobenius correction cannot
   by itself distinguish $\varrho_{\mathfrak{p}}$ from
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
-  Vortex-dependent corrections (e.g. chirality factors
+  Vortex-dependent corrections — e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
   ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
   or knot-factor Frobenius pairings per

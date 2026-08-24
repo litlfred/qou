@@ -51,13 +51,35 @@ import os
 from datetime import datetime, timezone
 
 from mpmath import mp, mpf
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 TOL_EXACT = mpf("1e-45")   # T1 assertion tolerance (relative)
 TOL_GAUGE = mpf("1e-30")   # T2: residual below this counts as "mapped"
 N_MAX_T1 = 20
 M_MAX_T2 = 12
+
+
+# Path bridge — keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
+from witness_base import WitnessBuilder  # noqa: E402
+
+import time as _time  # noqa: E402
+_T0 = _time.monotonic()
 
 
 def qint(k, q):
@@ -276,7 +298,11 @@ def main():
                        "q-lifts of the proved classical kernel (n+2) b_{n+2} "
                        "= b_{n+1} + b_n -- structural cross-check, workplan "
                        "step 2",
-        "computation": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = "
+        # `computation` is RESERVED by WitnessBuilder.wrap_legacy, which
+        # overwrites it with the witness stem ("filename already encodes
+        # this"). That is true for a name and false for this field, which
+        # is a METHOD description. Renamed so the text survives the wrap.
+        "computation_method": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = "
                        "b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-"
                        "gauge quadratic solve + residual scan vs GGM eq-49; "
                        "T3 bar (q->1/q) covariance checks",
@@ -299,10 +325,13 @@ def main():
                           "CONSISTENT/DISTINCT vocabulary only; anti-fit",
         },
     }
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       "qlift_kernel_candidate_crosscheck_probe.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "qlift_kernel_candidate_crosscheck_probe",
+        witness,
+        script_path=__file__,
+        engine="python+mpmath",
+        start_time=_T0,
+    ).save()
     print(f"witness written: {out}")
 
 

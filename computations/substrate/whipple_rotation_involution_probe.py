@@ -77,7 +77,8 @@ quarter_period_shift = sp.simplify(
     sp.expand_complex(sp.cosh(t_s + sp.I * sp.pi / 2)) - sp.I * sp.sinh(t_s)) == 0
 
 # ----------------------------------------------------- (4) Whipple numerics
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 
 def whipple_ratio(nu, mu, a):

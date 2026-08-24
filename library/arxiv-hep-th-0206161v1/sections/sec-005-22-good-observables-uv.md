@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-005-22-good-observables-uv
 section_title: "Good observables: UV"
 section_number: 2.2
 pages: 9-12
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
-doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 26 sections: Introduction; (1 .3); (α±"
 ---
 In the applications of the susy gauge theory to Donaldson the ory, where one works with
 the standard topological supercharge Q, the observables one is usually interested in are the

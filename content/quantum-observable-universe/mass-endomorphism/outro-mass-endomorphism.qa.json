@@ -154,6 +154,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.505Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "No denial-of-opposite construction in either paragraph.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -173,6 +189,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.549Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Two paragraphs: what this chapter assembled, what the next chapter does with it. No reframe.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -192,6 +224,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.591Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Zero em-dashes.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -211,6 +259,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.634Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "First list is FIVE items (mass identity; existence+uniqueness; Markov-trace endomorphism with phi_n global section; chi-character closed forms; Hecke-Baer-star chirality pairing); second is three (six-term mass formula; Hoefsmit/Wenzl-bridge/Markov-trace stack; alpha_k coefficient table).",
+        "notes": "Both enumerate actual chapter contents; verified the mass-theory chapter carries six-term-* and alpha-* blocks."
       }
     ],
     "trap-closing-aphorism": [
@@ -230,6 +294,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.675Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Final line 'This table drives every numerical mass prediction downstream.' is a factual claim about the pipeline, not a quotable-wisdom closer.",
+        "notes": "Its universal quantifier is recorded under trap-superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -249,6 +329,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.717Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "'This closes the mass-endomorphism chapter. We have assembled its structural backbone:' -- summary verbs in a chapter-outro block, which is the genre's function.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -268,6 +364,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.761Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "A chapter-close prose block IS a recapitulation by kind; recapitulating here is the block's declared purpose, not a manufactured closer appended to an argument.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -287,6 +399,22 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.805Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -306,6 +434,23 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.847Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "severity": "minor",
+        "evidence": "Block-final sentence: 'This table drives **every** numerical mass prediction downstream.' Unqualified universal. Not established: absolute nucleon/atomic values route through the canonical_mass facade (muon-anchored Hecke energy m_p = 2(m_mu*F_Bor - 6 m_e)), and per-isotope binding routes through the Delta_lambda / tr_M stack -- neither is driven by the alpha_k table. AGENTS.md also excises absolute mass as a prediction (2026-08-11), so 'every numerical mass prediction' has no well-defined referent set.",
+        "notes": "PROPOSED (not applied -- scope claim, meaning at stake): 'This table drives every numerical mass prediction downstream.' -> 'This table feeds the numerical mass predictions downstream.' or name the actual consumers."
       }
     ],
     "trap-nonspeakable": [
@@ -325,8 +470,24 @@
         "reviewed_at": "2026-08-15T10:31:01.037Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "964bf0874e42",
+          "ts": "7b6c332c5ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:51:12.891Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Longest chain is 'the Hoefsmit / Wenzl-bridge / Markov-trace stack', a named pipeline; both paragraphs read aloud cleanly.",
+        "notes": "n/a"
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.037Z"
+  "updated_at": "2026-08-22T03:51:12.891Z"
 }

@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.553Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'is small in absolute terms (~3% of $B_\\mathrm{nucl}$ at $^4$He) but is the dominant contribution at deep curvature-rank strata' is a substantive magnitude contrast carried by the witness table."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.588Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 342 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.621Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 342 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.653Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.685Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.717Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.751Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.784Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.817Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'yields the displayed split immediately', 'Its kernel ... is exactly the locus', 'the chirality sub-stratum at depth 3 is exactly the self-conjugate locus', and 'This provides direct empirical access to the $D_q^2 = 0$ kernel from nuclear binding data'. The last is the load-bearing one: a ~3% contribution inferred through a q-deformed weight is not direct empirical access.",
+        "notes": "proposed: 'provides an empirical handle on' for the last; the 'exactly' in 'exactly the self-conjugate locus' is not merely inflated but false (see the reported counterexample at n=15)."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.822Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c82aac6f0919",
+          "ts": "5452a3cfe507"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.851Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 81-line proof block (split argument, D_q^2 chirality marker, isotope witness table, Wigner-term relation, Plancherel boundedness, closing remark); all four table ratios recomputed. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:46.851Z"
 }

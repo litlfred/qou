@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:29:58.260605+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T21:16:04.389184+00:00",
+  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
   "assertions": [
     {
       "name": "full_product_is_bar_anti_symmetric",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 4,
   "computation": "verify-isospin-bar-anomaly",
   "scriptFile": "verify_isospin_bar_anomaly.py",
   "scriptHash": "955608a60bd3",
@@ -31,9 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/verify_isospin_bar_anomaly.py"
+    ],
+    "reproduce": "python3 -u computations/verify_isospin_bar_anomaly.py"
   },
   "description": "Verifies that the substrate flavor-split closed form Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3 is bar-ANTI-symmetric at leading order (consistent with the SU(2)_I Z/2 swap residue per `conj:isospin-from-canonical-bowtie`, PR #1162).  Each factor is bar-classified individually + the overall product parity verified.",
   "contentBlock": "conj:isospin-from-canonical-bowtie",
@@ -84,23 +91,23 @@
     "parity_matches_expectation": true,
     "d9_audit_correction_finding": "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged.",
     "codata_cross_check": {
-      "M_p_codata_MeV": "938.27208816",
-      "M_n_codata_MeV": "939.56542052",
-      "M_avg_codata_MeV": "938.91875434",
-      "delta_m_over_M_N_codata": "0.00137746993978",
-      "delta_m_over_M_N_codata_ppm": "1377.4699",
+      "M_p_codata_MeV": "938.27208943",
+      "M_n_codata_MeV": "939.56542194",
+      "M_avg_codata_MeV": "938.918755685",
+      "delta_m_over_M_N_codata": "0.00137747009757",
+      "delta_m_over_M_N_codata_ppm": "1377.4701",
       "delta_m_over_M_N_pred_at_q0": "0.0013770494097940612484",
       "pred_ppm": "1377.0494",
-      "rel_diff_to_codata_pct": "-0.030529159"
+      "rel_diff_to_codata_pct": "-0.03054061"
     },
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   },

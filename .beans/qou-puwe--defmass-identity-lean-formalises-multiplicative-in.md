@@ -1,10 +1,11 @@
 ---
 # qou-puwe
 title: def:mass-identity — Lean formalises multiplicative integration, prose defines a categorical trace; and MassIdentity is ℝ-valued inside a generic-k tree
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-08-16T02:47:59Z
+updated_at: 2026-08-22T15:27:01Z
 ---
 
 
@@ -99,3 +100,67 @@ empty bean marked done, with the real gap surviving it.
 4. **Record only.** Status quo; `qou-qc6s` already records it.
 
 Options 1 and 2 compose (1 then 2). Option 3 subsumes both but is the largest.
+
+## DONE 2026-08-22 — option 1 implemented (owner instruction)
+
+Owner said proceed. Took **option 1** (generalise in place, split at the wall)
+rather than my recommended option 3, because 1 is the cheap prerequisite half
+and 3 composes on top of it.
+
+### What shipped
+
+`QOU/Torsion/MassIdentity.lean` is now the **generic core** over
+`{R : Type*} [CommRing R]` — the vortex cycle, its non-emptiness, and the two
+multiplicative-integration factors. `QOU/Torsion/ArchimedeanMassIdentity.lean`
+(new) holds the post-wall layer: `sp : SubstrateParameter M` and
+`integrand_nonneg`. `MassIdentityC` moved with it. `TopologicalMassDecomposition`
+and `mass_dim_zero_pointwise` now take `ArchimedeanMassIdentity`.
+
+**The split cost nothing**, exactly as the analysis predicted:
+
+- `sp` was **inert** — nothing in the tree ever read `MassIdentity.sp`, so the
+  deeper archimedean anchor came out free;
+- the only consumer, `TopologicalMassDecomposition`, is `ℝ` throughout already
+  — it wanted this layer all along and merely was not labelled as one.
+
+This resolves the in-tree contradiction: `GroundRingAnnotations` lists
+`Torsion/` as generic `k`, formal chain ✓, and the core now is.
+
+### The checker caught a real mistake, and the fix is instructive
+
+My first attempt put **both** structures in one file. `check-wall-side`
+**FAILED** it: *"mixes a real-field type with generic-R markers — split into two
+files"*. That was correct — one file holding a `CommRing` core beside an `ℝ`
+layer is precisely the MIXED state §7c forbids, and it is the same trap
+`OmegaOrder` hit in #5255. There the escape was to remove the `ℝ`; here the `ℝ`
+is genuinely required, so the checker's own remedy applies: two files.
+
+Worth recording because "split at the wall" is ambiguous between *two
+structures* and *two modules*, and only the second satisfies the rule.
+
+### Verification
+
+`lean-direct-cone -k QOU.Torsion` → **33 modules, err = 0**. `check-base-ring`
+PASS ×2, `check-wall-side` PASS ×2 (both halves, after the split). Siblings gate
+exit 0, orphan gate exit 0. Registered in the `QOU.Torsion` umbrella.
+
+`content_validate`: **exit 1, `✗ Invalid — 29 issues`, exactly one `✗` error** —
+the pre-existing `def:qou-motivic-galois-instance` failure tracked in
+`qou-s0ip`. Identical before and after this change; **no regression**, and
+`main` was already red.
+
+### Still open — option 3, and it is the defect a reader actually hits
+
+Defect 1 is untouched. `mass-identity.md` defines mass as the Frobenius–Hopf
+**categorical trace** `m(ϱ) = ‖tr((∫_A ⊗ id) ∘ Δ ∘ ϱ)‖`; the Lean formalises
+**nonabelian multiplicative integration**. Neither text mentions the other's
+formula. The ref is correct — it carries the block's own label — but the
+mathematics is a different object.
+
+Option 2 (write the `.md`'s named `frobeniusMass` / `scalarMass`, neither of
+which exists) now composes cleanly onto this split, since the generic core is
+where `frobeniusMass` would live and the archimedean module is where
+`scalarMass` would. Option 3 subsumes both by treating the block as an
+*identity* — the label says so and the Lean docstring is a chain of `=` — and
+carrying "multiplicative integration agrees with the categorical trace" as a
+§3b-conditional field rather than an unstated assumption.

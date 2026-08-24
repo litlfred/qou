@@ -1265,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.595Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1284,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.637Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-em-dash": [
@@ -1303,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.680Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-triples": [
@@ -1322,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.719Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1341,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.759Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-meta-commentary": [
@@ -1360,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.799Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1379,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.838Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-performed-warmth": [
@@ -1398,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.877Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-superlative": [
@@ -1417,6 +1545,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.917Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "trap-nonspeakable": [
@@ -1436,6 +1580,22 @@
         "reviewed_at": "2026-08-15T10:31:00.006Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ac24dc3653d8",
+          "ts": "a01581b91630"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:53.957Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: 3-sentence example on def:maximal-torus. Math verified: for V = C^2 of SU(2) the weight decomposition C e_+ (+) C e_- is correct; the maximal torus is the diagonal U(1) acting by e^{+-i Theta}, which matches the corpus's other uses of Theta as a torus angle (descent-involution-su2, commutative-crossing-energy). 'therefore' marks a genuine inference from the two preceding sentences, not a rhetorical pivot. No dash, no triple, no closer, no announced emphasis.",
+        "notes": "No trap. Structural flag, not fixed: the .ts carries lean.ref qou:QOU.Examples.su2MaximalTorus, which resolves to nothing -- see the returned anomaly list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1459,5 +1619,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:36:53.957Z"
 }

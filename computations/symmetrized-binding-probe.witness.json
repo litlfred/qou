@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-11T00:02:40.257094+00:00",
-  "commitSha": "e8b82252faaa2e39b972c4e095ee6c13d23c33e9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:58:18.754241+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 24,
   "computation": "symmetrized-binding-probe",
   "scriptFile": "symmetrized_binding_probe.py",
-  "scriptHash": "7b0c4f927642",
-  "scriptCommitSha": "23096199943efaad2fee63d263dcad714d2269a9",
+  "scriptHash": "150890a1e580",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/symmetrized_binding_probe.py"
+    ],
+    "reproduce": "python3 -u computations/symmetrized_binding_probe.py"
   },
   "description": "Wires the Frobenius symmetrized constituent (h_Z/e_Z) into the canonical linear binding B=scale·(tr_free−tr_atom) for D/T/³He/⁴He. KEY STRUCTURAL RESULT: free and bound carry the SAME identical-particle symmetrization, so in the log-ratio form B_log=scale·log(tr_free/tr_atom) the free factor S_free=(h_Z h_N)/(τ^Z τ^N) CANCELS against the bound S_atom — symmetrizing tr_free ALONE is inconsistent (a spurious O(1) shift). The binding signal of identical-particle exchange is the residual log(S_free/S_atom), i.e. the exact block-swapped atom trace (task-1: |G|⁻¹Σ_{σ∈S_Z×S_N} tr_M(W_atom·σ)). Reports both candidate scales (Q_β, E_0); S_free per isotope (⁴He bosonic 2.47×) shows the exchange magnitude. tr_atom for D/T/³He/⁴He from binding-canonical.witness.json.",
   "parameters": {
@@ -36,76 +44,76 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "naive_free": 0.9835260324047483,
-        "h_ZhN": 0.9835260324047483,
-        "e_ZeN": 0.9835260324047483,
+        "naive_free": 1.13171690432221,
+        "h_ZhN": 1.13171690432221,
+        "e_ZeN": 1.13171690432221,
         "S_free_bosonic": 1.0,
         "S_free_fermionic": 1.0,
-        "tr_atom": 0.3883572099845971,
-        "B_linear_Qbeta": 0.4656204543696414,
-        "B_linear_E0": 2.4913655986646726,
-        "B_logratio_Qbeta": 0.7269587139183247,
-        "B_logratio_E0": 3.889691517005042,
+        "tr_atom": 0.5751722439177719,
+        "B_linear_Qbeta": 0.4354034819914961,
+        "B_linear_E0": 2.329685576294031,
+        "B_logratio_Qbeta": 0.529500144333238,
+        "B_logratio_E0": 2.8331625720045235,
         "B_AME": 2.22452,
-        "B_lin_Qbeta_over_AME": 0.20931277505692975,
-        "B_log_Qbeta_over_AME": 0.3267935167669091
+        "B_lin_Qbeta_over_AME": 0.1957291829210329,
+        "B_log_Qbeta_over_AME": 0.23802894302287145
       },
       {
         "isotope": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "naive_free": 0.9080239155992134,
-        "h_ZhN": 1.4814154041945307,
-        "e_ZeN": -0.5733914885953174,
-        "S_free_bosonic": 1.6314717913755952,
-        "S_free_fermionic": -0.6314717913755952,
-        "tr_atom": 0.10407107578806137,
-        "B_linear_Qbeta": 0.6289591666486423,
-        "B_linear_E0": 3.3653316044171513,
-        "B_logratio_Qbeta": 1.6946879964860986,
-        "B_logratio_E0": 9.067658723522575,
+        "naive_free": 1.1178462289782265,
+        "h_ZhN": 1.6229145005558594,
+        "e_ZeN": -0.5050682715776329,
+        "S_free_bosonic": 1.4518226733557917,
+        "S_free_fermionic": -0.4518226733557918,
+        "tr_atom": 0.22931010210455652,
+        "B_linear_Qbeta": 0.695131498045271,
+        "B_linear_E0": 3.7193956677070386,
+        "B_logratio_Qbeta": 1.239281726292162,
+        "B_logratio_E0": 6.630945507146877,
         "B_AME": 8.48181,
-        "B_lin_Qbeta_over_AME": 0.0741538853910477,
-        "B_log_Qbeta_over_AME": 0.199802636051279
+        "B_lin_Qbeta_over_AME": 0.08195556114146285,
+        "B_log_Qbeta_over_AME": 0.14611052667911237
       },
       {
         "isotope": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "naive_free": 1.0477563253549798,
-        "h_ZhN": 1.5849478434399071,
-        "e_ZeN": -0.5371915180849275,
-        "S_free_bosonic": 1.5127065378516584,
-        "S_free_fermionic": -0.5127065378516584,
-        "tr_atom": 0.20657847010037073,
-        "B_linear_Qbeta": 0.6580815399178247,
-        "B_linear_E0": 3.5211548253118115,
-        "B_logratio_Qbeta": 1.270295085315798,
-        "B_logratio_E0": 6.796886704629547,
+        "naive_free": 1.2966756122449439,
+        "h_ZhN": 1.7741460588228184,
+        "e_ZeN": -0.47747044657787446,
+        "S_free_bosonic": 1.3682265958185382,
+        "S_free_fermionic": -0.36822659581853817,
+        "tr_atom": 0.4037670368514282,
+        "B_linear_Qbeta": 0.6985522106058513,
+        "B_linear_E0": 3.737698655723077,
+        "B_logratio_Qbeta": 0.9127648001744579,
+        "B_logratio_E0": 4.883872264385957,
         "B_AME": 7.71804,
-        "B_lin_Qbeta_over_AME": 0.08526537047201423,
-        "B_log_Qbeta_over_AME": 0.16458778204256494
+        "B_lin_Qbeta_over_AME": 0.09050901661637556,
+        "B_log_Qbeta_over_AME": 0.11826380793238411
       },
       {
         "isotope": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "naive_free": 0.9673234564178261,
-        "h_ZhN": 2.38729436004448,
-        "e_ZeN": 0.31318036744017336,
-        "S_free_bosonic": 2.4679380451344195,
-        "S_free_fermionic": 0.3237597159071661,
-        "tr_atom": 0.05535842534982198,
-        "B_linear_Qbeta": 0.7134607125561876,
-        "B_linear_E0": 3.817468624026933,
-        "B_logratio_Qbeta": 2.238024367883572,
-        "B_logratio_E0": 11.974853911147079,
+        "naive_free": 1.2807831515286463,
+        "h_ZhN": 2.5441763341796135,
+        "e_ZeN": 0.21308789526910565,
+        "S_free_bosonic": 1.9864223940977646,
+        "S_free_fermionic": 0.16637312492343453,
+        "tr_atom": 0.16097414544240737,
+        "B_linear_Qbeta": 0.876063998280158,
+        "B_linear_E0": 4.6874996299263065,
+        "B_logratio_Qbeta": 1.6225463821333819,
+        "B_logratio_E0": 8.681655199528311,
         "B_AME": 28.295674,
-        "B_lin_Qbeta_over_AME": 0.025214480226065213,
-        "B_log_Qbeta_over_AME": 0.0790942236570711
+        "B_lin_Qbeta_over_AME": 0.03096105780269302,
+        "B_log_Qbeta_over_AME": 0.05734255993101213
       }
     ],
     "structural_conclusion": {
@@ -113,7 +121,25 @@
       "log_ratio_cancellation": "B_log shift = scale·log(S_free/S_atom); if S_atom=S_free (same nucleon content) the binding is UNCHANGED.",
       "binding_signal": "the residual log(S_free/S_atom) = the exact block-swapped bound symmetrization (task-1, S_Z×S_N), the small-Z refinement.",
       "orbit_identity_does_NOT_trivialize_symmetrization": "atom_orbit_reduction.py proves tr_M(β_{Z,N})=tr_M(representative) with NO |orbit| factor — but that is RELABELING (σ leaves the word p…pn…n unchanged ⇒ conjugation β_σ W β_σ⁻¹, trace-preserving by Markov M1). The Young SYMMETRIZER is a DIFFERENT operation: it COMPOSES the block-swap braid, tr_M(W_atom·β_σ) (not conjugation), which the bonds make nontrivial. So S_atom = |G|⁻¹Σ_σ tr_M(W_atom·β_σ) is NOT trivially tr_M(W_atom); the orbit identity must not be used to shortcut it.",
-      "S_free_bosonic_4He": 2.4679380451344195
-    }
+      "S_free_bosonic_4He": 1.9864223940977646
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "symmetrized-constituent-general.witness.json",
+        "sha256": "2c3ff8e48242e66df313ffb2c596ec0f37679ff2d32f40f77357d83f87257a26",
+        "size_bytes": 6911,
+        "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T15:05:49.027813+00:00"
+      },
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "141cd06d2a6b9a36fc8cb0c922025d29785651eb00331e67f0444cb3ff55fe39",
+        "size_bytes": 6536,
+        "commitSha": "ed819c29934a44bf7d752a800291f5a01ea1742d",
+        "scriptCommitSha": "77e4e68b75e65453004511c059a6613daee5ee0d",
+        "computedAt": "2026-08-22T19:30:53.367121+00:00"
+      }
+    ]
   }
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: zhao-standard-2010
-doc_title: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao"
+doc_title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity"
 section_id: sec-017-71-weight-one
 section_title: "Weight one"
 section_number: 7.1
 pages: 17-18
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 From §3 we know that all relations in weight one follow from (11) and (12), and
 no RDS exists. The relations in weight one are crucial for hig her level cases

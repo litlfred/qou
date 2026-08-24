@@ -1,6 +1,6 @@
 ---
 doc_id: cor-ma1
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Overpartitions, lattice paths and Rogers-Ramanujan identities"
 section_id: sec-014-6-paths-and-successive-durfee-squares
 section_title: "Paths and successive Durfee squares"
 section_number: 6

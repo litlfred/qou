@@ -1,13 +1,13 @@
 ---
 doc_id: symmetry-04-00039-v3
-doc_title: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 2"
+doc_title: "Knots on a Torus: A Model of the Elementary Particles"
 section_id: sec-032-2-l-cos-da-sa-w-r-v-a-11
 section_title: "L = ( / ) ( / ) cos dA sA w r V   (A-11)"
 section_number: 2
 pages: 59-72
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
-doc_brief: "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos V"
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, th e unknot and the trefoil."
 ---
 where the integrand has the dimensions of energy volume density. The corresponding Euler equation is  
 22d/ d ( 1 / )  s i n 0sw r     (A-12)

@@ -1,13 +1,13 @@
 ---
 doc_id: kmj-48-2-255
-doc_title: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata"
+doc_title: "A formula for the colored Jones polynomial of 2-bridge knots"
 section_id: sec-012-3-results-for-a-twist-knot
 section_title: "Results for a twist knot"
 section_number: 3
 pages: 19-24
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
-doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata — We derive a formula for the colored Jones polynomial of 2-bridge knots."
+doc_brief: "A formula for the colored Jones polynomial of 2-bridge knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 In this section, we will consider the twist knots S(4p1 + 1, 2p1 + 1) and S(4p1 −
 1, 2p1 − 1).

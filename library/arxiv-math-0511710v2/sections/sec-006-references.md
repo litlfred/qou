@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0511710v2
-doc_title: "Higher Gauge Theory John Baez Department of Mathematics University of California"
+doc_title: "Higher gauge theory"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
 pages: 27-29
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
-doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
+doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional"
 ---
 [1] B. Eckmann and P. Hilton, Group-like structures in categ ories, Math. Ann. 145
 (1962) 227–255.

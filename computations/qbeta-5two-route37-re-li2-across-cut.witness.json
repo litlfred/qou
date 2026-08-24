@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route37_re_li2_across_cut",
   "bean": "qou-glbl",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/MathlibExt/ComplexDilogarithmInversion.lean (invCombo, continuousAt_re_cLiTwoExt)",
     "QOU/MathlibExt/ComplexDilogarithmOnCut.lean (re_inversion_identity)"
@@ -24,15 +24,15 @@
       "gate": "G2",
       "claim": "THE IDENTITY THE LEAN PROOF RESTS ON: Li2(w) + Li2(1/w) + log(-w)^2/2 = -pi^2/6 on all of C \\ [0,inf), as a FULL COMPLEX equation (not just its real part). Checked at 16 points spread over both half planes, the negative reals, both sides of the cut, near the branch point w = 1, and far out -- all OFF the 5_2 arc configuration, so nothing peculiar to that locus can be carrying it",
       "points": 16,
-      "worst_abs_residual": "1.14794370197e-40",
-      "worst_point": "(-1000.0 + 0.0j)",
+      "worst_abs_residual": "1.54743511932e-70",
+      "worst_point": "(100.0 + 0.5j)",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "BRANCH PINNING, and the gate that stops this probe from being self-consistently wrong. Lean's `Complex.log` takes arg = +pi on the negative reals, so for real x > 1 the integrand's `1 - x*t` past t = 1/x is evaluated on the UPPER lip of log's cut -- which makes `cLiTwoExt x` the boundary value from BELOW in w, Li2(x - i0), with Im = -pi*log x. Checked against the independently known jump Li2(x+i0) - Li2(x-i0) = 2*pi*i*log x. Get this backwards and the sign of the log(-w)^2 correction flips while every other gate still passes",
-      "jump_residual": "1.71803983061e-25",
-      "on_cut_equals_limit_from_below": "2.54275635953e-25",
+      "jump_residual": "1.85226585281e-25",
+      "on_cut_equals_limit_from_below": "2.58799629087e-25",
       "pass": true
     },
     {
@@ -45,7 +45,7 @@
         "1e-10": "2.4166097",
         "1e-15": "2.4166097",
         "1e-20": "2.4166097",
-        "1e-25": "2.3932603"
+        "1e-25": "2.4166097"
       },
       "predicted_bound_pi_over_smallest_x": "2.41660973353",
       "im_gap_from_above": "9.45039700029",
@@ -68,13 +68,13 @@
       "gate": "G6",
       "claim": "the elementary rewrite that carries the whole continuity claim: Re(log(-w)^2) = (log|w|)^2 - (|arg w| - pi)^2 for every w != 0. `arg(-w)` jumps by 2*pi across the positive reals; `|arg w|` does not jump there at all, so the right-hand side is manifestly continuous at every w with Re w > 0. Checked including on the positive reals, on the negative reals, and in both half planes -- i.e. ON the jump locus, not merely near it",
       "points": 19,
-      "worst_abs_residual": "1.83670992316e-40",
+      "worst_abs_residual": "2.89781730522e-70",
       "pass": true
     },
     {
       "gate": "G7",
       "claim": "CROSS-CHECK against what the tree already proves: `re_inversion_identity` says Re Li2(x) + Re Li2(1/x) + (log x)^2/2 = pi^2/3 for x >= 1. The new step is that identity rearranged into Re(invCombo x) = -pi^2/6, so the two must agree numerically or the Lean assembly cannot close. Checked at the branch point x = 1 as well, where the derivative argument behind the tree's theorem does not exist and its exceptional-point glue is what covers it",
-      "worst_abs_residual": "9.1835496158e-41",
+      "worst_abs_residual": "1.08668148946e-70",
       "pass": true
     },
     {
@@ -113,7 +113,7 @@
       "w0_difference": "0.0",
       "y_real_at_pi_from_cubic": "0.80193773580483825247",
       "two_cos_pi_over_7_minus_1": "0.80193773580483825247",
-      "y_real_difference": "1.14794370197e-41",
+      "y_real_difference": "0.0",
       "pass": true
     }
   ],

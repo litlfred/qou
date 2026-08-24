@@ -1,4 +1,5 @@
 import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 
 /-!
@@ -22,9 +23,10 @@ open Polynomial Complex
 
 namespace QOU.AlgebraicSubstrate
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -44,8 +46,10 @@ def bringsGenus : ℕ := 4
 structure LocalQZetaFunction where
   /-- The substrate parameter q. -/
   q : R_q
-  /-- Positivity of q. -/
+  -- Positivity of q:
   -- q_pos : q > 0  -- (archimedean; not meaningful over R_q)
+  -- Kept as a plain comment: a `/-- -/` docstring must attach to a
+  -- declaration, and the field it documented is commented out.
   /-- The 8 fundamental Frobenius eigenvalues α₁, …, α₈. -/
   eigenvalues : Fin 8 → ℂ
   /-- The *reversed* characteristic polynomial P̃(X) = ∏ᵢ (X - αᵢ).
@@ -59,5 +63,7 @@ structure LocalQZetaFunction where
   /-- P̃ factors as ∏ᵢ (X - αᵢ). -/
   charPoly_roots :
     charPoly = ∏ i : Fin 8, (X - C (eigenvalues i))
+
+end
 
 end QOU.AlgebraicSubstrate

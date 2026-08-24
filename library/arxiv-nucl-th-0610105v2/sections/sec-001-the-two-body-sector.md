@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0610105v2
-doc_title: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e)"
+doc_title: "Universal Properties of the Four-Body System with Large Scattering Length"
 section_id: sec-001-the-two-body-sector
 section_title: "The Two-Body Sector"
 section_number: null
 pages: 4-5
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
-doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut für Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have univers al properties that do not depend on the details of their"
 ---
 We write the leading order two-body eﬀective potential in momentum space as:
 ⟨p|V |q⟩ = ⟨p|g⟩λ2⟨g|q⟩, (2)

@@ -744,7 +744,7 @@
           "in_degree": 1,
           "cone_size": 100,
           "depth": 27,
-          "pagerank": 0.000095,
+          "pagerank": 9.5e-05,
           "edge_span_max": 7,
           "edge_span_mean": 5,
           "worst_target": ""
@@ -1271,7 +1271,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/color-superconductivity-borromean.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 — content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 \u2014 content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "1143d1e7af7c",
+          "ts": "fb9cbebfb22c",
+          "lean": "286799263f71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'color-superconductivity-borromean.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [

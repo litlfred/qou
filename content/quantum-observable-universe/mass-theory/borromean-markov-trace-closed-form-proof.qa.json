@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the closed form above.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.949Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.984Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1430,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "8 stylistic spaced dashes in 607 words (1.32/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.018Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Dashes are mostly blockquote and bullet glosses; density is not the tell here."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 607 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.053Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.090Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1535,23 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.130Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Two passages narrate the document's own revision history rather than the mathematics: 'An earlier revision of this section tabulated the bridge-convention budget (5/128, -20/128, 15/128) without labelling the convention -- those numbers decompose the *bridge* trace, not the closed form above. Both budgets sum to zero ..., which masked the mismatch.' and '(For the record, the bridge-convention budget is (5/128, -20/128, 15/128), also summing to zero -- but it decomposes the bridge-normalised trace, a different functional.)'",
+        "notes": "proposed (structural, NOT applied): keep the Convention note items 1-2 (they are substantive -- two normalisations with different weights), migrate the 'An earlier revision ...' paragraph and the 'For the record' aside to .ts authorNotes {kind:'note', date:...} per AGENTS.md 4d. The mathematical warning survives as a plain statement of which convention the section uses."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1571,22 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.168Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1606,22 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.204Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 958-word proof; the Jones polynomial reduction, the polynomial long division, the h-expansion to h^8, the h^2 budget and the F_Bor table were all recomputed."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1641,23 @@
         "reviewed_at": "2026-08-15T10:31:00.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.242Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Three all-caps shouts in a proof ('the numerator HAS an h^2 coefficient', 'ALL correction terms ... originate from this partition alone', plus 'The **only non-abelian irrep**'), i.e. performed rather than placed emphasis.",
+        "notes": "proposed: set in ordinary type; the italic/bold already available in the block carries any needed emphasis."
       }
     ],
     "trap-nonspeakable": [
@@ -1532,6 +1678,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "0f6df87ec5ad",
+          "ts": "827d59feb17a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.278Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Long but well-sectioned.",
+        "notes": "RIGOR (not a trap). VERIFIED EXACTLY: V(Borromean) in u is -u^3+3u^2+u-2 from the quoted Jones polynomial under t=q^2, u=t+1/t; division by u+2 gives -u^2+5u-9 remainder 16; substituting u=h^2+2 gives (4+h^2-3h^4-h^6)/(h^2+4); the Taylor coefficients 1, 0, -3/4, -1/16, +1/64 all check; [3]_q! = (h^2+3)sqrt(h^2+4) is correct and its h^2 coefficient is 11/4; q^3 and 1/q^3 both have h^2 coefficient 9/8; F_Bor = 6 - 9h + (19/2)h^2 + ..., so the table's 19/2 is right. The per-partition budget 5/128 - 20/128 + 15/128 = 0 checks. TWO DEFECTS: (1) 7a VIOLATION -- the Jones polynomial is written V(B_3, t) and V_Jones throughout, in the variable t; AGENTS.md 7a says 'Always J_K(q), never V_K(t)'. Since the block immediately substitutes t = q^2, the fix is mechanical. (2) 'the Wenzl-bridge / Ocneanu normalisation (producer ..., used by the formal derivation)' carries the same script-name token substitution."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1554,5 +1717,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:35.278Z"
 }

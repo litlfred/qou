@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-010-22-when-f-t-no-longer-exists-since-the-new-inequ
 section_title: "(when F = T ) no longer exists. Since the new inequalities require u to be"
 section_number: 2.2

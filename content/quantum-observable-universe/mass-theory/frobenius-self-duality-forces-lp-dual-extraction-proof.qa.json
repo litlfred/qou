@@ -1557,6 +1557,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.405Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "'This is not a derivation; it is the structure of the observation frame in a Frobenius-self-dual category' is an epistemic scope statement of exactly the kind AGENTS.md requires (derived vs structural), i.e. substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1576,6 +1591,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.442Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Same sentence has the setup-then-reframe shape, but the second clause states what the corollary IS rather than reframing it; the five numbered steps proceed without pivots."
       }
     ],
     "trap-em-dash": [
@@ -1595,6 +1625,22 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 417 words)"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.480Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Three em-dashes in 551 words after fixes; the survivor ('— primal feasibility and primal boundedness (or, equivalently ...)') introduces a genuine specification.",
+        "notes": "One emphasis-staging pair was removed under trap-meta-commentary."
       }
     ],
     "trap-triples": [
@@ -1614,6 +1660,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 417 words)"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.516Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No reflex list; the step structure is 5-fold and each step is used."
       }
     ],
     "trap-closing-aphorism": [
@@ -1633,6 +1694,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.552Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Ends on a display equation plus a cross-reference."
       }
     ],
     "trap-meta-commentary": [
@@ -1652,6 +1728,23 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.589Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "severity": "major",
+        "evidence": "Two emphasis-staging constructions announcing the force of a claim rather than placing it: 'Obs_tau(a) = tau(a . -) is **literally** Phi_tau' and 'an observable produced by tau-extraction is — *by definition* — a dual-space element'.",
+        "notes": "FIXED: 'is **literally** $\\Phi_\\tau$.' -> 'is $\\Phi_\\tau$.'; 'is — *by definition* — a dual-space element.' -> 'is, by definition, a dual-space element.' (the qualifier is genuine, only the dash-and-italic staging removed)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1671,6 +1764,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.627Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "'Strong duality + the Frobenius identification together imply the tau-extraction is the dual map' closes Step 4 by naming what Step 5 then proves — a bridge, not a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1690,6 +1798,21 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.664Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1709,6 +1832,23 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.700Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "severity": "minor",
+        "evidence": "'**literally**' as a bolded intensifier on an identity that is either true or false, and 'this is the *only* form a tau-extracted observable can take'.",
+        "notes": "FIXED: 'literally' removed. NOT changed: 'the *only* form' is discharged by Step 5 and is a legitimate uniqueness claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1728,6 +1868,22 @@
         "reviewed_at": "2026-08-15T10:31:00.738Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "352797590f8f",
+          "ts": "7024bc155e96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:06.736Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Steps are short and each display is set out; no noun-chain stalls.",
+        "notes": "TWO RIGOR FLAGS. (1) CONTRADICTION WITH THE SAME CHAPTER: Step 1 asserts the Markov trace is non-degenerate because 'every $y_\\lambda(q) \\neq 0$', giving 'a strictly positive linear combination of characters'. Under the canonical convention D that is false at n=3: prop:frobenius-gram-matrix and rem:frobenius-gram-matrix-context in this chapter state y_{(1^3)} = 0 exactly, the (1^3) block lies in the radical, and det G = 0 identically (I reproduced det G = 0 and the null eigenvalue independently). Step 1 and Step 2's isomorphism Phi_tau are therefore convention-C statements; under D they hold on H_n/rad tr_M only. The whole chain (Steps 1-5, both corollaries) inherits this. Fix: state the non-degeneracy hypothesis with its convention, and read Phi_tau on the quotient. Note tau(1) = sum_lambda d_lambda y_lambda = 1 is correct in either convention — it is the STRICT positivity that fails. (2) Broken cross-reference: the final parenthetical '(see / mass-formula-iterative-lp-dual)' is a bare label on its own line with no markdown link, unlike every other reference in the block — link stripped."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1750,5 +1906,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:58:06.736Z"
 }

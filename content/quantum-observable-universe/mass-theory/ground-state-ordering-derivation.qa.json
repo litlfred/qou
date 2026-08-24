@@ -945,6 +945,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a derived construction.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.605Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'That identification is unaffected by the refutation; only the claim that a particular arrangement extremises Phi_q has been withdrawn' and 'there is no alternation for the readout to see' are exactly the scope statements a refutation record should carry."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.639Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The heuristic-then-refutation structure is the block's declared purpose ('records the eigenvalue argument that originally motivated the interleaving rule, and the exhaustive search that refuted it'), and the refutation supplies a mechanism (commuting transfer factors), not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -983,6 +1013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 487 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.675Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Five em-dashes in 549 words, each a genuine qualification ('the sorted arrangement — which the rule reserves for A <= 3 — is the minimiser')."
       }
     ],
     "trap-triples": [
@@ -1002,6 +1047,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 487 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.713Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The three transfer matrices' is the object itself."
       }
     ],
     "trap-closing-aphorism": [
@@ -1021,6 +1081,23 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.750Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "Section-closing bolded line borrowed from a military idiom: '**This heuristic does not survive contact with the actual Phi_q.**' Rhetorical rather than informative — it does not say what the sweep found or why.",
+        "notes": "FIXED: '**This heuristic does not survive contact with the actual $\\Phi_q$.**' -> '**The exhaustive sweep below refutes this heuristic.**' The block's own closing section ('Scalability') is by contrast a model of scope discipline and was left untouched."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.789Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'This remark records ... and the exhaustive search that refuted it' states the block's purpose, which for a refutation record is its content."
       }
     ],
     "trap-thesis-restatement": [
@@ -1059,6 +1151,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.841Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Each section adds something: eigenvalues, heuristic, sweep result, mechanism, unaffected identification, scope."
       }
     ],
     "trap-performed-warmth": [
@@ -1078,6 +1185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.881Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1097,6 +1219,21 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.924Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'every arrangement', 'the strict worst of all five' are exact counts from a stated exhaustive sweep, and the Scalability section explicitly refuses to extrapolate past A = 16 — the opposite of inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1116,6 +1253,22 @@
         "reviewed_at": "2026-08-15T10:31:00.340Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a6ba5c7cfda1",
+          "ts": "c3c851fd9991"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:23.957Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Short sentences, concrete subjects.",
+        "notes": "VERIFIED: T_pn's eigenvalues +-sqrt(1 + h^2/4) = +-1.0054484 at the proton pin, matching '+- 1.005'; q = 1.109979 and 1/q = 0.9009183 match '1.110' and '0.901'; and 'T(d) = S + d 1 so they all commute' is right, since every factor is a polynomial in one fixed S. GOOD PRACTICE: the sweep is stated to run 'at the experimental substrate anchor', which is the 2026-08-07 owner default. TWO FLAGS. (1) AGENTS.md 7a VIOLATION: 'the braiding eigenvalues from the Hecke relation (T - q)(T + q^{-1}) = 0' names the Hecke GENERATOR T, which 7a forbids outright — the generator is sigma_i, and the relation should read (sigma_i - q)(sigma_i + q^{-1}) = 0. This is the generator case, not the T_w standard-basis case flagged elsewhere in the chapter. (2) LOOSE IDENTIFICATION: 'The transfer matrix eigenvalues are the Gram matrix entries in disguise' — the sentence then explains they are braiding eigenvalues of the Hecke relation, which are not Gram-matrix entries (those are traces tau(b_i b_j)). 'in disguise' is also colloquial for the register."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1295,5 @@
     "md": "7c392be68d94",
     "ts": "c3c851fd9991"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:28:23.957Z"
 }

@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-14T19:48:00.748398+00:00",
+  "computedAt": "2026-08-21T14:57:53.664300+00:00",
   "computation": "meson-vol-density",
   "scriptFile": "meson_vol_density.py",
   "description": "Meson-sector mass ratios. Baryon reference routes through the canonical muon-anchored facade (canonical_mass.proton_mass_mev; λ_A excised 2026-06-24); mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. Also cross-checks Q_β as derived from CAL-1+CAL-2.",
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "m_e": "0.51099895069",
     "m_pi": "139.57039"
   },
@@ -19,25 +19,25 @@
     },
     "meson_geom_candidates": {
       "A_nf_ratio": {
-        "geom": 1.145168485672316,
-        "m_K_pred": 159.83161216099458,
-        "err_ppm": 676242.5388239789
+        "geom": 1.1451684693447157,
+        "m_K_pred": 159.83160988214502,
+        "err_ppm": 676242.5434400529
       },
       "B_two_q_sq": {
-        "geom": 4.043706218232901,
-        "m_K_pred": 564.3816539241911,
-        "err_ppm": 143220.4739621071
+        "geom": 4.043706208532522,
+        "m_K_pred": 564.3816525703054,
+        "err_ppm": 143220.4712196546
       },
       "C_goldstone": {
-        "geom": 2.8820423176325622,
-        "m_K_pred": 402.24777026848056,
-        "err_ppm": 185200.5050498999
+        "geom": 2.8820423093255307,
+        "m_K_pred": 402.24776910906496,
+        "err_ppm": 185200.50739843058
       }
     },
     "q_beta_crosscheck": {
-      "pred": 0.7836458038973215,
+      "pred": 0.7836458273746212,
       "codata": 0.78233341,
-      "err_ppm": 1677.5378381469732
+      "err_ppm": 1677.567847474663
     },
     "proton_pion_ratio": {
       "pdg": 6.722572670535635,
@@ -56,9 +56,9 @@
   ],
   "allPassed": true,
   "scriptHash": "d66a5499d99a",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "durationMs": 0,
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

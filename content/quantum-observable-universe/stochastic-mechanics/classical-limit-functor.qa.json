@@ -1568,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.628Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "'The functor L is exact but not full: quantum information is lost in the limit.'",
+        "notes": "False-positive class: substantive mathematical contrast - exactness and fullness are two distinct categorical properties and the block's point is precisely that one holds and the other fails."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1587,6 +1603,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.670Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-em-dash": [
@@ -1606,6 +1637,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.712Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-triples": [
@@ -1625,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.754Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Three numbered clauses: quantum gap collapse, differential smoothing, braiding trivialization.",
+        "notes": "Substantive enumeration; all three appear as separate structure fields or docstring clauses in the Lean sibling."
       }
     ],
     "trap-closing-aphorism": [
@@ -1644,6 +1706,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.794Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-meta-commentary": [
@@ -1663,6 +1740,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.836Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-thesis-restatement": [
@@ -1682,6 +1774,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.877Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-performed-warmth": [
@@ -1701,6 +1808,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.918Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "trap-superlative": [
@@ -1720,6 +1842,22 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.958Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No superlative language in the block.",
+        "notes": "STRUCTURAL FINDINGS recorded here (not traps, do not fix inline). (1) NOTATION COLLISION: clause 3 writes the symmetric swap as tau_{X,Y}. AGENTS.md 7 and notation/notation-collisions.md 74-103 reserve tau for the FIBRE FUNCTOR and carry a whole collision table for it; this is the only occurrence of tau as a swap in content/. Proposed: use the Lean sibling's own spelling, the Mathlib braiding beta_ / the symmetry s_{X,Y}. (2) The narrative claim 'L is exact' is NOT encoded in the Lean: the sibling has 'is_exact : Prop' - a bare Prop-valued field, satisfiable by True, whose own docstring says 'Stated abstractly as a Prop field; the full proof requires checking preservation of finite limits and colimits'. This is the AGENTS.md 3b-tax proof-claims-unencoded pattern. The companion 'not_full : not (functor.toFunctor.Full)' IS content-bearing, so only half the sentence has formal backing."
       }
     ],
     "trap-nonspeakable": [
@@ -1739,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:30:59.540Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "043173936142",
+          "ts": "fc6fd79dee8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:07.999Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (lead sentence + 3 numbered clauses + closing sentence). Zero em-dashes. Lean sibling classical-limit-functor.lean read: structure ClassicalLimitFunctor is substantive (functor, braiding_trivializes stated as a real commuting-square equation, not_full : not (Full)). hbar_q = 1 - q^{-1} matches AGENTS.md. Uses :refterm[]{#...} glossary wrapping correctly for the three category terms."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1762,5 +1915,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:29:07.999Z"
 }

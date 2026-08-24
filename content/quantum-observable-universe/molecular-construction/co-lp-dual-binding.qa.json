@@ -2144,6 +2144,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:12.997Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'each an independent covalent channel rather than one accumulating chain of shared pairs' - the orthogonal-vs-chain distinction IS the proposition's content (false-positive class: substantive mathematical contrast). Verified against co-bond-order-active-set.witness.json: single_chain_active_set = 1, orthogonal co_active_set = 2.",
+        "notes": "Passes. Note the chapter-wide density of the derived-not-postulated contrast (see benzene-computation-intro)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2163,6 +2179,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.039Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -2182,6 +2214,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 63 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.080Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: spaced-dash count = 1; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -2201,6 +2249,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 63 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.120Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -2220,6 +2284,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.162Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: final prose sentence is: \"The observed triple bond is completed by a third, dative channel (an oxygen lone pair donated to carbon), giving total bond order $3$ and making $C...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -2239,6 +2319,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.206Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -2258,6 +2354,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.247Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: final sentence checked against the body: \"The observed triple bond is completed by a third, dative channel (an oxygen lone pair donated to carbon), giving total bond order $3$ and making $C...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -2277,6 +2389,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.287Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -2296,6 +2424,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.328Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: no unqualified maximum-strength claim; comparative and bounding claims carry their conditions.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-nonspeakable": [
@@ -2315,6 +2459,22 @@
         "reviewed_at": "2026-08-15T10:31:01.640Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f451e5ce4434",
+          "ts": "79e03c1bb3f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.370Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (covalent active set 2 + dative = 3; isoelectronic with N_2; matches co-bond-order-active-set.witness.json active_set/co_active_set). Judged on the whole text: read aloud end to end (3 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2338,5 +2498,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:13.370Z"
 }

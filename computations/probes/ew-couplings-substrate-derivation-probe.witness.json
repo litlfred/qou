@@ -13,7 +13,7 @@
       "value": 0.34671233017024816
     },
     "g/g' (1.865)": {
-      "deviation_pct": 1.433109035067032e-49,
+      "deviation_pct": 0.0,
       "label": "1/\u221a(1-cos\u00b2\u03b8_W)/cos \u03b8_W = sec(\u03b8_W)/tan(\u03b8_W) - 1 + 1",
       "target": 1.865011415525114,
       "value": 1.865011415525114
@@ -31,28 +31,30 @@
       "value": 1.791759469228055
     }
   },
-  "commitSha": "89d8246755486160660a8b4dfee7eebdae9608fc",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "ew_couplings_substrate_derivation_probe",
-  "computedAt": "2026-07-18T17:36:40.520044+00:00",
+  "computedAt": "2026-08-23T09:22:47.092080+00:00",
   "description": "Systematic candidate-formula search for SM EW parameters (g, g', g/g', v_ratio, scalar/gauge) from substrate (q_0, h_0, \u210f_q, Vol(B_3), Catalan, \u03c0, e, \u03c6). Identifies cleanest empirical matches; generates hypotheses for categorical investigation. NOT a derivation.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "interpretation": "These empirical matches are HYPOTHESES \u2014 clean numerical relations between substrate quantities and SM EW parameters that suggest possible categorical derivations. NONE of these constitute a proof; they generate candidate categorical structures for future investigation. Be cautious of numerology \u2014 many 'clean' matches at the few-% level are coincidental given the small number of substrate quantities and the many ways to combine them.",
   "parameters": {
-    "GOLDEN_PHI": "1.6180339887498948482045868343656381177203091798058",
-    "G_CATALAN": "0.91596559417721901505460351493238411077414937428167",
-    "HBAR_Q": "0.099081716044258507839177117518906063985258373389462",
-    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "GOLDEN_PHI": "1.61803398874989484820458683436563811772030917980576286213544862270526",
+    "G_CATALAN": "0.915965594177219015054603514932384110774149374281672134266498119621763",
+    "HBAR_Q": "0.09908171604425850783917711751890606398525837338946307825521469634167789",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "SCALAR_GAUGE_RATIO": 1.1958041958041958,
     "SM_g": 0.6535,
     "SM_g_prime": 0.3504,
     "SM_v_ratio": 1.8008130081300813,
-    "VOL_B3": "7.3277247534177521204368281194590728861931949942534",
+    "VOL_B3": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "dps": 50,
     "precision": "mpfr"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "results": {
     "g_candidates": [
       {
@@ -136,7 +138,7 @@
         "value": 1.6963463035619115
       },
       {
-        "deviation_pct": 1.433109035067032e-49,
+        "deviation_pct": 0.0,
         "label": "1/\u221a(1-cos\u00b2\u03b8_W)/cos \u03b8_W = sec(\u03b8_W)/tan(\u03b8_W) - 1 + 1",
         "target": 1.865011415525114,
         "value": 1.865011415525114
@@ -383,9 +385,9 @@
       }
     ]
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "ew_couplings_substrate_derivation_probe.py",
-  "scriptHash": "677501d121ef",
+  "scriptHash": "f521526f5515",
   "status": "exploratory",
   "tags": [
     "ew-substrate-derivation",

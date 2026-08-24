@@ -20,7 +20,7 @@ from qou_substrate import constants
 from qou_substrate.codata import codata, table
 
 _REPO = Path(__file__).resolve().parents[3]
-_UPLOADED = _REPO / "uploads" / "allascii.txt"
+_UPLOADED = _REPO / "library" / "allascii.txt"
 _VENDORED = Path(constants.__file__).resolve().parent / "data" / "allascii.txt"
 
 

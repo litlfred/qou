@@ -14,3 +14,10 @@ downstream consumers, and cross-prime coherence are recorded in
 [the follow-on remark](#rem:qou-motivic-galois-instance-verification);
 the per-cell $\mathrm{Frob}_p$ data appears in
 [the accompanying example](#ex:qou-motivic-galois-instance-per-cell).
+
+**Lean status (2026-08-12):** the co-located `.lean` file (which
+contained a bare `axiom` laundering the perpetual obstruction into the
+`MotivicGaloisCharacter` class) has been deleted.  The formalization
+now lives in
+`lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
+(Route A: prime-ideal-collapse proof, C = a₀(−1) + 2·a₁(−1), sorry-free).

@@ -3,8 +3,9 @@
 title: Remark interpreting squier-burau-unitary-1984.pdf at QOU.Machinery.HeckeMonodromyJordan
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:19Z
-updated_at: 2026-08-08T23:37:19Z
+updated_at: 2026-08-21T17:05:02Z
 ---
 
 Record the invariant-form statement next to the Burau-at-i monodromy work, together with what must be checked before it is used: whether the J_0 form and the corpus's Markov trace form agree (they are different objects on different modules), and what happens to the form's signature at the specialisation t = -1 / q = i where the corpus's eigenvalues collide. Deliberately not proposed as aid-proof: the Jordan-block proof is already sorry-free and does not need this, and the two forms have not been reconciled.
@@ -17,3 +18,10 @@ Source: `library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf` — no
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/squier-burau-unitary-1984/  ->  [squier1984]
+  The Burau representation is unitary
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [squier1984] as the citation key when you do it.

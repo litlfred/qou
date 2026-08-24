@@ -1404,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.179Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1423,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.239Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Five labelled steps; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1443,6 +1473,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 347 words (1.44/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.297Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Five em-dashes, all step-header separators per the chapter convention."
       }
     ],
     "trap-triples": [
@@ -1462,6 +1508,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 347 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.352Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'three-point: w, qw, q^2 w' is the operator's actual support; substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1481,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.404Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the fibre-level scope statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1500,6 +1576,23 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.475Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Step 1 narrated its own importance: 'This factorisation into the (star) denominator is the algebraic heart of the argument: it is the reason the second-order operator collapses onto the first-order recurrence.'",
+        "notes": "FIXED inline (deleted the announcement clause only; the explanatory clause is kept verbatim, no math and no meaning change): now reads 'This factorisation into the (star) denominator is the reason the second-order operator collapses onto the first-order recurrence.' $$ count re-checked even."
       }
     ],
     "trap-thesis-restatement": [
@@ -1519,6 +1612,22 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.552Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Step 4 restates the equivalence of (star) and (star-star), which is a substantive reversibility claim, not a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1538,6 +1647,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.626Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1557,6 +1681,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.691Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation. RECOMPUTED, all correct: the Step 1 factorisation q^{nu+2k} - (1+q^nu)q^k + 1 = (1-q^k)(1-q^{nu+k}) expands exactly; the k=0 coefficient vanishes because 1-q^0 = 0; the +w term in the middle coefficient does supply q^{k-1}c_{k-1}; and the q->1 contraction to w g'' + (nu+1) g' + g = 0 reproduces c_k/c_{k-1} = -1/(k(nu+k)), the stated classical Bessel ratio."
       }
     ],
     "trap-nonspeakable": [
@@ -1576,6 +1715,21 @@
         "reviewed_at": "2026-08-15T10:31:00.622Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e6b4d3145f9c",
+          "ts": "bf0c58240c56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.744Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Dense but speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1599,5 +1753,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:13:11.744Z"
 }

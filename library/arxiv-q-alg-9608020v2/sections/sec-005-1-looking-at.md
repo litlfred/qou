@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9608020v2
-doc_title: "∂x i + (n −j)θ +u 1≤i,j ≤n D(u;θ)Pλ (x;θ) = ( ∏ (λ i + (n −i)θ +u) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D"
+doc_title: "Shifted Jack polynomials, binomial formula, and applications"
 section_id: sec-005-1-looking-at
 section_title: "Looking at"
 section_number: 1
 pages: 4-5
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
-doc_brief: "SHIFTED JACK POLYNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
+doc_brief: "Shifted Jack polynomials, binomial formula, and applications — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1."
 ---
 the highest derivatives one easily proves that the map
 (3.4) D(n;θ) → S 1

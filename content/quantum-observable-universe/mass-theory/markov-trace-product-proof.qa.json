@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.679Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of proof. 'non-adjacent generators only' and the trefoil counterexample are substantive scope, not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.744Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.794Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two dashes, both true parentheticals introducing an appositive definition ('non-adjacent — that is, step 4 above ... must hold')."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.849Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The one enumeration has four items and each is a distinct condition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.902Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a scope statement (where the product formula remains valid), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,23 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.954Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'(Earlier versions had these two values swapped; fixed.)' narrates the document's own revision history inside scholarly prose rather than stating mathematics — a status leak of the same family as one-voice Category H.",
+        "notes": "Proposed (structural, touches the .ts): migrate to authorNotes: [{kind: 'note', body: 'Earlier versions had the vertex-product and corrected-Markov values swapped; corrected.'}] and delete the parenthetical from the .md. Not applied here because it moves content between siblings."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:50.999Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:51.047Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:51.090Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'naive' and 'correct' are used technically."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:00.513Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "895b755b5829",
+          "ts": "07f1ce03059e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:32:51.142Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "SWEEP DAMAGE + CONVENTION-C, reported out of criterion (see the batch findings): 'canonical at $q_0$:' opens a sentence with the bare lowercase 'canonical' substituted for 'Numerically', and the three numbers on that line (z^3 ~ 0.1245, hz^2+z ~ 0.5514, '4.4x off') are all CONVENTION-C values, contradicting the sibling theorem markov-trace-product.md which declares z = q^3/(q^2+1) convention D. Recomputed at the proton pin q0=1.1099785827513808: z_C=0.499320334184 -> z_C^3=0.124491, h z_C^2+z_C=0.551443, ratio 4.43; z_D=0.612688037146 -> z_D^3=0.229995, h z_D^2+z_D=0.691166, ratio 3.005. The 4.4x is load-bearing (it is the caveat's quantitative content) and is 3.0x under production convention D."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:32:51.142Z"
 }

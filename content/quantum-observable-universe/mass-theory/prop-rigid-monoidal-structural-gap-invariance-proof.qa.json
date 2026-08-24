@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not on the trace functional.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.857Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the fold acts on the index set of the tower, not on the trace functional' and 'a quantity that does not appear in the definition of Delta_cat' are the load-bearing distinctions of Step 2; substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.915Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three numbered proof steps plus three falsifiable predictions; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 598 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.973Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes, each a genuine appositive ('any two evaluation routes ... -- seminormal-form evaluation, recursive Markov peeling, or the Wenzl bridge -- return the same value'; 'The conventions differ only in how the divergent tower -- a quantity that does not appear in the definition of Delta_cat -- is regularized'). Acceptable density for a proof of this length."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 598 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.029Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Threes here are counted objects: three trace axioms M1-M3, three evaluation routes, three falsifiable predictions, six convention families. Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.091Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on prediction 3's magic-shell decomposition formula."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.147Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The proof factors into three steps' is a proof roadmap, standard usage."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.219Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The Step 3 close restates the proposition, which is what a proof's last line should do."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.277Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1635,23 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.339Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Typographic shouting in falsifiable prediction 1: 'the resulting Delta_cat should be ATOM-DEPENDENT but CONVENTION-INDEPENDENT'.",
+        "notes": "FIXED inline (case change only, no math, no meaning change): now 'should be atom-dependent but convention-independent'. $$ count re-checked even. SEPARATE, NOT fixed (reported to the coordinating session): prediction 2 reads 'vary by orders of magnitude across the six canonical evaluation families', where Step 2 calls the same six objects 'brane-tower convention families'. 'canonical evaluation families' fits the chapter's confirmed 'canonical'-for-'numerical' token substitution; restoring the original word is a sweep-repair task, not a trap fix."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:00.586Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.400Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Dense but navigable; the six-item case list is enumerated rather than run together."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1709,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:11:19.400Z"
 }

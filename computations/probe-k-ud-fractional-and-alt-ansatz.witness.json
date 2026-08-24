@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:25.184276+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T15:00:42.010165+00:00",
+  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
   "assertions": [
     {
       "name": "all_ansatz_forms_scanned",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 923,
+  "durationMs": 716,
   "computation": "probe-k-ud-fractional-and-alt-ansatz",
   "scriptFile": "probe_k_ud_fractional_and_alt_ansatz.py",
-  "scriptHash": "2a6fb4e19367",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "ac579efd42f5",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,13 +28,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY probe extending PR #1467's integer k_ud scan to fractional values + alternative ansatz forms (additive, geometric, bar-twisted, 9-pair weighted ratio). Reports which ansatz forms admit a k_ud that matches PDG m_d/m_u ≈ 2.16 within experimental σ. Shape hints for Direction 2 Step 2 categorical derivation. Audit-only; never feeds production. Per fitted_labelled_canonical_audit discipline.",
   "auditOnly": "docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md",
   "data": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "bring_base_exponent": 10,
     "pdg_md_mu_target": "2.16",
     "pdg_md_mu_err": "0.07",
@@ -50,51 +52,51 @@
     "scan_results": [
       {
         "ansatz": "multiplicative",
-        "best_k_ud": 8.27890163405605,
-        "best_value_at_k": "2.1600000000000001421",
-        "pdg_residual_pct": 4.287683934625041e-29,
+        "best_k_ud": 8.278904248570868,
+        "best_value_at_k": "2.16",
+        "pdg_residual_pct": 6.386944159266023e-30,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "additive (c=1)",
         "best_k_ud": 20.01,
-        "best_value_at_k": "1.7993533382520415458",
-        "pdg_residual_pct": -16.696604710553636,
+        "best_value_at_k": "1.7993530698603787207",
+        "pdg_residual_pct": -16.69661713609358,
         "matches_pdg_within_sigma": false
       },
       {
         "ansatz": "additive (c=10)",
-        "best_k_ud": 1.510868853822886,
-        "best_value_at_k": "2.1600000000000001421",
-        "pdg_residual_pct": -2.4763013533578329e-29,
+        "best_k_ud": 1.5108700262738812,
+        "best_value_at_k": "2.16",
+        "pdg_residual_pct": 1.2538463880861384e-29,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "geometric (p=1)",
-        "best_k_ud": -7.38070557866309,
-        "best_value_at_k": "2.1600000000000001421",
-        "pdg_residual_pct": 1.126816851706959e-30,
+        "best_k_ud": -7.380706394759342,
+        "best_value_at_k": "2.16",
+        "pdg_residual_pct": -7.312755925070521e-30,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "geometric (p=10)",
-        "best_k_ud": -0.7380705578663089,
-        "best_value_at_k": "2.1600000000000001421",
-        "pdg_residual_pct": -9.459440968500936e-30,
+        "best_k_ud": -0.7380706394759342,
+        "best_value_at_k": "2.16",
+        "pdg_residual_pct": 4.0338317357665443e-29,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "bar-twisted",
         "best_k_ud": -10.0,
-        "best_value_at_k": "0.65392726963639264291",
-        "pdg_residual_pct": -69.72558936868553,
+        "best_value_at_k": "0.65392733219391510036",
+        "pdg_residual_pct": -69.72558647250393,
         "matches_pdg_within_sigma": false
       },
       {
         "ansatz": "9-pair weighted ratio",
-        "best_k_ud": 15.275965822435667,
-        "best_value_at_k": "2.1600000000000001421",
-        "pdg_residual_pct": 1.777507020617337e-29,
+        "best_k_ud": 15.275969852181513,
+        "best_value_at_k": "2.16",
+        "pdg_residual_pct": 2.890131698494873e-29,
         "matches_pdg_within_sigma": true
       }
     ],
@@ -106,6 +108,6 @@
       "9-pair weighted ratio"
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

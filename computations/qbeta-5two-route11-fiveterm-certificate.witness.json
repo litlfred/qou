@@ -2,23 +2,23 @@
   "probe": "qbeta_5two_route11_fiveterm_certificate",
   "bean": "qou-fivt",
   "parent_bean": "qou-0yqu",
-  "dps": 50,
+  "dps": 70,
   "gates": [
     {
       "gate": "G1",
       "claim": "reflection L(x)+L(1-x)=L(1); inversion L(x)+L(1/x)=2L(1) for x>1; Landen L(x)+L(x/(x-1))=0 for x<0 -- on generic points",
-      "reflection_worst": "2.67276e-51",
-      "inversion_worst": "5.34553e-51",
-      "landen_worst": "1.33638e-51",
+      "reflection_worst": "1.81114e-71",
+      "inversion_worst": "3.62227e-71",
+      "landen_worst": "1.81114e-71",
       "caveat": "verified, not derived -- standard facts, but this probe does not prove them",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "R1, R2, R3 are genuine five-term instances, args all in (0,1)",
-      "R1": "-2.67276e-51",
-      "R2": "5.34553e-51",
-      "R3": "2.67276e-51",
+      "R1": "1.81114e-71",
+      "R2": "-2.7167e-71",
+      "R3": "3.62227e-71",
       "all_args_in_unit_interval": true,
       "pass": true
     },
@@ -121,22 +121,22 @@
           "k": 1,
           "value": "3.99483987663140706000444",
           "m": 17,
-          "abs_err": "0.0"
+          "abs_err": "3.62227e-71"
         },
         {
           "k": 2,
           "value": "1.17495290489159031176601",
           "m": 5,
-          "abs_err": "0.0"
+          "abs_err": "1.81114e-71"
         },
         {
           "k": 3,
           "value": "-0.234990580978318062353202",
           "m": -1,
-          "abs_err": "2.67276e-51"
+          "abs_err": "1.13196e-71"
         }
       ],
-      "worst": "2.6727647e-51",
+      "worst": "3.6222716e-71",
       "pass": true
     }
   ],

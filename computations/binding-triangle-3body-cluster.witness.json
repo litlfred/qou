@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:54:24.366223+00:00",
-  "commitSha": "c8f3e7a1151e324a81300c29a014a987995f9c10",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:18:39.884665+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 67,
+  "durationMs": 123,
   "computation": "binding-triangle-3body-cluster",
   "scriptFile": "binding_triangle_3body_cluster_probe.py",
-  "scriptHash": "8401356fa55e",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptHash": "534a38c2354f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,15 +18,26 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_triangle_3body_cluster_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_triangle_3body_cluster_probe.py"
   },
   "description": "CORRECTED: product-model 3-body content. The full beyond-pairwise (2-bond + 3-bond) clusters sum to -4.7..-7.0 MeV (destructive), opposite empirical b3 > 0. Closing the triangle does NOT flip the sign; the prior '+u3 matches b3' claim cherry-picked the top cluster term and is retracted. The sign candidate is the chirality involution (|chi| vs signed trace).",
   "parameters": {
-    "q_0": "1.109978582751380807591669095610768879874",
-    "E0_MeV": "4.185981363294475896945062158759008410144",
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879650999772224232747828",
     "tau_p": "1.22036288908669305595736107223",
-    "tau_n": "1.194862425413377106533238569760592864699",
+    "tau_n": "0.9737730613113362084881579823528874976463453528120615981943207074361024",
     "free_parameters": 0
   },
   "data": {
@@ -34,40 +45,40 @@
       {
         "atom": "T",
         "pn_convention": "chi (pn=z)",
-        "one_bond_MeV": "12.4795034",
-        "two_bond_MeV": "-7.011636154",
-        "three_bond_MeV": "1.297601262",
-        "beyond_pairwise_MeV": "-5.714034892",
+        "one_bond_MeV": "6.641069753",
+        "two_bond_MeV": "-2.964389859",
+        "three_bond_MeV": "0.4333522468",
+        "beyond_pairwise_MeV": "-2.531037613",
         "empirical_b3_MeV": "1.8081",
         "same_sign_as_b3": false
       },
       {
         "atom": "3He",
         "pn_convention": "chi (pn=z)",
-        "one_bond_MeV": "11.18856496",
-        "two_bond_MeV": "-5.601886967",
-        "three_bond_MeV": "0.9349169648",
-        "beyond_pairwise_MeV": "-4.666970002",
+        "one_bond_MeV": "7.053670965",
+        "two_bond_MeV": "-2.731971147",
+        "three_bond_MeV": "0.3527083691",
+        "beyond_pairwise_MeV": "-2.379262778",
         "empirical_b3_MeV": "1.044345",
         "same_sign_as_b3": false
       },
       {
         "atom": "T",
         "pn_convention": "bar-averaged (pn=z-h/2)",
-        "one_bond_MeV": "14.00423591",
-        "two_bond_MeV": "-8.936892563",
-        "three_bond_MeV": "1.895977928",
-        "beyond_pairwise_MeV": "-7.040914635",
+        "one_bond_MeV": "7.653752385",
+        "two_bond_MeV": "-4.013477722",
+        "three_bond_MeV": "0.6988285704",
+        "beyond_pairwise_MeV": "-3.314649152",
         "empirical_b3_MeV": "1.8081",
         "same_sign_as_b3": false
       },
       {
         "atom": "3He",
         "pn_convention": "bar-averaged (pn=z-h/2)",
-        "one_bond_MeV": "12.74583794",
-        "two_bond_MeV": "-7.242667778",
-        "three_bond_MeV": "1.366045165",
-        "beyond_pairwise_MeV": "-5.876622612",
+        "one_bond_MeV": "8.322796545",
+        "two_bond_MeV": "-3.78139713",
+        "three_bond_MeV": "0.5687813717",
+        "beyond_pairwise_MeV": "-3.212615758",
         "empirical_b3_MeV": "1.044345",
         "same_sign_as_b3": false
       }

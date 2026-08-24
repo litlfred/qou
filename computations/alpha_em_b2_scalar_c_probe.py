@@ -59,8 +59,9 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import seminormal_matrices_mpfr  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 SHAPE = (4, 1)      # std = standard 4-dim S₅ irrep; #SYT = 4
 N = sum(SHAPE)      # 5

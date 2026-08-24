@@ -10,4 +10,4 @@ $$
 The descended elements are Casimir operators corresponding to the volume, pairing, and Wigner terms of the liquid-drop model. They evaluate purely via quantum factorials scaled by Plancherel weights.
 
 **Transient terms.**
-The transient elements isolate corrections from the surface boundary, the Coulomb charge locus, the exchange parity locus, and magic-number shell closures. Each corresponds to a specific geometric blow-up evaluated by a quantum dilogarithm correction based on its Schur-Weyl magnetic quantum number. The descent decomposition universally structures both the mass endomorphism and the electromagnetic coupling.
+The transient elements isolate corrections from the surface boundary, the Coulomb charge locus, the exchange parity locus, and magic-number shell closures. Each corresponds to a specific geometric blow-up evaluated by a quantum dilogarithm correction based on its Schur-Weyl magnetic quantum number. The descent decomposition structures both the mass endomorphism and the electromagnetic coupling.

@@ -1785,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:20.732Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Definition block; every clause positive. 'Non-commutative' is the defined term, not a denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1804,6 +1819,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:20.844Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Curve -> quantum coordinate ring -> S_5 action -> Reeb modes; each paragraph advances, none reframes."
       }
     ],
     "trap-em-dash": [
@@ -1823,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:20.959Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1842,6 +1887,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.007Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The three defining forms (sum x_i, sum x_i^2, sum x_i^3) are the actual complete-intersection equations, not a prose triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1861,6 +1921,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.049Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the 2g = 8 Reeb-mode correspondence, i.e. content."
       }
     ],
     "trap-meta-commentary": [
@@ -1880,6 +1955,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.094Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1899,6 +1989,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.137Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Closing sentence adds the spectral basis for xi_q rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1918,6 +2023,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.177Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1937,6 +2057,21 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.239Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1956,6 +2091,22 @@
         "reviewed_at": "2026-08-15T10:30:59.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9fa59e7d52a8",
+          "ts": "a9bf8993dbac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:21.283Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Reads aloud cleanly.",
+        "notes": "MATH FINDING to report (not edited): the block states 'This action descends to an S_5-action on O_q(B) by algebra automorphisms' for the quantum polynomial ring with x_i x_j = q x_j x_i (i < j). A transposition (i j) sends that relation to x_j x_i = q x_i x_j, whereas the ring gives x_j x_i = q^{-1} x_i x_j, so a permutation is an algebra automorphism only when q^2 = 1. For general q the coordinate permutations act as a twisted / q -> q^{-1} action, not by algebra automorphisms. Checked separately and correct: genus g = 4, 2g = 8 cycles, and Aut(Bring) = S_5 for the classical curve. Also mixed orthography ('fiber'/'realizing' here vs 'fibre'/'realisation' elsewhere in the chapter)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1979,5 +2130,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:56:21.283Z"
 }

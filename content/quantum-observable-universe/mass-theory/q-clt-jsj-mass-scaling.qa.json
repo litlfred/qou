@@ -1,0 +1,168 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.732Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read. \"not Q_beta, not a fit\" and \"a modeling choice rather than a derived quantity\" are factual scope statements (false-positive class: temporal/scope status), not manufactured contrast."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a74611332f6c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.733Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "L18 is one 120-word sentence carrying five distinct claims (binding fraction plateau, nucleon-mass gap, spectral correction, cross-isotope spread, witness pointer) joined by semicolons and parentheticals.",
+        "notes": "proposed: break at \"Validated on the three light compound nuclei\"; the witness pointer becomes its own sentence."
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T06:38:29.733Z"
+}

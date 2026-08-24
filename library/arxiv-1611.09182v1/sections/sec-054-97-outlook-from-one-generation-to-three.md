@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-054-97-outlook-from-one-generation-to-three
 section_title: "Outlook: From one generation to three"
 section_number: 9.7
 pages: 89-91
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 In Section 6.8, we described a one-generation model in C⊗← −O, transforming under the
 symmetry generators Λ j and Q. In Section 9 we described a three-generation model in

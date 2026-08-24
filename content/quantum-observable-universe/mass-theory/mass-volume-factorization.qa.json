@@ -1756,6 +1756,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.151Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of conjecture block. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1775,6 +1790,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.281Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; the 'However, the precise assignment map ... requires a per-isotope phenomenological fit' turn is a genuine concession, not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -1794,6 +1824,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 195 words)"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.363Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1813,6 +1858,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 195 words)"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.426Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1832,6 +1892,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.516Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on 'The map remains a conjecture pending rigorous derivation of the atom-to-link translation and local density rules from first principles' — a scope statement and the honest one."
       }
     ],
     "trap-meta-commentary": [
@@ -1851,6 +1926,23 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.598Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block opens with a document-status banner in scholarly prose: '> **Superseded.** The scalar substrate density rho_q = 1/hbar_q^2 used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it (mass-endomorphism-tower).' AGENTS.md section 4d maps this case explicitly — 'Status: DEPRECATED — superseded by ...' migrates to authorNotes with kind 'deprecated' and a 'see' pointer — so the banner belongs in the .ts, not at the head of the rendered block.",
+        "notes": "Proposed (structural, moves content between siblings): authorNotes: [{kind: 'deprecated', date: '<date>', body: 'The scalar substrate density rho_q = 1/hbar_q^2 used here is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it.', see: 'prop:mass-endomorphism-tower'}], and delete the banner from the .md. Note the banner IS doing real work while it sits there (see trap-nonspeakable), so it should be migrated rather than dropped."
       }
     ],
     "trap-thesis-restatement": [
@@ -1870,6 +1962,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.671Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1889,6 +1996,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.758Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1908,6 +2030,21 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.829Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the universal categorical density' is a named object rather than inflation, and the supporting-evidence paragraph quantifies (6.2%) and concedes the phenomenological fit rather than overclaiming."
       }
     ],
     "trap-nonspeakable": [
@@ -1927,6 +2064,22 @@
         "reviewed_at": "2026-08-15T10:31:00.657Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "296d253ff000",
+          "ts": "0ecf6ee2c2d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:17.939Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Checks, all favourable. TOPOLOGY CORRECT: torus knots are Seifert-fibred and not hyperbolic, so 'Seifert-fibered torus-knot nucleons contribute zero volume' is right, and restricting the JSJ sum to hyperbolic pieces is the correct reading of Thurston additivity. EXCISION-COMPLIANT: the JSJ equation targets B(Z,N), a binding energy, not an absolute MeV mass. ANTI-FIT HONEST: the block states outright that the atom-to-link assignment 'requires a per-isotope phenomenological fit' and that the map 'remains a conjecture', and the kind is correctly 'conjecture'. ONE THING THE BANNER IS LOAD-BEARING FOR: 'the formula m = Vol/hbar_q^2' is exactly the form AGENTS.md's mass-formula guardrail flags as the WRONG absolute-mass shape (applying 1/hbar_q^2 to the Borromean volume, which lands m_p at +2.96% or -57% depending on the density used), and it also drops the m_e that carries the MeV scale in the canonical m(K) = m_e Vol(K) rho(K)/hbar_q^2. The Superseded banner is what currently stops a reader taking that formula as live, which is a reason to migrate it carefully rather than delete it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1950,5 +2103,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:52:17.939Z"
 }

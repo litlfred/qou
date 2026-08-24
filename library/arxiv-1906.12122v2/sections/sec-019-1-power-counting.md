@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1906.12122v2
-doc_title: "Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ Institut f¨ ur Kernphysik, Technische Universit¨ at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute"
+doc_title: "Nuclear effective field theory: status and perspectives"
 section_id: sec-019-1-power-counting
 section_title: "Power counting"
 section_number: 1
 pages: 40-40
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
-doc_brief: "Nuclear effective field theory: status and perspectives H.-W. Hammer∗ Institut für Kernphysik, Technische Universität Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections: C"
+doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
 ---
 and Phillips, 2003; Long and van Kolck, 2010).
 Whether other nucleon excitations should be intro-

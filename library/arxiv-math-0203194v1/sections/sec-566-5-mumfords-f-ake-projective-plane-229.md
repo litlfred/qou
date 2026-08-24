@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-566-5-mumfords-f-ake-projective-plane-229
 section_title: "MUMFORD’S F AKE PROJECTIVE PLANE. 229"
 section_number: 5
 pages: 233-235
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 with Π 3 =µ and Π z =zσΠ for z∈L. The involution ∗ on D is deﬁned by
 z∗ =z for z∈L and Π ∗ =µΠ 2. It is easily veriﬁed that ∗ is positive.

@@ -2144,6 +2144,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.408Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'The gap lies in the functional form: T_3 ... requires -z^2 sum Li_2^q(-|V_iV_j|), **not** alpha z^2 sum ln|V_iV_j|'; 'avoiding the naive product V_i^std . V_j^std'; 'It is never added to the mass'.",
+        "notes": "All substantive: each names a specific wrong functional form against the right one, which is the open problem the block is describing."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2163,6 +2179,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.450Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Statement, three-piece proof, identification table, significance, production wiring. No reframe.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -2182,6 +2214,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 594 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.495Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero em-dashes (the one non-ASCII character is an en-dash in the page range '349-383').",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -2201,6 +2249,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 594 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.539Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'The graded expansion splits into three pieces' -- LO, single-gen, pair-gen, matching the three underbraced terms of the displayed formula exactly.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -2220,6 +2284,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.583Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on a References entry.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -2239,6 +2319,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.626Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'We expose the graded expansion ... by multiplying the GB-NF identity through by ...'",
+        "notes": "Ordinary derivation narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -2258,6 +2354,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.670Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "The 'Significance' section restates the three-tier status, but does so as an explicit per-tier epistemic ledger (theorem / proved-empirical / open), which is the discipline AGENTS.md asks for rather than a manufactured closer.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -2277,6 +2389,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.715Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -2296,6 +2424,23 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.760Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'the bound atomic case receives **full coverage**'; 'the higher pieces and the interface contribution **close** the residual'; 'Finding the precise Wedderburn-coupling structure **closes** the six-term theorem's Kashaev limit at sub-percent accuracy'; 'verifies ... to **machine precision** (3.2e-14)'. Four maximum-strength claims, three of them asserting closure of a term the same block calls open, in the present tense.",
+        "notes": "REPORT ONLY, not fixed (scope + math). PROPOSED wording: 'full coverage' -> 'coverage of the constituent and single-generator tiers'; 'close the residual' / 'closes the ... Kashaev limit' -> 'would close'. FINDINGS: (1) ACCURACY FIGURES CONTRADICT THE BLOCK'S OWN PRODUCTION WITNESS. 'Production wiring' says 'yielding 0.19% mean error and 0.30% maximum error across the published Z = 1..10 table' and names computations/rho-k-graded-atomic-mass.witness.json; that witness records mean_abs_err_pct = 0.310122 and max_abs_err_pct = 0.413107 (its own assertions single_gen_mean_abs_err_pct and single_gen_max_abs_err_pct carry the same values, passing only because the tolerances are 0.5 and 1.0). The quoted MAX (0.30%) is below the witness's MEAN (0.31%). The separate headline figure '0.18% mean / 0.35% max across Z = 1..20' cites a different witness (atomic-braid-mass-paper-formula.witness.json) and is not adjudicated here. (2) TABLE 1 IS DESTROYED -- rho-k-graded-expansion-table1-data.md is nothing but the boilerplate sentence, yet this block says 'See Table 1', then 'Both pair extensions degrade accuracy' (the reader cannot learn what the two extensions are) and '(see Table 1)' again in Production wiring. (3) VERIFIED CORRECT, do not re-flag: alpha = m_e * 8G = 0.51099895069 * 7.327724753 = 3.744460 MeV, matching the quoted 3.7445; the convention-D declaration z = q^3/(q^2+1) is CORRECT and explicitly labelled, which is the hygiene per-block-hopf-jones-absorption-pattern.md lacks; the Markov multiplicativity statement and the LO rearrangement are algebraically sound; all three named producer/witness files exist. (4) Minor: 'The **script** rho-k-markov-multiplicativity.witness.json' calls a witness a script; 'The leading-order piece **acts as** a theorem' and 'the single-generator piece **forms** the proved binding correction' are the forms/acts-for-is verb substitution recurring across this chapter."
       }
     ],
     "trap-nonspeakable": [
@@ -2315,6 +2460,22 @@
         "reviewed_at": "2026-08-15T10:31:00.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f2ee2cdd4233",
+          "ts": "3a929c499127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.808Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'the pair-generator Wedderburn-coupling correction'; 'the log-volume analogue of T_3'.",
+        "notes": "Parses."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2358,5 +2519,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T22:02:15.526Z"
+  "updated_at": "2026-08-22T04:14:17.808Z"
 }

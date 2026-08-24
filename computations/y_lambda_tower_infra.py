@@ -64,7 +64,9 @@ import mpmath as mp
 # load so extend_y_lambda_tower / _table_entries are correct when this module is
 # IMPORTED as a library (e.g. chi_via_rust_lossless._ensure_y_lambda), not only
 # when run via main().
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -199,7 +201,7 @@ def main() -> int:
     # monotonic: WitnessBuilder computes durationMs = monotonic() − start_time.
     t0 = time.monotonic()
     up_to = int(sys.argv[1]) if len(sys.argv) > 1 else 24
-    mp.mp.dps = 50
+    set_compute_dps()
     print("=" * 84)
     print(f" y_λ tower infra — closed-form principal specialization, extend to n={up_to}")
     print(f"   q₀ = {Q_50_DIGIT_STR[:22]}…   (no recursion; O(p(n)·n) mpf ops)")

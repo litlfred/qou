@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0403224v1
-doc_title: "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI"
+doc_title: "Difference equation of the colored Jones polynomial for torus knot"
 section_id: sec-005-3-a-p-olynomial
 section_title: "A-P olynomial"
 section_number: 3
 pages: 4-6
 source_pdf: 0403224v1.pdf
 source_sha256: c25ccba77da375ad
-doc_brief: "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT KAZUHIRO HIKAMI — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence"
+doc_brief: "Difference equation of the colored Jones polynomial for torus knot — We prove that the N-colored Jones polynomial for the torus knot Ts, t satisﬁes the second order diﬀerence equation, which reduces"
 ---
 In Ref. 5 the “AJ conjecture” is proposed; the homogeneous diﬀerence
 equation of the colored Jones polynomial JK(N) for knot K gives the A-

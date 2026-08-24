@@ -542,13 +542,15 @@ def main() -> int:
     ap.add_argument(
         "--scan-root", default=None, metavar="DIR",
         help="directory to scan instead of computations/ (repo-relative). "
-             "The baseline is keyed on computations/ paths, so any OTHER root "
-             "reports every dirty file as NEW — that is honest for a "
-             "previously-unscanned tree, but it means such a run belongs in "
-             "precision-gates.sh as ADVISORY, never blocking, until the files "
-             "are drained. Do NOT rebaseline against a different root: it "
-             "would grow the baseline, which the discipline forbids "
-             "(bean qou-irzg).")
+             "Each root gets its OWN baseline file (see _baseline_path), so a "
+             "root with no baseline yet reports every dirty file as NEW and "
+             "such a run is ADVISORY until coverage is established. "
+             "--rebaseline against a non-default root is PERMITTED and is how "
+             "you establish that coverage: it writes that root's own file and "
+             "cannot reach the corpus baseline. Once established the root can "
+             "go blocking. Establishing coverage over an unscanned tree is a "
+             "different act from silencing a regression in a covered one; "
+             "only the latter is forbidden (bean qou-irzg).")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on a NEW dirty witness or an INCREASED count")
     ap.add_argument("--rebaseline", action="store_true",
@@ -577,10 +579,6 @@ def main() -> int:
             "NO baseline yet — every dirty file below reads as NEW; "
             "--rebaseline to establish coverage")
         print(f"  scan root                      : {args.scan_root}  [{_cov}]")
-        _unused_banner = (
-              f"[non-default — baseline does not cover it, so every dirty\n"
-              f"                                   file below is reported as "
-              f"NEW; treat this run as ADVISORY]")
     found = scan(scan_root)
     baseline_path = _baseline_path(scan_root)
     prior: dict[str, int] = {}
@@ -654,7 +652,21 @@ def main() -> int:
                      "ONLY when draining. Adding a file here to silence a "
                      "failure defeats the gate — fix at the producer instead.",
              "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
-             "drain_owner": "PR #4677 (float64 residual, producer-side)",
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it,
+             # and stamping every root with #4677 would send the next agent to
+             # an arc that never touched these files.
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it.
+             # Do NOT name a bean here — this string is written for EVERY
+             # root, so a hardcoded id sends the next agent to the wrong arc
+             # (it said qou-irzg, the audits-tree bean, while writing the
+             # qou-mass baseline). The owning bean is recorded beside the
+             # gate entry in scripts/precision-gates.sh, which is per-root.
+             "drain_owner": ("PR #4677 (float64 residual, producer-side)"
+                             if scan_root is None else
+                             f"whoever gated {args.scan_root} — see the gate "
+                             f"entry in scripts/precision-gates.sh"),
              "files_count": len(found),
              "fields_count": total,
              "files": dict(sorted(found.items()))}, indent=2) + "\n")

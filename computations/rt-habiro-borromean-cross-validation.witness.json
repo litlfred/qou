@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T15:05:00.072702+00:00",
-  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:57:28.565001+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rt-habiro-borromean-cross-validation",
   "scriptFile": "rt_habiro_borromean_cross_validation.py",
-  "scriptHash": "b83ab7b8a357",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "77a27521b2e7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,15 +19,25 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rt_habiro_borromean_cross_validation.py"
+    ],
+    "reproduce": "python3 -u computations/rt_habiro_borromean_cross_validation.py"
   },
   "description": "Per docs/audits/2026-05-24-rt-route-research-frontiers-w-correction-habiro-heegaard.md §5#1: tests Borromean Markov-trace closed form (PR #1081) at q = exp(2πi/N) for N = 2..8. The values are the Habiro-conjectural specializations of the Borromean trace element to root-of-unity. Cross-validation against independent J_N computation (via state-sum on 8-ideal-octahedra) is queued as the next research-grade test.",
   "compute": "rt_habiro_borromean_cross_validation",
   "parameters": {
     "precision": "mpfr",
     "dps": 50,
-    "Q_0": "1.1099785955573347198997632204832250266562084087802",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "N_values_tested": [
       2,
       3,
@@ -39,14 +49,14 @@
     ]
   },
   "tr_M_at_q0_real": {
-    "q": 1.1099785955573347,
-    "tr_M": 0.9985621631974125
+    "q": 1.1099785827513808,
+    "tr_M": 0.9985621638367873
   },
   "tr_M_at_root_of_unity": [
     {
       "N": 2,
       "q_real": -1.0,
-      "q_imag": -1.0106957375356833e-51,
+      "q_imag": 8.163677470282527e-72,
       "tr_M_real": 1.0,
       "tr_M_imag": 0.0,
       "tr_M_magnitude": 1.0,
@@ -111,6 +121,6 @@
     "cross-validation",
     "hyperbolic-rt-unification"
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

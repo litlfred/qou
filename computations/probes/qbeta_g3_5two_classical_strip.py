@@ -46,6 +46,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_barodd_substrate",
@@ -54,7 +55,7 @@ _bs = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_bs)
 Z52, Z52_avg = _bs.Z52, _bs.Z52_avg
 
-mp.mp.dps = 45
+set_compute_dps()
 
 # printed (238) polynomials in s = x + 1 + x⁻¹ (glyph-extracted)
 P0 = [-81, 112, -78, -70, 94, -38, 5]

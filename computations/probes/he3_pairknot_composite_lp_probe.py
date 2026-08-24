@@ -71,8 +71,16 @@ from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import NF_NAMES, TR_M, gram_matrix  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # NF-basis Wedderburn dominant blocks (from aK_via_lp_dual_hecke_basis.py):
 # self-conjugate (charge-symmetric / strong) = (2,1) = L₊,L₋; the rest

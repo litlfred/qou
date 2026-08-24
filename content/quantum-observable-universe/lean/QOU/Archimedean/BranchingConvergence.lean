@@ -131,6 +131,30 @@ theorem ratio_perturbation_bound (A B C D ε : ℝ)
 -- Ref: [sagan2001] Corollary 3.2.3 (Pieri rule for SYT)
 -- Ref: [stanley1999] §7.10 (RSK and growth diagrams)
 
+/-- Fomin identity (Fomin 1994), as a **predicate** on branching data:
+    the first-moment branching sum `Σ_{λ ⊢ k} dim(λ)·m_μ^λ` equals
+    `(k!/n!)·dim(μ)`.
+
+    Named, not asserted (§3b): `dim_fn` / `mult_fn` here are arbitrary
+    functions, so the equation is provable only once they are the genuine
+    SYT counts `dim(λ) = #SYT(λ)`, `m_μ^λ = #SYT(λ/μ)` — the upstream
+    combinatorial input, not yet formalized here. The concrete instance
+    `fomin_k4_std` below (`by decide`) verifies it at `k = 4`. -/
+def fomin_identity (k n : ℕ)
+    (partitions_k : Finset (List ℕ))
+    (dim_fn : List ℕ → ℕ)    -- dim(λ) = #SYT(λ)
+    (mult_fn : List ℕ → ℕ)   -- m_μ^λ = #SYT(λ/μ) for fixed μ
+    (dim_mu : ℕ) : Prop :=    -- dim(μ)
+  partitions_k.sum (fun lam => dim_fn lam * mult_fn lam) =
+    k.factorial / n.factorial * dim_mu
+
+/-- The Fomin identity specialized to `n = 3`, as a predicate:
+    `Σ_{λ ⊢ k} dim(λ)·m_μ^λ = (k!/6)·dim(μ)` (see `fomin_identity`). -/
+def fomin_identity_n3 (k : ℕ)
+    (total_branch_μ : ℕ)
+    (dim_mu : ℕ) : Prop :=
+  total_branch_μ = k.factorial / 6 * dim_mu
+
 /-- Concrete verification at k = 4:
     Σ dim(λ)·m_{(2,1)}^λ over λ ⊢ 4 = 4!/6 · 2 = 4·2 = 8.
 

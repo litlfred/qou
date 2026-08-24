@@ -1300,6 +1300,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a mathematical gap.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.119Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "major",
+        "evidence": "Block-final sentence asserts by denying: 'The remaining hypotheses - that the second solution is comparable, meromorphic, and continuous where finite - are the honest content of \"the physical Phi_b is a bona-fide meromorphic function\", NOT A MATHEMATICAL GAP.' The positive half already states what the hypotheses are; the denial is doing the rhetorical work, pre-empting the objection rather than answering it. This is not the substantive-mathematical-contrast false positive: 'a mathematical gap' is an epistemic assessment, not a mathematical alternative.",
+        "notes": "STRUCTURAL - deliberately NOT fixed inline. Deleting ', not a mathematical gap' removes an epistemic claim about the block's own standing, which an auditor should not do unilaterally under the conditional-proved != premise-established discipline. Proposed: state it positively and let the reader judge - 'The remaining hypotheses ... are what \"the physical Phi_b is a bona-fide meromorphic function\" asserts.' - and migrate the whole '## Standing' section to authorNotes (kind: status) per AGENTS.md SS4d, where a standing assessment belongs."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1319,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:23.942Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:faddeev-phib-uniqueness (conditional statement, Phi_b product, 'Why the shift equations alone do not suffice' with a three-item rigidity list, 'Standing' section). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1339,6 +1371,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 382 words (1.83/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.156Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Four em-dash uses; three are correctly paired true parentheticals (the comparability gloss, the Weierstrass-p gloss, the remaining-hypotheses gloss). Only one appends ('It is the canonical solution - it satisfies both hypotheses with c = 1, so ...'). One appender is not the density pattern."
       }
     ],
     "trap-triples": [
@@ -1358,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 382 words)"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.226Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The three numbered rigidity inputs (inversion relation, sigma-unitarity, analytic exclusion) are content-forced and are announced accurately ('two further inputs ... and one growth condition' = 3), not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1377,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:23.977Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:faddeev-phib-uniqueness (conditional statement, Phi_b product, 'Why the shift equations alone do not suffice' with a three-item rigidity list, 'Standing' section). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1396,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.190Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No narration of the author's own emphasis. The '## Standing' section is self-assessment of the block's epistemic state, which is a SS4d authorNotes matter (flagged on trap-negation-contrast), not emphasis-narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1415,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.012Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:faddeev-phib-uniqueness (conditional statement, Phi_b product, 'Why the shift equations alone do not suffice' with a three-item rigidity list, 'Standing' section). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1434,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.049Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:faddeev-phib-uniqueness (conditional statement, Phi_b product, 'Why the shift equations alone do not suffice' with a three-item rigidity list, 'Standing' section). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1453,6 +1575,21 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.084Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prop:faddeev-phib-uniqueness (conditional statement, Phi_b product, 'Why the shift equations alone do not suffice' with a three-item rigidity list, 'Standing' section). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1472,6 +1609,22 @@
         "reviewed_at": "2026-08-15T10:31:00.763Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "93f0a1ed0ce2",
+          "ts": "ff98cbb05786"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:24.261Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Long sentences but each is comma-structured and readable aloud; the noun stacking ('removable-singularity extension', 'product-norm bounds') is standard analysis vocabulary.",
+        "notes": "RIGOR (reported, not fixed - MAJOR, two of the three rigidity inputs are false as stated on the block's own branch; verified numerically at 30 dps from the block's own product formula, b = sqrt(t/2pi) e^{i pi/4}, t = ln q0 = 0.1043407203, |b| = 0.1288655943, b^2 = 0.0166063414i so Im b^2 > 0 as required). (1) ITEM 1 IS WRONG. The block writes 'The inversion relation Phi_b(x)Phi_b(-x) = c_0'. Computed from the block's own products, Phi_b(z)Phi_b(-z) is NOT constant: (6.7171e6 + 1.9515e6 i) at z = 0.3, (2.1971e5 + 6.9913e6 i) at z = 0.7, (-5.5270e6 - 4.2872e6 i) at z = 1.1. Dividing by e^{i pi z^2} gives 6994799.44082 at ALL THREE points to 12 digits. So the correct relation is Phi_b(z)Phi_b(-z) = c_0 . e^{i pi z^2} - Faddeev's Gaussian inversion relation - not a constant. (The Gaussian cancels in the ratio Phi_1/Phi_b if both solutions satisfy it, so the CONCLUSION of item 1 may survive; the stated relation does not.) (2) ITEM 2 IS WRONG ON THIS BRANCH. 'sigma-unitarity (self-duality, |Phi_b| = 1)' fails badly: |Phi_b(0)| = 2644.768315, |Phi_b(0.3)| = 8243.118301, |Phi_b(-0.3)| = 848.562302, |Phi_b(1.1)| = 142623.4128. Unitarity of Faddeev's Phi_b requires b real or |b| = 1 (b^2 real); the physical branch chosen here has b^2 PURELY IMAGINARY, which is exactly what makes the products converge (|e^{i pi b^2}| = 0.9491671528, |e^{-i pi/b^2}| = 6.9e-83) and exactly what destroys unitarity. Proposed: either restate items 1-2 with the Gaussian factor and a unitarity condition that holds on Im b^2 > 0, or state the rigidity argument on the branch where unitarity is available and transfer by analytic continuation. (3) VERIFIED CORRECT: the branch condition Im b^2 > 0 does hold for the stated physical b, and both infinite products converge there; the product written is Faddeev's Phi_b in the standard (-q e^{2 pi b z}; q^2)_inf / (-q~^{-1} e^{2 pi z/b}; q~^{-2})_inf normalisation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1501,5 +1654,5 @@
     "lean": "42f891a2f579",
     "lean_statement": "8c1fba5f91d6"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:24.261Z"
 }

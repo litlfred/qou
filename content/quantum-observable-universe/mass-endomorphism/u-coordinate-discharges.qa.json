@@ -1516,6 +1516,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.144Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1535,6 +1550,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.184Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-em-dash": [
@@ -1554,6 +1584,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 248 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.223Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-triples": [
@@ -1573,6 +1618,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 248 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.260Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-closing-aphorism": [
@@ -1592,6 +1652,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.300Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-meta-commentary": [
@@ -1611,6 +1686,23 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.343Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "'## Significance' narrates the audit history ('Previously, explicit-residual discharges ... appeared abstractly trivial') rather than the author's own emphasis, and the section does deliver new content (why field_simp closes the goals).",
+        "notes": "note: borderline; the status framing in the .ts authorNotes is the right home for the reviewer-critique language, and it is already there."
       }
     ],
     "trap-thesis-restatement": [
@@ -1630,6 +1722,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.386Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-performed-warmth": [
@@ -1649,6 +1756,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.426Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "trap-superlative": [
@@ -1668,6 +1790,23 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.467Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "The block offers 'the relation q . (q - q^{-1}) = u - 1 constitutes a NON-TRIVIAL rational identity closed by field_simp + ring' as its worked example of substantive (as against vacuous) content. Under the block's own substitution u = q^2 that identity is q^2 - 1 = q^2 - 1. Calling it non-trivial is the kind of claim the vacuity discipline exists to catch, and it is the example the block chose to lead with.",
+        "notes": "proposed: drop 'non-trivial', or lead with b^2 = (u^2+u+1)/(u+1)^2, which genuinely requires the substitution to state without a square root. Not applied - it recharacterises the block's own claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1687,6 +1826,21 @@
         "reviewed_at": "2026-08-15T10:31:00.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2da7f141d017",
+          "ts": "425d56eaeeb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.509Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~2.0kB). All six table identities re-derived symbolically and every one is exact: b^2 = [3]_q/[2]_q^2 = (u^2+u+1)/(u+1)^2; dim_q^2 V_{(2,1)} = [2]_q^2 = u+2+u^{-1}; q(q-q^{-1}) = u-1; sigma eigenvalues squared q^2 = u and q^{-2} = u^{-1}; sum of squared q-dimensions 1 + [2]_q^2 + 1 = u+4+u^{-1}. Mathematically the cleanest block in the batch."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1710,5 +1864,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:47.509Z"
 }

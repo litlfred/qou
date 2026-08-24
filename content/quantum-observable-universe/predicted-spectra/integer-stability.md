@@ -21,7 +21,7 @@ $$
 Because $E$ is strictly convex in $p$, the exact integer minimiser $p_{\mathrm{stab}}(A)$ is one of the two nearest integers to the continuous minimum:
 
 $$
-  p_{\mathrm{stab}}(A) = \mathrm*{argmin}_{p \in \{0, 1, \ldots, A\}} E(p, A) \in \bigl\{\lfloor p^*(A) \rfloor, \lceil p^*(A) \rceil\bigr\}.
+  p_{\mathrm{stab}}(A) = \mathrm{argmin}_{p \in \{0, 1, \ldots, A\}} E(p, A) \in \bigl\{\lfloor p^*(A) \rfloor, \lceil p^*(A) \rceil\bigr\}.
 $$
 
 **Archimedean specialisation.** 

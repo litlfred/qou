@@ -1242,6 +1242,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.572Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1261,6 +1277,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.607Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-em-dash": [
@@ -1280,6 +1312,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.645Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-triples": [
@@ -1299,6 +1347,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.684Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-closing-aphorism": [
@@ -1318,6 +1382,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.723Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-meta-commentary": [
@@ -1337,6 +1417,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.762Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-thesis-restatement": [
@@ -1356,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.801Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-performed-warmth": [
@@ -1375,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.841Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-superlative": [
@@ -1394,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.880Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ],
     "trap-nonspeakable": [
@@ -1413,8 +1557,24 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "150d5e2bd562",
+          "ts": "71989e09a3ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.921Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:unit-root-iff-integrable including the displayed equivalence and both direction paragraphs. All ten categories judged clean.",
+        "notes": "NOT A TRAP, reported separately - substantive and the strongest finding in this paper: the equivalence is vacuous as stated, and the .md's own two direction sentences show why. The backward direction 'produces a unit-root F-crystal via the identity Frobenius endomorphism' - the identity is bijective, so the left side is inhabited for EVERY H unconditionally. The forward direction 'uses the integration theorem to construct G from the skewed-Poisson datum' - but that datum is a hypothesis of the theorem, not something the unit-root condition supplies, so the right side is likewise inhabited unconditionally. The resolved Lean confirms it: both branches open with 'intro _' and discard the hypothesis. The theorem is True <-> True under its own hypotheses and says nothing about unit-root versus integrability."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.648Z"
+  "updated_at": "2026-08-22T04:07:42.921Z"
 }

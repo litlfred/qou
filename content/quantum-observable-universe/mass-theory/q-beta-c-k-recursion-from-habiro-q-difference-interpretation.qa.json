@@ -1232,6 +1232,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a theorem.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:02.639Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This remains a motivated analogy, not a theorem' is a scope statement and exactly the epistemic labelling the corpus requires of a conjectural remark."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1251,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:02.719Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Five sentences, one analogy, one scope caveat; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1270,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:02.812Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1289,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:02.917Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1308,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.004Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closer is the caveat, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1327,6 +1403,22 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.068Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Under this reading, ...' frames the analogy rather than narrating emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1346,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.126Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1365,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.206Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1384,6 +1506,21 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.276Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Opens with 'Conjecturally' and closes with 'not a theorem'; correctly hedged throughout."
       }
     ],
     "trap-nonspeakable": [
@@ -1403,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:00.346Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0614593a070d",
+          "ts": "032216d9248b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:21:03.351Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "CAUTION recorded for a later reader, not a trap: 'the bar-odd requirement on a_1' touches the a_1 parity-shadow incident (AGENTS.md SS'Conditional-proved != premise-established', docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md), where restating a conditional lemma's antecedent - 'a_1 bar-odd' when the Lean says 'IF c_3 is odd THEN a_1 is odd' - reached durable artifacts. The word 'requirement' here is defensible, since a requirement is a hypothesis rather than an established fact, and the block is explicitly conjectural. Flagging only so the phrase is not later quoted out of this hedged context."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1425,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:21:03.351Z"
 }

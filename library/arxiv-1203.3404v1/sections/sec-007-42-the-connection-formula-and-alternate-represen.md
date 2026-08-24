@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.3404v1
-doc_title: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗"
+doc_title: "On local solutions of the Ramanujan equation and their connection formulae"
 section_id: sec-007-42-the-connection-formula-and-alternate-represen
 section_title: "The connection formula and alternate representation"
 section_number: 4.2
 pages: 14-19
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
 ---
 tion
 At ﬁrst, we show the following connection formula between eq(·) and Eq(·).

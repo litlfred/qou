@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.189Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.228Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,23 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.267Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "3 spaced em-dashes in 325 words, all three the SAME appending construction in consecutive sentences: 'sees only +q eigenvalues - it controls the shape of the universe'; 'sees only -q^-1 eigenvalues - it controls the interaction strength'; 'mixes both eigenvalues - it controls the mass scale'. The dash is doing the work of a colon three times in a row.",
+        "notes": "STRUCTURAL (3 sentences). Proposed: colon in each, or recast as a three-row table, which is what the parallel structure wants."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1048,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.306Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1082,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.346Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1116,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.386Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1150,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.428Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1184,21 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.467Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (325w, rem). H_2(R,q) = k + k with dim 1+1 = 2 is correct; the three typed crossing operators exhaust the unordered nucleon pairs."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1218,22 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.505Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'These three crossing types span all possible nucleon-nucleon interactions' is a completeness claim about the three unordered pairs, which is true.",
+        "notes": "REGISTER NOTE: 'it controls the shape of the universe' is a grandiose gloss for 'how far q is from 1'."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1253,22 @@
         "reviewed_at": "2026-08-15T10:31:00.581Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6ca4327525ca",
+          "ts": "313423b9476a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.545Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "TWO CONTRADICTION FLAGS for the report, both found by reading the block's own table against its prose. (1) The table assigns std (2,1) -> m_e -> 'Mass scale' and alt (1,1,1) -> Q_beta(n) -> 'Interaction scale'. The Cross-check section then says of H_2, whose irreps are (2) sym and (1,1) alt, 'Two irreps -> two parameters (q_0 and m_e)' and 'No standard representation -> no interaction scale needed'. By the block's OWN table, H_2 has the alternating irrep and therefore the interaction scale, and LACKS the standard irrep and therefore the mass scale m_e - the opposite of what the cross-check asserts, which silently relabels std as the interaction scale. (2) This block's sym/alt assignment (sym -> q_0, alt -> Q_beta) is swapped relative to rem:three-calibration-inputs-context in the same chapter (alt -> CAL-2 -> q_0, sym -> CAL-3)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1295,5 @@
     "md": "6ca4327525ca",
     "ts": "313423b9476a"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:21.545Z"
 }

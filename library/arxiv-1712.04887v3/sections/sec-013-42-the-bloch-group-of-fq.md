@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "BLOCH GROUPS, ALGEBRAIC K-THEORY"
+doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
 section_id: sec-013-42-the-bloch-group-of-fq
 section_title: "The Bloch group of Fq"
 section_number: 4.2
 pages: 23-25
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
 ---
 class map to the Bloch group. Let p> 2 and q >2 be odd primes such that q≡− 1 modn,
 where n = pm. For a ﬁnite ﬁeld Fq, the group F×

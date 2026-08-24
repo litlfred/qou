@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:00:35.707483+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-23T09:41:10.107580+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "denominator_factors_as_cyclotomic_product",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 1336,
+  "durationMs": 1312,
   "computation": "y-lambda-cyclotomic-factorization-probe",
   "scriptFile": "y_lambda_cyclotomic_factorization_probe.py",
-  "scriptHash": "0bddb3aa589a",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "0021d8f92cd7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +42,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/y_lambda_cyclotomic_factorization_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/y_lambda_cyclotomic_factorization_probe.py"
   },
   "description": "I1 probe for prop:y-lambda-cyclotomic-factorization.  Verifies (a) the denominator of y_λ(r) factors as a product of cyclotomic polynomials Φ_d matching the proposition's explicit list, (b) the numerator matches the proposition's P_λ(r), and (c) numerical evaluation at r = √q_0 agrees with sympy direct subs.  Tested at n = 2 (both partitions) and n = 3 (the (2,1) partition, which has the cleanest factorisation).  All three cases pass structurally + numerically.",
   "contentBlock": "prop:y-lambda-cyclotomic-factorization",

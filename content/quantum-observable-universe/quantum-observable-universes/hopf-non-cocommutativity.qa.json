@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:52.820Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:52.861Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:52.899Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:52.938Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:52.978Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.016Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1610,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.054Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.092Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1680,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.130Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1715,22 @@
         "reviewed_at": "2026-08-15T10:31:00.055Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0fc4f315ab02",
+          "ts": "f1e38a580881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.167Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 3-sentence remark. Checked the displayed relation: sigma . Delta = Ad_{R_q} . Delta is the standard quasitriangular condition Delta^op = R Delta R^{-1}, correctly stated. 'coassociative but not cocommutative when q != 1' is substantive mathematical contrast (false-positive class 1) - the failure of cocommutativity IS the subject. No pivot, dash, triple, aphorism, meta-commentary, warmth, or non-speakable chain; the closing interpretive sentence is the remark's declared job (it interprets def:quantum-observable-universe) rather than a restatement.",
+        "notes": "Minor note (not a fix): 'provides the algebraic origin of quantum uncertainty' asserts THE origin; 'an algebraic origin' or 'the algebraic mechanism' would match what the block actually shows."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1753,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:12:53.167Z"
 }

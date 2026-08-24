@@ -1664,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.917Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1683,6 +1698,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:05.958Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1702,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.004Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1721,6 +1766,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.049Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "\"idempotency, right-invertibility, and self-distributivity\" are exactly the three Reidemeister moves named in the same sentence — substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1740,6 +1800,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.087Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "The final line asserts a technical identification rather than a maxim; its problem is epistemic, reported as a finding."
       }
     ],
     "trap-meta-commentary": [
@@ -1759,6 +1834,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.132Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1778,6 +1868,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.169Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1797,6 +1902,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.209Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1816,6 +1936,23 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.247Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "minor",
+        "evidence": "Two unqualified maximum-strength claims plus an unearned \"natural\": \"defines the **natural** Hecke quandle\" (nothing in the block establishes naturality or uniqueness) and \"The knot quandle **constitutes a complete invariant** of oriented prime knots\" (stated flat, with no up-to-mirror-image qualification and with a primeness hypothesis that belongs to the knot-complement theorem, not to Joyce/Matveev).",
+        "notes": "NOT fixed (qualifying \"complete invariant\" is a meaning change requiring the author's reading of joyce1982/matveev1982). Proposed fix: \"defines a Hecke quandle\" and \"The knot quandle is a complete invariant of knots up to mirror image and reversal (Joyce, Matveev)\"."
       }
     ],
     "trap-nonspeakable": [
@@ -1835,6 +1972,23 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4417faacac27",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:06.283Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "minor",
+        "evidence": "The closing paragraph is four abstract-subject declaratives in a row, ending in a Latinate participial chain: \"The Markov trace operates as a quandle cocycle invariant, conferring a representation-theoretic interpretation upon the Gram matrix.\" \"Conferring X upon Y\" is written for the eye; a speaker would say \"which gives the Gram matrix a representation-theoretic reading\".",
+        "notes": "NOT fixed (the sentence's content is itself in question — see findings). Proposed fix: state what the cocycle pairing IS, or demote the sentence to a conjecture."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1857,5 +2011,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:19:06.283Z"
 }

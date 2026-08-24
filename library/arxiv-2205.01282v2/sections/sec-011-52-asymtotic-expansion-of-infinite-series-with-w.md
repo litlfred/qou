@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2205.01282v2
-doc_title: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI"
+doc_title: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres"
 section_id: sec-011-52-asymtotic-expansion-of-infinite-series-with-w
 section_title: "Asymtotic expansion of infinite series with weighted Gauss sums"
 section_number: 5.2
 pages: 13-15
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed"
+doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
 ---
 we study a family of infinite series F (f;t) with weighted Gauss sums, which involves both WRT
 invariants and homological blocks. We start with the following asymptotic formula following from

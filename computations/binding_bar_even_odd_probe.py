@@ -43,6 +43,7 @@ from codata_constants import (  # noqa: E402
 )
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 B_AME = {
@@ -54,7 +55,7 @@ B_AME = {
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(str(Q0))
     qi = mp.mpf(1) / q0
     E0 = mp.mpf(str(_ME)) / (q0 * (q0 - 1))

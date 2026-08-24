@@ -1776,6 +1776,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.242Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1811,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.286Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Construction, then pointers to the two follow-on blocks, then a Lean-status note.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1846,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.328Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1833,6 +1881,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.372Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'The finite-place compatibility checks, the Lean instance, the downstream consumers, and cross-prime coherence' is FOUR items and matches the follow-on remark's actual sections.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1916,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.415Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on a dated Lean-status note, not a closer.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1951,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.457Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'**Lean status (2026-08-12):** the co-located .lean file (which contained a bare axiom laundering the perpetual obstruction into the MotivicGaloisCharacter class) has been deleted.'",
+        "notes": "PASS on the criterion as defined. FLAGGED: this is a dated status banner in scholarly prose, which AGENTS.md sec 4d routes explicitly to .ts authorNotes (its migration table lists '> **Status (May 2026):** ...' as Migrate) and which one-voice Category H treats as a status leak. Proposed: move to authorNotes {kind: 'status', date: '2026-08-12'}."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1986,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.500Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No recapitulation.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2021,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.542Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2056,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.585Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No maximum-strength claim; the Habiro truncation statement is exact and checked.",
+        "notes": "VERIFIED CORRECT: '(u;u)_m vanishes for m >= 2p' at u = zeta_(2p) is right -- (u;u)_m = prod_(k=1..m)(1-u^k) and the first vanishing factor is k = ord(zeta_(2p)) = 2p. SEPARATE STRUCTURAL FINDINGS, not fixed: (a) this is a 'definition' block, whose sibling .lean is REQUIRED at the type level per AGENTS.md sec 3, and the block itself records that the sibling was deleted -- content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean does not exist; (b) the .ts lean.ref 'qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar' resolves to NOTHING -- grep for qouMotivicGaloisChar across content/**/*.lean returns zero hits (the named Route-A replacement file QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean does exist); (c) the .ts sets computation.status 'verified' against computations/probes/habiro-frobenius-probe.witness.json, which contains NO assertions array and NO allPassed field at all, and is marked auditOnly against a branch-local audit doc."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2091,22 @@
         "reviewed_at": "2026-08-15T10:31:01.004Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8e9cf463d8cd",
+          "ts": "f62287725163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:08:52.628Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Short sentences; 'the Habiro cyclotomic expansion of the atomic Markov trace' is the heaviest chain.",
+        "notes": "n/a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2130,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:08:52.628Z"
 }

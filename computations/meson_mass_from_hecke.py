@@ -50,9 +50,11 @@ References:
 import json, time, math
 from pathlib import Path
 
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 try:
     from mpmath import mp, mpf, fabs, sqrt, log, clsin, pi as mppi
-    mp.dps = 50
+    set_compute_dps()
     HAS_MP = True
 except ImportError:
     HAS_MP = False

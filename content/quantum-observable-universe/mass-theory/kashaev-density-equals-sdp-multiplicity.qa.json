@@ -1531,6 +1531,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an integer categorical multiplicity.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.264Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "'the prefactor is an empirical effective binding coefficient (approx 1.89, Coulomb-corrected approx 1.94), NOT an integer categorical multiplicity' and 'rounding it to 2 has no derived origin' are the block's actual negative finding, correctly scoped - the substantive-contrast class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1550,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.316Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Full read of the long conjecture block (kind conjecture, tier:E, rule-14-conditional, conditional-on-class) - statement, Evidence, Categorical home, Conditional structure, Status, Notation hazard, Where used, What remains open, Cross-references. Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1570,6 +1600,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "10 stylistic spaced dashes in 647 words (1.55/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.362Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Full read of the long conjecture block (kind conjecture, tier:E, rule-14-conditional, conditional-on-class) - statement, Evidence, Categorical home, Conditional structure, Status, Notation hazard, Where used, What remains open, Cross-references. Category absent."
       }
     ],
     "trap-triples": [
@@ -1589,6 +1634,22 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 647 words)"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.429Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Four counted triples, each matching real content: 'Evidence (three confirmed atoms)' (3 table rows), the 1/2/3 status list, the 1/2/3 open list, and 'three distinct quantities used the symbol rho'.",
+        "notes": "Minor: the 'three distinct quantities used the symbol rho' list leads with nu_SDP, which does not use rho; the point is that it USED to, which the sentence does not say."
       }
     ],
     "trap-closing-aphorism": [
@@ -1608,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.475Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Full read of the long conjecture block (kind conjecture, tier:E, rule-14-conditional, conditional-on-class) - statement, Evidence, Categorical home, Conditional structure, Status, Notation hazard, Where used, What remains open, Cross-references. Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1627,6 +1703,21 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.533Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Full read of the long conjecture block (kind conjecture, tier:E, rule-14-conditional, conditional-on-class) - statement, Evidence, Categorical home, Conditional structure, Status, Notation hazard, Where used, What remains open, Cross-references. Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1646,6 +1737,22 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.591Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Closes on a cross-reference list, the bookkeeping false-positive class.",
+        "notes": "SEPARATE (non-trap) LEAN finding, and the most consequential in this block - the displayed axiomatisation does not exist and the real one asserts nothing. The .md displays 'class KashaevDensityEqualsSDPMultiplicity (M : Type*) [BrCategory M] [Hecke M] [KashaevVolumeConjecture M] where nu_sdp : forall (K : Knot), N ; identity : forall (K : Knot), kashaev_density_prefactor K = nu_sdp K' and then says 'The only sorry is the class instance'. Grepped the tree: no such class exists. The actual sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean declares 'class KashaevDensityEqualsSdpMultiplicity where holds : Prop' - a bare unconstrained Prop field, i.e. the 'holds : Prop placeholder' pattern, discharged by instance := <True>. Under AGENTS.md section 3b-tax ('The carrier must assert something') that carrier is content-free, so any downstream theorem taking it as an [Instance] is conditional on nothing. Three supporting defects in the same stub: (a) its docstring points at ../lean/QOU/Kashaev/DensityEqualsSDPMultiplicity.lean and says '(file pending)' - that file does not exist; (b) it states the manifest's lean.ref is 'qou:QOU.Kashaev.DensityEqualsSDPMultiplicity' while the .ts actually says 'qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity'; (c) its '-- Ref:' line points at quantum-observable-universe/braids-and-knots/..., but the block lives in mass-theory/. Also, even the DISPLAYED class would be degenerate: nu_sdp is an unconstrained function and identity merely equates rho_F to it, so nothing ties nu_sdp to any SDP solution. FIX: either encode the SDP multiplicity as a constrained field, or state honestly that no Lean axiomatisation exists yet and remove the code block. Minor: the prose says rho_F in Z_{>0} while the displayed field is N, which admits 0."
       }
     ],
     "trap-performed-warmth": [
@@ -1665,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.639Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Full read of the long conjecture block (kind conjecture, tier:E, rule-14-conditional, conditional-on-class) - statement, Evidence, Categorical home, Conditional structure, Status, Notation hazard, Where used, What remains open, Cross-references. Category absent."
       }
     ],
     "trap-superlative": [
@@ -1684,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.687Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "evidence": "Unusually well calibrated for this chapter: the He-4 case is reported as 'resolved (negative)', the extrapolation is flagged 'with explicit caveat', and 'rounding it to 2 has no derived origin' is exactly the AGENTS.md anti-fit posture. 'exact' is used only of an integer-equals-integer match.",
+        "notes": "RECOMPUTED and CORRECT: rho_F(4He) = B_AME/(m_e . A . 8G) with B_AME = 28.29566 MeV, m_e = 0.51099895069 MeV, A = 4, 8G = 7.32772475342 gives 1.8891684 -> the block's 'approx 1.889'. Adding a 0.76 MeV Coulomb term gives 1.9399101 -> the block's 'approx 1.94'. The bracketing integers are right too: 2T+1 = 1 at T = 0, and A-1 = 3 at A = 4, with 1.889 strictly between. rho_F = A-1 is consistent across the table (D: A=2 -> 1; T and 3He: A=3 -> 2). 8G = 7.32772475342 = Vol(Borromean) is the right value, and L6a4 is indeed the Borromean rings."
       }
     ],
     "trap-nonspeakable": [
@@ -1704,6 +1842,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "58de9342deae",
+          "ts": "6492932e3580"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:26:48.738Z",
+        "reviewed_sha": "2ff519d5b3d102c8ed2a06d9d3cf38b602806a77",
+        "severity": "minor",
+        "evidence": "The section 'Where $\\nu_{\\mathrm{SDP}}$ is used' consists of two bullets whose text is the identical phrase 'the canonical formalism', followed by different em-dash glosses. A section whose entire purpose is to name the consumers now names none, and reads aloud as the same bullet twice.",
+        "notes": "SWEEP DAMAGE - the densest instance found in this batch. 'the canonical formalism' occurs FIVE times as a stand-in for a script name ('the joint-tower SDP solver of the canonical formalism, which does not yet exist'; 'The canonical formalism previously carried the density rule rho_F in {1,2}'; 'rho_factor -> nu_sdp in the canonical formalism ATOM_ASSIGN'; and the two identical bullets above), plus one 'the formal derivation' ('rho_F - Kashaev prefactor in the formal derivation (unnamed, compute-only)'). The block's own .ts names computations/mass_table_ppb.py, and the two 'Where used' bullets clearly referenced two DIFFERENT scripts (one owns ATOM_ASSIGN.nu_sdp, the other reads it and emits B_pred). Not fixed inline: two distinct citations cannot be reconstructed from one surviving path without guessing."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1727,5 +1882,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:26:48.738Z"
 }

@@ -89,8 +89,9 @@ from canonical_braid_crossings import _avg_color_delta  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _build_seminormal_matrices_mpf  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 N = 12
 OFFSETS = (0, 3, 6, 9)
 NEAR_ZERO_FLAG = 1e-6

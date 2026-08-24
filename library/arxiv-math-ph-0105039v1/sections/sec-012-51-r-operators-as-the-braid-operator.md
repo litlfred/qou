@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-012-51-r-operators-as-the-braid-operator
 section_title: "R-Operators as the Braid Operator"
 section_number: 5.1
 pages: 14-18
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We now give the 3-dimensional picture of the R-operators (2.23), and study the relationship be-
 tween the hyperbolic geometry and our invariant. The R-operator consists from four S operators,

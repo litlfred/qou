@@ -86,18 +86,18 @@
       "value": 17.53445843036313
     }
   ],
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "higgs_h6_correction_probe",
-  "computedAt": "2026-07-18T17:42:16.756437+00:00",
+  "computedAt": "2026-08-23T09:23:42.899304+00:00",
   "description": "Probes whether residual ~0.5% in Higgs categorical formula (PR #1159) closes via h^6-order correction with structural coefficient. Solves for required C_6 from W and Z anchors; tests substrate-natural candidates.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "interpretation": "If a clean substrate-natural C_6 matches AND W/Z anchors give consistent C_6, the residual is structurally closed at h^6. If anchors differ significantly, the residual has more complex structure (anchor-dependent corrections, or h^6 isn't the right order).",
   "parameters": {
-    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
-    "VOL_B3": "7.3277247534177521204368281194590728861931949942534",
+    "VOL_B3": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "dps": 50,
     "precision": "mpfr"
   },
@@ -108,6 +108,8 @@
     "from_Z_GeV": 125.71153545228563,
     "measured_GeV": 125.1
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "required_C_6": {
     "anchor_difference": 126.6638829005358,
     "anchors_consistent": false,
@@ -115,9 +117,9 @@
     "from_W": 68.39762755877662,
     "from_Z": -58.26625534175918
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "higgs_h6_correction_probe.py",
-  "scriptHash": "31e979136749",
+  "scriptHash": "a1b002b1f196",
   "status": "exploratory",
   "tags": [
     "higgs-mass-formula",

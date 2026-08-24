@@ -1,13 +1,13 @@
 ---
 doc_id: bsmf-2002-130-3-457-0
-doc_title: "3 .W e c l a s s i f y h y p e r i d e a l p o l y h e d r a , u p t o i s o m e t r i e s o f 3 ,i nt e r m so ft h e i r combinatorial type and of their dihedral angles. R´esum´e"
+doc_title: "Hyperideal polyhedra in hyperbolic 3-space"
 section_id: sec-001-2-necessary-conditions
 section_title: "Necessary conditions"
 section_number: 2
 pages: 8-10
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
-doc_brief: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t"
+doc_brief: "Hyperideal polyhedra in hyperbolic 3-space — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t p o l y h e d r o n i n t h e h y p e r b o l i c 3-space 3 which, in the"
 ---
 Proposition 5 .— Let Γ be the dual graph of a hyperideal polyhedron P in H3
 and, for every edge e of Γ,l e t θe ∈ ]0,π [ be the external dihedral angle of P

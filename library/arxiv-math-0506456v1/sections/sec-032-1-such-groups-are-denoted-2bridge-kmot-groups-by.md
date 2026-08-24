@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0506456v1
-doc_title: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERS"
+doc_title: "Asymptotics of the quantum invariants for surgeries on the figure 8 knot"
 section_id: sec-032-1-such-groups-are-denoted-2bridge-kmot-groups-by
 section_title: "Such groups are denoted 2–bridge kmot groups by Riley since the y generalize"
 section_number: 1

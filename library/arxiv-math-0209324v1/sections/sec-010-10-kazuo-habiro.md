@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0209324v1
-doc_title: "CYCLOTOMIC COMPLETIONS OF POL YNOMIAL RINGS KAZUO HABIRO"
+doc_title: "Cyclotomic completions of polynomial rings"
 section_id: sec-010-10-kazuo-habiro
 section_title: "KAZUO HABIRO"
 section_number: 10
 pages: 10-10
 source_pdf: 0209324v1.pdf
 source_sha256: ae2ea5024a0a45e8
-doc_brief: "CYCLOTOMIC COMPLETIONS OF POLYNOMIAL RINGS KAZUO HABIRO — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which"
+doc_brief: "Cyclotomic completions of polynomial rings — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which arises from"
 ---
 We remark that the special case of Theorem 4.2 where R = Z, S = N,
 and S′ ={1} is obtained also by P. Vogel. Another proof of a special case

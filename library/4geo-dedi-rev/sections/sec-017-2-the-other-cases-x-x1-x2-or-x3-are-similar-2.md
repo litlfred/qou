@@ -1,13 +1,13 @@
 ---
 doc_id: 4geo-dedi-rev
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds"
 section_id: sec-017-2-the-other-cases-x-x1-x2-or-x3-are-similar-2
 section_title: "The other cases X =X1, X2 or X3 are similar. 2"
 section_number: 2
 pages: 20-21
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
-doc_brief: "HAL Id: hal-01812027 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: ST ´EPHANE B"
+doc_brief: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 27 sections: ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE"
 ---
 4.0.2. Proof of Step 2. Consider QH-tetrahedra (∆,b, w), (∆′,b′, w′) glued along a 2-face F . Denote
 as usual by Fs, Ft the abstract 2-faces of ∆, ∆ ′ corresponding to F . Recall that the vertices v0, v1,

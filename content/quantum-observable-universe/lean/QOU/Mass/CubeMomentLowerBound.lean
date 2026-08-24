@@ -56,7 +56,7 @@ establish the chain, and this file claims only the link.
 `ℝ`: an inequality between real sums, archimedean by nature.
 
 -- Ref: [manuscript] computations/deltalambda/wlambda_wstd_superexp_lower_bound.py
--- Ref: [stanley1999ec2] https://doi.org/10.1017/CBO9780511609589
+-- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589
 -/
 
 namespace QOU.Mass

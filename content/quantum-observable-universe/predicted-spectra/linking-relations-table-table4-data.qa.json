@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.716Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.755Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.796Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.836Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.876Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.916Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.957Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.997Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.038Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6e2e4c76747b",
+          "ts": "4c8ee8c46514"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.078Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (4 connected-sum rows); no prose. Recomputed every cell. Genus is additive under connected sum (Schubert), so 3_1#3_1, 3_1#3_1^sigma, 3_1#4_1 and 4_1#4_1 all have genus 1+1 = 2 — the four printed 2s are right. Volume is additive over the prime decomposition: the trefoil is a torus knot and not hyperbolic so Vol = 0, giving 0, 0, and Vol(4_1) for the mixed row; Vol(4_1) = 2*Cl_2(pi/3) = 2.029883, so '2.0299' and 2x = 4.059766 -> '4.0598' are both correct to the digits shown. The names are right too: 3_1#3_1 is the granny knot and 3_1#3_1^sigma the square knot.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "6e2e4c76747b",
     "ts": "4c8ee8c46514"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:13:50.078Z"
 }

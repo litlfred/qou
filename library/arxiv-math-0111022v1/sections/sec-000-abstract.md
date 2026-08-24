@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0111022v1
-doc_title: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨ odinger Institute for Mathematical Physics Boltzmanngasse 9"
+doc_title: "Some remarks on q-deformed multiple polylogarithms"
 section_id: sec-000-abstract
 section_title: "Abstract"
 section_number: null
 pages: 1-1
 source_pdf: 0111022v1.pdf
 source_sha256: fea7f118014838fe
-doc_brief: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schrödinger Institute for Mathematical Physics Boltzmanngasse 9 — We introduce general q-deformed multiple"
+doc_brief: "Some remarks on q-deformed multiple polylogarithms — We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally"
 ---
 We introduce general q-deformed multiple polylogarithms which
 even in the dilogarithm case diﬀer slightly from the deformat ion usu-

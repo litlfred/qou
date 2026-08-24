@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-24T21:17:01.448943+00:00",
-  "commitSha": "9f01ce1a6674b4a92404ab7ad7afff43d9f016ee",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:38:35.877165+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "bridge_2loop_certified",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-kashaev-cross-face",
   "scriptFile": "qbeta_g3_5two_kashaev_cross_face.py",
-  "scriptHash": "2d294786b19f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "51fdf09ed739",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_kashaev_cross_face.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_kashaev_cross_face.py"
   },
   "description": "W3 cross-face bridge: the Masbaum cyclotomic C_n data and the certified loop engine verified as one analytic object through 3 loops via the Kashaev asymptotic ladder on 4_1 and 5_2; the geometric trace-field root identified as a derived byproduct.",
   "contentBlock": "conj:im-q-physical-role",

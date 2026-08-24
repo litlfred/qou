@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T18:21:16.607753+00:00",
-  "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+  "computedAt": "2026-08-23T09:17:38.846384+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "wigner_su4_delta_lambda_misses_the3_differential",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "probe-pauli-young-delta-lambda-the3-signtest",
   "scriptFile": "probe_pauli_young_delta_lambda_the3_signtest.py",
-  "scriptHash": "a8283b450bfa",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "c7647cc79440",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_pauli_young_delta_lambda_the3_signtest.py"
+    ],
+    "reproduce": "python3 -u computations/probe_pauli_young_delta_lambda_the3_signtest.py"
   },
   "description": "EXPLORATORY: decisive T/³He same-n sign test for the Pauli-Young / Wigner-SU(4) Δ_λ projection proposed in PR #2461. A spin-isospin Young-symmetry multiplicity is Δ_λ≥0; the T/³He differential (B_T−B_³He)/m_e=+1.4947 is the entire same-n binding split. Reports the v_λ=y_λ·Δχ_λ sign census (whether any non-negative Δ_λ can reach the +sign) and the concrete Δ_λ=dim GL(4)-irrep(λ) evaluation. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {

@@ -1,13 +1,13 @@
 ---
 doc_id: motivicperiodsandp1minus3pointsv3
-doc_title: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗"
+doc_title: "Motivic periods and P^1 minus 3 points"
 section_id: sec-008-131-motivic-mzvs-let-t-mt-z-the-betti-and-de-rha
 section_title: "Motivic MZV’s. Let T = MT (Z). The Betti and de Rham realisations"
 section_number: 1.3.1
 pages: 4-5
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
-doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
+doc_brief: "Motivic periods and P^1 minus 3 points — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values."
 ---
 provide functors ωB, ωdR, and integration deﬁnes a canonical element comp B,dR ∈
 IsomT (ωdR, ωB)(C). Since the de Rham functor ωdR is graded by the weight, the

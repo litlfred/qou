@@ -1,13 +1,13 @@
 ---
 doc_id: ihpmay2025
-doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY"
+doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-023-47-a-covering-theorem-for-hyperbolic-3-manifolds
 section_title: "A covering theorem for hyperbolic 3-manifolds"
 section_number: 4.7
 pages: 32-34
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
-doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 The restrictive structure of simply degenerate ends places serious restrictions on how it can
 cover another manifold. Thurston established the following result when the covering manifold

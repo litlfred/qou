@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0401084v3
-doc_title: "THE COLORED JONES POL YNOMIALS OF THE"
+doc_title: "Some limits of the colored Jones polynomials of the figure-eight knot"
 section_id: sec-003-4-proof-of-the-main-theorem
 section_title: "Proof of the main theorem"
 section_number: 4
 pages: 14-15
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
 In this section we will prove the main theorem.
 First we will calculate the derivative of H(u) := H(y, m2).

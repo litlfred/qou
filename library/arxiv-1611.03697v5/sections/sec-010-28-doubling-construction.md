@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.03697v5
-doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
 section_id: sec-010-28-doubling-construction
 section_title: "Doubling construction"
 section_number: 2.8
 pages: 8-9
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 non-degenerate. To reduce to this case we can use the following do ubling construction [ 23, Section
 2.6]. Suppose given a BPS structure (Γ , Z, Ω). The doubled BPS structure takes the form

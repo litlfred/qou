@@ -3,7 +3,7 @@
   "audit_only": true,
   "parameters": {
     "q0": "1.1099785955573347198997632204832250266562084087802",
-    "dps": 50,
+    "dps": 70,
     "q_points": [
       "1.1099785955573347198997632204832250266562084087802",
       "1.05",
@@ -48,13 +48,13 @@
     ]
   },
   "data": {
-    "trM_H4_generator": "0.499320334033561271768966386276",
+    "trM_H4_generator": "0.612688050548890157044516774582",
     "c12_ratio_at_q0": "1.0",
     "worst_dev": {
-      "A": "0.0",
-      "B": "0.0",
-      "C": "1.06911e-50",
-      "D": "1.33638e-51"
+      "A": "3.62227e-71",
+      "B": "9.05568e-72",
+      "C": "5.43341e-71",
+      "D": "9.05568e-72"
     }
   },
   "assertions": [
@@ -76,14 +76,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "83041251a965",
-  "scriptCommitSha": "80aef5dffe1259667b206a0a4b071b4323c37f77",
-  "commitSha": "80aef5dffe1259667b206a0a4b071b4323c37f77",
+  "scriptHash": "37024498d13e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "210944726027dbd947357dd0cebcf635d31f7e0b",
   "engine": "mpmath",
-  "computedAt": "2026-07-02T16:58:16.907549+00:00",
-  "durationMs": 47,
+  "computedAt": "2026-08-23T20:57:53.153669+00:00",
+  "durationMs": 152,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "qbeta_h4_stagec_markov_infra.py",
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "scriptFile": "qbeta_h4_stagec_markov_infra.py"
 }

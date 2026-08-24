@@ -379,7 +379,7 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
         closed = _p ** sp.Rational(-k * (k + 1), 2) * qpoch(_p, k)
         assert sp.simplify(prod_ratio - closed) == 0, k
     # numeric quadrature cross-check of the recurrence at 3 points
-    mp.dps = 40
+    set_compute_dps()
     worst_q = mpf(0)
     pts = [mpf(5) / 6, 1 / mpf(Q0_MUON_STR), 1 / mpf(Q0_PROTON_STR)]
     quad_tbl = {}

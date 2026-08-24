@@ -1,0 +1,44 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T16:30:05.934585+00:00",
+  "commitSha": "1255b3001f38238f2fa05d296dfb8c594c965f38",
+  "assertions": [
+    {
+      "name": "covariance_epic_M1_free_cumulant_reframing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sum c^2 = R4/3+R2^2/2-R2/6 exact (n<=12); Var(R4)=9|C3|, Var(R3)=4C(n,2), Cov(R3,R4)=Cov(Sum h,R3)=0, M_1=(1/3)Cov(Sum h,R4) exact (n<=15). Structural reframing, not a proof; sign of Cov(Sum h,R4) open. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "wlambda-covariance-epic-M1-free-cumulant-reframing",
+  "scriptFile": "wlambda_covariance_epic_M1_free_cumulant_reframing.py",
+  "scriptHash": "55b33e652dce",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "The first odd moment M_1 in Kerov's free-cumulant basis (qou-x631, qou-ogrk): cleanest structural reframing, NOT a resolution. From the transition-measure free cumulants R_k (R_2=n exactly): Σ_□ c² = R_4/3 + R_2²/2 − R_2/6 exactly (n≤12), so ω₃=(R_4+R_2)/3 and M_1 = Cov_Planch(Σh,Σc²) = (1/3)Cov(Σh,R_4). Exact second-order structure (n≤15): Var(R_4)=3n(n−1)(n−2)=9|C₃|, Var(R_3)=4C(n,2)=2n(n−1), and the exact orthogonalities Cov(R_3,R_4)=0, Cov(Σh,R_3)=0. So M_1>0 ⟺ Cov(Σh,R_4)>0 (hook-sum vs the 4th free cumulant). WALL: R_4=3Σc²−3n²/2+n/2 is affine in Σc² so the R_4 form is circular, and Σh∉A is not poly(R)+γ(ℓ+λ₁) — its non-A structure is genuinely complex; the sign of Cov(Σh,R_4) remains OPEN (needs Σh's Plancherel-cov projection onto A, a free-probability/Kerov-CLT computation with finite-n error bound, beyond exact enumeration). Cleanest reframing to date; the exact variances and orthogonalities are new. Does NOT prove M_1, odd positivity, A2, or the kernel. scope-(a); no fit; nothing wired; no c_k; L2 unchanged.",
+  "data": {
+    "contentSq_free_cumulant": "Sum c^2 = R4/3 + R2^2/2 - R2/6 (exact)",
+    "omega3_free_cumulant": "omega3 = (R4 + R2)/3",
+    "M1_as_R4_covariance": "M_1 = (1/3) Cov(Sum h, R4)",
+    "var_R4": "3 n(n-1)(n-2) = 9|C3|",
+    "var_R3": "2 n(n-1) = 4 C(n,2)",
+    "cov_R3_R4_zero": true,
+    "cov_Sh_R3_zero": true,
+    "open": "sign of Cov(Sum h, R4) = M_1>0 still open; Sum h not in A, not poly(R)+g(ell+lam1)"
+  }
+}

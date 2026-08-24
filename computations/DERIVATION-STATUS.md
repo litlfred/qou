@@ -80,19 +80,47 @@ The content sum c(λ) = Σ(j-i) determines the BW scaling:
 
 ## Fine Structure Constant
 
-**Live closed form** (`prop:alpha-em-categorical-trace`):
+> **🛑 CORRECTED 2026-08-21 — the two entries below were the wrong way
+> round.** This section labelled the PSLQ-empirical form "Live closed form"
+> and the CS tower "Legacy … superseded". The corpus says the opposite:
+> `archimedean-functor-uniqueness-context` rules the 45·[3]_q form out
+> **structurally** as "a legacy PSLQ-empirical conjecture", while the CS
+> tower is what `pyhecke.constants.ALPHA_EM_INV_DERIVED` actually computes
+> today. See item 5 of the open-items list below for the full record.
+
+**Best derived form** — the CS tower, exactly resummed
+(`pyhecke.constants.ALPHA_EM_INV_DERIVED`; the geometric tower sums in
+closed form, so there is no truncation order to choose):
 
 ```
-1/α = 45 · [3]_q · (1 + δ_CS + 8q·δ_CS²)        where δ_CS = ℏ_q⁴ · [5]_q
-    = 137.035998166
-CODATA: 137.035999084 ± ~3                       (~21 ppb)
-Residual: 6.7 ppb  (within CODATA uncertainty)
+1/α = q·[9]_q·[10]_q · (1 + c₁/(1 − c₁κ))
+    = 137.0359350939756          (proton pin, the production default)
+CODATA-2022: 137.035999177
+Residual: −468 ppb — STRUCTURAL (the tower is converged; no further
+                     orders can close it)
 ```
 
-**Legacy formulation** (superseded; kept for historical reference):
+**Ruled out** — not merely superseded:
 
 ```
-1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944  (399 ppb — legacy)
+1/α = 45 · [3]_q · (1 + δ_CS + 8q·δ_CS²)   where δ_CS = ℏ_q⁴ · [5]_q
+Residual: −2.6 ppb at the proton pin vs CODATA-2022
+```
+
+Its residual is the *smallest* of any form here. That is the signature of a
+fit, not evidence for it: `archimedean-functor-uniqueness-context` excludes
+it structurally for requiring "arbitrary integer ratios … from a
+non-pentagon source", and the live table in
+`electroweak-higgs-torus-link-triplet-table1-data` still marks it
+`open: N_v = ?`.
+
+**Superseding derived form** — bare + the photon IR zero-mode
+(`prop:em-coupling-bring-zero-mode`), for completeness:
+
+```
+1/α = q·[9]_q·[10]_q + 2/(3π)
+    = 137.0354154444              (proton pin)
+Residual: −4260 ppb
 ```
 
 ## Current Results (k=5)
@@ -214,16 +242,55 @@ as the $H^2$ calibration — not an additional fit.
    `conj:homological-shell-condensation`; the three are three
    models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α residual**: ~~399 ppb~~ — **resolved at 6.7 ppb**. Live closed
-   form (`prop:alpha-em-categorical-trace`):
-   $1/\alpha_{EM} = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\delta_{CS}^2)$
-   with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$ predicts $137.035998166$
-   vs CODATA $137.035999084$. 6.7 ppb residual is **inside** the
-   CODATA 21-ppb experimental uncertainty; no further derivation
-   required. Each factor is forced by an upstream block
-   (`exterior-square-borromean`, `force-carrier-bring-uniqueness`,
-   `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration);
-   PSLQ uniqueness confirms no shorter rational combination matches.
+5. **1/α residual**: **OPEN.** The best *derived* form sits at
+   **−468 ppb** against CODATA-2022 at the proton pin.
+
+   > **🛑 CORRECTED 2026-08-21.** This item previously read
+   > *"~~399 ppb~~ — **resolved at 6.7 ppb** … no further derivation
+   > required"*, citing the closed form
+   > $1/\alpha_{EM} = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\delta_{CS}^2)$,
+   > $\delta_{CS} = \hbar_q^4[5]_q$. **That form is structurally ruled out
+   > by the corpus itself**, and the entry mis-attributed it besides:
+   >
+   > - [`archimedean-functor-uniqueness-context`](../content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md)
+   >   calls it *"a legacy PSLQ-empirical conjecture, since superseded by
+   >   `prop:em-coupling-bring-zero-mode`"*, requiring *"arbitrary integer
+   >   ratios … that would have to come from a non-pentagon source"*, and
+   >   *"ruled out **structurally** in addition to the existing PSLQ
+   >   ruling."*
+   > - The live table in
+   >   [`electroweak-higgs-torus-link-triplet-table1-data`](../content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md)
+   >   carries the same form marked **`open: N_v = ?`**.
+   > - `prop:alpha-em-categorical-trace`, the label cited as its source,
+   >   contains **no such formula**. That proposition is an *identity* —
+   >   $\alpha_{EM} = h^2/(q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5}))$ —
+   >   decomposing the **bare** coupling $q[9]_q[10]_q$, which is 0.155 %
+   >   from CODATA. Its "match to $10^{-12}$" is the identity closing, not
+   >   a prediction of the measured $\alpha$.
+   > - Every *"✅ resolved"* corroboration lives under
+   >   `docs/audits/_deprecated/`.
+   > - The quoted 6.7 ppb is muon-pinned **and** measured against CODATA-
+   >   **2018** (`137.035999084`; 2022 is `137.035999177`).
+   >
+   > The residual being *smallest* for the ruled-out form is the expected
+   > signature of a fit, not evidence for it — which is why "resolved …
+   > no further derivation required" was the damaging phrasing.
+
+   Measured at the proton pin (the production default) against
+   CODATA-2022 `137.035999177`:
+
+   | form | status | residual |
+   |---|---|---|
+   | bare $q[9]_q[10]_q$ | derived | −0.155 % |
+   | bare $+\,2/(3\pi)$ photon IR zero-mode (`prop:em-coupling-bring-zero-mode`, the superseding form) | derived | **−4260 ppb** |
+   | CS tower, exactly resummed (`pyhecke.constants.ALPHA_EM_INV_DERIVED`) | derived | **−468 ppb** |
+   | $45[3]_q(1+\delta_{CS}+8q\delta_{CS}^2)$ | **ruled out** (PSLQ-empirical) | −2.6 ppb |
+
+   `pyhecke/constants.py` describes its −468 ppb as **structural**: the CS
+   tower is geometric with ratio $c_1\kappa \approx 2.7\times10^{-3}$ and
+   sums in closed form, so no further orders can close the gap. That is the
+   honest state of this item — and it contradicted this entry's "resolved"
+   for as long as both were live.
 6. **Energy scale E₀**: calibrated as the $H^2$ input (CAL-2 = $Q_\beta$).
 7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
    mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
@@ -244,7 +311,7 @@ as the $H^2$ calibration — not an additional fit.
 | **BW-8** | 🟢 closed | Wenzl-bridge q-hook product; live derivation in `wigner-np-pairing`. |
 | **BW-11** | 🟢 closed | Wenzl-bridge closed form $(y_{(4,1)} + y_{(2,1,1,1)})\,m_e$ at $n=5$. |
 | **MAG-1** | 🟢 6/7 derived/verified | Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate witness $\{50,82\}$ + PR #500 homological framework; only $Z=126$ pending (cron compute). The "only on the magic ladder" claim is `conj:homological-shell-condensation`. |
-| **ALPHA-2** (1/α residual) | 🟢 closed at 6.7 ppb | Within CODATA 21-ppb uncertainty; no further derivation required (P1.7). |
+| **ALPHA-2** (1/α residual) | 🔴 OPEN | **Corrected 2026-08-21** (was "🟢 closed at 6.7 ppb … no further derivation required"). The 6.7 ppb belonged to the `45[3]_q(1+δ_CS+8qδ_CS²)` form, which the corpus rules out **structurally** as PSLQ-empirical; it was also muon-pinned and scored against CODATA-2018. Best derived form is −468 ppb (CS tower, structural). See item 5. |
 
 See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
 for the full audit and

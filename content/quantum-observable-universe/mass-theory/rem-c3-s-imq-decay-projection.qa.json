@@ -981,6 +981,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a closure:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.599Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'a structural identification, not a closure' and 'There is no tension with the canonical convention Im(q_0)=0' are substantive scope statements. 'the input is the measured S, not a fitted formula' is an anti-fit disclaimer (substantive form) but see the notes on trap-rhetorical-pivot: S is not measured."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1000,6 +1015,23 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.655Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "major",
+        "evidence": "'A real $q_0$ can never flip the sign of $S$; a sign-flipped small Im(q) does so naturally, which is what makes the near-singular sensitivity of the decay coefficient reside in the imaginary (decay) coordinate rather than in Re(q).' Antithesis + 'naturally' + a trailing 'which is what makes ...' clause carrying the entire inference.",
+        "notes": "PROPOSED (structural; do not fix inline, the premise is false): RECOMPUTED — the premise is wrong. S is identified from the cited probe's hardcoded S_TARGET as S(mu)=+0.00968298, S(p)=-0.03945936, which recompute exactly as c3 + Vol(4_1) (c3(mu)=-2.0202002328, c3(p)=-2.0693425728, Vol(4_1)=2.0298832128). S is thus a deterministic REAL function of q that changes sign between two REAL q_0, so it HAS a real root — and the sibling block rem-qstar-decay-sector-q0.md, which uses this one, root-finds it: q* = 1.1099785930315233, 80.28% of the way from the proton to the muon anchor. A real q_0 therefore CAN flip the sign of S. Replace with: S has a real zero q* strictly between the anchors, so the sign flip needs no Im(q); the extraction bounds the SIZE of an Im(q) that would reproduce S under the u = 2 log q map, nothing more. Related: 'the input is the measured S' — S is not measured, it is c3 (extracted from measured Q_beta via the 1/u^3 ladder) plus the CHOSEN offset Vol(4_1), a defined residual whose c3^even = -Vol(4_1) identification was retracted (docs/audits/2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md); and the flip is generic, any constant in a 0.0491-wide window producing one. eps values themselves verify: +0.0148679 (+1.339%) and -0.0605885 (-5.459%)."
       }
     ],
     "trap-em-dash": [
@@ -1020,6 +1052,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 290 words (2.07/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.717Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Three dash constructions in three paragraphs; two are matched parenthetical pairs ('vanishes at the real substrate - S=0 when Im(q)=0 - so'; 'at the two anchors - the input is ... - yields') and one trailing appositive. True parentheticals, acceptable density."
       }
     ],
     "trap-triples": [
@@ -1039,6 +1086,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 290 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.774Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1058,6 +1120,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.829Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Block ends on a script citation."
       }
     ],
     "trap-meta-commentary": [
@@ -1077,6 +1154,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.901Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No narrated emphasis after the ', crucially,' removal (see trap-superlative)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1096,6 +1188,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:05.957Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Final paragraph adds scope (map still open, magnitude map-dependent, no conflict with Im(q_0)=0); not restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1115,6 +1222,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:06.019Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1134,6 +1256,21 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (1)"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:06.074Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "FIX APPLIED: 'which is small and, crucially, **sign-flipped** between the anchors' -> 'which is small and **sign-flipped** between the anchors'. 'crucially' narrated the author's own emphasis in the manner of 'most importantly'. Remaining absolutes ('can never flip', 'does so naturally') are recorded as a fail under trap-rhetorical-pivot, where the substantive defect lies."
       }
     ],
     "trap-nonspeakable": [
@@ -1153,6 +1290,23 @@
         "reviewed_at": "2026-08-15T10:31:00.568Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a135870e7029",
+          "ts": "2cdd57d8e30c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:06.133Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "'Reading $S$ as the first-order response of the figure-eight complex volume Im V to a small imaginary part eps = Im(q), with the derived meridian map u = 2 log q and leading Neumann-Zagier Im V ~ (sqrt3/2)|u|^2 sin(2 arg u), gives S ~ (4 sqrt3 log q_0/q_0) eps.' — 55 words, three stacked qualifiers between subject and verb; the verb 'gives' arrives after two nested definitions.",
+        "notes": "PROPOSED (math-adjacent, not fixed inline): split — 'Read $S$ as the first-order response of the figure-eight complex volume $Im V$ to a small imaginary part $eps = Im(q)$. With the derived meridian map $u = 2 log q$ and the leading Neumann-Zagier form $Im V approx (sqrt3/2)|u|^2 sin(2 arg u)$, this gives $S approx (4 sqrt3 log q_0/q_0) eps$.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1175,5 +1329,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:21:06.133Z"
 }

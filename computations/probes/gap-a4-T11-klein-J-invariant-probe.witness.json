@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T22:37:36.751377+00:00",
-  "commitSha": "623dd26839a8a10b07abb3f56b63f311116753a4",
+  "computedAt": "2026-08-23T09:23:35.605623+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "klein_f_leading_coefficient_one",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "gap-a4-T11-klein-J-invariant-probe",
   "scriptFile": "gap_a4_T11_klein_J_invariant_probe.py",
-  "scriptHash": "493da7684e8a",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "113e4d7da00a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,7 +56,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_T11_klein_J_invariant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_T11_klein_J_invariant_probe.py"
   },
   "description": "GAP-A-4 T11 — Klein J-invariant structural setup.  Verifies polynomial degrees, the Klein syzygy 1728 f^5 = T² + H³, the J-invariant orbit values (0, 1, ∞), and Riemann-Hurwitz. The h-deformation question stays open as a scaffold per formalize-first discipline.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
@@ -69,9 +76,9 @@
     "q_0_recorded_for_followups": 1.1099785955573347,
     "klein_degrees": {
       "z_sample": "10000000000.0",
-      "f_leading_ratio": "1.0000000000000000000000000000000000000000000000001",
+      "f_leading_ratio": "1.00000000000000000000000000000000000000000000000011",
       "H_leading_ratio": "-0.99999999999999999999999999999999999999999999999772",
-      "T_leading_ratio": "1.0000000000000000000000000000000000000000000000052"
+      "T_leading_ratio": "1.00000000000000000000000000000000000000000000000522"
     },
     "klein_syzygy": {
       "syzygy_check_at_z0": {
@@ -104,7 +111,5 @@
       "formalize_first_discipline": "No h-coefficient candidate proposed.  Per AGENTS.md no-7th-ansatz rule, the icosahedral q-deformation is a concrete bounded computation but exceeds this scaffold's scope.  Defer to a dedicated probe series."
     },
     "synthesis_verdict": "T11 sets up the Klein J-invariant direction structurally and verifies (a) the polynomial degrees (f deg 12, H deg 20, T deg 30) with H = Hessian of f and T = Jacobian of f, H; (b) the Klein syzygy 1728·f^5 = T² + H³ at z = 0 (trivial check); (c) the J-invariant orbit values (J = 0 at vertex orbit, 1 at face orbit, ∞ at edge orbit); (d) the Riemann-Hurwitz identity 118 = 48 + 40 + 30 for the icosahedral covering ℂP¹ → ℂP¹/I. The h-deformation question stays OPEN: whether an icosahedral q-Klein invariant carries the Borromean h⁴ = −3/4 is NOT addressed in this scaffold per formalize-first discipline (no-7th-ansatz). Implementing the q-icosahedral analogue of the Eisenstein series would be a substantial follow-up (~500+ lines symbolic+numeric); deferred to a dedicated probe series if pursued."
-  },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  }
 }

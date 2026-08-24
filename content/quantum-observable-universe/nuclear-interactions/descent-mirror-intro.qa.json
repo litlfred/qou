@@ -1195,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.167Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.208Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 0 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.255Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 0 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.296Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.342Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.380Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.423Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.468Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.513Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:01.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "14ad8dda79cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.552Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Block .md is EMPTY (1 byte, a single newline); prose() block sec:descent-mirror with meta.position=opening and no content. No text exists to adjudicate.",
+        "notes": "STRUCTURAL FLAG (not a trap): empty prose block. Either author the section opening or drop the block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:12.552Z"
 }

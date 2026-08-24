@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:11:59.359935+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:39:17.534917+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "moment_identity_gamma",
@@ -78,7 +78,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9630,
+  "durationMs": 6349,
   "computation": "borel-propertime-moment-attack",
   "scriptFile": "borel_propertime_moment_attack_probe.py",
   "scriptHash": "a8a9057f08c5",
@@ -96,7 +96,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/borel_propertime_moment_attack_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/borel_propertime_moment_attack_probe.py"
   },
   "description": "Attacks A + E on the conjecture 'binding Borel variable = loop proper time' (beans qou-7gu9 + qou-zfl0, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). ATTACK A (moment-determinacy reduction): the keystone-forced normalizer N(n) = (n−1)! is exactly the n-th ds/s-moment of the unit Schwinger kernel e^(−s)·ds/s (A1); the kernel is an infinite measure at s = 0, so determinacy lives on the shifted finite measure e^(−s)·ds with moments {k!} (A2); Carleman's condition holds exactly for {k!} (Stirling limit e^(−1/2); minorant k! ≤ k^(2k) ⇒ terms ≥ 1/k; harmonic divergence) so the Stieltjes problem is DETERMINATE (A3), Hankel-consistent (A4); with kernel c·e^(−s)·ds/s the proved n·N(n) = n! forces c = 1 (A5). REDUCTION: the conjecture reduces to two named open hypotheses — positivity + (n−1)!-representability of the binding resummation kernel; determinacy then forces the kernel to BE e^(−s)·ds. Binding-side status (A6): coefficient positivity Lean-proved; the C1 carrier is NOT a moment sequence (log-convexity fails at m = 2); the raw periods I(n)/n pass log-convexity to n = 39 (necessary condition only); kernel positivity/representability OPEN. ATTACK E (falsifier): the one-sided q-Borel normalizer is bar-COVARIANT with exact weight q^(−(n−1)(n−2)/2) while loop proper time is bar-invariant — the unbalanced identification FAILS at q ≠ 1 (E1), reproduced at moment level by the exact first-order pattern mismatch quadratic-vs-{0, linear} (E3); the balanced normalizer q^(−(n−1)(n−2)/4)·[n−1]_q! is exactly bar-invariant with vanishing first-order correction — the identification SURVIVES with the balanced-kernel (bar-projection) caveat (E2), next falsifier at q²-order Σ(k²−1)/24. Pin numerics recorded at both q₀ pins (E4).",
   "auditOnly": "docs/audits/2026-07-25-borel-propertime-attack-a-e.md",
@@ -151,11 +158,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

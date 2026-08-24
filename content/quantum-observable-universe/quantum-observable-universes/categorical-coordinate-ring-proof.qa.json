@@ -1361,6 +1361,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not direct.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.896Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The contrast semidirect-versus-direct IS the mathematical content (the Z_2 acts non-trivially on <q>), so the header '**Semidirect, not direct.**' and the body's 'forcing the *semi*direct (not direct) product' are the substantive-contrast false-positive class. 'it does not add new categorical content beyond rem:affine-chart-origin-of-i-and-q but pins down the universal extension' is an honest scope statement.",
+        "notes": "The contrast is nevertheless stated twice within three lines (header plus body parenthesis); one of the two is enough."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1380,6 +1397,22 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.939Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Existence -> semidirect computation -> commutative limit -> universality -> QED, then two labelled appendices. Section headers, not setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1400,6 +1433,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 272 words (2.21/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.981Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Three spaced em-dash pairs in one proof: 'inverts the scaling parameter - a non-trivial Z_2 action on <q> - forcing'; 'one Z_2, three faces - chart-swap, Galois, braiding orientation - per rem:i-as-braiding-orientation'; 'The two structural pieces - invertible scaling generator and square root of involution-eigenvalue - are exactly the data'. Each is a genuine parenthetical, but three in a short proof is the density tell, and the second nests inside an already-parenthesised clause.",
+        "notes": "Proposed: use parentheses for the first two ('(a non-trivial Z_2 action on <q>)', '(chart-swap, Galois, braiding orientation)') and commas for the third; no wording changes needed. Not applied because they sit adjacent to displayed math and cross-reference syntax."
       }
     ],
     "trap-triples": [
@@ -1419,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 272 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.024Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'chart-swap, Galois, braiding orientation' names three genuinely distinct faces of one Z_2 and is cross-referenced; the specialisation table has four rows."
       }
     ],
     "trap-closing-aphorism": [
@@ -1438,6 +1503,21 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.067Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on cross-references fixing the naming of q and the sign of i, i.e. bookkeeping."
       }
     ],
     "trap-meta-commentary": [
@@ -1457,6 +1537,23 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.106Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The closing '**Relation to existing structure.**' paragraph comments on the proposition's status rather than narrating emphasis, and it is honest (it says the result adds no new categorical content).",
+        "notes": "Structural note: it is commentary living inside a proof block, alongside a specialisations table. Per AGENTS.md 4d the status commentary is a candidate for authorNotes, and the table would sit more naturally in the proposition or a companion remark; the proof proper ends at the QED box."
       }
     ],
     "trap-thesis-restatement": [
@@ -1476,6 +1573,22 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.147Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The pre-QED sentence 'The two structural pieces ... are exactly the data recorded by the affine-chart-origin remark' points at another block; cross-reference closer, false-positive class."
       }
     ],
     "trap-performed-warmth": [
@@ -1495,6 +1608,21 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.186Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1514,6 +1642,21 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.227Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'exactly' is used in its mathematical sense; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1533,6 +1676,23 @@
         "reviewed_at": "2026-08-15T10:31:00.042Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cf1e61627597",
+          "ts": "0f1df3b39dc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:57.267Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "'(one Z_2, three faces - chart-swap, Galois, braiding orientation - per rem:...)' is telegraphic and stalls aloud, but it is a single parenthetical gloss.",
+        "notes": "MATH FINDING to report (not edited): rows 1 and 3 of the specialisations table are wrong as rings. R[i, q^{pm 1}] = R[q,q^{-1}][i]/(i^2+1); at R = C the polynomial i^2+1 splits (roots +-sqrt(-1) in C), so C[i]/(i^2+1) = C x C by CRT, not C. Row 1 (q -> 1, R = C -> 'C (as i in C)') and row 3 (q -> e^{2 pi i/N}, R = C -> 'C') therefore state a non-isomorphism; what is meant is the further specialisation sending the formal i to a chosen square root of -1, which is a quotient onto one CRT factor. Rows 2 and 4 are correct: R[i]/(i^2+1) = C for R = R, and Z[i,q,q^{-1}] for R = Z (i^2+1 irreducible over Z). Separately, the displayed conjugation computation checks out exactly: z -> z^{-1} -> q z^{-1} -> q^{-1} z, so iota q iota^{-1} = q^{-1}."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1555,5 +1715,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:00:57.267Z"
 }

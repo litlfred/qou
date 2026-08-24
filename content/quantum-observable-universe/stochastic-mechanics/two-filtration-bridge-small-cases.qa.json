@@ -1772,6 +1772,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.382Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1807,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.420Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1842,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 204 words)"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.459Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1829,6 +1877,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 204 words)"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.496Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1912,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.533Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1947,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.573Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "emphasis is placed, not announced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1982,23 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.611Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "Two contentless closers: '#### Generalisation pattern - The verifications instantiate the structural prediction. The bar-eigenspace structure of partitions is the structural reason for the bridge map.' and '### Result - The two-filtration bridge map is verified at n <= 4', restating the italic claim at the top.",
+        "notes": "PROPOSED (structural - not applied): fold the Result paragraph into the scope correction above."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2018,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.648Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2053,23 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.686Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "major",
+        "evidence": "'*We verify the predicted bridge map for all partitions lambda |- n with n <= 4*' and '### Result: The two-filtration bridge map is verified at n <= 4.' The companion table's 'verified?' column carries seven ticks of which four are not verifications: n=1 and n=2 have Vol = CS = 0 so depth 2 and depth 3 are indistinguishable ('trivial'), n=3 (2,1) is 'structurally' with '(no hyp. knot in H_3 from (2,1) alone)', and n=4 (3,1) is literally 'if hyperbolic instance found'. One row (figure-eight) is a direct computation.",
+        "notes": "PROPOSED (structural - not applied): scope to 'one direct verification (the (2,2) figure-eight row), one literature row, and five structural or trivial cases'."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2089,22 @@
         "reviewed_at": "2026-08-15T10:30:59.574Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:21.724Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: depth prediction, four verification subsections, generalisation paragraph, result paragraph. Vol(4_1)=2Cl_2(pi/3) correct; the scope of 'verify ... for all partitions n<=4' is not supported by the table (reported).",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:21.724Z"
 }

@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:55.974Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.018Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.060Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.103Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.144Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.185Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.225Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.266Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Five-sentence remark read in full; eight of ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,23 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.309Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "Four unqualified intensifiers in five sentences, all doing the same rhetorical work (QOU beats Kontsevich–Soibelman): 'avoids this assumption COMPLETELY', 'construct finite-dimensional schemes IMMEDIATELY', 'extracts RIGOROUS finiteness DIRECTLY'. Each sentence's claim is intact without its adverb; the concentration is the tell.",
+        "notes": "proposed: 'The QOU framework does not need this assumption. Gröbner–Shirshov confluent normal forms give a finite basis of standard monomials at every length, so the length slices are finite-dimensional schemes and finiteness follows from the Diamond Lemma.' Not applied inline: it is a 5-sentence rewrite of the whole block, above the 2-sentence inline threshold."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,23 @@
         "reviewed_at": "2026-08-15T10:31:00.879Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "986e69c97ffd",
+          "ts": "ca6b787f2033"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:56.350Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'The length slices construct finite-dimensional schemes immediately' and 'The topological structure extracts rigorous finiteness directly from the Diamond Lemma' both give the agent role to an abstraction that cannot construct or extract anything; read aloud, neither sentence has a doer. Same de-agentive shape flagged in conj:knot-factor-frobenius-pairing this batch.",
+        "notes": "proposed: 'the length slices ARE finite-dimensional schemes'; 'finiteness follows from the Diamond Lemma'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:07:56.350Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:54.273565+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:24.445141+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "bring_variant_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "ocneanu-12-bring-zero-mode-variants",
   "scriptFile": "ocneanu_12_bring_zero_mode_variants.py",
   "scriptHash": "0cd6e1d48ada",
-  "scriptCommitSha": "60e8cafa0252189b203c9c8b21cebb5f8c6f5d28",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,21 +28,23 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Task 1 of PR #1617 closed-route follow-ups: tests Bring zero-mode structural variants for the Ocneanu '12' EM correction (α_em/π)/dim H_3, parallel to m_K/m_π's (3q²−1)/(2q²) closure. Goal: find a variant tighter than 54 ppb baseline.",
   "parameters": {
-    "q_60dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_60dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99955517162342283144208",
-    "residual_target": "0.0004448283765771685579244825",
-    "baseline_A_ppb": "4807.82813768",
-    "best_variant_name": "(C) (α_em/π)·(1+ℏ_q)/dim H_3",
-    "best_variant_ppb": "1611.19626877",
-    "verdict": "IMPROVED CANDIDATE: '(C) (α_em/π)·(1+ℏ_q)/dim H_3' lands at 1611.2 ppb, beating (A)'s 4807.83 ppb. Not yet below structural-identity threshold but worth investigating."
+    "k_required": "11.99960972984508386212587",
+    "residual_target": "0.0003902701549161378741312839",
+    "baseline_A_ppb": "261.13993732",
+    "best_variant_name": "(A) bare (α_em/π)/dim H_3",
+    "best_variant_ppb": "261.13993732",
+    "verdict": "NO IMPROVEMENT — bare (A) at 261.14 ppb remains the tightest tested form. The Bring zero-mode template's (3q²−1)/(2q²) sinh-truncation does NOT transfer to the proton term; the structural mechanism appears to be different."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

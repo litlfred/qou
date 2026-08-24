@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-17T20:16:36.117652+00:00",
-  "commitSha": "e209225491e3758e38e71dd1847c990e9571b6bb",
+  "computedAt": "2026-08-23T09:23:46.429719+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "colored_lr_at_root_scope_a_excluded_as_valuemap_carrier",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 21,
   "computation": "keystone-colored-lr-modulus-s013",
   "scriptFile": "keystone_colored_lr_modulus_s013.py",
-  "scriptHash": "45fb6aa44f7b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3306afcb268c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_colored_lr_modulus_s013.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_colored_lr_modulus_s013.py"
   },
   "description": "s013 Front-2: the COLORED Lawrence-Rozansky modulus vs the McKay value map. Colours the p3=5 fibre of the machine-validated Sigma(2,3,5) S-matrix (keystone_valuemap_genuine_smatrix_s013, cited) by a Wilson line alpha=1..4 and computes the fifth-root quantum dims [alpha]_k = sin(alpha k pi/5)/sin(k pi/5) at both flat connections EXACTLY. K1: alpha=1 recovers the unit anchor. K2: reflection alpha=4=1, alpha=3=2 collapses to <=2 independent moduli per flat -> colouring the p3=5 fibre does NOT escape the D=2 vacuum row. K3: |[alpha]_k| <= 1/sin(pi/5)=1.7013 while the target ratios (1,[4]_q0,[5]_q0,[5]_q0+1)~(1,4.11,5.22,6.22) grow past it -- the value map is a REAL-q0 growing object, not a root-level modulus. K4: mark 6 (electron split node) exceeds the fibre order 5, and the 3+3' two-block 2[3]_k~3.24 does not reproduce the target [5]_q0+1=6.22 ('[6]_zeta vs [5]_zeta+1' criterion). Verdict: colored-LR-at-Sigma(2,3,5)-root is scope-(a) EXCLUDED as the value-map carrier; refines (not contradicts) the ledger -- the genuine open object is the q0-continuation. No fit; nothing wired; Lean loc_matches gate stays open.",
   "data": {

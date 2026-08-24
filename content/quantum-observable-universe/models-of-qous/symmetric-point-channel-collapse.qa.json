@@ -2141,6 +2141,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.039Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2160,6 +2175,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.079Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-em-dash": [
@@ -2179,6 +2209,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.121Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-triples": [
@@ -2198,6 +2243,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.163Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -2217,6 +2277,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.203Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -2236,6 +2311,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.243Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -2255,6 +2345,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.283Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-performed-warmth": [
@@ -2274,6 +2379,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.325Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-superlative": [
@@ -2293,6 +2413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.365Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -2312,6 +2447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.083Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2bf21efe3e5a",
+          "ts": "97c9d450c125"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:44.406Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (proposition, ~0.4kB). The identity is correct: s^2 = 1 gives s^-1 = s, hence (s + s^-1)/2 = s. All ten categories clean. Note (not a trap): the lead-in says 'a purely algebraic identity in any field' while the proposition hypothesises 2 != 0, which excludes characteristic 2 - reported as a minor anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2335,5 +2485,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:29:44.406Z"
 }

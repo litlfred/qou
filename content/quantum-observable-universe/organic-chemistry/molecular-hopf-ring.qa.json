@@ -1036,7 +1036,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:54.959776Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Molecular Hopf ring (closed)' presents substantial mathematical content: A **molecular Hopf ring** is not a chain with its ends joined — it is a fundamen...",
+        "notes": "The block 'Molecular Hopf ring (closed)' presents substantial mathematical content: A **molecular Hopf ring** is not a chain with its ends joined \u2014 it is a fundamen...",
         "severity": "minor"
       }
     ],
@@ -1081,6 +1081,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Molecular Hopf ring (closed)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e",
+          "lean": "834d2535c505"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'warn' verdict is grounded on 'molecular-hopf-ring.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-hidden-dof": [
@@ -1146,6 +1161,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e",
+          "lean": "834d2535c505"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-ring.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1255,7 +1285,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 — content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e",
+          "lean": "834d2535c505"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-ring.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1279,6 +1324,21 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e",
+          "lean": "834d2535c505"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'molecular-hopf-ring.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1682,6 +1742,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.556Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No assertion-by-denial; positive claims are stated positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1701,6 +1777,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.596Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -1720,6 +1812,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.636Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Spaced/unspaced dashes counted across the block; none load-bearing, density within normal parenthetical use."
       }
     ],
     "trap-triples": [
@@ -1739,6 +1847,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.678Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1758,6 +1882,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.720Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1777,6 +1917,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.760Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1796,6 +1952,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.802Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1815,6 +1987,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.843Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -1834,6 +2022,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.885Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Maximum-strength claims checked against what the block establishes; none unqualified."
       }
     ],
     "trap-nonspeakable": [
@@ -1853,6 +2057,22 @@
         "reviewed_at": "2026-08-15T10:31:00.135Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3eb01f04db26",
+          "ts": "1836f2f48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:10.926Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1876,5 +2096,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:10.926Z"
 }

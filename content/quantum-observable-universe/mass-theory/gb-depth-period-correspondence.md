@@ -55,8 +55,6 @@ present conjecture supplies the structural answer:
   hyperbolic gluing equations) is an **archimedean accident** — it
   holds only in $\mathbb{R}$, not over $\mathcal{H}_q$ generically.
 
-This is the wall-crossing criterion: depth determines what survives.
-
 ### Surreal envelope
 
 Lift the standard-part map $\mathrm{std} \colon \mathbf{No} \to \mathbb{R}$

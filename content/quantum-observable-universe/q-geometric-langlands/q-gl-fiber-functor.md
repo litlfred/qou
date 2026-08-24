@@ -25,7 +25,6 @@ weights assembles these single-weight data into the equivalence
 above.
 
 This uniqueness is the Tannakian rigidity of $\tau$
-([fibre-functor rigidity](#rem:fibre-functor-rigidity)) doing its
-work: any two equivalences compatible with the Hecke eigensheaf
-structure and the fibre functor are connected by a unique natural
-isomorphism.
+([fibre-functor rigidity](#rem:fibre-functor-rigidity)): any two
+equivalences compatible with the Hecke eigensheaf structure and the
+fibre functor are connected by a unique natural isomorphism.

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.6531v1
-doc_title: "TRANSACTIONS OF THE AMERICAN MA THEMA TICAL SOCIETY"
+doc_title: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-7
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
-doc_brief: "AMERICAN MATHEMATICAL SOCIETY — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl"
+doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and"
 ---
 Gr¨ obner-Shirshov bases and normal form of the elements were already found for
 the Coxeter groups of type An,Bn andDn in [1]. They also proposed a conjecture

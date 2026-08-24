@@ -1494,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.787Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "One assert-by-denial: 'There is no approximation - the integer minimiser of a convex quadratic is determined exactly.' The exactness claim is the point of the paragraph, so substantive; the construction is noted under trap-em-dash instead."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1513,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.335Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-em-dash": [
@@ -1533,6 +1563,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "10 stylistic spaced dashes in 772 words (1.30/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.850Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "Six spaced em-dashes in one block. Two are true parentheticals ('the nuclear degeneracy locus - the curve in the (p,A)-plane where adjacent nuclei have equal energy - forms', 'The **degeneracy locus** - the set of (p,t) where ... - satisfies') and one is a legitimate double-question ('Whether ... - and whether ... - remains an open question'). Three are load-bearing: 'There is no approximation - the integer minimiser ...' dodges a colon; '... to multi-baryon nuclear structure - the same passage that takes the proton ... to a nucleus' appends an afterthought; and '... even-odd staggering is most pronounced - precisely where the degeneracy locus would intersect the stability curve' appends an unsupported claim to the end of a sentence, where it reads as established. Density is the tell.",
+        "notes": "Structural in the third case, because the appended clause is a substantive claim that the block's own arithmetic does not support (recomputed: the elimination gives p = 270.9, not the 67.8 the sentence rests on). Proposed: convert the three load-bearing dashes to full stops or colons, and either derive or drop the 'precisely where' clause."
       }
     ],
     "trap-triples": [
@@ -1552,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 772 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.388Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1571,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.454Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-meta-commentary": [
@@ -1590,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.506Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1609,6 +1701,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.573Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-performed-warmth": [
@@ -1628,6 +1735,21 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.634Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "trap-superlative": [
@@ -1647,6 +1769,23 @@
         "reviewed_at": "2026-08-15T10:31:01.141Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.969Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "'This lies in the neighborhood of **erbium** ($Z = 68$), occupying the rare-earth region where shell effects peak and even-odd staggering is most pronounced - precisely where the degeneracy locus would intersect the stability curve.' Three unqualified intensifiers stacked ('peak', 'most pronounced', 'precisely where') on a number that does not survive recomputation: the block's own $p^2 = (1-c)/(4c^3)$ at $c \\approx 0.01497$ gives $p = 270.93$, not 67.8.",
+        "notes": "Structural - the sentence's force depends on an arithmetic error reported separately. Proposed: recompute p first; if the erbium neighbourhood survives, state it without the three intensifiers ('This lies near erbium (Z = 68), in the rare-earth region where even-odd staggering is largest.') and drop 'precisely where', which asserts an intersection the block has not shown."
       }
     ],
     "trap-nonspeakable": [
@@ -1667,6 +1806,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.678Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1690,5 +1844,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:50:19.969Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T07:53:06.298786+00:00",
-  "commitSha": "e222ddfd463854af5137b154c6b8fa5e94798872",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:58:32.350639+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "no_small_relation_found",
@@ -17,8 +17,8 @@
   "durationMs": 0,
   "computation": "tier-2-hyperbolic-bridge3-pslq",
   "scriptFile": "tier_2_hyperbolic_bridge3_pslq.py",
-  "scriptHash": "2817ea5318c2",
-  "scriptCommitSha": "2bcbefee49512c1b95bb27f7cfed57731e11aada",
+  "scriptHash": "744a8f5ddedb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,17 +27,28 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/tier_2_hyperbolic_bridge3_pslq.py"
+    ],
+    "reproduce": "python3 -u computations/tier_2_hyperbolic_bridge3_pslq.py"
   },
   "description": "Tier-2 PSLQ extension over bridge-3 hyperbolic knots (KnotInfo through 8 crossings, 4-braid hyperbolic) for BringHyperbolicDecomposition. Extends Tier-1 with 6 additional knot volumes.",
   "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision_dps": 50,
-  "tolerance": "2.672764710092195646140536467151481878815196880105e-48",
+  "tolerance": "1.8111358157653424735018238581775583561365062396278276379165229779871e-68",
   "maxcoeff": 10000,
-  "snappy_available": false,
-  "tier2_volume_source": "knotinfo-literature-15dps (snappy unavailable)",
+  "snappy_available": true,
+  "tier2_volume_source": "knotinfo-literature-15dps (snappy HP failed)",
   "basis_labels": [
     "2/(3π)",
     "2·Cl_2(π/3)",

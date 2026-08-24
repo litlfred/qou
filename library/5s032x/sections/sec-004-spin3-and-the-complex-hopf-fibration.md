@@ -1,13 +1,13 @@
 ---
 doc_id: 5s032x
-doc_title: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+doc_title: "The standard model symmetry and qubit entanglement"
 section_id: sec-004-spin3-and-the-complex-hopf-fibration
 section_title: "Spin(3) and the Complex Hopf Fibration"
 section_number: null
 pages: 7-9
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
-doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
+doc_brief: "The standard model symmetry and qubit entanglement — quantum description."
 ---
 We will now connect the story so far with the formalism in Ref. [28]. Thus, consider matrices of the form
 X(r,c ) =

@@ -1,0 +1,330 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.565Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.146Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No setup-then-reframe construction; every section opens on its claim."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.629Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.187Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "One spaced em-dash in 2.4k chars (\"- Ohtsuki's theorem, untouched\"), a true parenthetical attribution."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.667Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.273Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Block ends on a substantive mathematical reason (the 4_1 squeeze relies on positivity of <4_1>_N, which <5_2>_N lacks), not a quotable line."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.702Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.355Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"The sum rule is an identity among dilogarithm values at algebraic points. Nothing about a metric, a manifold, or an asymptotic follows from it.\" adds scope precision rather than restating."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.737Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.398Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.769Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:five-two-saddle-sum-rule (saddle cubic, theorem, What-changed section, the not-the-volume-conjecture disambiguation, shape-field discussion). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.482Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Prose reads aloud cleanly; noun chains are short."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.804Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The negations here are the load-bearing-disambiguation false-positive class and must be kept: the bolded It is not the volume conjecture, the enumeration of three distinct statements that must not be conflated, and Nothing about a metric, a manifold, or an asymptotic follows from it. These prevent exactly the over-claim the repository's anti-laundering discipline exists to stop, and each denial names a specific object. Kept."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.108Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Three contrast constructions: \"It is not the volume conjecture\", the 3-item distinctness list, and the header \"Why the shape field is Q(sqrt-23) and not something smaller\". All are load-bearing disambiguation: conflating the sum rule with the volume conjecture is the exact misreading the block exists to prevent, and the witness/Lean docstring make the same separation.",
+        "notes": "False-positive class \"substantive mathematical contrast\" / \"load-bearing disambiguation\". No edit."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.839Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Two lists, both content-forced: the closed form involves exactly pi, log t and arg a (the three ingredients of the displayed right-hand side), and the three distinct statements are the sum rule, the volume identity, and the volume conjecture. A third list has FOUR items (five-term identity, anharmonic evaluations, branch equations, root data)."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.232Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The one three-item list enumerates three genuinely distinct statements (sum rule / Vol = 3D(y1) / volume conjecture); each is separately characterised downstream."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.873Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No narration of the author's own emphasis; the What-changed section reports provenance rather than directing the reader's attention.",
+        "notes": "SS4d NOTE (different criterion): the section headed What changed, and what did not is author-tracking status prose - previously carried as an open conjecture class, with the comment No instance is provided, It is now a theorem, every step sorry-free - and belongs in authorNotes (kind: status) per AGENTS.md SS4d. Two section headers are also rhetorical rather than noun-phrase academic (clarity-rhetorical-header): What changed, and what did not; and Why the shape field is Q(sqrt(-23)) and not something smaller."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.314Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No narration of emphasis. NOTE: the section \"What changed, and what did not\" narrates the block's own revision history (\"previously carried as an open conjecture class ... It is now a theorem\"). That is a status leak per AGENTS.md 4d / one-voice Category H, recorded there rather than under trap-* since it is not an emphasis-narration construction.",
+        "notes": "Flagged for the one-voice axis: migrate the revision narration to authorNotes kind:\"status\"."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "98ed52e71f1c",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.909Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "is exactly why its analysis does not reduce to the 4_1 argument is a specific causal claim backed by the positivity remark that follows, not unqualified maximum-strength rhetoric.",
+        "notes": "RIGOR: EVERYTHING CHECKED IS CORRECT - unusually clean block. (1) The sum rule VERIFIES NUMERICALLY at 30 dps. Roots of y^3-2y^2+3y-1: t = 0.430159709001947 in (0,1) as claimed, a = 0.784920145499027 + 1.30714127868205i with Im a > 0, arg a = 1.03001948968536. Li_2(a)+Li_2(abar)+Li_2(t) = 0.971730681468648 and -pi^2/6 - (log t)^2/2 + (2/3)(arg a - pi)^2 = 0.971730681468648; residual 9.9e-31. (2) Discriminant recomputed: 18pqr - 4p^3r + p^2q^2 - 4q^3 - 27r^2 with (p,q,r) = (-2,3,-1) gives exactly -23, so one real root and a conjugate pair, and the splitting field contains Q(sqrt(-23)) as stated. (3) The branch equation y^2 = (1-y)^3 expands to y^3 - 2y^2 + 3y - 1 = 0 exactly - it IS the saddle cubic. (4) External facts correct: 5_2 has trace field Q(sqrt(-23)) and a 3-tetrahedron decomposition (matching Vol = 3 D(y_1)); 4_1 has the Eisenstein shape field Q(sqrt(-3)) with regular tetrahedra; Ohtsuki proved the volume conjecture for 5_2; the 4_1 squeeze does rely on positivity of the Kashaev sum, which 5_2 lacks."
+      },
+      {
+        "field_hash": {
+          "md": "530b1944ef8b",
+          "ts": "9b13694c2374"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:43.440Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No unqualified maximum-strength claims; \"every step sorry-free\" is checked below and holds."
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T05:00:43.482Z"
+}

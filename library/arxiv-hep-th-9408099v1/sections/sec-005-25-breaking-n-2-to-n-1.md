@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "E. Witten Institute for Advanced Study"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-005-25-breaking-n-2-to-n-1
 section_title: "Breaking N = 2 to N = 1"
 section_number: 2.5

@@ -77,9 +77,9 @@ together imply the $\tau$-extraction is the dual map.
 
 **Step 5: τ-extraction is the dual map.** The Observation
 Frame $\mathrm{Obs}_\tau : H_n(R,q) \to H_n(R,q)^*$ defined by
-$\mathrm{Obs}_\tau(a) = \tau(a \cdot -)$ is **literally**
+$\mathrm{Obs}_\tau(a) = \tau(a \cdot -)$ is
 $\Phi_\tau$. Therefore, an observable produced by τ-extraction
-is — *by definition* — a dual-space element.
+is, by definition, a dual-space element.
 
 **Corollary.** Every coefficient
 $c_\lambda \in \mathbb{R}$ that arises as a τ-extracted

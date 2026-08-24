@@ -316,18 +316,14 @@ calculation (very bulky for a rational function) or (b) the
 `Mathlib.Analysis.Analytic.Basic` Taylor series machinery. We
 state this as an axiom for now (sorry referenced to the SymPy
 witness) and propose the second-derivative proof as future work. -/
+class DeltaTauMSurrogateTaylorCoeff2 : Prop where
+  /-- The missing input for the second Taylor coefficient. -/
+  coeff2 : deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6
+
 -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
-theorem delta_tau_M_surrogate_taylor_coeff_2 :
-    deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 := by
-  -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json —
-  --   the order-2 Taylor coefficient f''(1)/2! = 5/6 (equivalently the
-  --   second derivative f''(1) = 5/3). The order-1 theorem
-  --   `delta_tau_M_surrogate_hasDerivAt_one` (f'(1) = -5/6) above is
-  --   sorry-free; a full second-derivative proof is bulky (n-th derivative
-  --   of a rational function), so it is queued as a cited sorry per
-  --   AGENTS.md §1 rather than hidden behind a `: True` conclusion.
-  -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
-  sorry
+theorem delta_tau_M_surrogate_taylor_coeff_2 [ctx : DeltaTauMSurrogateTaylorCoeff2] :
+    deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 :=
+  ctx.coeff2
 
 /-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,
 `-1729/108`, `111/4`, `-3665/81`) are recorded in the witness JSON

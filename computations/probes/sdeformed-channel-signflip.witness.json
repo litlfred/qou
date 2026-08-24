@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T20:46:03.788637+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:40:07.938735+00:00",
   "computation": "sdeformed-channel-signflip",
   "scriptFile": "sdeformed_channel_signflip_probe.py",
-  "commitSha": "1ded7051956e417acb17713a522c7b954ab7013e",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "description": "T2 SDeformedVolumeChannel sign-flip probe. With \ud835\udd19\u2084\u2081 made concrete (Lean FigureEightComplexVolume), test S = Im \ud835\udd19\u2084\u2081(u(q\u2080)) vs the measured flip S(muon)>0>S(proton). Rigorous A-polynomial fact \u03c4=\u2212i\u221a3 \u21d2 a\u2082 purely imaginary \u21d2 Im\ud835\udd19\u2084\u2081 = \u03ba(Re\u00b2u\u2212Im\u00b2u) (\u03ba=\u221a3/4), vanishing on the diagonals |Re u|=|Im u|, NOT the axes \u2014 correcting the heuristic \u221a3\u00b7Re\u00b7Im form the #3773 F3 survivor was built on. Verdict structural-partial: F3 refuted against the corrected form (scope-(b), even-in-d), channel not excluded but requires a diagonal-crossing u(q\u2080). No fit; no u-map wired; no instance fabricated; no c_k.",
   "precisionMetadata": {
@@ -76,5 +76,5 @@
     }
   ],
   "allPassed": true,
-  "durationSeconds": 0.243313
+  "durationSeconds": 0.674345
 }

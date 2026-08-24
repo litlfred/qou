@@ -3,8 +3,9 @@
 title: Cite 0304010v1.pdf at conj:jet-convergence-classical-limit
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:39Z
-updated_at: 2026-08-08T16:12:39Z
+updated_at: 2026-08-21T17:04:42Z
 ---
 
 conj:jet-convergence-classical-limit's prose names a 'Feray-Meliot q-Plancherel Central Limit Theorem' but cites feray2010 + kerov1996; the named q-CLT paper is absent from references.ts and the q = 1 antecedent is uncited. Add this and verify the Feray-Meliot citation separately.
@@ -17,3 +18,10 @@ Source: `library/arxiv-math-0304010v1/0304010v1.pdf` — no `references.ts` entr
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0304010v1/  ->  [ivanov-olshanski2003]
+  Kerov's central limit theorem for the Plancherel measure on Young diagrams
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [ivanov-olshanski2003] as the citation key when you do it.

@@ -5,7 +5,7 @@
   "description": "The '1.6\u00d7 A=3 magnitude near-miss' is dimensionally ill-posed AND scale-ambiguous. The 3-body cluster c\u2083=0.297 is a genuine ENERGY (E\u2080\u00b7deficit) compared directly to the DIMENSIONLESS \u03bc\u2083=0.4708 (borromean probe:188 admits '\u03bc\u2083 dimensionless, read as MeV'). Repairing the pun does NOT give one 'honest gap': the categorical binding scale is unpinned \u2014 the master formula undershoots the DEUTERON by 5.85\u00d7 (C_knot=B_AME/B_cat, an explicitly FITTED deficit ratio = the open \u0394_\u03bb gate). Normalizing c\u2083 by the AME deuteron gives a 3.53\u00d7 UNDERSHOOT; by the categorical deuteron (scale-consistent, E\u2080/m_e cancels) a 1.66\u00d7 OVERSHOOT \u2014 the two differ by exactly C_knot=5.85. So the near-miss is an artifact of the unpinned scale, not a robust proximity. (Self-correction: an earlier version reported 3.53\u00d7 as 'the honest gap' \u2014 that picked one normalization and over-claimed.) The unambiguous object is C_knot itself; deriving it (the \u0394_\u03bb magnitude) is 'how to improve binding' and is currently a FIT (six ans\u00e4tze + three walls failed). scope-(a) calibration; no fit; nothing wired; exact (mpmath). Corpus files carry the pun \u2014 flagged for coordination.",
   "audit_only": true,
   "tier": "scope-(a) units-consistency + scale-ambiguity calibration (self-correction); no fit",
-  "scriptHash": "2ea68062c1280896",
+  "scriptHash": "5ce1275b967d3d3b",
   "result": {
     "the_pun": {
       "site": "borromean_h9_magnitude_lift_probe.py:188 \u2014 'target \u03bc\u2083 = 0.4708 (dimensionless, read as MeV)'",
@@ -39,5 +39,5 @@
     "builds_on": "borromean_h9_magnitude_lift_probe.py:188 (the pun), #4364, three-walls, this PR's mu3/a3/a4 probes",
     "no_fit": true
   },
-  "scriptCommitSha": "9182c50394bc4a0b109f7caf199405709052a283"
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2"
 }

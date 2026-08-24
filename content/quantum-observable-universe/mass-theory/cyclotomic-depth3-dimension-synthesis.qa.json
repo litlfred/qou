@@ -2359,6 +2359,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.823Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2378,6 +2393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.859Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2397,6 +2427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.893Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-triples": [
@@ -2416,6 +2461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.929Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The three sentences (imaginary parts 0 dims / orbit sum absorbs 1 / remainder (K-3)/2) are the actual dimension count, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2435,6 +2495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.963Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-meta-commentary": [
@@ -2454,6 +2529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:12.997Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-thesis-restatement": [
@@ -2473,6 +2563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.032Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Block-final self-assessment closer found and mechanically replaced by its factual residue.",
+        "notes": "FIX APPLIED: 'The framework structurally isolates the genuinely new elements without relying on per-prime numerical guesses, securing the depth-3 cyclotomic picture.' -> 'This isolation of the genuinely new elements does not rely on per-prime numerical guesses.'"
       }
     ],
     "trap-performed-warmth": [
@@ -2492,6 +2598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.066Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "trap-superlative": [
@@ -2511,6 +2632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.100Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "After the fix above, what remains is the arithmetic.",
+        "notes": "Separately reported: the statement says the dimension 'bounds unconditionally' as an EQUALITY, but its own proof establishes only <= unconditionally and = conditional on Beilinson, and its own Table 2 heads the column 'Conditional dimension'."
       }
     ],
     "trap-nonspeakable": [
@@ -2530,6 +2667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.537Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "c1a659e74212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.134Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 85 w: read in full. dim V_K = (K-3)/2 for prime K >= 5, with a three-step accounting paragraph."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2553,5 +2705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:58:13.134Z"
 }

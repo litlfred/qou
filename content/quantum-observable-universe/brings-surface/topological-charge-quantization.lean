@@ -1,6 +1,7 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 
+
 /-!
 # QOU.AlgebraicSubstrate.topological_charge_quantization
 
@@ -35,25 +36,20 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     non-degeneracy of the Frobenius pairing and periodicity of the
     Reeb derivation ξ_q force the total charge to be integral. -/
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
-/-- **The Reeb-residue condition**, named — not proved.
+/-- The quantized-topological-charge condition, as a **predicate** on the
+    categorical data: the Reeb residue operator `Res_ξ`, post-composed with
+    the observer trace `Φ`, leaves `Φ` unchanged — `Res_ξ ≫ Φ = Φ`.
+    Equivalently the algebraic residue `Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1`
+    (with `1 = id_{𝟙}` in the monoidal unit).
 
-    `topological_charge_quantization Φ Res_xi` is the assertion that the
-    Reeb residue operator acts as the identity under the observer trace:
-    `Res_ξ(ω)` composed with `Φ` is `Φ`.
-
-    **2026-08-21 (bean `qou/q407`).** This was a `theorem` whose
-    hypothesis and conclusion were identical and whose proof was the
-    identity. It asserted nothing about residues, traces or charge
-    quantisation.
-
-    The substantive claim — `Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1`, the
-    algebraic counterpart of Gauss–Bonnet — is not expressible here:
-    `A`, `Φ` and `Res_xi` are uninterpreted, so there is no `ω`, no
-    residue and no non-degenerate Frobenius pairing for the statement to
-    be about. The honest artifact is the *condition*, with the block
-    marked `validation: "stub"`. -/
--- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
-def topological_charge_quantization {A : C} (Φ : A ⟶ (𝟙_ C))
+    Named (§3b), not asserted: the previous `(h_reeb_residue : P) : P := h`
+    was self-assuming and stated nothing. Integrality of the total charge is
+    forced by non-degeneracy of the Frobenius pairing and periodicity of the
+    Reeb derivation `ξ_q` — the algebraic Gauss–Bonnet content — which lives
+    in the substrate, not at this abstraction, so this names the condition. -/
+def topological_charge_quantization
+    (A : C)
+    (Φ : A ⟶ (𝟙_ C))
     (Res_xi : A ⟶ A) : Prop :=
   Res_xi ≫ Φ = Φ
 

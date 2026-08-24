@@ -2101,6 +2101,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.477Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2120,6 +2136,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.518Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-em-dash": [
@@ -2140,6 +2172,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 174 words (2.30/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.553Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive pair around 'each nucleon a 3-strand block, assembled by atom_braid_word_3A'."
       }
     ],
     "trap-triples": [
@@ -2159,6 +2207,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 174 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.587Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-closing-aphorism": [
@@ -2178,6 +2242,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.622Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-meta-commentary": [
@@ -2197,6 +2277,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.656Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-thesis-restatement": [
@@ -2216,6 +2312,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.691Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Closes by delegating the framing to the context remark -- a cross-reference closer, an explicit false-positive class."
       }
     ],
     "trap-performed-warmth": [
@@ -2235,6 +2347,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.727Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-superlative": [
@@ -2254,6 +2382,22 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.761Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 176-word lemma statement plus the trailing Archimedean-specialisation banner."
       }
     ],
     "trap-nonspeakable": [
@@ -2273,6 +2417,23 @@
         "reviewed_at": "2026-08-15T10:31:00.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f9d1a2924df6",
+          "ts": "c75199ce08f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.798Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Statement parses.",
+        "notes": "RIGOR (not a trap): the block ENDS with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ...' -- nothing follows it, so the banner's deictic refers to no text. The same defect recurs verbatim at the end of brane-tower-z-habiro.md. Proposed: move the banner above the material it scopes, or reword to 'The statement above sits on ...'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2296,5 +2457,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:32.798Z"
 }

@@ -1,0 +1,948 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-21T16:16:08.770331+00:00",
+  "commitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
+  "assertions": [
+    {
+      "name": "chains_not_matching_the_term_count_shape",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 170,
+  "computation": "hecke-chain-cancellation",
+  "scriptFile": "hecke_chain_cancellation.py",
+  "scriptHash": "8b8184898953",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Term-count profile of the Bokut-Shiao corner's a <= b chain. The two quadratic steps each add one term (peak 4); exactly TWO later steps remove two at once, which no rewrite can do -- each is a pair of terms reconverging on one word with opposite coefficients and annihilating. The first is mid-prefix; the second IS the final step, so reaching zero is itself a cancellation rather than a separate terminating mechanism. The assembly needs a CoeffEq bridging lemma for this, used twice -- not just MultiStepReduction.trans.",
+  "parameters": {
+    "peak_terms": "4",
+    "growth_events": "2, one per quadratic step, +1 each",
+    "cancellation_events": "exactly 2, both delta -2: one inside the prefix, one AS THE FINAL STEP -- the chain reaches zero by the same pair-annihilation it uses mid-way, not by a distinct terminating mechanism",
+    "lean_consequence": "needs a CoeffEq bridging lemma: ofTerms carrying (w, c) and (w, -c) equals ofTerms with both dropped. MultiStepReduction is stated on CoeffEq, so the cancellation is SOUND automatically; what is missing is the shape bridge."
+  },
+  "data": {
+    "cases_checked": 20,
+    "cases": [
+      {
+        "a": 2,
+        "b": 2,
+        "n": 7,
+        "i": 5,
+        "steps": 15,
+        "prefix": 11,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 3,
+            "rule": "Q2",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 6,
+            "rule": "Q2",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 10,
+            "rule": "F02",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 14,
+            "rule": "F02",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 10,
+        "cancellation_rule": "F02",
+        "final_collapse_step": 14,
+        "shape_holds": true
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "n": 8,
+        "i": 6,
+        "steps": 19,
+        "prefix": 11,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 3,
+            "rule": "Q2",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 6,
+            "rule": "Q2",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 10,
+            "rule": "F02",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 18,
+            "rule": "F03",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 10,
+        "cancellation_rule": "F02",
+        "final_collapse_step": 18,
+        "shape_holds": true
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "n": 9,
+        "i": 7,
+        "steps": 23,
+        "prefix": 11,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 3,
+            "rule": "Q2",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 6,
+            "rule": "Q2",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 10,
+            "rule": "F02",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 22,
+            "rule": "F04",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 10,
+        "cancellation_rule": "F02",
+        "final_collapse_step": 22,
+        "shape_holds": true
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "n": 10,
+        "i": 8,
+        "steps": 27,
+        "prefix": 11,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 3,
+            "rule": "Q2",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 6,
+            "rule": "Q2",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 10,
+            "rule": "F02",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 26,
+            "rule": "F05",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 10,
+        "cancellation_rule": "F02",
+        "final_collapse_step": 26,
+        "shape_holds": true
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "n": 9,
+        "i": 7,
+        "steps": 25,
+        "prefix": 17,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 4,
+            "rule": "Q3",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 8,
+            "rule": "Q3",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 16,
+            "rule": "F03",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 24,
+            "rule": "F03",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 16,
+        "cancellation_rule": "F03",
+        "final_collapse_step": 24,
+        "shape_holds": true
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "n": 10,
+        "i": 8,
+        "steps": 31,
+        "prefix": 17,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 4,
+            "rule": "Q3",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 8,
+            "rule": "Q3",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 16,
+            "rule": "F03",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 30,
+            "rule": "F04",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 16,
+        "cancellation_rule": "F03",
+        "final_collapse_step": 30,
+        "shape_holds": true
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "n": 11,
+        "i": 9,
+        "steps": 37,
+        "prefix": 17,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 4,
+            "rule": "Q3",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 8,
+            "rule": "Q3",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 16,
+            "rule": "F03",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 36,
+            "rule": "F05",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 16,
+        "cancellation_rule": "F03",
+        "final_collapse_step": 36,
+        "shape_holds": true
+      },
+      {
+        "a": 3,
+        "b": 6,
+        "n": 12,
+        "i": 10,
+        "steps": 43,
+        "prefix": 17,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 4,
+            "rule": "Q3",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 8,
+            "rule": "Q3",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 16,
+            "rule": "F03",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 42,
+            "rule": "F06",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 16,
+        "cancellation_rule": "F03",
+        "final_collapse_step": 42,
+        "shape_holds": true
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "n": 11,
+        "i": 9,
+        "steps": 37,
+        "prefix": 25,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 6,
+            "rule": "Q4",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 12,
+            "rule": "Q4",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 24,
+            "rule": "F04",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 36,
+            "rule": "F04",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 24,
+        "cancellation_rule": "F04",
+        "final_collapse_step": 36,
+        "shape_holds": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "n": 12,
+        "i": 10,
+        "steps": 45,
+        "prefix": 25,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 6,
+            "rule": "Q4",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 12,
+            "rule": "Q4",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 24,
+            "rule": "F04",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 44,
+            "rule": "F05",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 24,
+        "cancellation_rule": "F04",
+        "final_collapse_step": 44,
+        "shape_holds": true
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "n": 13,
+        "i": 11,
+        "steps": 53,
+        "prefix": 25,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 6,
+            "rule": "Q4",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 12,
+            "rule": "Q4",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 24,
+            "rule": "F04",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 52,
+            "rule": "F06",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 24,
+        "cancellation_rule": "F04",
+        "final_collapse_step": 52,
+        "shape_holds": true
+      },
+      {
+        "a": 4,
+        "b": 7,
+        "n": 14,
+        "i": 12,
+        "steps": 61,
+        "prefix": 25,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 6,
+            "rule": "Q4",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 12,
+            "rule": "Q4",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 24,
+            "rule": "F04",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 60,
+            "rule": "F07",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 24,
+        "cancellation_rule": "F04",
+        "final_collapse_step": 60,
+        "shape_holds": true
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "n": 13,
+        "i": 11,
+        "steps": 51,
+        "prefix": 35,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 9,
+            "rule": "Q5",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 18,
+            "rule": "Q5",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 34,
+            "rule": "F05",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 50,
+            "rule": "F05",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 34,
+        "cancellation_rule": "F05",
+        "final_collapse_step": 50,
+        "shape_holds": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "n": 14,
+        "i": 12,
+        "steps": 61,
+        "prefix": 35,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 9,
+            "rule": "Q5",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 18,
+            "rule": "Q5",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 34,
+            "rule": "F05",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 60,
+            "rule": "F06",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 34,
+        "cancellation_rule": "F05",
+        "final_collapse_step": 60,
+        "shape_holds": true
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "n": 15,
+        "i": 13,
+        "steps": 71,
+        "prefix": 35,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 9,
+            "rule": "Q5",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 18,
+            "rule": "Q5",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 34,
+            "rule": "F05",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 70,
+            "rule": "F07",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 34,
+        "cancellation_rule": "F05",
+        "final_collapse_step": 70,
+        "shape_holds": true
+      },
+      {
+        "a": 5,
+        "b": 8,
+        "n": 16,
+        "i": 14,
+        "steps": 81,
+        "prefix": 35,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 9,
+            "rule": "Q5",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 18,
+            "rule": "Q5",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 34,
+            "rule": "F05",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 80,
+            "rule": "F08",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 34,
+        "cancellation_rule": "F05",
+        "final_collapse_step": 80,
+        "shape_holds": true
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "n": 15,
+        "i": 13,
+        "steps": 67,
+        "prefix": 47,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 13,
+            "rule": "Q6",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 26,
+            "rule": "Q6",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 46,
+            "rule": "F06",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 66,
+            "rule": "F06",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 46,
+        "cancellation_rule": "F06",
+        "final_collapse_step": 66,
+        "shape_holds": true
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "n": 16,
+        "i": 14,
+        "steps": 79,
+        "prefix": 47,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 13,
+            "rule": "Q6",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 26,
+            "rule": "Q6",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 46,
+            "rule": "F06",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 78,
+            "rule": "F07",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 46,
+        "cancellation_rule": "F06",
+        "final_collapse_step": 78,
+        "shape_holds": true
+      },
+      {
+        "a": 6,
+        "b": 8,
+        "n": 17,
+        "i": 15,
+        "steps": 91,
+        "prefix": 47,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 13,
+            "rule": "Q6",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 26,
+            "rule": "Q6",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 46,
+            "rule": "F06",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 90,
+            "rule": "F08",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 46,
+        "cancellation_rule": "F06",
+        "final_collapse_step": 90,
+        "shape_holds": true
+      },
+      {
+        "a": 6,
+        "b": 9,
+        "n": 18,
+        "i": 16,
+        "steps": 103,
+        "prefix": 47,
+        "peak_terms": 4,
+        "growth_events": [
+          {
+            "step": 13,
+            "rule": "Q6",
+            "terms_before": 2,
+            "terms_after": 3,
+            "delta": 1
+          },
+          {
+            "step": 26,
+            "rule": "Q6",
+            "terms_before": 3,
+            "terms_after": 4,
+            "delta": 1
+          }
+        ],
+        "cancellation_events": [
+          {
+            "step": 46,
+            "rule": "F06",
+            "terms_before": 4,
+            "terms_after": 2,
+            "delta": -2
+          },
+          {
+            "step": 102,
+            "rule": "F09",
+            "terms_before": 2,
+            "terms_after": 0,
+            "delta": -2
+          }
+        ],
+        "cancellation_step": 46,
+        "cancellation_rule": "F06",
+        "final_collapse_step": 102,
+        "shape_holds": true
+      }
+    ]
+  },
+  "caveats": [
+    "Measured over a = 2..6 and b = a..a+3 only, and against the reduction the engine's deg-lex strategy happens to produce. A Lean proof may follow a different chain, and a different chain could cancel at a different step or not at all.",
+    "This does NOT say the cancellation is the only obstacle to the assembly. It says the arc's description of what remains -- 'MultiStepReduction.trans over a longer list' -- omits it. Other omissions may remain; the assembly has not been attempted."
+  ]
+}

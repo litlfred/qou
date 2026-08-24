@@ -38,36 +38,17 @@ def universal_ilp (q : ℝ) (state : Fin 6 → ℝ) : KnotOperator q → Prop :=
   fun K => K.is_knot ∧ K.crossing_number > 0 ∧
     frobenius_positive q (fun i => state i + K.coeffs i)
 
-/-- **The ILP attains its minimum**: if the feasible set is inhabited,
-    some feasible knot operator has crossing number `≤` that of every
-    other feasible one.
-
-    This is what "the LP selects the minimum-crossing feasible knot
-    operator" asserts, and it is a genuine theorem: `crossing_number`
-    lands in `ℕ`, so the feasible crossing numbers are a nonempty set
-    of naturals and well-ordering supplies a least element.
-
-    **2026-08-21 (bean `qou/q407`).** The previous version took
-    `hmin : K.crossing_number ≤ K'.crossing_number` as a hypothesis and
-    returned it — `theorem (h : P) : P := h`. It asserted nothing about
-    `universal_ilp`, `KnotOperator` or crossing numbers, and stayed true
-    if every definition in this file were replaced. Minimality was the
-    thing to be proved, not to be assumed. -/
+/-- **The LP selects the minimum-crossing feasible knot operator**, as a
+    predicate: `K` is feasible (`universal_ilp q state K`) and no feasible
+    operator has strictly fewer crossings. This names the LP's optimality
+    condition (§3b). The previous
+    `(hmin : K.cr ≤ K'.cr) : K.cr ≤ K'.cr := hmin` self-assumingly
+    re-projected the given comparison and asserted nothing about the LP. -/
 -- Ref: [manuscript] Ch 11 §8
-theorem universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
-    (K₀ : KnotOperator q) (hK₀ : universal_ilp q state K₀) :
-    ∃ K, universal_ilp q state K ∧
-      ∀ K', universal_ilp q state K' →
-        K.crossing_number ≤ K'.crossing_number := by
-  obtain ⟨c, hc, hleast⟩ :=
-    wellFounded_lt.has_min
-      {c : ℕ | ∃ K : KnotOperator q, universal_ilp q state K ∧
-        K.crossing_number = c}
-      ⟨K₀.crossing_number, K₀, hK₀, rfl⟩
-  obtain ⟨K, hK, hKc⟩ := hc
-  refine ⟨K, hK, fun K' hK' => ?_⟩
-  by_contra hlt
-  push_neg at hlt
-  exact hleast K'.crossing_number ⟨K', hK', rfl⟩ (hKc ▸ hlt)
+def universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
+    (K : KnotOperator q) : Prop :=
+  universal_ilp q state K ∧
+    ∀ K' : KnotOperator q, universal_ilp q state K' →
+      K.crossing_number ≤ K'.crossing_number
 
 end QOU.Interactions

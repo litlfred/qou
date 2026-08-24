@@ -48,8 +48,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, mpc, exp, pi, sqrt, fabs  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 40
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 F_GEOM = -1                       # Σ(2,3,5) = −1 surgery on the left trefoil (corpus)
 ORBIFOLD_EULER = mpf(-1) / 30     # e = −1/30

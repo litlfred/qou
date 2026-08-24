@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-030-1-variants-of-the-dilogarithm-function
 section_title: "Variants of the dilogarithm function"
 section_number: 1
 pages: 20-21
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 As explained in Chapter I, one of the disadvantages of the classical dilogarithm
 function Li

@@ -52,8 +52,9 @@ from qou_substrate.constants import q_at  # noqa: E402
 ORD = int(sys.argv[1]) if len(sys.argv) > 1 else 63
 sys.argv = [sys.argv[0], str(ORD)]
 import qbeta_dladder_generating_function_structure_probe as dlad  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 S_SCALE = mp.mpf("0.0097")          # |S(muon)| reference magnitude (the swing scale)
 with mp.workdps(50):
     VOL41 = +(2 * mp.clsin(2, mp.pi / 3))            # Vol(4_1) = 2.0298832…

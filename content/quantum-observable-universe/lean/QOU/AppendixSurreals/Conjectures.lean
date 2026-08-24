@@ -654,13 +654,24 @@ theorem observability_isFinite
     InfinitesimalObservability.exists_nontrivial_observability (K := K)
   exact ⟨SQ, hinf.isFinite⟩
 
-/-- **Conditional consequence of `JonesBirthday`.** Inhabitation of
-    `Knot` is the irreducible kernel; given the conjecture, we obtain
-    a witness knot. -/
-theorem exists_knot [JonesBirthday K] :
-    ∃ _ : Knot, True := by
-  obtain ⟨k⟩ := JonesBirthday.knot_inhabited (K := K)
-  exact ⟨k, trivial⟩
+/-! ### `exists_knot` — REMOVED 2026-08-21
+
+    It read `[JonesBirthday K] : ∃ _ : Knot, True`, obtained by
+    destructuring `JonesBirthday.knot_inhabited` and re-packing it
+    (vacuity ledger, `exists-true-tautology`, verdict genuine).
+
+    `∃ _ : Knot, True` *is* `Nonempty Knot`, which is the class field
+    `knot_inhabited` verbatim — so the declaration was a re-export of a
+    hypothesis dressed as a derived consequence, spelled in the idiom
+    that makes that hardest to see.  Restating it as `Nonempty Knot`
+    would not have fixed anything: it would merely have moved the same
+    defect from `exists-true-tautology` into
+    `proof-no-self-assuming-projection`, which is the audit-dodging
+    AGENTS.md §1a forbids.  It had no references.
+
+    Consumers wanting the inhabitation should use
+    `JonesBirthday.knot_inhabited` directly, where its status as an
+    assumed field is visible at the use site. -/
 
 /-- **Conditional consequence of `OnPModularHecke p`.** For every
     `n`, the bijection between Kazhdan–Lusztig cells and nimbers

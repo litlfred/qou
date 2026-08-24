@@ -89,8 +89,9 @@ from alpha_em_zeta_anomaly_b1_count_probe import (  # noqa: E402
     theta_pi_1,
     epstein_zero_cubic,
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 B1 = 8  # dim H¹(M_Bring) = b₁ (Jac(Bring) ~ E⁴, T^8; proven Lean PR #2114)
 
 

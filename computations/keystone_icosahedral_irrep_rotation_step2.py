@@ -29,6 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 IRREPS = ["A", "T1", "T2", "G", "H"]
 
@@ -47,7 +48,7 @@ TOWER_APPEARANCES = {
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
 
     # canonical tower order: lexicographic by (first ℓ, second ℓ, ...)
     tower_order = sorted(IRREPS, key=lambda r: TOWER_APPEARANCES[r])

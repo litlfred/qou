@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2506.10206v2
-doc_title: "5), and Q(√−7)"
+doc_title: "Analytic dilogarithm identities"
 section_id: sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-π2
 section_title: "Li2(z2) + 6 Li2(z) =− ln2(z−z2)− 6 ln(z) ln(z + 1) +π2"
 section_number: 3
 pages: 22-23
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
+doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 Note that z = 1/p where p is the so-called Plastic Constant or ratio, given as the real root
 of p3−p− 1 = 0. It also obeys the following identities: p− 1 = p−4,p−5 = 1− 1/p,p 3 =

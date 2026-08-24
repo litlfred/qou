@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-028-313-prenons-pour-x-le-compl-ement-dans-une-droit
 section_title: "Prenons pour X le compl´ ement, dans une droite projective P sur K, d’un ensemble"
 section_number: 3.13
 pages: 42-43
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 ﬁni de points rationnels, et montrons comment comparer ces c onstructions ` a celles de
 Deligne (1989). En r´ ealisation de de Rham, X fournit le complexe (` a diﬀ´ erentielle nulle)

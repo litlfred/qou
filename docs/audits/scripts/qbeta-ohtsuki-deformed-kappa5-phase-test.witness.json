@@ -3,12 +3,12 @@
   "description": "Predeclared falsification test of the xi-frame phase law (merged #3819) at the fifth deformed rung: the law, identified from rungs 1-4, predicts arg kappa~_5 = -5*arctan(t/pi) in advance; this tall ladder (N<=524288, dps 1050) extracts kappa~_5 and tests it. Also extends the deformed tower for the 5-rung Borel-Pade.",
   "audit_only": true,
   "tier": "numerical (predeclared-prediction test)",
-  "computedAt": "2026-07-17T21:06:34.112186+00:00",
-  "commitSha": "5ad4bbca2ba7636a9bd43ace2b5a8a6b534d7e2e",
+  "computedAt": "2026-08-21T15:59:47.451569+00:00",
+  "commitSha": "059f59830d620a64da5f7e76efba5b06f7ef5658",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_ohtsuki_deformed_kappa5_phase_test.py",
-  "scriptHash": "31f8e1a5b487",
+  "scriptHash": "6de7d280525e",
   "assertions": [
     {
       "name": "phase_law_prediction_survives_rung5",
@@ -39,7 +39,7 @@
       262144,
       524288
     ],
-    "max_loss_digits": 946.8257647804621,
+    "max_loss_digits": "946.8257647804621722785195",
     "predicted_arg_kappa5": "-0.16600239388973245662",
     "measured_arg_kappa5": "-0.16600238465012656169",
     "residual": "9.239605895e-9",

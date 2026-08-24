@@ -1300,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.619Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'The substantive differences are not which structures appear but where they live' IS the dictionary's claim; 'not a tunable coupling constant' is the extraction-vs-fit distinction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1319,6 +1334,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.664Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; limitations section states conditional scope directly."
       }
     ],
     "trap-em-dash": [
@@ -1338,6 +1368,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 313 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.706Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Single spaced dash ('observed at our energy scale — not a tunable coupling constant'), low density."
       }
     ],
     "trap-triples": [
@@ -1357,6 +1402,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 313 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.749Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'Three structural advantages' are three genuinely distinct obstruction-avoidance claims."
       }
     ],
     "trap-closing-aphorism": [
@@ -1376,6 +1436,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.791Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Closes on the conditional-equivalence scope statement, factual."
       }
     ],
     "trap-meta-commentary": [
@@ -1395,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.834Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'The dictionary tightens around three points' introduces the list, acceptable."
       }
     ],
     "trap-thesis-restatement": [
@@ -1414,6 +1504,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.875Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Limitations paragraph adds hypotheses (OS reflection positivity, surreal mass gap), not restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1433,6 +1538,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.919Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; 'fudge factor'/'bolts on' are colloquial register (clarity-grad-style territory, noted for that audit), not warmth."
       }
     ],
     "trap-superlative": [
@@ -1452,6 +1572,21 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.963Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Advantage claims are qualified by the Limitations section."
       }
     ],
     "trap-nonspeakable": [
@@ -1471,6 +1606,22 @@
         "reviewed_at": "2026-08-15T10:31:00.962Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.005Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Dictionary rows are dense but tabular.",
+        "notes": "TWO FLAGS, not edited: (1) register violation — Barbero-Immirzi row quotes the numerical substrate value 'q_0 approx 1.11' outside the introduction/Ch-7 carve-out (notation-collisions rule: no specific numerical q value elsewhere); (2) cross-sibling contradiction — row 'LQC bounce & CCC: Big Bang = q->1+; heat death = q->infty' vs glossary-q-bit.md values table 'q=infty ... Big Bang (no information)'. The two blocks assign opposite cosmological ends to q->infty; at most one is right."
       }
     ],
     "wall-base-ring-minimal": [

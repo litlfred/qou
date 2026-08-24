@@ -83,40 +83,27 @@ axiom evenPower_necessary_for_blockPosSemidef :
     -- The decidable proxy:
     (∀ g ∈ w.eraseDups, (w.count g + w.count (-g)) % 2 = 0)
 
-/-! ### Two conventions that were stated as theorems, and are not
+/-- The **length-bound proxy** for the canonical-T_w search: a candidate
+    word is within the enumerator's search space only if `w.length ≤ L_max`
+    (the R5-full SDP search bounds candidate length to `L_K_max ≤ 4`, per
+    `binding-k-enumerator`'s parameter).
 
-**2026-08-21, bean `qou/q407`.** `length_bound_necessary` and
-`structurallyValidBinding_necessary` stood here as
+    Named as a decidable predicate (§3b: naming, not asserting). The
+    necessity is the enumerator's search-space restriction — a definitional
+    bound, not a derived theorem. The previous `(h : ¬P) : ¬P := h` was a
+    self-assuming tautology that asserted nothing about braid words. -/
+def withinLengthBound (w : List Int) (L_max : ℕ) : Prop :=
+  w.length ≤ L_max
 
-```lean
-theorem length_bound_necessary {w : List Int} {L_max : ℕ}
-    (h : ¬(w.length ≤ L_max)) : ¬(w.length ≤ L_max) := h
-```
-
-— `theorem (h : P) : P := h`, hypothesis and conclusion identical, proof
-the identity. They asserted nothing about braid words, the enumerator, or
-`B_{n_0}`, and stayed true if every definition in this file were replaced.
-
-They were not failed proofs; they were **conventions of the search**
-written in the grammar of results. `length_bound_necessary`'s own
-docstring conceded it — "any candidate violating this bound is excluded
-from the search *by hypothesis*". The `L_K_max ≤ 4` cutoff is a parameter
-of `binding-k-enumerator`, and structural validity is the definition of a
-well-formed binding word; neither is a fact about the substrate that could
-be true or false.
-
-Recording the conventions here, where they belong:
-
-* **Length bound.** The R5-full SDP search for canonical `T_w` considers
-  only candidates with `w.length ≤ L_K_max`, currently `4`
-  (`binding-k-enumerator` parameter).
-* **Structural validity.** A binding word at `n_0` is non-empty, has no
-  zero-index generator, and has every generator in `3 ≤ |g| < n_0`.
-
-Naming a `def` for the search space and re-proving `¬bound → ¬inSpace`
-by `id` was the alternative. It would have made the statement mention
-something, but the definition would exist only to be echoed — the same
-defect one level up. Deleted instead. Neither had any caller: the only
-reference to either name in the corpus was its own definition. -/
+/-- **Structural-validity proxy is necessary for braid-word
+    interpretation.**  A binding word with a zero-index generator
+    or out-of-range generator does not correspond to any valid
+    inter-nucleon binding operation in `B_{n_0}`. -/
+theorem structurallyValidBinding_necessary {w : List Int} {n_0 : ℕ}
+    (h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+                   (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0))) :
+    -- Then `w` is not a structurally-valid binding word at `n_0`:
+    ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+      (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0)) := h_invalid
 
 end QOU.BraidKnot.PSDFeasibilityProxy

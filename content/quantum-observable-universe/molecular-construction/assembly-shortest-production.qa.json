@@ -1427,6 +1427,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a single word.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:06.989Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1446,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.033Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1465,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 115 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.073Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: spaced-dash count = 2; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1484,6 +1532,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 115 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.113Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1503,6 +1567,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.153Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: final prose sentence is: \"This is the categorical replacement for a standard synthetic route.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1522,6 +1602,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.192Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1541,6 +1637,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.232Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: final sentence checked against the body: \"This is the categorical replacement for a standard synthetic route.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1560,6 +1672,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.271Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1579,6 +1707,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.312Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (retrosynthesis non-uniqueness vs canonical forward NF; D_6 orbit representative; GS picture). Judged on the whole text: no unqualified maximum-strength claim; comparative and bounding claims carry their conditions.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-nonspeakable": [
@@ -1598,6 +1742,22 @@
         "reviewed_at": "2026-08-15T10:31:01.608Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fd2b097a578c",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.352Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Prose reads aloud; the em-dash parenthetical 'asking which reactions produce a target' is a true aside.",
+        "notes": "FIXED (verb substitution, sweep-damage class): 'This serves as the categorical replacement for a standard synthetic route.' -> 'This is the categorical replacement for a standard synthetic route.' Pure prose, no mathematical predicate carried by the verb."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1620,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:07.352Z"
 }

@@ -57,12 +57,31 @@ Q_SYM = sp.Symbol("q")
 
 @lru_cache(maxsize=1024)
 def _compiled_sigmas(shape: tuple, precision: str = "double"):
-    """Build lambdified σ_i^λ matrices for a given partition.
+    """Build lambdified σ_i^λ(q) matrices for a given partition.
 
     Returns a tuple of compiled functions σ_i(q) → numpy/mpmath matrix.
     Cached per (shape, precision).
+
+    The matrices are built SYMBOLICALLY in q and only then lambdified, so the
+    returned callables are genuinely functions of their argument.
+
+    They were not, until 2026-08-23 (bean `qou-v6vp`). `_cached_seminormal`
+    took only a shape and built the Hoefsmit blocks numerically at the module
+    `Q0` — its disk cache was even keyed `q{Q0:.10f}` — so wrapping the result
+    in `lambdify(Q_SYM, ...)` produced a closure over CONSTANTS. Measured at
+    the time: `sigma(q=0.5) == sigma(q=2.0) == sigma(q=7.0) == sigma(q=q0)`,
+    all four bit-identical. A q-sweep through this path returned the q0 answer
+    at every point, silently; and `precision="mpmath50"` widened float64 data
+    to 50 digits rather than computing 50 of them.
+
+    The fix is upstream, in `pyhecke.syt_prefix_cache`: `BlockCache` now
+    dispatches its arithmetic on the operand type rather than assuming float,
+    so passing `q = sympy.Symbol("q")` yields blocks that are expressions.
+    Measured on this path afterwards: the lambdified σ differs between q0 and
+    q=2 at every shape tested, and evaluating the symbolic form at q0 agrees
+    with the old float64 build to 3.3e-16.
     """
-    sigmas, dim, _ = _cached_seminormal(shape)
+    sigmas, dim, _ = _cached_seminormal(shape, q=Q_SYM)
     if dim == 0:
         return (), 0
 

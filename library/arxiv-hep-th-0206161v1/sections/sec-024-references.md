@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-024-references
 section_title: "References"
 section_number: null
 pages: 30-31
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
-doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 26 sections: Introduction; (1 .3); (α±"
 ---
 [1] A. Losev, N. Nekrasov, S. Shatashvili, hep-th/9711108, hep-th/9801061
 [2] V. Novikov, M. Shifman, A. Vainshtein, V. Zakharov, Phys . Lett. 217B (1989) 103

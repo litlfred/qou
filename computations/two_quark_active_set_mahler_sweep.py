@@ -54,6 +54,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import mpmath as mp
 import numpy as np
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lp_dual_solver import (  # noqa: E402
@@ -61,7 +63,7 @@ from lp_dual_solver import (  # noqa: E402
     solve_operator_selection_lp,
 )
 
-mp.mp.dps = 50
+set_compute_dps()
 
 HERE = Path(__file__).parent
 

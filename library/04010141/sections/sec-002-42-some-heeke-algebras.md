@@ -1,13 +1,13 @@
 ---
 doc_id: 04010141
-doc_title: "Advanced Studies in Pure Mathematics 40, 2004"
+doc_title: "Cellular algebras and diagram algebras in representation theory"
 section_id: sec-002-42-some-heeke-algebras
 section_title: "Some Heeke algebras"
 section_number: 4.2
 pages: 14-16
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
-doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
+doc_brief: "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to"
 ---
 Let R be a commutative ring as in §2, and fix elements q, Q E Rx. 
 The various Heeke algebras with which we are concerned all emanate 

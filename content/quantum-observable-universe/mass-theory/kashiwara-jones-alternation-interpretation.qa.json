@@ -1430,6 +1430,22 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.604Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'generating no link invariant' vs 'yielding a topological link invariant' is the parity claim itself.",
+        "notes": "SEPARATE (non-trap) findings, three of them material. (1) MISSING CONVENTION LABEL - directive violation. Every c_k value here (c_3 = J_Hopf(q=1) = -2, the c_2 = b^2 origin, the c_4 = b^2 + 1/2 entry, the c_5/c_6 breakdown) is CONVENTION-C-frame, and the owner ruling of 2026-08-15 makes convention D canonical and requires every c_k conclusion to be treated as C-conditional until the ladder is re-derived (bean qou-cds1). This block carries no such scoping. (2) NON-SEQUITUR in the parity rule: 'Even k stays within the Kashiwara block, AS THE HECKE QUADRATIC REDUCES sigma_i^k TO A POLYNOMIAL WITHIN H_n(q), generating no link invariant.' The Hecke quadratic reduces sigma^k to a linear polynomial in sigma for EVERY k >= 2, odd or even, so the stated cause does not distinguish the two cases it is offered to distinguish. The companion clause 'Odd k produces an even crossing number upon closure' is also unexplained and, read literally on sigma_1^k, backwards (sigma_1^k closes to a k-crossing (2,k) torus link). (3) c_5, c_6 DO NOT EXIST in the canonical producer. AGENTS.md records, with sorry-free Lean (QOU.QBeta.greedy_rung_exact / greedy_later_rungs_vanish), that qbeta_ck_cache.py extracts ONE rung by inverting the target, after which the next-rung residual is exactly zero and c_4 ... c_7 are NEVER COMPUTED. A claim that 'the alternating pattern breaks down at c_5, c_6' therefore describes quantities the canonical pipeline does not produce; the block should say where those values come from. (4) NAME: 'a Groebner-Buchberger filtration' - the corpus's non-commutative construction is Groebner-SHIRSHOV throughout (Buchberger's algorithm is the commutative one); this looks like a wrong expansion of the .ts tag 'GB-filtration'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1449,6 +1465,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.665Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the interpretation remark (kind remark, interprets prop:q-beta-categorical-precision-ladder) - origin table plus three paragraphs. Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1468,6 +1499,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.712Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the interpretation remark (kind remark, interprets prop:q-beta-categorical-precision-ladder) - origin table plus three paragraphs. Category absent."
       }
     ],
     "trap-triples": [
@@ -1487,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.763Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No list construction."
       }
     ],
     "trap-closing-aphorism": [
@@ -1506,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.819Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the interpretation remark (kind remark, interprets prop:q-beta-categorical-precision-ladder) - origin table plus three paragraphs. Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1525,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.879Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the interpretation remark (kind remark, interprets prop:q-beta-categorical-precision-ladder) - origin table plus three paragraphs. Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1544,6 +1635,23 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.927Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block closed on 'The trace serves as the structural bridge interleaving these two moduli spaces.' - a capstone restating paragraph 2's 'The Markov trace sits at the intersection, computing the closure of a typed braid ...', adding nothing.",
+        "notes": "fix applied: deleted the final sentence. The block now ends on the c_5/c_6 breakdown observation. $$ delimiters balance (0)."
       }
     ],
     "trap-performed-warmth": [
@@ -1563,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:10.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the interpretation remark (kind remark, interprets prop:q-beta-categorical-precision-ladder) - origin table plus three paragraphs. Category absent."
       }
     ],
     "trap-superlative": [
@@ -1582,6 +1705,21 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.082Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'correspond exactly to distinct jet orders' is the only intensifier; the block opens by calling the pattern 'empirical', which is the correct hedge."
       }
     ],
     "trap-nonspeakable": [
@@ -1601,6 +1739,23 @@
         "reviewed_at": "2026-08-15T10:31:00.841Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8213057fede2",
+          "ts": "59a8783d5bf5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.138Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The block title (from the .ts) is a 40-word noun chain that cannot be read aloud: 'Alternation of Q_beta precision-ladder coefficients c_k between Kashiwara matrix elements (intra-block) and Jones invariants (inter-block): interpretation via two moduli spaces meeting at Markov closure, twisted by GB jet order'.",
+        "notes": "proposed: 'Why the precision-ladder coefficients alternate between Kashiwara and Jones origins' - the subtitle detail belongs in the body."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1623,5 +1778,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:29:11.138Z"
 }

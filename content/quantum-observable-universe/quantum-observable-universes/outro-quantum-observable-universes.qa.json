@@ -154,6 +154,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.430Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -173,6 +189,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.470Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-em-dash": [
@@ -192,6 +224,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.511Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-triples": [
@@ -211,6 +259,23 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.346Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "severity": "minor",
+        "evidence": "Full read: 3-sentence chapter-close prose. The middle sentence is a three-item summary (q controls the differentials / Reeb derivation and the gauge group / q-special functions and the spectral pairing). Checked these against the chapter's actual block set: d_q and the q-Laplacian, the Reeb-SU_q(2) material, and the q-dilogarithm and Fourier-Laplace blocks are all genuinely major threads of this chapter, so the count is set by the content and not by a rhetorical reflex.",
+        "notes": "Pass, but noted as the weakest of the batch: a chapter-close summary is exactly where a reflex triple hides, and 'the Reeb derivation guides the gauge group' is vague enough that it would survive substituting any other thread."
       }
     ],
     "trap-closing-aphorism": [
@@ -230,6 +295,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.549Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-meta-commentary": [
@@ -249,6 +330,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.590Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-thesis-restatement": [
@@ -268,6 +365,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.389Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "The block-final sentence points forward to the next chapter's brane tower {A_n}, which is the cross-reference-closer carve-out (bookkeeping), not a restatement of what this chapter established.",
+        "notes": "Pass by the cross-reference-closer carve-out."
       }
     ],
     "trap-performed-warmth": [
@@ -287,6 +400,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.628Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-superlative": [
@@ -306,6 +435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.670Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ],
     "trap-nonspeakable": [
@@ -325,8 +470,24 @@
         "reviewed_at": "2026-08-15T10:30:59.853Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "446a1cf65959",
+          "ts": "13cbbd2474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.709Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 3-sentence chapter close; no instance of this construction. 'The Quantum Observable Universe chapter concludes' is structural signposting of the document, not narration of the author's own emphasis, so it is not category-6.",
+        "notes": "No trap."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:30:59.853Z"
+  "updated_at": "2026-08-22T03:39:03.709Z"
 }

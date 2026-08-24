@@ -2127,6 +2127,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:22.825Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2146,6 +2162,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:22.876Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -2165,6 +2197,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 192 words)"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:22.920Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -2184,6 +2232,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 192 words)"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:22.965Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -2203,6 +2267,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.007Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: final prose sentence is: \"The binding energy from the LP dual:    The molecule binds when the shared-electron $\\Phi_1$ reduction exceeds the proton-proton repulsion penalty.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -2222,6 +2302,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.047Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -2241,6 +2337,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.088Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: final sentence checked against the body: \"The binding energy from the LP dual:    The molecule binds when the shared-electron $\\Phi_1$ reduction exceeds the proton-proton repulsion penalty.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -2260,6 +2372,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.129Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -2279,6 +2407,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.172Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No unqualified maximum-strength prose claim; 'exactly once' in the constraint list is a combinatorial statement.",
+        "notes": "CARRIED FINDING (numeric, not a trap): the whole 'Numerical evaluation' section reproduces q ~ 1.1094, not any documented q0 pin. Recomputed at proton q0=1.1099785827513808 (= muon to 6 dp here): q-1/q=0.209060 (block: 0.208), q^5=1.684896 (block: 1.680), q^-5=0.593509 (block: 0.595), V^H=0.241264 (block: 0.245), Phi_1^H=-1.421864 (block: -1.406), Phi_1^sep=-2.843729 (block: -2.812). At q=1.1094 every block value reproduces exactly (0.208012 / 1.680509 / 0.595058 / 0.245492). Not 1.1097 either (that gives 0.208556 / 1.682782). ln(0.245)=-1.4065 so the block's own arithmetic is self-consistent - the defect is upstream, in q. Same implied q in three sibling blocks; see the batch report."
       }
     ],
     "trap-nonspeakable": [
@@ -2298,6 +2442,22 @@
         "reviewed_at": "2026-08-15T10:31:01.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "873007bf77c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:23.215Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the proposition block (primal/dual pair, strong duality, and a full numerical evaluation which I recomputed at every documented q0 pin). Judged on the whole text: read aloud end to end (10 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2321,5 +2481,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:23.215Z"
 }

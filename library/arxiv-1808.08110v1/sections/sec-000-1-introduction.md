@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1808.08110v1
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics II"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 2-12
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
+doc_brief: "Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for"
 ---
 2 Unimodularity of SU (3)c and the quark-lepton symmetry 5
 3 The 3 generations and the triality in J 8

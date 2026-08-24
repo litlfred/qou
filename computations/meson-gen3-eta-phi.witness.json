@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T22:40:13.182323+00:00",
-  "commitSha": "21a3c55f9c3278821a329d53c21433423b92a4ff",
+  "computedAt": "2026-08-23T09:15:31.234334+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "meson-gen3-eta-phi",
   "scriptFile": "meson_gen3_eta_phi.py",
-  "scriptHash": "b0c8b8cc8ea2",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "a2810aaf3e6f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_gen3_eta_phi.py"
+    ],
+    "reproduce": "python3 -u computations/meson_gen3_eta_phi.py"
   },
   "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke χ^(2,1)·Seifert², parallel to the proved kaon; honest comparison to all light gen-3 mesons",
   "audit_only": true,
@@ -34,51 +41,51 @@
     "n_q": 2
   },
   "constants": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "m_pi_MeV": "139.57039",
     "seifert_ratio_T27_T23": "15/7"
   },
   "kaon_crosscheck": {
-    "pred": "3.5360943475191063403105721076683225604837492936652",
-    "pdg": "3.5371184389468281918535872830906326191393461034249",
-    "ppm": 289.52703885900223
+    "pred": "3.536093921682372283258628487134157209679021436127227903463169950512101",
+    "pdg": "3.537118438946828191853587283090632619139346103424945649288505964624732",
+    "ppm": 289.6474297199268
   },
-  "gen3_prediction_ratio": "7.3201063373883583249379079872300664314973735076143",
+  "gen3_prediction_ratio": "7.320105388937152642051127985218955092671811067098010819486784346261721",
   "comparisons": {
     "K±": {
       "pdg_ratio": 3.537118438946828,
-      "residual": 1.0695112317380895
+      "residual": 1.069510963595752
     },
     "η": {
       "pdg_ratio": 3.92534548337939,
-      "residual": 0.8648311004427479
+      "residual": 0.8648308588203966
     },
     "ρ": {
       "pdg_ratio": 5.554616563011682,
-      "residual": 0.31784188059588364
+      "residual": 0.3178417098458067
     },
     "ω": {
       "pdg_ratio": 5.6076364048277005,
-      "residual": 0.30538177030992353
+      "residual": 0.30538160117427754
     },
     "K*": {
       "pdg_ratio": 6.388675993525561,
-      "residual": 0.145793955556164
+      "residual": 0.14579380709798476
     },
     "η'": {
       "pdg_ratio": 6.862343796560288,
-      "residual": 0.06670644234663989
+      "residual": 0.06670630413566798
     },
     "φ": {
       "pdg_ratio": 7.304278507783779,
-      "residual": 0.002166925807622609
+      "residual": 0.0021667959589038517
     }
   },
   "closest_match": {
     "meson": "φ",
-    "residual": 0.002166925807622609
+    "residual": 0.0021667959589038517
   },
-  "timestamp": "2026-08-08T22:40:13+00:00",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "timestamp": "2026-08-23T09:15:31+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

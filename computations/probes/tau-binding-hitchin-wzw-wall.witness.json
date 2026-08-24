@@ -3,12 +3,12 @@
   "description": "The Hitchin/WZW monodromy (Laszlo\u2013Pauly\u2013Sorger) is the right object type for \u03c4=tr B and confirms A\u2085=level-8, but its root-of-unity monodromy is unitary/elliptic (|tr|\u22642) while \u03c4=2.6424>2 is hyperbolic \u2014 the archimedean-continuation wall. Structural analogy (ii), not a derivation. scope-(a)+(b).",
   "audit_only": true,
   "tier": "structural assessment (scope-(a) mismatch + scope-(b) exclusion)",
-  "computedAt": "2026-07-19T03:27:34.724361+00:00",
-  "commitSha": "317ea55baf271c225901d7646e46819c7df697f0",
+  "computedAt": "2026-08-23T09:40:18.235009+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "tau_binding_hitchin_wzw_wall_probe.py",
-  "scriptHash": "7edf04fec597",
+  "scriptHash": "2f651d37b6b2",
   "assertions": [
     {
       "name": "lps_element_neq_tau_binding",

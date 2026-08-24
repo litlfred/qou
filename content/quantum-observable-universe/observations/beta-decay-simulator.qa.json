@@ -1178,7 +1178,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.286Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.326Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.366Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.405Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. 'The plot illustrates three regimes' + three bullets is a substantive enumeration: the classical limit q->1, the substrate point q=q_0, and the deep-quantum limit q->infinity are the three distinguished points of the parameter, not a reflex list. The other lists in the block run to four and two items."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.446Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. Final line is a cross-reference to the verification-nuclei table (#tbl:beta-decay-simulator-table-data) -- bookkeeping closer, an explicit false-positive class."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.485Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.526Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.567Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.606Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "44a2e98baee2",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:50.647Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block (simulator description prose) plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:03:50.647Z"
 }

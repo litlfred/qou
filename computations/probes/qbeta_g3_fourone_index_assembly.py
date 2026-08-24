@@ -66,8 +66,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
 from qbeta_g3_tetrahedron_index_exact import tet_index_exact  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # eq (4.20) anchor, in x = q^{1/2} degrees (x-deg = 2·q-power):
 ANCHOR_11 = {2: -1, 4: -1, 6: 2, 8: 7, 10: 11, 12: 11, 14: 3}

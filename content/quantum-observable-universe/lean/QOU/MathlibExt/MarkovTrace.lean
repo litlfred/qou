@@ -1,5 +1,6 @@
 import QOU.Archimedean.HeckeRep
 import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # Markov Trace on Hecke-Algebra Representations
@@ -183,5 +184,61 @@ theorem character_conj_word (ρ : HeckeRep n d) (i : Fin (n - 1))
   -- `eval [(i,true)] = σ_i`, `eval [(i,false)] = σ_i⁻¹`
   simp only [HeckeRep.eval, Matrix.mul_one]
   exact trace_conj_gen ρ i (ρ.eval w)
+
+open scoped BigOperators
+
+/-! ## §5  The Wedderburn-weighted Markov trace `tr_M = Σ_λ y_λ · χ^λ`
+
+The full Jones–Markov trace is the `y_λ`-weighted sum of the per-block
+characters over the Wedderburn decomposition `H_n(q) = ⊕_λ M_{d_λ}(R)`
+(partitions `λ ⊢ n`).  This is the shape used throughout the mass/binding
+compute (`tr_M = Σ_λ y_λ χ_λ`); the `y_λ(q)` closed forms are the compute-side
+input (`schur_principal_mpmath`, `WenzlSchurElement`).
+
+Bean `qou-xq3f` (T2), a first brick of the general braid-word trace: its Markov
+**cyclicity** (M2), derived block-by-block from `character_append_comm`,
+*independent of the particular `y_λ`*.  This does not yet fix the `y_λ` values
+(the deep compute-side input) nor the normalisation (M1) / Markov peel (M3);
+it establishes that whatever weights are supplied, the Wedderburn-weighted sum
+is a class function. -/
+
+/-- The **Wedderburn-weighted Markov trace**: `Σ_{i ∈ s} y i · χ^{(i)}(w)`, a
+    `y`-weighted sum of per-block characters over a finite index set `s`, each
+    block `i` carrying its own dimension `dim i`. -/
+noncomputable def weightedCharacterTrace {ι : Type*} (s : Finset ι)
+    (dim : ι → ℕ) (ρ : (i : ι) → HeckeRep n (dim i)) (y : ι → R_t)
+    (w : BraidWord n) : R_t :=
+  ∑ i ∈ s, y i * (ρ i).character w
+
+/-- **The Wedderburn-weighted trace inherits Markov cyclicity (M2).**  Each
+    block character is a class function (`character_append_comm`), so any
+    `y`-weighted sum of them is one too:
+    `tr_M(v ++ w) = tr_M(w ++ v)`.  Independent of the particular `y_λ`; the
+    structural prerequisite for `tr_M = Σ_λ y_λ χ^λ` being a genuine Markov
+    trace.  Bean `qou-xq3f` (T2). -/
+theorem weightedCharacterTrace_append_comm {ι : Type*} (s : Finset ι)
+    (dim : ι → ℕ) (ρ : (i : ι) → HeckeRep n (dim i)) (y : ι → R_t)
+    (v w : BraidWord n) :
+    weightedCharacterTrace s dim ρ y (v ++ w)
+      = weightedCharacterTrace s dim ρ y (w ++ v) := by
+  unfold weightedCharacterTrace
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [character_append_comm (ρ i) v w]
+
+/-- **The weighted trace at the identity is the `y`-weighted dimension sum.**
+    `tr_M(1) = Σ_λ y_λ · d_λ`, since each block character at the empty word is
+    the block dimension (`χ^λ(1) = tr(𝟙_{d_λ}) = d_λ`).  Hence the Markov
+    normalisation (M1) `tr_M(1) = 1` is exactly the weight condition
+    `Σ_λ y_λ · d_λ = 1` — the relation that pins the `y_λ` once the block
+    dimensions are known.  Bean `qou-xq3f` (T2). -/
+theorem weightedCharacterTrace_nil {ι : Type*} (s : Finset ι)
+    (dim : ι → ℕ) (ρ : (i : ι) → HeckeRep n (dim i)) (y : ι → R_t) :
+    weightedCharacterTrace s dim ρ y [] = ∑ i ∈ s, y i * (dim i : R_t) := by
+  unfold weightedCharacterTrace
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  have hc : (ρ i).character [] = (dim i : R_t) := by
+    unfold HeckeRep.character
+    rw [eval_nil (ρ i), Matrix.trace_one, Fintype.card_fin]
+  rw [hc]
 
 end QOU.MathlibExt.MarkovTrace

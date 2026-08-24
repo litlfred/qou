@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-9605013v1
-doc_title: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROT A TOR MODEL"
+doc_title: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 9605013v1.pdf
 source_sha256: cdeab7717dcb9567
-doc_brief: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei."
+doc_brief: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective"
 ---
 The quantum algebra SU q(2)1, 2 is a nonlinear generalization (having the struc-
 ture of a Hopf algebra 3) of the corresponding Lie algebra SU(2) to which it reduces

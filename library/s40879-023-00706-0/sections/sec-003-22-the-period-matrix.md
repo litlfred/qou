@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "RESEARCH ARTICLE"
+doc_title: "Bring's curve: old and new"
 section_id: sec-003-22-the-period-matrix
 section_title: "The period matrix"
 section_number: 2.2
 pages: 11-14
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 We record now a result from the literature. Recall that given a choice of a basis of
 differentials{ωi} on a curve and a choice of homology basis{ai, bj} on the same curve

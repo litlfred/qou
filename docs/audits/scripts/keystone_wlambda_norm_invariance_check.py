@@ -17,9 +17,15 @@ un-normalized use, where the shift is exactly Z(n).
 No fit: every number is the balanced-q-integer q-dimension; q_0 tunes nothing.
 Mirrors qdim() from keystone_wlambda_Z_defect_n_scaling.py (same hook-length q-dim).
 """
+import sys
+from pathlib import Path
+
 import mpmath as mp
 
-mp.mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 
 def q0_value():

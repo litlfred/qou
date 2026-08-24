@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.4741v1
-doc_title: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louva"
+doc_title: "The deformation quantizations of the hyperbolic plane"
 section_id: sec-007-sl2r--triplets-of-derivations-and-an-unexpected
 section_title: "sl2(R)- triplets of derivations and an unexpected Lorentzian structure"
 section_number: null
 pages: 13-13
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 Let us now consider any Poincar´ e invariant formal star⋆ product on the contracted plane M. Denote
 by Der(⋆) its algebra of derivations. Note that from formal equivalence with Moyal, every derivation is

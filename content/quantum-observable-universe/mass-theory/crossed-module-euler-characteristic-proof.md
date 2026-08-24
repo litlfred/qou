@@ -5,9 +5,9 @@ The $\binom{6}{2} = 15$ pairwise products $s_k s_l \, c_k c_l$
 are $2 \times 2$ quaternion matrices.  Their sum has trace:
 
 $$
-  \operatorname{tr}\!\bigl(\textstyle\sum_{k < l}
+  \mathrm{tr}\!\bigl(\textstyle\sum_{k < l}
   s_k s_l \, c_k c_l\bigr)
-  = \operatorname{tr}\!\begin{pmatrix}
+  = \mathrm{tr}\!\begin{pmatrix}
     -6 & 3i \\ 3i & -6
   \end{pmatrix}
   = -12.

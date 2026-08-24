@@ -41,17 +41,19 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Constants (CODATA 2022)
     cal2_target = M_MU_OVER_M_E           # m_μ / m_e
     cal_tau_e   = mp.mpf("3477.23")               # m_τ / m_e
 
     # Substrate q_0 from CAL-2 (Skein LO, same as q_pinning_50_digit)
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
@@ -84,8 +86,11 @@ def main() -> int:
             "Q_m": str(Q_m),
             "tr_M_conv_A": str(tr_M_A),
             "tr_M_conv_B": str(tr_M_B),
-            "abs_tr_M_A": mp.fabs(tr_M_A),
-            "abs_tr_M_B": mp.fabs(tr_M_B),
+            # str(), like every sibling field. These two were raw mpf and
+            # json.dumps cannot serialize that -- the producer crashed at the
+            # very last line, after doing all its work.
+            "abs_tr_M_A": str(mp.fabs(tr_M_A)),
+            "abs_tr_M_B": str(mp.fabs(tr_M_B)),
         })
         print(f"  m={m}  T(2,{2*m+1:2d})  P_m = {float(P_m):.8f}  Q_m = {float(Q_m):.8f}  |tr_M(A)| = {float(mp.fabs(tr_M_A)):.6f}")
         # Step
@@ -179,8 +184,11 @@ def main() -> int:
         },
         "verdict": {
             "cinquefoil_as_muon_uniform_xi_tower": verdict_cinquefoil,
-            "ratio_xi_3_xi_2_match_codata_tau_mu": float(xi_ratio_3_2),
-            "expected_if_uniform": float(codata_tau_mu),
+            # NOT float(): these are witness VALUES, not display. AGENTS.md
+            # permits float(x) only inside an f-string, and mp.nstr keeps the
+            # substrate precision the rest of this witness carries.
+            "ratio_xi_3_xi_2_match_codata_tau_mu": mp.nstr(xi_ratio_3_2, 12),
+            "expected_if_uniform": mp.nstr(codata_tau_mu, 12),
             # mp.nstr preserves substrate precision in the JSON emit.
             "relative_diff_percent": mp.nstr(
                 mp.fabs(xi_ratio_3_2 - codata_tau_mu) / codata_tau_mu * 100, 12),

@@ -48,7 +48,9 @@ from codata_constants import (  # noqa: E402
     M_N_MEV_VALIDATION,
 )
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # ---------- substrate ----------
 q0 = mpf(Q_50_DIGIT_STR)

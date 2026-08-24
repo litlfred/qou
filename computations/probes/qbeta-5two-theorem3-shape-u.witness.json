@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T23:19:26.659806+00:00",
-  "commitSha": "d98ac3af040a32932723aaacbd0fcaf44631085c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:36:46.308336+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "theorem3_L_equals_E_transcription",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 5,
   "computation": "qbeta-5two-theorem3-shape-u",
   "scriptFile": "qbeta_5two_theorem3_shape_u_probe.py",
-  "scriptHash": "9ada21a337ef",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bac502cdca81",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_theorem3_shape_u_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_theorem3_shape_u_probe.py"
   },
   "description": "Theorem 3 (owner dilog paper) IS the 5_2 three-tetrahedron dilog closed form (L(u)=Li2(z1)+2Li2(z2) at 3 u-branches); but the naive real-u face of E(u) is NOT the bar-odd archimedean action (no clean constant) -- the h<->2pi i/N wall needs the sibling block/saddle data. Honest negative; action stays open.",
   "auditOnly": "docs/audits/2026-07-18-5two-theorem3-shape-u-archimedean-negative.md",

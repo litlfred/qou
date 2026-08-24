@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry"
+doc_title: "Formulas on hyperbolic volume"
 section_id: sec-013-332-the-case-of-dimension-two
 section_title: "The case of dimension two"
 section_number: 3.3.2
 pages: 13-13
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume ∗ Á.G.Horváth Department of Geometry — This paper collects some important formulas on hyperbolic volume."
+doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
 ---
 The following calculation shows that area of a rectangular t riangle also can be get with our
 method.

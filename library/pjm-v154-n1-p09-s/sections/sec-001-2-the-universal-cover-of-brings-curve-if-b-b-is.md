@@ -1,13 +1,13 @@
 ---
 doc_id: pjm-v154-n1-p09-s
-doc_title: "Pacific Journal of Mathematics THE PERIOD MA TRIX OF BRING’S CURVE"
+doc_title: "The period matrix of Bring's curve"
 section_id: sec-001-2-the-universal-cover-of-brings-curve-if-b-b-is
 section_title: "The universal cover of Bring's curve. If /: B —> B is an automor-"
 section_number: 2
 pages: 2-8
 source_pdf: pjm-v154-n1-p09-s.pdf
 source_sha256: cbf5c02babe5a61e
-doc_brief: "Pacific Journal of Mathematics THE PERIOD MATRIX OF BRING’S CURVE — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
+doc_brief: "The period matrix of Bring's curve — 8 sections: Introduction. When studying the ge; The universal cover of Bring's cur; The Riemann matrix. We now compute"
 ---
 phism of a compact Riemann surface into itself, it induces an integral
 179

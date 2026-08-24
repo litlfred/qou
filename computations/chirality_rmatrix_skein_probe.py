@@ -43,6 +43,7 @@ import sys
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # (name, np-pair spin channels: +1 = symmetric/spin-1 (σ, +h),
 #  −1 = antisymmetric/spin-0 (σ⁻¹, −h)); empirical a_K coefficient string.
@@ -56,7 +57,7 @@ ISO = [
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q = mp.mpf(str(Q0)); qi = 1 / q
     h = q - qi
 

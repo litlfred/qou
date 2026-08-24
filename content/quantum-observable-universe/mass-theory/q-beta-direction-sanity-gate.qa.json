@@ -1773,6 +1773,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.719Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1808,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.758Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1843,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.797Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1878,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.836Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1913,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.875Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1948,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.915Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1983,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.954Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2018,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:58.992Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2053,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:59.029Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2088,22 @@
         "reviewed_at": "2026-08-15T10:31:00.794Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f431e1f7b631",
+          "ts": "c1ba44a978e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:35:59.066Z",
+        "reviewed_sha": "7d1a616aef2454349f69e08c3cabdd8d1a48d3e5",
+        "evidence": "Proposition, read in full (two short paragraphs). All ten categories clean in context. 'A candidate predicting a magnitude differing by more than 10x is structurally REFUTED' is the block's substantive claim, not manufactured contrast; 'This implements the formalize-first magnitude check' is a policy cross-reference rather than self-narration. No triples, no warmth, no aphorism, no em-dashes in the .md. RIGOR PASS: recomputed the target magnitude. With alpha = (z-1)h/2, h = q - q^{-1}, z the convention-C Markov parameter, F_target = Q_beta^CODATA/(Q_A cos alpha_eff) evaluates to 0.99969 (alpha alone) or 0.99993 (alpha - b hbar_q^2/2 as in the ladder), against Q_beta^CODATA = m_n - m_p - m_e = 0.78233356 MeV and Q_A = 0.78364583 MeV. So 'the target magnitude is approximately 1' is correct, and the decade window is untouched.",
+        "notes": "THREE FINDINGS. (1) The printed 0.998 in the proof is not reproduced by any reading I could construct: I get 0.99969, 0.99993, or 0.99865 depending on whether h is q-q^{-1} or hbar_q and whether the cos argument includes the b hbar_q^2/2 shift. All are order unity, so the gate's conclusion is unaffected, but the third digit is not confirmed and the block cites 'gate witness' without a path. (2) CONVENTION C IS LOAD-BEARING HERE, and I can say so precisely rather than guessing. The .ts title asserts 'the z(q_0) = 0.4993 < 1 direction obstruction' and the proof's Step 4 relies on 0 < z < 1/2. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804, so 'z < 1/2' is FALSE and the m >= 4 threshold shifts: 0.998/z_D^4 = 7.08 (passes the decade gate) while 0.998/z_D^5 = 11.56 (fails), i.e. the refuted family starts at m >= 5, not m >= 4. The gate survives convention D; its stated threshold and its title's numeric do not. (3) DURABLE REFUTATION SCOPE: 'structurally REFUTED' in capitals is a scope-(b) structural-exclusion claim under the AGENTS.md refutation rule, and the proof does supply the required invariant (AM-GM giving z < 1/2 for all q > 1), so the claim is defensible -- but the block should cite that invariant where it makes the claim, and the invariant itself is convention-C as per finding (2). Minor register note, not fixed: 'a magnitude wildly different from 1' is informal for a proposition statement."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2127,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:35:59.066Z"
 }

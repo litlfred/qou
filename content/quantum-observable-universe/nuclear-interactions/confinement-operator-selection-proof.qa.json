@@ -883,6 +883,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not on the Frobenius Gram matrix.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.003Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "Defensive assert-by-denial opener 'We do not assert the Borromean braid B_3 = (sigma_0 sigma_1^-1)^3 as the confinement operator out of convenience; a topological principle selects it.' - it rebuts a charge no one made instead of stating the claim. FIXED -> 'A topological principle selects the Borromean braid B_3 = (sigma_0 sigma_1^-1)^3 as the confinement operator.' The second paragraph's 'on braid space, not on the Frobenius Gram matrix' is left alone: that contrast IS the section's argument and the next two sentences develop it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -902,6 +919,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.044Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -921,6 +955,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.085Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -940,6 +991,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 327 words)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.125Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -959,6 +1027,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.167Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -978,6 +1063,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.208Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -997,6 +1099,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.249Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1016,6 +1135,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.290Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1035,6 +1171,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.330Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1054,6 +1207,23 @@
         "reviewed_at": "2026-08-15T10:31:01.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "799d5b64bfe5",
+          "ts": "ddc9611b66c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:02.371Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:confinement-operator-selection (4 sections, 2 displays). Verified the knot theory: the Borromean rings ARE the crossing-minimal nontrivial Brunnian link, their three pairwise linking numbers vanish and every 2-component sublink is the unlink, and no braid of fewer than six crossings is nontrivially Brunnian - all four claims correct. Verified the arithmetic against the witness: the unconfined-proton NF coefficients sum to 0.989, which is exactly the witness's net for the identity operator, so 'The identity leaves the quark demand profile unchanged' checks out numerically; the neutron gamma = -0.211 is about twice the proton's -0.105, consistent with the extra down quark's -h_A shift. 'We evaluate nine candidate confinement operators' is CORRECT - the witness carries exactly nine proton candidates - which makes Table 1's six rows the defect, not this sentence. The naive ranking also checks out: among the three zero-demand candidates, L_+ minimises crossing_energy (0.1517 vs 0.2603 and 0.3537), so 'Minimising demand channels and then E_cross selects L_+' is right.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1076,5 +1246,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:11:02.371Z"
 }

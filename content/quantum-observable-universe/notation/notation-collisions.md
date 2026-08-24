@@ -102,6 +102,8 @@ The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor.
 
 These are genuine functors (they act on morphisms). What is **not** a functor is the archimedean **evaluation** $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$ (an object-level map / place), and the *ring-level* realisations it induces: the motivic measure $\mathcal{R}_{\mathrm{top}} \colon K_0(\mathrm{Var}) \to \mathbb{R}$ (a ring homomorphism) and the standard-part map $\mathrm{st} \colon \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ (a ring homomorphism). Reserve "functor" for $\tau$, $U$, and $\mathrm{St}$; call the maps into $\mathbb{R}$ *realisations / evaluations*.
 
+**"Forgetful functor $\tau$" (classical usage) — a synonym, not a clash.** The core definition blocks write "the **forgetful functor** $\tau$" (e.g. *a QOU is a $(\mathbf{C}, A, \tau)$ with the forgetful functor $\tau$ **faithful***; `def:quantum-observable-universe`), and `tau-notation.md` names $\tau$ "the forgetful functor". This is the **classical Tannakian name**: for $\mathbf{C} = \mathbf{Rep}(U_q\mathfrak{sl}_2)$ the fibre functor and the forgetful functor are the *same* functor $\tau$ — the one $\mathbf{C} \to \mathbf{Mod}_R$ that forgets the coaction, keeping the underlying module. In the enriched register above that classical $\tau$ is the composite $U \circ \tau \colon \mathbf{C} \to \mathbf{Vec}_{\mathbb{R}}$ (row 2 of the previous table); the faithfulness axiom is a statement about this underlying-module level. So "**forgetful functor $\tau$**" and "**fibre functor $\tau$**" name the **same genuine functor** at different codomain levels — the only *distinct* forgetful arrow is the intermediate $U \colon \mathbf{Arch} \to \mathbf{Vec}_{\mathbb{R}}$. This is naming synonymy, **not** a functor-vs-map error: $\tau$ is a genuine functor under either name, so the core-block wording needs no change.
+
 **Binding-energy notions $B_\bullet$.** The framework accumulates many distinct "binding energy" objects, almost all written as a bare $B$ or $B(K)$. We keep binding as plain $B$ with systematic subscripts. The kept canonical symbols:
 
 | Symbol | Definition | Role | Status |
@@ -278,6 +280,7 @@ exactly this slip: the crossing-energy channels and the $V_\lambda
 \mapsto -\sigma_i^{-1}$, not the bar involution) are corrected here, and the
 argument from bar-invariance for the Markov parameter $z$ is withdrawn — its
 bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The $z$
-*convention* itself is unsettled and is not changed here; see
+*convention* is settled independently of this: convention D, $z = q^3/(q^2+1)$,
+is canonical and C is excised; see
 [`def:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md).)
 When the object being graded lies in the algebra, use both halves.

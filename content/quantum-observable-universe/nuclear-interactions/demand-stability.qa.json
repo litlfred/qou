@@ -2117,6 +2117,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.516Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2136,6 +2152,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.558Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -2155,6 +2187,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 208 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.600Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2174,6 +2222,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 208 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.642Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "The three clauses define three distinct stability notions."
       }
     ],
     "trap-closing-aphorism": [
@@ -2193,6 +2257,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.685Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Ends on a complexity statement, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -2212,6 +2292,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.728Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2231,6 +2327,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.772Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -2250,6 +2362,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.815Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2269,6 +2397,22 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.856Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2288,6 +2432,38 @@
         "reviewed_at": "2026-08-15T10:31:01.324Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.900Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the three-clause proposition, the beta-decay section and the inductive-scaling section. Verified the internal consistency of the typed-crossing relations against tbl:ground-state-ordering-table1-data by Cayley-Hamilton: T_pp (tr = +h, det = -1) forces C_pp^2 = h_A C_pp + 1 and T_nn (tr = -h, det = -1) forces C_nn^2 = 1 - h_A C_nn - both exactly as printed here. Headers are noun-phrase academic; no em-dashes, no aphorism, no warmth, no meta-narration.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "1b132be15861",
+          "ts": "2f6cecd5e192"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.951Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Cross-block consistency check beyond the ten categories.",
+        "notes": "NOTES (report, not fixed). (1) THIS BLOCK HAS THE CORRECT n-n RELATION. C_nn C_nn = 1 - h_A C_nn is what Cayley-Hamilton gives from Table 1's T_nn eigenvalues {+q^-1, -q}; the sibling prf:inductive-gb-reduction prints the opposite sign and is the one that needs fixing. (2) LOOSE FOLLOW-ON SENTENCE: 'These are instances of the Hecke relation sigma_i^2 = h_A sigma_i + 1 applied to typed crossings' is true of the pp relation above it but NOT of the nn relation directly above it, whose linear term is negated - the nn crossing is the bar-conjugate instance. As written the sentence asserts that both displayed identities are the same instance, which is the confusion that produced the sign error in the sibling proof block. (3) THIRD GROWTH RATE: this block says iterated same-type pairs keep complexity to 'linear growth in the number of nucleons', while prf:inductive-gb-reduction's table is quadratic (A^2/2) and prop:inductive-gb-reduction states a central-binomial bound C(A-1, floor((A-1)/2)). The three claims are mutually incompatible for large A and should be reconciled to one."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2311,5 +2487,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:10:31.951Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-040-73-homomorphism-w-a-let-v-a-be-the-finite-dimens
 section_title: "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of"
 section_number: 7.3
 pages: 22-23
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 U = Uh~ with the highest weight. Let (Va) Y be the dual representation (3.2./). Put 
 ;~* = - wo()0, where wo is the element of the Well group of maximal length with 

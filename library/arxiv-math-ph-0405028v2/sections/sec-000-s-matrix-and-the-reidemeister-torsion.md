@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0405028v2
-doc_title: "ON THE QUANTUM INV ARIANT FOR THE BRIESKORN HOMOLOGY SPHERES KAZUHIRO HIKAMI"
+doc_title: "On the quantum invariant for the Brieskorn homology spheres"
 section_id: sec-000-s-matrix-and-the-reidemeister-torsion
 section_title: "S-matrix and the Reidemeister Torsion"
 section_number: null
 pages: 17-20
 source_pdf: 0405028v2.pdf
 source_sha256: 90a0e4ba456988d6
-doc_brief: "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES KAZUHIRO HIKAMI — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology"
+doc_brief: "On the quantum invariant for the Brieskorn homology spheres — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2"
 ---
 An asymptotic behavior of the Witten invariant Zk(M) can be given from the deﬁnition (2.1).
 In a large N limit, the ﬁrst term in eqs. (5.7) and (5.8) dominate an asymp totic behavior of the

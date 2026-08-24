@@ -46,8 +46,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 from phi_b_evaluator import phi_b, phi_b_double_product  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def prod_rotated(z, b_real, theta):

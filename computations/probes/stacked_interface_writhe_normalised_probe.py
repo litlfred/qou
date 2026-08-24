@@ -91,12 +91,13 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from _precision import set_compute_dps  # noqa: E402
 
 MAXPOW = 8
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(str(Q50))
     h = q - 1 / q
     z = q ** 3 / (q ** 2 + 1)          # convention D

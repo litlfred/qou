@@ -1,6 +1,6 @@
 ---
 doc_id: 9-81
-doc_title: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEISatoshi"
+doc_title: "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1

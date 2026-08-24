@@ -1348,6 +1348,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a modeling parameter.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.562Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read (three-identity statement, 'Rigidity of the integer 5', 'The exchange rate is a linking rate', downstream caveat). Two X-not-Y forms: 'the Ocneanu-Markov normalization ..., not a modeling parameter' and 'is a counting datum ... not an adjustable integer'. Both are anti-fit disclosures about distinct objects (the bond factor z, and the integer 5), which the production-vs-exploratory discipline requires a block to state; each denies a specific objection a referee would raise.",
+        "notes": "Doubling noted: the two denials make the same move one paragraph apart. If tightened, the second can drop 'not an adjustable integer' since 'counting datum' already carries it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1367,6 +1383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.600Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Both section bodies argue straight through to their headings; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1386,6 +1417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 268 words)"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.640Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "One paired parenthetical ('is a counting datum — a total quantum dimension — not an adjustable integer'); no dashes substituting for sentence structure elsewhere."
       }
     ],
     "trap-triples": [
@@ -1405,6 +1451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 268 words)"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.677Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The numbered list has three members because there are three exact identities, each independently verified here: [2]_v^2 = [3]_v + 1; 1 + [2]_v^2 = 5 + (v-1/v)^2 (both sides 5.010896867 at q_0); g^2(1 + [2]_v^2) = 1 (computed 1.0 exactly). The 'canonical Markov parameter -> channel slope -> linking rate' chain is a three-step derivation, not a rhetorical list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1424,6 +1485,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.712Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Ends 'The archimedean evaluation at q_0 and the MeV unit E_unit are downstream and remain the open inputs of the linear law' — an open-input disclosure that weakens the block's own result."
       }
     ],
     "trap-meta-commentary": [
@@ -1443,6 +1519,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.748Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1462,6 +1553,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.787Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'So the 5 ... is a counting datum' is the conclusion the section heading promises, drawn from identity 2 rather than restating it."
       }
     ],
     "trap-performed-warmth": [
@@ -1481,6 +1587,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.824Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1500,6 +1621,21 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.864Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Every exactness claim in the block is literally exact and was checked: the '(1 + [2]_v^2) g = 1/g' split from 5g by 'the exact factor 1 + (v-1/v)^2/5' reduces to (1+[2]^2)/5, and 5.010896867/5 = 1 + 0.010896867/5. No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1519,6 +1655,22 @@
         "reviewed_at": "2026-08-15T10:31:00.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.904Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Densest sentence is 'the linking number per unit arc length, in exchange-cycle units, of a slope-z geodesic pair on the shared torus', which parses aloud by its commas.",
+        "notes": "Adjacent: 'the deuteron magnitude reads *canonical Markov parameter -> channel slope -> linking rate*' embeds arrow glyphs in running prose, which cannot be voiced; a reader must supply 'then'. Cosmetic, not fixed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1542,5 +1694,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:47.904Z"
 }

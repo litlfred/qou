@@ -105,7 +105,10 @@ def main():
     for k in range(K):
         m = k + 1
         if k >= 1:
-            ratios.append(float(c[k] / c[k - 1]))
+            # NOT float(): `c` is exact/mpmath here, and the emission one line
+            # below `c_n` already serializes via mp.nstr — this field simply
+            # skipped the convention its sibling follows. Bean qou-irzg.
+            ratios.append(c[k] / c[k - 1])
         hit = None
         for form, val in (("c_m", c[k]),
                           ("c_m·m!·(2π)^m", c[k] * mp.factorial(m) * tp ** m)):
@@ -124,7 +127,7 @@ def main():
 
     # Confirm the divergent/factorial growth signature (Borel singularity).
     print(f"  c_(m)/c_(m-1) ratios (rising ⇒ factorial growth): "
-          f"{[round(r, 2) for r in ratios]}")
+          f"{[round(float(r), 2) for r in ratios]}")
 
     verdict = (
         f"REFUTED (scope-(a)): the ℚ(√−3) saddle arithmetic of the 4₁ resurgence "
@@ -170,7 +173,7 @@ def main():
         "result": {
             "vol41_recovered_rel": mp.nstr(vol_rel, 3),
             "c_n": [mp.nstr(x, 12) for x in c],
-            "c_ratios": ratios,
+            "c_ratios": [mp.nstr(r, 12) for r in ratios],
             "any_rational_identified": any_rational,
             "verdict": verdict,
         },

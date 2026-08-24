@@ -1,13 +1,13 @@
 ---
 doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
-doc_title: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
 section_id: sec-003-1-for-rational-numbers-a-and3-af-3g-is-a-fermat
 section_title: "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +"
 section_number: 1
 pages: 3-6
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
-doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
 ---
 /3Res(g); 
 2 f.g is a Fermat function whose residue is Res(f)Res(g); 

@@ -61,6 +61,27 @@ The diagonal `b = a` being its own case is the same coincidence that runs
 through this arc: it is where the two `B₁₀` markers of the prefix carry the
 same bottom.
 
+## `small(a)` is the same blueprint — with a different tail
+
+`small(a)`, the far-commutation run inside the prefix, has the **same**
+`(high, length)` level profile as a *diagonal* block. That agreement is real but
+it is not sufficient, and taking it for sufficient is the trap: the `W` words
+match exactly, and the `B` words do **not**. `small(a)` carries
+`descWord j₁ j₂` where the top-level block carries `[σ_i]`.
+
+Both obey one blueprint once the tail is freed:
+
+    W = descWord (min(h−2, j₁+1)) j_eff        B = descWord (h−1) (j₁+1) ++ T
+
+    top-level block:  j_eff = j₂,  T = [σ_i]
+    small(a):         j_eff = j₁,  T = descWord j₁ j₂
+
+checked here over 102 top-level levels and 56 `small(a)` levels. **A Lean lemma
+that hardcodes the trailing `[σ_i]` therefore covers only the top-level block**,
+which is what the first version of `blockPass` did. Freeing `T` is what makes
+the prefix's `block · two steps · block` self-similarity into literal reuse
+rather than an observation about shapes.
+
 Emits `hecke-block-transport-shape.witness.json`. Bean qou-auq3.
 """
 from __future__ import annotations
@@ -243,6 +264,60 @@ def main():
                 "structure_holds": ok,
             })
 
+    # --- the per-level blueprint: exactly what the Lean must supply ---------
+    bp_rows, bp_bad = [], 0
+    for a in range(2, 8):
+        for b in range(a, a + 4):
+            n, i = a + b + 3, a + b + 1
+            if i >= n or i - b < 0:
+                continue
+            retune(n)
+            steps = chain(i, a, b)
+            pre, blk = a * a + a + 5, a * b - a * a + 2 * a - 3
+            runs = [r for r in far_runs(steps) if pre <= r[0] < pre + blk]
+            for (_, x0, run) in runs:
+                x = i - x0
+                w0, pos0, _ = run[0]
+                W = tuple(i - low for (_, _, low) in run)
+                B = tuple(i - y for y in w0[pos0 + 1 + len(W):])
+                # W = descWord (min(h-2, j1+1)) j2 ; B = descWord (h-1) (j1+1) ++ [s_i]
+                pW = tuple(range(max(x + 2, a - 1), b + 1))
+                pB = tuple(range(x + 1, a)) + (0,)
+                ok = (W, B) == (pW, pB)
+                bp_bad += not ok
+                bp_rows.append({"a": a, "b": b, "high_rel_i": x,
+                                "W_rel_i": list(W), "B_rel_i": list(B),
+                                "blueprint_holds": ok})
+
+    # --- small(a) obeys the SAME blueprint, with a different tail ----------
+    # small(a) is the far-commutation run inside the prefix. Its levels have
+    # the same (high, length) profile as a DIAGONAL block -- but its B does
+    # NOT end in [s_i], so a lemma hardcoding that tail does not cover it.
+    sm_rows, sm_bad = [], 0
+    for a in range(2, 7):
+        for b in range(a, a + 4):
+            n, i = a + b + 3, a + b + 1
+            if i >= n or i - b < 0:
+                continue
+            retune(n)
+            steps = chain(i, a, b)
+            pre = a * a + a + 5
+            for (st, x0, run) in far_runs(steps):
+                if not (a >= 3 and pre - (2 * a - 3) <= st < pre):
+                    continue
+                x = i - x0
+                w0, pos0, _ = run[0]
+                W = tuple(i - low for (_, _, low) in run)
+                B = tuple(i - y for y in w0[pos0 + 1 + len(W):])
+                # same blueprint, j_eff = j1 (rel a) and tail = descWord j1 j2
+                pW = tuple(range(max(x + 2, a - 1), a + 1))
+                pB = tuple(range(x + 1, a)) + tuple(range(a, b + 1))
+                ok = (W, B) == (pW, pB)
+                sm_bad += not ok
+                sm_rows.append({"a": a, "b": b, "high_rel_i": x,
+                                "W_rel_i": list(W), "B_rel_i": list(B),
+                                "blueprint_holds": ok})
+
     w = WitnessBuilder("hecke-block-transport-shape", engine="sympy",
                        start_time=started)
     w.set_description(
@@ -265,6 +340,27 @@ def main():
                     computed=str(bad_shape), expected="0")
     w.add_assertion("blocks_whose_level_structure_does_not_match",
                     computed=str(lvl_bad), expected="0")
+    w.add_assertion("levels_whose_W_and_B_do_not_match_the_blueprint",
+                    computed=str(bp_bad), expected="0")
+    w.add_assertion("small_a_levels_not_matching_the_same_blueprint",
+                    computed=str(sm_bad), expected="0")
+    w.add_parameter(
+        "unified_blueprint",
+        "top-level block and small(a) obey ONE blueprint: "
+        "W = descWord (min(h-2, j1+1)) j_eff, B = descWord (h-1) (j1+1) ++ T. "
+        "Top-level: j_eff = j2, T = [s_i]. small(a): j_eff = j1, "
+        "T = descWord j1 j2. The tail T must therefore be a PARAMETER of any "
+        "lemma meant to cover both -- hardcoding [s_i] covers only the former.")
+    w.add_parameter(
+        "level_blueprint",
+        "level with high letter s_h:  W = descWord (min(h-2, j1+1)) j2,  "
+        "B = descWord (h-1) (j1+1) ++ [s_i].  Uniform over every level of "
+        "every block, on and off the diagonal.")
+    w.add_parameter(
+        "block_as_three_lean_steps",
+        "h = j1+1 (W = descWord (j1-1) j2); h = j1+2 (W = descWord j1 j2); "
+        "then blockTransportRight with X = descWord i (j1+3), "
+        "W = descWord (j1+1) j2, B = descWord (j1+2) (j1+1) ++ [s_i]")
     w.add_parameter(
         "block_levels_off_diagonal",
         "b > a: a levels, level k (high = j1+k) passes min(b-a-1+k, b-a+2) "
@@ -277,6 +373,10 @@ def main():
     w.add_data("runs", rows)
     w.add_data("blocks_checked", len(lvl_rows))
     w.add_data("block_levels", lvl_rows)
+    w.add_data("levels_checked", len(bp_rows))
+    w.add_data("level_blueprint", bp_rows)
+    w.add_data("small_a_levels_checked", len(sm_rows))
+    w.add_data("small_a_blueprint", sm_rows)
     w.add_caveat(
         "Measured over a = 2..6 and b in {a, a+1, a+3} only, and against the "
         "reduction the engine's deg-lex strategy happens to produce. A Lean "
@@ -309,7 +409,9 @@ def main():
         print(f"  a={r['a']} b={r['b']}: {r['levels_high_and_length']}"
               f"   cap={r['cap']} short={r['short_levels']}"
               f"   {'ok' if r['structure_holds'] else 'FAILS'}")
-    total_bad = bad_position + bad_letter + bad_far + bad_shape + lvl_bad
+    print(f"level blueprint: {len(bp_rows)} levels, {bp_bad} mismatching")
+    print(f"small(a) blueprint: {len(sm_rows)} levels, {sm_bad} mismatching")
+    total_bad = bad_position + bad_letter + bad_far + bad_shape + lvl_bad + bp_bad + sm_bad
     print(f"\nruns: {len(rows)}   failing: position {bad_position}, "
           f"letter {bad_letter}, far {bad_far}, shape {bad_shape}")
     print(f"blocks: {len(lvl_rows)}   level-structure failing: {lvl_bad}")

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1004.1533v3
-doc_title: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
+doc_title: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT"
 section_id: sec-007-invariance-under-m1
 section_title: "Invariance under M1"
 section_number: null
 pages: 20-21
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
-doc_brief: "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 and M3, we can transform an open book with any number of pages to one with
 only one page (see Figure 20). Thus, it suﬃces to prove invariance u nder M1 in

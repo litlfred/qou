@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.545Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.586Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.633Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.682Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.724Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.763Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,23 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.934Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The entire proof is: 'The identification of each summand with the quantum dilogarithm Phi_q(z_i) follows from **the corollary below**. Integrating the q-deformed expansion flow over the resolved defect E_i in the spectral coordinates of the Briggs-Klein chart yields Phi_q(z_i) = int_0^z_i ln_q(1+t)/t dt.' Two defects. (1) DANGLING FORWARD REFERENCE: 'the corollary below' has nothing below it -- the block ends two lines later -- and no corollary is named or linked, so the load-bearing step is unrecoverable. This is the same shape as the 'What follows provides ...' dangling in qbeta-delta-tau-canonical-conditional-q2-minus-1-factor-proof.md, and both look like text that lost its surroundings. (2) The second sentence restates the lemma's own display verbatim rather than deriving it, so once the corollary reference is removed there is no argument left.",
+        "notes": "PROPOSED (not applied -- the fix is to name the corollary, which is content): replace 'the corollary below' with the explicit label (cor:quantum-dilogarithm is cited from prop:topological-decomposition-mass's uses[] and is the plausible target) and give the integration step, or mark the block honestly as a proof sketch."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.804Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.847Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.966Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c2ae623200e2",
+          "ts": "fc8a31781cc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:13.889Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two-sentence proof. No negation-contrast, pivot, em-dash, triple, quotable closer (it ends '$\\square$'), emphasis-narration, warmth, superlative, or non-speakable chain.",
+        "notes": "n/a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:20:13.934Z"
 }

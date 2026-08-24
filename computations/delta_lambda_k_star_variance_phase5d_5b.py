@@ -74,6 +74,7 @@ from codata_constants import (  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_mpmath import set_q, qint, qfac
+from _precision import set_compute_dps  # noqa: E402
 set_q(Q0_FLOAT)
 
 
@@ -174,7 +175,7 @@ def compute_phi_k_FR(K_atom_chis: dict, K_k_word: list, n: int, k: int) -> mp.mp
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     builder = WitnessBuilder("k-star-variance-phase5d-5b")
     builder.set_description(
         "Phase 5d.5b: variance test of K_k* candidate knots in the "

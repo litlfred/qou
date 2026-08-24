@@ -1,13 +1,13 @@
 ---
 doc_id: gambaudo-ghys-braids-signatures-2005
-doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+doc_title: "Braids and signatures"
 section_id: sec-023-2-αβ-as-a-2-fold-cover-over-p-d2-branched-along
 section_title: "(α,β ) as a 2-fold cover over P × D2 branched along"
 section_number: 2
 pages: 21-21
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
-doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
+doc_brief: "Braids and signatures — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 the surface S(α,β ) we still have to choose some homomorphism from the
 fundamental group of the complement P × D2 \S(α,β ) to Z/ 2Z. We

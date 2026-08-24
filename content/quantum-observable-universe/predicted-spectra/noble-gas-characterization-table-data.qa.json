@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.381Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.422Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.462Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.500Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.537Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.574Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.612Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.652Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.690Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Pure extracted data table (6 noble-gas rows); no prose, so no trap construction can occur. Recomputed every partition sum: He 2; Ne 2+8=10; Ar 2+8+8=18; Kr 2+8+18+8=36; Xe 2+8+18+18+8=54; Rn 2+8+18+32+18+8=86 — all six match the p column and all six are the correct atomic numbers.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "936cd18468fd",
+          "ts": "839e30d33b70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.727Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "No prose in the block.",
+        "notes": "pass on all ten (table only), and the arithmetic is right in every row. FINDING, not fixed inline: the table does not satisfy the conditions of the proposition it is attached to. prop:noble-gas-characterization requires each S_i = 2 n_i^2 . T_{2,3} (condition 1) with n_1 < ... < n_k strictly increasing (condition 3). Reading each summand as 2n^2: Ar = 2+8+8 gives n = 1,2,2; Kr = 2+8+18+8 gives 1,2,3,2; Xe gives 1,2,3,3,2; Rn gives 1,2,3,4,3,2. Four of the six rows repeat an n_i and are non-monotone, so only He and Ne meet the stated conditions. The rows encode the observed shell-filling sequence 2,8,8,18,18,32 rather than the 2n^2 capacities 2,8,18,32, which is the physically correct thing to tabulate — the mismatch is that the proposition's conditions describe the other sequence. The proposition's .ts authorNotes caveat records this gap explicitly ('reproduces the observed noble-gas Z (2,10,18,36,54,86) only for He and Ne'), so it is a known open item, not a new one; what is worth acting on is that the table is presented in the .md as characterising all six without the restriction."
+      }
     ]
   },
   "source_hashes": {
     "md": "936cd18468fd",
     "ts": "839e30d33b70"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:27:24.727Z"
 }

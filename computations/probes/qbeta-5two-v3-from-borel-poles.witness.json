@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:21:52.109459+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T09:36:47.328453+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "zeta12_calibration",
@@ -22,10 +22,10 @@
     },
     {
       "name": "favours_published_V3",
-      "computed": 0.006638164172502438,
-      "expected": 0.006638164172502438,
+      "computed": 0.006638164172502432,
+      "expected": 0.006638164172502432,
       "passed": true,
-      "tolerance": 1.8078250278728227,
+      "tolerance": 1.8078250278728225,
       "source": "V3_measured is closer to the published GGM value than to the legacy literal"
     }
   ],
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-v3-from-borel-poles",
   "scriptFile": "qbeta_5two_v3_from_borel_poles_probe.py",
-  "scriptHash": "94b31f54a00e",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "a4ab05a43498",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_v3_from_borel_poles_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_v3_from_borel_poles_probe.py"
   },
   "description": "Non-circular measurement of V3 for 5_2 from the Borel-Pade pole map. The reality of V3 (GGM 6.1 keeps only Re V for sigma_3) forces Im(zeta13) = Im V1 = Vol, a constraint mentioning NEITHER candidate; the pole nearest that line fixes V3 = Re V1 - Re(pole), and the two candidate literals are compared only afterwards. Pre-registered gates G0-G3 fixed before the first run; the G3 near-miss is reported, not suppressed. auditOnly; comparison to observed; no fit; nothing wired.",
   "data": {

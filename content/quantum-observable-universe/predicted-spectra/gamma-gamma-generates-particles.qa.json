@@ -2126,6 +2126,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.581Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2145,6 +2160,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.635Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-em-dash": [
@@ -2164,6 +2194,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.712Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-triples": [
@@ -2183,6 +2228,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.792Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-closing-aphorism": [
@@ -2202,6 +2262,23 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:45.206Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "The block closed on 'Pair production ($\\gamma\\gamma$) is the categorical mechanism by which light assembles matter.' - a quotable-sounding final line ('light assembles matter') appended after the mathematical conclusion was already stated, in a proposition block whose statement should carry only its claim.",
+        "notes": "FIX APPLIED (two sentences, pure prose, no math, no meaning change - both restate the block's own italic statement, which already says 'The photon and the elementary crossings generate the whole particle catalogue through pair production'). BEFORE: 'The span of the two-photon products is all of $H_3(q)$. The photon and the elementary crossings generate the full operator catalogue. Pair production ($\\gamma\\gamma$) is the categorical mechanism by which light assembles matter.' AFTER: 'The span of the two-photon products is all of $H_3(q)$.' The block now ends on its actual mathematical conclusion. Math delimiters re-checked (4 x $$, balanced)."
       }
     ],
     "trap-meta-commentary": [
@@ -2221,6 +2298,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.869Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-thesis-restatement": [
@@ -2240,6 +2332,23 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:45.298Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "Penultimate sentence 'The photon and the elementary crossings generate the full operator catalogue.' restated the block's opening italic statement ('The photon and the elementary crossings generate the whole particle catalogue through pair production.') almost verbatim - same subject, same verb, 'full' for 'whole' - after the derivation had already established it and after 'This completes the basis.' had already closed the argument. Three closers stacked.",
+        "notes": "FIX APPLIED as part of the same two-sentence deletion recorded under trap-closing-aphorism; see that entry for the before/after."
       }
     ],
     "trap-performed-warmth": [
@@ -2259,6 +2368,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:44.958Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-superlative": [
@@ -2278,6 +2402,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:45.046Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "trap-nonspeakable": [
@@ -2297,6 +2436,21 @@
         "reviewed_at": "2026-08-15T10:31:01.292Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "30a3936d1740",
+          "ts": "f46e23f5fa14"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:45.143Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast ('L_- is absent from any single photon' is the load-bearing fact that forces two photons), no pivot, no spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no narrated emphasis, no warm register, no noun-pile. The apparent superlatives ('every operator', 'the full operator catalogue', 'all of H_3(q)') are exact: dim H_3(q) = 6 and the six listed words are a basis. MATH FULLY VERIFIED symbolically (sympy): expanding (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) under sigma_i^2 = h sigma_i + 1 gives coefficients 1 + phi_0 psi_0 + phi_1 psi_1, phi_0 + psi_0 + h phi_0 psi_0, phi_1 + psi_1 + h phi_1 psi_1, phi_0 psi_1, phi_1 psi_0 - identical to the displayed normal form, term for term. The witness (a,b,1,1) does give L_+ = a and L_- = b. The Hecke relation as printed matches 7a exactly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2494,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T22:01:41.822Z"
+  "updated_at": "2026-08-22T01:41:45.298Z"
 }

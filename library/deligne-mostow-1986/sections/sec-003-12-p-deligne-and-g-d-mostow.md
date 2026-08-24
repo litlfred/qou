@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: ""
+doc_title: "Monodromy of hypergeometric functions and non-lattice integral monodromy"
 section_id: sec-003-12-p-deligne-and-g-d-mostow
 section_title: "P. DELIGNE AND G. D. MOSTOW"
 section_number: 12
 pages: 9-11
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "Monodromy of hypergeometric functions and non-lattice integral monodromy — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 (for this, S + 0 suffices). The same applies to the dual ^ of L, with monodromy a-1,
 and Poincard duality gives vanishing for IF and H^. The Euler-Poincard characteristic

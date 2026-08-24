@@ -1237,6 +1237,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not energetic.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.731Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set. Opening sentence: 'Confinement is topological, not energetic.' The denied half is asserted by the block's OWN closing sentence, 'Confinement is topology plus action minimization', and by the .ts title 'Confinement = topology + action minimization'. So the negation is not carrying a substantive distinction - it contradicts the block's conclusion.",
+        "notes": "PROPOSED (structural, meaning at stake - NOT applied): replace the opener with the positive claim the block actually argues, e.g. 'Confinement requires a topological constraint in addition to action minimization.' Then the closer can be dropped (see trap-thesis-restatement) without losing content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1256,6 +1273,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.772Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "No setup-then-reframe construction."
       }
     ],
     "trap-em-dash": [
@@ -1275,6 +1308,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.810Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1294,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.853Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "No reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1313,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.894Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set. The final one-liner was considered here and recorded under trap-thesis-restatement instead, to avoid double-counting a single sentence.",
+        "notes": "See trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1332,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.935Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1351,6 +1448,23 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.975Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set. Block-final sentence 'Confinement is topology plus action minimization.' restates the .ts title verbatim in prose and adds nothing to the four preceding sentences, which have already established that topology restricts the feasible set and that the discrete constraint selects B_3.",
+        "notes": "PROPOSED (structural - NOT applied): delete the final sentence, and fold its content into a corrected opening sentence per the trap-negation-contrast note, so the block states its thesis once, at the front."
       }
     ],
     "trap-performed-warmth": [
@@ -1370,6 +1484,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:28.015Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1389,6 +1519,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:28.053Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "'strictly lower', 'independent constraint' are precise, not inflated."
       }
     ],
     "trap-nonspeakable": [
@@ -1408,6 +1554,22 @@
         "reviewed_at": "2026-08-15T10:31:01.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cbd1eaf59758",
+          "ts": "287b6c150678"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:28.093Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 8-sentence remark. Traced the block's own argument: the LP over H_3(q) attains a lower optimum than B_3 but at non-braid points; topology restricts R^6 to the image of B_3 under rho; the selection is then made by action minimisation on that restricted set.",
+        "notes": "Sentences are short and speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1430,5 +1592,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:59:28.093Z"
 }

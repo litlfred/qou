@@ -1,13 +1,13 @@
 ---
 doc_id: xi
-doc_title: "Advanced school and conference on representation theory and related topics. ICTP, Trieste. Jan. 9-28, 2005 Cellular algebras Changchang Xi"
+doc_title: "Cellular algebras"
 section_id: sec-000-abstract
 section_title: "Abstract"
 section_number: null
 pages: 1-1
 source_pdf: xi.pdf
 source_sha256: 5e5c057e2e6e1dfc
-doc_brief: "Advanced school and conference on representation theory and related topics. ICTP, Trieste. Jan. 9-28, 2005 Cellular algebras Changchang Xi — This is a series of 4 lectures on cellular algebras."
+doc_brief: "Cellular algebras — This is a series of 4 lectures on cellular algebras."
 ---
 This is a series of 4 lectures on cellular algebras. In the lectures we introduce
 the theory of cellular algebras which were deﬁned ﬁrst by Graham and Lehrer

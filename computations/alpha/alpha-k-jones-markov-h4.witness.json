@@ -3,23 +3,23 @@
     "tr_m_at_substrate": 2.086641217277176,
     "word_description": "(\u03c3_0 \u03c3_1 \u03c3_2)^4 (T(4,5)-style)"
   },
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "h4_wedderburn_atlas",
-  "computedAt": "2026-08-14T16:22:50.641270+00:00",
+  "computedAt": "2026-08-23T08:49:01.624289+00:00",
   "description": "Jones-Markov weights y_\u03bb at H_4(q) = canonical extension of alpha_k_jones_markov_h3.py to the 4-strand Wedderburn case. Closes the gap identified in PR #1231 BIG review: 'H_4 framework exists; gap is absence of explicit production knot atlas for H_4 (only H_3 in use).' Production consumer for Higgs T(2,8) projection to H_4 + 4-strand structures.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "alpha_k_jones_markov_h4.py",
-  "scriptHash": "eb6f4962a514",
+  "scriptHash": "101b96035541",
   "status": "exploratory",
   "substrate": {
     "h_0": 0.2090602987956393,
     "markov_z": 0.6126880371464652,
-    "q_0": "1.10997858275138080759166909561"
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176"
   },
   "tags": [
     "h4-wedderburn-atlas",

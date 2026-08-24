@@ -1680,6 +1680,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.848Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1699,6 +1714,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.886Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1718,6 +1748,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.925Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1737,6 +1782,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.961Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Three sub-intervals and three sectors, both forced by the object."
       }
     ],
     "trap-closing-aphorism": [
@@ -1756,6 +1816,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.000Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "The closing sentence makes a substantive (if over-stated) topological claim; the over-statement is recorded under trap-superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -1775,6 +1850,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.041Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "'Applying the additive composition rule tracks ...' describes the calculation being done, standard exposition."
       }
     ],
     "trap-thesis-restatement": [
@@ -1794,6 +1884,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.083Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "The closer repeats the sibling remark's JSJ claim, but within this block it is new."
       }
     ],
     "trap-performed-warmth": [
@@ -1813,6 +1918,21 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.120Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1832,6 +1952,23 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.163Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "severity": "minor",
+        "evidence": "'The formal-algebraic solution **demonstrates** that the Garside trajectory crosses both Heegaard tori, **confirming** its non-Seifert JSJ verdict and positive volume' — two confirmation verbs stacked on a claim a piecewise-affine ODE cannot establish. A trajectory crossing a torus is not a JSJ computation.",
+        "notes": "PROPOSED (not applied — meaning at stake): 'The closed form shows the trajectory crosses both Heegaard tori; the JSJ consequence is argued in rem:garside-as-compound-flow.' And see the closure flag on that block: the Hopf-link closure has zero volume."
       }
     ],
     "trap-nonspeakable": [
@@ -1851,6 +1988,22 @@
         "reviewed_at": "2026-08-15T10:31:00.881Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0156de6c8e4e",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:56.205Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Short sentences; the arithmetic is stated inline and closes.",
+        "notes": "ARITHMETIC FULLY VERIFIED: with rate multipliers (+1,-1,0) for sigma_1 and (0,+1,-1) for sigma_2 over three sub-intervals of length pi/3 and psi-dot = k q, the accumulations are r: (+1,0,+1) -> +2 q pi/3; g: (-1,+1,-1) -> -q pi/3; b: (0,-1,0) -> -q pi/3. All three quoted values are exactly right and they sum to zero as claimed. TWO SMALL FLAGS: (i) 'The three-sector centre of mass Delta-psi^(r) + Delta-psi^(g) + Delta-psi^(b)' names a SUM as a centre of mass; (ii) 'The green sector acts as the displacement carrier between the red and blue swap' is not supported by the numbers just derived — green and blue receive the SAME displacement -q pi/3, so nothing distinguishes green as the carrier."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1873,5 +2026,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:01:56.205Z"
 }

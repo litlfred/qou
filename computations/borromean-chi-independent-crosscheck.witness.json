@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:26:20.720750+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:56:54.561200+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "two_methods_agree",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "borromean-chi-independent-crosscheck",
   "scriptFile": "borromean_chi_independent_crosscheck.py",
-  "scriptHash": "4296c5b3da10",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "d5055363836e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/borromean_chi_independent_crosscheck.py"
+    ],
+    "reproduce": "python3 -u computations/borromean_chi_independent_crosscheck.py"
   },
   "contentBlock": "prop:borromean-markov-trace-closed-form",
   "parameters": {
@@ -43,37 +52,37 @@
     "checks": [
       {
         "q": "1.07",
-        "chi_3_minus_1": "9.355e-51",
-        "chi_1cubed_minus_1": "0.0",
-        "chi_21_vs_qform": "2.673e-50",
-        "chi_21_vs_hform": "2.673e-50",
+        "chi_3_minus_1": "9.961e-70",
+        "chi_1cubed_minus_1": "9.961e-70",
+        "chi_21_vs_qform": "7.245e-70",
+        "chi_21_vs_hform": "6.882e-70",
         "pass": true
       },
       {
         "q": "1.23",
         "chi_3_minus_1": "0.0",
         "chi_1cubed_minus_1": "0.0",
-        "chi_21_vs_qform": "1.604e-50",
-        "chi_21_vs_hform": "1.336e-50",
+        "chi_21_vs_qform": "1.087e-70",
+        "chi_21_vs_hform": "1.811e-70",
         "pass": true
       },
       {
         "q": "1.5",
         "chi_3_minus_1": "0.0",
         "chi_1cubed_minus_1": "0.0",
-        "chi_21_vs_qform": "1.203e-50",
-        "chi_21_vs_hform": "7.016e-51",
+        "chi_21_vs_qform": "2.853e-70",
+        "chi_21_vs_hform": "3.215e-70",
         "pass": true
       },
       {
         "q": "1.10997859556",
-        "chi_3_minus_1": "9.355e-51",
+        "chi_3_minus_1": "0.0",
         "chi_1cubed_minus_1": "0.0",
-        "chi_21_vs_qform": "3.475e-50",
-        "chi_21_vs_hform": "3.475e-50",
+        "chi_21_vs_qform": "0.0",
+        "chi_21_vs_hform": "5.433e-71",
         "pass": true
       }
     ],
-    "worst_deviation": "3.47459e-50"
+    "worst_deviation": "9.96125e-70"
   }
 }

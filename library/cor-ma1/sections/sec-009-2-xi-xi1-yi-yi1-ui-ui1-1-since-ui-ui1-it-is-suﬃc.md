@@ -1,6 +1,6 @@
 ---
 doc_id: cor-ma1
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Overpartitions, lattice paths and Rogers-Ramanujan identities"
 section_id: sec-009-2-xi-xi1-yi-yi1-ui-ui1-1-since-ui-ui1-it-is-suﬃc
 section_title: "(xi− xi+1− yi− yi+1 + ui− ui+1 + 1). Since ui≥ ui+1, it is suﬃcient"
 section_number: 2

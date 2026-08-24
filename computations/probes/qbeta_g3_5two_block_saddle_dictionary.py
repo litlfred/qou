@@ -43,6 +43,7 @@ sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_classical_strip",
@@ -56,7 +57,7 @@ _spec2 = importlib.util.spec_from_file_location(
 _bl = importlib.util.module_from_spec(_spec2)
 _spec2.loader.exec_module(_bl)
 
-mp.mp.dps = 45
+set_compute_dps()
 
 PRONY_E = [mp.mpc("-2.73853301809", "6.40911005014"),
            mp.mpc("-3.05084173344", "3.88007169786"),
