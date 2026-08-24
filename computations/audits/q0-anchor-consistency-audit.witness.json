@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T18:12:21.325294+00:00",
-  "commitSha": "5d1aaff33eea642300cb2b61a9dcfd470261bf36",
+  "computedAt": "2026-08-24T20:16:23.502434+00:00",
+  "commitSha": "7a75ef3e4799ef39a92e9179b4058a08f58e3186",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -1912,6 +1912,10 @@
         },
         {
           "witness": "h4-markov-character-decomposition.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "h4-markov-weights-closed-form.witness.json",
           "detail": ""
         },
         {
@@ -4448,10 +4452,6 @@
         },
         {
           "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "su4-1111-markov-trace.witness.json",
           "detail": ""
         },
         {
@@ -8261,10 +8261,6 @@
           "detail": ""
         },
         {
-          "witness": "h4-markov-weights-closed-form.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "h4-residual-higher-precision-pslq.witness.json",
           "detail": ""
         },
@@ -9566,6 +9562,10 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "su4-1111-markov-trace.witness.json",
           "detail": ""
         },
         {
