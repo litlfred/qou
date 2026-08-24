@@ -75,6 +75,7 @@ from q_parameter import Q as Q0_FLOAT
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_mpmath import set_q, qint, qfac
 from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 set_q(Q0_FLOAT)
 
 
@@ -121,7 +122,7 @@ def depth_k(partition: tuple) -> int:
 def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
     """χ^λ(e_K): evaluate the knot's character on partition λ at q_0."""
     if not K_word:
-        return float(dim_q(lam))  # unknot = identity
+        return float(dim_q(lam, Q0_PROTON))  # unknot = identity
     word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
     try:
         return float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
@@ -133,7 +134,7 @@ def fr_weight(lam: tuple, K_word: list, n: int, k: int) -> mp.mpf:
     """w̃_λ^(K) = dim_q²(λ) · χ^λ(e_K) / Z_norm, restricted to depth-k partitions of n."""
     if depth_k(lam) != k:
         return mp.mpf(0)
-    dq2 = mp.mpf(str(dim_q(lam))) ** 2
+    dq2 = mp.mpf(str(dim_q(lam, Q0_PROTON))) ** 2
     chi = mp.mpf(str(chi_K_at_lambda(K_word, lam)))
     return dq2 * chi
 
