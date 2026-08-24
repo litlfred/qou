@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T21:08:39.285882+00:00",
-  "commitSha": "0b11d651c1a5b30c7e4aa667bb91fd22335eedcc",
+  "computedAt": "2026-08-24T22:09:50.391977+00:00",
+  "commitSha": "e4c55a5da9d19a80849957609595a5d48c5774c0",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 93,
+      "computed": 94,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -37,9 +37,10 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py"
+      "computations/audits/witness_provenance_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -57,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2745,
-      "prov_ok": 2324,
+      "total_scanned": 2747,
+      "prov_ok": 2326,
       "prov_audit_exempt": 79,
-      "prov_exempt_no_reader": 246,
+      "prov_exempt_no_reader": 245,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 93,
+      "prov_missing": 94,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.966120218579234972677595628415300546448087431693989071038251"
+      "completeness_ratio": "0.965780851838369129959956315981070258463778667637422642883145"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5953,6 +5954,10 @@
           "missing_fields": []
         },
         {
+          "witness": "markov-reduction-h3-to-h4-conventions.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "markov-stab-trace-axis-probe.witness.json",
           "missing_fields": []
         },
@@ -5974,6 +5979,10 @@
         },
         {
           "witness": "meson-typed-crossing-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "mfw-descending-writhe-bound.witness.json",
           "missing_fields": []
         },
         {
@@ -9690,6 +9699,14 @@
           ]
         },
         {
+          "witness": "hecke-regular-nf-h4.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "mass-formula-6term.witness.json",
           "missing_fields": [
             "engine",
@@ -11058,14 +11075,6 @@
         },
         {
           "witness": "keystone-wrt-schurweyl-plancherel-4count.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "hecke-regular-nf-h4.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
