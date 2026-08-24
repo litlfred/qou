@@ -31,36 +31,6 @@
         "8.4817962",
         "AME_B_TRITIUM_MEV_VALIDATION"
       ]
-    ],
-    "ribbon_twist_t_selective_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "two_channel_total_binding_floor_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "whipple_observable_ratio_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ],
-      [
-        "28.2956624",
-        "AME_B_HE4_MEV_VALIDATION"
-      ],
-      [
-        "7.71804132",
-        "AME_B_HE3_MEV_VALIDATION"
-      ],
-      [
-        "8.4817962",
-        "AME_B_TRITIUM_MEV_VALIDATION"
-      ]
     ]
   },
   "unsafe_near_matches": {
@@ -2638,8 +2608,8 @@
     ]
   },
   "counts": {
-    "safe_routes": 9,
-    "safe_files": 4,
+    "safe_routes": 3,
+    "safe_files": 1,
     "unsafe_near_matches": 446,
     "unsafe_files": 171
   },
@@ -2649,9 +2619,9 @@
   "scriptFile": "ame_registry_routing_triage.py",
   "scriptHash": "5f6eb4d8fd75",
   "scriptCommitSha": "42c35a02f3d43378f468c3d3bc8a4302b136df88",
-  "commitSha": "42c35a02f3d43378f468c3d3bc8a4302b136df88",
+  "commitSha": "76708128d302663418357aa63425a9561b87865f",
   "engine": "python",
-  "computedAt": "2026-08-24T19:32:53.459290+00:00",
+  "computedAt": "2026-08-24T19:36:57.436576+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
