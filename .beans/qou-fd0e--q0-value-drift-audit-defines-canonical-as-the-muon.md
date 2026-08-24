@@ -629,3 +629,72 @@ The three seams already known are `Q0_OK`/`Q0_FLIP` (envelope vs envelope),
 
 A hardcoded pin that matches canonical perfectly is exactly the case every
 existing detector is built to pass over.
+
+
+## 2026-08-24 — DETECTOR BUILT for the fourth seam: 10 mislabels, both directions
+
+`computations/audits/q0_literal_label_vs_value_audit.py`. Report-only, `--strict`
+exits 1. It reads **source**, which is why nothing else could see this: the three
+existing seams all read witnesses.
+
+Method: AST-parse every `*.py` outside `_deprecated/`, take each q0-shaped
+string/float constant, classify its VALUE by **mpmath distance** to the two pins
+(not by prefix, so a 17-digit truncation classifies the same as a 50-digit one),
+then read the LABEL from the binding name, the inline comment, and the comment
+block immediately above. A context naming BOTH layers is `ambiguous`, not a
+defect — a cross-anchor comparison legitimately mentions both, and calling that a
+finding is how a detector earns its false positives.
+
+    files containing '1.109'      626      unparseable    0
+    q0-shaped literals           667
+      label agrees with value    217
+      label CONTRADICTS value     10   <- the finding
+      no label in context        354   <- UNEXAMINED, not clean
+      off-pin (neither layer)     82   <- the other audits' population
+
+**8 labelled proton holding muon; 2 labelled muon holding proton.** The reverse
+direction matters — it means this is not a single stale convention but genuine
+label drift in both directions.
+
+| file:line | says | holds | ppb from its claim |
+|---|---|---|---|
+| `deltalambda/a3_magnitude_parity_orthogonal_probe.py:87` | muon | **proton** | −11.5371 |
+| `probes/aoperator_a5_crosscheck.py:399` | muon | **proton** | −12.2141 |
+| `habiro_interpolation_wlambda.py:372` | proton | **muon** | 11.5343 |
+| `probes/brane_tower_full_channel_trace_audit.py:62` | proton | **muon** | 11.5343 |
+| `probes/he_nu_sdp_psd_count_test.py:57` | proton | **muon** | 11.5371 |
+| `probes/qbeta_habiro_cyclotomic_probe.py:270` | proton | **muon** | 11.5371 |
+| `sigma_all_evaluator.py:493` | proton | **muon** | 11.5343 |
+| `substrate/unified_tau_odd_partner_solve.py:54` | proton | **muon** | 11.5371 |
+| `substrate/z2bn_tau_gauss_manin_sage_probe.py:88` | proton | **muon** | 11.5371 |
+| `docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py:39` | proton | **muon** | 11.5343 |
+
+### Validation
+
+- It reproduces `he_nu_sdp_psd_count_test.py:57`, which this bean had already
+  found **by hand** — the detector was not tuned to it.
+- Two more hand-checked, both correct:
+  `unified_tau_odd_partner_solve.py:53` reads *"Canonical substrate q_0
+  (proton-pinned, 50 dps)"* over pin A; `a3_magnitude_parity_orthogonal_probe.py:86`
+  reads *"at the muon-canonical q₀"* over the proton pin.
+- `_gap_a4_qsafe.py` correctly does **not** appear — its label was corrected
+  earlier today, so the detector responds to the fix rather than to a hardcoded
+  exclusion.
+
+### The mislabel propagated by copy-paste
+
+`unified_tau_odd_partner_solve.py:54` holds the **identical 50-digit string** as
+`_gap_a4_qsafe.py` under nearly identical wording — *"(proton-pinned, 50 dps)"*
+vs *"(proton-mass-anchored q_0, 50 dps)"*. Same lineage. That is why the class
+exists at all, and why fixing one instance does not drain it.
+
+### Not fixed, deliberately
+
+**No literal and no label was changed by this pass.** Whether a mislabelled
+constant needs its label corrected or its value corrected is a question about
+INTENT, and getting it backwards moves every downstream consumer by 11.5 ppb.
+Ten judgement calls, each needing the producer read. The detector makes them
+visible and countable; it does not rule on them.
+
+The 354 unlabelled literals are reported as **unexamined, not clean** — that
+substitution is the defect `qou-i5jy` exists for.
