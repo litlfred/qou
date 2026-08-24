@@ -477,6 +477,27 @@ braid"*, with the natural follow-up **"could it be one?"** open. It is now
 closed, symbolically and gauge-invariantly, by
 [`computations/meson/operator_selection_lattice_symbolic.py`](../../computations/meson/operator_selection_lattice_symbolic.py).
 
+### `t(q)` and `G(q)` are DERIVED, not copied
+
+The probe does not take `TR_M` from `pyhecke.gram`. It derives the
+Markov–Ocneanu–Wenzl trace from the H₃(q) **structure constants**
+`C[i][j] = NF(Tᵢ·Tⱼ)` — i.e. from the Gröbner–Shirshov reduction itself —
+by imposing the three defining conditions and solving the resulting linear
+system:
+
+| condition | statement |
+|---|---|
+| **(N)** normalisation | `t(1) = 1` |
+| **(C)** cyclicity | `t(TᵢTⱼ) = t(TⱼTᵢ)` for all `i,j` |
+| **(M)** Markov | `t(x·σₙ) = z·t(x)` for `x ∈ Hₙ` |
+
+The solution is unique and comes out as
+`t = [1, z, z, z², z², h z² + z]`, which is checked against the shipped
+`pyhecke.gram.TR_M` — so that constant is a **verified consequence** here
+rather than an input. `G(q)` is then `t(Tᵢ·Tⱼ)`, also straight from the
+structure constants. The only convention-dependent input to the whole probe
+is the single scalar `z = q³/(q²+1)`.
+
 ### Why this is a computation and not a search
 
 At the optimum four positivity constraints are tight (active set `[0,1,4,5]`,
