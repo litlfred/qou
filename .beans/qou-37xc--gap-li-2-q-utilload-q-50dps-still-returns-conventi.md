@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T17:13:09Z
+updated_at: 2026-08-24T20:14:10Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -271,3 +271,30 @@ Apply the patch, then baseline → re-run → diff the **16 real users** (not 21
 now only because the `delta_lambda_v_hat` converted run holds the CPU and
 cleared its 3 h ceiling by **249 seconds** last time — 16 concurrent producers
 would push it to EXIT=124 and waste three hours.
+
+SEPARATE from the conversion, found 2026-08-24 while re-running the campaign:
+
+binding_via_interface_knot.py emits 12 raw float64 fields into its witness --
+.assertions[0].{computed,expected,tolerance} plus .data.per_atom.*.{ratio_pred_
+over_AME, ratio_with_t3_over_AME}. Source is float(ratio_old) at :255 and
+float(ratio_full) at :263. NOT in raw-float64-baseline.json, so this is a
+producer fix, not a baseline question.
+
+Unlike the delta_lambda_v_hat case (7e8368be40) these are NOT counts -- they are
+ratios of mpf quantities, so the fix is to carry mpf through and serialize with
+_precision.fmt, not to switch to int.
+
+MUST BE ITS OWN COMMIT, not folded into the C->D conversion. It changes the
+witness's digits, and this branch's whole method is one cause per measured diff.
+
+PERFORMANCE, same day: this producer went from a 900s TIMEOUT (and then 37+ min
+without finishing) to **exit=0 wall=3s** after the qou-9ohz per_generator_V_hat_3A
+fix (23b9c4f5ba). The 5400s window this campaign was sized for is no longer
+needed.
+
+ATTRIBUTION STILL OPEN: the regenerated witness differs from the committed one
+in 110 non-volatile fields, worst 1.609e-04. That committed witness cannot
+settle it -- its durationMs is 4586 (4.6 s, so not the code being run) and its
+only commit is f9ad94d750, the shallow-clone boundary, so its vintage is
+unknowable. Isolation run in flight: mass_at_3A_proper.py reverted to the merge
+commit 92311f8860 and NOTHING else changed.
