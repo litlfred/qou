@@ -153,4 +153,111 @@ theorem jmRaw_comm_sigma_far (H : HeckeGenerators R A q) :
         _ = H.σ k * jmRaw H k * (H.σ k * H.σ j) := by rw [hfar]
         _ = H.σ k * jmRaw H k * H.σ k * H.σ j := by noncomm_ring
 
+/-! ## The hook-word form of `Lᵢ`
+
+The exchange relations above are exhausted for the adjacent case.  The standard next tool is the
+explicit *hook word*
+
+    L_k = (σ_{k−1} ⋯ σ₁) σ₀ σ₀ (σ₁ ⋯ σ_{k−1}),
+
+which exhibits `L_k` as a palindrome around `σ₀²` and makes the letters it contains visible — the
+fact `jmRaw_comm_sigma_far` uses implicitly and the fact any braid-relation attack on adjacent
+commutativity needs explicitly. -/
+
+/-- Descending product `σ_{k−1} σ_{k−2} ⋯ σ₁`, empty for `k ≤ 1`. -/
+def descProd (H : HeckeGenerators R A q) : ℕ → A
+  | 0 => 1
+  | 1 => 1
+  | (k + 1) => H.σ k * descProd H k
+
+/-- Ascending product `σ₁ ⋯ σ_{k−1}`, empty for `k ≤ 1`. -/
+def ascProd (H : HeckeGenerators R A q) : ℕ → A
+  | 0 => 1
+  | 1 => 1
+  | (k + 1) => ascProd H k * H.σ k
+
+@[simp] theorem descProd_one (H : HeckeGenerators R A q) : descProd H 1 = 1 := rfl
+@[simp] theorem ascProd_one (H : HeckeGenerators R A q) : ascProd H 1 = 1 := rfl
+
+theorem descProd_succ (H : HeckeGenerators R A q) (k : ℕ) (hk : 1 ≤ k) :
+    descProd H (k + 1) = H.σ k * descProd H k := by
+  cases k with
+  | zero => omega
+  | succ m => rfl
+
+theorem ascProd_succ (H : HeckeGenerators R A q) (k : ℕ) (hk : 1 ≤ k) :
+    ascProd H (k + 1) = ascProd H k * H.σ k := by
+  cases k with
+  | zero => omega
+  | succ m => rfl
+
+/-- **The hook-word form**: `L_k = (σ_{k−1}⋯σ₁) σ₀² (σ₁⋯σ_{k−1})` for `k ≥ 1`.
+
+A palindrome around `σ₀²`.  Proved by induction directly on the recursion
+`L_{k+1} = σ_k L_k σ_k`, which appends `σ_k` to each side — so the two products grow in step and
+the centre never moves. -/
+theorem jmRaw_hook (H : HeckeGenerators R A q) :
+    ∀ k : ℕ, 1 ≤ k → jmRaw H k = descProd H k * (H.σ 0 * H.σ 0) * ascProd H k := by
+  intro k hk
+  induction k with
+  | zero => omega
+  | succ m ih =>
+      rcases Nat.eq_or_lt_of_le hk with h1 | hm
+      · -- k = 1
+        have : m = 0 := by omega
+        subst this
+        rw [jmRaw_succ, jmRaw_zero]
+        simp
+      · -- k = m + 1 with m ≥ 1
+        have hm1 : 1 ≤ m := by omega
+        rw [jmRaw_succ, ih hm1, descProd_succ H m hm1, ascProd_succ H m hm1]
+        noncomm_ring
+
+/-! ## The first genuine instance of ADJACENT commutativity
+
+The exchange relations could not reach the adjacent case, but the **half-twist** does at `i = 1`.
+The route is worth recording because it is not the one the exchange relations suggest: it goes
+through `Δ = σ₀σ₁σ₀ = σ₁σ₀σ₁` and the fact that `Δ²` is a *palindrome-insensitive* square. -/
+
+/-- **`(σ₀σ₁)³ = (σ₁σ₀)³`** — both are `Δ·Δ` for the half-twist `Δ = σ₀σ₁σ₀ = σ₁σ₀σ₁`.
+
+`(σ₀σ₁)³` groups as `(σ₀σ₁σ₀)(σ₁σ₀σ₁)` and `(σ₁σ₀)³` as `(σ₁σ₀σ₁)(σ₀σ₁σ₀)`; the braid relation
+turns each factor into the other, so both collapse to the same square. -/
+theorem fullTwist3_symm (H : HeckeGenerators R A q) :
+    (H.σ 0 * H.σ 1) ^ 3 = (H.σ 1 * H.σ 0) ^ 3 := by
+  have hb : H.σ 0 * H.σ 1 * H.σ 0 = H.σ 1 * H.σ 0 * H.σ 1 := H.braid 0
+  calc (H.σ 0 * H.σ 1) ^ 3
+      = (H.σ 0 * H.σ 1 * H.σ 0) * (H.σ 1 * H.σ 0 * H.σ 1) := by noncomm_ring
+    _ = (H.σ 0 * H.σ 1 * H.σ 0) * (H.σ 0 * H.σ 1 * H.σ 0) := by rw [← hb]
+    _ = (H.σ 1 * H.σ 0 * H.σ 1) * (H.σ 0 * H.σ 1 * H.σ 0) := by rw [hb]
+    _ = (H.σ 1 * H.σ 0) ^ 3 := by noncomm_ring
+
+/-- `L₃L₂ = (σ₁σ₀)³` — the mirror of `jmRaw_prod_three`, by one braid application. -/
+theorem jmRaw_two_mul_one (H : HeckeGenerators R A q) :
+    jmRaw H 2 * jmRaw H 1 = (H.σ 1 * H.σ 0) ^ 3 := by
+  have hb : H.σ 0 * H.σ 1 * H.σ 0 = H.σ 1 * H.σ 0 * H.σ 1 := H.braid 0
+  simp only [jmRaw_succ, jmRaw_zero, one_mul, mul_one]
+  calc H.σ 1 * (H.σ 0 * H.σ 0) * H.σ 1 * (H.σ 0 * H.σ 0)
+      = (H.σ 1 * H.σ 0) * (H.σ 0 * H.σ 1 * H.σ 0) * H.σ 0 := by noncomm_ring
+    _ = (H.σ 1 * H.σ 0) * (H.σ 1 * H.σ 0 * H.σ 1) * H.σ 0 := by rw [hb]
+    _ = (H.σ 1 * H.σ 0) ^ 3 := by noncomm_ring
+
+/-- **Adjacent commutativity at `i = 1`: `L₂L₃ = L₃L₂`.**
+
+The first genuine instance of the case the exchange relations could not reach.  Both products are
+the full twist, approached from opposite sides — `L₂L₃ = (σ₀σ₁)³` (`jmRaw_prod_three`) and
+`L₃L₂ = (σ₁σ₀)³` (`jmRaw_two_mul_one`) — and `fullTwist3_symm` identifies those.
+
+**This is one instance, not the general theorem.**  It works because at `i = 1` both products are
+*the whole* full twist of `B₃`, so the half-twist symmetry closes it; for `i ≥ 2` the products are
+proper sub-words and that argument does not apply.  General adjacent commutativity remains open
+(bean `qou-u9o1`). -/
+theorem jmRaw_comm_adjacent_one (H : HeckeGenerators R A q) :
+    jmRaw H 1 * jmRaw H 2 = jmRaw H 2 * jmRaw H 1 := by
+  have h1 : jmRaw H 1 * jmRaw H 2 = (H.σ 0 * H.σ 1) ^ 3 := by
+    have := jmRaw_prod_three H
+    rw [jmRaw_zero, one_mul] at this
+    simpa [fullTwist3] using this
+  rw [h1, jmRaw_two_mul_one, fullTwist3_symm]
+
 end QOU.BraidKnot.Hecke
