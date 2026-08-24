@@ -37,9 +37,10 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py"
+      "computations/audits/q0_anchor_consistency_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
@@ -2474,6 +2475,10 @@
           "detail": ""
         },
         {
+          "witness": "lever1-transfer-operator-spectral-qgevrey.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "li2q-phiq-bar-symmetry.witness.json",
           "detail": ""
         },
@@ -3098,6 +3103,14 @@
           "detail": ""
         },
         {
+          "witness": "alpha-em-coulomb-channel-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-em-multicell-yekutieli-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "alpha-em-r2-quillen-curvature-probe.witness.json",
           "detail": ""
         },
@@ -3111,6 +3124,10 @@
         },
         {
           "witness": "aoperator_a5_crosscheck.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "archimedean-knot-eigenbasis-probe.witness.json",
           "detail": ""
         },
         {
@@ -3235,6 +3252,10 @@
         },
         {
           "witness": "bring-hauptmodul-gate-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "bwhk-st-matrix-corroboration.witness.json",
           "detail": ""
         },
         {
@@ -8612,10 +8633,6 @@
           "detail": ""
         },
         {
-          "witness": "lever1-transfer-operator-spectral-qgevrey.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "li2q-fbor-expansion-probe.witness.json",
           "detail": ""
         },
@@ -9096,18 +9113,6 @@
           "detail": ""
         },
         {
-          "witness": "alpha-em-coulomb-channel-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "alpha-em-multicell-yekutieli-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "archimedean-knot-eigenbasis-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "axial-observable-is-the-gram-radical.witness.json",
           "detail": ""
         },
@@ -9125,10 +9130,6 @@
         },
         {
           "witness": "borromean-trace-cross-validation.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "bwhk-st-matrix-corroboration.witness.json",
           "detail": ""
         },
         {
@@ -11032,6 +11033,6 @@
       ]
     }
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

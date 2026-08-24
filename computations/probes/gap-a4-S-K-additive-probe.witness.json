@@ -1,11 +1,11 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:42:34.760658+00:00",
-  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
+  "computedAt": "2026-08-24T08:46:05.450363+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 100,
+  "durationMs": 88,
   "computation": "gap-a4-S-K-additive-probe",
   "scriptFile": "gap_a4_S_K_additive_probe.py",
   "scriptHash": "46a5e8feeae3",
@@ -24,7 +24,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -211,6 +211,6 @@
     ],
     "synthesis_verdict": "Path B's additive S(K) sub-leading term, evaluated against the canonical per-knot tr_M(K), does NOT factor as a clean closed-form substrate quantity.  The empirical S_emp spans a huge range across 6 atoms that no uniform-coefficient substrate form can capture.  The structural reason: Path B's S(K) under tr_M(K) effectively absorbs (i) the constituent mass sum Z·m_p + N·m_n, (ii) the binding energy B(K), and (iii) the uniform-vs-per-knot geom gap — none of these factor uniformly across the light series.  §4 direction 2 closes NEGATIVE in this additive-S formulation.  The next productive direction is §4 direction 4 — re-examine the per-knot Vol(K) convention."
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

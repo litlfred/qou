@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:41:18.090162+00:00",
-  "commitSha": "fae52f3277aa9bee8e61b78fec34f06a9601e139",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:21:42.654640+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "zero_macdonald_candidates_within_one_percent",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 35,
   "computation": "casimir-macdonald-probe",
   "scriptFile": "casimir_macdonald_probe.py",
   "scriptHash": "efb335c1b5dc",
@@ -31,10 +31,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
   "invocation": {
     "argv": [
@@ -542,6 +542,6 @@
     "sub_one_pct_matches_direct": [],
     "sub_one_pct_matches_geom_multiplied": []
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

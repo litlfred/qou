@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T14:41:16.420760+00:00",
-  "commitSha": "fae52f3277aa9bee8e61b78fec34f06a9601e139",
+  "computedAt": "2026-08-24T12:02:04.768340+00:00",
+  "commitSha": "c679568568a3c38a9df794d34334a9c14b770945",
   "assertions": [
     {
       "name": "g_A",
@@ -14,9 +14,9 @@
     },
     {
       "name": "lp_duality_gap_zero",
-      "computed": 3.821440179968053e-16,
+      "computed": 0.020884511792466608,
       "expected": 0.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-10,
       "source": "prop:operator-selection-lp § strong duality"
     },
@@ -29,12 +29,12 @@
       "source": "prop:confinement-frobenius-reciprocity § master formula"
     }
   ],
-  "allPassed": true,
-  "durationMs": 7,
+  "allPassed": false,
+  "durationMs": 17,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "9e202b78b7c5",
-  "scriptCommitSha": "99a0598a63a0c22d8c367c5d1f1d8da9998da146",
+  "scriptCommitSha": "641c84f8b27add35f981e0ab897fcb551bf72b35",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -60,8 +60,8 @@
   "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
   "contentBlock": "prop:confinement-frobenius-reciprocity",
   "parameters": {
-    "q": 1.1099785827513808,
-    "q_inv": 0.9009182839557415,
+    "q": 1.1099785955573347,
+    "q_inv": 0.900918273561741,
     "n_target": 1.0
   },
   "data": {
@@ -170,53 +170,53 @@
       0
     ],
     "shadow_prices": [
-      1.0,
-      2.7248538659802635e-19,
-      2.7248538659802635e-19,
-      9.765570879689685e-20,
-      9.765570879689685e-20,
-      1.0418311594816698e-19
+      1.0000000005878427,
+      -2.60856764718006e-08,
+      -2.60856764718006e-08,
+      0.0,
+      0.0,
+      0.0
     ],
     "active_basis_names": [
       "γ"
     ],
     "x_star": [
-      -265025.00781985413,
-      225670.78755416002,
-      225670.78755416002,
-      -185680.7828620745,
-      -185680.7828620745,
-      185045.99843568314
+      -1000000.0,
+      687635.3601226079,
+      687635.3601226077,
+      -856242.7461503207,
+      -463543.6054774622,
+      944516.6313825676
     ],
-    "y0_star": -6.617584414762323e-19,
+    "y0_star": 5.2261432903488725e-08,
     "y_star": [
-      1.0,
-      2.7248538659802635e-19,
-      2.7248538659802635e-19,
-      9.765570879689685e-20,
-      9.765570879689685e-20,
-      1.0418311594816698e-19
+      1.0000000005878427,
+      -2.60856764718006e-08,
+      -2.60856764718006e-08,
+      0.0,
+      0.0,
+      0.0
     ],
     "active_set": [
       0
     ],
-    "primal_obj": 3.814822595553291e-16,
-    "dual_obj": -6.617584414762323e-19,
-    "duality_gap": 3.821440179968053e-16,
+    "primal_obj": 0.02088456405389951,
+    "dual_obj": 5.2261432903488725e-08,
+    "duality_gap": 0.020884511792466608,
     "lp_feasible": true,
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",
       "char_on_basis": [
         1.0,
-        1.1099785827513808,
-        1.1099785827513808,
-        1.232052454166764,
-        1.232052454166764,
-        1.3675518369513853
+        1.1099785955573347,
+        1.1099785955573347,
+        1.232052482595433,
+        1.232052482595433,
+        1.3675518842842065
       ],
-      "dual_pairing_value": 0.9012212173018036,
+      "dual_pairing_value": 0.9012212178315799,
       "u_active": [
-        1.0
+        1.0000000005878427
       ],
       "obs_active": [
         1.0
@@ -226,15 +226,15 @@
       "name": "O_A (sign / axial / -q⁻¹ eigenspace)",
       "char_on_basis": [
         1.0,
-        -0.9009182839557415,
-        -0.9009182839557415,
-        0.811653754365758,
-        0.811653754365758,
-        -0.7312337075494336
+        -0.900918273561741,
+        -0.900918273561741,
+        0.811653735637468,
+        0.811653735637468,
+        -0.7312336822404455
       ],
-      "dual_pairing_value": 0.9012212173018036,
+      "dual_pairing_value": 0.9012212178315799,
       "u_active": [
-        1.0
+        1.0000000005878427
       ],
       "obs_active": [
         1.0
@@ -253,6 +253,6 @@
       }
     ]
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }
