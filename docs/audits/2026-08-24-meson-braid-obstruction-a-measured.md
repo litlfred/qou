@@ -219,6 +219,35 @@ as a result.** It is the nearest point of an enumerated set to a target, which i
 precisely the per-state fit this document exists to avoid. It is listed because
 suppressing it would be worse, not because it is evidence.
 
+## ✅ RESOLVED from the corpus: "crossings" means BRAID WORD LENGTH
+
+I listed this as an open author question — *"is the dictionary's crossing count
+the braid word length or the closure's minimal crossing number?"* — and said it
+could not be settled from the corpus. **It can. The corpus states it outright**,
+in the docstring of `mesonCrossingCount`
+(`lepton-meson-torus-knot-dictionary.lean`):
+
+> *"Meson crossing count: the total crossings **in the meson braid word**
+> = n₁ + n₂ where n₁, n₂ are the quark torus-knot indices."*
+
+Braid **word**, not closure. And it is self-consistent on both sides of the
+dictionary:
+
+| object | word | word length | dictionary count |
+|---|---|---|---|
+| electron | `σ₀³` | 3 | `leptonTorusKnotIndex 0 = 3` ✓ |
+| muon | `σ₀⁵` | 5 | `leptonTorusKnotIndex 1 = 5` ✓ |
+| pion `𝔐` | `(σ₀σ₁)²σ₁σ₀` | **6** | `mesonCrossingCount 0 = 6` ✓ |
+
+The divergence between word length and crossing number is real but does not
+affect the reading: `𝔐` has word length 6 and its closure has crossing number 5,
+and it is the **6** that the dictionary means.
+
+**Consequence: the D-meson exclusion above is on the correct footing.** Comparing
+the dictionary's count against the maximum hyperbolic volume attainable at that
+*word length* is the right comparison, so that assumption is discharged. **`ρ` is
+now the only open gate on B2.**
+
 ## Route 2 re-derivation under convention D: blocked, and not by me
 
 Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
