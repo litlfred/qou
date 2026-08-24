@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:52:19.759664+00:00",
-  "commitSha": "51453478504f0afd0957f3a4410bf273438ce1f9",
+  "computedAt": "2026-08-24T14:43:40.261387+00:00",
+  "commitSha": "b19342fcc8f6adbf33952ef28ec764f84bb1fd84",
   "assertions": [
     {
       "name": "1_divergent_set_has_not_grown",
       "computed": "0",
       "expected": "1",
       "passed": false,
-      "detail": "63 divergent literals vs baseline 61. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
+      "detail": "62 divergent literals vs baseline 61. Growth means a new site transcribed a q0 that disagrees with the canonical pin."
     },
     {
       "name": "2_more_than_one_family_exists",
@@ -20,7 +20,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 336,
+  "durationMs": 339,
   "computation": "hardcoded-q0-literal-families",
   "scriptFile": "hardcoded_q0_literal_families_audit.py",
   "scriptHash": "940a2ed287b4",
@@ -36,10 +36,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -56,8 +56,9 @@
   "scope": "scope-(a) MEASUREMENT. Classifies literals; changes none, wires nothing, and asserts nothing about which value a given producer SHOULD use -- that turns on A-vs-C, an owner ruling (bean qou-bred).",
   "result": {
     "canonical_pin": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "clean_prefix_count": 225,
+    "clean_prefix_count": 226,
     "clean_prefix_lengths": [
+      14,
       14,
       14,
       14,
@@ -88,6 +89,8 @@
       18,
       18,
       18,
+      18,
+      19,
       19,
       19,
       19,
@@ -176,8 +179,6 @@
       49,
       49,
       49,
-      51,
-      51,
       51,
       51,
       51,
@@ -284,7 +285,7 @@
       70,
       70
     ],
-    "divergent_count": 63,
+    "divergent_count": 62,
     "baseline_divergent": 61,
     "families": {
       "13": [
@@ -357,11 +358,6 @@
           "file": "computations/per_basis_row_invariants_probe.py",
           "literal": "1.10997859555418057528159407960950937799328227995870",
           "length": 52
-        },
-        {
-          "file": "computations/probe_inter_knot_decoupling.py",
-          "literal": "1.1099785955541805752815940796095093779932822799587",
-          "length": 51
         },
         {
           "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",

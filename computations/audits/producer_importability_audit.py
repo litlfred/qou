@@ -92,17 +92,27 @@ IN_REPO = {"pyhecke", "qou_substrate", "_precision", "witness_base",
 
 # `sys.argv[0]` is REWRITTEN to the producer's own filename before the module
 # body runs, and that is load-bearing rather than cosmetic. `q_parameter`
-# resolves the q0 anchor from the running producer's argv stem against
-# `q0_anchor_manifest.json` (257 stems select the muon pin), so a loader that
-# leaves argv[0] as `-c` silently pins every producer to proton and never
-# executes the muon branch at all.
+# resolves the q0 anchor from the running producer's argv stem against the
+# `ideal_muon` list in `q0_anchor_manifest.json`, so a loader that leaves
+# argv[0] as `-c` silently pins every producer to proton and never executes the
+# muon branch at all.
 #
-# Measured 2026-08-19: under the old `-c` argv this audit reported all 257
-# `ideal_muon` producers importable. Under a faithful argv they raise
-# `RuntimeError: ideal/muon anchor requested ... refusing to fall back to
+# Measured 2026-08-19: under the old `-c` argv this audit reported every
+# `ideal_muon` producer importable — it was answering a question no real
+# invocation asks.
+#
+# ⚠ CORRECTED 2026-08-24. This note used to end: "Under a faithful argv they
+# raise `RuntimeError: ideal/muon anchor requested ... refusing to fall back to
 # proton silently`, because the committed `q-pinning-50-digit.witness.json`
-# holds the PROTON value (bean qou-m9xp). The detector was answering a
-# question no real invocation asks.
+# holds the PROTON value (bean qou-m9xp)." **That is no longer true.** Measured
+# at mp.dps=60, the committed pinning witness holds
+# `1.10997859555733471989976322048322` — 4.5e-24 ppb from the canonical MUON
+# pin A and 11.54 ppb from the proton pin. So the rebind path SUCCEEDS today and
+# `ideal_muon` producers do not hard-fail on it. The argv rewrite is still
+# load-bearing for the same reason; only the failure mode described here has
+# gone. A deliberate stem count is also omitted now: it was 257 when written,
+# 120 on main and 152 here today, and a number that rots inside a comment is how
+# the rest of this note went stale.
 _LOADER = (
     "import importlib.util,sys;"
     "sys.argv=[sys.argv[1]];"
