@@ -152,6 +152,43 @@ sharper: the D law cannot be obtained by substituting `z_D` into the C
 derivation, because the C derivation stops at `z^(n−1)` and never sees that
 `2N` of those factors cancel once `z` is concrete.
 
+## Q1 and Q2 are DIFFERENT objects — the conjecture is refuted
+
+It was natural to guess that Q1's interface factor 12 and Q2's per-neutron
+cancellation share a mechanism: both are neutron/interface-side, and both
+plausibly run through `δ(q) = (q−1)²(1−q⁻⁴)/3`. **They do not.** The
+`include_inter` switch separates them, in *opposite* directions:
+
+| atom | Z | N | A | inter | `m` | actual | cancelled | `2N` |
+|---|---|---|---|---|---|---|---|---|
+| proton | 1 | 0 | 1 | on | 2 | 2 | 0 | 0 |
+| neutron | 0 | 1 | 1 | on | 2 | **0** | **2** | 2 |
+| neutron | 0 | 1 | 1 | **off** | 2 | **0** | **2** | 2 |
+| D | 1 | 1 | 2 | off | 4 | 2 | **2** | 2 |
+| T | 1 | 2 | 3 | off | 6 | 2 | **4** | 4 |
+| ³He | 2 | 1 | 3 | off | 6 | 4 | **2** | 2 |
+
+- **Q1's factor 12 lives ON the interface** — absent at `A = 1`, and gone
+  entirely with `include_inter=False`.
+- **Q2's 2-per-neutron cancellation is INTRA-nucleon** — the **lone neutron**
+  carries it with no inter-nucleon crossing whatsoever, and D/T/³He still
+  cancel exactly `2N` with the interface off.
+
+Opposite dependence on the same switch. The conjecture that they were one
+object is **refuted**.
+
+**The sharpest statement of what remains.** Under `bring_color_weighted` at
+convention D, a **lone neutron's trace denominator carries no power of
+`(q²+1)` at all** (`actual = 0`), while a lone proton's carries 2. That
+proton/neutron asymmetry in the cyclotomic content of a *single nucleon* is
+the whole of Q2's residue — a much smaller target than the many-body framing
+it began in.
+
+Incidental, and it explains the `m` column: with the interface off `m = 2A`
+(A separate closures, each `3 − 1 = 2`); with it on `m = 3A − 1` (one joint
+closure of `3A` strands). The difference `A − 1` is the linking that fuses A
+closures into one.
+
 ## An exact relation worth recording
 
 $$

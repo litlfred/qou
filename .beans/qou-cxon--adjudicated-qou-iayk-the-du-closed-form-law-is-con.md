@@ -204,3 +204,38 @@ concrete.
   neutron*, which is a statement about the colour-weighted neutron factor --
   plausibly the same object as Q1's, since both are neutron/interface-side and
   both involve `delta(q)`. That connection is a CONJECTURE, not measured.
+
+
+## 2026-08-24 (later still) — Q1 and Q2 are DIFFERENT objects; my conjecture REFUTED
+
+The section above ended by conjecturing Q1's interface factor 12 and Q2's
+per-neutron cancellation were plausibly the same object (both
+neutron/interface-side, both involving `delta(q)`). **Tested and refuted.**
+
+    atom      Z N A inter |  m  actual cancelled  2N
+    proton    1 0 1  True |  2       2         0   0
+    neutron   0 1 1  True |  2       0         2   2
+    neutron   0 1 1 False |  2       0         2   2
+    D         1 1 2 False |  4       2         2   2
+    T         1 2 3 False |  6       2         4   4
+    3He       2 1 3 False |  6       4         2   2
+
+The `include_inter` switch separates them in OPPOSITE directions:
+
+* **Q1's 12 lives ON the interface** — absent at A=1, gone with inter=OFF.
+* **Q2's cancellation is INTRA-nucleon** — the LONE NEUTRON carries 2 with no
+  inter-nucleon crossing at all, and D/T/3He still cancel exactly 2N with the
+  interface off.
+
+**Sharpest residue.** Under `bring_color_weighted` at convention D a lone
+neutron's trace denominator carries NO power of `(q^2+1)` (actual = 0) while a
+lone proton's carries 2. That proton/neutron asymmetry in the cyclotomic
+content of a SINGLE NUCLEON is all that is left of Q2 — much smaller than the
+many-body framing it started in, and it is a one-nucleon question.
+
+Incidental (explains the m column): inter=OFF gives m = 2A (A separate
+closures, each 3-1=2); inter=ON gives m = 3A-1 (one joint closure of 3A
+strands). The difference A-1 is the linking that fuses A closures into one.
+
+Producer now covers 9 configurations, 5/5 assertions, including
+`cancellation_survives_interface_off` as the separation test.
