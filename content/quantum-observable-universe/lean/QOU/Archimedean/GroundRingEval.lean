@@ -146,4 +146,57 @@ theorem ArchimedeanRealisation.realised_one {M : Type*}
   show evalAt r.q0 (r.sp.field p) = 1
   rw [h, map_one]
 
+/-- **Realisations are inhabited, and can hit a prescribed value.**
+
+    The categorical parameter is constantly the indeterminate `q`, so the
+    realised field is constantly `q₀`. The two order axioms remain exactly the
+    archimedean facts about `q₀`: they cannot be discharged from the
+    categorical layer, which is the honest situation rather than a gap. -/
+noncomputable def constRealisation (M : Type*) (q0 : ℝˣ)
+    (h1 : 1 ≤ (q0 : ℝ)) (hroot : ∀ k : ℕ, k ≥ 1 → (q0 : ℝ) ^ k ≠ 1) :
+    ArchimedeanRealisation M where
+  sp := ⟨fun _ => QOU.GroundRing.q_param⟩
+  q0 := q0
+  ge_one := by intro _; rw [evalAt_q_param]; exact h1
+  not_root_of_unity := by intro _ k hk; rw [evalAt_q_param]; exact hroot k hk
+
+@[simp] theorem constRealisation_field {M : Type*} (q0 : ℝˣ)
+    (h1 : 1 ≤ (q0 : ℝ)) (hroot : ∀ k : ℕ, k ≥ 1 → (q0 : ℝ) ^ k ≠ 1) (p : M) :
+    (constRealisation M q0 h1 hroot).toArchimedeanSubstrateField.field p
+      = (q0 : ℝ) :=
+  evalAt_q_param q0
+
+/-- **The `d_q²` counterexample witness is realisable.**
+
+    `QOU/Elaboration.lean`'s `dq_squared_nonvanishing` refutes a statement
+    quantified over *arbitrary* `ArchimedeanSubstrateField`s, using a witness
+    with `field ≡ 2` on `PUnit`. Because that structure's field is independent
+    of any categorical parameter, the refuted statement could in principle have
+    been a strawman — a real-valued function with no substrate behind it.
+
+    It is not. The witness arises from a genuine `ArchimedeanRealisation`: the
+    categorical parameter is the indeterminate `q`, specialised at `q₀ = 2`. So
+    `d_q²` fails to vanish on a substrate the framework can actually produce.
+
+    This is the first thing the tie buys beyond hygiene, and it is why
+    `qou-w7sc` concluded the migration it proposed was the wrong shape: there
+    was exactly one construction site of a bare `ArchimedeanSubstrateField` in
+    the library, and it is this witness, which should keep its concrete form. -/
+theorem dq_witness_realisable :
+    ∃ r : ArchimedeanRealisation PUnit,
+      ∀ p, r.toArchimedeanSubstrateField.field p = 2 := by
+  have hroot : ∀ k : ℕ, k ≥ 1 → ((Units.mk0 (2 : ℝ) (by norm_num) : ℝˣ) : ℝ) ^ k ≠ 1 := by
+    intro k hk
+    have h2 : (2 : ℝ) ≤ 2 ^ k := by
+      calc (2 : ℝ) = 2 ^ 1 := (pow_one 2).symm
+        _ ≤ 2 ^ k := pow_le_pow_right₀ (by norm_num : (1 : ℝ) ≤ 2) hk
+    intro h
+    simp only [Units.val_mk0] at h
+    rw [h] at h2
+    norm_num at h2
+  refine ⟨constRealisation PUnit (Units.mk0 (2 : ℝ) (by norm_num)) (by norm_num) hroot, ?_⟩
+  intro p
+  rw [constRealisation_field]
+  simp
+
 end QOU.Archimedean
