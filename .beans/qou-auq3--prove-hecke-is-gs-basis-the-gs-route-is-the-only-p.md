@@ -4843,3 +4843,38 @@ file, not in the scratchpad — worth knowing: the per-file linter set differs.)
 | `quadratic × ?` | §4be |
 | braid word × braid word | §4bg |
 | `BS × FC` | **mapped only** (§4bf) |
+
+## Bokut–Shiao against the braid word, both ways (2026-08-24, §4bh)
+
+Measured before writing, as §4bf and §4bg were. `BokutShiaoBraid.oc` admits any
+`j₁ ≤ i − 1`, but its two chains require `j₁ < i − 1` **strictly**. The excluded
+endpoint is **not a gap**: at `j₁ = i − 1` the Bokut–Shiao rule leads on the
+braid word itself (`bs_hlm`), so *both* rules do — and that is §4bg. The two
+sections compose to cover the cell, with §4bg a **prerequisite** of this one
+rather than a parallel result.
+
+Each direction splits on `Nat.eq_or_lt_of_le` at that point, the two branches
+going to different sections. `BraidBokutShiao` mirrors it exactly.
+
+This is the shape §4bd predicted for the generic-namespace cells, and it holds —
+with the caveat §4be added and §4bf illustrated: **the split point came from
+reading the chains' side conditions, not the family's name.**
+
+### Score on the "read before writing" discipline
+
+Three cells read this way so far: `BS × FC` (four-way, §4bf), braid-word (clean,
+§4bg), BS-against-braid-word (two-way, §4bh). Two of three had a split the name
+did not advertise, and none of the three matched a guess made without reading.
+The discipline has paid for itself each time; the `BS × FC` four-way remains the
+worst case found.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × braid word`, both directions | §4bh |
+| `BS × FC` | **mapped only** (§4bf) |

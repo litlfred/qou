@@ -16579,4 +16579,104 @@ theorem braid_self_resolves (hn : 0 < n) (hp : HeckeParams)
       oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
     rw [hbr]; exact BraidSelfOverlap.bs_bs_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
 
+/-! ## §4bh  Bokut–Shiao against the braid word, both ways
+
+Measured before writing, as §4bf and §4bg were. `BokutShiaoBraid.oc` admits any
+`j₁ ≤ i − 1`, but its two chains require `j₁ ≤ i''` with `i'' + 1 = i − 1` — that
+is, `j₁ < i − 1` strictly. The excluded endpoint is not a gap: at `j₁ = i − 1`
+the Bokut–Shiao rule leads on the braid word itself (`bs_hlm`), so **both** rules
+do, and that is §4bg. The two sections compose to cover the cell, and §4bg is a
+prerequisite of this one rather than a parallel result.
+
+So each direction splits on `Nat.eq_or_lt_of_le` at the same place, and the two
+branches go to different sections. `BraidBokutShiao` mirrors it exactly.
+
+This is the shape §4bd predicted for the generic-namespace cells, and it holds
+here — with the caveat §4be added and §4bf illustrated: the split point came from
+reading the chains' side conditions, not from the family's name. Three cells have
+now been read this way and two were clean; the odd one out (`BS × FC`, §4bf) is
+still the only four-way split found. -/
+
+/-- **Bokut–Shiao against a rule on the braid word, for an arbitrary
+composition.** -/
+theorem bs_braid_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j₁ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j₁.val ≤ i'.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i' i j₁)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp hi hj
+  have hleft : descWord i j₁ ≠ [] := by
+    obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j₁) (by omega)
+    rw [hu]; simp
+  rcases Nat.eq_or_lt_of_le hj with heq | hlt
+  · -- `j₁ = i − 1`: `rule₁` leads on the braid word too, so this is §4bg
+    have hj₁i' : j₁ = i' := Fin.ext heq
+    have h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i := by
+      rw [hr₁, hj₁i']
+      exact BraidSelfOverlap.bs_hlm i' i hi
+    exact braid_self_resolves hn hp hi hm₁ hm₂ h₁ h₂ hl
+  · -- `j₁ < i − 1`: the `BokutShiaoBraid` chains, which need exactly that
+    have hlt' : i'.val - 1 < n := by omega
+    obtain ⟨i'', hi''⟩ : ∃ i'' : Fin n, i''.val + 1 = i'.val ∧ j₁.val ≤ i''.val :=
+      ⟨⟨i'.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    rcases lm_eq_wHi_cases hn hp hm₂ h₂ with e₂ | e₂
+    · have hbr : oc = BokutShiaoBraid.oc (yangBaxterRelation i' i) (j₁ := j₁) hi hj
+          (BraidSelfOverlap.yb_hlm i' i hi) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ e₂ hl
+          (by simpa [BokutShiaoBraid.oc] using hleft)
+      rw [hbr]
+      exact BokutShiaoBraid.yangBaxter_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₁ := j₁) hn hi hi''.1 hi''.2
+    · have hbr : oc = BokutShiaoBraid.oc (bokutShiaoRelation i' i i') (j₁ := j₁) hi hj
+          (BraidSelfOverlap.bs_hlm i' i hi) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ e₂ hl
+          (by simpa [BokutShiaoBraid.oc] using hleft)
+      rw [hbr]
+      exact BokutShiaoBraid.bokutShiao_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₁ := j₁) hn hi hi''.1 hi''.2
+
+/-- **A rule on the braid word against Bokut–Shiao** — the mirror. -/
+theorem braid_bs_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j₂ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j₂.val ≤ i'.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation i' i j₂)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact bokutShiaoRelation_mem hn hp hi hj
+  rcases Nat.eq_or_lt_of_le hj with heq | hlt
+  · -- `j₂ = i − 1`: `rule₂` leads on the braid word too, so this is §4bg
+    have hj₂i' : j₂ = i' := Fin.ext heq
+    have h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i := by
+      rw [hr₂, hj₂i']
+      exact BraidSelfOverlap.bs_hlm i' i hi
+    exact braid_self_resolves hn hp hi hm₁ hm₂ h₁ h₂ hl
+  · -- `j₂ < i − 1`: the `BraidBokutShiao` chains
+    have hlt' : i'.val - 1 < n := by omega
+    obtain ⟨i'', hi''⟩ : ∃ i'' : Fin n, i''.val + 1 = i'.val ∧ j₂.val ≤ i''.val :=
+      ⟨⟨i'.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    rcases lm_eq_wHi_cases hn hp hm₁ h₁ with e₁ | e₁
+    · have hbr : oc = BraidBokutShiao.oc (yangBaxterRelation i' i) (j₂ := j₂)
+          (BraidSelfOverlap.yb_hlm i' i hi) hi hj
+          (descWord_cons hi''.1 hi''.2) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ hr₂ hl (by simp [BraidBokutShiao.oc])
+      rw [hbr]
+      exact BraidBokutShiao.yangBaxter_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₂ := j₂) hn hi hi''.1 hi''.2
+    · have hbr : oc = BraidBokutShiao.oc (bokutShiaoRelation i' i i') (j₂ := j₂)
+          (BraidSelfOverlap.bs_hlm i' i hi) hi hj
+          (descWord_cons hi''.1 hi''.2) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ hr₂ hl (by simp [BraidBokutShiao.oc])
+      rw [hbr]
+      exact BraidBokutShiao.bokutShiao_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₂ := j₂) hn hi hi''.1 hi''.2
+
 end UGB.GrobnerShirshov.Hecke
