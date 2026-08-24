@@ -145,7 +145,9 @@ except ImportError:
 # either way, because y_(1^3) = 0.0227 != 0.
 #
 # And numpy does not protect you: `np.linalg.inv` on the D matrix RAISES
-# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64
+# in the MAX-ENTRY norm (4.14 Frobenius -- both figures are in the corpus
+# for this same matrix, so always say which norm).
 # A silently wrong `G_INV`, exported at import into constants.py, atom.py,
 # molecular.py, sdp.py and nine corpus consumers, is far worse than the
 # stale convention.
@@ -159,7 +161,7 @@ except ImportError:
 # 50-dps figure (det = 2.89e-51, GramSignature.lean) comes from an exact NF,
 # not from here. So the degeneracy is INVISIBLE to this module's own
 # precision, and `np.linalg.inv` is inverting rounding noise -- which is
-# exactly the observed cond 4.9e16 and ||G G_INV - I|| = 1.64.
+# exactly the observed cond 4.9e16 and ||G G_INV - I||_max = 1.64.
 #
 # The exactness itself does not rest on any determinant: under D,
 # y_(1^3) = 0 SYMBOLICALLY (verified three independent ways -- the sympy
@@ -414,7 +416,8 @@ RADICAL = np.array([(-1.0 / q0) ** len(w) for w in NF_BASIS])
 #:
 #: `G` is SINGULAR under convention D — that is what the radical above says —
 #: so a 6x6 inverse does not exist and `np.linalg.inv(G)` does not say so: it
-#: raises nothing and returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+#: raises nothing and returns entries up to 7.6e15 with
+#: ||G @ G_INV - I||_max = 1.64 (= 4.14 Frobenius).
 #: The Moore-Penrose pseudoinverse of a symmetric matrix with a one-dimensional
 #: kernel IS the inverse on the orthogonal complement of that kernel, which is
 #: the quotient. So this is the honest object, not an approximation to a
