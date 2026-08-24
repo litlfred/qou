@@ -115,12 +115,28 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
         # Some *.witness.json files hold a top-level JSON array (data
         # dumps, not builder witnesses) — no dependency block to check.
         return [], False
-    # Two canonical locations for the hash array:
+    # THREE canonical locations for the hash array:
     #   1. derivation_inputs.upstream_witness_hashes — hand-rolled
     #      witnesses that embed a derivation_inputs block (e.g.
     #      low-isotope-mass-table)
     #   2. data.upstream_witness_hashes — WitnessBuilder-backed
     #      witnesses (the standard slot for builder.add_upstream)
+    #   3. top-level `upstream` — producers that attach with
+    #      `save(extra={"upstream": _UPSTREAM})` instead of
+    #      `add_upstream_records`. Added 2026-08-24 (bean `qou-orb6`).
+    #
+    # (3) existed and was UNREAD, which is a worse failure than an
+    # undeclared edge: the producer did the work, the records carry real
+    # `path` + `sha256`, and this walk simply never looked there — so the
+    # witness reported as having "no declared dependencies" while its
+    # dependency sat one key away. Both instances
+    # (`l2_row_independence_probe`, `codata_registry_triangulation_probe`)
+    # were first mis-diagnosed as never attaching at all.
+    #
+    # Blast radius measured before the change: exactly 2 witnesses carry a
+    # top-level `upstream` unread here, one edge each, and ZERO carry both
+    # spellings — so no existing edge changes meaning.
+    #
     # Guard: some witnesses carry `data`/`derivation_inputs` as a LIST
     # (not a dict), so `.get` would raise — treat those as "no deps".
     di = w.get("derivation_inputs")
@@ -128,11 +144,24 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
     upstream_hashes = (
         (di.get("upstream_witness_hashes") if isinstance(di, dict) else None)
         or (dat.get("upstream_witness_hashes") if isinstance(dat, dict) else None)
+        or (w.get("upstream") if isinstance(w.get("upstream"), list) else None)
     )
     if not upstream_hashes:
         return [], False  # no declared dependencies, nothing to check
     drifts: list[dict] = []
     for entry in upstream_hashes:
+        # `isinstance` guard, needed only since the third location was added.
+        # The two builder-written slots cannot hold non-dicts by construction
+        # (`load_and_hash_upstream` writes the records), but top-level
+        # `upstream` arrives through the free-form `save(extra={...})`, so a
+        # producer writing `extra={"upstream": ["a.json"]}` would raise
+        # AttributeError here and take down the WHOLE drift run, not just its
+        # own witness. No such witness exists today — which is why the guard
+        # goes in now rather than after one appears. The sibling
+        # `_upstream_edges` has always had this check; its absence here was an
+        # asymmetry introduced with the third location.
+        if not isinstance(entry, dict):
+            continue
         ups_name = entry.get("path")
         if not ups_name:
             continue
@@ -282,6 +311,11 @@ def _upstream_edges(witness_path: Path) -> list[str]:
     arr = (
         (di.get("upstream_witness_hashes") if isinstance(di, dict) else None)
         or (dat.get("upstream_witness_hashes") if isinstance(dat, dict) else None)
+        # Third location — see the comment on the reader above. This one
+        # feeds transitive propagation, so omitting it here would leave the
+        # edge visible for direct checks and invisible for staleness that
+        # travels along it.
+        or (w.get("upstream") if isinstance(w.get("upstream"), list) else None)
         or []
     )
     return [e.get("path") for e in arr if isinstance(e, dict) and e.get("path")]

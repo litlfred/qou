@@ -156,8 +156,36 @@ def declaration_reaches_witness(tree: ast.AST) -> tuple[str, int, tuple] | None:
         the offending line usually reads "declare upstreams read *before* this
         builder existed" — which describes the correct use while the placement
         contradicts it.
+      * ``RECORDED_OFF_PATH`` — the records ARE attached, but via
+        ``save(extra={"upstream": _UPSTREAM})``, which lands them at TOP-LEVEL
+        ``upstream`` rather than in ``data.upstream_witness_hashes``.
+
+        **RESOLVED at the reader, 2026-08-24.** `witness_dependency_drift` now
+        walks that third location at both of its sites, so these edges ARE
+        followed and their staleness DOES propagate. The tier is retained as
+        an inconsistency report, not a defect report: two spellings for one
+        concept is worth knowing about and worth converging eventually, but
+        nothing is currently invisible because of it.
+
+        Do not describe these as unreachable — that was true for about an
+        hour, between the tier landing and the reader fix.
       * ``NEVER_ATTACHED`` — ``record_upstream`` populates a list that no
-        ``add_upstream_records`` ever consumes.
+        ``add_upstream_records`` ever consumes, and no ``save(extra=…)``
+        rescues it.
+
+    CORRECTION, 2026-08-24: this file first reported 2 ``NEVER_ATTACHED``
+    (`l2_row_independence_probe`, `codata_registry_triangulation_probe`) and
+    that was WRONG — both call
+    ``w.save(extra={"upstream": _UPSTREAM} if _UPSTREAM else None)`` and their
+    committed witnesses carry a top-level ``upstream`` list with real sha256s.
+    The consequence is identical (invisible to drift) but the diagnosis is not,
+    and it is unfair to producers that did record their edge. The true
+    ``NEVER_ATTACHED`` count is 0.
+
+    The two are also cheaper to fix than the 19: either move them onto
+    ``add_upstream_records``, or teach the drift detector to read top-level
+    ``upstream`` — one place instead of two producers, though it touches
+    shared infra.
 
     Both produce the same end state: the source declares, the witness carries
     no `data.upstream_witness_hashes`, and `witness_dependency_drift` cannot
@@ -199,7 +227,15 @@ def declaration_reaches_witness(tree: ast.AST) -> tuple[str, int, tuple] | None:
     if not rec and not att:
         return None
     if rec and not att:
-        return ("NEVER_ATTACHED", min(rec), ())
+        # `save(extra={"upstream": ...})` is a real attachment, just off the
+        # path the drift detector walks — do not call it "never attached".
+        off_path = any(
+            isinstance(n, ast.Call)
+            and (getattr(n.func, "attr", None) == "save")
+            and any(k.arg == "extra" for k in n.keywords)
+            for n in ast.walk(tree))
+        return (("RECORDED_OFF_PATH" if off_path else "NEVER_ATTACHED"),
+                min(rec), ())
     if not att:
         return None
 
@@ -345,6 +381,12 @@ REACH_CASES = [
     ("gathered but never handed to a builder",
      "def main():\n    r = record_upstream(p, _U)\n"
      "    b = WitnessBuilder('w')\n", "NEVER_ATTACHED"),
+    # The correction: save(extra=...) IS an attachment, just off the path the
+    # drift detector walks. Reported as NEVER_ATTACHED first, wrongly.
+    ("save(extra=…) records the edge, off the walked path",
+     "def main():\n    r = record_upstream(p, _U)\n"
+     "    w = WitnessBuilder('w')\n"
+     "    w.save(extra={'upstream': _U})\n", "RECORDED_OFF_PATH"),
     # THE false positive: `main` both populates and attaches, in the right
     # order, and is then called from module level — trivially "after".
     ("the containing function is not a later populator of itself",
@@ -420,17 +462,26 @@ def main() -> int:
             broken.append((v[0], f, v[1], v[2]))
     if broken:
         n_early = sum(1 for k, *_ in broken if k == "ATTACHED_TOO_EARLY")
-        n_never = len(broken) - n_early
-        print(f"\n  declares, but the declaration CANNOT REACH the witness: "
-              f"{len(broken):>3}")
+        n_off = sum(1 for k, *_ in broken if k == "RECORDED_OFF_PATH")
+        n_never = len(broken) - n_early - n_off
+        print(f"\n  declares, but the declaration does not land in the "
+              f"primary slot: {len(broken):>3}")
         print(f"      ATTACHED_TOO_EARLY {n_early:>3}  (attached before the "
               f"loaders populate the list)")
+        print(f"      RECORDED_OFF_PATH  {n_off:>3}  (save(extra=…) -> "
+              f"top-level `upstream`; READ since 2026-08-24 — an\n"
+              f"                              inconsistency to converge, "
+              f"not a live defect)")
         print(f"      NEVER_ATTACHED     {n_never:>3}  (gathered, never handed "
               f"to a builder)")
-        print("      These declare in SOURCE and record nothing in the "
-              "WITNESS, so the drift\n"
-              "      detector cannot walk the edge — the same end state as "
-              "not declaring at all.")
+        print("      ATTACHED_TOO_EARLY and NEVER_ATTACHED record NOTHING, "
+              "so the drift detector\n"
+              "      cannot walk the edge and the fix is per-producer (a "
+              "re-run each).\n"
+              "      RECORDED_OFF_PATH records a REAL edge with a real "
+              "sha256; it was fixed at\n"
+              "      the READER instead — one change, zero regenerations — "
+              "and is now followed.")
         for k, f, ln, l in sorted(broken, key=lambda r: (r[0], str(r[1]))):
             rel = f.relative_to(Path(a.root).resolve())
             extra = f"  (populated at {l[0]} by {l[1]}())" if l else ""
