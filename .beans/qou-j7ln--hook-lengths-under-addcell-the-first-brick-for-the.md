@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T17:49:23Z
+updated_at: 2026-08-24T17:53:55Z
 ---
 
 ## Landed — PR #5645
@@ -953,3 +953,42 @@ used — the proof is a `field_simp` and the statement holds over any field.
    addable cells, which `sum_addable_eq_sum_range` already re-indexes.
 
 No arithmetic remains — `sum_prod_qratio_weighted` is the whole of it.
+
+
+## Translation complete — only the assembly is left
+
+Commit `93f38aae5`.
+
+    axialDistance_corner_addable :
+      axialDistance corner cell = beta_a - beta_b + 1
+    zpow_node_dictionary :
+      Q^{ba - bb + 1} * Q^{bb} = Q * Q^{ba}
+
+`rowLen_of_isCornerCell` (`c.2 + 1 = rowLen c.1`) is the corner's own
+coordinate, read off `IsCornerCell`'s two absence clauses. The corpus had the
+**addable** counterpart (`rowLen_of_isAddableCell`, #5645) but not this one.
+
+So every piece of the general-r corner identity now exists:
+
+    sum_prod_qratio_weighted        the arithmetic
+    seminormalParam_node_form       its weight IS seminormalParam
+    axialDistance_corner_addable    the axial distance in beta coordinates
+    zpow_node_dictionary            hence the node relation the two share
+    seminormalParam_one'            the a = b constant
+
+### The assembly, and the one thing to watch
+
+State the corner identity for `nu` with `colLen 0 <= r` and a removable corner
+`c`, sum over addable cells (which `sum_addable_eq_sum_range` re-indexes to the
+guarded `range r` sum), rewrite each `seminormalParam` by
+`seminormalParam_node_form` through the dictionary, then apply
+`sum_prod_qratio_weighted` with `b := c.1`.
+
+**Watch `hne`.** `sum_prod_qratio_weighted` needs `Q x_i != x_b` for `i != b`,
+and the argument is: an addable row `i` has `beta_{i-1} >= beta_i + 2`, so
+`beta_b = beta_i + 1` is impossible for **any** `b`. That is a real step —
+`betaR_lt` alone gives only strict decrease, not the gap of 2 — and it is
+where an addable-row hypothesis has to be threaded rather than assumed.
+
+Then `markov_of_corner_identity` consumes it, and the Markov property holds at
+every level.
