@@ -70,8 +70,9 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")  # CODATA Q_β = m_n - m_p - m_e
 M_E_MEV = mp.mpf("0.51099895069")  # CODATA m_e
 

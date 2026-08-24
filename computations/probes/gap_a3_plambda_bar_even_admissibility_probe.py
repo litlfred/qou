@@ -79,11 +79,12 @@ from partition_utils import (  # noqa: E402
     dim_lambda,
     conjugate_partition as transpose,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 VOL_HYP_D = mp.mpf("12.776")
 M_E_MEV = mp.mpf("0.51099895069")
 B_D_MEV = mp.mpf("2.2245")

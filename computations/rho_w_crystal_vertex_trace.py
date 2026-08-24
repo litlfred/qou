@@ -60,6 +60,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from canonical_braid_crossings import (  # noqa: E402
     atom_canonical_crossings, d_for_ctype,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 # ----------------------------------------------------------------------------

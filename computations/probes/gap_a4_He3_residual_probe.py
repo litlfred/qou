@@ -41,11 +41,12 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 M_E_MEV = mp.mpf("0.51099895069")
 M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)  # CODATA validation (codata_constants registry)

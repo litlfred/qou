@@ -65,11 +65,12 @@ for p in (str(HERE / "substrate"), str(HERE)):
 import mpmath as mp  # noqa: E402
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
 # Muon-canonical q_0 (computations layer; …/q-pinning-50-digit.witness.json).
-Q0_STR = "1.10997859555733471989976322048322502665620840878015368660798114614493"
+Q0_STR = Q_50_DIGIT_STR
 
 # n=30 caps the (λ, marked-corner) state space at a feasible size (≈ p(n)·#corners,
 # ~1e4 states) — the per-level multiplier trend and the control collapse are already
