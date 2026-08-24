@@ -42,6 +42,14 @@ from canonical_braid_crossings import (  # noqa: E402
     CTYPES, atom_canonical_crossings as atomic_braid_to_crossings,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402 — before any mpmath value
+import mpmath as mp  # noqa: E402
+
+# Raise working precision before the least-squares fit below builds any mpf.
+# Without this, mpmath runs at its default 15 dps, which would be WORSE than
+# the float64 this replaces -- and never_raises_dps_audit.py would newly flag
+# this producer, which it does not today only because it used no mpmath at all.
+set_compute_dps()
 
 # ──────────────────────────────────────────────────────────────────────
 # Empirical shift values from docs/audits/2026-05-03-w3-habiro-unblocked.md
@@ -164,7 +172,11 @@ for (Z, N), shift in EMPIRICAL_SHIFT.items():
     for gen, ctype in crosses:
         cnt[ctype] += 1
     total = sum(cnt.values())
-    pole = shift / 2.0
+    # mpf, not `/ 2.0`: `shift` and `total` are integer counts, so pole and
+    # cancel are exact half-integers either way -- but as float64 they enter
+    # the witness as raw float64 (36 fields of it), which is the rule these
+    # witnesses are held to. mpf keeps them exact AND serializable.
+    pole = mp.mpf(shift) / 2
     # DP-max upper bound = total (each gen contributes 1)
     cancel = total - pole  # cancellation count
     print(f"  {ATOM_NAMES[(Z, N)]:<6} {cnt['sigma']:>4} {cnt['sigma_inv']:>4} "
@@ -353,8 +365,8 @@ for (Z, N), shift in EMPIRICAL_SHIFT.items():
     adjacency_analysis[(Z, N)] = {
         "sigma_sq_adjacencies": adj,
         "averaged_count": avg,
-        "predicted_avg_cancel": 0.5 * avg,
-        "implied_sigma_sq_cancel": cancel - 0.5 * avg,
+        "predicted_avg_cancel": mp.mpf(avg) / 2,
+        "implied_sigma_sq_cancel": cancel - mp.mpf(avg) / 2,
     }
 
 WITNESS["data"]["cancellation_decomposition"] = {
@@ -367,21 +379,35 @@ WITNESS["data"]["cancellation_decomposition"] = {
 print()
 print("CONJECTURE: cancel = c_adj · σ²-adj + c_avg · avg")
 print("  Linear fit across atoms:")
-import numpy as np
-A = np.array([[adjacency_analysis[k]["sigma_sq_adjacencies"], adjacency_analysis[k]["averaged_count"]] for k in EMPIRICAL_SHIFT])
-b = np.array([gen_counts[k]["cancellation"] for k in EMPIRICAL_SHIFT])
-sol, residuals, rank, sv = np.linalg.lstsq(A, b, rcond=None)
-print(f"    c_adj = {sol[0]:.4f}, c_avg = {sol[1]:.4f}")
-print(f"    Residuals: {residuals if len(residuals) else 'N/A'}")
+# mpmath, not numpy. np.linalg.lstsq is float64 LAPACK, and it ALSO returns an
+# empty `residuals` array whenever rank < ncols or m <= ncols -- which is why
+# `fit_residuals` recorded null for as long as EMPIRICAL_SHIFT held two atoms,
+# and started recording a number the moment it held more. The field was
+# reporting the shape of the input, not the quality of the fit.
+#
+# SEMANTICS DIFFER, and silently: numpy's residuals[0] is the SUM OF SQUARED
+# residuals, mp.qr_solve's second return is the residual 2-NORM. r**2 is the
+# matching quantity -- checked against numpy on a worked example before
+# porting, not assumed. Writing `r` would have square-rooted the number with
+# nothing to show that it had changed.
+_rows = list(EMPIRICAL_SHIFT)
+A = mp.matrix([[adjacency_analysis[k]["sigma_sq_adjacencies"],
+                adjacency_analysis[k]["averaged_count"]] for k in _rows])
+b = mp.matrix([gen_counts[k]["cancellation"] for k in _rows])
+sol, _resid_norm = mp.qr_solve(A, b)
+residual_ssr = _resid_norm ** 2
+print(f"    c_adj = {mp.nstr(sol[0], 8)}, c_avg = {mp.nstr(sol[1], 8)}")
+print(f"    Residual (sum of squares): {mp.nstr(residual_ssr, 8)}")
 print(f"    Predictions vs actual:")
-for i, (k, (Z, N)) in enumerate(zip(EMPIRICAL_SHIFT, EMPIRICAL_SHIFT.keys())):
-    pred = A[i] @ sol
-    print(f"      {ATOM_NAMES[k]:<6}: pred={pred:.3f}, actual={b[i]:.3f}, Δ={pred - b[i]:+.4f}")
+for i, k in enumerate(_rows):
+    pred = A[i, 0] * sol[0] + A[i, 1] * sol[1]
+    print(f"      {ATOM_NAMES[k]:<6}: pred={mp.nstr(pred, 6)}, "
+          f"actual={mp.nstr(b[i], 6)}, Δ={mp.nstr(pred - b[i], 4)}")
 
 WITNESS["data"]["linear_fit_cancellation"] = {
-    "c_sigma_sq_adj": float(sol[0]),
-    "c_averaged":     float(sol[1]),
-    "fit_residuals":  float(residuals[0]) if len(residuals) > 0 else None,
+    "c_sigma_sq_adj": sol[0],
+    "c_averaged":     sol[1],
+    "fit_residuals":  residual_ssr,
 }
 
 # Per-new-nucleon cancellation interpretation
