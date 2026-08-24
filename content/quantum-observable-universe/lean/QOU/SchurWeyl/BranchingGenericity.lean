@@ -21,6 +21,7 @@ signature.
 | `hookProd_ne_zero` | the hook product is invertible (hooks are `≥ 1`) |
 | `betaR_pow_injOn` | `i ↦ Q^{β_i}` is injective on the `r` rows |
 | `colLen_zero_addCell_le` | adding a box at row `a` keeps the row count `≤ max(colLen, a+1)` |
+| `sum_schurPrincipal_addCellOrSelf` | **`∑_a s_{μ+□ at a} = [r]_Q · s_μ`** — general-`r` branching |
 
 The last is not a genericity fact at all — it is the shape bound that keeps `μ + □` inside the
 `≤ r`-row hypothesis — but it belongs with the others because it is the remaining side condition.
@@ -112,5 +113,50 @@ theorem colLen_zero_addCell_le {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdda
     omega
   · have := mem_iff_lt_colLen.mp hmemμ
     omega
+
+/-! ## General-`r` branching for `schurPrincipal` -/
+
+/-- **General-`r` branching for the corpus weight.**
+
+`∑_{a < r} s_{μ + □ at row a}(1, Q, …, Q^{r−1}) = (1 + Q + ⋯ + Q^{r−1}) · s_μ(1, Q, …, Q^{r−1})`,
+
+the sum running over all `r` rows with the non-addable ones contributing `0`.
+
+This is what #5575 proves at `r = 2` by way of `schurPrincipal_twoRow`'s telescoping closed form —
+now at every level, for `QBeta.WenzlWeight.schurPrincipal` itself.  The single hypothesis `hgen` is
+the same root-of-unity genericity `schurPrincipal_eq_zero_iff` carries; everything else is derived
+above.
+
+The summand is total (`addCellOrSelf` guarded by the decidable `IsAddableCell`) rather than indexed
+by addability proofs, which is what `qratio_prod_eq_zero_of_not_addable` buys: on a row that cannot
+take a box the `q`-ratio is already zero, so the guarded sum and a sum over addable rows agree. -/
+theorem sum_schurPrincipal_addCellOrSelf (Q : F) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1)
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) {r : ℕ} {μ : YoungDiagram} (hrμ : μ.colLen 0 ≤ r) :
+    (∑ a ∈ Finset.range r,
+        (if IsAddableCell μ (a, μ.rowLen a) then
+          QOU.QBeta.WenzlWeight.schurPrincipal r Q (addCellOrSelf μ (a, μ.rowLen a)) else 0))
+      = (∑ k ∈ Finset.range r, Q ^ k) * QOU.QBeta.WenzlWeight.schurPrincipal r Q μ := by
+  classical
+  have hkey := QOU.Mathlib.sum_eq_bracket_mul_of_qratio_scaling
+    (s := Finset.range r) (v := fun i => Q ^ betaR r μ i)
+    (betaR_pow_injOn hQ0 hgen r μ) (fun i _ => pow_ne_zero _ hQ0) hQ0 hQ1
+    (fun a => if IsAddableCell μ (a, μ.rowLen a) then
+      QOU.QBeta.WenzlWeight.schurPrincipal r Q (addCellOrSelf μ (a, μ.rowLen a)) else 0)
+    (QOU.QBeta.WenzlWeight.schurPrincipal r Q μ) ?_
+  · rwa [Finset.card_range] at hkey
+  · intro a hi
+    rw [Finset.mem_range] at hi
+    dsimp only
+    by_cases hadd : IsAddableCell μ (a, μ.rowLen a)
+    · rw [if_pos hadd, addCellOrSelf_of hadd]
+      have hrν : (addCell μ (a, μ.rowLen a) hadd).colLen 0 ≤ r :=
+        le_trans (colLen_zero_addCell_le hadd) (by simp only [max_le_iff]; omega)
+      exact schurPrincipal_addCell_eq Q hQ0 hadd hi hrμ hrν
+        (hookProd_ne_zero hgen μ) (hookProd_ne_zero hgen _)
+        (levelConst_ne_zero hgen r) (rowColProd_ne_zero hgen hi μ)
+    · rw [if_neg hadd]
+      obtain ⟨hpos, heq⟩ := not_isAddableCell_rowEnd μ hadd
+      rw [Finset.prod_div_distrib, qratio_prod_eq_zero_of_not_addable Q hpos hi heq,
+        zero_div, zero_mul]
 
 end QOU.SchurWeyl
