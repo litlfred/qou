@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:41:45.018695+00:00",
-  "commitSha": "6de077a9342ad4613cc5b66da47c8dbac705876e",
+  "computedAt": "2026-08-24T06:58:34.439409+00:00",
+  "commitSha": "45f617842b78c7e54b88d657bf4bcd9b92b0301b",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2724,
-      "prov_ok": 2347,
+      "total_scanned": 2727,
+      "prov_ok": 2350,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 222,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 74,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972834067547723935389133627019089574155653450807635829662261"
+      "completeness_ratio": "0.972863953061972863953061972863953061972863953061972863953062"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2107,6 +2107,18 @@
         },
         {
           "witness": "d-density-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": []
         },
         {
