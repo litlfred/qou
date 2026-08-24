@@ -199,6 +199,10 @@ def main() -> int:
         "ratchet) presupposes the producer can run; when it cannot, the witness "
         "reports clean forever while its numbers age. Real instance: "
         "proton-residual-rootcause carried a convention-C z_markov = "
+        # comparison only — this string DOCUMENTS the convention-C defect class;
+        # it is not a live C value. (Marker for the convention-C triage detector,
+        # which matches the decimal by value and cannot otherwise tell prose from
+        # a computed constant.)
         "0.49932033403356124 invisibly through the entire C->D campaign because "
         "its producer raised TypeError on every run (fixed in 179f030c2). "
         "Method: import the module by file location in a subprocess — these "

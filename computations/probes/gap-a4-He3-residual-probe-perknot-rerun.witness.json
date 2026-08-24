@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:37:37.526875+00:00",
-  "commitSha": "074dfccb4a1090f3dad12759867a0a386851c795",
+  "computedAt": "2026-08-24T08:45:57.544023+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
-      "computed": -0.18150849813701422,
+      "computed": -0.18150849921244602,
       "expected": -0.1815,
       "passed": true,
       "tolerance": 0.002,
@@ -14,7 +14,7 @@
     },
     {
       "name": "lambdaA_over_2_baseline_reproduced",
-      "computed": 0.036529315404556756,
+      "computed": 0.03652931404264086,
       "expected": 0.0365,
       "passed": true,
       "tolerance": 0.002,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 32,
   "computation": "gap-a4-He3-residual-probe-perknot-rerun",
   "scriptFile": "gap_a4_He3_residual_probe_perknot_rerun.py",
   "scriptHash": "b7614a3974d3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4796304d1e9132ac9f75c54cdf4404e500a5eb59",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,19 +36,28 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap_a4_He3_residual_probe_perknot_rerun.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap_a4_He3_residual_probe_perknot_rerun.py"
   },
   "description": "Bean x5az per-knot-density re-run of the PR #1882 3He L1b residual probe. The residual target lambda_emp/L1b ~ 1.2218 is density-independent (reproduced as baseline). The lambda_A-family candidates (lambda_A/2, sqrt(lambda_A/[2]_q)) are re-tested with the canonical per-knot bases tr_M(3He) (chi-cache H9) and tr_M(p)^2*tr_M(n) (p!=n constituent product) substituted for lambda_A — same functional forms, no new ansatz families. EXPLORATORY.",
   "auditOnly": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
   "parameters": {
     "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "residual_ratio_target": "1.221759783362293824008792596553634103929331292711225289630804183220904",
-    "lambda_A_at_q0": "2.532779663674675982663683814157702273749756313913530229683141028208076",
-    "tr_M_He3": "0.2065784750874029994570631561948752040177342880078479772898250614500135",
-    "tr_M_p": "1.065306228613167059365284546431372557650661674135160717246407953303501",
-    "tr_M_n": "0.9232332971861535571052533959906860401386621219013708894221074734311236"
+    "residual_ratio_target": "1.2217597849675876116271330618178711228584680957325",
+    "lambda_A_at_q0": "2.5327796636746759826636838141577022737497563139135",
+    "tr_M_He3": "0.4037670390921084394302163632514281120280838715121",
+    "tr_M_p": "1.1457596930251999584370288654945060349157742067613",
+    "tr_M_n": "0.98774368843813104881681732268499206354875717805305"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -58,72 +67,74 @@
       {
         "label": "lambda_A",
         "family": "lambdaA_baseline",
-        "value_at_q0": "2.532779663674675982663683814157702273749756313913530229683141028208076",
-        "relative_error": "1.073058630809113516149694948805668690591407889663117799094009348826845",
+        "value_at_q0": "2.5327796636746759826636838141577022737497563139135",
+        "relative_error": "1.0730586280852817266668395750953134091435618205529",
         "verdict": "REFUTED"
       },
       {
         "label": "lambda_A/2",
         "family": "lambdaA_baseline",
-        "value_at_q0": "1.266389831837337991331841907078851136874878156956765114841570514104038",
-        "relative_error": "0.03652931540455675807484747440283434529570394483155889954700467441342256",
+        "value_at_q0": "1.2663898318373379913318419070788511368748781569568",
+        "relative_error": "0.036529314042640863333419787547656704571780910276434",
         "verdict": "NEAR-MATCH (<5%)"
       },
       {
         "label": "sqrt(lambda_A/[2]_q)",
         "family": "lambdaA_baseline",
-        "value_at_q0": "1.122286674310572280344642802515452119864771263957616805946605631327705",
-        "relative_error": "-0.08141789442272413001091305505965385185567225284536861367407869447108489",
+        "value_at_q0": "1.1222866743105722803446428025154521198647712639576",
+        "relative_error": "-0.081417895629666906851202807313473718631872683049341",
         "verdict": "NEAR-MATCH (<25%)"
       },
       {
         "label": "tr_M(3He)",
         "family": "perknot_atom",
-        "value_at_q0": "0.2065784750874029994570631561948752040177342880078479772898250614500135",
-        "relative_error": "-0.830917273673146129444764088011041341891671655347274558138344213231638",
+        "value_at_q0": "0.4037670390921084394302163632514281120280838715121",
+        "relative_error": "-0.66952011020495319219589824238421583975590780127584",
         "verdict": "REFUTED"
       },
       {
         "label": "tr_M(3He)/2",
         "family": "perknot_atom",
-        "value_at_q0": "0.1032892375437014997285315780974376020088671440039239886449125307250068",
-        "relative_error": "-0.915458636836573064722382044005520670945835827673637279069172106615819",
+        "value_at_q0": "0.20188351954605421971510818162571405601404193575605",
+        "relative_error": "-0.83476005510247659609794912119210791987795390063792",
         "verdict": "REFUTED"
       },
       {
         "label": "sqrt(tr_M(3He)/[2]_q)",
         "family": "perknot_atom",
-        "value_at_q0": "0.3205144652948256954099278905177446499664881911712804273649159784335352",
-        "relative_error": "-0.7376616339320262880326424895390087768880350987750337309760992931449936",
+        "value_at_q0": "0.44809544845552777293146737279559537198077072985722",
+        "relative_error": "-0.63323768389756304218057746182595140759708302871937",
         "verdict": "REFUTED"
       },
       {
         "label": "tr_M(p)^2*tr_M(n)",
         "family": "perknot_pn_product",
-        "value_at_q0": "1.047756567641300458245036049908807971200974982185335089897247000296206",
-        "relative_error": "-0.1424201533644649553712031371552874020157694483019600973856530223164779",
+        "value_at_q0": "1.2966756139534784577888355831855561709730135548815",
+        "relative_error": "0.061317969299405535759118463070277428155318293831731",
         "verdict": "NEAR-MATCH (<25%)"
       },
       {
         "label": "tr_M(p)^2*tr_M(n)/2",
         "family": "perknot_pn_product",
-        "value_at_q0": "0.5238782838206502291225180249544039856004874910926675449486235001481032",
-        "relative_error": "-0.5712100766822324776856015685776437010078847241509800486928265111582389",
+        "value_at_q0": "0.64833780697673922889441779159277808548650677744073",
+        "relative_error": "-0.46934101535029723212044076846486128592234085308413",
         "verdict": "REFUTED"
       },
       {
         "label": "sqrt(tr_M(p)^2*tr_M(n)/[2]_q)",
         "family": "perknot_pn_product",
-        "value_at_q0": "0.7218306134811126972460494200997104712057178095801115500103756652069496",
-        "relative_error": "-0.4091877770811636891687987425728344791642350490769874381164146396439569",
+        "value_at_q0": "0.80300966542258055540707012570186644478749677550717",
+        "relative_error": "-0.34274341380136046044471407574935124539789018265407",
         "verdict": "REFUTED"
       }
     ],
     "best_candidate": {
       "label": "lambda_A/2",
-      "relative_error": "0.03652931540455675807484747440283434529570394483155889954700467441342256",
+      "relative_error": "0.036529314042640863333419787547656704571780910276434",
       "family": "lambdaA_baseline"
     },
     "rerun_verdict": "ROBUST (scope-limited, class (a)): the density swap does not flip the original negative. The original probe's conclusion ('no exact single-factor substrate match; best row lambda_A/2 at +3.65% filed as numerology') survives — the per-knot analogues do WORSE than the lambda_A-family best (per-knot best |rel| > baseline best |rel|), so the lambda_A/2 near-match is confirmed as lambda_A-family numerology rather than a shadow of the canonical density. NOTE (honest like-for-like observation): the bare p!=n constituent product tr_M(p)^2*tr_M(n) lands within 25% of the residual target with NO rescaler, while the lambda_A family needed the /2 or sqrt(./[2]_q) rescaling to get near — the p!=n structure is not nothing here, but it does not close the residual. Scope: constrains only these single-factor forms on these bases; not a structural exclusion of tr_M(K)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

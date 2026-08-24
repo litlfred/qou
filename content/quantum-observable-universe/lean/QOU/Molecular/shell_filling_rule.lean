@@ -103,7 +103,8 @@ class ShellFillingRuleContext (R : Type*) [Semiring R] where
   dual_obj : R
   /-- Definition of dual objective. -/
   dual_obj_def : dual_obj = (Z : R) * y_0
-  /-- Strong duality equates primal and dual objectives. -/
+  /-- Strong duality equates primal and dual objectives.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality : primal_obj = dual_obj
 
 /-- **Pauli occupancy bound — derived sorry-free.**  Every shell obeys

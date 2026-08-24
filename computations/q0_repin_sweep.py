@@ -55,6 +55,9 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+
+sys.path.insert(0, str(HERE))
+from _path_bridge import witness_path  # noqa: E402
 PROGRESS = HERE / "q0-repin-sweep-progress.json"
 NUM = re.compile(r"^-?\d*\.?\d+(?:[eE][-+]?\d+)?$")
 
@@ -173,7 +176,10 @@ def build_graph(stems: set[str]):
 
     paths: dict[str, Path] = {}
     for s in stems:
-        hits = [p for p in HERE.rglob(f"{s}.py") if "_deprecated" not in p.parts]
+        # sorted: rglob yields in os.scandir order, so a bare hits[0] picks a
+        # filesystem-dependent copy for a duplicated basename. Bean qou-kcii.
+        hits = sorted(p for p in HERE.rglob(f"{s}.py")
+                      if "_deprecated" not in p.parts)
         if hits:
             paths[s] = hits[0]
 
@@ -339,12 +345,27 @@ def main() -> int:
         outs = sorted(wit.get(s, ()))
         # Snapshot every witness this producer owns, so movement is measured
         # rather than asserted.
+        #
+        # Resolve each owned witness ONCE, here, and reuse the same Path for
+        # the after-snapshot below. Previously both snapshots ran their own
+        # `HERE.rglob(n)` and took the first non-deprecated hit, which is two
+        # independent resolutions of one name across the producer's own run —
+        # and rglob yields in os.scandir order, so they are not even guaranteed
+        # to agree. If they disagree, `rel_moves` compares the BEFORE text of
+        # one file against the AFTER text of a different file, and the movement
+        # this sweep exists to measure is fiction. 24 of the 25 duplicated
+        # stems are claimed by some producer's scriptFile, so this is well
+        # inside the sweep's reach.
+        #
+        # prefer_dir is the PRODUCER's directory, not this driver's: producers
+        # emit beside themselves, so that is the copy that actually moves.
+        # Bean qou-kcii.
+        wpaths = {n: witness_path(n, p.parent) for n in outs}
         before = {}
         for n in outs:
-            for w in HERE.rglob(n):
-                if "_deprecated" not in w.parts:
-                    before[n] = w.read_text(encoding="utf-8")
-                    break
+            w = wpaths[n]
+            if w.exists():
+                before[n] = w.read_text(encoding="utf-8")
         t0 = time.monotonic()
         # Run each producer in its OWN process group, and kill the group — not
         # just the immediate child — on timeout or on our own termination.
@@ -379,14 +400,14 @@ def main() -> int:
         mx = md = 0.0
         nfields = 0
         for n in outs:
-            for w in HERE.rglob(n):
-                if "_deprecated" in w.parts:
-                    continue
-                r = rel_moves(before.get(n, ""), w)
-                if r:
-                    mx, md = max(mx, r[0]), max(md, r[1])
-                    nfields += r[2]
-                break
+            # Same Path the before-snapshot read — see the note there.
+            w = wpaths[n]
+            if not w.exists():
+                continue
+            r = rel_moves(before.get(n, ""), w)
+            if r:
+                mx, md = max(mx, r[0]), max(md, r[1])
+                nfields += r[2]
         done[s] = {"rc": rc, "sec": round(dt, 1), "witnesses": outs,
                    "max_rel_move": mx, "median_rel_move": md,
                    "n_fields": nfields, "err": err[0][:200]}

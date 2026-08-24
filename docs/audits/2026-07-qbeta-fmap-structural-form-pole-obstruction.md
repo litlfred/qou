@@ -10,6 +10,23 @@ $$ \frac{\Delta(\text{net})}{\Delta\text{tr}_M(q)} = \frac{8}{5w} - \frac{12}{25
 
 Since the precision ladder variable $u = b\hbar_q^2$ scales as $\mathcal{O}(w^2)$, it is impossible to express this scalar ratio as a formal power series in $u$. **Conclusion: The f-map cannot be a scalar operator.** It must be a structured transformation on the operator spectrum.
 
+> **Scope of that conclusion — (b), structural exclusion.** Per AGENTS.md
+> §"Before declaring refuted", this is a **(b)** and not a scope-limited (a),
+> because a proved invariant forbids the whole class: the **order of vanishing
+> at $w = 0$**. We have $\mathrm{ord}_w \Delta(\text{net}) = 0$ (its constant
+> term is $-2 \neq 0$) and $\mathrm{ord}_w \Delta\mathrm{tr}_M = 1$, so the
+> ratio has $\mathrm{ord}_w = -1$; every formal power series in
+> $u = \mathcal{O}(w^2)$ has $\mathrm{ord}_w \geq 0$, and an order-$(-1)$
+> function is not an order-$\geq 0$ one. The leading coefficient $-5/4$ is not
+> load-bearing — the argument needs only $\Delta(\text{net})(q{=}1) \neq 0$ and
+> $\Delta\mathrm{tr}_M(q{=}1) = 0$.
+>
+> **What it excludes, exactly:** the f-map being a *scalar* — a power series in
+> $u$ with scalar coefficients. It does **not** exclude an operator-valued or
+> otherwise non-scalar f-map; routes A, B and C below all remain open, and the
+> document's own next sentence says so. Read as "no f-map exists" this would be
+> an over-claim of precisely the kind the (a)/(b) rule exists to prevent.
+
 ## 2. Derivation pathways
 
 A formalised f-map must therefore be sought among the non-scalar categorical routes:

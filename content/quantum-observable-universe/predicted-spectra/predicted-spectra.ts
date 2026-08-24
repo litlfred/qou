@@ -346,6 +346,7 @@ export default chapter({
         "spectral-decomposition-qvalue",
         "spectral-decomposition-qvalue-proof",
         "spectral-decomposition-qvalue-geometric",
+        "spectral-decomposition-qvalue-interpretation",
         "spectral-decomposition-qvalue-table3-data",
         "spectral-decomposition-qvalue-table2-data",
         "spectral-decomposition-qvalue-table1-data",

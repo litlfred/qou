@@ -25,8 +25,8 @@
   | Wronskian | present, but **two polynomials only** |
   | **index at a point** | **absent — this file** |
   | generalized Wronskians | absent in Mathlib — supplied in `QOU.Mathlib.GenWronskian`
-    (univariate, with the dependence iff) and `QOU.Mathlib.MvGenWronskian` (several
-    variables, the direction Roth's lemma consumes) |
+    (univariate) and `QOU.Mathlib.MvGenWronskian` (several variables), each with the
+    dependence criterion proved in **both** directions |
   | Roth's lemma, Roth's theorem | absent |
 
   ═══ THE DEFINITION, AND WHY IT AVOIDS DERIVATIVES ═══
@@ -50,6 +50,10 @@
 import Mathlib.Algebra.MvPolynomial.Equiv
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.Order.Ring.Rat
+import Mathlib.Algebra.MvPolynomial.Division
+import Mathlib.Algebra.MvPolynomial.CommRing
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.Algebra.Ring.Int.Units
 
 namespace MvPolynomial
 
@@ -72,6 +76,35 @@ theorem translate_add (α : σ → R) (P Q : MvPolynomial σ R) :
 theorem translate_mul (α : σ → R) (P Q : MvPolynomial σ R) :
     translate α (P * Q) = translate α P * translate α Q := by
   simp [translate]
+
+/-- Translating back by `-α` undoes `translate α`.
+
+`translate α` is an algebra endomorphism of the polynomial ring; this exhibits its inverse,
+which is what makes `index` well behaved at `P = 0` and nowhere else. -/
+theorem translate_neg_translate (α : σ → R) (P : MvPolynomial σ R) :
+    translate (fun j => -α j) (translate α P) = P := by
+  show (aeval fun j => X j + C (-α j)) ((aeval fun j => X j + C (α j)) P) = P
+  rw [← AlgHom.comp_apply, comp_aeval]
+  have h : (fun i => (aeval fun j => (X j + C (-α j) : MvPolynomial σ R)) (X i + C (α i)))
+      = fun i => (X i : MvPolynomial σ R) := by
+    funext i
+    simp
+  rw [h]
+  exact aeval_X_left_apply P
+
+theorem translate_injective (α : σ → R) : Function.Injective (translate α) := by
+  intro P Q h
+  have h' := congrArg (translate (fun j => -α j)) h
+  rwa [translate_neg_translate, translate_neg_translate] at h'
+
+/-- **Translation detects the zero polynomial and nothing else.**
+
+⚠ Deliberately *not* a `simp` lemma: `translate` appears unfolded in several proofs in this
+arc, and turning this into a rewrite rule changes what `simp` does to them. -/
+theorem translate_eq_zero_iff (α : σ → R) {P : MvPolynomial σ R} :
+    translate α P = 0 ↔ P = 0 := by
+  refine ⟨fun h => translate_injective α ?_, fun h => by rw [h, translate_zero]⟩
+  rw [h, translate_zero]
 
 /-- The **weight** of a multi-index against the degree vector `d`: `∑ⱼ iⱼ / dⱼ`. -/
 noncomputable def idxWeight (d : σ → ℕ) (i : σ →₀ ℕ) : ℚ :=
@@ -255,20 +288,409 @@ theorem translate_pderiv [DecidableEq σ] (α : σ → R) (i : σ) (P : MvPolyno
     · simp only [Derivation.leibniz, smul_eq_mul, pderiv_X_of_ne (Ne.symm h), mul_zero,
         zero_add, translate_mul, translate_X, map_add, pderiv_C, add_zero, hp]
 
+/-! ### The index under differentiation
+
+The estimate Roth's lemma runs on: differentiating once costs at most `1/dⱼ` of index. -/
+
+/-- The support of a derivative sits inside the shift of the support by `-eⱼ`. -/
+theorem support_pderiv_subset [DecidableEq σ] (i : σ) (P : MvPolynomial σ R) :
+    (pderiv i P).support ⊆ P.support.image (fun s => s - Finsupp.single i 1) := by
+  classical
+  have hP : P = ∑ v ∈ P.support, monomial v (coeff v P) :=
+    (support_sum_monomial_coeff P).symm
+  intro t ht
+  rw [hP, map_sum] at ht
+  have hb := support_sum ht
+  simp only [Finset.mem_biUnion] at hb
+  obtain ⟨v, hv, htv⟩ := hb
+  rw [pderiv_monomial] at htv
+  have h1 : t = v - Finsupp.single i 1 := by
+    have := support_monomial_subset htv
+    simpa using this
+  exact Finset.mem_image.mpr ⟨v, hv, h1.symm⟩
+
+theorem idxWeight_single (d : σ → ℕ) (i : σ) (n : ℕ) :
+    idxWeight d (Finsupp.single i n) = (n : ℚ) / (d i : ℚ) := by
+  rw [idxWeight_eq_sum]
+  exact Finsupp.sum_single_index (by simp)
+
+/-- When the variable does not occur, truncated subtraction is the identity. -/
+theorem sub_single_of_eq_zero [DecidableEq σ] {s : σ →₀ ℕ} {i : σ} (h : s i = 0) :
+    s - Finsupp.single i 1 = s := by
+  ext j
+  by_cases hj : j = i
+  · subst hj; simp [h]
+  · simp [Ne.symm hj]
+
+/-- **The weight drops by at most `1/dᵢ` under one differentiation.**
+
+⚠ **This must be an inequality, and that is what makes it easy.** The `ℕ`-subtraction on
+`σ →₀ ℕ` is truncated, so `s - eᵢ = s` exactly when `sᵢ = 0`, and there the *equality*
+`idxWeight (s - eᵢ) = idxWeight s - 1/dᵢ` is plainly false. Stated as `≤` the degenerate
+case costs nothing, because `1/dᵢ ≥ 0` makes the bound slack rather than tight. -/
+theorem idxWeight_le_sub_single_add [DecidableEq σ] (d : σ → ℕ) (s : σ →₀ ℕ) (i : σ) :
+    idxWeight d s ≤ idxWeight d (s - Finsupp.single i 1) + 1 / (d i : ℚ) := by
+  by_cases h : Finsupp.single i 1 ≤ s
+  · refine le_of_eq ?_
+    have hcancel : s - Finsupp.single i 1 + Finsupp.single i 1 = s := tsub_add_cancel_of_le h
+    calc idxWeight d s
+        = idxWeight d (s - Finsupp.single i 1 + Finsupp.single i 1) := by rw [hcancel]
+      _ = idxWeight d (s - Finsupp.single i 1) + idxWeight d (Finsupp.single i 1) :=
+          idxWeight_add _ _ _
+      _ = idxWeight d (s - Finsupp.single i 1) + 1 / (d i : ℚ) := by
+          rw [idxWeight_single]; norm_num
+  · have hzero : s i = 0 := by
+      rw [Finsupp.single_le_iff] at h
+      omega
+    rw [sub_single_of_eq_zero hzero]
+    exact le_add_of_nonneg_right (div_nonneg zero_le_one (Nat.cast_nonneg _))
+
+/-- **The index drops by at most `1/dⱼ` under one differentiation.**
+
+The `⊤` case is not a technicality to be routed around: when `∂ⱼP = 0` the right-hand side
+is `⊤` and the bound is free, which is exactly the behaviour the `WithTop` return type was
+chosen for at the top of this file. -/
+theorem index_le_index_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α : σ → R) (j : σ)
+    (P : MvPolynomial σ R) :
+    index d α P ≤ index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+  classical
+  have htr : translate α (pderiv j P) = pderiv j (translate α P) := translate_pderiv α j P
+  by_cases hemp : (pderiv j (translate α P)).support = ∅
+  · have htop : index d α (pderiv j P) = ⊤ := by
+      rw [index, htr, hemp, Finset.inf_empty]
+    rw [htop, top_add]
+    exact le_top
+  · have hne : (pderiv j (translate α P)).support.Nonempty :=
+      Finset.nonempty_of_ne_empty hemp
+    obtain ⟨t, ht, hinf⟩ :=
+      Finset.exists_mem_eq_inf _ hne (fun m => ((idxWeight d m : ℚ) : WithTop ℚ))
+    have hidx : index d α (pderiv j P) = ((idxWeight d t : ℚ) : WithTop ℚ) := by
+      rw [index, htr]; exact hinf
+    obtain ⟨s, hs, hst⟩ :=
+      Finset.mem_image.mp (support_pderiv_subset j (translate α P) ht)
+    have hweight : idxWeight d s ≤ idxWeight d t + 1 / (d j : ℚ) := by
+      rw [← hst]; exact idxWeight_le_sub_single_add d s j
+    calc index d α P ≤ ((idxWeight d s : ℚ) : WithTop ℚ) := by
+          rw [index]; exact Finset.inf_le hs
+      _ ≤ ((idxWeight d t + 1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by exact_mod_cast hweight
+      _ = ((idxWeight d t : ℚ) : WithTop ℚ) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+          rw [WithTop.coe_add]
+      _ = index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by rw [hidx]
+
+/-- **The iterated bound:** `k` differentiations in one variable cost at most `k/dⱼ`. -/
+theorem index_le_index_iterate_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α : σ → R) (j : σ)
+    (k : ℕ) (P : MvPolynomial σ R) :
+    index d α P ≤ index d α ((pderiv j)^[k] P) + (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+  induction k generalizing P with
+  | zero => simp
+  | succ n ih =>
+    have hstep := index_le_index_pderiv_add d α j P
+    have hih := ih (pderiv j P)
+    have hsplit : (((n : ℚ) + 1) / (d j : ℚ) : ℚ) = (n : ℚ) / (d j : ℚ) + 1 / (d j : ℚ) := by
+      rw [add_div]
+    calc index d α P
+        ≤ index d α (pderiv j P) + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := hstep
+      _ ≤ (index d α ((pderiv j)^[n] (pderiv j P))
+            + (((n : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ))
+            + ((1 / (d j : ℚ) : ℚ) : WithTop ℚ) := by gcongr
+      _ = index d α ((pderiv j)^[n + 1] P)
+            + ((((n : ℚ) + 1) / (d j : ℚ) : ℚ) : WithTop ℚ) := by
+          rw [← Function.iterate_succ_apply, hsplit, WithTop.coe_add, add_assoc]
+      _ = index d α ((pderiv j)^[n + 1] P)
+            + ((((n + 1 : ℕ) : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) := by push_cast; ring_nf
+
+/-! ### Bounding the index from BELOW
+
+Every result above bounds the index from above.  Roth's lemma also needs the other
+direction: its auxiliary polynomial is *constructed* to vanish to high order, and the index
+is what that construction buys. -/
+
+/-- A single term is at most the whole weight, since every term is non-negative. -/
+theorem le_idxWeight (d : σ → ℕ) (i : σ →₀ ℕ) (j : σ) :
+    (i j : ℚ) / (d j : ℚ) ≤ idxWeight d i := by
+  classical
+  by_cases hj : i j = 0
+  · rw [hj]
+    simpa using idxWeight_nonneg d i
+  · exact Finset.single_le_sum (f := fun j' => (i j' : ℚ) / (d j' : ℚ))
+      (fun j' _ => div_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _))
+      (Finsupp.mem_support_iff.mpr hj)
+
+/-- **High-order vanishing in one variable forces a lower bound on the index.** -/
+theorem le_index_of_forall_le_support (d : σ → ℕ) (α : σ → R) (P : MvPolynomial σ R)
+    (j : σ) (k : ℕ) (h : ∀ i ∈ (translate α P).support, k ≤ i j) :
+    (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) ≤ index d α P := by
+  rw [le_index_iff]
+  intro i hi
+  -- ⚠ `gcongr` leaves this side goal because `h i hi` is not a local hypothesis; in
+  -- `le_index_of_X_pow_dvd_translate` below the analogous fact *is* in context and `gcongr`
+  -- discharges it itself, so the follow-up must be omitted there.  Both spellings are
+  -- correct in their own context and copying either into the other fails.
+  have hstep : (k : ℚ) / (d j : ℚ) ≤ (i j : ℚ) / (d j : ℚ) := by
+    gcongr
+    exact_mod_cast h i hi
+  exact_mod_cast le_trans hstep (le_idxWeight d i j)
+
+/-! ### Divisibility, support, and the index -/
+
+/-- Divisibility by a monomial is a condition on the support. -/
+theorem monomial_one_dvd_iff_support {s : σ →₀ ℕ} {x : MvPolynomial σ R} :
+    monomial s (1 : R) ∣ x ↔ ∀ i ∈ x.support, s ≤ i := by
+  rw [monomial_one_dvd_iff_modMonomial_eq_zero]
+  constructor
+  · intro h i hi
+    by_contra hle
+    rw [mem_support_iff] at hi
+    exact hi (by rw [← coeff_modMonomial_of_not_le x hle, h, coeff_zero])
+  · intro h
+    ext i
+    by_cases hle : s ≤ i
+    · rw [coeff_modMonomial_of_le x hle, coeff_zero]
+    · rw [coeff_modMonomial_of_not_le x hle, coeff_zero]
+      by_contra hne
+      exact hle (h i (mem_support_iff.mpr hne))
+
+/-- **Divisibility by a power of a variable, as a support condition.**
+
+Mathlib has the univariate `Polynomial.X_pow_dvd_iff`; multivariately it has only
+`X_dvd_iff_modMonomial_eq_zero`, the first-power case. -/
+theorem X_pow_dvd_iff_support {j : σ} {k : ℕ} {x : MvPolynomial σ R} :
+    (X j : MvPolynomial σ R) ^ k ∣ x ↔ ∀ i ∈ x.support, k ≤ i j := by
+  rw [X_pow_eq_monomial, monomial_one_dvd_iff_support]
+  exact forall_congr' fun i => forall_congr' fun _ => Finsupp.single_le_iff
+
+/-- The index lower bound, phrased as divisibility of the translate. -/
+theorem le_index_of_X_pow_dvd_translate (d : σ → ℕ) (α : σ → R) (P : MvPolynomial σ R)
+    (j : σ) (k : ℕ) (h : (X j : MvPolynomial σ R) ^ k ∣ translate α P) :
+    (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) ≤ index d α P := by
+  rw [X_pow_dvd_iff_support] at h
+  exact le_index_of_forall_le_support d α P j k h
+
+/-! ### Transport along a renaming
+
+Reindexing the variables does not change the index, provided the weights and the base point
+are transported with them.  This is what lets a result proved for one variable type be used
+at another — and it subsumes the two injection-specific lemmas in
+`QOU/Mathlib/SeparatedIndex.lean`, which are now derived from it. -/
+
+/-- Translating after an injective renaming is renaming after translating by the pulled-back
+point.  The variables outside the image never see `α`. -/
+theorem translate_rename_of_injective {τ : Type*} (f : σ → τ) (α : τ → R)
+    (P : MvPolynomial σ R) :
+    translate α (rename f P) = rename f (translate (α ∘ f) P) := by
+  induction P using MvPolynomial.induction_on with
+  | C a => simp [translate]
+  | add p q hp hq => simp only [map_add, translate_add, hp, hq]
+  | mul_X p i hp =>
+      rw [map_mul, rename_X, translate_mul, translate_mul, translate_X, translate_X, hp,
+        map_mul, map_add, rename_X, rename_C]
+      rfl
+
+/-- Pushing a multi-index forward along an injection and weighting by `d` is weighting by
+`d ∘ f`: injectivity is what keeps the support sum term-for-term. -/
+theorem idxWeight_mapDomain_of_injective {τ : Type*} [DecidableEq τ] (f : σ → τ)
+    (hf : Function.Injective f) (d : τ → ℕ) (i : σ →₀ ℕ) :
+    idxWeight d (Finsupp.mapDomain f i) = idxWeight (d ∘ f) i := by
+  classical
+  unfold idxWeight
+  rw [Finsupp.mapDomain_support_of_injective hf, Finset.sum_image (fun a _ b _ h => hf h)]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  rw [Finsupp.mapDomain_apply hf]
+  rfl
+
+/-- **The index is invariant under an injective renaming**, with the weights and base point
+transported. -/
+theorem index_rename_of_injective {τ : Type*} [DecidableEq τ] (f : σ → τ)
+    (hf : Function.Injective f) (d : τ → ℕ) (α : τ → R) (P : MvPolynomial σ R) :
+    index d α (rename f P) = index (d ∘ f) (α ∘ f) P := by
+  classical
+  unfold index
+  rw [translate_rename_of_injective, support_rename_of_injective hf, Finset.inf_image]
+  refine congrArg (Finset.inf (translate (α ∘ f) P).support) ?_
+  refine _root_.funext fun i => ?_
+  simp only [Function.comp_apply, idxWeight_mapDomain_of_injective f hf d i]
+
+/-- **Transport along an equivalence.**  A corollary of `index_rename_of_injective`, and the
+lemma that makes reindexing the variable *type* cheap.
+
+Three lines.  That matters for a design decision: an `m`-indexed formulation of Roth's lemma
+needs `Fin (m+1) ≃ Unit ⊕ Fin m` transport to meet the `σ ⊕ τ` machinery, and this is that
+transport for the index side.  The height side is free — Mathlib's `coeff_rename_mapDomain`
+already matches coefficients across a renaming. -/
+theorem index_rename_equiv {τ : Type*} [DecidableEq τ] (e : σ ≃ τ) (d : τ → ℕ) (α : τ → R)
+    (P : MvPolynomial τ R) :
+    index d α P = index (d ∘ e) (α ∘ e) (rename e.symm P) := by
+  classical
+  have h := index_rename_of_injective (e : σ → τ) e.injective d α (rename e.symm P)
+  rwa [rename_rename, Equiv.self_comp_symm, rename_id_apply] at h
+
+/-! ### Rescaling the degree vector
+
+⚠ These exist because of a gap identified in `QOU/Mathlib/RothInductionStep.lean`: the
+classical proof of Roth's lemma measures a *Wronskian's* index against the **Wronskian's own**
+degree vector, while every other statement in this arc uses one degree vector throughout.
+
+`degreeOf_mvGenWronskian_le` says a generalized Wronskian of `r` functions of degree `≤ d`
+has degree `≤ r · d`, so the scale factor is exactly `r`.  These three lemmas are what let
+that rescaling be expressed and moved across.
+
+⚠ They make the rescaling **expressible**.  They do **not** by themselves establish that the
+error term in the induction step becomes small — that is the recursion's arithmetic, and it is
+not done. -/
+
+/-- **Scaling the degree vector scales the weight inversely.**
+
+No hypothesis on `c`: at `c = 0` both sides are `0`, since `x / 0 = 0` in `ℚ`. -/
+theorem idxWeight_scale_degree (c : ℕ) (d : σ → ℕ) (i : σ →₀ ℕ) :
+    idxWeight (fun j => c * d j) i = idxWeight d i / (c : ℚ) := by
+  unfold idxWeight
+  rw [div_eq_mul_inv, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  push_cast
+  rw [mul_comm (c : ℚ) (d j : ℚ), ← div_div, div_eq_mul_inv]
+
+/-- **Lower bounds transport across a rescaling:** `θ ≤ index_{c·d} P ↔ c·θ ≤ index_d P`.
+
+Stated as an iff on bounds rather than as `index_{c·d} = index_d / c`, because `WithTop ℚ` has
+no usable division and `⊤` must be handled. -/
+theorem le_index_scale_degree_iff {c : ℕ} (hc : c ≠ 0) (d : σ → ℕ) (α : σ → R)
+    (P : MvPolynomial σ R) (θ : ℚ) :
+    ((θ : ℚ) : WithTop ℚ) ≤ index (fun j => c * d j) α P
+      ↔ (((c : ℚ) * θ : ℚ) : WithTop ℚ) ≤ index d α P := by
+  have hcQ : (0 : ℚ) < (c : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hc
+  rw [le_index_iff, le_index_iff]
+  refine forall_congr' fun i => forall_congr' fun _ => ?_
+  rw [idxWeight_scale_degree, WithTop.coe_le_coe, WithTop.coe_le_coe, le_div_iff₀ hcQ,
+    mul_comm θ (c : ℚ)]
+
+/-- **Upper bounds transport across a rescaling:** `index_{c·d} P ≤ θ ↔ index_d P ≤ c·θ`.
+
+This is the direction the induction *hypothesis* is used in — it supplies upper bounds on the
+factors' indices, which have to be converted out of the rescaled weights.
+
+The proof goes through `Finset.inf_le_iff`, which needs the bound to be below `⊤`; a coerced
+rational always is. -/
+theorem index_scale_degree_le_iff {c : ℕ} (hc : c ≠ 0) (d : σ → ℕ) (α : σ → R)
+    (P : MvPolynomial σ R) (θ : ℚ) :
+    index (fun j => c * d j) α P ≤ ((θ : ℚ) : WithTop ℚ)
+      ↔ index d α P ≤ (((c : ℚ) * θ : ℚ) : WithTop ℚ) := by
+  have hcQ : (0 : ℚ) < (c : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hc
+  unfold index
+  rw [Finset.inf_le_iff (WithTop.coe_lt_top _), Finset.inf_le_iff (WithTop.coe_lt_top _)]
+  refine exists_congr fun i => and_congr_right fun _ => ?_
+  rw [idxWeight_scale_degree, WithTop.coe_le_coe, WithTop.coe_le_coe, div_le_iff₀ hcQ,
+    mul_comm (c : ℚ) θ]
+
+/-! ### Sums, products and determinants
+
+The index counterparts of the height bounds in `QOU/Mathlib/MvPolynomialHeight.lean`, and
+what the generalized-Wronskian estimate needs.  Note the direction: heights are bounded from
+**above** by their parts, indices from **below** — vanishing to high order is preserved by
+sums and *added* by products, so every statement here is a lower bound. -/
+
+/-- **The index of a finite sum is at least the least index of a summand.**  The `Finset`
+form of `index_add_ge`; the empty sum is `0`, whose index is `⊤`, matching `Finset.inf_empty`
+with no side condition. -/
+theorem index_sum_ge {ι : Type*} (d : σ → ℕ) (α : σ → R) (s : Finset ι)
+    (F : ι → MvPolynomial σ R) :
+    s.inf (fun i => index d α (F i)) ≤ index d α (∑ i ∈ s, F i) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp
+  | insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.inf_insert]
+      exact le_trans (min_le_min le_rfl ih) (index_add_ge d α _ _)
+
+/-- **The index of a finite product is at least the sum of the indices.**  The `Finset` form
+of `index_mul_ge`; the empty product is `1`, and `0 ≤ index d α 1` is `index_nonneg`. -/
+theorem index_prod_ge {ι : Type*} (d : σ → ℕ) (α : σ → R) (s : Finset ι)
+    (F : ι → MvPolynomial σ R) :
+    ∑ i ∈ s, index d α (F i) ≤ index d α (∏ i ∈ s, F i) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simpa using index_nonneg d α (1 : MvPolynomial σ R)
+  | insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.prod_insert ha]
+      exact le_trans (add_le_add le_rfl ih) (index_mul_ge d α _ _)
+
+/-- Scaling by a unit of `ℤ` — the only scalars the Leibniz expansion produces — leaves the
+index alone. -/
+theorem index_smul_units (d : σ → ℕ) (α : σ → R) (u : ℤˣ) (P : MvPolynomial σ R) :
+    index d α (u • P) = index d α P := by
+  rcases Int.units_eq_one_or u with h | h
+  · rw [h, one_smul]
+  · -- ⚠ `simp [index, translate]` closes this only with a wider import closure than this
+    -- file has; spelled out so it does not depend on what happens to be imported.
+    rw [h, Units.smul_def, Units.val_neg, Units.val_one, neg_smul, one_smul]
+    unfold index translate
+    rw [map_neg, support_neg]
+
+/-- Multiplying by a non-zero constant does not change the support. -/
+theorem support_C_mul [NoZeroDivisors R] {c : R} (hc : c ≠ 0) (P : MvPolynomial σ R) :
+    (C c * P).support = P.support := by
+  ext i
+  simp [mem_support_iff, coeff_C_mul, hc]
+
+/-- **Rescaling the polynomial does not move its index.**
+
+`index_smul_units` says this for `ℤˣ`; this says it for any non-zero constant over a domain,
+which is what a determinant of derivatives needs — a generalized Wronskian of powers is
+always a *scalar multiple* of a monomial, and the scalar is an accident of the differentiation
+rather than part of the vanishing behaviour. -/
+theorem index_C_mul [NoZeroDivisors R] (d : σ → ℕ) (α : σ → R) {c : R} (hc : c ≠ 0)
+    (P : MvPolynomial σ R) : index d α (C c * P) = index d α P := by
+  rw [index, index, translate_mul, translate_C, support_C_mul hc]
+
+/-- **The index of a determinant is at least the least permutation-sum of entry indices.**
+
+Leibniz plus the two lemmas above: the determinant is a sum over permutations, so
+`index_sum_ge` takes the least term; each term is a unit times a product, so `index_smul_units`
+discards the sign and `index_prod_ge` adds the entries' indices.
+
+This is what bounds the index of a generalized Wronskian from below in terms of the indices
+of the differentiated entries — the estimate Roth's lemma runs on.  ⚠ It says nothing about
+the *entries* themselves; relating `index (pderivList D (f j))` back to `index (f j)` is
+`index_le_index_iterate_pderiv_add` above, and that is where the differentiation cost enters. -/
+theorem index_det_ge {ι : Type*} [Fintype ι] [DecidableEq ι] (d : σ → ℕ) (α : σ → R)
+    (M : Matrix ι ι (MvPolynomial σ R)) :
+    (Finset.univ : Finset (Equiv.Perm ι)).inf
+        (fun p => ∑ i : ι, index d α (M (p i) i))
+      ≤ index d α M.det := by
+  classical
+  rw [Matrix.det_apply]
+  refine le_trans ?_ (index_sum_ge d α Finset.univ _)
+  refine Finset.le_inf ?_
+  intro p _
+  refine le_trans (Finset.inf_le (Finset.mem_univ p)) ?_
+  rw [index_smul_units]
+  exact index_prod_ge d α Finset.univ _
+
 /-! ### Next, in order
 
 1. ~~`index_mul_ge`~~ — **done**, above.
-2. ~~**Generalized Wronskians**~~ — **done**. Univariate, with the full dependence criterion
-   `genWronskian_eq_zero_iff`, in `QOU.Mathlib.GenWronskian`; several variables, with the
-   direction Roth's lemma consumes, in `QOU.Mathlib.MvGenWronskian`.
-3. **The index under differentiation** — `index d α P ≤ index d α (pderiv i P) + 1/dᵢ`.
-   `translate_pderiv` above is the gateway; what remains is that the support of `pderiv i Q`
-   sits inside the shift of `Q`'s support by `-eᵢ`, and that `idxWeight` drops by exactly
-   `1/dᵢ` under that shift. ⚠ Note the `ℕ`-subtraction: `s - eᵢ = s` when `sᵢ = 0`, and the
-   statement is rescued only because `pderiv_monomial` carries a factor `sᵢ` that kills
-   exactly those monomials.
+2. ~~**Generalized Wronskians**~~ — **done, both directions**.  Univariate:
+   `genWronskian_eq_zero_iff` in `QOU.Mathlib.GenWronskian`.  Several variables:
+   `linearIndependent_iff_exists_mvGenWronskian_ne_zero` in `QOU.Mathlib.MvGenWronskian`.
+3. ~~**The index under differentiation**~~ — **done**, `index_le_index_pderiv_add` and its
+   iterate above.
+
+   ⚠ **The earlier note here predicted the wrong difficulty.** It said the statement "is
+   rescued only because `pderiv_monomial` carries a factor `sᵢ` that kills exactly those
+   monomials" with `sᵢ = 0`. No such rescue was needed: `support_pderiv_subset` filters
+   nothing, and the degenerate case is free because the statement is an *inequality* —
+   when `sᵢ = 0` truncated subtraction gives `s - eᵢ = s` and the `+1/dᵢ` is simply slack.
+   Reaching for the sharper equality is what would have forced the filter.
 4. **Roth's lemma** — the induction on the number of variables. The hard core, and the one
    step where no part of it is bookkeeping.
+
+   What is now in place for it: the index and its product law, both generalized-Wronskian
+   criteria in full, and the differentiation estimate above.
+
+   ⚠ What is *not*, and is easy to overlook: Roth's lemma needs the operator family to have
+   **bounded order**, and `exists_mvGenWronskian_ne_zero` produces one from arbitrary
+   multi-indices with no such bound.  Supplying the bound is where the degree hypotheses on
+   the auxiliary polynomial enter — a real step, not bookkeeping.  Then the induction
+   itself.
 5. **Roth's theorem** itself, by the auxiliary-polynomial contradiction, using Mathlib's
    existing `exists_ne_zero_int_vec_norm_le` (Siegel's lemma) for the construction. -/
 

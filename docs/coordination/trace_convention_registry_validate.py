@@ -187,9 +187,13 @@ def _verify_trM_borromean():
     sys.path.insert(0, str(REPO / "computations"))
     import mpmath as mp  # noqa: PLC0415
     from m_p_substrate_identity_50dps import trM_borromean  # noqa: PLC0415
-    from q_parameter import Q as Q0  # noqa: PLC0415
+    # Q_MP, not `mpf(str(Q))`: the f64 constant is ~16 significant digits, so
+    # the old form laundered it and then computed to 50 dps on top of a
+    # 16-digit input — precision theatre. The OUTER mpf(str(...)) is kept: it
+    # normalises whatever numeric type trM_borromean returns.
+    from q_parameter import Q_MP as Q0  # noqa: PLC0415
     with mp.workdps(50):
-        return {"D": mp.mpf(str(trM_borromean(mp.mpf(str(Q0)))))}
+        return {"D": mp.mpf(str(trM_borromean(Q0)))}
 
 
 def _verify_probe_writhe0():

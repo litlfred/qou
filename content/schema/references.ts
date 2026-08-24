@@ -13941,6 +13941,434 @@ export const references: Reference[] = [
     author: [{ family: "Xi", given: "Changchang" }],
     note: "PDF library/xi/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
+
+  // ═══════════════════════════════════════════════════════════════
+  // Dangling-citation drain, 2026-08-23 (bean qou-ghy5).
+  //
+  // Every entry below closes a citation key that `scripts/check-citation-keys.py`
+  // reported as resolving to nothing. Network egress was CLOSED for this pass
+  // (export.arxiv.org / api.crossref.org / api.semanticscholar.org all answer
+  // `connect_rejected`, 403 to CONNECT), so NO field here was fetched from a
+  // publisher record.
+  //
+  // Provenance discipline used throughout, per AGENTS.md anti-fabrication:
+  //   * DOI / URL / arXiv id appear ONLY where the citing site itself writes
+  //     them. Not one identifier is reconstructed from memory.
+  //   * `page` is omitted everywhere — a page range is exactly the field that
+  //     cannot be checked here, and a wrong one is worse than none.
+  //   * Where an identifier is absent, the entry carries title + author + year
+  //     only, and its note says which of those came from the citing site and
+  //     which from standard bibliographic knowledge (UNVERIFIED).
+  // ═══════════════════════════════════════════════════════════════
+
+  // ── Serre — Linear Representations of Finite Groups (Schur's lemma; Tits deformation) ──
+  ref({
+    id: "serre1977",
+    type: "book",
+    title: "Linear Representations of Finite Groups",
+    author: [{ family: "Serre", given: "Jean-Pierre" }],
+    publisher: "Springer",
+    issued: { "date-parts": [[1977]] },
+    note:
+      "Title is quoted verbatim at all six citing sites, which cite it for two " +
+      "distinct facts: Schur's lemma (MatrixSchurCommutant, SchurInvariantFormProportional, " +
+      "GaugeGroupThreeScale, InvariantFormTransport) and the Tits deformation theorem " +
+      "(CanonicalTitsIso, TauS5EquivarianceReduction). Author from the key and the title; " +
+      "year 1977 from the key, consistent with the English GTM edition. " +
+      "UNVERIFIED: publisher, series/volume, edition, ISBN — no publisher record was " +
+      "reachable (egress closed, 2026-08-23). No DOI/URL claimed. Registered by the " +
+      "dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Sauzin 2014 — resurgence / 1-summability (companion to ecalle1981) ──
+  ref({
+    id: "sauzin2014",
+    type: "article",
+    title: "Introduction to 1-summability and resurgence",
+    author: [{ family: "Sauzin", given: "David" }],
+    issued: { "date-parts": [[2014]] },
+    URL: "https://arxiv.org/abs/1405.0356",
+    note:
+      "arXiv id 1405.0356 is written by the author at ALL FIVE citing sites " +
+      "(DerivationIterateLeibniz, StokesJump, QGevreyTaming, AlienBridgeEquation, " +
+      "AlienDerivation), identically each time — that agreement is the evidence for the " +
+      "URL, which is transcribed from the corpus and not reconstructed. Every site pairs " +
+      "it with [ecalle1981] as the resurgence companion. Author corroborated by the " +
+      "separate `sauzin2023` entry (family Sauzin). DISTINCT from `sauzin2023` " +
+      "(Resurgence and Mould Calculus, HAL, 16pp) — different document, not a duplicate. " +
+      "UNVERIFIED: the title is standard bibliographic knowledge for this preprint, not " +
+      "read off the arXiv record (egress closed). The entry is anchored on the " +
+      "author-written arXiv id, so it cannot point at the wrong work even if the title " +
+      "wants a correction. Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Beasley–Witten 2005 — non-abelian localization for Chern–Simons theory ──
+  ref({
+    id: "beasleywitten2005",
+    type: "article-journal",
+    title: "Non-abelian localization for Chern-Simons theory",
+    author: [
+      { family: "Beasley", given: "Chris" },
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "Journal of Differential Geometry",
+    issued: { "date-parts": [[2005]] },
+    DOI: "10.4310/jdg/1143593746",
+    URL: "https://doi.org/10.4310/jdg/1143593746",
+    note:
+      "DOI written by the author at all three citing sites " +
+      "(KeystoneFramingTrivialAtRootsOfUnity, KeystoneVerlindeSMatrixBridge, " +
+      "KeystoneRTSurgeryConstruction), identically; the jdg/ prefix is the container. " +
+      "KeystoneVerlindeSMatrixBridge annotates it in-line as `non-abelian CS " +
+      "localization`, which is the title corroboration. Year 2005 from the key. " +
+      "UNVERIFIED: volume and page range — deliberately omitted rather than guessed. " +
+      "Cited for the Beasley-Witten localization program (bwse) in the s5-so3 keystone. " +
+      "Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Voisin 2002 — Hodge theory (the Hodge Gram lift) ──
+  ref({
+    id: "voisin2002",
+    type: "book",
+    title: "Hodge Theory and Complex Algebraic Geometry I",
+    author: [{ family: "Voisin", given: "Claire" }],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[2002]] },
+    DOI: "10.1017/CBO9780511615344",
+    URL: "https://doi.org/10.1017/CBO9780511615344",
+    note:
+      "DOI written by the author at both citing sites (HodgeGramLift, " +
+      "LoopWeightRealSymmReduction), identically; the 10.1017/CBO prefix is a Cambridge " +
+      "University Press book DOI, which is the publisher corroboration. Cited for the " +
+      "H^{1,0} + H^{0,1} decomposition backing the complexification in the loop-weight " +
+      "Gram lift. Year 2002 from the key. UNVERIFIED: series (Cambridge Studies in " +
+      "Advanced Mathematics), volume number, ISBN, translator — all omitted rather than " +
+      "guessed. Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Bridgeland 2007 — stability conditions on triangulated categories ──
+  ref({
+    id: "bridgeland2007",
+    type: "article-journal",
+    title: "Stability conditions on triangulated categories",
+    author: [{ family: "Bridgeland", given: "Tom" }],
+    "container-title": "Annals of Mathematics",
+    volume: "166",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.4007/annals.2007.166.317",
+    URL: "https://doi.org/10.4007/annals.2007.166.317",
+    note:
+      "DOI written by the author at the citing site (Mathlib/WallCrossing.lean:26). " +
+      "Container, year and volume are DECODED FROM THAT DOI, not supplied from memory: " +
+      "the Annals DOI scheme is annals.<year>.<volume>.<first-page>, so 2007 and 166 are " +
+      "read directly off the author-written string. The first page it also encodes (317) " +
+      "is NOT written as a `page` field, because only the start is recoverable and a " +
+      "half-range would be a fabricated range. DISTINCT from `bridgeland2016` " +
+      "(Riemann-Hilbert problems from Donaldson-Thomas theory, arXiv 1611.03697) — " +
+      "different work. WallCrossing.lean cites it for the existence of stability " +
+      "conditions, which corroborates the title. Registered by the dangling-citation " +
+      "drain, bean qou-ghy5.",
+  }),
+
+  // ── Aitken — Determinants and Matrices (Cauchy–Binet) ──
+  ref({
+    id: "aitken1956",
+    type: "book",
+    title: "Determinants and Matrices",
+    author: [{ family: "Aitken", given: "A. C." }],
+    issued: { "date-parts": [[1956]] },
+    note:
+      "Author, title and the cited section are written verbatim at the citing site: " +
+      "`-- Ref: [aitken1956] Aitken, Determinants and Matrices, §II (Cauchy-Binet)` " +
+      "(MathlibExt/CauchyBinet.lean:392, backing the rectangular Cauchy-Binet expansion " +
+      "absent from Mathlib). Year 1956 from the key. UNVERIFIED: publisher, edition, " +
+      "place — the citing site names none and no publisher record was reachable " +
+      "(egress closed, 2026-08-23), so they are omitted rather than guessed. " +
+      "Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Costin — Asymptotics and Borel Summability ──
+  ref({
+    id: "costin2020",
+    type: "book",
+    title: "Asymptotics and Borel Summability",
+    author: [{ family: "Costin", given: "Ovidiu" }],
+    note:
+      "Title and the cited chapter are written verbatim at the citing site: " +
+      "`-- Ref: [costin2020] Asymptotics and Borel Summability, Ch. 3` " +
+      "(Mathlib/BorelSingularity.lean:23, paired with [sokal1980] for the Borel-disc " +
+      "radius argument). Author from the key, corroborated by the existing `costin1995` " +
+      "and `costin-ehrlich-friedman2015` entries (family Costin). " +
+      "NO YEAR IS RECORDED ON PURPOSE: the key asserts 2020, while this book is " +
+      "standardly dated to its Chapman and Hall/CRC monograph edition, which is NOT " +
+      "2020. Rather than pick one and silently overwrite the author's key, the field is " +
+      "left out; a printing/edition check will settle it. Likewise UNVERIFIED and " +
+      "omitted: publisher, series, edition. Registered by the dangling-citation drain, " +
+      "bean qou-ghy5.",
+  }),
+
+  // ── McKay 1980 — graphs, singularities and finite groups (the McKay correspondence) ──
+  ref({
+    id: "mckay1980graphs",
+    type: "paper-conference",
+    title: "Graphs, singularities, and finite groups",
+    author: [{ family: "McKay", given: "John" }],
+    "container-title": "Proceedings of Symposia in Pure Mathematics",
+    issued: { "date-parts": [[1980]] },
+    note:
+      "Author and title written at the citing site: `-- Ref: [mckay1980graphs] McKay, " +
+      "Graphs, singularities, finite groups` (BraidsAndKnots/S5SO3FiberAction.lean:609, " +
+      "paired with [klein1888]). Cited for the McKay correspondence between the 9 " +
+      "irreducible representations of the binary icosahedral group 2I and the 9 nodes of " +
+      "the affine E8 Dynkin diagram, with dimensions equal to the Coxeter marks. Year " +
+      "1980 from the key. UNVERIFIED: volume and page range — omitted rather than " +
+      "guessed. Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Ohtsuki 2002 — Quantum Invariants (monograph) ──
+  ref({
+    id: "ohtsuki2002",
+    type: "book",
+    title: "Quantum Invariants: A Study of Knots, 3-Manifolds, and Their Sets",
+    author: [{ family: "Ohtsuki", given: "Tomotada" }],
+    publisher: "World Scientific",
+    issued: { "date-parts": [[2002]] },
+    note:
+      "Cited from brings-surface/inter-nucleon-channel-color-tube.ts alongside " +
+      "[kashaev1997], [faddeev1996] and [khovanovlauda2009] as the quantum-invariant " +
+      "background for the colour-tube construction. Author from the key, corroborated by " +
+      "the existing `ohtsuki-takata-2015` and `ohtsuki2016` entries (family Ohtsuki). " +
+      "Year 2002 from the key. UNVERIFIED: series (Series on Knots and Everything), " +
+      "volume number, ISBN — omitted rather than guessed; no publisher record reachable " +
+      "(egress closed, 2026-08-23). Registered by the dangling-citation drain, bean " +
+      "qou-ghy5.",
+  }),
+
+  // ── Pachner 1991 — elementary shellings (the Pachner moves) ──
+  ref({
+    id: "pachner1991",
+    type: "article-journal",
+    title: "P.L. homeomorphic manifolds are equivalent by elementary shellings",
+    author: [{ family: "Pachner", given: "Udo" }],
+    "container-title": "European Journal of Combinatorics",
+    issued: { "date-parts": [[1991]] },
+    note:
+      "Cited from mass-theory/pachner-pentagon-borromean.ts, whose own label is " +
+      "conj:pachner-pentagon-borromean — the block is ABOUT Pachner moves, which is the " +
+      "identification evidence. Year 1991 from the key. UNVERIFIED: volume, issue and " +
+      "page range, plus DOI — all omitted rather than guessed (egress closed, " +
+      "2026-08-23). Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Turaev–Viro 1992 — state sum invariants and quantum 6j-symbols ──
+  ref({
+    id: "turaev-viro1992",
+    type: "article-journal",
+    title: "State sum invariants of 3-manifolds and quantum 6j-symbols",
+    author: [
+      { family: "Turaev", given: "V. G." },
+      { family: "Viro", given: "O. Y." },
+    ],
+    "container-title": "Topology",
+    issued: { "date-parts": [[1992]] },
+    note:
+      "Cited from mass-theory/pachner-pentagon-borromean.ts beside [pachner1991] and " +
+      "[kashaev1997] — the Pachner-move invariance of a state sum is precisely the " +
+      "Turaev-Viro setting, which is the identification evidence. Authors from the " +
+      "hyphenated key; family Turaev corroborated by the existing " +
+      "`reshetikhin-turaev1990` and `turaev2010` entries. Year 1992 from the key. " +
+      "UNVERIFIED: volume, issue and page range, plus DOI — omitted rather than guessed. " +
+      "Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Bethe–Bacher 1936 — the semi-empirical mass formula ──
+  ref({
+    id: "bethe1936",
+    type: "article-journal",
+    title: "Nuclear Physics A. Stationary States of Nuclei",
+    author: [
+      { family: "Bethe", given: "H. A." },
+      { family: "Bacher", given: "R. F." },
+    ],
+    "container-title": "Reviews of Modern Physics",
+    issued: { "date-parts": [[1936]] },
+    note:
+      "Cited from mass-theory/term6-binding-density.ts beside [weizsacker1935]; that " +
+      "block's own authorNotes name the `five-parameter Bethe-Weizsacker SEMF`, which " +
+      "pins the pair. NOTE THE AUTHOR LIST: the key names only Bethe, but the 1936 " +
+      "Reviews of Modern Physics article standardly carries Bethe AND Bacher; both are " +
+      "recorded here so the entry is not narrower than the work. Year 1936 from the key. " +
+      "UNVERIFIED: volume and page range, plus DOI — omitted rather than guessed " +
+      "(egress closed, 2026-08-23). Registered by the dangling-citation drain, bean " +
+      "qou-ghy5.",
+  }),
+
+  // ── von Weizsäcker 1935 — Zur Theorie der Kernmassen (the SEMF) ──
+  ref({
+    id: "weizsacker1935",
+    type: "article-journal",
+    title: "Zur Theorie der Kernmassen",
+    author: [{ family: "von Weizsäcker", given: "C. F." }],
+    "container-title": "Zeitschrift für Physik",
+    issued: { "date-parts": [[1935]] },
+    note:
+      "Cited from mass-theory/term6-binding-density.ts beside [bethe1936]; that block's " +
+      "authorNotes name the `five-parameter Bethe-Weizsacker SEMF`, which pins the pair. " +
+      "This is the liquid-drop mass-formula paper the framework's Term-6 binding density " +
+      "is compared against. Year 1935 from the key. UNVERIFIED: volume and page range, " +
+      "plus DOI — omitted rather than guessed. Registered by the dangling-citation " +
+      "drain, bean qou-ghy5.",
+  }),
+
+  // ── Pontryagin 1934 — duality for topological commutative groups ──
+  ref({
+    id: "pontryagin1934",
+    type: "article-journal",
+    title: "The theory of topological commutative groups",
+    author: [{ family: "Pontryagin", given: "L. S." }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1934]] },
+    note:
+      "Cited from braids-and-knots/pontryagin-dual-coxeter-character.ts, whose own label " +
+      "is def:pontryagin-dual-coxeter-character and which pairs it with " +
+      "[hewitt-ross1979] — the block IS the Pontryagin-duality construction, which is " +
+      "the identification evidence. Year 1934 from the key. UNVERIFIED: volume, issue " +
+      "and page range — omitted rather than guessed. Registered by the " +
+      "dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Hewitt–Ross — Abstract Harmonic Analysis I ──
+  ref({
+    id: "hewitt-ross1979",
+    type: "book",
+    title: "Abstract Harmonic Analysis I: Structure of Topological Groups, Integration Theory, Group Representations",
+    author: [
+      { family: "Hewitt", given: "Edwin" },
+      { family: "Ross", given: "Kenneth A." },
+    ],
+    publisher: "Springer",
+    issued: { "date-parts": [[1979]] },
+    note:
+      "Cited from braids-and-knots/pontryagin-dual-coxeter-character.ts beside " +
+      "[pontryagin1934] as the standard reference for the dual group of a locally " +
+      "compact abelian group. Authors from the hyphenated key. Year 1979 from the key, " +
+      "consistent with the second edition of volume I. UNVERIFIED: series (Grundlehren), " +
+      "volume number, edition, ISBN — omitted rather than guessed; no publisher record " +
+      "reachable (egress closed, 2026-08-23). Registered by the dangling-citation drain, " +
+      "bean qou-ghy5.",
+  }),
+
+  // ── Shirshov 1962 — the composition lemma (Gröbner–Shirshov bases) ──
+  ref({
+    id: "shirshov1962",
+    type: "article-journal",
+    title: "Some algorithmic problems for Lie algebras",
+    author: [{ family: "Shirshov", given: "A. I." }],
+    "container-title": "Sibirskii Matematicheskii Zhurnal",
+    issued: { "date-parts": [[1962]] },
+    note:
+      "Cited from mass-theory/phi-q-tower-algebraic-stratification.ts beside " +
+      "[bokut1978] and [jones1987]. This is the composition-lemma paper the whole " +
+      "Grobner-Shirshov reduction machinery of this corpus is named after, and the " +
+      "citing block is an algebraic-stratification statement in H_n(R,q) — the " +
+      "identification evidence. Corroborated by the existing Bokut entries " +
+      "(`bokut2001`, `bokutchen2014`, `bokutchenli2011`), which cite the same tradition. " +
+      "Year 1962 from the key. UNVERIFIED: volume and page range — omitted rather than " +
+      "guessed. Registered by the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Lefschetz 1926 — intersections and transformations (Lefschetz duality) ──
+  ref({
+    id: "lefschetz1926",
+    type: "article-journal",
+    title: "Intersections and transformations of complexes and manifolds",
+    author: [{ family: "Lefschetz", given: "Solomon" }],
+    "container-title": "Transactions of the American Mathematical Society",
+    issued: { "date-parts": [[1926]] },
+    note:
+      "Cited from mass-theory/poincare-lefschetz-borromean.ts, whose own label is " +
+      "prop:poincare-lefschetz-borromean and whose Lean ref is " +
+      "QOU.BraidsAndKnots.PoincareLefschetzBorromean — the block IS the " +
+      "Poincare-Lefschetz duality application, which is the identification evidence. " +
+      "Year 1926 from the key. UNVERIFIED: volume, issue and page range, plus DOI — " +
+      "omitted rather than guessed (egress closed, 2026-08-23). Registered by the " +
+      "dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Prasad 1973 — strong rigidity (the Mostow–Prasad rigidity pair) ──
+  ref({
+    id: "prasad1973",
+    type: "article-journal",
+    title: "Strong rigidity of $\\mathbb{Q}$-rank 1 lattices",
+    author: [{ family: "Prasad", given: "Gopal" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[1973]] },
+    note:
+      "Cited from nuclear-interactions/q-zero-stokes-region-identification.ts " +
+      "immediately after [mostow1968]; that block's .md line 9 reads `Mostow-Prasad " +
+      "rigidity and Reid's trace field theorem guarantee a unique algebraic " +
+      "distinguished point`, which names the pair explicitly and is the identification " +
+      "evidence. Prasad's paper is the finite-volume (non-cocompact) half of " +
+      "Mostow-Prasad. Year 1973 from the key. UNVERIFIED: volume and page range, plus " +
+      "DOI — omitted rather than guessed. Registered by the dangling-citation drain, " +
+      "bean qou-ghy5.",
+  }),
+
+  // ── Reid 1990 — trace fields of Kleinian groups ──
+  ref({
+    id: "reid1990",
+    type: "article-journal",
+    title: "A note on trace-fields of Kleinian groups",
+    author: [{ family: "Reid", given: "Alan W." }],
+    "container-title": "Bulletin of the London Mathematical Society",
+    issued: { "date-parts": [[1990]] },
+    note:
+      "Cited from nuclear-interactions/q-zero-stokes-region-identification.ts beside " +
+      "[mostow1968] and [prasad1973]; that block's .md line 9 names `Reid's trace field " +
+      "theorem`, which is the identification evidence — the invariant trace field is what " +
+      "makes the distinguished point ALGEBRAIC in that argument. Family Reid corroborated " +
+      "by the existing `neumann-reid` entry. Year 1990 from the key. UNVERIFIED: volume " +
+      "and page range, plus DOI — omitted rather than guessed. Registered by the " +
+      "dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Ding–Iohara 1997 — one half of the Ding–Iohara–Miki algebra ──
+  ref({
+    id: "ding-iohara1997",
+    type: "article-journal",
+    title: "Generalization of Drinfeld quantum affine algebras",
+    author: [
+      { family: "Ding", given: "Jintai" },
+      { family: "Iohara", given: "Kenji" },
+    ],
+    "container-title": "Letters in Mathematical Physics",
+    issued: { "date-parts": [[1997]] },
+    note:
+      "Cited from mass-theory/dim-master-pentagon.ts together with [miki2007]; that " +
+      "block's .md line 2 reads `The Ding-Iohara-Miki algebra U_{q,t}(gl_1-hat-hat) " +
+      "carries a universal Pentagon identity`, which names the algebra and therefore " +
+      "pins this pair of founding papers — that is the identification evidence, not the " +
+      "key's name-similarity. Year 1997 from the key. UNVERIFIED: volume and page range, " +
+      "plus DOI — omitted rather than guessed (egress closed, 2026-08-23). Registered by " +
+      "the dangling-citation drain, bean qou-ghy5.",
+  }),
+
+  // ── Miki 2007 — the other half of the Ding–Iohara–Miki algebra ──
+  ref({
+    id: "miki2007",
+    type: "article-journal",
+    title: "A $(q,\\gamma)$ analog of the $W_{1+\\infty}$ algebra",
+    author: [{ family: "Miki", given: "Kei" }],
+    "container-title": "Journal of Mathematical Physics",
+    issued: { "date-parts": [[2007]] },
+    note:
+      "Cited from mass-theory/dim-master-pentagon.ts together with [ding-iohara1997]; " +
+      "that block's .md line 2 names `The Ding-Iohara-Miki algebra`, which pins this as " +
+      "the Miki half of the DIM construction — the identification evidence. Year 2007 " +
+      "from the key. UNVERIFIED: volume and the article-number/page field, plus DOI — " +
+      "omitted rather than guessed. Registered by the dangling-citation drain, bean " +
+      "qou-ghy5.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

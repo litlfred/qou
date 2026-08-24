@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:33:51.026289+00:00",
-  "commitSha": "d9ae51e30c201d02aafe1ee00819eebb68866388",
+  "computedAt": "2026-08-23T21:27:36.826216+00:00",
+  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -177,10 +177,10 @@
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
-      "computed": "9.092678397394828",
-      "expected": "9.092678397394828",
+      "computed": "9.0926794561502453911039703556573825637151463686661",
+      "expected": "9.0926794561502453911039703556573825637151463686661",
       "passed": true,
-      "tolerance": "0.000000000009092678397394828"
+      "tolerance": "0.0000000000090926794561502453911039703556573825637151463686661"
     },
     {
       "name": "chain_valid[canonical-isotope-witness.derivation]",
@@ -643,11 +643,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "df4baa7af374",
-  "scriptCommitSha": "ed6454562744867e5a22417d725454f9b59dd1bb",
+  "scriptHash": "ae8a199838f7",
+  "scriptCommitSha": "916a47d7643d5f7212b58f78177f8585715d84a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -659,7 +659,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "fe19077ea17b978d"
@@ -1323,8 +1323,8 @@
       {
         "chain": "c-q-q0.derivation.json",
         "target": "c_q(q_0)",
-        "target_value": "9.092678397394828",
-        "computed_value": "9.092678397394828",
+        "target_value": "9.0926794561502453911039703556573825637151463686661",
+        "computed_value": "9.0926794561502453911039703556573825637151463686661",
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -3858,6 +3858,7 @@
         "he4-sdp-compositional-probe.witness.json",
         "hecke-crossed-module-q8.witness.json",
         "phi0-normalization-disproof.witness.json",
+        "hecke-a2-tail-schedule.witness.json",
         "hecke-agtb-corner-shape.witness.json",
         "hecke-agtb-lineage-schedule.witness.json",
         "hecke-block-transport-shape.witness.json",
