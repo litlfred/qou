@@ -157,7 +157,29 @@ def y_lambda_at(
     _symbolic = bool(getattr(q_val, "free_symbols", None))
     if q_val is not None and not _symbolic:
         _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
-        return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
+        # 50, not 30. The `30` here was the binding L1 precision constraint on
+        # every tr_M routed through this function (~155 consumers) — and it
+        # survived the convention-C excision unchanged, so it still binds on
+        # the live D path. `y_lambda_su_n` runs at COMPUTE_DPS (70) and its
+        # values are good well past 50 digits; the cap threw digits 31-50 away
+        # for "consumer compatibility", and the only canonical consumer
+        # immediately re-lifts through `mp.mpf(str(v))`
+        # (`tr_m_atom_via_transfer.py`), so nothing needed the truncation.
+        #
+        # MEASURED (bean `qou-840k` item 4), Markov normalisation `Σ y_λ f^λ = 1`
+        # at the proton q₀:
+        #
+        #     n   |Σ y_λ f^λ − 1| raw      capped at 30
+        #     3   0.0                      0.0
+        #     4   1.336e-51                1.0e-30
+        #     5   0.0                      5.0e-31
+        #
+        # i.e. the ~1e-31 residuals recorded across the corpus were the cap,
+        # not the mathematics — 21 orders of headroom, recovered by two tokens.
+        # 50 matches `Q_50_DIGIT_STR` and the 50-dps precedent already in this
+        # file. Corpus claims of "~1e-50 agreement" for tr_M were false while
+        # this read 30; they are true now.
+        return {sh: sp.Float(_mp.nstr(v, 50), 50) for sh, v in _y.items()}
     # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
     # This path previously RAISED — the excision left it with no D
     # implementation, and returning the C solver below would have silently
