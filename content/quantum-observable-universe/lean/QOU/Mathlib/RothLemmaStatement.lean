@@ -887,6 +887,120 @@ theorem height_descend_assemble {m : ℕ} {n r₁ ρ₁ sumR t L Λ A Fac B : �
     mul_le_mul_of_nonneg_left ha hn,
     mul_le_mul_of_nonneg_left hfacn hM0]
 
+/-- **Clause 4's multiplicative half, log-free** — the arc's `E : ℕ` idiom rather than logs.
+
+`RothLemmaUniform` already avoids rational exponents by writing the height condition as
+`B ≤ qⱼ^E` with `E : ℕ` and `E ≤ ε·dⱼ`.  Clause 4 in that idiom is `a ≤ K^E`, and §11's chain
+becomes: `b ≤ 2^c·a^n` with the `2^c` absorbed into `K^j` through clause 3's `2^F ≤ K`.
+
+Everything stays in `ℤ`.  `F` is `rothDenomFloor`'s exponent and `j` the number of powers of
+`K` needed to swallow `2^c`; the arithmetic that says `j` is small enough is
+`height_descend_step`, in `ℚ`. -/
+theorem height_descend_exp {a b K : ℤ} {F j c n E : ℕ}
+    (ha0 : 0 ≤ a) (hF : (2 : ℤ) ^ F ≤ K)
+    (ha : a ≤ K ^ E) (hb : b ≤ 2 ^ c * a ^ n) (hc : c ≤ F * j) :
+    b ≤ K ^ (j + n * E) := by
+  have h2F : (0 : ℤ) ≤ 2 ^ F := by positivity
+  have hK0 : (0 : ℤ) ≤ K := le_trans h2F hF
+  have h1 : (2 : ℤ) ^ c ≤ K ^ j := by
+    calc (2 : ℤ) ^ c ≤ 2 ^ (F * j) := pow_le_pow_right₀ (by norm_num) hc
+      _ = ((2 : ℤ) ^ F) ^ j := by rw [pow_mul]
+      _ ≤ K ^ j := pow_le_pow_left₀ h2F hF j
+  have h2 : a ^ n ≤ K ^ (n * E) := by
+    calc a ^ n ≤ (K ^ E) ^ n := pow_le_pow_left₀ ha0 ha n
+      _ = K ^ (n * E) := by rw [← pow_mul, mul_comm]
+  calc b ≤ 2 ^ c * a ^ n := hb
+    _ ≤ K ^ j * K ^ (n * E) :=
+        mul_le_mul h1 h2 (by positivity) (by positivity)
+    _ = K ^ (j + n * E) := by rw [← pow_add]
+
+/-! ### ⚠ Where the two halves of the descent do not meet
+
+`rothGamma_descend` gives clauses 1–3 over `ℕ` degrees and `ℤ` denominators;
+`height_descend_exp` gives clause 4's multiplicative content over `ℤ`; `height_descend_step`
+gives its arithmetic over `ℚ`.  Joining them needs `j` — the number of powers of `K` that
+swallow `2^c` — to be a **natural number** lying in
+
+    (2m+1)ρ₁ / F   ≤   j   ≤   ρ₁t / (m(m−1)),
+
+and clause 3 makes those two endpoints *equal* in the tight case (that is what "calibrated with
+nothing to spare" means).  An interval of length zero between two non-integers contains no
+integer, so no choice of `j` need exist.
+
+⚠ **This is intrinsic to the arc's `E : ℕ` device, not a gap in the source.**  §11 uses real
+exponents, where `j` is simply `ρ₁t/(m(m−1))` and no rounding arises.  The arc bought
+`ℚ`-only arithmetic by rounding exponents up, and clause 3 is exactly tight, so the rounding
+has nowhere to go.
+
+Two ways out: carry real exponents for the height chain alone, or write `t = p/q` and state
+clause 4 as `b^{Mq} ≤ K₁^{s₁p}`, which is integral and exact.  **The second is taken** —
+`height_descend_pq` below — and it closes with nothing left over, because every inequality in
+the chain becomes an `ℕ` one and the tightness that blocks the rounded route costs nothing
+there.  `height_descend_exp` above is kept as the rounded form, since it is what the arc's
+existing `E : ℕ` idiom produces and the contrast is the point. -/
+
+/-- **Clause 4's descent, integral and exact** — `t = p/q`, so nothing is rounded.
+
+Clause 4 `b ≤ K₁^{(1/M)s₁t}` raised to the power `Mq` is `b^{Mq} ≤ K₁^{s₁p}`, which is a
+statement about integers.  Descending from arity `m+1` to `m`, §11's chain becomes a chain of
+`ℕ`-exponent inequalities and closes **exactly**, with no interval for `j` to fall out of:
+
+    b^{m(m+1)q} ≤ 2^{c·m(m+1)q}·(a^{(m+1)q})^{nm} ≤ K^{ρ₁p}·K^{ρ₁pm} = (K^{ρ₁p})^{m+1},
+
+the middle step needing `c·m(m+1)q ≤ F·ρ₁p`, which is `c ≤ (2m+3)ρ₁` and clause 3's
+`q·m(m+1)(2m+3) ≤ F·p` multiplied together.  Both are `ℕ` inequalities, so the tightness that
+blocked the rounded route costs nothing here.
+
+⚠ This is the route the section above recommends and does not take.  It is taken here. -/
+theorem height_descend_pq {a b K : ℤ} {m n c F p q r₁ ρ₁ : ℕ}
+    (ha0 : 0 ≤ a) (hb0 : 0 ≤ b) (hKF : (2 : ℤ) ^ F ≤ K)
+    (hρ : ρ₁ = n * r₁)
+    (ha : a ^ ((m + 1) * q) ≤ K ^ (r₁ * p))
+    (hb : b ≤ 2 ^ c * a ^ n)
+    (hc : c ≤ (2 * m + 3) * ρ₁)
+    (hF : q * (m * (m + 1) * (2 * m + 3)) ≤ F * p) :
+    b ^ (m * q) ≤ K ^ (ρ₁ * p) := by
+  have h2F : (0 : ℤ) ≤ 2 ^ F := by positivity
+  have hK0 : (0 : ℤ) ≤ K := le_trans h2F hKF
+  have hKp : (0 : ℤ) ≤ K ^ (ρ₁ * p) := by positivity
+  have hcN : c * (m * (m + 1) * q) ≤ F * (ρ₁ * p) := by
+    calc c * (m * (m + 1) * q) ≤ ((2 * m + 3) * ρ₁) * (m * (m + 1) * q) :=
+          Nat.mul_le_mul_right _ hc
+      _ = ρ₁ * (q * (m * (m + 1) * (2 * m + 3))) := by ring
+      _ ≤ ρ₁ * (F * p) := Nat.mul_le_mul_left _ hF
+      _ = F * (ρ₁ * p) := by ring
+  have h2 : (2 : ℤ) ^ (c * (m * (m + 1) * q)) ≤ K ^ (ρ₁ * p) := by
+    calc (2 : ℤ) ^ (c * (m * (m + 1) * q)) ≤ 2 ^ (F * (ρ₁ * p)) :=
+          pow_le_pow_right₀ (by norm_num) hcN
+      _ = ((2 : ℤ) ^ F) ^ (ρ₁ * p) := by rw [pow_mul]
+      _ ≤ K ^ (ρ₁ * p) := pow_le_pow_left₀ h2F hKF _
+  have hA : a ^ (n * (m * (m + 1) * q)) ≤ K ^ (ρ₁ * p * m) := by
+    calc a ^ (n * (m * (m + 1) * q)) = (a ^ ((m + 1) * q)) ^ (n * m) := by
+          rw [← pow_mul]; congr 1; ring
+      _ ≤ (K ^ (r₁ * p)) ^ (n * m) := pow_le_pow_left₀ (by positivity) ha _
+      _ = K ^ (ρ₁ * p * m) := by rw [← pow_mul, hρ]; congr 1; ring
+  have hstep : (b ^ (m * q)) ^ (m + 1) ≤ (K ^ (ρ₁ * p)) ^ (m + 1) := by
+    calc (b ^ (m * q)) ^ (m + 1) = b ^ (m * (m + 1) * q) := by
+          rw [← pow_mul]; congr 1; ring
+      _ ≤ (2 ^ c * a ^ n) ^ (m * (m + 1) * q) := pow_le_pow_left₀ hb0 hb _
+      _ = 2 ^ (c * (m * (m + 1) * q)) * a ^ (n * (m * (m + 1) * q)) := by
+          rw [mul_pow, ← pow_mul, ← pow_mul]
+      _ ≤ K ^ (ρ₁ * p) * K ^ (ρ₁ * p * m) := mul_le_mul h2 hA (by positivity) hKp
+      _ = (K ^ (ρ₁ * p)) ^ (m + 1) := by rw [← pow_add, ← pow_mul]; congr 1; ring
+  exact le_of_pow_le_pow_left₀ (Nat.succ_ne_zero m) hKp hstep
+
+/-- **Non-vacuity of the exact descent, at the calibration boundary.**
+
+`a = 1`, `b = 32`, `K = 1024 = 2^10`, `m = n = r₁ = ρ₁ = 1`, `c = 5`, `F = 10`, `p = q = 1`
+(so `t = 1`).  ⚠ **Three of the hypotheses hold with equality**: `2^F = K`, `c = (2m+3)ρ₁`, and
+`q·m(m+1)(2m+3) = F·p`.  The witness sits exactly where clause 3's calibration puts it, which
+is the concrete form of "nothing to spare". -/
+theorem height_descend_pq_witness : (32 : ℤ) ^ (1 * 1) ≤ (1024 : ℤ) ^ (1 * 1) :=
+  height_descend_pq (a := 1) (b := 32) (K := 1024) (m := 1) (n := 1) (c := 5)
+    (F := 10) (p := 1) (q := 1) (r₁ := 1) (ρ₁ := 1)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+
 /-- **Non-vacuity of the height step.**  `m = 2`, `ρ₁ = 1`, `Λ = 1`, `t = 1`, `L = 30`,
 `B = 15`: clause 3 reads `1·2·5·1 = 10 ≤ 30` and the conclusion `1·15 ≤ 30`.
 

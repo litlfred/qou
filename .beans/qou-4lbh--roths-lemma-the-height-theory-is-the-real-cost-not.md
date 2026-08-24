@@ -3144,3 +3144,43 @@ rather than a pointer.
 Wronskian's actual height bound in the shape `hb` expects — `WronskianHeight`'s
 `abs_coeff_det_sepFamily_le` gives `r!·(S·(d^{2r}·B_P))^r`, which is `b`'s shape with `n = r`,
 so the remaining work is matching those two expressions, not proving a new estimate.
+
+### Clause 4's descent, integral and exact — and a discipline that nearly cost the arc a theorem
+
+Wiring the four clauses turned up an obstruction in the arc's own idiom, and then a way past it.
+
+**The obstruction.** `RothLemmaUniform` avoids rational exponents by writing the height
+condition as `B ≤ qⱼ^E` with `E : ℕ`. Clause 4 in that idiom needs `j`, the number of powers of
+`K` that swallow `2^c`, to be a natural number in
+
+    (2m+1)ρ₁ / F   ≤   j   ≤   ρ₁t / (m(m−1)),
+
+and clause 3 makes those endpoints **equal** in the tight case — that is what "calibrated with
+nothing to spare" means. A zero-length interval between two non-integers contains no integer,
+so no `j` need exist. `height_descend_exp` is the rounded form and carries `j` as a hypothesis
+rather than producing one.
+
+⚠ This is intrinsic to the arc's `E : ℕ` device, **not** a gap in the source: §11 uses real
+exponents, where `j` is simply `ρ₁t/(m(m−1))` and no rounding arises. The arc bought `ℚ`-only
+arithmetic by rounding exponents up, and clause 3 is exactly tight, so the rounding has nowhere
+to go.
+
+**The way past.** Write `t = p/q`. Clause 4 `b ≤ K₁^{(1/M)s₁t}` raised to `Mq` is
+`b^{Mq} ≤ K₁^{s₁p}` — a statement about integers. Descending from arity `m+1` to `m`, §11's
+chain becomes
+
+    b^{m(m+1)q} ≤ 2^{c·m(m+1)q}·(a^{(m+1)q})^{nm} ≤ K^{ρ₁p}·K^{ρ₁pm} = (K^{ρ₁p})^{m+1},
+
+whose middle step needs `c·m(m+1)q ≤ F·ρ₁p` — which is `c ≤ (2m+3)ρ₁` times clause 3's
+`q·m(m+1)(2m+3) ≤ F·p`. Both are `ℕ` inequalities, so the tightness that blocks the rounded
+route **costs nothing here**. Landed as `height_descend_pq`, and it closes with nothing left
+over.
+
+`height_descend_pq_witness` sits exactly on the boundary: `2^F = K`, `c = (2m+3)ρ₁`, and
+`q·m(m+1)(2m+3) = F·p` all hold with **equality**. That is the calibration made concrete.
+
+⚠ **The near-miss worth recording.** The first instinct was to state the obstruction, recommend
+the `p/q` route, and stop — the entry would have read as a finding. It is a finding only if the
+route is not taken; taking it turns the same paragraph into a solved problem. The arc has now
+twice written "two ways out, neither taken here" style prose where one of the ways was ten
+minutes of work. **A recommendation in a docstring is a bet that nobody will check it.**
