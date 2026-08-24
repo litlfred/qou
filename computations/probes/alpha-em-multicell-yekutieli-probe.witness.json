@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:20:26.026728+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-24T16:52:24.304624+00:00",
+  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
   "assertions": [
     {
       "name": "multicell_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 8,
   "computation": "alpha-em-multicell-yekutieli-probe",
   "scriptFile": "alpha_em_multicell_yekutieli_probe.py",
   "scriptHash": "e480684dd61b",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,12 +28,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_em_multicell_yekutieli_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_em_multicell_yekutieli_probe.py"
   },
   "description": "Item 1 of PR #1708: tests the SUMMED non-abelian Stokes form over the \ud835\udcd1_3 octahedron tessellation for the \u03b1_em 2/(3\u03c0) shift. Prior probes used individual torus knots / cells (refuted); this tests the explicit cell SUM. Honest derive-or-refute.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736",
     "mp_dps_runtime": "50"
   },
   "data": {
@@ -42,5 +52,7 @@
     "Vol_Borromean": "7.327724753417752120436828",
     "verdict": "REFUTED for genuine summed-volume forms. Only TAUTOLOGICAL rewrites (2/(N_cusps\u00b7\u03c0) with N_cusps=3; \u03a3_3\u00b7(2/9\u03c0); and 2\u00b7V_oct/(Vol_Bor\u00b7\u03c0)\u00b7(2/3) where V_oct/Vol_Bor=1/2 cancels exactly) reproduce 2/(3\u03c0) \u2014 all three ASSUME the answer. Genuine hyperbolic-volume sums miss: best is (f) V_oct / (2\u03c0\u00b2) at -12.5317%. The multi-cell SUMMED Yekutieli route does NOT structurally derive the 2/(3\u03c0) shift coefficient \u2014 consistent with the individual-cell refutations (torus-knot 1e6 ppm, H_3 matter \u2212445%, q-Lambert NULL). The N_cusps=3 reading of the '3' is a plausible INTERPRETATION but the coefficient '2' and the 1/\u03c0 factor are not derived; the shift's structural origin remains open (RT-2-loop track).",
     "N_cusps_reading": "3 (Borromean is 3-component link); consistent but not derived"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
