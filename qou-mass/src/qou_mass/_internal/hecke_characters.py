@@ -589,8 +589,25 @@ def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
 # §4  MASS AT LEVEL k
 # ══════════════════════════════════════════════════════════════
 
-def qfac(n):
-    return math.prod(q_int(k) for k in range(1, n + 1))
+def _q_int_at(k, q):
+    """`[k]_q = (q^k - q^-k)/(q - q^-1)` at an EXPLICIT q.
+
+    The module-level `q_int` closes over `q_parameter.Q` — the SHIM's Q, which
+    the shim rebinds to muon when the running process's argv stem is listed in
+    `q0_anchor_manifest.json::ideal_muon`. So every q-integer here is a function
+    of the ENTRY POINT unless the caller names its q (bean qou-wee5).
+    """
+    h = q - 1 / q
+    return (q ** k - q ** (-k)) / h
+
+
+def qfac(n, q=None):
+    """`[n]_q!`. `q=None` keeps the historical module-level q — see the note on
+    `_q_int_at` for why that tracks the entry point, and pass `q` explicitly if
+    your result must not."""
+    if q is None:
+        return math.prod(q_int(k) for k in range(1, n + 1))
+    return math.prod(_q_int_at(k, q) for k in range(1, n + 1))
 
 
 def young_hooks(shape):
@@ -605,9 +622,13 @@ def young_hooks(shape):
     return hooks
 
 
-def dim_q(shape):
+def dim_q(shape, q=None):
+    """`d_q(λ)` by the q-hook-length formula. `q=None` keeps the historical
+    module-level q; pass `q` explicitly to pin the anchor (bean qou-wee5)."""
     n = sum(shape)
-    return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    if q is None:
+        return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    return qfac(n, q) / math.prod(_q_int_at(hk, q) for hk in young_hooks(shape))
 
 
 def specht_dim(shape):
