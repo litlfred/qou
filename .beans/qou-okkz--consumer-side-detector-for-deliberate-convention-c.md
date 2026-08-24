@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:10:58Z
-updated_at: 2026-08-24T14:55:03Z
+updated_at: 2026-08-24T15:06:42Z
 ---
 
 ## MEASURED on main, 2026-08-24 (PR #5669, branch claude/consumer-control-arm-detector-2026-08-24)
@@ -75,3 +75,48 @@ sufficient -- rarity is not provenance.
   * All 29 pairs the write-exclusion suppressed hand-checked: every one is
     script-to-own-witness. The exclusion hides no control arm.
   * Witness has 0 raw float64 fields; Decimal end to end.
+
+
+## Follow-up (c3b23173d7): the CM tag does not say what the CONSUMER depends on
+
+The witness frame tag says what the ARTIFACT carries. A drain can get the
+convention axis and the pin axis wrong INDEPENDENTLY, so each edge now carries
+`frame_evidence`. Measured on the known positive, and it contradicts what the
+`CM` tag suggests:
+
+  h4_markov_weights_closed_form.py is DELIBERATELY ON C, and NOT deliberately
+  on muon.
+
+  z_C in consumer source      True   -> a convention fix breaks it LOUDLY
+  muon q0 in consumer source  False  -> PR #5616 moved that to a run-time read
+                                        specifically to avoid embedding a stale
+                                        q0 literal
+  payload reproduced          5      -> frame INHERITED from the artifact
+
+Consequence for the drain: **re-pinning the artifact silently changes the
+numbers this control reproduces and nothing in the consumer objects**, whereas
+changing the convention breaks visibly. The silent one is the dangerous one and
+is invisible to any check that only asks "does this file mention convention C".
+This overlaps qou-a6yh's audit/check-context class -- both classes co-occur here.
+
+## The self-poisoning census (the better catch)
+
+The audit's own witness records every transcribed value verbatim, so each run
+added itself to the corpus-wide specificity census: the known positive's five
+weights went 2 -> 3 witnesses the moment the witness was first committed. The
+test is `census[v] <= 3`, so at 3 it still reads specific -- but ONE MORE such
+artifact tips them to `common` and the CONTROL-ARM verdict vanishes with no
+error. A detector that goes quiet by writing down what it found. Self-excluded;
+same hazard as SELF_OUTPUT_PREFIX in compute-author 5.1. Census verified stable
+at 2 over repeated runs; output idempotent.
+
+## Mutation test, re-run with proper exit codes
+
+  SPECIFICITY_MAX -> 0            FAIL (exit 1)
+  MIN_SIG_DIGITS -> 30            FAIL (exit 1)
+  write-exclusion disabled        FAIL (exit 1)
+  self-witness exclusion disabled PASS (exit 0)  <- CORRECT, not a gap
+
+The fourth passes because with the self-witness counted the census is exactly 3
+and `3 <= 3` still reads specific. The poisoning is LATENT: the tree is one such
+artifact away from it firing. Recorded rather than tuned away.
