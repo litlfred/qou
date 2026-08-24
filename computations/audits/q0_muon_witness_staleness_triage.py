@@ -265,8 +265,23 @@ def main() -> int:
             r["anchor_defining"] = (
                 os.path.splitext(os.path.basename(r["producer"]))[0]
                 in ANCHOR_DEFINING)
+        # 🛑 `tree_commit` and `population` sit BESIDE the tally, not only inside
+        # `environment`. A tally is meaningless without the population it was
+        # computed over, and this selector's population is not fixed: `targets()`
+        # selects on `q0Anchor == "muon"` in the CURRENT tree, so it grows every
+        # time someone labels an unstamped witness. Measured 2026-08-24 — the
+        # in-scope set went **47 -> 142 in one day**, because main's
+        # `4101909790` ("label 229 witnesses from their own payload") stamped
+        # 229 previously-unlabelled witnesses and every muon one entered here.
+        #
+        # So a reader comparing two tallies must be able to see, without
+        # digging, that they cover different populations — otherwise "47/47"
+        # reads as completion when it is only completion *relative to one
+        # tree*. Bean `qou-6q7q`.
         json.dump({"results": rs, "tally": dict(collections.Counter(
                        r["verdict"] for r in rs)),
+                   "tree_commit": ENV.get("tree_commit"),
+                   "population": len(runnable),
                    "partial": partial, "measured": len(rs),
                    "total": len(runnable), "environment": ENV,
                    "skipped": [{"witness": w, "scriptFile": s_, "candidates": c}

@@ -1001,17 +1001,83 @@
       "verdict": "UNCHANGED",
       "siblings_moved": [],
       "anchor_defining": false
+    },
+    {
+      "producer": "computations/cross_check_trM_cw_seminormal_leg.py",
+      "witness": "computations/cross-check-trM-cw-seminormal.witness.json",
+      "verdict": "TIMEOUT",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/b4_deformed_sspole_sector_probe.py",
+      "witness": "computations/deltalambda/b4-deformed-sspole-sector.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
+      "witness": "computations/deltalambda/deltalambda-damping-nonmonotone-wall.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion",
+        "q0Anchor (removed)",
+        "q0AnchorReason (removed)",
+        "q0Value (removed)"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py",
+      "witness": "computations/deltalambda/deltalambda-demazure-subcrystal-magnitude.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
+      "witness": "computations/deltalambda/deltalambda-graded-two-anchor-nogo.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "engineVersion",
+        "q0Anchor (removed)",
+        "q0AnchorReason (removed)",
+        "q0Value (removed)"
+      ],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py",
+      "witness": "computations/deltalambda/deltalambda-jet-filtration-magnitude.witness.json",
+      "verdict": "UNCHANGED",
+      "siblings_moved": [],
+      "anchor_defining": false
+    },
+    {
+      "producer": "computations/deltalambda/habiro_magnitude_a3_probe.py",
+      "witness": "computations/deltalambda/habiro-magnitude-a3.witness.json",
+      "verdict": "SUBSTANTIVE",
+      "siblings_moved": [],
+      "changed_fields": [
+        "q0Anchor (removed)",
+        "q0AnchorReason (removed)",
+        "q0Value (removed)"
+      ],
+      "anchor_defining": false
     }
   ],
   "tally": {
-    "TIMEOUT": 6,
+    "TIMEOUT": 7,
     "SUBSTANTIVE/ASSERT-FAIL": 6,
-    "SUBSTANTIVE": 30,
-    "UNCHANGED": 10,
+    "SUBSTANTIVE": 33,
+    "UNCHANGED": 13,
     "CRASH": 3
   },
   "partial": true,
-  "measured": 55,
+  "measured": 62,
   "total": 142,
   "environment": {
     "python": "3.11.15",
