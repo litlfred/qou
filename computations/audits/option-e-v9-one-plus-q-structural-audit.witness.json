@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:40:55.496127+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T15:00:33.230049+00:00",
+  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "option-e-v9-one-plus-q-structural-audit",
   "scriptFile": "option_e_v9_one_plus_q_structural_audit.py",
   "scriptHash": "04dbee8bb893",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -43,7 +43,7 @@
   },
   "description": "Categorical-uniqueness test for Option E v9's (1+q)/2 multiplicative correction. Tests whether the 0.11% match is uniquely identifying or one of several near-matches in a coincidence basin.",
   "parameters": {
-    "q_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736",
     "target_multiplicative_correction": "1.056001106194690265486726"
   },
   "data": {
@@ -54,12 +54,12 @@
     "matches_within_0.11_pct": [
       [
         "(1 + q)/2",
-        "1.05498929777866736",
-        "-0.09581509054"
+        "1.0549892913756904",
+        "-0.09581569688"
       ]
     ],
     "verdict": "UNIQUE: only '(1 + q)/2' matches within 0.11%. This is structurally suggestive (though not yet a derivation)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

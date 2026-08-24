@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:06.737184+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T15:00:27.333349+00:00",
+  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
   "assertions": [
     {
       "name": "charge_zero_control_sums_to_zero",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 192,
+  "durationMs": 197,
   "computation": "option-e-kashiwara-crystal-delta-lambda-probe",
   "scriptFile": "option_e_kashiwara_crystal_delta_lambda_probe.py",
   "scriptHash": "273adfcafcd6",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -622,6 +622,6 @@
     ],
     "synthesis_verdict": "All five Kashiwara crystal-statistic candidates REFUTED. The no-fit crystal-statistic family is now closed for deuteron Δ_λ. Combined with the six prior failures in the Δ_λ-gate audit (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius, Occam, Wenzl-bridge), this leaves only research-grade categorical paths (GAP-A-3 categorical brane-tower level selection; GAP-A-4 ρ general rule) as productive directions for Δ_λ binding-energy closure. A seventh fit-based ansatz is forbidden by AGENTS.md."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

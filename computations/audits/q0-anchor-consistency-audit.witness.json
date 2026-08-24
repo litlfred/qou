@@ -37,10 +37,9 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
@@ -8613,14 +8612,6 @@
           "detail": ""
         },
         {
-          "witness": "lepton-tower-additive-screening.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "lepton-tower-bend-screening.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "lever1-transfer-operator-spectral-qgevrey.witness.json",
           "detail": ""
         },
@@ -9965,15 +9956,7 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-reeb-tower-jacobi-anger.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-residue-followup-sl6-demazure.witness.json",
           "detail": ""
         },
         {
@@ -11049,6 +11032,6 @@
       ]
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

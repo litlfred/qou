@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:17:28.924519+00:00",
-  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+  "computedAt": "2026-08-24T15:00:24.203221+00:00",
+  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
   "scriptHash": "a23fb0934008",
@@ -327,6 +327,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
