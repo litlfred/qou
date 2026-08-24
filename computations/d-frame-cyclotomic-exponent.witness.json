@@ -77,7 +77,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "1.95"
+      "elapsed_sec": "2.10"
     },
     {
       "atom": "T",
@@ -94,7 +94,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "15.71"
+      "elapsed_sec": "16.99"
     },
     {
       "atom": "3He",
@@ -111,7 +111,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": true,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "9.30"
+      "elapsed_sec": "9.63"
     },
     {
       "atom": "D",
@@ -128,7 +128,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "1.62"
+      "elapsed_sec": "1.71"
     },
     {
       "atom": "T",
@@ -145,7 +145,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.64"
+      "elapsed_sec": "2.84"
     },
     {
       "atom": "3He",
@@ -162,7 +162,7 @@
       "m_equals_3A_minus_1": true,
       "actual_equals_3Z_plus_N_minus_1": false,
       "cancelled_equals_2N": true,
-      "elapsed_sec": "2.36"
+      "elapsed_sec": "2.44"
     }
   ],
   "assertions": [
@@ -195,9 +195,9 @@
   "allPassed": true,
   "scriptHash": "ee93fe5d93cc",
   "scriptCommitSha": "29ad606b294f950da1f97b80c678b52b24f0df06",
-  "commitSha": "45f617842b78c7e54b88d657bf4bcd9b92b0301b",
+  "commitSha": "7c37c6ee79f6e68faf8eedb93d6f42a1b83ed299",
   "engine": "sympy",
-  "computedAt": "2026-08-24T06:55:59.152607+00:00",
+  "computedAt": "2026-08-24T08:12:40.890739+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",

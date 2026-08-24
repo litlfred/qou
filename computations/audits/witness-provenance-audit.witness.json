@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T07:25:36.358236+00:00",
-  "commitSha": "346b0f09d162d6ad25f59a8b58145fb3898f1c3c",
+  "computedAt": "2026-08-24T08:18:42.606558+00:00",
+  "commitSha": "7c37c6ee79f6e68faf8eedb93d6f42a1b83ed299",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2724,
-      "prov_ok": 2347,
+      "total_scanned": 2727,
+      "prov_ok": 2350,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 237,
       "prov_exempt_acknowledged": 2,
       "prov_missing": 60,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.977973568281938325991189427312775330396475770925110132158590"
+      "completeness_ratio": "0.977997799779977997799779977997799779977997799779977997799780"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2107,6 +2107,18 @@
         },
         {
           "witness": "d-density-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-cyclotomic-exponent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "d-frame-prefactor-localisation.witness.json",
           "missing_fields": []
         },
         {
