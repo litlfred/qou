@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:22:12.254159+00:00",
-  "commitSha": "9bac4f4e39434eb3cae69e7dafc1c7df716ed978",
+  "computedAt": "2026-08-24T17:18:39.281946+00:00",
+  "commitSha": "aa17903e09f5bdc2ebb26d7bb68582d923030787",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2735,
-      "prov_ok": 2324,
+      "total_scanned": 2736,
+      "prov_ok": 2325,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 239,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 91,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.966727605118829981718464351005484460694698354661791590493601"
+      "completeness_ratio": "0.966739766081871345029239766081871345029239766081871345029240"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5979,6 +5979,10 @@
         },
         {
           "witness": "mirror-parity-linear-trace-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "mirror-penalty-decomposition.witness.json",
           "missing_fields": []
         },
         {

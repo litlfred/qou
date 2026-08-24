@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T14:59:25Z
+updated_at: 2026-08-24T17:18:45Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -421,3 +421,59 @@ near-cancellation at q_0; the 3.435x is a property of the anchor, not the
 algebra. Scope (a).
 
 Probe updated: `delta_lambda_closure_tl_support_probe.py`, 7/7.
+
+
+## Item 4 RESOLVED — the mirror penalty is two different quantities
+
+Both hypotheses in the earlier note are now settled.
+
+**"T and 3He were not regenerated together" — REFUTED.**
+`delta-lambda-canonical-residual.witness.json` is a single run: one computedAt,
+one commitSha, one scriptHash. Every row was regenerated together.
+
+**"The drift was not baseline-only at A=3" — RIGHT, with an exact mechanism.**
+Since `Delta_lambda = B_AME / B_pred`,
+
+    penalty = log_q[B_AME(pr)/B_AME(mir)] - log_q[B_pred(pr)/B_pred(mir)]
+                     `-- experiment --'            `-- the model --'
+
+The `10A-5` baseline cancels IDENTICALLY, so that half of
+`prop:mirror-baseline-cancellation` holds for both pairs by algebra, not luck.
+The decomposition reproduces both recorded penalties.
+
+    pair         experiment    model      penalty   dominated by
+    3He / T       -0.904361  +0.047047   -0.951407  EXPERIMENT (95%)
+    7Be / 7Li     -0.410183  +1.358988   -1.769170  THE MODEL  (77%)
+
+**So the "proton-excess penalty" is not one quantity across A.** At A=3 it
+essentially measures the experimental mirror asymmetry — the A=3 mirror energy
+comes out -0.76375 MeV, the textbook Coulomb-dominated value — with the model
+contributing 5%. At A=7 it is dominated by the model's own 15.2% asymmetry in
+B_pred.
+
+That explains the drift asymmetry with no appeal to regeneration order: B_AME
+is fixed, so a B_pred change moves only the model half. Multiplicatively
+uniform across a pair -> cancels (A=7, invariant); non-uniform -> does not
+(A=3, moved).
+
+**The model's mirror asymmetry is sign-backwards at BOTH pairs** — B_pred has
+the proton-rich member MORE bound, experiment has it LESS. That is expected,
+not a defect: `B_pred = E_0*(tr_M(W_free) - tr_M(W_atom))` carries no EM term
+at all, so its asymmetry is purely topological. What is new is the SIZE —
+negligible at A=3, dominant and wrong-signed at A=7.
+
+Scope (a). Does not bear on the A=3 mirror-split mechanism of
+`docs/audits/2026-07-13-mirror-split-one-third-mechanism-probe.md`, which
+targets the EM-active channel and records the derived Coulomb/strong ratio
+`tanh(ln q_0) ~ 0.10396`. That audit asks what should supply the missing piece;
+this measures what the penalty is made of.
+
+STRENGTHENS the existing "magnitude is NOT a single derivable number" verdict
+and sharpens it: the two penalties are not the same physical quantity, so no
+single derivation should be expected to produce both.
+
+Probe: `computations/probes/mirror_penalty_decomposition_probe.py`, 5/5.
+
+Noted in passing, not chased: `delta_lambda_canonical_residual.py` does
+`float(r["B_MeV"])` and imports `math` — a float64 path in a producer, which
+the precision discipline forbids. It bounds the precision of everything above.

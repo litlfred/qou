@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 229,
-      "proton-pin": 1517,
+      "proton-pin": 1518,
       "unknown": 25,
       "canonical": 290
     },
@@ -11085,6 +11085,13 @@
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/mirror-penalty-decomposition.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/probes/mn-dpn-xq-cross-anchor-probe.witness.json",

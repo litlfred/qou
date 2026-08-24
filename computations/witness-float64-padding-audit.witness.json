@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 13,
-    "distinct_values": 10,
-    "files": 6,
-    "live_files": 1,
-    "new_not_baselined": 0,
+    "occurrences": 15,
+    "distinct_values": 12,
+    "files": 7,
+    "live_files": 2,
+    "new_not_baselined": 2,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -86,6 +86,18 @@
         "field": "data.rows[26].hits[4].literal",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/probes/mirror-penalty-decomposition.witness.json",
+        "field": "pairs[0].recorded_penalty",
+        "value": "-0.95099999999999995647925743469386361539363861083984375",
+        "real_value": "-0.951"
+      },
+      {
+        "file": "computations/probes/mirror-penalty-decomposition.witness.json",
+        "field": "pairs[1].recorded_penalty",
+        "value": "-1.770000000000000017763568394002504646778106689453125",
+        "real_value": "-1.77"
       }
     ]
   }
