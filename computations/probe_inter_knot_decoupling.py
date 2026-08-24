@@ -13,6 +13,7 @@ import mpmath as mp
 
 import _path_bridge
 import _path_bridge as _pb
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -56,7 +57,11 @@ def main():
     )
     
     w.add_parameter("auditOnly", "PR #657 follow-up. Provides theoretical justification for the convergence-via-locality argument; full empirical verification at H_6 awaits y_λ for n=6 in wenzl_y_lambda.")
-    w.add_data("q_0_50dps", "1.1099785955541805752815940796095093779932822799587")
+    # q0 comes from the pin table, never a literal. This held
+    # `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+    # neither current pin, so nothing could compare it against
+    # anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+    w.add_data("q_0_50dps", Q_50_DIGIT_STR)
     w.add_data("z_markov_norm", "0.49932033403359825002066908467672150636931636263446")
     w.add_data("K_1_braid", "σ_0 in B_3")
     w.add_data("K_2_braid", "σ_0 · σ_1 in B_3")
