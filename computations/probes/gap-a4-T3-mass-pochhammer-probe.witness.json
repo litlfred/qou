@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:42:41.805645+00:00",
-  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
+  "computedAt": "2026-08-24T08:46:07.446296+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "P4_control_proton_ratio_is_one",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "gap-a4-T3-mass-pochhammer-probe",
   "scriptFile": "gap_a4_T3_mass_pochhammer_probe.py",
   "scriptHash": "74c8da386496",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -148,6 +148,6 @@
     ],
     "synthesis_verdict": "None of the four bar-symmetric q-Pochhammer candidates matches the light-series λ ratios within 5 %.  Worst rel_errs: P1: +10349012759.73%, P2: +1816.01%, P3: +93.94%, P4: +177042.43%.  T3 closes NEGATIVE for the Habiro-Pochhammer layer — the restricted bar-symmetric space (per I1) is empty for the natural depth-3A candidates.  Per the scope §7 honest-outcome alternative, this points firmly to the τ-image Dirac/SW PDE direction (the same direction PR #1871's workplan §4.A L3 names as load-bearing).  The mass-side and binding-side GAP-A-4 closure converges on the τ-image Dirac/SW PDE as the framework's last open derivation question."
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

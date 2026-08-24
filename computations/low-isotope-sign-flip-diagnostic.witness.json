@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:00:22.504050+00:00",
-  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
+  "computedAt": "2026-08-23T21:16:01.913022+00:00",
+  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -187,6 +187,6 @@
   "caveats": [
     "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
   ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

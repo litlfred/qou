@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T15:00:23.354473+00:00",
-  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
+  "computedAt": "2026-08-23T21:16:04.728212+00:00",
+  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
@@ -42,7 +42,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
   "scriptHash": "35165a8ddc21",
@@ -170,6 +170,6 @@
     "λ_A EXCISION (owner ruling 2026-06-24): this witness AUDITS the excised λ_A Borromean-VolDensity path; it is NOT the production absolute-mass route. Production route: canonical_mass.py (muon-anchored Hecke energy, see canonical_mass_reference). Ledger: docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md.",
     "Audited formula framing (pre-excision, PR #1080): m(K) = m_e × VolDensity(K, q₀), a single Geom call per knot.  VolDensity decomposes as (Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A categorical Wedderburn identity, Lean: `lambda-scale-substrate-form.lean`).  There is no separate λ_scale constant — older docs called the linking-weight component λ_scale before it was absorbed into VolDensity.  The prior CAL-4 literals 2.4599527869 / 2.4633436333 are retained only as audit-only comparison columns.  The proton-neutron mass ratio Δm/M_N is the substrate-pure closed form from `prop:flavor-split-substrate` (PR #690): ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the absolute m_avg scale is now framed (per PR #1063) as a VolDensity(𝓑₃) categorical-exactness refinement gap at h² order, NOT as a separate λ_scale closure."
   ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

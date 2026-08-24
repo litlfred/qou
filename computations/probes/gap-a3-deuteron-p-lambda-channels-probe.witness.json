@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:42:11.831044+00:00",
-  "commitSha": "0baea0f7404d202791d61bdbe8ffec665866c317",
+  "computedAt": "2026-08-24T08:45:53.904678+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "phase4_amplitude_A_D_matches_table",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 54,
   "computation": "gap-a3-deuteron-p-lambda-channels-probe",
   "scriptFile": "gap_a3_deuteron_p_lambda_channels_probe.py",
   "scriptHash": "1df94bea6c2a",
@@ -41,7 +41,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -633,6 +633,6 @@
     ],
     "synthesis_verdict": "All four target-match channels (C1-C4) REFUTED and the C5 zero-control passes (|S| ≈ 0 as required) — none of the natural brane-tower content projections (sl_2 / sl_3 Schur-Weyl mult, sl_2 q-dim, ≤2-row indicator) reproduces the deuteron P_λ(D) target. The remaining direction is GAP-A-4 — the ρ general rule / per-atom λ(K) substrate-derivation in Path B, which bypasses the Δ_λ gate entirely by re-opening the per-atom λ(K) question."
   },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

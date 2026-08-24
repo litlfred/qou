@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T15:00:20.599146+00:00",
-  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:12:51.651558+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "descent_block_scalar_is_dominant_qgevrey_driver",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "lever1-transfer-operator-spectral-qgevrey",
   "scriptFile": "lever1_transfer_operator_spectral_qgevrey.py",
   "scriptHash": "ea3ab94fc58c",
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
   "invocation": {
     "argv": [
@@ -50,7 +50,5 @@
     "S2_target_2_ln_q0": "0.208681463713",
     "S3_control_multiplier_slope": "0.0558956993195",
     "S3_descent_scalar_pct_of_slope": "68.9462"
-  },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  }
 }
