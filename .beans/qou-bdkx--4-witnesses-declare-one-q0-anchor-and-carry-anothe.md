@@ -1,11 +1,11 @@
 ---
 # qou-bdkx
 title: 4 witnesses declare one q0 anchor and carry another — declaration/payload contradiction
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T07:53:49Z
-updated_at: 2026-08-23T23:57:53Z
+updated_at: 2026-08-24T00:00:20Z
 ---
 
 Split out of qou-p8lx after re-measuring the `q0 constant staleness` gate on
