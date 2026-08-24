@@ -58,7 +58,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -244,7 +244,8 @@ def main() -> int:
     for r in results:
         print(f"  {r['label']:<58} "
               f"{r['writhe']:<3} {r['averaged_count']:<3} "
-              f"{r['chi_n_residue']:<10.2e} {r['chi_1n_residue']:<10.2e}")
+              f"{float(r['chi_n_residue']):<10.2e} "
+              f"{float(r['chi_1n_residue']):<10.2e}")
     print()
     print(f"max residue across all tests: {float(max_residue):.2e}")
     return 0

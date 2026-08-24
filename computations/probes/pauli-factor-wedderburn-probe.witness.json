@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T20:09:56.019410+00:00",
-  "commitSha": "2fcf166b5ec811a56a30ae0baf3c1033a67d4946",
+  "computedAt": "2026-08-24T08:26:59.362055+00:00",
+  "commitSha": "ccf852dc082082ddd3a51727eb79c195a3f46c43",
   "assertions": [
     {
       "name": "pauli_factor_equals_neg1_L_times_q_minus_2w",
-      "computed": 6.681911775230489e-51,
+      "computed": 4.527839539413356e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -15,7 +15,7 @@
     },
     {
       "name": "universal_1d_closed_form_cross_check",
-      "computed": 3.207317652110635e-50,
+      "computed": 8.150111170944041e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -24,18 +24,39 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 16,
   "computation": "pauli-factor-wedderburn-probe",
   "scriptFile": "pauli_factor_wedderburn_probe.py",
-  "scriptHash": "8648d013810b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "619c7225e915",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pauli_factor_wedderburn_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pauli_factor_wedderburn_probe.py"
+  },
   "description": "I1 probe for prop:pauli-factor-wedderburn.  Verifies F_Pauli(β) = χ_{(1^3)}(β) / χ_{(3)}(β) for β ∈ B_3 (specialisation of the general dim_q-weighted form at n = 3, where both extremal quantum dimensions equal 1).  Combined with the universal 1d closed forms, this gives F_Pauli(β) = (−1)^L · q^{−2w} (L = word length, w = writhe).  Tested on 8 typed braids spanning identity, single generators, Coxeter, figure-eight, trefoil, balanced commutator, and full twist.  All ratios and closed forms agree to ~1e-50.",
   "contentBlock": "prop:pauli-factor-wedderburn",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "num_braids_tested": 8,
-    "max_pauli_ratio_residue": 6.681911775230489e-51,
-    "max_1d_character_residue": 3.207317652110635e-50
+    "max_pauli_ratio_residue": 4.527839539413356e-71,
+    "max_1d_character_residue": 8.150111170944041e-71
   },
   "data": {
     "per_braid_results": [
@@ -56,11 +77,11 @@
         "word": "[1]",
         "L_word_length": 1,
         "w_writhe": 1,
-        "chi_sym_Hoefsmit": 1.1099785955541805,
-        "chi_alt_Hoefsmit": -0.9009182735643011,
-        "pauli_ratio_Hoefsmit": -0.8116537356420809,
-        "pauli_closed_form": -0.8116537356420809,
-        "ratio_residue": 2.6727647100921956e-51,
+        "chi_sym_Hoefsmit": 1.1099785827513808,
+        "chi_alt_Hoefsmit": -0.9009182839557415,
+        "pauli_ratio_Hoefsmit": -0.811653754365758,
+        "pauli_closed_form": -0.811653754365758,
+        "ratio_residue": 1.8111358157653425e-71,
         "is_fermionic_by_parity": true
       },
       {
@@ -68,11 +89,11 @@
         "word": "[-1]",
         "L_word_length": 1,
         "w_writhe": -1,
-        "chi_sym_Hoefsmit": 0.9009182735643011,
-        "chi_alt_Hoefsmit": -1.1099785955541805,
-        "pauli_ratio_Hoefsmit": -1.2320524825884311,
-        "pauli_closed_form": -1.2320524825884311,
-        "ratio_residue": 2.6727647100921956e-51,
+        "chi_sym_Hoefsmit": 0.9009182839557415,
+        "chi_alt_Hoefsmit": -1.1099785827513808,
+        "pauli_ratio_Hoefsmit": -1.232052454166764,
+        "pauli_closed_form": -1.232052454166764,
+        "ratio_residue": 1.8111358157653425e-71,
         "is_fermionic_by_parity": true
       },
       {
@@ -80,11 +101,11 @@
         "word": "[1, 2]",
         "L_word_length": 2,
         "w_writhe": 2,
-        "chi_sym_Hoefsmit": 1.2320524825884311,
-        "chi_alt_Hoefsmit": 0.8116537356420809,
-        "pauli_ratio_Hoefsmit": 0.6587817865817449,
-        "pauli_closed_form": 0.6587817865817449,
-        "ratio_residue": 4.0091470651382935e-51,
+        "chi_sym_Hoefsmit": 1.232052454166764,
+        "chi_alt_Hoefsmit": 0.811653754365758,
+        "pauli_ratio_Hoefsmit": 0.6587818169760303,
+        "pauli_closed_form": 0.6587818169760303,
+        "ratio_residue": 3.622271631530685e-71,
         "is_fermionic_by_parity": false
       },
       {
@@ -104,11 +125,11 @@
         "word": "[1, 1, 1]",
         "L_word_length": 3,
         "w_writhe": 3,
-        "chi_sym_Hoefsmit": 1.3675518842725483,
-        "chi_alt_Hoefsmit": -0.7312336822466792,
-        "pauli_ratio_Hoefsmit": -0.5347026980520374,
-        "pauli_closed_form": -0.5347026980520374,
-        "ratio_residue": 6.681911775230489e-51,
+        "chi_sym_Hoefsmit": 1.3675518369513853,
+        "chi_alt_Hoefsmit": -0.7312337075494336,
+        "pauli_ratio_Hoefsmit": -0.5347027350564907,
+        "pauli_closed_form": -0.5347027350564907,
+        "ratio_residue": 4.527839539413356e-71,
         "is_fermionic_by_parity": true
       },
       {
@@ -120,7 +141,7 @@
         "chi_alt_Hoefsmit": 1.0,
         "pauli_ratio_Hoefsmit": 1.0,
         "pauli_closed_form": 1.0,
-        "ratio_residue": 2.6727647100921956e-51,
+        "ratio_residue": 0.0,
         "is_fermionic_by_parity": false
       },
       {
@@ -128,11 +149,11 @@
         "word": "[1, 2, 1, 1, 2, 1]",
         "L_word_length": 6,
         "w_writhe": 6,
-        "chi_sym_Hoefsmit": 1.8701981561773975,
-        "chi_alt_Hoefsmit": 0.5347026980520374,
-        "pauli_ratio_Hoefsmit": 0.28590697530412823,
-        "pauli_closed_form": 0.28590697530412823,
-        "ratio_residue": 6.01372059770744e-51,
+        "chi_sym_Hoefsmit": 1.870198026749108,
+        "chi_alt_Hoefsmit": 0.5347027350564907,
+        "pauli_ratio_Hoefsmit": 0.2859070148768917,
+        "pauli_closed_form": 0.2859070148768917,
+        "ratio_residue": 4.527839539413356e-71,
         "is_fermionic_by_parity": false
       }
     ]
