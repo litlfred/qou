@@ -1,10 +1,11 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T20:56:34Z
+updated_at: 2026-08-24T19:35:27Z
 ---
 
 
@@ -5801,3 +5802,29 @@ the corpus **refuted** it, not because it was proved: `hecke_is_gs_basis_false`
 at `HeckeGS.lean:661`. The bean's goal in its corrected form — a proved GS basis
 giving normal forms at general `n` — is what `heckeCompleted_isGrobnerShirshovBasis`
 now is.
+
+
+### COMPLETED 2026-08-24
+
+`heckeCompleted_isGrobnerShirshovBasis` is unconditional and sorry-free —
+`[propext, Classical.choice, Quot.sound]`, for every `n` and every
+`HeckeParams`. The last obligation, `hdeep`, is discharged by
+`deep_selfOverlap_resolves` (§4bw).
+
+Read the title as the corpus corrected it. `hecke_is_gs_basis` asserted the
+**uncompleted** `heckeRewritingSystem` is a GS basis; that is *false*
+(`hecke_is_gs_basis_false`, `HeckeGS.lean:661`, machine-checked at `n = 4`), and
+the axiom was deleted for that reason rather than proved. What the bean actually
+wanted — a proved GS basis giving normal forms at general `n` — is the completed
+system's, and that is what now holds.
+
+Also landed: `heckeCompleted_normalForm_unique` and
+`heckeCompleted_threading_cost_unique`, replacing two vacuous conditionals in
+`HeckeGS.lean` §7 whose hypothesis the same file refutes. Those two ride on the
+Diamond-Lemma axioms `local_confluence` and `reduction_well_founded`, which the
+criterion itself does **not**.
+
+Not in scope here, and the natural follow-on: using the basis to build
+`HeckeAlgebra` instances and the `n!` count at `n ≥ 5`, which is what the
+`docs/audits/2026-08-09-hecke-infrastructure-what-is-needed.md` ladder is
+blocked on.
