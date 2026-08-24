@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T09:34:03Z
+updated_at: 2026-08-24T09:49:16Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -470,3 +470,52 @@ with fingerprint". Now errors, exit 2 — "untested is not clean" applied to the
 scanner. I hit that cwd trap myself while measuring, which is how it surfaced.
 
 PR #5623, commit 50015f044.
+
+
+### The two h9 roots: STALE, not a live defect — and why they could not self-heal
+
+Settled 2026-08-24. Answer is stale; the mechanism is the valuable part.
+
+`chi_via_rust_lossless.py` (NOT `chi_at_q0_via_hoefsmit_mpfr.py` — I named the
+wrong producer earlier; that one writes the plain `chi-{atom}-h{n}-at-q0-50dps`
+family and is clean) reuses a cached witness when it is COMPLETE and on nothing
+else. A cache computed under a superseded convention IS complete, so it is
+served forever. The hit then calls `_stamp_anchor`, which REWRITES the file —
+new mtime, shows as modified in git status — so a routine re-run looks like a
+refresh and changes no number.
+
+**That produced a wrong intermediate conclusion.** Re-running reproduced the C
+values byte-identically, which reads as "still emits C ⇒ LIVE SOURCE DEFECT".
+It was a cache hit; byte-identity was guaranteed by construction. The tell was
+wall clock: 0.2s for two H9 nuclides vs 3.7s for one H12.
+
+Delete the caches, re-run, and it inverts:
+
+    chi-helium-3-h9-...-matrix-m   25 C-scale y_lambda -> 25 zeros
+    chi-tritium-h9-...-matrix-m    25 C-scale y_lambda -> 25 zeros
+
+Producer was convention-D correct throughout and had no way to say so. Fixed
+with `--fresh`, the same hatch `chi_at_q0_via_hoefsmit_mpfr.py` already has for
+the identical stated reason.
+
+Checked against BOTH live implementations before editing:
+  schur_principal_mpmath.y_lambda_at_q0_mpmath(9,Q_MP)[(7,1,1)] -> 0.0 exactly
+  y_lambda_wenzl_bridge_numeric([7,1,1], q0, dps=50)            -> 7.78e-53
+They agree at <=2 rows (0.0166381738807), which is the control. Neither can
+produce the committed 0.00147.
+
+Also cleared as NOT the cause: the y_lambda tower caches
+(y-lambda-mpfr-proton-witness.json 1497 values, y-lambda-mpfr-witness.json 223)
+are both 0 C-scale. The defect was never upstream of the producer.
+
+Fingerprint: 9 files/160 fields -> **7/110**, all downstream of the two roots
+(mu3-frechet-perblock 50, delta-lambda-categorical-verification 35,
+probe-d-delta-lambda-terms 7, gap-a1 7, he4-binding-k-stage2 5,
+he4-stage2-ranking-xcheck 5, he4-9-3-trace-dominant 1). Left for a following
+tranche — their numbers move when the roots do, which is this bean's own
+upstream-first ordering rule.
+
+GENERALISABLE: audit every producer with a completeness-gated reuse branch. The
+gate answers "is this cache finished?" and is read as "is this cache current?".
+Those differ exactly when a convention or anchor changes underneath it — the
+case where being wrong is most expensive. PR #5623.
