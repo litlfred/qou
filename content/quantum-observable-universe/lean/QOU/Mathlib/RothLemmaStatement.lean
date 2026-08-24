@@ -674,6 +674,91 @@ theorem rothConstant_step_lemma4 {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : ℚ}
   rw [hrec]
   linarith
 
+/-- **§14's step with the base case perturbed by `δ`** — what the `1/d` rounding costs.
+
+If the base case yields `Θ₁ ≤ t + δ` instead of `Θ₁ ≤ t` — which is exactly what migrating
+`RothLemmaUniform` onto clause 4's `p/q` form would produce, with `δ = 1/d` — then `Ψ` is
+bounded by `(c+1)s² + δ` rather than `(c+1)s²`, and the step's conclusion picks up `2v` where
+`v = √δ`.
+
+Both branches of the max still land on `(c+1)s + v`:
+
+* `w = Ψ ≤ (c+1)s² + v² ≤ (c+1)s + v`, using `s² ≤ s` and `v² ≤ v`;
+* `w² = Ψ ≤ (c+1)s² + v² ≤ ((c+1)s + v)²`, since `(c+1)² ≥ c+1` and the cross term is
+  non-negative.
+
+⚠ **The perturbation does not fit inside the constant.**  `2c+3` is what both branches give
+with the crude bounds already exactly tight at `c = 0`, so there is no smaller admissible
+constant to trade against `2v`.  The invariant would have to widen from `θ ≤ c_m·s` to
+`θ ≤ c_m·s + κ` and the recursion be re-derived for `κ` — a different theorem, not a looser
+constant in this one. -/
+theorem rothConstant_step_perturbed {m : ℕ} (hm : 1 ≤ m) {s Ψ w v θ : ℚ}
+    (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hv0 : 0 ≤ v) (hv1 : v ≤ 1)
+    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 + v ^ 2)
+    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hθ : θ ≤ s + 2 * w) :
+    θ ≤ (rothConstant (m + 1) : ℚ) * s + 2 * v := by
+  have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
+  have hsq : s ^ 2 ≤ s := by nlinarith
+  have hvq : v ^ 2 ≤ v := by nlinarith
+  have hws : w ≤ ((rothConstant m : ℚ) + 1) * s + v := by
+    rcases hw with h | h
+    · rw [h]; nlinarith
+    · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
+      rw [h]
+      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s),
+        mul_nonneg (mul_nonneg (by linarith : (0:ℚ) ≤ (rothConstant m : ℚ) + 1) hs0) hv0]
+  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+    rw [rothConstant_rec m hm]; push_cast; ring
+  rw [hrec]
+  linarith
+
+/-! ### ⚠⚠ The `1/d` slack does **not** survive the recursion, however small it is
+
+Iterating `rothConstant_step_perturbed` gives a recursion for the accumulated slack.  Writing
+`Θ_m ≤ c_m·s_m + κ_m` with `s_m = t^{2^{−(m−1)}}`, and using `s_{m+1}² = s_m`:
+
+    Ψ_{m+1} = Θ_m + Θ₁ ≤ c_m·s_{m+1}² + κ_m + t + δ ≤ (c_m + 1)·s_{m+1}² + (κ_m + δ),
+
+so the step applies with `v² = κ_m + δ` and yields `κ_{m+1} = 2·√(κ_m + δ)`.
+
+⚠ **That map expands.**  `2√x > x` exactly when `0 < x < 4` (`two_sqrt_expands` below), so from
+any `κ₁ ≥ 0` and **any** `δ > 0` the sequence increases strictly and converges to the fixed
+point `2 + 2√(1+δ) ≈ 4`.  A bound of `≈ 4` on an index is worthless — Roth's indices are far
+below 1.
+
+At `δ = 0` the recursion has the other fixed point, `κ = 0`, and stays there: that is the
+unperturbed argument working.  So the question "is `1/d` small enough?" has the answer **no,
+and smallness is not the issue** — the recursion amplifies any positive perturbation to the
+same place.
+
+**Consequence for the migration.**  Do not put `RothLemmaUniform` on clause 4's `p/q` form via
+the rounded bridge.  `le_pow_of_pow_le_pow`'s `S ≤ Q·e` is affordable only with `e` chosen so
+that no rounding occurs at all; a `RothBaseCase` variant taking the power bound *directly* —
+`|lead|^Q ≤ q^S` giving `index ≤ S/(Q·d)` with no ceiling — is the only version worth building.
+
+⚠ Recorded because the previous entry costed this at "at most `1/d`" and called affordability
+"not obvious".  It is obvious once the recursion is written down, and the answer is the
+opposite of the one smallness suggests. -/
+
+/-- **The slack recursion expands**: `2√x > x` for `0 < x < 4`, root-free.
+
+`y = 2√x` is `y ≥ 0 ∧ y² = 4x`. -/
+theorem two_sqrt_expands {x y : ℚ} (hx : 0 < x) (hx4 : x < 4) (hy : 0 ≤ y)
+    (h : y ^ 2 = 4 * x) : x < y := by
+  nlinarith [sq_nonneg (x - y), sq_nonneg x]
+
+/-- **And `4` is its fixed point** — so the amplification stops only where the bound is useless. -/
+theorem two_sqrt_fixed : ((4 : ℚ)) ^ 2 = 4 * 4 := by norm_num
+
+/-- ⚠ **At `m = 2` the unperturbed hypothesis has no room at all.**
+
+`Ψ ≤ (c+1)s²` is reached from `Θ_{m−1} ≤ c·s²` and `t ≤ s²`, and `t = s^{2^{m−1}}`, so at
+`m = 2` that reads `t = s²` — an **equality**.  Any `δ > 0` added to the base case exceeds the
+budget immediately, which is why `rothConstant_step_perturbed` has to carry `v` in its
+conclusion rather than absorb it. -/
+theorem two_pow_one_eq_two : (2 : ℕ) ^ (2 - 1) = 2 := by decide
+
 /-- **The induction step in `RothBound` shape** — the obligation the recursion has to meet.
 
 From the sub-problem's bound and §13's inequality, the assembled bound satisfies `RothBound` at

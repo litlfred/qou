@@ -3254,3 +3254,34 @@ place is exactly where the constants stop working: the `√2` in `le_two_mul_max
 So the check comes before the migration, not after. Recorded in the module rather than left as
 a plan, because a plan that has not costed its own main step is the thing this arc keeps
 catching itself writing.
+
+### ⚠⚠ The `1/d` slack does not survive the recursion — and smallness is not the issue
+
+The previous entry costed the migration at "at most `1/d`" and called affordability "not
+obvious, and not checked". It is obvious once the recursion is written down, and the answer is
+the **opposite** of the one smallness suggests.
+
+`rothConstant_step_perturbed` carries the perturbation through one step: from
+`Ψ ≤ (c+1)s² + v²` it gives `θ ≤ c_{m+1}·s + 2v`, both branches of the max still landing on
+`(c+1)s + v`. Iterating, with `Θ_m ≤ c_m·s_m + κ_m` and `s_{m+1}² = s_m`:
+
+    Ψ_{m+1} ≤ (c_m + 1)·s_{m+1}² + (κ_m + δ),      so   κ_{m+1} = 2·√(κ_m + δ).
+
+**That map expands.** `2√x > x` exactly on `0 < x < 4` (`two_sqrt_expands`), so from any
+`κ₁ ≥ 0` and **any** `δ > 0` the sequence increases strictly to the fixed point
+`2 + 2√(1+δ) ≈ 4`. A bound of ≈ 4 on an index is worthless — Roth's indices are far below 1.
+
+At `δ = 0` the recursion sits at its other fixed point, `κ = 0`, and stays: that is the
+unperturbed argument working. So there is no threshold below which `1/d` becomes safe. The
+recursion sends every positive perturbation to the same useless place.
+
+**Consequence, decided.** Do *not* migrate `RothLemmaUniform` onto clause 4's `p/q` form
+through the rounded bridge. `le_pow_of_pow_le_pow`'s `S ≤ Q·e` is usable only where `e` is
+chosen so no rounding occurs. The version worth building is a `RothBaseCase` variant taking the
+power bound **directly** — `|lead|^Q ≤ q^S` giving `index ≤ S/(Q·d)`, no ceiling anywhere.
+
+⚠ This is the third time this arc has asked "is this small slack affordable?" and the second
+time the answer was no. The `√2` in `le_two_mul_max_of_sum_le` cost `2^{m+1}−3 → 3^m−2`; the
+rounded `j` interval collapsed to empty; and now `1/d` amplifies to ≈ 4. **A square root in the
+recursion means slack does not shrink — it grows.** That is the general fact, and it should be
+the default expectation rather than a per-case discovery.
