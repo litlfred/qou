@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-24T17:11:01Z
+updated_at: 2026-08-24T17:21:42Z
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`
@@ -212,3 +212,49 @@ an exact-rational route that avoids the series), not the order.
 `c3even`'s `NS = 8`, and exact-series cost grows steeply with order, so if
 `c3even` exceeds 30 min then `c4even` should be worse. Recorded so the eventual
 number can be checked against it rather than rationalised after the fact.
+
+
+## The 78 → 101 question: RESOLVED, and it was a category error
+
+Measured with the audit's **own** counter on both files, plus a read of the
+comparison it actually performs:
+
+| quantity | value |
+|---|---|
+| `raw-float64-baseline.json` entry | **78** |
+| `count_raw_floats(committed)` | **45** |
+| `count_raw_floats(regenerated)` | **47** |
+
+And the gate's comparison, from `witness_raw_float64_audit.py:668`:
+
+```python
+grew = {f: (prior[f], n) for f, n in found.items()
+        if f in prior and n > prior[f]}      # prior = the BASELINE
+```
+
+**So regenerating `alpha_5_lp_dual_crystal` does NOT trip the ratchet.** 47 < 78
+puts it in `drained`, not `grew`; the gate passes and records a drain. The
+concern I raised is closed as a non-blocker, and #5500 is not obstructed here.
+
+**The 101 and the 78 were never comparable**, which is why this was written up as
+a question rather than a finding. `witness.py::_raw_float_paths` counts candidate
+paths *before* serialization (101); `witness_raw_float64_audit.py::count_raw_floats`
+counts the *serialized JSON* (45/47). Two functions, two objects. Had I reported
+"78 → 101 regression, #5500 blocked", it would have been wrong in both the number
+and the conclusion.
+
+Two residues, neither a defect:
+
+1. **Regeneration does add 2 fields** (45 → 47). Real drift, far under the
+   baseline, no gate consequence. Worth knowing only if someone later tightens
+   the entry.
+2. **The baseline entry overstates the committed file by 33** (78 vs 45). That is
+   safe *by construction* — the mechanism is drains-only, so a loose entry
+   under-ratchets rather than mis-passing. **Do not hand-edit it to 45**;
+   AGENTS.md forbids hand-editing baseline numbers, and the drain is supposed to
+   be recorded by a gate run, not by an agent typing a smaller number.
+
+Method note: the regeneration was done in the main tree with a single-file
+copy-out and `git checkout --` restore (9 s, one file touched), deliberately
+**not** a `git worktree` — the tree is 9.8 G against 13 G free, so a second
+checkout was not worth the disk.
