@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T14:10:06Z
+updated_at: 2026-08-24T14:55:22Z
 ---
 
 ## Landed — PR #5645
@@ -123,3 +123,61 @@ technique above does not depend on having it.
 
 **Answer to "need lit?": no.** The library had what was needed, which is also the honest reason the
 checklist puts the library tier before declaring anything open.
+
+
+## 2026-08-24 — the general-r route, and how much of it is now proved
+
+Three commits on `claude/general-r-vanishing-branching-2026-08-24` (PR #5662).
+
+**1. Vanishing generalises for free.** `QOU/SchurWeyl/WenzlWeightLevelR.lean`:
+`wenzlWeight r Q mu = schurPrincipal r Q mu / [r]_Q^{|mu|}`, and
+`wenzlWeight_eq_zero_iff : w_mu = 0 <-> r < mu.colLen 0` at every level.
+`schurPrincipal_eq_zero_iff` was already general in `r`; only my #5575
+specialisation fixed `r = 2`. Conservativity is proved, not asserted:
+`wenzlWeight_two_eq_ocneanuWeight` and `wenzlMarkovParam_conventionD`.
+
+**2. The branching route is NOT the twoRow route, and I found the right one.**
+The `twoRow` chain works because `schurPrincipal 2 Q (twoRow m k)` telescopes.
+Nothing telescopes at general `r`. The right object is the **Vandermonde /
+q-Weyl form**: with `x_i = Q^{mu_i + r - i}`,
+
+    s_mu(1,...,Q^{r-1}) = prod_{i<j} (x_i - x_j) / prod_{i<j} (Q^{r-i} - Q^{r-j})
+
+Adding a box to row `i` sends `x_i -> Q*x_i` and fixes every other `x_j`, so
+
+    s_{mu + box in row i} / s_mu  =  prod_{j != i} (Q*x_i - x_j)/(x_i - x_j)
+
+and branching is the assertion that those ratios sum to `[r]_Q`.
+
+**3. That sum is now PROVED, general r.** `QOU/Mathlib/LagrangeCoeffSum.lean`,
+`sum_prod_qratio`, sorry-free, axiom-clean. Route: Lagrange interpolation
+read as residue-summing (`sum_eval_div_prod_eq_coeff`, also new — Mathlib has
+the interpolation but not this reading), applied twice, to `divX f` and
+`divX g` for `f = prod (X - v j)`, `g = prod (Q*X - v j)`.
+
+It disposes of a case analysis the r = 2 chain needed a separate lemma for:
+if adding a box to row `i` would break the partition then `Q*x_i = x_{i-1}`
+and that summand is **already zero**, so summing over all rows and summing
+over addable rows are the same sum. `rowLen_two_addCell_row2` and the
+three-rows-vanish argument were the r = 2 shadow of this.
+
+Checked symbolically first (sympy, exact, r = 1..5) before writing any Lean.
+
+## What is left — one named classical fact, not a vague gap
+
+`sum_eq_bracket_mul_of_qratio_scaling` packages branching as a theorem
+CONDITIONAL on the box-addition ratio above. The only missing input is that
+ratio for `schurPrincipal` — equivalently the q-analogue of the
+Frame-Robinson-Thrall hook-length identity, relating `prod_c (1 - Q^{h(c)})`
+to the shifted parts `x_i`. Neither it nor Pieri is in Mathlib.
+
+Deliberately NOT stated as a `sorry`: a `sorry` in a library file is
+indistinguishable from a proved lemma to every consumer.
+
+Two sub-bricks, in order:
+  (a) `prod_{c in mu} (1 - Q^{h(c)}) = prod_i prod_{k<=l_i} (1-Q^k) / prod_{i<j} (1 - Q^{l_i - l_j})`
+  (b) the Vandermonde ratio under `x_i -> Q*x_i`, ~150 lines of Finset
+      surgery splitting `prod_{i<j}` into pairs containing `i` and pairs not.
+
+(a) is the hard half. #5645's `hookLength_addCell_of_mem` is the local
+version of it and should feed the induction.

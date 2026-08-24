@@ -9,6 +9,8 @@ Two facts about Lagrange interpolation that Mathlib states only implicitly.
 |---|---|
 | `coeff_lagrangeBasis` | the top coefficient of `Lagrange.basis s v i` is `∏_{j ≠ i} (v i − v j)⁻¹` |
 | `sum_eval_div_prod_eq_coeff` | for `deg f < |s|`, `∑_i f(v i) / ∏_{j≠i}(v i − v j) = f.coeff (|s| − 1)` |
+| `sum_prod_qratio` | `∑_i ∏_{j≠i} (Q·v i − v j)/(v i − v j) = 1 + Q + ⋯ + Q^{|s|−1}` |
+| `sum_eq_bracket_mul_of_qratio_scaling` | the same, packaged as the branching identity |
 
 The second is the algebraic form of "the sum of the residues of `f/∏(X − v j)` over its poles reads
 off the top coefficient of `f`".  It is the workhorse: with a well-chosen `f` it turns a sum of
@@ -191,5 +193,25 @@ theorem sum_prod_qratio {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
   refine mul_left_cancel₀ hQ1' ?_
   rw [sub_one_mul_geom_sum]
   linear_combination hB
+
+/-- **Branching, for any weight family whose box-addition ratio is the `q`-ratio.**
+
+If `w i` — the weight of "`μ` with a box added in row `i`" — is `W`, the weight of `μ`, times the
+`i`-th `q`-ratio, then `∑_i w i = [|s|]_Q · W`.  That is the branching identity, and this is the
+form in which `sum_prod_qratio` delivers it.
+
+The hypothesis `hw` is the one remaining input, and it is a genuine sub-hypothesis rather than a
+restatement of the conclusion: it is the classical fact that the level-`r` principal specialisation
+is the Vandermonde ratio in the shifted parts `x_i = Q^{μ_i + r − i}`, from which the box-addition
+ratio follows because adding a box to row `i` sends `x_i ↦ Q·x_i` and fixes every other `x_j`.
+Establishing `hw` for `QBeta.WenzlWeight.schurPrincipal` — equivalently, the `q`-analogue of the
+Frame–Robinson–Thrall hook-length identity relating `∏_c (1 − Q^{h(c)})` to the `x_i` — is what
+still stands between this and general-`r` branching for the corpus weight.  Tracked on bean
+`qou-j7ln`; it is *not* stated here as a `sorry`. -/
+theorem sum_eq_bracket_mul_of_qratio_scaling {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
+    (hv0 : ∀ i ∈ s, v i ≠ 0) {Q : F} (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (w : ι → F) (W : F)
+    (hw : ∀ i ∈ s, w i = (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)) * W) :
+    ∑ i ∈ s, w i = (∑ k ∈ Finset.range s.card, Q ^ k) * W := by
+  rw [Finset.sum_congr rfl hw, ← Finset.sum_mul, sum_prod_qratio hv hv0 hQ0 hQ1]
 
 end QOU.Mathlib
