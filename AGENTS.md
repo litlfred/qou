@@ -2005,7 +2005,7 @@ muon; muon-anchor → ~4000σ on proton).
      cache, move the *whole* quantity to proton rather than leaving one
      input on each layer (see the straddling hazard above).
    - **Do NOT do it by emptying `ideal_muon` in the manifest.** The
-     tempting one-line version of this migration is to move all 257 stems
+     tempting one-line version of this migration is to move every stem
      from `ideal_muon` to `physical_proton` in
      [`computations/q0_anchor_manifest.json`](computations/q0_anchor_manifest.json)
      and declare the end state reached. **That is not a migration, it is a
@@ -2015,10 +2015,19 @@ muon; muon-anchor → ~4000σ on proton).
      anti-corruption guard that hard-fails when the muon anchor cannot be
      established (`"Refusing to fall back to proton silently"`) can no
      longer fire for any of them, because none of them ask for it. The
-     relabel also decouples the declaration from reality across 257
-     producers at once: every witness they have already emitted was
+     relabel also decouples the declaration from reality across every
+     listed producer at once: every witness they have already emitted was
      computed at the muon pin and stays that way, now labelled proton.
      Proposed in PR #5049 and deliberately NOT merged (#5315).
+     **And the list does not end at zero.** Measured 2026-08-24: three
+     producers refuse a proton run *by design* — `atomic_tr_m_mpfr_50dps`
+     (dual-layer, emits one witness per layer),
+     `he4_stage2_ranking_seminormal_xcheck` (asserts the muon prefix off
+     the anchor-defining witness), and `cross_check_trM_1ppb` ("L1
+     cross-check must run under the MUON q0 pin") — several more hold the
+     muon value as a deliberate reference, and `q_pinning_50_digit`
+     defines the anchor. A run that drove `ideal_muon` to zero would be a
+     bug, not a completed migration.
    - **Measured cost of getting this wrong, 2026-08-19.** The sweep ran
      producer-by-producer, as it should — and still took main RED, because
      it regenerated `computations/q-pinning-50-digit.witness.json` at the
