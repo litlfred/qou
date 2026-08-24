@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.QRatioBetaFactors
 import QOU.SchurWeyl.PairProductSplit
+import QOU.Mathlib.VandermondeUpdateRatio
 
 /-!
 # QOU.SchurWeyl.SchurPrincipalBranching — the box-addition ratio for `schurPrincipal`
@@ -19,6 +20,7 @@ together gives the box-addition ratio.
 | `rowColProd Q r a μ` | the row-`a` and column-`a` factors of `P_μ` |
 | `betaPairProd_addCell` | `P_ν · (row·col)_μ = P_μ · (row·col)_ν` |
 | `schurPrincipal_addCell_mul` | **the box-addition ratio, cross-multiplied** |
+| `qratio_prod_eq_rowColProd` | the `q`-ratio **is** `Q^a · (row·col)_ν/(row·col)_μ` |
 
 The headline is stated **division-free** on purpose: as a cross-multiplied equation it needs no
 non-vanishing hypothesis beyond the two the closed form already carries, so it stays true at the
@@ -111,5 +113,46 @@ theorem schurPrincipal_addCell_mul (Q : F) {r : ℕ} {μ : YoungDiagram} {s : �
           * (betaPairProd Q r μ * rowColProd Q r s.1 (addCell μ s hs)) := by rw [hsplit]
     _ = Q ^ s.1 * rowColProd Q r s.1 (addCell μ s hs)
           * (Q ^ QOU.QBeta.WenzlWeight.nPart μ * betaPairProd Q r μ) := by ring
+
+/-! ## The `q`-ratio, identified -/
+
+/-- **The `q`-ratio is `Q^a` times the row-column ratio.**
+
+`∏_{j ≠ a} (Q·x_a − x_j)/(x_a − x_j) = Q^a · (row·col)_ν / (row·col)_μ`,  `x_i = Q^{β_i}`.
+
+Unconditional beyond `Q ≠ 0`: a product of quotients is the quotient of the products in any field,
+and the two `QRatioBetaFactors` lemmas supply the factorwise identity — `j > a` exactly, `j < a`
+with one `Q`.  The `a` copies of `Q` from the rows above are what becomes `Q^a`. -/
+theorem qratio_prod_eq_rowColProd (Q : F) (hQ : Q ≠ 0) {r : ℕ} {μ : YoungDiagram} {s : ℕ × ℕ}
+    (hs : IsAddableCell μ s) (ha : s.1 < r) :
+    (∏ j ∈ (Finset.range r).erase s.1,
+        (Q * Q ^ betaR r μ s.1 - Q ^ betaR r μ j) / (Q ^ betaR r μ s.1 - Q ^ betaR r μ j))
+      = Q ^ s.1 * (rowColProd Q r s.1 (addCell μ s hs) / rowColProd Q r s.1 μ) := by
+  have hνa : betaR r (addCell μ s hs) s.1 = betaR r μ s.1 + 1 := by
+    rw [betaR_addCell hs, if_pos rfl]
+  have hνj : ∀ j, j ≠ s.1 → betaR r (addCell μ s hs) j = betaR r μ j := fun j hj => by
+    rw [betaR_addCell hs j, if_neg hj, Nat.add_zero]
+  rw [QOU.Mathlib.prod_erase_range_split r s.1 ha]
+  -- rows above `a`: one `Q` each
+  have hup : ∀ j ∈ Finset.range s.1,
+      (Q * Q ^ betaR r μ s.1 - Q ^ betaR r μ j) / (Q ^ betaR r μ s.1 - Q ^ betaR r μ j)
+        = Q * ((1 - Q ^ (betaR r (addCell μ s hs) j - betaR r (addCell μ s hs) s.1))
+            / (1 - Q ^ (betaR r μ j - betaR r μ s.1))) := by
+    intro j hj
+    rw [Finset.mem_range] at hj
+    rw [qratio_factor_upper Q hQ _ _ (betaR_lt hj ha), hνa, hνj j (by omega), Nat.sub_sub]
+  -- rows below `a`: exact
+  have hdown : ∀ j ∈ Finset.Ico (s.1 + 1) r,
+      (Q * Q ^ betaR r μ s.1 - Q ^ betaR r μ j) / (Q ^ betaR r μ s.1 - Q ^ betaR r μ j)
+        = (1 - Q ^ (betaR r (addCell μ s hs) s.1 - betaR r (addCell μ s hs) j))
+            / (1 - Q ^ (betaR r μ s.1 - betaR r μ j)) := by
+    intro j hj
+    rw [Finset.mem_Ico] at hj
+    rw [qratio_factor_lower Q hQ _ _ (le_of_lt (betaR_lt (by omega) hj.2)), hνa,
+      hνj j (by omega)]
+  rw [Finset.prod_congr rfl hup, Finset.prod_congr rfl hdown, Finset.prod_mul_distrib,
+    Finset.prod_const, Finset.card_range, Finset.prod_div_distrib, Finset.prod_div_distrib,
+    rowColProd, rowColProd]
+  field_simp
 
 end QOU.SchurWeyl
