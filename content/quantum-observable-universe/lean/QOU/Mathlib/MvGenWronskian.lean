@@ -435,6 +435,25 @@ theorem degreeOf_mvGenWronskian_le [DecidableEq σ] {m : ℕ} (i : σ) (D : Fin 
       ≤ ∑ _k : Fin m, d := Finset.sum_le_sum fun k _ => hterm k
     _ = m * d := by simp
 
+/-- **A non-vanishing generalized Wronskian forces independence** — the contrapositive of
+`mvGenWronskian_eq_zero_of_dependent`.
+
+⚠ Worth having in this direction.  After the tenth correction, `hres` carries
+`mvGenWronskian Dx φ ≠ 0` and `mvGenWronskian Dy ψ ≠ 0`, and this says those hypotheses
+already supply the independence that the factors' *degree* bounds need.  The repair for
+correction 10 turned out to hand over exactly what the next step was missing. -/
+theorem linearIndependent_of_mvGenWronskian_ne_zero [IsDomain R] {m : ℕ}
+    (D : Fin m → List σ) (f : Fin m → MvPolynomial σ R)
+    (h : mvGenWronskian D f ≠ 0) : LinearIndependent R f := by
+  classical
+  rw [Fintype.linearIndependent_iff]
+  intro c hc j
+  by_contra hcj
+  refine h (mvGenWronskian_eq_zero_of_dependent D f c (fun hz => hcj (by rw [hz]; rfl)) ?_)
+  rw [← hc]
+  exact Finset.sum_congr rfl fun i _ => (smul_eq_C_mul _ _).symm
+
+
 /-- **A bounded-order family can be degenerate**, and for `m ≥ 2` an obvious one always is:
 take every operator list empty.  The order condition `|D i| ≤ i` holds (`0 ≤ i` for every
 `i`), the matrix has all rows equal to `f`, and the determinant vanishes.

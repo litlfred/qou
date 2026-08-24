@@ -2646,3 +2646,56 @@ hypothesis about all families can only carry data that does not vary across them
 
 Verification: `lake build` with `.olean` deleted — exit 0, no errors, no linter output;
 `#print axioms`-clean; downstream `RothInductionHypothesis` still builds.
+
+---
+
+## 2026-08-24 — the degree half of `hres` becomes family-uniform; and where the assembly bottoms out
+
+Two theorems, and one finding about what "assemble `hres`" actually means.
+
+```
+linearIndependent_of_mvGenWronskian_ne_zero   Wronskian ≠ 0 ⟹ the family is independent
+degreeOf_factor_le_of_indep                   factors' degrees ≤ P's, given the OTHER family
+                                              is independent
+```
+
+### ⚠ Correction 10's repair handed over exactly what was missing
+
+`hres` quantifies over families, so every hypothesis it carries must be statable *before* the
+family is known. The `x` and `y` halves need `degreeOf j (φ k) ≤ d₁ j` — which looks
+family-dependent, and **is false in general**: for `P = x₀y₀` the length-`2` representation
+`φ = ![x₀ + x₀⁵, −x₀⁵]`, `ψ = ![y₀, y₀]` telescopes back to `P` while `φ 0` has degree `5`.
+
+What rules that out is `ψ` being **dependent** — and after correction 10, `hres` already
+carries `mvGenWronskian Dy ψ ≠ 0`, which forces independence. So the repair for correction 10
+supplied precisely the hypothesis the next step needed. Recording that because the reverse is
+the usual experience: a repair narrowing a statement usually costs something downstream.
+
+The degree bound is then family-uniform — `degreeOf (Sum.inl j) P`, which does not vary.
+
+### ⚠ Where the assembly bottoms out: §14, which is unread
+
+Working out the rest of `hres`'s auxiliary data gives a definite answer to what remains, and it
+is not more Lean.
+
+`abs_coeff_det_sepFamily_le` makes the height bound uniform in `P`, but its value depends on
+`r`: `B_r = r!·(S·(d^{2r}·B_P))^r`. The halves also need `B_r ≤ qd_j^{E_r}` and
+`(E_r : ℚ) ≤ ε·(r·d_j)`. Taking logs and dividing by `r`, those two force
+
+    [log r!/r + log S + 2r·log d + log B_P] / log qd  ≤  ε·d_j,
+
+whose dominant term is `2r·log d / log qd`. Whether that holds is exactly the parameter
+bookkeeping of §11 (property `Γ_m`) and §14 — **both unread**, and both in the illegible
+region of the scan.
+
+So "assemble `hres`" is not a bookkeeping step after all: it terminates in a numeric condition
+the arc has consistently refused to assert. The honest shape for the assembly is to take that
+condition as one named hypothesis — isolating §14 to a single place rather than diffusing it —
+and that is what to write next.
+
+⚠ Stated so the arc does not repeat correction 6's mistake in reverse: the condition above is
+*derived from the arc's own theorems*, not read from the source. If §14's conditions differ, a
+theorem proved against this one is about `RothLemmaUniform`, not about Roth's lemma.
+
+Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, 2819 jobs, no
+errors, no linter output. Both declarations `#print axioms`-clean.
