@@ -2910,3 +2910,47 @@ proof body, which has not been read.
 flagged it unused, and it is genuinely not needed — a negative `w` only makes `s + 2w` smaller.
 Three times now the linter has been the cheap version of the signal corrections 9 and 10 cost
 real work to get.
+
+### ⚠⚠ Correction fourteen — one wrong subscript, and the whole side condition evaporates
+
+§13's body read. The display is
+
+    J(A) ≤ t + 2·max( (1/n)·J(W) , √( (1/n)·J(W) ) )
+
+— **both** branches over the *same* quantity. Correction 9 transcribed the second as
+`√(J(W)/r_m)`, and that single wrong subscript is the entire origin of this arc's side
+condition. `index_le_two_mul_max_of_det_bound` carries `q` as a stand-in for `√(S/rr)` with
+`rr = D₂ ≈ r_m`, and needs `S ≤ q²·rr` to justify it. At the source's `rr = n = r` the
+condition is **automatic** — take `q² = S/r`.
+
+So the junction condition `S ≤ Ψ·rr`, at `rr = r` and `S = r·Φ`, is just `Φ ≤ Ψ`
+(`le_mul_of_factor_le`). And §13's body gives
+
+    Φ_m = Θ_{m−1}(b; ρ; H) + Θ₁(b; ρ_m; H_m),    Ψ_m = Θ_{m−1}(b; ρ; H) + t,
+
+so `Φ ≤ Ψ` is exactly `Θ₁ ≤ t` (`factor_le_of_theta_one_le`) — which §13 proves from `Γ_m`:
+§10 gives `Θ₁ ≤ log b/(ρ_m log H_m)`, clause 2 replaces the denominator (`ρ_h = n·r_h`, so
+`r_m log H_m ≥ r₁ log H₁` lifts to `ρ_m log H_m ≥ ρ₁ log H₁`), and §11's
+`b ≤ H₁^{(1/(m−1))ρ₁t}` bounds the numerator, giving `t/(m−1) ≤ t` for `m ≥ 2`. Landed as
+`theta_one_le_of_gamma`.
+
+**The "largeness requirement on the split-off degree" was an artifact.** Two turns were spent
+isolating, naming and then explaining a condition that does not exist in the source. What
+produced it was not faulty reasoning downstream — the arithmetic was right each time — but a
+transcription error upstream that nothing downstream could see.
+
+### What §13's body confirms
+
+Two things exactly as this arc had them, which is worth recording because the same reading
+overturned a third:
+
+- `Φ_m = Θ_{m−1} + Θ₁` — the **sum of the two halves**, i.e. the arc's `Φ = εU + εV`;
+- `J(W) ≤ n·Φ_m` — which is `factor_bound_of_rescaled` verbatim, `n` being the arc's `r`.
+
+### ⚠ A pattern in the unused hypotheses
+
+Four hypotheses now written down and found unused: `0 ≤ u`, `0 ≤ Φ`/`0 ≤ D₂`, `0 ≤ w`, and
+`0 ≤ log b`. All four came from transcribing the **paper's proof route** rather than the route
+Lean actually takes. `theta_one_le_of_gamma` is the clearest case: the source replaces the
+denominator first, which needs `log b ≥ 0`; bounding the numerator and multiplying through
+never forms that quotient. The linter is catching a specific habit, not random slack.

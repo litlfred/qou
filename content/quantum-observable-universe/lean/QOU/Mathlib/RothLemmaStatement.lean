@@ -603,6 +603,10 @@ Wronskians' summed index at the *unscaled* degrees by `r·(εU + εV)`, so the a
 the size of `Φ`.  Since `Θ_{m−1} ≤ c_{m−1}·t^{2^{−(m−2)}}` is for small `t` much larger than
 `t`, `d₂` must be at least `Φ/t`.
 
+⚠⚠ **Superseded by correction fourteen below** — §13's second max branch is `√(J(W)/n)`, not
+`√(J(W)/r_m)`, so this requirement does not arise at all at the source's normalisation.  Kept
+because this arc keeps its corrections visible rather than deleting them.
+
 ⚠⚠ **Correction thirteen: this is a cost of the arc's own §13 formulation, not a hypothesis of
 Roth's lemma.**  §13's packaged conclusion is Mahler's **Lemma 4**, now read:
 
@@ -633,6 +637,74 @@ theorem factor_bound_le_of_split_degree {Φ t D₂ : ℚ} {d₂ : ℕ}
 theorem factor_bound_le_of_split_degree_eq {Φ t : ℚ} {d₂ : ℕ} (h : Φ ≤ t * (d₂ : ℚ)) :
     ((d₂ : ℚ) + 1) * Φ ≤ (Φ + t) * (d₂ : ℚ) :=
   factor_bound_le_of_split_degree (by nlinarith)
+
+/-! ### ⚠⚠ Correction fourteen: `√(J(W)/r_m)` was `√(J(W)/n)`, and the side condition evaporates
+
+§13's body has now been read.  The display is
+
+    J(A) ≤ t + 2·max( (1/n)·J(W) , √( (1/n)·J(W) ) )
+
+— **both** branches over the *same* quantity `(1/n)J(W)`.  Correction 9 transcribed the second
+as `√(J(W)/r_m)`, and that single wrong subscript is the entire origin of this arc's side
+condition: `index_le_two_mul_max_of_det_bound` carries `q` as a stand-in for `√(S/rr)` with
+`rr = D₂ ≈ r_m`, and needs `S ≤ q²·rr` to justify it.  With the source's `rr = n = r` the
+condition is **automatic** — take `q² = S/r` — and everything downstream of it collapses.
+
+Two things §13's body confirms rather than corrects, both exactly as this arc had them:
+
+* `Φ_m = Θ_{m−1}(b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1}) + Θ₁(b; ρ_m; H_m)` — the **sum of the two
+  halves**, which is the arc's `Φ = εU + εV`;
+* `J(W) ≤ n·Φ_m` — which is `RothInductionStep.factor_bound_of_rescaled` verbatim, `n` being
+  the arc's `r`.
+
+So the junction condition `S ≤ Ψ·rr`, at `rr = r` and `S = r·Φ`, is just `Φ ≤ Ψ`; and since
+`Ψ_m = Θ_{m−1} + t` while `Φ_m = Θ_{m−1} + Θ₁`, that is exactly `Θ₁ ≤ t` — which §13 proves
+from `Γ_m`.  The whole "largeness requirement on the split-off degree" was an artifact. -/
+
+/-- **`Φ ≤ Ψ` reduces to `Θ₁ ≤ t`.**  `Φ_m = Θ' + Θ₁` and `Ψ_m = Θ' + t`, so the two differ
+only in the `y`-side term. -/
+theorem factor_le_of_theta_one_le {Θ' Θ₁ t : ℚ} (h : Θ₁ ≤ t) : Θ' + Θ₁ ≤ Θ' + t := by linarith
+
+/-- **The junction condition at the source's normalisation** — free, given `Φ ≤ Ψ`.
+
+`S = r·Φ` and `rr = r`, so `S ≤ Ψ·rr` is `r·Φ ≤ Ψ·r`.  No largeness requirement, no condition
+on the split-off degree.  Contrast `factor_bound_le_of_split_degree` above, which is what the
+mis-transcribed `r_m` cost. -/
+theorem le_mul_of_factor_le {Φ Ψ r : ℚ} (hr : 0 ≤ r) (h : Φ ≤ Ψ) : r * Φ ≤ Ψ * r := by
+  nlinarith
+
+/-- **§13's discharge of `Θ₁ ≤ t` from `Γ_m`**, with the logarithms carried as variables.
+
+§10 gives `Θ₁(b; ρ_m; H_m) ≤ log b / (ρ_m log H_m)`.  Then `Γ_m` clause 2 — `r_m log H_m ≥
+r₁ log H₁`, hence `ρ_m log H_m ≥ ρ₁ log H₁` since `ρ_h = n·r_h` — lets the denominator be
+replaced, and §11's `b ≤ H₁^{(1/(m−1))ρ₁t}` bounds the numerator.  What comes out is
+`t/(m−1) ≤ t`, using `m ≥ 2`.
+
+⚠ `logb`, `L₁`, `Lm` stand for `log b`, `log H₁`, `log H_m`; nothing here is about logarithms,
+only about the inequalities they satisfy.  That keeps the step in `ℚ` and matches how the rest
+of this arc handles the height chain.
+
+⚠ **`0 ≤ log b` is not a hypothesis, and the reason is worth naming.**  The source's route
+replaces the denominator first — `log b/(ρ_m log H_m) ≤ log b/(ρ₁ log H₁)` — and *that* needs
+`log b ≥ 0`.  The proof below never forms that quotient: it bounds `log b` above and multiplies
+through, so the positivity never arises.
+
+That is the fourth hypothesis this arc has written down and then found unused (`0 ≤ u`,
+`0 ≤ Φ`/`0 ≤ D₂`, `0 ≤ w`, and now this), and all four came from transcribing the *paper's*
+proof route rather than the route Lean actually takes.  Worth watching for: the linter is
+catching a specific habit, not random slack. -/
+theorem theta_one_le_of_gamma {m : ℕ} (hm : 2 ≤ m) {ρ₁ ρm L₁ Lm logb t : ℚ}
+    (hpos : 0 < ρ₁ * L₁) (hge : ρ₁ * L₁ ≤ ρm * Lm) (ht : 0 ≤ t)
+    (hb : logb ≤ ρ₁ * t * L₁ / ((m : ℚ) - 1)) :
+    logb / (ρm * Lm) ≤ t := by
+  have hp2 : 0 < ρm * Lm := lt_of_lt_of_le hpos hge
+  have hm1 : (1 : ℚ) ≤ (m : ℚ) - 1 := by
+    have : (2 : ℚ) ≤ (m : ℚ) := by exact_mod_cast hm
+    linarith
+  have hnum : (0 : ℚ) ≤ ρ₁ * t * L₁ := by nlinarith
+  have h2 : ρ₁ * t * L₁ / ((m : ℚ) - 1) ≤ ρ₁ * t * L₁ := div_le_self hnum hm1
+  rw [div_le_iff₀ hp2]
+  nlinarith
 
 /-- **Non-vacuity of the junction.**  `m = 1`, `s = 1/4`, `Ψ = 1/8`, `t = 1/16`, `A = q = 1/4`,
 `θ = 1/16 + 1/2 = 9/16`; the conclusion is `RothBound 2 (1/16) (9/16)`, a real bound. -/
