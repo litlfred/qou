@@ -5754,3 +5754,50 @@ in *some* letter ≠ `y`", because A's two normal-form terms end in `σ₀` and 
 respectively.
 
 `deep_selfOverlap_resolves` compiled first try once those were in place.
+
+### §4bx — what the unconditional criterion discharges, and what it does not
+
+Two theorems in `HeckeGS.lean` §7 — `heckeCost_well_defined` and
+`threading_cost_unique` — take the Gröbner–Shirshov property as an explicit
+hypothesis on `heckeRewritingSystem`. **That hypothesis is refuted in the same
+file** (`hecke_is_gs_basis_false`, §4e, via `NotAGSBasis` at `n = 4`), so both
+are vacuous: true, unusable, and deliberately parked. Their own docstring says
+so — *"it becomes usable once the Bokut–Shiao completion is added."*
+
+Added now: `heckeCompleted_normalForm_unique` and
+`heckeCompleted_threading_cost_unique`, the same two statements against the
+completed system, with the hypothesis discharged.
+
+**They are NOT sorry-free in the sense the criterion is, and I nearly reported
+them as if they were.** Measured:
+
+```
+heckeCompleted_isGrobnerShirshovBasis
+  → [propext, Classical.choice, Quot.sound]
+heckeCompleted_normalForm_unique
+  → [propext, Classical.choice, Quot.sound,
+     UGB.GrobnerShirshov.local_confluence,
+     UGB.GrobnerShirshov.reduction_well_founded]
+```
+
+The two extra come through `normal_form_unique` and are pre-existing library
+axioms of the Diamond Lemma machinery, neither introduced here:
+`local_confluence` (Bergman 1978 §3 Thm 1.2 — "all S-polynomials resolve" ⟹
+local confluence, axiomatised because the three-case argument needs
+`AlgElement` subtraction) and `reduction_well_founded` (Bergman 1978 §2 Thm 1.1
+— termination, needing a multiset support representation and Dershowitz–Manna).
+
+So the honest statement is: **given the Diamond Lemma**, the completed Hecke
+system has unique normal forms at every `n`. The GS-basis half is now proved
+outright; the Diamond Lemma half is still assumed. Recorded in the §4bx
+docstring as well as here, because the axiom list is the kind of thing a reader
+will not re-derive.
+
+### Bean status
+
+The title names `hecke_is_gs_basis` — an axiom asserting the **uncompleted**
+`heckeRewritingSystem` is a GS basis. That axiom is gone, and it is gone because
+the corpus **refuted** it, not because it was proved: `hecke_is_gs_basis_false`
+at `HeckeGS.lean:661`. The bean's goal in its corrected form — a proved GS basis
+giving normal forms at general `n` — is what `heckeCompleted_isGrobnerShirshovBasis`
+now is.
