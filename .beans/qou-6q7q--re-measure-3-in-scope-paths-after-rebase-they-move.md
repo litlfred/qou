@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:37:53Z
-updated_at: 2026-08-23T16:23:05Z
+updated_at: 2026-08-24T18:08:27Z
 ---
 
 ## The claim that needs qualifying
@@ -60,3 +60,54 @@ Worth re-running this check at rebase time rather than trusting it then — but
 it means the sweep's currency is holding up better than the raw
 commits-behind number (98) suggests. Commits-behind is the wrong metric here;
 in-scope-paths-changed is the right one, and it is 3.
+
+
+---
+
+## Re-measured after the rebase — and 2 of the 3 were never in scope
+
+Re-ran this bean's own check against current `origin/main`, post-rebase.
+
+**The two producers this bean singles out are not in the sweep at all.**
+`binding_qgaussian_ell1_ceiling_measurement` and
+`flavor_split_alpha_bond_dilog_probe` do not appear **anywhere** in
+`2026-08-23-q0-muon-staleness-sweep.json` — not in `results`, not in `skipped`,
+which holds exactly one unrelated entry. The sweep is `measured: 47, total: 47`.
+
+So this bean's sharpest argument —
+
+> an UNCHANGED measured against the pre-migration producer says nothing about
+> the migrated one
+
+— **describes a verdict that does not exist.** There is no entry to invalidate
+and nothing to re-measure for either. The prescribed fix ("delete just these
+three producers' entries and re-run with `--resume`") is inapplicable to two of
+the three for the simple reason that they have no entries.
+
+**The cause is a set conflation.** The "111 in-scope paths" set is *producers in
+the muon population and their witnesses*; the sweep measured a **different,
+smaller** set of 47. Drift in the first set does not imply a stale verdict in
+the second, and this bean treated them as the same set.
+
+**Do not read my own re-run count as a comparable number either.** I recovered
+94 paths from the sweep JSON's own keys; the bean counted 111 by a broader
+definition. 94 vs 111 is two different denominators, not a shrinking set.
+
+## What actually remains: one producer
+
+| path | status |
+|---|---|
+| `computations/audits/q0-anchor-consistency-audit.witness.json` | **real** — differs from main; its producer *is* in `results`, verdict `SUBSTANTIVE` |
+| `computations/probes/binding_qgaussian_ell1_ceiling_measurement.py` | not in the sweep — no verdict exists |
+| `computations/probes/flavor_split_alpha_bond_dilog_probe.py` | not in the sweep — no verdict exists |
+
+The rebase also absorbed the two producers' file-level drift (my branch now
+carries main's versions), so even the tree-level difference this bean opened on
+is gone for them.
+
+One further path differs from main — `parabolic-cylinder-channel-mixing-probe.witness.json`
+— which is **this branch's own commit** (`qou-ircb`), not drift.
+
+So the re-measurement scope is **1 producer, not 3**, and it is running via the
+`--resume` path this bean prescribed — which is the part of the plan that does
+work, and the checkpointing is what makes it cost one producer instead of 47.
