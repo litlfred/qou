@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:40:49Z
+updated_at: 2026-08-24T16:48:46Z
 ---
 
 ## Landed — PR #5645
@@ -629,3 +629,49 @@ general-`r` analogue of the merged convention-D chain:
 `vandPairProd` / `sum_vandPairProd_scale` stay proved and correct; the final
 route did not need them, and that is recorded in the file headers rather than
 deleted.
+
+
+## Toward the headline sum
+
+Commits `45db7a60a`, `9209649a2`. Also retitled PR #5662 — its title still said
+"branching reduced to one named classical fact", which was true when written
+and is not now.
+
+* `qratio_prod_eq_zero_of_not_addable` — a row that cannot take a box
+  contributes 0, because `mu_{a-1} = mu_a` forces `beta_{a-1} = beta_a + 1`,
+  hence `Q*x_a = x_{a-1}`. The `schurPrincipal`-level counterpart of
+  `vandPairProd_update_eq_zero`, and why the r=2 chain's
+  `rowLen_two_addCell_row2` needs no general-r analogue.
+* `isAddableCell_rowEnd_iff` — row `a` takes a box iff `a = 0` or
+  `mu_a < mu_{a-1}`. The other two `IsAddableCell` clauses are automatic at a
+  row end. `not_isAddableCell_rowEnd` is the contrapositive in the form the
+  vanishing lemma consumes.
+
+### The headline statement, and what it still needs
+
+    sum_{a<r} (if addable a then s_{mu + box at a} else 0)
+      = [r]_Q * s_mu
+
+is `sum_eq_bracket_mul_of_qratio_scaling` at `v i = Q^{beta_i}`, `W = s_mu`,
+with `w` total via `addCellOrSelf` (already in the corpus, with a decidability
+instance beside it). `hw` splits: addable rows by
+`schurPrincipal_addCell_eq`, non-addable by
+`qratio_prod_eq_zero_of_not_addable` making both sides 0.
+
+Four hypotheses still have to be supplied, and none is deep — but they are
+four, so budget a brick rather than a tail:
+
+1. `Set.InjOn (fun i => Q^{beta_i}) (range r)` — from `betaR_lt` plus
+   root-of-unity genericity.
+2. `(addCell mu s).colLen 0 <= r` for each addable row — true because adding
+   at row `a < r` either keeps `colLen 0` or raises it to `a+1 <= r`, but it
+   needs a `colLen_zero_addCell` lemma.
+3. `hD` at `nu` — the hook product of `mu + box` is nonzero. Same genericity;
+   `hookLength_addCell_of_mem` (#5645) describes the new hooks.
+4. `levelConst != 0` and `rowColProd != 0` — products of `1 - Q^k` at nonzero
+   `k`, so again genericity plus `betaR_lt`.
+
+All four are instances of "Q is not a root of unity", so the clean move is
+probably to package that once as a hypothesis class or a single
+`IsGeneric Q r` predicate rather than threading four separate non-vanishing
+conditions through every statement. Worth deciding before writing them.
