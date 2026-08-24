@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:04:11Z
-updated_at: 2026-08-24T22:04:50Z
+updated_at: 2026-08-24T23:07:22Z
 ---
 
 ## What is established
@@ -85,3 +85,60 @@ treating any of this as a compute defect. If they do, the script's framing is
 wrong and its 1e-9 tolerance is being applied across a convention boundary; if
 they do not, there is a real disagreement between three supposedly independent
 routes to the same quantity, which is a much larger finding.
+
+
+## 2026-08-24 RESOLVED for 2 of 3 path-pairs — and my convention hypothesis was WRONG
+
+The lead recorded above ("likely a CONVENTION mismatch") is **refuted**. Two
+separate, mundane causes account for everything except the Wenzl-LR leg.
+
+### Cause 1 — the peel witness was STALE (7% .. 55%)
+
+Its own rows carry `bridge_witness_value` and `abs_diff_vs_bridge ~ 1e-8`: it
+AGREED with its bridge to eight digits when it ran, on 2026-08-09. The bridge was
+then regenerated on 2026-08-22 (`ecd6594d436`, "q0(ibbr): SOLVED — my own
+migration commit, found by bisect"), after `5eb5f275d20` on 08-19 found "the muon
+tr_M witness held PROTON numbers — collateral of the pin corruption". Every
+bridge value moved; the peel witness did not.
+
+Re-ran the producer (161.6s wall, all six atoms). helium-3 now matches its bridge
+at **|diff| = 1.4e-50**. `hoefsmit_vs_markov_peel` collapsed from 0.065..0.55 to
+6.9e-8 .. 2.5e-7.
+
+### Cause 2 — the residual 1e-7 was the SAME straddle as PR #5723
+
+Those residuals are not merely similar to the `tr_m_q_hecke_seminormal`
+straddle values, they are IDENTICAL: 7.84e-8 proton, 1.51e-7 deuteron, 2.52e-7
+helium-3. The peel and Wenzl-LR witnesses are PROTON; the base-name Hoefsmit
+witness is MUON. Pointed the cross-check at the proton twin:
+
+    hoefsmit_vs_markov_peel : n=5  diverge=0  max |delta_rel| = 4.4e-50
+
+Five of five OK. Second confirmed site of the defect `reference_anchor_straddle_audit`
+(#5727) was built to find.
+
+### What the colour evidence actually said
+
+I read `bridge_is_color_blind: True` as support for a convention mismatch. The
+producer's own log line reads *"color-weighting Δ (expected; bridge is
+color-blind)"* and reports that Δ as **1.4e-50** — i.e. there is NO colour
+difference in these values at all. The field names a distinction that does not
+move the number. I inferred a cause from a field NAME without checking the
+magnitude it was attached to.
+
+### STILL OPEN — and now isolated
+
+The Wenzl-LR path disagrees with BOTH others by 80–92%:
+
+    hoefsmit_vs_wenzl_lr     n=3  diverge=3  max 0.8965
+    markov_peel_vs_wenzl_lr  n=4  diverge=4  max 0.9223
+
+Now that the other two agree at 1e-50, this is a clean single-path question
+rather than a three-way mess. Note the two agreeing paths bracket it, so the
+Wenzl-LR value is the outlier, not the reference. Ratios (5.143 D, 9.662 3He,
+6.851 T) are still not one clean factor and T vs 3He differ at equal n=9.
+
+### The second defect stands
+
+The witness STILL records `assertions: []` / `allPassed: true` while 7 of 12
+pairs diverge at ~0.9. Unchanged by any of the above.

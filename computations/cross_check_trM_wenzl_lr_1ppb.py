@@ -61,7 +61,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 mpmath.mp.dps = 50
 TOLERANCE = mpf("1e-9")  # 1 part per billion
 
-HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+# ANCHOR-MATCHED. The peel and Wenzl-LR witnesses are both PROTON-pinned; the
+# base-name Hoefsmit witness is the MUON one (`atomic_tr_m_mpfr_50dps` is tagged
+# `ideal_muon`). Comparing across that boundary put a floor under this
+# cross-check that is ~100x its own 1e-9 target:
+#
+#     hoefsmit_vs_markov_peel, against the MUON bridge   6.9e-8 .. 2.5e-7
+#
+# Those are the SAME numbers the tr_m_q_hecke_seminormal straddle produced
+# (PR #5723) -- the mu-p q0 gap of 11.5 ppb, amplified ~n-fold because tr_M is a
+# product over ~n crossings. Against the proton twin the two paths agree
+# exactly. Same defect, second site; `reference_anchor_straddle_audit` (#5727)
+# is what says how many more there are.
+HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
 PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
 LR_PATH = _pb.witness_path("rho-k-full-via-wenzl-lr.witness.json", HERE)
 
