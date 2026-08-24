@@ -1,54 +1,75 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T19:06:37.700507+00:00",
-  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
+  "computedAt": "2026-08-24T14:27:41.012704+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "chi_33_h6_decoupling_matches_lr_branching",
-      "computed": 5.345529420184391e-51,
+      "computed": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|tr_H6 \u03c1_(3,3)(\u03b2_Bor_2) \u2212 \u03a3_(\u03bc,\u03bd) c^(3,3)_{\u03bc\u03bd} \u03c7_\u03bc(\u03b2_{4_1}) \u03c7_\u03bd(\u03b2_{4_1})|",
-      "source": "GENUINE Brunnian-decoupling witness on \u03bb = (3,3) \u22a2 6 (dim 5).  LHS is computed via H_6 Hoefsmit-seminormal matrices (independent of single-component reps); RHS = \u03c7_(3)\u00b2 + \u03c7_(2,1)\u00b2 \u2248 1 + 0.8293 = 1.8293 via LR branching at q_0.  Per Copilot follow-up review on PR #818, this is the non-tautological replacement for the prior tr(A \u2297 A) = (tr A)\u00b2 Kronecker check."
+      "unit": "|tr_H6 ρ_(3,3)(β_Bor_2) − Σ_(μ,ν) c^(3,3)_{μν} χ_μ(β_{4_1}) χ_ν(β_{4_1})|",
+      "source": "GENUINE Brunnian-decoupling witness on λ = (3,3) ⊢ 6 (dim 5).  LHS is computed via H_6 Hoefsmit-seminormal matrices (independent of single-component reps); RHS = χ_(3)² + χ_(2,1)² ≈ 1 + 0.8293 = 1.8293 via LR branching at q_0.  Per Copilot follow-up review on PR #818, this is the non-tautological replacement for the prior tr(A ⊗ A) = (tr A)² Kronecker check."
     },
     {
       "name": "chi_42_h6_decoupling_matches_lr_branching",
-      "computed": 2.6727647100921956e-51,
+      "computed": "2.263919769706678091877279822721947945170632799534784547395653722483875e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "unit": "|tr_H6 \u03c1_(4,2)(\u03b2_Bor_2) \u2212 (1 + \u03c7_(2,1))\u00b2|",
-      "source": "Tight structural test on \u03bb = (4,2) \u22a2 6 (dim 9).  LR branching gives \u03c7_(4,2)(\u03b2_Bor_2) = (1 + \u03c7_(2,1)(\u03b2_{4_1}))\u00b2 \u2248 (1 \u2212 0.9107)\u00b2 \u2248 0.0080 at q_0.  Random arithmetic on a 9\u00d79 product of 8 Hoefsmit matrices reproduces this value to ~1e-50 ONLY because the structural cancellation enforced by Brunnian decoupling + LR coefficients holds."
+      "unit": "|tr_H6 ρ_(4,2)(β_Bor_2) − (1 + χ_(2,1))²|",
+      "source": "Tight structural test on λ = (4,2) ⊢ 6 (dim 9).  LR branching gives χ_(4,2)(β_Bor_2) = (1 + χ_(2,1)(β_{4_1}))² ≈ (1 − 0.9107)² ≈ 0.0080 at q_0.  Random arithmetic on a 9×9 product of 8 Hoefsmit matrices reproduces this value to ~1e-50 ONLY because the structural cancellation enforced by Brunnian decoupling + LR coefficients holds."
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 75,
   "computation": "knot-factor-borromean-composite-probe",
   "scriptFile": "knot_factor_borromean_composite_probe.py",
-  "scriptHash": "b17cc82a77b1",
-  "scriptCommitSha": "cd916618c6bfaaae33bcd23490a8e4f26743db83",
-  "description": "I1 probe for cor:knot-factor-borromean-composite.  Witnesses Brunnian decoupling at k=2 (\u2074He as Bor_2) via TWO independent paths:  (a) single-component H_3 characters of the figure-eight \u03b2_{4_1} for each \u03bb \u22a2 3 (verified by the BD probe in PR #815);  (b) direct H_6 Hoefsmit evaluation of the disjoint braid \u03b2_Bor_2 \u2208 B_6 on irreps \u03bb \u22a2 6 that are NOT tensor products of single-component reps (specifically \u03bb = (3,3) dim 5 and \u03bb = (4,2) dim 9), compared against the Littlewood-Richardson branching prediction \u03a3_(\u03bc,\u03bd) c^\u03bb_{\u03bc\u03bd} \u03c7_\u03bc(\u03b2_{4_1}) \u03c7_\u03bd(\u03b2_{4_1}).  Equality on (b) is the real structural witness \u2014 it validates the embedding \u03b2_{4_1}^(1,2,3) \u00b7 \u03b2_{4_1}^(4,5,6) \u21aa H_6 and the LR-branching factorisation, which is the content of Brunnian decoupling.  Per Copilot follow-up review on PR #818, the prior Kronecker-only check was algebraically tautological (tr(A \u2297 A) = (tr A)\u00b2 is an identity) and has been replaced by the H_6 construction below.",
+  "scriptHash": "2a161304ca4c",
+  "scriptCommitSha": "789481516761c41a7310863b11172b81af3b6707",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/knot_factor_borromean_composite_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/knot_factor_borromean_composite_probe.py"
+  },
+  "description": "I1 probe for cor:knot-factor-borromean-composite.  Witnesses Brunnian decoupling at k=2 (⁴He as Bor_2) via TWO independent paths:  (a) single-component H_3 characters of the figure-eight β_{4_1} for each λ ⊢ 3 (verified by the BD probe in PR #815);  (b) direct H_6 Hoefsmit evaluation of the disjoint braid β_Bor_2 ∈ B_6 on irreps λ ⊢ 6 that are NOT tensor products of single-component reps (specifically λ = (3,3) dim 5 and λ = (4,2) dim 9), compared against the Littlewood-Richardson branching prediction Σ_(μ,ν) c^λ_{μν} χ_μ(β_{4_1}) χ_ν(β_{4_1}).  Equality on (b) is the real structural witness — it validates the embedding β_{4_1}^(1,2,3) · β_{4_1}^(4,5,6) ↪ H_6 and the LR-branching factorisation, which is the content of Brunnian decoupling.  Per Copilot follow-up review on PR #818, the prior Kronecker-only check was algebraically tautological (tr(A ⊗ A) = (tr A)² is an identity) and has been replaced by the H_6 construction below.",
   "contentBlock": "cor:knot-factor-borromean-composite",
   "parameters": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "chi_3_single_4_1": 1.0,
-    "chi_21_single_4_1_at_q0": -0.9106773300269627,
+    "chi_21_single_4_1_at_q0": -0.9106773502706678,
     "chi_alt_single_4_1": 1.0,
-    "chi_33_h6_direct_trace_at_q0": 1.8293331994250375,
-    "chi_33_h6_branching_predicted": 1.8293331994250375,
-    "chi_33_h6_residue": 5.345529420184391e-51,
-    "chi_42_h6_direct_trace_at_q0": 0.007978539371112139,
-    "chi_42_h6_branching_predicted": 0.007978539371112139,
-    "chi_42_h6_residue": 2.6727647100921956e-51
+    "chi_33_h6_direct_trace_at_q0": 1.8293332362960044,
+    "chi_33_h6_branching_predicted": 1.8293332362960044,
+    "chi_33_h6_residue": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+    "chi_42_h6_direct_trace_at_q0": 0.007978535754668984,
+    "chi_42_h6_branching_predicted": 0.007978535754668984,
+    "chi_42_h6_residue": "2.263919769706678091877279822721947945170632799534784547395653722483875e-71"
   },
   "data": {
     "brunnian_decoupling_k2_expected": {
       "chi_3_Bor_2": 1.0,
-      "chi_21_Bor_2_single_squared": 0.8293331994250376,
+      "chi_21_Bor_2_single_squared": 0.8293332362960045,
       "chi_alt_Bor_2": 1.0,
-      "rule": "\u03c7_\u03bb(\u03b2_Bor_k) = \u220f_i \u03c7_\u03bb(\u03b2_{4_1}^(i))  on each \u03bb"
+      "rule": "χ_λ(β_Bor_k) = ∏_i χ_λ(β_{4_1}^(i))  on each λ"
     },
     "h6_lr_branching_predictions": {
       "lambda_3_3_dim": 5,
@@ -66,7 +87,7 @@
           "dim_block": 4
         }
       ],
-      "lambda_3_3_predicted_trace": 1.8293331994250375,
+      "lambda_3_3_predicted_trace": 1.8293332362960044,
       "lambda_4_2_dim": 9,
       "lambda_4_2_branching": [
         {
@@ -94,12 +115,12 @@
           "dim_block": 4
         }
       ],
-      "lambda_4_2_predicted_trace": 0.007978539371112139,
-      "lambda_4_2_predicted_trace_note": "Predicted = (1 + \u03c7_(2,1))\u00b2 \u2248 (1 \u2212 0.9107)\u00b2 \u2248 0.0080.  Tight test \u2014 random arithmetic on a product of 8 9\u00d79 Hoefsmit matrices reproduces this value to ~1e-50 only because the LR structural cancellation holds."
+      "lambda_4_2_predicted_trace": 0.007978535754668984,
+      "lambda_4_2_predicted_trace_note": "Predicted = (1 + χ_(2,1))² ≈ (1 − 0.9107)² ≈ 0.0080.  Tight test — random arithmetic on a product of 8 9×9 Hoefsmit matrices reproduces this value to ~1e-50 only because the LR structural cancellation holds."
     },
     "cascade_note": {
-      "corollary_formula": "a_Bor_k = (1 \u2212 h\u00b2)^k  [from cor:knot-factor-amphicheiral]",
-      "structural_invariant": "Brunnian decoupling \u03c7_\u03bb(\u03b2_Bor_k) = \u220f_i \u03c7_\u03bb(\u03b2_{4_1}^(i)) is independent of the amphicheiral-corollary form; this probe witnesses the decoupling alone."
+      "corollary_formula": "a_Bor_k = (1 − h²)^k  [from cor:knot-factor-amphicheiral]",
+      "structural_invariant": "Brunnian decoupling χ_λ(β_Bor_k) = ∏_i χ_λ(β_{4_1}^(i)) is independent of the amphicheiral-corollary form; this probe witnesses the decoupling alone."
     }
   }
 }

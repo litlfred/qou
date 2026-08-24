@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T22:58:13.770622+00:00",
-  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
+  "computedAt": "2026-08-24T14:27:39.066112+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "colored_residue_character_derived_and_pure_sign",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 28,
   "computation": "keystone-valuemap-qbessel-gate-s013",
   "scriptFile": "keystone_valuemap_qbessel_gate_s013.py",
-  "scriptHash": "4d2854351ec6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4e51e5cf19b8",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -43,9 +42,9 @@
   },
   "description": "s013 step 2 (q-Bessel gate). (A) DERIVES the colored Lawrence-Rozansky residue character of Sigma(2,3,5) exactly: 2sinh(z/2)2sinh(z/3)2sinh(alpha z/5)/2sinh(z) = num_alpha(x)*Sum_{k>=0} x^{60k} (x=e^{-z/30}), sympy-exact + 50dps verification, folded into an odd 60-periodic character with per-class consistency votes; alpha=1 reproduces the bare {1,11,19,29} support; ALL residue weights are +-1 (pure sign, no magnitude) -- the value map cannot live in the residue data. (B) Decomposes the colored family into the 8 per-exponent false-theta channels Psi~^(e)(1/q0); the alpha=1 channel sum reproduces the bare invariant 2.3296 (validation). (C) Screens channels/pair-sums/pair-diffs against the d_q targets and verifies the analytic q->1 gate: channel ratios -> L(0,chi_e) proportional to (30-e), DECREASING in e while d_q INCREASES -- the channel amplitude is refuted at every anchor. (D) Gates the single-argument (q-)Bessel vacuum row (ordinary J_e(x) vs classical dims 1,4,5,6; Hahn-Exton J_e(x;1/q0^2) vs d_q; plus pair-symmetrized variants) with the 1-dof overdetermined test (pin x on the first ratio, 2 net cross-checks at every root). Scope (a) prunes only; the genuine E_q(2) q-Hankel/Plancherel kernel remains the open step (primary literature firewalled: arXiv 403 in sandbox). No fit; nothing wired.",
   "data": {
-    "q0": 1.1099785955541805,
-    "inv_q0": 0.9009182735643012,
-    "qhat": 0.811653735642081,
+    "q0": 1.1099785827513808,
+    "inv_q0": 0.9009182839557415,
+    "qhat": 0.811653754365758,
     "derived_characters": {
       "1": {
         "support_1_30": [
@@ -129,16 +128,16 @@
     "residue_weights_are_pure_signs": true,
     "global_sign_uniform_across_colors": true,
     "channels_at_inv_q0": {
-      "1": 0.9899996522231257,
-      "7": 0.8915035862485723,
-      "11": 0.7886146502360813,
-      "13": 0.7265139174980191,
-      "17": 0.5831246195488853,
-      "19": 0.5029999321408735,
-      "23": 0.32941349671947434,
-      "29": 0.04796281223285096
+      "1": 0.9899996501700985,
+      "7": 0.8915035759747756,
+      "11": 0.7886146381071139,
+      "13": 0.7265139053433239,
+      "17": 0.5831246087360145,
+      "19": 0.5029999225301122,
+      "23": 0.32941349020666943,
+      "29": 0.04796281126937524
     },
-    "bare_channel_sum": 2.3295770468329313,
+    "bare_channel_sum": 2.3295770220766996,
     "bare_sum_matches_bare_invariant": true,
     "channel_value_screen": [
       {
@@ -152,26 +151,26 @@
       {
         "e": 7,
         "class": "(4,1)",
-        "target_dq_ratio": 4.109682435637709,
-        "channel_ratio": 0.9005089893179534,
-        "pair_sum_ratio": 1.1762632318385051,
-        "pair_diff_ratio": 0.596675273904257
+        "target_dq_ratio": 4.109682411207941,
+        "channel_ratio": 0.9005089808078219,
+        "pair_sum_ratio": 1.1762632190842865,
+        "pair_diff_ratio": 0.5966752706019622
       },
       {
         "e": 11,
         "class": "(3,2)",
-        "target_dq_ratio": 5.220441324664574,
-        "channel_ratio": 0.7965807346145851,
-        "pair_sum_ratio": 1.2443750391820998,
-        "pair_diff_ratio": 0.3031884805037523
+        "target_dq_ratio": 5.220441275326898,
+        "channel_ratio": 0.7965807240150202,
+        "pair_sum_ratio": 1.2443750218538547,
+        "pair_diff_ratio": 0.303188478181267
       },
       {
         "e": 13,
         "class": "(3,1,1)",
-        "target_dq_ratio": 6.220441324664574,
-        "channel_ratio": 0.7338526997121386,
-        "pair_sum_ratio": 1.261739785294953,
-        "pair_diff_ratio": 0.15221198562745603
+        "target_dq_ratio": 6.220441275326898,
+        "channel_ratio": 0.7338526889565029,
+        "pair_sum_ratio": 1.261739766834243,
+        "pair_diff_ratio": 0.15221198437911684
       }
     ],
     "channel_refuted": true,
@@ -245,24 +244,24 @@
         "passed": false,
         "n_roots": 23,
         "best": {
-          "x": 0.7180784776254003,
-          "ratio_11": 4.716005315563829,
-          "ratio_13": 3.2727652894008132,
-          "target_11": 5.220441324664574,
-          "target_13": 6.220441324664574,
-          "max_rel_err": 0.4738692773414608
+          "x": 0.7180784067460687,
+          "ratio_11": 4.716003894768654,
+          "ratio_13": 3.2727638230623746,
+          "target_11": 5.220441275326898,
+          "target_13": 6.220441275326898,
+          "max_rel_err": 0.4738695088974402
         }
       },
       "hahn_exton_Je_pair_dq": {
         "passed": false,
         "n_roots": 24,
         "best": {
-          "x": 1.2333904195261258,
-          "ratio_11": 5.884655774830969,
-          "ratio_13": 5.771887444107255,
-          "target_11": 5.220441324664574,
-          "target_13": 6.220441324664574,
-          "max_rel_err": 0.12723339060018507
+          "x": 1.2333903902181464,
+          "ratio_11": 5.88466012599849,
+          "ratio_13": 5.771892507106614,
+          "target_11": 5.220441275326898,
+          "target_13": 6.220441275326898,
+          "max_rel_err": 0.1272342347400507
         }
       }
     },
