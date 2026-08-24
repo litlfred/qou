@@ -469,3 +469,113 @@ Externally the relevant results are:
 ## Open question for the author
 
 Whether the meson braid must be a **knot** (1 component) or may be a **link**. The corpus's `𝔐` closes to a knot, but `q̄q` is a two-constituent state, and the two-component hyperbolic candidates (Whitehead 3.664, and 2-component words at 4.060, 4.749, 6.138) are otherwise inaccessible. This changes the candidate space before any search, so it wants deciding first.
+
+## 🛑 SETTLED symbolically: the LP-selected operator is NOT a braid — and integrality is not why
+
+The previous section left Obstruction A at *"`Φ*` is an algebra element, not a
+braid"*, with the natural follow-up **"could it be one?"** open. It is now
+closed, symbolically and gauge-invariantly, by
+[`computations/meson/operator_selection_lattice_symbolic.py`](../../computations/meson/operator_selection_lattice_symbolic.py).
+
+### Why this is a computation and not a search
+
+At the optimum four positivity constraints are tight (active set `[0,1,4,5]`,
+measured), so `Φ*` solves **six linear equations in six unknowns whose
+coefficients are rational functions of `q`** — the four tight rows of `Gx = 0`,
+the net constraint `Σx = 1`, and the quotient condition `v·x = 0`. Solving over
+`ℚ(q)` rather than at a pin turns every downstream question into algebra.
+
+Established symbolically over `ℚ(q)` (not merely at `q₀`):
+
+| fact | value |
+|---|---|
+| `det G(q)` | **`0`** — the convention-D singularity of `qou-cds2`, exact over `ℚ(q)` |
+| `rank G(q)` | **5** of 6 |
+| `G(q)·v(q)` | **`0`** — the closed-form radical `vᵢ = (−1/q)^{ℓ(wᵢ)}` |
+
+### `Φ*(q)` in closed form
+
+$$x_0 = \frac{-q^3}{D},\quad x_1 = \frac{-q^4}{D},\quad x_2 = \frac{q^6+q^2+1}{D},\quad x_3 = \frac{-q^5}{D},\quad x_4 = \frac{q^7+q^3+q}{D},\quad x_5 = \frac{-q^6}{D}$$
+
+with
+
+$$D(q) = q^7 - q^5 - q^4 + q^2 + q + 1 = (q+1)\,(q^6 - q^5 - q^3 + q^2 + 1).$$
+
+Evaluated at the proton pin in mpmath at 60 dps this reproduces the
+numerically-solved LP direction to `4.6e-9` — the LP reference is quoted to
+8 decimal places, so that is agreement, not a discrepancy.
+
+### The lattice question: NOT the obstruction
+
+Clearing the common denominator gives the integral representative
+`Ψ(q) = D(q)·Φ*(q)` on the NF basis `[1, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀]`:
+
+$$\Psi = \bigl(-q^3,\; -q^4,\; N,\; -q^5,\; qN,\; -q^6\bigr),\qquad N = q^6+q^2+1.$$
+
+Every entry is a polynomial in `q` with integer coefficients, so **`Φ*` lies in
+the `ℤ[q,q^{-1}]`-lattice up to the single scale `D(q)`.** Braid images have
+Laurent-integral NF coordinates, so integrality was a genuine candidate
+obstruction — and it does **not** fire. (Note the chain structure:
+`Ψ₁ = qΨ₀`, `Ψ₃ = qΨ₁`, `Ψ₅ = qΨ₃`, `Ψ₄ = qΨ₂` — the whole vector is generated
+from `Ψ₀ = −q³` and `Ψ₂ = N` by multiplication by `q`.)
+
+### The character question: this IS the obstruction
+
+Lattice membership is *necessary*, not sufficient — the braid image is a
+sub-semigroup of the lattice, not all of it. The sharp question is whether any
+element of the **coset** `Φ* + span(v)` is a nonzero scalar multiple of a braid
+image. The coset, not the point: on the quotient `x` is defined only modulo the
+radical, so a claim about `Φ*` alone would be a gauge artifact.
+
+Wedderburn settles it. `H₃(q) ≅ ℚ(q) ⊕ M₂(ℚ(q)) ⊕ ℚ(q)` (sym, std, alt), and a
+braid word `w` of exponent sum `e` lands at
+
+$$\chi_{\mathrm{sym}} = q^{e},\qquad \det\rho_{\mathrm{std}} = (-1)^{e},\qquad \chi_{\mathrm{alt}} = (-1/q)^{e},$$
+
+because `σᵢ` has eigenvalues `q` and `−q^{-1}`, so `det ρ_std(σᵢ) = −1`. Hence
+**every** braid word satisfies `χ_sym·χ_alt = det ρ_std`, and scaling by `c`
+preserves it. Written through the left-regular determinant
+(`det L = χ_sym·(det ρ_std)²·χ_alt`) that is the scale-free, exponent-free
+invariant
+
+$$F(y) \;:=\; \det L(y) \;-\; \bigl(\chi_{\mathrm{sym}}(y)\cdot\chi_{\mathrm{alt}}(y)\bigr)^{3} \;=\; 0 .$$
+
+The probe verifies `F = 0` on braid words of both signs (including
+`σ₀^{-1} = T_{σ₀} − h` and `σ₀^{-1}σ₁`) and on `c·NF(σ₀σ₁)`.
+
+Two measured facts then close it:
+
+1. **`χ_alt(Ψ) = 0`.** Every braid word has `χ_alt = (−1/q)^e ≠ 0`, so `Ψ`
+   itself is not a nonzero scalar multiple of one. This is not a coincidence:
+   `χ_alt(x) = v·x` exactly, and `v·x = 0` **is** the quotient condition.
+2. **The rest of the coset fails too.** With `χ_sym(qv) = 0` — so `χ_sym` is
+   constant along the coset — the invariant evaluates to a pure cubic,
+
+   $$F(s) \;=\; -\,s^{3}\,\frac{(q^2+1)^6 (q^2-q+1)^3 (q^2+q+1)^3}{q^{6}},$$
+
+   whose only root is `s = 0`, i.e. `Ψ` itself.
+
+**Verdict — scope (b), structural exclusion, invariant named.** No element of
+`Φ* + span(v)` is a nonzero scalar multiple of a braid image. The named
+invariant is the Wedderburn identity `χ_sym·χ_alt = det ρ_std`, which holds
+identically on `ℚ(q)·image(B₃ → H₃(q))` and is verified on braid words in the
+probe. Per the STRICT "refuted" rule this qualifies as (b) rather than (a)
+because a *proved* invariant forbids it, not because a numerical search came
+back empty.
+
+### What this does and does not say
+
+- It does **not** refute the framework or the operator-selection program. It
+  says the convention-D LP, run on the quotient, selects an algebra element
+  that no braid realises.
+- It **relocates** Obstruction A. The obstruction is not integrality — the
+  lattice test above passes cleanly — it is the character structure, and
+  specifically the fact that the quotient repair for LP degeneracy is
+  *identical* to the vanishing of the alternating character.
+- It **sharpens the open question** to: is the quotient the right repair? The
+  radical direction `v` is the `q`-antisymmetriser; quotienting by it is what
+  makes the LP non-degenerate, and it is also exactly what forbids the answer
+  from being a braid. A different repair — a different gauge, a different
+  objective, or a formulation that keeps the alternating channel — is where a
+  braid-valued answer would have to come from. That is a live derivation
+  target, not a refuted one.
