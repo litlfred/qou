@@ -3,8 +3,9 @@
 title: 'PROGRAMME: prove the remaining TL/Hecke chain in Lean -- four Mathlib gaps, one Mathlib ASSET (Artin-Wedderburn exists)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-08-09T18:18:27Z
+updated_at: 2026-08-24T20:03:10Z
 ---
 
 
@@ -265,3 +266,21 @@ Induction step, in the order the Finset lemmas want it:
 
 That last remark is the payoff of the natural-subtraction trick and is worth
 testing before writing any parity case analysis.
+
+
+## 2026-08-24 — the highest-leverage item is now unobstructed
+
+This bean's headline item is wiring Mathlib's Artin–Wedderburn into an instance
+of the Wedderburn class. Measured today, that was **blocked by the class
+itself**, not merely unstarted: `QOU.Hecke.WedderburnDecomp` carried a
+`trace_decomp` field which, together with the *derived* `trace_exhaustive` in
+the same file, forced `(1 − y_μ) · tr_M(π_μ) = 0` for every block — so no
+instance with the intended nontrivial `y_λ` could exist. Machine-checked in
+`9e8b712fa2`; the field is replaced by an honest `block_scaling` hypothesis in
+`722761c0eb`, and `trace_decomposition` is now derived.
+
+Also worth correcting in this catalogue: it says *"`QOU.Hecke.Wedderburn`'s
+class has NO INSTANCE (qou-luq7)"* — still true — but the reason given, that
+"the two halves have never been put together", was not the whole story.
+
+Unchanged: the four Mathlib gaps G1–G4 and the mis-priced G5.
