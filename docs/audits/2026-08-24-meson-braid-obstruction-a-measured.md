@@ -109,6 +109,65 @@ dissolve the exclusion, which is exactly why both are flagged for the author.
 Growth is roughly `1.5–1.7` per letter at the top end, so on that trend D⁰ would
 need `L ≈ 24` and J/ψ `L ≈ 40` — three to four times their dictionary lengths.
 
+## Knot or link? The dictionary already decides it — and relaxing does not help
+
+Component count of a closed 3-braid is **forced by word-length parity**. A length-`L`
+word in `σ₀,σ₁` is a product of `L` transpositions in `S₃`; even `L` gives an even
+permutation (identity or a 3-cycle ⇒ **1 or 3 components**), odd `L` gives a
+transposition (⇒ **exactly 2 components**). Measured exhaustively, no exceptions:
+
+| word length | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|
+| components observed | 1, 3 | 2 only | 1, 3 | 2 only |
+
+**The winding dictionary forces even length.** Meson crossings `= n₁ + n₂` with
+`n ∈ {3,5,7}` — all odd — so the sum is **always even**. Therefore:
+
+> **A `q̄q` meson can never close to a 2-component link at its dictionary crossing
+> count.** The parity of the generation windings forbids it structurally.
+
+So "may the meson be a link?" is not free: allowing a 2-component link means giving
+up either the `n ∈ {3,5,7}` windings or the `n₁+n₂` crossing rule. One or the other,
+not both.
+
+**And relaxing to links does not rescue the heavy mesons anyway.** At the same
+length the knot achieves the *higher* volume:
+
+| len | max Vol, 1-comp | max Vol, 2-comp | max Vol, 3-comp |
+|---|---|---|---|
+| 6 | 5.6930 | — | 7.3277 |
+| 7 | — | 8.9974 | — |
+| **8** | **12.3509** | — | 10.6670 |
+| 9 | — | 13.9484 | — |
+
+At length 8 the maximum over **every** component count is `12.3509`, attained by a
+**knot** (`[1,-2,1,-2,1,-2,1,-2]`); the 3-component maximum is lower. So the D-meson
+exclusion above is unaffected by the relaxation — it holds over knots *and* links.
+
+## Convention audit: which blockers are C-frame?
+
+The parent audit is dated **2026-08-02**, before the **2026-08-15** convention-D
+ruling, so its content is presumptively convention-C-frame and each blocker needs
+classifying rather than inheriting.
+
+| blocker | depends on `z`? | status |
+|---|---|---|
+| Route 1 — Y-junction ⇒ `B₂` abelian ⇒ `Vol = 0` | **no** — pure topology | stands, convention-independent |
+| Route 2 — D-meson Frobenius–Gram LP is charm-degenerate | **YES** — the Gram matrix is built from the Markov parameter `z` | **C-frame; needs re-derivation under D** |
+| winding dictionary (`crossings = n₁+n₂`) | **no** — 0 `z`-references in the Lean | stands |
+| `signedWrithe` / `T₃` / `orderedContent` | **no** — 0 `z`-references in the Lean | stands |
+| this document's volume + mass-target work | **no** — topology plus `q₀`; `z` never enters | stands |
+
+**Route 2 is the one C-frame blocker**, and it is doubly dead: besides the
+convention question, `MesonOperatorSelectionT3.graded_D_kaon_distinct` already
+separates D̄⁰ from the kaon, which is what Route 2 concluded could not be done.
+Under convention D the Gram matrix also carries the known singularity (`qou-cds2`),
+so re-deriving it is not a free re-run.
+
+**Nothing in the live obstruction routes through `z`.** `q₀` is the substrate
+modulus and is convention-independent; the Markov parameter `z` is what conventions
+C and D disagree about, and it appears nowhere in the volume or mass-target chain.
+
 ## What this does NOT do
 
 No braid is proposed for any meson, and **no mass check was run**. The nearest enumerated volume to the pion target is `5₂` at 5.47 % — that is *not* a result, it is the distance to the nearest point of a dense set, and selecting on it would be the per-state fit the J/ψ attack already recorded as worthless. The J/ψ and D⁰ targets (59.50, 35.83) lie far above anything reachable at these braid lengths, so the candidate space is not even bounded yet at the heavy end.
