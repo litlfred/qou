@@ -9,14 +9,14 @@
       "computed": "true",
       "expected": "true",
       "passed": true,
-      "source": "Tᵀ·G(q₀)·T=G(1) and T·ρ·T⁻¹ G(1)-self-adjoint (<1e-20)"
+      "source": "T\u1d40\u00b7G(q\u2080)\u00b7T=G(1) and T\u00b7\u03c1\u00b7T\u207b\u00b9 G(1)-self-adjoint (<1e-20)"
     },
     {
       "name": "generator_obstruction_persists",
       "computed": "true",
       "expected": "true",
       "passed": true,
-      "source": "T·ρ_H^q·T⁻¹ keeps Hecke eigenvalues (gap≈|q₀−1|)"
+      "source": "T\u00b7\u03c1_H^q\u00b7T\u207b\u00b9 keeps Hecke eigenvalues (gap\u2248|q\u2080\u22121|)"
     }
   ],
   "allPassed": true,
@@ -47,7 +47,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_b2_tits_deformation_probe.py"
   },
-  "description": "α_EM B2 canonical Tits *-iso: explicit seminormal→Young deformation T(q)=diag(√(g_i(1)/g_i(q))) for (4,1). Verified: (i) exact *-isometry to the q=1 seminormal Gram + self-adjoint conjugate + T→Id at q=1 ⇒ a valid *-compatible Tits conjugator (φ a *-algebra iso on the block); (ii) NOT a generator-intertwiner (eig gap ≈ |q₀−1|, σᵢ↦non-generator) — confirms the algebra-iso picture. Residual to |c|: the pure-S₅ alignment to the Braden–Northover period basis (S₅ action not in corpus). No instance; 1/(8π) phase-4.",
+  "description": "\u03b1_EM B2 canonical Tits *-iso: explicit seminormal\u2192Young deformation T(q)=diag(\u221a(g_i(1)/g_i(q))) for (4,1). Verified: (i) exact *-isometry to the q=1 seminormal Gram + self-adjoint conjugate + T\u2192Id at q=1 \u21d2 a valid *-compatible Tits conjugator (\u03c6 a *-algebra iso on the block); (ii) NOT a generator-intertwiner (eig gap \u2248 |q\u2080\u22121|, \u03c3\u1d62\u21a6non-generator) \u2014 confirms the algebra-iso picture. Residual to |c|: the pure-S\u2085 alignment to the Braden\u2013Northover period basis (S\u2085 action not in corpus). No instance; 1/(8\u03c0) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "auditOnly": "docs/audits/2026-07-24-alpha-em-b2-tau-identification-attack-options.md",
   "parameters": {
@@ -77,9 +77,12 @@
       "0.484368247892",
       "0.645824330522"
     ],
-    "verdict": "Explicit seminormal→Young Tits deformation for (4,1). T(q₀)=diag(√(g_i(1)/g_i(q₀))) is (i) a valid *-COMPATIBLE Tits conjugator — exact *-isometry Tᵀ·G(q₀)·T=G(1) (resid 1.42e-71), conjugate self-adjoint w.r.t. G(1) (resid 8.15e-71), and →Id as q→1 (|T−Id|=3.18e-9 at the q-step); so φ=ρ_S⁻¹∘conj(T)∘ρ_H is a *-algebra iso H₅(q₀)→ℂ[S₅] on the block. (ii) It is NOT a generator-intertwiner: T·ρ_H^{q₀}·T⁻¹ keeps the Hecke eigenvalues (gap 0.0991 ≈ |q₀−1| vs Young ±1), so σᵢ maps to a NON-generator element of ℂ[S₅] — confirming the algebra-iso picture and the intertwiner_trace_eq obstruction (#4199). UPSHOT: the deformation half (Hecke→q=1 seminormal) is explicitly constructed and *-isometric; the residual to |c| is the pure-S₅ alignment U of the q=1 seminormal SYT basis to the Braden–Northover period basis (M_S), whose S₅ action is NOT in the corpus. No instance; 1/(8π) phase-4; nothing wired."
+    "verdict": "Explicit seminormal\u2192Young Tits deformation for (4,1). T(q\u2080)=diag(\u221a(g_i(1)/g_i(q\u2080))) is (i) a valid *-COMPATIBLE Tits conjugator \u2014 exact *-isometry T\u1d40\u00b7G(q\u2080)\u00b7T=G(1) (resid 1.42e-71), conjugate self-adjoint w.r.t. G(1) (resid 8.15e-71), and \u2192Id as q\u21921 (|T\u2212Id|=3.18e-9 at the q-step); so \u03c6=\u03c1_S\u207b\u00b9\u2218conj(T)\u2218\u03c1_H is a *-algebra iso H\u2085(q\u2080)\u2192\u2102[S\u2085] on the block. (ii) It is NOT a generator-intertwiner: T\u00b7\u03c1_H^{q\u2080}\u00b7T\u207b\u00b9 keeps the Hecke eigenvalues (gap 0.0991 \u2248 |q\u2080\u22121| vs Young \u00b11), so \u03c3\u1d62 maps to a NON-generator element of \u2102[S\u2085] \u2014 confirming the algebra-iso picture and the intertwiner_trace_eq obstruction (#4199). UPSHOT: the deformation half (Hecke\u2192q=1 seminormal) is explicitly constructed and *-isometric; the residual to |c| is the pure-S\u2085 alignment U of the q=1 seminormal SYT basis to the Braden\u2013Northover period basis (M_S), whose S\u2085 action is NOT in the corpus. No instance; 1/(8\u03c0) phase-4; nothing wired."
   },
   "caveats": [
-    "T(q) closes the DEFORMATION half (Hecke→q=1 seminormal), a valid *-compatible Tits conjugator. The geometric-realization half — the pure-S₅ intertwiner U from the q=1 seminormal SYT basis to the Braden–Northover period basis (M_S) — needs the S₅ action in that basis, which is NOT in the corpus. |c| stays gated on U."
-  ]
+    "T(q) closes the DEFORMATION half (Hecke\u2192q=1 seminormal), a valid *-compatible Tits conjugator. The geometric-realization half \u2014 the pure-S\u2085 intertwiner U from the q=1 seminormal SYT basis to the Braden\u2013Northover period basis (M_S) \u2014 needs the S\u2085 action in that basis, which is NOT in the corpus. |c| stays gated on U."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

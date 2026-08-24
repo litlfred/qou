@@ -46,5 +46,8 @@
     "builds_on": "PR #4491 (\u03bc\u2083 frame-robustness, frame-independent ratio), #4364 (c\u2083 leading cluster), three-walls audit, Q_\u03b2 c\u2083 hypersensitivity (2026-07-12)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

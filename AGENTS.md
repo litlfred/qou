@@ -30,6 +30,65 @@ Adapt ALL responses accordingly:
   - **`preview` content** for options that benefit from side-by-side comparison (diff snippets, file-tree mockups, code samples, before/after numbers).
 
   This rule exists because terse questions force the user to type follow-ups asking for the context that should have been provided up front, which is the most painful kind of friction. When in doubt, err toward more context in the chat mirror (where math + multi-paragraph evidence render correctly), less in the structured-option `description` field (which mangles math and gets clipped in the chip UI).
+- **Write the question for someone who was NOT in your session (STRICT, 2026-08-24).**
+  The rule above says *what* to include. This one governs *how it reads*, and it
+  exists because the failure is systematic: an agent that has spent an hour
+  inside one problem asks its question in the private vocabulary it built along
+  the way. The author then has to reconstruct the agent's rabbit hole before
+  they can answer a question that should have been answerable on its own.
+
+  Assume the author has read **none** of your session. Before asking, apply all
+  six:
+
+  1. **Expand every identifier on first use.** Not `qou-cds2`, `y0_star`,
+     `G_PINV`, `the 8 stubs` — instead "bean `qou-cds2` (the convention-D Gram
+     singularity)", "`y0_star`, the shadow price of the LP's net constraint",
+     "eight witness files that carry LP-dual field *names* with `null` values".
+     A bean ID, a witness stem, a field name and a Lean declaration are all
+     opaque without their gloss. If a term needs a definition, give it inline —
+     do not link to one.
+  2. **Lead with the decision, not the investigation.** One or two sentences:
+     what is being decided, and why it needs the author rather than the agent.
+     The narrative of how you got there goes *below* the options, or is omitted.
+     The author is choosing a future action, not grading your search.
+  3. **Mirror the structure.** The chat context must be laid out to match the
+     questions being asked: one clearly-headed section per question, and within
+     it one sub-block per option, in the same order and with the same labels as
+     the structured call. The author should be able to read one option's block
+     and answer without holding the others in their head. Do not write a long
+     shared preamble that all the options depend on.
+  4. **Give every option the same four-part frame**, so options are comparable
+     rather than merely listed:
+     - **What it means** — in plain language, no repo jargon.
+     - **What it costs** — concrete: files touched, producers re-run, hours,
+       whether a long compute is involved.
+     - **What it risks** — what could break, how reversible it is, what numbers
+       could move and who reads them.
+     - **What it commits to** — what this forecloses or obliges later.
+  5. **State the default.** What happens if the author says nothing, or picks
+     none of the above? Name it explicitly ("nothing changes; the eight stay as
+     they are and the audit keeps reporting them"). An author who knows the
+     no-op is safe can defer with confidence.
+  6. **Name the blast radius in real terms.** Not "three consumers" but
+     "`bound_state_observable_validator.py`, `audit_frobenius_pairing.py` and
+     `delta_lambda_master_formula_h3_probe.py` read this field; the last one
+     feeds the Δ_λ master-formula probe." The author needs to know what breaks
+     in terms of the *physics or the paper*, not the call graph.
+
+  **Give a recommendation.** Say which option you would take and why, in one
+  sentence, and mark it clearly as your judgement rather than a finding. An
+  author overruling a stated recommendation is cheaper than an author
+  reverse-engineering the agent's preference from a neutral list.
+
+  **When you cannot make an option legible without a paragraph of background,
+  that is a signal the question is premature** — go do the measurement that
+  would collapse the option space, and ask a smaller question afterwards.
+
+  History: added 2026-08-24 on owner instruction, after a question offered
+  three options ("populate, needing a real LP per producer, or drop the names")
+  whose meaning, cost and consequences were legible only to the agent that had
+  just spent the session measuring them.
+
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
   - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
@@ -1725,11 +1784,14 @@ Do not regress either.
 > **Never straddle the two layers inside one quantity.** Mixing an
 > ideal-layer input with an experimental-layer input in a single computed
 > number is a defect regardless of its size. Worked example + measurement:
-> the μ₃ Fréchet probe took `y_λ` from the muon-built cache while
+> the μ₃ Fréchet probe took `y_λ` from the then-muon-built cache while
 > evaluating `χ_λ` at the proton `q₀` — an 11.54 ppb layer separation (=
 > the μ–p substrate tension itself), ~1e-7 relative on the result. See
 > [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
 > and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
+> *"then-"* is load-bearing: that cache was re-derived and re-pinned to proton
+> in the 2026-08-09 convention-D cascade, so the incident is history and the
+> **discipline** is what generalises. See the closed-case note below.
 >
 > **The shape to check for (the rule; its named instance is now closed).**
 > A cached-witness accessor that serves precomputed data **when the caller's
@@ -1781,6 +1843,13 @@ Do not regress either.
 > **The μ₃ Fréchet incident above is unaffected** — 11.54 ppb, `y_λ` from the
 > muon-built cache against `χ_λ` at the proton `q₀`, is a real measured
 > straddle and the reason the rule exists. Only the *mechanism* has changed.
+>
+> **Two producers bypass the accessor and read the cache file directly** —
+> `probe_theta_carry_binding.py` and `delta_lambda_empirical_tabulation.py`.
+> They get D-at-proton, which is correct; noting them so a future reader does
+> not conclude the accessor is the only path to that file.
+> Independent evidence for the same correction:
+> [`docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`](docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md).
 
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:

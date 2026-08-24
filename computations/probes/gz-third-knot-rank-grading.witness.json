@@ -1,0 +1,240 @@
+{
+  "name": "gz-third-knot-rank-grading",
+  "description": "GZ 2304.09377 (-2,3,7) rank grading: adjudicates an internal erratum, guards the object-identity that would otherwise read as an H_Ad refutation, corroborates the M3 Part-4 signature formula on a third knot, and records the S_3 block decomposition of W0.",
+  "computation": "gz-third-knot-rank-grading",
+  "engine": "python",
+  "scriptFile": "computations/probes/gz_third_knot_rank_grading.py",
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate modulus enters. Every quantity is an exact integer read from Garoufalidis-Zagier 2304.09377 S3.4/S3.5 and 2111.06645 S2.1 (weight vectors, subspace dimensions, ranks, trace-field signatures, S_3 irrep dimensions). The import cone is json/os/subprocess/time only -- no q_parameter, no qou_substrate.constants, no y_lambda_at, no mpmath.",
+  "parameters": {
+    "prose_dims": [
+      1,
+      4,
+      1
+    ],
+    "decomposition_dims": [
+      4,
+      1,
+      1
+    ],
+    "delta_degrees": [
+      0,
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    "h_weights": [
+      -1,
+      0,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "ranks": {
+      "4_1": 2,
+      "5_2": 3,
+      "(-2,3,7)": 6
+    },
+    "signatures": {
+      "4_1": [
+        0,
+        1
+      ],
+      "5_2": [
+        1,
+        1
+      ],
+      "(-2,3,7)": [
+        4,
+        1
+      ]
+    },
+    "s3_partitions": [
+      "(3)",
+      "(2,1)",
+      "(1,1,1)"
+    ],
+    "s3_dims": [
+      1,
+      2,
+      1
+    ],
+    "w0_multiplicities": [
+      2,
+      1,
+      0
+    ],
+    "lean": "QOU.QBeta.GZThirdKnotRankGrading",
+    "sources": [
+      "uploads/2304.09377v2.pdf",
+      "uploads/2111.06645v3.pdf"
+    ]
+  },
+  "data": {
+    "erratum": "GZ 2304.09377 S3.5 prose dims (1,4,1) -> should be (4,1,1)",
+    "pk_sizes": {
+      "4_1": 3,
+      "5_2": 4,
+      "(-2,3,7)": 7
+    },
+    "verdict": "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep missed because it keyed on 'Stokes' and that paper says it once. (ii) GZ S3.5 reports higher-multiplicity weight spaces for (-2,3,7) -- which reads exactly like the rank-6 refutation M3 asked for. It is not: the graded object has total r (=2 at 4_1) while s(1)=3, and 4_1's weight set has 2 elements against s(x)'s 3. DIFFERENT OBJECTS; the guard is T4. (iii) ERRATUM adjudicated: GZ S3.5's prose dims (1,4,1) contradict the paper's own decomposition and delta-degrees, which both give (4,1,1); the prose transposes the first two, and both readings total 6 so a sum-check cannot catch it. (iv) The ranks 2,3,6 CORROBORATE M3 Part 4's signature formula on three knots with three distinct values, via two independent GZ statements. (v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU Wedderburn indexing appearing in the third knot's modular data, with a chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. (xi) A THIRD ROUTE to r(6_1)=4, from Ohtsuki-Yokota's SADDLE ANALYSIS (ki6c.pdf, sibling extraction qou-6ort): the 6_1 gluing-equation quartic 2z^4-z^3-2z^2+z+1 is irreducible with discriminant 257 and signature [0,2], matching DG's trace field on every invariant -- and the fields are EQUAL, by the exact witness gamma = -a^3+3a^2-4a-1 satisfying gamma^4-gamma^3-4gamma^2+4gamma+8 = 0 in Z[a]/(dg). So three constructions with nothing in common but the knot (a number field, a Newton polygon, a stationary-phase analysis) all give 4. (xii) STILL NOT A DT COUNT: the saddles are the critical points; the DT invariants are the Stokes constants on the rays BETWEEN them. All three routes measure r, the R1 shadow. The resurgence DT count for 6_1 is exactly as open as before. What is bought is a falsifiable SHAPE: 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3. (xiii) A COINCIDENCE KILLED: across 4_1/5_2/6_1 the ideal-tetrahedron count EQUALS the trace-field degree (2,3,4), so the rank rule might have been riding on the triangulation rather than the number field. DG S6.5's 9_12 settles it -- 10 ideal tetrahedra, trace field of DEGREE 17 (type [1,8], verified here by exact Sturm: exactly 1 real root). 10 != 17, the coincidence dies at the fourth knot, and the rule -- which reads the signature and never the triangulation -- is untouched. Sharper than PR #5277's existing guard, whose counterexamples are LINKS (Whitehead, Borromean) and could be dodged by restricting to knots; 9_12 is a knot. New prediction: r(9_12) = 17, |P_K| = 18. (xiv) STILL OPEN: (-2,3,9)'s predicted r = 5 is UNVERIFIED -- census identification needs SnapPy (absent) and no saddle data for it is in the corpus. 9_12 does not substitute. Nothing wired."
+  },
+  "assertions": [
+    {
+      "name": "T1-delta-and-weightvector-and-decomposition-agree",
+      "passed": true,
+      "note": "Three encodings of the same grading; the explicit decomposition, the delta-degrees and the centred weight vector all give (4,1,1)."
+    },
+    {
+      "name": "T2-prose-dims-are-transposed",
+      "passed": true,
+      "note": "ERRATUM (adjudicated, not guessed). GZ S3.5's sentence says dimensions '1, 4 and 1'; the paper's OWN explicit decomposition W0=<H0,H3,H4,H5>, W1=<H1>, W2=<H2> and its delta=(0,1,2,0,0,0) both give (4,1,1). Two independent internal statements against one, and the discrepancy is exactly a transposition of the first two entries -- not a miscount. Same adjudication pattern as the GGM eq-(200) q^1 erratum."
+    },
+    {
+      "name": "T3-totals-agree-so-the-slip-is-invisible-to-a-sum-check",
+      "passed": true,
+      "note": "Both readings total 6 = r. Any check that only verifies the total passes on the wrong dimensions. Recorded so a future reader does not 'confirm' the prose by summing it."
+    },
+    {
+      "name": "T4-rank-grading-is-NOT-s(x)",
+      "passed": true,
+      "note": "NO -- and this is the load-bearing check. The grading's total is r=2 at 4_1 while s(1)=3, and 4_1's weight SET has two elements ({-1/2,+1/2}) against s(x)'s three. Different objects. So (-2,3,7)'s non-multiplicity-free grading does NOT refute H_Ad's polynomial claim. Without this check the higher multiplicity reads as exactly the refutation M3 was looking for."
+    },
+    {
+      "name": "T5-higher-multiplicity-real-but-not-a-refutation",
+      "passed": true,
+      "note": "The phenomenon is real (a weight of dimension 4, which GZ calls 'a new phenomenon') AND it does not bear on H_Ad. Stating both in one assertion so neither half can be quoted without the other."
+    },
+    {
+      "name": "T6-rank-equals-real-plus-twice-pairs-equals-pk-minus-one",
+      "passed": true,
+      "note": "Yes, on all three knots and with three DISTINCT values (2,3,6). This is an INDEPENDENT confirmation: 2111.06645 S2.1 states the ranks outright, 2304.09377 S3.4 recovers them from q-series counts (4,6,12 = 2r), and M3 Part 4 predicts them from trace-field signatures. Three routes, one answer. r = |P_K| - 1 = the non-trivial boundary-parabolic reps."
+    },
+    {
+      "name": "T7-w0-decomposition-dimensionally-consistent",
+      "passed": true,
+      "note": "2*1 + 1*2 + 0*1 = 4 = dim W0. S_3-irreps are indexed by partitions of 3 -- the SAME Wedderburn indexing the QOU Hecke programme uses at q=1 -- so the third knot's modular structure lands in the corpus's own language without being put there."
+    },
+    {
+      "name": "T8-sign-representation-absent-from-w0",
+      "passed": true,
+      "note": "The SIGN representation has multiplicity 0. Under the standard identification the sign block is the bar-odd one, so the Gamma/Gamma(2) action on the level-2 part of the third knot's grading carries no sign component. That is the one asymmetry in the decomposition, and it is chirality-flavoured -- the same involution that grades the DT split. NOT claimed to be derived; recorded as an observation to be explained."
+    },
+    {
+      "name": "T9-level-two-confined-to-w0",
+      "passed": true,
+      "note": "rho is the IDENTITY on W1 and W2, so the whole Gamma(2) phenomenon is confined to the 4-dimensional W0 -- which is precisely the weight space whose dimension the prose misreported. The erratum sits on the only interesting summand."
+    },
+    {
+      "name": "T10-w0-is-perm-module-plus-trivial",
+      "passed": true,
+      "note": "YES. chi(W_0) = [4,2,1] = [3,1,0] + [1,1,1]. Characters determine complex representations up to isomorphism, so W_0 = C[X] + C with X a 3-element S_3-set. This upgrades Part D from an observation to a structural identification. Lean: w0_is_perm_plus_trivial."
+    },
+    {
+      "name": "T11-sign-absence-is-forced-not-observed",
+      "passed": true,
+      "note": "A permutation module on 3 points contains NO sign component -- a general fact about S_3, nothing knot-specific: <perm,sign> = (1*3*1 + 3*1*(-1) + 2*0*1)/6 = 0. And a trivial summand contributes 0 to sign multiplicity, so adding any number of trivials cannot create one. The absence is therefore FORCED BY SHAPE, not an unexplained coincidence to be interpreted. Lean: perm_has_no_sign / addTrivial_preserves_signMult / sign_absence_is_forced."
+    },
+    {
+      "name": "T12-only-one-knot-can-even-be-asked",
+      "passed": true,
+      "note": "PASSES as an ADVERSARIAL check and it TEMPERS the finding. GZ introduces the level as 'a new phenomenon' at (-2,3,7) (N=2); 4_1 and 5_2 have N=1, so rho factors through the TRIVIAL quotient and there is no finite group acting -- hence no sign block to be absent. The absence is a ONE-KNOT statement among these three, by construction. What is general is the mechanism (T11), which holds for any permutation-type module; what is single-instance is the observation that W_0 is of that type. Both halves recorded so neither is quoted alone. Lean: sign_question_only_arises_at_level_two."
+    },
+    {
+      "name": "T13-signatures-match-polynomial-degrees",
+      "passed": true,
+      "note": "Transcription consistency check on the DG table before anything is built on it: [0,1]->2, [1,1]->3, [0,2]->4, [1,2]->5, matching the minimal polynomials x^2-x+1, x^3-x^2+1, x^4-2x^3+x^2+3x+1, x^5-x^4+x^3+2x^2-2x+1."
+    },
+    {
+      "name": "T14-dg-confirms-part4-signature-inputs",
+      "passed": true,
+      "note": "YES, and from an independent source: Part 4 derived its signatures by reading Garoufalidis-Zagier's prose; Dimofte-Garoufalidis state the same two in [r1,r2] type notation. Same inputs, two papers."
+    },
+    {
+      "name": "T15-trace-field-alone-fails-on-pretzel237",
+      "passed": true,
+      "note": "MATERIAL SHARPENING OF PART 4. The rule is r = #embeddings of A_K^red, and A_K^red contains the trace field F_K with EQUALITY IFF K has no boundary-parabolic reps outside F_K. Part 4 used A_K^red; DG tabulates F_K. They coincide at 4_1 and 5_2 -- so Part 4's two-knot agreement did NOT establish which one the rule needs. (-2,3,7) settles it: DG says its trace field is 5_2's (3 embeddings) while the measured rank is 6, because P_K picks up a second Galois orbit over the totally real Q(eta). The hypothesis must be STATED, not assumed."
+    },
+    {
+      "name": "T16-conditional-predictions-stated-with-their-hypothesis",
+      "passed": true,
+      "note": "UNDER the T15 hypothesis A_K^red = F_K: 6_1 has r=4, |P_K|=5; (-2,3,9) has r=5, |P_K|=6. NOT verified -- no corpus source gives these ranks -- and FALSE if either knot has reps outside its trace field, exactly as (-2,3,7) does. Stated with the hypothesis attached rather than as bare numbers, because (-2,3,7) is precisely the knot where the unstated version would have been wrong."
+    },
+    {
+      "name": "T17-dg-level-is-not-gz-level",
+      "passed": true,
+      "note": "DIFFERENT QUANTITIES -- recorded so the trap is not walked into. DG's 'level k' is the CHERN-SIMONS level with zeta^k = 1, i.e. the order of the root of unity at which the numerics were run (their abstract: 'Chern-Simons theory with gauge group SL(2,C) at fixed level k, where zeta^k = 1'). GZ's level N is the period of the colored-Jones degree quasi-polynomial. Reading '6_1 <= 3' as '6_1 has level 3' would MANUFACTURE the fourth level->1 knot Part E asks for, out of an unrelated quantity. Third instance of this same conflation trap in this arc."
+    },
+    {
+      "name": "T18-sixOne-prediction-confirmed",
+      "passed": true,
+      "note": "CONFIRMED, and by an independent session: the prediction was made here from Dimofte-Garoufalidis's trace-field SIGNATURE [0,2]; the certification is a sibling's, from the Culler A-polynomial census. Credit for the census leg is theirs (main 96d65d02e, bean qou-btvl); what is this probe's is the prediction it confirms."
+    },
+    {
+      "name": "T19-degree-equals-geom-ldegree-on-all-three",
+      "passed": true,
+      "note": "Nothing forces a number field's degree to equal a knot polynomial's L-degree -- unrelated objects in unrelated sources. They agree on THREE knots with three DISTINCT values (2,3,4), and 6_1 was predicted before its census value was in hand."
+    },
+    {
+      "name": "T20-plus-one-leg-is-definitional",
+      "passed": true,
+      "note": "full = geom + 1 holds BY CONSTRUCTION -- the +1 is the abelian/trivial representation -- so the |P_K| = r+1 agreement corroborates nothing and must never be cited as evidence. The content is entirely in deg F_K = geometric L-degree = r. The sibling's own bean says this ('full=geom+1 is by construction, not a test'); recorded here so the caveat travels with the result."
+    },
+    {
+      "name": "T21-control-fires-where-hypothesis-fails",
+      "passed": true,
+      "note": "NO -- and that is the point. The identity FAILS at (-2,3,7), exactly the knot with A_K^red strictly containing F_K. A rule that also fitted there would be the worrying outcome; this one holds where its stated hypothesis holds and breaks where it does not. The control is what makes T19 evidence rather than a coincidence of small numbers."
+    },
+    {
+      "name": "T22-same-discriminant-257",
+      "passed": true,
+      "note": "Ohtsuki-Yokota's quartic comes from a STATIONARY-PHASE analysis of the Kashaev integral -- not a character variety, not a knot polynomial -- and carries the same discriminant 257 (prime) as DG's trace field."
+    },
+    {
+      "name": "T23-isomorphism-certificate-exact",
+      "passed": true,
+      "note": "EXACT, in Z[a]/(a^4-2a^3+a^2+3a+1). gamma/2 is a root of the Ohtsuki-Yokota quartic, so that quartic has a root in Q(a); both being irreducible of degree 4, the fields are EQUAL. Not merely invariant-matched -- an explicit witness. (disc of gamma's minimal polynomial x^4-x^3-4x^2+4x+8 is 16448 = 2^6 * 257: same field through the index-2 scaling gamma = 2*beta.) Lean: saddle_field_equals_trace_field."
+    },
+    {
+      "name": "T24-three-routes-agree",
+      "passed": true,
+      "note": "Three constructions with nothing in common but the knot, all giving 4."
+    },
+    {
+      "name": "T25-still-not-a-dt-count",
+      "passed": true,
+      "note": "NO -- stated plainly so the three-route agreement is not oversold. The saddles are the CRITICAL POINTS; the Donaldson-Thomas invariants are the Stokes constants on the Borel rays BETWEEN them. All three routes measure r, the R1 / Euler-characteristic shadow. The resurgence DT count for 6_1 is exactly as open as before, and the sibling bean qou-btvl says the same. What the routes do buy is a falsifiable SHAPE: with |P_K| = 5, 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3."
+    },
+    {
+      "name": "T26-tetrahedra-equal-degree-on-the-small-knots",
+      "passed": true,
+      "note": "Three for three. If the rank rule were secretly riding on the TRIANGULATION count rather than the number field, everything in T13-T24 would be an artifact -- and nothing up to here distinguishes the two readings. Recorded so the next check has something to kill."
+    },
+    {
+      "name": "T27-nineTwelve-signature-matches-DG",
+      "passed": true,
+      "note": "Independent verification of a 17-term transcription: exact Sturm gives exactly ONE real root, so [r1,r2] = [1,8] and r1+2r2 = 17, matching DG \u00a76.5. No floats -- Sturm over Fractions."
+    },
+    {
+      "name": "T28-tetrahedron-coincidence-breaks-at-nineTwelve",
+      "passed": true,
+      "note": "The coincidence dies at the fourth knot: 9_12 has 10 ideal tetrahedra and a DEGREE-17 trace field. So the rank rule cannot be a restatement of the triangulation count, and the T13-T24 agreements are about the number field after all. SHARPER THAN THE CORPUS'S EXISTING GUARD: PR #5277 refutes 'degree ~ tetrahedra' using the Whitehead link and Borromean rings -- both LINKS, so the heuristic could be rescued by restricting to knots. 9_12 is a KNOT and kills the knot-restricted version too."
+    },
+    {
+      "name": "T29-nineTwelve-prediction-and-open-items",
+      "passed": true,
+      "note": "PREDICTION (unverified, stated with its hypothesis): r(9_12) = 17, |P_K| = 18. Far more falsifiable than the small cases -- a wrong rule has 17 ways to miss here rather than 4. STILL NOT VERIFIED, said plainly: (-2,3,9)'s predicted r = 5 from T16 remains open. Census identification needs SnapPy (absent here) and no (-2,3,9) saddle data is in the corpus, so neither the T18 nor the T23 route is available. 9_12 does NOT substitute for it."
+    }
+  ],
+  "scriptHash": "7538ad0b99ed",
+  "scriptCommitSha": "a6af40d258717fa1f5602a25c43924dfdbe68036",
+  "commitSha": "2dd86523d948974d9967d468cadde3985155c831",
+  "computedAt": "2026-08-23T19:27:44.933867+00:00",
+  "durationMs": 104,
+  "engineVersion": "3.11.15"
+}

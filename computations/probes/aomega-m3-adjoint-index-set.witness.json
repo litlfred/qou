@@ -4,9 +4,6 @@
   "computation": "aomega-m3-adjoint-index-set",
   "engine": "python",
   "scriptFile": "computations/probes/aomega_m3_adjoint_index_set.py",
-  "scriptCommitSha": "5299981d4de8a869d800e334620852a1231b736c",
-  "computedAt": "2026-08-19T05:37:45Z",
-  "durationMs": 2,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
   "q0Anchor": "independent",
@@ -104,5 +101,11 @@
       "passed": true,
       "note": "No: (-2,3,7) gives a remainder of 4, distinct from both smaller knots, so the rule is checked on three points with three different values. PREDICTION (not verified -- its q->0 Stokes matrix is unpublished): R1/H_floor say the (-2,3,7) count is 7. That is the falsifiable edge. NOTE the core stays 3 on all three, so a third knot does NOT separate H_Ad from H_floor -- see the route-(a) retraction in the verdict. Lean: pretzel_is_a_new_data_point / core_is_three_on_all_three."
     }
-  ]
+  ],
+  "scriptHash": "57ecb50832fd",
+  "scriptCommitSha": "7c9461c453f723ac8f150fc5be9f97d0c450cd15",
+  "commitSha": "f0a8a3039ad56f5dbe79dff445b9f80c092d8e6d",
+  "computedAt": "2026-08-19T12:12:43.963945+00:00",
+  "durationMs": 68,
+  "engineVersion": "3.11.15"
 }

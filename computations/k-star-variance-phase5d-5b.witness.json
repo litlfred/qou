@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean",
-      "source": "Variance test for 5² = 25 (K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed). Best variance: 1.4888 achieved by K_1* = 6_1, K_2* = unknot. Baseline (uniform Plancherel): 1.82."
+      "source": "Variance test for 5\u00b2 = 25 (K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed). Best variance: 1.4888 achieved by K_1* = 6_1, K_2* = unknot. Baseline (uniform Plancherel): 1.82."
     }
   ],
   "allPassed": true,
@@ -42,7 +42,7 @@
     ],
     "reproduce": "python3 -u computations/delta_lambda_k_star_variance_phase5d_5b.py"
   },
-  "description": "Phase 5d.5b: variance test of K_k* candidate knots in the depth-stratified Frobenius-reciprocity binding formula. For each (K_1*, K_2*) candidate pair (× K_3* = 6_1 fixed per the catalog), assembles the FR-weighted binding contribution per depth and predicts B_atom. Reports the (K_1*, K_2*) pair minimizing the 1.82× variance residual from PR #801. Tests the knot-particle dictionary's lepton-generation assignment: K_1* = 3_1 = electron, K_2* = 5_1 = muon.",
+  "description": "Phase 5d.5b: variance test of K_k* candidate knots in the depth-stratified Frobenius-reciprocity binding formula. For each (K_1*, K_2*) candidate pair (\u00d7 K_3* = 6_1 fixed per the catalog), assembles the FR-weighted binding contribution per depth and predicts B_atom. Reports the (K_1*, K_2*) pair minimizing the 1.82\u00d7 variance residual from PR #801. Tests the knot-particle dictionary's lepton-generation assignment: K_1* = 3_1 = electron, K_2* = 5_1 = muon.",
   "contentBlock": "prop:depth-stratified-frobenius-reciprocity",
   "parameters": {
     "q_0": "1.1099785827513808",
@@ -56,7 +56,7 @@
         "K_2_star": "unknot",
         "K_3_star": "6_1",
         "K_1_particle": "chirality (twist)",
-        "K_2_particle": "ν (neutrino)",
+        "K_2_particle": "\u03bd (neutrino)",
         "variance_max_min": 1.4888067413990311,
         "per_atom": {
           "D": {
@@ -98,7 +98,7 @@
         "K_2_star": "7_1",
         "K_3_star": "6_1",
         "K_1_particle": "chirality (twist)",
-        "K_2_particle": "τ (tau)",
+        "K_2_particle": "\u03c4 (tau)",
         "variance_max_min": 1.4965146385665933,
         "per_atom": {
           "D": {
@@ -140,7 +140,7 @@
         "K_2_star": "5_1",
         "K_3_star": "6_1",
         "K_1_particle": "chirality (twist)",
-        "K_2_particle": "μ (muon)",
+        "K_2_particle": "\u03bc (muon)",
         "variance_max_min": 1.4982548779429523,
         "per_atom": {
           "D": {
@@ -223,7 +223,7 @@
         "K_1_star": "unknot",
         "K_2_star": "3_1",
         "K_3_star": "6_1",
-        "K_1_particle": "ν (neutrino)",
+        "K_1_particle": "\u03bd (neutrino)",
         "K_2_particle": "e (electron)",
         "variance_max_min": 1.7312819233251426,
         "per_atom": {
@@ -265,7 +265,7 @@
         "K_1_star": "7_1",
         "K_2_star": "3_1",
         "K_3_star": "6_1",
-        "K_1_particle": "τ (tau)",
+        "K_1_particle": "\u03c4 (tau)",
         "K_2_particle": "e (electron)",
         "variance_max_min": 1.7336653875281187,
         "per_atom": {
@@ -307,7 +307,7 @@
         "K_1_star": "5_1",
         "K_2_star": "3_1",
         "K_3_star": "6_1",
-        "K_1_particle": "μ (muon)",
+        "K_1_particle": "\u03bc (muon)",
         "K_2_particle": "e (electron)",
         "variance_max_min": 1.7340174878584147,
         "per_atom": {
@@ -349,8 +349,8 @@
         "K_1_star": "unknot",
         "K_2_star": "5_1",
         "K_3_star": "6_1",
-        "K_1_particle": "ν (neutrino)",
-        "K_2_particle": "μ (muon)",
+        "K_1_particle": "\u03bd (neutrino)",
+        "K_2_particle": "\u03bc (muon)",
         "variance_max_min": 1.7344288310455651,
         "per_atom": {
           "D": {
@@ -433,8 +433,8 @@
         "K_1_star": "unknot",
         "K_2_star": "7_1",
         "K_3_star": "6_1",
-        "K_1_particle": "ν (neutrino)",
-        "K_2_particle": "τ (tau)",
+        "K_1_particle": "\u03bd (neutrino)",
+        "K_2_particle": "\u03c4 (tau)",
         "variance_max_min": 1.7359248080743577,
         "per_atom": {
           "D": {
@@ -475,8 +475,8 @@
         "K_1_star": "7_1",
         "K_2_star": "5_1",
         "K_3_star": "6_1",
-        "K_1_particle": "τ (tau)",
-        "K_2_particle": "μ (muon)",
+        "K_1_particle": "\u03c4 (tau)",
+        "K_2_particle": "\u03bc (muon)",
         "variance_max_min": 1.73680548288351,
         "per_atom": {
           "D": {
@@ -517,8 +517,8 @@
         "K_1_star": "5_1",
         "K_2_star": "5_1",
         "K_3_star": "6_1",
-        "K_1_particle": "μ (muon)",
-        "K_2_particle": "μ (muon)",
+        "K_1_particle": "\u03bc (muon)",
+        "K_2_particle": "\u03bc (muon)",
         "variance_max_min": 1.7371568742827679,
         "per_atom": {
           "D": {
@@ -560,7 +560,7 @@
         "K_2_star": "5_1",
         "K_3_star": "6_1",
         "K_1_particle": "e (electron)",
-        "K_2_particle": "μ (muon)",
+        "K_2_particle": "\u03bc (muon)",
         "variance_max_min": 1.7377838933083556,
         "per_atom": {
           "D": {
@@ -601,8 +601,8 @@
         "K_1_star": "7_1",
         "K_2_star": "7_1",
         "K_3_star": "6_1",
-        "K_1_particle": "τ (tau)",
-        "K_2_particle": "τ (tau)",
+        "K_1_particle": "\u03c4 (tau)",
+        "K_2_particle": "\u03c4 (tau)",
         "variance_max_min": 1.7382981428110136,
         "per_atom": {
           "D": {
@@ -643,8 +643,8 @@
         "K_1_star": "5_1",
         "K_2_star": "7_1",
         "K_3_star": "6_1",
-        "K_1_particle": "μ (muon)",
-        "K_2_particle": "τ (tau)",
+        "K_1_particle": "\u03bc (muon)",
+        "K_2_particle": "\u03c4 (tau)",
         "variance_max_min": 1.7386491853247505,
         "per_atom": {
           "D": {
@@ -686,7 +686,7 @@
         "K_2_star": "7_1",
         "K_3_star": "6_1",
         "K_1_particle": "e (electron)",
-        "K_2_particle": "τ (tau)",
+        "K_2_particle": "\u03c4 (tau)",
         "variance_max_min": 1.739275585865593,
         "per_atom": {
           "D": {
@@ -727,8 +727,8 @@
         "K_1_star": "unknot",
         "K_2_star": "unknot",
         "K_3_star": "6_1",
-        "K_1_particle": "ν (neutrino)",
-        "K_2_particle": "ν (neutrino)",
+        "K_1_particle": "\u03bd (neutrino)",
+        "K_2_particle": "\u03bd (neutrino)",
         "variance_max_min": 1.7425058053659084,
         "per_atom": {
           "D": {
@@ -769,8 +769,8 @@
         "K_1_star": "7_1",
         "K_2_star": "unknot",
         "K_3_star": "6_1",
-        "K_1_particle": "τ (tau)",
-        "K_2_particle": "ν (neutrino)",
+        "K_1_particle": "\u03c4 (tau)",
+        "K_2_particle": "\u03bd (neutrino)",
         "variance_max_min": 1.7448619071825495,
         "per_atom": {
           "D": {
@@ -811,8 +811,8 @@
         "K_1_star": "5_1",
         "K_2_star": "unknot",
         "K_3_star": "6_1",
-        "K_1_particle": "μ (muon)",
-        "K_2_particle": "ν (neutrino)",
+        "K_1_particle": "\u03bc (muon)",
+        "K_2_particle": "\u03bd (neutrino)",
         "variance_max_min": 1.7452110218752561,
         "per_atom": {
           "D": {
@@ -854,7 +854,7 @@
         "K_2_star": "unknot",
         "K_3_star": "6_1",
         "K_1_particle": "e (electron)",
-        "K_2_particle": "ν (neutrino)",
+        "K_2_particle": "\u03bd (neutrino)",
         "variance_max_min": 1.745834000391143,
         "per_atom": {
           "D": {
@@ -937,7 +937,7 @@
         "K_1_star": "7_1",
         "K_2_star": "6_1",
         "K_3_star": "6_1",
-        "K_1_particle": "τ (tau)",
+        "K_1_particle": "\u03c4 (tau)",
         "K_2_particle": "chirality (twist)",
         "variance_max_min": 1.8630063693220915,
         "per_atom": {
@@ -979,7 +979,7 @@
         "K_1_star": "unknot",
         "K_2_star": "6_1",
         "K_3_star": "6_1",
-        "K_1_particle": "ν (neutrino)",
+        "K_1_particle": "\u03bd (neutrino)",
         "K_2_particle": "chirality (twist)",
         "variance_max_min": 1.8630099969250282,
         "per_atom": {
@@ -1021,7 +1021,7 @@
         "K_1_star": "5_1",
         "K_2_star": "6_1",
         "K_3_star": "6_1",
-        "K_1_particle": "μ (muon)",
+        "K_1_particle": "\u03bc (muon)",
         "K_2_particle": "chirality (twist)",
         "variance_max_min": 1.863016745667471,
         "per_atom": {
@@ -1108,7 +1108,7 @@
       "K_2_star": "5_1",
       "K_3_star": "6_1",
       "K_1_particle": "e (electron)",
-      "K_2_particle": "μ (muon)",
+      "K_2_particle": "\u03bc (muon)",
       "variance_max_min": 1.7377838933083556,
       "per_atom": {
         "D": {
@@ -1145,5 +1145,8 @@
         }
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -135,5 +135,8 @@
     "six-fifths-hypothesis",
     "leading-order-vs-noise"
   ],
-  "verdict": "Best match 2\u00b7G (Catalan) \u2248 1.832 differs from required C by +0.083%"
+  "verdict": "Best match 2\u00b7G (Catalan) \u2248 1.832 differs from required C by +0.083%",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.Q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

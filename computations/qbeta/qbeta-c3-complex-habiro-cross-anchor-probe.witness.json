@@ -31,7 +31,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Tests four candidate complex-analytic Habiro forms (A: generic pole, B: log singularity at q=1, C: Faddeev dilog approximant, D: cyclotomic partial fractions) for cross-anchor consistency at proton + muon anchors per the 569bedda1 falsify redirect. Honest scoping — either CONFIRMS or REFUTES the redirect at this scope.",
+  "description": "Tests four candidate complex-analytic Habiro forms (A: generic pole, B: log singularity at q=1, C: Faddeev dilog approximant, D: cyclotomic partial fractions) for cross-anchor consistency at proton + muon anchors per the 569bedda1 falsify redirect. Honest scoping \u2014 either CONFIRMS or REFUTES the redirect at this scope.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   "data": {
     "empirical": {
@@ -73,8 +73,11 @@
     "verdict": {
       "naive_root_of_unity_habiro_works": false,
       "implication_1_empirical_jitter_is_artifact": "More parsimonious. Consistent with 569bedda1's 'proton-anchor near-match' classification.",
-      "implication_2_more_exotic_poles_needed": "Would require transcendental singularities or limits of root-of-unity sequences approaching q_0 ≈ 1.11.",
+      "implication_2_more_exotic_poles_needed": "Would require transcendental singularities or limits of root-of-unity sequences approaching q_0 \u2248 1.11.",
       "scope_status": "Complex-Habiro redirect at this scope does NOT yield a c_3 candidate matching BOTH anchors via natural root-of-unity poles."
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.empirical.q_muon). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -58,7 +58,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
     },
     {
       "name": "alpha_k_markov_axiom_k2",
@@ -66,7 +66,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
     },
     {
       "name": "alpha_k_markov_axiom_k3",
@@ -74,7 +74,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
     },
     {
       "name": "cross_validation_h3_witness",
@@ -113,7 +113,7 @@
     ],
     "reproduce": "python3 -u computations/alpha/alpha_k_macdonald_closed_form.py"
   },
-  "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
+  "description": "\u03b1_k mass-tower coefficients via the Macdonald hook-content closed form for y_\u03bb.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_\u03bb for every partition \u03bb \u22a2 n at every n \u2264 6, and cross-checks against the Markov-axiom prediction tr_M(\u03c3_1 \u22ef \u03c3_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
@@ -390,6 +390,9 @@
         ]
       }
     },
-    "closed_form_formula": "y_λ = Q^{n(λ)} · (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h)"
-  }
+    "closed_form_formula": "y_\u03bb = Q^{n(\u03bb)} \u00b7 (1-Q)^n / (1-X)^n \u00b7 \u220f (1-X\u00b7Q^c)/(1-Q^h)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -81,5 +81,8 @@
   "caveats": [
     "The door VERDICT is robust to abs(); the PER-BLOCK classification of #4657 is not. abs() flips the sign of a substantial fraction of the 30 blocks at n=9 (count reported per isotope in results[*].n_negative_raw_chi, measured on the baseline word; it differs on the interface-carrying words), so the split of submodular pushes into 'Frechet-violating' vs 'negative-weight' is specific to the |chi| reading.",
     "This probe does NOT derive which reading is correct. tr_M = sum y_lambda chi_lambda uses the bare character; the |chi| operator of #4404 is a modeling choice that remains underived."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808076",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

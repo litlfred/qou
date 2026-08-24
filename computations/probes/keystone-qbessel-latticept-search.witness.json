@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:50:17.414924+00:00",
-  "commitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "computedAt": "2026-08-23T21:09:48.942265+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "no_structural_latticept_realizes_vacuum_row",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "keystone-qbessel-latticept-search",
   "scriptFile": "keystone_qbessel_latticept_search.py",
   "scriptHash": "494333cdd9e3",
-  "scriptCommitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_qbessel_latticept_search.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_qbessel_latticept_search.py"
   },
   "description": "s013 geometric W_lambda vector 1: falsifiable NO-FIT test of the open latticePt field of QBesselRadialPartRealization. Feeds six transpose-invariant zero-parameter structural index maps (|content sum|, content^2 sum, Durfee, n(l)+n(l'), max hook, hook sum) into the second-kind Jackson q-Bessel contiguity WEIGHT orbit P_k=prod r_j (qbesselSecondKindRatio), over q in {q0,1/q0} and orders nu in {0,1/2,1,2} (a=q^nu). Tests the normalization-free realization condition P_{k_lambda}/P_{k_ref}=d_q(lambda)/d_q(ref) at all seven n=5 blocks incl. the self-conjugate (3,1,1)=[4][3]/[2]. Distinct from prior probes which tested q-Bessel ROOTS (keystone_qhankel_eq2_vacuum_row) or COMPACT closed forms (keystone_valuemap_screen_s013), not a structural latticePt INDEX into the weight orbit. Structural triage: most transpose-invariant indices collide (same index, different d_q) => excluded a priori; only |content sum| and content^2 sum are injective+testable. VERDICT: all candidates FAIL (scope a) -- these structural lattice maps alone do not realize the vacuum row on the second-kind q-Bessel orbit; NOT a structural exclusion (b). No fit, nothing wired.",
   "data": {

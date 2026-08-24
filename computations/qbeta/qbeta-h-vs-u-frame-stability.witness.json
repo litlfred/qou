@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T12:40:22.128073+00:00",
-  "commitSha": "5d9a59ed8ab629513a0a226a73a9caf9d1f30269",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T13:34:24.901677+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "h_frame_swing_equals_u_frame_swing",
-      "computed": "0.0237481633985735836649463763297385498421780341802968594313704",
-      "expected": "0.0237478040791201887338392649445474876671967307083609896498583",
+      "computed": "0.0239124320741847869389266172712165047213097933730374934166705",
+      "expected": "0.0239120703301551374532742740502525118660268175256994217859027",
       "passed": true,
       "tolerance": "0.000001",
       "source": "Matched magnification, so the comparison is fair. The two frames swing identically — changing the expansion variable does not change the anchor-instability at all."
@@ -18,15 +18,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "u-frame 0.023747804, h-frame 0.023748163, residual 0.023747189. The coefficient swing IS the residual swing; the divisors contribute ~1e-6. So the instability is a property of the model's q-dependence, not of the coordinate."
+      "source": "u-frame 0.02391207, h-frame 0.023912432, residual 0.023911451. The coefficient swing IS the residual swing; the divisors contribute ~1e-6. So the instability is a property of the model's q-dependence, not of the coordinate."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "qbeta-h-vs-u-frame-stability",
   "scriptFile": "qbeta_h_vs_u_frame_stability_probe.py",
   "scriptHash": "611a9bd55071",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,10 +37,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_h_vs_u_frame_stability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_h_vs_u_frame_stability_probe.py"
   },
   "description": "Tests whether re-expressing the Q_β ladder in h = q − 1/q instead of u = b·ℏ_q² fixes the cross-anchor instability of the extracted coefficients. Extracts the same residual in both frames at MATCHED magnification (h^k chosen so h^k ≈ u³) so neither frame is flattered by a smaller divisor. Result: both swing identically to five significant figures, and both equal the swing of the residual itself — the instability is in the residual, not the coordinate. Refutes the leakage hypothesis as the explanation of this drift (scope-(a)). The h-reframe keeps its other justifications (analyticity, odd-rung expressiveness, Ohtsuki/Habiro alignment, α_EM consistency) but buys nothing numerical at ~3× the rungs. No fit; nothing wired.",
   "data": {
@@ -55,20 +62,20 @@
         "coeff_h9": "-1.67603897674746780294610480700494116221913802763438533233859"
       },
       "muon": {
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "u": "0.00851723634004395810711354481100800446027960281897626531559873",
-        "h": "0.209060321989879461101608422297921906461756303916458683983049",
-        "residual": "-0.00000124821820538982132363826556378988351245672062112496549725053",
-        "coeff_u3": "-2.02020023502125517138232674988576251890206061330068660325496",
-        "coeff_h9": "-1.63623612926529086640012085726010568445449310015623909348545"
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "h": "0.209060322150316746630800261501919885980137169225879113703739",
+        "residual": "-0.00000124800818300752259624729993161395931589835654261228539598292",
+        "coeff_u3": "-2.01986031187400546349321995587646029747377592135260349078716",
+        "coeff_h9": "-1.63596080856230780354461919428690438778560140324908198566106"
       }
     },
     "relative_swings": {
-      "u_frame": "0.0237478040791201887338392649445474876671967307083609896498583",
-      "h_frame": "0.0237481633985735836649463763297385498421780341802968594313704",
-      "residual": "0.0237471886038972173462984730264354389997001334088238759844869",
-      "u3_itself": "0.000000630446953710379794890783926153833741931648903484849944402644",
-      "h9_itself": "0.000000998507393092154886141317240918263737237403378075681653947782"
+      "u_frame": "0.0239120703301551374532742740502525118660268175256994217859027",
+      "h_frame": "0.0239124320741847869389266172712165047213097933730374934166705",
+      "residual": "0.0239114507018941031061374230963864413952853285510383353396906",
+      "u3_itself": "0.000000634807830523969498725396446863289594157145018008407624406721",
+      "h9_itself": "0.00000100541418918924211378189831979128515533821537196275785222371"
     }
   }
 }

@@ -9,7 +9,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "the O(1)-argument bond-log α is farther from α_true than the geometric self-energy — the bond-dilog does not derive α"
+      "source": "the O(1)-argument bond-log \u03b1 is farther from \u03b1_true than the geometric self-energy \u2014 the bond-dilog does not derive \u03b1"
     }
   ],
   "allPassed": true,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/probes/flavor_split_alpha_bond_dilog_probe.py"
   },
-  "description": "Bond-dilog derivation of the flavor-split coefficient α: RULED OUT. The dilog/log at the O(1) bond arguments (z≈0.5, h≈0.21) gives α≈0.03–0.07 (worse than the geometric self-energy α=1, which is closest at +7.8%). Any single −ln(1−a·x) has 2nd-order ratio 1/2, so normalized α ∝ bond-sensitivity A≈0.13. α is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
+  "description": "Bond-dilog derivation of the flavor-split coefficient \u03b1: RULED OUT. The dilog/log at the O(1) bond arguments (z\u22480.5, h\u22480.21) gives \u03b1\u22480.03\u20130.07 (worse than the geometric self-energy \u03b1=1, which is closest at +7.8%). Any single \u2212ln(1\u2212a\u00b7x) has 2nd-order ratio 1/2, so normalized \u03b1 \u221d bond-sensitivity A\u22480.13. \u03b1 is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
   "data": {
     "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
     "proton_anchor": {
@@ -100,5 +100,8 @@
       }
     },
     "alpha_true_anchor_drift": "0.000236208569053470911052685717753969340720397929127679908706059214214002"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.proton_anchor.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -15,7 +15,7 @@ whether it is small. `gram.py` says this at length (lines ~100-155):
 under the live convention the Gram is singular, f64 cannot see it
 (`|lambda_min| = 3.9e-17` even driven at 60 dps through that module's
 NF path), and `np.linalg.inv` returns entries up to 7.6e15 with
-`||G G_inv - I|| = 1.64` while raising nothing.
+`||G G_inv - I||_max = 1.64` (4.14 Frobenius) while raising nothing.
 
 So this script carries its own `Q(q)`: `fractions.Fraction`
 coefficients, polynomial gcd cancellation, canonical normal form. `==

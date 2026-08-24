@@ -130,5 +130,8 @@
     "F_Bor_denominator_as_framing_T": "-6.0",
     "F_Bor_denominator_is_exact_framing_weight": true,
     "verdict": "The ribbon layer CANNOT close the L2 precision gaps: its only free parameter is an integer framing whose quantum is ~5.36%, which exceeds the gaps by ~4 orders of magnitude. It CAN move a result at the percent level, so a mis-set framing is a percent-scale systematic, not a ppb-scale knob."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.framing_ladder[].weight, parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

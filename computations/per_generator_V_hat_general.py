@@ -78,14 +78,21 @@ def per_generator_V_hat_general(
         if 0 <= g < n_gens:
             word_by_gen[g].append((float(c), float(d)))
 
-    nfac = qfac(n_strands)
+    # Pin the anchor EXPLICITLY. `qfac`/`dim_q` default to the module-level q of
+    # `hecke_characters`, which imports the SHIM's Q — rebound to muon whenever
+    # the entry-point stem is manifest-listed. That is what made this function's
+    # output a function of its CALLER: xi_ell_phi_q_probe and
+    # t6_tau_h5_embedding_probe both derive their own q inline from the muon
+    # ratio, never touch the manifest, and still moved 36 / 15 fields under an
+    # anchor flip. The Plancherel weights below were the carrier. Bean qou-wee5.
+    nfac = qfac(n_strands, Q0_PROTON)
     V_hat = [0.0] * n_gens
 
     # Plancherel weights
     weight_table: list[tuple[tuple[int, ...], float]] = []
     if weight_scheme == "plancherel":
         for shape in partitions_of(n_strands):
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weight_table.append((shape, (dq * dq) / nfac))
     else:
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")

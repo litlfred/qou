@@ -158,5 +158,8 @@
       "verdict": "NEGATIVE/PARTIAL: bond\u2212frustration structurally CAN sign-change (window \u03ba\u2208(3/2,3)), but NO 0/1-param derived M(A) lands both magnitudes; matching both requires the 2-param edge/triangle FIT (candidate F, non-evidential). Sign is derived; magnitude is a fit. Nothing wired."
     }
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595557334719899763220483225026656",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

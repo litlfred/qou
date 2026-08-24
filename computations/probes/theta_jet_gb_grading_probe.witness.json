@@ -1,40 +1,7 @@
 {
-  "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:25:10.084458+00:00",
-  "commitSha": "9e3cac17311daf33842df4c0dfb0b02bea19be0c",
-  "assertions": [],
-  "allPassed": true,
-  "durationMs": 16,
-  "computation": "theta_jet_gb_grading_probe",
-  "scriptFile": "theta_jet_gb_grading_probe.py",
-  "scriptHash": "4bcd523580d4",
-  "scriptCommitSha": "b2ce0c2c947b57e87e009280c470f5543df4e7f7",
-  "precisionMetadata": {
-    "compute_dps": 70,
-    "output_dps": 60,
-    "guard_digits": 10,
-    "truncation_bound": "1e-60"
-  },
-  "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
-  },
-  "invocation": {
-    "argv": [
-      "computations/probes/theta_jet_gb_grading_probe.py"
-    ],
-    "reproduce": "python3 -u computations/probes/theta_jet_gb_grading_probe.py"
-  },
   "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
-  "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
-  "generated": "2026-08-23T19:25:10+00:00",
+  "computation": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
+  "generated": "2026-07-20T04:05:41+00:00",
   "parameters": {
     "dps": 60,
     "m_max": 200,
@@ -91,5 +58,6 @@
     "discipline": "scope-(a); pre-stated discriminants; no AME data; the GS-bridge identification is leading-q-order + conjectural (C1 = binding module is the standing keystone conjecture)"
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.1099785955573347199",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

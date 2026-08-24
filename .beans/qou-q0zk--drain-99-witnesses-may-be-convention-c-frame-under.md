@@ -137,3 +137,98 @@ Regenerating this one moves a **content-cited** number by 13%, which stales
 the block's `.qa.json` sidecar and may contradict figures quoted in the `.md`.
 That is the drain itself, not a ride-along fix, and it needs a scope decision
 before it runs — same standing as `qou-1c4y`.
+
+
+## 2026-08-24 — 63 now; CONFIRMED #4, and its mechanism is NOT the producer
+
+Re-ran the detector on current `main`: **63**, down from 73 (2026-08-23) and 99
+(2026-08-19). Main keeps draining; the trend is the third independent sign the
+class is real rather than a grep artifact.
+
+### Confirmed #4: `alpha-k-jones-markov-h3` — decidable by inspection, no swap needed
+
+The other three confirmations needed the decisive test (swap `z` back to C,
+check the committed value reappears). This one does not: the witness
+**serialises `z` itself**.
+
+    computations/alpha-k-jones-markov-h3.witness.json        z = 0.4993203341836944   <- C
+    computations/alpha/alpha-k-jones-markov-h3.witness.json  z = 0.6126880371464652   <- D
+
+Both files exist, same basename, different directories, identical key
+structure. **Confirmed count 4 of 4 attempted.**
+
+### The mechanism is different from #1-#3, and that matters
+
+For the first three the producer emitted C. Here the producer emits **D** —
+`computations/alpha/alpha_k_jones_markov_h3.py` is proton-pinned, current
+`scriptHash`, and writes *next to itself* under `alpha/`. The C values live in
+a 2026-05-30 orphan at the top level that **no producer writes any more**, and
+that orphan is the copy consumers read.
+
+This is a candidate answer to this bean's own open question — *"11/41 producers
+re-run, not one witness moved C->D"*. A producer whose output path differs from
+the consumed path cannot move the consumed witness however many times it is
+re-run.
+
+**But it explains 1 of 63, not the class.** Tested corpus-wide: exactly one
+candidate has a live (non-`_deprecated`) same-basename twin. That makes this
+the fourth consecutive time in this arc that a plausible shared mechanism
+turned out to have single-file scope — the same pattern `qou-pvem` records for
+the DEAD_TOL sub-class.
+
+### REDISCOVERY, not a find — `qou-kcii` already owns this
+
+`qou-kcii` measured **25 duplicated witness stems** in `computations/`, all 25
+with differing payloads, and lists `alpha-k-jones-markov-h3  None vs proton`
+explicitly. I ran the corpus-grep after finding this rather than before, which
+is the wrong order and exactly the mistake `qou-nr8y` records one bean over.
+
+What is **new** on top of `qou-kcii`, and worth carrying back to it:
+
+1. For this stem the payload difference **is a convention frame** (C vs D), not
+   just the anchor label `qou-kcii` records. For the h4 twin it is *both*: C
+   **and** the muon pin (`q_0 = 1.10997859555418` vs proton
+   `1.10997858275138`), with nonzero 3+-row weights `(1,1,1,1) = -8.4e-4`,
+   `(2,1,1) = 2.4e-2` against D's ~1e-17.
+2. **A confirmed live instance.** `qou-kcii` scopes its consumer finding
+   carefully — *"this is the capability to pick wrong; I have NOT established
+   that any of the six currently resolves one of the 25 ambiguous stems"*.
+   `computations/codata_reconciliation.py` did, and it is a **seventh**
+   mechanism its list does not cover: not `rglob`, a **hardcoded path**.
+
+### What was actually fixed here, stated precisely
+
+The `alpha_2 = z^2` row in `codata_reconciliation` is **convention-invariant** —
+it compares a witness against *its own* `z` — so it passed on either copy and
+the residual only moves `2.78e-17 -> 5.55e-17`, both machine zero. **No number
+was wrong.** What was wrong is *provenance*: the row named a muon-pinned,
+C-frame, no-longer-written file as its `predicted_source`, so an auditor
+following that citation lands on the wrong frame. That is what the repoint
+fixes, and it should not be described as a numerical correction.
+
+The content block `explicit-alpha-k-h3-proof.md` quotes **no numerals** — its
+claims are the symbolic `alpha_2 = z^2`, `alpha_3 = h z^2 + z`, which hold for
+any `z` by the Markov axioms. Repointing its link costs nothing downstream.
+
+### NOT changed, and this is the important half
+
+`computations/h4_markov_weights_closed_form.py` reads the **top-level (C-frame,
+muon)** h4 witness and looks like the identical defect. It is not. It hardcodes
+`XCHECK_Z = "0.49932033403359827"` and `XCHECK_WEIGHTS` transcribed from that
+witness, and evaluates its symbolic closed forms at *that* `(q_0, z)` to show
+they reproduce the published record — then evaluates at the proton anchor
+separately. It is a **reproduction cross-check**: it uses C deliberately.
+Repointing it would have broken a working control.
+
+That is precisely the hazard `qou-a6yh` names, and I walked up to it one file
+after concluding the control-arm caution did not apply here. **My intersection
+test was at the wrong layer**: I compared the 63 candidate *witnesses* against
+the fingerprint detector's control arms (intersection empty, correctly) and
+concluded there were none. The control arm here is a **consumer**, not a
+witness. A drain that classifies witnesses and repoints consumers mechanically
+will break controls that no witness-level test can see.
+
+### Still not drained, deliberately
+
+`wedderburn-pair-volumes` (confirmed #3) still moves a content-cited number by
+13% and still needs the scope decision. Unchanged from 2026-08-23.

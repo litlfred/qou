@@ -95,7 +95,7 @@
         "abs_rescaler": "15081.49166341228006251569119034985030721182130493487686221162952405665"
       }
     },
-    "verdict": "ROBUST — the co-Casimir Δ_λ = 1/dim_q refutation is NOT a λ_A density artifact. The verdict quantity Σ y_λ χ^λ Δ_λ^B = +0.145 is density-independent (pure per-partition Hecke data). Swapping the constituent baseline changes only the target: CODATA target −4.35 (wrong sign, |rescaler| ≈ 30), global-λ_A target ≈ −110.5 (wrong sign, ≈ 763×), per-knot target ≈ +2186 (sign now agrees but ≈ 15081× too small). The closure fails by ≥ 30× under every density; the specific 'wrong sign' phrasing is baseline-dependent, the failure is not. Scope (a): this construction, alone, does not reproduce the numbers under any of the three density bases — no ingredient-level exclusion claimed.",
+    "verdict": "ROBUST \u2014 the co-Casimir \u0394_\u03bb = 1/dim_q refutation is NOT a \u03bb_A density artifact. The verdict quantity \u03a3 y_\u03bb \u03c7^\u03bb \u0394_\u03bb^B = +0.145 is density-independent (pure per-partition Hecke data). Swapping the constituent baseline changes only the target: CODATA target \u22124.35 (wrong sign, |rescaler| \u2248 30), global-\u03bb_A target \u2248 \u2212110.5 (wrong sign, \u2248 763\u00d7), per-knot target \u2248 +2186 (sign now agrees but \u2248 15081\u00d7 too small). The closure fails by \u2265 30\u00d7 under every density; the specific 'wrong sign' phrasing is baseline-dependent, the failure is not. Scope (a): this construction, alone, does not reproduce the numbers under any of the three density bases \u2014 no ingredient-level exclusion claimed.",
     "refutation_scope": "scope-limited negative (a) per AGENTS.md",
     "upstream_witness_hashes": [
       {
@@ -107,5 +107,8 @@
         "computedAt": "2026-07-07T13:41:26.749016+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -10,7 +10,7 @@
       "expected": "470.889594851513600526235770854599460056548379046401260554070",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "The 1/u³ divisor is identical for both conventions, so the c₃ ratio is exactly the ratio of the raw cosine residuals. This is what makes c₃ the wrong unit for comparing conventions."
+      "source": "The 1/u\u00b3 divisor is identical for both conventions, so the c\u2083 ratio is exactly the ratio of the raw cosine residuals. This is what makes c\u2083 the wrong unit for comparing conventions."
     },
     {
       "name": "zD_phase_outside_ladder_window_by_over_100x",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "|α_D − α_req| = 0.0118729 rad vs window 1.09189e-5 rad. Scope-(a): the one-parameter class α = (z−1)h/2 cannot supply a D-frame ladder; the functional form must change."
+      "source": "|\u03b1_D \u2212 \u03b1_req| = 0.0118729 rad vs window 1.09189e-5 rad. Scope-(a): the one-parameter class \u03b1 = (z\u22121)h/2 cannot supply a D-frame ladder; the functional form must change."
     },
     {
       "name": "alpha_required_and_alpha_C_slopes_have_opposite_sign",
@@ -26,7 +26,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "dα_req/dq = 41.525766, dα_C/dq = -0.45475458 (central difference, ±1e-4 relative in q). Opposite signs ⇒ the two curves cross transversally at q₀ rather than coincide, so the 2.3e-5 rad agreement there is a point coincidence, not a functional identity. A phase derived from the representation would track α_req as q moves. Scope-(a): this is a statement about the committed ansatz, not a proved exclusion of any frame."
+      "source": "d\u03b1_req/dq = 41.525766, d\u03b1_C/dq = -0.45475458 (central difference, \u00b11e-4 relative in q). Opposite signs \u21d2 the two curves cross transversally at q\u2080 rather than coincide, so the 2.3e-5 rad agreement there is a point coincidence, not a functional identity. A phase derived from the representation would track \u03b1_req as q moves. Scope-(a): this is a statement about the committed ansatz, not a proved exclusion of any frame."
     },
     {
       "name": "cross_anchor_c3_swing_is_the_slope_mismatch",
@@ -34,7 +34,7 @@
       "expected": "0.0494822652411623743864995613731682915482550767508353761256743",
       "passed": true,
       "tolerance": "0.001",
-      "source": "Predicted from the two slopes ALONE — Δc₃ = [tan(α−u/2)/u³]·(dα_C/dq − dα_req/dq)·Δq — with no fibre content: 0.049623884 vs measured 0.049482265, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c₃(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry §9g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c₃(p) − c₃(m)| by definition."
+      "source": "Predicted from the two slopes ALONE \u2014 \u0394c\u2083 = [tan(\u03b1\u2212u/2)/u\u00b3]\u00b7(d\u03b1_C/dq \u2212 d\u03b1_req/dq)\u00b7\u0394q \u2014 with no fibre content: 0.049623884 vs measured 0.049482265, agreeing to 0.29%. Scope-(a): removes the cross-anchor swing as EVIDENCE FOR a complex-analytic fibre-level c\u2083(q) (the reading in AGENTS.md's fibre-vs-observable banner and registry \u00a79g's 'REFUTED-as-real-q survives'); does NOT refute fibre structure, which stands or falls on other grounds. Also fixes the S_leak genericity window width, which is |c\u2083(p) \u2212 c\u2083(m)| by definition."
     }
   ],
   "allPassed": true,
@@ -64,7 +64,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_ladder_required_phase_probe.py"
   },
-  "description": "Inverts the Q_β precision ladder for the phase α it requires (α_req = u/2 − arccos(Q_codata/(Q_A(1+c₂u²))), c₂ = −1 hardcoded as in the committed extraction), and reports each Markov convention's distance from it in RADIANS rather than in c₃ units. Shows that the reported c₃ swing −2.07 → −974 under C → D is a phase-error growth from ~4e-4 to ~29% magnified by the fixed 1/u³ factor, not a three-orders-of-magnitude failure. Establishes scope-(a) that the class 'α = (z−1)h/2 with z a convention parameter' cannot yield a D-frame ladder: the required window is ~1e-5 rad and z_D sits ~1e-2 away, so the functional form must change. Does NOT claim C's α is derived — the ladder inverts against CODATA and the eigenphase identification is axiomatised. No fit; nothing wired.",
+  "description": "Inverts the Q_\u03b2 precision ladder for the phase \u03b1 it requires (\u03b1_req = u/2 \u2212 arccos(Q_codata/(Q_A(1+c\u2082u\u00b2))), c\u2082 = \u22121 hardcoded as in the committed extraction), and reports each Markov convention's distance from it in RADIANS rather than in c\u2083 units. Shows that the reported c\u2083 swing \u22122.07 \u2192 \u2212974 under C \u2192 D is a phase-error growth from ~4e-4 to ~29% magnified by the fixed 1/u\u00b3 factor, not a three-orders-of-magnitude failure. Establishes scope-(a) that the class '\u03b1 = (z\u22121)h/2 with z a convention parameter' cannot yield a D-frame ladder: the required window is ~1e-5 rad and z_D sits ~1e-2 away, so the functional form must change. Does NOT claim C's \u03b1 is derived \u2014 the ladder inverts against CODATA and the eigenphase identification is axiomatised. No fit; nothing wired.",
   "data": {
     "c2_hardcoded": "-1.0",
     "anchors": [
@@ -135,14 +135,14 @@
         "d_alpha_required_dq": null,
         "d_alpha_C_dq": null,
         "slope_ratio": null,
-        "note": "no real phase solves the ladder at this step (Q_A < Q_codata ⇒ arccos argument leaves [−1, 1])"
+        "note": "no real phase solves the ladder at this step (Q_A < Q_codata \u21d2 arccos argument leaves [\u22121, 1])"
       },
       {
         "rel_step": "1e-2",
         "d_alpha_required_dq": null,
         "d_alpha_C_dq": null,
         "slope_ratio": null,
-        "note": "no real phase solves the ladder at this step (Q_A < Q_codata ⇒ arccos argument leaves [−1, 1])"
+        "note": "no real phase solves the ladder at this step (Q_A < Q_codata \u21d2 arccos argument leaves [\u22121, 1])"
       }
     ],
     "cross_anchor_swing": {
@@ -153,5 +153,8 @@
       "observed_swing": "0.0494822652411623743864995613731682915482550767508353761256743",
       "rel_agreement": "0.00286200881812322776206246245770439667049248743000103372214306"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.anchors[].q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

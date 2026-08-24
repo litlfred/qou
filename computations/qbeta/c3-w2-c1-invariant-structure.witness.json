@@ -1,55 +1,58 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_invariant_structure.py",
- "commitSha": "unknown",
- "description": "Bean qou-wgnx. Off-axis structure of the connection invariant chi, plus a PRECISION WARNING for the sibling scripts. (1) At DPS=120/NG=500/NH=60 \u2014 the settings of c3_w2_c1_connection_invariant.py, ample on the real axis \u2014 an off-axis evaluation at z = 0.42i has entrywise P-ellipticity deviation ~1.1, i.e. NO signal, and reports log10|chi| = -45.8 where the converged value is -73.4468. Since P(pz) = P(z) is an algebraic identity, that deviation is a pure error meter and must be checked before believing any off-axis number. (2) REFLECTION LAW chi(conj z) = 1/conj(chi(z)), verified to 1e-167, because the real-coefficient operator makes conjugation swap the two 0-side solutions and hence P's rows. Consequently |chi| = 1 on the real axis is AUTOMATIC, not independent connection data \u2014 a correction to how the earlier result reads. (3) Off-axis, |chi| is independent of |z| to ~10 digits and log|chi| is exactly linear in arg z with slope -2 pi/(log p ln 10), i.e. chi behaves like z^(i 2 pi/log p) in a sector, then SATURATES with the bend near arg/pi = 0.447 = arg(-t2)/pi, a 0-side exponent direction. Sector-wise power behaviour switching across exponent rays is the signature of a theta quotient. NOT DETERMINED: chi's divisor, hence not its closed form. Stokes multipliers remain OPEN.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_invariant_structure.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "8d409938bbf0"
- },
- "results": {
-  "q": "1.1099785827513808075916690956",
-  "dps": 200,
-  "NG": 800,
-  "NH": 110,
-  "reflection_law": "chi(conj z) = 1 / conj(chi(z))",
-  "consequence": "|chi| = 1 on the real axis is automatic",
-  "off_axis_behaviour": "z^(i 2 pi / log p) in a sector, saturating near arg(-t2)",
-  "divisor_determined": false,
-  "coarse_setting_ellipticity_dev": "1.10502",
-  "coarse_setting_log10_chi": "-45.8024337172",
-  "converged_log10_chi": "-73.4468161269",
-  "reflection_law_max_dev": "4.6628e-268",
-  "radial_spread_at_arg_pi_over_2": "3.0992e-9",
-  "slope_per_radian": "-52.3046553508",
-  "predicted_slope_z_pow_i_2pi_over_logp": "-52.3046553508",
-  "arg_minus_t2_over_pi": "0.446974509721",
-  "slope_rel_diff": "2.3751e-65"
- },
- "checks": [
-  {
-   "name": "coarse_settings_have_no_off_axis_signal",
-   "detail": "entrywise P-ellipticity deviation is O(1) at DPS=120/NH=60, so the off-axis value there is noise",
-   "passed": true
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_invariant_structure.py",
+  "commitSha": "unknown",
+  "description": "Bean qou-wgnx. Off-axis structure of the connection invariant chi, plus a PRECISION WARNING for the sibling scripts. (1) At DPS=120/NG=500/NH=60 \u2014 the settings of c3_w2_c1_connection_invariant.py, ample on the real axis \u2014 an off-axis evaluation at z = 0.42i has entrywise P-ellipticity deviation ~1.1, i.e. NO signal, and reports log10|chi| = -45.8 where the converged value is -73.4468. Since P(pz) = P(z) is an algebraic identity, that deviation is a pure error meter and must be checked before believing any off-axis number. (2) REFLECTION LAW chi(conj z) = 1/conj(chi(z)), verified to 1e-167, because the real-coefficient operator makes conjugation swap the two 0-side solutions and hence P's rows. Consequently |chi| = 1 on the real axis is AUTOMATIC, not independent connection data \u2014 a correction to how the earlier result reads. (3) Off-axis, |chi| is independent of |z| to ~10 digits and log|chi| is exactly linear in arg z with slope -2 pi/(log p ln 10), i.e. chi behaves like z^(i 2 pi/log p) in a sector, then SATURATES with the bend near arg/pi = 0.447 = arg(-t2)/pi, a 0-side exponent direction. Sector-wise power behaviour switching across exponent rays is the signature of a theta quotient. NOT DETERMINED: chi's divisor, hence not its closed form. Stokes multipliers remain OPEN.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_invariant_structure.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "8d409938bbf0"
   },
-  {
-   "name": "converged_settings_are_elliptic",
-   "detail": "P(pz) = P(z) entrywise at DPS>=200",
-   "passed": true
+  "results": {
+    "q": "1.1099785827513808075916690956",
+    "dps": 200,
+    "NG": 800,
+    "NH": 110,
+    "reflection_law": "chi(conj z) = 1 / conj(chi(z))",
+    "consequence": "|chi| = 1 on the real axis is automatic",
+    "off_axis_behaviour": "z^(i 2 pi / log p) in a sector, saturating near arg(-t2)",
+    "divisor_determined": false,
+    "coarse_setting_ellipticity_dev": "1.10502",
+    "coarse_setting_log10_chi": "-45.8024337172",
+    "converged_log10_chi": "-73.4468161269",
+    "reflection_law_max_dev": "4.6628e-268",
+    "radial_spread_at_arg_pi_over_2": "3.0992e-9",
+    "slope_per_radian": "-52.3046553508",
+    "predicted_slope_z_pow_i_2pi_over_logp": "-52.3046553508",
+    "arg_minus_t2_over_pi": "0.446974509721",
+    "slope_rel_diff": "2.3751e-65"
   },
-  {
-   "name": "reflection_law",
-   "detail": "chi(conj z) = 1/conj(chi(z))",
-   "passed": true
-  },
-  {
-   "name": "log_abs_chi_slope_matches_two_pi_over_log_p",
-   "detail": "slope per radian equals -2 pi/(log p ln 10)",
-   "passed": true
-  }
- ],
- "verdict": "Off the real axis chi behaves like z^(i 2 pi/log p) in a sector \u2014 log|chi| linear in arg z with slope matching -2 pi/(log p ln 10) exactly, and |z|-independent \u2014 then saturates, the bend sitting at arg(-t2), a 0-side exponent direction. Sector-wise power behaviour switching across exponent rays is the signature of a theta quotient, so chi is presumably a ratio of theta_p's in the exponents and T. TWO CORRECTIONS TO EARLIER READINGS: |chi| = 1 on the real axis follows from the reflection law chi(conj z) = 1/conj(chi(z)) and is not independent data; and the sibling scripts' settings, though ample on the real axis, carry NO off-axis signal \u2014 always check entrywise P-ellipticity first, since P(pz) = P(z) is an algebraic identity and therefore a pure error meter. NOT DETERMINED: chi's divisor, hence not its closed form; an elliptic function is fixed by its divisor up to a constant and the sector data constrains but does not supply it. Stokes multipliers remain OPEN.",
- "durationMs": 40915
+  "checks": [
+    {
+      "name": "coarse_settings_have_no_off_axis_signal",
+      "detail": "entrywise P-ellipticity deviation is O(1) at DPS=120/NH=60, so the off-axis value there is noise",
+      "passed": true
+    },
+    {
+      "name": "converged_settings_are_elliptic",
+      "detail": "P(pz) = P(z) entrywise at DPS>=200",
+      "passed": true
+    },
+    {
+      "name": "reflection_law",
+      "detail": "chi(conj z) = 1/conj(chi(z))",
+      "passed": true
+    },
+    {
+      "name": "log_abs_chi_slope_matches_two_pi_over_log_p",
+      "detail": "slope per radian equals -2 pi/(log p ln 10)",
+      "passed": true
+    }
+  ],
+  "verdict": "Off the real axis chi behaves like z^(i 2 pi/log p) in a sector \u2014 log|chi| linear in arg z with slope matching -2 pi/(log p ln 10) exactly, and |z|-independent \u2014 then saturates, the bend sitting at arg(-t2), a 0-side exponent direction. Sector-wise power behaviour switching across exponent rays is the signature of a theta quotient, so chi is presumably a ratio of theta_p's in the exponents and T. TWO CORRECTIONS TO EARLIER READINGS: |chi| = 1 on the real axis follows from the reflection law chi(conj z) = 1/conj(chi(z)) and is not independent data; and the sibling scripts' settings, though ample on the real axis, carry NO off-axis signal \u2014 always check entrywise P-ellipticity first, since P(pz) = P(z) is an algebraic identity and therefore a pure error meter. NOT DETERMINED: chi's divisor, hence not its closed form; an elliptic function is fixed by its divisor up to a constant and the sector data constrains but does not supply it. Stokes multipliers remain OPEN.",
+  "durationMs": 40915,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -68,8 +68,21 @@ not inflated by it: rendering `f"q0 = {float(Q):.6f}"` destroys nothing the
 pipeline goes on to use. Do not "fix" these; converting them to mpmath makes
 output uglier and the numbers no better.
 
+`F64_ENGINE_ENTRY` is a call to a `pyhecke_native` entry point that HAS an
+exact MPFR sibling — `chi_lambda_braid` when `chi_lambda_braid_mpfr` exists.
+The f64 entry is not wrong by itself (it is ~10-30x faster and plenty of
+callers want that); what makes a site actionable is calling it and then
+serialising the result at more digits than f64 carries. Measured at the proton
+q0, the f64 and MPFR paths agree to ~15-16 significant digits and diverge
+after, so a witness carrying 50 digits of such a value carries ~35 of noise.
+CIRCUMSTANTIAL — check what the caller does with the result.
+
+This class was invisible here until 2026-08-24: `scan_source` returned early
+for any module holding no f64 q-name, and a module can pass its own q straight
+into the engine. 111 call sites in 63 files went unreported.
+
 `F64_IMPORT` is a module that imports an f64 constant and also uses mpmath,
-with no cast and no kernel found. The weakest signal of the five.
+with no cast and no kernel found. The weakest signal of the six.
 
 The display/value split is a one-directional walk up the AST (see
 `_is_display_only`): a cast is display-only when its ancestors, passing through
@@ -91,6 +104,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -347,6 +361,150 @@ def numpy_kernel_ops(tree: ast.AST, mods: set[str], bare: set[str]) -> list:
     return hits
 
 
+# `pyhecke_native` entry points that have an EXACT (MPFR) sibling.
+#
+# Hardcoded on purpose: `pyhecke_native` is NOT on PyPI (404, no publish step
+# in its workflow), so a container without the extension built is the DEFAULT,
+# not an anomaly. Deriving this table by `dir(pyhecke_native)` would make the
+# audit silently report zero on exactly the machines most likely to run it.
+# `--self-test` checks the table against the live module when it IS importable.
+#
+# The f64 entry is not a defect by itself — it is ~10-30x faster and plenty of
+# callers legitimately want that. What makes a site actionable is calling it
+# and then SERIALISING the result at more digits than f64 carries. Measured
+# 2026-08-24 against `chi_lambda_braid_mpfr` at 50 dps, proton q0:
+#
+#     H3  sigma_1        rel diff 2.917e-16
+#     H3  borromean-ish  rel diff 7.746e-16
+#     H6  deuteron-ish   rel diff 7.362e-16
+#
+# i.e. ~15-16 real digits. A witness carrying 50 is carrying ~35 of noise.
+# The MPFR entry takes `q_str` as a DECIMAL STRING specifically to avoid the
+# lossy f64 conversion at the boundary — its own docstring says so.
+NATIVE_EXACT_SIBLING = {
+    "chi_lambda_all_partitions_f64": "chi_lambda_all_partitions_mpfr",
+    "chi_lambda_braid": "chi_lambda_braid_mpfr",
+    "chi_lambdas_braid": "chi_lambdas_braid_mpfr",
+    "chi_q_atomic": "chi_q_atomic_mpfr",
+    "chi_q_atomic_all_partitions": "chi_q_atomic_all_partitions_mpfr",
+}
+
+
+# The Python wrapper around the same kernel. Its `precision=` keyword selects
+# the path and DEFAULTS TO f64 ("Default: f64 fast path" —
+# `hecke/hecke_characters.py`), so a caller that omits it silently gets f64
+# even though `precision="mpfr_50dps"` is one keyword away. Measured
+# 2026-08-24: 20 of 30 wrapper call sites omit it.
+#
+# Worth knowing before "fixing" one: the wrapper handles the boundary
+# correctly when asked. Passing `q_value` as a STRING routes it to MPFR
+# untouched; passing a float makes it `format(float(q), ...)` first, which its
+# own comment calls "implicit acceptance of f64 boundary loss". So the fix is
+# `precision="mpfr_50dps"` AND a string q, not the keyword alone.
+WRAPPER_MODULES = {"hecke_characters", "hecke.hecke_characters"}
+
+
+def wrapper_default_f64_calls(tree: ast.AST) -> list:
+    """[(line, "fn(precision=?)")] for wrapper calls that omit `precision=`."""
+    bare: set[str] = set()
+    mods: set[str] = set()
+    for n in ast.walk(tree):
+        if isinstance(n, ast.ImportFrom) and (n.module or "") in WRAPPER_MODULES:
+            bare |= {a.asname or a.name for a in n.names
+                     if a.name in NATIVE_EXACT_SIBLING}
+        elif isinstance(n, ast.Import):
+            for a in n.names:
+                if a.name in WRAPPER_MODULES:
+                    mods.add(a.asname or a.name.split(".")[-1])
+    if not bare and not mods:
+        return []
+    hits = []
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = n.func
+        fn = None
+        if (isinstance(f, ast.Attribute) and getattr(f.value, "id", None) in mods
+                and f.attr in NATIVE_EXACT_SIBLING):
+            fn = f.attr
+        elif isinstance(f, ast.Name) and f.id in bare:
+            fn = f.id
+        if fn and not any(k.arg == "precision" for k in n.keywords):
+            hits.append((getattr(n, "lineno", 0), f"{fn}(precision=?)"))
+    return hits
+
+
+_MPFR_CALL = re.compile(r"\b\w+_mpfr\s*\(")
+
+
+def native_entry_disposition(src: str) -> str:
+    """Split an F64_ENGINE_ENTRY module into deliberate / harmless / actionable.
+
+    Encodes the triage rule directly: the f64 entry is ~10-30x faster and is
+    frequently the RIGHT call, so what makes a site actionable is not the call
+    but whether the module then SERIALISES above what f64 carries (~15-16
+    significant digits, measured).
+
+    Two hand-verified cases the raw count would have mis-sold, both of which
+    this proxy classifies correctly:
+
+    * `chi_4he_binding_lossless.py` calls the f64 entry ON PURPOSE, as a
+      same-convention cross-check floor for its MPFR result. Its own comment
+      says so. -> deliberate.
+    * `atomic_chirality_residue.py` does `float(mp.log(abs(chi)))` three lines
+      after the call; the whole downstream is f64, so MPFR would buy nothing.
+      -> harmless.
+
+    A proxy, not a verdict: confirm per site before editing.
+    """
+    if _MPFR_CALL.search(src):
+        return "deliberate"
+    if re.search(r"\bfmt\s*\(", src):
+        return "actionable"
+    for m in re.finditer(r"nstr\s*\([^,]+,\s*([A-Za-z_0-9]+)", src):
+        tok = m.group(1)
+        # A non-literal is a `dps` variable, which is >= 18 everywhere here.
+        if not tok.isdigit() or int(tok) >= 18:
+            return "actionable"
+    return "harmless"
+
+
+def native_f64_entry_calls(tree: ast.AST) -> list:
+    """[(line, "fn -> fn_mpfr")] for calls to an f64 native entry that has an
+    exact sibling.
+
+    Matches both `pyhecke_native.chi_lambda_braid(...)` and a bare
+    `chi_lambda_braid(...)` brought in by `from pyhecke_native import ...`.
+    A local function of the same name would false-positive; the bare form is
+    therefore only honoured when the module actually imports that name from
+    `pyhecke_native`.
+    """
+    bare: set[str] = set()
+    mods: set[str] = set()
+    for n in ast.walk(tree):
+        if isinstance(n, ast.ImportFrom) and (n.module or "") == "pyhecke_native":
+            bare |= {a.asname or a.name for a in n.names
+                     if a.name in NATIVE_EXACT_SIBLING}
+        elif isinstance(n, ast.Import):
+            for a in n.names:
+                if a.name == "pyhecke_native":
+                    mods.add(a.asname or a.name)
+    hits = []
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = n.func
+        fn = None
+        if isinstance(f, ast.Attribute) and getattr(f.value, "id", None) in mods:
+            fn = f.attr
+        elif isinstance(f, ast.Name) and f.id in bare:
+            fn = f.id
+        if fn in NATIVE_EXACT_SIBLING:
+            hits.append((getattr(n, "lineno", 0),
+                         f"{fn} -> {NATIVE_EXACT_SIBLING[fn]}"))
+    return hits
+
+
 def scan_source(src: str) -> dict:
     """Classify one module. Pure over text — self-tested below.
 
@@ -355,14 +513,21 @@ def scan_source(src: str) -> dict:
     tiering by blast radius can read the counts without re-deriving them.
     """
     blank = {"tier": None, "laundered": [], "casts": [], "display": [],
-             "numpy": [], "f64": {}}
+             "numpy": [], "native": [], "f64": {}}
     try:
         tree = ast.parse(src)
     except SyntaxError:
         return blank
+    native = native_f64_entry_calls(tree) + wrapper_default_f64_calls(tree)
     names = f64_imports(tree)
     mods = f64_module_aliases(tree)
     if not names and not mods:
+        # A module can reach the f64 engine without importing any f64 q-name —
+        # it passes its own q straight in. That whole class was invisible here
+        # until 2026-08-24 because this early return fired first.
+        if native:
+            return {"tier": "F64_ENGINE_ENTRY", "laundered": [], "casts": [],
+                    "display": [], "numpy": [], "native": native, "f64": {}}
         return blank
     aliases = _mpmath_aliases(tree)
     parents = _parents(tree)
@@ -374,6 +539,8 @@ def scan_source(src: str) -> dict:
         tier = "LAUNDERED"
     elif casts:
         tier = "F64_CAST"
+    elif native:
+        tier = "F64_ENGINE_ENTRY"
     elif numpy and aliases:
         tier = "NUMPY_ON_Q"
     elif display:
@@ -384,7 +551,8 @@ def scan_source(src: str) -> dict:
         # Holds an f64 but never reaches mpmath: not this audit's business.
         tier = None
     return {"tier": tier, "laundered": laundered, "casts": casts,
-            "display": display, "numpy": numpy, "f64": names}
+            "display": display, "numpy": numpy, "native": native,
+            "f64": names}
 
 
 Q50 = "Q_50_DIGIT_STR"
@@ -461,6 +629,57 @@ CASES = [
      "import numpy as np\nfrom q_parameter import Q\na = np.array([Q])\n",
      None),
 
+    # --- F64_ENGINE_ENTRY: the class the early return used to hide ---
+    ("a native f64 entry with an exact sibling is caught",
+     "import pyhecke_native\n"
+     "c = pyhecke_native.chi_lambda_braid([2, 1], w, 1.1)\n",
+     "F64_ENGINE_ENTRY"),
+    # The case that motivated the tier: NO f64 q-name is imported, so every
+    # other detector returns blank and `scan_source` used to return early.
+    ("caught even with no f64 q-name imported at all",
+     "import mpmath as mp\nimport pyhecke_native\n"
+     "c = mp.mpf(str(pyhecke_native.chi_q_atomic(3, 2, 1.1)))\n",
+     "F64_ENGINE_ENTRY"),
+    ("a bare from-import of the f64 entry is caught",
+     "from pyhecke_native import chi_lambdas_braid\n"
+     "c = chi_lambdas_braid([2, 1], w, 1.1)\n", "F64_ENGINE_ENTRY"),
+    ("aliased on import is still caught",
+     "import pyhecke_native as pn\nc = pn.chi_lambda_braid([2, 1], w, 1.1)\n",
+     "F64_ENGINE_ENTRY"),
+    # The whole point of the tier is that an exact sibling EXISTS. Calling the
+    # MPFR entry is the fix, so it must never be flagged as the problem.
+    ("calling the MPFR sibling is NOT flagged",
+     "import pyhecke_native\n"
+     "c = pyhecke_native.chi_lambda_braid_mpfr([2, 1], w, qs, 50)\n", None),
+    ("a native entry with no exact sibling is out of scope",
+     "import pyhecke_native\ng = pyhecke_native.gram_matrix(3, 1.1)\n", None),
+    # A same-named local function is a real false-positive risk, so the bare
+    # form is honoured only when the name is actually imported from the engine.
+    ("a same-named local function is not the engine",
+     "def chi_lambda_braid(a, b, c):\n    return 0\n"
+     "x = chi_lambda_braid([2, 1], w, 1.1)\n", None),
+    # A cast is a defect; an engine entry is a choice. Severity must not flip.
+    ("F64_CAST still outranks an engine entry in the same module",
+     "import mpmath as mp\nimport pyhecke_native\n"
+     "from q_parameter import Q\nx = mp.mpf(1) * float(Q)\n"
+     "c = pyhecke_native.chi_lambda_braid([2, 1], w, float(Q))\n",
+     "F64_CAST"),
+
+    # --- the wrapper hop: `precision=` defaults to f64 ---
+    ("a wrapper call omitting precision= gets the f64 default",
+     "from hecke_characters import chi_lambda_braid\n"
+     "c = chi_lambda_braid(shape, word)\n", "F64_ENGINE_ENTRY"),
+    ("passing precision= is the fix, so it is NOT flagged",
+     "from hecke_characters import chi_lambda_braid\n"
+     "c = chi_lambda_braid(shape, word, precision='mpfr_50dps')\n", None),
+    ("the wrapper reached as a module attribute is caught",
+     "import hecke_characters\n"
+     "c = hecke_characters.chi_q_atomic(3, 2, q)\n", "F64_ENGINE_ENTRY"),
+    # `closed_form_tau_M.py` names these as CONVENTION strings; a text search
+    # counts them as calls. Measured: that mistake inflated a census 120 vs 51.
+    ("the same name as a string literal is not a call",
+     "PnConvention = ['chi_lambda_braid', 'strict_averaged']\n", None),
+
     ("f64 import beside mpmath, no cast, no kernel, is the weakest tier",
      "import mpmath as mp\nfrom q_parameter import Q\nQ_LOCAL = Q\n",
      "F64_IMPORT"),
@@ -481,6 +700,37 @@ def self_test() -> int:
     fails += not ok
     print(f"  {'ok  ' if ok else 'FAIL'}  the audit does not flag itself")
     total = len(CASES) + 1
+
+    # The pair table is hardcoded so the audit works without the extension
+    # (pyhecke_native is not on PyPI). When it IS importable, check the table
+    # against reality — a hardcoded table decays exactly like a hardcoded
+    # count, and a NEW f64/mpfr pair added to the Rust crate would otherwise
+    # go unaudited forever with nothing to notice.
+    try:
+        import pyhecke_native as _pn  # noqa: PLC0415
+    except Exception:  # noqa: BLE001
+        print("  skip  NATIVE_EXACT_SIBLING vs live module "
+              "(pyhecke_native not importable — this is the DEFAULT, "
+              "it is not published)")
+    else:
+        live = {x for x in dir(_pn) if not x.startswith("_")}
+        derived = {}
+        for n in live:
+            if n.endswith("_mpfr") and n[:-5] in live:
+                derived[n[:-5]] = n
+            if n.endswith("_f64") and n[:-4] + "_mpfr" in live:
+                derived[n] = n[:-4] + "_mpfr"
+        ok = derived == NATIVE_EXACT_SIBLING
+        fails += not ok
+        total += 1
+        print(f"  {'ok  ' if ok else 'FAIL'}  NATIVE_EXACT_SIBLING matches "
+              f"the live module")
+        if not ok:
+            for k in sorted(set(derived) - set(NATIVE_EXACT_SIBLING)):
+                print(f"        MISSING from the table: {k} -> {derived[k]}")
+            for k in sorted(set(NATIVE_EXACT_SIBLING) - set(derived)):
+                print(f"        STALE in the table:     {k}")
+
     print(f"\n{total - fails}/{total} passed")
     return 1 if fails else 0
 
@@ -529,7 +779,8 @@ def _print_sites(rows: list, key: str, cap: int = 40) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tier", choices=("LAUNDERED", "F64_CAST", "NUMPY_ON_Q",
+    ap.add_argument("--tier", choices=("LAUNDERED", "F64_CAST",
+                                       "F64_ENGINE_ENTRY", "NUMPY_ON_Q",
                                        "F64_DISPLAY", "F64_IMPORT"))
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
@@ -539,6 +790,7 @@ def main() -> int:
     rows = _iter_rows(a.tier)
     laundered = [r for r in rows if r[0] == "LAUNDERED"]
     casts = [r for r in rows if r[0] == "F64_CAST"]
+    native = [r for r in rows if r[0] == "F64_ENGINE_ENTRY"]
     numpy = [r for r in rows if r[0] == "NUMPY_ON_Q"]
     display = [r for r in rows if r[0] == "F64_DISPLAY"]
     imports = [r for r in rows if r[0] == "F64_IMPORT"]
@@ -591,6 +843,46 @@ def main() -> int:
     if len(numpy) > 40:
         print(f"  … and {len(numpy) - 40} more")
 
+    # Counted over ALL rows, like F64_DISPLAY below: a file whose headline
+    # tier is F64_CAST can still call the f64 engine, and that site is just as
+    # actionable as one in a file with nothing worse.
+    n_nat_all = sum(len(r.get("native", [])) for _, _, r in rows)
+    print(f"\nF64_ENGINE_ENTRY — pyhecke_native f64 entry called where an "
+          f"exact MPFR sibling exists: {len(native)} file(s) with nothing "
+          f"worse, {n_nat_all} site(s) corpus-wide. CIRCUMSTANTIAL.")
+    print("      The f64 entry is ~10-30x faster and is often the right "
+          "choice. It becomes a\n"
+          "      defect when the result is then SERIALISED at more digits "
+          "than f64 carries:\n"
+          "      measured at the proton q0, f64 and MPFR agree to ~15-16 "
+          "significant digits,\n"
+          "      so 50 digits in a witness is ~35 of noise. The MPFR entry "
+          "takes q as a\n"
+          "      DECIMAL STRING to avoid the lossy conversion at the "
+          "boundary.")
+    # The count alone over-sells the class. Split it by the triage rule, over
+    # ALL rows carrying a native site, so the actionable number is reproducible
+    # rather than living in someone's scratch file.
+    split: dict[str, list] = {"deliberate": [], "harmless": [], "actionable": []}
+    for _, path, r in rows:
+        if not r.get("native"):
+            continue
+        try:
+            src = (ROOT / path).read_text(encoding="utf-8")
+        except OSError:
+            continue
+        split[native_entry_disposition(src)].append((path, len(r["native"])))
+    for k, why in (("deliberate", "also calls an _mpfr entry — a cross-check"),
+                   ("harmless", "never serialises above 17 digits"),
+                   ("actionable", "serialises wide from an f64 value")):
+        v = split[k]
+        print(f"      {k:11s} {len(v):3d} file(s) {sum(n for _, n in v):3d} "
+              f"site(s)  — {why}")
+    print("      ACTIONABLE candidates (a proxy, not a verdict — confirm "
+          "per site):")
+    for path, n in sorted(split["actionable"]):
+        print(f"        {n}x  {path}")
+
     # Counted over ALL rows: a file whose headline tier is F64_CAST can still
     # carry display casts, and those must not land in the defect count.
     n_disp = sum(len(r["display"]) for _, _, r in rows)
@@ -607,8 +899,9 @@ def main() -> int:
 
     print("\nFix by reading the high-precision name: Q_50_DIGIT_STR / the _MP\n"
           "family / flavor_split_leading(q) — not by widening a tolerance.\n"
-          "Exit status reflects LAUNDERED + F64_CAST only; NUMPY_ON_Q,\n"
-          "F64_DISPLAY and F64_IMPORT never fail a run.")
+          "Exit status reflects LAUNDERED + F64_CAST only; "
+          "F64_ENGINE_ENTRY,\n"
+          "NUMPY_ON_Q, F64_DISPLAY and F64_IMPORT never fail a run.")
     return 1 if (laundered or casts) else 0
 
 

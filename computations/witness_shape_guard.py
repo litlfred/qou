@@ -73,6 +73,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -199,6 +200,30 @@ def modified_witnesses() -> list[str]:
     return [p for p in out.split("\n") if p.strip()]
 
 
+_UNICODE_ESCAPE = re.compile(r"\\u[0-9a-fA-F]{4}")
+
+
+def _escape_regression(before_raw: str, after_raw: str) -> list[str]:
+    """Flag a witness that gained \\uXXXX escapes.
+
+    Not a value change — json.loads is identical either way — but it turns
+    the paper's own notation into noise: tau_M written as a codepoint, sigma_1
+    and the isotope superscripts likewise. It happens when a maintenance
+    script re-serializes with json.dumps' DEFAULT ensure_ascii=True while the
+    producers (WitnessBuilder) write UTF-8. Measured cost when it slipped
+    through: 177 witnesses in one pass, 0 of them value-affected and all of
+    them less readable.
+
+    Fix at the writer -- json.dumps(..., ensure_ascii=False) -- never by
+    accepting the escaped form.
+    """
+    b, a = len(_UNICODE_ESCAPE.findall(before_raw)), len(_UNICODE_ESCAPE.findall(after_raw))
+    if a > b:
+        return [f"gained unicode escapes: {b} -> {a} \\uXXXX sequences "
+                f"(re-serialized with ensure_ascii=True; the producers write UTF-8)"]
+    return []
+
+
 def check(tolerance: float) -> tuple[list[dict], list[str]]:
     """(findings, skipped) over every witness modified against HEAD."""
     findings, skipped = [], []
@@ -221,6 +246,7 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
             findings.append({"path": rel, "reasons": [f"unparseable JSON: {exc}"]})
             continue
         reasons = compare(shape_of(before), shape_of(after), tolerance)
+        reasons += _escape_regression(head_raw, path.read_text())
         if reasons:
             findings.append({"path": rel, "reasons": reasons,
                              "before": shape_of(before), "after": shape_of(after)})

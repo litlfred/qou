@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T17:03:42.651250+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T21:17:42.979431+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 3,
   "computation": "sdp-gamma-gamma-to-qqbar",
   "scriptFile": "sdp_gamma_gamma_to_qqbar.py",
   "scriptHash": "772706c924a3",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,27 +17,36 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/sdp_gamma_gamma_to_qqbar.py"
+    ],
+    "reproduce": "python3 -u computations/sdp_gamma_gamma_to_qqbar.py"
   },
   "description": "Scaffold for γγ → qq̄ SDP categorical crossing-budget derivation. H_2 demo confirms σ_0³ has tr_M ≈ 0.73 at q_0 (not 1). H_3 skeleton outlines the 6-dim NF basis + 3 Wedderburn blocks (dims 1, 2, 1). Full SDP solve deferred to follow-up — uses joint_tower_sdp_solver_v2.py (PR #444 Phase 3b) infrastructure.",
   "contentBlock": "rem:photon-channel-wedderburn-chain",
   "parameters": {
-    "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
-    "m_e_MeV": 0.51099895,
+    "q_0_mpf50": "1.1099785956427390391632225954426977052808226110852",
+    "m_e_MeV": 0.51099895069,
     "mpmath_dps": 70
   },
   "data": {
     "h2_breit_wheeler_demo": {
-      "c_1": 0.20906032198987945,
-      "c_sigma": 1.0437062182305121,
-      "sym_eigenvalue_at_q_0": 1.3675518842725483,
-      "alt_eigenvalue_at_q_0": -0.7312336822466792,
+      "c_1": 0.20906032215031672,
+      "c_sigma": 1.0437062182975942,
+      "sym_eigenvalue_at_q_0": 1.3675518845998744,
+      "alt_eigenvalue_at_q_0": -0.7312336820716571,
       "psd_at_q_0": false,
-      "tr_M_at_q_0": 0.7302040595096824
+      "tr_M_at_q_0": 0.8485266504695027
     },
     "h3_skeleton_outline": {
       "n_strands": 3,
