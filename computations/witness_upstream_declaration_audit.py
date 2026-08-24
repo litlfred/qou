@@ -158,10 +158,17 @@ def declaration_reaches_witness(tree: ast.AST) -> tuple[str, int, tuple] | None:
         contradicts it.
       * ``RECORDED_OFF_PATH`` — the records ARE attached, but via
         ``save(extra={"upstream": _UPSTREAM})``, which lands them at TOP-LEVEL
-        ``upstream``. `witness_dependency_drift` reads
-        ``derivation_inputs.upstream_witness_hashes`` or
-        ``data.upstream_witness_hashes`` and nothing else, so a perfectly good
-        edge — full ``path`` + ``sha256`` — sits where nothing walks it.
+        ``upstream`` rather than in ``data.upstream_witness_hashes``.
+
+        **RESOLVED at the reader, 2026-08-24.** `witness_dependency_drift` now
+        walks that third location at both of its sites, so these edges ARE
+        followed and their staleness DOES propagate. The tier is retained as
+        an inconsistency report, not a defect report: two spellings for one
+        concept is worth knowing about and worth converging eventually, but
+        nothing is currently invisible because of it.
+
+        Do not describe these as unreachable — that was true for about an
+        hour, between the tier landing and the reader fix.
       * ``NEVER_ATTACHED`` — ``record_upstream`` populates a list that no
         ``add_upstream_records`` ever consumes, and no ``save(extra=…)``
         rescues it.
@@ -457,21 +464,24 @@ def main() -> int:
         n_early = sum(1 for k, *_ in broken if k == "ATTACHED_TOO_EARLY")
         n_off = sum(1 for k, *_ in broken if k == "RECORDED_OFF_PATH")
         n_never = len(broken) - n_early - n_off
-        print(f"\n  declares, but the declaration CANNOT REACH the witness: "
-              f"{len(broken):>3}")
+        print(f"\n  declares, but the declaration does not land in the "
+              f"primary slot: {len(broken):>3}")
         print(f"      ATTACHED_TOO_EARLY {n_early:>3}  (attached before the "
               f"loaders populate the list)")
         print(f"      RECORDED_OFF_PATH  {n_off:>3}  (save(extra=…) -> "
-              f"top-level `upstream`, which drift does not read)")
+              f"top-level `upstream`; READ since 2026-08-24 — an\n"
+              f"                              inconsistency to converge, "
+              f"not a live defect)")
         print(f"      NEVER_ATTACHED     {n_never:>3}  (gathered, never handed "
               f"to a builder)")
-        print("      All three end in the same place — the drift detector "
-              "cannot walk the edge —\n"
-              "      but for different reasons, and the fixes differ. The "
-              "first two record NOTHING;\n"
-              "      RECORDED_OFF_PATH records a real edge with a real "
-              "sha256, just under a key\n"
-              "      nothing reads, so do not describe it as undeclared.")
+        print("      ATTACHED_TOO_EARLY and NEVER_ATTACHED record NOTHING, "
+              "so the drift detector\n"
+              "      cannot walk the edge and the fix is per-producer (a "
+              "re-run each).\n"
+              "      RECORDED_OFF_PATH records a REAL edge with a real "
+              "sha256; it was fixed at\n"
+              "      the READER instead — one change, zero regenerations — "
+              "and is now followed.")
         for k, f, ln, l in sorted(broken, key=lambda r: (r[0], str(r[1]))):
             rel = f.relative_to(Path(a.root).resolve())
             extra = f"  (populated at {l[0]} by {l[1]}())" if l else ""
