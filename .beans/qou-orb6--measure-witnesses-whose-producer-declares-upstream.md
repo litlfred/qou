@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T16:26:57Z
+updated_at: 2026-08-24T16:35:42Z
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`
@@ -162,3 +162,42 @@ lessons lived only in commit messages.
    library level. It is almost never intentional, and it would have caught all
    19 at authoring time instead of two months later. (Owner call — it touches
    `qou_substrate/witness.py`, which every producer imports.)
+
+
+## CORRECTION to step 1's own result: NEVER_ATTACHED was 2, it is 0
+
+Caught by starting the fix instead of trusting my own label.
+`l2_row_independence_probe` and `codata_registry_triangulation_probe` both do:
+
+    w.save(extra={"upstream": _UPSTREAM} if _UPSTREAM else None)
+
+and their committed witnesses carry a **top-level `upstream`** list with real
+`path` + `sha256`. They declared their edge correctly. The defect is one level
+over: `witness_dependency_drift` reads
+`derivation_inputs.upstream_witness_hashes` or `data.upstream_witness_hashes`
+(source L129-130, L283-284) **and nothing else**, so a good edge sits where
+nothing walks it.
+
+New tier `RECORDED_OFF_PATH`. Counts:
+
+    ATTACHED_TOO_EARLY  19      (unchanged — that finding stands)
+    RECORDED_OFF_PATH    2      (was mislabelled NEVER_ATTACHED)
+    NEVER_ATTACHED       0
+
+Total 21 unchanged.
+
+**Why the relabel matters for the work, not just the wording.** "Never
+attached" blames a producer that did the job, and points the fix at the
+producer. `RECORDED_OFF_PATH` opens a cheaper option: widen the drift
+detector's read to include top-level `upstream` — **one reader instead of two
+producers**, and it needs no regeneration at all, since the edges are already
+on disk. That is the opposite trade from the 19, each of which needs a
+producer re-run.
+
+Recommend: fix the 2 at the READER (one change, zero regenerations), and the
+19 at the PRODUCER (19 sequenced regenerations). Do not do all 21 the same way.
+
+**Third correction of my own count on this axis** — 40 -> 21, the name-based
+"52" retracted, and now this. The pattern in all three: a detector that
+encodes what I expected the code to look like rather than what it does. Guard
+cases now in the self-tests (19/19) rather than in commit messages.
