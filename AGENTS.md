@@ -1559,10 +1559,20 @@ Do not regress either.
 >   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
 >   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
 >
->   **Status 2026-08-16.** The detector now scans return forms, and those seven
->   are migrated, so *that* spelling is closed: the only return-form C site left
->   in the tree is `pyhecke/gram.py:634` (`z_mp`), which is registered and
->   R10-waived. **The posture does not change.** Closing one shape does not
+>   **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
+>   forms, and those seven are migrated, so *that* spelling is closed. This then
+>   named `pyhecke/gram.py:634` (`z_mp`) as **the only return-form C site left in
+>   the tree** — stale in both coordinates by the time it was written. `z_mp` is
+>   at **line 645** and is **convention D**: its docstring reads *"z = q³/(q² + 1)
+>   … MIGRATED 2026-08-16 (bean `qou-cds2`)"*, and the module's `_Z_FRAC =
+>   _Q_FRAC**3 / (_Q_FRAC**2 + 1)` is D arithmetic. The paragraph was stamped the
+>   same day as the migration, which is presumably how they crossed.
+>
+>   **Do NOT read that as "the return-form surface is clear."** The named instance
+>   is retired; the count is not. Re-run 2026-08-24, the detector still reports
+>   **1 site in `tools/pyhecke` as "C with NO registry row (unexplained)"**, and
+>   this correction did **not** identify it — so one pyhecke site remains
+>   unaccounted for. **The posture does not change.** Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
 >   catalogues **thirteen** distinct detector-blind spellings, four of which were
@@ -1582,10 +1592,21 @@ Do not regress either.
 >   cannot be stale, mislabelled, re-spelled, or inherited from a stale record
 >   and still factor correctly.
 >
->   Two live examples of why the count is not the answer: `pyhecke/atom.py:691`
->   binds a C `z_mark` consumed at `:713`, in a module no waiver covers; and a
->   *declared* site is not a fixed one — the audit's `DECLARED C in
->   evaluators.z, R10-waived` bucket stays **actionable** by design.
+>   Two examples of why the count is not the answer. The first has since
+>   **moved, and is recorded because the moving is the point**: this named
+>   `pyhecke/atom.py:691` binding a C `z_mark` consumed at `:713`. Measured
+>   2026-08-24, `z_mark` occurs **once** in that file, at **line 720**, and it is
+>   a **comment** — `#   local  z_mark = 1/(q^½ + q^-½) = 0.4993203  ← convention
+>   **C**` — so there is no binding for a waiver to cover, and an AST-verified
+>   detector cannot see it at all. Whether the binding was migrated or merely
+>   re-spelled is **not** settled here. Second, a *declared* site is not a fixed
+>   one — the audit's `DECLARED C in evaluators.z, R10-waived` bucket stays
+>   **actionable** by design.
+>
+>   Three named instances in this one section have now gone stale between being
+>   written and being read (`z_mp`, `z_mark`, and the `y_lambda_at` trap two
+>   sections down). That rate is itself the argument for the posture above:
+>   **cite the rule, re-measure the instance.**
 > - **R2 — proton pin canonical.** Reaffirms the 2026-08-07 directive
 >   immediately below; nothing in that directive changes. The *ideal CAL-2
 >   definition* (`𝔇_β`, proxy `m_μ/m_e`) is untouched — R2 governs which pin
