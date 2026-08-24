@@ -32,6 +32,22 @@ import math
 
 import mpmath as mp
 
+# Path bootstrap, LOCATED rather than counted. `_precision` lives at
+# `computations/substrate/_precision.py` and is reachable only once
+# `_path_bridge` has run; without it the module-scope import below raises
+# ModuleNotFoundError and THIS PRODUCER CANNOT RUN AT ALL — its witness
+# unrefreshable rather than stale, and invisible to the staleness axis, which
+# still sees a scriptHash matching the file's own bytes.
+#
+# The landmark walk rather than `.parent.parent`: that count differs between
+# `computations/` and `computations/probes/` and was wrong in both layouts it
+# was written for (bean qou-rug0).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(next(
+    _a for _a in _Path(__file__).resolve().parents
+    if (_a / "_path_bridge.py").is_file())))
+import _path_bridge  # noqa: E402, F401
 from _precision import fmt as _fmt
 import sys
 import time

@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-16T13:00:29.067389+00:00",
-  "commitSha": "fc9819f75c7b82f1235a47fe9533978a7100b621",
+  "computedAt": "2026-08-24T02:50:13.503049+00:00",
+  "commitSha": "ab0164b81704b08b163bab31a12b066987a91d8a",
   "assertions": [
     {
       "name": "Vol_p_present",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 48,
   "computation": "per-atom-hyperbolic-volume",
   "scriptFile": "per_atom_hyperbolic_volume_witness.py",
-  "scriptHash": "79eeeb72e18d",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "68dcdff917da",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,9 +72,16 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
-  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via vol_density_per_block(vol_K, tr_M_K, q).",
+  "invocation": {
+    "argv": [
+      "computations/per_atom_hyperbolic_volume_witness.py"
+    ],
+    "reproduce": "python3 -u computations/per_atom_hyperbolic_volume_witness.py"
+  },
+  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via per_knot_density_per_block(vol_K, tr_M_K, q).",
   "data": {
     "Vol_p": "0.02263780480881132",
     "knot_p": "B_3 (Borromean)",

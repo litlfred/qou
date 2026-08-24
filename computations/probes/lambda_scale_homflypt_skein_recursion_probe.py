@@ -92,10 +92,43 @@ from mpmath import mpf, pslq  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# Reuse Strategy G's Borromean HOMFLYPT closed form
-from lambda_scale_alt_g_skein_polynomial_direct import (  # noqa: E402
-    homflypt_borromean_at_az,
-)
+# `homflypt_borromean_at_az` INLINED, recovered from history.
+#
+# It lived in `_deprecated/strategy-spikes/lambda_scale_alt_g_skein_polynomial_
+# direct.py`, root-level agent scratch untracked wholesale by `0763606e4`
+# ("untrack the five root-level agent-scratch dirs, 2,344 files"). The import
+# above was at MODULE SCOPE, so this producer has raised ModuleNotFoundError
+# ever since and could not run at all — its witness unrefreshable rather than
+# stale. Nothing in the staleness family reports that: a producer that cannot
+# be imported still has a scriptHash matching its own bytes, so the axis rates
+# its witness FRESH.
+#
+# INLINED rather than given a shared home, unlike `build_hoefsmit_mpfr`
+# (restored to `hecke_character_symbolic` in ab0164b81 for its ten consumers).
+# This function has exactly ONE consumer — this file — and is a closed-form
+# polynomial with a citation, not machinery. A shared module for a single
+# caller is a worse answer than the formula sitting where it is used.
+def homflypt_borromean_at_az(a_val: mpf, z_val: mpf) -> mpf:
+    """P(𝓑_3; a, z) — closed form.
+
+    For the alternating 6-crossing standard diagram, the HOMFLYPT polynomial
+    of the Borromean link is (Lickorish–Millett 1986):
+
+      P(𝓑_3; a, z) = (a^4 + a^-4)·(z^4 - 4z^2 + 4)
+                     + (2z^4 - 8z^2 + 6)·(a^2 + a^-2)
+                     + (z^6 - 7z^4 + 12z^2 - 6)
+
+    (multi-variable Skein; the Jones specialisation a = t^-1 and
+    z = t^(1/2) - t^(-1/2) recovers V(𝓑_3, t) up to normalisation.)
+
+    Recovered verbatim from `0763606e4^`.
+    """
+    a, z = a_val, z_val
+    return (
+        (a ** 4 + a ** (-4)) * (z ** 4 - 4 * z ** 2 + 4)
+        + (2 * z ** 4 - 8 * z ** 2 + 6) * (a ** 2 + a ** (-2))
+        + (z ** 6 - 7 * z ** 4 + 12 * z ** 2 - 6)
+    )
 
 
 def homflypt_trefoil(a: mpf, z: mpf) -> mpf:

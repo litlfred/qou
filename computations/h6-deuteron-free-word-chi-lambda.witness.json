@@ -39,7 +39,7 @@
   "arithmetic": {
     "characters": "mpmath (hoefsmit_mpmath), not float64",
     "why": "the canonical fast path (BlockCache + chi_lambda_of_word) is float64 by construction — math.sqrt against a 1e-15 threshold, and float(np.trace(...)). Passing it an mpf q0 does not make it exact. Per AGENTS.md 'PROBES ARE NOT EXEMPT'.",
-    "f64_max_relative_gap_on_chi_bound": "0.00000000000000871148135556263900108269697711363326393120120927992319634490",
+    "f64_max_relative_gap_on_chi_bound": "0.00000000000000735698087136397222171301867955460277524574390223662762345834",
     "f64_gap_reading": "this IS the float64 floor, not a disagreement about the mathematics"
   },
   "characters": [
@@ -179,17 +179,17 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "5edeca9211dd000451ee511edabf3528a4aff4cb",
-    "scriptHash": "56c807ccf9fc",
+    "scriptCommitSha": "12fcf6688fbee4e0d0169e22c3547293caba8017",
+    "scriptHash": "37f1d23dc0be",
     "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py"
   },
-  "scriptHash": "56c807ccf9fc",
-  "scriptCommitSha": "5edeca9211dd000451ee511edabf3528a4aff4cb",
-  "commitSha": "6a94d8cab31d176b61e277646975aa9604f64bf5",
+  "scriptFile": "h6_deuteron_free_word_chi_lambda_probe.py",
+  "scriptHash": "37f1d23dc0be",
+  "scriptCommitSha": "12fcf6688fbee4e0d0169e22c3547293caba8017",
+  "commitSha": "ab0164b81704b08b163bab31a12b066987a91d8a",
   "engine": "python",
-  "computedAt": "2026-08-18T22:00:48.199206+00:00",
+  "computedAt": "2026-08-24T02:50:15.974511+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "h6_deuteron_free_word_chi_lambda_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
