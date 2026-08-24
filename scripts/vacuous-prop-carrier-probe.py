@@ -35,7 +35,26 @@ That restriction is not a limitation of the finding, it IS the finding's
 shape: a carrier whose fields mention no domain object cannot say anything
 about the domain.
 
-Usage:  vacuous-prop-carrier-probe.py [--self-test] [--emit OUT.lean] [--json OUT]
+Gate (`--check`)
+----------------
+Two phases, so the gate is useful whether or not Lean is present:
+
+  Phase 1, no Lean needed -- the shape filter. A NEW self-contained `Prop`
+  carrier is itself the smell, since a carrier whose fields mention no domain
+  object cannot say anything about the domain. `--check` fails on any carrier
+  absent from `docs/audits/vacuous-prop-carrier-baseline.json`.
+
+  Phase 2, needs Lean -- `--emit` the probe and run it, which is what turns a
+  candidate into a verdict.
+
+The baseline is a RATCHET in the sense AGENTS.md gives the precision gates:
+it drains, it never grows. Adding an entry to silence the gate defeats the
+mechanism; the fix is to encode the carrier's real content so the shape filter
+stops matching it. If `lean` is unavailable the gate says the proof phase was
+SKIPPED rather than passing quietly.
+
+Usage:  vacuous-prop-carrier-probe.py [--self-test] [--emit OUT.lean]
+                                      [--json OUT] [--check] [--write-baseline]
 """
 
 from __future__ import annotations
@@ -219,11 +238,88 @@ def self_test() -> int:
     return len(fails)
 
 
+BASELINE = ROOT / "docs" / "audits" / "vacuous-prop-carrier-baseline.json"
+
+
+def key(r: dict) -> str:
+    return f"{r['file']}::{r['namespace']}.{r['name']}"
+
+
+def gate(rows: list[dict], write: bool) -> int:
+    import shutil
+
+    have_lean = shutil.which("lean") is not None
+    current = {key(r): r for r in rows}
+
+    if write:
+        old = json.loads(BASELINE.read_text())["entries"] if BASELINE.exists() else {}
+        entries = {
+            k: old.get(k, {"verdict": "unreviewed", "note": ""}) for k in sorted(current)
+        }
+        dropped = sorted(set(old) - set(entries))
+        BASELINE.write_text(
+            json.dumps(
+                {
+                    "schema": "vacuous-prop-carrier-baseline/v1",
+                    "note": (
+                        "Self-contained `class … : Prop where` carriers -- every field type "
+                        "mentioning nothing but numeric types, numerals and logical "
+                        "vocabulary. Such a carrier cannot say anything about the domain. "
+                        "This baseline DRAINS and never grows: silence a new entry and the "
+                        "gate stops meaning anything. The fix is to encode the carrier's "
+                        "real content so the shape filter no longer matches it."
+                    ),
+                    "entries": entries,
+                },
+                indent=2,
+                ensure_ascii=False,
+            )
+            + "\n"
+        )
+        print(f"\nbaseline written: {len(entries)} entries"
+              + (f", {len(dropped)} drained" if dropped else ""))
+        for d in dropped:
+            print(f"  drained: {d}")
+        return 0
+
+    if not BASELINE.exists():
+        print(f"\nFAIL: no baseline at {BASELINE.relative_to(ROOT)} -- "
+              f"run --write-baseline once to establish it")
+        return 1
+    base = json.loads(BASELINE.read_text())["entries"]
+    new = sorted(set(current) - set(base))
+    drained = sorted(set(base) - set(current))
+
+    print()
+    if not have_lean:
+        print("NOTE: `lean` not on PATH -- phase 2 (proving the candidates) was SKIPPED.")
+        print("      Phase 1 (the shape filter) still ran and is what follows.")
+    if drained:
+        print(f"{len(drained)} baseline entr{'y' if len(drained)==1 else 'ies'} no longer "
+              f"match the filter -- re-run with --write-baseline to drain:")
+        for d in drained:
+            print(f"  drained: {d}")
+    if new:
+        print(f"FAIL: {len(new)} self-contained Prop carrier(s) not in the baseline.")
+        print("      A carrier whose fields mention no domain object asserts nothing about")
+        print("      it. Encode the real content -- do NOT add the entry to the baseline.")
+        for k in new:
+            print(f"  new: {k}")
+        return 1
+    print(f"OK: all {len(current)} self-contained carriers are in the baseline.")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--emit")
     ap.add_argument("--json")
+    ap.add_argument("--check", action="store_true",
+                    help="fail if any self-contained carrier is absent from the baseline")
+    ap.add_argument("--write-baseline", action="store_true",
+                    help="(re)write the baseline from the current tree -- only ever to "
+                         "REMOVE drained entries, never to silence a new one")
     args = ap.parse_args()
     if args.self_test and self_test():
         return 1
@@ -255,6 +351,11 @@ def main() -> int:
               f"\nis a carrier that asserts nothing.")
     if args.json:
         Path(args.json).write_text(json.dumps(rows, indent=2) + "\n")
+
+    if args.write_baseline or args.check:
+        rc = gate(rows, write=args.write_baseline)
+        if rc:
+            return rc
     return 0
 
 

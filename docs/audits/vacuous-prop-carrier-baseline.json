@@ -1,0 +1,98 @@
+{
+  "schema": "vacuous-prop-carrier-baseline/v1",
+  "note": "Self-contained `class … : Prop where` carriers -- every field type mentioning nothing but numeric types, numerals and logical vocabulary. Such a carrier cannot say anything about the domain. This baseline DRAINS and never grows: silence a new entry and the gate stops meaning anything. The fix is to encode the carrier's real content so the shape filter no longer matches it.",
+  "entries": {
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.BlowupYekutieli": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous by hand in docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean (exit 0, no sorryAx). The GENERIC tactic list in --emit does NOT discharge it, which is why the emitted probe reports it undecided -- a failed probe settles nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.CriticalExponent": {
+      "verdict": "proved-vacuous",
+      "note": "Entire content is `(3 * 4 : ℕ) = 12`, discharged `rfl`. A class named CriticalExponent whose field is closed arithmetic about numerals."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.NSCounterexample": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous by hand in docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean (exit 0, no sorryAx). The GENERIC tactic list in --emit does NOT discharge it, which is why the emitted probe reports it undecided -- a failed probe settles nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.QAubinLions": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous by hand in docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean (exit 0, no sorryAx). The GENERIC tactic list in --emit does NOT discharge it, which is why the emitted probe reports it undecided -- a failed probe settles nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.RegularityBreakdown": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous by hand in docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean (exit 0, no sorryAx). The GENERIC tactic list in --emit does NOT discharge it, which is why the emitted probe reports it undecided -- a failed probe settles nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.CriticalExponent": {
+      "verdict": "proved-vacuous",
+      "note": "Same field, `(3 * 4 : ℕ) = 12`. Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.NSCounterexample": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.QAubinLions": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.RegularityBreakdown": {
+      "verdict": "proved-vacuous",
+      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
+      "verdict": "proved-vacuous",
+      "note": "Field is `∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 0` -- reflexivity of ≤ on zero, with the `q > 1` hypothesis unused."
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean::QOU.Machinery.SeparateLambdaScale_Antipattern": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification": {
+      "verdict": "proved-vacuous",
+      "note": "Single field typed `: True`."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect": {
+      "verdict": "proved-vacuous",
+      "note": "As FMapFaddeevModular: `: True`, already flagged and exempt via @marker. Not a new finding."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular": {
+      "verdict": "proved-vacuous",
+      "note": "Single field `: True` -- but ALREADY DECLARED. lean-vacuity-axiom-audit.ts flags it as proof-claims-unencoded [EXEMPT(explicit @marker / opaque-tag opt-out)], sanctioned by AGENTS.md §3b-tax for a genuinely-open opaque field. Not a new finding."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter": {
+      "verdict": "proved-vacuous",
+      "note": "As FMapFaddeevModular: `: True`, already flagged and exempt via @marker. Not a new finding."
+    },
+    "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula": {
+      "verdict": "undecided",
+      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+    },
+    "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
+      "verdict": "proved-vacuous",
+      "note": "Second declaration of the same `0 ≤ 0` carrier, in a different file."
+    }
+  }
+}
