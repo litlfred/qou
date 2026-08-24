@@ -9,7 +9,8 @@ categorical substrate.  One proposal on the table is:
 
     "perhaps the 4-form degenerates"
 
-i.e. take the tetraplectic 4-form of `bring_tetraplectic.md` (Foth's closed
+i.e. take the tetraplectic 4-form of `def:bring-cone-tetraplectic-structure`
+(Foth's closed
 4-form with Omega^m non-degenerate on a 4m-manifold) and let it degenerate down
 the exceptional chain
 

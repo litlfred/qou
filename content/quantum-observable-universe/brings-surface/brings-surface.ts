@@ -132,6 +132,21 @@ export default chapter({
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
+        // Tetraplectic layer, incorporated 2026-08-24 from the unregistered
+        // exposition `bring_tetraplectic.md` that had sat at the paper root
+        // since the 52c68267f2 bulk import. It belongs here: it is the
+        // geometric substrate the quaternionic resolvents above already
+        // presuppose, and it is what connects `lean/QOU/BringCone.lean` and
+        // `QuaternionicElectroweak.lean` — both sorry-free, both previously
+        // referenced by no block at all — to the corpus. Scope limits from
+        // bean `qou-8p1g` ride on the blocks as authorNotes rather than
+        // being dropped.
+        "bring-cone-tetraplectic-structure",
+        "bring-cone-reeb-quaternionic-twist",
+        "bring-cone-reeb-quaternionic-twist-proof",
+        "tetraplectic-su2-gauge-reading",
+        "tetraplectic-askey-localisation",
+        "tetraplectic-sw-localisation-bridge",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-cartan",
         "mi-sw-abelianisation-cartan-proof",

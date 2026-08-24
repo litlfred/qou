@@ -9,7 +9,7 @@ q-Pochhammer denominator at a primitive fifth root of unity to the finite
 cyclotomic product `∏_{k<5}(1 − x·ζ^k) = 1 − x^5` — a product over the five
 fifth roots of unity, indexed by `Finset.range 5`.  L5 records the *combinatorial
 organization* of that finite reduction: the `S₅`-symmetry of the tetraplectic
-form (`content/quantum-observable-universe/bring_tetraplectic.md`) decomposes
+form (`def:bring-cone-tetraplectic-structure`) decomposes
 `L²(M,Ω)` into irreducible `S₅`-representations indexed by the **partitions of 5**,
 and Nekrasov localization concentrates the finite state-sum on the corresponding
 Young-tableaux fixed points (Hoefsmit seminormal basis,

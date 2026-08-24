@@ -67,3 +67,23 @@ assume it.
 
 Note also `qou-8p1f`: the 4-form route out of this layer to `Spin(7)/G_2/SU(3)`
 is separately excluded by a dimension count.
+
+## 2026-08-24 — the three findings are now IN the paper, and the bean stays open
+
+`bring_tetraplectic.md` was incorporated into `brings-surface/`
+(bean `qou-wy6d`). All three findings above ride on the new blocks as
+`authorNotes` rather than living only here:
+
+* finding 1 (`m = 1` is vacuous) -> `def:bring-cone-tetraplectic-structure`,
+  which states in its own prose that `d(Omega) = 0` is automatic and the
+  requirement reduces to a nowhere-vanishing volume form;
+* findings 2 and 3 (adjoint-not-fundamental; already spent on electroweak) ->
+  `rem:tetraplectic-su2-gauge-reading`, whose body says the triad is
+  `dim su(2) = 3` and not a three-dimensional fundamental, so this layer is not
+  a source of colour.
+
+NOT closing. The verdict is recorded; the open question is unchanged and
+untouched — go to `m >= 2` (real dimension `>= 8`), where the tetraplectic
+condition has content, and settle whether any quaternionic flag manifold in
+reach carries a three-fold structure that is not the `SU(2)` triad.
+`Sp(3)/Sp(1)^3` is the concrete candidate named above.

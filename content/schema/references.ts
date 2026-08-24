@@ -1983,7 +1983,8 @@ export const references: Reference[] = [
   }),
 
   // Foth–Leitner: four-vector fields on quaternionic flag manifolds
-  // (the Reeb-triad / quaternionic-twist source for bring_tetraplectic.md §4).
+  // (the Reeb-triad / quaternionic-twist source for
+  // lem:bring-cone-reeb-quaternionic-twist).
   ref({
     id: "fothleitner2003",
     library: {

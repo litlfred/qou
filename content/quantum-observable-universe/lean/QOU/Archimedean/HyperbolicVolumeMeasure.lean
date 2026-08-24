@@ -74,7 +74,8 @@
   * **Nothing wired.**  No mass, binding, or substrate claim.
 
   ROUTE CHECKED AND REJECTED -- the tetraplectic structure.  The corpus's
-  `bring_tetraplectic` / `EkParitySplit` / `TetraplecticProductRecurrence` do
+  `def:bring-cone-tetraplectic-structure` / `EkParitySplit` /
+  `TetraplecticProductRecurrence` do
   carry a "volume form", so it is worth saying why it is not a shortcut here:
   the tetraplectic `Ω` is a **4-form on the real-4-dimensional Bring cone**
   `C(𝓑) ⊂ ℂ⁵`, built by averaging over `S₅` to make `L²(M, Ω)` decompose into

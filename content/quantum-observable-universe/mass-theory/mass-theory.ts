@@ -865,6 +865,17 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
+        // Piece A of Identity I, promoted 2026-08-24 from two unregistered
+        // .md drafts that had sat at the paper root since the 52c68267f2
+        // bulk import (bean qou-cauj listed them as "probably not blocks";
+        // the owner ruled otherwise). The Specht/JM trace pair reads the
+        // JM prop directly above; the corner induction is the alternative
+        // route to the same identity.
+        "piece-a-hook-content-identity",
+        "piece-a-specht-character-trace",
+        "piece-a-specht-character-trace-proof",
+        "piece-a-corner-removal-obligation",
+        "piece-a-corner-removal-obligation-proof",
         // def:spin-involution relocated to knots-particles-confinement §7
         // (2026-08-09, decision 5): three of its four consumers are the
         // EW-triplet charge/spin blocks there, and it has `uses: []` so it
