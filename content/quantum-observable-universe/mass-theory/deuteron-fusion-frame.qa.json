@@ -214,22 +214,20 @@
       {
         "field_hash": {
           "md": "10f92ef264cc",
-          "ts": "cb47f78b6696",
+          "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "7e311e463351",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "b6cda04f9cd5b281913ebfc2128e5805eefce52a"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.lean:165: So the deuteron law `B = (5g)·E_unit` has `B` bar-odd iff `E_unit` is"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "voice-title-scholarly": [
@@ -919,7 +917,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "pass",
         "reviewer": {
@@ -929,8 +927,8 @@
           "script_hash": "316cc94d5aa5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-section-band": [
@@ -940,7 +938,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "n/a",
         "reviewer": {
@@ -950,8 +948,8 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -961,7 +959,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "n/a",
         "reviewer": {
@@ -971,8 +969,8 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-archimedean-wall": [
@@ -982,7 +980,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "n/a",
         "reviewer": {
@@ -992,8 +990,8 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-block-tanglement": [
@@ -1003,7 +1001,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "pass",
         "reviewer": {
@@ -1013,8 +1011,8 @@
           "script_hash": "7b9de841a5d5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb",
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -1023,7 +1021,7 @@
           "in_degree": 1,
           "cone_size": 10,
           "depth": 8,
-          "pagerank": 0.000141,
+          "pagerank": 0.00014,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1037,7 +1035,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "pass",
         "reviewer": {
@@ -1047,8 +1045,8 @@
           "script_hash": "53f3fcf3f37b",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb",
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1063,7 +1061,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "n/a",
         "reviewer": {
@@ -1073,8 +1071,8 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1084,7 +1082,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "pass",
         "reviewer": {
@@ -1094,8 +1092,8 @@
           "script_hash": "8dda7ee9ac99",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cite-resolves": [
@@ -1113,10 +1111,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1134,10 +1132,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1155,10 +1153,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1176,10 +1174,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "voice-branch-jargon": [
@@ -1728,7 +1726,7 @@
           "ts": "2c8b23ce92d7",
           "lean": "2daa18af475e",
           "lean_statement": "c8fd31819884",
-          "graph": "472138224133"
+          "graph": "4b978578edd7"
         },
         "result": "n/a",
         "reviewer": {
@@ -1738,10 +1736,10 @@
           "script_hash": "782f89f534a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-23T20:03:43.600Z",
-        "reviewed_sha": "763aa6a2b97c46f8faca260fdd35c9c665de9cdb"
+        "reviewed_at": "2026-08-24T19:31:06.472Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ]
   },
-  "updated_at": "2026-08-23T20:03:43.600Z"
+  "updated_at": "2026-08-24T19:31:06.472Z"
 }

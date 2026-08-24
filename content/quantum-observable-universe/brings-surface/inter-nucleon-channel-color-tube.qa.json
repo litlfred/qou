@@ -41,10 +41,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -681,18 +681,16 @@
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "7e311e463351",
-          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "b6cda04f9cd5b281913ebfc2128e5805eefce52a"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/InterNucleonChannelColorTube.lean:132: so the refined generator `σ^(F₁,F₂) = Σ W_{c₁c₂} σ^{ε(c₁,c₂,F₁,F₂)}` is a"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "voice-title-scholarly": [
@@ -1220,7 +1218,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "pass",
         "reviewer": {
@@ -1230,8 +1228,8 @@
           "script_hash": "316cc94d5aa5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-section-band": [
@@ -1241,7 +1239,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "n/a",
         "reviewer": {
@@ -1251,8 +1249,8 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1262,7 +1260,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "n/a",
         "reviewer": {
@@ -1272,8 +1270,8 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1283,7 +1281,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "n/a",
         "reviewer": {
@@ -1293,8 +1291,8 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-block-tanglement": [
@@ -1304,7 +1302,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "warn",
         "reviewer": {
@@ -1314,8 +1312,8 @@
           "script_hash": "7b9de841a5d5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30",
         "metrics": {
           "fwd_emitted": 1,
           "fwd_received": 0,
@@ -1324,9 +1322,9 @@
           "in_degree": 4,
           "cone_size": 39,
           "depth": 18,
-          "pagerank": 0.0002,
-          "edge_span_max": 126,
-          "edge_span_mean": 126,
+          "pagerank": 0.000199,
+          "edge_span_max": 132,
+          "edge_span_mean": 132,
           "worst_target": "emits fwd-ref to quantum-observable-universe/knots-particles-confinement: prop:atom-knot-exists"
         }
       }
@@ -1338,7 +1336,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "pass",
         "reviewer": {
@@ -1348,8 +1346,8 @@
           "script_hash": "53f3fcf3f37b",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1364,7 +1362,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "n/a",
         "reviewer": {
@@ -1374,8 +1372,8 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1385,7 +1383,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "pass",
         "reviewer": {
@@ -1395,8 +1393,8 @@
           "script_hash": "8dda7ee9ac99",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1414,10 +1412,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1435,10 +1433,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1456,10 +1454,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "463484fb81a8"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "uses-editorial-hygiene": [
@@ -1928,7 +1926,7 @@
           "ts": "ecf7907eabd4",
           "lean": "b0638017661d",
           "lean_statement": "cbe8ded162e7",
-          "graph": "2fed26a4e557"
+          "graph": "89f778faf411"
         },
         "result": "n/a",
         "reviewer": {
@@ -1938,10 +1936,10 @@
           "script_hash": "782f89f534a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-21T20:56:24.598Z",
-        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+        "reviewed_at": "2026-08-24T19:29:41.635Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ]
   },
-  "updated_at": "2026-08-21T20:56:24.598Z"
+  "updated_at": "2026-08-24T19:29:41.635Z"
 }

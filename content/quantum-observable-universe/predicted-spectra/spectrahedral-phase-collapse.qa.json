@@ -170,18 +170,16 @@
           "lean": "2827aea7e5cf",
           "lean_statement": "711267b2b8a4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "7e311e463351",
-          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "b6cda04f9cd5b281913ebfc2128e5805eefce52a"
         },
-        "reviewed_at": "2026-08-24T06:59:45.728Z",
-        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:32: So the theorem above is true, non-vacuous and permanent **as a convention-C result** — but the phase-transition *reading* of it is frame-dependent and must not be restated as a property of the canonic"
+        "reviewed_at": "2026-08-24T19:34:05.921Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "voice-title-scholarly": [
@@ -903,10 +901,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-24T06:59:45.728Z",
-        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
+        "reviewed_at": "2026-08-24T19:34:05.921Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -924,10 +922,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-24T06:59:45.728Z",
-        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
+        "reviewed_at": "2026-08-24T19:34:05.921Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -945,10 +943,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-24T06:59:45.728Z",
-        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
+        "reviewed_at": "2026-08-24T19:34:05.921Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -966,10 +964,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-24T06:59:45.728Z",
-        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
+        "reviewed_at": "2026-08-24T19:34:05.921Z",
+        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -2529,5 +2527,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T06:59:45.728Z"
+  "updated_at": "2026-08-24T19:34:05.921Z"
 }
