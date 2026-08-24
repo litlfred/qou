@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:58:41.114954+00:00",
-  "commitSha": "7aa29fce3837ce6f2a214bc23115915549044413",
+  "computedAt": "2026-08-24T08:43:57.761732+00:00",
+  "commitSha": "9e354a93168c2dc5e8fb6943a74144c185903147",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2725,
-      "prov_ok": 2348,
+      "total_scanned": 2726,
+      "prov_ok": 2349,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 222,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 74,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972844036697247706422018348623853211009174311926605504587156"
+      "completeness_ratio": "0.972853998532648569332355099046221570066030814380044020542920"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5723,6 +5723,10 @@
         },
         {
           "witness": "h1-exponent-location.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "h3-gram-degeneracy-block-identification.witness.json",
           "missing_fields": []
         },
         {
