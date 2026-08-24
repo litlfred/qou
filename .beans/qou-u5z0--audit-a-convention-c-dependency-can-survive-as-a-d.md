@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T17:24:15Z
-updated_at: 2026-08-24T17:25:03Z
+updated_at: 2026-08-24T17:28:24Z
 ---
 
 Found while sweeping for convention-C spellings during the `qou-cds1` excision.
@@ -77,3 +77,36 @@ Two notes for whoever automates this:
   positive selftest (`mp.mpf(1) / (…)` is not a bare `1`), and would have
   reported a clean surface. Include the negative `two_cosh_u = 2 * mp.cosh(u)`
   so a widened pattern cannot silently swallow the normaliser.
+
+
+## Second sweep round — three more equivalence classes, all CLEAN
+
+Continued the method. Verified numerically that these also equal
+`z_C = 0.499320334183694452` at the proton pin, then greped each with
+selftests:
+
+| spelling | corpus hits | verdict |
+|---|---|---|
+| `1/sqrt([2]_q + 2)` (also `1/sqrt(q + 1/q + 2)`, `1/sqrt((q+1)^2/q)`) | **0** | clean |
+| `0.5*sech(ln q / 2)` | **0** | clean |
+| `1/[2]_{sqrt q}` — reciprocal of `sqrt(q) + 1/sqrt(q)` | 2 files define it, **0 invert it** | clean |
+
+The third needs the detail, because it is the near miss:
+
+    qbeta_cosh_q_sinh_q_candidate_scan.py:72   two_q_half = mp.sqrt(q) + 1/mp.sqrt(q)
+    qbeta_sym_part_hecke_natural_form.py:97    two_q_half = sp.sqrt(q) + 1/sp.sqrt(q)   # [2]_{q^(1/2)}
+
+`1/two_q_half` **is** z_C exactly. Neither file takes that reciprocal — the
+first only records it as witness data, the second **multiplies**
+(`form_2 = -two_q_half * h_tilde**2 / 2`). So `[2]_{q^(1/2)}` is a quantity in
+its own right here, a Hecke natural form, and both are legitimate.
+
+**They are one reciprocal away, though.** A future edit that divides by
+`two_q_half` becomes a convention-C site under a name containing no `z`, no
+`sqrt(q)/(q+1)`, and no `0.49932`. Worth a watch pattern rather than a fix:
+flag `/\s*two_q_half` or `two_q_half\s*\*\*\s*-1`.
+
+**Net across both rounds:** ten equivalence classes enumerated, one live site
+found (the hyperbolic identity above), one near-miss class recorded, the rest
+clean. Recording the negatives so the next agent does not re-sweep them — the
+value of the method is knowing which forms are *excluded*, not only which hit.
