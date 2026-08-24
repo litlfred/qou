@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 290,
-      "proton-pin": 1307,
+      "proton-pin": 1308,
       "unknown": 25,
-      "canonical": 239
+      "canonical": 238
     },
     "stale_total": 290,
     "new_stale": 0,
@@ -11824,9 +11824,9 @@
       {
         "file": "computations/rho-w-crystal-vertex-trace.witness.json",
         "field": "q_0_50dps",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/ribbon-framing-ladder-scale.witness.json",
