@@ -68,6 +68,47 @@ Smallest hyperbolic volumes found, 3-braid words length 3–8 (30 distinct volum
 | 4.124903252 | 1 | `[1,1,1,2,-1,-1,-1,2]` |
 | 7.327724753 | 3 | `[1,-2,1,-2,1,-2]` (Borromean) |
 
+## A rigorous exclusion at the dictionary's own crossing count
+
+The meson crossing dictionary (`lepton-meson-torus-knot-dictionary.lean`) fixes
+each meson's crossing count as the sum of the two generation windings. Reading
+that as the braid-word length and comparing with the maximum hyperbolic volume
+attainable at that length:
+
+| meson | dictionary crossings | max hyperbolic Vol at that length | Vol·ρ needed | verdict |
+|---|---|---|---|---|
+| π | `ū(3)+d(3)` = 6 | 7.32772 | 2.681 | reachable |
+| K | `ū(3)+s(5)` = 8 | **12.35091** *(exhaustive)* | 9.484 | reachable |
+| η/φ | `s̄(5)+s(5)` = 10 | ≥ 14.334 | 10.525 | reachable |
+| **D⁰** | `c̄(5)+u(3)` = 8 | **12.35091** *(exhaustive)* | **35.827** | **short by 2.9×** |
+| **J/ψ** | `c̄(5)+c(5)` = 10 | ≥ 14.334 | **59.497** | **short by ≥ 4.2×** |
+
+**The length-8 row is exhaustive, not sampled.** All `4·3⁷ = 8748` words on
+`{σ₀^{±1}, σ₁^{±1}}` of length 8 with no adjacent cancellation were enumerated;
+the maximum hyperbolic volume over all of them is `12.35091`, attained at
+`[1,-2,1,-2,1,-2,1,-2]`. Length 9 was likewise exhaustive (`4·3⁸ = 26244`).
+
+So **no 3-braid word of the D meson's own dictionary length can carry its mass**,
+whichever word is chosen. This is a scope-(a) exclusion — of *this length at this
+density*, not of the hyperbolic mechanism — and it is independent of the
+knot-vs-link question below.
+
+**Two assumptions it rests on, both stated rather than assumed away:** that `ρ = 1`
+(the per-block density is not 1 in general, and a large `ρ` would relax the
+requirement proportionally), and that the dictionary's crossing count is the braid
+*word length* rather than the closure's minimal crossing number. Either could
+dissolve the exclusion, which is exactly why both are flagged for the author.
+
+**Max hyperbolic volume by word length** (lengths 4–9 exhaustive; 10–18 sampled at
+6000 random words each, so those rows are **lower bounds** on the true maximum):
+
+| len | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 14 | 18 |
+|---|---|---|---|---|---|---|---|---|---|
+| max Vol | 2.030 | 3.664 | 7.328 | 8.997 | 12.351 | 13.948 | ≥17.301 | ≥19.167 | ≥25.773 |
+
+Growth is roughly `1.5–1.7` per letter at the top end, so on that trend D⁰ would
+need `L ≈ 24` and J/ψ `L ≈ 40` — three to four times their dictionary lengths.
+
 ## What this does NOT do
 
 No braid is proposed for any meson, and **no mass check was run**. The nearest enumerated volume to the pion target is `5₂` at 5.47 % — that is *not* a result, it is the distance to the nearest point of a dense set, and selecting on it would be the per-state fit the J/ψ attack already recorded as worthless. The J/ψ and D⁰ targets (59.50, 35.83) lie far above anything reachable at these braid lengths, so the candidate space is not even bounded yet at the heavy end.
