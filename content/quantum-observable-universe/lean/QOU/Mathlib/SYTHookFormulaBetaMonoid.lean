@@ -153,6 +153,45 @@ theorem rowHookProdF_mul_betaGapProdF (f : ℕ → M) (a : ℕ) (t : List ℕ)
       ih (a + 1) hr hra, List.length_cons,
       show a + 1 + r.length = a + (r.length + 1) from by omega]
 
+/-! ## The content side
+
+The hook side above is the *denominator* of the level-`r` principal specialisation.  Its *numerator*
+`∏_c f(r + content c)` splits row by row into a contiguous block `f(b), f(b+1), …, f(b+m−1)`, and
+such a block is a ratio of two `descFactF`s.  This section proves that, division-free. -/
+
+theorem descFactF_succ (f : ℕ → M) (n : ℕ) : descFactF f (n + 1) = f (n + 1) * descFactF f n := by
+  unfold descFactF
+  rw [Finset.prod_range_succ']
+  simp only [Nat.sub_zero, mul_comm]
+  congr 1
+  refine Finset.prod_congr rfl fun k _ => ?_
+  congr 1
+  omega
+
+/-- **A contiguous block of `f`-factors is a ratio of `descFactF`s**, division-free:
+
+`f(b)·f(b+1)⋯f(b+m−1) · descFactF f (b−1) = descFactF f (b+m−1)`.
+
+Row `i` of the level-`r` numerator is exactly such a block: its cells have content `j − i` for
+`j < μ_i`, so its factors are `f(r − i + j)`, a block starting at `b = r − i` of length `m = μ_i`.
+The top index `b + m − 1 = μ_i + r − 1 − i` **is** the β-number `β_i`, which is why the
+`∏_i descFactF f β_i` produced here cancels against the one the hook side produces. -/
+theorem prod_block_mul_descFactF (f : ℕ → M) (b m : ℕ) (hb : 1 ≤ b) :
+    (∏ j ∈ Finset.range m, f (b + j)) * descFactF f (b - 1) = descFactF f (b + m - 1) := by
+  induction m with
+  | zero => simp
+  | succ k ih =>
+    have hbk : b + (k + 1) - 1 = (b + k - 1) + 1 := by omega
+    have harg : (b + k - 1) + 1 = b + k := by omega
+    rw [Finset.prod_range_succ, mul_right_comm, ih, hbk, descFactF_succ, harg]
+    exact mul_comm _ _
+
+/-- The content side at `f n = 1 − Qⁿ`: row `i`'s numerator block, cleared of division. -/
+theorem prod_block_one_sub_pow {R : Type*} [CommRing R] (Q : R) (b m : ℕ) (hb : 1 ≤ b) :
+    (∏ j ∈ Finset.range m, (1 - Q ^ (b + j))) * descFactF (fun n => 1 - Q ^ n) (b - 1)
+      = descFactF (fun n => 1 - Q ^ n) (b + m - 1) :=
+  prod_block_mul_descFactF (fun n => 1 - Q ^ n) b m hb
+
 /-! ## Conservativity: at `f = id` over `(ℕ, ×)` this is the corpus statement -/
 
 theorem rowHookProdF_id (a : ℕ) (t : List ℕ) : rowHookProdF (M := ℕ) id a t = rowHookProd a t := by
