@@ -219,30 +219,53 @@ def _chi(lam, word, n_gens):
     the A=4 word: 25 of its 47 crossings carry an `mpf` coefficient.
 
     The exact route EXISTS -- `hoefsmit_mpmath.chi_lambda_of_word_mp`, dense
-    mpmath, same accumulation order -- and is correct. It is also, measured
-    rather than estimated, unaffordable here:
+    mpmath, same accumulation order -- and is correct. It is also unaffordable,
+    measured at the canonical working precision (dps = 70):
 
-        dim = 132   ((6,6), the SMALLEST of the ten irreps)   65.7 s
-        dim = 4158  ((5,3,3,1), the largest)   ~571 h by cubic scaling
+        dim = 132   ((6,6), the SMALLEST of the ten irreps)   81.2 s
+        dim = 4158  ((5,3,3,1), the largest)   ~705 h by cubic scaling
+        all ten irreps                         ~1135 h
 
-    and that is one irrep of ten, for one isotope.
+    CORRECTED: an earlier version of this note said 65.7 s / ~571 h. That was
+    measured at `mp.dps = 15` -- mpmath's DEFAULT, which `_precision`'s own
+    docstring warns about in as many words: "IMPORTING THIS MODULE DOES NOT
+    SET mp.dps ... the number reads as measured while carrying ~15 significant
+    digits". Neither this file nor `hoefsmit_mpmath` raises it, so a harness
+    that forgets `set_compute_dps()` silently benchmarks float64-grade
+    arithmetic. The old figures understated the cost.
 
     THE TEMPTING FIX IS BANNED. Casting `float(c)` makes this exit 0 in
     0.01 s and produce numbers that look entirely plausible. It is exactly
     the shortcut AGENTS.md §"PROBES ARE NOT EXEMPT" was made STRICT to stop,
     and "note it as a limitation and ship" is named there as the wrong move.
-    Recording the honest state of the measurement, since it is easy to
-    misread in both directions: against the 50-dps reference at dim=132 the
-    float64 character agrees to 15 digits, i.e. this word is well conditioned
-    and float64 loses nothing to cancellation THERE. That is evidence about
-    conditioning at the smallest irrep; it is not permission, and it was not
-    tested at dim=4158 where the 47-factor product is far denser.
 
-    The real fix is neither cast nor dense-mpmath: the seminormal
-    `sigma_i` carry at most 2 nonzeros per row, so a SPARSE mpf product --
-    or a trace-only row-propagation -- should recover orders of magnitude
-    while staying exact. That is a compute-engineering task with its own
-    bean, not a line in a crash fix.
+    RETRACTED, and it is worth knowing why. This note used to add that "the
+    float64 character agrees to 15 digits against the 50-dps reference, so the
+    word is well conditioned there". BOTH SIDES of that comparison were running
+    at dps = 15, so the agreement was the FLOOR OF THE ARITHMETIC ON BOTH SIDES
+    and said nothing about the mathematics -- precisely the invalid form
+    AGENTS.md names. There is currently NO evidence here about conditioning,
+    in either direction. Do not cite that claim.
+
+    THE REAL FIX IS MEASURED AND WORKS. Neither cast nor dense-mpmath: the
+    seminormal `sigma_i` carry at most 2 nonzeros per row, so the trace can be
+    taken by propagating ONE ROW AT A TIME through the 47 factors, never
+    materialising the product. Cost falls from `dim^3 * len(word)` to
+    `dim^2 * len(word) * nnz_per_row`. Validated at dim=132, dps=70, against
+    the dense routine:
+
+        dense   20.472734309881024467   81.2 s
+        sparse  20.472734309881024467    1.0 s     (80.8x)
+        relative difference  7.1e-71   -- exact agreement at the working
+                                          precision, NOT a float64 floor
+
+        extrapolated, all ten irreps:  ~36 min (nnz/row = 1, as at dim=132)
+                                       ~73 min (nnz/row = 2, the 2x2 blocks
+                                                that larger irreps carry)
+
+    So the A=4 [1^4] object is roughly an hour of exact compute, not 1135
+    hours. Implementing that properly -- placement, tests, review -- is bean
+    `qou-fmoi`, not a line in a crash fix.
     """
     sig, dim, _ = build_seminormal_matrices(tuple(lam))
     if dim == 0:
@@ -251,8 +274,9 @@ def _chi(lam, word, n_gens):
         raise ExactCharacterInfeasible(
             f"chi_lambda for {tuple(lam)} (dim={dim}): the braid word carries "
             f"exact mpf offsets, which scipy.sparse cannot hold (dtype "
-            f"object), and the dense mpmath route costs ~571 h at dim=4158. "
-            f"Needs a sparse-mpf or trace-only character product. Refusing "
+            f"object), and the dense mpmath route costs ~705 h at dim=4158. "
+            f"The trace-only sparse route is measured at ~1 h for all ten "
+            f"irreps (bean qou-fmoi) but is not built yet. Refusing "
             f"rather than casting to float64 (AGENTS.md: probes are not "
             f"exempt)."
         )
