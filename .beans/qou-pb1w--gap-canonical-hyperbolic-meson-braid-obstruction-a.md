@@ -1,11 +1,11 @@
 ---
 # qou-pb1w
 title: 'GAP: canonical hyperbolic meson braid (Obstruction A) — the corpus braid is Vol=0'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T19:24:22Z
-updated_at: 2026-08-24T19:30:39Z
+updated_at: 2026-08-24T21:23:18Z
 ---
 
 ## Measured, not asserted: the corpus's meson braid closes to T(2,5) with Vol = 0
@@ -114,3 +114,33 @@ J/ψ `L ≈ 40` — 3–4× their dictionary lengths.
 
 Either could dissolve it. That is why they go to the author rather than into a
 verdict — and it is the difference between a prune and an over-claim.
+
+## ✅ CLOSED 2026-08-24 — the LP-selected operator is provably not a braid
+
+Settled symbolically over `ℚ(q)`, not by search. Probe:
+[`computations/meson/operator_selection_lattice_symbolic.py`](../computations/meson/operator_selection_lattice_symbolic.py).
+
+**Lattice — NOT the obstruction.** `Ψ = D·Φ* = (−q³, −q⁴, N, −q⁵, qN, −q⁶)`
+with `N = q⁶+q²+1`, `D(q) = q⁷−q⁵−q⁴+q²+q+1 = (q+1)(q⁶−q⁵−q³+q²+1)`. Every
+entry is a polynomial with integer coefficients, so `Φ*` lies in the
+`ℤ[q,q⁻¹]`-lattice up to one scale. Integrality was a genuine candidate
+obstruction and it does not fire.
+
+**Character — this IS the obstruction.** In `H₃(q) ≅ ℚ(q) ⊕ M₂(ℚ(q)) ⊕ ℚ(q)`
+every braid word of exponent sum `e` sits at `χ_sym = qᵉ`,
+`det ρ_std = (−1)ᵉ`, `χ_alt = (−1/q)ᵉ`, so it satisfies the scale-free,
+exponent-free identity `χ_sym·χ_alt = det ρ_std`. Two facts close it:
+`χ_alt(Ψ) = 0` — because `χ_alt(x) = v·x` **is** the quotient condition — and
+along the coset the invariant is `F(s) = −s³·(q²+1)⁶(q²−q+1)³(q²+q+1)³/q⁶`,
+whose only root is `s = 0`. So **no element of `Φ* + span(v)` is a nonzero
+scalar multiple of a braid image.** Quantified over the coset deliberately: on
+the quotient `x` is defined only modulo the radical, so a claim about the point
+alone would be a gauge artifact.
+
+Scope (b) per the STRICT refuted rule, invariant named. `t(q)` and `G(q)` are
+derived from the H₃(q) structure constants (normalisation + cyclicity + Markov),
+not copied from `pyhecke` — the shipped `TR_M` is a verified consequence there.
+
+**Follow-on: `qou-v7qj`.** The repair for LP degeneracy and the condition
+forbidding a braid answer are the same condition. Whether the quotient is the
+right repair is the live question; this bean does not answer it.
