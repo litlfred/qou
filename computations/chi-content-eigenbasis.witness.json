@@ -1,8 +1,9 @@
 {
   "name": "chi-content-eigenbasis",
-  "description": "Rewrites the Lean-proved χ_λ(𝓑_n−𝓑_p) H₃ relations in the content/twist eigenbasis so the structure is evident. The full twist Δ² acts on V_λ as the proved ribbon eigenvalue θ_λ=q^{2c(λ)} (c=content sum ∈ {3,0,−3}); the framing-summed tower is a 3-pole rational χ_λ/(1−t·q^{2c}) with poles at the twist eigenvalues; the bar-odd q-integer shape depends only on |c(λ)| (conjugate blocks (3),(1,1,1) share −¼([3]_q+[5]_q); (2,1) is ½([1]_q−[3]_q)); so the §4a single-x failure is a content-graded multi-mode object, not one q-Bessel. Exact symbolic re-expression of proved relations; nothing wired.",
+  "description": "Rewrites the Lean-proved χ_λ(𝓑_n−𝓑_p) H₃ relations in the content/twist eigenbasis so the structure is evident. The full twist Δ² acts on V_λ by the scalar q^{2c(λ)} (c=content sum ∈ {3,0,−3}) — the SQUARE of the Lean ribbon twist QOU.BraidKnot.Keystone.theta = q^{c(λ)}, since Δ² = θ²; the framing-summed tower is a 3-pole rational χ_λ/(1−t·q^{2c}) with poles at the twist eigenvalues; the bar-odd q-integer shape depends only on |c(λ)| (conjugate blocks (3),(1,1,1) share −¼([3]_q+[5]_q); (2,1) is ½([1]_q−[3]_q)); so the §4a single-x failure is a content-graded multi-mode object, not one q-Bessel. Exact symbolic re-expression of proved relations; nothing wired.",
   "auditOnly": true,
   "probe": true,
+  "q0Anchor": "independent",
   "eigenbasis": "content / twist (Jucys–Murphy content c(λ); full-twist ribbon eigenvalue θ_λ=q^{2c}, Lean-proved in QOU/BraidKnot/ChiralityWritheRibbon.lean)",
   "twist_eigenvalues": {
     "[3]": "q^6",
@@ -83,15 +84,15 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-    "scriptHash": "edd33c98fd73",
+    "scriptCommitSha": "0996b42e6c1ee2cfc8aac89ad79fe6eb2a9bf280",
+    "scriptHash": "b41deb909a95",
     "producer": "computations/probes/chi_content_eigenbasis_probe.py"
   },
-  "scriptHash": "edd33c98fd73",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "scriptHash": "b41deb909a95",
+  "scriptCommitSha": "0996b42e6c1ee2cfc8aac89ad79fe6eb2a9bf280",
+  "commitSha": "2984af8764aba24e0fa8defba86195b4b709da12",
   "engine": "python",
-  "computedAt": "2026-07-18T13:53:02.150631+00:00",
+  "computedAt": "2026-08-24T19:15:47.386221+00:00",
   "durationMs": 0,
   "scriptFile": "chi_content_eigenbasis_probe.py"
 }

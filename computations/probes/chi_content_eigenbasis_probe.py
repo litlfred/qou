@@ -19,7 +19,11 @@ For H₃ the three blocks carry content c ∈ {+3, 0, −3} ⇒ θ_λ ∈ {q⁶,
 
 Established evident forms (all verified here against the proved H₃ closed forms):
 
-  1. θ_λ = χ_λ(Δ²)/dim_λ = q^{2c(λ)}  (matches the Lean ribbon eigenvalue), and
+  1. θ^{Δ²}_λ = χ_λ(Δ²)/dim_λ = q^{2c(λ)}  — the FULL-TWIST scalar.  NOTE it is
+     the SQUARE of the Lean ribbon twist `QOU.BraidKnot.Keystone.theta = q^{c(λ)}`,
+     not equal to it: Δ² = θ², so q^{2c} = (q^{c})².  Earlier wording here read
+     "matches the Lean ribbon eigenvalue", which asserts an equality that does not
+     hold and invites a false "the corpus disagrees with itself" report.  And
      χ_λ(β·Δ^{2m}) = θ_λ^m · χ_λ(β)  (centrality ⇒ multiplicativity).
 
   2. FRAMING GENERATING FUNCTION — the framing-summed tower is a 3-POLE rational
@@ -78,7 +82,7 @@ def main():
 
     assertions = []
 
-    # 1 — twist eigenvalue θ_λ = q^{2c(λ)} (vs Lean-proved ribbon eigenvalue)
+    # 1 — FULL-TWIST scalar q^{2c(λ)} = (Lean ribbon twist q^{c(λ)})²
     log("=== 1. twist eigenvalue θ_λ = χ_λ(Δ²)/dim = q^{2c(λ)} ===")
     theta_ok = True
     thetas = {}
@@ -162,8 +166,10 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
         "name": "chi-content-eigenbasis",
         "description": "Rewrites the Lean-proved χ_λ(𝓑_n−𝓑_p) H₃ relations in the "
                        "content/twist eigenbasis so the structure is evident. The "
-                       "full twist Δ² acts on V_λ as the proved ribbon eigenvalue "
-                       "θ_λ=q^{2c(λ)} (c=content sum ∈ {3,0,−3}); the framing-summed "
+                       "full twist Δ² acts on V_λ by the scalar "
+                       "q^{2c(λ)} (c=content sum ∈ {3,0,−3}) — the SQUARE of the Lean "
+                       "ribbon twist QOU.BraidKnot.Keystone.theta = q^{c(λ)}, "
+                       "since Δ² = θ²; the framing-summed "
                        "tower is a 3-pole rational χ_λ/(1−t·q^{2c}) with poles at the "
                        "twist eigenvalues; the bar-odd q-integer shape depends only on "
                        "|c(λ)| (conjugate blocks (3),(1,1,1) share −¼([3]_q+[5]_q); "
@@ -172,6 +178,12 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
                        "symbolic re-expression of proved relations; nothing wired.",
         "auditOnly": True,
         "probe": True,
+        # Anchor-INDEPENDENT: every quantity here is a sympy expression in the
+        # SYMBOL q (`Q` imported from hoefsmit_symbolic is a Symbol, not the
+        # numeric pin), so nothing is evaluated at any q0.  Without this the
+        # builder stamps the default `proton` pin plus a q0Value, which claims
+        # a numeric anchor the computation never used.
+        "q0Anchor": "independent",
         "eigenbasis": "content / twist (Jucys–Murphy content c(λ); full-twist "
                       "ribbon eigenvalue θ_λ=q^{2c}, Lean-proved in "
                       "QOU/BraidKnot/ChiralityWritheRibbon.lean)",
