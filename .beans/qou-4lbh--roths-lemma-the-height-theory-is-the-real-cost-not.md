@@ -3627,3 +3627,31 @@ theorem, 18 was a name read back as an identification.**
 Method note: 18 came from reading the page scan for a question the Lean could not raise —
 "what does `K_h` denote?" is invisible to `lake build`, because the structure is abstract in it
 and every theorem about it is true either way.
+
+### The base case is closed — `Γ₁ ⟹ RothBound 1 t Θ₁`
+
+`rothBound_one_of_gamma_one`. The chain, all `#print axioms`-clean:
+
+    Γ₁ clause (i):  a^q ≤ H^{r·p}          (t = p/q, cleared of its exponent)
+      → index_le_of_pow_abs_coeff_le       index ≤ S/(Q·d)
+      → isRothTheta_le_of_gamma_one        Θ₁ ≤ t
+      → rothBound_one_of_gamma_one         RothBound 1 t Θ₁
+
+`RothBound` is the shape `rothBound_chain` and `rothConstant_chain` consume, so the base case
+now *enters* the recursion rather than sitting beside it needing translation. Correction eleven
+traced `c_m = 2^{m+1} − 3` to the base case rather than to the recurrence; this is that starting
+value, proved from `Γ₁` instead of assumed.
+
+The powered form is the one `Γ₁` delivers. Routing through the unpowered `a ≤ H^e` would need an
+`e : ℕ` with `s₁p ≤ q·e`, and `two_sqrt_expands` says the recursion amplifies that `1/d` to `≈ 4`
+however small it starts — the fourth time in this arc that a rounding step turned out to cost
+more than it saved.
+
+**Roadmap after today.** §9 done, §10 done (both halves, `Θ` form, `Γ₁` form). Remaining:
+
+1. **§12** — `hfac` and `hres` are still *assumptions* in `index_le_of_rothGrowth_of_factor_bound`.
+   This is now the largest open item.
+2. **§13/§14 assembly** — `RothLemma4` and `RothLemmaTheta` are `def`s; nothing proves them for
+   `m ≥ 2`.
+3. **The induction step itself** — `RothLemmaUniform`/`RothLemmaMahler` remain `def`s proved only
+   at `m = 1`.
