@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 229,
-      "proton-pin": 1649,
+      "proton-pin": 1653,
       "unknown": 25,
-      "canonical": 168
+      "canonical": 169
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -6012,6 +6012,13 @@
         "ppb_vs_canonical": -11.53836188477944
       },
       {
+        "file": "computations/deltalambda/deltalambda-k4-complete-graph-collective-magnitude.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/deltalambda/deltalambda-kappa-interface-residual-simplex.witness.json",
         "field": "results.substrate.q0",
         "value": "1.109978595557334719899763220483225026656",
@@ -6075,11 +6082,25 @@
         "ppb_vs_canonical": -11.53836188477944
       },
       {
+        "file": "computations/deltalambda/deltalambda-perpair-bond-magnitude-derive.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/deltalambda/deltalambda-saturation-det-ceiling.witness.json",
         "field": "result.constants.q0",
         "value": "1.10997858275",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.53836188477944
+      },
+      {
+        "file": "computations/deltalambda/deltalambda-saturation-det-ceiling.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/deuteron-naive-z-physical-but-does-not-close.witness.json",
@@ -7064,13 +7085,6 @@
       {
         "file": "computations/h4-markov-weights-closed-form.witness.json",
         "field": "anchor.q_0",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/h4-markov-weights-closed-form.witness.json",
-        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
@@ -11542,6 +11556,13 @@
         "ppb_vs_canonical": -11.53836188477944
       },
       {
+        "file": "computations/probes/reeb-g-structural-identity.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/rho-f-categorical-probe.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785955573347",
@@ -11876,6 +11897,13 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
+        "file": "computations/proton-mass-full-tower-50dps.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/proton-mu-mass-ratio-substrate-identity.witness.json",
@@ -12454,9 +12482,9 @@
       {
         "file": "computations/qbeta/qbeta-composite-crossanchor-2factor-sweep.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-composite-operator-first-test.witness.json",
@@ -14242,6 +14270,13 @@
         "value": "1.1099785955573347198997632204832250266562084087802",
         "class": "canonical",
         "ppb_vs_canonical": 4.172458118041393e-41
+      },
+      {
+        "file": "computations/vhat-std-vs-full-tower-compare.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/vhat-tower-im-cancellation.witness.json",

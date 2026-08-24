@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T19:24:35.596366+00:00",
-  "commitSha": "23b9c4f5bad6278e62e08dd00b276c2ac4c4bc6e",
+  "computedAt": "2026-08-24T20:56:00.397732+00:00",
+  "commitSha": "71cd069f4b9b57bd73c9f8e93b0c934c554f4e11",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 92,
+      "computed": 93,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "909e02527c90e773"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -61,11 +61,11 @@
       "total_scanned": 2737,
       "prov_ok": 2323,
       "prov_audit_exempt": 79,
-      "prov_exempt_no_reader": 240,
+      "prov_exempt_no_reader": 239,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 92,
+      "prov_missing": 93,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.966386554621848739495798319327731092436974789915966386554622"
+      "completeness_ratio": "0.966021191085129704055535257581293386919985385458531238582389"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -9616,6 +9616,14 @@
           ]
         },
         {
+          "witness": "mu3-target-frame-robustness.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "s5so3-geometric-wlambda-a4-helium.witness.json",
           "missing_fields": [
             "engine",
@@ -10630,14 +10638,6 @@
         },
         {
           "witness": "helium-four-body-cluster.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "mu3-target-frame-robustness.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
