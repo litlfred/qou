@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0710.4405v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "af6234179a1345327e0796c811992b8caa632733fe5b96ec8a74307125ba53de",
+  "file": "0710.4405v1.pdf"
+ },
+ "provenance": {
+  "title": "Instituto de F\u00b4 \u0131sica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
+  "authors": "Apt. Correus 22085, E-46071 Val` encia, Spain",
+  "arxiv": {
+   "id": "0710.4405",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "24 Oct 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}
