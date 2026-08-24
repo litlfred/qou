@@ -27,19 +27,30 @@ level-`r` Markov parameter is *definitionally* `q · z_D`.  So every statement p
 `r` specialises back to a statement about the object PR #5575 proved things about, rather than to a
 lookalike.
 
-## What is NOT here
+## Branching at general `r` — proved downstream, not here
 
-**Branching at general `r`.**  The two-row branching identity of `OcneanuWeightBranching` rests on
+**Status corrected 2026-08-24 (bean `qou-4a68`).**  This section previously recorded general-`r`
+branching as an open item on bean `qou-j7ln`.  It is **proved, sorry-free**, in the files that
+import this one:
+
+* `BranchingGenericity.sum_schurPrincipal_addCellOrSelf` — the identity itself,
+  `∑_{s addable to μ} s_{μ+s}(1, …, Q^{r−1}) = [r]_Q · s_μ(1, …, Q^{r−1})`;
+* `AddableCellIndexing.sum_addable_wenzlWeight` — the same for the normalised weight, in the
+  addable-cell subtype indexing the corner exchange hands over;
+* `WenzlNormalisation.sum_addable_wenzlWeight_all` — with the row-count hypothesis removed.
+
+The pessimism this section used to record was about a *route*, and the route was avoidable.  That identity is Pieri's rule
+at the principal specialisation — Orellana's Lemma 5.1 `[orellana1998]`, proved there by the
+Littlewood–Richardson rule on the integer-level lattice `Q = −q^{r₁+m}` followed by rational
+continuation — and neither half is in Mathlib.  The proof that landed does not go through either:
+it works directly from `schurPrincipal_addCell_eq`'s per-row β-factor form, with the four
+non-vanishing side conditions all derived from the single `hgen`.  So "not in Mathlib" was true and
+"therefore open here" did not follow.
+
+What remains true is the reading of the two-row case: `OcneanuWeightBranching` rests on
 `schurPrincipal_twoRow`, a closed form that exists because the hook-content product *telescopes* for
-a two-row diagram.  At general `r` there is no such telescoping and the identity
-
-`∑_{s addable to μ} s_{μ+s}(1, …, Q^{r−1}) = [r]_Q · s_μ(1, …, Q^{r−1})`
-
-is **Pieri's rule at the principal specialisation** — Orellana's Lemma 5.1 `[orellana1998]`, proved
-there by the Littlewood–Richardson rule on the integer-level lattice `Q = −q^{r₁+m}` followed by
-rational continuation.  Neither half is in Mathlib.  It is not stated here as a `sorry`, because a
-`sorry` in this file would be indistinguishable from a proved lemma to every consumer; it is tracked
-as an open item on bean `qou-j7ln`.
+a two-row diagram, and there is no such telescoping at general `r`.  The general-`r` proof replaces
+the telescoping with the β-factor identity rather than recovering it.
 
 ## Base ring (§7c)
 
