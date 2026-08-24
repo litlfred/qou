@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T22:28:24.702698+00:00",
-  "commitSha": "cffc1265f0020e076c7671e8081177c6d803a63d",
+  "computedAt": "2026-08-24T13:04:26.477539+00:00",
+  "commitSha": "036b411ede8edf40f4a0ea5373bbb807e90c74af",
   "assertions": [
     {
       "name": "canonical_trM_is_order_unity",
-      "computed": 0.5751722439177719,
-      "expected": 1.0,
+      "computed": "0.575172243917771870826535343986",
+      "expected": "1.0",
       "passed": true,
-      "tolerance": 2.0,
+      "tolerance": "2.0",
       "source": "matrix-M tr_M(q0) ∈ [~1, 2] — not the H₃-local 10^1025"
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 62,
   "computation": "atom-vhyp-closure-matrix-m",
   "scriptFile": "atom_vhyp_closure_matrix_m.py",
-  "scriptHash": "b6d2b5825f65",
+  "scriptHash": "897b8843b079",
   "scriptCommitSha": "93e24e23de83af8f6d53f4a50c9d7a261d01db6c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -43,67 +43,67 @@
   },
   "description": "Δ_λ closure check on the CANONICAL H_{3A} matrix-M tr_M (EXPLORATORY). Quantifies the required λ-independent Δ̄(K)=B/(m_e·tr_M) on the O(1) matrix-M Markov trace — the object the binding formula uses — vs the H₃-local NF used by #2076. Shows Δ̄ is mild (O(1–10)), not the 10^459 H₃-local scale gate; the per-nucleus Δ̄(K) is the target for the Stage-② volume route.",
   "data": {
-    "m_e_MeV": 0.51099895069,
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "rows": [
       {
         "label": "deuteron",
         "Z": 1,
         "N": 1,
         "A": 2,
-        "tr_M_canonical_matrixM": 0.5751722439177719,
-        "B_AME_MeV": 2.2245662,
-        "delta_bar_required": 7.568806558648522,
-        "B_per_A_MeV": 1.1122831
+        "tr_M_canonical_matrixM": "0.575172243917771870826535343986",
+        "B_AME_MeV": "2.2245662",
+        "delta_bar_required": "7.568806558648521893795876335270680711639781629463495141345138108273824",
+        "B_per_A_MeV": "1.1122831"
       },
       {
         "label": "tritium",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "tr_M_canonical_matrixM": 0.22931010210455652,
-        "B_AME_MeV": 8.4817962,
-        "delta_bar_required": 72.38434302522218,
-        "B_per_A_MeV": 2.8272654
+        "tr_M_canonical_matrixM": "0.229310102104556507332090810269",
+        "B_AME_MeV": "8.4817962",
+        "delta_bar_required": "72.38434302522219278785754381531681181740078504409731014885671863659432",
+        "B_per_A_MeV": "2.8272654"
       },
       {
         "label": "helium-3",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "tr_M_canonical_matrixM": 0.4037670368514282,
-        "B_AME_MeV": 7.71804132,
-        "delta_bar_required": 37.40728860215428,
-        "B_per_A_MeV": 2.57268044
+        "tr_M_canonical_matrixM": "0.403767036851428170368670253333",
+        "B_AME_MeV": "7.71804132",
+        "delta_bar_required": "37.40728860215428045360994498590104067724262056307836059718709622107532",
+        "B_per_A_MeV": "2.57268044"
       },
       {
         "label": "helium-4",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "tr_M_canonical_matrixM": 0.16097414544240737,
-        "B_AME_MeV": 28.2956624,
-        "delta_bar_required": 343.9883454347146,
-        "B_per_A_MeV": 7.0739156
+        "tr_M_canonical_matrixM": "0.160974145442407381825873440981",
+        "B_AME_MeV": "28.2956624",
+        "delta_bar_required": "343.9883454347145827431510486154249779389063824616053655947595782190414",
+        "B_per_A_MeV": "7.0739156"
       },
       {
         "label": "lithium-6",
         "Z": 3,
         "N": 3,
         "A": 6,
-        "tr_M_canonical_matrixM": 0.04505202706655273,
-        "B_AME_MeV": 31.9939872,
-        "delta_bar_required": 1389.741485788937,
-        "B_per_A_MeV": 5.3323312
+        "tr_M_canonical_matrixM": "0.0450520270665527266978068001978",
+        "B_AME_MeV": "31.9939872",
+        "delta_bar_required": "1389.741485788937346021128505817082530139612282857293661765532290940861",
+        "B_per_A_MeV": "5.3323312"
       },
       {
         "label": "lithium-7",
         "Z": 3,
         "N": 4,
         "A": 7,
-        "tr_M_canonical_matrixM": 0.01796137598066255,
-        "B_AME_MeV": 39.2450807,
-        "delta_bar_required": 4275.881040724363,
-        "B_per_A_MeV": 5.6064401
+        "tr_M_canonical_matrixM": "0.0179613759806625499996012671122",
+        "B_AME_MeV": "39.2450807",
+        "delta_bar_required": "4275.881040724362727050184291674919620172657899423565385919650225848173",
+        "B_per_A_MeV": "5.6064401"
       },
       {
         "label": "beryllium-9",
@@ -112,29 +112,29 @@
     ],
     "canonical_trM_is_O1": {
       "tr_M_values": [
-        0.5751722439177719,
-        0.22931010210455652,
-        0.4037670368514282,
-        0.16097414544240737,
-        0.04505202706655273,
-        0.01796137598066255
+        "0.575172243917771870826535343986",
+        "0.229310102104556507332090810269",
+        "0.403767036851428170368670253333",
+        "0.160974145442407381825873440981",
+        "0.0450520270665527266978068001978",
+        "0.0179613759806625499996012671122"
       ],
       "range": [
-        0.01796137598066255,
-        0.5751722439177719
+        "0.0179613759806625499996012671122",
+        "0.575172243917771870826535343986"
       ],
       "note": "H_{3A} matrix-M Markov trace — O(1), decreasing with A; contrast the H₃-local NF (#2076) reaching 10^1025."
     },
     "required_delta_bar": {
       "values": [
-        7.568806558648522,
-        72.38434302522218,
-        37.40728860215428,
-        343.9883454347146,
-        1389.741485788937,
-        4275.881040724363
+        "7.568806558648521893795876335270680711639781629463495141345138108273824",
+        "72.38434302522219278785754381531681181740078504409731014885671863659432",
+        "37.40728860215428045360994498590104067724262056307836059718709622107532",
+        "343.9883454347145827431510486154249779389063824616053655947595782190414",
+        "1389.741485788937346021128505817082530139612282857293661765532290940861",
+        "4275.881040724362727050184291674919620172657899423565385919650225848173"
       ],
-      "spread_factor": 564.9346442654837,
+      "spread_factor": "564.9346442654837158648695224529348378345769940847548212459635738490918",
       "scale_gated": false,
       "conclusion": "On the canonical O(1) tr_M the required Δ̄(K) is mild (7.57–4275.88, ~564.9× over A=2→3) — NOT the H₃-local 10^459 gate. Δ_λ(K) remains the last un-derived input, now a per-nucleus O(1–10) volume/density factor to be produced by Stage ② (no scale obstruction)."
     }

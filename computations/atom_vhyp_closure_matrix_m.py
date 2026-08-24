@@ -53,8 +53,17 @@ sys.path.insert(0, str(HERE / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402  (registry, P31)
+from _precision import set_compute_dps  # noqa: E402 — before any mpf is built
+import mpmath as mp  # noqa: E402
 
-M_E_MEV = float(_M_E_MEV)
+set_compute_dps()
+
+# NOT float(): _M_E_MEV is the registry mpf. Every input this producer reads
+# is already full precision -- the AME witness carries "2.2245662" and the
+# transfer witness carries 30-digit strings like
+# "0.575172243917771870826535343986" -- and all three were being downcast to
+# float64 on the way in. The precision was sitting in the source files.
+M_E_MEV = _M_E_MEV
 AME = HERE / "ame-2020-binding-energies.witness.json"
 
 # (label, AME binding key, Z, N, atom_symbol)
@@ -76,7 +85,7 @@ def main() -> int:
         print(f"Error: {transfer_path} not found")
         return 1
     transfer_data = json.loads(transfer_path.read_text())["data"]["rows"]
-    tr_m_by_atom = {r["atom"]: float(r["tr_M_atom"]) for r in transfer_data}
+    tr_m_by_atom = {r["atom"]: mp.mpf(r["tr_M_atom"]) for r in transfer_data}
 
     rows = []
     for label, bkey, Z, N, atom_sym in NUCLEI:
@@ -84,7 +93,7 @@ def main() -> int:
             rows.append({"label": label, "status": f"{atom_sym} missing from transfer witness"})
             continue
         tr_M = tr_m_by_atom[atom_sym]
-        B = float(ame[bkey])
+        B = mp.mpf(ame[bkey])
         A = Z + N
         delta_bar = B / (M_E_MEV * tr_M)   # required λ-independent Δ̄
         rows.append({
@@ -134,7 +143,8 @@ def main() -> int:
     # Sanity: tr_M is O(1), not exponential (the whole point of the correction)
     w.add_assertion(
         name="canonical_trM_is_order_unity",
-        computed=float(max(trms)) if trms else 0.0, expected=1.0, tolerance=2.0,
+        computed=max(trms) if trms else mp.mpf(0),
+        expected=mp.mpf(1), tolerance=mp.mpf(2),
         source="matrix-M tr_M(q0) ∈ [~1, 2] — not the H₃-local 10^1025",
     )
 
