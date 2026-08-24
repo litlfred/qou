@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T10:01:14Z
-updated_at: 2026-08-24T10:01:15Z
+updated_at: 2026-08-24T10:13:39Z
 ---
 
 Found while converting `probe_9b_perlambda_brane_tower.py` for the convention-C
@@ -65,3 +65,48 @@ only as good as that witness's freshness. If both sides drifted together the
 assertion reports success. This one sat at EXACTLY 0.0, which reads as strong
 agreement and was actually two stale artifacts matching. Worth sweeping for
 other `*_matches_committed_*` assertions on the same pattern.
+
+
+## Sweep result (2026-08-24): this is ISOLATED, not a class
+
+I flagged in the commit message that *"any assertion of the form 'my value
+matches a committed upstream witness' is only as good as that witness's
+freshness"* and said it was worth sweeping. Swept. **It is one site.**
+
+Name-shaped grep (`matches_committed|_vs_committed|committed_witness`) over
+`computations/` returns 9 hits; the broad grep (files carrying both
+`add_assertion` and a `committed`/`.witness.json` mention) returns 625, which
+is noise — nearly every probe *mentions* a committed witness. Resolving the 9:
+
+| site | shape | verdict |
+|---|---|---|
+| `probe_9b_perlambda_brane_tower.py:500` | fresh vs committed, **both convention C** | **the defect** (this bean) |
+| `borromean_3d_index_graded.py:496` | fresh q-series vs `REF_I0_Q6`, a hardcoded exact-integer constant in the file | not vulnerable — integer coefficients, no z, no anchor |
+| `qbeta_c3_ladder_trace_convention_sensitivity_probe.py:199` | C ladder vs committed C corpus values | **deliberate** — it is the named `C_frame_regression`, both sides C on purpose |
+| `qbeta_dladder_ecalle_acceleration_probe.py:591` | symbolically **rebuilds** the ladder (~1-2 min) and compares exact ℚ pairs | genuine recomputation; C-frame scoping is a `qou-cds1` question, not staleness |
+| `qbeta_5two_barodd_antisym_offdiagonal_probe.py:164` | see below | real content, **mislabelled** |
+| `qbeta_c3_qstar_k31_repin_probe.py:257`, `habiro_witness_convention_adjudication_probe.py:353` | `add_data` fields, not assertions | n/a |
+| `gen_q0_anchor_manifest.py`, `ground_state_ordering_a3_probe.py:852` | enumeration / presence flags | n/a |
+
+So the answer to my own question is **no class** — `probe_9b` stays the one
+blocked conversion, and the excision does not need to widen.
+
+## One incidental finding (small, separate)
+
+`qbeta_5two_barodd_antisym_offdiagonal_probe.py:152` — I initially read this as
+a tautology and **that was wrong**; recording the correction because the near
+miss is the same error this bean is about. Both `N` and `N_odd` are read from
+the *one* GK witness, which looks like `x == x`. It is not, because the two are
+not built the same way:
+
+    producer:  N   = Winv · Bm · Wq^T          N_odd = ½(N − Nt),  Nt = Wq · Bm · Winv^T
+    consumer:  compares N_odd against ½(N − N^T)   -- the true matrix transpose
+
+`N^T = Wq · Bm^T · Winv^T`, so `Nt = N^T` **iff `Bm` is symmetric**. The gate
+therefore certifies the symmetry of the B-matrix — real content that can fail.
+
+What is wrong is only its `source` string, which claims it shows *"the committed
+antisymmetric assembly IS the block home of the ι-odd off-diagonal
+contraction"*. It shows no such thing; it shows `Bm = Bm^T`. Cosmetic, no
+number moves, not worth a commit on this branch — noted here so the next reader
+of that probe does not inherit the stronger reading.

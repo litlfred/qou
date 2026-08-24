@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T19:22:24.409533+00:00",
-  "commitSha": "970f19036a6aab968cff3c4febf5b505313a8d8f",
+  "computedAt": "2026-08-24T10:20:07.322354+00:00",
+  "commitSha": "bdfc95362b2298967e7ba501ba0add17b90b1afe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "delta-lambda-borromean-ascaling",
   "scriptFile": "delta_lambda_borromean_ascaling.py",
-  "scriptHash": "348be513f08a",
+  "scriptHash": "6a74f5a4e3a8",
   "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -102,8 +102,8 @@
     }
   ],
   "edge_set_test": {
-    "all_pairs_spread": 6.165558451841673,
-    "adjacent_spread": 17.897513765057127,
+    "all_pairs_spread": 7.162229445453156,
+    "adjacent_spread": 12.64143566329993,
     "hypothesis_refuted": true,
     "note": "sparsifying the edge set (all-pairs C(A,2)~A² → adjacent A−1~A) WORSENS the spread (monotone under-bind at heavy A) — the U-shape is NOT a pure edge-count effect; it is A²-overscaling at the heavy end PLUS the ⁴He magic dip (no shell structure). Edge-set lever (w5tg) alone is insufficient; the per-pair magnitude (~0.4 MeV) is far below ~8 MeV/nucleon, so closure needs magnitude-reshaping (z2bn R(q,x)) + shell/magic structure, not sparsification."
   },

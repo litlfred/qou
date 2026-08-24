@@ -98,7 +98,12 @@ def main() -> int:
     from _li_2_q_util import li_2_q as _li
     _mp.mp.dps = 50
     _q = _mp.mpf(str(_Q)); _me = _mp.mpf(str(_ME)); _qi = 1 / _q; _hh = _q - _qi
-    _E0 = _me / (_q * (_q - 1)); _z = _mp.mpf(1) / (_mp.sqrt(_q) + _mp.sqrt(_qi))
+    _E0 = _me / (_q * (_q - 1))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)) = sqrt q/(q+1), excised.
+    # The swap ratio z/(z-h) that _fp/_fn carries is exactly q^4 under D
+    # (identically in q); under C it was an irrational with no such closed form.
+    _z = _q**3 / (_q**2 + 1)
     _tau = (4 + _hh**2 - 3 * _hh**4 - _hh**6) / (_hh**2 + 4)
     _fp, _fn = _z, _z - _hh
 
