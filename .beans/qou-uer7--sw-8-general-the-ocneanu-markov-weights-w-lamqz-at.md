@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-24T00:11:38Z
+updated_at: 2026-08-24T00:16:13Z
 parent: qou-59vq
 ---
 
@@ -864,3 +864,33 @@ Also confirmed while checking: the factor-of-`q` between `z_D` and Wenzl's `z_W`
 discrepancy. `wenzlLevel_conventionD` already records `z_W = q·z_D` at `Q = q²`, which matches
 `Q²/(1+Q) = q⁴/(1+q²)` exactly. I checked this before touching anything, because a bare
 `z_W ≠ z_D` would have undermined the whole tranche.
+
+
+## Scoping the arbitrary-`z` corner identity — read this before starting it
+
+Read straight off `ocneanuWeight`'s definition, so it is checkable rather than recalled:
+
+    ocneanuWeight q z μ = ∏_{x∈μ} [q^{2i}(q²−1−qz) + q^{2j+1}z]  /  ∏_{x∈μ} [q^{2h(x)} − 1]
+
+**The numerator is the easy half and stays easy at arbitrary `z`.** Each factor depends only on
+that cell's `(i, j)` — *not* on the diagram — so adding a cell `s` multiplies the numerator by
+exactly one new factor `N(s) = q^{2s₁}(q²−1−qz) + q^{2s₂+1}z`.
+
+**The denominator is the whole problem.** Hook lengths are diagram-dependent: adding `s` increments
+`h(x)` by one for every `x` in `s`'s arm (same row, to the left) and every `x` in its leg (same
+column, above), and introduces `h(s) = 1`. So
+
+    w_{ν+s} / w_ν  =  N(s) / [ (q²−1) · ∏_{x ∈ arm(s) ∪ leg(s)} (q^{2(h(x)+1)}−1)/(q^{2h(x)}−1) ]
+
+and the corner identity becomes a statement about that arm-and-leg product summed over addable `s`.
+
+**Why convention D was cheap and this is not.** At `z_D` the ≥3-row weights vanish, so only
+`twoRow` survives, and there the hook-content product **telescopes completely**
+(`schurPrincipal_twoRow`: `Q^k(1+Q+⋯+Q^{m−k})`). At arbitrary `z` nothing vanishes, every partition
+is in play, and the arm/leg product is the general hook-ratio identity with no telescoping shortcut.
+
+**Estimate: this is the largest remaining piece, and larger than everything in this tranche
+combined.** It wants its own bean and its own branch, and the first brick is almost certainly a
+Lean lemma for how `hookLength` changes under `addCell` — which does not exist in the corpus (I
+added `hook_twoRow_row0`/`row1` for the two-row case only). Nothing downstream is blocked on it:
+convention D is canonical per the 2026-08-15 ruling.
