@@ -5010,3 +5010,62 @@ in which `lm` lemma they rewrite with — the identification of `i` is uniform.
 | `BS × FC` | §4bi |
 | `FC × ?` (whole row) | §4bj |
 | `YB × FC`, and `? × FC` (whole row) | §4bk |
+
+## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (PR pending)
+
+The bean's stated goal, reached with a single explicit hypothesis left standing.
+
+### §4bl — the `oc.left ≠ []` caveat was not a gap
+
+Every cell §4bd–§4bk assumed `oc.left ≠ []`, and I had been recording the
+excluded case as open. It is not: it needs **no cell and no reduction**.
+
+`left = []` says `lm₁` *is* the overlap, so `lm₂ = lm₁ ++ right`; §4ba's
+`lm_not_proper_prefix` forces `right = []`; the two rules therefore lead on the
+same word, which is §4bc's `shared_lm_classify` — same rule, or §4j's YB/BS
+pair. Same rule → `spoly_isZero_of_self`. The pair → the two relations sum to
+zero coefficient by coefficient (`DegenerateYbBs.relations_add_eq_zero`) against
+leading coefficients `−1` and `+1`, so the S-polynomial is **zero**, not merely
+reducible to zero.
+
+Strictly more general than §4aw's `bsbs_resolves_of_nil_left`, which proved the
+same thing for two Bokut–Shiao rules only. Compiled first try.
+
+### §4bm — the matrix assembles, and two "hypotheses" evaporate
+
+Dispatching on `rule₂` first cuts the work in half: `quad_right_resolves` (§4bd)
+and `farComm_right_resolves` (§4bk) already take an arbitrary `rule₁`, so only
+the YB and BS columns need a second dispatch. `overlap_letter` is the one shared
+step — single-letter overlap (§4au) gives `lm₁ = left ++ [z]` and
+`lm₂ = z :: right` at once, and every index identification in both columns is
+that argument.
+
+**Two things I had been carrying as open were artefacts of not reading
+hypotheses:**
+
+1. **`hq : q − q⁻¹ ≠ 0` is not a hypothesis.** `HeckeParams.h_ne_zero`
+   (line 1311, already in the file) proves it from `HeckeParams` alone.
+   `bsbs_resolves_of_oc` carries it redundantly. The assembly discharges it.
+   I had listed it as a standing condition on the BS×BS cell.
+2. **`i₁ = 0` is not a Bokut–Shiao case.** `bsbs_resolves_of_oc` needs `i₂` with
+   `i₂ + 1 = i₁`, so it silently requires `i₁ ≥ 1` — and at `i₁ = 0` both `j`s
+   are forced to `0 = i₁`, making both leading monomials the braid word. §4bg
+   takes it.
+
+### The gap, stated sharply
+
+Forcing `i' = i` off the overlap letter forces `ip = i₁`, so at `j₁ = j₂ = 0`
+the two rules are **the same rule**. `hdeep` is therefore not a family: it is the
+longest Bokut–Shiao word `σᵢσᵢ₋₁⋯σ₀σᵢ` overlapping **itself** in its shared `σᵢ`,
+at `left = descWord i 0`. One composition.
+
+### §4bn — the criterion
+
+`heckeCompleted_isGrobnerShirshovBasis` = §4bc (inclusion half, unconditional,
+every `n`) + §4bm (overlap half, modulo `hdeep`). No `sorry`, no axiom; `hdeep`
+is an explicit argument.
+
+**Not proved: that `hdeep` holds.** If that self-overlap does not resolve, the
+completion is incomplete and needs a further rule. This statement is where that
+would surface — it is a reduction of the problem to one composition, not a
+closure of it.
