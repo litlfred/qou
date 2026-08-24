@@ -1,0 +1,111 @@
+---
+# qou-ze9n
+title: Convention-C + float64 in markov_reduction_h3_to_h4_verify — cited as Lean keystone evidence
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-22T09:59:39Z
+updated_at: 2026-08-22T10:18:52Z
+---
+
+## What was found
+
+`computations/probes/markov_reduction_h3_to_h4_verify.py` carries two defects,
+and its conclusion is quoted in `QOU/Machinery/MarkovTraceOnHecke.lean` as the
+evidence for keystone ingredient 2 (the `Ind_{H3}^{H4}` Markov stabilization).
+
+**1. Convention C, after the 2026-08-15 ruling excised it.** Line 60:
+
+```python
+z = float(+(1.0 / (mp.sqrt(Q_MP) + 1.0 / mp.sqrt(Q_MP))))
+```
+
+Measured at the proton pin: this is **0.4993203342**, which is `sqrt(q)/(q+1)`
+= z_C exactly. Convention D is `q**3/(q**2+1)` = **0.6126880371**. They differ
+by 0.113 — 23 %, a different quantity, not a rounding difference.
+
+**2. float64 end to end**, against the STRICT 2026-08-18 "PROBES ARE NOT
+EXEMPT" directive:
+
+- `q = float(Q0_FLOAT)`
+- line 60 computes inside `mp.workdps(100)` and immediately casts to `float` —
+  the dps no-op the precision gates exist to catch, buying 100 digits and
+  discarding them on the same line
+- `np.eye`, `np.trace`, `float(np.trace(M))`
+- `np.linalg.solve(A, b)` for the Markov weights `y_vec` — a linear solve on a
+  character matrix, in float64, where conditioning can be far worse than 1e-16
+- `TOL = 1e-9`
+
+## Why this is not just hygiene
+
+The directive's own reasoning applies exactly: *"A witness is a number that
+gets re-derived; a probe conclusion is an argument that gets written into a
+bean, an audit doc, a PR body and a content block, where nothing re-derives
+it."* Here the argument was written into a **Lean docstring**, as the evidence
+for a keystone ingredient, and has sat there since.
+
+## Done under this bean
+
+- Extended `scripts/convention-c-producer-audit.py` with `unwrap_casts()` so
+  the cast-wrapped spelling is matchable at all — it was blind spelling #14,
+  recorded in `docs/audits/2026-08-15-detector-blindness-taxonomy.md` §7.
+  Self-test battery 50 -> 58, all pre-existing cases still pass.
+- Re-measured: the fix moves the actionable count **1 -> 2**, not 0 -> 2. The
+  other site (`qbeta_h_frame_rungs_probe.py:73`) was already detected.
+
+## NOT done — deliberately
+
+The probe has **not** been ported to D or to exact arithmetic. Both changes
+alter what the keystone evidence says, and the Markov law
+`tr_M4(x*sigma_2) = z*tr_M3(x)` contains `z` explicitly, so a C -> D swap can
+change whether it holds. That is a re-derivation, not a migration — the same
+distinction AGENTS.md draws for the c_k ladder under `qou-cds1` ("not a
+z-swap, and that is proved").
+
+Next honest step: re-derive under D in exact arithmetic and report whether the
+stabilization law survives. If it does, the keystone evidence is upgraded from
+float64/C to exact/D. If it does not, `MarkovTraceOnHecke.lean`'s ingredient-2
+paragraph needs rewriting, and that is the more valuable outcome.
+
+
+## ANSWERED (2026-08-22) — the conclusion is convention-robust
+
+Re-ran the same over-determination test at **50 dps under both conventions**
+(`computations/probes/markov_reduction_h3_to_h4_conventions.py`):
+
+    z_C = 0.499320334184     worst |tr4(x.s2) - z*tr3(x)| = 1.336e-51
+    z_D = 0.612688037146     worst |tr4(x.s2) - z*tr3(x)| = 4.009e-51
+                             worst |tr4(x)     - tr3(x)|  = 2.673e-51  (both)
+
+Nine over-determination words, 1e-30 tolerance. **PASS under both.**
+
+Residuals at ~1e-51 with 50-dps arithmetic are agreement *to the limit of the
+arithmetic used*, not an exactness claim — the same phrasing discipline the
+float64 rule imposes, applied one tier up.
+
+**Why it is robust, structurally.** `z` is an *input* to the weight solve: the
+`y_lambda` are fitted so `tr(sigma-word of length k) = z^k`, and the reduction
+is then checked on other words. The Ocneanu trace is a one-parameter family in
+`z`, so the Markov law is insensitive to which member is chosen. The C defect
+is real but does not touch the conclusion.
+
+**So `MarkovTraceOnHecke.lean`'s ingredient-2 paragraph does NOT need
+rewriting on convention grounds** — the outcome I had flagged as the more
+valuable one did not occur. Docstring updated to carry the three caveats and
+point at the companion probe.
+
+## Also fixed: the cited probe did not run
+
+Third defect, found while trying to reproduce it. Bootstrap omitted
+`tools/qou-substrate/python` entirely and added
+`tools/pyhecke/python/pyhecke` — the package directory — where the qou-mass
+shim's `from pyhecke.syt_prefix_cache import *` needs the parent. Neither
+package is installable (both 404 on PyPI), so this was fatal, not fragile.
+Fixed; the probe now runs unaided.
+
+## Left deliberately
+
+The original stays float64 and convention C, as the historical record of what
+the Lean docstring cites, with both facts now stated in its own docstring. New
+work should use the companion. Porting the original would rewrite cited
+evidence for no gain now that the conclusion is known to be robust.
