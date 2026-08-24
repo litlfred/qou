@@ -324,6 +324,27 @@ The program is **homogeneous** (linear objective, homogeneous `Gx ≥ 0`, only
     x*(1) = [−0.61738763, −0.68528704, 1.85198003,
              −0.76065394,  2.05565817, −0.84430958]
 
+> **🛑 RETRACTED 2026-08-24 — "canonical" is wrong, and so is the diagnosis
+> below it.** The direction quoted here is **one vertex of at least six**, all at
+> objective `0`, occurring in mirror pairs under `σ₀ ↔ σ₁`; which one a solver
+> returns is a property of its pivoting rule. Nothing canonical is selected.
+>
+> The cause is not the radical and not convention D. `b₁ = 𝟏`, so the first row
+> of `G` **is** the objective vector `t`, and the Frobenius constraint at `i = 1`
+> is `t·x ≥ 0` — the objective bounded below by its own constraint. The optimum
+> is therefore identically `0` for every `n`, `q` and convention, and `y₀* = 0`
+> follows. `NF(𝓑₃)`, which the corpus tabulates as the optimum, is feasible but
+> **not** optimal (objective `0.9986`).
+>
+> The braid obstruction is likewise sharper than stated below: the real,
+> gauge-invariant fact is `rank ρ_std(Φ*) = 1` — singular in the standard block,
+> where a braid image is invertible — not `χ_alt = 0`, which is gauge-dependent.
+>
+> The symbolic closed form, the lattice-membership result and the
+> rank-deficiency result all **stand**, as statements about that vertex. Only
+> "canonical" and the `χ_alt`-first framing fail. See
+> [`2026-08-24-operator-selection-lp-objective-defect.md`](2026-08-24-operator-selection-lp-objective-defect.md).
+
 **So the LP does select a canonical, parameter-free direction in `H₃(q)`.** That
 is a real answer to "what fixes the operator".
 

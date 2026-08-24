@@ -80,3 +80,54 @@ invariant, not on a search coming back empty. Do not weaken it to "we could
 not find a braid". Equally, do not read it as refuting the framework: it says
 the convention-D LP on the quotient selects an algebra element that no braid
 realises, which relocates Obstruction A rather than closing off the program.
+
+## 2026-08-24 — ANSWERED, and the question was wrong
+
+This bean asked whether the radical quotient is the right repair. That framing
+put the blame on convention D and the radical. **Both are innocent.** Two
+corrections, in order of importance.
+
+### The obstruction is RANK, not `χ_alt`
+
+The bean (and the merged Obstruction A audit) lead with `χ_alt(Ψ) = 0` and the
+observation that this *is* the quotient condition `v·x = 0`. True, but it is the
+**gauge-dependent** half — it only kills the single point `s = 0` of the coset.
+
+Measured: `rank ρ_std(Φ*) = 1`, not 2 — the optimum is **singular in the
+standard 2-dimensional block**. A braid image has rank 2 (verified as a control
+on `NF(σ₀σ₁)`), since braids are units in `H₃(q)` (`σ⁻¹ = σ − h`). And
+`ρ_std(v) = 0`, so the whole gauge orbit shares that rank. That is what
+`F(s) = −s³·(…)` was saying: the vanishing `s¹` coefficient **is**
+`det ρ_std(Ψ) = 0`.
+
+### The cause is the objective, and it has nothing to do with convention D
+
+`b₁ = 𝟏`, so `G[1][j] = tr_M(𝟏·b_j) = t_j`: the first row of the Gram matrix
+**is** the objective vector, and the Frobenius constraint at `i = 1` is
+`t·x ≥ 0`. The LP minimises `t·x` subject to `t·x ≥ 0`, so **the optimum is
+identically 0** — for every `n`, every `q`, every convention. `y₀* = 0` follows
+by strong duality. The argmin is a positive-dimensional face (≥ 6 vertices at
+`n = 3`, in mirror pairs), and `NF(𝓑₃)` — the corpus's claimed optimizer — is
+feasible but **not** optimal, at objective `0.9986`.
+
+So the trace-free optimum, the trivial dual and the rank-1 degeneracy are one
+fact, not three: a linear program whose objective duplicates a constraint lands
+on a degenerate face, and the returned vertex is the solver's pivoting rule.
+
+**Retracted:** this bean's claim that the LP "selects a canonical parameter-free
+direction". It does not; that direction is one vertex of six.
+
+Full analysis:
+`docs/audits/2026-08-24-operator-selection-lp-objective-defect.md`.
+Probe: `computations/meson/operator_selection_lp_objective_audit.py`.
+
+### What is still open, restated
+
+Not "is the quotient the right repair" but: **what objective was intended?**
+`prop:operator-selection-lp` has been corrected to state the degeneracy, and
+deliberately does not propose a replacement — choosing one is a decision about
+the physics. The one numerical hint, recorded as a hypothesis only because it
+may be circular: `tr_M(𝓑₃) = 0.998562` and `Σ NF(𝓑₃) = 0.999601` are both ≈ 1
+and `n_target ≈ 1.000` for the proton, which is consistent with the intended
+constraint having been `t·x = n_target` rather than `Σx = n_target` with `t·x`
+minimised — and equally consistent with `n_target` having been picked as ≈ 1.
