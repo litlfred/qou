@@ -150,6 +150,18 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
         return [], False  # no declared dependencies, nothing to check
     drifts: list[dict] = []
     for entry in upstream_hashes:
+        # `isinstance` guard, needed only since the third location was added.
+        # The two builder-written slots cannot hold non-dicts by construction
+        # (`load_and_hash_upstream` writes the records), but top-level
+        # `upstream` arrives through the free-form `save(extra={...})`, so a
+        # producer writing `extra={"upstream": ["a.json"]}` would raise
+        # AttributeError here and take down the WHOLE drift run, not just its
+        # own witness. No such witness exists today — which is why the guard
+        # goes in now rather than after one appears. The sibling
+        # `_upstream_edges` has always had this check; its absence here was an
+        # asymmetry introduced with the third location.
+        if not isinstance(entry, dict):
+            continue
         ups_name = entry.get("path")
         if not ups_name:
             continue
