@@ -1,7 +1,7 @@
 {
   "computation": "three-term-wedderburn",
   "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym\u00b7lam_sym + w_alt\u00b7lam_alt + w_std\u00b7V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md \u00a73.1.",
-  "computedAt": "2026-08-23T19:22:22.773452+00:00",
+  "computedAt": "2026-08-24T12:02:45.746614+00:00",
   "q_0": 1.1099785827513808,
   "precision_dps": 50,
   "wedderburn_weights": {
@@ -12,7 +12,7 @@
   },
   "particles": {
     "proton": {
-      "V_3term": 1178995.6591519108,
+      "V_3term": 240469.2278841348,
       "pred_MeV": 938.27208943,
       "codata_MeV": 938.27208943,
       "err_pct": 0.0,
@@ -20,33 +20,33 @@
       "channel_decomposition_g0": {
         "trv": 0.31113154928031994,
         "alt": -0.0889546924887588,
-        "std": 0.7668303716551194,
-        "total": 0.9890072284466805
+        "std": 0.8580383357260934,
+        "total": 1.0802151925176546
       },
       "channel_decomposition_g1": {
         "trv": 0.12165015311844768,
         "alt": 0.2275098763158477,
-        "std": 0.6219101240416894,
-        "total": 0.9710701534759849
+        "std": 0.5977772026313989,
+        "total": 0.9469372320656942
       }
     },
     "neutron": {
-      "V_3term": 517437.1428897438,
-      "pred_MeV": 411.78847898140924,
+      "V_3term": 456694.4248164327,
+      "pred_MeV": 1781.9478856979242,
       "codata_MeV": 939.56542179,
-      "err_pct": -56.17245277110175,
-      "err_ppb": -561724527.7110175,
+      "err_pct": 89.6566055297215,
+      "err_ppb": 896566055.297215,
       "channel_decomposition_g0": {
         "trv": 0.2818313196776633,
         "alt": -0.09927576983959194,
-        "std": 0.671654695289082,
-        "total": 0.8542102451271533
+        "std": 0.7585359676222256,
+        "total": 0.9410915174602971
       },
       "channel_decomposition_g1": {
         "trv": 0.10900295187181008,
         "alt": 0.25116264713120817,
-        "std": 0.6153438620729038,
-        "total": 0.9755094610759221
+        "std": 0.5829356084918083,
+        "total": 0.9431012074948265
       }
     }
   },
@@ -55,9 +55,9 @@
     "forbidden_tokens_checked": [],
     "canonical_only": true
   },
-  "scriptHash": "1e0dd74a775e",
+  "scriptHash": "f75427028cbb",
   "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
-  "commitSha": "970f19036a6aab968cff3c4febf5b505313a8d8f",
+  "commitSha": "8dc7a296e4aef428e3058e8f6043f1bb37c45414",
   "engine": "mpmath",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",

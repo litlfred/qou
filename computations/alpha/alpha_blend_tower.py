@@ -114,8 +114,10 @@ from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
 # ── Substrate parameter and Markov parameter (AGENTS.md notation) ──
 Q0 = Q_MP    # was f64 roundtrip — now genuine 50 dps via vol_4_1_at
 QI = Q_INV_MP
-# z = 1/(q^{1/2} + q^{-1/2}) — the Markov parameter
-z_m = mp.mpf(1) / (mp.sqrt(Q0) + mp.sqrt(QI))
+# z = q³/(q²+1) — the Markov parameter, **convention D** (owner ruling
+# 2026-08-15, reaffirmed 2026-08-23).  Was convention C,
+# z = 1/(q^{1/2} + q^{-1/2}) = √q/(q+1), excised.
+z_m = Q0**3 / (Q0**2 + 1)
 
 # ── Wedderburn weights at n=3 ──────────────────────────────────────
 # From [wedderburn-trace-identity.md]: q-deformed dimensions at n=3
