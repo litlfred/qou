@@ -4,15 +4,14 @@
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
     "dirty_witnesses": 1297,
-    "total_fields": 258664,
-    "lp_dual_carved_out_fields": 595,
+    "total_fields": 258658,
+    "lp_dual_carved_out_fields": 429,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 10,
       "computations/binding-sdp-bondgraph-degenerate.witness.json": 27,
       "computations/borromean-axial-coupling.witness.json": 15,
       "computations/co-bond-order-active-set.witness.json": 3,
-      "computations/deltalambda/he4-binding-k-stage2.witness.json": 158,
       "computations/deuteron-from-scratch-ledger.witness.json": 5,
       "computations/deuteron-real-sdp.witness.json": 16,
       "computations/gap-a1-binding-k-sdp-feasibility.witness.json": 12,
@@ -28,7 +27,6 @@
       "computations/rho-k-h3a-lp-dual.witness.json": 39,
       "computations/three-quark-borromean-lp-sweep.witness.json": 24,
       "computations/two-quark-active-set-mahler-sweep.witness.json": 6,
-      "computations/wedderburn-pair-volumes.witness.json": 8,
       "computations/whitehead-saddle.witness.json": 1
     },
     "lp_dual_carved_out_field_names": [
@@ -55,6 +53,6 @@
     "baseline_fields": 487638,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 900
+    "drained_files": 901
   }
 }
