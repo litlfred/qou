@@ -273,3 +273,70 @@ which of the two files is the paper's declaration, is authorial.
 
 **Finding C is untouched** — `MassEndomorphism` already has an owner per
 `VolumeBridge.lean`. Both remain on `qou-hjf4`.
+
+---
+
+## Finding D — the instances are a symptom; the structure is duplicate declarations
+
+Before grinding through the remaining ~9 demotions, I checked whether the
+shadowing problem hit on `QIntegerMassFormula` was peculiar to it. It is not,
+and this is the larger finding.
+
+Chasing one vacuous instance in `observations/borromean-quark.lean` turned up
+that **`class BorromeanQuark` is declared eleven times** across `content/`, and
+that the two carrying `instance canonical` sit in the *same* namespace as each
+other. Measured corpus-wide by
+[`scripts/duplicate-class-declaration-census.py`](../../scripts/duplicate-class-declaration-census.py)
+(`--self-test`, comment-stripped, 3117 files):
+
+| | count |
+|---|---|
+| distinct class names | 930 |
+| declared in **more than one file** | **61** |
+| ...with ≥2 declarations in the **same namespace** — can collide on import | **38** |
+| files involved in a same-namespace collision | 85 |
+| collisions pairing a **library** file with a **content-block sibling** (the §0a shape) | **27** |
+
+Worst offenders, all of them from the family above:
+
+    BorromeanQuark            11 files   collides in QOU.Archimedean, and 3 more at <root>
+    QIntegerMassFormula        8 files   collides in QOU.Interactions AND in QOU.Molecular (5 files)
+    CrystalGraphRealization    4 files   collides in QOU.BraidKnot
+
+Most-affected namespaces: `QOU.BraidKnot` (12 colliding names),
+`QOU.FluidDynamics` (8), then `QOU.AlgebraicSubstrate` / `QOU.Molecular` /
+`QOU.BraidsAndKnots` (3 each).
+
+**This failure mode is already documented in the corpus, by a file that fixed
+its own instance of it.**
+`QOU/Archimedean/HyperbolicVolumeIndependence.lean` records:
+
+> This file previously declared a *duplicate* `HyperbolicVolumeIndependence`
+> class with a placeholder shape … and a **vacuous** global instance
+> `{ residual := 0, rfl }`. That was unsound as a conjecture encoding: the
+> trivial instance silently discharged every `[HyperbolicVolumeIndependence]`
+> hypothesis with no mathematical content, and the duplicate declaration
+> collided with the real class when both files were imported.
+
+That repair held — the class is now declared once in
+`HyperbolicVolumeTranscendence.lean`, as that docstring says. But the *pattern*
+recurs: `HyperbolicVolumeIndependence` is still declared in three files, two of
+them sharing `QOU.BraidKnot`. The vacuous instance and the duplicate
+declaration are the same defect seen from two directions, and AGENTS.md §0a
+already bans the shape ("NEVER create or keep such a stub when the real
+formalisation exists in the library tree").
+
+**Caveat on the number, because I got it wrong first.** An earlier run reported
+**42** same-namespace collisions. It asked only whether a *file* contained a
+given `namespace` line anywhere, which credits every class in that file to
+every namespace block in it — and Lean namespaces nest and reopen, so a file
+may hold declarations in `QOU.BraidKnot`, `QOU.BraidKnot.Inner` and
+`QOU.Archimedean` at once. The committed script tracks the open
+`namespace`/`end` stack line by line (including `section`, whose `end` would
+otherwise pop a namespace) and attributes each class to the stack **at its own
+line**. That is the difference between 42 and 38. The `61` is
+namespace-independent and was correct either way.
+
+A same-name pair in *different* namespaces is **not** a collision — it is two
+distinct classes, possibly intentional, possibly an unnoticed fork. This census
+does not judge which; only the 38 same-namespace rows can actually clash.
