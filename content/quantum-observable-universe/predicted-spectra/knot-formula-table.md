@@ -12,7 +12,7 @@ $$
   \mathfrak{d} =  T_{2,3}^{\sigma}.
 $$
 
-Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, which is a Skein descendant of the trefoil. The heavier quarks follow a similar pattern:
+Here $\mathfrak{d}$ denotes the mirror trefoil $T_{2,-3}$, of three crossings; the mirror marks the down-type member of the doublet, not an antiparticle. The heavier quarks follow a similar pattern:
 $\mathfrak{s} = T_{2,5}^{\sigma}$, $\mathfrak{c} = T_{2,5}$,
 $\mathfrak{b} = T_{2,7}^{\sigma}$, $\mathfrak{t} = T_{3,4}$.
 
