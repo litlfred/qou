@@ -4550,3 +4550,44 @@ infix `lm₁` of length ≥ 3 starting at `p ≥ 1` would need its two copies of
 own max both strictly inside a strictly-decreasing run. The length-2 shapes are
 separated by their consecutive drop (0 for `σᵢσᵢ`, ≥ 2 for far-commutation,
 1 elsewhere).
+
+## Half of §4m's antichain, for every n (2026-08-24, §4az)
+
+Acting on §4ay's conclusion that the **inclusion half** is the better target than
+another overlap cell — it is half of `IsGrobnerShirshovBasis`, and §4m has it
+only at `n = 4` by `decide`.
+
+`lm_split` is the engine: every leading monomial is `h :: (mid ++ [l])`, and all
+four families read off through a single `List.append_inj'` — interiors `[]`,
+`[σᵢ]`, `[]`, `descWord i' j`. Off it:
+
+- `lm_interior_lt_head` — the interior is **strictly** below the head.
+- `lm_last_eq_head_or_far` — the last letter **is** the head, except
+  far-commutation, where it drops by ≥ 2 **and the interior is empty**. The
+  second conjunct is deliberate: it lets a consumer *discharge* the exception
+  rather than reason about it.
+- `lm_cons_snoc` — every leading monomial has length ≥ 2.
+
+**`lm_not_proper_suffix`** is what closes: no leading monomial is a proper suffix
+of another, for every `n`. Three lemmas in sequence, no case analysis of its own
+— `lm₁`'s head lands in `lm₂`'s interior so is strictly below `lm₂`'s head, while
+`lm₁`'s last letter *is* `lm₂`'s last letter, which is `lm₂`'s head; and a head
+dominates its own word.
+
+### Not done, and why it does not follow
+
+The other direction — proper **prefix**, and the strictly-interior case — needs
+two facts about `descWord` the file does not have:
+
+1. **no repeated letter** — separates a Bokut–Shiao word sitting inside another's
+   descending run (equal head and last letter would be a repeat);
+2. **adjacent letters drop by exactly one** — rules out the far-commutation word
+   (drop ≥ 2) sitting in that run.
+
+(1) looks routine: `descWord` is a `filter`/`reverse`/`map` off `List.finRange`,
+so `List.nodup_finRange` plus injectivity of `⟨·⟩` should give it. (2) is the
+real work; `descWord_split` plus (1) is the likely route, since splitting at a
+letter exhibits its successor as the head of the second piece.
+
+**So the antichain is NOT generalised — half of it is.** Do not read §4az as
+closing the inclusion half.
