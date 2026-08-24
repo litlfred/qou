@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T21:40:25Z
-updated_at: 2026-08-23T21:41:05Z
+updated_at: 2026-08-23T21:55:27Z
 ---
 
 ## What AGENTS.md says
@@ -88,3 +88,61 @@ reasoning recorded at the constant so the next reader does not re-add it.
 2. Check whether any **other** accessor still has the
    "matches the package constant ⇒ serve the cache" shape — that is the part of
    the warning that may still have live instances, and nobody has measured it.
+
+
+---
+
+## Item 2 ANSWERED — zero live instances (2026-08-23)
+
+`computations/audits/cached_accessor_shape_audit.py` answers the durable half of
+the AGENTS.md warning: *"audit any other cached-witness accessor with the same
+shape."*
+
+**Result: 2 hits, both the same dead function** —
+`_y_lambda_at_convention_C_HISTORICAL` in `computations/`, and its copy in the
+generated `qou-mass/_internal/` mirror. **No live instance exists.** The general
+warning is sound; it currently has no target.
+
+### Three detector versions, and the two that were wrong
+
+Recorded because "a clean detector run is not evidence the surface is clear" is
+the standing lesson, and it applied twice here.
+
+| v | keyed on | result | why it was wrong |
+|---|---|---|---|
+| 1 | tolerance literal + `".witness.json"` string, same function | 1 | that one hit is the **inverse** shape — `cross_check_trM_1ppb` reads the pin and **raises** if the runtime constant disagrees. A guard. |
+| 2 | `if` test mentions a q-constant **name** (`Q`, `Q_MP`, `Q_50_DIGIT_STR`, …) | **0** | missed the known positive, which compares against `_Y_LAMBDA_AT_Q0_WITNESS_Q0` — a module-private name no list would guess. Keying on **spelling** is the failure mode the convention-C blindness taxonomy catalogues. |
+| 3 | **provenance** — a name assigned from a file/JSON read, at module level or inside a loader that declares it `global` | 2 | — |
+
+v3 needed two further discriminators, each measured:
+
+- **The gate must involve a caller argument.** Without it: 34 hits, and the
+  great majority are plain memoisation (`if _CACHE is not None: return _CACHE`)
+  or an existence check (`if PATH.exists(): return load(PATH)`). Those are
+  benign — they hand back the same data to everyone, claiming nothing about the
+  caller's q. What makes the shape dangerous is that the cache is served **on
+  the strength of a comparison against something the caller passed**, which a
+  caller passing the package constant satisfies trivially.
+- **A leading `-`/`.` means a suffix pattern, not a path.**
+  `AUDIT_SUFFIXES = ("-audit.witness.json", …)` read as cache-derived, so every
+  `if name.endswith(suf)` over it looked like the shape. That was 2 of the last
+  4.
+
+**The known positive is asserted, not hoped for:** `--selftest` exits 1 unless
+`_y_lambda_at_convention_C_HISTORICAL` is among the hits. A future edit that
+narrows the detector past it fails loudly.
+
+## Found on the way — vendor mirror drift from my own earlier work
+
+`scripts/sync-qou-mass-vendor.py --check` reported two files drifted, both mine
+from this session:
+
+```
+ame-2020-binding-energies.witness.json                  (the AME producer fix)
+data/m-p-borromean-verification-50dps.witness.json      (the #5593 re-stamp)
+```
+
+Regenerated with `--apply` (42 modules), never hand-edited. `--check` **does**
+exit 1 on drift, so it can gate — it simply is not wired into
+`precision-gates.sh` or `staleness-gates.sh`, which is why two merged PRs left
+the mirror behind without anything objecting.

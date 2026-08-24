@@ -1,10 +1,11 @@
 ---
 # qou-bdkx
 title: 4 witnesses declare one q0 anchor and carry another — declaration/payload contradiction
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-23T07:53:49Z
-updated_at: 2026-08-23T13:45:00Z
+updated_at: 2026-08-24T00:00:20Z
 ---
 
 Split out of qou-p8lx after re-measuring the `q0 constant staleness` gate on
@@ -124,3 +125,70 @@ covers 11 cases including every z2bn-shaped negative.
 Gate: 6 -> 5 stale. The five remaining are unchanged and still belong to this
 bean (2) and to the gated bulk migration qou-1c4y (2, plus z2bn's own fix on
 PR #5532's branch).
+
+
+## aK_via_lp_dual_hecke_basis — RETRACTED as a straddle (2026-08-23, PR #5611)
+
+I reported this as the fourth genuine straddle. It is not one.
+
+Its q of its own is real — a file read of the muon anchor-defining witness
+`q-pinning-50-digit.witness.json` (`Q_PIN`, line 76; `Q` line 81; `H` line 82).
+But `Q` and `H` reach exactly two statements, both stamps:
+
+    w.add_parameter("q0", repr(Q))    # line 237
+    w.add_parameter("h",  repr(H))    # line 238
+
+Every number in the witness comes from `pyhecke.gram`'s IMPORT-TIME float64
+constants `TR_M` (gram.py:218) and `G = _build_gram()` (gram.py:394), built
+from `q_parameter.Q` — the manifest pin, proton for this unlisted stem.
+
+So the 39 moving fields are anchor-sensitive MATH, as they should be. No
+computed quantity mixes two layers. The defect is a MISLABEL: the witness
+advertises muon over numbers that are entirely proton — the direction that
+misleads a reader who trusts the stamp.
+
+Bounded: `a-K-via-lp-dual-hecke-basis.witness.json` is UNTRACKED, so nothing
+wrong is on main. (`qou-fu8c` — degenerates under convention D — is likely why.)
+
+Carrier is a THIRD shape, distinct from the other two found this session:
+  1. defaulted function parameter  (`_cached_seminormal(shape)`, no q passed)
+  2. import-time module constant   (`pyhecke.gram.TR_M` / `G`) — this one
+     has no parameter to pass at all; q is fixed the instant the module loads
+  3. (the earlier inline closed-form derivations)
+
+Guard added: `anchor_flip_straddle_audit.stamp_only()` vetoes a straddle
+verdict when the producer's q reaches only stamps. Vetoes 0 of 8 inline and
+0 of 174 literal candidates — it changes no automated verdict, and fires only
+on the producer I misread by hand. That is its whole value.
+
+
+## mp_yekutieli_sign_block_discrimination — RESOLVED, and it was not a stamp (2026-08-23)
+
+The contradiction (declares proton, carries the muon frozen literal in
+`q_80dps`) was the visible edge of a bigger defect.
+
+Committed: `sign_..._ppb_proton = 4807.83`, `..._ppb_muon = 4806.66`. Two pins
+11.5 ppb apart cannot give residuals agreeing to the 4th digit. The producer
+reads `q_at()`/`q_muon_at()` BY NAME (neither manifest-resolved), so the only
+explanation is that `q_at()` itself was muon when the file was written — the
+witness predates the 2026-05-28 proton re-pin. **Its cross-anchor comparison
+compared one anchor against itself.**
+
+Regenerated: 261.14 (proton) vs 5046.65 (muon) — properly separated.
+
+Survives: the ASSERTION, which tests improvement-vs-bare, not absolute
+residual, and passes at 32262.4 / 32262.6 within ±1 ppb. The code comment
+already explained why that is the right metric (m_μ over-determination is a
+substrate property, PR #1581 Probe A). Scientific claim unchanged.
+
+Does not survive: the VERDICT string — hardcoded, emitted unconditionally,
+claiming '54 ppb residual at both anchors'. 54 matches NEITHER the committed
+values NOR the fresh ones. Stale inherited prose in both versions. A
+`consistent` flag was computed nearby and never wired to it. Now derived.
+
+Manifest: moved `ambiguous` -> `physical_proton` per AGENTS.md constraint 3
+(comparison producers reading both accessors by name). Verified inert — 0
+non-ephemeral fields move, since ambiguous already fell back to proton.
+
+qou-bdkx triage is now complete: 49 flagged -> 5 REAL -> all 5 resolved
+(3 re-bucketed, 1 retracted as stamp-only [aK], 1 regenerated [this]).
