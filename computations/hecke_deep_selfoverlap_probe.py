@@ -190,6 +190,52 @@ def chain_render(i: int, side: int) -> list:
             for f, idx, p in chain(deep_spoly(i)[side], rules(i + 1))]
 
 
+def mono_rules(n: int) -> list:
+    """Only the LENGTH-PRESERVING rules -- Yang-Baxter, far commutation,
+    Bokut-Shiao -- as plain word-to-word rewrites.  The quadratic rule is the
+    one rule that is not of this shape, and it is the one that splits a term."""
+    out = []
+    for ip in range(n - 1):
+        out.append(((ip + 1, ip, ip + 1), (ip, ip + 1, ip)))
+    for i in range(n):
+        for j in range(n):
+            if j + 1 < i:
+                out.append(((i, j), (j, i)))
+    for ip in range(n - 1):
+        i = ip + 1
+        for j in range(ip + 1):
+            out.append((bsWord1(i, j), bsWord2(i, j)))
+    return out
+
+
+def mono_closure(start: tuple, rs: list) -> dict:
+    """Every word reachable from `start` by length-preserving rewrites, with its
+    distance.  Finite and acyclic because the rules decrease the order."""
+    from collections import deque
+    seen = {start: 0}
+    dq = deque([start])
+    while dq:
+        w = dq.popleft()
+        d = seen[w]
+        for lm, rw in rs:
+            for k in range(len(w) - len(lm) + 1):
+                if w[k:k + len(lm)] == lm:
+                    nw = w[:k] + rw + w[k + len(lm):]
+                    if nw not in seen:
+                        seen[nw] = d + 1
+                        dq.append(nw)
+    return seen
+
+
+def splitWord(i: int) -> tuple:
+    """`Z(i)`, side B's split point: the pairs `(k-1, k)` for `k = i .. 1`, then
+    `sigma_0 sigma_0`, then `sigma_i`."""
+    out = ()
+    for k in range(i, 0, -1):
+        out += (k - 1, k)
+    return out + (0, 0, i)
+
+
 def deep_spoly(i: int):
     """The two monomials of the deep self-overlap's S-polynomial."""
     return (descWord(i, 0) + bsWord2(i, 0),
@@ -295,6 +341,63 @@ def main() -> int:
     print("The quadratic count is measured under the reversed rule order too, so")
     print("it is not an artefact of the strategy (the YB/FC/BS split is).")
     print("i = 1 is degenerate: three quadratic steps, hence H^2 and four terms.")
+    print()
+    print("=== designing the chain: three plans ruled out, two waypoints found ===")
+    for i in range(2, min(top, 6) + 1):
+        rs = mono_rules(i + 1)
+        a, b = deep_spoly(i)
+        ca, cb = mono_closure(a, rs), mono_closure(b, rs)
+        head = bsWord2(i - 1, 0) + descWord(i, 1)
+
+        # WAYPOINT 1.  Side A reaches ONE word by length-preserving rewrites --
+        # the normal form's first term with a sigma_0 sigma_0 appended -- and the
+        # single quadratic step there lands directly on the normal form, because
+        # NF = head * descWord(i,1) * (1 + H sigma_0) = head * [sigma_0^2].
+        assert head + (0, 0) in ca, f"i={i}: side A cannot reach the split word"
+        assert ca[head + (0, 0)] == (i * i + i + 4) // 2, \
+            f"i={i}: side A reaches it in {ca[head + (0, 0)]}"
+
+        # WAYPOINT 2.  Side B reaches splitWord(i) in only i-1 steps.
+        assert splitWord(i) in cb, f"i={i}: side B cannot reach splitWord({i})"
+        assert cb[splitWord(i)] == i - 1, f"i={i}: side B reaches it in {cb[splitWord(i)]}"
+
+        # RULED OUT 1.  The sides never meet before the split, so "reduce both to
+        # a common word and cancel" -- which would need no quadratic step at all
+        # -- does not exist.
+        assert not (set(ca) & set(cb)), f"i={i}: the closures DO meet -- rerun the analysis"
+
+        # RULED OUT 2.  The i-case does not reduce into a context around the
+        # (i-1)-case, on either side, so the induction is not on i directly.
+        if i >= 3:
+            for name, cl in (("A", ca), ("B", cb)):
+                prev = deep_spoly(i - 1)[0 if name == "A" else 1]
+                assert not any(
+                    any(w[k:k + len(prev)] == prev for k in range(len(w) - len(prev) + 1))
+                    for w in cl), f"i={i}: side {name} DOES contain the ({i-1})-case"
+
+        print(f"  i={i}: |closure(A)|={len(ca):>3} |closure(B)|={len(cb):>3}  "
+              f"A->split {ca[head + (0, 0)]:>2} steps, B->split {cb[splitWord(i)]:>2}, "
+              f"closures disjoint")
+
+    print()
+    print("Side A reaches ONE word by length-preserving rewrites --")
+    print("    bsWord2(i-1,0) * descWord(i,1) * sigma_0 sigma_0")
+    print("in (i^2+i+4)/2 steps (BFS-minimal) -- and the single quadratic step there")
+    print("lands directly on the normal form, because")
+    print("    NF = bsWord2(i-1,0) * descWord(i,1) * (1 + H sigma_0).")
+    print("Side B instead reaches splitWord(i) = (i-1,i, i-2,i-1, ..., 0,1, 0,0, i)")
+    print("in just i-1 steps, and does its quadratic work after the split.")
+    print()
+    print("Three plans are RULED OUT, each measured rather than argued:")
+    print("  1. chain(i) extends chain(i-1) -- no; see the section below.")
+    print("  2. A and B reach a common word and cancel with no split -- no; the")
+    print("     two length-preserving closures are DISJOINT (checked to i=6,")
+    print("     ~200 words each), so the quadratic step is unavoidable.")
+    print("  3. the i-case reduces into a context around the (i-1)-case -- no;")
+    print("     no reachable word contains the (i-1)-case as a factor, either side.")
+    print("So the induction is on the SWEEP inside one chain (the gap), which is")
+    print("the motion descWord_split_aux already formalises, not on i.")
+
     print()
     print("=== does chain(i-1) sit inside chain(i)? ===")
     for side in (0, 1):

@@ -5199,3 +5199,62 @@ target normal form and the one-quadratic-step fact still hold and still apply.
 The cascade sweeps a descending run downward one index at a time, which is the
 same motion `descWord_split_aux` already formalises — so the induction variable
 is the gap, not `i`.
+
+### Designing the chain: three plans ruled out, two waypoints found (PR pending)
+
+The reframing that made this tractable: the normal form **factors**,
+
+```
+NF(i) = bsWord₂(i−1,0) · descWord(i,1) · (1 + H·σ₀)
+```
+
+and `1 + Hσ₀` is exactly what `σ₀σ₀` rewrites to. So the whole S-polynomial is
+one word with a `σ₀σ₀` on the end, and the single quadratic step is the last one.
+
+**Waypoint 1 — side A.** A reaches `bsWord₂(i−1,0)·descWord(i,1)·σ₀σ₀` by
+length-preserving rewrites *alone*, in `(i²+i+4)/2` steps (BFS-minimal), and the
+one quadratic step there lands **directly on the normal form**. Side A's whole
+reduction is monomial until the very last step.
+
+**Waypoint 2 — side B.** B reaches
+`splitWord(i) = (i−1,i, i−2,i−1, …, 0,1, 0,0, i)` in only **i−1** steps — pairs
+`(k−1,k)` descending, then `σ₀σ₀`, then `σᵢ` — and does its quadratic work after
+the split, `(i²−i+4)/2` steps per branch.
+
+**Ruled out, each measured rather than argued:**
+
+1. **`chain(i)` extends `chain(i−1)`** — no (previous section: the shared opening
+   grows but the differing tail never vanishes).
+2. **A and B reach a common word and cancel with no split** — no. The two
+   length-preserving closures are **disjoint**, checked to `i = 6` with ~200
+   words each. So the quadratic step is unavoidable; there is no shortcut in
+   which the difference dies before it.
+3. **The `i`-case reduces into a context around the `(i−1)`-case** — no. No word
+   reachable from `A(i)` contains `A(i−1)` as a factor, and likewise for B.
+
+**Consequence:** the induction is on the **sweep inside one chain** — the gap —
+not on `i` relating whole chains. That is the motion `descWord_split_aux`
+(line 3963) already formalises, which is why it is the right starting point.
+
+All five facts are assertions in the probe, so none of them can rot.
+
+**Honest status: `hdeep` is NOT proved and is a multi-session formalization.**
+The route is now specified rather than searched for: two closed-form waypoints,
+`monicStep`/`quadStep`/`bsStep` for the steps, and the gap as the induction
+variable. What is left is writing it.
+
+**Side A's minimal path, extracted (BFS shortest, indices relative to `i`):**
+
+```
+i=3:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 YB(-2)@5 FC(-1)@4 FC(0)@2 FC(0)@3
+i=4:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 FC(0)@2 BS(-2)@5 YB(-3)@7
+      FC(-2)@6 FC(-1)@4 FC(-1)@5 FC(0)@3 FC(0)@4
+i=5:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 FC(0)@2 BS(-2)@5 FC(-1)@4 FC(0)@3
+      BS(-3)@7 YB(-4)@9 FC(-3)@8 FC(-2)@6 FC(-2)@7 FC(-1)@5 FC(-1)@6
+      FC(0)@4 FC(0)@5
+```
+
+A descent phase — for `k = 1, 2, …` a `BS(-k)@(2k+1)` followed by an `FC` sweep
+`FC(-(k-1))@(2k), …, FC(0)@(k+1)` — terminated by `YB(-(i-1))@(2i-1)`, then a
+final `FC` sweep. Doubly nested, and each loop is a descending sweep, so both
+levels are gap inductions of the `descWord_split_aux` kind.
