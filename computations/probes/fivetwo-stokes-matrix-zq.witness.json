@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:27.427162+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:45:52.680603+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "V1_inversion_S+T_S-_eq_I",
@@ -86,7 +86,7 @@
   "parameters": {
     "source": "GGM arXiv:2007.10190v2 §3, eqs (22)-(29)",
     "q0_anchor": "muon",
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "series_order_asserted": 18,
     "assembly_convention": "unflipped"
   },

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-Q5",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:23:11.387916+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:45:47.085679+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "uniform_candidate_interpolates_all_fibre_roots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "habiro-interpolation-wlambda",
   "scriptFile": "habiro_interpolation_wlambda.py",
-  "scriptHash": "02bbdfe7dd7a",
-  "scriptCommitSha": "5fa792275b4aab6d9a4180be0f2c39fd28e85394",
+  "scriptHash": "0017419c0189",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -227,14 +227,14 @@
         "2": {
           "m1": {
             "ell": 1,
-            "predicted_char": 4.1340642196527976e-43,
+            "predicted_char": 8.163677470282527e-72,
             "ratio_pair1": 0.01385105637196617,
             "ratio_pair2": 0.012167310865783263,
             "ok": true
           },
           "m2": {
             "ell": 1,
-            "predicted_char": 4.1340642196527976e-43,
+            "predicted_char": 8.163677470282527e-72,
             "ratio_pair1": 0.021053321484721138,
             "ratio_pair2": 0.01377082483799289,
             "ok": true
@@ -293,14 +293,14 @@
         "3": {
           "m1": {
             "ell": 1,
-            "predicted_char": 4.773606180127486e-43,
+            "predicted_char": 9.4266027700898e-72,
             "ratio_pair1": 0.0203004795550878,
             "ratio_pair2": 0.018037995847785156,
             "ok": true
           },
           "m2": {
             "ell": 1,
-            "predicted_char": 4.773606180127486e-43,
+            "predicted_char": 9.4266027700898e-72,
             "ratio_pair1": 0.031246005453062466,
             "ratio_pair2": 0.02057588214189804,
             "ok": true

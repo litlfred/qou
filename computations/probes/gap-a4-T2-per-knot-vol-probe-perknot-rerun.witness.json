@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T19:13:43.838278+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:05.880372+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "proton_chi_cache_tr_M_matches_documented",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "gap-a4-T2-per-knot-vol-probe-perknot-rerun",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe_perknot_rerun.py",
   "scriptHash": "c2b0acb9fe24",

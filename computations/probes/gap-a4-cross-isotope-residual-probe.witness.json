@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:47.603390+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:10.170076+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "negative_control_He3_under_R5_mismatch_24pct",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 55,
   "computation": "gap-a4-cross-isotope-residual-probe",
   "scriptFile": "gap_a4_cross_isotope_residual_probe.py",
   "scriptHash": "a297db918c0b",

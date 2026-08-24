@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T20:00:36.545416+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:45:48.057181+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "structural_constants_match_probe1",
@@ -22,7 +22,7 @@
     },
     {
       "name": "decomposition_identity_T_3He",
-      "computed": 0.0,
+      "computed": 1.2868893973670072e-85,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -38,7 +38,7 @@
     },
     {
       "name": "gate_residual_identity",
-      "computed": 8.043058733543795e-86,
+      "computed": 4.825835240126277e-86,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -86,7 +86,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "probe-9b-gate-interface-algebra",
   "scriptFile": "probe_9b_gate_interface_algebra.py",
   "scriptHash": "2c3eecce6a29",
@@ -148,7 +148,7 @@
         "mirror": 0.9043605056881074,
         "swap_plus_mirror": -0.4708557485879333,
         "gap_log_Delta_n_rich_minus_p_rich": 0.9514072306083556,
-        "decomposition_identity_residual": 0.0,
+        "decomposition_identity_residual": 1.2868893973670072e-85,
         "note": "both bound (anchor pair)"
       },
       {
@@ -175,7 +175,7 @@
         "mirror": 0.43756023126691096,
         "swap_plus_mirror": 0.16853723774361754,
         "gap_log_Delta_n_rich_minus_p_rich": 1.5908002169399065,
-        "decomposition_identity_residual": 9.651670480252554e-86,
+        "decomposition_identity_residual": 1.608611746708759e-85,
         "note": "both particle-unstable (resonances) — corroborating only"
       },
       {

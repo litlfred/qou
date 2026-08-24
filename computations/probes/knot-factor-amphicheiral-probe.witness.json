@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T19:57:35.130342+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:04.827489+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "amphicheirality_non_alt_block_invariant",
@@ -42,7 +42,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "knot-factor-amphicheiral-probe",
   "scriptFile": "knot_factor_amphicheiral_probe.py",
   "scriptHash": "d5ac961e6a9d",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T19:13:42.732140+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:03.624853+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "baseline_S_emp_proton_matches_documented",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 79,
+  "durationMs": 74,
   "computation": "gap-a4-S-K-additive-probe-perknot-rerun",
   "scriptFile": "gap_a4_S_K_additive_probe_perknot_rerun.py",
   "scriptHash": "4f723d9b53b6",

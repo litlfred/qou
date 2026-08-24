@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:30.453948+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:45:53.904678+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "phase4_amplitude_A_D_matches_table",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 51,
+  "durationMs": 54,
   "computation": "gap-a3-deuteron-p-lambda-channels-probe",
   "scriptFile": "gap_a3_deuteron_p_lambda_channels_probe.py",
   "scriptHash": "1df94bea6c2a",

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:01:28.435654+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:15.478384+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "qlambert_identity_verified_n_1_to_6",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "yekutieli-per-cell-qlambert-decomposition-probe",
   "scriptFile": "yekutieli_per_cell_qlambert_decomposition_probe.py",
   "scriptHash": "9290d90c1165",

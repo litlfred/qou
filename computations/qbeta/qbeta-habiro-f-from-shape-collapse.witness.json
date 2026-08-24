@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:00:57.285699+00:00",
-  "commitSha": "55a83c74f461389278e37f260e7e6f63de08147a",
+  "computedAt": "2026-08-24T08:47:32.129502+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "S_N0_S_at_qeq1_eq_zero",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1241,
+  "durationMs": 1246,
   "computation": "qbeta-habiro-f-from-shape-collapse",
   "scriptFile": "qbeta_habiro_f_from_shape_collapse.py",
   "scriptHash": "23308fb09492",

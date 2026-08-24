@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:13:40.098844+00:00",
-  "commitSha": "12f03d4cdf32df2e95b3d3f03855c0db85d3e20f",
+  "computedAt": "2026-08-24T08:46:01.100765+00:00",
+  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
   "assertions": [
     {
       "name": "L1a_lambdaA_proton_gap_matches_documented",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 90,
+  "durationMs": 81,
   "computation": "gap-a4-L1-light-series-probe-perknot-rerun",
   "scriptFile": "gap_a4_L1_light_series_probe_perknot_rerun.py",
   "scriptHash": "c9326dc945a6",
