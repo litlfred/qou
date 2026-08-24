@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T20:05:49Z
-updated_at: 2026-08-24T20:06:18Z
+updated_at: 2026-08-24T20:25:50Z
 ---
 
 Raised while building route 2 to the topological charge (QOU/Mathlib/ExtensionClass.lean, 2026-08-24).
@@ -50,3 +50,118 @@ QOU/Mathlib/ExtensionClass.lean proves the part that does not depend on this: th
 ## Mathlib status
 
 CategoryTheory.Abelian.Ext exists (needs HasExt). CategoryTheory.ProjectiveResolution is NOT in this tree — probed, unknown identifier. Even the affirmative route needs infrastructure work.
+
+
+---
+
+## Verified 2026-08-24 — the contradiction is real, and it is worse than stated
+
+Read all three blocks in full, plus `knot-eigenbasis-complete-proof.md`,
+`hecke-algebra-from-braiding.md`, `phase-transition-interpretation.md`,
+`composite-crossing-sublimation-criteria.md`, `substrate-parameter.{md,ts}`,
+and the block's own Lean sibling. Five findings, each independently fatal
+to `Ext^1_{H_n(q)}(V_asym, V_sym) = Z`.
+
+1. **The modules do not exist.** `V_sym`, `V_mixed`, `V_asym` are defined
+   NOWHERE — grep over `content/**` (md, ts, lean) returns only
+   `phase-transition-boundary.md`, `composite-crossing-sublimation-criteria.md`
+   (same claim with `S_sym`/`S_asym`), and `ExtensionClass.lean`'s docstring
+   quoting the claim. There is no object for the Ext group to be taken of.
+
+2. **Semisimplicity is the corpus's own theorem, with its own proof.**
+   `knot-eigenbasis-complete-proof.md` part (1): "When q is not a root of
+   unity, H_n(R,q) is isomorphic to C[S_n] as an abstract algebra (Jimbo's
+   theorem), hence semisimple." So Ext^1 = 0 at q_0 follows from a proof the
+   corpus already carries, not merely from an assertion.
+
+3. **Resolution 1 (root of unity) is forbidden by axiom, twice over.**
+   `fluid-dynamics/root-of-unity-truncation.md:24`: "The governing QOU axiom
+   rigorously demands that q remains **not** a root of unity."
+   `def:substrate-parameter`'s authorNote carries "not a root of unity" as an
+   archimedean predicate on `ArchimedeanSubstrateField`. And there is no q to
+   move anyway: the mixed channel is a **temperature** at fixed q, not a value
+   of q — the block's own formulas are T_q = S_q / [2]_q, functions OF q.
+
+4. **Z is not in the range of Ext over this algebra at ANY q.** Ext^1_A(M,N)
+   for a k-algebra A is a k-module. The block's `.ts` authorNote and its
+   `.lean` sibling both fix the ground ring: "archimedean specialisation over
+   R", `abbrev R_q := R`. Over R (or C, per `jones-markov-trace.md`) Ext^1 is
+   a vector space — divisible, torsion-free — hence never isomorphic to Z
+   unless zero. Root-of-unity relocation would give a C-vector space, so
+   resolution 1 could not deliver Z even if the axiom permitted it.
+
+5. **The corpus already states the sequence as a direct sum.**
+   `rem:hecke-algebra-from-braiding`: "The per-crossing weights q and -q^-1
+   are exactly the eigenvalues of sigma on S^2 V (+) Lambda^2 V." The two
+   channels the SES tries to connect ARE those two eigenspaces (per
+   `phase-transition-interpretation.md`: gas = symmetric, eigenvalue q; solid
+   = antisymmetric, eigenvalue -q^-1). They split by the orthogonal
+   idempotents e_+ = (sigma + q^-1)/[2]_q, e_- = (q - sigma)/[2]_q, which need
+   only [2]_q invertible — the very quantity `phase-transition-boundary.md`
+   divides by two equations earlier. The block presupposes the splitting it
+   then denies.
+
+   Corollary: `V_mixed` cannot be a middle term either. The corpus identifies
+   the mixed channel with lambda = (2,1) (`baryon-octet-decomposition.md`) and
+   `knot-eigenbasis-complete.md` calls S_lambda **irreducible**. An
+   irreducible module has no proper nonzero submodule.
+
+## Resolution: 3 (the claim is wrong)
+
+Not 1 — forbidden by the substrate axiom, and would not produce Z regardless.
+Not 2 — the block's ground ring is pinned to R by its own `.ts` note and its
+own Lean sibling, so no R_q-module reading is on offer here. (For the record,
+2 is not mathematically empty: Ext^1_{Z[q,q^-1]}(Z, Z) = Z for Z = R_q/(q-1),
+via 0 -> R_q -(q-1)-> R_q -> Z -> 0. But those are R_q-modules with no Hecke
+content, and no block asks for them.)
+
+**Falsifier.** Either (i) a corpus definition of V_sym/V_mixed/V_asym as
+H_n(q_0)-modules in which V_mixed is not the direct sum of the other two, or
+(ii) an explicit statement that the mixed-channel Hecke algebra is taken over
+Z[q,q^-1] rather than over R. Either would overturn this.
+
+**Consequence: the corpus has TWO routes to the topological integer, not
+three.** The residue route (`thm:topological-charge-quantization`, lean.ref a
+stub) and the winding route (`winding-parity-sign-transport`) survive. The
+homological route does not exist.
+
+## Mathlib status — this bean's note was wrong on the first point
+
+Probed fresh today with `lean` directly:
+
+* `CategoryTheory.ProjectiveResolution` **IS** in this tree. It needs
+  `import Mathlib.CategoryTheory.Abelian.Projective.Resolution`; the earlier
+  probe presumably imported the wrong module. Type-checks.
+* `CategoryTheory.Abelian.Ext` and `CategoryTheory.Abelian.HasExt` are
+  unknown constants even after importing `Mathlib.CategoryTheory.Abelian.Ext`;
+  the Ext API's actual declaration name is still unlocated. Not chased —
+  Ext is not needed for the surviving statement.
+* What IS available and is all the surviving statement needs:
+  `IsSemisimpleRing.isSemisimpleModule`, `exists_isCompl` (on
+  `IsSemisimpleModule`), `Module.projective_lifting_property`.
+
+RESOLVED — the contradiction dissolves; see QOU/Mathlib/HeckeExtOne.lean (2026-08-24).
+
+Ext^1(V_beta, V_alpha) = R / (alpha - beta), computed directly for the
+rank-one-by-rank-one extension. `extAction_quadratic` shows the Hecke relation
+constrains the extension parameter c not at all, so the classification is a full
+quotient of R.
+
+With alpha = q, beta = -1: R_q/(q+1) = Z. **The corpus"s "= Z" is right.**
+
+And it never contradicted semisimplicity. The Ext group is a TORSION module
+supported exactly where the eigenvalues collide — which is exactly where the
+algebra degenerates. `splits_of_isUnit_sub`: alpha - beta a unit implies
+everything splits, so at q_0 ~ 1.1099 (q_0 + 1 ~ 2.11 invertible) Ext^1 = 0,
+which is what Rad = 0 demands. The non-split extensions live at q = -1, the
+double root of (T - q)(T + 1). Two statements about different fibres, not a
+contradiction. Resolution (a) of the three listed above, confirmed by
+computation rather than chosen.
+
+No CategoryTheory.Abelian.Ext needed — the direct computation also sidesteps
+ProjectiveResolution being absent from this Mathlib.
+
+CAVEAT SPLIT OUT to bean qou-oyty: the answer is normalisation-dependent. The
+corpus carries two Hecke relations and the other one gives Z[i], not Z. Do not
+quote "= Z" without saying which relation is meant. qou-oyty option 3 is the one
+that could change a physics claim.
