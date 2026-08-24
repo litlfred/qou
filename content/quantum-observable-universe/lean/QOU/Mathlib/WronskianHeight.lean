@@ -531,6 +531,83 @@ theorem C_listFac_dvd_det_sepFamily {τ : Type*} [DecidableEq σ] [DecidableEq �
   refine dvd_trans ?_ (listFac_dvd_coeff_pderivList s P _ hmem n)
   exact_mod_cast Int.natCast_dvd_natCast.mpr (listFac_mul_dvd_listFac_append s _ _)
 
+/-- **`abs_coeff_prod_le` with per-factor bounds.**
+
+`|coeff n (∏ Fᵢ)| ≤ S^{#s} · ∏ βᵢ` when `|coeff · Fᵢ| ≤ βᵢ`.  The uniform version is the case
+`βᵢ ≡ B`; the point of the general one is that a *factorised* per-entry bound survives the
+determinant expansion, which a uniform one cannot express.
+
+⚠ Unlike `abs_coeff_prod_le`, this needs **no `1 ≤ S`** — the empty product is `1` and the bound
+is `S^0·1 = 1`, so nothing forces `S` up.  A first draft carried `1 ≤ S`, copied from the uniform
+version's signature without checking; the linter caught it.  That is the sixth unused hypothesis
+this arc has acquired by transcribing a proof *route* rather than the proof. -/
+theorem abs_coeff_prod_le' {ι : Type*} [DecidableEq ι] {S : ℤ}
+    (F : ι → MvPolynomial σ ℤ) (β : ι → ℤ) :
+    ∀ s : Finset ι, (∀ i ∈ s, ((F i).support.card : ℤ) ≤ S) →
+      (∀ i ∈ s, ∀ n, |coeff n (F i)| ≤ β i) → ∀ n : σ →₀ ℕ,
+      |coeff n (∏ i ∈ s, F i)| ≤ S ^ s.card * ∏ i ∈ s, β i := by
+  classical
+  intro s
+  induction s using Finset.induction_on with
+  | empty => intro _ _ n; simpa using abs_coeff_one_le n
+  | @insert a t ha ih =>
+      intro hS hB n
+      rw [Finset.prod_insert ha, Finset.prod_insert ha, Finset.card_insert_of_notMem ha]
+      have hSa : ((F a).support.card : ℤ) ≤ S := hS a (Finset.mem_insert_self a t)
+      have hBa : ∀ m, |coeff m (F a)| ≤ β a := hB a (Finset.mem_insert_self a t)
+      have hSt : ∀ i ∈ t, ((F i).support.card : ℤ) ≤ S :=
+        fun i hi => hS i (Finset.mem_insert_of_mem hi)
+      have hBt : ∀ i ∈ t, ∀ m, |coeff m (F i)| ≤ β i :=
+        fun i hi => hB i (Finset.mem_insert_of_mem hi)
+      refine le_trans (abs_coeff_mul_le hBa (fun m => ih hSt hBt m) n) ?_
+      have hβa : (0 : ℤ) ≤ β a := le_trans (abs_nonneg _) (hBa 0)
+      have hrest : (0 : ℤ) ≤ S ^ t.card * ∏ i ∈ t, β i :=
+        le_trans (abs_nonneg _) (ih hSt hBt 0)
+      calc ((F a).support.card : ℤ) * (β a * (S ^ t.card * ∏ i ∈ t, β i))
+          ≤ S * (β a * (S ^ t.card * ∏ i ∈ t, β i)) :=
+            mul_le_mul_of_nonneg_right hSa (mul_nonneg hβa hrest)
+        _ = S ^ (t.card + 1) * (β a * ∏ i ∈ t, β i) := by rw [pow_succ]; ring
+
+/-- **`abs_coeff_det_le` with a row-times-column per-entry bound.**
+
+    |coeff n (det M)| ≤ (#ι)! · S^{#ι} · (∏ aᵢ)(∏ bⱼ)      when  |coeff · (M i j)| ≤ aᵢ·bⱼ
+
+The mirror of `C_dvd_det_of_dvd_entries` on the size side, and for the same reason: every
+permutation term picks one entry per row and one per column, so `∏_i a_{p i}·b_i` is
+`(∏a)(∏b)` independently of `p`.
+
+Together the two say that a determinant whose entries carry a factorised row/column constant
+is *that constant* times something both integral and small — which is exactly the relationship
+between this arc's `mvGenWronskian` and Mahler's `W`. -/
+theorem abs_coeff_det_le' {ι : Type*} [Fintype ι] [DecidableEq ι] {S : ℤ}
+    (M : Matrix ι ι (MvPolynomial σ ℤ)) (a b : ι → ℤ)
+    (hS : ∀ i j, ((M i j).support.card : ℤ) ≤ S)
+    (hB : ∀ i j, ∀ n, |coeff n (M i j)| ≤ a i * b j)
+    (n : σ →₀ ℕ) :
+    |coeff n M.det|
+      ≤ ((Fintype.card ι).factorial : ℤ) * S ^ (Fintype.card ι) * ((∏ i, a i) * ∏ j, b j) := by
+  classical
+  have hsm : ∀ (p : Equiv.Perm ι) (q : MvPolynomial σ ℤ),
+      |coeff n (Equiv.Perm.sign p • q)| = |coeff n q| := by
+    intro p q
+    rw [Units.smul_def, coeff_smul, smul_eq_mul, abs_mul]
+    rcases Int.units_eq_one_or (Equiv.Perm.sign p) with h | h <;> rw [h] <;> simp
+  have hterm : ∀ p : Equiv.Perm ι,
+      |coeff n (Equiv.Perm.sign p • ∏ i, M (p i) i)|
+        ≤ S ^ (Fintype.card ι) * ((∏ i, a i) * ∏ j, b j) := by
+    intro p
+    rw [hsm]
+    have h := abs_coeff_prod_le' (σ := σ) (fun i => M (p i) i) (fun i => a (p i) * b i)
+      Finset.univ (fun i _ => hS (p i) i) (fun i _ => hB (p i) i) n
+    rw [Finset.card_univ] at h
+    refine le_trans h (le_of_eq ?_)
+    congr 1
+    rw [Finset.prod_mul_distrib, Equiv.prod_comp p a]
+  rw [Matrix.det_apply, coeff_sum]
+  refine le_trans (Finset.abs_sum_le_sum_abs _ _) ?_
+  refine le_trans (Finset.sum_le_card_nsmul _ _ _ (fun p _ => hterm p)) ?_
+  rw [Finset.card_univ, Fintype.card_perm, nsmul_eq_mul, mul_assoc]
+
 /-- **§7's coefficient bound in one variable, sharp.**
 
     |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B

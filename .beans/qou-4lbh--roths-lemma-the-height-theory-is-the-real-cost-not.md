@@ -4015,3 +4015,35 @@ and the product over a permutation is `C·(2^{Σd}B)^n` — so a variant of `abs
 factorised per-entry bounds gives `n!·S^{n−1}·C·(2^{Σd}B)^n`, and dividing by `C` leaves
 `n!·S^{n−1}·(2^{Σd}B)^n`, which is §12's `b`. One lemma, and it is the same expansion
 `abs_coeff_det_le` already does.
+
+### Correction 21's repair — both sides of the determinant now match
+
+    abs_coeff_prod_le'   |coeff n (∏ Fᵢ)| ≤ S^{#s}·∏ βᵢ           per-factor bounds
+    abs_coeff_det_le'    |coeff n (det M)| ≤ (#ι)!·S^{#ι}·(∏aᵢ)(∏bⱼ)   when |coeff (M i j)| ≤ aᵢbⱼ
+
+The size mirror of `C_dvd_det_of_dvd_entries`, and true for the same reason: a permutation term
+picks one entry per row and one per column, so `∏_i a_{p i}·b_i` is `(∏a)(∏b)` independently of
+`p`. **Together the two say a determinant whose entries carry a factorised row/column constant is
+*that constant* times something both integral and small** — which is exactly the relationship
+between this arc's `mvGenWronskian` and Mahler's `W`.
+
+⚠ `abs_coeff_prod_le'` needs **no `1 ≤ S`**, unlike the uniform `abs_coeff_prod_le`: the empty
+product is `1` and the bound is `S^0·1 = 1`, so nothing forces `S` up. A first draft carried
+`1 ≤ S`, copied from the uniform version's signature without checking whether the general proof
+uses it. The linter caught it. **Sixth unused hypothesis this arc has acquired by transcribing a
+proof *route* rather than the proof** — and the only one of this arc's recurring failure modes
+that a mechanical check reliably catches.
+
+**Correction 21's repair is now structurally complete.** Instantiating `a i = Fac(Dx i)`,
+`b j = Fac(Dy j)`, `S ≥ #supp`, and the entry bound `Fac(Dx i)·Fac(Dy j)·2^{Σd}·B` from
+`abs_coeff_pderivList_le'` gives
+
+    |coeff n (det)| ≤ n!·S^n·C·(2^{Σd}B)^n,    C ∣ det
+
+so the quotient `det/C` — Mahler's `W` — is integral with `|coeff| ≤ n!·S^n·(2^{Σd}B)^n`. With
+`S ≤ ∏(d_h+1) ≤ 2^{Σd}` that is `n!·2^{2nΣd}·B^n`: **§12's `b`, exactly.**
+
+What is left is assembly: instantiate the two lemmas at the separated family, define the
+quotient, and carry it into `abs_coeff_det_sepFamily_le`'s place in the chain. No new
+mathematics — but the arc has mis-predicted "no new mathematics" four times, so that is a
+prediction, not a result.
