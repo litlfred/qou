@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T13:46:58Z
+updated_at: 2026-08-24T17:13:09Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -159,3 +159,115 @@ Not in the unit: `probe_9b` (dead z), and the 4 other bind-and-discard callers,
 which are unaffected by the conversion because they never read the value. Those
 5 are mild dead code; `probe_9b`'s is actively misleading, since a reader
 reasonably concludes the producer is anchored to this helper — I did, twice.
+
+
+## The source change is WRITTEN AND VERIFIED — only the 19-witness campaign remains
+
+Prepared and tested 2026-08-24, then reverted from the working tree rather than
+committed, because committing the source alone would put a convention-D helper
+above **19 convention-C witnesses** — the exact straddle this branch exists to
+remove, multiplied by 19. Atomicity, per this bean's own scope note.
+
+### Two C sites in that function, not one
+
+My triage listed only line 312. There is a second at line **302**, in the
+proton branch, inside a `return` expression rather than an assignment:
+
+    return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+
+An assignment-keyed detector cannot see it. Same return-form blindness the
+AGENTS notes catalogue. **Both** must convert.
+
+### It delegates to the helper rather than re-spelling D
+
+Per `hecke_channel_binding_probe.py:61-68` — *"every convention detector keys
+on how z is WRITTEN, and an inline spelling is how a site goes blind"*. A call
+site needs no detector at all, so this is strictly better than writing
+`q**3/(q**2+1)` here, at the same edit cost.
+
+Import is **function-local**, mirroring `closed_form_tau_M`'s own
+function-local `from _li_2_q_util import flavor_split_leading` (line 362), so
+the two modules cannot deadlock at import time in either load order.
+
+### Verified (near-zero CPU, no producer run)
+
+Imported `_li_2_q_util` FIRST — the worse order for a cycle — then:
+
+    proton  z returned = 0.612688037146465252 == q^3/(q^2+1)   (was z_C 0.499320334183694452)
+    muon    z returned = 0.612688050548890157 == q^3/(q^2+1)   (was z_C 0.499320334033561272)
+
+Exact equality both anchors, no cycle. Note the muon `z_C` is
+`0.4993203340335613`, which is the literal the sibling's
+`producer_importability_audit` flagged — so that hardcoded value is the
+**muon-pin** C, not the proton one.
+
+### The patch, ready to apply
+
+```diff
+diff --git a/computations/_li_2_q_util.py b/computations/_li_2_q_util.py
+index c981743143..b785447b34 100644
+--- a/computations/_li_2_q_util.py
++++ b/computations/_li_2_q_util.py
+@@ -253,11 +253,33 @@ def li_2_q_negative_continuation(
+     return -h * total
+ 
+ 
++def _markov_z(q: mpf) -> mpf:
++    """Markov parameter z(q), via the canonical helper.
++
++    Both branches of `load_q_50dps` used to spell z inline as convention C's
++    `1/(sqrt q + 1/sqrt q)`. They now delegate to
++    `closed_form_tau_M.markov_z`, which is convention D and whose selection is
++    FORCED rather than stipulated (`markovWeights_eq_jones_of_threeRow_eq_zero`,
++    sorry-free).
++
++    Delegating rather than re-spelling `q**3/(q**2+1)` here is deliberate, and
++    the reason is the corpus's, at `hecke_channel_binding_probe.py:61-68`:
++    *"every convention detector keys on how z is WRITTEN, and an inline
++    spelling is how a site goes blind"*. A call site needs no detector.
++
++    Imported inside the function, mirroring `closed_form_tau_M`'s own
++    function-local `from _li_2_q_util import flavor_split_leading` (line 362),
++    so the two modules cannot deadlock at import time regardless of load order.
++    """
++    from closed_form_tau_M import markov_z
++    return markov_z(q)
++
++
+ def load_q_50dps(
+     path: Path | None = None,
+     anchor: str = "proton",
+ ) -> tuple[mpf, mpf, mpf]:
+-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full ``mp.dps``.
++    """Load q_0, q_0^{-1}, and z = q^3/(q^2+1) at full ``mp.dps``.
+ 
+     Returns ``(q, q_inv, z)``.  Shared by every script that ingests
+     per-generator Wedderburn volumes — centralized per gemini #687.
+@@ -299,7 +321,7 @@ def load_q_50dps(
+                 from q_parameter import Q_MP
+             q = Q_MP
+             qi = mpf(1) / q
+-            return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
++            return q, qi, _markov_z(q)
+         if anchor != "muon":
+             raise ValueError(
+                 f"load_q_50dps: anchor must be 'proton' or 'muon', got {anchor!r}"
+@@ -309,8 +331,7 @@ def load_q_50dps(
+         d = _json.load(fh)
+     q = mpf(d["derived_50_digit"]["q"])
+     qi = mpf(1) / q
+-    z = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+-    return q, qi, z
++    return q, qi, _markov_z(q)
+ 
+ 
+ def compute_t2_t3_from_vols(
+```
+
+### What remains
+
+Apply the patch, then baseline → re-run → diff the **16 real users** (not 21;
+5 bind and discard). Land source + all moved witnesses in ONE commit. Deferred
+now only because the `delta_lambda_v_hat` converted run holds the CPU and
+cleared its 3 h ceiling by **249 seconds** last time — 16 concurrent producers
+would push it to EXIT=124 and waste three hours.
