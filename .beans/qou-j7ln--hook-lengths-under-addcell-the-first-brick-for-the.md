@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T13:49:49Z
+updated_at: 2026-08-24T14:10:06Z
 ---
 
 ## Landed — PR #5645
@@ -78,3 +78,48 @@ guess which; recording the obstruction is worth more than a speculative attempt.
 
 What these two bricks *are* good for regardless: they are convention-independent statements about
 how the weight moves under `addCell`, so any future route needs them, and neither depends on `z`.
+
+
+## The obstruction is real but NOT fatal — the library already had the route
+
+Asked whether external literature was needed; ran the corpus-grep checklist's library tier first
+(`library/INDEX.md`, 320 briefs). **It was already there**, and it supplies the *route*, not just
+background.
+
+`library/arxiv-math-9806163v1` — Orellana, *"Weights of Markov traces on Hecke algebras"*, the
+paper AGENTS.md already cites as `[orellana1998]`. In §5 (`sec-019-5-the-weight-formula.md`,
+~line 108) it proves its branching identity **at the lattice** `Q = −q^{r₁+m}` and then writes:
+
+> *"Since `W(α,β)(q, Q)` is an **analytic rational function** and the above equation holds for all
+> `Q = −q^{r₁+m}`, thus we have that `W(α,β)(q, Q) = Σ W(γ,η)(q, Q)` holds **for all values of
+> `Q`**."*
+
+That is **rational continuation from the integer-level lattice**, and it goes straight around the
+obstruction I recorded above. I wrote that generic `z` is off the lattice so there is no
+`schurPrincipal r Q` to bridge to, and concluded a new identity or a different route was needed.
+The different route is: **you never need a bridge at generic `z`.** Prove the corner identity at
+*every* integer level `r` — where the Schur route works exactly as it did at `r = 2` — observe both
+sides are rational in the parameter, and conclude it identically.
+
+### What that makes the remaining work
+
+1. **Generalise `r = 2` to general `r`.** My convention-D chain (`≥3`-row vanishing, `twoRow`
+   branching, the corner identity) becomes `≥(r+1)`-row vanishing and `r`-row branching. The
+   corpus is already set up for it: `schurPrincipal` takes `r : ℕ`, and
+   `schurPrincipal_eq_zero_iff` is **already general in `r`** — it was only my downstream
+   specialisation that fixed `r = 2`.
+2. **The transfer.** "Two rational functions agreeing on an infinite set are equal" — real Lean
+   work, but a standard shape (a nonzero polynomial has finitely many roots), not a new
+   mathematical identity.
+
+### Stated precisely, so nobody over-reads this
+
+The paper demonstrates the technique on **type B** weights `W(α,β)(q, Q)`. Its type-A remark cites
+Wenzl `[W1]` only at the specific `z = q^r(1−q)/(1−q^r)`. So the library gives me a **proof
+technique on a closely analogous object**, not a ready-made citation for the type-A general-`z`
+corner identity. And **Wenzl 1988 itself is not in the library** — searched; only Orellana's
+citation of it. That is the one thing worth uploading if the primary is wanted, though the
+technique above does not depend on having it.
+
+**Answer to "need lit?": no.** The library had what was needed, which is also the honest reason the
+checklist puts the library tier before declaring anything open.
