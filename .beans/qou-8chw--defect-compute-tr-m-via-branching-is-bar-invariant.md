@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:42:01Z
-updated_at: 2026-08-24T11:56:36Z
+updated_at: 2026-08-24T12:16:22Z
 ---
 
 MEASURED 2026-08-19. computations/canonical_tr_m_via_branching.compute_tr_m_via_branching(Z, N, q_val) returns IDENTICAL values at q and 1/q:
@@ -354,3 +354,35 @@ default float64-Q path 3.8e-15. Both unchanged.
 **Still open (separate, unchanged):** the H_9 nn A-operator extract carries no
 `q0Value` stamp, and the stale `a_operator_categorical.categorical_A_interface`
 stub should be deleted or made to delegate.
+
+
+## Correction to my own entry above (same day) — the H_9 stamp item was mis-scoped
+
+I recorded "the H_9 nn A-operator extract carries no `q0Value` stamp" as an open
+item under this consumer. **It is not a live risk in this consumer**, and I
+should have checked the reachability before writing it down.
+
+`compute_tr_m_via_branching` returns via the fine-Bratteli transfer for `A >= 3`
+**before** the extract load, so `n` at that point is ALWAYS 6 — no H_9 entry is
+reachable from that function at all. Of the 13 registered extracts, 11 are absent
+from disk (they fail loudly), the H_6 pn deuteron is stamped, and only `(9,"nn")`
+is unstamped and it cannot be reached.
+
+**Re-scoped, still open:** the unstamped file IS consumed by
+`sublemma_2_1_h9_tritium_verify.py` and `sublemma_2_1_h12_helium_4_framework.py`.
+Whether either threads q or is anchor-only is unexamined — that is the surviving
+item, against those two files.
+
+The guard was still made fail-closed on an unstamped frozen extract (`9cec747d2e`),
+now correctly labelled forward-looking hardening: it catches an n = 6 entry added
+without a stamp, or the deuteron extract losing its stamp in a regeneration. A
+built extract carries `built_at_q` instead and stays inert.
+
+## Also closed: the stale stub (`8723bb4967`)
+
+`a_operator_categorical.categorical_A_interface` no longer raises — it delegates
+to `gauge_aligned_A_combiner_general` (verified: max entrywise difference **0.0**
+against the combiner for λ=(4,2), (ξ,ν)=((2,1),(2,1))). Deleting it would have
+left the same trap for anyone grepping the design doc's function name, so it
+delegates and carries the history in its docstring. p-n at n_block=3 only;
+anything else raises with a message naming the design doc.
