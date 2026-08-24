@@ -44,7 +44,7 @@
       "predicted_prefactor": 4,
       "measured_prefactor": 4,
       "model_holds": true,
-      "elapsed_sec": "0.07"
+      "elapsed_sec": "0.08"
     },
     {
       "atom": "D",
@@ -57,7 +57,7 @@
       "predicted_prefactor": 192,
       "measured_prefactor": 192,
       "model_holds": true,
-      "elapsed_sec": "3.59"
+      "elapsed_sec": "3.51"
     },
     {
       "atom": "T",
@@ -70,7 +70,7 @@
       "predicted_prefactor": 768,
       "measured_prefactor": 768,
       "model_holds": true,
-      "elapsed_sec": "15.64"
+      "elapsed_sec": "13.62"
     },
     {
       "atom": "3He",
@@ -83,7 +83,7 @@
       "predicted_prefactor": 768,
       "measured_prefactor": 768,
       "model_holds": true,
-      "elapsed_sec": "9.56"
+      "elapsed_sec": "8.17"
     },
     {
       "atom": "4He",
@@ -96,7 +96,7 @@
       "predicted_prefactor": 3072,
       "measured_prefactor": 3072,
       "model_holds": true,
-      "elapsed_sec": "72.15"
+      "elapsed_sec": "61.91"
     }
   ],
   "assertions": [
@@ -127,10 +127,10 @@
   ],
   "allPassed": true,
   "scriptHash": "ae93e14891fb",
-  "scriptCommitSha": "unknown",
-  "commitSha": "b134176d93c59a9c82b88715cf752abb1c6d4e21",
+  "scriptCommitSha": "3375bc24f5f2fc77685929b0dd62f865b7e6787e",
+  "commitSha": "47424dec6ce53035e4c28c12acb27943cd3349c2",
   "engine": "sympy",
-  "computedAt": "2026-08-24T14:20:41.450133+00:00",
+  "computedAt": "2026-08-24T17:06:02.083718+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
