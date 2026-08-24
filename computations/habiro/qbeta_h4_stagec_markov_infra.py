@@ -90,7 +90,8 @@ def removable_to(mu: tuple):
 def main() -> int:
     t0 = time.monotonic()
     set_compute_dps()
-    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     qpoints = [q0, mp.mpf("1.05"), mp.mpf("1.2"), mp.mpf("1.37"), mp.mpf("0.93")]
 
     # free-neutron-decay H3 NF basis (generators 0,1 = sigma_1, sigma_2) + extras

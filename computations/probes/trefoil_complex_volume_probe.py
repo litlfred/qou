@@ -51,7 +51,8 @@ getcontext().prec = 60
 # Muon-canonical substrate modulus (computations/ layer convention; matches the
 # committed rho-prefactor-structural-verifier.witness.json `q_0` parameter and
 # the cheat-sheet muon value 1.10997859555733471…).
-Q0 = Decimal("1.1099785955573347")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = Decimal(Q_50_DIGIT_STR)
 
 
 def _sci(d: Decimal, n: int = 30) -> str:

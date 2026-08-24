@@ -63,7 +63,8 @@ set_compute_dps()
 # Canonical muon-pinned substrate q₀ (computations/q_parameter.py::Q); the
 # bar-symmetry argument is q-independent, so the exact value is only used for
 # the illustrative numerics below.
-Q0 = mp.mpf("1.1099785955573347")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 # a567 witnessed magic factor f(⁴He)/Z·N (binding-factor-f-sequence.witness.json).
 TARGET = mp.mpf("2.0715")
 BAR_EVEN_TOL = mp.mpf("1e-18")
