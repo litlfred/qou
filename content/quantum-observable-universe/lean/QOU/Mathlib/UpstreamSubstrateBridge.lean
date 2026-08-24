@@ -20,12 +20,25 @@ Connects the new `QOU.Mathlib.*` upstream-shaped scaffolding
   S-mass-identity           ← per-atom MassIdentity theorems (already proved)
   S-RSK-cardinality         ← RSKBridge.CohortRSKWitness
   S-Wedderburn-iso          ← HeckeAlgebra.WedderburnIsomorphism
-  S-Archimedean-realisation ← ArchimedeanRealization.ArchimedeanRealizationFunctor
+  S-Archimedean-realisation ← NOT COVERED (see Bridge 3)
 
 Each substrate axiom is a `def` over `Prop` in the QOU
 substrate file; this file provides downstream **theorems**
 deriving the substrate axiom from the upstream class instances.
 This shows the upstream infrastructure is downstream-usable.
+
+**`S-Archimedean-realisation` is not covered** (2026-08-24, bean
+`qou-7nbx`).  This table read
+`S-Archimedean-realisation ← ArchimedeanRealization.ArchimedeanRealizationFunctor`,
+mapping a named substrate axiom onto a class whose entire content was
+`q0 = q_zero` — a pinned real number with no source category, no
+target category, no action on morphisms and no Hecke-compatibility
+square.  The class has been renamed to what it is
+(`ArchimedeanEvaluationPoint`) and the row corrected.  What Bridge 3
+does establish is the *scalar* piece and it is genuine:
+`archimedean_eval_well_defined` proves the evaluation is the **unique**
+ring map `ℝ[q] → ℝ` fixing constants and sending `q ↦ q₀`.  The functor
+itself remains blocked on `Mathlib.Algebra.IwahoriHecke`.
 
 **File status**: bridge / glue file.  No sorries.
 -/
@@ -98,12 +111,21 @@ theorem rsk_cardinality_discharged_n2_to_n8 :
   · exact ⟨[1, 7, 20, 21, 28, 64, 35, 14, 70, 56, 90, 35, 42, 56, 70,
             64, 21, 14, 28, 20, 7, 1], by decide⟩
 
-/-! ### Bridge 3: Archimedean evaluation
+/-! ### Bridge 3: Archimedean evaluation — the scalar piece only
 
-    The QOU substrate axiom asserts the existence of a real-
-    valued evaluation `Real_q₀ : ℚ(q) → ℝ`.  Upstream class:
-    `ArchimedeanRealizationFunctor`.  Scalar piece: `evalAtQZero`.
-    The full functor remains chained on Hecke. -/
+    The QOU substrate axiom `S-Archimedean-realisation` asserts a
+    Hecke-compatible realisation functor `Real_q₀`.  This bridge does
+    **not** establish that and, until 2026-08-24, the table above was
+    written as though it did (bean `qou-7nbx`).
+
+    What it establishes is the chain-independent *scalar* piece: the
+    evaluation `ℝ[q] → ℝ` at `q₀` is the unique ring map fixing the
+    constants and sending `q ↦ q₀`.  The upstream class
+    `ArchimedeanEvaluationPoint` names the point and asserts nothing
+    about a functor; a genuine discharge additionally owes the two
+    categories, the action on morphisms, and the Hecke-compatibility
+    square, all of which remain chained on
+    `Mathlib.Algebra.IwahoriHecke`. -/
 
 /-- **Scalar Archimedean discharge**: the real-valued evaluation at the
     substrate point is *unique*.  Any ring homomorphism `ℝ[q] → ℝ` that

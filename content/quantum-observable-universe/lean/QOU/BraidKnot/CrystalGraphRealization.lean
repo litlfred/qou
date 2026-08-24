@@ -112,10 +112,16 @@ theorem nodeOf_isHighestWeight
     `SpectralSequence.canonicalTrivial` (bean `qou-fngs`). The model stays
     available and must now be named, so a reader of a downstream theorem can see
     whether the hypothesis was discharged by a real crystal or by `PUnit`.
-    `CrystalRMatrixSubLemma.canonical` already names it explicitly
-    (`let C := CrystalGraphRealization.canonical R q`) and is unaffected; no
-    other file consumes it, and nothing in the corpus applies this class's
-    theorems at a concrete `R`, `q`.
+    **Update 2026-08-24 (bean `qou-09mr`).** The one site that named it —
+    `CrystalRMatrixSubLemma.canonical`, via
+    `let C := CrystalGraphRealization.canonical R q` — is gone: that instance
+    was itself vacuous (it chose its `poleIndicator` to be the function the
+    class compared it against) and has been replaced by a parameterised class
+    plus the pair `combinatorialPoleOrder_subLemma` /
+    `not_subLemma_alwaysPoleOrder`, whose consistency witness is free in `R`,
+    `q` and the realisation. So **nothing in the corpus names this model any
+    more**, and nothing applies this class's theorems at a concrete `R`, `q`.
+    It stays as a `def` to record that a model exists at all.
 
     **Still open:** `conj:crystal-graph-realization` itself — that GS canonical
     basis elements `T_w` correspond to indecomposable graded projective KLR

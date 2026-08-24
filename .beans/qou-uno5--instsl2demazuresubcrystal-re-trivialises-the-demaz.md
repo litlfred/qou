@@ -1,11 +1,11 @@
 ---
 # qou-uno5
 title: instSl2DemazureSubcrystal re-trivialises the demazure_closure field that was strengthened away from True
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-24T19:39:02Z
-updated_at: 2026-08-24T19:39:02Z
+updated_at: 2026-08-24T21:04:08Z
 ---
 
 `QOU/Machinery/KashiwaraCrystalBasic.lean:215`, verified present 2026-08-24.
@@ -76,3 +76,67 @@ Either way, add a witness at a rank where the sub-crystal is proper, or
 degenerate-value regex is anchored, so it matches `True` but not
 `fun _ => True`. One-line fix on the checker side, filed as
 `folio-assistant-ilbh`.
+
+
+## Resolved 2026-08-24 — FALSE POSITIVE on the mathematics; real gap was the test
+
+**Verdict: `member := fun _ => True` is the CORRECT value.** The bean's own
+"settle this first" branch is the right one. `sl₂` has one simple root, so
+`W = {e, s₀}` and `B(Λ₁)` has exactly two Demazure sub-crystals: `B_e(Λ₁) =
+{u_Λ}` at length 0, and `B_{s₀}(Λ₁) = {u_Λ, f₀ u_Λ}` at length 1. `standardSl2Crystal`
+has `V = Bool` with the single arrow `f₀ : false ↦ true`, so the length-1 one is
+**both vertices** — the whole crystal. At `level = 1` the class asks for closure
+under the first 1 simple roots, i.e. `f₀` alone, and the whole crystal is the
+honest answer. The instance is not a re-trivialisation; it is the degenerate case
+being genuinely degenerate. Nothing was replaced.
+
+**Consumers before the change: 10 mentions of `DemazureSubcrystal` across
+`QOU/`** — 8 in `KashiwaraCrystalBasic.lean` itself (class, instance, the
+`CompositeKashiwaraResidueA.has_demazure` field, and its witness
+`⟨1, ⟨instSl2DemazureSubcrystal⟩⟩`), plus 2 that are **name collisions, not
+consumers**: `QOU/MassTheory/DemazureSubcrystalGradedDim.lean` opens a *namespace*
+called `QOU.MassTheory.DemazureSubcrystal` and never mentions this class, and
+`DampingNonMonotoneWall.lean` cites that file in prose. Nothing imports
+`QOU.Machinery.KashiwaraCrystalBasic`. So the class has one real consumer,
+in-file.
+
+**Kept as an `instance`, deliberately.** `DemazureSubcrystal standardSl2Crystal 1`
+is a true fact about a concrete two-vertex crystal, not a conjecture, so
+resolution supplying it is sound — same footing as the neighbouring
+`instSl2TypeACrystal` and the `StembridgeCrystal` instance. Demoting a *correct*
+witness would be noise, and `CompositeKashiwaraResidueA` names it explicitly
+anyway.
+
+**The real defects, both fixed.**
+
+1. **Presentational.** The docstring called it *"a genuine `DemazureSubcrystal` …
+   closed under lowering"*, which reads as though closure had been checked. It
+   had not: with `member ≡ True` both sides of `demazure_closure` are trivially
+   inhabited. Rewritten to say the level-1 sub-crystal of `B(Λ₁)` **happens** to
+   be everything, that this witness therefore satisfies `demazure_closure`
+   trivially, and that `highest_isHighest` is the one field it does exercise.
+2. **`demazure_closure` had never been tested by anything** — the bean's last
+   line, and the substantive half. Fixed with a rank where it bites:
+   - `standardSl3Crystal` — `B(Λ₁)` for `sl₃`, three vertices `0 -f₀→ 1 -f₁→ 2`,
+     two simple roots. An `abbrev` (not `def`) so `.V` reduces to `Fin 3` at
+     reducible transparency and `decide` can see `OfNat`/`DecidableEq`/`Fintype`;
+     reason recorded in its docstring.
+   - `sl3DemazureLevelOne : DemazureSubcrystal standardSl3Crystal 1` with
+     `member := fun v => v ≠ 2` — a **proper** sub-crystal (`{0,1}`), whose
+     `demazure_closure` is a real obligation discharged by case analysis. A `def`,
+     not an `instance`.
+   - `sl3DemazureLevelOne_proper` — vertex `2` is not a member.
+   - `sl3LevelOne_not_closed_at_level_two` — the same predicate **fails** closure
+     at `level = 2`, because `f₁ : 1 ↦ 2` leaves it.
+   - `sl3_singleton_not_closed_at_level_one` — the singleton `{0}` (which *is*
+     `B_e(Λ₁)`) fails closure at `level = 1`, because `f₀ : 0 ↦ 1` leaves it.
+
+   The last two pin the field down from both sides: at a fixed level it selects
+   which subsets are Demazure sub-crystals, and for a fixed subset it selects
+   which levels. That is what `member ≡ True` could never show, and it is now
+   machine-checked rather than asserted.
+
+**Verification.** Fresh `lean` on `KashiwaraCrystalBasic` — exit 0, no warnings.
+`#print axioms` on the instance and all four new decls: `propext` /
+`Quot.sound` / `Classical.choice` only, no `sorryAx`. No `sorry` in committed
+work.

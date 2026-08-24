@@ -59,27 +59,68 @@ def cableWidthColor : ℕ := 3
 /-- The A=3 derived level is `H₉`: three nucleons × derived color width `3`. -/
 theorem derived_level_A3 : jointTraceStrands 3 cableWidthColor = 9 := rfl
 
-/-- **Substrate width rule (derived input).**  A per-nucleon-count width function
-that the substrate fixes.  The `is_color` field records that the derived value is
-the `SU(3)_color` count `3` — a genuine input hypothesis (the color rule), not the
-closure conclusion. -/
-class SubstrateWidthRule where
-  /-- Per-nucleon cable width as a function of nucleon count `A`. -/
-  w : ℕ → ℕ
-  /-- The derived width is the color count `3` for every `A`. -/
+/-- **Substrate width rule, as a predicate ON a given width function.**
+
+`w` is a per-nucleon-count cable width; `SubstrateWidthRule w` asserts that this
+particular `w` is the `SU(3)_color` rule.
+
+**Restated 2026-08-24 (bean `qou-2y13`).**  `w` was a *field* of the class and
+`is_color` its only proposition, so the class pinned its own datum to a constant:
+`SubstrateWidthRule` had exactly one model (up to `funext`), the global instance
+`colorRule` supplied it, and `[SubstrateWidthRule]` was `w = fun _ => 3` spelled
+as a hypothesis — a binder that constrained nothing.  Taking the width as a
+*parameter* (the remedy worked in `QOU/Archimedean/JetOrderIndependence.lean`)
+makes the hypothesis falsifiable: it holds of the colour width
+(`colorRule`) and fails of any other (`not_widthRule_of_ne`, and concretely
+`not_widthRule_width_four`).
+
+Note what this does **not** touch: whether `cableWidthColor = 3` is derived from
+the SU(3) colour content rather than fitted.  Take that at face value — it is a
+claim about the physics, argued in the header, and the defect here was purely
+structural. -/
+class SubstrateWidthRule (w : ℕ → ℕ) : Prop where
+  /-- The width is the colour count `3` for every nucleon count `A`. -/
   is_color : ∀ A, w A = cableWidthColor
 
-/-- The color rule is a genuine instance: `w ≡ 3`. -/
-instance colorRule : SubstrateWidthRule where
-  w := fun _ => cableWidthColor
+/-- **The rule is satisfiable, at the derived colour width (PROVED).**  So
+`[SubstrateWidthRule w]` for an *unspecified* `w` asserts only that some width
+satisfies it; a downstream result must say which `w`. -/
+instance colorRule : SubstrateWidthRule (fun _ => cableWidthColor) where
   is_color := fun _ => rfl
 
+/-- **…and it fails at any width differing from `3` anywhere (PROVED).** -/
+theorem not_widthRule_of_ne {w : ℕ → ℕ} {A : ℕ} (h : w A ≠ cableWidthColor) :
+    ¬ SubstrateWidthRule w :=
+  fun rule => h (rule.is_color A)
+
+/-- **A concrete non-model (PROVED).**  A width-4 cable is not the colour width,
+so the hypothesis is not satisfied by every width function.  This is the family
+the header's `lift_is_coefficient_ratio` argument rules out: a wider cable is a
+larger `κ`, never a different `h`-order. -/
+theorem not_widthRule_width_four : ¬ SubstrateWidthRule (fun _ => 4) :=
+  not_widthRule_of_ne (A := 0) (by decide)
+
 /-- **From the derived width rule, the A=3 level is forced to be `H₉`** — the
-level is *derived* from the width input, not chosen.  (Non-vacuous conditional:
-the level is computed from the class field, not assumed.) -/
-theorem level_is_H9_of_rule [rule : SubstrateWidthRule] :
-    jointTraceStrands 3 (rule.w 3) = 9 := by
+level is *derived* from the width input, not chosen.
+
+The parenthetical that used to sit here — *"Non-vacuous conditional: the level is
+computed from the class field, not assumed"* — was the part to disbelieve, and it
+is deleted.  The level *is* computed from the width, but `is_color` makes the
+width `3` in every model, so `H₉` was never at risk and this said no more than
+`derived_level_A3` above.  What the width actually buys is the `iff` below; this
+statement is its forward half at the colour width. -/
+theorem level_is_H9_of_rule (w : ℕ → ℕ) [rule : SubstrateWidthRule w] :
+    jointTraceStrands 3 (w 3) = 9 := by
   rw [rule.is_color]; rfl
+
+/-- **What the width buys, stated as an equivalence (PROVED).**  The A=3 level is
+`H₉` **exactly when** the per-nucleon width is `3`.  Unlike
+`level_is_H9_of_rule` this is falsifiable in both directions and needs no class
+at all: it is the honest form of "the level is derived from the width". -/
+theorem level_A3_eq_nine_iff (w : ℕ → ℕ) :
+    jointTraceStrands 3 (w 3) = 9 ↔ w 3 = cableWidthColor := by
+  unfold jointTraceStrands cableWidthColor
+  omega
 
 /-! ### Magnitude at a level = `E₀·h⁴·κ` (coefficient model, `BorromeanMagnitudeLift`) -/
 

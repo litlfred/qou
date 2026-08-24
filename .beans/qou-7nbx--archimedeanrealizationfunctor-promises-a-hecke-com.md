@@ -1,11 +1,11 @@
 ---
 # qou-7nbx
 title: ArchimedeanRealizationFunctor promises a Hecke-compatible functor and carries a real number
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-24T19:38:25Z
-updated_at: 2026-08-24T19:38:25Z
+updated_at: 2026-08-24T21:04:07Z
 ---
 
 `QOU/Mathlib/ArchimedeanRealization.lean:111-124`, verified present 2026-08-24.
@@ -72,3 +72,59 @@ Doing neither is the current state.
 **The automated vacuity detector will not catch a regression here**: `q0 := q_zero`
 is a named constant, not one of the literal degenerate tokens it matches. See
 folio-assistant bean `folio-assistant-ilbh`.
+
+
+## Resolved 2026-08-24 — option 2, and here is why not option 1
+
+**Consumers before the change: 6 mentions, and not one `[ArchimedeanRealizationFunctor]`
+binder anywhere in the corpus.** The six were: the class declaration, the
+`canonical` instance, the bridge-table line
+`UpstreamSubstrateBridge.lean:23`, the Bridge-3 prose at
+`UpstreamSubstrateBridge.lean:105`, the `Summary.lean:39` file-index row, and
+`MotivesArchimedean.lean:132` — which is a **different** `structure` of the same
+name in namespace `QOU.BraidsKnots`, untouched. So the class had *zero* code
+consumers: renaming it broke nothing, and the only work was prose.
+
+Worth recording: the content block
+`mass-theory/archimedean-realization-functor.ts` has
+`ref: "qou:QOU.BraidsKnots.ArchimedeanRealizationFunctor"` — it points at the
+**MotivesArchimedean structure**, not this class. The bean's "two objects, one
+name" warning is exactly right and the block belongs to the other one.
+
+**Decision: option 2 (rename/restate), and the reason is not just cost.**
+Option 1 is the paper's actual claim, but it cannot be written honestly today:
+this checkout's Mathlib contains **no Iwahori–Hecke algebra at all** (`find
+.lake/packages/mathlib -iname '*Hecke*' -o -iname '*Iwahori*'` → empty). A
+"functor" declared now would have to invent both its source category and its
+compatibility square, which reproduces the present defect one level up with more
+prose covering it. Recorded in the file, together with what a genuine discharge
+owes: the two categories, the action on morphisms, and the square
+`Real_q₀ ∘ (Hecke action) = (real action) ∘ Real_q₀`.
+
+**What was done.**
+
+- `QOU/Mathlib/ArchimedeanRealization.lean`: class renamed to
+  `ArchimedeanEvaluationPoint` and — going beyond a rename — **parameterised over
+  the point**: `class ArchimedeanEvaluationPoint (q0 : ℝ) : Prop` with the single
+  field `is_substrate : q0 = q_zero`. This is what kills the one-model defect:
+  `[ArchimedeanEvaluationPoint q0]` is now falsifiable, satisfied at `q_zero`
+  (`instCanonical`) and refuted everywhere else (`not_evaluationPoint_of_ne`,
+  concretely `not_evaluationPoint_two`).
+- `q0_gt_one` was a *second* field derivable from the first, so it is now the
+  derived theorem `ArchimedeanEvaluationPoint.gt_one` rather than an assumption a
+  model gets to restate.
+- File-level docstring states plainly that nothing in the file is the functor.
+- `UpstreamSubstrateBridge.lean`: the bridge-table row is now
+  `S-Archimedean-realisation ← NOT COVERED (see Bridge 3)`, with the history and
+  the reason spelled out, and Bridge 3 retitled "the scalar piece only". What
+  Bridge 3 *does* prove is left standing and is genuine —
+  `archimedean_eval_well_defined`: the evaluation is the **unique** ring map
+  `ℝ[q] → ℝ` fixing constants and sending `q ↦ q₀`.
+- `Summary.lean`: file-index row corrected.
+
+**Verification.** Fresh `lean` on `ArchimedeanRealization`,
+`UpstreamSubstrateBridge`, `Summary` (and the 80-module `Summary` cone) — all
+exit 0. Only pre-existing warnings (`hden`, the `W*` unused binders); the
+bridge/summary edits are comment-only so no warning could change.
+`#print axioms` on the four new decls: `[propext, Classical.choice, Quot.sound]`
+only — no `sorryAx`. No `sorry` in committed work.
