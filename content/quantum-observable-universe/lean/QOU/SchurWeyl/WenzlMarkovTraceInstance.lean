@@ -31,6 +31,8 @@ uniqueness *proof* needs work.  It does not.  The `r`-dependence lived entirely 
 | `wenzlMarkovTrace_two_tr` | conservativity: at `r = 2` the trace *is* `wtrace` |
 | `MarkovTraceFamily.param_eq` | the parameter is recoverable from the family: `z = tr₁(σ₀)` |
 | `level_unique_of_wenzlMarkovTrace_eq` | **distinct levels give distinct traces** |
+| `realGen_of_sq_ne_one` | over `ℝ` the genericity hypothesis follows from `q² ≠ 1` |
+| `wtraceW_ne_of_level_ne` | the same, as an inequality, needing only `q ≠ 0` and `q² ≠ 1` |
 
 ## The two uniqueness questions are different, and both are needed
 
@@ -52,7 +54,8 @@ readable off a single value `tr₁(σ₀)`.
 
 * Genericity `hgen`: `Q = q²` is not a root of unity.  At a root of unity `H_n(q)` is not
   semisimple and partitions stop indexing the irreducibles; the statement would need a different
-  formulation, not a better proof.
+  formulation, not a better proof.  **Over `ℝ` this excludes nothing beyond `q² ≠ 1`** — see
+  `realGen_of_sq_ne_one`, which discharges it.
 * `r ≠ 0`.  At `r = 0` the bracket `[0]_Q` is the empty sum `0` and the normalisation
   `w_μ = s_μ / [r]_Q^{|μ|}` is undefined.
 * `z_r` is a point of the **Wenzl lattice**.  Nothing here says a Markov trace exists at an
@@ -344,5 +347,59 @@ theorem level_unique_of_wenzlMarkovTrace_eq (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^
   rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hr] at hpr
   rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hs] at hps
   exact level_unique_of_wenzlMarkovParam_eq q hq0 hgen hr hs (by rw [← hpr, ← hps]; exact h)
+
+/-! ## Over `ℝ` the genericity hypothesis is not a restriction -/
+
+/-- **`hgen` is provable over `ℝ`**, from `q ≠ 0` and `q² ≠ 1` alone.
+
+`Q = q²` is a *positive* real, and a positive real is a root of unity only by being `1`
+(`k·log Q = 0` with `log Q ≠ 0` forces `k = 0`).  So the "`Q` is not a root of unity" hypothesis
+carried through the whole level-`r` chain adds **nothing** over `ℝ` beyond `q² ≠ 1`.
+
+This is worth stating because the scope notes on the level-`r` files read as though genericity were
+a live restriction — "at a root of unity `H_n(q)` is not semisimple and partitions stop indexing the
+irreducibles".  That is true of the *general* theory, and it is exactly why the hypothesis is there;
+but over the real base ring the excluded locus is `{q² = 1}` and nothing else.  In particular it does
+**not** exclude the substrate value: `q₀ ≈ 1.10998` has `q₀² ≈ 1.232 ≠ 1`, so the level-`r` Markov
+trace exists there for every `r ≥ 1`.
+
+Reading this the other way is the caution: it does not say the general-`Q` statements are stronger
+than they look.  Over `ℂ`, or over a cyclotomic field, `hgen` is a real hypothesis and the level-`r`
+weight genuinely fails without it.  What is vacuous is the *specialisation to `ℝ`*. -/
+theorem realGen_of_sq_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+    ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1 := by
+  intro k hk h
+  have hQ0 : (0 : ℝ) < q ^ 2 := by positivity
+  have hlog : (k : ℝ) * Real.log (q ^ 2) = 0 := by
+    rw [← Real.log_zpow, h, Real.log_one]
+  have hlQ : Real.log (q ^ 2) ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hQ0 hq2
+  have hk0 : (k : ℝ) = 0 := by
+    rcases mul_eq_zero.mp hlog with h1 | h2
+    · exact h1
+    · exact absurd h2 hlQ
+  exact hk (by exact_mod_cast hk0)
+
+/-- **Uniqueness at every level, over `ℝ`, with no genericity hypothesis.**
+
+`eq_wenzlWtrace_of_markov` with `hgen` discharged by `realGen_of_sq_ne_one`. -/
+theorem SeminormalRep.eq_wenzlWtrace_of_markov_real (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    {r : ℕ} (hr : r ≠ 0)
+    (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))))
+    (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
+    T.tr n x = SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) n x :=
+  SeminormalRep.eq_wenzlWtrace_of_markov q hq0 hq2 (realGen_of_sq_ne_one hq0 hq2) hr T n x
+
+/-- **Distinct levels give distinct traces** — the contrapositive, stated as the inequality it is,
+and needing only `q ≠ 0` and `q² ≠ 1`.
+
+The two traces already differ at the *single* element `σ₀ ∈ H_1(q)`.  So the level is not merely
+determined by the whole functional: one evaluation separates every pair of levels. -/
+theorem wtraceW_ne_of_level_ne (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {r s : ℕ}
+    (hr : r ≠ 0) (hs : s ≠ 0) (hrs : r ≠ s) :
+    SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) 1 (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0))
+      ≠ SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight s (q ^ 2)) 1
+          (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0)) :=
+  fun h => hrs (level_unique_of_wenzlMarkovTrace_eq q hq0 hq2
+    (realGen_of_sq_ne_one hq0 hq2) hr hs h)
 
 end QOU.SchurWeyl
