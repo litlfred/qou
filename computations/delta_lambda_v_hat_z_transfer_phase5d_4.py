@@ -95,7 +95,9 @@ def main() -> int:
     # to 16. Read the high-precision name instead.
     q = _Q_RUNTIME
     q_inv = mp.mpf(1) / q
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)), excised.
+    z = q ** 3 / (q ** 2 + 1)
     h = q - q_inv
     builder.add_parameter("q_0", str(q))
     builder.add_parameter("h", str(h))
