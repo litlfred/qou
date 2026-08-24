@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-02T00:00:00Z
+updated_at: 2026-08-24T14:11:33Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -58,3 +58,39 @@ THEN check once against `m_D`. Do NOT hand-pick a braid to hit 1865.
 Live corpus inconsistency: charm assigned **T(2,5)**
 (`knot-formula-table-table2-data.md` row 11) vs **T(2,7)**
 (`knot-notation-convention-table1-data.md` row 9). Resolve independently.
+
+
+## 2026-08-24 — one of the two obstructions you inherit is PHANTOM; and σ may be the grading (PR #5659)
+
+This bean inherits both obstructions from
+`docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md`. **Obstruction 2's
+charm-ambiguity half is not real**, and the "precise missing datum" may already be
+in the corpus.
+
+**1. There is no charm T(2,5)-vs-T(2,7) corpus inconsistency.** Both tables say
+T(2,5); the `(2,7)`/`7₁` is the **tau lepton** on the adjacent line, read together
+with charm's label. Verified by `git log -L` (line created as (2,5)), `git log -S`
+(no commit ever wrote it), and corpus grep (charm→7 nowhere). This makes your
+obstruction **sharper**: with charm fixed at n=5 there is no n=7 alternative, so
+`D {5,3}` is an *exact* collision with `K {3,5}`.
+
+**2. σ separates charm from strange, and is present iff down-type (5/5 rows).**
+
+    u = T(2,3)   d = T(2,3)^σ
+    c = T(2,5)   s = T(2,5)^σ
+                 b = T(2,7)^σ
+
+`T_{m,n}^σ = T_{m,-n}`. So this bean's target — "a T₃ grading orthogonal to the
+generation winding n" — may not need deriving from the weak `T(3,5)` sector at
+all: a candidate is already assigned, and `windingContent` **discards** it when
+projecting to `Multiset ℕ`.
+
+**Caveat: σ is overloaded** (it also marks particle/antiparticle). Whether table
+2's σ *is* T₃ or is notation reuse aligning 5/5 is precisely this bean's question
+— a pattern is not a derivation. But it reframes the work from *derive a missing
+grading* to *decide whether the existing one is it, and stop the dictionary
+dropping it*.
+
+Lean docstrings in `MesonFluxTubeReduction.lean` corrected on PR #5659;
+`D_charm7_crossing_collides_etaPhi` kept (true arithmetic, 7+3 = 5+5) but demoted
+from corpus-fact to counterfactual-robustness remark.
