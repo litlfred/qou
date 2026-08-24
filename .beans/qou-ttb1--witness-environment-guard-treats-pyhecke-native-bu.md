@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T20:06:56Z
-updated_at: 2026-08-24T20:07:32Z
+updated_at: 2026-08-24T20:24:54Z
 ---
 
 OBSERVED 2026-08-24 on branch claude/excise-convention-c-2026-08-24.
@@ -41,3 +41,44 @@ Suggested shape if picked up: compare version-like fields (mpmath, numpy,
 python) by ordering as now, but treat hash-like fields (pyhecke_native_build) as
 INCOMPARABLE — prefer the current container's value, or record both, rather than
 pinning whichever container wrote first.
+
+DUPLICATE — a sibling found this first and diagnosed it better. Corrected 2026-08-24.
+
+PR #5683 (branch claude/stalled-agent-prs-ir8t3p, bean qou-orb6) already carries
+the diagnosis AND the fix. Their account, which is more precise than mine:
+
+  pyhecke_native_build is sha256(.so)[:16] ordered by _version_tuple, so
+  _version_tuple('30fd920c…')==(30,) vs _version_tuple('b843d058…')==() makes
+  ()<(30,) a false 'DOWNGRADE', and a false downgrade sends save() down the
+  preserve path and stamps a build hash the container does not have; six
+  distinct values exist in the corpus because a Rust release build is not
+  byte-reproducible.
+
+I wrote 'a content hash is not ordered', which is true but stops short. The
+actual mechanism is that _version_tuple PARSES the hex: a hash whose leading
+characters are digits yields a tuple, one starting with a letter yields (), and
+() compares less than anything. Verified independently on this branch:
+
+    909e02527c90e773 -> (909,)
+    b843d058d29dcec6 -> ()
+    30fd920c241a54fa -> (30,)
+    () < (909,)      -> True
+
+So it is not merely unordered — it is ordered WRONGLY and asymmetrically, and
+which of two builds 'wins' depends on nothing but whether its hash happens to
+start with a digit. That also explains why my case preserved the transient
+value: 909… leads with digits, b843… does not.
+
+Two facts of theirs I did not have: SIX distinct values exist corpus-wide, and
+the reason is that a Rust release build is not byte-reproducible — so this is
+not container drift, it is expected churn the guard mishandles.
+
+Their fix is a _NON_ORDINAL_ENV_KEYS guard, i.e. exactly the 'treat hash-like
+fields as incomparable' shape I suggested, already implemented and gate-green.
+PR #5683 is blocked on a GitHub rate limit, not on review.
+
+ACTION: do not fix this here. My contribution is an independent confirmation
+from a different route (I hit it as an anomalous preserved build hash on
+convention-C work; they hit it auditing witness provenance). Two independent
+observations of the same defect strengthen it. Close this as duplicate when
+#5683 merges.
