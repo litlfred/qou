@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T09:56:09Z
+updated_at: 2026-08-24T12:56:32Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -553,3 +553,54 @@ incident fell through, and hashing Q0 would not have caught it. If the D
 cascade recurs for another convention, this class reopens.
 
 PR #5623, commit e6cc0c61d.
+
+
+### Downstream drained: 7 files/110 fields -> 1/5 (2026-08-24, PR #5623)
+
+  mu3-frechet-perblock                     50 -> 0   VERDICT FLIPS
+  delta-lambda-categorical-verification    35 -> 0
+  gap-a1-binding-k-sdp-feasibility          7 -> 0   residual 4.2e-07 -> 2.4e-15
+  probe-d-delta-lambda-terms                7 -> 0
+  he4-stage2-ranking-seminormal-xcheck      5 -> 0
+  he4-9-3-trace-dominant-correction         1 -> 0
+  he4-binding-k-stage2                      5 -> 5   under-budgeted, see below
+
+**Direction is coherent across all of them** — the dropped >=3-row terms carried
+NEGATIVE weights, so every affected sum RISES (probe-d trM_term 0.0923->0.1799,
+0.1896->0.2539, 0.0675->0.0771; su4 full_trM 0.0554->0.1610). Four independent
+witnesses agree on sign, which is the check that the drain is real.
+
+**mu3 inverts a conclusion.** linearity_gate 1->0 (FAIL); y_lambda<0 goes 20/60
+-> 0/60. Zero negative weights satisfies the hypothesis of
+reweight_cannot_open_door (w_lambda >= 0), so that lemma APPLIES and re-weighting
+IS foreclosed — the reverse of what the probe reports. Touches the mu3 door;
+flagged for a human, wired to nothing. Its verdict was also hardcoded in THREE
+places (one of them written into the witness via add_caveat, quoting "10 of 30"
+which was typed, never live, and did not match the payload's own 20/60); all
+three now derive from n_neg_y.
+
+**My own drain shipped fake precision.** Padding ratchet went RED: delta-lambda-
+categorical-verification 0 -> 55 padded values, from str(mp.mpf(<float>)) at the
+live mp.dps. Invisible under C because those values did not land on exact
+doubles; the D-frame ones do. Fixed with str_at_true_precision, 55 -> 0.
+LESSON FOR THIS BEAN: a value-correct convention drain can still ship fake
+precision — convention and serialization are independent defects, and only the
+ratchet separated them.
+
+**NOT a straddle, checked not assumed:** he4_stage2_ranking_seminormal_xcheck
+reads he4-binding-k-stage2.witness.json per a naive grep, but that filename
+appears only in a prose 'engine' string; it loads q-pinning-50-digit and
+computes y_lambda_at itself.
+
+**Environment:** mpmath 1.4.1 (which the guard asks for) breaks sympy 1.14.0
+(requires <1.4). Reverted to 1.3.0, pip check clean. Not a corpus degradation:
+514 witnesses record mpmath 1.3.0 vs 369 at 1.4.1; 987 record python 3.11.15
+vs 54 at 3.13.12.
+
+**CORRECTION to my own claim:** I wrote that he4_binding_k_stage2 'cannot
+complete' and 'emits NO progress output'. Both wrong. It prints progress and has
+a shape-chunk resume cache (.he4_stage2_legA_progress.jsonl), and its own
+comment states 'the full mpfr eval is ~34 min — longer than one sandbox
+session', which is exactly why the checkpoint exists. My 1800s budget was BELOW
+its stated runtime. What is true: it emits nothing for the first ~90s because
+the expensive setup precedes its first print. Re-running with no timeout.
