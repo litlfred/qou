@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:05:13Z
-updated_at: 2026-08-24T13:18:11Z
+updated_at: 2026-08-24T13:29:48Z
 ---
 
 Found while triaging the last convention-C sites (`qou-cds1`, PR #5622).
@@ -179,3 +179,34 @@ LAUNDERS it — read the high-precision name instead"). Use `Z_MARKOV` directly.
 Then re-run the closed-form / PSLQ search against the coherent α* and correct
 `docs/alpha-blend-derivation.md` §5 + line 772 and
 `docs/canonicalization-review.md` lines 21 / 136 / 155.
+
+
+## 🛑 RETRACTION: "the producer has one commit and has not changed" is a shallow-clone artifact
+
+The cause note above argues: *"The producer has exactly ONE commit in its
+history (`f9ad94d750`) — it has not changed since α* ≈ 0.305807 was recorded.
+Its import cone changed."* The premise is **withdrawn.**
+
+This clone is **shallow** (`git rev-parse --is-shallow-repository` -> `true`)
+and `f9ad94d750` is its **boundary commit** — the oldest present, appearing to
+add all 28,348 files. "One commit in its history" means *the history is
+truncated*, not that the file was never edited. I cannot see whether
+`alpha_high_precision.py` changed between 2026-08-01 and today, so I cannot
+assert it did not.
+
+**The finding itself is unaffected, because it never rested on git history.**
+Everything load-bearing is a direct measurement of the current tree:
+
+    z_m (imported, line 49)  = 0.6126880371464652    = z_D
+    zv  (local,    line 88)  = 0.499320334183694452  = z_C
+    both feed the α* functional (lines 126 and inside std_za_b)
+    α* now                   = 0.350886411466   vs corpus 0.305807  (+14.74 %)
+    α* with zv converted to D = 0.283762164005
+    α* is pin-invariant to 12 digits
+
+So: **the straddle is measured and real; the story about *how it got there* is
+not mine to tell.** The import-cone-flip mechanism remains the plausible
+explanation — `hecke_core`/`pyhecke.gram` demonstrably did move to D on
+2026-08-16, after these constants existed — but "the producer sat unchanged
+while the ground moved" is an inference I cannot support from a truncated
+history, and the fix list is unchanged either way.

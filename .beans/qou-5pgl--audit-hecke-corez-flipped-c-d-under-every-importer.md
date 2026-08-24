@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-08-24T13:26:14Z
+updated_at: 2026-08-24T13:29:48Z
 ---
 
 Generalises the `alpha_high_precision` finding (`qou-l1gv`) from one file to its
@@ -96,3 +96,32 @@ files beyond the three found by the literal scan — a constant can be
 C-calibrated without being a bare decimal literal (it may be built from an
 expression), which the literal detector cannot see. **The 8-of-17 count is a
 floor, not a total.**
+
+
+## 🛑 RETRACTION (same session): the "one 2026-08-01 landing" narrative is a SHALLOW-CLONE ARTIFACT
+
+The note above says both candidate constants were "introduced by `f9ad94d750` on
+2026-08-01", and infers **"one landing whose constants were all calibrated in
+convention C"**. That inference is **withdrawn.**
+
+    $ git rev-parse --is-shallow-repository    ->  true
+    $ git log --reverse | head -1              ->  f9ad94d750  2026-08-01
+    $ git show --name-only f9ad94d750 | wc -l  ->  28348
+
+`f9ad94d750` is the **shallow-clone boundary** — the oldest commit this clone
+has. A grafted root appears to add the entire tree, which is why it "touches"
+28,348 files and why **all 17** z-importers are in it. Co-occurrence there is
+evidence of nothing: everything is in it.
+
+Likewise `git log -S<constant>` terminating at `f9ad94d750` means only *"the
+constant is present at the clone boundary"* — not that it was authored there.
+
+**What survives, and it is the part that matters:** the constants exist at
+2026-08-01 and the D migration (`5046347e53`) landed 2026-08-16, so they **do**
+predate the flip. The candidates are still confirmed pre-flip. What is withdrawn
+is the stronger story that they form one deliberately co-calibrated set.
+
+This is the exact hazard AGENTS.md names — *"a sha can be missing merely because
+the history was never fetched"* — and I walked into it by reading a boundary as
+a landing. **Do not date-reason from `git log` in this clone without checking
+`--is-shallow-repository` first.**
