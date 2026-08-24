@@ -3342,3 +3342,36 @@ carried by the type), `IsRothTheta`, `.unique`, `.nonneg`, and `idxWeight_le_car
 ⚠ `Θ_m ≤ m` is **not** yet available: `index` is an infimum over the *translated* support, and
 `degreeOf_translate` does not exist in this arc. That is the remaining piece of §9's third
 property and is the next concrete item.
+
+### `degreeOf_translate`, and §9's three properties complete
+
+Run as a workflow: four independent proof strategies in parallel, then four adversarial
+verifiers, each rebuilding from scratch. All four strategies compiled; all four refutation
+attempts failed. Three things came out of the fan-out that a single attempt would have missed:
+
+- **`[DecidableEq σ]` and `[Nontrivial R]` are both unnecessary.** The `DecidableEq` is supplied
+  by an internal `classical`; the `Nontrivial` is avoided by deriving the `X`-degree bound from
+  `coeff_X'` rather than `degreeOf_X` (which carries it). Stating `degreeOf_X_le` against
+  `(single i 1) j` instead of `if i = j then 1 else 0` keeps the instance out of the statement.
+- **It is an equality, not just an inequality.** `degreeOf_translate_eq` follows by
+  `le_antisymm` through `translate_neg_translate` — free, and strictly more useful.
+- ⚠ **`MvPolynomial.induction_on` cannot prove this**, which was my first instinct. Its additive
+  step would need `max (degreeOf j p) (degreeOf j q) ≤ degreeOf j (p + q)`, and that is **false**:
+  take `p = X j`, `q = −X j`. The route that works decomposes `P` over its own support.
+
+Also established by exhaustive search (two agents independently): **Mathlib has no general
+`degreeOf` bound under `aeval`/`bind₁` substitution.** `Mathlib/Algebra/MvPolynomial/Monad.lean`
+contains no occurrence of "degree" at all; the only substitution-vs-degree lemmas are for
+`rename` and `map`. Neither `coeff_translate` nor `support_translate` exists at this pin.
+
+**§9 is now complete.** All three properties hold:
+
+| property | status |
+|---|---|
+| lub attained (finiteness) | carried by `IsRothTheta`'s second clause; construction still open |
+| `Θ_m` non-decreasing in `a` | `IsRothTheta.mono_height` |
+| `0 ≤ Θ_m ≤ m` | `IsRothTheta.nonneg`, `IsRothTheta.le_card` |
+
+`Θ_m ≤ m` is what needed `degreeOf_translate`: the index is an infimum over the **translated**
+support, so a degree hypothesis on `A` reaches it only because translation preserves degree.
+That dependency is why the bound could not be stated two entries ago and can be now.

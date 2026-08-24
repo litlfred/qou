@@ -302,23 +302,29 @@ theorem IsRothTheta.mono_height {σ : Type*} {a a' : ℤ} {r H : σ → ℕ} {Θ
   rw [heq] at hle
   exact_mod_cast hle
 
-/-- **The pointwise half of `Θ_m ≤ m`** — every exponent dominated by the degree vector has
-weight at most the number of variables.
+/-- `map` along a ring hom cannot raise a degree — its support only shrinks. -/
+theorem degreeOf_map_le {σ R S : Type*} [CommSemiring R] [CommSemiring S] (f : R →+* S)
+    (j : σ) (A : MvPolynomial σ R) : degreeOf j (map f A) ≤ degreeOf j A := by
+  rw [degreeOf_le_iff]
+  intro m hm
+  exact monomial_le_degreeOf j (support_map_subset f A hm)
 
-⚠ Turning this into `Θ_m ≤ m` needs `degreeOf` to survive `translate`, which this arc does not
-yet have (`index` is an infimum over the *translated* support).  That lemma is the remaining
-piece of §9's third property. -/
-theorem idxWeight_le_card {σ : Type*} [Fintype σ] (d : σ → ℕ) (i : σ →₀ ℕ)
-    (hd : ∀ j, d j ≠ 0) (hi : ∀ j, i j ≤ d j) :
-    idxWeight d i ≤ (Fintype.card σ : ℚ) := by
-  unfold idxWeight
-  calc ∑ j ∈ i.support, (i j : ℚ) / (d j : ℚ)
-      ≤ ∑ _j ∈ i.support, (1 : ℚ) := by
-        refine Finset.sum_le_sum fun j _ => ?_
-        rw [div_le_one (by exact_mod_cast Nat.pos_of_ne_zero (hd j))]
-        exact_mod_cast hi j
-    _ = (i.support.card : ℚ) := by simp
-    _ ≤ (Fintype.card σ : ℚ) := by exact_mod_cast Finset.card_le_univ i.support
+/-- **`Θ_m ≤ m`** — §9's third property, and the last of the three.
+
+Needs `degreeOf_translate` (via `RothIndex.index_le_card`): the index is an infimum over the
+*translated* support, so `Γ`'s degree bound on `A` reaches it only because translation
+preserves degree.  That is why this could not be stated before `degreeOf_translate` existed. -/
+theorem IsRothTheta.le_card {σ : Type*} [Fintype σ] {a : ℤ} {r H : σ → ℕ} {Θ : ℚ}
+    (hr : ∀ j, r j ≠ 0) (h : IsRothTheta a r H Θ) : Θ ≤ (Fintype.card σ : ℚ) := by
+  obtain ⟨-, A, κ, hA, -, heq⟩ := h
+  have hA0 : map (algebraMap ℤ ℚ) A ≠ 0 := fun hz =>
+    hA.1 (map_injective (algebraMap ℤ ℚ) (algebraMap ℤ ℚ).injective_int
+      (by rw [map_zero]; exact hz))
+  have hdeg : ∀ j, degreeOf j (map (algebraMap ℤ ℚ) A) ≤ r j := fun j =>
+    le_trans (degreeOf_map_le _ j A) (hA.2.1 j)
+  have hle := index_le_card r κ _ hr hA0 hdeg
+  rw [heq] at hle
+  exact_mod_cast hle
 
 /-! ### Property `Γ_m` — all three clauses
 

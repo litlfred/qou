@@ -106,6 +106,80 @@ theorem translate_eq_zero_iff (α : σ → R) {P : MvPolynomial σ R} :
   refine ⟨fun h => translate_injective α ?_, fun h => by rw [h, translate_zero]⟩
   rw [h, translate_zero]
 
+/-! ### Translation preserves per-variable degree
+
+Every index argument in this arc runs over the support of `translate α P`, so bounds stated in
+terms of `degreeOf j P` need to survive the translation.  They do — exactly, not just up to an
+inequality.
+
+⚠ `MvPolynomial.induction_on` does **not** work here.  Its additive step would need
+`max (degreeOf j p) (degreeOf j q) ≤ degreeOf j (p + q)`, which is false: take `p = X j`,
+`q = −X j`.  The route that works is to decompose `P` over its own support and bound each
+translated monomial separately.
+
+⚠ Mathlib has no general bound for `degreeOf` under `aeval` / `bind₁` substitution — searched
+for `degreeOf_bind₁`, `totalDegree_bind₁`, `degreeOf_aeval`, `degreeOf_eval₂`, `degreeOf_comp`
+and their `degrees`/`weightedTotalDegree` variants; `Mathlib/Algebra/MvPolynomial/Monad.lean`
+contains no occurrence of "degree" at all.  The only substitution-vs-degree lemmas are for
+`rename` and `map`.  Nor do `coeff_translate` or `support_translate` exist at this pin. -/
+
+/-- `degreeOf j (X i)` is at most the `j`-th exponent of `single i 1`.
+
+⚠ Stated this way rather than with `if i = j then 1 else 0` so that no `[DecidableEq σ]` is
+needed in the statement, and via `coeff_X'` rather than `degreeOf_X` so that no `[Nontrivial R]`
+is needed either — over the trivial ring `X i = 0` and the bound is merely slack. -/
+theorem degreeOf_X_le (i j : σ) :
+    degreeOf j (X i : MvPolynomial σ R) ≤ (Finsupp.single i 1 : σ →₀ ℕ) j := by
+  classical
+  rw [degreeOf_le_iff]
+  intro m hm
+  rw [mem_support_iff, coeff_X'] at hm
+  by_cases h : (Finsupp.single i 1 : σ →₀ ℕ) = m
+  · subst h; exact le_rfl
+  · simp [h] at hm
+
+/-- Translation does not raise the `j`-degree of a monomial. -/
+theorem degreeOf_translate_monomial (α : σ → R) (j : σ) (v : σ →₀ ℕ) (a : R) :
+    degreeOf j (translate α (monomial v a)) ≤ v j := by
+  classical
+  rw [translate, aeval_monomial, algebraMap_eq]
+  refine (degreeOf_C_mul_le _ j a).trans ?_
+  rw [Finsupp.prod]
+  refine (degreeOf_prod_le j _ _).trans ?_
+  have h1 : ∀ n ∈ v.support, degreeOf j ((X n + C (α n) : MvPolynomial σ R) ^ v n)
+      ≤ v n * (Finsupp.single n 1 : σ →₀ ℕ) j := by
+    intro n _
+    refine (degreeOf_pow_le j _ _).trans (Nat.mul_le_mul_left _ ?_)
+    refine (degreeOf_add_le j _ _).trans ?_
+    rw [degreeOf_C]
+    simpa using degreeOf_X_le n j (R := R)
+  refine (Finset.sum_le_sum h1).trans ?_
+  have h2 : ∀ n : σ, v n * (Finsupp.single n 1 : σ →₀ ℕ) j = if n = j then v n else 0 := by
+    intro n
+    by_cases h : n = j <;> simp [h]
+  simp only [h2]
+  rw [Finset.sum_ite_eq' v.support j (fun n => v n)]
+  split_ifs <;> simp
+
+/-- **Translation does not raise the `j`-degree.** -/
+theorem degreeOf_translate (α : σ → R) (j : σ) (P : MvPolynomial σ R) :
+    degreeOf j (translate α P) ≤ degreeOf j P := by
+  classical
+  have hP : translate α P = ∑ v ∈ P.support, translate α (monomial v (coeff v P)) := by
+    conv_lhs => rw [P.as_sum]
+    simp only [translate, map_sum]
+  rw [hP]
+  refine (degreeOf_sum_le j _ _).trans (Finset.sup_le fun v hv => ?_)
+  exact (degreeOf_translate_monomial α j v _).trans (monomial_le_degreeOf j hv)
+
+/-- **And in fact preserves it exactly** — apply the inequality to `P` and to its
+back-translation.  Free, given `translate_neg_translate`. -/
+theorem degreeOf_translate_eq (α : σ → R) (j : σ) (P : MvPolynomial σ R) :
+    degreeOf j (translate α P) = degreeOf j P := by
+  refine le_antisymm (degreeOf_translate α j P) ?_
+  conv_lhs => rw [← translate_neg_translate α P]
+  exact degreeOf_translate (fun i => -α i) j (translate α P)
+
 /-- The **weight** of a multi-index against the degree vector `d`: `∑ⱼ iⱼ / dⱼ`. -/
 noncomputable def idxWeight (d : σ → ℕ) (i : σ →₀ ℕ) : ℚ :=
   ∑ j ∈ i.support, (i j : ℚ) / (d j : ℚ)
@@ -291,6 +365,37 @@ theorem translate_pderiv [DecidableEq σ] (α : σ → R) (i : σ) (P : MvPolyno
 /-! ### The index under differentiation
 
 The estimate Roth's lemma runs on: differentiating once costs at most `1/dⱼ` of index. -/
+
+/-- **Every exponent dominated by the degree vector has weight at most the number of
+variables** — each term of `idxWeight` is then at most `1`. -/
+theorem idxWeight_le_card [Fintype σ] (d : σ → ℕ) (i : σ →₀ ℕ)
+    (hd : ∀ j, d j ≠ 0) (hi : ∀ j, i j ≤ d j) :
+    idxWeight d i ≤ (Fintype.card σ : ℚ) := by
+  unfold idxWeight
+  calc ∑ j ∈ i.support, (i j : ℚ) / (d j : ℚ)
+      ≤ ∑ _j ∈ i.support, (1 : ℚ) := by
+        refine Finset.sum_le_sum fun j _ => ?_
+        have hpos : (0 : ℚ) < (d j : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero (hd j)
+        rw [div_le_iff₀ hpos, one_mul]
+        exact_mod_cast hi j
+    _ = (i.support.card : ℚ) := by simp
+    _ ≤ (Fintype.card σ : ℚ) := by exact_mod_cast Finset.card_le_univ i.support
+
+/-- **The index is at most the number of variables**, when the degree vector dominates `P`.
+
+§9's third property, in the form the arc needs.  It is the first consequence of
+`degreeOf_translate`: the infimum is over the *translated* support, so a degree hypothesis on
+`P` reaches it only because translation preserves degree. -/
+theorem index_le_card [Fintype σ] (d : σ → ℕ) (α : σ → R) (P : MvPolynomial σ R)
+    (hd : ∀ j, d j ≠ 0) (hP : P ≠ 0) (hdeg : ∀ j, degreeOf j P ≤ d j) :
+    index d α P ≤ (((Fintype.card σ : ℚ)) : WithTop ℚ) := by
+  classical
+  obtain ⟨i, hi⟩ := support_nonempty.mpr ((translate_eq_zero_iff α).not.mpr hP)
+  refine le_trans (Finset.inf_le hi) ?_
+  rw [WithTop.coe_le_coe]
+  refine idxWeight_le_card d i hd fun j => ?_
+  exact le_trans (monomial_le_degreeOf j hi)
+    (le_trans (degreeOf_translate α j P) (hdeg j))
 
 /-- The support of a derivative sits inside the shift of the support by `-eⱼ`. -/
 theorem support_pderiv_subset [DecidableEq σ] (i : σ) (P : MvPolynomial σ R) :
