@@ -163,9 +163,24 @@ theorem D_kaon_same_winding : windingContent .Dmeson = windingContent .kaon := b
     `b` at 7). `knot-notation-convention.md` defines
     `T_{m,n}^σ = T_{m,-n}`. So the degeneracy is this projection
     **discarding `σ`**, not an absent structure — the discriminator
-    survives one level up. Caveat: `σ` is overloaded (it also marks
-    particle/antiparticle, e.g. electron vs positron), so whether it
-    *is* the `T₃` grading is the open question, not a settled fact. -/
+    survives one level up.
+
+    **WEAKENED on a second pass, same day.** The caveat above read
+    "`σ` is overloaded … whether it *is* `T₃` is the open question".
+    That is too generous. `knot-notation-convention.md` *documents*
+    `σ` on a knot as **charge conjugation** ("the superscript
+    distinguishes a particle from its antiparticle via mirror
+    reflection"), instantiated on leptons as electron `T(2,3)` /
+    positron `T(2,3)^σ`. Under that meaning the quark rows assert
+    `d = ū`, `s = c̄`, `b = t̄` — charge `−1/3` identified with
+    charge `−2/3`, which cannot be intended.
+
+    So `σ` cannot be the `T₃` grading *as documented*: one superscript
+    carries two relations and only the unusable one is defined. The
+    5/5 down-type alignment is real and suggestive, but the
+    discriminating assignment is **undefined**, not merely
+    unprojected — a prerequisite for the `T₃` work rather than a step
+    within it. -/
 theorem winding_content_not_injective : ¬ Function.Injective windingContent := by
   intro hinj
   have : Meson.Dmeson = Meson.kaon := hinj D_kaon_same_winding

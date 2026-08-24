@@ -112,6 +112,65 @@ they are `T(2,5)` and its mirror. `knot-notation-convention.md` defines
 and `K {ū, s}` collide only after `windingContent` maps each knot to a bare `ℕ`
 and discards `σ`. The discriminator survives one level up.
 
+### ⚠️ WEAKENING MY OWN FINDING — `σ` is DOCUMENTED as charge conjugation (2026-08-24, second pass)
+
+The section above says `σ` is "overloaded" and treats which meaning applies as
+merely undecided. Reading `knot-notation-convention.md` in full makes the tension
+sharper than that, and **against** the T₃ reading. Two consecutive sentences of
+that block:
+
+> "Particles in this framework are identified with their knots. We write
+> `𝔎_x^±` … **The superscript distinguishes a particle from its antiparticle via
+> mirror reflection (charge conjugation).**"
+>
+> "We denote torus knots by `T_{m,n}`, with **mirror image** `T_{m,n}^σ =
+> T_{m,-n}`."
+
+So on a knot, the corpus *states* `σ` = mirror = **charge conjugation**, and
+instantiates it on leptons: electron `T_{2,3}` / positron `T_{2,3}^σ`.
+
+`knot-formula-table.md` then applies the same superscript to quarks:
+`𝔲 = T_{2,3}`, `𝔡 = T_{2,3}^σ`; `𝔠 = T_{2,5}`, `𝔰 = T_{2,5}^σ`;
+`𝔟 = T_{2,7}^σ`. Read with the stated meaning, that asserts
+
+    d = ū,    s = c̄,    b = t̄
+
+— identifying charge `−1/3` quarks with charge `−2/3` antiquarks. **That cannot
+be intended.**
+
+**Consequence for the T₃ question, stated against my own earlier framing.** If
+`σ` is charge conjugation as documented, it **cannot** be the `T₃` grading: it
+would make every down-type quark the antiparticle of its up-type partner. So the
+σ observation is *not* "the missing grading is already here" — it is "the corpus
+uses one superscript for two relations, has documented only the one that does not
+work for this purpose, and the discriminating assignment is therefore
+**undefined**, not merely unprojected." The 5/5 down-type alignment is real and
+still suggestive; what it is *not* is a licensed grading.
+
+This is a genuine corpus defect, not a reading difficulty: the same operation is
+defined as charge conjugation and used as the weak-isospin partner map. Which one
+the quark rows mean is an authorial call, and it is the prerequisite for
+`qou-mesont3` — not a detail downstream of it.
+
+### A second, independent defect in the same block: `𝔡` is given two incompatible knots
+
+`knot-formula-table.md` writes `𝔡 = T_{2,3}^σ` and then, one sentence later:
+"Here `𝔡` denotes the three-twist knot `5₂`, which is a Skein descendant of the
+trefoil."
+
+These are different knots. `T_{2,3}^σ = T_{2,-3}` is the **mirror trefoil** `3₁`
+— 3 crossings, a torus knot. `5₂` is a **twist knot** with 5 crossings and is
+**not a torus knot at all**. The block's own table 2 lists `| Down quark | 𝔡 |
+T_{2,3}^σ | 1 | 3 |` — **Crossings = 3**, agreeing with the formula and
+contradicting the prose.
+
+Corpus-grepped: unrecorded. Every other `5₂` in the corpus is Kashaev-invariant /
+Borel-summability literature (`references.ts`, the `5₂` saddle sum rule), none of
+it about the down quark. **Not resolved here** — whether `𝔡` is the mirror
+trefoil or `5₂` is an authorial call, and picking one to make the table
+self-consistent would be exactly the kind of silent resolution the corpus
+disciplines forbid. Flagged with the evidence.
+
 **Two cautions, so this is not over-read.** (1) `σ` is **overloaded**: the same
 superscript marks particle/antiparticle elsewhere (`knot-notation-convention.md`:
 electron `T_{2,3}` vs positron `T_{2,3}^σ`; `antineutrino-knot.md`). Whether
@@ -135,9 +194,9 @@ A canonical D-meson braid needs an invariant the `T(2,n)` winding number does **
 | `m_K/m_π` mass *ratio* (down-type mesons) | ✅ yes (L2-MET observable) |
 | charm's own winding `n` | ✅ **yes — n = 5** (the claimed T(2,5)-vs-T(2,7) ambiguity was a misread; retraction above, 2026-08-24) |
 | D-vs-K separation from winding number | ❌ **degenerate** (same multiset at n=5) |
-| up/down-type grading `T₃` on the meson tube | ⚠️ **present in the corpus as `σ`** (down-type iff `σ`, 5/5 quark rows) but **discarded** by `windingContent`'s projection to `ℕ`; `σ` is overloaded, so whether it *is* `T₃` is the open question (2026-08-24) |
+| up/down-type grading `T₃` on the meson tube | ❌ **undefined** — a `σ` superscript does mark down-type in 5/5 quark rows, but `knot-notation-convention.md` *documents* `σ` on a knot as **charge conjugation**, under which those rows assert `d = ū`, `s = c̄`, `b = t̄` (charge −1/3 = −2/3). One superscript, two relations, only the wrong one defined. Second pass 2026-08-24 — this row briefly read "present as `σ`"; that was too generous. |
 
-**ONE `❌` blocks a canonical D-meson braid, not two** (corrected 2026-08-24): the D-vs-K winding degeneracy. Charm's winding is unambiguous at n = 5, and that makes the surviving obstruction *sharper* — with no n = 7 alternative, `D {5,3}` is an exact multiset collision with `K {3,5}`. The reduction is still **not** canonical and the honest step is still not a mass check, but the structural refinement to aim at is now specific: stop `windingContent` discarding `σ`, rather than import a `T₃` from the weak sector.
+**ONE `❌` blocks a canonical D-meson braid, not two** (corrected 2026-08-24): the D-vs-K winding degeneracy. Charm's winding is unambiguous at n = 5, and that makes the surviving obstruction *sharper* — with no n = 7 alternative, `D {5,3}` is an exact multiset collision with `K {3,5}`. The reduction is still **not** canonical and the honest step is still not a mass check. The structural refinement to aim at is now specific — but it is **upstream** of where this audit was looking: before `windingContent` can be lifted to carry `σ`, the corpus has to *define* which relation `σ` denotes on a quark knot, because the only meaning it currently documents (charge conjugation) is the one that cannot serve. That is a prerequisite for `qou-mesont3`, not a step within it.
 
 ## Anti-fit statement
 
@@ -145,4 +204,4 @@ No braid was hand-picked to reproduce 1864.84 / 1869.66 MeV. The joint `m_D` che
 
 ## Next honest step (refines `qou-qpj9`)
 
-Derive (or refute) a **weak-isospin `T₃` grading of the `H₃(q)` meson tube** that selects the charm (up-type) block distinctly from the strange (down-type) block — e.g. from the `T(3,5)` weak-generator's up↔down action, or a bar/mirror asymmetry on the `c̄` end. If such a grading is derived and canonically fixes the asymmetric `c̄`(5̄)|light(3) braid, *then* check once against `m_D`. ~~Separately: resolve the charm T(2,5)-vs-T(2,7) corpus inconsistency (canonical-watcher).~~ **Withdrawn 2026-08-24 — there is no such inconsistency** (retraction at the top of Route 2). The live successor is narrower and better posed: decide whether table 2's `σ` (down-type iff `σ`, 5/5 quark rows) *is* the `T₃` grading or is notation reuse, and lift `windingContent` to carry it.
+Derive (or refute) a **weak-isospin `T₃` grading of the `H₃(q)` meson tube** that selects the charm (up-type) block distinctly from the strange (down-type) block — e.g. from the `T(3,5)` weak-generator's up↔down action, or a bar/mirror asymmetry on the `c̄` end. If such a grading is derived and canonically fixes the asymmetric `c̄`(5̄)|light(3) braid, *then* check once against `m_D`. ~~Separately: resolve the charm T(2,5)-vs-T(2,7) corpus inconsistency (canonical-watcher).~~ **Withdrawn 2026-08-24 — there is no such inconsistency** (retraction at the top of Route 2). The live successor is narrower and better posed, and has **two** parts: (1) decide which relation `σ` denotes on a quark knot — the corpus documents charge conjugation, which would make `d = ū`, so the down-type usage is currently undefined rather than merely unprojected; then (2) lift `windingContent` to carry it. Separately and independently: `𝔡` is assigned two incompatible knots in one block (`T_{2,3}^σ` = mirror trefoil, 3 crossings, vs prose "the three-twist knot `5₂`", 5 crossings, not a torus knot; the table's own Crossings column says 3).
