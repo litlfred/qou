@@ -77,6 +77,24 @@ _LR_LABEL_TO_LONG = {
 }
 
 
+def _rows_of(doc: dict, key: str) -> list:
+    """Rows from `doc[key]` OR `doc["data"][key]` -- witnesses use both.
+
+    `atomic-tr-m-mpfr-50dps` puts `results` at the TOP level (5 rows);
+    `markov-peel-atomic-tr-m` puts it under `data` (6 rows). Every loader here
+    read only the top level, so the peel path silently yielded ZERO atoms and
+    two of this cross-check's three pair-types never ran at all. The failure was
+    indistinguishable from "the file is missing", because `.get(key, [])`
+    returns the same empty list either way -- so a THREE-way cross-check has
+    been reporting on ONE pair since at least 2026-07-05 while printing the
+    other two as simply absent.
+    """
+    rows = doc.get(key)
+    if not rows:
+        rows = (doc.get("data") or {}).get(key)
+    return rows or []
+
+
 def _mpmathify(s: str) -> mpf:
     return mpf(str(s))
 
@@ -86,7 +104,7 @@ def load_hoefsmit() -> dict[str, mpf]:
         return {}
     d = json.loads(HOEF_PATH.read_text())
     out: dict[str, mpf] = {}
-    for r in d.get("results", []):
+    for r in _rows_of(d, "results"):
         atom = r.get("atom")
         tr = r.get("tr_M_at_q0_50dps")
         if atom and tr:
@@ -99,7 +117,7 @@ def load_peel() -> dict[str, mpf]:
         return {}
     d = json.loads(PEEL_PATH.read_text())
     out: dict[str, mpf] = {}
-    for r in d.get("results", []):
+    for r in _rows_of(d, "results"):
         atom = r.get("atom")
         if atom is None or "error" in r:
             continue
@@ -117,7 +135,7 @@ def load_wenzl_lr() -> dict[str, mpf]:
         return {}
     d = json.loads(LR_PATH.read_text())
     out: dict[str, mpf] = {}
-    for r in d.get("rows", []):
+    for r in _rows_of(d, "rows"):
         if "tr_M_q0_unavail_reason" in r:
             continue
         short = r.get("atom")
@@ -156,6 +174,13 @@ def main() -> int:
     print(f"  dps: {args.dps}  |  tolerance: {TOLERANCE} (1 ppb)")
     print(f"  Hoefsmit atoms:   {sorted(hoef)}")
     print(f"  markov_peel atoms: {sorted(peel)}")
+    for _label, _got, _path in (("Hoefsmit", hoef, HOEF_PATH),
+                                ("markov_peel", peel, PEEL_PATH),
+                                ("Wenzl LR", wlr, LR_PATH)):
+        if not _got:
+            print(f"  !! {_label} path contributed ZERO atoms — "
+                  f"{'file missing' if not _path.exists() else 'file present but no rows parsed'}"
+                  f": {_path.name}")
     print(f"  Wenzl LR atoms:    {sorted(wlr)}")
     print()
 

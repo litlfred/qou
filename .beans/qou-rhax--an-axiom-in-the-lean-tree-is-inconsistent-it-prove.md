@@ -1,7 +1,7 @@
 ---
 # qou-rhax
 title: 'An axiom in the Lean tree is inconsistent — rh_iff_persistence_axiom proves False'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-22T05:45:00Z
@@ -88,3 +88,51 @@ actually states the claim.
 `ClassicalRiemannHypothesis.lean`, flagged clean in the same batch, is the
 model: a content-bearing class, **no instance**, and a removed axiom
 recorded in its docstring. Two files in one chapter, opposite dispositions.
+
+---
+
+## RESOLVED 2026-08-22 — commit `ac452c37f`, PR #5467
+
+Audit: [`docs/audits/2026-08-22-inconsistent-axioms-and-unbuilt-lean-siblings.md`](../docs/audits/2026-08-22-inconsistent-axioms-and-unbuilt-lean-siblings.md)
+
+Fixed as option 2 (demote to a conjecture carrier). Three corrections and
+one extension to this bean's analysis, all confirmed by reading and by
+`lean`-direct:
+
+**1. There are TWO inconsistent axioms, not one.** `macroscopic_iff_rh_axiom`
+fails by the same route. The general defect is the quantifier shape:
+`∀ a b, P a ↔ Q b` forces `P` constant in `a`, and `RiemannHypothesis` is
+not constant in `ζ` (vacuous at `ζ ≡ 1`, false at `ζ ≡ 0`). This route needs
+neither `SpectralPersistence`'s tautology nor `LaurentPolynomial`, so it is
+the more general statement — and unlike the tautology route it also
+condemns the first axiom. Machine-checked; `#print axioms` on the `False`
+derivation reports only the axiom plus `propext`/`Classical.choice`/`Quot.sound`.
+
+**2. The containment reason is stronger than "nothing imports it": the file
+had never compiled.** `lean`-direct reports 22 errors — the imports never
+provided `LaurentPolynomial`, two docstrings sat back to back before the
+first axiom, and the `noncomputable section` was never closed. No
+declaration in the file had ever entered any environment.
+
+**3. `1/2 : R_q` does not elaborate.** `LaurentPolynomial ℤ` has no `Div`,
+so `SpectralPersistence` and `MacroscopicStability` were **ill-typed**, not
+merely vacuous. Option 1 of this bean ("state `SpectralPersistence` so that
+it has content") could not have been done over `R_q` at all — the critical
+line is archimedean and the replacement is stated over `ℝ`/`ℂ` per §7c.
+
+**4. Why it survived — measured.** Content-block `.lean` siblings live
+outside `content/<paper>/lean/` and so outside the package's
+`["QOU","QOU.+"]` globs; nothing compiles them. `lean`-direct across all
+**958**: **885 pass, 73 fail (7.6 %)**, concentrated in `mass-theory` (27)
+and `predicted-spectra` (10). My first pass reported 297 / 31 % — wrong,
+`LEAN_PATH` lacked the three paper build dirs, and adding them moved 224 to
+exit 0. Repairing the 73 is a separate tranche and is **not** done here.
+
+**The Weil attribution is withdrawn** and the `weil1948` cite dropped, per
+this bean's closing requirement. The von Koch attribution is accurate for
+the direction it names and stays in prose.
+
+**Verification:** `lean`-direct exit 0, silent, 2.4 s — first successful
+compile of this file. `#print axioms` clean on all three declarations
+(`[propext, Classical.choice, Quot.sound]`). `run-validate` exit 0.
+`qa-sweep` 0 failing criteria.

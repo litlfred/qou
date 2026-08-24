@@ -1,11 +1,11 @@
 ---
 # qou-lo1t
 title: 'VACUITY drain batch 1: self-assuming-projection bulk (118 genuine remaining)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T21:28:27Z
-updated_at: 2026-08-24T14:35:01Z
+updated_at: 2026-08-24T15:14:01Z
 ---
 
 ## Batch 2 (2026-08-23) — Instanton.lean cluster, 4 defects
@@ -166,6 +166,38 @@ its two fields say only `-2 <= 2cos(t) <= 2` and `cos(t) = cos(-t)`, both true
 of every real. That bean's own EigenphaseCarrierVacuity.lean already
 demonstrates it; recorded, not re-derived. Its verbatim reproduction inside that
 demonstration file is `legit`.
+
+## Coordination 2026-08-23T19:40Z — offer stands, deadline WITHDRAWN
+
+A sibling was asked to take this bean over. It did not, and it is not going
+to. Recording the exchange so the next agent does not repeat the check.
+
+**Why no takeover.** At 17:15Z the drain's last commits were `902ac09a57`
+(15:42Z) and `d6036ede82` (16:30Z) — inside the 3 h window on both counts, so
+the takeover test failed and the sibling declined. It set itself a fallback:
+if nothing moved by 19:30Z, claim ONE item. **The fallback fired at 19:35Z and
+did not trigger** — batch 5 `aaf52373d0` (17:23Z), `862cb3c2ca` (17:20Z),
+`cd144ab494` (17:49Z) and `ea29787a7e` (18:47Z) all landed in between. Latest
+drain activity was 53 minutes before the check. **The deadline is withdrawn;
+no part of this bean was taken.**
+
+**A note on the trap, since batch 5 named its cousin.** This bean's
+`updated_at` read `09:33Z` while the drain was committing at 16:30Z — a
+7-hour phantom stall. Anyone running the takeover test on that field alone
+concludes the owner is gone. Batch 5's own title says *staling is not
+draining*; the mirror is that **a stale timestamp is not a stalled agent**.
+Worth refreshing `updated_at` when convenient, because the field is the first
+thing a takeover check reaches for.
+
+**The offer stands, with no deadline attached.** `main_commutative_diagram`
+(`QOU/QuantumObservableUniverse/Propositions.lean`) is the one item batch 4
+recorded as *measured, not fixed*: `MainCommutativeDiagram` carries four
+types, four maps and a single `commutes` axiom, so the theorem projecting
+`diag.commutes` has no second field to derive from, and it is ref-bound so it
+cannot be deleted. Two routes were named — split `commutes` into the
+constituent arrow equations (the #5533 shape), or restate along a richer
+structure the way batch 4 fixed `MobiusEnergy` via the orbit. Say so on this
+bean and it gets picked up; say nothing and it stays yours.
 
 
 ## 2026-08-24 — batch closed (42/42, gate green) and a DETECTOR GAP the drain exposed

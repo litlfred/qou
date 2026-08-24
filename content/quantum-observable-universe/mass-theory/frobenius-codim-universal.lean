@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
@@ -96,7 +100,7 @@ private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
   -- the denominators, so `_ha` is no longer an unused binder.
   field_simp
 
-/-- **τ-invariance of the Frobenius co-Casimir trace.**
+/-! **τ-invariance of the Frobenius co-Casimir trace.**
 
     The Markov-trace identity `τ(C_{dim_q}) = Σ_λ 1/dim_q(λ)` does
     NOT depend on the specific Frobenius pairing τ used to construct

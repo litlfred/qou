@@ -428,10 +428,12 @@ theorem exists_sepW_ne_zero_le_degreeOf {K : Type*} [Field K] [CharZero K] [Deci
     ∃ (r : ℕ) (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial Unit K)
       (Dx : Fin r → List σ) (Dy : Fin r → List Unit),
       0 < r ∧ r ≤ d + 1 ∧ (∀ i, (Dx i).length ≤ (i : ℕ)) ∧ (∀ j, (Dy j).length ≤ (j : ℕ)) ∧
+      (∀ k x, degreeOf x (φ k) ≤ degreeOf (Sum.inl x) P) ∧
+      (∀ k y, degreeOf y (ψ k) ≤ degreeOf (Sum.inr y) P) ∧
       P = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) K) * rename Sum.inr (ψ k) ∧
       sepW Dx Dy φ ψ ≠ 0 := by
   classical
-  obtain ⟨r, φ, ψ, hcard, hφ, hψ, hPeq⟩ :=
+  obtain ⟨r, φ, ψ, hcard, hφ, hψ, hdφ, hdψ, hPeq⟩ :=
     exists_separated_representation_indep_le_degreeOf P hd
   have hr : 0 < r := by
     rcases Nat.eq_zero_or_pos r with rfl | h
@@ -439,7 +441,7 @@ theorem exists_sepW_ne_zero_le_degreeOf {K : Type*} [Field K] [CharZero K] [Deci
     · exact h
   obtain ⟨Dx, hDx, hWx⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr φ hφ
   obtain ⟨Dy, hDy, hWy⟩ := exists_bounded_order_mvGenWronskian_ne_zero hr ψ hψ
-  refine ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, ?_⟩
+  refine ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hdφ, hdψ, hPeq, ?_⟩
   rw [sepW_eq]
   refine mul_ne_zero ?_ ?_
   · intro h
@@ -471,7 +473,7 @@ theorem exists_index_le_of_separated_le_degreeOf {K : Type*} [Field K] [CharZero
       ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P →
       θ ≤ ((d : ℚ) + 1) / (D₁ : ℚ) + 2 * max (S / (r : ℚ)) q := by
   classical
-  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, hne⟩ :=
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hdφ, hdψ, hPeq, hne⟩ :=
     exists_sepW_ne_zero_le_degreeOf P hP hdeg
   obtain ⟨S, hS⟩ := exists_index_le_of_ne_zero (Sum.elim d₁ d₂) (Sum.elim α β) hne
   have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁
@@ -646,7 +648,7 @@ theorem index_le_of_rothGrowth_of_factor_bound {K : Type*} [Field K] [CharZero K
     (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index (Sum.elim d₁ d₂) (Sum.elim α β) P) :
     θ ≤ 2 / ω + 2 * max Φ q := by
   have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
-  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hPeq, hne⟩ :=
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hdφ, hdψ, hPeq, hne⟩ :=
     exists_sepW_ne_zero_le_degreeOf P hP hdeg
   rw [sepW_eq] at hne
   have hWx : mvGenWronskian Dx φ ≠ 0 := by

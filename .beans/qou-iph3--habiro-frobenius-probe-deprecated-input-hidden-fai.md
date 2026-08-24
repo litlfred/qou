@@ -1,7 +1,7 @@
 ---
 # qou-iph3
 title: 'habiro-frobenius probe: deprecated input, hidden failing test, half-integer full trace'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
@@ -186,6 +186,87 @@ of 2", then the `N(q)^{A-1}` resonance) came from reporting a pattern before
 running the cheap control that could kill it. The control was three lines and one
 field of the input witness. Run it first.
 
+
+## Option investigation 2026-08-23 — the framing on this bean was WRONG
+
+I recorded item 1 as *"the probe reads a `_deprecated/` witness that is DEEPER
+than the live one, so repointing loses primes"* — i.e. a staleness/depth
+trade-off. **Measured, that is not what the difference is.**
+
+### The coefficients differ from m = 0, not past a truncation point
+
+| atom | dep n | live n | first differing m |
+|---|---|---|---|
+| proton | 10 | 9 | **1** |
+| neutron | 9 | 9 | **0** |
+| deuteron | 14 | 13 | **0** |
+| tritium | 19 | 16 | **0** |
+| ³He | 20 | 16 | **0** |
+
+Neutron `a₀`: **8** (dep) vs **2** (live). Ratios are not constant across `m`
+(proton `a₁`: −240 vs −172; `a₂` leading: 1417 vs 865), so it is not a rescaling
+either. These are different series, and depth is a side effect.
+
+### The driver, and it is semantic
+
+`include_inter` differs — and `binding_canonical.py:306-308` says what it means:
+
+    atom_elem = build_atom_symbolic(Z, N, include_inter=True,  ...)   # BOUND
+    free_elem = build_atom_symbolic(Z, N, include_inter=False, ...)   # FREE
+
+so the flag is the **bound-vs-free** distinction, whose *difference* is the
+binding. Both settings are meaningful objects; neither is "old".
+
+    deprecated:  proton False   neutron False   deuteron/tritium/³He True
+    live:        all five True
+
+**The deprecated aggregate mixes the two conventions inside one file** — its A=1
+atoms are FREE, its composites are BOUND. The probe reads all five uniformly.
+
+### Three structural hypotheses, all REFUTED by exact symbolic test
+
+I eyeballed the live deuteron's `tr_M` as a product of the proton and neutron
+numerators and it is not. Tested with `sympy.simplify(together(...)) == 0`:
+
+- live deuteron = live proton × live neutron — **False**
+- live tritium = p·n², live ³He = p²·n — **False**
+- live deuteron = dep_proton × dep_neutron — **False**
+- dep proton = live proton, dep deuteron = live deuteron — **False** (so even
+  where the flag AGREES the traces differ; deprecated deuteron is an expanded
+  degree-52 ratio, live is a two-factor product form)
+
+So the generational difference is **not** explained by `include_inter` alone.
+Different producers, different eras, no simple relation.
+
+### One more constraint on the options
+
+`_habiro_coefficient_extract.py:288` **hardcodes** `"include_inter": True`. The
+live extractor structurally cannot emit the free variant, so "regenerate the
+deprecated file with the current producer" is not available without editing that
+line.
+
+## The three options, honestly
+
+**A — repoint the probe to the live per-atom witnesses.** Uniform (all BOUND),
+current, per-atom. Costs: shallower (proton 10→9, tritium 19→16, ³He 20→16), so
+the Pochhammer truncation mechanism covers fewer primes; and the A=1 atoms change
+meaning from free to bound, which changes what `frobenius_at` is a Frobenius *of*.
+
+**B — keep the deprecated aggregate.** Deeper, but its A=1 atoms are FREE while
+its composites are BOUND, so the probe's five-atom comparison is across two
+different object classes. Every current conclusion on this bean (`frob_num` ≠ 0
+at 45/45; numerator test 45/45 pass; full-trace 45/45 fail) is computed from that
+mixed file and inherits the mix.
+
+**C — regenerate all five uniformly with the current producer** (recommended).
+Requires un-hardcoding line 288 so the flag is a parameter again, then emitting
+both variants explicitly. Only option that yields a uniform, current, documented
+dataset — and it makes the bound/free pair available, which is what
+`binding_canonical` wants anyway.
+
+**This needs the author's call**, because A-vs-C is a question about what the
+motivic Frobenius should be built from — a free nucleon or a bound one — not a
+mechanical repoint. I have not changed any producer or witness.
 
 ## RESOLVED (option C run) — and TWO of my own claims here were wrong
 

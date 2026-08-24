@@ -91,7 +91,16 @@ class RegimeScanner:
             def v_std(q: mp.mpf) -> mp.mpf:
                 qi = mp.mpf(1.0) / q
                 h = q - qi
-                z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))
+                # Convention D (owner ruling 2026-08-15): z_D = q^3/(q^2 + 1).
+                # This read `1/(sqrt(q) + sqrt(qi))` = sqrt(q)/(q+1) = z_C, the
+                # excised convention, unlabelled and with no registry row -- the
+                # one site `convention-c-producer-audit.py` reported as
+                # "C with NO registry row (unexplained)". Identified and migrated
+                # 2026-08-24. Safe: this module has no importers in the repo and
+                # no committed witness depends on its output, so the rank-drop
+                # crossings it reports change without invalidating a recorded
+                # number. No square root is needed under D.
+                z = q**3 / (q**2 + 1)
                 ai, bi = mp.mpf(0.0), mp.mpf(1.0)
                 for _ in range(7):
                     ai, bi = bi, ai - bi * h
