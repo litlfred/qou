@@ -341,6 +341,51 @@ Two things it does **not** do, both stated because they bound what has been show
    LP does not close B3 — going from `Φ*` to a braid word is an inverse problem
    that is not generally solvable, and that gap is precisely Obstruction A.
 
+## Is `Φ*` a braid image? Positive braids: NO. General braids: not found, not excluded.
+
+The LP selects an algebra element; the mass law needs a braid. So the question that
+decides whether the two mechanisms can meet is whether `Φ*` lies in the image of
+the braid monoid.
+
+**Positive braids — excluded, structurally.** `σᵢ² = hσᵢ + 1` with `h > 0` at
+`q₀ > 1`, so every positive-braid image has **non-negative** NF coefficients.
+Measured over all **8191** positive words of length 0–12: **0** had a negative
+coefficient. `Φ*` has **4 negatives of 6**. So `Φ*` is not the image of any
+positive braid, at any scale. Best alignment `|cos| = 0.878` at `σ₀¹¹σ₁`.
+
+This connects directly to B1: the corpus's `𝔐 = (σ₀σ₁)²σ₁σ₀` **is** a positive
+braid. That is simultaneously why it closes to a torus knot (`Vol = 0`) and why it
+sits in the non-negative cone that `Φ*` is outside. **The corpus's meson braid and
+the LP's canonical operator are in provably different regions of `H₃(q)`.**
+
+**General braids — open.** With inverses admitted the sign obstruction disappears
+(104,600 of 118,096 words of length ≤ 10 have a negative NF coefficient), and the
+best alignment rises to `|cos| = 0.94103284`, at
+`σ₀⁷ σ₁⁻¹ σ₀⁻¹ σ₀⁻¹`. **Not 1** — so no braid of length ≤ 10 maps to `Φ*`'s
+direction, but 0.941 is not an exclusion either.
+
+**What would settle it.** Braid images lie in the `ℤ[h]`-lattice spanned by the NF
+basis (repeated application of `σᵢ² = hσᵢ + 1` and `σᵢ⁻¹ = σᵢ − h` keeps integer
+polynomial coefficients in `h`). `Φ*` is the optimum of an LP whose data (`G`, `t`)
+is exact rational in `ℚ(q)`, so `Φ*` is algebraic too — it is *not* obviously
+outside the lattice, and the question cannot be closed by numerics. Deciding it is
+a lattice-membership problem, and it is the sharp form of Obstruction A.
+
+### Harness corrections made along the way, both caught by validation
+
+1. **A first inverse test was void.** `nf_of_word(word)` takes only generator
+   indices — **no sign argument** — and a two-call fallback did something undefined
+   with the inverses, reporting `anyneg = 0` across 87,380 words. A braid algebra in
+   which no inverse ever produces a negative coefficient is impossible, which is how
+   it was caught.
+2. **The right-multiplication matrices were built from the wrong words.**
+   `nf_of_word([0,1])` returns slot 4, whose basis *label* is `(1,0)`: the basis
+   tuples index in the reverse order to the word convention, so
+   `nf_of_word(list(b_j)) ≠ e_j`. Rebuilt by first solving for the word whose NF is
+   `e_j` (`{0:[], 1:[0], 2:[1], 3:[1,0], 4:[0,1], 5:[0,1,0]}`). Post-fix validation:
+   **254/254** positive words of length 1–7 reproduce `nf_of_word` exactly, and both
+   `σᵢσᵢ⁻¹ = 1` identities hold. The numbers above are from the validated build.
+
 ## Route 2 (superseded blocker note, retained)
 
 Route 2 (the D-meson Frobenius–Gram operator-selection) is the one C-frame blocker
