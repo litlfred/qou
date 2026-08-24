@@ -5619,3 +5619,72 @@ belongs — at the *boundary* of a side, not threaded through its interior.
 goal currently has it*, not as the accompanying `e`-equation rewrites it. Stating
 it in the rewritten form type-errors; state it on the goal's word and `rw [e]`
 inside the proof.
+
+### §4bv — the B side generalised, and the joining's shape settled
+
+`bside_to_splitWord'`, `bside_to_split'`, `bside_branch_core`,
+`bside_resolves'` — side B now runs inside an arbitrary S-polynomial too. The
+four originals are corollaries at empty context. With §4bu that is **both
+sides** generalised; what is left is the joining itself.
+
+#### The collision I expected does not exist
+
+I had assumed the joining would be blocked at its last step: side A and side B
+reach the *same two monomials*, so running one chain with the other's normal
+form already in the context looked like it would ask a step to fire on a word
+that is already present. It does not, for two independent reasons, and I only
+found them by reading the definitions rather than reasoning from the shape:
+
+- **`isZero` is coefficient-wise** — `∀ m, f.coeff m = 0`
+  ([`Elem.lean:125`](../content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean)),
+  and `ofTerms` *sums* over the terms carrying a given monomial. Two terms with
+  the same word and opposite coefficients are not a problem to be avoided; they
+  are exactly the cancellation the S-polynomial needs.
+- **`hne` guards the word ENTERING a step, never the one leaving it.**
+  `monicStep`'s hypothesis is `∀ q ∈ ctx, q ≠ W` with `hW : W = a ++ L ++ b`,
+  and it is used only to prove `coeff (a ++ lm ++ b) = c` — that the step
+  subtracts the right amount. The *result* `W'` may coincide with a context
+  word freely.
+
+So the joining can run the two chains **sequentially**: A first with B's word
+as context, then B with A's normal form as context. The last B step needs its
+*penultimate* word absent from the context, and that word is one step short of
+A's normal form.
+
+#### Side B needs a head condition and a TAIL condition
+
+Side A took two head conditions (§4bu). Side B takes one head and one tail, and
+the tail is not an artefact:
+
+- the sweep and the quadratic step act with `σ_{i−1}σ_i` fixed in front, so
+  `CtxAvoids L [σ_{i−1}] []` covers them;
+- the **unshuffle** acts at `a = []`. Nothing sits in front of it to separate
+  on, so what protects it is the word's right end instead:
+  `CtxAvoids L [] [σ₀,σ₀,σ_i]` — no surrounding word ends in `σ₀σ₀σ_i`.
+
+Cheap to discharge at the joining: side A's normal-form terms end in `σ₀` and
+`σ₁` respectively, and the pattern ends in `σ_i` with `i ≥ 2`, so a last-letter
+comparison settles both.
+
+#### `bside_branch`'s length hypothesis is the wrong discharge at the joining
+
+Within side B every word of the chain has the same length, so one length
+condition served both steps — that is what §4bs shipped. It does **not**
+separate A from B: A's normal form has *exactly* the lengths B's post-split
+words do (`2i+2` and `2i+1`). So `bside_branch_core` now takes its two `≠`s
+raw, and the caller assembles them from whatever it has. `bside_resolves'`
+needs both shapes at once — head for the ambient terms, length for side B's
+*own* other branch, which also begins with `σ_{i−1}` and so is invisible to the
+head condition. `bside_branch` survives unchanged as the length instance.
+
+New helpers: `CtxAvoids.ne_descWord` (a word opening with a descending run is
+avoided by a context avoiding that run's head letter — the workhorse turning a
+head condition into the plain `≠` a step lemma asks for), `bsWord₂_length`,
+`mem_ctx_or_eq`.
+
+**Trap, and it bites twice in adjacent lines.** `rw [descWord_length' h]` closes
+its goal *by rfl* when the `Fin` literal reduces — so `rw [descWord_length'
+honei]; simp` is a "No goals to be solved" error at `⟨1, hnn⟩`, while the
+visually identical `rw [descWord_length' hz']; simp` at `⟨0, hn⟩` **needs** the
+`simp`, because `i.val - 0 + 1` still has to lose its `- 0`. Same for
+`simp only` closing a goal ahead of an `omega` that then has nothing to do.
