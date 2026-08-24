@@ -3528,3 +3528,57 @@ divisibility statement about a lowest coefficient.
 ⚠ The missing half should come by symmetry: reversing a polynomial swaps lowest and highest
 coefficients and sends `κ ↦ 1/κ`, i.e. `P ↔ Q`. Recorded in `RothBaseCase` so the next attempt
 starts from the reversal rather than from scratch. Not attempted here.
+
+### §10's missing half — proved. And correction seventeen.
+
+Both halves of §10 are now in `QOU/Mathlib/RothHeightBound.lean`, and §10's estimate itself is
+`MvPolynomial.index_le_of_abs_coeff_le` in `QOU/Mathlib/RothBaseCase.lean`:
+
+    a ≤ H^e,  H = max(|p|,|q|) ≥ 2,  |coeff n P| ≤ a,  gcd(p,q)=1,  P ≠ 0,  d ≠ 0
+      ⟹  index_d(P; p/q)  ≤  e/d
+
+Log-free by choice: taking logarithms gives Mahler's `Θ₁ ≤ log a/(d log H)`, but the recursion
+is sensitive to rounding (`two_sqrt_expands` shows any positive perturbation is amplified to
+≈ 4), so the exponential form is what gets carried.
+
+**⚠⚠ Correction seventeen.** The previous entry above, and `RothHeightBound`'s own "Next" block,
+called `pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero` *"the `m = 1` base case of Roth's
+lemma, complete and with no analysis in it"*. The theorem is true. The label was the name of the
+statement it was a **step toward** — and read back later, a label becomes a completion.
+
+Same species as corrections 12 and 14, and it survived for the same reason both did: **nothing
+in a green build objects to a docstring.** Every mechanical check this arc runs — `lake build`,
+`#print axioms`, the linter — passes on a file whose prose claims twice what its theorems prove.
+The only check that catches it is re-reading the source next to the Lean, which is what produced
+17 of the 17.
+
+**⚠ The recorded plan was wrong about the method.** It said the half "should come by symmetry:
+reversing a polynomial swaps lowest and highest and sends `κ ↦ 1/κ`" and told the next attempt
+to start there. Reversal works, but it is unnecessary: `Polynomial.trailingCoeff` is
+multiplicative in a domain for exactly the reason `leadingCoeff` is, so `trailingCoeff_dvd_of_dvd`
++ `trailingCoeff_qX_sub_C` give the half **directly**, in four lines, with no reversal and no
+reciprocal. The plan came from thinking about the *page* — where "the lowest and the highest …
+respectively" invites a symmetry argument — rather than about the available API. Worth noting
+because the plan was recorded as guidance for the next agent, and it would have cost them the
+detour.
+
+What the plan did get right is that the halves are **not** symmetric. `q > 0` is free (Lean's ℚ
+keeps a positive denominator) but `p ≠ 0` is not, and at `κ = 0` Mahler's clause is *vacuous*
+rather than false: `P^j = 0` divides only `0`. The assembled bound discharges that corner
+separately, where coprimality forces `q = 1` and `H^j = 1`.
+
+**Why the half was never a detail.** `H = max(|P|,|Q|)`, so the leading half bounds `|Q|^j` and
+proves nothing whenever the numerator carries the height. Validated in Lean at the smallest such
+point: `κ = 3/1`, `P = X − 3`, `d = 1`, `e = 1` — the new theorem gives `index ≤ 1`, which is the
+true value, and `index_le_of_abs_leadingCoeff_le` (which needs `q ≥ 2`) does not apply at all.
+
+**Refactors, because the same block had been written out twice and was about to be a third
+time:** `exists_index_eq_div` (the index in one variable is literally `n₀/d` — and it needs *no*
+hypothesis on `d`, since `idxWeight` reads `n/d` in ℚ where `n/0 = 0`), `taylor_coeff_eq_zero_of_index_eq`,
+and `map_qX_sub_C_pow_dvd_of_taylor_coeff_eq_zero` (the ℚ-divisibility step both height halves
+consume).
+
+**Next:** `Θ₁ ≤ e/d` — feeding this into `IsRothTheta`'s attainment clause at `σ = Unit`. Needs a
+naturality lemma (`pUnitAlgEquiv` commutes with coefficient maps) and `IsCoprime (num) (den)`
+from `Rat.reduced`. Mechanical, but it is the base case *in Θ form*, which is what §13/§14's
+recursion actually consumes.
