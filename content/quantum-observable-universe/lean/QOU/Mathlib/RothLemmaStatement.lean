@@ -1077,6 +1077,80 @@ budget immediately, which is why `rothConstant_step_perturbed` has to carry `v` 
 conclusion rather than absorb it. -/
 theorem two_pow_one_eq_two : (2 : ℕ) ^ (2 - 1) = 2 := by decide
 
+/-- **§14's induction, as pure arithmetic** — the chain, closed.
+
+Given the step at every level, `Θ_n ≤ c_n·s_n` propagates from the base case all the way up.
+The sequence `sq` is `s_n`, each the square root of the previous (`sq (n+1)² = sq n`), which is
+what `rothBound_pow_iff` needs at each level and what keeps the whole chain at a single `t`.
+
+⚠ **`t ≤ sq n` at every level is a real hypothesis, not bookkeeping.**  It is what lets `Ψ`
+absorb the additive `t`, and it is exactly `t ≤ s^{2^k}` for the relevant `k` — true because
+`0 ≤ s ≤ 1`, but it has to be supplied.
+
+⚠ **The chain needs the `s_n` to exist as rationals.**  For a general rational `t` they do not:
+`s_n = t^{2^{−(n−1)}}` is irrational in general.  So this closes the induction exactly for `t`
+that is a perfect `2^{m−1}`-th power of a rational — which is a genuine restriction, and the
+price of staying in `ℚ`.  Going to `ℝ` for the exponent is the alternative; it is not taken. -/
+theorem rothConstant_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+    (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
+    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (ht : ∀ n, t ≤ sq n)
+    (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
+    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → Θ n ≤ (rothConstant n : ℚ) * sq n := by
+  intro n hn
+  induction n, hn using Nat.le_induction with
+  | base => exact hbase
+  | succ n hn ih =>
+      have hΨ : Θ n + t ≤ ((rothConstant n : ℚ) + 1) * sq (n + 1) ^ 2 := by
+        rw [hsq n]
+        linarith [ht n, ih]
+      exact rothConstant_step_lemma4 (θ := Θ (n + 1)) hn (hs0 (n + 1)) (hs1 (n + 1)) hΨ (hw n)
+        (by linarith [hstep n, ht (n + 1)])
+
+/-- **The chain in `RothBound` shape.**  Same hypotheses, conclusion converted by
+`rothBound_pow_iff` at each level. -/
+theorem rothBound_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+    (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
+    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (ht : ∀ n, t ≤ sq n) (hΘ0 : ∀ n, 0 ≤ Θ n)
+    (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
+    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn =>
+  (rothBound_pow_iff (hs0 n)).mpr
+    ⟨hΘ0 n, rothConstant_chain hs0 hs1 hsq ht hbase hw hstep n hn⟩
+
+/-- ⚠ **Why the chain is parameterised by `s` and not by `t` alone.**
+
+The obvious attempt is to run the induction directly on `RothBound`'s squared form, never
+naming `s`.  Writing `k = 2^{n−1}`, one has `Θ'^k ≤ c_n^k·t` and wants `Θ^{2k} ≤ c_{n+1}^{2k}·t`
+from `Θ ≤ t + 2w`, `w² = Θ' + t`.  Bounding `(a+b)^k ≤ 2^k(a^k + b^k)` twice and using `t ≤ 1`
+gives
+
+    Θ^{2k} ≤ 4^k·(8^k·(c_n^k + 1) + 1)·t,
+
+whose leading behaviour is `(32·c_n)^k`, so the route needs `32·c_n ≤ (2c_n + 3)^2`.  At
+`c_n = 1` that is `32 ≤ 25` — **false**, and `c₁ = 1`, so it fails at the very first step.
+
+⚠ This does **not** prove no root-free route exists; it shows the natural crude one loses too
+much.  That is the same `√`-slack failure as everywhere else in this arc, and it is why the
+chain above names `s`. -/
+theorem crude_chain_fails : ¬ (32 * 1 ≤ (2 * 1 + 3) ^ 2) := by decide
+
+/-- **Non-vacuity of the chain**, at the constant sequence `sq ≡ 1`, `t = 1`.
+
+⚠ Degenerate on purpose: `sq ≡ 1` satisfies `sq (n+1)² = sq n` and `t ≤ sq n` trivially, so
+this checks that the seven hypotheses can hold together at all.  The interesting instances have
+`sq n = s^{2^{m−n}}` for a small `s`, where the chain is not constant. -/
+theorem rothConstant_chain_witness :
+    ∀ n, 1 ≤ n → (fun _ : ℕ => (1 : ℚ)) n ≤ (rothConstant n : ℚ) * 1 := by
+  intro n hn
+  have := rothConstant_one_le hn
+  have : (1 : ℚ) ≤ (rothConstant n : ℚ) := by exact_mod_cast this
+  simpa using this
+
 /-- **The induction step in `RothBound` shape** — the obligation the recursion has to meet.
 
 From the sub-problem's bound and §13's inequality, the assembled bound satisfies `RothBound` at

@@ -3453,3 +3453,36 @@ than argued.
 
 `rothBound_succ_of_lemma4_witness` sits on the boundary in three hypotheses at once (`Θ' = t`,
 `w = Ψ`, `Θ = t + 2w`).
+
+### §14's induction, closed — and why it must name `s`
+
+`rothConstant_chain` runs the whole induction: given the step at every level, `Θ_n ≤ c_n·s_n`
+propagates from the base case up. `rothBound_chain` is the same in `RothBound` shape. The
+sequence `sq` is `s_n`, each the square root of the previous (`sq (n+1)² = sq n`), which is what
+keeps the entire chain at a **single** `t`.
+
+⚠ **The chain needs the `s_n` to exist as rationals**, and for a general rational `t` they do
+not — `s_n = t^{2^{−(n−1)}}` is irrational. So this closes the induction exactly for `t` a
+perfect `2^{m−1}`-th power of a rational. That is a genuine restriction and it is the price of
+staying in `ℚ`.
+
+### ⚠ The root-free route fails at the first step
+
+The obvious attempt is to induct directly on `RothBound`'s squared form, never naming `s`. With
+`k = 2^{n−1}`, from `Θ'^k ≤ c_n^k·t`, `Θ ≤ t + 2w`, `w² = Θ' + t`, bounding
+`(a+b)^k ≤ 2^k(a^k+b^k)` twice and using `t ≤ 1`:
+
+    Θ^{2k} ≤ 4^k·(8^k·(c_n^k + 1) + 1)·t,
+
+leading behaviour `(32c_n)^k`, so the route needs `32c_n ≤ (2c_n+3)²`. At `c_n = 1` that is
+`32 ≤ 25` — **false** — and `c₁ = 1`, so it fails at the very first step
+(`crude_chain_fails`).
+
+⚠ This does not prove no root-free route exists; it shows the natural crude one loses too much.
+Same `√`-slack failure as everywhere else in this arc — the fourth instance now, after the
+`√2`, the rounded `j` interval, and `1/d`. **Every one of them was a place where a convenience
+approximation met a constant that had no room.**
+
+The chain naming `s` is therefore not a stylistic choice but the thing that makes the induction
+go through, and `rothBound_pow_iff` — landed several turns ago as a convenience — turns out to
+be the load-bearing conversion.
