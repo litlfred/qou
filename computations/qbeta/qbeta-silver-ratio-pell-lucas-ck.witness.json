@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T02:27:51.155948+00:00",
-  "commitSha": "4edd9258ae20e47e60c573f1af6dc28d7b1ec499",
+  "computedAt": "2026-08-24T08:44:11.780502+00:00",
+  "commitSha": "e4eefdf9fd2392a9fde7f94de07380f57ca61f71",
   "assertions": [
     {
       "name": "c_3_at_silver_is_minus_2",
-      "computed": -2.0,
+      "computed": "-2.0",
       "expected": -2,
       "passed": true,
       "tolerance": 0,
@@ -14,15 +14,15 @@
     },
     {
       "name": "c_4_at_silver_is_minus_49_32",
-      "computed": -1.53125,
-      "expected": -1.53125,
+      "computed": "-1.53125",
+      "expected": "-1.53125",
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "0.000000000000001",
       "source": "c_4 = c_3·b⁴ with b² = 7/8 at silver → -49/32 (Pell-Lucas-clean)"
     },
     {
       "name": "c_7_at_silver_is_minus_8",
-      "computed": -8.0,
+      "computed": "-8.0",
       "expected": -8,
       "passed": true,
       "tolerance": 0,
@@ -30,7 +30,7 @@
     },
     {
       "name": "delta_net_at_silver_is_zero",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0,
       "passed": true,
       "tolerance": 0,
@@ -38,8 +38,8 @@
     },
     {
       "name": "b_sq_at_silver_is_seven_eighths",
-      "computed": 0.875,
-      "expected": 0.875,
+      "computed": "0.875",
+      "expected": "0.875",
       "passed": true,
       "tolerance": 0,
       "source": "prop:silver-ratio-beta-decay-null — b² = 1 - 1/[2]_q² = 7/8 exactly at silver, where [2]_q² = (2√2)² = 8"
@@ -49,7 +49,7 @@
   "durationMs": 5,
   "computation": "qbeta-silver-ratio-pell-lucas-ck",
   "scriptFile": "qbeta_silver_ratio_pell_lucas_ck.py",
-  "scriptHash": "7e0f16981655",
+  "scriptHash": "9da298c5ac42",
   "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,

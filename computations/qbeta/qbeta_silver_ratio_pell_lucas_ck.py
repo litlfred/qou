@@ -47,6 +47,21 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
+import mpmath as mp  # noqa: E402 — after set_compute_dps, per the import-time dps rule
+
+
+def _exact(fr) -> "mp.mpf":
+    """`Fraction` -> `mpf` with NOTHING lost.
+
+    Every denominator in this file is a power of two (2, 8, 32, 64), so the
+    binary conversion is exact and this is not the usual rational->float
+    compromise. The assertions used to pass `float(...)`, which is equally
+    exact for these values but enters the witness as raw float64 -- the rule
+    these witnesses are held to. The data block above already serialises the
+    same numbers exactly, as `str(Fraction)` -> "-49/32"; this brings the
+    assertions into line with it.
+    """
+    return mp.mpf(fr.numerator) / mp.mpf(fr.denominator)
 
 
 def main() -> None:
@@ -159,21 +174,21 @@ def main() -> None:
     # Assertions
     w.add_assertion(
         "c_3_at_silver_is_minus_2",
-        computed=float(c_k_closed[3][1]),
+        computed=_exact(c_k_closed[3][1]),
         expected=-2,
         tolerance=0,
         source="c_3 = J_Hopf(q=1) is constant (q-independent)",
     )
     w.add_assertion(
         "c_4_at_silver_is_minus_49_32",
-        computed=float(c_k_closed[4][1]),
-        expected=float(Fraction(-49, 32)),
-        tolerance=1e-15,
+        computed=_exact(c_k_closed[4][1]),
+        expected=_exact(Fraction(-49, 32)),
+        tolerance=mp.mpf("1e-15"),
         source="c_4 = c_3·b⁴ with b² = 7/8 at silver → -49/32 (Pell-Lucas-clean)",
     )
     w.add_assertion(
         "c_7_at_silver_is_minus_8",
-        computed=float(c_k_closed[7][1]),
+        computed=_exact(c_k_closed[7][1]),
         expected=-8,
         tolerance=0,
         source="c_7 = c_3³ is constant; clean integer",
@@ -189,7 +204,7 @@ def main() -> None:
     delta_net_at_silver = h_at_silver * (h_at_silver - 2) / 2
     w.add_assertion(
         "delta_net_at_silver_is_zero",
-        computed=float(delta_net_at_silver),
+        computed=_exact(delta_net_at_silver),
         expected=0,
         tolerance=0,
         source="prop:silver-ratio-beta-decay-null — Δ(net) = h(h-2)/2 "
@@ -200,8 +215,8 @@ def main() -> None:
     b_sq_check = Fraction(1) - Fraction(1, 8)
     w.add_assertion(
         "b_sq_at_silver_is_seven_eighths",
-        computed=float(b_sq_check),
-        expected=float(Fraction(7, 8)),
+        computed=_exact(b_sq_check),
+        expected=_exact(Fraction(7, 8)),
         tolerance=0,
         source="prop:silver-ratio-beta-decay-null — b² = 1 - 1/[2]_q² = 7/8 "
         "exactly at silver, where [2]_q² = (2√2)² = 8",
