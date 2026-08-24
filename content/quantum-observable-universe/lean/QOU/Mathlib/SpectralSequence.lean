@@ -181,6 +181,58 @@ def EInfinityCell {R : Type u} (S : SpectralSequence R) (r₀ : ℕ)
     (_h : CollapsesAt S r₀) (p q : ℤ) : Type u :=
   S.cell { r := r₀, p := p, q := q }
 
+/-! ### Two further defects in the API itself, demonstrated
+
+    Beyond the vacuity of the *instances* (`qou-fngs`), the **predicate** is
+    weaker than its name. Both facts below are exhibited rather than asserted.
+
+    **(i) `zero` is a marked element, not an additive zero.** `SpectralSequence`
+    carries `zero : ∀ c, cell c` with no additive structure on `cell` and no law
+    relating `zero` to anything. So `CollapsesAt` says "the differential equals
+    whatever the model nominated", which *any* constant differential satisfies —
+    see `constTrue_collapses` together with `constTrue_differential_is_true`.
+
+    **(ii) There is no page-turning, so collapse relates no two pages.** A real
+    spectral sequence requires `E_{r+1} ≅ ker d_r ⧸ im d_r`; this structure has
+    no such field, so `cell {r := 2, …}` and `cell {r := 3, …}` are unrelated
+    types. `EInfinityCell` then *defines* `E_∞` to be the `r₀` page, and
+    `eInfinity_eq_page_is_rfl` shows that equation is `rfl` — a definition, not
+    a consequence of collapsing. The docstring claim that collapse "immediately
+    implies `E_{r₀} = E_{r₀+1} = … = E_∞`" holds only in that circular sense.
+
+    **How to resolve.** Value the cells in `ModuleCat R` (Mathlib has it), make
+    `differential` `R`-linear, and add the two missing laws — `d ∘ d = 0` and
+    the page-turning isomorphism. Then `CollapsesAt r₀ → E_{r₀} ≅ E_∞` becomes a
+    theorem instead of a definition. Everything that needs is already in
+    Mathlib (`LinearMap.ker`, `LinearMap.range`, quotients): it is the *general*
+    spectral-sequence theory that is missing (`qou-pan0`), not this. -/
+
+/-- Counter-model for (i): every differential is the constant `true`. -/
+def constTrue (R : Type u) : SpectralSequence R where
+  cell _ := ULift Bool
+  cell_inhab _ := ⟨⟨true⟩⟩
+  differential _ _ := ⟨true⟩
+  zero _ := ⟨true⟩
+
+/-- It "collapses" at every page — because `zero` was nominated to match. -/
+theorem constTrue_collapses (R : Type u) (r₀ : ℕ) : CollapsesAt (constTrue R) r₀ :=
+  fun _ _ _ => rfl
+
+/-- Yet its differential is the constant `true`, which is not the additive zero
+    of `Bool` under any reading. `CollapsesAt` therefore does not say
+    "the differential vanishes"; it says "the differential is constant at the
+    element the model chose". -/
+theorem constTrue_differential_is_true (R : Type u) (c : CellIndex)
+    (x : (constTrue R).cell c) :
+    ((constTrue R).differential c x).down = true := rfl
+
+/-- Demonstration of (ii): `E_∞ = E_{r₀}` holds by `rfl`, for **any** spectral
+    sequence and **any** collapse proof, because `EInfinityCell` is defined to
+    be the `r₀` page. It is not evidence that the pages stabilise. -/
+theorem eInfinity_eq_page_is_rfl {R : Type u} (S : SpectralSequence R) (r₀ : ℕ)
+    (h : CollapsesAt S r₀) (p q : ℤ) :
+    EInfinityCell S r₀ h p q = S.cell { r := r₀, p := p, q := q } := rfl
+
 /-- The trivial spectral sequence's `E_∞` cell is `PUnit`. -/
 example (R : Type u) (p q : ℤ) :
     EInfinityCell (trivial R) 2 (trivial_collapses_at_E2 R) p q = PUnit := rfl

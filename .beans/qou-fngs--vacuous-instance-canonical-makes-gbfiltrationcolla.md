@@ -96,3 +96,48 @@ you touched can be green because nothing compiles it.
 Not fixed here: the honest repair is either a real `IwahoriHeckeAlgebra`
 instance or dropping an inventory line that claims one exists, and both are
 owner calls about what the upstream bundle is asserting.
+
+## Deeper than the instances: the PREDICATE is weaker than its name
+
+Asked whether `differential _ _ := default` is itself an issue. It is, and it is
+worse than the vacuous instances. Two defects, now **exhibited in Lean** rather
+than asserted.
+
+### (i) `zero` is a marked element, not an additive zero
+
+`SpectralSequence` carries `zero : ∀ c, cell c` — with no additive structure on
+`cell` and no law relating `zero` to anything. So
+
+```lean
+CollapsesAt S r₀ := ∀ c, c.r ≥ r₀ → ∀ x, S.differential c x = S.zero c.next
+```
+
+asserts "the differential equals whatever element the model nominated", which
+**any constant differential satisfies**. `constTrue` is a model whose every
+differential is the constant `true`; `constTrue_collapses` holds at every page,
+and `constTrue_differential_is_true` shows the differential is not the additive
+zero of `Bool` under any reading.
+
+So `CollapsesAt` does not mean "the differential vanishes".
+
+### (ii) No page-turning, so collapse relates no two pages
+
+A spectral sequence requires `E_{r+1} ≅ ker d_r ⧸ im d_r`. This structure has no
+such field, so `cell {r := 2, …}` and `cell {r := 3, …}` are **unrelated types**.
+
+`EInfinityCell S r₀ h p q` is then *defined* as `S.cell {r := r₀, p, q}`, and
+`eInfinity_eq_page_is_rfl` proves `E_∞ = E_{r₀}` by `rfl` — for **any** spectral
+sequence and **any** collapse proof. The docstring's "collapse immediately
+implies `E_{r₀} = E_{r₀+1} = … = E_∞`" is true only in that circular sense.
+
+### How to resolve — and this part needs no missing infrastructure
+
+Value cells in `ModuleCat R`, make `differential` `R`-linear, and add the two
+absent laws: `d ∘ d = 0` and the page-turning isomorphism. Then
+`CollapsesAt r₀ → E_{r₀} ≅ E_∞` becomes a **theorem** rather than a definition.
+
+`LinearMap.ker`, `LinearMap.range` and quotients are all in Mathlib. It is the
+*general* spectral-sequence theory that is missing (`qou-pan0`), **not this** —
+so the honest minimal version is buildable today, and my earlier framing
+("spectral sequences absent from Mathlib, therefore blocked") was too pessimistic
+about this particular file. Correcting that here.
