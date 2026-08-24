@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T20:50:10.924960+00:00",
-  "commitSha": "71cd069f4b9b57bd73c9f8e93b0c934c554f4e11",
+  "computedAt": "2026-08-24T21:06:58.833110+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "I1_polynomial_identity",
@@ -20,9 +20,9 @@
     },
     {
       "name": "I3_g_equals_sin_arctan_z",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true
+      "passed": false
     },
     {
       "name": "det_form_deuteron_needs_supercritical_g",
@@ -31,7 +31,7 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 2,
   "computation": "reeb-g-structural-identity",
   "scriptFile": "reeb_g_structural_identity_probe.py",
@@ -66,7 +66,7 @@
       "q0": "1.10997858275",
       "v": "1.05355521106",
       "[2]_v": "2.00272236386",
-      "z=1/[2]_v": "0.499320334184",
+      "z=1/[2]_v": "0.612688037146",
       "g_landed": "0.446727067905661",
       "E0_MeV": "4.1859814"
     },
@@ -81,8 +81,8 @@
       "classical_limit_v=1": "1/sqrt(5)"
     },
     "I3_projection": {
-      "g=z/sqrt(1+z^2)": "0.446727067905661",
-      "theta=arctan_z_rad": "0.4631037285",
+      "g=z/sqrt(1+z^2)": "0.522428669015885",
+      "theta=arctan_z_rad": "0.5496967408",
       "reading": "g = sin(theta), z = tan(theta); 1-g^2 = cos^2(theta) is the A=2 det factor"
     },
     "headroom_vs_deformation": {

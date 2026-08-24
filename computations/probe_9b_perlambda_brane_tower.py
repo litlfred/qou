@@ -88,6 +88,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from _li_2_q_util import load_q_50dps, li_2_q  # noqa: E402
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
     classical_dim,
@@ -201,7 +202,11 @@ def chi21_seminormal_direct(q, qi):
 
 def make_tower(q, qi):
     h = q - qi
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15). Was z_C = 1/(sqrt q + sqrt(1/q)).
+    # This is a LOCAL z beside this file's own load_q_50dps() call at the
+    # bottom, so converting only the helper would have left z_D and z_C in
+    # one file — the straddle this excision exists to remove.
+    z = _markov_z(q)
     z2 = z * z
     f_pp = z
     f_pn = z

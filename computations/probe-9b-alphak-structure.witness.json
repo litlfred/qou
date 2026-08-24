@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:51:03.294291+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T21:06:44.967242+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "symbolic_tr_T121_eq_z_plus_h_z2",
@@ -30,17 +30,17 @@
     },
     {
       "name": "numeric_z_series_depth_le2",
-      "computed": 0.1260658347330721,
+      "computed": 6.203140168996298e-70,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-40,
       "source": "tr_M(T_w) = z^{ℓ(w)} at 50 dps for all depth ≤ 2 basis words"
     },
     {
       "name": "numeric_tr_T121_closed_form",
-      "computed": 0.13972306403998852,
+      "computed": 9.689576614344582e-70,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-40,
       "source": "tr_M(T_Δ) = z + h·z² at 50 dps (Wenzl-bridge y × seminormal χ)"
     },
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 17,
+  "durationMs": 22,
   "computation": "probe-9b-alphak-structure",
   "scriptFile": "probe_9b_alphak_structure.py",
   "scriptHash": "ade7fe590b72",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -86,10 +86,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -129,11 +129,11 @@
         "T21": "0.375386630862388383999372303379",
         "T121": "0.691166478358444526147719530979"
       },
-      "max_dev_z_series_depth_le2": "0.12607",
-      "dev_tr_T121_vs_z_plus_hz2": "0.13972",
+      "max_dev_z_series_depth_le2": "6.2031e-70",
+      "dev_tr_T121_vs_z_plus_hz2": "9.6896e-70",
       "dev_chi21_T121_vs_zero": "2.7167e-71",
       "alpha3_candidates": {
-        "series_z3": "0.12449094324223497257",
+        "series_z3": "0.22999489803410145346",
         "tr_M_T121": "0.69116647835844452615",
         "rel_depth3_over_depth1": "1.1280887441143537856",
         "rel_dev_from_assigned_1": "0.1280887441",
@@ -172,106 +172,106 @@
         },
         "D(H_6)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "8.0908444179431465602",
-            "rel_dev_vs_me8G": "1.16075",
-            "rel_dev_vs_8G": "0.104141",
+            "sum_k_ge4_zk_Nk": "25.033532239043607075",
+            "rel_dev_vs_me8G": "5.68549",
+            "rel_dev_vs_8G": "2.41628",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.09319904046259965824",
-            "rel_dev_vs_me8G": "0.97511",
-            "rel_dev_vs_8G": "0.987281",
+            "sum_k_ge4_zk_Nk": "0.22725213251877493732",
+            "rel_dev_vs_me8G": "0.93931",
+            "rel_dev_vs_8G": "0.968987",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "0.34184247799282407848",
-            "rel_dev_vs_me8G": "0.908707",
-            "rel_dev_vs_8G": "0.953349",
+            "sum_k_ge4_zk_Nk": "0.79091262303963509406",
+            "rel_dev_vs_me8G": "0.788778",
+            "rel_dev_vs_8G": "0.892066",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "1.5850596656439461797",
-            "rel_dev_vs_me8G": "0.576692",
-            "rel_dev_vs_8G": "0.78369",
-            "verdict_vs_me8G": "REFUTED-scope-(a)"
+            "sum_k_ge4_zk_Nk": "3.6092150756439358778",
+            "rel_dev_vs_me8G": "0.0361186",
+            "rel_dev_vs_8G": "0.507458",
+            "verdict_vs_me8G": "NEAR-MATCH (3.61%)"
           }
         },
         "T/3He(H_9)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "119.35101084917647806",
-            "rel_dev_vs_me8G": "30.874",
-            "rel_dev_vs_8G": "15.2876",
+            "sum_k_ge4_zk_Nk": "616.88717746336879643",
+            "rel_dev_vs_me8G": "163.747",
+            "rel_dev_vs_8G": "83.1854",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.44651726650805417831",
-            "rel_dev_vs_me8G": "0.880753",
-            "rel_dev_vs_8G": "0.939065",
+            "sum_k_ge4_zk_Nk": "1.1216487801068760924",
+            "rel_dev_vs_me8G": "0.700451",
+            "rel_dev_vs_8G": "0.846931",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "43.644922272550523825",
-            "rel_dev_vs_me8G": "10.6559",
-            "rel_dev_vs_8G": "4.95614",
+            "sum_k_ge4_zk_Nk": "103.38645762769108863",
+            "rel_dev_vs_me8G": "26.6105",
+            "rel_dev_vs_8G": "13.1089",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "5696.1452371850666898",
-            "rel_dev_vs_me8G": "1520.22",
-            "rel_dev_vs_8G": "776.342",
+            "sum_k_ge4_zk_Nk": "13203.708815516897654",
+            "rel_dev_vs_me8G": "3525.2",
+            "rel_dev_vs_8G": "1800.88",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           }
         },
         "4He(H_12)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "1111.5637348726903104",
-            "rel_dev_vs_me8G": "295.856",
-            "rel_dev_vs_8G": "150.693",
+            "sum_k_ge4_zk_Nk": "11121.522320596642566",
+            "rel_dev_vs_me8G": "2969.13",
+            "rel_dev_vs_8G": "1516.73",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "1.313584484180630116",
-            "rel_dev_vs_me8G": "0.649193",
-            "rel_dev_vs_8G": "0.820738",
-            "verdict_vs_me8G": "REFUTED-scope-(a)"
+            "sum_k_ge4_zk_Nk": "3.4098607716297267109",
+            "rel_dev_vs_me8G": "0.0893584",
+            "rel_dev_vs_8G": "0.534663",
+            "verdict_vs_me8G": "NEAR-MATCH (8.94%)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "3690.2045273015382469",
-            "rel_dev_vs_me8G": "984.511",
-            "rel_dev_vs_8G": "502.595",
+            "sum_k_ge4_zk_Nk": "9017.923338799831163",
+            "rel_dev_vs_me8G": "2407.34",
+            "rel_dev_vs_8G": "1229.66",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "14976715.033334229468",
-            "rel_dev_vs_me8G": "3.9997e+6",
-            "rel_dev_vs_8G": "2.04384e+6",
+            "sum_k_ge4_zk_Nk": "35714794.251346962619",
+            "rel_dev_vs_me8G": "9.53804e+6",
+            "rel_dev_vs_8G": "4.87393e+6",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           }
         }
       },
       "atom_independence": {
         "cox": {
-          "min": "8.09084441794",
-          "max": "1111.56373487",
-          "max_over_min": "137.38538",
+          "min": "25.033532239",
+          "max": "11121.5223206",
+          "max_over_min": "444.265",
           "atom_independent": false
         },
         "parts": {
-          "min": "0.0931990404626",
-          "max": "1.31358448418",
-          "max_over_min": "14.094399",
+          "min": "0.227252132519",
+          "max": "3.40986077163",
+          "max_over_min": "15.004747",
           "atom_independent": false
         },
         "dim": {
-          "min": "0.341842477993",
-          "max": "3690.2045273",
-          "max_over_min": "10795.044",
+          "min": "0.79091262304",
+          "max": "9017.9233388",
+          "max_over_min": "11401.921",
           "atom_independent": false
         },
         "dimsq": {
-          "min": "1.58505966564",
-          "max": "14976715.0333",
-          "max_over_min": "9448675.9",
+          "min": "3.60921507564",
+          "max": "35714794.2513",
+          "max_over_min": "9895446.4",
           "atom_independent": false
         }
       }

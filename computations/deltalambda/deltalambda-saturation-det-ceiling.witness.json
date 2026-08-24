@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T20:49:47.187096+00:00",
-  "commitSha": "71cd069f4b9b57bd73c9f8e93b0c934c554f4e11",
+  "computedAt": "2026-08-24T21:06:35.709591+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "closed_form_det_matches_mp_det_A2_to_12",
@@ -54,7 +54,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 181,
+  "durationMs": 124,
   "computation": "deltalambda-saturation-det-ceiling",
   "scriptFile": "deltalambda_saturation_det_ceiling_probe.py",
   "scriptHash": "741f0e19514d",
@@ -89,7 +89,7 @@
       "q0": "1.10997858275",
       "E0_MeV": "4.1859814",
       "g_reeb": "0.446727067906",
-      "z_naive_1/[2]_v": "0.499320334184",
+      "z_naive_1/[2]_v": "0.612688037146",
       "ceiling_1/sqrt5": "0.4472135955"
     },
     "part0_algebraic_preflight": {
@@ -347,12 +347,12 @@
           "b4_MeV_at_this_m": "3.88249"
         },
         "z_naive": {
-          "m": "0.499320334184",
-          "rho_pred_3": "2.40992",
-          "rho_pred_4": "4.04458",
-          "vs_target_3_ratio_pred/strong": "0.63206",
-          "vs_target_4_ratio_pred/strong": "0.31023",
-          "b4_MeV_at_this_m": "4.85528"
+          "m": "0.612688037146",
+          "rho_pred_3": "2.33122",
+          "rho_pred_4": "3.82993",
+          "vs_target_3_ratio_pred/strong": "0.61142",
+          "vs_target_4_ratio_pred/strong": "0.29377",
+          "b4_MeV_at_this_m": "7.54503"
         }
       },
       "any_parameter_free_m_hits_both_within_5pct": false,
