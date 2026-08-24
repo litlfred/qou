@@ -3655,3 +3655,38 @@ more than it saved.
    `m ≥ 2`.
 3. **The induction step itself** — `RothLemmaUniform`/`RothLemmaMahler` remain `def`s proved only
    at `m = 1`.
+
+### Correction eighteen, second consequence — `RothLemmaUniform` restated on heights
+
+`RothLemmaUniform` quantified **one** function `qd : σ → ℤ` and used it in two incompatible
+roles: as the denominator of the point (`index d (fun j => pn j / qd j)`, `IsCoprime (pn j) (qd j)`)
+and as `Γ_m`'s `K_h` (`RothGamma o ω d qd`, `B ≤ qd j ^ E`). Under correction eighteen those are
+different objects, and `H ≥ Q` with equality only when the denominator dominates.
+
+The old form was **not false.** `B ≤ Q^E` implies `B ≤ H^E`, so it was a theorem with a stronger
+hypothesis and a weaker conclusion. What it could not be is *fed from `Γ_m`*, which supplies only
+`B ≤ H^E`. Since the induction consumes this schema at `m − 1` and `Γ` is what the induction
+carries, the old form was unusable at exactly its point of use — the same defect as the base
+case's, one level up, and from the same root.
+
+Restated: the point is a rational `κ : σ → ℚ` (Lean's `ℚ` supplies lowest terms and a positive
+denominator, so the coprimality clause §9 states is carried by the type and disappears), and
+`Kh` is pinned to its height by `∀ j, max |(κ j).num| |((κ j).den : ℤ)| = Kh j` — the same shape
+`InRothFracSet` took after correction sixteen. Two fewer hypotheses, one more, and strictly
+stronger.
+
+`rothLemmaUniform_one` now routes through `index_le_of_abs_coeff_le`, i.e. through **both**
+halves of §10. It has to — the `Q^j` half cannot bound `B` by a power of the *height*. Updated
+in step: `index_rescaled_wronskian_le`, `index_rescaled_wronskian_le_right`, both witnesses, and
+the satisfiability example. All rebuild, standard axioms.
+
+⚠ **Self-correction from this session:** the `Θ`-form work added `map_pUnitAlgEquiv`, which is
+`pUnitAlgEquiv_map` — already sixty lines up in the same file, added earlier in this arc.
+Removed. The lesson is the one `beans` already carries in a different domain: *check before you
+create*. A duplicate lemma type-checks, so nothing objects.
+
+**Both halves of `hres` now have the right shape.** `index_rescaled_wronskian_le` (the `x` half,
+from the induction hypothesis) and `index_rescaled_wronskian_le_right` (the `y` half, from the
+base case) are stated in `κ` and heights, so `Γ` can feed them. `hfac` in
+`index_le_of_rothGrowth_of_factor_bound` is still an assumption — assembling the two halves into
+it is the next step, and it is now a matter of composition rather than of a missing theorem.

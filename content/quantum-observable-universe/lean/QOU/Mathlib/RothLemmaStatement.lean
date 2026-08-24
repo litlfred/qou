@@ -482,14 +482,6 @@ section BaseCaseTheta
 
 open Polynomial
 
-/-- `pUnitAlgEquiv` commutes with coefficient maps — the naturality the `Θ` form needs to move
-between `MvPolynomial Unit ℤ` and `ℤ[X]` without leaving the ring. -/
-theorem map_pUnitAlgEquiv {R S : Type*} [CommRing R] [CommRing S] (f : R →+* S)
-    (A : MvPolynomial Unit R) :
-    (pUnitAlgEquiv R A).map f = pUnitAlgEquiv S (MvPolynomial.map f A) := by
-  ext n
-  rw [Polynomial.coeff_map, coeff_pUnitAlgEquiv, coeff_pUnitAlgEquiv, MvPolynomial.coeff_map]
-
 /-- **`IsRothTheta`'s realising pair, transported to `ℤ[X]`.**
 
 Everything §10 needs about the maximising `(A, κ)`, in the one-variable dictionary: a
@@ -520,9 +512,7 @@ theorem exists_polynomial_of_isRothTheta {a : ℤ} {r H : Unit → ℕ} {Θ : �
   · intro n
     rw [coeff_pUnitAlgEquiv]
     exact hAc _
-  · have hmap : (((pUnitAlgEquiv ℚ).symm ((pUnitAlgEquiv ℤ A).map (algebraMap ℤ ℚ)))
-        : MvPolynomial Unit ℚ) = MvPolynomial.map (algebraMap ℤ ℚ) A := by
-      rw [map_pUnitAlgEquiv, AlgEquiv.symm_apply_apply]
+  · have hmap := symm_map_pUnitAlgEquiv A
     have hκeq : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
       funext u
       cases u
@@ -1791,20 +1781,40 @@ for all three.
 ⚠ **The bound `θ` is a parameter, so this is a schema and not a claim.**  Taking `θ` large
 makes it trivially true.  Roth's lemma is the instance in `RothLemmaMahler` below, where `ω`,
 `ε` and `θ` are all tied to the single parameter `t` the source uses.  Quoting this `def` on
-its own overstates what it says. -/
+its own overstates what it says.
+
+⚠⚠ **Correction eighteen, second consequence: the point and `Γ`'s parameter are different
+objects.**  This `def` used to quantify one function `qd : σ → ℤ` and use it *both* as the
+denominator of the point (`index d (fun j => pn j / qd j)`, `IsCoprime (pn j) (qd j)`) **and**
+as `Γ_m`'s `K_h` (`RothGamma o ω d qd`, `B ≤ qd j ^ E`).  §11 says `K_h = H_h = max(|P_h|,|Q_h|)`,
+and `H ≥ Q` with equality only when the denominator dominates, so the two readings are not
+interchangeable.
+
+The old form was **not false** — it is a theorem with a *stronger* hypothesis (`B ≤ Q^E`
+implies `B ≤ H^E`) and hence a weaker statement.  What it could not be is *fed from `Γ_m`*,
+which supplies only `B ≤ H^E`.  Since the induction consumes this schema at `m − 1` and `Γ`
+is what the induction carries, the old form was unusable at exactly the point of use.
+
+Now: the point is a rational `κ : σ → ℚ` (Lean's `ℚ` supplies lowest terms and a positive
+denominator, so no coprimality clause is needed — §9 states one and the type carries it), and
+`Kh` is pinned to its **height** by the second hypothesis.  Compare `InRothFracSet`, which
+took the same shape after correction sixteen.
+
+⚠ The `m = 1` proof now goes through `index_le_of_abs_coeff_le` rather than
+`index_le_of_abs_leadingCoeff_le` — i.e. through **both** halves of §10.  It has to: the
+`Q^j` half alone cannot bound `B` by a power of the *height*. -/
 def RothLemmaUniform (σ : Type*) (m : ℕ) (ω ε θ : ℚ) : Prop :=
-  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (pn Kh : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
+  ∀ (o : σ ≃ Fin m) (d : σ → ℕ) (κ : σ → ℚ) (Kh : σ → ℤ) (P : MvPolynomial σ ℤ) (B : ℤ) (E : ℕ),
     (∀ j, d j ≠ 0) →
+    (∀ j, max |(κ j).num| |(((κ j).den : ℤ))| = Kh j) →
     RothGamma o ω d Kh →
     P ≠ 0 →
     (∀ j, degreeOf j P ≤ d j) →
     (∀ n, |coeff n P| ≤ B) →
     (∀ j, 2 ≤ Kh j) →
-    (∀ j, IsCoprime (pn j) (Kh j)) →
     (∀ j, B ≤ Kh j ^ E) →
     (∀ j, (E : ℚ) ≤ ε * (d j : ℚ)) →
-    index d (fun j => ((pn j : ℚ) / (Kh j : ℚ))) (map (algebraMap ℤ ℚ) P)
-      ≤ ((θ : ℚ) : WithTop ℚ)
+    index d κ (map (algebraMap ℤ ℚ) P) ≤ ((θ : ℚ) : WithTop ℚ)
 
 /-- **Roth's lemma as Mahler states it** (§14, Theorem 1), assembled from the schema.
 
@@ -1844,25 +1854,30 @@ Everything comes from `RothBaseCase.lean`; **no reindexing lemma appears**, whic
 evidence for the design choice argued in the module header. -/
 theorem rothLemmaUniform_one (ω ε θ : ℚ) (hεθ : ε ≤ θ) : RothLemmaUniform Unit 1 ω ε θ := by
   classical
-  rintro o d pn Kh P B E hd - hP - hB hq hco hBq hE
+  rintro o d κ Kh P B E hd hheight - hP - hB hq hBq hE
   have hd0 : d () ≠ 0 := hd ()
   have hdQ : (0 : ℚ) < (d () : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd0
   set P' : Polynomial ℤ := pUnitAlgEquiv ℤ P with hP'
   have hP'0 : P' ≠ 0 := fun h => hP ((pUnitAlgEquiv ℤ).injective (h.trans (map_zero _).symm))
-  have hlead : |P'.leadingCoeff| ≤ Kh () ^ E := by
-    have hcoe : P'.leadingCoeff = coeff (Finsupp.single () P'.natDegree) P := by
-      rw [Polynomial.leadingCoeff, hP', coeff_pUnitAlgEquiv]
-    rw [hcoe]
-    exact le_trans (hB _) (hBq ())
-  have hmain := index_le_of_abs_leadingCoeff_le (p := pn ()) (q := Kh ()) (hq ()) (hco ())
-    hd0 hP'0 E hlead
+  have hcoeff : ∀ n, |P'.coeff n| ≤ B := by
+    intro n
+    rw [hP', coeff_pUnitAlgEquiv]
+    exact hB _
+  have hq0 : (0 : ℤ) < (((κ ()).den : ℤ)) := by exact_mod_cast (κ ()).pos
+  have hco : IsCoprime ((κ ()).num) (((κ ()).den : ℤ)) := by
+    rw [Int.isCoprime_iff_gcd_eq_one]
+    simpa [Int.gcd] using (κ ()).reduced
+  have hmain := index_le_of_abs_coeff_le hq0 hco hd0 hP'0 E (a := B)
+    (by rw [hheight ()]; exact hq ()) hcoeff (by rw [hheight ()]; exact hBq ())
   rw [hP', symm_map_pUnitAlgEquiv] at hmain
-  have hdfun : d = fun _ : Unit => d () := by
+  have hdfun : (fun _ : Unit => d ()) = d := by
     refine _root_.funext fun u => ?_; cases u; rfl
-  have hafun : (fun j : Unit => ((pn j : ℚ) / (Kh j : ℚ)))
-      = fun _ : Unit => ((pn () : ℚ) / (Kh () : ℚ)) := by
-    refine _root_.funext fun u => ?_; cases u; rfl
-  rw [hdfun, hafun]
+  have hafun : (fun _ : Unit => (((κ ()).num : ℚ) / ((((κ ()).den : ℤ)) : ℚ))) = κ := by
+    refine _root_.funext fun u => ?_
+    cases u
+    push_cast
+    exact Rat.num_div_den _
+  rw [hdfun, hafun] at hmain
   refine le_trans hmain ?_
   rw [WithTop.coe_le_coe]
   have h2 := mul_le_mul_of_nonneg_right (hE ()) (le_of_lt (inv_pos.mpr hdQ))
@@ -1890,7 +1905,10 @@ example :
   refine rothLemmaUniform_one 0 1 1 le_rfl
     (⟨fun _ => 0, fun _ => (), fun _ => Subsingleton.elim _ _,
       fun _ => Subsingleton.elim _ _⟩ : Unit ≃ Fin 1)
-    (fun _ => 1) (fun _ => 1) (fun _ => 2) 1 1 0 (fun _ => one_ne_zero) ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_ ?_
+    (fun _ => 1) (fun _ => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ)) (fun _ => 2) 1 1 0
+    (fun _ => one_ne_zero) ?_ ?_ one_ne_zero ?_ ?_ ?_ ?_ ?_
+  · intro j
+    norm_num
   · exact
       { growth := by intro j k hjk; omega
         height := by intro j k _; exact le_rfl
@@ -1901,7 +1919,6 @@ example :
     omega
   · intro n; rw [coeff_one]; split_ifs <;> simp
   · intro j; norm_num
-  · intro j; exact isCoprime_one_left
   · intro j; norm_num
   · intro j; norm_num
 
