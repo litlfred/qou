@@ -79,7 +79,31 @@ from witness_base import WitnessBuilder  # noqa: E402
 # recover precision that was already gone. It read as a high-precision call and
 # was not one. `Q_MP` is the mpf q₀ and carries the digits for real.
 Q_0_HIGH = Q_MP
-REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+# ANCHOR-MATCHED REFERENCE. This producer computes at Q_MP, the PROTON pin, and
+# the base-name reference `atomic-tr-m-mpfr-50dps.witness.json` is the MUON one
+# (`atomic_tr_m_mpfr_50dps` is tagged `ideal_muon`). Comparing across that
+# boundary is the straddle AGENTS.md forbids regardless of size -- and here it
+# was the WHOLE measured disagreement:
+#
+#     atom       vs MUON ref     vs PROTON ref
+#     proton      7.8403e-8       4.67e-51
+#     deuteron    1.5143e-7       1.86e-50
+#     helium-3    2.5171e-7       3.31e-51
+#
+# The two routes agree EXACTLY, to the serialization limit. The ~1e-7 was never
+# a methodological difference between the q-Hecke partition sum and the
+# canonical route; it was a proton computation measured against a muon
+# reference, and it scaled linearly with strand count because tr_M is a product
+# over ~n crossings and so inherits ~n x the 11.5 ppb mu-p q0 gap.
+#
+# The straddle PREDATES the exact-arithmetic migration: the producer previously
+# read `Q_0_FLOAT = q_parameter.Q`, which is the proton float64. Removing the
+# float64 noise did not create the discrepancy, it made it legible -- the noise
+# had been the same order as the straddle.
+_REF_NAME = ("atomic-tr-m-mpfr-50dps-proton.witness.json"
+             if str(Q_MP).startswith("1.10997858")
+             else "atomic-tr-m-mpfr-50dps.witness.json")
+REF_WITNESS = _pb.witness_path(_REF_NAME, HERE)
 
 
 _Y_LAMBDA_CACHE: dict[int, dict] = {}
