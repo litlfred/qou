@@ -143,6 +143,26 @@ WORDS = {
 # qou_substrate.constants rather than transcribed.
 XCHECK_SOURCE = "alpha-k-jones-markov-h4.witness.json"
 XCHECK_Z = "0.49932033403359827"
+
+# Tolerance the cross-check is ASSERTED against, not merely reported at.
+#
+# Until 2026-08-24 `worst` was computed, printed and written into the witness
+# and then never checked: the exit code keyed on `all_ok`, the symbolic
+# q-verification, alone.  That made this control arm silent in exactly the
+# direction it exists to catch.  `XCHECK_Z` is transcribed, so a CONVENTION
+# change breaks loudly; the anchor is read from the artifact at run time
+# (deliberately -- see the note above), so a RE-PIN of that artifact moved the
+# comparison without failing anything.  The residual simply grew in a field
+# nobody reads.
+#
+# 1e-12 is set from the measured floor with headroom, not fitted: the
+# published values are float64, so the relative floor is ~1e-16, amplified to
+# 2.10e-14 on `(1,1,1,1)` because that weight (-0.00084) sits near a
+# cancellation.  The failure this must catch is four or more orders larger --
+# the muon/proton pins differ by 11.5 ppb, so a re-pin moves these weights by
+# ~1e-8 at worst.  Anything between 2.1e-14 and 1e-8 would do; 1e-12 leaves
+# two orders above the observed floor and four below the smallest real defect.
+XCHECK_MAX_REL = 1e-12
 XCHECK_WEIGHTS = {
     "(4,)": "0.22752693019306408",
     "(3,1)": "0.18786885614150228",
@@ -313,6 +333,7 @@ def main():
                       "relative_difference": f"{rel:.3e}"}
         print(f"      {name:11s} closed {str(mine)[:24]:24s} "
               f"published {published:22s} rel {rel:.2e}")
+    xcheck_ok = worst <= XCHECK_MAX_REL
     unit = NUM(sum(cf0[k] * DIMS[k] for k in cf0), 25)
     print(f"      sum_lambda w_lambda * d_lambda = {unit}   (must be 1 = tr_M(1))")
 
@@ -384,6 +405,8 @@ def main():
             ),
             "weights": xres,
             "worst_relative_difference": f"{worst:.3e}",
+            "max_relative_difference_allowed": f"{XCHECK_MAX_REL:.0e}",
+            "cross_check_passed": bool(xcheck_ok),
             "sum_w_times_dim": str(unit),
             "note": (
                 "The published values are floats from an independent numerical "
@@ -397,7 +420,23 @@ def main():
     out.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
     print(f"\n[4] wrote {out.name}")
     print(f"    all q verified: {all_ok};  worst cross-check rel diff: {worst:.3e}")
-    return 0 if all_ok else 1
+    if not xcheck_ok:
+        print(
+            f"\n    FAIL: the cross-check residual {worst:.3e} exceeds "
+            f"XCHECK_MAX_REL = {XCHECK_MAX_REL:.0e}.\n"
+            f"    This control arm reproduces the published record of "
+            f"{XCHECK_SOURCE} at the anchor\n"
+            f"    recorded IN that artifact.  A residual this large means the "
+            f"artifact no longer\n"
+            f"    carries the record these transcribed weights came from -- "
+            f"most likely it was\n"
+            f"    re-pinned.  Do NOT widen this tolerance: re-transcribe "
+            f"XCHECK_WEIGHTS from the\n"
+            f"    artifact's new contents, or point XCHECK_SOURCE at the copy "
+            f"that still holds\n"
+            f"    the original record."
+        )
+    return 0 if (all_ok and xcheck_ok) else 1
 
 
 if __name__ == "__main__":
