@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-08-24T13:16:47Z
+updated_at: 2026-08-24T13:27:05Z
 ---
 
 Opened by the `F64_ENGINE_ENTRY` tier added to
@@ -83,3 +83,58 @@ modules routing through the Rust engine were counted as engine-free. And the
 framing was too generous regardless: "f64 engine" exempts a module only when
 **no exact sibling exists**. Where one does, it is not an f64 pipeline by
 design, it is the wrong entry point.
+
+
+## CORRECTION to this bean's own headline: 18 actionable, not 71
+
+The title says 71 and that is the CANDIDATE count. Hand-checking two sites
+found both legitimate — two for two — so the split is now computed by the
+audit itself (`native_entry_disposition`) rather than asserted here:
+
+    deliberate    5 file(s)   7 site(s)  — also calls an _mpfr entry
+    harmless     33 file(s)  46 site(s)  — never serialises above 17 digits
+    actionable   13 file(s)  18 site(s)  — serialises wide from an f64 value
+
+**The harmless bucket is the larger half.** A drain driven by the bare 71
+would have spent most of its effort on modules where the f64 entry is right.
+
+The two that taught this, both of which the proxy now classifies correctly:
+
+* `chi_4he_binding_lossless.py` — calls the f64 entry ON PURPOSE, as a
+  same-convention cross-check floor for its own MPFR result. Its comment says
+  so. The module name says the opposite of what a raw flag implies.
+* `atomic_chirality_residue.py` — `float(mp.log(abs(chi)))` three lines after
+  the call. The downstream is f64 throughout, so MPFR buys nothing.
+
+### The 13 actionable candidates
+
+    1x  computations/all_nuclides_wedderburn_spectral_v2.py
+    1x  computations/averaged_block_swap_binding.py
+    1x  computations/deltalambda/delta1g_deuteron_measurement_probe.py
+    1x  computations/deltalambda/gap10_tjon_correlation_probe.py
+    1x  computations/deltalambda/mu3_abs_choice_robustness_probe.py
+    1x  computations/deltalambda/mu3_anchor_consistency_probe.py
+    1x  computations/deltalambda/mu3_frechet_perblock_probe.py
+    1x  computations/fr_pullback_cosh_h_test.py
+    1x  computations/fr_pullback_k1_k2_test.py
+    1x  computations/fr_pullback_k3_test.py
+    4x  computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py
+    3x  computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py
+    1x  computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py
+
+Re-derive with `python3 computations/f64_into_mpmath_audit.py`; do not quote
+this list once it has aged.
+
+Note the three `mu3_*` probes: `mu3_anchor_consistency_probe.py` is AGENTS.md's
+own worked example of a LAYER STRADDLE (11.54 ppb, ideal-muon `y_λ` against a
+proton-pinned `χ_λ`). A layer straddle and an f64 boundary in the same probe
+means the recorded number has two independent error sources — resolve the
+straddle first, since it is ~1e-7 relative and dominates the ~1e-16 f64 floor
+by nine orders. Fixing the f64 there first would be measuring the smaller
+error while the larger one is live.
+
+### The proxy's known blind spot
+
+It keys on `fmt(` and `nstr(x, N>=18)`. A module serialising some other way
+(hand-built f-string at width, `json.dump` of an mpf via `str()`) reads as
+harmless. The printed line says "a proxy, not a verdict" for this reason.
