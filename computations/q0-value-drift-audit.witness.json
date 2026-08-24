@@ -7,7 +7,7 @@
       "STALE": 229,
       "proton-pin": 1523,
       "unknown": 25,
-      "canonical": 192
+      "canonical": 179
     },
     "stale_total": 229,
     "new_stale": 0,
@@ -6392,30 +6392,30 @@
       {
         "file": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
         "field": "result.q0",
-        "value": "1.10997859555733471",
-        "class": "canonical",
-        "ppb_vs_canonical": -8.91887758926777e-09
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889980326
       },
       {
         "file": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/wlambda-transfer-matrix-connected.witness.json",
         "field": "result.q0",
-        "value": "1.10997859555733471",
-        "class": "canonical",
-        "ppb_vs_canonical": -8.91887758926777e-09
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889980326
       },
       {
         "file": "computations/deltalambda/wlambda-transfer-matrix-connected.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/ylambda-normalization-closed-form.witness.json",
@@ -7176,16 +7176,16 @@
       {
         "file": "computations/habiro/qbeta-h4-stagec-markov-infra.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro/qbeta-h4-stagec-markov-infra.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-beryllium-10.witness.json",
@@ -9605,9 +9605,9 @@
       {
         "file": "computations/probe-he4-magic-baryeven-prune.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
@@ -11488,16 +11488,16 @@
       {
         "file": "computations/probes/qbeta-root-of-unity.witness.json",
         "field": "data.q_0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/qbeta-root-of-unity.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/qbeta-sdeformed-leading-bound.witness.json",
@@ -12412,16 +12412,16 @@
       {
         "file": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
         "field": "data.q_0",
-        "value": "1.109978595557334719899763",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.9863736644033997e-16
+        "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-coherent-collapse-sinh-cosh.witness.json",
@@ -12538,16 +12538,16 @@
       {
         "file": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
         "field": "data.q0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-dladder-barodd-borel-pade-laplace.witness.json",
