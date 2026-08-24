@@ -1,11 +1,11 @@
 ---
 # qou-vfy1
-title: '221 blocks assert computation.status "verified"; 64 are not supported by the witness they cite'
+title: 221 blocks assert computation.status "verified"; 64 are not supported by the witness they cite
 status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T05:20:00Z
-updated_at: 2026-08-22T07:15:00Z
+updated_at: 2026-08-23T20:44:21Z
 ---
 
 The quantified form of class **C2** in the `qou-3nva` ledger — a block and
@@ -466,3 +466,81 @@ Either way it is a witness-schema decision with a measured blast radius, which
 is where I am stopping. The value delivered here is that the blast radius is now
 known and the earlier recommendation is withdrawn before anyone acted on it.
 
+
+---
+
+## 2026-08-23 — the checker this bean asks for now exists; 41 unbacked, listed
+
+> "If the field is kept for any reason, it needs a checker that fails when a
+> block claims `verified` while its witness is absent, failing, or vacuous —
+> which is the 64."
+
+`scripts/check-computation-status.py` now does all three. Step 1 of this bean's
+own order-of-work — the **8 blocks citing a witness that reports
+`allPassed: false`** — is **DONE**: that class was drained under `qou-bm4i`
+(it had grown to 12), and the corpus now reports **0 disagreements across 398
+block/witness pairs**.
+
+### Why consumer-side, and why the withdrawn fix stays withdrawn
+
+This bean already established that making `WitnessBuilder` emit
+`allPassed: null` is a flag day, not a one-liner: ~a dozen producers hand-roll
+`return 0 if wit["allPassed"] else 1`, and `None` is falsy, so it converts a
+silent false positive into a loud false negative. That withdrawal stands.
+
+The checker instead reads `len(assertions)` directly. **No schema change, no
+producer change, no blast radius** — which is this bean's own preferred framing,
+*"the signal is what is missing, not the field"*, implemented on the side that
+needs no negotiation.
+
+### Measured now: 41 unbacked (vfy1 measured 43)
+
+The difference is a deliberate refinement, not drift: a block that pairs a
+vacuous witness **with** an asserting one is not unbacked, and is no longer
+counted. Classification spot-checked on three — `allPassed: true`,
+`assertions: []` in each.
+
+Also surfaced: **40** cited witnesses carry no top-level `allPassed` at all.
+Counted, not failed — a data-only witness is often legitimate.
+
+`--strict` keeps its original meaning (contradictions only) so existing callers
+are unaffected; `--strict-unbacked` is opt-in and covers both. Verified:
+`--strict` exits 0, `--strict-unbacked` exits 1.
+
+### The 41, for whoever works them
+
+    alg:bring-brane                            prop:cyclotomic-cl3-orbit-sum-general
+    alg:delta-lambda-closure                   prop:cyclotomic-depth3-dimension-synthesis
+    alg:gb-filtration                          prop:cyclotomic-l-value-decomposition
+    alg:jet-prefix-transport                   prop:cyclotomic-orbit-sum-all-depths
+    alg:q-beta-truncation                      prop:cyclotomic-trilog-imaginary-closed-form
+    conj:borromean-baryon-mass-formula         prop:delta-max-numerical-scale
+    conj:bring-figure-eight-depth-2-witness    prop:delta-max-uniform-bound
+    conj:bring-trilog-depth-3-witness          prop:e-infinity-page-identifications
+    conj:gs-archimedean-agreement-residue      prop:hecke-mass-trace
+    conj:gs-residue-at-root-existence          prop:joint-tower-sdp-confinement
+    conj:kashaev-density-equals-sdp-multiplicity  prop:jonquiere-cyclotomic-tate-rationality
+    def:markov-axiom-recursive-ascent          prop:markov-pair-z2
+    def:wenzl-A-operator                       prop:operator-valued-combiner-convergence
+    lem:frobenius-cocasimir-refuted-deuteron   prop:q-beta-spectral-bridge
+    prop:binding-scale-catalan                 prop:q-rogers-pentagon-archimedean
+    prop:bring-trilog-imaginary-tate-rational  prop:s4-s3-half-symmetric-projection
+    prop:categorical-mass-markov               prop:schur-weyl-mass-decomposition
+    prop:cl3-zeta5-orbit-sum-identity          prop:wigner-np-pairing
+    prop:cl3-zeta5-pslq-independence           rem:figure-8-muon-mass-cross-check
+    prop:crossed-module-euler-characteristic   rem:recursive-atom-knot-atlas-registry
+                                               thm:six-term-mass-formula-complete
+
+### Note on what "fixing" these means — it is not a re-run
+
+A contradicted block is fixed by correcting the status or the compute. An
+**unfalsifiable** one cannot be fixed by re-running anything: its producer has
+to grow a real assertion, or the `verified` claim has to come down. Those are
+per-block authoring decisions, 41 of them, and none are made here.
+
+One caution carried over from the qou-bm4i drain, because it applies with more
+force to this list: **four of those twelve correctly ended at `failed`.** Do not
+work this list as a red-to-green exercise. `lem:frobenius-cocasimir-refuted-deuteron`
+has "refuted" in its label; several of the `conj:` entries are open problems.
+For a good number of these the honest outcome is a status demotion, not a new
+assertion.

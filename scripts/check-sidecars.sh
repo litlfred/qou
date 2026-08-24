@@ -138,11 +138,41 @@ for f in "${files[@]}"; do
                | sed '\#/-#,\#-/#d' | sed 's|--.*||')
         GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
-        # Genuine archimedean JUSTIFICATION (a statement that actually needs ℝ):
-        JUST='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|0\s*<|<\s*1|≤|≥|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
-        printf '%s\n' "$body" | grep -qE "$RTYPE" && hasR=1   || hasR=0
-        printf '%s\n' "$body" | grep -qE "$JUST"  && hasJ=1   || hasJ=0
-        printf '%s\n' "$body" | grep -qE "$GEN"   && hasGen=1 || hasGen=0
+        # Archimedean justification, in two strengths.
+        #
+        # STRONG signals mean archimedean content wherever they appear: a
+        # `Real.*` function, a tactic that needs an ordered field, an
+        # explicit `LinearOrdered`, or a physical constant.
+        #
+        # WEAK signals are the bare relational operators. `0 < q` IS the §7c
+        # tell when `q : ℝ` — the §7c table lists it — and means nothing at
+        # all when there is no ℝ in the file, because `≤` on ℕ or ℤ is
+        # ordinary. So they count only alongside RTYPE.
+        #
+        # Lumping them together over-fired on exactly the files that COMPLY:
+        # `hasGen` is 1 only when a file uses the generic ring §7c asks for,
+        # so any compliant file that also compared two naturals was reported
+        # as "MIXED generic + archimedean" with no ℝ anywhere in it. Measured
+        # over the 2063 library files: 258 MIXED, of which 129 contained no
+        # ℝ at all. Splitting the strengths drops those 129 and changes no
+        # other verdict — base-ring-minimal stays at 163, and every one of
+        # the 129 has hasR=0 (bean qou-mr3q).
+        #
+        # MERGED 2026-08-23 with main's `_real`-pair detection (qou-akb4).
+        # The two fixes are ORTHOGONAL and neither subsumes the other: the
+        # strength split clears a compliant generic file that merely compares
+        # two naturals, while the pair detection clears a file that genuinely
+        # carries both a generic decl and its ℝ specialisation. Resolving this
+        # conflict to either side alone would have silently dropped the other
+        # half of the false-positive reduction.
+        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        WEAK='(0\s*<|<\s*1|≤|≥)'
+        printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
+        printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
+        printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
+        printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
+        # A weak operator justifies ℝ only when ℝ is there to justify.
+        if [ "$hasS" = 1 ] || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
         # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
         # declaration `foo` sitting beside its archimedean specialisation
         # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the
@@ -165,7 +195,7 @@ for f in "${files[@]}"; do
           echo "▸ $f  [§7c generic + _real specialisation — prescribed pattern, informational]"
         elif [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
           echo "▸ $f  [⚠ §7c MIXED generic + archimedean → split into two files per §7c]"
-          printf '%s\n' "$body" | grep -nE "$RTYPE|$JUST" | head -6 | sed 's/^/         /'
+          printf '%s\n' "$body" | grep -nE "$RTYPE|$STRONG" | head -6 | sed 's/^/         /'
           action=1
         elif [ "$hasR" = 1 ] && [ "$hasJ" = 0 ]; then
           echo "▸ $f  [⚠ §7c base-ring-minimal: ℝ in type but NO archimedean construct → likely gratuitous; generalize to {R}/[Field R]]"
@@ -327,6 +357,77 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
     action=1
     echo "⚠ block-manifest-audit: a changed block's manifest does not load."
     printf '%s\n' "$bma_out" | sed 's/^/    /'
+  fi
+fi
+
+# ── computation.status vs. the witness it cites ──────────────────────────
+# `ComputationStatus` is explicit: "verified" = witness matches expected values
+# within tolerance; "failed" = it does not. NOTHING compared the two — no
+# constraint, no sweep, no CI step — and 12 of 166 blocks marked `verified`
+# cited a witness whose own `allPassed` was false, one of them contradicting a
+# number the block states by a factor of three.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.ts$'; then
+  mapfile -t statusfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.ts$')
+  if ! st_out=$(python3 "$ROOT/scripts/check-computation-status.py" \
+        --files "${statusfiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ computation.status disagrees with the cited witness:"
+    printf '%s\n' "$st_out" | grep -E '✗|witness :|failing :' | sed 's/^/    /'
+  fi
+fi
+
+# ── A content .md added without its .ts manifest ─────────────────────────
+# NOTHING detects this. The platform's `orphan QA sidecar` error is a PROXY:
+# it fires only once a file has happened to get QA-swept, so it caught 4 of
+# the 9 manifests the 52c68267f2 bulk import dropped and was blind to the
+# other 5 (bean `qou-cauj`). An unregistered .md is invisible to the rendered
+# paper, to every per-block checker, and to validate.
+# Restricted to CHAPTER dirs -- `*/audit/`, `lean/`, and paper-root notes are
+# legitimately not blocks -- and to CHANGED files, so it flags what a commit
+# adds rather than reprinting the standing backlog.
+if printf '%s\n' "${files[@]}" | grep -qE '^content/[^/]+/[^/]+/[^/]+\.md$'; then
+  unreg=()
+  while read -r m; do
+    case "$m" in */audit/*|*/lean/*|*.qa.md) continue;; esac
+    # `files` comes from `git diff --name-only`, which lists DELETIONS too. A
+    # removed .md has no .ts either, so without this guard every deletion is
+    # reported as unregistered. Caught by the gate flagging
+    # ns-kummer-specialisation-divisibility.md, deleted long ago.
+    [ -f "$m" ] || continue
+    [ -f "${m%.md}.ts" ] || unreg+=("$m")
+  done < <(printf '%s\n' "${files[@]}" | grep -E '^content/[^/]+/[^/]+/[^/]+\.md$')
+  if [ ${#unreg[@]} -gt 0 ]; then
+    action=1
+    echo "⚠ content .md with no .ts manifest — unregistered, so absent from the"
+    echo "  rendered paper and from every per-block checker:"
+    printf '    %s\n' "${unreg[@]}"
+    echo "    → add the sibling .ts and list it in the chapter manifest,"
+    echo "      or move the file to docs/audits/ if it is not a block."
+  fi
+fi
+
+# ── Dangling citation keys in the files this commit touches ──────────────
+# AGENTS.md §1: "A `sorry` without `-- Ref:` is always a review failure" and
+# the key "must match an entry in content/schema/references.ts exactly".
+# NOTHING enforced that. `run-validate` prints
+#   "no reference registry configured — cites-resolve did not run"
+# and exits 0 over a corpus that carried 54 dangling sites; the platform's
+# `cites-resolve` constraint is real but qou never calls
+# `configureReferenceRegistry`, so it no-ops. Wiring it as-is is NOT the fix:
+# measured, it flags `[manuscript]` — the sentinel AGENTS.md §1 sanctions — as
+# an unresolved citation on two blocks. check-citation-keys.py knows all four
+# live conventions (manuscript / cross-paper label / same-paper label /
+# `[tag] <in-repo-path>`), so it is the gate.
+# Scoped to CHANGED files on purpose: a standing backlog remains, and a gate
+# that reprints all of it every commit is one that gets learned-ignored.
+if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
+  mapfile -t citefiles < <(printf '%s\n' "${files[@]}" | grep -E '\.(ts|lean)$')
+  if ! cite_out=$(python3 "$ROOT/scripts/check-citation-keys.py" \
+        --files "${citefiles[@]}" --strict 2>&1); then
+    action=1
+    echo "⚠ dangling citation key(s) in files you changed — add the entry to"
+    echo "  content/schema/references.ts, or use a documented convention."
+    printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
   fi
 fi
 

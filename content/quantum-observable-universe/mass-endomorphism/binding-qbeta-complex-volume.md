@@ -111,11 +111,11 @@ same $\mathfrak{V}$.
   $\mathrm{Vol}$ and $\mathrm{CS}$ are separately real.
 
 
-## The open single-$\mathfrak{V}$ assembly and the ζ₄-faithfulness constraint
+## The open single-$\mathfrak{V}$ assembly and the $\zeta_4$-faithfulness constraint
 
-The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
+The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **$\zeta_4$-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full $\zeta_4$-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
-**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **$\zeta_4$-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
 
 
 ## The open Stage-C $\sigma_3$-lift obligation

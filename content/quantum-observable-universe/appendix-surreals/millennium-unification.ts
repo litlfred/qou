@@ -28,5 +28,5 @@ export default remark({
     "unification",
     "classical-limit",
   ],
-  cites: ["conway1976", "gonshor1986", "lagarias2010", "cook1971", "tate1950", "jaffe2006"],
+  cites: ["conway1976", "gonshor1986", "lagarias2010", "cook1971", "tate1967", "jaffe2006"],
 });
