@@ -65,3 +65,78 @@ SUGGESTED SHAPE
      diff each witness, and expect err_pct-style outputs to move (catalan's
      6Li err_pct moved 0.0123 points).
   3. Read the 5 ambiguous files before touching them.
+
+## RESOLVED — but the premise this bean was opened on was wrong
+
+### The premise
+
+I wrote that "35 producers carry hand-typed AME binding energies that are
+wrong", as if they were typos. They are not. Commit 03c25e8db — OWNER-DIRECTED
+("Owner: `ame data is in corpus`") — changed what canonical MEANS:
+
+    - return +(mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000)
+    + per_a = mp.mpf(repr(_ame_entry(Z, A)["binding_energy_per_A_keV"]))
+    + return +(per_a * A / 1000)
+
+off the derived, float64-computed column and onto the column AME quotes. The
+corpus literals were byte-exact against the PREVIOUS canonical value. They are
+stale, not mistyped, and that distinction decides what may be done to them.
+
+### There was already a bean and a tool for this
+
+Bean fvxq, and probes/ame_registry_routing_triage.py, which draws the line
+that matters: routing a literal that is NOT byte-exact to the registry
+SILENTLY CHANGES A VALUE. SAFE = byte-exact, value-preserving. UNSAFE = a
+value-reconciliation decision. fvxq also records the discipline I would have
+broken with a blanket sweep: routing a `_VALIDATION` constant into a
+prediction INPUT violates the 3-cal discipline; these constants are
+comparison targets.
+
+### What I fixed
+
+THE ROADMAP FIRST — it was wrong in both directions and nothing built on it
+could have been trusted:
+  * it scanned raw text, counting values in COMMENTS and docstrings as
+    routable sites (my own explanatory comments inflated SAFE 27 -> 35).
+    Replaced with a `tokenize` pass.
+  * it globbed `computations/*.py` TOP LEVEL ONLY, hiding probes/,
+    deltalambda/, phase5/, sweeps/ — the same defect as the q0 manifest's
+    "root-only" lookup. Now rglob.
+  * its docstring still cited the pre-03c25e8db canonical values.
+  Corrected counts: SAFE 27 -> 15 (comments dropped);
+                    UNSAFE 248 -> 446 in 171 files (subdirs now visible).
+
+THEN DRAINED THE ENTIRE SAFE CLASS — 15 routes, verified value-preserving:
+  8687aa502  four comparison-target tables (probe_q6j_jm_spectral,
+             probe_volume_wedderburn, binding_per_block_magnitude_a3,
+             binding_perblock_bond_type_a3)
+  42c35a02f  six byte-exact deuteron sites
+  f7fe2d41e  three more, surfaced only once the roadmap saw subdirectories
+Plus, earlier on this branch: catalan_binding, bar_pairing_binding_observable,
+path_b_habiro_mass_probe, atom_vhyp_closure_matrix_m, mass_binding_dashboard.
+
+SAFE is now 3 routes in 1 file, and that one is deliberate:
+registry_witness_pin_validator.py's literals are the fixtures it validates the
+registry AGAINST. Routing them would have it check the registry against
+itself.
+
+### Two things measurement caught that assumption would not have
+
+1. binding-per-block-magnitude-a3's witness was ALREADY STALE — B_scalar_MeV
+   6.5% off. Reverting my change entirely and re-running HEAD's own code gave
+   the identical 6.5% shift. Isolating by diffing HEAD-code-re-run against
+   my-change-re-run: B_scalar rel 0.00e+00. My change moved the AME column
+   and nothing else.
+2. whipple_observable_ratio_probe came back with an assertion flipped
+   True -> False. My import had landed BELOW its first use and the enclosing
+   `try/except Exception` swallowed the NameError — rc=0, valid witness,
+   silently inverted result. Fixed by placing the import above first use.
+
+### What remains, and why it is not mine to sweep
+
+446 UNSAFE literals in 171 files. Every one changes a value. 03c25e8db
+establishes the registry as canonical by owner directive, so the direction is
+settled — but 171 producers re-run with per-witness verification is a
+migration, and the class includes prediction-input sites that must NOT be
+routed at all (3-cal). The roadmap is now accurate enough to plan it; it was
+not before. Recorded under fvxq's UNSAFE class, which is where it belongs.

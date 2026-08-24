@@ -63,3 +63,29 @@ CONTEXT: NOT AN ISOLATED CASE
   q0_producer_pin_classifier.py --show 200 reports 11 producers where "code
   says one pin, witness records the other", several with "hardcoded muon
   50-digit" -- the same defect class z2bn's fix was written to close.
+
+## RESOLVED — 76708128d
+
+z2bn_tau_derivation_probe moved from `ideal_muon` to `physical_proton` in
+computations/q0_anchor_manifest.json. Removing it from ideal_muon is the
+operative change; physical_proton membership is inert.
+
+  q0Anchor  proton (unchanged — it was always declared)
+  q0Value   1.10997859555733... -> 1.10997858275138...  now agrees
+  q0_anchor_consistency_audit: Q0_FLIP 1 -> 0, Q0_OK 795 -> 801
+
+The fossil reading held up: the manifest regeneration (ea82e980e) is NOT a
+descendant of the producer fix (2ee9a5169) — checked with
+`git merge-base --is-ancestor`, not timestamps — so it classified z2bn from
+the pre-fix witness, written while q0 was a hardcoded MUON literal under a
+comment saying proton. Every other line of evidence points to proton: the
+producer's declaration, its q0AnchorReason citing "the canonical proton pin",
+the sibling lever1 producer citing the 2026-08-07 owner directive that
+production code defaults to proton, and lever1's own physical_proton bucket.
+
+Ten substantive fields shift by ~1e-8 (the 11.54 ppb mu-p gap). I first read
+that as contradicting the producer's recorded claim of byte-identical
+muon-vs-proton output. It does not — that claim describes the OLD hardcoded
+state, and the reason itself says anchor-insensitivity was "the SYMPTOM of
+hardcoding, not evidence of independence", predicting the anchor would become
+real once q0 was read rather than typed. The shift is that confirmed.
