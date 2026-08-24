@@ -3836,3 +3836,29 @@ session. Fixed, and flagged in place.
 ⚠ `RothLemma4` has the same shape and has **not** been checked against correction twenty. Its
 conclusion `Θ ≤ t + 2w` is weaker so the counterexample does not transfer directly, and none has
 been sought. Recorded as unchecked rather than asserted either way.
+
+### §12's step, in the shape §12 uses it
+
+`index_rescaled_wronskian_le_theta` and `..._right_theta` — the two halves of `hres` consuming
+`IsRothTheta`'s upper-bound clause directly instead of the `RothLemmaUniform` schema. Both
+proved first try, with a witness.
+
+The evidence that this is the right formulation is the hypothesis stack. Against the schema
+versions these drop **`Kh`, `E`, coprimality, `2 ≤ Kh`, `RothGamma`, and `r ≠ 0`** — six
+hypotheses — and prove in a third the lines. §12 asks for `U ∈ R(b;ρ)` and `κ ∈ Q(H)`; that is
+all `IsRothTheta.1` wants, so nothing else has to be threaded through.
+
+The `RothLemmaUniform` versions are **superseded, not wrong** — proved, true, and carrying a
+stack the induction cannot produce. Kept until the recursion confirms nothing needs them.
+
+**What is left for `hres`**, now that both halves and their degree bounds are in place:
+
+1. §12's height estimate — a uniform `b` for the determinant. `abs_coeff_det_pderivList_le`
+   gives `b = r!·(S·(d^L·B))^r`; §12 wants `b = 2^{2n(r₁+…+r_m)}·n!·a^n` and shows
+   `b ≤ H₁^{ρ₁t/(m−1)}`. Read verbatim, not formalised.
+2. `Γ_{m−1}` for the descended system — **`rothGammaFull_descend`, proved.**
+3. `RothLemmaTheta` at `m−1` to turn `Θ_{m−1}` into a number — the induction itself, with
+   `rothLemmaTheta_one` as its base and `rothBound_succ_of_lemma4` as its arithmetic.
+
+So the chain is now: two proved halves, a proved descent, a proved base case, and a proved
+step-arithmetic, with (1) the one genuinely unformalised link.

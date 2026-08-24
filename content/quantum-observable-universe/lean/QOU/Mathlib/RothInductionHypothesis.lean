@@ -190,6 +190,132 @@ theorem index_rescaled_wronskian_le_right [DecidableEq σ]
   rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at hIHapp
 
 
+/-! ### §12's own form — `Θ` rather than the `E`-encoded schema
+
+Correction nineteen: §12 invokes the induction hypothesis as
+
+> `J(U; ρ₁,…,ρ_{m−1}; κ₁,…,κ_{m−1}) ≤ Θ_{m−1}(b; ρ₁,…,ρ_{m−1}; H₁,…,H_{m−1})`
+
+which is **the definition of `Θ`** — `U ∈ R(b;ρ)` and `κ ∈ Q(H)`, nothing else.  There is no
+height *exponent* at this step; `Γ` enters separately, as what bounds `Θ_{m−1}` afterwards.
+
+The two theorems below are that step.  They consume `IsRothTheta`'s upper-bound clause
+directly and are shorter than the `RothLemmaUniform` versions above, which fuse set membership
+with `Γ` and share a single `E` that `Γ` cannot supply.
+
+⚠ The `RothLemmaUniform` forms above are **superseded, not wrong**.  They are proved and their
+statements are true; they simply carry a hypothesis stack the induction cannot produce.  Kept
+until the recursion is written and confirms nothing needs them. -/
+
+/-- **The `x` half of `hres`, in `Θ` form** — §12's `J(U;ρ;κ) ≤ Θ_{m−1}(b;ρ;H)`.
+
+§6's Gauss replaces the rational Wronskian by an integral `U'` with `map U' = C l · W_x`; `U'`
+then lies in `R(b; r·d₁)` by the degree and height bounds; `IsRothTheta`'s first clause applies;
+and `index_C_mul` carries the bound back, the scaling being free on the index side. -/
+theorem index_rescaled_wronskian_le_theta [DecidableEq σ]
+    {r : ℕ} (d₁ : σ → ℕ) (b : ℤ) (H : σ → ℕ) (κ : σ → ℚ) (Θ' : ℚ)
+    (hΘ' : IsRothTheta b (fun j => r * d₁ j) H Θ') (hκ : InRothFracSet H κ)
+    (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
+    (P : MvPolynomial (σ ⊕ Unit) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) (hWy : mvGenWronskian Dy ψ ≠ 0)
+    (hdeg : ∀ j k, degreeOf j (φ k) ≤ d₁ j)
+    (hB : ∀ m, |coeff m (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det| ≤ b) :
+    index (fun j => r * d₁ j) κ (mvGenWronskian Dx φ) ≤ ((Θ' : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
+    exists_integral_wronskian_factors Dx Dy φ ψ P hP hWx
+  have hU'ne : U' ≠ 0 := integral_factor_ne_zero hl hWx hU'
+  have hV'ne : V' ≠ 0 := integral_factor_ne_zero (inv_ne_zero hl) hWy hV'
+  have hdegU : ∀ j, degreeOf j U' ≤ r * d₁ j := fun j =>
+    degreeOf_integral_factor_le hU' j
+      (degreeOf_mvGenWronskian_le j Dx φ (d₁ j) (fun k => hdeg j k))
+  have hBU : ∀ n, |coeff n U'| ≤ b := fun n =>
+    abs_coeff_integral_wronskian_factor_le hfact hV'ne hB n
+  have happ := hΘ'.1 U' κ ⟨hU'ne, hdegU, hBU⟩ hκ
+  have hmap : map (algebraMap ℤ ℚ) U' = C l * mvGenWronskian Dx φ := hU'
+  rwa [hmap, index_C_mul _ _ hl] at happ
+
+/-- **The `y` half of `hres`, in `Θ` form** — §12's `J(V; ρ_m; κ_m) ≤ Θ₁(b; ρ_m; H_m)`.
+
+The mirror, and it needs no induction hypothesis: the split-off group is one variable, so the
+`Θ` it is measured against is `Θ₁`, which §10 bounds outright (`isRothTheta_le_of_gamma_one`). -/
+theorem index_rescaled_wronskian_le_right_theta [DecidableEq σ]
+    {r : ℕ} (d₂ : Unit → ℕ) (b : ℤ) (H' : Unit → ℕ) (κ' : Unit → ℚ) (Θ₁ : ℚ)
+    (hΘ₁ : IsRothTheta b (fun j => r * d₂ j) H' Θ₁) (hκ' : InRothFracSet H' κ')
+    (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
+    (P : MvPolynomial (σ ⊕ Unit) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) (hWy : mvGenWronskian Dy ψ ≠ 0)
+    (hdeg : ∀ j k, degreeOf j (ψ k) ≤ d₂ j)
+    (hB : ∀ m, |coeff m (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det| ≤ b) :
+    index (fun j => r * d₂ j) κ' (mvGenWronskian Dy ψ) ≤ ((Θ₁ : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
+    exists_integral_wronskian_factors Dx Dy φ ψ P hP hWx
+  have hU'ne : U' ≠ 0 := integral_factor_ne_zero hl hWx hU'
+  have hV'ne : V' ≠ 0 := integral_factor_ne_zero (inv_ne_zero hl) hWy hV'
+  have hdegV : ∀ j, degreeOf j V' ≤ r * d₂ j := fun j =>
+    degreeOf_integral_factor_le hV' j
+      (degreeOf_mvGenWronskian_le j Dy ψ (d₂ j) (fun k => hdeg j k))
+  have hBV : ∀ n, |coeff n V'| ≤ b := fun n =>
+    abs_coeff_integral_wronskian_factor_le_right hfact hU'ne hB n
+  have happ := hΘ₁.1 V' κ' ⟨hV'ne, hdegV, hBV⟩ hκ'
+  have hmap : map (algebraMap ℤ ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ := hV'
+  rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at happ
+
+/-- **Non-vacuity of the `Θ` form.**
+
+Same data as `index_rescaled_wronskian_le_witness` — one variable each side, everything
+constant — with `IsRothTheta` supplied by `exists_isRothTheta` and the point `κ = 1`, whose
+height `max(1,1)` is exactly the required `H = 1`.
+
+⚠ The hypothesis stack is **shorter** than the `RothLemmaUniform` version's: no `Kh`, no `E`,
+no coprimality, no `2 ≤ Kh`, no `RothGamma`, and no `r ≠ 0`.  That is the practical evidence for
+correction nineteen — the faithful form of §12's step asks for less because it asks for the
+right thing. -/
+theorem index_rescaled_wronskian_le_theta_witness :
+    ∃ Θ' : ℚ, IsRothTheta (1 : ℤ) (fun _ : Unit => 1 * 1) (fun _ : Unit => 1) Θ' ∧
+      index (fun _ : Unit => 1 * 1) (fun _ : Unit => (1 : ℚ))
+          (mvGenWronskian (fun _ : Fin 1 => ([] : List Unit))
+            (fun _ : Fin 1 => (1 : MvPolynomial Unit ℚ)))
+        ≤ ((Θ' : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨Θ', hΘ'⟩ := exists_isRothTheta (1 : ℤ) (fun _ : Unit => 1 * 1) (fun _ : Unit => 1)
+    le_rfl (fun _ => le_rfl)
+  refine ⟨Θ', hΘ', ?_⟩
+  have hW : ∀ {α : Type} [DecidableEq α],
+      mvGenWronskian (fun _ : Fin 1 => ([] : List α))
+        (fun _ : Fin 1 => (1 : MvPolynomial α ℚ)) = 1 := by
+    intro α _
+    rw [mvGenWronskian, Matrix.det_fin_one, mvWronskianMatrix_apply]
+    simp
+  have hdet : (Matrix.of fun _ _ : Fin 1 =>
+      pderivList (([] : List Unit).map Sum.inl ++ ([] : List Unit).map Sum.inr)
+        (1 : MvPolynomial (Unit ⊕ Unit) ℤ)).det = 1 := by
+    rw [Matrix.det_fin_one]
+    simp
+  refine index_rescaled_wronskian_le_theta (σ := Unit) (r := 1) (fun _ => 1) 1
+    (fun _ => 1) (fun _ => (1 : ℚ)) Θ' hΘ' ?_
+    (fun _ => []) (fun _ => []) (fun _ => 1) (fun _ => 1) 1 ?_ ?_ ?_ ?_ ?_
+  · intro h
+    norm_num [InRothFracSet]
+  · simp
+  · rw [hW]; exact one_ne_zero
+  · rw [hW]; exact one_ne_zero
+  · intro j k
+    rw [show (1 : MvPolynomial Unit ℚ) = C 1 from (map_one C).symm, degreeOf_C]
+    exact Nat.zero_le 1
+  · intro m
+    rw [hdet, coeff_one]
+    split <;> simp
+
 /-! ### Next
 
 The `y` half of `hres` is the base case: one variable, so `RothBaseCase` applies to
