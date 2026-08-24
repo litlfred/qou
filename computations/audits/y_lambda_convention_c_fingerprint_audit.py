@@ -61,6 +61,24 @@ import sys
 Y_KEYS = {"y_lambda", "ylambda", "y_lam", "y"}
 LAMBDA_KEYS = {"lambda", "lam", "partition", "shape"}
 MIN_ROWS = 3          # C and D agree at <= 2 rows, so those are silent
+
+# "y_λ = 0 under D" is ALGEBRAIC; the arithmetic that evaluates it is not, so a
+# correctly-D-frame producer writes a residue, not a literal zero. Measured over
+# the 1635 >=3-row values in the corpus: 1377 are exactly 0, and the 258 nonzero
+# ones are TRIMODAL with a 68-DECADE EMPTY BAND between the residues and the
+# real values --
+#
+#     1e-150 .. 1e-140    17 fields   D-frame residue (helium-4, 50 dps)
+#      1e-80 ..  1e-70    81 fields   D-frame residue (chi-* family)
+#      << 68 decades containing NOTHING >>
+#      1e-10 ..   1e0    160 fields   convention-C scale
+#
+# so the threshold is read off the data rather than chosen. 1e-30 sits in the
+# middle of the empty band, 40 decades above the largest residue and 20 below
+# the smallest real value. An `x != 0` test instead of this one over-counts by
+# 107 fields across 6 files -- every one of them a correct D-frame witness that
+# merely recorded its zero as 1e-148 rather than as 0.0.
+C_SCALE_FLOOR = 1e-30
 PARTITION_TEXT = re.compile(r"[\[\(\s\d,\]\)]+")
 
 
@@ -73,9 +91,10 @@ def rows_of(value) -> int | None:
     return None
 
 
-def is_nonzero(value) -> bool:
+def is_c_scale(value) -> bool:
+    """Above the D-residue band. See C_SCALE_FLOOR for how it was measured."""
     try:
-        return float(str(value)) != 0.0
+        return abs(float(str(value))) > C_SCALE_FLOOR
     except (TypeError, ValueError):
         return False
 
@@ -90,7 +109,7 @@ def scan_payload(obj) -> list[tuple]:
             lam_key = next((k for k in node if k.lower() in LAMBDA_KEYS), None)
             if y_key and lam_key:
                 rows = rows_of(node[lam_key])
-                if rows is not None and rows >= MIN_ROWS and is_nonzero(node[y_key]):
+                if rows is not None and rows >= MIN_ROWS and is_c_scale(node[y_key]):
                     hits.append((node[lam_key], node[y_key]))
             for v in node.values():
                 walk(v)
@@ -129,6 +148,12 @@ def main() -> int:
             "n_fields": len(hits),
             "sample": [[lam, str(y)[:40]] for lam, y in hits[:3]],
         }
+
+    if scanned == 0:
+        print("ERROR: scanned 0 witnesses under "
+              f"{root.resolve()} — wrong --root, or run from the repo root.\n"
+              "A scan that examined nothing is NOT a clean tree.", file=sys.stderr)
+        return 2
 
     total = sum(v["n_fields"] for v in report.values())
     print("=" * 74)
