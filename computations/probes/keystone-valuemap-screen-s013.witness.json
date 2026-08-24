@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:24:47.019493+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T10:49:21.728771+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "compact_valuemap_candidates_refuted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "keystone-valuemap-screen-s013",
   "scriptFile": "keystone_valuemap_screen_s013.py",
-  "scriptHash": "1dc3aa088a03",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "050d377690e5",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -43,8 +42,8 @@
   },
   "description": "s013 keystone value-map screen: which amplitude turns the colored Sigma(2,3,5) E8-exponent family into bwS0 = d_q/D? Screens 3 closed-form candidates against the 4 target d_q at q0: (C1) exponent q-dimension [e]_q, (C2) compact sine-kernel vacuum row sin(pi e/30), (C3) sinh(eta e). ALL REFUTED via the E8-exponent assignment (d_q=1,4.11,5.22,6.22 vs [e]_q=1,7.63,13.55,17.34; sin-ratios 1,6.40,8.74,9.36). Sharp positive: 3 of 4 d_q are single balanced q-integers with HECKE labels {1,4,5} (not E8 exponents) -- d_q(5)=[1], d_q(4,1)=[4], d_q(3,2)=[5] -- and only the self-conjugate >=3-row block d_q(3,1,1)=[4][3]/[2] is a product (exactly where the SU(2) gate failed). Consistent with the non-compact E_q(2)/Hahn-Exton q-Bessel identification: the value map is the q-Bessel vacuum row, not a compact S-matrix entry. (a)-prunes compact candidates, locates the hard block. No fit.",
   "data": {
-    "q0": 1.1099785955541805,
-    "eta": 0.10434073185379578,
+    "q0": 1.1099785827513808,
+    "eta": 0.1043407203195195,
     "rows": [
       {
         "class": "(5)~(1^5)",
@@ -54,7 +53,7 @@
         "hecke_val": 1.0,
         "cand_qint_e": 1.0,
         "cand_sin_kernel": 0.10452846326765347,
-        "cand_sinh_eta_e": 0.10453016099493967,
+        "cand_sinh_eta_e": 0.10453014939781965,
         "is_single_qinteger": true,
         "ratio_d_q": 1.0,
         "ratio_qint": 1.0,
@@ -64,47 +63,47 @@
       {
         "class": "(4,1)~(2,1^3)",
         "e8_exponent": 7,
-        "d_q": 4.109682435637709,
+        "d_q": 4.109682411207941,
         "hecke_form": "[4]_q",
-        "hecke_val": 4.109682435637709,
-        "cand_qint_e": 7.625342178894008,
+        "hecke_val": 4.109682411207941,
+        "cand_qint_e": 7.625342037132497,
         "cand_sin_kernel": 0.6691306063588582,
-        "cand_sinh_eta_e": 0.7970782456012946,
+        "cand_sinh_eta_e": 0.7970781423509344,
         "is_single_qinteger": true,
-        "ratio_d_q": 4.109682435637709,
-        "ratio_qint": 7.625342178894008,
+        "ratio_d_q": 4.109682411207941,
+        "ratio_qint": 7.625342037132497,
         "ratio_sin": 6.401420105502708,
-        "ratio_sinh": 7.625342178894007
+        "ratio_sinh": 7.625342037132498
       },
       {
         "class": "(3,2)~(2,2,1)",
         "e8_exponent": 11,
-        "d_q": 5.220441324664574,
+        "d_q": 5.220441275326898,
         "hecke_form": "[5]_q",
-        "hecke_val": 5.220441324664574,
-        "cand_qint_e": 13.554643801140472,
+        "hecke_val": 5.220441275326898,
+        "cand_qint_e": 13.554643199995049,
         "cand_sin_kernel": 0.9135454576426009,
-        "cand_sinh_eta_e": 1.4168690987622745,
+        "cand_sinh_eta_e": 1.4168688787296229,
         "is_single_qinteger": true,
-        "ratio_d_q": 5.220441324664574,
-        "ratio_qint": 13.554643801140472,
+        "ratio_d_q": 5.220441275326898,
+        "ratio_qint": 13.554643199995049,
         "ratio_sin": 8.739681318220423,
-        "ratio_sinh": 13.554643801140472
+        "ratio_sinh": 13.55464319999505
       },
       {
         "class": "(3,1,1) self-conj",
         "e8_exponent": 13,
-        "d_q": 6.220441324664574,
+        "d_q": 6.220441275326898,
         "hecke_form": "[4][3]/[2]",
-        "hecke_val": 6.220441324664574,
-        "cand_qint_e": 17.338191919813934,
+        "hecke_val": 6.220441275326898,
+        "cand_qint_e": 17.3381908741282,
         "cand_sin_kernel": 0.9781476007338057,
-        "cand_sinh_eta_e": 1.8123639927393125,
+        "cand_sinh_eta_e": 1.812363682360534,
         "is_single_qinteger": false,
-        "ratio_d_q": 6.220441324664574,
-        "ratio_qint": 17.338191919813934,
+        "ratio_d_q": 6.220441275326898,
+        "ratio_qint": 17.3381908741282,
         "ratio_sin": 9.35771530697032,
-        "ratio_sinh": 17.338191919813934
+        "ratio_sinh": 17.3381908741282
       }
     ],
     "qint_refuted": true,

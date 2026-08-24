@@ -1,12 +1,6 @@
 {
   "computation": "tau-hat-n-proton-realisation",
   "description": "Numerical realisation of the descent involution tau_hat_0 = ell_0 . d_1 acting on End_C(A_1) at A=1 (proton scale).  A_0 = H_3(q_0); Omega^1 = ker(m); A_1 = A_0 (x) Omega^1.  Phase A.3 of issue #522.",
-  "auditOnly": "docs/audits/2026-05-03-tau-hat-n-proton-realisation.md",
-  "parameters": {
-    "q0": 1.1099785955541805,
-    "mp_dps": 50,
-    "A": 1
-  },
   "phase": "A.3",
   "blocks_audited": [
     "lifting-and-descent/descent-involution",
@@ -15,6 +9,11 @@
   ],
   "verdict": "full-realisation",
   "stage": "complete",
+  "parameters": {
+    "q0": 1.1099785827513808,
+    "mp_dps": 70,
+    "A": 1
+  },
   "dimensions": {
     "dim_A0": 6,
     "dim_Omega1": 30,
@@ -44,8 +43,11 @@
   "math_gaps": [
     "ell_0 / d_1 are not uniquely specified by the content blocks: the descent-lemma-proof.md describes an object-level Frobenius restriction r_n = epsilon (x) id, but Omega^1 has no canonical unit element (the universal Kahler differential is split-exact but not as a unital A-bimodule).  Realising (ell_0, d_1) requires a chosen connection nabla : A_0 -> Omega^1.  This witness uses the trivial / universal connection."
   ],
-  "timestamp": "2026-05-03T15:53:08.102708+00:00",
-  "engine": "python",
-  "scriptFile": "tau_hat_n_proton_realisation.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "timestamp": "2026-08-24T10:55:11.526458+00:00",
+  "lean_uniqueness_ref": {
+    "nucleus": "proton",
+    "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+    "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+    "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+  }
 }

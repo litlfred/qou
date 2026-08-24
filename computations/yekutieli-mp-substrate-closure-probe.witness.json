@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T11:13:29.857892+00:00",
-  "commitSha": "b4e08da801707f834026feab2747afed9f7d60e0",
+  "computedAt": "2026-08-24T10:55:26.287910+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "cross_anchor_closure_matches",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 28,
+  "durationMs": 38,
   "computation": "yekutieli-mp-substrate-closure-probe",
   "scriptFile": "yekutieli_mp_substrate_closure_probe.py",
   "scriptHash": "6ac29eaaa776",
-  "scriptCommitSha": "8e43287ac32516de7bca862b321c5871fd314906",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,17 +31,24 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/yekutieli_mp_substrate_closure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/yekutieli_mp_substrate_closure_probe.py"
   },
   "description": "Session C probe: evaluates the hypothesized Yekutieli substrate structural correction (α_em/π)/6 against the required k factor at both q_proton and q_muon anchors.",
   "data": {
     "q_proton": "1.10997858275138080759166909561",
-    "q_muon": "1.10997859555418057528159407961",
+    "q_muon": "1.10997859564273904668179512938",
     "hypothesized_correction": "0.000387136577628619854374838541684",
     "k_req_proton": "12.0",
-    "k_req_muon": "11.9995553113828026421197872597",
+    "k_req_muon": "11.9995522354198984634807681249",
     "residual_proton": "0.000387136577628619854374838541684",
-    "residual_muon": "-0.0000575520395687380258379017920697"
+    "residual_muon": "-0.0000606280024729166648570365613657"
   },
   "caveats": [
     "The probe hits the pre-stated failure signature: the derivation diverges at the q_muon anchor. This indicates that a fibre-level Habiro element is required, mirroring the parallel α_EM PR #1511 pattern. The structural derivation based strictly on simple per-cell weights is falsified; cross-anchor stability demands the deeper categorical structure. Session C result is NEGATIVE."

@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:11:47.712553+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-24T10:49:19.422428+00:00",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "inter-knot-decoupling",
   "scriptFile": "probe_inter_knot_decoupling.py",
-  "scriptHash": "071c89a4939a",
-  "scriptCommitSha": "17c9d83431fb4c20c36d1b97a4f4e6b9827e1a3d",
+  "scriptHash": "2f55c433caf8",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,16 +21,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_inter_knot_decoupling.py"
+    ],
+    "reproduce": "python3 -u computations/probe_inter_knot_decoupling.py"
   },
   "description": "Tests Mechanism 2 of prop:categorical-chain-convergence-mechanisms: the joint Markov trace of two unlinked braids factorises as τ_M(K_1) · τ_M(K_2) · z^k by Markov axiom M3 (disconnected-strand stabilisation). Confirms that the infinite product Q_β^cat over the base space converges because most inter-atomic-knot pairs are unlinked.",
   "parameters": {
     "auditOnly": "PR #657 follow-up. Provides theoretical justification for the convergence-via-locality argument; full empirical verification at H_6 awaits y_λ for n=6 in wenzl_y_lambda."
   },
   "data": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "z_markov_norm": "0.49932033403359825002066908467672150636931636263446",
     "K_1_braid": "σ_0 in B_3",
     "K_2_braid": "σ_0 · σ_1 in B_3",
@@ -43,11 +49,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

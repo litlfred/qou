@@ -1,15 +1,15 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-15T20:29:24.606126+00:00",
-  "commitSha": "ffe7350afc81f28f477e53b0905c7e192bb1d0a3",
+  "computedAt": "2026-08-24T10:53:01.791742+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gram-matrix-dual",
   "scriptFile": "gram-matrix-dual.py",
   "scriptHash": "23300f4abc3c",
-  "scriptCommitSha": "62cda418d6f031ba08693583e09b4407ba1d421b",
+  "scriptCommitSha": "be59f0137635bf8e9cf97739281ab9d05209444a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,10 +22,17 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gram-matrix-dual.py"
+    ],
+    "reproduce": "python3 -u computations/gram-matrix-dual.py"
   },
   "name": "gram-matrix-dual",
-  "timestamp": "2026-08-15T20:29:24.538235+00:00",
+  "timestamp": "2026-08-24T10:53:01.551718+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "HA": 0.20906029879563937,

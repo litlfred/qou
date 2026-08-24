@@ -1,21 +1,20 @@
 {
-  "computedAt": "2026-03-28T12:43:36.326935+00:00",
   "computation": "t35-weak-vertex",
-  "description": "T_{3,5} weak vertex form factor W(q) = tr_Markov((σ₁σ₂)⁵) in H₃(q). The torus knot T_{3,5} with 10 crossings mediates the weak force. Beta decay inserts T_{3,5} at the converting quark; the 10 crossings partition into electron (3) + neutrino (0) + re-reduction (7).",
-  "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
+  "timestamp": "2026-08-24T10:52:45.285777+00:00",
+  "description": "T_{3,5} weak vertex form factor W(q) = tr_Markov((\u03c3\u2081\u03c3\u2082)\u2075) in H\u2083(q). The torus knot T_{3,5} with 10 crossings mediates the weak force. Beta decay inserts T_{3,5} at the converting quark; the 10 crossings partition into electron (3) + neutrino (0) + re-reduction (7).",
   "parameters": {
-    "q": 1.1099785955541805,
-    "q_inv": 0.9009182735643011,
-    "s_skein": 0.10438806980915827,
-    "s_squared": 0.0108968691184817,
-    "z_markov": 0.4993203340335982,
+    "q": 1.1099785827513808,
+    "q_inv": 0.9009182839557415,
+    "s_skein": 0.10438805825918152,
+    "s_squared": 0.010896866707122274,
+    "z_markov": 0.4993203341836945,
     "n_strands": 3
   },
   "t35_braid": {
-    "word": "(σ₁σ₂)⁵",
+    "word": "(\u03c3\u2081\u03c3\u2082)\u2075",
     "crossings": 10,
     "genus": 4,
-    "knot_group": "⟨x,y | x³ = y⁵⟩"
+    "knot_group": "\u27e8x,y | x\u00b3 = y\u2075\u27e9"
   },
   "reduction": {
     "unreduced_terms": 1,
@@ -24,7 +23,7 @@
     "hecke_steps": 38,
     "yang_baxter_steps": 18,
     "far_comm_steps": 0,
-    "total_energy_change": 1.3157098787381993,
+    "total_energy_change": 1.3157096625779967,
     "word_histogram": {
       "0": 1,
       "1": 2,
@@ -33,97 +32,88 @@
     }
   },
   "reduced_element": {
-    "1": 0.0893226699730373,
-    "σ1": 0.23687138419166914,
-    "σ2": 0.23687138419166914,
-    "σ1·σ2": 0.13884307782233607,
-    "σ2·σ1": 1.1388430778223362,
-    "σ1·σ2·σ1": 0.474958284737152
+    "1": 0.08932264972933232,
+    "\u03c31": 0.23687135165230538,
+    "\u03c32": 0.2368713516523054,
+    "\u03c31\u00b7\u03c32": 0.13884304528189026,
+    "\u03c32\u00b7\u03c31": 1.13884304528189,
+    "\u03c31\u00b7\u03c32\u00b7\u03c31": 0.47495821898027324
   },
   "weak_vertex_form_factor": {
-    "W_q": 0.7035538014797476,
-    "W_q_squared": 0.494987951576604,
-    "s_squared": 0.0108968691184817,
-    "s_fourth": 0.00011874175658532014,
-    "ratio_W_over_s2": 64.5647656982941,
-    "ratio_W2_over_s4": 4168.608969675614
+    "W_q": 0.7035537246446991,
+    "W_q_squared": 0.4949878434614291,
+    "s_squared": 0.010896866707122274,
+    "s_fourth": 0.00011874170403278982,
+    "ratio_W_over_s2": 64.56477293466857,
+    "ratio_W2_over_s4": 4168.60990410531
   },
   "crossing_budget": {
     "total": 10,
     "electron_T23": 3,
     "neutrino_K01": 0,
     "re_reduction": 7,
-    "trefoil_markov_trace": 0.7302040595096824,
-    "unknot_markov_trace": 1
+    "trefoil_markov_trace": 0.7302040316296949,
+    "unknot_markov_trace": 1.0
   },
   "halflife_correction": {
-    "rate_ratio": 4168.608969675614,
-    "halflife_ratio": 0.00023988817547399181,
-    "description": "Half-life correction from replacing s² with W(q) as weak coupling. t_new = t_old × (s⁴/|W(q)|²)."
+    "rate_ratio": 4168.60990410531,
+    "halflife_ratio": 0.00023988812170099794,
+    "description": "Half-life correction from replacing s\u00b2 with W(q) as weak coupling. t_new = t_old \u00d7 (s\u2074/|W(q)|\u00b2)."
   },
   "corrected_predictions": [
     {
-      "name": "³H",
+      "name": "\u00b3H",
       "old_corr": 12.4,
-      "t35_pred": 0.0029746133758774985,
+      "t35_pred": 0.0029746127090923744,
       "observed": 12.32,
       "unit": "yr",
       "old_ratio": 1.0064935064935066,
-      "new_ratio": 0.0002414458908991476
+      "new_ratio": 0.00024144583677697843
     },
     {
-      "name": "¹⁴C",
-      "old_corr": 6690,
-      "t35_pred": 1.6048518939210052,
-      "observed": 5730,
+      "name": "\u00b9\u2074C",
+      "old_corr": 6690.0,
+      "t35_pred": 1.6048515341796763,
+      "observed": 5730.0,
       "unit": "yr",
       "old_ratio": 1.1675392670157068,
-      "new_ratio": 0.00028007886455863964
+      "new_ratio": 0.0002800788017765578
     },
     {
-      "name": "⁶⁰Co",
+      "name": "\u2076\u2070Co",
       "old_corr": 6.17,
-      "t35_pred": 0.0014801100426745295,
+      "t35_pred": 0.0014801097108951573,
       "observed": 5.2714,
       "unit": "yr",
       "old_ratio": 1.1704670486018895,
-      "new_ratio": 0.0002807812047415354
+      "new_ratio": 0.0002807811418020179
     },
     {
-      "name": "⁹⁰Sr",
+      "name": "\u2079\u2070Sr",
       "old_corr": 31.9,
-      "t35_pred": 0.0076524327976203385,
+      "t35_pred": 0.007652431082261834,
       "observed": 28.79,
       "unit": "yr",
       "old_ratio": 1.1080236193122612,
-      "new_ratio": 0.0002658017644189072
+      "new_ratio": 0.0002658017048371599
     },
     {
-      "name": "¹³⁷Cs",
+      "name": "\u00b9\u00b3\u2077Cs",
       "old_corr": 32.9,
-      "t35_pred": 0.00789232097309433,
+      "t35_pred": 0.007892319203962833,
       "observed": 30.17,
       "unit": "yr",
       "old_ratio": 1.0904872389791183,
-      "new_ratio": 0.00026159499413637156
+      "new_ratio": 0.00026159493549760796
     },
     {
-      "name": "²¹⁰Bi",
+      "name": "\u00b2\u00b9\u2070Bi",
       "old_corr": 5.79,
-      "t35_pred": 0.0013889525359944126,
+      "t35_pred": 0.001388952224648778,
       "observed": 5.012,
       "unit": "d",
       "old_ratio": 1.1552274541101357,
-      "new_ratio": 0.0002771254062239451
+      "new_ratio": 0.00027712534410390626
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
-  "observable_type": "raw_trace",
-  "notes": [
-    "F5 (PR #565): observable_type = raw_trace because the form factor W(q) is the literal Markov trace tr_M((σ₁σ₂)^5); the Gram-matrix / LP-active-set master formula does not apply (no operator-selection LP is solved here)."
-  ],
-  "engine": "python",
-  "scriptFile": "t35-weak-vertex.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  ]
 }

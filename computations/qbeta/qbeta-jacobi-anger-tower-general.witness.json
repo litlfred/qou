@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-18T03:08:40.375193+00:00",
-  "commitSha": "c6ef9a7019076dc33d84b9e7bb5bf3643edea5f5",
+  "computedAt": "2026-08-24T08:30:24.622340+00:00",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "assertions": [
     {
       "name": "bar_odd_coeffs_derived_equal_hardcoded",
@@ -14,19 +14,19 @@
     },
     {
       "name": "reconciles_physical_weight_6_8pct_both_anchors",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "single-x over-det residual vs 0.0683508 (proton + muon)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 20,
+  "allPassed": false,
+  "durationMs": 18,
   "computation": "qbeta-jacobi-anger-tower-general",
   "scriptFile": "qbeta_jacobi_anger_tower_general.py",
-  "scriptHash": "2a91a0f96763",
-  "scriptCommitSha": "c6ef9a7019076dc33d84b9e7bb5bf3643edea5f5",
+  "scriptHash": "a78fb0cfd707",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,30 +38,38 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_jacobi_anger_tower_general.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_jacobi_anger_tower_general.py"
   },
   "description": "General-n Jacobi–Anger tower harness, reconciled to the §4a physical-weight object. Derives the bar-odd sinh coefficients symbolically from the Lean-proved χ_λ(𝓑_n − 𝓑_p) closed forms (explicit typed-B₃ neutron-minus-proton braid difference — NOT the min-norm T_β∝t SDP fit), weights by the Markov weights y_λ FROZEN at the substrate anchor, and reproduces the physical-weight script's 6.8% single-x over-determination residual at both the proton and muon anchors. Resolves the prior tower-object reconciliation WIP. Tower extension to n≥6 requires first-principles χ_λ(𝓑_n − 𝓑_p) at λ⊢6,9 (typed braids embedded at higher brane-tower levels), not the SDP fit.",
   "data": {
     "n3": {
       "proton": {
-        "q": "1.1099785955573347199",
-        "W1": "0.140464815516",
+        "q": "1.1099785827513808076",
+        "W1": "0.123648943374",
         "W3": "-0.25",
-        "W5": "-0.109535184484",
-        "single_x": "4.52488546341",
-        "overdet_rel_residual": "0.0683508",
-        "matches_physical_weight_6_8pct": true
+        "W5": "-0.126351056626",
+        "single_x": "4.43161783269",
+        "overdet_rel_residual": "0.142709",
+        "matches_physical_weight_6_8pct": false
       },
       "muon": {
-        "q": "1.1099785955541805753",
-        "W1": "0.14046481699",
+        "q": "1.1099785956427390467",
+        "W1": "0.123648943075",
         "W3": "-0.25",
-        "W5": "-0.10953518301",
-        "single_x": "4.52488547168",
-        "overdet_rel_residual": "0.0683508",
-        "matches_physical_weight_6_8pct": true
+        "W5": "-0.126351056925",
+        "single_x": "4.43161783105",
+        "overdet_rel_residual": "0.142709",
+        "matches_physical_weight_6_8pct": false
       },
-      "cross_anchor_x_swing_rel": "1.82767e-9"
+      "cross_anchor_x_swing_rel": "3.70068e-10"
     },
     "bar_odd_coeffs_n3": {
       "(3,)": {

@@ -1,8 +1,8 @@
 {
-  "description": "Two-quark Hopf-class vs three-quark Borromean SDP-cost-proxy comparison across the metallic ladder.  Hopf, trefoil 3_1, and 5_1 are all torus links with V_hyp = 0, so their cost contribution to any SDP weighted by V_hyp vanishes identically — they're 'free' to form.  The Borromean carries the full V_hyp = 8·G ≈ 7.33 floor.  This is the structural reason 2-quark Hopf-class states are systematically cheaper than the 3-quark Borromean: NOT a metallic-piecewise effect, but a topological-volume effect at the ground state.",
-  "computed_at": "2026-06-09T04:56:02.225128+00:00",
+  "description": "Two-quark Hopf-class vs three-quark Borromean SDP-cost-proxy comparison across the metallic ladder.  Hopf, trefoil 3_1, and 5_1 are all torus links with V_hyp = 0, so their cost contribution to any SDP weighted by V_hyp vanishes identically \u2014 they're 'free' to form.  The Borromean carries the full V_hyp = 8\u00b7G \u2248 7.33 floor.  This is the structural reason 2-quark Hopf-class states are systematically cheaper than the 3-quark Borromean: NOT a metallic-piecewise effect, but a topological-volume effect at the ground state.",
+  "computed_at": "2026-08-24T10:55:16.140353+00:00",
   "anchors": {
-    "q_0_substrate": "1.10997859555418",
+    "q_0_substrate": "1.109978582751381",
     "golden_phi": "1.618033988749895",
     "silver_delta_2": "2.414213562373095",
     "bronze_delta_3": "3.302775637731995"
@@ -19,21 +19,13 @@
       "sigma_1^4 (4_1-like)",
       "sigma_1^6 (6_1-like)"
     ],
-    "three_quark_borromean": "(sigma_1 sigma_2^{-1})^3, V_hyp = 8·G"
+    "three_quark_borromean": "(sigma_1 sigma_2^{-1})^3, V_hyp = 8\u00b7G"
   },
-  "verdict": "Hopf-class states are cheaper than Borromean by the FULL hyperbolic-volume floor, not because of metallic-ladder structure.  The volume hierarchy V_hyp(Hopf)=0 < V_hyp(4_1)=2.03 < V_hyp(Borromean)=7.33 is the structural ordering, independent of q within the metallic range tested.  Metallic ratios do NOT cross this ordering — Borromean stays the heaviest at every q in (q_0, delta_bronze).",
+  "verdict": "Hopf-class states are cheaper than Borromean by the FULL hyperbolic-volume floor, not because of metallic-ladder structure.  The volume hierarchy V_hyp(Hopf)=0 < V_hyp(4_1)=2.03 < V_hyp(Borromean)=7.33 is the structural ordering, independent of q within the metallic range tested.  Metallic ratios do NOT cross this ordering \u2014 Borromean stays the heaviest at every q in (q_0, delta_bronze).",
   "limitations": [
-    "Markov-trace evaluations on n=2 σ_1^k are exact (1-dim reps).",
+    "Markov-trace evaluations on n=2 \u03c3_1^k are exact (1-dim reps).",
     "Borromean (2,1) character uses a Chebyshev-like closed-form approximation that captures leading-order structure; sub-leading corrections do not affect the qualitative ordering.",
-    "'SDP cost' is the (|tr_M| × V_hyp) proxy; the true SDP optimal value needs the full per-nucleus character witness."
+    "'SDP cost' is the (|tr_M| \u00d7 V_hyp) proxy; the true SDP optimal value needs the full per-nucleus character witness."
   ],
-  "metallic_finding": "Within the (q_0, delta_bronze) range, metallic ratios do NOT induce any crossing of the cost ordering Hopf < 4_1 < Borromean.  This is one more piece of evidence that real-q metallic structure is purely algebraic (Hecke-scalar integrality) and does not control the SDP cost landscape.",
-  "scriptHash": "1d8cec6a951d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "mpmath",
-  "computedAt": "2026-07-18T19:19:24.104487+00:00",
-  "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "two_quark_hopf_vs_borromean_sdp.py"
+  "metallic_finding": "Within the (q_0, delta_bronze) range, metallic ratios do NOT induce any crossing of the cost ordering Hopf < 4_1 < Borromean.  This is one more piece of evidence that real-q metallic structure is purely algebraic (Hecke-scalar integrality) and does not control the SDP cost landscape."
 }

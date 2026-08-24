@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:48.245647+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T10:48:59.313427+00:00",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "assertions": [
     {
       "name": "mckay_marks_sum_to_coxeter_number_h_E8",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "keystone-mckay-e8-valuemap",
   "scriptFile": "keystone_mckay_e8_valuemap.py",
-  "scriptHash": "66154833e0f3",
+  "scriptHash": "2647a4ec558c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -46,10 +46,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -59,7 +58,7 @@
   },
   "description": "Geometric W_lambda derivation: the colour->partition-lambda value-map DICTIONARY via the McKay correspondence 2I<->affine E8-hat (irrep dims = Coxeter marks; sum marks=30=h(E8)=P, sum dim^2=120=|2I|) composed with A5 subset S5 branching. The 4 bwS0 conjugation classes {lambda,lambda'} map explicitly to the 4 A5-factoring McKay nodes (marks 1,4,5,6), the electron block (3,1,1) being the A5 3+3'=6 SPLIT node and the muon block (3,2) the mark-5 node. q=1 value anchor DERIVED: dim(lambda)=McKay mark. Diagnoses the prior [e]_q refutation (keystone_colored_sigma235_wrt) as exponent-vs-mark mis-indexing. No fit; single global normalizer D. The colored Lawrence-Rozansky amplitude and the archimedean q0-continuation residual are deferred/open.",
   "data": {
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "mckay_dims": [
       1,
       2,
@@ -179,7 +178,7 @@
         "a5_mark": 1,
         "split": false,
         "d_q": 1.0,
-        "bwS0": 0.08805229723474409,
+        "bwS0": 0.08805229793301629,
         "qint_mark": 1.0,
         "d_q_minus_qint_mark": 0.0,
         "d_q_eq_qint_mark_exact": true
@@ -199,9 +198,9 @@
         ],
         "a5_mark": 4,
         "split": false,
-        "d_q": 4.109682435637709,
-        "bwS0": 0.3618669793631786,
-        "qint_mark": 4.109682435637709,
+        "d_q": 4.109682411207941,
+        "bwS0": 0.3618669800817584,
+        "qint_mark": 4.109682411207941,
         "d_q_minus_qint_mark": 0.0,
         "d_q_eq_qint_mark_exact": true
       },
@@ -219,10 +218,10 @@
         ],
         "a5_mark": 5,
         "split": false,
-        "d_q": 5.220441324664574,
-        "bwS0": 0.45967185121590615,
-        "qint_mark": 5.220441324664574,
-        "d_q_minus_qint_mark": 0.0,
+        "d_q": 5.220441275326898,
+        "bwS0": 0.45967185051689957,
+        "qint_mark": 5.220441275326898,
+        "d_q_minus_qint_mark": -7.24454326306137e-71,
         "d_q_eq_qint_mark_exact": true
       },
       {
@@ -235,14 +234,14 @@
         ],
         "a5_mark": 6,
         "split": true,
-        "d_q": 6.220441324664574,
-        "bwS0": 0.5477241484506502,
-        "qint_mark": 6.388086679547021,
-        "d_q_minus_qint_mark": -0.1676453548824471,
+        "d_q": 6.220441275326898,
+        "bwS0": 0.5477241484499159,
+        "qint_mark": 6.388086592175452,
+        "d_q_minus_qint_mark": -0.16764531684855383,
         "d_q_eq_qint_mark_exact": false
       }
     ],
-    "D2": 128.97888496570414,
+    "D2": 128.97888292004782,
     "unsplit_dq_eq_qint_mark_exact": true,
     "electron_dq_eq_qint5_plus_one_exact": true
   }

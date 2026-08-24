@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:00:23.268348+00:00",
+  "computedAt": "2026-08-24T10:48:55.151039+00:00",
   "computation": "he3-brane-tower-structural-gap",
   "scriptFile": "he3_brane_tower_structural_gap.py",
-  "scriptHash": "0f51d59d4822",
+  "scriptHash": "db7017799047",
   "contentBlock": "conj:brane-tower-z-habiro",
   "description": "Isolates the \u00b3He structural deficit of the per-generator brane-tower binding formula using the PRODUCTION \u2212Li\u2082^q(\u2212z) form (bounded) + exact production |V\u0302_i^full|. The tower sum is monotone in proton near-pole count (\u00b3He>T), but \u00b3He is the less-bound mirror member (B_AME: \u00b3He<T) \u2014 so the per-generator tower has the wrong Z-ordering at A=3. Structural, not a \u03a6_q artifact (li2q is bounded).",
   "parameters": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "tower_form": "\u2212Li\u2082^q(\u2212|V\u0302_i^full|) (production li2q)",
     "near_pole_threshold": "0.9"
   },
@@ -18,7 +18,7 @@
         "Z": 1,
         "N": 1,
         "n_near_pole_gens": 3,
-        "tower_neg_li2q": "3.392619344776145",
+        "tower_neg_li2q": "3.392619344776267",
         "per_gen_terms": [
           "0.8154112386",
           "0.8028940917",
@@ -32,7 +32,7 @@
         "Z": 1,
         "N": 2,
         "n_near_pole_gens": 4,
-        "tower_neg_li2q": "5.072062510847275",
+        "tower_neg_li2q": "5.072062510847455",
         "per_gen_terms": [
           "0.8154112386",
           "0.8028940917",
@@ -49,7 +49,7 @@
         "Z": 2,
         "N": 1,
         "n_near_pole_gens": 5,
-        "tower_neg_li2q": "5.350376846775356",
+        "tower_neg_li2q": "5.350376846775546",
         "per_gen_terms": [
           "0.8154112386",
           "0.8028940917",
@@ -88,7 +88,7 @@
     "AME2020"
   ],
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "a5467686b4580f6204e0c793945ac3ea51d3951e",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "durationMs": 0,
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"

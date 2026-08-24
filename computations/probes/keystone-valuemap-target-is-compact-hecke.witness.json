@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:24:47.478049+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T10:49:22.098636+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "value_target_is_compact_hecke",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "keystone-valuemap-target-is-compact-hecke",
   "scriptFile": "keystone_valuemap_target_is_compact_hecke.py",
-  "scriptHash": "1ca16670215f",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4e2cea9279ba",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,10 +43,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -56,22 +55,22 @@
   },
   "description": "s013 redirect (ii) grounding: the value-map target bwS0=d_q/D is the compact SU_q(2)/Hecke quantum-dimension vector (Laurent polynomials, = Verlinde S_0λ/S_00), and the uploaded Murakami GPPV paper has no colored/decorated block (its Σ(2,3,5) block is the undecorated D=2 golden false theta). So the non-compact q-Bessel search chases the wrong function class; single-arg form refuted, multi-arg is an unfalsifiable fit without the un-uploaded Koelink–Swarttouw kernel. No fit; no q-Bessel formula written; nothing wired.",
   "data": {
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "bwS0_targets": {
       "(5)": {
         "value": "1.0",
         "hecke_label": "[1]_q"
       },
       "(4,1)": {
-        "value": "4.10968243563771",
+        "value": "4.10968241120794",
         "hecke_label": "[4]_q"
       },
       "(3,2)": {
-        "value": "5.22044132466457",
+        "value": "5.2204412753269",
         "hecke_label": "[5]_q"
       },
       "(3,1,1)": {
-        "value": "6.22044132466457",
+        "value": "6.2204412753269",
         "hecke_label": "[4]_q[3]_q/[2]_q"
       }
     },

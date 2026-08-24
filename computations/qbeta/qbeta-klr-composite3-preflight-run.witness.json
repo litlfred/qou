@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:38.901893+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-24T08:30:25.964024+00:00",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "assertions": [
     {
       "name": "typeb_folded_crystal_sign_refuted_at_u2_both_anchors",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "qbeta-klr-composite3-preflight-run",
   "scriptFile": "qbeta_klr_composite3_preflight_run.py",
   "scriptHash": "51051fcfb1e7",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_klr_composite3_preflight_run.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_klr_composite3_preflight_run.py"
   },
   "description": "KLR tranche 2 — Composite-3 (Type-B folded crystal) preflight RUN, third in the cont. 9 menu preflight series after Composite-4 (magnitude refutation) and Composite-1 standard (sign refutation). Tests [u²]F for the cont. 9 Option D ansatz F(u) = Σ_T q^{c(T)}·u^{|T|} at sl_4 → C_2 folding, ω_2. σ-fixed 2-subsets at |T|=2 are {1,4} and {2,3} (the only fixed pairs under σ = 1↔4, 2↔3). [u²]F = q^3 + q^3 = 2q^3 > 0 at q > 0, sign-incompatible with c_2 = -1 < 0. cont. 9 Option D (12-17 sessions) NOT authorised. AGENTS.md §7b bar-invariance of folded crystals does NOT rescue (bar-invariance and sign-negativity are orthogonal).",
   "contentBlock": "conj:qbeta-precision-ladder",
@@ -50,9 +59,9 @@
       },
       {
         "anchor": "muon",
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "q_cubed": "1.36755188427254835574623684000361809981103843394383559940255",
-        "u2_coefficient_2q_cubed": "2.73510376854509671149247368000723619962207686788767119880509",
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "q_cubed": "1.36755188459987440940091505685733303118608087139606132593326",
+        "u2_coefficient_2q_cubed": "2.73510376919974881880183011371466606237216174279212265186652",
         "sign": 1,
         "c2_target": "-1.00000000000000000000000000000000000000000000000000000000000",
         "sign_mismatches_c2": true

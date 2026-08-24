@@ -1,19 +1,18 @@
 {
-  "computedAt": "2026-05-05T16:55:16.176149+00:00",
   "computation": "sublemma-2-1-alpha-shift-extract",
-  "description": "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron case (I = single inter-nucleon averaged crossing) via LR-system inversion. Runs 100 (β_1, β_2) Hecke-element test pairs to over-determine the α_shift unknowns per λ, then solves by least squares. For c^λ_{μν} = 1 cases, the scalar α_shift values are consistent with character data to ~1e-13 (machine precision). For c^λ_{μν} ≥ 2 cases (only λ = (3,2,1) for n=6), the formula is matrix-valued and requires the refined Sub-lemma 2.1 statement.",
-  "auditOnly": "docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "interface": "I = σ_2 - h/2 (atomic-braid pn averaged crossing)",
-    "n_test_pairs": 100,
-    "n_lambda": 11
-  },
+  "description": "Extracts \u03b1_shift(I; \u03bb, \u03bc, \u03bd) per \u03bb \u22a2 6 in the deuteron case (I = single inter-nucleon averaged crossing) via LR-system inversion. Runs 100 (\u03b2_1, \u03b2_2) Hecke-element test pairs to over-determine the \u03b1_shift unknowns per \u03bb, then solves by least squares. For c^\u03bb_{\u03bc\u03bd} = 1 cases, the scalar \u03b1_shift values are consistent with character data to ~1e-13 (machine precision). For c^\u03bb_{\u03bc\u03bd} \u2265 2 cases (only \u03bb = (3,2,1) for n=6), the formula is matrix-valued and requires the refined Sub-lemma 2.1 statement.",
   "reference_blocks": [
     "conj:confinement-nf-structure-forcing",
     "prop:atomic-mass-gb-nf",
     "prop:alpha-shift-torus-knot"
   ],
+  "computedAt": "2026-08-24T08:37:12.534708+00:00",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "interface": "I = \u03c3_2 - h/2 (atomic-braid pn averaged crossing)",
+    "n_test_pairs": 100,
+    "n_lambda": 11
+  },
   "results_per_lambda": {
     "(6,)": {
       "lambda": [
@@ -32,15 +31,15 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": 1.00544843455924,
-          "value_im": 0,
+          "value_re": 1.0054484333535614,
+          "value_im": -0.0,
           "c_lr": 1
         }
       },
       "rank": 1,
       "n_equations": 100,
       "n_unknowns": 1,
-      "max_relative_residual": 7.131015888505811e-16,
+      "max_relative_residual": 2.3616896425398656e-16,
       "system_well_posed": "True",
       "consistent_within_1e6": true
     },
@@ -82,25 +81,25 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": 0.26468062124819486,
-          "value_im": 0,
+          "value_re": 0.2646806230206765,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[3]|[2, 1]": {
-          "value_re": 0.661762243482624,
-          "value_im": 0,
+          "value_re": 0.6617622419602958,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": 0.6791536825359586,
-          "value_im": 0,
+          "value_re": 0.6791536794560976,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 3,
       "n_equations": 100,
       "n_unknowns": 3,
-      "max_relative_residual": 25.35559305438974,
+      "max_relative_residual": 25.355598592558007,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -153,30 +152,30 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": -0.03877476405690986,
-          "value_im": 0,
+          "value_re": -0.03877475728915328,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[3]|[2, 1]": {
-          "value_re": 0.2400883055834106,
-          "value_im": 0,
+          "value_re": 0.24008830433855383,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": 0.20239711848955963,
-          "value_im": 0,
+          "value_re": 0.20239712079675234,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.56097550004059,
-          "value_im": 0,
+          "value_re": 0.5609754978767095,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 4,
       "n_equations": 100,
       "n_unknowns": 4,
-      "max_relative_residual": 56.524420194202754,
+      "max_relative_residual": 56.52444383209579,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -243,35 +242,35 @@
       ],
       "alpha_shift": {
         "[3]|[2, 1]": {
-          "value_re": -0.023734477981847628,
-          "value_im": 0,
+          "value_re": -0.02373447577557927,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[3]|[1, 1, 1]": {
-          "value_re": 0.3709435484971738,
-          "value_im": 0,
+          "value_re": 0.3709435465106987,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": -0.02215333544132308,
-          "value_im": 0,
+          "value_re": -0.022153333481372287,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.3387319715917254,
-          "value_im": 0,
+          "value_re": 0.3387319683117277,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[3]": {
-          "value_re": 0.39327921558980444,
-          "value_im": 0,
+          "value_re": 0.39327921108736774,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 276.9387622699268,
+      "max_relative_residual": 276.9388540176916,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -304,20 +303,20 @@
       ],
       "alpha_shift": {
         "[3]|[3]": {
-          "value_re": -0.35701537929868044,
-          "value_im": 0,
+          "value_re": -0.35701537757986984,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": 0.3344251044102257,
-          "value_im": 0,
+          "value_re": 0.3344251039108871,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 2,
       "n_equations": 100,
       "n_unknowns": 2,
-      "max_relative_residual": 38.74107089514988,
+      "max_relative_residual": 38.74107869682201,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -386,35 +385,35 @@
       ],
       "alpha_shift": {
         "[3]|[2, 1]": {
-          "value_re": -0.3317765456763609,
-          "value_im": 0,
+          "value_re": -0.331776541159203,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[3]": {
-          "value_re": -0.3082334292170076,
-          "value_im": 0,
+          "value_re": -0.30823342700975526,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": -0.0060493548847663225,
-          "value_im": 0,
+          "value_re": -0.006049354224890835,
+          "value_im": 0.0,
           "c_lr": 2
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": 0.31497259989258325,
-          "value_im": 0,
+          "value_re": 0.31497259698990976,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": 0.2865571046044419,
-          "value_im": 0,
+          "value_re": 0.286557105081873,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 1266306470791.7156,
+      "max_relative_residual": 1266306456109.0469,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -486,35 +485,35 @@
       ],
       "alpha_shift": {
         "[3]|[1, 1, 1]": {
-          "value_re": -0.3580946246287471,
-          "value_im": 0,
+          "value_re": -0.35809462372485246,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[2, 1]": {
-          "value_re": -0.324834322274163,
-          "value_im": 0,
+          "value_re": -0.3248343203616413,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": 0.04275281068304515,
-          "value_im": 0,
+          "value_re": 0.04275280679987975,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[3]": {
-          "value_re": -0.3757396544989331,
-          "value_im": 0,
+          "value_re": -0.3757396520706399,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": 0.045840011344545406,
-          "value_im": 0,
+          "value_re": 0.045840006725692106,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 5,
       "n_equations": 100,
       "n_unknowns": 5,
-      "max_relative_residual": 113.59994134199465,
+      "max_relative_residual": 113.59997914138205,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -552,20 +551,20 @@
       ],
       "alpha_shift": {
         "[2, 1]|[2, 1]": {
-          "value_re": -0.3434590186091305,
-          "value_im": 0,
+          "value_re": -0.34345901720145455,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": 0.37276161748747905,
-          "value_im": 0,
+          "value_re": 0.3727616141360184,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 2,
       "n_equations": 100,
       "n_unknowns": 2,
-      "max_relative_residual": 33.30107659188019,
+      "max_relative_residual": 33.3010838534307,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -628,30 +627,30 @@
       ],
       "alpha_shift": {
         "[2, 1]|[2, 1]": {
-          "value_re": -0.5560750529571672,
-          "value_im": 0,
+          "value_re": -0.5560750512892447,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[2, 1]|[1, 1, 1]": {
-          "value_re": -0.24934805043834396,
-          "value_im": 0,
+          "value_re": -0.249348048084517,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": -0.2089786790771133,
-          "value_im": 0,
+          "value_re": -0.208978680849438,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -0.025296927572376865,
-          "value_im": 0,
+          "value_re": -0.025296927406893058,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 4,
       "n_equations": 100,
       "n_unknowns": 4,
-      "max_relative_residual": 78.49617236804124,
+      "max_relative_residual": 78.49620347929049,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -704,25 +703,25 @@
       ],
       "alpha_shift": {
         "[2, 1]|[1, 1, 1]": {
-          "value_re": -0.6538186700964572,
-          "value_im": 0,
+          "value_re": -0.65381866939156,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[2, 1]": {
-          "value_re": -0.6717486118878777,
-          "value_im": 0,
+          "value_re": -0.6717486095076474,
+          "value_im": 0.0,
           "c_lr": 1
         },
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -0.22872055788082107,
-          "value_im": 0,
+          "value_re": -0.22872056334300694,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 3,
       "n_equations": 100,
       "n_unknowns": 3,
-      "max_relative_residual": 23.690676635914173,
+      "max_relative_residual": 23.690681266147266,
       "system_well_posed": "True",
       "consistent_within_1e6": false
     },
@@ -752,15 +751,15 @@
       ],
       "alpha_shift": {
         "[1, 1, 1]|[1, 1, 1]": {
-          "value_re": -1.0054484345592405,
-          "value_im": 0,
+          "value_re": -1.0054484333535616,
+          "value_im": 0.0,
           "c_lr": 1
         }
       },
       "rank": 1,
       "n_equations": 100,
       "n_unknowns": 1,
-      "max_relative_residual": 4.081322283770491e-16,
+      "max_relative_residual": 4.3928929249409933e-16,
       "system_well_posed": "True",
       "consistent_within_1e6": true
     }
@@ -786,8 +785,5 @@
     ]
   ],
   "n_scalar_consistent": 2,
-  "n_matrix_valued": 1,
-  "engine": "python",
-  "scriptFile": "sublemma_2_1_alpha_shift_extract.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "n_matrix_valued": 1
 }

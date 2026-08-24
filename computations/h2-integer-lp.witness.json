@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T05:02:31.924236+00:00",
-  "commitSha": "550985daa5aeaf44c63fa89d10084789b08bd22f",
+  "computedAt": "2026-08-24T10:53:03.937649+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "Binding is positive for at least one operator",
@@ -34,7 +34,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "h2-integer-lp",
   "scriptFile": "h2-integer-lp.py",
   "scriptHash": "ecb2581a3a7a",
@@ -169,7 +169,12 @@
           2.3355100025713265e-43,
           0.6045228183390298
         ],
-        "active_set": [],
+        "active_set": [
+          0,
+          2,
+          5,
+          7
+        ],
         "primal_obj": -0.8651753344263748,
         "dual_obj": -0.8651753344263748,
         "duality_gap": 5.105628721705824e-43,

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-17T01:40:49.494555+00:00",
-  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
+  "computedAt": "2026-08-24T08:30:23.393399+00:00",
+  "commitSha": "789481516761c41a7310863b11172b81af3b6707",
   "assertions": [
     {
       "name": "frame_change_is_an_exact_identity",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 16,
   "computation": "qbeta-h-frame-rungs",
   "scriptFile": "qbeta_h_frame_rungs_probe.py",
   "scriptHash": "c67e318d75e5",
-  "scriptCommitSha": "4cd9dd4033abf0c4c62ced013702a10751d8491d",
+  "scriptCommitSha": "07487a54c6504f4806f5472108257cb141efba09",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,10 +45,16 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_h_frame_rungs_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_h_frame_rungs_probe.py"
   },
   "description": "T1 of bean qou-cwin. Establishes that the u→h frame change is an exact identity (u = b·h²/(q+1)², from ℏ_q(q+1) = h) rather than the asymptotic 'u ∼ h² near q=1', and derives the consequence that uᵏ = (b/(q+1)²)ᵏ·h²ᵏ — so a u-rung of order k lands at h-order 2k and a u-ladder spans only EVEN h-orders. Odd h-orders are unreachable by any choice of u-coefficients, and the model's h³ rung (−√3/64) is nonzero and purely irrational. Also records the exact ℚ(√3) h-frame rungs through h⁷, and that the conversion factor b/(q+1)² ≈ 0.1949 differs from its q→1 limit √3/8 ≈ 0.2165 by ~10%. Companion to the sorry-free Lean in QOU/QBeta/LadderFrameChange.lean. No physical claim: no c_k value, no derivation of α, no accuracy improvement — the cross-anchor instability is 2.3748% in both frames.",
   "data": {
@@ -119,10 +125,10 @@
       },
       {
         "anchor": "muon",
-        "q": "1.10997859555418057528159407960950937799328227995868622546675",
-        "b": "0.867584067307058178658333082523933446069696066774384267960404",
-        "conversion_b_over_qp1_sq": "0.194874703986581158512433472663898055022124553023052349362726",
-        "u_over_h_sq": "0.194874703986581158512433472663898055022124553023052349362726"
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "b": "0.867584067309422498141163641459093748930548705020110481372002",
+        "conversion_b_over_qp1_sq": "0.194874703970753950625187453249372448212472692557404320540092",
+        "u_over_h_sq": "0.194874703970753950625187453249372448212472692557404320540092"
       }
     ],
     "conversion_q_to_1_limit_sqrt3_over_8": "0.216506350946109661690930792688234045867850656726297578506976"
