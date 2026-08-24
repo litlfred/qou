@@ -238,6 +238,25 @@ knot, so knot type could not distinguish muon from antimuon — defeating the
 superscript's stated purpose in the very block that states it. (`𝔎_γ`, the empty
 knot, is trivially fine; only `𝔎_μ` is wrong.)
 
+**A near-miss worth recording, because the next reader will hit it too.** The
+corpus has a Lean namespace `QOU.BringChiralCinquefoil`
+(`brings-surface/bring-trefoil-cinquefoil-channel.lean`). Grepping for a chiral
+cinquefoil lands there, and it reads as the corpus asserting exactly the fact
+needed here. **It does not.** Its own text: *"The **chiral channel** is the
+trefoil `T_{2,3}` (Seifert genus 1) and the `ζ₅` carrier is the cinquefoil
+`T_{2,5}` (Seifert genus 2)"* — "chiral" modifies the **trefoil** channel, and
+the namespace is a compound name for the *trefoil + cinquefoil* channel. It says
+nothing about the cinquefoil's chirality. I very nearly cited it as corroboration
+before reading the body; it is **not** in the sidecar evidence, and should not
+be added.
+
+This is the same failure mode the rest of this document records — reading a
+**name** as an assertion (`categorical_A_interface` "not implemented" because it
+*raised*; the H₉ extract "unstamped" because one *key* was missing). The finding
+above is unaffected: it rests on the block's own internal inconsistency (`3₁`
+chiral, `5₁` amphichiral, both `T(2,odd)`) and on the standard fact that a
+nontrivial torus knot is never amphichiral. Neither needs the namespace.
+
 **Not resolved here** — whether the amphichiral clause or `𝔎_μ`'s assignment is
 the thing to change is an authorial call. Recorded as a
 `da-definitional-ambiguity` **fail/major** on that block's sidecar, alongside the
