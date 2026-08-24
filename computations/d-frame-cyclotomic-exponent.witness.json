@@ -1,0 +1,110 @@
+{
+  "computation": "d-frame-cyclotomic-exponent",
+  "description": "The convention-D cyclotomic exponent is 3A-1 minus two per neutron. Substituting a free symbol for hecke_symbolic.z_markov shows the z-count is 3A-1 in both frames -- convention independent by construction, and exactly what the convention-C derivation counts. Substituting z_D = q^3/(q^2+1) then gives (q^2+1)^(3A-1) naively, of which exactly 2N factors CANCEL against the numerator, leaving 3A-1-2N = 3Z+N-1. So 3Z+N is NOT a strand count and NOT a peel count; it is arithmetic rewriting. This REFUTES the cyclotomic-aliasing hypothesis recorded in the 2026-08-24 prefactor audit, which guessed at extra per-frame sources; the mechanism is cancellation. The round-trip validity gate is asserted first because a first attempt at this measurement used a mismatched q symbol and produced a coincidentally-correct z-count from a meaningless expression. Scope-(a): these four configurations under bring_color_weighted.",
+  "convention": {
+    "markov_z": "q**3/(q**2 + 1)   (convention D, canonical per R1)",
+    "pn_convention": "bring_color_weighted (canonical per R3)",
+    "anchor": "NONE enters the computation: tr_M_atomic is exact in symbolic q and every number here is a polynomial degree or a factor multiplicity. The top-level q0Anchor/q0Value are the ambient WitnessBuilder stamp -- which pin this process ran under, not an input to any value below."
+  },
+  "reference_blocks": [
+    "def:markov-trace",
+    "prop:atomic-braid-decomposition"
+  ],
+  "atoms": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "z_count_m": 2,
+      "c_law_3A_minus_1": 2,
+      "naive_phi_power": 2,
+      "actual_phi_power": 2,
+      "cancelled": 0,
+      "two_N": 0,
+      "m_equals_3A_minus_1": true,
+      "actual_equals_3Z_plus_N_minus_1": true,
+      "cancelled_equals_2N": true,
+      "elapsed_sec": "0.05"
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "z_count_m": 5,
+      "c_law_3A_minus_1": 5,
+      "naive_phi_power": 5,
+      "actual_phi_power": 3,
+      "cancelled": 2,
+      "two_N": 2,
+      "m_equals_3A_minus_1": true,
+      "actual_equals_3Z_plus_N_minus_1": true,
+      "cancelled_equals_2N": true,
+      "elapsed_sec": "2.05"
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "z_count_m": 8,
+      "c_law_3A_minus_1": 8,
+      "naive_phi_power": 8,
+      "actual_phi_power": 4,
+      "cancelled": 4,
+      "two_N": 4,
+      "m_equals_3A_minus_1": true,
+      "actual_equals_3Z_plus_N_minus_1": true,
+      "cancelled_equals_2N": true,
+      "elapsed_sec": "15.28"
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "z_count_m": 8,
+      "c_law_3A_minus_1": 8,
+      "naive_phi_power": 8,
+      "actual_phi_power": 6,
+      "cancelled": 2,
+      "two_N": 2,
+      "m_equals_3A_minus_1": true,
+      "actual_equals_3Z_plus_N_minus_1": true,
+      "cancelled_equals_2N": true,
+      "elapsed_sec": "8.69"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "round_trip_reproduces_unpatched",
+      "passed": true,
+      "note": "GATE: substituting z_D back into the free-symbol expression must reproduce tr_M_atomic exactly. A first attempt used a bare sp.Symbol('q') against the module's sp.Symbol('q', positive=True) and silently measured a two-q expression. No degree is reported unless this holds."
+    },
+    {
+      "name": "z_count_is_3A_minus_1",
+      "passed": true,
+      "note": "convention-independent by construction (degree in a free symbol); confirms the C derivation's n_strands - 1 count"
+    },
+    {
+      "name": "d_frame_exponent_is_3Z_plus_N_minus_1",
+      "passed": true
+    },
+    {
+      "name": "cancellation_is_two_per_neutron",
+      "passed": true,
+      "note": "the whole of the C-vs-D exponent gap; proton (N=0) is the zero-cancellation control"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "48738904b872",
+  "scriptCommitSha": "unknown",
+  "commitSha": "9639f1c49c672481a9f8611b9cf221d16127283e",
+  "engine": "sympy",
+  "computedAt": "2026-08-24T06:12:18.951312+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
