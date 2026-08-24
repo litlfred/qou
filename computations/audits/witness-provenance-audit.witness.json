@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T13:05:26.644630+00:00",
-  "commitSha": "d061594970d13daab86598b69b8fd3c4e827f367",
+  "computedAt": "2026-08-24T14:49:36.377530+00:00",
+  "commitSha": "66ce1243ab993380ddb5376ef447163740653f90",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 75,
+      "computed": 76,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2728,
-      "prov_ok": 2348,
+      "total_scanned": 2729,
+      "prov_ok": 2349,
       "prov_audit_exempt": 78,
-      "prov_exempt_no_reader": 224,
+      "prov_exempt_no_reader": 223,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 75,
+      "prov_missing": 76,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972507331378299120234604105571847507331378299120234604105572"
+      "completeness_ratio": "0.972150971051667277390985709050934408208134847929644558446317"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5286,6 +5286,10 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-closure-tl-support.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "delta-lambda-h6-branching.witness.json",
           "missing_fields": []
         },
@@ -9921,6 +9925,14 @@
           ]
         },
         {
+          "witness": "rho-w-crystal-vertex-trace.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "sigma-f-electron-shell-chain.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -11829,14 +11841,6 @@
         },
         {
           "witness": "qserre-gs-basis-check.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-w-crystal-vertex-trace.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

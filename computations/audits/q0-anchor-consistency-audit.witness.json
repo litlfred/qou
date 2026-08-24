@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:41:08.819485+00:00",
-  "commitSha": "49b25c4cda8376ab9f4632ceb1950e2bc5a039ff",
+  "computedAt": "2026-08-24T14:47:21.839905+00:00",
+  "commitSha": "66ce1243ab993380ddb5376ef447163740653f90",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -45,7 +45,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 747,
+      "Q0_OK": 748,
       "Q0_AMBIGUOUS": 16,
       "Q0_INDEPENDENT": 47,
       "Q0_INDEPENDENT_NO_REASON": 0,
@@ -9445,6 +9445,10 @@
         },
         {
           "witness": "d14-theta-bar-side.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "delta-lambda-closure-tl-support.witness.json",
           "detail": ""
         },
         {

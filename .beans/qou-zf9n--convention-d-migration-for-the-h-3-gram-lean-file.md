@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T11:30:53Z
+updated_at: 2026-08-24T14:49:40Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -331,3 +331,48 @@ Two process notes:
 REMAINING on this bean: item 3 (Delta_lambda residual drift), item 4 (the A=3
 mirror pair that fails to cancel while A=7 cancels exactly). Neither touches the
 convention work, so this bean's convention thread is now closed.
+
+
+## Where the missing 83.5% can live — a structural bound (not an ansatz)
+
+With `rho_w_crystal_vertex_trace` fixed (the 8.9e-7 residual was a hardcoded
+muon q; now 1.4e-49 — bean qou-2joi), the shortfall is a clean measurement and
+can be characterised.
+
+**The closure sum is supported on the Temperley-Lieb quotient.** `y_lambda`
+vanishes on every partition with >= 3 rows, so those blocks enter
+`sum_lambda y_lambda * Delta_lambda * sgn * f^lambda` multiplied by EXACTLY
+zero. At n=6, 7 of 11 partitions contribute nothing; only (6), (5,1), (4,2),
+(3,3) survive.
+
+That is a scope-(b) structural exclusion with an exact named invariant: **no
+per-block weight on a >= 3-row partition can change this sum.** It bounds where
+a seventh ansatz could act without proposing one — and it explains the shape of
+the six refutations rather than adding to them.
+
+Scope stated precisely: this excludes contributions THROUGH THIS FORMULA. A
+separate additive super-pairwise term is untouched, so this is evidence FOR the
+AGENTS.md expectation, not against it.
+
+**And the surviving sum is cancellation-dominated.** The four terms:
+
+    (6)     +0.179891    25.1% of total
+    (5,1)   -1.269689   177.0%      <- larger than the total by itself
+    (4,2)   +0.693688    96.7%
+    (3,3)   -0.321336    44.8%
+    ----------------------------
+    total   -0.717445
+
+sum|term| = 2.4646 against |total| = 0.7174 — a **3.435x cancellation**. So
+16.48% capture is NOT "we collected a sixth of the terms"; it is large
+alternating terms nearly cancelling and leaving a residue ~6x too small. Any
+reweighting of the four survivors fights that cancellation.
+
+**Same phenomenon as the Gram radical, seen from the weights.**
+`gramMatrixD_det_eq_zero` (PR #5618, sorry-free) has the q-antisymmetriser —
+the (1^3) block, the unique >= 3-row partition of 3 — spanning its radical. The
+general-n form `sum_(>=3 rows) dim^2 = n! - Catalan(n)` is verified exactly for
+n = 3,4,5,6 and matches PR #5592's TL_n rank. Four faces of one fact:
+Gram radical / y_lambda = 0 / TL quotient / closure support.
+
+Probe: `computations/probes/delta_lambda_closure_tl_support_probe.py`, 5/5.
