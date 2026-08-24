@@ -1,4 +1,5 @@
 import QOU.Mathlib.ExtensionClass
+import QOU.GroundRingCore
 import Mathlib.RingTheory.Ideal.Span
 import Mathlib.Tactic
 
@@ -174,5 +175,27 @@ theorem span_eq_q_add_one (q : R) :
 theorem hecke_not_splits_at_neg_one {R : Type u} [CommRing R] [Nontrivial R]
     (q : R) (hq : q = -1) : ¬ Splits q (-1) (1 : R) :=
   not_splits_of_eq_of_ne_zero (by rw [hq]) one_ne_zero
+
+/-! ### The nontriviality hypothesis is free over the QOU ground ring
+
+    `hecke_not_splits_at_neg_one` carries `[Nontrivial R]`, and over an
+    arbitrary `CommRing` it has to: in the zero ring `1 = 0` and every
+    extension splits vacuously.
+
+    It is **not** an added assumption in the QOU setting.
+    `R_q = LaurentPolynomial ℤ` is nontrivial by instance search, so the
+    hypothesis is discharged rather than assumed — recorded here as a checked
+    fact instead of left for a reader to wonder about. -/
+
+example : Nontrivial QOU.GroundRing.R_q := by infer_instance
+
+/-- The non-split extension at `q = -1`, over the actual ground ring.
+
+    No hypothesis beyond `q = -1`: nontriviality of `R_q` is supplied by
+    instance search, so this is the corpus's own statement rather than a
+    statement about some ring that might be trivial. -/
+theorem groundRing_not_splits_at_neg_one (q : QOU.GroundRing.R_q) (hq : q = -1) :
+    ¬ Splits q (-1) (1 : QOU.GroundRing.R_q) :=
+  hecke_not_splits_at_neg_one q hq
 
 end QOU.Mathlib.HeckeExtOne
