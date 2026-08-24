@@ -1,11 +1,11 @@
 ---
 # qou-wy6d
 title: Promote the two Piece A drafts to blocks; incorporate bring_tetraplectic into brings-surface
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T18:16:12Z
-updated_at: 2026-08-24T18:59:15Z
+updated_at: 2026-08-24T19:07:57Z
 ---
 
 Owner ruling 2026-08-24, superseding bean `qou-cauj`'s "probably not blocks"
