@@ -469,6 +469,12 @@ def native_entry_disposition(src: str) -> str:
     return "harmless"
 
 
+# A witness name only counts as a READ when it sits on a line that also does
+# something file-like with it. Without this, prose mentioning the witness
+# ("committed <name>.witness.json numbers …") reads as a consumer.
+_READER_IDIOMS = ("/", "Path(", "open(", "load", "read_text",
+                  "upstream", "witness.json\"", "witness.json'")
+
 _WITNESS_NAME = re.compile(r"""WitnessBuilder\(\s*[fr]?["']([^"']+)["']""")
 
 
@@ -485,7 +491,16 @@ def native_entry_propagates(path: str, corpus: dict) -> bool | None:
     second justifies the ~10-30x cost of the MPFR path.
 
     Returns None when no `WitnessBuilder(...)` name is found (nothing to
-    decide). Substring match on the witness stem, so it errs toward "reads".
+    decide).
+
+    A bare substring match is NOT enough, and this is the same string-literal
+    trap that made an earlier census of this class report 120 sites against a
+    true 71. Measured on the five sites this gate first reported as
+    propagating, one was a false positive:
+    `fr_pullback_borromean_h3a_test.py:501` mentions
+    `"committed fr-pullback-k3-test.witness.json numbers ..."` inside a
+    `"note":` string — prose about the witness, not a read of it. So the
+    occurrence must also sit on a line carrying a reader idiom.
     """
     try:
         src = (ROOT / path).read_text(encoding="utf-8")
@@ -500,8 +515,11 @@ def native_entry_propagates(path: str, corpus: dict) -> bool | None:
         if len(stem) < 4:
             continue
         for other, text in corpus.items():
-            if other != path and stem in text:
-                return True
+            if other == path:
+                continue
+            for line in text.splitlines():
+                if stem in line and any(k in line for k in _READER_IDIOMS):
+                    return True
     return False
 
 
