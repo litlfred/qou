@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:34:53Z
-updated_at: 2026-08-24T13:53:48Z
+updated_at: 2026-08-24T14:21:51Z
 ---
 
 ## What it is
@@ -121,3 +121,61 @@ the opposite thing to a reader.
 the half worth working: an absent producer inherits a pin with **nothing**
 asserting what it should be — a weaker guarantee than the mislabel that was
 fixed here, not a stronger one.
+
+
+---
+
+## The oracle was wrong too: the MANIFEST is not the STAMP
+
+Comparing an inherited pin against `q0_anchor_manifest.json` answers *"what was
+this producer supposed to be pinned at"*. What misleads a reader is the other
+question — *"what does its witness claim"*. Measured, they come apart three
+ways:
+
+- **ABSENT resolves to `proton` at runtime**, not to "unknown"
+  (`witness.py:291`, *"matching the runtime default"*). The corpus already
+  names the distinction: `q0_anchor_is_declared` exists because *"absence is
+  the runtime default, not evidence"*.
+- **...but only for producers that stamp at all.** `mu3_target_frame_robustness`
+  is ABSENT *and* emits no `q0Anchor`, so the manifest default never applies.
+  **Reading ABSENT as "declared proton" would have made it a MISLABEL — it is
+  not one.** That was my next intended change; measuring it before writing it
+  is the only reason it is not in the tree. Fourth near-miss of the same kind.
+- **`independent` / `comparison`** are declared by the producer at `save()` and
+  can never come from a manifest lookup.
+
+Oracle is now the committed witness, indexed by its own `scriptFile` field —
+exact, rather than guessing the filename from the stem (`strip_float64_padding`
+emits `q0-value-drift-audit.witness.json`). A witness with no `scriptFile`
+falls back to the stem convention, because `no-witness` is the wrong thing to
+say about a producer whose witness is sitting right there.
+
+## The residue, resolved into classes that need different work
+
+| verdict | n | meaning |
+|---|---|---|
+| `unstamped` | 5 | inherit a pin **and** emit no anchor — invisible to every anchor audit |
+| `undetermined` | 1 | upstream unresolved |
+| `no-witness` | 1 | `_li_2_q_util`, a library module — correct |
+| `agrees` | 3 | unchanged |
+| `MISLABEL` | 0 | after the rebase onto main (+147) |
+
+The `unstamped` five are **`qou-veu1`'s mechanism and this bean's,
+intersecting** — measured on one population for the first time. One of them,
+`mu3_target_frame_robustness`, inherits a **muon** pin: the layer-straddle
+AGENTS.md documents at 11.54 ppb, reached here from a third angle.
+
+## PR hygiene, and one coupling a reviewer should know
+
+Rebased onto main: the PR showed **57 commits / 34 files / +3399** because
+rebase-merge rewrote #5519's SHAs, so already-merged content read as new. Now
+**4 commits / 4 files / +487** — the same content, actually reviewable.
+
+Adding a witness-**reading** script moves `witness-provenance-audit`:
+`prov_exempt_no_reader` 224 → 223, `prov_missing` 75 → 76. Real and
+attributable to this bean. Not committed: the same gates run also moved
+`q0-value-drift-audit` by a delta I could not attribute (+2 proton / −1
+canonical, net +1 witness) and rewrote `pyhecke_native_build` to this
+container's hash. Per AGENTS.md — check whether the movement is yours or
+main's *before* claiming it — those three derived audits were reverted rather
+than committed on a guess.
