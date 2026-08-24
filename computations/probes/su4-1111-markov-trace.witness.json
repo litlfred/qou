@@ -1,12 +1,14 @@
 {
   "engine": "mpmath+numpy",
   "engineVersion": "mpmath50dps/f64-chi",
-  "computedAt": "2026-08-24T09:10:48.443403+00:00",
+  "computedAt": "2026-08-24T15:47:22.704463+00:00",
   "computation": "su4-1111-markov-trace",
   "scriptFile": "su4_1111_markov_trace_probe.py",
   "description": "PROBE 2b: GENUINE Schur-Weyl [1^4]-flavour-projected 3A-strand Markov trace. e_A[h_3] antisymmetric SU(4) plethysm (exact power-sum + Murnaghan-Nakayama) \u2192 Schur mult m_\u03bb, y_\u03bb-normalised (Wenzl bridge) sum of exact Hoefsmit characters \u03c7_\u03bb(\u03b2_atom), gated by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, no fit, single canonical operator.",
-  "tier": "structural (exact plethysm + Wenzl y_\u03bb + Hoefsmit \u03c7_\u03bb; f64 trace)",
-  "precision": "chi=f64 (magnitude verdict); y_lambda=mpfr_50dps; plethysm=exact rational",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "tier": "structural (exact plethysm + Wenzl y_\u03bb + Hoefsmit \u03c7_\u03bb, all exact)",
+  "precision": "chi=mpfr_exact (sparse trace-only, cross-checked vs dense at 7e-71); y_lambda=mpfr_50dps; plethysm=exact rational",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "plethysm_A4_partitions": {
@@ -22,13 +24,13 @@
       "(3, 3, 3, 3)": 1
     },
     "he4": {
-      "full_trM": "0.16097414544240868895369983110554893624705587181191",
-      "proj_sum": "0.0046827209822981107938962438970736698389274372506461",
-      "T_1111": "0.0046827209822981107938962438970736698389274372506461",
+      "full_trM": "0.16097414544240738182587344098071685392360735413342",
+      "proj_sum": "0.0046827209822980828440453399679791891226254515784154",
+      "T_1111": "0.0046827209822980828440453399679791891226254515784154",
       "gate_C44": 1,
-      "T_over_full": "0.029089894960637862077538028118656125582542640693376",
-      "closed_form_trM": "0.16097414544240862856574609467675797135697481867925",
-      "closed_form_rel_err": "3.751407008278460369673022036895135442622040782309e-16",
+      "T_over_full": "0.029089894960637924661254426792629638066572056432403",
+      "closed_form_trM": "0.16097414544240738182587344098071685392360735413341",
+      "closed_form_rel_err": "2.0754611732419831273669803495591650599663814621209e-50",
       "per_partition": [
         {
           "lambda": [
@@ -40,7 +42,7 @@
           "m": 1,
           "f": 4158,
           "y_lambda": "0.0",
-          "chi": "23.617726147079157",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -52,7 +54,7 @@
           "m": 1,
           "f": 2673,
           "y_lambda": "0.0",
-          "chi": "4.652088216755558",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -65,7 +67,7 @@
           "m": 1,
           "f": 2376,
           "y_lambda": "0.0",
-          "chi": "-23.129047148680606",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -77,7 +79,7 @@
           "m": 1,
           "f": 1650,
           "y_lambda": "0.0",
-          "chi": "63.62389632535526",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -90,7 +92,7 @@
           "m": 1,
           "f": 1485,
           "y_lambda": "0.0",
-          "chi": "-7.60751111846515",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -102,7 +104,7 @@
           "m": 1,
           "f": 1408,
           "y_lambda": "0.0",
-          "chi": "1.69228311531608",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -114,7 +116,7 @@
           "m": 1,
           "f": 891,
           "y_lambda": "0.0",
-          "chi": "12.772664718255395",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -127,7 +129,7 @@
           "m": 1,
           "f": 462,
           "y_lambda": "0.0",
-          "chi": "23.624759258339836",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -140,7 +142,7 @@
           "m": 1,
           "f": 165,
           "y_lambda": "0.0",
-          "chi": "-3.3064392130727684",
+          "chi": "None",
           "contrib": "0.0"
         },
         {
@@ -151,28 +153,28 @@
           "m": 1,
           "f": 132,
           "y_lambda": "0.00022872963188107212306885239207553781822040549587563",
-          "chi": "20.47273430988115",
-          "contrib": "0.0046827209822981107938962438970736698389274372506461"
+          "chi": "20.47273430988102875317420224157012703335593442908",
+          "contrib": "0.0046827209822980828440453399679791891226254515784154"
         }
       ]
     },
     "deuteron": {
-      "full_trM": "0.5751722439177740779362453056209537024766099542729",
-      "T_11": "1.9092295899419139283686103543056023579110920414925",
+      "full_trM": "0.57517224391777187082653534398618088915249435289283",
+      "T_11": "1.909229589941907184269921454961212235590706555493",
       "gate_C42": 6,
-      "T_over_full": "0.55323415728398021137463178603125321788357892296686"
+      "T_over_full": "0.55323415728398038007545714765322225995254694507445"
     },
     "li6": {
       "gate_C46": 0,
       "T_1111111": "0 (exact via gate)"
     },
     "enhancement_metrics": {
-      "m1": 0.00019535449460326434,
-      "m2": 0.001172126967619586,
-      "m3": 0.47828796108000704,
-      "m4": 0.025128565693681208
+      "m1": "0.000195354494603263847996401206900560021933323852920577970531626",
+      "m2": "0.00117212696761958308797840724140336013159994311752346782318975",
+      "m3": "0.478287961080007005593244893214279017295957448183738024032119",
+      "m4": "0.0251285656936812545552219295379353275170680324395840194116082"
     },
-    "needed_super_pairwise": 2.0925,
+    "needed_super_pairwise": "2.09250000000000000000000000000000000000000000000000085528471",
     "verdict": "DOES-NOT",
     "verdict_note": "PARTIAL / scope-(a): the genuine e_A[h_3]-plethysm [1^4]-projected trace is right-KIND (categorical antisymmetric supermultiplet, not the pairwise-derived Mayer cluster) and right-LOCALITY (A=6 \u2192 0 EXACTLY via the proved C(4,6)=0 gate; the internal plethysm e_6[h_3] is itself non-zero). It does NOT close the magnitude parameter-free: every enhancement metric vs 2.093 carries a denominator convention (pair count / pairwise-scale) \u2014 a Rule-14 hidden DOF \u2014 so a within-5% hit is a units-mismatched near-match and must NOT be wired. Constrains the magnitude and confirms the ingredient KIND; does NOT exclude it."
   },
@@ -191,7 +193,7 @@
     },
     {
       "name": "full_trace_multiplicativity_crosscheck",
-      "computed": "3.7514070082784606e-16",
+      "computed": "2.0754611732419831e-50",
       "expected": "<1e-6",
       "passed": true
     }
