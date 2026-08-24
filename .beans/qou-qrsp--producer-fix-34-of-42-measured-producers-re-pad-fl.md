@@ -1,11 +1,11 @@
 ---
 # qou-qrsp
 title: 'PRODUCER FIX: 37 of 45 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-07T09:09:03Z
+updated_at: 2026-08-24T09:23:01Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -366,3 +366,64 @@ REMAINING 57 fields / 12 producers:
                                            FLOOR (both measured runs timed out)
       phi_q_spectral_combiner_probe (+6)   reads upstream witness -> fix UPSTREAM
       rho_k_h3a_lp_dual             (+2)   reads occam JSON      -> fix UPSTREAM
+
+
+## su4_1111_markov_trace_probe: both halves of its entry above were wrong (2026-08-24)
+
+This bean's "Next" named it as 10 padded fields with `hecke_characters.py:214`
+as the root. Measured on a clean detached worktree at origin/main 2c8c27210:
+
+- **It re-pads 0 fields.** The producer already uses `str_at_true_precision`
+  (line 399). Someone fixed it and the count here went stale.
+- **It CRASHES**, on main and everywhere: `M = c * sigmas[g] + d * I` with an
+  mpf `d` hits scipy's `_mul_scalar` -> dtype object -> ValueError.
+
+The crash is invisible to a padding sweep BY CONSTRUCTION — the sweep scores
+what a producer writes, and this one writes nothing. `producer_repad_sweep.py`'s
+own rule ("CLEAN only if it ran, wrote a witness, and that witness had zero
+padded fields") is exactly the guard this case needed, and the stale 10 shows
+what happens when a count outlives the run behind it.
+
+Also: the two matrix branches disagreed on the same input. Sparse crashed;
+**dense did not** — it silently built an object-dtype numpy array and ran the
+whole product in Python-level mpf arithmetic from 53-bit inputs, for no gain.
+
+### Fixed (PR #5623)
+
+`chi_lambda_of_word` is a float64 kernel and `-> float` is the contract: both
+branches end in `float(...)`, so no caller ever received >53 bits. Coerce the
+word coefficients on the way in. **Measured: 8908 coerced, 2277 lossy, worst
+relative loss 2.6e-17** = half an ulp. `chi_lambda_braid_mpf` is NOT a drop-in
+alternative — at A=4 the largest irrep is f^lambda = 4158, ~7.2e10 mpf ops per
+matrix multiply.
+
+### What the crash was hiding — worth more than the padding
+
+Because it cannot run, nobody could refresh its witness, which is therefore
+**three weeks older than the convention-D cascade** (computedAt 2026-07-18;
+cascade 2026-08-09) and is convention-C-frame:
+
+    y_lambda [3,3,3,3]   -4.65e-09  ->  0.0
+    y_lambda [5,3,3,1]   -1.77e-06  ->  0.0
+    full_trM              0.0554    ->  0.1610   (2.9x)
+
+Under D, `_wenzl_X_Q` collapses to X = q^4 = Q^2, integral level r = 2, row cap
+l(lambda) <= 2 — y_lambda is EXACTLY 0 at >=3 rows. A nonzero y_lambda on a
+4-row partition is only possible under C. That is the module's own docstring.
+
+**The probe's conclusion survives**: verdict DOES-NOT, 3/3 assertions pass in
+BOTH frames. The numbers were wrong and the answer was not.
+
+### Generalised into a committed tool
+
+`computations/audits/y_lambda_convention_c_fingerprint_audit.py` tests the
+ANSWER rather than the source, since every existing convention detector keys on
+how `z` was written and the blindness taxonomy lists thirteen evasions.
+origin/main: **15 live files / 267 fields**. Two limits, both in its docstring:
+a hit is about the witness not the producer (re-run to distinguish stale payload
+from live source defect), and it keys on a FIELD NAME, so files where
+`y_lambda` is not the Wenzl y_lambda are false positives it cannot rule out.
+Only su4 is hand-confirmed. The other 13 are candidates, not verdicts.
+
+Next on this front: re-run the 13 candidates' producers to split stale-witness
+from live-source-defect.
