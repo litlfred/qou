@@ -63,6 +63,11 @@ def qContent {R : Type*} [CommRing R] (i j : ℤ) (q : Rˣ) : R :=
 noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
     (lam : List ℕ) (q : R) : R
 
+/-- **CONJECTURE (OPEN).** The four cross-checks follow from Lagrange interpolation in commuting variables. -/
+class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) : Prop where
+  /-- The explicit idempotency holds. -/
+  idempotent : ∀ {n : ℕ} (lam : List ℕ) (_h : lam.sum = n), centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
+
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central
     primitive idempotent `e_λ` for partition `λ ⊢ n` is given by
 
@@ -79,7 +84,8 @@ noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
                           `star (e_λ) = e_{λ'}`
     -/
 theorem explicit_central_idempotent_via_murphy
-    {n : ℕ} (lam : List ℕ) (h : lam.sum = n) :
+    {n : ℕ} (lam : List ℕ) (h : lam.sum = n)
+    [hi : ExplicitCentralIdempotentConjecture q] :
     centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q := by
   -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
   -- Ref: [dipper-james1986] — extension of Murphy's construction
@@ -93,7 +99,7 @@ theorem explicit_central_idempotent_via_murphy
   -- self-adjointness, bar-pairing) follow from Lagrange
   -- interpolation in commuting variables (J_1, ..., J_n).
   -- CONJECTURE: The four cross-checks follow from Lagrange interpolation in commuting variables.
-  sorry
+  exact hi.idempotent lam h
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in

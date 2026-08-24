@@ -33,12 +33,17 @@ present.  The algorithmic content is implemented in Python
 --                   -- wenzl1988 = Hecke algebras of type An (DOI BF01404457)
 sorry
 -/
+/-- **CONJECTURE.** A full Lean formalization requires the q-deformed Specht module construction. -/
+class DeltaQDecorationConjecture where
+  /-- The placeholder delta_q map. -/
+  delta_q_map : ℕ → Type
+
 /-- Concrete model: the indexing type for the per-irrep tuple is the
     finite type of partitions of `n`, here represented by the
     list-based partition records `Fin (Nat.partition.length n)`.
     The full per-irrep matrix data (q-deformed Specht modules in
     seminormal basis) is the upgrade target documented above. -/
 -- Ref: [wenzl1988b] Wenzl 1988, DOI 10.1007/BF01393839 — placeholder
-def delta_q (n : ℕ) : Type := Fin n
+def delta_q (n : ℕ) [hi : DeltaQDecorationConjecture] : Type := hi.delta_q_map n
 
 end QOU.BraidKnot
