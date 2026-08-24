@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T14:51:07Z
+updated_at: 2026-08-24T14:55:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1361,3 +1361,32 @@ Found only because I later scanned for the *bug shape* (asserts z bar-symmetry
 AND already carries a D expression) and four of the six hits turned out to be
 files documenting the identity correctly. The scan I wrote to find more bugs
 found my own over-claim instead.
+
+
+### Self-audit of my other claims on this branch (same discipline, applied to myself)
+
+Having found that `bar(z_D) = z − h` was established corpus, I greped my two
+remaining structural claims. Result: **no prior statement, but neither is
+independent** — both are one-step corollaries of that established identity, so
+"absent from the corpus" here probably means "nobody bothered writing it down",
+not "new insight".
+
+**1. `z_D/(z_D − h) = q⁴`.** Searched `computations/`, `docs/`, `content/` and
+the Lean tree for `q^4` / `q**4` / `q^{-4}` / "fourth power" near z, markov or
+bar. Only my own two commits. The other hits are `ℏ_q**4` — a **different
+quantity**, ℏ_q not q — and `q-beta-bar-even-kernel-invariant.lean:100-102`,
+which is about a Q_β correction being bar-even iff `q⁴ = 1`: adjacent territory,
+different statement.
+
+But given `bar(z) = z − h` (corpus) it is immediate: `z/(z−h) = z/bar(z)`, and
+`bar(z_D) = q⁻⁴·z_D`, so the ratio is `q⁴` in one line.
+
+**2. pp↔nn exchange under bar.** Only my own commits; the other "exchange" hits
+are the Slater antisymmetrizer / exchange-determinant family, unrelated. Also
+immediate from the same identity: `f_pp = z`, `f_nn = z − h = bar(z)`, so bar
+swaps them by inspection.
+
+**Net:** one retracted novelty claim (`bar(z_D) = z − h`), two corollaries that
+are unstated in the corpus but follow in one step from it. The load-bearing
+contribution of that commit remains the *defect* in
+`derived_bond_graph_binding.py` and its measurement, not the mathematics.
