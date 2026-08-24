@@ -3986,3 +3986,32 @@ factor equals a *multiset* one, and why `pderiv` commutativity is never needed.
 term picks one entry per row and column, so `∏_i Fac(Dx i ⊞ Dy σ(i)) = (∏_i Fac(Dx i))·(∏_j Fac(Dy j))`
 independently of `σ` — the constant factors out of the whole determinant uniformly. Divide it
 out and the height bound becomes `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n`, which is §12's `b`.
+
+### Correction 21 at the determinant: the constant divides, so Mahler's `W` is integral
+
+    listIdx_append                  listIdx (l₁ ++ l₂) = listIdx l₁ + listIdx l₂
+    listFac_mul_dvd_listFac_append  Fac(l₁)·Fac(l₂) ∣ Fac(l₁ ++ l₂)
+    C_dvd_det_of_dvd_entries        C(a i · b j) ∣ M i j  ⟹  C((∏a)(∏b)) ∣ det M
+    C_listFac_dvd_det_sepFamily     (∏_i Fac(Dx i))(∏_j Fac(Dy j)) ∣ det (∂^{Dx i ⊞ Dy j} P)
+
+`C_dvd_det_of_dvd_entries` is the structural fact that makes the whole repair possible: the
+discrepancy between `∂^l` and Mahler's `Δ^l` is a **row factor times a column factor**, and a
+determinant is exactly the shape that turns such a thing into a single scalar — every
+permutation term picks one entry per row and one per column, so `∏_i a_i·b_{σ(i)}` is `(∏a)(∏b)`
+independently of `σ`.
+
+⚠ `Fac(l₁)·Fac(l₂) ∣ Fac(l₁ ++ l₂)` needs **no disjointness** of the two lists' variables —
+`m!·n! ∣ (m+n)!` per variable. Using divisibility rather than the equality that *would* need
+disjointness makes the lemma cheaper and the hypothesis stack shorter. (The `x` and `y` lists
+here *are* disjointly supported, so equality holds; it simply is not needed.)
+
+So the quotient `det / C` is an integral polynomial, its index is unchanged (`index_C_mul`), and
+its height is smaller by the `2^{Θ(n² log n)}` correction 21 identified. **That quotient is
+Mahler's `W`.**
+
+**What is left of correction 21:** the height bound on the quotient. `abs_coeff_det_le` assumes a
+*uniform* per-entry bound and gives `n!·(S·B)^n`; here the per-entry bound is `a_i·b_j·2^{Σd}·B`,
+and the product over a permutation is `C·(2^{Σd}B)^n` — so a variant of `abs_coeff_det_le` taking
+factorised per-entry bounds gives `n!·S^{n−1}·C·(2^{Σd}B)^n`, and dividing by `C` leaves
+`n!·S^{n−1}·(2^{Σd}B)^n`, which is §12's `b`. One lemma, and it is the same expansion
+`abs_coeff_det_le` already does.

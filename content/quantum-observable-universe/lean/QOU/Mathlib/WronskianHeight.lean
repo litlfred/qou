@@ -459,6 +459,78 @@ theorem abs_coeff_pderivList_le' [DecidableEq σ] (s : Finset σ) {g : MvPolynom
     refine le_trans (mul_le_mul hPr (hB _) (abs_nonneg _) hfac) (le_of_eq ?_)
     ring
 
+@[simp] theorem listIdx_append (l₁ l₂ : List σ) :
+    listIdx (l₁ ++ l₂) = listIdx l₁ + listIdx l₂ := by
+  induction l₁ with
+  | nil => simp
+  | cons j l ih => rw [List.cons_append, listIdx_cons, listIdx_cons, ih, add_assoc]
+
+/-- **The row and column factorials divide the combined one.**
+
+`m!·n! ∣ (m+n)!` per variable, so `Fac(l₁)·Fac(l₂) ∣ Fac(l₁ ++ l₂)`.  ⚠ No disjointness of the
+two lists' variables is needed — that is the point of using divisibility rather than the
+equality that *would* need it. -/
+theorem listFac_mul_dvd_listFac_append [DecidableEq σ] (s : Finset σ) (l₁ l₂ : List σ) :
+    (∏ h ∈ s, ((listIdx l₁) h).factorial) * (∏ h ∈ s, ((listIdx l₂) h).factorial)
+      ∣ ∏ h ∈ s, ((listIdx (l₁ ++ l₂)) h).factorial := by
+  rw [← Finset.prod_mul_distrib]
+  refine Finset.prod_dvd_prod_of_dvd _ _ fun h _ => ?_
+  rw [listIdx_append, Finsupp.add_apply]
+  exact Nat.factorial_mul_factorial_dvd_factorial_add _ _
+
+/-- **A row/column-factorising divisor of every entry divides the determinant.**
+
+If `C (a i · b j)` divides entry `(i,j)`, then `C ((∏ a)·(∏ b))` divides `det` — because every
+permutation term picks one entry per row and one per column, so `∏_i a i · b (σ i)` is
+`(∏ a)(∏ b)` **independently of `σ`**.
+
+This is what makes correction twenty-one's repair possible at all: the discrepancy between `∂^l`
+and Mahler's `Δ^l` is a row factor times a column factor, and a determinant is exactly the
+shape that turns such a thing into a single scalar. -/
+theorem C_dvd_det_of_dvd_entries {ι : Type*} [Fintype ι] [DecidableEq ι]
+    (M : Matrix ι ι (MvPolynomial σ ℤ)) (a b : ι → ℤ)
+    (h : ∀ i j, C (a i * b j) ∣ M i j) :
+    C ((∏ i, a i) * (∏ j, b j)) ∣ M.det := by
+  classical
+  rw [Matrix.det_apply]
+  refine Finset.dvd_sum fun p _ => ?_
+  have hsplit : (C ((∏ i, a i) * (∏ j, b j)) : MvPolynomial σ ℤ)
+      = ∏ i, (C (a (p i) * b i) : MvPolynomial σ ℤ) := by
+    rw [← map_prod, Finset.prod_mul_distrib, Equiv.prod_comp p a]
+  have hprod : C ((∏ i, a i) * (∏ j, b j)) ∣ ∏ i, M (p i) i := by
+    rw [hsplit]
+    exact Finset.prod_dvd_prod_of_dvd _ _ fun i _ => h (p i) i
+  rcases Int.units_eq_one_or (Equiv.Perm.sign p) with hs | hs <;> rw [hs] <;>
+    simpa using hprod
+
+/-- **§7's constant divides the separated family's determinant.**
+
+    (∏_i Fac(Dx i)) · (∏_j Fac(Dy j))  ∣  det (∂^{Dx i ⊞ Dy j} P)
+
+so the quotient — Mahler's `W`, built from divided derivatives — is an **integral** polynomial.
+That quotient is the object §12 measures, its index is the same (`index_C_mul`: scaling does not
+move the index), and its height is `2^{Θ(n² log n)}` smaller, which is exactly the gap correction
+twenty-one identified between this arc's `mvGenWronskian` and Mahler's `W`. -/
+theorem C_listFac_dvd_det_sepFamily {τ : Type*} [DecidableEq σ] [DecidableEq τ]
+    [DecidableEq (σ ⊕ τ)] {r : ℕ} (s : Finset (σ ⊕ τ))
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ) (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hx : ∀ i, ∀ h ∈ (Dx i).map Sum.inl, h ∈ s)
+    (hy : ∀ j, ∀ h ∈ (Dy j).map Sum.inr, h ∈ s) :
+    C ((∏ i, ((∏ h ∈ s, ((listIdx ((Dx i).map Sum.inl)) h).factorial : ℕ) : ℤ)) *
+        (∏ j, ((∏ h ∈ s, ((listIdx ((Dy j).map Sum.inr)) h).factorial : ℕ) : ℤ)))
+      ∣ (Matrix.of fun i j =>
+          pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det := by
+  refine C_dvd_det_of_dvd_entries _ _ _ fun i j => ?_
+  have hmem : ∀ h ∈ (Dx i).map Sum.inl ++ (Dy j).map Sum.inr, h ∈ s := by
+    intro h hh
+    rcases List.mem_append.mp hh with h1 | h1
+    · exact hx i h h1
+    · exact hy j h h1
+  rw [C_dvd_iff_dvd_coeff]
+  intro n
+  refine dvd_trans ?_ (listFac_dvd_coeff_pderivList s P _ hmem n)
+  exact_mod_cast Int.natCast_dvd_natCast.mpr (listFac_mul_dvd_listFac_append s _ _)
+
 /-- **§7's coefficient bound in one variable, sharp.**
 
     |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
