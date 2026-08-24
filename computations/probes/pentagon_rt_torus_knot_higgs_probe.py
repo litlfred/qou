@@ -66,7 +66,7 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -75,6 +75,27 @@ Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 # CAL-1 from the registry, not re-typed: the literal here was
 # "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
 from codata_constants import M_E_MEV  # noqa: E402
+
+
+def _fmt_deep(obj):
+    """Serialize every mpf in a nested structure with `_precision.fmt`.
+
+    Mirrors the same helper in `per_knot_density_borromean_q_locality_probe`.
+    The witness dict carries `mpf` all the way through -- so comparisons and
+    `abs()` keep full precision -- and conversion happens at the write boundary
+    only, at OUTPUT_DPS. Do NOT `float()` at construction: that puts raw
+    binary64 into the witness, and stringifying the float instead would be
+    laundering (AGENTS.md NO-FLOAT64).
+    """
+    if isinstance(obj, dict):
+        return {k: _fmt_deep(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_fmt_deep(v) for v in obj]
+    if isinstance(obj, mpf):
+        return fmt(obj)
+    if isinstance(obj, mpc):
+        return {"re": fmt(obj.real), "im": fmt(obj.imag)}
+    return obj
 M_HIGGS_GEV = mpf("125.10")
 M_HIGGS_MEV = M_HIGGS_GEV * 1000
 M_H_OVER_M_E = M_HIGGS_MEV / M_E_MEV  # ≈ 244811
@@ -229,7 +250,10 @@ def main() -> None:
                 ratio = val / float(M_HIGGS_MEV)
                 # interested in ratios within 5 orders of magnitude
                 if 0.01 < ratio < 100:
-                    print(f"{N:<4} {q_label:<20} {cand_label:<35} {val:>14.4f} {ratio:>13.6f}")
+                    # float() here is DISPLAY ONLY (AGENTS.md NO-FLOAT64 §1): val and
+                    # ratio stay mpf everywhere they are computed with and serialized from.
+                    print(f"{N:<4} {q_label:<20} {cand_label:<35} "
+                          f"{float(val):>14.4f} {float(ratio):>13.6f}")
                     if best_ratio is None or abs(mp.log(mpf(str(ratio)))) < abs(mp.log(mpf(str(best_ratio)))):
                         best_ratio = ratio
                         best_info = {"N": N, "q_label": q_label, "candidate": cand_label, "value_MeV": val, "ratio_m_H": ratio}
@@ -299,7 +323,8 @@ def main() -> None:
         ),
     }
     out_path = Path(__file__).parent / "pentagon-rt-torus-knot-higgs-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    out_path.write_text(
+        json.dumps(_fmt_deep(witness), indent=2, sort_keys=True) + "\n")
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 
