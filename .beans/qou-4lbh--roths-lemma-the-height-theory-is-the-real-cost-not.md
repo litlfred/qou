@@ -3,8 +3,9 @@
 title: 'Roth''s lemma: the height theory is the real cost, not the Wronskians'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-21T16:31:55Z
-updated_at: 2026-08-22T00:00:00Z
+updated_at: 2026-08-24T13:23:21Z
 ---
 
 The index and Wronskian machinery for Roth's lemma is done. What remains is the m=1 base case, which is blocked on height theory Mathlib has only partially. See body for the measured inventory.
@@ -2699,3 +2700,94 @@ theorem proved against this one is about `RothLemmaUniform`, not about Roth's le
 
 Verification: twenty-three arc modules rebuilt with `.olean`s deleted — exit 0, 2819 jobs, no
 errors, no linter output. Both declarations `#print axioms`-clean.
+
+---
+
+## 2026-08-24 — §11 and §14 read from the page scans; the eleventh correction
+
+The two sections this arc had been reconstructing around are no longer unread. The PDF's OCR
+text layer garbles exactly §11 and §14; extracting the **scanned page images** and reading
+them visually worked where every text extraction had failed. (Doc page = PDF page + 76;
+`pypdf` for the images, `pillow` to crop.) Recording the method because the arc lost several
+turns to "this section is illegible" when what was illegible was one representation of it.
+
+Three findings, two of them corrections.
+
+### 1. `RothGrowth` **is** the source's condition — caveat withdrawn
+
+Property `Γ_M`'s first clause is `max(s₂/s₁, …, s_M/s_{M−1}) ≤ t`, i.e. `s_h ≥ s_{h+1}/t` —
+which is `RothGrowth o ω d` with **`ω = 1/t`**. The arc reconstructed that condition from what
+the row-cost bound needed, and the reconstruction was right.
+
+Every "this is a fact about `RothGrowth` as this arc defines it, not established as the
+source's" caveat is now withdrawn — five of them, in `RothLemmaStatement`,
+`RothOperatorFamily` (two) and `RothInductionStep` (two). What replaces them is narrower and
+true: `Γ_M`'s **other two clauses** (`s_h log K_h ≥ s₁ log K₁` and
+`K₁ ≥ 2^{(1/t)(M−1)M(2M+1)}`) are still carried nowhere, which makes this arc's statements
+**stronger** than the source's, not weaker.
+
+⚠ It also caught a conflation the arc had been making. `ω ≥ 2/ε` reads `ε ≥ 2t` under
+`ω = 1/t`, and §14's `ε = t/m` does **not** satisfy it. The row cost and the height parameter
+are separate quantities; `rothGrowth_row_cost_le`'s `t` is the former, §11's the latter. The
+docstring saying `ω ≥ 2/ε` "is what `ω(m, ε)` has to be" was treating them as one.
+
+### 2. ⚠ `c_m = 2^{m+1} − 3`, not `2^m − 3`
+
+§14 gives `c₁ = 1` and `c_m = 2c_{m−1} + 3`, which closes to `2^{m+1} − 3`. Landed as
+`rothConstant` with `rothConstant_one` and `rothConstant_rec` checked against each other.
+
+⚠ **It is the base case, not the recurrence, that pins the constant** — and getting that
+backwards is how the wrong value survived unchallenged. The recurrence's general solution is
+`A·2^m − 3`, so the discarded value satisfies it too; `two_pow_sub_three_rec` checks that it
+does, and `two_pow_sub_three_ne_one` shows where it actually fails. A check against the
+recurrence alone would have passed the wrong constant.
+
+That is worth generalising: this arc's habit is to check a claimed closed form against its
+recurrence. On a linear recurrence that check is **necessary and not sufficient**, and the
+homogeneous solution is exactly the error it cannot see.
+
+### 3. ⚠ The conclusion is `Θ_m ≤ c_m·t^{2^{−(m−1)}}` — an exponent, not a linear factor
+
+Iterating §13's *square-root* branch halves the exponent once per step. `RothLemmaUniform`'s
+conclusion was `index ≤ m·ε`, **linear** in the small parameter, and no linear-in-`ε`
+invariant can absorb a square root taken once per step — so the recursion could never have
+closed on that statement's shape. This was not a slack constant; it was the wrong shape.
+
+`rothBound_two_half` and `two_mul_lt_rothBound_two_witness` exhibit the gap at `m = 2`,
+`t = 1/100`: §14 admits `θ = 1/2` where the linear form demanded `1/50`.
+
+### The restatement
+
+Three pieces rather than one, so that "what the statement says" and "what bound the source
+achieves" stop being the same object:
+
+```
+RothBound m t θ            §14's bound, root-free: θ^{2^{m−1}} ≤ c_m^{2^{m−1}}·t
+RothLemmaUniform … θ       the schema — θ is a parameter, so this is not a claim
+RothLemmaMahler σ m t      the instance that IS Roth's lemma: ω = 1/t, ε = t/m, RothBound m t θ
+```
+
+`RothBound` is root-free because the index is `ℚ`-valued and `c_m·t^{2^{−(m−1)}}` is
+irrational in general; raising both non-negative sides to `2^{m−1}` is equivalent by density.
+It is also the shape the recursion is already in — §13's branch is a square root, so this
+arc's arithmetic for it (`sq_index_le_of_det_bound`, `sq_mul_le_two_mul_of_sum_le`) is stated
+squared. `rothBound_one` recovers §14's base case `Θ₁ ≤ t`, and `rothLemmaMahler_one`
+discharges it.
+
+Making `θ` a parameter is what forced the honest label: `RothLemmaUniform` is a **schema**,
+trivially true for large `θ`, and quoting it alone overstates what it says.
+
+### What this changes about "what remains"
+
+The previous entry ended by saying the assembly bottoms out in a numeric condition §14 would
+have to settle. §14 has now been read, so that condition is no longer a placeholder — and the
+open parameter question has moved: it is `Γ_m`'s two omitted clauses, which an `m ≥ 2` proof
+will have to reinstate rather than discover it can do without.
+
+The recursion's obligation, in the new shape: from `RothBound (m−1) t θ'` for the two
+sub-problems, derive `RothBound m t θ` for the assembled bound. `rothConstant_rec` is the
+arithmetic half of exactly that step.
+
+Verification: `RothLemmaStatement`, `RothInductionHypothesis`, `RothInductionStep` and
+`RothOperatorFamily` each rebuilt with its `.olean` deleted — exit 0, no errors, no linter
+output. All fourteen new and re-signed declarations `#print axioms`-clean.
