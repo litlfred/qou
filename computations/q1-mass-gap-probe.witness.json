@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:16:03.678304+00:00",
-  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+  "computedAt": "2026-08-24T15:00:41.374578+00:00",
+  "commitSha": "3b244dc374640c761107f137abb6e7104056c6a7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "q1-mass-gap-probe",
   "scriptFile": "q1_mass_gap_probe.py",
-  "scriptHash": "8f50a07390c4",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "731e45977248",
+  "scriptCommitSha": "f0ef4964827019dbabe5be70f50321faa1844f79",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -369,6 +369,6 @@
       "conclusion": "Direct evaluation: at q = 1 the mass tower End(A_n) is structurally intact (semisimple, distinct levels) but massless — the gap is deformation-induced and does NOT survive the q → 1 limit in either normalization.  This is the computational shadow of the conj:yang-mills-mass-gap μ₂-vanishing statement and supports the obstruction branch (classical-limit obstruction) over any q → 1 gap-transfer strategy."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
