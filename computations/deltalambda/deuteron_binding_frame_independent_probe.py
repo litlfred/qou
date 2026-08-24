@@ -69,7 +69,11 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
 ME_MEV = "0.51099895000"
-B_AME = "2.2245662"
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402 — byte-exact route (bean qou-n55l / fvxq): the literal
+# string equalled the registry value exactly, so this is value-preserving,
+# not a value change. AME here is a MEASUREMENT reference, which is what a
+# `_VALIDATION` constant is for.
+B_AME = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def main() -> int:

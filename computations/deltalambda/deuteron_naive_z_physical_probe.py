@@ -67,7 +67,11 @@ Q0_STR = "1.10997859555733471"
 set_compute_dps()
 
 ME_MEV = mp.mpf("0.51099895069")        # CODATA electron mass
-B_AME_2H = mp.mpf("2.2245662")          # AME2020 deuteron binding (diagnostic only)
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402 — byte-exact route (bean qou-n55l / fvxq): the literal
+# string equalled the registry value exactly, so this is value-preserving,
+# not a value change. AME here is a MEASUREMENT reference, which is what a
+# `_VALIDATION` constant is for.
+B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION          # AME2020 deuteron binding (diagnostic only)
 S_D_MASTER = mp.mpf("0.7438")           # |Sum_lambda y_lambda chi^lambda sgn f^lambda|(D)
                                         # committed master-Sigma signed sum (C_knot audit)
 

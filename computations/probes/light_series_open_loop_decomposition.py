@@ -55,11 +55,18 @@ from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equalled the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a MEASUREMENT reference, which is what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps()
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
-    ("2H", 1, 1, mp.mpf("2.2245662")),
+    ("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
     ("3H", 1, 2, mp.mpf("8.4817977")),
     ("3He", 2, 1, mp.mpf("7.7180213")),
     ("4He", 2, 2, mp.mpf("28.295662")),

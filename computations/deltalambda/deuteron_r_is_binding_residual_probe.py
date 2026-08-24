@@ -60,6 +60,13 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equalled the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a MEASUREMENT reference, which is what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps()
 Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
 
@@ -69,7 +76,7 @@ def main() -> int:
     h = q0 - 1 / q0
     v = mp.sqrt(q0)
     E_rot = mp.mpf("2.0195829")            # pure theory, j=3 (binding-qhamiltonian-rotational-scale)
-    E_AME = mp.mpf("2.2245662")            # measured deuteron binding
+    E_AME = AME_B_DEUTERON_MEV_VALIDATION            # measured deuteron binding
     t = (v - 1 / v) / (v + 1 / v)          # bar-odd impurity, pure theory
     Eplus = E_rot / (1 - t)
     g2 = (E_AME / Eplus - 1) / h ** 2
