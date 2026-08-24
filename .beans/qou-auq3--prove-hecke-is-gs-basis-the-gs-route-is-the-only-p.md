@@ -4290,3 +4290,52 @@ transport.
   (`ybBs`, `bsYb`, `quadSelf`, the far-commutation pairs) have their own
   `_resolves` lemmas in the file; assembling all of them into the structure
   itself is a separate tranche and is **not** claimed here.
+
+## Rule-level membership inversion (2026-08-24, §4at)
+
+`mem_heckeRewritingSystem_rules` (3 families) and
+`mem_heckeCompletedRewritingSystem_rules` (4) invert `r ∈ rules` to the **rule**:
+`r = bokutShiaoRelation i' i j`, with that family's side condition.
+
+**Correction to my own measurement, made in this session.** I told the user that
+nothing in the corpus inverts membership — that only the constructive `_mem`
+direction existed. Wrong. `heckeRewritingSystem_lm_cases` (§4b) and
+`heckeCompletedRewritingSystem_lm_cases` (§4i) are both inversions and have been
+there throughout; I grepped `mem_rules|rules_mem|classify`, missed, and drew a
+conclusion from the miss rather than reading the section headers that say so.
+
+The accurate claim is narrower, and it is the reason this section exists. Both
+existing inversions stop at the **leading monomial**. `OverlapComposition.spoly`
+is computed from `rule.relation` and `rule.lc`, so lm-level cannot reach it — and
+in the completed system the lm does not even determine the rule, because §4j's
+`bokutShiao_lm_eq_yangBaxter_lm` puts `bokutShiaoRelation i' i i'` and
+`yangBaxterRelation i' i` on one word. The criterion's `overlap_resolves`
+quantifies over `oc` with both rules in `rules`, so it is exactly a statement
+that needs the rule-level form.
+
+Both `lm_cases` are re-proved through the new lemmas (the completed one: 15 proof
+lines → 7) with their statements unchanged, so the lm-level classification is now
+a corollary rather than a parallel proof of the same `flatMap`/`filterMap`
+destructuring. Every existing consumer — `_lm_ne_nil`, §4e's irreducibility
+machinery — is untouched.
+
+### What this does NOT do
+
+It does not discharge `overlap_resolves`. Two pieces still stand between:
+
+1. **The shape bridge.** `bsbs_overlap_resolves` is stated for the *constructed*
+   `CornerGeneral.oc i i₁ j₁ j₂ …`; the criterion quantifies over an *arbitrary*
+   `oc`. Going from one to the other means recovering `left` / `overlap` /
+   `right` from `lm₁_decomp : bsWord₁ i₁ j₁ = left ++ overlap` and
+   `lm₂_decomp : bsWord₁ i₂ j₂ = overlap ++ right` — i.e. enumerating which
+   splittings of two Bokut–Shiao words are possible. §4k *counts* these (58
+   shapes at `n = 4`, 45 with both contexts non-empty) but does not carry them in
+   general.
+2. **The other fifteen rule-kind pairs**, plus every `ic`. Rule-level inversion
+   turns `overlap_resolves` into a 4×4 case split; only the BS×BS cell has its
+   corner closed, and only for `j₁ ≥ 1`.
+
+Verified lean-direct: HeckeGS exit 0 (4 s), HeckeCompletion exit 0 (100 s), 0
+errors and 0 warnings on both. `#print axioms` on both new declarations, both
+re-proved `lm_cases`, `_lm_ne_nil` and `bsbs_overlap_resolves`: propext,
+Classical.choice, Quot.sound only. PR #5626.
