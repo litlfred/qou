@@ -466,6 +466,51 @@ def compute_tr_m_via_branching(
         )
     extract_cache[(n, iface)] = extract
 
+    # ── q GUARD (2026-08-24, bean `qou-8chw`) ────────────────────────────────
+    # The A^λ_{ξν}(I) extract above is a JSON file loaded VERBATIM. It is
+    # stamped at the q it was generated at (`q0Value`, the proton pin) and is
+    # never re-evaluated at `q_val`. Only two of this path's three q-carrying
+    # inputs actually receive `q_val`:
+    #
+    #     y_lambda_at(n, q_val)                     <- q_val  (and bar-even)
+    #     evaluate_word_matrix_np(mu, intra, q_val) <- q_val
+    #     A^λ_{ξν}(I)                               <- FROZEN
+    #
+    # So for q_val ≠ q_0 the return was a HYBRID — a frozen operator at q_0
+    # contracted against weights and per-nucleon blocks at q_val. Neither
+    # tr_M at q_val nor tr_M at q_0. At the bar image it returned +0.0332
+    # against the fine-Bratteli transfer's -0.00148: not even the same SIGN.
+    #
+    # Worse than merely wrong: at q_val = q_0 the hybrid degenerates to the
+    # correct value, so the function was right exactly where it is usually
+    # tested and silently wrong everywhere else — failing TOWARD agreement
+    # with an independent path at the anchor, which reads as corroboration.
+    # I reached for it as an arbiter for tr_M^atom(1/q_0) and it could not
+    # serve; nothing in the output said so.
+    #
+    # Refusing is the honest disposition until A^λ can be built at arbitrary
+    # q. That is NOT a wiring job: the closed form
+    # `A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}` is `a_operator_categorical
+    # .categorical_A_interface`, which is a `raise NotImplementedError` stub
+    # with zero callers, its own docstring calling step 4 "the crux ~500 LOC".
+    # (`A_operator_extract_at_level`'s header calls that replacement "verified
+    # exact at 1e-49"; corrected there — the 1e-49 belongs to a different
+    # result and the interface case is unimplemented.)
+    # Tolerance 1e-12, not 1e-30, and the reason matters: the DEFAULT path sets
+    # `q_val = float(Q_FLOAT)`, a float64 truncation of the 50-digit q_0, so it
+    # sits ~1e-16 from the extract's stamp. A 1e-30 gate refused production's
+    # own default — caught by testing the default path, which is the one case
+    # it would have been easy not to test. 1e-12 separates cleanly: the float64
+    # truncation is ~1e-16, while the bar image is ~2e-1 away.
+    _q_anchor = mp.mpf(str(extract.get("q0Value", "0")))
+    if _q_anchor > 0 and abs(mp.mpf(str(q_val)) - _q_anchor) > mp.mpf("1e-12"):
+        return None, 0.0, (
+            f"A^λ extract is frozen at q={mp.nstr(_q_anchor, 12)} and is not "
+            f"re-evaluated; q_val={mp.nstr(mp.mpf(str(q_val)), 12)} would "
+            f"return a hybrid, not tr_M at either q. Use "
+            f"tr_m_atom_via_transfer.tr_m_atom_zn for q ≠ q_0 (bean qou-8chw)."
+        )
+
     # Loop over λ ⊢ n
     t0 = time.time()
     y_table = y_lambda_at(n, q_val)
