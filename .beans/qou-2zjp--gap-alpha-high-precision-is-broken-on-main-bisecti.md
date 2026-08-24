@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-24T18:41:56Z
+updated_at: 2026-08-24T19:13:52Z
 ---
 
 ## What happens
@@ -193,3 +193,78 @@ and `mp.nstr` is preferred.
 
 Two producers are now known broken on `main` and surfaced by this work
 (`alpha_high_precision`, `wedderburn_pair_volumes`); neither was caused by it.
+
+
+## GATE CHECKED 2026-08-24 — NOT LEAN PROVED. Bracket left alone.
+
+The owner conditioned re-centring on Lean backing ("if qou-2zjp is lean proved
+then go"). I searched for it. **There is none**, so nothing was re-centred and
+no witness was regenerated.
+
+Full search + evidence:
+[`docs/audits/2026-08-24-alpha-star-lean-backing-search.md`](../docs/audits/2026-08-24-alpha-star-lean-backing-search.md).
+Summary:
+
+**Searched** — all five corpus-grep paths (`content/**/lean/`, `docs/audits/`,
+`content/`, `computations/`, `docs/coordination/`, `library/INDEX.md`) for
+`alpha_star` / `alphaStar` / `alpha_blend` / `blend` / `err_n` / `bisect` /
+`IntermediateValue` / `StrictMono` / `StrictAnti`, plus `lean_local_search` over
+the built QOU library. **No `alphaStar` and no `blend` declaration exists.**
+
+**The near-miss, and why it fails.** `thm:frobenius-antipode-unifies-chirality-
+and-tower` is a theorem block tagged `alpha-blend` whose remark says the blend
+"yields a sub-ppm match at the precise optimal mixing value". Its Lean,
+`QOU.BraidKnot.frobenius_antipode_unifies`, is genuinely sorry-free
+(`lean_verify` -> axioms `[propext]`). But its statement is
+
+    (∀ i, S (σ i) = (σ i)⁻¹) ∧ (∀ a b, S (a*b) = S b * S a)   with S := (·)⁻¹
+
+on any `Group G` — `rfl` and `mul_inv_rev`. **α does not occur in the file.**
+Textbook AGENTS.md "grep the claim SHAPE, not only the topic": the topic has
+Lean, the proposition is a generic group fact. It establishes none of existence
+of a root of `err_n`, uniqueness, monotonicity, or the value.
+
+Two other near-misses fail the same way: `s_symmetric_ansatz_misses_chirality`
+is about a blend but in the 2-element toy type `SEigenvalue` and proves the
+blend **cannot** capture chirality (a negative); `frobenius-antipode-lean-stub.
+lean` carries `axiom markov_trace_antipode_invariant` (an axiom is not a proof)
+and an `antipodeSymmetrize` that is an admitted placeholder returning
+`antipodeS n q x` rather than `(x + S x)/2`.
+
+**The corpus argues the opposite, which is the load-bearing part.** This is not
+"the proof is elsewhere":
+
+- `docs/alpha-blend-derivation.md` §5 — PSLQ at 25 digits over
+  `{1, G, π, 1/π, q₀, h_q}`, `maxcoeff = 1e6`, **no relation**; explicitly
+  falsifies `α* = G/3`. Concludes the 2-term blend is "**not a fundamental
+  decomposition**".
+- `docs/canonicalization-review.md` §3 — α* is **row 1 of seven
+  empirical/fitted constants**; §3.1: "There is no closed form for α* in the
+  2-term frame because the quantity it patches is structurally outside that
+  frame." The plan is to **eliminate α***, not re-derive it.
+- `docs/agent-briefs/lambda_scale.md:552` — "numerical root-find", target
+  "closed form in q₀" — open.
+
+So α* is a fitted mixing parameter with a documented plan to be removed.
+
+**Symbol collision worth knowing** — 2 of the 6 corpus hits for "α*" are a
+different α: `α* = 0.89` is an SDP feasibility fraction
+(`2026-05-24-post-1089-followups-ledger.md:57`), and α/α_EM/`alpha_bind :=
+m_e·8·catalan_G` are three more. Attributes do not transfer.
+
+**Scope, per the refutation rule: this is scope-(a)** — no such declaration
+exists in the corpus today, NOT that none could. What would satisfy the gate: a
+declaration whose *statement* mentions the blend parameter — existence +
+uniqueness of a zero of `err_n` (IVT + strict monotonicity), or a closed form.
+A lemma about a generic monotone function, an axiom, or a conditional-class
+instance would not.
+
+**Caution for whoever re-centres it later.** Satisfying the gate fixes the
+*bracket* only. It does not make α* derived — the regenerated witness would
+still record a fitted parameter, now D-frame, and must say so. The deeper item
+is `qou-cds1`-shaped, and per the two documents above the D-frame re-derivation
+may conclude the parameter should not exist at all.
+
+**State of the producer: unchanged.** It exits 1 and names where the root is on
+stderr. That landed on `main` as `b95cc706d9` (PR #5695) — note the sha, the
+rebase-merge rewrote the branch-side `d7cf6dc02b`.
