@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T15:23:56Z
+updated_at: 2026-08-24T15:36:03Z
 ---
 
 ## Landed — PR #5645
@@ -270,3 +270,67 @@ Four things stand between here and branching for `schurPrincipal`:
 
 Estimating (b) at ~100 lines of Finset surgery; (1) and (2) unknown until
 grepped.
+
+
+## Sub-brick (b) done — branching PROVED for the Vandermonde form
+
+`QOU/Mathlib/VandermondeUpdateRatio.lean` (commit `bcf8a5731`), sorry-free,
+axiom-clean:
+
+    sum_vandPairProd_scale : sum_a V(x[a -> Q*x_a]) = [n]_Q * V(x)
+
+`sum_prod_qratio` supplied the sum; this file supplies the ratio it was
+conditional on. So general-r branching is proved **for the Vandermonde-form
+weight**, unconditionally.
+
+`vandPairProd_update_eq_zero` turns the "illegal rows need no special case"
+argument into a theorem: adding a box to row `a` is illegal exactly when
+`mu_a = mu_{a-1}`, and then `beta_{a-1} = beta_a + 1`, so the updated node
+collides with its neighbour and V vanishes.
+
+Stated division-free (any `CommRing`, no non-vanishing hypothesis); the field
+ratio is a corollary.
+
+## The remaining bridge — and a simplification worth recording
+
+Only one thing is left: `schurPrincipal r Q mu` = (mu-independent constant)
+times the Vandermonde in `x_i = Q^{beta_i}`. Worked out on paper:
+
+* **Denominator** (proved, `prodHooksF_one_sub_pow_pair`):
+
+      prod_c (1 - Q^{h(c)}) = prod_i descFact(beta_i) / prod_{i<j}(1 - Q^{beta_i - beta_j})
+
+* **Numerator** (not yet in Lean). Row `i` has cells of content `j - i`,
+  `j < mu_i`, so its factors are `1 - Q^k` for `k = r-i .. r-i+mu_i-1`. Since
+  `beta_i = mu_i + r - 1 - i`, the top index **is** `beta_i`:
+
+      prod_{row i} = descFact(beta_i) / descFact(r - 1 - i)
+
+* **So `prod_i descFact(beta_i) CANCELS** between numerator and denominator:
+
+      schurPrincipal r Q mu
+        = Q^{nPart mu} * prod_{i<j}(1 - Q^{beta_i - beta_j}) / prod_i descFact(r-1-i)
+
+  and the leftover denominator is `mu`-INDEPENDENT — it is the empty-partition
+  Vandermonde at `rho_i = r-1-i`. Everything else is a monomial:
+  `prod_{i<j}(1 - Q^{beta_i-beta_j}) = V(x) / prod_{i<j} x_i` with
+  `x_i = Q^{beta_i}`.
+
+That cancellation means the **ratio** form needs even less: for
+`nu = mu + box in row a`, the `mu`-independent factor drops out entirely, so
+only the numerator row-split and the List <-> YoungDiagram bridge remain.
+
+### Left, in order
+
+1. **Numerator row-split** — `prod_{c in row i}(1 - Q^{r + content c})
+   = descFact(beta_i) / descFact(r-1-i)`. Same shape as the hook side; should
+   generalise the same way.
+2. **List-partition <-> YoungDiagram.** `SYTBeta` is List-encoded,
+   `schurPrincipal` is YoungDiagram-encoded. Candidates to grep first:
+   `BraidKnot/HookProductHLF.hookLength_eq`, `Mathlib/HookLengthFormula`.
+3. **Assemble** and discharge `hw` in `sum_eq_bracket_mul_of_qratio_scaling`.
+
+Alternative worth weighing at (3): compute the `schurPrincipal` ratio directly
+from #5645's `hookLength_addCell_of_mem` instead of via the closed form. Same
+work in different clothes, but it stays inside `YoungDiagram` and skips the
+List bridge entirely.
