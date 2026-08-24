@@ -600,3 +600,83 @@ back empty.
   objective, or a formulation that keeps the alternating channel — is where a
   braid-valued answer would have to come from. That is a live derivation
   target, not a refuted one.
+
+## 🛑 STRONGER: Vol = 0 is forced by LENGTH, for the kaon as well as the pion
+
+Everything above about `Vol(𝔐) = 0` was a statement about **one word**. It is
+now a statement about **every** word of the relevant lengths, by exhaustive
+enumeration —
+[`computations/meson/positive_braid_hyperbolicity_by_length.py`](../../computations/meson/positive_braid_hyperbolicity_by_length.py).
+
+`mesonCrossingCount` fixes the dictionary crossing counts (pion 6, kaon 8,
+eta/phi 10) and its docstring says those are **braid word lengths**, so for a
+positive word the candidate set is finite (`2^L` words) and the question is a
+complete case check, not a search.
+
+| L | words | hyperbolic closures | fraction | dictionary length |
+|---|---|---|---|---|
+| 2 | 4 | 0 | 0.0000 | |
+| 3 | 8 | 0 | 0.0000 | |
+| 4 | 16 | 0 | 0.0000 | |
+| 5 | 32 | 0 | 0.0000 | |
+| **6** | **64** | **0** | **0.0000** | **pion** (ū 3 + d 3) |
+| 7 | 128 | 0 | 0.0000 | |
+| **8** | **256** | **0** | **0.0000** | **kaon** (ū 3 + s 5) |
+| 9 | 512 | 18 | 0.0352 | |
+| 10 | 1024 | 190 | 0.1855 | eta/phi (s̄ 5 + s 5) |
+
+Total 208 of 2044 — **reproducing exactly** the independently-measured figure
+in the retraction section above, which is the cross-check that the two runs
+used the same closure object.
+
+**The first hyperbolic positive closure appears at length 9.** So for every
+positive 3-braid word of length ≤ 8 the closure has `Vol = 0`, covering the
+pion *and* the kaon at their dictionary lengths, exhaustively.
+
+**Consequence.** The pion's `Vol = 0` is not a property of the particular word
+`def:categorical-meson` chose — it is forced by length together with
+positivity. No other positive 6-crossing word fixes the pion, and no other
+positive 8-crossing word fixes the kaon. Exactly one of the following must
+give:
+
+1. the meson braid admits negative crossings **geometrically** — not merely as
+   normal-form coefficients via `σ⁻¹ = σ − h`, which is the conflation
+   diagnosed above;
+2. the dictionary counts are not braid **word** lengths (but `mesonCrossingCount`
+   says they are);
+3. the mass law does not read `Vol` off the closed braid.
+
+### The chiral-limit reading is wrong — recorded because it is tempting
+
+A reader will notice that `m_π = 0` is also what QCD gives in the chiral limit
+— the pion is a pseudo-Goldstone, `m_π² f_π² = −2 m_q ⟨q̄q⟩` — and be tempted
+to read `Vol(𝔐) = 0` as that physics rather than as a defect. **It is not.**
+
+The same computation gives `Vol = 0` for the **kaon**, and the kaon is not a
+pseudo-Goldstone of the SU(2)×SU(2) subalgebra. In Gell-Mann–Oakes–Renner's own
+parametrisation the axial divergence carries the channel index only through
+`W_i(c)`, and at `c = −√2` that vanishes for `i = 1,2,3` (pion) and **not** for
+`i = 4…7` (kaon) or `i = 8` (eta) —
+`library/behavior-of-current-divergences-undersu3su3/`, eq. (2.10) p. 2197;
+the modern form is in `library/arxiv-0908.3425v1/` (Scherer, p. 27) and
+`library/arxiv-hep-ph-9502366v1/` (Pich, eq. 3.27). A mechanism that zeroes the
+pion *and* the kaon is not the chiral limit; it is a degeneracy of short
+positive braids.
+
+### Method note — the axis trap, which inverts this result
+
+`snappy.Manifold("braid[…]")` builds the closed braid **together with its braid
+axis**: one extra cusp, a different manifold, a larger volume.
+`snappy.Link(braid_closure=w).exterior()` is the closed braid alone.
+
+| object | `braid[…]` | `Link(braid_closure)` |
+|---|---|---|
+| Borromean `(σ₀σ₁⁻¹)³` | 4 cusps, 12.179299277 | **3 cusps, 7.32772475342** ✓ |
+| figure-eight `4₁` | 2 cusps, 8.1195328513 | **1 cusp, 2.02988321282** ✓ |
+| pion `𝔐` | 2 cusps, 4.0597664256 | **1 cusp, Vol = 0**, degenerate after 30 randomizations |
+
+Using the `braid[…]` spec makes **54 of 64** length-6 words look hyperbolic and
+would invert the table above. I built one throwaway script that way and it
+reported the pion braid as hyperbolic with volume 4.0597664256 — caught only
+because it contradicted a result already merged. The probe now asserts both
+controls against their exact known volumes before printing anything else.
