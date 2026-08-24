@@ -825,6 +825,77 @@ theorem theta_one_le_of_gamma {m : ℕ} (hm : 2 ≤ m) {ρ₁ ρm L₁ Lm logb t
   rw [div_le_iff₀ hp2]
   nlinarith
 
+/-! ### §11's height step — `Γ_m`'s clause 4 descending to `Γ_{m−1}`'s
+
+§11 defines the sub-system's height explicitly:
+
+    b = 2^{2n(r₁+…+r_m)} · n! · a^n,      ρ_h = n·r_h,
+
+and proves `b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` has `Γ_{m−1}`.  Clause 4 of that is the one part
+`rothGamma_descend` cannot get from `Γ_m` alone, since it constrains the *new* height.  Here is
+the source's chain, in logs so that everything stays in `ℚ`
+(`Λ = log 2`, `L = log H₁`, `A = log a`, `B = log b`):
+
+    n ≤ r_m + 1 ≤ r₁ + 1 ≤ 2^{r₁},  hence  n! ≤ n^n ≤ 2^{n r₁} = 2^{ρ₁};
+    a ≤ H₁^{(1/m)r₁t};   r₁ + … + r_m ≤ m r₁;
+    therefore  b ≤ 2^{2n·m r₁}·2^{ρ₁}·a^n ≤ 2^{(2m+1)ρ₁}·H₁^{(1/m)ρ₁t} ≤ H₁^{(1/(m−1))ρ₁t}.
+
+Both lemmas below are stated multiplied through by `m` or `m−1`, so no division appears. -/
+
+/-- **The calibration step** — and where `Γ_m`'s clause 3 finally earns its exponent.
+
+⚠ The gap between the two exponents is `1/(m−1) − 1/m = 1/(m(m−1))`, so absorbing the
+accumulated `2^{(2m+1)ρ₁}` needs `H₁^{ρ₁t/(m(m−1))} ≥ 2^{(2m+1)ρ₁}`, i.e.
+
+    t·log H₁  ≥  m(m−1)(2m+1)·log 2,
+
+which is clause 3 — `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}` — with **nothing to spare**.  That is why the
+floor's exponent is `(1/t)(m−1)m(2m+1)` and not some rounder constant: `m(m−1)` cancels the
+exponent gap and `(2m+1)` matches what `2^{2mρ₁}·2^{ρ₁}` accumulates.
+
+This arc carried clause 3 for several turns without any use for it, and recorded twice that it
+was "the first place clauses 2 and 3 have to be used".  This is that place, and the fit is
+exact rather than generous. -/
+theorem height_descend_step {m : ℕ} (hm : 2 ≤ m) {ρ₁ t L Λ B : ℚ}
+    (hρ : 0 ≤ ρ₁)
+    (hfloor : ((m : ℚ) - 1) * (m : ℚ) * (2 * (m : ℚ) + 1) * Λ ≤ t * L)
+    (hB : (m : ℚ) * B ≤ (m : ℚ) * (2 * (m : ℚ) + 1) * ρ₁ * Λ + ρ₁ * t * L) :
+    ((m : ℚ) - 1) * B ≤ ρ₁ * t * L := by
+  have hm2 : (2 : ℚ) ≤ (m : ℚ) := by exact_mod_cast hm
+  have hM0 : (0 : ℚ) < (m : ℚ) := by linarith
+  have hM1 : (0 : ℚ) ≤ (m : ℚ) - 1 := by linarith
+  have h1 := mul_le_mul_of_nonneg_left hB hM1
+  have h2 := mul_le_mul_of_nonneg_left hfloor hρ
+  refine le_of_mul_le_mul_left ?_ hM0
+  nlinarith [h1, h2]
+
+/-- **The assembly** — `b = 2^{2n∑r}·n!·a^n` bounded, in logs.
+
+`Fac` stands for `log n!`, bounded by `ρ₁·Λ` through `n! ≤ n^n ≤ 2^{n r₁}`; `sumR` for
+`r₁ + … + r_m`, bounded by `m·r₁`; and `A` for `log a`, bounded by clause 4 of `Γ_m`. -/
+theorem height_descend_assemble {m : ℕ} {n r₁ ρ₁ sumR t L Λ A Fac B : ℚ}
+    (hm2 : (2 : ℚ) ≤ (m : ℚ)) (hn : 0 ≤ n) (hΛ : 0 ≤ Λ) (hρ : ρ₁ = n * r₁)
+    (hb : B ≤ 2 * n * sumR * Λ + Fac + n * A)
+    (hfacn : Fac ≤ ρ₁ * Λ)
+    (hsum : sumR ≤ (m : ℚ) * r₁)
+    (ha : (m : ℚ) * A ≤ r₁ * t * L) :
+    (m : ℚ) * B ≤ (m : ℚ) * (2 * (m : ℚ) + 1) * ρ₁ * Λ + ρ₁ * t * L := by
+  subst hρ
+  have hM0 : (0 : ℚ) ≤ (m : ℚ) := by linarith
+  nlinarith [mul_le_mul_of_nonneg_left hb hM0,
+    mul_le_mul_of_nonneg_left hsum (by positivity : (0 : ℚ) ≤ 2 * n * Λ * (m : ℚ)),
+    mul_le_mul_of_nonneg_left ha hn,
+    mul_le_mul_of_nonneg_left hfacn hM0]
+
+/-- **Non-vacuity of the height step.**  `m = 2`, `ρ₁ = 1`, `Λ = 1`, `t = 1`, `L = 30`,
+`B = 15`: clause 3 reads `1·2·5·1 = 10 ≤ 30` and the conclusion `1·15 ≤ 30`.
+
+⚠ `L = 30` against `Λ = 1` is not slack — at `m = 2` clause 3 demands `H₁ ≥ 2^{10}`, and
+`rothDenomFloor_two` says the same.  The witness is at the boundary of what `Γ₂` allows. -/
+theorem height_descend_step_witness : (((2 : ℕ) : ℚ) - 1) * 1 ≤ (1 : ℚ) * 1 * 30 :=
+  height_descend_step (m := 2) le_rfl (ρ₁ := 1) (t := 1) (L := 30) (Λ := 1) (B := 1)
+    (by norm_num) (by norm_num) (by norm_num)
+
 /-- **Non-vacuity of the junction.**  `m = 1`, `s = 1/4`, `Ψ = 1/8`, `t = 1/16`, `A = q = 1/4`,
 `θ = 1/16 + 1/2 = 9/16`; the conclusion is `RothBound 2 (1/16) (9/16)`, a real bound. -/
 theorem rothBound_of_max_form_witness : RothBound 2 ((1 / 4 : ℚ) ^ (2 ^ 1)) (9 / 16) :=

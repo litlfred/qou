@@ -3102,3 +3102,45 @@ and find three fields where four are needed.
 ⚠ Also confirmed: §11's `(Θ₁)` estimate `Θ₁(a; r; H) ≤ log a/(r log H)` for `H ≥ 2` — the step
 `theta_one_le_of_gamma` starts from — and `1 ≤ n ≤ r_m + 1` as an explicit hypothesis on `n`,
 which is what `radicand_weaken` needs and `hrle` supplies.
+
+### §11's height step — clause 4 descends, and clause 3 is calibrated exactly for it
+
+§11's descent lemma defines the sub-system's height explicitly:
+
+    b = 2^{2n(r₁+…+r_m)} · n! · a^n,      ρ_h = n·r_h,
+
+and proves `b, ρ₁,…,ρ_{m−1}, H₁,…,H_{m−1}` has `Γ_{m−1}`. Its chain for clause 4:
+
+    n ≤ r_m + 1 ≤ r₁ + 1 ≤ 2^{r₁},  hence  n! ≤ n^n ≤ 2^{n r₁} = 2^{ρ₁};
+    a ≤ H₁^{(1/m)r₁t};   r₁ + … + r_m ≤ m r₁;
+    therefore  b ≤ 2^{2n·m r₁}·2^{ρ₁}·a^n ≤ 2^{(2m+1)ρ₁}·H₁^{(1/m)ρ₁t} ≤ H₁^{(1/(m−1))ρ₁t}.
+
+Landed as `height_descend_assemble` (the first two lines) and `height_descend_step` (the last),
+in logs so everything stays in `ℚ`, and multiplied through by `m` or `m−1` so no division
+appears.
+
+### ⚠ Clause 3 fits with nothing to spare
+
+The gap between the two exponents is `1/(m−1) − 1/m = 1/(m(m−1))`, so absorbing the accumulated
+`2^{(2m+1)ρ₁}` requires
+
+    t·log H₁ ≥ m(m−1)(2m+1)·log 2,
+
+which **is** clause 3, `K₁ ≥ 2^{(1/t)(m−1)m(2m+1)}`, exactly. `m(m−1)` cancels the exponent gap;
+`(2m+1)` matches what `2^{2mρ₁}·2^{ρ₁}` accumulates. That is why the floor's exponent has that
+shape and not a rounder one.
+
+This arc carried clause 3 for several turns with no use for it, and twice recorded that some
+step would be "the first place clauses 2 and 3 have to be used". Both times that was a guess
+about the junction; **this** is the place, and the fit is exact rather than generous. Worth
+noting because an unused hypothesis with an oddly specific constant was evidence all along that
+something downstream needed precisely it — the arc had the signal and read it as a puzzle
+rather than a pointer.
+
+### What is left
+
+`rothGamma_descend` now has all four clauses available: 1–3 from `Γ_m` directly, 4 from
+`height_descend_step ∘ height_descend_assemble`. Wiring them into one theorem needs the
+Wronskian's actual height bound in the shape `hb` expects — `WronskianHeight`'s
+`abs_coeff_det_sepFamily_le` gives `r!·(S·(d^{2r}·B_P))^r`, which is `b`'s shape with `n = r`,
+so the remaining work is matching those two expressions, not proving a new estimate.
