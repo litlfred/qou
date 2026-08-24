@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T14:46:52Z
+updated_at: 2026-08-24T14:51:07Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1321,3 +1321,43 @@ full measurement is > 2.5 h, not the ~80 min implied. The producer prints
 `gen 2/3/4` within its first minutes and then emits nothing for the remaining
 70+, which is the AGENTS §5 logging gap doing real damage: there is no way to
 distinguish "slow but progressing" from "hung" for over an hour.
+
+
+## 🛑 CORRECTION: `bar(z_D) = z − h` is ALREADY IN THE CORPUS — I re-derived it, I did not find it
+
+In `d81293cdc9` I presented `bar(z_D) = z_D − h` as something I "proved
+symbolically", framing it as the discovery behind the
+`derived_bond_graph_binding` fix. **It is established corpus, and in a stronger
+form than mine.**
+
+[`computations/markov_z_full_bar_condition_probe.py`](../computations/markov_z_full_bar_condition_probe.py),
+on `main` since at least 2026-08-16 (`29cff89c49`):
+
+> the bar-partner of `z` is `z - h`, and the correct covariance condition on the
+> Markov parameter is `bar(z) = z - h` … **Result: convention D satisfies it;
+> convention C does not** … `bar(z) = z - h` is an **identity of the whole fibre
+> family**, verified for symbolic `N` (equivalently `z_N = h/(1-q^(-2N))`).
+
+Mine was the single point `z_D = q³/(q²+1)`; theirs is the whole one-parameter
+family for symbolic rank. Three further qbeta probes tabulate the same pair
+(`qbeta_d_frame_eigenphase_bar_parity_probe.py:24-25` writes both branches out
+explicitly as "bar-EVEN — convention C" vs "full-bar — convention D").
+
+**What is actually mine, and survives:** the *defect* —
+`derived_bond_graph_binding.py` running convention-D `z` through
+convention-C bar logic — and its measurement (per-bond pp 2.0507 → 2.9242 MeV;
+the corrected value landing within 0.6 % of the old self-consistent C figure
+while the mixed-frame one sat 30 % away). That was unflagged and the fix stands.
+I have not checked whether the pp↔nn exchange consequence is also known, so I am
+not claiming it either.
+
+**Why I missed it:** the AGENTS corpus-grep checklist reads as gating
+*"is this open?"* declarations, and I was doing what felt like a derivation, so
+I never ran it. That is the wrong reading — a derivation presented as new is a
+claim about corpus status just as much as "X is open" is. One
+`grep -rn "bar(z)" computations/` would have found it in seconds.
+
+Found only because I later scanned for the *bug shape* (asserts z bar-symmetry
+AND already carries a D expression) and four of the six hits turned out to be
+files documenting the identity correctly. The scan I wrote to find more bugs
+found my own over-claim instead.
