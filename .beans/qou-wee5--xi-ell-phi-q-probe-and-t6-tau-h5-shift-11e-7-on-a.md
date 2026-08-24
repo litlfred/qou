@@ -1,11 +1,11 @@
 ---
 # qou-wee5
 title: xi_ell_phi_q_probe and t6_tau_h5 shift 1.1e-7 on a manifest entry they never reference
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T22:25:49Z
-updated_at: 2026-08-24T12:43:55Z
+updated_at: 2026-08-24T13:11:37Z
 ---
 
 ## What
@@ -226,3 +226,34 @@ FIG8_A_BULK. That is **qou-1c4y territory** with its sign-off gate.
 `vhat_per_crossing_chain` flipped its internal `scalar_vs_matrix_agree`
 True -> False (17 fields). Both muon producers now pass their own q; re-measured,
 each moves 0.
+
+
+## CLOSED — the carrier is the PLANCHEREL WEIGHTS, and the gate is drained (2026-08-24)
+
+Fourth hypothesis, and this one holds. `per_generator_V_hat_general` builds its
+Plancherel weights as `dq**2 / nfac` from `hecke_characters.qfac` and
+`dim_q` — **neither of which takes a q at all**. They use the module-level
+`q_int`, which closes over `q_parameter.Q`: the SHIM's Q, rebound to muon
+whenever the entry-point stem is manifest-listed.
+
+That is why two probes deriving q₀ inline from the muon ratio, referencing the
+manifest nowhere, still moved 36 / 15 fields when a stem was added to it.
+
+**Fix:** `qfac(n, q=None)` and `dim_q(shape, q=None)` gain an OPTIONAL explicit
+q (backwards compatible — verified identical values with and without, so all 135
+existing call sites are unaffected), and `per_generator_V_hat_general` names
+`Q0_PROTON` for both.
+
+**Measured after:**
+
+    anchor-flip straddle audit --candidates:  clean=8, STRADDLE=0
+
+versus 3 of 8 before. The blocking gate added in PR #5636 is fully drained.
+Re-running the shared producer moves **0** non-ephemeral fields, so the fix is
+inert under normal (proton) operation.
+
+**Still open, and now sized:** `qfac`/`dim_q` have **135 defaulted call sites
+across ~70 files** (dim_q 78 of 119, qfac 57 of 59). Those still track the entry
+point. Threading q through all of them is a real migration, not a session task —
+but nothing straddles today, because the only producers that combined two
+layers went through this one function.
