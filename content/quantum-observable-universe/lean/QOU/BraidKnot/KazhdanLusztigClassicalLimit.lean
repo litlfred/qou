@@ -47,16 +47,22 @@ class KazhdanLusztigClassicalLimit (R : Type u) [CommRing R] (q : R)
   KLBasisElt : Type u
   /-- The `q → 1` classical-limit map `b_w ↦ C_w`. -/
   klMap : H.NormalForm → KLBasisElt
-  /-- Statistical sign `±1` carried by a KL basis element under the
-      observation functor `τ` (bosonic = `+1`, fermionic = `-1`). -/
-  statSign : KLBasisElt → ℤ
-  /-- The statistical sign is `±1`. -/
-  statSign_pm_one : ∀ b, statSign b = 1 ∨ statSign b = -1
-  /-- **The conjecture itself**: every QOU particle's macroscopic
-      statistic is the `klMap`-image's statistical sign — i.e. the
-      classical limit is exhausted by Pauli/Bose statistics.  Plays
-      the role of `sorry`. -/
-  kl_compatible_with_tau : ∀ T : H.NormalForm,
+  /-- Statistical phase carried by a KL basis element under the observation
+      functor `τ` (bosonic = `+1`, fermionic = `-1`).
+
+      Valued in the **ground ring**, not in `ℤ`. The substrate this sits over
+      is anyonic (`HeckeAnyonicSubstrate`), so the phase is generically a root
+      of unity in `R`; typing it as `ℤ` and asserting `= ±1` made the
+      conjecture true by construction, which is exactly what went wrong below. -/
+  statSign : KLBasisElt → R
+  /-- **The conjecture itself**: at the classical point `q = 1` the phase
+      collapses to `±1` — Bose/Fermi only, no anyonic phase survives the
+      limit. Plays the role of `sorry`.
+
+      The `q = 1` hypothesis is load-bearing. Without it the field asserts the
+      collapse at every `q`, including the generic anyonic ones where it is
+      false, so it could only ever be discharged by a degenerate `statSign`. -/
+  kl_compatible_with_tau : q = 1 → ∀ T : H.NormalForm,
     statSign (klMap T) = 1 ∨ statSign (klMap T) = -1
 
 namespace KazhdanLusztigClassicalLimit
@@ -70,9 +76,9 @@ theorem statSign_klMap_pm_one
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q]
     [K : KazhdanLusztigClassicalLimit R q]
-    (T : H.NormalForm) :
+    (hq : q = 1) (T : H.NormalForm) :
     K.statSign (K.klMap T) = 1 ∨ K.statSign (K.klMap T) = -1 :=
-  K.kl_compatible_with_tau T
+  K.kl_compatible_with_tau hq T
 
 /-- **Conditional theorem (squared statistic is `+1`).**
 
@@ -86,9 +92,9 @@ theorem statSign_sq_eq_one
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q]
     [K : KazhdanLusztigClassicalLimit R q]
-    (T : H.NormalForm) :
+    (hq : q = 1) (T : H.NormalForm) :
     K.statSign (K.klMap T) * K.statSign (K.klMap T) = 1 := by
-  rcases K.kl_compatible_with_tau T with h | h
+  rcases K.kl_compatible_with_tau hq T with h | h
   · rw [h]; ring
   · rw [h]; ring
 
@@ -104,14 +110,27 @@ theorem statSign_sq_eq_one
     As an unconditional `instance` it made `statSign_klMap_pm_one` and
     `statSign_sq_eq_one` unconditional theorems about a one-element KL basis.
 
-    **Note on the class, not the model.** `kl_compatible_with_tau` is
-    `∀ T, statSign (klMap T) = 1 ∨ statSign (klMap T) = -1`, which is
-    `statSign_pm_one (klMap T)` in *any* instance — the field is derivable from
-    its sibling, so it carries no conjectural content even when the data are
-    real. What the manuscript conjecture asserts (that the `q → 1` limit of the
-    KLR canonical basis is the Kazhdan–Lusztig basis, that the limit functor is
-    monoidal, and that it is compatible with `τ`) is not stated by any field
-    here. Restating the class is a separate change; recording the gap is not.
+    **The class was defective too, and has been repaired.** As written,
+    `kl_compatible_with_tau` was `∀ T, statSign (klMap T) = 1 ∨ … = -1` beside a
+    sibling field `statSign_pm_one : ∀ b, statSign b = 1 ∨ statSign b = -1`. The
+    conjecture was therefore `statSign_pm_one (klMap T)` — derivable in *every*
+    instance, degenerate or not, so the class asserted nothing even given real
+    data. Verified by substitution: both downstream theorems compile unchanged
+    with the sibling in place of the conjectural field.
+
+    The cause was the typing. `statSign` landed in `ℤ`, and `statSign_pm_one`
+    then *axiomatised* the very collapse the conjecture claims to establish —
+    "only ±1" was true by fiat, leaving no room for an anyonic phase to fail to
+    collapse. `statSign` now lands in the ground ring `R`, where a root of unity
+    can live, `statSign_pm_one` is gone (it was the conjecture wearing an
+    axiom's clothes), and `kl_compatible_with_tau` is guarded by `q = 1`. It now
+    says something that can fail: at the classical point the phase is `±1`,
+    and away from it nothing is claimed.
+
+    Still not stated by any field, and still owed: that the `q → 1` limit of the
+    KLR canonical basis *is* the Kazhdan–Lusztig basis, and that the limit
+    functor is monoidal. Those need `τ` and the KL basis as independent data;
+    this repair makes the statistics field honest, not the whole conjecture.
 
     Demoted the same way as `ConfinementGradingCorrespondence.canonical`
     (bean `qou-fngs`). Nothing consumed it: the class has no users outside this
@@ -123,10 +142,9 @@ def canonical (R : Type u) [CommRing R] (q : R)
   KLBasisElt := PUnit
   klMap _ := PUnit.unit
   statSign _ := 1
-  statSign_pm_one _ := Or.inl rfl
   -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural class;
   --      discharged here by `statSign _ := 1`, not by a `sorry` and not by the conjecture)
-  kl_compatible_with_tau _ := Or.inl rfl
+  kl_compatible_with_tau _ _ := Or.inl rfl
 
 end KazhdanLusztigClassicalLimit
 
