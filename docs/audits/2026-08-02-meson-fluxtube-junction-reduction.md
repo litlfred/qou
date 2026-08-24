@@ -58,12 +58,69 @@ But `m_D ≈ 1865 ≈ 3.8·m_K`. The winding dictionary **cannot separate D from
 
 ### Corpus inconsistency (flag for canonical-watcher)
 
-The prerequisite input — *which* torus knot is the charm quark — is itself ambiguous in the corpus:
+> **🛑 RETRACTED 2026-08-24 — this inconsistency does not exist and never did.**
+> The paragraph below claimed the corpus assigns charm two incompatible windings.
+> It does not. Both tables say **T(2,5)**:
+>
+> - `knot-formula-table-table2-data.md` line 11: `| Charm quark | 𝔠 | $T_{2,5}$ | 2 | 5 |`
+> - `knot-notation-convention-table1-data.md` line 9: `| 𝔎_c | $(2,5)$-torus knot | $5_1$ | charm c | c^σ |`
+>
+> The reported `(2,7)`/`7₁` is the value on the **preceding line** — line 8,
+> `| 𝔎_τ | septafoil | $7_1$ | τ⁻ | τ⁺ |`, the **tau lepton**. The audit read
+> line 9's label with line 8's knot: an off-by-one across two adjacent rows.
+>
+> Verified, not assumed: `git log -L 9,9` on that file shows the line was
+> **created** as `(2,5)` (commit `e54ffbca0a`); `git log -S` finds **no** commit
+> that ever wrote a charm `7₁` row there; and a corpus-wide grep finds charm
+> mapped to 7 **nowhere**.
+>
+> **Consequence — the "two independent ❌s" below are ONE.** Charm's own winding
+> is unambiguous at n = 5. What survives is the D-vs-K degeneracy, and it is
+> *sharper* for this correction, not weaker: with charm fixed at 5 there is no
+> n = 7 escape hatch, so `D {5,3}` is an **exact** multiset collision with
+> `K {3,5}` and no winding assignment separates them.
+>
+> ~~Original paragraph, retained:~~
 
-- [`knot-formula-table-table2-data.md`](../../content/quantum-observable-universe/predicted-spectra/knot-formula-table-table2-data.md) row 11: **charm `𝔠` → T(2,5)** (m=2, n=5).
-- [`knot-notation-convention-table1-data.md`](../../content/quantum-observable-universe/braids-and-knots/knot-notation-convention-table1-data.md) row 9: **charm `c` → (2,7)-torus knot `7₁`** (n=7).
+~~The prerequisite input — *which* torus knot is the charm quark — is itself ambiguous in the corpus:~~
 
-These are incompatible (n=5 vs n=7). Neither resolves the degeneracy — both collide the D meson with a lighter meson (kaon at n=5, η/φ at n=7). Picking one value does not fix the braid; it just chooses which lighter meson D collapses onto.
+- ~~`knot-formula-table-table2-data.md` row 11: **charm `𝔠` → T(2,5)** (m=2, n=5).~~
+- ~~`knot-notation-convention-table1-data.md` row 9: **charm `c` → (2,7)-torus knot `7₁`** (n=7).~~
+
+~~These are incompatible (n=5 vs n=7).~~
+
+## The grading the audit calls missing is IN the corpus — as `σ` (added 2026-08-24)
+
+The section below concludes that a canonical D braid needs "an invariant the
+`T(2,n)` winding number does **not** carry: a weak-isospin / up-down-type grading
+`T₃` orthogonal to the generation winding `n`". Reading table 2 whole, the corpus
+already carries a grading that separates the two, and it is one the audit's own
+next-step names as a candidate ("a bar/mirror asymmetry on the `c̄` end"):
+
+| gen | up-type | down-type |
+|---|---|---|
+| 1 | `u = T(2,3)` | `d = T(2,3)^σ` |
+| 2 | **`c = T(2,5)`** | **`s = T(2,5)^σ`** |
+| 3 | *(top deprecated → `T(3,4)`)* | `b = T(2,7)^σ` |
+
+**`σ` is present iff the quark is down-type — in all five quark rows, three
+generations for three.** So `c` and `s` are *not* the same object in the corpus:
+they are `T(2,5)` and its mirror. `knot-notation-convention.md` defines
+`T_{m,n}^σ = T_{m,-n}`.
+
+**So the degeneracy is a LOSSY PROJECTION, not an absent structure.** `D {c̄, u}`
+and `K {ū, s}` collide only after `windingContent` maps each knot to a bare `ℕ`
+and discards `σ`. The discriminator survives one level up.
+
+**Two cautions, so this is not over-read.** (1) `σ` is **overloaded**: the same
+superscript marks particle/antiparticle elsewhere (`knot-notation-convention.md`:
+electron `T_{2,3}` vs positron `T_{2,3}^σ`; `antineutrino-knot.md`). Whether
+table 2's `σ` *is* the `T₃` grading or is notation reuse that happens to align is
+exactly the open question — the alignment is 5-for-5, which is not nothing, but a
+pattern is not a derivation. (2) Nothing here fixes a D braid or predicts `m_D`;
+the joint mass check stays un-run for the same anti-fit reason. What changes is
+**where to look**: at the dictionary's projection, not at importing a new `T₃`
+from the weak sector.
 
 ### The precise missing datum
 
@@ -76,11 +133,11 @@ A canonical D-meson braid needs an invariant the `T(2,n)` winding number does **
 | operator-selection LP mechanism (unique `Φ*` per `(n, n_target)`) | ✅ yes (well-posed, dual-certified) |
 | meson = `H₃(q)` Hopf-bound `q̄q` (3-strand) | ✅ yes (framework) |
 | `m_K/m_π` mass *ratio* (down-type mesons) | ✅ yes (L2-MET observable) |
-| charm's own winding `n` | ❌ **corpus-ambiguous** (T(2,5) vs T(2,7)) |
+| charm's own winding `n` | ✅ **yes — n = 5** (the claimed T(2,5)-vs-T(2,7) ambiguity was a misread; retraction above, 2026-08-24) |
 | D-vs-K separation from winding number | ❌ **degenerate** (same multiset at n=5) |
-| up/down-type grading `T₃` on the meson tube | ❌ **absent** from `T(2,n)` dictionary |
+| up/down-type grading `T₃` on the meson tube | ⚠️ **present in the corpus as `σ`** (down-type iff `σ`, 5/5 quark rows) but **discarded** by `windingContent`'s projection to `ℕ`; `σ` is overloaded, so whether it *is* `T₃` is the open question (2026-08-24) |
 
-Two independent `❌`s block a canonical D-meson braid. The reduction is **not** canonical; the honest step is not a mass check but the structural refinement named above.
+**ONE `❌` blocks a canonical D-meson braid, not two** (corrected 2026-08-24): the D-vs-K winding degeneracy. Charm's winding is unambiguous at n = 5, and that makes the surviving obstruction *sharper* — with no n = 7 alternative, `D {5,3}` is an exact multiset collision with `K {3,5}`. The reduction is still **not** canonical and the honest step is still not a mass check, but the structural refinement to aim at is now specific: stop `windingContent` discarding `σ`, rather than import a `T₃` from the weak sector.
 
 ## Anti-fit statement
 
@@ -88,4 +145,4 @@ No braid was hand-picked to reproduce 1864.84 / 1869.66 MeV. The joint `m_D` che
 
 ## Next honest step (refines `qou-qpj9`)
 
-Derive (or refute) a **weak-isospin `T₃` grading of the `H₃(q)` meson tube** that selects the charm (up-type) block distinctly from the strange (down-type) block — e.g. from the `T(3,5)` weak-generator's up↔down action, or a bar/mirror asymmetry on the `c̄` end. If such a grading is derived and canonically fixes the asymmetric `c̄`(5̄)|light(3) braid, *then* check once against `m_D`. Separately: resolve the charm T(2,5)-vs-T(2,7) corpus inconsistency (canonical-watcher).
+Derive (or refute) a **weak-isospin `T₃` grading of the `H₃(q)` meson tube** that selects the charm (up-type) block distinctly from the strange (down-type) block — e.g. from the `T(3,5)` weak-generator's up↔down action, or a bar/mirror asymmetry on the `c̄` end. If such a grading is derived and canonically fixes the asymmetric `c̄`(5̄)|light(3) braid, *then* check once against `m_D`. ~~Separately: resolve the charm T(2,5)-vs-T(2,7) corpus inconsistency (canonical-watcher).~~ **Withdrawn 2026-08-24 — there is no such inconsistency** (retraction at the top of Route 2). The live successor is narrower and better posed: decide whether table 2's `σ` (down-type iff `σ`, 5/5 quark rows) *is* the `T₃` grading or is notation reuse, and lift `windingContent` to carry it.

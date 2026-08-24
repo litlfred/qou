@@ -47,14 +47,25 @@ content.
 The owner-redirected route (D meson `c̄u`, the asymmetric single tube
 `c̄`(n) | light(3)) fixes the braid via the symbolic gg→`c̄c`
 operator-selection, which selects a torus-knot *generation winding*
-`n ∈ {3,5,7}`. But the corpus assigns **charm two incompatible
-windings**: `T(2,5)` (`knot-formula-table-table2-data.md` row 11) and
-`T(2,7)` (`knot-notation-convention-table1-data.md` row 9). Under the
-meson crossing-count rule `crossings = n₁ + n₂`
+`n ∈ {3,5,7}`.
+
+**CORRECTED 2026-08-24.** This docstring claimed the corpus assigns
+**charm two incompatible windings**, `T(2,5)` and `T(2,7)`. It does
+not. Both tables say `T(2,5)`; the reported `(2,7)`/`7₁` is the value
+on the **preceding line** of `knot-notation-convention-table1-data.md`
+— line 8, the **tau lepton** `7₁` — read together with line 9's charm
+label. Verified: that line was created as `(2,5)`, no commit ever wrote
+a charm `7₁` row, and charm maps to 7 nowhere in the corpus.
+
+So charm's winding is unambiguous at **n = 5**, and under the meson
+crossing-count rule `crossings = n₁ + n₂`
 (`lepton-meson-torus-knot-dictionary.lean` `meson_crossing_is_sum`):
 
-* charm `= 5` ⇒ D `= {5,3}` collides with kaon `{3,5}` (8 crossings);
-* charm `= 7` ⇒ D `= {7,3}` collides with `η/φ` `{5,5}` (10 crossings).
+* charm `= 5` ⇒ D `= {5,3}` collides with kaon `{3,5}` (8 crossings).
+
+The correction makes this obstruction **sharper, not weaker**: with no
+`n = 7` alternative the collision is exact and unavoidable, rather than
+one of two bad options.
 
 The winding dictionary is a symmetric function of the two windings, so
 it maps D and K (or D and η/φ) to the **same** value while they are
@@ -142,17 +153,35 @@ theorem D_kaon_same_winding : windingContent .Dmeson = windingContent .kaon := b
     (`m_D ≈ 3.8·m_K`). Hence the gg→`c̄c` operator-selection input for
     the D meson is *not* canonically fixed by the `T(2,n)` winding
     number alone: a weak-isospin (up/down-type) grading orthogonal to
-    `n` is the missing datum. -/
+    `n` is the missing datum.
+
+    **REFINED 2026-08-24.** Non-injectivity is a property of
+    `windingContent`, which maps each meson to a `Multiset ℕ`. The
+    corpus itself *does* separate charm from strange: table 2 gives
+    `c = T(2,5)` and `s = T(2,5)^σ`, and `σ` is present iff the quark
+    is down-type across all five quark rows (`u/d` at 3, `c/s` at 5,
+    `b` at 7). `knot-notation-convention.md` defines
+    `T_{m,n}^σ = T_{m,-n}`. So the degeneracy is this projection
+    **discarding `σ`**, not an absent structure — the discriminator
+    survives one level up. Caveat: `σ` is overloaded (it also marks
+    particle/antiparticle, e.g. electron vs positron), so whether it
+    *is* the `T₃` grading is the open question, not a settled fact. -/
 theorem winding_content_not_injective : ¬ Function.Injective windingContent := by
   intro hinj
   have : Meson.Dmeson = Meson.kaon := hinj D_kaon_same_winding
   exact absurd this (by decide)
 
-/-- **The alternative charm assignment collides too.** Under the other
-    corpus value charm `= 7` (`knot-notation-convention` row 9), the D
-    meson `{7,3}` shares its crossing count `10` with `η/φ` `{5,5}`.
-    Either charm assignment is degenerate with a lighter meson, so the
-    ambiguity is not resolved by picking one value. -/
+/-- **A hypothetical charm `= 7` would collide too** — kept as a
+    robustness remark, NOT as a corpus fact.
+
+    This previously read "under the other corpus value charm `= 7`
+    (`knot-notation-convention` row 9)". **There is no such corpus
+    value** (correction at Obstruction B above): the corpus fixes charm
+    at `n = 5`, and `7₁` on the adjacent line is the tau lepton. The
+    arithmetic below is true and worth keeping — it shows the
+    degeneracy is not an artifact of the particular assignment, since
+    even a counterfactual `n = 7` would land on `η/φ`'s crossing count
+    — but it must not be cited as evidence of corpus ambiguity. -/
 theorem D_charm7_crossing_collides_etaPhi :
     (7 + 3 : ℕ) = (Multiset.sum {5, 5} : ℕ) := by decide
 
