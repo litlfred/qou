@@ -58,6 +58,7 @@
 -/
 import QOU.Mathlib.RothBaseCase
 import Mathlib.Data.Rat.Floor
+import Mathlib.Data.Int.Interval
 
 namespace MvPolynomial
 
@@ -197,11 +198,11 @@ elementary.  The mis-estimate came from reading a section *title* ("The upper bo
 and inferring its content.
 
 `IsRothTheta` below characterises `Θ_m` rather than constructing it: the value is pinned
-(`IsRothTheta.unique`), so any construction that satisfies the predicate gives the same number,
-and downstream statements need not wait for one.  ⚠ The existence half is therefore an
-**undischarged obligation** — but unlike this arc's earlier undischarged hypotheses it is known
-satisfiable, because the two sets are finite.  Building the `Finset` construction that
-discharges it is separate, self-contained, and needs no analysis. -/
+(`IsRothTheta.unique`), so anything satisfying the predicate is *the* `Θ_m`.
+
+**Existence is proved** — `exists_isRothTheta`, from `finite_rothPolySet` and
+`finite_rothFracSet` plus non-emptiness.  An earlier version of this paragraph called it an
+undischarged obligation; it no longer is. -/
 
 /-- `R(a; r₁,…,r_m)` — non-zero integer polynomials of degree `≤ rₕ` in `xₕ`, height `≤ a`. -/
 def InRothPolySet {σ : Type*} (a : ℤ) (r : σ → ℕ) (A : MvPolynomial σ ℤ) : Prop :=
@@ -249,12 +250,11 @@ At `r ≡ 0` every `idxWeight` term is `(i j)/0 = 0`, so `idxWeight` vanishes id
 index of *any* non-zero polynomial is `0`.  Both clauses then hold with `Θ = 0`, attained at
 `A = 1`, `κ ≡ 0`.
 
-⚠ **This does not discharge the real obligation.**  Roth's degrees are positive, and at `r ≡ 0`
-the predicate is satisfied for a reason that disappears the moment any `rₕ ≠ 0`.  What it does
-rule out is the failure mode a two-clause `∀`/`∃` definition invites: that the upper-bound and
-attainment clauses contradict each other outright, leaving `IsRothTheta` empty for *every*
-parameter choice.  This arc has landed such a definition before — correction 10's `hres` was
-unsatisfiable and looked fine — so the cheap check is worth making. -/
+⚠ **Superseded by `exists_isRothTheta`**, which gives inhabitation at every admissible
+parameter.  Kept because it is what was available before that: a cheap check that the
+two-clause `∀`/`∃` definition is not self-contradictory.  This arc has landed such a definition
+before — correction 10's `hres` was unsatisfiable and looked fine — and at the time this was
+the only evidence there was. -/
 theorem isRothTheta_degenerate {σ : Type*} :
     IsRothTheta (1 : ℤ) (fun _ : σ => 0) (fun _ : σ => 1) 0 := by
   have hidx : ∀ (κ : σ → ℚ) (P : MvPolynomial σ ℚ), P ≠ 0 →
@@ -284,6 +284,165 @@ theorem isRothTheta_degenerate {σ : Type*} :
     · rw [coeff_one]; split_ifs <;> norm_num
     · norm_num
     · norm_num
+
+/-! ### §9's finiteness, and the existence of `Θ_m`
+
+Both `R(a;r)` and `Q(H)` are finite, so the least upper bound defining `Θ_m` is attained and
+`IsRothTheta` is inhabited.  That discharges the obligation the section above left open.
+
+⚠ Neither half has a ready-made Mathlib lemma.  For the polynomial side the closest thing is
+`MvPolynomial.finite_setOf_bounded` in `Mathlib/RingTheory/MvPolynomial/Basic.lean`, which is
+**private** and carries a uniform degree bound rather than a per-variable one.  For the rational
+side there is nothing at all: `Finsupp.fintype` needs a finite codomain and `ℚ` is not one, so
+the finiteness has to come from the height bound via `Rat.ext`. -/
+
+/-- **The exponent box is finite.**  Over a finite variable type, the monomials whose exponent
+in each variable `j` is at most `r j` form a finite set.
+
+⚠ `Finite σ` is essential as soon as some `r j ≠ 0`: over an infinite `σ` the box for `r ≡ 1`
+contains every squarefree monomial, of which there are infinitely many. -/
+theorem finite_setOf_forall_le {σ : Type*} [Finite σ] (r : σ → ℕ) :
+    {i : σ →₀ ℕ | ∀ j, i j ≤ r j}.Finite :=
+  (Set.Finite.pi' fun j => Set.finite_Iic (r j)).preimage DFunLike.coe_injective.injOn
+
+/-- **Bounded degree plus bounded height is a finite set of polynomials.**
+
+⚠ Stated *without* `A ≠ 0`, which is the honest form: nothing in the argument uses it.  ⚠ And
+with no sign hypothesis on `a`: for `a < 0` the height clause is unsatisfiable and the set is
+empty, which is finite for a reason the proof never has to distinguish. -/
+theorem finite_setOf_degreeOf_le_coeff_le {σ : Type*} [Finite σ] (a : ℤ) (r : σ → ℕ) :
+    {A : MvPolynomial σ ℤ | (∀ h, degreeOf h A ≤ r h) ∧ ∀ n, |coeff n A| ≤ a}.Finite := by
+  classical
+  set E : Set (σ →₀ ℕ) := {i : σ →₀ ℕ | ∀ j, i j ≤ r j} with hEdef
+  haveI : Finite ↥E := (finite_setOf_forall_le r).to_subtype
+  have hsupp : ∀ A : MvPolynomial σ ℤ, (∀ h, degreeOf h A ≤ r h) →
+      ∀ i, i ∉ E → coeff i A = 0 := by
+    intro A hA i hi
+    by_contra hc
+    exact hi fun j => le_trans (monomial_le_degreeOf j (mem_support_iff.mpr hc)) (hA j)
+  refine Set.Finite.of_injOn
+    (f := fun A : MvPolynomial σ ℤ => fun i : ↥E => (coeff (i : σ →₀ ℕ) A + a).toNat)
+    (t := {g : ↥E → ℕ | ∀ i, g i ∈ Set.Iic (2 * a).toNat}) ?_ ?_
+    (Set.Finite.pi' fun _ => Set.finite_Iic (2 * a).toNat)
+  · intro A hA i
+    have h := abs_le.mp (hA.2 (i : σ →₀ ℕ))
+    simp only [Set.mem_Iic]
+    omega
+  · intro A hA A' hA' h
+    ext n
+    by_cases hn : n ∈ E
+    · have h1 := abs_le.mp (hA.2 n)
+      have h2 := abs_le.mp (hA'.2 n)
+      have hcoe := congrFun h ⟨n, hn⟩
+      simp only at hcoe
+      omega
+    · rw [hsupp A hA.1 n hn, hsupp A' hA'.1 n hn]
+
+/-- **`R(a; r)` is finite.** -/
+theorem finite_rothPolySet {σ : Type*} [Finite σ] (a : ℤ) (r : σ → ℕ) :
+    {A : MvPolynomial σ ℤ | InRothPolySet a r A}.Finite :=
+  (finite_setOf_degreeOf_le_coeff_le a r).subset fun _ hA => ⟨hA.2.1, hA.2.2⟩
+
+/-- **Rationals of bounded height form a finite set.**
+
+A rational is determined by `(num, den)` (`Rat.ext`), and the bound confines that pair to
+`Icc (-n) n ×ˢ Iic n`.  ⚠ The finiteness comes entirely from the height bound, not from the
+type. -/
+theorem finite_setOf_rat_height_le (n : ℕ) :
+    {q : ℚ | q.num.natAbs ≤ n ∧ q.den ≤ n}.Finite := by
+  have hinj : Set.InjOn (fun q : ℚ => (q.num, q.den))
+      {q : ℚ | q.num.natAbs ≤ n ∧ q.den ≤ n} := by
+    intro p _ q _ h
+    exact Rat.ext (congrArg Prod.fst h) (congrArg Prod.snd h)
+  refine Set.Finite.of_finite_image ?_ hinj
+  refine Set.Finite.subset
+    (Set.Finite.prod (Set.finite_Icc (-(n : ℤ)) (n : ℤ)) (Set.finite_Iic n)) ?_
+  rintro y ⟨q, ⟨hq1, hq2⟩, rfl⟩
+  simp only [Set.mem_prod, Set.mem_Icc, Set.mem_Iic]
+  exact ⟨⟨by omega, by omega⟩, hq2⟩
+
+/-- **`Q(H₁,…,H_m)` is finite** — it is exactly the `Set.pi` of the bounded-height sets. -/
+theorem finite_rothFracSet {σ : Type*} [Finite σ] (H : σ → ℕ) :
+    {κ : σ → ℚ | InRothFracSet H κ}.Finite := by
+  have hset : {κ : σ → ℚ | InRothFracSet H κ}
+      = Set.pi Set.univ (fun h : σ => {q : ℚ | q.num.natAbs ≤ H h ∧ q.den ≤ H h}) := by
+    ext κ
+    simp [InRothFracSet, Set.mem_pi]
+  rw [hset]
+  exact Set.Finite.pi fun h => finite_setOf_rat_height_le (H h)
+
+/-- `R(a; r)` is non-empty as soon as `1 ≤ a`: the constant polynomial `1` works.
+
+⚠ `1 ≤ a` is not merely convenient, it is **necessary** — a non-zero `A` has a non-zero
+coefficient, so `1 ≤ |coeff n A| ≤ a`. -/
+theorem exists_inRothPolySet {σ : Type*} (a : ℤ) (r : σ → ℕ) (ha : 1 ≤ a) :
+    ∃ A : MvPolynomial σ ℤ, InRothPolySet a r A := by
+  classical
+  refine ⟨1, one_ne_zero, fun h => ?_, fun n => ?_⟩
+  · rw [← C_1, degreeOf_C]
+    exact Nat.zero_le _
+  · rw [coeff_one]
+    split_ifs
+    · simpa using ha
+    · simpa using le_trans zero_le_one ha
+
+/-- `Q(H)` is non-empty as soon as every `H h` is at least `1`: take `κ ≡ 0`.
+
+⚠ Also necessary — every rational has `den ≥ 1`. -/
+theorem exists_inRothFracSet {σ : Type*} (H : σ → ℕ) (hH : ∀ h, 1 ≤ H h) :
+    ∃ κ : σ → ℚ, InRothFracSet H κ := by
+  refine ⟨fun _ => 0, fun h => ⟨?_, ?_⟩⟩
+  · simp
+  · simpa using hH h
+
+/-- **`Θ_m` exists** once both sets are finite and non-empty.
+
+The index of any `A ∈ R(a;r)` at any `κ` is a genuine rational rather than `⊤`: `index = ⊤`
+happens only for the zero polynomial, and `A ≠ 0` survives `map (algebraMap ℤ ℚ)`.  So the
+index is a `WithTop ℚ`-valued function on a finite non-empty product, which attains a maximum;
+untopping it gives a rational satisfying both clauses — the upper bound from maximality, the
+attainment from the maximiser.
+
+⚠ No `Fintype σ` and no positivity on `r`: `index ≠ ⊤` follows from `A ≠ 0` alone through
+`index_eq_top_iff`, so the route via `index_le_card` (which needs both) is not required. -/
+theorem exists_isRothTheta_of_finite {σ : Type*} (a : ℤ) (r H : σ → ℕ)
+    (hfinA : {A : MvPolynomial σ ℤ | InRothPolySet a r A}.Finite)
+    (hfinK : {κ : σ → ℚ | InRothFracSet H κ}.Finite)
+    (hneA : {A : MvPolynomial σ ℤ | InRothPolySet a r A}.Nonempty)
+    (hneK : {κ : σ → ℚ | InRothFracSet H κ}.Nonempty) :
+    ∃ Θ : ℚ, IsRothTheta a r H Θ := by
+  classical
+  obtain ⟨p, hps, hmax⟩ :=
+    Set.exists_max_image _ (fun p : MvPolynomial σ ℤ × (σ → ℚ) =>
+      index r p.2 (map (algebraMap ℤ ℚ) p.1)) (hfinA.prod hfinK) (hneA.prod hneK)
+  have hne_top : ∀ (A : MvPolynomial σ ℤ) (κ : σ → ℚ), A ≠ 0 →
+      index r κ (map (algebraMap ℤ ℚ) A) ≠ ⊤ := by
+    intro A κ hA h
+    refine hA (map_injective (algebraMap ℤ ℚ) (algebraMap ℤ ℚ).injective_int ?_)
+    rw [map_zero]
+    exact (translate_eq_zero_iff κ).mp ((index_eq_top_iff r κ).mp h)
+  obtain ⟨hpA, hpK⟩ := hps
+  have htop : index r p.2 (map (algebraMap ℤ ℚ) p.1) ≠ ⊤ := hne_top _ _ hpA.1
+  refine ⟨(index r p.2 (map (algebraMap ℤ ℚ) p.1)).untop htop, ?_, ?_⟩
+  · intro A κ hA hκ
+    rw [WithTop.coe_untop]
+    exact hmax (A, κ) ⟨hA, hκ⟩
+  · exact ⟨p.1, p.2, hpA, hpK, (WithTop.coe_untop _ htop).symm⟩
+
+/-- **§9's existence obligation, discharged.**
+
+⚠ The hypotheses are only `1 ≤ a` and `1 ≤ Hₕ`, and both are **necessary** rather than
+convenient: `a ≤ 0` empties `R(a;r)` and `Hₕ = 0` empties `Q(H)`, and an empty set has no
+maximum to attain.  Nothing about finiteness is assumed — it is proved.
+
+This is what the section above said was "an undischarged obligation … known satisfiable
+because the two sets are finite".  It is now discharged, so `IsRothTheta` is a characterisation
+of something that exists, and `IsRothTheta.unique` makes it *the* `Θ_m`. -/
+theorem exists_isRothTheta {σ : Type*} [Finite σ] (a : ℤ) (r H : σ → ℕ)
+    (ha : 1 ≤ a) (hH : ∀ h, 1 ≤ H h) :
+    ∃ Θ : ℚ, IsRothTheta a r H Θ :=
+  exists_isRothTheta_of_finite a r H (finite_rothPolySet a r) (finite_rothFracSet H)
+    (exists_inRothPolySet a r ha) (exists_inRothFracSet H hH)
 
 /-- `R(a; r)` only grows with `a`. -/
 theorem InRothPolySet.mono {σ : Type*} {a a' : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ}

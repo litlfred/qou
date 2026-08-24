@@ -3375,3 +3375,53 @@ contains no occurrence of "degree" at all; the only substitution-vs-degree lemma
 `Θ_m ≤ m` is what needed `degreeOf_translate`: the index is an infimum over the **translated**
 support, so a degree hypothesis on `A` reaches it only because translation preserves degree.
 That dependency is why the bound could not be stated two entries ago and can be now.
+
+### §9's existence obligation, discharged — and a verifier that refused to sign off
+
+Run as a workflow: four pieces built in parallel (finiteness of `R(a;r)`, finiteness of `Q(H)`,
+non-emptiness, the assembly), then four adversarial verifiers. All four pieces compiled and
+were axiom-clean.
+
+⚠ **Three verifiers confirmed; the fourth returned `statementIsRight: false`, and was right.**
+The assembly agent had produced
+
+    exists_isRothTheta [Fintype σ] … (hfinA : …Finite) (hfinK : …Finite) (hneA …) (hneK …)
+
+and its verifier observed: *given that `Fintype`, both finiteness hypotheses are derivable —
+and the finiteness IS the obligation.* The theorem hypothesised away exactly the content it was
+billed as discharging, while carrying the instance that would discharge it. It then went and
+built the fully-discharged form itself. That is the version landed:
+
+    exists_isRothTheta [Finite σ] (a r H) (ha : 1 ≤ a) (hH : ∀ h, 1 ≤ H h) : ∃ Θ, IsRothTheta a r H Θ
+
+⚠ Both remaining hypotheses are **necessary**, not convenient: `a ≤ 0` empties `R(a;r)` (a
+non-zero polynomial has a non-zero coefficient, so `1 ≤ |coeff| ≤ a`), and `Hₕ = 0` empties
+`Q(H)` (every rational has `den ≥ 1`). An empty set has no maximum to attain.
+
+This is the failure mode the arc has been recording all session — a hypothesis that quietly
+does the work the theorem claims to do — caught here by an adversarial reader rather than three
+turns later by a contradiction. **That is what the verify phase is for, and it is the first time
+in this arc it has actually overturned something.**
+
+### What the finiteness needed
+
+Neither half had a ready-made Mathlib lemma:
+
+- **Polynomial side.** The closest thing is `MvPolynomial.finite_setOf_bounded` in
+  `Mathlib/RingTheory/MvPolynomial/Basic.lean` — **private**, and with a *uniform* degree bound
+  rather than a per-variable one. Rebuilt as `finite_setOf_forall_le` (the exponent box) plus
+  `finite_setOf_degreeOf_le_coeff_le`, the latter stated **without** `A ≠ 0` and **without** a
+  sign hypothesis on `a`, because neither is used — at `a < 0` the set is empty and the proof
+  never has to notice.
+- **Rational side.** Nothing at all. `Finsupp.fintype` needs a finite codomain and `ℚ` is not
+  one, so the finiteness comes entirely from the height bound, via `Rat.ext` injectivity of
+  `q ↦ (q.num, q.den)`. Needed one extra import, `Mathlib.Data.Int.Interval`, for
+  `LocallyFiniteOrder ℤ`.
+
+⚠ Environment note recorded by a verifier: `Mathlib/Data/Finsupp/Interval.olean` is **not built**
+in this checkout, so the `Finset.Iic`-on-Finsupps route the task prompt suggested is unusable
+here — `failed to synthesize LocallyFiniteOrderBot (Fin 1 →₀ ℕ)`. The `Set.Finite.pi'` route
+works and needs no `DecidableEq`.
+
+`Θ_m` is now a characterised object that provably exists, and `IsRothTheta.unique` makes it
+*the* `Θ_m`. §9 is complete: finiteness, attainment, monotonicity in `a`, and `0 ≤ Θ_m ≤ m`.
