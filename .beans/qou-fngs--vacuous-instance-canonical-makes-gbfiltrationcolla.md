@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-08-24T18:38:26Z
+updated_at: 2026-08-24T18:46:40Z
 ---
 
 `QOU/Mathlib/SpectralSequence.lean:125`:
@@ -232,3 +232,25 @@ Three consequences for the arc, all actionable:
 3. The certificate named is the GB-filtration JET-ORDER certificate — which is exactly the filtration `DqTwist.dq_sq_eq_curvature` points at, since the curvature of d_q is first order in (1 - q^-1) and therefore sits in filtration degree >= 1. The twist thread and the collapse thread meet here, at a formula the physics actually uses.
 
 Also settled this session (binding channel question): the "action" is not the normal-form net. net(p) ~ 0.999, net(bare qqbar) ~ 1.418, net(M_+) ~ 1.515 are commensurable (same H_3(q), same NF basis, same q0) but binding RAISES net by 0.097, so net cannot be the minimised functional. The minimisation is the confinement SDP (`confined(P,q)` strict feasibility; sigma_F the optimal dual objective), and nu_SDP is what enters M above.
+
+THE COLLAPSE IS LOCALISED TO ONE TERM, AND IT IS A BOUNDEDNESS CLAIM.
+
+`prop:phi-q-categorical-truncation` (content/.../mass-theory/):
+
+    m_tower(T_w) = sum_{k=0}^{k*(T_w)} alpha_k * m^(k)(T_w)
+    "The depth k*(T_w) is exactly the maximum GB-depth among the support
+     partitions. Truncation at any deeper level k >= k* yields the identical
+     categorical value."
+
+Two things follow, both narrowing the arc considerably.
+
+**1. Only one of the three terms of M is collapse-dependent.** M = nu_SDP * [tr_M(T_w) + tower(T_w) + tr_M(C_dimq)]. The two tr_M terms are Markov traces — linear functionals, not slice sums — so a collapse failure does not touch them. `tower(T_w)` is the slice sum, and it is the whole exposure. That is the split the previous note asked for, and it did not need the collapse proved to find.
+
+**2. The claim is BOUNDEDNESS, not collapse-at-E2, and boundedness is the weaker and provable one.** "Truncation at k >= k* yields the identical value" says the slices above k* vanish. A spectral sequence with finitely many non-zero terms per total degree degenerates at SOME finite page — that is standard and needs no Groebner input. So:
+
+  * collapse at some finite r: follows from boundedness. Provable.
+  * collapse at E_2 SPECIFICALLY: still an assertion, and it is what fixes k* to be the max GB-depth rather than something larger.
+
+The mass formula needs the specific k*, so it needs E_2, not merely "some page". Do not conflate them; the corpus currently states only the strong form.
+
+**Formalisation target, now concrete.** Build a `PagedSS` whose pages vanish above k*, i.e. `Subsingleton (page c)` for c.r > k*. Then `LongExactSequence.map_eq_zero_of_subsingleton` / `_target` and `equivOfFlankingTermsZero` apply directly, `Collapses` follows, and `SpectralCollapseCriteria.legacyOfPaged` discharges `GBFiltrationCollapsesAtE2` from a real object rather than PUnit. This is the bounded case that `EulerCharacteristic`s docstring named as the remaining work; it is now identified as the thing the mass formula actually rests on.

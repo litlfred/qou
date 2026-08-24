@@ -140,6 +140,65 @@ theorem page_stabilises_of_anticommuting_involution
   page_stabilises_of_collapse S r₀
     (collapses_of_anticommuting_involution S r₀ i hanti hfix htors) c hc
 
+/-! ### Collapse from bounded support — no Gröbner input required -/
+
+/-- **Bounded support forces collapse.**
+
+    If every page vanishes outside the filtration window `0 ≤ p ≤ N`, the
+    spectral sequence collapses at `N + 1`.
+
+    The argument is the standard one and it uses no property of the filtration
+    beyond its width. `d_r` shifts `p` by `r`, so once `r > N` the differential
+    out of any surviving cell lands at `p + r > N`, outside the window, where
+    the target is zero. Cells already outside the window have zero *source*.
+    Either way the map is zero.
+
+    **This is the theorem the corpus's mass formula actually needs.**
+    `prop:phi-q-categorical-truncation` states that the brane-tower sum
+    truncates at `k⋆`, the maximum GB-depth among the support partitions, and
+    that "truncation at any deeper level yields the identical categorical
+    value" — a boundedness claim. Boundedness is weaker than
+    `S-GB-spectral-collapse` and, as this shows, it is *provable* rather than
+    assumed.
+
+    What it does **not** give is collapse at `E_2` specifically: it yields
+    collapse at `N + 1`, where `N` is the window width. The mass formula needs
+    `k⋆` to be the max GB-depth rather than something larger, so the strong
+    form is still an assertion. Do not read this as discharging it. -/
+theorem collapses_of_bounded_support (S : PagedSS R page) (N : ℕ)
+    (hzero : ∀ c : CellIndex, (c.p < 0 ∨ (N : ℤ) < c.p) → Subsingleton (page c)) :
+    Collapses S (N + 1) := by
+  intro c hc
+  by_cases hout : c.p < 0 ∨ (N : ℤ) < c.p
+  · -- outside the window: the source is zero
+    haveI := hzero c hout
+    ext x
+    -- the SOURCE is zero, so `x = 0` and the map sends it to `0`
+    rw [Subsingleton.elim x 0, map_zero]
+    simp
+  · -- inside the window: `p + r` leaves it, so the target is zero
+    push_neg at hout
+    obtain ⟨hlo, hhi⟩ := hout
+    have hr : (N : ℤ) + 1 ≤ (c.r : ℤ) := by exact_mod_cast hc
+    have htarget : (N : ℤ) < (CellIndex.next c).p := by
+      show (N : ℤ) < c.p + (c.r : ℤ)
+      omega
+    haveI := hzero (CellIndex.next c) (Or.inr htarget)
+    ext x
+    exact Subsingleton.elim _ _
+
+/-- The legacy class, discharged from **boundedness alone** when the window is
+    narrow enough to put collapse at `E_2` — that is, `N ≤ 1`.
+
+    Narrow, but not empty, and it is the first discharge of
+    `GBFiltrationCollapsesAtE2` in this corpus that is neither `PUnit` nor an
+    assumption. -/
+theorem collapses_two_of_bounded_support (S : PagedSS R page) (N : ℕ) (hN : N ≤ 1)
+    (hzero : ∀ c : CellIndex, (c.p < 0 ∨ (N : ℤ) < c.p) → Subsingleton (page c)) :
+    Collapses S 2 := by
+  intro c hc
+  exact collapses_of_bounded_support S N hzero c (by omega)
+
 /-! ### The legacy bridge
 
     Restricted to `page : CellIndex → Type u`: the old `SpectralSequence R`
