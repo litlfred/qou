@@ -76,10 +76,16 @@ MUON_LITERAL = "1.109978595557"
 
 
 def hardcodes_muon(script: Path) -> bool:
+    """True only for a LIVE occurrence. A comment mentioning the muon q0 is
+    documentation, not a computation -- counting it skipped a producer that had
+    already been fixed (trefoil_complex_volume_probe, whose remaining mention is
+    a comment)."""
     try:
-        return MUON_LITERAL in script.read_text(encoding="utf-8", errors="ignore")
+        src = script.read_text(encoding="utf-8", errors="ignore")
     except OSError:
         return False
+    return any(MUON_LITERAL in ln and not ln.strip().startswith("#")
+               for ln in src.splitlines())
 
 sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(HERE))
