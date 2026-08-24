@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T22:36:28Z
+updated_at: 2026-08-24T23:21:22Z
 ---
 
 ## The measurement
@@ -396,3 +396,34 @@ restored. `markov-peel-atomic-tr-m.witness.json` is a canonical reference behind
 the L1 certification; committing it belongs to the owner or to #5722's C→D
 migration, not to a drive-by from this branch. #5722 was offered it and has not
 replied.
+
+
+---
+
+## Cross-link: main's `reference_anchor_straddle_audit` finds the OTHER axis
+
+`c16f82a1d9` landed a corpus-wide straddle audit — **120 straddles, 11 on the
+`atomic-tr-m-mpfr-50dps` pattern** — generalising the same class this bean's
+*defect 2* belongs to. Worth being precise about the relationship, because the
+two look similar and are not:
+
+| | axis compared | finds | blind to |
+|---|---|---|---|
+| `reference_anchor_straddle_audit` (main) | producer's `resolve_q0_anchor` vs reference's declared `q0Anchor` | **pin** mismatch — this bean's defect 2 | convention |
+| this bean | `y_λ` weights actually used, C vs D | **convention** mismatch — defect 1, the O(1) term | pin |
+
+**A convention mismatch is invisible to a pin-only audit by construction.** Both
+sides can declare the *same* anchor — the regenerated peel and its consumer would
+both say `proton` — and still differ by 7 % to 191 %, because the disagreement is
+in the Wedderburn weights, not the anchor. Measured: `grep -cE
+'convention|y_lambda'` over that audit returns **0**.
+
+So the two are complementary, and the corpus currently has a detector for the
+1e-8 axis and none for the O(1) one. That asymmetry is worth closing — the
+cheaper defect is the one that is now caught.
+
+Also on main: `9c87a54569` ("the 3-way tr_M check was running ONE pair — 3 of 3
+diverging was really 12 of 12"). Same neighbourhood, independently found.
+
+**The peel witness is still not regenerated on main** as of +165 commits, so this
+bean's step 1 remains open and unclaimed.
