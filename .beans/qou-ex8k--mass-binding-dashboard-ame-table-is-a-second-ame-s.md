@@ -61,3 +61,63 @@ SUGGESTED SHAPE
      `_constants()` already does ("cast ONCE at the boundary").
   3. Re-run all 19 and diff each witness; watch runtime for the object-dtype
      blowup, not just correctness.
+
+## Summary of Changes
+
+Fixed in 2f283e133 + follow-up. `_ame_table()` now calls `ame_binding_mev`
+and `_ame_atomic_mev` and returns mpf. Verified before changing: membership
+identical (all 3558 entries carry both columns), cost 0.31s for the whole
+table, and the object-dtype trap does not apply (only 2 of 19 consumers
+import numpy, and in neither does an AME value reach it -- the numpy/scipy
+there is the Gram/seminormal path, which takes only (Z, N)).
+
+Ran the consumers rather than assuming. 15 of 19 clean; 5 witnesses changed,
+each diffed leaf by leaf with ZERO numerical values moved:
+    su4-occupancy-binding-mass    f64 193 -> 102
+    clambda-shape-invariant            58 ->  40
+    coulomb-mirror-killswitch          28 ->  19
+    charge-symmetry-bond               26 ->  20
+    gg-production-bond                 12 ->   9
+                                      317 -> 190   (-127 fields)
+witness_raw_float64_audit: drained_files 75 -> 79, total_fields -127.
+
+## CORRECTION: this was NOT the root cause of the regressed 5
+
+This bean claimed `_ame_table()` was "ONE ROOT CAUSE" behind ~54 B_AME_MeV
+fields in 5 of the 10 raw-float64 regressed witnesses, and that "one fix
+reaches all of them". WRONG, and the measurement said so: after the fix,
+`regressed` stayed at 10, unchanged.
+
+The reason is simple and I should have checked it before predicting: NONE of
+those five producers consume `_ame_table()`. They are not in the 19. There
+are at least THREE AME paths in this tree, not two:
+  1. codata_constants.ame_binding_mev            canonical, mpf
+  2. mass_binding_dashboard._ame_table()         was float64 + wrong column
+                                                 (this bean; now fixed)
+  3. per-producer ad-hoc reads, each with its own float() cast:
+       atom_vhyp_closure_matrix_m.py:73  ame = json.loads(AME.read_text())["data"]
+                                    :87  B = float(ame[bkey])
+       log_ratio_binding_prototype.py:80 B_ame = float(r["B_AME_MeV"])
+       catalan_binding.py, bar_pairing_binding_observable.py  similar
+Path 3 is what feeds the regressed witnesses, and it is a per-producer tail,
+not a single root cause.
+
+The fix stands on its own merits -- it was reading the derived, float64-
+tainted column for 19 producers, and 127 fields is a real drop -- but the
+leverage claim was mine and it was wrong.
+
+## Discovered while doing this, not actioned
+
+TWO DEAD PRODUCERS on main, unrelated to this change. Both unpack a 4-tuple
+from `mass_binding_dashboard._constants()`, which has returned 3 values since
+at least 2026-08-08, so both crash on the first line of main():
+    computations/delta_lambda_shape_probe.py:80
+    computations/probe_collective_binding_residual.py:79
+`binding_single_pipeline_comparison.py:242` looks identical but is NOT dead --
+it has its own local `_constants()` returning 4. Only running it showed that.
+
+TWO PRODUCERS THAT CANNOT COMPLETE bare, also pre-existing: both Gram probes
+stall in `gram_norm_zn` at "3H: n=9". A/B'd gram_transfer_quadratic at HEAD
+WITHOUT this change: identical stall, identical point, same 240s.
+pn_pair_two_sector_split.py hits 1200s in the scipy seminormal path its own
+header names.
