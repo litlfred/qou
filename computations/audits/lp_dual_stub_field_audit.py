@@ -125,6 +125,53 @@ def _occurrences(obj, key: str, out: list) -> None:
             _occurrences(x, key, out)
 
 
+def dual_readers(stems: list[str]) -> list[tuple[str, list[str], list[str]]]:
+    """Python files that name one of `stems` AND touch a dual field name.
+
+    This answers the question the STUB list raises but does not settle: is it
+    safe to DROP the null fields, or does something read them?
+
+    Deliberately over-reports -- it is a textual co-occurrence scan, so a file
+    that reads duals from a *different* witness while merely mentioning one of
+    these counts as a hit. That is the safe direction: the caller adjudicates
+    each hit at the call site, and a scan that under-reported would licence a
+    deletion that breaks a reader.
+
+    Measured on 2026-08-24 over 3737 files: three hits, all adjudicated as
+    NOT reading duals from a stub witness --
+      * `onepb_status_dashboard.py` loads the confinement witness for its Gram
+        matrix; its dual reads come from `lp-confinement-nf-forcing`.
+      * `deuteron_from_scratch_ledger.py` lists the confinement witness in
+        `PRODUCTION_WITNESSES`; its dual reads come from `deuteron-real-sdp`.
+      * `lp_dual_solver.py` names it in prose.
+    So no reader consumes a null dual, and dropping the names breaks nothing.
+    Re-run rather than trusting that sentence -- it ages with the tree.
+    """
+    import re
+
+    repo = COMPUTATIONS.parent
+    out: list[tuple[str, list[str], list[str]]] = []
+    for f in sorted(repo.glob("**/*.py")):
+        parts = set(f.parts)
+        if "_deprecated" in parts or "_internal" in parts or ".git" in parts:
+            continue
+        if f.name == Path(__file__).name:
+            continue  # this audit names every stem by construction
+        try:
+            text = f.read_text(errors="ignore")
+        except OSError:
+            continue
+        ws = [w for w in stems if w in text]
+        if not ws:
+            continue
+        ds = [d for d in DUAL_FIELDS
+              if re.search(r"""["']""" + d + r"""["']""", text)
+              or re.search(r"\." + d + r"\b", text)]
+        if ds:
+            out.append((str(f.relative_to(repo)), ws, ds))
+    return out
+
+
 def classify(path: Path) -> tuple[str, list[str], list[str], dict] | None:
     """Verdict, plus the per-field occurrence counts the verdict rests on.
 
@@ -224,6 +271,23 @@ def main(argv: list[str]) -> int:
         print("  solver, and a producer that solves no LP does not. The names")
         print("  are still published. Presence of the names is not evidence")
         print("  of duals -- check a value before citing one.")
+
+    if stubs:
+        stems = [p.name.replace(".witness.json", "") for p, *_ in stubs]
+        readers = dual_readers(stems)
+        print()
+        print("  Can the null names simply be DROPPED? -- co-occurrence scan")
+        print(f"    files naming a STUB witness AND a dual field: {len(readers)}")
+        for f, ws, ds in readers:
+            print(f"      {f}")
+            print(f"          names: {', '.join(ws)}")
+            print(f"          duals: {', '.join(ds)}")
+        if readers:
+            print("    Over-reports by design: a file reading duals from a")
+            print("    DIFFERENT witness while mentioning one of these counts.")
+            print("    Adjudicate each at the call site before deleting.")
+        else:
+            print("    Nothing reads a dual field anywhere near these witnesses.")
 
     if args.strict and stubs:
         return 1
