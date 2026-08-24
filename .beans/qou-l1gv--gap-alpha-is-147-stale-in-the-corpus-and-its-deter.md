@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:05:13Z
-updated_at: 2026-08-24T13:06:10Z
+updated_at: 2026-08-24T13:14:12Z
 ---
 
 Found while triaging the last convention-C sites (`qou-cds1`, PR #5622).
@@ -82,3 +82,35 @@ search against the new α* and correct `alpha-blend-derivation.md` §5 + line 77
 Blast radius is small: the only importers are two audit scanners
 (`witness_environment_split_audit`, `canonical_script_input_audit`), neither of
 which consumes the math.
+
+
+## CORRECTION (same day): the pin is RULED OUT as the cause, and my §4 claim was wrong
+
+§4 above says the producer is muon-pinned and adds *"fixing it will move α* again."*
+**Measured, and that is false.** Re-ran with `QOU_Q0_ANCHOR=proton`:
+
+    Q0 the module bound        1.1099785827513808076   (proton — the env var IS respected)
+    alpha* (convention C)      0.350886411466
+    vs corpus 0.305807         +14.7411 %
+
+**Identical to 12 digits** to the muon-pinned run. So α* here is *invariant*
+under the muon↔proton pin, and the 14.74 % drift is **not** the pin.
+
+The muon default remains a real directive violation (2026-08-07, reaffirmed
+2026-08-15 R2) and should still be fixed — but it is a provenance defect with
+**zero** effect on this number, so it does not belong in the "three entangled
+defects, each of which moves the answer" framing. Only **two** move it: the
+convention (C→D, −19.13 %) and whatever caused the 14.74 %.
+
+**So the cause of the 14.74 % is still unidentified**, and the two obvious
+candidates are now both eliminated: it is not the convention (both figures are
+convention C) and it is not the pin (measured here). Remaining candidates, in
+rough order of likelihood: a change in the CODATA mass constants
+`M_p`/`M_n` the error functional targets, or a change in `nucleon_chains` /
+`_std_vhat` / the `hQ` definition feeding the blend. Bisecting
+`docs/canonicalization-review.md`'s commit against the producer's history would
+localise it.
+
+Recording the negative because it is the more useful half: an agent picking this
+up would otherwise spend the first hour re-pinning the producer and find the
+number unmoved.
