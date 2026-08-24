@@ -62,7 +62,19 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 # Bond types as 2-nucleon (Z,N) sub-braids, all at H_6.
 BOND_ZN = {"pn": (1, 1), "pp": (2, 0), "nn": (0, 2)}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
-AME = {"D": "2.2245662", "T": "8.4818", "3He": "7.7180", "4He": "28.29566"}
+# From the registry, not typed. The table was inconsistently precise -- the
+# deuteron byte-exact against the vendored AME2020 value, T / 3He / 4He left
+# as 5-figure roundings (8.4818 vs 8.4817962; 7.7180 vs 7.71804132; 28.29566
+# vs 28.2956624). These are COMPARISON TARGETS, which is what a `_VALIDATION`
+# constant is for; routing an AME value into a prediction INPUT would be the
+# 3-cal violation bean fvxq warns about, and this is not that.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION as _B_D,
+    AME_B_TRITIUM_MEV_VALIDATION as _B_T,
+    AME_B_HE3_MEV_VALIDATION as _B_HE3,
+    AME_B_HE4_MEV_VALIDATION as _B_HE4)
+
+AME = {"D": _B_D, "T": _B_T, "3He": _B_HE3, "4He": _B_HE4}
 
 _ydict = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
           for k, v in y_lambda_at(6, q0).items()}

@@ -46,7 +46,19 @@ set_compute_dps(30)                              # exploratory; ~%-level effect
 q0 = mp.mpf(str(Q0))
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 
-ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
+# From the registry, not typed. The table was inconsistently precise -- the
+# deuteron byte-exact against the vendored AME2020 value, T / 3He / 4He left
+# as 5-figure roundings (8.4818 vs 8.4817962; 7.7180 vs 7.71804132; 28.29566
+# vs 28.2956624). These are COMPARISON TARGETS, which is what a `_VALIDATION`
+# constant is for; routing an AME value into a prediction INPUT would be the
+# 3-cal violation bean fvxq warns about, and this is not that.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION as _B_D,
+    AME_B_TRITIUM_MEV_VALIDATION as _B_T,
+    AME_B_HE3_MEV_VALIDATION as _B_HE3,
+    AME_B_HE4_MEV_VALIDATION as _B_HE4)
+
+ISO = {"d": (6, _B_D), "t": (9, _B_T), "3he": (9, _B_HE3)}
 
 
 def _mpf(v):
