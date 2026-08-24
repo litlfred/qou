@@ -26,8 +26,8 @@ WHAT THIS PROBE TESTS
 Four things, all exact (sympy rational functions in ``q``), no float anywhere:
 
   T1  bar-parity accounting.  Which factor of F_Bor breaks ``q -> 1/q``?
-  T2  the H_3 full-twist eigenvalues, = ``q^{content sum}`` per Wedderburn
-      block.  Are they {q^3, 1, q^-3}?
+  T2  the H_3 RIBBON-twist eigenvalues theta_lambda = ``q^{c(lambda)}`` per
+      Wedderburn block.  Are they {q^3, 1, q^-3}?
   T3  does ``q^-3`` coincide with the twist eigenvalue on a *block*?
   T4  the two competing per-component readings: gzs0's ``-2 per component``
       against the ribbon/Casimir ``n(n+2) = 3`` at the fundamental colour.
@@ -92,9 +92,17 @@ PARTITIONS_3 = {"(3)": [3], "(2,1)": [2, 1], "(1^3)": [1, 1, 1]}
 def content_sum(shape: list[int]) -> int:
     """Sum of contents (j - i) over the Young diagram, 0-indexed rows/cols.
 
-    The full twist Delta^2 = (s_1 ... s_{n-1})^n is central in H_n(q) and acts
-    on the irreducible S^lambda by a scalar whose exponent is the content sum
-    (AGENTS.md / qou-7dzg: 'For Hecke its exponent is the content sum')."""
+    TWO DISTINCT TWISTS, and conflating them is the trap this probe fell into
+    on its first pass:
+
+      ribbon twist (modular T-matrix) theta_lambda = q^{c(lambda)}
+      full twist   Delta^2                        = theta^2 = q^{2c(lambda)}
+
+    The first is `QOU.BraidKnot.Keystone.theta` in
+    `lean/QOU/BraidKnot/KeystoneModularTwist.lean` -- `q ^ contentSum l`,
+    SORRY-FREE, over a generic `[GroupWithZero R]`. The second is what
+    `computations/chi-content-eigenbasis.witness.json` reports as `q^{2c}`.
+    Both are correct; they are different objects, and `q^-3` is the FIRST."""
     return sum(j - i for i, row in enumerate(shape) for j in range(row))
 
 
@@ -153,7 +161,7 @@ def main() -> int:
             "twist_eigenvalue": sp.srepr(sp.simplify(q ** c)),
             "twist_exponent": c,
         }
-    results["T2_H3_twist_by_block"] = twist
+    results["T2_H3_ribbon_twist_by_block"] = twist
     exps = sorted(v["twist_exponent"] for v in twist.values())
     t2_ok = exps == [-3, 0, 3]
     results["T2_exponents_are_minus3_0_3"] = bool(t2_ok)
@@ -165,13 +173,15 @@ def main() -> int:
     results["T3_block_matching_q_minus_3"] = match
     t3_ok = match == ["(1^3)"]
     results["T3_q_minus_3_is_a_block_twist_eigenvalue"] = bool(t3_ok)
-    results["T3_CONVENTION_CAVEAT"] = (
-        "CONDITIONAL. T3 assumes the full twist acts on S^lambda by "
-        "q^{content sum} -- exponent alpha = 1. That convention is TAKEN "
-        "FROM the corpus (AGENTS.md / qou-7dzg: 'For Hecke its exponent "
-        "is the content sum'), NOT derived here. Under any alpha > 0 the "
-        "spectrum is {q^{3a}, 1, q^{-3a}}, so q^-3 lands on (1^3) IFF "
-        "alpha = 1. T1 and T2 do not depend on alpha; T3 does."
+    results["T3_CONVENTION_STATUS"] = (
+        "RESOLVED, and NOT the way this probe first recorded it. alpha = 1 "
+        "is not a cited convention: QOU.BraidKnot.Keystone.theta is defined "
+        "as q ^ contentSum l and is SORRY-FREE. What alpha = 2 belongs to is "
+        "a DIFFERENT object, the full twist Delta^2 = theta^2. So q^-3 is the "
+        "RIBBON twist on (1^3) and q^-6 is the full twist -- and gzs0's "
+        "q^{T/2} at T = -6 is exactly the ribbon twist, so its arithmetic was "
+        "right all along. Residual softness: the Lean docstring itself hedges "
+        "'up to convention', which nothing in the corpus discharges."
     )
     if not t3_ok:
         failures.append(f"T3: q^-3 matched blocks {match}, expected ['(1^3)']")
@@ -204,6 +214,35 @@ def main() -> int:
         "by component."
     )
 
+    # ---- T5: WHY the twist is the sole bar-breaker (explains T1) --------
+    # Keystone.theta_conjugate (sorry-free): theta_{lambda'} = (theta_lambda)^-1,
+    # from the signed content flip c(lambda') = -c(lambda). So the ribbon twist
+    # is precisely the bar-ODD half of the modular data -- the S-matrix half is
+    # bar-EVEN (qDim_conj: d_q(lambda') = d_q(lambda)). T1 found q^-3 to be the
+    # unique bar-breaker in F_Bor; T5 says that is forced, not incidental.
+    conj_pairs = {"(3)": "(1^3)", "(1^3)": "(3)", "(2,1)": "(2,1)"}
+    t5_rows = {}
+    t5_ok = True
+    for name, cname in conj_pairs.items():
+        c, cc = twist[name]["content_sum"], twist[cname]["content_sum"]
+        ok = (cc == -c)
+        t5_ok = t5_ok and ok
+        t5_rows[name] = {"conjugate": cname, "c": c, "c_conj": cc,
+                         "content_flip_holds": ok}
+    results["T5_content_flip_by_block"] = t5_rows
+    results["T5_theta_conj_consistent"] = bool(t5_ok)
+    results["T5_note"] = (
+        "c(lambda') = -c(lambda) holds on every H_3 block, so "
+        "theta_{lambda'} = theta_lambda^-1 (Keystone.theta_conjugate, "
+        "sorry-free). (1^3) is the TRANSPOSE of (3), so theta_{(1^3)} = "
+        "theta_{(3)}^-1 = q^-3. The ribbon twist is the bar-ODD half of the "
+        "modular data; the S-matrix half is bar-EVEN (qDim_conj). That is WHY "
+        "T1 finds the twist factor to be F_Bor's unique bar-symmetry breaker: "
+        "it is the only piece of the modular data that can be."
+    )
+    if not t5_ok:
+        failures.append(f"T5: content flip failed: {t5_rows}")
+
     # ---- numeric cross-check at the proton pin (mpmath, never float) ----
     try:
         from mpmath import mp, mpf
@@ -229,16 +268,24 @@ def main() -> int:
         print(f"      {k:<22} {v}")
     print(f"    framing is the sole bar-breaker: {t1_ok}")
 
-    print("\nT2  H_3 full-twist eigenvalue by Wedderburn block")
+    print("\nT2  H_3 RIBBON-twist eigenvalue theta_lambda by Wedderburn block")
     print(f"      {'block':<10} {'dim':>4} {'content sum':>12}   twist")
     for name, v in twist.items():
         print(f"      {name:<10} {v['dim']:>4} {v['content_sum']:>12}   "
               f"q^{v['content_sum']}")
 
     print(f"\nT3  q^-3 matches block(s): {match}")
-    print("    CONDITIONAL on alpha = 1 in theta|_lambda = q^{alpha.c(lambda)};")
-    print("    that convention is cited from the corpus, not derived here.")
+    print("    theta = q^{c} is Keystone.theta, SORRY-FREE Lean -- not a cited")
+    print("    convention. The full twist Delta^2 = theta^2 = q^-6 is a")
+    print("    different object; gzs0's q^{T/2} at T=-6 IS this ribbon twist.")
     print(f"\nT4  {results['T4_verdict']}")
+
+    print("\nT5  content flip c(lambda') = -c(lambda) on every block: "
+          f"{t5_ok}")
+    print("    => theta_{lambda'} = theta_lambda^-1 (Keystone.theta_conjugate).")
+    print("    (1^3) is the transpose of (3), so theta_{(1^3)} = q^-3.")
+    print("    The twist is the bar-ODD half of the modular data -- which is")
+    print("    WHY T1 finds it to be F_Bor's unique bar-symmetry breaker.")
 
     print("\n" + "=" * 70)
     if failures:

@@ -6,7 +6,7 @@
     "F_Bor (product)": "neither"
   },
   "T1_framing_is_sole_bar_breaker": true,
-  "T2_H3_twist_by_block": {
+  "T2_H3_ribbon_twist_by_block": {
     "(3)": {
       "content_sum": 3,
       "dim": 1,
@@ -31,7 +31,7 @@
     "(1^3)"
   ],
   "T3_q_minus_3_is_a_block_twist_eigenvalue": true,
-  "T3_CONVENTION_CAVEAT": "CONDITIONAL. T3 assumes the full twist acts on S^lambda by q^{content sum} -- exponent alpha = 1. That convention is TAKEN FROM the corpus (AGENTS.md / qou-7dzg: 'For Hecke its exponent is the content sum'), NOT derived here. Under any alpha > 0 the spectrum is {q^{3a}, 1, q^{-3a}}, so q^-3 lands on (1^3) IFF alpha = 1. T1 and T2 do not depend on alpha; T3 does.",
+  "T3_CONVENTION_STATUS": "RESOLVED, and NOT the way this probe first recorded it. alpha = 1 is not a cited convention: QOU.BraidKnot.Keystone.theta is defined as q ^ contentSum l and is SORRY-FREE. What alpha = 2 belongs to is a DIFFERENT object, the full twist Delta^2 = theta^2. So q^-3 is the RIBBON twist on (1^3) and q^-6 is the full twist -- and gzs0's q^{T/2} at T = -6 is exactly the ribbon twist, so its arithmetic was right all along. Residual softness: the Lean docstring itself hedges 'up to convention', which nothing in the corpus discharges.",
   "T4_readings": {
     "gzs0_total_T": -6,
     "gzs0_per_component": "-2",
@@ -41,6 +41,28 @@
     "content_sum_1cubed": -3
   },
   "T4_verdict": "q^-3 equals the (1^3) content sum exactly (-3). It is NOT the three-component fundamental-colour Casimir total (9), and gzs0's '-2 per component' is a re-reading of the same -3 total via T/2, not an independent per-component fact: nothing in F_Bor is indexed by component.",
+  "T5_content_flip_by_block": {
+    "(3)": {
+      "conjugate": "(1^3)",
+      "c": 3,
+      "c_conj": -3,
+      "content_flip_holds": true
+    },
+    "(1^3)": {
+      "conjugate": "(3)",
+      "c": -3,
+      "c_conj": 3,
+      "content_flip_holds": true
+    },
+    "(2,1)": {
+      "conjugate": "(2,1)",
+      "c": 0,
+      "c_conj": 0,
+      "content_flip_holds": true
+    }
+  },
+  "T5_theta_conj_consistent": true,
+  "T5_note": "c(lambda') = -c(lambda) holds on every H_3 block, so theta_{lambda'} = theta_lambda^-1 (Keystone.theta_conjugate, sorry-free). (1^3) is the TRANSPOSE of (3), so theta_{(1^3)} = theta_{(3)}^-1 = q^-3. The ribbon twist is the bar-ODD half of the modular data; the S-matrix half is bar-EVEN (qDim_conj). That is WHY T1 finds the twist factor to be F_Bor's unique bar-symmetry breaker: it is the only piece of the modular data that can be.",
   "numeric_at_proton_pin": {
     "q0": "1.10997858275138080759166909561",
     "F_Bor": "4.46913873576752252938907513085",
