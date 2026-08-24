@@ -260,16 +260,56 @@ def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
     """
     seen = set()
 
+    def _as_text(v) -> Optional[str]:
+        """The decimal text of a q₀ field, whatever type it still is.
+
+        Matching only ``isinstance(v, str)`` misses the single commonest
+        shape in this corpus. The prevailing producer idiom stamps BEFORE
+        serialising::
+
+            WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)
+            json.dump(witness, f, indent=2, default=str)
+
+        so at stamp time ``parameters.q0`` is still an ``mpmath.mpf`` and only
+        ``default=str`` turns it into the digits that land in the file. A
+        str-only check therefore reads the evidence as absent on exactly the
+        witnesses that carry it, and it fails SILENTLY -- the stamp falls back
+        to the manifest and looks like an ordinary answer.
+
+        Measured on `meson_mass_from_hecke`: its committed witness records
+        `parameters.q0 = "1.10997859555418..."` (muon), the payload-first
+        resolver reads that file as muon, and yet a live re-run still stamped
+        `proton`, because at the moment of stamping that value was an `mpf`.
+
+        Kept conservative: anything whose text does not start with one of the
+        two 13-char 50-digit prefixes contributes no evidence, so a value
+        rendered at low precision (`str(mpf)` at dps 15 gives `1.10998`)
+        matches neither and falls through to the manifest rather than
+        guessing.
+        """
+        if isinstance(v, str):
+            return v
+        if isinstance(v, bool) or v is None:
+            return None
+        if isinstance(v, (int, float)) or hasattr(v, "__float__"):
+            try:
+                return str(v)
+            except Exception:  # noqa: BLE001
+                return None
+        return None
+
     def walk(node, depth=0):
         if depth > 4 or len(seen) > 1:
             return
         if isinstance(node, Mapping):
             for k, v in node.items():
-                if k in _Q0_FIELDS and isinstance(v, str):
-                    for name, pre in _Q0_PREFIXES:
-                        if v.strip().startswith(pre):
-                            seen.add(name)
-                elif isinstance(v, (dict, list)):
+                if k in _Q0_FIELDS:
+                    text = _as_text(v)
+                    if text is not None:
+                        for name, pre in _Q0_PREFIXES:
+                            if text.strip().startswith(pre):
+                                seen.add(name)
+                if isinstance(v, (dict, list)):
                     walk(v, depth + 1)
         elif isinstance(node, list):
             for v in node[:64]:
