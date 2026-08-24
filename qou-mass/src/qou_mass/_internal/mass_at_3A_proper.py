@@ -182,7 +182,7 @@ def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
              for shape in partitions_of(3 * A)]
 
 
-def normalized_plancherel_weights_3A(A: int):
+def normalized_plancherel_weights_3A(A: int, q=None):
     """ω_λ = w_λ^Planch / Σ w_μ^Planch — forces Σ ω_λ = 1.
 
     For q > 1, the naive Plancherel weights w_λ = d_q(λ)²/[n]_q!
@@ -193,11 +193,11 @@ def normalized_plancherel_weights_3A(A: int):
     [−1, 1] at our q₀, which is what the Φ_q tower needs.
     """
     n = 3 * A
-    nfac = qfac(n)
+    nfac = qfac(n, q)
     entries = []
     total = 0.0
     for shape in partitions_of(n):
-        dq = dim_q(shape)
+        dq = dim_q(shape, q)
         w = (dq * dq) / nfac
         entries.append((shape, w))
         total += w
@@ -563,9 +563,31 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     ``sigmas`` is the list from build_seminormal_matrices.
     ``word`` is the list of (c, d, gen_idx) triples from
     atom_braid_word_3A.
+
+    **This is a float64 kernel, and the return annotation is the contract.**
+    ``build_seminormal_matrices`` fills a numpy array or a scipy sparse
+    matrix, and both branches below end in ``float(...)``, so no caller has
+    ever received more than 53 bits from here. The word coefficients are
+    therefore coerced to ``float`` on the way in, which loses nothing the
+    return type was not already discarding — and without it an ``mpf``
+    coefficient CRASHES the sparse branch outright:
+
+        c * <csr_matrix>  ->  _mul_scalar  ->  dtype object
+        ValueError: scipy.sparse does not support dtype object
+
+    The dense branch did not crash; it silently built an object-dtype array
+    and ran the whole product in Python-level mpf arithmetic, at 53-bit
+    inputs, for no gain.  So the two branches disagreed on the same input,
+    one loudly and one expensively.
+
+    If you need χ_λ at true precision, this is not the function — see
+    ``hecke_characters.chi_lambda_braid_mpf``.  Note that at A = 4 the
+    largest irrep is f^λ = 4158, i.e. ~7.2e10 mpf operations per matrix
+    multiply, so that route is not a drop-in for the A ≥ 4 producers.
     """
     if dim == 0:
         return 0.0
+    word = [(float(c), float(d), g) for (c, d, g) in word]
     try:
         from scipy import sparse as sp_sparse
         is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
@@ -685,7 +707,7 @@ def _chi_of_word_dense(sigmas, dim, word) -> float:
     return float(np.trace(product))
 
 
-def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                       include_inter: bool = True,
                       verbose: bool = False) -> dict:
     """[DEPRECATED — Plancherel-weighted form] H_{3A} "Markov" trace.
@@ -717,14 +739,14 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
                                 include_inter=include_inter)
 
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, q)
     total = 0.0
     per_partition = []
     for shape in partitions_of(n_strands):
         sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
-        dq = dim_q(shape)
+        dq = dim_q(shape, q)
         w = (dq * dq) / nfac
         chi = chi_lambda_of_word(sigmas, dim, word, n_gens)
         contrib = w * chi / dim
@@ -744,7 +766,7 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
-def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                              include_inter: bool = True,
                              weight_scheme: str = "normalized_plancherel",
                              # NOT changed to "jones_wenzl", and the attempt
@@ -802,7 +824,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         if 0 <= g < n_gens:
             word_by_gen[g].append((c, d))
 
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, q)
     # Under QOU_H3A_MPF the accumulator must NOT start as a float: `0.0 + mpf`
     # is fine, but `float(np.trace(M))` two lines down would still truncate the
     # mpf trace, so building the matrices at mpf would buy nothing. Both are
@@ -816,7 +838,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         weight_table = normalized_plancherel_weights_3A((Z + N))
     elif weight_scheme == "plancherel":
         for shape in partitions_of(n_strands):
-            dq = dim_q(shape)
+            dq = dim_q(shape, q)
             weight_table.append((shape, (dq * dq) / nfac))
     elif weight_scheme == "jones_wenzl":
         weight_table = ocneanu_weights_3A((Z + N))
@@ -1029,7 +1051,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
     return desc, single, cross, desc + single + cross
 
 
-def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                        E_0: float = E_0_CALIBRATION_MEV,
                        weight_scheme: str = "normalized_plancherel",
                        cap_frac: float = 0.98,
@@ -1056,10 +1078,10 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # mass_endomorphism; both expressions are equivalent at H_{3A}).
     from mass_tower_operator_valued import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
-        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        Z, N, q=q, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=True, weight_scheme=weight_scheme, verbose=verbose)
     vols_free = per_generator_V_hat_3A(
-        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        Z, N, q=q, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=False, weight_scheme=weight_scheme, verbose=verbose)
     if not vols_atom or not vols_free:
         return {"status": "trivial", "Z": Z, "N": N}
@@ -1090,7 +1112,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
-def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                 E_0: float = E_0_CALIBRATION_MEV,
                 verbose: bool = False) -> dict:
     """[DEPRECATED — Plancherel-weighted trace] Binding via H_{3A} pattern.
@@ -1108,9 +1130,9 @@ def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     with W_free (include_inter=False) and W_atom (include_inter=True)
     on the same 3A-strand Iwahori–Hecke algebra.
     """
-    tr_atom = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+    tr_atom = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q=q,
                                 include_inter=True, verbose=verbose)
-    tr_free = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+    tr_free = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q=q,
                                 include_inter=False, verbose=verbose)
     B = E_0 * (abs(tr_free["total"]) - abs(tr_atom["total"]))
     return {
