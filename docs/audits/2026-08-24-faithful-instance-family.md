@@ -340,3 +340,56 @@ namespace-independent and was correct either way.
 A same-name pair in *different* namespaces is **not** a collision — it is two
 distinct classes, possibly intentional, possibly an unnoticed fork. This census
 does not judge which; only the 38 same-namespace rows can actually clash.
+
+---
+
+## Finding E — of the 40 collision groups, 21 need the author and 19 do not
+
+The count alone cannot be acted on, because the copies are not the same kind of
+thing. [`scripts/duplicate-class-divergence-triage.py`](../../scripts/duplicate-class-divergence-triage.py)
+(`--self-test`) compares the copies field-by-field, normalising whitespace so a
+docstring or line-wrap difference does not register:
+
+| verdict | groups | meaning |
+|---|---|---|
+| `IDENTICAL` | 18 | same field names and types |
+| `STUB` | 1 | one copy has no fields, or only `True`-typed ones |
+| `DIVERGENT` | **21** | the copies state genuinely different things |
+
+(40 groups against 38 class names, because a name colliding in two namespaces —
+`BorromeanQuark`, `QIntegerMassFormula` — yields two groups.)
+
+**The 21 `DIVERGENT` are the ones that need an authorial call**, for the reason
+`IsAMEValue` already showed: deciding which copy is canonical is deciding what
+the paper claims. They include `BorromeanQuark` (both groups),
+`CrystalGraphRealization`, `QIntegerMassFormula` (both groups — and the
+`QOU.Molecular` one is **five library files**, the `*_lp_dual_binding` family,
+each redeclaring the class), and eight in `QOU.FluidDynamics`.
+
+The comparison is deliberately conservative in the direction of asking rather
+than assuming: a false `DIVERGENT` costs a read, a false `IDENTICAL` could
+delete a real statement.
+
+**"Mechanically resolvable" is weaker than it sounds, and the 19 are not a
+delete.** Identical *class declarations* do not make identical *files*. The
+`MassEndomorphism` pair is the caution: its two copies would compare closely,
+yet the sibling carries seven theorems the library file does not
+(`transient_unique`, `mass_decomposition`, `fullMass_pos_of_vol_pos`, …).
+Resolving a duplicate means making one file import the other and adjusting
+namespaces — a real edit with import-graph consequences — not removing a
+declaration. What the 19 buy is that **no semantic question has to be answered
+first**.
+
+### A concern about my own earlier fix, checked and cleared
+
+`TowerSummandRealization` and `PerPieceBridge` appear in the `IDENTICAL` list,
+both in `QOU.PhiQJSJ`, one library copy and one sibling. Since PR #5621
+demoted `skeletonRealisation` in the **sibling**
+(`mass-theory/phi-q-tower-jsj-bridge.lean`), the obvious worry is that the fix
+touched one copy of a duplicated class and left the other live.
+
+It did not. `lean/QOU/PhiQJSJ.lean` declares both classes and contains **zero**
+`instance` declarations, so the vacuous instance existed only in the sibling and
+#5621 covered the only copy. The duplication itself is still real — the two
+files declare the same classes in the same namespace and neither imports the
+other — but nothing vacuous is hiding in the copy I did not edit.
