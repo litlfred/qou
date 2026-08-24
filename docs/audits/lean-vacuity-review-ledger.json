@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-24T10:59:29.000Z",
+  "updated_at": "2026-08-24T11:56:58.000Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -615,12 +615,7 @@
       "pattern": "field-projection",
       "line": 202,
       "verdict": "needs-agent",
-      "file_sha": "c2c9348c84d8",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `ScalarLPProjection` carries field `agrees` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `agrees` is outside CONCLUSION_FIELD.",
-      "stale_prev_verdict": "genuine"
+      "file_sha": "c2c9348c84d8"
     },
     "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean::saddle_eq_volume::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -769,12 +764,7 @@
       "pattern": "field-projection",
       "line": 89,
       "verdict": "needs-agent",
-      "file_sha": "c6f3de0c8fc1",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "`TopologicalMassDecomposition.decomposition` IS the conclusion (totalMass = baseline + Σ exceptional); theorem is `:= tmd.decomposition`. The structure DOES carry genuine side hypotheses (`baseline_is_descended`, `transient_supported_on_boundary`), which is what makes the fix tractable: the decomposition should be DERIVED from those, not sat beside them as a fourth assumed field.",
-      "stale_prev_verdict": "genuine"
+      "file_sha": "c6f3de0c8fc1"
     },
     "content/quantum-observable-universe/lifting-and-descent/descent-lemma.lean::descent_surjective::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -814,12 +804,7 @@
       "pattern": "field-projection",
       "line": 155,
       "verdict": "needs-agent",
-      "file_sha": "5b1fd9eb0984",
-      "disposition": "note-empirical-provenance",
-      "evidence": "Non-degenerate but empirically sourced. The instance supplies eleven numeric literals (tDD = 24.158, tTp = 20.380, n_target = 13.197, the x/y LP variables) and discharges every field — including `strong_duality` — by `norm_num`, so the arithmetic really is machine-checked and the class is genuinely inhabited. The caveat is provenance, which the instance's own docstring states: `The witness JSON is the authoritative numerical source; this instance exists to make the class type-inhabited for Lean elaboration.` So `he4_strong_duality_value` is a consistency check on stipulated LP output, not a derivation of it — the theorem name reads as a result about ⁴He. Advisory: keep, but say in the docstring that the numbers are witness inputs.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent",
-      "stale_prev_verdict": "advisory"
+      "file_sha": "5b1fd9eb0984"
     },
     "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_anchor_stable_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1544,18 +1529,7 @@
       "pattern": "field-projection",
       "line": 119,
       "verdict": "needs-agent",
-      "file_sha": "46c53815c280",
-      "disposition": "cite-external-axiom-legit",
-      "evidence": "Line 118: HasFiniteLPDuality axiomatizes STANDARD external LP-duality facts (strong duality + complementary slackness) for any bounded/feasible finite-dim LP, honestly cited to Schrijver §7.2/§7.4, with no fabricated instance and a transparent 'awaiting Mathlib LP-duality port' note. strong_duality is a named conditional accessor of a genuine external theorem, not the block's own laundered conclusion — the sanctioned §3b-cond external-input idiom.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "stale_prev_verdict": "legit"
+      "file_sha": "46c53815c280"
     },
     "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1665,18 +1639,7 @@
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 165,
       "verdict": "needs-agent",
-      "file_sha": "0bec03ff130b",
-      "disposition": "clarify-docstring-scope",
-      "evidence": "NOT a defect, and the one of these three that is genuinely different. The docstring is ACCURATE: it says the unproved conjuncts \"carry honest `sorry`s in their named sub-theorems ..., not projected conclusion fields\", and the body is `⟨shell_filling_inner_shells, shell_filling_hund_rule, shell_filling_lp_strong_duality⟩` -- named sub-theorems, no `ctx.` field. Consistent with its absence from the self-assuming-projection list. The detector fires only because this declaration's docstring mentions `sorry` while this declaration's own body has none; the sorries are upstream, which is what the docstring says. Same class as `identityB_general`.",
-      "reviewed_at": "2026-08-23T18:43:29.000Z",
-      "reviewer": {
-        "agent_date": "2026-08-23",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
-      },
-      "stale_prev_verdict": "advisory"
+      "file_sha": "0bec03ff130b"
     },
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean::bare_is_lp_unstable::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1717,18 +1680,7 @@
       "pattern": "tuple-projection",
       "line": 105,
       "verdict": "needs-agent",
-      "file_sha": "12eb586273e7",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Tuple projection: the five-conjunct conclusion (reciprocity formula + four LP supporting facts) is assembled from five fields.",
-      "reviewed_at": "2026-08-23T18:43:29.000Z",
-      "reviewer": {
-        "agent_date": "2026-08-23",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
-      },
-      "stale_prev_verdict": "genuine"
+      "file_sha": "12eb586273e7"
     },
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1769,18 +1721,7 @@
       "pattern": "tuple-projection",
       "line": 86,
       "verdict": "needs-agent",
-      "file_sha": "5aacba7fd3cb",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection (§3b-cond item-5): the theorem's conclusion is the context class's field(s) verbatim and the body returns them, so nothing is derived. NOT introduced by this branch -- surfaced by regenerating the audit against a tree that includes main's landings; the file was modified on main after this branch's point. The docstrings are candid (\"Proved from the upstream class field constraint\"), but the block kind is a theorem, so the claim still reads as proved. Tuple projection of four fields, one per conjunct of the stated four-part claim -- including `strong_duality`, which is assumed rather than derived from the primal/dual pair.",
-      "reviewed_at": "2026-08-23T18:43:29.000Z",
-      "reviewer": {
-        "agent_date": "2026-08-23",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
-      },
-      "stale_prev_verdict": "genuine"
+      "file_sha": "5aacba7fd3cb"
     },
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean::parity_regime_selection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1810,8 +1751,18 @@
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 134,
-      "verdict": "needs-agent",
-      "file_sha": "8c4e2777b030"
+      "verdict": "genuine",
+      "file_sha": "8c4e2777b030",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "The docstring says the claim \"is left as an honest `sorry` (no fabricated Hoefsmit matrix compute)\" and the body is `D.kappa_commutes p` -- a structure-field projection. No sorry.\n\nThe docstring is otherwise careful and correct about the mathematics: it says the claim is \"non-false, non-trivial\" and \"NOT derivable from the diagonal structure alone\", which is exactly why it should be a cited `sorry` or an uninhabited carrier rather than a field handed back.\n\nPART OF A PATTERN, not an isolated slip: commit b67ee924e84 'Convert sorry to class fields for all 15 EXT_CITE files' turned honest sorries into class-field projections across the batch, and the docstrings asserting the sorry were left in place. Confirmed by diff on three files so far -- nucleon_ordering_factorization, confinement_categorical, and this one -- each showing the same '+ <field> : <the conclusion>' / '- sorry' / '+ ctx.<field>' shape.",
+      "reviewed_at": "2026-08-24T11:56:58.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean::markovTrace_branching::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1926,15 +1877,35 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "exact-field-projection",
       "line": 322,
-      "verdict": "needs-agent",
-      "file_sha": "056eccab5a6a"
+      "verdict": "genuine",
+      "file_sha": "056eccab5a6a",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "The body is `exact hi.limit`, projecting the field of `[hi : WhiteheadVolumeConjectureLimit kashaev hk]`, whose type is the conclusion verbatim. The docstring calls this \"the one honest `sorry` here\" and the body's own comment opens \"Honest sorry:\" -- there is no sorry.\n\nWorth separating from the ordinary case: the docstring is RIGHT that a genuine unconditional proof exists downstream (QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half, sorry-free) and that this Mathlib-only base file cannot import it. That is a real and well-explained constraint. The defect is the encoding chosen for it: a class whose single field IS the conclusion, rather than a `sorry` with the citation the prose describes.\n\nPART OF A PATTERN, not an isolated slip: commit b67ee924e84 'Convert sorry to class fields for all 15 EXT_CITE files' turned honest sorries into class-field projections across the batch, and the docstrings asserting the sorry were left in place. Confirmed by diff on three files so far -- nucleon_ordering_factorization, confinement_categorical, and this one -- each showing the same '+ <field> : <the conclusion>' / '- sorry' / '+ ctx.<field>' shape.",
+      "reviewed_at": "2026-08-24T11:56:58.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Knot/WhiteheadVolumeConjecture.lean::whitehead_volume_conjecture::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 322,
-      "verdict": "needs-agent",
-      "file_sha": "056eccab5a6a"
+      "verdict": "genuine",
+      "file_sha": "056eccab5a6a",
+      "disposition": "docstring-describes-a-sorry-that-is-not-there",
+      "evidence": "Docstring says the body is a `sorry` while the body is a class-field projection: the sorry became an ASSUMPTION and the prose was left behind. Misleading direction -- a reader, and the has_sorry status derivation, both see an honestly-open declaration.\n\nPART OF A PATTERN, not an isolated slip: commit b67ee924e84 'Convert sorry to class fields for all 15 EXT_CITE files' turned honest sorries into class-field projections across the batch, and the docstrings asserting the sorry were left in place. Confirmed by diff on three files so far -- nucleon_ordering_factorization, confinement_categorical, and this one -- each showing the same '+ <field> : <the conclusion>' / '- sorry' / '+ ctx.<field>' shape.",
+      "reviewed_at": "2026-08-24T11:56:58.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_MI_factorises::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -2172,8 +2143,18 @@
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 114,
-      "verdict": "needs-agent",
-      "file_sha": "51c290f4bc0c"
+      "verdict": "genuine",
+      "file_sha": "51c290f4bc0c",
+      "disposition": "regression-tripped-a-documented-tripwire",
+      "evidence": "GENUINE, and the docstring on this declaration PREDICTED this exact failure and told the reader how to detect it:\n\n  \"The body is therefore an honest `sorry` + `-- Ref:` -- and, unlike the previous encoding, that is now what the code actually does: no class field posits this conclusion, so the statement cannot be discharged by projection. Verify with `#print axioms`, which must report `sorryAx`; IF IT EVER STOPS DOING SO WITHOUT THIS DOCSTRING CHANGING, THE PROJECTION HAS COME BACK.\"\n\nThe projection has come back. The body is `ctx.confinement_ident` and the docstring is unchanged. Measured in the diff of b67ee924e84:\n  +  confinement_ident : E_infinity_00 = (Finset.range n_blocks).sum ...\n  -  sorry\n  +  ctx.confinement_ident\nA prior author left a tripwire for precisely this regression; the sorry-drain tripped it.\n\nPART OF A PATTERN, not an isolated slip: commit b67ee924e84 'Convert sorry to class fields for all 15 EXT_CITE files' turned honest sorries into class-field projections across the batch, and the docstrings asserting the sorry were left in place. Confirmed by diff on three files so far -- nucleon_ordering_factorization, confinement_categorical, and this one -- each showing the same '+ <field> : <the conclusion>' / '- sorry' / '+ ctx.<field>' shape.",
+      "reviewed_at": "2026-08-24T11:56:58.000Z",
+      "reviewer": {
+        "agent_date": "2026-08-24",
+        "agent_model": "claude-opus-5",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "id": "local/lean-proof-vacuity-audit",
+        "kind": "agent"
+      }
     },
     "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean::delta_tau_M_surrogate_taylor_coeff_2::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
