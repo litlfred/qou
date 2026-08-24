@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T13:33:51Z
+updated_at: 2026-08-24T14:46:52Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1310,3 +1310,14 @@ blind is how the budget gets spent twice.
 
 Incidentally, `/usr/bin/time` is **not installed** in this container — a first
 re-launch using it exited 127 instantly. Use bash's `SECONDS` builtin.
+
+
+### Correction to the >40 min figure
+
+The bean records this site as "> 40 min per run", from the harness aborting at a
+2400 s ceiling. **Measured longer:** the standalone baseline launched 13:31 was
+still running at 14:45 — **> 74 minutes** and counting, on a 3 h ceiling. So a
+full measurement is > 2.5 h, not the ~80 min implied. The producer prints
+`gen 2/3/4` within its first minutes and then emits nothing for the remaining
+70+, which is the AGENTS §5 logging gap doing real damage: there is no way to
+distinguish "slow but progressing" from "hung" for over an hour.
