@@ -92,15 +92,32 @@ if _QS.is_dir() and str(_QS) not in sys.path:
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 
 
-def load_ck_from_witness() -> dict[int, mp.mpf]:
-    """Load c_2..c_10 (q_proton-canonical-pinned extraction)."""
+def load_ck_from_witness() -> tuple[dict[int, mp.mpf], list[int]]:
+    """Load the RESOLVED c_k rungs from the extended-ck witness.
+
+    An unresolved rung is recorded as JSON `null` by the upstream extractor
+    (`qbeta_decay_sdp_extended_ck.py:463`, bean `qou-8ofm`): once the SDP residual
+    reaches the model's accuracy floor, `(R_k - 1)/u^k` divides a fixed floor by
+    an ever-smaller `u^k` and manufactures a geometric blow-up with ratio `1/u`,
+    so those "values" are not data and are deliberately nulled.
+
+    This loader used to do `mp.mpf(str(v))` over every entry unconditionally.
+    `str(None)` is `"None"`, and mpmath splits a mantissa on `e` — so `"None"`
+    became `['Non', '']` and raised `int('') -> ValueError` from deep inside
+    `libmpf`, with nothing in the traceback naming the real cause. Skip the
+    sentinels, and if NOTHING is resolved say so in one line instead of failing
+    obscurely or, worse, proceeding over an empty ladder.
+    """
     src = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     if not src.exists():
         src = HERE.parent / "qbeta-decay-sdp-extended-ck.witness.json"
     with src.open() as f:
         d = json.load(f)
     raw = d["data"]["c_k_extracted_50dps"]
-    return {int(k.split("_")[1]): mp.mpf(str(v)) for k, v in raw.items()}
+    out = {int(k.split("_")[1]): mp.mpf(str(v))
+           for k, v in raw.items() if v is not None}
+    nulled = sorted((int(k.split("_")[1]) for k, v in raw.items() if v is None))
+    return out, nulled
 
 
 def main() -> int:
@@ -131,9 +148,25 @@ def main() -> int:
     print()
 
     # Step 1 verdict at q_proton: c_k · u_p^k → 2.118e-13 at k=8,9,10
-    ck = load_ck_from_witness()
+    ck, ck_nulled = load_ck_from_witness()
+    # Section (a) consumes k >= 6 only (the `if k < 6: continue` below). Say so,
+    # and say how much of that range actually arrived: with the upstream
+    # extractor nulling every unresolved rung (bean qou-8ofm), this table can be
+    # EMPTY while section (b) still produces a verdict and the witness still says
+    # allPassed. An empty (a) is not a passed (a).
+    CK_MIN_K = 6
+    ck_used = sorted(k for k in ck if k >= CK_MIN_K)
+    ck_missing = sorted(k for k in ck_nulled if k >= CK_MIN_K)
     print("--- (a) Re-evaluate c_k_proton · u^k AT each anchor's u ---")
     print(f"  (c_k_proton = canonical-pinned extraction at q_proton)")
+    print(f"  rungs k>={CK_MIN_K} available: {ck_used or 'NONE'}"
+          f"   nulled upstream: {ck_missing or 'none'}")
+    if not ck_used:
+        print("  *** SECTION (a) EVALUATED NOTHING. Every rung it consumes is")
+        print("      nulled upstream (qbeta_decay_sdp_extended_ck.py, qou-8ofm),")
+        print("      so the c_k·u^k re-evaluation below is empty. The VERDICT")
+        print("      printed later comes from section (b) alone, which uses no")
+        print("      c_k at all -- do not read it as confirming (a).")
     print(f"  {'k':>3s} {'c_k':>20s} {'c_k·u_p^k':>18s} {'c_k·u_m^k':>18s} {'ratio':>14s}")
     for k in sorted(ck.keys()):
         if k < 6:
@@ -196,6 +229,16 @@ def main() -> int:
     w.add_data("delta_u_relative_ppb", mp.nstr(delta_u_rel * mp.mpf("1e9"), 12))
     w.add_data("fibre_level_within_1ppm", str(fibre_level))
     w.add_data("verdict", verdict)
+    w.add_data("ck_section_a_coverage", {
+        "min_k_consumed": CK_MIN_K,
+        "rungs_available": ck_used,
+        "rungs_nulled_upstream": ck_missing,
+        "section_a_evaluated": bool(ck_used),
+        "note": ("verdict is from section (b) (u_subst location), which uses no "
+                 "c_k; section_a_evaluated=false means the c_k·u^k re-evaluation "
+                 "ran over zero rungs and this witness's allPassed does not "
+                 "cover it"),
+    })
     w.add_assertion(
         name="cross_anchor_u_subst_compared",
         computed=True,
