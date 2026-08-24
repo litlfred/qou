@@ -250,8 +250,11 @@ def _ame_entry(Z: int, A: int) -> dict:
 # this registry now uses the CODATA-**2022** value 931.49410372(29) so the
 # conversion matches the codata_2022_source edition (M_E/M_P/M_N etc.).
 # The two differ by ~1.4 ppb (within mutual σ) and feed only the
-# `*_ATOMIC_*_VALIDATION` comparison masses; AME binding energies come
-# from `binding_energy_total_keV` directly and are unaffected. Verify:
+# `*_ATOMIC_*_VALIDATION` comparison masses. (This comment used to add that
+# "AME binding energies come from `binding_energy_total_keV` directly and are
+# unaffected" -- no longer true, and misleading about the exact column at
+# issue: `_ame_binding_mev` below deliberately reads `binding_energy_per_A_keV`
+# instead, because the total column is derived and float64-tainted.) Verify:
 #   assert "931.49410242" in _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]
 _U_MEV = _U_MEV_CODATA2022
 

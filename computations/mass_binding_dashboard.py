@@ -217,23 +217,51 @@ def format_md_tables(text):
 
 def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
-    vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
-    atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass (electrons included)."""
-    U_MEV = float(_codata.U_MEV)                        # CODATA-2022 u→MeV via registry (bean me3r; float-preserving)
+    vendored AME2020 table, as `mpf`. σ_B = binding_energy_per_A_unc_keV × A;
+    atomic mass = atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass
+    (electrons included).
+
+    THE BINDING AND MASS COLUMNS COME FROM THE CANONICAL ACCESSORS, not from a
+    second read of the JSON. This used to do its own float64 arithmetic over
+    `binding_energy_total_keV`, which is precisely the column
+    `codata_constants._ame_binding_mev` was written to avoid: its docstring
+    calls that column "derived", notes `vendor_ame2020.py` computed it in
+    float64, and gives the example "⁶Li is stored as 31993.987199999996 where
+    the quoted column gives exactly 31993.9872". Measured here, the two
+    disagreed by -4.0e-15 MeV on ⁶Li and -5.0e-14 on ⁵⁶Fe.
+
+    That accessor calls itself "the canonical AME entry point for 300+
+    scripts", and its docstring already warned about consumers working over a
+    TABLE of nuclides re-deriving what the accessor provides. This function
+    was that mistake one level up: not hand-typed literals, but a second
+    reader of the wrong column, feeding 19 producers.
+
+    The membership guard moved from `binding_energy_total_keV` to
+    `binding_energy_per_A_keV`. Verified equivalent: all 3558 entries carry
+    both columns, so no nuclide is gained or lost.
+    """
+    import mpmath as _mp
+    from codata_constants import ame_binding_mev as _ame_b
+    from codata_constants import _ame_atomic_mev as _ame_m
+    U_MEV = _codata.U_MEV                               # CODATA-2022 u→MeV via registry (bean me3r); mpf, NOT cast down
     d = json.loads((HERE / "data" / "ame2020.json").read_text())
     entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
     rows = entries.values() if isinstance(entries, dict) else entries
     out = {}
     for r in rows:
-        b = r.get("binding_energy_total_keV")
-        if b is None:
+        if r.get("binding_energy_per_A_keV") is None:
             continue
-        unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
-        sigma = unc_perA * r["A"] / 1000.0              # total σ_B in MeV
+        Z, A = r["Z"], r["A"]
+        # `repr` before mpf on the uncertainties, for the same reason the
+        # canonical accessors do it: shortest round-tripping form, so the
+        # quoted digits survive the JSON float without a second re-parse.
+        unc_perA = _mp.mpf(repr(r.get("binding_energy_per_A_unc_keV") or 0.0))
+        sigma = unc_perA * A / 1000                     # total σ_B in MeV
         amu = r.get("atomic_mass_micro_u")
-        m_atom = amu * 1e-6 * U_MEV if amu is not None else None
-        s_atom = (r.get("atomic_mass_unc_micro_u") or 0.0) * 1e-6 * U_MEV
-        out[(r["Z"], r["A"])] = (b / 1000.0, sigma, m_atom, s_atom)
+        m_atom = _ame_m(Z, A) if amu is not None else None
+        s_atom = (_mp.mpf(repr(r.get("atomic_mass_unc_micro_u") or 0.0))
+                  * _mp.mpf("1e-6") * U_MEV)
+        out[(Z, A)] = (_ame_b(Z, A), sigma, m_atom, s_atom)
     return out
 
 
