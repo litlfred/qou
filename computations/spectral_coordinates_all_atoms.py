@@ -114,13 +114,39 @@ def main():
 
     wb = WitnessBuilder("spectral-coordinates-all-atoms", start_time=t0)
     wb.data["atoms"] = all_results
+    # THE RETRACTION LIVES HERE NOW, NOT ONLY IN THE ARTIFACT.
+    #
+    # This finding was RETRACTED on 2026-05-27 — by hand, on the committed
+    # witness, without touching this producer. So re-running it for ANY reason
+    # emitted the withdrawn claim again, with `RETRACTED` and
+    # `retraction_reason` simply absent, and the corpus silently un-retracted
+    # itself. Observed 2026-08-24 during a staleness drain: `data_keys 4 -> 2`,
+    # `finding` back to "DIVERGES", which is precisely what the retraction says
+    # is wrong.
+    #
+    # Nothing in the staleness family objects to that. The producer's hash
+    # matches its own bytes, so the witness reads as perfectly healthy; only
+    # `witness_shape_guard`'s key-count rule caught it, and a bare RETRACTED
+    # flag with no accompanying reason would have been 4 -> 3 and might have
+    # stayed under tolerance.
+    #
+    # A retraction applied only to an artifact is not a retraction — it is a
+    # note that survives exactly until someone re-runs the thing.
+    wb.data["RETRACTED"] = True
+    wb.data["retraction_reason"] = (
+        "V̂ values computed here are Hoefsmit matrix-product eigenvalues "
+        "(grow > 1 with crossing count), NOT the additive Wedderburn traced "
+        "volumes V̂_i^full (bounded < 1) used in the mass-endomorphism tower. "
+        "Li₂^q CONVERGES at the correct V̂_i^full values. Retracted "
+        "2026-05-27. See session discussion."
+    )
     wb.data["finding"] = (
-        "Li₂^q blow-up tower DIVERGES for A≥2 (max V̂ > 1 for deuteron+). "
-        "The binding energy formula B = m_e × C_knot × |sum| uses the "
-        "interface operator, NOT the Li₂^q blow-up expansion. "
-        "C_knot = 35/6 + 2ℏ² (0.015%) is an empirical identification; "
-        "its derivation requires the interface operator's eigenvalue "
-        "structure, not the Li₂^q convergent series."
+        "RETRACTED — Li₂^q CONVERGES at correct V̂_i^full < 1 for A≥2 "
+        "(max V̂ > 1 for deuteron+). The binding energy formula "
+        "B = m_e × C_knot × |sum| uses the interface operator, NOT the Li₂^q "
+        "blow-up expansion. C_knot = 35/6 + 2ℏ² (0.015%) is an empirical "
+        "identification; its derivation requires the interface operator's "
+        "eigenvalue structure, not the Li₂^q convergent series."
     )
     wb.add_assertion(
         "proton_converges",

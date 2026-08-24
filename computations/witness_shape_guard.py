@@ -141,17 +141,48 @@ def _duration(w) -> float | None:
 def shape_of(w) -> dict:
     data = w.get("data") if isinstance(w, dict) else None
     assertions = w.get("assertions") if isinstance(w, dict) else None
+    # RETRACTION MARKERS, carried explicitly and compared outside the
+    # tolerance. See the `retraction erased` rule in `compare`.
+    _d = data if isinstance(data, dict) else {}
     return {
         "leaves": count_leaves(w),
         "assertions": len(assertions) if isinstance(assertions, list) else 0,
         "data_keys": len(data) if isinstance(data, dict) else 0,
         "durationMs": _duration(w),
+        "retracted": bool(_d.get("RETRACTED")),
+        "retraction_reason": bool(_d.get("retraction_reason")),
     }
 
 
 def compare(before: dict, after: dict, tolerance: float) -> list[str]:
     """Reasons the new shape looks like a collapse. Empty list == fine."""
     reasons: list[str] = []
+
+    # A RETRACTION ERASED IS NOT A COLLAPSE, IT IS A CLAIM COMING BACK.
+    #
+    # No tolerance, and checked first. Measured 2026-08-24:
+    # `spectral-coordinates-all-atoms` carried `RETRACTED: true` plus a
+    # `retraction_reason` recording that the Li_2^q tower CONVERGES —
+    # hand-applied to the artifact on 2026-05-27, with the producer never
+    # updated. Re-running it dropped both keys and restored the withdrawn
+    # `finding` ("DIVERGES"), which is precisely what the retraction says is
+    # wrong. Nothing in the staleness family objects: the producer's hash
+    # matches its own bytes, so the witness reads as healthy.
+    #
+    # This guard caught it only as `data_keys 4 -> 2`. A bare `RETRACTED` flag
+    # with no accompanying reason would have been 4 -> 3 and might have stayed
+    # under the 30% tolerance — which is why this is a NAMED rule and not a
+    # count. A retraction is a human judgement the producer does not hold;
+    # losing one is never a legitimate shrink at any percentage.
+    for _key, _label in (("retracted", "RETRACTED"),
+                         ("retraction_reason", "retraction_reason")):
+        if before.get(_key) and not after.get(_key):
+            reasons.append(
+                f"RETRACTION ERASED: `{_label}` was present and is gone — a "
+                f"withdrawn claim is coming back as current. Fix at the "
+                f"producer: emit the retraction from source, or it survives "
+                f"only until the next re-run."
+            )
 
     b, a = before["leaves"], after["leaves"]
     if b > 0 and a < b * (1.0 - tolerance):
@@ -288,6 +319,27 @@ def self_test() -> int:
          False),
         # ...and the conjunction must not disarm the rule it guards: same
         # duration collapse, content SHRANK, still caught.
+        # The retraction rule, both directions. Content is IDENTICAL in both
+        # cases, so only the named rule can distinguish them — which is the
+        # point: no tolerance would have.
+        ("a RETRACTED flag going missing is caught",
+         {"assertions": [{"a": 1}], "data": {"RETRACTED": True,
+                                             "retraction_reason": "why",
+                                             "k": [1] * 50}},
+         {"assertions": [{"a": 1}], "data": {"k": [1] * 50}},
+         True),
+        ("a witness that never had one is NOT flagged",
+         {"assertions": [{"a": 1}], "data": {"k": [1] * 50}},
+         {"assertions": [{"a": 1}], "data": {"k": [1] * 50}},
+         False),
+        ("a retraction that is KEPT is NOT flagged",
+         {"assertions": [{"a": 1}], "data": {"RETRACTED": True,
+                                             "retraction_reason": "why",
+                                             "k": [1] * 50}},
+         {"assertions": [{"a": 1}], "data": {"RETRACTED": True,
+                                             "retraction_reason": "why",
+                                             "k": [1] * 50}},
+         False),
         ("duration collapse WITH shrinking content is still caught",
          {"witness": {"durationMs": 573059},
           "assertions": [{"a": 1}] * 3, "data": {"k": [1] * 109}},
