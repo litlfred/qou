@@ -71,7 +71,8 @@ class LpDualStabilityContext where
   dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
   /-- Partial-confinement sub-braid is LP-unstable. -/
   partial_unstable : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) < 0
-  /-- Strong duality holds. -/
+  /-- Strong duality holds.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality : tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).

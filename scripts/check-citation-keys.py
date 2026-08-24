@@ -63,6 +63,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import pathlib
 import glob
 import json
 import os
@@ -183,12 +184,23 @@ def classify(sites: list[dict], ids: set[str], labels: set[str]) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Resolve every citation key in the corpus")
     ap.add_argument("--strict", action="store_true", help="exit 1 if anything dangles")
+    ap.add_argument("--files", nargs="*", metavar="PATH",
+                    help="restrict the DANGLING report to these files. The corpus "
+                         "already carries a standing backlog, so a pre-commit gate "
+                         "that reports all of it fires on every commit and is "
+                         "learned-ignored. Scoping to the files a commit touches "
+                         "makes it flag what that commit ADDED.")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
     ids, labels = entry_ids(), block_labels()
     sites = scan()
     b = classify(sites, ids, labels)
+
+    if args.files:
+        # Compare resolved paths: callers pass repo-relative, sites hold absolute.
+        want = {str(pathlib.Path(f).resolve()) for f in args.files}
+        b["dangling"] = [s for s in b["dangling"] if s["path"] in want]
 
     if args.json:
         print(json.dumps({k: v for k, v in b.items()}, indent=1))

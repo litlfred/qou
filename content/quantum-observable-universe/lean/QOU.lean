@@ -1119,3 +1119,99 @@ import QOU.Mathlib.GenWronskian
 -- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
 -- family is an explicit parameter because in several variables there is no canonical row.
 import QOU.Mathlib.MvGenWronskian
+-- qou-sq3h -- staged for upstream Mathlib: restriction of a multivariate polynomial to a
+-- line, with the chain rule d/dt f(a+tc) = (D^c f)(a+tc).  The bridge for the generic-line
+-- route to BOUNDED-ORDER generalized Wronskians, which MvGenWronskian's converse cannot
+-- reach (it argues from the origin, and bounded-order Wronskians can vanish there).
+import QOU.Mathlib.LineRestriction
+-- qou-sq3h -- staged for upstream Mathlib: the directional generalized Wronskian
+-- det((D^c)^i f_j), whose rows carry order 0..m-1 by construction, and its equivalence with
+-- independence of line restrictions.  Reduces the bounded-order problem to a question about
+-- the DIRECTION alone; the base point drops out.
+import QOU.Mathlib.DirectionalWronskian
+-- qou-sq3h -- staged for upstream Mathlib: the BOUNDED-ORDER generalized Wronskian
+-- criterion, the form Roth's lemma consumes, proved at m = 2 (operator family (id, d_k),
+-- orders 0 and 1).  Mirrors the univariate m = 2 converse, with totalDegree for natDegree
+-- and IsRelPrime for Bezout coprimality.
+import QOU.Mathlib.BoundedOrderWronskian
+-- qou-4lbh -- staged for upstream Mathlib: Wronskians of SEPARATED polynomials.  For
+-- P = sum_k phi_k(x) psi_k(y) with the variable groups disjoint, the mixed generalized
+-- Wronskian factors into an x-Wronskian times a y-Wronskian -- the engine of Roth's lemma's
+-- induction on the number of variables.
+import QOU.Mathlib.SeparatedWronskian
+-- qou-4lbh -- staged for upstream Mathlib: the m = 1 height bound for Roth's lemma.
+-- Elementary: lead((qX-p)^k) = q^k and a divisor's leading coefficient divides, so
+-- q^k <= |lead P|.  Corrects the recorded assessment that the base case needed Mahler
+-- measure -- that is required for bounding heights of FACTORS in the induction step, which
+-- goes the other way.
+import QOU.Mathlib.RothHeightBound
+-- qou-4lbh -- staged for upstream Mathlib: M(X - a) = max(1, |a|), Jensen's formula for a
+-- single root, connecting Mathlib's circleAverage_log_norm_sub_const_eq_posLog to
+-- mahlerMeasure.  Cornerstone of the Jensen form, and the measurement that reversed this
+-- arc's recommendation from "bare-hands Gelfond" to "fill the bridge upstream".
+import QOU.Mathlib.MahlerJensen
+-- Heights of a disjoint-variable product.  For separated variables the coefficients of a
+-- product ARE the products of the coefficients, so the height is exactly multiplicative —
+-- which makes the height half of Roth's induction step elementary rather than a Gelfond
+-- application, correcting bean qou-4lbh's third prediction of where the cost sits.
+import QOU.Mathlib.SeparatedHeight
+-- Heights of products and determinants of multivariate polynomials over ℤ.  A product
+-- costs a factor of the SUPPORT SIZE, not only the heights, and the determinant bound
+-- m!·(S·B)^m is what turns a height bound on an auxiliary polynomial into one on its
+-- generalized Wronskian.  All of it is the easy direction; Gelfond is the other one.
+import QOU.Mathlib.MvPolynomialHeight
+-- The height of a generalized Wronskian, composed end to end:
+--   H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m.
+-- Not Mathlib-only: it needs mvGenWronskian.  Its two dependencies are, so the three
+-- lift together.
+import QOU.Mathlib.WronskianHeight
+-- The index across a disjoint-variable product: index (U(x)·V(y)) = index U + index V,
+-- exactly.  The index analogue of SeparatedHeight, and what Roth's induction on the
+-- number of variables splits on.  The ≤ direction is the half that needs IsDomain.
+import QOU.Mathlib.SeparatedIndex
+-- The m = 1 case of Roth's lemma stated against `index`, which is what the induction
+-- consumes.  RothHeightBound proved the corresponding statement about Taylor
+-- coefficients; nothing connected the two, because index lives on MvPolynomial and the
+-- height bound on Polynomial.  This module is that connection.
+import QOU.Mathlib.RothBaseCase
+-- The index of a generalized Wronskian, composed end to end:
+--   ∑ᵢ index (f i) ≤ index (mvGenWronskian D f) + m·C.
+-- The index counterpart of WronskianHeight.  index_det_ge alone does NOT give this —
+-- it bounds a determinant by its entries, not by the f.
+import QOU.Mathlib.WronskianIndex
+-- The interface of Roth's induction step, composed and CHECKED in Lean rather than
+-- asserted in prose: the separated Wronskian's index splits exactly, and each factor's
+-- height is bounded by the whole's.  Both compositions are one-liners — which is the
+-- point: if the claimed interface were wrong they would not typecheck.
+import QOU.Mathlib.RothInductionStep
+-- The STATEMENT of Roth's lemma (a def, not a theorem — only m = 1 is proved), plus the
+-- m = 1 case.  Settles the indexing question: keep the variable type general and carry
+-- the ordering as an Equiv σ (Fin m), so the base case lands at Unit with no transport.
+import QOU.Mathlib.RothLemmaStatement
+-- Separated representations: every polynomial in two variable groups is a finite sum
+-- ∑ₖ φₖ(x)·ψₖ(y).  The audit against the statement found this missing — every piece of
+-- the separated machinery TAKES such a representation and nothing produced one.
+import QOU.Mathlib.SeparatedRepresentation
+-- The arithmetic core of Roth's-lemma recursion: Mahler §13's case split, isolated from
+-- the polynomial content.  The induction step is NOT linear — it extracts a square-root
+-- bound — which is what the arc's linear form was missing.
+import QOU.Mathlib.RothRecursionArith
+-- §13's operator family, CONSTRUCTED: row μ contributes a fixed list, column ν contributes
+-- ν copies of the distinguished variable, so the cost is uniform in the row and grows in the
+-- column — exactly what sum_max_le_index_det's permutation step needs.  This closes the COST
+-- half of the recursion's missing input; the determinant's non-vanishing is still open.
+import QOU.Mathlib.RothOperatorFamily
+-- The variable split σ ≃ Fin n ⊕ Unit induced by an ordering σ ≃ Fin (n+1), and the transport
+-- of index, RothGrowth and degreeOf across it.  Connects Roth's lemma's STATEMENT (one degree
+-- vector, one ordering) to the split form every operator-family result is written for.
+import QOU.Mathlib.RothVariableSplit
+-- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
+-- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
+-- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
+-- representation (which lives over ℚ, because shortening divides by a coefficient).
+import QOU.Mathlib.SeparatedGauss
+-- Applying the induction hypothesis to the x-factor: §6's Gauss makes the rational Wronskian
+-- integral, RothLemmaUniform at m−1 applies to THAT, and index_C_mul carries the bound back
+-- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
+-- `hres`.
+import QOU.Mathlib.RothInductionHypothesis

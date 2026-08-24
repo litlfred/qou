@@ -1,17 +1,14 @@
 {
   "$schema": "block-qa/v1",
-  "label": "def:qou-motivic-galois-instance",
-  "kind": "definition",
+  "label": "conj:qou-motivic-galois-instance",
+  "kind": "conjecture",
   "paths": {
     "ts": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.lean"
+    "md": "content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md"
   },
   "source_hashes": {
     "md": "01ba1cc7c149",
-    "ts": "f62287725163",
-    "lean": "f9881ed69db7",
-    "lean_statement": "fda3c531f270"
+    "ts": "f62287725163"
   },
   "criteria": {
     "voice-branch-jargon": [

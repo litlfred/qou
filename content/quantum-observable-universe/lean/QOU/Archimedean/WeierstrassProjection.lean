@@ -1,6 +1,7 @@
 import Mathlib.Data.Complex.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import QOU.GroundRingCore
 
 /-!
 # QOU.Archimedean.weierstrassProjection — Weierstrass projection ℘_q(z)
@@ -19,13 +20,16 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
-namespace QOU.Archimedean
+-- Ground ring from the canonical module rather than re-declared here.
+-- This file used to carry its own
+--     abbrev R_q := LaurentPolynomial ℤ
+-- inside `namespace QOU.Archimedean`, byte-identical to the one in
+-- `QOU/Archimedean/GroundRing.lean:33` and therefore a duplicate
+-- **fully-qualified** name: `QOU.Archimedean.R_q` declared in two modules, so
+-- the two could never both be imported (bean `qou-kfcl`).
+open QOU.GroundRing
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-abbrev R_q := LaurentPolynomial ℤ
-noncomputable def q_param : R_q := LaurentPolynomial.T 1
-noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
+namespace QOU.Archimedean
 
 /-- Archimedean specialization map for Laurent-polynomial coefficients.
     This keeps the formal coefficients in `R_q` while allowing the
