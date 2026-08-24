@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T09:23:01Z
+updated_at: 2026-08-24T09:34:03Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -427,3 +427,46 @@ Only su4 is hand-confirmed. The other 13 are candidates, not verdicts.
 
 Next on this front: re-run the 13 candidates' producers to split stale-witness
 from live-source-defect.
+
+
+### CORRECTION to the fingerprint count above: 15/267 -> 9/160 (same day)
+
+The tool as first committed tested `y_lambda != 0`. Wrong: "y_lambda = 0 under
+D" is ALGEBRAIC, the arithmetic that evaluates it is not, so a correct D-frame
+producer writes a residue. Verified against live code, not inferred:
+
+    y_lambda_wenzl_bridge_numeric([4,1,1],   q0, dps=50)  ->   3.229e-52
+    y_lambda_wenzl_bridge_numeric([3,3,3,3], q0)          ->  -8.400e-108
+
+Threshold now READ OFF THE DATA. Of 1635 >=3-row values: 1377 exactly 0; the
+258 nonzero are trimodal with a 68-decade EMPTY band:
+
+    1e-150..1e-140    17   D-residue (helium-4, 50 dps)
+     1e-80.. 1e-70    81   D-residue (chi-* family)
+     <<68 empty decades>>
+     1e-10..  1e0    160   convention-C scale
+
+C_SCALE_FLOOR = 1e-30, mid-band. The 107 false positives were 6 whole files,
+including all 70 fields of chi-helium-4-h12 — correctly D, recording zero as
+1e-148.
+
+SHARPER RESULT SURVIVES: the chi-* family is PARTIALLY migrated. deuteron /
+dineutron / diproton / helium-4 are residue-scale (D, correct); helium-3 and
+tritium are C-scale (25 each). Same producer, same directory, different frames.
+The producer's own source independently notes "(deuteron, tritium, helium-3 all
+MISLABELLED)".
+
+STRUCTURE — not 9 independent defects. `chi_at_q0_via_hoefsmit_mpfr.py` writes
+the roots (chi-helium-3-h9, chi-tritium-h9) and the rest READ them by path:
+delta-lambda-categorical-verification (35), probe-d-delta-lambda-terms (7),
+gap-a1 (7), he4-binding-k-stage2 + ranking-xcheck (5+5, via y_lambda_at),
+mu3-frechet-perblock (50, via y_lambda_at_q0_mpmath). Upstream-first with
+ordering — the same upstream/here split this bean already drew. The roots carry
+NO scriptFile, so none of it is traceable from the witness.
+
+ALSO: a scan that examined nothing read as a CLEAN TREE. From inside
+computations/ the glob matched 0 files and the tool exited 0 saying "0 files
+with fingerprint". Now errors, exit 2 — "untested is not clean" applied to the
+scanner. I hit that cwd trap myself while measuring, which is how it surfaced.
+
+PR #5623, commit 50015f044.
