@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T11:20:25Z
+updated_at: 2026-08-24T13:37:50Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -74,3 +74,45 @@ flip the line, re-run, and attribute. Budget the long ones explicitly;
 that matters here.
 
 Do **not** widen any precision baseline to absorb the movement.
+
+
+## SCOPE EXPANDED (2026-08-24): this bean owns THREE of the remaining sites, not one
+
+Re-checked which of the remaining convention-C sites can be converted
+independently. **`convergence_safe_vhat_tower.py:198` and
+`probe_9b_perlambda_brane_tower.py:204` cannot** — both take their `z` from
+`load_q_50dps`, i.e. from this helper:
+
+    convergence_safe_vhat_tower.py:178   q, qi, z = load_q_50dps()      <- C, via this bean
+    convergence_safe_vhat_tower.py:198   z_bar = 1/(sqrt(qi)+sqrt(q))   <- C, local
+    probe_9b_perlambda_brane_tower.py:241  q, qi, z_loaded = load_q_50dps()   (LIVE call)
+
+Converting the *local* `z_bar` while `z` still arrives as C from here would put
+convention D and convention C into the same `_std_vhat` call — **manufacturing
+exactly the straddle this branch exists to remove**, and the same shape as the
+`alpha_high_precision` defect (`qou-l1gv`, z_D imported + z_C local in one
+functional).
+
+So the atomic unit is larger than the 21 callers: it is this helper **plus** the
+local C sites inside its callers. Any plan that converts `load_q_50dps` must
+sweep those in the same change.
+
+**Verified independent, so NOT in this unit:**
+
+- `delta_lambda_v_hat_z_transfer_phase5d_4.py:98` — its only `load_q_50dps`
+  mention is a **comment** at line 81 recording that it was deliberately
+  migrated away from it. Live `q` comes from `q_parameter`. Convertible alone.
+- `alpha/alpha_high_precision.py:88` — imports z from `hecke_core`, not from
+  here. Blocked on its own defect pile (`qou-l1gv`), not on this bean.
+
+## Corrected count of what remains on qou-cds1
+
+    1  independently convertible   delta_lambda_v_hat_z_transfer_phase5d_4  (slow: >40 min/run)
+    1  blocked on its own defects  alpha_high_precision                     (qou-l1gv)
+    3  ONE atomic unit             _li_2_q_util + convergence_safe_vhat_tower + probe_9b   (this bean)
+
+Not "5 remaining sites". I had `convergence_safe_vhat_tower` listed as queued
+and ready to convert after the z_bar maths was settled — the maths *is* settled
+(`z_bar = z(q^-1)`, see `qou-cds1`), but settling it does not make the site
+independently convertible, and converting it on that basis would have
+introduced a defect.
