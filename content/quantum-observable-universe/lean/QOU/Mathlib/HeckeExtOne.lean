@@ -4,9 +4,9 @@ import Mathlib.RingTheory.Ideal.Span
 import Mathlib.Tactic
 
 /-!
-# QOU.Mathlib.HeckeExtOne — `Ext¹(V_asym, V_sym) ≅ R/(α − β)`, and why that is `ℤ`
+# QOU.Mathlib.HeckeExtOne — `Ext¹(V_asym, V_sym) ≅ R/(α − β)`
 
-Bean `qou-zut2`. `phase-transition-boundary` asserts that the mixed-channel
+Bean `qou-zut2`. `phase-transition-boundary` asserted that the mixed-channel
 Hecke representation is a **non-split** extension
 
     0 → V_sym → V_mixed → V_asym → 0
@@ -16,19 +16,26 @@ classified by `Ext¹_{H_n(q)}(V_asym, V_sym) ≅ ℤ`, while
 (`Rad = 0`) at the physical `q₀ ≈ 1.1099`. A semisimple algebra has
 `Ext¹ = 0`, so the two looked inconsistent.
 
-**They are not, and this file is the reason.** The Ext group is computed here
-by hand, and it is `R/(α − β)` — a *torsion* `R`-module supported exactly on the
-locus where the two eigenvalues collide, which is exactly the locus where the
-algebra fails to be semisimple. Specialising at a semisimple point kills it.
-Both claims are true; they are statements about different fibres.
+The Ext group is computed here by hand, over a general `CommRing` and with the
+two eigenvalues carried as parameters `α, β`. The answer is `R/(α − β)` — a
+*torsion* `R`-module supported exactly on the locus where the eigenvalues
+collide, which is exactly the locus where the algebra fails to be semisimple.
+
+**The computation is what this file is for; it does not rescue the block.**
+An earlier reading of it did claim that, on the strength of `α = q, β = -1`
+giving `R_q/(q+1) ≅ ℤ`. That normalisation is not the one
+`phase-transition-boundary` uses, and under the one it does use the answer is
+`ℤ[i]`; see "Which normalisation the block is under" below. The claim is
+withdrawn on the block (`prop:phase-transition-boundary`, status note
+2026-08-24); this file keeps the algebra and drops the verdict.
 
 ## The computation, which is elementary
 
-The Hecke quadratic relation the corpus uses is `(T - q)(T + 1) = 0`
-(`HeckeAnyonicSubstrate.heckeQuadratic`), so the two one-dimensional modules are
-`V_sym` with `T ↦ q` and `V_asym` with `T ↦ -1`. Here they are carried as
-general eigenvalues `α, β`, because the corpus uses two normalisations in
-different chapters and the answer depends on which — see the caution below.
+Take the Hecke quadratic in the form `(T - α)(T - β) = 0`, so the two
+one-dimensional modules are `V_α` with `T ↦ α` and `V_β` with `T ↦ β`. The
+eigenvalues are carried as parameters rather than substituted, because the
+corpus uses two normalisations in different chapters and the answer depends on
+which — see below.
 
 An extension of `V_β` by `V_α` is free of rank two: `T e₁ = α e₁` and
 `T e₂ = β e₂ + c e₁` for some `c : R`. `extAction_quadratic` shows the quadratic
@@ -41,37 +48,47 @@ so the classification is `R` modulo the ideal `(α − β)`:
 `splits_iff_mem_span` is that statement in the form actually proved: the
 extension splits precisely when `c` lies in the ideal.
 
-## Why `ℤ`, and why it does not contradict semisimplicity
+## The semisimple half
 
-With `α = q`, `β = -1` the ideal is `(q + 1)`, and
+`splits_of_isUnit_sub`: wherever `α − β` is invertible the ideal is everything,
+the quotient is zero, and there is nothing to classify. That is the same fact as
+`ExtensionClass.isCompl_ker_quadratic`, which states it for an arbitrary module
+carrying the quadratic rather than for the rank-two model, and it is what
+`skein-resolution-obstruction`'s `Rad = 0` demands.
 
-    R_q / (q + 1) = ℤ[q, q⁻¹] / (q + 1) ≅ ℤ
+## Which normalisation the block is under — bean `qou-oyty`, option 3
 
-by `q ↦ -1`, which is legitimate in the Laurent ring because `-1` is a unit. So
-the corpus's `≅ ℤ` is **right**.
+The corpus carries two Hecke normalisations, and the classification is not
+invariant under the rescaling between them, because it depends on the
+*difference* of the eigenvalues.
 
-And `isUnit_sub_eigenvalues → every extension splits`
-(`splits_of_isUnit_sub`) is the semisimple half: wherever `α − β` is invertible
-the ideal is everything, the quotient is zero, and there is nothing to classify.
-At `q₀ ≈ 1.1099`, `q₀ + 1 ≈ 2.11` is invertible in `ℝ`, so `Ext¹ = 0` there —
-which is what semisimplicity demands.
+* **A.** `QOU/BraidKnot/HeckeAnyonicSubstrate.lean` uses `(T − q)(T + 1) = 0`:
+  eigenvalues `q, -1`, ideal `(q + 1)`, and `R_q/(q+1) = ℤ[q, q⁻¹]/(q+1) ≅ ℤ`
+  via `q ↦ -1`. Degenerate at `q = -1`.
+* **B.** `rem:hecke-algebra-from-braiding` — which is the block that *defines*
+  `H_n(R, q)` for this corpus — uses `(σ − q)(σ + q⁻¹) = 0`: eigenvalues `q`
+  and `-q⁻¹`, ideal `(q + q⁻¹) = (q² + 1)` up to the unit `q⁻¹`, and
+  `ℤ[q, q⁻¹]/(q² + 1) ≅ ℤ[i]` — the **Gaussian integers, not `ℤ`**.
+  Degenerate at `q² = -1`.
 
-The `ℤ` is therefore not a group of extensions existing *at* `q₀`. It is the
-generic classification over `R_q`, and it is supported at `q = -1`, the point
-where `(T − q)(T + 1)` acquires a double root and the algebra degenerates.
+`phase-transition-boundary` is under **B**, not A. Its interpreting remark
+`rem:phase-transition-interpretation` names the two channels by their
+eigenvalues `q` and `-q⁻¹`, and `rem:hecke-algebra-from-braiding` writes the
+defining relation in that form. So the classification for that block is `ℤ[i]`,
+which is `ℤ²` as a group and has no distinguished generator — the Hopf
+invariant of `π₃(S²) = ℤ` cannot generate it.
 
-## A caution about normalisation — the answer is convention-dependent
+Two further facts finish the matter, both in `ExtensionClass`:
 
-The corpus carries two Hecke normalisations. `HeckeAnyonicSubstrate` uses
-`(T − q)(T + 1) = 0`, giving eigenvalues `q, -1`, ideal `(q + 1)`, and `ℤ`.
-But `categorical-meson` uses `σᵢ² = h σᵢ + 1` with `h = q − q⁻¹`, whose roots
-are `q` and `-q⁻¹`; there the ideal is `(q + q⁻¹) = (q² + 1)` up to the unit
-`q⁻¹`, and the quotient is `ℤ[q]/(q² + 1) ≅ ℤ[i]` — the **Gaussian integers,
-not ℤ**.
+* `twoQ_eq_zero_iff` — under B the eigenvalues collide exactly on `q² + 1 = 0`,
+  i.e. at `q = ±i`, not at `q = -1`.
+* `twoQ_ne_zero_of_ordered` and `heckeSES_isSplit_of_ordered` — that locus is
+  not real, so on the archimedean side of the §7c wall, where
+  `phase-transition-boundary` lives (`abbrev R_q := ℝ` in its Lean sibling), the
+  sequence splits at **every** nonzero `q`. There is no real substrate value,
+  root of unity or not, at which a non-split extension exists to be classified.
 
-So `≅ ℤ` holds in the first normalisation and fails in the second. This file
-proves the general statement and leaves the choice explicit rather than picking
-one silently; anyone quoting `ℤ` should say which relation they mean.
+Anyone quoting a value for this Ext group must say which relation they mean.
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory
 -/
@@ -161,15 +178,22 @@ theorem not_splits_of_eq_of_ne_zero {α β c : R} (hαβ : α = β) (hc : c ≠ 
   rintro ⟨lam, rfl⟩
   exact hc (by rw [hαβ]; ring)
 
-/-! ### The two normalisations, and the two answers -/
+/-! ### Normalisation A only
 
-/-- With the corpus's `(T − q)(T + 1) = 0`, the classifying ideal is `(q + 1)`. -/
+    The two results below are specific to normalisation **A**,
+    `(T − q)(T + 1) = 0` (`HeckeAnyonicSubstrate`). They say nothing about
+    `phase-transition-boundary`, which is under **B** — see the module
+    docstring. Under B the degenerate locus is `q² = -1`, and
+    `ExtensionClass.twoQ_ne_zero_of_ordered` shows it is not real. -/
+
+/-- Under normalisation A, `(T − q)(T + 1) = 0`, the classifying ideal is
+    `(q + 1)`. -/
 theorem span_eq_q_add_one (q : R) :
     Ideal.span ({q - (-1)} : Set R) = Ideal.span ({q + 1} : Set R) := by
   norm_num
 
-/-- The extension is non-split exactly at `q = -1` — the double-root point of
-    `(T − q)(T + 1)`, hence the non-semisimple point.
+/-- Under normalisation A the extension is non-split exactly at `q = -1` — the
+    double-root point of `(T − q)(T + 1)`, hence the non-semisimple point.
 
     Stated for `c = 1`, the generator of the classification. -/
 theorem hecke_not_splits_at_neg_one {R : Type u} [CommRing R] [Nontrivial R]
@@ -187,11 +211,13 @@ theorem hecke_not_splits_at_neg_one {R : Type u} [CommRing R] [Nontrivial R]
     so the hypothesis is discharged rather than assumed. Cited rather than
     re-derived — the fact has one home, next to `R_q` itself. -/
 
-/-- The non-split extension at `q = -1`, over the actual ground ring.
+/-- The normalisation-A non-split extension at `q = -1`, over the ground ring.
 
     No hypothesis beyond `q = -1`: nontriviality of `R_q` is supplied by
-    instance search, so this is the corpus's own statement rather than a
-    statement about some ring that might be trivial. -/
+    instance search, so this is a statement about the actual ground ring rather
+    than about some ring that might be trivial. It is still a statement about
+    normalisation A at a root of unity, which `def:substrate-parameter` excludes
+    — not about any `q` a QOU admits. -/
 theorem groundRing_not_splits_at_neg_one (q : QOU.GroundRing.R_q) (hq : q = -1) :
     ¬ Splits q (-1) (1 : QOU.GroundRing.R_q) :=
   hecke_not_splits_at_neg_one q hq
