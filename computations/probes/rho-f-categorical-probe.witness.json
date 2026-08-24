@@ -1,7 +1,7 @@
 {
   "computation": "rho-f-categorical-probe",
   "description": "W-1 categorical \u03c1_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1\u00d7C2 combined) against the empirical true_\u03c1 from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives \u00b3He at \u22120.14% (vs C0 integer at \u22122.97%).",
-  "computedAt": "2026-08-24T08:47:08.360315+00:00",
+  "computedAt": "2026-08-24T14:19:56.716910+00:00",
   "parameters": {
     "q_0": 1.1099785955573347,
     "tr_M_proton": 1.06530614425445,

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:44.236599+00:00",
-  "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
+  "computedAt": "2026-08-24T17:14:51.440917+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "phi_q_signed_differs_from_phi_q_abs_at_delta_scale",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 255,
+  "durationMs": 280,
   "computation": "qbeta-signed-vs-abs-tower-diagnostic",
   "scriptFile": "qbeta_signed_vs_abs_tower_diagnostic.py",
   "scriptHash": "421b94c797b0",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -129,6 +129,6 @@
     "conclusion": "Φ_q(z) ≠ Φ_q(|z|) for z < 0. At Δtr_M scale (|v|=0.142, q=1.11), Φ_q(-v) differs from Φ_q(+v) by ~-92.48% per term. If the framework's per-braid mass-tower uses Φ_q(|v|) but the categorical 'correct' formula should use Φ_q(v) signed, EACH negative-v term contributes a 92.48% sign-correction. Multiple negative terms compound. For PROTON / NEUTRON mass-tower: at the level of single-nucleon tr_M values (β_p ≈ +1.07, β_n ≈ +0.92), both POSITIVE, so |...| is no-op at level 0. At deeper levels (pair joints, jets) sub-braid traces CAN be negative — the |...| would change those. WHETHER THE FRAMEWORK SHOULD USE SIGNED OR ABS is a categorical question; this probe does not answer it, only quantifies that the difference is structurally meaningful when negative-v terms appear in the tower.",
     "implications_for_ck_saga": "Indirect — c_k saga is in BINDING (Li_2^q), not MASS (Φ_q). Q_β = m_n - m_p - m_e is a mass-DIFFERENCE; both m_n and m_p use Φ_q(|...|) in their per-braid towers. If signed-vs-abs changes m_p and m_n in correlated ways, the difference Q_β could be unchanged. Quantifying this requires the full per-isotope sub-braid V̂ values for proton and neutron — out of scope for this diagnostic. Marked as FOLLOW-UP."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

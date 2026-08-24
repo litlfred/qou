@@ -62,10 +62,17 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
+from q0_stamp import pin_value_for_anchor  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 DPS = 50
 
-MUON_Q0 = "1.1099785955541805"
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches neither
+# current pin. The NAME says muon, so the muon pin is taken explicitly
+# rather than through the manifest, which would hand this stem proton.
+# Owner ruling 2026-08-24, bean `qou/ftuv`.
+MUON_Q0 = pin_value_for_anchor("muon")
 
 TARGETS = [
     "wenzl-y-lambda-h9.witness.json",

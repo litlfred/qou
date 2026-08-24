@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-14T16:22:55.447635+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-08-24T10:50:50.187707+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "he3_volume_scaled_mu0_rel_err_under_25pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "binding-a3plus-full-theta-assembly",
   "scriptFile": "binding_a3plus_full_theta_assembly.py",
   "scriptHash": "96a49a3a8480",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,14 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_a3plus_full_theta_assembly.py"
+    ],
+    "reproduce": "python3 -u computations/binding_a3plus_full_theta_assembly.py"
   },
   "description": "A≥3 absolute binding derivation campaign — full-order θ_λ assembly.  Tests 4 substrate-derived ρ candidates (m_e, μ₀, with/without ℏ_q) and Vol(K_bind)-scaled assemblies against AME B(K).  Markov-weighted (y_λ from chi-*-at-q0-50dps witnesses).  NO fits.",
   "data": {

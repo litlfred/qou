@@ -401,15 +401,47 @@ def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
         # checks: y0_star, y_star, active_set, primal_obj, dual_obj,
         # duality_gap.
         from lp_dual_solver import solve_operator_selection_lp
-        # Pin scipy: committed-witness producer → byte-deterministic (the
-        # new "auto" default would use clarabel when its binary is built).
-        canon = solve_operator_selection_lp(c, G, target_net, backend="scipy").to_dict()
+        # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+        # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+        # too (6 identical solves, 1 output hash), so that reason never distinguished
+        # the two. The real concern was `backend="auto"` choosing silently by whether
+        # the Rust binary happened to be built; pinning `clarabel` answers it, and
+        # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+        # changed answer. Bean `qou/ftuv`.
+        canon = solve_operator_selection_lp(c, G, target_net, backend="clarabel").to_dict()
         out["lp_dual"] = canon
         out["y0_star"] = canon["y0_star"]
         out["y_star"] = canon["y_star"]
         out["active_set"] = canon["active_set"]
         out["dual_obj"] = canon["dual_obj"]
         out["duality_gap"] = canon["duality_gap"]
+
+        # `primal_obj` above came from the INLINE scipy solve, whose box is
+        # x ∈ [-10, 10] rather than the canonical x ≥ -M_bound. Measured
+        # 2026-08-23 across all 41 rows: the two LPs agree on the OPTIMUM
+        # (max absolute difference 3.55e-15) and disagree only on which
+        # argmin they land on — the optimum here is 0 and the optimal face
+        # is large, so the box picks a vertex without moving the value. The
+        # box is active in all 41 rows for exactly that reason.
+        #
+        # So the inline number was f64 noise around a true zero (3.55e-15)
+        # while the canonical solve of the same objective, already in this
+        # same row under `lp_dual`, carries it as 3.78e-44 to 50 digits.
+        # Take the canonical one: nothing is lost but the noise, and the
+        # standardized field now means what `lp_dual_witness_validator`
+        # reads it as. `x_opt` keeps the box-constrained argmin, which is a
+        # genuinely different and still-recorded quantity.
+        out["primal_obj"] = canon["primal_obj"]
+
+        # Mirror the full-precision companions alongside every value lifted
+        # from `canon`. Copying the numbers up without them is what left 164
+        # of this witness's carved f64s bare while the digits sat one level
+        # down in `lp_dual`.
+        for _k in ("y0_star", "y_star", "dual_obj", "duality_gap",
+                   "primal_obj"):
+            _sk = _k + "_str"
+            if canon.get(_sk) is not None:
+                out[_sk] = canon[_sk]
     return out
 
 
@@ -439,14 +471,21 @@ if __name__ == "__main__":
         marker = ""
         if abs(a - 0.5) < 1e-9:
             marker = "  ← current postulate (½)"
-        print(f"{a:>7.3f} {d['V_pn_gen']:>10.4f} {d['m_atom']:>13.3e} "
-              f"{d['m_free']:>13.3e} {d['B_pred']:>+14.4f} "
-              f"{err:>9.4f}{marker}")
+        # `float(...)` on each: these come through as `mpmath.mpf`, which has
+        # no `__format__` for `>10.4f`, so this print raised TypeError and the
+        # producer could not complete — the witness below was never written.
+        # Pre-existing (identical failure before the backend switch of
+        # 2026-08-23); it is a DISPLAY-only cast, the recorded values keep
+        # their precision. Bean `qou/ftuv`.
+        print(f"{a:>7.3f} {float(d['V_pn_gen']):>10.4f} "
+              f"{float(d['m_atom']):>13.3e} "
+              f"{float(d['m_free']):>13.3e} {float(d['B_pred']):>+14.4f} "
+              f"{float(err):>9.4f}{marker}")
 
     # Best α for binding
     best = min(binding_scan, key=lambda r: r["B_err"])
-    print(f"\nBest α for B_pred ≈ B_AME:  α* = {best['pn_alpha']:.4f}, "
-          f"B_pred = {best['B_pred']:.4f} MeV, |Δ| = {best['B_err']:.4f}")
+    print(f"\nBest α for B_pred ≈ B_AME:  α* = {float(best['pn_alpha']):.4f}, "
+          f"B_pred = {float(best['B_pred']):.4f} MeV, |Δ| = {float(best['B_err']):.4f}")
 
     print("\n─── LP-dual scan on H_3 Gram basis ───")
     print(f"{'α':>7} {'net':>9} {'primal_obj':>12} {'y₀':>10} "
@@ -455,9 +494,9 @@ if __name__ == "__main__":
     for a in alphas:
         r = lp_dual_at_alpha(a, G)
         tight = ",".join(r.get("tight_constraints", []))
-        y0_str = f"{r.get('y0', float('nan')):+.4f}" if r.get("y0") is not None else "   —   "
-        obj_str = f"{r.get('primal_obj', float('nan')):+.4e}" if r.get("primal_obj") is not None else "  —  "
-        print(f"{a:>7.3f} {r['target_net']:>+9.4f} {obj_str:>12} {y0_str:>10}  {tight}")
+        y0_str = f"{float(r.get('y0', float('nan'))):+.4f}" if r.get("y0") is not None else "   —   "
+        obj_str = f"{float(r.get('primal_obj', float('nan'))):+.4e}" if r.get("primal_obj") is not None else "  —  "
+        print(f"{a:>7.3f} {float(r['target_net']):>+9.4f} {obj_str:>12} {y0_str:>10}  {tight}")
         lp_scan.append(r)
 
     # ── Tower-level ∂B/∂α scan ───────────────────────────────
@@ -470,8 +509,8 @@ if __name__ == "__main__":
         marker = ""
         if abs(a - 0.5) < 1e-9:
             marker = "  ← postulate"
-        print(f"{a:>7.3f} {d['B_pred']:>+12.4f} {d['dB_dalpha']:>+14.4e} "
-              f"{d['dVpn_dalpha']:>+12.4e}{marker}")
+        print(f"{a:>7.3f} {float(d['B_pred']):>+12.4f} {float(d['dB_dalpha']):>+14.4e} "
+              f"{float(d['dVpn_dalpha']):>+12.4e}{marker}")
 
     # Scan for zero-crossing (critical points)
     zero_crossings = []
@@ -504,7 +543,7 @@ if __name__ == "__main__":
         if r.get("status") == "solved":
             xs = r["x_pair"]
             tight_str = ",".join(f"{i}" for i, t in enumerate(r["tight_pairs"]) if t)
-            print(f"{a:>7.3f} {r['objective']:>9.4f} "
+            print(f"{a:>7.3f} {float(r['objective']):>9.4f} "
                   f"{xs[0]:>7.4f} {xs[1]:>7.4f} "
                   f"{xs[2]:>7.4f} {xs[3]:>7.4f}  {tight_str}")
 

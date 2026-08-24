@@ -290,16 +290,55 @@ def _is_full_precision_shadow(value, companion) -> bool:
 
     So a companion counts only when it demonstrably carries digits the double
     could not hold.
+
+    **AND when it agrees with the float it shadows** (added 2026-08-23, bean
+    `qou/ftuv`). The digit-count guard alone leaves a second laundering hole,
+    a sibling of the one above: a companion carrying 50 digits of a DIFFERENT
+    number excuses its f64 just as well. Found by walking into it — a producer
+    wrote `round(primal_obj, 6)` beside a full-precision companion, and since
+    the value was ~4.2e-44 the rounding wrote **`0.0`**. The pair then read as
+    "f64 convenience copy + exact value" while the f64 was not a lossy copy of
+    the value but a different number entirely, and a consumer doing arithmetic
+    on it — the very consumers this rule exists to keep served — would get
+    zero.
+
+    Measured before landing: of 236 shadow pairs in the live corpus, **236
+    agree and 0 disagree**, so this rejects nothing that was already honest.
+
+    The tolerance is deliberately LOOSE — 1e-9 relative, not f64 epsilon. The
+    defect being guarded against is a companion describing a *different
+    number*, which is a total mismatch (`0.0` against `4.2e-44` is a relative
+    error of 1). Demanding correct rounding would also reject hand-written
+    fixtures and any producer that truncated its float for display, which is
+    sloppy but not laundering, and would make the rule brittle for no gain.
     """
+    _AGREE_REL_TOL = 1e-9
+
+    def _agrees(v: float, c: str) -> bool:
+        try:
+            # float64-ok: the downcast IS the comparison. This asks whether the
+            # `*_str` companion round-trips to the f64 actually recorded, so
+            # the companion must be brought to f64 to be compared with it.
+            # Comparing at full precision would answer a different question.
+            cv = float(c)  # float64-ok: see above
+        except ValueError:
+            return False
+        if cv == v:
+            return True
+        scale = max(abs(v), abs(cv))
+        return scale > 0 and abs(cv - v) <= _AGREE_REL_TOL * scale
+
     if isinstance(value, float) and isinstance(companion, str):
-        return _sig_digits(companion) > _F64_SIG_DIGITS
+        return _sig_digits(companion) > _F64_SIG_DIGITS and _agrees(value, companion)
     if isinstance(value, list) and isinstance(companion, list):
         if not value or len(value) != len(companion):
             return False
         pairs = list(zip(value, companion))
         if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
             return False
-        return all(_sig_digits(c) > _F64_SIG_DIGITS for _, c in pairs)
+        return all(
+            _sig_digits(c) > _F64_SIG_DIGITS and _agrees(v, c) for v, c in pairs
+        )
     return False
 
 
@@ -330,34 +369,94 @@ def count_carved(obj) -> int:
     return _count(obj)[1]
 
 
-def _count(obj) -> tuple[int, int]:
-    """(counted, carved_out) — one traversal, both numbers."""
+def count_integral(obj) -> int:
+    """How many floats hold an exactly-integral value (`0.0`, `54.0`).
+
+    Not a precision finding — see `_count`. Whether such a field was MEANT to
+    be an integer is `witness_integer_field_audit`'s question, not this one.
+    """
+    return _count(obj)[2]
+
+
+def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int]:
+    """(counted, carved_out, integral) — one traversal, all three numbers.
+
+    INTEGRAL IS NOT A PRECISION FINDING, and separating it is the point.
+    This gate exists to catch a value that a double cannot hold. A float whose
+    value is an integer -- `0.0`, `54.0` -- is exact in binary64, so nothing
+    was lost and there is nothing here for this gate to say. Counting it as
+    "raw float64" made a JSON serialisation detail indistinguishable from a
+    dropped digit.
+
+    That is not hypothetical. Re-running eight producers on 2026-08-24 flipped
+    82 fields and the ratchet called every one a REGRESSION. Checked pair by
+    pair: 80 were `int -> float` with the VALUE UNCHANGED (80 equal, 0 changed),
+    46 of them literally `0` -> `0.0`, and the producers were untouched -- the
+    flip came from this container's library versions, not from any edit. The
+    gate was red on a serialisation artifact while the same branch drained
+    3,555 real fields.
+
+    Corpus-wide the split matters even more: 225,385 integral floats across 856
+    live witnesses, **218,697 of them exactly 0.0**, overwhelmingly `matrix_im`
+    and `matrix_re`. The imaginary part of a real number IS a real number that
+    happens to be zero; `0.0` is the CORRECT encoding there and `0` would be
+    the wrong one. So "integral float" cannot mean "should have been an int" --
+    that inference is wrong ~99% of the time here.
+
+    Whether a field is *meant* to be an integer is a separate question, decided
+    by declaration rather than by looking at the value, and it is asked by
+    `computations/witness_integer_field_audit.py`. Bean `qou-xt5l`.
+
+    Buckets stay DISJOINT: an integral float under a carved-out field counts as
+    integral, not carved, because the carve-out excuses precision loss and no
+    precision was lost.
+
+    INTEGRALITY ONLY EXCUSES A FLOAT WHEN NOTHING CONTRADICTS IT, which is
+    `integral_is_exact=False`. A `0.0` sitting beside a `_str` companion
+    reading `4.2e-44` is not an exact integer, it is a value that rounded away
+    to nothing — the worst precision loss this gate can find, and the self-test
+    has carried that exact case since the rule was written: "a consumer doing
+    arithmetic on it would get zero". So when a companion is present and does
+    NOT agree, every float underneath counts, integral or not.
+    """
     if isinstance(obj, dict):
-        total = carved = 0
+        total = carved = integral = 0
         for k, v in obj.items():
             if k.endswith("_str"):
-                t, c = _count(v)
+                t, c, i = _count(v, integral_is_exact)
                 total += t
                 carved += c
+                integral += i
                 continue
             companion = obj.get(f"{k}_str")
             if companion is not None and _is_full_precision_shadow(v, companion):
                 continue  # shadowed at full precision — not raw float64
             if k in LP_DUAL_F64_FIELDS:
-                carved += _count(v)[0]
+                t, _c, i = _count(v, integral_is_exact)
+                carved += t
+                integral += i
                 continue  # carve-out: solver output, f64 by construction
-            t, c = _count(v)
+            # A companion that is present but does NOT agree proves the float
+            # differs from the true value, so integrality excuses nothing
+            # underneath it.
+            t, c, i = _count(v, integral_is_exact and companion is None)
             total += t
             carved += c
-        return total, carved
+            integral += i
+        return total, carved, integral
     if isinstance(obj, list):
-        total = carved = 0
+        total = carved = integral = 0
         for v in obj:
-            t, c = _count(v)
+            t, c, i = _count(v, integral_is_exact)
             total += t
             carved += c
-        return total, carved
-    return (1 if isinstance(obj, float) else 0), 0
+            integral += i
+        return total, carved, integral
+    if isinstance(obj, float):
+        if obj.is_integer():
+            return (0, 0, 1) if integral_is_exact else (1, 0, 1)
+        return 1, 0, 0
+    return 0, 0, 0
 
 
 CARVED: dict[str, int] = {}
@@ -365,6 +464,12 @@ CARVED: dict[str, int] = {}
 #: `CARVED` so the two excuses can never be read as one number.
 CARVED_INTEGRATOR: dict[str, int] = {}
 CARVED_DEPRECATED: dict[str, int] = {}
+#: Per-file tally of floats holding an exactly-integral value (`0.0`, `54.0`).
+#: NOT a precision finding and NOT counted as raw float64 — see `_count`. Kept
+#: as its own dict so removing them from the headline cannot make them
+#: invisible: whether such a field was MEANT to be an integer is asked by
+#: `witness_integer_field_audit`, and this is the number that feeds it.
+INTEGRAL: dict[str, int] = {}
 
 
 def scan(scan_root: Path | None = None) -> dict[str, int]:
@@ -378,6 +483,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
     CARVED_DEPRECATED.clear()
+    INTEGRAL.clear()
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if (p.name in SELF_OUTPUTS
                 or p.name.startswith(SELF_OUTPUT_PREFIX)
@@ -387,7 +493,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n, carved = _count(d)
+        n, carved, integral = _count(d)
         rel = p.relative_to(ROOT).as_posix()
         # An explicit float64-integrator declaration moves this file's REMAINING
         # count into the integrator carve-out. Applied at witness level, not
@@ -407,6 +513,8 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             found[rel] = n
         if carved:
             CARVED[rel] = carved
+        if integral:
+            INTEGRAL[rel] = integral
     return found
 
 
@@ -421,7 +529,13 @@ def self_test() -> int:
         ({"v": 1.5}, 1),                                  # plain float
         ({"v": 128.04411076744893}, 1),                   # the J/psi shape
         ({"v": 8.324194211187791e-16}, 1),                # exponent form
-        ({"v": 1.0}, 1),                                  # integral-valued float
+        # Integral-valued float: NOT a precision finding as of 2026-08-24
+        # (owner directive, bean `qou-xt5l`). `1.0` is exact in binary64, so
+        # this gate has nothing to say about it. Whether the field was MEANT to
+        # be an integer is `witness_integer_field_audit`'s question. The two
+        # companion cases below still count, because a disagreeing `_str`
+        # proves the float is not the value.
+        ({"v": 1.0}, 0),                                  # integral-valued float
         ({"v": -0.08333333333333312}, 1),                 # negative
         ({"v": "1.5"}, 0),                                # string — the fix
         ({"v": 3}, 0),                                    # int
@@ -440,6 +554,26 @@ def self_test() -> int:
         ({"y_star": [0.5, 0.25],
           "y_star_str": ["5.000000000000000000000000000000e-1",
                          "2.500000000000000000000000000000e-1"]}, 0),
+
+        # ── the SECOND laundering guard (2026-08-23) ─────────────────
+        # A companion with plenty of digits, describing a DIFFERENT number,
+        # excused its f64 just as effectively as one with too few. Walked
+        # into it: a producer wrote `round(primal_obj, 6)` beside a
+        # full-precision companion and, the value being ~4.2e-44, the
+        # rounding wrote 0.0. The pair read as "convenience copy + exact
+        # value" while the copy was zero — and a consumer doing arithmetic
+        # on it, the reader this rule exists to keep served, would get zero.
+        ({"primal_obj_x": 0.0,
+          "primal_obj_x_str":
+              "4.203895392974451212771188749869748393840785825629547e-44"}, 1),
+        # The repaired pair: the f64 IS the companion as a double.
+        ({"primal_obj_x": 4.203895392974451e-44,
+          "primal_obj_x_str":
+              "4.203895392974451212771188749869748393840785825629547e-44"}, 0),
+        # List form, one element disagreeing, still counts all of them.
+        ({"v": [1.5, 0.0],
+          "v_str": ["1.500000000000000000000000000001",
+                    "9.999999999999999999999999999999e-30"]}, 2),
 
         # ── the laundering guard, which is the point ──────────────────
         # A *_str that is merely the f64 spelled as text proves nothing and
@@ -563,10 +697,24 @@ def main() -> int:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
               f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
               f"LP_DUAL_F64_FIELDS]")
+    if INTEGRAL:
+        print(f"  integral-valued floats         : {sum(INTEGRAL.values()):,} "
+              f"field(s) in {len(INTEGRAL)} witness(es)  [NOT a precision "
+              f"finding — exact in binary64. Whether any of them was MEANT to "
+              f"be an integer is `witness_integer_field_audit`'s question]")
     if prior:
         print(f"  baseline files / fields        : {len(prior)} / {base_total:,}")
         print(f"  drained since baseline         : {len(drained)} file(s), "
               f"{base_total - total:+,} field(s)")
+        if INTEGRAL:
+            # DO NOT READ THAT NUMBER AS WORK DONE. The baseline was recorded
+            # while integral-valued floats still counted as raw float64, and
+            # they stopped counting on 2026-08-24 (bean `qou-xt5l`). Most of
+            # the "drain" above is that reclassification, not a producer
+            # rewriting anything. Re-baselining would erase the history that
+            # makes this legible, so the caveat is printed instead.
+            print(f"      of which ~{sum(INTEGRAL.values()):,} is the "
+                  f"2026-08-24 integral-float reclassification, not draining")
     print(f"  NEW dirty witnesses            : {len(new_files)}")
     print(f"  REGRESSED (count increased)    : {len(grew)}")
 

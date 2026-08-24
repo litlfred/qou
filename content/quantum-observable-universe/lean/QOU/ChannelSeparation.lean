@@ -46,7 +46,6 @@ which in the Hecke realisation corresponds to the degree-≥1 component
 - [mathas1999] A. Mathas, *Iwahori--Hecke Algebras and Schur Algebras*, AMS 1999.
 -/
 
-
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
@@ -142,39 +141,6 @@ structure JetFiltrationPreservesGrading
   grading : GradedFrobeniusHopf C
   /-- The jet object's Frobenius--Hopf data matches the grading's. -/
   jet_compatible : jet.frobHopf = grading.toFrobeniusHopfData
-
-/-- **Theorem (Jet preserves grading).**
-
-    The jet prolongation of a graded Frobenius--Hopf object preserves
-    the degree-0 / degree-≥1 decomposition.
-
-    In the Hecke realisation:
-    - `J^0(A) = A` has grading `A^0 ⊕ A^{≥1}` (by Young idempotent)
-    - `J^1(A) = A ⊗ Ω¹(A)` has grading inherited from the tensor product
-    - The degree-0 component of `J^1(A)` is `A^0 ⊗ Ω¹(A)^0`
-    - Since `Ω¹(A) = ker(μ)` has no degree-0 component in the
-      archimedean realisation, `J^1(A)^0 = 0` ⊗ ... contributes nothing
-      new to the symmetric channel
-
-    This is the categorical statement that channel separation is preserved
-    under prolongation. -/
--- Ref: [kock2004]
-theorem jet_preserves_channel_separation
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C]
-    (jfpg : @JetFiltrationPreservesGrading.{u, v} C _ _ _)
-    (adjointObj : C)
-    (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
-    -- ⚠ Another `P → P`: the conclusion IS `adj_vanishing`, returned verbatim.
-    -- Both `jfpg` (the entire jet-filtration structure) and the prolongation
-    -- it is meant to supply are unused — the compiler says so, `warning:
-    -- unused variable 'jfpg'`.  Nothing here is "preserved through the jet
-    -- filtration"; there is one `adjointObj` and no prolonged object to
-    -- preserve it to.  Same structural gap as `adjoint_vanishing_propagation`
-    -- above.  Bean `qou-fav8`.
-    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
-  adj_vanishing
 
 /-! ## §3  Hecke degree ↔ jet level correspondence -/
 

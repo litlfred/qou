@@ -1,18 +1,18 @@
 {
   "engine": "python",
   "engineVersion": "python (stdlib decimal, 60 dps)",
-  "computedAt": "2026-08-24T08:47:08.406621+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:56.687792+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "trefoil_markov_trace_nonzero",
       "passed": true,
-      "detail": "|tr_M(sigma^3)|@q0 = 0.730204059516550915691475156089 > 0.1"
+      "detail": "|tr_M(sigma^3)|@q0 = 0.730204031629694885498299011373 > 0.1"
     },
     {
       "name": "trefoil_jones_nonzero",
       "passed": true,
-      "detail": "|V(3_1)|@q0 = 0.973370169227929648594555422492 > 0.1"
+      "detail": "|V(3_1)|@q0 = 0.973370174529144848190871929036 > 0.1"
     },
     {
       "name": "trefoil_hyperbolic_volume_zero",
@@ -29,8 +29,8 @@
   "durationMs": 2,
   "computation": "trefoil-complex-volume-probe",
   "scriptFile": "trefoil_complex_volume_probe.py",
-  "scriptHash": "f284c0e39372",
-  "scriptCommitSha": "6d1c131d141ecd373efae82de10042e204fc52cc",
+  "scriptHash": "480d8aad9d43",
+  "scriptCommitSha": "d6e6e6ada93e69f06578bd71a13a7625f5088109",
   "precisionMetadata": {
     "compute_dps": 60,
     "output_dps": 30,
@@ -44,20 +44,20 @@
   "parameters": {
     "knot": "3_1 = T(2,3) (electron, per rem:knot-particle-dictionary)",
     "braid_word": "sigma^3 in B_2 (equivalently sigma_0 sigma_1 sigma_0 in B_3)",
-    "q_0": "1.109978595557334700000000000000"
+    "q_0": "1.109978582751380807591669095611"
   },
   "data": {
-    "q_0": "1.109978595557334700000000000000",
-    "h_eq_q_minus_qinv": "0.209060321995593642930382259776",
-    "z_markov": "0.499320334033561272002265280994",
+    "q_0": "1.109978582751380807591669095611",
+    "h_eq_q_minus_qinv": "0.209060298795639315430846213130",
+    "z_markov": "0.499320334183694452413442680258",
     "trM_reduction": "sigma^3 = (h^2+1)*sigma + h  in H_2(q)",
-    "trM_coeff_sigma_h2_plus_1": "1.043706218232901295144376893607",
-    "trM_coeff_one_h": "0.209060321995593642930382259776",
-    "trM_trefoil_at_q0": "0.730204059516550915691475156089",
-    "abs_trM_trefoil_at_q0": "0.730204059516550915691475156089",
+    "trM_coeff_sigma_h2_plus_1": "1.043706208532521989402019335677",
+    "trM_coeff_one_h": "0.209060298795639315430846213130",
+    "trM_trefoil_at_q0": "0.730204031629694885498299011373",
+    "abs_trM_trefoil_at_q0": "0.730204031629694885498299011373",
     "jones_convention": "V(3_1)(t) = -t^-4 + t^-3 + t^-1 (left trefoil), t = q_0",
-    "jones_trefoil_at_q0": "0.973370169227929648594555422492",
-    "abs_jones_trefoil_at_q0": "0.973370169227929648594555422492",
+    "jones_trefoil_at_q0": "0.973370174529144848190871929036",
+    "abs_jones_trefoil_at_q0": "0.973370174529144848190871929036",
     "vol_hyp_trefoil": "0.0",
     "vol_hyp_reason": "(2,3) torus knot: Seifert-fibered, non-hyperbolic, Gromov norm 0"
   }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:46:07.446296+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T15:48:41.685712+00:00",
+  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
   "assertions": [
     {
       "name": "P4_control_proton_ratio_is_one",
@@ -17,8 +17,8 @@
   "durationMs": 7,
   "computation": "gap-a4-T3-mass-pochhammer-probe",
   "scriptFile": "gap_a4_T3_mass_pochhammer_probe.py",
-  "scriptHash": "74c8da386496",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "7f59afb3f3dc",
+  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -44,8 +44,8 @@
   "description": "GAP-A-4 T3 probe: test bar-symmetric q-Pochhammer combinations as the Path-B-native λ(K) formulation.  Four candidates (q-factorial, q-Pochhammer, Markov trace, Phase-4 amplitude as control) tested against the light-series λ_emp(K) / λ_emp(p) target ratios.  I1 + I2 (bar-symmetry + proton anchor) pre-narrow the candidate space.  EXPLORATORY.",
   "auditOnly": "docs/audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "lambda_emp_proton_anchor": "2.459952787818112640369720257839334856545891679195802776194771791672919"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "lambda_emp_proton_anchor": "2.459952271703790360624822814671814632684225882778766588631167164315975"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -56,7 +56,7 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "lambda_emp_K": "2.459952787818112640369720257839334856545891679195802776194771791672919",
+        "lambda_emp_K": "2.459952271703790360624822814671814632684225882778766588631167164315975",
         "target_ratio_lambda_K_over_lambda_p": "1.0",
         "P1_q_factorial_ratio": "1.0",
         "P2_q_pochhammer_sq_ratio": "1.0",
@@ -68,71 +68,71 @@
         "Z": 0,
         "N": 1,
         "A": 1,
-        "lambda_emp_K": "2.463343634619793674835522482942904187309829788610404917626505106139828",
+        "lambda_emp_K": "2.463343117794049367940140423052274718225091184076042448891989997342467",
         "target_ratio_lambda_K_over_lambda_p": "1.001378419463362380409414668652636103810785397199812041142266378327255",
         "P1_q_factorial_ratio": "1.0",
         "P2_q_pochhammer_sq_ratio": "1.0",
         "P3_trM_ratio": "0.8620862599882565734337098053083255402713729040817083499721871254178434",
-        "P4_A_phase4_ratio": "1.736510954752842832407715902383222939575103114206297063755922074038997"
+        "P4_A_phase4_ratio": "1.73651096373296138823868907141735456521163377747457388967896022815028"
       },
       {
         "label": "D",
         "Z": 1,
         "N": 1,
         "A": 2,
-        "lambda_emp_K": "2.820430747565530815816527379112543465945565665945642378400473619814485",
+        "lambda_emp_K": "2.820430155820554641757885612483668831750655506094644484677404645197185",
         "target_ratio_lambda_K_over_lambda_p": "1.14653856835486213759354240963119173747992581799156063897313546104218",
-        "P1_q_factorial_ratio": "137.0522858994319222193367181877017038523175471564034570319607373078602",
-        "P2_q_pochhammer_sq_ratio": "0.09529419185152736212687714616283100005643903413867985076462515159477555",
+        "P1_q_factorial_ratio": "137.0522819139878862903766557565279848903160840018459683700608527091275",
+        "P2_q_pochhammer_sq_ratio": "0.09529411067461232260488244064871828239624042720985192417162365477133445",
         "P3_trM_ratio": "0.5020007665693012385094519886336051779775414405816694566734625954864044",
-        "P4_A_phase4_ratio": "28.048442205439303925489857611405493291827395365256396358734638679969"
+        "P4_A_phase4_ratio": "28.04844217170543370039322926101445436005419724856079578102721399040763"
       },
       {
         "label": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "lambda_emp_K": "4.22388188485177732762498491290117795705964547040040632859147246122503",
+        "lambda_emp_K": "4.223880998653494504664239373742989949782916932530805784184267686619543",
         "target_ratio_lambda_K_over_lambda_p": "1.717058110126660078651753869767108732993489436251962906433425346562646",
-        "P1_q_factorial_ratio": "96887.25871841152761753694332809748246774251909606894021028366642658334",
-        "P2_q_pochhammer_sq_ratio": "0.4551752183836760270160400787297939817763965817324416744504831507939458",
+        "P1_q_factorial_ratio": "96887.24881903065404868487270804221685338683940041360971641265017432",
+        "P2_q_pochhammer_sq_ratio": "0.4551743851260654146217319783371106474716932907419128371030416690557053",
         "P3_trM_ratio": "0.2001380425704775154603195858930343039887358630485122254152953905803875",
-        "P4_A_phase4_ratio": "451.2235274379792438609617987423875278140994613687491883007287012324574"
+        "P4_A_phase4_ratio": "451.2235263526058889729801212120426967490378846857270653903812851326229"
       },
       {
         "label": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "lambda_emp_K": "4.297765002676879758625301972187498181468241324736786548368669528315304",
+        "lambda_emp_K": "4.297764100977431436452241046556585013037635485459616456597477037223879",
         "target_ratio_lambda_K_over_lambda_p": "1.74709247427827212259559402319256334281557619594045847000478946565494",
-        "P1_q_factorial_ratio": "96887.25871841152761753694332809748246774251909606894021028366642658334",
-        "P2_q_pochhammer_sq_ratio": "0.4551752183836760270160400787297939817763965817324416744504831507939458",
+        "P1_q_factorial_ratio": "96887.24881903065404868487270804221685338683940041360971641265017432",
+        "P2_q_pochhammer_sq_ratio": "0.4551743851260654146217319783371106474716932907419128371030416690557053",
         "P3_trM_ratio": "0.35240115314710758436688198767834459078631677700981645400704854810621",
-        "P4_A_phase4_ratio": "255.3297559270741315182066494809934939667615598603296214502014419040126"
+        "P4_A_phase4_ratio": "255.3297539925023966745435342199985342857311641885330120676385195591748"
       },
       {
         "label": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "lambda_emp_K": "5.704119298855105141638842270666843926302641892566717667822648303378668",
+        "lambda_emp_K": "5.70411810209324828396483681022864294693461108384685075151778904325168",
         "target_ratio_lambda_K_over_lambda_p": "2.318792184590846761253126791258143056718875446853184652323710182786067",
-        "P1_q_factorial_ratio": "239972101.3737468741079449137831594854383737287496373979384135179378095",
-        "P2_q_pochhammer_sq_ratio": "44.42823740477386553376554042968184592937317818690728690000651520379785",
+        "P1_q_factorial_ratio": "239972044.8022786866370627364750649843990595485290578835339030467272748",
+        "P2_q_pochhammer_sq_ratio": "44.42810650082511754636428626207289556731152984538854365092728541939392",
         "P3_trM_ratio": "0.140495556356296257031084129677853413041513151484231632091727164962772",
-        "P4_A_phase4_ratio": "4107.56477259725977432211179818781527491985118484502896861794321674712"
+        "P4_A_phase4_ratio": "4107.564736535066701370498867577189642036189671444011803001420812654707"
       }
     ],
     "candidate_verdicts": [
       {
         "code": "P1",
-        "worst_rel_err": "103490127.5973111882822156350251098022183155618266538136473681277309856",
+        "worst_rel_err": "103490103.200356358346485425749167385057190255363787717766136823650627",
         "verdict": "REFUTED"
       },
       {
         "code": "P2",
-        "worst_rel_err": "18.16007725919314032835794098759796590595801168164639140038941876249185",
+        "worst_rel_err": "18.16002080568703577611402549349027052953191129158536366463528818967414",
         "verdict": "REFUTED"
       },
       {
@@ -142,12 +142,12 @@
       },
       {
         "code": "P4",
-        "worst_rel_err": "1770.424278507322878125115854405977690432705093493247353121912164204504",
+        "worst_rel_err": "1770.424262955177535995276147875679866556030025148217343041420712112536",
         "verdict": "REFUTED"
       }
     ],
-    "synthesis_verdict": "None of the four bar-symmetric q-Pochhammer candidates matches the light-series λ ratios within 5 %.  Worst rel_errs: P1: +10349012759.73%, P2: +1816.01%, P3: +93.94%, P4: +177042.43%.  T3 closes NEGATIVE for the Habiro-Pochhammer layer — the restricted bar-symmetric space (per I1) is empty for the natural depth-3A candidates.  Per the scope §7 honest-outcome alternative, this points firmly to the τ-image Dirac/SW PDE direction (the same direction PR #1871's workplan §4.A L3 names as load-bearing).  The mass-side and binding-side GAP-A-4 closure converges on the τ-image Dirac/SW PDE as the framework's last open derivation question."
+    "synthesis_verdict": "None of the four bar-symmetric q-Pochhammer candidates matches the light-series λ ratios within 5 %.  Worst rel_errs: P1: +10349010320.04%, P2: +1816.00%, P3: +93.94%, P4: +177042.43%.  T3 closes NEGATIVE for the Habiro-Pochhammer layer — the restricted bar-symmetric space (per I1) is empty for the natural depth-3A candidates.  Per the scope §7 honest-outcome alternative, this points firmly to the τ-image Dirac/SW PDE direction (the same direction PR #1871's workplan §4.A L3 names as load-bearing).  The mass-side and binding-side GAP-A-4 closure converges on the τ-image Dirac/SW PDE as the framework's last open derivation question."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

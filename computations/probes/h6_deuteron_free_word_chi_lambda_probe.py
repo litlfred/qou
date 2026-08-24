@@ -25,16 +25,25 @@ Free word has NO p-n interface crossing, so it is convention-independent
 (`bring_color_weighted` ≡ `strict_averaged` on the free word); the bound word
 uses the canonical `bring_color_weighted`, matching #2485 exactly.
 
-Run:  PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
-        python3 -u computations/probes/h6_deuteron_free_word_chi_lambda_probe.py
+Run:  python3 -u computations/probes/h6_deuteron_free_word_chi_lambda_probe.py
 """
 import math
-
-import mpmath as mp
-
-from _precision import fmt as _fmt
 import sys
 import time
+from pathlib import Path as _Path
+
+# `_precision` was imported at module level while the only `sys.path` setup
+# sat at line ~221, INSIDE the witness-writing function -- so the import ran
+# first and died unless the caller had exported the PYTHONPATH the docstring
+# above used to demand. A producer that cannot be started without out-of-band
+# knowledge is a producer no gate can run, and its witness can never go stale.
+# `_path_bridge` sets every path this file needs. Bean `qou/ti1n`.
+sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: E402, F401
+
+import mpmath as mp  # noqa: E402
+
+from _precision import fmt as _fmt  # noqa: E402
 
 t0 = time.time()
 

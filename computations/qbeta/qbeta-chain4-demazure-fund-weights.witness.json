@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:12:10.516146+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-08-24T14:27:47.662841+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "real_demazure_d_i_wiring",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "338bfdf56a60",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3d37b6fe15c6",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,8 +31,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -44,11 +43,11 @@
   "data": {
     "residue_target_A": "0.000000000000001804",
     "prefactor_target_proton": "2.071732777361373830252735915478817822594805357138621776464328795917553",
-    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265082373866003257295223",
+    "prefactor_target_muon": "2.071729517389573143047180051679930079553736982945943277253551475173368",
     "h_q_substrate_proton": "0.09908171604425850783917711751828199974846488824121838490576573249117677",
-    "h_q_substrate_muon": "0.09908172643569888582001434268841252846847402395778363866766501635650879",
+    "h_q_substrate_muon": "0.09908172643825895908209941598274232360541489286732614018176309084180655",
     "q_proton": "1.10997858275138080759166909561",
-    "q_muon": "1.1099785955541805752815940796095093779932822799587",
+    "q_muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "step5_results_top10": {
       "D_s1(ω_1)_sl3": {
         "value": "2.10998",

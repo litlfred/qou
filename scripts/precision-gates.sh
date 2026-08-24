@@ -66,6 +66,26 @@ GATES=(
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # The OTHER HALF of the ratchet above, split from it on 2026-08-24 (bean
+  # qou-xt5l). The ratchet asks "did a value lose digits a double cannot
+  # hold?"; an integral float answers no, because integers are exact in
+  # binary64. It counted them anyway, and the cost was measured: re-running
+  # eight producers flipped 82 fields int->float, the ratchet called all 82 a
+  # REGRESSION, and every pair was VALUE UNCHANGED (80 equal, 0 changed).
+  #
+  # But `54.0` for a Specht dimension IS wrong -- a different wrongness, asked
+  # here. Intent is DECLARED in computations/witness-integer-fields.json, never
+  # inferred: 225,385 integral floats live in this corpus and 218,697 are
+  # exactly 0.0, mostly matrix_im, where 0.0 is the CORRECT encoding. Inferring
+  # from values would be wrong ~99% of the time, and wrong in both directions
+  # (matrix_im is always-integral yet real; word_cd looks like a braid word yet
+  # has 83 fractional entries).
+  #
+  # It lives in this family despite not being a precision gate because the two
+  # are one split, and a gate wired nowhere is a gate nobody runs -- the exact
+  # failure this script's own header was written about. BLOCKING because it is
+  # green on arrival, which this file says is when that is safe.
+  "integer-field typing|computations/witness_integer_field_audit.py|--strict|yes|yes"
   # Paired with the ratchet above and deliberately independent of it: the
   # ratchet counts raw floats, so a GUTTED witness scores zero and reads as a
   # perfect drain. This one asks the orthogonal question — did the witness lose

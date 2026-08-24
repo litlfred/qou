@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:35.830752+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:08.036200+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "brioschi_closed_form_matches_companion_discriminant",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "gap-a4-T12-bring-discriminant-scaffold-probe",
   "scriptFile": "gap_a4_T12_bring_discriminant_scaffold_probe.py",
   "scriptHash": "104d414720f2",
@@ -38,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -52,12 +52,12 @@
   "description": "GAP-A-4 T12 \u2014 Bring quintic discriminant scaffold.  Verifies the Brioschi closed-form 256\u00b7b^5 + 3125\u00b7c^4 against the numerical companion-matrix discriminant, documents the Bring form's discriminant structure (\u0394 = 800000 + 3125\u00b7\u03b1^4), and closes the T9 follow-up triple by pinning the classical scaffold.  No h-deformation derivation proposed.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY-SCAFFOLD",
     "production_wired": false,
-    "q_0_recorded_for_followups": 1.1099785955573347,
+    "q_0_recorded_for_followups": 1.1099785827513808,
     "brioschi_closed_form_check": {
       "b": "2.0",
       "c": "3.0",
@@ -82,9 +82,8 @@
       ],
       "tractability": "Substantial \u2014 ~1000+ lines combined symbolic+numeric"
     },
-    "synthesis_verdict": "T12 closes the T9 follow-up triple (T10 McKay-character, T11 Klein J-invariant, T12 Bring discriminant) by pinning the classical Bring quintic scaffold: (a) Brioschi-form discriminant \u0394(x^5 + bx + c) = 256\u00b7b^5 + 3125\u00b7c^4 verified via companion-matrix numerical agreement at (b,c) = (2,3); (b) Bring-form \u0394 = 800000 + 3125\u00b7\u03b1^4 with degenerate locus \u03b1^4 + 256 = 0 (4 ramification points on the icosahedral covering). The h-deformation question stays OPEN as a scaffold per formalize-first discipline \u2014 pursuing it requires both the q-Klein invariants from T11's open follow-up AND a q-analogue of the Hermite icosahedral resolvent, each a substantial standalone project."
+    "synthesis_verdict": "T12 closes the T9 follow-up triple (T10 McKay-character, T11 Klein J-invariant, T12 Bring discriminant) by pinning the classical Bring quintic scaffold: (a) Brioschi-form discriminant Δ(x^5 + bx + c) = 256·b^5 + 3125·c^4 verified via companion-matrix numerical agreement at (b,c) = (2,3); (b) Bring-form Δ = 800000 + 3125·α^4 with degenerate locus α^4 + 256 = 0 (4 ramification points on the icosahedral covering). The h-deformation question stays OPEN as a scaffold per formalize-first discipline — pursuing it requires both the q-Klein invariants from T11's open follow-up AND a q-analogue of the Hermite icosahedral resolvent, each a substantial standalone project."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

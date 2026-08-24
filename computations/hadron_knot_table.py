@@ -62,7 +62,8 @@ _Z2 = _z * _z
 # genuine q-gap). _HE is retained ONLY for the q-independent ground-state
 # ordering. See docs/audits/2026-06-16-gram-q-approximation-audit.md.
 set_compute_dps()
-_Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+_Q0 = mp.mpf(Q_50_DIGIT_STR)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
 _z_q0 = _Q0**3 / (_Q0**2 + 1)

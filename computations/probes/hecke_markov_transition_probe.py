@@ -50,7 +50,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -213,17 +213,17 @@ def main() -> int:
     print("Transition probabilities at q_0:")
     print(f"  p_+         = {float(p_plus):.12f}")
     print(f"  p_-         = {float(p_minus):.12f}")
-    print(f"  p_+ + p_-   = {float(p_plus + p_minus):.12f}  (residue {p_sum_residue:.2e})")
+    print(f"  p_+ + p_-   = {float(p_plus + p_minus):.12f}  (residue {float(p_sum_residue):.2e})")
     print(f"  p_+/p_-     = {float(p_plus / p_minus):.12f}  (vs q² = {float(q*q):.12f})")
     print()
     print("Spectral idempotents per rep (matrix-entry residues):")
     for r in per_rep:
         print(f"  {r['shape']:<12} dim={r['dim']}:")
-        print(f"    e_+ + e_-  = I:   {r['completeness_e_plus_plus_e_minus_minus_I']:.2e}")
-        print(f"    e_+² = e_+:        {r['idempotency_e_plus_sq_minus_e_plus']:.2e}")
-        print(f"    e_-² = e_-:        {r['idempotency_e_minus_sq_minus_e_minus']:.2e}")
-        print(f"    e_+ · e_- = 0:     {r['orthogonality_e_plus_times_e_minus']:.2e}")
-        print(f"    σ = q·e_+ − q⁻¹·e_-: {r['spectral_reconstruction_residue']:.2e}")
+        print(f"    e_+ + e_-  = I:   {float(r['completeness_e_plus_plus_e_minus_minus_I']):.2e}")
+        print(f"    e_+² = e_+:        {float(r['idempotency_e_plus_sq_minus_e_plus']):.2e}")
+        print(f"    e_-² = e_-:        {float(r['idempotency_e_minus_sq_minus_e_minus']):.2e}")
+        print(f"    e_+ · e_- = 0:     {float(r['orthogonality_e_plus_times_e_minus']):.2e}")
+        print(f"    σ = q·e_+ − q⁻¹·e_-: {float(r['spectral_reconstruction_residue']):.2e}")
     return 0
 
 

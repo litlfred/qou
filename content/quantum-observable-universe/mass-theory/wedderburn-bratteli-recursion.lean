@@ -164,18 +164,30 @@ theorem wedderburn_bratteli_apply
               y e.mu :=
   hrec e
 
-/-- Base case at H_1: the weight on the single partition `(1)` is 1.
-    This anchors the recursion via tr_M(1_1) = 1.
+/-- Base case at H_1: the weight on the single partition `(1)` is 1, and
+    that value **anchors** the recursion — on any edge out of `(1)` the
+    next-level weight is the bare Bratteli factor, with no free constant
+    left. This is `tr_M(1_1) = 1` propagating one level up.
 
-    Stated over `CommRing` (§7c): this is the one statement in the file
-    that divides by nothing, so it does not inherit the `Field` the
-    q-integer quotients above require. -/
-theorem y_base_case_singleton {R : Type u} [CommRing R] (y : Partition → R)
-    (hbase : y ⟨[1]⟩ = (1 : R)) :
-    y ⟨[1]⟩ = (1 : R) :=
-  hbase
-  -- Ref: [manuscript] thm:jones-markov-trace base case;
-  -- H_1(R, q) = R, tr_M = identity character on V_(1).
+    The old statement was `(hbase : y ⟨[1]⟩ = 1) : y ⟨[1]⟩ = 1 := hbase` —
+    hypothesis identical to conclusion, proof the identity. It named the
+    base case without asserting anything about it, and would have stayed
+    true had every definition in this file been swapped. Anchoring is the
+    content the docstring already claimed; it just was not stated.
+
+    §7c: `Field` now, not `CommRing`. The old form divided by nothing
+    because it did nothing; using the recursion brings in `bratteliFactor`,
+    whose q-integer quotient is exactly why the rest of this file needs a
+    field. -/
+-- Ref: [manuscript] thm:jones-markov-trace base case;
+-- H_1(R, q) = R, tr_M = identity character on V_(1).
+theorem y_base_case_singleton {R : Type u} [Field R] (q v : R)
+    (y : Partition → R)
+    (hrec : SatisfiesWedderburnBratteliRecursion q v y)
+    (hbase : y ⟨[1]⟩ = (1 : R))
+    (e : BratteliEdge) (he : e.mu = ⟨[1]⟩) :
+    y e.lam = (markovZ' v) * bratteliFactor q e.content (e.lam.height : ℤ) := by
+  rw [wedderburn_bratteli_apply q v y hrec e, he, hbase, mul_one]
 
 -- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
 -- `d_λ = dim V_λ` (hook-length formula), summed over all partitions

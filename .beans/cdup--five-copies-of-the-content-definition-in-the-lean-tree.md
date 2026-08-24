@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: low
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-08-16T13:37:08Z
+updated_at: 2026-08-24T19:11:53Z
 ---
 
 Found while adding a sixth — caught in review of my own PR (#5205, bean `wpdb`).
@@ -219,3 +219,41 @@ clash.
 
 So: hazard fixed, lemma-sharing delivered, cosmetic dedup declined with the
 numbers on the table.
+
+
+--------
+
+## 2026-08-24 — the claim "no name clash" is now falsified, one level up (bean `qou-j7ln`)
+
+The `content` duplication propagates to **`axialDistance`**, and there it does
+bite. Two constants:
+
+| declaration | file | built on |
+|---|---|---|
+| `QOU.SchurWeyl.axialDistance` | `SchurWeyl/HoefsmitRep.lean:120` | `cellContent` |
+| `QOU.BraidKnot.TableauContent.axialDistance` | `BraidKnot/TableauContent.lean:45` | `content` |
+
+(A third, `QOU.Hecke.Hoefsmit.axialDistance` at `Hecke/Hoefsmit.lean:85`, is
+tableau-indexed and a different signature.)
+
+The first two are `rfl`-equal. They are **not** the same constant, and the
+consequence is not merely "cannot share lemmas":
+
+> Inside `namespace QOU.SchurWeyl`, a bare `axialDistance` resolves to
+> `QOU.SchurWeyl.axialDistance` **even under `open QOU.BraidKnot.TableauContent`**
+> — the enclosing namespace wins. So a `rw` with a lemma stated in the *other*
+> one does not fire, and the error message shows two goals that print
+> **identically** (`axialDistance c (a, ν.rowLen a)` both times), differing only
+> in a fully-qualified name the pattern line reveals.
+
+Live instances that already sit on opposite sides of this line:
+`MarkovAssembly.markov_of_corner_identity` uses the `SchurWeyl` one;
+`SeminormalNodeForm.axialDistance_corner_addable` uses the `TableauContent` one.
+Composing them needs the `rfl` bridge — now written as
+`QOU.SchurWeyl.axialDistance_eq_tableauContent`
+(`SchurWeyl/WenzlMarkovCorner.lean`).
+
+This raises the priority a notch: the disposition proposed above (one
+`QOU.YoungDiagram.Content` module, existing names as deprecated aliases) would
+have to cover `axialDistance` too, and the failure mode is now a confusing
+silent `rw` failure rather than only duplicated effort.

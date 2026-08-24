@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:47:27.736262+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:21.516047+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "c2_filter_yields_at_least_one_candidate",
@@ -13,13 +13,13 @@
     },
     {
       "name": "cross_anchor_c3_swing_resolvable",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 4,
+  "allPassed": true,
+  "durationMs": 5,
   "computation": "qbeta-cosh-avatar-crossanchor-multicoeff-probe",
   "scriptFile": "qbeta_cosh_avatar_crossanchor_multicoeff_probe.py",
   "scriptHash": "aa553b2e87d9",
@@ -38,7 +38,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -51,11 +51,11 @@
   "data": {
     "k_max": 3,
     "tol_ppm": 100,
-    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798",
+    "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
     "q_muon": "1.10997859564273904668179512938000175270006556102901155697405",
     "ck_target_proton": [
       "-1.00000000000000000000000000000000000000000000000000000000000",
-      "-2.02018812814143945582016855395158353040793507291436033204141"
+      "-2.06934257711516783787971951724962858902203099810343886691284"
     ],
     "ck_target_muon": [
       "-1.00000000000000000000000000000000000000000000000000000000000",
@@ -63,7 +63,7 @@
     ],
     "ck_cross_anchor_swings": [
       "0.0",
-      "0.0003278162674339923"
+      "0.04948226524116237"
     ],
     "n_candidates": 11,
     "n_closures": 0,
@@ -95,7 +95,7 @@
       {
         "candidate": "cos(√(h²+2)·u)",
         "misses_ppm_proton": [
-          21853.109116450636,
+          21853.104266260976,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -106,7 +106,7 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-1.02185310911645063770605959925585481855153131811530833059304",
+          "-1.02185310426626097729794688952879320861320714991523508717127",
           "-3.01855969294223745583637309696259726022751039937971272986087e-48"
         ],
         "ck_predicted_muon": [
@@ -117,7 +117,7 @@
       {
         "candidate": "cos(√(2-h²)·u)",
         "misses_ppm_proton": [
-          21853.109116450672,
+          21853.104266261013,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -128,8 +128,8 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-0.978146890883549328944688454808962112922300532195829267764578",
-          "3.01855969294223745583637309696259726022751039937971272986087e-48"
+          "-0.978146895733738989352801171602137864341249061297036810860557",
+          "0.0"
         ],
         "ck_predicted_muon": [
           "-0.978146890851202874589885918689306744814841824025033932467386",
@@ -139,7 +139,7 @@
       {
         "candidate": "cos(√2·cosh(η)·u)",
         "misses_ppm_proton": [
-          10926.55455822531,
+          10926.552133130479,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -150,8 +150,8 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-1.01092655455822531052168629286982537617443517212938158421063",
-          "3.01855969294223745583637309696259726022751039937971272986087e-48"
+          "-1.01092655213313048031762993712303030352019504320623419917253",
+          "-1.50927984647111872791818654848129863011375519968985636493044e-48"
         ],
         "ck_predicted_muon": [
           "-1.01092655457439853769908756091198129530144110473917224959372",
@@ -161,7 +161,7 @@
       {
         "candidate": "cos(√2·b·u)",
         "misses_ppm_proton": [
-          247297.88615479585,
+          247297.8867480346,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -172,8 +172,8 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-0.752702113845204163028109630524339247950059494219463345807402",
-          "0.0"
+          "-0.752702113251965392151104830053993694737830465748286100011541",
+          "1.50927984647111872791818654848129863011375519968985636493044e-48"
         ],
         "ck_predicted_muon": [
           "-0.752702113849160538370289130145228419680647441492630273395722",
@@ -183,7 +183,7 @@
       {
         "candidate": "cos(√2·(1+ℏ_q)·u)",
         "misses_ppm_proton": [
-          207980.64139050388,
+          207980.61854279207,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -194,8 +194,8 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-1.20798064139050387823761815262264782114061483714220955494979",
-          "0.0"
+          "-1.20798061854279206516863704596693371492737922080286411486323",
+          "1.50927984647111872791818654848129863011375519968985636493044e-48"
         ],
         "ck_predicted_muon": [
           "-1.20798064154287780101547329430397599303456691095757448415473",
@@ -249,7 +249,7 @@
       {
         "candidate": "cos(h·u)·cos(√(2-h²)·u)",
         "misses_ppm_proton": [
-          1.809170338255968e-11,
+          1.8091703073345927e-11,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -260,7 +260,7 @@
         "c2_match": true,
         "all_match": false,
         "ck_predicted_proton": [
-          "-0.999999999999999981908296617440323047803867825414050587014880",
+          "-0.999999999999999981908296926654072125383470965566058839929734",
           "1.50927984647111872791818654848129863011375519968985636493044e-48"
         ],
         "ck_predicted_muon": [
@@ -271,7 +271,7 @@
       {
         "candidate": "cos(√2·u)/cos(η)",
         "misses_ppm_proton": [
-          5468.296996092541,
+          5468.295781306934,
           1000000.0
         ],
         "misses_ppm_muon": [
@@ -282,8 +282,8 @@
         "c2_match": false,
         "all_match": false,
         "ck_predicted_proton": [
-          "-1.00546829699609254058862560872378326223374415968881869924724",
-          "0.0"
+          "-1.00546829578130693389156113504243508142050040425338123888913",
+          "-3.01855969294223745583637309696259726022751039937971272986087e-48"
         ],
         "ck_predicted_muon": [
           "-1.00546829700419408092772796479449916766885393430326163565031",
@@ -316,6 +316,6 @@
     "interpretation": "A POSITIVE would identify the cosh-avatar generating function for the c_k ladder. The NEGATIVE outcome here is STRUCTURAL, not just numerical: every candidate is built from cos(αu) / cosh(αu) / products, all even-parity in u; their Taylor series has zero odd coefficients, so predicted c_3 = 0 identically while target c_3 ≈ -2.07 ≠ 0. This refutes the ENTIRE even-parity slice of the PR #1824 cosh-avatar hypothesis at one go (1e6 ppm on c_3), not just the 11 candidates listed. A genuine cosh-avatar generating function must include odd-parity terms (sin/sinh products) — a more constrained search than the existing 16-candidate single-anchor scan (+0.7% closest).",
     "structural_refutation_basis": "Even-parity Taylor series have c_k = 0 for all odd k. Observed c_3 ≠ 0 falsifies all even-parity F(u, q) candidates structurally; the c_3 channel here returns max-miss = 1e6 ppm (= 100% relative) for every candidate."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

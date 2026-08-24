@@ -76,13 +76,14 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
     M_HE4_MEV_VALIDATION as M_HE4_MEV,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps muon-anchored q₀ (q-pinning-50-digit.witness.json),
 # identical to the original probe.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # Per-knot hyperbolic volumes — identical to the original probe.
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")

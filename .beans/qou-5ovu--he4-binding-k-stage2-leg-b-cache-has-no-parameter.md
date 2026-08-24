@@ -1,0 +1,61 @@
+---
+# qou-5ovu
+title: he4_binding_k_stage2 Leg B cache has no parameter guard; Leg A does
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-24T17:14:15Z
+updated_at: 2026-08-24T17:14:52Z
+---
+
+## The asymmetry
+
+`computations/deltalambda/he4_binding_k_stage2_probe.py` checkpoints both legs
+to JSONL so a run can outlive one sandbox session. Both resume caches are
+otherwise well built — per-item granularity, torn-line tolerance
+(`try: json.loads / except: continue`), dedupe on the item key, and aggregates
+(`xcheck_worst`, `min_eig_overall`) rebuilt from the cache rather than lost with
+the process. That last one is the easy thing to get wrong and it is right here.
+
+**Leg A validates its cache against the run's parameters. Leg B does not.**
+
+    # Leg A, line ~213
+    if _r.get("nf") != len(K_kinds):
+        continue          # computed under a different K-factor word -> discard
+
+    # Leg B, lines ~300-310 — no equivalent
+    per_block.append(_b)
+    done_lambdas.add(tuple(_b["lambda"]))
+
+Leg A stamps each entry with `nf = len(K_kinds)` and discards on mismatch. Leg B
+entries carry only `lambda` / `dim` / `chi_f64` / `chi_exact_rel_diff` /
+`min_eig_sym` / `max_eig_sym` — nothing tying them to the braid word or q0 they
+were computed at. So if the K-factor word or the pin changed between runs, Leg A
+correctly recomputes while **Leg B silently serves stale blocks**.
+
+## Why it matters, and why it is NOT urgent
+
+**Latent, not active.** Nothing in the current flow changes those parameters
+between runs, and the cache self-deletes on clean completion (line ~513), so the
+window is only "killed mid-run, then re-run with different parameters". It cannot
+affect the run in flight.
+
+**But it is the same shape as the bug fixed in `chi_via_rust_lossless` on
+2026-08-24 (PR #5623):** a cache gate that answers *"is this entry PRESENT?"*
+when the question is *"is this entry CURRENT?"*. That one kept two witnesses at
+convention C across the whole 2026-08-09 cascade, and re-running the producer
+could not fix them — it hit the reuse branch, stamped the file so it looked
+refreshed, and changed no number. Cost: the defect survived three weeks and was
+only found by following a Lean docstring's citation backwards.
+
+## Fix
+
+Stamp Leg B entries the way Leg A already does — `nf = len(K_kinds)` at minimum,
+and preferably the q0 string too — and discard on mismatch. ~4 lines, mirroring
+the existing Leg A guard. Do it when the file is next touched; do not interrupt
+a long run to apply it.
+
+Found 2026-08-24 while verifying the resume path was crash-safe before relying on
+it (it is — today's container restart resumed 154/154 Leg A + 74/77 Leg B free).
+Related: `computations/audits/self_caching_producer_audit.py`, which measures
+this class corpus-wide and found it otherwise under control.

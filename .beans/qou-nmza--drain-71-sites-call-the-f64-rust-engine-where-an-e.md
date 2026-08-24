@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:16:05Z
-updated_at: 2026-08-24T13:27:05Z
+updated_at: 2026-08-24T14:54:25Z
 ---
 
 Opened by the `F64_ENGINE_ENTRY` tier added to
@@ -138,3 +138,91 @@ error while the larger one is live.
 It keys on `fmt(` and `nstr(x, N>=18)`. A module serialising some other way
 (hand-built f-string at width, `json.dump` of an mpf via `str()`) reads as
 harmless. The printed line says "a proxy, not a verdict" for this reason.
+
+
+## Three sites investigated in depth — three DIFFERENT reasons the naive fix was wrong
+
+This is the most useful thing in this bean. The `F64_ENGINE_ENTRY` flag points
+at a real f64 boundary every time; it is almost never the BINDING constraint.
+Check all four of these before editing any site.
+
+**1. `fr_pullback_k1_k2_test.py` — TERMINAL.** The single worst site by raw
+count: its witness carries **697** numbers at >=18 significant digits, every
+one downstream of the f64 entry. Nothing reads that witness. I was three edits
+into fixing it when the check said so. Now gate 3 in the audit.
+
+**2. `all_nuclides_wedderburn_spectral_v2.py` — the f64 call is a REFERENCE.**
+`ref = float(nat.chi_lambda_braid(...))` exists to cross-check `chi_std`
+against the native kernel. The module never calls an `_mpfr` entry, so the
+"deliberate" proxy misses it — a known false positive of that proxy.
+
+**3. `averaged_block_swap_binding.py` — the witness is f64 AT THE BOUNDARY
+anyway.** Every field is written `float(v)` (`atom_traces`, `S_atom`,
+`S_free`, `binding_signal_...`), and the downstream `q_weighted_block_swap.py`
+re-lifts them with `mp.mpf(str(v))`. Swapping the engine call to MPFR alone
+would have changed **nothing**. The proxy called it actionable because of an
+`nstr(total, 40)` inside the multiprocessing worker — an INTERNAL transport
+string, not a witness field. Fourth false-positive mode.
+
+**4. The `dim_q` trap** (see the audit's printed HALF-FIX WARNING):
+`mass_at_3A_proper.dim_q` / `qfac` return Python floats and multiply into
+every weight in the `fr_pullback_*` and `binding_depth_stratified_*` family,
+so an MPFR engine swap there is capped regardless. 8 importers.
+
+### The rule this yields
+
+A site is only worth the 30x MPFR cost when the f64 value reaches a **witness
+field serialised above 17 digits** that **another module reads**. Fixing the
+engine call is one half; the serialisation is the other. **Either half alone
+is a defect** — the engine alone changes nothing, the serialisation alone
+publishes 50 digits of a 15-digit value.
+
+### Measured cost, so nobody has to guess
+
+`chi_q_atomic_mpfr` vs `chi_q_atomic`, 4He word (47 factors), shape (6,6):
+
+    f64   0.002 s
+    mpfr  0.056 s      -> 30.1x  (the docstring's UPPER bound, not its lower)
+    rel diff 6.489e-15 -> the f64 result carries ~14-15 real digits
+
+At that ratio the `averaged_block_swap_binding` producer goes 78 s -> ~40 min.
+A 600 s timeout kills it; budget 3300 s and use the compute-audit teed-log
+discipline.
+
+
+## Head-of-3 triaged: the real head is 2
+
+Verdicts recorded here because standalone `computations/*.py` has no `.qa.json`
+sidecar to hold them.
+
+**`all_nuclides_wedderburn_spectral_v2.py:314` — LEGITIMATE, do not fix.**
+The f64 call is a cross-check assertion, and it floats BOTH sides:
+
+    mine = float(m_tr(m))                              # its own mpmath value
+    ref  = float(nat.chi_lambda_braid([2, 1], word, qf))
+    w.add_assertion(name="chi_std_vs_native_hoefsmit", ..., tolerance=1e-9)
+
+Symmetric f64 for an f64-tolerance agreement test is the correct arithmetic.
+Switching to MPFR would tighten the assertion past its intent and change no
+published value. This is the second instance of the same class as
+`chi_4he_binding_lossless` — the "deliberate" proxy misses both because
+neither module calls an `_mpfr` entry anywhere.
+
+**So the actionable head is 2**, not 3:
+
+    gap10_tjon_correlation_probe  -> tjon_external_cross_check_probe
+    fr_pullback_cosh_h_test       -> convention_frame_staleness_audit
+
+and `fr_pullback_cosh_h_test` imports the f64 `dim_q` from
+`mass_at_3A_proper`, so it carries the HALF-FIX WARNING: the engine swap alone
+leaves it capped. Fixing it properly needs an mpf-capable `dim_q` first, which
+is its own change with 8 importers.
+
+### Running total for the class
+
+    71  candidates (AST, both hops)
+    18  serialise wide from an f64 value
+     3  ... and their witness is read by another module
+     2  ... and the call is not a deliberate f64-tolerance cross-check
+
+Two of the four reductions came from measurement catching my own over-claim.

@@ -47,7 +47,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -69,7 +69,7 @@ def main() -> int:
 
     # ── Single-component figure-eight characters (H_3) ──
     # Computed via the canonical Hoefsmit-seminormal builder
-    # `build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical`.
+    # `build_hoefsmit_mpfr` from `hoefsmit_mpfr`.
     # The canonical Hoefsmit matrices satisfy BOTH the Hecke
     # quadratic AND the braid relation σ_1σ_2σ_1 = σ_2σ_1σ_2.
     #

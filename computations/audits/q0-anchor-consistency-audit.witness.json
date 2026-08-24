@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:10:53.559937+00:00",
-  "commitSha": "318472530bd2ee69c2341ea4e60780722793493b",
+  "computedAt": "2026-08-24T18:12:21.325294+00:00",
+  "commitSha": "5d1aaff33eea642300cb2b61a9dcfd470261bf36",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -45,17 +45,17 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 946,
+      "Q0_OK": 952,
       "Q0_AMBIGUOUS": 1,
-      "Q0_AMBIGUOUS_NO_REASON": 15,
-      "Q0_INDEPENDENT": 47,
-      "Q0_INDEPENDENT_NO_REASON": 0,
+      "Q0_AMBIGUOUS_NO_REASON": 14,
+      "Q0_INDEPENDENT": 48,
+      "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1642,
+      "Q0_ANCHOR_MISSING": 1640,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 78,
+      "Q0_AUDIT_EXEMPT": 79,
       "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 0
     },
@@ -148,6 +148,10 @@
         },
         {
           "witness": "all-nuclides-wedderburn-spectral-v2.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-5-lp-dual-crystal.witness.json",
           "detail": ""
         },
         {
@@ -488,10 +492,6 @@
         },
         {
           "witness": "bring-s4-elliptic-factor-genus-verify.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "detail": ""
         },
         {
@@ -1391,6 +1391,10 @@
           "detail": ""
         },
         {
+          "witness": "he4-binding-k-stage2.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "he4-stage2-ranking-seminormal-xcheck.witness.json",
           "detail": ""
         },
@@ -1711,6 +1715,10 @@
           "detail": ""
         },
         {
+          "witness": "deuteron-real-sdp.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deuteron_tr_M_symbolic.witness.json",
           "detail": ""
         },
@@ -2019,6 +2027,10 @@
           "detail": ""
         },
         {
+          "witness": "he3-pairknot-composite-lp.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "he4-link-volume-braid-closure.witness.json",
           "detail": ""
         },
@@ -2203,10 +2215,6 @@
           "detail": ""
         },
         {
-          "witness": "joint-tower-sdp-h6-h9.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "jones-markov-atlas-all-atoms.witness.json",
           "detail": ""
         },
@@ -2272,10 +2280,6 @@
         },
         {
           "witness": "keystone-step1-gate-wrt-vs-wlambda.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "keystone-wlambda-defect-cn-closedform-crosscheck.witness.json",
           "detail": ""
         },
         {
@@ -3211,6 +3215,10 @@
           "detail": ""
         },
         {
+          "witness": "bwhk-st-matrix-corroboration.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "bwsc-level7-wrt-targets.witness.json",
           "detail": ""
         },
@@ -3712,10 +3720,6 @@
         },
         {
           "witness": "laplace-sum-theta-exactness.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "light-series-open-loop-decomposition.witness.json",
           "detail": ""
         },
         {
@@ -4232,10 +4236,6 @@
         },
         {
           "witness": "qbeta-habiro-phi8-interpretation.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
           "detail": ""
         },
         {
@@ -6183,10 +6183,6 @@
           "detail": ""
         },
         {
-          "witness": "deformation-selection-5g-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "e-unit-decay-width-reconcile-probe.witness.json",
           "detail": ""
         },
@@ -6200,10 +6196,6 @@
         },
         {
           "witness": "gauss-linking-channel-slope-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hoefsmit-toroidal-ladder-probe.witness.json",
           "detail": ""
         },
         {
@@ -6653,10 +6645,6 @@
           "detail": ""
         },
         {
-          "witness": "alpha-5-lp-dual-crystal.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "alpha-em-categorical-reidentification.witness.json",
           "detail": ""
         },
@@ -6770,6 +6758,10 @@
         },
         {
           "witness": "alpha-em-tau-correspondence.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "detail": ""
         },
         {
@@ -7721,6 +7713,10 @@
           "detail": ""
         },
         {
+          "witness": "d-frame-interface-twelve-derivation.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "d-frame-neutron-cyclotomic-rule.witness.json",
           "detail": ""
         },
@@ -7954,10 +7950,6 @@
         },
         {
           "witness": "he4-binding-k-presentation-correction.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "he4-binding-k-stage2.witness.json",
           "detail": ""
         },
         {
@@ -8441,10 +8433,6 @@
           "detail": ""
         },
         {
-          "witness": "he3-pairknot-composite-lp.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "he3-tower-charge-asymmetry.witness.json",
           "detail": ""
         },
@@ -8541,6 +8529,10 @@
           "detail": ""
         },
         {
+          "witness": "joint-tower-sdp-h6-h9.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "k-star-search-phase5d-5.witness.json",
           "detail": ""
         },
@@ -8562,6 +8554,10 @@
         },
         {
           "witness": "kappa-shell8-excess-convention.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "keystone-wlambda-defect-cn-closedform-crosscheck.witness.json",
           "detail": ""
         },
         {
@@ -9121,10 +9117,6 @@
           "detail": ""
         },
         {
-          "witness": "bwhk-st-matrix-corroboration.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "c5-decomposition-probe.witness.json",
           "detail": ""
         },
@@ -9145,7 +9137,15 @@
           "detail": ""
         },
         {
+          "witness": "confinement-b3-enumeration-recheck-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "d14-theta-bar-side.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "delta-lambda-closure-tl-support.witness.json",
           "detail": ""
         },
         {
@@ -9397,6 +9397,10 @@
           "detail": ""
         },
         {
+          "witness": "light-series-open-loop-decomposition.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "m-p-bring-plus-phi-q-h4-probe.witness.json",
           "detail": ""
         },
@@ -9522,6 +9526,10 @@
         },
         {
           "witness": "qbeta-g3-5two-wall-crossing-barpair.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
           "detail": ""
         },
         {
@@ -10157,6 +10165,10 @@
           "detail": ""
         },
         {
+          "witness": "deformation-selection-5g-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deuteron-tower-fusion-frame-probe.witness.json",
           "detail": ""
         },
@@ -10166,6 +10178,10 @@
         },
         {
           "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hoefsmit-toroidal-ladder-probe.witness.json",
           "detail": ""
         },
         {
@@ -10439,10 +10455,6 @@
           "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
         },
         {
-          "witness": "deuteron-real-sdp.witness.json",
-          "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
         },
@@ -10498,6 +10510,10 @@
         },
         {
           "witness": "canonical-script-input-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "consumer-control-arm-audit.witness.json",
           "detail": ""
         },
         {
@@ -10923,6 +10939,10 @@
           "detail": ""
         },
         {
+          "witness": "gz-third-knot-rank-grading.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "knot-trace-field-degree-guard-counterexample.witness.json",
           "detail": ""
         },
@@ -10987,6 +11007,12 @@
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "operator-selection-lp-symbolic-qq.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ],
       "Q0_VALUE_MISSING": [

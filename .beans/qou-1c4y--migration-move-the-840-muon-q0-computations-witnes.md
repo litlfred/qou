@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-22T20:20:42Z
+updated_at: 2026-08-24T18:13:35Z
 ---
 
 
@@ -534,3 +534,125 @@ will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
 `qbeta_trm_crosscheck_convention_pin_split_probe`.
 
 Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.
+## The relabel is not the migration (recorded 2026-08-19, PR #5332)
+
+The section above covers never re-pinning the anchor-DEFINING witness. This is
+the other half, and it is not covered above: the tempting one-line version of
+this migration is to move every `ideal_muon` stem to `physical_proton` in
+`computations/q0_anchor_manifest.json` and call the end state reached.
+
+That is a *disabling*, not a migration. `q_parameter.py:100` selects the anchor
+by membership in that list, so an empty `ideal_muon` means no producer ever
+*requests* the muon anchor again — and the anti-corruption guard at
+`q_parameter.py:224` ("Refusing to fall back to proton silently") fires only on
+a *requested* muon anchor. Empty the list and the guard becomes unreachable for
+exactly the producers it exists to protect, while their already-emitted
+witnesses stay muon-computed under a proton label. Proposed in #5049, held back
+in #5315.
+
+Corollary measured on 2026-08-24: `ideal_muon` does NOT end at zero. Three
+producers refuse a proton run by design (`atomic_tr_m_mpfr_50dps`,
+`cross_check_trM_1ppb`, `he4_stage2_ranking_seminormal_xcheck`), several more
+hold the muon value as a deliberate reference, and `q_pinning_50_digit` defines
+the anchor. A run that drove the list to zero would be a bug, not a completed
+migration.
+
+## STOPPING POINT 2026-08-24 — bulk migration done, PR #5664
+
+    ideal_muon      120 -> 36
+    physical_proton 514 -> 598
+
+~130 producers migrated, each verified by the muon value actually LEAVING its
+witness rather than by the witness merely changing. Manifest moved LAST, after
+the data, and re-verified: both anchors still resolve distinctly, a
+keep-on-muon stem still resolves to muon (so the guard stays reachable), a
+migrated stem resolves to proton, the lists do not overlap.
+
+**Five mechanisms by which a producer holds a muon value**, each found only
+after the detector built for the previous one came back clean:
+
+  1. manifest tag                      -> the manifest move
+  2. local source literal              -> resolve through q_parameter (23)
+  3. shared-module literal             -> one constant, 22 importers
+  4. provenance stamp moving alone     -> detect and revert
+  5. direct read of the anchor witness -> architectural, bean qou-aj91
+
+Mechanism 3 is the sharpest: `_gap_a4_qsafe.py` held the MUON value under a
+comment reading "proton-mass-anchored q_0", imported by 22 modules — which is
+how the T5-T12 series came to be tagged physical_proton over muon witnesses.
+
+**Two self-corrections, recorded because the numbers were reported wrong
+first.** I claimed 89 migrated; 36 were stamp-only flips and were reverted. The
+revert then OVER-reached, because its file list came from the journal's
+per-producer `files` and producers write SIBLING witnesses — genuine
+migrations were rolled back with the bad ones and had to be re-run. Nothing
+false entered the corpus either time; the failure was over-claiming, then
+over-correcting.
+
+## What is left, and why it is not "unfinished"
+
+The 36 remaining are the correct end state: `q_pinning_50_digit` DEFINES the
+anchor; five producers refuse a proton run by design;
+`q0_anchor_consistency_audit` needs BOTH pins (moving it would disable the
+audit that detects anchor corruption). A run that drove ideal_muon to zero
+would be a bug.
+
+Corrected on the rebase before merge: 36/598, not the 37/597 first reported.
+`main` had independently migrated `rho_w_crystal_vertex_trace` with a better
+fix than this branch's — it reads q FROM the deuteron chi cache header rather
+than from any literal, so it can never again be read at a second anchor.
+`main`'s side was kept.
+
+Genuinely open, tracked elsewhere:
+  * qou-aj91 — 85 producers read the anchor witness directly (67 untagged);
+    needs an architectural decision, not a sweep.
+  * qou-y82a — single_anchor_near_matches 25 -> 4 between anchors.
+  * qou-2zjp — alpha_high_precision, now diagnosed as convention C->D drift,
+    unrelated to the anchor.
+  * ~6 slow producers needing a deliberate long compute (20-40 min per leg).
+
+Keeping this bean IN-PROGRESS rather than closing on the manifest number: the
+mechanism-5 question and the slow producers are real remaining work, and
+closing on "120 -> 36" would read as done when it is not.
+
+
+## CORRECTION 2026-08-24 — "five refuse a proton run" was wrong. Three refuse; two fail SILENTLY.
+
+Caught in review of the #5664 merge: AGENTS.md (via #5332) says THREE producers
+refuse a proton run by design, while #5664's own material says FIVE. AGENTS.md
+is right, and the discrepancy is not cosmetic — it collapses two opposite
+behaviours into one word.
+
+Verified at source:
+
+    atomic_tr_m_mpfr_50dps                REFUSES  "Refusing rather than writing
+                                                    a straddled witness"
+    cross_check_trM_1ppb                  REFUSES  "must run under the MUON q0 pin"
+    he4_stage2_ranking_seminormal_xcheck  REFUSES  assert q.startswith("1.109978595557")
+    ---
+    chi_lambda_he4_full_partition_table   RUNS, and emits a STRADDLE
+    bwhk_st_matrix_corroboration          RUNS, and emits a STRADDLE
+
+The last two do not refuse anything. They complete with rc=0, flip `.q0Value`
+to proton, and leave the muon value sitting in the payload
+(`.parameters.q_0_f64`, `.data.q0`) — because they read the anchor-defining
+witness directly (mechanism 5) rather than consulting q_parameter at all.
+
+**Why the distinction matters more than the count.** A producer that refuses is
+the SAFE case: it tells you, loudly, at the moment you get it wrong. A producer
+that silently straddles is the DANGEROUS one — nothing surfaces, and the only
+way to find out is to check whether the muon value actually left the witness.
+Calling both "refuses by design" hides the dangerous class behind the safe one,
+which is the opposite of what the label should do.
+
+Both are still correctly held on `ideal_muon`; only the reason differs. The
+keep-on-muon set is therefore:
+
+    3  refuse loudly            (safe: they self-identify)
+    2  straddle silently        (unsafe: found only by checking the payload)
+    1  defines the anchor       (q_pinning_50_digit)
+    1  needs BOTH pins          (q0_anchor_consistency_audit)
+
+The two silent ones are the strongest argument for the WitnessBuilder fix
+proposed in qou-aj91: make `.q0Value` report the anchor the PAYLOAD used, and
+the silent class stops being silent.

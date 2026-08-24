@@ -62,6 +62,18 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
+
+def _as_dim(x) -> int:
+    """A Specht dimension as an int, refusing anything that is not whole."""
+    v = float(x)
+    if abs(v - round(v)) > 1e-9:
+        raise ValueError(
+            f"dim_S_lambda is not a whole number: {v!r}. That is a finding "
+            "about the character routine, not a formatting problem -- do not "
+            "round it away.")
+    return int(round(v))
+
+
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
@@ -133,7 +145,18 @@ def main() -> int:
         rows.append({
             "partition": shape,
             "partition_str": shape_str,
-            "dim_S_lambda": float(dim),
+            # A Specht dimension is a COUNT of standard Young tableaux, so it
+            # ships as a JSON integer. It was `float(dim)`, which wrote `54.0`
+            # -- the same number, a different claim, and one a TypeScript
+            # consumer cannot tell from a measurement because `JSON.parse`
+            # collapses `54` and `54.0` to the same `number`. Declared in
+            # `computations/witness-integer-fields.json` and enforced by
+            # `witness_integer_field_audit`. Bean `qou-xt5l`.
+            #
+            # `_as_dim` refuses a value that is not whole rather than rounding
+            # it away: a fractional dimension would be a real finding here, and
+            # silently truncating it is how it would stay hidden.
+            "dim_S_lambda": _as_dim(dim),
             "chi_lambda_he4": float(chi),
             "abs_chi": abs(float(chi)),
         })

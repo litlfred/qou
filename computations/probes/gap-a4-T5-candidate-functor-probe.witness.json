@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:36.084645+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:08.405515+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "F1_standard_irrep_multiplicity_is_four",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "gap-a4-T5-candidate-functor-probe",
   "scriptFile": "gap_a4_T5_candidate_functor_probe.py",
   "scriptHash": "c10de11fae01",
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -44,7 +44,7 @@
   "description": "GAP-A-4 T5 \u2014 candidate-functor probe for s5-so3-fiber-action h\u2074 gap. Tests 3 candidate functors from 5-strand (3,2)+(2,2,1) H-icosahedral component \u2192 3-strand (2,1)/std h\u2074 = \u22123/4. Expected outcome per the 2026-06-01 audit: all candidates FAIL by uncontrolled factors, confirming the missing-functor gap.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -77,9 +77,8 @@
       "ratio_vs_3_4": "0.8333333333333333333333333333333333333333333333333333333333333333333333",
       "verdict": "5/8 \u2260 \u22123/4 in sign or magnitude \u2014 Wenzl-ratio transfer fails to hit the Borromean coefficient"
     },
-    "synthesis_verdict": "All three candidate functors FAIL to recover the Borromean h\u2074 = \u22123/4 from the 5-strand (3,2)+(2,2,1) H-icosahedral component: (F1) Young's branching gives m_{(2,1)} = 4 with no natural normalisation hitting \u22123/4; (F2) the dim_q-ratio transfer 2\u00b7[5]_q/[3]_q has h\u2074 coefficient \u22122/27, off by uncontrolled factor 8/81; (F3) the Wenzl-weight ratio y_{(3,2)}+y_{(2,2,1)} / y_{(2,1)} = 5/8 at q=1, off in both sign and magnitude. This CONFIRMS the 2026-06-01 audit's finding that no canonical categorical functor links the 5-strand A_5 fiber action to the 3-strand H_3 Borromean Markov trace. The open object remains the categorical map identified by `conj:inter-nucleon-channel-color-tube` (K1) \u2014 the SO(3)/I level-\u2113 functor on 5-strand color\u00d7nucleon space to a Wedderburn coefficient of H_3(q)."
+    "synthesis_verdict": "All three candidate functors FAIL to recover the Borromean h⁴ = −3/4 from the 5-strand (3,2)+(2,2,1) H-icosahedral component: (F1) Young's branching gives m_{(2,1)} = 4 with no natural normalisation hitting −3/4; (F2) the dim_q-ratio transfer 2·[5]_q/[3]_q has h⁴ coefficient −2/27, off by uncontrolled factor 8/81; (F3) the Wenzl-weight ratio y_{(3,2)}+y_{(2,2,1)} / y_{(2,1)} = 5/8 at q=1, off in both sign and magnitude. This CONFIRMS the 2026-06-01 audit's finding that no canonical categorical functor links the 5-strand A_5 fiber action to the 3-strand H_3 Borromean Markov trace. The open object remains the categorical map identified by `conj:inter-nucleon-channel-color-tube` (K1) — the SO(3)/I level-ℓ functor on 5-strand color×nucleon space to a Wedderburn coefficient of H_3(q)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

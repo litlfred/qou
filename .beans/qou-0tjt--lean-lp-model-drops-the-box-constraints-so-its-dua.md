@@ -126,3 +126,51 @@ concrete `x*`, `y₀*`, `t`, `G`, or `M` — the narrative is generic in `n` and
 symbolic-lp.py`) is deprecated. So the hypotheses cannot be *checked* against
 substrate values, only assumed. That is the real open item, and it is smaller
 than this bean originally claimed.
+
+---
+
+## 2026-08-22 — correction: the box IS active at the solver's optimum
+
+Left `completed`; the conclusion stands, the stated reason does not.
+
+This bean closed on "the paper says the multipliers vanish at the optimum,
+which is the box being non-binding, and which makes the `≤` tight". Two things
+are wrong with that, found while working `qou/8na1`.
+
+**1. "The box is non-binding" is false at the optimum the corpus actually
+committed.** This bean ended saying no computation or witness pins the concrete
+`x*`, `y₀*`, `t`, `G`, `M`. One does, and did at the time:
+`computations/a-K-via-lp-dual-hecke-basis.witness.json` reports, for both
+atoms,
+
+    x*₀ = -1000000.0 = -M   exactly.
+
+The box at index 0 is **active** there. The claim is true of the radical
+optimum `x* = c·v` this bean reasoned about; the LP has many optima and the
+solver returned a different one.
+
+**2. Non-binding and zero-multiplier are not the same condition, and it is the
+second one that matters.** Complementary slackness lets a multiplier vanish on
+an *active* constraint — that is primal degeneracy, and it is what happens
+here. With `y = e₀` and `y₀ = 0`,
+
+    μⱼ = tⱼ - y₀ - Σᵢ Gⱼᵢ yᵢ = tⱼ - Gⱼ₀ = 0    for every j,
+
+because `t` is row 0 of `G` and `G` is symmetric. So the `≤` is tight, the
+equality `dual_feasible` of `k4ul` is right, and this bean's conclusion holds —
+via zero multipliers on an active constraint, not via an inactive one.
+
+**3. The mechanism is not the paper's.** The narrative says the multipliers are
+"driven to zero for large `M`". They are zero for the structural reason
+`t = G₀·`, at any `M`. Same answer, different cause, and the paper's stated
+cause is not the operative one.
+
+`operator_selection_lp.lean`'s `IsFeasible` docstring cited this bean when
+dropping the box. Re-worded 2026-08-22 to justify the drop by two facts
+independent of where the optimum sits: dropping a constraint only *enlarges*
+the feasible set (so every optimality/lower-bound theorem in the file is
+strengthened, not weakened), and `dual_bound_le_objective` supplies the
+boundedness the box was introduced for, using nothing but the net constraint,
+Frobenius positivity and `s ≥ 0`.
+
+No status change: the disposition was correct and remains so.

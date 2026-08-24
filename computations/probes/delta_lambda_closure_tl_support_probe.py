@@ -1,0 +1,274 @@
+#!/usr/bin/env python3
+"""Where can the missing 83.5% of the Delta_lambda closure possibly live?
+
+`rho_w_crystal_vertex_trace` computes the parameter-free deuteron binding as
+
+    B_pred = m_e * | sum_lambda  y_lambda * Delta_lambda * sgn(w_0) * f^lambda |
+
+and captures 16.48 % of AME (0.3666 MeV vs 2.2247). Six ansatze have been
+refuted trying to close that gap. This probe asks the prior question — not
+"what closes it" but "where is the formula even ABLE to receive a contribution"
+— and the answer is sharply constrained.
+
+THE SUM IS SUPPORTED ON THE TEMPERLEY-LIEB QUOTIENT.  `y_lambda` vanishes on
+every partition with >= 3 rows, so those blocks enter the sum multiplied by
+EXACTLY zero. At n = 6 that is 7 of 11 partitions contributing nothing; only
+(6), (5,1), (4,2), (3,3) survive.
+
+WHY, AND IT IS NOT DEEP — IT IS N = 2.  `y_lambda_su_n(n, q, N)` vanishes
+exactly when `len(lambda) > N`, the standard vanishing of the Schur function
+`s_lambda(x_1..x_N)` in N variables. Verified here at N = 2, 3, 4, 6: the
+number of surviving partitions of 6 goes 4 -> 7 -> 9 -> 11 and the longest
+surviving column is always exactly N. The producer calls it with **N = 2**.
+
+So "supported on the Temperley-Lieb quotient" is not a discovered constraint on
+Delta_lambda — TL_n IS the SU(2) quotient, and the support restriction is what
+choosing N = 2 MEANS. The exclusion below is exact, but it is exact GIVEN N = 2
+and is contingent on that modelling choice rather than intrinsic to the closure.
+Stated the other way round: it is a scope-(b) exclusion whose invariant is
+SU(N) Schur vanishing, and the invariant carries N with it.
+
+This does NOT say N should be something else. Choosing N to close the gap would
+be a seventh fitted ansatz and is exactly what the AGENTS.md rule forbids. What
+it says is that the support question is settled and is not where the answer is.
+
+Scope, stated precisely: this excludes contributions THROUGH THIS FORMULA. A
+different formula — one not of the form `sum_lambda y_lambda (...)` — is
+untouched by it, and per AGENTS.md the missing piece is expected to be a
+separate additive super-pairwise object rather than a per-block reweighting.
+This probe is evidence for exactly that expectation, not against it.
+
+AND THE SURVIVING SUM IS CANCELLATION-DOMINATED. The four contributing terms
+have absolute values summing to 2.4646 against a total of 0.7174 — a 3.44x
+cancellation, with the single largest term (5,1) at 177 % of the total. So the
+16.48 % capture is not "we collected a sixth of the terms"; it is large
+alternating terms nearly cancelling and leaving a residue about 6x too small.
+Any reweighting of the four survivors is fighting that cancellation.
+
+AND THE GRAM SINGULARITY IS THE SAME FACT.  Convention D's Markov weight is
+the SU(2) parameter, exactly:
+
+    z_D = q^3/(q^2 + 1) = q^N/[N]_q  at  N = 2      ([2]_q = (q^2+1)/q)
+
+So every one of these is the single statement N = 2: z_D being a root of the
+H_3 Gram determinant; the radical there being the q-antisymmetriser (the (1^3)
+block, the unique partition of 3 with more than 2 rows); y_lambda = 0 for
+len(lambda) > 2 (qou-8iru); the corank identity sum_(>=3 rows) dim^2 =
+n! - Catalan(n), Catalan counting the <= 2-row part; TL_n as the quotient
+(PR #5592); and this closure's support. Six observations, one cause.
+
+Seen from the weights instead of from the pairing: `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero`
+proves the convention-D H_3 Gram is singular with the q-antisymmetriser — the
+(1^3) block, the unique >= 3-row partition of 3 — spanning its radical. The
+identity `sum_{lambda >= 3 rows} (dim V_lambda)^2 = n! - Catalan(n)`, verified
+here for n = 3..6, is the general-n statement of it, matching the TL_n quotient
+result of PR #5592.
+
+Exact throughout: rational/integer combinatorics for the dimension identity, and
+mpmath at the witness's own recorded precision for the sums. No float64.
+"""
+
+from __future__ import annotations
+
+import json
+import pathlib
+import sys
+from math import comb, factorial
+
+from mpmath import mp, mpf, nstr
+
+HERE = pathlib.Path(__file__).resolve().parent
+REPO = HERE.parent.parent
+COMP = REPO / "computations"
+for _p in (str(COMP), str(COMP / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+import sympy as _sp  # noqa: E402
+
+from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+# Imported at module scope deliberately: this module calls set_compute_dps() on
+# import, so importing it mid-function resets mp.dps after the sums were parsed
+# and turns an exact equality check into a false failure. Cost one run.
+from y_lambda_su_n import y_lambda_su_n  # noqa: E402
+
+SOURCE = "computations/rho-w-crystal-vertex-trace.witness.json"
+
+
+def partitions_of(n: int) -> list[tuple[int, ...]]:
+    out: list[tuple[int, ...]] = []
+
+    def go(rem: int, mx: int, cur: list[int]) -> None:
+        if rem == 0:
+            out.append(tuple(cur))
+            return
+        for k in range(min(rem, mx), 0, -1):
+            go(rem - k, k, cur + [k])
+
+    go(n, n, [])
+    return out
+
+
+def syt_count(lam: tuple[int, ...]) -> int:
+    """Hook-length formula — exact integer, no floats."""
+    n = sum(lam)
+    conj = [sum(1 for r in lam if r > j) for j in range(lam[0])]
+    prod = 1
+    for i, row in enumerate(lam):
+        for j in range(row):
+            prod *= (row - j) + (conj[j] - i) - 1
+    return factorial(n) // prod
+
+
+def main() -> int:
+    set_compute_dps()
+    w = json.loads((REPO / SOURCE).read_text(encoding="utf-8"))
+    mp.dps = max(mp.dps, int(w.get("dps") or 50))
+
+    terms = [
+        (tuple(e["partition"]), mpf(str(e["y_lambda"])), mpf(str(e["signed_contribution"])))
+        for e in w["by_partition"]
+    ]
+    total = sum(t for _lam, _y, t in terms)
+    abs_sum = sum(abs(t) for _lam, _y, t in terms)
+    ge3 = [(lam, y, t) for lam, y, t in terms if len(lam) >= 3]
+    le2 = [(lam, y, t) for lam, y, t in terms if len(lam) <= 2]
+
+    # the dimension identity, exact integer arithmetic, several n
+    dim_rows = []
+    for n in (3, 4, 5, 6):
+        P = partitions_of(n)
+        hi = [l for l in P if len(l) >= 3]
+        lhs = sum(syt_count(l) ** 2 for l in hi)
+        rhs = factorial(n) - comb(2 * n, n) // (n + 1)
+        dim_rows.append({
+            "n": n, "partitions": len(P), "contributing_le2rows": len(P) - len(hi),
+            "sum_dim_sq_ge3rows": lhs, "n_factorial_minus_catalan": rhs, "equal": lhs == rhs,
+        })
+
+    # WHY the >=3-row blocks vanish: SU(N) Schur vanishing, with N carried explicitly.
+    n_strands = int(w.get("n_strands") or 6)
+    q_here = mpf(str(w.get("q_0_50dps")))
+    n_sweep = []
+    for N in (2, 3, 4, n_strands):
+        ys = y_lambda_su_n(n_strands, q_here, N)
+        nz = [l for l, v in ys.items() if v != 0]
+        n_sweep.append({"N": N, "nonzero": len(nz), "of": len(ys),
+                        "longest_surviving_column": max(len(l) for l in nz),
+                        "vanishes_above_N_rows": all(len(l) <= N for l in nz)})
+
+    _q = _sp.Symbol("q", positive=True)
+    _qint = lambda m: (_q ** m - _q ** -m) / (_q - _q ** -1)  # noqa: E731
+    zd_is_sun = _sp.simplify(_q ** 3 / (_q ** 2 + 1) - _q ** 2 / _qint(2)) == 0
+
+    checks = [
+        ("y_vanishing_is_SU_N_schur_vanishing",
+         all(r["vanishes_above_N_rows"] for r in n_sweep), True,
+         "y_lambda = 0 iff len(lambda) > N, at N = 2,3,4,n — so the support is N=2, not Delta"),
+        ("zD_is_the_SU2_markov_parameter", bool(zd_is_sun), True,
+         "z_D = q^3/(q^2+1) = q^N/[N]_q at N=2 — the Gram singularity is the same fact"),
+        ("y_lambda_vanishes_on_every_ge3row_block",
+         all(y == 0 for _l, y, _t in ge3), True,
+         f"{len(ge3)} of {len(terms)} partitions, each contributing exactly 0"),
+        ("ge3row_blocks_contribute_exactly_zero",
+         sum(t for _l, _y, t in ge3) == 0, True,
+         "not small — identically zero, so no per-block weight there can act"),
+        ("support_is_the_le2row_set",
+         sum(t for _l, _y, t in le2) == total, True,
+         "the whole sum is carried by the Temperley-Lieb quotient"),
+        ("dimension_identity_holds_n3_to_n6",
+         all(r["equal"] for r in dim_rows), True,
+         "sum_(>=3 rows) dim^2 = n! - Catalan(n) — the general-n form"),
+        ("surviving_sum_is_cancellation_dominated",
+         abs_sum / abs(total) > 3, True,
+         f"cancellation ratio {nstr(abs_sum / abs(total), 6)}x"),
+    ]
+
+    payload = {
+        "description": (
+            "Support analysis of the parameter-free Delta_lambda closure. y_lambda "
+            "vanishes on every >= 3-row partition, so the sum is supported entirely "
+            "on the Temperley-Lieb quotient and no per-block weight on a >= 3-row "
+            "block can contribute to it. The surviving 4-term sum is "
+            "cancellation-dominated (3.44x)."
+        ),
+        "source_witness": SOURCE,
+        "n_strands": w.get("n_strands"),
+        "captured_fraction": w.get("captured_fraction"),
+        "closure_status": w.get("closure_status"),
+        "signed_total": str(total),
+        "sum_of_absolute_terms": str(abs_sum),
+        "cancellation_ratio": str(abs_sum / abs(total)),
+        "largest_term_pct_of_total": str(
+            max(abs(t) for _l, _y, t in terms) / abs(total) * 100),
+        "by_partition": [
+            {"partition": list(lam), "rows": len(lam), "y_lambda": str(y),
+             "signed_contribution": str(t), "contributes": y != 0}
+            for lam, y, t in terms
+        ],
+        "dimension_identity": dim_rows,
+        "su_N_row_cutoff_sweep": n_sweep,
+        "zD_equals_qN_over_bracketN_at_N2": bool(zd_is_sun),
+        "assertions": [
+            {"name": n, "value": bool(g), "expected": bool(e),
+             "passed": bool(g) is e, "note": note}
+            for n, g, e, note in checks
+        ],
+        "allPassed": all(bool(g) is e for _n, g, e, _note in checks),
+        "q0Anchor": w.get("q0Anchor"),
+        "q0Value": w.get("q_0_50dps"),
+        "context": {
+            "bean": "qou-zf9n",
+            "scope": (
+                "(b) structural exclusion whose invariant is SU(N) Schur vanishing "
+                "(y_lambda = 0 iff len(lambda) > N), verified at N = 2,3,4,6. Exact, but "
+                "CONTINGENT ON N = 2 rather than intrinsic to the closure — TL_n is the "
+                "SU(2) quotient, so the support restriction is what N = 2 means. It also "
+                "excludes only contributions THROUGH THIS FORMULA; a separate additive "
+                "super-pairwise term is untouched, which is the AGENTS.md expectation."
+            ),
+            "root_cause": (
+                "z_D = q^3/(q^2+1) = q^N/[N]_q at N = 2, verified symbolically. The Gram "
+                "singularity, the radical's identity, y_lambda = 0 above 2 rows, the "
+                "n! - Catalan(n) corank, the TL_n quotient and this support are one fact."
+            ),
+            "same_phenomenon_as": [
+                "QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero "
+                "(radical = q-antisymmetriser = the (1^3) block)",
+                "the TL_n quotient rank result of PR #5592",
+                "bean qou-8iru (y_lambda = 0 for >= 3 rows)",
+            ],
+            "not_a_proposal": (
+                "This does NOT propose a seventh ansatz. It bounds where one could "
+                "act, which is the opposite move."
+            ),
+        },
+    }
+
+    out = WitnessBuilder.wrap_legacy(
+        "delta-lambda-closure-tl-support", payload,
+        script_path=__file__, engine="python+mpmath(exact combinatorics)",
+    ).save()
+
+    print("=== Where can the missing 83.5% live? ===")
+    print(f"  captured {float(w.get('captured_fraction', 0)) * 100:.2f}%  "
+          f"closure_status = {w.get('closure_status')}")
+    print()
+    print(f"  {'lambda':<18} {'rows':>4} {'y_lambda':>16}  contributes")
+    for lam, y, _t in terms:
+        print(f"  {str(lam):<18} {len(lam):>4} {nstr(y, 10):>16}  {'yes' if y != 0 else 'NO — exactly 0'}")
+    print()
+    print(f"  >= 3-row blocks contribute : {sum(t for _l, _y, t in ge3)} (exact)")
+    print(f"  cancellation ratio         : {nstr(abs_sum / abs(total), 6)}x  "
+          f"(sum|term| {nstr(abs_sum, 8)} vs |total| {nstr(abs(total), 8)})")
+    print()
+    for n, g, e, note in checks:
+        print(f"  [{'PASS' if bool(g) is e else 'FAIL'}] {n:<44} ({note})")
+    print()
+    print(f"  witness -> {out}")
+    return 0 if payload["allPassed"] else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

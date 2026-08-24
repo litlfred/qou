@@ -73,9 +73,14 @@ import math  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import str_at_true_precision  # noqa: E402
+from _precision import fmt, str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
-from hecke_characters import build_seminormal_matrices  # noqa: E402
+from hecke_characters import build_seminormal_matrices  # noqa: E402, F401
+from hoefsmit_mpmath import (  # noqa: E402
+    BlockCacheMP,
+    chi_lambda_of_word_sparse_mp,
+    seminormal_matrices_mp,
+)
 # Path bridge: keeps flat-namespace imports working from this cluster
 # subdirectory. The bridge module puts every other cluster subdir on
 # sys.path so cross-cluster bare-name imports resolve. Idempotent.
@@ -86,6 +91,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# One cache for every partition: BlockCacheMP memoises the Hoefsmit block
+# values, which depend only on q, so rebuilding it per irrep would recompute
+# the same square roots ten times. Bound at module scope for the same reason
+# `set_compute_dps()` is -- both must be in force before any mpf arithmetic.
+_BLOCK_CACHE_MP = BlockCacheMP(mp.mpf(Q_50_DIGIT_STR))
 
 # AME2020 total nuclear binding (MeV) — same anchors as PROBE 2.
 AME = {"D": mp.mpf("2.224566"), "4He": mp.mpf("28.295673"), "6Li": mp.mpf("31.994564")}
@@ -209,13 +220,13 @@ class ExactCharacterInfeasible(RuntimeError):
 
 
 def _chi(lam, word, n_gens):
-    """χ_λ(β_K) at full precision -- or an explicit refusal.
+    """χ_λ(β_K) in exact mpmath arithmetic.
 
-    THIS PROBE CANNOT CURRENTLY RUN, AND THE REASON IS NOT A BUG TO PATCH
-    AROUND. `atom_braid_word_3A` carries exact `mpf` offsets by default
+    THIS PROBE USED TO REFUSE HERE, AND THE REFUSAL IS NOW LIFTED.
+    `atom_braid_word_3A` carries exact `mpf` offsets by default
     (`allow_float64=False`), and `mass_at_3A_proper.chi_lambda_of_word`
     multiplies them into `scipy.sparse` matrices, which reject `dtype
-    object` -- so the two halves are precision-incompatible. Measured on
+    object` -- so those two halves are precision-incompatible. Measured on
     the A=4 word: 25 of its 47 crossings carry an `mpf` coefficient.
 
     The exact route EXISTS -- `hoefsmit_mpmath.chi_lambda_of_word_mp`, dense
@@ -267,40 +278,99 @@ def _chi(lam, word, n_gens):
     from them, and AGENTS.md's rule is about carriage through the whole
     analysis, not one number.
 
-    THE REAL FIX IS MEASURED AND WORKS. Neither cast nor dense-mpmath: the
+    THE FIX IS BUILT (bean `qou-fmoi`), and this function now routes to it:
+    `hoefsmit_mpmath.chi_lambda_of_word_sparse_mp`. Neither cast nor dense-mpmath: the
     seminormal `sigma_i` carry at most 2 nonzeros per row, so the trace can be
     taken by propagating ONE ROW AT A TIME through the 47 factors, never
     materialising the product. Cost falls from `dim^3 * len(word)` to
     `dim^2 * len(word) * nnz_per_row`. Validated at dim=132, dps=70, against
     the dense routine:
 
-        dense   20.472734309881024467   ~80 s
-        sparse  20.472734309881024467    ~1 s      (80-85x over two runs)
+        dense   20.472734309881028753   ~80 s
+        sparse  20.472734309881028753    ~1 s      (80-85x over two runs)
         relative difference  7.077e-71  -- exact agreement at the working
                                            precision, NOT a float64 floor
+
+    THE VALUE ABOVE IS AT THE CANONICAL 50-DIGIT q. An earlier version of this
+    note quoted 20.472734309881024467, which came from `mpf(str(q_parameter.Q))`
+    -- and `q_parameter.Q` is a Python FLOAT, so that pins the substrate to 16
+    digits. The dense-vs-sparse agreement was unaffected (same q on both sides),
+    but the character itself was a float64-q character, differing from the
+    probe's at ~1e-16 for a reason having nothing to do with either routine.
 
         extrapolated, all ten irreps:  ~36 min (nnz/row = 1, as at dim=132)
                                        ~73 min (nnz/row = 2, the 2x2 blocks
                                                 that larger irreps carry)
 
     So the A=4 [1^4] object is roughly an hour of exact compute, not 1135
-    hours. Implementing that properly -- placement, tests, review -- is bean
-    `qou-fmoi`, not a line in a crash fix.
+    hours. Cross-checked against the dense routine by
+    `computations/hoefsmit_sparse_character_test.py`.
+
+    NOTE the matrices come from `seminormal_matrices_mp`, NOT from
+    `hecke_characters.build_seminormal_matrices` -- the latter is the float64
+    builder whose `BlockCache` uses `math.sqrt` against a 1e-15 degeneracy
+    threshold, so feeding its output to an exact character routine would carry
+    float64 blocks through an exact product and advertise a precision the
+    numbers do not have.
     """
-    sig, dim, _ = build_seminormal_matrices(tuple(lam))
+    sig, dim, _ = seminormal_matrices_mp(tuple(lam), cache=_BLOCK_CACHE_MP)
     if dim == 0:
         return mp.mpf(0)
-    if any(isinstance(c, mp.mpf) or isinstance(d, mp.mpf) for c, d, _g in word):
-        raise ExactCharacterInfeasible(
-            f"chi_lambda for {tuple(lam)} (dim={dim}): the braid word carries "
-            f"exact mpf offsets, which scipy.sparse cannot hold (dtype "
-            f"object), and the dense mpmath route costs ~705 h at dim=4158. "
-            f"The trace-only sparse route is measured at ~1 h for all ten "
-            f"irreps (bean qou-fmoi) but is not built yet. Refusing "
-            f"rather than casting to float64 (AGENTS.md: probes are not "
-            f"exempt)."
-        )
-    return mp.mpf(m3.chi_lambda_of_word(sig, dim, word, n_gens))
+    return chi_lambda_of_word_sparse_mp(sig, dim, word, n_gens)
+
+
+# ── the row-count prune ────────────────────────────────────────────────
+#
+# `y_lambda_wenzl_bridge_numeric` is the SU(2) Wenzl weight, and the quantum
+# dimension of a partition with more than N rows vanishes in SU(N). At N=2
+# that means y_lambda is EXACTLY zero -- `y == 0` is True, not merely small --
+# for every lambda with three or more rows.
+#
+# MEASURED on e_4[h_3], the ten partitions of 12 that carry the A=4 [1^4]
+# object: NINE have >= 3 rows and weight exactly 0. The whole projected trace
+# is carried by (6,6), the ONLY two-row partition, at dim=132.
+#
+#     (5,3,3,1) f=4158   (6,4,2) f=2673   (7,3,1,1) f=2376   (6,3,3) f=1650
+#     (5,5,1,1) f=1485   (7,4,1) f=1408   (8,3,1)   f= 891   (3,3,3,3) f=462
+#     (9,1,1,1) f= 165   -- all y_lambda = 0
+#     (6,6)     f= 132   -- y_lambda = 0.00022872963188107212307
+#
+# So computing chi_lambda for the nine is multiplying an expensive number by
+# zero. Checking `y` FIRST turns this probe from ~an hour into seconds, and it
+# is not an optimisation detail -- it is the structural fact that the [1^4]
+# channel at this weight is a ONE-TERM sum. AGENTS.md's formalize-first probe
+# discipline is exactly this: ask whether a structural claim prunes the class
+# before running the wide search. Recorded in bean `qou-fmoi`.
+# ── anchor identification ──────────────────────────────────────────────
+_PROTON_Q0 = "1.1099785827513808"    # experimental / Physical-Observations pin
+_MUON_Q0 = "1.1099785955573347"      # ideal CAL-2 pin
+
+
+def _anchor_of(q_val) -> str:
+    """Name the pin `q_val` actually is, or refuse.
+
+    The two pins agree to 8 digits and differ only past the 9th, so this
+    compares a 16-digit prefix -- enough to separate them, loose enough to
+    survive a re-derivation that moves the last recorded digits.
+
+    Refusing beats guessing: a witness whose `q0Anchor` disagrees with its
+    `q0Value` is worse than one with no anchor at all, because
+    `q0_anchor_consistency_audit` scores the first as a FLIP and the second
+    as a benign MISSING.
+    """
+    head = mp.nstr(q_val, 17, strip_zeros=False)[:18]
+    for name, ref in (("proton", _PROTON_Q0), ("muon", _MUON_Q0)):
+        if head.startswith(ref[:17]):
+            return name
+    raise ValueError(
+        f"q0 = {mp.nstr(q_val, 20)} matches neither the proton pin "
+        f"({_PROTON_Q0}...) nor the muon pin ({_MUON_Q0}...). Refusing to "
+        f"stamp an anchor that would not describe the value.")
+
+
+def _weight_is_zero(lam) -> bool:
+    """True when the SU(2) Wenzl weight vanishes identically for `lam`."""
+    return len(tuple(lam)) > 2
 
 
 def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
@@ -317,14 +387,29 @@ def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
     proj_rows = []
     for lam, mlam in sorted(mult.items(), key=lambda kv: -_fdim(kv[0])):
         y = y_lambda_wenzl_bridge_numeric(list(lam), q, dps=50)
-        chi = _chi(lam, word, n_gens)
-        contrib = mlam * y * chi
+        # Skip the character when the weight is identically zero. Not a
+        # tolerance test -- `_weight_is_zero` is the row-count criterion, and
+        # the numeric `y` is exactly 0 for those, so the product is 0 whatever
+        # chi is. Asserted rather than assumed, so a change in the weight
+        # convention (SU(2) -> SU(N)) fails loudly instead of silently pruning
+        # terms that now contribute.
+        if _weight_is_zero(lam):
+            assert y == 0, (
+                f"{tuple(lam)} has {len(tuple(lam))} rows so the SU(2) Wenzl "
+                f"weight should vanish, but y = {mp.nstr(y, 12)}. The weight "
+                f"convention changed; the row-count prune is no longer valid.")
+            chi = None
+            contrib = mp.mpf(0)
+        else:
+            chi = _chi(lam, word, n_gens)
+            contrib = mlam * y * chi
         proj += contrib
         proj_rows.append({"lam": lam, "m": mlam, "f": _fdim(lam),
                           "y": y, "chi": chi, "contrib": contrib})
         if verbose:
             print(f"    {str(lam):>20} m={mlam} f={_fdim(lam):>5} "
-                  f"y={mp.nstr(y,6):>12} chi={mp.nstr(chi,8):>14} "
+                  f"y={mp.nstr(y,6):>12} "
+                  f"chi={'(skipped: y=0)' if chi is None else mp.nstr(chi,8):>14} "
                   f"contrib={mp.nstr(contrib,8):>14}")
     T_proj = gate * proj
 
@@ -333,8 +418,10 @@ def atom_traces(Z, N, q, *, projected_only=True, verbose=False):
         full = mp.mpf(0)
         for lam in partitions_of(n):
             y = y_lambda_wenzl_bridge_numeric(list(lam), q, dps=50)
-            chi = _chi(lam, word, n_gens)
-            full += y * chi
+            if _weight_is_zero(lam):
+                assert y == 0, f"{tuple(lam)}: weight convention changed"
+                continue
+            full += y * _chi(lam, word, n_gens)
 
     return {"A": A, "n_strands": n, "gate_C4A": gate,
             "T_proj": T_proj, "proj_sum": proj, "proj_rows": proj_rows,
@@ -359,7 +446,19 @@ def nucleon_H3_trace(nucleon, q):
 # ══════════════════════════════════════════════════════════════════════
 def main() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
-    print(f"q0 = {mp.nstr(q,14)}  (canonical muon-q0 literal)\n")
+    # MISLABEL FIXED. This read "(canonical muon-q0 literal)" while printing
+    # 1.1099785827513808..., which is the PROTON pin; the muon pin is
+    # 1.1099785955573347... The VALUE was right -- `Q_50_DIGIT_STR` is
+    # proton-pinned and proton is the standing default for all compute (owner
+    # directive 2026-08-07) -- so nothing computed here was ever wrong. Only
+    # the name was, which is the exact hazard AGENTS.md flags: "most survivors
+    # compute the RIGHT value under the WRONG name". It matters because the
+    # label is what a reader carries away, and calling a proton-pinned run
+    # "muon" is a layer misattribution of the kind the mu-p straddle rules
+    # exist to prevent. The two pins agree to 8 digits, so they can only be
+    # told apart past the 9th -- never by eye.
+    print(f"q0 = {mp.nstr(q,14)}  (canonical PROTON-q0 literal, "
+          f"q_parameter.Q_50_DIGIT_STR)\n")
 
     # ── plethysm structure report (A=2,4 only; A=6 is gated to 0 by C(4,6),
     #    so its full Schur expansion is not needed for the verdict) ──
@@ -433,12 +532,21 @@ def main() -> int:
         ("m3  1+|T4|/(3|T2|)", m3v, "PROBE-2-shape lift over pairwise scale"),
         ("m4  frac4/fracD", m4, "channel-fraction ratio ⁴He:[1^4] vs D:[1^2]"),
     ]:
-        r = float(val) / float(need)
-        print(f"  {name:>22} = {float(val):8.4f}   ratio/2.093 = {r:6.3f}   {note}")
+        # mpf / mpf -- `need` is mp.mpf("2.0925") and the metrics are mpf, so
+        # the ratio stays exact. float() below is DISPLAY ONLY.
+        r = val / need
+        print(f"  {name:>22} = {float(val):8.4f}   "
+              f"ratio/2.093 = {float(r):6.3f}   {note}")
 
     # ── verdict ──
-    ratios = {"m1": float(m1) / float(need), "m2": float(m2) / float(need),
-              "m3": float(m3v) / float(need), "m4": float(m4) / float(need)}
+    # These four ratios ARE the verdict -- `within5` and `order` below are
+    # thresholded on them, and the witness stores them. They were built with
+    # float(m)/float(need), which is arithmetic rather than display and is the
+    # case AGENTS.md calls out: a probe's float64 corrupts the ANALYSIS, which
+    # is the expensive kind of wrong. Both operands are mpf, so keep them mpf
+    # and convert at the serialization boundary with `fmt`.
+    ratios = {"m1": m1 / need, "m2": m2 / need,
+              "m3": m3v / need, "m4": m4 / need}
     within5 = [k for k, r in ratios.items() if abs(r - 1) < 0.05]
     order = [k for k, r in ratios.items() if 0.5 < r < 2.0]
     verdict = ("CLOSES" if within5 and len(within5) >= 1 and
@@ -470,8 +578,40 @@ def main() -> int:
             "(Wenzl bridge) sum of exact Hoefsmit characters χ_λ(β_atom), gated "
             "by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, "
             "no fit, single canonical operator."),
-        "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ; f64 trace)",
-        "precision": "chi=f64 (magnitude verdict); y_lambda=mpfr_50dps; plethysm=exact rational",
+        # AGENTS.md §4: "any new witness must record its q0 so a later reader
+        # can tell which layer it belongs to without inferring it from a call
+        # site." Q_50_DIGIT_STR is the PROTON pin (1.1099785827513808...), the
+        # standing default for all compute; the muon pin is
+        # 1.1099785955573347... and the two agree to 8 digits, so they cannot
+        # be told apart by eye.
+        #
+        # TOP LEVEL, not inside "data". `q0_anchor_consistency_audit.py:134`
+        # reads `body.get("q0Anchor")`, so an anchor nested one level down is
+        # invisible to the checker while looking perfectly present to a human
+        # -- which is how I first wrote it, and the audit is what caught it:
+        # Q0_ANCHOR_MISSING went UP after I "added" the anchor.
+        #
+        # DERIVED from the value, not hardcoded. `qou-wee5` (8cdcf3865a8)
+        # measured that the shim rebinds its whole derived q family to MUON
+        # when the running process's argv stem is manifest-listed -- so the
+        # same import can yield a different pin depending on who `__main__`
+        # is. Measured for this probe: running it as `__main__` gives the
+        # proton pin, so a hardcoded "proton" happens to be true today. It
+        # would become a silent lie the moment this producer were added to
+        # that manifest, and the witness would then claim an anchor it does
+        # not have -- the straddle AGENTS.md forbids. `_anchor_of` reads the
+        # value instead, and refuses rather than guessing.
+        "q0Anchor": _anchor_of(q),
+        "q0Value": str(q),
+        "tier": "structural (exact plethysm + Wenzl y_λ + Hoefsmit χ_λ, all exact)",
+        # Was "chi=f64 (magnitude verdict)". No longer true: chi now comes from
+        # `hoefsmit_mpmath.chi_lambda_of_word_sparse_mp` in exact mpmath at the
+        # module dps, via `seminormal_matrices_mp`. Leaving the old string
+        # would have UNDERSTATED the witness's own precision -- the mirror of
+        # the usual defect, but a mislabel either way.
+        "precision": ("chi=mpfr_exact (sparse trace-only, cross-checked vs "
+                      "dense at 7e-71); y_lambda=mpfr_50dps; "
+                      "plethysm=exact rational"),
         "data": {
             "q0": str(q),
             "plethysm_A4_partitions": {str(l): m for l, m in
@@ -499,8 +639,8 @@ def main() -> int:
                 "T_11": str(d["T_proj"]), "gate_C42": d["gate_C4A"],
                 "T_over_full": str(fracD)},
             "li6": {"gate_C46": li6_gate, "T_1111111": "0 (exact via gate)"},
-            "enhancement_metrics": {k: float(v) for k, v in ratios.items()},
-            "needed_super_pairwise": float(need),
+            "enhancement_metrics": {k: fmt(v) for k, v in ratios.items()},
+            "needed_super_pairwise": fmt(need),
             "verdict": verdict,
             "verdict_note": (
                 "PARTIAL / scope-(a): the genuine e_A[h_3]-plethysm [1^4]-"

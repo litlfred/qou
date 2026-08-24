@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:36.569283+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:09.186897+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "chi_21_recovers_dim_at_q1",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "gap-a4-T7-bratteli-stabilization-probe",
   "scriptFile": "gap_a4_T7_bratteli_stabilization_probe.py",
   "scriptHash": "c5dc75f37174",
@@ -38,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -52,14 +52,14 @@
   "description": "GAP-A-4 T7 \u2014 Bratteli/Markov stabilization candidate functor H_3 \u2192 H_5 via \u03c3_1,\u03c3_2 \u21aa. Tests whether the H-sector trace contribution carries the Borromean h\u2074 = \u22123/4 cleanly. Verdict: REFUTED \u2014 structural ratio is 5/4 (not 1).",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY",
     "production_wired": false,
     "chi_21_consistency": {
       "chi_21_at_q1": "2.0",
-      "chi_21_at_q0": "1.99418581038057303915342758709727650994542545717216131545252219115031"
+      "chi_21_at_q0": "1.994185812979964086728199368018716700089139582511810518467629733827297"
     },
     "bratteli_structural_ratio": {
       "y_(3,2)_at_q1": "0.2083333333333333333333333333333333333333333333333333333333333333333333",
@@ -76,9 +76,8 @@
       "predicted_H_sector_h4_at_q1": "(5/4) \u00b7 (\u22123/4) = \u221215/16 = \u22120.9375",
       "verdict": "Bratteli/Markov stabilization functor REFUTED \u2014 the structural ratio is uniformly 5/4 (not 1), so the H-sector h\u2074 transfer would be \u221215/16, not \u22123/4.  Recovering \u22123/4 requires an ad-hoc rescaling by 4/5 that has no derivation in the framework.  This is the 4th candidate functor refuted (after T5 F1/F2/F3)."
     },
-    "synthesis_verdict": "Bratteli/Markov stabilization functor F: H_3 \u2192 H_5 picks up the Borromean trace at the H-sector with a uniform multiplier 5/4 at q=1 \u2014 confirmed for BOTH the \u03c7^{(2,1)}-coefficient (5/6 vs 2/3) AND the writhe-0 constant term (5/12 vs 1/3). So the H-sector h\u2074 contribution would be (5/4)\u00b7(\u22123/4) = \u221215/16, NOT \u22123/4. Recovering \u22123/4 cleanly requires an ad-hoc rescaling by 4/5 with no framework-internal derivation \u2014 Bratteli stabilization is the 4th candidate functor REFUTED (after T5's F1/F2/F3 and T6's H-sector self-h\u2074 = +2). The 5/4 factor itself is structurally interesting (it equals the per-irrep Plancherel weight ratio and the multiplicity-4 normalisation from T5 F1), but it is NOT the obvious bridge the audit's missing functor demands. RT / q-Schur duality (T8 follow-up) remains untested."
+    "synthesis_verdict": "Bratteli/Markov stabilization functor F: H_3 → H_5 picks up the Borromean trace at the H-sector with a uniform multiplier 5/4 at q=1 — confirmed for BOTH the χ^{(2,1)}-coefficient (5/6 vs 2/3) AND the writhe-0 constant term (5/12 vs 1/3). So the H-sector h⁴ contribution would be (5/4)·(−3/4) = −15/16, NOT −3/4. Recovering −3/4 cleanly requires an ad-hoc rescaling by 4/5 with no framework-internal derivation — Bratteli stabilization is the 4th candidate functor REFUTED (after T5's F1/F2/F3 and T6's H-sector self-h⁴ = +2). The 5/4 factor itself is structurally interesting (it equals the per-irrep Plancherel weight ratio and the multiplicity-4 normalisation from T5 F1), but it is NOT the obvious bridge the audit's missing functor demands. RT / q-Schur duality (T8 follow-up) remains untested."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

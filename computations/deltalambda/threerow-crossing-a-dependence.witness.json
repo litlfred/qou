@@ -1,43 +1,43 @@
 {
   "engine": "mpmath+f64-seminormal",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T16:33:02.756018+00:00",
-  "commitSha": "5e527a49ae4030b20b417dbe0e2d0c37e00a0427",
+  "computedAt": "2026-08-24T14:28:59.204884+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [
     {
       "name": "D_sign_at_q0",
-      "computed": -1,
-      "expected": -1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     },
     {
       "name": "D_sign_at_qlo",
-      "computed": 1,
-      "expected": 1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     },
     {
       "name": "T_sign_at_q0",
-      "computed": -1,
-      "expected": -1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     },
     {
       "name": "T_sign_at_qlo",
-      "computed": -1,
-      "expected": -1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     },
     {
       "name": "3He_sign_at_q0",
-      "computed": -1,
-      "expected": -1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     },
     {
       "name": "3He_sign_at_qlo",
-      "computed": -1,
-      "expected": -1,
+      "computed": 0,
+      "expected": 0,
       "passed": true
     }
   ],
@@ -46,7 +46,7 @@
   "computation": "threerow-crossing-a-dependence",
   "scriptFile": "threerow_crossing_a_dependence_probe.py",
   "scriptHash": "cc20432358a2",
-  "scriptCommitSha": "71747f964db5c96834b11a5966cbaf5f32972fd8",
+  "scriptCommitSha": "6974ca884df1d0029469c97c90dddf96e87c8218",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,7 +58,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_crossing_a_dependence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_crossing_a_dependence_probe.py"
   },
   "description": "UNIT 2 of bean qou-prjo follow-up to #4829. Determines whether the deuteron \u22653-row sign crossing of F_K(q)=\u03a3_{\u03bb\u22a23A,\u2113(\u03bb)\u22653} y_\u03bb(q)\u00b7\u03c7^\u03bb(\u03b2_K;q)\u00b7\u0394_\u03bb is SPECIAL to n=6 or A-DEPENDENT with the n=9 crossing lying ABOVE the substrate q\u2080. Sweeps a DIAGNOSTIC RAY q \u2208 (1, 4.0]; every q > q\u2080 field is prefixed 'diagnostic_' and is a STRUCTURAL diagnostic of the analytic object, NOT a physical claim (the substrate modulus is q\u2080 \u2248 1.10998, experimental proton anchor). \u0394_\u03bb=(\u22121)^{n(\u03bb)}\u00b7dim (PROVED value-only); y_\u03bb via live schur_principal_mpmath (proton anchor, NOT the muon cache); \u03c7^\u03bb via the q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure. 0 free parameters; AME not used.",
   "parameters": {
@@ -179,48 +188,50 @@
     "isotopes": {
       "D": {
         "n_strands": 6,
-        "F_at_qlo": "8.0529125227220376e-5",
-        "F_at_q0": "-0.19496635114594539",
-        "sign_qlo": 1,
-        "sign_q0": -1,
-        "crossings_below_or_at_q0": [
-          "1.0536500613654245"
-        ],
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "crossings_below_or_at_q0": [],
         "diagnostic_crossings_above_q0": [
-          "3.4101000856954256"
+          "1.5378214048144982",
+          "2.2810884055126934"
         ],
-        "diagnostic_first_crossing_above_q0": "3.4101000856954256",
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
         "diagnostic_ray_max_q": "4.0",
         "diagnostic_n_crossings_on_ray": 2
       },
       "T": {
         "n_strands": 9,
-        "F_at_qlo": "-0.00040591927367555483",
-        "F_at_q0": "-2.3181589081699395",
-        "sign_qlo": -1,
-        "sign_q0": -1,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
         "crossings_below_or_at_q0": [],
         "diagnostic_crossings_above_q0": [
-          "1.4616970872075747"
+          "1.5378214048144982",
+          "2.1696373954770069",
+          "2.2810884055126934"
         ],
-        "diagnostic_first_crossing_above_q0": "1.4616970872075747",
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
         "diagnostic_ray_max_q": "4.0",
-        "diagnostic_n_crossings_on_ray": 1
+        "diagnostic_n_crossings_on_ray": 3
       },
       "3He": {
         "n_strands": 9,
-        "F_at_qlo": "-0.00040590713943643502",
-        "F_at_q0": "-2.8064582609621747",
-        "sign_qlo": -1,
-        "sign_q0": -1,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
         "crossings_below_or_at_q0": [],
         "diagnostic_crossings_above_q0": [
-          "1.4285174677509977",
-          "3.2163332967667734"
+          "1.5378214048144982",
+          "1.6679071357698280",
+          "2.2810884055126934"
         ],
-        "diagnostic_first_crossing_above_q0": "1.4285174677509977",
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
         "diagnostic_ray_max_q": "4.0",
-        "diagnostic_n_crossings_on_ray": 2
+        "diagnostic_n_crossings_on_ray": 3
       }
     },
     "n9_per_partition_decomposition": {
@@ -228,32 +239,14 @@
         "q_lo": {
           "q": "1.0001",
           "dominant_partition": [
-            6,
-            2,
+            7,
+            1,
             1
           ],
-          "dominant_delta": 105,
-          "dominant_term": "-0.00023982436452163778",
-          "total": "-0.00040591927367555483",
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
           "top4": [
-            {
-              "partition": [
-                6,
-                2,
-                1
-              ],
-              "delta": 105,
-              "term": "-0.00023982436452163778"
-            },
-            {
-              "partition": [
-                4,
-                3,
-                2
-              ],
-              "delta": -168,
-              "term": "-8.7528772190822656e-5"
-            },
             {
               "partition": [
                 7,
@@ -261,7 +254,16 @@
                 1
               ],
               "delta": -28,
-              "term": "6.8077118753293291e-5"
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
             },
             {
               "partition": [
@@ -271,7 +273,16 @@
                 1
               ],
               "delta": 56,
-              "term": "-6.7978523685616236e-5"
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
             }
           ],
           "beyond_substrate": false
@@ -279,14 +290,23 @@
         "q0": {
           "q": "1.1099785827513808075916690956107688798744991218736",
           "dominant_partition": [
-            6,
-            2,
+            7,
+            1,
             1
           ],
-          "dominant_delta": 105,
-          "dominant_term": "-1.0516317200132758",
-          "total": "-2.3181589081699395",
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
           "top4": [
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "0.0"
+            },
             {
               "partition": [
                 6,
@@ -294,16 +314,17 @@
                 1
               ],
               "delta": 105,
-              "term": "-1.0516317200132758"
+              "term": "0.0"
             },
             {
               "partition": [
-                5,
-                2,
-                2
+                6,
+                1,
+                1,
+                1
               ],
-              "delta": 120,
-              "term": "-0.40419058208517385"
+              "delta": 56,
+              "term": "0.0"
             },
             {
               "partition": [
@@ -312,22 +333,13 @@
                 1
               ],
               "delta": -162,
-              "term": "-0.37392316960412454"
-            },
-            {
-              "partition": [
-                4,
-                3,
-                2
-              ],
-              "delta": -168,
-              "term": "-0.31500614773461569"
+              "term": "0.0"
             }
           ],
           "beyond_substrate": false
         },
         "diag_below_cross": {
-          "q": "1.4178461745913474280810144146931675183454764074683",
+          "q": "1.4916867626700632702649887783056306250402229965568",
           "dominant_partition": [
             5,
             2,
@@ -335,8 +347,8 @@
             1
           ],
           "dominant_delta": -189,
-          "dominant_term": "1297.9618083983949",
-          "total": "-152.19422656786825",
+          "dominant_term": "-1.2287860278476678e-47",
+          "total": "-1.4546690873241535e-47",
           "top4": [
             {
               "partition": [
@@ -346,7 +358,7 @@
                 1
               ],
               "delta": -189,
-              "term": "1297.9618083983949"
+              "term": "-1.2287860278476678e-47"
             },
             {
               "partition": [
@@ -356,33 +368,31 @@
                 1
               ],
               "delta": 216,
-              "term": "-951.64070232769291"
+              "term": "6.6609609028447409e-48"
             },
             {
               "partition": [
-                3,
+                6,
                 2,
-                2,
-                1,
                 1
               ],
-              "delta": -162,
-              "term": "-371.12808906260980"
+              "delta": 105,
+              "term": "-4.5260730135047607e-48"
             },
             {
               "partition": [
                 5,
-                2,
-                2
+                3,
+                1
               ],
-              "delta": 120,
-              "term": "-329.60967375563183"
+              "delta": -162,
+              "term": "3.9598130782796333e-48"
             }
           ],
           "beyond_substrate": true
         },
         "diag_above_cross": {
-          "q": "1.5055479998238019081684998424061469524699388656622",
+          "q": "1.5839560469589331632710705584070098389602367901583",
           "dominant_partition": [
             5,
             2,
@@ -390,8 +400,8 @@
             1
           ],
           "dominant_delta": -189,
-          "dominant_term": "8874.5457753814225",
-          "total": "799.79376328789593",
+          "dominant_term": "2.3820740515993032e-46",
+          "total": "1.9644825558102666e-46",
           "top4": [
             {
               "partition": [
@@ -401,7 +411,16 @@
                 1
               ],
               "delta": -189,
-              "term": "8874.5457753814225"
+              "term": "2.3820740515993032e-46"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "-1.3603216943075918e-46"
             },
             {
               "partition": [
@@ -411,28 +430,16 @@
                 1
               ],
               "delta": 216,
-              "term": "-6658.2921125474243"
-            },
-            {
-              "partition": [
-                3,
-                2,
-                2,
-                1,
-                1
-              ],
-              "delta": -162,
-              "term": "-4308.3058749309837"
+              "term": "-1.2254599101893575e-46"
             },
             {
               "partition": [
                 4,
-                2,
-                2,
+                4,
                 1
               ],
-              "delta": -216,
-              "term": "1991.3999887867813"
+              "delta": 84,
+              "term": "7.0097606989195824e-47"
             }
           ],
           "beyond_substrate": true
@@ -442,32 +449,14 @@
         "q_lo": {
           "q": "1.0001",
           "dominant_partition": [
-            6,
-            2,
+            7,
+            1,
             1
           ],
-          "dominant_delta": 105,
-          "dominant_term": "-0.00023987232890051432",
-          "total": "-0.00040590713943643502",
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
           "top4": [
-            {
-              "partition": [
-                6,
-                2,
-                1
-              ],
-              "delta": 105,
-              "term": "-0.00023987232890051432"
-            },
-            {
-              "partition": [
-                4,
-                3,
-                2
-              ],
-              "delta": -168,
-              "term": "-8.7541900623410228e-5"
-            },
             {
               "partition": [
                 7,
@@ -475,7 +464,16 @@
                 1
               ],
               "delta": -28,
-              "term": "6.8124691434531909e-5"
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
             },
             {
               "partition": [
@@ -485,7 +483,16 @@
                 1
               ],
               "delta": 56,
-              "term": "-6.7968280850463692e-5"
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
             }
           ],
           "beyond_substrate": false
@@ -493,22 +500,22 @@
         "q0": {
           "q": "1.1099785827513808075916690956107688798744991218736",
           "dominant_partition": [
-            5,
-            3,
+            7,
+            1,
             1
           ],
-          "dominant_delta": -162,
-          "dominant_term": "-1.2225744798401582",
-          "total": "-2.8064582609621747",
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
           "top4": [
             {
               "partition": [
-                5,
-                3,
+                7,
+                1,
                 1
               ],
-              "delta": -162,
-              "term": "-1.2225744798401582"
+              "delta": -28,
+              "term": "0.0"
             },
             {
               "partition": [
@@ -517,39 +524,40 @@
                 1
               ],
               "delta": 105,
-              "term": "-0.48021441881848742"
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": "0.0"
             },
             {
               "partition": [
                 5,
-                2,
-                2
-              ],
-              "delta": 120,
-              "term": "-0.43102612590525156"
-            },
-            {
-              "partition": [
-                4,
                 3,
-                2
+                1
               ],
-              "delta": -168,
-              "term": "-0.38779365373231442"
+              "delta": -162,
+              "term": "0.0"
             }
           ],
           "beyond_substrate": false
         },
         "diag_below_cross": {
-          "q": "1.3856619437184677386255874356129108736288299989522",
+          "q": "1.4916867626700632702649887783056306250402229965568",
           "dominant_partition": [
             5,
             3,
             1
           ],
           "dominant_delta": -162,
-          "dominant_term": "-1090.6102538245160",
-          "total": "-236.77246491546416",
+          "dominant_term": "-6.8352072806009905e-47",
+          "total": "-3.0347581082130851e-47",
           "top4": [
             {
               "partition": [
@@ -558,7 +566,7 @@
                 1
               ],
               "delta": -162,
-              "term": "-1090.6102538245160"
+              "term": "-6.8352072806009905e-47"
             },
             {
               "partition": [
@@ -567,17 +575,16 @@
                 1
               ],
               "delta": 105,
-              "term": "489.62916746484310"
+              "term": "4.7418997541071746e-47"
             },
             {
               "partition": [
-                4,
-                2,
-                2,
+                7,
+                1,
                 1
               ],
-              "delta": -216,
-              "term": "408.10150489090102"
+              "delta": -28,
+              "term": "-4.8194462342888723e-48"
             },
             {
               "partition": [
@@ -587,21 +594,21 @@
                 1
               ],
               "delta": -189,
-              "term": "308.17429569628719"
+              "term": "-3.9501940074232043e-48"
             }
           ],
           "beyond_substrate": true
         },
         "diag_above_cross": {
-          "q": "1.4713729917835275987467577924549465977708194834234",
+          "q": "1.5839560469589331632710705584070098389602367901583",
           "dominant_partition": [
             5,
             3,
             1
           ],
           "dominant_delta": -162,
-          "dominant_term": "-5341.8656873864390",
-          "total": "1330.7899698548445",
+          "dominant_term": "1.4551118057787238e-45",
+          "total": "4.6118723810346767e-46",
           "top4": [
             {
               "partition": [
@@ -610,17 +617,7 @@
                 1
               ],
               "delta": -162,
-              "term": "-5341.8656873864390"
-            },
-            {
-              "partition": [
-                4,
-                2,
-                2,
-                1
-              ],
-              "delta": -216,
-              "term": "3096.0555659826479"
+              "term": "1.4551118057787238e-45"
             },
             {
               "partition": [
@@ -629,18 +626,25 @@
                 1
               ],
               "delta": 105,
-              "term": "2580.5146069126899"
+              "term": "-1.1356798202458235e-45"
+            },
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "8.7478629318896877e-47"
             },
             {
               "partition": [
                 4,
-                2,
-                1,
-                1,
+                4,
                 1
               ],
-              "delta": -189,
-              "term": "2316.5331615271313"
+              "delta": 84,
+              "term": "-5.5330416273127576e-47"
             }
           ],
           "beyond_substrate": true
@@ -649,27 +653,31 @@
     },
     "character_free_companion": {
       "6": {
-        "G_at_qlo": "-0.0000045645320673712437381628104418350135534904143068931",
-        "G_at_q0": "0.016357557243199131523558731245683684415842591437191",
-        "crossings_below_or_at_q0": [
-          "1.0244472398757906988799921267889973727337115242603"
-        ],
-        "diagnostic_crossings_above_q0": []
-      },
-      "9": {
-        "G_at_qlo": "-0.000030739207709852205963113129838381893389524441081502",
-        "G_at_q0": "-0.022912412753569795615575419874560498334809455241783",
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
         "crossings_below_or_at_q0": [],
         "diagnostic_crossings_above_q0": [
-          "2.1089060100590039642974771174430443244346590551395"
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.281088405512693401518964971020498741009823189621"
+        ]
+      },
+      "9": {
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.281088405512693401518964971020498741009823189621"
         ]
       },
       "12": {
-        "G_at_qlo": "0.000080523901885255815434724291782443890824693416840982",
-        "G_at_q0": "0.018010744723102994492168200995711225684309963060924",
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
         "crossings_below_or_at_q0": [],
         "diagnostic_crossings_above_q0": [
-          "1.5974231842569155565113284728378883095259406108665"
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.1696373954770069350851352151943160431734025274144",
+          "2.281088405512693401518964971020498741009823189621"
         ]
       }
     },

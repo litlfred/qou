@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:37.070098+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T16:41:09.934845+00:00",
+  "commitSha": "52f887ce7bd432ece74f5853cee770cb13f37dfe",
   "assertions": [
     {
       "name": "two_I_burnside_check",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "gap-a4-T9-klein-mckay-scaffold-probe",
   "scriptFile": "gap_a4_T9_klein_mckay_scaffold_probe.py",
   "scriptHash": "82ae18a96ee1",
@@ -46,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -60,12 +60,12 @@
   "description": "GAP-A-4 T9 \u2014 scaffold for Klein-invariant / McKay-E_8 / Bring direction.  After T5\u2013T8 refuted 5 q-Schur / RT candidates, T9 sets up the non-Schur-Weyl alternative: tabulates the 2I/\u00ca_8 irrep dims + Klein degree triple (12,20,30) + queues 3 concrete open sub-questions (T10 McKay-character / T11 Klein-J / T12 Bring-discriminant).  NO derivation proposed here \u2014 formalize-first discipline prohibits a 6th ansatz.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "discipline": "EXPLORATORY-SCAFFOLD",
     "production_wired": false,
-    "q_0_recorded_for_followups": 1.1099785955573347,
+    "q_0_recorded_for_followups": 1.1099785827513808,
     "mckay_e8_2I": {
       "two_i_irrep_dims": [
         1,
@@ -132,9 +132,8 @@
         }
       ]
     },
-    "synthesis_verdict": "T9 sets up the non-Schur-Weyl direction structurally without proposing a derivation.  The dim-5 irrep H of A_5 sits at the unique dim-5 node of affine \u00ca_8 in the McKay correspondence \u2014 a canonical position that the q-Schur picture (T8 refuted) does not see.  The Klein degree triple (12, 20, 30) encodes the icosahedral orbit structure on \u2102P\u00b9 via (|G|/stab) for the three special orbit types (vertices, faces, edges).  Three concrete follow-up sub-questions are queued: T10 (McKay-character h\u2074 via 2I), T11 (Klein J-invariant h-expansion \u2014 highest tractability), T12 (Bring quintic discriminant). Per formalize-first discipline, NO derivation of h\u2074 = \u22123/4 is claimed here \u2014 that would be the 6th ansatz the discipline review catches.  T9 just tabulates the canonical icosahedral data and pins the open questions."
+    "synthesis_verdict": "T9 sets up the non-Schur-Weyl direction structurally without proposing a derivation.  The dim-5 irrep H of A_5 sits at the unique dim-5 node of affine Ê_8 in the McKay correspondence — a canonical position that the q-Schur picture (T8 refuted) does not see.  The Klein degree triple (12, 20, 30) encodes the icosahedral orbit structure on ℂP¹ via (|G|/stab) for the three special orbit types (vertices, faces, edges).  Three concrete follow-up sub-questions are queued: T10 (McKay-character h⁴ via 2I), T11 (Klein J-invariant h-expansion — highest tractability), T12 (Bring quintic discriminant). Per formalize-first discipline, NO derivation of h⁴ = −3/4 is claimed here — that would be the 6th ansatz the discipline review catches.  T9 just tabulates the canonical icosahedral data and pins the open questions."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

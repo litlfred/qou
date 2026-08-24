@@ -60,7 +60,8 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Canonical substrate q0 — muon-anchored computations-layer value carried by
 # computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
-Q0 = mp.mpf("1.10997859555733471")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 H = Q0 - 1 / Q0
 QI = 1 / Q0
 Z = Q0**3 / (Q0**2 + 1)

@@ -1761,9 +1761,32 @@ class WitnessBuilder:
                 # 50-digit MUON value next to `independent`. It went unreported
                 # only because both filenames end in a suffix the anchor audit
                 # exempts, so the flip check never ran on them.
+                # GENERALISED 2026-08-24: `independent`/`comparison` were only
+                # the visible half. A `q0Value` must not ride forward whenever
+                # the NEW witness declares an anchor of ITS OWN -- muon and
+                # proton included -- because the stamping block above writes
+                # `q0Value` only inside `if "q0Anchor" not in payload`. A
+                # producer that states its own anchor therefore arrives here
+                # with no value, and this loop supplied the PREVIOUS run's.
+                # When the anchor changed between runs that pairs a fresh,
+                # correct label with the old label's number: a Q0_FLIP
+                # manufactured by the block that exists to prevent one.
+                #
+                # Measured on `confinement_b3_enumeration_recheck_probe`, whose
+                # committed witness came from a `QOU_Q0_ANCHOR=ideal` run: it
+                # went out `q0Anchor: proton` carrying the MUON 50-dps value,
+                # and `q0_anchor_consistency_audit` scored it Q0_FLIP. Neither
+                # half could be caught on its own -- the producer's label was a
+                # literal, so it could not disagree with itself.
+                #
+                # Leaving the field absent is the right failure: the anchor
+                # audit's Q0_ANCHOR_MISSING is tolerated and VISIBLE, whereas
+                # an inherited value is silently wrong. A producer that wants
+                # both states both (see `q0_stamp.pin_value_for_anchor`).
                 _forbids_value = witness.get("q0Anchor") in ("independent", "comparison")
+                _declares_anchor = "q0Anchor" in witness
                 for _k in ("q0Anchor", "q0Value", "q0AnchorReason"):
-                    if _k == "q0Value" and _forbids_value:
+                    if _k == "q0Value" and _declares_anchor:
                         continue
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]

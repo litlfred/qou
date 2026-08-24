@@ -10,9 +10,25 @@
    They are also rank-deficient min-norm fits (suspect per
    ``docs/audits/2026-06-16-unjustified-least-squares-fitting-audit.md``). The
    correct, non-fitted replacement is the closed-form **categorical** interface
-   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``
-   (``a_operator_categorical.py`` / ``a_operator_gauge_align.py``, verified exact
-   at 1e-49). Only the H_6 deuteron extract is full-rank/correct and live (A=2).
+   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``. **It is implemented at
+   ``a_operator_gauge_align.gauge_aligned_A_combiner_general(lam, n_inner,
+   n_block, q_str, dps)``** — which takes ``q_str``, so unlike the frozen
+   extracts here it can be built at ANY q (verified at q₀, at the bar image and
+   at q = 1.5). The closure-b design doc records the deuteron categorical A as
+   DONE, exact, 891/891 PASS at 1e-25.
+
+   NAVIGATION WARNING (bean ``qou-8chw``, 2026-08-24). Do NOT look for it at
+   ``a_operator_categorical.categorical_A_interface``: that is a **stale**
+   ``raise NotImplementedError`` stub with zero callers whose docstring still
+   calls the construction "the crux ~500 LOC". I read that stub, concluded the
+   replacement did not exist, and shipped a PR saying so — it took re-reading
+   the design doc to find the working function under a different name. The
+   stub should be removed or made to delegate.
+
+   Separately: the "1e-49" this paragraph used to quote is a *different*
+   result — the combiner identity at λ⊢12 / A=4 in ``a_operator_recursive.py``
+   — not a verification of the interface operator. The interface figure is the
+   1e-25 above. Only the H_6 deuteron extract is full-rank/correct and live (A=2).
    See ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
 
 Generalization of `sublemma_2_1_A_operator_extract_h9.py` (H_9-specific)

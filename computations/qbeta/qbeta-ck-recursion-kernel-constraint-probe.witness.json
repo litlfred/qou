@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:47:21.566314+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:12.129018+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "constant_depth2_refuted_both_anchors",
@@ -37,7 +37,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -54,18 +54,18 @@
     "anchors": [
       {
         "anchor": "proton",
-        "q": "1.10997859555733471989976322048322502665620840878015368660798",
-        "c_3": "-2.02018812814143945582016855395158353040793507291436033204141",
-        "a_1": "2.02018812814143945582016855395158353040793507291436033204141",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "c_3": "-2.06934257711516783787971951724962858902203099810343886691284",
+        "a_1": "2.06934257711516783787971951724962858902203099810343886691284",
         "a_2": "-1.00000000000000000000000000000000000000000000000000000000000",
-        "phi_2": "1.42848872468136986044015237489793322188182252328915538088143",
-        "a_1_via_sqrt2_phi2": "2.02018812814143945582016855395158353040793507291436033204141",
+        "phi_2": "1.46324616887618133101595626132628776444588125646036720700247",
+        "a_1_via_sqrt2_phi2": "2.06934257711516783787971951724962858902203099810343886691284",
         "bridge_err_a1_vs_sqrt2phi2": "0.0",
-        "c_4_predicted_constant_depth2": "-3.08116007308361300297737515096653848209165146133959032007729",
-        "c_4_predicted_closed_form_1_minus_c3sq": "-3.08116007308361300297737515096653848209165146133959032007729",
+        "c_4_predicted_constant_depth2": "-3.28217870146164434986433763460697411111000132711048267822581",
+        "c_4_predicted_closed_form_1_minus_c3sq": "-3.28217870146164434986433763460697411111000132711048267822581",
         "c_4_fitted": "-0.971570000000000000000000000000000000000000000000000000000000",
         "sign_match": true,
-        "rel_miss_to_fit": "2.17132072118695822532331705483551209083406389795855195207478",
+        "rel_miss_to_fit": "2.37822153983927493630344456354866258850108723726595374314338",
         "constant_depth2_refuted": true
       },
       {
@@ -88,6 +88,6 @@
     "verdict": "CONSTANT_DEPTH2_KERNEL_REFUTED",
     "interpretation": "The constant depth-2 kernel is over-determined: a_2=-1 (from c_2 via f_0=1), a_1=-c_3 (from c_3 via f_1=0), leaving c_4=1-c_3² as a falsifiable prediction. It fails. The surviving constraints on the open kernel: depth ≥ 2; leading coefficient a_1 = -c_3 = √2·Φ_2 (the #1887 Φ_2 target, bar-ODD per the Reeb-sinh parity wall). These prune the SW-residue/Hoefsmit kernel search (#1871) without deriving it."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

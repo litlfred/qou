@@ -469,6 +469,60 @@ def native_entry_disposition(src: str) -> str:
     return "harmless"
 
 
+# A witness name only counts as a READ when it sits on a line that also does
+# something file-like with it. Without this, prose mentioning the witness
+# ("committed <name>.witness.json numbers …") reads as a consumer.
+_READER_IDIOMS = ("/", "Path(", "open(", "load", "read_text",
+                  "upstream", "witness.json\"", "witness.json'")
+
+_WITNESS_NAME = re.compile(r"""WitnessBuilder\(\s*[fr]?["']([^"']+)["']""")
+
+
+def native_entry_propagates(path: str, corpus: dict) -> bool | None:
+    """Does this module's witness get READ by another module?
+
+    The third gate, and the one that shrinks the list most. "Serialises wide
+    from an f64 value" is necessary but NOT sufficient: a TERMINAL probe whose
+    witness nothing reads publishes precision it does not have — a
+    documentation defect — while a witness another producer consumes carries
+    the f64 floor onward into that producer's numbers.
+
+    Both are worth fixing; only the second is worth fixing FIRST, and only the
+    second justifies the ~10-30x cost of the MPFR path.
+
+    Returns None when no `WitnessBuilder(...)` name is found (nothing to
+    decide).
+
+    A bare substring match is NOT enough, and this is the same string-literal
+    trap that made an earlier census of this class report 120 sites against a
+    true 71. Measured on the five sites this gate first reported as
+    propagating, one was a false positive:
+    `fr_pullback_borromean_h3a_test.py:501` mentions
+    `"committed fr-pullback-k3-test.witness.json numbers ..."` inside a
+    `"note":` string — prose about the witness, not a read of it. So the
+    occurrence must also sit on a line carrying a reader idiom.
+    """
+    try:
+        src = (ROOT / path).read_text(encoding="utf-8")
+    except OSError:
+        return None
+    names = _WITNESS_NAME.findall(src)
+    if not names:
+        return None
+    for nm in names:
+        # `WitnessBuilder(f"atom-chi-rust-{atom.lower()}")` -> "atom-chi-rust"
+        stem = nm.split("{")[0].strip("-")
+        if len(stem) < 4:
+            continue
+        for other, text in corpus.items():
+            if other == path:
+                continue
+            for line in text.splitlines():
+                if stem in line and any(k in line for k in _READER_IDIOMS):
+                    return True
+    return False
+
+
 def native_f64_entry_calls(tree: ast.AST) -> list:
     """[(line, "fn -> fn_mpfr")] for calls to an f64 native entry that has an
     exact sibling.
@@ -878,10 +932,44 @@ def main() -> int:
         v = split[k]
         print(f"      {k:11s} {len(v):3d} file(s) {sum(n for _, n in v):3d} "
               f"site(s)  — {why}")
-    print("      ACTIONABLE candidates (a proxy, not a verdict — confirm "
-          "per site):")
+    # Third gate, applied to the actionable bucket only — it needs the whole
+    # corpus in memory, so it is not worth doing for the other two.
+    corpus = {}
+    for q in ROOT.rglob("*.py"):
+        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(q.parts):
+            continue
+        try:
+            corpus[q.relative_to(ROOT).as_posix()] = q.read_text(
+                encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+    prop, term = [], []
     for path, n in sorted(split["actionable"]):
-        print(f"        {n}x  {path}")
+        (prop if native_entry_propagates(path, corpus) else term).append(
+            (path, n))
+    print(f"      of the actionable: {len(prop)} PROPAGATE (their witness is "
+          f"read by another module), {len(term)} are TERMINAL.")
+    print("      Fix the propagating ones FIRST — they carry the f64 floor "
+          "into another\n"
+          "      producer's numbers. A terminal probe publishing 50 digits of "
+          "a 15-digit\n"
+          "      value is a documentation defect: worth fixing, not worth the "
+          "10-30x MPFR\n"
+          "      cost ahead of these.")
+    for path, n in prop:
+        print(f"        PROPAGATES  {n}x  {path}")
+    for path, n in term:
+        print(f"        terminal    {n}x  {path}")
+    print("      HALF-FIX WARNING for the `fr_pullback_*` / "
+          "`binding_depth_stratified_*` family:\n"
+          "      `mass_at_3A_proper.dim_q` and `qfac` return Python FLOATS "
+          "(`math.prod` over\n"
+          "      f64 `q_int`), and `dim_q` multiplies into every weight there "
+          "— so swapping\n"
+          "      the Rust entry to MPFR alone leaves the result f64-capped. "
+          "8 modules import\n"
+          "      them. An mpmath equivalent exists at "
+          "`delta_lambda_empirical_tabulation.dim_q_at_q0`.")
 
     # Counted over ALL rows: a file whose headline tier is F64_CAST can still
     # carry display casts, and those must not land in the defect count.
