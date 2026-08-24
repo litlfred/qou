@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-08-24T08:44:35Z
+updated_at: 2026-08-24T11:30:53Z
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -294,3 +294,40 @@ the 6x6 table — two routes, same vector.
 
 REMAINING: the bridge lemma above (item 2 proper); item 3 Delta_lambda drift;
 item 4 the A=3 mirror pair.
+
+
+## Item 2 DONE (PR #5618) — bridged, not renamed
+
+Three sorry-free theorems now tie both hand-written 6x6 tables to
+`QOU.Machinery.H3.gramMatrix (z h)`:
+
+    gramMatrixD_eq_general : gramMatrixD q = H3.gramMatrix (q^3/(q^2+1)) (q - q^-1)
+    gramMatrix_eq_general  : gramMatrix  u = H3.gramMatrix (u/(u^2+1)) (u^2 - (u^2)^-1)
+    gramMatrixD_det_eq_zero_via_general
+
+**The bean asked for the wrong thing and this is the correction.** It proposed
+renaming the C declarations and promoting D. Three 6x6 objects existed and
+nothing checked they agreed; a rename would have left that gap open. Bridging
+closes it -- a future edit to either table that breaks agreement now fails to
+compile.
+
+lean-direct exit 0 on the whole file (3m16s, FASTER than the 4m43s baseline);
+#print axioms clean on all three; 0 sorry terms. Both bridges verified exactly
+in sympy (36/36, both frames) before any Lean was written.
+
+**Reusable tactic finding.** `simp only` with a hand-picked Matrix.cons set
+leaves the RHS an unreduced vecCons tower for any index above 1, and TIMES OUT
+at 6.4M heartbeats rather than failing cleanly -- so the symptom looks like "too
+hard" when it is actually "wrong lemma set". Plain `simp` with the three defs
+closes all 36 goals and is an order of magnitude faster.
+
+Two process notes:
+  - I dropped `Matrix.head_cons` on an "unused simp argument" linter hint. The
+    hint was right for the entry it fired on and wrong for the other 35. A
+    per-goal linter verdict is not a per-theorem one.
+  - Iterating on the 750-line file cost 9 min/round; extracting the two tables
+    into a scratch file cut it to 17-36 s. Do that FIRST, not fourth.
+
+REMAINING on this bean: item 3 (Delta_lambda residual drift), item 4 (the A=3
+mirror pair that fails to cancel while A=7 cancels exactly). Neither touches the
+convention work, so this bean's convention thread is now closed.
