@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T11:05:00Z
+updated_at: 2026-08-24T13:20:00Z
 updated_at: 2026-08-24T02:55:00Z
 ---
 
@@ -1221,3 +1221,70 @@ visible-not-fatal criterion applied throughout `qou-i5jy`.
 
 **This is the fix that would have caught me**, and it is now in the tree rather
 than in a recommendation.
+
+---
+
+## The 3 pre-existing envelope-vs-payload mismatches, diagnosed
+
+The new `envelope_vs_payload` check found 3 beyond my own 6. Each is a different
+defect, not three of one kind.
+
+### 1. `computations/probes/casimir-macdonald-probe.witness.json` — the clean twin of mine
+
+```
+q0Anchor "muon"   q0Value 1.109978595557334719899763   (muon-A)
+parameters.substrate_q = 1.1099785827513808              (PROTON)
+```
+
+Same shape as the six I introduced: envelope self-consistent, the one q₀ the
+probe actually used is the proton pin. Producer `casimir_macdonald_probe.py`.
+Nothing else in the payload is muon.
+
+### 2. `computations/derivation-chain-audit.witness.json` — an audit, and narrower
+
+```
+q0Anchor "muon"   q0Value muon-A
+data.chain_results[36].target_value   = 1.1099785827513808   (PROTON)
+data.chain_results[36].computed_value = 1.1099785827513808   (PROTON)
+```
+
+Only **one** chain step out of many carries q₀-shaped values, and both its legs
+are proton while the envelope says muon. Producer `derivation_chain_validator.py`.
+Milder than (1): the witness is an audit report over many steps, and the envelope
+is describing the validator's own anchor rather than each step's. Worth a label,
+probably not a regeneration.
+
+### 3. `computations/h4-form-AB-cross-anchor-stability.witness.json` — THREE defects at once
+
+```
+q0Anchor "proton"   q0Value 1.109978582751380807591669   (PROTON — envelope correct)
+parameters.q_proton = 1.109978595557334719899763          (muon-A)   ← mislabelled
+data.q_muon         = 1.109978595554180575281594          (muon-B)
+```
+
+- The **envelope is right** and the payload contains **no proton value at all** —
+  which is why it trips in the opposite direction from every other hit.
+- `parameters.q_proton` holds **muon-A**: the payload mislabel this bean has been
+  tracking all along.
+- Its two "cross-anchor" legs are **muon-A vs muon-B** — a 3.15e-12 muon-to-muon
+  gap presented as the 11.5 ppb muon-to-proton one. **The fourth independent
+  instance of the degenerate-comparison pattern**, after the qbeta batch and
+  `habiro_interpolation_wlambda`.
+
+This is the file this bean excluded from regeneration because its header says
+*"This probe is preserved as-is by design"*. That exclusion still stands — but it
+should now be recorded as preserving an artefact whose stability result rests on
+comparing an anchor with itself, not as preserving a clean historical datum. Its
+`ANCHOR NOTE` was already flagged here for calling the muon value "the CURRENT
+canonical proton q0"; the payload matches that note rather than the file's own
+docstring, so the note is not merely stale prose — the numbers followed it.
+
+### Disposition
+
+| witness | class | action |
+|---|---|---|
+| `casimir-macdonald-probe` | same as my 6 | regenerate or re-stamp with the 11 producers |
+| `derivation-chain-audit` | audit-level label | label; likely no regeneration |
+| `h4-form-AB-cross-anchor-stability` | **preserved artefact, degenerate comparison** | leave; annotate that its stability claim is muon-vs-muon |
+
+None of the three is mine, and none was visible to any check before today.
