@@ -87,6 +87,23 @@ theorem one_sub_pow_eq_mul_levelBracket (r : ℕ) (Q : R) :
     rw [hstep, mul_add, ← ih]
     ring
 
+/-- A `Q` that is not a root of unity is not `1`. -/
+theorem ne_one_of_gen {Q : R} (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) : Q ≠ 1 :=
+  fun h => hgen 1 one_ne_zero (by rw [h]; simp)
+
+/-- **The level bracket is nonzero under genericity.**
+
+`[r]_Q = 0` would make `1 − Q^r = (1 − Q)·[r]_Q` vanish, i.e. `Q^r = 1` with `r ≠ 0`.  So the `hbr`
+side condition carried separately through the level-`r` chain is *implied* by `hgen`, and the chain
+runs on one genericity assumption rather than two. -/
+theorem levelBracket_ne_zero_of_gen {Q : R} {r : ℕ}
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hr : r ≠ 0) : levelBracket r Q ≠ 0 := by
+  intro h
+  have h1 : (1 : R) - Q ^ r = (1 - Q) * levelBracket r Q :=
+    one_sub_pow_eq_mul_levelBracket r Q
+  rw [h, mul_zero, sub_eq_zero] at h1
+  exact hgen (r : ℤ) (by exact_mod_cast hr) (by rw [zpow_natCast, ← h1])
+
 /-! ## The normalised weight -/
 
 /-- **The normalised Wenzl weight at level `r`.**
@@ -139,6 +156,37 @@ theorem wenzlMarkovParam_eq (r : ℕ) (Q : R) (hbr : levelBracket r Q ≠ 0) (hQ
     Q ^ r * (1 - Q) / (1 - Q ^ r) = Q ^ r / levelBracket r Q := by
   rw [one_sub_pow_eq_mul_levelBracket r Q]
   field_simp
+
+/-! ## Recovering the level from the parameter -/
+
+/-- Wenzl's parameter relation holds at `z_W = Q^r / [r]_Q`, in the denominator-cleared form
+`QBeta.WenzlWeight.level_unique_of_markovParameter` consumes. -/
+theorem wenzlMarkovParam_spec {Q : R} {r : ℕ} (hbr : levelBracket r Q ≠ 0) :
+    Q ^ r / levelBracket r Q * (1 - Q ^ r) = Q ^ r * (1 - Q) := by
+  rw [one_sub_pow_eq_mul_levelBracket r Q]
+  field_simp
+
+/-- **Equal level-`r` Markov parameters force equal levels.**
+
+The `q` of `z_r = Q^r/(q·[r]_Q)` is the Hecke-normalisation shift; clearing it lands on Wenzl's
+`Q^r/[r]_Q`, where `level_unique_of_markovParameter` applies. -/
+theorem level_unique_of_wenzlMarkovParam_eq {q : R} (hq0 : q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : R)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
+    (h : (q ^ 2) ^ r / (q * levelBracket r (q ^ 2))
+        = (q ^ 2) ^ s / (q * levelBracket s (q ^ 2))) : r = s := by
+  have hbr : levelBracket r (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hr
+  have hbs : levelBracket s (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hs
+  have e : ∀ t : ℕ, (q ^ 2) ^ t / (q * levelBracket t (q ^ 2))
+      = (q ^ 2) ^ t / levelBracket t (q ^ 2) / q := fun t => by rw [mul_comm, div_div]
+  rw [e r, e s] at h
+  have key : (q ^ 2) ^ r / levelBracket r (q ^ 2) = (q ^ 2) ^ s / levelBracket s (q ^ 2) := by
+    have h2 := congrArg (fun x : R => x * q) h
+    simp only at h2
+    rwa [div_mul_cancel₀ _ hq0, div_mul_cancel₀ _ hq0] at h2
+  refine QOU.QBeta.WenzlWeight.level_unique_of_markovParameter (pow_ne_zero 2 hq0) hgen
+    (wenzlMarkovParam_spec hbr) ?_
+  rw [key]
+  exact wenzlMarkovParam_spec hbs
 
 /-! ## Conservativity: at `r = 2`, `Q = q²` this is the convention-D object -/
 

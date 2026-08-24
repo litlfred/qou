@@ -63,9 +63,14 @@ readable off a single value `tr₁(σ₀)`.
 
 ## Base ring (§7c)
 
-`ℝ` for everything touching `seminormalRep` / `seminormalParam`; the two purely algebraic lemmas
-(`ne_one_of_gen`, `levelBracket_ne_zero_of_gen`) are generic `[Field R]`, and
-`MarkovTraceFamily.param_eq` is generic `[CommRing K]`.
+`ℝ` throughout, forced by `seminormalRep` / `seminormalParam`.  The generic content this file
+first carried has been moved to where it belongs, so that the substrate→archimedean wall of §7c
+falls on a **file** boundary: `ne_one_of_gen`, `levelBracket_ne_zero_of_gen`,
+`wenzlMarkovParam_spec` and `level_unique_of_wenzlMarkovParam_eq` are generic `[Field R]` in
+`WenzlWeightLevelR`, and `MarkovTraceFamily.param_eq` is generic `[CommRing K]` in
+`MarkovTraceUnique`.  Note the last of those is *stronger* for having moved: stated over `ℝ` it
+looked like a fact about this trace, and it is a fact about any Markov trace family over any
+commutative ring.
 
 LaTeX label: `thm:wenzl-markov-trace-instance`
 -/
@@ -73,46 +78,6 @@ LaTeX label: `thm:wenzl-markov-trace-instance`
 namespace QOU.SchurWeyl
 
 open YoungDiagram Finset
-
-/-! ## Genericity supplies the side conditions the weight needs -/
-
-variable {R : Type*} [Field R]
-
-/-- A `Q` that is not a root of unity is not `1`. -/
-theorem ne_one_of_gen {Q : R} (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) : Q ≠ 1 :=
-  fun h => hgen 1 one_ne_zero (by rw [h]; simp)
-
-/-- **The level bracket is nonzero under genericity.**
-
-`[r]_Q = 0` would make `1 − Q^r = (1 − Q)·[r]_Q` vanish, i.e. `Q^r = 1` with `r ≠ 0`.  So the `hbr`
-hypothesis carried separately through `WenzlNormalisation` is *implied* by `hgen`, and the level-`r`
-chain runs on one genericity assumption rather than two. -/
-theorem levelBracket_ne_zero_of_gen {Q : R} {r : ℕ}
-    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hr : r ≠ 0) : levelBracket r Q ≠ 0 := by
-  intro h
-  have h1 : (1 : R) - Q ^ r = (1 - Q) * levelBracket r Q :=
-    one_sub_pow_eq_mul_levelBracket r Q
-  rw [h, mul_zero, sub_eq_zero] at h1
-  exact hgen (r : ℤ) (by exact_mod_cast hr) (by rw [zpow_natCast, ← h1])
-
-/-! ## The parameter is recoverable from the family -/
-
-namespace HeckeCoset
-
-variable {K : Type*} [CommRing K] {q qi z : K}
-
-/-- **The Markov parameter is a value of the trace**, namely `z = tr₁(σ₀)`.
-
-Take `x = 1` in the Markov axiom: `tr₁(ι(1)·σ₀) = z · tr₀(1) = z`.  Two Markov trace families whose
-underlying `tr` agree therefore carry the *same* parameter — which is what lets `markovTrace_unique`
-(one `z`, one trace) be used in the other direction. -/
-theorem MarkovTraceFamily.param_eq (T : MarkovTraceFamily K q qi z) :
-    T.tr 1 (Hecke.σ K q qi 1 (Fin.last 0)) = z := by
-  have h := T.tr_markov 0 (1 : Hecke K q qi 0)
-  rw [map_one, one_mul, T.tr_one] at h
-  rw [h, mul_one]
-
-end HeckeCoset
 
 /-! ## Any weight system with the three properties is a Markov trace -/
 
@@ -303,30 +268,6 @@ end SeminormalRep
 
 /-! ## The level is a functional invariant of the trace -/
 
-/-- Wenzl's parameter relation holds at `z_W = Q^r / [r]_Q`. -/
-theorem wenzlMarkovParam_spec {Q : R} {r : ℕ} (hbr : levelBracket r Q ≠ 0) :
-    Q ^ r / levelBracket r Q * (1 - Q ^ r) = Q ^ r * (1 - Q) := by
-  rw [one_sub_pow_eq_mul_levelBracket r Q]
-  field_simp
-
-/-- **Equal level-`r` Markov parameters force equal levels.**
-
-The `q` of `z_r = Q^r/(q·[r]_Q)` is the Hecke-normalisation shift; clearing it lands on Wenzl's
-`Q^r/[r]_Q`, where `level_unique_of_markovParameter` applies. -/
-theorem level_unique_of_wenzlMarkovParam_eq (q : ℝ) (hq0 : q ≠ 0)
-    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
-    (h : (q ^ 2) ^ r / (q * levelBracket r (q ^ 2))
-        = (q ^ 2) ^ s / (q * levelBracket s (q ^ 2))) : r = s := by
-  have hbr : levelBracket r (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hr
-  have hbs : levelBracket s (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hs
-  have key : (q ^ 2) ^ r / levelBracket r (q ^ 2) = (q ^ 2) ^ s / levelBracket s (q ^ 2) := by
-    field_simp at h ⊢
-    linarith [h]
-  refine QOU.QBeta.WenzlWeight.level_unique_of_markovParameter (pow_ne_zero 2 hq0) hgen
-    (wenzlMarkovParam_spec hbr) ?_
-  rw [key]
-  exact wenzlMarkovParam_spec hbs
-
 /-- **Distinct levels give distinct traces.**
 
 If the level-`r` and level-`s` weighted seminormal traces agree on every `H_n(q)` — indeed, if they
@@ -346,7 +287,7 @@ theorem level_unique_of_wenzlMarkovTrace_eq (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^
   have hps := (SeminormalRep.wenzlMarkovTrace q hq0 hq2 hgen hs).param_eq
   rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hr] at hpr
   rw [SeminormalRep.wenzlMarkovTrace_tr q hq0 hq2 hgen hs] at hps
-  exact level_unique_of_wenzlMarkovParam_eq q hq0 hgen hr hs (by rw [← hpr, ← hps]; exact h)
+  exact level_unique_of_wenzlMarkovParam_eq hq0 hgen hr hs (by rw [← hpr, ← hps]; exact h)
 
 /-! ## Over `ℝ` the genericity hypothesis is not a restriction -/
 
