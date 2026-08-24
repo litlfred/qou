@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T16:15:24Z
-updated_at: 2026-08-24T16:35:42Z
+updated_at: 2026-08-24T17:16:49Z
 ---
 
 ## Not a new class — a RECURRENCE of the one `producer_upstream_edge_gap_audit`
@@ -201,3 +201,36 @@ Recommend: fix the 2 at the READER (one change, zero regenerations), and the
 "52" retracted, and now this. The pattern in all three: a detector that
 encodes what I expected the code to look like rather than what it does. Guard
 cases now in the self-tests (19/19) rather than in commit messages.
+
+
+## BLOCKER for the 19 regenerations: this container's native build does not match
+
+Found while running the gates for the correction PR (#5683).
+`witness_provenance_audit.py --strict` refused to write:
+
+    this container would record LESS than the witness on disk — downgraded
+    pyhecke_native_build 30fd920c241a54fa -> b843d058d29dcec6. The file was NOT
+    modified and its stronger environment block was kept. ... but any OTHER
+    witness you regenerate here will carry the weaker record, so install the
+    missing libraries before a batch run.
+
+The guard worked — nothing weaker was committed. But its warning is the
+operative fact for this bean's remaining work: **the 19 `ATTACHED_TOO_EARLY`
+fixes each require a producer re-run, and a re-run in this container stamps
+the weaker `pyhecke_native_build`.** Do not start that batch until the
+extension is rebuilt to match, or every one of the 19 trades an upstream-edge
+fix for an environment-provenance regression.
+
+The container was recycled on session resume, which is when the hash changed.
+Worth checking whether `maturin build --release` from `tools/pyhecke-native/`
+reproduces `30fd920c241a54fa` or yields a third hash — if the build is not
+reproducible, this guard will fire on every fresh container and the corpus's
+recorded value is unreachable rather than merely missing. That is a different
+problem and would need its own decision.
+
+Separately, a process note from the same run: my first regeneration attempt
+ran the audit **without `--strict`** while the committed copy was produced
+with it, which degraded the `invocation` block (`reproduce` lost the flag).
+Reverted and re-run correctly. **Match the committed invocation, not just the
+environment** — the witness records how it was produced, and a weaker command
+line is a weaker record even when every number is identical.
