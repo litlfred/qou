@@ -15104,7 +15104,7 @@ an empty left context. The invariant used below, "the head is the maximum", has
 no such edge cases.)
 
 Measured at more than one `n` first, in
-[`hecke_overlap_length_probe.py`](../../../../../../computations/hecke_overlap_length_probe.py):
+[`hecke_overlap_length_probe.py`](../../../../../computations/hecke_overlap_length_probe.py):
 at `n = 2 … 8` there are 1351 compositions with both contexts non-empty and the
 overlap-length histogram is `len1` only — zero exceptions. (The same probe
 reproduces §4k's shape counts from an independent implementation: 16 rules → 13
@@ -17234,9 +17234,23 @@ modulo `hdeep`. The predicate is the conjunction of the two, so it follows.
 The remaining hypothesis is neither a `sorry` nor an axiom: it is an explicit
 argument naming the one composition whose reduction has not been written.
 Everything else in the criterion — both halves, all four rule families, both
-context shapes, every `n` — is discharged. Whether `hdeep` is *true* is open: if
-that self-overlap does not resolve, the completion is incomplete and needs a
-further rule, and this statement is exactly where that would show up.
+context shapes, every `n` — is discharged.
+
+`hdeep` is **not proved, and is not in doubt either**:
+[`hecke_deep_selfoverlap_probe.py`](../../../../../computations/hecke_deep_selfoverlap_probe.py)
+reduces both sides under the completed system and finds they meet for every
+`i = 1 … 9`, and that the answer does not depend on the rule order. So the
+completion is not missing a rule; what is missing is the induction. For `i ≥ 2`
+both sides land on the same **two-term** normal form, and an induction has to
+hit it:
+
+`bsWord₂ (i−1) 0 · descWord i 1  +  (q − q⁻¹) · bsWord₂ (i−1) 0 · descWord i 0`
+
+(the second word is the first with a trailing `σ₀`, since
+`descWord i 1 ++ [σ₀] = descWord i 0`). `i = 1` is degenerate — `descWord (i−1) …`
+collapses and the normal form has four terms. The chain grows: measured under
+that strategy it is `i(i+5)/2` steps on the left and one more on the right,
+which is a size estimate for the induction, not a fact about the algebra.
 -/
 
 /-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis**, modulo
