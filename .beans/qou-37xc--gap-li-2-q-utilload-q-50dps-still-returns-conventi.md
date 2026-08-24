@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T11:19:46Z
-updated_at: 2026-08-24T20:14:10Z
+updated_at: 2026-08-24T20:27:44Z
 ---
 
 The largest remaining convention-C site (`qou-cds1`, PR #5622). **Not attempted
@@ -298,3 +298,31 @@ settle it -- its durationMs is 4586 (4.6 s, so not the code being run) and its
 only commit is f9ad94d750, the shallow-clone boundary, so its vintage is
 unknowable. Isolation run in flight: mass_at_3A_proper.py reverted to the merge
 commit 92311f8860 and NOTHING else changed.
+
+PARTIAL ATTRIBUTION, 2026-08-24, while the isolation run is still on T.
+
+The isolation run (mass_at_3A_proper.py reverted to merge commit 92311f8860,
+nothing else changed) has completed its A=2 atom. D is IDENTICAL to the patched
+run in every printed digit:
+
+  patched   D 2 T1+T2 atom= 2.8186 T3= +0.8847 | free= 4.0669 T3= +1.5874 |
+              B(T1+T2)= 0.977 MeV (r=0.439) B(+T3)= 1.526 MeV (r=0.686)
+  unpatched D 2 T1+T2 atom= 2.8186 T3= +0.8847 | free= 4.0669 T3= +1.5874 |
+              B(T1+T2)= 0.977 MeV (r=0.439) B(+T3)= 1.526 MeV (r=0.686)
+
+This is not merely 'looks the same'. The disputed movement is up to 1.609e-04
+RELATIVE, which on 2.8186 is 4.5e-04 ABSOLUTE — it would print as 2.8190, not
+2.8186. So at A=2 the patch cannot be producing anything of that magnitude.
+
+That points at the committed witness, not the patch. Consistent with what is
+already known about it: durationMs 4586 (4.6 s, so not this code) and its only
+commit is f9ad94d750, the shallow-clone boundary.
+
+STILL PARTIAL — do not close on this. The 110 fields include A=3 quantities
+(T, 3He), and A=3 is exactly where the object-dtype matmul dominated, so it is
+the case that could differ. T is in flight now.
+
+Also confirms the frame is unchanged: both runs print z_M = 0.499320, i.e.
+convention C. Correct — this producer is in the qou-37xc unit and has NOT been
+converted yet. The conversion is the next step, and it must be measured against
+a baseline from THIS code, not against the shallow-boundary witness.
