@@ -38,6 +38,16 @@ namespace QOU.Mathlib.SYTBeta
 
 variable {M : Type*} [CommMonoid M]
 
+/-- `SYTHookFormulaBeta.list_range_map_prod` is `ℕ`-specific; this is the same bridge in any
+commutative monoid. -/
+theorem list_range_map_prod' (n : ℕ) (f : ℕ → M) :
+    ((List.range n).map f).prod = ∏ j ∈ Finset.range n, f j := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [List.range_succ, List.map_append, List.prod_append, ih, Finset.prod_range_succ]
+    simp
+
 /-- The row's hook lengths pushed through `f`: `∏_{j<a} f((a−j) + cnt t j)`. -/
 def rowHookProdF (f : ℕ → M) (a : ℕ) (t : List ℕ) : M :=
   ∏ j ∈ Finset.range a, f ((a - j) + cnt t j)
