@@ -4807,3 +4807,616 @@ the map in the file so the next agent starts from it rather than re-deriving it.
 were ~1 PR each; this cell looks like more, chiefly for its fourth row. The
 braid-word families (`BraidSelfOverlap`, `BokutShiaoBraid`, `BraidBokutShiao`)
 have not been read this way yet and may hold similar splits — that is unmeasured.
+
+## The braid-word cell — the clean case, measured as such (2026-08-24, §4bg)
+
+§4bf read the next cell before writing it and found a four-way split. The same
+reading applied to the braid-word families finds the **opposite**, and the reason
+is in their own docstrings: `wHi i' i` carries **exactly two** rules (§4j), and on
+the other side *"`rule₁` cannot double: `j₁ ≤ i − 2` puts its leading monomial
+strictly longer than the braid word"*. `BraidSelfOverlap`'s four theorems are not
+a sample of a larger family — they are all of it.
+
+- **`lm_eq_wHi_cases`** — a rule of the completed system leading on `wHi i' i`
+  **is** `yangBaxterRelation i' i` or `bokutShiaoRelation i' i i'`. Quadratic and
+  far-commutation are the wrong length; a Bokut–Shiao word reaches length three
+  only when its descending run is a singleton (`descWord_eq_singleton`), forcing
+  `j = i − 1`.
+- **`braid_self_resolves`** — two applications of that plus one
+  `oc_ext_of_left_ne_nil` per branch. The bridge is unusually direct here, since
+  `BraidSelfOverlap.oc` takes its two rules as *parameters*, so the rule-equality
+  side conditions are the classification's own output.
+
+**A hypothesis dropped, not silenced.** The first draft gave `lm_eq_wHi_cases` an
+`hi : i'.val + 1 = i.val`; the linter flagged it unused, and it is — matching a
+leading monomial against `[σᵢ, σᵢ', σᵢ]` *forces* `i' + 1 = i` in both surviving
+families, so the side condition is an **output**, not an input. Removing it made
+the lemma strictly stronger. (The warning appeared only once the code was in the
+file, not in the scratchpad — worth knowing: the per-file linter set differs.)
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × FC` | **mapped only** (§4bf) |
+
+## Bokut–Shiao against the braid word, both ways (2026-08-24, §4bh)
+
+Measured before writing, as §4bf and §4bg were. `BokutShiaoBraid.oc` admits any
+`j₁ ≤ i − 1`, but its two chains require `j₁ < i − 1` **strictly**. The excluded
+endpoint is **not a gap**: at `j₁ = i − 1` the Bokut–Shiao rule leads on the
+braid word itself (`bs_hlm`), so *both* rules do — and that is §4bg. The two
+sections compose to cover the cell, with §4bg a **prerequisite** of this one
+rather than a parallel result.
+
+Each direction splits on `Nat.eq_or_lt_of_le` at that point, the two branches
+going to different sections. `BraidBokutShiao` mirrors it exactly.
+
+This is the shape §4bd predicted for the generic-namespace cells, and it holds —
+with the caveat §4be added and §4bf illustrated: **the split point came from
+reading the chains' side conditions, not the family's name.**
+
+### Score on the "read before writing" discipline
+
+Three cells read this way so far: `BS × FC` (four-way, §4bf), braid-word (clean,
+§4bg), BS-against-braid-word (two-way, §4bh). Two of three had a split the name
+did not advertise, and none of the three matched a guess made without reading.
+The discipline has paid for itself each time; the `BS × FC` four-way remains the
+worst case found.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS × braid word`, both directions | §4bh |
+| `BS × FC` | **mapped only** (§4bf) |
+
+## The four-way cell, crossed (2026-08-24, §4bi)
+
+§4bf mapped `BS × FC` and stopped. §4bi crosses it. **The map held** — four rows
+on `j₀` against `j` — and row 4 needed exactly what §4bf said it would.
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`. It is *vacuous* here (that row has
+`j₀ = j`, and `farCommRelation i j` exists only for `j + 1 < i`), but it still
+has to be **supplied**. §4bf had read the chains' *docstrings*; reading their
+*hypotheses* is a different act, and only the second finds this.
+
+**Row 4 is the one that is not a bridge application**, as predicted.
+`CyclicFarCommInner` asks for four structural facts about how `descWord i j`
+breaks at `σ_{j₀}`, built rather than read off:
+
+- `descWord_split` cuts the run at `j₀`;
+- `descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`;
+- **`descWord_nodup` is what makes every letter of `A` strictly above `j₀`** —
+  membership alone gives `≥`, and the chain needs `>`.
+
+All three come from §4bb, written for the antichain and reused here unchanged.
+That is the second time §4bb's `descWord` infrastructure has paid for itself
+outside its original purpose.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+
+Remaining: `FC × ?` and `YB × ?` combinations not covered above, the standing
+`oc.left ≠ []` assumption everywhere, and the deep diagonal
+`j₁ = j₂ = 0 ∧ i₁ ≥ 1`.
+
+## The `FC × ?` row — and a gap that was a chain, not a bridge (2026-08-24, §4bj)
+
+Reading `FarCommCyclic`'s **hypotheses** rather than its docstrings (the §4bi
+lesson) turned up something the earlier cells did not have: a **missing
+instantiation**. The namespace exposes a generic `oc_reduces_to_zero` and two
+uses of it — `bokutShiao_resolves`, `yangBaxter_resolves`. There is no third,
+and `FC × FC` needs one.
+
+`farComm_farComm_resolves` supplies it, and the fit is exact:
+`farCommRelation m d = ofTerms [([σ_m, σ_d], 1), ([σ_d, σ_m], −1)]` **is** the
+family's normal form `ofTerms [(σ_m :: u'', c), (q :: t, −c)]` at `u'' = [σ_d]`,
+`c = 1`, `q = σ_d`, `t = [σ_m]` — so `hrel` is `fun _ => rfl`, exactly as for
+`farComm_quad_resolves`. The two blanket far-commutation conditions follow from
+`d < m` and `m + 1 < x` by `omega`.
+
+**This is the first cell whose gap was a chain rather than a bridge**, and the
+two are worth separating. `oc_ext_of_left_ne_nil` (§4bd) still did all the
+bridging. What a bridge cannot do is notice that a family has an uninstantiated
+member — only reading the family against the cells it is supposed to cover does
+that.
+
+`farComm_left_resolves` closes the row. Its quadratic branch defers to §4bd's
+column rather than repeating it: `quad_right_resolves` already carries its own
+bridge, so no second one is built.
+
+### Measured for the next tranche: `YB × FC` splits two ways
+
+`CyclicFarCommLow.yangBaxter_resolves` requires `j₀ + 1 < i'`, **stricter** than
+the far-commutation rule's own `j₀ + 1 < i = i' + 1`. The endpoint `j₀ + 1 = i'`
+is `YangBaxterFarComm.oc` (§4p). Together they are exactly the rule's condition.
+Recorded now so the next pass does not re-derive it.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+| `FC × ?` (whole row) | §4bj |
+
+## §4bk — `YB × FC`, and the `? × FC` row closed (PR pending)
+
+The one cell §4bj measured but did not cross. Because that measurement was
+*recorded* rather than left implicit, this pass spent nothing re-deriving it:
+the two-way split went straight into the proof.
+
+`yb_farComm_resolves` splits on `j₀ + 1` against `i'`:
+
+- `j₀ + 1 = i'` — §4p's own `YangBaxterFarComm.oc`, discharged by
+  `oc_reduces_to_zero`.
+- `j₀ + 1 < i'` — `CyclicFarCommLow.oc` at `left = [σ_{i'}]`, discharged by
+  `yangBaxter_resolves`.
+
+`Nat.eq_or_lt_of_le` off `j₀ + 1 ≤ i'` is the whole case split, and the two
+branches are jointly exhaustive because the far-commutation rule's condition is
+`j₀ + 1 < i = i' + 1`, i.e. `j₀ + 1 ≤ i'`. Nothing left over, nothing
+overlapping — the fit is exact, not merely adequate.
+
+`farComm_right_resolves` then closes the row by dispatch on `rule₁`'s family:
+quadratic → §4be, YB → here, FC → §4bj, BS → §4bi.
+
+**The dispatch has one shape, used four times.** The overlap is a single letter
+(§4au), `lm₂ = σᵢσ_{j₀}` starts with it, so the letter *is* `σᵢ`; hence
+`lm₁ = left ++ [σᵢ]`. Each branch then reads its family's `lm` and matches the
+last letter with `List.append_inj'`. That is why the four branches differ only
+in which `lm` lemma they rewrite with — the identification of `i` is uniform.
+
+### What this did NOT do
+
+- Still assumes `oc.left ≠ []`. Every cell §4bd–§4bk does; the nil-left
+  compositions are untouched and open.
+- Does not close `overlap_resolves`. The `YB × ?` combinations other than
+  `YB × FC` are not covered — that row is what remains.
+- The deep diagonal `j₁ = j₂ = 0 ∧ i₁ ≥ 1` of `BS × BS` (§4aw) is still the
+  only piece needing genuinely new reduction content.
+
+### Cells crossed, all under `oc.left ≠ []`
+
+| cell | section |
+|---|---|
+| `BS × BS` | §4aw (modulo the deep diagonal) |
+| `? × quadratic` | §4bd |
+| `quadratic × ?` | §4be |
+| braid word × braid word | §4bg |
+| `BS ×` braid word, both directions | §4bh |
+| `BS × FC` | §4bi |
+| `FC × ?` (whole row) | §4bj |
+| `YB × FC`, and `? × FC` (whole row) | §4bk |
+
+## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (PR pending)
+
+The bean's stated goal, reached with a single explicit hypothesis left standing.
+
+### §4bl — the `oc.left ≠ []` caveat was not a gap
+
+Every cell §4bd–§4bk assumed `oc.left ≠ []`, and I had been recording the
+excluded case as open. It is not: it needs **no cell and no reduction**.
+
+`left = []` says `lm₁` *is* the overlap, so `lm₂ = lm₁ ++ right`; §4ba's
+`lm_not_proper_prefix` forces `right = []`; the two rules therefore lead on the
+same word, which is §4bc's `shared_lm_classify` — same rule, or §4j's YB/BS
+pair. Same rule → `spoly_isZero_of_self`. The pair → the two relations sum to
+zero coefficient by coefficient (`DegenerateYbBs.relations_add_eq_zero`) against
+leading coefficients `−1` and `+1`, so the S-polynomial is **zero**, not merely
+reducible to zero.
+
+Strictly more general than §4aw's `bsbs_resolves_of_nil_left`, which proved the
+same thing for two Bokut–Shiao rules only. Compiled first try.
+
+### §4bm — the matrix assembles, and two "hypotheses" evaporate
+
+Dispatching on `rule₂` first cuts the work in half: `quad_right_resolves` (§4bd)
+and `farComm_right_resolves` (§4bk) already take an arbitrary `rule₁`, so only
+the YB and BS columns need a second dispatch. `overlap_letter` is the one shared
+step — single-letter overlap (§4au) gives `lm₁ = left ++ [z]` and
+`lm₂ = z :: right` at once, and every index identification in both columns is
+that argument.
+
+**Two things I had been carrying as open were artefacts of not reading
+hypotheses:**
+
+1. **`hq : q − q⁻¹ ≠ 0` is not a hypothesis.** `HeckeParams.h_ne_zero`
+   (line 1311, already in the file) proves it from `HeckeParams` alone.
+   `bsbs_resolves_of_oc` carries it redundantly. The assembly discharges it.
+   I had listed it as a standing condition on the BS×BS cell.
+2. **`i₁ = 0` is not a Bokut–Shiao case.** `bsbs_resolves_of_oc` needs `i₂` with
+   `i₂ + 1 = i₁`, so it silently requires `i₁ ≥ 1` — and at `i₁ = 0` both `j`s
+   are forced to `0 = i₁`, making both leading monomials the braid word. §4bg
+   takes it.
+
+### The gap, stated sharply
+
+Forcing `i' = i` off the overlap letter forces `ip = i₁`, so at `j₁ = j₂ = 0`
+the two rules are **the same rule**. `hdeep` is therefore not a family: it is the
+longest Bokut–Shiao word `σᵢσᵢ₋₁⋯σ₀σᵢ` overlapping **itself** in its shared `σᵢ`,
+at `left = descWord i 0`. One composition.
+
+### §4bn — the criterion
+
+`heckeCompleted_isGrobnerShirshovBasis` = §4bc (inclusion half, unconditional,
+every `n`) + §4bm (overlap half, modulo `hdeep`). No `sorry`, no axiom; `hdeep`
+is an explicit argument.
+
+**Not proved: that `hdeep` holds.** If that self-overlap does not resolve, the
+completion is incomplete and needs a further rule. This statement is where that
+would surface — it is a reduction of the problem to one composition, not a
+closure of it.
+
+## The deep self-overlap RESOLVES — measured, with the target (PR pending)
+
+Before trying to prove `hdeep`, the cheap decisive check (AGENTS.md
+formalize-first §caveat: run the probe when it is cheap and decisive).
+[`computations/hecke_deep_selfoverlap_probe.py`](../computations/hecke_deep_selfoverlap_probe.py)
+reduces both sides of the S-polynomial under the completed system, exact
+symbolic in `q`, 1.8 s to `i = 9`.
+
+**It resolves for every `i = 1 … 9`, and the normal form does not depend on rule
+order** (checked against the reversed rule list). So the completion is **not**
+missing a rule — the outcome that would have mattered most did not happen.
+
+**The target, for `i ≥ 2` — both sides land on the same TWO-term normal form:**
+
+```
+bsWord₂(i−1, 0) · descWord(i, 1)  +  (q − q⁻¹) · bsWord₂(i−1, 0) · descWord(i, 0)
+```
+
+The second word is the first with a trailing `σ₀`. `i = 1` is degenerate
+(`descWord(i−1, …)` collapses; four terms). All three facts are **assertions in
+the probe**, not prose — a future edit that breaks them fails.
+
+**Chain size:** `i(i+5)/2` steps on the left, one more on the right, checked for
+`i = 2 … 9`. Strategy-dependent — a size estimate for the induction, not a fact
+about the algebra. It says the chain grows linearly per level, so the Lean proof
+wants a general step lemma, not an enumeration.
+
+Rules were read off the Lean `def`s (`heckeRelation`, `yangBaxterRelation`,
+`farCommRelation`, `bokutShiaoRelation`) rather than off prose, including the
+Yang–Baxter `lc = −1` sign that makes `wHi → wLo`.
+
+### Not mine, recorded rather than swept
+
+`precision-gates.sh --changed` reported two stale committed audit witnesses
+(`q0-anchor-consistency-audit`, `witness-provenance-audit`). The movement is
+**main's**, not this branch's: the newly-listed witnesses are
+`gz-third-knot-rank-grading` (`749186133b`) and `aomega-m3-adjoint-index-set`
+(`683299faf7`). Counts would move `total_scanned` 2731 → 2732, `prov_ok`
+2333 → 2335, `Q0_INDEPENDENT` 47 → 48. Tree restored; not swept into a Lean PR.
+All blocking precision gates green.
+
+### The shape of the induction, measured (rule census)
+
+Tracing *which* rules fire, not just that the sides converge:
+
+| i ≥ 3 | QUAD | YB | FC | BS |
+|---|---|---|---|---|
+| A | 1 | 1 | `(i+4)(i−1)/2` | `i` |
+| B | 1 | 1 | `(i+4)(i−1)/2 − 1` | `i+2` |
+
+**For `i ≥ 2` exactly ONE quadratic step fires, always on `σ₀`.** That is the
+only coefficient-producing rule, and it is why the normal form has two terms:
+the split's `1` branch drops two letters and its `Hσ₀` branch drops one, so the
+two words differ by a trailing `σ₀`. Everything else is a length-preserving
+monomial rewrite.
+
+**Consequence for the Lean proof:** the coefficient bookkeeping is a single
+`heckeRelation` split. The rest is pure word combinatorics — which is the
+tractable half. `i = 1` is degenerate (three quadratic steps at indices
+`[0,1,0]`, hence the `H²` and four terms).
+
+The QUAD count is the **robust** one, and it is now *measured* rather than
+argued. I first wrote that it is "pinned by the two-term normal form" — but that
+is only an argument, and it has a hole: a second split whose branch died would
+produce the same two-term form. So the census now runs under the **reversed rule
+order** as well, and gets one quadratic step on `σ₀` both ways.
+
+The YB/FC/BS split is strategy-dependent bookkeeping, like the step count;
+asserted so a change in the rule set surfaces, not claimed as algebra. Totals
+reconcile: `1 + 1 + (i+4)(i−1)/2 + i = i(i+5)/2` ✓.
+
+### Next tranche: the `hdeep` induction — what the measurements say to build
+
+Not started. Recorded so it is not re-derived.
+
+- **Target** (§4bn docstring + probe): both sides land on
+  `bsWord₂(i−1,0)·descWord(i,1) + H·bsWord₂(i−1,0)·descWord(i,0)` for `i ≥ 2`.
+- **Coefficient work is one step.** A single `heckeRelation` split on `σ₀`;
+  every other rewrite is monomial. So the chain lemmas can be stated on *words*
+  and the algebra enters once.
+- **Do not look for a shared pre-split word.** Measured: the two sides reach
+  the `σ₀σ₀` differently — at `i = 2` A splits in `(0,1,2,0,1,0,0)` and B in
+  `(1,2,0,1,0,0,2)`. The convergence is after the split, not before it, so a
+  "both reduce to a common word, then split once" plan does not fit.
+- **Size:** the chain grows by about `i+2` rewrites per level
+  (`FC` by `i+1`, `BS` by `1`), so an enumeration will not scale — the step
+  lemma has to be general in `i`.
+- **`i = 1` needs its own case** (three splits, `H²`, four terms), as does
+  `i = 2` (its YB/FC/BS counts do not follow the `i ≥ 3` pattern).
+
+### The chain's shape — and why the obvious induction does NOT fit (PR pending)
+
+Two findings, one positive and one negative. The negative one is the useful one.
+
+**Positive: the per-step machinery already exists.** `monicStep` (one step by any
+monic two-word rule, arbitrary contexts and surrounding terms), `quadStep` (the
+split, output one term longer) and `bsStep` (`monicStep` at Bokut–Shiao) are
+already in `HeckeCompletion.lean`. Since every non-quadratic rule here is monic
+and two-word, each step of the chain is a one-liner. Per-step cost is not the
+problem.
+
+**Negative, and measured: `chain(i−1)` is NEVER a prefix of `chain(i)`.** The
+shared opening grows — `(i²−5i+12)/2` on side A, `(i−3)(i−2)/2` on side B — but
+the differing tail grows too, `5i−6` and `5i−2`, and never vanishes. So the
+greedy reduction does **not** satisfy "chain(i) extends chain(i−1)", and an
+induction on `i` has to be built on a **hand-designed** chain, not on this one.
+
+Recorded because reading the traces by eye suggests the opposite: the openings
+do visibly agree, at length, and I read that as "chain(i−1) is a prefix". It is
+not. The assertion is now in the probe so the claim cannot rot.
+
+**A second error the assertions caught.** I fitted the shared-opening formula on
+side A and applied it to side B; side B follows triangular numbers instead. One
+fit does not cover both sides. Both are now asserted separately.
+
+**Shape of the greedy chain (side A):** a nested cascade —
+`BS(-1)@1 FC(0)@0`, then for `k = 0 … i−2` a block `BS(-k)@(2k+1)` followed by
+`FC` steps sweeping down, then `YB(-(i-1))@(2i-1)`, the single `QUAD` on `σ₀` at
+`2i+1`, and an `FC` tail with every step doubled — one per branch of the split.
+
+**So the next tranche is: design the chain, don't transcribe this one.** The
+target normal form and the one-quadratic-step fact still hold and still apply.
+
+**Starting points for the designed chain** (corpus-grepped, not guessed):
+`descWord_split` / `descWord_split_aux` (which already inducts *on the gap*,
+`HeckeCompletion.lean:3963`), `descWord_snoc`, `descWord_cons`, `descWord_at_pred`.
+The cascade sweeps a descending run downward one index at a time, which is the
+same motion `descWord_split_aux` already formalises — so the induction variable
+is the gap, not `i`.
+
+### Designing the chain: three plans ruled out, two waypoints found (PR pending)
+
+The reframing that made this tractable: the normal form **factors**,
+
+```
+NF(i) = bsWord₂(i−1,0) · descWord(i,1) · (1 + H·σ₀)
+```
+
+and `1 + Hσ₀` is exactly what `σ₀σ₀` rewrites to. So the whole S-polynomial is
+one word with a `σ₀σ₀` on the end, and the single quadratic step is the last one.
+
+**Waypoint 1 — side A.** A reaches `bsWord₂(i−1,0)·descWord(i,1)·σ₀σ₀` by
+length-preserving rewrites *alone*, in `(i²+i+4)/2` steps (BFS-minimal), and the
+one quadratic step there lands **directly on the normal form**. Side A's whole
+reduction is monomial until the very last step.
+
+**Waypoint 2 — side B.** B reaches
+`splitWord(i) = (i−1,i, i−2,i−1, …, 0,1, 0,0, i)` in only **i−1** steps — pairs
+`(k−1,k)` descending, then `σ₀σ₀`, then `σᵢ` — and does its quadratic work after
+the split, `(i²−i+4)/2` steps per branch.
+
+**Ruled out, each measured rather than argued:**
+
+1. **`chain(i)` extends `chain(i−1)`** — no (previous section: the shared opening
+   grows but the differing tail never vanishes).
+2. **A and B reach a common word and cancel with no split** — no. The two
+   length-preserving closures are **disjoint**, checked to `i = 6` with ~200
+   words each. So the quadratic step is unavoidable; there is no shortcut in
+   which the difference dies before it.
+3. **The `i`-case reduces into a context around the `(i−1)`-case** — no. No word
+   reachable from `A(i)` contains `A(i−1)` as a factor, and likewise for B.
+
+**Consequence:** the induction is on the **sweep inside one chain** — the gap —
+not on `i` relating whole chains. That is the motion `descWord_split_aux`
+(line 3963) already formalises, which is why it is the right starting point.
+
+All five facts are assertions in the probe, so none of them can rot.
+
+**Honest status: `hdeep` is NOT proved and is a multi-session formalization.**
+The route is now specified rather than searched for: two closed-form waypoints,
+`monicStep`/`quadStep`/`bsStep` for the steps, and the gap as the induction
+variable. What is left is writing it.
+
+**Side A's minimal path, extracted (BFS shortest, indices relative to `i`):**
+
+```
+i=3:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 YB(-2)@5 FC(-1)@4 FC(0)@2 FC(0)@3
+i=4:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 FC(0)@2 BS(-2)@5 YB(-3)@7
+      FC(-2)@6 FC(-1)@4 FC(-1)@5 FC(0)@3 FC(0)@4
+i=5:  BS(-1)@1 FC(0)@0 BS(0)@1 BS(-1)@3 FC(0)@2 BS(-2)@5 FC(-1)@4 FC(0)@3
+      BS(-3)@7 YB(-4)@9 FC(-3)@8 FC(-2)@6 FC(-2)@7 FC(-1)@5 FC(-1)@6
+      FC(0)@4 FC(0)@5
+```
+
+A descent phase — for `k = 1, 2, …` a `BS(-k)@(2k+1)` followed by an `FC` sweep
+`FC(-(k-1))@(2k), …, FC(0)@(k+1)` — terminated by `YB(-(i-1))@(2i-1)`, then a
+final `FC` sweep. Doubly nested, and each loop is a descending sweep, so both
+levels are gap inductions of the `descWord_split_aux` kind.
+
+## §4bo — side B's half of `hdeep`, PROVED in full generality (PR pending)
+
+Not a measurement this time. Lean, general in `i`, sorry-free.
+
+`doubleDesc_sweep`: `descWord m z ++ descWord m z ⟶* pairSweep m z`, by exactly
+one Bokut–Shiao step per level. The peel is uniform — the second copy's head
+`σ_m` closes the first copy into `bsWord₁ m z`, the rule replaces it by
+`bsWord₂ (m−1) m z = σ_{m−1}σ_m ++ descWord (m−1) z`, and what remains is the
+same shape one level down. **The bottom needs no step at all**:
+`descWord z z ++ descWord z z` *is* `σ_z σ_z`.
+
+`bside_to_splitWord`: the sweep applied in the context `[σ_{i−1}, σ_i] ⋯ [σᵢ]`,
+landing B on `pairSweep i 0 ++ [σᵢ]` in `i − 1` steps.
+
+**`pairSweep` is defined by a zip, not a recursion** —
+`zip (descWord m z) ((descWord m z).tail ++ [σ_z])` flattened pair-by-pair — so
+no arithmetic on `Fin n` appears in the definition and `pairSweep_cons` is a
+one-line `descWord_cons` rewrite. That choice is what kept the whole section
+short; a recursive definition would have needed `Fin.mk` bounds at every level.
+
+**A correction to the measurement that led here.** The BFS labelled B's last
+step `YB`. It is a **Bokut–Shiao** step: at `m = 1` the word `σ₁σ₀σ₁` is
+`bsWord₁ 1 0` *and* the braid word `wHi 0 1` — §4j's shared-lm pair — and both
+rules send it to `σ₀σ₁σ₀`. So the route is uniform after all, one rule
+throughout, which is why the induction is a single peel rather than a peel plus
+a special last step.
+
+### What this does NOT do
+
+- **Side A is not this.** Doubly nested — a `BS` per level each followed by an
+  `FC` sweep — and `(i²+i+4)/2` steps rather than `i−1`. Still to be written.
+- **Both statements are on a ONE-TERM element**, which makes `monicStep`'s side
+  condition on the surrounding terms vacuous. The `hdeep` application carries
+  the other spoly term alongside; re-establishing that condition against every
+  intermediate is work this section does not do.
+- **`hdeep` is still open**, and so `heckeCompleted_isGrobnerShirshovBasis` is
+  still conditional.
+
+### Measured for the next tranche: B's two branches share one chain shape
+
+After the split, B's `H`-branch and `1`-branch follow the **same shape** of
+chain — same families, same positions, same top indices — for `i = 3, 4, 5`
+(5, 8, 12 steps each).
+
+**Not "the same chain", and I nearly wrote that.** My label printed only each
+rule's *top* index, which hid that the Bokut–Shiao steps differ in their bottom
+index `j`: the `H`-branch uses `bsWord₁(3,0)` where the `1`-branch uses
+`bsWord₁(3,1)`. That is exactly the extra `σ₀` showing up. So the two branches
+are one lemma **parameterised by `j`**, not one lemma applied twice — which is
+still a halving of the work, but it is a different statement.
+
+The extra `σ₀` travels: it starts before the final `σᵢ` and ends after it,
+commuting past by far-commutation. That is why `NF₂ = NF₁ ++ [σ₀]` while the
+branch words differ in the *middle*.
+
+Remaining for `hdeep`, now fully scoped:
+1. side A's route to `NF₁·σ₀σ₀` — doubly nested, `(i²+i+4)/2` steps;
+2. B's post-split chain, one lemma in `j` — `(i²−i+4)/2` steps;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+## §4bp — side A, swept, and a correction to my own figure (PR pending)
+
+Side A opens with **three fixed steps** onto a doubled descending run, after
+which §4bo's sweep applies unchanged:
+
+1. the second copy of the run is preceded by `σ_{i−1}`, so the *first* copy plus
+   that letter is `bsWord₁ (i−1) 0` — inner Bokut–Shiao fires;
+2. far commutation pulls the freed `σ_{i−2}` to the front;
+3. what is left behind it is `descWord i 0 ++ [σᵢ] = bsWord₁ i 0` — outer
+   Bokut–Shiao fires, and its `bsWord₂` puts a second `descWord (i−1) 0` against
+   the first.
+
+`aside_to_sweptWord`: A reaches `σ_{i−2}σ_{i−1}σᵢ · pairSweep (i−1) 0` in
+`3 + (i−1)` steps. Sorry-free, general in `i`, compiled first try.
+
+### Correction: `(i²+i+4)/2` was never side A's cost
+
+I recorded it as "side A's BFS-minimal route" in the previous PR. It is the
+distance to **one particular** split word, `bsWord₂(i−1,0)·descWord(i,1)·σ₀σ₀`.
+Side A can split much earlier — at the `σ₀σ₀` that `pairSweep` ends with — and
+getting there is **linear**. The quadratic figure describes a *choice of split
+point*, not the cost of the side.
+
+### And a pattern in the numbers that is not a fact
+
+The residual tails are `i(i−1)/2` per branch on A and `(i²−i+4)/2` per branch on
+B — differing by exactly 2 at every `i` tested, which reads like B's branches
+reducing onto A's in two steps. **They do not.** Checked to `i = 6`: no B-branch
+reaches its A-counterpart at all. The two tails are separate work.
+
+That is the fourth time this session an appealing arithmetic coincidence has
+failed a structural test — and the fourth time testing it cost minutes while
+assuming it would have cost the tranche.
+
+### Remaining for `hdeep`
+
+1. side A's tail — `i(i−1)/2` per branch;
+2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+## §4bq — the far-commutation carry, side A's tail inner loop (PR pending)
+
+Side A's tail is **pure far commutation**, and its shape was measured, not
+guessed. Grouped by top index the rules are `(2,0)`, `(3,1) (3,0)`,
+`(4,2) (4,1) (4,0)`, …, `(i,i−2) … (i,0)` at consecutive positions — `m−1` steps
+per `m` from 2 to `i`, i.e. the measured `i(i−1)/2`. Each group is one generator
+carried rightward past a descending run.
+
+`gen_past_descWord`: `σ_m · descWord k z ⟶* descWord k z · σ_m` whenever
+`k + 1 < m`, one step per letter, induction on the gap. Sorry-free, general.
+
+So the tail's inner loop is done; what remains of it is the outer induction
+over `m` from 2 to `i`.
+
+### Two measurements about the tail, both checked properly this time
+
+- **The two branches run the SAME chain**, compared as full rule-and-position
+  sequences — not as labels. That distinction matters: labels print only a
+  rule's *top* index and have already misled this bean twice (the `YB`-vs-`BS`
+  last step in §4bo, and side B's branches, whose Bokut–Shiao steps differ in
+  their lower index). Identical at `i = 3, 4, 5, 6`. The branches differ only by
+  a trailing `σ₀` that no tail rule touches, so the tail is one lemma with the
+  trailing context as a parameter — which `monicStep` already carries as `b`.
+- **Side B's tail is not side A's.** `(i²−i+4)/2` vs `i(i−1)/2` — exactly two
+  more at every `i`, which reads like B's branches reducing onto A's in two
+  steps. They do not: checked to `i = 6`, no B-branch reaches its A-counterpart.
+
+### Remaining for `hdeep`
+
+1. side A's tail — outer induction over `m`, using `gen_past_descWord`;
+2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
+3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
+
+### The carry lemma serves BOTH tails — measured at the rule level
+
+Side B's tail is the **same far-commutation carry sequence** as side A's, at
+positions shifted by exactly one, **followed by two Bokut–Shiao steps**. At
+`i = 5`:
+
+```
+A tail: (2,0)@8 (3,1)@6 (3,0)@7 (4,2)@4 (4,1)@5 (4,0)@6 (5,3)@2 (5,2)@3 (5,1)@4 (5,0)@5
+B tail: (2,0)@7 (3,1)@5 (3,0)@6 (4,2)@3 (4,1)@4 (4,0)@5 (5,3)@1 (5,2)@2 (5,1)@3 (5,0)@4
+        + bsWord₁(5,j)@5  + bsWord₁(4,0)@0
+```
+
+The shift is one because A's swept word carries three leading letters
+(`σ_{i−2}σ_{i−1}σᵢ`) and B's carries two (`σ_{i−1}σᵢ`). **That is the whole "+2"**
+— B's two extra steps are the two Bokut–Shiao ones, not a different chain.
+
+And the `j` prediction is confirmed: the first of those two BS steps is
+`bsWord₁(i,1)` on the `1`-branch and `bsWord₁(i,0)` on the `H`-branch — the only
+place the two branches differ. The second BS step is identical in both.
+
+**So `gen_past_descWord` is the shared inner loop of both sides**, which is worth
+more than either tail on its own. Remaining: the outer induction over `m`
+(shared, modulo the leading context), plus B's two Bokut–Shiao steps with `j` as
+a parameter.
+
+This is consistent with the earlier negative — B's branches do *not* reduce onto
+A's. Same rule sequence applied to different words is not the same thing as one
+word reducing to the other, and both facts hold.

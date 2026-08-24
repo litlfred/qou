@@ -1,44 +1,44 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-07-18T14:57:43.626937+00:00",
+  "computedAt": "2026-08-24T10:59:38.633750+00:00",
   "computation": "kaon-pion-ratio-7-8",
   "scriptFile": "kaon_pion_ratio_7_8_probe.py",
-  "description": "EXPLORATORY numerical observation (NOT a derivation): m_K/m_π ≈ 7(q₀+q₀⁻¹)²/8 at 318 ppm. The 7/8 factor is a NUMEROLOGICAL FIT found by scanning fractions — no categorical derivation exists. Recorded for future investigation, not as a framework prediction. Per AGENTS.md: fits to PDG are forbidden as framework claims.",
+  "description": "EXPLORATORY numerical observation (NOT a derivation): m_K/m_\u03c0 \u2248 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8 at 318 ppm. The 7/8 factor is a NUMEROLOGICAL FIT found by scanning fractions \u2014 no categorical derivation exists. Recorded for future investigation, not as a framework prediction. Per AGENTS.md: fits to PDG are forbidden as framework claims.",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "m_pi_MeV": "139.57039",
-    "m_K_pdg_MeV": "493.677"
+    "m_pi_MeV": "139.5703899999999999999999999999999999999999999999999448238729672103278",
+    "m_K_pdg_MeV": "493.6770000000000000000000000000000000000000000000001696884859143333172"
   },
   "data": {
-    "formula": "m_K/m_π = 7(q₀+q₀⁻¹)²/8",
-    "two_q_squared": "4.0437062085325219894020193356773883097682139607135",
-    "predicted_ratio": "3.5382429324659567407267669187177147710471872156243",
-    "pdg_ratio": "3.5371184389468281918535872830906326191393461034249",
+    "formula": "m_K/m_\u03c0 = 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8",
+    "two_q_squared": "4.043706208532521989402019335677388309768213960713522216242847344641826",
+    "predicted_ratio": "3.538242932465956740726766918717714771047187215624331939212491426561597",
+    "pdg_ratio": "3.53711843894682819185358728309063261913934610342494826340302002227127",
     "err_ppm": 317.9123171977711,
-    "m_K_predicted_MeV": "493.8339459990172440263637422845297505038166280877",
-    "m_K_pdg_MeV": "493.677",
+    "m_K_predicted_MeV": "493.8339459990172440263637422845297505038166280877019070188022066649804",
+    "m_K_pdg_MeV": "493.6770000000000000000000000000000000000000000000001696884859143333172",
     "miss_MeV": 0.15694599901724401,
     "correction_factor": "7/8",
     "categorical_interpretations": [
-      "(n_crossings_K − 1)/n_crossings_K = 7/8 where K has 8 quark crossings (3+5)",
-      "(Vol(𝓑₃) − G)/Vol(𝓑₃) = (8G−G)/(8G) = 7/8 (one ideal octahedron removed)"
+      "(n_crossings_K \u2212 1)/n_crossings_K = 7/8 where K has 8 quark crossings (3+5)",
+      "(Vol(\ud835\udcd1\u2083) \u2212 G)/Vol(\ud835\udcd1\u2083) = (8G\u2212G)/(8G) = 7/8 (one ideal octahedron removed)"
     ]
   },
   "assertions": [
     {
-      "label": "m_K/m_π within 500 ppm",
+      "label": "m_K/m_\u03c0 within 500 ppm",
       "passed": true
     },
     {
-      "label": "improvement over [2]_q² (14.3%)",
+      "label": "improvement over [2]_q\u00b2 (14.3%)",
       "passed": true
     }
   ],
   "allPassed": true,
-  "scriptHash": "810817f48526",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
+  "scriptHash": "0aa6f40c2b96",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

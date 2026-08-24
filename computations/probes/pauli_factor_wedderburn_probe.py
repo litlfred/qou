@@ -63,7 +63,7 @@ from mpmath import mp, mpc, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
-from probe_staircase_ew_k3_categorical import (  # noqa: E402
+from hoefsmit_mpfr import (  # noqa: E402
     build_hoefsmit_mpfr,
 )
 from _precision import set_compute_dps  # noqa: E402

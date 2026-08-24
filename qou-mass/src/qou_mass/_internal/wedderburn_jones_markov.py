@@ -132,9 +132,27 @@ def y_lambda_at(
 
     THE THREE C FAST PATHS BELOW ARE NOW DEAD and are retained only as the
     historical record of what C was; the D result returns before any of them is
-    reached. In particular `y-lambda-at-q0.witness.json` holds C weights and must
-    NOT be served — that cache is why the switch has to happen here rather than
-    only at `markov_z`.
+    reached.
+
+    CORRECTED 2026-08-23. This paragraph used to end: "In particular
+    `y-lambda-at-q0.witness.json` holds C weights and must NOT be served — that
+    cache is why the switch has to happen here rather than only at `markov_z`."
+    That was true when written and is not true now. The same convention-D
+    cascade that excised C also **re-derived** the cache: its n=3 entry is
+    `(3) → 0.50540422650393080…`, `(2,1) → 0.24729788674803459…`, which is D.
+    C is `(0.4153958, 0.2809296, 0.0227449)`. The file was re-pinned to
+    **proton** in the same cascade (`7665e0e4b`, `506ac9135`).
+
+    The reason for switching here rather than at `markov_z` still stands — this
+    function has ~155 consumers — but it is no longer "because the cache holds
+    C". Nothing in this function reads the cache at all; that code lives in
+    `_y_lambda_at_convention_C_HISTORICAL` below and is dead.
+
+    Two producers DO still read the file directly, bypassing this accessor:
+    `probe_theta_carry_binding.py` and `delta_lambda_empirical_tabulation.py`.
+    They get D weights at the proton pin, which is correct under both current
+    rulings. Full evidence:
+    `docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`.
 
     Scale note, because it governs the migration: this function has ~155
     consumers, more than twice the other three C implementations combined, and

@@ -1,8 +1,7 @@
 {
-  "computedAt": "2026-04-28T01:35:00.922785+00:00",
   "computation": "binding-ladder-catalog",
-  "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction α·m_e·|(q;q)_r|.  Tests universality of α across isotopes at fixed rank.",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction \u03b1\u00b7m_e\u00b7|(q;q)_r|.  Tests universality of \u03b1 across isotopes at fixed rank.",
+  "timestamp_utc": "2026-08-24T10:50:58.722813+00:00",
   "isotopes": [
     {
       "iso": "D",
@@ -10,59 +9,59 @@
       "N": 1,
       "A": 2,
       "B_AME_MeV": 2.22456612,
-      "leading_formula": "1·m_e·Vol(6_2)",
-      "leading_MeV": 2.2488207937687203,
-      "leading_err_pct": 1.0903103104312548,
-      "residual_MeV": -0.024254673768720522,
+      "leading_formula": "1\u00b7m_e\u00b7Vol(6_2)",
+      "leading_MeV": 2.248820796805295,
+      "leading_err_pct": 1.0903104469331286,
+      "residual_MeV": -0.02425467680529496,
       "fits": [
         {
           "r": 2,
-          "alpha": -1.859863371747553,
+          "alpha": -1.859864046387755,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": -3.129131711952432e-10
+          "err_ppb": -1.0528665763155892e-10
         },
         {
           "r": 3,
-          "alpha": -5.060138313339242,
+          "alpha": -5.060140800313161,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": -6.985286622281375e-10
+          "err_ppb": 8.751813668755531e-10
         },
         {
           "r": 4,
-          "alpha": -9.769487170739698,
+          "alpha": -9.76949329324187,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": 5.075947005928128e-10
+          "err_ppb": -3.804718980294345e-10
         },
         {
           "r": 5,
-          "alpha": -14.264197096129106,
+          "alpha": -14.264208059198431,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": -9.374352419323443e-11
+          "err_ppb": 2.44614833009953e-10
         },
         {
           "r": 6,
-          "alpha": -16.39189533426364,
+          "alpha": -16.39191037066214,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": 6.620880357011884e-10
+          "err_ppb": -1.0519978809141441e-09
         },
         {
           "r": 7,
-          "alpha": -15.235803723872715,
+          "alpha": -15.235820073298989,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": 3.106214326173845e-10
+          "err_ppb": 3.578250153134527e-10
         },
         {
           "r": 8,
-          "alpha": -11.682265541333736,
+          "alpha": -11.682279982009012,
           "B_pred_MeV": 2.22456612,
-          "err_ppb": 5.333755264189583e-10
+          "err_ppb": -7.528516573871169e-10
         }
       ],
       "best_fit_at_rank_4": {
         "r": 4,
-        "alpha": -9.769487170739698,
+        "alpha": -9.76949329324187,
         "B_pred_MeV": 2.22456612,
-        "err_ppb": 5.075947005928128e-10
+        "err_ppb": -3.804718980294345e-10
       }
     },
     {
@@ -71,185 +70,185 @@
       "N": 2,
       "A": 3,
       "B_AME_MeV": 8.481798,
-      "leading_formula": "2·m_e·Vol(8_11)",
-      "leading_MeV": 8.468599682990007,
-      "leading_err_pct": -0.15560753757626547,
-      "residual_MeV": 0.013198317009992931,
+      "leading_formula": "2\u00b7m_e\u00b7Vol(8_11)",
+      "leading_MeV": 8.468599694425127,
+      "leading_err_pct": -0.15560740275675009,
+      "residual_MeV": 0.013198305574873974,
       "fits": [
         {
           "r": 2,
-          "alpha": 1.0120551036747025,
+          "alpha": 1.012054467227054,
           "B_pred_MeV": 8.481798,
-          "err_ppb": 3.4961995020788047e-11
+          "err_ppb": 7.541775728616088e-12
         },
         {
           "r": 3,
-          "alpha": 2.7535026943957654,
+          "alpha": 2.753501317314637,
           "B_pred_MeV": 8.481798,
-          "err_ppb": -6.234430590580371e-11
+          "err_ppb": -1.1574816593873046e-10
         },
         {
           "r": 4,
-          "alpha": 5.31612133537607,
+          "alpha": 5.3161193954866235,
           "B_pred_MeV": 8.481798,
-          "err_ppb": -2.9732238941872006e-11
+          "err_ppb": -7.392802315803193e-11
         },
         {
           "r": 5,
-          "alpha": 7.761942995519572,
+          "alpha": 7.761941264366044,
           "B_pred_MeV": 8.481798,
-          "err_ppb": 4.8129075824525174e-12
+          "err_ppb": -6.325998698163688e-11
         },
         {
           "r": 6,
-          "alpha": 8.919741946611563,
+          "alpha": 8.919741283904262,
           "B_pred_MeV": 8.481798,
-          "err_ppb": 1.766089695336639e-11
+          "err_ppb": -2.8789469009620594e-11
         },
         {
           "r": 7,
-          "alpha": 8.290648201132685,
+          "alpha": 8.290648876727156,
           "B_pred_MeV": 8.481798,
-          "err_ppb": -2.060714523442928e-11
+          "err_ppb": 7.510022982660625e-11
         },
         {
           "r": 8,
-          "alpha": 6.356970432984427,
+          "alpha": 6.356971987362382,
           "B_pred_MeV": 8.481798,
-          "err_ppb": -9.34718126202646e-11
+          "err_ppb": 1.1023345927097279e-11
         }
       ],
       "best_fit_at_rank_4": {
         "r": 4,
-        "alpha": 5.31612133537607,
+        "alpha": 5.3161193954866235,
         "B_pred_MeV": 8.481798,
-        "err_ppb": -2.9732238941872006e-11
+        "err_ppb": -7.392802315803193e-11
       }
     },
     {
-      "iso": "³He",
+      "iso": "\u00b3He",
       "Z": 2,
       "N": 1,
       "A": 3,
       "B_AME_MeV": 7.718058,
-      "leading_formula": "2·m_e·Vol(L6a4)",
-      "leading_MeV": 7.4889193093528075,
-      "leading_err_pct": -2.9688645854590896,
-      "residual_MeV": 0.2291386906471921,
+      "leading_formula": "2\u00b7m_e\u00b7Vol(L6a4)",
+      "leading_MeV": 7.488919319465068,
+      "leading_err_pct": -2.968864454438305,
+      "residual_MeV": 0.22913868053493197,
       "fits": [
         {
           "r": 2,
-          "alpha": 17.57049638550497,
+          "alpha": 17.570499783803122,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -2.8550424019226246e-09
+          "err_ppb": -1.2796385041824809e-10
         },
         {
           "r": 3,
-          "alpha": 47.80412545096908,
+          "alpha": 47.80414085136816,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.4065785512533702e-09
+          "err_ppb": 7.353871431855098e-11
         },
         {
           "r": 4,
-          "alpha": 92.29427367045244,
+          "alpha": 92.29431588301415,
           "B_pred_MeV": 7.718058,
-          "err_ppb": 2.0622317860303517e-09
+          "err_ppb": 7.23980697686604e-10
         },
         {
           "r": 5,
-          "alpha": 134.75668553232086,
+          "alpha": 134.7567662846342,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.42218907183218e-09
+          "err_ppb": -2.2655760159394895e-09
         },
         {
           "r": 6,
-          "alpha": 154.85747076766907,
+          "alpha": 154.8575865979144,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.8746923037413046e-09
+          "err_ppb": 2.3393985083245678e-09
         },
         {
           "r": 7,
-          "alpha": 143.9356451270039,
+          "alpha": 143.93577521103998,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.9800383852164966e-09
+          "err_ppb": -2.7075404965554223e-09
         },
         {
           "r": 8,
-          "alpha": 110.36466849478605,
+          "alpha": 110.36478623095141,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -7.864315403094352e-10
+          "err_ppb": -8.662951691911659e-10
         }
       ],
       "best_fit_at_rank_4": {
         "r": 4,
-        "alpha": 92.29427367045244,
+        "alpha": 92.29431588301415,
         "B_pred_MeV": 7.718058,
-        "err_ppb": 2.0622317860303517e-09
+        "err_ppb": 7.23980697686604e-10
       }
     },
     {
-      "iso": "⁴He",
+      "iso": "\u2074He",
       "Z": 2,
       "N": 2,
       "A": 4,
       "B_AME_MeV": 28.29566,
-      "leading_formula": "2·m_e·4·Vol(L6a4)",
-      "leading_MeV": 29.95567723741123,
-      "leading_err_pct": 5.8666849877727945,
-      "residual_MeV": -1.6600172374112316,
+      "leading_formula": "2\u00b7m_e\u00b74\u00b7Vol(L6a4)",
+      "leading_MeV": 29.95567727786027,
+      "leading_err_pct": 5.866685130724189,
+      "residual_MeV": -1.6600172778602722,
       "fits": [
         {
           "r": 2,
-          "alpha": -127.2911475029737,
+          "alpha": -127.29118084149405,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.3303732544679185e-09
+          "err_ppb": 3.177918654748601e-09
         },
         {
           "r": 3,
-          "alpha": -346.32157512919815,
+          "alpha": -346.3217104212988,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.5658449498604308e-09
+          "err_ppb": 2.9602562565144277e-09
         },
         {
           "r": 4,
-          "alpha": -668.6347241252251,
+          "alpha": -668.6350757385133,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.5285757457030536e-09
+          "err_ppb": 1.705809020002574e-09
         },
         {
           "r": 5,
-          "alpha": -976.2577424538433,
+          "alpha": -976.2583943437205,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -1.5373662153202145e-09
+          "err_ppb": 3.416362858931009e-10
         },
         {
           "r": 6,
-          "alpha": -1121.8798103897898,
+          "alpha": -1121.8807263799868,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -4.667484422167271e-09
+          "err_ppb": 4.185668987741498e-09
         },
         {
           "r": 7,
-          "alpha": -1042.755596245528,
+          "alpha": -1042.756610078817,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 2.739384251054244e-09
+          "err_ppb": 1.380676108743494e-09
         },
         {
           "r": 8,
-          "alpha": -799.5474338491694,
+          "alpha": -799.5483415677827,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -1.4613758852117214e-09
+          "err_ppb": -2.5534268077335557e-09
         }
       ],
       "best_fit_at_rank_4": {
         "r": 4,
-        "alpha": -668.6347241252251,
+        "alpha": -668.6350757385133,
         "B_pred_MeV": 28.29566,
-        "err_ppb": 1.5285757457030536e-09
+        "err_ppb": 1.705809020002574e-09
       }
     },
     {
-      "iso": "⁶Li",
+      "iso": "\u2076Li",
       "Z": 3,
       "N": 3,
       "A": 6,
@@ -257,15 +256,12 @@
       "no_leading_rule": true
     },
     {
-      "iso": "⁷Li",
+      "iso": "\u2077Li",
       "Z": 3,
       "N": 4,
       "A": 7,
       "B_AME_MeV": 39.24452,
       "no_leading_rule": true
     }
-  ],
-  "engine": "python",
-  "scriptFile": "binding_ladder_catalog.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  ]
 }

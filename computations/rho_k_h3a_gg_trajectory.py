@@ -324,13 +324,33 @@ def main() -> int:
         G_arr = np.eye(d_lp, dtype=float)
         n_target_lp = float(abs(target))  # |target| ≥ 0 for the LP
         try:
-            lp_result = solve_operator_selection_lp(t_arr, G_arr, n_target_lp)
+            # Pinned to scipy, and this is the ONE site in the 2026-08-23
+            # sweep where that is the measured answer rather than an unexamined
+            # default. `t_λ = 1/(dim_q · |y_λ χ^λ|)` with the 1e-15 floor above
+            # spans 1.1 … 1e15 — a cost DYNAMIC RANGE of 15 orders. Clarabel's
+            # interior-point method returns a false `infeasible` on it (every
+            # nucleon came back NaN); HiGHS's simplex solves it. Measured, and
+            # not a precision problem: 167 / 333 / 500 bits all fail
+            # identically. Rescaling cannot fix it either — scaling shifts the
+            # magnitude of `t` but leaves the ratio between its entries
+            # untouched, and the ratio is what conditions the solve.
+            # Bean `qou/ftuv`.
+            lp_result = solve_operator_selection_lp(t_arr, G_arr, n_target_lp, backend="scipy")
             lp_dict = lp_result.to_dict()
         except Exception as e:
             lp_dict = {"feasible": False, "error": str(e)}
 
         # ── SDP via canonical solver ─────────────────────────────────
         try:
+            # Deliberately NOT pinned, and this is the one place in the
+            # 2026-08-23 sweep where leaving `auto` is the right answer. The
+            # SDP path takes only 'auto' / 'cvxpy' / 'clarabel' — there is no
+            # scipy option to match the LP above — and cvxpy is not installed
+            # here, so this call cannot run either way. Pinning it to clarabel
+            # would swap the honest "SDP requires cvxpy" message for the same
+            # false `infeasible` the 1e15 cost range provokes in the LP, which
+            # is strictly worse: a missing dependency would start reading as a
+            # mathematical verdict. Bean `qou/ftuv`.
             sdp_result = solve_psd_operator_selection_sdp(t_arr, G_arr, n_target_lp)
             sdp_dict = sdp_result.to_dict()
         except Exception as e:

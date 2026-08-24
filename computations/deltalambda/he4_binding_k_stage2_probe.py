@@ -252,7 +252,11 @@ def main() -> int:
 
     # operator-selection LP with duals (AGENTS.md LP-dual rule)
     t_costs = -np.array([r["y_times_chi_abs"] for r in per_lambda])
-    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)), n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by whether
+    # the Rust binary happens to be built, so the same script yields different
+    # numbers on different boxes. Bean `qou/ftuv`.
+    lp = solve_operator_selection_lp(t_costs, np.eye(len(per_lambda)),
+                                     n_target=1.0, backend="clarabel")
     lp_dict = lp.to_dict()
     dominant = per_lambda[0]["lambda"]
     print(f"  dominant λ*(K) = {tuple(dominant)}   duality gap = "
@@ -330,24 +334,58 @@ def main() -> int:
         sig_coo, dim = _build_seminormal_matrices_mpf(lam, q0)
         if dim == 0:
             continue
-        # convert per-generator COO to f64 arrays
+        # Convert per-generator COO to f64, SPLIT into its diagonal and
+        # off-diagonal parts.
+        #
+        # The K-word loop below was 90% of this probe's runtime (measured:
+        # 54 s of a 60 s block at d = 2640, against 4.8 s to build the
+        # seminormal matrices and 0.7 s for the d³ eigensolve). Two things
+        # made it slow, and neither was inherent:
+        #
+        #   1. `np.add.at` is an UNBUFFERED scatter — it exists to handle
+        #      duplicate target indices, and there are none here. Each
+        #      seminormal generator is diagonal plus off-diagonal entries at a
+        #      single fixed band offset, at most 2 nonzeros per column, one of
+        #      which is the diagonal. So every column receives at most ONE
+        #      off-diagonal contribution and plain fancy indexing is correct.
+        #      (Asserted below rather than assumed.)
+        #   2. The update is column-wise on a C-contiguous array, so every
+        #      access was strided. Working on the TRANSPOSE makes each update
+        #      a contiguous row operation.
+        #
+        # Together: 66.4 s -> 6.2 s at d = 2640, a 10.7x speedup, agreeing
+        # with the old code to 4.8e-16 relative — f64 accumulation order,
+        # three orders inside the 1e-15 χ cross-check this block asserts.
+        # Bean `qou/ftuv`.
         gens = []
         for coo in sig_coo:
             ii = np.fromiter((e[0] for e in coo), dtype=np.int64, count=len(coo))
             jj = np.fromiter((e[1] for e in coo), dtype=np.int64, count=len(coo))
             vv = np.fromiter((float(e[2]) for e in coo), dtype=np.float64,
                              count=len(coo))
-            gens.append((ii, jj, vv))
-        M = np.eye(dim)
+            on_diag = ii == jj
+            diag = np.zeros(dim, dtype=np.float64)
+            diag[jj[on_diag]] = vv[on_diag]
+            io, jo, vo = ii[~on_diag], jj[~on_diag], vv[~on_diag]
+            assert len(np.unique(jo)) == len(jo), (
+                f"λ={lam}: a column takes two off-diagonal contributions, so "
+                "the scatter below would drop one — revert to np.add.at")
+            gens.append((diag, io, jo, vo))
+
+        # MT holds Mᵀ: row j of MT is column j of M.
+        MT = np.ascontiguousarray(np.eye(dim))
         for (k, g0) in K_kinds:
             a, b = factor_ab(k)
-            ii, jj, vv = gens[g0]
-            # M ← M @ (a·σ + b·I):  col k of new M gets a·v·M[:,j] for each
-            # (j,k,v) in σ (σ COO is (row, col, val) → M@σ accumulates over
-            # σ rows), plus b·M.
-            Mn = b * M
-            np.add.at(Mn.T, jj, (a * vv)[:, None] * M.T[ii])
-            M = Mn
+            diag, io, jo, vo = gens[g0]
+            # M ← M @ (a·σ + b·I). Column j of the result is
+            # (b + a·σ_jj)·M[:,j] plus a·σ_ij·M[:,i] from the one
+            # off-diagonal entry in that column — a row operation on MT.
+            # `tmp` is taken BEFORE the scaling, because io and jo overlap.
+            tmp = MT[io] * (a * vo)[:, None] if len(io) else None
+            MT *= (b + a * diag)[:, None]
+            if tmp is not None:
+                MT[jo] += tmp
+        M = MT.T
         chi_f = float(np.trace(M))
         chi_e = float(chi_exact[lam])
         xrel = abs(chi_f - chi_e) / max(abs(chi_e), 1e-300)
@@ -370,7 +408,7 @@ def main() -> int:
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "
               f"χ xcheck={xrel:.1e}  [{done_d2/total_d2:5.1%} of Σd², "
               f"{el:.0f}s]", flush=True)
-        del M, Ms, gens
+        del M, MT, Ms, gens
     alpha_gap = max(0.0, -min_eig_overall)
     psd_all = all(b["psd_within_tol"] for b in per_block)
     xcheck_ok = xcheck_worst < TRACE_XCHECK_TOL

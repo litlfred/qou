@@ -63,9 +63,21 @@ from canonical_braid_crossings import (  # noqa: E402
 
 
 # ----------------------------------------------------------------------------
-# Substrate constants (canonical; from the deuteron χ cache header).
+# Substrate constants.
 # ----------------------------------------------------------------------------
-Q0_STR = "1.1099785955573347198997632204832250266562084087802"
+# Q0_STR used to be a hardcoded literal here, commented "from the deuteron χ
+# cache header". It did not match that header: the literal was the MUON pin
+# (1.10997859555733471…) while the cache declares q0Anchor "proton" and
+# q0Value 1.10997858275138080…. Since `q` is hardcoded it also bypassed both
+# the q0_anchor_manifest and QOU_Q0_ANCHOR, so neither could correct it.
+#
+# That one-line mismatch WAS the whole 8.9e-7 "Δ_λ cross-check residual" this
+# script reports. The identity Σ_w ρ_w = χ^λ is exact — verified to 1e-49 when
+# both sides use the same q — so the residual was measuring the μ–p anchor
+# separation and nothing else. Kept as a named fallback only; `main` now takes
+# q FROM the cache header, which makes the comment true by construction and
+# means the cross-check can never again be run at two different anchors.
+Q0_STR_FALLBACK = "1.1099785827513808075916690956107688798744991218736"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.
@@ -308,6 +320,12 @@ def rho_lambda_of_word(lam, word, q, qi):
 def main() -> int:
     t0 = time.time()
     set_compute_dps()
+    # q comes from the χ cache this script cross-checks against, so both sides
+    # of `Σ_w ρ_w = χ^λ` are evaluated at one anchor by construction.
+    _cache_path0 = _pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)
+    _cache0 = json.loads(_cache_path0.read_text())
+    Q0_STR = str(_cache0.get("q0Value") or Q0_STR_FALLBACK)
+    Q0_ANCHOR = str(_cache0.get("q0Anchor") or "proton")
     q = mpf(Q0_STR)
     qi = mpf(1) / q
     m_e = mpf(M_E_MEV_STR)
@@ -417,6 +435,23 @@ def main() -> int:
         "n_partitions": len(parts),
         "braid_word_len": len(word),
         "q_0_50dps": Q0_STR,
+        # Recorded so a consumer can tell which layer this witness belongs to
+        # WITHOUT inferring it from the digits. Its absence is why a hardcoded
+        # muon q sat here against a proton cache without anything noticing.
+        #
+        # q0Value / q0AnchorReason follow the contract main's labelling pass
+        # (4101909790) introduced. That pass transcribed this witness's pin from
+        # `q_0_50dps` and correctly labelled it "muon" — a faithful reading of the
+        # hardcoded value that was here at the time. Emitting all three from the
+        # producer means the label now tracks the pin instead of being recovered
+        # from it afterwards, so it cannot go stale when the pin changes.
+        "q0Anchor": Q0_ANCHOR,
+        "q0Value": Q0_STR,
+        "q0AnchorReason": (
+            "read from the chi cache this script cross-checks against "
+            "(chi-deuteron-h6-at-q0-50dps.witness.json), so both sides of "
+            "Sum_w rho_w = chi^lambda are evaluated at one anchor by construction"
+        ),
         "m_e_MeV": M_E_MEV_STR,
         "dps": mp.dps,
         "parameter_free": True,

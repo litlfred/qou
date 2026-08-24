@@ -15104,7 +15104,7 @@ an empty left context. The invariant used below, "the head is the maximum", has
 no such edge cases.)
 
 Measured at more than one `n` first, in
-[`hecke_overlap_length_probe.py`](../../../../../../computations/hecke_overlap_length_probe.py):
+[`hecke_overlap_length_probe.py`](../../../../../computations/hecke_overlap_length_probe.py):
 at `n = 2 … 8` there are 1351 compositions with both contexts non-empty and the
 overlap-length histogram is `len1` only — zero exceptions. (The same probe
 reproduces §4k's shape counts from an independent implementation: 16 rules → 13
@@ -16489,5 +16489,1092 @@ with `descWord_split` rather than read off a leading monomial.
 So this cell is **not** the one-application-per-column shape the two quadratic
 columns had, and saying so is the point of this section. `oc_ext_of_left_ne_nil`
 still does the bridging; what it does not do is choose the chain. -/
+
+/-! ## §4bg  The braid-word cell — the clean case, measured as such
+
+§4bf read the `BS × FC` cell before writing it and found a four-way split. The
+same reading applied to the braid-word families finds the opposite, and the
+reason is in their own docstrings: `wHi i' i` carries **exactly two** rules
+(§4j), and on the other side *"`rule₁` cannot double: `j₁ ≤ i − 2` puts its
+leading monomial strictly longer than the braid word"*. So `BraidSelfOverlap`'s
+four theorems are not a sample of a larger family — they are all of it.
+
+`lm_eq_wHi_cases` turns that into something a caller can use: a rule of the
+completed system leading on `wHi i' i` **is** `yangBaxterRelation i' i` or
+`bokutShiaoRelation i' i i'`. The quadratic and far-commutation words are the
+wrong length, and a Bokut–Shiao word reaches length three only when its
+descending run is a singleton (`descWord_eq_singleton`), which forces `j = i − 1`.
+
+`braid_self_resolves` is then two applications of `lm_eq_wHi_cases` and one of
+`oc_ext_of_left_ne_nil` per branch. Note the bridge is unusually direct here:
+`BraidSelfOverlap.oc` takes its two rules as *parameters*, so the constructed
+composition already has the arbitrary one's rules and the rule-equality side
+conditions are the classification's own output.
+
+Cells crossed so far, all under `oc.left ≠ []`: `BS × BS` (§4aw, modulo the deep
+diagonal), `? × quadratic` (§4bd), `quadratic × ?` (§4be), and the braid word
+here. `BS × FC` is mapped but not crossed (§4bf). -/
+
+/-- **Only two rules lead on the braid word.** No hypothesis relating `i'` to
+`i` is needed: matching a leading monomial against `[σᵢ, σᵢ', σᵢ]` *forces*
+`i' + 1 = i` in both surviving families, so the side condition is an output
+rather than an input. -/
+theorem lm_eq_wHi_cases (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hm : r ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hlm : r.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i) :
+    r = yangBaxterRelation i' i ∨ r = bokutShiaoRelation i' i i' := by
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm with
+    ⟨a, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨a', a, b, hb₁, hb₂, ha⟩
+  · rw [ha, heckeRelation_lm] at hlm
+    simp [BraidSelfOverlap.wHi] at hlm
+  · rw [ha, yangBaxterRelation_lm a b (by omega), BraidSelfOverlap.wHi] at hlm
+    obtain ⟨hbi, hai', -⟩ : b = i ∧ a = i' ∧ b = i := by simpa using hlm
+    exact Or.inl (by rw [ha, hbi, hai'])
+  · rw [ha, farCommRelation_lm a b (by omega)] at hlm
+    simp [BraidSelfOverlap.wHi] at hlm
+  · rw [ha, bokutShiaoRelation_lm hb₁ hb₂, bsWord₁_cons hb₁ hb₂,
+      BraidSelfOverlap.wHi] at hlm
+    obtain ⟨hai, htail⟩ := List.cons.inj hlm
+    have hai' : a = i := congrArg HeckeGen.index hai
+    have hrun : descWord a' b = [(⟨i'⟩ : HeckeGen n)] := by
+      have h2 : descWord a' b ++ [(⟨a⟩ : HeckeGen n)]
+          = [(⟨i'⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)] := htail
+      exact (List.append_inj' h2 (by simp)).1
+    obtain ⟨hba', hz⟩ := descWord_eq_singleton hb₂ hrun
+    have ha'i' : a' = i' := (congrArg HeckeGen.index hz).symm
+    exact Or.inr (by rw [ha, hai', ha'i', hba', ha'i'])
+
+/-- **The braid-word cell of `overlap_resolves`, for an arbitrary composition.** -/
+theorem braid_self_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i : Fin n}
+    (hi : i'.val + 1 = i.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  rcases lm_eq_wHi_cases hn hp hm₁ h₁ with e₁ | e₁ <;>
+    rcases lm_eq_wHi_cases hn hp hm₂ h₂ with e₂ | e₂
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (yangBaxterRelation i' i) (yangBaxterRelation i' i)
+        (BraidSelfOverlap.yb_hlm i' i hi) (BraidSelfOverlap.yb_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.yb_yb_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (yangBaxterRelation i' i) (bokutShiaoRelation i' i i')
+        (BraidSelfOverlap.yb_hlm i' i hi) (BraidSelfOverlap.bs_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.yb_bs_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (bokutShiaoRelation i' i i') (yangBaxterRelation i' i)
+        (BraidSelfOverlap.bs_hlm i' i hi) (BraidSelfOverlap.yb_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.bs_yb_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+  · have hbr : oc = BraidSelfOverlap.oc (i' := i') (i := i)
+        (bokutShiaoRelation i' i i') (bokutShiaoRelation i' i i')
+        (BraidSelfOverlap.bs_hlm i' i hi) (BraidSelfOverlap.bs_hlm i' i hi) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ e₂ hl (by simp [BraidSelfOverlap.oc])
+    rw [hbr]; exact BraidSelfOverlap.bs_bs_resolves (hp := hp) (i' := i') (i := i) (hn := hn) (hi := hi)
+
+/-! ## §4bh  Bokut–Shiao against the braid word, both ways
+
+Measured before writing, as §4bf and §4bg were. `BokutShiaoBraid.oc` admits any
+`j₁ ≤ i − 1`, but its two chains require `j₁ ≤ i''` with `i'' + 1 = i − 1` — that
+is, `j₁ < i − 1` strictly. The excluded endpoint is not a gap: at `j₁ = i − 1`
+the Bokut–Shiao rule leads on the braid word itself (`bs_hlm`), so **both** rules
+do, and that is §4bg. The two sections compose to cover the cell, and §4bg is a
+prerequisite of this one rather than a parallel result.
+
+So each direction splits on `Nat.eq_or_lt_of_le` at the same place, and the two
+branches go to different sections. `BraidBokutShiao` mirrors it exactly.
+
+This is the shape §4bd predicted for the generic-namespace cells, and it holds
+here — with the caveat §4be added and §4bf illustrated: the split point came from
+reading the chains' side conditions, not from the family's name. Three cells have
+now been read this way and two were clean; the odd one out (`BS × FC`, §4bf) is
+still the only four-way split found. -/
+
+/-- **Bokut–Shiao against a rule on the braid word, for an arbitrary
+composition.** -/
+theorem bs_braid_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j₁ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j₁.val ≤ i'.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i' i j₁)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp hi hj
+  have hleft : descWord i j₁ ≠ [] := by
+    obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j₁) (by omega)
+    rw [hu]; simp
+  rcases Nat.eq_or_lt_of_le hj with heq | hlt
+  · -- `j₁ = i − 1`: `rule₁` leads on the braid word too, so this is §4bg
+    have hj₁i' : j₁ = i' := Fin.ext heq
+    have h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i := by
+      rw [hr₁, hj₁i']
+      exact BraidSelfOverlap.bs_hlm i' i hi
+    exact braid_self_resolves hn hp hi hm₁ hm₂ h₁ h₂ hl
+  · -- `j₁ < i − 1`: the `BokutShiaoBraid` chains, which need exactly that
+    have hlt' : i'.val - 1 < n := by omega
+    obtain ⟨i'', hi''⟩ : ∃ i'' : Fin n, i''.val + 1 = i'.val ∧ j₁.val ≤ i''.val :=
+      ⟨⟨i'.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    rcases lm_eq_wHi_cases hn hp hm₂ h₂ with e₂ | e₂
+    · have hbr : oc = BokutShiaoBraid.oc (yangBaxterRelation i' i) (j₁ := j₁) hi hj
+          (BraidSelfOverlap.yb_hlm i' i hi) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ e₂ hl
+          (by simpa [BokutShiaoBraid.oc] using hleft)
+      rw [hbr]
+      exact BokutShiaoBraid.yangBaxter_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₁ := j₁) hn hi hi''.1 hi''.2
+    · have hbr : oc = BokutShiaoBraid.oc (bokutShiaoRelation i' i i') (j₁ := j₁) hi hj
+          (BraidSelfOverlap.bs_hlm i' i hi) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ e₂ hl
+          (by simpa [BokutShiaoBraid.oc] using hleft)
+      rw [hbr]
+      exact BokutShiaoBraid.bokutShiao_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₁ := j₁) hn hi hi''.1 hi''.2
+
+/-- **A rule on the braid word against Bokut–Shiao** — the mirror. -/
+theorem braid_bs_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j₂ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j₂.val ≤ i'.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation i' i j₂)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact bokutShiaoRelation_mem hn hp hi hj
+  rcases Nat.eq_or_lt_of_le hj with heq | hlt
+  · -- `j₂ = i − 1`: `rule₂` leads on the braid word too, so this is §4bg
+    have hj₂i' : j₂ = i' := Fin.ext heq
+    have h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi i' i := by
+      rw [hr₂, hj₂i']
+      exact BraidSelfOverlap.bs_hlm i' i hi
+    exact braid_self_resolves hn hp hi hm₁ hm₂ h₁ h₂ hl
+  · -- `j₂ < i − 1`: the `BraidBokutShiao` chains
+    have hlt' : i'.val - 1 < n := by omega
+    obtain ⟨i'', hi''⟩ : ∃ i'' : Fin n, i''.val + 1 = i'.val ∧ j₂.val ≤ i''.val :=
+      ⟨⟨i'.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    rcases lm_eq_wHi_cases hn hp hm₁ h₁ with e₁ | e₁
+    · have hbr : oc = BraidBokutShiao.oc (yangBaxterRelation i' i) (j₂ := j₂)
+          (BraidSelfOverlap.yb_hlm i' i hi) hi hj
+          (descWord_cons hi''.1 hi''.2) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ hr₂ hl (by simp [BraidBokutShiao.oc])
+      rw [hbr]
+      exact BraidBokutShiao.yangBaxter_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₂ := j₂) hn hi hi''.1 hi''.2
+    · have hbr : oc = BraidBokutShiao.oc (bokutShiaoRelation i' i i') (j₂ := j₂)
+          (BraidSelfOverlap.bs_hlm i' i hi) hi hj
+          (descWord_cons hi''.1 hi''.2) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ e₁ hr₂ hl (by simp [BraidBokutShiao.oc])
+      rw [hbr]
+      exact BraidBokutShiao.bokutShiao_resolves (hp := hp) (i'' := i'') (i' := i')
+        (i := i) (j₂ := j₂) hn hi hi''.1 hi''.2
+
+/-! ## §4bi  The four-way cell, crossed
+
+§4bf mapped this cell and stopped there. This crosses it. The map held — four
+rows, on `j₀` against `j` — and row 4 needed what §4bf said it would.
+
+| `j₀` vs `j` | chain |
+|---|---|
+| `j₀ + 1 = j` | `BokutShiaoFarComm.oc_reduces_to_zero` (§4o) |
+| `j₀ + 1 < j` | `CyclicFarCommLow.bokutShiao_resolves` |
+| `j₀ = j` | `BokutShiaoFarCommSame.oc_reduces_to_zero` |
+| `j < j₀` | `CyclicFarCommInner.oc_reduces_to_zero` |
+
+**One side condition the map missed.** `BokutShiaoFarCommSame.oc_reduces_to_zero`
+also wants a `jp` with `j + 1 = jp ≤ i − 1`, which §4bf did not record. It is
+vacuous here — that row has `j₀ = j`, and `farCommRelation i j` exists only for
+`j + 1 < i`, so `j < i − 1` already — but it still has to be *supplied*. Reading
+a chain's hypotheses is not the same as reading its docstring, and §4bf had only
+done the latter.
+
+**Row 4 is the one that is not a bridge application.** `CyclicFarCommInner`
+asks for four structural facts about how `descWord i j` breaks at `σ_{j₀}`, and
+they are built rather than read off: `descWord_split` cuts the run at `j₀`,
+`descWord_last` peels `σ_{j₀}` off the upper piece to expose `A`, and
+`descWord_nodup` is what makes every letter of `A` **strictly** above `j₀` —
+membership alone gives only `≥`, and the chain needs `>`. All three come from
+§4bb, which was written for the antichain and is reused here unchanged. -/
+
+/-- **Bokut–Shiao against far commutation, for an arbitrary composition.** -/
+theorem bs_farComm_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j j₀ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) (hj₀ : j₀.val + 1 < i.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i' i j)
+    (hr₂ : oc.rule₂ = farCommRelation i j₀)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp hi hj
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact farCommRelation_mem hn hp (by omega)
+  have hdne : descWord i j ≠ [] := by
+    obtain ⟨u, hu⟩ := descWord_head (i := i) (j := j) (by omega)
+    rw [hu]; simp
+  rcases lt_trichotomy j₀.val j.val with hlt | heq | hgt
+  · rcases Nat.eq_or_lt_of_le (Nat.succ_le_of_lt hlt) with he | hl2
+    · -- `j₀ + 1 = j` — §4o's own family
+      have hbr : oc = BokutShiaoFarComm.oc (i' := i') (i := i) (j := j) (j₀ := j₀)
+          hi hj he :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl
+          (by simpa [BokutShiaoFarComm.oc] using hdne)
+      rw [hbr]
+      exact BokutShiaoFarComm.oc_reduces_to_zero hn hp hi hj he
+    · -- `j₀ + 1 < j`
+      have hbr : oc = CyclicFarCommLow.oc (bokutShiaoRelation i' i j) i j₀
+          (descWord i' j)
+          (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, descWord_cons hi hj])
+          (by omega) :=
+        oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl
+          (by simp [CyclicFarCommLow.oc])
+      rw [hbr]
+      exact CyclicFarCommLow.bokutShiao_resolves hp hn hi hj (by omega)
+  · -- `j₀ = j`
+    have hjj : j₀ = j := Fin.ext heq
+    have hjp : j.val + 1 < n := by omega
+    have hbr : oc = BokutShiaoFarCommSame.oc (i' := i') (i := i) (j := j) hi hj :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ (by rw [hr₂, hjj]; rfl) hl
+        (by simpa [BokutShiaoFarCommSame.oc] using hdne)
+    rw [hbr]
+    exact BokutShiaoFarCommSame.oc_reduces_to_zero hp hn hi hj
+      (jp := ⟨j.val + 1, hjp⟩) (by simp) (by simp; omega)
+  · -- `j < j₀` — the far-commutation partner lands inside the descending run
+    have hj₀i' : j₀.val + 1 ≤ i'.val := by omega
+    have hlt' : j₀.val - 1 < n := by omega
+    obtain ⟨j₀', hj₀'⟩ : ∃ j₀' : Fin n, j₀'.val + 1 = j₀.val ∧ j.val ≤ j₀'.val :=
+      ⟨⟨j₀.val - 1, hlt'⟩, by simp; omega, by simp; omega⟩
+    -- Split the run at `σ_{j₀}` and peel its bottom letter off the upper piece.
+    have hsp : descWord i' j = descWord i' j₀ ++ descWord j₀' j :=
+      descWord_split hj₀'.1 hj₀'.2 (by omega)
+    obtain ⟨A, hA⟩ := descWord_last (i := i') (j := j₀) (by omega)
+    have hsplit' : descWord i' j = A ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j) := by
+      rw [hsp, hA]; simp
+    have hsplit : descWord i j
+        = ((⟨i⟩ : HeckeGen n) :: A) ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j) := by
+      rw [descWord_cons hi hj, hsplit']; rfl
+    have hfarA : ∀ y ∈ A, j₀'.val + 1 < y.index.val := by
+      intro y hy
+      have hmem : y ∈ descWord i' j₀ := by rw [hA]; simp [hy]
+      have hge := descWord_index_ge hmem
+      have hne : y ≠ (⟨j₀⟩ : HeckeGen n) := by
+        intro hcon
+        have hnd : (descWord i' j₀).Nodup := descWord_nodup i' j₀
+        rw [hA] at hnd
+        exact (List.disjoint_of_nodup_append hnd) (hcon ▸ hy) (by simp)
+      have : y.index ≠ j₀ := fun hcon => hne (by cases y; simp_all)
+      have : y.index.val ≠ j₀.val := fun hcon => this (Fin.ext hcon)
+      omega
+    have hbr : oc = CyclicFarCommLow.oc (bokutShiaoRelation i' i j) i j₀
+        (A ++ ((⟨j₀⟩ : HeckeGen n) :: descWord j₀' j))
+        (by rw [bokutShiaoRelation_lm hi hj, bsWord₁, hsplit]; rfl)
+        (by omega) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl (by simp [CyclicFarCommLow.oc])
+    rw [hbr]
+    exact CyclicFarCommInner.oc_reduces_to_zero hp hn hi hj₀'.1 hj₀i' hj₀'.2
+      hsplit hsplit' rfl hfarA
+
+/-! ## §4bj  The `FC × ?` row, and the instantiation §4q never made
+
+Reading `FarCommCyclic`'s hypotheses rather than its docstrings — the §4bi
+lesson — turns up something the earlier cells did not have: a **missing
+instantiation**, not a missing bridge. The namespace exposes a generic
+`oc_reduces_to_zero` and two uses of it, `bokutShiao_resolves` and
+`yangBaxter_resolves`. There is no third, and `FC × FC` needs one.
+
+`farComm_farComm_resolves` supplies it, and the fit is exact:
+`farCommRelation m d` is `ofTerms [([σ_m, σ_d], 1), ([σ_d, σ_m], −1)]`, which is
+the family's normal form `ofTerms [(σ_m :: u'', c), (q :: t, −c)]` at
+`u'' = [σ_d]`, `c = 1`, `q = σ_d`, `t = [σ_m]` — so `hrel` is `fun _ => rfl`, as
+it is for `farComm_quad_resolves`. The two blanket far-commutation conditions
+follow from `d < m` and `m + 1 < x` by `omega`.
+
+This is the first cell whose gap was a chain rather than a bridge, and it is
+worth separating the two: `oc_ext_of_left_ne_nil` (§4bd) still did all the
+bridging here. What it cannot do is notice that a family has an uninstantiated
+member.
+
+`farComm_left_resolves` then closes the row. The quadratic branch defers to
+§4bd's column rather than repeating it — `quad_right_resolves` already carries
+its own bridge, so no second one is built. -/
+
+/-- **Far commutation against far commutation** — the member §4q never
+instantiated. -/
+theorem farComm_farComm_resolves (hp : HeckeParams) {x m d : Fin n} (hn : 0 < n)
+    (hmx : m.val + 1 < x.val) (hdm : d.val + 1 < m.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (FarCommCyclic.oc (farCommRelation m d) x m [(⟨d⟩ : HeckeGen n)]
+        (farCommRelation_lm m d (by omega)) hmx).spoly nf ∧ nf.isZero :=
+  FarCommCyclic.oc_reduces_to_zero hp (farCommRelation m d) x m
+    (q := (⟨d⟩ : HeckeGen n)) (t := [(⟨m⟩ : HeckeGen n)])
+    (u'' := [(⟨d⟩ : HeckeGen n)]) (c := 1) hn
+    (fun _ => rfl) (farCommRelation_lm m d (by omega))
+    (farCommRelation_lc m d (by omega)) one_ne_zero hmx
+    (by
+      intro hcon
+      have := congrArg HeckeGen.rank hcon
+      simp only [HeckeGen.rank] at this
+      omega)
+    (by
+      intro y hy
+      simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+      rcases hy with rfl | rfl
+      · show d.val + 1 < x.val
+        omega
+      · show m.val + 1 < x.val
+        omega)
+    (by
+      intro y hy
+      simp only [List.mem_cons, List.not_mem_nil, or_false] at hy
+      subst hy
+      show d.val + 1 < x.val
+      omega)
+    (farCommRelation_mem hn hp (by omega))
+
+/-- **The `FC × ?` row of `overlap_resolves`, for an arbitrary composition.** -/
+theorem farComm_left_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {x m : Fin n}
+    (hmx : m.val + 1 < x.val)
+    (hr₁ : oc.rule₁ = farCommRelation x m)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact farCommRelation_mem hn hp (by omega)
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- `lm₁ = σₓσ_m`, so the overlap letter is `σ_m` and `lm₂` begins with it.
+  have hd₁ : [(⟨x⟩ : HeckeGen n)] ++ [(⟨m⟩ : HeckeGen n)] = oc.left ++ [z] := by
+    rw [← hz, ← oc.lm₁_decomp, hr₁, farCommRelation_lm x m (by omega)]; rfl
+  obtain ⟨-, hze⟩ := List.append_inj' hd₁ (by simp)
+  have hzm : z = (⟨m⟩ : HeckeGen n) := by simpa using hze.symm
+  have hlm₂ : oc.rule₂.lm (heckeOrder n) = (⟨m⟩ : HeckeGen n) :: oc.right := by
+    rw [oc.lm₂_decomp, hz, hzm]; rfl
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₂ with
+    ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+  · -- `FC × quadratic` — already the `? × quadratic` column
+    exact quad_right_resolves hn hp hm₁ hc hl
+  · -- `FC × Yang–Baxter`
+    rw [hc, yangBaxterRelation_lm c d (by omega)] at hlm₂
+    have hdm : d = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (yangBaxterRelation c d) x m
+        [(⟨c⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)]
+        (by rw [yangBaxterRelation_lm c d (by omega), hdm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hdm
+    exact FarCommCyclic.yangBaxter_resolves hp hn (by omega) hmx
+  · -- `FC × far commutation` — the instantiation above
+    rw [hc, farCommRelation_lm c d (by omega)] at hlm₂
+    have hcm : c = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (farCommRelation c d) x m [(⟨d⟩ : HeckeGen n)]
+        (by rw [farCommRelation_lm c d (by omega), hcm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hcm
+    exact farComm_farComm_resolves hp hn hmx (by omega)
+  · -- `FC × Bokut–Shiao`
+    rw [hc, bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂] at hlm₂
+    have hcm : c = m := congrArg HeckeGen.index (List.cons.inj hlm₂).1
+    have hbr : oc = FarCommCyclic.oc (bokutShiaoRelation c' c d) x m
+        (descWord c' d ++ [(⟨m⟩ : HeckeGen n)])
+        (by rw [bokutShiaoRelation_lm hc₁ hc₂, bsWord₁_cons hc₁ hc₂, hcm]) hmx :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hc hl (by simp [FarCommCyclic.oc])
+    rw [hbr]
+    subst hcm
+    exact FarCommCyclic.bokutShiao_resolves hp hn hc₁ hc₂ hmx
+
+/-! ## §4bk  `YB × FC`, and the `? × FC` row closed
+
+The split point here was measured in advance: §4bj recorded it rather than
+leaving it to be re-derived, so this section spent nothing finding it.
+`CyclicFarCommLow.yangBaxter_resolves` wants `j₀ + 1 < i'`, strictly stronger
+than the far-commutation rule's own `j₀ + 1 < i = i' + 1`; the single endpoint
+it excludes, `j₀ + 1 = i'`, is exactly §4p's `YangBaxterFarComm`. Together the
+two are the rule's own condition, with nothing left over and no overlap.
+
+With that cell crossed the whole `? × FC` row closes by dispatch on `rule₁`'s
+family — quadratic to §4be, Yang–Baxter to here, far commutation to §4bj,
+Bokut–Shiao to §4bi. The dispatch reads the overlap letter off `lm₂`'s head and
+then matches each family's *last* letter against it, which is what makes the
+four branches uniform.
+
+As throughout §4bd–§4bj this assumes `oc.left ≠ []`. The nil-left compositions
+are a separate question and are still open.
+-/
+
+/-- **Yang–Baxter against far commutation**, for an arbitrary composition. -/
+theorem yb_farComm_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i' i j₀ : Fin n}
+    (hi : i'.val + 1 = i.val) (hj₀ : j₀.val + 1 < i.val)
+    (hr₁ : oc.rule₁ = yangBaxterRelation i' i)
+    (hr₂ : oc.rule₂ = farCommRelation i j₀)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact yangBaxterRelation_mem hn hp hi
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact farCommRelation_mem hn hp (by omega)
+  rcases Nat.eq_or_lt_of_le (show j₀.val + 1 ≤ i'.val by omega) with he | hlt
+  · -- `j₀ + 1 = i − 1`: §4p's own family
+    have hbr : oc = YangBaxterFarComm.oc (i' := i') (i := i) (j₀ := j₀) hi he :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl (by
+        obtain ⟨u, hu⟩ := descWord_head (i := i) (j := i') (by omega)
+        show descWord i i' ≠ []
+        rw [hu]; simp)
+    rw [hbr]
+    exact YangBaxterFarComm.oc_reduces_to_zero hn hp hi he
+  · -- `j₀ + 1 < i − 1`
+    have hbr : oc = CyclicFarCommLow.oc (yangBaxterRelation i' i) i j₀
+        [(⟨i'⟩ : HeckeGen n)]
+        (by rw [yangBaxterRelation_lm i' i (by omega)]; rfl)
+        (by omega) :=
+      oc_ext_of_left_ne_nil hn hp hm₁ hm₂ hr₁ hr₂ hl (by simp [CyclicFarCommLow.oc])
+    rw [hbr]
+    exact CyclicFarCommLow.yangBaxter_resolves hp hn hi hlt
+
+/-- **The `? × FC` row of `overlap_resolves`, for an arbitrary composition.** -/
+theorem farComm_right_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {i j₀ : Fin n}
+    (hj₀ : j₀.val + 1 < i.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : oc.rule₂ = farCommRelation i j₀)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact farCommRelation_mem hn hp (by omega)
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- `lm₂ = σᵢσ_{j₀}` begins with the overlap letter, so that letter is `σᵢ`.
+  have hzi : z = (⟨i⟩ : HeckeGen n) := by
+    have hd := oc.lm₂_decomp
+    rw [hr₂, farCommRelation_lm i j₀ (by omega), hz] at hd
+    exact (List.cons.inj hd).1.symm
+  have hlast : oc.rule₁.lm (heckeOrder n) = oc.left ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [oc.lm₁_decomp, hz, hzi]
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₁ with
+    ⟨c, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c, d, hcd, hc⟩ | ⟨c', c, d, hc₁, hc₂, hc⟩
+  · -- `quadratic × FC` — already the `quadratic × ?` column
+    exact quad_left_resolves hn hp hc hm₂ hl
+  · -- `Yang–Baxter × FC`
+    rw [hc, yangBaxterRelation_lm c d (by omega)] at hlast
+    have hl' : [(⟨d⟩ : HeckeGen n), (⟨c⟩ : HeckeGen n)] ++ [(⟨d⟩ : HeckeGen n)]
+        = oc.left ++ [(⟨i⟩ : HeckeGen n)] := hlast
+    have hdi : d = i := by
+      have := (List.append_inj' hl' (by simp)).2
+      simpa using this
+    rw [hdi] at hc
+    exact yb_farComm_resolves hn hp (by omega) hj₀ hc hr₂ hl
+  · -- `FC × FC` — the far-commutation row
+    rw [hc, farCommRelation_lm c d (by omega)] at hlast
+    have hl' : [(⟨c⟩ : HeckeGen n)] ++ [(⟨d⟩ : HeckeGen n)]
+        = oc.left ++ [(⟨i⟩ : HeckeGen n)] := hlast
+    have hdi : d = i := by
+      have := (List.append_inj' hl' (by simp)).2
+      simpa using this
+    rw [hdi] at hc hcd
+    exact farComm_left_resolves hn hp (by omega) hc hm₂ hl
+  · -- `Bokut–Shiao × FC`
+    rw [hc, bokutShiaoRelation_lm hc₁ hc₂, bsWord₁] at hlast
+    have hci : c = i := by
+      have := (List.append_inj' hlast (by simp)).2
+      simpa using this
+    rw [hci] at hc hc₁
+    exact bs_farComm_resolves hn hp hc₁ hc₂ hj₀ hc hr₂ hl
+
+/-! ## §4bl  The nil-left compositions — the standing caveat, discharged
+
+Every cell from §4bd to §4bk carried `oc.left ≠ []`. The excluded case turns out
+not to need a cell at all.
+
+`OverlapComposition` places no condition on `left` or `right`, so `left = []` is
+legal, and it says `lm₁` *is* the overlap — hence `lm₂ = lm₁ ++ right`. §4ba's
+`lm_not_proper_prefix` then forces `right = []`, so the two rules lead on the
+same word, which is §4bc's `shared_lm_classify`: they are the same rule, or §4j's
+Yang–Baxter/Bokut–Shiao pair. The first is `spoly_isZero_of_self`; the second has
+both relations summing to zero coefficient by coefficient
+(`DegenerateYbBs.relations_add_eq_zero`) against leading coefficients `−1` and
+`+1`, so the S-polynomial vanishes outright.
+
+So the nil-left case needs no family analysis and no reduction: the S-polynomial
+is *zero*, not merely reducible to zero. This is strictly more general than
+§4aw's `bsbs_resolves_of_nil_left`, which proved the same for two Bokut–Shiao
+rules only.
+-/
+
+/-- **A nil-left overlap composition has zero S-polynomial** — no reduction
+needed, for any two rules of the completed system. -/
+theorem overlap_spoly_isZero_of_nil_left (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left = []) : oc.spoly.isZero := by
+  have hlm₁ : oc.rule₁.lm (heckeOrder n) = oc.overlap := by
+    rw [oc.lm₁_decomp, hl, List.nil_append]
+  have hdec : oc.rule₂.lm (heckeOrder n) = oc.rule₁.lm (heckeOrder n) ++ oc.right := by
+    rw [oc.lm₂_decomp, hlm₁]
+  have hr : oc.right = [] := lm_not_proper_prefix hn hp hm₁ hm₂ hdec
+  have hlm : oc.rule₁.lm (heckeOrder n) = oc.rule₂.lm (heckeOrder n) := by
+    rw [hdec, hr, List.append_nil]
+  rcases shared_lm_classify hn hp hm₁ hm₂ hlm with hsame | ⟨i', i, hi, hpair⟩
+  · exact oc.spoly_isZero_of_self hsame hl hr
+  · intro m
+    simp only [OverlapComposition.spoly, hl, hr, AlgElement.sub_coeff,
+      AlgElement.smul_coeff, AlgElement.contextMul_nil_nil_coeff]
+    have hadd := DegenerateYbBs.relations_add_eq_zero hi m
+    rcases hpair with ⟨ha, hb⟩ | ⟨ha, hb⟩ <;>
+      rw [ha, hb, DegenerateYbBs.yangBaxter_lc hi, DegenerateYbBs.bokutShiao_lc hi] <;>
+      linarith
+
+/-- …so it resolves, in no reduction steps. -/
+theorem overlap_resolves_of_nil_left (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left = []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (overlap_spoly_isZero_of_nil_left hn hp hm₁ hm₂ hl)
+
+/-! ## §4bm  The overlap matrix, assembled
+
+With §4bl the `oc.left ≠ []` hypothesis can be discharged by cases, so the
+sixteen family pairs assemble into one theorem. Two of the four columns are
+already whole rows in disguise — `quad_right_resolves` (§4bd) and
+`farComm_right_resolves` (§4bk) each take an arbitrary `rule₁` — so the assembly
+dispatches on `rule₂` first, and only the Yang–Baxter and Bokut–Shiao columns
+need a second dispatch.
+
+`overlap_letter` is the shared step: the overlap is a single letter (§4au), so
+`lm₁ = left ++ [z]` and `lm₂ = z :: right` hold simultaneously. Each column reads
+`z` off its own `lm₂` and then matches each `rule₁` family's *last* letter
+against it. Every index identification in both columns is that one argument.
+
+Two facts fell out of reading hypotheses rather than names:
+
+- **`hq : q − q⁻¹ ≠ 0` was never a hypothesis.** `HeckeParams.h_ne_zero` proves
+  it from `HeckeParams` alone, so §4aw's `bsbs_resolves_of_oc` carries it
+  redundantly; the assembly discharges it instead of propagating it.
+- **`i₁ = 0` is not a Bokut–Shiao case at all.** `bsbs_resolves_of_oc` needs an
+  `i₂` with `i₂ + 1 = i₁`, i.e. `i₁ ≥ 1`. At `i₁ = 0` both `j`s are forced to
+  `0 = i₁`, so both leading monomials are `bsWord₁ i i' = σᵢσᵢ₋₁σᵢ` — the braid
+  word — and §4bg's `braid_self_resolves` takes it.
+
+What is left is one hypothesis, `hdeep`, and it is sharper than the "deep
+diagonal" of §4aw. Forcing `i' = i` from the overlap letter forces `ip = i₁` too,
+so at `j₁ = j₂ = 0` the two rules are *the same rule*: `hdeep` is the longest
+Bokut–Shiao word `σᵢσᵢ₋₁⋯σ₀σᵢ` overlapping **itself** in its shared `σᵢ`. One
+self-overlap, not a family.
+-/
+
+/-- The overlap letter, read off both leading monomials at once. -/
+theorem overlap_letter (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hl : oc.left ≠ []) :
+    ∃ z : HeckeGen n, oc.rule₁.lm (heckeOrder n) = oc.left ++ [z]
+      ∧ oc.rule₂.lm (heckeOrder n) = z :: oc.right := by
+  have hone := overlap_length_one hn hp hm₁ hm₂ hl
+  obtain ⟨z, hz⟩ : ∃ z, oc.overlap = [z] := by
+    rcases hoc : oc.overlap with _ | ⟨z, zs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨z, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  refine ⟨z, ?_, ?_⟩
+  · rw [oc.lm₁_decomp, hz]
+  · rw [oc.lm₂_decomp, hz]; rfl
+
+/-- **The `? × YB` column of `overlap_resolves`.** -/
+theorem yangBaxter_right_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {c d : Fin n}
+    (hcd : c.val + 1 = d.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : oc.rule₂ = yangBaxterRelation c d)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact yangBaxterRelation_mem hn hp hcd
+  have h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi c d := by
+    rw [hr₂, yangBaxterRelation_lm c d (by omega)]; rfl
+  obtain ⟨z, hlast, hhead⟩ := overlap_letter hn hp hm₁ hm₂ hl
+  have hzd : z = (⟨d⟩ : HeckeGen n) := by
+    rw [h₂, BraidSelfOverlap.wHi] at hhead
+    exact (List.cons.inj hhead).1.symm
+  rw [hzd] at hlast
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₁ with
+    ⟨x, hx⟩ | ⟨a, b, hab, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨b', b, j₁, hb₁, hb₂, hb⟩
+  · exact quad_left_resolves hn hp hx hm₂ hl
+  · rw [ha, yangBaxterRelation_lm a b (by omega)] at hlast
+    have hbd : b = d := by
+      have hh : ([(⟨b⟩ : HeckeGen n), ⟨a⟩] ++ [(⟨b⟩ : HeckeGen n)])
+          = oc.left ++ [(⟨d⟩ : HeckeGen n)] := hlast
+      exact congrArg HeckeGen.index (by simpa using (List.append_inj' hh (by simp)).2)
+    have hac : a = c := Fin.ext (by omega)
+    have h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi c d := by
+      rw [ha, yangBaxterRelation_lm a b (by omega), hbd, hac]; rfl
+    exact braid_self_resolves hn hp hcd hm₁ hm₂ h₁ h₂ hl
+  · exact farComm_left_resolves hn hp hab ha hm₂ hl
+  · rw [hb, bokutShiaoRelation_lm hb₁ hb₂, bsWord₁] at hlast
+    have hbd : b = d :=
+      congrArg HeckeGen.index (by simpa using (List.append_inj' hlast (by simp)).2)
+    have hb'c : b' = c := Fin.ext (by omega)
+    have hr₁ : oc.rule₁ = bokutShiaoRelation c d j₁ := by rw [hb, hb'c, hbd]
+    exact bs_braid_resolves hn hp hcd (by omega) hr₁ hm₂ h₂ hl
+
+/-- **The `? × BS` column of `overlap_resolves`**, modulo the deep diagonal. -/
+theorem bokutShiao_right_resolves (hn : 0 < n) (hp : HeckeParams)
+    (hdeep : ∀ (oc' : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)) (a' a e : Fin n),
+      a'.val + 1 = a.val → 1 ≤ a'.val → e.val = 0 →
+      oc'.rule₁ = bokutShiaoRelation a' a e → oc'.rule₂ = bokutShiaoRelation a' a e →
+      oc'.left ≠ [] →
+      ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        oc'.spoly nf ∧ nf.isZero)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {c' c j₂ : Fin n}
+    (hc₁ : c'.val + 1 = c.val) (hc₂ : j₂.val ≤ c'.val)
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation c' c j₂)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact bokutShiaoRelation_mem hn hp hc₁ hc₂
+  obtain ⟨z, hlast, hhead⟩ := overlap_letter hn hp hm₁ hm₂ hl
+  have hzc : z = (⟨c⟩ : HeckeGen n) := by
+    obtain ⟨t, ht⟩ := descWord_head (i := c) (j := j₂) (by omega)
+    rw [hr₂, bokutShiaoRelation_lm hc₁ hc₂, bsWord₁, ht] at hhead
+    exact (List.cons.inj hhead).1.symm
+  rw [hzc] at hlast
+  rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₁ with
+    ⟨x, hx⟩ | ⟨a, b, hab, ha⟩ | ⟨a, b, hab, ha⟩ | ⟨b', b, j₁, hb₁, hb₂, hb⟩
+  · exact quad_left_resolves hn hp hx hm₂ hl
+  · rw [ha, yangBaxterRelation_lm a b (by omega)] at hlast
+    have hbc : b = c := by
+      have hh : ([(⟨b⟩ : HeckeGen n), ⟨a⟩] ++ [(⟨b⟩ : HeckeGen n)])
+          = oc.left ++ [(⟨c⟩ : HeckeGen n)] := hlast
+      exact congrArg HeckeGen.index (by simpa using (List.append_inj' hh (by simp)).2)
+    have hac : a = c' := Fin.ext (by omega)
+    have h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi c' c := by
+      rw [ha, yangBaxterRelation_lm a b (by omega), hbc, hac]; rfl
+    exact braid_bs_resolves hn hp hc₁ hc₂ hm₁ h₁ hr₂ hl
+  · exact farComm_left_resolves hn hp hab ha hm₂ hl
+  · rw [hb, bokutShiaoRelation_lm hb₁ hb₂, bsWord₁] at hlast
+    have hbc : b = c :=
+      congrArg HeckeGen.index (by simpa using (List.append_inj' hlast (by simp)).2)
+    have hb'c : b' = c' := Fin.ext (by omega)
+    have hr₁ : oc.rule₁ = bokutShiaoRelation c' c j₁ := by rw [hb, hb'c, hbc]
+    have hj₁ : j₁.val ≤ c'.val := by omega
+    by_cases hc0 : c'.val = 0
+    · have hj₁0 : j₁ = c' := Fin.ext (by omega)
+      have hj₂0 : j₂ = c' := Fin.ext (by omega)
+      have h₁ : oc.rule₁.lm (heckeOrder n) = BraidSelfOverlap.wHi c' c := by
+        rw [hr₁, hj₁0, bokutShiaoRelation_lm hc₁ (le_refl _), bsWord₁_at_pred hc₁]; rfl
+      have h₂ : oc.rule₂.lm (heckeOrder n) = BraidSelfOverlap.wHi c' c := by
+        rw [hr₂, hj₂0, bokutShiaoRelation_lm hc₁ (le_refl _), bsWord₁_at_pred hc₁]; rfl
+      exact braid_self_resolves hn hp hc₁ hm₁ hm₂ h₁ h₂ hl
+    · by_cases hcov : 1 ≤ j₁.val ∨ 1 ≤ j₂.val
+      · exact bsbs_resolves_of_oc hn hp (i₂ := ⟨c'.val - 1, by omega⟩) hc₁
+          (by show c'.val - 1 + 1 = c'.val; omega) hj₁ hc₁ hc₂ (by tauto) hp.h_ne_zero hr₁ hr₂ hl
+      · have hjj : j₁ = j₂ := Fin.ext (by omega)
+        exact hdeep oc c' c j₂ hc₁ (by omega) (by omega) (by rw [hr₁, hjj]) hr₂ hl
+
+/-- **Every overlap composition of the completed Hecke system resolves**, modulo
+the one deep-diagonal self-overlap. -/
+theorem overlap_resolves_general (hn : 0 < n) (hp : HeckeParams)
+    (hdeep : ∀ (oc' : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)) (a' a e : Fin n),
+      a'.val + 1 = a.val → 1 ≤ a'.val → e.val = 0 →
+      oc'.rule₁ = bokutShiaoRelation a' a e → oc'.rule₂ = bokutShiaoRelation a' a e →
+      oc'.left ≠ [] →
+      ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        oc'.spoly nf ∧ nf.isZero)
+    (oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n))
+    (hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  by_cases hl : oc.left = []
+  · exact overlap_resolves_of_nil_left hn hp hm₁ hm₂ hl
+  · rcases mem_heckeCompletedRewritingSystem_rules hn hp hm₂ with
+      ⟨y, hy⟩ | ⟨c, d, hcd, h₂⟩ | ⟨c, d, hcd, h₂⟩ | ⟨c', c, e, ha, hb, h₂⟩
+    · exact quad_right_resolves hn hp hm₁ hy hl
+    · exact yangBaxter_right_resolves hn hp (by omega) hm₁ h₂ hl
+    · exact farComm_right_resolves hn hp (by omega) hm₁ h₂ hl
+    · exact bokutShiao_right_resolves hn hp hdeep ha hb hm₁ h₂ hl
+
+/-! ## §4bn  `IsGrobnerShirshovBasis`, modulo one self-overlap
+
+§4bc closed the inclusion half for every `n`; §4bm closes the overlap half
+modulo `hdeep`. The predicate is the conjunction of the two, so it follows.
+
+The remaining hypothesis is neither a `sorry` nor an axiom: it is an explicit
+argument naming the one composition whose reduction has not been written.
+Everything else in the criterion — both halves, all four rule families, both
+context shapes, every `n` — is discharged.
+
+`hdeep` is **not proved, and is not in doubt either**:
+[`hecke_deep_selfoverlap_probe.py`](../../../../../computations/hecke_deep_selfoverlap_probe.py)
+reduces both sides under the completed system and finds they meet for every
+`i = 1 … 9`, and that the answer does not depend on the rule order. So the
+completion is not missing a rule; what is missing is the induction. For `i ≥ 2`
+both sides land on the same **two-term** normal form, and an induction has to
+hit it:
+
+`bsWord₂ (i−1) 0 · descWord i 1  +  (q − q⁻¹) · bsWord₂ (i−1) 0 · descWord i 0`
+
+(the second word is the first with a trailing `σ₀`, since
+`descWord i 1 ++ [σ₀] = descWord i 0`). `i = 1` is degenerate — `descWord (i−1) …`
+collapses and the normal form has four terms.
+
+The shape of that induction is also measured. For `i ≥ 2` **exactly one
+quadratic step fires, always on `σ₀`**: it is the only coefficient-producing
+rule, which is why the normal form has two terms — the split's `1` branch drops
+two letters and its `(q − q⁻¹)σ₀` branch drops one, so the two words differ by a
+trailing `σ₀`. Every other step is a length-preserving monomial rewrite. So the
+coefficient bookkeeping is a single `heckeRelation` split and the rest is word
+combinatorics. The chain grows: measured under that strategy it is `i(i+5)/2`
+steps on the left and one more on the right — a size estimate for the induction,
+not a fact about the algebra, and reason to want a general step lemma rather
+than an enumeration.
+-/
+
+/-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis**, modulo
+the single deep-diagonal self-overlap. -/
+theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams)
+    (hdeep : ∀ (oc' : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)) (a' a e : Fin n),
+      a'.val + 1 = a.val → 1 ≤ a'.val → e.val = 0 →
+      oc'.rule₁ = bokutShiaoRelation a' a e → oc'.rule₂ = bokutShiaoRelation a' a e →
+      oc'.left ≠ [] →
+      ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        oc'.spoly nf ∧ nf.isZero) :
+    IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) where
+  overlap_resolves := fun oc h₁ h₂ => overlap_resolves_general hn hp hdeep oc h₁ h₂
+  inclusion_resolves := fun ic h₁ h₂ => inclusion_resolves_general hn hp ic h₁ h₂
+
+/-! ## §4bo  The doubled-descending-run sweep — side B's half of `hdeep`
+
+§4bn left one obligation, `hdeep`. Its two sides need different chains, and this
+is side B's, in full generality.
+
+The reframing that made it tractable is that the normal form **factors**:
+
+`NF = bsWord₂ (i−1) 0 · descWord i 1 · (1 + (q − q⁻¹)σ₀)`
+
+and `1 + (q − q⁻¹)σ₀` is exactly what `σ₀σ₀` rewrites to. So the whole
+S-polynomial is one word with a `σ₀σ₀` on the end, and the single quadratic step
+of the entire reduction is the last one. Side B's job is to reach that word.
+
+It does so by a **uniform peel**. The second copy's head `σ_m` closes the first
+copy into `bsWord₁ m z`; the Bokut–Shiao rule replaces it by
+`bsWord₂ (m−1) m z = σ_{m−1}σ_m ++ descWord (m−1) z`; and what is left is the
+same shape one level down. The bottom needs no step at all —
+`descWord z z ++ descWord z z` *is* `σ_z σ_z`. One rule, one step per level,
+`i − 1` steps in all, and the induction is on the gap, exactly as
+`descWord_split_aux` is.
+
+`pairSweep` is the target word, `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1} σ_z σ_z`.
+It is defined by zipping the descending run against its own tail rather than by
+recursion, so no arithmetic on `Fin n` appears in it and `pairSweep_cons` is a
+`descWord_cons` rewrite.
+
+Both statements are on a **one-term** element, which makes `monicStep`'s side
+condition on the surrounding terms vacuous. The `hdeep` application will carry
+the other spoly term alongside, and re-establishing that condition against every
+intermediate is work this section does not do.
+
+**Side A is not this.** Its route is doubly nested — a `BS` per level each
+followed by an `FC` sweep — and `(i²+i+4)/2` steps rather than `i − 1`. It is
+still to be written, and so `hdeep` is still open.
+-/
+
+/-- `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_{z}σ_{z+1} σ_z σ_z` — the word a doubled
+descending run sweeps to. Defined by zipping the run against its own tail so
+that no arithmetic on `Fin n` is needed. -/
+def pairSweep {n : ℕ} (m z : Fin n) : Monomial (HeckeGen n) :=
+  (List.zip (descWord m z) ((descWord m z).tail ++ [(⟨z⟩ : HeckeGen n)])).flatMap
+    (fun p => [p.2, p.1])
+
+/-- The recursion the sweep runs on: one pair peels off the front. -/
+theorem pairSweep_cons {m' m z : Fin n} (hm : m'.val + 1 = m.val)
+    (hz : z.val ≤ m'.val) :
+    pairSweep m z = [(⟨m'⟩ : HeckeGen n), ⟨m⟩] ++ pairSweep m' z := by
+  simp only [pairSweep, descWord_cons hm hz, List.tail_cons]
+  obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hz
+  rw [ht]
+  simp
+
+/-- At the bottom the sweep is already done. -/
+theorem pairSweep_self (z : Fin n) :
+    pairSweep z z = [(⟨z⟩ : HeckeGen n), ⟨z⟩] := by
+  simp [pairSweep, descWord_self]
+
+/-- **A doubled descending run sweeps to interleaved pairs.**
+
+`descWord m z ++ descWord m z ⟶* pairSweep m z`, by exactly one Bokut–Shiao
+step per level: the second copy's head `σ_m` closes the first copy into
+`bsWord₁ m z`, the rule replaces it by `bsWord₂ (m−1) m z = σ_{m−1}σ_m ++
+descWord (m−1) z`, and what is left is the same shape one level down. The
+bottom level needs no step at all — `descWord z z ++ descWord z z` *is*
+`σ_z σ_z`.
+
+Stated on a one-term element, so `monicStep`'s side condition on the
+surrounding terms is vacuous. -/
+theorem doubleDesc_sweep (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m : Fin n), m.val = z.val + d →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ descWord m z ++ descWord m z ++ b, c)])
+          (AlgElement.ofTerms [(a ++ pairSweep m z ++ b, c)]) := by
+  intro d
+  induction d with
+  | zero =>
+    intro m hm a b c _
+    have hmz : m = z := Fin.ext (by omega)
+    subst hmz
+    rw [descWord_self, pairSweep_self]
+    simp only [List.cons_append, List.append_assoc, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro m hm a b c hc
+    have hzm : z.val ≤ m.val := by omega
+    have hlt : m.val - 1 < n := by have := m.isLt; omega
+    set m' : Fin n := ⟨m.val - 1, hlt⟩ with hm'
+    have hmm : m'.val + 1 = m.val := by simp only [hm']; omega
+    have hzm' : z.val ≤ m'.val := by simp only [hm']; omega
+    -- the second copy's head closes the first into `bsWord₁ m z`
+    have hsplit : a ++ descWord m z ++ descWord m z ++ b
+        = a ++ bsWord₁ m z ++ (descWord m' z ++ b) := by
+      rw [show descWord m z = (⟨m⟩ : HeckeGen n) :: descWord m' z from
+        descWord_cons hmm hzm']
+      simp [bsWord₁, descWord_cons hmm hzm']
+    have hafter : a ++ bsWord₂ m' m z ++ (descWord m' z ++ b)
+        = (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩])
+            ++ descWord m' z ++ descWord m' z ++ b := by
+      simp [bsWord₂]
+    refine MultiStepReduction.head
+      (bsStep hn hp hmm hzm' [] [] a (descWord m' z ++ b) _ _ c hc hsplit rfl (by simp))
+      ?_
+    rw [hafter]
+    have key := ih m' (by simp only [hm']; omega) (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩]) b c hc
+    rw [pairSweep_cons hmm hzm']
+    simpa using key
+
+/-- **Side B of the deep self-overlap reaches its split word.**
+
+`B = bsWord₂ i' i 0 ++ descWord i' 0 ++ [σᵢ]` is `σ_{i−1}σ_i` in front of a
+doubled descending run, so the sweep applies verbatim in that context and lands
+on `pairSweep i 0 ++ [σᵢ]` — the word `σ_{i−1}σ_i σ_{i−2}σ_{i−1} ⋯ σ₀σ₁ σ₀σ₀ σᵢ`
+whose single `σ₀σ₀` is where the one quadratic step of the whole reduction
+happens. `i − 1` steps, one per level.
+
+This is the `hdeep` obligation's B-half up to the split; the A-half is a
+different and doubly-nested chain, and is not this. -/
+theorem bside_to_splitWord (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (hi : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(pairSweep i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)]) := by
+  have hz : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
+    [(⟨i'⟩ : HeckeGen n), ⟨i⟩] [(⟨i⟩ : HeckeGen n)] c hc
+  rw [pairSweep_cons hi hz]
+  have hb : bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+      = [(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] := by
+    simp [bsWord₂]
+  rw [hb]
+  simpa using key
+
+/-! ## §4bp  Side A, swept — and a correction to what §4bo's measurement said
+
+§4bo did side B. Side A opens with **three fixed steps** that land it on a
+doubled descending run, after which §4bo's sweep applies unchanged:
+
+1. the second copy of the run is preceded by `σ_{i−1}`, so the *first* copy plus
+   that letter is `bsWord₁ (i−1) 0` — the inner Bokut–Shiao rule fires;
+2. far commutation pulls the freed `σ_{i−2}` out to the front;
+3. what is left behind it is `descWord i 0 ++ [σᵢ] = bsWord₁ i 0` — the outer
+   Bokut–Shiao rule fires, and its `bsWord₂` puts a second `descWord (i−1) 0`
+   against the first.
+
+So side A reaches `σ_{i−2}σ_{i−1}σᵢ · pairSweep (i−1) 0` in `3 + (i − 1)` steps.
+
+**This corrects a figure recorded earlier.** The `(i²+i+4)/2` reported as "side
+A's BFS-minimal route" is the distance to **one particular** split word,
+`bsWord₂ (i−1) 0 · descWord i 1 · σ₀σ₀`. Side A can split far earlier than that,
+at the `σ₀σ₀` that `pairSweep` ends with, and getting there is linear. The
+quadratic figure describes a *choice of split point*, not the cost of side A.
+
+What remains for `hdeep` is one quadratic tail per side — measured
+`i(i−1)/2` per branch on A and `(i²−i+4)/2` per branch on B — plus the two-term
+bookkeeping. The two tails differ by exactly 2 at every `i` tested, which looks
+like B's branches reducing onto A's; **they do not** — checked to `i = 6`, no
+B-branch reaches its A-counterpart at all. The two tails are separate work.
+-/
+
+/-- **Side A's opening: three steps to a doubled descending run.** -/
+theorem aside_head (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ descWord i' ⟨0, hn⟩
+            ++ descWord i' ⟨0, hn⟩, c)]) := by
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hne_ii : (⟨i''⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hdi : descWord i ⟨0, hn⟩ = (⟨i⟩ : HeckeGen n) :: descWord i' ⟨0, hn⟩ :=
+    descWord_cons h₁ hz'
+  have hdi' : descWord i' ⟨0, hn⟩ = (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩ :=
+    descWord_cons h₂ hz''
+  -- step 1: the inner Bokut–Shiao rule fires on `bsWord₁ i' 0`
+  have e0 : descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩
+      = [(⟨i⟩ : HeckeGen n)] ++ bsWord₁ i' ⟨0, hn⟩
+        ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    rw [hdi]; simp [bsWord₁, bsWord₂]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₂ hz'' [] [] [(⟨i⟩ : HeckeGen n)]
+      ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e0 rfl (by simp)) ?_
+  -- step 2: far commutation pulls `σ_{i−2}` to the front
+  have e1 : [(⟨i⟩ : HeckeGen n)] ++ bsWord₂ i'' i' ⟨0, hn⟩
+        ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
+      = [] ++ [(⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
+        ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+            ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    simp [bsWord₂]
+  refine MultiStepReduction.head
+    (monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
+      (fun _ => rfl) (farCommRelation_lm i i'' (by omega)) (by simp [hne_ii])
+      [] [] [] ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e1 rfl (by simp)) ?_
+  -- step 3: the outer Bokut–Shiao rule fires on `bsWord₁ i 0`
+  have e2 : [] ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+        ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+            ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
+      = [(⟨i''⟩ : HeckeGen n)] ++ bsWord₁ i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
+    rw [bsWord₁, hdi, hdi']; simp
+  refine MultiStepReduction.head
+    (bsStep hn hp h₁ hz' [] [] [(⟨i''⟩ : HeckeGen n)] (descWord i' ⟨0, hn⟩)
+      _ _ c hc e2 rfl (by simp)) ?_
+  have e3 : [(⟨i''⟩ : HeckeGen n)] ++ bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+      = [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
+    simp [bsWord₂]
+  rw [e3]
+  exact MultiStepReduction.refl _
+
+/-- **Side A of the deep self-overlap, swept.** The three-step head lands on a
+doubled descending run, and §4bo's sweep takes it from there — so side A costs
+`3 + (i − 1)` steps to here, not the `(i²+i+4)/2` the greedy reduction spends
+reaching its own split word. -/
+theorem aside_to_sweptWord (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ pairSweep i' ⟨0, hn⟩, c)]) := by
+  refine MultiStepReduction.trans (aside_head hn hp h₂ h₁ c hc) ?_
+  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] [] c hc
+  simpa using key
+
+/-! ## §4bq  The far-commutation carry — side A's tail, inner loop
+
+What remains of side A after §4bp is a tail of **pure far commutation**, and its
+shape was measured rather than guessed. Grouped by top index, the rules are
+
+`(2,0)`, then `(3,1) (3,0)`, then `(4,2) (4,1) (4,0)`, … , then
+`(i, i−2) … (i, 0)`
+
+— at consecutive positions, `m − 1` steps for each `m` from `2` to `i`, which is
+the measured `i(i−1)/2`. Each group is one generator carried rightward past a
+descending run, so the inner loop is a single lemma and the outer loop is a
+second induction over `m`.
+
+`gen_past_descWord` is that inner loop: `σ_m · descWord k z ⟶* descWord k z · σ_m`
+whenever `k + 1 < m`, one step per letter, induction on the gap `k − z`.
+
+Two things about the tail are measured and worth keeping:
+
+- **The two branches of the split run the *same chain*** — not merely the same
+  shape. Compared as full rule-and-position sequences (not as labels, which hide
+  a rule's lower index and have misled this bean twice), they are identical at
+  `i = 3, 4, 5, 6`. The branches differ only by a trailing `σ₀`, which no rule in
+  the tail touches. So the tail is one lemma with the trailing context as a
+  parameter, which the step lemmas already carry as `b`.
+- **Side B's tail is NOT side A's.** Its per-branch length is `(i²−i+4)/2`,
+  exactly two more than A's `i(i−1)/2` at every `i` tested, which reads like B's
+  branches reducing onto A's in two steps. They do not: checked to `i = 6`, no
+  B-branch reaches its A-counterpart at all. Two separate tails.
+-/
+
+/-- **A far generator commutes rightward past a whole descending run.**
+
+`σ_m · descWord k z ⟶* descWord k z · σ_m` whenever `k + 1 < m`, by one
+far-commutation step per letter of the run. The induction is on the gap
+`k − z`, as `descWord_split_aux`'s is. -/
+theorem gen_past_descWord (hn : 0 < n) (hp : HeckeParams) (m : Fin n) :
+    ∀ (d : ℕ) (k z : Fin n), k.val = z.val + d → k.val + 1 < m.val →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ [(⟨m⟩ : HeckeGen n)] ++ descWord k z ++ b, c)])
+          (AlgElement.ofTerms [(a ++ descWord k z ++ [(⟨m⟩ : HeckeGen n)] ++ b, c)]) := by
+  intro d
+  induction d with
+  | zero =>
+    intro k z hk hkm a b c hc
+    have hkz : k = z := Fin.ext (by omega)
+    subst hkz
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    rw [descWord_self]
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        [] [] a b _ _ c hc (by simp) rfl (by simp)) ?_
+    simp only [List.append_assoc, List.cons_append, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro k z hk hkm a b c hc
+    have hlt : k.val - 1 < n := by have := k.isLt; omega
+    have hkz : z.val ≤ (⟨k.val - 1, hlt⟩ : Fin n).val := by simp; omega
+    have hkk : (⟨k.val - 1, hlt⟩ : Fin n).val + 1 = k.val := by simp; omega
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    have hdk : descWord k z
+        = (⟨k⟩ : HeckeGen n) :: descWord ⟨k.val - 1, hlt⟩ z := descWord_cons hkk hkz
+    rw [hdk]
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        [] [] a (descWord ⟨k.val - 1, hlt⟩ z ++ b) _ _ c hc (by simp) rfl (by simp)) ?_
+    have key := ih ⟨k.val - 1, hlt⟩ z (by simp; omega) (by simp; omega)
+      (a ++ [(⟨k⟩ : HeckeGen n)]) b c hc
+    simpa using key
 
 end UGB.GrobnerShirshov.Hecke

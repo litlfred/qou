@@ -55,7 +55,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from pn_alpha_lp_dual import build_gram, TR_M_BASIS, NF_NAMES  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 try:
     from lp_dual_solver import solve_psd_operator_selection_sdp
     _HAVE_SDP = True
@@ -99,25 +99,58 @@ def main() -> int:
            if r.get("status") == "solved"}
 
     rows = []
+    # Canonical-name duals, collected alongside the display rows below.
+    # The per-row fields are `lp_`-prefixed AND `round(..., 5)`-ed, which
+    # means (a) `lp_dual_witness_validator.py` — which searches for the
+    # unprefixed key names the LP-dual contract specifies — could not see
+    # them, so this witness read as "solves the primal, never reports the
+    # dual", and (b) the rounded copies are not solver output and so are not
+    # covered by the LP-dual float64 carve-out. Emitting the raw values under
+    # the canonical names fixes both. The prefixed rows stay for readers.
+    # Pattern taken from `lp_confinement_nf_forcing.py`, which already does
+    # exactly this. Bean `qou/augu`.
+    canonical: dict = {k: [] for k in ("y0_star", "y_star", "active_set",
+                                       "primal_obj", "dual_obj", "duality_gap")}
     for lab, (stem, (Z, N)) in CACHE.items():
         r = res.get((Z, N))
         if not r:
             continue
         ta = abs(float(r["tr_M_atom"].strip("()").split("+")[0]))
-        lp = solve_operator_selection_lp(t, G, ta, backend="scipy").to_dict()
+        # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+        # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+        # too (6 identical solves, 1 output hash), so that reason never distinguished
+        # the two. The real concern was `backend="auto"` choosing silently by whether
+        # the Rust binary happened to be built; pinning `clarabel` answers it, and
+        # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+        # changed answer. Bean `qou/ftuv`.
+        lp = solve_operator_selection_lp(t, G, ta, backend="clarabel").to_dict()
         active_ops = [NF_NAMES[i] for i in lp["active_set"]]
         row = {
             "nucleus": lab, "Z": Z, "N": N, "A": Z + N,
             "n_target_tr_atom": round(ta, 5),
             "lp_active_ops": active_ops,
-            "lp_y0_star": round(lp["y0_star"], 5),
-            "lp_y_star": [round(y, 5) for y in lp["y_star"]],
+            # NOT rounded. These are ~1e-43 on the MPFR backend, and
+            # `round(..., 5)` wrote a literal `0.0` into the witness for
+            # y0_star / primal_obj / dual_obj — the same destruction the SDP
+            # block below already refuses, applied to the LP side of the very
+            # same row. `y0_star = 0` happens to be the exact certificate for
+            # `t = G e₀`, but rounding is not what established that: it would
+            # equally have written 0.0 for a value that ought to be 3e-6. Emit
+            # the solver's value and let the `*_str` companions below prove
+            # it. Bean `qou/ftuv`.
+            "lp_y0_star": lp["y0_star"],
+            "lp_y_star": list(lp["y_star"]),
             "lp_active_set_idx": lp["active_set"],
-            "lp_primal_obj": round(lp["primal_obj"], 6),
-            "lp_dual_obj": round(lp["dual_obj"], 6),
-            "lp_duality_gap": float(f"{lp['duality_gap']:.2e}"),
+            "lp_primal_obj": lp["primal_obj"],
+            "lp_dual_obj": lp["dual_obj"],
+            "lp_duality_gap": lp["duality_gap"],
+            # Solver, precision, and full-precision decimals for the LP half,
+            # prefixed to match the row's `lp_` convention.
+            **{f"lp_{k}": v for k, v in provenance(lp).items()},
             "wedderburn": wedderburn_structure(stem),
         }
+        for k in canonical:
+            canonical[k].append(lp[k])
         if _HAVE_SDP:
             try:
                 sdp = solve_psd_operator_selection_sdp(t, G, ta).to_dict()
@@ -125,8 +158,27 @@ def main() -> int:
                 if aset is not None:
                     row["sdp_active_set_idx"] = aset
                     row["sdp_active_ops"] = [NF_NAMES[i] for i in aset]
-                row["sdp_duality_gap"] = float(f"{sdp.get('duality_gap', 0.0):.2e}")
-                row["sdp_primal_obj"] = round(sdp.get("primal_obj", 0.0), 6)
+                # NOT `round(..., 6)`. These quantities are ~1e-44 on the
+                # MPFR backend, and rounding to six decimals wrote `0.0` into
+                # the witness — the value destroyed outright, not merely
+                # truncated. Pairing that with a full-precision companion is
+                # worse than either alone: the shadow rule would excuse an
+                # f64 that CONTRADICTS its own companion. Emit the solver's
+                # value so the pair agrees. Bean `qou/ftuv`.
+                row["sdp_duality_gap"] = float(sdp.get("duality_gap", 0.0))
+                row["sdp_primal_obj"] = float(sdp.get("primal_obj", 0.0))
+                # Full-precision companions when the MPFR backend served the
+                # solve. `backend="auto"` picks clarabel-MPFR whenever the
+                # binary is on disk, so these appear without a backend
+                # argument — but the two display fields above are `.2e` and
+                # `round(…, 6)`, so without carrying the companions a 167-bit
+                # solve reached this witness as six decimal places. Bean
+                # `qou/ftuv`.
+                for _k in ("primal_obj_str", "dual_obj_str",
+                           "duality_gap_str", "eigenvalues_str",
+                           "X_star_str", "Z_star_str"):
+                    if sdp.get(_k) is not None:
+                        row[f"sdp_{_k}"] = sdp[_k]
             except Exception as e:  # noqa: BLE001
                 row["sdp_error"] = f"{type(e).__name__}: {e}"
         rows.append(row)
@@ -149,6 +201,8 @@ def main() -> int:
     w.add_data("H3_gram_det", detG)
     w.add_data("NF_basis", NF_NAMES)
     w.add_data("rows", rows)
+    for _k, _v in canonical.items():
+        w.add_data(_k, _v)
     w.add_data("reading", {
         "duality_gap_is_a_proof": "duality_gap ≈ 0 across all nuclei = strong "
             "duality holds = the active set is a CERTIFIED optimum (a proof, "

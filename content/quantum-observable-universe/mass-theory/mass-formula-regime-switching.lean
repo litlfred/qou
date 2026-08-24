@@ -79,10 +79,12 @@ def regimeSwitchedBinding (Z N : ℕ) : ℝ :=
   else if A ≤ 4 then bindingBW Z N
   else bindingBWShell Z N
 
-/-- The regime-switched formula is well-defined for all (Z, N). -/
-theorem regime_switched_binding_defined (Z N : ℕ) :
-    ∃ B : ℝ, B = regimeSwitchedBinding Z N :=
-  ⟨regimeSwitchedBinding Z N, rfl⟩
+/-! `regime_switched_binding_defined` (`∃ B : ℝ, B = regimeSwitchedBinding
+    Z N`) stood here until 2026-08-21.  `regimeSwitchedBinding` is a total
+    function, so the statement held for every `Z`, `N` and every possible
+    right-hand side; it asserted nothing about the regime switch.  What the
+    switch actually does is pinned by `deuteron_regime`, `tritium_regime`
+    and their siblings below, which name the branch each `A` takes. -/
 
 /-- Deuteron (A=2) uses SW+Frob. -/
 theorem deuteron_regime : regimeSwitchedBinding 1 1 = bindingSW 1 1 := by

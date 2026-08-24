@@ -105,11 +105,27 @@ theorem rsk_cardinality_discharged_n2_to_n8 :
     `ArchimedeanRealizationFunctor`.  Scalar piece: `evalAtQZero`.
     The full functor remains chained on Hecke. -/
 
-/-- **Scalar Archimedean discharge**: any real polynomial
-    evaluates to a real number at `q = q₀`.  This is the
-    chain-independent piece of the Archimedean realisation. -/
-theorem archimedean_eval_well_defined (p : Polynomial ℝ) :
-    ∃ y : ℝ, evalAtQZero p = y := ⟨evalAtQZero p, rfl⟩
+/-- **Scalar Archimedean discharge**: the real-valued evaluation at the
+    substrate point is *unique*.  Any ring homomorphism `ℝ[q] → ℝ` that
+    fixes the constants and sends `q ↦ q₀` **is** `evalAtQZero` — so the
+    substrate axiom's `Real_q₀` is determined by its defining properties
+    rather than merely asserted to exist.  This is the chain-independent
+    piece of the Archimedean realisation.
+
+    The previous statement was `∃ y : ℝ, evalAtQZero p = y`, which holds
+    for every total function into an inhabited type and so discharged
+    nothing: "well-defined" is not a theorem in a total type theory.
+    Existence of the evaluation is `evalAtQZero` itself; what a discharge
+    owes is that it is a ring map (`evalAtQZero_add` / `_mul` / `_C` /
+    `_X` in `ArchimedeanRealization`) and that nothing else is. -/
+theorem archimedean_eval_well_defined (f : Polynomial ℝ →+* ℝ)
+    (hC : ∀ c : ℝ, f (Polynomial.C c) = c)
+    (hX : f Polynomial.X = q_zero) (p : Polynomial ℝ) :
+    f p = evalAtQZero p := by
+  have hf : f = Polynomial.evalRingHom q_zero :=
+    Polynomial.ringHom_ext (by simpa using hC) (by simpa using hX)
+  rw [hf]
+  rfl
 
 /-- **Substrate `q_0 > 1` discharge**: the QOU substrate
     parameter is in the analytic-continuation regime. -/

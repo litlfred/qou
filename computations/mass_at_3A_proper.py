@@ -564,9 +564,31 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     ``sigmas`` is the list from build_seminormal_matrices.
     ``word`` is the list of (c, d, gen_idx) triples from
     atom_braid_word_3A.
+
+    **This is a float64 kernel, and the return annotation is the contract.**
+    ``build_seminormal_matrices`` fills a numpy array or a scipy sparse
+    matrix, and both branches below end in ``float(...)``, so no caller has
+    ever received more than 53 bits from here. The word coefficients are
+    therefore coerced to ``float`` on the way in, which loses nothing the
+    return type was not already discarding — and without it an ``mpf``
+    coefficient CRASHES the sparse branch outright:
+
+        c * <csr_matrix>  ->  _mul_scalar  ->  dtype object
+        ValueError: scipy.sparse does not support dtype object
+
+    The dense branch did not crash; it silently built an object-dtype array
+    and ran the whole product in Python-level mpf arithmetic, at 53-bit
+    inputs, for no gain.  So the two branches disagreed on the same input,
+    one loudly and one expensively.
+
+    If you need χ_λ at true precision, this is not the function — see
+    ``hecke_characters.chi_lambda_braid_mpf``.  Note that at A = 4 the
+    largest irrep is f^λ = 4158, i.e. ~7.2e10 mpf operations per matrix
+    multiply, so that route is not a drop-in for the A ≥ 4 producers.
     """
     if dim == 0:
         return 0.0
+    word = [(float(c), float(d), g) for (c, d, g) in word]
     try:
         from scipy import sparse as sp_sparse
         is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
@@ -584,10 +606,105 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
             raise IndexError(
                 f"word uses generator σ_{g} but only {len(sigmas)} "
                 f"seminormal matrices were provided (partition too small)")
-        M = c * sigmas[g] + d * I
-        product = product @ M
-    if is_sparse:
-        return float(product.diagonal().sum())
+
+    # Both storage formats go through the structured path; it reads the
+    # generators' nonzeros, not their container.
+    #
+    # The sparse branch was additionally BROKEN, not merely slow: for large n
+    # `build_seminormal_matrices` returns scipy sparse matrices, and 11 of the
+    # 23 letters in the A=2 word carry an `mpmath.mpf` coefficient, so
+    # `d * I` raised "scipy.sparse does not support dtype object". That is why
+    # ⁴He (n = 12) produced nothing from `alpha_5_lp_dual_crystal.py` — the
+    # caller wraps `per_atom_lp` in `except Exception: continue`, so the
+    # heaviest atom was dropped in silence rather than reported. Bean
+    # `qou/ftuv`.
+    return _chi_of_word_structured(sigmas, dim, word)
+
+
+def _chi_of_word_structured(sigmas, dim, word) -> float:
+    """`tr(Π_k (c_k·σ_{g_k} + d_k·I))` in O(|word|·dim²) instead of O(|word|·dim³).
+
+    The generic form multiplied a dense `dim × dim` product by a dense
+    `dim × dim` matrix for every letter — `dim³` per letter. A Hoefsmit
+    seminormal generator is nowhere near a general matrix: it is diagonal plus
+    off-diagonal entries with **at most two nonzeros per column**, one of which
+    is the diagonal. So each column of the product takes its own scaling plus a
+    contribution from exactly ONE other column, which is a `dim²` update.
+
+    Verified across 48 generators spanning six partitions before relying on it,
+    and re-checked per generator below rather than assumed — a wrong structural
+    assumption here would silently drop a term.
+
+    That is an asymptotic change, not a constant: at `dim = 7700` (λ ⊢ 12, the
+    ⁴He stratum) the old form needed ~4.6e11 flops per letter where this needs
+    ~5.9e7. `alpha_5_lp_dual_crystal.py` was not hanging — it was doing dim³
+    work per letter, three q-values deep. Bean `qou/ftuv`.
+
+    Falls back to the dense product for any generator that violates the
+    structure, so correctness never depends on the assumption holding.
+    """
+    try:
+        from scipy import sparse as _sp
+    except ImportError:
+        _sp = None
+
+    split = []
+    for S in sigmas:
+        if _sp is not None and _sp.issparse(S):
+            coo = S.tocoo()
+            ii = coo.row.astype(np.int64)
+            jj = coo.col.astype(np.int64)
+            vals = np.asarray(coo.data, dtype=np.float64)
+        else:
+            A = np.asarray(S, dtype=np.float64)
+            ii, jj = np.nonzero(A)
+            vals = A[ii, jj]
+        on_diag = ii == jj
+        diag = np.zeros(dim, dtype=np.float64)
+        diag[jj[on_diag]] = vals[on_diag]
+        io, jo = ii[~on_diag], jj[~on_diag]
+        if len(np.unique(jo)) != len(jo):
+            return _chi_of_word_dense(sigmas, dim, word)
+        split.append((diag, io, jo, vals[~on_diag]))
+
+    # Work on the transpose: row j of PT is column j of the product, so every
+    # update is contiguous.
+    PT = np.ascontiguousarray(np.eye(dim))
+    for (c, d, g) in word:
+        # `c` and `d` arrive as a mix of int and mpmath.mpf — 11 of the 23
+        # letters in the A=2 word carry an mpf `d`. Multiplying a float64
+        # seminormal matrix by an mpf promoted the whole product to
+        # **object dtype**, so every `product @ M` ran as a Python-level
+        # object matmul. That, not dim³ float work, is what made this slow:
+        # 0.025 s per letter on a 27×27 matrix.
+        #
+        # Coercing to float64 is consistent with what this path already
+        # claims to be — the docstring of
+        # `global_wedderburn_sum_q_hecke_seminormal` calls it "χ^λ_q via
+        # Hoefsmit seminormal matrices at q_val (numerical, float64)", and
+        # `build_seminormal_matrices` returns float64. The mpf coefficients
+        # were carrying extra digits on top of f64 inputs, which is precision
+        # in the accumulator only.
+        cf = float(c)
+        df = float(d)
+        diag, io, jo, vo = split[g]
+        tmp = PT[io] * (cf * vo)[:, None] if len(io) else None
+        PT *= (df + cf * diag)[:, None]
+        if tmp is not None:
+            PT[jo] += tmp
+    return float(np.trace(PT))
+
+
+def _chi_of_word_dense(sigmas, dim, word) -> float:
+    """Generic dense fallback — `dim³` per letter, used only when a generator
+    does not have the one-off-diagonal-per-column structure."""
+    product = np.eye(dim)
+    I = np.eye(dim)
+    for (c, d, g) in word:
+        S = sigmas[g]
+        A = S.toarray() if hasattr(S, "toarray") else np.asarray(S)
+        product = product @ (float(c) * np.asarray(A, dtype=np.float64)
+                             + float(d) * I)
     return float(np.trace(product))
 
 

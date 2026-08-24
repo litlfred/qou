@@ -671,3 +671,32 @@ comment flags it as a coincidence not to carry forward.
    pseudoinverse. Deliberately out of scope in both #5592 and #5625:
    `G_PINV` is computed at import, so changing what it means is the
    documented failure mode. Needs its own PR with per-consumer adjudication.
+
+## The general-n Rust module: DO NOT BUILD IT — no consumer (measured 2026-08-24)
+
+The remaining item I listed after PR #5625 was "general-n Rust TL form", to
+give `gram.rs` parity with Python's `pyhecke.tl`. I raised the objection
+twice that it "buys nothing until something calls it" and did not check.
+Checked now, and the objection holds:
+
+  * `gram_inverse_n` — the general-n inverse, guarded in #5591 — has ZERO
+    callers anywhere outside its own module and the probe written to test
+    the guard.
+  * `gram_matrix_n` at general n appears once outside its module, in a
+    DOCSTRING comment in `per_atom_audit_witnesses.py` ("pn.gram_matrix_n(
+    n=3A, q_0) -> diagonal Gram"). Not a call.
+  * Nothing in `tools/hecke-engine/src/*.rs` asks for an n >= 4 Gram,
+    Markov or quotient form.
+
+So a Rust general-n port would be a second implementation of code nothing
+runs. It is not blocked and not hard -- it is unwanted, which is a different
+and better reason not to do it. Build it when a consumer exists, and let
+that consumer define the interface.
+
+Two things this also settles, worth recording so they are not re-derived:
+
+  * The #5591 guard broke nothing, because nothing calls the function it
+    guards. It is preventive, not load-bearing. That is the correct reading
+    of it and slightly less impressive than it sounded when landed.
+  * The n = 3 Rust form in #5625 IS used -- it is additive beside
+    `gram_quotient_inverse`, which the SDP/confinement path exercises.

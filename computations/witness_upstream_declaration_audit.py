@@ -142,6 +142,91 @@ def declared_upstreams(tree: ast.AST) -> set:
     return out
 
 
+def declaration_reaches_witness(tree: ast.AST) -> tuple[str, int, tuple] | None:
+    """Does a DECLARED upstream actually reach the witness?
+
+    The audit above asks whether a producer declares its upstream at all. This
+    asks the next question, and the answer is often no even when it declares:
+
+      * ``ATTACHED_TOO_EARLY`` — ``add_upstream_records(_UPSTREAM_RECORDS)`` is
+        called right after ``WitnessBuilder(...)``, which is the natural place
+        and is wrong: the records are gathered LATER, by the loaders. It copies
+        (``for r in records or []``) so it copies an empty list, and the
+        upstreams appended afterwards never reach the builder. The comment on
+        the offending line usually reads "declare upstreams read *before* this
+        builder existed" — which describes the correct use while the placement
+        contradicts it.
+      * ``NEVER_ATTACHED`` — ``record_upstream`` populates a list that no
+        ``add_upstream_records`` ever consumes.
+
+    Both produce the same end state: the source declares, the witness carries
+    no `data.upstream_witness_hashes`, and `witness_dependency_drift` cannot
+    walk the edge. Measured cost of one instance:
+    `averaged-block-swap-binding` sat 2.5 months at **65.6 %** wrong against
+    the `binding_canonical` it names, while an assertion at tolerance 1e-9
+    reported PASSED (bean `qou-nmza` / `qou-orb6`).
+
+    THE FALSE POSITIVE TO AVOID, which halved the first count from 40 to 21:
+    a helper that populates the list is not a "later populator" when it is the
+    very function CONTAINING the ``add_upstream_records`` call. A module-level
+    ``raise SystemExit(main())`` is trivially after every line inside ``main``,
+    so without excluding the owner this flags every producer whose ``main``
+    does both — including correct ones. `q_weighted_block_swap` was flagged
+    that way and is fine.
+
+    Validated 6/6 against witness ground truth: the four flagged carry no
+    `upstream_witness_hashes`, the two controls do.
+    """
+    helper: dict[str, bool] = {}
+    for n in ast.walk(tree):
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            helper[n.name] = any(
+                isinstance(c, ast.Call)
+                and (getattr(c.func, "id", None)
+                     or getattr(c.func, "attr", None)) == "record_upstream"
+                for c in ast.walk(n))
+
+    rec, att = [], []
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = getattr(n.func, "id", None) or getattr(n.func, "attr", None)
+        if f == "record_upstream":
+            rec.append(n.lineno)
+        elif f == "add_upstream_records":
+            att.append(n.lineno)
+
+    if not rec and not att:
+        return None
+    if rec and not att:
+        return ("NEVER_ATTACHED", min(rec), ())
+    if not att:
+        return None
+
+    aur = min(att)
+    owner = None
+    for n in ast.walk(tree):
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            end = getattr(n, "end_lineno", n.lineno) or n.lineno
+            if n.lineno <= aur <= end and (owner is None or n.lineno > owner[1]):
+                owner = (n.name, n.lineno)
+
+    later = []
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = getattr(n.func, "id", None)
+        if not (f and helper.get(f)):
+            continue
+        if owner and f == owner[0]:          # not a populator of itself
+            continue
+        if getattr(n, "lineno", 0) > aur:
+            later.append((n.lineno, f))
+    if later:
+        return ("ATTACHED_TOO_EARLY", aur, sorted(later)[0])
+    return None
+
+
 def audit_source(source: str) -> dict | None:
     """None when the module is not a producer; otherwise its upstream state."""
     try:
@@ -248,8 +333,42 @@ CASES = [
 ]
 
 
+# Cases for `declaration_reaches_witness`. The third is the one that matters:
+# without the owner exclusion the first count was 40, of which 19 were this
+# false positive — including a producer I had just verified as correct.
+REACH_CASES = [
+    ("attached before the loader populates the list",
+     "def load():\n    return record_upstream(p, _U)\n"
+     "def main():\n    b = WitnessBuilder('w')\n"
+     "    b.add_upstream_records(_U)\n    x = load()\n",
+     "ATTACHED_TOO_EARLY"),
+    ("gathered but never handed to a builder",
+     "def main():\n    r = record_upstream(p, _U)\n"
+     "    b = WitnessBuilder('w')\n", "NEVER_ATTACHED"),
+    # THE false positive: `main` both populates and attaches, in the right
+    # order, and is then called from module level — trivially "after".
+    ("the containing function is not a later populator of itself",
+     "def main():\n    r = record_upstream(p, _U)\n"
+     "    b = WitnessBuilder('w')\n    b.add_upstream_records(_U)\n"
+     "raise SystemExit(main())\n", None),
+    ("attached after the loader is called is correct",
+     "def load():\n    return record_upstream(p, _U)\n"
+     "def main():\n    x = load()\n    b = WitnessBuilder('w')\n"
+     "    b.add_upstream_records(_U)\n", None),
+    ("a module doing neither is silent",
+     "def main():\n    return 0\n", None),
+]
+
+
 def self_test() -> int:
     fails = 0
+    for label, src, want in REACH_CASES:
+        got = declaration_reaches_witness(ast.parse(src))
+        got_k = None if got is None else got[0]
+        ok = got_k == want
+        fails += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'}  {label}\n"
+              f"          want {want}, got {got_k}")
     for label, src, want in CASES:
         got = audit_source(src)
         got_u = None if got is None else got["undeclared"]
@@ -257,7 +376,8 @@ def self_test() -> int:
         fails += not ok
         print(f"  {'ok  ' if ok else 'FAIL'}  {label}\n"
               f"          want {want}, got {got_u}")
-    print(f"\n{len(CASES) - fails}/{len(CASES)} passed")
+    total = len(CASES) + len(REACH_CASES)
+    print(f"\n{total - fails}/{total} passed")
     return 1 if fails else 0
 
 
@@ -283,6 +403,38 @@ def main() -> int:
     print(f"  fully declared via add_upstream : {len(declared_only):>4}")
     print(f"  declares, but via a computed path: {len(opaque):>4}"
           f"   (not counted either way)")
+
+    # The next question after "does it declare?": does the declaration REACH
+    # the witness? Scanned over the same tree so both answers come from one run.
+    broken = []
+    for f in sorted(Path(a.root).resolve().rglob("*.py")):
+        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(f.parts):
+            continue
+        if f.name == "witness.py" and "qou_substrate" in f.parts:
+            continue
+        try:
+            v = declaration_reaches_witness(ast.parse(f.read_text(encoding="utf-8")))
+        except (SyntaxError, OSError):
+            continue
+        if v:
+            broken.append((v[0], f, v[1], v[2]))
+    if broken:
+        n_early = sum(1 for k, *_ in broken if k == "ATTACHED_TOO_EARLY")
+        n_never = len(broken) - n_early
+        print(f"\n  declares, but the declaration CANNOT REACH the witness: "
+              f"{len(broken):>3}")
+        print(f"      ATTACHED_TOO_EARLY {n_early:>3}  (attached before the "
+              f"loaders populate the list)")
+        print(f"      NEVER_ATTACHED     {n_never:>3}  (gathered, never handed "
+              f"to a builder)")
+        print("      These declare in SOURCE and record nothing in the "
+              "WITNESS, so the drift\n"
+              "      detector cannot walk the edge — the same end state as "
+              "not declaring at all.")
+        for k, f, ln, l in sorted(broken, key=lambda r: (r[0], str(r[1]))):
+            rel = f.relative_to(Path(a.root).resolve())
+            extra = f"  (populated at {l[0]} by {l[1]}())" if l else ""
+            print(f"        {k:20s} {rel}  @{ln}{extra}")
 
     if a.list:
         print("\n--- undeclared upstream edges ---")

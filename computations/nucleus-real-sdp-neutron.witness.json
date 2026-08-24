@@ -1,7 +1,7 @@
 {
   "engine": "nucleus_real_sdp_barfold",
   "engineVersion": "0.1.0",
-  "computation": "neutron real-SDP with bar-fold symmetry reduction — bounded positive-norm-subspace operator-selection. operator-selection-lp / lp-dual.",
+  "computation": "neutron real-SDP with bar-fold symmetry reduction \u2014 bounded positive-norm-subspace operator-selection. operator-selection-lp / lp-dual.",
   "scriptFile": "nucleus_real_sdp.py",
   "lean_uniqueness_ref": "qou:QOU.BraidKnot.neutron_uniqueness_closed",
   "data": {
@@ -10,46 +10,47 @@
     "n_blocks": 3,
     "partial_character_table": false,
     "conjugates_all_present": true,
-    "tr_M": 0.9232332299116371,
+    "tr_M": 0.9877436881158096,
     "negative_norm_blocks": [],
     "self_conjugate_blocks": [
       "(2, 1)"
     ],
     "conjugate_pairs": 1,
     "sign_flip_conjugate_pairs": [],
-    "barfold_reduction_ratio": 1.0,
+    "barfold_reduction_ratio": 0.6666666666666666,
     "barfold_representatives": [
-      "(1, 1, 1)",
       "(2, 1)",
       "(3,)"
     ],
     "positive_norm_subspace_solve": {
-      "n_target": 0.9232332299116371,
+      "n_target": 0.9877436881158096,
       "bounded": true,
       "strong_duality_holds": true,
       "active_blocks": [
-        "(2, 1)",
         "(3,)"
       ],
-      "y0_star": -0.020715234271665176,
+      "y0_star": 0.4206261578890279,
       "y_star": [
-        1.6681054639206575e-12,
-        0.8873133834016114,
-        1.1719754878312234
+        2.1292612239859464e-41,
+        0.289849915484659
       ],
       "active_set": [
-        1,
-        2
+        1
       ],
-      "primal_obj": -0.019124992644930425,
-      "dual_obj": -0.019124992645005678,
-      "duality_gap": 7.525116477084558e-14
+      "primal_obj": 0.41547083251129124,
+      "dual_obj": 0.41547083251129124,
+      "duality_gap": 1.3798304717830501e-41,
+      "y0_star_str": "4.206261578890278999999999999999999999999894689114041e-1",
+      "y_star_str": [
+        "2.129261223985946365028864380761956049451524544445393e-41",
+        "2.898499154846590068083114900030181864636754611167703e-1"
+      ],
+      "primal_obj_str": "4.154708325112912597755603654878400000000033962884269e-1",
+      "dual_obj_str": "4.154708325112912597755603654878399999999895979837090e-1",
+      "duality_gap_str": "1.379830471783050127545373054572229285997566786085996e-41",
+      "backend": "clarabel-mpfr",
+      "precision_bits": 167
     },
-    "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} ⊃ (H_3)^Z×(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) — see conjugates_all_present."
-  },
-  "scriptHash": "e376dec214d2",
-  "scriptCommitSha": "unknown",
-  "commitSha": "ce2369422e676ba4614ce2e0c9b851f9a332f196",
-  "computedAt": "2026-07-18T19:28:52.170293+00:00",
-  "durationMs": 0
+    "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
+  }
 }

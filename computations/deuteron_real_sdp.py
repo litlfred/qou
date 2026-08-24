@@ -118,6 +118,14 @@ def solve_lp_with_eq(t, G, A_eq, b_eq, n_target):
         "primal_obj": float(res.fun) if res.success else None,
         "x_star": res.x.tolist() if res.success else None,
         "duality_gap": 0.0 if res.success else None,
+        # This is a RAW scipy solve, not the canonical entry point: the
+        # phase-B methods stack extra equality rows onto `A_eq`, which
+        # `solve_operator_selection_lp` cannot express (it takes the net row
+        # plus `Gx >= 0`). So it is genuinely f64 and has no MPFR path today —
+        # the same gap `solve_frobenius_dual_lp` has, and for the same reason.
+        # Recording the backend is what lets the float64 gate SEE it instead
+        # of it sitting in the unannotated bucket. Bean `qou/ftuv`.
+        "backend": "scipy-highs",
     }
     if res.success and res.eqlin is not None:
         out["eq_duals"] = _np.asarray(res.eqlin.marginals).tolist()
@@ -245,7 +253,12 @@ def main() -> int:
     t_pos = t[pos]
     G_pos = np.diag(frob_diag[pos])
     n_target_pos = float(t_pos.sum())
-    lp_pos = solve_operator_selection_lp(t_pos, G_pos, n_target_pos)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    lp_pos = solve_operator_selection_lp(t_pos, G_pos, n_target_pos, backend="clarabel")
     lp_pos_d = lp_pos.to_dict()
     _gap_pos = lp_pos_d.get("duality_gap")
     interim_bounded = (_gap_pos is not None and abs(float(_gap_pos)) < 1e-6
@@ -423,6 +436,13 @@ def main() -> int:
             "primal_obj": lp_d.get("primal_obj"),
             "dual_obj": lp_d.get("dual_obj"),
             "duality_gap": lp_d.get("duality_gap"),
+            # `lp_d` is a to_dict() and carries the companions; mirroring the
+            # numbers up without them is what left these bare.
+            **{_sk: lp_d[_sk] for _sk in
+               ("y0_star_str", "y_star_str", "primal_obj_str",
+                "dual_obj_str", "duality_gap_str") if _sk in lp_d},
+            **{_k: lp_d[_k] for _k in ("backend", "precision_bits")
+               if _k in lp_d},
             "strong_duality_holds": bounded,
             "real_sdp_well_posed_without_constraints": bounded,
             "diagnostic": (

@@ -1,11 +1,11 @@
 ---
 # qou-qrsp
 title: 'PRODUCER FIX: 37 of 45 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-07T09:09:03Z
+updated_at: 2026-08-24T13:32:40Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -366,3 +366,281 @@ REMAINING 57 fields / 12 producers:
                                            FLOOR (both measured runs timed out)
       phi_q_spectral_combiner_probe (+6)   reads upstream witness -> fix UPSTREAM
       rho_k_h3a_lp_dual             (+2)   reads occam JSON      -> fix UPSTREAM
+
+
+## su4_1111_markov_trace_probe: both halves of its entry above were wrong (2026-08-24)
+
+This bean's "Next" named it as 10 padded fields with `hecke_characters.py:214`
+as the root. Measured on a clean detached worktree at origin/main 2c8c27210:
+
+- **It re-pads 0 fields.** The producer already uses `str_at_true_precision`
+  (line 399). Someone fixed it and the count here went stale.
+- **It CRASHES**, on main and everywhere: `M = c * sigmas[g] + d * I` with an
+  mpf `d` hits scipy's `_mul_scalar` -> dtype object -> ValueError.
+
+The crash is invisible to a padding sweep BY CONSTRUCTION — the sweep scores
+what a producer writes, and this one writes nothing. `producer_repad_sweep.py`'s
+own rule ("CLEAN only if it ran, wrote a witness, and that witness had zero
+padded fields") is exactly the guard this case needed, and the stale 10 shows
+what happens when a count outlives the run behind it.
+
+Also: the two matrix branches disagreed on the same input. Sparse crashed;
+**dense did not** — it silently built an object-dtype numpy array and ran the
+whole product in Python-level mpf arithmetic from 53-bit inputs, for no gain.
+
+### Fixed (PR #5623)
+
+`chi_lambda_of_word` is a float64 kernel and `-> float` is the contract: both
+branches end in `float(...)`, so no caller ever received >53 bits. Coerce the
+word coefficients on the way in. **Measured: 8908 coerced, 2277 lossy, worst
+relative loss 2.6e-17** = half an ulp. `chi_lambda_braid_mpf` is NOT a drop-in
+alternative — at A=4 the largest irrep is f^lambda = 4158, ~7.2e10 mpf ops per
+matrix multiply.
+
+### What the crash was hiding — worth more than the padding
+
+Because it cannot run, nobody could refresh its witness, which is therefore
+**three weeks older than the convention-D cascade** (computedAt 2026-07-18;
+cascade 2026-08-09) and is convention-C-frame:
+
+    y_lambda [3,3,3,3]   -4.65e-09  ->  0.0
+    y_lambda [5,3,3,1]   -1.77e-06  ->  0.0
+    full_trM              0.0554    ->  0.1610   (2.9x)
+
+Under D, `_wenzl_X_Q` collapses to X = q^4 = Q^2, integral level r = 2, row cap
+l(lambda) <= 2 — y_lambda is EXACTLY 0 at >=3 rows. A nonzero y_lambda on a
+4-row partition is only possible under C. That is the module's own docstring.
+
+**The probe's conclusion survives**: verdict DOES-NOT, 3/3 assertions pass in
+BOTH frames. The numbers were wrong and the answer was not.
+
+### Generalised into a committed tool
+
+`computations/audits/y_lambda_convention_c_fingerprint_audit.py` tests the
+ANSWER rather than the source, since every existing convention detector keys on
+how `z` was written and the blindness taxonomy lists thirteen evasions.
+origin/main: **15 live files / 267 fields**. Two limits, both in its docstring:
+a hit is about the witness not the producer (re-run to distinguish stale payload
+from live source defect), and it keys on a FIELD NAME, so files where
+`y_lambda` is not the Wenzl y_lambda are false positives it cannot rule out.
+Only su4 is hand-confirmed. The other 13 are candidates, not verdicts.
+
+Next on this front: re-run the 13 candidates' producers to split stale-witness
+from live-source-defect.
+
+
+### CORRECTION to the fingerprint count above: 15/267 -> 9/160 (same day)
+
+The tool as first committed tested `y_lambda != 0`. Wrong: "y_lambda = 0 under
+D" is ALGEBRAIC, the arithmetic that evaluates it is not, so a correct D-frame
+producer writes a residue. Verified against live code, not inferred:
+
+    y_lambda_wenzl_bridge_numeric([4,1,1],   q0, dps=50)  ->   3.229e-52
+    y_lambda_wenzl_bridge_numeric([3,3,3,3], q0)          ->  -8.400e-108
+
+Threshold now READ OFF THE DATA. Of 1635 >=3-row values: 1377 exactly 0; the
+258 nonzero are trimodal with a 68-decade EMPTY band:
+
+    1e-150..1e-140    17   D-residue (helium-4, 50 dps)
+     1e-80.. 1e-70    81   D-residue (chi-* family)
+     <<68 empty decades>>
+     1e-10..  1e0    160   convention-C scale
+
+C_SCALE_FLOOR = 1e-30, mid-band. The 107 false positives were 6 whole files,
+including all 70 fields of chi-helium-4-h12 — correctly D, recording zero as
+1e-148.
+
+SHARPER RESULT SURVIVES: the chi-* family is PARTIALLY migrated. deuteron /
+dineutron / diproton / helium-4 are residue-scale (D, correct); helium-3 and
+tritium are C-scale (25 each). Same producer, same directory, different frames.
+The producer's own source independently notes "(deuteron, tritium, helium-3 all
+MISLABELLED)".
+
+STRUCTURE — not 9 independent defects. `chi_at_q0_via_hoefsmit_mpfr.py` writes
+the roots (chi-helium-3-h9, chi-tritium-h9) and the rest READ them by path:
+delta-lambda-categorical-verification (35), probe-d-delta-lambda-terms (7),
+gap-a1 (7), he4-binding-k-stage2 + ranking-xcheck (5+5, via y_lambda_at),
+mu3-frechet-perblock (50, via y_lambda_at_q0_mpmath). Upstream-first with
+ordering — the same upstream/here split this bean already drew. The roots carry
+NO scriptFile, so none of it is traceable from the witness.
+
+ALSO: a scan that examined nothing read as a CLEAN TREE. From inside
+computations/ the glob matched 0 files and the tool exited 0 saying "0 files
+with fingerprint". Now errors, exit 2 — "untested is not clean" applied to the
+scanner. I hit that cwd trap myself while measuring, which is how it surfaced.
+
+PR #5623, commit 50015f044.
+
+
+### The two h9 roots: STALE, not a live defect — and why they could not self-heal
+
+Settled 2026-08-24. Answer is stale; the mechanism is the valuable part.
+
+`chi_via_rust_lossless.py` (NOT `chi_at_q0_via_hoefsmit_mpfr.py` — I named the
+wrong producer earlier; that one writes the plain `chi-{atom}-h{n}-at-q0-50dps`
+family and is clean) reuses a cached witness when it is COMPLETE and on nothing
+else. A cache computed under a superseded convention IS complete, so it is
+served forever. The hit then calls `_stamp_anchor`, which REWRITES the file —
+new mtime, shows as modified in git status — so a routine re-run looks like a
+refresh and changes no number.
+
+**That produced a wrong intermediate conclusion.** Re-running reproduced the C
+values byte-identically, which reads as "still emits C ⇒ LIVE SOURCE DEFECT".
+It was a cache hit; byte-identity was guaranteed by construction. The tell was
+wall clock: 0.2s for two H9 nuclides vs 3.7s for one H12.
+
+Delete the caches, re-run, and it inverts:
+
+    chi-helium-3-h9-...-matrix-m   25 C-scale y_lambda -> 25 zeros
+    chi-tritium-h9-...-matrix-m    25 C-scale y_lambda -> 25 zeros
+
+Producer was convention-D correct throughout and had no way to say so. Fixed
+with `--fresh`, the same hatch `chi_at_q0_via_hoefsmit_mpfr.py` already has for
+the identical stated reason.
+
+Checked against BOTH live implementations before editing:
+  schur_principal_mpmath.y_lambda_at_q0_mpmath(9,Q_MP)[(7,1,1)] -> 0.0 exactly
+  y_lambda_wenzl_bridge_numeric([7,1,1], q0, dps=50)            -> 7.78e-53
+They agree at <=2 rows (0.0166381738807), which is the control. Neither can
+produce the committed 0.00147.
+
+Also cleared as NOT the cause: the y_lambda tower caches
+(y-lambda-mpfr-proton-witness.json 1497 values, y-lambda-mpfr-witness.json 223)
+are both 0 C-scale. The defect was never upstream of the producer.
+
+Fingerprint: 9 files/160 fields -> **7/110**, all downstream of the two roots
+(mu3-frechet-perblock 50, delta-lambda-categorical-verification 35,
+probe-d-delta-lambda-terms 7, gap-a1 7, he4-binding-k-stage2 5,
+he4-stage2-ranking-xcheck 5, he4-9-3-trace-dominant 1). Left for a following
+tranche — their numbers move when the roots do, which is this bean's own
+upstream-first ordering rule.
+
+GENERALISABLE: audit every producer with a completeness-gated reuse branch. The
+gate answers "is this cache finished?" and is read as "is this cache current?".
+Those differ exactly when a convention or anchor changes underneath it — the
+case where being wrong is most expensive. PR #5623.
+
+
+### The self-caching class: measured, and it is a NEGATIVE result
+
+Generalised the chi_via_rust_lossless incident into
+`computations/audits/self_caching_producer_audit.py`. Detects the SHAPE (an
+`if <path>.exists()` branch that reads-and-returns, on a path the module also
+WRITES) rather than the wording. The write is what separates a self-cache from
+an ordinary upstream loader — without that filter the scan reports 27 instead
+of 8, almost all of them normal consumption.
+
+MEASURED over 3114 producers: **8 self-caching branches, 5 gated on existence
+alone, and only ONE ever dangerous — the one already fixed.** Recording that
+plainly instead of dressing 5 up as findings:
+
+  scratch storage    /tmp/a5_diags_n12.pkl, .derived-chi-mn-cache.json,
+                     delta-q-decoration.cache.json, .cache/seminormal/ — none
+                     committed; a stale entry costs a recompute, reaches nobody
+  explicit opt-in    _b0vf_complete_he4_witness reuses only under
+                     B0VF_REUSE_RAW=1; default recomputes
+  key carries input  hecke_3a_weights._cache_key hashes Q0 into the filename,
+                     so a q0 change invalidates by construction
+
+Dangerous combination = COMMITTED artifact + existence/completeness gate + no
+opt-out. Exactly one qualified (chi_via_rust_lossless), now the best-gated of
+the eight.
+
+**RESIDUAL GAP worth carrying forward:** a Q0-keyed hash invalidates on a q0
+change but NOT on a convention change at the same q0. No cache in this corpus
+keys on the trace convention — which is precisely the hole the original
+incident fell through, and hashing Q0 would not have caught it. If the D
+cascade recurs for another convention, this class reopens.
+
+PR #5623, commit e6cc0c61d.
+
+
+### Downstream drained: 7 files/110 fields -> 1/5 (2026-08-24, PR #5623)
+
+  mu3-frechet-perblock                     50 -> 0   VERDICT FLIPS
+  delta-lambda-categorical-verification    35 -> 0
+  gap-a1-binding-k-sdp-feasibility          7 -> 0   residual 4.2e-07 -> 2.4e-15
+  probe-d-delta-lambda-terms                7 -> 0
+  he4-stage2-ranking-seminormal-xcheck      5 -> 0
+  he4-9-3-trace-dominant-correction         1 -> 0
+  he4-binding-k-stage2                      5 -> 5   under-budgeted, see below
+
+**Direction is coherent across all of them** — the dropped >=3-row terms carried
+NEGATIVE weights, so every affected sum RISES (probe-d trM_term 0.0923->0.1799,
+0.1896->0.2539, 0.0675->0.0771; su4 full_trM 0.0554->0.1610). Four independent
+witnesses agree on sign, which is the check that the drain is real.
+
+**mu3 inverts a conclusion.** linearity_gate 1->0 (FAIL); y_lambda<0 goes 20/60
+-> 0/60. Zero negative weights satisfies the hypothesis of
+reweight_cannot_open_door (w_lambda >= 0), so that lemma APPLIES and re-weighting
+IS foreclosed — the reverse of what the probe reports. Touches the mu3 door;
+flagged for a human, wired to nothing. Its verdict was also hardcoded in THREE
+places (one of them written into the witness via add_caveat, quoting "10 of 30"
+which was typed, never live, and did not match the payload's own 20/60); all
+three now derive from n_neg_y.
+
+**My own drain shipped fake precision.** Padding ratchet went RED: delta-lambda-
+categorical-verification 0 -> 55 padded values, from str(mp.mpf(<float>)) at the
+live mp.dps. Invisible under C because those values did not land on exact
+doubles; the D-frame ones do. Fixed with str_at_true_precision, 55 -> 0.
+LESSON FOR THIS BEAN: a value-correct convention drain can still ship fake
+precision — convention and serialization are independent defects, and only the
+ratchet separated them.
+
+**NOT a straddle, checked not assumed:** he4_stage2_ranking_seminormal_xcheck
+reads he4-binding-k-stage2.witness.json per a naive grep, but that filename
+appears only in a prose 'engine' string; it loads q-pinning-50-digit and
+computes y_lambda_at itself.
+
+**Environment:** mpmath 1.4.1 (which the guard asks for) breaks sympy 1.14.0
+(requires <1.4). Reverted to 1.3.0, pip check clean. Not a corpus degradation:
+514 witnesses record mpmath 1.3.0 vs 369 at 1.4.1; 987 record python 3.11.15
+vs 54 at 3.13.12.
+
+**CORRECTION to my own claim:** I wrote that he4_binding_k_stage2 'cannot
+complete' and 'emits NO progress output'. Both wrong. It prints progress and has
+a shape-chunk resume cache (.he4_stage2_legA_progress.jsonl), and its own
+comment states 'the full mpfr eval is ~34 min — longer than one sandbox
+session', which is exactly why the checkpoint exists. My 1800s budget was BELOW
+its stated runtime. What is true: it emits nothing for the first ~90s because
+the expensive setup precedes its first print. Re-running with no timeout.
+
+
+### Two mu3 Lean files were still convention-C — owner-approved scoping (2026-08-24)
+
+Found by following the drained witness's citation backwards.
+`Mu3SlotExclusion.lean` cites `mu3-frechet-perblock.witness.json` as evidence
+for *"the hypothesis 0 <= w is the whole content, and it FAILS on the physical
+spectrum ... 10 of the 30 weights are negative"*. Measured: ZERO convention
+scoping in that file, and none in `YLambdaSignThreshold.lean` either.
+
+**The corpus already knew.** `mass-theory/y-lambda-sign-pattern.md` was
+WITHDRAWN 2026-08-09 stating exactly the D fact, citing TemperleyLiebTower.lean.
+I nearly reported this as a discovery; the corpus-grep checklist caught it. What
+was live is narrower and real: two Lean files never got that memo, and one cites
+a witness that stayed convention-C until this branch drained it.
+
+Measured independently, n = 4..12 at q0 via schur_principal_mpmath: ZERO
+negative y_lambda at every n; blocks split positive two-row stratum / vanishing
+l(lambda) >= 3 radical.
+
+Also verified rather than trusted: TemperleyLiebTower.lean's single `sorry`
+match is inside a DOCSTRING (the phrase "instead of hiding it inside a sorry").
+The file is genuinely sorry-free and the content block's citation is accurate.
+A grep -c would have called that citation wrong.
+
+Applied (owner picked doc scoping + theorem-motivation re-scoping, "move to
+convention D"):
+  * reweight_cannot_open_door — hypothesis HOLDS under D, so the lemma DOES
+    foreclose "keep the operator, change the Wedderburn weights"
+  * door_mechanism_dichotomy — second branch (w<0, 0<d) VACUOUS under D
+  * door_needs_one_of_two_mechanisms — kept, marked not-operative under D
+  * YLambdaSignThreshold — premise scoped to C; the derived combinatorial rule
+    is about the Wenzl principal specialisation itself and stands unchanged
+
+NO THEOREM CHANGED — all generic over w,d with explicit hypotheses. lean-direct
+exit 0 / 0 errors on both edited files AND on their importer
+(YLambdaNormalizationSign).
+
+CAUTION FOR WHOEVER PICKS UP THE mu3 DOOR: this is a CLOSURE, not an opening.
+An escape route the corpus documented as available is, under canon, foreclosed.
