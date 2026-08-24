@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T13:03:43Z
-updated_at: 2026-08-24T16:56:13Z
+updated_at: 2026-08-24T17:05:55Z
 ---
 
 ## Landed — PR #5645
@@ -717,3 +717,53 @@ Hit in `betaPairProd_addCell`, `qratio_prod_eq_rowColProd` and again here.
   `MarkovNormalisation`.
 * **the trace instance** at general r — `markovTrace_unique` is already
   generic in the coefficient ring; only the weight system is r-specific.
+
+
+## Normalised branching + the omitted-cell fact
+
+Commits `eb601851a`, `c23911f03`.
+
+    sum_wenzlWeight_addCellOrSelf : sum_{a<r} w_{mu + box at a} = w_mu
+
+The normalisation `w_mu = s_mu / [r]_Q^{|mu|}` is chosen so the `[r]_Q` the
+unnormalised sum produces is absorbed by the one extra cell each summand
+carries; `card_addCell` is the step that says so. This is
+`MarkovNormalisation.ocneanuWeight_addable_sum` at r=2, now at every level.
+
+    wenzlWeight_addCell_beyond_eq_zero :
+      r <= a,  IsAddableCell mu (a, rowLen a)  ->  w_{mu + box} = 0
+
+**Worked out before writing it, and worth recording because it is the one
+non-obvious step in the bridge to come.** The guarded `range r` sum and a sum
+over the ADDABLE CELLS of `mu` are not obviously the same finset:
+
+* every addable cell is `(a, mu.rowLen a)` (`rowLen_of_isAddableCell`, #5645),
+  so the addable set injects into row indices;
+* if `colLen 0 < r` the addable rows are all `< r` and the two sums agree
+  termwise;
+* if `colLen 0 = r` there IS an addable cell at row `r` — start a new row,
+  addable because row `r-1` is nonempty — which the `range r` sum omits.
+  That term is zero, by the lemma above.
+
+So they agree in both cases, but only because of the second bullet.
+
+## Left for full normalisation
+
+    sum_{|mu| = n} f^mu * w_mu = 1
+
+Three steps, in order:
+
+1. **The bridge**: `sum_{s : {s // IsAddableCell mu s}} w_{mu+s}
+   = sum_{a<r} (guarded)`. The math is settled (above); the Lean is a
+   `Finset.sum_nbij'` between the addable subtype and a subset of
+   `range (colLen 0 + 1)`, plus the `colLen 0 = r` term. Budget a brick —
+   dependent `f <s, proof>` under an `if` is the awkward part.
+2. **`sum_dim_weight_succ`** at general r — reuse
+   `YoungDiagramCornerReindex.sum_corner_eq_sum_addable` (#5575, stated for
+   arbitrary diagrams) and `numStandardYoungTableaux_branching`, exactly as
+   `MarkovNormalisation` does.
+3. **Base case + induction**: only `bot` has size 0, `f = 1`
+   (`numStandardYoungTableaux_bot`), and `wenzlWeight_bot = 1` is already
+   proved in `WenzlWeightLevelR`.
+
+Step 1 is the only one with any content left; 2 and 3 are transcription.
