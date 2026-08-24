@@ -298,3 +298,71 @@ is the `max(g0avg, g1avg) >= 2` criterion and its saturation.
 * **Q2 (cyclotomic exponent)** — ANSWERED (`3A-1` minus 2 per neutron, by
   cancellation), and its residue CLOSED (co-location rule, 12/12). What is
   not proved is the Hecke-collapse interpretation of why co-location does it.
+
+
+## 2026-08-24 — Q1 DERIVED. The 12 is the denominator of `1/2 - delta/4`.
+
+Producer: `computations/markov/d_frame_interface_twelve_derivation_probe.py`
+(6 atoms, 5/5 assertions).
+
+This bean's Q1 said the 6 was LOCALISED but not derived, and moved the open
+question to "derive 12 from delta(q)". Done.
+
+The colour-weighted interface crossing `sigma - h*(1/2 - delta/4)` has exact
+coefficient
+
+    (q-1)(q+1)(q^6 - 2q^5 - 5q^4 - q^2 + 2q - 1) / (12 q^5)
+
+    denominator integer content = 12
+    numerator   integer content = 1     <- nothing cancels
+
+**12 = 4 * 3** — the colour-averaging quarter in `delta/4`, times `delta`'s own
+third: `1/2 - X/(3*4) = (6 - X)/12`, with
+`delta = flavor_split_leading(q) = (q-1)^2 (1 - q^-4)/3`.
+
+**The model, and it is falsifiable.** The prefactor is the PRODUCT of the
+per-crossing denominator integer contents:
+
+    atom      A | #avg  2^#avg x iface = predicted | measured
+    proton    1 |    2       4 x     1 =         4 |        4
+    neutron   1 |    2       4 x     1 =         4 |        4
+    D         2 |    4      16 x    12 =       192 |      192
+    T         3 |    6      64 x    12 =       768 |      768
+    3He       3 |    6      64 x    12 =       768 |      768
+    4He       4 |    8     256 x    12 =      3072 |     3072
+
+6/6. A=1 has no interface, so the model gives 2^(2A) with no 12 — the same
+statement the `include_inter` switch made, now as an arithmetic consequence
+rather than a measurement.
+
+**And the uniform 6 now has a reason.** Convention C gives that same crossing
+the colour-BLIND `-h/2`, denominator content **2**. So `12/2 = 6` is the ratio
+of the two conventions' interface denominators, `(4*3)` against `2`.
+
+### A measurement trap, and an inconclusive run that is NOT the evidence
+
+`atom_braid_word_3A(..., q=q)` labels the interface crossing with a FLOAT,
+`0.41666...` (= 5/12 at ~60 dps, mpmath not float64). Denominator content read
+off the WORD is therefore 1 for that crossing, and the product model appears to
+fail — it gives 16 for both include_inter True and False, against measured 192
+and 16. The float is only a template label; `crossing_from_cd` recognises it and
+substitutes the exact form, which is what the trace uses. Take the coefficient
+from `d_for_ctype(..., delta=flavor_split_leading(q))`, never from the word.
+
+An earlier attempt varied `delta`'s denominator k by patching
+`markov_peel._COLOR_DELTA`, predicting the prefactor would track
+`den_content(-h*(1/2 - delta_k/4))`. **The patch did not take**: measured stayed
+192 for every k, including k predicting 16, 20, 24, 48. That run was
+INCONCLUSIVE, not confirming, and its k=3 "pass" was the unpatched value
+agreeing with itself. It is recorded here so nobody cites it. The six-atom
+table above is the evidence.
+
+## qou-cxon status: BOTH sub-questions now closed
+
+* **Q1** — DERIVED (above). Was: localised to one crossing, magnitude open.
+* **Q2** — ANSWERED (`3A-1` minus 2 per neutron, by cancellation) and its
+  residue CLOSED (co-location rule, 12/12).
+
+What remains unproved is the Hecke-collapse INTERPRETATION of why co-location
+produces the cancellation — flagged as interpretation in the Q2 producer, not
+claimed as proved.
