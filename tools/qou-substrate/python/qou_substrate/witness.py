@@ -1636,6 +1636,37 @@ class WitnessBuilder:
                 # On-disk file unreadable: fall through and overwrite.
                 existing = None
 
+        # ── FROZEN WITNESSES: a docstring is not a mechanism (bean qou-tean) ──
+        #
+        # `h4-form-AB-cross-anchor-stability.witness.json` carried, in a header
+        # comment, the sentence "This probe is preserved as-is by design." That
+        # was its ONLY protection, and any agent running the producer — a sweep,
+        # an audit, a --candidates pass — silently overwrote it, with `git add
+        # -A` committing the result. Measured what a run destroys:
+        # Form_A_ppb_proton 4753.80 -> 207.11, and both q anchors with it.
+        #
+        # So the freeze is enforced HERE, at the one place every producer's
+        # output passes through, rather than per-producer. A witness carrying
+        # top-level `"preserved": true` is not overwritten; the run raises
+        # instead of silently succeeding, because a producer that thinks it
+        # wrote and did not is the same class of lie in the other direction.
+        #
+        # Escape hatch is deliberate and loud: QOU_ALLOW_OVERWRITE_PRESERVED=1.
+        # An agent has to mean it, and the variable name says what it does.
+        if isinstance(existing, dict) and existing.get("preserved") is True:
+            if os.environ.get("QOU_ALLOW_OVERWRITE_PRESERVED", "").strip() not in ("1", "true", "yes"):
+                raise RuntimeError(
+                    f"{out_path.name} is marked \"preserved\": true and will not be "
+                    f"overwritten. Its committed values are a deliberately frozen "
+                    f"record; re-running this producer destroys them. If you "
+                    f"genuinely intend to replace the frozen record, set "
+                    f"QOU_ALLOW_OVERWRITE_PRESERVED=1 and say so in the commit. "
+                    f"Bean qou-tean."
+                )
+            # Overwriting deliberately: the new file must re-declare the freeze,
+            # or the next run silently loses the protection.
+            witness.setdefault("preserved", True)
+
         # Carry a recorded q₀ pin forward.
         #
         # `q0Anchor`/`q0Value` are written by `stamp_staleness_metadata`, which
