@@ -22,6 +22,7 @@ together gives the box-addition ratio.
 | `schurPrincipal_addCell_mul` | **the box-addition ratio, cross-multiplied** |
 | `qratio_prod_eq_rowColProd` | the `q`-ratio **is** `Q^a · (row·col)_ν/(row·col)_μ` |
 | `schurPrincipal_addCell_eq` | **`s_ν = (q-ratio) · s_μ`** — the branching hypothesis itself |
+| `qratio_prod_eq_zero_of_not_addable` | a row that cannot take a box contributes `0` |
 
 The headline is stated **division-free** on purpose: as a cross-multiplied equation it needs no
 non-vanishing hypothesis beyond the two the closed form already carries, so it stays true at the
@@ -188,5 +189,27 @@ theorem schurPrincipal_addCell_eq (Q : F) (hQ : Q ≠ 0) {r : ℕ} {μ : YoungDi
   rw [qratio_prod_eq_rowColProd Q hQ hs ha]
   field_simp
   linear_combination h'
+
+/-- **A row that cannot take a box contributes nothing.**
+
+Row `a > 0` is addable exactly when `μ_{a−1} > μ_a`.  When instead `μ_{a−1} = μ_a`, the β-numbers
+satisfy `β_{a−1} = β_a + 1`, so `Q·x_a = x_{a−1}` and the `j = a−1` factor of the `q`-ratio's
+numerator is zero.
+
+This is what lets a sum over **all `r` rows** stand in for a sum over the **addable** ones — the
+`schurPrincipal`-level counterpart of `QOU.Mathlib.vandPairProd_update_eq_zero`, and the reason the
+`r = 2` chain's `rowLen_two_addCell_row2` needs no general-`r` analogue. -/
+theorem qratio_prod_eq_zero_of_not_addable (Q : F) {r a : ℕ} {μ : YoungDiagram}
+    (hpos : 0 < a) (ha : a < r) (heq : μ.rowLen (a - 1) = μ.rowLen a) :
+    (∏ j ∈ (Finset.range r).erase a,
+      (Q * Q ^ betaR r μ a - Q ^ betaR r μ j)) = 0 := by
+  have hmem : a - 1 ∈ (Finset.range r).erase a :=
+    Finset.mem_erase.mpr ⟨by omega, Finset.mem_range.mpr (by omega)⟩
+  refine Finset.prod_eq_zero hmem ?_
+  have hβ : betaR r μ (a - 1) = betaR r μ a + 1 := by
+    rw [betaR, betaR, heq]
+    omega
+  rw [hβ, ← pow_succ']
+  exact sub_self _
 
 end QOU.SchurWeyl
