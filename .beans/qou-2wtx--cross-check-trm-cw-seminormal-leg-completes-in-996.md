@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T19:32:43Z
+updated_at: 2026-08-24T20:16:40Z
 ---
 
 ## The measurement
@@ -270,3 +270,72 @@ longer than sixteen days.
 
 The neutron is the right probe: A=1, 11 crossings, **no `cw`**, runs in under a
 second.
+
+
+---
+
+## SOLVED — leg A is convention C, leg B is convention D
+
+Injecting the two weight sets that `33a6c7aa4d` records for `n = 3`
+(C = `(0.4153958, 0.2809296, 0.0227449)`, D = `(0.5054042, 0.2472979, 0)`) into
+leg B's assembly, everything else held fixed:
+
+| atom | leg A (peel) | leg B with **D** | leg B with **C** |
+|---|---|---|---|
+| proton | 1.06530614425 | 1.14575976903 — **7.55 %** | 1.06530621987 — **7.1e-8** |
+| neutron | 0.923233229912 | 0.987743749165 — **6.99 %** | 0.923233296353 — **7.2e-8** |
+
+**The peel reference is still in the excised convention C.** Leg B has computed
+in D since `33a6c7aa4d`. That mismatch *is* the O(1) discrepancy, and it grows
+with A because more crossings accumulate more of the weight difference.
+
+## Two stacked defects, both now quantified
+
+| # | defect | size | introduced |
+|---|---|---|---|
+| 1 | **convention**: leg A = C, leg B = D | **O(1)**, 7 % → 191 % | `33a6c7aa4d` (2026-08-09) |
+| 2 | **pin straddle**: leg A proton, leg B muon-by-assert | **7.1e-8** | `2c35a52e08` (2026-08-08) |
+
+The 7.1e-8 residual that survives once the conventions agree is defect 2 — the
+μ–p tension, ~6× the bare 1.15e-8 gap, accumulated across the word.
+
+## Which leg is right: LEG B
+
+Not a physics judgement — a **policy** one, already made. The owner ruling of
+2026-08-15 makes convention **D** canonical and excises C. Leg B is already D.
+**The peel reference is the stale artifact**, carrying weights from a convention
+the corpus has abandoned.
+
+So the fix is ordered and non-arbitrary:
+
+1. **Regenerate `markov/markov-peel-atomic-tr-m.witness.json` under convention D.**
+   That removes the O(1) term.
+2. **Then** settle the pin — both legs at proton per the standing directive,
+   which means dropping leg B's `assert q.startswith("1.109978595557")` and its
+   `QOU_Q0_ANCHOR=ideal` default. That removes the 7.1e-8.
+3. The 1ppQ assertion should then return to the ~1e-50 it recorded at
+   `6647e7e4ed`.
+
+**Do not do step 2 first.** With the O(1) term still present a pin fix changes
+nothing visible and would look like it failed.
+
+## The hypothesis arc, recorded because the pattern is the lesson
+
+Convention C→D was hypothesis 3, and I got it wrong three times before getting
+it right:
+
+1. **Named** it on plausibility — an O(1) shift is convention-shaped.
+2. **Refuted** it because `git bisect` landed on `2c35a52e08` instead. Wrong
+   reason: the assert tolerance is `1e-15`, so defect 2's 1e-8 flipped the test
+   first and **masked** defect 1 a day later. *A bisect on a boolean assert
+   finds the first flip, not the dominant cause.*
+3. **Rehabilitated** it on reading `33a6c7aa4d`'s docstring.
+4. **"Refuted" it again** by calling `_y_lambda_at_convention_C_HISTORICAL` and
+   getting output identical to the live function — then checked the weights
+   themselves and found that function **returns D**. It is dead code, exactly as
+   its own docstring says. The test was **inconclusive, not a refutation**, and
+   only printing the weights rather than the trace revealed that.
+5. **Confirmed** by injecting the C weights by hand.
+
+Step 4 is the one worth keeping: *a comparison between two code paths proves
+nothing until you verify they actually differ.*
