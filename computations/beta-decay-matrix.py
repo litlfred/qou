@@ -22,12 +22,22 @@ from pathlib import Path
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q, Q_INV, HA, S_SKEIN as S
+# The _MP family, not the f64 one. q_parameter builds these AFTER raising its
+# own working precision to >= 50 dps, so they are not the "constant built too
+# early" trap -- checked at q_parameter.py:181, `_mp.mp.dps = max(_mp.mp.dps, 50)`
+# sits directly above their construction. HA is the Hecke coefficient every
+# transfer and decay matrix below is built from; as float64 it put 20 raw
+# float64 fields into this witness.
+from q_parameter import (Q_MP as Q, Q_INV_MP as Q_INV, HA_MP as HA,  # noqa: E402
+                         S_SKEIN_MP as S)
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # ── Parameters ───────────────────────────────────────────────────
 
-Q_HALF = Q**0.5
-Q_INV_HALF = 1.0 / Q_HALF
+Q_HALF = mp.sqrt(Q)
+Q_INV_HALF = mp.mpf(1) / Q_HALF
 Z = 1.0 / (Q_HALF + Q_INV_HALF)  # Markov parameter z = 1/(q^½ + q^{-½})
 
 print(f"q = {Q}")
@@ -91,9 +101,9 @@ def traced_volume(M):
 
 # ── Crossing coefficients ────────────────────────────────────────
 
-c_pp, d_pp = 1.0, 0.0
-c_nn, d_nn = 1.0, -HA
-c_mix, d_mix = 1.0, -0.5 * HA
+c_pp, d_pp = mp.mpf(1), mp.mpf(0)
+c_nn, d_nn = mp.mpf(1), -HA
+c_mix, d_mix = mp.mpf(1), -HA / 2
 
 print("═══ Crossing coefficients (c, d) ═══")
 print(f"  pp:    c = {c_pp:.10f},  d = {d_pp:.10f}")
@@ -305,7 +315,7 @@ witness = {
             "daughter_type": "pp × mix",
             "V_par": V0_par,
             "V_dau": V0_dau,
-            "log_ratio": float(lr0),
+            "log_ratio": lr0,
         },
         "sigma_1": {
             "crossings": 1,
@@ -313,13 +323,13 @@ witness = {
             "daughter_type": "mix",
             "V_par": V1_par,
             "V_dau": V1_dau,
-            "log_ratio": float(lr1),
+            "log_ratio": lr1,
         },
         "P_par": P_par,
         "P_dau": P_dau,
         "ratio": ratio,
-        "ln_ratio": float(mp.log(abs(ratio))),
-        "Q_q_hecke_units": float(Q_q),
+        "ln_ratio": mp.log(abs(ratio)),
+        "Q_q_hecke_units": Q_q,
     },
 }
 
