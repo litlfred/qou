@@ -555,6 +555,25 @@ def main() -> int:
         n = sum(len(r["casts"]) for _, _, r in casts)
         print(f"\nF64_CAST — float(<f64>) in a value position: {len(casts)} "
               f"file(s), {n} site(s). These are defects.")
+        # The nuance lives in this module's docstring, which nobody sees when
+        # they run the tool — so it is repeated here. Measured 2026-08-24: an
+        # agent read the detector and this print block, concluded "the casts
+        # are no-ops, the tier is overstated", and spent a sweep re-deriving
+        # what the header already said. Second-order cost: the obvious
+        # "remedy" for a tier labelled only "defects" is to delete the casts,
+        # which drains the counter and changes nothing.
+        print("      NOTE: `Q` is ALREADY a float, so `float(Q)` loses nothing "
+              "AT THAT LINE.\n"
+              "      The tier localises where a double ENTERS A COMPUTATION. "
+              "Do NOT drain it by\n"
+              "      deleting casts — that is metric-gaming. The fix is at the "
+              "IMPORT: read the\n"
+              "      `_MP` name and carry mpf through, which is a per-module "
+              "decision that\n"
+              "      changes numbers. Some sites are correct as-is: a module "
+              "built on an f64\n"
+              "      engine (`pyhecke.gram`, `BlockCache`, numpy) is an f64 "
+              "pipeline by design.")
         _print_sites(casts, "casts")
     else:
         print("\nF64_CAST — none.")
