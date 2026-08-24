@@ -253,3 +253,39 @@ the corpus. The rate of false "broken" verdicts from a naive runner is roughly
 `vhat_per_crossing_chain`, `derivation_chain_validator`,
 `habiro_interpolate_cross_validator`). Only `hadron_knot_table` overlapped mine.
 The two remaining real defects above are **not** in that arc's scope.
+
+## 2026-08-24 — both remaining defects addressed; count closes at 0 outstanding
+
+| producer | disposition |
+|---|---|
+| `qbeta_habiro_element_probe` | **FIXED, exits 0.** Two stacked defects — a `check_q`→`u` rename crash masking a mis-scoped guard. Witness held (convention-C→D migration + weaker container env): bean `qou-5nyg`. |
+| `su4_1111_markov_trace_probe` | **RECLASSIFIED to guard.** Exact χ_λ is unaffordable (measured 65.7 s at dim=132 ⇒ ~571 h at dim=4158, one irrep of ten); float64 is banned for probes. Now refuses explicitly. Real fix — sparse-mpf character product — is bean `qou-fmoi`. |
+
+### Final tally, from a census that opened at 14
+
+    14  reported broken
+    -6  harness artifacts (PYTHONPATH ×2, required positionals,
+        order-dependence, cwd convention, stderr-only capture)
+    -5  guards working correctly (4 exiting, 1 raising)
+    -1  fixed on main by the sibling qou-n7ue arc (hadron_knot_table)
+    -2  real, fixed here (mpf f-strings — PR #5615)
+    -2  real, addressed here (habiro fixed; su4 reclassified + beaned)
+    ---
+     0  outstanding
+
+Five corrections, every one downward, every one my measurement rather than the
+corpus: **14 → 12 → 8 → 4 → 2 → 0**. The generalisable number is the false-positive
+rate of a naive producer-runner, which came out around **6 in 7**.
+
+### The two rules this cost, both now in AGENTS.md
+
+1. A non-zero exit is not a defect — a guard may refuse by design, and it
+   explains itself on **stdout**, which a stderr-only harness never sees.
+2. A **traceback** is not proof of a defect either — a refusal raised as a
+   domain exception is indistinguishable from a crash by shape. The
+   discriminator is whether the exception type is one the producer's own import
+   cone defines. This second rule was learned by watching the *first* one's
+   checklist misfire.
+
+`su4` is the neat closure: the right disposition for it turned out to be
+*joining* the category this bean spent five corrections learning to recognise.
