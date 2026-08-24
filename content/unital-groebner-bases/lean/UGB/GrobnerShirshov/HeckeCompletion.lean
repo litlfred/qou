@@ -15256,4 +15256,133 @@ theorem overlap_length_one (hn : 0 < n) (hp : HeckeParams)
     -- 3, and the only one needing an argument rather than a bound.
     exact overlap_length_one_of_bs_left hn hp hr₂ h₁ h₂ hr hleft
 
+/-! ## §4av  From an arbitrary composition to the constructed one
+
+`CornerCriterion.bsbs_overlap_resolves` (§4as) discharges the criterion's
+obligation for `CornerGeneral.oc i i₁ j₁ j₂ …` — a composition this file
+*builds*. `IsGrobnerShirshovBasis.overlap_resolves` quantifies over every
+`OverlapComposition` whose two rules lie in the system, and says nothing about
+how it was built. Between the two sits a gap that §4at framed as "the shape
+bridge": recovering `left`, `overlap` and `right` from the two `lm_decomp`s.
+
+§4au closes it, because with the overlap known to be a single letter the two
+decompositions determine the rest outright. `lm₁ = descWord i j₁ ++ [σᵢ]` splits
+against `left ++ [x]` with matching tails, so `left = descWord i j₁` and
+`x = σᵢ`; then `lm₂ = [σᵢ] ++ right` against
+`σᵢ :: (descWord i₁ j₂ ++ [σᵢ])` gives `right`.
+
+`bsbs_top_eq` removes the last assumption a caller would otherwise have to
+supply. The two rules are **not** assumed to share a top index: the overlap is
+`σᵢ` from `rule₁`'s side and `σ_{i₂}` from `rule₂`'s, because a Bokut–Shiao word
+begins with its top, so a one-letter overlap *forces* `i₂ = i` and hence
+`i₂' = i₁`.
+
+`bsbs_resolves_of_oc` is the three together — the §4as result restated in the
+criterion's own form, for a composition the file did not build. It inherits
+every scope limit of §4as, `j₁ ≥ 1` included, and adds one of its own: the left
+context must be non-empty, which is what §4au needs and what
+`overlap_resolves` does not require. The degenerate `left = []` compositions are
+not covered here. -/
+
+theorem bsbs_oc_eq (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    {i i₁ j₁ j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
+    (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i₁ i j₁)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation i₁ i j₂)
+    (hleft : oc.left ≠ []) :
+    oc = CornerGeneral.oc i i₁ j₁ j₂ h₁ hj₁ hj₂ := by
+  have hone : oc.overlap.length = 1 :=
+    overlap_length_one hn hp (hr₁ ▸ bokutShiaoRelation_mem hn hp h₁ hj₁)
+      (hr₂ ▸ bokutShiaoRelation_mem hn hp h₁ hj₂) hleft
+  obtain ⟨x, hx⟩ : ∃ x, oc.overlap = [x] := by
+    rcases hoc : oc.overlap with _ | ⟨x, xs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨x, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- rule₁ pins the left context and the overlap letter.
+  have hd₁ : descWord i j₁ ++ [(⟨i⟩ : HeckeGen n)] = oc.left ++ [x] := by
+    rw [← hx, ← oc.lm₁_decomp, hr₁, bokutShiaoRelation_lm h₁ hj₁, bsWord₁]
+  obtain ⟨hleq, hxeq⟩ := List.append_inj' hd₁ (by simp)
+  have hxi : x = (⟨i⟩ : HeckeGen n) := by
+    injection hxeq with hh _
+    exact hh.symm
+  have hx' : oc.overlap = [(⟨i⟩ : HeckeGen n)] := by rw [hx, hxi]
+  -- rule₂ then pins the right context: its leading monomial opens as
+  -- `σᵢ :: (descWord i₁ j₂ ++ [σᵢ])`, and the head is the overlap.
+  have hreq : oc.right = descWord i₁ j₂ ++ [(⟨i⟩ : HeckeGen n)] := by
+    have hd := oc.lm₂_decomp
+    rw [hr₂, bokutShiaoRelation_lm h₁ hj₂, bsWord₁, descWord_cons h₁ hj₂, hx'] at hd
+    simp only [List.cons_append, List.nil_append] at hd
+    exact (List.cons.inj hd).2.symm
+  -- `l`, `ov`, `rt` occur in the `Prop` fields, so these have to be `subst`,
+  -- not `rw`: a rewrite leaves the decomposition proofs ill-typed.
+  cases oc with
+  | mk r₁ r₂ l ov rt d₁ d₂ hne =>
+    simp only at hr₁ hr₂ hleq hreq hx hxi
+    subst hr₁; subst hr₂; subst hreq; subst hx'; subst hleq
+    rfl
+
+theorem bsbs_top_eq (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    {i i₁ j₁ i₂ i₂' j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
+    (hj₁ : j₁.val ≤ i₁.val) (h₂ : i₂'.val + 1 = i₂.val) (hj₂ : j₂.val ≤ i₂'.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i₁ i j₁)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation i₂' i₂ j₂)
+    (hleft : oc.left ≠ []) :
+    i₂ = i ∧ i₂' = i₁ := by
+  have hone : oc.overlap.length = 1 :=
+    overlap_length_one hn hp (hr₁ ▸ bokutShiaoRelation_mem hn hp h₁ hj₁)
+      (hr₂ ▸ bokutShiaoRelation_mem hn hp h₂ hj₂) hleft
+  obtain ⟨x, hx⟩ : ∃ x, oc.overlap = [x] := by
+    rcases hoc : oc.overlap with _ | ⟨x, xs⟩
+    · rw [hoc] at hone; simp at hone
+    · refine ⟨x, ?_⟩
+      rw [hoc] at hone; simp at hone
+      rw [hone]
+  -- rule₁ makes the single overlap letter `σᵢ` …
+  have hd₁ : descWord i j₁ ++ [(⟨i⟩ : HeckeGen n)] = oc.left ++ [x] := by
+    rw [← hx, ← oc.lm₁_decomp, hr₁, bokutShiaoRelation_lm h₁ hj₁, bsWord₁]
+  have hxi : x = (⟨i⟩ : HeckeGen n) := by
+    injection (List.append_inj' hd₁ (by simp)).2 with hh _
+    exact hh.symm
+  -- … and rule₂ makes it `σ_{i₂}`, because a Bokut–Shiao word begins with its top.
+  obtain ⟨u, hu⟩ := descWord_head (i := i₂) (j := j₂) (by omega)
+  have hd₂ : (⟨i₂⟩ : HeckeGen n) :: (u ++ [(⟨i₂⟩ : HeckeGen n)])
+      = (⟨i⟩ : HeckeGen n) :: oc.right := by
+    have hd := oc.lm₂_decomp
+    rw [hr₂, bokutShiaoRelation_lm h₂ hj₂, bsWord₁, hu, hx, hxi] at hd
+    simpa using hd
+  have hii : i₂ = i := by
+    injection hd₂ with hh _
+    exact congrArg HeckeGen.index hh
+  exact ⟨hii, Fin.ext (by omega)⟩
+
+/-- **The criterion's obligation for an arbitrary Bokut–Shiao × Bokut–Shiao
+composition.** `bsbs_overlap_resolves` speaks about the *constructed*
+`CornerGeneral.oc`; `IsGrobnerShirshovBasis.overlap_resolves` quantifies over
+every `OverlapComposition`. `bsbs_oc_eq` closes that gap, and `bsbs_top_eq`
+means the two rules need not be assumed to share a top — a one-letter overlap
+forces it. -/
+theorem bsbs_resolves_of_oc (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    {i i₁ i₂ j₁ i' j₂ ip jm : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val)
+    (hj₁ : j₁.val ≤ i₁.val) (hip : ip.val + 1 = i'.val) (hj₂ : j₂.val ≤ ip.val)
+    (hq : hp.q - hp.q⁻¹ ≠ 0)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation i₁ i j₁)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation ip i' j₂)
+    (hleft : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  obtain ⟨hii, hii'⟩ := bsbs_top_eq hn hp h₁ hj₁ hip hj₂ hr₁ hr₂ hleft
+  -- `subst` here would eliminate `i₁` rather than `ip` and orphan `h₁`; rewrite
+  -- the one hypothesis that mentions the second rule's indices instead.
+  rw [hii, hii'] at hr₂
+  have hj₂' : j₂.val ≤ i₁.val := by rw [← hii']; exact hj₂
+  rw [bsbs_oc_eq hn hp h₁ hj₁ hj₂' hr₁ hr₂ hleft]
+  exact CornerCriterion.bsbs_overlap_resolves hn hp h₁ h₂ hjm hj₁ hj₂' hq
+
 end UGB.GrobnerShirshov.Hecke
