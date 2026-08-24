@@ -184,23 +184,45 @@ magnitude is not stable under input drift. That strengthens the existing
 "magnitude is NOT a single derivable number" verdict rather than weakening it.
 
 
-## Third independent arrival at the D-frame Gram singularity (2026-08-23)
+## CORRECTED: two different Gram matrices, and I conflated them (2026-08-23)
 
-Main's `35b4923012` (qou-cds2) measured the numerical rank of the general-n
-Markov-Gram and found corank 1 at n=3 and corank 2 at n=4, identifying
-rank = #{partitions of n with at most two rows} — Temperley-Lieb.
+An earlier note here claimed main's `35b4923012` (qou-cds2) "generalises" the
+n=3 result proved on this branch, reading its corank 1 / 2 at n=3 / n=4 as
+rank = #{partitions with at most two rows}. **The arithmetic in that commit is
+right; my reading of it as the same object was not.** A sibling on #5592
+flagged it and the check confirms them.
 
-That generalises the n=3 result proved on this branch. The radical exhibited
-by `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_mulVec_radical`,
-(-q^3, q^2, q^2, -q, -q, 1), IS the three-strand q-antisymmetriser, i.e. the
-partition (1^3) — the unique partition of 3 with >= 3 rows. Checks out at
-n=4 too: partitions of 4 with >= 3 rows are (2,1,1) and (1^4), so corank 2.
+There are two Gram matrices here and they agree only at n=3:
 
-So three producers, reached separately, describe one phenomenon:
-  - Lean, exact over R, sorry-free   : det = 0, explicit 1-dim radical at n=3
-  - frobenius_gram_matrix_probe (sympy): exactly 1 degenerate direction,
-    indefinite signature
-  - qou-cds2 (numpy, general n)      : corank = #{partitions with >= 3 rows}
+| object | dim | corank at n=3,4,5 |
+|---|---|---|
+| **full NF-basis** Gram (`gramMatrixD`, this branch's Lean) | n! | 1, 10, 78 |
+| **partition-indexed** Gram (`pyhecke_n_generic.gram_inverse_n`) | #partitions | 1, 2, 4 |
 
-and it is the same fact as `y_lambda = 0 for >= 3 rows` under D (qou-8iru),
-arriving from the rank of a Gram instead of from the weights.
+The tell I missed was in main's own output: it reports `n=3 dim 3`, and my Lean
+is `Fin 6`. Different dimension, therefore different matrix — matched on the
+topic ("Gram corank at n=3 is 1") without checking the object. That is the
+`da-arity-conflation` shape AGENTS.md warns about, arriving as a dimension
+rather than a binder.
+
+**The unifying fact, which both measurements do support.** The degenerate
+directions are exactly the Wedderburn blocks with >= 3 rows — the blocks where
+`y_lambda = 0` under D (qou-8iru). The partition-indexed Gram sees each such
+block once; the full NF Gram sees it with multiplicity (dim V_lambda)^2:
+
+    n=3:  1 = 1^2                    n=4:  10 = 3^2 + 1^2
+    n=5: 78 = 6^2 + 5^2 + 4^2 + 1^2
+
+and Sum_{lambda >= 3 rows} (dim V_lambda)^2 = n! - Catalan(n), verified for
+n = 3,4,5. So the radical of the full Gram is ker(H_n -> TL_n), matching #5592.
+
+At n=3 the branch's Lean radical (-q^3, q^2, q^2, -q, -q, 1) is the three-strand
+q-antisymmetriser, i.e. the single partition (1^3) — the one partition of 3 with
+>= 3 rows, dim 1, so corank 1^2 = 1 in both objects at once. That coincidence is
+what made the conflation look like confirmation.
+
+Three producers do still describe one phenomenon, correctly scoped: Lean exact
+over R (det = 0 with an explicit radical, full NF basis, n=3), sympy (exactly
+one degenerate direction, indefinite signature, same basis), and numpy general-n
+(corank = block count, partition-indexed). The third is a different matrix, not
+a generalisation of the first two.
