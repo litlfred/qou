@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:41:45.018695+00:00",
-  "commitSha": "6de077a9342ad4613cc5b66da47c8dbac705876e",
+  "computedAt": "2026-08-24T07:00:44.132955+00:00",
+  "commitSha": "899d21fd38b6116ef51ac4f96011efab487e41d4",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2724,
-      "prov_ok": 2347,
+      "total_scanned": 2725,
+      "prov_ok": 2351,
       "prov_audit_exempt": 78,
-      "prov_exempt_no_reader": 222,
+      "prov_exempt_no_reader": 219,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 74,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972834067547723935389133627019089574155653450807635829662261"
+      "completeness_ratio": "0.972844036697247706422018348623853211009174311926605504587156"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1898,6 +1898,10 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-helium-3-h9.witness.json",
           "missing_fields": []
         },
@@ -1923,6 +1927,10 @@
         },
         {
           "witness": "chi-proton-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
           "missing_fields": []
         },
         {
@@ -2495,6 +2503,10 @@
         },
         {
           "witness": "geometric-qdilog-lifted-amplitude.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-magnitude-a3.witness.json",
           "missing_fields": []
         },
         {
@@ -6027,6 +6039,10 @@
         },
         {
           "witness": "mn-wrapper-categorical-analysis-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "motivic-obstruction-symbolic.witness.json",
           "missing_fields": []
         },
         {
@@ -10373,14 +10389,6 @@
           ]
         },
         {
-          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -10414,14 +10422,6 @@
         },
         {
           "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -10529,12 +10529,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "habiro-magnitude-a3.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },

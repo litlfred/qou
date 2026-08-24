@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T06:49:26.561827+00:00",
-  "commitSha": "1e18c44fd444b6c7a1248c797808207c521f452c",
+  "computedAt": "2026-08-24T06:58:47.958371+00:00",
+  "commitSha": "899d21fd38b6116ef51ac4f96011efab487e41d4",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -37,24 +37,25 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py"
+      "computations/audits/q0_anchor_consistency_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 788,
+      "Q0_OK": 795,
       "Q0_AMBIGUOUS": 17,
       "Q0_INDEPENDENT": 46,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1783,
+      "Q0_ANCHOR_MISSING": 1787,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
-      "Q0_PARSE_ERROR": 11,
+      "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 1
     },
     "match_prefix_digits": 14,
@@ -2169,6 +2170,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-correction-shadow-price-test.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-derivation-vs-fit-analysis.witness.json",
           "detail": ""
         },
@@ -2262,6 +2267,10 @@
         },
         {
           "witness": "he3-pairknot-composite-lp.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "he4-canonical-tr-m-block-fingerprint.witness.json",
           "detail": ""
         },
         {
@@ -2802,6 +2811,10 @@
         },
         {
           "witness": "markov-pipeline-cross-validation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "markov-substrate-realization.witness.json",
           "detail": ""
         },
         {
@@ -5533,6 +5546,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ck-sseries-operator-match.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ck-truncation-bias-correction-probe.witness.json",
           "detail": ""
         },
@@ -7395,6 +7412,10 @@
           "detail": ""
         },
         {
+          "witness": "basis-knot-tables.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "benzene-assembly-spine.witness.json",
           "detail": ""
         },
@@ -8195,6 +8216,10 @@
           "detail": ""
         },
         {
+          "witness": "cross-check-trM-1ppb.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "crystal-keystone-selector.witness.json",
           "detail": ""
         },
@@ -8551,6 +8576,10 @@
           "detail": ""
         },
         {
+          "witness": "h2s-chiral-residue-bar-antisymmetric.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "h2s-chirality-residue-s3-holonomy.witness.json",
           "detail": ""
         },
@@ -8883,6 +8912,10 @@
           "detail": ""
         },
         {
+          "witness": "low-isotope-sign-flip-diagnostic.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "lp-confinement-nf-forcing.witness.json",
           "detail": ""
         },
@@ -8928,6 +8961,10 @@
         },
         {
           "witness": "markov-trace-axiomatic-multi-atom.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "markov-trace-axiomatic-proton.witness.json",
           "detail": ""
         },
         {
@@ -9264,6 +9301,10 @@
         },
         {
           "witness": "phase2b-dim-v21-bridge.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "photon-operator-table.witness.json",
           "detail": ""
         },
         {
@@ -10271,6 +10312,10 @@
           "detail": ""
         },
         {
+          "witness": "verify-isospin-bar-anomaly.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "vhat-per-crossing-chain.witness.json",
           "detail": ""
         },
@@ -10921,52 +10966,6 @@
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
           "detail": ""
-        }
-      ],
-      "Q0_PARSE_ERROR": [
-        {
-          "witness": "basis-knot-tables.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 61)"
-        },
-        {
-          "witness": "cross-check-trM-1ppb.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 59)"
-        },
-        {
-          "witness": "h2s-chiral-residue-bar-antisymmetric.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 68)"
-        },
-        {
-          "witness": "habiro-correction-shadow-price-test.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 61)"
-        },
-        {
-          "witness": "he4-canonical-tr-m-block-fingerprint.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 68)"
-        },
-        {
-          "witness": "low-isotope-sign-flip-diagnostic.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 61)"
-        },
-        {
-          "witness": "markov-substrate-realization.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 58)"
-        },
-        {
-          "witness": "markov-trace-axiomatic-proton.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 2 column 1 (char 2)"
-        },
-        {
-          "witness": "photon-operator-table.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 61)"
-        },
-        {
-          "witness": "qbeta-ck-sseries-operator-match.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 74)"
-        },
-        {
-          "witness": "verify-isospin-bar-anomaly.witness.json",
-          "detail": "Expecting property name enclosed in double quotes: line 4 column 1 (char 68)"
         }
       ],
       "Q0_FLIP": [

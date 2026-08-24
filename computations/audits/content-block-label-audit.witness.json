@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T23:58:35.346628+00:00",
-  "commitSha": "bc844579d7516387aab60255c989e0dcb4479e5a",
+  "computedAt": "2026-08-24T06:58:46.988836+00:00",
+  "commitSha": "899d21fd38b6116ef51ac4f96011efab487e41d4",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d9e8d0615e0d",
@@ -39,16 +39,15 @@
   "invocation": {
     "argv": [
       "computations/audits/content_block_label_audit.py",
-      "--list",
-      "missing_label"
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/content_block_label_audit.py --list missing_label"
+    "reproduce": "python3 -u computations/audits/content_block_label_audit.py --strict"
   },
   "description": "I5 audit per local/compute-integration-watcher: every computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "total_fields_audited": 738,
-    "registered_labels_count": 3950
+    "registered_labels_count": 3953
   },
   "data": {
     "by_result": {
