@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-24T17:36:23Z
+updated_at: 2026-08-24T18:07:44Z
 ---
 
 ## What
@@ -62,3 +62,46 @@ reverted rather than committed (PR #5664). Grepping the idiom found the other
 76. This is the fifth distinct mechanism by which a producer holds a muon value,
 after: manifest tag, local literal, shared-module literal, and the provenance
 stamp moving on its own.
+
+
+## Evidence on the intent question (measured 2026-08-24)
+
+The bean asks whether reading the pinning witness is deliberate. The producers'
+own comments at the read site are evidence. Across all 85:
+
+     4  DELIBERATE — the comment says so
+    47  commented at the read site, but never says WHY muon
+    30  NO comment at the read site at all
+     4  mentions muon only incidentally
+
+**Three of the four "deliberate" are INFRASTRUCTURE that should read the
+anchor**: `q_parameter` (it defines the muon override), `q0_repin_sweep` (it
+must not re-pin the definer), and `cross_check_trM_1ppb` (an L1 cross-check
+that must run at muon). The fourth is `bwhk_st_matrix_corroboration`:
+
+    # canonical muon-q0, read at runtime from the pinning witness
+    # (drift-proof, full 50-dps) -- never hardcode
+
+So among ORDINARY producers, stated intent is close to absent. The reading this
+supports is that the idiom is **conventional — copied from a neighbour — rather
+than chosen**, and that the four infrastructure cases are the only ones where
+it is load-bearing.
+
+**This is evidence, not proof.** Absence of a comment is not absence of intent;
+an author may have meant it and not written it down. It shifts the prior, and
+it identifies which four to ask about first rather than all 85.
+
+### Why it still should not be swept
+
+If the idiom is conventional, the fix is NOT to route 77 producers through
+`q_parameter` in one commit -- that silently moves numbers in 77 places at once,
+and the C->D precedent (qou-2zjp) shows how large such a move can be (14.741 %
+on alpha*). It is a per-producer question of which layer each quantity belongs
+to, and several of these are slow.
+
+The cheaper first move is the one this evidence points at: decide whether
+`WitnessBuilder`'s `.q0Value` stamp should report the anchor the PAYLOAD was
+computed at rather than whatever `q_parameter` resolves to. That fixes the
+STRADDLE (the witness lying about its own layer) for all 85 at once, without
+moving a single number, and leaves the layer question to be settled per
+producer afterwards.
