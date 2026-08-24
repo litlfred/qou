@@ -23,12 +23,12 @@
       "note": "Proved vacuous by hand in docs/audits/2026-08-24-core-levi-form-vacuous-classes-probe.lean (exit 0, no sorryAx). The GENERIC tactic list in --emit does NOT discharge it, which is why the emitted probe reports it undecided -- a failed probe settles nothing."
     },
     "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "`∃ q_thresh : ℝ, q_thresh > 0` — witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "`∃ Re_c : ℝ, Re_c > 0` — witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli": {
       "verdict": "proved-vacuous",
@@ -51,16 +51,16 @@
       "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "Named for P vs NP. `strict_separation` is `∀ eps > 0, ∃ s, 0 < s ∧ s ≤ eps` — witness `eps` itself; `noncompressible` is `∃ s0, 0 < s0` — witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
       "verdict": "proved-vacuous",
       "note": "Field is `∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 0` -- reflexivity of ≤ on zero, with the `q > 1` hypothesis unused."
     },
     "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean::QOU.Machinery.SeparateLambdaScale_Antipattern": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "uninhabitable-by-design",
+      "note": "Single field `is_antipattern : False`. NOT vacuous — the honest opposite. It marks a construction the corpus forbids (the purged `λ_scale`) and can only be USED, never proved. A carrier that cannot be inhabited says the most a carrier can. Verified in 2026-08-24-undecided-carrier-witnesses.lean."
     },
     "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification": {
       "verdict": "proved-vacuous",
@@ -79,16 +79,16 @@
       "note": "As FMapFaddeevModular: `: True`, already flagged and exempt via @marker. Not a new finding."
     },
     "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "`∃ f : ℕ → ℝ, ∀ K, f K = 1` — witness `fun _ => 1`. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "`∃ raise : ℕ → ℤ, ∀ i, raise i = 0` — witness `fun _ => 0`. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula": {
-      "verdict": "undecided",
-      "note": "Shape filter matched; the generic tactic list found no witness. NOT evidence of content -- unreviewed by hand."
+      "verdict": "proved-vacuous",
+      "note": "`∀ m_e ≥ 0, ∀ _c, ∃ r ≥ 0, ∃ value, value = r * m_e` — witness r = 0. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
     "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
       "verdict": "proved-vacuous",
