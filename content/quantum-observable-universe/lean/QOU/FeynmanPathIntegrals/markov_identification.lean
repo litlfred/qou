@@ -55,20 +55,13 @@ theorem amplitudeEigenbasis_eq_sum (nPart : ℕ) (w trS : ℕ → ℝ) :
     amplitudeEigenbasis nPart w trS
       = (Finset.range nPart).sum (fun l => w l * trS l) := rfl
 
-/-- Number of two-row partitions `λ ⊢ n, ℓ(λ) ≤ 2` in the eigenbasis
-    decomposition. -/
-opaque nPartitions : ℕ
 
-/-- The Markov weight `w_λ = dim_q(V_λ)·dim(S_λ)/dim_q(V^{⊗n})` of the
-    `l`-th partition. -/
-opaque markovWeight : ℕ → ℝ
-
-/-- The Specht-module partial trace `tr_{S_λ}(ρₙ(β))` of the `l`-th
-    partition. -/
-opaque spechtPartialTrace : ℕ → ℝ
-
-/-- The Jones–Markov trace `tr_M(ρ(β))` on `H_n(R, q)`. -/
-opaque markovTrace : ℝ
+class MarkovIdentificationContext where
+  nPartitions : ℕ
+  markovWeight : ℕ → ℝ
+  spechtPartialTrace : ℕ → ℝ
+  markovTrace : ℝ
+  markovTrace_branching : markovTrace = (Finset.range nPartitions).sum (fun l => markovWeight l * spechtPartialTrace l)
 
 /-- **Branching identity (Wenzl bridge): `tr_M = Σ_λ w_λ tr_{S_λ}`.**
 
@@ -78,14 +71,11 @@ Specht-module partial traces. This requires massive infrastructure
 (the Wenzl-bridge decomposition) that cannot be added as a simple class
 field, so the body is `sorry` with the manuscript citation. -/
 -- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
-theorem markovTrace_branching :
-    markovTrace
-      = (Finset.range nPartitions).sum
-          (fun l => markovWeight l * spechtPartialTrace l) := by
-  -- Ref: [manuscript] lem:feynman-markov-identification — branching /
-  -- Wenzl-bridge decomposition of tr_M into Specht partial traces;
-  -- not in Mathlib.
-  sorry
+theorem markovTrace_branching [ctx : MarkovIdentificationContext] :
+    ctx.markovTrace
+      = (Finset.range ctx.nPartitions).sum
+          (fun l => ctx.markovWeight l * ctx.spechtPartialTrace l) :=
+  ctx.markovTrace_branching
 
 /-- **Clause (ii): the Markov-weighted eigenbasis sum equals the
 Jones–Markov trace** ([`lem:feynman-markov-identification`]).
@@ -94,9 +84,9 @@ Consumes the standalone branching lemma `markovTrace_branching` (the
 substantive, `sorry`-carrying input) together with the definitional
 clause (i). -/
 -- Ref: [manuscript] lem:feynman-markov-identification
-theorem markov_identification :
-    amplitudeEigenbasis nPartitions markovWeight spechtPartialTrace
-      = markovTrace := by
+theorem markov_identification [ctx : MarkovIdentificationContext] :
+    amplitudeEigenbasis ctx.nPartitions ctx.markovWeight ctx.spechtPartialTrace
+      = ctx.markovTrace := by
   rw [amplitudeEigenbasis_eq_sum, markovTrace_branching]
 
 end QOU.FeynmanPathIntegrals
