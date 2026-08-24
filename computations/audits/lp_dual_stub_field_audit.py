@@ -99,37 +99,60 @@ def _load_validator():
     return mod
 
 
-def _flatten(obj, out: dict) -> None:
-    """First occurrence of each key, at any depth.
+def _occurrences(obj, key: str, out: list) -> None:
+    """EVERY occurrence of `key`, at any depth, including inside lists.
 
-    Witnesses nest inconsistently -- some put the dual block at top level,
-    some under `data/` -- so a top-level-only scan would under-report.
+    An earlier version of this audit recorded only the FIRST occurrence
+    (dict `setdefault`, and only the head of each list). That is a
+    false-positive generator, and `e-0-lp-dual-h3.witness.json` is the shape
+    that exposes it: a top-level `y0_star: None` sitting above eight
+    per-target result blocks whose `y_star` / `active_set` / `primal_obj` /
+    `dual_obj` are all real. First-occurrence would read the top-level null
+    and could call such a witness STUB while it carries genuine duals.
+
+    Re-measured across all nine affected files when this was fixed: ZERO
+    verdicts changed -- each of the eight STUB witnesses has exactly one
+    occurrence of each field and it is null. The fix removes a latent
+    misclassification, it did not correct a reported one.
     """
     if isinstance(obj, dict):
         for k, v in obj.items():
-            out.setdefault(k, v)
-            _flatten(v, out)
+            if k == key:
+                out.append(v)
+            _occurrences(v, key, out)
     elif isinstance(obj, list):
-        for x in obj[:1]:
-            _flatten(x, out)
+        for x in obj:
+            _occurrences(x, key, out)
 
 
-def classify(path: Path) -> tuple[str, list[str], list[str]] | None:
+def classify(path: Path) -> tuple[str, list[str], list[str], dict] | None:
+    """Verdict, plus the per-field occurrence counts the verdict rests on.
+
+    A field counts as populated if ANY of its occurrences is non-null -- one
+    real nested value outweighs a top-level placeholder, which is the only
+    reading under which "this witness carries duals" is true.
+    """
     try:
         data = json.loads(path.read_text())
     except (OSError, ValueError):
         return None
-    flat: dict = {}
-    _flatten(data, flat)
-    present = [k for k in DUAL_FIELDS if k in flat]
+
+    counts: dict[str, tuple[int, int]] = {}
+    for k in DUAL_FIELDS:
+        occ: list = []
+        _occurrences(data, k, occ)
+        if occ:
+            counts[k] = (len(occ), sum(1 for v in occ if v is not None))
+
+    present = list(counts)
     if not present:
         return None
-    nulls = [k for k in present if flat[k] is None]
+    nulls = [k for k, (_n, nonnull) in counts.items() if nonnull == 0]
     if not nulls:
-        return "POPULATED", present, nulls
+        return "POPULATED", present, nulls, counts
     if len(nulls) == len(present):
-        return "STUB", present, nulls
-    return "PARTIAL", present, nulls
+        return "STUB", present, nulls, counts
+    return "PARTIAL", present, nulls, counts
 
 
 def main(argv: list[str]) -> int:
@@ -149,14 +172,14 @@ def main(argv: list[str]) -> int:
         verdict = classify(p)
         if verdict is None:
             continue
-        kind, present, nulls = verdict
+        kind, present, nulls, counts = verdict
         flagged = False
         if validator is not None:
             try:
                 flagged = bool(validator.is_lp_sdp_witness(p)[0])
             except Exception:  # noqa: BLE001 - a validator crash must not
                 flagged = False  # take the audit down with it
-        rows.append((p, kind, present, nulls, flagged))
+        rows.append((p, kind, present, nulls, flagged, counts))
 
     stubs = [r for r in rows if r[1] == "STUB"]
     partial = [r for r in rows if r[1] == "PARTIAL"]
@@ -184,12 +207,15 @@ def main(argv: list[str]) -> int:
         if not sel:
             continue
         print(f"  {label}:")
-        for p, _kind, present, nulls, flagged in sel:
+        for p, _kind, present, nulls, flagged, counts in sel:
             rel = p.relative_to(COMPUTATIONS)
             mark = " [flagged]" if flagged else ""
             print(f"    {rel}{mark}")
             print(f"        present={len(present)} null={len(nulls)}: "
                   f"{', '.join(nulls)}")
+            occ = ", ".join(f"{k}:{n}occ/{nn}nonnull"
+                            for k, (n, nn) in sorted(counts.items()))
+            print(f"        occurrences: {occ}")
         print()
 
     if stubs:
