@@ -57,6 +57,7 @@ export default chapter({
         "confinement-universality-proof",
         "derived-atom",
         "nucleon-from-photons-summary",
+        "gluon-stabiliser-ledger",
       ],
     }),
 

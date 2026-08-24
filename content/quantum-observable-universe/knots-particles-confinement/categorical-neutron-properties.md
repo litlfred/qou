@@ -10,6 +10,8 @@ The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak
 
 The integer LP dual selects $L_+ \to L_-$ (two Hopf links, 4 gluon crossings) as the minimum-action stabiliser. The neutron requires more gluon crossings than the proton (4 versus 2) because the $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability ($\mathrm{tr}_M = -0.132$ versus $-0.006$). This yields a total of 13 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 4 from gluons).
 
+The enumeration behind this selection is the proton's, over the same feasible set: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included. Here too $e^-$ is admissible and simply loses the minimisation. The 4-versus-2 asymmetry is what carries the mass split into $\mathfrak{Q}_\beta$, and it follows from the $|\mathrm{tr}_M|$ tiebreak rather than from the minimum-crossing objective; the [gluon ledger](#rem:gluon-stabiliser-ledger) records both points and what remains open in the second.
+
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:
 
