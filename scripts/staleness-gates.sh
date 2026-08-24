@@ -74,6 +74,38 @@ GATES=(
   # does not apply here. Coverage as of 2026-08-22: 42 modules, 18 cone
   # witnesses, 122 package-data witnesses, 0 uncovered.
   "qou-mass vendor mirror|scripts/sync-qou-mass-vendor.py|--check|yes"
+  # BLOCKING, and RED ON ARRIVAL -- 3 of 8. Owner-chosen 2026-08-24 (blocking
+  # was picked over advisory and over deferring), bean qou-wee5.
+  #
+  # A LAYER STRADDLE is a witness whose value mixes the ideal (muon) and
+  # experimental (proton) layers inside one computed quantity. This gate runs
+  # each inline-q0 producer twice -- QOU_Q0_ANCHOR=physical, then =ideal -- and
+  # fails if any NON-STAMP field moves. A producer with a q of its own should
+  # move nothing but its stamp; if its numbers move, a second q reached them.
+  #
+  # COST. This is the only gate here that EXECUTES producers rather than
+  # scanning files: 8 producers x 2 runs. The other four are static. Budget for
+  # it accordingly, and use --timeout to bound a hung producer (an exceeded run
+  # reports TIMEOUT = UNTESTED, never "clean").
+  #
+  # STATE ON ARRIVAL, measured on main 2026-08-24:
+  #   STRADDLE=3  per_generator_V_hat_general (24 fields)
+  #               xi_ell_phi_q_probe          (36 fields)
+  #               t6_tau_h5_embedding_probe   (15 fields)
+  #   clean=5
+  #
+  # No allowlist, deliberately. This script is ALREADY red on main (see the
+  # ledger below), so a red-on-arrival gate brings no new breakage -- and
+  # seeding a 3-entry allowlist would be the "make it green by widening a
+  # baseline" move AGENTS.md forbids, applied to the very defect being gated.
+  # The 3 drain via qou-wee5.
+  #
+  # WHAT IT CANNOT DO. Only --candidates (inline closed-form q0) is sound.
+  # --literal reports MOVES, not STRADDLE: its selector cannot tell a computed
+  # second anchor from a documented one, a selftest constant, or a deliberate
+  # comparison leg. Do not wire --literal here. And a producer whose q reaches
+  # ONLY stamps is vetoed as STAMP-ONLY, not counted (bean qou-bdkx).
+  "anchor-flip layer straddle|computations/audits/anchor_flip_straddle_audit.py|--candidates --timeout 300|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then
@@ -93,6 +125,9 @@ fi
 #   scriptHash + upstream drift   RED   dominated by sha256_mismatch against
 #                                       q-pinning-50-digit.witness.json
 #   q0 constant staleness         RED   6 witnesses in the muon basin
+#   anchor-flip layer straddle    RED   3 of 8 inline-q0 producers, added
+#                                       2026-08-24 red on arrival by choice;
+#                                       drains via qou-wee5, no allowlist
 #   qou-mass vendor mirror        green as of this commit, and it has now gone
 #                                       red TWICE from two unrelated causes:
 #
