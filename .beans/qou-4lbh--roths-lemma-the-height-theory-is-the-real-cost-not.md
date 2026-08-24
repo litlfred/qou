@@ -3690,3 +3690,37 @@ from the induction hypothesis) and `index_rescaled_wronskian_le_right` (the `y` 
 base case) are stated in `κ` and heights, so `Γ` can feed them. `hfac` in
 `index_le_of_rothGrowth_of_factor_bound` is still an assumption — assembling the two halves into
 it is the next step, and it is now a matter of composition rather than of a missing theorem.
+
+### ⚠ A gap nothing had noticed: the separated representation carried no degree bound
+
+`hres`'s `x` half is `index_rescaled_wronskian_le`, which needs `degreeOf j (φ k) ≤ d₁ j` before
+`RothLemmaUniform` at `m − 1` can apply. **Nothing in the chain from `P` to `φ` supplied any
+bound on the factors' degrees.** `exists_sepW_ne_zero_le_degreeOf` gave `0 < r`, `r ≤ d + 1`,
+the operator-length bounds, the representation equation, and non-vanishing — and no degrees. So
+`hres` was not merely un-discharged; it was **un-dischargeable** as the chain stood.
+
+The arc had `n ≤ r_m + 1` from the *same* construction and not this, which is why it went
+unnoticed: the construction was mined for the clause the recursion's row cost needed and not
+for the clause the induction hypothesis needed. §7 supplies it on the source's side — "the
+degrees of `U` in `x₁,…,x_{m−1}` do not exceed `ρ₁,…,ρ_{m−1}`".
+
+Now proved and threaded through every level:
+
+    exists_separated_representation_monomial_right   φ j is a sum of monomials whose exponents
+                                                     are x-parts of P's own support
+    exists_separated_representation_fin_right        + the ψ side (bare monomials)
+    exists_shorter_of_{phi,psi}_dep                  shortening preserves any degree bound
+    exists_indep_representation                      composition through the induction
+    ..._indep_card_le, ..._indep_le_degreeOf         ∀ k x, degreeOf x (φ k) ≤ degreeOf (inl x) P
+    exists_sepW_ne_zero_le_degreeOf                  both clauses, where the recursion reads them
+
+The mathematics is cheap — the shortening steps replace `φ i` by `φ i − c·φ j`, and a degree
+bound survives a linear combination. The clause is stated as *preservation*
+(`∀ D, (∀ k x, degreeOf x (φ k) ≤ D x) → ∀ k x, degreeOf x (φ' k) ≤ D x`) rather than against a
+fixed `D`, which is what lets it compose through the induction without threading `P` down.
+
+**What this unblocks.** `hres` is now composable: both halves have the right shape (correction
+18b) and the degrees they ask for are available (this). What is still missing before `hres` can
+actually be built is §12's height estimate — a uniform `B` and `E` with `B ≤ H^E` and
+`E ≤ ε·(r·d j)`, where `abs_coeff_det_pderivList_le` gives `B = r!·(S·(d^L·B₀))^r` and §12
+computes `b = 2^{2n(r₁+…+r_m)}·n!·a^n`. That is doc pages 92–93, **not yet read**.
