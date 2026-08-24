@@ -4145,3 +4145,40 @@ rather than buried. Iterating from `1` to `m` needs such an `s` at every level, 
 
 **With `rothLemmaTheta_one` as base, the §14 induction is now complete modulo `RothLemma4`
 itself** — which is §13, and is the last unproved link.
+
+### §14's recursion, iterated — `rothLemmaTheta_iterate`
+
+`RothLemma4` at every arity from `1` to `M−1`, plus the base case, gives `RothLemmaTheta` at
+every `m ≤ M`. The square-root sequence `s` with `s 0 = t` and `s(n+1)² = s n` supplies the `s`
+each `rothLemmaTheta_succ` needs, via `s n ^ {2^n} = t`.
+
+**⚠ I reproduced correction 23's own defect, one commit after fixing it.** The first draft of
+`rothLemmaTheta_iterate` left `hsq` unbounded — `∀ n, s (n+1)^2 = s n` — which is exactly the
+vacuous form I had just removed from `rothConstant_chain`. Nothing objected: it type-checks, the
+theorem is true, and the hypothesis is simply unsatisfiable for any non-constant `s`.
+
+That says something about the failure mode worth keeping: **the unbounded form is what one writes
+by default.** It reads more natural, it is what the mathematics "means", and only asking *is this
+hypothesis satisfiable?* exposes it. The arc's five missing-clause corrections are the mirror
+image — there the default was to write too few hypotheses; here it was to write one too strong to
+hold.
+
+Then the bound was still one too loose. Reaching arity `M` needs `M − 1` successive roots, not
+`M`: the last step is `M−1 → M` and needs `s_{M−1}` with `t = s_{M−1}^{2^{M−1}}`. Corrected to
+`∀ n, n + 1 < M → …`, and only then does a witness exist —
+`rothLemmaTheta_iterate_seq_witness` at `M = 3`, `t = 1/16 = (1/2)^{2²}`, sequence
+`1/16, 1/4, 1/2`. **One more root would need `√(1/2)`.** The witness sits exactly at the
+boundary, which is the concrete shape of correction 23's restriction.
+
+**⚠ `hbase` is a hypothesis, and that is a real gap.** `rothLemmaTheta_one` proves
+`RothLemmaTheta Unit 1 p q F`; the iteration needs it at `Fin 1`. Those are different
+propositions — the schema quantifies over `σ → ℕ` data and `MvPolynomial σ ℤ` — and transporting
+needs `index`, `InRothPolySet` and `InRothFracSet` carried along `MvPolynomial.rename` for a type
+equivalence, which this arc does not have. Stated as a hypothesis so the gap is visible at the
+use site rather than hidden. The `m = 1` chain is `Unit`-specific throughout (`pUnitAlgEquiv`),
+so the fix is a `rename` transport for `index`, or a `Fin 1` copy of the base case.
+
+**Where Roth's lemma now stands.** §14's induction is complete — base (`rothLemmaTheta_one`),
+step (`rothLemmaTheta_succ`), iteration (`rothLemmaTheta_iterate`) — modulo two things:
+`RothLemma4` itself, which is §13 and the last piece of real mathematics; and the `Fin 1`/`Unit`
+transport, which is bookkeeping.

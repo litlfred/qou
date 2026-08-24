@@ -433,6 +433,72 @@ theorem rothLemmaTheta_succ {σ : Type*} {n p q F : ℕ} (hn : 1 ≤ n)
     hIH hp hpq (Equiv.refl (Fin n)) b ρ H' Θ' hg' hΘ'
   exact rothBound_succ_of_lemma4 hn hs0 hs1 hts hΘ.nonneg hsub hw hle
 
+/-- **§14's recursion, iterated** — `RothLemma4` at every arity from `1` to `M−1`, plus the base
+case, gives `RothLemmaTheta` at every `m ≤ M`.
+
+The square-root sequence is `s` with `s 0 = t` and `s (n+1)² = s n`, so `s n ^ {2^n} = t` at
+every level — the `s` each application of `rothLemmaTheta_succ` needs.  Correction twenty-three
+is exactly the observation that such a rational sequence exists only for `t` a `2^{M−1}`-th
+power; bounding the range to `n < M` is what makes it exist at all.
+
+⚠ A first draft of *this* theorem left `hsq` unbounded — reproducing correction twenty-three's
+own defect one commit after fixing it, which is worth recording because it says something about
+the failure mode: the unbounded form is what one writes by default, and nothing objects until
+someone asks whether the hypothesis is satisfiable.
+
+⚠ **`hbase` is a hypothesis, and that is a real gap, not a convenience.**  `rothLemmaTheta_one`
+proves `RothLemmaTheta Unit 1 p q F`; this needs it at `Fin 1`.  The two are different
+propositions — `RothLemmaTheta σ m` quantifies over `σ → ℕ` data and `MvPolynomial σ ℤ` — and
+transporting between them needs `index`, `InRothPolySet` and `InRothFracSet` carried along
+`MvPolynomial.rename` for a type equivalence, which this arc does not have.  Stated as a
+hypothesis so the gap is **visible at the use site** rather than hidden inside a proof.
+
+The `m = 1` chain is `Unit`-specific throughout (`pUnitAlgEquiv`), so the fix is either a
+`rename` transport for `index` or a `Fin 1` copy of the base case. -/
+theorem rothLemmaTheta_iterate {p q F M : ℕ} {s : ℕ → ℚ}
+    (hs0 : ∀ n, 0 ≤ s n) (hs1 : ∀ n, s n ≤ 1)
+    (hsq : ∀ n, n + 1 < M → s (n + 1) ^ 2 = s n) (hs00 : s 0 = (p : ℚ) / (q : ℚ))
+    (hbase : RothLemmaTheta (Fin 1) 1 p q F)
+    (h4 : ∀ n, 1 ≤ n → n < M → RothLemma4 (Fin (n + 1)) n p q F) :
+    ∀ m, 1 ≤ m → m ≤ M → RothLemmaTheta (Fin m) m p q F := by
+  have key : ∀ n, n < M → s n ^ (2 ^ n) = s 0 := by
+    intro n
+    induction n with
+    | zero => intro _; simp
+    | succ k ih =>
+        intro hk
+        have h2 : (2 : ℕ) ^ (k + 1) = 2 * 2 ^ k := by ring
+        rw [h2, pow_mul, hsq k (by omega), ih (by omega)]
+  intro m hm
+  induction m, hm using Nat.le_induction with
+  | base => intro _; exact hbase
+  | succ n hn ih =>
+      intro hnM
+      have hlt : n < M := by omega
+      exact rothLemmaTheta_succ hn (h4 n hn hlt) (ih (by omega)) (hs0 n) (hs1 n)
+        ((key n (by omega)).trans hs00).symm
+
+/-- **Non-vacuity of the iteration's square-root sequence** — and the concrete shape of
+correction twenty-three's restriction.
+
+Reaching arity `M` needs `M − 1` successive rational square roots, so `t` must be a
+`2^{M−1}`-th power.  At `M = 3` and `t = 1/16 = (1/2)^{2²}` the sequence is
+`1/16, 1/4, 1/2` and stops exactly where it is needed.
+
+⚠ One more root — `M = 4` at the same `t` — would need `√(1/2)`, which is irrational.  So the
+witness is at the boundary: it exists **because** the range is bounded, and the unbounded form
+correction twenty-three removed had no non-constant instance at all. -/
+theorem rothLemmaTheta_iterate_seq_witness :
+    ∃ s : ℕ → ℚ, (∀ n, 0 ≤ s n) ∧ (∀ n, s n ≤ 1) ∧
+      (∀ n, n + 1 < 3 → s (n + 1) ^ 2 = s n) ∧ s 0 = (1 : ℚ) / ((16 : ℕ) : ℚ) := by
+  refine ⟨fun n => if n = 0 then 1 / 16 else if n = 1 then 1 / 4 else 1 / 2, ?_, ?_, ?_, ?_⟩
+  · intro n; dsimp only; split_ifs <;> norm_num
+  · intro n; dsimp only; split_ifs <;> norm_num
+  · intro n hn
+    have hn2 : n < 2 := by omega
+    interval_cases n <;> norm_num
+  · norm_num
+
 /-- **Non-vacuity of the induction step.**  `n = 1`, `s = 1/4`, so `t = 1/16`; sub-problem
 bound `Θ' = 1/16` (tight for `RothBound 1`), `Ψ = w = 1/8`, `Θ = 5/16`.
 
