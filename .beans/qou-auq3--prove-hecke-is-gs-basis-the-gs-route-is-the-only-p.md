@@ -4664,3 +4664,37 @@ pairs* on a shared leading monomial — either the same rule
 pair (`DegenerateYbBs`) — **and that those are the only two**.
 `mem_heckeCompletedRewritingSystem_rules` (§4at) is the tool; it would be that
 lemma's first non-`lm_cases` consumer.
+
+## The inclusion half of the criterion, for every n (2026-08-24, §4bc)
+
+`inclusion_resolves_general` — `IsGrobnerShirshovBasis`'s **`inclusion_resolves`
+obligation, discharged for every `n`**, for an arbitrary `InclusionComposition`
+whose two rules are in the system.
+
+`shared_lm_classify` is the missing piece §4bb named: two rules sharing a
+leading monomial are **the same rule, or §4j's Yang–Baxter / Bokut–Shiao pair,
+and nothing else**. Sixteen cases off `mem_heckeCompletedRewritingSystem_rules`
+(§4at) — its **first consumer outside `lm_cases`**, and the leading-monomial
+inversion could not have served, since the conclusion is about *rules*. Eleven
+cases are impossible, most dying on `bsWord₁_length_ge_three` with no
+arithmetic; the two live off-diagonal ones force the descending run to a
+singleton (`descWord_eq_singleton`), which pins `j = i − 1` — exactly §4j.
+
+**No structure bridge was needed**, unlike the overlap side's §4av.
+`InclusionComposition.spoly_isZero_of_scaled` already takes an arbitrary `ic`
+and asks only for empty contexts plus a coefficient identity, so the arbitrary
+composition is discharged where it stands.
+
+### Where the criterion now stands
+
+| obligation | state |
+|---|---|
+| `inclusion_resolves` — **every `ic`, every `n`** | **done, §4bc** |
+| `overlap_resolves` — BS × BS cell | done modulo the deep diagonal `j₁ = j₂ = 0 ∧ i₁ ≥ 1` (§4aw, §4ax) |
+| `overlap_resolves` — the other fifteen rule-kind pairs | open |
+
+Half the criterion is closed. Note the asymmetry in what remains: the overlap
+half's generic namespaces (`CyclicQuad`, `BraidSelfOverlap`, `BokutShiaoBraid`,
+…) are gated on overlap *shape*, and `overlap_length_one` (§4au) now supplies
+that gate — so several of the fifteen may be much cheaper than the BS × BS cell
+was.
