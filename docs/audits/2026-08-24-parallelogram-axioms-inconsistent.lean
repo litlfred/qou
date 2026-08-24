@@ -4,6 +4,31 @@
 --
 -- Nothing is reproduced: this imports the real module, so a revert of the fix
 -- turns the commented routes back into live proofs of `False`.
+--
+-- ## Verifying this: a "must fail" probe is satisfied by ANY error
+--
+-- To re-check the fix you uncomment a route and confirm it no longer compiles.
+-- That check is far weaker than it looks, and it silently passed for the wrong
+-- reason on 2026-08-24: after a rebase the `QOU.Mathlib.ParallelogramContour`
+-- olean was absent from `.lake/build/lib/lean`, so BOTH routes exited 1 with
+--
+--     error: object file '…/ParallelogramContour.olean' … does not exist
+--
+-- which is indistinguishable from "the added hypothesis blocks the route" if
+-- you only read the exit code. THIS FILE exited 1 at the same moment, for the
+-- same reason, while being the one file here expected to exit 0 — that is what
+-- exposed it. Had the positive examples not been in the same file, the false
+-- pass would have been reported as a verification.
+--
+-- So: build the olean first (`lean … -o <path>/ParallelogramContour.olean`),
+-- and assert WHICH error each route fails with, not merely that it fails.
+-- Verified against the repaired module:
+--
+--   route 1  →  `Type mismatch` at the axiom application
+--                (`fun z => (z - w)⁻¹` is not `Differentiable ℂ`)
+--   route 2  →  `unsolved goals`
+--                (`horient : 0 < (ω₂ / ω₁).im` is undischargeable at ω₁ = ω₂ = 0)
+--   this file →  exit 0, 0 errors
 
 import QOU.Mathlib.ParallelogramContour
 
