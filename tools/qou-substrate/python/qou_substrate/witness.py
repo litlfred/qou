@@ -356,6 +356,80 @@ def q0_anchor_is_declared(
                for k in ("ideal_muon", "physical_proton", "ambiguous"))
 
 
+def resolve_q0_anchor_payload_first(
+    payload: Mapping,
+    script_path: Union[str, Path],
+    *,
+    require_declared: bool = False,
+    env: Optional[Mapping[str, str]] = None,
+) -> tuple:
+    """``(anchor, q0_value)`` for a payload, **payload evidence first**.
+
+    `q0Anchor`/`q0Value` answer one question: *at which pin was this payload
+    computed?* Until 2026-08-24 both were answered by `resolve_q0_anchor`,
+    which consults the manifest and the env var — a statement about what the
+    producer was **configured** to do, not about what it **did**. Where the two
+    disagree the witness asserts a layer its own numbers do not belong to,
+    which is the straddle AGENTS.md §"q₀ anchor convention" forbids regardless
+    of size, with a provenance field vouching for it.
+
+    They disagree systematically. 85 producers resolve q₀ by reading
+    ``computations/q-pinning-50-digit.witness.json`` -> ``derived_50_digit.q``
+    directly. That string **is** the muon anchor's definition — it is what
+    ``_q0_value_for_anchor("muon")`` returns — so those producers compute at
+    muon whatever the manifest says, and ``QOU_Q0_ANCHOR`` cannot reach them at
+    all. 67 of the 85 are absent from ``q0_anchor_manifest.json``, so
+    ``resolve_q0_anchor`` hands them its runtime **default** of ``proton`` and
+    the witness goes out declaring proton over a muon computation (bean
+    ``qou-aj91``).
+
+    So consult the payload first: ``_q0_anchor_from_payload`` matches the q₀ the
+    producer actually recorded against the two 50-digit prefixes. This is the
+    "test the ANSWER, not the source" move — a recorded value cannot be stale,
+    mislabelled, defaulted, or inherited from a manifest entry nobody
+    maintained, whereas every configuration-level signal can.
+
+    **Why the obvious second signal is NOT used.** A producer reading the
+    pinning witness records it via ``record_upstream``, so
+    ``data.upstream_witness_hashes`` looks like a ready-made detector for the
+    same 85. It is unsound, and measurably so: ``alpha_k_jones_markov_h12``
+    still records that upstream — deliberately, "for provenance and because
+    that witness remains the canonical 3-CAL (muon) pin document" — while
+    computing from ``q_parameter.Q_50_DIGIT_STR``, i.e. proton. Inferring muon
+    from the upstream record would have flipped a **correct** proton stamp to a
+    false muon one. Recording an input is not computing from it.
+
+    Precedence, highest first:
+
+    1. A manifest ``ambiguous`` entry. That is a deliberate "do not assert a
+       single pin" marker; payload evidence must not overrule it, since a
+       cross-anchor producer can easily record one pin under a name
+       ``_Q0_FIELDS`` knows and the other under one it does not.
+    2. Payload evidence (``muon``/``proton``). Note ``_q0_anchor_from_payload``
+       already returns ``None`` when the payload carries BOTH pins, so a
+       comparison payload never reaches here with one asserted over it.
+    3. ``resolve_q0_anchor`` — the manifest/env answer, unchanged, for the
+       ~1600 payloads that record no readable q₀ at all.
+
+    ``require_declared`` mirrors ``build()``'s existing rule: with no evidence
+    and no positive declaration, return ``(None, None)`` so nothing is stamped.
+    ``Q0_ANCHOR_MISSING`` is a tolerated, visible state; a defaulted pin is a
+    silent claim.
+
+    Callers that pass an explicit anchor still win over all of this — they are
+    making the same declaration one call frame out.
+    """
+    resolved, resolved_value = resolve_q0_anchor(script_path, env=env)
+    if resolved == "ambiguous":
+        return resolved, resolved_value
+    evidence = _q0_anchor_from_payload(payload)
+    if evidence in ("muon", "proton"):
+        return evidence, _q0_value_for_anchor(evidence)
+    if require_declared and not q0_anchor_is_declared(script_path, env=env):
+        return None, None
+    return resolved, resolved_value
+
+
 def _git_head_sha() -> str:
     """Return the current HEAD commit SHA."""
     try:
@@ -1404,7 +1478,10 @@ class WitnessBuilder:
         # can never be silently misread (bean tnjb flip-flop). Auto-resolved from
         # the manifest + env unless the caller passes an explicit anchor/value.
         if q0_anchor is None:
-            q0_anchor, _rv = resolve_q0_anchor(spath)
+            # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
+            # it was computed at beats the one the manifest/env would have
+            # configured. See `resolve_q0_anchor_payload_first`.
+            q0_anchor, _rv = resolve_q0_anchor_payload_first(payload, spath)
             if q0_value is None:
                 q0_value = _rv
         # A q0Anchor the producer already wrote into the payload WINS over the
@@ -1598,12 +1675,18 @@ class WitnessBuilder:
         # established.
         if "q0Anchor" not in witness:
             try:
-                if q0_anchor_is_declared(self._script_path):
-                    _a, _v = resolve_q0_anchor(self._script_path)
-                    if _a in ("muon", "proton"):
-                        witness["q0Anchor"] = _a
-                        if _v is not None:
-                            witness["q0Value"] = _v
+                # PAYLOAD FIRST (bean qou-aj91). `require_declared=True` keeps
+                # the rule below for the no-evidence case; payload evidence
+                # outranks it, because a recorded q₀ IS a positive declaration
+                # — a stronger one than a manifest entry, since the producer
+                # made it by computing rather than by being listed.
+                _a, _v = resolve_q0_anchor_payload_first(
+                    witness, self._script_path, require_declared=True,
+                )
+                if _a in ("muon", "proton"):
+                    witness["q0Anchor"] = _a
+                    if _v is not None:
+                        witness["q0Value"] = _v
             except Exception:  # noqa: BLE001
                 pass
 
