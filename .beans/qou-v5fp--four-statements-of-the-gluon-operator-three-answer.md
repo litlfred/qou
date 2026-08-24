@@ -30,3 +30,35 @@ Two distinct problems underneath.
 Task: pick one objective, state it once, re-witness the gluon selection against it, and reconcile the four statements. Until then rem:gluon-stabiliser-ledger records the discrepancy in prose rather than resolving it.
 
 Related: qou-jqjx (the trace weight the retired producer used), qou-1ngr (closed - the feasible set itself is fine).
+
+
+---
+
+## Correction 2026-08-24 — this bean's own crossing-shell table is retired-convention
+
+`qou-jqjx` closed, and it invalidates the numbers above. The table in item 1 was
+computed on the deprecated producer's `tr_M(e-) = z^3`. Recomputed on live
+convention D (`z = q^3/(q^2+1)`, `tr_M(e-) = h z^2 + z`):
+
+    proton   cr=0 (none) 0.5444  cr=1 s0 0.3391  cr=2 s0.s0 0.6153  cr=3 s0.s0.s0 0.4678
+    neutron  cr=0 (none) 0.4083  cr=1 s0 0.2175  cr=2 s0.s0 0.4537  cr=3 s0.s0.s0 0.3124
+
+Three things change, and one gets sharper:
+
+1. **`cr = 0` is now a shell.** The bare nucleon is feasible for both, so
+   min-cr-first returns **0 gluon crossings for each**, not 1 and 2.
+2. **Under min-|tr_M| the optimum is `sigma_0` at one crossing for BOTH** (0.339
+   and 0.218). So the two objectives no longer pick different *counts* per
+   nucleon — 0:0 and 1:1 respectively.
+3. **The 2-versus-4 asymmetry is gone under either objective**, so item 1's
+   framing ("the asymmetry exists only under pure min-|tr_M|") is too weak: it
+   exists under neither. That is `qou-jqjx`'s finding, not this bean's, and the
+   proton and neutron blocks now carry the withdrawal.
+
+**What survives and is now the whole of this bean:** the objectives still
+disagree about *which operator*, and item 2 is untouched —
+`universal-ilp.witness.json` still asserts against `universal-ilp.py`'s own
+`expected` values, so `status: "verified"` still checks nothing about the
+corpus. Picking one objective and re-witnessing against it is still owed. It
+just can no longer rescue a mass split, because there is no longer a split to
+rescue.
