@@ -3,8 +3,9 @@
 title: Producers that INHERIT a q0 from another witness are stamped from a manifest that cannot know it
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-24T13:34:53Z
-updated_at: 2026-08-24T13:34:53Z
+updated_at: 2026-08-24T13:53:48Z
 ---
 
 ## What it is
@@ -75,3 +76,48 @@ goes red when the bug it names is fixed is not a gate.
 
 (2) is the more interesting half: an absent producer inherits a pin with
 *nothing at all* asserting what it should be.
+
+
+---
+
+## Correction (same session): 17 undetermined was a detector artifact, not a corpus fact
+
+The tally above read `undetermined=17`. Live figure is **7**. The difference
+was not corpus drift — it was my own upstream resolution, and three of its
+answers were **wrong**, not merely missing:
+
+| spelling | what it reported | truth |
+|---|---|---|
+| regex over raw source with `re.S` | ran past the assignment it matched onto the next witness name — usually a **print string** | `hoefsmit_stage_b` reads `free-neutron-decay` (189) and prints its own name (529) |
+| last-write-wins handle dict | `with open(out, "w") as f` rebinds the same `f` as the read above ⇒ producer "reads its own witness" | `frakV_askey_wilson` reads the anchor-**defining** pin (118) ⇒ exempt |
+| first-write-wins (the fix for that) | an **earlier** read's file ⇒ a second `MISLABEL` | `qbeta_decay_sdp_extended_ck`'s `qp` is the anchor-defining pin ⇒ exempt |
+
+**I nearly wrote up a `SELF-INHERITED` class** — a producer bootstrapping its
+pin from its own prior output, which would be strictly worse than the defect
+this bean is about because re-running could never correct it. Two candidates,
+both false, both my regex hitting an output path or a print. There is no
+evidence for that class in this corpus. Checking the two before writing them up
+is the only reason it is not in the record.
+
+Resolution is now scope-aware: a `with` handle binds only to the `json.load`
+**lexically inside its own block**, write modes are excluded, unresolved reports
+`?`. Six rows that read the anchor-defining pin through
+`with <path>.open() as fh` now **exempt correctly** instead of sitting in
+`undetermined`.
+
+## A third value, kept distinct on purpose
+
+New verdict `neither-pin`. `free-neutron-decay.witness.json` carries
+`q0 = 1.1099785955541805` — agrees with the muon pin to **11** digits, then
+diverges. That is the third stored muon value the corpus already tracks
+(`muon_pin_three_values_probe`, `muon-pin-stored-vs-live.witness.json`). A
+looser prefix would call it `muon` and erase the exact discrepancy those audits
+exist to hold, so it is reported as neither — not as "no q0 found", which means
+the opposite thing to a reader.
+
+## Residue
+
+7 `undetermined`, all `manifest=ABSENT`. That is the honest remainder and it is
+the half worth working: an absent producer inherits a pin with **nothing**
+asserting what it should be — a weaker guarantee than the mislabel that was
+fixed here, not a stronger one.
