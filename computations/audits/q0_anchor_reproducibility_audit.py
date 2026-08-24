@@ -71,6 +71,34 @@ def manifest_efficacy(src: str) -> str:
     return "UNKNOWN: no visible q0 source (indirect/helper)"
 
 
+def declarable_proton(buckets) -> list[str]:
+    """Producer stems in the at-risk builder bucket that a `physical_proton`
+    entry would fix TRUTHFULLY.
+
+    The entry is safe because it is a RUNTIME NO-OP. An undeclared producer
+    already resolves proton -- `q_parameter.py:100-113` and `witness.py:324`
+    both default not-in-`ideal_muon` to proton -- so adding the stem changes
+    `q0_anchor_is_declared` False->True and nothing else. Verified directly:
+    `resolve_q0_anchor` returns "proton" before and after. The entry does not
+    re-pin anything; it records the pin the producer was already using, which
+    is the whole reason this is not the `qou-1c4y` bulk migration.
+
+    Scoped to EFFECTIVE producers: one that hardcodes q0 or reads the anchor
+    witness directly never consults the manifest, so an entry there would
+    assert a pin it does not obey.
+    """
+    stems: list[str] = []
+    for k, v in buckets.items():
+        if not k.startswith("AT RISK: builder"):
+            continue
+        for _n, prod in v:
+            if prod is None:
+                continue
+            if manifest_efficacy(prod.read_text(errors="ignore")).startswith("EFFECTIVE"):
+                stems.append(prod.stem)
+    return sorted(set(stems))
+
+
 def manifest_stems() -> set[str]:
     """Producer stems with a positively-declared pin."""
     d = json.loads(MANIFEST.read_text())
@@ -179,6 +207,24 @@ def main(argv) -> int:
                   f"({100*inert//len(pk)}%) cannot be fixed by a manifest entry")
         for stem, n in pw.most_common(3):
             print(f"       heaviest: {stem} ({n} witnesses)")
+
+    if "--declare-proton" in argv:
+        cand = declarable_proton(buckets)
+        d = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        already = {s for k, v in d.items()
+                   if not k.startswith("_") and isinstance(v, list) for s in v}
+        new = [s for s in cand if s not in already]
+        print(f"\n  --declare-proton: {len(cand)} EFFECTIVE at-risk producer(s), "
+              f"{len(new)} not yet declared")
+        for s in new:
+            print(f"    + {s}")
+        if "--apply" in argv and new:
+            d["physical_proton"] = sorted(set(d.get("physical_proton", [])) | set(new))
+            MANIFEST.write_text(
+                json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            print(f"  applied: physical_proton now {len(d['physical_proton'])} stems")
+        elif new:
+            print("  (dry run -- pass --apply to write)")
 
     if "--selftest" in argv:
         # Calibrated on answers established by hand. Without this the audit
