@@ -37,7 +37,7 @@ from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDAT
 try:
     from mass_at_3A_proper import (
         atom_braid_word_3A, chi_lambda_of_word,
-        normalized_plancherel_weights_3A, _cached_seminormal,
+        normalized_plancherel_weights_3A, _cached_seminormal, Q0_PROTON,
     )
     HAVE_INFRA = True
 except Exception as e:  # pragma: no cover
@@ -54,7 +54,7 @@ def full_trace(Z, N, q, include_inter):
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
     total = mpf(0)
     for shape, w_lam in normalized_plancherel_weights_3A(Z + N):
-        sigmas, dim, _ = _cached_seminormal(shape)
+        sigmas, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         chi = chi_lambda_of_word(sigmas, dim, word, n_gens)

@@ -41,6 +41,7 @@ import mpmath as mp
 
 # Reuse Plancherel + seminormal infrastructure from mass_at_3A_proper
 from mass_at_3A_proper import (
+    Q0_PROTON,
     partitions_of, dim_q, qfac, _cached_seminormal,
 )
 from q_parameter import Q as Q0_FLOAT
@@ -91,7 +92,7 @@ def per_generator_V_hat_general(
 
     # Character sum per Wedderburn block
     for (shape, w_lam) in weight_table:
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         I_lam = np.eye(dim)
