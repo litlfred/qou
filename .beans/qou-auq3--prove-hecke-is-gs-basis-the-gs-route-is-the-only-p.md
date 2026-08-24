@@ -5688,3 +5688,69 @@ honei]; simp` is a "No goals to be solved" error at `⟨1, hnn⟩`, while the
 visually identical `rw [descWord_length' hz']; simp` at `⟨0, hn⟩` **needs** the
 `simp`, because `i.val - 0 + 1` still has to lose its `- 0`. Same for
 `simp only` closing a goal ahead of an `omega` that then has nothing to do.
+
+### §4bw — `hdeep` DISCHARGED; the criterion is unconditional
+
+```
+'UGB.GrobnerShirshov.Hecke.heckeCompleted_isGrobnerShirshovBasis'
+  depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+No hypothesis, no `sorry`. The completed Hecke rewriting system is a
+Gröbner–Shirshov basis, for every `n` and every `HeckeParams`.
+
+The conditional form survives as `heckeCompleted_isGrobnerShirshovBasis_of_deep`
+— everything above §4bw in the file depends only on it, and the two halves are
+proved 1400 lines apart.
+
+#### What the joining needed
+
+1. **`selfOverlap_spoly_coeff`** — when both rules of an overlap composition are
+   the *same* monic `L − R`, the two `L`-placements are the same word:
+   `L ++ right = left ++ overlap ++ right = left ++ L`. They cancel, and the
+   S-polynomial is `left · R − R · right`. Stated for any monic two-word rule,
+   not just Bokut–Shiao.
+2. **`deep_left_right`** — the contexts are forced. `σ_a σ_{a−1} ⋯ σ₀ σ_a` has
+   exactly one border once `a ≥ 1`: a border of length `k ≥ 2` would need its
+   first letter `σ_a` to equal the suffix's first letter `σ_{k−2}`, which holds
+   only at `k = a+2`, the whole word — excluded by `left ≠ []`. So
+   `left = descWord a 0` and `right = descWord (a−1) 0 ++ [σ_a]`, and the two
+   S-polynomial terms are *exactly* side A's and side B's opening words.
+3. **The two chains, sequentially** — A with B's word as its only ambient term,
+   then B with A's two normal-form terms as its ambient. Four terms out, equal
+   in pairs with opposite signs.
+
+#### The collision I expected does not exist — the correction that unlocked it
+
+I had assumed the joining would deadlock at its last step, because both sides
+reach the same two monomials. Reading the definitions rather than reasoning
+from the shape:
+
+* **`isZero` is coefficientwise** (`∀ m, f.coeff m = 0`) and `ofTerms` *sums*
+  over terms carrying a monomial. Two terms with the same word and opposite
+  coefficients are the cancellation the S-polynomial needs, not a problem.
+* **A step's side condition constrains the word it CONSUMES, never the word it
+  produces.** `monicStep`'s `hne` is used only to prove
+  `coeff (a ++ lm ++ b) = c`, i.e. that the step subtracts the right amount.
+
+Both facts were sitting in `Elem.lean` and in `monicStep`'s own proof the whole
+time. The design work of §4bt–§4bv — `CtxAvoids`, the head/tail conditions, the
+raw side conditions on `bside_branch_core` — was still needed, but for the
+*interiors* of the two chains, not for the collision I was bracing against.
+
+#### The context conditions, discharged
+
+| side | condition | discharged by |
+|---|---|---|
+| A | no ambient word begins `σ_a` | B's word begins `σ_{a−1}` |
+| A | no ambient word begins `σ_{a−2}` | same |
+| B | no ambient word begins `σ_{a−1}` | A's normal form begins `σ_{a−2}` |
+| B | no ambient word ends `σ₀σ₀σ_a` | A's terms end `σ₀` and `σ₁`; `a ≥ 2` |
+
+Each is one letter comparison. `ctxAvoids_head_of_ne` and
+`ctxAvoids_tail_of_last_ne` are the two one-line bridges; the second had to be
+generalised from "every ambient word ends in the same letter `x`" to "each ends
+in *some* letter ≠ `y`", because A's two normal-form terms end in `σ₀` and `σ₁`
+respectively.
+
+`deep_selfOverlap_resolves` compiled first try once those were in place.

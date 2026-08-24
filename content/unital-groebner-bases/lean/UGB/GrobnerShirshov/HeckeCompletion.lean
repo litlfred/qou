@@ -17263,8 +17263,13 @@ than an enumeration.
 -/
 
 /-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis**, modulo
-the single deep-diagonal self-overlap. -/
-theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams)
+the single deep-diagonal self-overlap.
+
+`hdeep` is discharged in §4bw by `deep_selfOverlap_resolves`, and
+`heckeCompleted_isGrobnerShirshovBasis` at the end of this file is the
+unconditional statement. This form is kept because the two halves are proved
+far apart: everything above depends only on the conditional one. -/
+theorem heckeCompleted_isGrobnerShirshovBasis_of_deep (hn : 0 < n) (hp : HeckeParams)
     (hdeep : ∀ (oc' : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)) (a' a e : Fin n),
       a'.val + 1 = a.val → 1 ≤ a'.val → e.val = 0 →
       oc'.rule₁ = bokutShiaoRelation a' a e → oc'.rule₂ = bokutShiaoRelation a' a e →
@@ -18417,5 +18422,301 @@ theorem bside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
          (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
             ++ (descWord i' ⟨0, hn⟩).dropLast, c)]) :=
   bside_resolves' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+
+/-! ## §4bw  The joining — `hdeep` discharged, and the criterion unconditional
+
+Both sides of the deep self-overlap now run inside an arbitrary S-polynomial
+(§4bu, §4bv). What remains is to identify that S-polynomial and run the two
+chains against each other.
+
+**The collision this section was expected to have to avoid does not exist.**
+Side A and side B reach the *same two monomials*, so running one chain with the
+other's normal form already in the context looks like it must eventually ask a
+step to fire on a word that is already present. It does not, for two independent
+reasons:
+
+* `AlgElement.isZero` is coefficientwise — `∀ m, f.coeff m = 0` — and `ofTerms`
+  *sums* the coefficients of terms sharing a word. Two terms with the same word
+  and opposite coefficients are not an obstacle to be avoided; they are exactly
+  the cancellation the S-polynomial needs.
+* A step's side condition constrains the word it **consumes**, never the word it
+  produces: `monicStep`'s `hne` is used only to show the coefficient at
+  `a ++ lm ++ b` is the `c` the step subtracts.
+
+So the two chains run **sequentially**: side A first, with side B's word as its
+only ambient term; then side B, with side A's two normal-form terms as its
+ambient. The last B step needs its *penultimate* word absent from the context,
+and that word is one step short of side A's normal form.
+
+The contexts are forced. `σ_a σ_{a−1} ⋯ σ₀ σ_a` has exactly one border once
+`a ≥ 1` — the single letter `σ_a` — so `left = descWord a 0` and
+`right = descWord (a−1) 0 ++ [σ_a]`, and the two `bsWord₁` placements of the
+S-polynomial are the same word and cancel. What is left is
+`left · bsWord₂ − bsWord₂ · right`, which is side A's opening word against side
+B's.
+-/
+
+/-- **The S-polynomial of a self-overlap by a monic two-word rule.**
+
+`spoly = lc₂ • (rule₁ · right) − lc₁ • (left · rule₂)`, and when both rules are
+the same monic `L − R` the two `L`-terms are the *same word*: `L ++ right =
+left ++ overlap ++ right = left ++ L`. What is left is the difference of the two
+`R`-placements. -/
+theorem selfOverlap_spoly_coeff
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    {L R : Monomial (HeckeGen n)}
+    (hrel₁ : ∀ w, oc.rule₁.relation.coeff w
+      = (AlgElement.ofTerms [(L, (1 : ℝ)), (R, -1)]).coeff w)
+    (hrel₂ : ∀ w, oc.rule₂.relation.coeff w
+      = (AlgElement.ofTerms [(L, (1 : ℝ)), (R, -1)]).coeff w)
+    (hlc₁ : oc.rule₁.lc (heckeOrder n) = 1) (hlc₂ : oc.rule₂.lc (heckeOrder n) = 1)
+    (hlm₁ : oc.rule₁.lm (heckeOrder n) = L) (hlm₂ : oc.rule₂.lm (heckeOrder n) = L)
+    (m : Monomial (HeckeGen n)) :
+    oc.spoly.coeff m
+      = (AlgElement.ofTerms
+          [(oc.left ++ R, (1 : ℝ)), (R ++ oc.right, -1)]).coeff m := by
+  have hd₁ : L = oc.left ++ oc.overlap := by rw [← hlm₁]; exact oc.lm₁_decomp
+  have hd₂ : L = oc.overlap ++ oc.right := by rw [← hlm₂]; exact oc.lm₂_decomp
+  have hword : L ++ oc.right = oc.left ++ L := by
+    conv_lhs => rw [hd₁]
+    conv_rhs => rw [hd₂]
+    simp
+  show oc.rule₂.lc (heckeOrder n)
+      * (AlgElement.contextMul [] oc.rule₁.relation oc.right).coeff m
+    - oc.rule₁.lc (heckeOrder n)
+      * (AlgElement.contextMul oc.left oc.rule₂.relation []).coeff m = _
+  rw [hlc₁, hlc₂,
+    AlgElement.contextMul_coeff_congr [] oc.right hrel₁ m,
+    AlgElement.contextMul_coeff_congr oc.left [] hrel₂ m,
+    AlgElement.contextMul_ofTerms_coeff, AlgElement.contextMul_ofTerms_coeff]
+  simp only [List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq, hword]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- A context whose words never begin with `x` avoids `x` as a head. -/
+theorem ctxAvoids_head_of_ne {L : List (Monomial (HeckeGen n) × ℝ)}
+    {x : HeckeGen n} (h : ∀ w ∈ L.map Prod.fst, ∀ t, w ≠ x :: t) :
+    CtxAvoids L [x] [] := by
+  intro w hw Z hcon
+  exact h w hw Z (by simpa using hcon)
+
+/-- A context whose words all end in `x` avoids every pattern ending in a
+different letter `y`. This is the *tail* condition side B's unshuffle needs,
+and a last-letter comparison is all it takes. -/
+theorem ctxAvoids_tail_of_last_ne {L : List (Monomial (HeckeGen n) × ℝ)}
+    {b b' : Monomial (HeckeGen n)} {y : HeckeGen n}
+    (hb : b = b' ++ [y])
+    (h : ∀ w ∈ L.map Prod.fst, ∃ u x, w = u ++ [x] ∧ x ≠ y) :
+    CtxAvoids L [] b := by
+  intro w hw Z hcon
+  obtain ⟨u, x, hu, hxy⟩ := h w hw
+  rw [hu, hb] at hcon
+  have heq : u ++ [x] = (Z ++ b') ++ [y] := by
+    rw [List.append_assoc]; simpa using hcon
+  have : ([x] : Monomial (HeckeGen n)) = [y] :=
+    (List.append_inj' heq (by simp)).2
+  exact hxy (by simpa using this)
+
+/-- **The deep self-overlap's contexts are forced.**
+
+`σ_a σ_{a−1} ⋯ σ₀ σ_a` has exactly one border once `a ≥ 1`: the single letter
+`σ_a`. Any longer border of length `k` would need its first letter `σ_a` to
+equal the suffix's first letter `σ_{k−2}`, which happens only at the full word —
+and `left ≠ []` excludes that. `overlap_letter` already does the length-one
+work; what is left is reading `left` and `right` off the two decompositions. -/
+theorem deep_left_right (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {a' a : Fin n}
+    (h₁ : a'.val + 1 = a.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation a' a ⟨0, hn⟩)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation a' a ⟨0, hn⟩)
+    (hl : oc.left ≠ []) :
+    oc.left = descWord a ⟨0, hn⟩
+      ∧ oc.right = descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] := by
+  have hja : (⟨0, hn⟩ : Fin n).val ≤ a'.val := by simp
+  have hlm : (bokutShiaoRelation a' a ⟨0, hn⟩).lm (heckeOrder n)
+      = descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] :=
+    bokutShiaoRelation_lm h₁ hja
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp h₁ hja
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact bokutShiaoRelation_mem hn hp h₁ hja
+  obtain ⟨z, hlast, hhead⟩ := overlap_letter hn hp hm₁ hm₂ hl
+  rw [hr₁, hlm] at hlast
+  rw [hr₂, hlm] at hhead
+  obtain ⟨hleft, hzz⟩ := List.append_inj' hlast (by simp)
+  have hza : z = (⟨a⟩ : HeckeGen n) := by
+    have := hzz.symm
+    simpa using this
+  refine ⟨hleft.symm, ?_⟩
+  rw [hza, descWord_cons h₁ hja] at hhead
+  simpa using hhead.symm
+
+/-- **The deep self-overlap resolves** — the last obligation of
+`heckeCompleted_isGrobnerShirshovBasis`.
+
+The S-polynomial is two terms, `left · bsWord₂` and `bsWord₂ · right`, the
+`bsWord₁` placements having cancelled. Side A runs on the first with the second
+as context, side B then on the second with side A's normal form as context, and
+the two normal forms coincide — so the four terms cancel in pairs.
+
+Nothing here needs the two sides not to collide. `isZero` is coefficientwise and
+`ofTerms` sums, so terms sharing a word simply add; and a step's side condition
+constrains the word it *consumes*, never the word it produces. -/
+theorem deep_selfOverlap_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {a' a e : Fin n}
+    (h₁ : a'.val + 1 = a.val) (ha' : 1 ≤ a'.val) (he : e.val = 0)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation a' a e)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation a' a e)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hez : e = ⟨0, hn⟩ := Fin.ext (by simpa using he)
+  subst hez
+  have hnn : (1 : ℕ) < n := by have := a'.isLt; omega
+  obtain ⟨a'', h₂⟩ : ∃ a'' : Fin n, a''.val + 1 = a'.val :=
+    ⟨⟨a'.val - 1, by have := a'.isLt; omega⟩, by show a'.val - 1 + 1 = a'.val; omega⟩
+  have hja : (⟨0, hn⟩ : Fin n).val ≤ a'.val := by simp
+  have hone' : (⟨1, hnn⟩ : Fin n).val ≤ a'.val := by simpa using ha'
+  have honea : (⟨1, hnn⟩ : Fin n).val ≤ a.val := by simp; omega
+  obtain ⟨hleft, hright⟩ := deep_left_right hn hp h₁ hr₁ hr₂ hl
+  -- letters
+  have hne_a'a : (⟨a'⟩ : HeckeGen n) ≠ ⟨a⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_a'a'' : (⟨a'⟩ : HeckeGen n) ≠ ⟨a''⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_a''a' : (⟨a''⟩ : HeckeGen n) ≠ ⟨a'⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_0a : (⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n) ≠ ⟨a⟩ :=
+    heckeGen_ne_of_val_ne (by simp; omega)
+  have hne_1a : (⟨(⟨1, hnn⟩ : Fin n)⟩ : HeckeGen n) ≠ ⟨a⟩ :=
+    heckeGen_ne_of_val_ne (by simp; omega)
+  -- descending-run shapes
+  have hdropA : (descWord a ⟨0, hn⟩).dropLast = descWord a ⟨1, hnn⟩ := by
+    rw [descWord_snoc (by simp) honea]; simp
+  have hdropA' : (descWord a' ⟨0, hn⟩).dropLast = descWord a' ⟨1, hnn⟩ := by
+    rw [descWord_snoc (by simp) hone']; simp
+  have hcons1 : descWord a ⟨1, hnn⟩ = (⟨a⟩ : HeckeGen n) :: descWord a' ⟨1, hnn⟩ :=
+    descWord_cons h₁ hone'
+  have hsnocA' : descWord a' ⟨0, hn⟩
+      = descWord a' ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) hone'
+  -- the two normal forms coincide
+  have hE1 : bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)]
+      = bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] ++ descWord a' ⟨0, hn⟩ := by
+    rw [hdropA, hcons1]
+    conv_rhs => rw [hsnocA']
+    simp
+  have hE2 : bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+      = bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+        ++ (descWord a' ⟨0, hn⟩).dropLast := by
+    rw [hdropA, hcons1, hdropA']; simp
+  -- the two S-polynomial terms
+  have hBcons : bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+      = (⟨a'⟩ : HeckeGen n) :: ((⟨a⟩ : HeckeGen n) :: descWord a' ⟨0, hn⟩
+          ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]) := by
+    simp [bsWord₂]
+  have hNcons : ∀ u : Monomial (HeckeGen n), bsWord₂ a'' a' ⟨0, hn⟩ ++ u
+      = (⟨a''⟩ : HeckeGen n) :: ((⟨a'⟩ : HeckeGen n) :: descWord a'' ⟨0, hn⟩ ++ u) := by
+    intro u; simp [bsWord₂]
+  -- side A's context conditions: the only ambient word is side B's, which
+  -- begins with σ_{a−1}
+  have hheadB : ∀ (x : HeckeGen n), x ≠ (⟨a'⟩ : HeckeGen n) →
+      CtxAvoids ([] ++ [(bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩
+        ++ [(⟨a⟩ : HeckeGen n)], (-1 : ℝ))]) [x] [] := by
+    intro x hx
+    refine ctxAvoids_head_of_ne ?_
+    intro w hw t hcon
+    simp only [List.nil_append, List.map_cons, List.map_nil,
+      List.mem_singleton] at hw
+    rw [hw, hBcons] at hcon
+    injection hcon with hh _
+    exact hx hh.symm
+  -- side B's head condition: side A's normal form begins with σ_{a−2}
+  have hheadN : CtxAvoids
+      ([(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+        (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] ++ [])
+      [(⟨a'⟩ : HeckeGen n)] [] := by
+    refine ctxAvoids_head_of_ne ?_
+    intro w hw t hcon
+    simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hw
+    rcases hw with rfl | rfl
+    · rw [List.append_assoc, hNcons] at hcon
+      injection hcon with hh _
+      exact hne_a''a' hh
+    · rw [hNcons] at hcon
+      injection hcon with hh _
+      exact hne_a''a' hh
+  -- side B's tail condition: side A's normal-form terms end in σ₀ and σ₁,
+  -- and the split's pattern ends in σ_a
+  have htailN : CtxAvoids
+      ([(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+        (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] ++ [])
+      [] [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩,
+          (⟨a⟩ : HeckeGen n)] := by
+    obtain ⟨C, hC⟩ := descWord_last (i := a) (j := (⟨1, hnn⟩ : Fin n)) honea
+    refine ctxAvoids_tail_of_last_ne
+      (b' := [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) rfl ?_
+    intro w hw
+    simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hw
+    rcases hw with rfl | rfl
+    · exact ⟨_, _, rfl, hne_0a⟩
+    · exact ⟨bsWord₂ a'' a' ⟨0, hn⟩ ++ C, (⟨(⟨1, hnn⟩ : Fin n)⟩ : HeckeGen n),
+        by rw [hdropA, hC]; simp, hne_1a⟩
+  -- the two chains
+  have chainA := aside_resolves' hn hp h₂ h₁ []
+    [(bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)],
+      (-1 : ℝ))] 1 one_ne_zero (hheadB _ hne_a'a.symm) (hheadB _ hne_a'a''.symm)
+  have chainB := bside_resolves' hn hp h₂ h₁
+    [(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+      (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] []
+    (-1) (by norm_num) hheadN htailN
+  simp only [List.nil_append, List.cons_append] at chainA chainB
+  -- the four terms cancel in pairs
+  have hzero : (AlgElement.ofTerms
+      [(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] ++ descWord a' ⟨0, hn⟩,
+         (-1 : ℝ) * (hp.q - hp.q⁻¹)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+          ++ (descWord a' ⟨0, hn⟩).dropLast, (-1 : ℝ))]).isZero := by
+    intro m
+    rw [← hE1, ← hE2]
+    simp only [AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  refine reducesToZero_congr ⟨_, ⟨chainA.trans chainB,
+    isNormalForm_of_isZero hzero⟩, hzero⟩ ?_
+  intro m
+  have hrel : ∀ w, (bokutShiaoRelation a' a ⟨0, hn⟩).relation.coeff w
+      = (AlgElement.ofTerms
+          [(descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)], (1 : ℝ)),
+           (bsWord₂ a' a ⟨0, hn⟩, -1)]).coeff w := fun _ => rfl
+  have hsp := selfOverlap_spoly_coeff
+    (L := descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]) (R := bsWord₂ a' a ⟨0, hn⟩)
+    (by rw [hr₁]; exact hrel) (by rw [hr₂]; exact hrel)
+    (by rw [hr₁]; exact bokutShiaoRelation_lc h₁ hja)
+    (by rw [hr₂]; exact bokutShiaoRelation_lc h₁ hja)
+    (by rw [hr₁]; exact bokutShiaoRelation_lm h₁ hja)
+    (by rw [hr₂]; exact bokutShiaoRelation_lm h₁ hja) m
+  rw [hsp, hleft, hright]
+  simp only [List.append_assoc]
+
+/-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis** — with
+no hypothesis left. `deep_selfOverlap_resolves` discharges the `hdeep` the
+conditional form carried. -/
+theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams) :
+    IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) :=
+  heckeCompleted_isGrobnerShirshovBasis_of_deep hn hp
+    (fun _ _ _ _ hh ha he hr₁ hr₂ hl =>
+      deep_selfOverlap_resolves hn hp hh ha he hr₁ hr₂ hl)
 
 end UGB.GrobnerShirshov.Hecke
