@@ -45,6 +45,7 @@ from hecke_core import (  # noqa: E402
 # LP-dual emission deps (witness __main__ path). Imported at module
 # level right after the sys.path setup per repo import convention —
 # hecke_core's own bootstrap has already put pyhecke on sys.path.
+import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import (  # noqa: E402
@@ -225,8 +226,13 @@ if __name__ == "__main__":
     print(f"  n_pairs = {n}")
     print(f"  first 3 pairs:")
     for p in pairs[:3]:
-        print(f"    ({p['i']}, {p['j']}): sym={p['sym']:.4f}  std={p['std']:.4f}  "
-              f"alt={p['alt']:.4f}  full={p['full']:.4f}")
+        # mp.nstr, not an f-string :.4f -- these are mpmath.mpf and mpf has no
+        # __format__ for the float presentation types, so `:.4f` raises
+        # TypeError. AGENTS.md permits float(x) only inside an f-string for
+        # display and prefers mp.nstr; this is display, so mp.nstr it is.
+        print(f"    ({p['i']}, {p['j']}): "
+              f"sym={mp.nstr(p['sym'], 5)}  std={mp.nstr(p['std'], 5)}  "
+              f"alt={mp.nstr(p['alt'], 5)}  full={mp.nstr(p['full'], 5)}")
 
     # ── Witness emission ─────────────────────────────────────────
     from witness_base import WitnessBuilder  # noqa: E402
