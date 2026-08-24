@@ -375,7 +375,19 @@ def nucleon_H3_trace(nucleon, q):
 # ══════════════════════════════════════════════════════════════════════
 def main() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
-    print(f"q0 = {mp.nstr(q,14)}  (canonical muon-q0 literal)\n")
+    # MISLABEL FIXED. This read "(canonical muon-q0 literal)" while printing
+    # 1.1099785827513808..., which is the PROTON pin; the muon pin is
+    # 1.1099785955573347... The VALUE was right -- `Q_50_DIGIT_STR` is
+    # proton-pinned and proton is the standing default for all compute (owner
+    # directive 2026-08-07) -- so nothing computed here was ever wrong. Only
+    # the name was, which is the exact hazard AGENTS.md flags: "most survivors
+    # compute the RIGHT value under the WRONG name". It matters because the
+    # label is what a reader carries away, and calling a proton-pinned run
+    # "muon" is a layer misattribution of the kind the mu-p straddle rules
+    # exist to prevent. The two pins agree to 8 digits, so they can only be
+    # told apart past the 9th -- never by eye.
+    print(f"q0 = {mp.nstr(q,14)}  (canonical PROTON-q0 literal, "
+          f"q_parameter.Q_50_DIGIT_STR)\n")
 
     # ── plethysm structure report (A=2,4 only; A=6 is gated to 0 by C(4,6),
     #    so its full Schur expansion is not needed for the verdict) ──
