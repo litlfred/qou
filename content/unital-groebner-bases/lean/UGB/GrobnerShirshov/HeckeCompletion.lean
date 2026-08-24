@@ -15722,4 +15722,88 @@ theorem lm_not_proper_suffix (hn : 0 < n) (hp : HeckeParams)
     omega
   · rw [hmidnil] at hh₁mem; simp at hh₁mem
 
+/-! ## §4ba  The second of the antichain's three cases
+
+`lm₂ = left ++ lm₁ ++ right` splits three ways, and §4az closed one of them.
+
+| case | status |
+|---|---|
+| `right = []` — `lm₁` a proper suffix | §4az `lm_not_proper_suffix` |
+| `left = []` — `lm₁` a proper prefix | **here** |
+| both non-empty — `lm₁` strictly interior | open |
+
+The two are not the same argument run backwards. §4az reads `lm₁`'s **head** out
+of `lm₂`'s interior; this one reads `lm₁`'s **last letter** out of it, and the
+far-commutation exception is discharged differently — there by its empty
+interior, here by looking at what `lm₂`'s interior *begins* with. In both
+Yang–Baxter and Bokut–Shiao that first interior letter is exactly one step below
+the head (`σᵢ` under `σᵢ₊₁`; `σᵢ₋₁` under `σᵢ`, by `descWord_head`), while
+far-commutation demands a drop of at least two.
+
+The third case does **not** follow from these two: there is no way to re-associate
+`left ++ lm₁ ++ right` so that either applies, because `lm₁ ++ right` is not
+itself a leading monomial. It needs the two `descWord` facts §4az names —
+no repeated letter, and adjacent letters dropping by exactly one. The first has
+been checked to prove in two lines off `List.nodup_finRange`; it is not stated
+here because nothing here would consume it. -/
+
+theorem lm_not_proper_prefix (hn : 0 < n) (hp : HeckeParams)
+    {r₁ r₂ : ReductionRule (HeckeGen n) ℝ}
+    (hr₁ : r₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    (hr₂ : r₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules)
+    {right : Monomial (HeckeGen n)}
+    (hdec : r₂.lm (heckeOrder n) = r₁.lm (heckeOrder n) ++ right) :
+    right = [] := by
+  obtain ⟨h₁, l₁, mid₁, hlm₁⟩ := lm_cons_snoc hn hp hr₁
+  obtain ⟨h₂, l₂, mid₂, hlm₂⟩ := lm_cons_snoc hn hp hr₂
+  by_contra hne
+  rw [hlm₁, hlm₂] at hdec
+  have hcons : h₂ :: (mid₂ ++ [l₂]) = h₁ :: ((mid₁ ++ [l₁]) ++ right) := hdec
+  obtain ⟨hheads, htail'⟩ := List.cons.inj hcons
+  have htail : mid₁ ++ ([l₁] ++ right) = mid₂ ++ [l₂] := by
+    simpa using htail'.symm
+  -- `right` non-empty pushes `l₁` off the end, so it lands in `lm₂`'s interior.
+  obtain ⟨a, hmid₂, ha⟩ : ∃ a, mid₂ = mid₁ ++ a ∧ [l₁] ++ right = a ++ [l₂] := by
+    rcases List.append_eq_append_iff.mp htail with ⟨a, ha, hb⟩ | ⟨c, hc, hd⟩
+    · exact ⟨a, ha, hb⟩
+    · exfalso
+      have := congrArg List.length hd
+      simp at this
+      have hr : right.length = 0 := by omega
+      exact hne (List.eq_nil_of_length_eq_zero hr)
+  obtain ⟨a', ha'⟩ : ∃ a', a = l₁ :: a' := by
+    rcases haa : a with _ | ⟨b, bs⟩
+    · exfalso
+      rw [haa] at ha; simp at ha
+      exact hne (by simpa using ha.2)
+    · refine ⟨bs, ?_⟩
+      rw [haa] at ha
+      injection ha with hh _
+      rw [hh]
+  have hl₁mem : l₁ ∈ mid₂ := by rw [hmid₂, ha']; simp
+  have hlt : l₁.index.val < h₂.index.val := lm_interior_lt_head hn hp hr₂ hlm₂ hl₁mem
+  rw [hheads] at hlt
+  -- Either `lm₁` ends on its own head — impossible, we just bounded it below it —
+  -- or `lm₁` is far-commutation, and then `lm₂`'s interior begins one step down.
+  rcases lm_last_eq_head_or_far hn hp hr₁ hlm₁ with heq | ⟨hfar, hmid₁nil⟩
+  · omega
+  · rw [hmid₁nil, List.nil_append] at hmid₂
+    rcases lm_split hn hp hr₂ hlm₂ with
+      ⟨hm, _⟩ | ⟨i, j, hj, hh, hm, _⟩ | ⟨i, j, hj, hh, hm, _⟩
+      | ⟨i', i, j, hb₁, hb₂, hh, hm, _⟩
+    · rw [hm] at hl₁mem; simp at hl₁mem
+    · rw [hm] at hl₁mem; simp at hl₁mem; subst hl₁mem
+      rw [hheads] at hh; subst hh
+      have hcontra : i.val + 1 < j.val := hfar
+      omega
+    · rw [hm] at hl₁mem; simp at hl₁mem
+    · obtain ⟨u, hu⟩ := descWord_head (i := i') (j := j) hb₂
+      rw [hm, ha', hu] at hmid₂
+      have hll : l₁ = (⟨i'⟩ : HeckeGen n) :=
+        (by simpa using hmid₂.symm : _ ∧ _).1
+      subst hll
+      rw [hheads] at hh; subst hh
+      have hcontra : i'.val + 1 < i.val := hfar
+      omega
+
 end UGB.GrobnerShirshov.Hecke

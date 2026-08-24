@@ -4591,3 +4591,36 @@ letter exhibits its successor as the head of the second piece.
 
 **So the antichain is NOT generalised — half of it is.** Do not read §4az as
 closing the inclusion half.
+
+## The antichain's second case (2026-08-24, §4ba)
+
+`lm₂ = left ++ lm₁ ++ right` splits three ways:
+
+| case | status |
+|---|---|
+| `right = []` — proper suffix | §4az `lm_not_proper_suffix` |
+| `left = []` — proper prefix | §4ba `lm_not_proper_prefix` |
+| both non-empty — strictly interior | **open** |
+
+**The two are not one argument run backwards.** §4az reads `lm₁`'s *head* out of
+`lm₂`'s interior; §4ba reads `lm₁`'s *last letter* out of it, and discharges the
+far-commutation exception differently — there by its empty interior, here by what
+`lm₂`'s interior *begins* with. In both Yang–Baxter and Bokut–Shiao that first
+interior letter is exactly one step below the head (`σᵢ` under `σᵢ₊₁`; `σᵢ₋₁`
+under `σᵢ`, via `descWord_head`), while far-commutation demands a drop of ≥ 2.
+
+**The third case does not follow from the two.** There is no re-association of
+`left ++ lm₁ ++ right` making either apply, because `lm₁ ++ right` is not itself
+a leading monomial. It needs the two `descWord` facts §4az names.
+
+### `descWord_nodup` — tested, not landed
+
+§4az predicted it "looks routine". **Checked: it does prove**, in two lines —
+`List.Nodup.map` with `⟨·⟩` injective, over
+`List.nodup_reverse.mpr ((List.nodup_finRange n).filter _)`. One wrong lemma name
+on the first attempt (`List.Pairwise.reverse` flips the relation;
+`List.nodup_reverse` is the one that does not).
+
+It is **not** in the file, because nothing there would consume it yet — the
+consumer is the strictly-interior case. Recorded here so the next agent does not
+re-derive it, and so the prediction is on record as *tested* rather than assumed.
