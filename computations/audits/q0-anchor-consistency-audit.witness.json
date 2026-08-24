@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:41:30.043550+00:00",
-  "commitSha": "93375f81a61e9bd8ff7dae682f1e7d06e22c6933",
+  "computedAt": "2026-08-24T13:04:38.226070+00:00",
+  "commitSha": "d061594970d13daab86598b69b8fd3c4e827f367",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -52,7 +52,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1837,
+      "Q0_ANCHOR_MISSING": 1839,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -4058,6 +4058,10 @@
           "detail": ""
         },
         {
+          "witness": "h3-gram-degeneracy-block-identification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-expansion-atomic-probe.witness.json",
           "detail": ""
         },
@@ -5071,6 +5075,10 @@
         },
         {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "spectrahedral-phase-collapse-frame-probe.witness.json",
           "detail": ""
         },
         {
