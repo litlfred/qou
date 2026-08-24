@@ -24,8 +24,30 @@ in `QOU.QGeometricLanglands`:
 
 Parts 1 (intrinsic curvature nonzero when `κ₀ ≠ 0`, via HKR) and
 2 (q-flatness ↔ vanishing connection-dependent curvature) are genuinely
-geometric and are **not** covered by the arithmetic core; they carry
-honest `sorry`s with the manuscript citation per AGENTS.md §1.
+geometric and are **not** covered by the arithmetic core. They are
+**assumed**, as the class fields `intrinsic_curvature_nonzero` and
+`q_flatness_equiv`, and the theorem discharges each by returning the
+field — `exact ctx.intrinsic_curvature_nonzero` / `exact ctx.q_flatness_equiv`.
+
+Read the two halves differently, because they are not the same kind of
+thing. Part 3's `kappa_kummer_bridge` is an *input*: the theorem composes
+it with the proved `kummer_divisibility_criterion` to reach a conclusion
+neither one states, which is the §3b-cond pattern working as intended.
+Parts 1 and 2 have no such composition — each field's type is its
+conjunct of the conclusion verbatim, so for those two the theorem asserts
+exactly what it assumes. The mathematical content of this declaration is
+parts 3 and 4.
+
+**Docstring corrected 2026-08-24.** Until now this paragraph, and the
+per-part list below, said parts 1 and 2 "carry honest `sorry`s with the
+manuscript citation per AGENTS.md §1". That stopped being true at
+`b67ee924e84`, which replaced both `sorry`s with the class fields above
+and left the prose describing the previous state. The change is a
+legitimate move — a `sorry` and a hypothesis-carrying field are both
+honest ways to record an unproved input, and `QGlObstructionCalcContext`
+has no instance anywhere, so nothing is silently discharged — but a
+reader trusting the docstring would have looked for two `sorry`s that are
+not there and missed that two of the four parts are now assumptions.
 
 ## Base ring (§7c)
 
@@ -89,9 +111,10 @@ $\chi(A) \neq 0$ and obstruction class
 $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$.  Then:
 
 1. the intrinsic q-curvature `F^{intr}_q = HKR⁻¹(κ₀)` is nonzero
-   whenever `κ₀ ≠ 0` (geometric; `sorry`, manuscript);
-2. `∇_q` is q-flat iff its connection-dependent curvature vanishes
-   (geometric; `sorry`, manuscript);
+   whenever `κ₀ ≠ 0` — **assumed**, as `ctx.intrinsic_curvature_nonzero`
+   (geometric, manuscript);
+2. `∇_q` is q-flat iff its connection-dependent curvature vanishes —
+   **assumed**, as `ctx.q_flatness_equiv` (geometric, manuscript);
 3. at Kummer level `n ≥ 1`, `κ₀ mod n = 0` iff `n ∣ χ(A)` — **derived**
    by composing the geometric bridge to `χ(A) mod n` (the explicit
    conditional-class hypothesis `kappa_kummer_bridge`) with the **proved**
